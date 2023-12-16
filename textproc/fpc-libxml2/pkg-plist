@@ -1,9 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libxml2.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xml2.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xml2.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xmlxsd.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xmlxsd.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xmlxsd.rsj
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xmlxsdparser.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xmlxsdparser.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml/xmlxsdparser.rsj

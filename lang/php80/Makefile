@@ -14,12 +14,13 @@ LICENSE=	PHP301
 DEPRECATED=	Upstream support ends on 2023-11-26
 EXPIRATION_DATE=	2023-12-31
 
-USES+=		compiler:c11 tar:xz cpe gnome pkgconfig
+USES+=		compiler:c11 tar:xz cpe gnome localbase pkgconfig
 CPE_PRODUCT=	php
 
 CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
 
 .if !defined(PKGNAMESUFFIX)
+BUILD_DEPENDS=	re2c>0:devel/re2c
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libargon2.so:security/libargon2
 
@@ -31,9 +32,10 @@ CONFIGURE_ARGS+=	\
 		--with-layout=GNU \
 		--with-libxml \
 		--with-openssl \
-		--with-password-argon2=${LOCALBASE}
+		--with-password-argon2=${LOCALBASE} \
+		--with-external-pcre=${LOCALBASE}
 
-USES+=		autoreconf:build localbase ssl
+USES+=		autoreconf:build ssl
 USE_GNOME=	libxml2
 
 LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
@@ -128,7 +130,6 @@ CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
-	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 
 post-patch-FPM-on:
 	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \

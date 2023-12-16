@@ -1,5 +1,5 @@
 PORTNAME=	securesystemslib
-PORTVERSION=	0.30.0
+PORTVERSION=	0.31.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,5 +28,9 @@ SHEBANG_FILES=	securesystemslib/settings.py \
 	securesystemslib/formats.py
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|hatchling==|hatchling>=|g' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

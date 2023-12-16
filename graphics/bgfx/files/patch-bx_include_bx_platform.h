@@ -1,6 +1,6 @@
---- bx/include/bx/platform.h.orig	2023-08-02 05:50:26 UTC
+--- bx/include/bx/platform.h.orig	2023-11-23 18:12:05 UTC
 +++ bx/include/bx/platform.h
-@@ -464,7 +464,7 @@
+@@ -472,7 +472,7 @@ static_assert(false, "\n\n"
  #if BX_PLATFORM_BSD   \
   || BX_PLATFORM_HAIKU \
   || BX_PLATFORM_HURD

@@ -1,3 +1,832 @@
+  <vuln vid="e2fb85ce-9a3c-11ee-af26-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.6.0</ge><lt>16.6.2</lt></range>
+	<range><ge>16.5.0</ge><lt>16.5.4</lt></range>
+	<range><ge>8.17.0</ge><lt>16.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/12/13/security-release-gitlab-16-6-2-released/">
+	  <p>Smartcard authentication allows impersonation of arbitrary user using user's public certificate</p>
+	  <p>When subgroup is allowed to merge or push to protected branches, subgroup members with the Developer role may gain the ability to push or merge</p>
+	  <p>The GitLab web interface does not ensure the integrity of information when downloading the source code from installation packages or tags</p>
+	  <p>Project maintainer can escalate to Project owner using project access token rotate API</p>
+	  <p>Omission of Double Encoding in File Names Facilitates the Creation of Repositories with Malicious Content</p>
+	  <p>Unvalidated timeSpent value leads to unable to load issues on Issue board</p>
+	  <p>Developer can bypass predefined variables via REST API</p>
+	  <p>Auditor users can create merge requests on projects they don't have access to</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6680</cvename>
+      <cvename>CVE-2023-6564</cvename>
+      <cvename>CVE-2023-6051</cvename>
+      <cvename>CVE-2023-3907</cvename>
+      <cvename>CVE-2023-5512</cvename>
+      <cvename>CVE-2023-3904</cvename>
+      <cvename>CVE-2023-5061</cvename>
+      <cvename>CVE-2023-3511</cvename>
+      <url>https://about.gitlab.com/releases/2023/12/13/security-release-gitlab-16-6-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-12-13</discovery>
+      <entry>2023-12-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="502c9f72-99b3-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.109</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 9 security fixes:</p>
+	 <ul>
+	    <li>[1501326] High CVE-2023-6702: Type Confusion in V8. Reported by Zhiyi Zhang and Zhunki from Codesafe Team of Legendsec at Qi'anxin Group on 2023-11-10</li>
+	    <li>[1502102] High CVE-2023-6703: Use after free in Blink. Reported by Cassidy Kim(@cassidy6564) on 2023-11-14</li>
+	    <li>[1504792] High CVE-2023-6704: Use after free in libavif. Reported by Fudan University on 2023-11-23</li>
+	    <li>[1505708] High CVE-2023-6705: Use after free in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2023-11-28</li>
+	    <li>[1500921] High CVE-2023-6706: Use after free in FedCM. Reported by anonymous on 2023-11-09</li>
+	    <li>[1504036] Medium CVE-2023-6707: Use after free in CSS. Reported by @ginggilBesel on 2023-11-21</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6702</cvename>
+      <cvename>CVE-2023-6703</cvename>
+      <cvename>CVE-2023-6704</cvename>
+      <cvename>CVE-2023-6705</cvename>
+      <cvename>CVE-2023-6706</cvename>
+      <cvename>CVE-2023-6707</cvename>
+      <url>https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2023-12-12</discovery>
+      <entry>2023-12-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8eefff69-997f-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- NFS client data corruption and kernel memory disclosure</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.0</ge><lt>14.0_3</lt></range>
+	<range><ge>13.2</ge><lt>13.2_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In FreeBSD 13.2 and 14.0, the NFS client was optimized to improve
+	the performance of IO_APPEND writes, that is, writes which add data
+	to the end of a file and so extend its size.  This uncovered an old
+	bug in some routines which copy userspace data into the kernel.
+	The bug also affects the NFS client's implementation of direct I/O;
+	however, this implementation is disabled by default by the
+	vfs.nfs.nfs_directio_enable sysctl and is only used to handle
+	synchronous writes.</p>
+	<h1>Impact:</h1>
+	<p>When a program running on an affected system appends data to a
+	file via an NFS client mount, the bug can cause the NFS client to
+	fail to copy in the data to be written but proceed as though the
+	copy operation had succeeded.  This means that the data to be written
+	is instead replaced with whatever data had been in the packet buffer
+	previously.  Thus, an unprivileged user with access to an affected
+	system may abuse the bug to trigger disclosure of sensitive
+	information.  In particular, the leak is limited to data previously
+	stored in mbufs, which are used for network transmission and
+	reception, and for certain types of inter-process communication.</p>
+	<p>The bug can also be triggered unintentionally by system
+	applications, in which case the data written by the application to an
+	NFS mount may be corrupted.  Corrupted data is written over the
+	network to the NFS server, and thus also susceptible to being snooped
+	by other hosts on the network.</p>
+	<p>Note that the bug exists only in the NFS client; the version and
+	implementation of the server has no effect on whether a given system
+	is affected by the problem.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6660</cvename>
+      <freebsdsa>SA-23:18.nfsclient</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-12-12</discovery>
+      <entry>2023-12-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="972568d6-3485-40ab-80ff-994a8aaf9683">
+    <topic>xorg-server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.10,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nestserver</name>
+	<range><lt>21.1.10,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>23.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><lt>21.0.99.1.582</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2023-December/003435.html">
+	  <ul>
+	    <li>CVE-2023-6377/ZDI-CAN-22412/ZDI-CAN-22413: X.Org
+	    server: Out-of-bounds memory write in XKB button actions
+
+	    <p>A device has XKB button actions for each button on the
+	    device. When a logical device switch happens (e.g. moving
+	    from a touchpad to a mouse), the server re-calculates the
+	    information available on the respective master device
+	    (typically the Virtual Core Pointer). This re-calculation
+	    only allocated enough memory for a single XKB action
+	    rather instead of enough for the newly active physical
+	    device's number of button. As a result, querying or
+	    changing the XKB button actions results in out-of-bounds
+	    memory reads and writes.</p>
+
+	    <p>This may lead to local privilege escalation if the server is run as root or
+	    remote code execution (e.g. x11 over ssh).</p></li>
+
+	    <li>CVE-2023-6478/ZDI-CAN-22561: X.Org server:
+	    Out-of-bounds memory read in RRChangeOutputProperty and
+	    RRChangeProviderProperty
+
+	    <p>This fixes an OOB read and the resulting information disclosure.</p>
+
+	    <p>Length calculation for the request was clipped to a 32-bit integer. With
+	    the correct stuff->nUnits value the expected request size was
+	    truncated, passing the REQUEST_FIXED_SIZE check.</p>
+
+	    <p>The server then proceeded with reading at least stuff->nUnits bytes
+	    (depending on stuff->format) from the request and stuffing whatever it
+	    finds into the property. In the process it would also allocate at least
+	    stuff->nUnits bytes, i.e. 4GB.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.x.org/archives/xorg-announce/2023-December/003435.html</url>
+      <cvename>CVE-2023-6377</cvename>
+      <cvename>CVE-2023-6478</cvename>
+    </references>
+    <dates>
+      <discovery>2023-12-13</discovery>
+      <entry>2023-12-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4405e9ad-97fe-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.62</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop.html">
+	 <p>This update includes 10 security fixes:</p>
+	 <ul>
+	    <li>[1497984] High CVE-2023-6508: Use after free in Media Stream. Reported by Cassidy Kim(@cassidy6564) on 2023-10-31</li>
+	    <li>[1494565] High CVE-2023-6509: Use after free in Side Panel Search. Reported by Khalil Zhani on 2023-10-21</li>
+	    <li>[1480152] Medium CVE-2023-6510: Use after free in Media Capture. Reported by [pwn2car] on 2023-09-08</li>
+	    <li>[1478613] Low CVE-2023-6511: Inappropriate implementation in Autofill. Reported by Ahmed ElMasry on 2023-09-04</li>
+	    <li>[1457702] Low CVE-2023-6512: Inappropriate implementation in Web Browser UI. Reported by Om Apip on 2023-06-24</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6508</cvename>
+      <cvename>CVE-2023-6509</cvename>
+      <cvename>CVE-2023-6510</cvename>
+      <cvename>CVE-2023-6511</cvename>
+      <cvename>CVE-2023-6512</cvename>
+      <url>https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-12-05</discovery>
+      <entry>2023-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2bc376c0-977e-11ee-b4bc-b42e991fc52e">
+    <topic>apache -- Apache ZooKeeper: Authorization bypass in SASL Quorum Peer Authentication</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><lt>3.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@apache.org reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2023/10/11/4">
+	  <p>Authorization Bypass Through User-Controlled Key vulnerability in
+	Apache ZooKeeper.  If SASL Quorum Peer authentication is enabled
+	in ZooKeeper (quorum.auth.enableSasl=true), the authorization is
+	done by verifying that the instance part in SASL authentication ID
+	is listed in zoo.cfg server list.  The instance part in SASL auth
+	ID is optional and if it&apos;s missing, like &apos;eve@EXAMPLE.COM&apos;,
+	the authorization check will be skipped.As a result an arbitrary
+	endpoint could join the cluster and begin propagating counterfeit
+	changes to the leader, essentially giving it complete read-write
+	access to the data tree.Quorum Peer authentication is not enabled
+	by default.
+	Users are recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2,
+	which fixes the issue.
+	Alternately ensure the ensemble election/quorum communication is
+	protected by a firewall as this will mitigate the issue.
+	See the documentation for more details on correct cluster administration.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-44981</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-44981</url>
+    </references>
+    <dates>
+      <discovery>2023-10-11</discovery>
+      <entry>2023-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e07a7754-12a4-4661-b852-fd221d68955f">
+    <topic>electron25 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.8">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6350.</li>
+	    <li>Security: backported fix for CVE-2023-6351.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6350</cvename>
+      <url>https://github.com/advisories/GHSA-wmh6-7xp9-5gh8</url>
+      <cvename>CVE-2023-6351</cvename>
+      <url>https://github.com/advisories/GHSA-47vw-3hx2-6877</url>
+    </references>
+    <dates>
+      <discovery>2023-12-06</discovery>
+      <entry>2023-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9cbbc506-93c1-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- TCP spoofing vulnerability in pf(4)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.0</ge><lt>14.0_2</lt></range>
+	<range><ge>13.2</ge><lt>13.2_4</lt></range>
+	<range><ge>12.4</ge><lt>12.4_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>As part of its stateful TCP connection tracking implementation,
+	pf performs sequence number validation on inbound packets.  This
+	makes it difficult for a would-be attacker to spoof the sender and
+	inject packets into a TCP stream, since crafted packets must contain
+	sequence numbers which match the current connection state to avoid
+	being rejected by the firewall.</p>
+	<p>A bug in the implementation of sequence number validation means
+	that the sequence number is not in fact validated, allowing an
+	attacker who is able to impersonate the remote host and guess the
+	connection's port numbers to inject packets into the TCP stream.</p>
+	<h1>Impact:</h1>
+	<p>An attacker can, with relatively little effort, inject packets
+	into a TCP stream destined to a host behind a pf firewall.  This
+	could be used to implement a denial-of-service attack for hosts
+	behind the firewall, for example by sending TCP RST packets to the
+	host.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6534</cvename>
+      <freebsdsa>SA-23:17.pf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-12-05</discovery>
+      <entry>2023-12-05</entry>
+      <modified>2023-12-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f25a34b1-910d-11ee-a1a2-641c67a117d8">
+    <topic>varnish -- HTTP/2 Rapid Reset Attack</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.4.2</lt></range>
+      </package>
+      <package>
+	<name>varnish6</name>
+	<range><lt>6.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00013.html">
+	  <p>A denial of service attack can be performed on Varnish Cache servers
+	that have the HTTP/2 protocol turned on. An attacker can create a large
+	volume of streams and immediately reset them without ever reaching the
+	maximum number of concurrent streams allowed for the session, causing
+	the Varnish server to consume unnecessary resources processing requests
+	for which the response will not be delivered.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-44487</cvename>
+      <url>https://varnish-cache.org/security/VSV00013.html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-13</discovery>
+      <entry>2023-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3b14b2b4-9014-11ee-98b3-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.6.0</ge><lt>16.6.1</lt></range>
+	<range><ge>16.5.0</ge><lt>16.5.3</lt></range>
+	<range><ge>8.13.0</ge><lt>16.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/11/30/security-release-gitlab-16-6-1-released/">
+	  <p>XSS and ReDoS in Markdown via Banzai pipeline of Jira</p>
+	  <p>Members with admin_group_member custom permission can add members with higher role</p>
+	  <p>Release Description visible in public projects despite release set as project members only through atom response</p>
+	  <p>Manipulate the repository content in the UI (CVE-2023-3401 bypass)</p>
+	  <p>External user can abuse policy bot to gain access to internal projects</p>
+	  <p>Client-side DOS via Mermaid Flowchart</p>
+	  <p>Developers can update pipeline schedules to use protected branches even if they don't have permission to merge</p>
+	  <p>Users can install Composer packages from public projects even when Package registry is turned off</p>
+	  <p>Unauthorized member can gain Allowed to push and merge access and affect integrity of protected branches</p>
+	  <p>Guest users can react (emojis) on confidential work items which they cant see in a project</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6033</cvename>
+      <cvename>CVE-2023-6396</cvename>
+      <cvename>CVE-2023-3949</cvename>
+      <cvename>CVE-2023-5226</cvename>
+      <cvename>CVE-2023-5995</cvename>
+      <cvename>CVE-2023-4912</cvename>
+      <cvename>CVE-2023-4317</cvename>
+      <cvename>CVE-2023-3964</cvename>
+      <cvename>CVE-2023-4658</cvename>
+      <cvename>CVE-2023-3443</cvename>
+      <url>https://about.gitlab.com/releases/2023/11/30/security-release-gitlab-16-6-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-30</discovery>
+      <entry>2023-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7e1a508f-7167-47b0-b9fc-95f541933a86">
+    <topic>electron26 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6345.</li>
+	    <li>Security: backported fix for CVE-2023-6346.</li>
+	    <li>Security: backported fix for CVE-2023-6347.</li>
+	    <li>Security: backported fix for CVE-2023-6350.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6345</cvename>
+      <url>https://github.com/advisories/GHSA-xm5p-7w7v-qqr5</url>
+      <cvename>CVE-2023-6346</cvename>
+      <url>https://github.com/advisories/GHSA-w427-5x7p-xj8x</url>
+      <cvename>CVE-2023-6347</cvename>
+      <url>https://github.com/advisories/GHSA-6jj9-4hh8-6xpv</url>
+      <cvename>CVE-2023-6350</cvename>
+      <url>https://github.com/advisories/GHSA-wmh6-7xp9-5gh8</url>
+    </references>
+    <dates>
+      <discovery>2023-11-30</discovery>
+      <entry>2023-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="302fc846-860f-482e-a8f6-ee9f254dfacf">
+    <topic>electron25 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.7">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6345.</li>
+	    <li>Security: backported fix for CVE-2023-6346.</li>
+	    <li>Security: backported fix for CVE-2023-6347.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6345</cvename>
+      <url>https://github.com/advisories/GHSA-xm5p-7w7v-qqr5</url>
+      <cvename>CVE-2023-6346</cvename>
+      <url>https://github.com/advisories/GHSA-w427-5x7p-xj8x</url>
+      <cvename>CVE-2023-6347</cvename>
+      <url>https://github.com/advisories/GHSA-6jj9-4hh8-6xpv</url>
+    </references>
+    <dates>
+      <discovery>2023-12-01</discovery>
+      <entry>2023-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8cdd38c7-8ebb-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>119.0.6045.199</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>119.0.6045.199</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_28.html">
+	 <p>This update includes 7 security fixes:</p>
+	 <ul>
+	    <li>[1491459] High CVE-2023-6348: Type Confusion in Spellcheck. Reported by Mark Brand of Google Project Zero on 2023-10-10</li>
+	    <li>[1494461] High CVE-2023-6347: Use after free in Mojo. Reported by Leecraso and Guang Gong of 360 Vulnerability Research Institute on 2023-10-21</li>
+	    <li>[1500856] High CVE-2023-6346: Use after free in WebAudio. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2023-11-09</li>
+	    <li>[1501766] High CVE-2023-6350: Out of bounds memory access in libavif. Reported by Fudan University on 2023-11-13</li>
+	    <li>[1501770] High CVE-2023-6351: Use after free in libavif. Reported by Fudan University on 2023-11-13</li>
+	    <li>[1505053] High CVE-2023-6345: Integer overflow in Skia. Reported by Benoît Sevens and Clément Lecigne of Google's Threat Analysis Group on 2023-11-24</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6348</cvename>
+      <cvename>CVE-2023-6347</cvename>
+      <cvename>CVE-2023-6346</cvename>
+      <cvename>CVE-2023-6350</cvename>
+      <cvename>CVE-2023-6351</cvename>
+      <cvename>CVE-2023-6345</cvename>
+      <url>https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_28.html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-28</discovery>
+      <entry>2023-11-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="388e6557-8c80-11ee-9ee3-84a93843eb75">
+    <topic>MariaDB -- Denial-of-Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.23</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.16</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/mariadb-10-11-6-release-notes/">
+	  <p>Easily exploitable vulnerability allows high privileged attacker
+	    with network access via multiple protocols to compromise MySQL
+	    Server. Successful attacks of this vulnerability can result in
+	    unauthorized ability to cause a hang or frequently repeatable crash
+	    (complete DOS) of MySQL Server.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-22084</cvename>
+      <url>https://mariadb.com/kb/en/mariadb-10-11-6-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb-10-6-16-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb-10-5-23-release-notes/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-13</discovery>
+      <entry>2023-11-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a62c0c50-8aa0-11ee-ac0d-00e0670f2660">
+    <topic>strongSwan -- vulnerability in charon-tkm</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><ge>5.3.0</ge><lt>5.9.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan reports:</p>
+	<blockquote cite="https://www.strongswan.org/blog/2023/11/20/strongswan-vulnerability-(cve-2023-41913).html">
+	  <p>A vulnerability in charon-tkm related to processing
+	     DH public values was discovered in strongSwan
+	     that can result in a buffer overflow and potentially
+	     remote code execution. All versions since
+	     5.3.0 are affected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41913</cvename>
+      <url>https://www.strongswan.org/blog/2023/11/20/strongswan-vulnerability-(cve-2023-41913).html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-20</discovery>
+      <entry>2023-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="147353a3-c33b-46d1-b751-e72c0d7f29df">
+    <topic>electron{25,26} -- use after free in Garbage Collection</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.6</lt></range>
+      </package>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.6">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-5997.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5997</cvename>
+      <url>https://github.com/advisories/GHSA-fggx-frxq-cpx8</url>
+    </references>
+    <dates>
+      <discovery>2023-11-22</discovery>
+      <entry>2023-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0da4db89-84bf-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>119.0.6045.159</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>119.0.6045.159</lt></range>
+      </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[1497997] High CVE-2023-5997: Use after free in Garbage Collection. Reported by Anonymous on 2023-10-31</li>
+	    <li>[1499298] High CVE-2023-6112: Use after free in Navigation. Reported by Sergei Glazunov of Google Project Zero on 2023-11-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5997</cvename>
+      <cvename>CVE-2023-6112</cvename>
+      <url>https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-14</discovery>
+      <entry>2023-11-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a30f1a12-117f-4dac-a1d0-d65eaf084953">
+    <topic>electron{25,26} -- use after free in WebAudio</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.5</lt></range>
+      </package>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.5">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-5996.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5996</cvename>
+      <url>https://github.com/advisories/GHSA-q3gq-rg4m-vgrp</url>
+    </references>
+    <dates>
+      <discovery>2023-11-15</discovery>
+      <entry>2023-11-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2fe004f5-83fd-11ee-9f5d-31909fb2f495">
+    <topic>openvpn -- 2.6.0...2.6.6 --fragment option division by zero crash, and TLS data leak</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><ge>2.6.0</ge><lt>2.6.7_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVPN community project team reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/blob/v2.6.7/Changes.rst#overview-of-changes-in-267">
+		<p>CVE-2023-46849 OpenVPN versions between 2.6.0 and 2.6.6 incorrectly restore "--fragment" configuration in some circumstances, leading to a division by zero when "--fragment" is used. On platforms where division by zero is fatal, this will cause an OpenVPN crash.
+		<br />
+Reported by Niccolo Belli and WIPocket (Github #400, #417).
+	</p>
+	<p>CVE-2023-46850 OpenVPN versions between 2.6.0 and 2.6.6 incorrectly use a send buffer after it has been free()d in some circumstances, causing some free()d memory to be sent to the peer. All configurations using TLS (e.g. not using --secret) are affected by this issue. (found while tracking down CVE-2023-46849 / Github #400, #417)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-46849</cvename>
+      <cvename>CVE-2023-46850</cvename>
+      <url>https://github.com/OpenVPN/openvpn/blob/v2.6.7/Changes.rst#overview-of-changes-in-267</url>
+    </references>
+    <dates>
+      <discovery>2023-08-29</discovery>
+      <entry>2023-11-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7cc003cb-83b9-11ee-957d-b42e991fc52e">
+    <topic>typo3 -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3-11</name>
+	<name>typo3-12</name>
+	<range><lt>11.5.33</lt></range>
+	<range><lt>12.4.33</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/TYPO3/typo3/commit/535dfbdc54fd5362e0bc08d911db44eac7f64019">
+	<p>Weak Authentication in Session Handling in typo3/cms-core:
+	In typo3 installations there are always
+	at least two different sites.  Eg.  first.example.org and
+	second.example.com.  In affected versions a session cookie
+	generated for the first site can be reused on the second site
+	without requiring additional authentication.  This
+	vulnerability has been addressed in versions 8.7.55, 9.5.44,
+	10.4.41, 11.5.33, and 12.4.8.  Users are advised to upgrade.
+	There are no known workarounds for this vulnerability.</p>
+	<p>Information Disclosure in Install Tool in typo3/cms-install:
+	In affected versions the login screen of the standalone
+	install tool discloses the full path of the transient data
+	directory (e.g.  /var/www/html/var/transient/).  This applies
+	to composer-based scenarios only - classic non-composer
+	installations are not affected.  This issue has been addressed
+	in version 12.4.8.  Users are advised to upgrade.  There are
+	no known workarounds for this vulnerability.
+	</p>
+	<p>By-passing Cross-Site Scripting Protection in HTML Sanitizer:
+	In affected versions DOM processing instructions are not
+	handled correctly.  This allows bypassing the cross-site
+	scripting mechanism of typo3/html-sanitizer.  This
+	vulnerability has been addressed in versions 1.5.3 and 2.1.4.
+	Users are advised to upgrade.  There are no known workarounds
+	for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-47125</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-47125</url>
+      <cvename>CVE-2023-47126</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-47126</url>
+      <cvename>CVE-2023-47127</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-47127</url>
+    </references>
+    <dates>
+      <discovery>2023-11-14</discovery>
+      <entry>2023-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31f45d06-7f0e-11ee-94b4-6cc21735f730">
     <topic>postgresql-server -- Memory disclosure in aggregate function calls</topic>
     <affects>
@@ -399,6 +1228,10 @@
       <package>
        <name>ungoogled-chromium</name>
        <range><lt>119.0.6045.105</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
       </package>
     </affects>
     <description>
@@ -1220,6 +2053,10 @@
        <name>ungoogled-chromium</name>
        <range><lt>118.0.5993.70</lt></range>
       </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1303,6 +2140,10 @@
       <package>
 	<name>curl</name>
 	<range><gt>7.69.0</gt><lt>8.4.0</lt></range>
+      </package>
+      <package>
+	<name>cmake-core</name>
+	<range><lt>3.27.8</lt></range>
       </package>
     </affects>
     <description>
@@ -1691,6 +2532,10 @@
       <package>
        <name>ungoogled-chromium</name>
        <range><lt>117.0.5938.132</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
       </package>
     </affects>
     <description>

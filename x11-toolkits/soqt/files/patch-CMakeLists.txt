@@ -1,20 +1,46 @@
---- CMakeLists.txt.orig	2020-01-15 23:29:46 UTC
-+++ CMakeLists.txt
-@@ -123,7 +123,7 @@ report_prepare(
+--- CMakeLists.txt.orig	2023-11-20 21:47:34.494796000 +0100
++++ CMakeLists.txt	2023-11-20 23:00:36.630907000 +0100
+@@ -128,7 +128,7 @@
+ # Fail early if one of the required packages cannot be found
  
  find_package(OpenGL REQUIRED)
- # Coin is typically installed as Inventor.framework on APPLE
--find_package(Coin NAMES Inventor Coin REQUIRED)
+-find_package(Coin REQUIRED)
 +find_package(Coin3D REQUIRED)
  
- if(SO${GUI}_USE_QT5)
-   find_package(Qt5 COMPONENTS Core Gui OpenGL Widgets QUIET)
-@@ -243,7 +243,7 @@ elseif(FUNCTION)
+ set(SO${GUI}_PKG_DEPS "Coin")
+ 
+@@ -290,19 +290,22 @@
  endif()
  
  set(CMAKE_REQUIRED_INCLUDES ${OPENGL_INCLUDE_DIR})
 -set(CMAKE_REQUIRED_LIBRARIES Coin::Coin ${OPENGL_LIBRARIES})
-+# set(CMAKE_REQUIRED_LIBRARIES Coin ${OPENGL_LIBRARIES})
++set(CMAKE_REQUIRED_LIBRARIES Coin ${OPENGL_LIBRARIES})
  
- check_include_files(windows.h HAVE_WINDOWS_H)
- if(HAVE_WINDOWS_H)
+-check_include_files(windows.h HAVE_WINDOWS_H)
+-if(HAVE_WINDOWS_H)
+-  check_include_files("windows.h;GL/gl.h" HAVE_GL_GL_H)
+-  check_include_files("windows.h;GL/glu.h" HAVE_GL_GLU_H)
+-elseif(APPLE)
+-  check_include_files(OpenGL/gl.h HAVE_OPENGL_GL_H)
+-  check_include_files(OpenGL/glu.h HAVE_OPENGL_GLU_H)
+-else()
+-  check_include_files(GL/gl.h HAVE_GL_GL_H)
+-  check_include_files(GL/glu.h HAVE_GL_GLU_H)
+-endif()
++# that logic below does not work, so we hardcode the result
++set(HAVE_GL_GL_H "1")
++set(HAVE_GL_GLU_H "1")
++# check_include_files(windows.h HAVE_WINDOWS_H)
++# if(HAVE_WINDOWS_H)
++#   check_include_files("windows.h;GL/gl.h" HAVE_GL_GL_H)
++#   check_include_files("windows.h;GL/glu.h" HAVE_GL_GLU_H)
++# elseif(APPLE)
++#   check_include_files(OpenGL/gl.h HAVE_OPENGL_GL_H)
++#   check_include_files(OpenGL/glu.h HAVE_OPENGL_GLU_H)
++# else()
++#   check_include_file(GL/gl.h HAVE_GL_GL_H)
++#   check_include_file(GL/glu.h HAVE_GL_GLU_H)
++# endif()
+ 
+ check_include_files(dlfcn.h HAVE_DLFCN_H)
+ check_include_files(inttypes.h HAVE_INTTYPES_H)

@@ -1,5 +1,4 @@
 bin/vmaf
-include/libvmaf/compute_vmaf.h
 include/libvmaf/feature.h
 include/libvmaf/libvmaf.h
 include/libvmaf/model.h
@@ -16,6 +15,7 @@ share/model/other_models/vmaf_v0.6.0.json
 share/model/other_models/vmaf_v0.6.1mfz.json
 share/model/vmaf_4k_rb_v0.6.2/vmaf_4k_rb_v0.6.2.json
 share/model/vmaf_4k_v0.6.1.json
+share/model/vmaf_4k_v0.6.1neg.json
 share/model/vmaf_b_v0.6.3.json
 share/model/vmaf_float_4k_v0.6.1.json
 share/model/vmaf_float_b_v0.6.3.json

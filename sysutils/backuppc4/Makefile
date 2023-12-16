@@ -1,10 +1,14 @@
 PORTNAME=	backuppc
-PORTVERSION=	4.4.0
+DISTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
 		SF
 PKGNAMESUFFIX=	4
 DISTNAME=	BackupPC-${DISTVERSION}
+
+PATCH_SITES=	https://github.com/backuppc/backuppc/commit/
+PATCHFILES=	2c9270b9b849b2c86ae6301dd722c97757bc9256.patch:-p1
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Multi-platform backup to disk-based storage

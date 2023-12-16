@@ -1,6 +1,6 @@
---- pixmaps/Makefile.in.orig	2020-12-21 13:13:38 UTC
+--- pixmaps/Makefile.in.orig	2023-11-13 08:12:38 UTC
 +++ pixmaps/Makefile.in
-@@ -406,7 +406,7 @@ top_build_prefix = @top_build_prefix@
+@@ -405,7 +405,7 @@ SUBDIRS = flags
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = flags

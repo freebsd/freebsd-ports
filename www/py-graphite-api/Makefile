@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask>=0.10.1:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Cache>=0.13.1:www/py-flask-cache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.1.1:devel/py-tzlocal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}structlog>=16.0.0:devel/py-structlog@${PY_FLAVOR} \

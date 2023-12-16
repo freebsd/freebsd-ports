@@ -1,6 +1,5 @@
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.11
-PORTREVISION=	1
+DISTVERSION=	1.7.0.0
 PKGNAMESUFFIX=	-effects
 
 COMMENT=	Screen locker for Wayland with fancy effects

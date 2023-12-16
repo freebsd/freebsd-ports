@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2023-08-16 19:50:41 UTC
++++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
+@@ -455,7 +455,7 @@ static_library("bundled_minizip") {
+     ]
+   }
+ 
+-  if (is_apple || is_android || is_nacl) {
++  if (is_apple || is_android || is_nacl || is_bsd) {
+     # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
+     # use fopen, ftell, and fseek instead on these systems.
+     defines = [ "USE_FILE32API" ]

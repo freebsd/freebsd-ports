@@ -1,5 +1,5 @@
 PORTNAME=	tanuki_emoji
-PORTVERSION=	0.7.0
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

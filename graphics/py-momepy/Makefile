@@ -2,7 +2,8 @@ PORTNAME=	momepy
 PORTVERSION=	0.5.4
 PORTREVISION=	2
 CATEGORIES=	graphics python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/pysal/momepy/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

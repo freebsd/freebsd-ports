@@ -1,5 +1,6 @@
 PORTNAME=	tremotesf
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	vsasjason@gmail.com

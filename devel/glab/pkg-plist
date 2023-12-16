@@ -22,6 +22,11 @@
 %%MANPAGES%%man/man1/glab-ci-trace.1.gz
 %%MANPAGES%%man/man1/glab-ci-view.1.gz
 %%MANPAGES%%man/man1/glab-ci.1.gz
+%%MANPAGES%%man/man1/glab-cluster-agent-get-token.1.gz
+%%MANPAGES%%man/man1/glab-cluster-agent-list.1.gz
+%%MANPAGES%%man/man1/glab-cluster-agent-update-kubeconfig.1.gz
+%%MANPAGES%%man/man1/glab-cluster-agent.1.gz
+%%MANPAGES%%man/man1/glab-cluster.1.gz
 %%MANPAGES%%man/man1/glab-completion.1.gz
 %%MANPAGES%%man/man1/glab-config-get.1.gz
 %%MANPAGES%%man/man1/glab-config-set.1.gz
@@ -98,6 +103,7 @@
 %%MANPAGES%%man/man1/glab-snippet-create.1.gz
 %%MANPAGES%%man/man1/glab-snippet.1.gz
 %%MANPAGES%%man/man1/glab-ssh-key-add.1.gz
+%%MANPAGES%%man/man1/glab-ssh-key-delete.1.gz
 %%MANPAGES%%man/man1/glab-ssh-key-get.1.gz
 %%MANPAGES%%man/man1/glab-ssh-key-list.1.gz
 %%MANPAGES%%man/man1/glab-ssh-key.1.gz

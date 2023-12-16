@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/boringssl/src/crypto/refcount_c11.c.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/refcount_c11.c.orig	2022-09-24 10:57:32 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/refcount_c11.c
 @@ -22,6 +22,9 @@
  #include <stdatomic.h>

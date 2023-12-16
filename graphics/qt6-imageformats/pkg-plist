@@ -13,6 +13,12 @@ lib/cmake/Qt6Gui/Qt6QJp2PluginConfigVersion.cmake
 lib/cmake/Qt6Gui/Qt6QJp2PluginConfigVersionImpl.cmake
 lib/cmake/Qt6Gui/Qt6QJp2PluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginTargets.cmake
 lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake
 lib/cmake/Qt6Gui/Qt6QTgaPluginConfigVersion.cmake
@@ -39,6 +45,7 @@ lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake
 %%QT_PLUGINDIR%%/imageformats/libqicns.so
 %%QT_PLUGINDIR%%/imageformats/libqjp2.so
+%%QT_PLUGINDIR%%/imageformats/libqmng.so
 %%QT_PLUGINDIR%%/imageformats/libqtga.so
 %%QT_PLUGINDIR%%/imageformats/libqtiff.so
 %%QT_PLUGINDIR%%/imageformats/libqwbmp.so

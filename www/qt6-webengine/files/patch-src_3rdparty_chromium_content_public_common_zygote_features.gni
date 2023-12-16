@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/content/public/common/zygote/features.gni.orig	2022-06-08 06:40:31 UTC
+--- src/3rdparty/chromium/content/public/common/zygote/features.gni.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/content/public/common/zygote/features.gni
 @@ -2,4 +2,4 @@
  # Use of this source code is governed by a BSD-style license that can be
  # found in the LICENSE file.
  
--use_zygote_handle = is_posix && !is_android && !is_mac
-+use_zygote_handle = is_posix && !is_android && !is_mac && !is_bsd
+-use_zygote = is_posix && !is_android && !is_apple
++use_zygote = is_posix && !is_android && !is_mac && !is_bsd

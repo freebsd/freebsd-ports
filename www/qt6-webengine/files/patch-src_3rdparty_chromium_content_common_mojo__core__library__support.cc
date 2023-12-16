@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/common/mojo_core_library_support.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/common/mojo_core_library_support.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/content/common/mojo_core_library_support.cc
-@@ -15,7 +15,7 @@ absl::optional<base::FilePath> GetMojoCoreSharedLibrar
+@@ -15,7 +15,7 @@ bool IsMojoCoreSharedLibraryEnabled() {
  }
  
  absl::optional<base::FilePath> GetMojoCoreSharedLibraryPath() {

@@ -1,5 +1,6 @@
 PORTNAME=	nibabel
-DISTVERSION=	5.1.0
+DISTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +18,11 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=17:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python:3.9+
-USE_PYTHON=	pep517 concurrent autoplist pytest # 3 tests fail, see https://github.com/nipy/nibabel/issues/1235
+USE_PYTHON=	pep517 concurrent autoplist pytest # 1 tests fails, see https://github.com/nipy/nibabel/issues/1285
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PATH=${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	@${REINPLACE_CMD} -i '' -e 's|#!python|#!${PYTHON_CMD}|' \

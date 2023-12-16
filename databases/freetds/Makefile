@@ -1,5 +1,5 @@
 PORTNAME=	freetds
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.10
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
@@ -13,8 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		autoreconf cpe gettext gmake iconv libtool:keepla pkgconfig \
-		readline tar:bzip2
+USES=		autoreconf cpe gettext gmake iconv libtool:keepla localbase:ldflag \
+		pkgconfig readline tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	--enable-msdblib \
 
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lgcrypt -lpthread
 
 CONFLICTS=	freetds-devel

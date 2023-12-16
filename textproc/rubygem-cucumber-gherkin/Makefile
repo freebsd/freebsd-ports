@@ -1,5 +1,6 @@
 PORTNAME=	cucumber-gherkin
 PORTVERSION=	27.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/cucumber/gherkin
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cucumber-messages>=19.1.4<23:devel/rubygem-cucumber-messages
+RUN_DEPENDS=	rubygem-cucumber-messages22>=19.1.4<23:devel/rubygem-cucumber-messages22
 
 USES=		gem
 

@@ -1,1 +1,2 @@
-DeforaOS system library
+libSystem is the most essential library within DeforaOS, with the aim to become
+a complete C runtime (thus obsoleting the libc and replacing its API).

@@ -1,6 +1,6 @@
 PORTNAME=	trippy
-PORTVERSION=	0.8.0
-PORTREVISION=	4
+PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -20,6 +20,8 @@ SUID_DESC=		Use suid to allow execution as non root
 
 SUID_PLIST_FILES=	"@(,,4110) bin/trip"
 SUID_PLIST_FILES_OFF=	"@(,,0100) bin/trip"
+
+PORTSCOUT=	skipv:1.0.0
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip

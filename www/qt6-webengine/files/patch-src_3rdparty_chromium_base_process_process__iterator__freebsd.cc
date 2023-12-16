@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/base/process/process_iterator_freebsd.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/process_iterator_freebsd.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/process/process_iterator_freebsd.cc
-@@ -20,7 +20,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
-     : index_of_kinfo_proc_(),
-       filter_(filter) {
+@@ -18,7 +18,7 @@ namespace base {
  
+ ProcessIterator::ProcessIterator(const ProcessFilter* filter)
+     : filter_(filter) {
 -  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, getuid() };
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, (int) getuid() };
  
    bool done = false;
    int try_num = 1;
-@@ -39,7 +39,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -37,7 +37,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
        num_of_kinfo_proc += 16;
        kinfo_procs_.resize(num_of_kinfo_proc);
        len = num_of_kinfo_proc * sizeof(struct kinfo_proc);
@@ -18,7 +18,7 @@
          // If we get a mem error, it just means we need a bigger buffer, so
          // loop around again.  Anything else is a real error and give up.
          if (errno != ENOMEM) {
-@@ -49,7 +49,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -47,7 +47,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
          }
        } else {
          // Got the list, just make sure we're sized exactly right
@@ -27,7 +27,7 @@
          kinfo_procs_.resize(num_of_kinfo_proc);
          done = true;
        }
-@@ -71,18 +71,13 @@ bool ProcessIterator::CheckForNextProcess() {
+@@ -68,18 +68,13 @@ bool ProcessIterator::CheckForNextProcess() {
    for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++index_of_kinfo_proc_) {
      size_t length;
      struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];

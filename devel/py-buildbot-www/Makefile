@@ -1,5 +1,5 @@
 PORTNAME=	buildbot-www
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg==${PORTVERSION}:devel/py-buil
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-console-view==${PORTVERSION}:devel/py-buildbot-console-view@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}buildbot-grid-view==${PORTVERSION}:devel/py-buildbot-grid-view@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}buildbot-waterfall-view==${PORTVERSION}:devel/py-buildbot-waterfall-view@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}service-identity>=16.0.0:security/py-service-identity@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

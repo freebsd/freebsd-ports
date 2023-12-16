@@ -1,5 +1,5 @@
 PORTNAME=	arpwatch
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://ee.lbl.gov/downloads/arpwatch/ \
 		LOCAL/leres/arpwatch

@@ -1,5 +1,5 @@
 PORTNAME=	PCSC-Card
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/

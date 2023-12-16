@@ -18,6 +18,7 @@ bin/gcov-dump%%SUFFIX%%
 bin/gcov-tool%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 bin/lto-dump%%SUFFIX%%
+include/gcc%%SUFFIX%%/ISO_Fortran_binding.h
 include/libgccjit++.h
 include/libgccjit.h
 man/man1/cpp%%SUFFIX%%.1.gz

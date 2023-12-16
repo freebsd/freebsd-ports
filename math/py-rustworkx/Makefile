@@ -1,6 +1,6 @@
 PORTNAME=	rustworkx
-DISTVERSION=	0.13.1
-PORTREVISION=	2
+DISTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,7 +45,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		itertools-0.10.5 \
 		itoa-1.0.4 \
 		libc-0.2.137 \
-		libm-0.2.6 \
+		libm-0.2.7 \
 		lock_api-0.4.9 \
 		matrixmultiply-0.3.2 \
 		memchr-2.5.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		num-complex-0.2.4 \
 		num-complex-0.4.3 \
 		num-integer-0.1.45 \
-		num-traits-0.2.15 \
+		num-traits-0.2.16 \
 		num_cpus-1.13.1 \
 		numpy-0.19.0 \
 		once_cell-1.15.0 \
@@ -68,11 +68,11 @@ CARGO_CRATES=	ahash-0.7.6 \
 		ppv-lite86-0.2.16 \
 		priority-queue-1.2.2 \
 		proc-macro2-1.0.52 \
-		pyo3-0.19.1 \
-		pyo3-build-config-0.19.1 \
-		pyo3-ffi-0.19.1 \
-		pyo3-macros-0.19.1 \
-		pyo3-macros-backend-0.19.1 \
+		pyo3-0.19.2 \
+		pyo3-build-config-0.19.2 \
+		pyo3-ffi-0.19.2 \
+		pyo3-macros-0.19.2 \
+		pyo3-macros-backend-0.19.2 \
 		quick-xml-0.28.2 \
 		quote-1.0.26 \
 		rand-0.8.5 \

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/base/platform/platform-openbsd.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/v8/src/base/platform/platform-openbsd.cc.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-openbsd.cc
 @@ -6,6 +6,7 @@
  // POSIX-compatible parts, the implementation is in platform-posix.cc.
@@ -8,7 +8,7 @@
  #include <semaphore.h>
  #include <signal.h>
  #include <stdlib.h>
-@@ -121,6 +122,17 @@ void OS::AdjustSchedulingParams() {}
+@@ -121,6 +122,17 @@ void OS::SignalCodeMovingGC() {
  }
  
  void OS::AdjustSchedulingParams() {}

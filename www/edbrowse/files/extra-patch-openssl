@@ -1,0 +1,11 @@
+--- src/makefile.orig	2023-11-17 18:00:41.589174000 +0100
++++ src/makefile	2023-11-17 18:01:13.273125000 +0100
+@@ -9,7 +9,7 @@
+ CFLAGS += $(PLATFORM_CFLAGS)
+ 
+ # determine includes and linker flags
+-DEPENDENCIES = libcurl:curl odbc libpcre2-8:pcre2-8 readline openssl
++DEPENDENCIES = libcurl:curl odbc libpcre2-8:pcre2-8 readline
+ INCLUDES = $(shell ./make-helper.sh pkg-config-includes $(DEPENDENCIES))
+ LINKER_LIBS = $(shell ./make-helper.sh pkg-config-libs $(DEPENDENCIES))
+ CFLAGS += $(INCLUDES)

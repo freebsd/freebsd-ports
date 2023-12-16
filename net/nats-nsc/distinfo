@@ -1,6 +1,6 @@
-TIMESTAMP = 1699335835
-SHA256 (nats-io-nsc-v2.8.3_GH0.tar.gz) = 97971b3153fd22eaea42e4a8f90fa8da75e125d34ae6ec6eb1d5bef879892890
-SIZE (nats-io-nsc-v2.8.3_GH0.tar.gz) = 255377
+TIMESTAMP = 1700216025
+SHA256 (nats-io-nsc-v2.8.5_GH0.tar.gz) = b1318fd86fd133a355a887dbda23b8d6d3d5c072695a432c9f23ef0b2a9fa94d
+SIZE (nats-io-nsc-v2.8.5_GH0.tar.gz) = 255457
 SHA256 (AlecAivazis-survey-v2.3.7_GH0.tar.gz) = 4975751ab98c2d0075c1d2b992bd8aee733c97c29cecac179ca36290abbeac5f
 SIZE (AlecAivazis-survey-v2.3.7_GH0.tar.gz) = 125594
 SHA256 (blang-semver-v3.5.1_GH0.tar.gz) = 3d9da53f4c2d3169bfa9b25f2f36f301a37556a47259c870881524c643c69c57

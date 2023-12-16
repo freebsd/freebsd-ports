@@ -1,8 +1,7 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2023.2.4
+DISTVERSION=	2023.3.1
 CATEGORIES=	devel java python
-MASTER_SITES=	https://download.jetbrains.com/python/ \
-		http://download.jetbrains.com/python/
+MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
@@ -24,8 +23,6 @@ USES=		cpe python:run shebangfix
 CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-
-SHEBANG_FILES=	bin/restart.py
 
 WRKSRC=		${WRKDIR}/pycharm-${PORTVERSION}
 

@@ -1,4 +1,0 @@
-Screen grab adds a configurable hotkey to quickly select a screen region and add
-it as an image source to the current scene.
-
-The plugin saves all screenshots into the home directory by default.

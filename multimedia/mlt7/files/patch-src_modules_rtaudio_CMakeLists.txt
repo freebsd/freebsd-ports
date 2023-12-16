@@ -1,6 +1,6 @@
---- src/modules/rtaudio/CMakeLists.txt.orig	2021-05-06 21:36:06 UTC
+--- src/modules/rtaudio/CMakeLists.txt.orig	2023-12-06 23:26:22 UTC
 +++ src/modules/rtaudio/CMakeLists.txt
-@@ -25,7 +25,11 @@ else()
+@@ -32,7 +32,11 @@ else()
        target_compile_definitions(mltrtaudio PRIVATE __LINUX_PULSE__)
      endif()
      if(NOT (TARGET PkgConfig::alsa OR TARGET PkgConfig::libpulse-simple))

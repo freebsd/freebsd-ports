@@ -513,7 +513,6 @@ include/node/v8-profiler.h
 include/node/v8-version.h
 include/node/v8.h
 include/node/v8config.h
-%%DTRACE%%lib/dtrace/node.d
 %%COREPACK%%lib/node_modules/corepack/CHANGELOG.md
 %%COREPACK%%lib/node_modules/corepack/LICENSE.md
 %%COREPACK%%lib/node_modules/corepack/README.md

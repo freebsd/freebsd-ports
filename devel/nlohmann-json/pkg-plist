@@ -18,6 +18,7 @@ include/nlohmann/detail/iterators/iteration_proxy.hpp
 include/nlohmann/detail/iterators/iterator_traits.hpp
 include/nlohmann/detail/iterators/json_reverse_iterator.hpp
 include/nlohmann/detail/iterators/primitive_iterator.hpp
+include/nlohmann/detail/json_custom_base_class.hpp
 include/nlohmann/detail/json_pointer.hpp
 include/nlohmann/detail/json_ref.hpp
 include/nlohmann/detail/macro_scope.hpp

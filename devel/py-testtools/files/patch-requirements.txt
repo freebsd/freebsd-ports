@@ -1,7 +1,0 @@
-PR:		228769
-
---- requirements.txt.orig	2023-03-14 10:43:35 UTC
-+++ requirements.txt
-@@ -1,2 +1 @@
- pbr>=0.11
--fixtures>=2.0

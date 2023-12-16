@@ -38,7 +38,6 @@
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
-    SUBDIR += cclient
     SUBDIR += claws-mail
     SUBDIR += claws-mail-acpi_notifier
     SUBDIR += claws-mail-address_keeper
@@ -127,6 +126,7 @@
     SUBDIR += exim-sa-exim
     SUBDIR += exim-sqlite
     SUBDIR += exipick
+    SUBDIR += exmh-devel
     SUBDIR += exmh2
     SUBDIR += ez-pine-gpg
     SUBDIR += ezmlm
@@ -157,7 +157,6 @@
     SUBDIR += heirloom-mailx
     SUBDIR += ifile
     SUBDIR += im
-    SUBDIR += imap-uw
     SUBDIR += imapdedup
     SUBDIR += imapfilter
     SUBDIR += imapsync
@@ -207,7 +206,6 @@
     SUBDIR += mailpit
     SUBDIR += mailscanner
     SUBDIR += mailslurper
-    SUBDIR += mailsync
     SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
@@ -546,7 +544,6 @@
     SUBDIR += qmail-qfilter
     SUBDIR += qmail-rblchk
     SUBDIR += qmail-remove
-    SUBDIR += qmail-spamcontrol
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
@@ -572,12 +569,14 @@
     SUBDIR += roundcube-carddav
     SUBDIR += roundcube-classic
     SUBDIR += roundcube-contextmenu
+    SUBDIR += roundcube-gravatar
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-larry
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels
+    SUBDIR += roundcube-tls_icon
     SUBDIR += roundcube-twofactor_gauthenticator
     SUBDIR += roundcube-veximaccountadmin
     SUBDIR += roundcube-yubikey_auth

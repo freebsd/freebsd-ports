@@ -5,7 +5,9 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the Cloud Translation V2 API
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-translate-v2 \
+WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-translate-v2/latest/ \
+		https://googleapis.github.io/google-cloud-ruby/docs/ \
+		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-translate-v2 \
 		https://github.com/googleapis/google-cloud-ruby
 
 LICENSE=	APACHE20

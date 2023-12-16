@@ -1,9 +1,15 @@
 [
 { type: install
   message: <<EOM
-To complete the instalation of this port you have download the Nehahra data
-files from "http://planetquake.com/nehahra/" and extract them to
-"%%Q1DIR%%/nehahra".
+To complete the installation of this port, download Nehahra mod
+from https://www.quaddicted.com/filebase/nehahra.zip and unpack
+its "nehahra" subdirectory as "%%Q1DIR%%/nehahra".
+
+If you see the following error when loading certain large maps,
+
+    Error: Cache_TryAlloc: 1627728 is greater then free hunk
+
+run the game with e.g. ``-mem 64'' option (memory in megabytes).
 EOM
 }
 ]

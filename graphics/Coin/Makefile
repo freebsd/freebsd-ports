@@ -1,11 +1,7 @@
 PORTNAME=	Coin
-PORTVERSION=	4.0.0
-DISTVERSIONPREFIX=	Coin-
-PORTREVISION=	4
+PORTVERSION=	4.0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	3053d28b74d.patch:-p1 # Unbreak non-X11
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor API
@@ -22,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d
 GH_PROJECT=	coin
 
-USE_GL=		gl
+USE_GL=		gl glu
 USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\

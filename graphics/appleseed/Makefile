@@ -15,17 +15,13 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libIlmThread.so:graphics/openexr \
 		libImath.so:math/Imath \
-		libOpenColorIO.so:graphics/opencolorio \
+		libOpenColorIOv1.so:graphics/opencoloriov1 \
 		libOpenImageIO.so:graphics/openimageio \
 		libxerces-c.so:textproc/xerces-c3 \
 		liboslexec.so:graphics/openshadinglanguage
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}hq
-
-BROKEN=		cannot build with recent Boost and OCIO libs
-DEPRECATED=	Fails to build and marked broken for several months
-EXPIRATION_DATE=2023-11-30
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	not ported to it yet

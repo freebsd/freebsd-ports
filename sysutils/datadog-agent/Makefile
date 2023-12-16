@@ -1,6 +1,6 @@
 PORTNAME=	datadog-agent
 DISTVERSION=	7.24.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils net www
 
 MAINTAINER=	uros@gruber.si
@@ -10,6 +10,7 @@ WWW=		https://www.datadoghq.com/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		SHA256 Checksum mismatch for kubernetes-client-go-bec269661e48_GH0.tar.gz
 BROKEN_i386=	fails to build: vendor/github.com/DataDog/gopsutil/process/process_freebsd.go:95:9: cannot use k.Start.Sec * 1000 (value of type int32) as type int64 in return statement
 
 BUILD_DEPENDS=	cmake-core>=3.12:devel/cmake-core \

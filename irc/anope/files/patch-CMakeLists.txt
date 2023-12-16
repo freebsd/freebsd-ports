@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2023-06-02 15:14:06.209032000 +0000
-+++ CMakeLists.txt	2023-06-02 15:15:18.248991000 +0000
+--- CMakeLists.txt.orig	2023-06-02 15:14:06 UTC
++++ CMakeLists.txt
 @@ -486,16 +486,16 @@
  get_filename_component(SERVICES_BINARY ${SERVICES_BINARY} NAME)
  

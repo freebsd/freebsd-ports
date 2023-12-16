@@ -1,20 +1,18 @@
---- base/process/process_metrics_unittest.cc.orig	2022-09-24 10:57:32 UTC
+--- base/process/process_metrics_unittest.cc.orig	2023-12-10 06:10:27 UTC
 +++ base/process/process_metrics_unittest.cc
-@@ -44,7 +44,7 @@ namespace debug {
+@@ -35,13 +35,13 @@
+ #include <sys/mman.h>
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+ #include "base/process/internal_linux.h"
+ #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||      \
      BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_WIN) || \
--    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- 
- namespace {
- 
-@@ -347,7 +347,7 @@ TEST_F(SystemMetricsTest, ParseVmstat) {
- 
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||      \
-     BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_WIN) || \
--    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- 
- // Test that ProcessMetrics::GetPlatformIndependentCPUUsage() doesn't return
- // negative values when the number of threads running on the process decreases
+-    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_APPLE)
++    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
+ #define ENABLE_CPU_TESTS 1
+ #else
+ #define ENABLE_CPU_TESTS 0

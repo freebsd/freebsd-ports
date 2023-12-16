@@ -25,7 +25,6 @@
     SUBDIR += SpaceCadetPinball-devel
     SUBDIR += abbayedesmorts
     SUBDIR += abe
-    SUBDIR += abstreet
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
     SUBDIR += adom
@@ -327,6 +326,7 @@
     SUBDIR += glest-data
     SUBDIR += glightoff
     SUBDIR += glmaze
+    SUBDIR += glob2
     SUBDIR += glsfcave
     SUBDIR += gltron
     SUBDIR += gmastermind
@@ -340,7 +340,6 @@
     SUBDIR += gnome-nibbles
     SUBDIR += gnome-robots
     SUBDIR += gnome-sudoku
-    SUBDIR += gnome-taquin
     SUBDIR += gnome-tetravex
     SUBDIR += gnubg
     SUBDIR += gnubik
@@ -392,7 +391,6 @@
     SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
     SUBDIR += hyperrogue
-    SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += iceicepenguin
@@ -545,6 +543,7 @@
     SUBDIR += libretro-play
     SUBDIR += libretro-prboom
     SUBDIR += libretro-prosystem
+    SUBDIR += libretro-puae
     SUBDIR += libretro-px68k
     SUBDIR += libretro-quicknes
     SUBDIR += libretro-scummvm
@@ -556,7 +555,6 @@
     SUBDIR += libretro-stella2014
     SUBDIR += libretro-tgbdual
     SUBDIR += libretro-tyrquake
-    SUBDIR += libretro-puae
     SUBDIR += libretro-vba_next
     SUBDIR += libretro-vecx
     SUBDIR += libretro-virtualjaguar
@@ -632,6 +630,7 @@
     SUBDIR += minetestmapper
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += mizuma
     SUBDIR += mkhexgrid
     SUBDIR += moagg
     SUBDIR += monsterz
@@ -795,7 +794,7 @@
     SUBDIR += py-cbeams
     SUBDIR += py-discord.py
     SUBDIR += py-fife
-    SUBDIR += py-mnemosyne
+    SUBDIR += py-mnemosyne-proj
     SUBDIR += py-pychess
     SUBDIR += py-pysol-cards
     SUBDIR += py-sgflib
@@ -812,9 +811,9 @@
     SUBDIR += qonk
     SUBDIR += qqwing
     SUBDIR += qstat
+    SUBDIR += quackle
     SUBDIR += quadra
     SUBDIR += quadrapassel
-    SUBDIR += quackle
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
     SUBDIR += quake-source
@@ -948,7 +947,6 @@
     SUBDIR += supertux
     SUBDIR += supertux2
     SUBDIR += supertuxkart
-    SUBDIR += suyimazu
     SUBDIR += swell-foop
     SUBDIR += sxsame
     SUBDIR += tads

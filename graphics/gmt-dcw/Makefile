@@ -1,5 +1,5 @@
 PORTNAME=	dcw-gmt
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \

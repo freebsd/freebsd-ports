@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gmp.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gmp/gmp.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gmp/gmp.ppu

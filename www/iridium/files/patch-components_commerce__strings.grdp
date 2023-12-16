@@ -1,6 +1,6 @@
---- components/commerce_strings.grdp.orig	2023-10-21 11:51:27 UTC
+--- components/commerce_strings.grdp.orig	2023-11-22 14:00:11 UTC
 +++ components/commerce_strings.grdp
-@@ -292,7 +292,7 @@
+@@ -304,7 +304,7 @@
      <message name="IDS_PRICE_HISTORY_DESCRIPTION" desc="The description of the Price History section in the Shopping Insights side panel explaining how the prices are gathered.">
        Typical prices are based on stores across the web over the past 90 days.
      </message>

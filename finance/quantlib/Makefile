@@ -1,6 +1,5 @@
 PORTNAME=	quantlib
-PORTVERSION=	1.31.1
-PORTREVISION=	1
+PORTVERSION=	1.32
 CATEGORIES=	finance math devel
 MASTER_SITES=	http://github.com/lballabio/QuantLib/releases/download/v${PORTVERSION}/
 DISTNAME=	QuantLib-${PORTVERSION}

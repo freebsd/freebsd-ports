@@ -1,8 +1,9 @@
 PORTNAME=	bspwm
 DISTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	o.hushchenkov@gmail.com
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Tiling window manager based on binary space partitioning
 WWW=		https://github.com/baskerville/bspwm
 
@@ -24,9 +25,10 @@ CONFLICTS_INSTALL=  bspwm-devel
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES CONTRIB
-OPTIONS_SUB=	yes
-CONTRIB_DESC=	Install contrib (shell completions, etc.)
+OPTIONS_DEFINE=		DOCS EXAMPLES CONTRIB
+OPTIONS_DEFAULT=	CONTRIB
+OPTIONS_SUB=		yes
+CONTRIB_DESC=		Install contrib (shell completions, etc.)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${BINDIR} ${STAGEDIR}${MANPREFIX}/man/man1

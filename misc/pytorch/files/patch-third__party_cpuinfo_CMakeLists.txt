@@ -1,11 +1,56 @@
---- third_party/cpuinfo/CMakeLists.txt.orig	2022-12-16 00:23:47 UTC
+--- third_party/cpuinfo/CMakeLists.txt.orig	2023-10-16 12:32:17 UTC
 +++ third_party/cpuinfo/CMakeLists.txt
-@@ -77,7 +77,7 @@ IF(NOT CMAKE_SYSTEM_NAME)
+@@ -77,7 +77,7 @@ IF(NOT CMAKE_SYSTEM_PROCESSOR)
+       "cpuinfo will compile, but cpuinfo_initialize() will always fail.")
+     SET(CPUINFO_SUPPORTED_PLATFORM FALSE)
+   ENDIF()
+-ELSEIF(NOT CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|AMD64|x86(_64)?|armv[5-8].*|aarch64|arm64|ARM64)$")
++ELSEIF(NOT CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|amd64|x86(_64)?|armv[5-8].*|aarch64|arm64|ARM64)$")
+   MESSAGE(WARNING
+     "Target processor architecture \"${CPUINFO_TARGET_PROCESSOR}\" is not supported in cpuinfo. "
+     "cpuinfo will compile, but cpuinfo_initialize() will always fail.")
+@@ -89,7 +89,7 @@ IF(NOT CMAKE_SYSTEM_NAME)
        "Target operating system is not specified. "
        "cpuinfo will compile, but cpuinfo_initialize() will always fail.")
    SET(CPUINFO_SUPPORTED_PLATFORM FALSE)
--ELSEIF(NOT CMAKE_SYSTEM_NAME MATCHES "^(Windows|CYGWIN|MSYS|Darwin|Linux|Android)$")
-+ELSEIF(NOT CMAKE_SYSTEM_NAME MATCHES "^(Windows|CYGWIN|MSYS|Darwin|Linux|FreeBSD|Android)$")
+-ELSEIF(NOT CMAKE_SYSTEM_NAME MATCHES "^(Windows|WindowsStore|CYGWIN|MSYS|Darwin|Linux|Android)$")
++ELSEIF(NOT CMAKE_SYSTEM_NAME MATCHES "^(Windows|WindowsStore|CYGWIN|MSYS|Darwin|Linux|FreeBSD|Android)$")
    IF(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.14" AND NOT CMAKE_SYSTEM_NAME STREQUAL "iOS")
      MESSAGE(WARNING
        "Target operating system \"${CMAKE_SYSTEM_NAME}\" is not supported in cpuinfo. "
+@@ -135,7 +135,7 @@ IF(CPUINFO_SUPPORTED_PLATFORM)
+   src/cache.c)
+ 
+ IF(CPUINFO_SUPPORTED_PLATFORM)
+-  IF(NOT CMAKE_SYSTEM_NAME STREQUAL "Emscripten" AND (CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|AMD64|x86(_64)?)$" OR IOS_ARCH MATCHES "^(i386|x86_64)$"))
++  IF(NOT CMAKE_SYSTEM_NAME STREQUAL "Emscripten" AND (CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|amd64|x86(_64)?)$" OR IOS_ARCH MATCHES "^(i386|x86_64)$"))
+     LIST(APPEND CPUINFO_SRCS
+       src/x86/init.c
+       src/x86/info.c
+@@ -341,7 +341,7 @@ IF(CPUINFO_SUPPORTED_PLATFORM AND CPUINFO_BUILD_MOCK_T
+ # ---[ cpuinfo mock library and mock tests
+ IF(CPUINFO_SUPPORTED_PLATFORM AND CPUINFO_BUILD_MOCK_TESTS)
+   SET(CPUINFO_MOCK_SRCS "${CPUINFO_SRCS}")
+-  IF(CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|AMD64|x86(_64)?)$")
++  IF(CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|amd64|x86(_64)?)$")
+     LIST(APPEND CPUINFO_MOCK_SRCS src/x86/mockcpuid.c)
+   ENDIF()
+   IF(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Android")
+@@ -785,7 +785,7 @@ IF(CPUINFO_SUPPORTED_PLATFORM AND CPUINFO_BUILD_UNIT_T
+     ADD_TEST(NAME get-current-test COMMAND get-current-test)
+   ENDIF()
+ 
+-  IF(CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|AMD64|x86(_64)?)$")
++  IF(CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|amd64|x86(_64)?)$")
+     ADD_EXECUTABLE(brand-string-test test/name/brand-string.cc)
+     CPUINFO_TARGET_ENABLE_CXX11(brand-string-test)
+     CPUINFO_TARGET_RUNTIME_LIBRARY(brand-string-test)
+@@ -852,7 +852,7 @@ IF(CPUINFO_SUPPORTED_PLATFORM AND CPUINFO_BUILD_TOOLS)
+     CPUINFO_TARGET_RUNTIME_LIBRARY(cpuinfo-dump)
+   ENDIF()
+ 
+-  IF(CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|AMD64|x86(_64)?)$")
++  IF(CPUINFO_TARGET_PROCESSOR MATCHES "^(i[3-6]86|amd64|x86(_64)?)$")
+     ADD_EXECUTABLE(cpuid-dump tools/cpuid-dump.c)
+     CPUINFO_TARGET_ENABLE_C99(cpuid-dump)
+     CPUINFO_TARGET_RUNTIME_LIBRARY(cpuid-dump)

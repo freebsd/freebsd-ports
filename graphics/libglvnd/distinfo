@@ -1,3 +1,3 @@
-TIMESTAMP = 1669064730
-SHA256 (glvnd-libglvnd-b05bbcdaeb9b700cf7877e6d66f8fc3ac952295b_GL0.tar.gz) = 2a9e8522a383cf47b396214ccb97bacab80e10b2a3bbbfb25e4ec417370e2c72
-SIZE (glvnd-libglvnd-b05bbcdaeb9b700cf7877e6d66f8fc3ac952295b_GL0.tar.gz) = 833460
+TIMESTAMP = 1696772872
+SHA256 (libglvnd-1.7.0.tar.gz) = 13ae5bb99a5a2869fbe00aadb49b21fd9c13dfbf59844b0f88d521098094d44a
+SIZE (libglvnd-1.7.0.tar.gz) = 1940330

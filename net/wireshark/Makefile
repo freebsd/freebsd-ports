@@ -1,5 +1,5 @@
 PORTNAME=	wireshark
-DISTVERSION=	4.0.10
+DISTVERSION=	4.2.0
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -43,14 +43,14 @@ CMAKE_OFF=	ENABLE_ILBC ENABLE_MINIZIP ENABLE_SBC
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_DOXYGEN:BOOL=True \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
 
-OPTIONS_DEFINE=		ANDROIDDUMP DOCS GNUTLS GUI LIBSSH LTO LUA \
+OPTIONS_DEFINE=		ANDROIDDUMP DEVELOPMENT DOCS GNUTLS GUI LIBSSH LTO LUA \
 			MANPAGES MAXMIND RTP SNMP
 .if ${FLAVOR} == nox11
 COMMENT+=		(without GUI)
 OPTIONS_EXCLUDE=	GUI RTP
 .endif
 
-OPTIONS_DEFAULT=	ANDROIDDUMP GNUTLS GSSAPI_BASE GUI MANPAGES MAXMIND \
+OPTIONS_DEFAULT=	ANDROIDDUMP DEVELOPMENT GNUTLS GSSAPI_BASE GUI MANPAGES MAXMIND \
 			RTP SNMP
 OPTIONS_DEFAULT_aarch64=LTO
 OPTIONS_DEFAULT_amd64=	LTO
@@ -59,8 +59,9 @@ OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_SUB=		yes
 
 ANDROIDDUMP_DESC=	Build androiddump extcap tool
+DEVELOPMENT_DESC=	Install development headers and support files
 GNUTLS_DESC=		Enable crypto support for SSL and IPSec via GnuTLS
-GUI_DESC=		Enable Qt 5 based Wireshark GUI
+GUI_DESC=		Enable Qt 6 based Wireshark GUI
 LIBSSH_DESC=		Enable libssh support (req by cisco/ssh/wifidump)
 MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
 RTP_DESC=		Enable codec support for RTP streams (implies GUI)
@@ -78,8 +79,8 @@ GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
 GSSAPI_NONE_CMAKE_BOOL=	ENABLE_KERBEROS
 
-GUI_USES=		desktop-file-utils shared-mime-info qt:5
-GUI_USE=		qt=core,concurrent,gui,multimedia,widgets,printsupport,svg,buildtools:build,linguisttools:build,qmake:build
+GUI_USES=		desktop-file-utils shared-mime-info qt:6
+GUI_USE=		qt=5compat,base,multimedia,svg,tools
 GUI_CONFIGURE_ENV=	PATH="${PATH}:${QT_BINDIR}"
 GUI_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
 GUI_CMAKE_BOOL=		BUILD_wireshark
@@ -120,6 +121,9 @@ post-patch:
 		s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|lua$${LUA_INC_SUFFIX}|lua-${LUA_VER}|g' \
-	    	${WRKSRC}/cmake/modules/FindLUA.cmake
+	    	${WRKSRC}/cmake/modules/FindLua.cmake
+
+post-install-DEVELOPMENT-on:
+	cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${CMAKE_BIN} ${CMAKE_ARGS} -DCOMPONENT=Development -P cmake_install.cmake
 
 .include <bsd.port.mk>

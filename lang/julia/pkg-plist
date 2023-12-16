@@ -38,18 +38,14 @@ include/julia/uv/unix.h
 include/julia/uv/version.h
 lib/julia/libLLVM-14jl.so
 lib/julia/libLLVM.so
-lib/julia/libatomic.so.1
 lib/julia/libblastrampoline.so
 lib/julia/libblastrampoline.so.5
 lib/julia/libblastrampoline.so.5.4.0
 lib/julia/libccalltest.so
 lib/julia/libcurl.so
 lib/julia/libdSFMT.so
-lib/julia/libgcc_s.so.1
-lib/julia/libgfortran.so.5
 lib/julia/libgit2.so
 lib/julia/libgmp.so
-lib/julia/libgomp.so.1
 lib/julia/libjulia-codegen.so
 lib/julia/libjulia-codegen.so.1
 lib/julia/libjulia-codegen.so.%%VERSION%%
@@ -65,10 +61,7 @@ lib/julia/libnghttp2.so
 lib/julia/libopenblas.so
 lib/julia/libopenlibm.so
 lib/julia/libpcre2-8.so
-lib/julia/libquadmath.so.0
 lib/julia/libssh2.so
-lib/julia/libssp.so.0
-lib/julia/libstdc++.so.6
 lib/julia/libuv.so
 lib/julia/libuv.so.2
 lib/julia/libuv.so.2.0.0
@@ -866,6 +859,7 @@ libexec/julia/lld
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasDepWithExtensions.jl/test/runtests.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/Manifest.toml
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/Project.toml
+%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/ext/IndirectArraysExt.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/ext/OffsetArraysExt.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/src/HasExtensions.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/test/runtests.jl
@@ -1290,6 +1284,7 @@ libexec/julia/lld
 %%DATADIR%%/test/broadcast.jl
 %%DATADIR%%/test/cartesian.jl
 %%DATADIR%%/test/ccall.jl
+%%DATADIR%%/test/channel_threadpool.jl
 %%DATADIR%%/test/channels.jl
 %%DATADIR%%/test/char.jl
 %%DATADIR%%/test/checked.jl

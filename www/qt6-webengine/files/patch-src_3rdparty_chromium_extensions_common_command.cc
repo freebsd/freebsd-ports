@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/common/command.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/extensions/common/command.cc.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/extensions/common/command.cc
 @@ -280,7 +280,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;

@@ -1,5 +1,5 @@
 PORTNAME=	sublime-text4
-PORTVERSION=	4155
+PORTVERSION=	4169
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-

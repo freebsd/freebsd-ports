@@ -1,5 +1,5 @@
 PORTNAME=	portconfig
-PORTVERSION=	0.6
+DISTVERSION=	0.6.1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -7,6 +7,7 @@ COMMENT=	Utility to set up FreeBSD port options
 WWW=		https://gitlab.com/alfix/portconfig
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbsddialog.a:devel/bsddialog
 

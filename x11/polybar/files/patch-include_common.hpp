@@ -1,12 +1,12 @@
---- include/common.hpp.orig	2020-12-02 17:15:49 UTC
+--- include/common.hpp.orig	2023-11-05 22:37:13 UTC
 +++ include/common.hpp
-@@ -5,6 +5,9 @@
+@@ -6,6 +6,9 @@
+ #include <type_traits>
  #include <vector>
- #include <functional>
  
 +#include <sys/types.h>
 +#include <unistd.h>
 +
  #include "settings.hpp"
  
- #define POLYBAR_NS    \
+ #define POLYBAR_NS namespace polybar {

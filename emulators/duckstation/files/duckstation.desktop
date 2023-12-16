@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Duckstation
+StartupWMClass=Duckstation
+GenericName=PlayStation Emulator
+Comment=Sony PlayStation emulator
+Exec=duckstation-qt
+Icon=duckstation
+Keywords=game;emulator;
+Categories=Game;Emulator;

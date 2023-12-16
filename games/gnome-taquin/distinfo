@@ -1,5 +1,0 @@
-TIMESTAMP = 1661531577
-SHA256 (gnome/gnome-taquin-3.38.1.tar.xz) = 96db3d8fad497924a7390ad108a3ef72432a1d62d2456cae5e1934057018814f
-SIZE (gnome/gnome-taquin-3.38.1.tar.xz) = 5265440
-SHA256 (gnome/66be44dc20d114e449fc33156e3939fd05dfbb16.diff) = ee8f3a684354e13fcdb033d208347c2ceda15773976bac7d44f53defdfeaf2ab
-SIZE (gnome/66be44dc20d114e449fc33156e3939fd05dfbb16.diff) = 9422

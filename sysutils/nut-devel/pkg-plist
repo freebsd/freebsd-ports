@@ -52,7 +52,7 @@ lib/libnutclientstub.so.1.0.1
 lib/libnutscan.a
 lib/libnutscan.so
 lib/libnutscan.so.2
-lib/libnutscan.so.2.0.2
+lib/libnutscan.so.2.0.3
 %%PYTHON_SITELIBDIR%%/PyNUT.py
 %%PYTHON_SITELIBDIR%%/test_nutclient.py
 %%DEV%%libdata/pkgconfig/libnutclient.pc
@@ -114,6 +114,7 @@ lib/libnutscan.so.2.0.2
 %%SERIAL%%libexec/nut/upscode2
 %%USB%%libexec/nut/usbhid-ups
 %%MODBUS%%libexec/nut/adelsystem_cbi
+%%MODBUS%%libexec/nut/apc_modbus
 %%MODBUS%%libexec/nut/generic_modbus
 %%MODBUS%%libexec/nut/huawei-ups2000
 %%MODBUS%%libexec/nut/phoenixcontact_modbus
@@ -213,6 +214,7 @@ lib/libnutscan.so.2.0.2
 %%MANPAGES%%man/man8/nutupsdrv.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/riello_ser.8.gz
 %%MANPAGES%%%%USB%%man/man8/riello_usb.8.gz
+%%MANPAGES%%%%MODBUS%%man/man8/apc_modbus.8.gz
 %%MANPAGES%%%%MODBUS%%man/man8/adelsystem_cbi.8.gz
 %%MANPAGES%%%%MODBUS%%man/man8/generic_modbus.8.gz
 %%MANPAGES%%%%MODBUS%%man/man8/huawei-ups2000.8.gz

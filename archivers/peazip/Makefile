@@ -1,5 +1,6 @@
 PORTNAME=	peazip
 PORTVERSION=	9.4.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -12,7 +13,6 @@ WWW=		https://peazip.github.io
 LICENSE=	LGPL3
 
 USES=		cpe desktop-file-utils dos2unix fpc lazarus:flavors zip xorg
-USE_FPC=	cairo chm fcl-base fcl-image fcl-xml pasjpeg rtl-objpas x11
 USE_XORG=	x11
 
 CPE_VENDOR=	giorgio_tani

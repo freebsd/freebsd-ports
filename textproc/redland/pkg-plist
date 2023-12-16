@@ -32,8 +32,6 @@ lib/librdf.so.0.0.0
 %%PGSQL%%lib/redland/librdf_storage_postgresql.so
 %%SQLITE%%lib/redland/librdf_storage_sqlite.a
 %%SQLITE%%lib/redland/librdf_storage_sqlite.so
-%%VIRTUOSO%%lib/redland/librdf_storage_virtuoso.a
-%%VIRTUOSO%%lib/redland/librdf_storage_virtuoso.so
 libdata/pkgconfig/redland.pc
 man/man1/rdfproc.1.gz
 man/man1/redland-config.1.gz
@@ -91,6 +89,6 @@ share/gtk-doc/html/redland/style.css
 share/gtk-doc/html/redland/tutorial-introduction.html
 share/gtk-doc/html/redland/tutorial.html
 share/gtk-doc/html/redland/up.png
-%%MYSQL%%share/redland/mysql-v1.ttl
-%%MYSQL%%share/redland/mysql-v2.ttl
+%%MYSQL%%%%DATADIR%%/mysql-v1.ttl
+%%MYSQL%%%%DATADIR%%/mysql-v2.ttl
 %%DATADIR%%/Redland.i

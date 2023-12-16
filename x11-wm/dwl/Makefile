@@ -1,11 +1,12 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4
+DISTVERSION=	0.5
 CATEGORIES=	x11-wm wayland
+MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	dwm for Wayland
-WWW=		https://github.com/djpohly/dwl
+WWW=		https://codeberg.org/dwl/dwl
 
 LICENSE=	CC0-1.0 GPLv3+ MIT
 LICENSE_COMB=	multi
@@ -15,15 +16,14 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.dwm
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.16.0:x11-toolkits/wlroots
+		wlroots>=0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gmake pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	djpohly
+WRKSRC=		${WRKDIR}/${PORTNAME}
 EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
 MAKE_ARGS=	VERSION="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
@@ -59,11 +59,16 @@ post-extract:
 		${LN} -fs "${${PORTNAME:tu}_CONF}" ${WRKSRC}/config.h; \
 	fi
 
+post-patch:
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275328
+	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE=200809L/_XOPEN_SOURCE=700/' \
+		${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/wayland-sessions
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/wayland-sessions
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" \
 		${STAGEDIR}${DOCSDIR})

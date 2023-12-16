@@ -1,15 +1,15 @@
 PORTNAME=	freehdl
-PORTVERSION=	0.0.7
-PORTREVISION=	10
+PORTVERSION=	0.0.8
 CATEGORIES=	cad
-MASTER_SITES=	http://freehdl.seul.org/~enaroska/
+MASTER_SITES=	SF/qucs/qucs/0.0.16/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free VHDL simulator
 WWW=		http://www.freehdl.seul.org/
 
-DEPRECATED=	Upstream vaporized and SF site do not have dists anymore
-EXPIRATION_DATE=	2023-11-21
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	guile:lang/guile
 
 USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
 # Bug 219297: GCC 6 changed its default from -std=gnu++98 to -std=gnu++14, and

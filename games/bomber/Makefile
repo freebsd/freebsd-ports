@@ -8,9 +8,9 @@ WWW=		https://www.kde.org/applications/games/bomber/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
-		i18n kio libkdegames widgetsaddons xmlgui \
+		i18n kio libkdegames phonon widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus declarative gui network widgets phonon4 xml \
+USE_QT=		core dbus declarative gui network widgets xml \
 		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS

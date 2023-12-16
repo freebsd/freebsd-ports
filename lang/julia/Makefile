@@ -1,6 +1,6 @@
 PORTNAME=	julia
-DISTVERSION=	1.9.3
-PORTREVISION=	2
+DISTVERSION=	1.9.4
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -18,8 +18,10 @@ ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 MY_DEPENDS=	7zz:archivers/7-zip
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 		cmake:devel/cmake-core \
+		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}	\
 		${MY_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libdSFMT.so:math/dsfmt \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
 		libmbedtls.so:security/mbedtls \
@@ -30,9 +32,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnghttp2.so:www/libnghttp2 \
 		libunwind.so:devel/libunwind \
 		libopenlibm.so:math/openlibm
-RUN_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS} \
+		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
 
-USES=		gmake cpe fortran python perl5 blaslapack:openblas
+BUILD_DEPENDS_amd64=	ittapi>0:devel/ittapi
+BUILD_DEPENDS_i386=	ittapi>0:devel/ittapi
+
+# Do not set USES=fortran to avoid extra-linkage
+USES=		gmake cpe python perl5 blaslapack:openblas
+_GCC_VER=	${GCC_DEFAULT:S/.//}
 
 CPE_VENDOR=	julialang
 
@@ -47,6 +55,7 @@ MAKE_ARGS+=	NO_GIT=1 \
 		ARCH=x86_64 \
 		JULIA_CPU_TARGET=generic \
 		USE_SYSTEM_CURL=1 \
+		USE_SYSTEM_DSFMT=1 \
 		USE_SYSTEM_GMP=1 \
 		USE_SYSTEM_OPENLIBM=1 \
 		USE_SYSTEM_LAPACK=1 \
@@ -89,17 +98,21 @@ DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
 
 DOCS_VARS=		INSTALL_TARGET+=install-docs
 
-post-patch:
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+MAKE_ARGS+=	USE_SYSTEM_ITTAPI=1
+.endif
+
+pre-configure:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
 	# unset ARCH for auto-detection
 	# Julia build script uses the name x86_86/x86, which are different from ports framework
 	echo "ARCH=" >> ${WRKSRC}/Make.user
-	echo "LIBBLAS=-lopenblas -L${LOCALBASE}/lib" >> ${WRKSRC}/Make.user
+	echo "LIBBLAS= -L${LOCALBASE}/lib -lopenblas" >> ${WRKSRC}/Make.user
 	echo "LIBBLASNAME=libopenblas" >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACK= $$(LIBBLAS)' >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACKNAME= $$(LIBBLASNAME)' >> ${WRKSRC}/Make.user
-
-post-configure:
 	${CC} ${CFLAGS} -lopenblas ${LDFLAGS} -o ${WRKSRC}/check_openblas \
 		${FILESDIR}/check_openblas.c
 	${WRKSRC}/check_openblas && ( \
@@ -124,15 +137,14 @@ post-install:
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
-.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
+.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
 .for bin in lld dsymutil
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/julia/${bin}
 .endfor
-	${FIND} ${STAGEDIR}${PREFIX}/share/julia/compiled -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

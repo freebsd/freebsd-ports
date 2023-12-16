@@ -2,6 +2,8 @@
 /packages
 /security/vuxml/vuln-flat.xml
 Makefile.local
+Mk/bsd.local.mk
+Mk/bsd.overlay.mk
 /*/*/work
 /*/*/work-*
 /INDEX-[0-9]*

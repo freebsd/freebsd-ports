@@ -1,18 +1,10 @@
---- src/3rdparty/chromium/net/dns/dns_reloader.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/net/dns/dns_reloader.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/net/dns/dns_reloader.cc
-@@ -6,7 +6,7 @@
+@@ -10,6 +10,7 @@
+ // - there's not guarantee it exists at all. :(
+ #if BUILDFLAG(IS_POSIX)
  
- #include "build/build_config.h"
- 
--#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_OPENBSD) && \
-+#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD) && \
-     !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_FUCHSIA)
- 
++#include <netinet/in.h>
  #include <resolv.h>
-@@ -113,5 +113,5 @@ void DnsReloaderMaybeReload() {
  
- }  // namespace net
- 
--#endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_OPENBSD)
-+#endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD) &&
-         // && !BUILDFLAG(IS_ANDROID)
+ // This code only works on systems where the C library provides res_ninit(3) and

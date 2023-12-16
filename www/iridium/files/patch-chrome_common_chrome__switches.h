@@ -1,6 +1,6 @@
---- chrome/common/chrome_switches.h.orig	2023-10-21 11:51:27 UTC
+--- chrome/common/chrome_switches.h.orig	2023-11-22 14:00:11 UTC
 +++ chrome/common/chrome_switches.h
-@@ -269,12 +269,12 @@ extern const char kAllowNaClSocketAPI[];
+@@ -273,12 +273,12 @@ extern const char kAllowNaClSocketAPI[];
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

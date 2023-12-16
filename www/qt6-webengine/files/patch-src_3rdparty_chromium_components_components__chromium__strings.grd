@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/components/components_chromium_strings.grd.orig	2023-02-08 09:03:45 UTC
++++ src/3rdparty/chromium/components/components_chromium_strings.grd
+@@ -220,7 +220,7 @@
+         </message>
+       </if>
+       <!-- The ChromeOS version of this string is defined in //components/error_page_strings.grdp. -->
+-      <if expr="is_linux">
++      <if expr="is_posix">
+         <message name="IDS_ERRORPAGES_SUGGESTION_PROXY_DISABLE_PLATFORM" desc="Linux instructions for disabling use of a proxy server.">
+           Go to
+           the Chromium menu &gt;

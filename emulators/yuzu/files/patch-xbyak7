@@ -1,0 +1,26 @@
+CMake Warning at CMakeLists.txt:313 (find_package):
+  Could not find a configuration file for package "xbyak" that is compatible
+  with requested version "6".
+
+  The following configuration files were considered but not accepted:
+
+    /usr/local/lib/cmake/xbyak/xbyak-config.cmake, version: 7.0
+
+CMake Error at externals/CMakeLists.txt:19 (add_subdirectory):
+  The source directory
+
+    externals/xbyak
+
+  does not contain a CMakeLists.txt file.
+
+--- CMakeLists.txt.orig	2023-12-04 02:59:11 UTC
++++ CMakeLists.txt
+@@ -310,7 +310,7 @@
+ endif()
+ 
+ if (ARCHITECTURE_x86 OR ARCHITECTURE_x86_64)
+-    find_package(xbyak 6 CONFIG)
++    find_package(xbyak CONFIG)
+ endif()
+ 
+ if (ARCHITECTURE_x86_64 OR ARCHITECTURE_arm64)

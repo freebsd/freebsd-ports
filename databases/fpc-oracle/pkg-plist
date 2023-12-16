@@ -1,9 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/oracle.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oci.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oci.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/ocidyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/ocidyn.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oraoci.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oraoci.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oratypes.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oratypes.ppu

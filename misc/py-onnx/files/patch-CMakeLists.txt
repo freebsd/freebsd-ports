@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-04-12 23:29:41 UTC
+--- CMakeLists.txt.orig	2023-08-08 18:33:06 UTC
 +++ CMakeLists.txt
 @@ -18,7 +18,7 @@ project(onnx C CXX)
  option(ONNX_BUILD_BENCHMARKS "Build ONNX micro-benchmarks" OFF)
@@ -9,3 +9,12 @@
  option(ONNX_GEN_PB_TYPE_STUBS "Generate protobuf python type stubs" ON)
  option(ONNX_WERROR "Build with Werror" OFF)
  option(ONNX_COVERAGE "Build with coverage instrumentation" OFF)
+@@ -58,7 +58,7 @@ endif()
+ # Required to use /std:c++17 or higher on Windows
+ # For other platforms, set C++11 as standard for the whole project
+ if(NOT MSVC)
+-  set(CMAKE_CXX_STANDARD 11)
++  set(CMAKE_CXX_STANDARD 17)
+ else()
+   string(APPEND CMAKE_CXX_FLAGS " /std:c++17")
+ endif()

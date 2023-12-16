@@ -1,6 +1,5 @@
 PORTNAME=	libcmis
-PORTVERSION=	0.5.2
-PORTREVISION=	9
+PORTVERSION=	0.6.2
 CATEGORIES=	net devel
 MASTER_SITES=	https://github.com/tdf/libcmis/releases/download/v${PORTVERSION}/ \
 		https://dev-www.libreoffice.org/src/
@@ -28,7 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	MAJVER=${PORTVERSION:R}
+PLIST_SUB=	MAJVER=${PORTVERSION:R} SHLIBVER=${PORTVERSION:R:E}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|@WITH_LIBCMIS_MAN_FALSE@|#|g" \

@@ -216,6 +216,10 @@ lib/libolaespnet.a
 lib/libolaespnet.so
 lib/libolaespnet.so.0
 lib/libolaespnet.so.0.0.0
+lib/libolaftdidmx.a
+lib/libolaftdidmx.so
+lib/libolaftdidmx.so.0
+lib/libolaftdidmx.so.0.0.0
 lib/libolagpio.a
 lib/libolagpio.so
 lib/libolagpio.so.0

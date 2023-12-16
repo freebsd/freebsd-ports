@@ -1,7 +1,6 @@
 PORTNAME=	grpc
-PORTVERSION=	1.54.2
+PORTVERSION=	1.60.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 
@@ -24,7 +23,7 @@ USES=		cmake compiler:c++17-lang cpe localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_TUPLE=	census-instrumentation:opencensus-proto:v0.4.1:census_instrumentation_opencensus_proto/third_party/opencensus-proto/src \
-		cncf:xds:32f1caf:cncf_xds/third_party/xds
+		cncf:xds:0fa0005:cncf_xds/third_party/xds
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
@@ -34,8 +33,17 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_RE2_PROVIDER=package \
 		-DgRPC_SSL_PROVIDER=package \
 		-DgRPC_ZLIB_PROVIDER=package
-CMAKE_OFF=	gRPC_BACKWARDS_COMPATIBILITY_MODE gRPC_BUILD_TESTS
-CMAKE_ON=	BUILD_SHARED_LIBS gRPC_BUILD_CODEGEN gRPC_BUILD_CSHARP_EXT gRPC_BUILD_GRPC_CPP_PLUGIN gRPC_BUILD_GRPC_CSHARP_PLUGIN gRPC_BUILD_GRPC_NODE_PLUGIN gRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN gRPC_BUILD_GRPC_PHP_PLUGIN gRPC_BUILD_GRPC_PYTHON_PLUGIN gRPC_BUILD_GRPC_RUBY_PLUGIN
+CMAKE_OFF=	gRPC_BACKWARDS_COMPATIBILITY_MODE \
+		gRPC_BUILD_TESTS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		gRPC_BUILD_CODEGEN \
+		gRPC_BUILD_GRPC_CPP_PLUGIN \
+		gRPC_BUILD_GRPC_CSHARP_PLUGIN \
+		gRPC_BUILD_GRPC_NODE_PLUGIN \
+		gRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN \
+		gRPC_BUILD_GRPC_PHP_PLUGIN \
+		gRPC_BUILD_GRPC_PYTHON_PLUGIN \
+		gRPC_BUILD_GRPC_RUBY_PLUGIN
 USE_CSTD=	c11
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
@@ -60,6 +68,8 @@ post-patch:
 	@${RM} -r ${WRKSRC}/third_party/cares/
 	@${RM} -r ${WRKSRC}/third_party/protobuf/
 	@${RM} -r ${WRKSRC}/third_party/re2/
+	#@${RM} -r ${WRKSRC}/third_party/upb/
+	#@${RM} -r ${WRKSRC}/third_party/utf8_range/
 	@${RM} -r ${WRKSRC}/third_party/xxhash/
 	@${RM} -r ${WRKSRC}/third_party/zlib/
 

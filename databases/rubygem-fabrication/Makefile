@@ -1,5 +1,5 @@
 PORTNAME=	fabrication
-PORTVERSION=	2.30.0
+PORTVERSION=	2.31.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

@@ -1,0 +1,77 @@
+--- ddclient.in.orig	2023-10-25 19:22:47 UTC
++++ ddclient.in
+@@ -20,6 +20,7 @@ use File::Path qw(make_path);
+ use File::Temp;
+ use Getopt::Long;
+ use Sys::Hostname;
++use POSIX 'setsid';
+ 
+ use version 0.77; our $VERSION = version->declare('3.11.1');
+ my $version = $VERSION->stringify();
+@@ -39,9 +40,9 @@ sub subst_var {
+     return $subst;
+ }
+ 
+-my $etc = subst_var('@sysconfdir@', '/etc/ddclient');
+-my $cachedir = subst_var('@localstatedir@', '/var') . '/cache/ddclient';
+-my $savedir = '/tmp';
++my $etc = subst_var('@sysconfdir@', '/usr/local/etc');
++my $cachedir = subst_var('@localstatedir@', '/var') . '/tmp';
++my $savedir = '/var/tmp';
+ if ($program =~ /test/i) {
+     $etc = '.';
+     $cachedir = '.';
+@@ -59,7 +60,7 @@ use vars qw($file $lineno);
+ local $file   = '';
+ local $lineno = '';
+ 
+-$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/sbin:/bin:/usr/bin:/etc:/usr/lib:";
++$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/local/sbin:/bin:";
+ 
+ our %globals;
+ my ($result, %config, %cache);
+@@ -1131,6 +1132,9 @@ sub main {
+         ;
+     } elsif (opt('daemon')) {
+         $SIG{'CHLD'} = 'IGNORE';
++        chdir '/';
++        open(STDIN,  "</dev/null");
++        open(STDOUT, ">/dev/null");
+         my $pid = fork;
+         if ($pid < 0) {
+             print STDERR "${program}: can not fork ($!)\n";
+@@ -1138,10 +1142,9 @@ sub main {
+         } elsif ($pid) {
+             exit 0;
+         }
++        setsid;
+         $SIG{'CHLD'} = 'DEFAULT';
+-        open(STDOUT, ">/dev/null");
+-        open(STDERR, ">/dev/null");
+-        open(STDIN,  "</dev/null");
++        open(STDERR, "&STDOUT");
+         write_pid();
+     }
+ 
+@@ -2164,17 +2167,17 @@ sub pipecmd {
+     ## execute the command.
+     local *FD;
+     if (!open(FD, $cmd)) {
+-        printf STDERR "%s: cannot execute command %s.\n", $program, $cmd;
++	warning("$program: cannot execute command %s.\n", $cmd);
+ 
+     } elsif ($stdin && (!print FD "$stdin\n")) {
+-        printf STDERR "%s: failed writting to %s.\n", $program, $cmd;
++	warning("$program: failed writing to %s.\n", $cmd);
+         close(FD);
+ 
+     } elsif (!close(FD)) {
+-        printf STDERR "%s: failed closing %s.(%s)\n", $program, $cmd, $@;
++	warning("$program: failed closing %s.($@)\n", $cmd);
+ 
+     } elsif (opt('exec') && $?) {
+-        printf STDERR "%s: failed %s. (%s)\n", $program, $cmd, $@;
++	warning("$program: failed %s. ($@)\n", $cmd);
+ 
+     } else {
+         $ok = 1;

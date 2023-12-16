@@ -1,6 +1,5 @@
 PORTNAME=	aiortc
-PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTVERSION=	1.6.0
 CATEGORIES=	devel multimedia python www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,8 @@ WWW=		https://github.com/aiortc/aiortc/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libopus.so:audio/opus \
 		libvpx.so:multimedia/libvpx
 RUN_DEPENDS=	${PYNUMPY} \

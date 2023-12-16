@@ -11,6 +11,9 @@ WWW=		https://tmake.sourceforge.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Last release in 2004 and dead upstream, superseded by qmake
+EXPIRATION_DATE=2023-12-31
+
 USES=		perl5 shebangfix zip
 
 NO_ARCH=	yes

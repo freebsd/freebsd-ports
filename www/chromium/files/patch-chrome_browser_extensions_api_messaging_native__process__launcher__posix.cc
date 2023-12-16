@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc
-@@ -82,7 +82,7 @@ bool NativeProcessLauncher::LaunchNativeProcess(
+@@ -84,7 +84,7 @@ bool NativeProcessLauncher::LaunchNativeProcess(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

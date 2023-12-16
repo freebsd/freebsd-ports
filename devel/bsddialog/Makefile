@@ -1,5 +1,5 @@
 PORTNAME=	bsddialog
-PORTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
@@ -7,6 +7,7 @@ COMMENT=	Text User Interface Widgets
 WWW=		https://gitlab.com/alfix/bsddialog
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix

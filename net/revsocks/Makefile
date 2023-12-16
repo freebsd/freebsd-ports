@@ -1,6 +1,7 @@
 PORTNAME=	revsocks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5
+DISTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,6 +23,7 @@ GH_TUPLE=	Jeffail:tunny:v0.1.4:jeffail_tunny/vendor/github.com/Jeffail/tunny \
 		golang:net:v0.17.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.13.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.9.1:golang_tools/vendor/golang.org/x/tools \
 		hashicorp:yamux:v0.1.1:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		kost:chashell:cf0fbd106275:kost_chashell/vendor/github.com/kost/chashell \

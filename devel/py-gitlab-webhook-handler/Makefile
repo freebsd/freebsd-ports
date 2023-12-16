@@ -1,7 +1,8 @@
 PORTNAME=	gitlab-webhook-handler
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gwh-${DISTVERSION}
 
@@ -12,7 +13,7 @@ WWW=		https://github.com/ahebrank/gitlab-webhook-handler
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=1.0:www/py-flask@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=1.0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.19.0:www/py-requests@${PY_FLAVOR}
 
 USES=		cpe python

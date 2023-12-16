@@ -16,7 +16,6 @@ NOT_FOR_ARCHS=	i386
 BROKEN_armv6=	fails to package: cp: bazel: No such file or directory
 BROKEN_armv7=	fails to package: cp: bazel: No such file or directory
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io.IOException: Cannot run program /usr/bin/clang
-BROKEN_FreeBSD_14=	__builtin_offsetof is a Clang extension
 
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip

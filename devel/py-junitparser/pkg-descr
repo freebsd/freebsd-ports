@@ -1,0 +1,3 @@
+junitparser handles JUnit/xUnit Result XML files.
+Use it to parse and manipulate existing Result XML files,
+or create new JUnit/xUnit result XMLs from scratch.

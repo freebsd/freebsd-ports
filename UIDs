@@ -274,7 +274,6 @@ dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
 _reticulum:*:327:327::0:0:Reticulum Daemon:/nonexistent:/usr/sbin/nologin
 galene:*:328:328::0:0:Galene Visioconference server:/nonexistent:/usr/sbin/nologin
-# free: 328
 # free: 329
 orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
 # free: 331
@@ -763,7 +762,7 @@ foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:
 hitch:*:813:813::0:0:Hitch TLS Proxy:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
 uchiwa:*:815:815::0:0:Uchiwa Dashboard:/nonexistent:/usr/sbin/nologin
-promtail:*:816:967::0:0:Promtail:/var/db/promtail:/usr/sbin/nologin
+promtail:*:816:968::0:0:Promtail:/var/db/promtail:/usr/sbin/nologin
 rslsync:*:817:817::0:0:Resilio Sync Daemon:/nonexistent:/usr/sbin/nologin
 jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
 rundeck:*:819:819::0:0:Rundeck:/usr/local/rundeck:/bin/sh

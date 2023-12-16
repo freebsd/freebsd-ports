@@ -23,6 +23,12 @@ bin/exomizer
 %%DATADIR%%/exodecrs/exodecrunch.s
 %%DATADIR%%/exodecrs/exostreamdecr1.s
 %%DATADIR%%/exodecrs/exostreamdecr2.s
+%%DATADIR%%/exodecrs/kick/Makefile
+%%DATADIR%%/exodecrs/kick/exodecrunch.asm
+%%DATADIR%%/exodecrs/kick/main.asm
+%%DATADIR%%/exodecrs/kick/split/Makefile
+%%DATADIR%%/exodecrs/kick/split/data.asm.template
+%%DATADIR%%/exodecrs/kick/split/main.asm
 %%DATADIR%%/exodecrs/main.s
 %%DATADIR%%/exodecrs/main1.s
 %%DATADIR%%/exodecrs/main2.s

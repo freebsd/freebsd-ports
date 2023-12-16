@@ -1,25 +1,11 @@
-core/cmake/modules/FindLQR-1.cmake fails to find LQR in the linking test
-because the path to the library is not passed to the linker. This could
-be addressed by running what pkg_check_modules() finds through find_library()
-first or rewriting the module to avoid using pkgconf all together.
-
-The local workaround is to set USES+=localbase:ldflags to avoid extra patches.
-
---- core/CMakeLists.txt.orig	2023-07-14 21:16:22 UTC
+--- core/CMakeLists.txt.orig	2023-11-29 09:52:21 UTC
 +++ core/CMakeLists.txt
-@@ -142,13 +142,13 @@ find_package(Doxygen)
- 
- find_package(Doxygen)
- 
--if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-+#if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
- 
-     # Lqr-1 packaging and detection under FreeBSD is problematic since a very long time and break the Gitlab CI
- 
-     find_package(LQR-1)
- 
--endif()
-+#endif()
- 
- if(BUILD_WITH_CCACHE)
- 
+@@ -270,7 +270,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "htt
+ PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/doxygen"                              "(version >= 1.8.0)"                    "digiKam will be compiled without API documentation building support."        Doxygen_FOUND)
+ PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
+ PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
+-PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
++PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+ PRINT_OPTIONAL_LIBRARY_STATUS("libimagemagick"    "https://github.com/ImageMagick/ImageMagick.git"                  "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
+ PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
+ PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto/libgphoto2"                            "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)

@@ -1,11 +1,11 @@
---- soqt-config.cmake.in.orig	2020-01-15 22:42:50 UTC
-+++ soqt-config.cmake.in
+--- soqt-config.cmake.in.orig	2023-11-20 23:22:12.026499000 +0100
++++ soqt-config.cmake.in	2023-11-20 23:22:23.359003000 +0100
 @@ -26,7 +26,7 @@
  
  include(CMakeFindDependencyMacro)
  
--find_dependency(Coin REQUIRED)
-+find_dependency(Coin3D REQUIRED)
+-find_dependency(Coin)
++find_dependency(Coin3D)
  
- set(_have_qt5 @Qt5_FOUND@)
- set(_have_qt4 @Qt4_FOUND@)
+ set(@PROJECT_NAME@_HAVE_QT6 @Qt6_FOUND@)
+ set(@PROJECT_NAME@_HAVE_QT5 @Qt5_FOUND@)

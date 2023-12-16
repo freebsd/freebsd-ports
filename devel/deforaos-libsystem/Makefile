@@ -1,8 +1,7 @@
 PORTNAME=	libsystem
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.defora.org/os/download/download/4446/
+MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/System/src/libSystem/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libSystem-${PORTVERSION}
 
@@ -10,7 +9,7 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS core system library
 WWW=		https://www.defora.org/
 
-LICENSE=	LGPL3
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig ssl
@@ -30,15 +29,10 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 post-patch:
 	${REINPLACE_CMD} 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh
-	${REINPLACE_CMD} 's|CFLAGS=|CFLAGS+=|' \
+	${REINPLACE_CMD} 's|CFLAGS	=|CFLAGS+=|' \
 		${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} 's|CPPFLAGS=|CPPFLAGS+=|' \
 		${WRKSRC}/src/Makefile
-	${REINPLACE_CMD} 's|_fail "python.sh"|#_fail "python.sh"|' \
-		${WRKSRC}/tests/tests.sh
-	${REINPLACE_CMD} 's|-Wl,-pie||g' \
-		${WRKSRC}/tools/Makefile \
-		${WRKSRC}/tests/Makefile
 	${REINPLACE_CMD} -e 's|$$(INSTALL)|#$${INSTALL}|' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|$$(MKDIR) $$(DESTDIR)$$(PREFIX)/share/doc/| \
 		#$$(MKDIR) $$(DESTDIR)$$(PREFIX)/share/doc/|' ${WRKSRC}/Makefile
@@ -53,6 +47,6 @@ post-patch-DOCS-off:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/configctl \
-		${STAGEDIR}${PREFIX}/lib/libSystem.so.0.0
+		${STAGEDIR}${PREFIX}/lib/libSystem.so.1.0
 
 .include <bsd.port.mk>

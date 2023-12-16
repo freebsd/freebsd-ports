@@ -1,4 +1,4 @@
---- chrome/common/webui_url_constants.cc.orig	2023-10-21 11:51:27 UTC
+--- chrome/common/webui_url_constants.cc.orig	2023-11-22 14:00:11 UTC
 +++ chrome/common/webui_url_constants.cc
 @@ -499,18 +499,18 @@ const char kOsUIShortcutCustomizationAppURL[] = "os://
  const char kOsUIVersionURL[] = "os://version";
@@ -48,7 +48,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
-@@ -631,7 +631,7 @@ const char kPrivacySandboxSubPagePath[] = "/privacySan
+@@ -636,7 +636,7 @@ const char kCookiesSubPagePath[] = "/cookies";
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -57,7 +57,7 @@
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -865,7 +865,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -869,7 +869,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

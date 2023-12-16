@@ -1,0 +1,11 @@
+--- caffe2/CMakeLists.txt.orig	2023-05-08 19:58:16 UTC
++++ caffe2/CMakeLists.txt
+@@ -1,6 +1,8 @@
+ # ---[ Generate and install header and cpp files
+ include(../cmake/Codegen.cmake)
+ 
++set(CMAKE_CXX_STANDARD 17)
++
+ # ---[ Vulkan code gen
+ if(USE_VULKAN)
+   include(../cmake/VulkanCodegen.cmake)

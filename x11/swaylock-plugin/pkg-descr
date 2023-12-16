@@ -1,0 +1,12 @@
+This is a fork of swaylock, a screen locking utility for Wayland
+compositors. With swaylock-plugin, you can for your lockscreen
+background display the animated output from any wallpaper program that
+implements the wlr-layer-shell-unstable-v1 protocol. All you have to
+do is run "swaylock-plugin --command 'my-wallpaper ...'", where
+"my-wallpaper ..." is replaced by your desired program. Examples:
+
+* swaybg, which displays regular background images
+* mpvpaper, which lets you play videos
+* shaderbg, renders OpenGL shaders
+* rwalkbg, a very slow animation
+* wscreensaver, an experiment in porting a few xscreensaver hacks to Wayland

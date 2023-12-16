@@ -11,23 +11,69 @@
 #				Set it to YES to enable owntone.
 # owntone_config (path):	Set to %%PREFIX%%/etc/owntone.conf
 #				by default.
-# owntone_flags (str):	Set to "" by default
+# owntone_flags (str):		Set to "" by default
+#
+# for mutiple profiles create an symlink
+# cd %%PREFIX%%/etc/rc.d/ && ln -s owntone NAME
+# and set this lines:
+#
+# NAME_enable (bool):		Set to NO by default.
+#				Set it to YES to enable owntone.
+# NAME_config="/usr/local/etc/owntone/NAME.conf"    # config file
+# NAME_flags (str):		Set to "" by default
 
 . /etc/rc.subr
 
-name=owntone
+# service(8) does not create an authentic environment, try to guess,
+# and as of 10.3-RELEASE-p0, it will not find the indented name
+# assignments below. So give it a default.
+# Trailing semicolon also for service(8)'s benefit:
+name="$file" ;
 rcvar=${name}_enable
 
-load_rc_config $name
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name="$_file"
+	;;
+*/service)
+	# do not use this as $0
+	;;
+*)
+	name="$0"
+	;;
+esac
 
-: ${owntone_enable:="NO"}
-: ${owntone_config:="%%PREFIX%%/etc/owntone.conf"}
-: ${owntone_flags:=""}
+# default name to "owntone" if guessing failed
+# Trailing semicolon also for service(8)'s benefit:
+name="${name:-owntone}" ;
+name="${name##*/}"
+rcvar=${name}_enable
 
-pidfile="/var/run/owntone.pid"
-required_files="$owntone_config"
+stop_postcmd()
+{
+	rm -f "$pidfile" || warn "Could not remove $pidfile."
+}
 
-command="%%PREFIX%%/sbin/owntone"
-command_args="-P $pidfile -c $owntone_config $owntone_flags"
+# pidfile
+pidfile="/var/run/${name}.pid"
+
+# command and arguments
+command="/usr/local/sbin/owntone"
+
+# run this last
+stop_postcmd="stop_postcmd"
+
+load_rc_config ${name}
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_config:=\"/usr/local/etc/${name}.conf\"}"
+
+config="$(eval echo \${${name}_config})"
+flags="$(eval echo \${${name}_flags})"
+
+required_files=${config}
+
+command_args="-P ${pidfile} -c ${config} ${flags}"
 
 run_rc_command "$1"

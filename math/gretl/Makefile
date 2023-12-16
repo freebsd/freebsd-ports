@@ -1,5 +1,5 @@
 PORTNAME=	gretl
-PORTVERSION=	2023b
+PORTVERSION=	2023c
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -51,14 +51,13 @@ ATLAS_VARS_OFF=		BLAS=-lblas LAPACK=-llapack
 GUI_DESC=		Graphical user interface and plugins
 GUI_CONFIGURE_ON=	--enable-gui=yes
 GUI_CONFIGURE_OFF=	--enable-gui=no --enable-xdg=no
-GUI_USE=		GNOME=cairo,gtksourceview3,gdkpixbuf2
+GUI_USE=		GNOME=cairo,gtksourceview4,gdkpixbuf2
 GUI_USE_OFF=		GNOME=glib20,libxml2
 GUI_VARS=		GTK_VER=3
 GUI_VARS_OFF=		GTK_VER=2
 GUI_USES=		desktop-file-utils shared-mime-info
 GUI_BUILD_DEPENDS=	gnuplot:math/gnuplot
-GUI_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libfontconfig.so:x11-fonts/fontconfig
+GUI_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 GUI_RUN_DEPENDS=	gnuplot:math/gnuplot
 
 MPI_CONFIGURE_WITH=	mpi

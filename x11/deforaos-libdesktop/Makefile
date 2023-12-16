@@ -1,8 +1,7 @@
 PORTNAME=	libdesktop
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.defora.org/os/download/download/4447/
+MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/libDesktop/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libDesktop-${PORTVERSION}
 
@@ -13,11 +12,14 @@ WWW=		https://www.defora.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+				libharfbuzz.so:print/harfbuzz \
+				libX11.so:x11/libX11
 
 USES=		gnome pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk30 cairo gdkpixbuf2
 USE_LDCONFIG=	yes
+USE_XORG+=	x11
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 
@@ -31,7 +33,6 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh
-	${REINPLACE_CMD} 's|-Wl,-pie||g' ${WRKSRC}/tools/Makefile
 	${REINPLACE_CMD} -e '/^SUBDIRS/ s|tests||' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|./docbook.sh -P "$$(DESTDIR)$$(PREFIX)" -i -- "$$(OBJDIR)widget.html"| \
 		#./docbook.sh -P "$$(DESTDIR)$$(PREFIX)" -i -- "$$(OBJDIR)widget.html"|' \

@@ -11,7 +11,7 @@ WWW=		https://github.com/hmatuschek/sdr-wspr
 LICENSE=	GPLv3
 
 DEPRECATED=		Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_14=	fails to build: non-floating-point argument in call to function '__builtin_isfinite'
 
 LIB_DEPENDS=	libsdr-gui.so:comms/libsdr-gui

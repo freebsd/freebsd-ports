@@ -5,18 +5,16 @@ CATEGORIES=	games
 MASTER_SITES=	LOCAL/alepulver
 DISTNAME=	NehQuake-bjp-bin-src.linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake engine designed for playing Nehahra
-WWW=		http://planetquake.com/nehahra/
+WWW=		https://quakewiki.org/wiki/Nehahra \
+		https://www.quaddicted.com/reviews/nehahra.html
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: sb_lines
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: sb_lines
-DEPRECATED= Fails to build, abandoned upstream and marked broken over a year go
-EXPIRATION_DATE=2023-11-30
+LICENSE=	GPLv2+
 
-USES=		gl gmake dos2unix tar:bzip2 xorg
+USES=		gl gmake tar:bzip2 xorg
 USE_GL=		gl
-USE_XORG=	xxf86dga xxf86vm
+USE_XORG=	x11 xext xxf86dga xxf86vm
 
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS SDL
 OPTIONS_DEFINE_amd64=	X86_ASM
@@ -36,7 +34,6 @@ ALL_TARGET=	release
 SUB_FILES=	pkg-message
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
-
 .include <bsd.port.options.mk>
 
 .for f in OPTIMIZED_CFLAGS X86_ASM
@@ -47,6 +44,12 @@ MAKE_ENV+=	USE_${f}=NO
 .   endif
 .endfor
 
+post-patch:
+	@${REINPLACE_CMD} -E '/^int[[:blank:]]+sb_lines;/d' \
+		${WRKSRC}/src/gl_screen.c
+	@${REINPLACE_CMD} -e '/text\[/s/4096/MAX_PRINTMSG/' \
+		${WRKSRC}/src/sys_linux.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/nehahra ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MSDL}
@@ -55,3 +58,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${Q1DIR}/nehahra
 
 .include <bsd.port.mk>
+
+PATCH_ARGS+=	-l

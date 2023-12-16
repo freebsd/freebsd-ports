@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.h.orig	2022-04-21 18:48:31 UTC
 +++ src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.h
-@@ -13,7 +13,7 @@ namespace trap_handler {
+@@ -13,7 +13,7 @@ namespace v8 {
  namespace internal {
  namespace trap_handler {
  

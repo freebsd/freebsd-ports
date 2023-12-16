@@ -1,11 +1,12 @@
 PORTNAME=	algorithms
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby algorithms and data structures
-WWW=		https://github.com/kanwei/algorithms
+WWW=		https://kanwei.github.io/algorithms/ \
+		https://github.com/kanwei/algorithms
 
 LICENSE=	MIT
 

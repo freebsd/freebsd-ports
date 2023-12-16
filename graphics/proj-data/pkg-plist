@@ -79,6 +79,8 @@
 %%DATADIR%%/copyright_and_licenses.csv
 %%DATADIR%%/de_adv_BETA2007.tif
 %%DATADIR%%/de_adv_README.txt
+%%DATADIR%%/de_bkg_README.txt
+%%DATADIR%%/de_bkg_gcg2016.tif
 %%DATADIR%%/de_geosn_NTv2_SN.tif
 %%DATADIR%%/de_geosn_README.txt
 %%DATADIR%%/de_hvbg_README.txt

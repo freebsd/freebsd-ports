@@ -1,5 +1,5 @@
 PORTNAME=	FFI-C-Stat
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-FFI-Platypus>=1.00:devel/p5-FFI-Platypus \
 TEST_DEPENDS=	p5-File-chdir>=0:devel/p5-File-chdir \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-Script>=1.09:devel/p5-Test-Script \
-		p5-Test2-Suite>=0.000060:devel/p5-Test2-Suite
+		p5-Test2-Suite>=0.000121:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	configure

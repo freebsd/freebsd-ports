@@ -1,4 +1,4 @@
---- build/npm/postinstall.js.orig	2023-08-02 11:59:07 UTC
+--- build/npm/postinstall.js.orig	2023-12-06 10:36:56 UTC
 +++ build/npm/postinstall.js
 @@ -41,8 +41,14 @@ function yarnInstall(dir, opts) {
  	const raw = process.env['npm_config_argv'] || '{}';
@@ -22,6 +22,6 @@
  }
  
 -cp.execSync('git config pull.rebase merges');
--cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore');
+-cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore-revs');
 +// cp.execSync('git config pull.rebase merges');
-+// cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore');
++// cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore-revs');

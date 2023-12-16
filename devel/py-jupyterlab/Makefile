@@ -1,12 +1,14 @@
 PORTNAME=	jupyterlab
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.9
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/jupyterlab/jupyterlab/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JupyterLab server extension
 WWW=		https://jupyter.org/ \
+		https://jupyterlab.readthedocs.io/en/latest/ \
 		https://github.com/jupyterlab/jupyterlab
 
 LICENSE=	BSD3CLAUSE

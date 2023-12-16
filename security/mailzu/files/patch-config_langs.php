@@ -6,7 +6,7 @@
  	'it'	=> array('it([-_][[:alpha:]]{2})?|italian', 'it.lang.php', 'it', 'Italiano'),
 -        'pt_BR' => array('pt([-_]br)?|portuguese', 'pt_BR.lang.php', 'pt', 'Portuguese Brazilian')
 +        'pt_BR' => array('pt([-_]br)?|portuguese', 'pt_BR.lang.php', 'pt', 'Portuguese Brazilian'),
-+	'pl'   => array('cs([-_][[:alpha:]]{2})?|polish', 'pl.lang.php', 'pl', 'Polski')
++	'pl'   => array('pl([-_][[:alpha:]]{2})?|polish', 'pl.lang.php', 'pl', 'Polski')
  );
  
  // Language files directory	
@@ -19,7 +19,7 @@
  		for ($i = 0; $i < count($http_accepted); $i++) {
  			foreach ($languages as $lang => $vals) {
 -				if (eregi($vals[0], $http_accepted[$i]))
-+				if (preg_match($vals[0], $http_accepted[$i]))
++				if (preg_match("/".$vals[0]."/", $http_accepted[$i]))
  					return $lang;
  			}
  		}	

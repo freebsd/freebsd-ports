@@ -1,6 +1,5 @@
 PORTNAME=	handbrake
-DISTVERSION=	1.6.1
-PORTREVISION=	3
+DISTVERSION=	1.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -15,12 +14,13 @@ WWW=		https://handbrake.fr/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
 		cmake:devel/cmake-core \
-		meson:devel/meson
+		meson:devel/meson \
+		git:devel/git@lite
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgudev-1.0.so:devel/libgudev \
 		libharfbuzz.so:print/harfbuzz \
@@ -45,15 +45,16 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:build
 
-CONTRIB_FILES=	SVT-AV1-v1.4.1.tar.gz \
+CONTRIB_FILES=	SVT-AV1-v1.7.0.tar.gz \
 		fdk-aac-2.0.2.tar.gz \
-		ffmpeg-5.1.2.tar.bz2 \
+		ffmpeg-6.1.tar.bz2 \
 		libbluray-1.3.4.tar.bz2 \
 		libdvdnav-6.1.1.tar.bz2 \
 		libdvdread-6.1.3.tar.bz2 \
-		dav1d-1.0.0.tar.bz2 \
-		x265-snapshot-20221130-12747.tar.gz \
-		zimg-3.0.4.tar.gz
+		dav1d-1.3.0.tar.bz2 \
+		dovi_tool-libdovi-3.1.2.tar.gz \
+		x265-snapshot-20230403-12776.tar.gz \
+		zimg-3.0.5.tar.gz
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
@@ -81,7 +82,6 @@ LDFLAGS+=	-L${BUILD_WRKSRC}/contrib/lib
 
 OPTIONS_DEFINE=		FDK_AAC VPL X11
 OPTIONS_DEFAULT=	VPL X11
-OPTIONS_EXCLUDE_i386=	VPL
 OPTIONS_EXCLUDE_powerpc=	VPL
 OPTIONS_EXCLUDE_powerpc64=	VPL
 OPTIONS_EXCLUDE_powerpc64le=	VPL
@@ -105,7 +105,6 @@ VPL_CONFIGURE_ON=	--enable-qsv
 
 X11_CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 X11_MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
-X11_CONFIGURE_ON=	--disable-gtk-update-checks
 X11_CONFIGURE_OFF=	--disable-gtk
 X11_LIB_DEPENDS=	libvpx.so:multimedia/libvpx \
 			libnotify.so:devel/libnotify

@@ -1,7 +1,7 @@
 PORTNAME=	openconnect-gui
 PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=v
-PORTREVISION=	3
+PORTREVISION=	4
 MASTER_SITES=	https://gitlab.com/openconnect/openconnect-gui/-/archive/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES=	security net-vpn

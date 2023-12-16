@@ -1,6 +1,6 @@
 PORTNAME=	miniupnpd
 DISTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -10,7 +10,9 @@ WWW=		http://miniupnp.free.fr/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe ssl
+LIB_DEPENDS=   libpfctl.so:net/libpfctl
+
+USES=		cpe ssl localbase:ldflags
 CPE_VENDOR=	miniupnp_project
 
 USE_GITHUB=	yes
@@ -24,7 +26,7 @@ HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
+LDFLAGS+=	-L${OPENSSLLIB} -lpfctl
 
 WRKSRC_SUBDIR=	miniupnpd
 

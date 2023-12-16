@@ -1,6 +1,5 @@
 PORTNAME=	sandwich
-DISTVERSION=	3.0-2
-PORTREVISION=	1
+DISTVERSION=	3.1-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,6 +11,6 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

@@ -1,3 +1,0 @@
-Guile-WWW is a set of Guile Scheme modules providing support for
-navigating HTTP connections, parsing URLs, handling CGI operations,
-and fetching WWW resources.

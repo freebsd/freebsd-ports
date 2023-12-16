@@ -3,6 +3,7 @@ etc/dbus-1/system.d/org.freedesktop.UDisks2.conf
 man/man5/bsdisks.conf.5.gz
 man/man8/bsdisks.8.gz
 share/dbus-1/system-services/org.freedesktop.UDisks2.service
+share/polkit-1/actions/org.freedesktop.udisks2.policy
 @sample etc/bsdisks.conf.sample
 @sample etc/newsyslog.conf.d/bsdisks-newsyslog.conf.sample
 @sample etc/syslog.d/bsdisks-syslog.conf.sample

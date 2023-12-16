@@ -1,5 +1,5 @@
 PORTNAME=	fasm
-PORTVERSION=	1.73.31
+PORTVERSION=	1.73.32
 CATEGORIES=	lang devel
 MASTER_SITES=	https://flatassembler.net/ \
 		LOCAL/sunpoet

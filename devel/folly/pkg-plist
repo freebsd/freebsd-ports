@@ -309,6 +309,7 @@ include/folly/experimental/channels/FanoutChannel-inl.h
 include/folly/experimental/channels/FanoutChannel.h
 include/folly/experimental/channels/FanoutSender-inl.h
 include/folly/experimental/channels/FanoutSender.h
+include/folly/experimental/channels/MaxConcurrentRateLimiter.h
 include/folly/experimental/channels/Merge-inl.h
 include/folly/experimental/channels/Merge.h
 include/folly/experimental/channels/MergeChannel-inl.h

@@ -1,7 +1,7 @@
 PORTNAME=	OpenDiablo2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1-g20210514
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://opendiablo2.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream repository has been archived on Dec 20, 2021
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 

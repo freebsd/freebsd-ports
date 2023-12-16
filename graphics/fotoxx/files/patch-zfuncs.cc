@@ -1,14 +1,14 @@
---- zfuncs.cc.orig	2021-10-17 20:02:26 UTC
+--- zfuncs.cc.orig	2023-12-02 22:45:44 UTC
 +++ zfuncs.cc
-@@ -551,6 +551,7 @@ int zmalloc_test(int64 cc)
+@@ -565,6 +565,7 @@ int zmalloc_test(int64 cc)
  
- double realmemory()                                                              //  21.55
+ double realmemory()
  {
 +#if defined(__linux__)
     FILE     *fid;
-    char     buff[100], *pp;
+    ch       buff[100], *pp;
     double   rmem = 0;
-@@ -569,15 +570,45 @@ double realmemory()                                   
+@@ -583,15 +584,45 @@ double realmemory()
     }
  
     fclose(fid);
@@ -52,9 +52,9 @@
  {
 +#if defined(__linux__)
     FILE     *fid;
-    char     buff[100], *pp;
+    ch       buff[100], *pp;
     double   avmem = 0;
-@@ -602,6 +633,11 @@ double availmemory()
+@@ -616,6 +647,11 @@ double availmemory()
     }
  
     fclose(fid);
@@ -66,7 +66,16 @@
     return avmem;
  }
  
-@@ -996,7 +1032,7 @@ double get_seconds()
+@@ -755,7 +791,7 @@ void zappcrash(ch *format, ... )
+ 
+    uname(&unbuff);                                                               //  get cpu arch. 32/64 bit
+    arch = unbuff.machine;
+-   fid1 = popen("lsb_release -d","r");                                           //  get Linux flavor and release
++   fid1 = popen("uname -nv","r");
+    if (fid1) {
+       ii = fscanf(fid1,"%s %s %s",OS1,OS2,OS3);
+       pclose(fid1);
+@@ -1060,7 +1096,7 @@ double get_seconds()
     timespec    time1;
     double      secs;
     
@@ -75,7 +84,7 @@
     secs = time1.tv_sec;
     secs += time1.tv_nsec * 0.000000001;
     return secs;
-@@ -1020,7 +1056,7 @@ void logtime_init(cchar *text)
+@@ -1109,7 +1145,7 @@ void logtime_init(ch *text)
     using namespace logtime_names;
  
     printf("logtime init: %s\n",text);
@@ -84,7 +93,7 @@
     return;
  }
  
-@@ -1028,7 +1064,7 @@ void logtime(cchar *text)
+@@ -1117,7 +1153,7 @@ void logtime(ch *text)
  {
     using namespace logtime_names;
  
@@ -93,7 +102,7 @@
     elapsed = time2.tv_sec - time1.tv_sec;
     elapsed += 0.000000001 * (time2.tv_nsec - time1.tv_nsec);
     time1 = time2;
-@@ -1649,6 +1685,10 @@ int main_thread()                                     
+@@ -1812,6 +1848,10 @@ int wait_Jthread(pthread_t tid)
     return 0;
  }
  
@@ -104,7 +113,7 @@
  
  /********************************************************************************/
  
-@@ -1659,7 +1699,7 @@ void set_cpu_affinity(int cpu)
+@@ -1862,7 +1902,7 @@ void set_cpu_affinity(int cpu)
  {
     int         err;
     static int  ftf = 1, Nsmp;
@@ -113,7 +122,7 @@
  
     if (ftf) {                                                                    //  first call
        ftf = 0;
-@@ -1670,7 +1710,8 @@ void set_cpu_affinity(int cpu)
+@@ -1873,7 +1913,8 @@ void set_cpu_affinity(int cpu)
  
     CPU_ZERO(&cpuset);
     CPU_SET(cpu,&cpuset);
@@ -123,7 +132,7 @@
     if (err) Plog(2,"set_cpu_affinity() %s \n",strerror(errno));
     return;
  }
-@@ -2234,7 +2275,7 @@ int diskspace(cchar *file)                            
+@@ -2274,7 +2315,7 @@ uint diskspace(ch *file)
     FILE     *fid;
  
     pp = zescape_quotes(file);                                                    //  23.4
@@ -132,7 +141,7 @@
     zfree(pp);
     
     fid = popen(command,"r");
-@@ -4115,14 +4156,18 @@ cchar * SearchWildCase(cchar *wpath, int &uflag) 
+@@ -4135,14 +4176,18 @@ ch * SearchWildCase(ch *wpath, int &uflag) 
     flist and flist[*] are subjects for zfree().
  
     zfind() works for files containing quotes (")
@@ -152,7 +161,7 @@
     int      ii, jj, err, cc;
     glob_t   globdata;
     ch       *pp;
-@@ -5805,9 +5850,16 @@ int zinitapp(cchar *appvers, int argc, char *argv[])  
+@@ -6109,9 +6154,16 @@ int zinitapp(ch *appvers, int argc, ch *argv[])       
     if (argc > 1 && strmatchV(argv[1],"-ver","-v",0)) exit(0);                    //  exit if nothing else wanted
  
     progexe = 0;   
@@ -168,4 +177,4 @@
 +#endif
     progexe = zstrdup(buff,"zinitapp");
  
-    err = appimage_install(zappname);                                             //  if appimage, menu integration
+    Plog(1,"program exe: %s \n",progexe);                                         //  executable path

@@ -12,6 +12,8 @@ WWW=		http://pear.symfony.com/
 LICENSE=	MIT
 
 USES=		pear
+
+NO_ARCH=	yes
 PEAR_CHANNEL=	symfony2
 
 .include <bsd.port.mk>

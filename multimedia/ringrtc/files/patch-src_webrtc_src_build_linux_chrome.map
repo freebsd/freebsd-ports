@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/linux/chrome.map.orig	2021-05-01 21:15:31 UTC
-+++ ../../src/webrtc/src/build/linux/chrome.map
+--- src/webrtc/src/build/linux/chrome.map.orig	2021-05-01 21:15:31 UTC
++++ src/webrtc/src/build/linux/chrome.map
 @@ -20,6 +20,10 @@ global:
    # Program entry point.
    _start;

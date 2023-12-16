@@ -2903,9 +2903,9 @@
 %%WWWDIR%%/include/swiftmailer/swift_required.php
 %%WWWDIR%%/index.php
 @comment install.php
-@unexec if [ -e %D/%%WWWDIR%%/install.php  ];then rm -f %D/%%WWWDIR%%/install.php ;fi
+@postunexec if [ -e %D/%%WWWDIR%%/install.php  ];then rm -f %D/%%WWWDIR%%/install.php ;fi
 %%WWWDIR%%/install_old.php
-@exec [ -e %B/include/config.php ] || cp -p %D/%F %B/install.php
+@postexec [ -e %B/include/config.php ] || cp -p %D/%F %B/install.php
 %%WWWDIR%%/mobile/images/ajax-loader.gif
 %%WWWDIR%%/mobile/images/bricks.png
 %%WWWDIR%%/mobile/images/datos_blue.png

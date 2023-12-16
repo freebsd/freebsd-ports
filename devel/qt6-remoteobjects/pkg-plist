@@ -57,11 +57,8 @@
 %%QT_INCDIR%%/QtRemoteObjectsQml/QtRemoteObjectsQmlDepends
 %%QT_INCDIR%%/QtRemoteObjectsQml/QtRemoteObjectsQmlVersion
 %%QT_INCDIR%%/QtRemoteObjectsQml/qtremoteobjectsqmlversion.h
-%%QT_INCDIR%%/QtRepParser/QtRepParser
 %%QT_INCDIR%%/QtRepParser/QtRepParserDepends
-%%QT_INCDIR%%/QtRepParser/QtRepParserVersion
 %%QT_INCDIR%%/QtRepParser/parser.g
-%%QT_INCDIR%%/QtRepParser/qtrepparserversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtRemoteObjectsTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_remoteobjectsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_remoteobjectsConfig.cmake
@@ -129,7 +126,7 @@ lib/cmake/Qt6RepParser/Qt6RepParserVersionlessTargets.cmake
 libdata/pkgconfig/Qt6RemoteObjects.pc
 libdata/pkgconfig/Qt6RemoteObjectsQml.pc
 libdata/pkgconfig/Qt6RepParser.pc
-%%QT_LIBEXECDIR%%/repc
+%%QT_TOOLDIR%%/repc
 %%QT_DATADIR%%/modules/RemoteObjects.json
 %%QT_DATADIR%%/modules/RemoteObjectsQml.json
 %%QT_DATADIR%%/modules/RepParser.json

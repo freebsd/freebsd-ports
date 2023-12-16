@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.8.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
@@ -46,7 +46,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 USES+=		shebangfix
-SHEBANG_FILES=	imap/promdatagen tools/config2header \
+SHEBANG_FILES=	imap/cyr_cd.sh imap/promdatagen tools/config2header \
 		tools/masssievec tools/mkimap tools/translatesieve \
 		perl/sieve/scripts/*.pl
 

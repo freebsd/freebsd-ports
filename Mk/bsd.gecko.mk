@@ -60,8 +60,8 @@ MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
-USES+=		compiler:c++17-lang cpe gl gmake gnome iconv localbase pkgconfig \
-			python:build desktop-file-utils
+USES+=		compiler:c++17-lang cpe gl gmake gnome iconv llvm:noexport localbase \
+			pkgconfig python:build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
@@ -73,9 +73,8 @@ BINARY_ALIAS+=	python3=${PYTHON_CMD}
 
 BUNDLE_LIBS=	yes
 
-BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
-				rust-cbindgen>=0.26.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.72.0:lang/${RUST_DEFAULT} \
+BUILD_DEPENDS+=	rust-cbindgen>=0.26.0:devel/rust-cbindgen \
+				${RUST_DEFAULT}>=1.74.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
@@ -86,22 +85,15 @@ MOZ_EXPORT+=	${CONFIGURE_ENV} \
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 
-MOZ_OPTIONS+=	--with-libclang-path="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib"
+MOZ_OPTIONS+=	--with-libclang-path="${LLVM_PREFIX:S/${PREFIX}/${LOCALBASE}/}/lib"
 .    if !exists(/usr/bin/llvm-objdump)
-MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}"
+MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_VERSION}"
 .    endif
-# fix LLVM to version 13, as that's the only reasonable wasi-toolchain
-# we currently have
-#    if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
-LLVM_DEFAULT=	13 # chase bundled LLVM in lang/rust for LTO
-LLVM_VERSION=	13.0.1 # keep in sync with devel/wasi-compiler-rt${LLVM_DEFAULT}
-#    endif
 # Require newer Clang than what's in base system unless user opted out
 .    if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CPP=			${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CC=				${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=			${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+CPP=			${LOCALBASE}/bin/clang-cpp${LLVM_VERSION}
+CC=				${LOCALBASE}/bin/clang${LLVM_VERSION}
+CXX=			${LOCALBASE}/bin/clang++${LLVM_VERSION}
 USES:=			${USES:Ncompiler\:*} # XXX avoid warnings
 .    endif
 

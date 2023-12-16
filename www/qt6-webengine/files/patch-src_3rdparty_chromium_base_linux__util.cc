@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/linux_util.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/linux_util.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/base/linux_util.cc
 @@ -15,6 +15,7 @@
  
@@ -8,7 +8,7 @@
  
  #include "base/base_export.h"
  #include "base/files/dir_reader_posix.h"
-@@ -135,6 +136,9 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
+@@ -135,6 +136,9 @@ void SetLinuxDistro(const std::string& distro) {
  }
  
  bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {

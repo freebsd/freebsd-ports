@@ -1,17 +1,17 @@
---- configure.orig	2021-12-16 17:26:22 UTC
+--- configure.orig	2023-06-07 20:28:42 UTC
 +++ configure
-@@ -1217,8 +1217,6 @@ hwlocsrcdir
+@@ -1082,8 +1082,6 @@ hwlocsrcdir
+ HAVE_ROMIO
  hwloclib
- hwloclibdir
  hwlocsrcdir
 -jsonlib
 -jsonsrcdir
- VISIBILITY_CFLAGS
- BUILD_PROFILING_LIB_FALSE
- BUILD_PROFILING_LIB_TRUE
-@@ -31276,337 +31274,7 @@ fi
-     VISIBILITY_CFLAGS=""
- fi
+ mpllib
+ mpllibdir
+ mplsrcdir
+@@ -32056,359 +32054,7 @@ fi
+ 
+ 
  
 -# json-c
  
@@ -20,6 +20,10 @@
 -jsonlib=""
 -
 -
+-jsonlib="modules/json-c/libjson-c.la"
+-if test -e "${use_top_srcdir}/modules/PREBUILT" -a -e "$jsonlib"; then
+-    jsonsrcdir=""
+-else
 -
 -
 -	if test -z "${pac_save_CFLAGS_nesting}" ; then
@@ -321,70 +325,59 @@
 -	eval pac_save_LIBS_${pac_save_LIBS_nesting}=""
 -
 -
--jsonsrcdir="${main_top_builddir}/modules/json-c"
--jsonlib="${main_top_builddir}/modules/json-c/libjson-c.la"
+-    jsonsrcdir="${main_top_builddir}/modules/json-c"
+-fi
 -
 -
--	if echo "$CPPFLAGS" | $FGREP -e "\<-I${use_top_srcdir}/modules/json-c\>" >/dev/null 2>&1; then :
+-
+-        if test x$pac_has_fgrep_word = "xyes"; then
+-            if echo "$CPPFLAGS" | $FGREP -w -e "-I${use_top_srcdir}/modules/json-c" >/dev/null 2>&1; then :
 -  echo "CPPFLAGS(='$CPPFLAGS') contains '-I${use_top_srcdir}/modules/json-c', not appending" >&5
 -else
 -  echo "CPPFLAGS(='$CPPFLAGS') does not contain '-I${use_top_srcdir}/modules/json-c', appending" >&5
--		CPPFLAGS="$CPPFLAGS -I${use_top_srcdir}/modules/json-c"
+-        CPPFLAGS="$CPPFLAGS -I${use_top_srcdir}/modules/json-c"
+-
 -
 -fi
+-        else
+-            echo "CPPFLAGS(='$CPPFLAGS') does not contain '-I${use_top_srcdir}/modules/json-c', appending" >&5
+-        CPPFLAGS="$CPPFLAGS -I${use_top_srcdir}/modules/json-c"
+-
+-        fi
 -
 -
 -
--	if echo "$CPPFLAGS" | $FGREP -e "\<-I${main_top_builddir}/modules/json-c\>" >/dev/null 2>&1; then :
+-
+-
+-        if test x$pac_has_fgrep_word = "xyes"; then
+-            if echo "$CPPFLAGS" | $FGREP -w -e "-I${main_top_builddir}/modules/json-c" >/dev/null 2>&1; then :
 -  echo "CPPFLAGS(='$CPPFLAGS') contains '-I${main_top_builddir}/modules/json-c', not appending" >&5
 -else
 -  echo "CPPFLAGS(='$CPPFLAGS') does not contain '-I${main_top_builddir}/modules/json-c', appending" >&5
--		CPPFLAGS="$CPPFLAGS -I${main_top_builddir}/modules/json-c"
+-        CPPFLAGS="$CPPFLAGS -I${main_top_builddir}/modules/json-c"
+-
 -
 -fi
+-        else
+-            echo "CPPFLAGS(='$CPPFLAGS') does not contain '-I${main_top_builddir}/modules/json-c', appending" >&5
+-        CPPFLAGS="$CPPFLAGS -I${main_top_builddir}/modules/json-c"
+-
+-        fi
 -
 -
+-
  # ----------------------------------------------------------------------------
- # HWLOC
+ # HWLOC / NETLOC
  # ----------------------------------------------------------------------------
-@@ -43674,16 +43342,6 @@ _ACEOF
- # must come first.
- # ----------------------------------------------------------------------------
- 
--#
--# First, determine whether we are/can support the language bindings
--#
--# Since F90/F90FLAGS are replaced by FC/FCFLAGS, rather than silently
--# substituting them, i.e. FC=$F90 and FCFLAGS=$F90FLAGS, we choose to emit
--# an error message and abort to avoid any ambiguous/hidden bug in choosing
--# Fortran90 compilers.
--if test -n "$F90" -o -n "$F90FLAGS" ; then
--    as_fn_error $? "F90 and F90FLAGS are replaced by FC and FCFLAGS respectively in this configure, please unset F90/F90FLAGS and set FC/FCFLAGS instead and rerun configure again." "$LINENO" 5
--fi
- # ----------------------------------------------------------------------------
- # Handle default choices for the Fortran compilers
- # Note that these have already been set above
-@@ -46449,18 +46107,8 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
+@@ -39394,6 +39040,7 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
 +FFLAGS="$FFLAGS $addarg"
  
--    if test "X$addarg" != "X" ; then
--        # We could add the names of all of the MPI routines that
--        # accept different types.  Instead, we fail cleanly.
--        # Some Fortran compilers allow you to turn off checking for
--        # mismatched arguments for *all* routines.  Adding an argument
--	# that turns off checking for *everything* is not something that
--	# configure should do - if the user wants this, they can follow
--	# the instructions in the following error message.
--	as_fn_error $? "The Fortran compiler $F77 does not accept programs that call the same routine with arguments of different types without the option $addarg.  Rerun configure with FFLAGS=$addarg" "$LINENO" 5
--    fi
--
-     bindings="$bindings f77"
- 
- $as_echo "#define HAVE_FORTRAN_BINDING 1" >>confdefs.h
-@@ -52094,6 +51742,9 @@ else
+     if test "X$addarg" != "X" ; then
+         # Code using mpif.h interface will likely need this flag to compile.
+@@ -44745,6 +44392,9 @@ else
    $as_echo_n "(cached) " >&6
  else
    if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "$ac_includes_default

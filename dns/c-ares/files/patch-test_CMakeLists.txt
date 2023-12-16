@@ -1,12 +1,6 @@
---- test/CMakeLists.txt.orig	2023-05-22 11:33:56 UTC
+--- test/CMakeLists.txt.orig	2023-11-30 20:29:02 UTC
 +++ test/CMakeLists.txt
-@@ -1,4 +1,4 @@
--set(CMAKE_CXX_STANDARD 11)
-+set(CMAKE_CXX_STANDARD 14)
- set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
- set(CMAKE_CXX_EXTENSIONS FALSE)
- 
-@@ -25,14 +25,14 @@ ELSE ()
+@@ -27,14 +27,14 @@ ENDIF ()
  ENDIF ()
  
  # Google Test and Mock
@@ -18,18 +12,18 @@
 -)
 -target_include_directories(gmock PUBLIC SYSTEM ${GMOCK_DIR})
 -target_link_libraries(gmock PRIVATE ${CMAKE_THREAD_LIBS_INIT})
-+# set(GMOCK_DIR gmock-1.11.0)
-+# add_library(gmock STATIC
-+#   ${GMOCK_DIR}/gmock-gtest-all.cc
-+#   ${GMOCK_DIR}/gmock/gmock.h
-+#   ${GMOCK_DIR}/gtest/gtest.h
-+# )
-+# target_include_directories(gmock PUBLIC SYSTEM ${GMOCK_DIR})
-+# target_link_libraries(gmock PRIVATE ${CMAKE_THREAD_LIBS_INIT})
- 
++#set(GMOCK_DIR gmock-1.11.0)
++#add_library(gmock STATIC
++#  ${GMOCK_DIR}/gmock-gtest-all.cc
++#  ${GMOCK_DIR}/gmock/gmock.h
++#  ${GMOCK_DIR}/gtest/gtest.h
++#)
++#target_include_directories(gmock PUBLIC SYSTEM ${GMOCK_DIR})
++#target_link_libraries(gmock PRIVATE ${CMAKE_THREAD_LIBS_INIT})
  # test targets
  
-@@ -43,7 +43,7 @@ configure_file(${CARES_TOPLEVEL_DIR}/src/lib/ares_conf
+ transform_makefile_inc("Makefile.inc" "${CMAKE_CURRENT_BINARY_DIR}/Makefile.inc.cmake")
+@@ -44,7 +44,7 @@ target_include_directories(arestest PRIVATE ${CMAKE_CU
  
  add_executable(arestest ${TESTSOURCES} ${TESTHEADERS})
  target_include_directories(arestest PRIVATE ${CMAKE_CURRENT_BINARY_DIR})

@@ -1,7 +1,7 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.27.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -55,7 +55,7 @@ DOCS_USE=		KDE=doctools:build
 DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5DocTools
 
 QA11Y_DESC=		Accessibility (focus tracking) for Zoom effect
-QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt5.so:accessibility/libqaccessibilityclient
+QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt5.so:accessibility/libqaccessibilityclient@qt5
 QA11Y_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_QAccessibilityClient
 
 post-patch:
@@ -68,4 +68,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/mounts/s,/proc,/compat/linux&,' \
 		${WRKSRC}/debug/perf/ftrace_impl.cpp
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

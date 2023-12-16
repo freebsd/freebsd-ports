@@ -1,6 +1,6 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		23.3.06
+DISTVERSION=		23.3.13
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -84,7 +84,7 @@ CONFLICTS=	im \
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c
 
-PKG_COMPRESSION_LEVEL= 	-6
+PKG_COMPRESSION_LEVEL= 	6
 
 post-extract:
 .for f in ${X11R6_FILES}

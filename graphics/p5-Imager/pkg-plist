@@ -29,7 +29,6 @@
 %%SITE_ARCH%%/Imager/Font/FT2.pm
 %%SITE_ARCH%%/Imager/Font/FreeType2.pm
 %%SITE_ARCH%%/Imager/Font/Image.pm
-%%SITE_ARCH%%/Imager/Font/T1.pm
 %%SITE_ARCH%%/Imager/Font/Test.pm
 %%SITE_ARCH%%/Imager/Font/Truetype.pm
 %%SITE_ARCH%%/Imager/Font/Type1.pm
@@ -94,7 +93,6 @@
 %%SITE_ARCH%%/auto/Imager/Filter/Flines/Flines.so
 %%SITE_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
 %%SITE_ARCH%%/auto/Imager/Font/FT2/FT2.so
-%%SITE_ARCH%%/auto/Imager/Font/T1/T1.so
 %%SITE_ARCH%%/auto/Imager/Imager.so
 %%PERL5_MAN3%%/Imager.3.gz
 %%PERL5_MAN3%%/Imager::API.3.gz
@@ -124,7 +122,6 @@
 %%PERL5_MAN3%%/Imager::Font::BBox.3.gz
 %%PERL5_MAN3%%/Imager::Font::FT2.3.gz
 %%PERL5_MAN3%%/Imager::Font::FreeType2.3.gz
-%%PERL5_MAN3%%/Imager::Font::T1.3.gz
 %%PERL5_MAN3%%/Imager::Font::Test.3.gz
 %%PERL5_MAN3%%/Imager::Font::Truetype.3.gz
 %%PERL5_MAN3%%/Imager::Font::Type1.3.gz

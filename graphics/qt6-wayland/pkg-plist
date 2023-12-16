@@ -1,10 +1,12 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qtwaylandclient-config_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qtwaylandclientglobal_p.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-cursor-shape-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-fractional-scale-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-hardware-integration.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-pointer-gestures-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-key-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-text-input-method-unstable-v1.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-toplevel-drag-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-windowmanager.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-server-buffer-extension.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-surface-extension.h
@@ -17,6 +19,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-wayland.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-wp-primary-selection-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-output-unstable-v1.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-shell.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandbuffer_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandclientbufferintegration_p.h
@@ -71,11 +74,13 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandvulkanwindow_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandwindow_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandwindowmanagerintegration_p.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-cursor-shape-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-fractional-scale-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-hardware-integration-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-pointer-gestures-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-key-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-text-input-method-unstable-v1-client-protocol.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-toplevel-drag-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-windowmanager-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-server-buffer-extension-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-surface-extension-client-protocol.h
@@ -88,6 +93,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-wayland-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-wp-primary-selection-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-output-unstable-v1-client-protocol.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtension
 %%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtensionTemplate
 %%QT_INCDIR%%/QtWaylandClient/QtWaylandClient
@@ -177,6 +183,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwlserverbufferintegration_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwlserverbufferintegrationfactory_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwlserverbufferintegrationplugin_p.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwltextureorphanage_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwltexturesharingextension_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-hardware-integration-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-idle-inhibit-unstable-v1-server-protocol.h
@@ -596,7 +603,7 @@ lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateVersionlessTa
 %%QT_QMLDIR%%/QtWayland/Compositor/qmlfiles/WaylandOutputWindow.qml
 libdata/pkgconfig/Qt6WaylandClient.pc
 libdata/pkgconfig/Qt6WaylandCompositor.pc
-%%QT_LIBEXECDIR%%/qtwaylandscanner
+%%QT_TOOLDIR%%/qtwaylandscanner
 %%QT_DATADIR%%/modules/WaylandClient.json
 %%QT_DATADIR%%/modules/WaylandCompositor.json
 %%QT_DATADIR%%/modules/WaylandEglClientHwIntegrationPrivate.json

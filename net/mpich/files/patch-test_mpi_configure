@@ -1,7 +1,7 @@
---- test/mpi/configure.orig	2021-12-16 17:25:47 UTC
+--- test/mpi/configure.orig	2023-06-07 20:29:41 UTC
 +++ test/mpi/configure
-@@ -4486,21 +4486,9 @@ fi
-     fi
+@@ -6808,16 +6808,6 @@ fi
+ 
  fi
  
 -# First, determine whether we are/can support the language bindings
@@ -13,31 +13,7 @@
 -if test -n "$F90" -o -n "$F90FLAGS" ; then
 -    as_fn_error $? "F90 and F90FLAGS are replaced by FC and FCFLAGS respectively in this configure, please unset F90/F90FLAGS and set FC/FCFLAGS instead and rerun configure again." "$LINENO" 5
 -fi
- 
- # ------------------------------------------------------------------------
- 
 -
--# ------------------------------------------------------------------------
--
- if test "$enable_threads" = "yes" ; then
-     enable_threads=multiple
- elif test "$enable_threads" = "no" ; then
-@@ -11038,17 +11026,7 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
- fi
- 
- addarg=$pac_cv_prog_f77_mismatched_args_parm
--
--    if test "X$addarg" != "X" ; then
--        # We could add the names of all of the MPI routines that
--        # accept different types.  Instead, we fail cleanly.
--        # Some Fortran compilers allow you to turn off checking for
--        # mismatched arguments for *all* routines.  Adding an argument
--	# that turns off checking for *everything* is not something that
--	# configure should do - if the user wants this, they can follow
--	# the instructions in the following error message.
--	as_fn_error $? "The Fortran compiler $F77 does not accept programs that call the same routine with arguments of different types without the option $addarg.  Rerun configure with FFLAGS=$addarg" "$LINENO" 5
--    fi
-+FFLAGS="$FFLAGS $addarg"
- 
-     # Check whether we need -lU77 to get iargc and getarg, which
-     # are used for a few of the tests in spawn (U77 was needed with
+ # errordir is substituted into the testlist file as errors when the
+ # tests should check error handling and as a comment (#) otherwise.
+ errordir="#"

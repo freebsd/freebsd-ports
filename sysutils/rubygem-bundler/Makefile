@@ -6,7 +6,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool that manages gem dependencies for Ruby applications
-WWW=		https://bundler.io/
+WWW=		https://bundler.io/ \
+		https://github.com/rubygems/rubygems/tree/master/bundler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

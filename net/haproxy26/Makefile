@@ -1,5 +1,5 @@
 PORTNAME=	haproxy
-DISTVERSION=	2.6.15
+DISTVERSION=	2.6.16
 CATEGORIES=	net www
 PKGNAMESUFFIX=	26
 MASTER_SITES=	http://www.haproxy.org/download/2.6/src/

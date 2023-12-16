@@ -1,6 +1,6 @@
 PORTNAME=	veditor
 PORTVERSION=	1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20runtime/VEditor%20${PORTVERSION}
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
@@ -8,18 +8,16 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Verilog and VHDL editor plugin for eclipse
+COMMENT=	Verilog editor plugin for eclipse
 WWW=		http://veditor.sourceforge.net/
 
 RUN_DEPENDS=	eclipse:java/eclipse
 
-OPTIONS_DEFINE=	VERILOG VHDL
+OPTIONS_DEFINE=	VERILOG
 VERILOG_DESC=	Support Verilog with Icarus Verilog
-VHDL_VHDL=	Support VHDL with FreeHDL
-OPTIONS_DEFAULT=	VERILOG VHDL
+OPTIONS_DEFAULT=	VERILOG
 
 VERILOG_RUN_DEPENDS=	iverilog:cad/iverilog
-VHDL_RUN_DEPENDS=	freehdl-v2cc:cad/freehdl
 
 PLIST_SUB=	VER=${PORTVERSION} \
 		ECLIPSE=${ECLIPSE}

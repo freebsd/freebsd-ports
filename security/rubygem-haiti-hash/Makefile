@@ -1,5 +1,5 @@
 PORTNAME=	haiti-hash
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,5 @@ RUN_DEPENDS=	rubygem-docopt>=0.6<1:devel/rubygem-docopt \
 USES=		gem
 
 NO_ARCH=	yes
-
-PLIST_FILES=	bin/haiti \
-		bin/haiti_console
 
 .include <bsd.port.mk>

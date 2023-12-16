@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp
 @@ -6,12 +6,16 @@
  
@@ -17,7 +17,7 @@
  
  #if BUILDFLAG(IS_WIN)
  #define TIMEZONE _timezone
-@@ -24,9 +28,21 @@ CXFA_TimeZoneProvider::CXFA_TimeZoneProvider() {
+@@ -24,9 +28,21 @@ static bool g_bProviderTimeZoneSet = false;
  CXFA_TimeZoneProvider::CXFA_TimeZoneProvider() {
    if (!g_bProviderTimeZoneSet) {
      g_bProviderTimeZoneSet = true;

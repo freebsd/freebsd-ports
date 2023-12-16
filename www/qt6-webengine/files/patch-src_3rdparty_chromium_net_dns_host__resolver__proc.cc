@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/dns/host_resolver_proc.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/net/dns/host_resolver_proc.cc.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/net/dns/host_resolver_proc.cc
 @@ -15,10 +15,6 @@
  #include "net/base/net_errors.h"

@@ -1,11 +1,8 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.3.3
+DISTVERSION=	3.4.2
 PORTREVISION=	1
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4c833569fb12.patch:-p1
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
@@ -14,24 +11,32 @@ WWW=		https://www.audacityteam.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	conan:sysutils/conan
+BUILD_DEPENDS=	conan:sysutils/conan \
+		rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libopenjp2.so:graphics/openjpeg \
+		liblilv-0.so:audio/lilv \
 		libmp3lame.so:audio/lame \
 		libmpg123.so:audio/mpg123 \
+		libopenjp2.so:graphics/openjpeg \
 		libopus.so:audio/opus \
+		libopusfile.so:audio/opusfile \
 		libportaudio.so:audio/portaudio \
 		libportmidi.so:audio/portmidi \
 		libpng.so:graphics/png \
+		libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
+		libsord-0.so:devel/sord \
 		libsoxr.so:audio/libsoxr \
+		libsratom-0.so:audio/sratom \
 		libsqlite3.so:databases/sqlite3 \
+		libsuil-0.so:audio/suil \
+		libturbojpeg.so:graphics/libjpeg-turbo \
 		libwavpack.so:audio/wavpack \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake compiler:c++17-lang cpe desktop-file-utils gettext \
+USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \
 		gnome libtool python:build pkgconfig shared-mime-info
 
 USE_GITHUB=	yes
@@ -41,7 +46,8 @@ CPE_VENDOR=	audacityteam
 WX_COMPS=	wx
 PORTDOCS=	README.md
 
-CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
+CMAKE_ARGS=	-DAUDACITY_BUILD_LEVEL=2 \
+		-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_curl:STRING=system \
 		-Daudacity_use_expat:STRING=system \
 		-Daudacity_use_jpeg:STRING=system \
@@ -49,12 +55,14 @@ CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_libmpg123:STRING=system \
 		-Daudacity_use_libopus:STRING=system \
 		-Daudacity_use_libsndfile:STRING=system \
+		-Daudacity_use_lv2:STRING=system \
 		-Daudacity_use_midi:STRING=system \
 		-Daudacity_use_nyquist:STRING=local \
 		-Daudacity_use_portaudio:STRING=system \
 		-Daudacity_use_portmixer:STRING=local \
 		-Daudacity_use_portsmf:STRING=local \
 		-Daudacity_use_png:STRING=system \
+		-Daudacity_use_rapidjson:STRING=system \
 		-Daudacity_use_soxr:STRING=system \
 		-Daudacity_use_sqlite:STRING=system \
 		-Daudacity_use_wavpack=system \
@@ -64,17 +72,15 @@ CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 CMAKE_ON=	audacity_bundle_gplv3 audacity_conan_allow_prebuilt_binaries audacity_obey_system_dependencies
 CMAKE_OFF=	audacity_has_audiocom_upload audacity_conan_enabled audacity_conan_force_build_dependencies \
 		audacity_has_crashreports audacity_has_networking audacity_has_updates_check audacity_has_url_schemes_support \
-		audacity_has_sentry_reporting audacity_has_tests audacity_has_vst3 audacity_perform_codesign audacity_use_pch
+		audacity_has_tests audacity_has_vst3 audacity_perform_codesign audacity_use_pch
 
-OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LV2 MAD MANUAL \
+OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA MANUAL \
 			OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
 			VORBIS VST
-OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA LV2 MAD OGG SBSMS \
+OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA OGG SBSMS \
 			SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_EXCLUDE_i386=	SBSMS
 
-LV2_DESC=		Add LV2 plug-in support
-MAD_DESC=		Use libmad for mp2/3 decoding support
 MANUAL_DESC=		Include manual
 SBSMS_DESC=		Use libsbsms for pitch and tempo changing
 SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
@@ -103,18 +109,6 @@ ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 
 LADSPA_CMAKE_BOOL=	audacity_use_ladspa
 LADSPA_RUN_DEPENDS=	listplugins:audio/ladspa
-
-LV2_CMAKE_ON=		-Daudacity_use_lv2:STRING=system
-LV2_CMAKE_OFF=		-Daudacity_use_lv2:STRING=off
-LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv \
-			libserd-0.so:devel/serd \
-			libsord-0.so:devel/sord \
-			libsratom-0.so:audio/sratom \
-			libsuil-0.so:audio/suil
-
-MAD_CMAKE_ON=		-Daudacity_use_libmad:STRING=system
-MAD_CMAKE_OFF=		-Daudacity_use_libmad:STRING=off
-MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
 MANUAL_CMAKE_BOOL=	audacity_package_manual
 
@@ -154,6 +148,13 @@ VST_CMAKE_BOOL=		audacity_use_vst
 CMAKE_ARGS+=	-DHAVE_MMX:BOOL=OFF \
 		-DHAVE_SSE:BOOL=OFF \
 		-DHAVE_SSE2:BOOL=OFF
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302508
+# Workarounds for buggy libc++ std::conjunction
+EXTRA_PATCHES=	${PATCHDIR}/extra-libraries_lib-utility_TypeList.cpp \
+		${PATCHDIR}/extra-libraries_lib-utility_TypeList.h \
+		${PATCHDIR}/extra-libraries_lib-utility_TypeSwitch.h
 .endif
 
 post-install:

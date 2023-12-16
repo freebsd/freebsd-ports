@@ -1,5 +1,5 @@
---- cargo-crates/lindera-unidic-0.24.0/build.rs.orig	2006-07-24 03:21:28 UTC
-+++ cargo-crates/lindera-unidic-0.24.0/build.rs
+--- cargo-crates/lindera-unidic-0.27.1/build.rs.orig	2006-07-24 03:21:28 UTC
++++ cargo-crates/lindera-unidic-0.27.1/build.rs
 @@ -56,7 +56,8 @@ fn main() -> Result<(), Box<dyn Error>> {
          dummy_matrix_def.write_all(b"0 1 0\n")?;
      } else {

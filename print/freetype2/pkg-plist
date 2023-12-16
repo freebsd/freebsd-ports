@@ -60,5 +60,5 @@ lib/cmake/freetype/freetype-config-version.cmake
 lib/cmake/freetype/freetype-config.cmake
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.20.0
+lib/libfreetype.so.6.20.1
 libdata/pkgconfig/freetype2.pc

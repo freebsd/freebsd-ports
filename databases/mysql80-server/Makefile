@@ -1,5 +1,5 @@
 PORTNAME?=		mysql
-PORTVERSION=		8.0.33
+PORTVERSION=		8.0.35
 PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
@@ -201,6 +201,11 @@ post-extract:
 # This can be removed after FreeBSD 12.4 and 13.1 EoL
 .if defined(CLIENT_ONLY) && !exists(${OPENSSLBASE}/libdata/pkgconfig/openssl.pc)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-scripts_CMakeLists.txt
+.endif
+
+# XXX MBi alignment issue
+.if ${ARCH} == i386
+EXTRA_PATCHES+=	files/extra-patch-boost-boost_1_77_0-boost-move-detail-type_traits.hpp
 .endif
 
 .if !defined(CLIENT_ONLY)

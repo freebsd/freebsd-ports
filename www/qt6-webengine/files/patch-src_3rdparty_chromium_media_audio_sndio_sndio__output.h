@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/audio/sndio/sndio_output.h.orig	2022-11-14 07:14:53 UTC
+--- src/3rdparty/chromium/media/audio/sndio/sndio_output.h.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/media/audio/sndio/sndio_output.h
 @@ -0,0 +1,88 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.

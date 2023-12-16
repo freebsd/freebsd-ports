@@ -1,5 +1,5 @@
 PORTNAME=	duckdb
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ TEST_WRKSRC=	${WRKDIR} # tests fail when run from the build directory due to a n
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} # 2 tests fail, see https://github.com/duckdb/duckdb/issues/5642
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/duckdb.cpython-${PYTHON_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/duckdb/duckdb${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>

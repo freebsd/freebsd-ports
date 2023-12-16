@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.h.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/ui/ui_features.h.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -194,7 +194,7 @@ BASE_DECLARE_FEATURE(kToolbarUseHardwareBitmapDraw);
+@@ -195,7 +195,7 @@ BASE_DECLARE_FEATURE(kToolbarUseHardwareBitmapDraw);
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  

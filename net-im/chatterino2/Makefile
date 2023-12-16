@@ -1,6 +1,5 @@
 PORTNAME=	chatterino2
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -18,21 +17,22 @@ BUILD_DEPENDS=	${LOCALBASE}/include/magic_enum.hpp:devel/magic_enum \
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake compiler:c++17-lang gl pkgconfig qt:5 ssl
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig \
+		qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
-GH_TUPLE=	Chatterino:libcommuni:a7b32cd:communi/lib/libcommuni \
+GH_TUPLE=	Chatterino:libcommuni:030710a:communi/lib/libcommuni \
 		arsenm:sanitizers-cmake:c3dc841:sanitizers/cmake/sanitizers-cmake \
-		pajlada:serialize:7d37cbf:serialize/lib/serialize \
-		pajlada:settings:04792d8:settings/lib/settings \
-		pajlada:signals:25e4ec3:signals/lib/signals
+		pajlada:serialize:bbf0a34:serialize/lib/serialize \
+		pajlada:settings:f168c09:settings/lib/settings \
+		pajlada:signals:6561aa5:signals/lib/signals
 USE_GL=	gl
 USE_QT=	concurrent core dbus gui multimedia network svg widgets \
 		buildtools:build qmake:build
 
-CXXFLAGS+=      -I${LOCALBASE}/include/miniaudio
-
 CMAKE_ARGS=	-DUSE_SYSTEM_QTKEYCHAIN=on
+
+CXXFLAGS+=	-I${LOCALBASE}/include/miniaudio
 
 PLIST_FILES=	bin/chatterino \
 		share/applications/com.chatterino.chatterino.desktop \

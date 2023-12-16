@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl-2.1.txt
 
 DEPRECATED=		Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libcsound64.so:audio/csound
 

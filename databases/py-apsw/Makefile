@@ -1,5 +1,5 @@
 PORTNAME=	apsw
-PORTVERSION=	3.43.2.0
+PORTVERSION=	3.44.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,17 +12,13 @@ WWW=		https://rogerbinns.github.io/apsw/ \
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		localbase python sqlite
-USE_PYTHON=	autoplist concurrent distutils unittest
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
-
-OPTIONS_DEFINE=	EXTENSION
-OPTIONS_DEFAULT=EXTENSION
-EXTENSION_DESC=	Allow loadable extensions
-
-EXTENSION_VARS=		PYDISTUTILS_BUILDARGS+=--enable=load_extension
-EXTENSION_VARS_OFF=	PYDISTUTILS_BUILDARGS+=--omit=load_extension
 
 post-patch:
 	@${PRINTF} '[build_ext]\nuse_system_sqlite_config = True\n' > ${WRKSRC}/setup.apsw

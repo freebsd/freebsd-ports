@@ -1,0 +1,143 @@
+--- base/BUILD.gn.orig	2023-10-25 09:13:45 UTC
++++ base/BUILD.gn
+@@ -198,7 +198,7 @@ buildflag_header("ios_cronet_buildflags") {
+   flags = [ "CRONET_BUILD=$is_cronet_build" ]
+ }
+ 
+-enable_message_pump_epoll = is_linux || is_chromeos || is_android
++enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
+ buildflag_header("message_pump_buildflags") {
+   header = "message_pump_buildflags.h"
+   header_dir = "base/message_loop"
+@@ -1112,11 +1112,23 @@ component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+-  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
++  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+ 
++  # *BSD needs libkvm
++  if (is_bsd) {
++    libs += [ "kvm" ]
++  }
++
++  if (is_freebsd) {
++    libs += [
++      "execinfo",
++      "util",
++    ]
++  }
++
+   if (use_allocator_shim) {
+     if (is_apple) {
+       sources += [ "allocator/early_zone_registration_apple.h" ]
+@@ -1136,7 +1148,7 @@ component("base") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -2081,6 +2093,22 @@ component("base") {
+     ]
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++    ]
++  } else if (is_freebsd) {
++    sources += [
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources += [
+@@ -2213,6 +2241,29 @@ component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_inotify.cc",
++      "files/scoped_file_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc",
++      "profiler/stack_copier_signal.cc",
++      "profiler/stack_copier_signal.h",
++      "profiler/thread_delegate_posix.cc",
++      "profiler/thread_delegate_posix.h",
++      "threading/platform_thread_linux.cc",
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_bsd.cc",
++      "threading/platform_thread_bsd.cc",
++    ]
++  }
++
+   if (use_blink) {
+     sources += [
+       "files/file_path_watcher.cc",
+@@ -2223,7 +2274,7 @@ component("base") {
+   }
+ 
+   if (dep_libevent) {
+-    deps += [ "//third_party/libevent" ]
++    public_deps += [ "//third_party/libevent" ]
+   }
+ 
+   if (use_libevent) {
+@@ -3597,7 +3648,7 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+@@ -3618,7 +3669,7 @@ test("base_unittests") {
+       "posix/file_descriptor_shuffle_unittest.cc",
+       "posix/unix_domain_socket_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "profiler/stack_base_address_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
+@@ -3629,7 +3680,7 @@ test("base_unittests") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -3885,7 +3936,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_fuchsia || is_linux || is_chromeos) {
++  if ((is_fuchsia || is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/elf_reader_unittest.cc",
+       "debug/test_elf_image_builder.cc",

@@ -9,10 +9,10 @@ WWW=		https://www.kde.org/applications/games/kbounce/
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons guiaddons i18n iconthemes jobwidgets kio \
-		libkdegames notifyconfig service solid textwidgets widgetsaddons \
+		libkdegames notifyconfig phonon service solid textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui network phonon4 svg \
+USE_QT=		concurrent core dbus declarative gui network svg \
 		testlib widgets xml \
 		buildtools:build qmake:build
 

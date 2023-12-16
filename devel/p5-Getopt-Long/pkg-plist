@@ -1,3 +1,5 @@
 %%SITE_PERL%%/Getopt/Long.pm
+%%SITE_PERL%%/Getopt/Long/Parser.pm
 %%SITE_PERL%%/newgetopt.pl
 %%PERL5_MAN3%%/Getopt::Long.3.gz
+%%PERL5_MAN3%%/Getopt::Long::Parser.3.gz

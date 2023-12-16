@@ -4,13 +4,13 @@
  -r required.txt
  
  # Format support
--aeidon==1.12        # Subtitles
-+aeidon>=1.12        # Subtitles
+-aeidon==1.13        # Subtitles
++aeidon>=1.13        # Subtitles
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--charset-normalizer==3.2.0   # chardet
-+charset-normalizer>=3.2.0   # chardet
+-charset-normalizer==3.3.2   # chardet
++charset-normalizer>=3.3.2   # chardet
  # Tmserver backend
 -cheroot==10.0.0       # tmserver
 +cheroot>=10.0.0       # tmserver
@@ -34,8 +34,8 @@
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
--ruamel.yaml==0.17.32 # YAML
-+ruamel.yaml>=0.17.32 # YAML
+-ruamel.yaml==0.18.5 # YAML
++ruamel.yaml>=0.18.5 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal
 +vobject>=0.9.6.1     # iCal

@@ -82,7 +82,7 @@ lib/cmake/Surelog/SurelogTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Surelog/SurelogTargets.cmake
 lib/libantlr4-runtime.a
 lib/libsurelog.so
-lib/libsurelog.so.1.79
+lib/libsurelog.so.1.82
 %%PYTHON%%lib/surelog-python/python/slSV3_1aPythonListener.py
 %%PYTHON%%lib/surelog-python/python/slformatmsg.py
 %%PYTHON%%lib/surelog-python/python/slwaivers.py

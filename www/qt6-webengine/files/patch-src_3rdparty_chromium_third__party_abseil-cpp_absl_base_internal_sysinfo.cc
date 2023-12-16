@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -30,7 +30,7 @@
  #include <sys/syscall.h>

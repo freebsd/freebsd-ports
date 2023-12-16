@@ -1,6 +1,6 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
@@ -21,7 +21,7 @@ GH_ACCOUNT=	diesel-rs
 
 CARGO_BUILD_ARGS=	--package=diesel_cli
 CARGO_INSTALL_PATH=	diesel_cli
-CARGO_CRATES=	aho-corasick-1.1.1 \
+CARGO_CRATES=	aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.4 \
@@ -33,9 +33,9 @@ CARGO_CRATES=	aho-corasick-1.1.1 \
 		assert_matches-1.5.0 \
 		autocfg-1.1.0 \
 		base64ct-1.6.0 \
-		bigdecimal-0.4.1 \
+		bigdecimal-0.4.2 \
 		bitflags-1.3.2 \
-		bitflags-2.4.0 \
+		bitflags-2.4.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		bumpalo-3.14.0 \
@@ -43,96 +43,96 @@ CARGO_CRATES=	aho-corasick-1.1.1 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.6 \
-		clap_builder-4.4.6 \
-		clap_complete-4.4.3 \
-		clap_derive-4.4.2 \
-		clap_lex-0.5.1 \
+		clap-4.4.8 \
+		clap_builder-4.4.8 \
+		clap_complete-4.4.4 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
 		console-0.15.7 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.9 \
+		cpufeatures-0.2.11 \
 		crypto-common-0.1.6 \
-		deranged-0.3.8 \
+		deranged-0.3.9 \
 		diffy-0.3.0 \
 		digest-0.10.7 \
 		dotenvy-0.15.7 \
 		encode_unicode-0.3.6 \
 		env_logger-0.8.4 \
 		equivalent-1.0.1 \
-		errno-0.3.4 \
-		errno-dragonfly-0.1.2 \
+		errno-0.3.6 \
 		fastrand-2.0.1 \
 		form_urlencoded-1.2.0 \
 		generic-array-0.14.7 \
-		getrandom-0.2.10 \
-		hashbrown-0.14.1 \
+		getrandom-0.2.11 \
+		hashbrown-0.14.2 \
 		heck-0.4.1 \
-		iana-time-zone-0.1.57 \
+		iana-time-zone-0.1.58 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
-		indexmap-2.0.2 \
-		insta-1.33.0 \
-		ipnet-2.8.0 \
+		indexmap-2.1.0 \
+		insta-1.34.0 \
+		ipnet-2.9.0 \
 		ipnetwork-0.20.0 \
 		itoa-1.0.9 \
-		js-sys-0.3.64 \
+		js-sys-0.3.65 \
 		lazy_static-1.4.0 \
-		libc-0.2.148 \
-		libm-0.2.7 \
-		libsqlite3-sys-0.26.0 \
+		libc-0.2.150 \
+		libm-0.2.8 \
+		libsqlite3-sys-0.27.0 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.8 \
-		lock_api-0.4.10 \
+		linux-raw-sys-0.4.11 \
+		lock_api-0.4.11 \
 		log-0.4.20 \
 		memchr-2.6.4 \
 		mysqlclient-sys-0.2.5 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.4 \
 		num-integer-0.1.45 \
-		num-traits-0.2.16 \
+		num-traits-0.2.17 \
 		once_cell-1.18.0 \
 		overload-0.1.1 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.8 \
+		parking_lot_core-0.9.9 \
 		password-hash-0.5.0 \
 		percent-encoding-2.3.0 \
 		pkg-config-0.3.27 \
+		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		pq-sys-0.4.8 \
-		proc-macro2-1.0.68 \
+		proc-macro2-1.0.69 \
 		quickcheck-1.0.3 \
 		quote-1.0.33 \
 		r2d2-0.8.10 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.3.5 \
-		regex-1.9.6 \
-		regex-automata-0.3.9 \
-		regex-syntax-0.7.5 \
-		rustix-0.38.17 \
+		redox_syscall-0.4.1 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
+		rustix-0.38.24 \
 		ryu-1.0.15 \
 		scheduled-thread-pool-0.2.7 \
 		scopeguard-1.2.0 \
-		serde-1.0.188 \
-		serde_derive-1.0.188 \
-		serde_json-1.0.107 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
+		serde_json-1.0.108 \
 		serde_regex-1.1.0 \
-		serde_spanned-0.6.3 \
-		similar-2.2.1 \
-		smallvec-1.11.1 \
+		serde_spanned-0.6.4 \
+		similar-2.3.0 \
+		smallvec-1.11.2 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
-		syn-2.0.38 \
-		tempfile-3.8.0 \
-		time-0.3.29 \
+		syn-2.0.39 \
+		tempfile-3.8.1 \
+		time-0.3.30 \
 		time-core-0.1.2 \
 		time-macros-0.2.15 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.7.8 \
-		toml_datetime-0.6.3 \
+		toml_datetime-0.6.5 \
 		toml_edit-0.19.15 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.13 \
@@ -140,19 +140,19 @@ CARGO_CRATES=	aho-corasick-1.1.1 \
 		unicode-normalization-0.1.22 \
 		url-2.4.1 \
 		utf8parse-0.2.1 \
-		uuid-1.4.1 \
+		uuid-1.5.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.87 \
-		wasm-bindgen-backend-0.2.87 \
-		wasm-bindgen-macro-0.2.87 \
-		wasm-bindgen-macro-support-0.2.87 \
-		wasm-bindgen-shared-0.2.87 \
+		wasm-bindgen-0.2.88 \
+		wasm-bindgen-backend-0.2.88 \
+		wasm-bindgen-macro-0.2.88 \
+		wasm-bindgen-macro-support-0.2.88 \
+		wasm-bindgen-shared-0.2.88 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.48.0 \
+		windows-core-0.51.1 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
@@ -171,7 +171,7 @@ CARGO_CRATES=	aho-corasick-1.1.1 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		winnow-0.5.16 \
+		winnow-0.5.19 \
 		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}

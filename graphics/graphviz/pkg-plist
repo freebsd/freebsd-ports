@@ -106,6 +106,10 @@ lib/graphviz/libgvplugin_gd.so.6.0.0
 %%GTK2%%lib/graphviz/libgvplugin_gtk.so
 %%GTK2%%lib/graphviz/libgvplugin_gtk.so.6
 %%GTK2%%lib/graphviz/libgvplugin_gtk.so.6.0.0
+lib/graphviz/libgvplugin_kitty.la
+lib/graphviz/libgvplugin_kitty.so
+lib/graphviz/libgvplugin_kitty.so.6
+lib/graphviz/libgvplugin_kitty.so.6.0.0
 lib/graphviz/libgvplugin_neato_layout.la
 lib/graphviz/libgvplugin_neato_layout.so
 lib/graphviz/libgvplugin_neato_layout.so.6
@@ -118,10 +122,10 @@ lib/graphviz/libgvplugin_neato_layout.so.6.0.0
 %%POPPLER%%lib/graphviz/libgvplugin_poppler.so
 %%POPPLER%%lib/graphviz/libgvplugin_poppler.so.6
 %%POPPLER%%lib/graphviz/libgvplugin_poppler.so.6.0.0
-lib/graphviz/libgvplugin_vt100.la
-lib/graphviz/libgvplugin_vt100.so
-lib/graphviz/libgvplugin_vt100.so.6
-lib/graphviz/libgvplugin_vt100.so.6.0.0
+lib/graphviz/libgvplugin_vt.la
+lib/graphviz/libgvplugin_vt.so
+lib/graphviz/libgvplugin_vt.so.6
+lib/graphviz/libgvplugin_vt.so.6.0.0
 lib/graphviz/libgvplugin_webp.la
 lib/graphviz/libgvplugin_webp.so
 lib/graphviz/libgvplugin_webp.so.6

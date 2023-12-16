@@ -1,5 +1,6 @@
 PORTNAME=	request_store
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/steveklabnik/request_store
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rack16>=1.4:www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack>=1.4:www/rubygem-rack
 
 USES=		gem
 

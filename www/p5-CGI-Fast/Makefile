@@ -1,5 +1,5 @@
 PORTNAME=	CGI-Fast
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEEJO
@@ -17,8 +17,6 @@ RUN_DEPENDS=	p5-CGI>=4:www/p5-CGI \
 		p5-FCGI>=0.67:www/p5-FCGI
 TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser
-
-CONFLICTS=	p5-CGI.pm-[1-3]*
 
 USES=		perl5
 USE_PERL5=	configure

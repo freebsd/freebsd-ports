@@ -17,6 +17,8 @@ LICENSE_FILE_THIRD_PARTY_TF_C_LICENSES=	${WRKDIR}/THIRD_PARTY_TF_C_LICENSES
 LICENSE_PERMS_THIRD_PARTY_TF_C_LICENSES=	dist-mirror dist-sell \
 						pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Broken for more than a year
+EXPIRATION_DATE=	2024-01-15
 BROKEN=		does not build: tries to fetch during the build
 ONLY_FOR_ARCHS=	amd64
 
@@ -26,13 +28,11 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 FLAVORS=	default noavx
 FLAVOR?=	${FLAVORS:[1]}
+default_CONFLICTS_INSTALL=	libtensorflow1-noavx
 noavx_PKGNAMESUFFIX=	-noavx
 noavx_CONFLICTS_INSTALL=	libtensorflow1
-default_CONFLICTS_INSTALL=	libtensorflow1-noavx
-CONFLICTS_INSTALL=	science/libtensorflow2
 
 USES=		gmake python:3.8-3.9,build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	tensorflow
 GH_PROJECT=	tensorflow
@@ -76,8 +76,9 @@ GH_TUPLE=	bazelbuild:rules_closure:308b05b2:bazelbuild_rules_closure \
 		NervanaSystems:ngraph-tf:v0.9.0:NervanaSystems_ngraph_tf \
 		pybind:pybind11:v2.3.0:pybind_pybind11 \
 		GrahamDumpleton:wrapt:1.11.1:GrahamDumpleton_wrapt
-
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	science/libtensorflow2
 
 CC?=		clang
 
@@ -95,29 +96,24 @@ OPTIONS_SINGLE_CPUFEATURE=	AVX AVX2 NOAVX
 OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_CPUFEATURE}
 .endif
 
-CPUFEATURE_DESC=Vector Processing Extensions
-
-NOAVX_DESC=	Disable Advanced Vector Extensions
-AVX_DESC=	Enable Advanced Vector Extensions (AVX)
 AVX2_DESC=	Enable Advanced Vector Extensions v2 (AVX2)
-
-NOAVX_VARS=	BAZEL_ARGS=""
-AVX_VARS=	BAZEL_ARGS="--copt=-march=core-avx-i --host_copt=-march=core-avx-i"
-AVX2_VARS=	BAZEL_ARGS="--copt=-march=core-avx2 --host_copt=-march=core-avx2"
-
+AVX_DESC=	Enable Advanced Vector Extensions (AVX)
+CPUFEATURE_DESC=Vector Processing Extensions
 CUDA_DESC=	Enable Compute Unified Device Architecture (CUDA) for Nvidia GPUs
+NOAVX_DESC=	Disable Advanced Vector Extensions
+OPENCL_SYCL_DESC=	Enable OpenCL Sycl
+ROCM_DESC=	Enable Radeon Open Computer (ROCm) for AMD GPUs
+XLA_DESC=	Enable Accelerated Linear Algebra (XLA)
+
+AVX2_VARS=	BAZEL_ARGS="--copt=-march=core-avx2 --host_copt=-march=core-avx2"
+AVX_VARS=	BAZEL_ARGS="--copt=-march=core-avx-i --host_copt=-march=core-avx-i"
 CUDA_VARS=	TF_ENABLE_CUDA=1
 CUDA_VARS_OFF=	TF_ENABLE_CUDA=0
-
-OPENCL_SYCL_DESC=	Enable OpenCL Sycl
+NOAVX_VARS=	BAZEL_ARGS=""
 OPENCL_SYCL_VARS=	TF_NEED_OPENCL_SYCL=1
 OPENCL_SYCL_VARS_OFF=	TF_NEED_OPENCL_SYCL=0
-
-ROCM_DESC=	Enable Radeon Open Computer (ROCm) for AMD GPUs
 ROCM_VARS=	TF_ENABLE_ROCM=1
 ROCM_VARS_OFF=	TF_ENABLE_ROCM=0
-
-XLA_DESC=	Enable Accelerated Linear Algebra (XLA)
 XLA_VARS=	TF_ENABLE_XLA=1
 XLA_VARS_OFF=	TF_ENABLE_XLA=0
 

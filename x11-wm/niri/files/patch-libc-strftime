@@ -1,0 +1,35 @@
+https://github.com/rust-lang/libc/issues/3459
+
+error[E0425]: cannot find function `strftime` in crate `libc`
+  --> src/utils.rs:44:24
+   |
+44 |         let rv = libc::strftime(buf.as_mut_ptr().cast(), buf.len(), format.as_ptr(), tm);
+   |                        ^^^^^^^^ not found in `libc`
+
+--- src/utils.rs.orig	2023-11-26 12:51:13 UTC
++++ src/utils.rs
+@@ -9,6 +9,24 @@ use std::time::Duration;
+ use std::thread;
+ use std::time::Duration;
+ 
++#[cfg(any(
++    target_os = "dragonfly",
++    target_os = "freebsd",
++    target_os = "netbsd",
++    target_os = "openbsd",
++))]
++mod libc {
++    pub use libc::*;
++    extern "C" {
++        pub fn strftime(
++            buf: *mut c_char,
++            maxsize: size_t,
++            format: *const c_char,
++            timeptr: *const tm,
++        ) -> size_t;
++    }
++}
++
+ use anyhow::{ensure, Context};
+ use directories::UserDirs;
+ use smithay::reexports::rustix::time::{clock_gettime, ClockId};

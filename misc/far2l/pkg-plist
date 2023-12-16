@@ -4,6 +4,7 @@ lib/far2l/Plugins/NetRocks/plug/NetRocks-FILE.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks-FTP.broker
 %%NFS%%lib/far2l/Plugins/NetRocks/plug/NetRocks-NFS.broker
 %%SFTP%%lib/far2l/Plugins/NetRocks/plug/NetRocks-SFTP.broker
+lib/far2l/Plugins/NetRocks/plug/NetRocks-SHELL.broker
 %%SMB%%lib/far2l/Plugins/NetRocks/plug/NetRocks-SMB.broker
 %%WEBDAV%%lib/far2l/Plugins/NetRocks/plug/NetRocks-WebDAV.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks.far-plug-wide
@@ -39,6 +40,8 @@ share/applications/far2l.desktop
 %%DATADIR%%/FarSpa.lng
 %%DATADIR%%/FarUkr.hlf
 %%DATADIR%%/FarUkr.lng
+%%DATADIR%%/Plugins/NetRocks/plug/SHELL/remote.sh
+%%DATADIR%%/Plugins/NetRocks/plug/SHELL/ways.ini
 %%DATADIR%%/Plugins/NetRocks/plug/bel.lng
 %%DATADIR%%/Plugins/NetRocks/plug/eng.lng
 %%DATADIR%%/Plugins/NetRocks/plug/helpe.hlf

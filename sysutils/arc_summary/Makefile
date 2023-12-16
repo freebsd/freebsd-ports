@@ -1,8 +1,11 @@
 PORTNAME=	arc_summary
-PORTVERSION=	20230609
+PORTVERSION=	20231114
 CATEGORIES=	sysutils
-MASTER_SITES=	https://raw.githubusercontent.com/openzfs/zfs/${_REV}/cmd/
-DISTFILES=	${PORTNAME}?${PORTVERSION}
+MASTER_SITES=	https://cgit.freebsd.org/src/plain/sys/contrib/openzfs/cmd/ \
+		https://cgit.freebsd.org/src/plain/sys/contrib/openzfs/cmd/arc_summary/:13
+DISTFILES=	${PORTNAME}3?h=releng/13.2:13 \
+		${PORTNAME}?h=releng/14.0 \
+		${PORTNAME}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Print ZFS ARC cache statistics and other information
@@ -21,12 +24,18 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/arc_summary
 
-_REV=		70ea484e3ec56c529c6c5027ffc43840100ce224
+.include <bsd.port.pre.mk>
 
 do-extract:
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/${PORTNAME}
+.if ${OSVERSION} < 1400000
+	${CP} ${DISTDIR}/${PORTNAME}3?h=releng/13.2 ${WRKSRC}/${PORTNAME}
+.elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
+	${CP} ${DISTDIR}/${PORTNAME}?h=releng/14.0 ${WRKSRC}/${PORTNAME}
+.else
+	${CP} ${DISTDIR}/${PORTNAME} ${WRKSRC}/${PORTNAME}
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

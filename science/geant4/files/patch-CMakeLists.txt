@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-07-18 11:39:33 UTC
+--- CMakeLists.txt.orig	2023-12-10 14:44:52 UTC
 +++ CMakeLists.txt
 @@ -48,3 +48,5 @@ set(CMAKE_MODULE_PATH
  #

@@ -1,0 +1,10 @@
+--- src/Inventor/Qt/common/spwinput_x11.cpp.in.orig	2023-11-20 22:02:11.259871000 +0100
++++ src/Inventor/Qt/common/spwinput_x11.cpp.in	2023-11-20 22:02:57.180166000 +0100
+@@ -26,6 +26,7 @@
+ #ifdef HAVE_CONFIG_H
+ #include <config.h>
+ #endif /* HAVE_CONFIG_H */
++#include <netinet/in.h>
+ 
+ #if SO@GUI@_DEBUG && 0 // debug
+ #define SPW_DEBUG 1

@@ -1472,7 +1472,6 @@ mail/claws-mail-fancy||2019-03-24|Has expired: webkit-gtk* last release in 2016 
 multimedia/miro||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 net/libproxy-webkit||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 net-im/hotot||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
-www/deforaos-surfer||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 www/gnome-web-photo||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issue
 www/hs-webkit||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 www/p5-Gtk2-WebKit||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
@@ -2633,7 +2632,6 @@ devel/py-pqueue||2019-10-16|Has expired: Unfetchable, unmaintained
 devel/pypersrc||2019-10-16|Has expired: Unfetchable, unmaintained
 devel/root-doc||2019-10-16|Has expired: Unfetchable, unmaintained
 devel/sfio||2019-10-16|Has expired: Unfetchable, unmaintained
-devel/styx||2019-10-16|Has expired: Unfetchable, unmaintained
 devel/tclmore||2019-10-16|Has expired: Unfetchable, unmaintained
 devel/umem||2019-10-16|Has expired: Unfetchable, unmaintained
 dns/ez-ipupdate||2019-10-16|Has expired: Unfetchable, unmaintained
@@ -4411,7 +4409,6 @@ www/redmine-sidebar_hide||2020-05-05|Has expired: Broken for more than 6 months
 www/rssowl||2020-05-05|Has expired: Broken for more than 6 months
 www/skytemplate||2020-05-05|Has expired: Broken for more than 6 months
 www/surfraw||2020-05-05|Has expired: Broken for more than 6 months
-www/sws||2020-05-05|Has expired: Broken for more than 6 months
 www/tickr||2020-05-05|Has expired: Broken for more than 6 months
 www/tinytinyhttpd||2020-05-05|Has expired: Broken for more than 6 months
 www/udmsearch||2020-05-05|Has expired: Broken for more than 6 months
@@ -4935,7 +4932,6 @@ audio/cplay||2020-09-19|Has expired: Uses deprecated version of python
 audio/cpp-xmms2||2020-09-19|Has expired: Uses deprecated version of python
 audio/p5-xmms2||2020-09-19|Has expired: Uses deprecated version of python
 biology/tophat||2020-09-19|Has expired: Uses deprecated version of python
-chinese/ibus-array||2020-09-19|Has expired: Uses deprecated version of python
 comms/congruity||2020-09-19|Has expired: Uses deprecated version of python
 comms/libbtbb||2020-09-19|Has expired: Uses deprecated version of python
 databases/mtools-mongodb||2020-09-19|Has expired: Uses deprecated version of python
@@ -5443,7 +5439,6 @@ devel/mongo-cxx-driver||2021-01-02|Has expired: Uses Python 2.7 version of scons
 emulators/gem5||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 emulators/nonpareil||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/freera||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
-games/glob2||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/marsnomercy||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/netpanzer||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 graphics/sk1libs||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
@@ -6298,7 +6293,6 @@ security/rubygem-bcrypt_pbkdf10|security/rubygem-bcrypt_pbkdf|2022-01-11|Remove 
 math/gotoblas|math/openblas|2022-01-15|Remove obsoleted port. Use math/openblas instead
 net/pipsecd||2022-01-15|Has expired: Abandonware, current release is from 1999 and uses insecure encryption algorithms
 devel/maven31|devel/maven|2022-01-15|Has expired: Outdated, unsupported upstream
-devel/wasi-compiler-rt12||2022-01-15|Has expired: this ports exists solely for building Firefox 95+ in 2021Q4
 devel/e2fsprogs-libss||2022-01-17|Folded back into sysutils/e2fsprogs, which was the sole user
 lang/spidermonkey60|lang/spidermonkey78|2022-01-18|Has expired: Requires python2 to build
 shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell support
@@ -7195,7 +7189,6 @@ sysutils/cfengine-masterfiles317||2022-12-10|Has expired: Expire one year after 
 net-mgmt/icingaweb2-module-ipl|net-mgmt/icinga-php-library|2022-12-13|Renamed by project
 x11/darkman|accessibility/darkman|2022-12-14|Moved to a better category
 net/samba412||2022-12-18|Has expired: Reached its EoL on September 20, 2021
-graphics/opencoloriov1|graphics/opencolorio|2022-12-20|Used by blender-lts28 which is EOL'd
 graphics/openimageio-ociov1|graphics/openimageio|2022-12-20|Used by blender-lts28 which is EOL'd
 textproc/retext|editors/retext|2022-12-21|Moved to a better category
 math/vtk6||2022-12-24|Has expired: Old version not used anywhere in the ports tree
@@ -7611,7 +7604,6 @@ devel/rubygem-aws-sdk-core3171|devel/rubygem-aws-sdk-core|2023-06-05|Remove obso
 net/rubygem-u2f0|net/rubygem-u2f|2023-06-05|Remove obsoleted port. Use net/rubygem-u2f instead
 security/rubygem-omniauth-cas3-oauth2|security/rubygem-omniauth-cas3|2023-06-05|Remove obsoleted port. Use security/rubygem-omniauth-cas3 instead
 textproc/rubygem-loofah220|textproc/rubygem-loofah|2023-06-05|Remove obsoleted port. Use textproc/rubygem-loofah instead
-textproc/rubygem-loofah221|textproc/rubygem-loofah|2023-06-05|Remove obsoleted port. Use textproc/rubygem-loofah instead
 www/rubygem-rack227|www/rubygem-rack22|2023-06-05|Remove obsoleted port. Use www/rubygem-rack22 instead
 databases/rubygem-pg13|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Use databases/rubygem-pg instead
 devel/rubygem-fast_gettext1|devel/rubygem-fast_gettext|2023-06-05|Remove obsoleted port. Use devel/rubygem-fast_gettext instead
@@ -7626,10 +7618,7 @@ sysutils/intel-qcu|sysutils/intel-epct|2023-06-14|Moved to sysutils/intel-epct
 multimedia/obs-qtwebkit||2023-06-16|Has expired: OBS ships with their own browser plugin from version 25 onwards
 games/tuxmath||2023-06-16|Has expired: Upstream last release was in 2011
 emulators/skyeye||2023-06-17|Has expired: Upstream last release was in 2014
-x11/deforaos-panel||2023-06-18|Has expired: Broken on all supported versions
 x11/deforaos-desktop||2023-06-18|Removed, needs expired x11/deforaos-panel
-x11/deforaos-locker||2023-06-18|Removed, needs expired x11/deforaos-panel
-comms/deforaos-phone||2023-06-18|Removed, needs expired x11/deforaos-panel
 textproc/apache-solr9|textproc/apache-solr|2023-06-18|New stable release
 games/poker-eval||2023-06-20|Upstream vanished
 graphics/3d-ascii-viewer-c|graphics/3d-ascii-viewer|2023-06-21|Project was renamed
@@ -7975,3 +7964,221 @@ games/libretro-fbalpha|games/libretro-fbalpha2012|2023-11-06|Follow naming of li
 games/libretro-paralleln64|games/libretro-parallel_n64|2023-11-06|Follow naming of libretro-super build script
 games/libretro-uae|games/libretro-puae|2023-11-06|Follow naming of libretro-super build script
 games/libretro-vbanext|games/libretro-vba_next|2023-11-06|Follow naming of libretro-super build script
+archivers/fpc-bzip2|lang/fpc|2023-11-12|This port was merged into lang/fpc
+archivers/fpc-unzip|lang/fpc|2023-11-12|This port was merged into lang/fpc
+audio/fpc-mad|lang/fpc|2023-11-12|This port was merged into lang/fpc
+audio/fpc-a52|lang/fpc|2023-11-12|This port was merged into lang/fpc
+audio/fpc-oggvorbis|lang/fpc|2023-11-12|This port was merged into lang/fpc
+audio/fpc-modplug|lang/fpc|2023-11-12|This port was merged into lang/fpc
+audio/fpc-openal|lang/fpc|2023-11-12|This port was merged into lang/fpc
+converters/fpc-iconvenc|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-odbc|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-fpindexer|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-postgres|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-dblib|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-ibase|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-gdbm|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-mysql|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-pxlib|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-oracle|lang/fpc|2023-11-12|This port was merged into lang/fpc
+databases/fpc-sqlite|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-pthreads|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-tplylib|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-pdf|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-sdo|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-image|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-xml|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-newt|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fppkg|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-sdl|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-extra|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-odata|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-stl|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-js|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-symbolic|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-res|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-web|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-registry|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-fpcunit|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-report|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-passrc|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-regexpr|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-sound|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-dbus|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-db|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-gdbint|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-libmagic|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-async|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-base|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-json|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fcl-net|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-fv|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-zlib|lang/fpc|2023-11-12|This port was merged into lang/fpc
+devel/fpc-bfd|lang/fpc|2023-11-12|This port was merged into lang/fpc
+editors/fpc-ide|lang/fpc|2023-11-12|This port was merged into lang/fpc
+ftp/fpc-libcurl|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-libpng|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-ncurses|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-hermes|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-imagemagick|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-rsvg|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-libgd|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-opengl|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-graph|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-vcl-compat|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-svgalib|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-proj4|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-pasjpeg|lang/fpc|2023-11-12|This port was merged into lang/fpc
+graphics/fpc-cairo|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-pastojs|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-rtl-objpas|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-lua|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-utils|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-rtl-generics|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-rtl-extra|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-units|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-rexx|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-base|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-rtl-unicode|lang/fpc|2023-11-12|This port was merged into lang/fpc
+lang/fpc-rtl-console|lang/fpc|2023-11-12|This port was merged into lang/fpc
+math/fpc-gmp|lang/fpc|2023-11-12|This port was merged into lang/fpc
+math/fpc-numlib|lang/fpc|2023-11-12|This port was merged into lang/fpc
+math/fpc-fftw|lang/fpc|2023-11-12|This port was merged into lang/fpc
+misc/fpc-chm|lang/fpc|2023-11-12|This port was merged into lang/fpc
+multimedia/fpc-dts|lang/fpc|2023-11-12|This port was merged into lang/fpc
+multimedia/fpc-libvlc|lang/fpc|2023-11-12|This port was merged into lang/fpc
+net/fpc-ldap|lang/fpc|2023-11-12|This port was merged into lang/fpc
+net/fpc-pcap|lang/fpc|2023-11-12|This port was merged into lang/fpc
+net/fpc-libenet|lang/fpc|2023-11-12|This port was merged into lang/fpc
+print/fpc-libcups|lang/fpc|2023-11-12|This port was merged into lang/fpc
+security/fpc-gnutls|lang/fpc|2023-11-12|This port was merged into lang/fpc
+security/fpc-openssl|lang/fpc|2023-11-12|This port was merged into lang/fpc
+sysutils/fpc-utmp|lang/fpc|2023-11-12|This port was merged into lang/fpc
+sysutils/fpc-uuid|lang/fpc|2023-11-12|This port was merged into lang/fpc
+sysutils/fpc-syslog|lang/fpc|2023-11-12|This port was merged into lang/fpc
+textproc/fpc-aspell|lang/fpc|2023-11-12|This port was merged into lang/fpc
+textproc/fpc-libxml2|lang/fpc|2023-11-12|This port was merged into lang/fpc
+www/fpc-libmicrohttpd|lang/fpc|2023-11-12|This port was merged into lang/fpc
+www/fpc-httpd24|lang/fpc|2023-11-12|This port was merged into lang/fpc
+www/fpc-googleapi|lang/fpc|2023-11-12|This port was merged into lang/fpc
+www/fpc-webidl|lang/fpc|2023-11-12|This port was merged into lang/fpc
+www/fpc-httpd22|lang/fpc|2023-11-12|This port was merged into lang/fpc
+www/fpc-fastcgi|lang/fpc|2023-11-12|This port was merged into lang/fpc
+x11/fpc-x11|lang/fpc|2023-11-12|This port was merged into lang/fpc
+x11-fonts/fpc-libfontconfig|lang/fpc|2023-11-12|This port was merged into lang/fpc
+x11-toolkits/fpc-xforms|lang/fpc|2023-11-12|This port was merged into lang/fpc
+x11-toolkits/fpc-gtk2|lang/fpc|2023-11-12|This port was merged into lang/fpc
+sysutils/fpc-users|lang/fpc|2023-11-14|This port was merged into lang/fpc
+net/py-ldap|net/py-python-ldap|2023-11-17|Rename to conform upstream name
+devel/wasi-compiler-rt11||2023-11-20|Version no longer supported as a WASI component
+devel/mingw32-libyaml||2023-11-21|Has expired: Last upstream release was in 2014 and mingw32 project is defunct
+devel/mingw32-pdcurses||2023-11-21|Has expired: Last upstream release was in 2009 and mingw32 project is defunct
+devel/mingw32-openssl||2023-11-21|Has expired: Upstream reached EOL and mingw32 project is defunct
+devel/mingw32-pthreads||2023-11-21|Has expired: Last upstream release was in 2012 and mingw32 project is defunct
+devel/mingw32-directx||2023-11-21|Has expired: Last upstream release was in 2002 and mingw32 project is more or less dead
+math/mingw32-libgmp||2023-11-21|Has expired: Broken for more than a year
+devel/mingw32-libffi||2023-11-21|Has expired: Last upstream release was in 2014 and mingw32 project is defunct
+devel/mingw32-bin-msvcrt||2023-11-21|Has expired: Last upstream release was in 2014 and project mingw32 is defunct
+devel/mingw32-zlib||2023-11-21|Has expired: Last upstream release was in 2014 and project mingw32 is defunct
+devel/mingw32-gcc||2023-11-21|Has expired: Upstream release was in 2015 and mingw32 project is defunct
+www/guile-www||2023-11-21|Has expired: Last upstream release was in 2002 and no longer relevant nowadays
+x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2023-11-21|Out of date: use x11-toolkits/wlroots for now
+games/suyimazu|games/mizuma|2023-11-22|Project renamed
+www/dfileserver||2023-11-22|Has expired: Obsolete, consider using www/darkhttpd
+devel/sdts++||2023-11-22|Has expired: Last upstream release was in 2003 and both MASTER_SITES and WWW are unreachable
+databases/postgis30||2023-11-22|Removed
+math/gri||2023-11-26|Has expired: Last upstream release was in 2012 and gnuplot generates better results
+comms/telldus-core||2023-11-26|Has expired: BROKEN for more than a year
+sysutils/openshift-install||2023-11-26|Has expired: BROKEN for more than a year
+devel/capnproto080|devel/capnproto1|2023-11-27|Remove obsoleted port. Use devel/capnproto1 instead
+devel/py-cachetools3|devel/py-cachetools|2023-11-27|Remove obsoleted port. Use devel/py-cachetools instead
+www/rubygem-asana1|www/rubygem-asana|2023-11-27|Remove obsoleted port. Use www/rubygem-asana instead
+devel/rubygem-rdoc63|devel/rubygem-rdoc|2023-11-27|Remove obsoleted port. Use devel/rubygem-rdoc instead
+security/rubygem-devise-two-factor40-rails70|security/rubygem-devise-two-factor41-rails70|2023-11-27|Remove obsoleted port. Use security/rubygem-devise-two-factor41-rails70 instead
+www/rubygem-rqrcode-rails3|www/rubygem-rqrcode|2023-11-27|Remove obsoleted port. Use www/rubygem-rqrcode instead
+textproc/py-pygments-25|textproc/py-pygments|2023-11-27|Remove obsoleted port. Use textproc/py-pygments instead
+devel/rubygem-devise48-rails70|devel/rubygem-devise-rails70|2023-11-29|Use devel/rubygem-devise-rails70 instead
+textproc/rubygem-rouge41|textproc/rubygem-rouge|2023-11-29|Use textproc/rubygem-rouge instead
+devel/rubygem-aws-sdk-s31121|devel/rubygem-aws-sdk-s3|2023-11-29|Use devel/rubygem-aws-sdk-s3 instead
+games/py-mnemosyne|games/py-mnemosyne-proj|2023-11-30|Rename to match PyPI name
+databases/p5-Search-Xapian12|databases/p5-Search-Xapian|2023-12-01|Remove obsoleted port. Use databases/p5-Search-Xapian instead
+databases/xapian-bindings12|databases/xapian-bindings|2023-12-01|Remove obsoleted port. Use databases/xapian-bindings instead
+databases/xapian-core12|databases/xapian-core|2023-12-01|Remove obsoleted port. Use databases/xapian-core instead
+www/xapian-omega12|www/xapian-omega|2023-12-01|Remove obsoleted port. Use www/xapian-omega instead
+devel/rubygem-bootsnap116|devel/rubygem-bootsnap|2023-12-01|Remove obsoleted port. Use devel/rubygem-bootsnap instead
+devel/rubygem-gettext_i18n_rails18|devel/rubygem-gettext_i18n_rails|2023-12-01|Remove obsoleted port. Use devel/rubygem-gettext_i18n_rails instead
+sysutils/rubygem-chef17|sysutils/rubygem-chef|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef instead
+sysutils/rubygem-chef-bin17|sysutils/rubygem-chef-bin|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-bin instead
+sysutils/rubygem-chef-config17|sysutils/rubygem-chef-config|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-config instead
+sysutils/rubygem-chef-utils17|sysutils/rubygem-chef-utils|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-utils instead
+sysutils/rubygem-ohai17|sysutils/rubygem-ohai|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-ohai instead
+net-im/scudcloud||2023-12-01|Has expired: Project was abandoned in 2018
+java/wildfly24||2023-12-02|Has expired: End of life upstream
+devel/fnccheck||2023-12-02|Has expired: BROKEN for more than an year and last upstream release was in 2012
+mail/qmail-spamcontrol||2023-12-02|Has expired: BROKEN for more than 4+ years
+java/wildfly16||2023-12-02|Has expired: End of life upstream
+java/wildfly90||2023-12-02|Has expired: End of life upstream
+java/wildfly17||2023-12-02|Has expired: End of life upstream
+java/wildfly15||2023-12-02|Has expired: End of life upstream
+astro/ptiger||2023-12-02|Has expired: Depends on expired astro/tkgeomap
+devel/ptmalloc2||2023-12-02|Has expired: Abandonware, last release in 2006 and there are other alternative malloc implementations available
+java/wildfly25||2023-12-02|Has expired: End of life upstream
+net/gupnp-ui||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
+graphics/R-cran-rtiff||2023-12-02|Has expired: Fails to build and abandoned upstream
+games/iagno||2023-12-02|Has expired: BROKEN for more than a year and no upstream activity for the last 2 years
+emulators/ines||2023-12-02|Has expired: Ancient NES emulator that only works on i386, consider using emulators/higan
+www/varnish-nagios||2023-12-02|Has expired: Marked BROKEN for months, also depends on deprecated version of Varnish
+net/gupnp14||2023-12-02|Has expired: Unsupported legacy version upstream, also fails to build with newer versions of libxml2. Consider migrating to net/gupnp
+net/gupnp-dlna||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
+net/gupnp-igd12||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
+irc/irssi-dcc_send_limiter||2023-12-02|Has expired: BROKEN for more than a year
+www/linux-opera||2023-12-02|Has expired: outdated and unsupported version
+sysutils/gtk-imonc||2023-12-02|Has expired: BROKEN for more than 2 years
+audio/gradio||2023-12-02|Has expired: BROKEN for more than a year
+java/wildfly13||2023-12-02|Has expired: End of life upstream
+astro/xeartk||2023-12-02|Has expired: Depends on expired astro/tkgeomap
+math/py-piranha||2023-12-02|Has expired: BROKEN for more than a year and last upstream activity was in 2018
+games/abstreet||2023-12-02|Has expired: BROKEN for more than a year and issue does not seem to be resolvable soon
+security/tor-devel||2023-12-02|Has expired: Ignored for more than a year and security/tor is more recent than this
+java/wildfly12||2023-12-02|Has expired: End of life upstream
+java/wildfly11||2023-12-02|Has expired: End of life upstream
+net-p2p/arbitrum-avm||2023-12-02|Has expired: BROKEN for more than an year
+www/mozplugger||2023-12-02|Has expired: Obsolete, defunct as Mozilla Firefox dropped support for plugin interface as of ESR 60
+devel/ptmalloc||2023-12-02|Has expired: Abandonware, last release in 2006 and there are other alternative malloc implementations available
+java/wildfly18||2023-12-02|Has expired: End of life upstream
+java/wildfly14||2023-12-02|Has expired: End of life upstream
+www/madsonic||2023-12-02|Has expired: Depends on www/jetty8 which has been listed as end of life since 2015
+www/jetty8||2023-12-02|Has expired: End of life in 2014, consider migrating to www/jetty10
+textproc/bibtool||2023-12-02|Has expired: BROKEN for more than an year
+games/gnome-taquin||2023-12-02|Has expired: BROKEN for more than a year and no upstream activity for more than 2 years
+audio/mous||2023-12-02|Has expired: BROKEN for more than a year
+audio/mixxx22|audio/mixxx|2023-12-02|Has expired: Deprecated upstream, consider migrating to audio/mixxx
+www/jetty9||2023-12-02|Has expired: End of life as of 2022-06-01, consider migrating to www/jetty10
+multimedia/obs-scrab||2023-12-02|Has expired: Fails to package and marked broken over 10 months ago
+archivers/jzlib||2023-12-02|Has expired: Abandonware, untouched for over 10 years and Java Platform 8+ provides a Deflater class
+java/wildfly26||2023-12-02|Has expired: End of life upstream
+science/libgeodecomp||2023-12-02|Has expired: BROKEN for more than an year
+astro/tkgeomap||2023-12-02|Has expired: abandoned
+astro/tclgeomap||2023-12-02|Has expired: abandoned
+devel/electron24||2023-12-03|Has expired: Upstream EOL reached on 2023-10-10
+audio/festlex-ogi||2023-12-04|Has expired: Both MASTER_SITES and WWW are defunct
+net/libkvkontakte||2023-12-04|Has expired: Depends on deprecated www/qt5-webkit
+french/geonext||2023-12-05|Has expired: Last upstream release was in 2014
+german/geonext||2023-12-05|Has expired: Last upstream release was in 2014
+math/geonext||2023-12-05|Has expired: Last upstream release was in 2014
+polish/gnugadu2||2023-12-05|Has expired: Last upstream release was in 2006
+net-im/centerim||2023-12-05|Has expired: Last upstream release was in 2011
+net-im/jggtrans||2023-12-05|Has expired: Upstream last release was in 2014
+polish/tleenx2||2023-12-05|Has expired: Last upstream release was in 2004
+polish/libtlen||2023-12-05|Has expired: Last upstream release was in 2004
+devel/rubygem-font-awesome-rails-rails50|devel/rubygem-font-awesome-rails-rails60|2023-12-06|Obsolete, use devel/rubygem-font-awesome-rails-rails60 instead
+security/rubygem-devise-two-factor-rails61|security/rubygem-devise-two-factor-rails70|2023-12-06|Obsolete, use security/rubygem-devise-two-factor-rails70 instead
+net/py-anonfile||2023-12-07|Has expired: anonfile.com has shut down
+www/thundersnarf||2023-12-12|Has expired: Depends on deprecated php80
+textproc/stardict-quick||2023-12-12|Has expired: unfetchable
+devel/rubygem-view_component-rails61|devel/rubygem-view_component-rails70|2023-12-14|Obsolete, use devel/rubygem-view_component-rails70 instead
+devel/rubygem-cucumber-messages23|devel/rubygem-cucumber-messages|2023-12-14|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
+devel/py-astroid253|devel/py-astroid|2023-12-14|Remove obsoleted port. Use devel/py-astroid instead
+mail/imap-uw|mail/panda-imap|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-imap
+mail/mailsync||2023-12-16|Has expired: Depends on outdated mail/cclient
+mail/cclient|mail/panda-cclient|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-cclient

@@ -102,7 +102,6 @@ lib/libtwitterapihelper.so.1.3.0
 %%QT_PLUGINDIR%%/kcm_choqok_tinyarro_ws.so
 %%QT_PLUGINDIR%%/kcm_choqok_twitgoo.so
 %%QT_PLUGINDIR%%/kcm_choqok_yourls.so
-%%WEBKIT%%%%QT_PLUGINDIR%%/kf5/parts/konqchoqokplugin.so
 %%QT_PLUGINDIR%%/kf5/purpose/purposeplugin.so
 share/applications/org.kde.choqok.desktop
 %%DATADIR%%/images/splash_screen.png
@@ -217,7 +216,6 @@ share/icons/hicolor/64x64/apps/twitgoo_uploader.png
 share/icons/hicolor/scalable/apps/choqok_offline.svgz
 share/icons/hicolor/scalable/apps/choqok.svgz
 share/knotifications5/choqok.notifyrc
-%%WEBKIT%%share/kservices5/ServiceMenus/choqok_share.desktop
 share/kservices5/choqok_accountsconfig.desktop
 share/kservices5/choqok_appearanceconfig.desktop
 share/kservices5/choqok_behaviorconfig.desktop
@@ -260,7 +258,6 @@ share/kservices5/choqok_ur1_ca.desktop
 share/kservices5/choqok_videopreview.desktop
 share/kservices5/choqok_yourls.desktop
 share/kservices5/choqok_yourls_config.desktop
-%%WEBKIT%%share/kservices5/konqchoqok.desktop
 share/kservicetypes5/choqokplugin.desktop
 share/kservicetypes5/choqokshortenerplugin.desktop
 share/kservicetypes5/choqokuploaderplugin.desktop
@@ -269,7 +266,6 @@ share/kxmlgui5/choqok_filter/filterui.rc
 share/kxmlgui5/choqok_nowlistening/nowlisteningui.rc
 share/kxmlgui5/choqok_quickfilter/quickfilterui.rc
 share/kxmlgui5/choqok_searchaction/searchactionui.rc
-%%WEBKIT%%share/kxmlgui5/konqchoqokplugin/konqchoqok.rc
 share/locale/ar/LC_MESSAGES/choqok.mo
 share/locale/bg/LC_MESSAGES/choqok.mo
 share/locale/bs/LC_MESSAGES/choqok.mo

@@ -1,37 +1,47 @@
 PORTNAME=	pharo
-DISTVERSION=	1.4
-PORTREVISION=	3
+DISTVERSION=	10.0.9
+DISTVERSIONSUFFIX=	de76067
+PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	https://gforge.inria.fr/frs/download.php/30620/
-DISTNAME=	Pharo-${DISTVERSION}-${SVNVERSION}
-EXTRACT_ONLY=	Pharo-${DISTVERSION}-${SVNVERSION}.zip
+MASTER_SITES=	http://files.pharo.org/vm/pharo-spur64-headless/Linux-x86_64/source/
+DISTNAME=	PharoVM-${DISTVERSION}-${DISTVERSIONSUFFIX}-Linux-x86_64-c-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smalltalk-inspired language and environment
-WWW=		http://www.pharo-project.org/
+WWW=		http://www.pharo.org/
 
-LICENSE=	APACHE20 MIT
-LICENSE_COMB=	multi
+LICENSE=	MIT
 
-RUN_DEPENDS=	squeak:lang/squeak
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libgit2.so:devel/libgit2 \
+		libcairo.so:graphics/cairo \
+		libfreetype.so:print/freetype2 \
+		libpixman-1.so:x11/pixman \
+		libpng.so:graphics/png \
+		libuuid.so:misc/e2fsprogs-libuuid
 
-SVNVERSION=	14438
+USES=		cmake ssl
+CMAKE_ARGS=	-DFLAVOUR=CoInterpreter \
+		-DPHARO_BIN_LOCATION=${PREFIX}/libexec/pharo10 \
+		-DGENERATED_SOURCE_DIR=.
+CMAKE_ON=	ALWAYS_INTERACTIVE BUILD_IS_RELEASE
+CMAKE_OFF=	GENERATE_SOURCES BUILD_BUNDLE
 
-NO_BUILD=	yes
-USES=		zip
+WRKSRC=		${WRKDIR}/pharo-vm
 
-DIST_SUBDIR=	squeak
-
-FILES_DIR=	${WRKDIR}/Pharo-${DISTVERSION}-${SVNVERSION}/
-FILES_TO_INSTALL=Pharo-${DISTVERSION}.image \
-		Pharo-${DISTVERSION}.changes \
-		PharoV10.sources
-PLIST_FILES=	lib/squeak/Pharo-${DISTVERSION}.image \
-		lib/squeak/Pharo-${DISTVERSION}.changes \
-		lib/squeak/PharoV10.sources
+USE_HCC=	yes
+USE_SDL=	sdl image
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/squeak
-	${INSTALL_DATA} ${FILES_TO_INSTALL:S,^,${FILES_DIR}/,} ${STAGEDIR}${PREFIX}/lib/squeak
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/pharo10
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pharo10
+	cd ${WRKDIR}/.build/build/packaging/linux/bin && \
+		${INSTALL_SCRIPT} pharo ${STAGEDIR}${PREFIX}/bin/pharo10
+	cd ${WRKDIR}/.build/build/vm && \
+		${INSTALL_PROGRAM} pharo ${STAGEDIR}${PREFIX}/libexec/pharo10/pharo
+	cd ${WRKDIR}/.build/build/vm && \
+		${FIND} . -type f -name "*.so" | while read file; do \
+		${INSTALL_LIB} $$file ${STAGEDIR}${PREFIX}/lib/pharo10/$$file; \
+		done
 
 .include <bsd.port.mk>

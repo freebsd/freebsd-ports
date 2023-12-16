@@ -1,5 +1,5 @@
 PORTNAME=	memisc
-DISTVERSION=	0.99.31.6
+DISTVERSION=	0.99.31.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,11 +9,9 @@ WWW=		https://www.elff.eu/software/memisc/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-data.table>0:devel/R-cran-data.table \
+RUN_DEPENDS=	R-cran-data.table>0:devel/R-cran-data.table \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-yaml>0:textproc/R-cran-yaml
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 

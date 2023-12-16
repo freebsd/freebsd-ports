@@ -41,7 +41,6 @@
     SUBDIR += ircproxy
     SUBDIR += iroffer-dinoex
     SUBDIR += irssi
-    SUBDIR += irssi-dcc_send_limiter
     SUBDIR += irssi-fish
     SUBDIR += irssi-icb
     SUBDIR += irssi-scripts

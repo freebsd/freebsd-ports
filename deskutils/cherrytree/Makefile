@@ -1,5 +1,6 @@
 PORTNAME=	cherrytree
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.giuspen.com/software/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

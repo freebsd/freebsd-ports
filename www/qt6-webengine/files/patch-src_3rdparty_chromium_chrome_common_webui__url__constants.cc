@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/common/webui_url_constants.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/chrome/common/webui_url_constants.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/chrome/common/webui_url_constants.cc
-@@ -483,18 +483,18 @@ const char kOsUIVersionURL[] = "os://version";
+@@ -514,18 +514,18 @@ const char kOsUIVersionURL[] = "os://version";
  const char kOsUIVersionURL[] = "os://version";
  #endif
  
@@ -22,7 +22,7 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -509,14 +509,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -540,14 +540,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -39,7 +39,7 @@
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -532,7 +532,7 @@ const char kChromeUIProfilePickerStartupQuery[] = "sta
+@@ -564,7 +564,7 @@ const char kChromeUIProfilePickerStartupQuery[] = "sta
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -48,7 +48,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
-@@ -610,7 +610,7 @@ const char kPrivacySandboxSubPagePath[] = "/privacySan
+@@ -644,7 +644,7 @@ const char kPrivacySandboxSubPagePath[] = "/privacySan
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -57,7 +57,7 @@
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -831,7 +831,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -880,7 +880,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

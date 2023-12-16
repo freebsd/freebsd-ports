@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/base/network_interfaces_posix.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/net/base/network_interfaces_posix.h.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/net/base/network_interfaces_posix.h
 @@ -8,6 +8,8 @@
  // This file provides some basic functionality shared between

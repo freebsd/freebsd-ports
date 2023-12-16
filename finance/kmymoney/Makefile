@@ -1,6 +1,6 @@
 PORTNAME=	kmymoney
 PORTVERSION=	5.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -14,30 +14,30 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
 		libKChart.so:graphics/kdiagram
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
+USES=		cmake compiler:c++14-lang desktop-file-utils \
+		gettext-runtime:build gettext-tools kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
-USE_QT=		buildtools:build core dbus gui network printsupport qmake:build \
-		sql testlib:build xml widgets
-USE_KDE=	activities archive auth bookmarks codecs completion config \
+USE_QT=		buildtools:build core dbus gui network printsupport \
+		qmake:build sql testlib:build xml webengine widgets
+USE_KDE=	activities archive codecs completion config \
 		configwidgets coreaddons doctools:build ecm:build i18n \
-		iconthemes itemmodels itemviews jobwidgets kcmutils \
-		kio notifications textwidgets service solid sonnet \
+		itemmodels itemviews jobwidgets kcmutils \
+		kio notifications textwidgets service sonnet \
 		wallet widgetsaddons xmlgui
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	kmymoney/misc/financequote.pl
 
+CMAKE_ON=	ENABLE_WEBENGINE
+
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	CALENDAR KBANKING OFX SQLCIPHER WOOB
-WEB_DESC=		Web content renderer
-OPTIONS_SINGLE=		WEB
-OPTIONS_SINGLE_WEB=	KDEWEBKIT QTWEBENGINE
 OPTIONS_DEFINE=		ADDRESSBOOK GNUPG HOLIDAYS QUOTES
-OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES QTWEBENGINE
+OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES
 OPTIONS_SUB=		yes
 
 ADDRESSBOOK_DESC=	Address book support
-ADDRESSBOOK_USE=	kde=akonadi,contacts,identitymanagement,pimtextedit
+ADDRESSBOOK_USE=	kde=akonadi,contacts,identitymanagement
 ADDRESSBOOK_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5Akonadi \
 				CMAKE_DISABLE_FIND_PACKAGE_KF5Contacts \
 				CMAKE_DISABLE_FIND_PACKAGE_KF5IdentityManagement
@@ -46,10 +46,7 @@ CALENDAR_DESC=		iCalendar exporter
 CALENDAR_LIB_DEPENDS=	libical.so:devel/libical
 CALENDAR_CMAKE_BOOL=	ENABLE_LIBICAL
 
-GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme \
-			libgpgmepp.so:security/gpgme-cpp \
-			libassuan.so:security/libassuan \
-			libgpg-error.so:security/libgpg-error
+GNUPG_LIB_DEPENDS=	libgpgmepp.so:security/gpgme-cpp
 GNUPG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Gpgmepp \
 			CMAKE_DISABLE_FIND_PACKAGE_KF5Gpgmepp
 
@@ -64,16 +61,9 @@ KBANKING_LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
 KBANKING_USE=		qt=declarative
 KBANKING_CMAKE_BOOL=	ENABLE_KBANKING
 
-KDEWEBKIT_DESC=		Web content rendering via KDEWebKit
-KDEWEBKIT_USE=		kde=kdewebkit
-
 OFX_DESC=		OFX (Open Financial Exchange) importer
 OFX_LIB_DEPENDS=	libofx.so:finance/libofx
 OFX_CMAKE_BOOL=		ENABLE_OFXIMPORTER
-
-QTWEBENGINE_DESC=	Web content rendering via QtWebEngine
-QTWEBENGINE_USE=	qt=location,webchannel,webengine
-QTWEBENGINE_CMAKE_BOOL=	ENABLE_WEBENGINE
 
 QUOTES_DESC=		Online stock and currency price quotes
 QUOTES_USES=		perl5
@@ -92,7 +82,6 @@ WOOB_DESC=		Online banking via Web Outside Of Browsers
 WOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
 WOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
 WOOB_USES=		python
-WOOB_USE=		qt=concurrent
 WOOB_CMAKE_BOOL=	ENABLE_WOOB
 
 .if defined(MAINTAINER_MODE)

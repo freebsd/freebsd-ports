@@ -1,0 +1,71 @@
+Obtained from:	https://nheko.im/nheko-reborn/nheko/-/commit/e89e65dc17020772eb057414b4f0c5d6f4ad98d0
+		https://nheko.im/nheko-reborn/nheko/-/commit/871e403f6799df48cfbbe08eba56d473a0c34216
+
+--- src/Cache.cpp.orig	2023-02-22 23:50:45 UTC
++++ src/Cache.cpp
+@@ -438,7 +438,7 @@ Cache::loadSecretsFromStore(
+                 if (job->error() && job->error() != QKeychain::Error::EntryNotFound) {
+                     nhlog::db()->error("Restoring secret '{}' failed ({}): {}",
+                                        name.toStdString(),
+-                                       job->error(),
++                                       static_cast<int>(job->error()),
+                                        job->errorString().toStdString());
+ 
+                     fatalSecretError();
+--- src/ChatPage.cpp.orig	2023-02-22 23:50:45 UTC
++++ src/ChatPage.cpp
+@@ -1248,7 +1248,7 @@ ChatPage::getBackupVersion()
+                       nhlog::crypto()->info("Our backup key {} does not match the one "
+                                             "used in the online backup {}",
+                                             pubkey,
+-                                            auth_data["public_key"]);
++                                            auth_data["public_key"].get<std::string>());
+                       cache::client()->deleteBackupVersion();
+                       return;
+                   }
+--- src/encryption/DeviceVerificationFlow.cpp.orig	2023-02-22 23:50:45 UTC
++++ src/encryption/DeviceVerificationFlow.cpp
+@@ -39,7 +39,7 @@ DeviceVerificationFlow::DeviceVerificationFlow(QObject
+   , deviceIds(std::move(deviceIds_))
+   , model_(model)
+ {
+-    nhlog::crypto()->debug("CREATING NEW FLOW, {}, {}", flow_type, (void *)this);
++    nhlog::crypto()->debug("CREATING NEW FLOW, {}, {}", static_cast<int>(flow_type), (void *)this);
+     if (deviceIds.size() == 1)
+         deviceId = deviceIds.front();
+ 
+--- src/timeline/InputBar.cpp.orig	2023-02-22 23:50:45 UTC
++++ src/timeline/InputBar.cpp
+@@ -948,14 +948,14 @@ MediaUpload::MediaUpload(std::unique_ptr<QIODevice> so
+                 this,
+                 [mediaPlayer](QMediaPlayer::Error error) {
+                     nhlog::ui()->debug("Media player error {} and errorStr {}",
+-                                       error,
++                                       static_cast<int>(error),
+                                        mediaPlayer->errorString().toStdString());
+                 });
+         connect(mediaPlayer,
+                 &QMediaPlayer::mediaStatusChanged,
+                 [mediaPlayer](QMediaPlayer::MediaStatus status) {
+                     nhlog::ui()->debug(
+-                      "Media player status {} and error {}", status, mediaPlayer->error());
++                      "Media player status {} and error {}", static_cast<int>(status), static_cast<int>(mediaPlayer->error()));
+                 });
+         connect(mediaPlayer,
+                 qOverload<const QString &, const QVariant &>(&QMediaPlayer::metaDataChanged),
+--- src/ui/MxcMediaProxy.cpp.orig	2023-02-22 23:50:45 UTC
++++ src/ui/MxcMediaProxy.cpp
+@@ -37,11 +37,11 @@ MxcMediaProxy::MxcMediaProxy(QObject *parent)
+             qOverload<QMediaPlayer::Error>(&MxcMediaProxy::error),
+             [this](QMediaPlayer::Error error) {
+                 nhlog::ui()->info("Media player error {} and errorStr {}",
+-                                  error,
++                                  static_cast<int>(error),
+                                   this->errorString().toStdString());
+             });
+     connect(this, &MxcMediaProxy::mediaStatusChanged, [this](QMediaPlayer::MediaStatus status) {
+-        nhlog::ui()->info("Media player status {} and error {}", status, this->error());
++        nhlog::ui()->info("Media player status {} and error {}", static_cast<int>(status), static_cast<int>(this->error()));
+     });
+     connect(this,
+             qOverload<const QString &, const QVariant &>(&MxcMediaProxy::metaDataChanged),

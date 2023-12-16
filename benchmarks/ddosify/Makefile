@@ -1,7 +1,7 @@
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
-PORTREVISION=	2
+DISTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	nulldutra@proton.me
@@ -15,15 +15,16 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_TUPLE=	\
+		antchfx:htmlquery:v1.3.0:antchfx_htmlquery/vendor/github.com/antchfx/htmlquery \
 		antchfx:xmlquery:v1.3.13:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
-		antchfx:xpath:v1.2.1:antchfx_xpath/vendor/github.com/antchfx/xpath \
+		antchfx:xpath:v1.2.3:antchfx_xpath/vendor/github.com/antchfx/xpath \
 		asaskevich:govalidator:f21760c49a8d:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		ddosify:go-faker:v0.1.1:ddosify_go_faker/vendor/github.com/ddosify/go-faker \
 		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
 		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		go-ole:go-ole:v1.2.6:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		golang:exp:4b8118a2686a:golang_exp/vendor/golang.org/x/exp \
-		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \

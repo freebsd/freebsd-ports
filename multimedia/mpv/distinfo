@@ -1,9 +1,5 @@
-TIMESTAMP = 1690132236
-SHA256 (mpv-player-mpv-v0.36.0_GH0.tar.gz) = 29abc44f8ebee013bb2f9fe14d80b30db19b534c679056e4851ceadf5a5e8bf6
-SIZE (mpv-player-mpv-v0.36.0_GH0.tar.gz) = 3409178
-SHA256 (3bdf702b1de8.patch) = 5f44653c0a2af1d5490d5839f6c79ac21a0579377a76b6a2b532bdaeca8c8497
-SIZE (3bdf702b1de8.patch) = 1559
-SHA256 (48eb77207bff.patch) = 7b844bfe00d1160a8dcd9814c5ea6e5b2e126d9f658b0b548c86364aa7018ea4
-SIZE (48eb77207bff.patch) = 1931
-SHA256 (f2453b60ee27.patch) = 8b9677757b5106a8be30284aefabf6d0af53d905dd381a93ecdc3c6ab2878d61
-SIZE (f2453b60ee27.patch) = 1657
+TIMESTAMP = 1700592466
+SHA256 (mpv-player-mpv-v0.37.0_GH0.tar.gz) = 1d2d4adbaf048a2fa6ee134575032c4b2dad9a7efafd5b3e69b88db935afaddf
+SIZE (mpv-player-mpv-v0.37.0_GH0.tar.gz) = 3384190
+SHA256 (f4cc236a641e.patch) = e1886fa659b73bf5ece8976239e04d4f1922b4ef5fb07c42c9d2690043330fb9
+SIZE (f4cc236a641e.patch) = 1444

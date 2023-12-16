@@ -25,7 +25,7 @@ FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
 		riscv64_none_elf s390x sparc64 riscv32_unknown_elf
 FLAVOR?=	native
 
-USES=		bison:alias compiler:env cpe gmake localbase libtool makeinfo perl5 pkgconfig tar:lz
+USES=		bison:alias compiler:env cpe gmake localbase libtool perl5 pkgconfig tar:lz
 USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -50,7 +50,8 @@ LDFLAGS+=	-Wl,--undefined-version
 
 CONFLICTS=	libbfd
 
-OPTIONS_DEFINE=	NLS RELRO
+OPTIONS_DEFINE=	INFO NLS RELRO
+OPTIONS_DEFAULT=	INFO
 OPTIONS_SUB=	yes
 
 RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
@@ -58,6 +59,8 @@ RELRO_CONFIGURE_ON=	--enable-relro
 RELRO_CONFIGURE_OFF=	--enable-relro=no
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+INFO_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-no-info
+INFO_USES=	makeinfo
 
 aarch64_COMMENT=	GNU binutils for ${FLAVOR} development
 
@@ -116,7 +119,7 @@ CONFIGURE_ARGS+=	--with-system-zlib \
 			--enable-threads=yes
 # XXX Needed to support gcc10 and earlier:
 CONFIGURE_ARGS+=	--with-isa-spec=2.2
-INFO=		as \
+INFO_INFO=	as \
 		binutils \
 		ctf-spec \
 		gprof \

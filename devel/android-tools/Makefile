@@ -1,6 +1,6 @@
 PORTNAME=	android-tools
 PORTVERSION=	31.0.3p2.0
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libprotobuf.so:devel/protobuf \
 		libzstd.so:archivers/zstd
 
-USES=		cmake go:no_targets perl5 python shebangfix
+USES=		cmake compiler:c++17-lang go:no_targets localbase:ldflags perl5 python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neelchauhan
@@ -31,6 +31,7 @@ SHEBANG_FILES=	vendor/mkbootimg/repack_bootimg.py \
 		vendor/mkbootimg/mkbootimg.py \
 		vendor/mkbootimg/unpack_bootimg.py
 
+LDFLAGS+=	-labsl_status
 MAKE_ENV+=	GOFLAGS=-mod=vendor \
 		GOPATH=${WRKSRC}/vendor/boringssl/vendor \
 		GOPROXY=off

@@ -25,6 +25,8 @@ include/tiledb/api/c_api/object/object_api_enum.h
 include/tiledb/api/c_api/object/object_api_external.h
 include/tiledb/api/c_api/query/query_api_enum.h
 include/tiledb/api/c_api/query/query_api_external.h
+include/tiledb/api/c_api/query_aggregate/query_aggregate_api_external_experimental.h
+include/tiledb/api/c_api/query_field/query_field_api_external_experimental.h
 include/tiledb/api/c_api/query_plan/query_plan_api_external_experimental.h
 include/tiledb/api/c_api/string/string_api_external.h
 include/tiledb/api/c_api/vfs/vfs_api_enum.h
@@ -40,6 +42,8 @@ include/tiledb/arrowio
 include/tiledb/as_built_experimental.h
 include/tiledb/attribute.h
 include/tiledb/attribute_experimental.h
+include/tiledb/channel_operation.h
+include/tiledb/channel_operator.h
 include/tiledb/config.h
 include/tiledb/consolidation_plan_experimental.h
 include/tiledb/context.h
@@ -60,6 +64,7 @@ include/tiledb/log.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
 include/tiledb/query.h
+include/tiledb/query_channel.h
 include/tiledb/query_condition.h
 include/tiledb/query_condition_experimental.h
 include/tiledb/query_experimental.h

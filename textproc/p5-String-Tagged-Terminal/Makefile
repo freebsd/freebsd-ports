@@ -1,5 +1,5 @@
 PORTNAME=	String-Tagged-Terminal
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ WWW=		https://metacpan.org/release/String-Tagged-Terminal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Convert-Color>=0:graphics/p5-Convert-Color \

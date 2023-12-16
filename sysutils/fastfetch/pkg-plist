@@ -1,11 +1,13 @@
 bin/fastfetch
 bin/flashfetch
 share/bash-completion/completions/fastfetch
+share/fish/vendor_completions.d/fastfetch.fish
+share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/all
 %%DATADIR%%/presets/all.jsonc
 %%DATADIR%%/presets/btw
 %%DATADIR%%/presets/btw.jsonc
-%%DATADIR%%/presets/ci
+%%DATADIR%%/presets/ci.jsonc
 %%DATADIR%%/presets/examples/1
 %%DATADIR%%/presets/examples/10.jsonc
 %%DATADIR%%/presets/examples/11.jsonc

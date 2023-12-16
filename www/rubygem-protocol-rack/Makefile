@@ -1,5 +1,5 @@
 PORTNAME=	protocol-rack
-PORTVERSION=	0.2.6
+PORTVERSION=	0.4.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

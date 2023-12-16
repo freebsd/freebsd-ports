@@ -35,6 +35,8 @@ share/icons/hicolor/48x48/status/phone.png
 share/icons/hicolor/48x48/status/tablet.png
 share/icons/hicolor/48x48/status/uninterruptible-power-supply.png
 share/icons/hicolor/48x48/status/video-display.png
+share/icons/hicolor/64x64/apps/org.xfce.powermanager.png
+share/icons/hicolor/96x96/apps/org.xfce.powermanager.png
 share/icons/hicolor/scalable/apps/org.xfce.powermanager.svg
 share/icons/hicolor/scalable/status/ac-adapter-symbolic.svg
 share/icons/hicolor/scalable/status/ac-adapter.svg

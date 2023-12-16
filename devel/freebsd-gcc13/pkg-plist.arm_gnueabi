@@ -1,0 +1,17 @@
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_cde.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_cmse.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_mve.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_mve_types.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/mmintrin.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/unwind-arm-common.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/arm-cpu.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/arm-isa.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/aout.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/arm-flags.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/arm-opts.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/arm-protos.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/arm.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/bpabi.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/elf.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/%%OPSYS%%.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/vxworks-dummy.h

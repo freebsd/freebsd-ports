@@ -126,7 +126,7 @@
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/coresettings_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/job_common_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/matrix4x4_p.h
-%%SIMD%%%%AVX2%%%%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/matrix4x4_avx2_p.h
+%%SIMD%%%%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/matrix4x4_avx2_p.h
 %%SIMD%%%%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/matrix4x4_sse_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/nullservices_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/propertychangehandler_p.h

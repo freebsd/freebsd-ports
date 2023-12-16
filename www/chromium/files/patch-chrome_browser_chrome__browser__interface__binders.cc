@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -129,13 +129,13 @@
+@@ -130,13 +130,13 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -16,7 +16,7 @@
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "ui/webui/resources/cr_components/app_management/app_management.mojom.h"
  #endif
-@@ -218,7 +218,7 @@
+@@ -224,7 +224,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -25,7 +25,7 @@
  #include "chrome/browser/companion/visual_search/visual_search_suggestions_service_factory.h"
  #include "chrome/browser/ui/web_applications/sub_apps_service_impl.h"
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
-@@ -841,7 +841,7 @@ void BindScreen2xMainContentExtractor(
+@@ -863,7 +863,7 @@ void BindScreen2xMainContentExtractor(
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -34,7 +34,7 @@
  void BindVisualSuggestionsModelProvider(
      content::RenderFrameHost* frame_host,
      mojo::PendingReceiver<
-@@ -988,7 +988,7 @@ void PopulateChromeFrameBinders(
+@@ -1009,7 +1009,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -43,7 +43,7 @@
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -996,7 +996,7 @@ void PopulateChromeFrameBinders(
+@@ -1017,7 +1017,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -52,7 +52,7 @@
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
        !render_frame_host->GetParentOrOuterDocument()) {
      // The service binder will reject non-primary main frames, but we still need
-@@ -1076,7 +1076,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1097,7 +1097,7 @@ void PopulateChromeWebUIFrameBinders(
        commerce::CommerceInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -61,7 +61,7 @@
    RegisterWebUIControllerInterfaceBinder<
        connectors_internals::mojom::PageHandler,
        enterprise_connectors::ConnectorsInternalsUI>(map);
-@@ -1092,7 +1092,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1118,7 +1118,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -70,7 +70,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1601,7 +1601,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1651,7 +1651,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

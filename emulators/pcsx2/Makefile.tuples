@@ -2,6 +2,8 @@ GH_TUPLE= \
 	fmtlib:fmt:b6f4ceaed0a0a24ccf575fab6c56dd50ccf6f1a9:fmt/3rdparty/fmt/fmt \
 	rtissera:libchdr:fec8ab94212cc65d9d9a62cb3da924f5830c04b0:libchdr/3rdparty/libchdr/libchdr \
 	biojppm:rapidyaml:213b201d264139cd1b887790197e08850af628e3:rapidyaml/3rdparty/rapidyaml/rapidyaml \
+	KhronosGroup:glslang:c9706bdda0ac22b9856f1aa8261e5b9e15cd20c5:glslang/3rdparty/glslang/glslang \
+	KhronosGroup:Vulkan-Headers:9f4c61a31435a7a90a314fc68aeb386c92a09c0f:VulkanHeaders/3rdparty/vulkan-headers \
 	facebook:zstd:e47e674cd09583ff0503f0f6defd6d23d8b718d3:zstd/3rdparty/zstd/zstd \
 	RetroAchievements:rcheevos:3af1e2fc5188d6e932ee379942f4049ea877e648:rcheevos/3rdparty/rcheevos/rcheevos \
 	biojppm:c4core:d35c7c9bf370134595699d791e6ff8db018ddc8d:c4core/3rdparty/rapidyaml/rapidyaml/ext/c4core \

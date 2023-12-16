@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/files/scoped_file.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/files/scoped_file.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/base/files/scoped_file.cc
 @@ -31,7 +31,7 @@ void ScopedFDCloseTraits::Free(int fd) {
    int ret = IGNORE_EINTR(close(fd));

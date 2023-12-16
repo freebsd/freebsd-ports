@@ -1,11 +1,12 @@
 PORTNAME=	rset
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://scriptedconfiguration.org/code/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Configure systems using using any scripting language
-WWW=		https://scriptedconfiguration.org/
+WWW=		https://scriptedconfiguration.org/ \
+		https://github.com/eradman/rset
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

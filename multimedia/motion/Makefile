@@ -1,7 +1,7 @@
 # PORTNAME block
 PORTNAME=	motion
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.5.1
+DISTVERSION=	4.6.0
 CATEGORIES=	multimedia
 
 # Maintainer block

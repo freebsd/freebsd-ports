@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@
+ 
+ [build-system]
+ build-backend = "hatchling.build"
+-requires = ["hatchling>=1.4.0", "hatch-nodejs-version", "jupyterlab>=4.0.0"]
++requires = ["hatchling>=1.4.0", "hatch-nodejs-version"]
+ 
+ [project]
+ name = "jupyter_collaboration"

@@ -1,8 +1,8 @@
 PORTNAME=	openroad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0-2930
-PORTREVISION=	4
 DISTVERSIONSUFFIX=	-gaa6d690df
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -13,6 +13,7 @@ WWW=		https://theopenroadproject.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build with libfmt 10+. See https://github.com/The-OpenROAD-Project/OpenROAD/pull/3911
 BROKEN_i386=	C++ issue on i386, should be resolved in the next update
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture

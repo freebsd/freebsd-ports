@@ -1,6 +1,6 @@
 PORTNAME=	LPRng
 PORTVERSION=	3.8.C
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	sysutils print
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}
@@ -12,9 +12,6 @@ WWW=		https://lprng.sourceforge.net/
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
-
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 

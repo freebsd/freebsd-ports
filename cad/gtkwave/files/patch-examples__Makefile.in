@@ -1,6 +1,6 @@
---- examples/Makefile.in.orig	2018-03-05 23:07:23 UTC
+--- examples/Makefile.in.orig	2023-08-13 22:32:41 UTC
 +++ examples/Makefile.in
-@@ -60,7 +60,7 @@ am__make_running_with_option = \
+@@ -60,7 +60,7 @@ am__make_keepgoing = (target_option=k; $(am__make_runn
    test $$has_opt = yes
  am__make_dryrun = (target_option=n; $(am__make_running_with_option))
  am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
@@ -9,12 +9,12 @@
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -292,7 +292,7 @@ top_build_prefix = @top_build_prefix@
+@@ -293,7 +293,7 @@ dist_examples_DATA = des.gtkw des.tcl des.v des.fst tr
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  dist_examples_DATA = des.gtkw des.tcl des.v des.fst transaction.fst transaction.gtkw transaction.c gtkwaverc sst_exclusion_example.rc
 -examplesdir = $(pkgdatadir)/examples
-+examplesdir = $(pkgdatadir)/examples/@PACKAGE@
++examplesdir = $(pkgdatadir)/examples/gtkwave
  all: all-am
  
  .SUFFIXES:

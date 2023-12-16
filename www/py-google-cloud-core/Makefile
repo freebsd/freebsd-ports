@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-core
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	GRPC
 OPTIONS_DEFAULT=GRPC
 
-GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.38.0<2.0:devel/py-grpcio@${PY_FLAVOR}
+GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.38.0<2.0:devel/py-grpcio@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}grpcio-status>=1.38.0<2.0.0:devel/py-grpcio-status@${PY_FLAVOR}
 
 .include <bsd.port.mk>

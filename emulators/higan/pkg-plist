@@ -1,21 +1,24 @@
+%%DATADIR%%/Game Boy Color/boot.cgb-0.rom
+%%DATADIR%%/Game Boy Color/boot.cgb-1.rom
+%%DATADIR%%/Game Boy/boot.dmg-0.rom
+%%DATADIR%%/Game Boy/boot.dmg-1.rom
+%%DATADIR%%/Game Boy/boot.mgb.rom
+%%DATADIR%%/MSX/Keyboard/Japanese/layout.bml
+%%DATADIR%%/MSX/bios.rom
+%%DATADIR%%/MSX2/Keyboard/Japanese/layout.bml
+%%DATADIR%%/MSX2/bios.rom
+%%DATADIR%%/MSX2/sub.rom
+%%DATADIR%%/Mega Drive/tmss.rom
+%%DATADIR%%/Pocket Challenge V2/boot.rom
+%%DATADIR%%/Super Famicom/boards.bml
+%%DATADIR%%/Super Famicom/ipl.rom
+%%DATADIR%%/SwanCrystal/boot.rom
+%%DATADIR%%/WonderSwan Color/boot.rom
+%%DATADIR%%/WonderSwan/boot.rom
 bin/higan
 bin/icarus
 share/applications/higan.desktop
-%%DATADIR%%/Famicom.sys/manifest.bml
-%%DATADIR%%/Game Boy Advance.sys/manifest.bml
-%%DATADIR%%/Game Boy Color.sys/boot.rom
-%%DATADIR%%/Game Boy Color.sys/manifest.bml
-%%DATADIR%%/Game Boy.sys/boot.rom
-%%DATADIR%%/Game Boy.sys/manifest.bml
-%%DATADIR%%/Game Gear.sys/manifest.bml
-%%DATADIR%%/Master System.sys/manifest.bml
-%%DATADIR%%/Mega Drive.sys/manifest.bml
-%%DATADIR%%/Mega Drive.sys/tmss.rom
-%%DATADIR%%/PC Engine.sys/manifest.bml
-%%DATADIR%%/Super Famicom.sys/ipl.rom
-%%DATADIR%%/Super Famicom.sys/manifest.bml
-%%DATADIR%%/SuperGrafx.sys/manifest.bml
-%%DATADIR%%/WonderSwan Color.sys/manifest.bml
-%%DATADIR%%/WonderSwan.sys/manifest.bml
 share/icarus/Database/Super Famicom.bml
+share/icarus/Database/BS Memory.bml
+share/icarus/Database/Sufami Turbo.bml
 share/pixmaps/higan.png

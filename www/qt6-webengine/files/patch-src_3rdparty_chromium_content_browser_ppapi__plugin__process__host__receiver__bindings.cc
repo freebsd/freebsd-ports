@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/ppapi_plugin_process_host_receiver_bindings.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/ppapi_plugin_process_host_receiver_bindings.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/content/browser/ppapi_plugin_process_host_receiver_bindings.cc
 @@ -8,7 +8,7 @@
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
  #include "content/browser/font_service.h"  // nogncheck
  #endif
-@@ -17,7 +17,7 @@ void PpapiPluginProcessHost::BindHostReceiver(
+@@ -17,7 +17,7 @@ namespace content {
  
  void PpapiPluginProcessHost::BindHostReceiver(
      mojo::GenericPendingReceiver receiver) {

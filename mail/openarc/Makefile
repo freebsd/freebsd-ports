@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	autoconf-archive>0:devel/autoconf-archive
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
-USES=		autoreconf gmake libtool pkgconfig ssl
+USES=		autoreconf gmake libtool localbase pkgconfig ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -22,6 +22,7 @@ GH_PROJECT=	OpenARC
 GH_TAGNAME=	eb430db
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -1,11 +1,12 @@
 PORTNAME=	google-cloud-pubsub-v1
-PORTVERSION=	0.18.1
+PORTVERSION=	0.19.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the Cloud Pub/Sub V1 API
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-pubsub-v1 \
+WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-pubsub-v1/latest/ \
+		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-pubsub-v1 \
 		https://github.com/googleapis/google-cloud-ruby
 
 LICENSE=	APACHE20

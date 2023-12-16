@@ -11,7 +11,7 @@ WWW=		https://github.com/MiT-Ufa/TeamWords
 LICENSE=	LGPL3
 
 DEPRECATED=	Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_LDCONFIG=	yes

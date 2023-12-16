@@ -1,6 +1,6 @@
-TIMESTAMP = 1699555666
-SHA256 (ValveSoftware-gamescope-3.13.0_GH0.tar.gz) = 77f7ed35409373ab25e558fea7ad3de096efab8655115553b94e6d3d0f0700c5
-SIZE (ValveSoftware-gamescope-3.13.0_GH0.tar.gz) = 475785
+TIMESTAMP = 1700602830
+SHA256 (ValveSoftware-gamescope-3.13.8_GH0.tar.gz) = 660120f41aa5fb62d4d5f467751470add3897d305dae480cf27d6d49ae2d4817
+SIZE (ValveSoftware-gamescope-3.13.8_GH0.tar.gz) = 476534
 SHA256 (nothings-stb-5736b15_GH0.tar.gz) = 8e18fa73396a3206129c55a3bc409401353991470245941d6ba7d8ce57df864f
 SIZE (nothings-stb-5736b15_GH0.tar.gz) = 1392565
 SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-316-gd790ced_GH0.tar.gz) = 4677f51365937acb78df4067359d32742c5c649f2beb8f8afb7e1002329cea46
@@ -13,3 +13,7 @@ SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
 SHA256 (a618ea074660.patch) = c79b4b7a231d9c6e34912b8f4a301c6c60b921b6be5fb9c132d999e9a6930424
 SIZE (a618ea074660.patch) = 2589
+SHA256 (4a067fb4ebe2.patch) = fb12df8318e06a77ead4aa5752e32eec48efc70de43f069369a4c6a83a590152
+SIZE (4a067fb4ebe2.patch) = 4823
+SHA256 (243582c0c762.patch) = c7de00de34682207df64e43a235cbaa2fd5332b5e1bb647d6dcee668971a5249
+SIZE (243582c0c762.patch) = 3710

@@ -47,10 +47,12 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/it/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/no.us-ascii/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/pl.iso-8859-2/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
@@ -114,13 +116,13 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/Texinfo/XS/parsetexi/Parsetexi.pm
 %%DATADIR%%/Texinfo/XSLoader.pm
 %%DATADIR%%/ext/epub3.pm
+%%DATADIR%%/ext/highlight_syntax.pm
 %%DATADIR%%/ext/latex2html.pm
 %%DATADIR%%/ext/tex4ht.pm
 %%DATADIR%%/htmlxref.cnf
 %%DATADIR%%/init/book.pm
 %%DATADIR%%/init/chm.pm
 %%DATADIR%%/init/documentation_examples.pm
-%%DATADIR%%/init/highlight_syntax.pm
 %%DATADIR%%/init/html32.pm
 %%DATADIR%%/js/info.css
 %%DATADIR%%/js/info.js

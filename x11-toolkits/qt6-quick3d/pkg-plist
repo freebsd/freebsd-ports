@@ -8,6 +8,7 @@
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3ddefaultmaterial_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3ddirectionallight_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3deffect_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dextensionhelpers_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dfog_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dfrustumcamera_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dgeometry_p.h
@@ -32,6 +33,7 @@
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dquaternionanimation_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dquaternionutils_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dreflectionprobe_p.h
+%%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3drenderextensions_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3drenderstats_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3drepeater_p.h
 %%QT_INCDIR%%/QtQuick3D/%%FULLVER%%/QtQuick3D/private/qquick3dresourceloader_p.h
@@ -114,7 +116,9 @@
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/infinitegrid_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/instancerepeater_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/lookatnode_p.h
+%%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/proceduralmesh_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/proceduralskytexturedata_p.h
+%%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/qquick3dtexturedatafrontend_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/qtquick3dhelpersexports_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/qtquick3dhelpersglobal_p.h
 %%QT_INCDIR%%/QtQuick3DHelpers/%%FULLVER%%/QtQuick3DHelpers/private/randominstancing_p.h
@@ -195,8 +199,10 @@
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendereffect_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderer_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendererutil_p.h
+%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderextensions_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendergeometry_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrendergraphobject_p.h
+%%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderhelpers_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderimage_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderimagetexture_p.h
 %%QT_INCDIR%%/QtQuick3DRuntimeRender/%%FULLVER%%/QtQuick3DRuntimeRender/private/qssgrenderinstancetable_p.h

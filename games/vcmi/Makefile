@@ -1,5 +1,5 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -24,7 +24,7 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON \
 		-DENABLE_GITVERSION:BOOL=OFF -DENABLE_TEST:BOOL=OFF \
 		-DFORCE_BUNDLED_FL:BOOL=OFF
 
-PORTDOCS=	AUTHORS ChangeLog.md
+PORTDOCS=	ChangeLog.md
 
 OPTIONS_DEFINE=	DOCS QT
 OPTIONS_DEFAULT=	QT
@@ -35,6 +35,10 @@ QT_USES=	qt:5
 QT_USE=		QT=buildtools:build,linguisttools:build,qmake:build \
 		QT=core,gui,network,widgets
 QT_CMAKE_OFF=	-DENABLE_LAUNCHER:BOOL=OFF -DENABLE_EDITOR:BOOL=OFF
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^#ifdef /s,UCLIBC,${OPSYS},' \
+		${WRKSRC}/lib/modding/CModVersion.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

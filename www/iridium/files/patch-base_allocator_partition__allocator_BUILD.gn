@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/BUILD.gn.orig	2023-10-21 11:51:27 UTC
+--- base/allocator/partition_allocator/BUILD.gn.orig	2023-11-22 14:00:11 UTC
 +++ base/allocator/partition_allocator/BUILD.gn
-@@ -562,7 +562,7 @@ source_set("allocator_shim") {
+@@ -569,7 +569,7 @@ source_set("allocator_shim") {
        ]
        configs += [ ":mac_no_default_new_delete_symbols" ]
      }

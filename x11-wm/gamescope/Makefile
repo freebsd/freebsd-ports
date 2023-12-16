@@ -1,9 +1,12 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.13.0
+DISTVERSION=	3.13.8
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
+PATCHFILES+=	4a067fb4ebe2.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/678
+PATCHFILES+=	243582c0c762.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/1057
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	SteamOS session compositing window manager
@@ -18,7 +21,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
 		glm>0:math/glm \
 		hwdata>0:misc/hwdata \
-		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libliftoff.so:graphics/libliftoff \
 		libvulkan.so:graphics/vulkan-loader \
@@ -45,6 +48,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/libVkLayer_FROG_${PORTNAME}_wsi_${MESON_ARCH_FAMILY}.so \
 		share/vulkan/implicit_layer.d/VkLayer_FROG_${PORTNAME}_wsi.${MESON_ARCH_FAMILY}.json
 
+# https://github.com/freebsd/drm-kmod/issues/271
+PORTSCOUT=	ignore:1
+
 OPTIONS_DEFINE=	PIPEWIRE
 OPTIONS_DEFAULT=PIPEWIRE
 
@@ -55,6 +61,12 @@ PIPEWIRE_MESON_ENABLED=	pipewire
 post-extract:
 # Merge patch_directory for subprojects without meson.build
 	@(cd ${WRKSRC}/subprojects/packagefiles && ${COPYTREE_SHARE} . ..)
+.if defined(PATCHFILES) && ${PATCHFILES:M4a067fb4ebe2*}
+# Pretend to be a regular file for vendor patch to apply as is
+	@${RMDIR} ${WRKSRC}/subprojects/wlroots
+	@${ECHO_CMD} "Subproject commit 1712a7d27444d62f8da8eeedf0840b386a810e96" \
+		>${WRKSRC}/subprojects/wlroots
+.endif
 
 .ifdef GH_TUPLE
 post-configure:

@@ -9,6 +9,11 @@ lib/libkpathumbnails.so
 share/applications/org.kde.kphotoalbum-import.desktop
 share/applications/org.kde.kphotoalbum.desktop
 share/applications/org.kde.kphotoalbum.open-raw.desktop
+share/doc/HTML/en/kphotoalbum/annotation-mode.png
+share/doc/HTML/en/kphotoalbum/assign-macro-add-new-value.png
+share/doc/HTML/en/kphotoalbum/assign-macro-overview.png
+share/doc/HTML/en/kphotoalbum/assign-macro-step1.png
+share/doc/HTML/en/kphotoalbum/assign-macro-step2.png
 share/doc/HTML/en/kphotoalbum/browser-for-jesper.png
 share/doc/HTML/en/kphotoalbum/browser-for-persons.png
 share/doc/HTML/en/kphotoalbum/browser-with-images.png
@@ -19,7 +24,6 @@ share/doc/HTML/en/kphotoalbum/datebar-for-minutes.png
 share/doc/HTML/en/kphotoalbum/datebar.docbook
 share/doc/HTML/en/kphotoalbum/datebar.png
 share/doc/HTML/en/kphotoalbum/delete-images.png
-share/doc/HTML/en/kphotoalbum/draw-on-image.png
 share/doc/HTML/en/kphotoalbum/edit-properies-menu.png
 share/doc/HTML/en/kphotoalbum/empty-browser-window.png
 share/doc/HTML/en/kphotoalbum/generating-html.docbook
@@ -158,7 +162,6 @@ share/icons/hicolor/scalable/apps/kphotoalbum.svg
 %%DATADIR%%/themes/rounded/upbar.png
 %%DATADIR%%/themes/rounded/upleft.png
 %%DATADIR%%/themes/rounded/upright.png
-share/kxmlgui5/kphotoalbum/kphotoalbumui.rc
 share/locale/ar/LC_MESSAGES/kphotoalbum.mo
 share/locale/be/LC_MESSAGES/kphotoalbum.mo
 share/locale/bg/LC_MESSAGES/kphotoalbum.mo

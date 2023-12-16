@@ -13,10 +13,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 qt:5 \
 		tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons doctools kio service sonnet textwidgets i18n \
-		iconthemes jobwidgets notifications parts solid widgetsaddons \
+		iconthemes jobwidgets notifications parts phonon solid widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

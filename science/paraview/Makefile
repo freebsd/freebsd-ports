@@ -1,5 +1,6 @@
 PORTNAME=	paraview
 DISTVERSION=	${PARAVIEW_VER}.2
+PORTREVISION=	4
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -12,8 +13,6 @@ LICENSE=	ParaView_License_1.2
 LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN_aarch64=	fails to link: undefined reference to `sbrk'
 
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cli11>0:devel/cli11	\
@@ -95,6 +94,7 @@ CMAKE_ARGS+=	-DPARAVIEW_BUILD_SHARED_LIBS=ON \
 CMAKE_ARGS+=	-DVTK_FORBID_DOWNLOADS:BOOL=ON
 .endif
 MAKE_ENV=	XDG_CONFIG_HOME=${WRKDIR}
+USE_CXXSTD=	c++17
 
 SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	VTK/Examples/SearchScript.sh	\

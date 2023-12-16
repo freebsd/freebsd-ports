@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/common/common_param_traits_macros.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/public/common/common_param_traits_macros.h.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/content/public/common/common_param_traits_macros.h
-@@ -125,7 +125,7 @@ IPC_STRUCT_TRAITS_BEGIN(blink::RendererPreferences)
+@@ -113,7 +113,7 @@ IPC_STRUCT_TRAITS_BEGIN(blink::RendererPreferences)
    IPC_STRUCT_TRAITS_MEMBER(accept_languages)
    IPC_STRUCT_TRAITS_MEMBER(plugin_fullscreen_allowed)
    IPC_STRUCT_TRAITS_MEMBER(caret_browsing_enabled)

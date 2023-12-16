@@ -1,15 +1,15 @@
---- content/gpu/gpu_main.cc.orig	2023-08-17 07:33:31 UTC
+--- content/gpu/gpu_main.cc.orig	2023-12-10 06:10:27 UTC
 +++ content/gpu/gpu_main.cc
-@@ -90,7 +90,7 @@
+@@ -91,7 +91,7 @@
  #include "sandbox/win/src/sandbox.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "content/child/sandboxed_process_thread_type_handler.h"
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
- #include "sandbox/policy/sandbox_type.h"
-@@ -112,7 +112,7 @@ namespace content {
+@@ -114,7 +114,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -177,7 +177,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -179,7 +179,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -287,7 +287,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -289,7 +289,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
@@ -36,7 +36,17 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -422,7 +422,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -328,7 +328,8 @@ int GpuMain(MainFunctionParams parameters) {
+   // before it.
+   InitializeSkia();
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++// XXX BSD
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_BSD)
+   // Thread type delegate of the process should be registered before
+   // first thread type change in ChildProcess constructor.
+   // It also needs to be registered before the process has multiple threads,
+@@ -436,7 +437,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -45,7 +55,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -462,7 +462,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -476,7 +477,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

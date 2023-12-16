@@ -6,7 +6,7 @@ never touches the CPU, leaving it free to run your applications.
 
 System Requirements:
 * Wayland compositor supporting the following protocols:
-  * wlr-output-management-unstable-v1 (missing in hikari, cage, gamescope, kwinft)
+  * wlr-output-management-unstable-v1 (missing in hikari, cagebreak, gamescope, kwinft)
   * wlr-screencopy-unstable-v1 (missing in gamescope and kwinft)
   Known working examples: sway, hyprland, wayfire, labwc.
 * VA-API encoding:

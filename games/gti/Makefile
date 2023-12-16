@@ -1,5 +1,5 @@
 PORTNAME=	gti
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -15,11 +15,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwos
 
-PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
-
 GTI_SPEED?=	50
 CFLAGS+=	-DGTI_SPEED=${GTI_SPEED}
 
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man6/${PORTNAME}.6.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS

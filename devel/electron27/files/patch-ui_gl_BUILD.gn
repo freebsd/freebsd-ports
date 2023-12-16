@@ -1,0 +1,35 @@
+--- ui/gl/BUILD.gn.orig	2023-10-19 19:59:21 UTC
++++ ui/gl/BUILD.gn
+@@ -151,8 +151,6 @@ component("gl") {
+     defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
+   }
+ 
+-  include_dirs = [ "//third_party/mesa_headers" ]
+-
+   all_dependent_configs = [ ":gl_config" ]
+ 
+   public_configs = [ "//third_party/khronos:khronos_headers" ]
+@@ -169,7 +167,6 @@ component("gl") {
+   ]
+   public_deps = [
+     "//base",
+-    "//third_party/mesa_headers",
+     "//ui/events/platform",
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+@@ -376,7 +373,6 @@ component("gl") {
+     data_deps += [
+       "//third_party/angle:libEGL",
+       "//third_party/angle:libGLESv2",
+-      "//third_party/mesa_headers",
+     ]
+     if (enable_swiftshader) {
+       data_deps += [
+@@ -577,7 +573,6 @@ test("gl_unittests") {
+ 
+   data_deps = [
+     "//testing/buildbot/filters:gl_unittests_filters",
+-    "//third_party/mesa_headers",
+   ]
+ 
+   if (is_win) {

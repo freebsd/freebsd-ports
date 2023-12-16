@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	Qt
 
 COMMENT?=	Qt bindings to AppStream
@@ -9,7 +9,7 @@ USES=		qt:5
 
 USE_QT=		core buildtools:build qmake:build testlib:build
 
-MESON_ARGS=	-Dqt=true
+MESON_ARGS=	-Dqt5=true
 
 MASTERDIR=	${.CURDIR}/../appstream
 PLIST=		${.CURDIR}/pkg-plist

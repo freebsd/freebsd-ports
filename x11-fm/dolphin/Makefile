@@ -19,11 +19,11 @@ USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
 		completion config configwidgets coreaddons crash dbusaddons \
 		emoticons filemetadata i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kde-cli-tools \
-		kio newstuff notifications parts service \
+		kio newstuff notifications parts phonon service \
 		solid sonnet texteditor textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		doctools:build ecm:build
-USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

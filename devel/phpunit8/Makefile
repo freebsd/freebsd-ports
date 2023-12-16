@@ -22,6 +22,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/phpunit
 
+CONFLICTS_INSTALL=	phpunit*
+
 # Download isn't compressed or aggregated, it's just the single file
 do-extract:
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}

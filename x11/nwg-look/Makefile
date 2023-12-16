@@ -1,7 +1,7 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.4
-PORTREVISION=	2
+DISTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
-GH_TUPLE=	golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+GH_TUPLE=	golang:sys:v0.14.0:golang_sys/vendor/golang.org/x/sys \
 		gotk3:gotk3:v0.6.2:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2

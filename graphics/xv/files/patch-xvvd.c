@@ -1,17 +1,17 @@
---- xvvd.c.orig	2007-04-16 06:30:19.000000000 +0200
-+++ xvvd.c	2010-02-11 15:23:41.000000000 +0100
-@@ -1060,6 +1060,8 @@
+--- src/xvvd.c.orig	2023-07-17 01:25:42 UTC
++++ src/xvvd.c
+@@ -1072,6 +1072,8 @@ static void HUPhandler(XtPointer dummy, XtSignalId* Id
  #endif
  }
  
 +int InSignal = 0;
 +
- void vd_handler(sig)
- int sig;
+ static void vd_handler(int sig)
  {
-@@ -1068,7 +1070,7 @@
+     UsedSignal = sig;
+@@ -1085,7 +1087,7 @@ static void INThandler(XtPointer dummy, XtSignalId* Id
  #else
-     sigblock(sigmask(sig));
+     sigblock(sigmask(UsedSignal));
  #endif
 -
 +    InSignal = 1;

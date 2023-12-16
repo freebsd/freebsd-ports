@@ -1,0 +1,80 @@
+--- src/Makefile.orig	2022-11-15 01:17:05 UTC
++++ src/Makefile
+@@ -1,15 +1,16 @@ SUBDIRS	= common
+ SUBDIRS	= common
+-TARGETS	= $(OBJDIR)download$(EXEEXT) $(OBJDIR)surfer$(EXEEXT)
++TARGETS	= $(OBJDIR)surfer$(EXEEXT)
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+ BINDIR	= $(PREFIX)/bin
+ SBINDIR	= $(PREFIX)/sbin
+ CC	= cc
+-CPPFLAGSF=
++CPPFLAGSF= -D WITH_WEBKIT2
+ CPPFLAGS=
+-CFLAGSF	=
++CFLAGSF	= `pkg-config --cflags libDesktop gtk+-x11-3.0 webkit2gtk-4.0`
+ CFLAGS	= -W -Wall -g -O2 -fPIE -D_FORTIFY_SOURCE=2 -fstack-protector
++LDFLAGSF= `pkg-config --libs libDesktop gtk+-x11-3.0 webkit2gtk-4.0` -lintl
+ LDFLAGS	= -pie -Wl,-z,relro -Wl,-z,now
+ EXEEXT	=
+ RM	= rm -f
+@@ -27,13 +28,6 @@ subdirs:
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/"; \
+ 		else $(MAKE); fi) || exit; done
+ 
+-download_OBJS = $(OBJDIR)download.o
+-download_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS)
+-download_LDFLAGS = $(LDFLAGSF) $(LDFLAGS)
+-
+-$(OBJDIR)download$(EXEEXT): $(download_OBJS)
+-	$(CC) -o $(OBJDIR)download$(EXEEXT) $(download_OBJS) $(download_LDFLAGS)
+-
+ surfer_OBJS = $(OBJDIR)surfer.o $(OBJDIR)ghtml.o $(OBJDIR)callbacks.o $(OBJDIR)main.o
+ surfer_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS)
+ surfer_LDFLAGS = $(LDFLAGSF) $(LDFLAGS)
+@@ -41,9 +35,6 @@ $(OBJDIR)surfer$(EXEEXT): $(surfer_OBJS)
+ $(OBJDIR)surfer$(EXEEXT): $(surfer_OBJS)
+ 	$(CC) -o $(OBJDIR)surfer$(EXEEXT) $(surfer_OBJS) $(surfer_LDFLAGS)
+ 
+-$(OBJDIR)download.o: download.c download.h ../config.h
+-	$(CC) -D WITH_MAIN $(download_CFLAGS) -o $(OBJDIR)download.o -c download.c
+-
+ $(OBJDIR)surfer.o: surfer.c callbacks.h common/find.c download.c download.h surfer.h ../config.h
+ 	$(CC) $(surfer_CFLAGS) -o $(OBJDIR)surfer.o -c surfer.c
+ 
+@@ -61,14 +52,14 @@ clean:
+ 		if [ -n "$(OBJDIR)" ]; then \
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" clean; \
+ 		else $(MAKE) clean; fi) || exit; done
+-	$(RM) -- $(download_OBJS) $(surfer_OBJS)
++	$(RM) -- $(surfer_OBJS)
+ 
+ distclean:
+ 	@for i in $(SUBDIRS); do (cd "$$i" && \
+ 		if [ -n "$(OBJDIR)" ]; then \
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" distclean; \
+ 		else $(MAKE) distclean; fi) || exit; done
+-	$(RM) -- $(download_OBJS) $(surfer_OBJS)
++	$(RM) -- $(surfer_OBJS)
+ 	$(RM) -- $(TARGETS)
+ 
+ install: all
+@@ -77,8 +68,6 @@ install: all
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" install; \
+ 		else $(MAKE) install; fi) || exit; done
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)download$(EXEEXT) $(DESTDIR)$(BINDIR)/download$(EXEEXT)
+-	$(MKDIR) $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 0755 $(OBJDIR)surfer$(EXEEXT) $(DESTDIR)$(BINDIR)/surfer$(EXEEXT)
+ 
+ uninstall:
+@@ -86,7 +75,6 @@ uninstall:
+ 		if [ -n "$(OBJDIR)" ]; then \
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" uninstall; \
+ 		else $(MAKE) uninstall; fi) || exit; done
+-	$(RM) -- $(DESTDIR)$(BINDIR)/download$(EXEEXT)
+ 	$(RM) -- $(DESTDIR)$(BINDIR)/surfer$(EXEEXT)
+ 
+ .PHONY: all subdirs clean distclean install uninstall

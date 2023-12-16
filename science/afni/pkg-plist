@@ -623,6 +623,7 @@ bin/nsize
 bin/open_apqc.py
 bin/p2dsetstat
 bin/parse_fs_lt_log.py
+bin/physio_calc.py
 bin/plugout_drive
 bin/plugout_ijk
 bin/plugout_tt
@@ -847,6 +848,18 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_tableize.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_matplot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_msar.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_filt.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_funcs.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_interact.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_logs.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_opts.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_peaks.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_phases.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_plot.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_reading.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_regress.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_rvt.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_physio_util.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_plot_1D.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_qt_gui.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_rand_timing.py

@@ -1,18 +1,18 @@
 PORTNAME=	gcc
-PORTVERSION=	12.3.0
+DISTVERSION=	12.3.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
 PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	jhb@FreeBSD.org
-COMMENT=	Cross GNU Compiler Collection for ${TARGETARCH}
+COMMENT=	Cross GNU Compiler ${SUFFIX} for FreeBSD/${TARGETARCH}
 WWW=		https://gcc.gnu.org/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-IGNORE_FreeBSD_12= Not supported on FreeBSD 12
+IGNORE_FreeBSD_12= Does not build
 
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR} \
 		objdump:devel/binutils
@@ -106,36 +106,21 @@ PLIST_SUB+=	FLOAT_H=""
 .endif
 
 PLIST=		${.CURDIR}/pkg-plist
+PLISTARCH=	${TARGETARCH:C/armv[67]/arm_gnueabi/}
+PLIST+=		${.CURDIR}/pkg-plist.${PLISTARCH}
 
-.if ${TARGETARCH} == "aarch64"
-PLIST+=		${.CURDIR}/pkg-plist.aarch64
-.endif
 .if ${TARGETARCH} == "aarch64" || ${TARGETARCH:Marm*}
 PLIST+=		${.CURDIR}/pkg-plist.arm
 .endif
-.if ${TARGETARCH:Marm*}
-PLIST+=		${.CURDIR}/pkg-plist.arm_gnueabi
-.endif
 .if ${TARGETARCH} == "amd64"
-PLIST+=		${.CURDIR}/pkg-plist.amd64
-.endif
-.if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
 PLIST+=		${.CURDIR}/pkg-plist.i386
-.endif
-.if ${TARGETARCH:Mpowerpc64*}
-PLIST+=		${.CURDIR}/pkg-plist.powerpc64
-.elif ${TARGETARCH:Mpowerpc*}
-PLIST+=		${.CURDIR}/pkg-plist.powerpc
-.endif
-.if ${TARGETARCH:Mriscv*}
-PLIST+=		${.CURDIR}/pkg-plist.riscv
 .endif
 
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-${GCC_TARGET}-*
-	@${RM} ${STAGEDIR}${PREFIX}/share/info/*
-	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
-	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
+	${RM} ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-${GCC_TARGET}-*
+	${RM} ${STAGEDIR}${PREFIX}/share/info/*
+	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
 	# Conflicts with sys/x86/include/float.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h

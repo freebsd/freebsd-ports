@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/socket/socket_posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/net/socket/socket_posix.cc.orig	2022-07-22 17:30:31 UTC
 +++ src/3rdparty/chromium/net/socket/socket_posix.cc
-@@ -516,7 +516,7 @@ int SocketPosix::DoWrite(IOBuffer* buf, int buf_len) {
+@@ -516,7 +516,7 @@ void SocketPosix::ReadCompleted() {
  }
  
  int SocketPosix::DoWrite(IOBuffer* buf, int buf_len) {

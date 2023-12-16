@@ -1,7 +1,7 @@
---- build.rs.orig	2021-03-15 17:47:59 UTC
-+++ build.rs
+--- src/rust/build.rs.orig	2021-03-15 17:47:59 UTC
++++ src/rust/build.rs
 @@ -21,7 +21,9 @@ fn main() {
-             println!("cargo:rustc-link-search=native=../../src/webrtc/src/out/Release/obj/",);
+             println!("cargo:rustc-link-search=native=src/webrtc/src/out/Release/obj/",);
          }
  
 -        if cfg!(target_os = "macos") {

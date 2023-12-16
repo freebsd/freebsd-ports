@@ -23,6 +23,7 @@
     SUBDIR += compton
     SUBDIR += ctwm
     SUBDIR += cwm
+    SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
     SUBDIR += durden
@@ -75,6 +76,7 @@
     SUBDIR += metacity
     SUBDIR += muffin
     SUBDIR += mutter
+    SUBDIR += niri
     SUBDIR += nscde
     SUBDIR += obconf
     SUBDIR += obconf-qt
@@ -89,6 +91,8 @@
     SUBDIR += piewm
     SUBDIR += plasma5-kdecoration
     SUBDIR += plasma5-kwin
+    SUBDIR += plasma6-kdecoration
+    SUBDIR += plasma6-kwin
     SUBDIR += pwm
     SUBDIR += qtile
     SUBDIR += ratmen

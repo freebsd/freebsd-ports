@@ -1,8 +1,8 @@
 Allow relocation of resource files
 
---- cmake/BuildParameters.cmake.orig	2023-02-10 03:43:10 UTC
+--- cmake/BuildParameters.cmake.orig	2023-11-10 10:14:25 UTC
 +++ cmake/BuildParameters.cmake
-@@ -260,6 +260,10 @@
+@@ -259,6 +259,10 @@ endif()
  	list(APPEND PCSX2_DEFS DISABLE_BUILD_DATE)
  endif()
  
@@ -15,7 +15,7 @@ Allow relocation of resource files
  #-------------------------------------------------------------------------------
 --- pcsx2/Pcsx2Config.cpp.orig	2023-08-31 07:45:23 UTC
 +++ pcsx2/Pcsx2Config.cpp
-@@ -1676,6 +1676,10 @@ void EmuFolders::SetAppRoot()
+@@ -1676,6 +1676,10 @@ void EmuFolders::SetResourcesDirectory()
  
  void EmuFolders::SetResourcesDirectory()
  {

@@ -1,10 +1,9 @@
 PORTNAME=	puppetserver
 PORTVERSION=	8.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	8
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet Server running in the JVM
@@ -12,7 +11,8 @@ WWW=		https://docs.puppetlabs.com/puppetserver/latest/services_master_puppetserv
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=Bundled JNI only support some architectures
 
 RUN_DEPENDS=	bash>=0:shells/bash \
 		puppet8>=8.0:sysutils/puppet8 \

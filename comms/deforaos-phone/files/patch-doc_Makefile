@@ -1,0 +1,67 @@
+--- doc/Makefile.orig	2023-11-22 21:37:07 UTC
++++ doc/Makefile
+@@ -4,7 +4,7 @@ RM	= rm -f
+ MKDIR	= mkdir -m 0755 -p
+ INSTALL	= install
+ RM	= rm -f
+-TARGETS	= $(OBJDIR)gprs.1 $(OBJDIR)gprs.html $(OBJDIR)index.html $(OBJDIR)phone.1 $(OBJDIR)phone.html $(OBJDIR)phonectl.1 $(OBJDIR)phonectl.html
++TARGETS	= $(OBJDIR)gprs.1 $(OBJDIR)phone.1 $(OBJDIR)phonectl.1
+ RM	= rm -f
+ LN	= ln -f
+ MKDIR	= mkdir -m 0755 -p
+@@ -16,43 +16,24 @@ $(OBJDIR)gprs.1: gprs.xml
+ $(OBJDIR)gprs.1: gprs.xml
+ 	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)gprs.1"
+ 
+-$(OBJDIR)gprs.html: manual.css.xml gprs.css.xml gprs.xml
+-	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)gprs.html"
+-
+-$(OBJDIR)index.html: gprs.xml index.xml index.xsl phone.xml phonectl.xml
+-	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)index.html"
+-
+ $(OBJDIR)phone.1: phone.xml
+ 	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)phone.1"
+ 
+-$(OBJDIR)phone.html: manual.css.xml phone.css.xml phone.xml
+-	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)phone.html"
+-
+ $(OBJDIR)phonectl.1: phonectl.xml
+ 	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)phonectl.1"
+ 
+-$(OBJDIR)phonectl.html: manual.css.xml phonectl.css.xml phonectl.xml
+-	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)phonectl.html"
+-
+ clean:
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)gprs.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)gprs.html"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)index.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phone.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phone.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phonectl.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phonectl.html"
+ 
+ distclean: clean
+ 	$(RM) -- $(TARGETS)
+ 
+ install: all
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gprs.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gprs.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phone.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phone.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phonectl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phonectl.html"
+ 	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/Phone
+ 	$(INSTALL) -m 0644 phone.conf $(DESTDIR)$(PREFIX)/share/doc/Phone/phone.conf
+ 	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/Phone
+@@ -64,11 +45,8 @@ uninstall:
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "gprs.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "gprs.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phone.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phone.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phonectl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phonectl.html"
+ 	$(RM) -- $(DESTDIR)$(PREFIX)/share/doc/Phone/phone.conf
+ 	$(RM) -- $(DESTDIR)$(PREFIX)/share/doc/Phone/pppd-chat_gprs
+ 	$(RM) -- $(DESTDIR)$(PREFIX)/share/doc/Phone/pppd-peers_gprs

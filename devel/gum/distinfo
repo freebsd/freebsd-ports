@@ -1,5 +1,5 @@
-TIMESTAMP = 1690078982
-SHA256 (go/devel_gum/gum-v0.11.0/v0.11.0.mod) = b1bba6872691cc3e85d71b3b3d91c928ab81f88feccef4ca0a088e32fa289131
-SIZE (go/devel_gum/gum-v0.11.0/v0.11.0.mod) = 1759
-SHA256 (go/devel_gum/gum-v0.11.0/v0.11.0.zip) = 53bf9c5ee0af3fa4a69b60755a3ad45da37133cf29ad8b32af2710c94a859721
-SIZE (go/devel_gum/gum-v0.11.0/v0.11.0.zip) = 88346
+TIMESTAMP = 1701118882
+SHA256 (go/devel_gum/gum-v0.12.0/v0.12.0.mod) = 5fb70b64055b6e151d4570d5c683547dafe50c727f42a36bfbba52b9ef97d2c6
+SIZE (go/devel_gum/gum-v0.12.0/v0.12.0.mod) = 1883
+SHA256 (go/devel_gum/gum-v0.12.0/v0.12.0.zip) = 8e3ab2177b2137597a3f9971935f7407734ed7531d19f324b193f2b9a3317877
+SIZE (go/devel_gum/gum-v0.12.0/v0.12.0.zip) = 91579

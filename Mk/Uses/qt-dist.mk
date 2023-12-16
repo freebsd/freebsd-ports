@@ -28,7 +28,7 @@ _COMMON_DISTS=		3d base charts connectivity datavis3d declarative imageformats l
 _QT5_DISTS=		gamepad graphicaleffects quickcontrols \
 			quickcontrols2 script webglplugin \
 			x11extras xmlpatterns
-_QT6_DISTS=		5compat doc httpserver languageserver lottie positioning \
+_QT6_DISTS=		5compat coap doc graphs httpserver languageserver lottie positioning \
 			quick3dphysics quickeffectmaker shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \
@@ -95,11 +95,14 @@ _QT5_DISTNAME_kde=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 # Qt6 specific distnames
 _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
 
-# Effective master sites and disfile valus
+# Effective master sites and distfile values
+# net/qt6-coap has no submodule distfile and uses USE_GITHUB
+.  if ${_QT_DIST} != coap
 MASTER_SITES=			${_QT${_QT_VER}_MASTER_SITES${_KDE_${_QT_DIST}:D_kde}}
 MASTER_SITE_SUBDIR=		${_QT${_QT_VER}_MASTER_SITE_SUBDIR${_KDE_${_QT_DIST}:D_kde}}
 DISTNAME=			${_QT${_QT_VER}_DISTNAME${_KDE_${_QT_DIST}:D_kde}}
 DISTFILES=			${DISTNAME:S,$,${EXTRACT_SUFX},}
+.  endif
 DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 
 .  if ${_QT_VER:M5}
@@ -122,8 +125,8 @@ _KDE_quickcontrols2=	5
 _KDE_quicktimeline=	0
 _KDE_remoteobjects=	0
 _KDE_script=		0
-_KDE_script_ORIGIN_TAG=	v5.15.15-lts
-_KDE_script_VERSION=	5.15.15
+_KDE_script_ORIGIN_TAG=	v5.15.16-lts
+_KDE_script_VERSION=	5.15.16
 _KDE_scxml=		0
 _KDE_sensors=		0
 _KDE_serialbus=		0
@@ -135,9 +138,10 @@ _KDE_translations=	0
 _KDE_virtualkeyboard=	0
 _KDE_wayland=		59
 _KDE_webchannel=	3
-_KDE_webengine=			0
-_KDE_webengine_ORIGIN_TAG=	v5.15.15-lts
-_KDE_webengine_VERSION=		5.15.15
+_KDE_webengine=			5
+_KDE_webengine_BRANCH=		5.15
+_KDE_webengine_ORIGIN_TAG=	v5.15.16-lts
+_KDE_webengine_VERSION=		5.15.16
 _KDE_webglplugin=	0
 _KDE_websockets=	2
 _KDE_webview=		0
@@ -146,7 +150,7 @@ _KDE_xmlpatterns=	0
 
 .    if defined(_KDE_${_QT_DIST})
 .      if defined(_KDE_${_QT_DIST}_ORIGIN_TAG)
-_KDE_${_QT_DIST}_BRANCH=	${_KDE_${_QT_DIST}_VERSION}
+_KDE_${_QT_DIST}_BRANCH?=	${_KDE_${_QT_DIST}_VERSION}
 .      else
 _KDE_${_QT_DIST}_BRANCH=	kde/5.15
 COMMENT+=			(KDE patched)
@@ -298,6 +302,13 @@ QMAKE_ARGS+=		QT_CONFIG-="${QT_CONFIG:M-*:O:u:C/^-//}"
 
 PLIST_SUB+=		SHORTVER=${_QT_VERSION:R} \
 			FULLVER=${_QT_VERSION:C/-.*//}
+.  if defined(WITH_DEBUG)
+PLIST_SUB+=		DEBUG="" \
+			NO_DEBUG="@comment "
+.  else
+PLIST_SUB+=		DEBUG="@comment " \
+			NO_DEBUG=""
+.  endif
 
 # Handle additional PLIST directories, which should only be used for Qt-dist ports.
 .  for dir in ETC

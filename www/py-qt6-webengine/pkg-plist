@@ -1,4 +1,5 @@
 %%PYQT_APIDIR%%/PyQt6-WebEngine.api
+%%PYQT_SIPDIR%%/QtWebEngineCore/QtWebEngineCore.toml
 %%PYQT_SIPDIR%%/QtWebEngineCore/QtWebEngineCoremod.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qtwebenginecoreglobal.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecertificateerror.sip
@@ -10,6 +11,7 @@
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefilesystemaccessrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefindtextresult.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefullscreenrequest.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineglobalsettings.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginehistory.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginehttprequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineloadinginfo.sip
@@ -32,13 +34,12 @@
 %%PYQT_SIPDIR%%/QtWebEngineQuick/QtWebEngineQuickmod.sip
 %%PYQT_SIPDIR%%/QtWebEngineQuick/qquickwebengineprofile.sip
 %%PYQT_SIPDIR%%/QtWebEngineQuick/qtwebenginequickglobal.sip
+%%PYQT_SIPDIR%%/QtWebEngineWidgets/QtWebEngineWidgets.toml
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/QtWebEngineWidgetsmod.sip
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebengineview.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebEngineCore.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebEngineQuick.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebEngineWidgets.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWebEngineCore/QtWebEngineCore.toml
-%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWebEngineWidgets/QtWebEngineWidgets.toml
 %%PYTHON_SITELIBDIR%%/PyQt6_WebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
 %%PYTHON_SITELIBDIR%%/PyQt6_WebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/PyQt6_WebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD

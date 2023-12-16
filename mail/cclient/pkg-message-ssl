@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Warning: You have chosen to include SSL support. Applications/ports that use
-the cclient library but do not support SSL may stop working or have problems
-linking. Linking them explicitly with ssl (-lssl -lcrypto) may or may not help.
-EOM
-}
-]

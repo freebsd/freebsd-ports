@@ -1,0 +1,34 @@
+Backport b6d6756 from upstream
+
+commit b6d67560e39ca3c7154d97355fec988210a460e5
+Author: Ganael Laplanche <ganael.laplanche@martymac.org>
+Date:   Wed Nov 29 20:38:56 2023 +0100
+
+    Fix data directory handling on FreeBSD
+
+diff --git a/src/duckstation-nogui/nogui_host.cpp b/src/duckstation-nogui/nogui_host.cpp
+index 5543c2c9..8e2778ed 100644
+--- src/duckstation-nogui/nogui_host.cpp
++++ src/duckstation-nogui/nogui_host.cpp
+@@ -185,7 +185,7 @@ void NoGUIHost::SetDataDirectory()
+       EmuFolders::DataRoot = Path::Combine(StringUtil::WideStringToUTF8String(documents_directory), "DuckStation");
+     CoTaskMemFree(documents_directory);
+   }
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__FreeBSD__)
+   // Use $XDG_CONFIG_HOME/duckstation if it exists.
+   const char* xdg_config_home = getenv("XDG_CONFIG_HOME");
+   if (xdg_config_home && Path::IsAbsolute(xdg_config_home))
+diff --git a/src/duckstation-qt/qthost.cpp b/src/duckstation-qt/qthost.cpp
+index a2039160..b7977cb6 100644
+--- src/duckstation-qt/qthost.cpp
++++ src/duckstation-qt/qthost.cpp
+@@ -290,7 +290,7 @@ void QtHost::SetDataDirectory()
+       EmuFolders::DataRoot = Path::Combine(StringUtil::WideStringToUTF8String(documents_directory), "DuckStation");
+     CoTaskMemFree(documents_directory);
+   }
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__FreeBSD__)
+   // Use $XDG_CONFIG_HOME/duckstation if it exists.
+   const char* xdg_config_home = getenv("XDG_CONFIG_HOME");
+   if (xdg_config_home && Path::IsAbsolute(xdg_config_home))

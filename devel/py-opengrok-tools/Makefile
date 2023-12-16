@@ -1,9 +1,9 @@
 PORTNAME=	opengrok-tools
-PORTVERSION=		1.3.16
+DISTVERSION=		1.12.23
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	OpenGrok tools for synchronization and mirroring
 WWW=		https://oracle.github.io/opengrok/
 
@@ -20,14 +20,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.6.0:devel/py-jsonschema@${PY_F
 
 # According to the vendor, Python3 is required
 USES=		python
-USE_PYTHON=	autoplist distutils noflavors
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	oracle
 GH_PROJECT=	opengrok
+USE_PYTHON=	autoplist distutils noflavors
 
-BUILD_WRKSRC=	${WRKSRC}/opengrok-tools
+NO_ARCH=	yes
+
+BUILD_WRKSRC=	${WRKSRC}/tools
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include <bsd.port.mk>

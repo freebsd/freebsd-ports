@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ipc/ipc_channel_common.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ipc/ipc_channel_common.cc.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/ipc/ipc_channel_common.cc
-@@ -11,7 +11,7 @@ namespace IPC {
+@@ -10,7 +10,7 @@
  
  namespace IPC {
  

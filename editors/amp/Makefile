@@ -1,7 +1,6 @@
 PORTNAME=	amp
-DISTVERSION=	0.6.2-27
-DISTVERSIONSUFFIX=	-g71df483
-PORTREVISION=	6
+DISTVERSION=	0.6.2-32
+DISTVERSIONSUFFIX=	-gd9a913c
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,6 +9,8 @@ WWW=		https://amp.rs/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libonig.so:devel/oniguruma
 
 USES=		cargo localbase:ldflags python:build xorg
 USE_GITHUB=	yes

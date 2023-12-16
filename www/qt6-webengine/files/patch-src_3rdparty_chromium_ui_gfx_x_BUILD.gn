@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/ui/gfx/x/BUILD.gn.orig	2023-08-16 19:50:41 UTC
++++ src/3rdparty/chromium/ui/gfx/x/BUILD.gn
+@@ -7,7 +7,7 @@ import("//tools/generate_library_loader/generate_libra
+ import("//build/config/ui.gni")
+ import("//tools/generate_library_loader/generate_library_loader.gni")
+ 
+-assert(ozone_platform_x11)
++# assert(ozone_platform_x11)
+ 
+ declare_args() {
+   regenerate_x11_protos = false

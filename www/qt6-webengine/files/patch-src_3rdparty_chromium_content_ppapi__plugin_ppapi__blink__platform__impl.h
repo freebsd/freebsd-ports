@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2022-07-22 17:30:31 UTC
 +++ src/3rdparty/chromium/content/ppapi_plugin/ppapi_blink_platform_impl.h
 @@ -12,7 +12,7 @@
  #include "build/build_config.h"

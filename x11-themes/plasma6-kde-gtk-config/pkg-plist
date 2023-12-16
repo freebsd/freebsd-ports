@@ -1,0 +1,10 @@
+lib/gtk-3.0/modules/libcolorreload-gtk-module.so
+lib/gtk-3.0/modules/libwindow-decorations-gtk-module.so
+lib/kconf_update_bin/gtk_theme
+lib/kconf_update_bin/remove_deprecated_gtk4_option
+lib/libexec/gtk3_preview
+%%QT_PLUGINDIR%%/kf6/kded/gtkconfig.so
+share/kcm-gtk-module/preview.ui
+share/kconf_update/gtkconfig.upd
+share/kconf_update/remove_window_decorations_from_gtk_css.sh
+share/themes/Breeze/window_decorations.css

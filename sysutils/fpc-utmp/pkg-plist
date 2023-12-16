@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/utmp.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/utmp.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/utmp.ppu

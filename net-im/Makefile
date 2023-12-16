@@ -3,7 +3,6 @@
     SUBDIR += beebeep
     SUBDIR += biboumi
     SUBDIR += cawbird
-    SUBDIR += centerim
     SUBDIR += chatterino2
     SUBDIR += climm
     SUBDIR += coccinella
@@ -33,7 +32,6 @@
     SUBDIR += icqlib
     SUBDIR += jabberd
     SUBDIR += jarl
-    SUBDIR += jggtrans
     SUBDIR += jicofo
     SUBDIR += jitsi-meet-full
     SUBDIR += jitsi-prosody-plugins
@@ -134,7 +132,6 @@
     SUBDIR += ruqola
     SUBDIR += sayaka
     SUBDIR += scli
-    SUBDIR += scudcloud
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
     SUBDIR += signal-desktop

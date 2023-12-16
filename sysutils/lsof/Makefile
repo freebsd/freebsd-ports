@@ -2,7 +2,8 @@
 #       to commit it.  I (ler) don't have access to all the ARCH's
 
 PORTNAME=	lsof
-DISTVERSION=	4.97.0
+DISTVERSION=	4.99.0
+PORTREVISION=	1
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -41,6 +42,7 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
 			LSOF_CC="${CC}"
+BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash 
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.

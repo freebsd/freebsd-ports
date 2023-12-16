@@ -1,8 +1,8 @@
---- pyproject.toml.orig	2023-09-26 15:01:12 UTC
+--- pyproject.toml.orig	2023-10-31 14:05:31 UTC
 +++ pyproject.toml
-@@ -215,17 +215,6 @@ packaging = ">=16.1"
- # We are currently incompatible with >=2.0.0: (https://github.com/matrix-org/synapse/issues/15858)
- pydantic = "^1.7.4"
+@@ -216,17 +216,6 @@ packaging = ">=20.0"
+ # See https://github.com/matrix-org/synapse/issues/15858
+ pydantic = ">=1.7.4, <3"
  
 -# This is for building the rust components during "poetry install", which
 -# currently ignores the `build-system.requires` directive (c.f.
@@ -18,3 +18,12 @@
  # Optional Dependencies
  # ---------------------
  matrix-synapse-ldap3 = { version = ">=0.1", optional = true }
+@@ -381,7 +370,7 @@ furo = ">=2022.12.7,<2024.0.0"
+ # system changes.
+ # We are happy to raise these upper bounds upon request,
+ # provided we check that it's safe to do so (i.e. that CI passes).
+-requires = ["poetry-core>=1.1.0,<=1.7.0", "setuptools_rust>=1.3,<=1.8.0"]
++requires = ["poetry-core>=1.1.0,<=1.7.0", "setuptools_rust>=1.3,<=1.8.1"]
+ build-backend = "poetry.core.masonry.api"
+ 
+ 

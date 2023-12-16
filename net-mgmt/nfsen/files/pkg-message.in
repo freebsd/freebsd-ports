@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+**** From nfdump/README.md ****
+
+Compatibility
+
+nfdump-1.7.x is compatible to nfdump-1.6.18, which means it can read files created with nfdump-1.6.18 or newer. Flow files created with earlier nfdump versions may not contain all flow elements. If you have older files, it is recommended to use nfdump-1.6.17 to update the records.
+
+Nfdump 1.7.x provides the same set of programs as 1.6.x and can be used almost as a drop-in replacement. This may change in future and older legacy programs may be removed. You can convert any old files from nfdump-1.6 to nfdump-1.7 format by reading/writing files: ./nfdump -r old-flowfile -y -w new-flowfile
+
+Please note, that only nfdump may read older flow files. All other programs relay on the new file format.
+
+Note for NfSen users: If you use NfSen, you must upgrade NfSen to the latest Github version https://github.com/phaag/nfsen. All specific binaries such as nfprofile and nftrack are still available with nfdump-1.7 but may be removed in future.
+EOM
+}
+]

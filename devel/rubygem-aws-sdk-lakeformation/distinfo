@@ -1,3 +1,3 @@
-TIMESTAMP = 1696001800
-SHA256 (rubygem/aws-sdk-lakeformation-1.42.0.gem) = 4c0f05084dd61a8022eba1db5a3c8028a0ff5ceb3efeaae25b3897cc39deb506
-SIZE (rubygem/aws-sdk-lakeformation-1.42.0.gem) = 61440
+TIMESTAMP = 1701364142
+SHA256 (rubygem/aws-sdk-lakeformation-1.45.0.gem) = dc88b0706af075361a9825ef0295f8f592f2ac0f4b98bd34818d02979212e8bd
+SIZE (rubygem/aws-sdk-lakeformation-1.45.0.gem) = 64000

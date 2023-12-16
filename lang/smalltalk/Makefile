@@ -1,6 +1,6 @@
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -10,10 +10,7 @@ WWW=		https://smalltalk.gnu.org/
 
 LICENSE=	GPLv2+
 
-BROKEN_aarch64=		Fails to link: undefined reference to sbrk
 BROKEN_powerpc64=	Fails to build: gst-package: did not understand #~
-BROKEN_riscv64=		Fails to link: undefined reference to sbrk
-BROKEN_sparc64=		Fails to install
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		gawk:lang/gawk

@@ -10,17 +10,15 @@ CMake Error at CMakeLists.txt:69 (find_package):
   containing one of the above files.  If "VulkanUtilityLibraries" provides a
   separate development package or SDK, be sure it has been installed.
 
---- CMakeLists.txt.orig	2023-09-06 14:39:11 UTC
+--- CMakeLists.txt.orig	2023-11-28 17:03:03 UTC
 +++ CMakeLists.txt
-@@ -66,7 +66,10 @@ endif()
-     endif()
- endif()
+@@ -68,6 +68,9 @@ find_package(VulkanUtilityLibraries CONFIG)
  
--find_package(VulkanUtilityLibraries CONFIG REQUIRED)
-+find_package(VulkanUtilityLibraries CONFIG)
+ find_package(VulkanHeaders CONFIG)
+ find_package(VulkanUtilityLibraries CONFIG)
 +if (NOT TARGET Vulkan::UtilityHeaders OR NOT TARGET Vulkan::LayerSettings)
 +    add_subdirectory(Vulkan-Utility-Libraries EXCLUDE_FROM_ALL SYSTEM)
 +endif()
  
- option(BUILD_WERROR "Treat compiler warnings as errors")
- if (BUILD_WERROR)
+ add_subdirectory(layers)
+ add_subdirectory(utils)

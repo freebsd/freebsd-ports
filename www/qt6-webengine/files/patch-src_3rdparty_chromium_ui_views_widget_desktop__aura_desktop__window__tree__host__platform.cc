@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -41,7 +41,7 @@
+@@ -43,7 +43,7 @@
  #include "ui/wm/core/window_util.h"
  #include "ui/wm/public/window_move_client.h"
  
@@ -18,7 +18,7 @@
    const bool requires_accelerated_widget = params.requires_accelerated_widget;
  #else
    const bool requires_accelerated_widget = false;
-@@ -329,7 +329,7 @@ DesktopWindowTreeHostPlatform::CreateDragDropClient() 
+@@ -329,7 +329,7 @@ std::unique_ptr<aura::client::DragDropClient>
  DesktopWindowTreeHostPlatform::CreateDragDropClient() {
    ui::WmDragHandler* drag_handler = ui::GetWmDragHandler(*(platform_window()));
    std::unique_ptr<DesktopDragDropClientOzone> drag_drop_client =
@@ -27,7 +27,7 @@
        std::make_unique<DesktopDragDropClientOzoneLinux>(window(), drag_handler);
  #else
        std::make_unique<DesktopDragDropClientOzone>(window(), drag_handler);
-@@ -1017,7 +1017,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
+@@ -1039,7 +1039,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

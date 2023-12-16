@@ -5,7 +5,7 @@ functionality. Like dwm, dwl is:
 
 - Easy to understand, hack on, and extend with patches
 - One C source file (or a very small number) configurable via config.h
-- Limited to 2000 SLOC to promote hackability
+- Limited to 2200 SLOC to promote hackability
 - Tied to as few external dependencies as possible
 
 dwl is not meant to provide every feature under the sun. Instead, like dwm,
@@ -19,8 +19,13 @@ implement given the base on which it is built. Implemented default features:
   work well.
 - Configurable multi-monitor layout support, including position and rotation
 - Configurable HiDPI/multi-DPI support
+- Idle-inhibit protocol which lets applications such as mpv disable idle
+  monitoring
 - Provide information to external status bars via stdout/stdin
 - Urgency hints via xdg-activate protocol
+- Support screen lockers via ext-session-lock-v1 protocol
 - Various Wayland protocols
 - XWayland support as provided by wlroots (can be enabled in config.mk)
 - Zero flickering - Wayland users naturally expect "every frame is perfect"
+- Layer shell popups (used by Waybar)
+- Damage tracking provided by scenegraph API

@@ -1,20 +1,24 @@
---- CMakeLists.txt.orig	2023-05-11 09:54:27 UTC
+--- CMakeLists.txt.orig	2023-12-06 06:01:19 UTC
 +++ CMakeLists.txt
-@@ -206,7 +206,7 @@ message(STATUS "Psi4 install: ${CMAKE_INSTALL_PREFIX}"
+@@ -211,7 +211,7 @@ message(STATUS "Psi4 install: ${CMAKE_INSTALL_PREFIX}"
  # * library: not at all
  
- set(Python_ADDITIONAL_VERSIONS 3.11 3.10 3.9 3.8)  # adjust with CMake minimum FindPythonInterp
+ set(Python_ADDITIONAL_VERSIONS 3.12 3.11 3.10 3.9 3.8)  # adjust with CMake minimum FindPythonInterp
 -find_package(Python 3.8 COMPONENTS Interpreter Development NumPy REQUIRED)
 +find_package(Python $ENV{FREEBSD_PYTHON_VER} COMPONENTS Interpreter Development NumPy REQUIRED)
  message(STATUS "${Cyan}Found Python ${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}${ColourReset}: ${Python_EXECUTABLE} (found version ${Python_VERSION})")
  
  set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage)
-@@ -319,9 +319,10 @@ ExternalProject_Add(psi4-core
+@@ -325,13 +325,14 @@ ExternalProject_Add(psi4-core
                -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
                -DENABLE_CYTHONIZE=${ENABLE_CYTHONIZE}
                -Dpsi4_SHGSHELL_ORDERING=${psi4_SHGSHELL_ORDERING}
-+              -DFREEBSD_PYTHON_VER=${FREEBSD_PYTHON_VER}
++	      -DFREEBSD_PYTHON_VER=${FREEBSD_PYTHON_VER}
     CMAKE_CACHE_ARGS -DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}
+               -DCMAKE_C_COMPILER_ARG1:STRING=${CMAKE_C_COMPILER_ARG1}
+               -DCMAKE_CXX_COMPILER_ARG1:STRING=${CMAKE_CXX_COMPILER_ARG1}
+               -DCMAKE_Fortran_COMPILER_ARG1:STRING=${CMAKE_Fortran_COMPILER_ARG1}
+                # CMAKE_<lang>_COMPILER_ARG1 vars pass args thru when CMAKE_<lang>_COMPILER set as "compiler --vital-args"
 -   USES_TERMINAL_BUILD 1
 -   BUILD_ALWAYS 1)
 +   #USES_TERMINAL_BUILD 1

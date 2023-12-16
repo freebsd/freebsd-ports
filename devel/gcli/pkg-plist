@@ -8,9 +8,7 @@ include/gcli/issues.h
 include/gcli/labels.h
 include/gcli/milestones.h
 include/gcli/pulls.h
-include/gcli/releases.h
 include/gcli/repos.h
-include/gcli/review.h
 include/gcli/sshkeys.h
 include/gcli/status.h
 lib/libgcli.a
@@ -33,3 +31,4 @@ man/man1/gcli-repos.1.gz
 man/man1/gcli-snippets.1.gz
 man/man1/gcli-status.1.gz
 man/man1/gcli.1.gz
+man/man5/gcli.5.gz

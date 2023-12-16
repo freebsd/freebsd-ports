@@ -1,6 +1,6 @@
 PORTNAME=	libretro-pcsx2
 PORTVERSION=	0.20201030
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu

@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby Client to manage continous progiling information
-WWW=		https://github.com/googleapis/google-cloud-ruby
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-profiler-v2
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

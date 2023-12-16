@@ -1,6 +1,6 @@
---- content/browser/interest_group/header_direct_from_seller_signals.cc.orig	2023-10-21 11:51:27 UTC
+--- content/browser/interest_group/header_direct_from_seller_signals.cc.orig	2023-11-22 14:00:11 UTC
 +++ content/browser/interest_group/header_direct_from_seller_signals.cc
-@@ -187,7 +187,11 @@ void OnJsonDecoded(std::unique_ptr<const std::set<std:
+@@ -206,7 +206,11 @@ void OnJsonDecoded(
  
  }  // namespace
  

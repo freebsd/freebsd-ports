@@ -50,7 +50,7 @@ LLVM_MAJOR=${LLVM_SUFFIX}
 .error Don't know how to get version for ${LLVM_SUFFIX}
 .endif
 
-.if ${LLVM_SUFFIX} == "-cheri" || ${LLVM_SUFFIX} == "-morello"
+.if ${LLVM_SUFFIX} == "-cheri" || ${LLVM_SUFFIX} == "-cheriot" || ${LLVM_SUFFIX} == "-morello"
 OPTIONS_EXCLUDE=	LLDB
 .endif
 

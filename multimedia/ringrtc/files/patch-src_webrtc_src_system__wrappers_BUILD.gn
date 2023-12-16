@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/system_wrappers/BUILD.gn.orig	2021-01-28 23:16:17 UTC
-+++ ../../src/webrtc/src/system_wrappers/BUILD.gn
+--- src/webrtc/src/system_wrappers/BUILD.gn.orig	2021-01-28 23:16:17 UTC
++++ src/webrtc/src/system_wrappers/BUILD.gn
 @@ -58,11 +58,9 @@ rtc_library("system_wrappers") {
    }
  

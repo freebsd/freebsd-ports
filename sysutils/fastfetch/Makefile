@@ -1,5 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.2.3
+DISTVERSION=	2.3.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -15,7 +15,7 @@ FLAVORS=	full lite
 FLAVOR?=	${FLAVORS:[1]}
 lite_PKGNAMESUFFIX=	-lite
 
-USES=		cmake localbase:ldflags pkgconfig
+USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
 
@@ -94,5 +94,7 @@ PULSEAUDIO_RUN_DEPENDS=	${LOCALBASE}/lib/libpulse.so:audio/pulseaudio
 
 CMAKE_ARGS=	-DTARGET_DIR_ETC:STRING="${LOCALBASE}/etc" \
 		-DENABLE_SYSTEM_YYJSON:BOOL=ON
+
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 .include <bsd.port.mk>

@@ -5,4 +5,6 @@ if [ "$DBUS_SESSION_BUS_ADDRESS" = "" ]; then
     export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
 fi
 
+export GIT_EXEC_PATH=%%LOCALBASE%%/bin/git
+
 exec %%DATADIR%%/Logseq "$@"

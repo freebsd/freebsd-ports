@@ -7,6 +7,18 @@ include/GL/internal/dri_interface.h
 @comment include/GL/gl.h
 @comment include/GL/glcorearb.h
 @comment include/GL/glext.h
+@comment include/GLES/egl.h
+@comment include/GLES/gl.h
+@comment include/GLES/glext.h
+@comment include/GLES/glplatform.h
+@comment include/GLES2/gl2.h
+@comment include/GLES2/gl2ext.h
+@comment include/GLES2/gl2platform.h
+@comment include/GLES3/gl3.h
+@comment include/GLES3/gl31.h
+@comment include/GLES3/gl32.h
+@comment include/GLES3/gl3ext.h
+@comment include/GLES3/gl3platform.h
 @comment include/KHR/khrplatform.h
 @comment include/gbm.h
 %%CROCUS_GDRIVER%%lib/dri/crocus_dri.so
@@ -30,12 +42,20 @@ include/GL/internal/dri_interface.h
 @comment lib/libglapi.so
 @comment lib/libglapi.so.0
 @comment lib/libglapi.so.0.0.0
+@comment lib/libGLESv1_CM.so
+@comment lib/libGLESv1_CM.so.1
+@comment lib/libGLESv1_CM.so.1.1.0
+@comment lib/libGLESv2.so
+@comment lib/libGLESv2.so.2
+@comment lib/libGLESv2.so.2.0.0
 %%INTEL_VDRIVER%%lib/libvulkan_intel.so
 %%AMD_VDRIVER%%lib/libvulkan_radeon.so
 %%SWRAST_VDRIVER%%lib/libvulkan_lvp.so
 libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/egl.pc
 @comment libdata/pkgconfig/gbm.pc
+@comment libdata/pkgconfig/glesv1_cm.pc
+@comment libdata/pkgconfig/glesv2.pc
 share/drirc.d/00-mesa-defaults.conf
 %%AMD_VDRIVER%%share/drirc.d/00-radv-defaults.conf
 share/drirc.d/01-freebsd.conf

@@ -1,0 +1,103 @@
+Add security patches to this file.
+
+Addresses the following security issues:
+- CVE-2023-5997
+- CVE-2023-6112
+
+From 669506a53474e3d7637666d3c53f6101fb94d96f Mon Sep 17 00:00:00 2001
+From: Nidhi Jaju <nidhijaju@chromium.org>
+Date: Thu, 2 Nov 2023 08:16:57 +0000
+Subject: [PATCH] [Backport] CVE-2023-5997: Use after free in Garbage
+ Collection
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/4996929:
+Make URLSearchParams persistent to avoid UaF
+
+The URLSearchParams::Create() function returns an on-heap object, but it
+can be garbage collected, so making it a persistent variable in
+DidFetchDataLoadedString() mitigates the issue.
+
+Bug: 1497997
+Change-Id: I229efec33451792a10a185cb2f9aa37dd0579823
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/4996929
+Reviewed-by: Adam Rice <ricea@chromium.org>
+Commit-Queue: Nidhi Jaju <nidhijaju@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1218682}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/518606
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/third_party/blink/renderer/core/fetch/body.cc | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/blink/renderer/core/fetch/body.cc b/chromium/third_party/blink/renderer/core/fetch/body.cc
+index f24125ee271..6f6abd5b961 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/fetch/body.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/core/fetch/body.cc
+@@ -119,8 +119,13 @@ class BodyFormDataConsumer final : public BodyConsumerBase {
+ 
+   void DidFetchDataLoadedString(const String& string) override {
+     auto* formData = MakeGarbageCollected<FormData>();
+-    for (const auto& pair : URLSearchParams::Create(string)->Params())
++    // URLSearchParams::Create() returns an on-heap object, but it can be
++    // garbage collected, so making it a persistent variable on the stack
++    // mitigates use-after-free scenarios. See crbug.com/1497997.
++    Persistent<URLSearchParams> search_params = URLSearchParams::Create(string);
++    for (const auto& pair : search_params->Params()) {
+       formData->append(pair.first, pair.second);
++    }
+     DidFetchDataLoadedFormData(formData);
+   }
+ };
+From 6c805bf7507997616d826f20c7c901739ed3b431 Mon Sep 17 00:00:00 2001
+From: Yoshisato Yanagisawa <yyanagisawa@chromium.org>
+Date: Tue, 7 Nov 2023 02:56:57 +0000
+Subject: [PATCH] [Backport] CVE-2023-6112: Use after free in Navigation
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5004329:
+Use WeakPointer for the loader fallback callback.
+
+`MaybeStartLoader` binds an unretained pointer to
+`FallbackToNonInterceptedRequest`, which is passed through a series of
+objects until it reaches `ServiceWorkerMainResourceLoader`.
+
+When "network" or "cache" is selected as a ServiceWorker static
+routing API's source and caused the network fallback, the unretained
+pointer can be released and may cause use-after-free.
+
+This CL changes the unretained pointer to a weak pointer to avoid that.
+For the consistency of the function call, both of the callbacks
+starts to use weak pointers.
+
+Bug: 1499298
+Change-Id: I7e7c93fa389ab35584703f30bfc722eadeca81dd
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5004329
+Reviewed-by: Shunya Shishido <sisidovski@chromium.org>
+Reviewed-by: Minoru Chikamune <chikamune@chromium.org>
+Reviewed-by: Takashi Toyoshima <toyoshim@chromium.org>
+Commit-Queue: Yoshisato Yanagisawa <yyanagisawa@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1220697}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/518607
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/content/browser/loader/navigation_url_loader_impl.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/content/browser/loader/navigation_url_loader_impl.cc b/chromium/content/browser/loader/navigation_url_loader_impl.cc
+index 0e8f73e7d18..0bd83dadec2 100644
+--- src/3rdparty/chromium/content/browser/loader/navigation_url_loader_impl.cc.orig
++++ src/3rdparty/chromium/content/browser/loader/navigation_url_loader_impl.cc
+@@ -638,10 +638,10 @@ void NavigationURLLoaderImpl::MaybeStartLoader(
+     next_interceptor->MaybeCreateLoader(
+         *resource_request_, browser_context_,
+         base::BindOnce(&NavigationURLLoaderImpl::MaybeStartLoader,
+-                       base::Unretained(this), next_interceptor),
++                       weak_factory_.GetWeakPtr(), next_interceptor),
+         base::BindOnce(
+             &NavigationURLLoaderImpl::FallbackToNonInterceptedRequest,
+-            base::Unretained(this)));
++            weak_factory_.GetWeakPtr()));
+     return;
+   }
+ 

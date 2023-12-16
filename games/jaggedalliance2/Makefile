@@ -1,7 +1,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -159,6 +159,12 @@ CARGO_TEST=		no
 MAKE_ENV=	${CARGO_ENV:NCARGO_TARGET_DIR=*}
 LDFLAGS+=	-Wl,--as-needed
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1400000
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|https://github.com/Neargye/magic_enum/archive/v0.7.3.zip|${DISTDIR}/Neargye-magic_enum-v0.7.3_GH0.tar.gz|' \
 		-e 's|86338841251da1bacab82684a76c4042|fc20f4149a6d6a2caa8ff66f99dac7cf|' \
@@ -173,11 +179,5 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ja2 \
 		${STAGEDIR}${PREFIX}/bin/ja2-launcher \
 		${STAGEDIR}${PREFIX}/bin/ja2-resource-pack
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1400000 && ${ARCH} == "i386"
-CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
-.endif
 
 .include <bsd.port.post.mk>

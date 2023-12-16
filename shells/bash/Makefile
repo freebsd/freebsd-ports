@@ -19,7 +19,7 @@ WWW=			https://www.gnu.org/software/bash/
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-USES=			bison cpe iconv makeinfo pathfix localbase
+USES=			bison cpe iconv localbase pathfix
 CPE_VENDOR=		gnu
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-bash-malloc \

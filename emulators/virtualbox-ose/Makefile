@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.48
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -58,7 +58,7 @@ VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OPUS PULSEAUDIO \
-			PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+			PYTHON QT5 R0LOGGING UDPTUNNEL VBOXIMG VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 # Since version 6.1.24 pulseaudio is broken at runtime, preventing
 # virtual machines from starting if configured to use it.
@@ -73,6 +73,7 @@ OPUS_DESC=		Use libvpx for audio recording (requires VPX)
 QT5_DESC=		Build with QT5 frontend (requires X11)
 R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
 UDPTUNNEL_DESC=		Build with UDP tunnel support
+VBOXIMG_DESC=		Build vboximg-mount (requires fuse-libs)
 VDE_DESC=		Build with VDE support
 VNC_DESC=		Build with VNC support
 VPX_DESC=		Use libvpx for video recording
@@ -108,6 +109,7 @@ QT5_CONFIGURE_OFF=	--disable-qt
 QT5_IMPLIES=		X11
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
+VBOXIMG_LIB_DEPENDS=	libfuse.so.2:sysutils/fusefs-libs
 VDE_CONFIGURE_ON=	--enable-vde
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
 VNC_CONFIGURE_ON=	--enable-vnc
@@ -181,6 +183,14 @@ VBOX_PROGS+=	VBoxSDL
 PLIST_SUB+=	SDK=""
 .else
 PLIST_SUB+=	SDK="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVBOXIMG}
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-vboximg-Config.kmk
+VBOX_UTILS+=	vboximg-mount
+PLIST_SUB+=	VBOXIMG=""
+.else
+PLIST_SUB+=	VBOXIMG="@comment "
 .endif
 
 KMK_ARCH=	freebsd.${ARCH}
@@ -408,6 +418,10 @@ do-install:
 	    ${STAGEDIR}${VBOX_DIR}/ExtensionPacks/VNC/
 	${INSTALL_LIB} ${KMK_BUILDDIR}/bin/ExtensionPacks/VNC/${KMK_ARCH}/* \
 	    ${STAGEDIR}${VBOX_DIR}/ExtensionPacks/VNC/${KMK_ARCH}/
+.endif
+
+.if ${PORT_OPTIONS:MVBOXIMG}
+	${LN} -fs ../${VBOX_DIR_REL}/vboximg-mount ${STAGEDIR}${PREFIX}/bin/
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}

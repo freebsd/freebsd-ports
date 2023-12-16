@@ -1,0 +1,13 @@
+include/KF6/KCrash/KCrash
+include/KF6/KCrash/kcrash.h
+include/KF6/KCrash/kcrash_export.h
+include/KF6/KCrash/kcrash_version.h
+lib/cmake/KF6Crash/KF6CrashConfig.cmake
+lib/cmake/KF6Crash/KF6CrashConfigVersion.cmake
+lib/cmake/KF6Crash/KF6CrashTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF6Crash/KF6CrashTargets.cmake
+lib/libKF6Crash.so
+lib/libKF6Crash.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF6Crash.so.6
+share/qlogging-categories6/kcrash.categories
+share/qlogging-categories6/kcrash.renamecategories

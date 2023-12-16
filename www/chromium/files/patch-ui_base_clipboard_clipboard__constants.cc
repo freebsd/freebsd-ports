@@ -1,6 +1,6 @@
---- ui/base/clipboard/clipboard_constants.cc.orig	2022-03-25 21:59:56 UTC
+--- ui/base/clipboard/clipboard_constants.cc.orig	2023-12-10 06:10:27 UTC
 +++ ui/base/clipboard/clipboard_constants.cc
-@@ -24,7 +24,7 @@ const char kMimeTypeOctetStream[] = "application/octet
+@@ -25,7 +25,7 @@ const char kMimeTypeOctetStream[] = "application/octet
  // Used for window dragging on some platforms.
  const char kMimeTypeWindowDrag[] = "chromium/x-window-drag";
  

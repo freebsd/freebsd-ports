@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc
-@@ -18,6 +18,11 @@ extern "C" void* __libc_stack_end;  // NOLINT
+@@ -18,6 +18,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  
@@ -18,10 +18,10 @@
    return 512 * 1024;
 +#elif BUILDFLAG(IS_OPENBSD)
 +  return 512 * 1024;
- #elif BUILDFLAG(IS_MAC)
+ #elif BUILDFLAG(IS_APPLE)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -147,6 +154,13 @@ void* GetStackStart() {
+@@ -148,6 +155,13 @@ void* GetStackStart() {
    ::GetCurrentThreadStackLimits(&lowLimit, &highLimit);
    return reinterpret_cast<void*>(highLimit);
  #endif

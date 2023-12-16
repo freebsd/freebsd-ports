@@ -1,6 +1,7 @@
 PORTNAME=	psi4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
+DISTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -73,7 +74,9 @@ do-install: # project fails to install itself into a stage directory due to a co
 
 	# psi4 sometimes fails to print its version: https://github.com/psi4/psi4/issues/2831
 
-do-test: # 2 tests fail, see https://github.com/psi4/psi4/issues/3014
+do-test:
+	# 2 tests fail, see https://github.com/psi4/psi4/issues/3014
+	# 1.9: many tests fail: https://github.com/psi4/psi4/issues/3099
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest # tests can run without this target too, but this way tests output is more concise and it looks more appealing
 
 .include <bsd.port.mk>

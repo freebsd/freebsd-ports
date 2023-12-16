@@ -1,0 +1,11 @@
+--- fog-google.gemspec.orig	2023-12-14 20:23:00 UTC
++++ fog-google.gemspec
+@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<google-apis-dns_v1>.freeze, ["~> 0.28"])
+   s.add_runtime_dependency(%q<google-apis-pubsub_v1>.freeze, ["~> 0.30"])
+   s.add_runtime_dependency(%q<google-apis-sqladmin_v1beta4>.freeze, ["~> 0.38"])
+-  s.add_runtime_dependency(%q<google-cloud-env>.freeze, ["~> 1.2"])
++  s.add_runtime_dependency(%q<google-cloud-env>.freeze, [">= 1.2", "< 3.0"])
+   s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.7.0"])
+   s.add_development_dependency(%q<pry>.freeze, ["= 0.13.0"])
+   s.add_development_dependency(%q<retriable>.freeze, [">= 0"])

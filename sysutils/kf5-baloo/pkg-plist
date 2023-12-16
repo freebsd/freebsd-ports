@@ -262,6 +262,8 @@ share/locale/it/LC_MESSAGES/balooshow5.mo
 share/locale/it/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/it/LC_MESSAGES/kio5_tags.mo
 share/locale/it/LC_MESSAGES/kio5_timeline.mo
+share/locale/ja/LC_MESSAGES/baloo_file5.mo
+share/locale/ja/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/ja/LC_MESSAGES/balooctl5.mo
 share/locale/ja/LC_MESSAGES/baloodb5.mo
 share/locale/ja/LC_MESSAGES/balooengine5.mo

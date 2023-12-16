@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
-@@ -225,13 +225,16 @@ config("no_unresolved_symbols") {
+@@ -243,13 +243,16 @@ config("no_unresolved_symbols") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -18,7 +18,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -494,6 +497,10 @@ config("compiler") {
+@@ -513,6 +516,10 @@ config("compiler") {
      }
    }
  
@@ -29,7 +29,16 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -979,7 +986,7 @@ config("compiler_cpu_abi") {
+@@ -882,7 +889,7 @@ config("compiler") {
+   # * Apple platforms (e.g. MacOS, iPhone, iPad) aren't supported because xcode
+   #   lldb doesn't have the needed changes yet.
+   # TODO(crbug.com/1379070): Remove if the upstream default ever changes.
+-  if (is_clang && !is_nacl && !is_win && !is_apple) {
++  if (is_clang && !is_nacl && !is_win && !is_apple && !is_bsd) {
+     cflags_cc += [ "-gsimple-template-names" ]
+   }
+ 
+@@ -1065,7 +1072,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -38,7 +47,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -997,7 +1004,7 @@ config("compiler_cpu_abi") {
+@@ -1083,7 +1090,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -47,7 +56,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1335,7 +1342,7 @@ config("compiler_deterministic") {
+@@ -1418,7 +1425,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -56,7 +65,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1387,7 +1394,7 @@ config("clang_revision") {
+@@ -1470,7 +1477,7 @@ config("clang_revision") {
  }
  
  config("clang_revision") {
@@ -65,7 +74,7 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1792,7 +1799,7 @@ config("default_warnings") {
+@@ -1872,7 +1879,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -74,7 +83,7 @@
          cflags += [
            # TODO(crbug.com/1343975) Evaluate and possibly enable.
            "-Wno-deprecated-builtins",
-@@ -1971,7 +1978,7 @@ config("no_chromium_code") {
+@@ -2054,7 +2061,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -83,7 +92,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2501,7 +2508,7 @@ config("afdo") {
+@@ -2570,7 +2577,7 @@ config("afdo") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -92,8 +101,8 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2517,7 +2524,7 @@ config("afdo") {
-       cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+@@ -2589,7 +2596,7 @@ config("afdo") {
+       }
        inputs = [ _clang_sample_profile ]
      }
 -  } else if (auto_profile_path != "" && is_a_target_toolchain) {

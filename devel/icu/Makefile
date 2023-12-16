@@ -1,5 +1,5 @@
 PORTNAME=	icu
-DISTVERSION=	73_2
+DISTVERSION=	74_2
 PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
@@ -34,6 +34,12 @@ WRKSRC=		${WRKDIR}/icu/source
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION:C/r.?/1/}
+
+post-extract:
+# XXX Symlink broken by https://github.com/unicode-org/icu/commit/312bae866003
+	@if [ ! -e ${LICENSE_FILE} ]; then \
+		${ECHO_CMD} "http://www.unicode.org/copyright.html" >${LICENSE_FILE}; \
+	fi
 
 .ifndef PKGNAMESUFFIX
 post-install:

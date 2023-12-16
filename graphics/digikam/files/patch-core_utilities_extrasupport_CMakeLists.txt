@@ -1,0 +1,11 @@
+--- core/utilities/extrasupport/CMakeLists.txt.orig	2023-11-29 09:52:21 UTC
++++ core/utilities/extrasupport/CMakeLists.txt
+@@ -4,7 +4,7 @@
+ # SPDX-License-Identifier: BSD-3-Clause
+ #
+ 
+-if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
++if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+     add_subdirectory(addressbook)
+ endif()
+ 

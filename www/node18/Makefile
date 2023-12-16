@@ -1,6 +1,8 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	18
@@ -52,23 +54,13 @@ SHEBANG_FILES=	deps/v8/third_party/inspector_protocol/*.py \
 		tools/*.py \
 		tools/inspector_protocol/*.py
 
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS DTRACE NLS
-OPTIONS_DEFAULT=DTRACE
-.if !exists(/usr/sbin/dtrace)
-OPTIONS_EXCLUDE+=	DTRACE
-.endif
-OPTIONS_EXCLUDE_aarch64=	DTRACE
-OPTIONS_EXCLUDE_armv6=		DTRACE
-OPTIONS_EXCLUDE_armv7=		DTRACE
-OPTIONS_EXCLUDE_powerpc64=	DTRACE
-OPTIONS_EXCLUDE_powerpc64le=	DTRACE
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
 OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use bundled OpenSSL implementation from node.js
 
 BUNDLED_SSL_CONFIGURE_OFF=	--openssl-use-def-ca-store --shared-openssl
 BUNDLED_SSL_RUN_DEPENDS_OFF=	ca_root_nss>=0:security/ca_root_nss
 BUNDLED_SSL_USES_OFF=	ssl
-DTRACE_CONFIGURE_ON=	--with-dtrace
 NLS_BUILD_DEPENDS=	icu>=69.1:devel/icu
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
@@ -76,7 +68,7 @@ NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && (${ARCH} == aarch64 || ${ARCH:Mpowerpc64*})
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && (${ARCH} == aarch64 || ${ARCH} == armv7 || ${ARCH:Mpowerpc64*})
 CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 

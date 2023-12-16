@@ -1,4 +1,4 @@
---- src/plugins/multimedia/ffmpeg/qv4l2camera_p.h.orig	2022-12-12 19:36:40 UTC
+--- src/plugins/multimedia/ffmpeg/qv4l2camera_p.h.orig	2023-10-03 20:42:53 UTC
 +++ src/plugins/multimedia/ffmpeg/qv4l2camera_p.h
 @@ -23,6 +23,8 @@
  #include <qsocketnotifier.h>
@@ -8,4 +8,4 @@
 +
  QT_BEGIN_NAMESPACE
  
- class QV4L2CameraDevices : public QObject,
+ class QV4L2CameraDevices : public QPlatformVideoDevices

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_libpci.cpp.orig	2022-06-08 06:40:31 UTC
+--- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_libpci.cpp.orig	2022-02-23 19:25:59 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_libpci.cpp
 @@ -12,6 +12,11 @@
  #include <pci/pci.h>

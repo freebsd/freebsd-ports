@@ -1,9 +1,9 @@
-TIMESTAMP = 1698514642
+TIMESTAMP = 1701441924
 SHA256 (alexandria-20231021-git.tgz) = 5bc0e459ebc303878e724f2ce082cc3bcfff94c4eb42621889e6e95c1a843d61
 SIZE (alexandria-20231021-git.tgz) = 57207
 SHA256 (cl-ppcre-20230618-git.tgz) = aaba004bc82bf63886b8ce91eadaf0b78fd6c4865da09c3e66da7fbf2a127397
 SIZE (cl-ppcre-20230618-git.tgz) = 157428
 SHA256 (clx-20230618-git.tgz) = d3f4244c915c68ef1572be1a89742b3a8f4a02bb83d9eb3968f546b68c7a3ec1
 SIZE (clx-20230618-git.tgz) = 459665
-SHA256 (stumpwm-stumpwm-22.11-88-gbaf5df7_GH0.tar.gz) = 35f4eb386a1f7088e39d5ee12912d1b0f471c9f50efa65a8d183c091f3576b13
-SIZE (stumpwm-stumpwm-22.11-88-gbaf5df7_GH0.tar.gz) = 287344
+SHA256 (stumpwm-stumpwm-23.11_GH0.tar.gz) = 01e5fa4ec6466b8d5817d8105e41f9f1628e898c8770bbeb6377fadb23ee4817
+SIZE (stumpwm-stumpwm-23.11_GH0.tar.gz) = 287178

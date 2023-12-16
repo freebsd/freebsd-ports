@@ -1,6 +1,5 @@
 PORTNAME=	libayatana-appindicator
-PORTVERSION=	0.5.92
-PORTREVISION=	2
+PORTVERSION=	0.5.93
 CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -12,23 +11,23 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	libayatana-ido3-0.4.so:devel/ayatana-ido \
 		libayatana-indicator3.so:devel/libayatana-indicator \
 		libdbusmenu-glib.so:devel/libdbusmenu \
-		libgtest.so:devel/googletest \
 		libharfbuzz.so:print/harfbuzz
 BUILD_DEPENDS=	lcov>=0:devel/lcov
 
-USES=		cmake gnome localbase:ldflags pkgconfig
+USES=		cmake gnome localbase:ldflags pkgconfig pathfix
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection pango
 CMAKE_OFF=	ENABLE_BINDINGS_MONO \
 		ENABLE_BINDINGS_VALA \
-		FLAVOUR_GTK2
+		FLAVOUR_GTK2 \
+		ENABLE_GTKDOC
 
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AyatanaIndicators
 
-PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README.md
 
 OPTIONS_DEFINE=	DOCS
 

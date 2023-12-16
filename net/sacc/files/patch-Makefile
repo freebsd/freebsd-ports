@@ -1,12 +1,12 @@
---- Makefile.orig	2020-02-19 20:41:12 UTC
-+++ Makefile
-@@ -32,8 +32,7 @@ uninstall:
- 	rm -f $(DESTDIR)$(PREFIX)/bin/$(BIN) $(DESTDIR)$(MANDIR)/$(MAN)
+--- Makefile.orig	2023-11-28 19:03:10.851119000 +0200
++++ Makefile	2023-11-28 19:03:30.393321000 +0200
+@@ -9,8 +9,7 @@
+ OBJ = $(BIN:=.o) ui_$(UI).o io_$(IO).o
  
- # Stock FLAGS
--SACCCFLAGS = -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700 -D_BSD_SOURCE -D_GNU_SOURCE \
--             $(CFLAGS)
-+SACCCFLAGS = $(CFLAGS)
+ GETVER = $$(git rev-parse --is-inside-work-tree >/dev/null 2>&1 \
+-	&& git describe --tags \
+-	|| echo $(DEFVERSION))
++	&& echo $(DEFVERSION))
  
- .c.o:
- 	$(CC) $(SACCCFLAGS) -c $<
+ all: $(BIN)
+ 

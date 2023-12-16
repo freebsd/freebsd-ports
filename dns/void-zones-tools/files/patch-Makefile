@@ -1,13 +1,22 @@
 --- Makefile.orig	2023-08-28 22:28:23 UTC
 +++ Makefile
-@@ -26,9 +26,7 @@
+@@ -26,15 +26,13 @@
  CC ?= clang
  DV != $(CC) -dumpversion
  
 -.if $(MACHINE) == "i386" || $(MACHINE) == "amd64" || $(MACHINE) == "x86_64"
 -CFLAGS = $(CDEFS) -march=native -mssse3
 -.elif $(MACHINE) == "arm"
+-CFLAGS = $(CDEFS) -fsigned-char
 +.if $(MACHINE) == "arm"
- CFLAGS = $(CDEFS) -fsigned-char
++CFLAGS += $(CDEFS) -fsigned-char
  .else
- CFLAGS = $(CDEFS)
+-CFLAGS = $(CDEFS)
++CFLAGS += $(CDEFS)
+ .endif
+ 
+-CFLAGS += -std=gnu11 -g0 -O3 -fno-pic -fvisibility=hidden -fstrict-aliasing -fno-common -fstack-protector -Wno-parentheses
++CFLAGS += -std=gnu11 -g0 -O3 -fvisibility=hidden -fstrict-aliasing -fno-common -fstack-protector -Wno-parentheses
+ 
+ # Clang only flags come here
+ .if $(DV) == "4.2.1"

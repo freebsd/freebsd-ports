@@ -8,5 +8,3 @@ OpenStack. It provides:
 os-vif is intended to define a common model for representing VIF types in
 OpenStack. With the exception of the two included plugins, all plugins for other
 networking backends are maintained in separate code repositories.
-
-See also: https://github.com/openstack/os-vif

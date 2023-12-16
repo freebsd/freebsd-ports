@@ -31,15 +31,17 @@ WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION}/sources/pyside
 PYSIDE_RELNAME=		${PORTNAME}
 PYSIDE_BINDIR_REL?=	bin/${PYSIDE_RELNAME}
 
+post-install:
 # Move scripts into a dedicated directory. They're too generically named, e.g.:
 # deploy.py and project.py. Unversioned copies of Qt tools like lrelease and
 # rcc are also installed which we probably don't want in PATH by default.
 # Install to: ${PREFIX}/bin/pyside6 by default for now until there are
 # consumers of this and a more fitting location is deemed necessary.
-post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/${PYSIDE_RELNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}
 	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_RELNAME} ${STAGEDIR}${PREFIX}/bin
+# These directories contain templates that should not be byte-compiled.
+	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android/recipes ${WRKDIR}
 
 .for d in deploy_lib project qtpy2cpp_lib
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
@@ -49,5 +51,7 @@ post-install:
 		-f -d ${PREFIX}/${PYSIDE_BINDIR_REL}/${d} \
 		${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/${d}
 .endfor
+
+	@${MV} ${WRKDIR}/recipes ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android
 
 .include <bsd.port.mk>

@@ -1,16 +1,16 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-10-21 11:51:27 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-11-22 14:00:11 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
-@@ -4,8 +4,10 @@
- 
+@@ -5,8 +5,10 @@
  #include "media/capture/video/linux/v4l2_capture_delegate.h"
  
+ #include <fcntl.h>
 +#if !BUILDFLAG(IS_BSD)
  #include <linux/version.h>
  #include <linux/videodev2.h>
 +#endif
  #include <poll.h>
- #include <sys/fcntl.h>
  #include <sys/ioctl.h>
+ #include <sys/mman.h>
 @@ -26,17 +28,19 @@
  #include "media/capture/video/blob_utils.h"
  #include "media/capture/video/linux/video_capture_device_linux.h"

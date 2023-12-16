@@ -1,4 +1,5 @@
 %%PYQT_APIDIR%%/PyQt6-NetworkAuth.api
+%%PYQT_SIPDIR%%/QtNetworkAuth/QtNetworkAuth.toml
 %%PYQT_SIPDIR%%/QtNetworkAuth/QtNetworkAuthmod.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qabstractoauth.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qabstractoauth2.sip
@@ -9,7 +10,6 @@
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauthhttpserverreplyhandler.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauthoobreplyhandler.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/QtNetworkAuth.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetworkAuth/QtNetworkAuth.toml
 %%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/INSTALLER
 %%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/RECORD

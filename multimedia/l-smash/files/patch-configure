@@ -9,3 +9,11 @@
  fi
  
  
+@@ -430,6 +430,7 @@ sed -i -e '/lsmash_win32_fopen/d' \
+ # Get rid of non-public symbols for the cli tools from local.
+ sed -i -e '/lsmash_win32_fopen/d' \
+     -e '/lsmash_string_from_wchar/d' \
++    -e '/lsmash_string_to_wchar/d' \
+     -e '/lsmash_importer_open/d' \
+     -e '/lsmash_importer_close/d' \
+     -e '/lsmash_importer_get_access_unit/d' \

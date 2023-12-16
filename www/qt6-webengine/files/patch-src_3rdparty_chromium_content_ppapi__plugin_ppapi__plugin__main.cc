@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc
-@@ -53,6 +53,11 @@
+@@ -54,6 +54,11 @@
  #include "gin/v8_initializer.h"
  #endif
  
@@ -12,7 +12,7 @@
  #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -146,7 +151,7 @@ int PpapiPluginMain(MainFunctionParams parameters) {
+@@ -148,7 +153,7 @@ int PpapiPluginMain(MainFunctionParams parameters) {
    gin::V8Initializer::LoadV8Snapshot();
  #endif
  

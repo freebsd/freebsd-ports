@@ -1,0 +1,89 @@
+Backport 407049c from upstream
+
+commit 407049cd91b65c8a917533b87c7264dba3e2adc5
+Author: Stenzek <stenzek@gmail.com>
+Date:   Tue Dec 5 15:21:52 2023 +1000
+
+    Qt: Resolve any symbolic links in AppRoot/DataRoot
+    
+    Should fix incorrect relative path generation on FreeBSD, where /home is
+    a symlink to /usr/home.
+
+diff --git a/src/duckstation-nogui/nogui_host.cpp b/src/duckstation-nogui/nogui_host.cpp
+index 8e2778ed..15ce8ae5 100644
+--- src/duckstation-nogui/nogui_host.cpp
++++ src/duckstation-nogui/nogui_host.cpp
+@@ -147,7 +147,7 @@ bool NoGUIHost::ShouldUsePortableMode()
+ 
+ void NoGUIHost::SetAppRoot()
+ {
+-  std::string program_path(FileSystem::GetProgramPath());
++  const std::string program_path = FileSystem::GetProgramPath();
+   Log_InfoPrintf("Program Path: %s", program_path.c_str());
+ 
+   EmuFolders::AppRoot = Path::Canonicalize(Path::GetDirectory(program_path));
+@@ -190,7 +190,7 @@ void NoGUIHost::SetDataDirectory()
+   const char* xdg_config_home = getenv("XDG_CONFIG_HOME");
+   if (xdg_config_home && Path::IsAbsolute(xdg_config_home))
+   {
+-    EmuFolders::DataRoot = Path::Combine(xdg_config_home, "duckstation");
++    EmuFolders::DataRoot = Path::RealPath(Path::Combine(xdg_config_home, "duckstation"));
+   }
+   else
+   {
+@@ -203,14 +203,14 @@ void NoGUIHost::SetDataDirectory()
+       const std::string share_dir(Path::Combine(local_dir, "share"));
+       FileSystem::EnsureDirectoryExists(local_dir.c_str(), false);
+       FileSystem::EnsureDirectoryExists(share_dir.c_str(), false);
+-      EmuFolders::DataRoot = Path::Combine(share_dir, "duckstation");
++      EmuFolders::DataRoot = Path::RealPath(Path::Combine(share_dir, "duckstation"));
+     }
+   }
+ #elif defined(__APPLE__)
+   static constexpr char MAC_DATA_DIR[] = "Library/Application Support/DuckStation";
+   const char* home_dir = getenv("HOME");
+   if (home_dir)
+-    EmuFolders::DataRoot = Path::Combine(home_dir, MAC_DATA_DIR);
++    EmuFolders::DataRoot = Path::RealPath(Path::Combine(home_dir, MAC_DATA_DIR));
+ #endif
+ 
+   // make sure it exists
+diff --git a/src/duckstation-qt/qthost.cpp b/src/duckstation-qt/qthost.cpp
+index b7977cb6..9a52689c 100644
+--- src/duckstation-qt/qthost.cpp
++++ src/duckstation-qt/qthost.cpp
+@@ -252,7 +252,7 @@ bool QtHost::ShouldUsePortableMode()
+ 
+ void QtHost::SetAppRoot()
+ {
+-  std::string program_path(FileSystem::GetProgramPath());
++  const std::string program_path = FileSystem::GetProgramPath();
+   Log_InfoPrintf("Program Path: %s", program_path.c_str());
+ 
+   EmuFolders::AppRoot = Path::Canonicalize(Path::GetDirectory(program_path));
+@@ -295,7 +295,7 @@ void QtHost::SetDataDirectory()
+   const char* xdg_config_home = getenv("XDG_CONFIG_HOME");
+   if (xdg_config_home && Path::IsAbsolute(xdg_config_home))
+   {
+-    EmuFolders::DataRoot = Path::Combine(xdg_config_home, "duckstation");
++    EmuFolders::DataRoot = Path::RealPath(Path::Combine(xdg_config_home, "duckstation"));
+   }
+   else
+   {
+@@ -308,14 +308,14 @@ void QtHost::SetDataDirectory()
+       const std::string share_dir(Path::Combine(local_dir, "share"));
+       FileSystem::EnsureDirectoryExists(local_dir.c_str(), false);
+       FileSystem::EnsureDirectoryExists(share_dir.c_str(), false);
+-      EmuFolders::DataRoot = Path::Combine(share_dir, "duckstation");
++      EmuFolders::DataRoot = Path::RealPath(Path::Combine(share_dir, "duckstation"));
+     }
+   }
+ #elif defined(__APPLE__)
+   static constexpr char MAC_DATA_DIR[] = "Library/Application Support/DuckStation";
+   const char* home_dir = getenv("HOME");
+   if (home_dir)
+-    EmuFolders::DataRoot = Path::Combine(home_dir, MAC_DATA_DIR);
++    EmuFolders::DataRoot = Path::RealPath(Path::Combine(home_dir, MAC_DATA_DIR));
+ #endif
+ 
+   // make sure it exists

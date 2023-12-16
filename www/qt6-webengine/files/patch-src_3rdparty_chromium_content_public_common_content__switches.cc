@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/common/content_switches.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/public/common/content_switches.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/content/public/common/content_switches.cc
-@@ -367,6 +367,8 @@ const char kEnableLogging[]                 = "enable-
+@@ -368,6 +368,8 @@ const char kEnableLogging[]                 = "enable-
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -9,7 +9,7 @@
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -996,7 +998,7 @@ const char kEnableAutomation[] = "enable-automation";
+@@ -997,7 +999,7 @@ const char kEnableAutomation[] = "enable-automation";
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

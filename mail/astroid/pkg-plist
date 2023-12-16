@@ -1,7 +1,6 @@
 bin/astroid
 lib/astroid/web-extensions/libtvextension.so
 lib/girepository-1.0/Astroid-0.2.typelib
-man/man1/astroid.1.gz
 share/applications/astroid.desktop
 %%DATADIR%%/ui/edit-message.glade
 %%DATADIR%%/ui/icons/LICENSE
@@ -26,3 +25,4 @@ share/applications/astroid.desktop
 share/gir-1.0/Astroid-0.2.gir
 share/icons/hicolor/512x512/apps/astroid.png
 share/icons/hicolor/scalable/apps/astroid.svg
+share/man/man1/astroid.1.gz

@@ -1,6 +1,6 @@
 PORTNAME=	netmiko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	security net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,20 +17,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ntc-templates>=2.0.0:textproc/py-ntc-templat
 		${PYTHON_PKGNAMEPREFIX}pyserial>=3.3:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scp>=0.13.6:security/py-scp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textfsm>=1.1.3:textproc/py-textfsm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5.3:devel/py-yaml@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yaml>=6.0.1:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktbyers
 SHEBANG_FILES=	netmiko/cli_tools/netmiko_cfg.py \
 		netmiko/cli_tools/netmiko_grep.py \
 		netmiko/cli_tools/netmiko_show.py
 
-NO_ARCH=	yes
+TEST_ARGS=	tests/test_import_netmiko.py
 
-do-test:
-	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -s tests/test_import_netmiko.py
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

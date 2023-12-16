@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/audio/sndio/sndio_output.cc.orig	2022-11-14 07:14:51 UTC
+--- src/3rdparty/chromium/media/audio/sndio/sndio_output.cc.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/media/audio/sndio/sndio_output.cc
 @@ -0,0 +1,187 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -165,7 +165,7 @@
 +    // Get data to play
 +    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
 +	params.sample_rate());
-+    count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
++    count = source->OnMoreData(delay, base::TimeTicks::Now(), {}, audio_bus.get());
 +    audio_bus->ToInterleaved<SignedInt16SampleTypeTraits>(count, reinterpret_cast<int16_t*>(buffer));
 +    if (count == 0) {
 +      // We have to submit something to the device

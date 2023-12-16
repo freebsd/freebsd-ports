@@ -1,5 +1,5 @@
 PORTNAME=	validate_url
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/perfectline/validates_url/tree/master
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-activemodel61>=3.0:databases/rubygem-activemodel61 \
+RUN_DEPENDS=	rubygem-activemodel70>=3.0:databases/rubygem-activemodel70 \
 		rubygem-public_suffix>=0:dns/rubygem-public_suffix
 
 USES=		gem

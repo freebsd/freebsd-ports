@@ -1,6 +1,5 @@
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -8,6 +7,8 @@ WWW=		https://www.mesa3d.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.rst
+
+USES=		llvm:noexport
 
 LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
 
@@ -35,14 +36,17 @@ USE_LDCONFIG=		yes
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-MESON_ARGS+=	-Dgallium-vdpau=disabled \
+MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
+		-Dgallium-vdpau=disabled \
 		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-nine=false \
+		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dosmesa=false \
 		-Dtools="" \
+		-Dvalgrind=disabled \
 		-Degl=enabled \
 		-Dgbm=enabled \
 		-Dvulkan-drivers="" \

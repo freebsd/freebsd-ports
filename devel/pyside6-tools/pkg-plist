@@ -24,11 +24,7 @@
 %%PYSIDE_BINDIR_REL%%/deploy_lib/android/android_helper.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/android/buildozer.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/android/recipes/PySide6/__init__.tmpl.py
-%%PYSIDE_BINDIR_REL%%/deploy_lib/android/recipes/PySide6/__pycache__/__init__.tmpl%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYSIDE_BINDIR_REL%%/deploy_lib/android/recipes/PySide6/__pycache__/__init__.tmpl%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/android/recipes/shiboken6/__init__.tmpl.py
-%%PYSIDE_BINDIR_REL%%/deploy_lib/android/recipes/shiboken6/__pycache__/__init__.tmpl%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYSIDE_BINDIR_REL%%/deploy_lib/android/recipes/shiboken6/__pycache__/__init__.tmpl%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/commands.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/config.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/default.spec

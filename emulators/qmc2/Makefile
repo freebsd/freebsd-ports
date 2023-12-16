@@ -1,44 +1,38 @@
 PORTNAME=	qmc2
-PORTVERSION=	0.243
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+DISTVERSION=	0.243-14
+DISTVERSIONSUFFIX=	-g112724d69
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
-COMMENT=	Qt based UNIX MAME frontend
+COMMENT=	Qt5 graphical interface for MAME
 WWW=		https://github.com/qmc2/qmc2-mame-fe
 
 LICENSE=	GPLv2+
 
-DEPRECATED=	Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
-
 BUILD_DEPENDS=	bash>0:shells/bash \
 		gawk>0:lang/gawk
+LIB_DEPENDS=	libminizip-ng.so:archivers/minizip-ng
 RUN_DEPENDS=	libglvnd>0:graphics/libglvnd \
-		mame>=0.250:emulators/mame
+		mame>=0.259:emulators/mame
 
-USES=		compiler:c++11-lang desktop-file-utils gmake gl qt:5 sdl \
+USES=		compiler:c++11-lang libarchive gl gmake pkgconfig qt:5 sdl \
 		shebangfix tar:bzip2 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	qmc2
 GH_PROJECT=	qmc2-mame-fe
 USE_GL=		gl glu
-USE_QT=		buildtools core declarative gui multimedia network opengl qmake \
-		script scripttools sql svg testlib webkit widgets xml \
-		xmlpatterns
+USE_QT=		buildtools core declarative gui location multimedia network \
+		opengl printsupport qmake script scripttools sql svg testlib \
+		webchannel webengine widgets xml xmlpatterns
 USE_SDL=	sdl2
 USE_XORG=	x11 xmu
 
 SHEBANG_FILES=	scripts/cleanup-category-ini.sh \
-		scripts/generate-option-lists.sh \
-		scripts/make-man-pages.sh \
-		scripts/plugin_helper.sh \
-		scripts/romalyzer.pl \
-		scripts/sdl-defines.sh \
-		scripts/sdl-includepath.sh \
-		scripts/sdl-libs.sh \
-		scripts/sdl-version.sh \
+		scripts/generate-option-lists.sh scripts/make-man-pages.sh \
+		scripts/plugin_helper.sh scripts/romalyzer.pl \
+		scripts/sdl-defines.sh scripts/sdl-includepath.sh \
+		scripts/sdl-libs.sh scripts/sdl-version.sh \
 		scripts/strip-png-headers.sh
 
 MAKE_ARGS=	ARCH="${OPSYS}" \
@@ -47,12 +41,13 @@ MAKE_ARGS=	ARCH="${OPSYS}" \
 		CXX="${CXX}" \
 		CXX_FLAGS="${CXXFLAGS} -DUSE_FILE32API" \
 		DATADIR="${DATADIR}" \
-		LINK="${CXX}" \
+		LIBARCHIVE=1 \
 		MAKE="${MAKE_CMD}" \
-		PHONON="0" \
 		QMAKE="${QMAKE}" \
 		QTDIR="${PREFIX}" \
-		SYSCONFDIR="${PREFIX}/etc"
+		SYSCONFDIR="${ETCDIR}" \
+		SYSTEM_MINIZIP=1 \
+		SYSTEM_ZLIB=1
 
 ALL_TARGET=	all arcade tools
 CFLAGS_aarch64=	-march=armv8-a+crc+crypto
@@ -70,47 +65,34 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-scripts-sdl-includepaths
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|DATADIR/qmc2|${DATADIR}|g' \
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|g' \
+		-e 's|%%DOCSDIR%%|${DOCSDIR}/|g' \
 		${WRKSRC}/inst/*.template
 
 do-install:
-	(cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} qmc2-sdlmame \
-		${STAGEDIR}${PREFIX}/bin/qmc2-mame)
-	(cd ${WRKSRC}/src/arcade && \
-		${INSTALL_PROGRAM} qmc2-arcade \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/src/tools/qchdman && \
-		${INSTALL_PROGRAM} qchdman \
-		${STAGEDIR}${PREFIX}/bin)
-
+	${FIND} ${WRKSRC} -type f -name "q*" -perm -o=+x -exec ${INSTALL_PROGRAM} \
+		{} ${STAGEDIR}${PREFIX}/bin/ \;
+	${RLN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-sdlmame ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for data in img lng opt
+.for DATA in cat gmn img js lng opt swn
 	(cd ${WRKSRC}/data && \
-		${COPYTREE_SHARE} ${data} ${STAGEDIR}${DATADIR})
+		${COPYTREE_SHARE} ${DATA} ${STAGEDIR}${DATADIR} "! -name dirinfo.txt")
 .endfor
-
-	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qchdman.6.gz \
-		${STAGEDIR}${MANPREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qmc2-arcade.6.gz \
-		${STAGEDIR}${MANPREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qmc2-main-gui.6.gz \
-		${STAGEDIR}${MANPREFIX}/man/man6/qmc2-mame.6.gz
-
-.for dsktop_entry in qchdman.desktop qmc2-arcade.desktop qmc2.desktop
-	(cd ${WRKSRC}/inst && \
-		${INSTALL_DATA} ${dsktop_entry}.template \
-		${STAGEDIR}${LOCALBASE}/share/applications/${dsktop_entry})
+	${INSTALL_MAN} ${WRKSRC}/data/doc/man/*.6.gz \
+		${STAGEDIR}${PREFIX}/share/man/man6
+	${RLN} ${STAGEDIR}${PREFIX}/share/man/man6/${PORTNAME}-main-gui.6.gz \
+		${STAGEDIR}${PREFIX}/share/man/man6/${PORTNAME}.6.gz
+.for DESKTOP_ENTRY in qchdman.desktop qmc2-arcade.desktop qmc2.desktop
+	${INSTALL_DATA} ${WRKSRC}/inst/${DESKTOP_ENTRY}.template \
+		${STAGEDIR}${PREFIX}/share/applications/${DESKTOP_ENTRY}
 .endfor
-
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC}/inst && \
-		${INSTALL_DATA} qmc2.ini.template \
-		${STAGEDIR}${ETCDIR}/qmc2.ini.sample)
+	${INSTALL_DATA} ${WRKSRC}/inst/qmc2.ini.template \
+		${STAGEDIR}${ETCDIR}/qmc2.ini.sample
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/data/doc && \
+	(cd ${WRKSRC}/data/doc && \
 		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

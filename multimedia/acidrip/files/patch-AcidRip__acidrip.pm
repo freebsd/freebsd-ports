@@ -1,6 +1,6 @@
---- ./AcidRip/acidrip.pm.orig	2004-07-25 10:03:09.000000000 -0400
-+++ ./AcidRip/acidrip.pm	2009-06-23 19:43:28.289154908 -0400
-@@ -218,7 +218,29 @@
+--- AcidRip/acidrip.pm.orig	2004-07-25 14:03:09 UTC
++++ AcidRip/acidrip.pm
+@@ -218,7 +218,29 @@ sub get_parameters {
      $menc{'video'} .= ":pass=$::settings->{'video_pass'}" if $::settings->{'video_passes'} > 1;
    }
    if ( $::settings->{'video_codec'} eq 'xvid' ) {

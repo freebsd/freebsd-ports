@@ -1,5 +1,5 @@
 PORTNAME=	httpuv
-DISTVERSION=	1.6.12
+DISTVERSION=	1.6.13
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-testthat>0:devel/R-cran-testthat
-# 3 tests failing
+# 1 test failing
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles
 

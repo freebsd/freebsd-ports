@@ -1,0 +1,53 @@
+--- doc/Makefile.orig	2023-06-27 17:22:08 UTC
++++ doc/Makefile
+@@ -37,7 +37,7 @@ ALL_RST := $(wildcard $(SOURCE_DIR)/*.rst $(SOURCE_DIR
+ 	$(SOURCE_DIR)/design/*.rst)
+ ALL_TXT := $(patsubst $(SOURCE_DIR)/%,$(BUILD_DIR)/%,$(patsubst %.rst,%.txt,$(ALL_RST)))
+ ALL_HTML := $(patsubst $(SOURCE_DIR)/%,$(BUILD_DIR)/%,$(patsubst %.rst,%.html,$(ALL_RST)))
+-ALL_MAN := $(BUILD_DIR)/module.1 $(BUILD_DIR)/ml.1 $(BUILD_DIR)/modulefile.4
++ALL_MAN := $(BUILD_DIR)/module.1 $(BUILD_DIR)/ml.1 $(BUILD_DIR)/modulefile.5
+ 
+ all: man txt
+ 
+@@ -97,10 +97,10 @@ $(BUILD_DIR)/%.txt: $(SOURCE_DIR)/%.rst $(SOURCE_DIR)/
+ 	$(ECHO_GEN2) $(ECHO_DIR_PREFIX)$(BUILD_DIR)/*.txt
+ 	$(SPHINXBUILD) $(SPHINXOPTS) -b text "$(SOURCE_DIR)" "$(BUILD_DIR)"
+ 
+-$(BUILD_DIR)/module.1.in $(BUILD_DIR)/modulefile.4 $(BUILD_DIR)/ml.1: $(ALL_RST) $(SOURCE_DIR)/version.py
++$(BUILD_DIR)/module.1.in $(BUILD_DIR)/modulefile.5 $(BUILD_DIR)/ml.1: $(ALL_RST) $(SOURCE_DIR)/version.py
+ 	$(ECHO_GEN2) $(ECHO_DIR_PREFIX)$(BUILD_DIR)/ml.1
+ 	$(ECHO_GEN2) $(ECHO_DIR_PREFIX)$(BUILD_DIR)/module.1.in
+-	$(ECHO_GEN2) $(ECHO_DIR_PREFIX)$(BUILD_DIR)/modulefile.4
++	$(ECHO_GEN2) $(ECHO_DIR_PREFIX)$(BUILD_DIR)/modulefile.5
+ 	$(SPHINXBUILD) $(SPHINXOPTS) -t pathsubs -b man "$(SOURCE_DIR)" "$(BUILD_DIR)"
+ 	$(if $(findstring module.1.in,$@),mv $(BUILD_DIR)/module.1 $@)
+ endif
+@@ -109,7 +109,7 @@ $(BUILD_DIR)/module.1: $(BUILD_DIR)/module.1.in
+ 	$(translate-in-script)
+ 
+ install: man txt
+-	$(INSTALL_DIR) '$(DESTDIR)$(mandir)/man1' '$(DESTDIR)$(mandir)/man4'
++	$(INSTALL_DIR) '$(DESTDIR)$(mandir)/man1' '$(DESTDIR)$(mandir)/man5'
+ ifeq ($(docinstall),y)
+ 	$(INSTALL_DIR) '$(DESTDIR)$(docdir)'
+ 	$(INSTALL_DATA) $(BUILD_DIR)/changes.txt '$(DESTDIR)$(docdir)/'
+@@ -121,7 +121,7 @@ ifeq ($(docinstall),y)
+ endif
+ 	$(INSTALL_DATA) $(BUILD_DIR)/module.1 '$(DESTDIR)$(mandir)/man1/'
+ 	$(INSTALL_DATA) $(BUILD_DIR)/ml.1 '$(DESTDIR)$(mandir)/man1/'
+-	$(INSTALL_DATA) $(BUILD_DIR)/modulefile.4 '$(DESTDIR)$(mandir)/man4/'
++	$(INSTALL_DATA) $(BUILD_DIR)/modulefile.5 '$(DESTDIR)$(mandir)/man5/'
+ 
+ uninstall:
+ ifeq ($(docinstall),y)
+@@ -135,8 +135,8 @@ ifeq ($(docinstall),y)
+ endif
+ 	rm -f '$(DESTDIR)$(mandir)/man1/module.1'
+ 	rm -f '$(DESTDIR)$(mandir)/man1/ml.1'
+-	rm -f '$(DESTDIR)$(mandir)/man4/modulefile.4'
+-	rmdir '$(DESTDIR)$(mandir)/man1' '$(DESTDIR)$(mandir)/man4'
++	rm -f '$(DESTDIR)$(mandir)/man5/modulefile.5'
++	rmdir '$(DESTDIR)$(mandir)/man1' '$(DESTDIR)$(mandir)/man5'
+ 	rmdir '$(DESTDIR)$(mandir)'
+ 
+ clean:

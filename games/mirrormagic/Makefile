@@ -1,5 +1,5 @@
 PORTNAME=	mirrormagic
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	games
 MASTER_SITES=	https://www.artsoft.org/RELEASES/linux/mirrormagic/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-linux

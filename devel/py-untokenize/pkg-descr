@@ -1,0 +1,2 @@
+untokenize transforms tokens into source code. Unlike the standard library's
+tokenize.untokenize(), it preserves the original whitespace between tokens.

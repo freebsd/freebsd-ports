@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-vod
-GH_TUPLE=	kaltura:nginx-vod-module:1.31:module
+GH_TUPLE=	kaltura:nginx-vod-module:1.32:module
 
 COMMENT=	VOD dynamic module for Angie
 

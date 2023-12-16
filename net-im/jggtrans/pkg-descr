@@ -1,5 +1,0 @@
-jGGtrans (GG Transport), is external component for XMPP/Jabber
-server providing gateway to GaduGadu instant messaging services.
-jGGtrans is known to work well together with ejabberd, jabberd
-1.4 and jabberd 2, but most other Jabber server implementations
-should work too.

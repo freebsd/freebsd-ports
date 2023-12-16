@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/ui/base/ui_base_features.cc
-@@ -205,7 +205,7 @@ CONSTINIT const base::Feature kExperimentalFlingAnimat
+@@ -210,7 +210,7 @@ CONSTINIT const base::Feature kExperimentalFlingAnimat
               "ExperimentalFlingAnimation",
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
       !BUILDFLAG(IS_CHROMEOS_LACROS))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -310,7 +310,7 @@ CONSTINIT const base::Feature kEyeDropper(
+@@ -315,7 +315,7 @@ CONSTINIT const base::Feature kEyeDropper(
  // milestones.
  CONSTINIT const base::Feature kEyeDropper(
               "EyeDropper",

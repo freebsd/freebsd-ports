@@ -436,6 +436,7 @@ include/thrift/lib/cpp2/server/ExecutorToThreadManagerAdaptor.h
 include/thrift/lib/cpp2/server/IOUringUtil.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/IResourcePoolAcceptor.h
+include/thrift/lib/cpp2/server/InterceptorData.h
 include/thrift/lib/cpp2/server/InternalPriorityRequestPile.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
@@ -461,6 +462,7 @@ include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
 include/thrift/lib/cpp2/server/ServerFlags.h
 include/thrift/lib/cpp2/server/ServerInstrumentation.h
+include/thrift/lib/cpp2/server/ServerModule.h
 include/thrift/lib/cpp2/server/ServiceHealthPoller.h
 include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
@@ -572,7 +574,6 @@ include/thrift/lib/cpp2/type/Runtime.h
 include/thrift/lib/cpp2/type/Tag.h
 include/thrift/lib/cpp2/type/Testing.h
 include/thrift/lib/cpp2/type/ThriftType.h
-include/thrift/lib/cpp2/type/Traits.h
 include/thrift/lib/cpp2/type/Type.h
 include/thrift/lib/cpp2/type/TypeRegistry.h
 include/thrift/lib/cpp2/type/UniversalHashAlgorithm.h
@@ -582,7 +583,6 @@ include/thrift/lib/cpp2/type/detail/AnyValue.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/NativeType.h
 include/thrift/lib/cpp2/type/detail/Runtime.h
-include/thrift/lib/cpp2/type/detail/Traits.h
 include/thrift/lib/cpp2/type/detail/TypeClassFromTypeTag.h
 include/thrift/lib/cpp2/type/detail/TypeInfo.h
 include/thrift/lib/cpp2/type/detail/TypeRegistry.h

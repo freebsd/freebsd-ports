@@ -1,5 +1,5 @@
 PORTNAME=	wcslib
-PORTVERSION=	8.1
+PORTVERSION=	8.2.1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 USES=		tar:bzip2 gmake fortran
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	 --docdir=${DOCSDIR}
+
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
@@ -37,11 +39,5 @@ PGPLOT_USES=		xorg
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${STAGEDIR}${PREFIX}/libdata#g' \
 		${WRKSRC}/GNUmakefile
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README COPYING COPYING.LESSER wcslib.pdf ${STAGEDIR}${DOCSDIR})
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	(cd ${WRKSRC}/html && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/html)
 
 .include <bsd.port.mk>

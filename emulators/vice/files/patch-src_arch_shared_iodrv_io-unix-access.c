@@ -16,7 +16,7 @@
  #ifdef UNIX_COMPILE
  
  #include <fcntl.h>
-@@ -121,7 +130,11 @@ static uint8_t device_io_inb(uint16_t addr)
+@@ -121,8 +130,12 @@ static uint8_t device_io_inb(uint16_t addr)
  #ifdef HAVE_INBV
      return inbv(addr);
  #else
@@ -24,7 +24,18 @@
      return inb(addr);
 +#else
 +    return 0;
+ #endif
++#endif
+ }
+ 
+ static void device_io_outb(uint16_t addr, uint8_t val)
+@@ -130,7 +143,9 @@ static void device_io_outb(uint16_t addr, uint8_t val)
+ #ifdef HAVE_OUTBV
+     outbv(addr, val);
+ #else
++#ifdef HAVE_OUTB
+     outb(addr, val);
 +#endif
  #endif
  }
- 
+ #endif

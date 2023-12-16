@@ -1,7 +1,7 @@
-commit fdfe9894a5854967e2c8ffb6759ca2e59b9fe6c6
+commit c9b787241510e3d357366a6a6c9c83c29880080e
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
-    regenerate FreeBSD libwebrtc patch for Firefox 119
+    regenerate FreeBSD libwebrtc patch for Firefox 121
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index cf60c534b8df..e6a2d969a1fd 100644
@@ -846,7 +846,7 @@ index 2c211f384b72..f9c2d536b5d3 100644
  
  Library("aec3_factory_gn")
 diff --git third_party/libwebrtc/api/audio/audio_frame_api_gn/moz.build third_party/libwebrtc/api/audio/audio_frame_api_gn/moz.build
-index 9248b91c2d92..ce2f85ba66dc 100644
+index bbe919aa5953..ce2f85ba66dc 100644
 --- third_party/libwebrtc/api/audio/audio_frame_api_gn/moz.build
 +++ third_party/libwebrtc/api/audio/audio_frame_api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -870,7 +870,7 @@ index 9248b91c2d92..ce2f85ba66dc 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -957,6 +957,9 @@ index 9248b91c2d92..ce2f85ba66dc 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -1252,7 +1255,7 @@ index cb3495a89e19..a6098a248028 100644
 -
  Library("audio_frame_processor_gn")
 diff --git third_party/libwebrtc/api/audio/audio_mixer_api_gn/moz.build third_party/libwebrtc/api/audio/audio_mixer_api_gn/moz.build
-index 0ef13b0f4588..2df8ddd20ca2 100644
+index 520104b4592d..2df8ddd20ca2 100644
 --- third_party/libwebrtc/api/audio/audio_mixer_api_gn/moz.build
 +++ third_party/libwebrtc/api/audio/audio_mixer_api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -1276,7 +1279,7 @@ index 0ef13b0f4588..2df8ddd20ca2 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -1363,6 +1366,9 @@ index 0ef13b0f4588..2df8ddd20ca2 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -1390,7 +1396,7 @@ index 0ef13b0f4588..2df8ddd20ca2 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -1644,7 +1650,7 @@ index 81070090281f..6e4054510c88 100644
 -
  Library("echo_control_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/L16/audio_decoder_L16_gn/moz.build third_party/libwebrtc/api/audio_codecs/L16/audio_decoder_L16_gn/moz.build
-index ff00330a684c..9f1caaa8645d 100644
+index 026c95751931..9f1caaa8645d 100644
 --- third_party/libwebrtc/api/audio_codecs/L16/audio_decoder_L16_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/L16/audio_decoder_L16_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -1668,7 +1674,7 @@ index ff00330a684c..9f1caaa8645d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -1755,6 +1761,9 @@ index ff00330a684c..9f1caaa8645d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -1860,7 +1869,7 @@ index ff00330a684c..9f1caaa8645d 100644
  
  Library("audio_decoder_L16_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/L16/audio_encoder_L16_gn/moz.build third_party/libwebrtc/api/audio_codecs/L16/audio_encoder_L16_gn/moz.build
-index ee8f51ccb440..57de72563f2e 100644
+index 512385612ee0..57de72563f2e 100644
 --- third_party/libwebrtc/api/audio_codecs/L16/audio_encoder_L16_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/L16/audio_encoder_L16_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -1884,7 +1893,7 @@ index ee8f51ccb440..57de72563f2e 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -1971,6 +1980,9 @@ index ee8f51ccb440..57de72563f2e 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -2076,7 +2088,7 @@ index ee8f51ccb440..57de72563f2e 100644
  
  Library("audio_encoder_L16_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/audio_codecs_api_gn/moz.build third_party/libwebrtc/api/audio_codecs/audio_codecs_api_gn/moz.build
-index e9984fe360ce..0a34d8fdda8a 100644
+index b003a5c2383c..0a34d8fdda8a 100644
 --- third_party/libwebrtc/api/audio_codecs/audio_codecs_api_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/audio_codecs_api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -2100,7 +2112,7 @@ index e9984fe360ce..0a34d8fdda8a 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -46,184 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -46,187 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -2187,6 +2199,9 @@ index e9984fe360ce..0a34d8fdda8a 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -2742,7 +2757,7 @@ index bb012a151a7c..0818f76d7b90 100644
  
  Library("builtin_audio_encoder_factory_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/g711/audio_decoder_g711_gn/moz.build third_party/libwebrtc/api/audio_codecs/g711/audio_decoder_g711_gn/moz.build
-index 2a3e692b812d..588ec3b5b33b 100644
+index 1367c36ea990..588ec3b5b33b 100644
 --- third_party/libwebrtc/api/audio_codecs/g711/audio_decoder_g711_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/g711/audio_decoder_g711_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -2766,7 +2781,7 @@ index 2a3e692b812d..588ec3b5b33b 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -2853,6 +2868,9 @@ index 2a3e692b812d..588ec3b5b33b 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -2958,7 +2976,7 @@ index 2a3e692b812d..588ec3b5b33b 100644
  
  Library("audio_decoder_g711_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/g711/audio_encoder_g711_gn/moz.build third_party/libwebrtc/api/audio_codecs/g711/audio_encoder_g711_gn/moz.build
-index 7f89c91164f6..20d76c5496fa 100644
+index b4808ded9c8b..20d76c5496fa 100644
 --- third_party/libwebrtc/api/audio_codecs/g711/audio_encoder_g711_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/g711/audio_encoder_g711_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -2982,7 +3000,7 @@ index 7f89c91164f6..20d76c5496fa 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -3069,6 +3087,9 @@ index 7f89c91164f6..20d76c5496fa 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -3174,7 +3195,7 @@ index 7f89c91164f6..20d76c5496fa 100644
  
  Library("audio_encoder_g711_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/g722/audio_decoder_g722_gn/moz.build third_party/libwebrtc/api/audio_codecs/g722/audio_decoder_g722_gn/moz.build
-index 9dd0927ed536..f738a9569a45 100644
+index 8714874223a8..f738a9569a45 100644
 --- third_party/libwebrtc/api/audio_codecs/g722/audio_decoder_g722_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/g722/audio_decoder_g722_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -3198,7 +3219,7 @@ index 9dd0927ed536..f738a9569a45 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -3285,6 +3306,9 @@ index 9dd0927ed536..f738a9569a45 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -3390,7 +3414,7 @@ index 9dd0927ed536..f738a9569a45 100644
  
  Library("audio_decoder_g722_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_config_gn/moz.build third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_config_gn/moz.build
-index 4ecf66bd1968..2cc917d90aab 100644
+index 5ebbe0ea5f5f..2cc917d90aab 100644
 --- third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_config_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_config_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -3414,7 +3438,7 @@ index 4ecf66bd1968..2cc917d90aab 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -3501,6 +3525,9 @@ index 4ecf66bd1968..2cc917d90aab 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -3528,7 +3555,7 @@ index 4ecf66bd1968..2cc917d90aab 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -3588,7 +3615,7 @@ index 4ecf66bd1968..2cc917d90aab 100644
 -
  Library("audio_encoder_g722_config_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_gn/moz.build third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_gn/moz.build
-index 36bd517e0079..8f13941e25c3 100644
+index 933120c6927d..8f13941e25c3 100644
 --- third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/g722/audio_encoder_g722_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -3612,7 +3639,7 @@ index 36bd517e0079..8f13941e25c3 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -3699,6 +3726,9 @@ index 36bd517e0079..8f13941e25c3 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -4440,7 +4470,7 @@ index 97953a5df078..5d2f4376ee92 100644
  
  Library("audio_encoder_ilbc_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_multiopus_gn/moz.build third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_multiopus_gn/moz.build
-index 21c64c783062..fce4fdca7298 100644
+index c343cfdb5f63..fce4fdca7298 100644
 --- third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_multiopus_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_multiopus_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -4464,7 +4494,7 @@ index 21c64c783062..fce4fdca7298 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -4551,6 +4581,9 @@ index 21c64c783062..fce4fdca7298 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -4656,7 +4689,7 @@ index 21c64c783062..fce4fdca7298 100644
  
  Library("audio_decoder_multiopus_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_opus_config_gn/moz.build third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_opus_config_gn/moz.build
-index 9b1098290596..0c7b461dd94a 100644
+index f2fee9346445..0c7b461dd94a 100644
 --- third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_opus_config_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/opus/audio_decoder_opus_config_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -4680,7 +4713,7 @@ index 9b1098290596..0c7b461dd94a 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -4767,6 +4800,9 @@ index 9b1098290596..0c7b461dd94a 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -4794,7 +4830,7 @@ index 9b1098290596..0c7b461dd94a 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -5077,7 +5113,7 @@ index 24625fb77d03..c40633ff9ee4 100644
  
  Library("audio_decoder_opus_gn")
 diff --git third_party/libwebrtc/api/audio_codecs/opus/audio_encoder_multiopus_gn/moz.build third_party/libwebrtc/api/audio_codecs/opus/audio_encoder_multiopus_gn/moz.build
-index 2c2a46ea430d..27167f6f4829 100644
+index f4310e7a28e1..27167f6f4829 100644
 --- third_party/libwebrtc/api/audio_codecs/opus/audio_encoder_multiopus_gn/moz.build
 +++ third_party/libwebrtc/api/audio_codecs/opus/audio_encoder_multiopus_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -5101,7 +5137,7 @@ index 2c2a46ea430d..27167f6f4829 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -5188,6 +5224,9 @@ index 2c2a46ea430d..27167f6f4829 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -7122,7 +7161,7 @@ index 252c6e021d12..c6ad466bcf88 100644
  
  Library("options_gn")
 diff --git third_party/libwebrtc/api/fec_controller_api_gn/moz.build third_party/libwebrtc/api/fec_controller_api_gn/moz.build
-index 8f7d88432678..0e340edaa9b8 100644
+index 57be6208e57f..0e340edaa9b8 100644
 --- third_party/libwebrtc/api/fec_controller_api_gn/moz.build
 +++ third_party/libwebrtc/api/fec_controller_api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -7146,7 +7185,7 @@ index 8f7d88432678..0e340edaa9b8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,104 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,108 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -7163,6 +7202,10 @@ index 8f7d88432678..0e340edaa9b8 100644
 -    DEFINES["_GNU_SOURCE"] = True
 -    DEFINES["__STDC_CONSTANT_MACROS"] = True
 -    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-    OS_LIBS += [
+-        "log"
+-    ]
 -
 -if CONFIG["OS_TARGET"] == "Darwin":
 -
@@ -7252,7 +7295,7 @@ index 8f7d88432678..0e340edaa9b8 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -146,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -150,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -7312,7 +7355,7 @@ index 8f7d88432678..0e340edaa9b8 100644
 -
  Library("fec_controller_api_gn")
 diff --git third_party/libwebrtc/api/field_trials_registry_gn/moz.build third_party/libwebrtc/api/field_trials_registry_gn/moz.build
-index e105574d498d..bb3da46c855c 100644
+index a7b53adc457b..bb3da46c855c 100644
 --- third_party/libwebrtc/api/field_trials_registry_gn/moz.build
 +++ third_party/libwebrtc/api/field_trials_registry_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -7336,7 +7379,7 @@ index e105574d498d..bb3da46c855c 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -7423,6 +7466,9 @@ index e105574d498d..bb3da46c855c 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -8877,7 +8923,7 @@ index 289b08052239..2565408ce87a 100644
 -
  Library("make_ref_counted_gn")
 diff --git third_party/libwebrtc/api/media_stream_interface_gn/moz.build third_party/libwebrtc/api/media_stream_interface_gn/moz.build
-index 0f053a0e9732..7aea55ea197a 100644
+index e7255c805bee..7aea55ea197a 100644
 --- third_party/libwebrtc/api/media_stream_interface_gn/moz.build
 +++ third_party/libwebrtc/api/media_stream_interface_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -8901,7 +8947,7 @@ index 0f053a0e9732..7aea55ea197a 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -8988,6 +9034,9 @@ index 0f053a0e9732..7aea55ea197a 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -10720,7 +10769,7 @@ index f69b13a731a3..b048864ad448 100644
 -
  Library("refcountedbase_gn")
 diff --git third_party/libwebrtc/api/rtc_error_gn/moz.build third_party/libwebrtc/api/rtc_error_gn/moz.build
-index aaa86c696fa6..fcf285f401fc 100644
+index 45cad74d51aa..fcf285f401fc 100644
 --- third_party/libwebrtc/api/rtc_error_gn/moz.build
 +++ third_party/libwebrtc/api/rtc_error_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -10744,7 +10793,7 @@ index aaa86c696fa6..fcf285f401fc 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -10831,6 +10880,9 @@ index aaa86c696fa6..fcf285f401fc 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -10936,7 +10988,7 @@ index aaa86c696fa6..fcf285f401fc 100644
  
  Library("rtc_error_gn")
 diff --git third_party/libwebrtc/api/rtc_event_log/rtc_event_log_gn/moz.build third_party/libwebrtc/api/rtc_event_log/rtc_event_log_gn/moz.build
-index 180dfb1ff4b4..68470ecf6df4 100644
+index 6d14d068a7fe..68470ecf6df4 100644
 --- third_party/libwebrtc/api/rtc_event_log/rtc_event_log_gn/moz.build
 +++ third_party/libwebrtc/api/rtc_event_log/rtc_event_log_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -10960,7 +11012,7 @@ index 180dfb1ff4b4..68470ecf6df4 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -11047,6 +11099,9 @@ index 180dfb1ff4b4..68470ecf6df4 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -11152,7 +11207,7 @@ index 180dfb1ff4b4..68470ecf6df4 100644
  
  Library("rtc_event_log_gn")
 diff --git third_party/libwebrtc/api/rtp_headers_gn/moz.build third_party/libwebrtc/api/rtp_headers_gn/moz.build
-index 1641b4594ef6..b5647f419f7c 100644
+index ba0c4f55aa8c..b5647f419f7c 100644
 --- third_party/libwebrtc/api/rtp_headers_gn/moz.build
 +++ third_party/libwebrtc/api/rtp_headers_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -11176,7 +11231,7 @@ index 1641b4594ef6..b5647f419f7c 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -11263,6 +11318,9 @@ index 1641b4594ef6..b5647f419f7c 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -11368,7 +11426,7 @@ index 1641b4594ef6..b5647f419f7c 100644
  
  Library("rtp_headers_gn")
 diff --git third_party/libwebrtc/api/rtp_packet_info_gn/moz.build third_party/libwebrtc/api/rtp_packet_info_gn/moz.build
-index d331490f9baf..df1cf58c7083 100644
+index d4d79fc4042d..df1cf58c7083 100644
 --- third_party/libwebrtc/api/rtp_packet_info_gn/moz.build
 +++ third_party/libwebrtc/api/rtp_packet_info_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -11392,7 +11450,7 @@ index d331490f9baf..df1cf58c7083 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -11479,6 +11537,9 @@ index d331490f9baf..df1cf58c7083 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -11986,7 +12047,7 @@ index ac0c98a19350..5f6e81fb3f4e 100644
 -
  Library("rtp_sender_interface_gn")
 diff --git third_party/libwebrtc/api/rtp_sender_setparameters_callback_gn/moz.build third_party/libwebrtc/api/rtp_sender_setparameters_callback_gn/moz.build
-index 7e18b2e7cc9d..f274d0055498 100644
+index b5ea7bc20fc2..f274d0055498 100644
 --- third_party/libwebrtc/api/rtp_sender_setparameters_callback_gn/moz.build
 +++ third_party/libwebrtc/api/rtp_sender_setparameters_callback_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -12010,7 +12071,7 @@ index 7e18b2e7cc9d..f274d0055498 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -12097,6 +12158,9 @@ index 7e18b2e7cc9d..f274d0055498 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -13602,7 +13666,7 @@ index d09913813a7e..39a9ebc0842e 100644
  
  Library("bitrate_settings_gn")
 diff --git third_party/libwebrtc/api/transport/datagram_transport_interface_gn/moz.build third_party/libwebrtc/api/transport/datagram_transport_interface_gn/moz.build
-index 5bd7a14d5ed6..cbeb41795c2d 100644
+index d1d364a13ea1..cbeb41795c2d 100644
 --- third_party/libwebrtc/api/transport/datagram_transport_interface_gn/moz.build
 +++ third_party/libwebrtc/api/transport/datagram_transport_interface_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -13626,7 +13690,7 @@ index 5bd7a14d5ed6..cbeb41795c2d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -13713,6 +13777,9 @@ index 5bd7a14d5ed6..cbeb41795c2d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -13740,7 +13807,7 @@ index 5bd7a14d5ed6..cbeb41795c2d 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -13800,7 +13867,7 @@ index 5bd7a14d5ed6..cbeb41795c2d 100644
 -
  Library("datagram_transport_interface_gn")
 diff --git third_party/libwebrtc/api/transport/field_trial_based_config_gn/moz.build third_party/libwebrtc/api/transport/field_trial_based_config_gn/moz.build
-index 38a5c45915e9..e4486979adcc 100644
+index 16ae3e2f0daa..e4486979adcc 100644
 --- third_party/libwebrtc/api/transport/field_trial_based_config_gn/moz.build
 +++ third_party/libwebrtc/api/transport/field_trial_based_config_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -13824,7 +13891,7 @@ index 38a5c45915e9..e4486979adcc 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -13911,6 +13978,9 @@ index 38a5c45915e9..e4486979adcc 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -14240,7 +14310,7 @@ index d88a604315bf..dee377f35156 100644
  
  Library("goog_cc_gn")
 diff --git third_party/libwebrtc/api/transport/network_control_gn/moz.build third_party/libwebrtc/api/transport/network_control_gn/moz.build
-index 2a3988f5695d..f03b20773145 100644
+index 61b68b20c239..f03b20773145 100644
 --- third_party/libwebrtc/api/transport/network_control_gn/moz.build
 +++ third_party/libwebrtc/api/transport/network_control_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -14264,7 +14334,7 @@ index 2a3988f5695d..f03b20773145 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -14351,6 +14421,9 @@ index 2a3988f5695d..f03b20773145 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -14668,7 +14741,7 @@ index a662091d3eef..8c55ec075d15 100644
  
  Library("dependency_descriptor_gn")
 diff --git third_party/libwebrtc/api/transport/rtp/rtp_source_gn/moz.build third_party/libwebrtc/api/transport/rtp/rtp_source_gn/moz.build
-index 324f779cb8f0..7862f9ee7c3d 100644
+index 4a3e5f409700..7862f9ee7c3d 100644
 --- third_party/libwebrtc/api/transport/rtp/rtp_source_gn/moz.build
 +++ third_party/libwebrtc/api/transport/rtp/rtp_source_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -14692,7 +14765,7 @@ index 324f779cb8f0..7862f9ee7c3d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -14779,6 +14852,9 @@ index 324f779cb8f0..7862f9ee7c3d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -14806,7 +14882,7 @@ index 324f779cb8f0..7862f9ee7c3d 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -15056,7 +15132,7 @@ index 6bf7ef309680..39d0ef9756e1 100644
 -
  Library("stun_types_gn")
 diff --git third_party/libwebrtc/api/transport_api_gn/moz.build third_party/libwebrtc/api/transport_api_gn/moz.build
-index 77a120da7d27..98964899137c 100644
+index 3c85fd9c0082..98964899137c 100644
 --- third_party/libwebrtc/api/transport_api_gn/moz.build
 +++ third_party/libwebrtc/api/transport_api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -15080,7 +15156,7 @@ index 77a120da7d27..98964899137c 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,176 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,180 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -15097,6 +15173,10 @@ index 77a120da7d27..98964899137c 100644
 -    DEFINES["_GNU_SOURCE"] = True
 -    DEFINES["__STDC_CONSTANT_MACROS"] = True
 -    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-    OS_LIBS += [
+-        "log"
+-    ]
 -
 -if CONFIG["OS_TARGET"] == "Darwin":
 -
@@ -16771,7 +16851,7 @@ index 5d024d30e9f2..d43142211cf9 100644
  
  Library("encoded_frame_gn")
 diff --git third_party/libwebrtc/api/video/encoded_image_gn/moz.build third_party/libwebrtc/api/video/encoded_image_gn/moz.build
-index c1c76b29d8a4..4c046aa480ac 100644
+index 53a06a6a7840..4c046aa480ac 100644
 --- third_party/libwebrtc/api/video/encoded_image_gn/moz.build
 +++ third_party/libwebrtc/api/video/encoded_image_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -16795,7 +16875,7 @@ index c1c76b29d8a4..4c046aa480ac 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -16882,6 +16962,9 @@ index c1c76b29d8a4..4c046aa480ac 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -17211,7 +17294,7 @@ index 6f8d8b947437..ea11fb826b9e 100644
  
  Library("frame_buffer_gn")
 diff --git third_party/libwebrtc/api/video/recordable_encoded_frame_gn/moz.build third_party/libwebrtc/api/video/recordable_encoded_frame_gn/moz.build
-index d6cbcd817ba6..63707a6269b2 100644
+index f9e5bdd1122b..63707a6269b2 100644
 --- third_party/libwebrtc/api/video/recordable_encoded_frame_gn/moz.build
 +++ third_party/libwebrtc/api/video/recordable_encoded_frame_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -17235,7 +17318,7 @@ index d6cbcd817ba6..63707a6269b2 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -17322,6 +17405,9 @@ index d6cbcd817ba6..63707a6269b2 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -17349,7 +17435,7 @@ index d6cbcd817ba6..63707a6269b2 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -18213,7 +18299,7 @@ index 6ebe9921df53..b2366c6af2a0 100644
  
  Library("video_bitrate_allocation_gn")
 diff --git third_party/libwebrtc/api/video/video_bitrate_allocator_factory_gn/moz.build third_party/libwebrtc/api/video/video_bitrate_allocator_factory_gn/moz.build
-index 1712dffdc683..8eb8884fe45b 100644
+index b995b23a983b..8eb8884fe45b 100644
 --- third_party/libwebrtc/api/video/video_bitrate_allocator_factory_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_bitrate_allocator_factory_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -18237,7 +18323,7 @@ index 1712dffdc683..8eb8884fe45b 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -18324,6 +18410,9 @@ index 1712dffdc683..8eb8884fe45b 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -18351,7 +18440,7 @@ index 1712dffdc683..8eb8884fe45b 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -18813,7 +18902,7 @@ index b8327ec933cb..b7f4cc420178 100644
 -
  Library("video_codec_constants_gn")
 diff --git third_party/libwebrtc/api/video/video_frame_gn/moz.build third_party/libwebrtc/api/video/video_frame_gn/moz.build
-index 7d21dfb24a71..c7700a5bcd92 100644
+index d9157e5e796b..c7700a5bcd92 100644
 --- third_party/libwebrtc/api/video/video_frame_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_frame_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -18837,7 +18926,7 @@ index 7d21dfb24a71..c7700a5bcd92 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -54,184 +63,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -54,187 +63,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -18924,6 +19013,9 @@ index 7d21dfb24a71..c7700a5bcd92 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -19029,7 +19121,7 @@ index 7d21dfb24a71..c7700a5bcd92 100644
  
  Library("video_frame_gn")
 diff --git third_party/libwebrtc/api/video/video_frame_i010_gn/moz.build third_party/libwebrtc/api/video/video_frame_i010_gn/moz.build
-index 01eabd0d3249..735fd52d03b8 100644
+index e1c033c43c29..735fd52d03b8 100644
 --- third_party/libwebrtc/api/video/video_frame_i010_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_frame_i010_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -19053,7 +19145,7 @@ index 01eabd0d3249..735fd52d03b8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -50,184 +59,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -50,187 +59,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -19140,6 +19232,9 @@ index 01eabd0d3249..735fd52d03b8 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -19245,7 +19340,7 @@ index 01eabd0d3249..735fd52d03b8 100644
  
  Library("video_frame_i010_gn")
 diff --git third_party/libwebrtc/api/video/video_frame_metadata_gn/moz.build third_party/libwebrtc/api/video/video_frame_metadata_gn/moz.build
-index 48f4a170531a..eb03efadbe9a 100644
+index 1adedbe53f37..eb03efadbe9a 100644
 --- third_party/libwebrtc/api/video/video_frame_metadata_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_frame_metadata_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -19269,7 +19364,7 @@ index 48f4a170531a..eb03efadbe9a 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -19356,6 +19451,9 @@ index 48f4a170531a..eb03efadbe9a 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -19461,7 +19559,7 @@ index 48f4a170531a..eb03efadbe9a 100644
  
  Library("video_frame_metadata_gn")
 diff --git third_party/libwebrtc/api/video/video_frame_type_gn/moz.build third_party/libwebrtc/api/video/video_frame_type_gn/moz.build
-index 46adc4af5f34..7b04b10d4157 100644
+index a2a86f471693..7b04b10d4157 100644
 --- third_party/libwebrtc/api/video/video_frame_type_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_frame_type_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -19485,7 +19583,7 @@ index 46adc4af5f34..7b04b10d4157 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,104 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,108 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -19502,6 +19600,10 @@ index 46adc4af5f34..7b04b10d4157 100644
 -    DEFINES["_GNU_SOURCE"] = True
 -    DEFINES["__STDC_CONSTANT_MACROS"] = True
 -    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-    OS_LIBS += [
+-        "log"
+-    ]
 -
 -if CONFIG["OS_TARGET"] == "Darwin":
 -
@@ -19591,7 +19693,7 @@ index 46adc4af5f34..7b04b10d4157 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -146,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -150,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -19845,7 +19947,7 @@ index 817d778c165b..0129e1ce4ed0 100644
 -
  Library("video_layers_allocation_gn")
 diff --git third_party/libwebrtc/api/video/video_rtp_headers_gn/moz.build third_party/libwebrtc/api/video/video_rtp_headers_gn/moz.build
-index ebe08ca9fdf2..1bdba7c6dffa 100644
+index 498b48088003..1bdba7c6dffa 100644
 --- third_party/libwebrtc/api/video/video_rtp_headers_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_rtp_headers_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -19869,7 +19971,7 @@ index ebe08ca9fdf2..1bdba7c6dffa 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -46,184 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -46,187 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -19956,6 +20058,9 @@ index ebe08ca9fdf2..1bdba7c6dffa 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -20061,7 +20166,7 @@ index ebe08ca9fdf2..1bdba7c6dffa 100644
  
  Library("video_rtp_headers_gn")
 diff --git third_party/libwebrtc/api/video/video_stream_encoder_gn/moz.build third_party/libwebrtc/api/video/video_stream_encoder_gn/moz.build
-index 96a4350fec9b..cb189ba6fbb8 100644
+index e9d0fdfa24df..cb189ba6fbb8 100644
 --- third_party/libwebrtc/api/video/video_stream_encoder_gn/moz.build
 +++ third_party/libwebrtc/api/video/video_stream_encoder_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -20085,7 +20190,7 @@ index 96a4350fec9b..cb189ba6fbb8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -20172,6 +20277,9 @@ index 96a4350fec9b..cb189ba6fbb8 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -20199,7 +20307,7 @@ index 96a4350fec9b..cb189ba6fbb8 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -20889,7 +20997,7 @@ index 5817876c23d3..50cd221a39d7 100644
  
  Library("scalability_mode_gn")
 diff --git third_party/libwebrtc/api/video_codecs/video_codecs_api_gn/moz.build third_party/libwebrtc/api/video_codecs/video_codecs_api_gn/moz.build
-index b834c671ea9e..748f6fb1b597 100644
+index 0a2207ced912..748f6fb1b597 100644
 --- third_party/libwebrtc/api/video_codecs/video_codecs_api_gn/moz.build
 +++ third_party/libwebrtc/api/video_codecs/video_codecs_api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -20913,7 +21021,7 @@ index b834c671ea9e..748f6fb1b597 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -53,184 +62,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -53,187 +62,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -21000,6 +21108,9 @@ index b834c671ea9e..748f6fb1b597 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -22190,7 +22301,7 @@ index d7ca4d9c12ba..5bb0f70142e3 100644
  
  Library("resource_adaptation_gn")
 diff --git third_party/libwebrtc/call/audio_sender_interface_gn/moz.build third_party/libwebrtc/call/audio_sender_interface_gn/moz.build
-index a76d7380394a..75c30bf9abf4 100644
+index c236d2d56fdb..75c30bf9abf4 100644
 --- third_party/libwebrtc/call/audio_sender_interface_gn/moz.build
 +++ third_party/libwebrtc/call/audio_sender_interface_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -22214,7 +22325,7 @@ index a76d7380394a..75c30bf9abf4 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -22301,6 +22412,9 @@ index a76d7380394a..75c30bf9abf4 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -22328,7 +22442,7 @@ index a76d7380394a..75c30bf9abf4 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -23058,7 +23172,7 @@ index e8f85c808cb0..21474e0e8eb1 100644
  
  Library("call_gn")
 diff --git third_party/libwebrtc/call/call_interfaces_gn/moz.build third_party/libwebrtc/call/call_interfaces_gn/moz.build
-index 2a5fa2a72c2f..d02126352f57 100644
+index ab6f9566ac93..d02126352f57 100644
 --- third_party/libwebrtc/call/call_interfaces_gn/moz.build
 +++ third_party/libwebrtc/call/call_interfaces_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -23082,7 +23196,7 @@ index 2a5fa2a72c2f..d02126352f57 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -49,191 +58,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -49,192 +58,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -23101,6 +23215,7 @@ index 2a5fa2a72c2f..d02126352f57 100644
 -    DEFINES["__STDC_FORMAT_MACROS"] = True
 -
 -    OS_LIBS += [
+-        "GLESv2",
 -        "log"
 -    ]
 -
@@ -27613,7 +27728,7 @@ index d2d0287623b5..5d194b7d816a 100644
  
  Library("spl_sqrt_floor_gn")
 diff --git third_party/libwebrtc/common_video/common_video_gn/moz.build third_party/libwebrtc/common_video/common_video_gn/moz.build
-index d6fc7c3632a4..9e5cdb7e6cce 100644
+index 565886609808..9e5cdb7e6cce 100644
 --- third_party/libwebrtc/common_video/common_video_gn/moz.build
 +++ third_party/libwebrtc/common_video/common_video_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -27637,7 +27752,7 @@ index d6fc7c3632a4..9e5cdb7e6cce 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -55,184 +64,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -55,187 +64,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -27724,6 +27839,9 @@ index d6fc7c3632a4..9e5cdb7e6cce 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -28435,7 +28553,7 @@ index 2f9f14acb430..f8143d2798f0 100644
 -
  Library("registered_field_trials_header_gn")
 diff --git third_party/libwebrtc/logging/rtc_event_audio_gn/moz.build third_party/libwebrtc/logging/rtc_event_audio_gn/moz.build
-index f70052f36f23..76b97cad597b 100644
+index 9b4966439ea0..76b97cad597b 100644
 --- third_party/libwebrtc/logging/rtc_event_audio_gn/moz.build
 +++ third_party/libwebrtc/logging/rtc_event_audio_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -28459,7 +28577,7 @@ index f70052f36f23..76b97cad597b 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -47,184 +56,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -47,187 +56,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -28546,6 +28664,9 @@ index f70052f36f23..76b97cad597b 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -28651,7 +28772,7 @@ index f70052f36f23..76b97cad597b 100644
  
  Library("rtc_event_audio_gn")
 diff --git third_party/libwebrtc/logging/rtc_event_bwe_gn/moz.build third_party/libwebrtc/logging/rtc_event_bwe_gn/moz.build
-index 8fc25dce315c..48e47598a034 100644
+index 3af2a8fa34b1..48e47598a034 100644
 --- third_party/libwebrtc/logging/rtc_event_bwe_gn/moz.build
 +++ third_party/libwebrtc/logging/rtc_event_bwe_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -28675,7 +28796,7 @@ index 8fc25dce315c..48e47598a034 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -48,184 +57,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -48,187 +57,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -28762,6 +28883,9 @@ index 8fc25dce315c..48e47598a034 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -28867,7 +28991,7 @@ index 8fc25dce315c..48e47598a034 100644
  
  Library("rtc_event_bwe_gn")
 diff --git third_party/libwebrtc/logging/rtc_event_field_gn/moz.build third_party/libwebrtc/logging/rtc_event_field_gn/moz.build
-index 74aa081cb186..9c1a7bd6de3f 100644
+index feb4a3f8c676..9c1a7bd6de3f 100644
 --- third_party/libwebrtc/logging/rtc_event_field_gn/moz.build
 +++ third_party/libwebrtc/logging/rtc_event_field_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -28891,7 +29015,7 @@ index 74aa081cb186..9c1a7bd6de3f 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -46,184 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -46,187 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -28978,6 +29102,9 @@ index 74aa081cb186..9c1a7bd6de3f 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -29489,7 +29616,7 @@ index a0a2f85ecf25..7838b57024ae 100644
  
  Library("rtc_event_number_encodings_gn")
 diff --git third_party/libwebrtc/logging/rtc_event_pacing_gn/moz.build third_party/libwebrtc/logging/rtc_event_pacing_gn/moz.build
-index 78992d519f70..ffe265db0851 100644
+index 8e2c1dcddf7f..ffe265db0851 100644
 --- third_party/libwebrtc/logging/rtc_event_pacing_gn/moz.build
 +++ third_party/libwebrtc/logging/rtc_event_pacing_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -29513,7 +29640,7 @@ index 78992d519f70..ffe265db0851 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -29600,6 +29727,9 @@ index 78992d519f70..ffe265db0851 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -29928,7 +30058,7 @@ index e69cf32fd67c..b290dc3e72e7 100644
  
  Library("rtc_event_rtp_rtcp_gn")
 diff --git third_party/libwebrtc/logging/rtc_event_video_gn/moz.build third_party/libwebrtc/logging/rtc_event_video_gn/moz.build
-index 5f3539a0f37d..cf444b4316cd 100644
+index fa653e5a268d..cf444b4316cd 100644
 --- third_party/libwebrtc/logging/rtc_event_video_gn/moz.build
 +++ third_party/libwebrtc/logging/rtc_event_video_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -29952,7 +30082,7 @@ index 5f3539a0f37d..cf444b4316cd 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -30039,6 +30169,9 @@ index 5f3539a0f37d..cf444b4316cd 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -30144,7 +30277,7 @@ index 5f3539a0f37d..cf444b4316cd 100644
  
  Library("rtc_event_video_gn")
 diff --git third_party/libwebrtc/logging/rtc_stream_config_gn/moz.build third_party/libwebrtc/logging/rtc_stream_config_gn/moz.build
-index 690d57689b4c..96ef93e69179 100644
+index 4db9d43b22ce..96ef93e69179 100644
 --- third_party/libwebrtc/logging/rtc_stream_config_gn/moz.build
 +++ third_party/libwebrtc/logging/rtc_stream_config_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -30168,7 +30301,7 @@ index 690d57689b4c..96ef93e69179 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -30255,6 +30388,9 @@ index 690d57689b4c..96ef93e69179 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -30360,7 +30496,7 @@ index 690d57689b4c..96ef93e69179 100644
  
  Library("rtc_stream_config_gn")
 diff --git third_party/libwebrtc/media/codec_gn/moz.build third_party/libwebrtc/media/codec_gn/moz.build
-index 44eb62e22127..f5bac588d11b 100644
+index 77cff5bc362a..f5bac588d11b 100644
 --- third_party/libwebrtc/media/codec_gn/moz.build
 +++ third_party/libwebrtc/media/codec_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -30384,7 +30520,7 @@ index 44eb62e22127..f5bac588d11b 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -30471,6 +30607,9 @@ index 44eb62e22127..f5bac588d11b 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -30575,196 +30714,6 @@ index 44eb62e22127..f5bac588d11b 100644
 +    DEFINES["USE_X11"] = "1"
  
  Library("codec_gn")
-diff --git third_party/libwebrtc/media/delayable_gn/moz.build third_party/libwebrtc/media/delayable_gn/moz.build
-index a7495471d729..3a95f5ef1faf 100644
---- third_party/libwebrtc/media/delayable_gn/moz.build
-+++ third_party/libwebrtc/media/delayable_gn/moz.build
-@@ -12,11 +12,20 @@ AllowCompilerWarnings()
- DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
- DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
- DEFINES["RTC_ENABLE_VP9"] = True
-+DEFINES["USE_GLIB"] = "1"
-+DEFINES["USE_OZONE"] = "1"
-+DEFINES["WEBRTC_BSD"] = True
- DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
- DEFINES["WEBRTC_LIBRARY_IMPL"] = True
- DEFINES["WEBRTC_MOZILLA_BUILD"] = True
- DEFINES["WEBRTC_NON_STATIC_TRACE_EVENT_HANDLERS"] = "0"
-+DEFINES["WEBRTC_POSIX"] = True
- DEFINES["WEBRTC_STRICT_FIELD_TRIALS"] = "0"
-+DEFINES["_FILE_OFFSET_BITS"] = "64"
-+DEFINES["_LARGEFILE64_SOURCE"] = True
-+DEFINES["_LARGEFILE_SOURCE"] = True
-+DEFINES["__STDC_CONSTANT_MACROS"] = True
-+DEFINES["__STDC_FORMAT_MACROS"] = True
- 
- FINAL_LIBRARY = "webrtc"
- 
-@@ -39,104 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
- if CONFIG["MOZ_DEBUG"] == "1":
- 
-     DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
--
--if CONFIG["OS_TARGET"] == "Android":
--
--    DEFINES["ANDROID"] = True
--    DEFINES["ANDROID_NDK_VERSION_ROLL"] = "r22_1"
--    DEFINES["HAVE_SYS_UIO_H"] = True
--    DEFINES["WEBRTC_ANDROID"] = True
--    DEFINES["WEBRTC_ANDROID_OPENSLES"] = True
--    DEFINES["WEBRTC_LINUX"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_GNU_SOURCE"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--if CONFIG["OS_TARGET"] == "Darwin":
--
--    DEFINES["WEBRTC_MAC"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_LIBCPP_HAS_NO_ALIGNED_ALLOCATION"] = True
--    DEFINES["__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES"] = "0"
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--if CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_AURA"] = "1"
--    DEFINES["USE_GLIB"] = "1"
--    DEFINES["USE_NSS_CERTS"] = "1"
--    DEFINES["USE_OZONE"] = "1"
--    DEFINES["USE_UDEV"] = True
--    DEFINES["WEBRTC_LINUX"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_FILE_OFFSET_BITS"] = "64"
--    DEFINES["_LARGEFILE64_SOURCE"] = True
--    DEFINES["_LARGEFILE_SOURCE"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--if CONFIG["OS_TARGET"] == "OpenBSD":
--
--    DEFINES["USE_GLIB"] = "1"
--    DEFINES["USE_OZONE"] = "1"
--    DEFINES["USE_X11"] = "1"
--    DEFINES["WEBRTC_BSD"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_FILE_OFFSET_BITS"] = "64"
--    DEFINES["_LARGEFILE64_SOURCE"] = True
--    DEFINES["_LARGEFILE_SOURCE"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--if CONFIG["OS_TARGET"] == "WINNT":
--
--    DEFINES["CERT_CHAIN_PARA_HAS_EXTRA_FIELDS"] = True
--    DEFINES["NOMINMAX"] = True
--    DEFINES["NTDDI_VERSION"] = "0x0A000000"
--    DEFINES["PSAPI_VERSION"] = "2"
--    DEFINES["RTC_ENABLE_WIN_WGC"] = True
--    DEFINES["UNICODE"] = True
--    DEFINES["USE_AURA"] = "1"
--    DEFINES["WEBRTC_WIN"] = True
--    DEFINES["WIN32"] = True
--    DEFINES["WIN32_LEAN_AND_MEAN"] = True
--    DEFINES["WINAPI_FAMILY"] = "WINAPI_FAMILY_DESKTOP_APP"
--    DEFINES["WINVER"] = "0x0A00"
--    DEFINES["_ATL_NO_OPENGL"] = True
--    DEFINES["_CRT_RAND_S"] = True
--    DEFINES["_CRT_SECURE_NO_DEPRECATE"] = True
--    DEFINES["_ENABLE_EXTENDED_ALIGNED_STORAGE"] = True
--    DEFINES["_HAS_EXCEPTIONS"] = "0"
--    DEFINES["_HAS_NODISCARD"] = True
--    DEFINES["_SCL_SECURE_NO_DEPRECATE"] = True
--    DEFINES["_SECURE_ATL"] = True
--    DEFINES["_UNICODE"] = True
--    DEFINES["_WIN32_WINNT"] = "0x0A00"
--    DEFINES["_WINDOWS"] = True
--    DEFINES["__STD_C"] = True
-+    DEFINES["_DEBUG"] = True
- 
- if CONFIG["CPU_ARCH"] == "aarch64":
- 
-     DEFINES["WEBRTC_ARCH_ARM64"] = True
-     DEFINES["WEBRTC_HAS_NEON"] = True
- 
--if CONFIG["CPU_ARCH"] == "arm":
--
--    DEFINES["WEBRTC_ARCH_ARM"] = True
--    DEFINES["WEBRTC_ARCH_ARM_V7"] = True
--    DEFINES["WEBRTC_HAS_NEON"] = True
--
- if CONFIG["CPU_ARCH"] == "mips32":
- 
-     DEFINES["MIPS32_LE"] = True
-     DEFINES["MIPS_FPU_LE"] = True
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["CPU_ARCH"] == "mips64":
--
--    DEFINES["_GNU_SOURCE"] = True
- 
- if CONFIG["CPU_ARCH"] == "x86":
- 
-@@ -146,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
- 
-     DEFINES["WEBRTC_ENABLE_AVX2"] = True
- 
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Darwin":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "OpenBSD":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "WINNT":
--
--    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
--
--if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
-+if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
- 
-     DEFINES["USE_X11"] = "1"
- 
--if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
--
--    OS_LIBS += [
--        "android_support",
--        "unwind"
--    ]
--
--if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Android":
--
--    OS_LIBS += [
--        "android_support"
--    ]
--
--if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["_GNU_SOURCE"] = True
--
- Library("delayable_gn")
 diff --git third_party/libwebrtc/media/media_channel_gn/moz.build third_party/libwebrtc/media/media_channel_gn/moz.build
 index 4dc8bd6ca428..863e7fde7105 100644
 --- third_party/libwebrtc/media/media_channel_gn/moz.build
@@ -32578,7 +32527,7 @@ index 0bd146d3a00f..65ec7aef0025 100644
 -
  Library("stream_params_gn")
 diff --git third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build
-index 672365609554..90a52e406005 100644
+index 307a0943c4a8..90a52e406005 100644
 --- third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build
 +++ third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -32602,7 +32551,7 @@ index 672365609554..90a52e406005 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -32689,6 +32638,9 @@ index 672365609554..90a52e406005 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -33207,7 +33159,7 @@ index 913ce4614a58..e8194cf79b99 100644
 -
  Library("audio_coding_module_typedefs_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/audio_coding_opus_common_gn/moz.build third_party/libwebrtc/modules/audio_coding/audio_coding_opus_common_gn/moz.build
-index cfb5a0f7e572..de2e04dffe32 100644
+index 47a31f830319..de2e04dffe32 100644
 --- third_party/libwebrtc/modules/audio_coding/audio_coding_opus_common_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/audio_coding_opus_common_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -33231,7 +33183,7 @@ index cfb5a0f7e572..de2e04dffe32 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -33318,6 +33270,9 @@ index cfb5a0f7e572..de2e04dffe32 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -34508,7 +34463,7 @@ index 2df6e3c8edd2..7bfe819841af 100644
  
  Library("g711_c_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/g711_gn/moz.build third_party/libwebrtc/modules/audio_coding/g711_gn/moz.build
-index bd1a9d275900..80e618a7fa10 100644
+index ae5fb0995ecf..80e618a7fa10 100644
 --- third_party/libwebrtc/modules/audio_coding/g711_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/g711_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -34532,7 +34487,7 @@ index bd1a9d275900..80e618a7fa10 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -34619,6 +34574,9 @@ index bd1a9d275900..80e618a7fa10 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -34932,7 +34890,7 @@ index 08787b33eb7c..add81cce3212 100644
  
  Library("g722_c_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/g722_gn/moz.build third_party/libwebrtc/modules/audio_coding/g722_gn/moz.build
-index d177f4acd05c..d53536655acd 100644
+index b30fe22abae7..d53536655acd 100644
 --- third_party/libwebrtc/modules/audio_coding/g722_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/g722_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -34956,7 +34914,7 @@ index d177f4acd05c..d53536655acd 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -35043,6 +35001,9 @@ index d177f4acd05c..d53536655acd 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -35992,7 +35953,7 @@ index c62913859d4c..dbed4ddcb476 100644
  
  Library("isac_vad_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/legacy_encoded_audio_frame_gn/moz.build third_party/libwebrtc/modules/audio_coding/legacy_encoded_audio_frame_gn/moz.build
-index 30c17ef7197f..9c04c9bb3900 100644
+index 56458ec40f88..9c04c9bb3900 100644
 --- third_party/libwebrtc/modules/audio_coding/legacy_encoded_audio_frame_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/legacy_encoded_audio_frame_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -36016,7 +35977,7 @@ index 30c17ef7197f..9c04c9bb3900 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -36103,6 +36064,9 @@ index 30c17ef7197f..9c04c9bb3900 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -36639,7 +36603,7 @@ index 84e0a295f629..936368e4205a 100644
  
  Library("pcm16b_c_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/pcm16b_gn/moz.build third_party/libwebrtc/modules/audio_coding/pcm16b_gn/moz.build
-index f22a2a913cd4..436a0dda6fd4 100644
+index 786b516d4142..436a0dda6fd4 100644
 --- third_party/libwebrtc/modules/audio_coding/pcm16b_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/pcm16b_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -36663,7 +36627,7 @@ index f22a2a913cd4..436a0dda6fd4 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -45,184 +54,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -45,187 +54,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -36750,6 +36714,9 @@ index f22a2a913cd4..436a0dda6fd4 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -37301,7 +37268,7 @@ index 8ea3e31f6dd9..ea61654f618e 100644
  
  Library("webrtc_cng_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/webrtc_multiopus_gn/moz.build third_party/libwebrtc/modules/audio_coding/webrtc_multiopus_gn/moz.build
-index 20fde0e64ac9..1edab76c795b 100644
+index 0eca3cd37952..1edab76c795b 100644
 --- third_party/libwebrtc/modules/audio_coding/webrtc_multiopus_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/webrtc_multiopus_gn/moz.build
 @@ -12,6 +12,9 @@ AllowCompilerWarnings()
@@ -37328,7 +37295,7 @@ index 20fde0e64ac9..1edab76c795b 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -48,184 +57,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -48,187 +57,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -37415,6 +37382,9 @@ index 20fde0e64ac9..1edab76c795b 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -37746,7 +37716,7 @@ index 5e03548319b0..bdf1cbbf4c27 100644
  
  Library("webrtc_opus_gn")
 diff --git third_party/libwebrtc/modules/audio_coding/webrtc_opus_wrapper_gn/moz.build third_party/libwebrtc/modules/audio_coding/webrtc_opus_wrapper_gn/moz.build
-index b24ff8634633..604d2ff1160d 100644
+index 6d9e32b68d83..604d2ff1160d 100644
 --- third_party/libwebrtc/modules/audio_coding/webrtc_opus_wrapper_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_coding/webrtc_opus_wrapper_gn/moz.build
 @@ -12,6 +12,9 @@ AllowCompilerWarnings()
@@ -37773,7 +37743,7 @@ index b24ff8634633..604d2ff1160d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -47,184 +56,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -47,187 +56,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -37860,6 +37830,9 @@ index b24ff8634633..604d2ff1160d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -40565,7 +40538,7 @@ index fdcb81d98cb9..e2c6c18ff9e0 100644
 -
  Library("vector_math_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/aec_dump/aec_dump_gn/moz.build third_party/libwebrtc/modules/audio_processing/aec_dump/aec_dump_gn/moz.build
-index 003b6457cdcb..28209dac0b7d 100644
+index f4a8bed8153e..28209dac0b7d 100644
 --- third_party/libwebrtc/modules/audio_processing/aec_dump/aec_dump_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/aec_dump/aec_dump_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -40589,7 +40562,7 @@ index 003b6457cdcb..28209dac0b7d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -40676,6 +40649,9 @@ index 003b6457cdcb..28209dac0b7d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -40703,7 +40679,7 @@ index 003b6457cdcb..28209dac0b7d 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -40763,7 +40739,7 @@ index 003b6457cdcb..28209dac0b7d 100644
 -
  Library("aec_dump_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/aec_dump/null_aec_dump_factory_gn/moz.build third_party/libwebrtc/modules/audio_processing/aec_dump/null_aec_dump_factory_gn/moz.build
-index 7c41104199e4..e7cd5f585b83 100644
+index 60cb54230758..e7cd5f585b83 100644
 --- third_party/libwebrtc/modules/audio_processing/aec_dump/null_aec_dump_factory_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/aec_dump/null_aec_dump_factory_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -40787,7 +40763,7 @@ index 7c41104199e4..e7cd5f585b83 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -40874,6 +40850,9 @@ index 7c41104199e4..e7cd5f585b83 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -40979,7 +40958,7 @@ index 7c41104199e4..e7cd5f585b83 100644
  
  Library("null_aec_dump_factory_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/aec_dump_interface_gn/moz.build third_party/libwebrtc/modules/audio_processing/aec_dump_interface_gn/moz.build
-index 3e6e8171e9d6..c51fcb7d6a97 100644
+index f970052fd188..c51fcb7d6a97 100644
 --- third_party/libwebrtc/modules/audio_processing/aec_dump_interface_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/aec_dump_interface_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -41003,7 +40982,7 @@ index 3e6e8171e9d6..c51fcb7d6a97 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -41090,6 +41069,9 @@ index 3e6e8171e9d6..c51fcb7d6a97 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -44258,7 +44240,7 @@ index 74604a6acbf1..451dc5c6c994 100644
  
  Library("input_volume_controller_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/input_volume_stats_reporter_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/input_volume_stats_reporter_gn/moz.build
-index 3e808b4bc055..c92be24aa407 100644
+index 6e75e51801e5..c92be24aa407 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/input_volume_stats_reporter_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/input_volume_stats_reporter_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -44282,7 +44264,7 @@ index 3e808b4bc055..c92be24aa407 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -44369,6 +44351,9 @@ index 3e808b4bc055..c92be24aa407 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -47856,7 +47841,7 @@ index c52db67c0c55..9f02e46a59fd 100644
  
  Library("vad_wrapper_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/api_gn/moz.build third_party/libwebrtc/modules/audio_processing/api_gn/moz.build
-index e88194c51d8d..d6226679c01e 100644
+index da4c7723a0a7..d6226679c01e 100644
 --- third_party/libwebrtc/modules/audio_processing/api_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/api_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -47880,7 +47865,7 @@ index e88194c51d8d..d6226679c01e 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -47967,6 +47952,9 @@ index e88194c51d8d..d6226679c01e 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -48520,7 +48508,7 @@ index 8d57447ae8ee..d0921ac35100 100644
  
  Library("audio_buffer_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/audio_frame_proxies_gn/moz.build third_party/libwebrtc/modules/audio_processing/audio_frame_proxies_gn/moz.build
-index 58380fe34bf3..d0b535438023 100644
+index 594ed5335c0d..d0b535438023 100644
 --- third_party/libwebrtc/modules/audio_processing/audio_frame_proxies_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/audio_frame_proxies_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -48544,7 +48532,7 @@ index 58380fe34bf3..d0b535438023 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -48631,6 +48619,9 @@ index 58380fe34bf3..d0b535438023 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -52399,7 +52390,7 @@ index 2e33abbeed55..02587d185dd1 100644
  
  Library("congestion_controller_gn")
 diff --git third_party/libwebrtc/modules/congestion_controller/goog_cc/alr_detector_gn/moz.build third_party/libwebrtc/modules/congestion_controller/goog_cc/alr_detector_gn/moz.build
-index e889e0aa39c2..0b35f2f82c75 100644
+index 75b3630fd62a..0b35f2f82c75 100644
 --- third_party/libwebrtc/modules/congestion_controller/goog_cc/alr_detector_gn/moz.build
 +++ third_party/libwebrtc/modules/congestion_controller/goog_cc/alr_detector_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -52423,7 +52414,7 @@ index e889e0aa39c2..0b35f2f82c75 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -52510,6 +52501,9 @@ index e889e0aa39c2..0b35f2f82c75 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -53498,7 +53492,7 @@ index 0d6561d92a2c..3f777466098c 100644
  
  Library("link_capacity_estimator_gn")
 diff --git third_party/libwebrtc/modules/congestion_controller/goog_cc/loss_based_bwe_v1_gn/moz.build third_party/libwebrtc/modules/congestion_controller/goog_cc/loss_based_bwe_v1_gn/moz.build
-index cbc5a4acac4d..0cad7d4a534c 100644
+index 43b6e64293be..0cad7d4a534c 100644
 --- third_party/libwebrtc/modules/congestion_controller/goog_cc/loss_based_bwe_v1_gn/moz.build
 +++ third_party/libwebrtc/modules/congestion_controller/goog_cc/loss_based_bwe_v1_gn/moz.build
 @@ -13,11 +13,20 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
@@ -53522,7 +53516,7 @@ index cbc5a4acac4d..0cad7d4a534c 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -53609,6 +53603,9 @@ index cbc5a4acac4d..0cad7d4a534c 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -53937,7 +53934,7 @@ index 7ddc61f52b5d..da1bee07288c 100644
  
  Library("loss_based_bwe_v2_gn")
 diff --git third_party/libwebrtc/modules/congestion_controller/goog_cc/probe_controller_gn/moz.build third_party/libwebrtc/modules/congestion_controller/goog_cc/probe_controller_gn/moz.build
-index 12f16357dc0a..51646a517e70 100644
+index bc084b516a39..51646a517e70 100644
 --- third_party/libwebrtc/modules/congestion_controller/goog_cc/probe_controller_gn/moz.build
 +++ third_party/libwebrtc/modules/congestion_controller/goog_cc/probe_controller_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -53961,7 +53958,7 @@ index 12f16357dc0a..51646a517e70 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -54048,6 +54045,9 @@ index 12f16357dc0a..51646a517e70 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -54153,7 +54153,7 @@ index 12f16357dc0a..51646a517e70 100644
  
  Library("probe_controller_gn")
 diff --git third_party/libwebrtc/modules/congestion_controller/goog_cc/pushback_controller_gn/moz.build third_party/libwebrtc/modules/congestion_controller/goog_cc/pushback_controller_gn/moz.build
-index a7da1d6e698b..5cf159041ae8 100644
+index 8d0a5ea0759d..5cf159041ae8 100644
 --- third_party/libwebrtc/modules/congestion_controller/goog_cc/pushback_controller_gn/moz.build
 +++ third_party/libwebrtc/modules/congestion_controller/goog_cc/pushback_controller_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -54177,7 +54177,7 @@ index a7da1d6e698b..5cf159041ae8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -54264,6 +54264,9 @@ index a7da1d6e698b..5cf159041ae8 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -55182,7 +55185,7 @@ index 66792f98e923..8c38587543bd 100644
 -
  Library("desktop_capture_differ_sse2_gn")
 diff --git third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
-index 99fd3c74c735..77ef9f7209ee 100644
+index b0a5d1522da8..a2d3109a6492 100644
 --- third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
 +++ third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
 @@ -14,11 +14,20 @@ AllowCompilerWarnings()
@@ -55206,7 +55209,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -70,186 +79,13 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -70,185 +79,13 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -55275,8 +55278,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    SOURCES += [
@@ -55394,7 +55396,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -262,7 +98,8 @@ if CONFIG["CPU_ARCH"] == "arm":
+@@ -261,7 +98,8 @@ if CONFIG["CPU_ARCH"] == "arm":
      ]
  
      SOURCES += [
@@ -55404,7 +55406,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -272,7 +109,9 @@ if CONFIG["CPU_ARCH"] == "arm":
+@@ -271,7 +109,9 @@ if CONFIG["CPU_ARCH"] == "arm":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55415,7 +55417,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
  if CONFIG["CPU_ARCH"] == "mips32":
-@@ -280,7 +119,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -279,7 +119,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
      DEFINES["MIPS32_LE"] = True
      DEFINES["MIPS_FPU_LE"] = True
      DEFINES["WEBRTC_USE_PIPEWIRE"] = True
@@ -55423,7 +55425,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -293,7 +131,8 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -292,7 +131,8 @@ if CONFIG["CPU_ARCH"] == "mips32":
      ]
  
      SOURCES += [
@@ -55433,7 +55435,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -303,13 +142,14 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -302,13 +142,14 @@ if CONFIG["CPU_ARCH"] == "mips32":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55450,7 +55452,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -322,7 +162,8 @@ if CONFIG["CPU_ARCH"] == "mips64":
+@@ -321,7 +162,8 @@ if CONFIG["CPU_ARCH"] == "mips64":
      ]
  
      SOURCES += [
@@ -55460,7 +55462,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -332,128 +173,19 @@ if CONFIG["CPU_ARCH"] == "mips64":
+@@ -331,126 +173,19 @@ if CONFIG["CPU_ARCH"] == "mips64":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55479,8 +55481,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55508,8 +55509,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55593,7 +55593,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -466,7 +198,8 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -463,7 +198,8 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
      ]
  
      SOURCES += [
@@ -55603,7 +55603,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -476,13 +209,15 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -473,13 +209,15 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55622,7 +55622,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -495,7 +230,8 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -492,7 +230,8 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
      ]
  
      SOURCES += [
@@ -55632,7 +55632,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -505,97 +241,12 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -502,66 +241,12 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55651,8 +55651,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55680,37 +55679,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
--    ]
--
--    UNIFIED_SOURCES += [
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/mouse_cursor_monitor_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/screen_capturer_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/shared_x_display.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_capturer_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_finder_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_list_utils.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_atom_cache.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_error_trap.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
--    ]
--
--if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_X11"] = "1"
--    DEFINES["WEBRTC_USE_X11"] = True
--
--    OS_LIBS += [
--        "X11",
--        "Xcomposite",
--        "Xdamage",
--        "Xext",
--        "Xfixes",
--        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55729,16 +55698,16 @@ index 99fd3c74c735..77ef9f7209ee 100644
 +        "/third_party/libwebrtc/modules/desktop_capture/window_capturer_linux.cc"
      ]
  
--if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
 +if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
  
      DEFINES["USE_X11"] = "1"
      DEFINES["WEBRTC_USE_X11"] = True
-@@ -624,62 +275,23 @@ if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TA
+@@ -589,88 +274,23 @@ if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TA
          "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
      ]
  
--if CONFIG["CPU_ARCH"] == "x86" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
 -
 -    DEFINES["USE_X11"] = "1"
 -    DEFINES["WEBRTC_USE_X11"] = True
@@ -55750,8 +55719,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 +if CONFIG["CPU_ARCH"] == "ppc64" and not CONFIG["MOZ_X11"] and CONFIG["OS_TARGET"] == "FreeBSD":
  
@@ -55771,12 +55739,12 @@ index 99fd3c74c735..77ef9f7209ee 100644
 +        "/third_party/libwebrtc/modules/desktop_capture/window_capturer_null.cc"
      ]
  
--if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_X11"] = "1"
--    DEFINES["WEBRTC_USE_X11"] = True
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
 +if CONFIG["CPU_ARCH"] == "ppc64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
  
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["WEBRTC_USE_X11"] = True
+-
 -    OS_LIBS += [
 -        "X11",
 -        "Xcomposite",
@@ -55784,8 +55752,35 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
+-    ]
+-
+-    UNIFIED_SOURCES += [
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/mouse_cursor_monitor_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/screen_capturer_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/shared_x_display.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_capturer_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_finder_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_list_utils.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_atom_cache.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_error_trap.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["WEBRTC_USE_X11"] = True
+-
+-    OS_LIBS += [
+-        "X11",
+-        "Xcomposite",
+-        "Xdamage",
+-        "Xext",
+-        "Xfixes",
+-        "Xrandr",
+-        "Xrender"
 +    SOURCES += [
 +        "/third_party/libwebrtc/modules/desktop_capture/mouse_cursor_monitor_linux.cc"
      ]
@@ -57800,7 +57795,7 @@ index 2e9df3733b6f..3a86740343d2 100644
  
  Library("rtp_rtcp_format_gn")
 diff --git third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build
-index 3fca8bb86bb7..8a547c92b18c 100644
+index 3e34426b3ba4..b47ce74d222a 100644
 --- third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build
 +++ third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build
 @@ -13,11 +13,20 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
@@ -58024,7 +58019,7 @@ index 3fca8bb86bb7..8a547c92b18c 100644
  
  Library("rtp_rtcp_gn")
 diff --git third_party/libwebrtc/modules/rtp_rtcp/rtp_video_header_gn/moz.build third_party/libwebrtc/modules/rtp_rtcp/rtp_video_header_gn/moz.build
-index 02b919fc1648..4743dce9a666 100644
+index 0a8968c7d302..4743dce9a666 100644
 --- third_party/libwebrtc/modules/rtp_rtcp/rtp_video_header_gn/moz.build
 +++ third_party/libwebrtc/modules/rtp_rtcp/rtp_video_header_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -58048,7 +58043,7 @@ index 02b919fc1648..4743dce9a666 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -58135,6 +58130,9 @@ index 02b919fc1648..4743dce9a666 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -59618,7 +59616,7 @@ index 521c96db23a0..1f157fe113a0 100644
  
  Library("video_capture_module_gn")
 diff --git third_party/libwebrtc/modules/video_coding/chain_diff_calculator_gn/moz.build third_party/libwebrtc/modules/video_coding/chain_diff_calculator_gn/moz.build
-index 7162249695f9..fcc8a73423ab 100644
+index 69220e6f990e..fcc8a73423ab 100644
 --- third_party/libwebrtc/modules/video_coding/chain_diff_calculator_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/chain_diff_calculator_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -59642,7 +59640,7 @@ index 7162249695f9..fcc8a73423ab 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -59729,6 +59727,9 @@ index 7162249695f9..fcc8a73423ab 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -60028,7 +60029,7 @@ index 762ae476513c..b4f0490937ff 100644
 -
  Library("codec_globals_headers_gn")
 diff --git third_party/libwebrtc/modules/video_coding/codecs/av1/av1_svc_config_gn/moz.build third_party/libwebrtc/modules/video_coding/codecs/av1/av1_svc_config_gn/moz.build
-index 08853e440baf..12901738a75f 100644
+index 6bc880ab1fc8..12901738a75f 100644
 --- third_party/libwebrtc/modules/video_coding/codecs/av1/av1_svc_config_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/codecs/av1/av1_svc_config_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -60052,7 +60053,7 @@ index 08853e440baf..12901738a75f 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -60139,6 +60140,9 @@ index 08853e440baf..12901738a75f 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -60467,7 +60471,7 @@ index 93df73b440c0..217d265bacee 100644
  
  Library("encoded_frame_gn")
 diff --git third_party/libwebrtc/modules/video_coding/frame_dependencies_calculator_gn/moz.build third_party/libwebrtc/modules/video_coding/frame_dependencies_calculator_gn/moz.build
-index 4b3ab25d4f74..74af6c5dc520 100644
+index 8696640ed10f..74af6c5dc520 100644
 --- third_party/libwebrtc/modules/video_coding/frame_dependencies_calculator_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/frame_dependencies_calculator_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -60491,7 +60495,7 @@ index 4b3ab25d4f74..74af6c5dc520 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -60578,6 +60582,9 @@ index 4b3ab25d4f74..74af6c5dc520 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -61352,7 +61359,7 @@ index c251ed8dc84f..65e5b4757c29 100644
  
  Library("packet_buffer_gn")
 diff --git third_party/libwebrtc/modules/video_coding/svc/scalability_mode_util_gn/moz.build third_party/libwebrtc/modules/video_coding/svc/scalability_mode_util_gn/moz.build
-index e7cdba8af34c..e6d655af95dc 100644
+index 145273655740..e6d655af95dc 100644
 --- third_party/libwebrtc/modules/video_coding/svc/scalability_mode_util_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/svc/scalability_mode_util_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -61376,7 +61383,7 @@ index e7cdba8af34c..e6d655af95dc 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -61463,6 +61470,9 @@ index e7cdba8af34c..e6d655af95dc 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -61568,7 +61578,7 @@ index e7cdba8af34c..e6d655af95dc 100644
  
  Library("scalability_mode_util_gn")
 diff --git third_party/libwebrtc/modules/video_coding/svc/scalability_structures_gn/moz.build third_party/libwebrtc/modules/video_coding/svc/scalability_structures_gn/moz.build
-index dc072aba46a2..12c34079a6e6 100644
+index a21e6b601371..12c34079a6e6 100644
 --- third_party/libwebrtc/modules/video_coding/svc/scalability_structures_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/svc/scalability_structures_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -61592,7 +61602,7 @@ index dc072aba46a2..12c34079a6e6 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -50,184 +59,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -50,187 +59,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -61679,6 +61689,9 @@ index dc072aba46a2..12c34079a6e6 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -61996,7 +62009,7 @@ index 887db86beb1a..9348473d2af9 100644
  
  Library("scalable_video_controller_gn")
 diff --git third_party/libwebrtc/modules/video_coding/svc/svc_rate_allocator_gn/moz.build third_party/libwebrtc/modules/video_coding/svc/svc_rate_allocator_gn/moz.build
-index 0099063164b3..7157f0bd74ba 100644
+index 92c952ced8bf..7157f0bd74ba 100644
 --- third_party/libwebrtc/modules/video_coding/svc/svc_rate_allocator_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/svc/svc_rate_allocator_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -62020,7 +62033,7 @@ index 0099063164b3..7157f0bd74ba 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -62107,6 +62120,9 @@ index 0099063164b3..7157f0bd74ba 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -63718,7 +63734,7 @@ index dd0e7c007a78..4fd77d42f049 100644
  
  Library("timing_module_gn")
 diff --git third_party/libwebrtc/modules/video_coding/video_codec_interface_gn/moz.build third_party/libwebrtc/modules/video_coding/video_codec_interface_gn/moz.build
-index 8fd8cbe26304..89deb11da94a 100644
+index c2252edfbbe1..89deb11da94a 100644
 --- third_party/libwebrtc/modules/video_coding/video_codec_interface_gn/moz.build
 +++ third_party/libwebrtc/modules/video_coding/video_codec_interface_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -63742,7 +63758,7 @@ index 8fd8cbe26304..89deb11da94a 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -63829,6 +63845,9 @@ index 8fd8cbe26304..89deb11da94a 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -65702,10 +65721,10 @@ index 935a69e8c86e..0390ceb82364 100644
  
  Library("webrtc_vp9_helpers_gn")
 diff --git third_party/libwebrtc/moz.build third_party/libwebrtc/moz.build
-index 5c9a364dd518..96c9b9570028 100644
+index f528cb110818..d12cb927e222 100644
 --- third_party/libwebrtc/moz.build
 +++ third_party/libwebrtc/moz.build
-@@ -263,6 +263,8 @@ DIRS += [
+@@ -262,6 +262,8 @@ DIRS += [
      "/third_party/libwebrtc/modules/congestion_controller/goog_cc/send_side_bwe_gn",
      "/third_party/libwebrtc/modules/congestion_controller/rtp/control_handler_gn",
      "/third_party/libwebrtc/modules/congestion_controller/rtp/transport_feedback_gn",
@@ -65714,7 +65733,7 @@ index 5c9a364dd518..96c9b9570028 100644
      "/third_party/libwebrtc/modules/module_api_gn",
      "/third_party/libwebrtc/modules/module_api_public_gn",
      "/third_party/libwebrtc/modules/module_fec_api_gn",
-@@ -457,102 +459,11 @@ DIRS += [
+@@ -459,102 +461,11 @@ DIRS += [
      "/third_party/libwebrtc/webrtc_gn"
  ]
  
@@ -65818,7 +65837,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -560,26 +471,9 @@ if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -562,26 +473,9 @@ if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65846,7 +65865,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -587,11 +481,9 @@ if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["OS_TARGET"] == "Linux":
+@@ -589,11 +483,9 @@ if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65859,7 +65878,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -599,7 +491,7 @@ if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -601,7 +493,7 @@ if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65868,7 +65887,7 @@ index 5c9a364dd518..96c9b9570028 100644
  
      DIRS += [
          "/third_party/libwebrtc/common_audio/common_audio_avx2_gn",
-@@ -607,8 +499,6 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -609,8 +501,6 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn",
          "/third_party/libwebrtc/modules/audio_processing/agc2/rnn_vad/vector_math_avx2_gn",
          "/third_party/libwebrtc/modules/desktop_capture/desktop_capture_differ_sse2_gn",
@@ -65877,7 +65896,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -616,7 +506,7 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -618,7 +508,7 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65886,7 +65905,7 @@ index 5c9a364dd518..96c9b9570028 100644
  
      DIRS += [
          "/third_party/libwebrtc/common_audio/common_audio_avx2_gn",
-@@ -624,69 +514,9 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -626,69 +516,9 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn",
          "/third_party/libwebrtc/modules/audio_processing/agc2/rnn_vad/vector_math_avx2_gn",
          "/third_party/libwebrtc/modules/desktop_capture/desktop_capture_differ_sse2_gn",
@@ -66367,7 +66386,7 @@ index c9bbe0532123..ee64165c31d3 100644
  
  Library("async_resolver_interface_gn")
 diff --git third_party/libwebrtc/rtc_base/audio_format_to_string_gn/moz.build third_party/libwebrtc/rtc_base/audio_format_to_string_gn/moz.build
-index f3d20adc3c2a..41df619ecefa 100644
+index 479e90eafd1c..41df619ecefa 100644
 --- third_party/libwebrtc/rtc_base/audio_format_to_string_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/audio_format_to_string_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -66391,7 +66410,7 @@ index f3d20adc3c2a..41df619ecefa 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -66478,6 +66497,9 @@ index f3d20adc3c2a..41df619ecefa 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -66794,6 +66816,225 @@ index 23a422bd5b94..9d16e13e8efa 100644
 +    DEFINES["USE_X11"] = "1"
  
  Library("bit_buffer_gn")
+diff --git third_party/libwebrtc/rtc_base/bitrate_tracker_gn/moz.build third_party/libwebrtc/rtc_base/bitrate_tracker_gn/moz.build
+index 80d1803068ff..c27c227c7b34 100644
+--- third_party/libwebrtc/rtc_base/bitrate_tracker_gn/moz.build
++++ third_party/libwebrtc/rtc_base/bitrate_tracker_gn/moz.build
+@@ -12,11 +12,20 @@ AllowCompilerWarnings()
+ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
+ DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
+ DEFINES["RTC_ENABLE_VP9"] = True
++DEFINES["USE_GLIB"] = "1"
++DEFINES["USE_OZONE"] = "1"
++DEFINES["WEBRTC_BSD"] = True
+ DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
+ DEFINES["WEBRTC_LIBRARY_IMPL"] = True
+ DEFINES["WEBRTC_MOZILLA_BUILD"] = True
+ DEFINES["WEBRTC_NON_STATIC_TRACE_EVENT_HANDLERS"] = "0"
++DEFINES["WEBRTC_POSIX"] = True
+ DEFINES["WEBRTC_STRICT_FIELD_TRIALS"] = "0"
++DEFINES["_FILE_OFFSET_BITS"] = "64"
++DEFINES["_LARGEFILE64_SOURCE"] = True
++DEFINES["_LARGEFILE_SOURCE"] = True
++DEFINES["__STDC_CONSTANT_MACROS"] = True
++DEFINES["__STDC_FORMAT_MACROS"] = True
+ 
+ FINAL_LIBRARY = "webrtc"
+ 
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+ if CONFIG["MOZ_DEBUG"] == "1":
+ 
+     DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
+-
+-if CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["ANDROID"] = True
+-    DEFINES["ANDROID_NDK_VERSION_ROLL"] = "r22_1"
+-    DEFINES["HAVE_SYS_UIO_H"] = True
+-    DEFINES["WEBRTC_ANDROID"] = True
+-    DEFINES["WEBRTC_ANDROID_OPENSLES"] = True
+-    DEFINES["WEBRTC_LINUX"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_GNU_SOURCE"] = True
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-    OS_LIBS += [
+-        "log"
+-    ]
+-
+-if CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["WEBRTC_MAC"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_LIBCPP_HAS_NO_ALIGNED_ALLOCATION"] = True
+-    DEFINES["__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES"] = "0"
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-if CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_NSS_CERTS"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_UDEV"] = True
+-    DEFINES["WEBRTC_LINUX"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-if CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["WEBRTC_BSD"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-if CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["CERT_CHAIN_PARA_HAS_EXTRA_FIELDS"] = True
+-    DEFINES["NOMINMAX"] = True
+-    DEFINES["NTDDI_VERSION"] = "0x0A000000"
+-    DEFINES["PSAPI_VERSION"] = "2"
+-    DEFINES["RTC_ENABLE_WIN_WGC"] = True
+-    DEFINES["UNICODE"] = True
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["WEBRTC_WIN"] = True
+-    DEFINES["WIN32"] = True
+-    DEFINES["WIN32_LEAN_AND_MEAN"] = True
+-    DEFINES["WINAPI_FAMILY"] = "WINAPI_FAMILY_DESKTOP_APP"
+-    DEFINES["WINVER"] = "0x0A00"
+-    DEFINES["_ATL_NO_OPENGL"] = True
+-    DEFINES["_CRT_RAND_S"] = True
+-    DEFINES["_CRT_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_ENABLE_EXTENDED_ALIGNED_STORAGE"] = True
+-    DEFINES["_HAS_EXCEPTIONS"] = "0"
+-    DEFINES["_HAS_NODISCARD"] = True
+-    DEFINES["_SCL_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_SECURE_ATL"] = True
+-    DEFINES["_UNICODE"] = True
+-    DEFINES["_WIN32_WINNT"] = "0x0A00"
+-    DEFINES["_WINDOWS"] = True
+-    DEFINES["__STD_C"] = True
+-
+-    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
+-        "winmm"
+-    ]
++    DEFINES["_DEBUG"] = True
+ 
+ if CONFIG["CPU_ARCH"] == "aarch64":
+ 
+     DEFINES["WEBRTC_ARCH_ARM64"] = True
+     DEFINES["WEBRTC_HAS_NEON"] = True
+ 
+-if CONFIG["CPU_ARCH"] == "arm":
+-
+-    CXXFLAGS += [
+-        "-mfpu=neon"
+-    ]
+-
+-    DEFINES["WEBRTC_ARCH_ARM"] = True
+-    DEFINES["WEBRTC_ARCH_ARM_V7"] = True
+-    DEFINES["WEBRTC_HAS_NEON"] = True
+-
+ if CONFIG["CPU_ARCH"] == "mips32":
+ 
+     DEFINES["MIPS32_LE"] = True
+     DEFINES["MIPS_FPU_LE"] = True
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "mips64":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+ 
+ if CONFIG["CPU_ARCH"] == "x86":
+ 
+-    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86_64":
+-
+-    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
+-
+-if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_X11"] = "1"
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
+-
+-    OS_LIBS += [
+-        "android_support",
+-        "unwind"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Android":
+-
+     CXXFLAGS += [
+         "-msse2"
+     ]
+ 
+-    OS_LIBS += [
+-        "android_support"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
++    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+ 
+-    CXXFLAGS += [
+-        "-msse2"
+-    ]
++if CONFIG["CPU_ARCH"] == "x86_64":
+ 
+-    DEFINES["_GNU_SOURCE"] = True
++    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+ 
+-if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
+ 
+-    DEFINES["_GNU_SOURCE"] = True
++    DEFINES["USE_X11"] = "1"
+ 
+ Library("bitrate_tracker_gn")
 diff --git third_party/libwebrtc/rtc_base/bitstream_reader_gn/moz.build third_party/libwebrtc/rtc_base/bitstream_reader_gn/moz.build
 index 99cf070668c2..c5dabe6ad79f 100644
 --- third_party/libwebrtc/rtc_base/bitstream_reader_gn/moz.build
@@ -69413,7 +69654,7 @@ index 13f6e5c1e614..4050d593d1b1 100644
 -
  Library("dscp_gn")
 diff --git third_party/libwebrtc/rtc_base/event_tracer_gn/moz.build third_party/libwebrtc/rtc_base/event_tracer_gn/moz.build
-index 0d2f54cb6630..c655f3b43877 100644
+index 32fe6402f408..c655f3b43877 100644
 --- third_party/libwebrtc/rtc_base/event_tracer_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/event_tracer_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -69437,7 +69678,7 @@ index 0d2f54cb6630..c655f3b43877 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -69524,6 +69765,9 @@ index 0d2f54cb6630..c655f3b43877 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -69629,7 +69873,7 @@ index 0d2f54cb6630..c655f3b43877 100644
  
  Library("event_tracer_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/alr_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/alr_experiment_gn/moz.build
-index 873ea744002a..0d1253003f3d 100644
+index 37836938a526..0d1253003f3d 100644
 --- third_party/libwebrtc/rtc_base/experiments/alr_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/alr_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -69653,7 +69897,7 @@ index 873ea744002a..0d1253003f3d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -69740,6 +69984,9 @@ index 873ea744002a..0d1253003f3d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -69845,7 +70092,7 @@ index 873ea744002a..0d1253003f3d 100644
  
  Library("alr_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/balanced_degradation_settings_gn/moz.build third_party/libwebrtc/rtc_base/experiments/balanced_degradation_settings_gn/moz.build
-index e70ad11c923f..e1cf8913860d 100644
+index 132fd4e0b8c6..e1cf8913860d 100644
 --- third_party/libwebrtc/rtc_base/experiments/balanced_degradation_settings_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/balanced_degradation_settings_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -69869,7 +70116,7 @@ index e70ad11c923f..e1cf8913860d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -69956,6 +70203,9 @@ index e70ad11c923f..e1cf8913860d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -70061,7 +70311,7 @@ index e70ad11c923f..e1cf8913860d 100644
  
  Library("balanced_degradation_settings_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/bandwidth_quality_scaler_settings_gn/moz.build third_party/libwebrtc/rtc_base/experiments/bandwidth_quality_scaler_settings_gn/moz.build
-index cc93c29837ba..54cef4764697 100644
+index 248549a9a84a..54cef4764697 100644
 --- third_party/libwebrtc/rtc_base/experiments/bandwidth_quality_scaler_settings_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/bandwidth_quality_scaler_settings_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -70085,7 +70335,7 @@ index cc93c29837ba..54cef4764697 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -70172,6 +70422,9 @@ index cc93c29837ba..54cef4764697 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -70277,7 +70530,7 @@ index cc93c29837ba..54cef4764697 100644
  
  Library("bandwidth_quality_scaler_settings_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/cpu_speed_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/cpu_speed_experiment_gn/moz.build
-index 012c461ffe1d..8118147f993e 100644
+index 7a887a15c955..8118147f993e 100644
 --- third_party/libwebrtc/rtc_base/experiments/cpu_speed_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/cpu_speed_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -70301,7 +70554,7 @@ index 012c461ffe1d..8118147f993e 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -70388,6 +70641,9 @@ index 012c461ffe1d..8118147f993e 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -70493,7 +70749,7 @@ index 012c461ffe1d..8118147f993e 100644
  
  Library("cpu_speed_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/encoder_info_settings_gn/moz.build third_party/libwebrtc/rtc_base/experiments/encoder_info_settings_gn/moz.build
-index 31eaaa7d9a55..ed59d2508985 100644
+index 378f603cc939..ed59d2508985 100644
 --- third_party/libwebrtc/rtc_base/experiments/encoder_info_settings_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/encoder_info_settings_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -70517,7 +70773,7 @@ index 31eaaa7d9a55..ed59d2508985 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -70604,6 +70860,9 @@ index 31eaaa7d9a55..ed59d2508985 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -70709,7 +70968,7 @@ index 31eaaa7d9a55..ed59d2508985 100644
  
  Library("encoder_info_settings_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/field_trial_parser_gn/moz.build third_party/libwebrtc/rtc_base/experiments/field_trial_parser_gn/moz.build
-index bfa8be6e6f17..3cd6aec92bc8 100644
+index c4312e47f41d..3cd6aec92bc8 100644
 --- third_party/libwebrtc/rtc_base/experiments/field_trial_parser_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/field_trial_parser_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -70733,7 +70992,7 @@ index bfa8be6e6f17..3cd6aec92bc8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -46,184 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -46,187 +55,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -70820,6 +71079,9 @@ index bfa8be6e6f17..3cd6aec92bc8 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -70925,7 +71187,7 @@ index bfa8be6e6f17..3cd6aec92bc8 100644
  
  Library("field_trial_parser_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/keyframe_interval_settings_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/keyframe_interval_settings_experiment_gn/moz.build
-index 0169a46babde..cd41f4b0b645 100644
+index ff903e16902a..cd41f4b0b645 100644
 --- third_party/libwebrtc/rtc_base/experiments/keyframe_interval_settings_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/keyframe_interval_settings_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -70949,7 +71211,7 @@ index 0169a46babde..cd41f4b0b645 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -71036,6 +71298,9 @@ index 0169a46babde..cd41f4b0b645 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -71141,7 +71406,7 @@ index 0169a46babde..cd41f4b0b645 100644
  
  Library("keyframe_interval_settings_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/min_video_bitrate_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/min_video_bitrate_experiment_gn/moz.build
-index bb394fe2975f..0cbfa328d9ea 100644
+index 89aac493eb74..0cbfa328d9ea 100644
 --- third_party/libwebrtc/rtc_base/experiments/min_video_bitrate_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/min_video_bitrate_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -71165,7 +71430,7 @@ index bb394fe2975f..0cbfa328d9ea 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -71252,6 +71517,9 @@ index bb394fe2975f..0cbfa328d9ea 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -71357,7 +71625,7 @@ index bb394fe2975f..0cbfa328d9ea 100644
  
  Library("min_video_bitrate_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/normalize_simulcast_size_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/normalize_simulcast_size_experiment_gn/moz.build
-index 20e3713eb1d8..2b4feb9b7bdc 100644
+index 0c4cfa8921a5..2b4feb9b7bdc 100644
 --- third_party/libwebrtc/rtc_base/experiments/normalize_simulcast_size_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/normalize_simulcast_size_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -71381,7 +71649,7 @@ index 20e3713eb1d8..2b4feb9b7bdc 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -71468,6 +71736,9 @@ index 20e3713eb1d8..2b4feb9b7bdc 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -71573,7 +71844,7 @@ index 20e3713eb1d8..2b4feb9b7bdc 100644
  
  Library("normalize_simulcast_size_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/quality_rampup_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/quality_rampup_experiment_gn/moz.build
-index ef8fd46914c9..1e8451135790 100644
+index 643df8eb0b9e..1e8451135790 100644
 --- third_party/libwebrtc/rtc_base/experiments/quality_rampup_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/quality_rampup_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -71597,7 +71868,7 @@ index ef8fd46914c9..1e8451135790 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -71684,6 +71955,9 @@ index ef8fd46914c9..1e8451135790 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -71789,7 +72063,7 @@ index ef8fd46914c9..1e8451135790 100644
  
  Library("quality_rampup_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/quality_scaler_settings_gn/moz.build third_party/libwebrtc/rtc_base/experiments/quality_scaler_settings_gn/moz.build
-index 6cc2035a2d7c..dcc3d66af2f3 100644
+index 0687e641f803..dcc3d66af2f3 100644
 --- third_party/libwebrtc/rtc_base/experiments/quality_scaler_settings_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/quality_scaler_settings_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -71813,7 +72087,7 @@ index 6cc2035a2d7c..dcc3d66af2f3 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -71900,6 +72174,9 @@ index 6cc2035a2d7c..dcc3d66af2f3 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -72005,7 +72282,7 @@ index 6cc2035a2d7c..dcc3d66af2f3 100644
  
  Library("quality_scaler_settings_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/quality_scaling_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/quality_scaling_experiment_gn/moz.build
-index 2ecca976ab20..f4eec0f9ca31 100644
+index 0add76907ab3..f4eec0f9ca31 100644
 --- third_party/libwebrtc/rtc_base/experiments/quality_scaling_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/quality_scaling_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -72029,7 +72306,7 @@ index 2ecca976ab20..f4eec0f9ca31 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -72116,6 +72393,9 @@ index 2ecca976ab20..f4eec0f9ca31 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -72221,7 +72501,7 @@ index 2ecca976ab20..f4eec0f9ca31 100644
  
  Library("quality_scaling_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/rate_control_settings_gn/moz.build third_party/libwebrtc/rtc_base/experiments/rate_control_settings_gn/moz.build
-index cbf9703b88bd..768d19687442 100644
+index 80f3f2699922..768d19687442 100644
 --- third_party/libwebrtc/rtc_base/experiments/rate_control_settings_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/rate_control_settings_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -72245,7 +72525,7 @@ index cbf9703b88bd..768d19687442 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -72332,6 +72612,9 @@ index cbf9703b88bd..768d19687442 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -72437,7 +72720,7 @@ index cbf9703b88bd..768d19687442 100644
  
  Library("rate_control_settings_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/rtt_mult_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/rtt_mult_experiment_gn/moz.build
-index 8dfc5abd92e1..faed80b04af8 100644
+index 6c8fc29aa462..faed80b04af8 100644
 --- third_party/libwebrtc/rtc_base/experiments/rtt_mult_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/rtt_mult_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -72461,7 +72744,7 @@ index 8dfc5abd92e1..faed80b04af8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -72548,6 +72831,9 @@ index 8dfc5abd92e1..faed80b04af8 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -72653,7 +72939,7 @@ index 8dfc5abd92e1..faed80b04af8 100644
  
  Library("rtt_mult_experiment_gn")
 diff --git third_party/libwebrtc/rtc_base/experiments/stable_target_rate_experiment_gn/moz.build third_party/libwebrtc/rtc_base/experiments/stable_target_rate_experiment_gn/moz.build
-index 0948e2a3b9fc..5ba40788ff5d 100644
+index 35ab472dd649..5ba40788ff5d 100644
 --- third_party/libwebrtc/rtc_base/experiments/stable_target_rate_experiment_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/experiments/stable_target_rate_experiment_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -72677,7 +72963,7 @@ index 0948e2a3b9fc..5ba40788ff5d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -72764,6 +73050,9 @@ index 0948e2a3b9fc..5ba40788ff5d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -72868,6 +73157,225 @@ index 0948e2a3b9fc..5ba40788ff5d 100644
 +    DEFINES["USE_X11"] = "1"
  
  Library("stable_target_rate_experiment_gn")
+diff --git third_party/libwebrtc/rtc_base/frequency_tracker_gn/moz.build third_party/libwebrtc/rtc_base/frequency_tracker_gn/moz.build
+index b546fdccb098..8f6bc8e52d7a 100644
+--- third_party/libwebrtc/rtc_base/frequency_tracker_gn/moz.build
++++ third_party/libwebrtc/rtc_base/frequency_tracker_gn/moz.build
+@@ -12,11 +12,20 @@ AllowCompilerWarnings()
+ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
+ DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
+ DEFINES["RTC_ENABLE_VP9"] = True
++DEFINES["USE_GLIB"] = "1"
++DEFINES["USE_OZONE"] = "1"
++DEFINES["WEBRTC_BSD"] = True
+ DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
+ DEFINES["WEBRTC_LIBRARY_IMPL"] = True
+ DEFINES["WEBRTC_MOZILLA_BUILD"] = True
+ DEFINES["WEBRTC_NON_STATIC_TRACE_EVENT_HANDLERS"] = "0"
++DEFINES["WEBRTC_POSIX"] = True
+ DEFINES["WEBRTC_STRICT_FIELD_TRIALS"] = "0"
++DEFINES["_FILE_OFFSET_BITS"] = "64"
++DEFINES["_LARGEFILE64_SOURCE"] = True
++DEFINES["_LARGEFILE_SOURCE"] = True
++DEFINES["__STDC_CONSTANT_MACROS"] = True
++DEFINES["__STDC_FORMAT_MACROS"] = True
+ 
+ FINAL_LIBRARY = "webrtc"
+ 
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+ if CONFIG["MOZ_DEBUG"] == "1":
+ 
+     DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
+-
+-if CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["ANDROID"] = True
+-    DEFINES["ANDROID_NDK_VERSION_ROLL"] = "r22_1"
+-    DEFINES["HAVE_SYS_UIO_H"] = True
+-    DEFINES["WEBRTC_ANDROID"] = True
+-    DEFINES["WEBRTC_ANDROID_OPENSLES"] = True
+-    DEFINES["WEBRTC_LINUX"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_GNU_SOURCE"] = True
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-    OS_LIBS += [
+-        "log"
+-    ]
+-
+-if CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["WEBRTC_MAC"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_LIBCPP_HAS_NO_ALIGNED_ALLOCATION"] = True
+-    DEFINES["__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES"] = "0"
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-if CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_NSS_CERTS"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_UDEV"] = True
+-    DEFINES["WEBRTC_LINUX"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-if CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["WEBRTC_BSD"] = True
+-    DEFINES["WEBRTC_POSIX"] = True
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-    DEFINES["__STDC_CONSTANT_MACROS"] = True
+-    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-if CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["CERT_CHAIN_PARA_HAS_EXTRA_FIELDS"] = True
+-    DEFINES["NOMINMAX"] = True
+-    DEFINES["NTDDI_VERSION"] = "0x0A000000"
+-    DEFINES["PSAPI_VERSION"] = "2"
+-    DEFINES["RTC_ENABLE_WIN_WGC"] = True
+-    DEFINES["UNICODE"] = True
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["WEBRTC_WIN"] = True
+-    DEFINES["WIN32"] = True
+-    DEFINES["WIN32_LEAN_AND_MEAN"] = True
+-    DEFINES["WINAPI_FAMILY"] = "WINAPI_FAMILY_DESKTOP_APP"
+-    DEFINES["WINVER"] = "0x0A00"
+-    DEFINES["_ATL_NO_OPENGL"] = True
+-    DEFINES["_CRT_RAND_S"] = True
+-    DEFINES["_CRT_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_ENABLE_EXTENDED_ALIGNED_STORAGE"] = True
+-    DEFINES["_HAS_EXCEPTIONS"] = "0"
+-    DEFINES["_HAS_NODISCARD"] = True
+-    DEFINES["_SCL_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_SECURE_ATL"] = True
+-    DEFINES["_UNICODE"] = True
+-    DEFINES["_WIN32_WINNT"] = "0x0A00"
+-    DEFINES["_WINDOWS"] = True
+-    DEFINES["__STD_C"] = True
+-
+-    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
+-        "winmm"
+-    ]
++    DEFINES["_DEBUG"] = True
+ 
+ if CONFIG["CPU_ARCH"] == "aarch64":
+ 
+     DEFINES["WEBRTC_ARCH_ARM64"] = True
+     DEFINES["WEBRTC_HAS_NEON"] = True
+ 
+-if CONFIG["CPU_ARCH"] == "arm":
+-
+-    CXXFLAGS += [
+-        "-mfpu=neon"
+-    ]
+-
+-    DEFINES["WEBRTC_ARCH_ARM"] = True
+-    DEFINES["WEBRTC_ARCH_ARM_V7"] = True
+-    DEFINES["WEBRTC_HAS_NEON"] = True
+-
+ if CONFIG["CPU_ARCH"] == "mips32":
+ 
+     DEFINES["MIPS32_LE"] = True
+     DEFINES["MIPS_FPU_LE"] = True
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "mips64":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+ 
+ if CONFIG["CPU_ARCH"] == "x86":
+ 
+-    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86_64":
+-
+-    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
+-
+-if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_X11"] = "1"
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
+-
+-    OS_LIBS += [
+-        "android_support",
+-        "unwind"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Android":
+-
+     CXXFLAGS += [
+         "-msse2"
+     ]
+ 
+-    OS_LIBS += [
+-        "android_support"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
++    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+ 
+-    CXXFLAGS += [
+-        "-msse2"
+-    ]
++if CONFIG["CPU_ARCH"] == "x86_64":
+ 
+-    DEFINES["_GNU_SOURCE"] = True
++    DEFINES["WEBRTC_ENABLE_AVX2"] = True
+ 
+-if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
+ 
+-    DEFINES["_GNU_SOURCE"] = True
++    DEFINES["USE_X11"] = "1"
+ 
+ Library("frequency_tracker_gn")
 diff --git third_party/libwebrtc/rtc_base/gtest_prod_gn/moz.build third_party/libwebrtc/rtc_base/gtest_prod_gn/moz.build
 index 696c146a4556..393c4a6a5b5f 100644
 --- third_party/libwebrtc/rtc_base/gtest_prod_gn/moz.build
@@ -73566,7 +74074,7 @@ index 7fab2a6316d5..ede6074320d3 100644
 -
  Library("ignore_wundef_gn")
 diff --git third_party/libwebrtc/rtc_base/ip_address_gn/moz.build third_party/libwebrtc/rtc_base/ip_address_gn/moz.build
-index 55c55c7b2b41..3310e1e14d3c 100644
+index d8f6355c7ccf..3310e1e14d3c 100644
 --- third_party/libwebrtc/rtc_base/ip_address_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/ip_address_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -73590,7 +74098,7 @@ index 55c55c7b2b41..3310e1e14d3c 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,188 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -73680,8 +74188,7 @@ index 55c55c7b2b41..3310e1e14d3c 100644
 -    OS_LIBS += [
 -        "crypt32",
 -        "iphlpapi",
--        "secur32",
--        "winmm"
+-        "secur32"
 -    ]
 +    DEFINES["_DEBUG"] = True
  
@@ -73786,7 +74293,7 @@ index 55c55c7b2b41..3310e1e14d3c 100644
  
  Library("ip_address_gn")
 diff --git third_party/libwebrtc/rtc_base/logging_gn/moz.build third_party/libwebrtc/rtc_base/logging_gn/moz.build
-index c58a306730f8..22d90f577490 100644
+index 5512024097ba..22d90f577490 100644
 --- third_party/libwebrtc/rtc_base/logging_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/logging_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -73811,7 +74318,7 @@ index c58a306730f8..22d90f577490 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -44,184 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,187 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -73898,6 +74405,9 @@ index c58a306730f8..22d90f577490 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -74793,7 +75303,7 @@ index c5694b5994f4..d20ce225c3f9 100644
 -
  Library("moving_max_counter_gn")
 diff --git third_party/libwebrtc/rtc_base/net_helpers_gn/moz.build third_party/libwebrtc/rtc_base/net_helpers_gn/moz.build
-index 1cb24c3d75c9..7f32da55511f 100644
+index cf8da5ce3ebb..7f32da55511f 100644
 --- third_party/libwebrtc/rtc_base/net_helpers_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/net_helpers_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -74817,7 +75327,7 @@ index 1cb24c3d75c9..7f32da55511f 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,188 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -74907,8 +75417,7 @@ index 1cb24c3d75c9..7f32da55511f 100644
 -    OS_LIBS += [
 -        "crypt32",
 -        "iphlpapi",
--        "secur32",
--        "winmm"
+-        "secur32"
 -    ]
 +    DEFINES["_DEBUG"] = True
  
@@ -76059,7 +76568,7 @@ index 81275000b3a9..a8d26b774863 100644
 -
  Library("one_time_event_gn")
 diff --git third_party/libwebrtc/rtc_base/platform_thread_gn/moz.build third_party/libwebrtc/rtc_base/platform_thread_gn/moz.build
-index 877e4decb1be..3fea9a2d6b27 100644
+index 8e8e257d918f..3fea9a2d6b27 100644
 --- third_party/libwebrtc/rtc_base/platform_thread_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/platform_thread_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -76083,7 +76592,7 @@ index 877e4decb1be..3fea9a2d6b27 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -76170,6 +76679,9 @@ index 877e4decb1be..3fea9a2d6b27 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -77324,7 +77836,7 @@ index c9bd8fc31625..51b27be6a666 100644
  
  Library("rate_limiter_gn")
 diff --git third_party/libwebrtc/rtc_base/rate_statistics_gn/moz.build third_party/libwebrtc/rtc_base/rate_statistics_gn/moz.build
-index 5b7ef1d09da3..ec6d4550feef 100644
+index 3a0113d12296..ec6d4550feef 100644
 --- third_party/libwebrtc/rtc_base/rate_statistics_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/rate_statistics_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -77348,7 +77860,7 @@ index 5b7ef1d09da3..ec6d4550feef 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -77435,6 +77947,9 @@ index 5b7ef1d09da3..ec6d4550feef 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -77540,7 +78055,7 @@ index 5b7ef1d09da3..ec6d4550feef 100644
  
  Library("rate_statistics_gn")
 diff --git third_party/libwebrtc/rtc_base/rate_tracker_gn/moz.build third_party/libwebrtc/rtc_base/rate_tracker_gn/moz.build
-index 7849033fd901..a7abd9b6b0e7 100644
+index 90c9c25aec52..a7abd9b6b0e7 100644
 --- third_party/libwebrtc/rtc_base/rate_tracker_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/rate_tracker_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -77564,7 +78079,7 @@ index 7849033fd901..a7abd9b6b0e7 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -77651,6 +78166,9 @@ index 7849033fd901..a7abd9b6b0e7 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -78140,7 +78658,7 @@ index dbb5ee27409d..f04b9eb51ce7 100644
 -
  Library("rolling_accumulator_gn")
 diff --git third_party/libwebrtc/rtc_base/rtc_event_gn/moz.build third_party/libwebrtc/rtc_base/rtc_event_gn/moz.build
-index 6fde36031cdc..d03fb3f4e7c8 100644
+index f8dd4dd5984a..d03fb3f4e7c8 100644
 --- third_party/libwebrtc/rtc_base/rtc_event_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/rtc_event_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -78164,7 +78682,7 @@ index 6fde36031cdc..d03fb3f4e7c8 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -78251,6 +78769,9 @@ index 6fde36031cdc..d03fb3f4e7c8 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -84663,7 +85184,7 @@ index e93be2e06273..74684735d856 100644
  
  Library("threading_gn")
 diff --git third_party/libwebrtc/rtc_base/timeutils_gn/moz.build third_party/libwebrtc/rtc_base/timeutils_gn/moz.build
-index a0ade7c241f5..432c438bdad6 100644
+index 92fd2c323b5f..432c438bdad6 100644
 --- third_party/libwebrtc/rtc_base/timeutils_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/timeutils_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -84688,7 +85209,7 @@ index a0ade7c241f5..432c438bdad6 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -45,184 +54,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -45,187 +54,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -84775,6 +85296,9 @@ index a0ade7c241f5..432c438bdad6 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -86031,10 +86555,10 @@ index 759f3f6c7cf7..000000000000
 -Library("windows_version_gn")
 diff --git third_party/libwebrtc/rtc_base/win32_gn/moz.build third_party/libwebrtc/rtc_base/win32_gn/moz.build
 deleted file mode 100644
-index f57361432c58..000000000000
+index 3d9223f39c05..000000000000
 --- third_party/libwebrtc/rtc_base/win32_gn/moz.build
 +++ /dev/null
-@@ -1,94 +0,0 @@
+@@ -1,92 +0,0 @@
 -# This Source Code Form is subject to the terms of the Mozilla Public
 -# License, v. 2.0. If a copy of the MPL was not distributed with this
 -# file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -86095,13 +86619,11 @@ index f57361432c58..000000000000
 -OS_LIBS += [
 -    "crypt32",
 -    "iphlpapi",
--    "secur32",
--    "winmm"
+-    "secur32"
 -]
 -
 -UNIFIED_SOURCES += [
--    "/third_party/libwebrtc/rtc_base/win32.cc",
--    "/third_party/libwebrtc/rtc_base/win32_window.cc"
+-    "/third_party/libwebrtc/rtc_base/win32.cc"
 -]
 -
 -if not CONFIG["MOZ_DEBUG"]:
@@ -86875,7 +87397,7 @@ index 673104d2b95e..064ddd6f7ea0 100644
  
  Library("denormal_disabler_gn")
 diff --git third_party/libwebrtc/system_wrappers/field_trial_gn/moz.build third_party/libwebrtc/system_wrappers/field_trial_gn/moz.build
-index 780a6fdef2f1..53f2c83c65cc 100644
+index f447ddb77228..53f2c83c65cc 100644
 --- third_party/libwebrtc/system_wrappers/field_trial_gn/moz.build
 +++ third_party/libwebrtc/system_wrappers/field_trial_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -86899,7 +87421,7 @@ index 780a6fdef2f1..53f2c83c65cc 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -86986,6 +87508,9 @@ index 780a6fdef2f1..53f2c83c65cc 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -90645,8 +91170,166 @@ index a15b4f43bbe4..0e364e67c4fc 100644
 +    DEFINES["USE_X11"] = "1"
  
  Library("int128_gn")
+diff --git third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build
+index d6622a78f593..f5827b08637a 100644
+--- third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build
++++ third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build
+@@ -10,6 +10,11 @@ COMPILE_FLAGS["OS_INCLUDES"] = []
+ AllowCompilerWarnings()
+ 
+ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
++DEFINES["USE_GLIB"] = "1"
++DEFINES["USE_OZONE"] = "1"
++DEFINES["_FILE_OFFSET_BITS"] = "64"
++DEFINES["_LARGEFILE64_SOURCE"] = True
++DEFINES["_LARGEFILE_SOURCE"] = True
+ 
+ FINAL_LIBRARY = "webrtc"
+ 
+@@ -36,138 +41,16 @@ if not CONFIG["MOZ_DEBUG"]:
+ if CONFIG["MOZ_DEBUG"] == "1":
+ 
+     DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
+-
+-if CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["ANDROID"] = True
+-    DEFINES["ANDROID_NDK_VERSION_ROLL"] = "r22_1"
+-    DEFINES["HAVE_SYS_UIO_H"] = True
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["_LIBCPP_HAS_NO_ALIGNED_ALLOCATION"] = True
+-    DEFINES["__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES"] = "0"
+-
+-if CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_NSS_CERTS"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_UDEV"] = True
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-
+-if CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-
+-if CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["CERT_CHAIN_PARA_HAS_EXTRA_FIELDS"] = True
+-    DEFINES["NOMINMAX"] = True
+-    DEFINES["NTDDI_VERSION"] = "0x0A000000"
+-    DEFINES["PSAPI_VERSION"] = "2"
+-    DEFINES["UNICODE"] = True
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["WIN32"] = True
+-    DEFINES["WIN32_LEAN_AND_MEAN"] = True
+-    DEFINES["WINAPI_FAMILY"] = "WINAPI_FAMILY_DESKTOP_APP"
+-    DEFINES["WINVER"] = "0x0A00"
+-    DEFINES["_ATL_NO_OPENGL"] = True
+-    DEFINES["_CRT_NONSTDC_NO_DEPRECATE"] = True
+-    DEFINES["_CRT_NONSTDC_NO_WARNINGS"] = True
+-    DEFINES["_CRT_RAND_S"] = True
+-    DEFINES["_CRT_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_ENABLE_EXTENDED_ALIGNED_STORAGE"] = True
+-    DEFINES["_HAS_EXCEPTIONS"] = "0"
+-    DEFINES["_SCL_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_SECURE_ATL"] = True
+-    DEFINES["_UNICODE"] = True
+-    DEFINES["_WIN32_WINNT"] = "0x0A00"
+-    DEFINES["_WINDOWS"] = True
+-    DEFINES["__STD_C"] = True
+-
+-if CONFIG["CPU_ARCH"] == "arm":
+-
+-    CXXFLAGS += [
+-        "-mfpu=neon"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "mips32":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "mips64":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+     DEFINES["_DEBUG"] = True
+ 
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
+-
+-if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_X11"] = "1"
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
+-
+-    OS_LIBS += [
+-        "android_support",
+-        "unwind"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Android":
+-
+-    CXXFLAGS += [
+-        "-msse2"
+-    ]
+-
+-    OS_LIBS += [
+-        "android_support"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["CPU_ARCH"] == "x86":
+ 
+     CXXFLAGS += [
+         "-msse2"
+     ]
+ 
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
+ 
+-    DEFINES["_GNU_SOURCE"] = True
++    DEFINES["USE_X11"] = "1"
+ 
+ Library("string_view_gn")
 diff --git third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build
-index 2a53b9e647f7..71fd3a4a576d 100644
+index 34ac33e234e8..639ee3efe372 100644
 --- third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build
 +++ third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build
 @@ -10,6 +10,11 @@ COMPILE_FLAGS["OS_INCLUDES"] = []
@@ -90661,7 +91344,7 @@ index 2a53b9e647f7..71fd3a4a576d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -40,138 +45,16 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -41,138 +46,16 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -92022,7 +92705,7 @@ index 0333e014b67d..dcece6e53f93 100644
 -
  Library("yuv_gn")
 diff --git third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build
-index 27095596f717..5394d07cc759 100644
+index a5425c674549..5394d07cc759 100644
 --- third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build
 +++ third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build
 @@ -9,6 +9,14 @@
@@ -92040,7 +92723,7 @@ index 27095596f717..5394d07cc759 100644
  FINAL_LIBRARY = "webrtc"
  
  
-@@ -33,151 +41,28 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -33,155 +41,28 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -92131,6 +92814,10 @@ index 27095596f717..5394d07cc759 100644
  
      DEFINES["PFFFT_SIMD_DISABLE"] = True
  
+-if CONFIG["CPU_ARCH"] == "riscv64":
+-
+-    DEFINES["PFFFT_SIMD_DISABLE"] = True
+-
 -if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
 -
 -    DEFINES["_DEBUG"] = True
@@ -92172,10 +92859,10 @@ index 27095596f717..5394d07cc759 100644
 -    OS_LIBS += [
 -        "android_support"
 -    ]
--
--if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
 +if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
  
+-if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+-
 -    DEFINES["_GNU_SOURCE"] = True
 -
 -if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
@@ -92637,7 +93324,7 @@ index d36c68f6c12c..c019774c6343 100644
  
  Library("video_adaptation_gn")
 diff --git third_party/libwebrtc/video/config/encoder_config_gn/moz.build third_party/libwebrtc/video/config/encoder_config_gn/moz.build
-index daf1d0d43453..2dc027987bb6 100644
+index 9eb6abf8c116..2dc027987bb6 100644
 --- third_party/libwebrtc/video/config/encoder_config_gn/moz.build
 +++ third_party/libwebrtc/video/config/encoder_config_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -92661,7 +93348,7 @@ index daf1d0d43453..2dc027987bb6 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -92748,6 +93435,9 @@ index daf1d0d43453..2dc027987bb6 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -94175,7 +94865,7 @@ index 0daab97ba9df..254d05acd491 100644
  
  Library("frame_dumping_decoder_gn")
 diff --git third_party/libwebrtc/video/render/incoming_video_stream_gn/moz.build third_party/libwebrtc/video/render/incoming_video_stream_gn/moz.build
-index 1dca41a24e5a..42958c3afcef 100644
+index f450adac03fd..42958c3afcef 100644
 --- third_party/libwebrtc/video/render/incoming_video_stream_gn/moz.build
 +++ third_party/libwebrtc/video/render/incoming_video_stream_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -94199,7 +94889,7 @@ index 1dca41a24e5a..42958c3afcef 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -94286,6 +94976,9 @@ index 1dca41a24e5a..42958c3afcef 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -94391,7 +95084,7 @@ index 1dca41a24e5a..42958c3afcef 100644
  
  Library("incoming_video_stream_gn")
 diff --git third_party/libwebrtc/video/render/video_render_frames_gn/moz.build third_party/libwebrtc/video/render/video_render_frames_gn/moz.build
-index df90ccd36237..a3b28f438f5d 100644
+index 0b715f217776..a3b28f438f5d 100644
 --- third_party/libwebrtc/video/render/video_render_frames_gn/moz.build
 +++ third_party/libwebrtc/video/render/video_render_frames_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -94415,7 +95108,7 @@ index df90ccd36237..a3b28f438f5d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,184 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -94502,6 +95195,9 @@ index df90ccd36237..a3b28f438f5d 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -95933,7 +96629,7 @@ index 7d5d6179e612..004e04207c71 100644
  
  Library("video_stream_encoder_impl_gn")
 diff --git third_party/libwebrtc/video/video_stream_encoder_interface_gn/moz.build third_party/libwebrtc/video/video_stream_encoder_interface_gn/moz.build
-index 9fd417f96be9..d51109a08c5f 100644
+index 28d66f99d8dc..d51109a08c5f 100644
 --- third_party/libwebrtc/video/video_stream_encoder_interface_gn/moz.build
 +++ third_party/libwebrtc/video/video_stream_encoder_interface_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -95957,7 +96653,7 @@ index 9fd417f96be9..d51109a08c5f 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,112 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,115 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -96044,6 +96740,9 @@ index 9fd417f96be9..d51109a08c5f 100644
 -    DEFINES["__STD_C"] = True
 -
 -    OS_LIBS += [
+-        "crypt32",
+-        "iphlpapi",
+-        "secur32",
 -        "winmm"
 -    ]
 +    DEFINES["_DEBUG"] = True
@@ -96071,7 +96770,7 @@ index 9fd417f96be9..d51109a08c5f 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
-@@ -154,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+@@ -157,57 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
@@ -96131,7 +96830,7 @@ index 9fd417f96be9..d51109a08c5f 100644
 -
  Library("video_stream_encoder_interface_gn")
 diff --git third_party/libwebrtc/webrtc_gn/moz.build third_party/libwebrtc/webrtc_gn/moz.build
-index 7e3ac4033b69..495fb5b35f3d 100644
+index 3fd9c5c15eca..305f7edc0d03 100644
 --- third_party/libwebrtc/webrtc_gn/moz.build
 +++ third_party/libwebrtc/webrtc_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -96155,7 +96854,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,141 +48,23 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,140 +48,23 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -96231,8 +96930,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -if CONFIG["OS_TARGET"] == "WINNT":
@@ -96302,7 +97000,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
      LOCAL_INCLUDES += [
          "/third_party/pipewire/"
-@@ -182,7 +73,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -181,7 +73,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
  if CONFIG["CPU_ARCH"] == "mips64":
  
      DEFINES["WEBRTC_USE_PIPEWIRE"] = True
@@ -96310,7 +97008,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
      LOCAL_INCLUDES += [
          "/third_party/pipewire/"
-@@ -191,32 +81,22 @@ if CONFIG["CPU_ARCH"] == "mips64":
+@@ -190,32 +81,22 @@ if CONFIG["CPU_ARCH"] == "mips64":
  if CONFIG["CPU_ARCH"] == "x86":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
@@ -96353,8 +97051,8 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
      DEFINES["USE_X11"] = "1"
  
-@@ -231,53 +111,4 @@ if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
-         "Xtst"
+@@ -229,53 +110,4 @@ if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+         "Xrender"
      ]
  
 -if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":

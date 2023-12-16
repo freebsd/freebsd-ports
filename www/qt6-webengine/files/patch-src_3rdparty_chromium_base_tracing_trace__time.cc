@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/tracing/trace_time.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/tracing/trace_time.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/base/tracing/trace_time.cc
 @@ -8,13 +8,17 @@
  #include "build/build_config.h"

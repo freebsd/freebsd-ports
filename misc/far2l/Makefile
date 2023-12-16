@@ -1,5 +1,5 @@
 PORTNAME=	far2l
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc
 
@@ -9,8 +9,7 @@ WWW=		https://github.com/elfmz/far2l
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfmt.so:devel/libfmt \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuchardet.so:textproc/uchardet \
 		libxerces-c.so:textproc/xerces-c3
 RUN_DEPENDS=	bash:shells/bash
@@ -21,6 +20,8 @@ GH_ACCOUNT=	elfmz
 USES=		cmake compiler:c++11-lang perl5 pkgconfig shebangfix ssl
 USE_PERL5=	build
 SHEBANG_FILES=	far2l/bootstrap/view.sh
+
+CMAKE_OFF=	UNRAR	# libarchive handles *.rar files just fine
 
 OPTIONS_DEFINE=	NFS SFTP SMB WEBDAV WXGTK X11
 OPTIONS_DEFAULT=	NFS SFTP WEBDAV WXGTK X11
@@ -46,9 +47,17 @@ X11_USES=	xorg
 X11_USE=	XORG=ice,sm,x11,xext,xi
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,Linux x86_64,${OPSYS} ${ARCH},' \
-		${WRKSRC}/far2l/bootstrap/scripts/far2l_m4.pl
+	@${REINPLACE_CMD} -e \
+		's,pkg_search_module\((LibArchive\)[^)]*,find_package\1,' \
+			${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's,^if (fmt_FOUND,& AND FALSE,' \
+		${WRKSRC}/colorer/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's,bxg7,&l, ; s/zoo/tbz2,*.zst,*.&/' \
+		${WRKSRC}/far2l/src/hilight.cpp
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
+
+post-stage:
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/far2l/Plugins/NetRocks/plug/SHELL
 
 .include <bsd.port.mk>

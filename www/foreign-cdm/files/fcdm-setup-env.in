@@ -1,2 +1,2 @@
 export FCDM_CDM_SO_PATH=%%PREFIX%%/lib/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
-export FCDM_WORKER_PATH=%%PREFIX%%/libexec/fcdm-worker
+export FCDM_BINDIR_PATH=%%PREFIX%%/libexec

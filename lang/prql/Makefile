@@ -1,5 +1,6 @@
 PORTNAME=	prql
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -82,14 +83,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ciborium-ll-0.2.1 \
 		clang-sys-1.6.1 \
 		clap-2.34.0 \
-		clap-4.4.6 \
-		clap_builder-4.4.6 \
-		clap_complete-4.4.1 \
+		clap-4.4.8 \
+		clap_builder-4.4.8 \
+		clap_complete-4.4.4 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.3.0 \
 		clap_complete_nushell-0.1.11 \
-		clap_derive-4.4.2 \
-		clap_lex-0.5.0 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
 		clio-0.3.3 \
 		cmake-0.1.50 \
 		color-eyre-0.6.2 \
@@ -137,7 +138,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		enum-as-inner-0.6.0 \
 		enumflags2-0.7.7 \
 		enumflags2_derive-0.7.7 \
-		env_logger-0.10.0 \
+		env_logger-0.10.1 \
 		equivalent-1.0.1 \
 		errno-0.3.3 \
 		errno-dragonfly-0.1.2 \
@@ -168,7 +169,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		futures-task-0.3.28 \
 		futures-util-0.3.28 \
 		generic-array-0.14.7 \
-		getopts-0.2.21 \
 		getrandom-0.1.16 \
 		getrandom-0.2.9 \
 		gimli-0.27.2 \
@@ -207,7 +207,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.26 \
-		js-sys-0.3.64 \
+		js-sys-0.3.65 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
@@ -219,7 +219,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.149 \
+		libc-0.2.150 \
 		libduckdb-sys-0.9.1 \
 		libloading-0.7.4 \
 		libm-0.2.7 \
@@ -241,7 +241,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.8 \
+		mio-0.8.9 \
 		mysql-24.0.0 \
 		mysql-common-derive-0.30.2 \
 		mysql_common-0.30.4 \
@@ -348,10 +348,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		security-framework-2.9.1 \
 		security-framework-sys-2.9.0 \
 		semver-1.0.20 \
-		serde-1.0.189 \
-		serde_derive-1.0.189 \
-		serde_json-1.0.107 \
-		serde_yaml-0.9.25 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
+		serde_json-1.0.108 \
+		serde_yaml-0.9.27 \
 		sha1-0.10.5 \
 		sha2-0.10.7 \
 		sharded-slab-0.1.4 \
@@ -363,7 +363,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
 		smallvec-1.10.0 \
-		socket2-0.5.3 \
+		socket2-0.5.5 \
 		sqlformat-0.2.2 \
 		sqlparser-0.38.0 \
 		stacker-0.1.15 \
@@ -396,10 +396,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.33.0 \
-		tokio-macros-2.1.0 \
+		tokio-1.34.0 \
+		tokio-macros-2.2.0 \
 		tokio-postgres-0.7.10 \
-		tokio-util-0.7.9 \
+		tokio-util-0.7.10 \
 		toml-0.5.11 \
 		toml_datetime-0.6.2 \
 		toml_edit-0.19.10 \
@@ -432,14 +432,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		walkdir-2.4.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.87 \
-		wasm-bindgen-backend-0.2.87 \
-		wasm-bindgen-futures-0.4.37 \
-		wasm-bindgen-macro-0.2.87 \
-		wasm-bindgen-macro-support-0.2.87 \
-		wasm-bindgen-shared-0.2.87 \
-		wasm-bindgen-test-0.3.37 \
-		wasm-bindgen-test-macro-0.3.37 \
+		wasm-bindgen-0.2.88 \
+		wasm-bindgen-backend-0.2.88 \
+		wasm-bindgen-futures-0.4.38 \
+		wasm-bindgen-macro-0.2.88 \
+		wasm-bindgen-macro-support-0.2.88 \
+		wasm-bindgen-shared-0.2.88 \
+		wasm-bindgen-test-0.3.38 \
+		wasm-bindgen-test-macro-0.3.38 \
 		web-sys-0.3.60 \
 		whoami-1.4.1 \
 		winapi-0.3.9 \

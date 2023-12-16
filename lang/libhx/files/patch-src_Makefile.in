@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2023-11-30 23:09:01 UTC
++++ src/Makefile.in
+@@ -90,7 +90,7 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@WITH_GNU_LD_TRUE@am__append_1 = -Wl,--version-script=${srcdir}/libHX.map
++@WITH_GNU_LD_TRUE@am__append_1 = -Wl,--version-script=${srcdir}/libHX.map -Wl,--undefined-version
+ @MINGW32_TRUE@am__append_2 = ux-file.c ux-mmap.c
+ @MINGW32_TRUE@am__append_3 = -lws2_32
+ check_PROGRAMS = tc-compile$(EXEEXT) tc-cast$(EXEEXT) \

@@ -1,6 +1,6 @@
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
-PORTVERSION=	9.1.0
+PORTVERSION=	10.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -13,7 +13,7 @@ WWW=		https://fmt.dev/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		cmake:testing compiler:c++11-lang cpe zip
+USES=		cmake:testing compiler:c++11-lang cpe pathfix zip
 
 CMAKE_OFF=	FMT_CUDA_TEST FMT_DOC FMT_FUZZ FMT_MODULE FMT_PEDANTIC FMT_SYSTEM_HEADERS FMT_TEST FMT_WERROR
 CMAKE_ON=	BUILD_SHARED_LIBS FMT_OS

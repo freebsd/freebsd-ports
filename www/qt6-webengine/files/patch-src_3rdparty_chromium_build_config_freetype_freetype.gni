@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/build/config/freetype/freetype.gni.orig	2023-08-23 22:56:29 UTC
++++ src/3rdparty/chromium/build/config/freetype/freetype.gni
+@@ -10,7 +10,5 @@ declare_args() {
+   # than version 2.7.1 and have color bitmap support compiled in. WARNING:
+   # System FreeType configurations other than as described WILL INTRODUCE TEXT
+   # RENDERING AND SECURITY REGRESSIONS.
+-  use_system_freetype = false
+-  use_qt_freetype = false
+-  qt_freetype_config = ""
++  use_system_freetype = true
+ }

@@ -1,6 +1,6 @@
 PORTNAME=	walk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -15,7 +15,8 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	antonmedv
 
-GH_TUPLE=	aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
+GH_TUPLE=	antonmedv:clipboard:v1.0.1:antonmedv_clipboard/vendor/github.com/antonmedv/clipboard \
+		aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
 		charmbracelet:bubbles:v0.16.1:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
 		charmbracelet:bubbletea:v0.24.2:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:lipgloss:v0.8.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
@@ -39,5 +40,16 @@ GH_TUPLE=	aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.co
 CONFLICTS_INSTALL=	4ti2
 
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_RADIO=			CLIPBOARD
+OPTIONS_RADIO_CLIPBOARD=	WL_COPY XCLIP XSEL
+
+WL_COPY_DESC=	Use wl-copy
+XCLIP_DESC=	Use xclip
+XSEL_DESC=	Use xsel-conrad
+
+WL_COPY_RUN_DEPENDS=	wl-clipboard>0:x11/wl-clipboard
+XCLIP_RUN_DEPENDS=	xclip>0:x11/xclip
+XSEL_RUN_DEPENDS=	xsel-conrad>0:x11/xsel-conrad
 
 .include <bsd.port.mk>

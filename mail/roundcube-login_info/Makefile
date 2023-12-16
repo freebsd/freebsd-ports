@@ -4,7 +4,7 @@ CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Roundcube login info plugin
 WWW=		https://github.com/marneu/login_info/README.md
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	83
 
 WWWDIR=		${LOCALBASE}/www/roundcube
 NO_ARCH=	yes

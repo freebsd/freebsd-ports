@@ -30,6 +30,7 @@
 %%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/qvirtualkeyboardabstractinputmethod_p.h
 %%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/qvirtualkeyboardfeatures_namespace_p.h
 %%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/qvirtualkeyboardinputcontext_p.h
+%%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/qvirtualkeyboardnamespace_p.h
 %%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/settings_p.h
 %%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/shadowinputcontext_p.h
 %%QT_INCDIR%%/QtVirtualKeyboard/%%FULLVER%%/QtVirtualKeyboard/private/shifthandler_p.h
@@ -57,7 +58,6 @@
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboarddictionarymanager.h
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardinputcontext.h
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardinputengine.h
-%%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardnamespace.h
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardobserver.h
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardtrace.h

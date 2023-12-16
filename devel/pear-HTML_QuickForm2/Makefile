@@ -1,5 +1,5 @@
 PORTNAME=	HTML_QuickForm2
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

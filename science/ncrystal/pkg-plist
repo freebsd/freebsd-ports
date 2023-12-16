@@ -6,7 +6,6 @@ bin/ncrystal_inspectfile
 bin/ncrystal_ncmat2cpp
 bin/ncrystal_ncmat2hkl
 bin/ncrystal_onlinedb2ncmat
-bin/ncrystal_preparemcstasdir
 bin/ncrystal_vdos2ncmat
 bin/ncrystal_verifyatompos
 bin/nctool
@@ -112,6 +111,8 @@ lib/cmake/NCrystal/NCrystalConfigVersion.cmake
 lib/cmake/NCrystal/NCrystalTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/NCrystal/NCrystalTargets.cmake
 lib/libNCrystal.so
+lib/libNCrystal.so.3
+lib/libNCrystal.so.3.8.0
 share/NCrystal/data/AcrylicGlass_C5O2H8.ncmat
 share/NCrystal/data/AgBr_sg225_SilverBromide.ncmat
 share/NCrystal/data/Ag_sg225.ncmat
@@ -244,7 +245,6 @@ share/NCrystal/data/ZrO2_sg137_Zirconia.ncmat
 share/NCrystal/data/ZrO2_sg14_Zirconia.ncmat
 share/NCrystal/data/Zr_sg194.ncmat
 share/NCrystal/data/void.ncmat
-share/NCrystal/mcstas/NCrystal_sample.comp
 share/NCrystal/python/NCrystal/__init__.py
 share/NCrystal/python/NCrystal/_chooks.py
 share/NCrystal/python/NCrystal/_common.py

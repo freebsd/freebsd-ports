@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_openbsd.cc
 @@ -11,6 +11,7 @@
  #include <sys/sysctl.h>
@@ -8,7 +8,7 @@
  
  namespace {
  
-@@ -26,9 +27,15 @@ namespace base {
+@@ -26,9 +27,15 @@ uint64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
@@ -25,7 +25,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -40,10 +47,26 @@ uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
+@@ -40,10 +47,26 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {

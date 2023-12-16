@@ -1,0 +1,11 @@
+--- src/core/SkRasterPipeline.h.orig	2023-11-21 02:40:26.293131000 +0000
++++ src/core/SkRasterPipeline.h	2023-11-21 02:40:36.868877000 +0000
+@@ -24,7 +24,7 @@
+ struct SkImageInfo;
+ struct skcms_TransferFunction;
+ 
+-#if __has_cpp_attribute(clang::musttail) && !defined(__EMSCRIPTEN__) && !defined(SK_CPU_ARM32)
++#if __has_cpp_attribute(clang::musttail) && !defined(__EMSCRIPTEN__) && !defined(SK_CPU_ARM32) && !defined(__powerpc__)
+     #define SK_HAS_MUSTTAIL 1
+ #else
+     #define SK_HAS_MUSTTAIL 0

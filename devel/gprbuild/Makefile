@@ -1,7 +1,6 @@
 PORTNAME=	gprbuild
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.0	# Upgrade with devel/libgpr
-PORTREVISION=	1
+DISTVERSION=	24.0.0	# Upgrade with devel/libgpr + textproc/xmlada
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -31,10 +30,12 @@ CONFIGURE_TARGET=	${GARCH}-portbld-${PLATFORM}
 MAKE_ENV+=	GPR_PROJECT_PATH=${WRKSRC}/bootstrap/share/gpr
 ALL_TARGET=	all	# libgpr.build.static
 INSTALL_TARGET=	install	# libgpr.install
-P2STRIP=	libexec/gprbuild/gprbind bin/gprname bin/gprslave bin/gprbuild	\
-		bin/gprconfig bin/gprls bin/gprinstall bin/gprclean
+P2STRIP=	libexec/gprbuild/gprbind libexec/gprbuild/gprlib bin/gprname	\
+		bin/gprslave bin/gprbuild bin/gprconfig bin/gprls bin/gprinstall\
+		bin/gprclean
 
 GCC_VER=	12
+PLIST_SUB=	GCC_VER=${GCC_VER}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCSDIR=	${PREFIX}/gnat${GCC_VER}/share/doc/${PORTNAME}

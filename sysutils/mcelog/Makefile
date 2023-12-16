@@ -3,7 +3,7 @@ PORTVERSION=	178
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collects and decodes Machine Check Exception data
 WWW=		http://mcelog.org/
 

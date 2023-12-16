@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/rtc_base/network.h.orig	2021-01-28 23:16:17 UTC
-+++ ../../src/webrtc/src/rtc_base/network.h
+--- src/webrtc/src/rtc_base/network.h.orig	2021-01-28 23:16:17 UTC
++++ src/webrtc/src/rtc_base/network.h
 @@ -26,6 +26,10 @@
  #include "rtc_base/system/rtc_export.h"
  #include "rtc_base/third_party/sigslot/sigslot.h"

@@ -1,0 +1,13 @@
+include/QAccessibilityClient6/qaccessibilityclient/accessibleobject.h
+include/QAccessibilityClient6/qaccessibilityclient/libqaccessibilityclient-version.h
+include/QAccessibilityClient6/qaccessibilityclient/qaccessibilityclient_export.h
+include/QAccessibilityClient6/qaccessibilityclient/registry.h
+include/QAccessibilityClient6/qaccessibilityclient/registrycache_p.h
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6Config.cmake
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6ConfigVersion.cmake
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6Targets.cmake
+lib/libqaccessibilityclient-qt6.so
+lib/libqaccessibilityclient-qt6.so.0
+lib/libqaccessibilityclient-qt6.so.0.6.0
+share/qlogging-categories6/libqaccessibilityclient.categories

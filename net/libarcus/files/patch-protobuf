@@ -1,0 +1,11 @@
+--- examples/CMakeLists.txt.orig	2021-11-26 15:37:16 UTC
++++ examples/CMakeLists.txt
+@@ -12,7 +12,7 @@ add_executable(example ${example_SRCS} ${example_PB_SR
+ target_link_libraries(example Arcus)
+ if(NOT WIN32 OR CMAKE_COMPILER_IS_GNUCXX)
+     target_link_libraries(example pthread)
+-    set_target_properties(example PROPERTIES COMPILE_FLAGS "-std=c++11")
++    set_target_properties(example PROPERTIES COMPILE_FLAGS "-std=c++17")
+ endif()
+ 
+ add_custom_command(

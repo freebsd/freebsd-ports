@@ -1,9 +1,9 @@
 PORTNAME=	s2
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Spherical Geometry Operators Using the S2 Geometry Library
 WWW=		https://cran.r-project.org/web/packages/s2/
 

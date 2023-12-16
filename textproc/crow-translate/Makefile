@@ -1,5 +1,6 @@
 PORTNAME=	crow-translate
 PORTVERSION=	2.11.0
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -26,5 +27,9 @@ USE_KDE=	wayland
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
 		x11extras buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xext
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/src/settings/autostartmanager/unixautostartmanager.cpp
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ WWW=		https://sgsaenger.github.io/vipster/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build with libfmt 10+. See https://github.com/sgsaenger/vipster/issues/56
+
 BUILD_DEPENDS=	catch>0:devel/catch \
 		cli11>0:devel/cli11 \
 		libfmt>0:devel/libfmt \

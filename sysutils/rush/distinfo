@@ -1,5 +1,5 @@
-TIMESTAMP = 1693107963
-SHA256 (go/sysutils_rush/rush-v0.5.3/v0.5.3.mod) = 0c01b5d3c51d6f5a691c132eff7ea7fa45bfd9e97ba4e093845368b6da9350c0
-SIZE (go/sysutils_rush/rush-v0.5.3/v0.5.3.mod) = 1622
-SHA256 (go/sysutils_rush/rush-v0.5.3/v0.5.3.zip) = c1ccedcba62a9091d9c2be69f415c1461b2325b0b4f3948c97f006ce7570252e
-SIZE (go/sysutils_rush/rush-v0.5.3/v0.5.3.zip) = 61237
+TIMESTAMP = 1699937816
+SHA256 (go/sysutils_rush/rush-v0.5.4/v0.5.4.mod) = bfef228e58773ecf6c6b7f36553fb974031f39b5a67bf4b320c26949fa797a0e
+SIZE (go/sysutils_rush/rush-v0.5.4/v0.5.4.mod) = 1622
+SHA256 (go/sysutils_rush/rush-v0.5.4/v0.5.4.zip) = fa08db89ca4f57b218861f2900189080094436b1fd7926e0edec33027690842b
+SIZE (go/sysutils_rush/rush-v0.5.4/v0.5.4.zip) = 61251

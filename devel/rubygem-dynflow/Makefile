@@ -1,11 +1,12 @@
 PORTNAME=	dynflow
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby workflow/orchestration engine
-WWW=		https://github.com/Dynflow/dynflow
+WWW=		https://dynflow.github.io/ \
+		https://github.com/Dynflow/dynflow
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

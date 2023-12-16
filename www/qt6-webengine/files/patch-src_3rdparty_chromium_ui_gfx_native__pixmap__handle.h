@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.h.orig	2023-01-11 09:17:16 UTC
 +++ src/3rdparty/chromium/ui/gfx/native_pixmap_handle.h
-@@ -16,7 +16,7 @@
+@@ -14,7 +14,7 @@
  #include "ui/gfx/buffer_types.h"
  #include "ui/gfx/gfx_export.h"
  
@@ -9,7 +9,7 @@
  #include "base/files/scoped_file.h"
  #endif
  
-@@ -35,7 +35,7 @@ struct GFX_EXPORT NativePixmapPlane {
+@@ -34,7 +34,7 @@ struct GFX_EXPORT NativePixmapPlane {
    NativePixmapPlane(int stride,
                      int offset,
                      uint64_t size
@@ -18,7 +18,7 @@
                      ,
                      base::ScopedFD fd
  #elif BUILDFLAG(IS_FUCHSIA)
-@@ -56,7 +56,7 @@ struct GFX_EXPORT NativePixmapPlane {
+@@ -55,7 +55,7 @@ struct GFX_EXPORT NativePixmapPlane {
    // This is necessary to map the buffers.
    uint64_t size;
  
@@ -27,7 +27,7 @@
    // File descriptor for the underlying memory object (usually dmabuf).
    base::ScopedFD fd;
  #elif BUILDFLAG(IS_FUCHSIA)
-@@ -85,7 +85,7 @@ struct GFX_EXPORT NativePixmapHandle {
+@@ -78,7 +78,7 @@ struct GFX_EXPORT NativePixmapHandle {
  
    std::vector<NativePixmapPlane> planes;
  

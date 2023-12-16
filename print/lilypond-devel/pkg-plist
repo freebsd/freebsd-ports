@@ -211,6 +211,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/ps/encodingdefs.ps
 %%DATADIR%%/%%DISTVERSION%%/ps/lilyponddefs.ps
 %%DATADIR%%/%%DISTVERSION%%/ps/music-drawing-routines.ps
+%%DATADIR%%/%%DISTVERSION%%/ps/nocache.ps
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_base.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_docbook.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_html.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -263,6 +264,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/define-music-properties.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/define-music-types.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/define-note-names.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/define-paper-variables.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/define-stencil-commands.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/define-woodwind-diagrams.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/display-lily.scm
@@ -276,6 +278,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-music.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-outside-staff-priorities.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-paper-sizes.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/document-paper-variables.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-translation.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-type-predicates.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/documentation-generate.scm

@@ -1,4 +1,4 @@
---- remoting/host/me2me_desktop_environment.cc.orig	2023-03-09 06:31:50 UTC
+--- remoting/host/me2me_desktop_environment.cc.orig	2023-12-10 06:10:27 UTC
 +++ remoting/host/me2me_desktop_environment.cc
 @@ -125,7 +125,7 @@ std::string Me2MeDesktopEnvironment::GetCapabilities()
      capabilities += protocol::kRemoteWebAuthnCapability;
@@ -9,7 +9,7 @@
    if (!IsRunningWayland()) {
      capabilities += " ";
      capabilities += protocol::kMultiStreamCapability;
-@@ -164,7 +164,7 @@ Me2MeDesktopEnvironment::Me2MeDesktopEnvironment(
+@@ -171,7 +171,7 @@ Me2MeDesktopEnvironment::Me2MeDesktopEnvironment(
    // properly under Xvfb.
    mutable_desktop_capture_options()->set_use_update_notifications(true);
  
@@ -18,7 +18,7 @@
    // Setting this option to false means that the capture differ wrapper will not
    // be used when the X11 capturer is selected. This reduces the X11 capture
    // time by a few milliseconds per frame and is safe because we can rely on
-@@ -173,7 +173,7 @@ Me2MeDesktopEnvironment::Me2MeDesktopEnvironment(
+@@ -180,7 +180,7 @@ Me2MeDesktopEnvironment::Me2MeDesktopEnvironment(
    mutable_desktop_capture_options()->set_detect_updated_region(false);
  #endif
  
@@ -27,7 +27,7 @@
    if (IsRunningWayland()) {
      mutable_desktop_capture_options()->set_prefer_cursor_embedded(false);
    }
-@@ -198,7 +198,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
+@@ -205,7 +205,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
  
    // Otherwise, if the session is shared with the local user start monitoring
    // the local input and create the in-session UI.

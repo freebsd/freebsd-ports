@@ -1,5 +1,0 @@
-TIMESTAMP = 1661530586
-SHA256 (gnome/iagno-3.38.1.tar.xz) = 84b9f32ce0389758a21d63c7eb1c227db7116b51d3149aa0eae3509168e0ed24
-SIZE (gnome/iagno-3.38.1.tar.xz) = 766188
-SHA256 (gnome/e8a0aeec350ea80349582142c0e8e3cd3f1bce38.diff) = 441b7074bbd34b7a7f1d376b9d7c194100e7405fa53b5ef1e80f1130d52eb40b
-SIZE (gnome/e8a0aeec350ea80349582142c0e8e3cd3f1bce38.diff) = 10095

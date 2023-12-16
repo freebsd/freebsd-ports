@@ -1,6 +1,6 @@
 PORTNAME=	vacuum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.13
+DISTVERSION=	0.6.1
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	-lint-tool
 
@@ -11,7 +11,7 @@ WWW=		https://quobix.com/vacuum/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 GO_MODULE=	github.com/daveshanley/vacuum
 

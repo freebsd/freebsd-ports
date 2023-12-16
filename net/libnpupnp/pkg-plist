@@ -7,6 +7,6 @@ include/npupnp/upnpdebug.h
 include/npupnp/upnpdescription.h
 include/npupnp/upnptools.h
 lib/libnpupnp.so
-lib/libnpupnp.so.9
-lib/libnpupnp.so.9.1.0
+lib/libnpupnp.so.12
+lib/libnpupnp.so.12.0.0
 libdata/pkgconfig/libnpupnp.pc

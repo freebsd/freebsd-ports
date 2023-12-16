@@ -1,6 +1,6 @@
---- net/third_party/quiche/BUILD.gn.orig	2022-12-06 08:09:13 UTC
+--- net/third_party/quiche/BUILD.gn.orig	2023-11-22 14:00:11 UTC
 +++ net/third_party/quiche/BUILD.gn
-@@ -28,7 +28,7 @@ import("//build/config/chromeos/ui_mode.gni")
+@@ -29,7 +29,7 @@ import("//net/third_party/quiche/src/build/source_list
  import("//testing/libfuzzer/fuzzer_test.gni")
  import("//third_party/protobuf/proto_library.gni")
  

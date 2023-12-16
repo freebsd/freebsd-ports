@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/audio/alsa/audio_manager_alsa.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/media/audio/alsa/audio_manager_alsa.cc.orig	2022-04-21 18:48:31 UTC
 +++ src/3rdparty/chromium/media/audio/alsa/audio_manager_alsa.cc
 @@ -88,7 +88,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
    int card = -1;

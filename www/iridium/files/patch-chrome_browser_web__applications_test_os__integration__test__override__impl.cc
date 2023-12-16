@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
 @@ -127,7 +127,7 @@ std::vector<std::wstring> GetFileExtensionsForProgId(
  }
@@ -8,7 +8,7 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // Performs a blocking read of app icons from the disk.
  SkColor IconManagerReadIconTopLeftColorForSize(WebAppIconManager& icon_manager,
-                                                const AppId& app_id,
+                                                const webapps::AppId& app_id,
 @@ -224,7 +224,7 @@ bool OsIntegrationTestOverrideImpl::SimulateDeleteShor
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    CHECK(base::PathExists(app_folder_shortcut_path));
@@ -29,7 +29,7 @@
      return desktop_.Delete();
 @@ -278,7 +278,7 @@ bool OsIntegrationTestOverrideImpl::IsRunOnOsLoginEnab
      Profile* profile,
-     const AppId& app_id,
+     const webapps::AppId& app_id,
      const std::string& app_name) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

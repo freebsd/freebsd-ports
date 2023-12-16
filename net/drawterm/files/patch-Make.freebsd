@@ -1,0 +1,22 @@
+--- Make.freebsd.orig	2023-11-18 06:48:07 UTC
++++ Make.freebsd
+@@ -1,16 +1,12 @@
+ # OpenBSD
+ PTHREAD=-pthread
+-AR=ar
+-AS=as
+ RANLIB=ranlib
+-X11=/usr/local
+-CC=clang
+-CFLAGS=-Wall -Wno-missing-braces -ggdb -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) -O2
++CFLAGS+=-Wall -Wno-missing-braces -ggdb -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) -O2
+ O=o
+ OS=posix
+ GUI=x11
+-LDADD=-L$(X11)/lib64 -L$(X11)/lib -lX11 -ggdb
+-LDFLAGS=$(PTHREAD)
++LDADD=-lX11 -ggdb
++LDFLAGS+=$(PTHREAD)
+ TARG=drawterm
+ AUDIO=unix
+ 

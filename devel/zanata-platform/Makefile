@@ -12,6 +12,9 @@ MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Web-based translation platform
 WWW=		http://zanata.org/
 
+DEPRECATED=	Depends on expired java/wildfly10, last release from 2018
+EXPIRATION_DATE=2023-12-31
+
 LICENSE=	GPLv2 LGPL21+
 LICENSE_COMB=	multi
 

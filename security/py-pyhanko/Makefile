@@ -1,6 +1,5 @@
 PORTNAME=	pyhanko
-PORTVERSION=	0.20.1
-PORTREVISION=	1
+PORTVERSION=	0.21.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click>=7.1.2:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.24<0.26:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qrcode>=6.1:textproc/py-qrcode@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.24.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8.1.3:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.26.2<0.27:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=6.0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.31.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=4.2:devel/py-tzlocal@${PY_FLAVOR}
 
 USES=		python
@@ -29,12 +28,16 @@ USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	IMAGE_SUPPORT OPENTYPE PKGCS11 XMP
+OPTIONS_DEFINE=	ASYNC_HTTP ETSI IMAGE_SUPPORT OPENTYPE PKGCS11 XMP
+ASYNC_HTTP_DESC=Asynchronous support
+ETSI_DESC=	European Telecommunications Standards Institute (ETSI)
 IMAGE_SUPPORT_DESC=	Image handling support
 OPENTYPE_DESC=	OpenType/TrueType support
 PKGCS11_DESC=	PKGCS\#11 support
 XMP_DESC=	XMP (Extensible Metadata Platform) support
 
+ASYNC_HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.0<3.10:www/py-aiohttp@${PY_FLAVOR}
+ETSI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xsdata>=23.8<4:devel/py-xsdata@${PY_FLAVOR}
 IMAGE_SUPPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=7.2.0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-barcode>=0.15.1<0.15.1_99:graphics/py-python-barcode@${PY_FLAVOR}
 OPENTYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.33.3:print/py-fonttools@${PY_FLAVOR} \

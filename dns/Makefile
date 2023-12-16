@@ -86,6 +86,7 @@
     SUBDIR += ipcheck
     SUBDIR += kadnode
     SUBDIR += kf5-kdnssd
+    SUBDIR += kf6-kdnssd
     SUBDIR += knock
     SUBDIR += knot-resolver
     SUBDIR += knot3
@@ -200,6 +201,7 @@
     SUBDIR += py-pywdns
     SUBDIR += py-tld
     SUBDIR += py-tldextract
+    SUBDIR += q-dns
     SUBDIR += qmdnsengine
     SUBDIR += radns
     SUBDIR += rbldnsd

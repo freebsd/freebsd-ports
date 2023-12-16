@@ -1,6 +1,6 @@
 PORTNAME=	garage
 DISTVERSION=	0.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://git.deuxfleurs.fr/Deuxfleurs/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -23,6 +23,13 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	garage
 CARGO_VENDOR_DIR=	${WRKDIR}/cargo-crates
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH:Marmv?} || ${MACHINE_ARCH} == i386
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-extract:
 	${MV} -v ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
@@ -34,4 +41,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name *\.bak"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

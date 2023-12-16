@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/build_config.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/build_config.h.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/build_config.h
 @@ -27,6 +27,7 @@
  #if defined(__ANDROID__)

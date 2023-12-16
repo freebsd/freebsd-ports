@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/platform_window/platform_window_init_properties.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/platform_window/platform_window_init_properties.h.orig	2022-09-24 10:57:32 UTC
 +++ src/3rdparty/chromium/ui/platform_window/platform_window_init_properties.h
-@@ -56,7 +56,7 @@ class ScenicWindowDelegate;
+@@ -56,7 +56,7 @@ class WorkspaceExtensionDelegate;
  class ScenicWindowDelegate;
  #endif
  

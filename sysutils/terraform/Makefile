@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.6
+DISTVERSION=	1.6.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -12,7 +12,7 @@ LICENSE_NAME=	Business Source License 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror pkg-sell auto-accept
 
-USES=		cpe go:modules
+USES=		cpe go:1.21,modules
 CPE_VENDOR=	hashicorp
 GO_MODULE=	github.com/hashicorp/terraform
 

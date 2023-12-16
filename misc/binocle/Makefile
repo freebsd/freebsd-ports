@@ -1,7 +1,7 @@
 PORTNAME=	binocle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	6
+DISTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	misc wayland
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,206 +18,244 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
-CARGO_CRATES=	ab_glyph-0.2.20 \
+CARGO_CRATES=	ab_glyph-0.2.23 \
 		ab_glyph_rasterizer-0.1.8 \
-		ahash-0.7.6 \
-		aho-corasick-0.7.20 \
-		anyhow-1.0.70 \
-		arrayvec-0.7.2 \
-		ash-0.33.3+1.2.191 \
-		atomic_refcell-0.1.9 \
+		addr2line-0.21.0 \
+		adler-1.0.2 \
+		ahash-0.8.6 \
+		aho-corasick-1.1.2 \
+		allocator-api2-0.2.16 \
+		android-activity-0.4.3 \
+		android-properties-0.2.2 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.75 \
+		arrayref-0.3.7 \
+		arrayvec-0.7.4 \
+		ash-0.37.3+1.3.251 \
+		atomic_refcell-0.1.13 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
+		backtrace-0.3.69 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
+		bitflags-2.4.1 \
 		block-0.1.6 \
-		bumpalo-3.12.0 \
-		bytemuck-1.13.1 \
-		byteorder-1.4.3 \
-		calloop-0.9.3 \
-		cc-1.0.79 \
-		cfg-if-0.1.10 \
+		block-sys-0.1.0-beta.1 \
+		block2-0.2.0-alpha.6 \
+		bumpalo-3.14.0 \
+		bytemuck-1.14.0 \
+		bytemuck_derive-1.5.0 \
+		calloop-0.10.6 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		clap-3.2.23 \
-		clap_derive-3.2.18 \
+		clap-3.2.25 \
+		clap_derive-3.2.25 \
 		clap_lex-0.2.4 \
-		cocoa-0.24.1 \
-		cocoa-foundation-0.1.1 \
 		codespan-reporting-0.11.1 \
 		colorgrad-0.5.0 \
-		copyless-0.1.5 \
-		core-foundation-0.7.0 \
-		core-foundation-0.9.3 \
-		core-foundation-sys-0.7.0 \
-		core-foundation-sys-0.8.3 \
-		core-graphics-0.19.2 \
+		com-rs-0.2.1 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
 		core-graphics-0.22.3 \
-		core-graphics-types-0.1.1 \
-		core-video-sys-0.1.4 \
+		core-graphics-types-0.1.3 \
+		crc32fast-1.3.2 \
 		csscolorparser-0.5.0 \
-		cty-0.2.2 \
-		d3d12-0.4.1 \
-		darling-0.13.4 \
-		darling_core-0.13.4 \
-		darling_macro-0.13.4 \
+		d3d12-0.6.0 \
 		dispatch-0.2.0 \
-		dlib-0.5.0 \
+		dlib-0.5.2 \
 		downcast-rs-1.2.0 \
-		egui-0.15.0 \
-		egui_wgpu_backend-0.14.0 \
-		egui_winit_platform-0.12.0 \
-		emath-0.15.0 \
+		ecolor-0.22.0 \
+		egui-0.22.0 \
+		egui-wgpu-0.22.0 \
+		egui-winit-0.22.0 \
+		emath-0.22.0 \
 		env_logger-0.9.3 \
-		epaint-0.15.0 \
-		epi-0.15.0 \
-		fnv-1.0.7 \
+		epaint-0.22.0 \
+		equivalent-1.0.1 \
+		fdeflate-0.3.1 \
+		flate2-1.0.28 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		fxhash-0.2.1 \
 		getrandom-0.1.16 \
-		getrandom-0.2.8 \
-		glow-0.11.2 \
-		gpu-alloc-0.5.3 \
+		gimli-0.28.1 \
+		glow-0.12.3 \
+		gpu-alloc-0.5.4 \
 		gpu-alloc-types-0.2.0 \
-		gpu-descriptor-0.2.3 \
-		gpu-descriptor-types-0.1.1 \
+		gpu-allocator-0.22.0 \
+		gpu-descriptor-0.2.4 \
+		gpu-descriptor-types-0.1.2 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.3 \
+		hassle-rs-0.10.0 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hexf-parse-0.2.1 \
 		humansize-1.1.1 \
 		humantime-2.1.0 \
-		ident_case-1.0.1 \
 		indexmap-1.9.3 \
-		inplace_it-0.3.5 \
+		indexmap-2.1.0 \
 		instant-0.1.12 \
 		jni-sys-0.3.0 \
-		js-sys-0.3.61 \
+		jobserver-0.1.27 \
+		js-sys-0.3.66 \
 		khronos-egl-4.1.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.140 \
+		libc-0.2.150 \
 		libloading-0.7.4 \
-		lock_api-0.4.9 \
-		log-0.4.17 \
+		libloading-0.8.1 \
+		libredox-0.0.2 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
 		malloc_buf-0.0.6 \
-		memchr-2.5.0 \
-		memmap2-0.3.1 \
+		memchr-2.6.4 \
 		memmap2-0.5.10 \
 		memoffset-0.6.5 \
-		metal-0.23.1 \
+		metal-0.24.0 \
 		minimal-lexical-0.2.1 \
-		mio-0.8.6 \
-		naga-0.7.3 \
-		ndk-0.5.0 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.9 \
+		naga-0.12.3 \
+		ndk-0.7.0 \
 		ndk-context-0.1.1 \
-		ndk-glue-0.5.2 \
-		ndk-macro-0.3.0 \
-		ndk-sys-0.2.2 \
-		nix-0.22.3 \
+		ndk-sys-0.4.1+23.1.7779620 \
 		nix-0.24.3 \
+		nix-0.25.1 \
 		nohash-hasher-0.2.0 \
 		nom-7.1.3 \
-		num-traits-0.2.15 \
+		num-traits-0.2.17 \
 		num_enum-0.5.11 \
+		num_enum-0.6.1 \
 		num_enum_derive-0.5.11 \
+		num_enum_derive-0.6.1 \
 		objc-0.2.7 \
+		objc-sys-0.2.0-beta.2 \
+		objc2-0.3.0-beta.3.patch-leaks.3 \
+		objc2-encode-2.0.0-pre.2 \
 		objc_exception-0.1.2 \
-		once_cell-1.17.1 \
-		os_str_bytes-6.5.0 \
-		owned_ttf_parser-0.18.1 \
-		parking_lot-0.11.2 \
-		parking_lot_core-0.8.6 \
-		percent-encoding-2.2.0 \
+		object-0.32.1 \
+		once_cell-1.18.0 \
+		orbclient-0.3.47 \
+		os_str_bytes-6.6.1 \
+		owned_ttf_parser-0.20.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		percent-encoding-2.3.1 \
 		phf-0.8.0 \
 		phf_generator-0.8.0 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
-		pixels-0.7.0 \
-		pkg-config-0.3.26 \
-		pollster-0.2.5 \
+		pixels-0.13.0 \
+		pkg-config-0.3.27 \
+		png-0.17.10 \
+		pollster-0.3.0 \
 		ppv-lite86-0.2.17 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.55 \
-		profiling-1.0.7 \
-		quote-1.0.26 \
+		proc-macro2-1.0.70 \
+		profiling-1.0.11 \
+		quote-1.0.33 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
 		range-alloc-0.1.3 \
-		raw-window-handle-0.3.4 \
-		raw-window-handle-0.4.3 \
-		redox_syscall-0.2.16 \
-		regex-1.7.3 \
-		regex-syntax-0.6.29 \
-		renderdoc-sys-0.7.1 \
-		safe_arch-0.5.2 \
+		raw-window-handle-0.5.2 \
+		redox_syscall-0.3.5 \
+		redox_syscall-0.4.1 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
+		renderdoc-sys-1.0.0 \
+		rustc-demangle-0.1.23 \
+		rustc-hash-1.1.0 \
+		safe_arch-0.7.1 \
 		scoped-tls-1.0.1 \
-		scopeguard-1.1.0 \
-		siphasher-0.3.10 \
-		slotmap-1.0.6 \
-		smallvec-1.10.0 \
-		smithay-client-toolkit-0.15.4 \
+		scopeguard-1.2.0 \
+		sctk-adwaita-0.5.4 \
+		simd-adler32-0.3.7 \
+		siphasher-0.3.11 \
+		slotmap-1.0.7 \
+		smallvec-1.11.2 \
+		smithay-client-toolkit-0.16.1 \
 		spirv-0.2.0+1.5.4 \
+		static_assertions-1.1.0 \
+		strict-num-0.1.1 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.13 \
-		termcolor-1.2.0 \
+		syn-2.0.39 \
+		termcolor-1.4.0 \
 		textwrap-0.16.0 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
-		toml_datetime-0.6.1 \
-		toml_edit-0.19.8 \
-		ttf-parser-0.18.1 \
-		ultraviolet-0.8.1 \
-		unicode-ident-1.0.8 \
-		unicode-width-0.1.10 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
+		tiny-skia-0.8.4 \
+		tiny-skia-path-0.8.4 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.19.15 \
+		ttf-parser-0.20.0 \
+		type-map-0.5.0 \
+		ultraviolet-0.9.2 \
+		unicode-ident-1.0.12 \
+		unicode-width-0.1.11 \
+		unicode-xid-0.2.4 \
+		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.84 \
-		wasm-bindgen-backend-0.2.84 \
-		wasm-bindgen-futures-0.4.34 \
-		wasm-bindgen-macro-0.2.84 \
-		wasm-bindgen-macro-support-0.2.84 \
-		wasm-bindgen-shared-0.2.84 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-futures-0.4.39 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
 		wayland-client-0.29.5 \
 		wayland-commons-0.29.5 \
 		wayland-cursor-0.29.5 \
 		wayland-protocols-0.29.5 \
 		wayland-scanner-0.29.5 \
 		wayland-sys-0.29.5 \
-		web-sys-0.3.57 \
-		wgpu-0.11.1 \
-		wgpu-core-0.11.3 \
-		wgpu-hal-0.11.5 \
-		wgpu-types-0.11.0 \
-		wide-0.6.5 \
+		web-sys-0.3.66 \
+		wgpu-0.16.3 \
+		wgpu-core-0.16.1 \
+		wgpu-hal-0.16.2 \
+		wgpu-types-0.16.1 \
+		wide-0.7.13 \
+		widestring-1.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.44.0 \
 		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
+		windows-targets-0.48.5 \
 		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
-		winit-0.26.1 \
-		winit_input_helper-0.11.1 \
-		winnow-0.4.1 \
+		windows_x86_64_msvc-0.48.5 \
+		winit-0.28.7 \
+		winit_input_helper-0.14.1 \
+		winnow-0.5.19 \
 		x11-dl-2.21.0 \
 		xcursor-0.3.4 \
-		xml-rs-0.8.4
+		xml-rs-0.8.19 \
+		zerocopy-0.7.28 \
+		zerocopy-derive-0.7.28
 
 PLIST_FILES=	bin/${PORTNAME}
 

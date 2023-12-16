@@ -1,6 +1,6 @@
 PORTNAME=	redland
 PORTVERSION=	1.0.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
@@ -17,62 +17,38 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libraptor2.so:textproc/raptor2 \
 		librasqal.so:textproc/rasqal
 
-USE_PERL5=	build
 USES=		gmake libtool pathfix perl5 pkgconfig shebangfix
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 SHEBANG_FILES=	scripts/touch-mtime.pl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-threestore=no
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-threestore=no \
+		--with-virtuoso=no
 
-OPTIONS_DEFINE=	BDB THREADS
-OPTIONS_DEFAULT=	BDB
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
-BDB_USES=	bdb
-BDB_CONFIGURE_OFF=	--with-bdb=no
+OPTIONS_DEFINE=		THREADS
+OPTIONS_DEFAULT=	SQLITE
 
-THREADS_CONFIGURE_ENABLE=	threads
+OPTIONS_GROUP=		STORAGE
+OPTIONS_GROUP_STORAGE=	BDB MYSQL PGSQL SQLITE
 
-#		MYSQL "Use MySQL instead of BDB" off \
-#		PGSQL "Use PgSQL instead of BDB" off \
-#		SQLITE "Use SQLite instead of BDB" off \
-#		VIRTUOSO "Use Virtoso instead of BDB" off
+OPTIONS_SUB=	YES
 
-#.if defined(WITH_MYSQL)
-#USE_MYSQL=	yes
-#CONFIGURE_ARGS+=--with-mysql=yes
-#CPPFLAGS+=	-I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
-#LIBS+=		-L${LOCALBASE}/lib/mysql
-#PLIST_SUB+=	MYSQL=""
-#.else
-CONFIGURE_ARGS+=--with-mysql=no
-PLIST_SUB+=	MYSQL="@comment "
-#.endif
+BDB_USES=		bdb:5
+BDB_CONFIGURE_WITH=	bdb
 
-#.if defined(WITH_PGSQL)
-#USES+=		pgsql
-#CONFIGURE_ARGS+=--with-postgresql=yes
-#PLIST_SUB+=	PGSQL=""
-#.else
-CONFIGURE_ARGS+=--with-postgresql=no
-PLIST_SUB+=	PGSQL="@comment "
-#.endif
+MYSQL_LIB_DEPENDS=	libunwind.so:devel/libunwind
+MYSQL_USES=		mysql ssl
+MYSQL_CONFIGURE_WITH=	mysql
 
-#.if defined(WITH_SQLITE)
-#USES+=		sqlite:3
-#CONFIGURE_ARGS+=--with-sqlite=3
-#PLIST_SUB+=	SQLITE=""
-#.else
-CONFIGURE_ARGS+=--with-sqlite=no
-PLIST_SUB+=	SQLITE="@comment "
-#.endif
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_WITH=	postgresql
 
-#.if defined(WITH_VIRTUOSO)
-#CONFIGURE_ARGS+=--with-virtuoso=yes
-#LIB_DEPENDS+=	iodbc.3:databases/libiodbc
-#PLIST_SUB+=	VIRTUOSO=""
-#.else
-CONFIGURE_ARGS+=--with-virtuoso=no
-PLIST_SUB+=	VIRTUOSO="@comment "
-#.endif
+SQLITE_USES=		sqlite:3
+SQLITE_CONFIGURE_WITH=	sqlite
+
+THREADS_CONFIGURE_WITH=	threads
 
 .include <bsd.port.mk>

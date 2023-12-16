@@ -156,6 +156,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/transition_mix.yml
 %%DECKLINK%%%%DATADIR%%/decklink/consumer_decklink.yml
 %%DECKLINK%%%%DATADIR%%/decklink/producer_decklink.yml
+%%FREI0R%%%%DATADIR%%/frei0r/aliases.yaml
 %%FREI0R%%%%DATADIR%%/frei0r/blacklist.txt
 %%FREI0R%%%%DATADIR%%/frei0r/filter_cairoblend_mode.yml
 %%FREI0R%%%%DATADIR%%/frei0r/not_thread_safe.txt

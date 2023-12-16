@@ -253,6 +253,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.h
 %%DATADIR%%/templates/template4saga-tools/readme.txt
 %%DATADIR%%/toolchains/climate_tools.xml
+%%DATADIR%%/toolchains/climate_tools_temperature_downscaling.xml
 %%DATADIR%%/toolchains/grid_filter.xml
 %%DATADIR%%/toolchains/grid_filter_notch.xml
 %%DATADIR%%/toolchains/grid_filter_sieve_and_clump.xml

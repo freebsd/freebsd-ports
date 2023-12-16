@@ -1,4 +1,4 @@
---- base/rand_util_posix.cc.orig	2022-12-06 08:09:13 UTC
+--- base/rand_util_posix.cc.orig	2023-11-22 14:00:11 UTC
 +++ base/rand_util_posix.cc
 @@ -22,7 +22,7 @@
  #include "base/time/time.h"
@@ -9,14 +9,14 @@
  #include "third_party/lss/linux_syscall_support.h"
  #elif BUILDFLAG(IS_MAC)
  // TODO(crbug.com/995996): Waiting for this header to appear in the iOS SDK.
-@@ -46,6 +46,7 @@ static constexpr int kOpenFlags = O_RDONLY;
- static constexpr int kOpenFlags = O_RDONLY | O_CLOEXEC;
- #endif
+@@ -39,6 +39,7 @@ namespace base {
+ 
+ namespace {
  
 +#if !BUILDFLAG(IS_BSD)
- // We keep the file descriptor for /dev/urandom around so we don't need to
- // reopen it (which is expensive), and since we may not even be able to reopen
- // it if we are later put in a sandbox. This class wraps the file descriptor so
+ #if BUILDFLAG(IS_AIX)
+ // AIX has no 64-bit support for O_CLOEXEC.
+ static constexpr int kOpenFlags = O_RDONLY;
 @@ -63,10 +64,11 @@ class URandomFd {
   private:
    const int fd_;

@@ -71,17 +71,17 @@ PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 .endif
 
 .if ${PHP_MODNAME} == "dom"
-CONFIGURE_ARGS+=--enable-dom \
-		--with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-dom
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "enchant"
-LIB_DEPENDS+=   libenchant.so:textproc/enchant
+LIB_DEPENDS+=   libenchant-2.so:textproc/enchant2
 CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
-USES+=		pkgconfig
+USES+=		gettext-runtime pkgconfig
+USE_GNOME+=	glib20
 .endif
 
 .if ${PHP_MODNAME} == "exif"
@@ -90,19 +90,17 @@ CONFIGURE_ARGS+=--enable-exif
 
 .if ${PHP_MODNAME} == "ffi"
 LIB_DEPENDS=	libffi.so:devel/libffi
-CONFIGURE_ARGS+=--enable-ffi
+CONFIGURE_ARGS+=--with-ffi
 .endif
 
 .if ${PHP_MODNAME} == "fileinfo"
-CONFIGURE_ARGS+=--enable-fileinfo \
-		--with-pcre-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-fileinfo
 
 PHP_HEADER_DIRS=	libmagic
 .endif
 
 .if ${PHP_MODNAME} == "filter"
-CONFIGURE_ARGS+=--enable-filter \
-		--with-pcre-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-filter
 .endif
 
 .if ${PHP_MODNAME} == "ftp"
@@ -127,10 +125,8 @@ CONFIGURE_ARGS+=--enable-gd \
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude libgd \
 		php-${DISTVERSION}/ext/gd
 
-OPTIONS_DEFINE=TRUETYPE JIS WEBP X11
-OPTIONS_DEFAULT=TRUETYPE
+OPTIONS_DEFINE=JIS WEBP X11
 
-TRUETYPE_DESC=	Enable TrueType string function
 JIS_DESC=	Enable JIS-mapped Japanese font support
 WEBP_DESC=  Enable WebP image format support
 X11_DESC=	Enable XPM support
@@ -163,17 +159,9 @@ USES+=	iconv:translit
 
 .if ${PHP_MODNAME} == "imap"
 PHP_MOD_PRIO=	30
-OPTIONS_RADIO=  CLIENT
-OPTIONS_RADIO_CLIENT=	CCLIENT PANDA
-OPTIONS_DEFAULT=PANDA
-CCLIENT_DESC=	Uses the original but unmaintained cclient
-PANDA_DESC=	Uses the forked panda-cclient instead of the original cclient
-
-PANDA_LIB_DEPENDS=	libc-client.so.2010:mail/panda-cclient
-PANDA_LIB_DEPENDS_OFF=	libc-client4.so.9:mail/cclient
+LIB_DEPENDS+=	libc-client.so.2010:mail/panda-cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
-		--with-pcre-dir=${LOCALBASE} \
 		--with-imap-ssl=${OPENSSLBASE}
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -185,7 +173,7 @@ USES+=		ssl
 .endif
 
 .if ${PHP_MODNAME} == "intl"
-CONFIGURE_ARGS+=--with-intl=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-intl
 LIB_DEPENDS=	libicui18n.so:devel/icu
 USES+=		pkgconfig
 .endif
@@ -196,14 +184,14 @@ BUILD_DEPENDS=  re2c:devel/re2c
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
+LIB_DEPENDS+=libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}
 USES+=	ldap
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
 
-CONFIGURE_ARGS+=--enable-mbstring \
-		--with-pcre-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-mbstring
 
 OPTIONS_DEFINE=	REGEX
 OPTIONS_DEFAULT=REGEX
@@ -211,7 +199,6 @@ OPTIONS_DEFAULT=REGEX
 REGEX_DESC=	Enable multibyte regex support
 
 REGEX_CONFIGURE_OFF=--disable-mbregex
-REGEX_CONFIGURE_ON=--with-onig=${LOCALBASE}
 REGEX_LIB_DEPENDS=	libonig.so:devel/oniguruma
 
 PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
@@ -231,8 +218,7 @@ MYSQLND_USES_OFF=	mysql
 .if ${PHP_MODNAME} == "odbc"
 LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 
-CONFIGURE_ARGS+=--enable-odbc \
-		--with-unixODBC=${LOCALBASE}
+CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
@@ -313,8 +299,7 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "phar"
-CONFIGURE_ARGS+=--enable-phar \
-		--with-pcre-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-phar
 .endif
 
 .if ${PHP_MODNAME} == "posix"
@@ -328,8 +313,8 @@ CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "readline"
-CONFIGURE_ARGS+=--with-readline=/usr
-USES+=		readline
+CONFIGURE_ARGS+=--with-libedit
+USES+=		libedit
 .endif
 
 .if ${PHP_MODNAME} == "session"
@@ -342,17 +327,14 @@ CONFIGURE_ARGS+=--enable-shmop
 .endif
 
 .if ${PHP_MODNAME} == "simplexml"
-CONFIGURE_ARGS+=--enable-simplexml \
-		--with-pcre-dir=${LOCALBASE} \
-		--with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-simplexml
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "snmp"
-CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
-		--with-openssl-dir=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 
 CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
 
@@ -362,8 +344,7 @@ USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "soap"
-CONFIGURE_ARGS+=--enable-soap \
-		--with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-soap
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
@@ -406,16 +387,14 @@ CONFIGURE_ARGS+=--enable-tokenizer
 .endif
 
 .if ${PHP_MODNAME} == "xml"
-CONFIGURE_ARGS+=--enable-xml \
-		--with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-xml
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "xmlreader"
-CONFIGURE_ARGS+=--enable-xmlreader \
-		--with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-xmlreader
 
 USE_GNOME=	libxml2
 
@@ -424,7 +403,6 @@ USE_PHP=	dom:build
 
 .if ${PHP_MODNAME} == "xmlrpc"
 CONFIGURE_ARGS+=--with-xmlrpc \
-		--with-libxml-dir=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
 
 USES+=		iconv:translit
@@ -436,8 +414,7 @@ USE_PHP=	xml:build
 .endif
 
 .if ${PHP_MODNAME} == "xmlwriter"
-CONFIGURE_ARGS+=--enable-xmlwriter \
-                --with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-xmlwriter
 
 USES+=		pkgconfig
 USE_GNOME=      libxml2
@@ -453,10 +430,7 @@ USE_PHP=	dom:build xml:build
 .if ${PHP_MODNAME} == "zip"
 LIB_DEPENDS+=	libzip.so:archivers/libzip
 
-CONFIGURE_ARGS+=--enable-zip \
-		--with-zlib-dir=/usr \
-		--with-pcre-dir=${LOCALBASE} \
-		--with-libzip=${LOCALBASE}
+CONFIGURE_ARGS+=--with-zip
 USES+=		pkgconfig
 .endif
 

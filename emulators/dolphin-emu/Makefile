@@ -1,6 +1,6 @@
 PORTNAME=	dolphin-emu
 PORTVERSION=	5.0.19870
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://www.dolphin-emu.org
 LICENSE=	BSD3CLAUSE CC0-1.0 GPLv2+ MIT
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	libfmt>=10.1:devel/libfmt \
+		vulkan-headers>0:graphics/vulkan-headers
 # Notes on dependencies:
 # - alsa support has been disabled (not optimal)
 # - enet and soundtouch come from Externals/ as Dolphin's versions diverge
@@ -42,7 +44,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libhidapi.so:comms/hidapi \
 		libxkbcommon.so:x11/libxkbcommon
-BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
 USES=		cmake compiler:c++17-lang desktop-file-utils elfctl gl iconv \
 		pkgconfig qmake qt:6 sdl xorg

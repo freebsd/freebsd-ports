@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/ozone/platform/headless/ozone_platform_headless.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/ozone/platform/headless/ozone_platform_headless.cc.orig	2022-07-22 17:30:31 UTC
 +++ src/3rdparty/chromium/ui/ozone/platform/headless/ozone_platform_headless.cc
 @@ -102,7 +102,7 @@ class OzonePlatformHeadless : public OzonePlatform {
    }

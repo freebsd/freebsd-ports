@@ -1,6 +1,5 @@
 PORTNAME=	terrapin
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/thoughtbot/terrapin
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-climate_control>=0.0.3:devel/rubygem-climate_control
+RUN_DEPENDS=	rubygem-climate_control>=0:devel/rubygem-climate_control
 
 USES=		gem
 

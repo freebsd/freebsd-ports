@@ -1,5 +1,6 @@
 PORTNAME=	omniORB
 DISTVERSION=	${ABI_VER}.${ABI_MAJOR_VER}.${ABI_MINOR_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -9,12 +10,9 @@ WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_15=	cannot convert 'pthread**' to 'pthread_t' {aka 'pthread*'}
-
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		compiler:gcc-c++11-lib gmake pkgconfig python shebangfix ssl \
-		tar:bzip2
+USES=		gmake pkgconfig python shebangfix ssl tar:bzip2
 BROKEN_SSL=	openssl
 BROKEN_SSL_REASON_openssl=	member access into incomplete type 'DH' (aka 'dh_st')
 USE_LDCONFIG=	yes

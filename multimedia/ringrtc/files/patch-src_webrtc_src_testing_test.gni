@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/testing/test.gni.orig	2022-02-18 09:31:19 UTC
-+++ ../../src/webrtc/src/testing/test.gni
+--- src/webrtc/src/testing/test.gni.orig	2022-02-18 09:31:19 UTC
++++ src/webrtc/src/testing/test.gni
 @@ -17,7 +17,7 @@ declare_args() {
    # "location_tags.json", and so we don't want to try and upload the tags
    # for their tests.

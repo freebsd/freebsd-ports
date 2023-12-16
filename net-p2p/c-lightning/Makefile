@@ -1,6 +1,6 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	23.08.1
+PORTVERSION=	23.11
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -12,6 +12,8 @@ COMMENT=	Lightning Network implementation in C
 WWW=		https://github.com/ElementsProject/lightning
 
 LICENSE=	MIT
+
+BROKEN_i386=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
 
 BUILD_DEPENDS=	bash:shells/bash \
 		lowdown:textproc/lowdown \
@@ -38,7 +40,7 @@ SHEBANG_FILES=	plugins/clnrest/clnrest.py \
 EXTRA_PATCHES_aarch64=	${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
 EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
-OPTIONS_DEFINE=		COMPATIBILITY DEVELOPER
+OPTIONS_DEFINE=		COMPATIBILITY DEBUG
 OPTIONS_MULTI=		STORAGE
 OPTIONS_MULTI_STORAGE=	POSTGRESQL SQLITE
 OPTIONS_RADIO=		TESTING
@@ -46,8 +48,8 @@ OPTIONS_RADIO_TESTING=	ASAN VALGRIND
 
 COMPATIBILITY_CONFIGURE_ENABLE=	compat
 COMPATIBILITY_DESC=		Compatibility mode, good to disable to see if your software breaks
-DEVELOPER_CONFIGURE_ENABLE=	developer
-DEVELOPER_DESC=			Developer mode, good for testing
+DEBUG_CONFIGURE_ENABLE=		debugbuild
+DEBUG_DESC=			Extra debug checks in the build, good for testing
 POSTGRESQL_DESC=		Use PostgreSQL for storage
 POSTGRESQL_USES=		pgsql
 WANT_PGSQL=			client
@@ -61,6 +63,7 @@ VALGRIND_DESC=			Run tests with Valgrind
 OPTIONS_DEFAULT=COMPATIBILITY SQLITE
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-rust
 
 USE_GITHUB=	yes
 .if defined(PKGNAMESUFFIX)
@@ -107,6 +110,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/bcli
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/bookkeeper
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/chanbackup
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/cln-renepay
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/commando
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/fetchinvoice
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/funder

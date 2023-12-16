@@ -1,0 +1,10 @@
+--- inst/qmc2-arcade.desktop.template.orig	2023-11-25 02:40:48 UTC
++++ inst/qmc2-arcade.desktop.template
+@@ -5,6 +5,6 @@ Exec=qmc2-arcade
+ Comment=QMC2 Arcade Mode
+ Comment[de]=QMC2 Arcade Modus
+ Exec=qmc2-arcade
+-Icon=DATADIR/qmc2/img/qmc2-arcade.png
++Icon=%%DATADIR%%/qmc2/img/qmc2-arcade.png
+ Terminal=false
+ Categories=Game;Emulator;

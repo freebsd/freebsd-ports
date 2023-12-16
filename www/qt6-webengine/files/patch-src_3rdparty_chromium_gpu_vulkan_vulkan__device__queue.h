@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h.orig	2022-09-24 10:57:32 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h
 @@ -158,7 +158,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
  

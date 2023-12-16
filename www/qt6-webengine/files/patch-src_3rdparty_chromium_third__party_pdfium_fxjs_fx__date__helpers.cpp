@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/pdfium/fxjs/fx_date_helpers.cpp.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/pdfium/fxjs/fx_date_helpers.cpp.orig	2022-06-17 14:20:10 UTC
 +++ src/3rdparty/chromium/third_party/pdfium/fxjs/fx_date_helpers.cpp
 @@ -37,6 +37,11 @@ double GetLocalTZA() {
      return 0;

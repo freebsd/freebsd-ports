@@ -2,7 +2,7 @@ PORTNAME=	lazarus
 PORTVERSION=	2.2.6
 DISTVERSIONSUFFIX=	-0
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	1
+PORTREVISION?=	3
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		LOCAL/acm/freepascal
@@ -14,21 +14,14 @@ WWW=		https://www.lazarus-ide.org/
 
 CONFLICTS?=	lazarus-gtk2-devel lazarus-qt5 lazarus-qt5-devel lazarusqt6-devel
 
-BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
-		fpcres:lang/fpc-utils
+BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		gmake:devel/gmake \
-		${PPNAME}:lang/fpc \
-		fpcres:lang/fpc-utils \
-		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc-source
+		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		cpe desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
-USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
-		fcl-registry fcl-res fcl-web fcl-xml fppkg gtk2 ibase iconvenc mysql \
-		numlib odbc opengl openssl oracle pasjpeg postgres regexpr rtl-extra \
-		rtl-generics sqlite x11
 USE_XORG=	x11
 OPT?=		"-Sgic "
 

@@ -1,6 +1,6 @@
---- stdlib/LinearAlgebra/src/lbt.jl.orig	2022-11-23 20:37:29 UTC
+--- stdlib/LinearAlgebra/src/lbt.jl.orig	2023-08-24 16:20:21 UTC
 +++ stdlib/LinearAlgebra/src/lbt.jl
-@@ -181,7 +181,7 @@ function lbt_get_num_threads()
+@@ -210,7 +210,7 @@ function lbt_set_num_threads(nthreads)
  end
  
  function lbt_set_num_threads(nthreads)
@@ -8,4 +8,4 @@
 +    return
  end
  
- function lbt_forward(path; clear::Bool = false, verbose::Bool = false, suffix_hint::Union{String,Nothing} = nothing)
+ function lbt_forward(path::AbstractString; clear::Bool = false, verbose::Bool = false, suffix_hint::Union{String,Nothing} = nothing)

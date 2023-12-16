@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-DISTVERSION=	2023.1.4
+DISTVERSION=	2023.2.5
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -17,7 +17,10 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 USES=		python:run shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-SHEBANG_FILES=	bin/restart.py
+SHEBANG_FILES=	bin/restart.py \
+		plugins/python-ce/helpers/pycodestyle.py \
+		plugins/python-ce/helpers/pycodestyle-2.10.0.py
+
 
 NO_ARCH=	yes
 NO_BUILD=	yes

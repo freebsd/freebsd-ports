@@ -1,10 +1,10 @@
-%%AUTOMATED%%include/CUnit/Automated.h
-%%BASIC%%include/CUnit/Basic.h
-%%CURSES%%include/CUnit/CUCurses.h
+include/CUnit/Automated.h
+include/CUnit/Basic.h
+include/CUnit/CUCurses.h
 include/CUnit/CUError.h
 include/CUnit/CUnit.h
 include/CUnit/CUnit_intl.h
-%%CONSOLE%%include/CUnit/Console.h
+include/CUnit/Console.h
 include/CUnit/MyMem.h
 include/CUnit/TestDB.h
 include/CUnit/TestRun.h

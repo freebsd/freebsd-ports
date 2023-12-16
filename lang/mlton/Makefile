@@ -1,7 +1,3 @@
-# Previously maintained by Jesper Louis Andersen
-# (jesper.louis.andersen@gmail.com) and Geoffrey Mainland
-# (mainland@apeiron.net)
-#
 # Because MLton is written in SML, it needs an SML compiler to build.
 # It is easiest to use another (earlier) binary version of MLton as
 # the SML compiler.  So, this Makefile fetches and installs an
@@ -14,9 +10,7 @@ MASTER_SITES+=	https://github.com/beyert/mlton-freebsd_bootstrap/raw/c7371c1/:bo
 DISTFILES+=	${BOOTNAME}.i386-${OPSYS:tl}-13.txz:bootstrap \
 		${BOOTNAME}.amd64-${OPSYS:tl}-13.txz:bootstrap \
 		${BOOTNAME}.i386-${OPSYS:tl}-12.txz:bootstrap \
-		${BOOTNAME}.amd64-${OPSYS:tl}-12.txz:bootstrap \
-		${BOOTNAME}.i386-${OPSYS:tl}-11.txz:bootstrap \
-		${BOOTNAME}.amd64-${OPSYS:tl}-11.txz:bootstrap
+		${BOOTNAME}.amd64-${OPSYS:tl}-12.txz:bootstrap
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Optimizing Standard ML compiler
@@ -44,15 +38,13 @@ BOOTOSMAJ=	${OSREL:R}
 OPTIONS_DEFINE=			DOCS EXAMPLES
 OPTIONS_DEFAULT=		MLTON NATIVE
 OPTIONS_SINGLE=			BOOTSTRAP TARGET
-OPTIONS_SINGLE_BOOTSTRAP=	MLTON POLYML SMLNJ WINE
-OPTIONS_SINGLE_TARGET=		MINGW32 NATIVE
+OPTIONS_SINGLE_BOOTSTRAP=	MLTON POLYML SMLNJ
+OPTIONS_SINGLE_TARGET=		NATIVE
 
-MINGW32_DESC=	Add mingw32 Windows target (requires wine)
 MLTON_DESC=	Bootstrap with MLton (ideal if supported)
 NATIVE_DESC=	Use default target for given architecture
 POLYML_DESC=	Bootstrap with PolyML
 SMLNJ_DESC=	Bootstrap with SML/NJ (can take many hours)
-WINE_DESC=	Bootstrap MINGW32 with wine
 
 DOCS_BUILD_DEPENDS=		htmldoc:textproc/htmldoc
 DOCS_USES=			tex
@@ -63,7 +55,6 @@ DOCS_ALL_TARGET=		install-docs all
 DOCS_ALL_TARGET_OFF=		all
 DOCS_INSTALL_TARGET=		install-docs install
 DOCS_INSTALL_TARGET_OFF=	install
-MINGW32_BROKEN=			not yet implemented MINGW32 option in modern versions of ${PORTNAME}
 MLTON_MAKE_ARGS=		DESTDIR='' \
 				LIB=${BOOT_WRKSRC}/lib \
 				MLTON_VERSION=${PORTVERSION} \
@@ -103,19 +94,6 @@ BOOTOSMAJ=	13
 .endif
 
 BOOT_DIST_NEW=	${PKGNAME}${DISTVERSIONSUFFIX}.${ARCH}-${OPSYS:tl}-${OSREL:R}-${HOST}${BOOT_SUFX}
-
-.if ${PORT_OPTIONS:MMINGW32} && ${PORT_OPTIONS:MWINE}
-BUILD_DEPENDS+=	${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp \
-		mingw32-gcc:devel/mingw32-gcc \
-		wine:emulators/wine
-RUN_DEPENDS+=	${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp \
-		mingw32-gcc:devel/mingw32-gcc
-SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
-
-PLIST_SUB+=	MINGW32CROSS=""
-.else
-PLIST_SUB+=	MINGW32CROSS="@comment "
-.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MLton
@@ -194,9 +172,5 @@ makebootstrap: all
 	@${ECHO_MSG} "====> Backing up new bootstrap image (${BOOT_DIST_NEW})"
 	@${MV} ${BOOT_WRKTMP}/${BOOT_DIST_NEW} ${MASTERDIR}/
 ##	@${RMDIR} ${BOOT_WRKTMP}
-
-post-build-MINGW32-on:
-	@${ECHO} Adding mingw32 target...
-	${WRKSRC}/bin/add-local-cross mingw32 x86 mingw
 
 .include <bsd.port.mk>

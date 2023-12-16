@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc
 @@ -11,7 +11,7 @@
  #include "ui/gfx/buffer_format_util.h"

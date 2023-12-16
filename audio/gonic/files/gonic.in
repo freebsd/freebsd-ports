@@ -16,6 +16,7 @@ load_rc_config "${name}"
 # gonic_scan_interval
 # gonic_music_path
 # gonic_podcast_path
+# gonic_playlists_path
 
 : ${gonic_enable:="NO"}
 : ${gonic_user:="gonic"}
@@ -28,7 +29,7 @@ load_rc_config "${name}"
 pidfile=/var/run/gonic.pid
 procname="%%PREFIX%%/bin/gonic"
 command="/usr/sbin/daemon"
-command_args="-cf -p ${pidfile} ${procname} ${gonic_music_path:+-music-path=${gonic_music_path}} ${gonic_podcast_path:+-podcast-path=${gonic_podcast_path}} ${gonic_cache_path:+-cache-path=${gonic_cache_path}} ${gonic_proxy_prefix:+-proxy-prefix=${gonic_proxy_prefix}} ${gonic_listen_addr:+-listen-addr=${gonic_listen_addr}} ${gonic_scan_interval:+-scan-interval=${gonic_scan_interval}} ${gonic_db_path:+-db-path=${gonic_db_path}} ${gonic_args}"
+command_args="-cf -p ${pidfile} ${procname} ${gonic_music_path:+-music-path=${gonic_music_path}} ${gonic_podcast_path:+-podcast-path=${gonic_podcast_path}} ${gonic_playlists_path:+-playlists-path=${gonic_playlists_path}} ${gonic_cache_path:+-cache-path=${gonic_cache_path}} ${gonic_proxy_prefix:+-proxy-prefix=${gonic_proxy_prefix}} ${gonic_listen_addr:+-listen-addr=${gonic_listen_addr}} ${gonic_scan_interval:+-scan-interval=${gonic_scan_interval}} ${gonic_db_path:+-db-path=${gonic_db_path}} ${gonic_args}"
 
 gonic_startprecmd()
 {

@@ -1,0 +1,82 @@
+Avoid various systemd dependencies
+
+--- resources/niri.desktop.orig	2023-11-26 12:51:13 UTC
++++ resources/niri.desktop
+@@ -1,6 +1,6 @@ Comment=A scrollable-tiling Wayland compositor
+ [Desktop Entry]
+ Name=Niri
+ Comment=A scrollable-tiling Wayland compositor
+-Exec=niri-session
++Exec=niri
+ Type=Application
+ DesktopNames=niri
+--- src/main.rs.orig	2023-11-26 12:51:13 UTC
++++ src/main.rs
+@@ -65,7 +65,7 @@ fn main() {
+         REMOVE_ENV_RUST_LIB_BACKTRACE.store(true, Ordering::Relaxed);
+     }
+ 
+-    let is_systemd_service = env::var_os("NOTIFY_SOCKET").is_some();
++    let is_systemd_service = env::var_os("DBUS_SESSION_BUS_ADDRESS").is_some();
+ 
+     let directives = env::var("RUST_LOG").unwrap_or_else(|_| "niri=debug".to_owned());
+     let env_filter = EnvFilter::builder().parse_lossy(directives);
+@@ -74,20 +74,6 @@ fn main() {
+         .with_env_filter(env_filter)
+         .init();
+ 
+-    if is_systemd_service {
+-        // If we're starting as a systemd service, assume that the intention is to start on a TTY.
+-        // Remove DISPLAY or WAYLAND_DISPLAY from our environment if they are set, since they will
+-        // cause the winit backend to be selected instead.
+-        if env::var_os("DISPLAY").is_some() {
+-            debug!("we're running as a systemd service but DISPLAY is set, removing it");
+-            env::remove_var("DISPLAY");
+-        }
+-        if env::var_os("WAYLAND_DISPLAY").is_some() {
+-            debug!("we're running as a systemd service but WAYLAND_DISPLAY is set, removing it");
+-            env::remove_var("WAYLAND_DISPLAY");
+-        }
+-    }
+-
+     let cli = Cli::parse();
+ 
+     let _client = tracy_client::Client::start();
+@@ -128,6 +114,10 @@ fn main() {
+         socket_name.to_string_lossy()
+     );
+ 
++    // Advise xdg-desktop-portal which *-portals.conf to load
++    env::set_var("XDG_CURRENT_DESKTOP", "niri");
++    env::set_var("XDG_SESSION_TYPE", "wayland");
++
+     if is_systemd_service {
+         // We're starting as a systemd service. Export our variables.
+         import_env_to_systemd();
+@@ -180,9 +169,8 @@ fn import_env_to_systemd() {
+     let rv = Command::new("/bin/sh")
+         .args([
+             "-c",
+-            "systemctl --user import-environment WAYLAND_DISPLAY && \
+-             hash dbus-update-activation-environment 2>/dev/null && \
+-             dbus-update-activation-environment WAYLAND_DISPLAY",
++            "hash dbus-update-activation-environment 2>/dev/null && \
++             dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
+         ])
+         .spawn();
+     // Wait for the import process to complete, otherwise services will start too fast without
+--- src/niri.rs.orig	2023-11-26 12:51:13 UTC
++++ src/niri.rs
+@@ -743,9 +743,9 @@ impl Niri {
+         // logind-zbus has a wrong signature for this method, so do it manually.
+         // https://gitlab.com/flukejones/logind-zbus/-/merge_requests/5
+         let message = conn.call_method(
+-            Some("org.freedesktop.login1"),
+-            "/org/freedesktop/login1",
+-            Some("org.freedesktop.login1.Manager"),
++            Some("org.freedesktop.ConsoleKit"),
++            "/org/freedesktop/ConsoleKit/Manager",
++            Some("org.freedesktop.ConsoleKit.Manager"),
+             "Inhibit",
+             &("handle-power-key", "niri", "Power key handling", "block"),
+         )?;

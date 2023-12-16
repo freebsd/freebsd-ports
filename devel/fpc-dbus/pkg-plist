@@ -1,6 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/dbus.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbuscomp.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbuscomp.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbuscomp.rsj

@@ -1,5 +1,5 @@
 PORTNAME=	portmaster
-PORTVERSION=	3.27
+PORTVERSION=	3.29
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	se@FreeBSD.org

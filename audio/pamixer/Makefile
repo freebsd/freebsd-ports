@@ -1,23 +1,21 @@
 PORTNAME=	pamixer
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4-15
-PORTREVISION=	8
-DISTVERSIONSUFFIX=	-g4ea2594
+DISTVERSION=	1.6
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Pulseaudio command line mixer
 WWW=		https://github.com/cdemoulins/pamixer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio \
-		libboost_program_options.so:devel/boost-libs
+BUILD_DEPENDS=	cxxopts>0:devel/cxxopts
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-USES=		compiler:gcc-c++11-lib gmake localbase
+USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	cdemoulins
 
-PLIST_FILES=	bin/pamixer man/man1/pamixer.1.gz
+PLIST_FILES=	bin/pamixer \
+		man/man1/pamixer.1.gz
 
 .include <bsd.port.mk>

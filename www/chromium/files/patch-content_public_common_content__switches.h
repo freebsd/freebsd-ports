@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2023-10-11 18:22:24 UTC
+--- content/public/common/content_switches.h.orig	2023-12-10 06:10:27 UTC
 +++ content/public/common/content_switches.h
-@@ -116,6 +116,7 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
+@@ -115,6 +115,7 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
  CONTENT_EXPORT extern const char kEnableIsolatedWebAppsInRenderer[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];

@@ -1,10 +1,10 @@
 PORTNAME=	Mail-DMARC
-PORTVERSION=	1.20190308
+PORTVERSION=	1.20211209
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Perl5 module to process and/or create DKIM email
 WWW=		https://github.com/msimerson/mail-dmarc
 

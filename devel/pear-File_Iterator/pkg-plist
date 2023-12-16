@@ -1,0 +1,4 @@
+%%DATADIR%%/ExcludeIterator.php
+%%DATADIR%%/Facade.php
+%%DATADIR%%/Factory.php
+%%DATADIR%%/Iterator.php

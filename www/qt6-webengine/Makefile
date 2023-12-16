@@ -9,57 +9,72 @@
 # - The process of porting QtWebEngine needs to be documented so we can move to
 #   newer releases more easily.
 #
-# Also note that, due to the insane amount of patches this port needs, it tends
-# to lag behind the rest of the official Qt6 ones, which is why we set
-# QT6_VERSION and DISTINFO_FILE here.
 
-PORTNAME=	webengine
+PORTNAME?=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
-CATEGORIES=	www
+PORTREVISION?=	0 # Master port for print/qt6-pdf. Please keep this line.
+CATEGORIES?=	www
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt 6 library to render web content
+COMMENT?=	Qt 6 library to render web content
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libcups.so:print/cups \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libnss3.so:security/nss \
+		libxkbcommon.so:x11/libxkbcommon
+
+USES=		bison cmake compiler:c++17-lang gl gperf \
+		localbase:ldflags ninja:build nodejs:build,lts \
+		pkgconfig python:build qt-dist:6,webengine
+USE_GL=		opengl
+USE_QT=		base declarative tools
+USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
+		xrandr xrender xscrnsaver xshmfence xtst
+
+CMAKE_ON=	QT_FEATURE_webengine_system_ffmpeg \
+		QT_FEATURE_webengine_proprietary_codecs
+
+.if defined(BUILD_QTPDF)
+LIB_DEPENDS+=	libcups.so:print/cups \
+		libopenjp2.so:graphics/openjpeg
+
+CMAKE_ON+=	QT_FEATURE_qtpdf_build
+CMAKE_OFF+=	QT_FEATURE_qtwebengine_build
+
+SYS_LIBS=	freetype
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libdrm.so:graphics/libdrm \
 		libevent.so:devel/libevent \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		liblcms2.so:graphics/lcms2 \
 		libnspr4.so:devel/nspr \
-		libnss3.so:security/nss \
 		libopenh264.so:multimedia/openh264 \
-		libopenjp2.so:graphics/openjpeg \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
 		libpng.so:graphics/png \
+		libre2.so:devel/re2 \
 		libsnappy.so:archivers/snappy \
 		libvpx.so:multimedia/libvpx \
-		libwebp.so:graphics/webp \
-		libxkbcommon.so:x11/libxkbcommon
+		libwebp.so:graphics/webp
 
-USES=	bison cmake gl gnome gperf jpeg localbase:ldflags minizip ninja:build \
-	nodejs:build,lts pkgconfig python:build qt-dist:6,webengine xorg
-USE_GL=		gl
-USE_GNOME=	glib20 libxml2 libxslt
-USE_QT=		base declarative:run positioning quick3d:build tools webchannel
-USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
+USES+=		gnome jpeg minizip xorg
+USE_GL+=	gbm
+USE_QT+=	positioning quick3d:build webchannel
+USE_GNOME+=	glib20 libxml2 libxslt
+USE_XORG+=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xshmfence xtst
 
-CMAKE_ON=	QT_FEATURE_webengine_system_ffmpeg QT_FEATURE_webengine_proprietary_codecs
-# See https://reviews.freebsd.org/D41571 for further details.  From time to
-# time, e.g. with new qt6-webengine releases, it should be checked whether
-# re2 can be unbundled again.
-CMAKE_OFF=	QT_FEATURE_webengine_system_re2
+CMAKE_ON+=	QT_FEATURE_qtwebengine_build
+CMAKE_OFF+=	QT_FEATURE_qtpdf_build
+
+SYS_LIBS=	freetype harfbuzz-ng libdrm libevent libpng libxml libxslt openh264 opus
+.endif
 
 # The build system reads the environment variable $NINJA_PATH to decide whether
 # to boostrap ninja or not (and also to invoke it afterwards). CC and CXX are
@@ -84,10 +99,9 @@ DO_MAKE_BUILD=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} -j1 $
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-DISTINFO_FILE=	${.CURDIR}/distinfo
-QT6_VERSION=	6.5.3
-
-OPTIONS_DEFAULT=	ALSA
+.if !defined(BUILD_QTPDF)
+OPTIONS_DEFINE=		CUPS
+OPTIONS_DEFAULT=	ALSA CUPS
 OPTIONS_SINGLE=		AUDIO
 OPTIONS_SINGLE_AUDIO=	ALSA PULSEAUDIO SNDIO
 
@@ -99,12 +113,22 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	alsa-plugins>=0:audio/alsa-plugins
 ALSA_CMAKE_ON=		-DQT_FEATURE_webengine_system_alsa:BOOL=ON
 ALSA_CMAKE_OFF=		-DQT_FEATURE_webengine_system_alsa:BOOL=OFF
+
+CUPS_LIB_DEPENDS=	libcups.so:print/cups \
+			liblcms2.so:graphics/lcms2 \
+			libopenjp2.so:graphics/openjpeg \
+			libtiff.so:graphics/tiff
+CUPS_CMAKE_ON=		-DQT_FEATURE_webengine_printing_and_pdf:BOOL=ON
+CUPS_CMAKE_OFF=		-DQT_FEATURE_webengine_printing_and_pdf:BOOL=OFF
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DQT_FEATURE_webengine_system_pulseaudio:BOOL=ON
 PULSEAUDIO_CMAKE_OFF=	-DQT_FEATURE_webengine_system_pulseaudio:BOOL=OFF
+
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CMAKE_ON=		-DQT_FEATURE_webengine_system_sndio:BOOL=ON
 SNDIO_CMAKE_OFF=	-DQT_FEATURE_webengine_system_sndio:BOOL=OFF
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -118,13 +142,10 @@ post-extract:
 		${WRKSRC}/src/3rdparty/chromium/sandbox/policy/openbsd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' \
-		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%CPPFLAGS%%|${CPPFLAGS}|;s|%%CXXFLAGS%%|${CXXFLAGS}|;s|%%LDFLAGS%%|${LDFLAGS}|' \
 		${WRKSRC}/src/host/BUILD.toolchain.gn.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp \
-		${WRKSRC}/src/3rdparty/chromium/third_party/wayland/features.gni \
 		${WRKSRC}/src/3rdparty/chromium/ui/events/ozone/layout/xkb/xkb_keyboard_layout_engine.cc
 
 pre-configure:
@@ -134,10 +155,13 @@ pre-configure:
 # Leads to missing header errors: icu, libvpx, libwebp, re2, snappy, zlib
 # No-Op: flac
 #
+# Don't attempt to unbundle libraries that the Pdf module doesn't use. It
+# causes configuration errors.
+#
 # cd ${WRKSRC} && ${PYTHON_CMD} \
 # ./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC}/src/3rdparty/chromium && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		fontconfig freetype harfbuzz-ng libdrm libevent libpng libxml libxslt openh264 opus || ${FALSE}
+		${SYS_LIBS} || ${FALSE}
 
 .include <bsd.port.post.mk>

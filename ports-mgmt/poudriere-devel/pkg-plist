@@ -36,6 +36,7 @@ man/man8/poudriere-testport.8.gz
 man/man8/poudriere-version.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Caddyfile.sample
 %%DATADIR%%/MANIFESTS
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk

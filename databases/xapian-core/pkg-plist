@@ -55,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.12.4
+lib/libxapian.so.30.12.5
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
@@ -73,7 +73,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/admin_notes.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/bc_s.png
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/bdwn.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/bc_sd.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1AssertionError-members.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1AssertionError.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1AssertionError__inherit__graph.png
@@ -348,7 +348,6 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/dbfactory_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/dir_f63502d618711192f85ccb772536c6ae.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/document_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/dynsections.js
@@ -358,8 +357,6 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/eset_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/expanddecider_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/files.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/folderclosed.png
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_b.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_c.html
@@ -466,8 +463,10 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaces.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/nav_f.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/nav_fd.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/nav_g.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/nav_h.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/nav_hd.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/open.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/positioniterator_8h.html
@@ -477,15 +476,20 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/queryparser_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/registry_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/splitbar.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/splitbard.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/stem_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/structXapian_1_1LatLongCoord-members.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/structXapian_1_1LatLongCoord.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/sync_off.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/sync_on.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_a.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_ad.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_b.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_bd.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_h.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_hd.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_s.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tab_sd.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/termgenerator_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/termiterator_8h.html

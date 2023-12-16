@@ -1,5 +1,5 @@
 PORTNAME=	json-canonicalization
-PORTVERSION=	0.3.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

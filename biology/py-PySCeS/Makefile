@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_
 RUN_DEPENDS=	${PY_DEPENDS} \
 		${PY_EXTRA}
 
-USES=		fortran python
+USES=		fortran localbase:ldflags python
 USE_PYTHON=	distutils autoplist pytest
 
 LDFLAGS+=	-lpython${PYTHON_VER} -shared # see https://github.com/PySCeS/pysces/issues/29

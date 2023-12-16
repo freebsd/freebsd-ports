@@ -1,6 +1,6 @@
 PORTNAME=	spiritvnc
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.5.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,15 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
-		libssh2.so:security/libssh2 \
 		libvncclient.so:net/libvncserver
 
-USES=		jpeg pkgconfig xorg
+USES=		gmake jpeg pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xpm xrender
 
 GH_ACCOUNT=	willbprog127
-GH_PROJECT=	${PORTNAME}-fltk
+GH_PROJECT=	${PORTNAME}-fltk-no-libssh2
 
 PLIST_FILES=	bin/${PORTNAME}
 

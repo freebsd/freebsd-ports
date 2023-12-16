@@ -205,7 +205,6 @@ include/proxygen/lib/services/ServiceConfiguration.h
 include/proxygen/lib/services/ServiceWorker.h
 include/proxygen/lib/services/WorkerThread.h
 include/proxygen/lib/ssl/ProxygenSSL.h
-include/proxygen/lib/ssl/ThreadLocalSSLContext.h
 include/proxygen/lib/ssl/ThreadLocalSSLStats.h
 include/proxygen/lib/stats/BaseStats.h
 include/proxygen/lib/stats/PeriodicStats.h

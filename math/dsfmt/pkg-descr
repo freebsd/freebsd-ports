@@ -1,0 +1,7 @@
+The purpose of dSFMT is to speed up the generation by avoiding the expensive
+conversion of integer to double (floating point). dSFMT directly generates
+double precision floating point pseudorandom numbers which have the IEEE
+Standard for Binary Floating-Point Arithmetic (ANSI/IEEE Std 754-1985) format.
+
+dSFMT is only available on the CPUs which use IEEE 754 format double precision
+floating point numbers.

@@ -1,6 +1,6 @@
---- v8/src/wasm/jump-table-assembler.h.orig	2023-07-24 14:27:53 UTC
+--- v8/src/wasm/jump-table-assembler.h.orig	2023-11-22 14:00:11 UTC
 +++ v8/src/wasm/jump-table-assembler.h
-@@ -185,9 +185,10 @@ class V8_EXPORT_PRIVATE JumpTableAssembler : public Ma
+@@ -174,9 +174,10 @@ class V8_EXPORT_PRIVATE JumpTableAssembler : public Ma
  // boundaries. The jump table line size has been chosen to satisfy this.
  #if V8_TARGET_ARCH_X64
    static constexpr int kJumpTableLineSize = 64;

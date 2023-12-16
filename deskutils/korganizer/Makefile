@@ -14,7 +14,7 @@ USE_GL=		gl
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdelibs4support kio \
-		newstuff notifications parts service solid sonnet textwidgets \
+		newstuff notifications parts phonon service solid sonnet textwidgets \
 		unitconversion wallet widgetsaddons windowsystem xmlgui \
 		ecm:build
 # pim components
@@ -24,7 +24,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		imap incidenceeditor kontactinterface ldap \
 		libkdepim mailtransport mime pimcommon pimtextedit \
 		kdepim-runtime5:run
-USE_QT=		concurrent core dbus gui multimedia network phonon4 printsupport widgets xml \
+USE_QT=		concurrent core dbus gui multimedia network printsupport widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes

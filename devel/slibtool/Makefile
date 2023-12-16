@@ -1,5 +1,5 @@
 PORTNAME=	slibtool
-PORTVERSION=	0.5.34
+PORTVERSION=	0.5.35
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.midipix.org/${PORTNAME}/
 

@@ -1,5 +1,0 @@
-Chef Utils gem contains common code and mixins for the core Chef Infra Ruby
-gems. This is intended to be a "core" or "foundations" library for the chef
-ecosystem (and external related gems) which allows the use of core code and
-utility functions of the chef gem without requiring all the heaviness of the
-chef gem.

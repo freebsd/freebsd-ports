@@ -105,6 +105,10 @@
     SUBDIR += kf5-kiconthemes
     SUBDIR += kf5-oxygen-icons5
     SUBDIR += kf5-qqc2-desktop-style
+    SUBDIR += kf6-breeze-icons
+    SUBDIR += kf6-kcolorscheme
+    SUBDIR += kf6-kiconthemes
+    SUBDIR += kf6-qqc2-desktop-style
     SUBDIR += la-capitaine-icon-theme
     SUBDIR += layan-gtk-themes
     SUBDIR += lumina-themes
@@ -141,6 +145,12 @@
     SUBDIR += plasma5-kde-gtk-config
     SUBDIR += plasma5-oxygen
     SUBDIR += plasma5-plasma-workspace-wallpapers
+    SUBDIR += plasma6-breeze
+    SUBDIR += plasma6-breeze-gtk
+    SUBDIR += plasma6-kde-gtk-config
+    SUBDIR += plasma6-oxygen
+    SUBDIR += plasma6-plasma-workspace-wallpapers
+    SUBDIR += plasma6-qqc2-breeze-style
     SUBDIR += plata-theme
     SUBDIR += pop-gtk-themes
     SUBDIR += pop-icon-theme

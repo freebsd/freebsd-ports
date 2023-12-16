@@ -1,6 +1,7 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.0.6
+DISTVERSION=	7.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,12 +37,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.4.7 \
-		clap_builder-4.4.7 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
-		colored_json-4.0.0 \
+		colored_json-4.1.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-deque-0.8.3 \
@@ -65,9 +66,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		log-0.4.20 \
 		memchr-2.6.4 \
 		memoffset-0.9.0 \
-		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
-		nom-7.1.3 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		object-0.32.1 \
@@ -90,8 +89,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.190 \
-		serde_derive-1.0.190 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		serde_stacker-0.1.10 \
 		stacker-0.1.15 \
@@ -100,8 +99,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-1.0.50 \
 		thiserror-impl-1.0.50 \
 		tinytemplate-1.2.1 \
-		tokio-1.33.0 \
-		tokio-macros-2.1.0 \
+		tokio-1.34.0 \
+		tokio-macros-2.2.0 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
 		walkdir-2.4.0 \
@@ -124,6 +123,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.48.5 \
+		winnow-0.5.25 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 

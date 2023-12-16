@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/switches.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/gfx/switches.cc.orig	2023-01-11 09:17:16 UTC
 +++ src/3rdparty/chromium/ui/gfx/switches.cc
-@@ -26,7 +26,7 @@ const char kHeadless[] = "headless";
+@@ -33,7 +33,7 @@ const char kForcePrefersReducedMotion[] = "force-prefe
  // Run in headless mode, i.e., without a UI or display server dependencies.
  const char kHeadless[] = "headless";
  

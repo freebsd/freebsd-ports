@@ -1,6 +1,6 @@
---- v8/src/compiler/backend/x64/code-generator-x64.cc.orig	2023-10-21 11:51:27 UTC
+--- v8/src/compiler/backend/x64/code-generator-x64.cc.orig	2023-11-22 14:00:11 UTC
 +++ v8/src/compiler/backend/x64/code-generator-x64.cc
-@@ -6828,11 +6828,11 @@ void CodeGenerator::AssembleArchTableSwitch(Instructio
+@@ -6852,11 +6852,11 @@ void CodeGenerator::AssembleArchTableSwitch(Instructio
      // target = table + (target - table)
      __ addq(input, kScratchRegister);
      // Jump to the target.

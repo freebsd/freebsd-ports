@@ -1,3 +1,3 @@
-TIMESTAMP = 1698341235
-SHA256 (rubygem/aws-sigv4-1.6.1.gem) = 1c158f74d7daa882459bd5a686bccc25041af127a6b791911f2233e7673df1f3
-SIZE (rubygem/aws-sigv4-1.6.1.gem) = 17920
+TIMESTAMP = 1701364472
+SHA256 (rubygem/aws-sigv4-1.8.0.gem) = 84dd99768b91b93b63d1d8e53ee837cfd06ab402812772a7899a78f9f9117cbc
+SIZE (rubygem/aws-sigv4-1.8.0.gem) = 18432

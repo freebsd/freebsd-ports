@@ -7,6 +7,8 @@ share/icons/hicolor/16x16/apps/org.xfce.Dictionary.png
 share/icons/hicolor/24x24/apps/org.xfce.Dictionary.png
 share/icons/hicolor/32x32/apps/org.xfce.Dictionary.png
 share/icons/hicolor/48x48/apps/org.xfce.Dictionary.png
+share/icons/hicolor/64x64/apps/org.xfce.Dictionary.png
+share/icons/hicolor/96x96/apps/org.xfce.Dictionary.png
 share/icons/hicolor/scalable/apps/org.xfce.Dictionary.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-dict.mo

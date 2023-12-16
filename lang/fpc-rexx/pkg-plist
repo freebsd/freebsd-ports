@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/rexx.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx/rexxsaa.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx/rexxsaa.ppu

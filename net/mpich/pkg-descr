@@ -5,3 +5,5 @@ different computation and communication platforms including commodity
 clusters, high-speed networks and proprietary high-end computing systems.
 It also enables cutting-edge research in MPI through an easy-to-extend
 modular framework for other derived implementations.
+
+See also <https://github.com/pmodels/mpich>.

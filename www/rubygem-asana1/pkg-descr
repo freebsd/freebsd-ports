@@ -1,3 +1,0 @@
-This gem is a simple Ruby wrapper for the Asana REST API. It uses
-ActiveResource to provide a simple, familiar interface for
-accessing your Asana account.

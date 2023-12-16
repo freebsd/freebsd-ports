@@ -1,6 +1,6 @@
---- cmake/QtFlagHandlingHelpers.cmake.orig	2023-09-21 19:24:26 UTC
+--- cmake/QtFlagHandlingHelpers.cmake.orig	2023-11-15 13:58:42 UTC
 +++ cmake/QtFlagHandlingHelpers.cmake
-@@ -103,6 +103,10 @@ function(qt_internal_add_link_flags_no_undefined targe
+@@ -132,6 +132,10 @@ function(qt_internal_add_link_flags_no_undefined targe
              set(no_undefined_flag "-Wl,--no-undefined")
          endif()
  

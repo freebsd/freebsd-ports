@@ -4,7 +4,6 @@ bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
-bin/nytprofpf
 %%SITE_ARCH%%/Devel/MemoryProfiling.pod
 %%SITE_ARCH%%/Devel/NYTProf.pm
 %%SITE_ARCH%%/Devel/NYTProf/Apache.pm
@@ -42,7 +41,6 @@ bin/nytprofpf
 %%PERL5_MAN1%%/nytprofcsv.1.gz
 %%PERL5_MAN1%%/nytprofhtml.1.gz
 %%PERL5_MAN1%%/nytprofmerge.1.gz
-%%PERL5_MAN1%%/nytprofpf.1.gz
 %%PERL5_MAN3%%/Devel::MemoryProfiling.3.gz
 %%PERL5_MAN3%%/Devel::NYTProf.3.gz
 %%PERL5_MAN3%%/Devel::NYTProf::Apache.3.gz

@@ -1,7 +1,7 @@
 PORTNAME=	postforward
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 
 MAINTAINER=	luca@asgard.ch
@@ -10,6 +10,9 @@ WWW=		https://github.com/zoni/postforward
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Obsolete as postsrsd 2.x uses unix sockets instead of tcp
+EXPIRATION_DATE=2023-12-31
 
 RUN_DEPENDS=	postsrsd:mail/postsrsd
 

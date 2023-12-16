@@ -11,7 +11,7 @@ WWW=		https://bitbucket.org/asecurityteam/flask_saml
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8.0:www/py-flask@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=0.8.0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blinker>=1.1:devel/py-blinker@${PY_FLAVOR}
 
 USES=		python

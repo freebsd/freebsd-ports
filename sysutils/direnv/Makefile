@@ -1,7 +1,7 @@
 PORTNAME=	direnv
-PORTVERSION=	2.32.3
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.33.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,17 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake go
-USE_GITHUB=	yes
-GH_SUBDIR=	src/github.com/direnv/direnv
-GH_TUPLE=	\
-		BurntSushi:toml:v1.2.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		golang:mod:v0.5.1:golang_mod/vendor/golang.org/x/mod \
-		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
-		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty
-
-MAKEFILE=	GNUmakefile
-MAKE_ENV=	GOPATH=${WRKSRC}
+USES=		go:modules
+GO_MODULE=	github.com/direnv/direnv/v2
 
 PLIST_FILES=	bin/direnv \
 		man/man1/direnv-stdlib.1.gz \

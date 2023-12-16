@@ -1,11 +1,12 @@
 PORTNAME=	hiawatha-monitor
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	monitor-${PORTVERSION}
 
-MAINTAINER=	christopher.petrik@usm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring tool for the Hiawatha web server
 WWW=		https://www.hiawatha-webserver.org/monitor
 

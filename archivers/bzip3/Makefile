@@ -1,7 +1,7 @@
 PORTNAME=	bzip3
-PORTVERSION=	1.3.2
+DISTVERSION=	1.4.0
 CATEGORIES=	archivers
-MASTER_SITES=	https://github.com/kspalaiologos/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/kspalaiologos/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Better and stronger spiritual successor to BZip2
@@ -10,12 +10,7 @@ WWW=		https://github.com/kspalaiologos/bzip3
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		libtool pkgconfig
+USES=		cmake pathfix tar:xz
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

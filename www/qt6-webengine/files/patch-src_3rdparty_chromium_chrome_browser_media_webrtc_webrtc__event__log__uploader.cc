@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_event_log_uploader.cc
-@@ -42,7 +42,7 @@ const char kProduct[] = "Chrome_ChromeOS";
+@@ -43,7 +43,7 @@ const char kProduct[] = "Chrome_ChromeOS";
  const char kProduct[] = "Chrome_Mac";
  #elif BUILDFLAG(IS_CHROMEOS_ASH)
  const char kProduct[] = "Chrome_ChromeOS";

@@ -1,11 +1,11 @@
 PORTNAME=	netdisco
-DISTVERSION=	2.061001
+DISTVERSION=	2.070001
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
 DISTNAME=	App-Netdisco-${PORTVERSION}
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Network discovery/management tool with web console
 WWW=		http://netdisco.org/
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Authen-Radius>=0:security/p5-Authen-Radius \
 		p5-Authen-TacacsPlus>=0:security/p5-Authen-TacacsPlus \
 		p5-CGI-Expand>=2.05:www/p5-CGI-Expand \
+		p5-Command-Runner>=0.200:sysutils/p5-Command-Runner \
 		p5-Crypt-Bcrypt>=0:security/p5-Crypt-Bcrypt \
 		p5-Data-Printer>=0:devel/p5-Data-Printer \
 		p5-Data-Visitor-Tiny>=0:devel/p5-Data-Visitor-Tiny \
@@ -37,6 +38,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Dancer-Plugin-Passphrase>=2.0.1:security/p5-Dancer-Plugin-Passphrase \
 		p5-Dancer-Plugin-Swagger>=0:www/p5-Dancer-Plugin-Swagger \
 		p5-Dancer-Session-Cookie>=0.27:www/p5-Dancer-Session-Cookie \
+		p5-EV>=0:devel/p5-EV \
 		p5-Env-Path>=0:devel/p5-Env-Path \
 		p5-Expect>=0:lang/p5-Expect \
 		p5-File-ShareDir>=1.03:devel/p5-File-ShareDir \
@@ -46,7 +48,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-GraphViz>=0:graphics/p5-GraphViz \
 		p5-HTML-Parser>=3.70:www/p5-HTML-Parser \
 		p5-HTTP-Tiny>=0.029:www/p5-HTTP-Tiny \
-		p5-JSON>=0:converters/p5-JSON \
+		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-List-MoreUtils>=0.428:lang/p5-List-MoreUtils \
 		p5-Log-Message-Simple>=0:devel/p5-Log-Message-Simple \
 		p5-Module-Find>=0.12:devel/p5-Module-Find \
@@ -71,7 +73,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Socket6>=0.23:net/p5-Socket6 \
 		p5-Starman>=0.4008:www/p5-Starman \
 		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
-		p5-SNMP-Info>=3.64:net-mgmt/p5-SNMP-Info \
+		p5-SNMP-Info>=3.95:net-mgmt/p5-SNMP-Info \
 		p5-SQL-Translator>=0.11018:databases/p5-SQL-Translator \
 		p5-Template-Toolkit>=2.24:www/p5-Template-Toolkit \
 		p5-Template-AutoFilter>=0:textproc/p5-Template-AutoFilter \

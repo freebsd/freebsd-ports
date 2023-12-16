@@ -26,6 +26,7 @@ include/snort/detection/detection_util.h
 include/snort/detection/ips_context.h
 include/snort/detection/ips_context_chain.h
 include/snort/detection/ips_context_data.h
+include/snort/detection/pattern_match_data.h
 include/snort/detection/regex_offload.h
 include/snort/detection/rule_option_types.h
 include/snort/detection/rules.h
@@ -100,6 +101,7 @@ include/snort/host_tracker/cache_interface.h
 include/snort/host_tracker/host_cache.h
 include/snort/host_tracker/host_cache_segmented.h
 include/snort/host_tracker/host_tracker.h
+include/snort/ips_options/extract.h
 include/snort/log/log.h
 include/snort/log/log_text.h
 include/snort/log/messages.h

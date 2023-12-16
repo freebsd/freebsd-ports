@@ -43,6 +43,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
 		libpng.so:graphics/png \
+		libre2.so:devel/re2 \
 		libsnappy.so:archivers/snappy \
 		libvpx.so:multimedia/libvpx \
 		libwebp.so:graphics/webp
@@ -80,7 +81,7 @@ SNDIO_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=-no-sndio
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
 USES=		gl gnome gperf jpeg minizip ninja:build nodejs:build,lts \
-		perl5 pkgconfig python:2.7,build qmake:norecursive,outsource \
+		perl5 pkgconfig python:build qmake:norecursive,outsource \
 		qt-dist:5,webengine shebangfix xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2 libxslt
@@ -147,6 +148,8 @@ post-patch:
 		${WRKSRC}/src/3rdparty/chromium/chrome/common/chrome_paths.cc \
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
 		${WRKSRC}/src/3rdparty/gn/build/gen.py
+	@${REINPLACE_CMD} -E -e 's|^(MODULE_VERSION = ).*|\1${QT5_VERSION}|' \
+		${WRKSRC}/.qmake.conf
 
 .if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 	@${REINPLACE_CMD} -e 's/icudtl.dat/icudtb.dat/' \
@@ -165,8 +168,8 @@ pre-configure:
 # Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	cd ${WRKSRC} && ${QT_BINDIR}/syncqt.pl -version ${QT5_VERSION}
 
-# Fix version mismatches for CMake
 post-build:
+# Fix version mismatches for CMake
 .for module in Pdf PdfWidgets WebEngine WebEngineCore WebEngineWidgets
 	@${REINPLACE_CMD} -e '/${QT5_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT}/s|${QT5_VERSION}|'"$$(${MAKE} -C ../../devel/qt5-core -VQT5_VERSION)"'|' \
 		${BUILD_WRKSRC}/lib/cmake/Qt5${module}/Qt5${module}Config.cmake

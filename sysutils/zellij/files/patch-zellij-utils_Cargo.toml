@@ -1,0 +1,11 @@
+--- zellij-utils/Cargo.toml.orig	2023-11-13 07:51:24 UTC
++++ zellij-utils/Cargo.toml
+@@ -58,7 +58,7 @@ futures = "0.3.28"
+ surf = { version = "2.3.2", default-features = false, features = [
+     "curl-client",
+ ] }
+-openssl-sys = { version = "0.9.93", features = ["vendored"] }
++openssl-sys = { version = "0.9.93" }
+ 
+ [dev-dependencies]
+ insta = { version = "1.6.0", features = ["backtrace"] }

@@ -1,7 +1,7 @@
-TIMESTAMP = 1691553940
-SHA256 (go/biology_seqkit/seqkit-v2.5.1/v2.5.1.mod) = 9697f35b9c9941df33360b60f42ff021857a291e62f2e43b98749849027b63d2
-SIZE (go/biology_seqkit/seqkit-v2.5.1/v2.5.1.mod) = 2508
-SHA256 (go/biology_seqkit/seqkit-v2.5.1/v2.5.1.zip) = fd572ed7f71e204fb5691cb25119615e4149404ab64dc2a3449c1fe064bc6caf
-SIZE (go/biology_seqkit/seqkit-v2.5.1/v2.5.1.zip) = 33915222
-SHA256 (go/biology_seqkit/seqkit-v2.5.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/biology_seqkit/seqkit-v2.5.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1700379735
+SHA256 (go/biology_seqkit/seqkit-v2.6.1/v2.6.1.mod) = 129d849fa57ca7e103af6c096e3feef5c32a04914742c41c5548f44c4797c7b3
+SIZE (go/biology_seqkit/seqkit-v2.6.1/v2.6.1.mod) = 2510
+SHA256 (go/biology_seqkit/seqkit-v2.6.1/v2.6.1.zip) = fd9877a0deea2a06dafe911f70157dad7e202739553bccf0d1059dd62d677247
+SIZE (go/biology_seqkit/seqkit-v2.6.1/v2.6.1.zip) = 33921080
+SHA256 (go/biology_seqkit/seqkit-v2.6.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/biology_seqkit/seqkit-v2.6.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

@@ -1,5 +1,5 @@
 PORTNAME=	nats-server
-PORTVERSION=	2.10.5
+PORTVERSION=	2.10.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
-GH_TUPLE=	golang:crypto:v0.15.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:v0.14.0:golang_sys/vendor/golang.org/x/sys \
-		golang:time:v0.4.0:golang_time/vendor/golang.org/x/time \
-		klauspost:compress:v1.17.2:klauspost_compress/vendor/github.com/klauspost/compress \
+GH_TUPLE=	golang:crypto:v0.16.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys \
+		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
+		klauspost:compress:v1.17.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jwt:v2.5.3:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nats.go:v1.31.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \

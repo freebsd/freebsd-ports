@@ -1,5 +1,5 @@
 PORTNAME=	hcloud
-DISTVERSION=	1.31.0
+DISTVERSION=	1.32.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.20,<3:www/py-requests@${PY_FLAVO
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.3:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylint>=3.0.0:devel/pylint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mypy>=1.6:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy>=1.7:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-python-dateutil>=0:devel/py-types-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-requests>=0:devel/py-types-requests@${PY_FLAVOR}
 

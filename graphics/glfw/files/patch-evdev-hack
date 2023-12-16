@@ -1,0 +1,32 @@
+Fix build with WAYLAND
+https://github.com/glfw/glfw/issues/2445
+
+--- src/wl_init.c.orig	2023-12-12 18:00:27 UTC
++++ src/wl_init.c
+@@ -32,7 +32,11 @@
+ 
+ #include <errno.h>
+ #include <limits.h>
+-#include <linux/input.h>
++#if defined(__FreeBSD__)
++ #include <dev/evdev/input.h>
++#else
++ #include <linux/input.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+
+--- src/wl_window.c.orig	2023-12-12 18:00:27 UTC
++++ src/wl_window.c
+@@ -43,6 +43,10 @@
+ #include <signal.h>
+ #include <time.h>
+ 
++#if defined(__FreeBSD__)
++ #include <dev/evdev/input-event-codes.h>
++#endif
++
+ #define GLFW_BORDER_SIZE    4
+ #define GLFW_CAPTION_HEIGHT 24
+ 

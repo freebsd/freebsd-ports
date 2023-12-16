@@ -17,12 +17,8 @@ FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
 USES=		qt:${FLAVOR:S/qt//} xorg
-USE_CXXSTD=	c++11
-
 USE_QT=		${_USE_QT_${FLAVOR}}
 USE_XORG=	x11
-
-CONFLICTS_INSTALL=	mlt6-qt5
 
 # Flavor handling
 _USE_QT_qt5=	core gui svg widgets xml \

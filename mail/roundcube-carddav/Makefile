@@ -1,5 +1,5 @@
 PORTNAME=	carddav
-PORTVERSION=	4.4.4
+PORTVERSION=	5.1.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/mstilkerich/rcmcarddav/releases/download/${DISTVERSIONFULL}/
@@ -12,7 +12,7 @@ WWW=		https://github.com/mstilkerich/rcmcarddav
 
 LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=82 83
+IGNORE_WITH_PHP=83
 
 BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.5:mail/roundcube@${PHP_FLAVOR}
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.5:mail/roundcube@${PHP_FLAVOR}

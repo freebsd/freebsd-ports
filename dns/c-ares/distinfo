@@ -1,3 +1,3 @@
-TIMESTAMP = 1698422709
-SHA256 (c-ares-1.21.0.tar.gz) = cd7aa3af1d3ee780d6437039a7ddb7f1ec029f9c4f7aabb0197e384eb5bc2f2d
-SIZE (c-ares-1.21.0.tar.gz) = 1623742
+TIMESTAMP = 1701376544
+SHA256 (c-ares-1.23.0.tar.gz) = cb614ecf78b477d35963ebffcf486fc9d55cc3d3216f00700e71b7d4868f79f5
+SIZE (c-ares-1.23.0.tar.gz) = 1681336

@@ -1,0 +1,7 @@
+wasabi is a fast and memory efficient Black MIDI player.
+It can play virtually any Black MIDI you have in realtime.
+
+Features
+* Multithreaded
+* Easy to use and configurable
+* Integrated MIDI synthesizer (XSynth)

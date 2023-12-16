@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-06-28 19:03:42 UTC
++++ configure.ac
+@@ -21,7 +21,7 @@ AM_PROG_LEX
+ AS_BOX([Headers, Types, and Compiler Checks])
+ AC_CHECK_HEADERS([getopt.h])
+ 
+-AC_CHECK_HEADERS([capsicum_helpers.h libcasper.h], capsicum_found=candidate)
++AC_CHECK_HEADERS([casper/cap_net.h], capsicum_found=candidate)
+ AS_IF([test "$capsicum_found" == "candidate"],
+       [AC_SEARCH_LIBS([cap_init], [casper], [capsicum_found=yes])]
+       [AC_SEARCH_LIBS([cap_getaddrinfo], [cap_net], [capsicum_found=yes])])

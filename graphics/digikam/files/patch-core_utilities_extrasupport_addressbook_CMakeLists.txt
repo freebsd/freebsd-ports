@@ -1,0 +1,22 @@
+--- core/utilities/extrasupport/addressbook/CMakeLists.txt.orig	2023-11-29 09:52:21 UTC
++++ core/utilities/extrasupport/addressbook/CMakeLists.txt
+@@ -14,7 +14,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_M
+                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+ )
+ 
+-if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
++if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+     include_directories(
+         $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::AkonadiCore,INTERFACE_INCLUDE_DIRECTORIES>
+         $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Contacts,INTERFACE_INCLUDE_DIRECTORIES>
+@@ -35,7 +35,7 @@ target_link_libraries(akonadiiface PRIVATE Qt${QT_VERS
+ 
+ target_link_libraries(akonadiiface PRIVATE Qt${QT_VERSION_MAJOR}::Core KF${QT_VERSION_MAJOR}::I18n)
+ 
+-if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+-    target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
+-    target_link_libraries(akonadiiface PRIVATE KF${QT_VERSION_MAJOR}::AkonadiContact KF${QT_VERSION_MAJOR}::Contacts)
++if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
++    target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KPim${QT_VERSION_MAJOR}::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
++    target_link_libraries(akonadiiface PRIVATE KPim${QT_VERSION_MAJOR}::AkonadiContact KF${QT_VERSION_MAJOR}::Contacts)
+ endif()

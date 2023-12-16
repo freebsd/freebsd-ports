@@ -1,6 +1,14 @@
---- Makefile.orig	2023-05-09 10:51:38 UTC
+--- Makefile.orig	2023-08-24 16:20:21 UTC
 +++ Makefile
-@@ -236,7 +236,7 @@ endef
+@@ -210,7 +210,6 @@ endif
+ JL_PRIVATE_LIBS-$(USE_SYSTEM_LAPACK) += $(LIBLAPACKNAME)
+ endif
+ 
+-JL_PRIVATE_LIBS-$(USE_SYSTEM_CSL) += libgfortran libquadmath libstdc++ libgcc_s libgomp libssp libatomic
+ ifeq ($(OS),Darwin)
+ JL_PRIVATE_LIBS-$(USE_SYSTEM_CSL) += libc++
+ endif
+@@ -236,7 +235,7 @@ endef
  endef
  
  
@@ -9,7 +17,7 @@
  	@$(MAKE) $(QUIET_MAKE) $(JULIA_BUILD_MODE)
  	@for subdir in $(bindir) $(datarootdir)/julia/stdlib/$(VERSDIR) $(docdir) $(man1dir) $(includedir)/julia $(libdir) $(private_libdir) $(sysconfdir) $(private_libexecdir); do \
  		mkdir -p $(DESTDIR)$$subdir; \
-@@ -339,8 +339,6 @@ endif
+@@ -339,8 +338,6 @@ endif
  	cp -R -L $(JULIAHOME)/base/* $(DESTDIR)$(datarootdir)/julia/base
  	cp -R -L $(JULIAHOME)/test/* $(DESTDIR)$(datarootdir)/julia/test
  	cp -R -L $(build_datarootdir)/julia/* $(DESTDIR)$(datarootdir)/julia
@@ -18,7 +26,7 @@
  	# Remove various files which should not be installed
  	-rm -f $(DESTDIR)$(datarootdir)/julia/base/version_git.sh
  	-rm -f $(DESTDIR)$(datarootdir)/julia/test/Makefile
-@@ -350,12 +348,6 @@ endif
+@@ -350,12 +347,6 @@ endif
  	-rm -f $(DESTDIR)$(datarootdir)/julia/stdlib/$(VERSDIR)/*/build-checked
  	# Copy in beautiful new man page
  	$(INSTALL_F) $(build_man1dir)/julia.1 $(DESTDIR)$(man1dir)/
@@ -31,7 +39,7 @@
  
  	# Update RPATH entries and JL_SYSTEM_IMAGE_PATH if $(private_libdir_rel) != $(build_private_libdir_rel)
  ifneq ($(private_libdir_rel),$(build_private_libdir_rel))
-@@ -430,26 +422,16 @@ endif
+@@ -430,26 +421,16 @@ endif
  endif
  endif
  

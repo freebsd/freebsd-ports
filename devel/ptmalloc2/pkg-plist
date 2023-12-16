@@ -1,4 +1,0 @@
-include/ptmalloc2/malloc.h
-lib/libptmalloc2.a
-lib/libptmalloc2.so
-lib/libptmalloc2.so.0

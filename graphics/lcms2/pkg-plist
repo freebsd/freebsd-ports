@@ -10,7 +10,7 @@ include/lcms2_threaded.h
 lib/liblcms2.a
 lib/liblcms2.so
 lib/liblcms2.so.2
-lib/liblcms2.so.2.0.15
+lib/liblcms2.so.2.0.16
 lib/liblcms2_fast_float.a
 lib/liblcms2_fast_float.so
 lib/liblcms2_fast_float.so.1

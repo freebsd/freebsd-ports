@@ -25,6 +25,7 @@
     SUBDIR += dosbox-staging
     SUBDIR += dosbox-x
     SUBDIR += dps8m
+    SUBDIR += duckstation
     SUBDIR += dynamips-community
     SUBDIR += edumips64
     SUBDIR += elliott-803
@@ -48,7 +49,6 @@
     SUBDIR += higan
     SUBDIR += hugo
     SUBDIR += hv_kvp_cmd
-    SUBDIR += ines
     SUBDIR += javatari
     SUBDIR += joytran
     SUBDIR += jzintv

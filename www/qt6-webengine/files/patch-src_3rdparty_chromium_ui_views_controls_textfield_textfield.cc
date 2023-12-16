@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/controls/textfield/textfield.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/views/controls/textfield/textfield.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/ui/views/controls/textfield/textfield.cc
-@@ -71,7 +71,7 @@
+@@ -74,7 +74,7 @@
  #include "base/win/win_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -164,7 +164,7 @@ bool IsControlKeyModifier(int flags) {
+@@ -168,7 +168,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -18,7 +18,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -707,7 +707,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -706,7 +706,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -27,7 +27,7 @@
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
    if (!handled && linux_ui &&
-@@ -851,7 +851,7 @@ bool Textfield::SkipDefaultKeyEventProcessing(const ui
+@@ -878,7 +878,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -1721,7 +1721,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -1831,7 +1831,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2220,14 +2220,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2344,14 +2344,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

@@ -1,5 +1,5 @@
 PORTNAME=	libheif
-DISTVERSION=	1.17.3
+DISTVERSION=	1.17.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 

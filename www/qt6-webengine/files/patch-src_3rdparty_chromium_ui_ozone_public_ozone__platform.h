@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/ozone/public/ozone_platform.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/ozone/public/ozone_platform.h.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/ui/ozone/public/ozone_platform.h
 @@ -144,7 +144,7 @@ class COMPONENT_EXPORT(OZONE) OzonePlatform {
      // back via gpu extra info.

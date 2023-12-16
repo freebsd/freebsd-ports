@@ -1,7 +1,7 @@
 PORTNAME=	mousai
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.5
-PORTREVISION=	5
+DISTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
-		libdbus-1.so:devel/dbus \
 		libsoup-3.0.so:devel/libsoup3 \
 		libgraphene-1.0.so:graphics/graphene
 

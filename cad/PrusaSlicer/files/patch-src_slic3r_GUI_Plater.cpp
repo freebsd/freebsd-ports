@@ -1,4 +1,4 @@
---- src/slic3r/GUI/Plater.cpp.orig	2023-07-25 12:32:07 UTC
+--- src/slic3r/GUI/Plater.cpp.orig	2023-06-19 12:07:14 UTC
 +++ src/slic3r/GUI/Plater.cpp
 @@ -2452,7 +2452,7 @@ std::vector<size_t> Plater::priv::load_files(const std
      // when loading a project file. However, creating the dialog on heap causes issues on macOS, where it does not
@@ -27,3 +27,12 @@
          // For some reason on Linux the menu isn't displayed if position is
          // specified (even though the position is sane).
          position = wxDefaultPosition;
+@@ -5281,7 +5281,7 @@ void Plater::load_project(const wxString& filename)
+ 
+     p->reset();
+ 
+-    if (! load_files({ into_path(filename) }).empty()) {
++    if (! load_files((const std::vector<boost::filesystem::path>){ into_path(filename) }).empty()) {
+         // At least one file was loaded.
+         p->set_project_filename(filename);
+         // Save the names of active presets and project specific config into ProjectDirtyStateManager.

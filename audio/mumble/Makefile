@@ -1,6 +1,6 @@
 PORTNAME=	mumble
 DISTVERSION=	1.5.517
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -27,9 +27,9 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libprotobuf.so:devel/protobuf \
 		libexpat.so:textproc/expat2
 
-USES=		cmake compiler:c++14-lang cpe desktop-file-utils gl \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils gl \
 		pkgconfig python:build qt:5 ssl xorg
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++17
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_QT=		buildtools:build concurrent core gui l10n linguist:build network \
@@ -41,6 +41,7 @@ CMAKE_OFF=	bundled-gsl bundled-json bundle-qt-translations bundled-speex \
 		crash-report g15 server tracy update
 
 CONFIGURE_ENV=	MUMBLE_PYTHON=${PYTHON_CMD}
+CXXFLAGS+=	-Wno-deprecated-declarations
 
 PLIST_SUB=	MUMBLE_VERSION="${DISTVERSION:R}"
 

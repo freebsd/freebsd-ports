@@ -1,6 +1,7 @@
 PORTNAME=	loki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
+DISTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	grafana-
 
@@ -54,8 +55,7 @@ GH_TUPLE=	\
 		aliyun:aliyun-oss-go-sdk:v2.2.7:aliyun_aliyun_oss_go_sdk/vendor/github.com/aliyun/aliyun-oss-go-sdk \
 		armon:go-metrics:v0.4.1:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		asaskevich:govalidator:a9d515a09cc2:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
-		aws:aws-sdk-go-v2:5399c50f8a2f:aws_aws_sdk_go_v2_imds \
-		aws:aws-sdk-go-v2:e155bb72a2ec:aws_aws_sdk_go_v2_config \
+		aws:aws-sdk-go-v2:5399c50f8a2f:aws_aws_sdk_go_v2_ini \
 		aws:aws-sdk-go-v2:v1.11.0:aws_aws_sdk_go_v2_credentials \
 		aws:aws-sdk-go-v2:v1.11.1:aws_aws_sdk_go_v2_sso \
 		aws:aws-sdk-go-v2:v1.16.0:aws_aws_sdk_go_v2 \
@@ -74,7 +74,7 @@ GH_TUPLE=	\
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.2.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cncf:udpa:c52dc94e7fbe:cncf_udpa_go/vendor/github.com/cncf/udpa \
-		cncf:xds:46e39c7b9b43:cncf_xds_go/vendor/github.com/cncf/xds \
+		cncf:xds:e9ce68804cb4:cncf_xds_go/vendor/github.com/cncf/xds \
 		containerd:fifo:v1.0.0:containerd_fifo/vendor/github.com/containerd/fifo \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		coreos:go-systemd:d3cd4ed1dbcf:coreos_go_systemd/vendor/github.com/coreos/go-systemd \
@@ -99,8 +99,8 @@ GH_TUPLE=	\
 		edsrzf:mmap-go:v1.1.0:edsrzf_mmap_go/vendor/github.com/edsrzf/mmap-go \
 		efficientgo:core:v1.0.0-rc.2:efficientgo_core/vendor/github.com/efficientgo/core \
 		emicklei:go-restful:v3.10.1:emicklei_go_restful_v3/vendor/github.com/emicklei/go-restful/v3 \
-		envoyproxy:go-control-plane:v0.11.0:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
-		envoyproxy:protoc-gen-validate:v0.9.1:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
+		envoyproxy:go-control-plane:9239064ad72f:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
+		envoyproxy:protoc-gen-validate:v0.10.1:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
 		etcd-io:bbolt:v1.3.6:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		etcd-io:etcd:v3.5.4:etcd_io_etcd/vendor/go.etcd.io/etcd/api/v3 \
 		etcd-io:etcd:v3.5.4:etcd_io_etcd_1/vendor/go.etcd.io/etcd/client/pkg/v3 \
@@ -143,20 +143,20 @@ GH_TUPLE=	\
 		gogo:status:v1.1.1:gogo_status/vendor/github.com/gogo/status \
 		golang-jwt:jwt:v4.5.0:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:v0.11.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.14.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:10a507213a29:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:mod:v0.9.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.12.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.12.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.17.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.10.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.2.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.10.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.11.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.3.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.13.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.13.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.7.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.11.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:04be3eba64a2:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.1.2:google_btree/vendor/github.com/google/btree \
 		google:gnostic:v0.6.9:google_gnostic/vendor/github.com/google/gnostic \
@@ -192,7 +192,7 @@ GH_TUPLE=	\
 		grafana:tail:77b18831edf0:grafana_tail/vendor/github.com/grafana/tail \
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:grpc-opentracing:8e809c8a8645:grpc_ecosystem_grpc_opentracing/vendor/github.com/grpc-ecosystem/grpc-opentracing \
-		grpc:grpc-go:v1.53.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.56.3:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hailocab:go-hostpool:e80d13ce29ed:hailocab_go_hostpool/vendor/github.com/hailocab/go-hostpool \
 		hashicorp:consul:api/v1.20.0:hashicorp_consul_api \
 		hashicorp:consul:v1.5.1:hashicorp_consul/vendor/github.com/hashicorp/consul \
@@ -307,7 +307,7 @@ GH_TUPLE=	\
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.5.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.8.3:stretchr_testify/vendor/github.com/stretchr/testify \
 		thanos-io:objstore:11ffbc490204:thanos_io_objstore/vendor/github.com/thanos-io/objstore \
 		tonistiigi:fifo:a9fb20d87448:tonistiigi_fifo/vendor/github.com/tonistiigi/fifo \
 		uber-go:atomic:v1.11.0:uber_go_atomic/vendor/go.uber.org/atomic \
@@ -335,15 +335,17 @@ LOKI_GROUP?=	loki
 LOKI_DATADIR?=	/var/db/${PORTNAME}
 
 PROMTAIL_USER?=	promtail
+PROMTAIL_GROUP?=	promtail
 PROMTAIL_DATADIR?=	/var/db/promtail
 
 USERS=		${LOKI_USER} ${PROMTAIL_USER}
-GROUPS=		${LOKI_GROUP}
+GROUPS=		${LOKI_GROUP} ${PROMTAIL_GROUP}
 
 SUB_LIST=	LOKI_USER=${LOKI_USER} \
 		LOKI_GROUP=${LOKI_GROUP} \
 		LOKI_DATADIR=${LOKI_DATADIR} \
 		PROMTAIL_USER=${PROMTAIL_USER} \
+		PROMTAIL_GROUP=${PROMTAIL_GROUP} \
 		PROMTAIL_DATADIR=${PROMTAIL_DATADIR}
 
 PLIST_SUB=	${SUB_LIST}
@@ -362,18 +364,6 @@ post-extract:
 	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/azcore
 	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_azcore}/sdk/azcore ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/azcore
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/azidentity
-	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_azidentity}/sdk/azidentity ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/azidentity
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/internal
-	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_internal}/sdk/internal ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/internal
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob
-	@${RLN} ${WRKSRC_azure_azure_sdk_for_go_azblob}/sdk/storage/azblob ${WRKSRC}/vendor/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
-	@${RLN} ${WRKSRC_azure_go_autorest_autorest}/autorest ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/adal
-	@${RLN} ${WRKSRC_azure_go_autorest_adal}/autorest/adal ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/adal
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/auth
-	@${RLN} ${WRKSRC_azure_go_autorest_auth}/autorest/azure/auth ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/auth
 
 post-install:
 	@${CP} ${WRKSRC}/cmd/loki/loki-local-config.yaml ${STAGEDIR}${PREFIX}/etc/loki.yaml.sample

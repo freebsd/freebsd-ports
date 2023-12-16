@@ -316,6 +316,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/gnus-pointer.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/followup.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/followup.xpm
@@ -1485,6 +1486,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/comint.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/completion.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/completion.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/completion-preview.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/completion-preview.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/composite.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/composite.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cus-dep.el.gz
@@ -1604,8 +1607,12 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-seq.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-seq.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-common.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-common.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-cstr.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-cstr.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-run.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-run.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.el.gz
@@ -2600,6 +2607,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/lrt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/misc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/misc-lang.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/pakistan.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/pakistan.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/philippine.el.gz

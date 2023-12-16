@@ -1,0 +1,18 @@
+--- libnotify/meson.build.orig	2023-02-17 21:20:15 UTC
++++ libnotify/meson.build
+@@ -46,7 +46,6 @@ notify_dep = declare_dependency(
+   dependencies: libnotify_deps,
+   compile_args: libnotify_cflags,
+   sources: headers + [enum_types[1]] + [marshal[1]],
+-  link_args: libnotify_ldflags,
+ )
+ 
+ libnotify_lib = shared_library(LIBNAME,
+@@ -55,6 +54,7 @@ libnotify_lib = shared_library(LIBNAME,
+   version: '@0@.@1@.@2@'.format(LT_CURRENT, LT_REVISION, LT_AGE),
+   soversion: LT_CURRENT,
+   install: true,
++  link_args: libnotify_ldflags,
+ )
+ 
+ libnotify_dep = declare_dependency(

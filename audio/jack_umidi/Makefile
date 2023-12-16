@@ -1,7 +1,6 @@
 PORTNAME=	jack_umidi
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=	v
-PORTVERSION=		1.1.1
-PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,20 +16,19 @@ USES=		tar:bzip2 uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 
-PLIST_FILES=	sbin/jack_umidi \
-		man/man8/jack_umidi.8.gz
+MAKE_ARGS+=	HAVE_MAN="YES" \
+		PTHREAD_LIBS="-lpthread"
+
 SUB_FILES=	jack_umidi.conf
+
+PLIST_FILES=	man/man8/jack_umidi.8.gz \
+		sbin/jack_umidi
 
 OPTIONS_DEFINE=	DEBUG DEVD_SCRIPT
 
-DEVD_SCRIPT_DESC=	Install devd script to auto-launch jack_umidi
-
+DEVD_SCRIPT_DESC=		Install devd script to auto-launch jack_umidi
+DEBUG_MAKE_ARGS=		HAVE_DEBUG="YES"
 DEVD_SCRIPT_PLIST_FILES=	etc/devd/jack_umidi.conf
-
-MAKE_ARGS+=	HAVE_MAN="YES"
-MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
-
-DEBUG_MAKE_ARGS=	HAVE_DEBUG="YES"
 
 post-install-DEVD_SCRIPT-on::
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd

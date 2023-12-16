@@ -172,6 +172,7 @@
 %%WWWDIR%%/math/interpolants/DiscreteInterpolant.js
 %%WWWDIR%%/math/interpolants/LinearInterpolant.js
 %%WWWDIR%%/math/interpolants/QuaternionLinearInterpolant.js
+%%WWWDIR%%/objects/BatchedMesh.js
 %%WWWDIR%%/objects/Bone.js
 %%WWWDIR%%/objects/Group.js
 %%WWWDIR%%/objects/InstancedMesh.js
@@ -200,6 +201,8 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphatest_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/aomap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/aomap_pars_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/batching_pars_vertex.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/batching_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/begin_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/beginnormal_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/bsdfs.glsl.js

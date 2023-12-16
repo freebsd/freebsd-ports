@@ -1,6 +1,6 @@
 PORTNAME=	gspell
 PORTVERSION=	1.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:even
+PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

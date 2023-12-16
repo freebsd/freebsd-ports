@@ -1,12 +1,14 @@
 PORTNAME=	ipykernel
-PORTVERSION=	6.26.0
+PORTVERSION=	6.27.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/ipython/ipykernel/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IPython Kernel for Jupyter
 WWW=		https://ipython.org/ \
+		https://ipykernel.readthedocs.io/en/stable/ \
 		https://github.com/ipython/ipykernel
 
 LICENSE=	BSD3CLAUSE

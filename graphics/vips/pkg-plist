@@ -60,11 +60,11 @@ include/vips/vips8
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
-lib/libvips-cpp.so.42.16.5
+lib/libvips-cpp.so.42.17.0
 lib/libvips.a
 lib/libvips.so
 lib/libvips.so.42
-lib/libvips.so.42.16.5
+lib/libvips.so.42.17.0
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
 man/man1/vips.1.gz

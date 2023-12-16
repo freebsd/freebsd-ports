@@ -1,6 +1,6 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -443,7 +443,7 @@
+@@ -447,7 +447,7 @@
  #include "storage/browser/file_system/external_mount_points.h"
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  #include "chrome/browser/chrome_browser_main_linux.h"
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #elif BUILDFLAG(IS_ANDROID)
-@@ -543,12 +543,12 @@
+@@ -548,12 +548,12 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -24,7 +24,7 @@
  #include "components/crash/core/app/crash_switches.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -559,14 +559,14 @@
+@@ -564,14 +564,14 @@
  #include "chrome/browser/apps/link_capturing/web_app_link_capturing_delegate.h"
  #endif
  
@@ -41,7 +41,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/navigation_throttle.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) ||
          // BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -582,7 +582,7 @@
+@@ -587,7 +587,7 @@
  #include "components/lens/lens_features.h"
  #endif
  
@@ -50,7 +50,7 @@
  #include "chrome/browser/chrome_browser_main_extra_parts_linux.h"
  #elif BUILDFLAG(IS_OZONE)
  #include "chrome/browser/chrome_browser_main_extra_parts_ozone.h"
-@@ -1598,7 +1598,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePre
+@@ -1591,7 +1591,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePre
    registry->RegisterBooleanPref(prefs::kNativeClientForceAllowed, false);
    registry->RegisterBooleanPref(
        policy::policy_prefs::kPPAPISharedImagesForVideoDecoderAllowed, true);
@@ -59,7 +59,7 @@
    registry->RegisterBooleanPref(prefs::kOutOfProcessSystemDnsResolutionEnabled,
                                  true);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID)
-@@ -1720,7 +1720,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1715,7 +1715,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    main_parts = std::make_unique<ChromeBrowserMainPartsLacros>(
        is_integration_test, &startup_data_);
@@ -68,7 +68,7 @@
    main_parts = std::make_unique<ChromeBrowserMainPartsLinux>(
        is_integration_test, &startup_data_);
  #elif BUILDFLAG(IS_ANDROID)
-@@ -1757,7 +1757,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1752,7 +1752,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
        std::make_unique<ChromeBrowserMainExtraPartsViewsLacros>());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -77,7 +77,7 @@
    main_parts->AddParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
  #else
-@@ -1778,7 +1778,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1773,7 +1773,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLacros>());
  #endif
  
@@ -86,7 +86,7 @@
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLinux>());
  #elif BUILDFLAG(IS_OZONE)
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsOzone>());
-@@ -1797,7 +1797,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1792,7 +1792,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
  
    chrome::AddMetricsExtraParts(main_parts.get());
  
@@ -95,7 +95,7 @@
    main_parts->AddParts(
        std::make_unique<
            chrome::enterprise_util::ChromeBrowserMainExtraPartsEnterprise>());
-@@ -2627,6 +2627,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2625,6 +2625,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #elif BUILDFLAG(IS_POSIX)
  #if BUILDFLAG(IS_ANDROID)
    bool enable_crash_reporter = true;
@@ -104,7 +104,7 @@
  #elif BUILDFLAG(IS_CHROMEOS)
    bool enable_crash_reporter = false;
    if (crash_reporter::IsCrashpadEnabled()) {
-@@ -3010,7 +3012,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2990,7 +2992,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
    ThreadProfilerConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
        command_line);
  
@@ -113,7 +113,7 @@
    // Opt into a hardened stack canary mitigation if it hasn't already been
    // force-disabled.
    if (!browser_command_line.HasSwitch(switches::kChangeStackGuardOnFork)) {
-@@ -4641,7 +4643,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -4661,7 +4663,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -122,7 +122,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -5188,7 +5190,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -5221,7 +5223,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
          &throttles);
    }
  
@@ -131,7 +131,7 @@
    MaybeAddThrottle(
        WebAppSettingsNavigationThrottle::MaybeCreateThrottleFor(handle),
        &throttles);
-@@ -5198,7 +5200,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -5231,7 +5233,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -140,7 +140,7 @@
    MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -5237,7 +5239,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -5270,7 +5272,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
              handle));
    }
  
@@ -149,10 +149,10 @@
    MaybeAddThrottle(browser_switcher::BrowserSwitcherNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -7124,7 +7126,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
- }
- 
+@@ -7164,7 +7166,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
  bool ChromeContentBrowserClient::ShouldRunOutOfProcessSystemDnsResolution() {
+ // This enterprise policy is supported on Android, but the feature will not be
+ // launched there.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    // This is possibly called before `g_browser_process` is initialized.

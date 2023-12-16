@@ -1,6 +1,7 @@
 PORTNAME=	mosh
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
@@ -11,14 +12,14 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		autoreconf compiler:c++11-lang ncurses perl5 pkgconfig ssl
+USES=		autoreconf compiler:c++17-lang ncurses perl5 pkgconfig ssl
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-utempter --without-ncurses
 CONFIGURE_ENV+=	OpenSSL_CFLAGS="-I${OPENSSLINC}" OpenSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 		TINFO_CFLAGS="-I/usr/include" ac_cv_have_decl_bswap64=yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mobile-shell

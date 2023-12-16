@@ -1,6 +1,6 @@
 PORTNAME=	phonon
 DISTVERSION=	4.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-${PHONON_PLUGIN}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-backend-${PHONON_PLUGIN}-${DISTVERSION}
@@ -11,14 +11,17 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GStreamer backend for Phonon
 WWW=		https://userbase.kde.org/Phonon
 
+DEPRECATED=	No longer maintained upstream -- the vlc backend is the one to use
+EXPIRATION_DATE=	2023-12-31
+
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lang gl gnome gstreamer kde:5 pkgconfig \
 		qt:5 tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
-USE_KDE=	ecm:build
-USE_QT=		core gui opengl phonon4 widgets x11extras \
+USE_KDE=	phonon ecm:build
+USE_QT=		core gui opengl widgets x11extras \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

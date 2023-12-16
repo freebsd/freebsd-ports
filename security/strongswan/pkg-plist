@@ -36,8 +36,8 @@
 %%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
 @sample %%ETCDIR%%.d/charon/hmac.conf.sample
-%%KDF%%@sample %%ETCDIR%%.d/charon/kdf.conf.sample
 %%IPSECKEY%%@sample %%ETCDIR%%.d/charon/ipseckey.conf.sample
+%%KDF%%@sample %%ETCDIR%%.d/charon/kdf.conf.sample
 %%KERNELLIBIPSEC%%@sample %%ETCDIR%%.d/charon/kernel-libipsec.conf.sample
 @sample %%ETCDIR%%.d/charon/kernel-pfkey.conf.sample
 @sample %%ETCDIR%%.d/charon/kernel-pfroute.conf.sample
@@ -49,6 +49,7 @@
 %%MYSQL%%@sample %%ETCDIR%%.d/charon/mysql.conf.sample
 @sample %%ETCDIR%%.d/charon/nonce.conf.sample
 @sample %%ETCDIR%%.d/charon/openssl.conf.sample
+%%VIA%%@sample %%ETCDIR%%.d/charon/padlock.conf.sample
 @sample %%ETCDIR%%.d/charon/pem.conf.sample
 @sample %%ETCDIR%%.d/charon/pgp.conf.sample
 @sample %%ETCDIR%%.d/charon/pkcs1.conf.sample
@@ -207,6 +208,8 @@ lib/ipsec/plugins/libstrongswan-nonce.la
 lib/ipsec/plugins/libstrongswan-nonce.so
 lib/ipsec/plugins/libstrongswan-openssl.la
 lib/ipsec/plugins/libstrongswan-openssl.so
+%%VIA%%lib/ipsec/plugins/libstrongswan-padlock.la
+%%VIA%%lib/ipsec/plugins/libstrongswan-padlock.so
 lib/ipsec/plugins/libstrongswan-pem.la
 lib/ipsec/plugins/libstrongswan-pem.so
 lib/ipsec/plugins/libstrongswan-pgp.la
@@ -285,6 +288,7 @@ libexec/ipsec/whitelist
 %%PKI%%man/man1/pki---gen.1.gz
 %%PKI%%man/man1/pki---issue.1.gz
 %%PKI%%man/man1/pki---keyid.1.gz
+%%PKI%%man/man1/pki---ocsp.1.gz
 %%PKI%%man/man1/pki---pkcs7.1.gz
 %%PKI%%man/man1/pki---print.1.gz
 %%PKI%%man/man1/pki---pub.1.gz
@@ -313,6 +317,7 @@ sbin/ipsec
 %%DATADIR%%/templates/config/plugins/cmac.conf
 %%DATADIR%%/templates/config/plugins/constraints.conf
 %%DATADIR%%/templates/config/plugins/counters.conf
+%%CTR%%%%DATADIR%%/templates/config/plugins/ctr.conf
 %%CURL%%%%DATADIR%%/templates/config/plugins/curl.conf
 %%DATADIR%%/templates/config/plugins/curve25519.conf
 %%DATADIR%%/templates/config/plugins/des.conf
@@ -335,8 +340,8 @@ sbin/ipsec
 %%GCM%%%%DATADIR%%/templates/config/plugins/gcm.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
 %%DATADIR%%/templates/config/plugins/hmac.conf
-%%KDF%%%%DATADIR%%/templates/config/plugins/kdf.conf
 %%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
+%%KDF%%%%DATADIR%%/templates/config/plugins/kdf.conf
 %%KERNELLIBIPSEC%%%%DATADIR%%/templates/config/plugins/kernel-libipsec.conf
 %%DATADIR%%/templates/config/plugins/kernel-pfkey.conf
 %%DATADIR%%/templates/config/plugins/kernel-pfroute.conf
@@ -348,11 +353,11 @@ sbin/ipsec
 %%MYSQL%%%%DATADIR%%/templates/config/plugins/mysql.conf
 %%DATADIR%%/templates/config/plugins/nonce.conf
 %%DATADIR%%/templates/config/plugins/openssl.conf
+%%VIA%%%%DATADIR%%/templates/config/plugins/padlock.conf
 %%DATADIR%%/templates/config/plugins/pem.conf
 %%DATADIR%%/templates/config/plugins/pgp.conf
 %%DATADIR%%/templates/config/plugins/pkcs1.conf
 %%PKCS11%%%%DATADIR%%/templates/config/plugins/pkcs11.conf
-%%CTR%%%%DATADIR%%/templates/config/plugins/ctr.conf
 %%DATADIR%%/templates/config/plugins/pkcs12.conf
 %%DATADIR%%/templates/config/plugins/pkcs7.conf
 %%DATADIR%%/templates/config/plugins/pkcs8.conf
@@ -412,7 +417,3 @@ sbin/ipsec
 %%SWANCTL%%@dir etc/swanctl/x509ca
 %%SWANCTL%%@dir etc/swanctl/x509crl
 %%SWANCTL%%@dir etc/swanctl/x509ocsp
-%%VIA%%%%DATADIR%%/templates/config/plugins/padlock.conf
-%%VIA%%lib/ipsec/plugins/libstrongswan-padlock.la
-%%VIA%%lib/ipsec/plugins/libstrongswan-padlock.so
-%%VIA%%@sample %%ETCDIR%%.d/charon/padlock.conf.sample

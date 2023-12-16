@@ -1,0 +1,16 @@
+Drop after x11-toolkits/pango >= 1.51 update
+
+[pango-sys 0.18.0] Package dependency requirement 'pango >= 1.51' could not be satisfied.
+[pango-sys 0.18.0] Package 'pango' has version '1.50.14', required version is '>= 1.51'
+
+--- cargo-crates/gtk4-0.7.3/Cargo.toml.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gtk4-0.7.3/Cargo.toml
+@@ -121,7 +121,7 @@ gnome_45 = [
+ gnome_45 = [
+     "v4_12",
+     "cairo-rs/v1_16",
+-    "pango/v1_52",
++    "pango/v1_50",
+     "gdk-pixbuf/v2_42",
+     "gio/v2_78",
+ ]

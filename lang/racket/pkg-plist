@@ -4292,6 +4292,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compile
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/gen-standard-menus_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/group_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/group_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/guide-struct_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/guide-struct_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/handler_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/handler_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/icon_rkt.dep
@@ -4352,6 +4354,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compile
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-delegate_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-first-line_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-first-line_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-indent-guides_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-indent-guides_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-inline-overview_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-inline-overview_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/framework/private/compiled/text-line-numbers_rkt.dep
@@ -7354,6 +7358,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/library_rkt.
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/library_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/main_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/main_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/register_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/register_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/script_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/script_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/shadow-script_rkt.dep
@@ -7364,6 +7370,10 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/utils_rkt.de
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/compiled/utils_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/scribblings/compiled/quickscript_scrbl.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/scribblings/compiled/quickscript_scrbl.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/scripts/compiled/eyes_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/scripts/compiled/eyes_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/scripts/compiled/open-terminal_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/scripts/compiled/open-terminal_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/tests/compiled/library_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/quickscript/tests/compiled/library_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/r5rs-doc/r5rs/compiled/info_rkt.dep
@@ -19145,6 +19155,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/framework/private/frame.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/gen-standard-menus.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/group.rkt
+%%DATADIR%%/pkgs/gui-lib/framework/private/guide-struct.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/handler.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/icon.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/interfaces.rkt
@@ -19175,6 +19186,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/framework/private/text-column-guide.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/text-delegate.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/text-first-line.rkt
+%%DATADIR%%/pkgs/gui-lib/framework/private/text-indent-guides.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/text-inline-overview.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/text-line-numbers.rkt
 %%DATADIR%%/pkgs/gui-lib/framework/private/text-misc.rkt
@@ -21105,8 +21117,11 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/quickscript/library-gui.rkt
 %%DATADIR%%/pkgs/quickscript/library.rkt
 %%DATADIR%%/pkgs/quickscript/main.rkt
+%%DATADIR%%/pkgs/quickscript/register.rkt
 %%DATADIR%%/pkgs/quickscript/scribblings/quickscript.scrbl
 %%DATADIR%%/pkgs/quickscript/script.rkt
+%%DATADIR%%/pkgs/quickscript/scripts/eyes.rkt
+%%DATADIR%%/pkgs/quickscript/scripts/open-terminal.rkt
 %%DATADIR%%/pkgs/quickscript/shadow-script.rkt
 %%DATADIR%%/pkgs/quickscript/tests/library.rkt
 %%DATADIR%%/pkgs/quickscript/tests/test-compile_rkt--7.7.0.901.zo

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/compositor/compositor_observer.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/compositor/compositor_observer.h.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/ui/compositor/compositor_observer.h
 @@ -48,7 +48,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
  

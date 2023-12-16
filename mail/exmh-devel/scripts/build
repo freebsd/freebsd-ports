@@ -1,0 +1,85 @@
+#! /bin/sh
+
+VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
+DATE="`sed -ne 's/^set date \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
+
+SEDFILE=sed.$$
+if [ x${USE_NMH} = xYES ] ; then
+  CONFIGFILE=config.nmh
+else
+  CONFIGFILE=config.mh
+fi
+
+EXPECT="{}"
+EXPECTK="{}"
+FACES="{}"
+DOMAIN="{}"
+GPG="{}"
+PGP="{}"
+PGP5="{}"
+PGP6="{}"
+GLIMPSE="{}"
+PLAY="{}"
+
+if [ -f ${PREFIX}/bin/expect ]; then
+  EXPECT=${PREFIX}/bin/expect		#executable
+fi
+if [ -f ${PREFIX}/bin/expectk ]; then
+  EXPECTK=${PREFIX}/bin/expectk		#executable
+fi
+
+if [ -d ${PREFIX}/share/faces ]; then
+  FACES=${PREFIX}/share/faces		#dir
+  shortname="`hostname -s`"
+  domain="`hostname | sed -e s/^${shortname}// -e s/^.// | tr A-Z a-z`"
+  if [ "${domain}" != "" ]; then
+    DOMAIN="{${domain}}"
+  fi
+fi
+
+GPG=${PREFIX}/bin			#bindir
+PGP=${PREFIX}/bin			#bindir
+PGP5=${PREFIX}/bin			#bindir
+PGP6=${PREFIX}/bin			#bindir
+
+if [ -f ${PREFIX}/bin/glimpse ]; then
+  GLIMPSE=${PREFIX}/bin			#bindir
+fi
+
+if [ -f ${PREFIX}/bin/rplay ]; then
+  PLAY=${PREFIX}/bin/rplay		#executable
+fi
+
+echo "s@^#!wish@#!${WISH}@" >${SEDFILE}
+if [ "${EXPECT}" != "{}" ]; then
+  echo "s@^#!expect@#!${EXPECT}@" >>${SEDFILE}
+fi
+echo "/^#CONFIGURATION/a\\" >>${SEDFILE}
+
+sed <${FILESDIR}/${CONFIGFILE} \
+	-e "s+!!PREFIX!!+${PREFIX}+g" \
+	-e "s+!!WISH!!+${WISH}+g" \
+	-e "s+!!EXPECT!!+${EXPECT}+g" \
+	-e "s+!!EXPECTK!!+${EXPECTK}+g" \
+	-e "s+!!FACES!!+${FACES}+g" \
+	-e "s+!!DOMAIN!!+${DOMAIN}+g" \
+	-e "s+!!GPG!!+${GPG}+g" \
+	-e "s+!!PGP!!+${PGP}+g" \
+	-e "s+!!PGP5!!+${PGP5}+g" \
+	-e "s+!!PGP6!!+${PGP6}+g" \
+	-e "s+!!GLIMPSE!!+${GLIMPSE}+g" \
+	-e "s+!!PLAY!!+${PLAY}+g" \
+	-e "s+!!VERSION!!+${VERSION}+g" \
+	-e "s+!!DATE!!+${DATE}+g" \
+ | sed -e 's/$/\\/' -e '$ s/.$//' >> ${SEDFILE}
+
+for i in exmh-async exmh-bg exmh-strip exmh ftp.expect inc.expect
+do
+	echo "sed -f ${SEDFILE} < $i.MASTER > $i"
+	sed -f ${SEDFILE} < $i.MASTER > $i
+done
+
+rm -f ${SEDFILE}
+
+echo "cd lib ;  echo 'auto_mkindex . *.tcl ; exit' | ${TCLSH}"
+cd lib ;  echo 'auto_mkindex . *.tcl ; exit' | ${TCLSH}

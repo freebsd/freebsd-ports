@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-core
-PORTVERSION=	3.185.2
+PORTVERSION=	3.190.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,9 @@ WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-core
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-aws-eventstream>=1.0.2<2:devel/rubygem-aws-eventstream \
+RUN_DEPENDS=	rubygem-aws-eventstream>=1.3.0<2:devel/rubygem-aws-eventstream \
 		rubygem-aws-partitions>=1.651.0<2:devel/rubygem-aws-partitions \
-		rubygem-aws-sigv4>=1.5<2:devel/rubygem-aws-sigv4 \
+		rubygem-aws-sigv4>=1.8<2:devel/rubygem-aws-sigv4 \
 		rubygem-jmespath>=1.6.1<2:devel/rubygem-jmespath
 
 USES=		gem

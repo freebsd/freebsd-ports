@@ -1,6 +1,5 @@
 PORTNAME=	mcmc
-DISTVERSION=	0.9-7
-PORTREVISION=	2
+DISTVERSION=	0.9-8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/mcmc/
 
 LICENSE=	MIT
 
-USES=	cran:compiles,auto-plist
+USES=		cran:compiles,auto-plist
 
 .include <bsd.port.mk>

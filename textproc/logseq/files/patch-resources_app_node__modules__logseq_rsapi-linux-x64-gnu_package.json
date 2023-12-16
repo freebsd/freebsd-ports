@@ -1,4 +1,4 @@
---- resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json.orig	2023-11-01 13:40:29 UTC
+--- resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json.orig	2023-12-06 14:58:56 UTC
 +++ resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json
 @@ -1,19 +1,19 @@
  {
@@ -8,7 +8,7 @@
    "publishConfig": {
      "access": "public"
    },
-   "version": "0.0.75",
+   "version": "0.0.76",
    "os": [
 -    "linux"
 +    "freebsd"

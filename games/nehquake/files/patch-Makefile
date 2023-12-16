@@ -1,5 +1,5 @@
---- Makefile.orig	Sat May 27 13:47:34 2006
-+++ Makefile	Sat May 27 14:04:12 2006
+--- Makefile.orig	2005-11-10 14:57:23 UTC
++++ Makefile
 @@ -9,9 +9,9 @@
  #
  
@@ -12,7 +12,7 @@
  
  ifneq (,$(findstring libc6,$(shell if [ -e /lib/libc.so.6 ];then echo libc6;fi)))
  GLIBC=-glibc
-@@ -28,32 +28,45 @@
+@@ -28,32 +28,45 @@ NOARCH=noarch
  
  MOUNT_DIR=./src
  
@@ -34,26 +34,27 @@
 +endif
  
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -march=i686 -O2 -ffast-math -funroll-loops \
-+BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp #-Wall
-+
+-	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
+-DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -Wno-implicit-function-declaration
+ 
+-LDFLAGS=-lm
 +ifeq ($(strip $(USE_X86_ASM)),YES)
 +BASE_CFLAGS+=-Did386
 +endif
-+
-+RELEASE_CFLAGS=$(BASE_CFLAGS)
-+
-+ifeq ($(strip $(USE_OPTIMIZED_CFLAGS)),YES)
-+RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
- 	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
--DEBUG_CFLAGS=$(BASE_CFLAGS) -g
-+endif
- 
--LDFLAGS=-lm
-+DEBUG_CFLAGS=$(BASE_CFLAGS) -g
  
 -LDFLAGS += -lz -L./src/fmod -Wl,-rpath,. -lfmod
-+LDFLAGS+=-lm -lz
++RELEASE_CFLAGS=$(BASE_CFLAGS)
  
++ifeq ($(strip $(USE_OPTIMIZED_CFLAGS)),YES)
++RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
++	-fomit-frame-pointer -fno-strict-aliasing
++endif
++
++DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++
++LDFLAGS+=-lm -lz
++
  ifeq ($(strip $(BUILD_SDL)),YES)
 - SDLCFLAGS=$(shell sdl-config --cflags)
 - SDLLDFLAGS=$(shell sdl-config --libs)
@@ -72,7 +73,7 @@
  
  DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
  DO_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -o $@ -c $<
-@@ -70,10 +83,10 @@
+@@ -70,10 +83,10 @@ DO_GL_AS=$(CC) $(CFLAGS) $(GLCFLAGS) -DELF -x assemble
  #############################################################################
  
  
@@ -85,7 +86,16 @@
  endif
  
  all:
-@@ -165,12 +178,15 @@
+@@ -94,7 +107,7 @@ debug:
+ 	$(BUILD_DEBUG_DIR)/glquake
+ 	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
+ 
+-release:
++release::
+ 	@-mkdir $(BUILD_RELEASE_DIR) \
+ 	$(BUILD_RELEASE_DIR)/glquake
+ 	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS)"
+@@ -165,12 +178,15 @@ GLQUAKE_OBJS= \
  	$(BUILDDIR)/glquake/sys_linux.o \
  	$(BUILDDIR)/glquake/snd_dma.o \
  	$(BUILDDIR)/glquake/snd_mem.o \
@@ -103,7 +113,7 @@
  
  GLQUAKE_LNX_OBJS = \
     $(BUILDDIR)/glquake/cd_linux.o \
-@@ -182,10 +198,10 @@
+@@ -182,10 +198,10 @@ GLQUAKE_SDL_OBJS = \
  	
  GLX_OBJS=$(BUILDDIR)/glquake/gl_vidlinuxglx.o
  

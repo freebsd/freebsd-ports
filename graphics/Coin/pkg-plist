@@ -873,7 +873,7 @@ include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
 lib/libCoin.so
 lib/libCoin.so.80
-lib/libCoin.so.80.0.0
+lib/libCoin.so.80.0.2
 libdata/pkgconfig/Coin.pc
 man/man1/coin-config.1.gz
 %%DATADIR%%/conf/coin-default.cfg

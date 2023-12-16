@@ -1,3 +1,5 @@
-TIMESTAMP = 1699466201
-SHA256 (KDE/release-service/23.08.3/kontrast-23.08.3.tar.xz) = d8001e04c02cb356a4fda8f21cce72283d92f212b42ea0453de7f7b61c84dad8
-SIZE (KDE/release-service/23.08.3/kontrast-23.08.3.tar.xz) = 211828
+TIMESTAMP = 1701977531
+SHA256 (KDE/release-service/23.08.4/kontrast-23.08.4.tar.xz) = d71d29221ba7db1bcd52e1e7ec369b272a58d0f7ee1d120d585b5a34e04c9fb0
+SIZE (KDE/release-service/23.08.4/kontrast-23.08.4.tar.xz) = 211820
+SHA256 (KDE/release-service/23.08.4/1fb315a862c30c20e99dd70967ca5be82d249dd4.patch) = b650f58c22b4eac2710939a9acdc0ca3b5746dbe49a431d01b273c189191c0b8
+SIZE (KDE/release-service/23.08.4/1fb315a862c30c20e99dd70967ca5be82d249dd4.patch) = 1188

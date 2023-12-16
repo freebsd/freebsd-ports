@@ -1,5 +1,6 @@
 PORTNAME=	datadog-integrations
 DISTVERSION=	7.24.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	uros@gruber.si
@@ -101,7 +102,7 @@ REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR
 SSH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR}
 SYS_CORE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 SYS_SWAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
-TLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity@${PY_FLAVOR}
+TLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service-identity>0:security/py-service-identity@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
 

@@ -1,0 +1,23 @@
+CMake Error at cube/CMakeLists.txt:237 (target_link_libraries):
+  Target "vkcube" links to:
+
+    volk::volk_headers
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+--- CMakeLists.txt.orig	2023-11-27 22:22:16 UTC
++++ CMakeLists.txt
+@@ -53,6 +53,9 @@ find_package(volk QUIET CONFIG)
+ find_package(VulkanHeaders QUIET CONFIG)
+ find_package(VulkanLoader QUIET CONFIG)
+ find_package(volk QUIET CONFIG)
++if (NOT TARGET volk::volk_headers)
++    add_subdirectory(volk EXCLUDE_FROM_ALL SYSTEM)
++endif()
+ 
+ include(GNUInstallDirs)
+ 

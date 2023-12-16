@@ -1,3 +1,5 @@
-TIMESTAMP = 1525630998
-SHA256 (luspi-photoqt-v1.6_GH0.tar.gz) = 34f30ee07d535a227db325219a59f81e9f21a6918510e225a3e7310f6fde569d
-SIZE (luspi-photoqt-v1.6_GH0.tar.gz) = 1119296
+TIMESTAMP = 1702019963
+SHA256 (luspi-photoqt-v3.4_GH0.tar.gz) = bd26133640f523a34e71f4a5335cb5ff96f3bfd22ffd403e1de4f26bf043de90
+SIZE (luspi-photoqt-v3.4_GH0.tar.gz) = 4189447
+SHA256 (0ad4563f6cca77322ad2fe8d0310e807db4ba15f.patch) = bdaab47ea70d248f13631f4eef17682e1fbd17db5769ea33d8a2b5a0e303ce30
+SIZE (0ad4563f6cca77322ad2fe8d0310e807db4ba15f.patch) = 525

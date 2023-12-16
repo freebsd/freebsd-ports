@@ -1,6 +1,6 @@
 PORTNAME=	lttoolbox
 DISTVERSION=	3.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/apertium/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -11,7 +11,7 @@ WWW=		https://wiki.apertium.org/wiki/Lttoolbox
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp
+BUILD_DEPENDS=	utf8cpp>=4.0.3:devel/utf8cpp
 LIB_DEPENDS=	libicuio.so:devel/icu \
 		libxml2.so:textproc/libxml2
 

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/linux/chrome.map.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/build/linux/chrome.map.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/build/linux/chrome.map
 @@ -20,6 +20,10 @@ global:
    # Program entry point.

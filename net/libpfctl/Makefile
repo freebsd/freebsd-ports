@@ -1,5 +1,5 @@
 PORTNAME=	libpfctl
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/kp/
 
@@ -13,7 +13,8 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/libpfctl
 
-_LIBPFCTL_HASH=	87c503235310
+_LIBPFCTL_HASH=	498934c5ff51
+_LIBPFCTL_REV=	2
 
 PLIST_FILES=	\
 		lib/libpfctl.so \
@@ -25,7 +26,7 @@ PLIST_FILES=	\
 .if ${OSREL} == "15.0"
 DISTFILES=	libpfctl-${_LIBPFCTL_HASH}.tar.gz
 .else
-DISTFILES=	libpfctl-${OSREL}_1.tar.gz
+DISTFILES=	libpfctl-${OSREL}_${_LIBPFCTL_REV}.tar.gz
 .endif
 
 do-install:
@@ -41,15 +42,13 @@ upload:
 	do \
 		cd /usr/src/lib && \
 		git archive --format=tar.gz \
-		    --output=libpfctl-$${version}.tar.gz \
-		    origin/releng/$${version} libpfctl ; \
+		    --output=libpfctl-$${version}_${_LIBPFCTL_REV}.tar.gz \
+		    libpfctl/$${version} libpfctl ; \
 	done
 	cd /usr/src/lib && \
 	git archive --format=tar.gz \
 	    --output=libpfctl-${_LIBPFCTL_HASH}.tar.gz \
-	    ${_LIBPFCTL_HASH} libpfctl ; \
-	scp libpfctl-*.tar.gz \
-	    kp@freefall.freebsd.org:public_distfiles/
+	    ${_LIBPFCTL_HASH} libpfctl ;
 .endif
 
 .include <bsd.port.post.mk>

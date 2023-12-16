@@ -1,6 +1,6 @@
---- content/renderer/render_process_impl.cc.orig	2023-08-28 20:17:35 UTC
+--- content/renderer/render_process_impl.cc.orig	2023-11-22 14:00:11 UTC
 +++ content/renderer/render_process_impl.cc
-@@ -45,7 +45,7 @@
+@@ -46,7 +46,7 @@
  #if BUILDFLAG(IS_WIN)
  #include "base/win/win_util.h"
  #endif
@@ -9,7 +9,7 @@
  #include "v8/include/v8-wasm-trap-handler-posix.h"
  #endif
  
-@@ -211,7 +211,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -212,7 +212,7 @@ RenderProcessImpl::RenderProcessImpl()
      v8::V8::SetFlagsFromString(kSABPerContextFlag, sizeof(kSABPerContextFlag));
    }
  

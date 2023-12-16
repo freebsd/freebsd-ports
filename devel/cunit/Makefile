@@ -12,10 +12,12 @@ WWW=		https://cunit.sourceforge.net/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool pathfix tar:bzip2
+USES=		autoreconf gmake libtool ncurses pathfix tar:bzip2
 
+CONFIGURE_ARGS=	--enable-automated --enable-basic --enable-console --enable-curses --enable-debug --enable-memtrace --enable-test
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-lncurses
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
@@ -25,28 +27,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 
 CONFLICTS_INSTALL=	c-unit
 
-OPTIONS_DEFINE=	AUTOMATED BASIC CONSOLE CURSES DEBUG DOCS EXAMPLES MEMTRACE TEST
-OPTIONS_DEFAULT=AUTOMATED BASIC CONSOLE CURSES DEBUG MEMTRACE TEST
-OPTIONS_SUB=	yes
-AUTOMATED_DESC=	Automated (XML) interface
-BASIC_DESC=	Basic interface
-CONSOLE_DESC=	Console interface
-CURSES_DESC=	Curses interface
-DEBUG_DESC=	Debug interface
-EXAMPLES_DESC=	Example programs
-MEMTRACE_DESC=	Internal memory tracking
-TEST_DESC=	Internal test program
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-AUTOMATED_CONFIGURE_ENABLE=	automated
-BASIC_CONFIGURE_ENABLE=	basic
-CONSOLE_CONFIGURE_ENABLE=	console
-CURSES_CONFIGURE_ENABLE=curses
-CURSES_LDFLAGS=		-lncurses
-CURSES_USES=		ncurses
-DEBUG_CONFIGURE_ENABLE=	debug
 EXAMPLES_CONFIGURE_ENABLE=	examples
-MEMTRACE_CONFIGURE_ENABLE=	memtrace
-TEST_CONFIGURE_ENABLE=	test
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/headers/Makefile.am

@@ -1,7 +1,7 @@
 PORTNAME=	fastnetmon
 PORTVERSION=	1.2.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -25,8 +25,8 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libabsl_base.so:devel/abseil \
 		libhiredis.so:databases/hiredis
 
-USES=	cmake compiler:c++11-lang pkgconfig localbase:ldflags ssl
-USE_CXXSTD=	c++14
+USES=	cmake compiler:c++17-lang pkgconfig localbase:ldflags ssl
+USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavel-odintsov
 USE_RC_SUBR=	${PORTNAME}
@@ -39,8 +39,9 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 
 CFLAGS_i386=	-march=i586
-CXXFLAGS += -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED \
-	    -D_GNU_SOURCE
+CXXFLAGS+=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED \
+		-D_GNU_SOURCE
+LDFLAGS+=	-labsl_log_internal_message -labsl_log_internal_nullguard
 
 USERS=	${PORTNAME}
 GROUPS=	${PORTNAME}

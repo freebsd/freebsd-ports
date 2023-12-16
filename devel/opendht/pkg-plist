@@ -37,7 +37,7 @@ lib/cmake/opendht/opendhtConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/opendht/opendhtConfig.cmake
 lib/cmake/opendht/opendhtConfigVersion.cmake
 lib/libopendht.so
-lib/libopendht.so.2
-lib/libopendht.so.2.6.0
+lib/libopendht.so.3
+lib/libopendht.so.3.1.6
 libdata/pkgconfig/opendht.pc
 man/man1/dhtnode.1.gz

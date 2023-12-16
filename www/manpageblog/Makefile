@@ -1,0 +1,35 @@
+PORTNAME=	manpageblog
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2
+CATEGORIES=	www
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	se@FreeBSD.org
+COMMENT=	Simple and static blog generator in manpage design
+WWW=		https://github.com/gyptazy/manpageblog
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		python shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	gyptazy
+
+SHEBANG_FILES=	${WRKSRC}/manpageblog
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+OPTIONS_DEFINE=	EXAMPLES DOCS
+
+do-install:
+		${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+		${INSTALL_DATA} ${WRKSRC}/blog.conf ${STAGEDIR}${EXAMPLESDIR}
+		cd ${WRKSRC} && ${COPYTREE_SHARE} content ${STAGEDIR}${EXAMPLESDIR}
+		cd ${WRKSRC} && ${COPYTREE_SHARE} _assets ${STAGEDIR}${EXAMPLESDIR}
+		cd ${WRKSRC} && ${COPYTREE_SHARE} _templates ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

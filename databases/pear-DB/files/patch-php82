@@ -1,0 +1,623 @@
+Obtained from:	https://github.com/pear/DB/commit/4efd340ec9eb1da23fa2df60d387c274e9c1100b (part of)
+
+--- DB/ibase.php.orig	2021-08-11 00:23:52 UTC
++++ DB/ibase.php
+@@ -707,9 +707,9 @@ class DB_ibase extends DB_common
+         $repeat = 0;
+         do {
+             $this->pushErrorHandling(PEAR_ERROR_RETURN);
+-            $result = $this->query("SELECT GEN_ID(${sqn}, 1) "
++            $result = $this->query("SELECT GEN_ID({$sqn}, 1) "
+                                    . 'FROM RDB$GENERATORS '
+-                                   . "WHERE RDB\$GENERATOR_NAME='${sqn}'");
++                                   . "WHERE RDB\$GENERATOR_NAME='{$sqn}'");
+             $this->popErrorHandling();
+             if ($ondemand && DB::isError($result)) {
+                 $repeat = 1;
+@@ -746,7 +746,7 @@ class DB_ibase extends DB_common
+     {
+         $sqn = strtoupper($this->getSequenceName($seq_name));
+         $this->pushErrorHandling(PEAR_ERROR_RETURN);
+-        $result = $this->query("CREATE GENERATOR ${sqn}");
++        $result = $this->query("CREATE GENERATOR {$sqn}");
+         $this->popErrorHandling();
+ 
+         return $result;
+--- DB/msql.php.orig	2021-08-11 00:23:52 UTC
++++ DB/msql.php
+@@ -443,7 +443,7 @@ class DB_msql extends DB_common
+         $repeat = false;
+         do {
+             $this->pushErrorHandling(PEAR_ERROR_RETURN);
+-            $result = $this->query("SELECT _seq FROM ${seqname}");
++            $result = $this->query("SELECT _seq FROM {$seqname}");
+             $this->popErrorHandling();
+             if ($ondemand && DB::isError($result) &&
+                 $result->getCode() == DB_ERROR_NOSUCHTABLE) {
+@@ -490,7 +490,7 @@ class DB_msql extends DB_common
+         if (DB::isError($res)) {
+             return $res;
+         }
+-        $res = $this->query("CREATE SEQUENCE ON ${seqname}");
++        $res = $this->query("CREATE SEQUENCE ON {$seqname}");
+         return $res;
+     }
+ 
+--- DB/mysql.php.orig	2021-08-11 00:23:52 UTC
++++ DB/mysql.php
+@@ -590,7 +592,7 @@ class DB_mysql extends DB_common
+         do {
+             $repeat = 0;
+             $this->pushErrorHandling(PEAR_ERROR_RETURN);
+-            $result = $this->query("UPDATE ${seqname} ".
++            $result = $this->query("UPDATE {$seqname} ".
+                                    'SET id=LAST_INSERT_ID(id+1)');
+             $this->popErrorHandling();
+             if ($result === DB_OK) {
+@@ -602,7 +604,7 @@ class DB_mysql extends DB_common
+                 // EMPTY SEQ TABLE
+                 // Sequence table must be empty for some reason, so fill
+                 // it and return 1 and obtain a user-level lock
+-                $result = $this->getOne("SELECT GET_LOCK('${seqname}_lock',10)");
++                $result = $this->getOne("SELECT GET_LOCK('{$seqname}_lock',10)");
+                 if (DB::isError($result)) {
+                     return $this->raiseError($result);
+                 }
+@@ -612,14 +614,14 @@ class DB_mysql extends DB_common
+                 }
+ 
+                 // add the default value
+-                $result = $this->query("REPLACE INTO ${seqname} (id) VALUES (0)");
++                $result = $this->query("REPLACE INTO {$seqname} (id) VALUES (0)");
+                 if (DB::isError($result)) {
+                     return $this->raiseError($result);
+                 }
+ 
+                 // Release the lock
+                 $result = $this->getOne('SELECT RELEASE_LOCK('
+-                                        . "'${seqname}_lock')");
++                                        . "'{$seqname}_lock')");
+                 if (DB::isError($result)) {
+                     return $this->raiseError($result);
+                 }
+@@ -676,12 +678,12 @@ class DB_mysql extends DB_common
+             return $res;
+         }
+         // insert yields value 1, nextId call will generate ID 2
+-        $res = $this->query("INSERT INTO ${seqname} (id) VALUES (0)");
++        $res = $this->query("INSERT INTO {$seqname} (id) VALUES (0)");
+         if (DB::isError($res)) {
+             return $res;
+         }
+         // so reset to zero
+-        return $this->query("UPDATE ${seqname} SET id = 0");
++        return $this->query("UPDATE {$seqname} SET id = 0");
+     }
+ 
+     // }}}
+@@ -720,7 +722,7 @@ class DB_mysql extends DB_common
+         // Obtain a user-level lock... this will release any previous
+         // application locks, but unlike LOCK TABLES, it does not abort
+         // the current transaction and is much less frequently used.
+-        $result = $this->getOne("SELECT GET_LOCK('${seqname}_lock',10)");
++        $result = $this->getOne("SELECT GET_LOCK('{$seqname}_lock',10)");
+         if (DB::isError($result)) {
+             return $result;
+         }
+@@ -730,7 +732,7 @@ class DB_mysql extends DB_common
+             return $this->mysqlRaiseError(DB_ERROR_NOT_LOCKED);
+         }
+ 
+-        $highest_id = $this->getOne("SELECT MAX(id) FROM ${seqname}");
++        $highest_id = $this->getOne("SELECT MAX(id) FROM {$seqname}");
+         if (DB::isError($highest_id)) {
+             return $highest_id;
+         }
+@@ -746,7 +748,7 @@ class DB_mysql extends DB_common
+         // If another thread has been waiting for this lock,
+         // it will go thru the above procedure, but will have no
+         // real effect
+-        $result = $this->getOne("SELECT RELEASE_LOCK('${seqname}_lock')");
++        $result = $this->getOne("SELECT RELEASE_LOCK('{$seqname}_lock')");
+         if (DB::isError($result)) {
+             return $result;
+         }
+--- DB/mysqli.php.orig	2021-08-11 00:23:52 UTC
++++ DB/mysqli.php
+@@ -684,7 +684,7 @@ class DB_mysqli extends DB_common
+                 // so fill it and return 1
+                 // Obtain a user-level lock
+                 $result = $this->getOne('SELECT GET_LOCK('
+-                                        . "'${seqname}_lock', 10)");
++                                        . "'{$seqname}_lock', 10)");
+                 if (DB::isError($result)) {
+                     return $this->raiseError($result);
+                 }
+@@ -701,7 +701,7 @@ class DB_mysqli extends DB_common
+ 
+                 // Release the lock
+                 $result = $this->getOne('SELECT RELEASE_LOCK('
+-                                        . "'${seqname}_lock')");
++                                        . "'{$seqname}_lock')");
+                 if (DB::isError($result)) {
+                     return $this->raiseError($result);
+                 }
+@@ -759,7 +759,7 @@ class DB_mysqli extends DB_common
+             return $res;
+         }
+         // insert yields value 1, nextId call will generate ID 2
+-        return $this->query("INSERT INTO ${seqname} (id) VALUES (0)");
++        return $this->query("INSERT INTO {$seqname} (id) VALUES (0)");
+     }
+ 
+     // }}}
+@@ -798,7 +798,7 @@ class DB_mysqli extends DB_common
+         // Obtain a user-level lock... this will release any previous
+         // application locks, but unlike LOCK TABLES, it does not abort
+         // the current transaction and is much less frequently used.
+-        $result = $this->getOne("SELECT GET_LOCK('${seqname}_lock',10)");
++        $result = $this->getOne("SELECT GET_LOCK('{$seqname}_lock',10)");
+         if (DB::isError($result)) {
+             return $result;
+         }
+@@ -808,7 +808,7 @@ class DB_mysqli extends DB_common
+             return $this->mysqliRaiseError(DB_ERROR_NOT_LOCKED);
+         }
+ 
+-        $highest_id = $this->getOne("SELECT MAX(id) FROM ${seqname}");
++        $highest_id = $this->getOne("SELECT MAX(id) FROM {$seqname}");
+         if (DB::isError($highest_id)) {
+             return $highest_id;
+         }
+@@ -825,7 +825,7 @@ class DB_mysqli extends DB_common
+         // If another thread has been waiting for this lock,
+         // it will go thru the above procedure, but will have no
+         // real effect
+-        $result = $this->getOne("SELECT RELEASE_LOCK('${seqname}_lock')");
++        $result = $this->getOne("SELECT RELEASE_LOCK('{$seqname}_lock')");
+         if (DB::isError($result)) {
+             return $result;
+         }
+--- DB/oci8.php.orig	2021-08-11 00:23:52 UTC
++++ DB/oci8.php
+@@ -249,7 +249,7 @@ class DB_oci8 extends DB_common
+                                                    $dsn['password'],
+                                                    $db,
+                                                    $char);
+-            $error = OCIError();
++            $error = oci_error();
+             if (!empty($error) && $error['code'] == 12541) {
+                 // Couldn't find TNS listener.  Try direct connection.
+                 $this->connection = @$connect_function($dsn['username'],
+@@ -270,7 +270,7 @@ class DB_oci8 extends DB_common
+         }
+ 
+         if (!$this->connection) {
+-            $error = OCIError();
++            $error = oci_error();
+             $error = (is_array($error)) ? $error['message'] : null;
+             return $this->raiseError(DB_ERROR_CONNECT_FAILED,
+                                      null, null, null,
+@@ -289,11 +289,7 @@ class DB_oci8 extends DB_common
+      */
+     function disconnect()
+     {
+-        if (function_exists('oci_close')) {
+-            $ret = @oci_close($this->connection);
+-        } else {
+-            $ret = @OCILogOff($this->connection);
+-        }
++        $ret = @oci_close($this->connection);
+         $this->connection = null;
+         return $ret;
+     }
+@@ -320,14 +316,14 @@ class DB_oci8 extends DB_common
+         $this->last_parameters = array();
+         $this->last_query = $query;
+         $query = $this->modifyQuery($query);
+-        $result = @OCIParse($this->connection, $query);
++        $result = @oci_parse($this->connection, $query);
+         if (!$result) {
+             return $this->oci8RaiseError();
+         }
+         if ($this->autocommit) {
+-            $success = @OCIExecute($result,OCI_COMMIT_ON_SUCCESS);
++            $success = @oci_execute($result,OCI_COMMIT_ON_SUCCESS);
+         } else {
+-            $success = @OCIExecute($result,OCI_DEFAULT);
++            $success = @oci_execute($result,OCI_DEFAULT);
+         }
+         if (!$success) {
+             return $this->oci8RaiseError($result);
+@@ -336,7 +332,7 @@ class DB_oci8 extends DB_common
+         if ($this->_checkManip($query)) {
+             return DB_OK;
+         } else {
+-            @ocisetprefetch($result, $this->options['result_buffering']);
++            @oci_set_prefetch($result, $this->options['result_buffering']);
+             return $result;
+         }
+     }
+@@ -387,14 +383,14 @@ class DB_oci8 extends DB_common
+             return $this->raiseError(DB_ERROR_NOT_CAPABLE);
+         }
+         if ($fetchmode & DB_FETCHMODE_ASSOC) {
+-            $moredata = @OCIFetchInto($result,$arr,OCI_ASSOC+OCI_RETURN_NULLS+OCI_RETURN_LOBS);
++            $moredata = @oci_fetch_array($result,$arr,OCI_ASSOC+OCI_RETURN_NULLS+OCI_RETURN_LOBS);
+             if ($this->options['portability'] & DB_PORTABILITY_LOWERCASE &&
+                 $moredata)
+             {
+                 $arr = array_change_key_case($arr, CASE_LOWER);
+             }
+         } else {
+-            $moredata = OCIFetchInto($result,$arr,OCI_RETURN_NULLS+OCI_RETURN_LOBS);
++            $moredata = oci_fetch_array($result,$arr,OCI_RETURN_NULLS+OCI_RETURN_LOBS);
+         }
+         if (!$moredata) {
+             return null;
+@@ -426,7 +422,7 @@ class DB_oci8 extends DB_common
+      */
+     function freeResult($result)
+     {
+-        return is_resource($result) ? OCIFreeStatement($result) : false;
++        return is_resource($result) ? oci_free_statement($result) : false;
+     }
+ 
+     /**
+@@ -520,7 +516,7 @@ class DB_oci8 extends DB_common
+      */
+     function numCols($result)
+     {
+-        $cols = @OCINumCols($result);
++        $cols = @oci_num_fields($result);
+         if (!$cols) {
+             return $this->oci8RaiseError($result);
+         }
+@@ -592,7 +588,7 @@ class DB_oci8 extends DB_common
+ 
+         $this->last_query = $query;
+         $newquery = $this->modifyQuery($newquery);
+-        if (!$stmt = @OCIParse($this->connection, $newquery)) {
++        if (!$stmt = @oci_parse($this->connection, $newquery)) {
+             return $this->oci8RaiseError();
+         }
+         $this->prepare_types[(int)$stmt] = $types;
+@@ -664,7 +660,7 @@ class DB_oci8 extends DB_common
+                     $data[$key] = $this->quoteFloat($data[$key]);
+                 }
+             }
+-            if (!@OCIBindByName($stmt, ':bind' . $i, $data[$key], -1)) {
++            if (!@oci_bind_by_name($stmt, ':bind' . $i, $data[$key], -1)) {
+                 $tmp = $this->oci8RaiseError($stmt);
+                 return $tmp;
+             }
+@@ -673,9 +669,9 @@ class DB_oci8 extends DB_common
+             $i++;
+         }
+         if ($this->autocommit) {
+-            $success = @OCIExecute($stmt, OCI_COMMIT_ON_SUCCESS);
++            $success = @oci_execute($stmt, OCI_COMMIT_ON_SUCCESS);
+         } else {
+-            $success = @OCIExecute($stmt, OCI_DEFAULT);
++            $success = @oci_execute($stmt, OCI_DEFAULT);
+         }
+         if (!$success) {
+             $tmp = $this->oci8RaiseError($stmt);
+@@ -688,7 +684,7 @@ class DB_oci8 extends DB_common
+             $tmp = DB_OK;
+         } else {
+             $this->_last_query_manip = false;
+-            @ocisetprefetch($stmt, $this->options['result_buffering']);
++            @oci_set_prefetch($stmt, $this->options['result_buffering']);
+             $tmp = new DB_result($this, $stmt);
+         }
+         return $tmp;
+@@ -721,7 +717,7 @@ class DB_oci8 extends DB_common
+      */
+     function commit()
+     {
+-        $result = @OCICommit($this->connection);
++        $result = @oci_commit($this->connection);
+         if (!$result) {
+             return $this->oci8RaiseError();
+         }
+@@ -738,7 +734,7 @@ class DB_oci8 extends DB_common
+      */
+     function rollback()
+     {
+-        $result = @OCIRollback($this->connection);
++        $result = @oci_rollback($this->connection);
+         if (!$result) {
+             return $this->oci8RaiseError();
+         }
+@@ -760,7 +756,7 @@ class DB_oci8 extends DB_common
+         if ($this->last_stmt === false) {
+             return $this->oci8RaiseError();
+         }
+-        $result = @OCIRowCount($this->last_stmt);
++        $result = @oci_num_rows($this->last_stmt);
+         if ($result === false) {
+             return $this->oci8RaiseError($this->last_stmt);
+         }
+@@ -821,20 +817,20 @@ class DB_oci8 extends DB_common
+         } else {
+             $q_fields = "SELECT * FROM ($query) WHERE NULL = NULL";
+ 
+-            if (!$result = @OCIParse($this->connection, $q_fields)) {
++            if (!$result = @oci_parse($this->connection, $q_fields)) {
+                 $this->last_query = $q_fields;
+                 return $this->oci8RaiseError();
+             }
+-            if (!@OCIExecute($result, OCI_DEFAULT)) {
++            if (!@oci_execute($result, OCI_DEFAULT)) {
+                 $this->last_query = $q_fields;
+                 return $this->oci8RaiseError($result);
+             }
+         }
+ 
+-        $ncols = OCINumCols($result);
++        $ncols = oci_num_fields($result);
+         $cols  = array();
+         for ( $i = 1; $i <= $ncols; $i++ ) {
+-            $cols[] = '"' . OCIColumnName($result, $i) . '"';
++            $cols[] = '"' . oci_field_name($result, $i) . '"';
+         }
+         $fields = implode(', ', $cols);
+         // XXX Test that (tip by John Lim)
+@@ -877,7 +873,7 @@ class DB_oci8 extends DB_common
+         $repeat = 0;
+         do {
+             $this->expectError(DB_ERROR_NOSUCHTABLE);
+-            $result = $this->query("SELECT ${seqname}.nextval FROM dual");
++            $result = $this->query("SELECT {$seqname}.nextval FROM dual");
+             $this->popExpect();
+             if ($ondemand && DB::isError($result) &&
+                 $result->getCode() == DB_ERROR_NOSUCHTABLE) {
+@@ -950,11 +946,11 @@ class DB_oci8 extends DB_common
+     function oci8RaiseError($errno = null)
+     {
+         if ($errno === null) {
+-            $error = @OCIError($this->connection);
++            $error = @oci_error($this->connection);
+             return $this->raiseError($this->errorCode($error['code']),
+                                      null, null, null, $error['message']);
+         } elseif (is_resource($errno)) {
+-            $error = @OCIError($errno);
++            $error = @oci_error($errno);
+             return $this->raiseError($this->errorCode($error['code']),
+                                      null, null, null, $error['message']);
+         }
+@@ -973,9 +969,9 @@ class DB_oci8 extends DB_common
+     function errorNative()
+     {
+         if (is_resource($this->last_stmt)) {
+-            $error = @OCIError($this->last_stmt);
++            $error = @oci_error($this->last_stmt);
+         } else {
+-            $error = @OCIError($this->connection);
++            $error = @oci_error($this->connection);
+         }
+         if (is_array($error)) {
+             return $error['code'];
+@@ -1029,21 +1025,21 @@ class DB_oci8 extends DB_common
+ 
+             $this->last_query = $q_fields;
+ 
+-            if (!$stmt = @OCIParse($this->connection, $q_fields)) {
++            if (!$stmt = @oci_parse($this->connection, $q_fields)) {
+                 return $this->oci8RaiseError(DB_ERROR_NEED_MORE_DATA);
+             }
+-            if (!@OCIExecute($stmt, OCI_DEFAULT)) {
++            if (!@oci_execute($stmt, OCI_DEFAULT)) {
+                 return $this->oci8RaiseError($stmt);
+             }
+             
+             $i = 0;
+-            while (@OCIFetch($stmt)) {
++            while (@oci_fetch($stmt)) {
+                 $res[$i] = array(
+                     'table' => $case_func($result),
+-                    'name'  => $case_func(@OCIResult($stmt, 1)),
+-                    'type'  => @OCIResult($stmt, 2),
+-                    'len'   => @OCIResult($stmt, 3),
+-                    'flags' => (@OCIResult($stmt, 4) == 'N') ? 'not_null' : '',
++                    'name'  => $case_func(@oci_result($stmt, 1)),
++                    'type'  => @oci_result($stmt, 2),
++                    'len'   => @oci_result($stmt, 3),
++                    'flags' => (@oci_result($stmt, 4) == 'N') ? 'not_null' : '',
+                 );
+                 if ($mode & DB_TABLEINFO_ORDER) {
+                     $res['order'][$res[$i]['name']] = $i;
+@@ -1057,7 +1053,7 @@ class DB_oci8 extends DB_common
+             if ($mode) {
+                 $res['num_fields'] = $i;
+             }
+-            @OCIFreeStatement($stmt);
++            @oci_free_statement($stmt);
+ 
+         } else {
+             if (isset($result->result)) {
+@@ -1071,16 +1067,16 @@ class DB_oci8 extends DB_common
+             $res = array();
+ 
+             if ($result === $this->last_stmt) {
+-                $count = @OCINumCols($result);
++                $count = @oci_num_fields($result);
+                 if ($mode) {
+                     $res['num_fields'] = $count;
+                 }
+                 for ($i = 0; $i < $count; $i++) {
+                     $res[$i] = array(
+                         'table' => '',
+-                        'name'  => $case_func(@OCIColumnName($result, $i+1)),
+-                        'type'  => @OCIColumnType($result, $i+1),
+-                        'len'   => @OCIColumnSize($result, $i+1),
++                        'name'  => $case_func(@oci_field_name($result, $i+1)),
++                        'type'  => @oci_field_type($result, $i+1),
++                        'len'   => @oci_field_size($result, $i+1),
+                         'flags' => '',
+                     );
+                     if ($mode & DB_TABLEINFO_ORDER) {
+--- DB/odbc.php.orig	2021-08-11 00:23:52 UTC
++++ DB/odbc.php
+@@ -331,7 +331,7 @@ class DB_odbc extends DB_common
+             return null;
+         }
+         if ($fetchmode !== DB_FETCHMODE_ORDERED) {
+-            for ($i = 0; $i < count($arr); $i++) {
++            for ($i = 0, $iMax = count($arr); $i < $iMax; $i++) {
+                 $colName = @odbc_field_name($result, $i+1);
+                 $a[$colName] = $arr[$i];
+             }
+@@ -502,7 +502,7 @@ class DB_odbc extends DB_common
+         $repeat = 0;
+         do {
+             $this->pushErrorHandling(PEAR_ERROR_RETURN);
+-            $result = $this->query("update ${seqname} set id = id + 1");
++            $result = $this->query("update {$seqname} set id = id + 1");
+             $this->popErrorHandling();
+             if ($ondemand && DB::isError($result) &&
+                 $result->getCode() == DB_ERROR_NOSUCHTABLE) {
+@@ -513,7 +513,7 @@ class DB_odbc extends DB_common
+                 if (DB::isError($result)) {
+                     return $this->raiseError($result);
+                 }
+-                $result = $this->query("insert into ${seqname} (id) values(0)");
++                $result = $this->query("insert into {$seqname} (id) values(0)");
+             } else {
+                 $repeat = 0;
+             }
+@@ -523,7 +523,7 @@ class DB_odbc extends DB_common
+             return $this->raiseError($result);
+         }
+ 
+-        $result = $this->query("select id from ${seqname}");
++        $result = $this->query("select id from {$seqname}");
+         if (DB::isError($result)) {
+             return $result;
+         }
+--- DB/pgsql.php.orig	2021-08-11 00:23:52 UTC
++++ DB/pgsql.php
+@@ -460,7 +460,7 @@ class DB_pgsql extends DB_common
+             unset($this->row[(int)$result]);
+             unset($this->_num_rows[(int)$result]);
+             $this->affected = 0;
+-            return @pg_freeresult($result);
++            return @pg_free_result($result);
+         }
+         return false;
+     }
+@@ -534,7 +534,7 @@ class DB_pgsql extends DB_common
+      */
+     function numCols($result)
+     {
+-        $cols = @pg_numfields($result);
++        $cols = @pg_num_fields($result);
+         if (!$cols) {
+             return $this->pgsqlRaiseError();
+         }
+@@ -559,7 +559,7 @@ class DB_pgsql extends DB_common
+      */
+     function numRows($result)
+     {
+-        $rows = @pg_numrows($result);
++        $rows = @pg_num_rows($result);
+         if ($rows === null) {
+             return $this->pgsqlRaiseError();
+         }
+@@ -664,7 +664,7 @@ class DB_pgsql extends DB_common
+         $repeat = false;
+         do {
+             $this->pushErrorHandling(PEAR_ERROR_RETURN);
+-            $result = $this->query("SELECT NEXTVAL('${seqname}')");
++            $result = $this->query("SELECT NEXTVAL('{$seqname}')");
+             $this->popErrorHandling();
+             if ($ondemand && DB::isError($result) &&
+                 $result->getCode() == DB_ERROR_NOSUCHTABLE) {
+@@ -703,7 +703,7 @@ class DB_pgsql extends DB_common
+     function createSequence($seq_name)
+     {
+         $seqname = $this->getSequenceName($seq_name);
+-        $result = $this->query("CREATE SEQUENCE ${seqname}");
++        $result = $this->query("CREATE SEQUENCE {$seqname}");
+         return $result;
+     }
+ 
+@@ -791,7 +791,7 @@ class DB_pgsql extends DB_common
+      */
+     function errorNative()
+     {
+-        return @pg_errormessage($this->connection);
++        return @pg_last_error($this->connection);
+     }
+ 
+     // }}}
+@@ -916,7 +916,7 @@ class DB_pgsql extends DB_common
+             $case_func = 'strval';
+         }
+ 
+-        $count = @pg_numfields($id);
++        $count = @pg_num_fields($id);
+         $res   = array();
+ 
+         if ($mode) {
+@@ -926,9 +926,9 @@ class DB_pgsql extends DB_common
+         for ($i = 0; $i < $count; $i++) {
+             $res[$i] = array(
+                 'table' => $got_string ? $case_func($result) : '',
+-                'name'  => $case_func(@pg_fieldname($id, $i)),
+-                'type'  => @pg_fieldtype($id, $i),
+-                'len'   => @pg_fieldsize($id, $i),
++                'name'  => $case_func(@pg_field_name($id, $i)),
++                'type'  => @pg_field_type($id, $i),
++                'len'   => @pg_field_size($id, $i),
+                 'flags' => $got_string
+                            ? $this->_pgFieldFlags($id, $i, $result)
+                            : '',
+@@ -943,7 +943,7 @@ class DB_pgsql extends DB_common
+ 
+         // free the result only if we were called on a table
+         if ($got_string) {
+-            @pg_freeresult($id);
++            @pg_free_result($id);
+         }
+         return $res;
+     }
+@@ -967,7 +967,7 @@ class DB_pgsql extends DB_common
+      */
+     function _pgFieldFlags($resource, $num_field, $table_name)
+     {
+-        $field_name = @pg_fieldname($resource, $num_field);
++        $field_name = @pg_field_name($resource, $num_field);
+ 
+         // Check if there's a schema in $table_name and update things
+         // accordingly.
+@@ -986,7 +986,7 @@ class DB_pgsql extends DB_common
+                                 AND typ.typrelid = f.attrelid
+                                 AND f.attname = '$field_name'
+                                 AND $tableWhere");
+-        if (@pg_numrows($result) > 0) {
++        if (@pg_num_rows($result) > 0) {
+             $row = @pg_fetch_row($result, 0);
+             $flags  = ($row[0] == 't') ? 'not_null ' : '';
+ 
+@@ -1010,7 +1010,7 @@ class DB_pgsql extends DB_common
+                                 AND f.attrelid = i.indrelid
+                                 AND f.attname = '$field_name'
+                                 AND $tableWhere");
+-        $count = @pg_numrows($result);
++        $count = @pg_num_rows($result);
+ 
+         for ($i = 0; $i < $count ; $i++) {
+             $row = @pg_fetch_row($result, $i);
+--- DB/sqlite.php.orig	2021-08-11 00:23:52 UTC
++++ DB/sqlite.php
+@@ -517,7 +517,7 @@ class DB_sqlite extends DB_common
+         if (DB::isError($result)) {
+             return($result);
+         }
+-        $query   = "CREATE TRIGGER ${seqname}_cleanup AFTER INSERT ON $seqname
++        $query   = "CREATE TRIGGER {$seqname}_cleanup AFTER INSERT ON $seqname
+                     BEGIN
+                         DELETE FROM $seqname WHERE id<LAST_INSERT_ROWID();
+                     END ";

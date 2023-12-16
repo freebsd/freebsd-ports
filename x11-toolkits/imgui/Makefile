@@ -1,6 +1,6 @@
 PORTNAME=	imgui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.89.8
+DISTVERSION=	1.90
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -66,5 +66,12 @@ VULKAN_LIB_DEPENDS=		libvulkan.so:graphics/vulkan-loader
 
 post-patch:
 	@${CP} ${FILESDIR}/CMakeLists.txt ${FILESDIR}/imgui-config.cmake.in ${WRKSRC}
+
+do-test:
+	@cd ${WRKSRC}/examples/example_sdl2_opengl3 && \
+		${GMAKE} \
+			CXXFLAGS="${CXFLAGS} `pkg-config --cflags sdl2` -I${STAGEDIR}${PREFIX}/include -I${WRKSRC}/backends" \
+			LIBS="`pkg-config --libs sdl2` -lGL" && \
+		./example_sdl2_opengl3
 
 .include <bsd.port.mk>

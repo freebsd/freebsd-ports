@@ -1,5 +1,5 @@
 PORTNAME=	nickle
-PORTVERSION=	2.93
+PORTVERSION=	2.96
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 

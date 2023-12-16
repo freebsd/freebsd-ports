@@ -10,6 +10,7 @@
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += ark
+    SUBDIR += ark-devel
     SUBDIR += atool
     SUBDIR += bicom
     SUBDIR += brotli
@@ -31,8 +32,6 @@
     SUBDIR += engrampa
     SUBDIR += fastjar
     SUBDIR += file-roller
-    SUBDIR += fpc-bzip2
-    SUBDIR += fpc-unzip
     SUBDIR += gcab
     SUBDIR += gcpio
     SUBDIR += gnome-autoar
@@ -45,8 +44,8 @@
     SUBDIR += hlextract
     SUBDIR += innoextract
     SUBDIR += javatar
-    SUBDIR += jzlib
     SUBDIR += kf5-karchive
+    SUBDIR += kf6-karchive
     SUBDIR += kzip
     SUBDIR += laszip
     SUBDIR += lazperf

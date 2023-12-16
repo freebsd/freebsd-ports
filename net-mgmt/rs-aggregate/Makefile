@@ -1,0 +1,197 @@
+PORTNAME=	rs-aggregate
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.1
+PORTREVISION=	1
+CATEGORIES=	net-mgmt
+
+MAINTAINER=	marcel@herrbischoff.com
+COMMENT=	Aggregate IPv4 and/or IPv6 prefixes into their minimal representation
+WWW=		https://github.com/ktims/rs-aggregate
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	ktims
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-1.1.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.4 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.2 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-3.0.1 \
+		assert_cmd-2.0.12 \
+		assert_fs-1.0.13 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		bstr-1.8.0 \
+		bumpalo-3.14.0 \
+		bytemuck-1.14.0 \
+		byteorder-1.5.0 \
+		cc-1.0.83 \
+		cfg-if-1.0.0 \
+		chrono-0.4.31 \
+		clap-4.4.8 \
+		clap_builder-4.4.8 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
+		clio-0.3.4 \
+		cmake-0.1.50 \
+		color_quant-1.1.0 \
+		colorchoice-1.0.0 \
+		const-cstr-0.3.0 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.4 \
+		core-graphics-0.22.3 \
+		core-graphics-types-0.1.2 \
+		core-text-19.2.0 \
+		crc32fast-1.3.2 \
+		difflib-0.4.0 \
+		dirs-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		dlib-0.5.2 \
+		doc-comment-0.3.3 \
+		dwrote-0.11.0 \
+		either-1.9.0 \
+		errno-0.3.7 \
+		fastrand-2.0.1 \
+		fdeflate-0.3.1 \
+		flate2-1.0.28 \
+		float-cmp-0.9.0 \
+		float-ord-0.2.0 \
+		fnv-1.0.7 \
+		font-kit-0.11.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		freetype-0.7.0 \
+		freetype-sys-0.13.1 \
+		futures-0.3.29 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-executor-0.3.29 \
+		futures-io-0.3.29 \
+		futures-macro-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.29 \
+		getrandom-0.2.11 \
+		gif-0.12.0 \
+		glob-0.3.1 \
+		globset-0.4.13 \
+		globwalk-0.8.1 \
+		heck-0.4.1 \
+		hermit-abi-0.3.3 \
+		iana-time-zone-0.1.58 \
+		iana-time-zone-haiku-0.1.2 \
+		ignore-0.4.20 \
+		image-0.24.7 \
+		ipnet-2.9.0 \
+		is-terminal-0.4.9 \
+		itertools-0.11.0 \
+		jpeg-decoder-0.3.0 \
+		js-sys-0.3.65 \
+		json-0.12.4 \
+		lazy_static-1.4.0 \
+		libc-0.2.150 \
+		libloading-0.8.1 \
+		libredox-0.0.1 \
+		linux-raw-sys-0.4.11 \
+		log-0.4.20 \
+		memchr-2.6.4 \
+		miniz_oxide-0.7.1 \
+		normalize-line-endings-0.3.0 \
+		num-integer-0.1.45 \
+		num-rational-0.4.1 \
+		num-traits-0.2.17 \
+		once_cell-1.18.0 \
+		pathfinder_geometry-0.5.1 \
+		pathfinder_simd-0.5.2 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.27 \
+		plotters-0.3.5 \
+		plotters-backend-0.3.5 \
+		plotters-bitmap-0.3.3 \
+		plotters-svg-0.3.5 \
+		png-0.17.10 \
+		ppv-lite86-0.2.17 \
+		predicates-3.0.4 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro2-1.0.69 \
+		quote-1.0.33 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
+		rstest-0.16.0 \
+		rstest_macros-0.16.0 \
+		rustc_version-0.4.0 \
+		rustix-0.38.24 \
+		same-file-1.0.6 \
+		semver-1.0.20 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
+		simd-adler32-0.3.7 \
+		slab-0.4.9 \
+		strsim-0.10.0 \
+		syn-1.0.109 \
+		syn-2.0.39 \
+		tempfile-3.8.1 \
+		termtree-0.4.1 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
+		thread_local-1.1.7 \
+		ttf-parser-0.17.1 \
+		unicode-ident-1.0.12 \
+		utf8parse-0.2.1 \
+		wait-timeout-0.2.0 \
+		walkdir-2.4.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.88 \
+		wasm-bindgen-backend-0.2.88 \
+		wasm-bindgen-macro-0.2.88 \
+		wasm-bindgen-macro-support-0.2.88 \
+		wasm-bindgen-shared-0.2.88 \
+		web-sys-0.3.65 \
+		weezl-0.1.7 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.51.1 \
+		windows-sys-0.42.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.5 \
+		wio-0.2.2 \
+		yeslogic-fontconfig-sys-3.2.0
+
+PLIST_FILES=	bin/rs-aggregate
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rs-aggregate
+
+.include <bsd.port.mk>

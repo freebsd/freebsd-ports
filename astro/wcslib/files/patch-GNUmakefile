@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2021-09-21 09:42:55 UTC
+--- GNUmakefile.orig	2023-11-28 12:48:38 UTC
 +++ GNUmakefile
-@@ -83,27 +83,15 @@ install :
+@@ -83,10 +83,10 @@ install :
  	 @ for DIR in $(INSTDIR) ; do \
  	     $(MAKE) -k -C $$DIR $@ ; \
  	   done
@@ -12,22 +12,5 @@
 -	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
 +	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
  	   $(INSTALL) -m 444 wcsconfig.h wcsconfig_f77.h $(INCDIR)
--	-  if [ ! -d "$(DOCDIR)" ] ; then \
--	     $(INSTALL) -d -m 775 $(DOCDIR) ; \
--	   fi
--	   $(INSTALL) -m 444 CHANGES COPYING* README $(DOCDIR)
- 	-  if [ -h $(DOCLINK) ] ; then \
- 	     $(RM) $(DOCLINK) ; \
- 	     $(LN_S) $(notdir $(DOCDIR)) $(DOCLINK) ; \
- 	   fi
--	-  if [ ! -d "$(PDFDIR)" ] ; then \
--	     $(INSTALL) -d -m 775 $(PDFDIR) ; \
--	   fi
--	   $(INSTALL) -m 444 wcslib.pdf $(PDFDIR)
--	-  if [ ! -d "$(HTMLDIR)/html" ] ; then \
--	     $(INSTALL) -d -m 775 $(HTMLDIR)/html ; \
--	   fi
--	   $(INSTALL) -m 444 html/* $(HTMLDIR)/html
- 
- uninstall :
- 	 @ for DIR in $(INSTDIR) ; do \
+ 	-  if [ ! -d "$(DOCDIR)" ] ; then \
+ 	     $(INSTALL) -d -m 775 $(DOCDIR) ; \

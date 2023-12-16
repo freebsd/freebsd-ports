@@ -1,6 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.3
+DISTVERSION=	0.33.1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,8 +15,9 @@ BROKEN_FreeBSD_12=	libc++ too old
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.25:graphics/wayland-protocols \
-		wlroots>=0.16.0.791<0.17.0:x11-toolkits/wlroots
-LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
+		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
@@ -88,11 +89,4 @@ bundled-libcxx:
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif
 .endif # exists(/usr/lib/libc++.so)
-
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots-devel/override.mk"
-post-patch:	wlroots-devel-patch
-wlroots-devel-patch:
-# Prefer <wlr/*> headers (used by <hyprland/*>) from wlroots-devel
-	@${REINPLACE_CMD} -i .devel "/subdirs/s|''|'../wlroots-devel/include', &|" \
-		${WRKSRC}/meson.build
 .include <bsd.port.mk>

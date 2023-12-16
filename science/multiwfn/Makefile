@@ -1,6 +1,7 @@
 PORTNAME=	multiwfn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://sobereva.com/multiwfn/misc/:main \
 		https://www.dislin.de/downloads/unix/:dislin

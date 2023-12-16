@@ -1,11 +1,5 @@
-TIMESTAMP = 1685715944
-SHA256 (direnv-direnv-v2.32.3_GH0.tar.gz) = c66f6d1000f28f919c6106b5dcdd0a0e54fb553602c63c60bf59d9bbdf8bd33c
-SIZE (direnv-direnv-v2.32.3_GH0.tar.gz) = 87653
-SHA256 (BurntSushi-toml-v1.2.0_GH0.tar.gz) = 9b1d4e09cc3f2e6f64245efffbd3a3b18a6a04d7e477b134d2c4fde19c922019
-SIZE (BurntSushi-toml-v1.2.0_GH0.tar.gz) = 96597
-SHA256 (golang-mod-v0.5.1_GH0.tar.gz) = 0ceb1aa06f263416ac67b6844a1704cc8078749c7e8ea9c3900a5c06d00e6036
-SIZE (golang-mod-v0.5.1_GH0.tar.gz) = 112665
-SHA256 (golang-sys-bc2c85ada10a_GH0.tar.gz) = f4a4b0839211cec4a8520bdc7e1004aba8cd0fa1a480a7158d1276efeb890e9a
-SIZE (golang-sys-bc2c85ada10a_GH0.tar.gz) = 1303050
-SHA256 (mattn-go-isatty-v0.0.14_GH0.tar.gz) = e6460325edf600297cf2ef68834938fb1c5b8d5f234b3b24ec7c0a29a2d70b39
-SIZE (mattn-go-isatty-v0.0.14_GH0.tar.gz) = 4710
+TIMESTAMP = 1701685416
+SHA256 (go/sysutils_direnv/direnv-v2.33.0/v2.33.0.mod) = d7b4176991f9d791f3e570b47f5445d6dbbe107975c33c3eaf22b006e6ed9f41
+SIZE (go/sysutils_direnv/direnv-v2.33.0/v2.33.0.mod) = 199
+SHA256 (go/sysutils_direnv/direnv-v2.33.0/v2.33.0.zip) = ccc202398e26f07199cc0aea4e7824454102bdf5952ab6babaddf7e5be72d680
+SIZE (go/sysutils_direnv/direnv-v2.33.0/v2.33.0.zip) = 148206

@@ -1,6 +1,6 @@
 PORTNAME=	blaspp
 DISTVERSION=	2022.05.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/icl/blaspp/downloads/
 
@@ -16,6 +16,7 @@ TEST_DEPENDS=	cblas>0:math/cblas
 
 USES=		cmake:testing fortran localbase # fails to find openblas w/out USES=fortran for some reason, needs investigation
 
+CMAKE_ON=	use_cmake_find_blas # otherwise blas isn't found by the project's ad-hoc cmake/BLASFinder.cmake file
 CMAKE_OFF=	build_tests
 CMAKE_TESTING_ON=	build_tests # tests fail to run, see https://bitbucket.org/icl/blaspp/issues/19/tests-arent-run-with-tester-target-when
 CMAKE_TESTING_TARGET=	tester

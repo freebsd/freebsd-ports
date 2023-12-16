@@ -1,5 +1,6 @@
 PORTNAME=	qgis
-DISTVERSION=	3.28.12
+DISTVERSION=	3.28.13
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -10,9 +11,6 @@ WWW=		https://qgis.org/en/site/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
-
-DEPRECATED=Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=2023-11-26
 
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		opencl>=0:devel/opencl \
@@ -115,7 +113,7 @@ USE_QT=		3d buildtools:build core concurrent dbus declarative \
 		designer:build qdoc:build gamepad gui linguist:build location \
 		network printsupport qmake:build script serialport \
 		sql sql-pgsql sql-sqlite3 svg uitools:build \
-		webengine webkit widgets xml
+		webengine widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
@@ -133,7 +131,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE \
 		WITH_BINDINGS WITH_COPC WITH_CUSTOM_WIDGETS WITH_EPT \
 		WITH_PDAL WITH_POSTGRESQL
-CMAKE_OFF=	ENABLE_TESTS WITH_QWTPOLAR
+CMAKE_OFF=	ENABLE_TESTS WITH_QTWEBKIT WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis
 

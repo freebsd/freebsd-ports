@@ -19,10 +19,6 @@
 @comment lib/libglapi.so
 @comment lib/libglapi.so.0
 @comment lib/libglapi.so.0.0.0
-lib/vdpau/libvdpau_r300.so
-lib/vdpau/libvdpau_r300.so.1
-lib/vdpau/libvdpau_r300.so.1.0
-lib/vdpau/libvdpau_r300.so.1.0.0
 lib/vdpau/libvdpau_r600.so
 lib/vdpau/libvdpau_r600.so.1
 lib/vdpau/libvdpau_r600.so.1.0

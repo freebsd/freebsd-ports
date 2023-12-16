@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-11-17 21:39:20 UTC
++++ pyproject.toml
+@@ -48,7 +48,7 @@ viz = ["matplotlib", "seaborn", "nc-time-axis"]
+ build-backend = "setuptools.build_meta"
+ requires = [
+   "setuptools>=42",
+-  "setuptools-scm>=7",
++  "setuptools-scm>=6",
+ ]
+ 
+ [tool.setuptools]

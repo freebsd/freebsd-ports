@@ -1,5 +1,14 @@
 --- lib/DBEngine.class.php.orig	2007-06-14 19:00:15 UTC
 +++ lib/DBEngine.class.php
+@@ -67,7 +67,7 @@ class DBEngine {
+ 	* DBEngine constructor to initialize object
+ 	* @param none
+ 	*/
+-	function DBEngine() {
++	function __construct() {
+ 		global $conf;
+ 
+ 		$this->dbType = $conf['db']['dbType'];
 @@ -133,35 +133,35 @@ class DBEngine {
  			MAX(stattable.pending) AS pending
  			FROM (

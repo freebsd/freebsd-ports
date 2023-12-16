@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 DEPRECATED=Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=2023-11-26
+EXPIRATION_DATE=2023-12-31
 
 RUN_DEPENDS=	yt-dlp:www/yt-dlp
 

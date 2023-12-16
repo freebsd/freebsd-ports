@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-11-10 10:04:34 UTC
++++ CMakeLists.txt
+@@ -56,7 +56,7 @@ file(GLOB PROJECT_SOURCES *.c)
+ 
+ set(PROJECT_DEFINITIONS "_GNU_SOURCE")
+ 
+-set(PROJECT_FLAGS "-std=gnu99 -pedantic -Wall -Wextra -Wno-language-extension-token")
++set(PROJECT_FLAGS "-std=gnu99 -pedantic -Wall -Wextra")
+ if(APPLE)
+   set(PROJECT_FLAGS "${PROJECT_FLAGS} -Wno-deprecated-declarations")
+ endif()

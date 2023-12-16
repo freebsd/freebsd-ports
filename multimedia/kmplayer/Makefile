@@ -31,12 +31,12 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext-runtime \
 		gnome kde:5 pkgconfig qt:5 tar:bz2 xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-USE_QT=		concurrent core dbus gui network phonon4 printsupport \
+USE_QT=		concurrent core dbus gui network printsupport \
 		svg widgets x11extras xml \
 		buildtools:build qmake:build
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n iconthemes init itemviews \
-		jobwidgets mediaplayer notifications parts service \
+		jobwidgets mediaplayer notifications parts phonon service \
 		textwidgets unitconversion widgetsaddons windowsystem \
 		xmlgui kdelibs4support kio solid sonnet \
 		doctools:build

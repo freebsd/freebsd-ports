@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/shell/browser/shell_extensions_api_client.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/extensions/shell/browser/shell_extensions_api_client.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/extensions/shell/browser/shell_extensions_api_client.cc
 @@ -58,7 +58,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
  

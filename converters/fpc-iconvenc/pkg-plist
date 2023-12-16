@@ -1,5 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/iconvenc.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc_dyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc_dyn.ppu

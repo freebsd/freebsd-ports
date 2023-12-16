@@ -13,7 +13,9 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}ezc_Base>=1.8:devel/pear-ezc_Base@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}ezc_Base>=1.8:devel/pear-ezc_Base@${PHP_FLAVOR}
 
+USES=		pear
+
+NO_ARCH=	yes
 PEAR_CHANNEL=	ezc
-USES=	pear
 
 .include <bsd.port.mk>

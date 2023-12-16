@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/cert/cert_verifier.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/net/cert/cert_verifier.cc.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/net/cert/cert_verifier.cc
 @@ -87,7 +87,7 @@ std::unique_ptr<CertVerifier> CertVerifier::CreateDefa
    }

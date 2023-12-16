@@ -17,8 +17,8 @@ CARGO_CRATES=	ahash-0.8.6 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.7 \
-		clap_builder-4.4.7 \
+		clap-4.4.10 \
+		clap_builder-4.4.9 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
@@ -31,29 +31,30 @@ CARGO_CRATES=	ahash-0.8.6 \
 		deranged-0.3.9 \
 		dns-lookup-2.0.4 \
 		either-1.9.0 \
-		form_urlencoded-1.2.0 \
-		getrandom-0.2.10 \
+		form_urlencoded-1.2.1 \
+		getrandom-0.2.11 \
 		git2-0.18.1 \
-		hashbrown-0.14.2 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		iana-time-zone-0.1.58 \
 		iana-time-zone-haiku-0.1.2 \
-		idna-0.4.0 \
+		idna-0.5.0 \
 		indoc-2.0.4 \
 		is_debug-1.0.1 \
 		itertools-0.11.0 \
+		itertools-0.12.0 \
 		itoa-1.0.9 \
 		jobserver-0.1.27 \
-		js-sys-0.3.65 \
-		lazy-regex-3.0.2 \
-		lazy-regex-proc_macros-3.0.1 \
+		js-sys-0.3.66 \
+		lazy-regex-3.1.0 \
+		lazy-regex-proc_macros-3.1.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.150 \
 		libgit2-sys-0.16.1+1.7.1 \
 		libz-sys-1.1.12 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
-		lru-0.12.0 \
+		lru-0.12.1 \
 		memchr-2.6.4 \
 		mio-0.8.9 \
 		num-traits-0.2.17 \
@@ -63,11 +64,11 @@ CARGO_CRATES=	ahash-0.8.6 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		paste-1.0.14 \
-		percent-encoding-2.3.0 \
+		percent-encoding-2.3.1 \
 		pkg-config-0.3.27 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		quote-1.0.33 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -79,13 +80,13 @@ CARGO_CRATES=	ahash-0.8.6 \
 		regex-syntax-0.8.2 \
 		rustversion-1.0.14 \
 		scopeguard-1.2.0 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		shadow-rs-0.24.1 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		smallvec-1.11.1 \
+		smallvec-1.11.2 \
 		socket2-0.5.5 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
@@ -107,16 +108,16 @@ CARGO_CRATES=	ahash-0.8.6 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.11 \
 		unicode-xid-0.2.4 \
-		url-2.4.1 \
+		url-2.5.0 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.88 \
-		wasm-bindgen-backend-0.2.88 \
-		wasm-bindgen-macro-0.2.88 \
-		wasm-bindgen-macro-support-0.2.88 \
-		wasm-bindgen-shared-0.2.88 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
@@ -132,5 +133,5 @@ CARGO_CRATES=	ahash-0.8.6 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.48.5 \
 		winping-0.10.1 \
-		zerocopy-0.7.25 \
-		zerocopy-derive-0.7.25
+		zerocopy-0.7.26 \
+		zerocopy-derive-0.7.26

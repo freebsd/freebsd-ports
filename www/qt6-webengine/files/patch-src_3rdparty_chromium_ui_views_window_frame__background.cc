@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/views/window/frame_background.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/views/window/frame_background.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/ui/views/window/frame_background.cc
 @@ -110,7 +110,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
                                       int width) const {

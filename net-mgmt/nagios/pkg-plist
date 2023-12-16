@@ -379,5 +379,5 @@ etc/nagios/resource.cfg-sample
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%/checkresults
 @dir(%%NAGIOSUSER%%,%%WWWGRP%%,775) %%NAGIOSDIR%%/rw
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%
-@unexec if [ -d %%NAGIOSDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%NAGIOSDIR%%`` to remove any files left behind."; fi
-@unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
+@postunexec if [ -d %%NAGIOSDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%NAGIOSDIR%%`` to remove any files left behind."; fi
+@postunexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi

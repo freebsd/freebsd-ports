@@ -1,5 +1,5 @@
 PORTNAME=	librespeed
-DISTVERSION=	5.2.5
+DISTVERSION=	5.3.0
 CATEGORIES=	www net
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -35,6 +35,7 @@ SQLITE_USE=	PHP=pdo_sqlite
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -a ${WRKSRC}/*.js ${WRKSRC}/favicon.ico ${STAGEDIR}${WWWDIR}
+	${CP} -a ${WRKSRC}/index.html ${STAGEDIR}${WWWDIR}/index.html.sample
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/backend
 	cd ${WRKSRC}/backend && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/backend
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/results
@@ -50,6 +51,6 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -a ${WRKSRC}/*.html ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -a ${WRKSRC}/examples/*.html ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

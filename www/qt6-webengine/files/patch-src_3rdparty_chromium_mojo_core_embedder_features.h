@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/mojo/core/embedder/features.h.orig	2023-07-07 17:40:32 UTC
+--- src/3rdparty/chromium/mojo/core/embedder/features.h.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/mojo/core/embedder/features.h
-@@ -14,7 +14,7 @@ namespace core {
+@@ -14,7 +14,7 @@ namespace mojo {
  namespace core {
  
  #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_MAC)

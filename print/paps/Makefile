@@ -1,6 +1,7 @@
 PORTNAME=	paps
 PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +25,7 @@ SHEBANG_FILES=	${WRKSRC}/scripts/src-to-paps
 PLIST_FILES=	bin/paps man/man1/paps.1.gz
 
 post-install:
-	${ECHO_CMD} "bin/src-to-paps" >> /${TMPPLIST}
+	${ECHO_CMD} "bin/src-to-paps" >> ${TMPPLIST}
 	${ECHO_CMD} "share/paps/pango_markup.outlang" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	lintr
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr
 RUN_DEPENDS=	R-cran-cyclocomp>0:devel/R-cran-cyclocomp \
 		R-cran-glue>0:devel/R-cran-glue \
-		R-cran-backports>0:math/R-cran-backports \
+		R-cran-backports>=1.1.7:math/R-cran-backports \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-digest>0:security/R-cran-digest \
 		R-cran-rex>0:textproc/R-cran-rex \

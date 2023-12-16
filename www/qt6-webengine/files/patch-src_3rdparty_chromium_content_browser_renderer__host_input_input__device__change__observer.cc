@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/renderer_host/input/input_device_change_observer.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/renderer_host/input/input_device_change_observer.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/content/browser/renderer_host/input/input_device_change_observer.cc
 @@ -9,7 +9,7 @@
  
@@ -18,7 +18,7 @@
    ui::DeviceDataManager::GetInstance()->AddObserver(this);
  #elif BUILDFLAG(IS_ANDROID)
    ui::InputDeviceObserverAndroid::GetInstance()->AddObserver(this);
-@@ -31,7 +31,7 @@ InputDeviceChangeObserver::~InputDeviceChangeObserver(
+@@ -31,7 +31,7 @@ InputDeviceChangeObserver::InputDeviceChangeObserver(R
  InputDeviceChangeObserver::~InputDeviceChangeObserver() {
  #if BUILDFLAG(IS_WIN)
    ui::InputDeviceObserverWin::GetInstance()->RemoveObserver(this);

@@ -1,15 +1,14 @@
 PORTNAME=	girara
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/ \
-		https://pwmt.org/projects/girara/download/
+MASTER_SITES=	https://pwmt.org/projects/girara/download/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK3 Interface Library for Zathura PDF Viewer
 WWW=		https://pwmt.org/projects/girara/
 
 USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo glib20 gtk30
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocs=disabled -Dtests=disabled
 

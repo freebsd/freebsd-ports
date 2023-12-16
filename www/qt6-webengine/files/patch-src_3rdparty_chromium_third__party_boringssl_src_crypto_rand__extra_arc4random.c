@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/boringssl/src/crypto/rand_extra/arc4random.c.orig	2022-11-06 22:06:35 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/rand_extra/arc4random.c.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/rand_extra/arc4random.c
 @@ -0,0 +1,33 @@
 +/* Copyright (c) 2018, Robert Nagy <robert@openbsd.org>

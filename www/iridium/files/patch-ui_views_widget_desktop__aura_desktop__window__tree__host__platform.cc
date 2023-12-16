@@ -1,4 +1,4 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2023-10-21 11:51:27 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2023-11-22 14:00:11 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 @@ -44,7 +44,7 @@
  #include "ui/wm/core/window_util.h"
@@ -18,7 +18,7 @@
    const bool requires_accelerated_widget = params.requires_accelerated_widget;
  #else
    const bool requires_accelerated_widget = false;
-@@ -346,7 +346,7 @@ std::unique_ptr<aura::client::DragDropClient>
+@@ -349,7 +349,7 @@ std::unique_ptr<aura::client::DragDropClient>
  DesktopWindowTreeHostPlatform::CreateDragDropClient() {
    ui::WmDragHandler* drag_handler = ui::GetWmDragHandler(*(platform_window()));
    std::unique_ptr<DesktopDragDropClientOzone> drag_drop_client =
@@ -27,7 +27,7 @@
        std::make_unique<DesktopDragDropClientOzoneLinux>(window(), drag_handler);
  #else
        std::make_unique<DesktopDragDropClientOzone>(window(), drag_handler);
-@@ -1081,7 +1081,7 @@ bool DesktopWindowTreeHostPlatform::RotateFocusForWidg
+@@ -1084,7 +1084,7 @@ bool DesktopWindowTreeHostPlatform::RotateFocusForWidg
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_posix.cpp.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_posix.cpp.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_posix.cpp
-@@ -25,7 +25,7 @@ void sk_fsync(FILE* f) {
+@@ -25,7 +25,7 @@
  #endif
  
  void sk_fsync(FILE* f) {

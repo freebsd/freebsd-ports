@@ -1,12 +1,11 @@
 PORTNAME=	tn5250
-PORTVERSION=	0.17.4
-PORTREVISION=	1
+DISTVERSION=	0.17.6
 CATEGORIES=	net
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
-WWW=		https://tn5250.sourceforge.net/
+WWW=		https://github.com/tn5250/tn5250
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,16 +18,10 @@ CONFIGURE_ARGS=	--enable-os-dir=no --with-ssl=${OPENSSLBASE}
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=       -Wno-error=int-conversion
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS =/s|linux||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|: install-data-local|:|g' ${WRKSRC}/freebsd/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/BUILD.gn.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -164,7 +164,7 @@ buildflag_header("ios_cronet_buildflags") {
+@@ -189,7 +189,7 @@ buildflag_header("ios_cronet_buildflags") {
    flags = [ "CRONET_BUILD=$is_cronet_build" ]
  }
  
@@ -9,39 +9,15 @@
  buildflag_header("message_pump_buildflags") {
    header = "message_pump_buildflags.h"
    header_dir = "base/message_loop"
-@@ -1050,7 +1050,7 @@ jumbo_component("base") {
-       "timer/hi_res_timer_manager_posix.cc",
-     ]
- 
--    if (!is_nacl && !is_apple) {
-+    if (!is_nacl && !is_apple && !is_bsd) {
-       sources += [
-         "profiler/stack_base_address_posix.cc",
-         "profiler/stack_base_address_posix.h",
-@@ -1061,6 +1061,14 @@ jumbo_component("base") {
-         "profiler/thread_delegate_posix.h",
-       ]
-     }
-+
-+    if (is_bsd) {
-+      sources += [
-+        "profiler/stack_base_address_posix.cc",
-+        "profiler/stack_base_address_posix.h",
-+        "profiler/stack_sampler_posix.cc",
-+      ]
-+    }
-   }
- 
-   jumbo_excluded_sources = [
-@@ -1428,7 +1436,6 @@ jumbo_component("base") {
-       "process/process_metrics_linux.cc",
-       "threading/platform_thread_linux.cc",
+@@ -1009,7 +1009,6 @@ jumbo_component("base") {
+       "threading/thread_type_delegate.cc",
+       "threading/thread_type_delegate.h",
      ]
 -    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
    }
  
    if (is_linux || is_chromeos || is_android || is_fuchsia) {
-@@ -1604,7 +1611,7 @@ jumbo_component("base") {
+@@ -1132,7 +1131,7 @@ jumbo_component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
@@ -50,7 +26,7 @@
        sources += [
          "allocator/partition_allocator/shim/allocator_shim_override_cpp_symbols.h",
          "allocator/partition_allocator/shim/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1658,7 +1665,7 @@ jumbo_component("base") {
+@@ -1173,7 +1172,7 @@ jumbo_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -59,24 +35,25 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2236,6 +2243,42 @@ jumbo_component("base") {
+@@ -2119,6 +2118,43 @@ jumbo_component("base") {
      }
    }
  
 +  if (is_bsd) {
 +    sources -= [
 +      "files/file_path_watcher_inotify.cc",
-+      "files/file_util_linux.cc",
 +      "files/scoped_file_linux.cc",
-+      "process/memory_linux.cc",
 +      "process/process_linux.cc",
 +      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
-+      "process/process_handle_linux.cc"
++      "process/process_handle_linux.cc",
++      "profiler/stack_copier_signal.cc",
++      "profiler/stack_copier_signal.h",
++      "profiler/thread_delegate_posix.cc",
++      "profiler/thread_delegate_posix.h",
 +    ]
 +    sources += [
-+      "process/memory_stubs.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
 +      "files/file_path_watcher_bsd.cc",
@@ -101,8 +78,8 @@
 +
    # iOS
    if (is_ios) {
-     sources -= [
-@@ -2333,7 +2376,7 @@ jumbo_component("base") {
+     sources += [
+@@ -2214,7 +2250,7 @@ jumbo_component("base") {
    }
  
    if (dep_libevent) {
@@ -111,8 +88,8 @@
    }
  
    if (use_libevent) {
-@@ -3601,7 +3644,7 @@ test("base_unittests") {
-     }
+@@ -3482,7 +3518,7 @@ test("base_unittests") {
+     ]
    }
  
 -  if (is_linux || is_chromeos) {
@@ -120,7 +97,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3647,7 +3690,7 @@ test("base_unittests") {
+@@ -3531,7 +3567,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -129,7 +106,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3658,7 +3701,7 @@ test("base_unittests") {
+@@ -3542,7 +3578,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -138,7 +115,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3850,7 +3893,7 @@ test("base_unittests") {
+@@ -3763,7 +3799,7 @@ test("base_unittests") {
      }
    }
  

@@ -1,7 +1,7 @@
 # Also update devel/libgit2, devel/libgit2-glib, devel/py-pygit2
 
 PORTNAME=	rugged
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

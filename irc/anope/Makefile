@@ -12,18 +12,19 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 USES=		cmake localbase:ldflags shebangfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	anope
+SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
 
 CMAKE_ARGS=	-DINSTDIR:STRING="${PREFIX}/anope"
-SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
 CFLAGS_amd64=	-fPIC
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	GNUTLS LDAP MYSQL NLS OPENSSL PCRE POSIX REDIS SASL SQLITE STATS TRE
+OPTIONS_DEFINE=		GNUTLS LDAP MYSQL NLS OPENSSL PCRE POSIX REDIS SASL \
+			SQLITE STATS TRE
 OPTIONS_DEFAULT=	MYSQL OPENSSL POSIX
-OPTIONS_SUB=	yes
-POSIX_DESC=	POSIX Regex Module
-STATS_DESC=	Channel Statistics Module
-TRE_DESC=	Tre Regex Module
+OPTIONS_SUB=		yes
+POSIX_DESC=		POSIX Regex Module
+STATS_DESC=		Channel Statistics Module
+TRE_DESC=		Tre Regex Module
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
@@ -35,9 +36,9 @@ NLS_USES=	gettext
 
 OPENSSL_USES=	ssl
 
-REDIS_RUN_DEPENDS=	redis>=0:databases/redis
-
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+
+REDIS_RUN_DEPENDS=	redis>=0:databases/redis
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
@@ -67,18 +68,14 @@ post-patch-MYSQL-on:
 post-patch-OPENSSL-on:
 	${LN} -s ${WRKSRC}/modules/extra/m_ssl_openssl.cpp ${WRKSRC}/modules/
 
-post-patch-SQLITE-on:
-	${LN} -s ${WRKSRC}/modules/extra/m_sqlite.cpp ${WRKSRC}/modules/
-
 post-patch-PCRE-on:
 	${LN} -s ${WRKSRC}/modules/extra/m_regex_pcre.cpp ${WRKSRC}/modules/
 
 post-patch-POSIX-on:
 	${LN} -s ${WRKSRC}/modules/extra/m_regex_posix.cpp ${WRKSRC}/modules/
 
-post-patch-SASL-on:
-	${LN} -s ${WRKSRC}/modules/extra/m_sasl_dh-aes.cpp ${WRKSRC}/modules/
-	${LN} -s ${WRKSRC}/modules/extra/m_sasl_dh-blowfish.cpp ${WRKSRC}/modules/
+post-patch-SQLITE-on:
+	${LN} -s ${WRKSRC}/modules/extra/m_sqlite.cpp ${WRKSRC}/modules/
 
 post-patch-STATS-on:
 	${LN} -s ${WRKSRC}/modules/extra/stats ${WRKSRC}/modules/

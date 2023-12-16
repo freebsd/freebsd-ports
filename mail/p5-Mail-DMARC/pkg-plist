@@ -24,11 +24,16 @@ bin/dmarc_view_reports
 %%SITE_PERL%%/Mail/DMARC/Report/Send.pm
 %%SITE_PERL%%/Mail/DMARC/Report/Send/HTTP.pm
 %%SITE_PERL%%/Mail/DMARC/Report/Send/SMTP.pm
+%%SITE_PERL%%/Mail/DMARC/Report/Sender.pm
 %%SITE_PERL%%/Mail/DMARC/Report/Store.pm
 %%SITE_PERL%%/Mail/DMARC/Report/Store/SQL.pm
+%%SITE_PERL%%/Mail/DMARC/Report/Store/SQL/Grammars/MySQL.pm
+%%SITE_PERL%%/Mail/DMARC/Report/Store/SQL/Grammars/PostgreSQL.pm
+%%SITE_PERL%%/Mail/DMARC/Report/Store/SQL/Grammars/SQLite.pm
 %%SITE_PERL%%/Mail/DMARC/Report/URI.pm
 %%SITE_PERL%%/Mail/DMARC/Result.pm
 %%SITE_PERL%%/Mail/DMARC/Result/Reason.pm
+%%SITE_PERL%%/Mail/DMARC/Test/Transport.pm
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/dmarc_whitelist
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/html/css/ellipsis-xbl.xml
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/html/css/ui.jqgrid.css
@@ -90,6 +95,7 @@ bin/dmarc_view_reports
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/mail-dmarc.cron
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/mail-dmarc.ini
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/mail_dmarc_schema.mysql
+%%SITE_PERL%%/auto/share/dist/Mail-DMARC/mail_dmarc_schema.pgsql
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/mail_dmarc_schema.sqlite
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/public_suffix_list
 %%SITE_PERL%%/auto/share/dist/Mail-DMARC/rua-schema.xsd
@@ -114,6 +120,9 @@ bin/dmarc_view_reports
 %%PERL5_MAN3%%/Mail::DMARC::Report::Send::SMTP.3.gz
 %%PERL5_MAN3%%/Mail::DMARC::Report::Store.3.gz
 %%PERL5_MAN3%%/Mail::DMARC::Report::Store::SQL.3.gz
+%%PERL5_MAN3%%/Mail::DMARC::Report::Store::SQL::Grammars::MySQL.3.gz
+%%PERL5_MAN3%%/Mail::DMARC::Report::Store::SQL::Grammars::PostgreSQL.3.gz
+%%PERL5_MAN3%%/Mail::DMARC::Report::Store::SQL::Grammars::SQLite.3.gz
 %%PERL5_MAN3%%/Mail::DMARC::Report::URI.3.gz
 %%PERL5_MAN3%%/Mail::DMARC::Result.3.gz
 %%PERL5_MAN3%%/Mail::DMARC::Result::Reason.3.gz

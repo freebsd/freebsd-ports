@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/starscan/stack/stack.cc
-@@ -17,6 +17,10 @@
+@@ -18,6 +18,10 @@
  #include <pthread.h>
  #endif
  
@@ -11,7 +11,7 @@
  #if defined(LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -47,6 +51,36 @@ void* GetStackTop() {
+@@ -48,6 +52,36 @@ void* GetStackTop() {
  
  void* GetStackTop() {
    return pthread_get_stackaddr_np(pthread_self());

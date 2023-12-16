@@ -1,5 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/imagemagick.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/imagemagick.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/imagemagick.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/magick_wand.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/magick_wand.ppu

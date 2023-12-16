@@ -1,5 +1,5 @@
-TIMESTAMP = 1667180980
-SHA256 (go/security_tfsec/tfsec-v1.28.1/v1.28.1.mod) = 1282d4b16a3b9490b99707933e2f61a73c9ab26e02a6e1e8d44b8756c2841e3d
-SIZE (go/security_tfsec/tfsec-v1.28.1/v1.28.1.mod) = 5124
-SHA256 (go/security_tfsec/tfsec-v1.28.1/v1.28.1.zip) = a4c0c54aa1d9daf7b37820dea22b347bbb2ba7709deb89196c10da9ef55c2175
-SIZE (go/security_tfsec/tfsec-v1.28.1/v1.28.1.zip) = 6797241
+TIMESTAMP = 1701034520
+SHA256 (go/security_tfsec/tfsec-v1.28.4/v1.28.4.mod) = 3774225c27db52c90374308d3cc65a412adc14469d776b96bfcd512e1f9e074b
+SIZE (go/security_tfsec/tfsec-v1.28.4/v1.28.4.mod) = 5909
+SHA256 (go/security_tfsec/tfsec-v1.28.4/v1.28.4.zip) = af2706d37416bcb1ceb7c76b9779c4a41e41d904c1bb41b79ad390cdfe8a2a53
+SIZE (go/security_tfsec/tfsec-v1.28.4/v1.28.4.zip) = 6812499

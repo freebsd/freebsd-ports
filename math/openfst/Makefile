@@ -1,32 +1,23 @@
 PORTNAME=	openfst
-PORTVERSION=	1.8.1
+DISTVERSION=	1.8.2-20221207
 CATEGORIES=	math
-MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
+#MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for working with weighted finite-state transducers
 WWW=		https://www.openfst.org/
 
 LICENSE=	APACHE20
 
-USES=		compiler:c++17-lang libtool python
+USES=		cmake compiler:c++17-lang
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--enable-bin \
-		--enable-compact-fsts \
-		--enable-compress \
-		--enable-const-fsts \
-		--enable-far \
-		--enable-fsts \
-		--enable-linear-fsts \
-		--enable-lookahead-fsts \
-		--enable-mpdt \
-		--enable-ngram-fsts \
-		--enable-pdt \
-		--enable-python \
-		--enable-special
 
 CXXFLAGS_i386=	-msse -msse2 -mfpmath=sse
+
+CMAKE_ON=	HAVE_COMPRESS
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kkm000
+GH_TAGNAME=	8058417
 
 .include <bsd.port.mk>

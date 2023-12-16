@@ -3,9 +3,11 @@
 @owner root
 bin/xlock
 bin/play.sh
+bin/xmlock
 @mode
 @owner
 lib/X11/app-defaults/XLock
+lib/X11/app-defaults/XmLock
 man/man1/xlock.1.gz
 share/xlock/sounds/complete.au
 share/xlock/sounds/identify-please.au

@@ -1,0 +1,11 @@
+include/advisor-annotate.h
+include/ittnotify-zca.h
+include/ittnotify.h
+include/jitprofiling.h
+include/legacy/ittnotify.h
+include/libittnotify.h
+lib/cmake/ittapi/ittapi-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ittapi/ittapi-targets.cmake
+lib/cmake/ittapi/ittapiConfig.cmake
+lib/cmake/ittapi/ittapiConfigVersion.cmake
+lib/libittnotify.a

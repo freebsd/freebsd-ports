@@ -1,0 +1,13 @@
+include/LayerShellQt/Shell
+include/LayerShellQt/Window
+include/LayerShellQt/layershellqt_export.h
+include/LayerShellQt/shell.h
+include/LayerShellQt/window.h
+lib/cmake/LayerShellQt/LayerShellQtConfig.cmake
+lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake
+lib/cmake/LayerShellQt/LayerShellQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LayerShellQt/LayerShellQtTargets.cmake
+lib/libLayerShellQtInterface.so
+lib/libLayerShellQtInterface.so.%%KDE_PLASMA_VERSION%%
+lib/libLayerShellQtInterface.so.6
+%%QT_PLUGINDIR%%/wayland-shell-integration/liblayer-shell.so

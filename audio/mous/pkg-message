@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You can check mous-ncurses usage with 'H' after starting.
-EOM
-}
-]

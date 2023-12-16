@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/native_theme/native_theme.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/native_theme/native_theme.h.orig	2022-03-25 21:59:56 UTC
 +++ src/3rdparty/chromium/ui/native_theme/native_theme.h
 @@ -59,7 +59,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
      kCheckbox,

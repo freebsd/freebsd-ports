@@ -1,11 +1,18 @@
 PORTNAME=	acidrip
 PORTVERSION=	0.14
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20Your%20two-wheeled%20knife
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVDs
+WWW=		https://sourceforge.net/projects/acidrip/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Last upstream release was in 2004
+EXPIRATION_DATE=	2024-01-16
 
 BUILD_DEPENDS=	lsdvd:multimedia/lsdvd \
 		mencoder:multimedia/mencoder \

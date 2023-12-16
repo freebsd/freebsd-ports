@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.h.orig	2022-07-22 17:30:31 UTC
 +++ src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.h
 @@ -44,7 +44,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
  

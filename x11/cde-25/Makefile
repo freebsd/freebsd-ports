@@ -1,6 +1,5 @@
 PORTNAME=	cde
-DISTVERSION=	2.5.1
-PORTREVISION=	5
+DISTVERSION=	2.5.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 .if !defined(MASTERDIR)
@@ -31,12 +30,14 @@ BUILD_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		onsgmls:textproc/opensp \
-		xrdb:x11/xrdb
+		xrdb:x11/xrdb \
+		sessreg:x11/sessreg
 RUN_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		xrdb:x11/xrdb \
-		xset:x11/xset
+		xset:x11/xset \
+		sessreg:x11/sessreg
 
 USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg

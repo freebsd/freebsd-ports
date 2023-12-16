@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/config/compiler/BUILD.gn.orig	2022-02-16 12:34:12 UTC
-+++ ../../src/webrtc/src/build/config/compiler/BUILD.gn
+--- src/webrtc/src/build/config/compiler/BUILD.gn.orig	2022-02-16 12:34:12 UTC
++++ src/webrtc/src/build/config/compiler/BUILD.gn
 @@ -237,13 +237,16 @@ config("no_unresolved_symbols") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.

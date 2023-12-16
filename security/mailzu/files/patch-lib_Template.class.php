@@ -1,5 +1,14 @@
 --- lib/Template.class.php.orig	2007-06-14 19:00:15 UTC
 +++ lib/Template.class.php
+@@ -30,7 +30,7 @@ class Template {
+ 	* @param string $title title of page
+ 	* @param int $depth depth of the current page relative to phpScheduleIt root
+ 	*/
+-	function Template($title = '', $depth = 0) {
++	function __construct($title = '', $depth = 0) {
+ 		global $conf;
+ 		
+ 		$this->title = (!empty($title)) ? $title : $conf['ui']['welcome'];
 @@ -57,21 +57,21 @@ class Template {
  	?>
  	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

@@ -1,8 +1,7 @@
 PORTNAME=	gmp-ecm
-DISTVERSION=	7.0.4
-PORTREVISION=	1
+DISTVERSION=	7.0.5
 CATEGORIES=	math
-MASTER_SITES=	https://gforge.inria.fr/frs/download.php/file/36224/
+MASTER_SITES=	https://gitlab.inria.fr/zimmerma/ecm/uploads/${GL_TAG}/
 DISTNAME=	ecm-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,25 +16,20 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake libtool
+
+GL_TAG=		89f6f0d65d3e980cef33dc922004e4b2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
 		--with-gmp=${LOCALBASE} \
 		--enable-shared \
 		--disable-static
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/ecm include/ecm.h \
 		lib/libecm.so \
 		lib/libecm.so.1 \
 		lib/libecm.so.1.0.0 \
 		man/man1/ecm.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} s/__GMP_BITS_PER_MP_LIMB/GMP_NUMB_BITS/g \
-		${WRKSRC}/*.c ${WRKSRC}/*.h
-	@${REINPLACE_CMD} s/GMP_BITS_PER_LIMB/GMP_NUMB_BITS/g \
-		${WRKSRC}/*.c ${WRKSRC}/*.h
-	@${REINPLACE_CMD} s/mp_bits_per_limb/GMP_NUMB_BITS/g \
-		${WRKSRC}/*.c ${WRKSRC}/*.h
 
 .include <bsd.port.mk>

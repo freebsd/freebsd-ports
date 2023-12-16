@@ -278,6 +278,7 @@
     SUBDIR += dqfun
     SUBDIR += drgeo
     SUBDIR += dsdp
+    SUBDIR += dsfmt
     SUBDIR += dune-alugrid
     SUBDIR += dune-common
     SUBDIR += dune-curvedgeometry
@@ -321,6 +322,7 @@
     SUBDIR += fastops
     SUBDIR += fcl
     SUBDIR += fcl05
+    SUBDIR += fend
     SUBDIR += fenics-basix
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
@@ -337,9 +339,6 @@
     SUBDIR += flopc++
     SUBDIR += form
     SUBDIR += fparser
-    SUBDIR += fpc-fftw
-    SUBDIR += fpc-gmp
-    SUBDIR += fpc-numlib
     SUBDIR += fplll
     SUBDIR += freefem++
     SUBDIR += fricas
@@ -354,7 +353,6 @@
     SUBDIR += gemmlowp
     SUBDIR += geogebra
     SUBDIR += geogram
-    SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += gf2x
     SUBDIR += gfan
@@ -382,7 +380,6 @@
     SUBDIR += grace
     SUBDIR += gravity
     SUBDIR += gretl
-    SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += half
@@ -464,6 +461,7 @@
     SUBDIR += librsb
     SUBDIR += libsemigroups
     SUBDIR += libsharp2
+    SUBDIR += libtexprintf
     SUBDIR += libtommath
     SUBDIR += libxls
     SUBDIR += libxlsxwriter
@@ -499,7 +497,6 @@
     SUBDIR += mesquite
     SUBDIR += metis
     SUBDIR += mfem
-    SUBDIR += mingw32-libgmp
     SUBDIR += minisat
     SUBDIR += minizinc
     SUBDIR += minizinc-ide
@@ -880,10 +877,12 @@
     SUBDIR += py-GridDataFormats
     SUBDIR += py-MutatorMath
     SUBDIR += py-PuLP
+    SUBDIR += py-Py-BOBYQA
     SUBDIR += py-PyMetis
     SUBDIR += py-PySCIPOpt
     SUBDIR += py-PyWavelets
     SUBDIR += py-Pyomo
+    SUBDIR += py-SQNomad
     SUBDIR += py-affine
     SUBDIR += py-algopy
     SUBDIR += py-altgraph
@@ -1007,7 +1006,6 @@
     SUBDIR += py-pdal
     SUBDIR += py-permutation
     SUBDIR += py-petsc4py
-    SUBDIR += py-piranha
     SUBDIR += py-plastex
     SUBDIR += py-point-annotator
     SUBDIR += py-pplpy

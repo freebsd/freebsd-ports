@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/linux/unbundle/libevent.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/build/linux/unbundle/libevent.gn.orig	2022-05-28 07:21:18 UTC
 +++ src/3rdparty/chromium/build/linux/unbundle/libevent.gn
 @@ -9,7 +9,12 @@ shim_headers("libevent_shim") {
    headers = [ "event.h" ]

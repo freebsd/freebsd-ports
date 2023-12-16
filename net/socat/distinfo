@@ -1,3 +1,3 @@
-TIMESTAMP = 1667812252
-SHA256 (socat-1.7.4.4.tar.bz2) = fbd42bd2f0e54a3af6d01bdf15385384ab82dbc0e4f1a5e153b3e0be1b6380ac
-SIZE (socat-1.7.4.4.tar.bz2) = 522127
+TIMESTAMP = 1700229347
+SHA256 (socat-1.8.0.0.tar.bz2) = e1de683dd22ee0e3a6c6bbff269abe18ab0c9d7eb650204f125155b9005faca7
+SIZE (socat-1.8.0.0.tar.bz2) = 564066

@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_configurations.cc.orig	2023-10-21 11:51:27 UTC
+--- components/feature_engagement/public/feature_configurations.cc.orig	2023-11-22 14:00:11 UTC
 +++ components/feature_engagement/public/feature_configurations.cc
 @@ -46,7 +46,7 @@ FeatureConfig CreateAlwaysTriggerConfig(const base::Fe
  absl::optional<FeatureConfig> GetClientSideFeatureConfig(
@@ -9,7 +9,7 @@
    if (kIPHPasswordsAccountStorageFeature.name == feature->name) {
      absl::optional<FeatureConfig> config = FeatureConfig();
      config->valid = true;
-@@ -1336,7 +1336,8 @@ absl::optional<FeatureConfig> GetClientSideFeatureConf
+@@ -1399,7 +1399,8 @@ absl::optional<FeatureConfig> GetClientSideFeatureConf
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

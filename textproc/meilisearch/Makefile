@@ -1,7 +1,6 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		https://drive.google.com/uc?export=download&confirm=yes&id=1LsYNZqw_ep1VJf3p49NZd9UTYaRq-V4p&dummy=/:lindera_unidic \
@@ -57,7 +56,7 @@ post-patch:
 		-e 's,%%GH_TAGNAME%%,${GH_TAGNAME},g' \
 		${WRKSRC}/meilisearch/build.rs
 	${REINPLACE_CMD} -e 's,%%DISTDIR%%,${DISTDIR},'  \
-		${CARGO_VENDOR_DIR}/lindera-unidic-0.27.0/build.rs
+		${CARGO_VENDOR_DIR}/lindera-unidic-0.27.1/build.rs
 	${GREP} -F -R -l %%WRKDIR%% ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's,%%WRKDIR%%,${WRKDIR},'
 

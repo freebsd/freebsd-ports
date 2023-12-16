@@ -1,7 +1,7 @@
 PORTNAME=	ricochet
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +15,14 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++11-lib gl gmake pkgconfig qmake qt:5 ssl
+USES=		compiler:c++17-lang gl gmake pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricochet-im
 USE_QT=		core declarative gui multimedia network quickcontrols widgets \
 		buildtools:build linguisttools:build
 USE_GL=		gl
+
+USE_CXXSTD=	c++17
 QMAKE_ARGS+=	DEFINES+=RICOCHET_NO_PORTABLE OPENSSLDIR=${OPENSSLBASE}
 
 OPTIONS_DEFINE=	TOR

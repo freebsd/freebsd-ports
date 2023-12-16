@@ -1,5 +1,5 @@
 PORTNAME=	Getopt-Long-Descriptive
-PORTVERSION=	0.111
+PORTVERSION=	0.112
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -14,7 +14,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Params-Validate>=0.97:devel/p5-Params-Validate \
+RUN_DEPENDS=	p5-Getopt-Long>=2.55:devel/p5-Getopt-Long \
+		p5-Params-Validate>=0.97:devel/p5-Params-Validate \
 		p5-Sub-Exporter>=0.972:devel/p5-Sub-Exporter
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \

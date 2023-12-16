@@ -11,15 +11,16 @@ WWW=		http://www.vfront.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-PLIST=		${WRKDIR}/pkg-plist
-
 USES=		cpe php
 
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST=		${WRKDIR}/pkg-plist
+
+OPTIONS_DEFAULT=	MYSQL PGSQL
 OPTIONS_MULTI=	DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL
-OPTIONS_DEFAULT=	MYSQL PGSQL
 
 MYSQL_USES=	mysql
 MYSQL_USE=	PHP=mysqli
@@ -37,8 +38,8 @@ pre-install:
 	    ${FIND} * -type f | ${SED} 's,^,%%WWWDIR%%/,' > ${PLIST} && \
 	    ${FIND} * -type d -empty | ${SORT} -r | \
 			${SED} 's,^,@dir %%WWWDIR%%/,' >> ${PLIST})
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN} %D/%%WWWDIR%%' >> ${PLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 700 %D/%%WWWDIR%%/conf' >> ${PLIST}
+	@${ECHO_CMD} '@postexec ${CHOWN} -R ${WWWOWN} %D/%%WWWDIR%%' >> ${PLIST}
+	@${ECHO_CMD} '@postexec ${CHMOD} 700 %D/%%WWWDIR%%/conf' >> ${PLIST}
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})

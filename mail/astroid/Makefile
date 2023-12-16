@@ -1,7 +1,7 @@
 PORTNAME=	astroid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 
 MAINTAINER=	mylan.connolly@gmail.com
@@ -26,11 +26,13 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	notmuch:mail/notmuch
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gettext-runtime gnome \
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome \
 		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	astroidmail
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 \
 		gtkmm30 introspection libsigc++20 pango pangomm vte3
+
+USE_CXXSTD=	c++17
 
 .include <bsd.port.mk>

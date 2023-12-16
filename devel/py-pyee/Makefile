@@ -1,7 +1,8 @@
 PORTNAME=	pyee
-PORTVERSION=	11.0.1
+PORTVERSION=	11.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/jfhbrook/pyee/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

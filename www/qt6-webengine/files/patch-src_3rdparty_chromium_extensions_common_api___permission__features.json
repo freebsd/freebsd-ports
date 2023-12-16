@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/common/api/_permission_features.json.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/extensions/common/api/_permission_features.json.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/extensions/common/api/_permission_features.json
 @@ -134,7 +134,7 @@
      {
@@ -9,7 +9,7 @@
        "allowlist": [
          "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/387169
          "A3BC37E2148AC4E99BE4B16AF9D42DD1E592BBBE",  // http://crbug.com/387169
-@@ -433,7 +433,7 @@
+@@ -427,7 +427,7 @@
    }, {
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
@@ -18,7 +18,7 @@
      "allowlist": [
        "0DE0F05680A4A056BCEC864ED8DDA84296F82B40",  // http://crbug.com/434651
        "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/293683
-@@ -475,7 +475,7 @@
+@@ -469,7 +469,7 @@
    "networkingPrivate": {
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],

@@ -1,6 +1,6 @@
 PORTNAME=	torque
 PORTVERSION=	2.5.13
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=1643/
@@ -11,6 +11,9 @@ WWW=		http://www.adaptivecomputing.com/products/open-source/torque/
 
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_riscv64=		fails to link: missing sbrk
+
+DEPRECATED=	unfetchable, upstream no longer open source
+EXPIRATION_DATE=	2023-12-31
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 USES=		gmake perl5 libtool

@@ -48,6 +48,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/ast/notify
 %%DATADIR%%/text.skel/ast/probe
 %%DATADIR%%/text.skel/ast/prologue
+%%DATADIR%%/text.skel/ast/subrelease
 %%DATADIR%%/text.skel/ast/wait-post
 %%DATADIR%%/text.skel/ast/wait-sub
 %%DATADIR%%/text.skel/cs/confirm
@@ -64,6 +65,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/cs/notify
 %%DATADIR%%/text.skel/cs/probe
 %%DATADIR%%/text.skel/cs/prologue
+%%DATADIR%%/text.skel/cs/subrelease
 %%DATADIR%%/text.skel/cs/wait-post
 %%DATADIR%%/text.skel/cs/wait-sub
 %%DATADIR%%/text.skel/de/confirm
@@ -80,6 +82,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/de/notify
 %%DATADIR%%/text.skel/de/probe
 %%DATADIR%%/text.skel/de/prologue
+%%DATADIR%%/text.skel/de/subrelease
 %%DATADIR%%/text.skel/de/wait-post
 %%DATADIR%%/text.skel/de/wait-sub
 %%DATADIR%%/text.skel/en/confirm
@@ -96,6 +99,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/en/notify
 %%DATADIR%%/text.skel/en/probe
 %%DATADIR%%/text.skel/en/prologue
+%%DATADIR%%/text.skel/en/subrelease
 %%DATADIR%%/text.skel/en/wait-post
 %%DATADIR%%/text.skel/en/wait-sub
 %%DATADIR%%/text.skel/fi/confirm
@@ -112,6 +116,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/fi/notify
 %%DATADIR%%/text.skel/fi/probe
 %%DATADIR%%/text.skel/fi/prologue
+%%DATADIR%%/text.skel/fi/subrelease
 %%DATADIR%%/text.skel/fi/wait-post
 %%DATADIR%%/text.skel/fi/wait-sub
 %%DATADIR%%/text.skel/fr/confirm
@@ -128,6 +133,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/fr/notify
 %%DATADIR%%/text.skel/fr/probe
 %%DATADIR%%/text.skel/fr/prologue
+%%DATADIR%%/text.skel/fr/subrelease
 %%DATADIR%%/text.skel/fr/wait-post
 %%DATADIR%%/text.skel/fr/wait-sub
 %%DATADIR%%/text.skel/gr/confirm
@@ -144,6 +150,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/gr/notify
 %%DATADIR%%/text.skel/gr/probe
 %%DATADIR%%/text.skel/gr/prologue
+%%DATADIR%%/text.skel/gr/subrelease
 %%DATADIR%%/text.skel/gr/wait-post
 %%DATADIR%%/text.skel/gr/wait-sub
 %%DATADIR%%/text.skel/it/confirm
@@ -160,6 +167,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/it/notify
 %%DATADIR%%/text.skel/it/probe
 %%DATADIR%%/text.skel/it/prologue
+%%DATADIR%%/text.skel/it/subrelease
 %%DATADIR%%/text.skel/it/wait-post
 %%DATADIR%%/text.skel/it/wait-sub
 %%DATADIR%%/text.skel/pt/confirm
@@ -176,6 +184,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/pt/notify
 %%DATADIR%%/text.skel/pt/probe
 %%DATADIR%%/text.skel/pt/prologue
+%%DATADIR%%/text.skel/pt/subrelease
 %%DATADIR%%/text.skel/pt/wait-post
 %%DATADIR%%/text.skel/pt/wait-sub
 %%DATADIR%%/text.skel/sk/confirm
@@ -192,6 +201,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/sk/notify
 %%DATADIR%%/text.skel/sk/probe
 %%DATADIR%%/text.skel/sk/prologue
+%%DATADIR%%/text.skel/sk/subrelease
 %%DATADIR%%/text.skel/sk/wait-post
 %%DATADIR%%/text.skel/sk/wait-sub
 %%DATADIR%%/text.skel/zh-cn/confirm
@@ -208,6 +218,7 @@ man/man1/mlmmj-unsub.1.gz
 %%DATADIR%%/text.skel/zh-cn/notify
 %%DATADIR%%/text.skel/zh-cn/probe
 %%DATADIR%%/text.skel/zh-cn/prologue
+%%DATADIR%%/text.skel/zh-cn/subrelease
 %%DATADIR%%/text.skel/zh-cn/wait-post
 %%DATADIR%%/text.skel/zh-cn/wait-sub
 %%PERL%%%%WWWDIR%%/perl-admin/README

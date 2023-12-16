@@ -1,12 +1,12 @@
 PORTNAME=	phpldapadmin
 DISTVERSION=	1.2.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	PHP application to administer LDAP over the web
-WWW=		https://phpldapadmin.sourceforge.net/
+WWW=		https://github.com/leenooks/phpLDAPadmin/wiki
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

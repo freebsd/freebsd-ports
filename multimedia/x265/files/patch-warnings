@@ -1,0 +1,201 @@
+--- source/encoder/entropy.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/encoder/entropy.cpp	2023-10-22 21:00:30.522586000 -0400
+@@ -1362,5 +1362,7 @@ 
+     bool            bDenomCoded  = false;
+     int             numRefDirs   = slice.m_sliceType == B_SLICE ? 2 : 1;
++#if CHECKED_BUILD || _DEBUG
+     uint32_t        totalSignalledWeightFlags = 0;
++#endif
+ 
+     if ((slice.m_sliceType == P_SLICE && slice.m_pps->bUseWeightPred) ||
+@@ -1384,5 +1386,7 @@ 
+                 }
+                 WRITE_FLAG(!!wp[0].wtPresent, "luma_weight_lX_flag");
++#if CHECKED_BUILD || _DEBUG
+                 totalSignalledWeightFlags += wp[0].wtPresent;
++#endif
+             }
+ 
+@@ -1393,5 +1397,7 @@ 
+                     wp = slice.m_weightPredTable[list][ref];
+                     WRITE_FLAG(!!wp[1].wtPresent, "chroma_weight_lX_flag");
++#if CHECKED_BUILD || _DEBUG
+                     totalSignalledWeightFlags += 2 * wp[1].wtPresent;
++#endif
+                 }
+             }
+--- source/encoder/sao.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/encoder/sao.cpp	2023-10-22 21:03:08.008923000 -0400
+@@ -740,5 +740,4 @@ 
+     const pixel* fenc0 = m_frame->m_fencPic->getPlaneAddr(plane, addr);
+     const pixel* rec0  = reconPic->getPlaneAddr(plane, addr);
+-    const pixel* fenc;
+     const pixel* rec;
+     intptr_t stride = plane ? reconPic->m_strideC : reconPic->m_stride;
+@@ -870,5 +869,4 @@ 
+                 }
+ 
+-                fenc = fenc0;
+                 rec  = rec0;
+ 
+@@ -880,5 +878,4 @@ 
+                 if (startY)
+                 {
+-                    fenc += stride;
+                     rec += stride;
+                 }
+@@ -895,5 +892,4 @@ 
+                     skipR = 5;
+                 }
+-                fenc = fenc0;
+                 rec  = rec0;
+                 startX = !lpelx;
+@@ -905,5 +901,4 @@ 
+                 if (startY)
+                 {
+-                    fenc += stride;
+                     rec += stride;
+                 }
+--- source/test/pixelharness.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/test/pixelharness.cpp	2023-10-22 21:37:53.184785000 -0400
+@@ -999,5 +999,4 @@ 
+ bool PixelHarness::check_pixel_var(var_t ref, var_t opt)
+ {
+-    int j = 0;
+ 
+     intptr_t stride = STRIDE;
+@@ -1012,5 +1011,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1352,6 +1350,4 @@ 
+     int8_t _upBuff1_vec[MAX_CU_SIZE + 2], *upBuff1_vec = _upBuff1_vec + 1;
+ 
+-    int j = 0;
+-
+     for (int i = 0; i < ITERS; i++)
+     {
+@@ -1380,5 +1376,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1400,6 +1395,4 @@ 
+     int8_t _upBufft_vec[MAX_CU_SIZE + 2], *upBufft_vec = _upBufft_vec + 1;
+ 
+-    int j = 0;
+-
+     // NOTE: verify more times since our asm is NOT exact match to C, the output of upBuff* will be DIFFERENT
+     for (int i = 0; i < ITERS * 10; i++)
+@@ -1434,5 +1427,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1452,6 +1444,4 @@ 
+     int8_t _upBuff1_vec[MAX_CU_SIZE + 2], *upBuff1_vec = _upBuff1_vec + 1;
+ 
+-    int j = 0;
+-
+     // (const pixel *fenc, const pixel *rec, intptr_t stride, int8_t *upBuff1, int endX, int endY, int32_t *stats, int32_t *count)
+     for (int i = 0; i < ITERS; i++)
+@@ -1483,5 +1473,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1736,5 +1725,4 @@ 
+     uint16_t ref_coeffFlag[MLS_GRP_NUM], opt_coeffFlag[MLS_GRP_NUM];    // bit mask map for non-zero coeff
+ 
+-    int totalCoeffs = 0;
+     for (int i = 0; i < 32 * 32; i++)
+     {
+@@ -1748,5 +1736,4 @@ 
+         if ((rand() % 10) < 8)
+             ref_src[i] *= -1;
+-        totalCoeffs += (ref_src[i] != 0);
+     }
+ 
+@@ -1873,5 +1860,4 @@ 
+     memset(opt_absCoeff, 0xCD, sizeof(opt_absCoeff));
+ 
+-    int totalCoeffs = 0;
+     for (int i = 0; i < 32 * 32; i++)
+     {
+@@ -1885,5 +1871,4 @@ 
+         if ((rand() % 10) < 8)
+             ref_src[i] *= -1;
+-        totalCoeffs += (ref_src[i] != 0);
+     }
+ 
+@@ -2230,5 +2215,4 @@ 
+ {
+     intptr_t srcStep = 64;
+-    int j = 0;
+     uint32_t dst_ref[BUFFSIZE] = { 0 };
+     uint32_t dst_opt[BUFFSIZE] = { 0 };
+@@ -2260,6 +2244,5 @@ 
+             return false;
+ 
+-        reportfail()
+-            j += INCR;
++        reportfail();
+     }
+     return true;
+@@ -2272,5 +2255,4 @@ 
+      * where data movement in AVX2 is 8 elements at a time */
+     intptr_t srcStep[2] = { 56, 64 };
+-    int j = 0;
+     uint32_t dst_ref[BUFFSIZE] = { 0 };
+     uint32_t dst_opt[BUFFSIZE] = { 0 };
+@@ -2290,6 +2272,5 @@ 
+                 return false;
+ 
+-            reportfail()
+-                j += INCR;
++            reportfail();
+         }
+     }
+--- source/common/scaler.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/common/scaler.cpp	2023-10-22 21:43:05.304243000 -0400
+@@ -512,8 +512,5 @@ 
+     int  srcVCrPos;
+     int  dstVCrPos;
+-    int dst_stride = SCALER_ALIGN(dstW * sizeof(int16_t) + 66, 16);
+     m_bitDepth = dstVideoDesc->m_inputDepth;
+-    if (m_bitDepth == 16)
+-        dst_stride <<= 1;
+ 
+     m_algorithmFlags = algorithmFlags;
+--- source/encoder/ratecontrol.cpp	2023-08-24 07:11:18.000000000 -0400
++++ source/encoder/ratecontrol.cpp	2023-10-22 22:12:33.546126000 -0400
+@@ -580,5 +580,4 @@ 
+             /* read stats */
+             p = statsIn;
+-            double totalQpAq = 0;
+             for (int i = 0; i < m_numEntries; i++)
+             {
+@@ -645,5 +644,4 @@ 
+                 }
+                 rce->qScale = rce->newQScale = x265_qp2qScale(qpRc);
+-                totalQpAq += qpAq;
+                 rce->qpNoVbv = qNoVbv;
+                 rce->qpaRc = qpRc;
+@@ -999,5 +997,5 @@ 
+ bool RateControl::initPass2()
+ {
+-    uint64_t allConstBits = 0, allCodedBits = 0;
++    uint64_t allConstBits = 0;
+     uint64_t allAvailableBits = uint64_t(m_param->rc.bitrate * 1000. * m_numEntries * m_frameDuration);
+     int startIndex, framesCount, endIndex;
+@@ -1010,5 +1008,4 @@ 
+     {
+         allConstBits += m_rce2Pass[endIndex].miscBits;
+-        allCodedBits += m_rce2Pass[endIndex].coeffBits + m_rce2Pass[endIndex].mvBits;
+         if (m_param->rc.rateControlMode == X265_RC_CRF)
+         {

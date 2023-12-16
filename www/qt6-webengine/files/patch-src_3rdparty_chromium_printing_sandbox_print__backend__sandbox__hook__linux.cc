@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.cc
-@@ -9,21 +9,28 @@
- #include "base/files/file_util.h"
+@@ -10,21 +10,28 @@
  #include "base/path_service.h"
  #include "build/build_config.h"
+ #include "printing/buildflags/buildflags.h"
 +#if !BUILDFLAG(IS_BSD)
  #include "sandbox/linux/syscall_broker/broker_command.h"
  #include "sandbox/linux/syscall_broker/broker_file_permission.h"
@@ -14,7 +14,7 @@
 +#include "sandbox/policy/openbsd/sandbox_openbsd.h"
 +#endif
  
- #if BUILDFLAG(IS_CHROMEOS) && defined(USE_CUPS)
+ #if BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(USE_CUPS)
  #include "printing/backend/cups_connection_pool.h"
  #endif
  
@@ -29,7 +29,7 @@
  namespace {
  
  sandbox::syscall_broker::BrokerCommandSet GetPrintBackendBrokerCommandSet() {
-@@ -84,9 +91,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
+@@ -85,9 +92,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
  }
  
  }  // namespace
@@ -38,10 +38,10 @@
  bool PrintBackendPreSandboxHook(
      sandbox::policy::SandboxLinux::Options options) {
 +#if !BUILDFLAG(IS_BSD)
- #if BUILDFLAG(IS_CHROMEOS) && defined(USE_CUPS)
+ #if BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(USE_CUPS)
    // Create the socket connections to the CUPS server before engaging the
    // sandbox, since new connections cannot be made after that.
-@@ -100,6 +109,7 @@ bool PrintBackendPreSandboxHook(
+@@ -101,6 +110,7 @@ bool PrintBackendPreSandboxHook(
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();

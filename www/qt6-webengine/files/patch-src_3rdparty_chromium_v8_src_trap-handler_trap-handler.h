@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/trap-handler/trap-handler.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/v8/src/trap-handler/trap-handler.h.orig	2022-04-21 18:48:31 UTC
 +++ src/3rdparty/chromium/v8/src/trap-handler/trap-handler.h
 @@ -20,7 +20,7 @@ namespace trap_handler {
  // X64 on Linux, Windows, MacOS, FreeBSD.

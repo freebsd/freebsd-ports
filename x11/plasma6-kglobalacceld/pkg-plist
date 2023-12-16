@@ -1,0 +1,13 @@
+etc/xdg/autostart/kglobalacceld.desktop
+include/KGlobalAccelD/kglobalaccel_interface.h
+include/KGlobalAccelD/kglobalacceld.h
+include/KGlobalAccelD/kglobalacceld_export.h
+lib/cmake/KGlobalAccelD/KGlobalAccelDConfig.cmake
+lib/cmake/KGlobalAccelD/KGlobalAccelDConfigVersion.cmake
+lib/cmake/KGlobalAccelD/KGlobalAccelDTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KGlobalAccelD/KGlobalAccelDTargets.cmake
+lib/libKGlobalAccelD.so.0
+lib/libKGlobalAccelD.so.%%KDE_PLASMA_VERSION%%
+lib/libexec/kglobalacceld
+%%QT_PLUGINDIR%%/org.kde.kglobalacceld.platforms/KGlobalAccelDXcb.so
+lib/systemd/user/plasma-kglobalaccel.service

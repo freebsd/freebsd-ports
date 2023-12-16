@@ -18,6 +18,9 @@ PKGNAMESUFFIX=	320
 CONFLICTS+=	cfengine-masterfiles-3.*
 .endif
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=	2024-03-01
+
 RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}

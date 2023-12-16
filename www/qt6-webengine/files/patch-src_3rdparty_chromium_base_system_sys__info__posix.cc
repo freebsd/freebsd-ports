@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_posix.cc
-@@ -182,12 +182,12 @@ absl::optional<int> NumberOfPhysicalProcessors() {
+@@ -165,12 +165,12 @@ int NumberOfProcessors() {
  
  }  // namespace internal
  
@@ -15,7 +15,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -277,6 +277,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -260,6 +260,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";
@@ -24,10 +24,3 @@
    } else if (std::string(info.sysname) == "AIX") {
      arch = "ppc64";
    }
-@@ -300,4 +302,4 @@ void SysInfo::SetIsCpuSecurityMitigationsEnabled(bool 
- 
- #endif  // BUILDFLAG(IS_MAC)
- 
--}  // namespace base
-\ No newline at end of file
-+}  // namespace base

@@ -1,13 +1,6 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/partition_page.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/partition_page.h.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/partition_page.h
-@@ -138,13 +138,13 @@ struct SlotSpanMetadata {
-   PartitionBucket<thread_safe>* const bucket = nullptr;
- 
-   // CHECK()ed in AllocNewSlotSpan().
--#if defined(PA_HAS_64_BITS_POINTERS) && BUILDFLAG(IS_APPLE)
-+#if (defined(PA_HAS_64_BITS_POINTERS) && BUILDFLAG(IS_APPLE))
-   // System page size is not a constant on Apple OSes, but is either 4 or 16kiB
-   // (1 << 12 or 1 << 14), as checked in PartitionRoot::Init(). And
+@@ -143,7 +143,7 @@ struct SlotSpanMetadata {
    // PartitionPageSize() is 4 times the OS page size.
    static constexpr size_t kMaxSlotsPerSlotSpan =
        4 * (1 << 14) / kSmallestBucket;

@@ -1,5 +1,3 @@
-TIMESTAMP = 1595369132
-SHA256 (coin3d-coin-Coin-4.0.0_GH0.tar.gz) = b00d2a8e9d962397cf9bf0d9baa81bcecfbd16eef675a98c792f5cf49eb6e805
-SIZE (coin3d-coin-Coin-4.0.0_GH0.tar.gz) = 6788294
-SHA256 (3053d28b74d.patch) = 8514418b7da2f11a14d03e77821a18a9050494c35ff6c08e1e56e4a811b815be
-SIZE (3053d28b74d.patch) = 1410
+TIMESTAMP = 1701710777
+SHA256 (coin3d-coin-v4.0.2_GH0.tar.gz) = fab19ccdb5f199dae5543036738076a957a3097589b473ef496696c24eeac3d2
+SIZE (coin3d-coin-v4.0.2_GH0.tar.gz) = 6937827

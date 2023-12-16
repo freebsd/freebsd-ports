@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/linux/unbundle/libusb.gn.orig	2022-11-06 11:50:49 UTC
+--- src/3rdparty/chromium/build/linux/unbundle/libusb.gn.orig	2021-04-15 08:12:30 UTC
 +++ src/3rdparty/chromium/build/linux/unbundle/libusb.gn
 @@ -0,0 +1,24 @@
 +# Copyright 2016 The Chromium Authors. All rights reserved.

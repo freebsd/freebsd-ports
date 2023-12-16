@@ -1,18 +1,17 @@
 PORTNAME=	multimedia
-PORTVERSION=	${QT6_VERSION}
+DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt audio, video, radio and camera support module
-WWW=		https://qt.io
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++11-lang gl localbase:ldflags pkgconfig qt-dist:6
-USE_GL=		gl opengl
-USE_QT=		base declarative shadertools svg
+USES=		cmake compiler:c++17-lang gl localbase:ldflags pkgconfig qt-dist:6
+USE_GL=		opengl
+USE_QT=		base declarative
 
 CXXFLAGS_powerpc64=	-mvsx
 CFLAGS_powerpc=	-DPFFFT_SIMD_DISABLE
@@ -39,7 +38,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	FEATURE_pulseaudio
 
 Q3D_DESC=		Spatial Audio via Quick3D
-Q3D_USE=		QT=quick3d
+Q3D_USE=		QT=quick3d,shadertools
 Q3D_CMAKE_BOOL=		FEATURE_spatialaudio_quick3d
 
 V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat

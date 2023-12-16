@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/renderer_host/pepper/pepper_file_io_host.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/renderer_host/pepper/pepper_file_io_host.cc.orig	2022-05-19 14:06:27 UTC
 +++ src/3rdparty/chromium/content/browser/renderer_host/pepper/pepper_file_io_host.cc
 @@ -455,7 +455,7 @@ void PepperFileIOHost::OnLocalFileOpened(
      ppapi::host::ReplyMessageContext reply_context,

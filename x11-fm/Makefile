@@ -6,6 +6,7 @@
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser
     SUBDIR += dolphin
+    SUBDIR += dolphin-devel
     SUBDIR += doublecmd
     SUBDIR += filerunner
     SUBDIR += fsv2

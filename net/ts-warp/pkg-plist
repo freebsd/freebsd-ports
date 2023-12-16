@@ -1,0 +1,9 @@
+bin/ts-pass
+bin/ts-warp
+@sample etc/ts-warp.conf.sample
+@sample etc/ts-warp_pf.conf.sample
+man/man1/ts-pass.1.gz
+man/man1/ts-warp.sh.1.gz
+man/man5/ts-warp.5.gz
+man/man8/ts-warp.8.gz
+@dir /var/db/ts-warp

@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-androidpublisher_v3
-PORTVERSION=	0.51.0
+PORTVERSION=	0.53.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

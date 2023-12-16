@@ -36,14 +36,13 @@ USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 CPE_VENDOR=	gnu
 USE_CSTD=	gnu11
 USE_CXXSTD=	c++11
-USE_GL=		egl
-USE_GNOME=	atk gdkpixbuf2 gtk20 libxml2 pango
-USE_SDL=	sdl
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
+USE_GNOME=	atk gdkpixbuf2 gtk20 libxml2 pango
+USE_GL=		egl
+USE_SDL=	sdl
+GNU_CONFIGURE=	yes
 
 SYSCONFIGDIR=	${PREFIX}/etc
-
-GNU_CONFIGURE=	yes
 
 # jemalloc leads to infinite recursion on FreeBSD
 CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include

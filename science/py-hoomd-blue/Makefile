@@ -1,6 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.4.0
 PORTREVISION=	1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ GH_ACCOUNT=	glotzerlab
 
 GH_TUPLE=	glotzerlab:upp11:0c1fb8d:glotzerlab_upp11/hoomd/extern/upp11 \
 		glotzerlab:nano-signal-slot:34223a4:glotzerlab_nano_signal_slot/hoomd/extern/nano-signal-slot \
-		glotzerlab:quickhull:a706b5b:glotzerlab_quickhull/hoomd/extern/quickhull \
+		glotzerlab:quickhull:1ffbc6f:glotzerlab_quickhull/hoomd/extern/quickhull \
 		glotzerlab:random123:a2c4f04:glotzerlab_random123/hoomd/extern/random123 \
 		glotzerlab:HIP:d211f99:glotzerlab_HIP/hoomd/extern/HIP \
 		glotzerlab:hipCUB:c70e193:glotzerlab_hipCUB/hoomd/extern/hipCUB \

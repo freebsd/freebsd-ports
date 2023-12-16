@@ -1,6 +1,6 @@
 PORTNAME=	chrono
 DISTVERSION=	8.0.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 

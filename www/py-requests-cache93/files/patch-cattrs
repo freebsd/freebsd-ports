@@ -212,7 +212,7 @@ Obtained from:	https://github.com/requests-cache/requests-cache/commit/66550b535
  ['appdirs>=1.4.4,<2.0.0',
   'attrs>=21.2,<22.0',
 - 'cattrs>=1.8,<2.0',
-+ 'cattrs>=1.8,<22.3',
++ 'cattrs>=1.8,<23.3',
   'requests>=2.22,<3.0',
   'url-normalize>=1.4,<2.0',
   'urllib3>=1.25.5,<2.0.0']

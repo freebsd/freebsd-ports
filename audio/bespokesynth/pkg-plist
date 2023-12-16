@@ -4,6 +4,7 @@ bin/BespokeSynth
 %%DATADIR%%/resource/help.txt
 %%DATADIR%%/resource/iosevka-type-light.ttf
 %%DATADIR%%/resource/noise.jpg
+%%DATADIR%%/resource/osc_support.txt
 %%DATADIR%%/resource/python_stubs/bespoke/__init__.pyi
 %%DATADIR%%/resource/python_stubs/drumplayer/__init__.pyi
 %%DATADIR%%/resource/python_stubs/drumsequencer/__init__.pyi
@@ -25,6 +26,7 @@ bin/BespokeSynth
 %%DATADIR%%/resource/tooltips_esp.txt
 %%DATADIR%%/resource/tooltips_ru.txt
 %%DATADIR%%/resource/tooltips_tr.txt
+%%DATADIR%%/resource/userdata_original/controllers/APC Key 25 MIDI 1.json
 %%DATADIR%%/resource/userdata_original/controllers/APC Mini.json
 %%DATADIR%%/resource/userdata_original/controllers/Ableton Push 2 Live Port.json
 %%DATADIR%%/resource/userdata_original/controllers/Akai MIDImix.json
@@ -40,6 +42,7 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/controllers/FCB1010_4.json
 %%DATADIR%%/resource/userdata_original/controllers/FCB1010_9.json
 %%DATADIR%%/resource/userdata_original/controllers/Generic 4x4.json
+%%DATADIR%%/resource/userdata_original/controllers/LPX MIDI.json
 %%DATADIR%%/resource/userdata_original/controllers/Launch Control.json
 %%DATADIR%%/resource/userdata_original/controllers/Launchpad Mini.json
 %%DATADIR%%/resource/userdata_original/controllers/Launchpad S.json
@@ -50,6 +53,7 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/controllers/Maschine Jam.json
 %%DATADIR%%/resource/userdata_original/controllers/Maschine Mikro MK2 In.json
 %%DATADIR%%/resource/userdata_original/controllers/Midi Fighter Twister.json
+%%DATADIR%%/resource/userdata_original/controllers/MiniFreak MiniFreak MIDI.json
 %%DATADIR%%/resource/userdata_original/controllers/PANORAMA P4.json
 %%DATADIR%%/resource/userdata_original/controllers/QUNEO.json
 %%DATADIR%%/resource/userdata_original/controllers/SL MkII MIDI 1.json
@@ -180,6 +184,7 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/scripts/drumsynth_randomize.py
 %%DATADIR%%/resource/userdata_original/scripts/echo.py
 %%DATADIR%%/resource/userdata_original/scripts/euclid.py
+%%DATADIR%%/resource/userdata_original/scripts/lpx_programmer_mode.py
 %%DATADIR%%/resource/userdata_original/scripts/midicontroller_input.py
 %%DATADIR%%/resource/userdata_original/scripts/modulecreation.py
 %%DATADIR%%/resource/userdata_original/scripts/nanokontrol_to_m185.py

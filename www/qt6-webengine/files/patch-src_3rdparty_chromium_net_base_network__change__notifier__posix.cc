@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/base/network_change_notifier_posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/net/base/network_change_notifier_posix.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/net/base/network_change_notifier_posix.cc
-@@ -92,7 +92,7 @@ NetworkChangeNotifierPosix::NetworkChangeCalculatorPar
+@@ -92,7 +92,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
  NetworkChangeNotifier::NetworkChangeCalculatorParams
  NetworkChangeNotifierPosix::NetworkChangeCalculatorParamsPosix() {
    NetworkChangeCalculatorParams params;

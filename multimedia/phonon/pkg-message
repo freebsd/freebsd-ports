@@ -2,7 +2,6 @@
 { type: install
   message: <<EOM
 Please, consider installing backends for Phonon:
-- multimedia/phonon-gstreamer	GStreamer backend
 - multimedia/phonon-vlc		VLC backend
 EOM
 }

@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.31.0
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -103,6 +103,8 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kitty_data-types.h
 
 post-patch:
 	${REINPLACE_CMD} -i.bak -e "s:'go':'${GO_CMD}':1" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -i.bak -e "s:%%DATADIR%%:${DATADIR}:1" \
+		${WRKSRC}/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish
 
 # For librsync, we need to set header and library path
 do-build:

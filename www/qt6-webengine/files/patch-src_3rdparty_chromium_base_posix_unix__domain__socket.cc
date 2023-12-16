@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/posix/unix_domain_socket.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/posix/unix_domain_socket.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/base/posix/unix_domain_socket.cc
-@@ -51,7 +51,7 @@ bool UnixDomainSocket::EnableReceiveProcessId(int fd) 
+@@ -51,7 +51,7 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
  
  // static
  bool UnixDomainSocket::EnableReceiveProcessId(int fd) {

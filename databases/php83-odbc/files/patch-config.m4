@@ -1,17 +1,6 @@
---- config.m4.orig	2023-06-06 15:54:29 UTC
+--- config.m4.orig	2023-11-07 20:02:05 UTC
 +++ config.m4
-@@ -91,7 +91,10 @@ AC_DEFUN([PHP_ODBC_FIND_EMPRESS_BCS_LIBS],[
- dnl
- dnl configure options
- dnl
-+PHP_ARG_ENABLE(odbc,,
-+[  --enable-odbc             Enable ODBC support with selected driver])
- 
-+
- PHP_ARG_WITH([odbcver],,
-   [AS_HELP_STRING([[--with-odbcver[=HEX]]],
-     [Force support for the passed ODBC version. A hex number is expected,
-@@ -102,7 +105,7 @@ PHP_ARG_WITH([odbcver],,
+@@ -102,7 +102,7 @@ PHP_ARG_WITH([adabas],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([adabas],,
    [AS_HELP_STRING([[--with-adabas[=DIR]]],
@@ -20,7 +9,7 @@
  
    AC_MSG_CHECKING([for Adabas support])
    if test "$PHP_ADABAS" != "no"; then
-@@ -132,7 +135,7 @@ fi
+@@ -132,7 +132,7 @@ PHP_ARG_WITH([sapdb],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([sapdb],,
    [AS_HELP_STRING([[--with-sapdb[=DIR]]],
@@ -29,7 +18,7 @@
  
    AC_MSG_CHECKING([for SAP DB support])
    if test "$PHP_SAPDB" != "no"; then
-@@ -153,7 +156,7 @@ fi
+@@ -153,7 +153,7 @@ PHP_ARG_WITH([solid],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([solid],,
    [AS_HELP_STRING([[--with-solid[=DIR]]],
@@ -38,7 +27,7 @@
  
    AC_MSG_CHECKING(for Solid support)
    if test "$PHP_SOLID" != "no"; then
-@@ -181,7 +184,7 @@ fi
+@@ -181,7 +181,7 @@ PHP_ARG_WITH([ibm-db2],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([ibm-db2],,
    [AS_HELP_STRING([[--with-ibm-db2[=DIR]]],
@@ -47,7 +36,7 @@
  
    AC_MSG_CHECKING(for IBM DB2 support)
    if test "$PHP_IBM_DB2" != "no"; then
-@@ -222,7 +225,7 @@ if test -z "$ODBC_TYPE"; then
+@@ -222,7 +222,7 @@ PHP_ARG_WITH([empress],,
  PHP_ARG_WITH([empress],,
    [AS_HELP_STRING([[--with-empress[=DIR]]],
      [Include Empress support $EMPRESSPATH (Empress Version >= 8.60
@@ -56,7 +45,7 @@
  
    AC_MSG_CHECKING(for Empress support)
    if test "$PHP_EMPRESS" != "no"; then
-@@ -248,7 +251,7 @@ if test -z "$ODBC_TYPE"; then
+@@ -248,7 +248,7 @@ PHP_ARG_WITH([empress-bcs],,
  PHP_ARG_WITH([empress-bcs],,
    [AS_HELP_STRING([[--with-empress-bcs[=DIR]]],
      [Include Empress Local Access support $EMPRESSPATH (Empress Version >=
@@ -65,7 +54,7 @@
  
    AC_MSG_CHECKING(for Empress local access support)
    if test "$PHP_EMPRESS_BCS" != "no"; then
-@@ -294,7 +297,7 @@ PHP_ARG_WITH([custom-odbc],,
+@@ -294,7 +294,7 @@ PHP_ARG_WITH([custom-odbc],,
      your include dirs. For example, you should define following for Sybase SQL
      Anywhere 5.5.00 on QNX, prior to running this configure script:
      CPPFLAGS="-DODBC_QNX -DSQLANY_BUG" LDFLAGS=-lunix
@@ -74,7 +63,7 @@
  
    AC_MSG_CHECKING(for a custom ODBC support)
    if test "$PHP_CUSTOM_ODBC" != "no"; then
-@@ -317,7 +320,7 @@ fi
+@@ -317,7 +317,7 @@ PHP_ARG_WITH([iodbc],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([iodbc],,
    [AS_HELP_STRING([--with-iodbc],
@@ -83,7 +72,7 @@
  
    AC_MSG_CHECKING(whether to build with iODBC support)
    if test "$PHP_IODBC" != "no"; then
-@@ -335,7 +338,7 @@ fi
+@@ -335,7 +335,7 @@ PHP_ARG_WITH([esoob],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([esoob],,
    [AS_HELP_STRING([[--with-esoob[=DIR]]],
@@ -92,7 +81,7 @@
  
    AC_MSG_CHECKING(for Easysoft ODBC-ODBC Bridge support)
    if test "$PHP_ESOOB" != "no"; then
-@@ -358,7 +361,7 @@ fi
+@@ -358,7 +358,7 @@ PHP_ARG_WITH([unixODBC],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([unixODBC],,
    [AS_HELP_STRING([--with-unixODBC],
@@ -101,7 +90,7 @@
  
    AC_MSG_CHECKING(whether to build with unixODBC support)
    if test "$PHP_UNIXODBC" != "no"; then
-@@ -386,7 +389,7 @@ fi
+@@ -386,7 +386,7 @@ PHP_ARG_WITH([dbmaker],,
  if test -z "$ODBC_TYPE"; then
  PHP_ARG_WITH([dbmaker],,
    [AS_HELP_STRING([[--with-dbmaker[=DIR]]],

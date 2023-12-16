@@ -1,5 +1,5 @@
 PORTNAME=	xdg-desktop-portal
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.2
 CATEGORIES=	deskutils wayland
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
 
 MESON_ARGS=	-Ddocbook-docs=disabled -Dman-pages=disabled -Dpytest=disabled \
+		-Dflatpak-interfaces=disabled -Dsandboxed-image-validation=false \
 		-Dsystemd=disabled
 
 .include <bsd.port.pre.mk>

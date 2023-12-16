@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_logging_controller.cc
-@@ -24,10 +24,10 @@
+@@ -23,10 +23,10 @@
  #include "content/public/browser/browser_context.h"
  #include "content/public/browser/render_process_host.h"
  
@@ -13,7 +13,7 @@
  
  using webrtc_event_logging::WebRtcEventLogManager;
  
-@@ -282,7 +282,7 @@ void WebRtcLoggingController::StartEventLogging(
+@@ -278,7 +278,7 @@ void WebRtcLoggingController::StartEventLogging(
          web_app_id, callback);
  }
  
@@ -22,7 +22,7 @@
  void WebRtcLoggingController::GetLogsDirectory(
      LogsDirectoryCallback callback,
      LogsDirectoryErrorCallback error_callback) {
-@@ -328,7 +328,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+@@ -323,7 +323,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
        FROM_HERE,
        base::BindOnce(std::move(callback), file_system.id(), registered_name));
  }

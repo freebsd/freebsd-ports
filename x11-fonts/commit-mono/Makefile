@@ -1,7 +1,7 @@
 PORTNAME=	commit-mono
-DISTVERSION=	1.135
+DISTVERSION=	1.141
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/eigilnikolajsen/commit-mono/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/eigilnikolajsen/commit-mono/releases/download/v${DISTVERSION}/
 DISTNAME=	CommitMono-${DISTVERSION}
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,7 +15,6 @@ FONTNAME=	CommitMono
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

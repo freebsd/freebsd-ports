@@ -1,6 +1,5 @@
 PORTNAME=	stumpwm
-DISTVERSION=	22.11-88
-DISTVERSIONSUFFIX=	-gbaf5df7
+DISTVERSION=	23.11
 CATEGORIES=	x11-wm lisp
 MASTER_SITES+=	https://beta.quicklisp.org/archive/alexandria/2023-10-21/:alexandria \
 		https://beta.quicklisp.org/archive/cl-ppcre/2023-06-18/:ppcre \
@@ -24,8 +23,8 @@ USE_GITHUB=	yes
 USE_SBCL=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-module-dir=${DATADIR}/modules \
-		--enable-compression
+CONFIGURE_ARGS=	--enable-compression \
+		--with-module-dir=${DATADIR}/modules
 
 MAKE_ARGS=	destdir=${STAGEDIR}
 

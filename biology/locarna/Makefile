@@ -19,6 +19,7 @@ TEST_DEPENDS=	bash:shells/bash \
 
 USES=		autoreconf gmake libtool perl5 pkgconfig shebangfix
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # workaround for https://github.com/s-will/LocARNA/issues/82 (LocARNA uses the removed STL method)
 
 CXXFLAGS+=	-I${LOCALBASE}/include/catch2 # use external catch
 

@@ -1,7 +1,7 @@
 PORTNAME=	gomplate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.5
-PORTREVISION=	2
+DISTVERSION=	3.11.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/hairyhenderson/gomplate
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 GO_MODULE=	github.com/hairyhenderson/gomplate/v3
 GH_TAG_COMMIT=	ea986e7

@@ -1,6 +1,6 @@
 PORTNAME=	passwordsafe
 DISTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -44,6 +44,8 @@ WANT_WX_VER=	3.0
 LDFLAGS=	-L${PREFIX}/lib -lqrencode
 
 ALL_TARGET=	unicoderelease
+
+PORTSCOUT=	limit=^1\.
 
 post-patch:
 .	for f in Makefile.freebsd help/Makefile.freebsd src/os/unix/Makefile \

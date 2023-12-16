@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc
 @@ -464,7 +464,7 @@ std::string GetFileExtension(FileExtension file_extens
  }
@@ -9,7 +9,7 @@
  SiteConfig GetSiteConfigurationFromAppName(const std::string& app_name) {
    SiteConfig config;
    bool is_app_found = false;
-@@ -1933,7 +1933,7 @@ void WebAppIntegrationTestDriver::DeletePlatformShortc
+@@ -1936,7 +1936,7 @@ void WebAppIntegrationTestDriver::DeletePlatformShortc
    if (app_name.empty()) {
      app_name = GetSiteConfiguration(site).app_name;
    }
@@ -18,7 +18,7 @@
    ASSERT_TRUE(override_registration_->test_override->IsShortcutCreated(
        profile(), app_id, app_name));
    ASSERT_TRUE(
-@@ -3249,7 +3249,7 @@ void WebAppIntegrationTestDriver::CheckRunOnOsLoginEna
+@@ -3253,7 +3253,7 @@ void WebAppIntegrationTestDriver::CheckRunOnOsLoginEna
            app_state->id, app_state->name);
    ASSERT_TRUE(icon_color.has_value());
    ASSERT_THAT(site_config.icon_color, testing::Eq(icon_color.value()));
@@ -27,7 +27,7 @@
    ASSERT_TRUE(override_registration_->test_override->IsRunOnOsLoginEnabled(
        profile(), app_state->id, app_state->name));
  #endif
-@@ -3264,7 +3264,7 @@ void WebAppIntegrationTestDriver::CheckRunOnOsLoginDis
+@@ -3268,7 +3268,7 @@ void WebAppIntegrationTestDriver::CheckRunOnOsLoginDis
        GetAppBySiteMode(after_state_change_action_state_.get(), profile(), site);
    ASSERT_TRUE(app_state);
    base::ScopedAllowBlockingForTesting allow_blocking;
@@ -36,7 +36,7 @@
    ASSERT_FALSE(override_registration_->test_override->IsRunOnOsLoginEnabled(
        profile(), app_state->id, app_state->name));
  #endif
-@@ -3274,7 +3274,7 @@ void WebAppIntegrationTestDriver::CheckRunOnOsLoginDis
+@@ -3278,7 +3278,7 @@ void WebAppIntegrationTestDriver::CheckRunOnOsLoginDis
  void WebAppIntegrationTestDriver::CheckSiteHandlesFile(
      Site site,
      FileExtension file_extension) {
@@ -45,7 +45,7 @@
    if (!BeforeStateCheckAction(__FUNCTION__)) {
      return;
    }
-@@ -3290,7 +3290,7 @@ void WebAppIntegrationTestDriver::CheckSiteHandlesFile
+@@ -3294,7 +3294,7 @@ void WebAppIntegrationTestDriver::CheckSiteHandlesFile
  void WebAppIntegrationTestDriver::CheckSiteNotHandlesFile(
      Site site,
      FileExtension file_extension) {
@@ -54,17 +54,17 @@
    if (!BeforeStateCheckAction(__FUNCTION__)) {
      return;
    }
-@@ -4073,7 +4073,7 @@ base::FilePath WebAppIntegrationTestDriver::GetShortcu
+@@ -4079,7 +4079,7 @@ base::FilePath WebAppIntegrationTestDriver::GetShortcu
      base::FilePath shortcut_dir,
      const std::string& app_name,
-     const AppId& app_id) {
+     const webapps::AppId& app_id) {
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    return override_registration_->test_override->GetShortcutPath(
        profile(), shortcut_dir, app_id, app_name);
  #else
-@@ -4260,7 +4260,7 @@ bool WebAppIntegrationTestDriver::IsShortcutAndIconCre
-     const AppId& id) {
+@@ -4273,7 +4273,7 @@ bool WebAppIntegrationTestDriver::IsShortcutAndIconCre
+     const webapps::AppId& id) {
    base::ScopedAllowBlockingForTesting allow_blocking;
    bool is_shortcut_and_icon_correct = false;
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -72,7 +72,7 @@
    bool is_shortcut_correct =
        override_registration_->test_override->IsShortcutCreated(profile, id,
                                                                 name);
-@@ -4304,7 +4304,7 @@ bool WebAppIntegrationTestDriver::DoIconColorsMatch(Pr
+@@ -4317,7 +4317,7 @@ bool WebAppIntegrationTestDriver::DoIconColorsMatch(Pr
      do_icon_colors_match =
          (expected_icon_pixel_color == shortcut_pixel_color_apps_folder.value());
    }

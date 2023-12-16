@@ -1,11 +1,11 @@
 PORTNAME=	drawio
-PORTVERSION=	22.0.3
+PORTVERSION=	22.1.2
 DISTVERSIONPREFIX=	x86_64-
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jgraph/drawio-desktop/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	636808@mail.ru
+MAINTAINER=	x636808@gmail.com
 COMMENT=	Diagramming and whiteboarding desktop app
 WWW=		https://drawio.com/
 
@@ -13,10 +13,11 @@ LICENSE=	APACHE20
 
 USES=		desktop-file-utils electronfix:25 shared-mime-info
 
-ELECTRONFIX_MAIN_EXECUTABLE=	drawio
+NO_BUILD=	yes
 SUB_FILES=	drawio
 NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
+
+ELECTRONFIX_MAIN_EXECUTABLE=	drawio
 
 do-install:
 	cd ${WRKSRC}/opt/ && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/share

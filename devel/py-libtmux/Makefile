@@ -1,12 +1,13 @@
 PORTNAME=	libtmux
-PORTVERSION=	0.23.2
+PORTVERSION=	0.24.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typed scripting library / ORM / API wrapper for tmux
-WWW=		https://github.com/tmux-python/libtmux
+WWW=		https://libtmux.git-pull.com/ \
+		https://github.com/tmux-python/libtmux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

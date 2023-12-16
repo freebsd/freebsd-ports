@@ -1,5 +1,5 @@
 PORTNAME=	libnpupnp
-DISTVERSION=	5.0.1
+DISTVERSION=	5.1.2
 CATEGORIES=	net
 MASTER_SITES=	https://www.lesbonscomptes.com/upmpdcli/downloads/
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:c++14-lang libtool localbase pkgconfig
+USES=		compiler:c++17-lang libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

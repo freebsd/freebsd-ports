@@ -1,3 +1,3 @@
-TIMESTAMP = 1686393401
-SHA256 (nextcloud/twofactor_webauthn-v1.2.0.tar.gz) = ad29902e328bb7b16f877df50d7ccd95d6351f32395d0f3b5de07d346e73dc9b
-SIZE (nextcloud/twofactor_webauthn-v1.2.0.tar.gz) = 10646465
+TIMESTAMP = 1701330926
+SHA256 (nextcloud/twofactor_webauthn-v1.3.2.tar.gz) = bcfc70dbb099d21b96c9427d3269da41a41f1ab8e042f02bd0b957455121dfad
+SIZE (nextcloud/twofactor_webauthn-v1.3.2.tar.gz) = 8012265

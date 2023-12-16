@@ -1,5 +1,6 @@
 PORTNAME=	mlmmj-archive-mid
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	https://fossil.nours.eu/${PORTNAME}/tarball/?r=${DISTVERSION}&name=./
 
@@ -9,7 +10,7 @@ WWW=		https://fossil.nours.eu/mlmmj-archive-mid
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libkcgi.a:www/kcgi
+LIB_DEPENDS=	libkcgi.so:www/kcgi
 
 USES=		sqlite:3 uidfix pkgconfig
 

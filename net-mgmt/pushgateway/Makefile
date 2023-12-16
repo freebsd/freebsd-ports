@@ -1,6 +1,7 @@
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	nulldutra@proton.me

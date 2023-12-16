@@ -1,5 +1,5 @@
 PORTNAME=	hangouts-chat
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

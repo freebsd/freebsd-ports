@@ -5,4 +5,10 @@ if [ "$DBUS_SESSION_BUS_ADDRESS" = "" ]; then
     export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
 fi
 
+# disable auto updater on first run
+if [ ! -f $HOME/.config/draw.io/config.json ]; then
+    mkdir -p $HOME/.config/draw.io/
+    echo '{"dontCheckUpdates":true}' > $HOME/.config/draw.io/config.json
+fi
+
 exec %%DATADIR%%/drawio  "$@"

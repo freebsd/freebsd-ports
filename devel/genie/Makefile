@@ -1,25 +1,36 @@
 PORTNAME=	genie
-PORTVERSION=	g2020082801
+DISTVERSION=	g2023092101
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GENie Project generator tool
 WWW=		https://github.com/bkaradzic/GENie
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkaradzic
 GH_PROJECT=	GENie
-GH_TAGNAME=	a503d6e
+GH_TAGNAME=	7f00dcb
 
-MAKE_ARGS=	-C build/gmake.freebsd config=release CC=${CC} CXX=${CXX}
+MAKE_ARGS=	-C build/gmake.freebsd \
+		AR=${AR} \
+		CC=${CC} \
+		CXX=${CXX} \
+		verbose=1
 MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	bin/${PORTNAME}
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+OPTIONS_DEFINE=	DEBUG
+
+DEBUG_MAKE_ARGS=	config=debug
+DEBUG_MAKE_ARGS_OFF=	config=release
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bsd/genie ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/bsd/genie \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- package.json.orig	2023-09-22 04:40:49 UTC
+--- package.json.orig	2023-12-07 04:18:51 UTC
 +++ package.json
-@@ -28,7 +28,7 @@
+@@ -27,7 +27,7 @@
      "@types/bootstrap": "^5.2.7",
      "@types/tinycon": "^0.6.3",
      "@vue/compiler-sfc": "^3.2.37",

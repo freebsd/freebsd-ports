@@ -1,13 +1,13 @@
 PORTNAME=	chrony
-DISTVERSION=	4.4
+DISTVERSION=	4.5
 CATEGORIES=	net
-MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
+MASTER_SITES=	https://chrony-project.org/releases/ \
 		LOCAL/mandree
 
 # overridden in net/chrony-lite
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	System clock synchronization client and server
-WWW=		https://chrony.tuxfamily.org/
+WWW=		https://chrony-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${BACKEND_DEPENDS} \
 		bash:shells/bash \
 		gmake:devel/gmake
 
-USES=		cmake:testing compiler:c++14-lang localbase:ldflags python:build shebangfix
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

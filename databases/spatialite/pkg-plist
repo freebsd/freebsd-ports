@@ -29,9 +29,9 @@ include/spatialite/sqlite.h
 include/spatialite/stored_procedures.h
 lib/libspatialite.a
 lib/libspatialite.so
-lib/libspatialite.so.7
-lib/libspatialite.so.7.1.2
+lib/libspatialite.so.8
+lib/libspatialite.so.8.1.0
 lib/mod_spatialite.so
-lib/mod_spatialite.so.7
-lib/mod_spatialite.so.7.1.1
+lib/mod_spatialite.so.8
+lib/mod_spatialite.so.8.1.0
 libdata/pkgconfig/spatialite.pc

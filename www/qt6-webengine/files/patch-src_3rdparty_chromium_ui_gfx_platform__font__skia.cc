@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/platform_font_skia.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/gfx/platform_font_skia.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/ui/gfx/platform_font_skia.cc
 @@ -28,7 +28,7 @@
  #include "ui/gfx/system_fonts_win.h"

@@ -4,8 +4,6 @@
 Use the following sql script to create PL/v8js
 
 	psql -c 'CREATE EXTENSION plv8'
-	psql -c 'CREATE EXTENSION plls'
-	psql -c 'CREATE EXTENSION plcoffee'
 EOM
 }
 ]

@@ -1,5 +1,6 @@
 PORTNAME=	sheldon
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -7,7 +8,7 @@ COMMENT=	Fast, configurable, shell plugin manager
 WWW=		https://sheldon.cli.rs/
 
 LICENSE=	APACHE20 MIT
-LICENSE_COMB=	multi
+LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 

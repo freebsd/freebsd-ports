@@ -34,8 +34,11 @@ free apps Aldiko or WordPlayer are used instead.
 
 A basic startup script for calibre-server has been installed.
 
-It can be customized and configured using the flags described in the
-headers of the startup script.
+It can be customized and configured using the flags described in
+the headers of the startup script. The calibre_user and calibre_library
+variables need to be configured to point to a library and the user
+with write access to it. For example the user you usually run calibre
+on the desktop as.
 
 The command line options are documented here:
 

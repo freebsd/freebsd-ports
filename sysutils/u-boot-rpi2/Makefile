@@ -1,8 +1,10 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
-PATCHFILES+=	939129/raw
+U_BOOT_SLAVE_PORTREVISION_2023.10=	1
 
 WWW=		https://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi
+
+PATCHFILES+=	1838641/raw
 
 MODEL=		rpi2
 BOARD_CONFIG=	rpi_2_defconfig

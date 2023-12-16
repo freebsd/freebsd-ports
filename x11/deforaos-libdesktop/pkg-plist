@@ -7,6 +7,7 @@ include/Desktop/help.h
 include/Desktop/menubar.h
 include/Desktop/message.h
 include/Desktop/mime.h
+include/Desktop/mimehandler.h
 include/Desktop/toolbar.h
 include/Desktop/widget.h
 lib/libDesktop.a
@@ -14,6 +15,8 @@ lib/libDesktop.so
 lib/libDesktop.so.0
 lib/libDesktop.so.0.0
 libdata/pkgconfig/libDesktop.pc
+%%PORTDOCS%%share/doc/libDesktop/COPYING
+%%PORTDOCS%%share/doc/libDesktop/README.md
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/api-index-full.html
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/ch01.html
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/deprecated-api-index.html

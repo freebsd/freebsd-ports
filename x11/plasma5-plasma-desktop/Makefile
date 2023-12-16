@@ -37,13 +37,13 @@ USE_KDE=	activities activities-stats attica auth baloo bookmarks codecs \
 		filemetadata globalaccel guiaddons i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kdeclarative \
 		kdelibs4support kio libksysguard newstuff \
-		notifications notifyconfig package parts plasma-framework \
+		notifications notifyconfig package parts phonon plasma-framework \
 		plasma-workspace runner service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build \
 		drkonqi:run infocenter:run kde-cli-tools:run kmenuedit:run \
 		ksysguard:run polkit-kde-agent-1:run systemsettings:run
-USE_QT=		concurrent core dbus declarative gui network phonon4 \
+USE_QT=		concurrent core dbus declarative gui network \
 		printsupport sql wayland widgets x11extras xml \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender

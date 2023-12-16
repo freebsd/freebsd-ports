@@ -1,1 +1,4 @@
-Tools for Scraping Data from HTML and XML Documents
+The 'scrapeR' package utilizes functions that fetch and extract
+text content from specified web pages. It handles HTTP errors and
+parses HTML efficiently. The package can handle hundreds of websites
+at a time using the scrapeR_in_batches() command.

@@ -1,5 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/odbc.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsql.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsql.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsqldyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsqldyn.ppu

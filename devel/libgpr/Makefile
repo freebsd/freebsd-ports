@@ -1,7 +1,6 @@
 PORTNAME=	libgpr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.0
-PORTREVISION=	1
+DISTVERSION=	24.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -27,6 +26,7 @@ ALL_TARGET=	libgpr.build
 INSTALL_TARGET=	libgpr.install
 
 GCC_VER=	12
+PLIST_SUB=	GCC_VER=${GCC_VER}
 
 pre-configure:
 	${REINPLACE_CMD} -e '/^LIB_INSTALLER/s|prefix=|prefix=${STAGEDIR}|'	\

@@ -1,6 +1,3 @@
-SHA256 (xv/xv-3.10a.tar.gz) = 03eb26b1e8f315c3093f4ae794862ba46637d16c055e8efbe5e3beb5d40fc451
-SIZE (xv/xv-3.10a.tar.gz) = 2259124
-SHA256 (xv/xv-3.10a-jumbo-patches-20070520.tar.gz) = 221ec89fdf0772bd09c845cbb337aecf411a1aee215140b676717f49e9e65c80
-SIZE (xv/xv-3.10a-jumbo-patches-20070520.tar.gz) = 1363802
-SHA256 (xv/xv-3.10a-enhancements.20070520-20081216.diff) = c47aa52b7dbf2e09896d3eba6411d78a56162a4b966197e40115c14d88c2e1eb
-SIZE (xv/xv-3.10a-enhancements.20070520-20081216.diff) = 8847
+TIMESTAMP = 1700942420
+SHA256 (xv/jasper-software-xv-v4.2.0_GH0.tar.gz) = 2871338c517a7444fc9d6a3d146bc2c5c7bd98b50c83369b24d24ad49fa0ab87
+SIZE (xv/jasper-software-xv-v4.2.0_GH0.tar.gz) = 5381969

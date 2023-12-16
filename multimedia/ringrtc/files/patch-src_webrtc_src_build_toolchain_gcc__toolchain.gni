@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/toolchain/gcc_toolchain.gni.orig	2022-02-16 12:34:12 UTC
-+++ ../../src/webrtc/src/build/toolchain/gcc_toolchain.gni
+--- src/webrtc/src/build/toolchain/gcc_toolchain.gni.orig	2022-02-16 12:34:12 UTC
++++ src/webrtc/src/build/toolchain/gcc_toolchain.gni
 @@ -53,6 +53,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }

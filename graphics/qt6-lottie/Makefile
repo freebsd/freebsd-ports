@@ -1,17 +1,16 @@
 PORTNAME=	lottie
-PORTVERSION=	${QT6_VERSION}
+DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt 6 player software for a certain json-based for 2d animations
-WWW=		https://qt.io
+COMMENT=	QML API for rendering graphics and animations
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++11-lang gl pkgconfig qt-dist:6
-USE_GL=		gl opengl
-USE_QT=		base declarative websockets
+USES=		cmake compiler:c++17-lang gl pkgconfig qt-dist:6
+USE_GL=		opengl
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

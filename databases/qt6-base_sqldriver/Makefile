@@ -8,14 +8,13 @@ PKGNAMESUFFIX=	_sqldriver-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (${FLAVOR} sqldriver)
-WWW=		https://www.qt.io/
 
 FLAVORS=	sqlite mysql odbc psql
 FLAVOR?=	sqlite
 
 WRKSRC_SUBDIR=	src/plugins/sqldrivers
 
-USES=		cmake pkgconfig qt-dist:6 \
+USES=		cmake compiler:c++17-lang pkgconfig qt-dist:6 \
 		${${FLAVOR}_USES}
 USE_QT=		base
 

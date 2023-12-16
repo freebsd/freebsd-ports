@@ -1,0 +1,22 @@
+--- src/Menu.hh.orig	2014-01-01 01:39:36 UTC
++++ src/Menu.hh
+@@ -28,7 +28,7 @@ class Menu
+     Config* config;
+     Skydome* skydome;
+ 
+-    auto_ptr<Heightmap> heightmap;
++    unique_ptr<Heightmap> heightmap;
+ 
+     Camera camera;
+ 
+--- src/cinquo.hh.orig	2014-01-01 01:39:36 UTC
++++ src/cinquo.hh
+@@ -29,7 +29,7 @@ using std::cerr;
+ using std::vector;
+ using std::list;
+ using std::map;
+-using std::auto_ptr;
++using std::unique_ptr;
+ using std::max;
+ using std::min;
+ 

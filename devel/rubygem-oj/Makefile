@@ -1,5 +1,5 @@
 PORTNAME=	oj
-PORTVERSION=	3.16.1
+PORTVERSION=	3.16.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://www.ohler.com/oj/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-bigdecimal>=3.0:math/rubygem-bigdecimal
 
 USES=		gem
 

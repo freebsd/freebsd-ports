@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.cc
 @@ -11,7 +11,7 @@
  #include "base/trace_event/trace_event.h"
@@ -9,7 +9,7 @@
  // These constants define a reasonable range for a calculated refresh interval.
  // Calculating refreshes out of this range will be considered a fatal error.
  const int64_t kMinVsyncIntervalUs = base::Time::kMicrosecondsPerSecond / 400;
-@@ -26,7 +26,7 @@ SyncControlVSyncProvider::SyncControlVSyncProvider() :
+@@ -26,7 +26,7 @@ const double kRelativeIntervalDifferenceThreshold = 0.
  namespace gl {
  
  SyncControlVSyncProvider::SyncControlVSyncProvider() : gfx::VSyncProvider() {
@@ -27,7 +27,7 @@
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
-@@ -159,7 +159,7 @@ bool SyncControlVSyncProvider::SupportGetVSyncParamete
+@@ -159,7 +159,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
  }
  
  bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {

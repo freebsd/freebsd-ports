@@ -21,8 +21,8 @@ Change-Id: Ifd1b65c84e3631075248bc2e01b8f047dc72d201
 
 diff --git a/absl/base/internal/sysinfo.cc b/absl/base/internal/sysinfo.cc
 index 8bcc4fafaf9..5b427fa5e98 100644
---- ../../src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
-+++ ../../src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
+--- src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
++++ src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -34,6 +34,14 @@
  #include <sys/sysctl.h>
  #endif
@@ -87,8 +87,8 @@ Change-Id: Id0a9212e9c4413fa520a42934efaed2a06ca5dbc
 
 diff --git a/absl/base/internal/sysinfo.cc b/absl/base/internal/sysinfo.cc
 index 5b427fa5e98..79eaba3e51c 100644
---- ../../src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
-+++ ../../src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
+--- src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
++++ src/webrtc/src/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -429,7 +429,7 @@ pid_t GetTID() {
    return tid;
  }

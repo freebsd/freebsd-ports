@@ -1,6 +1,5 @@
 PORTNAME=	lcms2
-PORTVERSION=	2.15
-PORTREVISION=	2
+PORTVERSION=	2.16
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mm2/Little-CMS/releases/download/lcms${PORTVERSION}/
 
@@ -10,7 +9,7 @@ WWW=		https://www.littlecms.com/ \
 		https://github.com/mm2/Little-CMS
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe libtool localbase:ldflags pathfix
 

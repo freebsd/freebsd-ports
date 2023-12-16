@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/page_allocator_constants.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/page_allocator_constants.h.orig	2022-09-24 10:57:32 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/page_allocator_constants.h
 @@ -25,7 +25,7 @@
  // elimination.
@@ -27,7 +27,7 @@
    // arm64 supports 4kb, 16kb, and 64kb page sizes. Retrieve from or
    // initialize cache.
    size_t size = page_characteristics.size.load(std::memory_order_relaxed);
-@@ -141,7 +141,7 @@ SystemPageSize() {
+@@ -141,7 +141,7 @@ SystemPageShift() {
  PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR PA_ALWAYS_INLINE size_t
  SystemPageSize() {
  #if (BUILDFLAG(IS_APPLE) && defined(ARCH_CPU_64_BITS)) || \

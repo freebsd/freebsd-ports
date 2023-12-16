@@ -1,0 +1,3 @@
+@sample(,,600) etc/ddclient.conf.sample
+etc/periodic/daily/ddclient_force
+sbin/ddclient

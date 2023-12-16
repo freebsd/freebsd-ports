@@ -1,0 +1,39 @@
+--- gcc/config/freebsd.h.orig	2022-05-06 00:30:56.000000000 -0700
++++ gcc/config/freebsd.h	2022-05-20 13:58:23.945904000 -0700
+@@ -44,6 +44,9 @@ along with GCC; see the file COPYING3.  If not see
+ #undef  LIB_SPEC
+ #define LIB_SPEC FBSD_LIB_SPEC
+ 
++#undef  STARTFILE_PREFIX_SPEC
++#define STARTFILE_PREFIX_SPEC "/usr/lib/ "
++
+ #if defined(HAVE_LD_EH_FRAME_HDR)
+ #define LINK_EH_SPEC "%{!static|static-pie:--eh-frame-hdr} "
+ #endif
+--- gcc/gcc.cc.orig	2022-05-06 00:30:57.000000000 -0700
++++ gcc/gcc.cc	2022-05-20 13:58:26.781589000 -0700
+@@ -4788,10 +4788,12 @@ process_command (unsigned int decoded_options_count,
+ 	}
+ 
+       set_std_prefix (gcc_exec_prefix, len);
++#if 0
+       add_prefix (&exec_prefixes, gcc_libexec_prefix, "GCC",
+ 		  PREFIX_PRIORITY_LAST, 0, 0);
+       add_prefix (&startfile_prefixes, gcc_exec_prefix, "GCC",
+ 		  PREFIX_PRIORITY_LAST, 0, 0);
++#endif
+     }
+ 
+   /* COMPILER_PATH and LIBRARY_PATH have values
+@@ -5416,9 +5418,11 @@ process_command (unsigned int decoded_options_count,
+   add_prefix (&exec_prefixes,
+ 	      concat (tooldir_prefix, "bin", dir_separator_str, NULL),
+ 	      "BINUTILS", PREFIX_PRIORITY_LAST, 0, 0);
++#if 0
+   add_prefix (&startfile_prefixes,
+ 	      concat (tooldir_prefix, "lib", dir_separator_str, NULL),
+ 	      "BINUTILS", PREFIX_PRIORITY_LAST, 0, 1);
++#endif
+   free (tooldir_prefix);
+ 
+ #if defined(TARGET_SYSTEM_ROOT_RELOCATABLE) && !defined(VMS)

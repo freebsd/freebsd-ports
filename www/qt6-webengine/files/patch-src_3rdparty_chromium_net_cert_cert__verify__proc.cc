@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/cert/cert_verify_proc.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/net/cert/cert_verify_proc.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/net/cert/cert_verify_proc.cc
-@@ -506,7 +506,7 @@ base::Value CertVerifyParams(X509Certificate* cert,
+@@ -414,7 +414,7 @@ base::Value CertVerifyParams(X509Certificate* cert,
  
  }  // namespace
  

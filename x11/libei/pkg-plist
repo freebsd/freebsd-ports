@@ -4,13 +4,13 @@ include/libei-1.0/libeis.h
 %%BASU%%include/libei-1.0/liboeffis.h
 lib/libei.so
 lib/libei.so.1
-lib/libei.so.1.1.0
+lib/libei.so.1.2.0
 lib/libeis.so
 lib/libeis.so.1
-lib/libeis.so.1.1.0
+lib/libeis.so.1.2.0
 %%BASU%%lib/liboeffis.so
 %%BASU%%lib/liboeffis.so.1
-%%BASU%%lib/liboeffis.so.1.1.0
+%%BASU%%lib/liboeffis.so.1.2.0
 libdata/pkgconfig/libei-1.0.pc
 libdata/pkgconfig/libeis-1.0.pc
 %%BASU%%libdata/pkgconfig/liboeffis-1.0.pc

@@ -25,5 +25,5 @@ libdata/pkgconfig/libheif.pc
 %%PORTEXAMPLES%%share/man/man1/heif-enc.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-info.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-thumbnailer.1.gz
-share/thumbnailers/heif.thumbnailer
+%%PORTEXAMPLES%%share/thumbnailers/heif.thumbnailer
 @dir lib/libheif

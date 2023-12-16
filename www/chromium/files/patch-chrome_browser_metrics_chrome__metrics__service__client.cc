@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
 @@ -184,7 +184,7 @@
  #include "chrome/notification_helper/notification_helper_constants.h"
@@ -27,7 +27,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -892,7 +892,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -894,7 +894,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -36,7 +36,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
-@@ -1011,7 +1011,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -1013,7 +1013,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -45,7 +45,7 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX)
-@@ -1210,7 +1210,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1212,7 +1212,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

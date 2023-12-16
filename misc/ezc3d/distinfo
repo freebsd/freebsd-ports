@@ -1,5 +1,5 @@
-TIMESTAMP = 1697008327
-SHA256 (pyomeca-ezc3d-Release_1.5.5_GH0.tar.gz) = 93641b100f982d4297a8cee9bb06b2c1facddfca638cde8259e783174a5f68ca
-SIZE (pyomeca-ezc3d-Release_1.5.5_GH0.tar.gz) = 947607
+TIMESTAMP = 1702403779
+SHA256 (pyomeca-ezc3d-Release_1.5.7_GH0.tar.gz) = 3962b87827c7bc64d46a6fc8272c9655b2ae4284aa24c7697cb1c74d4a74e2ef
+SIZE (pyomeca-ezc3d-Release_1.5.7_GH0.tar.gz) = 948359
 SHA256 (google-googletest-3880b13_GH0.tar.gz) = ea3d403a3de3ab084841ec97efa440fb45d5f2fbe4eb09a22ccb9643a6af11ba
 SIZE (google-googletest-3880b13_GH0.tar.gz) = 962793

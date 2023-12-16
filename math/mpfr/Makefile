@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake libtool makeinfo pathfix tar:xz
+USES=		gmake libtool pathfix tar:xz
 
 #PATCHLEVEL=	12
 #PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
@@ -29,10 +29,13 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-INFO=		mpfr
-
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS INFO
+OPTIONS_DEFAULT=	INFO
+
+INFO_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-no-info
+INFO_USES=		makeinfo
+INFO_INFO=		mpfr
 
 .include <bsd.port.mk>

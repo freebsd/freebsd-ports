@@ -1,12 +1,13 @@
 PORTNAME=	pytest-order
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pytest plugin to run your tests in a specific order
-WWW=		https://github.com/pytest-dev/pytest-order
+WWW=		https://pytest-order.readthedocs.io/en/latest/ \
+		https://github.com/pytest-dev/pytest-order
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,6 +1,6 @@
 PORTNAME=	flint
 DISTVERSION=	2.9.0	# FLINT is known to change its API. When upgrading please check that it does not break its consumers (e.g. math/e-antic)
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.flintlib.org/
 PKGNAMESUFFIX=	2

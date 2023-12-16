@@ -66,7 +66,6 @@
 %%QT_DOCDIR%%/qtdoc/deployment.html
 %%QT_DOCDIR%%/qtdoc/desktop-integration.html
 %%QT_DOCDIR%%/qtdoc/embedded-linux.html
-%%QT_DOCDIR%%/qtdoc/examples-android.html
 %%QT_DOCDIR%%/qtdoc/examples-animation.html
 %%QT_DOCDIR%%/qtdoc/examples-draganddrop.html
 %%QT_DOCDIR%%/qtdoc/examples-gestures.html
@@ -221,6 +220,7 @@
 %%QT_DOCDIR%%/qtdoc/images/threadsandobjects.png
 %%QT_DOCDIR%%/qtdoc/images/threadvisual-example.png
 %%QT_DOCDIR%%/qtdoc/images/tool-examples.png
+%%QT_DOCDIR%%/qtdoc/images/txtviewer_screenshot.png
 %%QT_DOCDIR%%/qtdoc/images/wayland-multi-process.png
 %%QT_DOCDIR%%/qtdoc/images/wayland-single-process-develop.png
 %%QT_DOCDIR%%/qtdoc/images/wayland-single-process-eglfs.png
@@ -275,6 +275,7 @@
 %%QT_DOCDIR%%/qtdoc/newclasses63.html
 %%QT_DOCDIR%%/qtdoc/newclasses64.html
 %%QT_DOCDIR%%/qtdoc/newclasses65.html
+%%QT_DOCDIR%%/qtdoc/newclasses66.html
 %%QT_DOCDIR%%/qtdoc/obsoleteclasses.html
 %%QT_DOCDIR%%/qtdoc/obsoleteqmltypes.html
 %%QT_DOCDIR%%/qtdoc/overviews-main.html
@@ -327,6 +328,7 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-colorpaletteclient-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-dice-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-documentviewer-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-documentviewer-plugins-txtviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-fx-material-showroom-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-hangman-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-mediaplayer-example.html
@@ -410,6 +412,7 @@
 %%QT_DOCDIR%%/qtdoc/whatsnew63.html
 %%QT_DOCDIR%%/qtdoc/whatsnew64.html
 %%QT_DOCDIR%%/qtdoc/whatsnew65.html
+%%QT_DOCDIR%%/qtdoc/whatsnew66.html
 %%QT_DOCDIR%%/qtdoc/whatsnewqt6.html
 %%QT_DOCDIR%%/qtdoc/why-moc.html
 %%QT_DOCDIR%%/qtdoc/windows-building.html

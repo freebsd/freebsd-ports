@@ -1,3 +1,3 @@
-TIMESTAMP = 1698189334
-SHA256 (timescale-timescaledb-2.12.2_GH0.tar.gz) = d24cd29aad411d3e41d543d1a30827c48f8e01a48563650db5fac145ad7a01eb
-SIZE (timescale-timescaledb-2.12.2_GH0.tar.gz) = 7521115
+TIMESTAMP = 1701317807
+SHA256 (timescale-timescaledb-2.13.0_GH0.tar.gz) = 584a351c7775f0e067eaa0e7277ea88cab9077cc4c455cbbf09a5d9723dce95d
+SIZE (timescale-timescaledb-2.13.0_GH0.tar.gz) = 8214444

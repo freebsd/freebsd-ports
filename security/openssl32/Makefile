@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	3.2.0-beta1
+DISTVERSION=	3.2.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -144,6 +144,8 @@ ZSTD_CONFIGURE_ON=	enable-zstd-dynamic
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
+
+PORTSCOUT=		limit=^3\.2\.
 
 .include <bsd.port.options.mk>
 

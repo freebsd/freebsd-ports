@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/content/app/content_main_runner_impl.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/app/content_main_runner_impl.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/content/app/content_main_runner_impl.cc
-@@ -135,13 +135,13 @@
- #include "base/posix/global_descriptors.h"
+@@ -139,13 +139,13 @@
+ #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
 -#if !BUILDFLAG(IS_MAC)
@@ -13,10 +13,10 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "base/files/file_path_watcher_inotify.h"
  #include "base/native_library.h"
  #include "base/rand_util.h"
- #include "content/public/common/zygote/sandbox_support_linux.h"
-@@ -165,6 +165,11 @@
+@@ -170,6 +170,11 @@
  #include "content/public/common/content_client.h"
  #endif
  
@@ -27,8 +27,8 @@
 +
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
- #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -183,6 +188,10 @@
+ #if BUILDFLAG(USE_ZYGOTE)
+@@ -189,6 +194,10 @@
  #endif
  #endif // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -39,25 +39,35 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -388,7 +397,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -377,7 +386,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
- #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
+ #endif  // BUILDFLAG(USE_ZYGOTE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
  #if BUILDFLAG(ENABLE_PPAPI)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -424,7 +433,7 @@ void PreloadLibraryCdms() {
+@@ -413,15 +422,17 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
--#if BUILDFLAG(USE_ZYGOTE_HANDLE)
-+#if BUILDFLAG(USE_ZYGOTE_HANDLE) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(USE_ZYGOTE)
++#if BUILDFLAG(USE_ZYGOTE) || BUILDFLAG(IS_BSD)
  void PreSandboxInit() {
    // Pre-acquire resources needed by BoringSSL. See
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
-@@ -449,6 +458,11 @@ void PreSandboxInit() {
+   CRYPTO_pre_sandbox_init();
+ 
++#if !BUILDFLAG(IS_BSD)
+   // Pre-read /proc/sys/fs/inotify/max_user_watches so it doesn't have to be
+   // allowed by the sandbox.
+   base::GetMaxNumberOfInotifyWatches();
++#endif
+ 
+ #if BUILDFLAG(ENABLE_PPAPI)
+   // Ensure access to the Pepper plugins before the sandbox is turned on.
+@@ -442,6 +453,11 @@ void PreSandboxInit() {
    }
  #endif
  
@@ -69,7 +79,7 @@
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -631,7 +645,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
+@@ -629,7 +645,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -78,7 +88,7 @@
    PreSandboxInit();
  #endif
  
-@@ -825,11 +839,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -832,11 +848,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -92,7 +102,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1017,6 +1030,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1033,6 +1048,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
    }
  #endif
  
@@ -108,9 +118,9 @@
 +
    delegate_->SandboxInitialized(process_type);
  
- #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -1080,7 +1103,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
-           process_type);
+ #if BUILDFLAG(USE_ZYGOTE)
+@@ -1100,7 +1125,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+           ->ReconfigureAfterFeatureListInit(process_type);
      }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -118,7 +128,7 @@
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -1113,6 +1136,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1138,6 +1163,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

@@ -1,5 +1,5 @@
 PORTNAME=	libzip
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	archivers devel
 MASTER_SITES=	https://github.com/nih-at/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libzip.org/download/

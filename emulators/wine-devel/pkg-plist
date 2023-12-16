@@ -910,6 +910,7 @@ include/wine/windows/servprov.idl
 include/wine/windows/sesprp.idl
 include/wine/windows/setupapi.h
 include/wine/windows/sfc.h
+include/wine/windows/shcore.h
 include/wine/windows/shdeprecated.h
 include/wine/windows/shdeprecated.idl
 include/wine/windows/shdispid.h
@@ -1150,6 +1151,8 @@ include/wine/windows/windows.security.credentials.ui.h
 include/wine/windows/windows.security.credentials.ui.idl
 include/wine/windows/windows.security.cryptography.h
 include/wine/windows/windows.security.cryptography.idl
+include/wine/windows/windows.security.exchangeactivesyncprovisioning.h
+include/wine/windows/windows.security.exchangeactivesyncprovisioning.idl
 include/wine/windows/windows.security.isolation.h
 include/wine/windows/windows.security.isolation.idl
 include/wine/windows/windows.storage.fileproperties.h
@@ -1164,6 +1167,8 @@ include/wine/windows/windows.system.h
 include/wine/windows/windows.system.idl
 include/wine/windows/windows.system.power.h
 include/wine/windows/windows.system.power.idl
+include/wine/windows/windows.system.profile.h
+include/wine/windows/windows.system.profile.idl
 include/wine/windows/windows.system.profile.systemmanufacturers.h
 include/wine/windows/windows.system.profile.systemmanufacturers.idl
 include/wine/windows/windows.system.threading.h
@@ -1353,6 +1358,7 @@ lib/wine/%%WINEARCH%%-unix/combase.dll.so
 lib/wine/%%WINEARCH%%-unix/comcat.dll.so
 lib/wine/%%WINEARCH%%-unix/comctl32.dll.so
 lib/wine/%%WINEARCH%%-unix/comdlg32.dll.so
+lib/wine/%%WINEARCH%%-unix/coml2.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/comm.drv16.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/commdlg.dll16.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/compobj.dll16.so
@@ -1603,6 +1609,7 @@ lib/wine/%%WINEARCH%%-unix/libclusapi.a
 lib/wine/%%WINEARCH%%-unix/libcombase.a
 lib/wine/%%WINEARCH%%-unix/libcomctl32.a
 lib/wine/%%WINEARCH%%-unix/libcomdlg32.a
+lib/wine/%%WINEARCH%%-unix/libcoml2.a
 lib/wine/%%WINEARCH%%-unix/libcompstui.a
 lib/wine/%%WINEARCH%%-unix/libcomsvcs.a
 lib/wine/%%WINEARCH%%-unix/libcredui.a
@@ -2373,6 +2380,7 @@ lib/wine/%%WINEARCH%%-windows/combase.dll
 lib/wine/%%WINEARCH%%-windows/comcat.dll
 lib/wine/%%WINEARCH%%-windows/comctl32.dll
 lib/wine/%%WINEARCH%%-windows/comdlg32.dll
+lib/wine/%%WINEARCH%%-windows/coml2.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/comm.drv16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/commdlg.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/compobj.dll16

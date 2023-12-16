@@ -1,0 +1,11 @@
+--- chrome/app/profiles_strings.grdp.orig	2023-10-19 19:58:00 UTC
++++ chrome/app/profiles_strings.grdp
+@@ -54,7 +54,7 @@
+       Add Profile...
+     </message>
+   </if>
+-  <if expr="is_linux">
++  <if expr="is_posix">
+     <message name="IDS_PROFILES_ADD_PROFILE_LABEL" desc="Menu item for adding a new profile.">
+       Add profile...
+     </message>

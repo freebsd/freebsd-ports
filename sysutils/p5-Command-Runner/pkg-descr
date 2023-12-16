@@ -1,0 +1,3 @@
+Command::Runner is a perl module that helps
+running external commands and Perl code refs,
+featuring timeout, quoting and flexible logging.

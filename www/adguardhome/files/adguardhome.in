@@ -26,10 +26,11 @@ load_rc_config $name
 : ${adguardhome_work_dir_data_old:=%%PREFIX%%/bin/data}
 
 logfile="/var/log/${name}.log"
+pidfile="/var/run/${name}.pid"
 
 procname=%%PREFIX%%/bin/adguardhome
 command="/usr/sbin/daemon"
-command_args="-u ${adguardhome_user} -o ${logfile} -t ${name} %%PREFIX%%/bin/adguardhome -c ${adguardhome_config} -w ${adguardhome_work_dir}"
+command_args="-u ${adguardhome_user} -o ${logfile} -t ${name} -p ${pidfile} %%PREFIX%%/bin/adguardhome -c ${adguardhome_config} -w ${adguardhome_work_dir}"
 
 start_precmd="${name}_prestart"
 

@@ -12,8 +12,6 @@
     SUBDIR += fltk
     SUBDIR += fox16
     SUBDIR += fox17
-    SUBDIR += fpc-gtk2
-    SUBDIR += fpc-xforms
     SUBDIR += fxscintilla
     SUBDIR += gdl
     SUBDIR += girara
@@ -63,7 +61,18 @@
     SUBDIR += kf5-ktextwidgets
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
+    SUBDIR += kf6-attica
+    SUBDIR += kf6-kcompletion
+    SUBDIR += kf6-kconfigwidgets
+    SUBDIR += kf6-kguiaddons
+    SUBDIR += kf6-kirigami
+    SUBDIR += kf6-kitemviews
+    SUBDIR += kf6-kjobwidgets
+    SUBDIR += kf6-ktextwidgets
+    SUBDIR += kf6-kwidgetsaddons
+    SUBDIR += kf6-kxmlgui
     SUBDIR += kirigami-addons
+    SUBDIR += kirigami-addons-devel
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw
@@ -151,6 +160,7 @@
     SUBDIR += pangomm
     SUBDIR += pangox-compat
     SUBDIR += plasma5-kdeplasma-addons
+    SUBDIR += plasma6-kdeplasma-addons
     SUBDIR += plib
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
@@ -184,6 +194,7 @@
     SUBDIR += qt6-charts
     SUBDIR += qt6-datavis3d
     SUBDIR += qt6-declarative
+    SUBDIR += qt6-graphs
     SUBDIR += qt6-quick3d
     SUBDIR += qt6-quicktimeline
     SUBDIR += qt6-shadertools
@@ -230,8 +241,8 @@
     SUBDIR += vte
     SUBDIR += vte3
     SUBDIR += wlroots
-    SUBDIR += wlroots-devel
     SUBDIR += wlroots015
+    SUBDIR += wlroots016
     SUBDIR += wmapp
     SUBDIR += wxgtk30
     SUBDIR += wxgtk32

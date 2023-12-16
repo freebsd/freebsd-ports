@@ -1,7 +1,7 @@
 PORTNAME=	naev
 PORTVERSION=	0.10.6
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
 

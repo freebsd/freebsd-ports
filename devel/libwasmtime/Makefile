@@ -1,6 +1,7 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	14.0.4
+PORTVERSION=	15.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -22,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 GH_PROJECT=	wasmtime
 
-CARGO_CARGOTOML=	${WRKSRC}/crates/c-api/Cargo.toml
+CARGO_BUILD_ARGS=	-p wasmtime-c-api
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
@@ -36,7 +37,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
 		anyhow-1.0.75 \
-		arbitrary-1.3.0 \
+		arbitrary-1.3.1 \
 		async-trait-0.1.71 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -46,7 +47,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.3.3 \
+		bitflags-2.4.1 \
 		block-buffer-0.10.2 \
 		bstr-1.6.0 \
 		bumpalo-3.12.0 \
@@ -105,7 +106,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fallible-iterator-0.3.0 \
-		fastrand-1.9.0 \
+		fastrand-2.0.1 \
 		fd-lock-4.0.0 \
 		file-per-thread-logger-0.2.0 \
 		filecheck-0.5.0 \
@@ -153,35 +154,34 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indicatif-0.13.0 \
 		instant-0.1.12 \
 		io-extras-0.18.0 \
-		io-lifetimes-1.0.10 \
 		io-lifetimes-2.0.2 \
 		ipnet-2.5.0 \
-		is-terminal-0.4.7 \
+		is-terminal-0.4.9 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
-		ittapi-0.3.4 \
-		ittapi-sys-0.3.4 \
+		ittapi-0.4.0 \
+		ittapi-sys-0.4.0 \
 		jobserver-0.1.24 \
 		js-sys-0.3.57 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
-		libc-0.2.147 \
+		libc-0.2.149 \
 		libfuzzer-sys-0.4.5 \
 		libloading-0.7.3 \
 		libm-0.2.7 \
-		linux-raw-sys-0.3.3 \
-		linux-raw-sys-0.4.3 \
+		linux-raw-sys-0.4.10 \
 		listenfd-1.0.0 \
 		log-0.4.17 \
 		mach-0.3.2 \
 		matchers-0.1.0 \
 		maybe-owned-0.3.4 \
 		memchr-2.5.0 \
-		memfd-0.6.3 \
+		memfd-0.6.4 \
 		memmap2-0.2.3 \
 		memoffset-0.9.0 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
+		nu-ansi-term-0.46.0 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		number_prefix-0.3.0 \
@@ -194,6 +194,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openvino-0.5.0 \
 		openvino-finder-0.5.0 \
 		openvino-sys-0.5.0 \
+		overload-0.1.1 \
 		paste-1.0.7 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
@@ -219,7 +220,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.2.13 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regalloc2-0.9.2 \
+		regalloc2-0.9.3 \
 		regex-1.9.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.3.3 \
@@ -229,8 +230,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ring-0.16.20 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		rustix-0.37.13 \
-		rustix-0.38.8 \
+		rustix-0.38.21 \
 		rustls-0.21.6 \
 		rustls-webpki-0.101.4 \
 		rusty-fork-0.3.0 \
@@ -264,8 +264,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-1.0.92 \
 		syn-2.0.29 \
 		system-interface-0.26.0 \
-		target-lexicon-0.12.3 \
-		tempfile-3.6.0 \
+		target-lexicon-0.12.12 \
+		tempfile-3.8.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		test-log-0.2.11 \
@@ -283,6 +283,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.26 \
 		tracing-core-0.1.31 \
+		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.17 \
 		try-lock-0.2.4 \
 		typenum-1.15.0 \
@@ -297,6 +298,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		utf8parse-0.2.1 \
 		uuid-1.0.0 \
 		v8-0.74.1 \
+		valuable-0.1.0 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
@@ -307,19 +309,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-encoder-0.35.0 \
-		wasm-metadata-0.10.9 \
-		wasm-mutate-0.2.38 \
-		wasm-smith-0.12.21 \
+		wasm-encoder-0.36.2 \
+		wasm-metadata-0.10.11 \
+		wasm-mutate-0.2.40 \
+		wasm-smith-0.12.23 \
 		wasmi-0.20.0 \
 		wasmi_arena-0.1.0 \
 		wasmi_core-0.5.0 \
-		wasmparser-0.115.0 \
+		wasmparser-0.116.1 \
 		wasmparser-nostd-0.91.0 \
-		wasmprinter-0.2.70 \
+		wasmprinter-0.2.72 \
 		wast-35.0.2 \
-		wast-66.0.2 \
-		wat-1.0.77 \
+		wast-67.0.1 \
+		wat-1.0.79 \
 		web-sys-0.3.57 \
 		webpki-roots-0.25.2 \
 		which-4.2.5 \
@@ -337,19 +339,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.48.0 \
 		winx-0.36.1 \
-		wit-bindgen-0.13.0 \
-		wit-bindgen-core-0.13.0 \
-		wit-bindgen-rust-0.13.0 \
-		wit-bindgen-rust-macro-0.13.0 \
-		wit-component-0.16.0 \
-		wit-parser-0.12.1 \
+		wit-bindgen-0.13.1 \
+		wit-bindgen-core-0.13.1 \
+		wit-bindgen-rust-0.13.2 \
+		wit-bindgen-rust-macro-0.13.1 \
+		wit-component-0.17.0 \
+		wit-component-0.18.0 \
+		wit-parser-0.12.2 \
+		wit-parser-0.13.0 \
 		zstd-0.11.1+zstd.1.5.2 \
 		zstd-safe-5.0.1+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2
 
 GH_TUPLE=	WebAssembly:wasm-c-api:c9d3128:wasm_c_api/crates/c-api/wasm-c-api \
 		WebAssembly:WASI:0ba0c5e:WASI/crates/wasi-common/WASI \
-		WebAssembly:wasi-nn:c1f8b87:wasi_nn/crates/wasi-nn/spec \
+		WebAssembly:wasi-nn:e2310b8:wasi_nn/crates/wasi-nn/spec \
 		WebAssembly:testsuite:7ef86dd:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads

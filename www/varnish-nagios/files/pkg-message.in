@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
- Add the following line to %%PREFIX%%/etc/sudoers:
-
-   nagios ALL=NOPASSWD: %%PREFIX%%/libexec/nagios/check_varnish
-EOM
-}
-]

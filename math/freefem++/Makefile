@@ -1,7 +1,7 @@
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.13
-PORTREVISION=	5
+DISTVERSION=	4.14
+PORTREVISION=	1
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,12 +27,11 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5		\
 		libscotch.so:cad/scotch		\
 		libcmumps.so:math/mumps		\
 		libnlopt.so:math/nlopt		\
-		libsuperlu.so:math/superlu	\
-		libsz.so:science/libaec
+		libsuperlu.so:math/superlu
 RUN_DEPENDS=	bash:shells/bash		\
 		pipe:misc/pipe
 
-USES=		autoreconf bison blaslapack:openblas compiler:c++14-lang fortran	\
+USES=		autoreconf bison blaslapack:openblas compiler:c++14-lang fortran \
 		gl gmake localbase perl5 pkgconfig shebangfix xorg
 
 USE_GITHUB=	yes
@@ -46,6 +45,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include/superlu
 .if !defined{WITH_DEBUG}
 LDFLAGS+=	-s
 .endif
+
+LDFLAGS+=	-pthread # workaround for https://github.com/FreeFem/FreeFem-sources/issues/296#issuecomment-1839198380
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CNOFLAGS="${CFLAGS}" LIBS=-lz

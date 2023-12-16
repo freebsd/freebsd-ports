@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/linux/unbundle/replace_gn_files.py.orig	2021-11-15 18:52:18 UTC
-+++ ../../src/webrtc/src/build/linux/unbundle/replace_gn_files.py
+--- src/webrtc/src/build/linux/unbundle/replace_gn_files.py.orig	2021-11-15 18:52:18 UTC
++++ src/webrtc/src/build/linux/unbundle/replace_gn_files.py
 @@ -54,6 +54,7 @@ REPLACEMENTS = {
    'libevent': 'third_party/libevent/BUILD.gn',
    'libjpeg': 'third_party/libjpeg.gni',

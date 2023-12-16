@@ -1,16 +1,22 @@
-../src/cpu_info.c:37:20: error: use of undeclared identifier '_SC_NPROCESSORS_ONLN'
-    return sysconf(_SC_NPROCESSORS_ONLN);
-                   ^
+../src/feature/feature_collector.c:72:36: error: call to undeclared function 'strnlen'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   72 |     const size_t feature_name_sz = strnlen(feature_name, 2048);
+      |                                    ^
+../src/feature/feature_name.c:34:24: error: call to undeclared function 'strnlen'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   34 |     const size_t len = strnlen(buf, buf_sz);
+      |                        ^
+../tools/cli_parse.c:194:21: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Wint-conversion]
+    while ((key_val = strsep(&optarg_copy, ":")) != NULL) {
+                    ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
 
---- meson.build.orig	2020-06-30 19:00:42 UTC
+--- meson.build.orig	2023-11-20 19:15:15 UTC
 +++ meson.build
-@@ -26,9 +26,6 @@ if host_machine.system() == 'linux'
+@@ -26,9 +26,6 @@ elif host_machine.system() == 'darwin'
  elif host_machine.system() == 'darwin'
      test_args += '-D_DARWIN_C_SOURCE'
      add_project_arguments('-D_DARWIN_C_SOURCE', language: 'c')
 -else
--    test_args += '-D_POSIX_C_SOURCE=200112L'
--    add_project_arguments('-D_POSIX_C_SOURCE=200112L', language: 'c')
+-    test_args += '-D_XOPEN_SOURCE=600'
+-    add_project_arguments('-D_XOPEN_SOURCE=600', language: 'c')
  endif
  
  # Header checks

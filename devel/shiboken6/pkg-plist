@@ -13,13 +13,13 @@ include/shiboken6/sbkconverter.h
 include/shiboken6/sbkcppstring.h
 include/shiboken6/sbkcpptonumpy.h
 include/shiboken6/sbkenum.h
-include/shiboken6/sbkenum_p.h
 include/shiboken6/sbkerrors.h
 include/shiboken6/sbkfeature_base.h
 include/shiboken6/sbkmodule.h
 include/shiboken6/sbknumpycheck.h
 include/shiboken6/sbknumpyview.h
 include/shiboken6/sbkpython.h
+include/shiboken6/sbksmartpointer.h
 include/shiboken6/sbkstaticstrings.h
 include/shiboken6/sbkstring.h
 include/shiboken6/sbktypefactory.h
@@ -43,7 +43,7 @@ lib/cmake/Shiboken6Tools/Shiboken6ToolsConfigVersion.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets.cmake
 lib/libshiboken6.abi3.so
-lib/libshiboken6.abi3.so.6.5
+lib/libshiboken6.abi3.so.6.6
 lib/libshiboken6.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.abi3.so
 %%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.pyi

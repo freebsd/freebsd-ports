@@ -1,0 +1,6 @@
+.include "${.CURDIR}/../llvm-cheri/Makefile.COMMANDS"
+
+# Work around version skew with llvm-cheri
+LLVM_COMMANDS:=	${LLVM_COMMANDS:Nllvm-debuginfod-find:Nllvm-tli-checker}
+CLANG_COMMANDS:=${CLANG_COMMANDS:Nclang-linker-wrapper:Nclang-nvlink-wrapper:Nclang-repl}
+LLD_COMMANDS+=	ld64.lld.darwinnew ld64.lld.darwinold

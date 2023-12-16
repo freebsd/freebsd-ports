@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_image.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_image.h.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_image.h
-@@ -86,7 +86,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanImage {
+@@ -87,7 +87,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanImage {
        VkImageUsageFlags usage,
        VkImageCreateFlags flags);
  
@@ -9,7 +9,7 @@
    static std::unique_ptr<VulkanImage> CreateWithExternalMemoryAndModifiers(
        VulkanDeviceQueue* device_queue,
        const gfx::Size& size,
-@@ -170,7 +170,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanImage {
+@@ -199,7 +199,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanImage {
        VkImageTiling image_tiling,
        uint32_t queue_family_index);
  

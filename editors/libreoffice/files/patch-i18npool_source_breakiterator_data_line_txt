@@ -1,0 +1,16 @@
+Work around https://github.com/unicode-org/icu/commit/84e47620692b
+via https://github.com/openbsd/ports/commit/e5c313ed3356
+until https://gerrit.libreoffice.org/c/core/+/158749
+
+--- i18npool/source/breakiterator/data/line.txt.orig
++++ i18npool/source/breakiterator/data/line.txt
+@@ -14,7 +14,8 @@
+ #
+ 
+ !!chain;
+-!!LBCMNoChain;
++# DEPRECATED since ICU 74
++# !!LBCMNoChain;
+ 
+ 
+ !!lookAheadHardBreak;

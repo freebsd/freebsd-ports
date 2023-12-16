@@ -1,0 +1,11 @@
+Ariadne is a Python library for implementing GraphQL servers.
+
+- Schema-first: Ariadne enables Python developers to use schema-first approach
+  to the API implementation. This is the leading approach used by the GraphQL
+  community and supported by dozens of frontend and backend developer tools,
+  examples, and learning resources. Ariadne makes all of this immediately
+  available to you and other members of your team.
+- Simple: Ariadne offers small, consistent and easy to memorize API that lets
+  developers focus on business problems, not the boilerplate.
+- Open: Ariadne was designed to be modular and open for customization. If you
+  are missing or unhappy with something, extend or easily swap with your own.

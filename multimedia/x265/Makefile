@@ -1,8 +1,10 @@
 PORTNAME=	x265
-PORTVERSION=	3.4
-PORTREVISION=	2
+PORTVERSION=	3.5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/get/${BB_TAG}.tar.gz?meow=/
+
+PATCH_SITES=   https://bitbucket.org/multicoreware/x265_git/commits/8f18e3ad32684eee95e885e718655f93951128c3/raw/
+PATCHFILES+=   x265-asm-warnings.patch:-p1
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
@@ -13,9 +15,9 @@ LICENSE_FILE=	${WRKSRC:H}/COPYING
 
 USES=		cmake compiler:c++14-lang cpe pathfix dos2unix
 
-CPE_VENDOR=		multicorewareinc
+CPE_VENDOR=	multicorewareinc
 
-BB_TAG=	25b2c07035ff	# Top of the Release_3.4 branch at this time
+BB_TAG=		Release_${DISTVERSION}
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_FLAGS VMAF
 OPTIONS_DEFAULT=	OPTIMIZED_FLAGS HI8P HI10P HI12P
@@ -30,7 +32,7 @@ OPTIONS_DEFAULT_powerpc64le=	ASM
 OPTIONS_MULTI=		PixelWidth
 OPTIONS_MULTI_PixelWidth=HI8P HI10P HI12P
 
-DOS2UNIX_FILES=		abrEncApp.cpp
+DOS2UNIX_FILES=		common/scaler.cpp
 DEBUG_PREVENTS=		OPTIMIZED_FLAGS
 DEBUG_PREVENTS_MSG=	Optimizations are incompatible with debugging code
 DEBUG_CMAKE_ON=		-DCMAKE_ASM_NASM_FLAGS:STRING="-g -O0"
@@ -41,7 +43,7 @@ SVTHEVC_CMAKE_ON=	-DSVT_HEVC_INCLUDE_DIR:PATH="${LOCALBASE}/include/svt-hevc"
 VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
 VMAF_USES=		localbase:ldflags
 VMAF_CMAKE_BOOL=	ENABLE_LIBVMAF
-VMAF_CMAKE_ON=	-DVMAF_INCLUDE_DIR:PATH="${LOCALBASE}/include/libvmaf"
+VMAF_CMAKE_ON=		-DVMAF_INCLUDE_DIR:PATH="${LOCALBASE}/include/libvmaf"
 
 DEBUG_DESC=	Enable debugging
 HI8P_DESC=	Enable 8-bit pixel-width (you, probably, want this)
@@ -52,9 +54,9 @@ SVTHEVC_DESC=	HEVC encoding via SVT-HEVC
 VMAF_DESC=	Per frame and aggregate VMAF score
 
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true
+CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true -DGIT_ARCHETYPE=1
 LDFLAGS_i386=	-Wl,-znotext
-EXTRACT_AFTER_ARGS+=	--exclude compat --strip-components=1
+EXTRACT_AFTER_ARGS+=	--exclude compat --exclude md5\.* --strip-components=1
 PATCH_WRKSRC=	${WRKSRC:H}
 WRKSRC=		${WRKDIR}/source
 

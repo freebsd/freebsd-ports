@@ -1,5 +1,6 @@
 PORTNAME=	plasma
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 PKGNAMEPREFIX=	plasma5-
 
@@ -17,9 +18,9 @@ OPTIONS_DEFINE=	PHONON PULSEAUDIO
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 # Different from PHONON, because this is about the output plugins
-PHONON_DESC=	Include phonon-gstreamer, for sound output
+PHONON_DESC=	Include phonon-vlc, for sound output
 
-PHONON_RUN_DEPENDS=	${QT_PLUGINDIR}/phonon4qt5_backend/phonon_gstreamer.so:multimedia/phonon-gstreamer
+PHONON_USE=	KDE=phonon-backend:run
 PULSEAUDIO_USE=	KDE=plasma-pa:run
 
 .include <bsd.port.mk>

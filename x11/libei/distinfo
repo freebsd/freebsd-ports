@@ -1,5 +1,5 @@
-TIMESTAMP = 1694063274
+TIMESTAMP = 1701814740
 SHA256 (nemequ-munit-v0.2.0-38-gfbbdf14_GH0.tar.gz) = c37c11b5e66e8cec78d2a365f7dd1e999e61cfd3d2e9a4fa9d4f50cd9711007a
 SIZE (nemequ-munit-v0.2.0-38-gfbbdf14_GH0.tar.gz) = 27712
-SHA256 (libei-1.1.0.tar.bz2) = b9868dc64ba0549c7034ba0828bd9973f21e542036d25a662de4dfbc26a6b867
-SIZE (libei-1.1.0.tar.bz2) = 169197
+SHA256 (libei-1.2.0.tar.bz2) = c9566812722b703435230b38379f33fd4429b999cd56d10c26f4e01ed76afcaf
+SIZE (libei-1.2.0.tar.bz2) = 174155

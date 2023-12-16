@@ -1,5 +1,6 @@
 PORTNAME=	abinit
 DISTVERSION=	9.10.3
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	gm4:devel/m4	\
 		${PYTHON_PKGNAMEPREFIX}graphviz>0:graphics/py-graphviz@${PY_FLAVOR}
 LIB_DEPENDS=	libelpa.so:math/elpa		\
 		libsz.so:science/libaec		\
-		libelpa.so:math/elpa		\
 		libxc.so:science/libxc		\
 		libfftw3.so:math/fftw3		\
 		libhdf5.so:science/hdf5		\
@@ -38,8 +38,7 @@ USE_GNOME=	libxml2
 SHEBANG_FILES=	config/scripts/* doc/tutorial/paral_bandpw_assets/abinit.sub.*
 SHEBANG_GLOB=	*.py
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC_LDFLAGS="${LDFLAGS}" CXX_LDFLAGS="${LDFLAGS}" FC_LDFLAGS="${LDFLAGS}"	\
-		H5CC="${LOCALBASE}/bin/h5cc" \
+CONFIGURE_ENV=	H5CC="${LOCALBASE}/bin/h5cc" \
 		HDF5_CFLAGS="-I${LOCALBASE}/include" \
 		HDF5_LDFLAGS="-L${LOCALBASE}/lib -lhdf5" \
 		LINALG_FCFLAGS="-I${LOCALBASE}/include/elpa-2019.05.002/modules"	\
@@ -54,19 +53,29 @@ TEST_TARGET=	tests_abirules tests_buildsys # Many tests print RuntimeError, http
 TEST_WRKSRC=	${WRKSRC}/abichecks
 PORTDOCS=	*
 
-OPTIONS_DEFINE=			DOCS OPENMP MPI
-OPTIONS_DEFAULT=		OPENMP MPI
+OPTIONS_DEFINE=			DOCS OPENMP OPENMPI
+OPTIONS_DEFAULT=		OPENMP OPENMPI
 
 OPENMP_CONFIGURE_ENABLE=	openmp
 OPENMP_LDFLAGS=			-lomp
 
-MPI_CONFIGURE_WITH=		mpi=yes
+OPENMPI_CONFIGURE_WITH=		mpi=yes
+# BROKEN with MPICH4: see <https://github.com/abinit/abinit/issues/61>
+# To set back to mpich when this issue will be fixed.
+OPENMPI_USES=			mpi:openmpi
 # fftw3 not enabled because libfftw3_mpi is required but not packaged
-MPI_VARS=			FFLAGS+=-I${LOCALBASE}/include FCFLAGS+=-I${LOCALBASE}/include	\
-				CONFIGURE_ENV+=MPI_LIBS="`pkg-config --libs mpich` -lmpifort"	\
-				CONFIGURE_ENV+MPI_LDFLAGS="`pkg-config --libs mpich` -lmpifort"
-MPI_BUILD_DEPENDS=		mpich>0:net/mpich
-MPI_RUN_DEPENDS=		mpich>0:net/mpich
+OPENMPI_VARS=			FCFLAGS+="`pkg-config --cflags ompi-fort`"
+OPENMPI_CONFIGURE_ENV=		CC_LDFLAGS="${MPI_LIBS} ${LDFLAGS}"	\
+				CXX_LDFLAGS="${MPI_LIBS} ${LDFLAGS}"	\
+				FC_LDFLAGS="${MPI_LIBS} ${LDFLAGS}"	\
+				CFLAGS="${MPI_CFLAGS} ${CFLAGS}  ${CFLAGS_F2018}"	\
+				MPI_CPPFLAGS="${MPI_CFLAGS}"	\
+				MPI_FCFLAGS="`pkg-config --cflags ompi-fort`"	\
+				MPI_LIBS="${MPI_LIBS}"	\
+				MPI_LDFLAGS="${MPI_LIBS}"
+# When OpenMPI is enabled, put its related variables 1st to avoid conflicts with MPICH
+OPENMPI_CONFIGURE_ENV_OFF=	CC_LDFLAGS="${LDFLAGS}" CXX_LDFLAGS="${LDFLAGS}"	\
+				FC_LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 .if defined(WITH_LEVMAR)
 # --with-levmar seems deprecated

@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/debug/stack_trace_posix.cc
-@@ -39,7 +39,7 @@
+@@ -41,7 +41,7 @@
+ // execinfo.h and backtrace(3) are really only present in glibc and in macOS
+ // libc.
+ #if BUILDFLAG(IS_APPLE) || \
+-    (defined(__GLIBC__) && !defined(__UCLIBC__) && !defined(__AIX))
++    (defined(__GLIBC__) && !defined(__UCLIBC__) && !defined(__AIX) && !BUILDFLAG(IS_BSD))
+ #define HAVE_BACKTRACE
+ #include <execinfo.h>
+ #endif
+@@ -59,7 +59,7 @@
  #include <AvailabilityMacros.h>
  #endif
  
@@ -9,7 +18,7 @@
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -699,6 +699,9 @@ class SandboxSymbolizeHelper {
+@@ -799,6 +799,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -19,7 +28,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -716,6 +719,7 @@ class SandboxSymbolizeHelper {
+@@ -816,6 +819,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
@@ -27,12 +36,3 @@
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -872,7 +876,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
-   // If we do not have unwind tables, then try tracing using frame pointers.
-   return base::debug::TraceStackFramePointers(const_cast<const void**>(trace),
-                                               count, 0);
--#elif !defined(__UCLIBC__) && !defined(_AIX)
-+#elif !defined(__UCLIBC__) && !defined(_AIX) && !BUILDFLAG(IS_BSD)
-   // Though the backtrace API man page does not list any possible negative
-   // return values, we take no chance.
-   return base::saturated_cast<size_t>(

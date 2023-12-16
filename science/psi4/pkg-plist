@@ -15,6 +15,7 @@ include/psi4/libdpd/dpdmospace.h
 include/psi4/libfilesystem/path.h
 include/psi4/libfock/PK_workers.h
 include/psi4/libfock/PKmanagers.h
+include/psi4/libfock/SplitJK.h
 include/psi4/libfock/apps.h
 include/psi4/libfock/cubature.h
 include/psi4/libfock/dft_integrators.h
@@ -150,7 +151,7 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/core%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/psi4/driver/__init__.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/aliases.py
-%%PYTHON_SITELIBDIR%%/psi4/driver/dependency_check.py
+%%PYTHON_SITELIBDIR%%/psi4/driver/constants.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/diatomic.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/driver.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/driver_cbs.py
@@ -236,6 +237,7 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/basislistother.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/bfs.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/cfour.py
+%%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/constants.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/dbproc.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/dbwrap.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/qcdb/exceptions.py
@@ -655,6 +657,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-3/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-4/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-4/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-5/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-5/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-ecp/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-ecp/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dfmp2-fc/input.dat
@@ -731,8 +735,10 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/dft-custom/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dft-dens-cut/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dft-dens-cut/test_input.py
-%%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq-analytic/input.dat
-%%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq-analytic/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq-analytic1/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq-analytic1/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq-analytic2/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq-analytic2/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dft-freq/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dft-ghost/input.dat
@@ -796,6 +802,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/dftd3/version/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dftd4/energy/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dftd4/energy/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/dftd4/r2scan/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/dftd4/r2scan/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dkh/molpro-2order/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dkh/molpro-2order/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dlpnomp2-1/input.dat
@@ -818,6 +826,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/extern2/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/extern3/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/extern3/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/extern4/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/extern4/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/f12_libint1.json
 %%PYTHON_SITELIBDIR%%/psi4/tests/fci-coverage/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/fci-coverage/test_input.py
@@ -901,6 +911,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/fsapt2/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/fsaptd-terms/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/fsaptd-terms/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/gcp/b973c/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/gcp/b973c/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/gcp/dft-custom-hybrid/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/gcp/dft-custom-hybrid/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/gcp/hf3c-gradient/input.dat
@@ -911,6 +923,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/gcp/hf3c/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/gcp/pbeh3c/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/gcp/pbeh3c/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/gcp/r2scan3c/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/gcp/r2scan3c/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/gdma/gdma1/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/gdma/gdma1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/ghosts/input.dat
@@ -1508,11 +1522,12 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_addons_qcschema.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_ccresponse.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_composite.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/test_compositejk.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/test_comprehensive_jk_screening.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_cppe.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_ddx.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_dertype.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_detci_opdm.py
-%%PYTHON_SITELIBDIR%%/psi4/tests/test_dfjcosk.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_dfjk.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_dft_benchmarks.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_dft_blocking.py
@@ -1562,6 +1577,7 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_openfermion.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_option.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_optking.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/test_orbitalspace.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_psi4.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_psi4_qcschema.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_psi4_qcschema/jatin1.ref
@@ -1766,6 +1782,7 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/aug-cc-pcvtz.gbs
 %%DATADIR%%/basis/aug-cc-pv5z-dk.gbs
 %%DATADIR%%/basis/aug-cc-pv5z-jkfit.gbs
+%%DATADIR%%/basis/aug-cc-pv5z-optri.gbs
 %%DATADIR%%/basis/aug-cc-pv5z-ri.gbs
 %%DATADIR%%/basis/aug-cc-pv5z.gbs
 %%DATADIR%%/basis/aug-cc-pv6z-ri.gbs
@@ -1787,6 +1804,7 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/aug-cc-pvdz-dk.gbs
 %%DATADIR%%/basis/aug-cc-pvdz-dual.gbs
 %%DATADIR%%/basis/aug-cc-pvdz-jkfit.gbs
+%%DATADIR%%/basis/aug-cc-pvdz-optri.gbs
 %%DATADIR%%/basis/aug-cc-pvdz-ri.gbs
 %%DATADIR%%/basis/aug-cc-pvdz.gbs
 %%DATADIR%%/basis/aug-cc-pvdzp-jkfit.gbs
@@ -1795,11 +1813,13 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/aug-cc-pvqz-dk.gbs
 %%DATADIR%%/basis/aug-cc-pvqz-dual.gbs
 %%DATADIR%%/basis/aug-cc-pvqz-jkfit.gbs
+%%DATADIR%%/basis/aug-cc-pvqz-optri.gbs
 %%DATADIR%%/basis/aug-cc-pvqz-ri.gbs
 %%DATADIR%%/basis/aug-cc-pvqz.gbs
 %%DATADIR%%/basis/aug-cc-pvtz-dk.gbs
 %%DATADIR%%/basis/aug-cc-pvtz-dual.gbs
 %%DATADIR%%/basis/aug-cc-pvtz-jkfit.gbs
+%%DATADIR%%/basis/aug-cc-pvtz-optri.gbs
 %%DATADIR%%/basis/aug-cc-pvtz-ri.gbs
 %%DATADIR%%/basis/aug-cc-pvtz.gbs
 %%DATADIR%%/basis/aug-cc-pwcv5z-dk.gbs
@@ -1841,15 +1861,19 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/cc-pcv_qpd_z.gbs
 %%DATADIR%%/basis/cc-pcv_tpd_z.gbs
 %%DATADIR%%/basis/cc-pcvdz-dk.gbs
+%%DATADIR%%/basis/cc-pcvdz-f12-optri.gbs
 %%DATADIR%%/basis/cc-pcvdz-f12.gbs
 %%DATADIR%%/basis/cc-pcvdz.gbs
 %%DATADIR%%/basis/cc-pcvqz-dk.gbs
+%%DATADIR%%/basis/cc-pcvqz-f12-optri.gbs
 %%DATADIR%%/basis/cc-pcvqz-f12.gbs
 %%DATADIR%%/basis/cc-pcvqz.gbs
 %%DATADIR%%/basis/cc-pcvtz-dk.gbs
+%%DATADIR%%/basis/cc-pcvtz-f12-optri.gbs
 %%DATADIR%%/basis/cc-pcvtz-f12.gbs
 %%DATADIR%%/basis/cc-pcvtz.gbs
 %%DATADIR%%/basis/cc-pv5z-dk.gbs
+%%DATADIR%%/basis/cc-pv5z-f12.gbs
 %%DATADIR%%/basis/cc-pv5z-jkfit.gbs
 %%DATADIR%%/basis/cc-pv5z-ri.gbs
 %%DATADIR%%/basis/cc-pv5z.gbs
@@ -1878,12 +1902,14 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/cc-pvdz.gbs
 %%DATADIR%%/basis/cc-pvqz-dk.gbs
 %%DATADIR%%/basis/cc-pvqz-dual.gbs
+%%DATADIR%%/basis/cc-pvqz-f12-optri.gbs
 %%DATADIR%%/basis/cc-pvqz-f12.gbs
 %%DATADIR%%/basis/cc-pvqz-jkfit.gbs
 %%DATADIR%%/basis/cc-pvqz-ri.gbs
 %%DATADIR%%/basis/cc-pvqz.gbs
 %%DATADIR%%/basis/cc-pvtz-dk.gbs
 %%DATADIR%%/basis/cc-pvtz-dual.gbs
+%%DATADIR%%/basis/cc-pvtz-f12-optri.gbs
 %%DATADIR%%/basis/cc-pvtz-f12.gbs
 %%DATADIR%%/basis/cc-pvtz-jkfit.gbs
 %%DATADIR%%/basis/cc-pvtz-minao.gbs
@@ -1924,6 +1950,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/d-aug-cc-pwcvqz.gbs
 %%DATADIR%%/basis/d-aug-cc-pwcvtz.gbs
 %%DATADIR%%/basis/def2-msvp.gbs
+%%DATADIR%%/basis/def2-mtzvp.gbs
+%%DATADIR%%/basis/def2-mtzvpp.gbs
 %%DATADIR%%/basis/def2-qzvp-ri.gbs
 %%DATADIR%%/basis/def2-qzvp.gbs
 %%DATADIR%%/basis/def2-qzvpd.gbs
@@ -2360,6 +2388,7 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/sap_helfem_small.gbs
 %%DATADIR%%/basis/sto-3g.gbs
 %%DATADIR%%/basis/sto-6g.gbs
+%%DATADIR%%/basis/vdzp.gbs
 %%DATADIR%%/databases/A24.py
 %%DATADIR%%/databases/A24alt.py
 %%DATADIR%%/databases/ACENES.py
@@ -5158,6 +5187,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/dfmp2-3/test.in
 %%DATADIR%%/samples/dfmp2-4/input.dat
 %%DATADIR%%/samples/dfmp2-4/test.in
+%%DATADIR%%/samples/dfmp2-5/input.dat
+%%DATADIR%%/samples/dfmp2-5/test.in
 %%DATADIR%%/samples/dfmp2-ecp/input.dat
 %%DATADIR%%/samples/dfmp2-ecp/test.in
 %%DATADIR%%/samples/dfmp2-fc/input.dat
@@ -5234,8 +5265,10 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/dft-custom/test.in
 %%DATADIR%%/samples/dft-dens-cut/input.dat
 %%DATADIR%%/samples/dft-dens-cut/test.in
-%%DATADIR%%/samples/dft-freq-analytic/input.dat
-%%DATADIR%%/samples/dft-freq-analytic/test.in
+%%DATADIR%%/samples/dft-freq-analytic1/input.dat
+%%DATADIR%%/samples/dft-freq-analytic1/test.in
+%%DATADIR%%/samples/dft-freq-analytic2/input.dat
+%%DATADIR%%/samples/dft-freq-analytic2/test.in
 %%DATADIR%%/samples/dft-freq/input.dat
 %%DATADIR%%/samples/dft-freq/test.in
 %%DATADIR%%/samples/dft-ghost/input.dat
@@ -5310,6 +5343,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/extern2/test.in
 %%DATADIR%%/samples/extern3/input.dat
 %%DATADIR%%/samples/extern3/test.in
+%%DATADIR%%/samples/extern4/input.dat
+%%DATADIR%%/samples/extern4/test.in
 %%DATADIR%%/samples/fci-coverage/input.dat
 %%DATADIR%%/samples/fci-coverage/test.in
 %%DATADIR%%/samples/fci-dipole/input.dat

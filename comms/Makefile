@@ -28,6 +28,7 @@
     SUBDIR += cwstudio
     SUBDIR += cyclonedds
     SUBDIR += dcf77pi
+    SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += digiham
@@ -192,7 +193,6 @@
     SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser
-    SUBDIR += telldus-core
     SUBDIR += thebridge
     SUBDIR += tilp2
     SUBDIR += tio

@@ -1,7 +1,7 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.12.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml-cpp.so:devel/yaml-cpp
 		# binaries aren't linked with libfineftp-server.so, see https://github.com/continental/ecal/issues/381; same with libcurl.so
 
-USES=		cmake desktop-file-utils localbase:ldflags qt:5 shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils localbase:ldflags qt:5 shared-mime-info
 USE_QT=		core gui widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
@@ -50,6 +50,8 @@ CMAKE_ARGS=	-DGIT_REVISION_MAJOR=${DISTVERSION:R:R} \
 		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt6.so
 
 CXXFLAGS+=	-pthread # see https://github.com/eclipse-ecal/ecal/issues/933
+LDFLAGS+=	-labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_spinlock_wait
+USE_CXXSTD=	c++17
 
 PLIST_SUB=	VERSION=${DISTVERSION}
 

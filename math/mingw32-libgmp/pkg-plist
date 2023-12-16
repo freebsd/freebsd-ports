@@ -1,4 +1,0 @@
-mingw32/include/gmp.h
-mingw32/include/gmpxx.h
-mingw32/lib/libgmp.a
-mingw32/lib/libgmpxx.a

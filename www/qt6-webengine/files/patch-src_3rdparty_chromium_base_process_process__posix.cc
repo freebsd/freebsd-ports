@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/base/process/process_posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/process/process_posix.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/process/process_posix.cc
-@@ -25,10 +25,15 @@
+@@ -23,10 +23,15 @@
+ #include "base/trace_event/base_tracing.h"
  #include "build/build_config.h"
- #include "third_party/abseil-cpp/absl/types/optional.h"
  
 -#if BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
@@ -17,7 +17,7 @@
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
-@@ -95,7 +100,7 @@ bool WaitpidWithTimeout(base::ProcessHandle handle,
+@@ -93,7 +98,7 @@ bool WaitpidWithTimeout(base::ProcessHandle handle,
    return ret_pid > 0;
  }
  
@@ -26,7 +26,7 @@
  // Using kqueue on Mac so that we can wait on non-child processes.
  // We can't use kqueues on child processes because we need to reap
  // our own children using wait.
-@@ -200,7 +205,7 @@ bool WaitForExitWithTimeoutImpl(base::ProcessHandle ha
+@@ -198,7 +203,7 @@ bool WaitForExitWithTimeoutImpl(base::ProcessHandle ha
    const bool exited = (parent_pid < 0);
  
    if (!exited && parent_pid != our_pid) {
@@ -35,7 +35,7 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -392,7 +397,55 @@ int Process::GetPriority() const {
+@@ -387,7 +392,55 @@ void Process::Exited(int exit_code) const {
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

@@ -21,3 +21,12 @@
                  raise self.parser_error(
                      "expected identifier after 'namespace'")
              namespace_parts.append(val)
+@@ -262,7 +266,7 @@ class PXDGenerator:
+ 
+         for token, val in self.tokenize():
+             # ignore whitespaces
+-            if token == Token.Text and not val.strip():
++            if token in Token.Text and not val.strip():
+                 continue
+ 
+             try:
