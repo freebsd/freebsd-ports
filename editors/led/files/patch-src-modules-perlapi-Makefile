@@ -1,6 +1,6 @@
---- src/modules/perlapi/Makefile.orig	Mon Mar 22 14:29:51 2004
-+++ src/modules/perlapi/Makefile	Mon Mar 22 14:29:59 2004
-@@ -8,7 +8,7 @@
+--- src/modules/perlapi/Makefile.orig	2002-01-26 18:17:41 UTC
++++ src/modules/perlapi/Makefile
+@@ -8,7 +8,7 @@ include ../Makefile.module
  
  include ../Makefile.module
  

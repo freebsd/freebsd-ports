@@ -1,6 +1,6 @@
---- src/complete.c.orig	Mon Aug 23 17:17:13 2004
-+++ src/complete.c	Mon Aug 23 17:17:24 2004
-@@ -183,6 +183,7 @@
+--- src/complete.c.orig	2002-02-16 16:41:11 UTC
++++ src/complete.c
+@@ -183,6 +183,7 @@ next:
  				sizeof(u_char *));
  		}
  next:

@@ -1,6 +1,6 @@
---- ./src/modules/perlapi/perlapi.c.orig	2002-02-14 22:07:31.000000000 +0100
-+++ ./src/modules/perlapi/perlapi.c	2013-11-14 16:41:36.000000000 +0100
-@@ -36,6 +36,7 @@
+--- src/modules/perlapi/perlapi.c.orig	2002-02-14 21:07:31 UTC
++++ src/modules/perlapi/perlapi.c
+@@ -36,6 +36,7 @@ static void xs_init() {
  /* extension module support */
  static void xs_init() {
  	char *file = __FILE__;
@@ -8,7 +8,7 @@
  
  	newXS("DynaLoader::boot_DynaLoader", boot_DynaLoader, file);
  	newXS("Led::bootstrap", boot_Led, file);
-@@ -66,6 +67,7 @@
+@@ -66,6 +67,7 @@ int perlapi_init() {
  	char *args[] = { "", "-e", "" };
  	char *bootargs[] = { "Led", 0 };
  	u_char *expath;
@@ -16,7 +16,7 @@
  
  	/* add perl commands to the editor */
  	command_addf("perl_eval", input_allocsyms(1), perlapi_doeval);
-@@ -124,6 +126,7 @@
+@@ -124,6 +126,7 @@ void perlapi_eval(u_char *string) {
  /* evaluate some perl */
  void perlapi_eval(u_char *string) {
  	SV *sv;

@@ -11,6 +11,9 @@ WWW=		https://led-editor.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Last upstream release was in 2002 reconsider using editors/nano
+EXPIRATION_DATE=	2024-01-16
+
 USES=		ncurses perl5
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

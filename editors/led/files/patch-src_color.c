@@ -1,6 +1,6 @@
---- src/color.c.orig	Mon Aug 23 17:16:34 2004
-+++ src/color.c	Mon Aug 23 17:16:57 2004
-@@ -206,6 +206,7 @@
+--- src/color.c.orig	2002-03-02 05:19:00 UTC
++++ src/color.c
+@@ -206,6 +206,7 @@ out:
  		}
  	}
  out:
