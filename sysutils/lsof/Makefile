@@ -2,8 +2,7 @@
 #       to commit it.  I (ler) don't have access to all the ARCH's
 
 PORTNAME=	lsof
-DISTVERSION=	4.99.0
-PORTREVISION=	1
+DISTVERSION=	4.99.1
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
