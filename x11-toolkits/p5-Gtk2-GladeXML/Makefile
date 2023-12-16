@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Gtk2-GladeXML
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Upstream marked this module as Deprecated
+EXPIRATION_DATE=	2024-01-16
+
 BUILD_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 		p5-ExtUtils-Depends>=0.3:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1.1:devel/p5-ExtUtils-PkgConfig \
