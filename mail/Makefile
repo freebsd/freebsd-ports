@@ -38,7 +38,6 @@
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
-    SUBDIR += cclient
     SUBDIR += claws-mail
     SUBDIR += claws-mail-acpi_notifier
     SUBDIR += claws-mail-address_keeper

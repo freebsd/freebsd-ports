@@ -8181,3 +8181,4 @@ devel/rubygem-cucumber-messages23|devel/rubygem-cucumber-messages|2023-12-14|Rem
 devel/py-astroid253|devel/py-astroid|2023-12-14|Remove obsoleted port. Use devel/py-astroid instead
 mail/imap-uw|mail/panda-imap|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-imap
 mail/mailsync||2023-12-16|Has expired: Depends on outdated mail/cclient
+mail/cclient|mail/panda-cclient|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-cclient
