@@ -11,10 +11,13 @@ WWW=		https://build2.org
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-BROKEN_i386=	error: timestamp is not lock-free on this architecture
-BROKEN_powerpc=	error: timestamp is not lock-free on this architecture
+BROKEN_powerpc=	fails in stage: Invalid data memory access
 
 USES=		gmake pkgconfig sqlite tar:xz
+
+# Fix build on i386/powerpc: error: timestamp is not lock-free on this architecture
+CXXFLAGS_i386=		-DLIBBUILD2_ATOMIC_NON_LOCK_FREE
+CXXFLAGS_powerpc=	-DLIBBUILD2_ATOMIC_NON_LOCK_FREE
 
 # warning: clang@/usr/local/libexec/ccache/clang looks like a ccache wrapper
 #  info: ccache cannot be used as a C compiler
