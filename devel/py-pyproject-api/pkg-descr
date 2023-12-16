@@ -1,0 +1,4 @@
+pyproject-api aims to abstract away interaction with pyproject.toml style
+projects in a flexible way.
+
+See also <https://github.com/tox-dev/pyproject-api>.
