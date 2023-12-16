@@ -1,6 +1,6 @@
---- vi.h.orig	Sun Oct 20 19:08:33 1991
-+++ vi.h	Thu Aug 15 04:45:45 1996
-@@ -101,7 +101,7 @@
+--- vi.h.orig	1991-10-21 02:08:33 UTC
++++ vi.h
+@@ -101,7 +101,7 @@ extern struct _viflags
  #define READONLY	0x0002	/* the file is read-only */
  #define HADNUL		0x0004	/* the file contained NUL characters */
  #define MODIFIED	0x0008	/* the file has been modified */

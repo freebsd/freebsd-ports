@@ -1,6 +1,6 @@
---- cut.c.orig	Wed May 30 19:50:50 2007
-+++ cut.c	Wed May 30 19:51:41 2007
-@@ -36,6 +36,7 @@
+--- cut.c.orig	1991-04-03 20:41:47 UTC
++++ cut.c
+@@ -36,6 +36,7 @@ static char	cbname;	/* name chosen for next cut/paste 
  
  static char	cbname;	/* name chosen for next cut/paste operation */
  

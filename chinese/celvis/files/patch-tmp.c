@@ -1,5 +1,5 @@
---- tmp.c.orig	Thu Aug 15 04:45:57 1996
-+++ tmp.c	Thu Aug 15 05:14:50 1996
+--- tmp.c.orig	1991-09-21 21:42:17 UTC
++++ tmp.c
 @@ -21,6 +21,7 @@
  
  /* The FAIL() macro prints an error message and then exits. */
@@ -8,7 +8,7 @@
  
  /* This is the name of the temp file */
  static char	tmpname[80];
-@@ -91,7 +92,7 @@
+@@ -91,7 +92,7 @@ int tmpstart(filename)
  			if (*o_readonly || (statb.st_mode & S_IJRON))
  #endif
  #if OS9
@@ -17,7 +17,7 @@
  #endif
  #if ANY_UNIX
  			if (*o_readonly || !(statb.st_mode &
-@@ -149,7 +150,7 @@
+@@ -149,7 +150,7 @@ int tmpstart(filename)
  	tmpfd = open(tmpname, O_RDWR | O_BINARY);
  	if (tmpfd < 0)
  	{

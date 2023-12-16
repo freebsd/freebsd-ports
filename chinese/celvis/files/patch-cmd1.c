@@ -1,6 +1,6 @@
---- cmd1.c.orig	Tue Nov  6 11:53:55 1990
-+++ cmd1.c	Sat Aug 17 15:18:01 1996
-@@ -882,9 +882,6 @@
+--- cmd1.c.orig	1990-11-06 19:53:55 UTC
++++ cmd1.c
+@@ -882,9 +882,6 @@ void cmd_version(frommark, tomark, cmd, bang, extra)
  #else
  	msg("%s  (%s)", VERSION, DATE);
  #endif
@@ -10,7 +10,7 @@
  #ifdef CREDIT
  	msg("%s", CREDIT);
  #endif
-@@ -893,6 +890,9 @@
+@@ -893,6 +890,9 @@ void cmd_version(frommark, tomark, cmd, bang, extra)
  #endif
  #ifdef CVERSION
  	msg("%s", CVERSION);

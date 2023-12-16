@@ -1,6 +1,6 @@
---- Makefile.orig	Thu May 16 03:09:50 1991
-+++ Makefile	Sun Apr  2 11:44:47 2000
-@@ -22,7 +22,7 @@
+--- Makefile.orig	1991-05-15 19:09:50 UTC
++++ Makefile
+@@ -22,7 +22,7 @@ EXTRA=
  SRC5=	regexp.c regexp.h regsub.c sysdos.c system.c tinytcap.c tio.c tmp.c
  SRC6=	vars.c vcmd.c vi.c vi.h ctags.c ref.c virec.c wildcard.c shell.c
  EXTRA=

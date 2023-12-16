@@ -1,5 +1,5 @@
---- config.h.orig	Tue Nov  6 11:53:55 1990
-+++ config.h	Thu Aug 15 05:42:16 1996
+--- config.h.orig	1990-11-06 19:53:55 UTC
++++ config.h
 @@ -5,6 +5,10 @@
   */
  
@@ -11,7 +11,7 @@
  
  /* standard unix V (?) */
  #ifdef	M_SYSV
-@@ -175,9 +179,15 @@
+@@ -175,9 +179,15 @@ extern char *malloc();
  #endif
  
  /******************* Names of files and environment vars **********************/

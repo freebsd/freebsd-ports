@@ -1,5 +1,5 @@
---- blk.c.orig	Tue Nov  6 11:53:55 1990
-+++ blk.c	Thu Aug 15 04:47:18 1996
+--- blk.c.orig	1990-11-06 19:53:55 UTC
++++ blk.c
 @@ -19,7 +19,9 @@
  # define NBUFS	5		/* must be at least 3 -- more is better */
  #endif

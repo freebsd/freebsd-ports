@@ -1,5 +1,5 @@
---- recycle.c.orig	Tue Nov  6 11:53:56 1990
-+++ recycle.c	Thu Aug 15 04:51:43 1996
+--- recycle.c.orig	1990-11-06 19:53:56 UTC
++++ recycle.c
 @@ -18,7 +18,9 @@
  #ifndef NO_RECYCLE
  /* this whole file would have be skipped if NO_RECYCLE is defined */
