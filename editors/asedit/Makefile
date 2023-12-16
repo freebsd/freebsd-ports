@@ -7,6 +7,9 @@ MASTER_SITES=	XCONTRIB/editors
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Text editor for X/Motif
 
+DEPRECATED=	Last upstream release was in 2003
+EXPIRATION_DATE-	2024-03-31
+
 USES=		imake:notall motif tar:Z xorg
 USE_XORG=	ice sm x11 xext xmu xt
 
