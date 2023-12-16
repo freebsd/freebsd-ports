@@ -1,6 +1,6 @@
---- src/calibre/ebooks/chardet.py.orig	2023-01-17 15:04:24 UTC
+--- src/calibre/ebooks/chardet.py.orig	2023-12-15 00:57:56 UTC
 +++ src/calibre/ebooks/chardet.py
-@@ -109,7 +109,7 @@ def detect(bytestring):
+@@ -111,7 +111,7 @@ def detect(bytestring):
          from calibre_extensions.uchardet import detect as implementation
      except ImportError:
          # People running from source without updated binaries

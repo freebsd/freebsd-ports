@@ -714,6 +714,7 @@ lib/calibre/calibre/gui2/catalog/catalog_csv_xml.py
 lib/calibre/calibre/gui2/catalog/catalog_epub_mobi.py
 lib/calibre/calibre/gui2/catalog/catalog_epub_mobi_ui.py
 lib/calibre/calibre/gui2/catalog/catalog_tab_template_ui.py
+lib/calibre/calibre/gui2/central.py
 lib/calibre/calibre/gui2/changes.py
 lib/calibre/calibre/gui2/comments_editor.py
 lib/calibre/calibre/gui2/complete2.py
