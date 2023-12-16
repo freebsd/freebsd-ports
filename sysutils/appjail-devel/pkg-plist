@@ -53,6 +53,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/upgrade
 %%DATADIR%%/cmd/usage
 %%DATADIR%%/cmd/version
+%%DATADIR%%/cmd/volume
 %%DATADIR%%/cmd/zfs
 %%DATADIR%%/files/config.conf
 %%DATADIR%%/files/default.conf
@@ -110,6 +111,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/cmd/all/UMOUNT
 %%DATADIR%%/makejail/cmd/all/USER
 %%DATADIR%%/makejail/cmd/all/VAR
+%%DATADIR%%/makejail/cmd/all/VOLUME
 %%DATADIR%%/makejail/cmd/all/WORKDIR
 %%DATADIR%%/makejail/cmd/build/FROM
 %%DATADIR%%/makejail/cmd/build/LOGIN
@@ -135,6 +137,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/write/all/SYSRC
 %%DATADIR%%/makejail/write/all/UMOUNT
 %%DATADIR%%/makejail/write/all/VAR
+%%DATADIR%%/makejail/write/all/VOLUME
 %%DATADIR%%/makejail/write/all/WORKDIR
 %%DATADIR%%/makejail/write/build/FROM
 %%DATADIR%%/makejail/write/build/LOGIN
