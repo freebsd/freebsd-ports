@@ -54,7 +54,7 @@ SVTHEVC_DESC=	HEVC encoding via SVT-HEVC
 VMAF_DESC=	Per frame and aggregate VMAF score
 
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true
+CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true -DGIT_ARCHETYPE=1
 LDFLAGS_i386=	-Wl,-znotext
 EXTRACT_AFTER_ARGS+=	--exclude compat --exclude md5\.* --strip-components=1
 PATCH_WRKSRC=	${WRKSRC:H}
