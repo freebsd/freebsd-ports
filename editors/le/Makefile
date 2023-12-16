@@ -7,14 +7,14 @@ MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Text editor with block and binary operations
-WWW=		http://freshmeat.net/projects/leeditor/
+WWW=		https://github.com/lavv17/le
 
 LICENSE=	GPLv3
 
-USES=		ncurses perl5 tar:bzip2
+USES=		localbase ncurses perl5 tar:bzip2
 USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
 
 MAKE_JOBS_UNSAFE=	yes
 
