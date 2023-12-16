@@ -158,7 +158,6 @@
     SUBDIR += heirloom-mailx
     SUBDIR += ifile
     SUBDIR += im
-    SUBDIR += imap-uw
     SUBDIR += imapdedup
     SUBDIR += imapfilter
     SUBDIR += imapsync
