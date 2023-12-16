@@ -521,7 +521,9 @@
     SUBDIR += openjade
     SUBDIR += opensearch
     SUBDIR += opensearch-dashboards
+    SUBDIR += opensearch-dashboards210
     SUBDIR += opensearch13
+    SUBDIR += opensearch210
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
