@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/gmanedit2/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream last release was in 2008
+EXPIRATION_DATE=	2024-03-31
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2 \
 	libharfbuzz.so:print/harfbuzz
