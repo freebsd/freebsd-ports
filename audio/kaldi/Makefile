@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcblas.so:math/cblas \
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python:build
 
-USE_GITHUB=	YES
+USE_GITHUB=	yes
 GH_ACCOUNT=	kaldi-asr
 GH_TAGNAME=	21ae411
 
