@@ -1,8 +1,8 @@
 bin/he2
 bin/he2-bin
 bin/laxet
-share/he2/.he2rc.sample
-share/he2/HE-Tutorial.h
-share/he2/espell.wor
-share/he2/hspell.wor
-share/he2/laxet.wor
+%%DATADIR%%/.he2rc.sample
+%%DATADIR%%/HE-Tutorial.h
+%%DATADIR%%/espell.wor
+%%DATADIR%%/hspell.wor
+%%DATADIR%%/laxet.wor

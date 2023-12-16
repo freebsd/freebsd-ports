@@ -1,6 +1,6 @@
---- ./he2/hebSegment.cxx.orig	Wed Mar 14 10:04:03 2001
-+++ ./he2/hebSegment.cxx	Thu Jun 10 21:53:00 2004
-@@ -869,8 +869,8 @@
+--- he2/hebSegment.cxx.orig	2001-03-14 09:04:03 UTC
++++ he2/hebSegment.cxx
+@@ -869,8 +869,8 @@ char *hebrew_segment_starters[] = { "\\R{", "\\section
  
  #define alpha "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
  #define anum "0123456789*+=-?@!%^&~:'\".,;()`<>/|_"

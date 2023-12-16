@@ -11,11 +11,15 @@ WWW=		https://www.sourceforge.net/projects/he2/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream last release was in 2001
+EXPIRATION_DATE=	2024-01-16
+
 RUN_DEPENDS=	iw-elmar-fonts>0:hebrew/elmar-fonts
 
 USES=		gmake ncurses
-GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++98
+
+GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lcurses -ltermcap|-lncurses|' \

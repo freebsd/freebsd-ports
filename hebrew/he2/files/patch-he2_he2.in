@@ -1,6 +1,6 @@
---- he2/he2.in.old	Fri Aug  3 18:35:49 2001
-+++ he2/he2.in	Fri Aug  3 18:36:08 2001
-@@ -2,7 +2,7 @@
+--- he2/he2.in.orig	2001-03-13 11:30:14 UTC
++++ he2/he2.in
+@@ -2,7 +2,7 @@ if test "$DISPLAY." != "." ; then
  export HEDIR=#datadir#/he2
  if test "$DISPLAY." != "." ; then
     export HE2_NEW_SHELL_ON_SUSPEND=1

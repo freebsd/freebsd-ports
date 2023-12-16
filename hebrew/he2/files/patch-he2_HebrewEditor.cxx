@@ -1,6 +1,6 @@
---- HebrewEditor.cxx.orig	Tue Aug 17 13:49:15 2004
-+++ he2/HebrewEditor.cxx	Tue Aug 17 13:49:27 2004
-@@ -224,7 +224,7 @@
+--- he2/HebrewEditor.cxx.orig	2001-03-24 08:36:42 UTC
++++ he2/HebrewEditor.cxx
+@@ -224,7 +224,7 @@ HebrewEditor::HebrewEditor(int argc, char **argv){
     screen->Refresh() ;
     screen->GetMaxYX(&sizey, &sizex) ;
  

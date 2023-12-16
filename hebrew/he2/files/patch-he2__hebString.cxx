@@ -1,5 +1,5 @@
---- ./he2/hebString.cxx.orig	Wed Mar 14 10:04:03 2001
-+++ ./he2/hebString.cxx	Thu Jun 10 21:31:44 2004
+--- he2/hebString.cxx.orig	2001-03-14 09:04:03 UTC
++++ he2/hebString.cxx
 @@ -21,7 +21,7 @@
  
  #include "hebString.h"

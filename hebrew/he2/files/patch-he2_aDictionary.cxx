@@ -1,6 +1,6 @@
---- aDictionary.cxx.orig	Tue Aug 17 13:50:38 2004
-+++ he2/aDictionary.cxx	Tue Aug 17 13:50:52 2004
-@@ -128,7 +128,7 @@
+--- he2/aDictionary.cxx.orig	2001-03-14 09:04:03 UTC
++++ he2/aDictionary.cxx
+@@ -128,7 +128,7 @@ aDictionary::findMatchingWords(int accuracyLevel, char
            return 0 ; // nothing to look for
     }
  
