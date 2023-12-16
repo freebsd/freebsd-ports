@@ -1,6 +1,6 @@
---- ./Makefile.PL.orig	2014-08-28 18:50:07.282934874 +0100
-+++ ./Makefile.PL	2014-08-28 18:50:28.962268980 +0100
-@@ -33,7 +33,7 @@
+--- Makefile.PL.orig	2007-03-31 16:16:20 UTC
++++ Makefile.PL
+@@ -33,7 +33,7 @@ for (my $i = 0 ; $i < scalar(@ARGV) ; $i++){
  # preliminary checks
  #------------------------------------------------------------------------
  # Mandatory perl modules
