@@ -10,6 +10,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the EggTrayIcon library
 WWW=		https://metacpan.org/release/Gtk2-TrayIcon
 
+DEPRECATED=	Upstream marked this module as Deprecated
+EXPIRATION_DATE=	2024-01-16
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \
 		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends	\
