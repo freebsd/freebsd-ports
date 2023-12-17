@@ -1,3 +1,31 @@
+  <vuln vid="fd47fcfe-ec69-4000-b9ce-e5e62102c1c7">
+    <topic>couchdb -- information sharing via couchjs processes</topic>
+    <affects>
+      <package>
+	<name>couchdb</name>
+	<range><lt>3.3.2,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nick Vatamane reports:</p>
+    <blockquote cite="https://docs.couchdb.org/en/stable/cve/2023-26268.html">
+	<p>Design documents with matching document IDs, from databases on the
+      same cluster, may share a mutable Javascript environment when using
+      various design document functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-26268</cvename>
+      <url>https://docs.couchdb.org/en/stable/cve/2023-26268.html</url>
+    </references>
+    <dates>
+      <discovery>2023-05-02</discovery>
+      <entry>2023-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2fb85ce-9a3c-11ee-af26-001b217b3468">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
