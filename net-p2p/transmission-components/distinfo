@@ -1,11 +1,3 @@
-TIMESTAMP = 1693298946
-SHA256 (transmission-transmission-4.0.4_GH0.tar.gz) = 767b4796a43c8bd3fc9d6c64d32dd49dedce3ad14909d6773ce2694e02b22a9d
-SIZE (transmission-transmission-4.0.4_GH0.tar.gz) = 8750421
-SHA256 (google-googletest-af29db7_GH0.tar.gz) = cebd59f4dd7380870c4cbc57f75bd4453d84c68847fee020c95019b2841ae7a2
-SIZE (google-googletest-af29db7_GH0.tar.gz) = 841006
-SHA256 (transmission-fast_float-6624977_GH0.tar.gz) = a7fed3253e8604ad0b3c0649f7b99e004f61bf0b82096f43edbb597f9a9b4dc3
-SIZE (transmission-fast_float-6624977_GH0.tar.gz) = 76763
-SHA256 (transmission-utfcpp-b85efd6_GH0.tar.gz) = 98c7f02180c92a6b5fa90bbf157c3f441fcf47565c10948d221de3097893507a
-SIZE (transmission-utfcpp-b85efd6_GH0.tar.gz) = 27376
-SHA256 (transmission-wide-integer-4de0b52_GH0.tar.gz) = 8754e29f002ba78228675ad95b7eb4d828e23c7a4ec227815fe8a2238c8111eb
-SIZE (transmission-wide-integer-4de0b52_GH0.tar.gz) = 124910
+TIMESTAMP = 1701995252
+SHA256 (transmission-4.0.5.tar.xz) = fd68ff114a479200043c30c7e69dba4c1932f7af36ca4c5b5d2edcb5866e6357
+SIZE (transmission-4.0.5.tar.xz) = 9745756

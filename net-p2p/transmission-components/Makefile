@@ -1,7 +1,7 @@
 PORTNAME=	transmission
-DISTVERSION=	4.0.4
-PORTREVISION=	5
+DISTVERSION=	4.0.5
 CATEGORIES=	net-p2p
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	mondo.debater_0q@icloud.com
 COMMENT=	Transmission BitTorrent client
@@ -10,12 +10,15 @@ WWW=		https://www.transmissionbt.com
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float \
+		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
+		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
+
 LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libcurl.so:ftp/curl \
 		libdeflate.so:archivers/libdeflate \
 		libdht.so:devel/jech-dht \
 		libevent.so:devel/libevent \
-		libfmt.so:devel/libfmt \
 		libminiupnpc.so:net/miniupnpc \
 		libnatpmp.so:net/libnatpmp \
 		libpsl.so:dns/libpsl \
@@ -37,16 +40,22 @@ LIB_DEPENDS=
 gtk_LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 			libharfbuzz.so:print/harfbuzz
 
-USES=		cmake cpe iconv libtool localbase pkgconfig ssl
+USES=		cmake cpe iconv libtool localbase pkgconfig ssl tar:xz
 
 CPE_VENDOR=	transmissionbt
 CPE_PRODUCT=	transmission
 
-USE_GITHUB=	YES
-GH_TUPLE=	google:googletest:af29db7:googletest/third-party/googletest \
-		transmission:fast_float:6624977:fast_float/third-party/fast_float \
-		transmission:utfcpp:b85efd6:utfcpp/third-party/utfcpp \
-		transmission:wide-integer:4de0b52:wideinteger/third-party/wide-integer
+EXTRACT_AFTER_ARGS=	--exclude third-party/dht \
+			--exclude third-party/fast_float \
+			--exclude third-party/fmt \
+			--exclude third-party/libb64 \
+			--exclude third-party/libdeflate \
+			--exclude third-party/libevent \
+			--exclude third-party/libnatpmp \
+			--exclude third-party/libpsl \
+			--exclude third-party/libutp \
+			--exclude third-party/miniupnpc \
+			--exclude third-party/utfcpp
 
 .if ${FLAVOR} == gtk
 USES+=		desktop-file-utils gettext-runtime gettext-tools gnome
@@ -64,12 +73,10 @@ USE_RC_SUBR=	transmission
 .endif
 
 .if ${FLAVOR} == docs
-USES=		cpe
+USES=		cpe tar:xz
 .endif
 
-CMAKE_ARGS=	-DCMAKE_C_STANDARD_INCLUDE_DIRECTORIES=${LOCALBASE}/include \
-		-DCMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES=${LOCALBASE}/include \
-		-DCMAKE_INSTALL_MANDIR="${PREFIX}/man"
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man"
 CMAKE_ON=	USE_SYSTEM_B64 USE_SYSTEM_DEFLATE USE_SYSTEM_DHT \
 		USE_SYSTEM_EVENT2 USE_SYSTEM_MINIUPNPC USE_SYSTEM_NATPMP \
 		USE_SYSTEM_PSL USE_SYSTEM_UTP
@@ -145,11 +152,6 @@ TESTS_CMAKE_BOOL=	ENABLE_TESTS
 UTILS_CMAKE_BOOL=	ENABLE_UTILS
 
 WEB_CMAKE_BOOL=	INSTALL_WEB
-
-post-extract:
-	@${ECHO_MSG} "Cludging use of devel/libfmt as Transmission's CMakeLists.txt does not properly search for it."
-	@${MKDIR} ${WRKSRC}/third-party/fmt/include/fmt
-	@${LN} -Fs ${PREFIX}/include/fmt ${WRKSRC}/third-party/fmt/include/fmt
 
 .if ${FLAVOR} == docs
 pre-install:
