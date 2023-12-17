@@ -27,7 +27,7 @@ include/libmy/b64_encode.h
 lib/libaxa.a
 lib/libaxa.so
 lib/libaxa.so.3
-lib/libaxa.so.3.0.0
+lib/libaxa.so.3.0.1
 libdata/pkgconfig/libaxa.pc
 man/man1/radtool.1.gz
 man/man1/radtunnel.1.gz
