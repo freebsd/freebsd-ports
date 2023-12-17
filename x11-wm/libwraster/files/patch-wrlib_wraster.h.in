@@ -1,6 +1,6 @@
---- wrlib/wraster.h.orig	2015-08-11 18:41:14 UTC
-+++ wrlib/wraster.h
-@@ -61,10 +61,14 @@
+--- wrlib/wraster.h.in.orig	2023-03-02 14:20:26 UTC
++++ wrlib/wraster.h.in
+@@ -58,10 +58,14 @@
   * mechanism and define an internal macro appropriately. Please note that the macro are not considered being
   * part of the public API.
   */

@@ -10,12 +10,13 @@
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
-@@ -467,13 +466,12 @@ wmaker_SOURCES = GNUstep.h WindowMaker.h actions.c act
+@@ -467,14 +466,13 @@ wmaker_SOURCES = GNUstep.h WindowMaker.h actions.c act
  @USE_NESTED_FUNC_FALSE@CLEANFILES = $(nodist_wmaker_SOURCES)
  AM_CFLAGS = 
  AM_CPPFLAGS = $(DFLAGS) \
--	-I$(top_srcdir)/wrlib \
- 	-I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
+-	-I$(top_builddir)/wrlib \
+ 	-I$(top_srcdir)/WINGs -I$(top_builddir)/WINGs \
+ 	@HEADER_SEARCH_PATH@
  
  wmaker_LDADD = \
  	$(top_builddir)/WINGs/libWINGs.la\

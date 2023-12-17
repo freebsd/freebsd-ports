@@ -1,12 +1,12 @@
 --- WPrefs.app/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ WPrefs.app/Makefile.in
-@@ -481,13 +481,14 @@ WPrefs_SOURCES = \
+@@ -481,13 +481,13 @@ WPrefs_SOURCES = \
  #	Themes.c
  AM_CFLAGS = 
  AM_CPPFLAGS = -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \
--	 -I$(top_srcdir)/wrlib -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
-+	 -DPREFIX=\"$(prefix)\" \
-+	 -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
+-	 -I$(top_builddir)/wrlib -I$(top_srcdir)/WINGs -I$(top_builddir)/WINGs \
++	 -DPREFIX=\"$(prefix)\" -I$(top_srcdir)/WINGs -I$(top_builddir)/WINGs \
+ 	 @HEADER_SEARCH_PATH@
  
  WPrefs_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la
  WPrefs_LDADD = \

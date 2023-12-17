@@ -1,6 +1,5 @@
 PORTNAME=	windowmaker
-PORTVERSION=	0.95.9
-PORTREVISION=	3
+PORTVERSION=	0.96.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -22,7 +21,8 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:graphics/wmicons
 
-USES=		cpe gnome jpeg libtool shebangfix pathfix perl5 pkgconfig xorg
+USES=		cpe gmake gnome jpeg libtool pathfix perl5 pkgconfig \
+		shebangfix xorg
 USE_CSTD=	c99
 USE_GNOME=	pango
 USE_LDCONFIG=	yes

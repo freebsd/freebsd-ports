@@ -10,13 +10,13 @@
  am_wmgenmenu_OBJECTS = wmgenmenu.$(OBJEXT)
  wmgenmenu_OBJECTS = $(am_wmgenmenu_OBJECTS)
  wmgenmenu_DEPENDENCIES = $(top_builddir)/WINGs/libWUtil.la
- am_wmiv_OBJECTS = wmiv.$(OBJEXT)
+ am_wmiv_OBJECTS = wmiv-wmiv.$(OBJEXT)
  wmiv_OBJECTS = $(am_wmiv_OBJECTS)
 -wmiv_DEPENDENCIES = $(top_builddir)/wrlib/libwraster.la \
 +wmiv_DEPENDENCIES = \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1)
- am_wmmenugen_OBJECTS = wmmenugen.$(OBJEXT) wmmenugen_misc.$(OBJEXT) \
+ 	$(top_builddir)/WINGs/libWINGs.la
+ wmiv_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(wmiv_CFLAGS) $(CFLAGS) \
 @@ -172,8 +171,7 @@ wmmenugen_DEPENDENCIES = $(top_builddir)/WINGs/libWUti
  wmsetbg_SOURCES = wmsetbg.c
  wmsetbg_OBJECTS = wmsetbg.$(OBJEXT)
@@ -31,7 +31,7 @@
  bin_SCRIPTS = wmaker.inst wm-oldmenu2new wkdemenu.pl
  EXTRA_DIST = wmaker.inst.in bughint wm-oldmenu2new wkdemenu.pl
  AM_CPPFLAGS = \
--	 $(DFLAGS) -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib \
+-	 $(DFLAGS) -I$(top_srcdir)/WINGs -I$(top_builddir)/wrlib \
 +	 $(DFLAGS) -I$(top_srcdir)/WINGs \
  	@HEADER_SEARCH_PATH@ \
  	-DETCDIR=\"sysconfdir\" -DDATADIR=\"pkgdatadir\"
@@ -58,6 +58,6 @@
  wmiv_LDADD = \
 -	$(top_builddir)/wrlib/libwraster.la \
 +	-lwraster \
- 	@XLFLAGS@ @XLIBS@ \
- 	@GFXLIBS@ $(PTHREAD_CFLAGS) $(PTHREAD_LIBS) $(LIBEXIF)
- 
+ 	$(top_builddir)/WINGs/libWINGs.la \
+ 	@XLFLAGS@ @XLIBS@ @GFXLIBS@ \
+ 	@PANGO_LIBS@ @PTHREAD_LIBS@ @LIBEXIF@

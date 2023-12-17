@@ -14,6 +14,7 @@ GNUstep/Applications/WPrefs.app/tiff/drawer.tiff
 GNUstep/Applications/WPrefs.app/tiff/ergonomic.tiff
 GNUstep/Applications/WPrefs.app/tiff/expert.tiff
 GNUstep/Applications/WPrefs.app/tiff/fonts.tiff
+GNUstep/Applications/WPrefs.app/tiff/hotcorners.tiff
 GNUstep/Applications/WPrefs.app/tiff/iconprefs.tiff
 GNUstep/Applications/WPrefs.app/tiff/keyboard.tiff
 GNUstep/Applications/WPrefs.app/tiff/keyboardprefs.tiff
@@ -103,7 +104,7 @@ include/WMaker.h
 lib/libWINGs.a
 lib/libWINGs.so
 lib/libWINGs.so.3
-lib/libWINGs.so.3.1.0
+lib/libWINGs.so.3.2.0
 lib/libWMaker.a
 lib/libWMaker.so
 lib/libWMaker.so.1
@@ -357,6 +358,7 @@ share/WindowMaker/wmmacros
 %%NLS%%share/locale/sk/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/WindowMaker.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/WindowMaker.mo
@@ -407,5 +409,7 @@ man/man1/wxpaste.1.gz
 %%NLS%%man/sk/man1/wmsetbg.1.gz
 %%NLS%%man/sk/man1/wxcopy.1.gz
 %%NLS%%man/sk/man1/wxpaste.1.gz
+share/applications/WPrefs.desktop
+share/xsessions/wmaker.desktop
 @dir GNUstep/Applications/WPrefs.app/xpm
 @dir share/WindowMaker/Sounds
