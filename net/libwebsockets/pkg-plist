@@ -105,6 +105,7 @@ libdata/pkgconfig/libwebsockets_static.pc
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_client_loopback_test.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_deaddrop.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_dumb_increment.so
+%%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_fulltext_demo.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_mirror.so
 %%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_openmetrics_export.so
 %%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_raw_proxy.so
