@@ -8,10 +8,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hack of 9wm to give virtual screens
 WWW=		http://www.grassouille.org/code/w9wm.en.html
 
-WRKSRC=		${WRKDIR}/${DISTNAME}.orig
+DEPRECATED=	Last upstream release was in 2002
+EXPIRATION_DATE=	2024-01-17
 
 USES=		imake xorg
 USE_XORG=	x11 xext
+
+WRKSRC=		${WRKDIR}/${DISTNAME}.orig
 
 PLIST_FILES=	bin/w9wm \
 		man/man1/w9wm.1.gz
