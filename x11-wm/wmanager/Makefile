@@ -1,23 +1,22 @@
 PORTNAME=	wmanager
-PORTVERSION=	0.2.1
-PORTREVISION=	15
+PORTVERSION=	0.3.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	DEBIAN_POOL
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	https://devel.ringlet.net/files/x11/wmanager/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	X11 window manager selector
+WWW=		https://devel.ringlet.net/files/x11/wmanager/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		gl gmake pkgconfig tar:xz xorg
+USE_GL=		gl glu
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
-USES=		gl gmake xorg
-USE_XORG=	x11 xext
-USE_GL=		gl
 
 OPTIONS_DEFINE=	ADDONS DOCS EXAMPLES
 OPTIONS_DEFAULT=ADDONS
