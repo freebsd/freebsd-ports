@@ -91,7 +91,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/opensearch
 .for f in ${CONFIG_FILES}
-	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHGROUP} -m 640 ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/opensearch/bin
 .for f in ${BINS}
@@ -112,11 +112,11 @@ do-install-PLUGINS-on:
 		 ${STAGEDIR}${ETCDIR}/opensearch-reports-scheduler \
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
 .for f in ${PLUGINS_CONFIG_FILES}
-	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHGROUP} -m 640 ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 	${ECHO} "@sample(opensearch,opensearch,640) ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 .for f in ${PLUGINS_SAMPLE_CONFIG_FILES}
-	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHGROUP} -m 640 ${WRKSRC}/config/${f}.example ${STAGEDIR}${ETCDIR}/${f}.sample
+	${INSTALL} ${WRKSRC}/config/${f}.example ${STAGEDIR}${ETCDIR}/${f}.sample
 	${ECHO} "@(opensearch,opensearch,640) ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "plugins" ${STAGEDIR}${PREFIX}/lib/opensearch/)
