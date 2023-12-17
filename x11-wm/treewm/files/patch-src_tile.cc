@@ -1,4 +1,4 @@
---- src/tile.cc.orig
+--- src/tile.cc.orig	2003-09-11 10:55:34 UTC
 +++ src/tile.cc
 @@ -5,6 +5,7 @@
  #include <algorithm>

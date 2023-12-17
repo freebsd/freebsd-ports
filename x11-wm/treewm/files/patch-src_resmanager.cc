@@ -1,6 +1,6 @@
---- ../treewm-0.4.5.orig/src/resmanager.cc	Mon Mar  8 00:20:42 2004
-+++ src/resmanager.cc	Mon Mar  8 00:40:02 2004
-@@ -127,6 +127,7 @@
+--- src/resmanager.cc.orig	2003-02-15 21:05:41 UTC
++++ src/resmanager.cc
+@@ -127,6 +127,7 @@ void ResManager::CreateScemes() {
      for (int j=0; j!=mi->n; ++j) {
        MenuItem &mitem = mi->menu[j];
        if (mitem.key[0] == '$') {

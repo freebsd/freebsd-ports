@@ -1,6 +1,6 @@
---- ../treewm-0.4.5.orig/src/uehandler.cc	Mon Mar  8 00:20:42 2004
-+++ src/uehandler.cc	Mon Mar  8 00:42:26 2004
-@@ -955,6 +955,7 @@
+--- src/uehandler.cc.orig	2003-09-12 19:06:06 UTC
++++ src/uehandler.cc
+@@ -955,6 +955,7 @@ bool UEHandler::ExecCommand(Client *ref, Icon *i,char 
        if (!ExecAll)
          return false;
        {

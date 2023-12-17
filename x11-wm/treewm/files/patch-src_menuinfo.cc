@@ -1,7 +1,6 @@
-diff -ru treewm-0.4.5.orig/src/menuinfo.cc treewm-0.4.5/src/menuinfo.cc
---- src/menuinfo.cc	Mon Mar  8 00:20:42 2004
-+++ src/menuinfo.cc	Mon Mar  8 00:22:37 2004
-@@ -21,7 +21,7 @@
+--- src/menuinfo.cc.orig	2003-02-15 21:05:41 UTC
++++ src/menuinfo.cc
+@@ -21,7 +21,7 @@ void MenuInfo::Init() {
    MenuItemList *actions=0,*last=0;
    for (Entry *e=s->fe;e;e=e->next)
      if (e->tag) {
