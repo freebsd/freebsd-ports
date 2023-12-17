@@ -1,4 +1,4 @@
-https://github.com/rust-lang/libc/issues/3459
+https://github.com/rust-lang/libc/commit/aff5e66e5473
 
 error[E0425]: cannot find function `strftime` in crate `libc`
   --> src/utils.rs:44:24
@@ -6,30 +6,41 @@ error[E0425]: cannot find function `strftime` in crate `libc`
 44 |         let rv = libc::strftime(buf.as_mut_ptr().cast(), buf.len(), format.as_ptr(), tm);
    |                        ^^^^^^^^ not found in `libc`
 
---- src/utils.rs.orig	2023-11-26 12:51:13 UTC
-+++ src/utils.rs
-@@ -9,6 +9,24 @@ use std::time::Duration;
- use std::thread;
- use std::time::Duration;
- 
-+#[cfg(any(
-+    target_os = "dragonfly",
-+    target_os = "freebsd",
-+    target_os = "netbsd",
-+    target_os = "openbsd",
-+))]
-+mod libc {
-+    pub use libc::*;
-+    extern "C" {
-+        pub fn strftime(
-+            buf: *mut c_char,
-+            maxsize: size_t,
-+            format: *const c_char,
-+            timeptr: *const tm,
-+        ) -> size_t;
-+    }
-+}
+--- cargo-crates/libc-0.2.150/src/unix/bsd/apple/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.150/src/unix/bsd/apple/mod.rs
+@@ -5602,12 +5602,6 @@ extern "C" {
+     pub fn asctime(tm: *const ::tm) -> *mut ::c_char;
+     pub fn ctime(clock: *const time_t) -> *mut ::c_char;
+     pub fn getdate(datestr: *const ::c_char) -> *mut ::tm;
+-    pub fn strftime(
+-        buf: *mut ::c_char,
+-        maxsize: ::size_t,
+-        format: *const ::c_char,
+-        timeptr: *const ::tm,
+-    ) -> ::size_t;
+     pub fn strptime(
+         buf: *const ::c_char,
+         format: *const ::c_char,
+--- cargo-crates/libc-0.2.150/src/unix/bsd/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.150/src/unix/bsd/mod.rs
+@@ -899,6 +899,20 @@ extern "C" {
+         longopts: *const option,
+         longindex: *mut ::c_int,
+     ) -> ::c_int;
 +
- use anyhow::{ensure, Context};
- use directories::UserDirs;
- use smithay::reexports::rustix::time::{clock_gettime, ClockId};
++    pub fn strftime(
++        buf: *mut ::c_char,
++        maxsize: ::size_t,
++        format: *const ::c_char,
++        timeptr: *const ::tm,
++    ) -> ::size_t;
++    pub fn strftime_l(
++        buf: *mut ::c_char,
++        maxsize: ::size_t,
++        format: *const ::c_char,
++        timeptr: *const ::tm,
++        locale: ::locale_t,
++    ) -> ::size_t;
+ }
+ 
+ cfg_if! {
