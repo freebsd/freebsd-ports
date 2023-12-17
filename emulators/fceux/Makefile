@@ -1,6 +1,7 @@
 PORTNAME=	fceux
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.6
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 PATCH_SITES=	https://github.com/TASEmulators/fceux/commit/
