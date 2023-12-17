@@ -10,6 +10,8 @@ WWW=		https://cadabra.science/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
+BROKEN_FreeBSD_15=	compilation fails with clang-17, see https://github.com/kpeeters/cadabra2/issues/285
+
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs \
