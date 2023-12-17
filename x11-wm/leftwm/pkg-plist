@@ -1,10 +1,11 @@
+bin/leftwm-log
 bin/lefthk-worker
 bin/leftwm
 bin/leftwm-check
 bin/leftwm-command
 bin/leftwm-state
 bin/leftwm-worker
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%THEMES%%%%DATADIR%%/themes/README.md
@@ -21,8 +22,9 @@ bin/leftwm-worker
 %%THEMES%%%%DATADIR%%/themes/basic_eww/template.liquid
 %%THEMES%%%%DATADIR%%/themes/basic_eww/theme.ron
 %%THEMES%%%%DATADIR%%/themes/basic_eww/up
-%%THEMES%%%%DATADIR%%/themes/basic_lemonbar/background.jpg
-%%THEMES%%%%DATADIR%%/themes/basic_lemonbar/change_to_tag
+%%THEMES%%%%DATADIR%%/themes/basic_lemonbar/README.md
+%%THEMES%%%%DATADIR%%/themes/basic_lemonbar/background.png
+%%THEMES%%%%DATADIR%%/themes/basic_lemonbar/clock-module
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/down
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/down.jpg
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/sizes.liquid

@@ -1,9 +1,8 @@
 PORTNAME=	leftwm
-DISTVERSION=	0.4.2
-PORTREVISION=	3
+DISTVERSION=	0.5.1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tiling window manager for Adventurers
 WWW=		https://leftwm.org/
 
@@ -34,7 +33,7 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for l in CHANGELOG CONTRIBUTING.md README.md
+.for l in CHANGELOG.md CONTRIBUTING.md README.md
 	${INSTALL_MAN} ${WRKSRC}/${l} ${STAGEDIR}${DOCSDIR}
 .endfor
 

@@ -1,145 +1,148 @@
-CARGO_CRATES=	aho-corasick-1.0.2 \
-		anstream-0.3.2 \
-		anstyle-1.0.0 \
-		anstyle-parse-0.2.0 \
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		aho-corasick-1.1.2 \
+		anstream-0.6.4 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.2 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
+		anstyle-wincon-3.0.1 \
+		anyhow-1.0.75 \
 		anymap2-0.13.0 \
 		autocfg-1.1.0 \
-		base64-0.13.1 \
+		backtrace-0.3.69 \
+		base64-0.21.5 \
 		bitflags-1.3.2 \
+		bitflags-2.4.1 \
 		block-buffer-0.10.4 \
-		bytes-1.4.0 \
-		cc-1.0.79 \
+		bytes-1.5.0 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		clap-4.3.4 \
-		clap_builder-4.3.4 \
-		clap_lex-0.5.0 \
+		clap-4.4.8 \
+		clap_builder-4.4.8 \
+		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
-		const_format-0.2.31 \
-		const_format_proc_macros-0.2.31 \
-		cpufeatures-0.2.8 \
+		const_format-0.2.32 \
+		const_format_proc_macros-0.2.32 \
+		cpufeatures-0.2.11 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-utils-0.8.16 \
 		crypto-common-0.1.6 \
+		deranged-0.3.9 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
 		doc-comment-0.3.3 \
-		either-1.8.1 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
-		fastrand-1.9.0 \
-		futures-0.3.28 \
-		futures-channel-0.3.28 \
-		futures-core-0.3.28 \
-		futures-executor-0.3.28 \
-		futures-io-0.3.28 \
-		futures-macro-0.3.28 \
-		futures-sink-0.3.28 \
-		futures-task-0.3.28 \
-		futures-util-0.3.28 \
+		either-1.9.0 \
+		equivalent-1.0.1 \
+		errno-0.3.7 \
+		fastrand-2.0.1 \
+		futures-0.3.29 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-executor-0.3.29 \
+		futures-io-0.3.29 \
+		futures-macro-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-util-0.3.29 \
 		generic-array-0.14.7 \
-		getrandom-0.2.10 \
-		git-version-0.3.5 \
-		git-version-macro-0.3.5 \
-		hashbrown-0.12.3 \
-		hermit-abi-0.2.6 \
-		hermit-abi-0.3.1 \
-		home-0.5.5 \
-		indexmap-1.9.3 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.11 \
-		is-terminal-0.4.7 \
+		getrandom-0.2.11 \
+		gimli-0.28.0 \
+		git-version-0.3.8 \
+		git-version-macro-0.3.8 \
+		hashbrown-0.14.2 \
+		hermit-abi-0.3.3 \
+		indexmap-2.1.0 \
+		inventory-0.3.13 \
 		itertools-0.10.5 \
-		itoa-1.0.6 \
+		itoa-1.0.9 \
 		kstring-2.0.0 \
 		lazy_static-1.4.0 \
-		lefthk-core-0.1.8 \
-		libc-0.2.146 \
-		linux-raw-sys-0.3.8 \
+		lefthk-core-0.2.0 \
+		leftwm-layouts-0.8.4 \
+		libc-0.2.150 \
+		libredox-0.0.1 \
+		linux-raw-sys-0.4.11 \
 		liquid-0.26.4 \
 		liquid-core-0.26.4 \
 		liquid-derive-0.26.4 \
 		liquid-lib-0.26.4 \
-		log-0.4.19 \
+		log-0.4.20 \
 		matchers-0.1.0 \
-		memchr-2.5.0 \
-		memoffset-0.6.5 \
-		memoffset-0.7.1 \
-		mio-0.8.8 \
-		nix-0.23.2 \
-		nix-0.26.2 \
+		memchr-2.6.4 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.9 \
+		nix-0.27.1 \
 		nu-ansi-term-0.46.0 \
-		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
+		num-traits-0.2.17 \
+		num_cpus-1.16.0 \
 		num_threads-0.1.6 \
+		object-0.32.1 \
 		once_cell-1.18.0 \
 		option-ext-0.2.0 \
 		overload-0.1.1 \
 		percent-encoding-2.3.0 \
-		pest-2.6.0 \
-		pest_derive-2.6.0 \
-		pest_generator-2.6.0 \
-		pest_meta-2.6.0 \
-		pin-project-lite-0.2.9 \
+		pest-2.7.5 \
+		pest_derive-2.7.5 \
+		pest_generator-2.7.5 \
+		pest_meta-2.7.5 \
+		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.60 \
-		quote-1.0.28 \
-		redox_syscall-0.2.16 \
-		redox_syscall-0.3.5 \
-		redox_users-0.4.3 \
-		regex-1.8.4 \
+		powerfmt-0.2.0 \
+		proc-macro2-1.0.69 \
+		quote-1.0.33 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		regex-1.10.2 \
 		regex-automata-0.1.10 \
+		regex-automata-0.4.3 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.7.2 \
-		ron-0.8.0 \
-		rustix-0.37.20 \
-		ryu-1.0.13 \
-		serde-1.0.164 \
-		serde_derive-1.0.164 \
-		serde_json-1.0.97 \
-		serde_spanned-0.6.2 \
-		sha2-0.10.7 \
-		sharded-slab-0.1.4 \
+		regex-syntax-0.8.2 \
+		ron-0.8.1 \
+		rustc-demangle-0.1.23 \
+		rustix-0.38.24 \
+		ryu-1.0.15 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
+		serde_json-1.0.108 \
+		serde_spanned-0.6.4 \
+		sha2-0.10.8 \
+		sharded-slab-0.1.7 \
 		shellexpand-3.1.0 \
-		signal-hook-0.3.15 \
+		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.1 \
-		slab-0.4.8 \
-		smallvec-1.10.0 \
-		socket2-0.4.9 \
+		slab-0.4.9 \
+		smallvec-1.11.2 \
+		socket2-0.5.5 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		syn-1.0.109 \
-		syn-2.0.18 \
-		syslog-tracing-0.1.0 \
-		tempfile-3.6.0 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
+		syn-2.0.39 \
+		syslog-tracing-0.2.0 \
+		tempfile-3.8.1 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
 		thread_local-1.1.7 \
-		time-0.3.22 \
-		time-core-0.1.1 \
-		time-macros-0.2.9 \
-		tokio-1.28.2 \
-		tokio-macros-2.1.0 \
-		toml-0.7.4 \
-		toml_datetime-0.6.2 \
-		toml_edit-0.19.10 \
-		tracing-0.1.37 \
-		tracing-appender-0.2.2 \
-		tracing-attributes-0.1.24 \
-		tracing-core-0.1.31 \
+		time-0.3.30 \
+		time-core-0.1.2 \
+		time-macros-0.2.15 \
+		tokio-1.34.0 \
+		tokio-macros-2.2.0 \
+		toml-0.8.8 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.21.0 \
+		tracing-0.1.40 \
+		tracing-appender-0.2.3 \
+		tracing-attributes-0.1.27 \
+		tracing-core-0.1.32 \
 		tracing-journald-0.3.0 \
-		tracing-log-0.1.3 \
-		tracing-subscriber-0.3.17 \
-		typenum-1.16.0 \
-		ucd-trie-0.1.5 \
-		unicode-ident-1.0.9 \
+		tracing-log-0.2.0 \
+		tracing-subscriber-0.3.18 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.6 \
+		unicode-ident-1.0.12 \
 		unicode-segmentation-1.10.1 \
 		unicode-xid-0.2.4 \
 		utf8parse-0.2.1 \
@@ -150,14 +153,14 @@ CARGO_CRATES=	aho-corasick-1.0.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
-		windows-targets-0.48.0 \
-		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_msvc-0.48.0 \
-		windows_i686_gnu-0.48.0 \
-		windows_i686_msvc-0.48.0 \
-		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_msvc-0.48.0 \
-		winnow-0.4.7 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.48.5 \
+		winnow-0.5.19 \
 		x11-dl-2.21.0 \
-		xdg-2.5.0
+		xdg-2.5.2
