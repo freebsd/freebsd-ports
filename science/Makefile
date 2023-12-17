@@ -442,6 +442,7 @@
     SUBDIR += py-thewalrus
     SUBDIR += py-tobler
     SUBDIR += py-trainstation
+    SUBDIR += py-trx-python
     SUBDIR += py-tweedledum
     SUBDIR += py-vedo
     SUBDIR += py-veusz
