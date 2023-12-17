@@ -1,1 +1,8 @@
-A Python package for building Service Brokers supporting API version 2.13+.
+This Python package is designed for creating Service Brokers compliant
+with Open Service Broker API version 2.13+. It offers a streamlined
+framework for managing service instances and bindings, supporting key
+operations like provisioning, deprovisioning, and service updates. Ideal
+for developing cloud-native service brokers, it ensures API compliance
+and is suitable for both novice and experienced developers in Python
+environments.
+
