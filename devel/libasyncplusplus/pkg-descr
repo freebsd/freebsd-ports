@@ -1,0 +1,3 @@
+Async++ is a lightweight concurrency framework for C++11.
+The concept was inspired by the Microsoft PPL library
+and the N3428 C++ standard proposal.
