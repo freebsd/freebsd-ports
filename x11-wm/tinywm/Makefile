@@ -1,26 +1,31 @@
 PORTNAME=	tinywm
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://incise.org/files/dev/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
-WWW=		http://freshmeat.net/projects/tinywm/?branch_id=55633&release_id=184175
+WWW=		http://incise.org/tinywm.html
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		xorg tar:tgz
+USE_XORG=	x11
 
 PLIST_FILES=	bin/tinywm
-USES=		xorg
-USE_XORG=	x11
 PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC)|CC) ${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tinywm ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
