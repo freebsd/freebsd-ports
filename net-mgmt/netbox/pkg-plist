@@ -1363,6 +1363,7 @@
 %%DATADIR%%/utilities/tests/test_forms.py
 %%DATADIR%%/utilities/tests/test_managers.py
 %%DATADIR%%/utilities/tests/test_ordering.py
+%%DATADIR%%/utilities/tests/test_request.py
 %%DATADIR%%/utilities/tests/test_utils.py
 %%DATADIR%%/utilities/tracking.py
 %%DATADIR%%/utilities/urls.py

@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.6
+DISTVERSION=	3.6.7
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -26,19 +26,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.6<4.3:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.1<5:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-debug-toolbar>=4.2.0<5:www/py-dj42-django-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.4<24:www/py-dj42-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.5<24:www/py-dj42-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj42-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-mptt>=0.14.0<0.15:www/py-dj42-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-prometheus>=2.3.1<2.4:www/py-dj42-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-redis>=5.4.0<6:www/py-dj42-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-rich>=1.8.0<2:www/py-dj42-django-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-rq>=2.9.0<2.10:devel/py-dj42-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-tables2>=2.6<2.7:www/py-dj42-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-tables2>=2.7<2.8:www/py-dj42-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-taggit>=4.0.0<5:www/py-dj42-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-timezone-field>=6.1.0<7:www/py-dj42-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.14.0<3.15.0:www/py-dj42-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular>=0.26.5<1:www/py-dj42-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular-sidecar>=2023.10.1:www/py-dj42-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular>=0.27.0<1:www/py-dj42-drf-spectacular@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular-sidecar>=2023.12.1:www/py-dj42-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-graphene-django>=3.0.0<3.0.0_99:devel/py-dj42-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=6.0.0<7:www/py-bleach@${PY_FLAVOR} \
