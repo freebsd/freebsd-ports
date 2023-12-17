@@ -2,9 +2,16 @@
 
 TARGET="$(realpath "$0")"
 
-if [ -z "$WINESERVER" ] && [ -f "${TARGET}server32" ]
+if [ -z "$WINESERVER" ]
 then
-  export WINESERVER="${TARGET}server32"
+  if [ -f "${TARGET%/*}/wineserver" ]
+  then
+    export WINESERVER="${TARGET%/*}/wineserver"
+  fi
+  if [ -f "${TARGET%/*}/wineserver32" ]
+  then
+    export WINESERVER="${TARGET%/*}/wineserver32"
+  fi
 fi
 
 # Workaround for https://bugs.winehq.org/show_bug.cgi?id=50257
