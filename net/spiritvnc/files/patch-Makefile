@@ -1,33 +1,27 @@
---- Makefile.orig	2023-11-02 17:07:04 UTC
+--- Makefile.orig	2023-12-14 21:25:00 UTC
 +++ Makefile
-@@ -1,10 +1,10 @@
- CC       =	c++
--CFLAGS   =	-O2 -Wall -Wunused -lpthread `fltk-config --use-images --cxxflags --ldflags` \
-+CFLAGS   +=	-Wall -Wunused -lpthread `fltk-config --use-images --cxxflags --ldflags` \
+@@ -1,5 +1,5 @@
+ CC       =  c++
+-CFLAGS   =  -O2 -Wall -Wunused -lpthread $(shell fltk-config --use-images --cxxflags --ldflags) \
++CFLAGS  += -Wall -Wunused -lpthread $(shell fltk-config --use-images --cxxflags --ldflags) \
  			--std=c++11 -finline-functions
- DEBUGFLGS=	-g -O0
+ DEBUGFLGS=  -g -O0
  BINDIR   = /usr/local/bin
- TARGET   =	spiritvnc-fltk
--SRC 	 =	`ls src/*.cxx`
-+SRC 	 =	$(wildcard src/*.cxx)
- PKGCONF  =	`which pkg-config`
- LIBVNC	 =
+@@ -10,6 +10,8 @@ LIBVNC   = $(shell pkg-config --cflags --libs libvnccl
  OSNAME   = $(shell uname -s)
-@@ -17,6 +17,8 @@ else
- 	LIBVNC = `pkg-config --cflags --libs libvncclient libvncserver`
- endif
+ 
  
 +all: spiritvnc-fltk
 +
  spiritvnc-fltk:
  	@echo "Building on '$(OSNAME)'"
- 	@echo ""
-@@ -47,7 +49,7 @@ clean::
+ 	@echo
+@@ -41,7 +43,7 @@ clean::
  	rm -f $(TARGET)
  
  install:
 -	install -c -s -o root -m 555 $(TARGET) $(BINDIR)
 +	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(BINDIR)/spiritvnc
+ 	@echo
  
  uninstall:
- 	@if [ -f $(BINDIR)"/"$(TARGET) ] ; then \
