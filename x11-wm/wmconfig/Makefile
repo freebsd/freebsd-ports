@@ -1,9 +1,9 @@
 PORTNAME=	wmconfig
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://www.arrishq.net/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
 WWW=		https://www.arrishq.net/
 
@@ -16,10 +16,10 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
 OPTIONS_DEFINE=	NLS DOCS
-
 OPTIONS_SUB=	yes
-NLS_CONFIGURE_ENABLE=nls
+
 NLS_USES=	gettext localbase:ldflags
+NLS_CONFIGURE_ENABLE=nls
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
