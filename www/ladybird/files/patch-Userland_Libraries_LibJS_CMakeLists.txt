@@ -1,6 +1,6 @@
---- Userland/Libraries/LibJS/CMakeLists.txt.orig	2023-11-20 19:50:53 UTC
+--- Userland/Libraries/LibJS/CMakeLists.txt.orig	2023-12-16 21:11:43 UTC
 +++ Userland/Libraries/LibJS/CMakeLists.txt
-@@ -270,13 +270,8 @@ set(SOURCES
+@@ -271,13 +271,8 @@ target_link_libraries(LibJS PRIVATE LibCore LibCrypto 
  
  serenity_lib(LibJS js)
  target_link_libraries(LibJS PRIVATE LibCore LibCrypto LibFileSystem LibRegex LibSyntax LibLocale LibUnicode LibTimeZone LibJIT)
