@@ -5,7 +5,7 @@ MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Locker/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Locker-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop screensaver
 WWW=		https://www.defora.org/
 

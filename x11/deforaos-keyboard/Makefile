@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4453/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Keyboard-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop virtual keyboard
 WWW=		https://www.defora.org/
 

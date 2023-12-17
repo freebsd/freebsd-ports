@@ -5,7 +5,7 @@ MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/libDesktop/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libDesktop-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop library
 WWW=		https://www.defora.org/
 

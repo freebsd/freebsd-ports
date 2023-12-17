@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4426/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Mailer-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop mail client
 WWW=		https://www.defora.org/
 

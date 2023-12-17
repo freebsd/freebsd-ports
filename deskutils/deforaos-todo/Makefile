@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4429/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Todo-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop todo list
 WWW=		https://www.defora.org/
 

@@ -5,7 +5,7 @@ MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Surfer/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Surfer-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop web browser
 WWW=		https://www.defora.org/
 

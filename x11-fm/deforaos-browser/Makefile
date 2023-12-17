@@ -4,7 +4,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Browser/
 DISTNAME=	Browser-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop file browser
 WWW=		https://www.defora.org/
 

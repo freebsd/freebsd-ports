@@ -5,7 +5,7 @@ MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/System/src/libSystem/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libSystem-${PORTVERSION}
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS core system library
 WWW=		https://www.defora.org/
 
