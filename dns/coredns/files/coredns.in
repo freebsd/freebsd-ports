@@ -37,8 +37,8 @@ command_args="-S -m 3 -s "info" -l "daemon" -p ${pidfile} /usr/bin/env ${procnam
 
 coredns_precmd()
 {
-	/usr/bin/install -d -m 0755 \
-	        %%PREFIX%%/etc/coredns
+	/usr/bin/install -d -m 0755 %%PREFIX%%/etc/coredns && \
+	cfg_dir=$(dirname "${coredns_config}") && cd "$cfg_dir"
 }
 
 run_rc_command "$1"
