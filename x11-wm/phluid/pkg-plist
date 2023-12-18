@@ -1,8 +1,8 @@
 bin/phluid
-share/phluid/themes/default/images/close_active.png
-share/phluid/themes/default/images/close_normal.png
-share/phluid/themes/default/images/gradient.jpg
-share/phluid/themes/default/images/title_bg.png
-share/phluid/ttfonts/notepad.ttf
-share/phluid/ttfonts/tahoma.ttf
-share/phluid/ttfonts/tahomabd.ttf
+%%DATADIR%%/themes/default/images/close_active.png
+%%DATADIR%%/themes/default/images/close_normal.png
+%%DATADIR%%/themes/default/images/gradient.jpg
+%%DATADIR%%/themes/default/images/title_bg.png
+%%DATADIR%%/ttfonts/notepad.ttf
+%%DATADIR%%/ttfonts/tahoma.ttf
+%%DATADIR%%/ttfonts/tahomabd.ttf
