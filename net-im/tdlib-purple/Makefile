@@ -13,7 +13,7 @@ WWW=		https://github.com/ars3niy/tdlib-purple
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfmt.so:textproc/fmtlib	\
+LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libtdapi.so:net-im/tdlib	\
 		librlottie.so:graphics/rlottie	\
 		libwebp.so:graphics/webp	\
