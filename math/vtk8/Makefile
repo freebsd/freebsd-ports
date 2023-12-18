@@ -12,7 +12,7 @@ WWW=		https://www.vtk.org
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_14_aarch64=	clang-14 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264834
+BROKEN_FreeBSD_13_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275784
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
