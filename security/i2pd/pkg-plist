@@ -22,9 +22,12 @@ man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/reseed/i2p-reseed_at_mk16.de.crt
 %%DATADIR%%/certificates/reseed/igor_at_novg.net.crt
 %%DATADIR%%/certificates/reseed/lazygravy_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/ls_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/null_at_i2pmail.org.crt
 %%DATADIR%%/certificates/reseed/orignal_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/rambler_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/reheatedburger_at_protonmail.com.crt
 %%DATADIR%%/certificates/reseed/reseed_at_diva.exchange.crt
 @dir %%ETCDIR%%/tunnels.d
 @dir(%%USER%%,%%GROUP%%,755) /var/db/i2pd
