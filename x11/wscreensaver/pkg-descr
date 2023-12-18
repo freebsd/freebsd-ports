@@ -6,4 +6,5 @@ With swaylock-plugin, it is possible to use these as backgrounds for a
 lock screen on some Wayland compositors as well.
 
 Note: this is a very rough work in progress, so don't be surprised if half of
-the compiled hacks fail to run, or render incorrectly.
+the compiled hacks fail to run, or render incorrectly. I am not actively
+maintaining this and have no plans to get the remaining hacks to work.

@@ -1,6 +1,6 @@
 PORTNAME=	wscreensaver
-DISTVERSION=	s20230221
-DISTVERSIONSUFFIX=	-0-g59b6211b
+DISTVERSION=	s20231216
+DISTVERSIONSUFFIX=	-0-g0740a5a1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~mstoeckl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -25,7 +25,7 @@ post-patch:
 	@${SED} '/@SET_MAKE@/d; s,@srcdir@,.,; s,@top_srcdir@,../..,' \
 		${WRKSRC:H}/hacks/images/Makefile.in \
 		>${WRKSRC:H}/hacks/images/Makefile
-# Avoid package conflict
+# Disambiguate shell completions
 	@${REINPLACE_CMD} -e "s/'xscreensaver-'/'${PORTNAME}-'/" \
 		${WRKSRC}/meson.build
 
