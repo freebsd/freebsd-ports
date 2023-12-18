@@ -1,5 +1,5 @@
 PORTNAME=	lua-resty-openssl
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.0
 CATEGORIES=	security
 
 MAINTAINER=	netchild@FreeBSD.org
