@@ -8182,3 +8182,4 @@ devel/py-astroid253|devel/py-astroid|2023-12-14|Remove obsoleted port. Use devel
 mail/imap-uw|mail/panda-imap|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-imap
 mail/mailsync||2023-12-16|Has expired: Depends on outdated mail/cclient
 mail/cclient|mail/panda-cclient|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-cclient
+www/yanopaste||2023-12-18|Has expired: Last upstream release was in 2011

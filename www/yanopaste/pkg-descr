@@ -1,4 +1,0 @@
-Yet Another Nopaste is a PHP implementation of nopaste, allowing copy / paste
-of piece of code from numerous language to share it using a simple URL,
-optionally protected using a password. It uses GeSHi as highlighter back-end.
-It does not use database.
