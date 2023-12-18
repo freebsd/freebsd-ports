@@ -1,7 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.12.0
-PORTREVISION=	1
+DISTVERSION=	23.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -70,6 +69,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.2 \
+		humantime-2.1.0 \
 		iana-time-zone-0.1.58 \
 		iana-time-zone-haiku-0.1.2 \
 		ignore-0.4.20 \
