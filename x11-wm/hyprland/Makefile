@@ -1,6 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.33.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -46,12 +47,19 @@ X11_MESON_ENABLED=	xwayland
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
-	@${REINPLACE_CMD} -i .nogit -e "/GIT_BRANCH/s/run_command.*/'main'/" \
-		-e "/GIT_COMMIT_HASH/s/run_command.*/'${DISTVERSIONFULL}'/" \
-		-e "/GIT_COMMIT_MESSAGE/d" \
-		-e "/GIT_DIRTY/s/run_command.*/'portbld'/" \
+	@${REINPLACE_CMD} -i .nogit \
 		-e "/version.*jq/s/run_command.*/'${DISTVERSIONFULL}',/" \
 		${WRKSRC}/meson.build
+	@${REINPLACE_CMD} -i .nogit \
+		-e '/^HASH/s/=.*/=${DISTVERSIONFULL:C/.*-g//}/' \
+		-e '/^BRANCH/s/=.*/=main/' \
+		-e '/^MESSAGE/s/=.*/="?"/' \
+		-e "/^DATE/s/=.*/=\"$$(date -ur $$(${AWK} \
+			'/TIMESTAMP/ { print $$3 }' ${DISTINFO_FILE}))\"/" \
+		-e '/^DIRTY/s/=.*/=portbld/' \
+		-e '/^TAG/s/=.*/=${DISTVERSIONFULL}/' \
+		${WRKSRC}/scripts/generateVersion.sh
+
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/render/OpenGL.cpp
