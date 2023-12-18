@@ -1,6 +1,6 @@
 PORTNAME=	selectwm
 PORTVERSION=	0.4.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ordiluc.net/selectwm/
 
@@ -8,8 +8,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK application to let you select a window manager when starting X
 WWW=		https://ordiluc.net/selectwm/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Last upstream release was in 2004
+EXPIRATION_DATE=	2024-01-18
+
 USES=		gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo \
