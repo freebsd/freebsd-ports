@@ -1,8 +1,7 @@
 PORTNAME=	slurm
-DISTVERSION=	20.02.7
-PORTREVISION=	3
-CATEGORIES=	sysutils python
-MASTER_SITES=	https://ftp.icm.edu.pl/packages/slurm/
+DISTVERSION=	23.11.1
+CATEGORIES=	sysutils
+MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,10 +17,19 @@ NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libsysinfo.so:devel/libsysinfo \
 		libmunge.so:security/munge \
-		liblz4.so:archivers/liblz4
+		liblz4.so:archivers/liblz4 \
+		libze_loader.so:devel/level-zero \
+		libhttp_parser.so:www/http-parser \
+		libunwind.so:devel/libunwind \
+		librdkafka.so:net/librdkafka \
+		libyaml.so:textproc/libyaml \
+		libdbus-1.so:devel/dbus \
+		libcheck.so:devel/check \
+		libtbb.so:devel/onetbb \
+		libjwt.so:www/libjwt
 
-USES=		compiler:c11 cpe gmake gnome libtool localbase lua perl5 \
-		pkgconfig python:build readline shebangfix ssl tar:bz2
+USES=		compiler:c11 cpe gmake gnome libtool localbase lua mysql:client	\
+		perl5 pkgconfig python:build readline shebangfix ssl tar:bz2
 USE_PERL5=	build
 CPE_VENDOR=	schedmd
 USE_LDCONFIG=	yes
@@ -32,10 +40,11 @@ GROUPS=		${USERS}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+TEST_TARGET=	check
+PLIST_SUB=	PORTVERSION="${DISTVERSION}" VER="${DISTVERSION:R}"
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
-OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI MYSQL RRD
+OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI RRD
 OPTIONS_DEFAULT=	HDF5 HWLOC
 OPTIONS_SUB=		yes
 
@@ -51,14 +60,12 @@ DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	libcurl
 
-GUI_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20
+GUI_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20,pango
 GUI_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
+			libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz
 GUI_USES=		gettext
 GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
-# Neither of these work.  See post-patch below.
-#GTK2_CONFIGURE_ENV_OFF=	ac_gtk_test=no
-#GTK2_CONFIGURE_OFF=	--disable-gtktest
 
 HDF5_LIB_DEPENDS=	libhdf5_cpp.so:science/hdf5 \
 			libsz.so:science/libaec
@@ -71,58 +78,62 @@ HWLOC_CONFIGURE_WITH=	hwloc
 IPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 IPMI_CONFIGURE_WITH=	freeipmi
 
-MYSQL_USES=		mysql
-MYSQL_CONFIGURE_OFF=	--with-mysql_config=/nonexistent
-
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRD_CONFIGURE_WITH=	rrdtool
 
-# --docdir is non-functional
-# CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 # FreeBSD Infiniband support is still experimental
 # slurmrestd does not build on FreeBSD
-CONFIGURE_ARGS=	--without-ofed --disable-slurmrestd
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
+CONFIGURE_ARGS=	--without-ofed --disable-slurmrestd	\
+		--with-mysql_config=${LOCALBASE}/bin	\
+		--docdir=${DOCSDIR} --htmldir=${DOCSDIR}
 
-CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -fcommon
+CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include	\
+		-I${LOCALBASE}/include/level_zero		\
+		-I${LOCALBASE}/include/librdkafka		\
+		-fcommon -D__BSD_VISIBLE=1
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lprocstat -fcommon
+
+PROC2FIX=	common/callerid.c common/fd.c common/fetch_config.c	\
+		interfaces/proctrack.c	\
+		plugins/acct_gather_energy/rapl/acct_gather_energy_rapl.c	\
+		plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c	\
+		plugins/burst_buffer/common/burst_buffer_common.c	\
+		plugins/cgroup/v1/xcgroup.c plugins/cgroup/v2/cgroup_v2.c	\
+		plugins/gpu/nvml/gpu_nvml.c	\
+		plugins/job_container/tmpfs/job_container_tmpfs.c	\
+		plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c	\
+		plugins/jobacct_gather/common/common_jag.c	\
+		plugins/jobacct_gather/linux/jobacct_gather_linux.c	\
+		plugins/node_features/knl_generic/node_features_knl_generic.c	\
+		plugins/proctrack/cgroup/proctrack_cgroup.c	\
+		plugins/proctrack/cray_aries/proctrack_cray_aries.c	\
+		plugins/proctrack/linuxproc/kill_tree.c	\
+		plugins/proctrack/pgid/proctrack_pgid.c	\
+		plugins/switch/cray_aries/scaling.c	\
+		plugins/task/affinity/affinity.c slurmd/common/set_oomadj.c	\
+		slurmd/common/xcpuinfo.c slurmd/slurmstepd/pdebug.c	\
+		slurmd/slurmstepd/req.c
+
+LLD2FIX=	api plugins/openapi sacctmgr sackd scontrol scrontab scrun	\
+		slurmctld slurmd/slurmd squeue
 
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
-	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
+	${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
 		${WRKSRC}/configure
 
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
 pre-configure:
-	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
-	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
+	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
+	${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/configure
-
-	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
+.for src in ${PROC2FIX}
+	${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		-e 's|(/proc)|(/compat/linux/proc)|g' \
-		${WRKSRC}/src/slurmd/slurmstepd/req.c \
-		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
-		${WRKSRC}/src/slurmd/common/xcpuinfo.c \
-		${WRKSRC}/src/slurmd/common/xcgroup.c \
-		${WRKSRC}/src/slurmd/common/set_oomadj.c \
-		${WRKSRC}/src/slurmd/common/proctrack.c \
-		${WRKSRC}/src/common/callerid.c \
-		${WRKSRC}/src/plugins/task/affinity/affinity.c \
-		${WRKSRC}/src/plugins/acct_gather_energy/rapl/acct_gather_energy_rapl.c \
-		${WRKSRC}/src/plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c \
-		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
-		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
-		${WRKSRC}/src/plugins/switch/cray_aries/scaling.c \
-		${WRKSRC}/src/plugins/proctrack/cray_aries/proctrack_cray_aries.c \
-		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
-		${WRKSRC}/src/plugins/proctrack/pgid/proctrack_pgid.c \
-		${WRKSRC}/src/plugins/proctrack/linuxproc/kill_tree.c \
-		${WRKSRC}/src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c \
-		${WRKSRC}/src/plugins/node_features/knl_generic/node_features_knl_generic.c \
-		${WRKSRC}/contribs/cray/pam_job.c
-
+		${WRKSRC}/src/${src}
+.endfor
 	@if ${WHICH} sbatch > /dev/null; then \
 		${ECHO_CMD} "********************************************"; \
 		${ECHO_CMD} "Build may fail while slurm-wlm is installed."; \
@@ -130,6 +141,10 @@ pre-configure:
 		${ECHO_CMD} "********************************************"; \
 		false; \
 	fi
+	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|-r -o|-r -m elf_${ARCH} -o|'
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|htmldir = \$${datadir.*$$|htmldir = @htmldir@|'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \

@@ -1,86 +1,79 @@
---- etc/slurm.conf.example.orig	2020-03-26 21:44:05 UTC
+--- etc/slurm.conf.example.orig	2023-11-21 22:33:29 UTC
 +++ etc/slurm.conf.example
 @@ -8,8 +8,9 @@
- #
+ # Put this file on all nodes of your cluster.
  # See the slurm.conf man page for more information.
  #
--ClusterName=linux
--ControlMachine=linux0
+-ClusterName=cluster
+-SlurmctldHost=linux0
 +ClusterName=Beastie
 +# Short hostname of the head node
-+ControlMachine=head
- #ControlAddr=
- #BackupController=
- #BackupAddr=
-@@ -25,8 +26,8 @@ StateSaveLocation=/var/spool/slurm/ctld
- SlurmdSpoolDir=/var/spool/slurm/d
- SwitchType=switch/none
- MpiDefault=none
--SlurmctldPidFile=/var/run/slurmctld.pid
--SlurmdPidFile=/var/run/slurmd.pid
-+SlurmctldPidFile=/var/run/slurm/slurmctld.pid
-+SlurmdPidFile=/var/run/slurm/slurmd.pid
- ProctrackType=proctrack/pgid
- #PluginDir=
- #FirstJobId=
-@@ -34,7 +35,7 @@ ReturnToService=0
- #MaxJobCount=
- #PlugStackConfig=
- #PropagatePrioProcess=
++SlurmctldHost=head
+ #SlurmctldHost=
+ #
+ #DisableRootJobs=NO
+@@ -41,7 +42,7 @@ ProctrackType=proctrack/cgroup
+ #PrologFlags=
+ #PrologSlurmctld=
+ #PropagatePrioProcess=0
 -#PropagateResourceLimits=
 +PropagateResourceLimits=NONE
  #PropagateResourceLimitsExcept=
- #Prolog=
- #Epilog=
-@@ -42,7 +43,9 @@ ReturnToService=0
- #SrunEpilog=
- #TaskProlog=
+ #RebootProgram=
+ ReturnToService=1
+@@ -58,6 +59,8 @@ TaskPlugin=task/affinity
+ SwitchType=switch/none
  #TaskEpilog=
--#TaskPlugin=
-+TaskPlugin=task/affinity
+ TaskPlugin=task/affinity
 +TaskPluginParam=cores
 +# For debugging: TaskPluginParam=cores,verbose
- #TrackWCKey=no
- #TreeWidth=50
- #TmpFS=
-@@ -57,10 +60,11 @@ KillWait=30
- Waittime=0
+ #TaskProlog=
+ #TopologyPlugin=topology/tree
+ #TmpFS=/tmp
+@@ -88,11 +91,12 @@ Waittime=0
+ #
  #
  # SCHEDULING
+-#DefMemPerCPU=0
 +DefMemPerCPU=256
+ #MaxMemPerCPU=0
+ #SchedulerTimeSlice=30
  SchedulerType=sched/backfill
- #SchedulerAuth=
  SelectType=select/cons_tres
--SelectTypeParameters=CR_Core
 +SelectTypeParameters=CR_Core_Memory
- #PriorityType=priority/multifactor
- #PriorityDecayHalfLife=14-0
- #PriorityUsageResetPeriod=14-0
-@@ -72,22 +76,58 @@ SelectTypeParameters=CR_Core
  #
- # LOGGING
+ #
+ # JOB PRIORITY
+@@ -115,9 +119,11 @@ SelectType=select/cons_tres
+ #AccountingStorageHost=
+ #AccountingStoragePass=
+ #AccountingStoragePort=
+-AccountingStorageType=accounting_storage/none
++#AccountingStorageType=accounting_storage/slurmdb
++#AccountingStorageLoc=/home/slurm/Accounting
++#AccountingStoreJobComment=YES
+ #AccountingStorageUser=
+-#AccountingStoreFlags=
++AccountingStoreFlags=job_comment
+ #JobCompHost=
+ #JobCompLoc=
+ #JobCompPass=
+@@ -128,9 +134,9 @@ SlurmctldDebug=info
+ JobAcctGatherFrequency=30
+ JobAcctGatherType=jobacct_gather/none
  SlurmctldDebug=info
 -SlurmctldLogFile=/var/log/slurmctld.log
 +SlurmctldLogFile=/var/log/slurm/slurmctld
  SlurmdDebug=info
 -SlurmdLogFile=/var/log/slurmd.log
 +SlurmdLogFile=/var/log/slurm/slurmd
- JobCompType=jobcomp/none
- #JobCompLoc=
+ #SlurmSchedLogFile=
+ #SlurmSchedLogLevel=
+ #DebugFlags=
+@@ -148,6 +154,41 @@ SlurmdLogFile=/var/log/slurmd.log
+ #SuspendTime=
  #
- # ACCOUNTING
--#JobAcctGatherType=jobacct_gather/linux
-+JobAcctGatherType=jobacct_gather/none
- #JobAcctGatherFrequency=30
  #
--#AccountingStorageType=accounting_storage/slurmdbd
-+AccountingStorageType=accounting_storage/filetxt
-+AccountingStorageLoc=/home/slurm/Accounting
-+AccountingStoreJobComment=YES
- #AccountingStorageHost=
- #AccountingStorageLoc=
- #AccountingStoragePass=
- #AccountingStorageUser=
 +
 +############################################################################
 +# Enable power saving if remote IPMI power-on is available on compute nodes.
@@ -89,7 +82,7 @@
 +# login shell in order to execute shutdown on compute nodes.
 +# If you prefer to control power manually, see the following scripts
 +# from the SPCM port:
- #
++ #
 +#       auto-ipmi-remote-power
 +#       cluster-power-saver
 +#       cluster-power-waster
@@ -112,7 +105,7 @@
 +
 +#
  # COMPUTE NODES
--NodeName=linux[1-32] Procs=1 State=UNKNOWN
+-NodeName=linux[1-32] CPUs=1 State=UNKNOWN
 -PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
 +# Set RealMemory < avail memory in /var/run/dmesg.boot
 +# Note that it may change slightly following freebsd-update
