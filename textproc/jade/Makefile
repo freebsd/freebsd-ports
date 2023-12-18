@@ -45,9 +45,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xml/jade
 	${INSTALL_DATA} ${WRKSRC}/pubtext/xml* ${STAGEDIR}${PREFIX}/share/xml/jade
 
-.include <bsd.port.pre.mk>
-
-# Same problem with textproc/openjade.
-CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
