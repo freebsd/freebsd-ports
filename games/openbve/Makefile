@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.9.2.4
+PORTVERSION=	1.9.2.5
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,6 +20,7 @@ USE_SDL=	sdl2
 MAKEFILE=	makefile
 ALL_TARGET=	all-${WITH_DEBUG:?debug:release}
 
+# Generated with `make makenuget'
 NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		DotNetZip=1.16.0 \
 		LibUsbDotNet=2.2.29 \
