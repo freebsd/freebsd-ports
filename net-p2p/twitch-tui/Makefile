@@ -1,7 +1,6 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
-PORTREVISION=	1
+DISTVERSION=	2.6.2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +31,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		anstyle-wincon-3.0.1 \
 		autocfg-1.1.0 \
 		backtrace-0.3.68 \
-		base64-0.21.4 \
+		base64-0.21.5 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
@@ -45,10 +44,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.6 \
-		clap_builder-4.4.6 \
-		clap_derive-4.4.2 \
-		clap_lex-0.5.0 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
 		clipboard-win-4.5.0 \
 		color-eyre-0.6.2 \
 		color-spantrace-0.2.0 \
@@ -148,8 +147,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
-		libc-0.2.147 \
-		linux-raw-sys-0.4.5 \
+		libc-0.2.149 \
+		linux-raw-sys-0.4.10 \
 		lock_api-0.4.10 \
 		log-0.4.20 \
 		lru-0.12.0 \
@@ -158,7 +157,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		memoffset-0.9.0 \
 		mime-0.3.17 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.8 \
+		mio-0.8.9 \
 		nanorand-0.7.0 \
 		native-tls-0.2.11 \
 		ndk-context-0.1.1 \
@@ -170,11 +169,11 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		num_cpus-1.16.0 \
 		objc-0.2.7 \
 		object-0.31.1 \
-		once_cell-1.18.0 \
-		openssl-0.10.56 \
+		once_cell-1.19.0 \
+		openssl-0.10.60 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.91 \
+		openssl-sys-0.9.96 \
 		owo-colors-3.5.0 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
@@ -198,13 +197,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
+		redox_syscall-0.4.1 \
 		redox_users-0.4.3 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
 		reqwest-0.11.22 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.8 \
+		rustix-0.38.21 \
 		rustversion-1.0.14 \
 		rustyline-10.1.1 \
 		ryu-1.0.15 \
@@ -213,10 +213,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		scopeguard-1.2.0 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
-		serde-1.0.189 \
-		serde_derive-1.0.189 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
 		serde_json-1.0.107 \
-		serde_spanned-0.6.3 \
+		serde_spanned-0.6.4 \
 		serde_urlencoded-0.7.1 \
 		serde_with-3.4.0 \
 		serde_with_macros-3.4.0 \
@@ -230,7 +230,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		smallvec-1.11.0 \
 		smawk-0.3.1 \
 		socket2-0.4.9 \
-		socket2-0.5.3 \
+		socket2-0.5.5 \
 		spin-0.9.8 \
 		str-buf-1.0.6 \
 		strsim-0.10.0 \
@@ -239,7 +239,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		syn-2.0.28 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tempfile-3.8.0 \
+		tempfile-3.8.1 \
 		textwrap-0.16.0 \
 		thiserror-1.0.44 \
 		thiserror-impl-1.0.44 \
@@ -250,16 +250,16 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		time-macros-0.2.11 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.33.0 \
-		tokio-macros-2.1.0 \
+		tokio-1.35.0 \
+		tokio-macros-2.2.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-stream-0.1.14 \
 		tokio-util-0.6.10 \
 		tokio-util-0.7.8 \
 		toml-0.5.11 \
-		toml-0.8.2 \
-		toml_datetime-0.6.3 \
-		toml_edit-0.20.2 \
+		toml-0.8.8 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.21.0 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.31 \
