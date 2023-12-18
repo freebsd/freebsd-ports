@@ -1,15 +1,16 @@
 --- source/common/picyuv.h	2023-06-27 10:11:49.000000000 -0400
 +++ source/common/picyuv.h	2023-10-22 21:14:09.423270000 -0400
-@@ -26,5 +26,5 @@ 
+@@ -26,5 +26,6 @@
  
  #include "common.h"
 -#include "md5.h"
++#include <sys/types.h>
 +#include <md5.h>
  #include "x265.h"
  struct x265_picyuv {};
 --- source/encoder/frameencoder.h	2023-06-27 10:11:49.000000000 -0400
 +++ source/encoder/frameencoder.h	2023-10-22 21:14:52.414503000 -0400
-@@ -31,5 +31,4 @@ 
+@@ -31,5 +31,4 @@
  #include "frame.h"
  #include "picyuv.h"
 -#include "md5.h"
@@ -17,16 +18,17 @@
  #include "analysis.h"
 --- source/encoder/sei.h	2023-06-27 10:11:49.000000000 -0400
 +++ source/encoder/sei.h	2023-10-22 21:15:50.862452000 -0400
-@@ -29,5 +29,5 @@ 
+@@ -29,5 +29,6 @@
  #include "slice.h"
  #include "nal.h"
 -#include "md5.h"
++#include <sys/types.h>
 +#include <md5.h>
  
  namespace X265_NS {
 --- source/encoder/frameencoder.cpp	2023-06-27 10:11:49.000000000 -0400
 +++ source/encoder/frameencoder.cpp	2023-10-22 21:27:55.363979000 -0400
-@@ -426,5 +426,5 @@ 
+@@ -426,5 +426,5 @@
          m_seiReconPictureDigest.m_method = SEIDecodedPictureHash::MD5;
          for (int i = 0; i < planes; i++)
 -            MD5Final(&m_seiReconPictureDigest.m_state[i], m_seiReconPictureDigest.m_digest[i]);
@@ -35,7 +37,7 @@
      }
 --- source/CMakeLists.txt	2023-06-27 10:11:49.000000000 -0400
 +++ source/CMakeLists.txt	2023-10-22 21:54:36.900303000 -0400
-@@ -96,4 +96,5 @@ 
+@@ -96,4 +96,5 @@
  if(UNIX)
      list(APPEND PLATFORM_LIBS pthread)
 +    list(APPEND PLATFORM_LIBS md)
@@ -43,7 +45,7 @@
      if(LIBRT)
 --- source/common/CMakeLists.txt	2023-06-27 10:11:49.000000000 -0400
 +++ source/common/CMakeLists.txt	2023-10-22 21:21:56.177834000 -0400
-@@ -156,5 +156,4 @@ 
+@@ -156,5 +156,4 @@
      threadpool.cpp threadpool.h
      wavefront.h wavefront.cpp
 -    md5.cpp md5.h
