@@ -1,28 +1,8 @@
-Do not use the zlib and md5 implementations bundled by
-the author(s). Use base-system's...
+Do not use the brotli, md5, and zlib implementations bundled by
+the author(s). Use port's or the base-system's...
 
 	-mi
 
-+++ src/io/ZlibCompression.hh
-@@ -28,7 +28,7 @@
-  */
- 
- #include "Reader.hh"
--#include "../../dependencies/zlib/zlib.h"
-+#include <zlib.h>
- namespace Sirikata{
- class SIRIKATA_EXPORT ZlibDecoderDecompressionReader : public DecoderReader {
- protected:
-+++ src/lepton/bitops.cc
-@@ -38,7 +38,7 @@ reading and writing of arrays
- #include <algorithm>
- #include <assert.h>
- extern "C" {
--#include "../../dependencies/md5/md5.h"
-+#include <openssl/md5.h>
- }
- #include "bitops.hh"
- 
 +++ src/io/ioutil.cc
 @@ -12,5 +12,5 @@
  #include "Reader.hh"
@@ -31,69 +11,41 @@ the author(s). Use base-system's...
 +#include <openssl/md5.h>
  #ifdef _WIN32
  #include <Windows.h>
-+++ Makefile.am
-@@ -1,13 +1,13 @@
--includes = -I$(srcdir)/dependencies/xz/src/liblzma/api -I$(srcdir)/src/vp8/util -I$(srcdir)/src/vp8/model -I$(srcdir)/src/vp8/decoder -I$(srcdir)/src/vp8/encoder -I$(srcdir)/dependencies -I$(srcdir)/dependencies -I$(srcdir)/dependencies/xz/src/liblzma/common -I$(srcdir)/dependencies/xz/src/common -I$(srcdir)/dependencies/xz/src/liblzma/lzma -I$(srcdir)/dependencies/xz/src/liblzma/lz -I$(srcdir)/dependencies/xz/src/liblzma/check -I$(srcdir)/dependencies/xz/src/liblzma/rangecoder -I$(srcdir)/dependencies/xz/src/liblzma/api -I$(srcdir)/dependencies/xz/src/liblzma/simple -I$(srcdir)/dependencies/xz/src/liblzma/delta -I$(srcdir)/dependencies/xz/src/liblzma
+--- Makefile.am	2022-04-13 03:01:03.000000000 -0400
++++ Makefile.am	2023-12-17 17:58:27.679341000 -0500
+@@ -1,3 +1,3 @@
+-includes = -I$(srcdir)/dependencies/xz/src/liblzma/api -I$(srcdir)/src/vp8/util -I$(srcdir)/src/vp8/model -I$(srcdir)/src/vp8/decoder -I$(srcdir)/src/vp8/encoder -I$(srcdir)/dependencies -I$(srcdir)/dependencies -I$(srcdir)/dependencies/brotli/c/include -I$(srcdir)/dependencies/xz/src/liblzma/common -I$(srcdir)/dependencies/xz/src/common -I$(srcdir)/dependencies/xz/src/liblzma/lzma -I$(srcdir)/dependencies/xz/src/liblzma/lz -I$(srcdir)/dependencies/xz/src/liblzma/check -I$(srcdir)/dependencies/xz/src/liblzma/rangecoder -I$(srcdir)/dependencies/xz/src/liblzma/api -I$(srcdir)/dependencies/xz/src/liblzma/simple -I$(srcdir)/dependencies/xz/src/liblzma/delta -I$(srcdir)/dependencies/xz/src/liblzma
 +includes = -I$(srcdir)/src/vp8/util -I$(srcdir)/src/vp8/model -I$(srcdir)/src/vp8/decoder -I$(srcdir)/src/vp8/encoder
  
--AM_CXXFLAGS = $(CXX11_FLAGS) $(PICKY_CXXFLAGS) $(ARCH_FLAGS) $(SANITIZE_FLAGS) $(NODEBUG_CXXFLAGS) -DGIT_REVISION=\"$(shell git describe --dirty --always)\" $(includes)
+ 
+@@ -5,14 +5,14 @@
+ liblocalmd5_a_SOURCES = dependencies/md5/md5.c
+ 
+-AM_CXXFLAGS = $(CXX11_FLAGS) $(CODEC_FLAGS) $(SYSTEM_DEPENDENCIES_CFLAGS) $(ARITHMETIC_CODER_CFLAGS) $(MEMORY_MANAGEMENT_CFLAGS) $(THREAD_FLAGS) $(BILLING_FLAGS) $(PICKY_CXXFLAGS) $(BENCHMARK_CFLAGS) $(ARCH_FLAGS) $(SANITIZE_FLAGS) $(NODEBUG_CXXFLAGS) -DGIT_REVISION=\"$(shell git describe --dirty --always 2> /dev/null || basename `pwd`)\" $(includes)
 +AM_CXXFLAGS = $(CXX11_FLAGS) $(PICKY_CXXFLAGS) $(ARCH_FLAGS) $(SANITIZE_FLAGS) $(NODEBUG_CXXFLAGS) $(includes)
  
- AM_CFLAGS = $(C99_FLAGS) $(PICKY_CFLAGS) $(ARCH_FLAGS) $(SANITIZE_FLAGS) $(NODEBUG_CXXFLAGS)
+ AM_CFLAGS = $(C99_FLAGS) $(CODEC_FLAGS) $(THREAD_FLAGS) $(BILLING_FLAGS) $(BENCHMARK_CFLAGS) $(PICKY_CFLAGS) $(ARCH_FLAGS) $(SANITIZE_FLAGS) $(NODEBUG_CXXFLAGS) -I$(srcdir)/dependencies/brotli/c/include
  
--noinst_LIBRARIES = liblocalzlib.a libtestdriver.a liblocalmd5.a
+-noinst_LIBRARIES = liblocalzlib.a liblocalmd5.a libtestdriver.a liblocalbrotli.a
 +noinst_LIBRARIES = libtestdriver.a
  
- bin_PROGRAMS = lepton test_suite/test_invariants
+ bin_PROGRAMS = lepton
+ noinst_PROGRAMS = test_suite/test_invariants
  
--lepton_LDADD = liblocalmd5.a liblocalzlib.a -lpthread
-+lepton_LDADD = -lz -lcrypto -lpthread
+-lepton_LDADD = liblocalmd5.a liblocalbrotli.a $(SYSTEM_DEPENDENCIES_LDFLAGS) -lpthread
++lepton_LDADD = -lz -lcrypto -lpthread -L${LOCALBASE}/lib -lbrotlidec -lbrotlienc
  
  lepton_SOURCES = \
-@@ -80,5 +80,4 @@
+@@ -92,5 +92,4 @@
     src/vp8/model/model.cc \
     src/vp8/model/model.hh \
 -   src/vp8/model/numeric.cc \
     src/vp8/model/numeric.hh \
     src/vp8/model/jpeg_meta.hh \
-@@ -94,33 +93,4 @@
-    src/vp8/decoder/vpx_bool_reader.hh
- 
--liblocalmd5_a_SOURCES = dependencies/md5/md5.c
--
--liblocalzlib_a_SOURCES = dependencies/zlib/inflate.c \
--dependencies/zlib/inflate.h \
--dependencies/zlib/gzguts.h \
--dependencies/zlib/infback.c \
--dependencies/zlib/trees.c \
--dependencies/zlib/adler32.c \
--dependencies/zlib/gzclose.c \
--dependencies/zlib/inftrees.h \
--dependencies/zlib/zconf.h \
--dependencies/zlib/compress.c \
--dependencies/zlib/crc32.c \
--dependencies/zlib/crc32.h \
--dependencies/zlib/trees.h \
--dependencies/zlib/inftrees.c \
--dependencies/zlib/zutil.c \
--dependencies/zlib/gzwrite.c \
--dependencies/zlib/zutil.h \
--dependencies/zlib/zlib.h \
--dependencies/zlib/inffixed.h \
--dependencies/zlib/deflate.c \
--dependencies/zlib/inffast.h \
--dependencies/zlib/inffast.c \
--dependencies/zlib/uncompr.c \
--dependencies/zlib/gzread.c \
--dependencies/zlib/deflate.h \
--dependencies/zlib/gzlib.c
--
- libtestdriver_a_SOURCES = test_suite/timing_driver.cc
- 
-@@ -142,5 +112,5 @@
+@@ -232,5 +231,5 @@
     src/io/DecoderPlatform.hh
  
--test_suite_test_invariants_LDADD = liblocalzlib.a liblocalmd5.a
-+test_suite_test_invariants_LDADD = -lz -lcrypto
+-test_suite_test_invariants_LDADD = $(SYSTEM_DEPENDENCIES_LDFLAGS) liblocalmd5.a
++test_suite_test_invariants_LDADD = $(SYSTEM_DEPENDENCIES_LDFLAGS) -lcrypto
  
- check_PROGRAMS = test_suite/test_recode_memory_bound test_suite/test_truncate_lowmem test_suite/test_android_lowmem test_suite/test_invariants test_suite/test_baseline_ujg test_suite/test_baseline test_suite/test_misc test_suite/test_iphone test_suite/test_phone_outdoor test_suite/test_truncate_ujg test_suite/test_truncate test_suite/test_SLR test_suite/test_progressive_ujg test_suite/test_progressive_disallowed test_suite/test_progressive test_suite/test_arithmetic_failfast test_suite/test_hq test_suite/test_baseline_unjailed test_suite/test_baseline_unjailed_thread test_suite/test_baseline_unjailed_decode test_suite/test_baseline_unjailed_decode_thread test_suite/test_seccomp_encode_main test_suite/test_seccomp_encode_thread  test_suite/test_seccomp_decode_main test_suite/test_seccomp_decode_thread test_suite/test_nofsync test_suite/test_colorswap test_suite/test_odd_rst test_suite/test_trailing_header test_suite/test_trailing_rst test_suite/test_gray2sf test_suite/test_truncated_zero_run test_suite/test_bad_zero_run
+ check_PROGRAMS = test_suite/test_recode_memory_bound test_suite/test_truncate_lowmem test_suite/test_android_lowmem test_suite/test_invariants test_suite/test_baseline_ujg test_suite/test_baseline test_suite/test_misc test_suite/test_iphone test_suite/test_phone_outdoor test_suite/test_truncate test_suite/test_single_row_truncate test_suite/test_SLR test_suite/test_progressive_ujg test_suite/test_progressive_disallowed test_suite/test_progressive test_suite/test_arithmetic_failfast test_suite/test_hq test_suite/test_baseline_unjailed test_suite/test_baseline_unjailed_thread test_suite/test_baseline_unjailed_decode test_suite/test_baseline_unjailed_decode_thread test_suite/test_seccomp_encode_main test_suite/test_seccomp_encode_thread  test_suite/test_seccomp_decode_main test_suite/test_seccomp_decode_thread test_suite/test_nofsync test_suite/test_colorswap test_suite/test_odd_rst test_suite/test_trailing_header test_suite/test_trailing_rst test_suite/test_gray2sf test_suite/test_truncated_zero_run test_suite/test_bad_zero_run
