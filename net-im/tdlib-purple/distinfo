@@ -1,0 +1,5 @@
+TIMESTAMP = 1702875649
+SHA256 (ars3niy-tdlib-purple-v0.8.1_GH0.tar.gz) = 8eb8b10c714368d7435d34ccda66a918e59c4cb4d2f49b6e16a246a78abd1a62
+SIZE (ars3niy-tdlib-purple-v0.8.1_GH0.tar.gz) = 776564
+SHA256 (8c87b899ddbec32.patch) = b6861f1129a8e17564c2f4abfc264fc95801ad22d00326c3c05d3003fd1b3832
+SIZE (8c87b899ddbec32.patch) = 11742

@@ -1,0 +1,9 @@
+lib/purple-2/libtelegram-tdlib.so
+share/pixmaps/pidgin/protocols/16/telegram.png
+share/pixmaps/pidgin/protocols/22/telegram.png
+share/pixmaps/pidgin/protocols/48/telegram.png
+share/metainfo/tdlib-purple.metainfo.xml
+%%NLS%%share/locale/cs/LC_MESSAGES/tdlib-purple.mo
+%%NLS%%share/locale/de/LC_MESSAGES/tdlib-purple.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/tdlib-purple.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/tdlib-purple.mo

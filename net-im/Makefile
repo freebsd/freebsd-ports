@@ -142,6 +142,7 @@
     SUBDIR += sshout
     SUBDIR += talkatu
     SUBDIR += tdlib
+    SUBDIR += tdlib-purple
     SUBDIR += teamwords
     SUBDIR += telegram-cli
     SUBDIR += telegram-desktop
