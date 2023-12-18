@@ -9,14 +9,17 @@ WWW=		https://github.com/bbidulock/flwm
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Last upstream release and activity was in 2015
+EXPIRATION_DATE=	2024-01-19
+
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		autoreconf gmake xorg
-GNU_CONFIGURE=	yes
-USE_XORG=	x11 xt
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbidulock
+USE_XORG=	x11 xt
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/flwm \
 		man/man1/flwm.1.gz
