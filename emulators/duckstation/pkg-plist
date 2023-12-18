@@ -6,6 +6,7 @@ share/pixmaps/duckstation.png
 %%DATADIR%%/resources/fonts/Roboto-Regular.ttf
 %%DATADIR%%/resources/fonts/RobotoMono-Medium.ttf
 %%DATADIR%%/resources/fonts/fa-solid-900.ttf
+%%DATADIR%%/resources/fonts/promptfont.otf
 %%DATADIR%%/resources/fullscreenui/NTSC-J.png
 %%DATADIR%%/resources/fullscreenui/NTSC-U.png
 %%DATADIR%%/resources/fullscreenui/PAL.png
