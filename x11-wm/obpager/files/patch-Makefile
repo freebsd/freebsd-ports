@@ -1,6 +1,6 @@
---- Makefile.orig	2009-03-07 18:16:51.000000000 +0100
-+++ Makefile	2009-03-07 18:19:50.000000000 +0100
-@@ -7,18 +7,18 @@
+--- Makefile.orig	2004-09-01 14:23:44 UTC
++++ Makefile
+@@ -7,18 +7,18 @@ DEPDIR = ./deps
  
  
  # Set the install directory for the executable

@@ -1,5 +1,5 @@
---- src/main.cc.orig	2009-03-07 18:24:50.000000000 +0100
-+++ src/main.cc	2009-03-07 18:24:58.000000000 +0100
+--- src/main.cc.orig	2004-09-01 14:23:44 UTC
++++ src/main.cc
 @@ -26,6 +26,7 @@
  
  #include <sys/types.h>
