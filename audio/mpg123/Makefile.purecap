@@ -1,1 +1,2 @@
-BROKEN_purecap_failed=1
+# disable assembly since it's no adapted to CHERI
+CONFIGURE_ARGS+=--with-cpu=generic_fpu
