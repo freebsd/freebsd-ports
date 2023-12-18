@@ -6,7 +6,7 @@ MASTER_SITES=	https://gitlab.com/siesta-project/${PORTNAME}/-/releases/v${DISTVE
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program to perform efficient electronic structure calculations
-WWW=		https://icmab.es/siesta
+WWW=		https://siesta-project.org/siesta/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
