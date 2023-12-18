@@ -1,6 +1,7 @@
 PORTNAME=	imgui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.90
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,14 +41,18 @@ ALLEGRO5_LIB_DEPENDS=		liballegro.so:devel/allegro5 # even though binary doesn't
 
 GLFW_DESC=			Install GLFW backend
 GLFW_CMAKE_BOOL=		IMGUI_BUILD_GLFW_BINDING
+GLFW_USES=			gl
+GLFW_USE=			GL=gl
 GLFW_LIB_DEPENDS=		libglfw.so:graphics/glfw
 
 OPENGL2_DESC=			Install OPENGL2 backend
-OPENGL2_USES=			localbase
+OPENGL2_USES=			gl localbase
+OPENGL2_USE=			GL=gl
 OPENGL2_CMAKE_BOOL=		IMGUI_BUILD_OPENGL2_BINDING
 
 OPENGL3_DESC=			Install OPENGL3 backend
-OPENGL3_USES=			localbase
+OPENGL3_USES=			gl localbase
+OPENGL3_USE=			GL=gl
 OPENGL3_CMAKE_BOOL=		IMGUI_BUILD_OPENGL3_BINDING
 
 SDL2_DESC=			Install SDL2 backend
