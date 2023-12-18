@@ -1,6 +1,6 @@
 PORTNAME=	outcome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.7-20230815
+DISTVERSION=	2.2.8
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,6 @@ USES=		cmake:testing compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ned14
-GH_TAGNAME=	1407d02
 GH_TUPLE=	ned14:status-code:6bd2d56:status_code/include/outcome/experimental/status-code
 
 CMAKE_OFF=	BUILD_TESTING
