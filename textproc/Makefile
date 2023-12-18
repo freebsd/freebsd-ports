@@ -224,6 +224,7 @@
     SUBDIR += flex
     SUBDIR += flip
     SUBDIR += fmtlatex
+    SUBDIR += fmtlib
     SUBDIR += fo-aspell
     SUBDIR += foiltex
     SUBDIR += fop

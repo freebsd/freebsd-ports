@@ -1,0 +1,14 @@
+{fmt} is an open-source formatting library providing a fast and
+safe alternative to C stdio and C++ iostreams.
+
+* Simple format API with positional arguments for localization
+* Implementation of C++20 std::format and C++23 std::print
+* Format string syntax similar to Python's format
+* Fast IEEE 754 floating-point formatter with correct rounding, shortness
+  and round-trip guarantees using the Dragonbox algorithm
+* Portable Unicode support
+* Safe printf implementation including the POSIX extension for
+  positional arguments
+
+If you like this project, please consider donating to one of the
+funds that help victims of the war in Ukraine: www.stopputin.net/
