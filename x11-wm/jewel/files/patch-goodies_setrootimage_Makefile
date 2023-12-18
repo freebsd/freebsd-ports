@@ -1,5 +1,5 @@
---- goodies/setrootimage/Makefile.orig	2013-09-26 17:15:12.000000000 +0200
-+++ goodies/setrootimage/Makefile	2013-09-26 17:16:58.000000000 +0200
+--- goodies/setrootimage/Makefile.orig	2005-01-03 21:54:58 UTC
++++ goodies/setrootimage/Makefile
 @@ -1,5 +1,5 @@
 -CC        = g++
 -CFLAGS    = -g -O2 -Wall

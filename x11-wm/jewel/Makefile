@@ -6,10 +6,13 @@ MASTER_SITES=	http://mjr.towers.org.uk/comp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on aewm++
-WWW=		http://www.mjr.dsl.pipex.com/xwinman.html #jewel
+WWW=		https://mjr.towers.org.uk/xwinman.html #jewel
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Last upstream release was in 2004
+EXPIRATION_DATE=	2024-01-19
 
 USES=		compiler gmake xorg
 USE_CXXSTD=	c++14

@@ -1,6 +1,6 @@
---- goodies/fspanel/fspanel.h.orig	2013-09-26 17:22:27.000000000 +0200
-+++ goodies/fspanel/fspanel.h	2013-09-26 17:22:37.000000000 +0200
-@@ -55,7 +55,7 @@
+--- goodies/fspanel/fspanel.h.orig	2005-01-03 21:54:58 UTC
++++ goodies/fspanel/fspanel.h
+@@ -55,7 +55,7 @@ void set_top_strut();
  
  void set_bottom_strut();
  void set_top_strut();

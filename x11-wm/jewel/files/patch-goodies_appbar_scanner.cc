@@ -1,6 +1,6 @@
---- goodies/appbar/scanner.cc.orig	2007-12-06 20:49:35.000000000 +0100
-+++ goodies/appbar/scanner.cc	2007-12-06 20:50:28.000000000 +0100
-@@ -156,7 +156,7 @@
+--- goodies/appbar/scanner.cc.orig	2005-01-03 21:54:58 UTC
++++ goodies/appbar/scanner.cc
+@@ -156,7 +156,7 @@ void Scanner::concat(int type)
  {
  	s_token.empty();	
  
@@ -9,7 +9,7 @@
  	{
  		s_token += character;
  
-@@ -177,7 +177,7 @@
+@@ -177,7 +177,7 @@ void Scanner::getNextToken(bool spaces) 
  		if (!spaces) {
  			char_class[' ']=whitespace;	
  
@@ -18,7 +18,7 @@
  			{
  				if( inputFile.eof() ) return;
  		
-@@ -192,7 +192,7 @@
+@@ -192,7 +192,7 @@ void Scanner::getNextToken(bool spaces) 
  		}
  	}
  

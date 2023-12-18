@@ -1,5 +1,5 @@
---- goodies/setrootimage/setrootimage.cc.orig	2007-12-06 21:20:21.000000000 +0100
-+++ goodies/setrootimage/setrootimage.cc	2007-12-06 21:24:15.000000000 +0100
+--- goodies/setrootimage/setrootimage.cc.orig	2005-01-03 21:54:58 UTC
++++ goodies/setrootimage/setrootimage.cc
 @@ -31,6 +31,9 @@
   * Released under the GNU GPL license
   * www.gnu.org
@@ -10,7 +10,7 @@
  #include <X11/Xlib.h>
  #include <X11/xpm.h>
  #include <stdlib.h>
-@@ -56,10 +59,11 @@
+@@ -56,10 +59,11 @@ BColor parseCommandlineColor(char* the_color)
  		temp_blue[1] = the_color[i];
  	}
  
@@ -24,7 +24,7 @@
  	return color;
  }
  
-@@ -86,10 +90,10 @@
+@@ -86,10 +90,10 @@ int main (int argc, char * argv[])
  	Pixmap root_pix = None;
  	BColor to, from;
  	

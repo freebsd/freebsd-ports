@@ -1,6 +1,6 @@
---- windowmanager.cc.orig	2007-12-06 20:41:35.000000000 +0100
-+++ windowmanager.cc	2007-12-06 20:47:01.000000000 +0100
-@@ -51,24 +51,24 @@
+--- windowmanager.cc.orig	2005-01-03 21:54:59 UTC
++++ windowmanager.cc
+@@ -51,24 +51,24 @@ WindowManager::WindowManager(int argc, char** argv)
  	// Set the global window manager object to this please =)
      	wm = this;
  	
@@ -39,7 +39,7 @@
  
  // These macro's are nice to test values passed in 
  // the command line arguments	
-@@ -1557,21 +1557,21 @@
+@@ -1557,21 +1557,21 @@ void WindowManager::focusNextWindowInStackingOrder()
  		// find the client in the list...
  		it = find(clientList->begin(), clientList->end(), c);
  
@@ -66,7 +66,7 @@
  		} while (cycles < clientList->size() && (shouldSkipThisWindow((*it)->getAppWindow()) || (*it)->isIconified() || (*it)->belongsToWhichDesktop() != currentDesktop));
  		
  #ifdef DEBUG
-@@ -1588,7 +1588,7 @@
+@@ -1588,7 +1588,7 @@ void WindowManager::focusNextWindowInStackingOrder()
  
  		// if we found a suitable "next client", raise and focus
  		// it; otherwise, leave focus where it is

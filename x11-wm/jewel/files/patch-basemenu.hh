@@ -1,5 +1,5 @@
---- basemenu.hh.orig	Mon Aug 19 17:53:47 2002
-+++ basemenu.hh	Tue Apr  8 19:53:56 2003
+--- basemenu.hh.orig	2005-01-03 21:54:59 UTC
++++ basemenu.hh
 @@ -24,6 +24,8 @@
  #ifndef _BASEMENU_HH_
  #define _BASEMENU_HH_
