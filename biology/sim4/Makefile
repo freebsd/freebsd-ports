@@ -12,7 +12,7 @@ WWW=		http://globin.cse.psu.edu/
 LICENSE=	GPLv2
 
 DEPRECATED=	Upstream last update was in 2005
-EXPIRATION_DATE=	2023-01-17
+EXPIRATION_DATE=	2024-01-17
 
 WRKSRC=		${WRKDIR}/sim4.${PORTVERSION:S/./-/g}
 
