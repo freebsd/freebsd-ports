@@ -1,7 +1,6 @@
 @sample etc/gotosocial/config.yaml.sample
 %%WWWDIR%%/template/about.tmpl
 %%WWWDIR%%/template/header.tmpl
-%%WWWDIR%%/template/tag.tmpl
 %%WWWDIR%%/template/thread.tmpl
 %%WWWDIR%%/template/frontend.tmpl
 %%WWWDIR%%/template/oob.tmpl
@@ -21,6 +20,9 @@
 %%WWWDIR%%/template/authorize.tmpl
 %%WWWDIR%%/template/domain-blocklist.tmpl
 %%WWWDIR%%/template/finalize.tmpl
+%%WWWDIR%%/template/tag.tmpl
+%%WWWDIR%%/template/status_attachments.tmpl
+%%WWWDIR%%/template/status_poll.tmpl
 %%WWWDIR%%/assets/LICENSE
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon5.png
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon2.png
@@ -52,7 +54,6 @@
 %%WWWDIR%%/assets/Fork-Awesome/css/fork-awesome.min.css
 %%WWWDIR%%/assets/tusky.svg
 %%WWWDIR%%/assets/logo.png
-%%WWWDIR%%/assets/feditext.svg
 %%WWWDIR%%/assets/dist/index.css
 %%WWWDIR%%/assets/dist/profile.css
 %%WWWDIR%%/assets/dist/_colors.css
@@ -62,6 +63,7 @@
 %%WWWDIR%%/assets/dist/base.css
 %%WWWDIR%%/assets/dist/frontend.js
 %%WWWDIR%%/assets/dist/tag.css
+%%WWWDIR%%/assets/feditext.svg
 %%WWWDIR%%/assets/swagger.yaml
 bin/gotosocial
 share/doc/gotosocial/LICENSE
