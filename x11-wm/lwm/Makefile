@@ -10,16 +10,20 @@ WWW=		https://www.jfc.org.uk/software/lwm.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last upstream release was in 2016
+EXPIRATION_DATE=	2024-01-18
+
 USES=		pkgconfig xorg
 USE_XORG=	sm x11 xext
+
 MAKEFILE=	no_xmkmf_makefile
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
 CFLAGS+=	`pkg-config --cflags sm x11 xext ice` -DSHAPE
 LDFLAGS+=	`pkg-config --libs sm x11 xext ice`
 
-PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS
 
