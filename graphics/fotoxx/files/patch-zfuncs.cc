@@ -78,7 +78,7 @@
 @@ -1060,7 +1096,7 @@ double get_seconds()
     timespec    time1;
     double      secs;
-    
+ 
 -   clock_gettime(CLOCK_MONOTONIC_RAW,&time1);
 +   clock_gettime(CLOCK_MONOTONIC,&time1);
     secs = time1.tv_sec;
@@ -164,7 +164,7 @@
 @@ -6109,9 +6154,16 @@ int zinitapp(ch *appvers, int argc, ch *argv[])       
     if (argc > 1 && strmatchV(argv[1],"-ver","-v",0)) exit(0);                    //  exit if nothing else wanted
  
-    progexe = 0;   
+    progexe = 0;
 +#if defined(__linux__)
     cc = readlink("/proc/self/exe",buff,300);                                     //  get my executable program path
     if (cc <= 0) zexit(1,"readlink() /proc/self/exe) failed");
