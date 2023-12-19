@@ -1174,6 +1174,7 @@
     SUBDIR += vulkan-headers
     SUBDIR += vulkan-loader
     SUBDIR += vulkan-tools
+    SUBDIR += vulkan-utility-libraries
     SUBDIR += vulkan-validation-layers
     SUBDIR += vv
     SUBDIR += waffle
