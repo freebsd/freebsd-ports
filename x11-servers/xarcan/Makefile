@@ -1,5 +1,6 @@
 PORTNAME=	xarcan
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	jbeich@FreeBSD.org
