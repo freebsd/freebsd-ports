@@ -2,5 +2,5 @@ lib/cmake/VulkanLoader/VulkanLoaderConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/VulkanLoader/VulkanLoaderConfig.cmake
 lib/libvulkan.so
 lib/libvulkan.so.1
-lib/libvulkan.so.1.3.273
+lib/libvulkan.so.1.3.274
 libdata/pkgconfig/vulkan.pc
