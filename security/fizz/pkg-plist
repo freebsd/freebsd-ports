@@ -98,6 +98,7 @@ include/fizz/protocol/Certificate-inl.h
 include/fizz/protocol/Certificate.h
 include/fizz/protocol/CertificateVerifier.h
 include/fizz/protocol/DefaultCertificateVerifier.h
+include/fizz/protocol/DefaultFactory.h
 include/fizz/protocol/Events.h
 include/fizz/protocol/Exporter.h
 include/fizz/protocol/Factory.h
@@ -105,7 +106,6 @@ include/fizz/protocol/FizzBase-inl.h
 include/fizz/protocol/FizzBase.h
 include/fizz/protocol/HandshakeContext-inl.h
 include/fizz/protocol/HandshakeContext.h
-include/fizz/protocol/IFactory.h
 include/fizz/protocol/KeyScheduler.h
 include/fizz/protocol/OpenSSLFactory.h
 include/fizz/protocol/Params.h
