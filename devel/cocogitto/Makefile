@@ -1,6 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	5.6.0
-PORTREVISION=	1
+DISTVERSION=	6.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,228 +12,213 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 
-CARGO_CRATES=	aho-corasick-0.7.20 \
+CARGO_CRATES=	aho-corasick-1.1.2 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.3.2 \
-		anstyle-1.0.0 \
-		anstyle-parse-0.2.0 \
+		anstream-0.6.4 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.2 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
-		anyhow-1.0.68 \
-		assert_cmd-1.0.8 \
-		async-trait-0.1.63 \
+		anstyle-wincon-3.0.1 \
+		anyhow-1.0.75 \
+		assert_cmd-2.0.12 \
+		async-trait-0.1.74 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		block-buffer-0.10.3 \
-		bstr-0.2.17 \
-		bstr-1.1.0 \
-		bumpalo-3.12.0 \
-		cc-1.0.78 \
+		bitflags-2.4.1 \
+		block-buffer-0.10.4 \
+		bstr-1.8.0 \
+		bumpalo-3.14.0 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.23 \
-		chrono-tz-0.6.1 \
-		chrono-tz-build-0.0.2 \
-		clap-4.2.5 \
-		clap_builder-4.2.5 \
-		clap_complete-4.1.0 \
-		clap_complete_nushell-0.1.8 \
-		clap_derive-4.2.0 \
-		clap_lex-0.4.1 \
-		clap_mangen-0.2.7 \
-		cmd_lib-1.3.0 \
-		cmd_lib_macros-1.3.0 \
-		codespan-reporting-0.11.1 \
+		chrono-0.4.31 \
+		chrono-tz-0.8.4 \
+		chrono-tz-build-0.2.1 \
+		clap-4.4.10 \
+		clap_builder-4.4.9 \
+		clap_complete-4.4.4 \
+		clap_complete_nushell-4.4.2 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
+		clap_mangen-0.2.15 \
+		cmd_lib-1.9.3 \
+		cmd_lib_macros-1.9.3 \
 		colorchoice-1.0.0 \
-		colored-2.0.0 \
-		config-0.12.0 \
+		colored-2.0.4 \
+		config-0.13.4 \
 		conventional_commit_parser-0.9.4 \
-		core-foundation-sys-0.8.3 \
-		cpufeatures-0.2.5 \
+		core-foundation-sys-0.8.4 \
+		cpufeatures-0.2.11 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
 		crypto-common-0.1.6 \
-		ctor-0.1.26 \
-		cxx-1.0.87 \
-		cxx-build-1.0.87 \
-		cxxbridge-flags-1.0.87 \
-		cxxbridge-macro-1.0.87 \
-		deunicode-0.4.3 \
+		deunicode-1.4.1 \
 		diff-0.1.13 \
-		difference-2.0.0 \
 		difflib-0.4.0 \
-		digest-0.10.6 \
+		digest-0.10.7 \
 		doc-comment-0.3.3 \
 		edit-0.1.4 \
-		either-1.8.0 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
+		either-1.9.0 \
+		env_logger-0.10.1 \
+		errno-0.3.8 \
 		faccess-0.2.4 \
-		fastrand-1.8.0 \
-		float-cmp-0.8.0 \
+		fastrand-2.0.1 \
+		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		form_urlencoded-1.1.0 \
-		fs_extra-1.2.0 \
-		generic-array-0.14.6 \
-		getrandom-0.1.16 \
-		getrandom-0.2.8 \
-		git2-0.16.1 \
-		globset-0.4.10 \
+		form_urlencoded-1.2.1 \
+		fs_extra-1.3.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.11 \
+		git2-0.18.1 \
+		globset-0.4.14 \
 		globwalk-0.8.1 \
-		heck-0.4.0 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.2 \
+		hermit-abi-0.3.3 \
+		home-0.5.5 \
 		humansize-2.1.3 \
-		iana-time-zone-0.1.53 \
-		iana-time-zone-haiku-0.1.1 \
-		idna-0.3.0 \
-		ignore-0.4.20 \
-		indoc-1.0.8 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.4 \
-		is-terminal-0.4.7 \
-		itertools-0.10.5 \
-		itoa-1.0.5 \
-		jobserver-0.1.25 \
-		js-sys-0.3.60 \
+		humantime-2.1.0 \
+		iana-time-zone-0.1.58 \
+		iana-time-zone-haiku-0.1.2 \
+		idna-0.5.0 \
+		ignore-0.4.21 \
+		indoc-2.0.4 \
+		is-terminal-0.4.9 \
+		itertools-0.11.0 \
+		itoa-1.0.9 \
+		jobserver-0.1.27 \
+		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.139 \
-		libgit2-sys-0.14.2+1.5.1 \
-		libm-0.2.7 \
-		libz-sys-1.1.8 \
-		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.3.6 \
-		log-0.4.17 \
-		memchr-2.5.0 \
+		libc-0.2.150 \
+		libgit2-sys-0.16.1+1.7.1 \
+		libm-0.2.8 \
+		libz-sys-1.1.12 \
+		linux-raw-sys-0.4.11 \
+		log-0.4.20 \
+		memchr-2.6.4 \
+		memoffset-0.9.0 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-0.4.0 \
-		num-bigint-0.4.3 \
-		num-complex-0.4.3 \
+		num-0.4.1 \
+		num-bigint-0.4.4 \
+		num-complex-0.4.4 \
 		num-integer-0.1.45 \
 		num-iter-0.1.43 \
 		num-rational-0.4.1 \
-		num-traits-0.2.15 \
-		once_cell-1.17.0 \
-		os_pipe-0.9.2 \
-		output_vt100-0.1.3 \
+		num-traits-0.2.17 \
+		once_cell-1.18.0 \
+		os_pipe-1.1.4 \
 		parse-zoneinfo-0.3.0 \
 		pathdiff-0.2.1 \
-		percent-encoding-2.2.0 \
-		pest-2.7.2 \
-		pest_derive-2.7.2 \
-		pest_generator-2.7.2 \
-		pest_meta-2.7.2 \
-		phf-0.10.1 \
-		phf_codegen-0.10.0 \
-		phf_generator-0.10.0 \
-		phf_shared-0.10.0 \
-		pkg-config-0.3.26 \
+		percent-encoding-2.3.1 \
+		pest-2.7.5 \
+		pest_derive-2.7.5 \
+		pest_generator-2.7.5 \
+		pest_meta-2.7.5 \
+		phf-0.11.2 \
+		phf_codegen-0.11.2 \
+		phf_generator-0.11.2 \
+		phf_shared-0.11.2 \
+		pkg-config-0.3.27 \
 		ppv-lite86-0.2.17 \
-		predicates-1.0.8 \
-		predicates-2.1.5 \
-		predicates-core-1.0.5 \
-		predicates-tree-1.0.7 \
-		pretty_assertions-1.3.0 \
+		predicates-3.0.4 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.56 \
+		proc-macro2-1.0.70 \
 		quick-error-1.2.3 \
-		quote-1.0.26 \
-		rand-0.7.3 \
+		quote-1.0.33 \
 		rand-0.8.5 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.4 \
-		rand_hc-0.2.0 \
-		redox_syscall-0.2.16 \
-		regex-1.7.1 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
+		redox_syscall-0.4.1 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
 		roff-0.2.1 \
-		rustix-0.37.3 \
+		rustix-0.38.25 \
 		rusty-forkfork-0.4.0 \
-		ryu-1.0.12 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
-		scratch-1.0.3 \
+		scopeguard-1.2.0 \
 		sealed_test-1.0.0 \
 		sealed_test_derive-1.0.0 \
-		semver-1.0.16 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
-		sha2-0.10.6 \
+		semver-1.0.20 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
+		serde_json-1.0.108 \
+		sha2-0.10.8 \
 		shell-words-1.1.0 \
-		siphasher-0.3.10 \
-		slug-0.1.4 \
+		siphasher-0.3.11 \
+		slug-0.1.5 \
 		speculoos-0.11.0 \
 		stderrlog-0.5.4 \
 		strsim-0.10.0 \
-		syn-1.0.107 \
-		syn-2.0.15 \
-		tempfile-3.3.0 \
-		tera-1.18.1 \
+		syn-1.0.109 \
+		syn-2.0.39 \
+		tempfile-3.8.1 \
+		tera-1.19.1 \
 		termcolor-1.1.3 \
-		termtree-0.4.0 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
-		thread_local-1.1.4 \
-		time-0.1.45 \
+		termtree-0.4.1 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
+		thread_local-1.1.7 \
 		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
+		tinyvec_macros-0.1.1 \
 		toml-0.5.11 \
-		typenum-1.16.0 \
-		ucd-trie-0.1.5 \
-		uncased-0.9.7 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.6 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-bidi-0.3.10 \
-		unicode-ident-1.0.6 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
-		unicode-width-0.1.10 \
-		url-2.3.1 \
+		url-2.5.0 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
-		walkdir-2.3.2 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
+		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
-		which-4.4.0 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		which-4.4.2 \
+		which-5.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows-sys-0.45.0 \
+		windows-core-0.51.1 \
 		windows-sys-0.48.0 \
-		windows-targets-0.42.1 \
-		windows-targets-0.48.0 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_aarch64_msvc-0.48.0 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_gnu-0.48.0 \
-		windows_i686_msvc-0.42.1 \
-		windows_i686_msvc-0.48.0 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_msvc-0.42.1 \
-		windows_x86_64_msvc-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/cog
