@@ -21,6 +21,8 @@ include/ArborX/details/ArborX_DetailsFDBSCANDenseBox.hpp
 include/ArborX/details/ArborX_DetailsHalfTraversal.hpp
 include/ArborX/details/ArborX_DetailsHappyTreeFriends.hpp
 include/ArborX/details/ArborX_DetailsHeap.hpp
+include/ArborX/details/ArborX_DetailsLegacy.hpp
+include/ArborX/details/ArborX_DetailsMinimumSpanningTree.hpp
 include/ArborX/details/ArborX_DetailsMortonCode.hpp
 include/ArborX/details/ArborX_DetailsMutualReachabilityDistance.hpp
 include/ArborX/details/ArborX_DetailsNode.hpp
@@ -37,6 +39,7 @@ include/ArborX/details/ArborX_DetailsUnionFind.hpp
 include/ArborX/details/ArborX_DetailsUtils.hpp
 include/ArborX/details/ArborX_DetailsWeightedEdge.hpp
 include/ArborX/details/ArborX_Exception.hpp
+include/ArborX/details/ArborX_IndexableGetter.hpp
 include/ArborX/details/ArborX_MinimumSpanningTree.hpp
 include/ArborX/details/ArborX_NeighborList.hpp
 include/ArborX/details/ArborX_PairIndexRank.hpp
@@ -49,14 +52,17 @@ include/ArborX/geometry/ArborX_GeometryTraits.hpp
 include/ArborX/geometry/ArborX_HyperBox.hpp
 include/ArborX/geometry/ArborX_HyperPoint.hpp
 include/ArborX/geometry/ArborX_HyperSphere.hpp
+include/ArborX/geometry/ArborX_HyperTriangle.hpp
 include/ArborX/geometry/ArborX_KDOP.hpp
 include/ArborX/geometry/ArborX_Point.hpp
 include/ArborX/geometry/ArborX_Ray.hpp
 include/ArborX/geometry/ArborX_Sphere.hpp
-include/ArborX/geometry/ArborX_Triangle.hpp
+include/ArborX/interpolation/details/ArborX_InterpDetailsCompactRadialBasisFunction.hpp
+include/ArborX/interpolation/details/ArborX_InterpDetailsPolynomialBasis.hpp
+include/ArborX/interpolation/details/ArborX_InterpDetailsSymmetricPseudoInverseSVD.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtAccessibilityTraits.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtArithmeticTraits.hpp
-include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtClassLambda.hpp
+include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtBitManipulation.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtMinMaxOperations.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtScopedProfileRegion.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtSort.hpp
