@@ -1,6 +1,6 @@
 PORTNAME=	ugrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.6
+DISTVERSION=	4.4.0
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -22,7 +22,10 @@ OPTIONS_DEFAULT_aarch64=	NEON
 OPTIONS_DEFAULT_amd64=	AVX SSE2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost-regex
+CONFIGURE_ARGS=	--with-boost-regex \
+		--with-bash-completion-dir=${PREFIX}/etc/bash_completion.d \
+		--with-fish-completion-dir=${PREFIX}/share/fish/completions \
+		--with-zsh-completion-dir=${PREFIX}/share/zsh/site-functions
 
 SHEBANG_FILES=	bin/ug+ bin/ugrep+
 bash_CMD=	${SH}
