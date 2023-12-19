@@ -1,0 +1,3 @@
+korgwm is a tiling window manager written in pure Perl on top of XCB,
+AnyEvent (for network API), and Gtk3 (which renders bar and Expose).
+It has a lot of pretty functionality so consider reading full README.
