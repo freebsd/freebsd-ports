@@ -1,3 +1,42 @@
+  <vuln vid="91955195-9ebb-11ee-bc14-a703705db3a6">
+    <topic>putty -- add protocol extension against 'Terrapin attack'</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><lt>0.80</lt></range>
+      </package>
+       <package>
+	<name>putty-nogtk</name>
+	<range><lt>0.80</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote cite="https://lists.tartarus.org/pipermail/putty-announce/2023/000037.html">
+		<p>PuTTY version 0.80 [contains] one security fix [...] for a newly discovered security issue known as the 'Terrapin'
+   attack, also numbered CVE-2023-48795. The issue affects widely-used
+   OpenSSH extensions to the SSH protocol: the ChaCha20+Poly1305
+   cipher system, and 'encrypt-then-MAC' mode.</p>
+   <p>In order to benefit from the fix, you must be using a fixed version
+   of PuTTY _and_ a server with the fix, so that they can agree to
+	   adopt a modified version of the protocol. [...]</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-48795</cvename>
+      <url>https://lists.tartarus.org/pipermail/putty-announce/2023/000037.html</url>
+      <url>https://www.openssh.com/txt/release-9.6</url>
+      <url>https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html</url>
+      <url>https://terrapin-attack.com/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-16</discovery>
+      <entry>2023-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76c2110b-9e97-11ee-ae23-a0f3c100ae18">
     <topic>slurm-wlm -- Several security issues</topic>
     <affects>
