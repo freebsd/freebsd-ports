@@ -509,8 +509,10 @@
     <topic>apache -- Apache ZooKeeper: Authorization bypass in SASL Quorum Peer Authentication</topic>
     <affects>
       <package>
-	<name>apache</name>
+	<name>zookeeper</name>
 	<range><lt>3.7.2</lt></range>
+       <range><ge>3.8.0</ge><lt>3.8.3</lt></range>
+       <range><ge>3.9.0</ge><lt>3.9.1</lt></range>
       </package>
     </affects>
     <description>
