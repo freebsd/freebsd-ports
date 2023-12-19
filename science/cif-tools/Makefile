@@ -1,6 +1,6 @@
 PORTNAME=	cif-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.9
+DISTVERSION=	1.0.11 # chemistry
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://github.com/PDB-REDO/cif-tools
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libmcfp>0:devel/libmcfp
+BUILD_DEPENDS=	libmcfp>0:devel/libmcfp \
+		mrc:devel/mrc
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libcifpp.so:science/libcifpp
 
