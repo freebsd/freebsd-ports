@@ -1,6 +1,5 @@
 PORTNAME=	rpm
-PORTVERSION=	4.18.1
-PORTREVISION=	2
+PORTVERSION=	4.18.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
@@ -12,67 +11,66 @@ WWW=		https://rpm.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:textproc/gsed \
-		${LOCALBASE}/lib/libelf.so:devel/elfutils
-LIB_DEPENDS=	libpopt.so:devel/popt \
-		libnss3.so:security/nss \
-		libzstd.so:archivers/zstd \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libelf.so:devel/elfutils \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libarchive.so:archivers/libarchive \
+		libdb-5.3.so:databases/db5 \
+		libelf.so:devel/elfutils \
 		libgcrypt.so:security/libgcrypt \
-		libelf.so:devel/elfutils
-RUN_DEPENDS=	bash:shells/bash \
-		gxargs:misc/findutils \
-		${LOCALBASE}/lib/libelf.so:devel/elfutils
+		libnss3.so:security/nss \
+		libpopt.so:devel/popt \
+		libzstd.so:archivers/zstd
+RUN_DEPENDS=	${LOCALBASE}/lib/libelf.so:devel/elfutils \
+		bash:shells/bash \
+		gxargs:misc/findutils
 
-USES=		alias bdb sqlite cpe gmake iconv libarchive libtool \
-		lua pathfix pkgconfig shebangfix tar:bzip2
+USES=		alias bdb cpe gmake iconv libarchive libtool lua pathfix \
+		pkgconfig readline shebangfix sqlite tar:bzip2
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	scripts/check-prereqs \
-		scripts/check-rpaths-worker scripts/pkgconfigdeps.sh \
-		scripts/fontconfig.prov scripts/perl.prov scripts/perl.req \
-		scripts/find-lang.sh scripts/ocamldeps.sh \
+SHEBANG_FILES=	scripts/brp-compress scripts/check-prereqs \
+		scripts/check-rpaths-worker scripts/find-lang.sh \
+		scripts/fontconfig.prov scripts/ocamldeps.sh scripts/perl.prov \
+		scripts/perl.req scripts/pkgconfigdeps.sh \
 		scripts/rpm_macros_provides.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-sqlite=yes\
-		--with-popt-prefix="${LOCALBASE}" \
-		--sysconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS=	--enable-sqlite=yes \
 		--localstatedir=/var \
+		--sysconfdir=${PREFIX}/etc \
+		--with-popt-prefix="${LOCALBASE}" \
 		--without-javaglue \
 		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER}
 CONFIGURE_ENV=	LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
-		-I${BDB_INCLUDE_DIR} -I${LUA_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/nss \
-		-L${BDB_LIB_DIR} -L${LUA_LIBDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr \
+		-I${LOCALBASE}/include/nss/nss -I${BDB_INCLUDE_DIR} \
+		-I${LUA_INCDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/nss -L${BDB_LIB_DIR} \
+		-L${LUA_LIBDIR}
 
 CONFLICTS_INSTALL=	rpm2cpio # bin/rpm2cpio
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
-PLIST_SUB=	VERSION=${PORTVERSION} \
-		OPSYS=${OPSYS:tl}
+PLIST_SUB=	OPSYS=${OPSYS:tl} \
+		VERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	PYTHON PLUGINS NLS
-OPTIONS_DEFAULT=PYTHON
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS PLUGINS PYTHON
+OPTIONS_DEFAULT=	PYTHON
+OPTIONS_SUB=		yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=		-lintl
 
-PLUGINS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-PLUGINS_CONFIGURE_ENABLE=plugins
-PYTHON_USES=		python
-PYTHON_CONFIGURE_ENABLE=python
+PLUGINS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
+PLUGINS_CONFIGURE_ENABLE=	plugins
+PYTHON_USES=			python
+PYTHON_CONFIGURE_ENABLE=	python
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's/ __GLIBC__.*/& || defined(__FreeBSD__)/' \
-		${WRKSRC}/system.h
 	@${REINPLACE_CMD} -e 's/\<xargs\>/gxargs/g' \
 		${WRKSRC}/scripts/brp-strip-static-archive \
 		${WRKSRC}/scripts/check-buildroot \
