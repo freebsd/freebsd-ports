@@ -1,4 +1,5 @@
 bin/graphicator
+bin/simgrid-mc
 bin/simgrid_convert_TI_traces
 bin/simgrid_update_xml
 bin/smpicc
@@ -6,6 +7,7 @@ bin/smpicxx
 bin/smpirun
 bin/tesh
 include/simgrid/Exception.hpp
+include/simgrid/activity_set.h
 include/simgrid/actor.h
 include/simgrid/barrier.h
 include/simgrid/chrono.hpp
@@ -41,13 +43,18 @@ include/simgrid/mailbox.h
 include/simgrid/modelchecker.h
 include/simgrid/mutex.h
 include/simgrid/plugins/ProducerConsumer.hpp
+include/simgrid/plugins/battery.hpp
+include/simgrid/plugins/chiller.hpp
 include/simgrid/plugins/dvfs.h
 include/simgrid/plugins/energy.h
 include/simgrid/plugins/file_system.h
+include/simgrid/plugins/jbod.hpp
 include/simgrid/plugins/live_migration.h
 include/simgrid/plugins/load.h
+include/simgrid/plugins/solar_panel.hpp
 include/simgrid/s4u.hpp
 include/simgrid/s4u/Activity.hpp
+include/simgrid/s4u/ActivitySet.hpp
 include/simgrid/s4u/Actor.hpp
 include/simgrid/s4u/Barrier.hpp
 include/simgrid/s4u/Comm.hpp
@@ -59,12 +66,14 @@ include/simgrid/s4u/Host.hpp
 include/simgrid/s4u/Io.hpp
 include/simgrid/s4u/Link.hpp
 include/simgrid/s4u/Mailbox.hpp
+include/simgrid/s4u/Mess.hpp
+include/simgrid/s4u/MessageQueue.hpp
 include/simgrid/s4u/Mutex.hpp
 include/simgrid/s4u/NetZone.hpp
 include/simgrid/s4u/Semaphore.hpp
+include/simgrid/s4u/Task.hpp
 include/simgrid/s4u/VirtualMachine.hpp
 include/simgrid/semaphore.h
-include/simgrid/simix.h
 include/simgrid/simix.hpp
 include/simgrid/version.h
 include/simgrid/vm.h
@@ -83,8 +92,6 @@ include/xbt/Extendable.hpp
 include/xbt/PropertyHolder.hpp
 include/xbt/asserts.h
 include/xbt/asserts.hpp
-include/xbt/automaton.h
-include/xbt/automaton.hpp
 include/xbt/backtrace.hpp
 include/xbt/base.h
 include/xbt/config.h
@@ -116,7 +123,7 @@ include/xbt/utility.hpp
 include/xbt/virtu.h
 include/xbt/xbt_os_time.h
 lib/libsimgrid.so
-lib/libsimgrid.so.3.32.1
+lib/libsimgrid.so.3.35
 lib/simgrid/smpimain
 lib/simgrid/smpireplaymain
 libdata/pkgconfig/simgrid.pc
