@@ -1,3 +1,37 @@
+  <vuln vid="76c2110b-9e97-11ee-ae23-a0f3c100ae18">
+    <topic>slurm-wlm -- Several security issues</topic>
+    <affects>
+      <package>
+	<name>slurm-wlm</name>
+	<range><lt>23.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Slurm releases notes:</p>
+	<blockquote cite="https://www.schedmd.com/news.php?id=283#OPT_283">
+	  <h1>Description</h1>
+	  <h5>CVE-2023-49933 through CVE-2023-49938</h5>
+	  <p>Slurm versions 23.11.1, 23.02.7, 22.05.11 are now available
+	     and address a number of recently-discovered security issues.
+	     They've been assigned CVE-2023-49933 through CVE-2023-49938.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-49933</cvename>
+      <cvename>CVE-2023-49934</cvename>
+      <cvename>CVE-2023-49935</cvename>
+      <cvename>CVE-2023-49936</cvename>
+      <cvename>CVE-2023-49937</cvename>
+      <cvename>CVE-2023-49938</cvename>
+    </references>
+    <dates>
+      <discovery>2023-11-29</discovery>
+      <entry>2023-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd47fcfe-ec69-4000-b9ce-e5e62102c1c7">
     <topic>couchdb -- information sharing via couchjs processes</topic>
     <affects>
