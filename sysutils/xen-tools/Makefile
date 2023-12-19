@@ -1,18 +1,16 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-DISTVERSION=	4.17.2.20230929
+DISTVERSION=	4.18.0.20231212
 CATEGORIES=	sysutils emulators
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	xen-project
-GL_TAGNAME=	0b56bed864ca9b572473957f0254aefa797216f2
-GL_TUPLE=	qemu-project:qemu:v7.0.0:qemu \
+GL_TAGNAME=	1792d1723b7fb45a20b145d2de4d233913b22c09
+GL_TUPLE=	qemu-project:qemu:v8.0.4:qemu \
 		qemu-project:dtc:b6910bec:dtc \
-		qemu-project:capstone:f8b1b833:capstone \
-		qemu-project:meson:12f9f04b:meson \
-		qemu-project:libslirp:a88d9ace:libslirp \
-		qemu-project:keycodemapdb:d21009b1:keycodemapdb \
-		qemu-project:berkeley-testfloat-3:5a59dcec:testfloat \
+		qemu-project:meson:3a9b285a:meson \
+		qemu-project:keycodemapdb:f5772a62:keycodemapdb \
+		qemu-project:berkeley-testfloat-3:40619cbb:testfloat \
 		qemu-project:berkeley-softfloat-3:b64af41c:softfloat
 
 MAINTAINER=	royger@FreeBSD.org
@@ -85,12 +83,8 @@ post-extract:
 	${MV} ${WRKSRC_qemu} ${WRKSRC}/tools/qemu-xen
 	${RM} -rf ${WRKSRC}/tools/qemu-xen/dtc
 	${MV} ${WRKSRC_dtc} ${WRKSRC}/tools/qemu-xen/dtc
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/capstone
-	${MV} ${WRKSRC_capstone} ${WRKSRC}/tools/qemu-xen/capstone
 	${RM} -rf ${WRKSRC}/tools/qemu-xen/meson
 	${MV} ${WRKSRC_meson} ${WRKSRC}/tools/qemu-xen/meson
-	${RM} -rf ${WRKSRC}/tools/qemu-xen/slirp
-	${MV} ${WRKSRC_libslirp} ${WRKSRC}/tools/qemu-xen/slirp
 	${RM} -rf ${WRKSRC}/tools/qemu-xen/ui/keycodemapdb
 	${MV} ${WRKSRC_keycodemapdb} ${WRKSRC}/tools/qemu-xen/ui/keycodemapdb
 	${RM} -rf ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-testfloat-3
