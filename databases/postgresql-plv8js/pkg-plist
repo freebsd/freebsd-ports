@@ -39,5 +39,7 @@ share/postgresql/extension/plv8--3.1.5--%%PORTVERSION%%.sql
 share/postgresql/extension/plv8--3.1.6--%%PORTVERSION%%.sql
 share/postgresql/extension/plv8--3.1.7--%%PORTVERSION%%.sql
 share/postgresql/extension/plv8--3.1.8--%%PORTVERSION%%.sql
+share/postgresql/extension/plv8--3.2.0--%%PORTVERSION%%.sql
+share/postgresql/extension/plv8--3.2.1--%%PORTVERSION%%.sql
 share/postgresql/extension/plv8--%%PORTVERSION%%.sql
 share/postgresql/extension/plv8.control
