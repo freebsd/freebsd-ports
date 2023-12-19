@@ -1,6 +1,14 @@
 --- solenv/gbuild/platform/freebsd.mk.orig	2021-04-02 12:58:22 UTC
 +++ solenv/gbuild/platform/freebsd.mk
-@@ -188,13 +188,13 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -137,6 +137,7 @@ gb_LinkTarget_LDFLAGS += \
+ 	-Wl,-rpath-link,$(SYSBASE)/lib:$(SYSBASE)/usr/lib \
+ 	-Wl,-z,combreloc \
+ 	-Wl,-z,defs \
++	-Wl,--undefined-version \
+ 	$(subst -L../lib , ,$(SOLARLIB)) \
+ 	${FBSD_GCC_RPATH} \
+ 	 \
+@@ -188,13 +189,13 @@ $(call gb_Helper_abbreviate_dirs,\
  	mkdir -p $(dir $(1)) && \
  	mkdir -p $(dir $(call gb_CObject_get_dep_target,$(2))) && \
  	$(gb_CC) \
@@ -16,7 +24,7 @@
  endef
  
  # convert parametters filesystem root to native notation
-@@ -212,13 +212,13 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -212,13 +213,13 @@ $(call gb_Helper_abbreviate_dirs,\
  	mkdir -p $(dir $(1)) && \
  	mkdir -p $(dir $(call gb_CxxObject_get_dep_target,$(2))) && \
  	$(gb_CXX) \

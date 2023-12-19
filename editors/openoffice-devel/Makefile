@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -78,7 +78,7 @@ LIB_DEPENDS=								\
 		libnspr4.so:devel/nspr					\
 		libcurl.so:ftp/curl					\
 		libcairo.so:graphics/cairo				\
-		libpng.so:graphics/png					\
+		libpng16.so:graphics/png				\
 		libgraphite.so:graphics/silgraphite			\
 		libblas.so:math/blas					\
 		libCbcSolver.so:math/cbc				\
@@ -117,7 +117,7 @@ USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
 		python:3.9 shared-mime-info ssl tar:${TARTYPE} xorg
 USE_GL=		gl glu
-USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20 libxslt libidl glib20
+USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20 libxslt glib20
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jdk
@@ -228,14 +228,6 @@ TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 # included in distinfo
 .if make(makesum) || make(distclean)
 WITH=	SDK
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500005
-# linker error when compiling with llvm 17.0.6 on CURRENT
-USES+=			llvm:max=16
-CHOSEN_COMPILER_TYPE=	clang
 .endif
 
 .include <bsd.port.pre.mk>
