@@ -1,0 +1,6 @@
+LADI Session Handler or simply ladish is a session management system for JACK
+applications on GNU/Linux. Its aim is to allow you to have many different audio
+programs running at once, to save their setup, close them down and then easily
+reload the setup at some other time. ladish doesn't deal with any kind of audio
+or MIDI data itself; it just runs programs, deals with saving/loading
+(arbitrary) data and connects JACK ports together.

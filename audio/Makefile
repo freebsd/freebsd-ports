@@ -324,6 +324,7 @@
     SUBDIR += kmix
     SUBDIR += komposter
     SUBDIR += kwave
+    SUBDIR += ladish
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
