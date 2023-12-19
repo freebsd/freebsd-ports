@@ -18,3 +18,22 @@
  	unsigned long borderColour = BlackPixel(mDisplay(), mScreenNum);
  	unsigned long backgroundColour = BlackPixel(mDisplay(), mScreenNum);
  	
+@@ -397,7 +397,7 @@ void OBPager::createShowWindow()
+ 	
+ 	// First, get the mask as an XBM, and hold it in an auto_ptr so it gets disposed when we exit this block
+ 	
+-	std::auto_ptr<unsigned char> pixmaskBits(getRectangularXBMMask(width, height, APPLET_MARGIN_WIDTH));
++	std::unique_ptr<unsigned char> pixmaskBits(getRectangularXBMMask(width, height, APPLET_MARGIN_WIDTH));
+ 	
+ 	// Next, create the pixmap using the XBM mask
+ 	
+@@ -934,7 +934,8 @@ void OBPager::redrawWindow()
+ 	
+ 	// Draw the desktop number using the appropriate font
+ 	
+-	char text[2] = { (mDesktopNum % 9) + '1', '\0' };
++	char text[4];
++	snprintf(text, sizeof text, "%d", mDesktopNum + 1);
+ 	int textLength = strlen(text);
+ 	int textWidth, textHeight;
+ 	int direction, ascent, descent;
