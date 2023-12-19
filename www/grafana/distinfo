@@ -1,0 +1,9 @@
+TIMESTAMP = 1703017992
+SHA256 (go/www_grafana/grafana-grafana-v10.2.3_GH0/grafana-10.2.3.linux-amd64.tar.gz) = c686606a6975481f4f108de44c4df3465251e4ee2da20e7c6ee6b66e5bdcf2da
+SIZE (go/www_grafana/grafana-grafana-v10.2.3_GH0/grafana-10.2.3.linux-amd64.tar.gz) = 108993853
+SHA256 (go/www_grafana/grafana-grafana-v10.2.3_GH0/go.mod) = 57efc74766589103576e6369515af9ed502536283ff57af3c27677121ef5a671
+SIZE (go/www_grafana/grafana-grafana-v10.2.3_GH0/go.mod) = 30043
+SHA256 (go/www_grafana/grafana-grafana-v10.2.3_GH0/pkg/util/xorm/go.mod) = a1e29d55ee560ec78876999d3f3e83b687895b1d8f107ddd14deeb740f2f9e88
+SIZE (go/www_grafana/grafana-grafana-v10.2.3_GH0/pkg/util/xorm/go.mod) = 406
+SHA256 (go/www_grafana/grafana-grafana-v10.2.3_GH0/grafana-grafana-v10.2.3_GH0.tar.gz) = fb7da288a64a1dbaed1dd5a4db88b6eb5c0f5f8be652143c547cad6b8985acd0
+SIZE (go/www_grafana/grafana-grafana-v10.2.3_GH0/grafana-grafana-v10.2.3_GH0.tar.gz) = 28073283
