@@ -3,11 +3,11 @@ bin/zint-qt
 include/qzint.h
 include/zint.h
 lib/libQZint.so
-lib/libQZint.so.2.12
-lib/libQZint.so.2.12.0.0
+lib/libQZint.so.%%VER%%
+lib/libQZint.so.%%VER%%.0.0
 lib/libzint.so
-lib/libzint.so.2.12
-lib/libzint.so.2.12.0.0
+lib/libzint.so.%%VER%%
+lib/libzint.so.%%VER%%.0.0
 share/cmake/Modules/FindZint.cmake
 share/man/man1/zint.1.gz
 %%DATADIR%%/zint-config.cmake
