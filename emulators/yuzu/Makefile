@@ -9,6 +9,9 @@ MASTER_SITES=	LOCAL/jbeich:gamedb
 DISTFILES=	${PORTNAME}-s20230424/compatibility_list.json:gamedb
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	310834aea2fa.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/12414
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
 WWW=		https://yuzu-emu.org/

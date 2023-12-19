@@ -22,6 +22,11 @@ GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers
 		KhronosGroup:Vulkan-Utility-Libraries:${DISTVERSIONPREFIX}${DISTVERSION}:utils/Vulkan-Utility-Libraries
 CMAKE_OFF=	BUILD_TESTS
 
+.if ${DISTVERSION:E} < 274
+GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.273:vkheaders/Vulkan-Headers
+CFLAGS+=	-I${WRKSRC_vkheaders}/include
+.endif
+
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
 OPTIONS_DEFAULT=WAYLAND XCB XLIB
 
