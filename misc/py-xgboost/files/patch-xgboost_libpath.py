@@ -1,9 +1,9 @@
---- xgboost/libpath.py.orig	2021-04-20 00:31:38 UTC
+--- xgboost/libpath.py.orig	2023-12-19 07:49:41 UTC
 +++ xgboost/libpath.py
 @@ -5,6 +5,7 @@ import os
  import platform
- from typing import List
  import sys
+ from typing import List
 +import sysconfig # from https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=247408#c0
  
  
@@ -15,5 +15,5 @@
 +	sysconfig.get_config_var('LIBDIR'), # from https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=247408#c0
 +	os.path.join(sys.prefix, 'xgboost'),
          # normal, after installation `lib` is copied into Python package tree.
-         os.path.join(curr_path, 'lib'),
+         os.path.join(curr_path, "lib"),
          # editable installation, no copying is performed.

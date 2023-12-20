@@ -1,11 +1,12 @@
 bin/xgboost
 include/xgboost/base.h
 include/xgboost/c_api.h
+include/xgboost/cache.h
 include/xgboost/collective/socket.h
+include/xgboost/context.h
 include/xgboost/data.h
 include/xgboost/feature_map.h
 include/xgboost/gbm.h
-include/xgboost/generic_parameters.h
 include/xgboost/global_config.h
 include/xgboost/host_device_vector.h
 include/xgboost/intrusive_ptr.h
@@ -17,6 +18,7 @@ include/xgboost/linear_updater.h
 include/xgboost/logging.h
 include/xgboost/metric.h
 include/xgboost/model.h
+include/xgboost/multi_target_tree_model.h
 include/xgboost/objective.h
 include/xgboost/parameter.h
 include/xgboost/predictor.h
