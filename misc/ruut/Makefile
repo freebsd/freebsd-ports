@@ -1,7 +1,7 @@
 PORTNAME=	ruut
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	13
+DISTVERSION=	0.8.0
+PORTREVISION=	0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,6 +44,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		proc-macro2-1.0.9 \
 		quote-0.6.13 \
 		quote-1.0.3 \
+		render_as_tree-0.2.0 \
 		ryu-1.0.2 \
 		serde-1.0.104 \
 		serde_json-1.0.47 \
