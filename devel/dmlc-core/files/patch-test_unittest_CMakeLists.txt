@@ -1,0 +1,13 @@
+- add -lexecinfo because LDFLAGS passed from outside somehow gets lost
+
+--- test/unittest/CMakeLists.txt.orig	2023-09-15 04:25:30 UTC
++++ test/unittest/CMakeLists.txt
+@@ -9,6 +9,8 @@ if (UNIX)
+   SET(CMAKE_EXE_LINKER_FLAGS "-pthread")
+ endif(UNIX)
+ 
++SET(CMAKE_EXE_LINKER_FLAGS "-lexecinfo")
++
+ # Compiler definitions needed to use GNU/POSIX extensions
+ set(ENABLE_GNU_EXTENSION_FLAGS -D_XOPEN_SOURCE=700
+   -D_POSIX_SOURCE -D_POSIX_C_SOURCE=200809L -D_DARWIN_C_SOURCE)
