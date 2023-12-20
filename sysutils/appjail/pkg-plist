@@ -157,3 +157,12 @@ libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
 %%DATADIR%%/scripts/load-devfs-rules.sh
 %%DATADIR%%/scripts/super-mv.sh
 %%DATADIR%%/scripts/kill_tree.sh
+%%DATADIR%%/cmd/volume
+%%DATADIR%%/makejail/cmd/all/VOLUME
+%%DATADIR%%/makejail/write/all/VOLUME
+%%DATADIR%%/scripts/escape-env-val.sh
+%%EXAMPLESDIR%%/appjail.conf
+%%EXAMPLESDIR%%/templates/bridge.conf
+%%EXAMPLESDIR%%/templates/linux.conf
+%%EXAMPLESDIR%%/templates/vnet.conf
+%%EXAMPLESDIR%%/templates/xorg.conf
