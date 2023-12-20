@@ -1,8 +1,8 @@
-TIMESTAMP = 1702929976
+TIMESTAMP = 1703094410
 SHA256 (yuzu-s20230424/compatibility_list.json) = 382db629d6b060af722a27dfa9cd6bb60ac16a7544c58322f63aa1be4c0c0fac
 SIZE (yuzu-s20230424/compatibility_list.json) = 1801327
-SHA256 (yuzu-emu-yuzu-s20231218-50fd029eaa_GH0.tar.gz) = 39b8cc305f3f71ff3d5e54b56b0c38de5a32c05db578c44cc9949472fb8d8930
-SIZE (yuzu-emu-yuzu-s20231218-50fd029eaa_GH0.tar.gz) = 6721269
+SHA256 (yuzu-emu-yuzu-s20231220-bedc758fe7_GH0.tar.gz) = c95779e55e135167e5bc9a808762f2e6fdd96efdd9fcbe900fcd16f8c003bfb7
+SIZE (yuzu-emu-yuzu-s20231220-bedc758fe7_GH0.tar.gz) = 6723864
 SHA256 (yuzu-emu-mbedtls-v2.16.9-115-g8c88150ca_GH0.tar.gz) = 8cd6d075b4da0ad5fb995eb37390e2e6088be8d41ab1cdfc7e7e4256bd991450
 SIZE (yuzu-emu-mbedtls-v2.16.9-115-g8c88150ca_GH0.tar.gz) = 2679189
 SHA256 (yuzu-emu-sirit-ab75463_GH0.tar.gz) = 6b61e265be182b7a78075fc1b98ccf80fd33008343205dd0e22a10a439c45319
@@ -29,5 +29,3 @@ SHA256 (yhirose-cpp-httplib-v0.14.1_GH0.tar.gz) = 2d4fb5544da643e5d0a82585555d8b
 SIZE (yhirose-cpp-httplib-v0.14.1_GH0.tar.gz) = 1148935
 SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
-SHA256 (310834aea2fa.patch) = 97529e413ad2e153bdde99d94c87b0edf27e9c7bdef914d3ff0a12445a958d92
-SIZE (310834aea2fa.patch) = 1265
