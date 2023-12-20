@@ -48,6 +48,7 @@ include/libint2/tensor.h
 include/libint2/util/any.h
 include/libint2/util/array_adaptor.h
 include/libint2/util/compressed_pair.h
+include/libint2/util/configuration.h
 include/libint2/util/cxxstd.h
 include/libint2/util/deprecated.h
 include/libint2/util/generated/libint2_iface.h
@@ -67,14 +68,15 @@ include/libint2/util/vector_x86.h
 lib/libint2.so
 lib/libint2.so.2
 lib/libint2.so.2.0.3
-%%STATIC%%lib/libint2.a
 libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/3-21g.g94
 %%DATADIR%%/%%VER%%/basis/6-311g**.g94
-%%DATADIR%%/%%VER%%/basis/6-31G*.g94
+%%DATADIR%%/%%VER%%/basis/6-311gss.g94
 %%DATADIR%%/%%VER%%/basis/6-31g**.g94
 %%DATADIR%%/%%VER%%/basis/6-31g*.g94
 %%DATADIR%%/%%VER%%/basis/6-31g.g94
+%%DATADIR%%/%%VER%%/basis/6-31gs.g94
+%%DATADIR%%/%%VER%%/basis/6-31gss.g94
 %%DATADIR%%/%%VER%%/basis/ano-rcc.g94
 %%DATADIR%%/%%VER%%/basis/aug-cc-pv5z-cabs.g94
 %%DATADIR%%/%%VER%%/basis/aug-cc-pvdz-cabs.g94
@@ -112,6 +114,7 @@ libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/cc-pvtz-f12-cabs.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvtz-f12.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvtz-jkfit.g94
+%%DATADIR%%/%%VER%%/basis/cc-pvtz-mini.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvtz-ri.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvtz.g94
 %%DATADIR%%/%%VER%%/basis/def2-qzvp-c.g94
