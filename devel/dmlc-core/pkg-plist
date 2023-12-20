@@ -35,3 +35,5 @@ lib/cmake/dmlc/DMLCTargets.cmake
 lib/cmake/dmlc/dmlc-config-version.cmake
 lib/cmake/dmlc/dmlc-config.cmake
 lib/libdmlc.so
+lib/libdmlc.so.0
+lib/libdmlc.so.0.3
