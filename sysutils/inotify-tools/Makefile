@@ -1,5 +1,5 @@
 PORTNAME=	inotify-tools
-DISTVERSION=	4.23.8.0
+DISTVERSION=	4.23.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
