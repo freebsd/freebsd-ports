@@ -1199,6 +1199,7 @@
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback
+    SUBDIR += reproduce
     SUBDIR += reptyr
     SUBDIR += respond
     SUBDIR += rest-server
