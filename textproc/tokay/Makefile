@@ -1,7 +1,6 @@
 PORTNAME=	tokay
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
-PORTREVISION=	3
+DISTVERSION=	0.6.5
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +19,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
+		bitflags-2.4.1 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		charclass-0.2.0 \
@@ -27,34 +27,35 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		clap-4.0.10 \
 		clap_derive-4.0.10 \
 		clap_lex-0.3.0 \
-		clipboard-win-4.4.1 \
+		clipboard-win-4.5.0 \
+		clipboard-win-5.0.0 \
 		ctor-0.1.22 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		endian-type-0.1.2 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
 		error-code-2.3.1 \
+		error-code-3.0.0 \
 		fd-lock-2.0.0 \
-		fd-lock-3.0.6 \
+		fd-lock-4.0.1 \
 		getrandom-0.2.7 \
 		ghost-0.1.5 \
 		glob-0.3.0 \
-		hashbrown-0.12.1 \
+		hashbrown-0.14.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		indexmap-1.9.1 \
+		home-0.5.9 \
+		indexmap-2.1.0 \
 		inventory-0.1.11 \
 		inventory-impl-0.1.11 \
-		io-lifetimes-0.7.3 \
-		libc-0.2.134 \
-		linux-raw-sys-0.0.46 \
+		libc-0.2.151 \
+		linux-raw-sys-0.4.12 \
 		log-0.4.17 \
 		memchr-2.5.0 \
-		memoffset-0.6.5 \
 		nibble_vec-0.1.0 \
 		nix-0.20.0 \
-		nix-0.23.1 \
+		nix-0.27.1 \
 		num-0.4.0 \
 		num-bigint-0.4.3 \
 		num-complex-0.4.2 \
@@ -72,9 +73,9 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		radix_trie-0.2.1 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		rustix-0.35.11 \
+		rustix-0.38.28 \
 		rustyline-8.2.0 \
-		rustyline-9.1.2 \
+		rustyline-13.0.0 \
 		scopeguard-1.1.0 \
 		smallvec-1.9.0 \
 		str-buf-1.0.6 \
@@ -98,12 +99,15 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.36.1 \
-		windows_aarch64_msvc-0.36.1 \
-		windows_i686_gnu-0.36.1 \
-		windows_i686_msvc-0.36.1 \
-		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_msvc-0.36.1 \
+		windows-sys-0.52.0 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.52.0 \
 		yaml-rust-0.3.5
 
 PLIST_FILES=	bin/${PORTNAME}
