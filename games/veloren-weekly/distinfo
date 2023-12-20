@@ -1549,5 +1549,5 @@ SHA256 (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = f6fc0
 SIZE (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = 90485
 SHA256 (Imberflur-winit-raw-window-handle-0.4-retro-support-v1_GH0.tar.gz) = 55b7e0bfdf87aca662e4ae0a8abd4cbe0cf5d2d2e9f9a61f8b40f02ab769d04f
 SIZE (Imberflur-winit-raw-window-handle-0.4-retro-support-v1_GH0.tar.gz) = 402612
-SHA256 (veloren-v0.15.0-717-g5af8c4687.tar.bz2) = 051dd285185266593d13e922732c152e95d23899bdbbf661c68c49a91f3656c9
-SIZE (veloren-v0.15.0-717-g5af8c4687.tar.bz2) = 270358515
+SHA256 (veloren-v0.15.0-722-g62dc6acc3.tar.bz2) = 2955df40a99797a91fdee4bc8f87b35bc559d880087e4056178b6e12f44f3250
+SIZE (veloren-v0.15.0-722-g62dc6acc3.tar.bz2) = 270360678
