@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.29
+DISTVERSION=	2023.12.31
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -119,13 +119,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.3.3 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
-		home-0.5.5 \
+		home-0.5.9 \
 		http-0.2.11 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
-		hyper-0.14.27 \
+		hyper-0.14.28 \
 		hyper-rustls-0.24.2 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.58 \
@@ -205,7 +205,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.22 \
+		reqwest-0.11.23 \
 		ring-0.17.7 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
@@ -229,7 +229,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
-		serde_spanned-0.6.4 \
+		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
@@ -240,7 +240,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		similar-2.3.0 \
 		simplelog-0.12.1 \
 		slab-0.4.9 \
-		socket2-0.4.10 \
 		socket2-0.5.5 \
 		spin-0.9.8 \
 		spki-0.7.3 \
@@ -258,15 +257,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
+		thiserror-1.0.51 \
+		thiserror-impl-1.0.51 \
 		thread_local-1.1.7 \
-		time-0.3.30 \
+		time-0.3.31 \
 		time-core-0.1.2 \
-		time-macros-0.2.15 \
+		time-macros-0.2.16 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.0 \
+		tokio-1.35.1 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
@@ -346,7 +345,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.28 \
+		winnow-0.5.30 \
 		winreg-0.50.0 \
 		xattr-1.1.3 \
 		yaml-rust-0.4.5 \
