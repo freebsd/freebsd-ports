@@ -1,4 +1,5 @@
 %%CBLAS%%include/cblas/cblas.h
+%%CBLAS%%include/cblas/cblas_64.h
 %%CBLAS%%include/cblas/cblas_f77.h
 %%CBLAS%%include/cblas/cblas_mangling.h
 %%LAPACKE%%include/lapacke/lapack.h
