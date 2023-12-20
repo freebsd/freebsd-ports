@@ -1,6 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.2
+DISTVERSION=	0.16.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,10 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tarka
 
 CARGO_CRATES=	aho-corasick-1.1.2 \
-		anstream-0.6.4 \
+		anstream-0.6.5 \
 		anstyle-1.0.4 \
-		anstyle-parse-0.2.2 \
-		anstyle-query-1.0.0 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.1 \
 		anyhow-1.0.75 \
 		autocfg-1.1.0 \
@@ -28,20 +28,21 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		blocking-threadpool-1.0.1 \
 		bstr-1.8.0 \
 		cfg-if-1.0.0 \
-		clap-4.4.10 \
-		clap_builder-4.4.9 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
 		console-0.15.7 \
-		crossbeam-channel-0.5.8 \
+		crossbeam-channel-0.5.9 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.15 \
-		crossbeam-utils-0.8.16 \
+		crossbeam-utils-0.8.17 \
 		deranged-0.3.9 \
 		encode_unicode-0.3.6 \
 		errno-0.3.8 \
 		fastrand-2.0.1 \
+		fslock-0.2.1 \
 		getrandom-0.2.11 \
 		glob-0.3.1 \
 		globset-0.4.14 \
@@ -53,9 +54,9 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		itoa-1.0.9 \
 		lazy_static-0.2.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		libm-0.2.8 \
-		linux-raw-sys-0.4.11 \
+		linux-raw-sys-0.4.12 \
 		linux-raw-sys-0.6.2 \
 		log-0.4.20 \
 		memchr-2.6.4 \
@@ -67,7 +68,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		portable-atomic-1.5.1 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		quote-1.0.33 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -77,14 +78,14 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		redox_syscall-0.4.1 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
-		rustix-0.38.26 \
+		rustix-0.38.28 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		simplelog-0.12.1 \
 		strsim-0.10.0 \
-		syn-2.0.39 \
+		syn-2.0.41 \
 		tempfile-3.8.1 \
 		termcolor-1.1.3 \
 		test-case-3.3.1 \
@@ -133,7 +134,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		xattr-1.0.1
+		xattr-1.1.3
 
 PLIST_FILES=	bin/${PORTNAME}
 
