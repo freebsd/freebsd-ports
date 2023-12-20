@@ -217,7 +217,7 @@ man/man1/scontrol.1.gz
 man/man1/scrontab.1.gz
 man/man1/scrun.1.gz
 man/man1/sdiag.1.gz
-man/man1/sh5util.1.gz
+%%HDF5%%man/man1/sh5util.1.gz
 man/man1/sinfo.1.gz
 man/man1/slurm.1.gz
 man/man1/sprio.1.gz
@@ -388,7 +388,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/sdiag.html
 %%PORTDOCS%%%%DOCSDIR%%/select_design.html
 %%PORTDOCS%%%%DOCSDIR%%/selinux.html
-%%PORTDOCS%%%%DOCSDIR%%/sh5util.html
+%%HDF5%%%%PORTDOCS%%%%DOCSDIR%%/sh5util.html
 %%PORTDOCS%%%%DOCSDIR%%/sinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/site_factor.html
 %%PORTDOCS%%%%DOCSDIR%%/slurm.conf.html
