@@ -21,6 +21,12 @@ USES=		uidfix
 NO_CCACHE=	yes
 MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
 
+.if !exists(/usr/lib/libdialog.so)
+BROKEN=		Requires libdialog in base
+.endif
+
+DEPRECATED=	Consider using ports-mgmt/portconfig which is a dropin replacement
+
 .if !defined(D4P_SLAVE)
 PLIST_FILES=	bin/dialog4ports man/man1/${PORTNAME}.1.gz
 .endif
