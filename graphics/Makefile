@@ -449,6 +449,7 @@
     SUBDIR += libcaca
     SUBDIR += libcdr01
     SUBDIR += libchamplain
+    SUBDIR += libdicom
     SUBDIR += libdmtx
     SUBDIR += libdrm
     SUBDIR += libecwj2

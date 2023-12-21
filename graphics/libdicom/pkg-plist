@@ -1,0 +1,10 @@
+bin/dcm-dump
+bin/dcm-getframe
+include/dicom/dicom.h
+include/dicom/version.h
+lib/libdicom.so
+lib/libdicom.so.1
+lib/libdicom.so.1.0.0
+libdata/pkgconfig/libdicom.pc
+man/man1/dcm-dump.1.gz
+man/man1/dcm-getframe.1.gz
