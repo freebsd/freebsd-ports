@@ -1,3 +1,36 @@
+  <vuln vid="1b2a8e8a-9fd5-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.129</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.129</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop_20.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[1513170] High CVE-2023-7024: Heap buffer overflow in WebRTC. Reported by Clément Lecigne and Vlad Stolyarov of Google's Threat Analysis Group on 2023-12-19</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-7024</cvename>
+      <url>https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop_20.html</url>
+    </references>
+    <dates>
+      <discovery>2023-12-20</discovery>
+      <entry>2023-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91955195-9ebb-11ee-bc14-a703705db3a6">
     <topic>putty -- add protocol extension against 'Terrapin attack'</topic>
     <affects>
