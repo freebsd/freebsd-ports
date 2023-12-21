@@ -1,4 +1,12 @@
 [
+{ type: upgrade
+  maximum_version: "0.9"
+  message: <<EOM
+  To upgrade from 0.8.x to 0.9.0, please refer to the upgrade instructions at:
+
+    https://garagehq.deuxfleurs.fr/documentation/working-documents/migration-09/
+EOM
+}
 { type: install
   message: <<EOM
   To get started, refer to the documentation at:
