@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libpng.so:graphics/png
 TEST_LIB_DEPENDS=libgtest.so:devel/googletest
 
-USES=		cmake localbase
+USES=		cmake localbase pkgconfig
 
 USE_GITHUB=	yeah
 GH_ACCOUNT=	ars3niy
