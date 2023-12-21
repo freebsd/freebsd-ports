@@ -1,0 +1,16 @@
+--- Makefile.orig	2023-12-21 05:27:41 UTC
++++ Makefile
+@@ -90,6 +90,13 @@ yt-dlp: yt_dlp/*.py yt_dlp/*/*.py
+ 	rm yt-dlp.zip
+ 	chmod a+x yt-dlp
+ 
++freebsd-install-all-files:
++	mkdir -p $(PYTHON_SITELIBDIR)
++	for d in $(CODE_FOLDERS) ; do \
++	  mkdir -p $(PYTHON_SITELIBDIR)/$$d ;\
++	  cp -pPR $$d/*.py $(PYTHON_SITELIBDIR)/$$d/ ;\
++	done
++
+ README.md: yt_dlp/*.py yt_dlp/*/*.py devscripts/make_readme.py
+ 	COLUMNS=80 $(PYTHON) yt_dlp/__main__.py --ignore-config --help | $(PYTHON) devscripts/make_readme.py
+ 
