@@ -1,0 +1,4 @@
+rqlite combines SQLite's simplicity with the power of a robust, fault-tolerant
+distributed database. It's designed for easy deployment and efficient operation,
+offering a developer-friendly and operation-centric solution across various
+systems.
