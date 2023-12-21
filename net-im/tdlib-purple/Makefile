@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libtdapi.so:net-im/tdlib	\
 		librlottie.so:graphics/rlottie	\
 		libwebp.so:graphics/webp	\
+		libpurple.so:net-im/libpurple	\
 		libpng.so:graphics/png
 TEST_LIB_DEPENDS=libgtest.so:devel/googletest
 
