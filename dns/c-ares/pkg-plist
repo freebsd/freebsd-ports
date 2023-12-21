@@ -13,7 +13,7 @@ lib/cmake/c-ares/c-ares-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/c-ares/c-ares-targets.cmake
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.9.0
+lib/libcares.so.2.10.0
 libdata/pkgconfig/libcares.pc
 man/man1/adig.1.gz
 man/man1/ahost.1.gz
@@ -91,6 +91,7 @@ man/man3/ares_free_hostent.3.gz
 man/man3/ares_free_string.3.gz
 man/man3/ares_freeaddrinfo.3.gz
 man/man3/ares_get_servers.3.gz
+man/man3/ares_get_servers_csv.3.gz
 man/man3/ares_get_servers_ports.3.gz
 man/man3/ares_getaddrinfo.3.gz
 man/man3/ares_gethostbyaddr.3.gz
