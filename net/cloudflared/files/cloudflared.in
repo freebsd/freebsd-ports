@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: cloudflared
-# REQUIRE: cleanvar SERVERS
+# REQUIRE: cleanvar DAEMON NETWORKING
 #
 # Options to configure cloudflared via /etc/rc.conf:
 #
