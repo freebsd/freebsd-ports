@@ -1,3 +1,59 @@
+  <vuln vid="b2765c89-a052-11ee-bed2-596753f1a87c">
+    <topic>gitea -- Prefix Truncation Attack against ChaCha20-Poly1305 and Encrypt-then-MAC aka Terrapin</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.21.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/28519">
+	  <p>Update golang.org/x/crypto</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.21.3</url>
+    </references>
+    <dates>
+      <discovery>2023-12-19</discovery>
+      <entry>2023-12-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="482bb980-99a3-11ee-b5f7-6bd56600d90c">
+    <topic>gitea -- missing permission checks</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.21.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/28406">
+	  <p>Fix missing check</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/28423">
+	  <p>Do some missing checks</p>
+	</blockquote>
+        <p>By crafting an API request, attackers can access the contents of
+        issues even though the logged-in user does not have access rights to
+        these issues.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.21.2</url>
+    </references>
+    <dates>
+      <discovery>2023-08-30</discovery>
+      <entry>2023-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f7598cc-9fe2-11ee-b47f-901b0e9408dc">
     <topic>nebula -- security fix for terrapin vulnerability</topic>
     <affects>

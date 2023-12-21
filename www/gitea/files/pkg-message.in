@@ -1,5 +1,20 @@
 [
 { type: upgrade
+  maximum_version: 1.20.0
+  message: <<EOM
+Please make sure to empty or maintain the contents of the
+%%PREFIX%%/share/gitea folder between your upgrades of gitea.
+Changes between versions can break the web UI due to residual
+files from earlier versions.
+
+1.21.0 has a breaking change regarding the public assets folder. In case
+you use a proxying webserver serving the files, you need to update your
+configuration:
+
+https://github.com/go-gitea/gitea/pull/25907
+EOM
+}
+{ type: upgrade
   maximum_version: 1.7.6
   message: <<EOM
 When upgrading from Gitea 1.7 or earlier, Gitea requires the addition of
