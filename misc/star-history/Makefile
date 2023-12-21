@@ -1,5 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.15
+DISTVERSION=	1.0.16
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.75 \
+		anyhow-1.0.76 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.5 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.27 \
+		pkg-config-0.3.28 \
 		proc-macro2-1.0.70 \
 		quote-1.0.33 \
 		redox_syscall-0.4.1 \
@@ -104,10 +104,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.27 \
+		serde_yaml-0.9.28 \
 		slab-0.4.9 \
 		socket2-0.5.5 \
-		syn-2.0.41 \
+		syn-2.0.42 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.8.1 \
