@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.31
+DISTVERSION=	2023.12.32
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.27 \
+		pkg-config-0.3.28 \
 		platforms-3.2.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
@@ -246,7 +246,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.41 \
+		syn-2.0.42 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
