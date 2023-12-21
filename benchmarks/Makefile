@@ -104,6 +104,7 @@
     SUBDIR += sysbench
     SUBDIR += tcpblast
     SUBDIR += thrulay
+    SUBDIR += tinymembench
     SUBDIR += tsung
     SUBDIR += ttcp
     SUBDIR += typometer
