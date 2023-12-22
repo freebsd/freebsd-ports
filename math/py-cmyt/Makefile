@@ -1,6 +1,5 @@
 PORTNAME=	cmyt
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	2.0.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}colorspacious>=1.1.2:devel/py-colorspacious@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 concurrent autoplist
+USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
 
