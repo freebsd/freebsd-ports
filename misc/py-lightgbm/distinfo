@@ -1,9 +1,3 @@
-TIMESTAMP = 1674623414
-SHA256 (microsoft-LightGBM-v3.3.5_GH0.tar.gz) = 16fb9e299ced37be5ac69dd510e7323337e623019c9c578628c43b285f764be7
-SIZE (microsoft-LightGBM-v3.3.5_GH0.tar.gz) = 6875287
-SHA256 (boostorg-compute-36350b7_GH0.tar.gz) = b82330296614fe9222bcdee60c5f71362d6fc16f17b0fb6fb5901b6531d1df90
-SIZE (boostorg-compute-36350b7_GH0.tar.gz) = 377110
-SHA256 (fmtlib-fmt-b6f4cea_GH0.tar.gz) = 121577275e29f0302dcda9c0fa4e6d33cad5f238777d8c2a7623a8cd88be8aa2
-SIZE (fmtlib-fmt-b6f4cea_GH0.tar.gz) = 826134
-SHA256 (lemire-fast_double_parser-ace6064_GH0.tar.gz) = a53e6ebeb1d37d700cfebf98b2afb98d2c92df742c6ae45c27354d950cd02988
-SIZE (lemire-fast_double_parser-ace6064_GH0.tar.gz) = 635218
+TIMESTAMP = 1703227616
+SHA256 (lightgbm-4.2.0.tar.gz) = 8a4d051df2ab2218998a16f7712e843ee9e96d8b09ffbfcc18533da127e0da02
+SIZE (lightgbm-4.2.0.tar.gz) = 1694670

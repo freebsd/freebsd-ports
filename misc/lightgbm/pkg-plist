@@ -1,5 +1,7 @@
 bin/lightgbm
 include/LightGBM/application.h
+include/LightGBM/arrow.h
+include/LightGBM/arrow.tpp
 include/LightGBM/bin.h
 include/LightGBM/boosting.h
 include/LightGBM/c_api.h
@@ -13,7 +15,7 @@ include/LightGBM/cuda/cuda_random.hpp
 include/LightGBM/cuda/cuda_row_data.hpp
 include/LightGBM/cuda/cuda_split_info.hpp
 include/LightGBM/cuda/cuda_tree.hpp
-include/LightGBM/cuda/cuda_utils.h
+include/LightGBM/cuda/cuda_utils.hu
 include/LightGBM/cuda/vector_cudahost.h
 include/LightGBM/dataset.h
 include/LightGBM/dataset_loader.h
