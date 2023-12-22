@@ -48,6 +48,7 @@
 %%EXECUTABLES%%bin/mlpack_sparse_coding
 include/mlpack.hpp
 include/mlpack/base.hpp
+include/mlpack/config.hpp
 include/mlpack/core.hpp
 include/mlpack/core/arma_extend/Mat_extra_bones.hpp
 include/mlpack/core/arma_extend/SpMat_extra_bones.hpp
@@ -429,6 +430,7 @@ include/mlpack/methods/amf/update_rules/svd_incomplete_incremental_learning.hpp
 include/mlpack/methods/amf/update_rules/update_rules.hpp
 include/mlpack/methods/ann.hpp
 include/mlpack/methods/ann/activation_functions/activation_functions.hpp
+include/mlpack/methods/ann/activation_functions/bipolar_sigmoid_function.hpp
 include/mlpack/methods/ann/activation_functions/elish_function.hpp
 include/mlpack/methods/ann/activation_functions/elliot_function.hpp
 include/mlpack/methods/ann/activation_functions/gaussian_function.hpp
@@ -529,6 +531,8 @@ include/mlpack/methods/ann/layer/hard_tanh_impl.hpp
 include/mlpack/methods/ann/layer/identity.hpp
 include/mlpack/methods/ann/layer/identity_impl.hpp
 include/mlpack/methods/ann/layer/layer.hpp
+include/mlpack/methods/ann/layer/layer_norm.hpp
+include/mlpack/methods/ann/layer/layer_norm_impl.hpp
 include/mlpack/methods/ann/layer/layer_types.hpp
 include/mlpack/methods/ann/layer/leaky_relu.hpp
 include/mlpack/methods/ann/layer/leaky_relu_impl.hpp
@@ -548,6 +552,8 @@ include/mlpack/methods/ann/layer/mean_pooling.hpp
 include/mlpack/methods/ann/layer/mean_pooling_impl.hpp
 include/mlpack/methods/ann/layer/multi_layer.hpp
 include/mlpack/methods/ann/layer/multi_layer_impl.hpp
+include/mlpack/methods/ann/layer/multihead_attention.hpp
+include/mlpack/methods/ann/layer/multihead_attention_impl.hpp
 include/mlpack/methods/ann/layer/noisylinear.hpp
 include/mlpack/methods/ann/layer/noisylinear_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/README.md
@@ -583,16 +589,12 @@ include/mlpack/methods/ann/layer/not_adapted/isrlu.hpp
 include/mlpack/methods/ann/layer/not_adapted/isrlu_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/join.hpp
 include/mlpack/methods/ann/layer/not_adapted/join_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/layer_norm.hpp
-include/mlpack/methods/ann/layer/not_adapted/layer_norm_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/lookup.hpp
 include/mlpack/methods/ann/layer/not_adapted/lookup_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/lp_pooling.hpp
 include/mlpack/methods/ann/layer/not_adapted/lp_pooling_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/minibatch_discrimination.hpp
 include/mlpack/methods/ann/layer/not_adapted/minibatch_discrimination_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/multihead_attention.hpp
-include/mlpack/methods/ann/layer/not_adapted/multihead_attention_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/multiply_constant.hpp
 include/mlpack/methods/ann/layer/not_adapted/multiply_constant_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/multiply_merge.hpp
@@ -1063,9 +1065,11 @@ include/mlpack/methods/regularized_svd/regularized_svd_impl.hpp
 include/mlpack/methods/reinforcement_learning.hpp
 include/mlpack/methods/reinforcement_learning/async_learning.hpp
 include/mlpack/methods/reinforcement_learning/async_learning_impl.hpp
+include/mlpack/methods/reinforcement_learning/ddpg.hpp
+include/mlpack/methods/reinforcement_learning/ddpg_impl.hpp
 include/mlpack/methods/reinforcement_learning/environment/acrobot.hpp
 include/mlpack/methods/reinforcement_learning/environment/cart_pole.hpp
-include/mlpack/methods/reinforcement_learning/environment/continuous_double_pole_cart.hpp
+include/mlpack/methods/reinforcement_learning/environment/cont_double_pole_cart.hpp
 include/mlpack/methods/reinforcement_learning/environment/continuous_mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/environment/double_pole_cart.hpp
 include/mlpack/methods/reinforcement_learning/environment/env_type.hpp
@@ -1075,6 +1079,9 @@ include/mlpack/methods/reinforcement_learning/environment/ftn_param.hpp
 include/mlpack/methods/reinforcement_learning/environment/mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/environment/pendulum.hpp
 include/mlpack/methods/reinforcement_learning/environment/reward_clipping.hpp
+include/mlpack/methods/reinforcement_learning/noise/gaussian.hpp
+include/mlpack/methods/reinforcement_learning/noise/noise.hpp
+include/mlpack/methods/reinforcement_learning/noise/ornstein_uhlenbeck.hpp
 include/mlpack/methods/reinforcement_learning/policy/aggregated_policy.hpp
 include/mlpack/methods/reinforcement_learning/policy/greedy_policy.hpp
 include/mlpack/methods/reinforcement_learning/policy/policy.hpp
@@ -1091,6 +1098,8 @@ include/mlpack/methods/reinforcement_learning/replay/replay.hpp
 include/mlpack/methods/reinforcement_learning/replay/sumtree.hpp
 include/mlpack/methods/reinforcement_learning/sac.hpp
 include/mlpack/methods/reinforcement_learning/sac_impl.hpp
+include/mlpack/methods/reinforcement_learning/td3.hpp
+include/mlpack/methods/reinforcement_learning/td3_impl.hpp
 include/mlpack/methods/reinforcement_learning/training_config.hpp
 include/mlpack/methods/reinforcement_learning/worker/n_step_q_learning_worker.hpp
 include/mlpack/methods/reinforcement_learning/worker/one_step_q_learning_worker.hpp
