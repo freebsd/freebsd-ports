@@ -1,6 +1,6 @@
---- block/export/fuse.c.orig	2023-04-19 16:31:47 UTC
+--- block/export/fuse.c.orig	2023-12-19 21:24:34 UTC
 +++ block/export/fuse.c
-@@ -638,12 +638,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
+@@ -690,12 +690,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
          return;
      }
  
@@ -13,7 +13,7 @@
      if (!mode) {
          /* We can only fallocate at the EOF with a truncate */
          if (offset < blk_len) {
-@@ -663,53 +657,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
+@@ -715,53 +709,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
          ret = fuse_do_truncate(exp, offset + length, true,
                                 PREALLOC_MODE_FALLOC);
      }
