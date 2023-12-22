@@ -1,5 +1,5 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp	2023-11-23 07:17:53.000000000 -0500
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2023-12-12 19:22:35.579828000 -0500
+--- src/data_provider/src/sysInfoFreeBSD.cpp	2023-12-15 11:15:49.000000000 -0500
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2023-12-22 12:02:24.020462000 -0500
 @@ -11,6 +11,7 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
@@ -95,7 +95,7 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,18 +234,129 @@
+@@ -215,18 +234,133 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
@@ -137,6 +137,10 @@
 +              } else {
 +                localip = "0.0.0.0";
 +              }
++            }
++
++            if(localport == "*") {
++              localport = "0";
 +            }
 +
 +            if(remotedata.size() == 4) {
@@ -230,7 +234,7 @@
  
      if (!query.empty())
      {
-@@ -235,18 +365,22 @@
+@@ -235,18 +369,22 @@
          for (const auto& line : lines)
          {
              const auto data{Utils::split(line, '|')};

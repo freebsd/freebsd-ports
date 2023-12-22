@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/:config_samples \
 		https://packages.wazuh.com/4.x/filebeat/:wazuh_module \
@@ -46,7 +46,7 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PORTNAME}-filebeat-${WAZUH_MODULE_VER}.tar.gz ${EXTRACT_AFTER_ARGS}
 	${CP} ${_DISTDIR}/filebeat.yml ${WRKDIR}
-	${CP} ${_DISTDIR}/logstash.conf ${WRKDIR}
+	${CP} ${_DISTDIR}/logstash-${PORTNAME}-${PORTVERSION}.conf ${WRKDIR}/logstash.conf
 	${CP} ${_DISTDIR}/wazuh-template.json ${WRKDIR}
 
 do-install:

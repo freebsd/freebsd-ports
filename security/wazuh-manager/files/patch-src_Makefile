@@ -83,7 +83,7 @@
 +ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
 +	$(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B -m pip install --upgrade pip --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --no-index --find-links=wazuh-cache/ --cache-dir=wazuh-cache/ --no-compile
 +	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache-any/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
-+	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache-${uname_M}/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
++	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
 +endif
 +
 +install_framework:

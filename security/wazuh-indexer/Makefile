@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=	-indexer
@@ -24,11 +24,11 @@ ETCDIR=		${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	${CP} ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-indexer.yml ${WRKSRC}
+	${CP} ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-indexer.yml ${WRKSRC}/wazuh-indexer.yml
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}-${PORTVERSION}-indexer
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}-indexer.yml \
-		${STAGEDIR}${PREFIX}/etc/wazuh-indexer/wazuh-indexer.yml
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/wazuh-indexer.yml \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}/wazuh-indexer.yml
 	
 .include <bsd.port.mk>

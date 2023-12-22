@@ -44,7 +44,7 @@
 @group wazuh
 @sample /var/ossec/etc/client.keys.sample
 /var/ossec/etc/internal_options.conf
-/var/ossec/etc/local_internal_options.conf
+@sample /var/ossec/etc/local_internal_options.conf.sample
 /var/ossec/etc/localtime
 @mode 660
 @owner root
@@ -148,6 +148,8 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/23/localfile-extra.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/23/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-commands.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/sca.files
@@ -296,6 +298,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/20/cis_apple_macOS_11.1.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/21/cis_apple_macOS_12.0.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/22/cis_apple_macOS_13.x.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/23/cis_apple_macOS_14.0.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian11.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian7.yml
@@ -423,6 +426,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/20
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/23
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11
@@ -501,6 +505,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/20
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/21
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/22
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/23
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/debian
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/generic
