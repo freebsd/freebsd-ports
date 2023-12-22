@@ -1,6 +1,6 @@
 PORTNAME=	gdstk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.46
+DISTVERSION=	0.9.48
 CATEGORIES=	cad
 #MASTER_SITES=	PYPI # build fails from PYPI: https://github.com/heitzmann/gdspy/issues/236
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
