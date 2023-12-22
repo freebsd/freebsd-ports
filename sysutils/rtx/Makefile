@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.32
+DISTVERSION=	2023.12.34
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,9 +72,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ctrlc-3.4.1 \
 		curve25519-dalek-4.1.1 \
 		curve25519-dalek-derive-0.1.1 \
+		demand-0.3.0 \
 		der-0.7.8 \
 		deranged-0.3.10 \
-		dialoguer-0.11.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
@@ -172,7 +172,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-sys-0.9.97 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
-		papergrid-0.10.0 \
+		papergrid-0.11.0 \
 		paste-1.0.14 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
@@ -250,8 +250,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tabled-0.14.0 \
-		tabled_derive-0.6.0 \
+		tabled-0.15.0 \
+		tabled_derive-0.7.0 \
 		tar-0.4.40 \
 		tempfile-3.8.1 \
 		tera-1.19.1 \
