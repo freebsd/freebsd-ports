@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	8.2.0.20231031
+DISTVERSION=	8.2.0.20231130
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -22,11 +22,11 @@ USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t ninja perl5 \
 		pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	6c9ae1ce82b65faa3f266fd103729878cf11e07e
+GL_TAGNAME=	e25acd619135c752672de323f22aba8c1d00584e
 GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
 		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
-		qemu-project:meson:cfec255027ca7c928defcc665a12e91b439c7c3f:meson/meson \
+		qemu-project:meson:cf64e062bb6f8d95c73a6b292629a7776ff31864:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/subprojects/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:e7af9751d9f9fd3b47911f51a5cfd08af256a9ab:berkeleytestfloat3/subprojects/berkeley-testfloat-3
 USE_GNOME=	cairo glib20
