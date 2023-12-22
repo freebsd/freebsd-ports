@@ -1,6 +1,5 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.8.10
-PORTREVISION=	3
+DISTVERSION=	10.8.13
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/Thefrank/jellyfin-server-freebsd/releases/download/v${DISTVERSION}/
 DISTFILES=	jellyfin-combined_${DISTVERSION}_freebsd-${ARCH}.tar.gz \
@@ -25,7 +24,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libunwind>0:devel/libunwind \
 		mediainfo>0:multimedia/mediainfo
 
-USES=		ssl:run sqlite:3
+USES=		sqlite:3 ssl:run
 USE_RC_SUBR=	jellyfin
 
 NO_BUILD=	YES
