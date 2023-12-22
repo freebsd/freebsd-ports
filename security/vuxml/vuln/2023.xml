@@ -1,3 +1,39 @@
+  <vuln vid="7015ab21-9230-490f-a2fe-f7557e3de25d">
+    <topic>electron{26,27} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.3</lt></range>
+      </package>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6508.</li>
+	    <li>Security: backported fix for CVE-2023-7024.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6508</cvename>
+      <url>https://github.com/advisories/GHSA-3pr6-6r34-c98x</url>
+      <cvename>CVE-2023-7024</cvename>
+      <url>https://github.com/advisories/GHSA-7c6v-f3h8-2x89</url>
+    </references>
+    <dates>
+      <discovery>2023-12-21</discovery>
+      <entry>2023-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2765c89-a052-11ee-bed2-596753f1a87c">
     <topic>gitea -- Prefix Truncation Attack against ChaCha20-Poly1305 and Encrypt-then-MAC aka Terrapin</topic>
     <affects>
