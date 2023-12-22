@@ -1,0 +1,31 @@
+Unused since https://github.com/libjxl/libjxl/commit/726da4dbbe2e
+
+-- Could NOT find LCMS2 (missing: LCMS2_LIBRARY LCMS2_INCLUDE_DIR) (Required is at least version "2.12")
+CMake Error at third_party/CMakeLists.txt:111 (message):
+  Please install lcms2 or run git submodule update --init
+
+FAILED: plugins/gdk-pixbuf/libpixbufloader-jxl.so
+ld: error: unable to find library -llcms2
+
+--- third_party/CMakeLists.txt.orig	2023-12-22 14:33:41 UTC
++++ third_party/CMakeLists.txt
+@@ -104,7 +104,7 @@ endif ()
+   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/skcms/LICENSE"
+                  ${PROJECT_BINARY_DIR}/LICENSE.skcms COPYONLY)
+ endif ()
+-if (JPEGXL_ENABLE_VIEWERS OR NOT JPEGXL_ENABLE_SKCMS OR JPEGXL_ENABLE_PLUGINS)
++if (JPEGXL_ENABLE_VIEWERS OR NOT JPEGXL_ENABLE_SKCMS)
+   if( NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/lcms/.git" OR JPEGXL_FORCE_SYSTEM_LCMS2 )
+     find_package(LCMS2 2.12)
+     if ( NOT LCMS2_FOUND )
+--- plugins/gdk-pixbuf/CMakeLists.txt.orig	2023-12-22 14:33:41 UTC
++++ plugins/gdk-pixbuf/CMakeLists.txt
+@@ -25,7 +25,7 @@ set_target_properties(pixbufloader-jxl PROPERTIES
+ 
+ # Note: This only needs the decoder library, but we don't install the decoder
+ # shared library.
+-target_link_libraries(pixbufloader-jxl jxl jxl_threads lcms2 PkgConfig::Gdk-Pixbuf)
++target_link_libraries(pixbufloader-jxl jxl jxl_threads PkgConfig::Gdk-Pixbuf)
+ 
+ execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} gdk-pixbuf-2.0 --variable gdk_pixbuf_moduledir --define-variable=prefix=${CMAKE_INSTALL_PREFIX} OUTPUT_VARIABLE GDK_PIXBUF_MODULEDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
+ install(TARGETS pixbufloader-jxl DESTINATION "${GDK_PIXBUF_MODULEDIR}")

@@ -1,6 +1,7 @@
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	carl@stagecraft.cx
