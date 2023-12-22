@@ -1,5 +1,5 @@
 PORTNAME=	php82
-DISTVERSION=	8.2.13
+DISTVERSION=	8.2.14
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -18,7 +18,6 @@ PHP_VER=	82
 CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
 
 .if !defined(PKGNAMESUFFIX)
-BUILD_DEPENDS=	re2c>0:devel/re2c
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
 
@@ -29,8 +28,7 @@ CONFIGURE_ARGS+=	--disable-all \
 			--with-layout=GNU \
 			--with-libxml \
 			--with-openssl \
-			--with-password-argon2=${LOCALBASE} \
-			--with-external-pcre=${LOCALBASE}
+			--with-password-argon2=${LOCALBASE}
 
 USES+=		autoreconf:build ssl
 USE_GNOME=	libxml2
@@ -40,8 +38,8 @@ LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
 LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE+=		CGI CLI DEBUG DTRACE EMBED FPM IPV6 LINKTHR \
-				MYSQLND PHPDBG ZTS
-OPTIONS_DEFAULT=		CGI CLI DTRACE EMBED FPM LINKTHR MYSQLND
+				MYSQLND PCRE PHPDBG ZTS
+OPTIONS_DEFAULT=		CGI CLI DTRACE EMBED FPM LINKTHR MYSQLND PCRE
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
 OPTIONS_EXCLUDE_aarch64=	DTRACE
@@ -64,6 +62,7 @@ EMBED_DESC=	Build embedded library
 FPM_DESC=	Build FPM version
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 MYSQLND_DESC=	Build with MySQL Native Driver
+PCRE_DESC=	Use system pcre instead of bundled one
 PHPDBG_DESC=	Interactive PHP debugger
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
@@ -83,6 +82,10 @@ FPM_VARS=		PHP_SAPI+=fpm \
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 LINKTHR_LIBS=		-lpthread
 MYSQLND_CONFIGURE_ON=	--enable-mysqlnd
+PCRE_BUILD_DEPENDS=	re2c>0:devel/re2c
+PCRE_CONFIGURE_ON=	--with-external-pcre=${LOCALBASE}
+PCRE_PLIST_SUB=	BUNDLED_PCRE="@comment "
+PCRE_PLIST_SUB_OFF=	BUNDLED_PCRE=""
 PHPDBG_CONFIGURE_ON=	--enable-phpdbg
 PHPDBG_VARS=		PHP_SAPI+=phpdbg
 ZTS_CONFIGURE_ON=	--enable-zts
@@ -97,6 +100,7 @@ PKGMESSAGE=		${PKGDIR}/pkg-message.mod
 MODULENAME=		libphp
 SHORTMODNAME=		php
 WARNING=		"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
+WARNING+=	"!!! Consider switching to php-fpm and mod_proxy_fcgi as per Apache httpd recommendations !!!"
 .endif
 
 .include <bsd.port.pre.mk>

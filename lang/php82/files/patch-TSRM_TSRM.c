@@ -1,6 +1,6 @@
---- TSRM/TSRM.c.orig	2023-04-12 04:09:40 UTC
+--- TSRM/TSRM.c.orig	2023-12-20 06:28:06 UTC
 +++ TSRM/TSRM.c
-@@ -740,7 +740,7 @@ TSRM_API size_t tsrm_get_ls_cache_tcb_offset(void)
+@@ -769,7 +769,7 @@ TSRM_API size_t tsrm_get_ls_cache_tcb_offset(void)
  	asm ("leal _tsrm_ls_cache@ntpoff,%0"
            : "=r" (ret));
  	return ret;
