@@ -1401,6 +1401,7 @@
     SUBDIR += persepolis
     SUBDIR += pglogd
     SUBDIR += phalcon
+    SUBDIR += php-google-api-php-client
     SUBDIR += php80-opcache
     SUBDIR += php80-session
     SUBDIR += php80-tidy
