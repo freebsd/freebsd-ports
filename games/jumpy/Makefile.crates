@@ -16,7 +16,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		android-properties-0.2.2 \
 		android_log-sys-0.3.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.75 \
+		anyhow-1.0.76 \
 		append-only-vec-0.1.3 \
 		approx-0.5.1 \
 		arboard-3.3.0 \
@@ -26,7 +26,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		async-channel-1.9.0 \
 		async-executor-1.8.0 \
 		async-lock-3.2.0 \
-		async-task-4.5.0 \
+		async-task-4.6.0 \
 		atomic-arena-0.1.1 \
 		atomicell-0.2.0 \
 		autocfg-1.1.0 \
@@ -115,11 +115,11 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		cpufeatures-0.2.11 \
 		crc32fast-1.3.2 \
 		crossbeam-0.8.2 \
-		crossbeam-channel-0.5.8 \
-		crossbeam-deque-0.8.3 \
-		crossbeam-epoch-0.9.15 \
-		crossbeam-queue-0.3.8 \
-		crossbeam-utils-0.8.16 \
+		crossbeam-channel-0.5.9 \
+		crossbeam-deque-0.8.4 \
+		crossbeam-epoch-0.9.16 \
+		crossbeam-queue-0.3.9 \
+		crossbeam-utils-0.8.17 \
 		crypto-common-0.1.6 \
 		csscolorparser-0.6.2 \
 		d3d12-0.6.0 \
@@ -139,7 +139,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		egui_extras-0.23.0 \
 		ehttp-0.3.1 \
 		either-1.9.0 \
-		elsa-1.9.0 \
+		elsa-1.10.0 \
 		emath-0.23.0 \
 		encase-0.6.1 \
 		encase_derive-0.6.1 \
@@ -155,7 +155,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		euclid-0.22.9 \
 		event-listener-2.5.3 \
 		event-listener-3.1.0 \
-		event-listener-4.0.0 \
+		event-listener-4.0.1 \
 		event-listener-strategy-0.4.0 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
@@ -201,7 +201,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		hex-0.4.3 \
 		hexasphere-9.1.0 \
 		hexf-parse-0.2.1 \
-		home-0.5.5 \
+		home-0.5.9 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
 		idna-0.5.0 \
@@ -215,7 +215,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		intl_pluralrules-7.0.2 \
 		io-kit-sys-0.3.0 \
 		itertools-0.10.5 \
-		itoa-1.0.9 \
+		itoa-1.0.10 \
 		jni-0.19.0 \
 		jni-0.20.0 \
 		jni-0.21.1 \
@@ -228,7 +228,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		libloading-0.7.4 \
 		libloading-0.8.1 \
 		libm-0.2.8 \
@@ -241,8 +241,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		lyon_algorithms-1.0.4 \
 		lyon_geom-1.0.4 \
 		lyon_path-1.0.4 \
-		lyon_tessellation-1.0.12 \
-		mach2-0.4.1 \
+		lyon_tessellation-1.0.13 \
+		mach2-0.4.2 \
 		malloc_buf-0.0.6 \
 		matchers-0.1.0 \
 		matrixmultiply-0.3.8 \
@@ -317,13 +317,13 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		phf_macros-0.11.2 \
 		phf_shared-0.11.2 \
 		pin-project-lite-0.2.13 \
-		pkg-config-0.3.27 \
+		pkg-config-0.3.28 \
 		png-0.17.10 \
 		pp-rs-0.2.1 \
 		ppv-lite86-0.2.17 \
 		proc-macro-crate-1.3.1 \
-		proc-macro2-1.0.70 \
-		profiling-1.0.11 \
+		proc-macro2-1.0.71 \
+		profiling-1.0.13 \
 		puffin-0.16.0 \
 		quote-1.0.33 \
 		radium-0.7.0 \
@@ -358,7 +358,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		rustc-hash-1.1.0 \
 		rustls-0.21.10 \
 		rustls-webpki-0.101.7 \
-		ryu-1.0.15 \
+		ryu-1.0.16 \
 		safe_arch-0.7.1 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.1 \
@@ -366,13 +366,13 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		sct-0.7.1 \
 		sctk-adwaita-0.5.4 \
 		self_cell-0.10.3 \
-		self_cell-1.0.2 \
+		self_cell-1.0.3 \
 		semver-1.0.20 \
 		send_wrapper-0.6.0 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
-		serde_yaml-0.9.27 \
+		serde_yaml-0.9.29 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
 		shiftnanigans-0.3.3 \
@@ -402,14 +402,14 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		symphonia-metadata-0.5.3 \
 		symphonia-utils-xiph-0.5.3 \
 		syn-1.0.109 \
-		syn-2.0.39 \
+		syn-2.0.42 \
 		synstructure-0.13.0 \
 		sys-locale-0.3.1 \
 		sysinfo-0.29.11 \
 		tap-1.0.1 \
 		termcolor-1.4.0 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
+		thiserror-1.0.51 \
+		thiserror-impl-1.0.51 \
 		thread_local-1.1.7 \
 		tiff-0.9.0 \
 		tiny-skia-0.8.4 \
@@ -431,14 +431,14 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		type-map-0.4.0 \
 		typenum-1.17.0 \
 		ulid-1.1.0 \
-		unic-langid-0.9.3 \
-		unic-langid-impl-0.9.3 \
+		unic-langid-0.9.4 \
+		unic-langid-impl-0.9.4 \
 		unicode-bidi-0.3.14 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.11 \
 		unicode-xid-0.2.4 \
-		unsafe-libyaml-0.2.9 \
+		unsafe-libyaml-0.2.10 \
 		untrusted-0.9.0 \
 		ureq-2.9.1 \
 		url-2.5.0 \
@@ -512,16 +512,16 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
 		winit-0.28.7 \
-		winnow-0.5.26 \
+		winnow-0.5.30 \
 		wyz-0.5.1 \
 		x11-dl-2.21.0 \
 		x11rb-0.12.0 \
 		x11rb-protocol-0.12.0 \
 		xcursor-0.3.5 \
 		xml-rs-0.8.19 \
-		zerocopy-0.7.30 \
-		zerocopy-derive-0.7.30 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32 \
 		kira@git+https://github.com/zicklag/kira.git?branch=feat/sync\#ff184e31263652e21d94445b9087dfee04c2ea2b \
-		bones_asset,bones_bevy_renderer,bones_ecs,bones_framework,bones_lib,bones_schema,bones_schema_macros,bones_scripting,bones_utils,bones_utils_macros@git+https://github.com/fishfolk/bones\#831a7d83bd427fd89e5bc4de5386089245bf2fff \
-		gc-arena,gc-arena-derive@git+https://github.com/kyren/gc-arena\#bdb328467fb062c8d904cb4ce4d725e2ad816580 \
+		gc-arena,gc-arena-derive@git+https://github.com/kyren/gc-arena\#0a4bffa8ca5fc4c6faa5c0658a81404ee09ec968 \
+		bones_asset,bones_bevy_renderer,bones_ecs,bones_framework,bones_lib,bones_schema,bones_schema_macros,bones_scripting,bones_utils,bones_utils_macros@git+https://github.com/fishfolk/bones\#69a1b4dea1bd2efb15ba19f508a94333478882eb \
 		piccolo@git+https://github.com/kyren/piccolo.git?rev=d25ef38\#d25ef38068229c96e24704fe499e412d0bef6e84

@@ -309,8 +309,8 @@ https://github.com/bevyengine/bevy/issues/4106
  
  [[package]]
  name = "xml-rs"
---- ../bones-831a7d83bd427fd89e5bc4de5386089245bf2fff/framework_crates/bones_bevy_renderer/Cargo.toml.orig	2023-12-08 21:06:25 UTC
-+++ ../bones-831a7d83bd427fd89e5bc4de5386089245bf2fff/framework_crates/bones_bevy_renderer/Cargo.toml
+--- ../bones-69a1b4dea1bd2efb15ba19f508a94333478882eb/framework_crates/bones_bevy_renderer/Cargo.toml.orig	2023-12-22 01:42:22 UTC
++++ ../bones-69a1b4dea1bd2efb15ba19f508a94333478882eb/framework_crates/bones_bevy_renderer/Cargo.toml
 @@ -26,7 +26,7 @@ default-features = false
  
  [dependencies.bevy]
