@@ -1,0 +1,15 @@
+--- goodies/xsession/Makefile.orig	2005-01-03 21:54:58 UTC
++++ goodies/xsession/Makefile
+@@ -1,9 +1,11 @@ CC = gcc
+ # Taken from fspanel Makefile by MJR
+ 
+ CC = gcc
+-C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -m386 -malign-loops=2 -malign-jumps=2 -malign-functions=2
++C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -falign-functions=2
+ L_FLAGS = -O1 -Xlinker -s -L$(XROOT)/lib -lX11 -lXpm
+ PROGNAME = xsession
++
++all: $(PROGNAME)
+ 
+ $(PROGNAME): Makefile xsession.c
+ 	$(CC) $(C_FLAGS) $(L_FLAGS) xsession.c -o $(PROGNAME)

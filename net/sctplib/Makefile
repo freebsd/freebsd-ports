@@ -1,11 +1,11 @@
 PORTNAME=	sctplib
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.31
 CATEGORIES=	net
-MASTER_SITES=	https://www.uni-due.de/~be0001/sctplib/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/sctplib/download/
 
-MAINTAINER=	dreibh@iem.uni-due.de
+MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	User-space implementation of the SCTP protocol RFC 4960
-WWW=		https://www.uni-due.de/~be0001/sctplib/
+WWW=		https://www.nntb.no/~dreibh/sctplib/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

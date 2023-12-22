@@ -1,8 +1,5 @@
-OBPager is a lightweight pager designed
-to be used with NetWM-compliant window
-managers like OpenBox.
+OBPager is a lightweight pager designed to be used with NetWM-compliant
+window managers like Openbox.
 
-Unlike many other pagers out there,
-OBPager has very few dependencies,
-requiring only Xlib and glibc++
-(no Gnome or KDE necessary).
+Unlike many other pagers out there, OBPager has very few dependencies,
+requiring only Xlib and glibc++ (no Gnome or KDE necessary).

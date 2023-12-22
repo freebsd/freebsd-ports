@@ -1,8 +1,7 @@
 PORTNAME=	dlib
-DISTVERSION=	19.24
-PORTREVISION=	2
+DISTVERSION=	19.24.2
 CATEGORIES=	science devel math python
-MASTER_SITES=	http://dlib.net/files/
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -16,8 +15,7 @@ BUILD_DEPENDS=		cmake:devel/cmake-core
 LIB_DEPENDS=		${PY_BOOST} \
 			libpng.so:graphics/png
 
-USES=			compiler:c++11-lang pkgconfig python:3.8-3.10 shebangfix \
-			tar:bzip2
+USES=			compiler:c++11-lang pkgconfig python shebangfix
 USE_PYTHON=		autoplist distutils
 SHEBANG_FILES=		python_examples/*.py
 

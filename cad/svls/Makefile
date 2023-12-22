@@ -1,7 +1,6 @@
 PORTNAME=	svls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.9
-PORTREVISION=	5
+DISTVERSION=	0.2.10
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalance
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.71 \
+		anyhow-1.0.75 \
 		async-trait-0.1.53 \
 		atty-0.2.14 \
 		auto_impl-1.0.1 \
@@ -27,6 +26,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		bytes-1.1.0 \
 		cfg-if-1.0.0 \
 		clap-3.2.2 \
+		clap_complete-3.2.5 \
 		clap_derive-3.2.2 \
 		clap_lex-0.2.4 \
 		colored-2.0.0 \
@@ -34,6 +34,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		enquote-1.1.0 \
+		equivalent-1.0.0 \
 		form_urlencoded-1.0.1 \
 		futures-0.3.21 \
 		futures-channel-0.3.21 \
@@ -45,18 +46,20 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		futures-util-0.3.21 \
 		getrandom-0.2.6 \
 		hashbrown-0.12.1 \
+		hashbrown-0.14.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		httparse-1.8.0 \
 		idna-0.2.3 \
 		indexmap-1.9.2 \
+		indexmap-2.0.0 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.125 \
 		libloading-0.8.0 \
 		lock_api-0.4.7 \
-		log-0.4.17 \
-		lsp-types-0.94.0 \
+		log-0.4.20 \
+		lsp-types-0.94.1 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
 		minimal-lexical-0.2.1 \
@@ -79,8 +82,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		pin-utils-0.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.52 \
-		quote-1.0.26 \
+		proc-macro2-1.0.63 \
+		quote-1.0.29 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
 		regex-1.5.5 \
@@ -89,26 +92,26 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.162 \
-		serde_derive-1.0.162 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
 		serde_json-1.0.81 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.8 \
-		serde_spanned-0.6.1 \
+		serde_spanned-0.6.3 \
 		simplelog-0.12.1 \
 		slab-0.4.6 \
 		str-concat-0.2.0 \
 		strsim-0.10.0 \
 		sv-filelist-parser-0.1.3 \
-		sv-parser-0.13.1 \
-		sv-parser-error-0.13.1 \
-		sv-parser-macros-0.13.1 \
-		sv-parser-parser-0.13.1 \
-		sv-parser-pp-0.13.1 \
-		sv-parser-syntaxtree-0.13.1 \
-		svlint-0.7.2 \
+		sv-parser-0.13.2 \
+		sv-parser-error-0.13.2 \
+		sv-parser-macros-0.13.2 \
+		sv-parser-parser-0.13.2 \
+		sv-parser-pp-0.13.2 \
+		sv-parser-syntaxtree-0.13.2 \
+		svlint-0.9.1 \
 		syn-1.0.104 \
-		syn-2.0.7 \
+		syn-2.0.28 \
 		term-0.7.0 \
 		termcolor-1.1.3 \
 		textwrap-0.15.0 \
@@ -121,13 +124,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tokio-1.18.1 \
 		tokio-macros-1.7.0 \
 		tokio-util-0.7.1 \
-		toml-0.7.3 \
-		toml_datetime-0.6.1 \
-		toml_edit-0.19.7 \
+		toml-0.8.2 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.20.2 \
 		tower-0.4.12 \
 		tower-layer-0.3.1 \
-		tower-lsp-0.19.0 \
-		tower-lsp-macros-0.8.0 \
+		tower-lsp-0.20.0 \
+		tower-lsp-macros-0.9.0 \
 		tower-service-0.3.1 \
 		tracing-0.1.34 \
 		tracing-attributes-0.1.21 \
@@ -152,7 +155,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.48.0 \
-		winnow-0.3.6
+		winnow-0.5.15
 
 PLIST_FILES=	bin/${PORTNAME}
 

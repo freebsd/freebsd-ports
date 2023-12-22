@@ -1,7 +1,6 @@
 PORTNAME=	SimGrid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.32-20230223
-PORTREVISION=	2
+DISTVERSION=	3.35
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL-2.1
 
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libcgraph.so:graphics/graphviz \
+		libevent.so:devel/libevent \
 		${LIB_DEPENDS_${ARCH}}
 
 USES=		cmake:testing compiler:c++14-lang perl5 python shebangfix
@@ -23,7 +23,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://framagit.org/
 GL_ACCOUNT=	simgrid
 GL_PROJECT=	simgrid
-GL_TAGNAME=	93ba9586352a457e9795a66ccd6f45f8525cb03f
+GL_TAGNAME=	d68e1c39ec0832cb2391aedd17a868c597dd399e
 
 CMAKE_OFF=	enable_python
 

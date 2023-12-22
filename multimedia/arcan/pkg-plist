@@ -32,15 +32,15 @@ lib/libarcan_a12.so
 lib/libarcan_a12.so.0.1
 lib/libarcan_shmif.a
 lib/libarcan_shmif.so
-lib/libarcan_shmif.so.0.15
+lib/libarcan_shmif.so.0.16
 lib/libarcan_shmif_ext.so
-lib/libarcan_shmif_ext.so.0.15
+lib/libarcan_shmif_ext.so.0.16
 lib/libarcan_shmif_intext.so
-lib/libarcan_shmif_intext.so.0.15
+lib/libarcan_shmif_intext.so.0.16
 lib/libarcan_shmif_server.so
-lib/libarcan_shmif_server.so.0.15
+lib/libarcan_shmif_server.so.0.16
 lib/libarcan_tui.so
-lib/libarcan_tui.so.0.15
+lib/libarcan_tui.so.0.16
 libdata/pkgconfig/arcan-shmif-ext.pc
 libdata/pkgconfig/arcan-shmif-srv.pc
 libdata/pkgconfig/arcan-shmif-tui.pc
@@ -120,6 +120,7 @@ man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/image_mask_set.3.gz
 %%MANPAGES%%man/man3/image_mask_toggle.3.gz
 %%MANPAGES%%man/man3/image_matchstorage.3.gz
+%%MANPAGES%%man/man3/image_metadata.3.gz
 %%MANPAGES%%man/man3/image_mipmap.3.gz
 %%MANPAGES%%man/man3/image_origo_offset.3.gz
 %%MANPAGES%%man/man3/image_parent.3.gz
@@ -251,6 +252,7 @@ man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/system_snapshot.3.gz
 %%MANPAGES%%man/man3/tag_image_transform.3.gz
 %%MANPAGES%%man/man3/target_alloc.3.gz
+%%MANPAGES%%man/man3/target_anchorhint.3.gz
 %%MANPAGES%%man/man3/target_configurations.3.gz
 %%MANPAGES%%man/man3/target_coreopt.3.gz
 %%MANPAGES%%man/man3/target_devicehint.3.gz
@@ -296,6 +298,7 @@ man/man1/arcan_db.1.gz
 %%DATADIR%%/scripts/builtin/decorator.lua
 %%DATADIR%%/scripts/builtin/json.lua
 %%DATADIR%%/scripts/builtin/keyboard.lua
+%%DATADIR%%/scripts/builtin/legacy.lua
 %%DATADIR%%/scripts/builtin/mouse.lua
 %%DATADIR%%/scripts/builtin/osdkbd.lua
 %%DATADIR%%/scripts/builtin/string.lua

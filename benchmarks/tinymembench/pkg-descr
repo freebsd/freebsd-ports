@@ -1,0 +1,5 @@
+This is a simple memory benchmark program, which tries to measure the
+peak bandwidth of sequential memory accesses and the latency of random
+memory accesses. Bandwidth is measured by running different assembly
+code for the aligned memory blocks and attempting different prefetch
+strategies.

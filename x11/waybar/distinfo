@@ -1,3 +1,5 @@
 TIMESTAMP = 1699016827
 SHA256 (Alexays-Waybar-0.9.24_GH0.tar.gz) = 57aa7860bc066ebf4f3327dafa9841100b098c0dec1dce4baaa1fae63e9b57ae
 SIZE (Alexays-Waybar-0.9.24_GH0.tar.gz) = 275416
+SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
+SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803

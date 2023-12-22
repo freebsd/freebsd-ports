@@ -4,9 +4,10 @@
 include/OpenImageDenoise/config.h
 include/OpenImageDenoise/oidn.h
 include/OpenImageDenoise/oidn.hpp
-lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseConfig.cmake
 lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseConfigVersion.cmake
+lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseTargets.cmake
 lib/libOpenImageDenoise.so
 lib/libOpenImageDenoise.so.2
 lib/libOpenImageDenoise.so.%%VER%%

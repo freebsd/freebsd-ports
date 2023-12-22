@@ -112,6 +112,7 @@ include/include/opti.hpp
 include/include/parallel.hpp
 include/include/stlgeom.hpp
 include/include/visual.hpp
+include/interface/rw_medit.hpp
 include/interface/writeuser.hpp
 include/linalg/densemat.hpp
 include/linalg/linalg.hpp

@@ -1,0 +1,27 @@
+bin/grafana
+bin/grafana-cli
+bin/grafana-server
+@sample %%ETCDIR%%/grafana.ini.sample
+@sample %%ETCDIR%%/ldap.toml.sample
+%%DATADIR%%/conf/defaults.ini
+%%DATADIR%%/plugins-bundled/internal/input-datasource/README.md
+%%DATADIR%%/plugins-bundled/internal/input-datasource/img/input.svg
+%%DATADIR%%/plugins-bundled/internal/input-datasource/module.js
+%%DATADIR%%/plugins-bundled/internal/input-datasource/module.js.map
+%%DATADIR%%/plugins-bundled/internal/input-datasource/plugin.json
+@owner %%GRAFANA_USER%%
+@group %%GRAFANA_GROUP%%
+@mode 750
+@dir %%GRAFANA_DATADIR%%
+@dir %%GRAFANA_PLUGINDIR%%
+@dir %%GRAFANA_PROVISIONINGDIR%%
+@dir %%GRAFANA_PROVISIONINGDIR%%/access-control
+@dir %%GRAFANA_PROVISIONINGDIR%%/alerting
+@dir %%GRAFANA_PROVISIONINGDIR%%/dashboards
+@dir %%GRAFANA_PROVISIONINGDIR%%/datasources
+@dir %%GRAFANA_PROVISIONINGDIR%%/notifiers
+@dir %%GRAFANA_PROVISIONINGDIR%%/plugins
+@dir %%GRAFANA_LOGDIR%%
+@mode
+@group
+@owner

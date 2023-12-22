@@ -1,5 +1,5 @@
 PORTNAME=	libdrm
-PORTVERSION=	2.4.118
+PORTVERSION=	2.4.119
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/

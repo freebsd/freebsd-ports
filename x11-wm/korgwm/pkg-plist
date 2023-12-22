@@ -1,0 +1,23 @@
+bin/korgwm
+@sample etc/korgwm/korgwm.conf.sample
+%%SITE_PERL%%/X11/korgwm.pm
+%%SITE_PERL%%/X11/korgwm/API.pm
+%%SITE_PERL%%/X11/korgwm/Common.pm
+%%SITE_PERL%%/X11/korgwm/Config.pm
+%%SITE_PERL%%/X11/korgwm/EWMH.pm
+%%SITE_PERL%%/X11/korgwm/Executor.pm
+%%SITE_PERL%%/X11/korgwm/Expose.pm
+%%SITE_PERL%%/X11/korgwm/Hotkeys.pm
+%%SITE_PERL%%/X11/korgwm/Layout.pm
+%%SITE_PERL%%/X11/korgwm/Mouse.pm
+%%SITE_PERL%%/X11/korgwm/Panel.pm
+%%SITE_PERL%%/X11/korgwm/Panel/Battery.pm
+%%SITE_PERL%%/X11/korgwm/Panel/Clock.pm
+%%SITE_PERL%%/X11/korgwm/Panel/Lang.pm
+%%SITE_PERL%%/X11/korgwm/Screen.pm
+%%SITE_PERL%%/X11/korgwm/Tag.pm
+%%SITE_PERL%%/X11/korgwm/Window.pm
+%%SITE_PERL%%/X11/korgwm/Xkb.pm
+%%PERL5_MAN1%%/korgwm.1.gz
+%%PERL5_MAN3%%/X11::korgwm.3.gz
+%%PERL5_MAN3%%/X11::korgwm::Layout.3.gz

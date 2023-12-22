@@ -1,11 +1,11 @@
---- src/Makefile.orig	2023-11-13 10:04:33 UTC
+--- src/Makefile.orig	2023-12-12 13:40:27 UTC
 +++ src/Makefile
 @@ -96,7 +96,8 @@ SRC_main1 = \
   cpotclmt.f90 rfmtsm.f90 rbshtip.f90 rfshtip.f90 zbshtip.f90 zfshtip.f90 \
   writejw.f90 cbsht.f90 cbshtip.f90 cfshtip.f90 gencvclmt.f90 \
   zcfmtinp.f90 zcfinp.f90 cpotcoul.f90 ggamt_5b.f90 ggamt_5c.f90 ggair_5b.f90 \
-- ggair_5c.f90 piezoelt.f90 magnetoelt.f90 zftcf.f90 trimrfg.f90
-+ ggair_5c.f90 piezoelt.f90 magnetoelt.f90 zftcf.f90 trimrfg.f90 \
+- ggair_5c.f90 piezoelt.f90 magnetoelt.f90 zftcf.f90 trimrfg.f90 rmtavrg.f90
++ ggair_5c.f90 piezoelt.f90 magnetoelt.f90 zftcf.f90 trimrfg.f90 rmtavrg.f90 \
 + mkl_stub.f90
  
  SRC_main = $(SRC_main0) $(SRC_main1)

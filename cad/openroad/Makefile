@@ -13,7 +13,6 @@ WWW=		https://theopenroadproject.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		does not build with libfmt 10+. See https://github.com/The-OpenROAD-Project/OpenROAD/pull/3911
 BROKEN_i386=	C++ issue on i386, should be resolved in the next update
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture

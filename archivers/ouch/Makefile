@@ -1,6 +1,5 @@
 PORTNAME=	ouch
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,8 +40,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		cfb-0.7.3 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.10 \
-		clap_builder-4.4.9 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
 		clap_complete-4.4.4 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \

@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.29
+DISTVERSION=	2023.12.34
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,9 +72,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ctrlc-3.4.1 \
 		curve25519-dalek-4.1.1 \
 		curve25519-dalek-derive-0.1.1 \
+		demand-0.3.0 \
 		der-0.7.8 \
 		deranged-0.3.10 \
-		dialoguer-0.11.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
@@ -119,13 +119,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.3.3 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
-		home-0.5.5 \
+		home-0.5.9 \
 		http-0.2.11 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
-		hyper-0.14.27 \
+		hyper-0.14.28 \
 		hyper-rustls-0.24.2 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.58 \
@@ -172,7 +172,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-sys-0.9.97 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
-		papergrid-0.10.0 \
+		papergrid-0.11.0 \
 		paste-1.0.14 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.27 \
+		pkg-config-0.3.28 \
 		platforms-3.2.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
@@ -205,7 +205,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.22 \
+		reqwest-0.11.23 \
 		ring-0.17.7 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
@@ -229,7 +229,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
-		serde_spanned-0.6.4 \
+		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
@@ -240,33 +240,32 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		similar-2.3.0 \
 		simplelog-0.12.1 \
 		slab-0.4.9 \
-		socket2-0.4.10 \
 		socket2-0.5.5 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.41 \
+		syn-2.0.42 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tabled-0.14.0 \
-		tabled_derive-0.6.0 \
+		tabled-0.15.0 \
+		tabled_derive-0.7.0 \
 		tar-0.4.40 \
 		tempfile-3.8.1 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
+		thiserror-1.0.51 \
+		thiserror-impl-1.0.51 \
 		thread_local-1.1.7 \
-		time-0.3.30 \
+		time-0.3.31 \
 		time-core-0.1.2 \
-		time-macros-0.2.15 \
+		time-macros-0.2.16 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.0 \
+		tokio-1.35.1 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
@@ -346,7 +345,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.28 \
+		winnow-0.5.30 \
 		winreg-0.50.0 \
 		xattr-1.1.3 \
 		yaml-rust-0.4.5 \

@@ -1,6 +1,5 @@
 PORTNAME=	finvizfinance
-PORTVERSION=	0.14.5
-PORTREVISION=	1
+DISTVERSION=	0.14.7
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +11,11 @@ WWW=		https://finvizfinance.readthedocs.io/en/latest/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}DateTime>0:devel/py-DateTime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
 USE_PYTHON=	distutils autoplist pytest

@@ -1,0 +1,45 @@
+[
+{ type: upgrade
+  maximum_version: 1.20.0
+  message: <<EOM
+Please make sure to empty or maintain the contents of the
+%%PREFIX%%/share/gitea folder between your upgrades of gitea.
+Changes between versions can break the web UI due to residual
+files from earlier versions.
+
+1.21.0 has a breaking change regarding the public assets folder. In case
+you use a proxying webserver serving the files, you need to update your
+configuration:
+
+https://github.com/go-gitea/gitea/pull/25907
+EOM
+}
+{ type: upgrade
+  maximum_version: 1.7.6
+  message: <<EOM
+When upgrading from Gitea 1.7 or earlier, Gitea requires the addition of
+another secret to the config file in order to start up.  Either manually add
+JWT_SECRET to the ${PREFIX}/etc/gitea/conf/app.ini config file (see
+app.ini.sample), or allow Gitea to make the change for you by making the
+config file writable to the git user.
+EOM
+}
+{ type: upgrade
+  maximum_version: 1.15.0
+  message: <<EOM
+Some config file options have been changed in Gitea 1.15. Please refer to
+the documentation at https://docs.gitea.io/en-us/customizing-gitea/ and
+the release notes.
+EOM
+}
+{ type: upgrade
+  maximum_version: 1.15.1
+  message: <<EOM
+We remind users that a bug was discovered with gitea dump in 1.14.3-1.14.6
+and 1.15.0.  Database dumps from these versions cause broken fields in the
+repo_unit and login_source tables causing the issue identified in #16961.
+Users on 1.14.x must upgrade to 1.14.7 before running gitea dump.  See the
+release notes for more information.
+EOM
+}
+]

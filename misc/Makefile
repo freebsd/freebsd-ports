@@ -468,6 +468,7 @@
     SUBDIR += py-python-utils
     SUBDIR += py-pytorch
     SUBDIR += py-pytorch-lightning
+    SUBDIR += py-pyviz-comms
     SUBDIR += py-qiskit-machine-learning
     SUBDIR += py-scikit-fusion
     SUBDIR += py-scikit-quant

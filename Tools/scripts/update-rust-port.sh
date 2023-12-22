@@ -64,24 +64,23 @@ BEGIN {
 		in_cargo_crates = 0
 	}
 	print $0
-}' < Makefile.new > Makefile.new1 &&
-/bin/mv Makefile.new1 Makefile.new
+}' < Makefile.new > Makefile
 
 # update distinfo
-make -f Makefile.new makesum
+make makesum
 
 # replace the placeholder
 while IFS= read -r line; do
 	if [ "$line" = "#@@@PLACEHOLDER@@@" ]; then
-		make -f Makefile.new cargo-crates | grep -v '^='
+		make cargo-crates | grep -v '^='
 	else
 		echo "$line"
 	fi
-done < Makefile.new > Makefile.new1 &&
-mv Makefile.new1 Makefile.new
-
-# move Makefile.new
+done < Makefile > Makefile.new &&
 mv Makefile.new Makefile
 
+# clean
+make clean
+
 # update distinfo
-make clean makesum
+make makesum

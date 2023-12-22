@@ -191,3 +191,15 @@ man/man1/ugrep.1.gz
 %%DATADIR%%/patterns/xml/zap_comments
 %%DATADIR%%/patterns/xml/zap_pis
 %%DATADIR%%/patterns/xml/zap_strings
+etc/bash_completion.d/ug
+etc/bash_completion.d/ug+
+etc/bash_completion.d/ugrep
+etc/bash_completion.d/ugrep+
+share/fish/completions/ug+.fish
+share/fish/completions/ug.fish
+share/fish/completions/ugrep+.fish
+share/fish/completions/ugrep.fish
+share/zsh/site-functions/_ug
+share/zsh/site-functions/_ug+
+share/zsh/site-functions/_ugrep
+share/zsh/site-functions/_ugrep+

@@ -413,6 +413,7 @@ include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
 include/folly/experimental/io/Liburing.h
+include/folly/experimental/io/MuxIOThreadPoolExecutor.h
 include/folly/experimental/io/SimpleAsyncIO.h
 include/folly/experimental/observer/CoreCachedObserver.h
 include/folly/experimental/observer/HazptrObserver.h

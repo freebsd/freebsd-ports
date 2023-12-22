@@ -1,5 +1,5 @@
 PORTNAME=	dra
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +27,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
 		bstr-1.6.0 \
-		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
@@ -62,8 +61,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		io-lifetimes-1.0.2 \
 		itertools-0.11.0 \
 		itoa-1.0.6 \
-		js-sys-0.3.55 \
-		lazy_static-1.4.0 \
 		libc-0.2.147 \
 		libz-sys-1.1.8 \
 		linux-raw-sys-0.1.3 \
@@ -91,19 +88,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-1.5.6 \
 		regex-automata-0.3.4 \
 		regex-syntax-0.6.26 \
-		ring-0.16.20 \
 		ring-0.17.3 \
 		rustix-0.36.16 \
 		rustls-0.21.9 \
 		rustls-webpki-0.101.7 \
 		ryu-1.0.6 \
 		same-file-1.0.6 \
-		sct-0.7.0 \
+		sct-0.7.1 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.99 \
 		shell-words-1.1.0 \
-		spin-0.5.2 \
 		spin-0.9.8 \
 		strsim-0.10.0 \
 		syn-1.0.104 \
@@ -123,7 +118,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-ident-1.0.5 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
-		untrusted-0.7.1 \
 		untrusted-0.9.0 \
 		ureq-2.9.1 \
 		url-2.2.2 \
@@ -135,12 +129,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		wait-timeout-0.2.0 \
 		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.78 \
-		wasm-bindgen-backend-0.2.78 \
-		wasm-bindgen-macro-0.2.78 \
-		wasm-bindgen-macro-support-0.2.78 \
-		wasm-bindgen-shared-0.2.78 \
-		web-sys-0.3.55 \
 		webpki-roots-0.25.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \

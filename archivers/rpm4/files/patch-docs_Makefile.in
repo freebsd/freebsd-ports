@@ -1,11 +1,11 @@
---- docs/Makefile.in.orig	2023-07-21 09:25:20 UTC
+--- docs/Makefile.in.orig	2023-12-19 15:56:53 UTC
 +++ docs/Makefile.in
-@@ -442,7 +442,7 @@ target_alias = @target_alias@
+@@ -442,7 +442,7 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -@PANDOC_TRUE@SUBDIRS = man
 +SUBDIRS = man
- EXTRA_DIST = _layouts/default.html _layouts/favicon.ico index.md \
- 	manual/index.md manual/arch_dependencies.md \
+ EXTRA_DIST = _layouts/default.html _layouts/favicon.ico README.md \
+ 	index.md manual/index.md manual/arch_dependencies.md \
  	manual/autosetup.md manual/boolean_dependencies.md \

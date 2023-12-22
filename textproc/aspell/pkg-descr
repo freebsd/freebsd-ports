@@ -4,3 +4,5 @@ functions. Aspell's main feature is that it does a much better
 job of coming up with possible suggestions than ispell. Aspell
 also includes a powerful C++ library with C and Perl interfaces
 in the works.
+
+See also <https://github.com/GNUAspell/aspell>.

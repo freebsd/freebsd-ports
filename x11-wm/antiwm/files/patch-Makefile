@@ -1,5 +1,5 @@
---- ./Makefile.orig	2008-08-01 02:59:17.000000000 +0200
-+++ ./Makefile	2011-06-24 15:12:36.000000000 +0200
+--- Makefile.orig	2008-08-01 00:59:17 UTC
++++ Makefile
 @@ -1,22 +1,36 @@
  # install directory
 -INSTALL_DIR=/usr/local/bin
@@ -14,7 +14,7 @@
 -CFLAGS = -O2 -Wall -I/usr/X11R6/include 
 +# compiler and linker
 +CC?= gcc
-+
+ 
 +# paths
 +X11INC = $(LOCALBASE)/include
 +X11LIB = $(LOCALBASE)/lib
@@ -26,7 +26,7 @@
 +# flags
 +LDFLAGS+= ${LIBS}
 +CFLAGS+= ${INCS}
- 
++
  SRC = main.o events.o manage.o list.o bar.o
  HEADERS = bar.h conf.h data.h events.h list.h manage.h antiwm.h
  

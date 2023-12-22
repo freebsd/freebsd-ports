@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.16.0
-PORTREVISION=	1
+DISTVERSION=	1.17.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,8 +36,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		dotenvy-0.15.7 \
 		edit-distance-2.1.0 \
 		either-1.9.0 \
-		env_logger-0.10.0 \
-		errno-0.3.6 \
+		env_logger-0.10.1 \
+		errno-0.3.8 \
 		executable-path-1.0.0 \
 		fastrand-2.0.1 \
 		generic-array-0.14.7 \
@@ -48,24 +47,24 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.3 \
-		home-0.5.5 \
+		home-0.5.9 \
 		humantime-2.1.0 \
 		is-terminal-0.4.9 \
-		itoa-1.0.9 \
+		itoa-1.0.10 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.11 \
+		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
 		memchr-2.6.4 \
 		nix-0.27.1 \
 		num_cpus-1.16.0 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		pulldown-cmark-0.9.3 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.33 \
@@ -74,12 +73,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
-		rustix-0.38.21 \
+		rustix-0.38.28 \
 		rustversion-1.0.14 \
-		ryu-1.0.15 \
+		ryu-1.0.16 \
 		semver-1.0.20 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		sha2-0.10.8 \
 		similar-2.3.0 \
@@ -91,12 +90,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		strum-0.25.0 \
 		strum_macros-0.25.3 \
 		syn-1.0.109 \
-		syn-2.0.39 \
+		syn-2.0.41 \
 		target-2.0.0 \
 		tempfile-3.8.1 \
 		temptree-0.2.0 \
 		term_size-0.3.2 \
-		termcolor-1.3.0 \
+		termcolor-1.4.0 \
 		textwrap-0.11.0 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
@@ -104,7 +103,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		unicode-ident-1.0.12 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.11 \
-		uuid-1.5.0 \
+		uuid-1.6.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -114,14 +113,23 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1
 

@@ -1,11 +1,11 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
-DISTVERSION=	4.17.2.20230929
+DISTVERSION=	4.18.0.20231212
 CATEGORIES=	emulators
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	xen-project
-GL_TAGNAME=	0b56bed864ca9b572473957f0254aefa797216f2
+GL_TAGNAME=	1792d1723b7fb45a20b145d2de4d233913b22c09
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -27,10 +27,6 @@ PLIST_FILES=	/boot/xen \
 		/boot/xen-debug \
 		lib/debug/boot/xen.debug \
 		lib/debug/boot/xen-debug.debug
-
-# Support for fetching video mode for PVH dom0
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-platform-introduce-hypercall-to-get-initial-vide.patch:-p1 \
-		${PATCHDIR}/0001-x86-platform-make-XENPF_get_dom0_console-actually-us.patch:-p1
 
 .include <bsd.port.options.mk>
 

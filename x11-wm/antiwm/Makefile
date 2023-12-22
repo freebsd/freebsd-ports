@@ -10,6 +10,9 @@ WWW=		https://sourceforge.net/projects/antiwm/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Last upstream release was in 2009
+EXPIRATION_DATE=	2024-01-20
+
 USES=		xorg
 USE_XORG=	x11
 

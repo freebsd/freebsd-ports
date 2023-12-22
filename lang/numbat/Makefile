@@ -1,7 +1,6 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.9.0
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,7 +46,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		clap_builder-4.4.7 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
-		clipboard-win-4.5.0 \
+		clipboard-win-5.0.0 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
 		colored-2.0.4 \
@@ -71,8 +70,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		endian-type-0.1.2 \
 		equivalent-1.0.1 \
 		errno-0.3.5 \
-		error-code-2.3.1 \
-		fd-lock-3.0.13 \
+		error-code-3.0.0 \
+		fd-lock-4.0.1 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.0 \
@@ -101,7 +100,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		memchr-2.6.4 \
 		memoffset-0.9.0 \
 		nibble_vec-0.1.0 \
-		nix-0.26.4 \
+		nix-0.27.1 \
 		normalize-line-endings-0.3.0 \
 		num-bigint-0.4.4 \
 		num-format-0.4.4 \
@@ -137,8 +136,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		rustix-0.38.21 \
 		rustls-0.21.8 \
 		rustls-webpki-0.101.7 \
-		rustyline-12.0.0 \
-		rustyline-derive-0.9.0 \
+		rustyline-13.0.0 \
+		rustyline-derive-0.10.0 \
 		ryu-1.0.15 \
 		ryu_floating_decimal-0.1.0 \
 		same-file-1.0.6 \
@@ -153,7 +152,6 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		similar-2.3.0 \
 		smallvec-1.11.1 \
 		spin-0.9.8 \
-		str-buf-1.0.6 \
 		strsim-0.10.0 \
 		syn-2.0.38 \
 		termcolor-1.3.0 \
@@ -193,22 +191,31 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		winnow-0.5.19 \
 		yaml-rust-0.4.5
 

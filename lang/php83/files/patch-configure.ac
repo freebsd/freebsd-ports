@@ -1,4 +1,4 @@
---- configure.ac.orig	2023-09-12 11:29:39 UTC
+--- configure.ac.orig	2023-12-20 12:44:38 UTC
 +++ configure.ac
 @@ -55,6 +55,7 @@ AH_BOTTOM([
  
@@ -8,7 +8,7 @@
  #endif /* PHP_CONFIG_H */
  ])
  
-@@ -283,7 +284,6 @@ sinclude(Zend/Zend.m4)
+@@ -283,7 +284,6 @@ dnl --------------------------------------------------
  
  dnl ----------------------------------------------------------------------------
  
@@ -16,7 +16,7 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_BUILD_PROGRAM
-@@ -567,7 +567,7 @@ dnl Fix for these systems is already included in GCC 7
+@@ -567,7 +567,7 @@ dnl bug #77284. Conservatively don't use ifuncs on Fre
  dnl
  dnl At least some versions of FreeBSD seem to have buggy ifunc support, see
  dnl bug #77284. Conservatively don't use ifuncs on FreeBSD.
@@ -25,7 +25,7 @@
    AX_GCC_FUNC_ATTRIBUTE([ifunc])
    AX_GCC_FUNC_ATTRIBUTE([target])
  ])
-@@ -652,7 +652,7 @@ AC_FUNC_STRERROR_R
+@@ -652,7 +652,7 @@ dnl Some systems (like OpenSolaris) do not have nanosl
  AX_FUNC_WHICH_GETHOSTBYNAME_R
  
  dnl Some systems (like OpenSolaris) do not have nanosleep in libc.
@@ -34,7 +34,7 @@
  
  dnl Haiku does not have network api in libc.
  PHP_CHECK_FUNC_LIB(setsockopt, network)
-@@ -1463,7 +1463,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1463,7 +1463,7 @@ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CON
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -43,7 +43,7 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1688,7 +1688,7 @@ PHP_SUBST(all_targets)
+@@ -1705,7 +1705,7 @@ PHP_SUBST(install_binary_targets)
  PHP_SUBST(install_targets)
  PHP_SUBST(install_binary_targets)
  

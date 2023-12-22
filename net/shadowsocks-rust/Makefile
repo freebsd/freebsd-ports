@@ -1,7 +1,7 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	2
+DISTVERSION=	1.17.1
+PORTREVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,12 +34,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arc-swap-1.6.0 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.4 \
-		async-trait-0.1.73 \
+		async-trait-0.1.74 \
 		atomic-polyfill-0.1.11 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base16ct-0.1.1 \
-		base64-0.21.4 \
+		base64-0.21.5 \
 		base64ct-1.6.0 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -54,6 +54,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.5.0 \
 		c2rust-bitfields-0.18.0 \
 		c2rust-bitfields-derive-0.18.0 \
+		camellia-0.1.0 \
 		cc-1.0.83 \
 		ccm-0.5.0 \
 		cfg-if-1.0.0 \
@@ -62,9 +63,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		checked_int_cast-1.0.0 \
 		chrono-0.4.31 \
 		cipher-0.4.4 \
-		clap-4.4.6 \
-		clap_builder-4.4.6 \
-		clap_lex-0.5.1 \
+		clap-4.4.8 \
+		clap_builder-4.4.8 \
+		clap_lex-0.6.0 \
 		cmake-0.1.50 \
 		colorchoice-1.0.0 \
 		const-oid-0.9.5 \
@@ -94,7 +95,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		elliptic-curve-0.12.3 \
 		encoding_rs-0.8.33 \
 		enum-as-inner-0.6.0 \
-		env_logger-0.10.0 \
+		env_logger-0.10.1 \
+		equivalent-1.0.1 \
 		errno-0.3.5 \
 		etherparse-0.13.0 \
 		fastrand-1.9.0 \
@@ -105,24 +107,26 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.0 \
 		fsevent-sys-4.1.0 \
-		futures-0.3.28 \
-		futures-channel-0.3.28 \
-		futures-core-0.3.28 \
-		futures-executor-0.3.28 \
-		futures-io-0.3.28 \
-		futures-macro-0.3.28 \
-		futures-sink-0.3.28 \
-		futures-task-0.3.28 \
-		futures-util-0.3.28 \
+		futures-0.3.29 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-executor-0.3.29 \
+		futures-io-0.3.29 \
+		futures-macro-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-util-0.3.29 \
 		generic-array-0.14.7 \
 		getrandom-0.2.10 \
 		ghash-0.5.0 \
 		gimli-0.28.0 \
 		h2-0.3.21 \
+		h2-0.4.0 \
 		h3-0.0.2 \
 		h3-quinn-0.0.3 \
 		hash32-0.2.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.2 \
 		heapless-0.7.16 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
@@ -132,24 +136,29 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hmac-0.12.1 \
 		hostname-0.3.1 \
 		http-0.2.9 \
+		http-1.0.0 \
 		http-body-0.4.5 \
+		http-body-1.0.0 \
+		http-body-util-0.1.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		hyper-0.14.27 \
+		hyper-1.0.1 \
 		hyper-rustls-0.24.1 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.57 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
 		indexmap-1.9.3 \
+		indexmap-2.1.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
 		instant-0.1.12 \
 		ioctl-sys-0.8.0 \
 		ipconfig-0.3.2 \
-		ipnet-2.8.0 \
+		ipnet-2.9.0 \
 		iprange-0.6.7 \
 		is-terminal-0.4.9 \
 		itoa-1.0.9 \
@@ -234,7 +243,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
 		ring-compat-0.5.1 \
-		rpassword-7.2.0 \
+		rpassword-7.3.1 \
 		rpmalloc-0.2.2 \
 		rpmalloc-sys-0.2.3+b097fd0 \
 		rtoolbox-0.0.1 \
@@ -259,22 +268,23 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.188 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.188 \
-		serde_json-1.0.107 \
+		serde_json-1.0.108 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.8.26 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
-		shadowsocks-crypto-0.5.1 \
+		shadowsocks-crypto-0.5.2 \
 		signal-hook-registry-1.4.1 \
 		signature-1.6.4 \
 		siphasher-1.0.0 \
 		slab-0.4.9 \
+		sm4-0.5.1 \
 		smallvec-1.11.1 \
 		smoltcp-0.10.0 \
 		snmalloc-rs-0.3.4 \
 		snmalloc-sys-0.3.4 \
 		socket2-0.4.9 \
-		socket2-0.5.4 \
+		socket2-0.5.5 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		spki-0.6.0 \
@@ -283,7 +293,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.38 \
-		sysexits-0.7.4 \
+		sysexits-0.7.5 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tcmalloc-0.3.0 \
@@ -291,8 +301,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tempfile-3.8.0 \
 		termcolor-1.3.0 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.49 \
-		thiserror-impl-1.0.49 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
 		thread-id-4.2.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -302,8 +312,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-rustls-0.24.1 \
 		tokio-tfo-0.2.2 \
 		tokio-util-0.7.9 \
-		tower-0.4.13 \
-		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.26 \
@@ -345,22 +353,31 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-service-0.6.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		winreg-0.50.0 \
 		wintun-0.3.2 \
 		xdg-2.5.2 \

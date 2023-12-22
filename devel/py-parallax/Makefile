@@ -1,7 +1,6 @@
 PORTNAME=		parallax
-PORTVERSION=		1.0.6
+PORTVERSION=		1.0.8
 CATEGORIES=		devel python
-MASTER_SITES=		PYPI
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		egypcio@FreeBSD.org
@@ -13,5 +12,10 @@ LICENSE_FILE=		${WRKSRC}/COPYING
 
 USES=			python
 USE_PYTHON=		distutils autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	krig
+GH_PROJECT=	parallax
+GH_TAG=		6713276
 
 .include <bsd.port.mk>

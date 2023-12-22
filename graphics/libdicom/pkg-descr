@@ -1,0 +1,2 @@
+libdicom is a C library and a set of command-line tools
+for reading DICOM WSI files.

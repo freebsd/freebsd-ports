@@ -1,12 +1,11 @@
 PORTNAME=	hipercontracer
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.10
 CATEGORIES=	benchmarks
-MASTER_SITES=	https://www.uni-due.de/~be0001/hipercontracer/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
-MAINTAINER=	dreibh@iem.uni-due.de
+MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	High-Performance Connectivity Tracer (HiPerConTracer)
-WWW=		https://www.uni-due.de/~be0001/hipercontracer/
+WWW=		https://www.nntb.no/~dreibh/hipercontracer/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,9 +19,5 @@ SHEBANG_FILES=	src/addressinfogenerator src/get-default-ips src/tracedataimporte
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:PATH=${PREFIX}/man
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^#include <set>/ { x; s/^/#include <map>/; G; }' \
-		${WRKSRC}/src/tools.h ${WRKSRC}/src/traceroute.h
 
 .include <bsd.port.mk>

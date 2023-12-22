@@ -1,0 +1,14 @@
+--- daemons/Makefile.am.orig	2023-08-21 14:29:00 UTC
++++ daemons/Makefile.am
+@@ -9,11 +9,8 @@ noinst_HEADERS = ipa-version.h.in
+ 
+ SUBDIRS =			\
+ 	.			\
+-	dnssec			\
+ 	ipa-kdb			\
+-	ipa-slapi-plugins	\
+ 	ipa-sam			\
+-	ipa-otpd		\
+ 	$(NULL)
+ 
+ ipa-version.h: ipa-version.h.in $(top_builddir)/$(CONFIG_STATUS)

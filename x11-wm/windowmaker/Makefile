@@ -1,12 +1,13 @@
 PORTNAME=	windowmaker
 PORTVERSION=	0.96.0
 CATEGORIES=	x11-wm windowmaker
-MASTER_SITES=	http://windowmaker.org/pub/source/release/
+MASTER_SITES=	https://www.windowmaker.org/pub/source/release/ \
+		https://github.com/window-maker/wmaker/releases/download/wmaker-${PORTVERSION}/ LOCAL/danfe
 DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GNUstep-compliant NeXTstep window manager clone
-WWW=		https://windowmaker.org/
+WWW=		https://www.windowmaker.org/
 
 LICENSE=	GPLv2
 
@@ -45,6 +46,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
 PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ INSTALL \
 		INSTALL-WMAKER NEWS README README.definable-cursor \
 		README.i18n TODO The-perfect-Window-Maker-patch.txt

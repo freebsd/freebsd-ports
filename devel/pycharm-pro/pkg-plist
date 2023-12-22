@@ -7,6 +7,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/bin/idea.vmoptions
 %%DATADIR%%/bin/idea64.vmoptions
 %%DATADIR%%/bin/inspect.sh
+%%DATADIR%%/bin/jetbrains_client.sh
+%%DATADIR%%/bin/jetbrains_client64.vmoptions
 %%DATADIR%%/bin/ltedit.sh
 %%DATADIR%%/bin/pycharm.png
 %%DATADIR%%/bin/pycharm.sh
@@ -32,7 +34,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-233.11799.298
+%%DATADIR%%/lib/build-marker-PY-233.13135.95
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -201,8 +203,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-56bbcd2c060c.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-56bbcd2c060c.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-c44b541a36ca.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-c44b541a36ca.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/diagnosticMessages.json
@@ -453,8 +455,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-7a29c1521ef0-c986f194a52a.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-7a29c1521ef0-c986f194a52a.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-50da183f06c8-2887949eec09.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-50da183f06c8-2887949eec09.txt
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/3rdpartylicenses.txt
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/87.js
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/cancel.png

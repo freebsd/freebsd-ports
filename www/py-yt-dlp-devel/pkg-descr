@@ -1,0 +1,4 @@
+A command-line program to download videos from youtube.com and many other video
+platforms.
+
+This is a fork of youtube-dlc which is inturn a fork of youtube-dl.

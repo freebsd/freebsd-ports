@@ -163,6 +163,7 @@
     SUBDIR += freebsd-telnetd
     SUBDIR += freebsd-uucp
     SUBDIR += freediameter
+    SUBDIR += freeipa-client
     SUBDIR += freeradius-client
     SUBDIR += freeradius3
     SUBDIR += freerdp

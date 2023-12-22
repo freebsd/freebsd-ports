@@ -1,6 +1,6 @@
 PORTNAME=	prql
-DISTVERSION=	0.10.1
-PORTREVISION=	1
+DISTVERSION=	0.11.0
+PORTREVISION=	0
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -20,33 +20,30 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
 		ahash-0.7.6 \
 		ahash-0.8.3 \
-		aho-corasick-1.0.5 \
+		aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		ansi-to-html-0.1.3 \
-		anstream-0.3.2 \
-		anstream-0.6.4 \
+		ansi-to-html-0.2.1 \
+		anstream-0.6.5 \
 		anstyle-1.0.2 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
 		anstyle-wincon-3.0.1 \
 		anyhow-1.0.75 \
 		ariadne-0.3.0 \
 		arrayvec-0.7.2 \
-		arrow-47.0.0 \
-		arrow-arith-47.0.0 \
-		arrow-array-47.0.0 \
-		arrow-buffer-47.0.0 \
-		arrow-cast-47.0.0 \
-		arrow-data-47.0.0 \
-		arrow-ord-47.0.0 \
-		arrow-row-47.0.0 \
-		arrow-schema-47.0.0 \
-		arrow-select-47.0.0 \
-		arrow-string-47.0.0 \
-		async-native-tls-0.4.0 \
+		arrow-49.0.0 \
+		arrow-arith-49.0.0 \
+		arrow-array-49.0.0 \
+		arrow-buffer-49.0.0 \
+		arrow-cast-49.0.0 \
+		arrow-data-49.0.0 \
+		arrow-ord-49.0.0 \
+		arrow-row-49.0.0 \
+		arrow-schema-49.0.0 \
+		arrow-select-49.0.0 \
+		arrow-string-49.0.0 \
 		async-trait-0.1.68 \
 		asynchronous-codec-0.6.1 \
 		atty-0.2.14 \
@@ -83,8 +80,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ciborium-ll-0.2.1 \
 		clang-sys-1.6.1 \
 		clap-2.34.0 \
-		clap-4.4.8 \
-		clap_builder-4.4.8 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
 		clap_complete-4.4.4 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.3.0 \
@@ -125,7 +122,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		darling_macro-0.20.1 \
 		derive_utils-0.13.0 \
 		digest-0.10.7 \
-		duckdb-0.9.1 \
+		duckdb-0.9.2 \
 		either-1.8.1 \
 		encode_unicode-0.3.6 \
 		encoding-0.2.33 \
@@ -161,19 +158,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		frunk_proc_macros_impl-0.1.1 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
-		futures-channel-0.3.28 \
-		futures-core-0.3.28 \
-		futures-io-0.3.28 \
-		futures-macro-0.3.28 \
-		futures-sink-0.3.28 \
-		futures-task-0.3.28 \
-		futures-util-0.3.28 \
+		futures-0.3.29 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-executor-0.3.29 \
+		futures-io-0.3.29 \
+		futures-macro-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.29 \
 		generic-array-0.14.7 \
-		getrandom-0.1.16 \
 		getrandom-0.2.9 \
 		gimli-0.27.2 \
 		glob-0.3.1 \
-		globset-0.4.13 \
+		globset-0.4.14 \
 		half-1.8.2 \
 		half-2.2.1 \
 		handlebars-4.3.7 \
@@ -202,12 +201,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		io-enum-1.1.0 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
-		itertools-0.11.0 \
+		itertools-0.12.0 \
 		itoa-1.0.9 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.26 \
-		js-sys-0.3.65 \
+		js-sys-0.3.66 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
@@ -219,8 +218,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.150 \
-		libduckdb-sys-0.9.1 \
+		libc-0.2.151 \
+		libduckdb-sys-0.9.2 \
 		libloading-0.7.4 \
 		libm-0.2.7 \
 		libsqlite3-sys-0.26.0 \
@@ -231,8 +230,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		log-0.4.20 \
 		lru-0.10.0 \
 		md-5-0.10.5 \
-		md5-0.6.1 \
-		mdbook-0.4.35 \
+		mdbook-0.4.36 \
 		mdbook-preprocessor-boilerplate-0.1.2 \
 		memchr-2.6.3 \
 		memoffset-0.8.0 \
@@ -259,16 +257,17 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		num-traits-0.2.16 \
 		num_cpus-1.15.0 \
 		object-0.30.3 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		opener-0.6.1 \
-		openssl-0.10.55 \
+		openssl-0.10.60 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.90 \
+		openssl-sys-0.9.96 \
 		owo-colors-3.5.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.7 \
+		pathdiff-0.2.1 \
 		peeking_take_while-0.1.2 \
 		pem-2.0.1 \
 		percent-encoding-2.2.0 \
@@ -296,12 +295,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.66 \
+		proc-macro2-1.0.70 \
 		psm-0.1.21 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
 		pulldown-cmark-0.9.3 \
-		pulldown-cmark-to-cmark-11.0.0 \
+		pulldown-cmark-to-cmark-11.0.2 \
 		pyo3-0.20.0 \
 		pyo3-build-config-0.20.0 \
 		pyo3-ffi-0.20.0 \
@@ -309,13 +308,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pyo3-macros-backend-0.20.0 \
 		quote-1.0.33 \
 		radium-0.7.0 \
-		rand-0.7.3 \
 		rand-0.8.5 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.4 \
-		rand_hc-0.2.0 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
@@ -324,19 +319,27 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-automata-0.1.10 \
 		regex-automata-0.3.9 \
 		regex-automata-0.4.3 \
-		regex-syntax-0.7.5 \
 		regex-syntax-0.8.2 \
+		relative-path-1.9.0 \
 		rend-0.4.0 \
+		ring-0.16.20 \
+		ring-0.17.3 \
 		rkyv-0.7.42 \
 		rkyv_derive-0.7.42 \
+		rstest-0.18.2 \
+		rstest_macros-0.18.2 \
 		rusqlite-0.29.0 \
 		rust_decimal-1.29.1 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
+		rustc_version-0.4.0 \
 		rustix-0.38.19 \
 		rustler-0.30.0 \
 		rustler_codegen-0.30.0 \
 		rustler_sys-2.3.0 \
+		rustls-0.20.9 \
+		rustls-native-certs-0.6.3 \
+		rustls-pemfile-1.0.4 \
 		rustversion-1.0.14 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
@@ -344,12 +347,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		schannel-0.1.21 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
+		sct-0.7.1 \
 		seahash-4.1.0 \
 		security-framework-2.9.1 \
 		security-framework-sys-2.9.0 \
 		semver-1.0.20 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		serde_yaml-0.9.27 \
 		sha1-0.10.5 \
@@ -364,8 +368,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		slab-0.4.8 \
 		smallvec-1.10.0 \
 		socket2-0.5.5 \
-		sqlformat-0.2.2 \
-		sqlparser-0.38.0 \
+		spin-0.5.2 \
+		spin-0.9.8 \
+		sqlformat-0.2.3 \
+		sqlparser-0.40.0 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
 		stringprep-0.1.2 \
@@ -377,13 +383,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		subprocess-0.2.9 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.32 \
+		syn-2.0.41 \
 		tap-1.0.1 \
 		tar-0.4.38 \
 		target-lexicon-0.12.11 \
 		tempfile-3.8.0 \
 		termcolor-1.2.0 \
 		terminal_size-0.3.0 \
+		test_each_file-0.3.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.48 \
 		thiserror-impl-1.0.48 \
@@ -396,9 +403,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.34.0 \
+		tokio-1.35.0 \
 		tokio-macros-2.2.0 \
 		tokio-postgres-0.7.10 \
+		tokio-rustls-0.23.4 \
 		tokio-util-0.7.10 \
 		toml-0.5.11 \
 		toml_datetime-0.6.2 \
@@ -422,6 +430,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unindent-0.2.3 \
 		unreachable-1.0.0 \
 		unsafe-libyaml-0.2.9 \
+		untrusted-0.7.1 \
+		untrusted-0.9.0 \
 		url-2.3.1 \
 		utf8parse-0.2.1 \
 		uuid-1.3.3 \
@@ -430,23 +440,22 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		version_check-0.9.4 \
 		void-1.0.2 \
 		walkdir-2.4.0 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.88 \
-		wasm-bindgen-backend-0.2.88 \
-		wasm-bindgen-futures-0.4.38 \
-		wasm-bindgen-macro-0.2.88 \
-		wasm-bindgen-macro-support-0.2.88 \
-		wasm-bindgen-shared-0.2.88 \
-		wasm-bindgen-test-0.3.38 \
-		wasm-bindgen-test-macro-0.3.38 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-futures-0.4.39 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		wasm-bindgen-test-0.3.39 \
+		wasm-bindgen-test-macro-0.3.39 \
 		web-sys-0.3.60 \
+		webpki-0.22.4 \
 		whoami-1.4.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winauth-0.0.4 \
 		windows-0.48.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \

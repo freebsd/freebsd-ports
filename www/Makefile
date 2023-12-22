@@ -221,6 +221,7 @@
     SUBDIR += gopherus
     SUBDIR += gotty
     SUBDIR += gpx2map
+    SUBDIR += grafana
     SUBDIR += grafana9
     SUBDIR += grails
     SUBDIR += gregarius
@@ -1400,6 +1401,7 @@
     SUBDIR += persepolis
     SUBDIR += pglogd
     SUBDIR += phalcon
+    SUBDIR += php-google-api-php-client
     SUBDIR += php80-opcache
     SUBDIR += php80-session
     SUBDIR += php80-tidy
@@ -1881,6 +1883,7 @@
     SUBDIR += py-xandikos
     SUBDIR += py-xyzservices
     SUBDIR += py-yarl
+    SUBDIR += py-yt-dlp-devel
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
     SUBDIR += qhttpengine

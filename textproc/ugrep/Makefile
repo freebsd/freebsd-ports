@@ -1,6 +1,6 @@
 PORTNAME=	ugrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.6
+DISTVERSION=	4.4.1
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -22,15 +22,16 @@ OPTIONS_DEFAULT_aarch64=	NEON
 OPTIONS_DEFAULT_amd64=	AVX SSE2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost-regex
+CONFIGURE_ARGS=--with-bash-completion-dir=${PREFIX}/etc/bash_completion.d \
+		--with-fish-completion-dir=${PREFIX}/share/fish/completions \
+		--with-zsh-completion-dir=${PREFIX}/share/zsh/site-functions
 
 SHEBANG_FILES=	bin/ug+ bin/ugrep+
 bash_CMD=	${SH}
 
 PCRE2_DESC=			Use Perl Compatible Regular Expressions v2
 PCRE2_CONFIGURE_WITH=		pcre2=${LOCALBASE}
-PCRE2_LIB_DEPENDS=		libboost_regex.so:devel/boost-libs \
-				libpcre2-8.so:devel/pcre2
+PCRE2_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
 LZ4_CONFIGURE_WITH=		lz4=${LOCALBASE}
 LZ4_LIB_DEPENDS=		liblz4.so:archivers/liblz4
 NEON_DESC=			ARM NEON/AArch64 optimizations

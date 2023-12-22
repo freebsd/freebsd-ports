@@ -1,6 +1,6 @@
 PORTNAME=	libsockpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	net devel
 
 MAINTAINER=	peter@flytrace.com
@@ -19,7 +19,7 @@ GH_ACCOUNT=	fpagliughi
 GH_PROJECT=	sockpp
 
 OPTIONS_DEFINE=		DOCS EXAMPLES STATIC TEST
-OPTIONS_DEFAULT=	EXAMPLES
+OPTIONS_DEFAULT=	EXAMPLES STATIC
 
 DOCS_DESC=	Create and install the HTML based API documentation (requires Doxygen)
 STATIC_DESC=	Build the static library
@@ -46,10 +46,6 @@ EXAMPLES_TO_REMOVE=	tcp6echo \
 			unecho \
 			unechosvr \
 			unechotest
-
-post-patch:
-	${REINPLACE_CMD} -e 's|#include "catch2/catch.hpp"|#include "catch2/catch_all.hpp"|' \
-		${WRKSRC}/tests/unit/*.cpp
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${RM} ${EXAMPLES_TO_REMOVE}

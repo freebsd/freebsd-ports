@@ -1,10 +1,21 @@
+Use the actual version, otherwise it would lead to staging errors as the
+produced wheels contain the wrong version.
+
 Avoid installing "LICENSE" and "README.md" on top of Python's "site-packages/"
 directory which would lead to conflicting packages.
 
---- pyproject.toml.orig	2023-02-23 18:07:16 UTC
+--- pyproject.toml.orig	2023-12-19 17:04:20 UTC
 +++ pyproject.toml
-@@ -19,8 +19,6 @@ include = [
-     "Programming Language :: Python :: 3.10",
+@@ -1,6 +1,6 @@ name = "ntc_templates"
+ [tool.poetry]
+ name = "ntc_templates"
+-version = "4.0.1"
++version = "4.1.0"
+ description = "TextFSM Templates for Network Devices, and Python wrapper for TextFSM's CliTable."
+ authors = ["Network to Code <info@networktocode.com>"]
+ license = "Apache-2.0"
+@@ -20,8 +20,6 @@ include = [
+     "Programming Language :: Python :: 3.12",
  ]
  include = [
 -    "LICENSE",

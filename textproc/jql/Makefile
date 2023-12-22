@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.1.1
-PORTREVISION=	1
+DISTVERSION=	7.1.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,11 +19,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.2 \
 		anes-0.1.6 \
-		anstream-0.6.4 \
+		anstream-0.6.5 \
 		anstyle-1.0.4 \
-		anstyle-parse-0.2.2 \
-		anstyle-query-1.0.0 \
-		anstyle-wincon-3.0.1 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
 		anyhow-1.0.75 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
@@ -45,24 +44,24 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		colored_json-4.1.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-deque-0.8.3 \
-		crossbeam-epoch-0.9.15 \
-		crossbeam-utils-0.8.16 \
+		crossbeam-deque-0.8.4 \
+		crossbeam-epoch-0.9.16 \
+		crossbeam-utils-0.8.17 \
 		either-1.9.0 \
 		equivalent-1.0.1 \
-		errno-0.3.5 \
-		gimli-0.28.0 \
+		errno-0.3.8 \
+		gimli-0.28.1 \
 		half-1.8.2 \
-		hashbrown-0.14.2 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
 		indexmap-2.1.0 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
-		itoa-1.0.9 \
-		js-sys-0.3.65 \
-		libc-0.2.149 \
-		linux-raw-sys-0.4.10 \
+		itoa-1.0.10 \
+		js-sys-0.3.66 \
+		libc-0.2.151 \
+		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
 		memchr-2.6.4 \
 		memoffset-0.9.0 \
@@ -70,13 +69,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		object-0.32.1 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		pin-project-lite-0.2.13 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		psm-0.1.21 \
 		quote-1.0.33 \
 		rayon-1.8.0 \
@@ -85,45 +84,53 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.21 \
-		ryu-1.0.15 \
+		rustix-0.38.28 \
+		ryu-1.0.16 \
 		same-file-1.0.6 \
-		scopeguard-1.2.0 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		serde_stacker-0.1.10 \
 		stacker-0.1.15 \
 		strsim-0.10.0 \
-		syn-2.0.38 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
+		syn-2.0.41 \
+		thiserror-1.0.51 \
+		thiserror-impl-1.0.51 \
 		tinytemplate-1.2.1 \
-		tokio-1.34.0 \
+		tokio-1.35.1 \
 		tokio-macros-2.2.0 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
 		walkdir-2.4.0 \
-		wasm-bindgen-0.2.88 \
-		wasm-bindgen-backend-0.2.88 \
-		wasm-bindgen-macro-0.2.88 \
-		wasm-bindgen-macro-support-0.2.88 \
-		wasm-bindgen-shared-0.2.88 \
-		web-sys-0.3.65 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		web-sys-0.3.66 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
-		winnow-0.5.25 \
+		windows_x86_64_msvc-0.52.0 \
+		winnow-0.5.30 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 

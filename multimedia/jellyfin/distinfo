@@ -1,5 +1,5 @@
-TIMESTAMP = 1682422574
-SHA256 (jellyfin-combined_10.8.10_freebsd-amd64.tar.gz) = e1904518adfcf8563e08e997edad10812ad0087dfecb15acc4e3e04393b7f91d
-SIZE (jellyfin-combined_10.8.10_freebsd-amd64.tar.gz) = 70425615
+TIMESTAMP = 1701391119
+SHA256 (jellyfin-combined_10.8.13_freebsd-amd64.tar.gz) = 17ffd823b6df5fbb6ad32988377962d8a4985e230d1b4a8e71fcbcf19e12473e
+SIZE (jellyfin-combined_10.8.13_freebsd-amd64.tar.gz) = 70441475
 SHA256 (libSkiaSharp.so) = dbcf1e116bda5a6d0a1865d353de769aed936cd89e22f7db921613e5cbedaccf
 SIZE (libSkiaSharp.so) = 7555664

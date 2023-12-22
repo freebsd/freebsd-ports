@@ -1,8 +1,6 @@
 PORTNAME=	openslide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1-293
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gdd3a152
+DISTVERSION=	4.0.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,17 +10,16 @@ WWW=		https://openslide.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg \
+LIB_DEPENDS=	libdicom.so:graphics/libdicom \
+		libopenjp2.so:graphics/openjpeg \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		autoreconf gettext-runtime gmake gnome jpeg libtool pkgconfig sqlite
+USES=		gettext-runtime gnome jpeg meson pkgconfig sqlite
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 libxml2
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Ddoc=disabled
 
 .include <bsd.port.mk>

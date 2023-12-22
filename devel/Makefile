@@ -1129,6 +1129,7 @@
     SUBDIR += kyua
     SUBDIR += lab
     SUBDIR += lager
+    SUBDIR += laminar
     SUBDIR += lasi
     SUBDIR += lattice-ice40-examples-hx1k
     SUBDIR += lattice-ice40-examples-hx8k
@@ -1161,6 +1162,7 @@
     SUBDIR += libast
     SUBDIR += libastylej
     SUBDIR += libastylej-arduino
+    SUBDIR += libasyncplusplus
     SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl

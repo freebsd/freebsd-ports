@@ -1,0 +1,11 @@
+--- init/Makefile.am.orig	2021-11-25 17:34:42 UTC
++++ init/Makefile.am
+@@ -2,7 +2,7 @@
+ #
+ AUTOMAKE_OPTIONS = 1.7
+ 
+-SUBDIRS = systemd tmpfilesd
++#SUBDIRS = systemd tmpfilesd
+ 
+ dist_sysconfenv_DATA = 		\
+ 	ipa-dnskeysyncd		\

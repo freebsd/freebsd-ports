@@ -46,7 +46,7 @@ STP_LIB_DEPENDS=	libstp.so:math/stp \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64le
+.if ${ARCH} == powerpc64le || ${ARCH} == aarch64
 PLIST_SUB=	32BIT="@comment " \
 		64BIT=""
 .else

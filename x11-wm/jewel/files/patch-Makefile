@@ -1,6 +1,6 @@
---- Makefile.orig	2005-01-03 22:54:59.000000000 +0100
-+++ Makefile	2013-09-28 12:52:00.901277718 +0200
-@@ -12,7 +12,7 @@
+--- Makefile.orig	2005-01-03 21:54:59 UTC
++++ Makefile
+@@ -12,7 +12,7 @@ CFLAGS   = -g -O2 -Wall
  CC       = g++
  CFLAGS   = -g -O2 -Wall
  
@@ -9,7 +9,7 @@
  export XROOT    = $(prefix)
  DESTDIR  =
  INCLUDES = -I$(XROOT)/include
-@@ -51,7 +51,7 @@
+@@ -51,7 +51,7 @@ $(SUBDIRS):
  	$(CC) $(OBJS) $(LDPATH) $(LIBS) -o $@
  
  $(SUBDIRS):

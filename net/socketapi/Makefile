@@ -1,11 +1,11 @@
 PORTNAME=	socketapi
-PORTVERSION=	2.2.19
+PORTVERSION=	2.2.24
 CATEGORIES=	net
-MASTER_SITES=	https://www.uni-due.de/~be0001/sctplib/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/sctplib/download/
 
-MAINTAINER=	dreibh@iem.uni-due.de
+MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	Socket API library for the SCTPLIB user-space SCTP implementation
-WWW=		https://www.uni-due.de/~be0001/sctplib/
+WWW=		https://www.nntb.no/~dreibh/sctplib/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

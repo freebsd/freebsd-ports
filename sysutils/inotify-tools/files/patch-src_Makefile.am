@@ -1,15 +1,17 @@
---- src/Makefile.am.orig	2023-08-21 19:51:56 UTC
+--- src/Makefile.am.orig	2023-09-12 16:26:42 UTC
 +++ src/Makefile.am
-@@ -12,10 +12,10 @@ fsnotifywatch_CPPFLAGS = $(AM_CPPFLAGS) -DENABLE_FANOT
+@@ -12,11 +12,11 @@ fsnotifywatch_CPPFLAGS = $(AM_CPPFLAGS) -DENABLE_FANOT
  endif
  
  if IS_CLANG
--AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -Wno-unused-command-line-argument -I../libinotifytools/src
-+AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -Wno-unused-command-line-argument
- AM_CPPFLAGS = -std=c++17 -fno-exceptions -Wall -Wextra -Wshadow -Werror -Wno-unused-command-line-argument -I../libinotifytools/src
+-AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -Wno-unused-command-line-argument -I../libinotifytools/src -I$(srcdir)/../libinotifytools/src
++AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -Wno-unused-command-line-argument -I../libinotifytools/src
+ AM_CPPFLAGS = -std=c++17 -fno-exceptions -Wall -Wextra -Wshadow -Werror -Wno-unused-command-line-argument -I../libinotifytools/src -I$(srcdir)/../libinotifytools/src
  else
--AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -I../libinotifytools/src
-+AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror
- AM_CPPFLAGS = -std=c++17 -fno-exceptions -Wall -Wextra -Wshadow -Werror -I../libinotifytools/src
+-AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -I../libinotifytools/src -I$(srcdir)/../libinotifytools/src
+-AM_CPPFLAGS = -std=c++17 -fno-exceptions -Wall -Wextra -Wshadow -Werror -I../libinotifytools/src -I$(srcdir)/../libinotifytools/src
++AM_CFLAGS = -std=c99 -fno-exceptions -Wall -Wextra -Wshadow -Werror -I../libinotifytools/src
++AM_CPPFLAGS = -std=c++17 -fno-exceptions -Wall -Wextra -Wshadow -Werror -I../libinotifytools/src
  endif
  
+ LDADD = ../libinotifytools/src/libinotifytools.la

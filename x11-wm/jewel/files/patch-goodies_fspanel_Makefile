@@ -1,0 +1,21 @@
+--- goodies/fspanel/Makefile.orig	2005-01-03 21:54:58 UTC
++++ goodies/fspanel/Makefile
+@@ -1,7 +1,9 @@
+-CC = gcc
+-C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -m386 -malign-loops=2 -malign-jumps=2 -malign-functions=2
++CC ?= gcc
++C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -falign-functions=2 --std=c++14
+ L_FLAGS = -O1 -Xlinker -s -L$(XROOT)/lib -lX11 -lXpm
+ PROGNAME = fspanel
++
++all: $(PROGNAME)
+ 
+ $(PROGNAME): Makefile fspanel.c fspanel.h icon.xpm
+ 	$(CC) $(C_FLAGS) $(L_FLAGS) fspanel.c -o $(PROGNAME)
+@@ -14,4 +16,4 @@ uninstall:
+ 	cp -r $(PROGNAME) $(DESTDIR)$(prefix)/bin
+ 
+ uninstall:
+-	rm $(DESTDIR)$(prefix)/bin/$(PROGNAME)
+\ No newline at end of file
++	rm $(DESTDIR)$(prefix)/bin/$(PROGNAME)

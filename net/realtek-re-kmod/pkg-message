@@ -17,6 +17,12 @@ e.g. if you don't need Jumbo frames you can lower
 the memory requirements and avoid this issue with:
 
 hw.re.max_rx_mbuf_sz="2048"
+
+To enable Wake on LAN (WoL) support you might need
+to set the following tunables:
+
+hw.re.s5wol="1"
+hw.re.s0_magic_packet="1"
 EOM
 }
 ]

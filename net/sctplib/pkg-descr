@@ -1,12 +1,12 @@
 The SCTPLIB library is a prototype implementation of the Stream Control
 Transmission Protocol (SCTP), a message-oriented reliable transport protocol
 that supports multi-homing, and multiple message streams multiplexed within an
-SCTP connection (also named association). SCTP is described in RFC 4960. See
-https://www.uni-due.de/~be0001/sctplib/ for details. The API of the library is
-modeled after Section 10 of RFC 4960, and most parameters and functions should
-be self-explanatory to the user familiar with this document. In addition to
-these interface functions between an Upper Layer Protocol (ULP) and an SCTP
-instance, the library also provides a number of helper functions that can be
-used to manage callbacks and timers, as well as UDP sockets for simple IPC.
-Furthermore, SCTPLIB provides support for UDP encapsulation, making it possible
-to co-exist with kernel SCTP implementations.
+SCTP connection (also named association). SCTP is described in RFC 4960. The
+API of the library is modeled after Section 10 of RFC 4960, and most
+parameters and functions should be self-explanatory to the user familiar with
+this document. In addition to these interface functions between an Upper Layer
+Protocol (ULP) and an SCTP instance, the library also provides a number of
+helper functions that can be used to manage callbacks and timers, as well as
+UDP sockets for simple IPC. Furthermore, SCTPLIB provides support for UDP
+encapsulation, making it possible to co-exist with kernel SCTP
+implementations.

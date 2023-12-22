@@ -6245,7 +6245,6 @@ www/py-dj31-django-mptt||2021-12-31|Has expired: Extended support of Django 3.1 
 net/py-flask-xml-rpc||2021-12-31|Has expired: No longer maintained upstream
 audio/libaacplus||2021-12-31|Has expired: Abandoned upstream, no new release since 2011
 security/obfsclient||2021-12-31|Has expired: https://github.com/Yawning/obfsclient/issues/37
-www/grafana||2021-12-31|Has expired: No longer maintained upstream, use www/grafana8
 www/py-dj31-django-auth-ldap||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj31-django-filter||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj31-drf-yasg||2021-12-31|Has expired: Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/

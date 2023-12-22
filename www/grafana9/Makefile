@@ -1,7 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.5.7
-PORTREVISION=	3
+DISTVERSION=	9.5.15
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -26,7 +25,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		d2bfe3c
+TAG=		5f5a096
 
 GO_MODULE=	github.com/grafana/grafana
 GO_TARGET=	./pkg/cmd/grafana \
@@ -65,8 +64,6 @@ do-extract: ${EXTRACT_WRKDIR}
 		${ECHO_MSG} "===>  Failed to extract \"${_DISTDIR}/${GRAFANA_SOURCES}\"."; \
 		exit 1; \
 	fi;
-	@${RM} -r ${WRKSRC}/public
-	@${RM} -r ${WRKSRC}/plugins-bundled
 	@if ! (cd ${EXTRACT_WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${GRAFANA_PREBUILT} ${EXTRACT_AFTER_ARGS});\
 	then \
 		${ECHO_MSG} "===>  Failed to extract \"${_DISTDIR}/${GRAFANA_PREBUILT}\"."; \
@@ -99,8 +96,11 @@ post-install:
 	${MKDIR} ${STAGEDIR}${GRAFANA_PROVISIONINGDIR}/${dir}
 .endfor
 	${MKDIR} ${STAGEDIR}${GRAFANA_LOGDIR}
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} public ${STAGEDIR}${GRAFANA_HOMEDIR} )
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} plugins-bundled/internal ${STAGEDIR}${GRAFANA_HOMEDIR} )
+	( cd ${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX} && ${COPYTREE_SHARE} public ${STAGEDIR}${GRAFANA_HOMEDIR} )
+.for dir in input-datasource
+	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}/plugins-bundled/internal/${dir}
+	( cd ${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}/plugins-bundled/internal/${dir}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${GRAFANA_HOMEDIR}/plugins-bundled/internal/${dir} )
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini ${STAGEDIR}${GRAFANA_HOMEDIR}/conf/defaults.ini
 	${INSTALL_DATA} ${WRKSRC}/conf/sample.ini ${STAGEDIR}${ETCDIR}/grafana.ini.sample
 

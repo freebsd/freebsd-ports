@@ -1,0 +1,10 @@
+--- goodies/setrootimage/Makefile.orig	2005-01-03 21:54:58 UTC
++++ goodies/setrootimage/Makefile
+@@ -1,5 +1,5 @@
+-CC        = g++
+-CFLAGS    = -g -O2 -Wall
++CC        ?= g++
++CFLAGS    ?= -g -O2 -Wall
+ INCLUDES  = -I$(XROOT)/include
+ LIBS      = -lX11 -lXext
+ LDPATH    = -L$(XROOT)/lib

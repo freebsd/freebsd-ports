@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	2.26.0
-PORTREVISION=	2
+DISTVERSION=	2.27.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +30,6 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		backtrace-0.3.54 \
 		bitflags-1.3.2 \
 		bytecount-0.6.2 \
-		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		clap-4.4.2 \
 		clap_builder-4.4.2 \
@@ -42,8 +40,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		difference-2.0.0 \
 		diffus-0.10.0 \
 		either-1.6.1 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
+		errno-0.3.5 \
 		fastrand-1.9.0 \
 		gimli-0.23.0 \
 		git-version-0.3.4 \
@@ -69,7 +66,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		regex-1.5.5 \
 		regex-syntax-0.6.26 \
 		rustc-demangle-0.1.18 \
-		rustix-0.36.9 \
+		rustix-0.36.16 \
 		strsim-0.10.0 \
 		syn-1.0.48 \
 		syn-2.0.30 \
