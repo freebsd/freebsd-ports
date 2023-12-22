@@ -1,5 +1,3 @@
-TIMESTAMP = 1697321367
-SHA256 (KhronosGroup-glslang-13.1.0_GH0.tar.gz) = 926808f4bf129264a1b7d969978881ec041bb902ad49a180ba74270df7178494
-SIZE (KhronosGroup-glslang-13.1.0_GH0.tar.gz) = 3763153
-SHA256 (eac012fff3a7.patch) = 143ef7a612da3a380fc689eb72813f34bdda0235f706c0a592daf55044eb46d2
-SIZE (eac012fff3a7.patch) = 2240
+TIMESTAMP = 1703265088
+SHA256 (KhronosGroup-glslang-14.0.0_GH0.tar.gz) = 80bbb916a23e94ea9cbfb1acb5d1a44a7e0c9613bcf5b5947c03f2273bdc92b0
+SIZE (KhronosGroup-glslang-14.0.0_GH0.tar.gz) = 3770344

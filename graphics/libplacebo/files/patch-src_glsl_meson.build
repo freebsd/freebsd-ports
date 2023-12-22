@@ -1,0 +1,12 @@
+src/glsl/meson.build:47:12: ERROR: C++ static library 'OGLCompiler' not found
+
+--- src/glsl/meson.build.orig	2023-10-17 12:24:39 UTC
++++ src/glsl/meson.build
+@@ -44,7 +44,6 @@ elif not glslang_req.disabled()
+         # Always required for static linking
+         cxx.find_library('MachineIndependent', required: true, static: true),
+         cxx.find_library('OSDependent',        required: true, static: true),
+-        cxx.find_library('OGLCompiler',        required: true, static: true),
+         cxx.find_library('GenericCodeGen',     required: true, static: true),
+         # SPIRV-Tools are required only if optimizer is enabled in glslang build
+         cxx.find_library('SPIRV-Tools',        required: false, static: true),
