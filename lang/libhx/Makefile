@@ -1,5 +1,5 @@
 PORTNAME=	libHX
-PORTVERSION=	4.19
+PORTVERSION=	4.21
 CATEGORIES=	lang
 MASTER_SITES=	https://inai.de/files/libhx/ \
 		https://codeberg.org/jengelh/libhx/releases/download/v${PORTVERSION}/
