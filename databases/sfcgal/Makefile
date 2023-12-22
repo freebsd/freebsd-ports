@@ -1,6 +1,6 @@
 PORTNAME=	sfcgal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	databases math graphics
 
 MASTER_SITES=	https://github.com/CGAL/cgal/releases/download/v5.6/:source1
@@ -19,9 +19,9 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		cmake compiler:c++14-lang
 USE_GITLAB=	yes
-GL_ACCOUNT=	Oslandia
+GL_ACCOUNT=	SFCGAL
 GL_PROJECT=	SFCGAL
-GL_TAGNAME=	cbcf0adaa6cecc80347345952b5c850a64d2db4f
+GL_TAGNAME=	61f3b08ade49493b56c6bafa98c7c1f84addbc10
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R} DEBUG_SUFFIX=${WITH_DEBUG:Dd}
