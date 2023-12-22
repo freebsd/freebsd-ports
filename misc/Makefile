@@ -470,6 +470,7 @@
     SUBDIR += py-pytorch-lightning
     SUBDIR += py-pyviz-comms
     SUBDIR += py-qiskit-machine-learning
+    SUBDIR += py-safetensors
     SUBDIR += py-scikit-fusion
     SUBDIR += py-scikit-quant
     SUBDIR += py-serverfiles
