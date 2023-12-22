@@ -1,6 +1,6 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,6 +29,10 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
 
 post-patch:
+# Extract (snapshot) version from the port
+	@${REINPLACE_CMD} -i .nogit \
+		-e '/git_version!/s/()/(fallback = "${DISTVERSIONFULL}")/' \
+		${WRKSRC}/src/ui/main_menu.rs
 # Search assets under PREFIX instead of current directory
 	@${REINPLACE_CMD} 's,assets",${DATADIR}/&,' \
 		${WRKSRC}/src/main.rs \

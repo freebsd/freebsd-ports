@@ -186,6 +186,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		gilrs-0.10.2 \
 		gilrs-core-0.5.7 \
 		gimli-0.28.1 \
+		git-version-0.3.9 \
+		git-version-macro-0.3.9 \
 		glam-0.24.2 \
 		glob-0.3.1 \
 		glow-0.12.3 \
