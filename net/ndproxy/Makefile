@@ -10,8 +10,6 @@ WWW=		http://www.fenyo.net/newweb/ndproxy.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_14=	Requires defunct pa_func
-
 USES=		compiler kmod
 
 SUB_FILES=	pkg-message
