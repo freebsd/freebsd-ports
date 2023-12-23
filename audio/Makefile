@@ -849,6 +849,7 @@
     SUBDIR += volumeicon
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
+    SUBDIR += vosk-api
     SUBDIR += vsound
     SUBDIR += vst3sdk
     SUBDIR += waon
