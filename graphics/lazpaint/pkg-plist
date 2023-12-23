@@ -4,6 +4,7 @@ share/icons/hicolor/48x48/apps/lazpaint.png
 %%DATADIR%%/i18n/lazpaint.bg.po
 %%DATADIR%%/i18n/lazpaint.cs.po
 %%DATADIR%%/i18n/lazpaint.de.po
+%%DATADIR%%/i18n/lazpaint.es.mo
 %%DATADIR%%/i18n/lazpaint.es.po
 %%DATADIR%%/i18n/lazpaint.fi.po
 %%DATADIR%%/i18n/lazpaint.fr.po
@@ -14,6 +15,7 @@ share/icons/hicolor/48x48/apps/lazpaint.png
 %%DATADIR%%/i18n/lazpaint.nl.po
 %%DATADIR%%/i18n/lazpaint.pl.po
 %%DATADIR%%/i18n/lazpaint.po
+%%DATADIR%%/i18n/lazpaint.pot
 %%DATADIR%%/i18n/lazpaint.pt_BR.po
 %%DATADIR%%/i18n/lazpaint.ru.po
 %%DATADIR%%/i18n/lazpaint.sv.po

@@ -1,6 +1,5 @@
 PORTNAME=	lazpaint
-PORTVERSION=	7.1.6
-PORTREVISION=	9
+PORTVERSION=	7.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -11,17 +10,18 @@ WWW=		https://wiki.freepascal.org/LazPaint
 
 LICENSE=	GPLv3
 
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
 USE_XORG=	x11
 DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt)
 USE_GITHUB=	yes
-GH_TAGNAME=	426f74adc0fc5bca31213c2e7c3ae772ba49769a
+GH_TAGNAME=	501d44c
 GH_ACCOUNT=	bgrabitmap
-GH_TUPLE=	bgrabitmap:bgracontrols:2797120:bgracontrols/bgracontrols \
-		bgrabitmap:bgrabitmap:d52b5b7:bgrabitmap/bgrabitmapnew
+GH_TUPLE=	bgrabitmap:bgracontrols:a1220e6:bgracontrols/bgracontrols \
+		bgrabitmap:bgrabitmap:2814b06:bgrabitmap/bgrabitmapnew
 
 USE_GNOME_gtk2=	cairo
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
