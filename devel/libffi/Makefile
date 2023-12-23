@@ -22,6 +22,8 @@ INSTALL_TARGET=	install-strip
 INFO=		libffi
 TEST_TARGET=	check
 
+LDFLAGS+=	-Wl,--undefined-version
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-psabi||g' \
 		${WRKSRC}/testsuite/lib/libffi.exp
