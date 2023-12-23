@@ -26,6 +26,7 @@ bin/inspircd-testssl
 %%ETCDIR%%/examples/sql/sqloper.pgsql.sql
 %%ETCDIR%%/examples/sql/sqloper.sqlite3.sql
 %%ETCDIR%%/help.txt
+libexec/inspircd/deploy-ssl.sh
 libexec/inspircd/inspircd
 libexec/inspircd/logrotate
 libexec/inspircd/modules/core_channel.so
