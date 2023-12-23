@@ -13,6 +13,8 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	emulators/wine itself now again provides 32-bit support as well as WoW64
+EXPIRATION_DATE=2024-01-29
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
