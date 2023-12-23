@@ -1,5 +1,6 @@
 PORTNAME=	locker
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Locker/
 PKGNAMEPREFIX=	deforaos-

@@ -1,6 +1,6 @@
 PORTNAME=	osm-gps-map
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits net
 MASTER_SITES=	https://github.com/nzjrs/${PORTNAME}/releases/download/${PORTVERSION}/
 

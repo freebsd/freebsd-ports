@@ -1,5 +1,6 @@
 PORTNAME=	libdesktop
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/libDesktop/
 PKGNAMEPREFIX=	deforaos-

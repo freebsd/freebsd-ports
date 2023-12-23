@@ -1,6 +1,7 @@
 PORTNAME=		xfce4-docklike-plugin
 PORTVERSION=		0.4.1
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=		x11 xfce
 
 MAINTAINER=		bsd@quentb.com

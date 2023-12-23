@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-smartbookmark-plugin
 PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

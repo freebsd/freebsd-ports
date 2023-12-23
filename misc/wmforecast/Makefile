@@ -1,5 +1,6 @@
 PORTNAME=	wmforecast
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	https://github.com/d-torrance/${PORTNAME}/releases/download/v${DISTVERSION}/
 

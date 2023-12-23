@@ -1,5 +1,6 @@
 PORTNAME=	gucharmap
 PORTVERSION=	15.1.0 # must sync with textproc/UCD
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 #MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

@@ -1,6 +1,6 @@
 PORTNAME=	font-manager
 PORTVERSION=	0.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts gnome
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

@@ -1,5 +1,6 @@
 PORTNAME=	surfer
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Surfer/
 PKGNAMEPREFIX=	deforaos-

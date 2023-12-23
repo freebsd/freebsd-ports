@@ -1,6 +1,6 @@
 PORTNAME=	timezonemap
 DISTVERSION=	0.4.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 
 MAINTAINER=	gnome@freebsd.org

@@ -1,6 +1,6 @@
 PORTNAME=	xiphos
 DISTVERSION=	4.2.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc gnome
 # Don't use USE_GITHUB: the sources downloaded by USE_GITHUB cannot be
 # built as they miss the file ${WRKSRC}/cmake/source_version.txt.

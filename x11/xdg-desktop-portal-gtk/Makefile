@@ -1,5 +1,6 @@
 PORTNAME=	xdg-desktop-portal-gtk
 DISTVERSION=	1.15.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

@@ -1,6 +1,6 @@
 PORTNAME=	hypnotix
 DISTVERSION=	2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	mistresssilvara@hotmail.com

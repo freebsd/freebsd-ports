@@ -1,6 +1,6 @@
 PORTNAME=	gbsdconv
 PORTVERSION=	11.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters python
 
 MAINTAINER=	buganini@gmail.com

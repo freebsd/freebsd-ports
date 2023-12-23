@@ -1,6 +1,6 @@
 PORTNAME=	talkatu
 PORTVERSION=	g2019031701
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	https://bitbucket.org/pidgin/talkatu/get/
 DISTNAME=	1b7433db5cd5

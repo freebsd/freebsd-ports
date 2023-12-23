@@ -1,6 +1,7 @@
 PORTNAME=	imhex
 PORTVERSION=	1.30.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
 DISTFILES=	xdg.hpp:xdg

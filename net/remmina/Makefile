@@ -1,5 +1,6 @@
 PORTNAME=	remmina
 DISTVERSION=	1.4.33
+PORTREVISION=	1
 CATEGORIES=	net gnome
 
 PATCH_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/

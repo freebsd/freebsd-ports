@@ -1,6 +1,6 @@
 PORTNAME=	kanatest
 PORTVERSION=	0.4.10.g20200611
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games japanese
 
 MAINTAINER=	Clockwork6400@protonmail.com

@@ -1,5 +1,6 @@
 PORTNAME=	puzzles
 PORTVERSION=	20231120
+PORTREVISION=	1
 CATEGORIES=	games
 # upstream does not preserve older versions, mirroring is mandatory
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \

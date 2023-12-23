@@ -1,6 +1,6 @@
 PORTNAME=	devilspie2
 PORTVERSION=	0.43
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/devilspie2/
 DISTFILES=	${PORTNAME}_${PORTVERSION}-src.tar.gz

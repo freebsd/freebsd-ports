@@ -1,6 +1,6 @@
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.34
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/notify-osd/precise/0.9.34/+download/ \
 		LOCAL/ehaupt

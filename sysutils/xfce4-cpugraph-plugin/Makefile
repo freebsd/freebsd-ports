@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

@@ -1,6 +1,6 @@
 PORTNAME=	ettercap
 PORTVERSION=	0.8.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	https://github.com/Ettercap/ettercap/releases/download/v${PORTVERSION}/

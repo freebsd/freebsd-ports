@@ -1,5 +1,6 @@
 PORTNAME=	xmlcopyeditor
 DISTVERSION=	1.3.1.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${DISTVERSION}
 

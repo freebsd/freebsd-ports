@@ -1,6 +1,6 @@
 PORTNAME=	cairo-dock-plugins
 PORTVERSION=	3.4.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	deskutils
 
 PATCH_SITES=	https://github.com/Cairo-Dock/cairo-dock-plug-ins/commit/

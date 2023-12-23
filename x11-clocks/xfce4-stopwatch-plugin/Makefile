@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-stopwatch-plugin
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

@@ -1,6 +1,6 @@
 PORTNAME=	gtk-arc-themes
 DISTVERSION=	20220223
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://github.com/jnsh/arc-theme/releases/download/${DISTVERSION}/
 DISTNAME=	arc-theme-${DISTVERSION}

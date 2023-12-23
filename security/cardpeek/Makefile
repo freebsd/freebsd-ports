@@ -1,6 +1,6 @@
 PORTNAME=	cardpeek
 PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.pannetrat.com/install/
 

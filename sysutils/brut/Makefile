@@ -1,6 +1,6 @@
 PORTNAME=	brut
 DISTVERSION=	1.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	georg.lastname@web.de

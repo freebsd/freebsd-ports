@@ -1,6 +1,6 @@
 PORTNAME=	go-for-it
 DISTVERSION=	1.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 PATCH_SITES=	https://github.com/JMoerman/Go-For-It/commit/

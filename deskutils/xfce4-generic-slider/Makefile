@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-generic-slider
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins

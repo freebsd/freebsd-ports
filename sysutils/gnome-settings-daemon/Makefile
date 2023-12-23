@@ -1,6 +1,6 @@
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	42.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

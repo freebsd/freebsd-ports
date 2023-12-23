@@ -1,5 +1,6 @@
 PORTNAME=	grsync
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac

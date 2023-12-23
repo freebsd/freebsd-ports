@@ -1,6 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	6
+PORTREVISION=	7
 #PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
@@ -128,7 +128,6 @@ post-configure:
 	done
 	${REINPLACE_CMD} -e 's|/usr/local/bin/xdg-open|${LOCALBASE}/bin/xdg-open|' \
 		${WRKSRC}/common/pgm_base.cpp
-
 
 pre-install:
 	@echo "${DATADIR}, ${DOCSDIR}"

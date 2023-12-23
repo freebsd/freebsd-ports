@@ -1,5 +1,6 @@
 PORTNAME=	lib2geom
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	math gnome
 
 MAINTAINER=	gnome@FreeBSD.org

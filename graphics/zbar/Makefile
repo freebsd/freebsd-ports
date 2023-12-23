@@ -1,7 +1,7 @@
 PORTNAME=	zbar
 DISTVERSION=	0.23.90
+PORTREVISION=	4
 CATEGORIES=	graphics
-PORTREVISION=	3
 MASTER_SITES=	https://linuxtv.org/downloads/zbar/
 
 MAINTAINER=	dev2@heesakkers.info

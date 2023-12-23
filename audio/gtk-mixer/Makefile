@@ -1,6 +1,6 @@
 PORTNAME=	gtk-mixer
 DISTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	rozhuk.im@gmail.com

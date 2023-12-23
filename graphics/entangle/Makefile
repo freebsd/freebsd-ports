@@ -1,6 +1,6 @@
 PORTNAME=	entangle
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.entangle-photo.org/download/sources/
 

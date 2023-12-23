@@ -1,4 +1,5 @@
 PORTNAME=	claws-mail
+PORTREVISION=	1
 CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK based e-mail and news client

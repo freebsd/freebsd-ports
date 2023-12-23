@@ -1,6 +1,6 @@
 PORTNAME=	audacious
 PORTVERSION=	4.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
@@ -40,7 +40,6 @@ gtk2_CONFLICTS_INSTALL=	audacious audacious-qt6 audacious-gtk3
 gtk3_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 gtk3_PKGNAMESUFFIX=	-gtk3
 gtk3_CONFLICTS_INSTALL=	audacious audacious-qt6 audacious-gtk2
-
 
 .if ${FLAVOR} == qt5
 MESON_ARGS+=		-Dqt=true -Dqt6=false -Dgtk=false -Dgtk3=false

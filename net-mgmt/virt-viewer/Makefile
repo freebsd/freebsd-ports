@@ -1,6 +1,6 @@
 PORTNAME=	virt-viewer
 PORTVERSION=	11.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	zathura
 DISTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 

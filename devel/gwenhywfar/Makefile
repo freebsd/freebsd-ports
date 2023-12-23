@@ -1,6 +1,6 @@
 PORTNAME=	gwenhywfar
 PORTVERSION=	5.10.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel net security
 MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/501/
 

@@ -1,5 +1,6 @@
 PORTNAME=	meteo
 PORTVERSION=	0.9.9.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org

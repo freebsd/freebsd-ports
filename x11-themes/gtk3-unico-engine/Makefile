@@ -1,6 +1,6 @@
 PORTNAME=	unico
 PORTVERSION=	1.0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://distfiles.sigtrap.nl/ \
 		LOCAL/nc/mirror

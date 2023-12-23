@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${BACKEND}
 COMMENT=	GIO-styled async APIs for Flatpak (${BACKEND} backend)
 

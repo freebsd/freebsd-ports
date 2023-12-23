@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-places-plugin
 PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

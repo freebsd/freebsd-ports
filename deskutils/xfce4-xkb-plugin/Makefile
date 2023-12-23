@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-xkb-plugin
 PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 

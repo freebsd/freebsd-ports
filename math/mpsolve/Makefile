@@ -1,6 +1,6 @@
 PORTNAME=	mpsolve
 DISTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://numpi.dm.unipi.it/_media/software/mpsolve/
 

@@ -1,7 +1,7 @@
 PORTNAME=	textadept
 PORTVERSION=	11.4
 DISTVERSIONPREFIX=	${PORTNAME}_
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://www.scintilla.org/:sci \
 		http://www.lua.org/ftp/:lua \
