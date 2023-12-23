@@ -2162,6 +2162,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/printer.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/printer.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/real48utils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/real48utils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/serial.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/serial.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/sockets.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/sockets.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/ucomplex.o
