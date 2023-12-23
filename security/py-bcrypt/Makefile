@@ -4,7 +4,7 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Modern password hashing for your software and your servers
 WWW=		https://github.com/pyca/bcrypt/
 
