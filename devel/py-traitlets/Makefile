@@ -1,5 +1,5 @@
 PORTNAME=	traitlets
-DISTVERSION=	5.10.0
+DISTVERSION=	5.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=3.0.3:devel/py-argcomplete@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mypy>=1.5.1:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy>=1.7.0:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pre-commit>0:devel/py-pre-commit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
 
