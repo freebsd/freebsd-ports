@@ -27,6 +27,7 @@ The Lazarus RAD devel was installed
    editors/lazarus-devel
    editors/lazarus-qt5
    editors/lazarus-qt5-devel
+   editors/lazarus-qt6
    editors/lazarus-qt6-devel
 
    You can added those ports if you want support for gtk2, qt5 or qt6

@@ -87,6 +87,7 @@
     SUBDIR += lazarus-devel
     SUBDIR += lazarus-qt5
     SUBDIR += lazarus-qt5-devel
+    SUBDIR += lazarus-qt6
     SUBDIR += lazarus-qt6-devel
     SUBDIR += le
     SUBDIR += leafpad

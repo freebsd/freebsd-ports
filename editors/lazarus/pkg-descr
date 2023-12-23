@@ -1,5 +1,5 @@
 Lazarus is the class libraries for Free Pascal that emulate Delphi.
-Free Pascal is a GPL'ed compiler that runs on Linux, Win32, OS/2, 68K
+Free Pascal is a GPL'ed compiler that runs on FreeBSD, Linux, Win32, OS/2, 68K
 and more. Free Pascal is designed to be able to understand and compile
 Delphi syntax, which is of course OOP.
 

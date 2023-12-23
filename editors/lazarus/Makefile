@@ -1,18 +1,16 @@
 PORTNAME=	lazarus
-PORTVERSION=	2.2.6
-DISTVERSIONSUFFIX=	-0
+DISTVERSION=	3.0.0
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	editors devel
-MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
-		LOCAL/acm/freepascal
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 WWW=		https://www.lazarus-ide.org/
 
-CONFLICTS?=	lazarus-gtk2-devel lazarus-qt5 lazarus-qt5-devel lazarusqt6-devel
+CONFLICTS?=	lazarus-gtk2-devel lazarus-qt5 lazarus-qt5-devel lazarus-qt6 \
+		lazarus-qt6-devel
 
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
@@ -21,14 +19,19 @@ RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		cpe desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
+USE_GITLAB=	yes
+GL_ACCOUNT=	freepascal.org/lazarus
+GL_PROJECT=	${PORTNAME}
+GL_COMMIT=	f771d54e4a3a6e35697e662aa2e0b954762b56cb
+
+USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC?=	${WRKDIR}/${PORTNAME}
-DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
+#WRKSRC?=	${WRKDIR}/${PORTNAME}
+DATADIR?=	${PREFIX}/share/${PORTNAME}-${LAZARUS_BASE}
 
 OPTIONS_DEFINE=		GDB
 GDB_DESC=		Install a newest version  of gdb
@@ -37,6 +40,7 @@ OPTIONS_DEFAULT=	GDB
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
+LAZARUS_BASE=	3.0.0
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_PLATFORM?=	gtk2
@@ -61,6 +65,10 @@ post-extract:
 	@${MV} ${WRKSRC}/install/man/man1/startlazarus.1 ${WRKDIR}/man1/
 	@${MV} ${WRKSRC}/examples ${WRKDIR}/examples
 	@${MV} ${WRKSRC}/docs ${WRKDIR}/docs
+	@${RM} ${WRKSRC}/tools/.gitignore
+	@${RM} ${WRKSRC}/Dockerfile.buildenv
+	@${RM} ${WRKSRC}/buildenv.Dockerfile
+	@${RM} ${WRKSRC}/.git*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
@@ -69,17 +77,14 @@ post-patch:
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} bigide LCL_PLATFORM=${LCL_PLATFORM}
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
 		${RM} -R COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
-			ide/Makefile*.orig ide/Makefile*.bak lcl/interfaces/qt5/qtobjects.pas.orig
-	@cd ${WRKDIR} && \
-		${RM} -R docs/chm/.gitignore docs/html/.gitignore lazarus/tools/install/rpm/.gitignore \
-			lazarus/tools/.gitignore lazarus/components/chmhelp/lhelp/.gitignore \
-			lazarus/.git*
+			ide/Makefile*.orig ide/Makefile*.bak lcl/interfaces/qt5/qtobjects.pas.orig \
+			.git*
+	@cd ${WRKSRC} && \
+		${FIND} . -name ".gitignore" -exec ${RM} "{}" \;
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
@@ -134,19 +139,19 @@ do-install:
 	@${CHMOD} +x ${STAGEDIR}${DATADIR}/tools/svn2revisioninc ${STAGEDIR}${DATADIR}/tools/lazres ${STAGEDIR}${DATADIR}/tools/lrstolfm \
 		${STAGEDIR}${DATADIR}/tools/updatepofiles
 
-.for FILE in lazarus startlazarus lazbuild
+.for FILE in lazarus lazbuild startlazarus
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
 
 	@cd ${WRKDIR}/docs && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DOCSDIR}/{}" \;
-	@${LN} -s ${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
+	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
 
 	@cd ${WRKDIR}/examples && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${EXAMPLESDIR}/{}" \;
-	@${LN} -s ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
+	@${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 
 .for RESO in 128 16 256 32 48 64
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
@@ -171,6 +176,6 @@ do-install:
 .for FILE in ${MAN1S}
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-	${LN} -s ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
+	${LN} -sf ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
 
 .include <bsd.port.mk>

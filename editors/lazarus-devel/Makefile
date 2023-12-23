@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
-DISTVERSION=	3.0.0.20231028
+DISTVERSION=	3.1.0.20231222
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	da69f50a82ed2c57fdecc26023f75431bffe3d42
+GL_COMMIT=	5cbbd5956a4d9ab55b6c30810ea7c5f55cc5c444
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
@@ -39,7 +39,7 @@ OPTIONS_DEFAULT=	GDB
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
-LAZARUS_BASE=	3.0.0
+LAZARUS_BASE=	3.1.0
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_PLATFORM?=	gtk2
@@ -66,6 +66,7 @@ post-extract:
 	@${MV} ${WRKSRC}/docs ${WRKDIR}/docs
 	@${RM} ${WRKSRC}/tools/.gitignore
 	@${RM} ${WRKSRC}/Dockerfile.buildenv
+	@${RM} ${WRKSRC}/buildenv.Dockerfile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}

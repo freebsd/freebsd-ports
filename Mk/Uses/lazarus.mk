@@ -48,10 +48,6 @@ _INCLUDE_USES_LAZARUS_MK=   yes
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
 .  endif
 
-.  if ${lazarus_ARGS:Mqt6} && !defined(WANT_LAZARUS_DEVEL)
-IGNORE=		"DEFAULT_LAZARUS_VER not support qt6 flavor, consider using: gtk2 or qt5 instead"
-.  endif
-
 .  if ${lazarus_ARGS:Ngtk2:Nqt5:Nqt6:Nflavors}
 IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt5:Nqt6:Nflavors}
 .  endif
@@ -88,11 +84,7 @@ MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
 			${MKINSTDIR}/utils-lexyacc.fpm:lang/fpc${FPC_DEVELSUFFIX}
 
-LAZARUS_FLAVORS=	gtk2 qt5
-
-.  if defined(WANT_LAZARUS_DEVEL)
-LAZARUS_FLAVORS+=	qt6
-.  endif
+LAZARUS_FLAVORS=	gtk2 qt5 qt6
 
 .  if ${lazarus_ARGS:Mflavors}
 .    if defined(LAZARUS_NO_FLAVORS)

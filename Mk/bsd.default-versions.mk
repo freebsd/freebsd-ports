@@ -79,11 +79,11 @@ GUILE_DEFAULT?=		2.2
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 8, 11, 17, 18, 19, 20, 21
 JAVA_DEFAULT?=		8
-# Possible values: 2.2.6, 3.0.0
+# Possible values: 3.0.0, 3.1.0
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=	2.2.6
-.  else
 LAZARUS_DEFAULT?=	3.0.0
+.  else
+LAZARUS_DEFAULT?=	3.1.0
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
