@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2023-11-04 07:08:51 UTC
+--- chrome/common/chrome_features.cc.orig	2023-12-23 12:33:28 UTC
 +++ chrome/common/chrome_features.cc
 @@ -76,7 +76,7 @@ BASE_FEATURE(kAppShimNotificationAttribution,
  BASE_FEATURE(kAsyncDns,
@@ -45,7 +45,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -382,7 +382,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+@@ -377,7 +377,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
  const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
    &kDnsOverHttps, "ShowUi",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -54,8 +54,8 @@
        true
  #else
        false
-@@ -889,7 +889,7 @@ BASE_FEATURE(kLacrosSharedComponentsDir,
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -907,7 +907,7 @@ BASE_FEATURE(kLacrosSharedComponentsDir,
+              base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
@@ -63,7 +63,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -902,7 +902,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -920,7 +920,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

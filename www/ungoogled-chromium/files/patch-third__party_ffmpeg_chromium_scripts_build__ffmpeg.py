@@ -1,4 +1,4 @@
---- third_party/ffmpeg/chromium/scripts/build_ffmpeg.py.orig	2023-09-17 07:59:53 UTC
+--- third_party/ffmpeg/chromium/scripts/build_ffmpeg.py.orig	2023-12-23 12:33:28 UTC
 +++ third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
 @@ -32,7 +32,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -74,7 +74,7 @@
      parser.print_help()
      return 1
  
-@@ -744,7 +752,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -742,7 +750,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
          '--enable-parser=vp3,vp8',
      ])
  
@@ -83,7 +83,7 @@
      if target_arch == 'x64':
        if target_os == 'android':
          configure_flags['Common'].extend([
-@@ -754,7 +762,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -752,7 +760,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
          configure_flags['Common'].extend([
            '--enable-lto',
            '--arch=x86_64',
@@ -92,7 +92,7 @@
          ])
  
          if host_arch != 'x64':
-@@ -845,7 +853,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -843,7 +851,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
                '--extra-cflags=-mfpu=vfpv3-d16',
            ])
      elif target_arch == 'arm64':
@@ -101,7 +101,7 @@
          if host_arch != 'arm64':
            configure_flags['Common'].extend([
              '--enable-cross-compile',
-@@ -910,7 +918,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -908,7 +916,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
              '--disable-mips64r2',
              '--enable-msa',
          ])
@@ -110,7 +110,7 @@
          configure_flags['Common'].extend([
              '--enable-cross-compile',
              '--target-os=linux',
-@@ -1061,7 +1069,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -1059,7 +1067,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
          'Chrome', configure_flags['Common'] + configure_flags['ChromeAndroid'] +
          configure_args)
  

@@ -1,6 +1,6 @@
---- base/debug/stack_trace.cc.orig	2023-03-10 11:01:21 UTC
+--- base/debug/stack_trace.cc.orig	2023-12-23 12:33:28 UTC
 +++ base/debug/stack_trace.cc
-@@ -273,7 +273,9 @@ void StackTrace::Print() const {
+@@ -266,7 +266,9 @@ void StackTrace::Print() const {
  }
  
  void StackTrace::OutputToStream(std::ostream* os) const {
@@ -10,7 +10,7 @@
  }
  
  std::string StackTrace::ToString() const {
-@@ -281,7 +283,7 @@ std::string StackTrace::ToString() const {
+@@ -274,7 +276,7 @@ std::string StackTrace::ToString() const {
  }
  std::string StackTrace::ToStringWithPrefix(const char* prefix_string) const {
    std::stringstream stream;

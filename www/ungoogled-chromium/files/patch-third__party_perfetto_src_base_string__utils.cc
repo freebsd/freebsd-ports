@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/string_utils.cc.orig	2022-10-01 07:40:07 UTC
+--- third_party/perfetto/src/base/string_utils.cc.orig	2023-12-23 12:33:28 UTC
 +++ third_party/perfetto/src/base/string_utils.cc
-@@ -36,9 +36,10 @@ namespace base {
+@@ -38,9 +38,10 @@ namespace base {
  
  // Locale-independant as possible version of strtod.
  double StrToD(const char* nptr, char** endptr) {

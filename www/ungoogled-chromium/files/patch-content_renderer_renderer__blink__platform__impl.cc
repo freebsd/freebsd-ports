@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2023-11-04 07:08:51 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2023-12-23 12:33:28 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
 @@ -113,7 +113,7 @@
  
@@ -7,9 +7,9 @@
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "content/child/child_process_sandbox_support_impl_linux.h"
+ #include "content/child/sandboxed_process_thread_type_handler.h"
  #endif
- 
-@@ -181,13 +181,13 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -182,13 +182,13 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        sudden_termination_disables_(0),
        is_locked_to_site_(false),
        main_thread_scheduler_(main_thread_scheduler) {
@@ -25,7 +25,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -196,7 +196,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -197,7 +197,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  
@@ -34,7 +34,7 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -254,7 +254,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
+@@ -258,7 +258,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
  #endif
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {

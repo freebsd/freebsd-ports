@@ -1,4 +1,4 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2023-11-04 07:08:51 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2023-12-23 12:33:28 UTC
 +++ chrome/browser/ui/chrome_pages.cc
 @@ -78,7 +78,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "chrome/browser/web_applications/web_app_utils.h"
  #endif
  
-@@ -673,7 +673,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -671,7 +671,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

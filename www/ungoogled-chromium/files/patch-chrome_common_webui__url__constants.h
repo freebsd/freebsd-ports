@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.h.orig	2023-11-04 07:08:51 UTC
+--- chrome/common/webui_url_constants.h.orig	2023-12-23 12:33:28 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -418,24 +418,24 @@ extern const char kOsUIShortcutCustomizationAppURL[];
+@@ -426,24 +426,24 @@ extern const char kOsUIShortcutCustomizationAppURL[];
  extern const char kOsUIVersionURL[];
  #endif
  
@@ -29,7 +29,7 @@
  extern const char kChromeUIWebAppSettingsURL[];
  extern const char kChromeUIWebAppSettingsHost[];
  #endif
-@@ -450,7 +450,7 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -458,7 +458,7 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -38,7 +38,7 @@
  extern const char kChromeUISandboxHost[];
  #endif
  
-@@ -462,7 +462,7 @@ extern const char kChromeUISearchEngineChoiceHost[];
+@@ -470,7 +470,7 @@ extern const char kChromeUISearchEngineChoiceHost[];
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || \
@@ -47,7 +47,7 @@
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  extern const char kChromeUIEnterpriseProfileWelcomeHost[];
-@@ -478,7 +478,7 @@ extern const char kChromeUIProfilePickerUrl[];
+@@ -486,7 +486,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

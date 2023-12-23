@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2023-12-23 12:33:28 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 @@ -23,7 +23,7 @@
  #include "components/policy/core/common/management/management_service.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/enterprise/connectors/device_trust/attestation/browser/browser_attestation_service.h"
  #include "chrome/browser/enterprise/connectors/device_trust/attestation/browser/device_attester.h"
-@@ -56,7 +56,7 @@ bool IsProfileManaged(Profile* profile) {
+@@ -54,7 +54,7 @@ bool IsProfileManaged(Profile* profile) {
    return management_service && management_service->IsManaged();
  }
  
@@ -18,7 +18,7 @@
  policy::CloudPolicyStore* GetUserCloudPolicyStore(Profile* profile) {
    policy::CloudPolicyManager* user_policy_manager =
        profile->GetUserCloudPolicyManager();
-@@ -106,7 +106,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
+@@ -104,7 +104,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
    DependsOn(DeviceTrustConnectorServiceFactory::GetInstance());
    DependsOn(policy::ManagementServiceFactory::GetInstance());
  

@@ -1,6 +1,6 @@
---- cc/paint/paint_op_writer.h.orig	2023-08-18 10:26:52 UTC
+--- cc/paint/paint_op_writer.h.orig	2023-12-23 12:33:28 UTC
 +++ cc/paint/paint_op_writer.h
-@@ -114,10 +114,17 @@ class CC_PAINT_EXPORT PaintOpWriter {
+@@ -122,10 +122,17 @@ class CC_PAINT_EXPORT PaintOpWriter {
    // easier to keep serialized size calculation in sync with serialization and
    // deserialization, and make it possible to allow dynamic sizing for some
    // data types (see the specialized/overloaded functions).
@@ -18,7 +18,7 @@
    static size_t SerializedSize(const PaintImage& image);
    static size_t SerializedSize(const PaintRecord& record);
    static size_t SerializedSize(const SkHighContrastConfig& config);
-@@ -386,12 +393,20 @@ constexpr size_t PaintOpWriter::SerializedSize<SkGainm
+@@ -463,12 +470,20 @@ constexpr size_t PaintOpWriter::SerializedSize<SkGainm
  }
  
  template <typename T>

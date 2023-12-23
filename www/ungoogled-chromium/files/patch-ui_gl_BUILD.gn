@@ -1,4 +1,4 @@
---- ui/gl/BUILD.gn.orig	2023-11-04 07:08:51 UTC
+--- ui/gl/BUILD.gn.orig	2023-12-23 12:33:28 UTC
 +++ ui/gl/BUILD.gn
 @@ -151,8 +151,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
@@ -25,7 +25,7 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -578,7 +574,6 @@ test("gl_unittests") {
+@@ -582,7 +578,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

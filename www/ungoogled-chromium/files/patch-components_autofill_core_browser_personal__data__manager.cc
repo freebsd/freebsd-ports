@@ -1,6 +1,6 @@
---- components/autofill/core/browser/personal_data_manager.cc.orig	2023-11-04 07:08:51 UTC
+--- components/autofill/core/browser/personal_data_manager.cc.orig	2023-12-23 12:33:28 UTC
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -2384,7 +2384,8 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -2397,7 +2397,8 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

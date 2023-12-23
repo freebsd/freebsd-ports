@@ -1,6 +1,6 @@
---- third_party/ffmpeg/configure.orig	2023-09-17 07:59:53 UTC
+--- third_party/ffmpeg/configure.orig	2023-12-23 12:33:28 UTC
 +++ third_party/ffmpeg/configure
-@@ -5613,6 +5613,7 @@ case $target_os in
+@@ -5604,6 +5604,7 @@ case $target_os in
          disable symver
          ;;
      freebsd)

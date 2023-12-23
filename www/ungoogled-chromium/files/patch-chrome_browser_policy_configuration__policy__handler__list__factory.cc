@@ -1,4 +1,4 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2023-11-04 07:08:51 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2023-12-23 12:33:28 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
 @@ -216,19 +216,20 @@
  #include "components/spellcheck/browser/pref_names.h"
@@ -24,7 +24,7 @@
  #include "chrome/browser/privacy_sandbox/privacy_sandbox_policy_handler.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) ||
-@@ -787,14 +788,14 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -798,14 +799,14 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kManagedDefaultGeolocationSetting,
      base::Value::Type::INTEGER },
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) \
@@ -41,8 +41,8 @@
    { key::kFullscreenAllowed,
      prefs::kFullscreenAllowed,
      base::Value::Type::BOOLEAN },
-@@ -1514,7 +1515,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-     base::Value::Type::INTEGER },
+@@ -1537,7 +1538,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     base::Value::Type::LIST },
  #endif // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_LINUX)
@@ -50,7 +50,7 @@
    { key::kGSSAPILibraryName,
      prefs::kGSSAPILibraryName,
      base::Value::Type::STRING },
-@@ -1556,7 +1557,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1582,7 +1583,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -59,7 +59,7 @@
    { key::kNetworkServiceSandboxEnabled,
      prefs::kNetworkServiceSandboxEnabled,
      base::Value::Type::BOOLEAN },
-@@ -1582,18 +1583,18 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1608,18 +1609,18 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kTotalMemoryLimitMb,
      base::Value::Type::INTEGER },
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
@@ -81,7 +81,7 @@
    { key::kDefaultBrowserSettingEnabled,
      prefs::kDefaultBrowserSettingEnabled,
      base::Value::Type::BOOLEAN },
-@@ -1606,7 +1607,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1632,7 +1633,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
          // || BUILDFLAG(IS_FUCHSIA)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) \
@@ -90,7 +90,7 @@
    { key::kAutoplayAllowed,
      prefs::kAutoplayAllowed,
      base::Value::Type::BOOLEAN },
-@@ -1707,7 +1708,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1730,7 +1731,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS)
  
@@ -99,7 +99,7 @@
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
      base::Value::Type::STRING },
-@@ -1794,7 +1795,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1823,7 +1824,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // BUILDFLAG(IS_CHROMEOS)
  
@@ -108,7 +108,7 @@
    // TODO(crbug.com/1454054): replace the
    // kGetDisplayMediaSetSelectAllScreensAllowedForUrls policy by a policy that
    // matches the name of the new `getAllScreensMedia` API.
-@@ -1803,7 +1804,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1832,7 +1833,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::LIST },
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
  
@@ -117,7 +117,7 @@
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1834,7 +1835,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1863,7 +1864,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -126,7 +126,7 @@
    { key::kEnforceLocalAnchorConstraintsEnabled,
      prefs::kEnforceLocalAnchorConstraintsEnabled,
      base::Value::Type::BOOLEAN },
-@@ -1910,7 +1911,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1939,7 +1940,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      ash::prefs::kUrlParameterToAutofillSAMLUsername,
      base::Value::Type::STRING },
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -135,7 +135,7 @@
    { key::kBatterySaverModeAvailability,
      performance_manager::user_tuning::prefs::kBatterySaverModeState,
      base::Value::Type::INTEGER },
-@@ -1941,7 +1942,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1970,7 +1971,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kCloudApAuthEnabled,
      base::Value::Type::INTEGER },
  #endif  // BUILDFLAG(IS_WIN)
@@ -144,7 +144,16 @@
    { key::kOutOfProcessSystemDnsResolutionEnabled,
      prefs::kOutOfProcessSystemDnsResolutionEnabled,
      base::Value::Type::BOOLEAN },
-@@ -2060,7 +2061,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2007,7 +2008,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kManagedPrivateNetworkAccessRestrictionsEnabled,
+     base::Value::Type::BOOLEAN },
+ #if BUILDFLAG(ENABLE_EXTENSIONS)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   { key::kExtensionInstallTypeBlocklist,
+     extensions::pref_names::kExtensionInstallTypeBlocklist,
+     base::Value::Type::LIST},
+@@ -2102,7 +2103,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
    // Policies for all platforms - End
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -153,7 +162,7 @@
    handlers->AddHandler(
        std::make_unique<performance_manager::HighEfficiencyPolicyHandler>());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -2242,7 +2243,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2278,7 +2279,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -162,7 +171,7 @@
    handlers->AddHandler(
        std::make_unique<enterprise_idle::IdleTimeoutPolicyHandler>());
    handlers->AddHandler(
-@@ -2300,7 +2301,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2336,7 +2337,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        key::kBrowsingDataLifetime, browsing_data::prefs::kBrowsingDataLifetime,
        chrome_schema));
  
@@ -171,7 +180,7 @@
    handlers->AddHandler(std::make_unique<LocalSyncPolicyHandler>());
    handlers->AddHandler(std::make_unique<ThemeColorPolicyHandler>());
    handlers->AddHandler(
-@@ -2694,7 +2695,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2730,7 +2731,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif
  
  #if BUILDFLAG(ENABLE_SPELLCHECK)
@@ -180,7 +189,7 @@
    handlers->AddHandler(std::make_unique<SpellcheckLanguagePolicyHandler>());
    handlers->AddHandler(
        std::make_unique<SpellcheckLanguageBlocklistPolicyHandler>(
-@@ -2702,7 +2703,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2738,7 +2739,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  
@@ -189,10 +198,10 @@
    handlers->AddHandler(std::make_unique<SimplePolicyHandler>(
        key::kAllowSystemNotifications, prefs::kAllowSystemNotifications,
        base::Value::Type::BOOLEAN));
-@@ -2715,7 +2716,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
-   handlers->AddHandler(
-       std::make_unique<first_party_sets::FirstPartySetsOverridesPolicyHandler>(
-           chrome_schema));
+@@ -2755,7 +2756,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+       /*new_policy_handler=*/std::make_unique<
+           first_party_sets::FirstPartySetsOverridesPolicyHandler>(
+           policy::key::kRelatedWebsiteSetsOverrides, chrome_schema)));
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_ANDROID)
