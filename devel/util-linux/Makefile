@@ -5,7 +5,7 @@ MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Random collection of Linux utilities
-WWW=		https://github.com/karelzak/util-linux
+WWW=		https://github.com/util-linux/util-linux
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
