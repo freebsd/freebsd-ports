@@ -6,9 +6,9 @@ error[E0425]: cannot find function `strftime` in crate `libc`
 44 |         let rv = libc::strftime(buf.as_mut_ptr().cast(), buf.len(), format.as_ptr(), tm);
    |                        ^^^^^^^^ not found in `libc`
 
---- cargo-crates/libc-0.2.150/src/unix/bsd/apple/mod.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/libc-0.2.150/src/unix/bsd/apple/mod.rs
-@@ -5602,12 +5602,6 @@ extern "C" {
+--- cargo-crates/libc-0.2.151/src/unix/bsd/apple/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.151/src/unix/bsd/apple/mod.rs
+@@ -5604,12 +5604,6 @@ extern "C" {
      pub fn asctime(tm: *const ::tm) -> *mut ::c_char;
      pub fn ctime(clock: *const time_t) -> *mut ::c_char;
      pub fn getdate(datestr: *const ::c_char) -> *mut ::tm;
@@ -21,8 +21,8 @@ error[E0425]: cannot find function `strftime` in crate `libc`
      pub fn strptime(
          buf: *const ::c_char,
          format: *const ::c_char,
---- cargo-crates/libc-0.2.150/src/unix/bsd/mod.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/libc-0.2.150/src/unix/bsd/mod.rs
+--- cargo-crates/libc-0.2.151/src/unix/bsd/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.151/src/unix/bsd/mod.rs
 @@ -899,6 +899,20 @@ extern "C" {
          longopts: *const option,
          longindex: *mut ::c_int,
