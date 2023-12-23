@@ -1,5 +1,5 @@
 PORTNAME=	zsh-syntax-highlighting
-DISTVERSION=	0.7.1
+DISTVERSION=	0.8.0
 PORTEPOCH=	1
 CATEGORIES=	shells
 
