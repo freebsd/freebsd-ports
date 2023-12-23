@@ -27,12 +27,28 @@ PLIST_SUB=	LINUXBASE=${LINUXBASE} \
 USES=		linux
 USE_LINUX=	cups-libs jpeg
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=	requires manual fetch
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
 PLIST_SUB+=	LIBDIR=lib
+_MASTER_SITES_FULL=	https://download3.ebz.epson.net/dsc/f/03/00/05/62/39/f1fd78aacb85fff1a3c59a80dae5a5ac25e33992/
+_DISTFILES_FULL=	${DISTNAME}-1lsb3.2.i486.rpm
 .elif ${ARCH} == amd64
 PLIST_SUB+=	LIBDIR=lib64
+_MASTER_SITES_FULL=	https://download3.ebz.epson.net/dsc/f/03/00/05/62/39/770f0f7c12a304ceaec1ce13e5b5740a71522b68/
+_DISTFILES_FULL=${DISTNAME}-1lsb3.2.x86_64.rpm
+.endif
+
+.include <bsd.port.pre.mk>
+
+#_MASTER_STES
+.if !exists(${DISTDIR}/${DISTNAME}_${ARCH})
+IGNORE=	must be manually fetched from ${_MASTER_SITES_FULL}.  Download\
+		${_DISTFILES_FULL}, place it in ${DISTDIR} and restart this build
 .endif
 
 post-extract:
@@ -48,4 +64,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model/
 	${LN} -sf ${LINUXBASE}/opt/${PORTNAME}/ppds/Epson ${STAGEDIR}${PREFIX}/share/cups/model/Epson-201601w
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
