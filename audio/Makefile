@@ -318,6 +318,7 @@
     SUBDIR += juke
     SUBDIR += julius
     SUBDIR += kaldi
+    SUBDIR += kaldi-vosk
     SUBDIR += kapitonov-plugins-pack-lv2
     SUBDIR += kid3
     SUBDIR += klystrack
