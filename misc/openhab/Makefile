@@ -1,5 +1,5 @@
 PORTNAME=	openhab
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.0
 PORTREVISION=	0
 CATEGORIES=	misc java
 MASTER_SITES=	https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab/${PORTVERSION}/

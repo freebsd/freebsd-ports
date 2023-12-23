@@ -36,24 +36,6 @@ If you upgrade from a pevious version, make a backup of
 and read about the breaking changes in the release notes at
 	https://github.com/openhab/openhab-distro/releases/
 
-You need to change some configs:
-	export OPENHAB_USERDATA=/var/db/openhab/userdata
-	sed -i'.bak' -e "s:,javascript::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:javascript,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:javascript::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:,cometvisu-php::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:cometvisu-php,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:cometvisu-php::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:,innogysmarthome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:innogysmarthome,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:innogysmarthome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:,imperihome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:imperihome,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:imperihome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:,darksky::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:darksky,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-	sed -i'.bak' -e "s:darksky::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-
 You may have to update the files in
 	/var/db/openhab/userdata/etc/
 from
@@ -76,24 +58,6 @@ If you upgrade from a pevious version, make a backup of
 	/var/db/openhab
 and read about the breaking changes in the release notes at
 	https://github.com/openhab/openhab-distro/releases/
-
-You need to change some configs:
-OPENHAB_USERDATA=/var/db/openhab/userdata
-sed -i'.bak' -e "s:,javascript::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:javascript,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:javascript::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:,cometvisu-php::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:cometvisu-php,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:cometvisu-php::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:,innogysmarthome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:innogysmarthome,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:innogysmarthome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:,imperihome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:imperihome,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:imperihome::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:,darksky::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:darksky,::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
-sed -i'.bak' -e "s:darksky::g" "$OPENHAB_USERDATA/config/org/openhab/addons.config"
 
 You may have to update the files in
 	/var/db/openhab/userdata/etc/
