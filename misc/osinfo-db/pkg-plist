@@ -79,6 +79,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.15.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.16.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.17.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.18.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.19.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -266,6 +267,7 @@ share/osinfo/os/endlessos.com/eos-3.8.xml
 share/osinfo/os/endlessos.com/eos-3.9.xml
 share/osinfo/os/endlessos.com/eos-4.0.xml
 share/osinfo/os/endlessos.com/eos-5.0.xml
+share/osinfo/os/endlessos.com/eos-5.1.xml
 share/osinfo/os/euro-linux.com/eurolinux-8.xml
 share/osinfo/os/euro-linux.com/eurolinux-9.xml
 share/osinfo/os/fedoraproject.org/coreos-next.xml
@@ -303,6 +305,7 @@ share/osinfo/os/fedoraproject.org/fedora-35.xml
 share/osinfo/os/fedoraproject.org/fedora-36.xml
 share/osinfo/os/fedoraproject.org/fedora-37.xml
 share/osinfo/os/fedoraproject.org/fedora-38.xml
+share/osinfo/os/fedoraproject.org/fedora-39.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -323,6 +326,7 @@ share/osinfo/os/fedoraproject.org/silverblue-35.xml
 share/osinfo/os/fedoraproject.org/silverblue-36.xml
 share/osinfo/os/fedoraproject.org/silverblue-37.xml
 share/osinfo/os/fedoraproject.org/silverblue-38.xml
+share/osinfo/os/fedoraproject.org/silverblue-39.xml
 share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -343,6 +347,8 @@ share/osinfo/os/freebsd.org/freebsd-12.3.xml
 share/osinfo/os/freebsd.org/freebsd-12.4.xml
 share/osinfo/os/freebsd.org/freebsd-13.0.xml
 share/osinfo/os/freebsd.org/freebsd-13.1.xml
+share/osinfo/os/freebsd.org/freebsd-13.2.xml
+share/osinfo/os/freebsd.org/freebsd-14.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -530,6 +536,7 @@ share/osinfo/os/nixos.org/nixos-21.11.xml
 share/osinfo/os/nixos.org/nixos-22.05.xml
 share/osinfo/os/nixos.org/nixos-22.11.xml
 share/osinfo/os/nixos.org/nixos-23.05.xml
+share/osinfo/os/nixos.org/nixos-23.11.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
@@ -566,6 +573,7 @@ share/osinfo/os/openbsd.org/openbsd-7.0.xml
 share/osinfo/os/openbsd.org/openbsd-7.1.xml
 share/osinfo/os/openbsd.org/openbsd-7.2.xml
 share/osinfo/os/openbsd.org/openbsd-7.3.xml
+share/osinfo/os/openbsd.org/openbsd-7.4.xml
 share/osinfo/os/openindiana.org/hipster-rolling.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -636,6 +644,15 @@ share/osinfo/os/oracle.com/ol-8.2.xml
 share/osinfo/os/oracle.com/ol-8.3.xml
 share/osinfo/os/oracle.com/ol-8.4.xml
 share/osinfo/os/oracle.com/ol-8.5.xml
+share/osinfo/os/oracle.com/ol-8.6.xml
+share/osinfo/os/oracle.com/ol-8.7.xml
+share/osinfo/os/oracle.com/ol-8.8.xml
+share/osinfo/os/oracle.com/ol-8.9.xml
+share/osinfo/os/oracle.com/ol-9-unknown.xml
+share/osinfo/os/oracle.com/ol-9.0.xml
+share/osinfo/os/oracle.com/ol-9.1.xml
+share/osinfo/os/oracle.com/ol-9.2.xml
+share/osinfo/os/oracle.com/ol-9.3.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/pureos-10.xml
 share/osinfo/os/pureos.net/pureos-8.xml
@@ -706,6 +723,7 @@ share/osinfo/os/redhat.com/rhel-7.9.xml
 share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
+share/osinfo/os/redhat.com/rhel-8.10.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-8.4.xml
@@ -719,6 +737,7 @@ share/osinfo/os/redhat.com/rhel-9.0.xml
 share/osinfo/os/redhat.com/rhel-9.1.xml
 share/osinfo/os/redhat.com/rhel-9.2.xml
 share/osinfo/os/redhat.com/rhel-9.3.xml
+share/osinfo/os/redhat.com/rhel-9.4.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -882,6 +901,7 @@ share/osinfo/os/ubuntu.com/ubuntu-22.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-22.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-23.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-23.10.xml
+share/osinfo/os/ubuntu.com/ubuntu-24.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
