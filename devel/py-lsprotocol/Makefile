@@ -1,5 +1,5 @@
 PORTNAME=	lsprotocol
-PORTVERSION=	2022.0.0a10
+PORTVERSION=	2023.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,15 +11,12 @@ WWW=		https://github.com/microsoft/lsprotocol
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=22.1.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cattrs>=22.2.0:devel/py-cattrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}exceptiongroup>0:devel/py-exceptiongroup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.4.0:devel/py-typing-extensions@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=21.3.0:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cattrs>0:devel/py-cattrs@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	pep517 autoplist concurrent
 
 NO_ARCH=	yes
 
