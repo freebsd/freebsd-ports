@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Project dismissed by Apache
-EXPIRATION_DATE=	2024-01-124
+EXPIRATION_DATE=	2024-01-24
 BROKEN_FreeBSD_13= Fails at post-build test stage
 BROKEN_FreeBSD_14= Fails at post-build test stage
 BROKEN_FreeBSD_15= Fails at post-build test stage
