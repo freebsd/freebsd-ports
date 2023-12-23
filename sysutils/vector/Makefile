@@ -11,6 +11,7 @@ WWW=		https://vector.dev
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	error: could not compile `num-bigint` (lib) due to 4 previous errors
 BROKEN_FreeBSD_12_powerpc64=	fails to link: /usr/local/bin/ld: cannot find -lc++
 
 BUILD_DEPENDS=	protoc:devel/protobuf
