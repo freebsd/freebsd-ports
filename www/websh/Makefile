@@ -9,7 +9,14 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 WWW=		https://tcl.apache.org/websh/
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Project dismissed by Apache
+EXPIRATION_DATE=	2024-01-124
+BROKEN_FreeBSD_13= Fails at post-build test stage
 BROKEN_FreeBSD_14= Fails at post-build test stage
+BROKEN_FreeBSD_15= Fails at post-build test stage
 
 USES=		apache autoreconf gmake tcl:tea
 USE_LDCONFIG=	yes
@@ -28,9 +35,9 @@ SUB_LIST+=	LIBSUF=${LIBSUF} WS_VER=${PORTVERSION}
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
+
 PLIST_SUB+=	LIBSUF=${LIBSUF}
 PLIST_SUB+=	NOMINORVERSION=${TCL_VER:C/8.[345]//:C/^..*/"@comment "/}
-
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
