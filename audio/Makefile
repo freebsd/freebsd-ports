@@ -671,6 +671,7 @@
     SUBDIR += py-spotipy
     SUBDIR += py-tagpy
     SUBDIR += py-torchaudio
+    SUBDIR += py-vosk
     SUBDIR += py-wavio
     SUBDIR += py-webrtcvad
     SUBDIR += py-zita-audiotools
