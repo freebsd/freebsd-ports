@@ -661,6 +661,7 @@
     SUBDIR += onednn252
     SUBDIR += openblas
     SUBDIR += openfst
+    SUBDIR += openfst-vosk
     SUBDIR += openlibm
     SUBDIR += openmesh
     SUBDIR += openscop
