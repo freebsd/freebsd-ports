@@ -137,6 +137,7 @@ man/man1/calc.1.gz
 %%HELP%%%%DATADIR%%/help/bug
 %%HELP%%%%DATADIR%%/help/bugs
 %%HELP%%%%DATADIR%%/help/builtin
+%%HELP%%%%DATADIR%%/help/calc
 %%HELP%%%%DATADIR%%/help/calc_tty
 %%HELP%%%%DATADIR%%/help/calclevel
 %%HELP%%%%DATADIR%%/help/calcpath
@@ -332,7 +333,6 @@ man/man1/calc.1.gz
 %%HELP%%%%DATADIR%%/help/lowbit
 %%HELP%%%%DATADIR%%/help/ltol
 %%HELP%%%%DATADIR%%/help/makelist
-%%HELP%%%%DATADIR%%/help/man
 %%HELP%%%%DATADIR%%/help/mat
 %%HELP%%%%DATADIR%%/help/matdim
 %%HELP%%%%DATADIR%%/help/matfill
@@ -467,7 +467,6 @@ man/man1/calc.1.gz
 %%HELP%%%%DATADIR%%/help/type
 %%HELP%%%%DATADIR%%/help/types
 %%HELP%%%%DATADIR%%/help/unexpected
-%%HELP%%%%DATADIR%%/help/usage
 %%HELP%%%%DATADIR%%/help/usertime
 %%HELP%%%%DATADIR%%/help/variable
 %%HELP%%%%DATADIR%%/help/vercos
