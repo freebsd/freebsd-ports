@@ -1,6 +1,6 @@
 PORTNAME=	zcad
 PORTVERSION=	0.9.8.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	cad
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -22,6 +22,7 @@ DOS2UNIX_GLOB=	*.pas *.lpi
 BUILD_WRKSRC=	${WRKSRC}/cad_source
 INSTALL_WRKSRC=	${WRKSRC}/cad
 
+LAZARUS_NO_FLAVORS=	qt6
 LAZARUS_PROJECT_FILES=	anchordocking/anchordocking.lpk \
 			fpvectorial/fpvectorialpkg.lpk \
 			lclextensions/lclextensions_package.lpk \

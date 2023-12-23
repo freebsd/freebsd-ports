@@ -1,6 +1,6 @@
 PORTNAME=	doublecmd
 PORTVERSION=	1.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -24,6 +24,7 @@ GH_TAGNAME=	1.0.10:help
 USE_GNOME=	cairo glib20
 USE_XORG=	x11
 
+LAZARUS_NO_FLAVORS=	qt6
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk \
 			components/CmdLine/cmdbox.lpk \
 			components/multithreadprocs/multithreadprocslaz.lpk \
