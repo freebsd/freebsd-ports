@@ -3,6 +3,8 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 program that displays images of various formats with japanization
 
+BROKEN=		Fails to generate binaries
+
 MASTERDIR=	${.CURDIR}/../../graphics/xv
 PKGDIR=		${.CURDIR}
 
