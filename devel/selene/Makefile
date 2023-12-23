@@ -1,6 +1,5 @@
 PORTNAME=	selene
-DISTVERSION=	0.25.0
-PORTREVISION=	7
+DISTVERSION=	0.26.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -55,7 +54,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		flate2-1.0.25 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
-		full_moon-0.18.0 \
+		full_moon-0.19.0 \
 		full_moon_derive-0.11.0 \
 		generator-0.7.2 \
 		getrandom-0.2.8 \
@@ -101,7 +100,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.50 \
+		proc-macro2-1.0.66 \
 		profiling-1.0.7 \
 		profiling-procmacros-1.0.7 \
 		quote-1.0.23 \
@@ -111,6 +110,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		ring-0.16.20 \
+		ring-0.17.3 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.4.0 \
 		rustls-0.20.8 \
@@ -129,6 +129,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		smallvec-1.10.0 \
 		smol_str-0.1.23 \
 		spin-0.5.2 \
+		spin-0.9.8 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
@@ -160,6 +161,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-width-0.1.10 \
 		unsafe-libyaml-0.2.5 \
 		untrusted-0.7.1 \
+		untrusted-0.9.0 \
 		ureq-2.6.2 \
 		url-2.3.1 \
 		valuable-0.1.0 \
@@ -173,18 +175,27 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
 		web-sys-0.3.60 \
-		webpki-0.22.0 \
+		webpki-0.22.4 \
 		webpki-roots-0.22.6 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.39.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.39.0 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.39.0 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.39.0 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.39.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.39.0 \
+		windows_x86_64_msvc-0.48.5 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME}
