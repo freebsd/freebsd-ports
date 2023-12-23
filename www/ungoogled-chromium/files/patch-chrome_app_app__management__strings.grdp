@@ -1,6 +1,6 @@
---- chrome/app/app_management_strings.grdp.orig	2023-09-17 07:59:53 UTC
+--- chrome/app/app_management_strings.grdp.orig	2023-12-23 12:33:28 UTC
 +++ chrome/app/app_management_strings.grdp
-@@ -188,7 +188,7 @@
+@@ -194,7 +194,7 @@
        You can open and edit supported files with this app from Finder or other apps. To control which files open this app by default, <ph name="BEGIN_LINK">&lt;a href="#"&gt;</ph>learn how to set default apps on your device<ph name="END_LINK">&lt;/a&gt;</ph>.
      </message>
    </if>

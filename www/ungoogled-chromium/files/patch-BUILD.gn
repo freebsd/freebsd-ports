@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2023-11-04 07:08:51 UTC
+--- BUILD.gn.orig	2023-12-23 12:33:28 UTC
 +++ BUILD.gn
 @@ -61,7 +61,7 @@ declare_args() {
    root_extra_deps = []
@@ -17,7 +17,7 @@
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -417,7 +416,7 @@ group("gn_all") {
+@@ -415,7 +414,7 @@ group("gn_all") {
        }
      }
  
@@ -26,7 +26,7 @@
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -609,6 +608,15 @@ group("gn_all") {
+@@ -607,6 +606,15 @@ group("gn_all") {
        }
      }
  
@@ -42,7 +42,7 @@
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms",
-@@ -658,7 +666,7 @@ group("gn_all") {
+@@ -656,7 +664,7 @@ group("gn_all") {
            host_os == "win") {
          deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
        }
@@ -51,7 +51,7 @@
        deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
      }
  
-@@ -1086,7 +1094,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1077,7 +1085,7 @@ if (use_blink && !is_cronet_build) {
      ]
    }
  
@@ -60,7 +60,7 @@
      script_test("chrome_wpt_tests") {
        script = "//third_party/blink/tools/run_wpt_tests.py"
        args = [
-@@ -1159,7 +1167,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1150,7 +1158,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1168,7 +1176,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1159,7 +1167,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1629,7 +1637,7 @@ group("chromium_builder_perf") {
+@@ -1624,7 +1632,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

@@ -1,8 +1,8 @@
---- chrome/browser/media/router/discovery/BUILD.gn.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/media/router/discovery/BUILD.gn.orig	2023-12-23 12:33:28 UTC
 +++ chrome/browser/media/router/discovery/BUILD.gn
-@@ -80,7 +80,7 @@ static_library("discovery") {
-     "media_sink_discovery_metrics.h",
+@@ -81,7 +81,7 @@ static_library("discovery") {
    ]
+   configs += [ "//build/config/compiler:wexit_time_destructors" ]
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_bsd) {

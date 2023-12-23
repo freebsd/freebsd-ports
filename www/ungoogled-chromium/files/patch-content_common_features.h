@@ -1,4 +1,4 @@
---- content/common/features.h.orig	2023-11-04 07:08:51 UTC
+--- content/common/features.h.orig	2023-12-23 12:33:28 UTC
 +++ content/common/features.h
 @@ -37,7 +37,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDeviceMonitorMac)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
@@ -9,12 +9,12 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnsureAllowBindingsIsAlwaysForWebUI);
-@@ -55,7 +55,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kForwardMemoryPres
- #if BUILDFLAG(IS_WIN)
+@@ -58,7 +58,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kForwardMemoryPres
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGpuInfoCollectionSeparatePrefetch);
  #endif
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kGroupNIKByJoiningOrigin);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kHandleRendererThreadTypeChangesInBrowser);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kHandleChildThreadTypeChangesInBrowser);
  #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kHighPriorityBeforeUnload);

@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2023-11-04 07:08:51 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2023-12-23 12:33:28 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -21,7 +21,7 @@ BASE_FEATURE(kUseClientConfigIPH,
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -539,7 +539,7 @@ constexpr base::FeatureParam<int> kDefaultBrowserEligi
+@@ -560,7 +560,7 @@ constexpr base::FeatureParam<int> kDefaultBrowserEligi
      /*default_value=*/365};
  #endif  // BUILDFLAG(IS_IOS)
  

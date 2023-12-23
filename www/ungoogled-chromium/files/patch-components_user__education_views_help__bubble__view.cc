@@ -1,6 +1,6 @@
---- components/user_education/views/help_bubble_view.cc.orig	2023-11-04 07:08:51 UTC
+--- components/user_education/views/help_bubble_view.cc.orig	2023-12-23 12:33:28 UTC
 +++ components/user_education/views/help_bubble_view.cc
-@@ -997,7 +997,7 @@ gfx::Rect HelpBubbleView::GetAnchorRect() const {
+@@ -1003,7 +1003,7 @@ gfx::Rect HelpBubbleView::GetAnchorRect() const {
  void HelpBubbleView::OnBeforeBubbleWidgetInit(views::Widget::InitParams* params,
                                                views::Widget* widget) const {
    BubbleDialogDelegateView::OnBeforeBubbleWidgetInit(params, widget);

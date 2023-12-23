@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.h.orig	2023-10-13 13:20:35 UTC
+--- chrome/browser/net/system_network_context_manager.h.orig	2023-12-23 12:33:28 UTC
 +++ chrome/browser/net/system_network_context_manager.h
 @@ -185,7 +185,7 @@ class SystemNetworkContextManager {
    class URLLoaderFactoryForSystem;
@@ -18,7 +18,7 @@
    // Applies the current value of the kEnforceLocalAnchorConstraintsEnabled
    // pref to the enforcement state.
    void UpdateEnforceLocalAnchorConstraintsEnabled();
-@@ -275,7 +275,7 @@ class SystemNetworkContextManager {
+@@ -277,7 +277,7 @@ class SystemNetworkContextManager {
  
    static absl::optional<bool> certificate_transparency_enabled_for_testing_;
  

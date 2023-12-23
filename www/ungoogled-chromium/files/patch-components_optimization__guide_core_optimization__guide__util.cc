@@ -1,4 +1,4 @@
---- components/optimization_guide/core/optimization_guide_util.cc.orig	2023-11-11 14:10:41 UTC
+--- components/optimization_guide/core/optimization_guide_util.cc.orig	2023-12-23 12:33:28 UTC
 +++ components/optimization_guide/core/optimization_guide_util.cc
 @@ -34,7 +34,7 @@ optimization_guide::proto::Platform GetPlatform() {
    return optimization_guide::proto::PLATFORM_CHROMEOS;
@@ -8,4 +8,4 @@
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return optimization_guide::proto::PLATFORM_LINUX;
  #else
-   return optimization_guide::proto::PLATFORM_UNKNOWN;
+   return optimization_guide::proto::PLATFORM_UNDEFINED;

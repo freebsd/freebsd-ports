@@ -1,11 +1,11 @@
---- third_party/webrtc/rtc_base/physical_socket_server.h.orig	2023-05-05 12:12:41 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.h.orig	2023-12-23 12:33:28 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.h
-@@ -14,7 +14,7 @@
- #include "api/units/time_delta.h"
+@@ -18,7 +18,7 @@
+ #include "rtc_base/third_party/sigslot/sigslot.h"
  
  #if defined(WEBRTC_POSIX)
 -#if defined(WEBRTC_LINUX)
 +#if defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
  // On Linux, use epoll.
  #include <sys/epoll.h>
- #define WEBRTC_USE_EPOLL 1
+ 

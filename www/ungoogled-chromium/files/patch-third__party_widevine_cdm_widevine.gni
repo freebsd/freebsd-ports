@@ -1,6 +1,6 @@
---- third_party/widevine/cdm/widevine.gni.orig	2023-10-13 13:20:35 UTC
+--- third_party/widevine/cdm/widevine.gni.orig	2023-12-23 12:33:28 UTC
 +++ third_party/widevine/cdm/widevine.gni
-@@ -27,6 +27,8 @@ library_widevine_cdm_available =
+@@ -28,6 +28,8 @@ library_widevine_cdm_available =
      (is_chromeos &&
       (target_cpu == "x64" || target_cpu == "arm" || target_cpu == "arm64")) ||
      (target_os == "linux" && target_cpu == "x64") ||

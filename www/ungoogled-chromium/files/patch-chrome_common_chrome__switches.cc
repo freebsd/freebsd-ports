@@ -1,6 +1,6 @@
---- chrome/common/chrome_switches.cc.orig	2023-11-04 07:08:51 UTC
+--- chrome/common/chrome_switches.cc.orig	2023-12-23 12:33:28 UTC
 +++ chrome/common/chrome_switches.cc
-@@ -861,14 +861,14 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
+@@ -857,14 +857,14 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

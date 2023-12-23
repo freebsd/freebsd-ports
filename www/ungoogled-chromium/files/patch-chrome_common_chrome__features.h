@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2023-11-04 07:08:51 UTC
+--- chrome/common/chrome_features.h.orig	2023-12-23 12:33:28 UTC
 +++ chrome/common/chrome_features.h
 @@ -61,13 +61,13 @@ BASE_DECLARE_FEATURE(kAppShimNotificationAttribution);
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kAsyncDns);
@@ -25,7 +25,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKeepForceInstalledPreinstalledApps);
-@@ -508,7 +508,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -523,7 +523,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kLacrosSharedComponentsDir);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -34,7 +34,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -516,7 +516,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -531,7 +531,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

@@ -1,6 +1,6 @@
---- remoting/protocol/webrtc_video_stream.cc.orig	2023-04-08 11:38:38 UTC
+--- remoting/protocol/webrtc_video_stream.cc.orig	2023-12-23 12:33:28 UTC
 +++ remoting/protocol/webrtc_video_stream.cc
-@@ -260,7 +260,7 @@ WebrtcVideoStream::WebrtcVideoStream(const std::string
+@@ -263,7 +263,7 @@ WebrtcVideoStream::WebrtcVideoStream(const std::string
      : stream_name_(stream_name), session_options_(session_options) {
  // TODO(joedow): Dig into the threading model on other platforms to see if they
  // can also be updated to run on a dedicated thread.
