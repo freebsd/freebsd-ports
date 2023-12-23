@@ -3,7 +3,7 @@ PORTVERSION=	0.8.23
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
 WWW=		https://duplicity.nongnu.org
 
