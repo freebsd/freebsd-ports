@@ -23,9 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2023-12-22 02:04:16 UTC
+--- Cargo.lock.orig	2023-12-23 22:12:55 UTC
 +++ Cargo.lock
-@@ -2194,9 +2194,9 @@ name = "gilrs"
+@@ -2229,9 +2229,9 @@ name = "gilrs"
  
  [[package]]
  name = "gilrs"
@@ -37,7 +37,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2207,23 +2207,22 @@ name = "gilrs-core"
+@@ -2242,23 +2242,22 @@ name = "gilrs-core"
  
  [[package]]
  name = "gilrs-core"
@@ -61,11 +61,20 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "wasm-bindgen",
   "web-sys",
 - "windows 0.52.0",
-+ "windows 0.44.0",
++ "windows 0.46.0",
  ]
  
  [[package]]
-@@ -2460,17 +2459,6 @@ dependencies = [
+@@ -2461,7 +2460,7 @@ dependencies = [
+  "iana-time-zone-haiku",
+  "js-sys",
+  "wasm-bindgen",
+- "windows-core 0.51.1",
++ "windows-core",
+ ]
+ 
+ [[package]]
+@@ -2531,17 +2530,6 @@ dependencies = [
  ]
  
  [[package]]
@@ -83,7 +92,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  name = "inotify-sys"
  version = "0.1.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2512,9 +2500,9 @@ name = "io-kit-sys"
+@@ -2583,9 +2571,9 @@ name = "io-kit-sys"
  
  [[package]]
  name = "io-kit-sys"
@@ -95,7 +104,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -3058,17 +3046,6 @@ dependencies = [
+@@ -3160,17 +3148,6 @@ dependencies = [
  ]
  
  [[package]]
@@ -113,7 +122,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  name = "nohash-hasher"
  version = "0.2.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3105,7 +3082,7 @@ dependencies = [
+@@ -3207,7 +3184,7 @@ dependencies = [
   "crossbeam-channel",
   "filetime",
   "fsevent-sys",
@@ -122,20 +131,26 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "kqueue",
   "libc",
   "log",
-@@ -5038,25 +5015,6 @@ dependencies = [
-  "windows-implement",
-  "windows-interface",
-  "windows-targets 0.48.5",
--]
--
--[[package]]
+@@ -5227,31 +5204,12 @@ dependencies = [
+ ]
+ 
+ [[package]]
 -name = "windows"
 -version = "0.52.0"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "e48a53791691ab099e5e2ad123536d0fff50652600abaf43bbf952894110d0be"
 -dependencies = [
-- "windows-core",
+- "windows-core 0.52.0",
 - "windows-targets 0.52.0",
+-]
+-
+-[[package]]
+ name = "windows-core"
+ version = "0.51.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "f1f8cf84f35d2db49a46868f947758c7a1138116f7fac3bc844f43ade1292e64"
+ dependencies = [
+  "windows-targets 0.48.5",
 -]
 -
 -[[package]]

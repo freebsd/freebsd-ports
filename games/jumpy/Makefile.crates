@@ -102,6 +102,9 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		combine-4.6.6 \
 		concurrent-queue-2.4.0 \
 		console_error_panic_hook-0.1.7 \
+		const_fn-0.4.9 \
+		const_format-0.2.32 \
+		const_format_proc_macros-0.2.32 \
 		const_panic-0.2.8 \
 		const_soft_float-0.1.4 \
 		constgebra-0.1.3 \
@@ -126,6 +129,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		dashmap-5.5.3 \
 		dasp_sample-0.11.0 \
 		data-encoding-2.5.0 \
+		deranged-0.3.10 \
 		digest-0.10.7 \
 		directories-5.0.1 \
 		dirs-sys-0.4.1 \
@@ -186,8 +190,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		gilrs-0.10.2 \
 		gilrs-core-0.5.7 \
 		gimli-0.28.1 \
-		git-version-0.3.9 \
-		git-version-macro-0.3.9 \
+		git2-0.18.1 \
 		glam-0.24.2 \
 		glob-0.3.1 \
 		glow-0.12.3 \
@@ -206,6 +209,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		home-0.5.9 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
+		iana-time-zone-0.1.58 \
+		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		image-0.24.7 \
 		indexmap-1.9.3 \
@@ -216,6 +221,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		intl-memoizer-0.5.1 \
 		intl_pluralrules-7.0.2 \
 		io-kit-sys-0.3.0 \
+		is_debug-1.0.1 \
 		itertools-0.10.5 \
 		itoa-1.0.10 \
 		jni-0.19.0 \
@@ -231,12 +237,14 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.151 \
+		libgit2-sys-0.16.1+1.7.1 \
 		libloading-0.7.4 \
 		libloading-0.8.1 \
 		libm-0.2.8 \
 		libredox-0.0.1 \
 		libredox-0.0.2 \
 		libudev-sys-0.1.4 \
+		libz-sys-1.1.12 \
 		litrs-0.2.3 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
@@ -284,6 +292,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		num_enum-0.6.1 \
 		num_enum_derive-0.5.11 \
 		num_enum_derive-0.6.1 \
+		num_threads-0.1.6 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc-sys-0.2.0-beta.2 \
@@ -321,6 +330,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		pin-project-lite-0.2.13 \
 		pkg-config-0.3.28 \
 		png-0.17.10 \
+		powerfmt-0.2.0 \
 		pp-rs-0.2.1 \
 		ppv-lite86-0.2.17 \
 		proc-macro-crate-1.3.1 \
@@ -376,6 +386,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		serde_json-1.0.108 \
 		serde_yaml-0.9.29 \
 		sha2-0.10.8 \
+		shadow-rs-0.25.0 \
 		sharded-slab-0.1.7 \
 		shiftnanigans-0.3.3 \
 		shlex-1.2.0 \
@@ -414,6 +425,9 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		thiserror-impl-1.0.51 \
 		thread_local-1.1.7 \
 		tiff-0.9.0 \
+		time-0.3.31 \
+		time-core-0.1.2 \
+		time-macros-0.2.16 \
 		tiny-skia-0.8.4 \
 		tiny-skia-path-0.8.4 \
 		tinystr-0.7.5 \
@@ -432,6 +446,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		turborand-0.10.0 \
 		type-map-0.4.0 \
 		typenum-1.17.0 \
+		tz-rs-0.6.14 \
+		tzdb-0.5.7 \
 		ulid-1.1.0 \
 		unic-langid-0.9.4 \
 		unic-langid-impl-0.9.4 \
@@ -447,6 +463,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		ustr-0.10.0 \
 		uuid-1.6.1 \
 		valuable-0.1.0 \
+		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		venial-0.5.0 \
 		version_check-0.9.4 \
@@ -484,6 +501,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		windows-0.44.0 \
 		windows-0.46.0 \
 		windows-0.48.0 \
+		windows-core-0.51.1 \
 		windows-implement-0.48.0 \
 		windows-interface-0.48.0 \
 		windows-sys-0.45.0 \
