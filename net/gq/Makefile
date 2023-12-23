@@ -14,6 +14,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 DEPRECATED=	Upstream last release was in 2008
+EXPIRATION_DATE=	2024-01-24
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
