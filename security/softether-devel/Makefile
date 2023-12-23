@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 #IGNORE=		no beta version available right now, use security/softether instead
+BROKEN=	unable to open output file 'tmp/objs/Mayaqua/Encrypt.o'
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl
