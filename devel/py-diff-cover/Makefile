@@ -1,5 +1,5 @@
 PORTNAME=	diff-cover
-DISTVERSION=	8.0.0
+DISTVERSION=	8.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ TEST_DEPENDS=	pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 5 tests fail, https://github.com/Bachmann1234/diff_cover/issues/348
+USE_PYTHON=	pep517 autoplist pytest
 
 MAKE_ENV+=	GIT_DIR=${WRKDIR} # workaround for https://github.com/python-poetry/poetry/issues/5547
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
