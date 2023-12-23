@@ -3,7 +3,3 @@ vulnerabilities contained within project dependencies. It does this by
 determining if there is a Common Platform Enumeration (CPE) identifier
 for a given dependency. If found, it will generate a report linking to
 the associated CVE entries.
-
-See also: https://github.com/jeremylong/DependencyCheck
-See also: https://www.owasp.org/index.php/OWASP_Dependency_Check
-See also: https://jeremylong.github.io/DependencyCheck/dependency-check-cli/
