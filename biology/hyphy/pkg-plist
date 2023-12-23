@@ -147,6 +147,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/ModelTest.bf
 %%DATADIR%%/TemplateBatchFiles/MolClockAllRoots.bf
 %%DATADIR%%/TemplateBatchFiles/MolecularClock.bf
+%%DATADIR%%/TemplateBatchFiles/MSS-joint-fitter.bf
 %%DATADIR%%/TemplateBatchFiles/MSS-selector-2.bf
 %%DATADIR%%/TemplateBatchFiles/MSS-selector.bf
 %%DATADIR%%/TemplateBatchFiles/NeighborJoining.bf
@@ -191,6 +192,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/aBSREL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/contrast-fel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/contrast-meme.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/error-filter.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/modules/grid_compute.ibf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/modules/io_functions.ibf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/modules/selection_lib.ibf
