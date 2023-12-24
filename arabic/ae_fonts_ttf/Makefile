@@ -7,15 +7,18 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of TrueType Arabic fonts
+WWW=		https://www.arabeyes.org/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		fonts tar:bzip2
-WRKSRC=		${WRKDIR}/ae_fonts1-${PORTVERSION}
-SUB_FILES=	pkg-message
-NO_BUILD=	yes
-
 FONTNAME=	ae_fonts1
+
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
+WRKSRC=	${WRKDIR}/ae_fonts1-${PORTVERSION}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${FONTSDIR}
