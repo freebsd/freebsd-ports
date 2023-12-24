@@ -105,7 +105,7 @@ MYSQL_INTERNAL_USES=		mysql:server
 MYSQL_INTERNAL_CMAKE_BOOL=	ENABLE_INTERNALMYSQL
 # Only works with MariaDB. Try to keep this in sync with supported MySQL
 # versions and add any version not ending with 'm' to the IGNORE list.
-MYSQL_INTERNAL_VARS=		IGNORE_WITH_MYSQL="57 80 57p 57w"
+MYSQL_INTERNAL_VARS=		IGNORE_WITH_MYSQL="57 80 81 57w"
 MYSQL_INTERNAL_IMPLIES=		MYSQL
 
 NLS_DESC=		Digikam i18n translations
