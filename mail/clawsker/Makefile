@@ -1,5 +1,5 @@
 PORTNAME=	clawsker
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
