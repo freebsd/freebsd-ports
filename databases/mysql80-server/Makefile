@@ -205,7 +205,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-scripts_CMakeLists.txt
 
 # XXX MBi alignment issue
 .if ${ARCH} == i386
-EXTRA_PATCHES+=	files/extra-patch-boost-boost_1_77_0-boost-move-detail-type_traits.hpp
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-boost-boost_1_77_0-boost-move-detail-type_traits.hpp
 .endif
 
 .if !defined(CLIENT_ONLY)
