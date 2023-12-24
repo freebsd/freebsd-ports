@@ -1,6 +1,6 @@
-PORTNAME=	octave-forge-statistics-bootstrap
+PORTNAME=	octave-forge-statistics-resampling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.3
+DISTVERSION=	5.4.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -13,10 +13,12 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 USES=		octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnu-octave
-GH_PROJECT=	statistics-bootstrap
+GH_PROJECT=	statistics-resampling
 
 OCTAVE_SRC=		${GH_PROJECT}-${DISTVERSION}
 
 ALL_TARGET=	make
+
+CONFLICTS_INSTALL=	octave-forge-statistics-bootstrap
 
 .include <bsd.port.mk>

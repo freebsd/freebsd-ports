@@ -8183,3 +8183,4 @@ mail/mailsync||2023-12-16|Has expired: Depends on outdated mail/cclient
 mail/cclient|mail/panda-cclient|2023-12-16|Has expired: Last upstream release was in 2007 so use the fork mail/panda-cclient
 www/yanopaste||2023-12-18|Has expired: Last upstream release was in 2011
 www/py-yt-dlp-devel|www/py-yt-dlp|2023-12-22|Remove the -devel suffix
+math/octave-forge-statistics-bootstrap|math/octave-forge-statistics-resampling|2023-12-24|Name change upstream

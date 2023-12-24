@@ -640,7 +640,7 @@
     SUBDIR += octave-forge-splines
     SUBDIR += octave-forge-sqlite
     SUBDIR += octave-forge-statistics
-    SUBDIR += octave-forge-statistics-bootstrap
+    SUBDIR += octave-forge-statistics-resampling
     SUBDIR += octave-forge-stk
     SUBDIR += octave-forge-strings
     SUBDIR += octave-forge-struct

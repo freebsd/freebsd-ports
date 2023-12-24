@@ -3,7 +3,8 @@ which is intended to be a central location for custom scripts, functions and
 extensions for GNU Octave. contains the source for all the functions plus
 build and install scripts.
 
-This is statistics-bootstrap.
+This is statistics-resampling.
 
  Estimate bias, uncertainty (standard errors and confidence intervals) and
-test hypotheses (p-values) using bootstrap resampling methods.
+test hypotheses (p-values) using resampling methods. (Note that versions of
+this package <= 5.4.3 are named the statistics-bootstrap package).
