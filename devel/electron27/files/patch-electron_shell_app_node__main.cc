@@ -1,7 +1,7 @@
---- electron/shell/app/node_main.cc.orig	2023-10-20 08:29:17 UTC
+--- electron/shell/app/node_main.cc.orig	2023-12-21 18:00:06 UTC
 +++ electron/shell/app/node_main.cc
-@@ -42,7 +42,7 @@
- #include "content/public/common/content_descriptors.h"
+@@ -47,7 +47,7 @@
+ #include "shell/common/mac/codesign_util.h"
  #endif
  
 -#if !IS_MAS_BUILD()
@@ -9,7 +9,7 @@
  #include "components/crash/core/app/crashpad.h"  // nogncheck
  #include "shell/app/electron_crash_reporter_client.h"
  #include "shell/common/crash_keys.h"
-@@ -77,7 +77,7 @@ void ExitIfContainsDisallowedFlags(const std::vector<s
+@@ -82,7 +82,7 @@ void ExitIfContainsDisallowedFlags(const std::vector<s
    }
  }
  
@@ -18,7 +18,7 @@
  void SetCrashKeyStub(const std::string& key, const std::string& value) {}
  void ClearCrashKeyStub(const std::string& key) {}
  #endif
-@@ -88,7 +88,7 @@ namespace electron {
+@@ -93,7 +93,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -27,7 +27,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -224,7 +224,7 @@ int NodeMain(int argc, char* argv[]) {
+@@ -253,7 +253,7 @@ int NodeMain(int argc, char* argv[]) {
        // Setup process.crashReporter in child node processes
        gin_helper::Dictionary reporter = gin::Dictionary::CreateEmpty(isolate);
        reporter.SetMethod("getParameters", &GetParameters);
