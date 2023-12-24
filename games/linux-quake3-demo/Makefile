@@ -18,6 +18,9 @@ LICENSE_NAME=	Loki
 LICENSE_TEXT=	Restrictive license by Loki Software
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Cannot be fetched from GENTOO sites
+EXPIRATION_DATE=	2024-01-25
+
 USES=		linux
 USE_LINUX=	dri
 NO_BUILD=	yes
