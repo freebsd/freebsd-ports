@@ -10,9 +10,13 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki13[8-9] mediawiki14[0-9]
+DEPRECATED=	Upstream reached EOL on 2023-12-21
+EXPIRATION_DATE=	2024-03-31
 
 USES=		cpe php:flavors shebangfix
+USE_PHP=	ctype dom fileinfo filter iconv intl mbstring \
+		readline session xml xmlreader zlib
+
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/postgres/*.pl \
 		maintenance/storage/make-blobs \
@@ -20,34 +24,34 @@ SHEBANG_FILES=	maintenance/dev/*.sh \
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
-USE_PHP=	ctype dom fileinfo filter iconv intl mbstring \
-		readline session xml xmlreader zlib
-MEDIAWIKIDIR?=	www/mediawiki
+
+CONFLICTS=	mediawiki13[8-9] mediawiki14[0-9]
 
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/plist
-
 SUB_FILES=	pkg-message
 SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
+MEDIAWIKIDIR?=	www/mediawiki
+
+PLIST=		${WRKDIR}/plist
+
 OPTIONS_DEFINE=	LDAP MEMCACHED IMAGICK SOCKETS
+OPTIONS_DEFAULT=	MYSQL SOCKETS
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	MYSQL SOCKETS
 
-MEMCACHED_DESC=	Use memcached
 IMAGICK_DESC=	Use ImageMagick
+MEMCACHED_DESC=	Use memcached
 SOCKETS_DESC=	Use sockets
 
+IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+LDAP_USE=	php=ldap
+MEMCACHED_RUN_DEPENDS=	memcached:databases/memcached
 MYSQL_USES=	mysql
 MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
-SQLITE_USE=	php=sqlite3
-LDAP_USE=	php=ldap
 SOCKETS_USE=	php=sockets
-
-MEMCACHED_RUN_DEPENDS=	memcached:databases/memcached
-IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+SQLITE_USE=	php=sqlite3
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
