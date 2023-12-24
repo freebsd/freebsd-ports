@@ -9,16 +9,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 WWW=		http://cmusphinx.sourceforge.net/
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Upstream advises to use audio/pocketsphinx
+EXPIRATION_DATE=	2024-01-25
+# contains i386 sound code
+ONLY_FOR_ARCHS=	i386
+
 USES=		dos2unix gmake libtool shebangfix
 DOS2UNIX_FILES=	src/libsphinx2fe/fe_sigproc.c
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	scripts/sphinx2-demo.in
 perl_OLD_CMD=	"@PERL@ -w"
 
-# contains i386 sound code
-ONLY_FOR_ARCHS=	i386
+GNU_CONFIGURE=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:<malloc.h>:<stdlib.h>:g' \
