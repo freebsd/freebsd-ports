@@ -1,5 +1,6 @@
 PORTNAME=	gtk
 DISTVERSION=	3.24.38 # sync with x11-themes: adwaita-icon-theme, gnome-themes-standard and mate-themes
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${DISTVERSION:R}
 PKGNAMESUFFIX=	3
@@ -19,8 +20,8 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 		hicolor-icon-theme>=0:misc/hicolor-icon-theme
 
-USES=		compiler:c11 cpe gettext gnome localbase meson ninja pathfix \
-		perl5 pkgconfig python shebangfix tar:xz
+USES=		compiler:c11 cpe gettext gnome localbase:ldflags meson ninja \
+		pathfix perl5 pkgconfig python shebangfix tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	atk cairo gdkpixbuf2 gtk-update-icon-cache pango \
 		introspection:build librsvg2:run
