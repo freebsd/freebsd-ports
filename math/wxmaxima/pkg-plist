@@ -16,6 +16,9 @@ share/bash-completion/completions/wxmaxima
 %%PORTDOCS%%%%DOCSDIR%%/cell-example.png
 %%PORTDOCS%%%%DOCSDIR%%/ezUnits.png
 %%PORTDOCS%%%%DOCSDIR%%/header.html
+%%PORTDOCS%%%%DOCSDIR%%/horizontal-cursor-between-cells.png
+%%PORTDOCS%%%%DOCSDIR%%/horizontal-cursor-only.png
+%%PORTDOCS%%%%DOCSDIR%%/locale-warning.png
 %%PORTDOCS%%%%DOCSDIR%%/maxima_screenshot.png
 %%PORTDOCS%%%%DOCSDIR%%/sbclMemory.png
 %%PORTDOCS%%%%DOCSDIR%%/wxMaximaLogo.png
@@ -30,6 +33,7 @@ share/bash-completion/completions/wxmaxima
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.tr.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.uk.html
 %%PORTDOCS%%%%DOCSDIR%%/wxmaxima.zh_CN.html
+%%PORTDOCS%%%%DOCSDIR%%/wxsubscripts.png
 %%NLS%%share/locale/ca/LC_MESSAGES/wxMaxima.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wxMaxima.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wxMaxima.mo
