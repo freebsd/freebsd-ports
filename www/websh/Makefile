@@ -10,13 +10,7 @@ COMMENT=	Embeds a TCL8 interpreter in the Apache server
 WWW=		https://tcl.apache.org/websh/
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Project dismissed by Apache
-EXPIRATION_DATE=	2024-01-24
-BROKEN_FreeBSD_13= Fails at post-build test stage
-BROKEN_FreeBSD_14= Fails at post-build test stage
-BROKEN_FreeBSD_15= Fails at post-build test stage
+LICENSE_FILE=	${WRKSRC:H:H}/LICENSE
 
 USES=		apache autoreconf gmake tcl:tea
 USE_LDCONFIG=	yes
@@ -62,7 +56,7 @@ post-configure:
 	${REINPLACE_CMD} -e 's,tclstub,tcl,'	\
 		-e 's,-DPACKAGE_[^=]*=."[^"]*",,g' ${WRKSRC}/Makefile
 
-post-build test:
+test:
 	${SETENV} HOME=${WRKDIR} ${MAKE_CMD} -C ${WRKSRC} test | ${AWK} '\
 		/Failed/ && $$NF {failed=1}	\
 		END {exit failed}	\
