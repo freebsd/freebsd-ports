@@ -8,20 +8,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 WWW=		http://www.speech.cs.cmu.edu/sphinx/
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Upstream advises on using audio/pocketsphinx
+EXPIRATION_DATE=	2024-01-25
+
 LIB_DEPENDS=	libsphinxbase.so:audio/sphinxbase
 
-USES=		gmake pathfix libtool
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USES=		gmake libtool localbse:ldflags pathfix
 USE_CSTD=	gnu99
-MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include #-I${LOCALBASE}/include/sphinxbase
-CXXFLAGS+=	-I${LOCALBASE}/include #-I${LOCALBASE}/include/sphinxbase
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		OSVERSION=${OSVERSION}
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libs3decoder.so
