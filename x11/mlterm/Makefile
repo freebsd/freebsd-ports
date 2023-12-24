@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-gui=x11 --with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--disable-ssh2
 EXTERNAL_TOOLS=	mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl -Wl,--undefined-version
 MAKE_JOBS_UNSAFE=	yes
 
 GH_ACCOUNT=	arakiken
