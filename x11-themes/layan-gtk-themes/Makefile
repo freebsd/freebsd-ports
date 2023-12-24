@@ -1,15 +1,16 @@
 PORTNAME=	layan-gtk-themes
-DISTVERSION=	2021-06-30
+DISTVERSION=	2023-05-23
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
-COMMENT=	Layan is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell
+COMMENT=	Flat Design theme for GTK 3, GTK 2 and Gnome-Shell
 WWW=		https://github.com/vinceliuice/Layan-gtk-theme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash>0:shells/bash
+BUILD_DEPENDS=	bash>0:shells/bash \
+		coreutils>0:sysutils/coreutils
 RUN_DEPENDS=	gtk-engines2>0:x11-themes/gtk-engines2 \
 		gtk-murrine-engine>0:x11-themes/gtk-murrine-engine
 
