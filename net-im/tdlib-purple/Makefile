@@ -34,6 +34,7 @@ TEST_DESC=	Do not enable, tests are broken
 CMAKE_ON+=	NoVoip	# tgvoip is yet to be ported
 CMAKE_ON+=	NoBundledLottie	# Using graphics/rlottie
 NLS_CMAKE_OFF+=	-DNoTranslations=1
+NLS_USES=	gettext-tools gettext-runtime
 
 EXTRACT_AFTER_ARGS=--exclude rlottie --exclude fmt
 
