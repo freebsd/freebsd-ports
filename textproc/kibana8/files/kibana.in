@@ -18,6 +18,7 @@ load_rc_config $name
 : ${kibana_group:="www"}
 : ${kibana_log:="/var/log/kibana.log"}
 : ${kibana_syslog_output_enable:="NO"}
+: ${kibana_chdir:="%%WWWDIR%%/data"}
 
 start_precmd="kibana_start_precmd"
 reload_cmd="kibana_reload_cmd"
@@ -40,7 +41,8 @@ fi
 NODE="%%LOCALBASE%%/bin/node"
 
 required_files="${kibana_config}"
-pidfile="/var/run/${name}.pid"
+_piddir="/var/run/${name}"
+pidfile="${_piddir}/${name}.pid"
 procname="${NODE}"
 
 command="/usr/sbin/daemon"
@@ -53,8 +55,8 @@ command_args="-f ${kibana_syslog_output_flags} -p ${pidfile} -t ${name} \
 
 kibana_start_precmd()
 {
-	if [ ! -e "${pidfile}" ]; then
-		install -m 0600 -o ${kibana_user} -g ${kibana_group} /dev/null ${pidfile}
+	if [ ! -e "${_piddir}" ]; then
+		install -d -m 0750 -o ${kibana_user} -g ${kibana_group} ${_piddir}
 	fi
 	if [ ! -f ${kibana_log} ]; then
 		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}

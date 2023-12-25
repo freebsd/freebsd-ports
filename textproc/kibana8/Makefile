@@ -1,7 +1,6 @@
 PORTNAME=	kibana
-DISTVERSION=	8.8.2
-DISTVERSIONSUFFIX=	-darwin-x86_64
-PORTREVISION=	1
+DISTVERSION=	8.11.3
+DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -14,15 +13,12 @@ WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Depends on EOL NodeJS 16
-EXPIRATION_DATE=	2023-10-30
-
-BUILD_DEPENDS=	npm-node16>=9.7.2:www/npm-node16
+BUILD_DEPENDS=	npm-node18>=9.7.2:www/npm-node18
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node16
+RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node18
 
-USES=		compiler:c++17-lang cpe nodejs:16,build,run python:build
+USES=		compiler:c++17-lang cpe nodejs:18,build,run python:build
 CPE_VENDOR=	elastic
 
 USE_GITHUB=	nodefault
@@ -50,9 +46,9 @@ BINS=		kibana-encryption-keys kibana-keystore kibana-plugin \
 
 #######################################################################
 # Set node-nan version here
-_NODE_NAN_VER=	2.17.0
+_NODE_NAN_VER=	2.18.0
 # Set node-re version here
-_NODE_RE2_VER=	1.19.1
+_NODE_RE2_VER=	1.20.0
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
@@ -70,6 +66,8 @@ post-patch:
 .for _dirdel in ${_DIR2DEL}
 	${FIND} -s ${WRKSRC}/${_dirdel} -type d -empty -delete
 .endfor
+	${REINPLACE_CMD} -e "s|%%WWWDIR%%|${WWWDIR}|g" \
+	${WRKSRC}/config/kibana.yml
 	cd ${_RE2DIR} && ${PATCH} -p0 < ${_RE2PATCHES}
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 	-e "s|%%DEVDIR%%|${_DEVDIR}|g" ${_RE2DIR}/binding.gyp
@@ -103,6 +101,7 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/config/kibana.yml ${STAGEDIR}${ETCDIR}/kibana.yml.sample
+	${INSTALL_DATA} ${WRKSRC}/config/node.options ${STAGEDIR}${ETCDIR}/node.options.sample
 	(cd ${WRKSRC} && \
 		${RM} -r config node optimize && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} && \
@@ -120,6 +119,7 @@ do-install:
 
 post-install:
 	${ECHO} "@sample ${ETCDIR}/kibana.yml.sample" >> ${TMPPLIST}
+	${ECHO} "@sample ${ETCDIR}/node.options.sample" >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir(www,www) ${WWWDIR}/data" >> ${TMPPLIST}

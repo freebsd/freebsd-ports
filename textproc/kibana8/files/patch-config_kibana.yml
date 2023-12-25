@@ -1,11 +1,15 @@
---- config/kibana.yml.orig	2023-01-04 12:19:12 UTC
+--- config/kibana.yml.orig	2023-12-25 14:26:21 UTC
 +++ config/kibana.yml
-@@ -125,7 +125,7 @@
- #path.data: data
+@@ -122,10 +122,10 @@
+ 
+ # =================== System: Other ===================
+ # The path where Kibana stores persistent data not saved in Elasticsearch. Defaults to data
+-#path.data: data
++path.data: %%WWWDIR%%/data
  
  # Specifies the path where Kibana creates the process ID file.
 -#pid.file: /run/kibana/kibana.pid
-+pid.file: /var/run/kibana.pid
++pid.file: /var/run/kibana/kibana.pid
  
  # Set the interval in milliseconds to sample system and process performance
  # metrics. Minimum is 100ms. Defaults to 5000ms.
