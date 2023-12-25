@@ -1,0 +1,17 @@
+Obtained from:	https://gitlab.gnome.org/GNOME/gupnp-av/-/commit/767388bc16e08d4e1e1f419555165cc1816be931
+
+--- meson.build.orig	2022-06-03 18:15:12 UTC
++++ meson.build
+@@ -87,6 +87,12 @@ subdir('data')
+ pkg = import('pkgconfig')
+ pkg.generate(
+     gupnp_av_lib,
++    requires : [
++      'glib-2.0',
++      'gobject-2.0',
++      'gio-2.0',
++      'libxml-2.0'
++    ],
+     subdirs : 'gupnp-av-1.0',
+     description : 'GObject-based AV specific UPnP library'
+ )

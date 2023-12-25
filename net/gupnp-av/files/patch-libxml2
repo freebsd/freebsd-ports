@@ -1,0 +1,69 @@
+Obtained from:	https://gitlab.gnome.org/GNOME/gupnp-av/-/commit/bff65db081ee1ee5df0a42231ebf8e8fbb27cccf
+		https://gitlab.gnome.org/GNOME/gupnp-av/-/commit/9557768121d54fdcedabe7544863515d6a813354
+		https://gitlab.gnome.org/GNOME/gupnp-av/-/commit/1e10a41fcef6ae0d3e89958db89bc22398f3b4f1
+
+--- libgupnp-av/gupnp-didl-lite-parser.c.orig	2022-06-03 18:15:12 UTC
++++ libgupnp-av/gupnp-didl-lite-parser.c
+@@ -230,12 +230,17 @@ gupnp_didl_lite_parser_parse_didl_recursive (GUPnPDIDL
+         GUPnPAVXMLDoc *xml_doc = NULL;
+         gboolean       result;
+ 
+-        doc = xmlRecoverMemory (didl, strlen (didl));
++        doc = xmlReadMemory (didl,
++                             strlen (didl),
++                             NULL,
++                             NULL,
++                             XML_PARSE_NONET | XML_PARSE_RECOVER);
+         if (doc == NULL) {
+                 g_set_error (error,
+                              G_MARKUP_ERROR,
+                              G_MARKUP_ERROR_PARSE,
+-                             "Could not parse DIDL-Lite XML:\n%s", didl);
++                             "Could not parse DIDL-Lite XML:\n%s",
++                             didl);
+ 
+                 return FALSE;
+         }
+--- libgupnp-av/gupnp-feature-list-parser.c.orig	2022-06-03 18:15:12 UTC
++++ libgupnp-av/gupnp-feature-list-parser.c
+@@ -114,12 +114,17 @@ gupnp_feature_list_parser_parse_text
+         xmlNode      *element;
+         GList        *feature_list = NULL;
+ 
+-        doc = xmlRecoverMemory (text, strlen (text));
++        doc = xmlReadMemory (text,
++                             strlen (text),
++                             NULL,
++                             NULL,
++                             XML_PARSE_NONET | XML_PARSE_RECOVER);
+         if (doc == NULL) {
+                 g_set_error (error,
+                              G_MARKUP_ERROR,
+                              G_MARKUP_ERROR_PARSE,
+-                             "Could not parse FeatureList XML:\n%s", text);
++                             "Could not parse FeatureList XML:\n%s",
++                             text);
+ 
+                 return NULL;
+         }
+--- libgupnp-av/xml-util.h.orig	2022-06-03 18:15:12 UTC
++++ libgupnp-av/xml-util.h
+@@ -16,6 +16,7 @@
+ 
+ #include <glib.h>
+ #include <libxml/tree.h>
++#include <libxml/parser.h>
+ #include <stdarg.h>
+ #include <glib-object.h>
+ 
+--- meson.build.orig	2022-06-03 18:15:12 UTC
++++ meson.build
+@@ -71,7 +71,7 @@ endif
+ 
+ common_cflags = cc.get_supported_arguments(test_cflags)
+ 
+-add_project_arguments(cc.get_supported_arguments('-Werror=deprecated-declarations'), language: 'c')
++#add_project_arguments(cc.get_supported_arguments('-Werror=deprecated-declarations'), language: 'c')
+ conf = configuration_data()
+ conf.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir'), 'gupnp-av'))
+ conf.set_quoted('VERSION', meson.project_version())
