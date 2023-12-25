@@ -42,6 +42,7 @@ include/tiledb/arrowio
 include/tiledb/as_built_experimental.h
 include/tiledb/attribute.h
 include/tiledb/attribute_experimental.h
+include/tiledb/capi_string.h
 include/tiledb/channel_operation.h
 include/tiledb/channel_operator.h
 include/tiledb/config.h
