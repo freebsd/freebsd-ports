@@ -1,8 +1,8 @@
 PORTNAME=	pip-audit
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/pypa/pip-audit/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pip_audit-${PORTVERSION}
 
