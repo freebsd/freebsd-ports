@@ -1,5 +1,5 @@
-TIMESTAMP = 1691069916
-SHA256 (rarbsd-x32-623.tar.gz) = cef644edbfe9da1426802a9651986824d18941bbdd4ea80f8b247cf207dd6c41
-SIZE (rarbsd-x32-623.tar.gz) = 614848
-SHA256 (rarbsd-x64-623.tar.gz) = 9b6c76e2f8253fc3f207db2edd9a0465c9f4fe5ef715d2793a4e10e19183b8c8
-SIZE (rarbsd-x64-623.tar.gz) = 622312
+TIMESTAMP = 1703227794
+SHA256 (rarbsd-x32-624.tar.gz) = 9f3dd7c5cf7c1391886d5875922585c2a5dbf4235f781431cd1476eddcfdecb2
+SIZE (rarbsd-x32-624.tar.gz) = 612977
+SHA256 (rarbsd-x64-624.tar.gz) = 4b8d164d64fcf371bcd77438f8291a25c44d6abb615b380ef03ec79da48fe957
+SIZE (rarbsd-x64-624.tar.gz) = 622192
