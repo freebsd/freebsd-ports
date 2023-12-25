@@ -1,7 +1,6 @@
 PORTNAME=	procs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.3
-PORTREVISION=	1
+DISTVERSION=	0.14.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,13 +40,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
-		base64-0.21.4 \
+		base64-0.21.5 \
 		bindgen-0.65.1 \
 		bindgen-0.68.1 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
 		blocking-1.4.1 \
-		bsd-kvm-0.1.2 \
+		bsd-kvm-0.1.3 \
 		bsd-kvm-sys-0.2.0 \
 		bumpalo-3.14.0 \
 		byte-unit-4.0.19 \
@@ -80,7 +79,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
-		errno-0.3.5 \
+		errno-0.3.7 \
 		errno-dragonfly-0.1.2 \
 		event-listener-2.5.3 \
 		fastrand-1.9.0 \
@@ -89,15 +88,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		flate2-1.0.28 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.0 \
-		futures-0.3.28 \
-		futures-channel-0.3.28 \
-		futures-core-0.3.28 \
-		futures-io-0.3.28 \
+		futures-0.3.29 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-io-0.3.29 \
 		futures-lite-1.13.0 \
-		futures-macro-0.3.28 \
-		futures-sink-0.3.28 \
-		futures-task-0.3.28 \
-		futures-util-0.3.28 \
+		futures-macro-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-util-0.3.29 \
 		getch-0.3.1 \
 		getrandom-0.2.10 \
 		gimli-0.28.0 \
@@ -129,10 +128,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.149 \
+		libc-0.2.150 \
 		libloading-0.7.4 \
 		libproc-0.14.2 \
-		linux-raw-sys-0.1.4 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.10 \
 		lock_api-0.4.11 \
@@ -143,7 +141,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.1 \
 		minus-5.4.2 \
 		mio-0.7.14 \
-		mio-0.8.8 \
+		mio-0.8.9 \
 		miow-0.3.7 \
 		named_pipe-0.4.1 \
 		nix-0.26.4 \
@@ -174,7 +172,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.69 \
-		procfs-0.15.1 \
+		procfs-0.16.0 \
+		procfs-core-0.16.0 \
 		quote-1.0.33 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
@@ -185,15 +184,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-syntax-0.8.2 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
-		rustix-0.36.16 \
-		rustix-0.37.26 \
-		rustix-0.38.20 \
+		rustix-0.37.27 \
+		rustix-0.38.21 \
 		ryu-1.0.15 \
 		scopeguard-1.2.0 \
-		serde-1.0.189 \
-		serde_derive-1.0.189 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.107 \
-		serde_spanned-0.6.3 \
+		serde_spanned-0.6.4 \
 		shlex-1.2.0 \
 		signal-hook-0.1.17 \
 		signal-hook-0.3.17 \
@@ -201,8 +199,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-registry-1.4.1 \
 		slab-0.4.9 \
 		smallvec-1.11.1 \
-		socket2-0.4.9 \
-		socket2-0.5.4 \
+		socket2-0.4.10 \
+		socket2-0.5.5 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
 		syn-2.0.38 \
@@ -215,13 +213,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.50 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.33.0 \
-		tokio-macros-2.1.0 \
+		tokio-1.34.0 \
+		tokio-macros-2.2.0 \
 		tokio-stream-0.1.14 \
-		tokio-util-0.7.9 \
-		toml-0.8.2 \
-		toml_datetime-0.6.3 \
-		toml_edit-0.20.2 \
+		tokio-util-0.7.10 \
+		toml-0.8.8 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.21.0 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
