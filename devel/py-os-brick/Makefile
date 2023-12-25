@@ -1,5 +1,6 @@
 PORTNAME=	os-brick
 PORTVERSION=	6.5.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}os-win>=5.7.0:devel/py-os-win@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=9.0.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.context>=4.1.0:devel/py-oslo.context@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=5.1.0:devel/py-oslo.i18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.log>=4.4.0:devel/py-oslo.log@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.log>=4.8.0:devel/py-oslo.log@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.privsep>=3.0.0:devel/py-oslo.privsep@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=4.3.0:devel/py-oslo.serialization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.service>=2.8.0:devel/py-oslo.service@${PY_FLAVOR} \
