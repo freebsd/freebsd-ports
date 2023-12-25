@@ -1,33 +1,32 @@
---- meson.build.orig	2021-07-09 09:29:23 UTC
+--- meson.build.orig	2023-05-10 12:50:24 UTC
 +++ meson.build
-@@ -142,7 +142,7 @@ srpm_cdata.set('VERSION', meson.project_version())
+@@ -166,7 +166,7 @@ subdir('modulemd')
  srpm_cdata.set('BUILDFLAG', '-bs')
  
  subdir('modulemd')
 -subdir('bindings/python')
 +#subdir('bindings/python')
  
- if meson.version().version_compare('>=0.53')
-     if magic.found()
-@@ -203,8 +203,8 @@ if meson.version().version_compare('>=0.53')
-              'bindir': get_option('bindir'),
-              'libdir': get_option('libdir'),
-              'datadir': get_option('datadir'),
--             'Python 2 GObject Overrides': gobject_overrides_dir_py2,
--             'Python 3 GObject Overrides': gobject_overrides_dir_py3,
-+             #'Python 2 GObject Overrides': gobject_overrides_dir_py2,
-+             #'Python 3 GObject Overrides': gobject_overrides_dir_py3,
-             }, section: 'Directories')
+ if rpm.found()
+     if with_rpmio.enabled()
+@@ -196,16 +196,16 @@ summary({'prefix': get_option('prefix'),
+          'bindir': get_option('bindir'),
+          'libdir': get_option('libdir'),
+          'datadir': get_option('datadir'),
+-         'Python 2 GObject Overrides': gobject_overrides_dir_py2,
+-         'Python 3 GObject Overrides': gobject_overrides_dir_py3,
++         #'Python 2 GObject Overrides': gobject_overrides_dir_py2,
++         #'Python 3 GObject Overrides': gobject_overrides_dir_py3,
+         }, section: 'Directories')
  
-     summary({'libmagic Support': magic_status,
-@@ -212,8 +212,8 @@ if meson.version().version_compare('>=0.53')
-              'RPMIO Support': rpmio_status,
-              'Generate Manpages': manpages_status,
-              'Generate HTML Documentation': get_option('with_docs'),
--             'Python 2 Support': get_option('with_py2'),
--             'Python 3 Support': get_option('with_py3'),
-+             #'Python 2 Support': get_option('with_py2'),
-+             #'Python 3 Support': get_option('with_py3'),
-              'Skip Introspection': get_option('skip_introspection'),
-              'Test Installed Library': get_option('test_installed_lib'),
-             }, section: 'Build Configuration')
+ summary({'Custom Python': get_option('python_name'),
+          'RPMIO Support': rpmio_status,
+          'Generate Manual Pages': manpages_status,
+          'Generate HTML Documentation': get_option('with_docs'),
+-         'Python 2 Support': get_option('with_py2'),
+-         'Python 3 Support': get_option('with_py3'),
++         #'Python 2 Support': get_option('with_py2'),
++         #'Python 3 Support': get_option('with_py3'),
+          'Skip Introspection': get_option('skip_introspection'),
+          'Accept overflowed buildorder': get_option('accept_overflowed_buildorder'),
+          'Test Installed Library': get_option('test_installed_lib'),

@@ -1,5 +1,5 @@
 PORTNAME=	libmodulemd
-DISTVERSION=	2.13.0
+DISTVERSION=	2.15.0
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/fedora-modularity/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	modulemd-${DISTVERSION}
@@ -15,11 +15,16 @@ BUILD_DEPENDS=	bash:shells/bash \
 		help2man:misc/help2man
 LIB_DEPENDS=	librpmio.so:archivers/rpm4 \
 		libyaml.so:textproc/libyaml
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c11 gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pkgconfig shebangfix tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
+SHEBANG_FILES=	modulemd/tests/test-import-headers.sh
+
 MESON_ARGS=	-Dwith_manpages="enabled" -Dwith_docs=false
+
+BINARY_ALIAS=	gcc=${CC} g++=${CXX}
 
 .include <bsd.port.mk>
