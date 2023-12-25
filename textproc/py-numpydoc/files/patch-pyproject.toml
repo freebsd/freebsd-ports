@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-08-31 17:00:35 UTC
++++ pyproject.toml
+@@ -27,7 +27,7 @@ classifiers = [
+ dependencies = [
+     'sphinx>=5',
+     'Jinja2>=2.10',
+-    'tabulate>=0.8.10',
++    'tabulate>=0.8.9',
+     "tomli>=1.1.0;python_version<'3.11'",
+ ]
+ 
