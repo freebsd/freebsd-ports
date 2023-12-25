@@ -1,11 +1,12 @@
 PORTNAME=	cairo
-PORTVERSION=	1.17.12
+PORTVERSION=	1.17.13
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GLib2
-WWW=		https://github.com/rcairo/rcairo
+WWW=		https://rcairo.github.io/ \
+		https://github.com/rcairo/rcairo
 
 LICENSE=	GPLv2+ RUBY
 LICENSE_COMB=	dual
