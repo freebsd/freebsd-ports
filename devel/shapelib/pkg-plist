@@ -1,4 +1,5 @@
 bin/Shape_PointInPoly
+bin/csv2shp
 bin/dbfadd
 bin/dbfcat
 bin/dbfcreate
@@ -22,15 +23,6 @@ bin/shpwkb
 include/shapefil.h
 lib/libshp.a
 lib/libshp.so
-lib/libshp.so.2
-lib/libshp.so.2.1.0
+lib/libshp.so.4
+lib/libshp.so.4.0.0
 libdata/pkgconfig/shapelib.pc
-%%PORTDOCS%%%%DOCSDIR%%/codepage.html
-%%PORTDOCS%%%%DOCSDIR%%/dbf_api.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/manifest.html
-%%PORTDOCS%%%%DOCSDIR%%/maptools.css
-%%PORTDOCS%%%%DOCSDIR%%/release.html
-%%PORTDOCS%%%%DOCSDIR%%/shapelib-tools.html
-%%PORTDOCS%%%%DOCSDIR%%/shp_api.html
