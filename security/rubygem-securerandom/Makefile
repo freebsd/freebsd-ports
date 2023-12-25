@@ -1,5 +1,5 @@
 PORTNAME=	securerandom
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
