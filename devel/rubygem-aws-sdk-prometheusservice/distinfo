@@ -1,3 +1,3 @@
-TIMESTAMP = 1701364294
-SHA256 (rubygem/aws-sdk-prometheusservice-1.27.0.gem) = 204da60fad524ae072101a9811ef73abbdce7e8f25c673e962be15dacb3758bb
-SIZE (rubygem/aws-sdk-prometheusservice-1.27.0.gem) = 34304
+TIMESTAMP = 1703228002
+SHA256 (rubygem/aws-sdk-prometheusservice-1.28.0.gem) = 88c6da5e3638c3a7aea6099d14e95b1ca94d52d15d71e44fba0aa3dec8f468b6
+SIZE (rubygem/aws-sdk-prometheusservice-1.28.0.gem) = 34816
