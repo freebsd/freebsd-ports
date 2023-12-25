@@ -1,5 +1,5 @@
 PORTNAME=	moto
-PORTVERSION=	4.2.11
+PORTVERSION=	4.2.12
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/getmoto/moto/releases/download/${PORTVERSION}/
@@ -33,7 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-xray-sdk>=0.93:devel/py-aws-xray-sdk@${
 		${PYTHON_PKGNAMEPREFIX}jsondiff>=1.1.2:devel/py-jsondiff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multipart>=0:devel/py-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.5.0:devel/py-openapi-spec-validator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-partiql-parser>=0.4.1:devel/py-py-partiql-parser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-partiql-parser>=0.5.0:devel/py-py-partiql-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.7:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-jose>=3.1.0<4.0.0:security/py-python-jose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR} \
