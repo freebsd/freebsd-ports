@@ -5093,6 +5093,7 @@
     SUBDIR += py-opentracing
     SUBDIR += py-opster
     SUBDIR += py-optik
+    SUBDIR += py-optree
     SUBDIR += py-orange-canvas-core
     SUBDIR += py-orange-widget-base
     SUBDIR += py-orca
