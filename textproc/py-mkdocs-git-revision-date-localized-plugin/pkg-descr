@@ -1,0 +1,3 @@
+mkdocs-git-revision-date-localized-plugin is a MkDocs plugin that enables
+displaying the date of the last git modification of a page. The plugin uses
+babel and timeago.js to provide different localized date formats.
