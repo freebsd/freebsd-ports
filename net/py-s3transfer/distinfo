@@ -1,3 +1,3 @@
-TIMESTAMP = 1702543686
-SHA256 (s3transfer-0.9.0.tar.gz) = 9e1b186ec8bb5907a1e82b51237091889a9973a2bb799a924bcd9f301ff79d3d
-SIZE (s3transfer-0.9.0.tar.gz) = 143015
+TIMESTAMP = 1703227908
+SHA256 (s3transfer-0.10.0.tar.gz) = d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b
+SIZE (s3transfer-0.10.0.tar.gz) = 143407
