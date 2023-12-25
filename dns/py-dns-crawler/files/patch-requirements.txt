@@ -1,38 +1,39 @@
---- requirements.txt.orig	2021-03-23 13:56:03 UTC
+--- requirements.txt.orig	2023-04-06 14:35:46 UTC
 +++ requirements.txt
 @@ -1,18 +1,18 @@
--asn1crypto==1.4.0
+-asn1crypto==1.5.1
 -cert_human==1.0.7
--cryptography==3.3.1
--ecdsa==0.16.1
--forcediphttpsadapter==1.0.1
+-cryptography==38.0.4
+-ecdsa==0.18.0
+-forcediphttpsadapter==1.0.2
 -geoip2==3.0.0
-+asn1crypto>=1.4.0
++asn1crypto>=1.5.1
 +cert_human>=1.0.7
-+cryptography>=3.3.1
-+ecdsa>=0.16.1
-+forcediphttpsadapter>=1.0.1
++cryptography>=38.0.4
++ecdsa>=0.18.0
++forcediphttpsadapter>=1.0.2
 +geoip2>=3.0.0
  hstspreload
 -idna==2.10
--pyaml==20.4.0
--pycryptodome==3.9.9
--PyICU==2.6
--pyopenssl==20.0.1
--redis==3.5.3
--requests_toolbelt==0.9.1
+-pyaml==21.10.1
+-PyICU==2.10.2
+-pyOpenSSL==23.1.1
+-redis==4.5.4
+-requests_toolbelt==0.10.1
 -requests==2.23.0
--rq==1.7.0
--dnspython==2.1.0
--urllib3==1.25.11
+-rq==1.13.0
+-dnspython==2.3.0
+-checkdmarc==4.3.1
+-python-magic==0.4.27
+\ No newline at end of file
 +idna>=2.10
-+pyaml>=20.4.0
-+pycryptodome>=3.9.9
-+PyICU>=2.6
-+pyopenssl>=20.0.1
-+redis>=3.5.3
-+requests_toolbelt>=0.9.1
++pyaml>=21.10.1
++PyICU>=2.10.2
++pyOpenSSL>=23.1.1
++redis>=4.5.4
++requests_toolbelt>=0.10.1
 +requests>=2.23.0
-+rq>=1.7.0
-+dnspython>=2.1.0
-+urllib3>=1.25.11
++rq>=1.13.0
++dnspython>=2.3.0
++checkdmarc>=4.3.1
++python-magic>=0.4.27
