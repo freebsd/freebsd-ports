@@ -1,5 +1,5 @@
 PORTNAME=	anyio
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,8 @@ TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.23:net/py-trio@${PY_FLAVOR}
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.0.2:devel/py-exceptiongroup@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.0.2:devel/py-exceptiongroup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
