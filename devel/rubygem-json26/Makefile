@@ -13,4 +13,6 @@ LICENSE_COMB=	dual
 
 USES=		gem
 
+PORTSCOUT=	limit:^26\.
+
 .include <bsd.port.mk>
