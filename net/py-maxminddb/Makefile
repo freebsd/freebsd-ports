@@ -21,4 +21,6 @@ GH_PROJECT=	MaxMind-DB-Reader-python
 
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
