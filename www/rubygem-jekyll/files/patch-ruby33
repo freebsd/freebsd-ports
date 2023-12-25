@@ -1,0 +1,20 @@
+Obtained from:	https://github.com/jekyll/jekyll/commit/e57c755c6fa71bcb922cdd1784356179cea32b7e
+
+--- lib/jekyll/stevenson.rb.orig	2023-12-22 17:35:46 UTC
++++ lib/jekyll/stevenson.rb
+@@ -3,13 +3,10 @@
+ module Jekyll
+   class Stevenson < ::Logger
+     def initialize
+-      @progname = nil
+-      @level = DEBUG
+-      @default_formatter = Formatter.new
+-      @logdev = $stdout
+-      @formatter = proc do |_, _, _, msg|
++      formatter = proc do |_, _, _, msg|
+         msg.to_s
+       end
++      super($stdout, :formatter => formatter)
+     end
+ 
+     def add(severity, message = nil, progname = nil)
