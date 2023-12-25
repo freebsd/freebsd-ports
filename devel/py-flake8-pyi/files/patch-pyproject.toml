@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -74,6 +74,9 @@ dev = [
+ [project.entry-points]
+ "flake8.extension" = {Y0 = "pyi:PyiTreeChecker"}
+ 
++[tool.hatch.build.targets.wheel]
++packages = ["pyi.py"]
++
+ [tool.hatch.version]
+ source = "vcs"
+ 
