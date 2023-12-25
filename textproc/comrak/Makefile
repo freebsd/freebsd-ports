@@ -1,6 +1,5 @@
 PORTNAME=	comrak
-DISTVERSION=	0.18.0
-PORTREVISION=	4
+DISTVERSION=	0.20.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		clap_derive-4.0.21 \
 		clap_lex-0.3.0 \
 		crc32fast-1.3.2 \
+		darling-0.14.4 \
+		darling_core-0.14.4 \
+		darling_macro-0.14.4 \
 		derive_arbitrary-1.3.0 \
+		derive_builder-0.12.0 \
+		derive_builder_core-0.12.0 \
+		derive_builder_macro-0.12.0 \
 		deunicode-0.4.3 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
@@ -50,6 +55,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
 		hermit-abi-0.2.6 \
+		ident_case-1.0.1 \
 		indexmap-1.9.2 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.3 \
@@ -78,7 +84,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.49 \
+		proc-macro2-1.0.64 \
 		propfuzz-0.0.1 \
 		propfuzz-macro-0.0.1 \
 		proptest-0.10.1 \
@@ -137,7 +143,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.42.0 \
 		xdg-2.4.1 \
-		xml-rs-0.8.4 \
+		xml-rs-0.8.14 \
 		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}
