@@ -1,14 +1,17 @@
 PORTNAME=	libmpdclient
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/libmpdclient/2/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API library for interfacing MPD
-WWW=		https://www.musicpd.org/libs/libmpdclient/
+WWW=		https://www.musicpd.org/libs/libmpdclient/ \
+		https://github.com/MusicPlayerDaemon/libmpdclient
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSES/BSD-2-Clause.txt
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSES/BSD-3-Clause.txt
 
 USES=		meson tar:xz
 

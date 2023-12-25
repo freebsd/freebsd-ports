@@ -47,7 +47,8 @@ lib/libmpdclient.so.2
 lib/libmpdclient.so.%%PORTVERSION%%
 libdata/pkgconfig/libmpdclient.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/BSD-2-Clause.txt
+%%PORTDOCS%%%%DOCSDIR%%/BSD-3-Clause.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/albumart_8h.html
@@ -416,4 +417,3 @@ libdata/pkgconfig/libmpdclient.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tag_8h__dep__incl.md5
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tag_8h__dep__incl.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tag_8h_source.html
-share/vala/vapi/libmpdclient.vapi
