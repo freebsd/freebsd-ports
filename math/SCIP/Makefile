@@ -1,5 +1,5 @@
 PORTNAME=	SCIP
-DISTVERSION=	8.0.4
+DISTVERSION=	8.1.0
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_DEPENDS=	gtar:archivers/gtar
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libmpfr.so:math/mpfr \
 		libsoplex.so:math/SoPlex
 
 USES=		compiler:c11 cmake readline tar:tgz
@@ -24,7 +23,7 @@ CMAKE_OFF=	PAPILO
 
 CXXFLAGS+=	-I${LOCALBASE}/include/soplex
 
-TEST_TARGET=	test
+TEST_TARGET=	test # 2 tests fail, see https://github.com/scipopt/scip/issues/78
 
 OPTIONS_DEFINE=		IPOPT ZIMPL
 OPTIONS_DEFAULT=	IPOPT
@@ -32,9 +31,7 @@ OPTIONS_DEFAULT=	IPOPT
 IPOPT_DESC=		Non-linear optimization support via Ipopt
 IPOPT_USES=		fortran pkgconfig
 IPOPT_CMAKE_BOOL=	IPOPT
-IPOPT_LIB_DEPENDS=	libblas.so:math/blas \
-			libipopt.so:math/ipopt \
-			liblapack.so:math/lapack
+IPOPT_LIB_DEPENDS=	libipopt.so:math/ipopt
 
 ZIMPL_DESC=		Build with Zimpl to translate LP models
 ZIMPL_CMAKE_BOOL=	ZIMPL
