@@ -1,5 +1,5 @@
 PORTNAME=	vagrant-vbguest
-PORTVERSION=	0.31.0
+PORTVERSION=	0.32.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,9 @@ WWW=		https://github.com/dotless-de/vagrant-vbguest
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	This project is archived and will not receive further updates or support
+EXPIRATION_DATE=2024-03-31
 
 RUN_DEPENDS=	rubygem-i18n>=0:devel/rubygem-i18n \
 		rubygem-log4r>=0:sysutils/rubygem-log4r \
