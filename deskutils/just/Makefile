@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.17.0
+DISTVERSION=	1.18.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		cpufeatures-0.2.11 \
 		cradle-0.2.2 \
 		crypto-common-0.1.6 \
-		ctrlc-3.4.1 \
+		ctrlc-3.4.2 \
 		derivative-2.2.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -64,7 +64,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.70 \
+		proc-macro2-1.0.71 \
 		pulldown-cmark-0.9.3 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.33 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		strum-0.25.0 \
 		strum_macros-0.25.3 \
 		syn-1.0.109 \
-		syn-2.0.41 \
+		syn-2.0.42 \
 		target-2.0.0 \
 		tempfile-3.8.1 \
 		temptree-0.2.0 \
