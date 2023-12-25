@@ -1087,6 +1087,7 @@
     SUBDIR += rndpassw
     SUBDIR += rnp
     SUBDIR += rotate
+    SUBDIR += rpm-sequoia
     SUBDIR += rubygem-acme-client
     SUBDIR += rubygem-aes_key_wrap
     SUBDIR += rubygem-airbrussh
