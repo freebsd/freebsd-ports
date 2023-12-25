@@ -155,8 +155,8 @@ include/wolfssl/wolfcrypt/xmss.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.41
-lib/libwolfssl.so.41.0.0
+lib/libwolfssl.so.42
+lib/libwolfssl.so.42.0.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
