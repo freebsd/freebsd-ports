@@ -1,0 +1,8 @@
+mkdocs-minify-plugin is an MkDocs plugin to minify HTML, JS or CSS files prior
+to being written to disk.
+
+HTML minification is done using htmlmin2.
+
+JS minification is done using jsmin.
+
+CSS minification is done using csscompressor.
