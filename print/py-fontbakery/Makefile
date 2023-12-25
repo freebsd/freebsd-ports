@@ -1,5 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -55,8 +55,8 @@ GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.5:x11-fonts/py-
 			${PYTHON_PKGNAMEPREFIX}dehinter>=3.1.0:print/py-dehinter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}font-v>=0.6.0:print/py-font-v@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fonttools>=4.39.0:print/py-fonttools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.5.10:x11-fonts/py-gflanguages@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.6.6:print/py-glyphsets@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.5.13:x11-fonts/py-gflanguages@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.6.11:print/py-glyphsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.0,1:devel/py-protobuf@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.3.1:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
