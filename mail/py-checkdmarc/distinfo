@@ -1,3 +1,3 @@
-TIMESTAMP = 1697463134
-SHA256 (checkdmarc-4.8.5.tar.gz) = cddb94f9ab944e4ed461dfb5721a81a7a80f60cacbadaf968fea3c89eff1c1e2
-SIZE (checkdmarc-4.8.5.tar.gz) = 25950
+TIMESTAMP = 1703227902
+SHA256 (checkdmarc-5.0.2.tar.gz) = 8ee95f3b246d80fbc16e924c9c8773c0ce46f80c6c52c73938ac57cc297fb362
+SIZE (checkdmarc-5.0.2.tar.gz) = 33137
