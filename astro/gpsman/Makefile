@@ -13,6 +13,7 @@ USES+=		tk:wrapper,run tar:tgz
 
 GPSMANDIR=	${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	GPSMANDIR=${GPSMANDIR:S/${PREFIX}\///}
+NO_ARCH=	yes
 NO_BUILD=	yes
 PORTDOCS=	*
 
