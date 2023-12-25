@@ -11,6 +11,7 @@ share/applications/ibus-setup-table.desktop
 %%DATADIR%%/engine/factory.py
 %%DATADIR%%/engine/ibus_table_location.py
 %%DATADIR%%/engine/it_active_window.py
+%%DATADIR%%/engine/it_sound.py
 %%DATADIR%%/engine/it_util.py
 %%DATADIR%%/engine/main.py
 %%DATADIR%%/engine/tabcreatedb.py
@@ -58,6 +59,7 @@ share/icons/hicolor/scalable/apps/ibus-table.svg
 %%NLS%%share/locale/ka/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/ibus-table.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/si/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ibus-table.mo
