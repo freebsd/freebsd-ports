@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-s3control
-PORTVERSION=	1.74.0
+PORTVERSION=	1.75.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
