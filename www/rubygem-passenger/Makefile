@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-rack>=0:www/rubygem-rack \
 		rubygem-rake>=0.8.1:devel/rubygem-rake \
-		utf8cpp>=0:devel/utf8cpp
+		utf8cpp>=4.0.3:devel/utf8cpp
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libcurl.so:ftp/curl \
 		libuv.so:devel/libuv
@@ -23,6 +23,7 @@ RUN_DEPENDS=	rubygem-etc>=0:devel/rubygem-etc \
 
 USES=		compiler:c++11-lang cpe gem libtool python:env ssl
 
+CXXFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 USE_CXXSTD=	c++14
 
 PLIST_FILES=	bin/passenger \
