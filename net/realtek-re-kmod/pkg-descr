@@ -1,4 +1,4 @@
-Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller
+Realtek PCIe FE / GBE / 2.5G / 5G Ethernet Family Controller
 kernel driver.
 
 This is the official driver from Realtek with a few patches to
@@ -8,14 +8,17 @@ issues with it (eg. watchdog timeouts), or your card is not supported.
 
 Supported devices:
 
+* 5G Gigabit Ethernet
+  - RTL8126
+
 * 2.5G Gigabit Ethernet
-  - RTL8125 / RTL8125B(S)(G)
+  - RTL8125 / RTL8125B(G)
 
 * 10/100/1000M Gigabit Ethernet
-  - RTL8111B / RTL8111C / RTL8111D / RTL8111E / RTL8111F / RTL8111G(S)
-    RTL8111H(S) / RTL8118(A)(S) / RTL8119i / RTL8111L / RTL8111K
+  - RTL8111B / RTL8111C / RTL8111D / RTL8111E / RTL8111F / RTL8111G
+    RTL8111H / RTL8118(A) / RTL8119i / RTL8111L / RTL8111K
   - RTL8168B / RTL8168E / RTL8168H
-  - RTL8111DP / RTL8111EP / RTL8111FP
+  - RTL8111DP / RTL8111EP(P) / RTL8111FP
   - RTL8411 / RTL8411B
 
 * 10/100M Fast Ethernet
