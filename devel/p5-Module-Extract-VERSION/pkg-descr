@@ -1,0 +1,3 @@
+This module allows to pull out of module source code the version number
+for the module.  It assumes that there is only one $VERSION in the file
+and the entire $VERSION statement is on the same line.
