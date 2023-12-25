@@ -1,0 +1,197 @@
+Obtained from:	https://github.com/OSGeo/gdal-grass/commit/1f6a624e38a58cac80d754ae96131b5ee641bfda
+		https://github.com/OSGeo/gdal-grass/commit/da141597b6d6cb9c230749ba07885c4f06e232cd
+
+--- ogrgrass.h.orig	2022-11-06 10:42:02 UTC
++++ ogrgrass.h
+@@ -127,8 +127,8 @@ class OGRGRASSDataSource final: public OGRDataSource
+                         OGRGRASSDataSource();
+                         virtual ~OGRGRASSDataSource();
+ 
+-    int                 Open( const char *, int bUpdate, int bTestOpen,
+-                              int bSingleNewFile = FALSE );
++    bool                Open( const char *, bool bUpdate, bool bTestOpen,
++                              bool bSingleNewFile = false );
+ 
+     const char          *GetName() override { return pszName; }
+     int                 GetLayerCount() override { return nLayers; }
+@@ -147,23 +147,9 @@ class OGRGRASSDataSource final: public OGRDataSource
+     struct Map_info     map;
+     int                 nLayers;
+ 
+-    int                 bOpened;
++    bool                bOpened;
+ 
+     static bool SplitPath ( char *, char **, char **, char **, char ** );
+-};
+-
+-/************************************************************************/
+-/*                            OGRGRASSDriver                            */
+-/************************************************************************/
+-class OGRGRASSDriver final: public OGRSFDriver
+-{
+-  public:
+-                        virtual ~OGRGRASSDriver();
+-
+-    const char          *GetName() override;
+-    OGRDataSource       *Open( const char *, int ) override;
+-
+-    int                 TestCapability( const char * ) override;
+ };
+ 
+ #endif /* ndef OGRGRASS_H_INCLUDED */
+--- ogrgrassdatasource.cpp.orig	2022-11-06 10:42:02 UTC
++++ ogrgrassdatasource.cpp
+@@ -87,8 +87,8 @@ OGRGRASSDataSource::~OGRGRASSDataSource()
+ 
+ typedef int (*GrassErrorHandler)(const char *, int);
+ 
+-int OGRGRASSDataSource::Open( const char * pszNewName, int /*bUpdate*/,
+-                              int bTestOpen, int /*bSingleNewFileIn*/ )
++bool OGRGRASSDataSource::Open( const char * pszNewName, bool /*bUpdate*/,
++                               bool bTestOpen, bool /*bSingleNewFileIn*/ )
+ {
+     VSIStatBuf  stat;
+ 
+@@ -99,14 +99,14 @@ int OGRGRASSDataSource::Open( const char * pszNewName,
+ /* -------------------------------------------------------------------- */
+ /*      Do the given path contains 'vector' and 'head'?                 */
+ /* -------------------------------------------------------------------- */
+-    if ( strstr(pszName,"vector") == NULL || strstr(pszName,"head") == NULL )
++    if ( strstr(pszName,"vector") == nullptr || strstr(pszName,"head") == nullptr )
+     {
+         if( !bTestOpen )
+         {
+             CPLError( CE_Failure, CPLE_AppDefined,
+                  "%s is not GRASS vector, access failed.\n", pszName );
+         }
+-        return FALSE;
++        return false;
+     }
+ 
+ /* -------------------------------------------------------------------- */
+@@ -120,7 +120,7 @@ int OGRGRASSDataSource::Open( const char * pszNewName,
+                  "%s is not GRASS vector, access failed.\n", pszName );
+         }
+ 
+-        return FALSE;
++        return false;
+     }
+ 
+ /* -------------------------------------------------------------------- */
+@@ -135,7 +135,7 @@ int OGRGRASSDataSource::Open( const char * pszNewName,
+                       "%s is not GRASS datasource name, access failed.\n",
+                       pszName );
+         }
+-        return FALSE;
++        return false;
+     }
+ 
+     CPLDebug ( "GRASS", "Gisdbase: %s", pszGisdbase );
+@@ -149,7 +149,7 @@ int OGRGRASSDataSource::Open( const char * pszNewName,
+     // GISBASE is path to the directory where GRASS is installed,
+     // it is necessary because there are database drivers.
+     if ( !getenv( "GISBASE" ) ) {
+-        static char* gisbaseEnv = NULL;
++        static char* gisbaseEnv = nullptr;
+         const char *gisbase = GRASS_GISBASE;
+         CPLError( CE_Warning, CPLE_AppDefined, "GRASS warning: GISBASE "
+                 "environment variable was not set, using:\n%s", gisbase );
+@@ -191,7 +191,7 @@ int OGRGRASSDataSource::Open( const char * pszNewName,
+     if ( level < 2 ) {
+         CPLError( CE_Failure, CPLE_AppDefined,
+                  "Cannot open GRASS vector %s on level 2.\n", pszName );
+-        return FALSE;
++        return false;
+     }
+ 
+     CPLDebug ( "GRASS", "Num lines = %d", Vect_get_num_lines(&map) );
+@@ -212,9 +212,9 @@ int OGRGRASSDataSource::Open( const char * pszNewName,
+         papoLayers[nLayers++] = poLayer;
+     }
+ 
+-    bOpened = TRUE;
++    bOpened = true;
+ 
+-    return TRUE;
++    return true;
+ }
+ 
+ /************************************************************************/
+--- ogrgrassdriver.cpp.orig	2022-11-06 10:42:02 UTC
++++ ogrgrassdriver.cpp
+@@ -37,32 +37,18 @@ extern "C" {
+ CPL_CVSID("$Id$")
+ 
+ /************************************************************************/
+-/*                          ~OGRGRASSDriver()                           */
+-/************************************************************************/
+-OGRGRASSDriver::~OGRGRASSDriver()
+-{
+-}
+-
+-/************************************************************************/
+-/*                              GetName()                               */
+-/************************************************************************/
+-const char *OGRGRASSDriver::GetName()
+-{
+-    return "OGR_GRASS";
+-}
+-
+-/************************************************************************/
+ /*                                Open()                                */
+ /************************************************************************/
+-OGRDataSource *OGRGRASSDriver::Open( const char * pszFilename,
+-                                     int bUpdate )
++static auto GRASSDatasetOpen(GDALOpenInfo *poOpenInfo) -> GDALDataset*
+ {
+-    OGRGRASSDataSource  *poDS = new OGRGRASSDataSource();
++    auto *poDS = new OGRGRASSDataSource();
+ 
+-    if( !poDS->Open( pszFilename, bUpdate, TRUE ) )
++    bool bUpdate = poOpenInfo->eAccess == GA_Update;
++
++    if( !poDS->Open( poOpenInfo->pszFilename, bUpdate, true ))
+     {
+         delete poDS;
+-        return NULL;
++        return nullptr;
+     }
+     else
+     {
+@@ -71,14 +57,6 @@ OGRDataSource *OGRGRASSDriver::Open( const char * pszF
+ }
+ 
+ /************************************************************************/
+-/*                           TestCapability()                           */
+-/************************************************************************/
+-int OGRGRASSDriver::TestCapability( const char * /*pszCap*/ )
+-{
+-    return FALSE;
+-}
+-
+-/************************************************************************/
+ /*                          RegisterOGRGRASS()                          */
+ /************************************************************************/
+ void RegisterOGRGRASS()
+@@ -86,15 +64,17 @@ void RegisterOGRGRASS()
+     if (! GDAL_CHECK_VERSION("OGR/GRASS driver"))
+         return;
+ 
+-    if( GDALGetDriverByName( "OGR_GRASS" ) != NULL )
++    if( GDALGetDriverByName( "OGR_GRASS" ) != nullptr )
+         return;
+ 
+-    OGRGRASSDriver *poDriver = new OGRGRASSDriver();
++    auto *poDriver = new GDALDriver();
+ 
+-    poDriver->SetDescription( "GRASS" );
++    poDriver->SetDescription( "OGR_GRASS" );
+     poDriver->SetMetadataItem( GDAL_DCAP_VECTOR, "YES" );
+     poDriver->SetMetadataItem( GDAL_DMD_LONGNAME, "GRASS Vectors (5.7+)" );
+     poDriver->SetMetadataItem( GDAL_DMD_HELPTOPIC, "drivers/vector/grass.html" );
+ 
+-    OGRSFDriverRegistrar::GetRegistrar()->RegisterDriver( poDriver );
++    poDriver->pfnOpen = GRASSDatasetOpen;
++
++    GetGDALDriverManager()->RegisterDriver(poDriver);
+ }
