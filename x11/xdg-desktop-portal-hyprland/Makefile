@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5
+DISTVERSION=	1.2.6
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
