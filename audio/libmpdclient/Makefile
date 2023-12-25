@@ -1,6 +1,5 @@
 PORTNAME=	libmpdclient
-PORTVERSION=	2.20
-PORTREVISION=	1
+PORTVERSION=	2.21
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/libmpdclient/2/
 
@@ -15,6 +14,8 @@ USES=		meson tar:xz
 
 MESON_ARGS=	--default-library=both
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 OPTIONS_SUB=	yes

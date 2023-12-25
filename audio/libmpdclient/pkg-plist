@@ -44,7 +44,7 @@ include/mpd/version.h
 lib/libmpdclient.a
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.20
+lib/libmpdclient.so.%%PORTVERSION%%
 libdata/pkgconfig/libmpdclient.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -73,6 +73,7 @@ libdata/pkgconfig/libmpdclient.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/audio__format_8h__incl.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/audio__format_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/bc_sd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/binary_8h.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/binary_8h__dep__incl.map
@@ -123,6 +124,7 @@ libdata/pkgconfig/libmpdclient.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/directory_8h__incl.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/directory_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doc.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/docd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
@@ -206,8 +208,10 @@ libdata/pkgconfig/libmpdclient.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/mount_8h__incl.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/mount_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_fd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_hd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/neighbor_8h.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/neighbor_8h__dep__incl.map
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/neighbor_8h__dep__incl.md5
@@ -352,6 +356,7 @@ libdata/pkgconfig/libmpdclient.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/song_8h__incl.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/song_8h_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/splitbar.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/splitbard.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/stats_8h.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/stats_8h__dep__incl.map
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/stats_8h__dep__incl.md5
@@ -398,9 +403,13 @@ libdata/pkgconfig/libmpdclient.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sync_off.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sync_on.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_a.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_ad.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_bd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_h.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_hd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_sd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tag_8h.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tag_8h__dep__incl.map
