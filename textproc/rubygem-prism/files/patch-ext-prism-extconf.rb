@@ -1,9 +1,9 @@
---- ext/prism/extconf.rb.orig	2023-12-01 12:09:54 UTC
+--- ext/prism/extconf.rb.orig	2023-12-17 17:31:53 UTC
 +++ ext/prism/extconf.rb
-@@ -34,7 +34,7 @@ def make(target)
-       system("templates/template.rb", exception: true)
-     end
- 
+@@ -38,7 +38,7 @@ end
+ # by this script.`
+ def make(target)
+   Dir.chdir(File.expand_path("../..", __dir__)) do
 -    system("make", target, exception: true)
 +    system("gmake", target, exception: true)
    end
