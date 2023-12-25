@@ -2,31 +2,28 @@ PORTNAME=	selectwm
 PORTVERSION=	0.4.1
 PORTREVISION=	12
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://ordiluc.net/selectwm/
+MASTER_SITES=	https://ordiluc.net/selectwm/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK application to let you select a window manager when starting X
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Select a window manager when starting X11
 WWW=		https://ordiluc.net/selectwm/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Last upstream release was in 2004
-EXPIRATION_DATE=	2024-01-18
-
 USES=		gnome pkgconfig tar:bzip2
-USE_GNOME=	gtk20
-
 GNU_CONFIGURE=	yes
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 
 PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo \
 		man/man1/selectwm.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS},g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,^CFLAGS =,CFLAGS +=,' -e 's,-O2,,' \
+	@${REINPLACE_CMD} -e '/^AM_CFLAGS = /s,-s -O2 -Wall ,,' \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|#define G.*DISABLE_DEPRECATED||g' \
+	@${REINPLACE_CMD} -e '/^#define G.*DISABLE_DEPRECATED/d' \
 		${WRKSRC}/src/define.h
+	@${REINPLACE_CMD} -e 's,getline (,_${PORTNAME}_local_&,' \
+		${WRKSRC}/src/options.c
 
 .include <bsd.port.mk>
