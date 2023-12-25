@@ -21,6 +21,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-PORTSCOUT=	skipv:1.55.0
-
 .include <bsd.port.mk>
