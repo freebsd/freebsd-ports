@@ -1,0 +1,13 @@
+- workaround for https://github.com/qboxcode/qbox-public/issues/10
+
+--- Makefile.orig	2023-12-24 23:28:51 UTC
++++ Makefile
+@@ -82,7 +82,7 @@ CXXFLAGS += -DVERSION='"$(VERSION)"'
+ 	$(LD) $(DFLAGS) -o $@ $^ $(LDFLAGS)
+  testCGOptimizer: testCGOptimizer.o CGOptimizer.o LineMinimizer.o
+ 	$(LD) $(DFLAGS) -o $@ $^ $(LDFLAGS)
+- testAndersonMixer: testAndersonMixer.o AndersonMixer.o Context.o
++ testAndersonMixer: testAndersonMixer.o AndersonMixer.o Context.o MPIdata.o
+ 	$(LD) $(DFLAGS) -o $@ $^ $(LDFLAGS)
+  testSample: testSample.o AtomSet.o Atom.o Species.o \
+         Wavefunction.o SlaterDet.o \
