@@ -1,13 +1,13 @@
 PORTNAME=	ipyparallel
-PORTVERSION=	8.4.1
-PORTREVISION=	1
+PORTVERSION=	8.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interactive Parallel Computing with IPython
-WWW=		https://ipyparallel.readthedocs.io
+WWW=		https://ipyparallel.readthedocs.io/en/latest/ \
+		https://github.com/ipython/ipyparallel
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md

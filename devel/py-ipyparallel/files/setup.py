@@ -95,8 +95,6 @@ setup(
         ],
     },
     packages=[
-        'benchmarks.benchmarks',
-        'benchmarks.profiling',
         'ipyparallel',
         'ipyparallel.apps',
         'ipyparallel.client',
