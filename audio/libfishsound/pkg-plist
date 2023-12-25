@@ -11,6 +11,7 @@ lib/libfishsound.so.1.3.0
 libdata/pkgconfig/fishsound.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/bc_sd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classes.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/closed.png
@@ -31,6 +32,7 @@ libdata/pkgconfig/fishsound.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_d44c64559bbebec7f509842c48db8b23.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_e931c1a3f0014e624d0645a271726ad2.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doc.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/docd.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
@@ -64,10 +66,13 @@ libdata/pkgconfig/fishsound.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/html/modules.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_fd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_hd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/open.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/splitbar.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/splitbard.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/structFS__DecEnc.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/structFS__EncDec.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structFishSoundComment.html
@@ -76,12 +81,16 @@ libdata/pkgconfig/fishsound.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sync_off.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/sync_on.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_a.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_ad.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_b.gif
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_bd.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_h.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_hd.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/tab_sd.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
 %%NO_DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/FreeSans.ttf
 %%PORTDOCS%%%%DOCSDIR%%/latex/Makefile
