@@ -1,6 +1,7 @@
 PORTNAME=	rpm-sequoia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -248,14 +249,14 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	lib/librpm_sequoia.so \
-		pkgconfig/rpm-sequoia.pc
+		libdata/pkgconfig/rpm-sequoia.pc
 
 do-install:
 	# .so lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKDIR}/target/*-unknown-freebsd/release/librpm_sequoia.so ${STAGEDIR}${PREFIX}/lib
 	# .pc file
-	${MKDIR} ${STAGEDIR}${PREFIX}/pkgconfig
-	${INSTALL_DATA} ${WRKDIR}/target/release/rpm-sequoia.pc ${STAGEDIR}${PREFIX}/pkgconfig/rpm-sequoia.pc
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKDIR}/target/release/rpm-sequoia.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/rpm-sequoia.pc
 
 .include <bsd.port.mk>
