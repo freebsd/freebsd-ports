@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-09-11 18:50:46 UTC
++++ pyproject.toml
+@@ -29,7 +29,7 @@ classifiers=[
+     "Topic :: Software Development :: Build Tools",
+ ]
+ dependencies = [
+-    "httpx==0.25.*",
++    "httpx>=0.25.0, <0.27",
+ ]
+ dynamic = ["version"]
+ 
