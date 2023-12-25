@@ -74,6 +74,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Schema/Constraint.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Field.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Index.pm
+%%SITE_PERL%%/SQL/Translator/Schema/IndexField.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Object.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Procedure.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Role/Compare.pm
@@ -167,6 +168,7 @@ bin/sqlt-graph
 %%PERL5_MAN3%%/SQL::Translator::Schema::Constraint.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Schema::Field.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Schema::Index.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::IndexField.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Schema::Object.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Schema::Procedure.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Schema::Role::Compare.3.gz
