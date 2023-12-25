@@ -12,5 +12,5 @@ lib/cmake/libssh/libssh-config.cmake
 lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.9.5
+lib/libssh.so.4.9.6
 libdata/pkgconfig/libssh.pc
