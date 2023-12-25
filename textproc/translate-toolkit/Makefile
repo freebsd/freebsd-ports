@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.12.0
+PORTVERSION=	3.12.1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
