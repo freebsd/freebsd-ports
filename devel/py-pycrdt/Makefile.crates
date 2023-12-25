@@ -15,7 +15,7 @@ CARGO_CRATES=	atomic_refcell-0.1.13 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.70 \
+		proc-macro2-1.0.71 \
 		pyo3-0.19.2 \
 		pyo3-build-config-0.19.2 \
 		pyo3-ffi-0.19.2 \
@@ -35,10 +35,10 @@ CARGO_CRATES=	atomic_refcell-0.1.13 \
 		smallstr-0.3.0 \
 		smallvec-1.11.2 \
 		syn-1.0.109 \
-		syn-2.0.41 \
+		syn-2.0.42 \
 		target-lexicon-0.12.12 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
+		thiserror-1.0.51 \
+		thiserror-impl-1.0.51 \
 		unicode-ident-1.0.12 \
 		unindent-0.1.11 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
