@@ -1,5 +1,5 @@
 PORTNAME=	fastimage
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
