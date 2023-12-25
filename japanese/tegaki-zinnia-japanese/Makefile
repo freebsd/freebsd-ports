@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		zip
 
-do-build:
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.mk>
