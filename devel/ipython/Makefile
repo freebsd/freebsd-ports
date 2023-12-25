@@ -6,7 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Enhanced Interactive Python shell
-WWW=		https://ipython.org/
+WWW=		https://ipython.org/ \
+		https://ipython.readthedocs.io/en/stable/ \
+		https://github.com/ipython/ipython
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.rst
