@@ -1,3 +1,5 @@
 TIMESTAMP = 1701012338
 SHA256 (hyprwm-hyprpaper-v0.5.0_GH0.tar.gz) = 683b63ca8a5268ab02a78bef8dff5dc4e5bd6f4009300bbbd5e5955dc5590b5f
 SIZE (hyprwm-hyprpaper-v0.5.0_GH0.tar.gz) = 27437
+SHA256 (81d6b682f6e6.patch) = 0553563588918ddda8311e2112a2bf2c17330ea63d177e57888b6fba7acdaab3
+SIZE (81d6b682f6e6.patch) = 1817
