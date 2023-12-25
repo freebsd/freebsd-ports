@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-route53resolver
-PORTVERSION=	1.51.0
+PORTVERSION=	1.52.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
