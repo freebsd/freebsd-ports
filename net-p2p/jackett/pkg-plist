@@ -77,7 +77,6 @@
 %%DATADIR%%/Definitions/anime-free.yml
 %%DATADIR%%/Definitions/animelayer.yml
 %%DATADIR%%/Definitions/animetime.yml
-%%DATADIR%%/Definitions/animetracker.yml
 %%DATADIR%%/Definitions/animetorrentsro.yml
 %%DATADIR%%/Definitions/animeworld-api.yml
 %%DATADIR%%/Definitions/anirena.yml
@@ -101,14 +100,12 @@
 %%DATADIR%%/Definitions/beload.yml
 %%DATADIR%%/Definitions/bestcore.yml
 %%DATADIR%%/Definitions/beyond-hd.yml
-%%DATADIR%%/Definitions/biatch.yml
 %%DATADIR%%/Definitions/bibliotik.yml
 %%DATADIR%%/Definitions/bigfangroup.yml
 %%DATADIR%%/Definitions/bitbazis.yml
 %%DATADIR%%/Definitions/bitded.yml
 %%DATADIR%%/Definitions/bithorlo.yml
 %%DATADIR%%/Definitions/bithumen.yml
-%%DATADIR%%/Definitions/bitofvalor.yml
 %%DATADIR%%/Definitions/bitporn.yml
 %%DATADIR%%/Definitions/bitru.yml
 %%DATADIR%%/Definitions/bitsearch.yml
@@ -182,6 +179,8 @@
 %%DATADIR%%/Definitions/empornium.yml
 %%DATADIR%%/Definitions/empornium2fa.yml
 %%DATADIR%%/Definitions/eniahd.yml
+%%DATADIR%%/Definitions/enthralled.yml
+%%DATADIR%%/Definitions/enthralled2fa.yml
 %%DATADIR%%/Definitions/esharenet.yml
 %%DATADIR%%/Definitions/estone.yml
 %%DATADIR%%/Definitions/ex-torrenty.yml
@@ -205,6 +204,7 @@
 %%DATADIR%%/Definitions/fluxzone.yml
 %%DATADIR%%/Definitions/freefarm.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
+%%DATADIR%%/Definitions/fsm.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
 %%DATADIR%%/Definitions/fuzer.yml
@@ -238,6 +238,7 @@
 %%DATADIR%%/Definitions/hddolby.yml
 %%DATADIR%%/Definitions/hdfans.yml
 %%DATADIR%%/Definitions/hdforever.yml
+%%DATADIR%%/Definitions/hdfun.yml
 %%DATADIR%%/Definitions/hdgalaktik.yml
 %%DATADIR%%/Definitions/hdhome.yml
 %%DATADIR%%/Definitions/hdmayi.yml
@@ -252,7 +253,6 @@
 %%DATADIR%%/Definitions/hdu.yml
 %%DATADIR%%/Definitions/hdvbits.yml
 %%DATADIR%%/Definitions/hdvideo.yml
-%%DATADIR%%/Definitions/hdzone.yml
 %%DATADIR%%/Definitions/hebits.yml
 %%DATADIR%%/Definitions/hellashut.yml
 %%DATADIR%%/Definitions/helltorrents.yml
@@ -341,7 +341,6 @@
 %%DATADIR%%/Definitions/mteamtp.yml
 %%DATADIR%%/Definitions/mteamtp2fa.yml
 %%DATADIR%%/Definitions/musebootlegs.yml
-%%DATADIR%%/Definitions/muziekfabriek.yml
 %%DATADIR%%/Definitions/mvgroupforum.yml
 %%DATADIR%%/Definitions/mvgroupmain.yml
 %%DATADIR%%/Definitions/mypornclub.yml
@@ -543,7 +542,6 @@
 %%DATADIR%%/Definitions/u2.yml
 %%DATADIR%%/Definitions/ubits.yml
 %%DATADIR%%/Definitions/uhdbits.yml
-%%DATADIR%%/Definitions/ultra-hd.yml
 %%DATADIR%%/Definitions/ultrahd.yml
 %%DATADIR%%/Definitions/uniondht.yml
 %%DATADIR%%/Definitions/unionfansub.yml
@@ -654,6 +652,7 @@
 %%DATADIR%%/Microsoft.AspNetCore.WebUtilities.dll
 %%DATADIR%%/Microsoft.AspNetCore.dll
 %%DATADIR%%/Microsoft.Bcl.AsyncInterfaces.dll
+%%DATADIR%%/Microsoft.Bcl.TimeProvider.dll
 %%DATADIR%%/Microsoft.CodeAnalysis.CSharp.dll
 %%DATADIR%%/Microsoft.CodeAnalysis.Razor.dll
 %%DATADIR%%/Microsoft.CodeAnalysis.dll
@@ -702,6 +701,7 @@
 %%DATADIR%%/Newtonsoft.Json.dll
 %%DATADIR%%/Org.Mentalis.dll
 %%DATADIR%%/Polly.dll
+%%DATADIR%%/Polly.Core.dll
 %%DATADIR%%/README.md
 %%DATADIR%%/SocksWebProxy.dll
 %%DATADIR%%/System.AppContext.dll
