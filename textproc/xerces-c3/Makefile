@@ -1,12 +1,13 @@
 PORTNAME=	xerces-c
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	textproc
 MASTER_SITES=	APACHE/xerces/c/3/sources
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
-WWW=		https://xerces.apache.org/xerces-c/
+WWW=		https://xerces.apache.org/xerces-c/ \
+		https://github.com/apache/xerces-c
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
