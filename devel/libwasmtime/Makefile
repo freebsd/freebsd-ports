@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	15.0.1
+PORTVERSION=	16.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -53,6 +52,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
+		bytesize-1.3.0 \
 		camino-1.1.4 \
 		cap-fs-ext-2.0.0 \
 		cap-net-ext-2.0.0 \
@@ -83,7 +83,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crc32fast-1.3.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.10 \
@@ -103,8 +102,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		env_logger-0.7.1 \
 		env_logger-0.10.0 \
 		equivalent-1.0.1 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
+		errno-0.3.6 \
 		fallible-iterator-0.3.0 \
 		fastrand-2.0.1 \
 		fd-lock-4.0.0 \
@@ -129,23 +127,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.9 \
 		gimli-0.28.0 \
 		glob-0.3.0 \
-		h2-0.3.19 \
+		h2-0.4.0 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
 		hermit-abi-0.3.0 \
-		http-0.2.9 \
-		http-body-1.0.0-rc.2 \
-		http-body-util-0.1.0-rc.2 \
+		http-1.0.0 \
+		http-body-1.0.0 \
+		http-body-util-0.1.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-1.3.0 \
 		humantime-2.1.0 \
-		hyper-1.0.0-rc.3 \
+		hyper-1.0.1 \
 		id-arena-2.2.1 \
 		idna-0.3.0 \
 		indexmap-1.9.1 \
@@ -183,7 +180,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mio-0.8.8 \
 		nu-ansi-term-0.46.0 \
 		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
+		num_cpus-1.16.0 \
 		number_prefix-0.3.0 \
 		object-0.32.0 \
 		ocaml-boxroot-sys-0.2.0 \
@@ -216,7 +213,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.6.3 \
 		rand_xorshift-0.3.0 \
 		rayon-1.5.3 \
-		rayon-core-1.9.3 \
+		rayon-core-1.12.0 \
 		redox_syscall-0.2.13 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
@@ -262,7 +259,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.10.0 \
 		symbolic_expressions-5.0.3 \
 		syn-1.0.92 \
-		syn-2.0.29 \
+		syn-2.0.32 \
 		system-interface-0.26.0 \
 		target-lexicon-0.12.12 \
 		tempfile-3.8.0 \
@@ -309,19 +306,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-encoder-0.36.2 \
-		wasm-metadata-0.10.11 \
-		wasm-mutate-0.2.40 \
-		wasm-smith-0.12.23 \
+		wasm-encoder-0.38.1 \
+		wasm-metadata-0.10.14 \
+		wasm-mutate-0.2.42 \
+		wasm-smith-0.13.1 \
 		wasmi-0.20.0 \
 		wasmi_arena-0.1.0 \
 		wasmi_core-0.5.0 \
-		wasmparser-0.116.1 \
+		wasmparser-0.118.1 \
 		wasmparser-nostd-0.91.0 \
-		wasmprinter-0.2.72 \
+		wasmprinter-0.2.75 \
 		wast-35.0.2 \
-		wast-67.0.1 \
-		wat-1.0.79 \
+		wast-69.0.1 \
+		wat-1.0.82 \
 		web-sys-0.3.57 \
 		webpki-roots-0.25.2 \
 		which-4.2.5 \
@@ -339,13 +336,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.48.0 \
 		winx-0.36.1 \
-		wit-bindgen-0.13.1 \
-		wit-bindgen-core-0.13.1 \
-		wit-bindgen-rust-0.13.2 \
-		wit-bindgen-rust-macro-0.13.1 \
-		wit-component-0.17.0 \
-		wit-component-0.18.0 \
-		wit-parser-0.12.2 \
+		wit-bindgen-0.15.0 \
+		wit-bindgen-core-0.15.0 \
+		wit-bindgen-rust-0.15.0 \
+		wit-bindgen-rust-macro-0.15.0 \
+		wit-component-0.18.2 \
+		wit-component-0.19.0 \
 		wit-parser-0.13.0 \
 		zstd-0.11.1+zstd.1.5.2 \
 		zstd-safe-5.0.1+zstd.1.5.2 \
