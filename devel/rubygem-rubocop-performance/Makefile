@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-performance
-PORTVERSION=	1.19.1
+PORTVERSION=	1.20.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/rubocop/rubocop-performance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rubocop>=1.7.0<2.0:devel/rubygem-rubocop \
-		rubygem-rubocop-ast>=0.4.0:devel/rubygem-rubocop-ast
+RUN_DEPENDS=	rubygem-rubocop>=1.48.1<2.0:devel/rubygem-rubocop \
+		rubygem-rubocop-ast>=1.30.0:devel/rubygem-rubocop-ast
 
 USES=		gem
 
