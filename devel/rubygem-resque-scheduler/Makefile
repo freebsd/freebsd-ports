@@ -1,5 +1,5 @@
 PORTNAME=	resque-scheduler
-PORTVERSION=	4.10.0
+PORTVERSION=	4.10.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
