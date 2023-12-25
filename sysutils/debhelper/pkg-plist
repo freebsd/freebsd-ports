@@ -128,6 +128,7 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/perl_makemaker.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/python_distutils.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/qmake.pm
+%%SITE_PERL%%/Debian/Debhelper/Buildsystem/qmake6.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/qmake_qt4.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Buildsystems.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Getopt.pm
