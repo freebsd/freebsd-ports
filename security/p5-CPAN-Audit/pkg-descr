@@ -1,0 +1,2 @@
+CPAN::Audit is a module and a database at the same time.  It is used by
+the cpan-audit(1) command-line application to query for vulnerabilities.
