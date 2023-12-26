@@ -1,6 +1,6 @@
 PORTNAME=	openssh
-DISTVERSION=	9.3p2
-PORTREVISION=	2
+DISTVERSION=	9.6p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -23,8 +23,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--without-zlib-version-check \
 			--with-ssl-engine \
-			--with-mantype=man \
-			--with-Werror
+			--with-mantype=man
 
 ETCOLD=			${PREFIX}/etc
 
