@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-aiplatform
-DISTVERSION=	1.33.0
+DISTVERSION=	1.38.1
 CATEGORIES=	www # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.32.0:www/py-google-api-co
 		${PYTHON_PKGNAMEPREFIX}google-cloud-bigquery>=1.15.0:www/py-google-cloud-bigquery@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-resource-manager>=1.3.3:www/py-google-cloud-resource-manager@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=14.3:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.22.2<2.0.0:devel/py-proto-plus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.22.0<2.0.0:devel/py-proto-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.19.5:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shapely>0:devel/py-shapely@${PY_FLAVOR}
 
