@@ -564,8 +564,10 @@ include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
 include/thrift/lib/cpp2/type/AlignedPtr.h
 include/thrift/lib/cpp2/type/Any.h
+include/thrift/lib/cpp2/type/AnyTesting.h
 include/thrift/lib/cpp2/type/AnyValue.h
 include/thrift/lib/cpp2/type/BaseType.h
+include/thrift/lib/cpp2/type/Field.h
 include/thrift/lib/cpp2/type/Id.h
 include/thrift/lib/cpp2/type/Name.h
 include/thrift/lib/cpp2/type/NativeType.h
