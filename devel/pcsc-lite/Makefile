@@ -1,5 +1,5 @@
 PORTNAME=	pcsc-lite
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -26,6 +26,8 @@ CONFIGURE_ARGS=	--disable-libsystemd \
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	src/spy/pcsc-spy
 SUB_FILES=	pkg-message
+
+LIB_DEPENDS+=	libpolkit-gobject-1.so:sysutils/polkit
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_GROUP=		FEATURES
