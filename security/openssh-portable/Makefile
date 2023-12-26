@@ -127,7 +127,7 @@ CONFIGURE_LIBS+=	-lblacklist
 
 # https://www.psc.edu/hpn-ssh https://github.com/rapier1/openssh-portable/tree/hpn-openssl1.1-7_7_P1
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
-#BROKEN=			HPN: Not yet updated for ${DISTVERSION} yet.
+BROKEN=			HPN: Not yet updated for ${DISTVERSION} yet.
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v15
 HPN_DISTVERSION=	7.7p1
