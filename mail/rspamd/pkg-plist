@@ -324,6 +324,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/browserconfig.xml
 %%DATADIR%%/www/css/FooTable.Glyphicons.css
 %%DATADIR%%/www/css/bootstrap.min.css
+%%DATADIR%%/www/css/codejar-linenumbers.css
 %%DATADIR%%/www/css/d3evolution.css
 %%DATADIR%%/www/css/d3pie.css
 %%DATADIR%%/www/css/font-glyphicons.css
@@ -351,6 +352,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/app/symbols.js
 %%DATADIR%%/www/js/app/upload.js
 %%DATADIR%%/www/js/lib/bootstrap.bundle.min.js
+%%DATADIR%%/www/js/lib/codejar-linenumbers.min.js
 %%DATADIR%%/www/js/lib/codejar.min.js
 %%DATADIR%%/www/js/lib/d3.min.js
 %%DATADIR%%/www/js/lib/d3evolution.min.js
@@ -359,7 +361,6 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/footable.min.js
 %%DATADIR%%/www/js/lib/jquery-3.7.0.min.js
 %%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
-%%DATADIR%%/www/js/lib/linenumbers.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js
 %%DATADIR%%/www/js/lib/prism.js
 %%DATADIR%%/www/js/lib/require.min.js
