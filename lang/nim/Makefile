@@ -1,6 +1,5 @@
 PORTNAME=	nim
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.2
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -17,8 +16,9 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	node18>=0:www/node
 
 USES=		compiler:c11 cpe tar:xz
-
 CPE_VENDOR=	nim-lang
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS TOOLS
 OPTIONS_DEFAULT=	TOOLS
