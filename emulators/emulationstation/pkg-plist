@@ -53,6 +53,7 @@ share/EmulationStation/resources/help/dpad_updown.svg
 share/EmulationStation/resources/mamebioses.xml
 share/EmulationStation/resources/mamedevices.xml
 share/EmulationStation/resources/mamenames.xml
+share/EmulationStation/resources/mameres.py
 share/EmulationStation/resources/off.svg
 share/EmulationStation/resources/on.svg
 share/EmulationStation/resources/opensans_hebrew_condensed_light.ttf
