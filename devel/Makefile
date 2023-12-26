@@ -4627,6 +4627,7 @@
     SUBDIR += py-dunamai
     SUBDIR += py-durus
     SUBDIR += py-dynrules
+    SUBDIR += py-easydict
     SUBDIR += py-easyprocess
     SUBDIR += py-editables
     SUBDIR += py-editdistance
