@@ -5689,6 +5689,7 @@
     SUBDIR += py-termcolor
     SUBDIR += py-termcolor-whl
     SUBDIR += py-termstyle
+    SUBDIR += py-test-utils
     SUBDIR += py-testfixtures
     SUBDIR += py-testinfra
     SUBDIR += py-testoob
