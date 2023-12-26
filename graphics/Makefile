@@ -954,6 +954,7 @@
     SUBDIR += py-qpageview
     SUBDIR += py-qrencode
     SUBDIR += py-qt6-3d
+    SUBDIR += py-qudida
     SUBDIR += py-railroad-diagrams
     SUBDIR += py-rasterio
     SUBDIR += py-rasterstats
