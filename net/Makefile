@@ -1093,6 +1093,7 @@
     SUBDIR += py-pcapy-ng
     SUBDIR += py-port-for
     SUBDIR += py-portend
+    SUBDIR += py-pychromecast
     SUBDIR += py-pyenet
     SUBDIR += py-pyfixbuf
     SUBDIR += py-pygeoip
