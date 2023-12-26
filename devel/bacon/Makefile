@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
-PORTREVISION=	2
+DISTVERSION=	2.14.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +19,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.2 \
 		aho-corasick-1.0.2 \
 		android_system_properties-0.1.5 \
+		ansi_colours-1.2.2 \
 		anstream-0.5.0 \
 		anstyle-1.0.1 \
 		anstyle-parse-0.2.1 \
@@ -35,6 +35,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bstr-1.3.0 \
 		btoi-0.4.2 \
 		bumpalo-3.11.1 \
+		bytemuck-1.14.0 \
 		bytes-1.3.0 \
 		bytesize-1.1.0 \
 		camino-1.1.2 \
@@ -45,7 +46,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		clap-4.4.3 \
-		clap-help-0.6.2 \
+		clap-help-1.0.0 \
 		clap_builder-4.4.2 \
 		clap_derive-4.4.2 \
 		clap_lex-0.5.0 \
@@ -55,6 +56,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		colorchoice-1.0.0 \
 		compact_str-0.6.1 \
 		coolor-0.5.0 \
+		coolor-0.6.1 \
+		coolor-0.8.0 \
 		core-foundation-sys-0.8.3 \
 		crc32fast-1.3.2 \
 		crokey-0.4.3 \
@@ -140,7 +143,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		jwalk-0.8.1 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
-		lazy-regex-3.0.1 \
+		lazy-regex-3.0.2 \
 		lazy-regex-proc_macros-3.0.1 \
 		libc-0.2.147 \
 		link-cplusplus-1.0.8 \
@@ -150,7 +153,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		memmap2-0.5.8 \
 		memoffset-0.6.5 \
 		memoffset-0.7.1 \
-		minimad-0.12.0 \
+		minimad-0.13.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
@@ -183,6 +186,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-automata-0.3.1 \
 		regex-syntax-0.7.3 \
 		remove_dir_all-0.5.3 \
+		rgb-0.8.36 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
@@ -205,7 +209,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-2.0.18 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		termimad-0.23.2 \
+		termimad-0.25.4 \
+		termimad-0.26.1 \
 		terminal-light-1.1.1 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
