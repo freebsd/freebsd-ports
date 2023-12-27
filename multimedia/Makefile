@@ -214,6 +214,7 @@
     SUBDIR += lsdvd
     SUBDIR += m2vrequantiser
     SUBDIR += makemkv
+    SUBDIR += mediaelch
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += minisatip

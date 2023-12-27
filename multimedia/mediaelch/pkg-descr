@@ -1,0 +1,5 @@
+MediaElch is a desktop media metadata manager for Kodi and Jellyfin.
+
+It can automatically download information about movies, TV shows and music,
+including artwork, and create ".nfo" files which are used by the Kodi/Jellyfin
+user interface.
