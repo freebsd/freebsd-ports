@@ -2,6 +2,7 @@ bin/cvlc
 %%NCURSES%%bin/nvlc
 %%QT5%%bin/qvlc
 bin/rvlc
+%%SKINS%%bin/svlc
 bin/vlc
 bin/vlc-wrapper
 include/vlc/deprecated.h
