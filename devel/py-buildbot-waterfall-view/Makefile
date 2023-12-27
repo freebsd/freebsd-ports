@@ -1,5 +1,5 @@
 PORTNAME=	buildbot-waterfall-view
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ WWW=		https://buildbot.net
 LICENSE=	GPLv2
 #LICENSE_FILE=	Not packaged in sdist
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg==${PORTVERSION}:devel/py-buildbot-pkg@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg==${PORTVERSION}:devel/py-buildbot-pkg@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg>=${PORTVERSION}:devel/py-buildbot-pkg@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg>=${PORTVERSION}:devel/py-buildbot-pkg@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
