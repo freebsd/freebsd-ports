@@ -1,5 +1,5 @@
 PORTNAME=	argh
-PORTVERSION=	0.30.4
+PORTVERSION=	0.30.5
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
@@ -17,6 +17,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_F
 #		${PYTHON_PKGNAMEPREFIX}tox>=4.11.3:devel/py-tox@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517  # pytest
+USE_PYTHON=	autoplist pep517 # pytest
 
 .include <bsd.port.mk>
