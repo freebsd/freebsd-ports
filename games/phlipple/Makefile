@@ -1,12 +1,12 @@
 PORTNAME=	phlipple
 PORTVERSION=	0.8.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flipping squares will never be the same
-WWW=		http://phuzzboxmedia.com/games/phlipple
+WWW=		https://sourceforge.net/projects/phlipple/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,6 +18,7 @@ USES=		desktop-file-utils gl pkgconfig sdl dos2unix xorg
 USE_GL=		gl glew glu
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
+DOS2UNIX_FILES=	src/engine.h
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lm
