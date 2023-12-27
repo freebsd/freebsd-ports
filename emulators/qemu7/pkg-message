@@ -8,12 +8,6 @@ FreeBSD host notes
   networking as non-root.  Don't forget to adjust device node permissions in
   /etc/devfs.rules.
 
-- Expect timer problems when guest kernel HZ is > hosts.  The linux 2.6
-  kernel uses 1000 by default btw.  (changed to 250 later, and recent linux
-  kernels now no longer have a fixed HZ, aka `tickless kernel'...)
-  Enabling /dev/rtc doesn't seem to help either (not included since it needs
-  a patch to emulators/rtc.)
-
 - The -smb option (smb-export local dir to guest using the default
   slirp networking) needs the samba port/package installed
   in addition to qemu. (SAMBA knob.)
@@ -46,9 +40,6 @@ FreeBSD host notes
   with qemu's now by default enabled cdrom dma. You can build the port with
   CDROM_DMA disabled to disable it.  [Looks like this is fixed in recent
   FreeBSD guest versions.]
-
-- If you build qemu wihout SDL and then get crashes running it try passing it
-  -nographic.  This should probably be default in that case...
 
 - qemu's network boot roms (-boot n) have a bug when bootfiles sizes are a
   multiple of blksize, if this affects you (like with FreeBSD's /boot/pxeboot)
