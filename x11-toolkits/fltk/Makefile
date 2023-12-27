@@ -1,6 +1,5 @@
 PORTNAME=	fltk
-PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTVERSION=	1.3.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://www.fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -36,7 +35,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/Fl_Preferences.cxx
 	${REINPLACE_CMD} -e 's,$$(docdir)/examples,${EXAMPLESDIR},' \
 		${WRKSRC}/test/Makefile
-	${REINPLACE_CMD} -e '/^INSTALL_BIN/s,-m,${STRIP} &, ; \
+	${REINPLACE_CMD} -e '/^INSTALL_[BL]I/s,-m,${STRIP} &, ; \
 		s,^\.SILENT,#&,' ${WRKSRC}/makeinclude.in
 
 post-install:
