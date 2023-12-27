@@ -1,5 +1,5 @@
 PORTNAME=	docproj
-PORTVERSION=	4.1.7
+PORTVERSION=	4.1.8
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -7,8 +7,10 @@ COMMENT=	Meta-port for the FreeBSD Documentation Project
 WWW=		https://www.freebsd.org/docproj
 
 RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
+		gnuplot-lite>0:math/gnuplot-lite \
 		gohugo>=0.115.4,1:www/gohugo \
 		rougify:textproc/rubygem-rouge \
+		rubygem-asciidoctor-diagram>0:textproc/rubygem-asciidoctor-diagram
 
 USES=		metaport
 
