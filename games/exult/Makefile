@@ -79,4 +79,12 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
+.include <bsd.port.options.mk>
+
+# Silence cast warnings from GTK callbacks:
+# https://github.com/exult/exult/issues/416
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-cast-function-type-strict
+.endif
+
 .include <bsd.port.mk>
