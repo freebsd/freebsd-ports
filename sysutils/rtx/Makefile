@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.38
+DISTVERSION=	2023.12.39
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -251,7 +251,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.25.3 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.42 \
+		syn-2.0.43 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -262,8 +262,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.51 \
-		thiserror-impl-1.0.51 \
+		thiserror-1.0.52 \
+		thiserror-impl-1.0.52 \
 		thread_local-1.1.7 \
 		time-0.3.31 \
 		time-core-0.1.2 \
