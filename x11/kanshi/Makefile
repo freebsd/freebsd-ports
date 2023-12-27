@@ -1,6 +1,6 @@
 PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
