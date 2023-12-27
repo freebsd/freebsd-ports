@@ -34,6 +34,7 @@ include/fdeep/layers/gru_layer.hpp
 include/fdeep/layers/hard_sigmoid_layer.hpp
 include/fdeep/layers/input_layer.hpp
 include/fdeep/layers/layer.hpp
+include/fdeep/layers/layer_normalization_layer.hpp
 include/fdeep/layers/leaky_relu_layer.hpp
 include/fdeep/layers/linear_layer.hpp
 include/fdeep/layers/lstm_layer.hpp
@@ -61,6 +62,7 @@ include/fdeep/layers/subtract_layer.hpp
 include/fdeep/layers/swish_layer.hpp
 include/fdeep/layers/tanh_layer.hpp
 include/fdeep/layers/time_distributed_layer.hpp
+include/fdeep/layers/unit_normalization_layer.hpp
 include/fdeep/layers/upsampling_1d_layer.hpp
 include/fdeep/layers/upsampling_2d_layer.hpp
 include/fdeep/layers/zero_padding_3d_layer.hpp
