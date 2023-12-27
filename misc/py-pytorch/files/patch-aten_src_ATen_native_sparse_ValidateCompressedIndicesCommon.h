@@ -1,6 +1,6 @@
---- aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h.orig	2023-05-07 08:51:40 UTC
+--- aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h.orig	2023-12-15 02:03:27 UTC
 +++ aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
-@@ -39,7 +39,7 @@ namespace {
+@@ -40,7 +40,7 @@ INVARIANT_CHECK_FUNC_API
  // use `cidx/idx` to refer to `compressed_indices/plain_indices` respectively.
  
  INVARIANT_CHECK_FUNC_API
@@ -9,7 +9,7 @@
  #ifdef GPUCC
    CUDA_KERNEL_ASSERT(cond && message);
  #else
-@@ -57,9 +57,9 @@ INVARIANT_CHECK_FUNC_API _check_first_cidx_is_zero(
+@@ -58,9 +58,9 @@ INVARIANT_CHECK_FUNC_API _check_first_cidx_is_zero(
      const index_t& zero) {
    const bool invariant = cidx == zero;
    if (cdim_name == CDimName::CRow) {
@@ -21,7 +21,7 @@
    }
  }
  
-@@ -71,9 +71,9 @@ INVARIANT_CHECK_FUNC_API _check_last_cidx_is_nnz(
+@@ -72,9 +72,9 @@ INVARIANT_CHECK_FUNC_API _check_last_cidx_is_nnz(
      const index_t& nnz) {
    const bool invariant = cidx == nnz;
    if (cdim_name == CDimName::CRow) {
@@ -33,7 +33,7 @@
    }
  }
  
-@@ -88,11 +88,11 @@ INVARIANT_CHECK_FUNC_API _check_cidx_nondecreasing_loc
+@@ -89,11 +89,11 @@ INVARIANT_CHECK_FUNC_API _check_cidx_nondecreasing_loc
    const auto s_cidx = cidx_next - cidx;
    const bool invariant = zero <= s_cidx && s_cidx <= dim;
    if (cdim_name == CDimName::CRow) {
@@ -47,7 +47,7 @@
          invariant,
          "`0 <= ccol_indices[..., 1:] - ccol_indices[..., :-1] <= nrows` is not satisfied.");
    }
-@@ -107,9 +107,9 @@ INVARIANT_CHECK_FUNC_API _check_idx_bounds(
+@@ -108,9 +108,9 @@ INVARIANT_CHECK_FUNC_API _check_idx_bounds(
      const index_t& dim) {
    const bool invariant = zero <= idx && idx < dim;
    if (cdim_name == CDimName::CRow) {
@@ -59,7 +59,7 @@
    }
  }
  
-@@ -128,14 +128,14 @@ INVARIANT_CHECK_FUNC_API _check_idx_sorted_distinct_va
+@@ -129,14 +129,14 @@ INVARIANT_CHECK_FUNC_API _check_idx_sorted_distinct_va
    for (auto* RESTRICT curr = slice_begin + 1; curr < slice_end; ++curr) {
      const auto invariant = *(curr - 1) < *curr;
      if (cdim_name == CDimName::CRow) {
