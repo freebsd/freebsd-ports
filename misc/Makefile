@@ -434,6 +434,7 @@
     SUBDIR += py-lightning-utilities
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
+    SUBDIR += py-mmcv
     SUBDIR += py-mmengine
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
