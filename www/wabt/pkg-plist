@@ -2,7 +2,7 @@ bin/spectest-interp
 bin/wasm-decompile
 bin/wasm-interp
 bin/wasm-objdump
-bin/wasm-opcodecnt
+bin/wasm-stats
 bin/wasm-strip
 bin/wasm-validate
 bin/wasm2c
@@ -17,7 +17,7 @@ include/wabt/binary-reader-ir.h
 include/wabt/binary-reader-logging.h
 include/wabt/binary-reader-nop.h
 include/wabt/binary-reader-objdump.h
-include/wabt/binary-reader-opcnt.h
+include/wabt/binary-reader-stats.h
 include/wabt/binary-reader.h
 include/wabt/binary-writer-spec.h
 include/wabt/binary-writer.h
@@ -25,7 +25,6 @@ include/wabt/binary.h
 include/wabt/binding-hash.h
 include/wabt/c-writer.h
 include/wabt/cast.h
-include/wabt/circular-array.h
 include/wabt/color.h
 include/wabt/common.h
 include/wabt/config.h
@@ -88,7 +87,7 @@ share/man/man1/spectest-interp.1.gz
 share/man/man1/wasm-decompile.1.gz
 share/man/man1/wasm-interp.1.gz
 share/man/man1/wasm-objdump.1.gz
-share/man/man1/wasm-opcodecnt.1.gz
+share/man/man1/wasm-stats.1.gz
 share/man/man1/wasm-strip.1.gz
 share/man/man1/wasm-validate.1.gz
 share/man/man1/wasm2c.1.gz
