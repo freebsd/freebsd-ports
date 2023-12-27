@@ -22321,7 +22321,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/__pycache__/tokens%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/__pycache__/tokens%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/__pycache__/tokens%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/_yaml%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/composer.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/constructor.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/cyaml.py
