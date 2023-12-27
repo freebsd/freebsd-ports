@@ -437,6 +437,7 @@
     SUBDIR += py-mmcv
     SUBDIR += py-mmdet
     SUBDIR += py-mmengine
+    SUBDIR += py-mmsegmentation
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
     SUBDIR += py-npTDMS
