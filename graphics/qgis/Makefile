@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.34.1
-PORTREVISION=	2
+DISTVERSION=	3.34.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -106,7 +105,6 @@ RUN_DEPENDS=	astyle:devel/astyle \
 USES=		bison cmake compiler:features desktop-file-utils \
 		fortran gl gmake gnome pgsql pyqt:5 python qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
-# math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -134,7 +132,8 @@ CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_INTERNAL_LAZPERF WITH_POSTGRESQL
 CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
 
-CXXFLAGS+=      -pthread
+# math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
+CXXFLAGS+=	-pthread
 
 CONFLICTS_INSTALL=	qgis-ltr
 
@@ -142,19 +141,27 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
-CMAKE_OFF+=	SUPPRESS_QT_WARNINGS WITH_GRASS8
+CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
 .endif
 
-OPTIONS_DEFINE=		GRASS SERVER
-OPTIONS_DEFAULT=	GRASS SERVER
-NO_OPTIONS_SORT=	yes
-
+OPTIONS_DEFINE=		SERVER
+OPTIONS_DEFAULT=	SERVER GRASS8
+OPTIONS_RADIO=		GRASS
+OPTIONS_RADIO_GRASS=	GRASS7 GRASS8
+#NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
+
+GRASS_DESC=		Add GRASS GIS to processing tools
 SERVER_DESC=		Enable QGIS server
 
-GRASS_BUILD_DEPENDS=	grass7:databases/grass7
-GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
-GRASS_CMAKE_BOOL=	WITH_GRASS7
+GRASS7_BUILD_DEPENDS=	grass7:databases/grass7
+GRASS7_RUN_DEPENDS=	${GRASS7_BUILD_DEPENDS}
+GRASS7_CMAKE_BOOL=	WITH_GRASS7
+GRASS7_CMAKE_OFF=	WITH_GRASS8
+GRASS8_BUILD_DEPENDS=	grass8:databases/grass8
+GRASS8_RUN_DEPENDS=	${GRASS8_BUILD_DEPENDS}
+GRASS8_CMAKE_BOOL=	WITH_GRASS8
+GRASS8_CMAKE_OFF=	WITH_GRASS7
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 
@@ -173,6 +180,8 @@ pre-patch:
 		${WRKSRC}/cmake/FindPostgres.cmake
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/cmake/FindGRASS.cmake
 # On i386, '-mllvm -inline-threshold=128' does not build under all circumstances
 # See bugs 242557 and 241687.
 .if ${OPSYS} == FreeBSD && ${ARCH} == "i386"
@@ -182,6 +191,12 @@ post-patch:
 
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python3
+.if ${PORT_OPTIONS:MGRASS7} || ${PORT_OPTIONS:MGRASS8}
+PLIST_SUB+=	GRASS="" NO_GRASS="@comment "
+.else
+PLIST_SUB+=	GRASS="@comment " NO_GRASS=""
+.endif
+
 
 post-install:
 	@${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak
