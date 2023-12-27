@@ -1,5 +1,5 @@
 PORTNAME=	ebusd
-PORTVERSION=	23.2
+PORTVERSION=	23.3
 CATEGORIES=	comms
 
 MAINTAINER=	samm@FreeBSD.org
@@ -8,8 +8,6 @@ WWW=		https://github.com/john30/ebusd/wiki
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
 USES=		autoreconf compiler:c++11-lang localbase:ldflags
 
@@ -25,7 +23,6 @@ LOGDIR=		/var/log/${PORTNAME}
 RUNDIR=		/var/run/${PORTNAME}
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ebusfeed
 
 PLIST_SUB=	USER=${USERS} GROUP=${GROUPS} \
 		LOGDIR=${LOGDIR} \

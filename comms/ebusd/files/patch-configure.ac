@@ -1,11 +1,11 @@
---- configure.ac.orig	2023-07-08 13:54:20 UTC
+--- configure.ac.orig	2023-12-27 11:22:31 UTC
 +++ configure.ac
-@@ -154,7 +154,7 @@ AM_COND_IF([KNX], [AC_CONFIG_FILES([
+@@ -146,7 +146,7 @@ AM_COND_IF([KNX], [AC_CONFIG_FILES([
  	])])
  
- AC_DEFINE_UNQUOTED(PACKAGE_PIDFILE, LOCALSTATEDIR "/run/" PACKAGE ".pid", [The path and name of the PID file.])
--AC_DEFINE_UNQUOTED(PACKAGE_LOGFILE, LOCALSTATEDIR "/log/" PACKAGE ".log", [The path and name of the log file.])
-+AC_DEFINE_UNQUOTED(PACKAGE_LOGFILE, LOCALSTATEDIR "/log/" PACKAGE "/" PACKAGE ".log", [The path and name of the log file.])
+ AC_DEFINE_UNQUOTED(PACKAGE_PIDFILE, "${localstatedir}/run/${PACKAGE_NAME}.pid", [The path and name of the PID file.])
+-AC_DEFINE_UNQUOTED(PACKAGE_LOGFILE, "${localstatedir}/log/${PACKAGE_NAME}.log", [The path and name of the log file.])
++AC_DEFINE_UNQUOTED(PACKAGE_LOGFILE, "${localstatedir}/log/${PACKAGE_NAME}/${PACKAGE_NAME}.log", [The path and name of the log file.])
  AC_DEFINE(SCAN_VERSION, "[m4_esyscmd_s([sed -e 's#^\([0-9]*\.[0-9]*\).*#\1#' -e 's#\.\([0-9]\)$#0\1#' -e 's#\.##' VERSION])]", [The version of the package formatted for the scan result.])
  AC_DEFINE(PACKAGE_VERSION_MAJOR, [m4_esyscmd_s([sed -e 's#^\([0-9]*\)\..*$#\1#' VERSION])], [The major version of the package.])
  AC_DEFINE(PACKAGE_VERSION_MINOR, [m4_esyscmd_s([sed -e 's#^.*\.\([0-9]*\)$#\1#' VERSION])], [The minor version of the package.])
