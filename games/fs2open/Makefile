@@ -1,6 +1,7 @@
 PORTNAME=	fs2open
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	23_2_1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/Copying.md
 LICENSE_PERMS=	dist-mirror auto-accept
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libjansson.so:devel/jansson \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
