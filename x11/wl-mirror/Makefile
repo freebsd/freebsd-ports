@@ -1,6 +1,6 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.2
+DISTVERSION=	0.15.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_GL=		glesv2 egl
 GH_ACCOUNT=	Ferdi265
-GL_TUPLE=	https://gitlab.freedesktop.org:wlroots:wlr-protocols:8cdeaac:wlrproto/proto/wlr-protocols
+GL_TUPLE=	https://gitlab.freedesktop.org:wlroots:wlr-protocols:4264185:wlrproto/proto/wlr-protocols
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
