@@ -1,9 +1,7 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.108.1
+PORTVERSION=	0.108.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
-DISTFILES=	go.mod:gomod
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command line interface for Cirrus CI
@@ -12,9 +10,7 @@ WWW=		https://github.com/cirruslabs/cirrus-cli
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	cirruslabs
+USES=		go:1.21,modules
 
 USE_RC_SUBR=	${PORTNAME}
 
