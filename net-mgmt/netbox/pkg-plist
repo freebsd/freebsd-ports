@@ -197,6 +197,7 @@
 %%DATADIR%%/dcim/migrations/0179_interfacetemplate_rf_role.py
 %%DATADIR%%/dcim/migrations/0180_powerfeed_tenant.py
 %%DATADIR%%/dcim/migrations/0181_rename_device_role_device_role.py
+%%DATADIR%%/dcim/migrations/0182_zero_length_cable_fix.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/models/__init__.py
 %%DATADIR%%/dcim/models/cables.py
@@ -617,6 +618,7 @@
 %%DATADIR%%/extras/tests/test_api.py
 %%DATADIR%%/extras/tests/test_changelog.py
 %%DATADIR%%/extras/tests/test_conditions.py
+%%DATADIR%%/extras/tests/test_custom_validation.py
 %%DATADIR%%/extras/tests/test_customfields.py
 %%DATADIR%%/extras/tests/test_customvalidator.py
 %%DATADIR%%/extras/tests/test_filtersets.py
