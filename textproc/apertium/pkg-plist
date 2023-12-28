@@ -1,6 +1,10 @@
 bin/apertium
 bin/apertium-adapt-docx
 bin/apertium-cleanstream
+bin/apertium-compile-caps
+bin/apertium-extract-caps
+bin/apertium-restore-caps
+bin/apertium-validate-crx
 bin/apertium-deshtml
 bin/apertium-deshtml-alt
 bin/apertium-deshtml-noent
@@ -70,6 +74,8 @@ include/apertium/a.h
 include/apertium/align.h
 include/apertium/analysis.h
 include/apertium/apertium_re.h
+include/apertium/caps_compiler.h
+include/apertium/caps_restorer.h
 include/apertium/collection.h
 include/apertium/constant_manager.h
 include/apertium/deserialiser.h
@@ -147,6 +153,10 @@ lib/libapertium.so
 lib/libapertium.so.3
 lib/libapertium.so.3.0.0
 libdata/pkgconfig/apertium.pc
+man/man1/apertium-compile-caps.1.gz
+man/man1/apertium-extract-caps.1.gz
+man/man1/apertium-restore-caps.1.gz
+man/man1/apertium-validate-crx.1.gz
 man/man1/apertium-deshtml-alt.1.gz
 man/man1/apertium-deshtml.1.gz
 man/man1/apertium-deslatex.1.gz
@@ -192,6 +202,7 @@ man/man1/apertium-validate-tagger.1.gz
 man/man1/apertium-validate-transfer.1.gz
 man/man1/apertium.1.gz
 share/aclocal/apertium.m4
+%%DATADIR%%/crx.dtd
 %%DATADIR%%/deformat.xsl
 %%DATADIR%%/filter-dix.xslt
 %%DATADIR%%/filter-rules.xslt

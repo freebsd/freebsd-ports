@@ -1,7 +1,6 @@
 PORTNAME=	apertium
-PORTVERSION=	3.8.3
+PORTVERSION=	3.9.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -43,13 +42,5 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
-
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
-		${WRKSRC}/apertium/perceptron_spec.h
-.endif
 
 .include <bsd.port.mk>
