@@ -1,6 +1,6 @@
 PORTNAME=	opencv
 DISTVERSION=	4.6.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
@@ -122,7 +122,7 @@ TESSERACT_CMAKE_BOOL=	WITH_TESSERACT
 
 # GUI group options (GTK3 VTK)
 GTK3_USES=		gnome
-GTK3_USE=		gnome=gtk30
+GTK3_USE=		gnome=gtk30,cairo,gdkpixbuf2
 GTK3_CMAKE_BOOL=	WITH_GTK
 
 VTK_DESC=		Include VTK library support (build opencv_viz module)
@@ -166,6 +166,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 GSTREAMER_DESC=		Add GSTREAMER Support
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER
 GSTREAMER_USES=		gstreamer
+GSTREAMER_USE=		gnome=glib20
 
 V4L_DESC=		Enable support for Video for Linux
 V4L_CMAKE_BOOL=		WITH_V4L WITH_LIBV4L
