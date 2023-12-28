@@ -31,7 +31,7 @@ SPREAD_DESC=	Enable Spread libary as a pub/sub distribution capability
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_VARS=	IGNORE_WITH_MYSQL=80
+MYSQL_VARS=	IGNORE_WITH_MYSQL="80 81"
 SKIPSET_LIB_DEPENDS=	libsilk.so:security/silktools
 SKIPSET_CONFIGURE_WITH=	skipset
 SPREAD_LIB_DEPENDS=	libspread.so:net/spread4

@@ -45,6 +45,7 @@ MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql
+MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--enable-auth-pgsql \
 			--with-pgsql-lib-dir=${LOCALBASE}/lib \

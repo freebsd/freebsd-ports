@@ -148,6 +148,7 @@ ROAMING_CONFIGURE_ON=		--enable-roaming-users \
 MYSQL_CONFIGURE_ON=		--enable-auth-module=mysql \
 				--enable-incdir=${LOCALBASE}/include/mysql \
 				--enable-libdir=${LOCALBASE}/lib/mysql
+MYSQL_VARS=		IGNORE_WITH_MYSQL="105m 106m 1011m 80 81"
 MYSQL_REPLICATION_CONFIGURE_ON=	--enable-mysql-replication
 MYSQL_LIMITS_CONFIGURE_ON=	--enable-mysql-limits
 

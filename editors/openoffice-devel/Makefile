@@ -198,6 +198,7 @@ MYSQL_CONFIGURE_ENABLE=		mysql-connector
 MYSQL_CONFIGURE_WITH=		system-mysql
 MYSQL_LIB_DEPENDS=		libmysqlcppconn.so:databases/mysql-connector-c++
 MYSQL_USES=			mysql
+MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
 
 SDK_CONFIGURE_ENABLE=		odk
 SDK_DISTFILES=			unowinreg.dll:unoreg

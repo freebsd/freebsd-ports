@@ -13,7 +13,7 @@ WWW=		http://ygrek.org.ua/p/ocaml-mysql/
 LICENSE=	LGPL21
 
 USES=		gmake mysql
-IGNORE_WITH_MYSQL=	80
+IGNORE_WITH_MYSQL=	80 81
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_CAMLP4=	yes

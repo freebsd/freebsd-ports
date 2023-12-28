@@ -12,6 +12,6 @@ LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
 USES=		gem mysql
-IGNORE_WITH_MYSQL=	80
+IGNORE_WITH_MYSQL=	80 81
 
 .include <bsd.port.mk>
