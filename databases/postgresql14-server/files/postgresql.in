@@ -104,7 +104,7 @@ command_args="-D ${postgresql_data} ${postgresql_flags}"
 
 postgresql_command()
 {
-    ${su_cmd} -l ${postgresql_user} -c "exec ${command} ${command_args} ${rc_arg}"
+    ${su_cmd} -l -c ${postgresql_login_class} ${postgresql_user} -c "exec ${command} ${command_args} ${rc_arg}"
 }
 
 postgresql_initdb()
