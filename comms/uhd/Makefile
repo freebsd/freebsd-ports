@@ -61,8 +61,6 @@ DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON"
 DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
 			-DENABLE_MANUAL:STRING="OFF"
 
-PORTDOCS=	*
-
 do-install:
 # install host component
 # hack the install prefix now
