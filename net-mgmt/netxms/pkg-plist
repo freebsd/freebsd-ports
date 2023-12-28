@@ -88,7 +88,6 @@ lib/libappagent.so.%%SONUM%%.0.0
 %%CLIENT%%lib/libnxclient.so.%%SONUM%%.0.0
 %%SERVER%%lib/libnxcore.so
 %%SERVER%%lib/libnxcore.so.2
-%%MYSQL%%lib/libnxddr_mysql.so
 %%ODBC%%lib/libnxddr_odbc.so
 %%PGSQL%%lib/libnxddr_pgsql.so
 %%NXCP%%lib/libnxlp.so
