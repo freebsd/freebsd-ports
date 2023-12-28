@@ -1,7 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3-2
-DISTVERSIONSUFFIX=	-g2d731f1
+DISTVERSION=	1.4.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +25,7 @@ CARGO_CRATES=	base64-0.21.5 \
 		console-0.15.7 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
-		ctrlc-3.4.1 \
+		ctrlc-3.4.2 \
 		encode_unicode-0.3.6 \
 		endian-type-0.1.2 \
 		equivalent-1.0.1 \
@@ -39,13 +38,13 @@ CARGO_CRATES=	base64-0.21.5 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.11 \
 		hashbrown-0.14.3 \
-		home-0.5.5 \
+		home-0.5.9 \
 		idna-0.5.0 \
 		indexmap-2.1.0 \
 		instant-0.1.12 \
 		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
 		memchr-2.6.4 \
@@ -53,14 +52,14 @@ CARGO_CRATES=	base64-0.21.5 \
 		nibble_vec-0.1.0 \
 		nix-0.27.1 \
 		once_cell-1.19.0 \
-		openssl-0.10.61 \
+		openssl-0.10.62 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.97 \
+		openssl-sys-0.9.98 \
 		percent-encoding-2.3.1 \
-		pkg-config-0.3.27 \
+		pkg-config-0.3.28 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.70 \
+		proc-macro2-1.0.71 \
 		quote-1.0.33 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
@@ -68,8 +67,8 @@ CARGO_CRATES=	base64-0.21.5 \
 		rand_core-0.6.4 \
 		redox_syscall-0.4.1 \
 		ring-0.17.7 \
-		rustix-0.38.27 \
-		rustls-0.21.9 \
+		rustix-0.38.28 \
+		rustls-0.21.10 \
 		rustls-webpki-0.101.7 \
 		rustyline-13.0.0 \
 		schannel-0.1.22 \
@@ -78,10 +77,10 @@ CARGO_CRATES=	base64-0.21.5 \
 		security-framework-sys-2.9.1 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
-		serde_spanned-0.6.4 \
+		serde_spanned-0.6.5 \
 		smallvec-1.11.2 \
 		spin-0.9.8 \
-		syn-2.0.39 \
+		syn-2.0.43 \
 		tempfile-3.8.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -136,7 +135,7 @@ CARGO_CRATES=	base64-0.21.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.26
+		winnow-0.5.30
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
