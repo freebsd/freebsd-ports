@@ -1373,7 +1373,6 @@
     SUBDIR += py-genshi
     SUBDIR += py-gensim
     SUBDIR += py-gi-docgen
-    SUBDIR += py-googletrans
     SUBDIR += py-grako
     SUBDIR += py-grapheme
     SUBDIR += py-griffe
