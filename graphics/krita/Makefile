@@ -5,6 +5,9 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
 
+PATCH_SITES=	https://invent.kde.org/graphics/${PORTNAME}/-/commit/
+PATCHFILES+=	d9e258bf9d6a.patch:-p1 # https://invent.kde.org/graphics/krita/-/merge_requests/2040
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sketching and painting program
 WWW=		https://krita.org
