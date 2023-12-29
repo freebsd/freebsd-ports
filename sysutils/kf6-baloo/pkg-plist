@@ -503,6 +503,7 @@ share/locale/zh_CN/LC_MESSAGES/balooshow6.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_tags.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_timeline.mo
+share/locale/zh_TW/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/zh_TW/LC_MESSAGES/balooctl6.mo
 share/locale/zh_TW/LC_MESSAGES/baloodb6.mo
 share/locale/zh_TW/LC_MESSAGES/balooengine6.mo

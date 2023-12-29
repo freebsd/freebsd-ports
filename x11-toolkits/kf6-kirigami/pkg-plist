@@ -99,7 +99,6 @@ lib/libKirigamiPlatform.so.6
 %%QT_QMLDIR%%/org/kde/kirigami/private/ActionsMenu.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/BannerImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/ContextDrawerActionItem.qml
-%%QT_QMLDIR%%/org/kde/kirigami/private/CornerShadow.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/DefaultCardBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/DefaultChipBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/DefaultPageTitleDelegate.qml

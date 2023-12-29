@@ -31,9 +31,12 @@ share/locale/nl/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/nn/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/pl/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/pt_BR/LC_MESSAGES/kstatusnotifieritem6_qt.qm
+share/locale/ru/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/sa/LC_MESSAGES/kstatusnotifieritem6_qt.qm
+share/locale/sk/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/sl/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/tr/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/uk/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kstatusnotifieritem6_qt.qm
+share/locale/zh_TW/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/qlogging-categories6/kstatusnotifieritem.categories

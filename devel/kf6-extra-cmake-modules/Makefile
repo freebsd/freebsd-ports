@@ -1,5 +1,5 @@
 PORTNAME=	extra-cmake-modules
-DISTVERSION=	5.246.1
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Extra modules and scripts for CMake

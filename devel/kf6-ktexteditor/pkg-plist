@@ -59,8 +59,8 @@ lib/libKF6TextEditor.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6TextEditor.so.6
 lib/libexec/kf6/kauth/kauth_ktexteditor_helper
 %%QT_PLUGINDIR%%/kf6/parts/katepart.so
-share/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
-share/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
+share/dbus-1/system-services/org.kde.ktexteditor6.katetextbuffer.service
+share/dbus-1/system.d/org.kde.ktexteditor6.katetextbuffer.conf
 share/kdevappwizard/templates/ktexteditor6-plugin.tar.bz2
 share/locale/af/LC_MESSAGES/ktexteditor6.mo
 share/locale/ar/LC_MESSAGES/ktexteditor6.mo

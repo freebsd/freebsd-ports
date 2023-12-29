@@ -48,10 +48,10 @@ lib/libexec/kf6/purposeprocess
 %%QT_QMLDIR%%/org/kde/purpose/qmldir
 %%QT_QMLDIR%%/org/kde/purpose/reviewboard/librbpurposequickplugin.so
 %%QT_QMLDIR%%/org/kde/purpose/reviewboard/qmldir
-share/icons/hicolor/128x128/apps/phabricator-purpose.png
-share/icons/hicolor/128x128/apps/reviewboard-purpose.png
-share/icons/hicolor/16x16/apps/phabricator-purpose.png
-share/icons/hicolor/16x16/apps/reviewboard-purpose.png
+share/icons/hicolor/128x128/apps/phabricator-purpose6.png
+share/icons/hicolor/128x128/apps/reviewboard-purpose6.png
+share/icons/hicolor/16x16/apps/phabricator-purpose6.png
+share/icons/hicolor/16x16/apps/reviewboard-purpose6.png
 share/kf6/purpose/barcodeplugin_config.qml
 share/kf6/purpose/kdeconnectplugin_config.qml
 share/kf6/purpose/phabricatorplugin_config.qml

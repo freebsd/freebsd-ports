@@ -3,11 +3,13 @@ include/KF6/KPackage/KPackage/Package
 include/KF6/KPackage/KPackage/PackageJob
 include/KF6/KPackage/KPackage/PackageLoader
 include/KF6/KPackage/KPackage/PackageStructure
+include/KF6/KPackage/KPackage/packagestructure_compat_p
 include/KF6/KPackage/kpackage/package.h
 include/KF6/KPackage/kpackage/package_export.h
 include/KF6/KPackage/kpackage/packagejob.h
 include/KF6/KPackage/kpackage/packageloader.h
 include/KF6/KPackage/kpackage/packagestructure.h
+include/KF6/KPackage/kpackage/packagestructure_compat_p.h
 include/KF6/KPackage/kpackage_version.h
 lib/cmake/KF6Package/KF6PackageConfig.cmake
 lib/cmake/KF6Package/KF6PackageConfigVersion.cmake
