@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a0cb9b7c4249.patch:-p1 # https://github.com/libjxl/libjxl/pull/3085
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
 WWW=		https://jpeg.org/jpegxl/
@@ -19,7 +22,6 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	jbeich:skcms:42030a7:skcms/third_party/skcms \
-		libjpeg-turbo:libjpeg-turbo:2.1.5.1:libjpeg_turbo/third_party/libjpeg-turbo \
 		libjxl:testdata:6c94363:testdata/testdata \
 		webmproject:sjpeg:e5ab130:sjpeg/third_party/sjpeg \
 		${NULL}
