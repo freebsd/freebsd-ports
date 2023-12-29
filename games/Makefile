@@ -829,7 +829,6 @@
     SUBDIR += quake2-xatrix
     SUBDIR += quake2lnx
     SUBDIR += quake2max
-    SUBDIR += quake3
     SUBDIR += quake3-data
     SUBDIR += quake3-excessive
     SUBDIR += quake3-osp

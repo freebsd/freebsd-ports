@@ -8236,3 +8236,4 @@ dns/updatedd||2023-12-31|Has expired: Last release in 2006 and upstream is dead.
 multimedia/ppm2fli||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 www/drupal9||2023-12-31|Has expired: Upstream EOL reaches on 2023-11-01
 net/asterisk16|asterisk18|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-09
+games/quake3||2023-12-31|Has expired: BROKEN for more than 4 years on all supported versions after the EOL of 12
