@@ -933,7 +933,6 @@
     SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += spring
-    SUBDIR += springlobby
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
