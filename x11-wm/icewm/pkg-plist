@@ -92,6 +92,8 @@ man/man5/icewm-winoptions.5.gz
 %%DATADIR%%/icons/gnome_16x16.xpm
 %%DATADIR%%/icons/help_16x16.xpm
 %%DATADIR%%/icons/help_32x32.xpm
+%%DATADIR%%/icons/hibernate_16x16.xpm
+%%DATADIR%%/icons/hibernate_32x32.xpm
 %%DATADIR%%/icons/icewm_16x16.png
 %%DATADIR%%/icons/icewm_32x32.png
 %%DATADIR%%/icons/java_16x16.xpm
