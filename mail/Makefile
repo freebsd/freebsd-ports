@@ -181,7 +181,6 @@
     SUBDIR += libpst
     SUBDIR += libsieve
     SUBDIR += libspamtest
-    SUBDIR += libspf
     SUBDIR += libspf2
     SUBDIR += libsrs2
     SUBDIR += libsrs_alt
