@@ -1,5 +1,5 @@
 PORTNAME=	wildfly
-PORTVERSION=	12.0.0
+PORTVERSION=	13.0.0
 CATEGORIES=	java www
 MASTER_SITES=	https://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
