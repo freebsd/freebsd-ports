@@ -166,7 +166,6 @@
     SUBDIR += scmxx
     SUBDIR += scrcpy
     SUBDIR += sdr++
-    SUBDIR += sdr-wspr
     SUBDIR += ser2net
     SUBDIR += serialoverip
     SUBDIR += sigdigger

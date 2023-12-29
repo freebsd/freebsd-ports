@@ -1,3 +1,0 @@
-A WSPR receiver/decoder using libsdr. This implementation embeds the original
-WSPR Fortran code into a libsdr processing node, allowing to assemble a WSPR
-receiver for various sources easily.
