@@ -8210,3 +8210,4 @@ mail/postforward||2023-12-31|Has expired: Obsolete as postsrsd 2.x uses unix soc
 devel/tmake||2023-12-31|Has expired: Last release in 2004 and dead upstream, superseded by qmake
 comms/ncid||2023-12-31|Has expired: Umaintained for over a year, outdated and unsupported version upstream
 multimedia/gmerlin||2023-12-31|Has expired: Upstream last activity was in 2012
+mail/trojita||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit

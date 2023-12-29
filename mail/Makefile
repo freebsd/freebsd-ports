@@ -717,7 +717,6 @@
     SUBDIR += tlb
     SUBDIR += tmpmail
     SUBDIR += tpop3d
-    SUBDIR += trojita
     SUBDIR += tumgreyspf
     SUBDIR += up-imapproxy
     SUBDIR += usendmail
