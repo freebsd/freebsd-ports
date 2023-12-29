@@ -563,7 +563,6 @@
     SUBDIR += pglogical
     SUBDIR += pgmetrics
     SUBDIR += pgmodeler
-    SUBDIR += pgpool-II-40
     SUBDIR += pgpool-II-41
     SUBDIR += pgpool-II-42
     SUBDIR += pgpool-II-43
