@@ -1493,7 +1493,6 @@
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
-    SUBDIR += spread4
     SUBDIR += sqtop
     SUBDIR += srelay
     SUBDIR += ss5
