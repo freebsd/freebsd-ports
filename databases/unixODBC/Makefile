@@ -1,5 +1,5 @@
 PORTNAME=	unixODBC
-PORTVERSION=	2.3.11
+PORTVERSION=	2.3.12
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/ \
 		ftp://ftp.unixodbc.org/pub/unixODBC/
