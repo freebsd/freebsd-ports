@@ -2452,7 +2452,6 @@
     SUBDIR += varnish-libvmod-querystring
     SUBDIR += varnish-libvmod-redis
     SUBDIR += varnish-modules
-    SUBDIR += varnish6
     SUBDIR += varnish7
     SUBDIR += varnish_exporter
     SUBDIR += vaultwarden-web_vault
