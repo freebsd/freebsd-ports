@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-===>  Please edit %%ETCDIR%%/ncidd.conf to configure your modem
-EOM
-}
-]
