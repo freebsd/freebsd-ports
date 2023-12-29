@@ -1633,7 +1633,6 @@
     SUBDIR += wmping
     SUBDIR += wmwave
     SUBDIR += wmwifi
-    SUBDIR += wmwlmon
     SUBDIR += wol
     SUBDIR += wpa_supplicant_gui
     SUBDIR += wping
