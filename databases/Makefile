@@ -15,7 +15,6 @@
     SUBDIR += apache-commons-dbutils
     SUBDIR += arrow
     SUBDIR += arrow-glib
-    SUBDIR += ateam_mysql57_ldap_auth
     SUBDIR += autobackupmysql
     SUBDIR += automysqlbackup
     SUBDIR += bbdb
@@ -193,7 +192,6 @@
     SUBDIR += mysql-connector-j
     SUBDIR += mysql-connector-java51
     SUBDIR += mysql-connector-odbc-80
-    SUBDIR += mysql-udf
     SUBDIR += mysql2pgsql
     SUBDIR += mysql57-client
     SUBDIR += mysql57-server
