@@ -8223,3 +8223,4 @@ textproc/py-googletrans||2023-12-31|Has expired: Umaintained for over 3 years, d
 multimedia/smtube||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 net/thcrut||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 games/OpenDiablo2||2023-12-31|Has expired: Upstream repository has been archived on Dec 20, 2021
+graphics/figurine||2023-12-31|Has expired: BROKEN for more than 2 years on all supported versions after the EOL of 12
