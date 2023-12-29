@@ -33,7 +33,6 @@
     SUBDIR += aslookup
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
-    SUBDIR += asterisk16
     SUBDIR += asterisk18
     SUBDIR += astron
     SUBDIR += avahi

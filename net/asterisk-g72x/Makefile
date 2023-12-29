@@ -11,16 +11,8 @@ WWW=		http://asterisk.hosting.lv/
 
 LIB_DEPENDS=	libbcg729.so:audio/bcg729
 
-FLAVORS=			asterisk18 asterisk16
+FLAVORS=			asterisk18
 FLAVOR?=			${FLAVORS:[1]}
-
-asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_CONFLICTS_INSTALL=	asterisk13-g72x asterisk18-g72x
-asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
-asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
-.if ${FLAVOR} == asterisk16
-CONFIGURE_ARGS+=		--with-asterisk160
-.endif
 
 asterisk18_PKGNAMEPREFIX=	asterisk18-
 asterisk18_CONFLICTS_INSTALL=	asterisk13-g72x asterisk16-g72x

@@ -8235,3 +8235,4 @@ graphics/sage||2023-12-31|Has expired: There has been no release for most of the
 dns/updatedd||2023-12-31|Has expired: Last release in 2006 and upstream is dead. Consider migrating to dns/inadyn, dns/ddclient or dns/godns
 multimedia/ppm2fli||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 www/drupal9||2023-12-31|Has expired: Upstream EOL reaches on 2023-11-01
+net/asterisk16|asterisk18|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-09

@@ -12,7 +12,7 @@ WWW=		https://sourceforge.net/projects/chan-sccp-b/
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	asterisk18 asterisk16
+FLAVORS=	asterisk18
 FLAVOR?=	${FLAVORS:[1]}
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
@@ -39,11 +39,6 @@ PLIST_FILES=	etc/asterisk/sccp.conf.annotated \
 		lib/asterisk/modules/chan_sccp.so \
 		share/asterisk/documentation/thirdparty/chan_sccp-en_US.xml
 
-asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_CONFLICTS_INSTALL=	asterisk13-chan_sccp asterisk18-chan_sccp
-asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
-asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
-
 asterisk18_PKGNAMEPREFIX=	asterisk18-
 asterisk18_CONFLICTS_INSTALL=	asterisk13-chan_sccp asterisk16-chan_sccp
 asterisk18_BUILD_DEPENDS=	asterisk:net/asterisk18
@@ -57,9 +52,7 @@ VIDEO_DESC=			Enable Video Support
 CONFERENCE_CONFIGURE_ENABLE=	conference
 VIDEO_CONFIGURE_ENABLE=		video
 
-.if ${FLAVOR} == asterisk16
-CONFIGURE_ARGS+=		--with-asterisk-version=16
-.elif ${FLAVOR} == asterisk18
+.if ${FLAVOR} == asterisk18
 CONFIGURE_ARGS+=		--with-asterisk-version=18
 .endif
 
