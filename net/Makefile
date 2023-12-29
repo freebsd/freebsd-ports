@@ -1227,7 +1227,6 @@
     SUBDIR += rosenpass
     SUBDIR += rospo
     SUBDIR += routinator
-    SUBDIR += rp-pppoe
     SUBDIR += rpki-client
     SUBDIR += rscsi
     SUBDIR += rsplib
