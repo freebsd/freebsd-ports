@@ -228,7 +228,6 @@
     SUBDIR += atf
     SUBDIR += athens
     SUBDIR += atlantis
-    SUBDIR += atlas-devel
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf-archive
