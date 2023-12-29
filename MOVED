@@ -8226,3 +8226,4 @@ games/OpenDiablo2||2023-12-31|Has expired: Upstream repository has been archived
 graphics/figurine||2023-12-31|Has expired: BROKEN for more than 2 years on all supported versions after the EOL of 12
 editors/xi-term||2023-12-31|Has expired: Frontend depends on deprecated editors/xi-core. No upstream activity.
 net/wmwlmon||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
+audio/mythplugin-mythmusic||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit via multimedia/mythtv
