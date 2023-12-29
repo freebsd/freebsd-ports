@@ -8197,3 +8197,4 @@ emulators/gngeo||2023-12-31|Has expired: BROKEN for more that 2 years after the 
 net/rp-pppoe||2023-12-31|Has expired: Upstream restricting future OS support to Linux. Use net/mpd5 or pppoed instead. https://dianne.skoll.ca/pipermail/rp-pppoe/2023q2/000639.html
 net/spread4||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 net/quiterss||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
+net/ipsvd||2023-12-31|Has expired: bogus assumption of system type widths, likely crash-prone

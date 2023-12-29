@@ -285,7 +285,6 @@
     SUBDIR += ipgrab
     SUBDIR += ipinfo-cli
     SUBDIR += ipsumdump
-    SUBDIR += ipsvd
     SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
