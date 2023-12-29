@@ -881,7 +881,6 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmp
-    SUBDIR += xmradio
     SUBDIR += xoscope
     SUBDIR += xsynth-dssi
     SUBDIR += xuidesigner

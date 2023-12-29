@@ -1,7 +1,0 @@
-xmradio is a radio tuner program for X11 (using the Motif widget set),
-using NetBSD's and FreeBSD's bktr(4) driver.
-
-It also supports Video4Linux because of its design.
-
-You can control an xmradio running on your desktop using some special
-command line options and remote control mechanism.
