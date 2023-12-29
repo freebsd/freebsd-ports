@@ -3,12 +3,15 @@ DISTVERSION=	g20230115
 PORTREVISION=	1
 CATEGORIES=	net-p2p
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK Mastodon Client - Fork of Tootle
 WWW=		https://github.com/GeopJr/Tooth
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Project has been renamed to Tuba. Consider porting to the new project. See https://github.com/GeopJr/Tuba
+EXPIRATION_DATE=	2024-03-29
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		valac:lang/vala
