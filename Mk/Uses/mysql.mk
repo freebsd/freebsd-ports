@@ -90,7 +90,7 @@ WITH_MYSQL_FLAVOUR=	mariadb
 WITH_MYSQL_FLAVOUR=	mysql
 .    endif
 .    if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${_WANT_MYSQL_VER}
-IGNORE=		cannot install: the port wants ${_WANT_MYSQL_FLAVOUR}${_WANT_MYSQL_VER:C/[mw]//}-client and you try to install ${WITH_MYSQL_FLAVOUR}${WITH_MYSQL_VER:C/[mw]//}-client
+IGNORE=		cannot install: the port wants ${_WANT_MYSQL_FLAVOUR}${_WANT_MYSQL_VER:C/[m]//}-client and you try to install ${WITH_MYSQL_FLAVOUR}${WITH_MYSQL_VER:C/[m]//}-client
 .    endif
 MYSQL_VER=	${_WANT_MYSQL_VER}
 .  elif defined(WITH_MYSQL_VER)
@@ -111,7 +111,7 @@ MYSQL_FLAVOUR=     mysql
 
 .  if defined(_MYSQL_VER)
 .    if ${_MYSQL_VER} != ${MYSQL_VER}
-IGNORE=		cannot install: MySQL versions mismatch: ${_MYSQL_FLAVOUR}${_MYSQL_VER:C/[mw]//}-client is installed and wanted version is ${MYSQL_FLAVOUR}${MYSQL_VER:C/[mw]//}-client
+IGNORE=		cannot install: MySQL versions mismatch: ${_MYSQL_FLAVOUR}${_MYSQL_VER:C/[m]//}-client is installed and wanted version is ${MYSQL_FLAVOUR}${MYSQL_VER:C/[m]//}-client
 .    endif
 .  endif
 
@@ -122,9 +122,6 @@ _MYSQL_CLIENT_FLAVOUR=	mariadb
 .    if ${MYSQL_VER:C/m//} >= 105
 _MYSQL_SHLIB=	libmariadb
 .    endif
-.  elif (${MYSQL_VER:C/[0-9]*//} == "w")
-_MYSQL_SERVER_FLAVOUR=	mysqlwsrep
-_MYSQL_CLIENT_FLAVOUR=	mysql
 .  else
 _MYSQL_SERVER_FLAVOUR=	mysql
 _MYSQL_CLIENT_FLAVOUR=	mysql

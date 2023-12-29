@@ -8188,3 +8188,4 @@ comms/openzwave-devel||2023-12-28|Has expired: Upstream no longer maintained, in
 net/net/dpdk-22.11|net/dpdk|2023-12-30|Instead of expiring dpdk move dpdk-22.11 to dpdk
 databases/ateam_mysql57_ldap_auth||2023-12-31|Depends on upstream EOL MySQL 5.7
 databases/mysql-udf||2023-12-31|Has expired: Upstream last update was in 2007
+databases/mysqlwsrep57-server||2023-12-31|Depends on upstream EOL MySQL 5.7
