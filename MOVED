@@ -8215,3 +8215,4 @@ games/springlobby||2023-12-31|Has expired: Depends on expired games/spring
 graphics/libgfx||2023-12-31|Has expired: unmaintained upstream since sep 2005
 devel/cook||2023-12-31|Has expired: Upstream last release was in 2008
 multimedia/omxplayer||2023-12-31|Has expired: Depends on legacy APIs and interfaces, functionality is being in integrated into VLC
+devel/mercator||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.

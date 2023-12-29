@@ -1593,7 +1593,6 @@
     SUBDIR += mdds
     SUBDIR += mdspan
     SUBDIR += menhir
-    SUBDIR += mercator
     SUBDIR += mercurial
     SUBDIR += mergify
     SUBDIR += meson
