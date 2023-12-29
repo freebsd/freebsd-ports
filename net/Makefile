@@ -1542,7 +1542,6 @@
     SUBDIR += tdetect
     SUBDIR += termshark
     SUBDIR += tftpgrab
-    SUBDIR += thcrut
     SUBDIR += throttled
     SUBDIR += tigervnc-server
     SUBDIR += tigervnc-viewer
