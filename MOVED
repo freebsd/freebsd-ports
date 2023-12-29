@@ -8198,3 +8198,4 @@ net/rp-pppoe||2023-12-31|Has expired: Upstream restricting future OS support to 
 net/spread4||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 net/quiterss||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 net/ipsvd||2023-12-31|Has expired: bogus assumption of system type widths, likely crash-prone
+devel/atlas||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
