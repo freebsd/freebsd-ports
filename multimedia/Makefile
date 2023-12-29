@@ -74,7 +74,6 @@
     SUBDIR += gavl
     SUBDIR += gdialog
     SUBDIR += get_iplayer
-    SUBDIR += gmerlin
     SUBDIR += gmmlib
     SUBDIR += gmp-api
     SUBDIR += gmtk
