@@ -7720,7 +7720,6 @@
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += str
-    SUBDIR += strace
     SUBDIR += string_theory
     SUBDIR += stringencoders
     SUBDIR += stuffbin
