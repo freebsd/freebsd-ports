@@ -631,7 +631,6 @@
     SUBDIR += epm
     SUBDIR += eql5
     SUBDIR += eric6
-    SUBDIR += eris
     SUBDIR += erlang-cl
     SUBDIR += erlang-native-compiler
     SUBDIR += erlang-rebar3_hex
