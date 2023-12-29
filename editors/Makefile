@@ -233,7 +233,6 @@
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
     SUBDIR += parinfer-rust
-    SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += picpas
     SUBDIR += pluma
