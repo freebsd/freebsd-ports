@@ -7808,7 +7808,6 @@
     SUBDIR += tllist
     SUBDIR += tlsh
     SUBDIR += tlx
-    SUBDIR += tmake
     SUBDIR += tnt
     SUBDIR += tokei
     SUBDIR += tokio-console

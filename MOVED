@@ -8207,3 +8207,4 @@ devel/eris||2023-12-31|Has expired: There has been no release for most of the Wo
 devel/zanata-platform||2023-12-31|Has expired: Depends on expired java/wildfly10, last release from 2018
 textproc/bsdgrep||2023-12-31|Has expired: Merged into base from 13
 mail/postforward||2023-12-31|Has expired: Obsolete as postsrsd 2.x uses unix sockets instead of tcp
+devel/tmake||2023-12-31|Has expired: Last release in 2004 and dead upstream, superseded by qmake
