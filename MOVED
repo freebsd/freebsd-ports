@@ -8191,3 +8191,4 @@ databases/mysql-udf||2023-12-31|Has expired: Upstream last update was in 2007
 databases/mysqlwsrep57-server||2023-12-31|Depends on upstream EOL MySQL 5.7
 net-mgmt/glpi-plugins-fusioninventory-server||2023-12-31|Has expired: Requires php80 which is set to expire on 2023-11-26
 x11-fonts/fontmatrix||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
+cad/jspice3||2023-12-31|Has expired: BROKEN for more than 2 years on all supported versions after the EOL of 12

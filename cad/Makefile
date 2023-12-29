@@ -55,7 +55,6 @@
     SUBDIR += impact
     SUBDIR += irsim
     SUBDIR += iverilog
-    SUBDIR += jspice3
     SUBDIR += k40-whisperer
     SUBDIR += kicad
     SUBDIR += kicad-devel
