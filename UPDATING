@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231229:
+  AFFECTS: users of databases/tarantool
+  AUTHOR: arrowd@FreeBSD.org
+
+  A new major version of the tarantool has been released.
+
+  databases/tarantool renamed to databases/tarantool2.
+
+  2.11 is an LTS version and will be supported for a while.
+
 20231125:
   AFFECTS: users of lang/php81
   AUTHOR: bofh@FreeBSD.org

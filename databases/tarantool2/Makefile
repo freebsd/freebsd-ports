@@ -2,6 +2,7 @@ PORTNAME=	tarantool
 PORTVERSION=	2.11.2
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
+PKGNAMESUFFIX?=	2
 
 MAINTAINER=	balaev@tarantool.org
 COMMENT=	NoSQL database running in a Lua application server
