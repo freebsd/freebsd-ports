@@ -24,6 +24,7 @@
     SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense
+    SUBDIR += fabric
     SUBDIR += fava
     SUBDIR += fixc
     SUBDIR += frontaccounting
