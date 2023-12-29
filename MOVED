@@ -8205,3 +8205,4 @@ www/varnish6|www/varnish7|2023-12-31|Has expired: Unsupported version upstream, 
 net-im/teamwords||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 devel/eris||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
 devel/zanata-platform||2023-12-31|Has expired: Depends on expired java/wildfly10, last release from 2018
+textproc/bsdgrep||2023-12-31|Has expired: Merged into base from 13
