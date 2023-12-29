@@ -1191,7 +1191,6 @@
     SUBDIR += qt6-networkauth
     SUBDIR += quagga
     SUBDIR += quiche
-    SUBDIR += quiterss
     SUBDIR += quoted
     SUBDIR += rabbiteer
     SUBDIR += rabbitmq
