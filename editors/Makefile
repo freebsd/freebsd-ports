@@ -294,7 +294,6 @@
     SUBDIR += wxhexeditor
     SUBDIR += xcoral
     SUBDIR += xed
-    SUBDIR += xi-core
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yudit
