@@ -121,7 +121,6 @@
     SUBDIR += ripes
     SUBDIR += riscv-isa-sim
     SUBDIR += rpcs3
-    SUBDIR += rtc
     SUBDIR += rubygem-fission
     SUBDIR += sameboy
     SUBDIR += simh
