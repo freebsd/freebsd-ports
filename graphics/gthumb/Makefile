@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/gthumb/-/commit/
 PATCHFILES=	2133520496afd179702953a5d07aa99b5209f9cf.patch:-p1 #Fix build with libraw >= 0.21.0
+PATCHFILES+=	306d0eeca5ef.patch:-p1 # https://gitlab.gnome.org/GNOME/gthumb/-/issues/306
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME environment
