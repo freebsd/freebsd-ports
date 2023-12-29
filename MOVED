@@ -8193,3 +8193,4 @@ net-mgmt/glpi-plugins-fusioninventory-server||2023-12-31|Has expired: Requires p
 x11-fonts/fontmatrix||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 cad/jspice3||2023-12-31|Has expired: BROKEN for more than 2 years on all supported versions after the EOL of 12
 emulators/rtc||2023-12-31|Has expired: Driver doesn't actually work with current FreeBSD versions
+emulators/gngeo||2023-12-31|Has expired: BROKEN for more that 2 years after the EOL of 12

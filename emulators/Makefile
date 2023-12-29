@@ -42,7 +42,6 @@
     SUBDIR += gbe
     SUBDIR += gens
     SUBDIR += gngb
-    SUBDIR += gngeo
     SUBDIR += gxemul
     SUBDIR += hatari
     SUBDIR += hercules
