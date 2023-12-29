@@ -1,6 +1,6 @@
---- cf/feature/sts.m4.orig	2021-06-08 04:03:56.000000000 +0900
-+++ cf/feature/sts.m4	2022-02-24 21:30:48.072162000 +0900
-@@ -15,5 +15,5 @@
+--- cf/feature/sts.m4.orig	2023-02-09 18:24:38 UTC
++++ cf/feature/sts.m4
+@@ -15,5 +15,5 @@ ifelse(_ARG2_,`NO_SAN_TST',`',`define(`_STS_SAN', `1')
  LOCAL_CONFIG
  O StrictTransportSecurity=true
  ifelse(_ARG2_,`NO_SAN_TST',`',`O SetCertAltnames=true')
