@@ -1,6 +1,6 @@
 PORTNAME=	haproxy
 DISTVERSION=	2.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/2.8/src/
 
@@ -63,6 +63,14 @@ LUA_MAKE_ARGS=		USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NA
 OPTIONS_DEFAULT+=	LUA
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:M*quictls}
+OPENSSL_MAKE_ARGS+=	USE_QUIC=1
+.else
+OPENSSL_MAKE_ARGS+=	USE_QUIC=1 USE_QUIC_OPENSSL_COMPAT=1
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/admin/halog/halog ${STAGEDIR}${PREFIX}/sbin/
@@ -72,4 +80,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
