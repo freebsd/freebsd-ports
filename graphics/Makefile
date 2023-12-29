@@ -461,7 +461,6 @@
     SUBDIR += libfpx
     SUBDIR += libfreehand
     SUBDIR += libgeotiff
-    SUBDIR += libgfx
     SUBDIR += libgltext
     SUBDIR += libgltf
     SUBDIR += libglvnd
