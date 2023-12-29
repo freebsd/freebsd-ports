@@ -1464,7 +1464,6 @@
     SUBDIR += sing-box
     SUBDIR += siproxd
     SUBDIR += sipsak
-    SUBDIR += skstream
     SUBDIR += sl2tps
     SUBDIR += slackcat
     SUBDIR += slurm

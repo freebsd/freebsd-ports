@@ -8229,3 +8229,4 @@ net/wmwlmon||2023-12-31|Has expired: BROKEN on all supported versions after the 
 audio/mythplugin-mythmusic||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit via multimedia/mythtv
 devel/strace||2023-12-31|Has expired: BROKEN on all supported versions after EOL of 12
 audio/tuneradio||2023-12-31|Has expired: Requires defunct bktr
+net/skstream||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
