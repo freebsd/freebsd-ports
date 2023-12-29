@@ -8202,3 +8202,4 @@ devel/atlas||2023-12-31|Has expired: There has been no release for most of the W
 net-im/gitterdone||2023-12-31|Has expired: Upstream has gone away
 databases/pgpool-II-40||2023-12-31|Has expired: Upstream EOL reaches on 2023-12-31
 www/varnish6|www/varnish7|2023-12-31|Has expired: Unsupported version upstream, consider migrating to www/varnish7
+net-im/teamwords||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
