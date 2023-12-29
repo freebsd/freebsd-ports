@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.3
+DISTVERSION=	0.17.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -82,7 +82,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		itoa-1.0.9 \
 		jobserver-0.1.22 \
 		js-sys-0.3.64 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		libgit2-sys-0.16.1+1.7.1 \
 		libz-sys-1.1.2 \
 		line-wrap-0.1.1 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		num-traits-0.2.14 \
 		num_cpus-1.16.0 \
 		number_prefix-0.4.0 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		openssl-src-111.26.0+1.1.1u \
 		openssl-sys-0.9.61 \
