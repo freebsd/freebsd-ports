@@ -1,5 +1,0 @@
-OpenDiablo2 is an ARPG game engine in the same vein of the 2000's
-games, and supports playing Diablo 2. The engine is written in
-golang and is cross platform.
-
-See also: https://github.com/OpenDiablo2/OpenDiablo2

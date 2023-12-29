@@ -8222,3 +8222,4 @@ mail/qsheff||2023-12-31|Has expired: BROKEN on all supported versions after the 
 textproc/py-googletrans||2023-12-31|Has expired: Umaintained for over 3 years, depends on old www/py-httpx013
 multimedia/smtube||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 net/thcrut||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
+games/OpenDiablo2||2023-12-31|Has expired: Upstream repository has been archived on Dec 20, 2021
