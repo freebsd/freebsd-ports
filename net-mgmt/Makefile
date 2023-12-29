@@ -74,7 +74,6 @@
     SUBDIR += flowd
     SUBDIR += flowviewer
     SUBDIR += fprobe
-    SUBDIR += glpi-plugins-fusioninventory-server
     SUBDIR += gnu-ipcalc
     SUBDIR += gping
     SUBDIR += grepcidr
