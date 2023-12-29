@@ -1,4 +1,4 @@
---- kernel/freebsd/contigmem/contigmem.c.orig	2023-05-19 13:59:05 UTC
+--- kernel/freebsd/contigmem/contigmem.c.orig	2023-05-20 00:00:38 UTC
 +++ kernel/freebsd/contigmem/contigmem.c
 @@ -111,7 +111,7 @@ static int
  };

@@ -1,4 +1,4 @@
---- kernel/freebsd/nic_uio/nic_uio.c.orig	2022-07-26 18:39:52 UTC
+--- kernel/freebsd/nic_uio/nic_uio.c.orig	2022-07-26 18:52:05 UTC
 +++ kernel/freebsd/nic_uio/nic_uio.c
 @@ -78,10 +78,14 @@ struct pci_bdf {
  	uint32_t function;

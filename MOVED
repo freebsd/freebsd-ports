@@ -8185,3 +8185,4 @@ www/yanopaste||2023-12-18|Has expired: Last upstream release was in 2011
 www/py-yt-dlp-devel|www/py-yt-dlp|2023-12-22|Remove the -devel suffix
 math/octave-forge-statistics-bootstrap|math/octave-forge-statistics-resampling|2023-12-24|Name change upstream
 comms/openzwave-devel||2023-12-28|Has expired: Upstream no longer maintained, indicates to move to openzwave JS instead
+net/net/dpdk-22.11|net/dpdk|2023-12-30|Instead of expiring dpdk move dpdk-22.11 to dpdk
