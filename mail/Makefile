@@ -550,7 +550,6 @@
     SUBDIR += qmhandle
     SUBDIR += qpopper
     SUBDIR += qsf
-    SUBDIR += qsheff
     SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += rainloop

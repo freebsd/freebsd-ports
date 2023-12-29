@@ -8218,3 +8218,4 @@ multimedia/omxplayer||2023-12-31|Has expired: Depends on legacy APIs and interfa
 devel/mercator||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
 comms/sdr-wspr||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 devel/atlas-devel||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+mail/qsheff||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
