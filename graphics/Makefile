@@ -1076,7 +1076,6 @@
     SUBDIR += s10sh
     SUBDIR += s2
     SUBDIR += s2tc
-    SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sampleicc
     SUBDIR += sane-airscan
