@@ -351,7 +351,6 @@
     SUBDIR += smplayer
     SUBDIR += smplayer-skins
     SUBDIR += smplayer-themes
-    SUBDIR += smtube
     SUBDIR += snapcast
     SUBDIR += spook
     SUBDIR += streamlink

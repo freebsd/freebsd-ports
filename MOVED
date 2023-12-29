@@ -8220,3 +8220,4 @@ comms/sdr-wspr||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 devel/atlas-devel||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
 mail/qsheff||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 textproc/py-googletrans||2023-12-31|Has expired: Umaintained for over 3 years, depends on old www/py-httpx013
+multimedia/smtube||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
