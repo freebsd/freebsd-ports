@@ -293,7 +293,6 @@
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
     SUBDIR += poe
-    SUBDIR += ppm2fli
     SUBDIR += projectx
     SUBDIR += ptx-kmod
     SUBDIR += pwcbsd
