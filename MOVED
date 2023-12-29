@@ -8199,3 +8199,4 @@ net/spread4||2023-12-31|Has expired: BROKEN on all supported versions after the 
 net/quiterss||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 net/ipsvd||2023-12-31|Has expired: bogus assumption of system type widths, likely crash-prone
 devel/atlas||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
+net-im/gitterdone||2023-12-31|Has expired: Upstream has gone away

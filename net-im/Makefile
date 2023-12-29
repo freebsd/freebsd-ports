@@ -21,7 +21,6 @@
     SUBDIR += fractal
     SUBDIR += freetalk
     SUBDIR += gajim
-    SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += gomuks
     SUBDIR += gotktrix
