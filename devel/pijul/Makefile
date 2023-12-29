@@ -1,5 +1,5 @@
 PORTNAME=	pijul
-PORTVERSION=	1.0.0.b7
+PORTVERSION=	1.0.0.b8
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cargo ssl
 CARGO_INSTALL=	no
-CARGO_CRATES=	${PORTNAME}-1.0.0-beta.7 \
+CARGO_CRATES=	${PORTNAME}-1.0.0-beta.8 \
 		addr2line-0.21.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
@@ -179,7 +179,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.149 \
 		libgit2-sys-0.12.26+1.3.0 \
-		libpijul-1.0.0-beta.7 \
+		libpijul-1.0.0-beta.9 \
 		libsodium-sys-0.2.7 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.12 \
@@ -394,7 +394,6 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.7 \
 		zvariant-3.15.0 \
 		zvariant_derive-3.15.0 \
 		zvariant_utils-1.0.1
-
 PLIST_FILES=	bin/pijul
 
 .include <bsd.port.options.mk>
@@ -404,7 +403,7 @@ LTO_UNSAFE=	yes
 .endif
 
 post-patch:
-	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-beta.7/* ${WRKSRC}/
+	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-beta.8/* ${WRKSRC}/
 
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/pijul ${STAGEDIR}${PREFIX}/bin/pijul
