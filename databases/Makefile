@@ -645,14 +645,6 @@
     SUBDIR += postgresql-tds_fdw
     SUBDIR += postgresql-wal2json
     SUBDIR += postgresql-zhparser
-    SUBDIR += postgresql11-client
-    SUBDIR += postgresql11-contrib
-    SUBDIR += postgresql11-docs
-    SUBDIR += postgresql11-pgtcl
-    SUBDIR += postgresql11-plperl
-    SUBDIR += postgresql11-plpython
-    SUBDIR += postgresql11-pltcl
-    SUBDIR += postgresql11-server
     SUBDIR += postgresql12-client
     SUBDIR += postgresql12-contrib
     SUBDIR += postgresql12-docs
