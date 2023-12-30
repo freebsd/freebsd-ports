@@ -8287,3 +8287,4 @@ databases/mysql57-server|mysql80-server|2023-12-31|Has expired: Upstream support
 databases/mysql57-client|mysql80-client|2023-12-31|Has expired: Upstream support ended in October 2019
 www/py-dj41-django-filter|www/py-dj42-django-filter|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-debug-toolbar|www/py-dj42-django-debug-toolbar|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/kf5-kdewebkit||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit

@@ -425,7 +425,7 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "x11/mate-panel" ]; then warn "you need USE_MATE+=panel"
 	elif [ ${pkg} = "sysutils/mate-polkit" ]; then warn "you need USE_MATE+=polkit"
 	# KDE
-	# grep -B1 _LIB= Mk/Uses/kde.mk | grep _PORT=|sed -e 's/^kde-\(.*\)_PORT=[[:space:]]*\([^[:space:]]*\).*/elif [ ${pkg} = "\2" ]; then warn "you need to use USE_KDE+=\1"/' 
+	# grep -B1 _LIB= Mk/Uses/kde.mk | grep _PORT=|sed -e 's/^kde-\(.*\)_PORT=[[:space:]]*\([^[:space:]]*\).*/elif [ ${pkg} = "\2" ]; then warn "you need to use USE_KDE+=\1"/'
 	# KDE Applications
 	elif [ ${pkg} = "net/akonadi-contacts" ]; then warn "you need to use USE_KDE+=akonadicontacts"
 	elif [ ${pkg} = "deskutils/akonadi-import-wizard" ]; then warn "you need to use USE_KDE+=akonadiimportwizard"
@@ -496,7 +496,6 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "x11/kf5-kded" ]; then warn "you need to use USE_KDE+=kded"
 	elif [ ${pkg} = "x11/kf5-kdelibs4support" ]; then warn "you need to use USE_KDE+=kdelibs4support"
 	elif [ ${pkg} = "security/kf5-kdesu" ]; then warn "you need to use USE_KDE+=kdesu"
-	elif [ ${pkg} = "www/kf5-kdewebkit" ]; then warn "you need to use USE_KDE+=kdewebkit"
 	elif [ ${pkg} = "www/kf5-khtml" ]; then warn "you need to use USE_KDE+=khtml"
 	elif [ ${pkg} = "devel/kf5-kio" ]; then warn "you need to use USE_KDE+=kio"
 	elif [ ${pkg} = "lang/kf5-kross" ]; then warn "you need to use USE_KDE+=kross"
@@ -885,24 +884,24 @@ gemfiledeps()
 	if [ -z "$USE_RUBY" ]; then
 		return 0
 	fi
-	
+
 	# skip check if port is a rubygem-* one; they have no Gemfiles
 	if [ "${PKGBASE%%-*}" = "rubygem" ]; then
 		return 0
 	fi
-	
+
 	# advise install of bundler if its not present for check
 	if ! type bundle > /dev/null 2>&1; then
 		notice "Please install sysutils/rubygem-bundler for additional Gemfile-checks"
 		return 0
 	fi
- 
+
 	# locate the Gemfile(s)
 	while read -r f; do
-	
+
 		# no results presents a blank line from heredoc
 		[ -z "$f" ] && continue
-	
+
 		# if there is no Gemfile everything is fine - stop here
 		[ ! -f "$f" ] && return 0;
 
@@ -912,7 +911,7 @@ gemfiledeps()
 		if ! bundle check --dry-run --gemfile $f > /dev/null 2>&1; then
 			warn "Dependencies defined in ${f} are not satisfied"
 		fi
-      
+
 	done <<-EOF
 		$(find ${STAGEDIR} -name Gemfile)
 		EOF
