@@ -1,19 +1,28 @@
 PORTNAME=	torque
 PORTVERSION=	2.5.13
 PORTREVISION=	3
+#DISTVERSIONPREFIX=	v
+#DISTVERSION=	6.1.3h5
 PORTEPOCH=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=1643/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source distributed computing resource manager based on PBS
-WWW=		http://www.adaptivecomputing.com/products/open-source/torque/
+WWW=		https://adaptivecomputing.com/cherry-services/torque-resource-manager/
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/PBS_License_2.5.txt
+
+DEPRECATED=	unfetchable, upstream no longer open source
+EXPIRATION_DATE=	2024-06-30
 
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_riscv64=		fails to link: missing sbrk
 
-DEPRECATED=	unfetchable, upstream no longer open source
-EXPIRATION_DATE=	2023-12-31
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	adaptivecomputing
+#GH_TAGNAME=	4decc71
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 USES=		gmake perl5 libtool
