@@ -1498,7 +1498,6 @@
     SUBDIR += py-dj41-django-filter
     SUBDIR += py-dj41-django-js-asset
     SUBDIR += py-dj41-django-mptt
-    SUBDIR += py-dj41-django-prometheus
     SUBDIR += py-dj41-django-timezone-field
     SUBDIR += py-dj41-djangorestframework
     SUBDIR += py-dj41-drf-spectacular-sidecar

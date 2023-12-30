@@ -8277,3 +8277,4 @@ sysutils/afbinit||2023-12-31|Has expired: sparc64 architecture is deprecated in 
 x11-drivers/xf86-video-sunffb||2023-12-31|Removed
 www/py-dj41-django-rich|www/py-dj42-django-rich|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-redis|www/py-dj42-django-redis|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj41-django-prometheus|www/py-dj42-django-prometheus|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
