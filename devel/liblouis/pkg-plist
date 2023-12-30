@@ -149,6 +149,7 @@
 %%DATADIR%%/tables/fa-ir-g1.utb
 %%DATADIR%%/tables/fi-fi-8dot.ctb
 %%DATADIR%%/tables/fi.utb
+%%DATADIR%%/tables/fil-g2.ctb
 %%DATADIR%%/tables/fr-bfu-comp68.cti
 %%DATADIR%%/tables/fr-bfu-comp6.utb
 %%DATADIR%%/tables/fr-bfu-comp8.utb
@@ -284,7 +285,9 @@
 %%DATADIR%%/tables/nl-NL-g0.utb
 %%DATADIR%%/tables/nl-chardefs.uti
 %%DATADIR%%/tables/nl-comp8.utb
+%%DATADIR%%/tables/nl-print.dis
 %%DATADIR%%/tables/nl.tbl
+%%DATADIR%%/tables/nl-unicode.dis
 %%DATADIR%%/tables/no-no-8dot-fallback-6dot-g0.utb
 %%DATADIR%%/tables/no-no-8dot.utb
 %%DATADIR%%/tables/no-no-braillo-047-01.dis
@@ -318,6 +321,7 @@
 %%DATADIR%%/tables/pu-in-g1.utb
 %%DATADIR%%/tables/ro.ctb
 %%DATADIR%%/tables/ro.tbl
+%%DATADIR%%/tables/ro-g0.utb
 %%DATADIR%%/tables/ru-brf.dis
 %%DATADIR%%/tables/ru-compbrl.ctb
 %%DATADIR%%/tables/ru.ctb
@@ -367,6 +371,8 @@
 %%DATADIR%%/tables/telugu.cti
 %%DATADIR%%/tables/te.tbl
 %%DATADIR%%/tables/text_nabcc.dis
+%%DATADIR%%/tables/th-comp8-backward.utb
+%%DATADIR%%/tables/th-g0.utb
 %%DATADIR%%/tables/tr.ctb
 %%DATADIR%%/tables/tr-g1.ctb
 %%DATADIR%%/tables/tr-g2.ctb
@@ -436,7 +442,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.13
+lib/liblouis.so.20.0.16
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
