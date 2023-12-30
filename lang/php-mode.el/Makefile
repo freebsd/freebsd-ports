@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-php
 GH_PROJECT=	${PORTNAME:S/.el$//}
 
+EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox # Eager macro-expansion failure: (void-variable flymake-allowed-file-name-masks)
+
 NO_ARCH=	yes
 
 LISP_FILES=	lisp/php-align.el \
