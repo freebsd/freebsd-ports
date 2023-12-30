@@ -1,0 +1,21 @@
+The "xeen" engine was originally created as a main engine and was built by
+default with the 2.5.0 release.
+
+The aforementioned engine has been moved as a sub-engine with the 2.8.0 release
+to the new main engine "mm", which is currently not being built by default for
+some reasons.
+
+Expose the "xeen" engine again, together with the new sub-engine "mm1", to
+avoid surprises, e.g. games that have already been configured can no longer be
+loaded with its savegames, for users that use the official FreeBSD
+pkg repositories.
+
+--- engines/mm/configure.engine.orig	2023-12-29 16:43:55 UTC
++++ engines/mm/configure.engine
+@@ -1,5 +1,5 @@
+ # This file is included from the main "configure" script
+ # add_engine [name] [desc] [build-by-default] [subengines] [base games] [deps]
+-add_engine mm "Might and Magic" no "mm1 xeen"
++add_engine mm "Might and Magic" yes "mm1 xeen"
+ add_engine mm1 "Might and Magic 1" yes
+ add_engine xeen "Might and Magic Xeen" yes
