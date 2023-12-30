@@ -10,9 +10,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Simple Emacs-Perl Interface
 WWW=		https://metacpan.org/release/Sepia
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		fails to build
-.endif
+LICENSE=	NONE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Size>=0:devel/p5-Devel-Size \
@@ -26,8 +24,8 @@ RUN_DEPENDS=	p5-Devel-Size>=0:devel/p5-Devel-Size \
 USES=		emacs gmake makeinfo perl5
 USE_PERL5=	configure
 
-INFO=	sepia
-
 CONFIGURE_ARGS+=	--emacs ${EMACS_CMD} --lisp ${PREFIX}/${EMACS_SITE_LISPDIR}/sepia --info ${PREFIX}/${INFO_PATH}
+
+INFO=	sepia
 
 .include <bsd.port.mk>
