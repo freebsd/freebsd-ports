@@ -8246,3 +8246,4 @@ graphics/xfpovray||2023-12-31|Has expired: BROKEN for more than 2 years on all s
 audio/mp3splt-gtk||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
 audio/mp3info||2023-12-31|Has expired: Last release in 2006 and lacks support for ID3v2
 comms/uartlirc||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
+comms/mlan3||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
