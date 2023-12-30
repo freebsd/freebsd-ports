@@ -3,6 +3,11 @@ Add security patches to this file.
 Addresses the following security issues:
 - CVE-2023-5997
 - CVE-2023-6112
+- CVE-2023-6345
+- CVE-2023-6346
+- CVE-2023-6347
+- CVE-2023-6510
+- Security bug 1485266
 
 From 669506a53474e3d7637666d3c53f6101fb94d96f Mon Sep 17 00:00:00 2001
 From: Nidhi Jaju <nidhijaju@chromium.org>
@@ -101,3 +106,550 @@ index 0e8f73e7d18..0bd83dadec2 100644
      return;
    }
  
+From d997551c21008fb8d9f5fe9ffe5506af6273ea49 Mon Sep 17 00:00:00 2001
+From: John Stiles <johnstiles@google.com>
+Date: Fri, 24 Nov 2023 09:40:11 -0500
+Subject: [PATCH] [Backport] CVE-2023-6345: Integer overflow in Skia (1/2)
+
+Cherry-pick of patch originally reviewed on
+https://skia-review.googlesource.com/c/skia/+/782936:
+Avoid combining extremely large meshes.
+
+Bug: chromium:1505053
+Change-Id: I42f2ff872bbf054686ec7af0cc85ff63055fcfbf
+Reviewed-on: https://skia-review.googlesource.com/c/skia/+/782936
+Commit-Queue: Michael Ludwig <michaelludwig@google.com>
+Reviewed-by: Michael Ludwig <michaelludwig@google.com>
+Auto-Submit: John Stiles <johnstiles@google.com>
+(cherry picked from commit 6169a1fabae1743709bc9641ad43fcbb6a4f62e1)
+Reviewed-on: https://skia-review.googlesource.com/c/skia/+/783296
+Reviewed-by: John Stiles <johnstiles@google.com>
+Commit-Queue: Brian Osman <brianosman@google.com>
+Auto-Submit: Brian Osman <brianosman@google.com>
+Commit-Queue: John Stiles <johnstiles@google.com>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/522251
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp b/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp
+index 9b38c0bdb61..4dc885a7431 100644
+--- src/3rdparty/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp.orig
++++ src/3rdparty/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp
+@@ -998,10 +998,13 @@ GrOp::CombineResult MeshOp::onCombineIfPossible(GrOp* t, SkArenaAlloc*, const Gr
+         return CombineResult::kCannotCombine;
+     }
+ 
++    if (fVertexCount > INT32_MAX - that->fVertexCount) {
++        return CombineResult::kCannotCombine;
++    }
+     if (SkToBool(fIndexCount) != SkToBool(that->fIndexCount)) {
+         return CombineResult::kCannotCombine;
+     }
+-    if (SkToBool(fIndexCount) && fVertexCount + that->fVertexCount > SkToInt(UINT16_MAX)) {
++    if (SkToBool(fIndexCount) && fVertexCount > UINT16_MAX - that->fVertexCount) {
+         return CombineResult::kCannotCombine;
+     }
+ 
+From 297e07a3f4008da601f6190e65c5c0368a7a7997 Mon Sep 17 00:00:00 2001
+From: John Stiles <johnstiles@google.com>
+Date: Sat, 25 Nov 2023 22:41:31 -0500
+Subject: [PATCH] [Backport] CVE-2023-6345: Integer overflow in Skia (2/2)
+
+Cherry-pick of patch originally reviewed on
+https://skia-review.googlesource.com/c/skia/+/783036:
+Use SkToInt to avoid warning in Flutter roll.
+
+The Flutter roll was failing due to -Wsign-compare.
+
+Bug: chromium:1505053
+Change-Id: Id12876f6f97682466f19b56cfa562366380f27cb
+Reviewed-on: https://skia-review.googlesource.com/c/skia/+/783036
+Auto-Submit: John Stiles <johnstiles@google.com>
+Commit-Queue: Brian Osman <brianosman@google.com>
+Reviewed-by: Brian Osman <brianosman@google.com>
+(cherry picked from commit 0eea0b277d7d35e4c2612646d7dfe507341e337e)
+Reviewed-on: https://skia-review.googlesource.com/c/skia/+/782579
+Commit-Queue: John Stiles <johnstiles@google.com>
+Reviewed-by: John Stiles <johnstiles@google.com>
+Auto-Submit: Brian Osman <brianosman@google.com>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/522252
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp b/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp
+index 4dc885a7431..d594abec6dd 100644
+--- src/3rdparty/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp.orig
++++ src/3rdparty/chromium/third_party/skia/src/gpu/ganesh/ops/DrawMeshOp.cpp
+@@ -1004,7 +1004,7 @@ GrOp::CombineResult MeshOp::onCombineIfPossible(GrOp* t, SkArenaAlloc*, const Gr
+     if (SkToBool(fIndexCount) != SkToBool(that->fIndexCount)) {
+         return CombineResult::kCannotCombine;
+     }
+-    if (SkToBool(fIndexCount) && fVertexCount > UINT16_MAX - that->fVertexCount) {
++    if (SkToBool(fIndexCount) && fVertexCount > SkToInt(UINT16_MAX) - that->fVertexCount) {
+         return CombineResult::kCannotCombine;
+     }
+ 
+From 41b5dbaa659003d91ebf1b1018201d3cb76d4486 Mon Sep 17 00:00:00 2001
+From: Ken Rockot <rockot@google.com>
+Date: Thu, 16 Nov 2023 23:23:22 +0000
+Subject: [PATCH] [Backport] CVE-2023-6347: Use after free in Mojo
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5038080:
+Reland: Fix IPC Channel pipe teardown
+
+This is a reland with the new test temporarily disabled on Android
+until it can run without disrupting other tests.
+
+(cherry picked from commit cd4c1f165c16c6d8161b5372ef7f61c715e01a42)
+
+Fixed: 1494461
+Change-Id: If1d83c2dce62020f78dd50abc460973759002a1a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5015115
+Commit-Queue: Ken Rockot <rockot@google.com>
+Reviewed-by: Robert Sesek <rsesek@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1221953}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5038080
+Auto-Submit: Ken Rockot <rockot@google.com>
+Commit-Queue: Daniel Cheng <dcheng@chromium.org>
+Reviewed-by: Daniel Cheng <dcheng@chromium.org>
+Cr-Commit-Position: refs/branch-heads/6045@{#1383}
+Cr-Branched-From: 905e8bdd32d891451d94d1ec71682e989da2b0a1-refs/heads/main@{#1204232}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/522253
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/ipc/ipc_mojo_bootstrap.cc | 43 ++++++++++++++++++++++--------
+ 1 file changed, 32 insertions(+), 11 deletions(-)
+
+diff --git a/chromium/ipc/ipc_mojo_bootstrap.cc b/chromium/ipc/ipc_mojo_bootstrap.cc
+index b9b5ec389aa..5391400cdb0 100644
+--- src/3rdparty/chromium/ipc/ipc_mojo_bootstrap.cc.orig
++++ src/3rdparty/chromium/ipc/ipc_mojo_bootstrap.cc
+@@ -793,13 +793,12 @@ class ChannelAssociatedGroupController
+         // handle.
+         DCHECK(!endpoint->client());
+         DCHECK(endpoint->peer_closed());
+-        MarkClosedAndMaybeRemove(endpoint);
++        MarkClosed(endpoint);
+       } else {
+-        MarkPeerClosedAndMaybeRemove(endpoint);
++        MarkPeerClosed(endpoint);
+       }
+     }
+-
+-    DCHECK(endpoints_.empty());
++    endpoints_.clear();
+ 
+     GetMemoryDumpProvider().RemoveController(this);
+   }
+@@ -844,15 +843,19 @@ class ChannelAssociatedGroupController
+     base::AutoLock locker(lock_);
+     encountered_error_ = true;
+ 
++    std::vector<uint32_t> endpoints_to_remove;
+     std::vector<scoped_refptr<Endpoint>> endpoints_to_notify;
+     for (auto iter = endpoints_.begin(); iter != endpoints_.end();) {
+       Endpoint* endpoint = iter->second.get();
+       ++iter;
+ 
+-      if (endpoint->client())
++      if (endpoint->client()) {
+         endpoints_to_notify.push_back(endpoint);
++      }
+ 
+-      MarkPeerClosedAndMaybeRemove(endpoint);
++      if (MarkPeerClosed(endpoint)) {
++        endpoints_to_remove.push_back(endpoint->id());
++      }
+     }
+ 
+     for (auto& endpoint : endpoints_to_notify) {
+@@ -861,6 +864,10 @@ class ChannelAssociatedGroupController
+       if (endpoint->client())
+         NotifyEndpointOfError(endpoint.get(), false /* force_async */);
+     }
++
++    for (uint32_t id : endpoints_to_remove) {
++      endpoints_.erase(id);
++    }
+   }
+ 
+   void NotifyEndpointOfError(Endpoint* endpoint, bool force_async) {
+@@ -899,19 +906,33 @@ class ChannelAssociatedGroupController
+     NotifyEndpointOfError(endpoint, false /* force_async */);
+   }
+ 
+-  void MarkClosedAndMaybeRemove(Endpoint* endpoint) {
++  // Marks `endpoint` as closed and returns true if and only if its peer was
++  // also already closed.
++  bool MarkClosed(Endpoint* endpoint) {
+     lock_.AssertAcquired();
+     endpoint->set_closed();
+-    if (endpoint->closed() && endpoint->peer_closed())
+-      endpoints_.erase(endpoint->id());
++    return endpoint->peer_closed();
+   }
+ 
+-  void MarkPeerClosedAndMaybeRemove(Endpoint* endpoint) {
++  // Marks `endpoint` as having a closed peer and returns true if and only if
++  // `endpoint` itself was also already closed.
++  bool MarkPeerClosed(Endpoint* endpoint) {
+     lock_.AssertAcquired();
+     endpoint->set_peer_closed();
+     endpoint->SignalSyncMessageEvent();
+-    if (endpoint->closed() && endpoint->peer_closed())
++    return endpoint->closed();
++  }
++
++  void MarkClosedAndMaybeRemove(Endpoint* endpoint) {
++    if (MarkClosed(endpoint)) {
+       endpoints_.erase(endpoint->id());
++    }
++  }
++
++  void MarkPeerClosedAndMaybeRemove(Endpoint* endpoint) {
++    if (MarkPeerClosed(endpoint)) {
++      endpoints_.erase(endpoint->id());
++    }
+   }
+ 
+   Endpoint* FindOrInsertEndpoint(mojo::InterfaceId id, bool* inserted) {
+From 148f39658c9977dcdfe8a51e212ce936f246dcfc Mon Sep 17 00:00:00 2001
+From: Alvin Ji <alvinji@chromium.org>
+Date: Fri, 17 Nov 2023 00:56:14 +0000
+Subject: [PATCH] [Backport] CVE-2023-6346: Use after free in WebAudio
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5037917:
+Check context status before creating new platform destination
+
+RealtimeAudioDestinationHandler::SetSinkDescriptor creates new
+destination platofrm without validating context status. This can
+reactivate the audio rendering thread when AudioContext is already in
+closed state.
+
+(cherry picked from commit 0f9bb9a1083865d4e51059e588f27f729ab32753)
+
+Bug: 1500856
+Change-Id: If1fd531324b56fcdc38d315fd84d4cec577a14bc
+Test: Locally confirmed with ASAN
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5021160
+Reviewed-by: Alvin Ji <alvinji@chromium.org>
+Commit-Queue: Alvin Ji <alvinji@chromium.org>
+Reviewed-by: Hongchan Choi <hongchan@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1223168}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5037917
+Bot-Commit: Rubber Stamper <rubber-stamper@appspot.gserviceaccount.com>
+Commit-Queue: Hongchan Choi <hongchan@chromium.org>
+Cr-Commit-Position: refs/branch-heads/5993@{#1619}
+Cr-Branched-From: 511350718e646be62331ae9d7213d10ec320d514-refs/heads/main@{#1192594}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/522254
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../webaudio/realtime_audio_destination_handler.cc    | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/chromium/third_party/blink/renderer/modules/webaudio/realtime_audio_destination_handler.cc b/chromium/third_party/blink/renderer/modules/webaudio/realtime_audio_destination_handler.cc
+index 8cc1d9dadcb..0cde579951a 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/realtime_audio_destination_handler.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/realtime_audio_destination_handler.cc
+@@ -398,6 +398,17 @@ void RealtimeAudioDestinationHandler::SetSinkDescriptor(
+                   MaxChannelCount(), GetCallbackBufferSize()));
+   DCHECK(IsMainThread());
+ 
++  // After the context is closed, `SetSinkDescriptor` request will be ignored
++  // because it will trigger the recreation of the platform destination. This in
++  // turn can activate the audio rendering thread.
++  AudioContext* context = static_cast<AudioContext*>(Context());
++  CHECK(context);
++  if (context->ContextState() == AudioContext::kClosed) {
++    std::move(callback).Run(
++        media::OutputDeviceStatus::OUTPUT_DEVICE_STATUS_ERROR_INTERNAL);
++    return;
++  }
++
+   // Create a pending AudioDestination to replace the current one.
+   scoped_refptr<AudioDestination> pending_platform_destination =
+       AudioDestination::Create(
+From db834bc30340727483633a92bbf27eb60839a56f Mon Sep 17 00:00:00 2001
+From: Jordan Bayles <jophba@chromium.org>
+Date: Fri, 6 Oct 2023 23:50:59 +0000
+Subject: [PATCH] [Backport] CVE-2023-6510: Use after free in Media Capture
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/4908770:
+Fix UaF in WebContentsFrameTracker
+
+This patch fixes a use-after-free by moving to a base::WeakPtr
+instead of a raw_ptr. Looking at the callstack in the referenced bug, what is clearly happening is that the frame tracker is deleted AFTER the capture device. I believe that this is due to the MouseCursorOverlayController being deleted through the DeleteOnUIThread destructor, which, if you are already on the UI thread, is synchronous:
+
+https://source.chromium.org/chromium/chromium/src/+/main:content/public/browser/browser_thread.h;l=141?q=BrowserThread::DeleteOnThread&ss=chromium%2Fchromium%2Fsrc
+
+In comparison, the WebContentsFrameTracker is implemented using base::SequenceBound, which ends up calling an internal destruct method that ALWAYS posts back a task:
+
+https://source.chromium.org/chromium/chromium/src/+/main:base/threading/sequence_bound_internal.h;drc=f5bdc89c7395ed24f1b8d196a3bdd6232d5bf771;l=122
+
+So, this bug is ultimately caused by the simple fact that base::SequenceBound does NOT have an optimization to not post a deletion task if we are already running on that sequence. There may be a good followup task here to change either DeleteOnThread or base::SequenceBound to have the same behavior, however I think this change a good first step.
+
+Bug: 1480152
+Change-Id: Iee2d41e66b10403d6c78547bcbe84d2454236d5b
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/4908770
+Reviewed-by: Mark Foltz <mfoltz@chromium.org>
+Commit-Queue: Jordan Bayles <jophba@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1206698}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523710
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../media/capture/web_contents_frame_tracker.cc | 17 +++++++++++------
+ .../media/capture/web_contents_frame_tracker.h  | 11 +++++------
+ 2 files changed, 16 insertions(+), 12 deletions(-)
+
+diff --git a/chromium/content/browser/media/capture/web_contents_frame_tracker.cc b/chromium/content/browser/media/capture/web_contents_frame_tracker.cc
+index 353f47f24af..9e3e3e82809 100644
+--- src/3rdparty/chromium/content/browser/media/capture/web_contents_frame_tracker.cc.orig
++++ src/3rdparty/chromium/content/browser/media/capture/web_contents_frame_tracker.cc
+@@ -126,17 +126,20 @@ WebContentsFrameTracker::WebContentsFrameTracker(
+     base::WeakPtr<WebContentsVideoCaptureDevice> device,
+     MouseCursorOverlayController* cursor_controller)
+     : device_(std::move(device)),
+-      device_task_runner_(std::move(device_task_runner)) {
++      device_task_runner_(std::move(device_task_runner))
++#if !BUILDFLAG(IS_ANDROID)
++      ,
++      cursor_controller_(cursor_controller->GetWeakPtr())
++#endif
++{
+   // Verify on construction that this object is created on the UI thread.  After
+   // this, depend on the sequence checker to ensure consistent execution.
+   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
+-
+-  DCHECK(device_task_runner_);
++  CHECK(device_task_runner_);
+ 
+ #if !BUILDFLAG(IS_ANDROID)
+-  cursor_controller_ = cursor_controller;
+-  DCHECK(cursor_controller_);
++  CHECK(cursor_controller_);
+ #endif
+ }
+ 
+@@ -516,7 +519,9 @@ void WebContentsFrameTracker::SetTargetView(gfx::NativeView view) {
+     return;
+   target_native_view_ = view;
+ #if !BUILDFLAG(IS_ANDROID)
+-  cursor_controller_->SetTargetView(view);
++  if (cursor_controller_) {
++    cursor_controller_->SetTargetView(view);
++  }
+ #endif
+ }
+ 
+diff --git a/chromium/content/browser/media/capture/web_contents_frame_tracker.h b/chromium/content/browser/media/capture/web_contents_frame_tracker.h
+index f15b09619de..c6485cc6fdf 100644
+--- src/3rdparty/chromium/content/browser/media/capture/web_contents_frame_tracker.h.orig
++++ src/3rdparty/chromium/content/browser/media/capture/web_contents_frame_tracker.h
+@@ -171,13 +171,12 @@ class CONTENT_EXPORT WebContentsFrameTracker final
+   // The task runner to be used for device callbacks.
+   const scoped_refptr<base::SequencedTaskRunner> device_task_runner_;
+ 
+-  // Owned by FrameSinkVideoCaptureDevice. This will be valid for the life of
+-  // WebContentsFrameTracker because the WebContentsFrameTracker deleter task
+-  // will be posted to the UI thread before the MouseCursorOverlayController
+-  // deleter task.
++  // Owned by FrameSinkVideoCaptureDevice.  This may only be accessed on the
++  // UI thread. This is not guaranteed to be valid and must be checked before
++  // use.
++  // https://crbug.com/1480152
+ #if !BUILDFLAG(IS_ANDROID)
+-  raw_ptr<MouseCursorOverlayController, DanglingUntriaged> cursor_controller_ =
+-      nullptr;
++  const base::WeakPtr<MouseCursorOverlayController> cursor_controller_;
+ #endif
+ 
+   // We may not have a frame sink ID target at all times.
+From d8d7dc06d0423ad9fdcbe23e741c24b560ff97b8 Mon Sep 17 00:00:00 2001
+From: Evan Stade <estade@chromium.org>
+Date: Wed, 4 Oct 2023 00:08:36 +0000
+Subject: [PATCH] [Backport] Security bug 1485266
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/4902775:
+Drag and drop: prevent cross-origin same-tab drags that span navigations
+
+In IsValidDragTarget, the old RenderViewHostID comparison was not
+necessary to distinguish between same- and different-tab drags because,
+contrary to the previous comment, that case is covered by the
+`drag_start_` check. This check was only serving to permit some drags
+which were same-tab, but not same-RVH, which should be disallowed.
+
+A complete rundown of the business logic and the reason for the
+business logic is here:
+https://bugs.chromium.org/p/chromium/issues/detail?id=1266953#c22
+
+A regression test is added which is confirmed to fail without this fix,
+but only on Chrome OS because that's the only Aura platform where the
+DND interactive UI tests are not already disabled (Windows and Linux
+were disabled).
+
+Bug: 1485266
+Change-Id: Ifdd6eec14df42372b0afc8ccba779a948cbaaaa7
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/4902775
+Commit-Queue: Evan Stade <estade@chromium.org>
+Reviewed-by: Daniel Cheng <dcheng@chromium.org>
+Reviewed-by: Charlie Reis <creis@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1204930}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523711
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../web_contents/web_contents_view_aura.cc    | 44 ++++++-------------
+ .../web_contents/web_contents_view_aura.h     | 26 +++--------
+ 2 files changed, 20 insertions(+), 50 deletions(-)
+
+diff --git a/chromium/content/browser/web_contents/web_contents_view_aura.cc b/chromium/content/browser/web_contents/web_contents_view_aura.cc
+index 37b75adc1ef..c96e932aacc 100644
+--- src/3rdparty/chromium/content/browser/web_contents/web_contents_view_aura.cc.orig
++++ src/3rdparty/chromium/content/browser/web_contents/web_contents_view_aura.cc
+@@ -765,13 +765,10 @@ void WebContentsViewAura::PrepareDropData(
+   // Do not add FileContents if this is a tainted-cross-origin same-page image
+   // (https://crbug.com/1264873).
+   bool access_allowed =
+-      // Drag started outside blink.
+       !drag_start_ ||
+-      // Drag began in blink, but image access is allowed.
+-      drag_start_->image_accessible_from_frame ||
+-      // Drag began in blink, but in a different WebContents.
+-      GetRenderViewHostID(web_contents_->GetRenderViewHost()) !=
+-          drag_start_->view_id;
++      // Drag began in this top-level WebContents, and image access is allowed
++      // (not cross-origin).
++      drag_start_->image_accessible_from_frame;
+   data.GetFilenames(&drop_data->filenames);
+   if (access_allowed && drop_data->filenames.empty()) {
+     base::FilePath filename;
+@@ -887,6 +884,8 @@ bool WebContentsViewAura::IsValidDragTarget(
+   // drags between cross-origin frames within the same page. Otherwise, a
+   // malicious attacker could abuse drag interactions to leak information
+   // across origins without explicit user intent.
++  // `drag_start_` is null when the drag started outside of the browser or from
++  // a different top-level WebContents.
+   if (!drag_start_)
+     return true;
+ 
+@@ -894,35 +893,19 @@ bool WebContentsViewAura::IsValidDragTarget(
+   // perform the check unless it already has access to the starting
+   // document's origin. If the SiteInstanceGroups match, then the process
+   // allocation policy decided that it is OK for the source and target
+-  // frames to live in the same renderer process. Furthermore, it means that
+-  // either the source and target frame are part of the same `blink::Page` or
+-  // that there is an opener relationship and would cross tab boundaries. Allow
+-  // this drag to the renderer. Blink will perform an additional check against
++  // frames to live in the same renderer process. Furthermore, having matching
++  // SiteInstanceGroups means that either (1) the source and target frame are
++  // part of the same blink::Page, or (2) that they are in the same Browsing
++  // Context Group and the drag would cross tab boundaries (the latter of which
++  // can't happen here since `drag_start_` is null). Allow this drag to the
++  // renderer. Blink will perform an additional check against
+   // `blink::DragController::drag_initiator_` to decide whether or not to
+   // allow the drag operation. This can be done in the renderer, as the
+   // browser-side checks only have local tree fragment (potentially with
+   // multiple origins) granularity at best, but a drag operation eventually
+   // targets one single frame in that local tree fragment.
+-  bool same_site_instance_group = target_rwh->GetSiteInstanceGroup()->GetId() ==
+-                                  drag_start_->site_instance_group_id;
+-  if (same_site_instance_group)
+-    return true;
+-
+-  // Otherwise, if the SiteInstanceGroups do not match, enforce explicit
+-  // user intent by ensuring this drag operation is crossing page boundaries.
+-  // `drag_start_->view_id` is set to the main `RenderFrameHost`'s
+-  // `RenderViewHost`'s ID when a drag starts, so if the two IDs match here,
+-  // the drag is within the same page and disallowed.
+-  //
+-  // Drags between an embedder and an inner `WebContents` will disallowed by
+-  // the above view ID check because `WebContentsViewAura` is always created
+-  // for the outermost view. Inner `WebContents` will have a
+-  // `WebContentsViewChildFrame` so when dragging between an inner
+-  // `WebContents` and its embedder the view IDs will be the same.
+-  bool cross_tab_drag =
+-      GetRenderViewHostID(web_contents_->GetRenderViewHost()) !=
+-      drag_start_->view_id;
+-  return cross_tab_drag;
++  return target_rwh->GetSiteInstanceGroup()->GetId() ==
++         drag_start_->site_instance_group_id;
+ }
+ 
+ ////////////////////////////////////////////////////////////////////////////////
+@@ -1180,7 +1163,6 @@ void WebContentsViewAura::StartDragging(
+ 
+   drag_start_ =
+       DragStart(source_rwh->GetSiteInstanceGroup()->GetId(),
+-                GetRenderViewHostID(web_contents_->GetRenderViewHost()),
+                 drop_data.file_contents_image_accessible);
+ 
+   ui::TouchSelectionController* selection_controller = GetSelectionController();
+diff --git a/chromium/content/browser/web_contents/web_contents_view_aura.h b/chromium/content/browser/web_contents/web_contents_view_aura.h
+index dc308525002..48d30860e5e 100644
+--- src/3rdparty/chromium/content/browser/web_contents/web_contents_view_aura.h.orig
++++ src/3rdparty/chromium/content/browser/web_contents/web_contents_view_aura.h
+@@ -162,7 +162,7 @@ class CONTENT_EXPORT WebContentsViewAura
+ 
+   // Returns whether |target_rwh| is a valid RenderWidgetHost to be dragging
+   // over. This enforces that same-page, cross-site drags are not allowed. See
+-  // crbug.com/666858.
++  // crbug.com/666858, crbug.com/1266953, crbug.com/1485266.
+   bool IsValidDragTarget(RenderWidgetHostImpl* target_rwh) const;
+ 
+   // Called from CreateView() to create |window_|.
+@@ -342,7 +342,7 @@ class CONTENT_EXPORT WebContentsViewAura
+   std::unique_ptr<WindowObserver> window_observer_;
+ 
+   // The WebContentsImpl whose contents we display.
+-  raw_ptr<WebContentsImpl> web_contents_;
++  const raw_ptr<WebContentsImpl> web_contents_;
+ 
+   std::unique_ptr<WebContentsViewDelegate> delegate_;
+ 
+@@ -360,33 +360,21 @@ class CONTENT_EXPORT WebContentsViewAura
+   // avoid sending the drag exited message after leaving the current view.
+   GlobalRoutingID current_rvh_for_drag_;
+ 
+-  // We track the IDs of the source RenderProcessHost and RenderViewHost from
+-  // which the current drag originated. These are used to ensure that drag
+-  // events do not fire over a cross-site frame (with respect to the source
+-  // frame) in the same page (see crbug.com/666858). Specifically, the
+-  // RenderViewHost is used to check the "same page" property, while the
+-  // RenderProcessHost is used to check the "cross-site" property. Note that the
+-  // reason the RenderProcessHost is tracked instead of the RenderWidgetHost is
+-  // so that we still allow drags between non-contiguous same-site frames (such
+-  // frames will have the same process, but different widgets). Note also that
+-  // the RenderViewHost may not be in the same process as the RenderProcessHost,
+-  // since the view corresponds to the page, while the process is specific to
+-  // the frame from which the drag started.
+-  // We also track whether a dragged image is accessible from its frame, so we
+-  // can disallow tainted-cross-origin same-page drag-drop.
++  // Used to track security-salient details about a drag source. See
++  // documentation in `IsValidDragTarget()` for `site_instance_group_id`.
++  // See crbug.com/1264873 for `image_accessible_from_frame`.
+   struct DragStart {
+     DragStart(SiteInstanceGroupId site_instance_group_id,
+-              GlobalRoutingID view_id,
+               bool image_accessible_from_frame)
+         : site_instance_group_id(site_instance_group_id),
+-          view_id(view_id),
+           image_accessible_from_frame(image_accessible_from_frame) {}
+     ~DragStart() = default;
+ 
+     SiteInstanceGroupId site_instance_group_id;
+-    GlobalRoutingID view_id;
+     bool image_accessible_from_frame;
+   };
++  // Will hold a value when the current drag started in this page (outermost
++  // WebContents).
+   absl::optional<DragStart> drag_start_;
+ 
+   // Responsible for handling gesture-nav and pull-to-refresh UI.
