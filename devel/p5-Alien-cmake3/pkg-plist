@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Alien/cmake3.pm
+%%SITE_ARCH%%/auto/Alien/cmake3/cmake3.txt
+%%SITE_ARCH%%/auto/share/dist/Alien-cmake3/_alien/alien.json
+%%SITE_ARCH%%/auto/share/dist/Alien-cmake3/_alien/alienfile
+%%PERL5_MAN3%%/Alien::cmake3.3.gz

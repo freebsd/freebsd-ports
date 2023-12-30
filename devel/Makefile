@@ -1781,6 +1781,7 @@
     SUBDIR += p5-Alien-Build
     SUBDIR += p5-Alien-LibGumbo
     SUBDIR += p5-Alien-SDL
+    SUBDIR += p5-Alien-cmake3
     SUBDIR += p5-Alzabo
     SUBDIR += p5-Any-Daemon
     SUBDIR += p5-Any-Moose
