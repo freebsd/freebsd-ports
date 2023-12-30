@@ -1,8 +1,7 @@
 PORTNAME=	haproxy
-DISTVERSION=	2.8.5
-PORTREVISION=	3
+DISTVERSION=	2.9.1
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.8/src/
+MASTER_SITES=	http://www.haproxy.org/download/2.9/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
