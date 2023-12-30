@@ -71,14 +71,14 @@ GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 PROFILE_VARS=		enable_profile=YES hadrian_setting_profile=True
 PROFILE_VARS_OFF=	enable_profile=NO hadrian_setting_profile=False
 
-GHC_VERSION?=		9.4.6
+GHC_VERSION?=		9.4.7
 LLVM_VERSION?=		13
 BOOT_GHC_VERSION?=	9.2.7
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION?=	12
 
 BASE_PACKAGES?=		Cabal-3.8.1.0 array-0.5.4.0 base-4.17.2.0 binary-0.8.9.1 \
-			bytestring-0.11.5.1 containers-0.6.7 deepseq-1.4.8.0 \
+			bytestring-0.11.5.2 containers-0.6.7 deepseq-1.4.8.0 \
 			directory-1.3.7.1 exceptions-0.10.5 filepath-1.4.2.2 \
 			ghc-${GHC_VERSION} ghc-bignum-1.3 ghc-compact-0.1.0.0 \
 			ghc-prim-0.9.1 haskeline-0.8.2 hpc-0.6.1.0 \
