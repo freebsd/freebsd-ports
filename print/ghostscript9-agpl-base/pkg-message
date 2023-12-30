@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-This package installs a script named dvipdf that depends on dvips.  If you
-want to use this script you need to install print/tex-dvipsk.
-EOM
-}
-]
