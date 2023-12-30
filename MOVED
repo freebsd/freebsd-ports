@@ -8258,3 +8258,4 @@ sysutils/ffs2recov||2023-12-31|Has expired: BROKEN on supported versions after E
 sysutils/iichid||2023-12-31|Has expired: Merged into base from 13
 devel/varconf||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
 multimedia/bsdbktr_tvtune||2023-12-31|Has expired: Requires defunct bktr
+sysutils/lttng-tools||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12

@@ -713,7 +713,6 @@
     SUBDIR += lsyncd
     SUBDIR += ltfs
     SUBDIR += ltrace
-    SUBDIR += lttng-tools
     SUBDIR += lttng-ust
     SUBDIR += lua-puremagic
     SUBDIR += luckybackup
