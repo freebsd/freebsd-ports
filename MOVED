@@ -8260,3 +8260,7 @@ devel/varconf||2023-12-31|Has expired: There has been no release for most of the
 multimedia/bsdbktr_tvtune||2023-12-31|Has expired: Requires defunct bktr
 sysutils/lttng-tools||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 multimedia/phonon-gstreamer||2023-12-31|Has expired: No longer maintained upstream -- the vlc backend is the one to use
+net-mgmt/zabbix4-server|net-mgmt/zabbix5-server|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-31
+net-mgmt/zabbix4-agent|net-mgmt/zabbix5-agent|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-31
+net-mgmt/zabbix4-java|net-mgmt/zabbix5-java|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-31
+net-mgmt/zabbix4-proxy|net-mgmt/zabbix5-proxy|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-31
