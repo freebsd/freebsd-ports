@@ -78,6 +78,7 @@
     SUBDIR += pal
     SUBDIR += phd2
     SUBDIR += phoon
+    SUBDIR += pngphoon
     SUBDIR += pp3
     SUBDIR += py-astlib
     SUBDIR += py-astral
