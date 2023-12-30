@@ -8249,3 +8249,4 @@ comms/uartlirc||2023-12-31|Has expired: BROKEN on all supported versions for mor
 comms/mlan3||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
 multimedia/fxtv||2023-12-31|Has expired: Requires defunct bktr
 devel/rubygem-aws-sdk-sso|devel/rubygem-aws-sdk-core|2023-12-31|Has expired: SSO is included as part of aws-sdk-core. Use devel/rubygem-aws-sdk-core instead
+devel/libwfut||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.

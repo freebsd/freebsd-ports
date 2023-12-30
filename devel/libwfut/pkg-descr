@@ -1,3 +1,0 @@
-libwfut is a C++ implementation of the Java updater tool, WFUT.
-It is primarily intended for use with WorldForge clients to allow
-integrated media updates, although it is not limited to this task.

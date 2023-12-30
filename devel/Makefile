@@ -1454,7 +1454,6 @@
     SUBDIR += libvslvm
     SUBDIR += libvterm
     SUBDIR += libwasmtime
-    SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
     SUBDIR += libxo
