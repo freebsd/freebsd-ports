@@ -1,41 +1,39 @@
 PORTNAME=	pot
-DISTVERSION=	0.15.6
+DISTVERSION=	0.16.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Container framework for FreeBSD
-WWW=		https://github.com/pizzamig/pot/
+WWW=		https://github.com/bsdpot/pot/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	potnet:sysutils/potnet \
+RUN_DEPENDS=	freebsd-release-manifests>0:misc/freebsd-release-manifests \
 		ncat:security/nmap \
-		freebsd-release-manifests>0:misc/freebsd-release-manifests \
+		potnet>=0.5.0:sysutils/potnet \
 		signify:security/signify
 TEST_DEPENDS=	flock:sysutils/flock
 
-GROUPS=		pot
-
+USE_GITHUB=	yes
+GH_ACCOUNT=	bsdpot
 USE_RC_SUBR=	pot pot_early
 
-SUB_FILES=	pkg-message pot.8
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	pizzamig
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-OPTIONS_DEFINE=	DOCS ZSH
-
-ZSH_DESC=	Zsh Autocompletion support
-
-OPTIONS_DEFAULT=	ZSH
-OPTIONS_SUB=	yes
+SUB_FILES=	pkg-message pot.8
 
 TEST_WRKSRC=	${WRKSRC}/tests
 
+GROUPS=		pot
+
 PORTDOCS=	*
+
+OPTIONS_DEFINE=		DOCS ZSH
+OPTIONS_DEFAULT=	ZSH
+OPTIONS_SUB=		yes
+
+ZSH_DESC=	Zsh Autocompletion support
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/pot \
@@ -61,9 +59,6 @@ do-install:
 do-install-ZSH-on:
 	( cd ${WRKSRC}/share/zsh && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/zsh)
 
-do-test:
-	( cd ${TEST_WRKSRC} && ./test-suite.sh )
-
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/share/doc/pot/Installation.md \
@@ -72,5 +67,8 @@ post-install-DOCS-on:
 		${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/share/doc/pot/Images.md \
 		${STAGEDIR}${DOCSDIR}/
+
+do-test:
+	( cd ${TEST_WRKSRC} && ./test-suite.sh )
 
 .include <bsd.port.mk>
