@@ -8248,3 +8248,4 @@ audio/mp3info||2023-12-31|Has expired: Last release in 2006 and lacks support fo
 comms/uartlirc||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
 comms/mlan3||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
 multimedia/fxtv||2023-12-31|Has expired: Requires defunct bktr
+devel/rubygem-aws-sdk-sso|devel/rubygem-aws-sdk-core|2023-12-31|Has expired: SSO is included as part of aws-sdk-core. Use devel/rubygem-aws-sdk-core instead
