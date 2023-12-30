@@ -396,7 +396,6 @@
     SUBDIR += fd
     SUBDIR += fdupes
     SUBDIR += fetchlog
-    SUBDIR += ffs2recov
     SUBDIR += file
     SUBDIR += filedupe
     SUBDIR += filelight
