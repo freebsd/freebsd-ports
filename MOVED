@@ -8271,3 +8271,4 @@ www/py-dj41-drf-spectacular|www/py-dj42-drf-spectacular|2023-12-31|Has expired: 
 www/py-dj41-django-tables2|www/py-dj42-django-tables2|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-httpx013||2023-12-31|Has expired: Old repo-copy needed for deprecated textproc/py-googletrans
 graphics/drm-fbsd12.0-kmod||2023-12-31|Has expired: Requires soon to reach EOL FreeBSD 12
+www/py-dj41-django-taggit|www/py-dj42-django-taggit|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
