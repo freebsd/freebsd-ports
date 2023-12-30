@@ -61,7 +61,6 @@ MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
 MYSQL_CONFIGURE_OFF=	--without-mysql
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
-MYSQL_VARS=		IGNORE_WITH_MYSQL="57"
 
 LIBVIRT_CONFIGURE_WITH=	--with-libvirt=${LOCALBASE}
 LIBVIRT_LIB_DEPENDS+=	libvirt.so:devel/libvirt

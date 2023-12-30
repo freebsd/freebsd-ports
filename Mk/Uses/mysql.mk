@@ -1,15 +1,14 @@
 # Provide support for MySQL
 # Feature:	mysql
 # Usage:	USES=mysql or USES=mysql:args
-# Valid ARGS:	<version>, client, server, embedded
+# Valid ARGS:	<version>, client, server
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
 #		necessary (MySQL-8.0 = 80, look at bsd.default-versions.mk for
 #		possible values).
 # client	Depends on the libmysqlclient library (default)
-# server/embedded
-#		Depend on the server at run/build time. If none of these is
+# server 	Depend on the server at run/build time. If none of these is
 #		set, depends on the client.
 #
 # IGNORE_WITH_MYSQL
@@ -28,15 +27,10 @@ _INCLUDE_USES_MYSQL_MK=	yes
 .  if !empty(mysql_ARGS)
 .undef _WANT_MYSQL_VER
 .undef _WANT_MYSQL_SERVER
-.undef _WANT_MYSQL_EMBEDDED
 _MYSQL_ARGS=		${mysql_ARGS:S/,/ /g}
 .    if ${_MYSQL_ARGS:Mserver}
 _WANT_MYSQL_SERVER=	yes
 _MYSQL_ARGS:=	${_MYSQL_ARGS:Nserver}
-.    endif
-.    if ${_MYSQL_ARGS:Membedded}
-_WANT_MYSQL_EMBEDDED=	yes
-_MYSQL_ARGS:=	${_MYSQL_ARGS:Nembedded}
 .    endif
 .    if ${_MYSQL_ARGS:Mclient}
 _WANT_MYSQL_CLIENT=	yes
@@ -62,7 +56,6 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-MYSQL57_LIBVER=		20
 MYSQL80_LIBVER=		21
 MYSQL81_LIBVER=		22
 .  for v in 5 6 11
@@ -139,14 +132,10 @@ IGNORE=		cannot install: does not work with MySQL version ${MYSQL_VER} (MySQL ${
 .        endif
 .      endfor
 .    endif # IGNORE_WITH_MYSQL
-.    if defined(_WANT_MYSQL_SERVER) || defined(_WANT_MYSQL_EMBEDDED)
+.    if defined(_WANT_MYSQL_SERVER)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
-.      if defined(_WANT_MYSQL_EMBEDDED)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${_MYSQL_SERVER}
-.      endif
 .    endif
-.    if defined(_WANT_MYSQL_CLIENT) || \
-	!(defined(_WANT_MYSQL_SERVER) || defined(_WANT_MYSQL_EMBEDDED))
+.    if defined(_WANT_MYSQL_CLIENT) || !defined(_WANT_MYSQL_SERVER)
 LIB_DEPENDS+=	${_MYSQL_SHLIB}.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
 .    endif
 .  else

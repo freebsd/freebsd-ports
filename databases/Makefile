@@ -193,8 +193,6 @@
     SUBDIR += mysql-connector-java51
     SUBDIR += mysql-connector-odbc-80
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql57-client
-    SUBDIR += mysql57-server
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
     SUBDIR += mysql81-client
