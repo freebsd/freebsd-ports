@@ -402,6 +402,7 @@
     SUBDIR += py-alive-progress
     SUBDIR += py-apache-beam
     SUBDIR += py-ascii-magic
+    SUBDIR += py-ast-comments
     SUBDIR += py-boost-histogram
     SUBDIR += py-censys
     SUBDIR += py-cinder
