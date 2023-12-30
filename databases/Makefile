@@ -1058,6 +1058,7 @@
     SUBDIR += symphytum
     SUBDIR += tarantool
     SUBDIR += tarantool-c
+    SUBDIR += tarantool2
     SUBDIR += tcl-Mysql
     SUBDIR += tcl-lmdb
     SUBDIR += tcl-sqlite3
