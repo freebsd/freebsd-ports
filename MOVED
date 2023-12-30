@@ -8285,3 +8285,4 @@ print/ghostscript9-agpl-base|print/ghostscript10|2023-12-31|Has expired: Obsolet
 www/py-dj41-django-cors-headers|www/py-dj42-django-cors-headers|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 databases/mysql57-server|mysql80-server|2023-12-31|Has expired: Upstream support ended in October 2019
 databases/mysql57-client|mysql80-client|2023-12-31|Has expired: Upstream support ended in October 2019
+www/py-dj41-django-filter|www/py-dj42-django-filter|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
