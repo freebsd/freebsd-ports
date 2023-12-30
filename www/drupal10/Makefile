@@ -14,7 +14,6 @@ LICENSE=	GPLv2+
 USES=		php:web shebangfix
 USE_PHP=	dom filter gd mbstring opcache pdo session \
 		simplexml tokenizer xml
-IGNORE_WITH_PHP=80
 SHEBANG_FILES=	core/scripts/password-hash.sh
 
 NO_ARCH=	yes

@@ -15,7 +15,6 @@ LICENSE=	BSD3CLAUSE
 USES=		cpe php:flavors
 USE_PHP=	dom phar
 
-IGNORE_WITH_PHP=80
 NO_ARCH=	yes
 NO_BUILD=	yes
 

@@ -12,7 +12,7 @@ WWW=		https://typo3.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=	80 83
+IGNORE_WITH_PHP=	83
 
 USES=		cpe php:web,flavors shebangfix
 # php openssl extension is required but it's statically linked in default php
