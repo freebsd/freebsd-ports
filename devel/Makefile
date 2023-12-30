@@ -7845,7 +7845,6 @@
     SUBDIR += util-linux
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
-    SUBDIR += varconf
     SUBDIR += vasm
     SUBDIR += vc
     SUBDIR += vc-intrinsics
