@@ -8275,3 +8275,4 @@ www/py-dj41-django-taggit|www/py-dj42-django-taggit|2023-12-31|Has expired: Exte
 sysutils/etc_os-release||2023-12-31|Has expired: No longer required after the EOL of 12
 sysutils/afbinit||2023-12-31|Has expired: sparc64 architecture is deprecated in FreeBSD
 x11-drivers/xf86-video-sunffb||2023-12-31|Removed
+www/py-dj41-django-rich|www/py-dj42-django-rich|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/

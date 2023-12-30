@@ -1500,7 +1500,6 @@
     SUBDIR += py-dj41-django-mptt
     SUBDIR += py-dj41-django-prometheus
     SUBDIR += py-dj41-django-redis
-    SUBDIR += py-dj41-django-rich
     SUBDIR += py-dj41-django-timezone-field
     SUBDIR += py-dj41-djangorestframework
     SUBDIR += py-dj41-drf-spectacular-sidecar
