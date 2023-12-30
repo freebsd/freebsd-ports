@@ -56,13 +56,9 @@ FPC_DEFAULT?=		3.2.2
 .  else
 FPC_DEFAULT?=		3.3.1
 .  endif
-# Possible values: 8 (last to support powerpcspe), 9, 10, 11, 12
+# Possible values: 9, 10, 11, 12
 # (Any other version is completely unsupported and not meant for general use.)
-.  if ${ARCH} == "powerpcspe"
-GCC_DEFAULT?=		8
-.  else
 GCC_DEFAULT?=		12
-.  endif
 # Possible values: 10
 GHOSTSCRIPT_DEFAULT?=	10
 # Possible values: mesa-libs, mesa-devel
