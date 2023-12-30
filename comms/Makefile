@@ -199,7 +199,6 @@
     SUBDIR += trustedqsl
     SUBDIR += twpsk
     SUBDIR += uarduno
-    SUBDIR += uartlirc
     SUBDIR += uhd
     SUBDIR += uird
     SUBDIR += ujprog
