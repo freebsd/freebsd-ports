@@ -24,7 +24,6 @@
     SUBDIR += bino
     SUBDIR += bitstream
     SUBDIR += blind
-    SUBDIR += bsdbktr_tvtune
     SUBDIR += butt
     SUBDIR += camserv
     SUBDIR += celluloid
