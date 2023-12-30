@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.18.1
+DISTVERSION=	1.21.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		derivative-2.2.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
 		dotenvy-0.15.7 \
 		edit-distance-2.1.0 \
@@ -49,18 +51,20 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		hermit-abi-0.3.3 \
 		home-0.5.9 \
 		humantime-2.1.0 \
-		is-terminal-0.4.9 \
+		is-terminal-0.4.10 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
 		libc-0.2.151 \
+		libredox-0.0.1 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		nix-0.27.1 \
 		num_cpus-1.16.0 \
 		once_cell-1.19.0 \
+		option-ext-0.2.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -69,6 +73,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.33 \
 		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
 		regex-1.10.2 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.3 \
@@ -81,7 +86,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		sha2-0.10.8 \
-		similar-2.3.0 \
+		similar-2.4.0 \
 		snafu-0.7.5 \
 		snafu-derive-0.7.5 \
 		strsim-0.8.0 \
@@ -90,13 +95,15 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		strum-0.25.0 \
 		strum_macros-0.25.3 \
 		syn-1.0.109 \
-		syn-2.0.42 \
+		syn-2.0.43 \
 		target-2.0.0 \
-		tempfile-3.8.1 \
+		tempfile-3.9.0 \
 		temptree-0.2.0 \
 		term_size-0.3.2 \
 		termcolor-1.4.0 \
 		textwrap-0.11.0 \
+		thiserror-1.0.52 \
+		thiserror-impl-1.0.52 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
 		unicase-2.7.0 \
