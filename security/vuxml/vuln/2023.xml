@@ -475,6 +475,10 @@
        <name>ungoogled-chromium</name>
        <range><lt>120.0.6099.62</lt></range>
       </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1_1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -787,6 +791,10 @@
       <package>
        <name>ungoogled-chromium</name>
        <range><lt>119.0.6045.199</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1_1</lt></range>
       </package>
     </affects>
     <description>
