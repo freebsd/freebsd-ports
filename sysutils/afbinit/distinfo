@@ -1,6 +1,0 @@
-SHA256 (afbinit/afbinit_1.0.orig.tar.gz) = cc0e316ed911955042186f5e1ccc43f9413fa369e4ddb8de8aaad293ad56a206
-SIZE (afbinit/afbinit_1.0.orig.tar.gz) = 2979
-SHA256 (afbinit/afb-ucode.tar.bz2) = 6ef1da6c6ff7a6ba07d7cf8c5b3677e353d59b8baea40af05ae0ee56d2befc84
-SIZE (afbinit/afb-ucode.tar.bz2) = 36421
-SHA256 (afbinit/afbinit_1.0-4.diff.gz) = ca6a321f6e85dd63ac0b12c88468e8104f22014f0533ff416a9215d8f200c971
-SIZE (afbinit/afbinit_1.0-4.diff.gz) = 3815

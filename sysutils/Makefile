@@ -22,7 +22,6 @@
     SUBDIR += acpica-tools
     SUBDIR += acts
     SUBDIR += adtool
-    SUBDIR += afbinit
     SUBDIR += afflib
     SUBDIR += afio
     SUBDIR += agedu
