@@ -8295,3 +8295,4 @@ net/wireguard-kmod||2023-12-31|Has expired: Only useful for FreeBSD 12 which is 
 www/py-dj41-django-js-asset|www/py-dj42-django-js-asset|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-timezone-field|www/py-dj42-django-timezone-field|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 lang/gcc8||2023-12-31|Has expired: Unsupported by upstream. Use GCC 11 or newer instead.
+devel/py-dj41-graphene-django|devel/py-dj42-graphene-django|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
