@@ -18,12 +18,6 @@ USE_QT=		core declarative gui location network printsupport webchannel \
 		webengine widgets xml \
 		buildtools:build qmake:build
 
-OPTIONS_DEFINE=		WEBKIT
-OPTIONS_SUB=		yes
-WEBKIT_DESC=		Use obsolete qt5-webkit to build Browser Plugin
-WEBKIT_USE=		QT=webkit
-WEBKIT_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebKitWidgets
-
 CONFLICTS_INSTALL=	calligra-2*
 
 post-extract:

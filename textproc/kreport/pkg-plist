@@ -78,12 +78,10 @@ lib/libKReport3.so.4.2.0
 %%QT_MKSPECDIR%%/modules/qt_KReport3.pri
 %%QT_PLUGINDIR%%/kreport3/org.kde.kreport.barcode.so
 %%QT_PLUGINDIR%%/kreport3/org.kde.kreport.maps.so
-%%WEBKIT%%%%QT_PLUGINDIR%%/kreport3/org.kde.kreport.web.so
 libdata/pkgconfig/KReport3.pc
 %%DATADIR%%3/icons/kreport_breeze.rcc
 %%DATADIR%%3/icons/org.kde.kreport.barcode_breeze.rcc
 %%DATADIR%%3/icons/org.kde.kreport.maps_breeze.rcc
-%%WEBKIT%%%%DATADIR%%3/icons/org.kde.kreport.web_breeze.rcc
 share/kservicetypes5/kreport_elementplugin.desktop
 share/locale/af/LC_MESSAGES/kreport_qt.qm
 share/locale/ar/LC_MESSAGES/kreport_qt.qm
