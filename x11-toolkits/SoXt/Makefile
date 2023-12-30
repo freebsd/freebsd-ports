@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 BROKEN_FreeBSD_14=	error: couldn't compile and link with Motif
+BROKEN_FreeBSD_15=	error: couldn't compile and link with Motif
 
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
