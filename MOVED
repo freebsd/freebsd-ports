@@ -8252,3 +8252,4 @@ devel/rubygem-aws-sdk-sso|devel/rubygem-aws-sdk-core|2023-12-31|Has expired: SSO
 devel/libwfut||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
 devel/fuel||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 devel/rubygem-aws-sdk-macie||2023-12-31|Has expired: Deprecated by upstream
+sysutils/devcpu-data|sysutils/cpu-microcode|2023-12-31|Has expired: Use sysutils/cpu-microcode

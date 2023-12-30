@@ -1,3 +1,0 @@
-This port is deprecated.  It will temporarily stay in the tree to pull
-in the new CPU microcode ports.  It is to be replaced by
-sysutils/cpu-microcode.
