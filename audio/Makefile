@@ -480,7 +480,6 @@
     SUBDIR += mp3ck
     SUBDIR += mp3gain
     SUBDIR += mp3guessenc
-    SUBDIR += mp3info
     SUBDIR += mp3lint
     SUBDIR += mp3mover
     SUBDIR += mp3plot
