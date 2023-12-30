@@ -243,6 +243,7 @@
     SUBDIR += haproxy25
     SUBDIR += haproxy26
     SUBDIR += haproxy27
+    SUBDIR += haproxy28
     SUBDIR += hblock
     SUBDIR += hexinject
     SUBDIR += hlmaster
