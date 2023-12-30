@@ -930,7 +930,6 @@
     SUBDIR += spellcast
     SUBDIR += spicetrade
     SUBDIR += spider
-    SUBDIR += spring
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
