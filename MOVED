@@ -8282,3 +8282,4 @@ www/py-dj41-django-mptt|www/py-dj42-django-mptt|2023-12-31|Has expired: Extended
 www/py-dj41-drf-yasg|www/py-dj42-drf-yasg|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 print/ghostscript9-agpl-x11|print/ghostscript10|2023-12-31|Has expired: Obsolete and unsupported upstream, consider using print/ghostscipt10
 print/ghostscript9-agpl-base|print/ghostscript10|2023-12-31|Has expired: Obsolete and unsupported upstream, consider using print/ghostscipt10
+www/py-dj41-django-cors-headers|www/py-dj42-django-cors-headers|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/

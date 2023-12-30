@@ -1493,7 +1493,6 @@
     SUBDIR += py-daphne
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj41-django-auth-ldap
-    SUBDIR += py-dj41-django-cors-headers
     SUBDIR += py-dj41-django-debug-toolbar
     SUBDIR += py-dj41-django-filter
     SUBDIR += py-dj41-django-js-asset
