@@ -1,6 +1,6 @@
 PORTNAME=	mpich
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -33,10 +33,10 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		DOCS FORTRAN L0
 OPTIONS_GROUP=		PM
-OPTIONS_GROUP_PM=	GFORKER
+OPTIONS_GROUP_PM=	GFORKER HYDRA
 OPTIONS_RADIO=		DEFAULTPM
-OPTIONS_RADIO_DEFAULTPM=DGFORKER
-OPTIONS_DEFAULT=	FORTRAN GFORKER DGFORKER L0
+OPTIONS_RADIO_DEFAULTPM=DGFORKER DHYDRA
+OPTIONS_DEFAULT=	FORTRAN GFORKER HYDRA DHYDRA L0
 OPTIONS_SUB=		yes
 
 FORTRAN_USES=			fortran
@@ -51,8 +51,12 @@ MPICH_LDFLAGS=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 
 PM_DESC=	Process managers
 GFORKER_DESC=	Simple local process manager
+HYDRA_DESC=	Parallel process manager
 DEFAULTPM_DESC=	Default process manager
 DGFORKER_DESC=	Make gforker the default process manager
+DHYDRA_DESC=	Make hydra the default process manager
+
+HYDRA_LIB_DEPENDS=	libtorque.so:sysutils/torque
 
 L0_DESC=		oneAPI Level Zero support
 L0_LIB_DEPENDS=		libze_loader.so:devel/level-zero

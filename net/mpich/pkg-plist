@@ -1,12 +1,17 @@
+%%HYDRA%%bin/hydra_nameserver
+%%HYDRA%%bin/hydra_persist
+%%HYDRA%%bin/hydra_pmi_proxy
 bin/mpic++
 bin/mpicc
 bin/mpichversion
 bin/mpicxx
 %%EXEC%%bin/mpiexec
 %%EXECGFORKER%%bin/mpiexec.gforker
+%%HYDRA%%bin/mpiexec.hydra
 %%FORTRAN%%bin/mpif77
 %%FORTRAN%%bin/mpif90
 %%FORTRAN%%bin/mpifort
+%%HYDRA%%bin/mpirun
 bin/mpivars
 bin/parkill
 %%FORTRAN%%include/mpi_c_interface.mod
@@ -49,6 +54,9 @@ lib/libmpicxx.so.12.3.1
 lib/libmpl.so
 lib/libopa.so
 libdata/pkgconfig/mpich.pc
+man/man1/hydra_nameserver.1.gz
+man/man1/hydra_persist.1.gz
+man/man1/hydra_pmi_proxy.1.gz
 man/man1/mpicc.1.gz
 man/man1/mpicxx.1.gz
 man/man1/mpiexec.1.gz
