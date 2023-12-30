@@ -1,8 +1,7 @@
 PORTNAME=	vipster
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.1b-14
-DISTVERSIONSUFFIX=	-g7168a1b
-PORTREVISION=	1
+DISTVERSION=	1.19.1b-109
+DISTVERSIONSUFFIX=	-gfb4a6ed
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	catch>0:devel/catch \
 		cli11>0:devel/cli11 \
-		libfmt>0:devel/libfmt \
 		nlohmann-json>0:devel/nlohmann-json
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libtinyexpr.so:math/tinyexpr
 
 USES=		cmake compiler:c++17-lang gl
 USE_GL=		gl
@@ -24,16 +24,19 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	sgsaenger
 
+LDFLAGS+=	-L${LOCALBASE}/lib -ltinyexpr
+
 OPTIONS_DEFINE=		DESKTOP LAMMPS PYTHON
 OPTIONS_DEFAULT=	DESKTOP
 OPTIONS_SUB=		yes
 
-CMAKE_OFF=		VIPSTER_DOWNLOAD_DEPENDENCIES
+CMAKE_OFF=		VIPSTER_DOWNLOAD_DEPENDENCIES \
+			BUILD_TESTING
 
 DESKTOP_DESC=		Build QT-based desktop app
 DESKTOP_CMAKE_BOOL=	VIPSTER_DESKTOP
-DESKTOP_USES=		qt:5
-DESKTOP_USE=		QT=core,gui,widgets,buildtools:build,qmake:build
+DESKTOP_USES=		qt:6
+DESKTOP_USE=		QT=base
 
 LAMMPS_DESC=		Interactive LAMMPS in desktop app
 LAMMPS_CMAKE_BOOL=	VIPSTER_LAMMPS
