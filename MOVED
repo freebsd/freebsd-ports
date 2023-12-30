@@ -8265,3 +8265,4 @@ net-mgmt/zabbix4-agent|net-mgmt/zabbix5-agent|2023-12-31|Has expired: Upstream E
 net-mgmt/zabbix4-java|net-mgmt/zabbix5-java|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-31
 net-mgmt/zabbix4-proxy|net-mgmt/zabbix5-proxy|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-31
 devel/py-dj41-django-rq|devel/py-dj42-django-rq|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+net/p5-MaxMind-DB-Writer||2023-12-31|Has expired: This is the final release. This distribution is no longer being developed

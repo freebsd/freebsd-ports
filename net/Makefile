@@ -638,7 +638,6 @@
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
     SUBDIR += p5-MaxMind-DB-Reader-XS
-    SUBDIR += p5-MaxMind-DB-Writer
     SUBDIR += p5-Mojo-RabbitMQ-Client
     SUBDIR += p5-Net
     SUBDIR += p5-Net-ACME2
