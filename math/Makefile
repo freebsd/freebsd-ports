@@ -1201,6 +1201,7 @@
     SUBDIR += the-algorithms-c++
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
+    SUBDIR += tinyexpr
     SUBDIR += tinymt
     SUBDIR += tlapack
     SUBDIR += tmv
