@@ -1501,11 +1501,9 @@
     SUBDIR += py-dj41-django-prometheus
     SUBDIR += py-dj41-django-redis
     SUBDIR += py-dj41-django-rich
-    SUBDIR += py-dj41-django-tables2
     SUBDIR += py-dj41-django-taggit
     SUBDIR += py-dj41-django-timezone-field
     SUBDIR += py-dj41-djangorestframework
-    SUBDIR += py-dj41-drf-spectacular
     SUBDIR += py-dj41-drf-spectacular-sidecar
     SUBDIR += py-dj41-drf-yasg
     SUBDIR += py-dj42-django-auth-ldap
@@ -1738,7 +1736,6 @@
     SUBDIR += py-httpx-gssapi
     SUBDIR += py-httpx-oauth
     SUBDIR += py-httpx-socks
-    SUBDIR += py-httpx013
     SUBDIR += py-hypercorn
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink

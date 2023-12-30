@@ -8267,3 +8267,6 @@ net-mgmt/zabbix4-proxy|net-mgmt/zabbix5-proxy|2023-12-31|Has expired: Upstream E
 devel/py-dj41-django-rq|devel/py-dj42-django-rq|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 net/p5-MaxMind-DB-Writer||2023-12-31|Has expired: This is the final release. This distribution is no longer being developed
 www/py-dj41-django-graphiql-debug-toolbar|www/py-dj42-django-graphiql-debug-toolbar|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj41-drf-spectacular|www/py-dj42-drf-spectacular|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj41-django-tables2|www/py-dj42-django-tables2|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-httpx013||2023-12-31|Has expired: Old repo-copy needed for deprecated textproc/py-googletrans
