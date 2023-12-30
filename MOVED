@@ -8289,3 +8289,4 @@ www/py-dj41-django-filter|www/py-dj42-django-filter|2023-12-31|Has expired: Exte
 www/py-dj41-django-debug-toolbar|www/py-dj42-django-debug-toolbar|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/kf5-kdewebkit||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 www/py-dj41-django-auth-ldap|www/py-dj42-django-auth-ldap|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+sysutils/kfloppy||2023-12-31|Has expired: No longer part of KDE Gear since 23.08

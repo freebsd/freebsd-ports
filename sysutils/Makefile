@@ -635,7 +635,6 @@
     SUBDIR += kf6-baloo
     SUBDIR += kf6-kuserfeedback
     SUBDIR += kf6-kwallet
-    SUBDIR += kfloppy
     SUBDIR += khelpcenter
     SUBDIR += kiconvtool
     SUBDIR += kio-fuse
