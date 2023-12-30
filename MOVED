@@ -8293,3 +8293,4 @@ sysutils/kfloppy||2023-12-31|Has expired: No longer part of KDE Gear since 23.08
 net/wireguard||2023-12-31|Has expired: Only useful for FreeBSD 12 which is EoL soon
 net/wireguard-kmod||2023-12-31|Has expired: Only useful for FreeBSD 12 which is EoL soon
 www/py-dj41-django-js-asset|www/py-dj42-django-js-asset|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj41-django-timezone-field|www/py-dj42-django-timezone-field|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
