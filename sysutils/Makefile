@@ -369,7 +369,6 @@
     SUBDIR += epazote
     SUBDIR += equinix-metal-cli
     SUBDIR += erdtree
-    SUBDIR += etc_os-release
     SUBDIR += etcmerge
     SUBDIR += ethname
     SUBDIR += evhz
