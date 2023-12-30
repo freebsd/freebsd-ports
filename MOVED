@@ -8247,3 +8247,4 @@ audio/mp3splt-gtk||2023-12-31|Has expired: BROKEN on all supported versions for 
 audio/mp3info||2023-12-31|Has expired: Last release in 2006 and lacks support for ID3v2
 comms/uartlirc||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
 comms/mlan3||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
+multimedia/fxtv||2023-12-31|Has expired: Requires defunct bktr

@@ -69,7 +69,6 @@
     SUBDIR += flvstreamer
     SUBDIR += flvtool++
     SUBDIR += fswebcam
-    SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
     SUBDIR += gdialog
