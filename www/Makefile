@@ -1496,7 +1496,6 @@
     SUBDIR += py-dj41-django-cors-headers
     SUBDIR += py-dj41-django-debug-toolbar
     SUBDIR += py-dj41-django-filter
-    SUBDIR += py-dj41-django-graphiql-debug-toolbar
     SUBDIR += py-dj41-django-js-asset
     SUBDIR += py-dj41-django-mptt
     SUBDIR += py-dj41-django-prometheus
