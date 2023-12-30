@@ -16,8 +16,6 @@ lib/libexec/kscreenlocker_greet
 share/applications/kcm_screenlocker.desktop
 share/dbus-1/interfaces/kf6_org.freedesktop.ScreenSaver.xml
 share/dbus-1/interfaces/org.kde.screensaver.xml
-share/kconf_update/kscreenlocker.upd
-share/kconf_update/ksreenlocker_5_3_separate_autologin.pl
 share/knotifications6/ksmserver.notifyrc
 share/ksmserver/screenlocker/org.kde.passworddialog/metadata.desktop
 share/locale/ar/LC_MESSAGES/kcm_screenlocker.mo
@@ -90,6 +88,9 @@ share/locale/ia/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/id/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/id/LC_MESSAGES/kscreenlocker.mo
 share/locale/id/LC_MESSAGES/kscreenlocker_greet.mo
+share/locale/is/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/is/LC_MESSAGES/kscreenlocker.mo
+share/locale/is/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/it/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/it/LC_MESSAGES/kscreenlocker.mo
 share/locale/it/LC_MESSAGES/kscreenlocker_greet.mo

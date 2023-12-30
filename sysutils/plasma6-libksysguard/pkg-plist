@@ -47,7 +47,7 @@ include/ksysguard/systemstats/SensorProperty.h
 include/ksysguard/systemstats/SensorsFeatureSensor.h
 include/ksysguard/systemstats/SysFsSensor.h
 include/ksysguard/systemstats/SysctlSensor.h
-include/ksysguard/systemstats/org.kde.ksystemstats.h
+include/ksysguard/systemstats/org.kde.ksystemstats1.h
 include/ksysguard/systemstats/systemstats_export.h
 lib/cmake/KSysGuard/KSysGuardConfig.cmake
 lib/cmake/KSysGuard/KSysGuardConfigVersion.cmake
@@ -98,7 +98,7 @@ lib/libprocessui.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/ksysguard/process/qmldir
 %%QT_QMLDIR%%/org/kde/ksysguard/sensors/libSensorsPlugin.so
 %%QT_QMLDIR%%/org/kde/ksysguard/sensors/qmldir
-share/dbus-1/interfaces/org.kde.ksystemstats.xml
+share/dbus-1/interfaces/org.kde.ksystemstats1.xml
 share/dbus-1/system-services/org.kde.ksysguard.processlisthelper.service
 share/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 share/knsrcfiles/systemmonitor-faces.knsrc
@@ -758,6 +758,7 @@ share/locale/zh_TW/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/zh_TW/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/zh_TW/LC_MESSAGES/ksgrd.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo

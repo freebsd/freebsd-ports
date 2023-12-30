@@ -1,9 +1,6 @@
 bin/breeze-settings6
 lib/cmake/Breeze/BreezeConfig.cmake
 lib/cmake/Breeze/BreezeConfigVersion.cmake
-lib/kconf_update_bin/breezehighcontrasttobreezedark
-lib/kconf_update_bin/breezetobreezeclassic
-lib/kconf_update_bin/breezetobreezelight
 %%QT_PLUGINDIR%%/kstyle_config/breezestyleconfig.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2.kcm/kcm_breezedecoration.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/org.kde.breeze.so
@@ -246,9 +243,6 @@ share/icons/breeze_cursors/cursors/zoom-in
 share/icons/breeze_cursors/cursors/zoom-out
 share/icons/breeze_cursors/index.theme
 share/icons/hicolor/scalable/apps/breeze-settings.svgz
-share/kconf_update/breezehighcontrasttobreezedark.upd
-share/kconf_update/breezetobreezeclassic.upd
-share/kconf_update/breezetobreezelight.upd
 share/kstyle/themes/breeze.themerc
 share/locale/ar/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ar/LC_MESSAGES/breeze_style_config.mo

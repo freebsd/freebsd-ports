@@ -11,7 +11,7 @@ RUN_DEPENDS=	hack-font>0:x11-fonts/hack-font \
 		noto-basic>0:x11-fonts/noto-basic \
 		noto-emoji>0:x11-fonts/noto-emoji
 
-USES=		cmake gettext gl kde:6 qt:6 shebangfix tar:xz xorg
+USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_KDE=	bookmarks breeze colorscheme completion config configwidgets \
 		coreaddons guiaddons i18n iconthemes itemviews jobwidgets kio \
 		notifications service solid statusnotifieritem widgetsaddons \
@@ -23,7 +23,5 @@ USE_QT=		base declarative wayland
 
 CMAKE_ON=	BUILD_QT6
 CMAKE_OFF=	BUILD_QT5
-
-SHEBANG_FILES=	qt6/src/platformtheme/*.pl
 
 .include <bsd.port.mk>

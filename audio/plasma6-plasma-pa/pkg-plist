@@ -31,8 +31,6 @@ share/doc/HTML/tr/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/tr/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/uk/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/uk/kcontrol/plasma-pa/index.docbook
-share/kconf_update/disable_kmix.upd
-share/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 share/locale/ar/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ast/LC_MESSAGES/kcm_pulseaudio.mo
@@ -78,6 +76,8 @@ share/locale/ia/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/id/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/is/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/it/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ja/LC_MESSAGES/kcm_pulseaudio.mo

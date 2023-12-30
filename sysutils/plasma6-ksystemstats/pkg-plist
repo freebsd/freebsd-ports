@@ -8,7 +8,7 @@ bin/ksystemstats
 %%QT_PLUGINDIR%%/ksystemstats/ksystemstats_plugin_osinfo.so
 %%QT_PLUGINDIR%%/ksystemstats/ksystemstats_plugin_power.so
 lib/systemd/user/plasma-ksystemstats.service
-share/dbus-1/services/org.kde.ksystemstats.service
+share/dbus-1/services/org.kde.ksystemstats1.service
 share/locale/ar/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/ast/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/az/LC_MESSAGES/ksystemstats_plugins.mo

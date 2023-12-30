@@ -475,6 +475,7 @@ share/locale/en_GB/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/en_GB/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/eo/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/eo/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/eo/LC_MESSAGES/plasma_addons_profiles_utility.mo
 share/locale/eo/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
@@ -1415,6 +1416,7 @@ share/locale/ru/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/sk/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/sk/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/sk/LC_MESSAGES/plasma_addons_profiles_utility.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
@@ -1806,6 +1808,7 @@ share/locale/zh_CN/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/zh_TW/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_addons_profiles_utility.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
@@ -1869,8 +1872,6 @@ share/plasma/plasmoids/org.kde.plasma.addons.katesessions/metadata.json
 share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/ui/BinaryClock.qml
-share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/ui/Dot.qml
-share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/ui/DotColumn.qml
 share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/ui/configGeneral.qml
 share/plasma/plasmoids/org.kde.plasma.binaryclock/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.binaryclock/metadata.json

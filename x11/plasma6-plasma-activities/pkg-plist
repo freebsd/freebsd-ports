@@ -25,5 +25,5 @@ lib/libPlasmaActivities.so.6
 %%QT_QMLDIR%%/org/kde/activities/plasmaactivitiesextensionplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/activities/qmldir
 libdata/pkgconfig/PlasmaActivities.pc
-share/qlogging-categories6/kde.plasma.categories
-share/qlogging-categories6/kde.renamecategories
+share/qlogging-categories6/plasma-activities.categories
+share/qlogging-categories6/plasma-activities.renamecategories

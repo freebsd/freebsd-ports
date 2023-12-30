@@ -14,7 +14,7 @@ RUN_DEPENDS=	ck-list-sessions:sysutils/consolekit2 \
 		dbus-send:devel/dbus \
 		unix-selfauth-helper>=1.0:security/unix-selfauth-helper
 
-USES=		cmake gettext gl kde:6 pkgconfig qt:6 shebangfix tar:xz xorg
+USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz xorg
 USE_KDE=	colorscheme config configwidgets coreaddons crash globalaccel \
 		i18n idletime kcmutils kio layer-shell-qt libkscreen libplasma \
 		notifications package solid svg widgetsaddons windowsystem \
@@ -23,8 +23,6 @@ USE_KDE=	colorscheme config configwidgets coreaddons crash globalaccel \
 USE_GL=		gl opengl
 USE_QT=		base declarative
 USE_XORG=	x11 xcb xext xi
-
-SHEBANG_FILES=	updaters/ksreenlocker_5_3_separate_autologin.pl
 
 SUB_FILES=	kde.pam
 

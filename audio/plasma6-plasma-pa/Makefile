@@ -9,7 +9,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpulse.so:audio/pulseaudio
 RUN_DEPENDS=	${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme
 
-USES=		cmake gettext gl gnome kde:6 pkgconfig qt:6 shebangfix tar:xz
+USES=		cmake gettext gl gnome kde:6 pkgconfig qt:6 tar:xz
 USE_KDE=	config coreaddons doctools globalaccel i18n itemmodels \
 		kcmutils kdeclarative kirigami-addons libplasma \
 		statusnotifieritem svg \
@@ -17,7 +17,5 @@ USE_KDE=	config coreaddons doctools globalaccel i18n itemmodels \
 USE_GL=		gl opengl
 USE_GNOME=	glib20
 USE_QT=		base declarative
-
-SHEBANG_FILES=	data/plasmaVolumeDisableKMixAutostart.pl
 
 .include <bsd.port.mk>

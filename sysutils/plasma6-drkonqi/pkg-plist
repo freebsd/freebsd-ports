@@ -10,14 +10,9 @@ lib/systemd/user/plasma-core.target.wants/drkonqi-sentry-postman.timer
 lib/systemd/user/timers.target.wants/drkonqi-sentry-postman.timer
 share/applications/org.kde.drkonqi.desktop
 %%DATADIR%%/debuggers/external.mac/lldbrc
-%%DATADIR%%/debuggers/external/cdbrc
 %%DATADIR%%/debuggers/external/gdbrc
-%%DATADIR%%/debuggers/external/kdbgrc
 %%DATADIR%%/debuggers/external/lldbrc
-%%DATADIR%%/debuggers/internal/cdbrc
-%%DATADIR%%/debuggers/internal/dbxrc
 %%DATADIR%%/debuggers/internal/gdbrc
-%%DATADIR%%/debuggers/internal/kdbgwinrc
 %%DATADIR%%/debuggers/internal/lldbrc
 %%DATADIR%%/gdb/python/gdb_preamble/__init__.py
 %%DATADIR%%/gdb/python/gdb_preamble/preamble.py

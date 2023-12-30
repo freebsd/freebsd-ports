@@ -113,6 +113,8 @@ share/doc/HTML/ca/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/ca/kcontrol/componentchooser/index.docbook
 share/doc/HTML/ca/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/ca/kcontrol/joystick/index.docbook
+share/doc/HTML/ca/kcontrol/kcm_recentFiles/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kcm_recentFiles/index.docbook
 share/doc/HTML/ca/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/ca/kcontrol/kcmactivities/index.cache.bz2
@@ -214,6 +216,8 @@ share/doc/HTML/en/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/en/kcontrol/joystick/index.docbook
 share/doc/HTML/en/kcontrol/joystick/joystick-calibration.png
 share/doc/HTML/en/kcontrol/joystick/joystick-main.png
+share/doc/HTML/en/kcontrol/kcm_recentFiles/index.cache.bz2
+share/doc/HTML/en/kcontrol/kcm_recentFiles/index.docbook
 share/doc/HTML/en/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/en/kcontrol/kcmactivities/configure.png
@@ -287,6 +291,8 @@ share/doc/HTML/es/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/es/kcontrol/componentchooser/index.docbook
 share/doc/HTML/es/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/es/kcontrol/joystick/index.docbook
+share/doc/HTML/es/kcontrol/kcm_recentFiles/index.cache.bz2
+share/doc/HTML/es/kcontrol/kcm_recentFiles/index.docbook
 share/doc/HTML/es/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/es/kcontrol/kcmactivities/index.cache.bz2
@@ -327,6 +333,8 @@ share/doc/HTML/et/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-actions/index.docbook
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.docbook
+share/doc/HTML/fr/kcontrol/kded/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kded/index.docbook
 share/doc/HTML/id/kcontrol/baloo/index.cache.bz2
 share/doc/HTML/id/kcontrol/baloo/index.docbook
 share/doc/HTML/id/kcontrol/clock/index.cache.bz2
@@ -420,6 +428,8 @@ share/doc/HTML/nl/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/nl/kcontrol/componentchooser/index.docbook
 share/doc/HTML/nl/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/nl/kcontrol/joystick/index.docbook
+share/doc/HTML/nl/kcontrol/kcm_recentFiles/index.cache.bz2
+share/doc/HTML/nl/kcontrol/kcm_recentFiles/index.docbook
 share/doc/HTML/nl/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/nl/kcontrol/kcmactivities/index.cache.bz2
@@ -662,6 +672,8 @@ share/doc/HTML/tr/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/tr/kcontrol/componentchooser/index.docbook
 share/doc/HTML/tr/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/tr/kcontrol/joystick/index.docbook
+share/doc/HTML/tr/kcontrol/kcm_recentFiles/index.cache.bz2
+share/doc/HTML/tr/kcontrol/kcm_recentFiles/index.docbook
 share/doc/HTML/tr/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/tr/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/tr/kcontrol/kcmactivities/index.cache.bz2
@@ -702,6 +714,8 @@ share/doc/HTML/uk/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/uk/kcontrol/componentchooser/index.docbook
 share/doc/HTML/uk/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/uk/kcontrol/joystick/index.docbook
+share/doc/HTML/uk/kcontrol/kcm_recentFiles/index.cache.bz2
+share/doc/HTML/uk/kcontrol/kcm_recentFiles/index.docbook
 share/doc/HTML/uk/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/uk/kcontrol/kcmactivities/index.cache.bz2
@@ -1404,6 +1418,7 @@ share/locale/eo/LC_MESSAGES/kcm_activities.mo
 share/locale/eo/LC_MESSAGES/kcm_baloofile.mo
 share/locale/eo/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/eo/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/eo/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/eo/LC_MESSAGES/kcm_kded.mo
 share/locale/eo/LC_MESSAGES/kcm_keys.mo
 share/locale/eo/LC_MESSAGES/kcm_krunnersettings.mo
@@ -1782,6 +1797,7 @@ share/locale/he/LC_MESSAGES/kcm_activities.mo
 share/locale/he/LC_MESSAGES/kcm_baloofile.mo
 share/locale/he/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/he/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/he/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/he/LC_MESSAGES/kcm_kded.mo
 share/locale/he/LC_MESSAGES/kcm_keys.mo
 share/locale/he/LC_MESSAGES/kcm_krunnersettings.mo
@@ -1910,16 +1926,19 @@ share/locale/hu/LC_MESSAGES/kcm_activities.mo
 share/locale/hu/LC_MESSAGES/kcm_baloofile.mo
 share/locale/hu/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/hu/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/hu/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/hu/LC_MESSAGES/kcm_kded.mo
 share/locale/hu/LC_MESSAGES/kcm_keys.mo
 share/locale/hu/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/hu/LC_MESSAGES/kcm_landingpage.mo
 share/locale/hu/LC_MESSAGES/kcm_plasmasearch.mo
+share/locale/hu/LC_MESSAGES/kcm_recentFiles.mo
 share/locale/hu/LC_MESSAGES/kcm_smserver.mo
 share/locale/hu/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hu/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_tablet.mo
 share/locale/hu/LC_MESSAGES/kcm_touchpad.mo
+share/locale/hu/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_workspace.mo
 share/locale/hu/LC_MESSAGES/kcmkclock.mo
 share/locale/hu/LC_MESSAGES/kcmkeyboard.mo
@@ -2924,6 +2943,7 @@ share/locale/ru/LC_MESSAGES/kcm_activities.mo
 share/locale/ru/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ru/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ru/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/ru/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ru/LC_MESSAGES/kcm_kded.mo
 share/locale/ru/LC_MESSAGES/kcm_keys.mo
 share/locale/ru/LC_MESSAGES/kcm_krunnersettings.mo
@@ -2998,6 +3018,7 @@ share/locale/sk/LC_MESSAGES/kcm_activities.mo
 share/locale/sk/LC_MESSAGES/kcm_baloofile.mo
 share/locale/sk/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sk/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/sk/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/sk/LC_MESSAGES/kcm_kded.mo
 share/locale/sk/LC_MESSAGES/kcm_keys.mo
 share/locale/sk/LC_MESSAGES/kcm_krunnersettings.mo
@@ -3713,6 +3734,7 @@ share/plasma/emoji/as.dict
 share/plasma/emoji/ast.dict
 share/plasma/emoji/az.dict
 share/plasma/emoji/be.dict
+share/plasma/emoji/bew.dict
 share/plasma/emoji/bg.dict
 share/plasma/emoji/bgn.dict
 share/plasma/emoji/bn.dict
@@ -3724,6 +3746,7 @@ share/plasma/emoji/ceb.dict
 share/plasma/emoji/chr.dict
 share/plasma/emoji/ckb.dict
 share/plasma/emoji/cs.dict
+share/plasma/emoji/cv.dict
 share/plasma/emoji/cy.dict
 share/plasma/emoji/da.dict
 share/plasma/emoji/de.dict
@@ -3734,6 +3757,7 @@ share/plasma/emoji/en.dict
 share/plasma/emoji/en_001.dict
 share/plasma/emoji/en_AU.dict
 share/plasma/emoji/en_CA.dict
+share/plasma/emoji/en_GB.dict
 share/plasma/emoji/en_IN.dict
 share/plasma/emoji/es.dict
 share/plasma/emoji/es_419.dict
@@ -3775,6 +3799,7 @@ share/plasma/emoji/km.dict
 share/plasma/emoji/kn.dict
 share/plasma/emoji/ko.dict
 share/plasma/emoji/kok.dict
+share/plasma/emoji/ku.dict
 share/plasma/emoji/ky.dict
 share/plasma/emoji/lb.dict
 share/plasma/emoji/lij.dict
@@ -3806,6 +3831,7 @@ share/plasma/emoji/pt.dict
 share/plasma/emoji/pt_PT.dict
 share/plasma/emoji/qu.dict
 share/plasma/emoji/quc.dict
+share/plasma/emoji/rhg.dict
 share/plasma/emoji/rm.dict
 share/plasma/emoji/ro.dict
 share/plasma/emoji/ru.dict

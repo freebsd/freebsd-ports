@@ -109,12 +109,14 @@ share/locale/ca/LC_MESSAGES/kcm_nic.mo
 share/locale/ca/LC_MESSAGES/kcm_samba.mo
 share/locale/ca/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ca/LC_MESSAGES/kcmusb.mo
+share/locale/ca/LC_MESSAGES/kinfocenter.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_about-distro.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_nic.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_samba.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmusb.mo
+share/locale/ca@valencia/LC_MESSAGES/kinfocenter.mo
 share/locale/cs/LC_MESSAGES/kcm_about-distro.mo
 share/locale/cs/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/cs/LC_MESSAGES/kcm_nic.mo
@@ -137,6 +139,7 @@ share/locale/de/LC_MESSAGES/kcm_nic.mo
 share/locale/de/LC_MESSAGES/kcm_samba.mo
 share/locale/de/LC_MESSAGES/kcmdevinfo.mo
 share/locale/de/LC_MESSAGES/kcmusb.mo
+share/locale/de/LC_MESSAGES/kinfocenter.mo
 share/locale/el/LC_MESSAGES/kcm_about-distro.mo
 share/locale/el/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/el/LC_MESSAGES/kcm_nic.mo
@@ -155,12 +158,14 @@ share/locale/eo/LC_MESSAGES/kcm_nic.mo
 share/locale/eo/LC_MESSAGES/kcm_samba.mo
 share/locale/eo/LC_MESSAGES/kcmdevinfo.mo
 share/locale/eo/LC_MESSAGES/kcmusb.mo
+share/locale/eo/LC_MESSAGES/kinfocenter.mo
 share/locale/es/LC_MESSAGES/kcm_about-distro.mo
 share/locale/es/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/es/LC_MESSAGES/kcm_nic.mo
 share/locale/es/LC_MESSAGES/kcm_samba.mo
 share/locale/es/LC_MESSAGES/kcmdevinfo.mo
 share/locale/es/LC_MESSAGES/kcmusb.mo
+share/locale/es/LC_MESSAGES/kinfocenter.mo
 share/locale/et/LC_MESSAGES/kcm_about-distro.mo
 share/locale/et/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/et/LC_MESSAGES/kcm_nic.mo
@@ -173,6 +178,7 @@ share/locale/eu/LC_MESSAGES/kcm_nic.mo
 share/locale/eu/LC_MESSAGES/kcm_samba.mo
 share/locale/eu/LC_MESSAGES/kcmdevinfo.mo
 share/locale/eu/LC_MESSAGES/kcmusb.mo
+share/locale/eu/LC_MESSAGES/kinfocenter.mo
 share/locale/fa/LC_MESSAGES/kcm_samba.mo
 share/locale/fa/LC_MESSAGES/kcmdevinfo.mo
 share/locale/fa/LC_MESSAGES/kcmusb.mo
@@ -188,6 +194,7 @@ share/locale/fr/LC_MESSAGES/kcm_nic.mo
 share/locale/fr/LC_MESSAGES/kcm_samba.mo
 share/locale/fr/LC_MESSAGES/kcmdevinfo.mo
 share/locale/fr/LC_MESSAGES/kcmusb.mo
+share/locale/fr/LC_MESSAGES/kinfocenter.mo
 share/locale/fy/LC_MESSAGES/kcm_samba.mo
 share/locale/fy/LC_MESSAGES/kcmusb.mo
 share/locale/ga/LC_MESSAGES/kcm_nic.mo
@@ -210,6 +217,7 @@ share/locale/he/LC_MESSAGES/kcm_nic.mo
 share/locale/he/LC_MESSAGES/kcm_samba.mo
 share/locale/he/LC_MESSAGES/kcmdevinfo.mo
 share/locale/he/LC_MESSAGES/kcmusb.mo
+share/locale/he/LC_MESSAGES/kinfocenter.mo
 share/locale/hi/LC_MESSAGES/kcm_nic.mo
 share/locale/hi/LC_MESSAGES/kcm_samba.mo
 share/locale/hi/LC_MESSAGES/kcmdevinfo.mo
@@ -234,6 +242,7 @@ share/locale/ia/LC_MESSAGES/kcm_nic.mo
 share/locale/ia/LC_MESSAGES/kcm_samba.mo
 share/locale/ia/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ia/LC_MESSAGES/kcmusb.mo
+share/locale/ia/LC_MESSAGES/kinfocenter.mo
 share/locale/id/LC_MESSAGES/kcm_about-distro.mo
 share/locale/id/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/id/LC_MESSAGES/kcm_nic.mo
@@ -250,6 +259,7 @@ share/locale/it/LC_MESSAGES/kcm_nic.mo
 share/locale/it/LC_MESSAGES/kcm_samba.mo
 share/locale/it/LC_MESSAGES/kcmdevinfo.mo
 share/locale/it/LC_MESSAGES/kcmusb.mo
+share/locale/it/LC_MESSAGES/kinfocenter.mo
 share/locale/ja/LC_MESSAGES/kcm_about-distro.mo
 share/locale/ja/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ja/LC_MESSAGES/kcm_nic.mo
@@ -262,6 +272,7 @@ share/locale/ka/LC_MESSAGES/kcm_nic.mo
 share/locale/ka/LC_MESSAGES/kcm_samba.mo
 share/locale/ka/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ka/LC_MESSAGES/kcmusb.mo
+share/locale/ka/LC_MESSAGES/kinfocenter.mo
 share/locale/kk/LC_MESSAGES/kcm_nic.mo
 share/locale/kk/LC_MESSAGES/kcm_samba.mo
 share/locale/kk/LC_MESSAGES/kcmdevinfo.mo
@@ -330,6 +341,7 @@ share/locale/nl/LC_MESSAGES/kcm_nic.mo
 share/locale/nl/LC_MESSAGES/kcm_samba.mo
 share/locale/nl/LC_MESSAGES/kcmdevinfo.mo
 share/locale/nl/LC_MESSAGES/kcmusb.mo
+share/locale/nl/LC_MESSAGES/kinfocenter.mo
 share/locale/nn/LC_MESSAGES/kcm_about-distro.mo
 share/locale/nn/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/nn/LC_MESSAGES/kcm_nic.mo
@@ -352,6 +364,7 @@ share/locale/pl/LC_MESSAGES/kcm_nic.mo
 share/locale/pl/LC_MESSAGES/kcm_samba.mo
 share/locale/pl/LC_MESSAGES/kcmdevinfo.mo
 share/locale/pl/LC_MESSAGES/kcmusb.mo
+share/locale/pl/LC_MESSAGES/kinfocenter.mo
 share/locale/pt/LC_MESSAGES/kcm_about-distro.mo
 share/locale/pt/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/pt/LC_MESSAGES/kcm_nic.mo
@@ -364,6 +377,7 @@ share/locale/pt_BR/LC_MESSAGES/kcm_nic.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_samba.mo
 share/locale/pt_BR/LC_MESSAGES/kcmdevinfo.mo
 share/locale/pt_BR/LC_MESSAGES/kcmusb.mo
+share/locale/pt_BR/LC_MESSAGES/kinfocenter.mo
 share/locale/ro/LC_MESSAGES/kcm_about-distro.mo
 share/locale/ro/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ro/LC_MESSAGES/kcm_nic.mo
@@ -388,12 +402,14 @@ share/locale/sk/LC_MESSAGES/kcm_nic.mo
 share/locale/sk/LC_MESSAGES/kcm_samba.mo
 share/locale/sk/LC_MESSAGES/kcmdevinfo.mo
 share/locale/sk/LC_MESSAGES/kcmusb.mo
+share/locale/sk/LC_MESSAGES/kinfocenter.mo
 share/locale/sl/LC_MESSAGES/kcm_about-distro.mo
 share/locale/sl/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/sl/LC_MESSAGES/kcm_nic.mo
 share/locale/sl/LC_MESSAGES/kcm_samba.mo
 share/locale/sl/LC_MESSAGES/kcmdevinfo.mo
 share/locale/sl/LC_MESSAGES/kcmusb.mo
+share/locale/sl/LC_MESSAGES/kinfocenter.mo
 share/locale/sq/LC_MESSAGES/kcm_nic.mo
 share/locale/sq/LC_MESSAGES/kcm_samba.mo
 share/locale/sq/LC_MESSAGES/kcmusb.mo
@@ -448,6 +464,7 @@ share/locale/tr/LC_MESSAGES/kcm_nic.mo
 share/locale/tr/LC_MESSAGES/kcm_samba.mo
 share/locale/tr/LC_MESSAGES/kcmdevinfo.mo
 share/locale/tr/LC_MESSAGES/kcmusb.mo
+share/locale/tr/LC_MESSAGES/kinfocenter.mo
 share/locale/ug/LC_MESSAGES/kcm_about-distro.mo
 share/locale/ug/LC_MESSAGES/kcm_nic.mo
 share/locale/ug/LC_MESSAGES/kcm_samba.mo
@@ -459,6 +476,7 @@ share/locale/uk/LC_MESSAGES/kcm_nic.mo
 share/locale/uk/LC_MESSAGES/kcm_samba.mo
 share/locale/uk/LC_MESSAGES/kcmdevinfo.mo
 share/locale/uk/LC_MESSAGES/kcmusb.mo
+share/locale/uk/LC_MESSAGES/kinfocenter.mo
 share/locale/uz/LC_MESSAGES/kcm_samba.mo
 share/locale/uz/LC_MESSAGES/kcmusb.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcm_samba.mo
@@ -481,10 +499,12 @@ share/locale/zh_CN/LC_MESSAGES/kcm_nic.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_samba.mo
 share/locale/zh_CN/LC_MESSAGES/kcmdevinfo.mo
 share/locale/zh_CN/LC_MESSAGES/kcmusb.mo
+share/locale/zh_CN/LC_MESSAGES/kinfocenter.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_about-distro.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_nic.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_samba.mo
 share/locale/zh_TW/LC_MESSAGES/kcmdevinfo.mo
 share/locale/zh_TW/LC_MESSAGES/kcmusb.mo
+share/locale/zh_TW/LC_MESSAGES/kinfocenter.mo
 share/metainfo/org.kde.kinfocenter.appdata.xml
