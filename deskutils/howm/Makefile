@@ -12,11 +12,8 @@ WWW=		http://howm.sourceforge.jp/index.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		Debugger entered--Lisp error: (wrong-type-argument stringp nil)
-.endif
-
 USES=		emacs
+EMACS_FLAVORS_EXCLUDE=devel_full devel_nox # Debugger entered--Lisp error: (wrong-type-argument stringp nil)
 
 GNU_CONFIGURE=	yes
 
