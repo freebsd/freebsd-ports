@@ -24,6 +24,4 @@ PLIST_FILES=	include/svgtiny.h \
 		lib/libsvgtiny.a \
 		libdata/pkgconfig/libsvgtiny.pc
 
-MAKE_JOBS_UNSAFE=	yes
-
 .include <bsd.port.mk>
