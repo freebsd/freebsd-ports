@@ -87,9 +87,6 @@ PLIST_SUB+=	MPI=""
 . else
 PLIST_SUB+=	MPI="@comment "
 . endif
-. if defined(WITH_PBS)
-RUN_DEPENDS+=	qsub:sysutils/torque
-. endif
 .else
 RUN_DEPENDS+=	xterm:x11/xterm						\
 		${LOCALBASE}/lib/${TKPNG}/pkgIndex.tcl:graphics/tkpng
