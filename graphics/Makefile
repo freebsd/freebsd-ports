@@ -1199,7 +1199,6 @@
     SUBDIR += xd3d
     SUBDIR += xdgagrab
     SUBDIR += xfig
-    SUBDIR += xfpovray
     SUBDIR += xfractint
     SUBDIR += xglurbules
     SUBDIR += xgrasp

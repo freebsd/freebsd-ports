@@ -1,7 +1,0 @@
-xfpovray is a graphical interface to the cool ray tracing program
-POV-Ray (http://www.povray.org). It is written with the XForms
-library and supports most of the numerous options of POV-Ray. The
-interface was developed with POV-Ray version 3.0.
-
-Please read the documentation on POV-Ray before using xfpovray,
-especially if you will be using the animation loop or antialiasing.

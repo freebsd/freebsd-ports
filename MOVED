@@ -8242,3 +8242,4 @@ editors/xi-core||2023-12-31|Has expired: Project is currently discontinued, one 
 editors/pdfedit||2023-12-31|Has expired: BROKEN on all supported versions for 2 years after the EOL of 12
 games/spring||2023-12-31|Has expired: Fails to build and marked broken for several months
 java/wildfly10||2023-12-31|Has expired: End of life upstream
+graphics/xfpovray||2023-12-31|Has expired: BROKEN for more than 2 years on all supported versions after the EOL of 12
