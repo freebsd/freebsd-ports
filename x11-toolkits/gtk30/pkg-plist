@@ -456,7 +456,7 @@ libdata/pkgconfig/gtk+-3.0.pc
 libdata/pkgconfig/gtk+-unix-print-3.0.pc
 %%WAYLAND%%libdata/pkgconfig/gtk+-wayland-3.0.pc
 %%X11%%libdata/pkgconfig/gtk+-x11-3.0.pc
-%%DOCS%%man/man1/broadwayd.1.gz
+%%BROADWAY%%%%DOCS%%man/man1/broadwayd.1.gz
 %%DOCS%%man/man1/gtk-builder-tool.1.gz
 %%DOCS%%man/man1/gtk-encode-symbolic-svg.1.gz
 %%DOCS%%man/man1/gtk-launch.1.gz
@@ -949,7 +949,7 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gtk3/border3.png
 %%DOCS%%share/gtk-doc/html/gtk3/box-expand.png
 %%DOCS%%share/gtk-doc/html/gtk3/box-packing.png
-%%DOCS%%share/gtk-doc/html/gtk3/broadwayd.html
+%%BROADWAY%%%%DOCS%%share/gtk-doc/html/gtk3/broadwayd.html
 %%DOCS%%share/gtk-doc/html/gtk3/builder-shortcuts.png
 %%DOCS%%share/gtk-doc/html/gtk3/button.png
 %%DOCS%%share/gtk-doc/html/gtk3/ch01s02.html
@@ -1027,7 +1027,7 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gtk3/gradient3.png
 %%DOCS%%share/gtk-doc/html/gtk3/gradient4.png
 %%DOCS%%share/gtk-doc/html/gtk3/grid-packing.png
-%%DOCS%%share/gtk-doc/html/gtk3/gtk-broadway.html
+%%BROADWAY%%%%DOCS%%share/gtk-doc/html/gtk3/gtk-broadway.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk-builder-tool.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk-building.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk-compiling.html
