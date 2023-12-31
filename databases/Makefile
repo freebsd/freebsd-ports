@@ -1027,6 +1027,7 @@
     SUBDIR += sqliteodbc
     SUBDIR += sqlitestudio
     SUBDIR += sqlrelay
+    SUBDIR += sqlx-cli
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
     SUBDIR += symphytum
