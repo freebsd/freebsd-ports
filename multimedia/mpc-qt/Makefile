@@ -12,11 +12,11 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	mpv>=0.29,1:multimedia/mpv
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
-USES=		compiler:c++14-lang desktop-file-utils gl pkgconfig qmake qt:6
+USES=		compiler:c++14-lang desktop-file-utils pkgconfig qmake qt:6
 USE_GITHUB=	yes
-USE_GL=		gl
 USE_QT=		base tools:build
 QMAKE_ARGS=	MPCQT_VERSION="${DISTVERSION}${DISTVERSIONSUFFIX}"
+LDFLAGS+=	-Wl,--as-needed # GL
 
 OPTIONS_DEFINE=	DOCS
 
