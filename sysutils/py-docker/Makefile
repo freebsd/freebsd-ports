@@ -1,6 +1,5 @@
 PORTNAME=	docker
-PORTVERSION=	6.0.1
-PORTREVISION=	1
+PORTVERSION=	6.1.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docker-pycreds>=0.4.0:security/py-docker-pyc
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.11:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websocket-client>=1.3.3:www/py-websocket-client@${PY_FLAVOR}
 
-USES=		python:3.8-3.10
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
