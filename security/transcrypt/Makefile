@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash \
 		git:devel/git \
 		gpg2:security/gnupg \
-		xxd:editors/vim
+		xxd:sysutils/xxd
 TEST_DEPENDS=	bats:devel/bats-core
 
 USE_GITHUB=	yes
