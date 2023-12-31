@@ -18,6 +18,6 @@ RUN_DEPENDS=	p5-Module-Install>=1.10:devel/p5-Module-Install \
 
 USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
