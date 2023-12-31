@@ -15,14 +15,6 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -5537,6 +5531,7 @@ case $target_os in
-         disable symver
-         ;;
-     freebsd)
-+        enable section_data_rel_ro
-         ;;
-     bsd/os)
-         add_extralibs -lpoll -lgnugetopt
 @@ -7018,7 +7013,7 @@ fi
  
  if enabled x86; then
