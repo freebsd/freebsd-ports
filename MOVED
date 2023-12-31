@@ -8366,3 +8366,4 @@ databases/postgresql11-pgtcl|databases/postgresql12-pgtcl|2023-12-31|Has expired
 www/py-dj41-djangorestframework|www/py-dj42-djangorestframework|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-django41|www/py-django42|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to a newer version of Django. See https://www.djangoproject.com/download/
 www/qt5-webkit||2023-12-31|Has expired: No longer actively maintained, increasing security concers
+textproc/py-grako||2023-12-31|Project is abandoned
