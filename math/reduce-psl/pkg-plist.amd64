@@ -490,7 +490,6 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/exdf.b
 %%DATADIR%%/red/exintro.b
 %%DATADIR%%/red/exlists.b
-%%DATADIR%%/red/expon.b
 %%DATADIR%%/red/expres.b
 %%DATADIR%%/red/exptchk.b
 %%DATADIR%%/red/exptf.b
