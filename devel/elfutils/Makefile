@@ -21,7 +21,10 @@ BUILD_DEPENDS=	gnulib>=0:devel/gnulib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-CFLAGS+=	-I${LOCALBASE}/share/gnulib/lib \
+# Although the following line is synonymous to USES=localbase
+# it breaks the build
+CFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/share/gnulib/lib \
 		-DFREEBSD_HAS_MEMPCPY
 LDFLAGS+=	${LOCALBASE}/lib/libargp.so \
 		${LOCALBASE}/lib/libintl.so
@@ -34,7 +37,7 @@ NLS_USES=	gettext
 NLS_USES_OFF=	gettext  # used anyway
 NLS_CONFIGURE_ENABLE=	nls
 
-USES=		autoreconf cpe gmake libtool localbase pkgconfig tar:bzip2
+USES=		autoreconf cpe gmake libtool pkgconfig tar:bzip2
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
