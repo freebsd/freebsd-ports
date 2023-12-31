@@ -10,9 +10,9 @@
  # This program is free software; you can redistribute it and/or
  # modify it under the terms of the GNU General Public License
 @@ -22,8 +22,9 @@ set -e
- srcdir="${srcdir:-.}"
  top_srcdir="${top_srcdir:-..}"
  top_builddir="${top_builddir:-..}"
+ openvpn="${openvpn:-${top_builddir}/src/openvpn/openvpn}"
 -trap "rm -f log.$$ log.$$.signal ; trap 0 ; exit 77" 1 2 15
 -trap "rm -f log.$$ log.$$.signal ; exit 1" 0 3
 +root="${top_srcdir}/sample"
@@ -50,13 +50,13 @@
  for i in 1 2 3 ; do
    set +e
    (
--  "${top_builddir}/src/openvpn/openvpn" --script-security 2 --cd "${root}" ${addopts} --setenv role srv --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-server" &
--  "${top_builddir}/src/openvpn/openvpn" --script-security 2 --cd "${top_srcdir}/sample" ${addopts} --setenv role clt --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-client"
-+  "${top_builddir}/src/openvpn/openvpn" --script-security 2 \
+-  "${openvpn}" --script-security 2 --cd "${root}" ${addopts} --setenv role srv --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-server" &
+-  "${openvpn}" --script-security 2 --cd "${top_srcdir}/sample" ${addopts} --setenv role clt --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-client"
++  "${openvpn}" --script-security 2 \
 +      --cd "${root}" ${addopts} --setenv role srv \
 +      --down "${downscript}" --tls-exit --ping-exit 180 \
 +      --config "sample-config-files/loopback-server.test" &
-+  "${top_builddir}/src/openvpn/openvpn" --script-security 2 \
++  "${openvpn}" --script-security 2 \
 +      --cd "${top_srcdir}/sample" ${addopts} --setenv role clt \
 +      --down "${downscript}" --tls-exit --ping-exit 180 \
 +      --config "sample-config-files/loopback-client.test"
