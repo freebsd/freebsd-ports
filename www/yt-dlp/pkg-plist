@@ -1,5 +1,6 @@
 %%SYMLINK%%bin/youtube-dl
 bin/yt-dlp
+man/man1/yt-dlp.1.gz
 share/bash-completion/completions/yt-dlp
 share/fish/vendor_completions.d/yt-dlp.fish
 share/zsh/site-functions/_yt-dlp
