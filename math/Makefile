@@ -1175,6 +1175,7 @@
     SUBDIR += suitesparse-cxsparse
     SUBDIR += suitesparse-graphblas
     SUBDIR += suitesparse-klu
+    SUBDIR += suitesparse-lagraph
     SUBDIR += suitesparse-ldl
     SUBDIR += suitesparse-mongoose
     SUBDIR += suitesparse-rbio
