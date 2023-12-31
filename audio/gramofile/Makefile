@@ -12,14 +12,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 WWW=		http://www.opensourcepartners.nl/~costar/gramofile/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfftw.so:math/fftw
 
-ALL_TARGET=	gramofile
 USES=		alias gmake ncurses perl5
 USE_CSTD=	gnu89
+
 MAKE_ARGS=	CC="${CC}" \
 		CXX="${CXX}" \
 		PERLCOREDIR=${PERLCOREDIR}
+ALL_TARGET=	gramofile
+
 CFLAGS+=	-D_WANT_SEMUN
 
 PERLCOREDIR=	${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE
