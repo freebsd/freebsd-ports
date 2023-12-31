@@ -1022,6 +1022,10 @@
 	<name>openvpn</name>
 	<range><ge>2.6.0</ge><lt>2.6.7_1</lt></range>
       </package>
+      <package>
+	<name>openvpn-devel</name>
+	<range><lt>g20231109,1</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -1043,6 +1047,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-08-29</discovery>
       <entry>2023-11-15</entry>
+      <modified>2023-12-31</modified>
     </dates>
   </vuln>
 
