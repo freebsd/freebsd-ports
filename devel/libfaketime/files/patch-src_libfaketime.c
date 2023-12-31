@@ -18,12 +18,3 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <stdint.h>
-@@ -58,6 +69,8 @@
- extern char *__progname;
- #ifdef __sun
- #include "sunos_endian.h"
-+#elif defined(__FreeBSD__)
-+#include <sys/endian.h>
- #else
- #include <endian.h>
- #endif

@@ -10,6 +10,8 @@ WWW=		https://github.com/wolfcw/libfaketime
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_15=	ld: error: version script assignment of 'GLIBC_2.2' to symbol 'timer_gettime' failed: symbol not defined
+
 USES=		gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolfcw
