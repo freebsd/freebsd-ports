@@ -125,6 +125,7 @@
     SUBDIR += py-python-bitcoinlib
     SUBDIR += py-python-obelisk
     SUBDIR += py-quantecon
+    SUBDIR += py-stocksera
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
     SUBDIR += py-technical
