@@ -131,6 +131,7 @@
     SUBDIR += py-tradingview-ta
     SUBDIR += py-valinvest
     SUBDIR += py-vatnumber
+    SUBDIR += py-yahooquery
     SUBDIR += py-yfinance
     SUBDIR += py-ystockquote
     SUBDIR += qtbitcointrader
