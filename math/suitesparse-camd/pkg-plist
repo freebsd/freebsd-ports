@@ -6,7 +6,7 @@ lib/cmake/CAMD/CAMDTargets.cmake
 lib/libcamd.a
 lib/libcamd.so
 lib/libcamd.so.3
-lib/libcamd.so.3.2.1
+lib/libcamd.so.%%VER%%
 libdata/pkgconfig/CAMD.pc
 %%PORTDOCS%%%%DOCSDIR%%/CAMD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CAMD_UserGuide.pdf
