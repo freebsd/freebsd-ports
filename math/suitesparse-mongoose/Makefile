@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	math
 
 COMMENT=	Symmetric approximate minimum degree
@@ -7,7 +7,7 @@ WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	GPLv3
 
-USES=		cmake:insource localbase:ldflags pathfix
+USES=		cmake:insource localbase:ldflags pathfix python:test
 
 MPORTNAME=	Mongoose
 USE_LDCONFIG=	yes
