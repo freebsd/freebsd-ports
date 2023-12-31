@@ -307,7 +307,7 @@ FREEBSD_BACKENDS+=	WebAssembly
 NATIVE_BACKENDS+=	WebAssembly
 .endif
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
-			MSP430 NVPTX SystemZ WebAssembly XCore
+			MSP430 NVPTX Sparc SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
@@ -320,6 +320,7 @@ _BE_LIBS_MSP430=	AsmParser Disassembler
 _BE_LIBS_Mips=		AsmParser Disassembler
 _BE_LIBS_PowerPC=	AsmParser Disassembler
 _BE_LIBS_RISCV=		AsmParser Disassembler
+_BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
 _BE_LIBS_WebAssembly=	AsmParser Disassembler
 _BE_LIBS_X86=		AsmParser Disassembler
