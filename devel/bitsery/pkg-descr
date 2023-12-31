@@ -1,0 +1,5 @@
+Bitsery is a header only C++ binary serialization library. It is designed around
+the networking requirements for real-time data delivery, especially for games.
+
+All cross-platform requirements are enforced at compile time, so serialized data
+do not store any meta-data information and is as small as possible.

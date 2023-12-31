@@ -294,6 +294,7 @@
     SUBDIR += bison
     SUBDIR += bit
     SUBDIR += bitkeeper
+    SUBDIR += bitsery
     SUBDIR += blame
     SUBDIR += blitz
     SUBDIR += bloaty
