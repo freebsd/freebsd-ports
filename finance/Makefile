@@ -129,6 +129,7 @@
     SUBDIR += py-ta-lib
     SUBDIR += py-technical
     SUBDIR += py-tradingview-ta
+    SUBDIR += py-valinvest
     SUBDIR += py-vatnumber
     SUBDIR += py-yfinance
     SUBDIR += py-ystockquote

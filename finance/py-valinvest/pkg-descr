@@ -1,0 +1,5 @@
+valinvest is a value investing tool based on Warren Buffett, Joseph Piotroski
+and Benjamin Graham thoughts.
+
+The Financial API used by valinvest to get financial data has been rewritten
+and now requires a API Key in order to make request.
