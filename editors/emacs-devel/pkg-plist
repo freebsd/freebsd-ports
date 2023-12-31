@@ -225,6 +225,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/checked.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/commit.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/commit.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect-to-url.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect-to-url.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect.pbm
@@ -315,13 +317,15 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/unlock.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gen-changelog.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gen-changelog.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/gnus-pointer.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/followup.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/followup.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/fuwo.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/fuwo.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/gnus-pointer.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/gnus-pointer.xbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/gnus-pointer.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/gnus.png
@@ -468,6 +472,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/index.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/info.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/info.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/ins-changelog.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/ins-changelog.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/jump-to.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/jump-to.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/last-page.pbm
@@ -477,6 +483,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/left.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/letter.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/letter.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/load-changelog.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/load-changelog.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock-broken.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock-broken.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock-ok.pbm
@@ -796,6 +804,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-node.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-node.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/view-diff.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/view-diff.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-in.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-in.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-out.pbm
@@ -1655,6 +1665,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elint.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/ert-font-lock.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/ert-font-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/ert-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/ert-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/ert.el.gz
