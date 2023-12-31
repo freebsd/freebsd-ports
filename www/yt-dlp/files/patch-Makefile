@@ -54,3 +54,18 @@
  
  supportedsites:
  	$(PYTHON) devscripts/make_supportedsites.py supportedsites.md
+@@ -110,10 +110,10 @@ README.txt: README.md
+ README.txt: README.md
+ 	pandoc -f $(MARKDOWN) -t plain README.md -o README.txt
+ 
+-yt-dlp.1: README.md devscripts/prepare_manpage.py
+-	$(PYTHON) devscripts/prepare_manpage.py yt-dlp.1.temp.md
+-	pandoc -s -f $(MARKDOWN) -t man yt-dlp.1.temp.md -o yt-dlp.1
+-	rm -f yt-dlp.1.temp.md
++#yt-dlp.1: README.md devscripts/prepare_manpage.py
++#	$(PYTHON) devscripts/prepare_manpage.py yt-dlp.1.temp.md
++#	pandoc -s -f $(MARKDOWN) -t man yt-dlp.1.temp.md -o yt-dlp.1
++#	rm -f yt-dlp.1.temp.md
+ 
+ completions/bash/yt-dlp: yt_dlp/*.py yt_dlp/*/*.py devscripts/bash-completion.in
+ 	mkdir -p completions/bash
