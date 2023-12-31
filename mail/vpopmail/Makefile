@@ -14,24 +14,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
-PATCH_STRIP=	-p1
-
 USES=		dos2unix qmail gmake fakeroot
 DOS2UNIX_FILES=	doc/README.vpopmaild
 
-CONFLICTS=	vpopmail-devel-5.*
-
 GNU_CONFIGURE=	YES
-OPTIONS_SUB=	yes
-
-USERS=		vpopmail
-GROUPS=		vchkpw
-
-VCFGDIR?=	${WRKDIR}/vcfg
-VCFGFILES?=	inc_deps lib_deps tcp.smtp
-
-CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}" \
-		AUTOCONF=true ACLOCAL=true AUTOMAKE=true AUTOHEADER=true
 CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${VPOPMAIL_DIR}/etc/tcp.smtp \
@@ -39,14 +25,23 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-logging=${LOGLEVEL} \
 		--enable-vpopuser=nobody \
 		--enable-vpopgroup=nobody
+CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}" \
+		AUTOCONF=true ACLOCAL=true AUTOMAKE=true AUTOHEADER=true
+
+INSTALL_TARGET=	install-strip
+
+CONFLICTS=	vpopmail-devel-5.*
+
+PATCH_STRIP=	-p1
+
+USERS=		vpopmail
+GROUPS=		vchkpw
 
 OPTIONS_DEFINE=	DOCS \
 		PASSWD \
 		MD5_PASSWORDS \
 		CLEAR_PASSWD \
 		LEARN_PASSWORDS \
-		MYSQL_REPLICATION \
-		MYSQL_LIMITS \
 		VALIAS \
 		ROAMING \
 		IP_ALIAS \
@@ -66,9 +61,6 @@ OPTIONS_DEFINE=	DOCS \
 		AUTH_LOG \
 		SQL_LOG \
 		SQL_LOG_TRIM
-OPTIONS_SINGLE=	AUTH
-OPTIONS_SINGLE_AUTH=	CDB MYSQL PGSQL LDAP ORACLE SYBASE
-
 OPTIONS_DEFAULT=MD5_PASSWORDS \
 		CDB \
 		ROAMING \
@@ -76,46 +68,43 @@ OPTIONS_DEFAULT=MD5_PASSWORDS \
 		USERS_BIG_DIR \
 		SEEKABLE \
 		AUTH_LOG
+OPTIONS_SINGLE=	AUTH
+OPTIONS_SINGLE_AUTH=	CDB PGSQL LDAP ORACLE SYBASE
+OPTIONS_SUB=	yes
 
+AUTH_LOG_DESC=			Log auth attempts when using a DB
 CDB_DESC=			Auth via CDB
-PASSWD_DESC=			/etc/passwd account support
-MYSQL_DESC=			Auth via MySQL
-PGSQL_DESC=			Auth via PostgreSQL
-SYBASE_DESC=			Auth via Sybase
-MD5_PASSWORDS_DESC=		Store passwords in MD5 format
 CLEAR_PASSWD_DESC=		Store passwords in plaintext
-LEARN_PASSWORDS_DESC=		Learn passwords during POP auth
-MYSQL_REPLICATION_DESC=		MySQL database replication support
-MYSQL_LIMITS_DESC=		MySQL mailbox limitations support
-ORACLE_DESC=			Auth via Oracle
-LDAP_DESC=			Auth via LDAP
-VALIAS_DESC=			Store aliases in DB instead of .qmail files
-ROAMING_DESC=			roaming users support
-IP_ALIAS_DESC=			IP alias support
-QMAIL_EXT_DESC=			qmail-like user-* address support
+DOMAIN_QUOTAS_DESC=		Domain quotas support
 FILE_LOCKING_DESC=		file locking support
 FILE_SYNC_DESC=			fsync support (decreases performance)
-USERS_BIG_DIR_DESC=		Hashing user directories (BIGDIR)
-SEEKABLE_DESC=			Make input to vdelivermail seekable
-SPAMASSASSIN_DESC=		SpamAssassin support
-SUID_VCHKPW_DESC=		Set vchkpw setugid vpopmail:vchkpw
-SMTP_AUTH_PATCH_DESC=		Swap Challenge/Response for CRAM-MD5
-ONCHANGE_SCRIPT_DESC=		vpopmail/etc/onchange script support
+IP_ALIAS_DESC=			IP alias support
+LDAP_DESC=			Auth via LDAP
+LEARN_PASSWORDS_DESC=		Learn passwords during POP auth
 MAILDROP_DESC=			Maildrop MDA support
-DOMAIN_QUOTAS_DESC=		Domain quotas support
-SPAMFOLDER_DESC=		Move spam to Junk (requires SA)
+MD5_PASSWORDS_DESC=		Store passwords in MD5 format
+ONCHANGE_SCRIPT_DESC=		vpopmail/etc/onchange script support
+ORACLE_DESC=			Auth via Oracle
+PASSWD_DESC=			/etc/passwd account support
+PGSQL_DESC=			Auth via PostgreSQL
+QMAIL_EXT_DESC=			qmail-like user-* address support
+ROAMING_DESC=			roaming users support
+SEEKABLE_DESC=			Make input to vdelivermail seekable
 SINGLE_DOMAIN_DESC=		Optimize for a single domain setup
-AUTH_LOG_DESC=			Log auth attempts when using a DB
+SMTP_AUTH_PATCH_DESC=		Swap Challenge/Response for CRAM-MD5
+SPAMASSASSIN_DESC=		SpamAssassin support
+SPAMFOLDER_DESC=		Move spam to Junk (requires SA)
 SQL_LOG_DESC=			Log to selected SQL database
 SQL_LOG_TRIM_DESC=		Trim logs of deleted users/domains
+SUID_VCHKPW_DESC=		Set vchkpw setugid vpopmail:vchkpw
+SYBASE_DESC=			Auth via Sybase
+USERS_BIG_DIR_DESC=		Hashing user directories (BIGDIR)
+VALIAS_DESC=			Store aliases in DB instead of .qmail files
 
 # Compatibility with older KNOB, correctly will enable if set,
 # but be unset if unselected in the 'config' dialog
 .if defined(WITH_POSTGRESQL)
 PORT_OPTIONS+=	PGSQL
-.endif
-.if defined(WITH_MYSQL_LOG)
-PORT_OPTIONS+=	SQL_LOG
 .endif
 .if defined(WITH_PGSQL_LOG)
 PORT_OPTIONS+=	SQL_LOG
@@ -145,13 +134,6 @@ SEEKABLE_CONFIGURE_OFF=		--disable-make-seekable
 ROAMING_CONFIGURE_ON=		--enable-roaming-users \
 				--enable-relay-clear-minutes=${RELAYCLEAR}
 
-MYSQL_CONFIGURE_ON=		--enable-auth-module=mysql \
-				--enable-incdir=${LOCALBASE}/include/mysql \
-				--enable-libdir=${LOCALBASE}/lib/mysql
-MYSQL_VARS=		IGNORE_WITH_MYSQL="105m 106m 1011m 80 81"
-MYSQL_REPLICATION_CONFIGURE_ON=	--enable-mysql-replication
-MYSQL_LIMITS_CONFIGURE_ON=	--enable-mysql-limits
-
 PGSQL_CONFIGURE_ON=		--enable-auth-module=pgsql
 SQL_LOG_CONFIGURE_ON=		--enable-sql-logging
 ONCHANGE_SCRIPT_CONFIGURE_ON=	--enable-onchange-script
@@ -169,7 +151,8 @@ SPAMASSASSIN_BUILD_DEPENDS=	spamc:mail/spamassassin
 SPAMASSASSIN_RUN_DEPENDS=	spamc:mail/spamassassin
 SPAMFOLDER_CONFIGURE_ON=	--enable-spam-junkfolder
 
-INSTALL_TARGET=	install-strip
+VCFGDIR?=	${WRKDIR}/vcfg
+VCFGFILES?=	inc_deps lib_deps tcp.smtp
 
 .include <bsd.port.options.mk>
 
@@ -261,26 +244,6 @@ LDAP_FILES=		${WRKSRC}/doc/README.ldap \
 			${WRKSRC}/ldap/qmailUser.schema \
 			${WRKSRC}/ldap/slapd.conf \
 			${WRKSRC}/ldap/vpopmail.ldif
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USES+=		mysql
-
-.if defined(WITH_MYSQL_USER) || defined(WITH_MYSQL_READ_USER) || defined(WITH_MYSQL_UPDATE_USER)
-BROKEN_MYSQL_PARAMS=	true
-.endif
-.if defined(WITH_MYSQL_SERVER) || defined(WITH_MYSQL_READ_SERVER) || defined(WITH_MYSQL_UPDATE_SERVER)
-BROKEN_MYSQL_PARAMS=	true
-.endif
-.if defined(WITH_MYSQL_PASSWD) || defined(WITH_MYSQL_READ_PASSWD) || defined(WITH_MYSQL_UPDATE_PASSWD)
-BROKEN_MYSQL_PARAMS=	true
-.endif
-.if defined(WITH_MYSQL_DB)
-BROKEN_MYSQL_PARAMS=	true
-.endif
-.if defined(BROKEN_MYSQL_PARAMS)
-BROKEN=	The MySQL connection parameters are no longer setup at compile time - please edit the ${VPOPMAIL_DIR}/etc/vpopmail.mysql file instead
-.endif
 .endif
 
 .if defined(DEFAULT_DOMAIN)
