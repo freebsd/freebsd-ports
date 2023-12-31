@@ -476,6 +476,10 @@
        <range><lt>120.0.6099.62</lt></range>
       </package>
       <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5_2</lt></range>
+      </package>
+      <package>
        <name>qt6-webengine</name>
        <range><lt>6.6.1_1</lt></range>
       </package>
@@ -791,6 +795,10 @@
       <package>
        <name>ungoogled-chromium</name>
        <range><lt>119.0.6045.199</lt></range>
+      </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5_2</lt></range>
       </package>
       <package>
        <name>qt6-webengine</name>
