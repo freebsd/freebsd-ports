@@ -1,3 +1,3 @@
-TIMESTAMP = 1699195880
-SHA256 (suitesparse/v7.3.1.tar.gz) = b512484396a80750acf3082adc1807ba0aabb103c2e09be5691f46f14d0a9718
-SIZE (suitesparse/v7.3.1.tar.gz) = 65341950
+TIMESTAMP = 1703951596
+SHA256 (suitesparse/v7.4.0.tar.gz) = f9a5cc2316a967198463198f7bf10fb8c4332de6189b0e405419a7092bc921b7
+SIZE (suitesparse/v7.4.0.tar.gz) = 85395023

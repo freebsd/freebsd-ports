@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	7.3.1
+SSPVERSION=	7.4.0
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -45,7 +45,6 @@ MAKE_ENV=	JOBS="${MAKE_JOBS_NUMBER}" \
 		INSTALL="${STAGEDIR}${PREFIX}" \
 		INSTALL_DOC="${STAGEDIR}${DOCSDIR}" \
 		INSTALL_INCLUDE="${STAGEDIR}${PREFIX}/include/${SSPNAME}"
-CMAKE_ARGS+=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${SSPNAME}"
 LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 
 INSTALL_TARGET=	install # skip USES=cmake
@@ -89,16 +88,13 @@ OPENMP_CMAKE_BOOL=	OPENMP
 OPENMP_CMAKE_BOOL_OFF=	NOPENMP
 
 DEMOS_DESC=		Build the demonstrations
-DEMOS_CMAKE_BOOL=	DEMO
+DEMOS_CMAKE_BOOL=	SUITESPARSE_DEMOS
 
 .if !defined(WITH_DEBUG)
 OPTIMIZED_CFLAGS_CFLAGS=	-O3
 OPTIMIZED_CFLAGS_CXXFLAGS=	-O3
 LDFLAGS+=	-s
 .endif
-
-post-extract:
-	${RM} -r ${WRKSRC}/metis-*
 
 post-install:
 .if ! ${MPORTNAME} == config
