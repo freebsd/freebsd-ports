@@ -6,7 +6,7 @@ lib/cmake/AMD/AMDTargets.cmake
 lib/libamd.a
 lib/libamd.so
 lib/libamd.so.3
-lib/libamd.so.3.2.1
+lib/libamd.so.%%VER%%
 libdata/pkgconfig/AMD.pc
 %%PORTDOCS%%%%DOCSDIR%%/AMD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf
