@@ -76,9 +76,9 @@
 	<blockquote cite="https://github.com/go-gitea/gitea/pull/28423">
 	  <p>Do some missing checks</p>
 	</blockquote>
-        <p>By crafting an API request, attackers can access the contents of
-        issues even though the logged-in user does not have access rights to
-        these issues.</p>
+	<p>By crafting an API request, attackers can access the contents of
+	issues even though the logged-in user does not have access rights to
+	these issues.</p>
       </body>
     </description>
     <references>
