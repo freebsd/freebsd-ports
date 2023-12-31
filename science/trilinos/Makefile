@@ -14,7 +14,6 @@ LICENSE_COMB=	multi
 BROKEN_armv6=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
 BROKEN_armv7=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
 BROKEN_i386=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
-BROKEN_FreeBSD_14=	hidden symbol _ZNSt3__1rsB7v160006IcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_istreamIT_T0_EES9_RNS_12basic_stringIS6_S7_T1_EE isn't defined, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=273339
 
 BUILD_DEPENDS=	bash:shells/bash \
 		boost-libs>0:devel/boost-libs \
