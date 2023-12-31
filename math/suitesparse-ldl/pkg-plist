@@ -6,7 +6,7 @@ lib/cmake/LDL/LDLTargets.cmake
 lib/libldl.a
 lib/libldl.so
 lib/libldl.so.3
-lib/libldl.so.3.2.1
+lib/libldl.so.%%VER%%
 libdata/pkgconfig/LDL.pc
 %%PORTDOCS%%%%DOCSDIR%%/LDL_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ldl_userguide.pdf
