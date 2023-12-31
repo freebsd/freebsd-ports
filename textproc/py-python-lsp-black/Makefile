@@ -1,5 +1,5 @@
 PORTNAME=	python-lsp-black
-DISTVERSION=	1.3.0
+DISTVERSION=	2.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-lsp-server>=1.4.0:textproc/py-python-
 
 USES=		python
 USE_PYTHON=	distutils autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
