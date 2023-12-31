@@ -1,0 +1,722 @@
+Add security patches to this file.
+
+Addresses the following security issues:
+- CVE-2023-6347
+- CVE-2023-6510
+- Security bug 1488199
+
+From 8ca846140881c9480b18bc9645b38fb9ea565ea3 Mon Sep 17 00:00:00 2001
+From: Ken Rockot <rockot@google.com>
+Date: Thu, 16 Nov 2023 23:23:22 +0000
+Subject: [PATCH] [Backport] CVE-2023-6347: Use after free in Mojo
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5038080:
+Reland: Fix IPC Channel pipe teardown
+
+This is a reland with the new test temporarily disabled on Android
+until it can run without disrupting other tests.
+
+(cherry picked from commit cd4c1f165c16c6d8161b5372ef7f61c715e01a42)
+
+Fixed: 1494461
+Change-Id: If1d83c2dce62020f78dd50abc460973759002a1a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5015115
+Commit-Queue: Ken Rockot <rockot@google.com>
+Reviewed-by: Robert Sesek <rsesek@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1221953}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5038080
+Auto-Submit: Ken Rockot <rockot@google.com>
+Commit-Queue: Daniel Cheng <dcheng@chromium.org>
+Reviewed-by: Daniel Cheng <dcheng@chromium.org>
+Cr-Commit-Position: refs/branch-heads/6045@{#1383}
+Cr-Branched-From: 905e8bdd32d891451d94d1ec71682e989da2b0a1-refs/heads/main@{#1204232}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/522256
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/ipc/ipc_mojo_bootstrap.cc | 43 ++++++++++++++++++++++--------
+ 1 file changed, 32 insertions(+), 11 deletions(-)
+
+diff --git a/chromium/ipc/ipc_mojo_bootstrap.cc b/chromium/ipc/ipc_mojo_bootstrap.cc
+index 616382cb8f9c..9a9eeef84755 100644
+--- src/3rdparty/chromium/ipc/ipc_mojo_bootstrap.cc.orig
++++ src/3rdparty/chromium/ipc/ipc_mojo_bootstrap.cc
+@@ -702,13 +702,12 @@ class ChannelAssociatedGroupController
+         // handle.
+         DCHECK(!endpoint->client());
+         DCHECK(endpoint->peer_closed());
+-        MarkClosedAndMaybeRemove(endpoint);
++        MarkClosed(endpoint);
+       } else {
+-        MarkPeerClosedAndMaybeRemove(endpoint);
++        MarkPeerClosed(endpoint);
+       }
+     }
+-
+-    DCHECK(endpoints_.empty());
++    endpoints_.clear();
+ 
+     GetMemoryDumpProvider().RemoveController(this);
+   }
+@@ -755,15 +754,19 @@ class ChannelAssociatedGroupController
+     base::AutoLock locker(lock_);
+     encountered_error_ = true;
+ 
++    std::vector<uint32_t> endpoints_to_remove;
+     std::vector<scoped_refptr<Endpoint>> endpoints_to_notify;
+     for (auto iter = endpoints_.begin(); iter != endpoints_.end();) {
+       Endpoint* endpoint = iter->second.get();
+       ++iter;
+ 
+-      if (endpoint->client())
++      if (endpoint->client()) {
+         endpoints_to_notify.push_back(endpoint);
++      }
+ 
+-      MarkPeerClosedAndMaybeRemove(endpoint);
++      if (MarkPeerClosed(endpoint)) {
++        endpoints_to_remove.push_back(endpoint->id());
++      }
+     }
+ 
+     for (auto& endpoint : endpoints_to_notify) {
+@@ -772,6 +775,10 @@ class ChannelAssociatedGroupController
+       if (endpoint->client())
+         NotifyEndpointOfError(endpoint.get(), false /* force_async */);
+     }
++
++    for (uint32_t id : endpoints_to_remove) {
++      endpoints_.erase(id);
++    }
+   }
+ 
+   void NotifyEndpointOfError(Endpoint* endpoint, bool force_async) {
+@@ -806,19 +813,33 @@ class ChannelAssociatedGroupController
+     NotifyEndpointOfError(endpoint, false /* force_async */);
+   }
+ 
+-  void MarkClosedAndMaybeRemove(Endpoint* endpoint) {
++  // Marks `endpoint` as closed and returns true if and only if its peer was
++  // also already closed.
++  bool MarkClosed(Endpoint* endpoint) {
+     lock_.AssertAcquired();
+     endpoint->set_closed();
+-    if (endpoint->closed() && endpoint->peer_closed())
+-      endpoints_.erase(endpoint->id());
++    return endpoint->peer_closed();
+   }
+ 
+-  void MarkPeerClosedAndMaybeRemove(Endpoint* endpoint) {
++  // Marks `endpoint` as having a closed peer and returns true if and only if
++  // `endpoint` itself was also already closed.
++  bool MarkPeerClosed(Endpoint* endpoint) {
+     lock_.AssertAcquired();
+     endpoint->set_peer_closed();
+     endpoint->SignalSyncMessageEvent();
+-    if (endpoint->closed() && endpoint->peer_closed())
++    return endpoint->closed();
++  }
++
++  void MarkClosedAndMaybeRemove(Endpoint* endpoint) {
++    if (MarkClosed(endpoint)) {
+       endpoints_.erase(endpoint->id());
++    }
++  }
++
++  void MarkPeerClosedAndMaybeRemove(Endpoint* endpoint) {
++    if (MarkPeerClosed(endpoint)) {
++      endpoints_.erase(endpoint->id());
++    }
+   }
+ 
+   Endpoint* FindOrInsertEndpoint(mojo::InterfaceId id, bool* inserted) {
+From 4d095ba080045a255cb93ecadb9f3358fdc7cd80 Mon Sep 17 00:00:00 2001
+From: Jordan Bayles <jophba@chromium.org>
+Date: Fri, 6 Oct 2023 23:50:59 +0000
+Subject: [PATCH] [Backport] CVE-2023-6510: Use after free in Media Capture
+
+Manual backport of patch originally reviewed on
+Fix UaF in WebContentsFrameTracker
+
+This patch fixes a use-after-free by moving to a base::WeakPtr
+instead of a raw_ptr. Looking at the callstack in the referenced bug, what is clearly happening is that the frame tracker is deleted AFTER the capture device. I believe that this is due to the MouseCursorOverlayController being deleted through the DeleteOnUIThread destructor, which, if you are already on the UI thread, is synchronous:
+
+https://source.chromium.org/chromium/chromium/src/+/main:content/public/browser/browser_thread.h;l=141?q=BrowserThread::DeleteOnThread&ss=chromium%2Fchromium%2Fsrc
+
+In comparison, the WebContentsFrameTracker is implemented using base::SequenceBound, which ends up calling an internal destruct method that ALWAYS posts back a task:
+
+https://source.chromium.org/chromium/chromium/src/+/main:base/threading/sequence_bound_internal.h;drc=f5bdc89c7395ed24f1b8d196a3bdd6232d5bf771;l=122
+
+So, this bug is ultimately caused by the simple fact that base::SequenceBound does NOT have an optimization to not post a deletion task if we are already running on that sequence. There may be a good followup task here to change either DeleteOnThread or base::SequenceBound to have the same behavior, however I think this change a good first step.
+
+Bug: 1480152
+Change-Id: Iee2d41e66b10403d6c78547bcbe84d2454236d5b
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/4908770
+Reviewed-by: Mark Foltz <mfoltz@chromium.org>
+Commit-Queue: Jordan Bayles <jophba@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1206698}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523700
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../web_contents_video_capture_device.cc      | 19 ++++++++++++-------
+ 1 file changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/chromium/content/browser/media/capture/web_contents_video_capture_device.cc b/chromium/content/browser/media/capture/web_contents_video_capture_device.cc
+index 0093df22c2b2..6100fe816784 100644
+--- src/3rdparty/chromium/content/browser/media/capture/web_contents_video_capture_device.cc.orig
++++ src/3rdparty/chromium/content/browser/media/capture/web_contents_video_capture_device.cc
+@@ -41,7 +41,7 @@ class WebContentsVideoCaptureDevice::FrameTracker
+                int main_render_frame_id)
+       : device_(std::move(device)),
+         device_task_runner_(base::ThreadTaskRunnerHandle::Get()),
+-        cursor_controller_(cursor_controller) {
++        cursor_controller_(cursor_controller->GetWeakPtr()) {
+     DCHECK(device_task_runner_);
+     DCHECK(cursor_controller_);
+ 
+@@ -184,7 +184,9 @@ class WebContentsVideoCaptureDevice::FrameTracker
+         // Note: MouseCursorOverlayController runs on the UI thread. It's also
+         // important that SetTargetView() be called in the current stack while
+         // |native_view| is known to be a valid pointer. http://crbug.com/818679
+-        cursor_controller_->SetTargetView(native_view);
++        if (cursor_controller_) {
++          cursor_controller_->SetTargetView(native_view);
++        }
+       }
+     } else {
+       device_task_runner_->PostTask(
+@@ -192,7 +194,9 @@ class WebContentsVideoCaptureDevice::FrameTracker
+           base::BindOnce(
+               &WebContentsVideoCaptureDevice::OnTargetPermanentlyLost,
+               device_));
+-      cursor_controller_->SetTargetView(gfx::NativeView());
++      if (cursor_controller_) {
++        cursor_controller_->SetTargetView(gfx::NativeView());
++      }
+     }
+   }
+ 
+@@ -200,10 +204,11 @@ class WebContentsVideoCaptureDevice::FrameTracker
+   const base::WeakPtr<WebContentsVideoCaptureDevice> device_;
+   const scoped_refptr<base::SingleThreadTaskRunner> device_task_runner_;
+ 
+-  // Owned by FrameSinkVideoCaptureDevice. This will be valid for the life of
+-  // FrameTracker because the FrameTracker deleter task will be posted to the UI
+-  // thread before the MouseCursorOverlayController deleter task.
+-  MouseCursorOverlayController* const cursor_controller_;
++  // Owned by FrameSinkVideoCaptureDevice.  This may only be accessed on the
++  // UI thread. This is not guaranteed to be valid and must be checked before
++  // use.
++  // https://crbug.com/1480152
++  const base::WeakPtr<MouseCursorOverlayController> cursor_controller_;
+ 
+   viz::FrameSinkId target_frame_sink_id_;
+   gfx::NativeView target_native_view_ = gfx::NativeView();
+From 6a382d96ac3becf92f28f8549318390193da1ddd Mon Sep 17 00:00:00 2001
+From: pthier <pthier@chromium.org>
+Date: Tue, 24 Oct 2023 13:28:22 +0200
+Subject: [PATCH] [Backport] Security bug 1488199 (1/2)
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/4971832:
+[regexp] Fix stack check in native code when interrupt was requested
+
+When an interrupt was requested at the time we hit the stack check, the
+check to ensure we have enough space for local variables was skipped.
+
+Bug: chromium:1488199
+Change-Id: I95d82fe737420d2ef43c1ace35560cfd5860829b
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/4971832
+Commit-Queue: Patrick Thier <pthier@chromium.org>
+Reviewed-by: Jakob Linke <jgruber@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#90560}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523701
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../regexp/arm/regexp-macro-assembler-arm.cc  | 22 +++++++-----
+ .../regexp/arm/regexp-macro-assembler-arm.h   |  5 +--
+ .../arm64/regexp-macro-assembler-arm64.cc     | 21 ++++++-----
+ .../arm64/regexp-macro-assembler-arm64.h      |  6 ++--
+ .../ia32/regexp-macro-assembler-ia32.cc       | 19 ++++++----
+ .../regexp/ia32/regexp-macro-assembler-ia32.h |  5 +--
+ .../v8/src/regexp/regexp-macro-assembler.cc   |  5 +--
+ .../v8/src/regexp/regexp-macro-assembler.h    |  2 +-
+ .../regexp/x64/regexp-macro-assembler-x64.cc  | 35 ++++++++++++-------
+ .../regexp/x64/regexp-macro-assembler-x64.h   |  4 +--
+ 10 files changed, 78 insertions(+), 46 deletions(-)
+
+diff --git a/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc b/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
+index 78b586e265d0..099fc62fa07b 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc.orig
++++ src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
+@@ -670,11 +670,13 @@ Handle<HeapObject> RegExpMacroAssemblerARM::GetCode(Handle<String> source) {
+   __ mov(r0, Operand(stack_limit));
+   __ ldr(r0, MemOperand(r0));
+   __ sub(r0, sp, r0, SetCC);
++  Operand extra_space_for_variables(num_registers_ * kPointerSize);
++
+   // Handle it if the stack pointer is already below the stack limit.
+   __ b(ls, &stack_limit_hit);
+   // Check if there is room for the variable number of registers above
+   // the stack limit.
+-  __ cmp(r0, Operand(num_registers_ * kPointerSize));
++  __ cmp(r0, extra_space_for_variables);
+   __ b(hs, &stack_ok);
+   // Exit with OutOfMemory exception. There is not enough space on the stack
+   // for our working registers.
+@@ -682,7 +684,7 @@ Handle<HeapObject> RegExpMacroAssemblerARM::GetCode(Handle<String> source) {
+   __ jmp(&return_r0);
+ 
+   __ bind(&stack_limit_hit);
+-  CallCheckStackGuardState();
++  CallCheckStackGuardState(extra_space_for_variables);
+   __ cmp(r0, Operand::Zero());
+   // If returned value is non-zero, we exit with the returned value as result.
+   __ b(ne, &return_r0);
+@@ -1048,16 +1050,18 @@ void RegExpMacroAssemblerARM::WriteStackPointerToRegister(int reg) {
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerARM::CallCheckStackGuardState() {
++void RegExpMacroAssemblerARM::CallCheckStackGuardState(Operand extra_space) {
+   DCHECK(!isolate()->IsGeneratingEmbeddedBuiltins());
+   DCHECK(!masm_->options().isolate_independent_code);
+ 
+-  __ PrepareCallCFunction(3);
++  __ PrepareCallCFunction(4);
+ 
++  // Extra space for variables to consider in stack check.
++  __ mov(arg_reg_4, extra_space);
+   // RegExp code frame pointer.
+-  __ mov(r2, frame_pointer());
++  __ mov(arg_reg3, frame_pointer());
+   // Code of self.
+-  __ mov(r1, Operand(masm_->CodeObject()));
++  __ mov(arg_reg2, Operand(masm_->CodeObject()));
+ 
+   // We need to make room for the return address on the stack.
+   int stack_alignment = base::OS::ActivationFrameAlignment();
+@@ -1101,7 +1105,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerARM::CheckStackGuardState(Address* return_address,
+                                                   Address raw_code,
+-                                                  Address re_frame) {
++                                                  Address re_frame,
++                                                  uintptr_t extra_space) {
+   Code re_code = Code::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolate),
+@@ -1110,7 +1115,8 @@ int RegExpMacroAssemblerARM::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputString),
+       frame_entry_address<const byte*>(re_frame, kInputStart),
+-      frame_entry_address<const byte*>(re_frame, kInputEnd));
++      frame_entry_address<const byte*>(re_frame, kInputEnd),
++      extra_space);
+ }
+ 
+ 
+diff --git a/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h b/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h
+index 910e5c46079a..114120755fcb 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h.orig
++++ src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h
+@@ -89,7 +89,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+-                                  Address re_frame);
++                                  Address re_frame, uintptr_t extra_space);
+ 
+  private:
+   // Offsets from frame_pointer() of function parameters and stored registers.
+@@ -134,7 +134,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM
+ 
+ 
+   // Generate a call to CheckStackGuardState.
+-  void CallCheckStackGuardState();
++  void CallCheckStackGuardState(
++      Operand extra_space_for_variables = Operand::Zero());
+ 
+   // The ebp-relative location of a regexp register.
+   MemOperand register_location(int register_index);
+diff --git a/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc b/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+index ac33f8631ffe..1e5342dd42e5 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc.orig
++++ src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+@@ -781,13 +781,14 @@ Handle<HeapObject> RegExpMacroAssemblerARM64::GetCode(Handle<String> source) {
+   __ Mov(x10, stack_limit);
+   __ Ldr(x10, MemOperand(x10));
+   __ Subs(x10, sp, x10);
++  Operand extra_space_for_variables(num_wreg_to_allocate * kWRegSize);
+ 
+   // Handle it if the stack pointer is already below the stack limit.
+   __ B(ls, &stack_limit_hit);
+ 
+   // Check if there is room for the variable number of registers above
+   // the stack limit.
+-  __ Cmp(x10, num_wreg_to_allocate * kWRegSize);
++  __ Cmp(x10, extra_space_for_variables);
+   __ B(hs, &stack_ok);
+ 
+   // Exit with OutOfMemory exception. There is not enough space on the stack
+@@ -796,7 +797,7 @@ Handle<HeapObject> RegExpMacroAssemblerARM64::GetCode(Handle<String> source) {
+   __ B(&return_w0);
+ 
+   __ Bind(&stack_limit_hit);
+-  CallCheckStackGuardState(x10);
++  CallCheckStackGuardState(x10, extra_space_for_variables);
+   // If returned value is non-zero, we exit with the returned value as result.
+   __ Cbnz(w0, &return_w0);
+ 
+@@ -1332,13 +1333,14 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerARM64::CheckStackGuardState(
+     Address* return_address, Address raw_code, Address re_frame,
+-    int start_index, const byte** input_start, const byte** input_end) {
++    int start_index, const byte** input_start, const byte** input_end,
++    uintptr_t extra_space) {
+   Code re_code = Code::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolate), start_index,
+       static_cast<RegExp::CallOrigin>(frame_entry<int>(re_frame, kDirectCall)),
+       return_address, re_code, frame_entry_address<Address>(re_frame, kInput),
+-      input_start, input_end);
++      input_start, input_end, extra_space);
+ }
+ 
+ 
+@@ -1357,21 +1359,24 @@ void RegExpMacroAssemblerARM64::CheckPosition(int cp_offset,
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerARM64::CallCheckStackGuardState(Register scratch) {
++void RegExpMacroAssemblerARM64::CallCheckStackGuardState(Register scratch,
++                                                         Operand extra_space) {
+   DCHECK(!isolate()->IsGeneratingEmbeddedBuiltins());
+   DCHECK(!masm_->options().isolate_independent_code);
+ 
+   // Allocate space on the stack to store the return address. The
+   // CheckStackGuardState C++ function will override it if the code
+-  // moved. Allocate extra space for 2 arguments passed by pointers.
+-  // AAPCS64 requires the stack to be 16 byte aligned.
++  // moved. Allocate extra space for 3 arguments (2 for input start/end and 1
++  // for gap). AAPCS64 requires the stack to be 16 byte aligned.
+   int alignment = masm_->ActivationFrameAlignment();
+   DCHECK_EQ(alignment % 16, 0);
+   int align_mask = (alignment / kXRegSize) - 1;
+-  int xreg_to_claim = (3 + align_mask) & ~align_mask;
++  int xreg_to_claim = (4 + align_mask) & ~align_mask;
+ 
+   __ Claim(xreg_to_claim);
+ 
++  __ Mov(x0, extra_space);
++  __ Poke(x0, 3 * kSystemPointerSize);
+   // CheckStackGuardState needs the end and start addresses of the input string.
+   __ Poke(input_end(), 2 * kSystemPointerSize);
+   __ Add(x5, sp, 2 * kSystemPointerSize);
+diff --git a/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h b/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h
+index aeb49aa9fff3..e4c4b0ac34f3 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h.orig
++++ src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h
+@@ -97,7 +97,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM64
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+                                   Address re_frame, int start_offset,
+                                   const byte** input_start,
+-                                  const byte** input_end);
++                                  const byte** input_end,
++                                  uintptr_t extra_space);
+ 
+  private:
+   // Above the frame pointer - Stored registers and stack passed parameters.
+@@ -145,7 +146,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM64
+   void CheckStackLimit();
+ 
+   // Generate a call to CheckStackGuardState.
+-  void CallCheckStackGuardState(Register scratch);
++  void CallCheckStackGuardState(Register scratch,
++                                Operand extra_space = Operand(0));
+ 
+   // Location of a 32 bit position register.
+   MemOperand register_location(int register_index);
+diff --git a/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc b/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc
+index 2135e977a742..d5fbd960675e 100644
+--- src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc.orig
++++ src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc
+@@ -700,11 +700,13 @@ Handle<HeapObject> RegExpMacroAssemblerIA32::GetCode(Handle<String> source) {
+       ExternalReference::address_of_jslimit(isolate());
+   __ mov(ecx, esp);
+   __ sub(ecx, StaticVariable(stack_limit));
++  Immediate extra_space_for_variables(num_registers_ * kSystemPointerSize);
++
+   // Handle it if the stack pointer is already below the stack limit.
+   __ j(below_equal, &stack_limit_hit);
+   // Check if there is room for the variable number of registers above
+   // the stack limit.
+-  __ cmp(ecx, num_registers_ * kSystemPointerSize);
++  __ cmp(ecx, extra_space_for_variables);
+   __ j(above_equal, &stack_ok);
+   // Exit with OutOfMemory exception. There is not enough space on the stack
+   // for our working registers.
+@@ -712,7 +714,7 @@ Handle<HeapObject> RegExpMacroAssemblerIA32::GetCode(Handle<String> source) {
+   __ jmp(&return_eax);
+ 
+   __ bind(&stack_limit_hit);
+-  CallCheckStackGuardState(ebx);
++  CallCheckStackGuardState(ebx, extra_space_for_variables);
+   __ or_(eax, eax);
+   // If returned value is non-zero, we exit with the returned value as result.
+   __ j(not_zero, &return_eax);
+@@ -1080,9 +1082,12 @@ void RegExpMacroAssemblerIA32::WriteStackPointerToRegister(int reg) {
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerIA32::CallCheckStackGuardState(Register scratch) {
+-  static const int num_arguments = 3;
++void RegExpMacroAssemblerIA32::CallCheckStackGuardState(Register scratch,
++                                                        Immediate extra_space) {
++  static const int num_arguments = 4;
+   __ PrepareCallCFunction(num_arguments, scratch);
++  // Extra space for variables.
++  __ mov(Operand(esp, 3 * kSystemPointerSize), extra_space);
+   // RegExp code frame pointer.
+   __ mov(Operand(esp, 2 * kSystemPointerSize), ebp);
+   // Code of self.
+@@ -1113,7 +1118,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerIA32::CheckStackGuardState(Address* return_address,
+                                                    Address raw_code,
+-                                                   Address re_frame) {
++                                                   Address re_frame,
++                                                   uintptr_t extra_space) {
+   Code re_code = Code::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolate),
+@@ -1122,7 +1128,8 @@ int RegExpMacroAssemblerIA32::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputString),
+       frame_entry_address<const byte*>(re_frame, kInputStart),
+-      frame_entry_address<const byte*>(re_frame, kInputEnd));
++      frame_entry_address<const byte*>(re_frame, kInputEnd),
++      extra_space);
+ }
+ 
+ 
+diff --git a/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h b/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h
+index a30bff29a15c..620e7fb2982e 100644
+--- src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h.orig
++++ src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h
+@@ -88,7 +88,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerIA32
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+-                                  Address re_frame);
++                                  Address re_frame, uintptr_t extra_space);
+ 
+  private:
+   Operand StaticVariable(const ExternalReference& ext);
+@@ -133,7 +133,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerIA32
+   void CheckStackLimit();
+ 
+   // Generate a call to CheckStackGuardState.
+-  void CallCheckStackGuardState(Register scratch);
++  void CallCheckStackGuardState(Register scratch,
++                                Immediate extra_space = Immediate(0));
+ 
+   // The ebp-relative location of a regexp register.
+   Operand register_location(int register_index);
+diff --git a/chromium/v8/src/regexp/regexp-macro-assembler.cc b/chromium/v8/src/regexp/regexp-macro-assembler.cc
+index cf4346309eb2..009027c10398 100644
+--- src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.cc.orig
++++ src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.cc
+@@ -168,14 +168,15 @@ bool NativeRegExpMacroAssembler::CanReadUnaligned() {
+ int NativeRegExpMacroAssembler::CheckStackGuardState(
+     Isolate* isolate, int start_index, RegExp::CallOrigin call_origin,
+     Address* return_address, Code re_code, Address* subject,
+-    const byte** input_start, const byte** input_end) {
++    const byte** input_start, const byte** input_end,
++    uintptr_t gap) {
+   DisallowHeapAllocation no_gc;
+   Address old_pc = PointerAuthentication::AuthenticatePC(return_address, 0);
+   DCHECK_LE(re_code.raw_instruction_start(), old_pc);
+   DCHECK_LE(old_pc, re_code.raw_instruction_end());
+ 
+   StackLimitCheck check(isolate);
+-  bool js_has_overflowed = check.JsHasOverflowed();
++  bool js_has_overflowed = check.JsHasOverflowed(gap);
+ 
+   if (call_origin == RegExp::CallOrigin::kFromJs) {
+     // Direct calls from JavaScript can be interrupted in two ways:
+diff --git a/chromium/v8/src/regexp/regexp-macro-assembler.h b/chromium/v8/src/regexp/regexp-macro-assembler.h
+index 52465610cb66..da233d3c73df 100644
+--- src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.h.orig
++++ src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.h
+@@ -261,7 +261,7 @@ class NativeRegExpMacroAssembler: public RegExpMacroAssembler {
+                                   RegExp::CallOrigin call_origin,
+                                   Address* return_address, Code re_code,
+                                   Address* subject, const byte** input_start,
+-                                  const byte** input_end);
++                                  const byte** input_end, uintptr_t gap);
+ 
+   // Byte map of one byte characters with a 0xff if the character is a word
+   // character (digit, letter or underscore) and 0x00 otherwise.
+diff --git a/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc b/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
+index da0397689fba..6ae1114f24ef 100644
+--- src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc.orig
++++ src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
+@@ -736,11 +736,13 @@ Handle<HeapObject> RegExpMacroAssemblerX64::GetCode(Handle<String> source) {
+   __ movq(rcx, rsp);
+   __ Move(kScratchRegister, stack_limit);
+   __ subq(rcx, Operand(kScratchRegister, 0));
++  Immediate extra_space_for_variables(num_registers_ * kSystemPointerSize);
++
+   // Handle it if the stack pointer is already below the stack limit.
+   __ j(below_equal, &stack_limit_hit);
+   // Check if there is room for the variable number of registers above
+   // the stack limit.
+-  __ cmpq(rcx, Immediate(num_registers_ * kSystemPointerSize));
++  __ cmpq(rcx, extra_space_for_variables);
+   __ j(above_equal, &stack_ok);
+   // Exit with OutOfMemory exception. There is not enough space on the stack
+   // for our working registers.
+@@ -749,7 +751,8 @@ Handle<HeapObject> RegExpMacroAssemblerX64::GetCode(Handle<String> source) {
+ 
+   __ bind(&stack_limit_hit);
+   __ Move(code_object_pointer(), masm_.CodeObject());
+-  CallCheckStackGuardState();  // Preserves no registers beside rbp and rsp.
++  // CallCheckStackGuardState preserves no registers beside rbp and rsp.
++  CallCheckStackGuardState(extra_space_for_variables);
+   __ testq(rax, rax);
+   // If returned value is non-zero, we exit with the returned value as result.
+   __ j(not_zero, &return_rax);
+@@ -1147,27 +1150,31 @@ void RegExpMacroAssemblerX64::WriteStackPointerToRegister(int reg) {
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerX64::CallCheckStackGuardState() {
++void RegExpMacroAssemblerX64::CallCheckStackGuardState(Immediate extra_space) {
+   // This function call preserves no register values. Caller should
+   // store anything volatile in a C call or overwritten by this function.
+-  static const int num_arguments = 3;
++  static const int num_arguments = 4;
+   __ PrepareCallCFunction(num_arguments);
+ #ifdef V8_TARGET_OS_WIN
+-  // Second argument: Code of self. (Do this before overwriting r8).
+-  __ movq(rdx, code_object_pointer());
++  // Fourth argument: Extra space for variables.
++  __ movq(arg_reg_4, extra_space);
++  // Second argument: Code of self. (Do this before overwriting r8 (arg_reg_3)).
++  __ movq(arg_reg_2, code_object_pointer());
+   // Third argument: RegExp code frame pointer.
+-  __ movq(r8, rbp);
++  __ movq(arg_reg_3, rbp);
+   // First argument: Next address on the stack (will be address of
+   // return address).
+-  __ leaq(rcx, Operand(rsp, -kSystemPointerSize));
++  __ leaq(arg_reg_1, Operand(rsp, -kSystemPointerSize));
+ #else
++  // Fourth argument: Extra space for variables.
++  __ movq(arg_reg_4, extra_space);
+   // Third argument: RegExp code frame pointer.
+-  __ movq(rdx, rbp);
++  __ movq(arg_reg_3, rbp);
+   // Second argument: Code of self.
+-  __ movq(rsi, code_object_pointer());
++  __ movq(arg_reg_2, code_object_pointer());
+   // First argument: Next address on the stack (will be address of
+   // return address).
+-  __ leaq(rdi, Operand(rsp, -kSystemPointerSize));
++  __ leaq(arg_reg_1, Operand(rsp, -kSystemPointerSize));
+ #endif
+   ExternalReference stack_check =
+       ExternalReference::re_check_stack_guard_state(isolate());
+@@ -1189,7 +1196,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerX64::CheckStackGuardState(Address* return_address,
+                                                   Address raw_code,
+-                                                  Address re_frame) {
++                                                  Address re_frame,
++                                                  uintptr_t extra_space) {
+   Code re_code = Code::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolate),
+@@ -1198,7 +1206,8 @@ int RegExpMacroAssemblerX64::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputString),
+       frame_entry_address<const byte*>(re_frame, kInputStart),
+-      frame_entry_address<const byte*>(re_frame, kInputEnd));
++      frame_entry_address<const byte*>(re_frame, kInputEnd),
++      extra_space);
+ }
+ 
+ 
+diff --git a/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h b/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
+index ea4d45edba83..6e5dcd18c286 100644
+--- src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h.orig
++++ src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
+@@ -82,7 +82,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+-                                  Address re_frame);
++                                  Address re_frame, uintptr_t extra_space);
+ 
+  private:
+   // Offsets from rbp of function parameters and stored registers.
+@@ -166,7 +166,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
+   void CheckStackLimit();
+ 
+   // Generate a call to CheckStackGuardState.
+-  void CallCheckStackGuardState();
++  void CallCheckStackGuardState(Immediate extra_space = Immediate(0));
+ 
+   // The rbp-relative location of a regexp register.
+   Operand register_location(int register_index);
+From a3a63cf72f11a9e1a40fd076dea0ce8f532251ba Mon Sep 17 00:00:00 2001
+From: pthier <pthier@chromium.org>
+Date: Mon, 30 Oct 2023 11:59:09 +0100
+Subject: [PATCH] [Backport] Security bug 1488199 (2/2)
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/4987306:
+[regexp][arm64] Fix stack check extra space argument
+
+Pass argument in register instead of the stack.
+
+Bug: chromium:1488199, v8:14415
+Change-Id: Ic9967c9f2ca5da1981a0138ddb5f0335ab7f1425
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/4987306
+Commit-Queue: Patrick Thier <pthier@chromium.org>
+Reviewed-by: Camillo Bruni <cbruni@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#90669}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523702
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc  | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc b/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+index 1e5342dd42e..aaab0c52344 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc.orig
++++ src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+@@ -1366,17 +1366,16 @@ void RegExpMacroAssemblerARM64::CallCheckStackGuardState(Register scratch,
+ 
+   // Allocate space on the stack to store the return address. The
+   // CheckStackGuardState C++ function will override it if the code
+-  // moved. Allocate extra space for 3 arguments (2 for input start/end and 1
+-  // for gap). AAPCS64 requires the stack to be 16 byte aligned.
++  // moved. Allocate extra space for 2 arguments passed by pointers.
++  // AAPCS64 requires the stack to be 16 byte aligned.
+   int alignment = masm_->ActivationFrameAlignment();
+   DCHECK_EQ(alignment % 16, 0);
+   int align_mask = (alignment / kXRegSize) - 1;
+-  int xreg_to_claim = (4 + align_mask) & ~align_mask;
++  int xreg_to_claim = (3 + align_mask) & ~align_mask;
+ 
+   __ Claim(xreg_to_claim);
+ 
+-  __ Mov(x0, extra_space);
+-  __ Poke(x0, 3 * kSystemPointerSize);
++  __ Mov(x6, extra_space);
+   // CheckStackGuardState needs the end and start addresses of the input string.
+   __ Poke(input_end(), 2 * kSystemPointerSize);
+   __ Add(x5, sp, 2 * kSystemPointerSize);
