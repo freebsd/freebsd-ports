@@ -13,7 +13,6 @@ RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
 		tDOM>=0.8.0:www/tdom \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-NO_ARCH=	# no
 USES=	tex
 #USE_TEX=	full
 

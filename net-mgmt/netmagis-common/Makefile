@@ -16,7 +16,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS+=	dtplite:devel/tcllib
 
-NO_ARCH?=	yes
 USES+=		pgsql:11+ tcl
 WANT_PGSQL+=	pgtcl
 
@@ -37,6 +36,7 @@ MAKE_ARGS+=	PREFIX=${PREFIX} TCLSH=${TCLSH} \
 ALL_TARGET=build${PKGNAMESUFFIX?=}
 .else
 ALL_TARGET=nothing
+NO_ARCH=	yes
 .endif
 
 INSTALL_TARGET=	install${PKGNAMESUFFIX}
