@@ -1,0 +1,12 @@
+--- rtsim/src/lib.rs.orig	2023-12-31 09:26:17 UTC
++++ rtsim/src/lib.rs
+@@ -1,8 +1,7 @@
+ #![feature(
+     never_type,
+     try_blocks,
+-    generator_trait,
+-    generators,
++    coroutines,
+     trait_alias,
+     trait_upcasting,
+     control_flow_enum,
