@@ -1,307 +1,348 @@
 CARGO_CRATES=	Inflector-0.11.4 \
-		addr2line-0.17.0 \
+		ab_glyph-0.2.21 \
+		ab_glyph_rasterizer-0.1.8 \
+		addr2line-0.21.0 \
 		adler-1.0.2 \
 		ahash-0.7.6 \
+		ahash-0.8.3 \
 		aho-corasick-0.7.19 \
-		alacritty_config-0.1.0 \
-		alacritty_config_derive-0.2.0 \
-		alacritty_terminal-0.17.0 \
-		ambient-authority-0.0.1 \
+		aho-corasick-1.1.2 \
+		aliasable-0.1.3 \
+		ambient-authority-0.0.2 \
+		android-activity-0.5.0 \
+		android-properties-0.2.2 \
 		android_system_properties-0.1.5 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.65 \
-		arc-swap-1.5.1 \
-		arrayref-0.3.6 \
-		arrayvec-0.5.2 \
+		anyhow-1.0.69 \
+		arbitrary-1.3.1 \
+		arc-swap-1.6.0 \
+		arrayref-0.3.7 \
 		arrayvec-0.7.2 \
+		as-raw-xcb-connection-1.0.0 \
+		ash-0.37.3+1.3.251 \
+		ashpd-0.4.0 \
+		async-broadcast-0.4.1 \
 		async-channel-1.7.1 \
+		async-executor-1.5.1 \
+		async-global-executor-2.3.1 \
+		async-io-1.13.0 \
+		async-lock-2.8.0 \
+		async-recursion-0.3.2 \
+		async-std-1.12.0 \
 		async-task-4.3.0 \
-		async-trait-0.1.57 \
-		atk-0.14.0 \
-		atk-sys-0.14.0 \
-		atomic-waker-1.0.0 \
+		async-trait-0.1.74 \
+		atomic-0.5.3 \
+		atomic-waker-1.1.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		backtrace-0.3.66 \
-		base64-0.8.0 \
-		base64-0.13.0 \
+		backtrace-0.3.69 \
+		base64-0.21.5 \
 		bincode-1.3.3 \
-		bit_field-0.10.1 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bit_field-0.10.2 \
 		bitflags-1.3.2 \
+		bitflags-2.4.0 \
 		bitmaps-2.1.0 \
 		block-0.1.6 \
-		block-buffer-0.9.0 \
-		block-buffer-0.10.3 \
+		block-buffer-0.10.4 \
+		block-sys-0.2.0 \
+		block2-0.3.0 \
 		blocking-1.2.0 \
 		bstr-0.2.17 \
 		bumpalo-3.11.0 \
 		bytecount-0.6.3 \
-		bytemuck-1.12.1 \
-		bytemuck_derive-1.2.1 \
+		bytemuck-1.14.0 \
+		bytemuck_derive-1.5.0 \
 		byteorder-1.4.3 \
-		bytes-1.2.1 \
+		bytes-1.5.0 \
 		cache-padded-1.2.0 \
-		cairo-rs-0.14.9 \
-		cairo-sys-rs-0.14.9 \
-		cap-fs-ext-0.25.3 \
-		cap-primitives-0.25.3 \
-		cap-rand-0.25.3 \
-		cap-std-0.25.3 \
-		cap-time-ext-0.25.3 \
-		cc-1.0.73 \
-		cfg-expr-0.8.1 \
-		cfg-if-0.1.10 \
+		calloop-0.12.3 \
+		calloop-wayland-source-0.2.0 \
+		cap-fs-ext-2.0.0 \
+		cap-net-ext-2.0.0 \
+		cap-primitives-2.0.0 \
+		cap-rand-2.0.0 \
+		cap-std-2.0.0 \
+		cap-time-ext-2.0.0 \
+		cc-1.0.83 \
+		cesu8-1.1.0 \
 		cfg-if-1.0.0 \
-		cgl-0.3.2 \
+		cfg_aliases-0.1.1 \
 		chrono-0.4.22 \
-		clap-3.2.22 \
-		clap_derive-3.2.18 \
+		clap-3.2.25 \
+		clap_derive-3.2.25 \
 		clap_lex-0.2.4 \
-		cmake-0.1.48 \
-		cocoa-0.24.0 \
+		clipboard-win-3.1.1 \
+		cocoa-0.25.0 \
 		cocoa-foundation-0.1.0 \
+		codespan-reporting-0.11.1 \
 		color_quant-1.1.0 \
+		com-rs-0.2.1 \
 		combine-4.6.6 \
 		concurrent-queue-1.2.4 \
-		config-0.13.2 \
-		console_error_panic_hook-0.1.7 \
-		const-cstr-0.3.0 \
+		concurrent-queue-2.2.0 \
+		config-0.13.3 \
+		copypasta-0.10.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
-		core-graphics-0.22.3 \
+		core-graphics-0.23.1 \
 		core-graphics-types-0.1.1 \
-		core-text-19.2.0 \
+		cov-mark-1.1.0 \
 		cpp_demangle-0.3.5 \
 		cpufeatures-0.2.5 \
-		cranelift-bforest-0.88.2 \
-		cranelift-codegen-0.88.2 \
-		cranelift-codegen-meta-0.88.2 \
-		cranelift-codegen-shared-0.88.2 \
-		cranelift-entity-0.88.2 \
-		cranelift-frontend-0.88.2 \
-		cranelift-isle-0.88.2 \
-		cranelift-native-0.88.2 \
-		cranelift-wasm-0.88.2 \
+		cranelift-bforest-0.101.2 \
+		cranelift-codegen-0.101.2 \
+		cranelift-codegen-meta-0.101.2 \
+		cranelift-codegen-shared-0.101.2 \
+		cranelift-control-0.101.2 \
+		cranelift-entity-0.101.2 \
+		cranelift-frontend-0.101.2 \
+		cranelift-isle-0.101.2 \
+		cranelift-native-0.101.2 \
+		cranelift-wasm-0.101.2 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.6 \
+		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.10 \
 		crossbeam-utils-0.8.11 \
+		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
+		ctor-0.1.26 \
+		ctor-0.2.5 \
+		cursor-icon-1.1.0 \
+		d3d12-0.7.0 \
 		darling-0.13.4 \
 		darling_core-0.13.4 \
 		darling_macro-0.13.4 \
-		data-url-0.1.1 \
-		digest-0.9.0 \
-		digest-0.10.5 \
+		data-url-0.2.0 \
+		debugid-0.8.0 \
+		derivative-2.2.0 \
+		digest-0.10.7 \
 		directories-4.0.1 \
 		directories-next-2.0.0 \
 		dirs-4.0.0 \
-		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
-		dlib-0.5.0 \
-		dmg-0.1.1 \
-		dwrote-0.11.0 \
+		dispatch-0.2.0 \
+		dlib-0.5.2 \
+		dmg-0.1.2 \
+		downcast-rs-1.2.0 \
+		drm-0.9.0 \
+		drm-ffi-0.5.0 \
+		drm-fourcc-2.2.0 \
+		drm-sys-0.4.0 \
 		dyn-clone-1.0.10 \
+		educe-0.4.22 \
 		either-1.8.0 \
 		encoding_rs-0.8.31 \
 		encoding_rs_io-0.1.7 \
-		env_logger-0.9.1 \
-		errno-0.2.8 \
+		enum-ordinalize-3.1.13 \
+		enumflags2-0.7.7 \
+		enumflags2_derive-0.7.7 \
+		equivalent-1.0.1 \
+		errno-0.3.3 \
 		errno-dragonfly-0.1.2 \
-		euclid-0.22.7 \
+		euclid-0.22.9 \
 		event-listener-2.5.3 \
-		exr-1.5.1 \
-		fallible-iterator-0.2.0 \
+		exr-1.71.0 \
+		fallible-iterator-0.3.0 \
 		fastrand-1.8.0 \
-		fern-0.6.1 \
-		field-offset-0.3.4 \
-		file-per-thread-logger-0.1.5 \
+		fastrand-2.0.1 \
+		fd-lock-4.0.0 \
+		fdeflate-0.3.0 \
 		filetime-0.2.17 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.24 \
-		float-cmp-0.5.3 \
 		float-cmp-0.9.0 \
-		float-ord-0.2.0 \
-		float_next_after-0.1.5 \
-		fluent-bundle-0.15.2 \
-		fluent-langneg-0.13.0 \
-		fluent-syntax-0.11.0 \
-		flume-0.10.14 \
+		flume-0.11.0 \
 		fnv-1.0.7 \
-		fontconfig-parser-0.5.0 \
-		fontdb-0.5.4 \
-		fontdb-0.9.1 \
+		fontconfig-parser-0.5.3 \
+		fontdb-0.14.1 \
+		fontdb-0.16.0 \
+		fontdue-0.7.3 \
 		foreign-types-0.3.2 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.3 \
 		foreign-types-shared-0.1.1 \
+		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.1.0 \
-		freetype-0.7.0 \
-		freetype-sys-0.13.1 \
-		fs-set-times-0.17.1 \
+		fs-set-times-0.20.0 \
 		fs2-0.4.3 \
-		fs_extra-1.2.0 \
+		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
-		fuchsia-zircon-0.3.3 \
-		fuchsia-zircon-sys-0.3.3 \
-		futures-0.3.24 \
-		futures-channel-0.3.24 \
-		futures-core-0.3.24 \
-		futures-executor-0.3.24 \
-		futures-io-0.3.24 \
+		futures-0.3.28 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
 		futures-lite-1.12.0 \
-		futures-macro-0.3.24 \
-		futures-sink-0.3.24 \
-		futures-task-0.3.24 \
-		futures-util-0.3.24 \
-		fuzzy-matcher-0.3.7 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-util-0.3.28 \
 		fxhash-0.2.1 \
-		gdk-0.14.3 \
-		gdk-pixbuf-0.14.0 \
-		gdk-pixbuf-sys-0.14.0 \
-		gdk-sys-0.14.0 \
+		fxprof-processed-profile-0.6.0 \
 		generic-array-0.14.6 \
+		gethostname-0.3.0 \
 		getopts-0.2.21 \
 		getrandom-0.2.7 \
-		gif-0.11.4 \
-		gimli-0.26.2 \
-		gio-0.14.8 \
-		gio-sys-0.14.0 \
-		git2-0.16.1 \
+		gif-0.12.0 \
+		gimli-0.28.0 \
+		git2-0.18.1 \
 		gl_generator-0.14.0 \
-		gl_loader-0.1.2 \
-		glam-0.10.2 \
-		glib-0.14.8 \
-		glib-macros-0.14.1 \
-		glib-sys-0.14.0 \
 		glob-0.3.0 \
 		globset-0.4.9 \
-		glow-0.11.2 \
-		glutin_wgl_sys-0.1.5 \
-		gobject-sys-0.14.0 \
-		grep-matcher-0.1.5 \
+		gloo-timers-0.2.6 \
+		glow-0.13.0 \
+		glutin_wgl_sys-0.5.0 \
+		gpu-alloc-0.6.0 \
+		gpu-alloc-types-0.3.0 \
+		gpu-allocator-0.23.0 \
+		gpu-descriptor-0.2.3 \
+		gpu-descriptor-types-0.1.1 \
+		grep-matcher-0.1.6 \
 		grep-regex-0.1.10 \
 		grep-searcher-0.1.10 \
-		gtk-0.14.3 \
-		gtk-sys-0.14.0 \
-		gtk3-macros-0.14.0 \
-		h2-0.3.14 \
-		half-1.8.2 \
-		hashbrown-0.11.2 \
+		grid-0.10.0 \
+		h2-0.3.21 \
+		half-2.2.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.13.2 \
+		hashbrown-0.14.2 \
+		hassle-rs-0.10.0 \
 		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
+		hermit-abi-0.3.2 \
+		hex-0.4.3 \
+		hexf-parse-0.2.1 \
+		home-0.5.5 \
 		http-0.2.8 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		humantime-2.1.0 \
-		hyper-0.14.20 \
+		hyper-0.14.27 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.50 \
+		icrate-0.0.4 \
+		id-arena-2.2.1 \
 		ident_case-1.0.1 \
 		idna-0.3.0 \
 		ignore-0.4.18 \
 		im-15.1.0 \
-		image-0.24.4 \
+		image-0.24.7 \
+		imagesize-0.12.0 \
 		include_dir-0.6.2 \
 		include_dir_impl-0.6.2 \
-		indexmap-1.9.2 \
+		indexmap-1.9.3 \
+		indexmap-2.0.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
-		interprocess-1.1.1 \
-		intl-memoizer-0.5.1 \
-		intl_pluralrules-7.0.1 \
+		interprocess-1.2.1 \
 		intmap-0.7.1 \
-		io-extras-0.15.0 \
-		io-lifetimes-0.7.3 \
-		iovec-0.1.4 \
+		io-extras-0.18.0 \
+		io-lifetimes-1.0.11 \
+		io-lifetimes-2.0.2 \
 		ipnet-2.5.0 \
-		is-terminal-0.3.0 \
+		is-docker-0.2.0 \
+		is-wsl-0.4.0 \
 		itertools-0.10.5 \
 		itoa-1.0.3 \
-		ittapi-0.3.2 \
-		ittapi-sys-0.3.2 \
+		ittapi-0.3.5 \
+		ittapi-sys-0.3.5 \
+		jni-0.21.1 \
+		jni-sys-0.3.0 \
 		jobserver-0.1.25 \
-		jpeg-decoder-0.2.6 \
-		js-sys-0.3.60 \
+		jpeg-decoder-0.3.0 \
+		js-sys-0.3.64 \
 		jsonrpc-lite-0.6.0 \
-		kernel32-sys-0.2.2 \
-		keyboard-types-0.6.2 \
+		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kqueue-1.0.6 \
 		kqueue-sys-1.0.3 \
-		kurbo-0.8.3 \
-		lapce-xi-rope-0.3.1 \
+		kurbo-0.9.5 \
+		kv-log-macro-1.0.7 \
+		lapce-xi-rope-0.3.2 \
+		lazy-bytes-cast-5.0.1 \
 		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
 		leb128-0.2.5 \
 		lebe-0.5.2 \
-		libc-0.2.133 \
-		libgit2-sys-0.14.2+1.5.1 \
+		libc-0.2.149 \
+		libgit2-sys-0.16.1+1.7.1 \
 		libloading-0.7.3 \
-		libssh2-sys-0.2.23 \
+		libloading-0.8.1 \
+		libm-0.2.7 \
+		libssh2-sys-0.3.0 \
 		libz-sys-1.1.8 \
-		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.0.46 \
+		line-wrap-0.1.1 \
+		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.10 \
 		locale_config-0.3.0 \
 		lock_api-0.4.9 \
-		log-0.3.9 \
 		log-0.4.17 \
-		log-panics-2.1.0 \
 		lsp-types-0.93.1 \
-		lyon-0.17.10 \
-		lyon_algorithms-0.17.7 \
-		lyon_geom-0.17.7 \
-		lyon_path-0.17.7 \
-		lyon_tessellation-0.17.10 \
 		mach-0.3.2 \
 		malloc_buf-0.0.6 \
-		matches-0.1.9 \
 		maybe-owned-0.3.4 \
-		memchr-2.5.0 \
-		memfd-0.6.1 \
-		memmap2-0.2.3 \
-		memmap2-0.5.7 \
+		memchr-2.6.4 \
+		memfd-0.6.4 \
+		memmap2-0.5.10 \
+		memmap2-0.6.2 \
+		memmap2-0.7.1 \
+		memmap2-0.9.0 \
 		memoffset-0.6.5 \
+		memoffset-0.7.1 \
+		memoffset-0.9.0 \
+		metal-0.27.0 \
 		mime-0.3.16 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
-		mio-0.6.23 \
-		mio-0.8.4 \
-		mio-anonymous-pipes-0.2.0 \
-		mio-extras-2.0.6 \
-		mio-uds-0.6.8 \
-		miow-0.2.2 \
-		miow-0.3.7 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.9 \
+		miow-0.6.0 \
+		naga-0.14.0 \
 		nanorand-0.7.0 \
 		native-tls-0.2.10 \
-		net2-0.2.37 \
+		ndk-0.8.0 \
+		ndk-context-0.1.1 \
+		ndk-sys-0.5.0+25.2.9519653 \
 		nix-0.24.2 \
+		nix-0.26.4 \
 		nom-7.1.1 \
 		notify-5.0.0 \
+		nu-ansi-term-0.46.0 \
+		nucleo-0.2.0 \
+		nucleo-matcher-0.2.0 \
+		num-bigint-0.4.3 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
+		num_enum-0.7.0 \
+		num_enum_derive-0.7.0 \
 		num_threads-0.1.6 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
+		objc-sys-0.3.1 \
+		objc2-0.4.1 \
+		objc2-encode-3.0.0 \
+		objc_exception-0.1.2 \
 		objc_id-0.1.1 \
-		object-0.29.0 \
-		once_cell-1.17.1 \
-		opaque-debug-0.3.0 \
-		open-3.0.3 \
+		object-0.32.1 \
+		once_cell-1.18.0 \
+		open-5.0.0 \
 		openssl-0.10.42 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.76 \
+		orbclient-0.3.46 \
+		ordered-stream-0.0.1 \
 		os_str_bytes-6.3.0 \
-		pango-0.14.8 \
-		pango-sys-0.14.0 \
+		ouroboros-0.15.6 \
+		ouroboros_macro-0.15.6 \
+		overload-0.1.1 \
+		owned_ttf_parser-0.19.0 \
 		parking-2.0.0 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
@@ -309,303 +350,346 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		parking_lot_core-0.9.3 \
 		paste-1.0.9 \
 		pathdiff-0.2.1 \
-		pathfinder_geometry-0.5.1 \
-		pathfinder_simd-0.5.1 \
 		percent-encoding-2.2.0 \
-		pest-2.3.1 \
 		petgraph-0.5.1 \
-		pico-args-0.4.2 \
-		piet-0.4.0 \
-		pin-project-1.0.12 \
-		pin-project-internal-1.0.12 \
-		pin-project-lite-0.2.9 \
+		pico-args-0.5.0 \
+		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
+		piper-0.2.1 \
 		pkg-config-0.3.25 \
-		plist-0.2.4 \
-		png-0.17.6 \
+		plist-1.4.3 \
+		png-0.17.10 \
+		polling-2.8.0 \
+		polling-3.2.0 \
+		pollster-0.3.0 \
 		ppv-lite86-0.2.16 \
-		proc-macro-crate-1.2.1 \
+		presser-0.3.1 \
+		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.44 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.69 \
+		profiling-1.0.10 \
 		psm-0.1.21 \
-		pulldown-cmark-0.9.2 \
-		quote-1.0.21 \
+		pulldown-cmark-0.9.3 \
+		qoi-0.4.1 \
+		quick-xml-0.28.2 \
+		quick-xml-0.30.0 \
+		quote-1.0.33 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_xoshiro-0.6.0 \
-		rayon-1.5.3 \
-		rayon-core-1.9.3 \
-		rctree-0.3.3 \
-		rctree-0.4.0 \
+		range-alloc-0.1.3 \
+		rangemap-1.3.0 \
+		raw-window-handle-0.5.2 \
+		raw-window-handle-0.6.0 \
+		rayon-1.8.0 \
+		rayon-core-1.12.0 \
+		rctree-0.5.0 \
+		rect_packer-0.2.1 \
 		redox_syscall-0.2.16 \
+		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regalloc2-0.3.2 \
-		regex-1.7.0 \
+		regalloc2-0.9.3 \
+		regex-1.10.2 \
 		regex-automata-0.1.10 \
+		regex-automata-0.3.9 \
+		regex-automata-0.4.3 \
 		regex-syntax-0.6.27 \
+		regex-syntax-0.7.5 \
+		regex-syntax-0.8.2 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.12 \
-		resvg-0.22.0 \
-		rgb-0.8.34 \
-		roxmltree-0.14.1 \
+		renderdoc-sys-1.0.0 \
+		reqwest-0.11.22 \
+		resvg-0.33.0 \
+		rfd-0.11.4 \
+		rgb-0.8.36 \
+		rosvgtree-0.3.0 \
+		roxmltree-0.18.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		rustc_version-0.3.3 \
-		rustix-0.35.10 \
-		rustybuzz-0.3.0 \
-		rustybuzz-0.5.1 \
+		rustc_version-0.4.0 \
+		rustix-0.37.23 \
+		rustix-0.38.20 \
+		rustix-openpty-0.1.1 \
+		rustybuzz-0.7.0 \
+		rustybuzz-0.8.0 \
 		ryu-1.0.11 \
-		safe_arch-0.5.2 \
-		safemem-0.2.0 \
+		safemem-0.3.3 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
-		scoped_threadpool-0.1.9 \
+		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
+		sctk-adwaita-0.7.0 \
+		seahash-4.1.0 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
-		self_cell-0.10.2 \
-		semver-0.11.0 \
-		semver-parser-0.10.2 \
-		serde-1.0.145 \
-		serde_derive-1.0.145 \
-		serde_json-1.0.87 \
+		semver-1.0.20 \
+		serde-1.0.190 \
+		serde_derive-1.0.190 \
+		serde_json-1.0.107 \
 		serde_repr-0.1.9 \
+		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.8.26 \
-		sha2-0.9.9 \
-		sha2-0.10.6 \
+		serde_yaml-0.9.25 \
+		sha1-0.6.1 \
+		sha1_smol-1.0.0 \
+		sha2-0.10.7 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.2 \
-		sid-0.6.1 \
 		signal-hook-0.3.14 \
-		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
+		simd-adler32-0.3.7 \
 		simplecss-0.2.1 \
-		siphasher-0.2.3 \
-		siphasher-0.3.10 \
+		siphasher-0.3.11 \
 		sized-chunks-0.6.5 \
-		slab-0.4.7 \
+		slab-0.4.9 \
 		sled-0.34.7 \
 		slice-group-by-0.3.0 \
 		slotmap-1.0.6 \
-		smallvec-1.10.0 \
+		smallvec-1.11.1 \
+		smithay-client-toolkit-0.18.0 \
+		smithay-clipboard-0.7.0 \
+		smol_str-0.2.0 \
 		socket2-0.4.7 \
-		spin-0.9.4 \
+		socket2-0.5.5 \
+		softbuffer-0.3.1 \
+		spin-0.9.8 \
 		spinning-0.1.0 \
-		spsc-buffer-0.1.1 \
+		spirv-0.2.0+1.5.4 \
+		sptr-0.3.2 \
 		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
+		stretto-0.8.1 \
+		strict-num-0.1.1 \
 		strsim-0.10.0 \
 		strum-0.21.0 \
 		strum_macros-0.21.1 \
 		svgfilters-0.4.0 \
-		svgtypes-0.5.0 \
-		svgtypes-0.8.1 \
+		svgtypes-0.11.0 \
+		swash-0.1.8 \
 		syn-1.0.101 \
-		system-deps-3.2.0 \
-		system-interface-0.22.0 \
+		syn-2.0.38 \
+		sys-locale-0.2.4 \
+		system-configuration-0.5.1 \
+		system-configuration-sys-0.5.0 \
+		system-interface-0.26.0 \
+		taffy-0.3.18 \
 		tar-0.4.38 \
-		target-lexicon-0.12.4 \
+		target-lexicon-0.12.11 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		textwrap-0.15.2 \
-		thiserror-1.0.36 \
-		thiserror-impl-1.0.36 \
+		textwrap-0.16.0 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
 		thread-id-4.0.0 \
 		thread_local-1.1.4 \
-		threadpool-1.8.1 \
-		tiff-0.7.3 \
+		tiff-0.9.0 \
 		time-0.1.44 \
 		time-0.3.14 \
-		tiny-skia-0.6.6 \
-		tinystr-0.3.4 \
+		tiny-skia-0.9.1 \
+		tiny-skia-0.11.1 \
+		tiny-skia-path-0.9.0 \
+		tiny-skia-path-0.11.1 \
+		tiny-xlib-0.2.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.21.1 \
-		tokio-macros-1.8.0 \
+		to_method-1.1.0 \
+		tokio-1.33.0 \
+		tokio-macros-2.1.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-socks-0.5.1 \
 		tokio-util-0.7.4 \
 		toml-0.5.9 \
-		toml_edit-0.14.4 \
+		toml-0.8.2 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.19.14 \
+		toml_edit-0.20.2 \
 		tower-service-0.3.2 \
-		tracing-0.1.36 \
-		tracing-attributes-0.1.22 \
-		tracing-core-0.1.29 \
-		tracing-subscriber-0.3.15 \
-		tracing-wasm-0.2.1 \
-		trash-2.1.5 \
-		tree-sitter-0.20.9 \
-		tree-sitter-c-0.20.2 \
-		tree-sitter-cmake-0.1.0 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
+		tracing-core-0.1.30 \
+		trash-3.0.6 \
+		tree-sitter-0.20.10 \
+		tree-sitter-c-0.20.6 \
 		tree-sitter-cpp-0.20.0 \
-		tree-sitter-elm-5.6.3 \
-		tree-sitter-go-0.19.1 \
-		tree-sitter-hare-0.20.7 \
-		tree-sitter-html-0.19.0 \
-		tree-sitter-javascript-0.20.0 \
-		tree-sitter-prisma-io-1.3.0 \
-		tree-sitter-python-0.20.2 \
-		tree-sitter-r-0.19.5 \
-		tree-sitter-rust-0.20.1 \
-		tree-sitter-swift-0.3.4 \
+		tree-sitter-javascript-0.20.1 \
+		tree-sitter-python-0.20.4 \
+		tree-sitter-rust-0.20.4 \
 		tree-sitter-toml-0.20.0 \
-		tree-sitter-typescript-0.20.1 \
-		tree-sitter-vue-0.0.3 \
+		triomphe-0.1.9 \
 		try-lock-0.2.3 \
-		ttf-parser-0.9.0 \
-		ttf-parser-0.12.3 \
 		ttf-parser-0.15.2 \
-		type-map-0.4.0 \
+		ttf-parser-0.18.1 \
+		ttf-parser-0.19.1 \
+		ttf-parser-0.20.0 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.5 \
-		unic-bidi-0.9.0 \
-		unic-char-property-0.9.0 \
-		unic-char-range-0.9.0 \
-		unic-common-0.9.0 \
-		unic-langid-0.9.0 \
-		unic-langid-impl-0.9.0 \
-		unic-ucd-bidi-0.9.0 \
-		unic-ucd-version-0.9.0 \
-		unicase-2.6.0 \
+		uds_windows-1.0.2 \
+		unicase-2.7.0 \
 		unicode-bidi-0.3.8 \
 		unicode-bidi-mirroring-0.1.0 \
 		unicode-ccc-0.1.2 \
-		unicode-general-category-0.2.0 \
-		unicode-general-category-0.4.0 \
+		unicode-general-category-0.6.0 \
 		unicode-ident-1.0.4 \
+		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.22 \
 		unicode-script-0.5.5 \
 		unicode-segmentation-1.10.0 \
 		unicode-vo-0.1.0 \
-		unicode-width-0.1.10 \
+		unicode-width-0.1.11 \
+		unicode-xid-0.2.4 \
+		unsafe-libyaml-0.2.9 \
 		url-2.3.1 \
-		usvg-0.14.1 \
-		usvg-0.22.0 \
+		urlencoding-2.1.3 \
+		usvg-0.33.0 \
+		usvg-parser-0.33.0 \
+		usvg-text-layout-0.33.0 \
+		usvg-tree-0.33.0 \
 		utf8parse-0.2.0 \
-		uuid-1.2.2 \
+		uuid-1.5.0 \
+		value-bag-1.0.0-alpha.9 \
 		vcpkg-0.2.15 \
-		version-compare-0.0.11 \
 		version_check-0.9.4 \
-		vte-0.10.1 \
+		vte-0.12.0 \
 		vte_generate_state_changes-0.1.1 \
 		waker-fn-1.1.0 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-cap-std-sync-1.0.2 \
-		wasi-common-1.0.2 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-futures-0.4.33 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
-		wasm-encoder-0.17.0 \
-		wasmparser-0.89.1 \
-		wasmtime-1.0.2 \
-		wasmtime-asm-macros-1.0.2 \
-		wasmtime-cache-1.0.2 \
-		wasmtime-cranelift-1.0.2 \
-		wasmtime-environ-1.0.2 \
-		wasmtime-fiber-1.0.2 \
-		wasmtime-jit-1.0.2 \
-		wasmtime-jit-debug-1.0.2 \
-		wasmtime-runtime-1.0.2 \
-		wasmtime-types-1.0.2 \
-		wasmtime-wasi-1.0.2 \
+		wasi-cap-std-sync-14.0.2 \
+		wasi-common-14.0.2 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-futures-0.4.34 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		wasm-encoder-0.35.0 \
+		wasmparser-0.115.0 \
+		wasmprinter-0.2.70 \
+		wasmtime-14.0.2 \
+		wasmtime-asm-macros-14.0.2 \
+		wasmtime-cache-14.0.2 \
+		wasmtime-component-macro-14.0.2 \
+		wasmtime-component-util-14.0.2 \
+		wasmtime-cranelift-14.0.2 \
+		wasmtime-cranelift-shared-14.0.2 \
+		wasmtime-environ-14.0.2 \
+		wasmtime-fiber-14.0.2 \
+		wasmtime-jit-14.0.2 \
+		wasmtime-jit-debug-14.0.2 \
+		wasmtime-jit-icache-coherence-14.0.2 \
+		wasmtime-runtime-14.0.2 \
+		wasmtime-types-14.0.2 \
+		wasmtime-versioned-export-macros-14.0.2 \
+		wasmtime-wasi-14.0.2 \
+		wasmtime-winch-14.0.2 \
+		wasmtime-wit-bindgen-14.0.2 \
+		wasmtime-wmemcheck-14.0.2 \
 		wast-35.0.2 \
-		wast-47.0.0 \
-		wat-1.0.49 \
-		web-sys-0.3.60 \
+		wast-66.0.2 \
+		wat-1.0.77 \
+		wayland-backend-0.1.2 \
+		wayland-backend-0.3.2 \
+		wayland-client-0.30.2 \
+		wayland-client-0.31.1 \
+		wayland-csd-frame-0.3.0 \
+		wayland-cursor-0.31.0 \
+		wayland-protocols-0.31.0 \
+		wayland-protocols-plasma-0.2.0 \
+		wayland-protocols-wlr-0.2.0 \
+		wayland-scanner-0.30.1 \
+		wayland-scanner-0.31.0 \
+		wayland-sys-0.30.1 \
+		wayland-sys-0.31.1 \
+		web-sys-0.3.64 \
+		web-time-0.2.0 \
 		weezl-0.1.7 \
-		which-4.3.0 \
-		wiggle-1.0.2 \
-		wiggle-generate-1.0.2 \
-		wiggle-macro-1.0.2 \
-		winapi-0.2.8 \
+		wg-0.3.2 \
+		wgpu-0.18.0 \
+		wgpu-core-0.18.0 \
+		wgpu-hal-0.18.0 \
+		wgpu-types-0.18.0 \
+		widestring-1.0.2 \
+		wiggle-14.0.2 \
+		wiggle-generate-14.0.2 \
+		wiggle-macro-14.0.2 \
 		winapi-0.3.9 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
+		winapi-wsapoll-0.1.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.37.0 \
+		winch-codegen-0.12.2 \
+		windows-0.44.0 \
+		windows-0.51.1 \
+		windows-core-0.51.1 \
 		windows-sys-0.36.1 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.36.1 \
-		windows_aarch64_msvc-0.37.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.36.1 \
-		windows_i686_gnu-0.37.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.36.1 \
-		windows_i686_msvc-0.37.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_gnu-0.37.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.37.0 \
-		winreg-0.10.1 \
-		winres-0.1.12 \
-		winx-0.33.0 \
-		wio-0.2.2 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.5 \
+		winnow-0.5.10 \
+		winreg-0.50.0 \
+		winx-0.36.2 \
+		wit-parser-0.12.1 \
 		witx-0.9.1 \
-		ws2_32-sys-0.2.1 \
+		x11-clipboard-0.8.1 \
+		x11-dl-2.21.0 \
+		x11rb-0.12.0 \
+		x11rb-protocol-0.12.0 \
 		xattr-0.2.3 \
-		xi-unicode-0.3.0 \
-		xml-rs-0.7.0 \
-		xml-rs-0.8.4 \
-		xmlparser-0.13.3 \
+		xcursor-0.3.4 \
+		xkbcommon-dl-0.4.1 \
+		xkeysym-0.2.0 \
+		xml-rs-0.8.19 \
+		xmlparser-0.13.5 \
 		xmlwriter-0.1.0 \
-		yaml-rust-0.4.5 \
-		yazi-0.1.4 \
-		yeslogic-fontconfig-sys-3.2.0 \
+		xxhash-rust-0.8.7 \
+		yazi-0.1.6 \
+		zbus-3.3.0 \
+		zbus_macros-3.3.0 \
+		zbus_names-2.2.0 \
 		zeno-0.2.2 \
-		zip-0.6.3 \
+		zip-0.6.6 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2 \
-		tree-sitter-scheme@git+https://github.com/6cdh/tree-sitter-scheme.git?rev=af0fd1fa452cb2562dc7b5c8a8c55551c39273b9\#af0fd1fa452cb2562dc7b5c8a8c55551c39273b9 \
-		tree-sitter-dart@git+https://github.com/syntacti/tree-sitter-dart?rev=78cad4503571d72666f78d5ba8ed6c1417653063\#78cad4503571d72666f78d5ba8ed6c1417653063 \
-		tree-sitter-scss@git+https://github.com/VixieTSQ/tree-sitter-scss?rev=3aac3391ede5098edbf4cc8a9f6d0cfdfe28e5dc\#3aac3391ede5098edbf4cc8a9f6d0cfdfe28e5dc \
+		zune-inflate-0.2.54 \
+		zvariant-3.7.1 \
+		zvariant_derive-3.7.1 \
+		psp-types@git+https://github.com/lapce/psp-types?rev=f7fea28f59e7b2d6faa1034a21679ad49b3524ad\#f7fea28f59e7b2d6faa1034a21679ad49b3524ad \
 		tree-sitter-md@git+https://github.com/MDeiml/tree-sitter-markdown.git?rev=272e080bca0efd19a06a7f4252d746417224959e\#272e080bca0efd19a06a7f4252d746417224959e \
-		tree-sitter-haskell@git+https://github.com/tree-sitter/tree-sitter-haskell?rev=e30bdfd53eb28c73f26a68b77d436fd2140af167\#e30bdfd53eb28c73f26a68b77d436fd2140af167 \
-		psp-types@git+https://github.com/lapce/psp-types\#b55d2c5c1f9aae89a4f369db5151fe1756d34c08 \
-		tree-sitter-protobuf@git+https://github.com/yusdacra/tree-sitter-protobuf?rev=5aef38d655f76a6b0d172340eed3766c93b3124c\#5aef38d655f76a6b0d172340eed3766c93b3124c \
-		tree-sitter-zig@git+https://github.com/maxxnino/tree-sitter-zig?rev=8d3224c3bd0890fe08358886ebf54fca2ed448a6\#8d3224c3bd0890fe08358886ebf54fca2ed448a6 \
-		tree-sitter-dockerfile@git+https://github.com/panekj/tree-sitter-dockerfile?rev=c49d819e07685c90456270f1cc654d9cba640f53\#c49d819e07685c90456270f1cc654d9cba640f53 \
-		tree-sitter-c-sharp@git+https://github.com/tree-sitter/tree-sitter-c-sharp?rev=5b60f99545fea00a33bbfae5be956f684c4c69e2\#5b60f99545fea00a33bbfae5be956f684c4c69e2 \
-		tree-sitter-julia@git+https://github.com/varlad/tree-sitter-julia.git?rev=2ad4c9b79e0f213b61dbb3820754bfc6306e595a\#2ad4c9b79e0f213b61dbb3820754bfc6306e595a \
-		tree-sitter-sql@git+https://github.com/oknozor/tree-sitter-sql?rev=15dad0f3cae8a094a7dac17d712ea8fb25228011\#15dad0f3cae8a094a7dac17d712ea8fb25228011 \
-		tree-sitter-java@git+https://github.com/tree-sitter/tree-sitter-java.git?rev=09d650def6cdf7f479f4b78f595e9ef5b58ce31e\#09d650def6cdf7f479f4b78f595e9ef5b58ce31e \
-		parley@git+https://github.com/lapce/parley\#c37477b889ff53b9a3033e2180becddf90b9bb17 \
+		tracing,tracing-appender,tracing-attributes,tracing-core,tracing-log,tracing-subscriber@git+https://github.com/tokio-rs/tracing?rev=c14525e1610db88986f849d46bd3e9795878b012\#c14525e1610db88986f849d46bd3e9795878b012 \
+		wasi-experimental-http-wasmtime@git+https://github.com/lapce/wasi-experimental-http\#21419eb785cb583ead180f25a9685fa16de7f326 \
+		human-sort@git+https://github.com/dragazo/human-sort?rev=1e74db1e09e8194ba88ad983723cf6f8b0c365da\#1e74db1e09e8194ba88ad983723cf6f8b0c365da \
 		tree-sitter-json@git+https://github.com/tree-sitter/tree-sitter-json.git?rev=11e2cc12d9b267766fb11a06e52952792fd8e3f0\#11e2cc12d9b267766fb11a06e52952792fd8e3f0 \
-		tree-sitter-haxe@git+https://github.com/vantreeseba/tree-sitter-haxe?rev=52e3d2b9c3955aca886bccc38b496ef99b603a09\#52e3d2b9c3955aca886bccc38b496ef99b603a09 \
-		tree-sitter-glimmer@git+https://github.com/VixieTSQ/tree-sitter-glimmer?rev=7281caca2ba114e1960c5d944a37860ef0841426\#7281caca2ba114e1960c5d944a37860ef0841426 \
-		tree-sitter-erlang@git+https://github.com/WhatsApp/tree-sitter-erlang?rev=a8b8b0e16c4f5552f5e85af3dec976a5d16af8b9\#a8b8b0e16c4f5552f5e85af3dec976a5d16af8b9 \
 		tree-sitter-yaml@git+https://github.com/panekj/tree-sitter-yaml?rev=80c8d76847f03e772c5c524cf29bafb56858a8d1\#80c8d76847f03e772c5c524cf29bafb56858a8d1 \
-		human-sort@git+https://github.com/dragazo/human-sort\#1e74db1e09e8194ba88ad983723cf6f8b0c365da \
-		tree-sitter-ql@git+https://github.com/tree-sitter/tree-sitter-ql?rev=bd087020f0d8c183080ca615d38de0ec827aeeaf\#bd087020f0d8c183080ca615d38de0ec827aeeaf \
+		winit@git+https://github.com/lapce/winit?rev=e8c26d691a20a96c4e9d841d31fc315dabd5a5a1\#e8c26d691a20a96c4e9d841d31fc315dabd5a5a1 \
 		tree-sitter-bash@git+https://github.com/tree-sitter/tree-sitter-bash?rev=4488aa41406547e478636a4fcfd24f5bbc3f2f74\#4488aa41406547e478636a4fcfd24f5bbc3f2f74 \
-		tree-sitter-lua@git+https://github.com/syntacti/tree-sitter-lua?rev=a29f646c14ed800aaeef1ca58a9bacc6d92922e8\#a29f646c14ed800aaeef1ca58a9bacc6d92922e8 \
-		tree-sitter-ocaml@git+https://github.com/tree-sitter/tree-sitter-ocaml?rev=cc26b1ef111100f26a137bcbcd39fd4e35be9a59\#cc26b1ef111100f26a137bcbcd39fd4e35be9a59 \
-		tree-sitter-d@git+https://github.com/ghishadow/tree-sitter-d?rev=36603135ecb37ac6494c520efff91b875815d6f7\#36603135ecb37ac6494c520efff91b875815d6f7 \
-		piet-wgpu@git+https://github.com/lapce/piet-wgpu?branch=shell_opengl\#2024fe8f241dc95ad38f4024d39898bada8fe802 \
-		swash@git+https://github.com/lapce/swash\#1d9b8c700a415f0f4216dd30026b3a2149db8e1e \
-		tree-sitter-elixir@git+https://github.com/elixir-lang/tree-sitter-elixir.git?rev=05e3631c6a0701c1fa518b0fee7be95a2ceef5e2\#05e3631c6a0701c1fa518b0fee7be95a2ceef5e2 \
-		fount@git+https://github.com/lapce/fount\#3bfdc689c0cfbeb498358c79c7be2cb3beb44efe \
-		tree-sitter-latex@git+https://github.com/latex-lsp/tree-sitter-latex?rev=b3b2cf27f33e71438ebe46934900b1153901c6f2\#b3b2cf27f33e71438ebe46934900b1153901c6f2 \
-		wasi-experimental-http-wasmtime@git+https://github.com/lapce/wasi-experimental-http\#5c6d970fe0750932f76979678384bf1c5ab5be2e \
-		tree-sitter-css@git+https://github.com/syntacti/tree-sitter-css?rev=397aa132b9982fcdd2d473ed69343762a557f10a\#397aa132b9982fcdd2d473ed69343762a557f10a \
-		font-kit@git+https://github.com/lapce/font-kit\#23e28b06b40f31fc53b82645b09ce6421768be23 \
-		tree-sitter-svelte@git+https://github.com/Himujjal/tree-sitter-svelte?rev=52e122ae68b316d3aa960a0a422d3645ba717f42\#52e122ae68b316d3aa960a0a422d3645ba717f42 \
-		tree-sitter-wgsl@git+https://github.com/szebniok/tree-sitter-wgsl?rev=272e89ef2aeac74178edb9db4a83c1ffef80a463\#272e89ef2aeac74178edb9db4a83c1ffef80a463 \
-		tree-sitter-ruby@git+https://github.com/tree-sitter/tree-sitter-ruby.git?rev=656abef0645caea793e33c1c773570722463e1d8\#656abef0645caea793e33c1c773570722463e1d8 \
-		tree-sitter-hcl@git+https://github.com/VixieTSQ/tree-sitter-hcl?rev=f4aa4553344e03e149ec459549a7f686d6846626\#f4aa4553344e03e149ec459549a7f686d6846626 \
-		tree-sitter-xml@git+https://github.com/RenjiSann/tree-sitter-xml?rev=422528a43630db6dcc1e222d1c5ee3babd559473\#422528a43630db6dcc1e222d1c5ee3babd559473 \
-		druid,druid-derive,druid-shell@git+https://github.com/lapce/druid?branch=shell_opengl\#0b9c00fcda238e392e758382f25166cd748fd305 \
+		alacritty_config,alacritty_config_derive,alacritty_terminal@git+https://github.com/alacritty/alacritty?rev=6071a7bf35cfd99be8ba70f479f188b7370cda6f\#6071a7bf35cfd99be8ba70f479f188b7370cda6f \
+		peniko@git+https://github.com/linebender/peniko?rev=cafdac9a211a0fb2fec5656bd663d1ac770bcc81\#cafdac9a211a0fb2fec5656bd663d1ac770bcc81 \
+		vger@git+https://github.com/lapce/vger-rs?rev=ed10537c72a732a03f782225a39da80e6f9acbbe\#ed10537c72a732a03f782225a39da80e6f9acbbe \
+		floem,floem_reactive,floem_renderer,floem_tiny_skia,floem_vger@git+https://github.com/lapce/floem?rev=0694f9672a10a49290af223cac3dc2ab53b1b1dd\#0694f9672a10a49290af223cac3dc2ab53b1b1dd \
 		structdesc@git+https://github.com/lapce/structdesc\#a6a2b8ab65d43475238f889736c4aa5dfff4500a \
-		tree-sitter-nix@git+https://github.com/panekj/tree-sitter-nix?rev=59fc47150ab437e8bb356c7ab21e9531e87f7cc8\#59fc47150ab437e8bb356c7ab21e9531e87f7cc8 \
-		tree-sitter-clojure@git+https://github.com/abreumatheus/tree-sitter-clojure?rev=fdc969eb04fc711e38ad74afe441d74b3b5d3091\#fdc969eb04fc711e38ad74afe441d74b3b5d3091 \
-		tree-sitter-kotlin@git+https://github.com/fwcd/tree-sitter-kotlin?rev=a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569\#a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569 \
-		tree-sitter-glsl@git+https://github.com/theHamsta/tree-sitter-glsl?rev=74329feb2605deccd32b1c644af507daa6fb82f1\#74329feb2605deccd32b1c644af507daa6fb82f1 \
-		tree-sitter-php@git+https://github.com/tree-sitter/tree-sitter-php.git?rev=ab2e72179ceb8bb0b249c8ac9162a148e911b3dc\#ab2e72179ceb8bb0b249c8ac9162a148e911b3dc
+		cosmic-text@git+https://github.com/lapce/cosmic-text?rev=f7a20704d6ebbe8fb82d0bb579c37c53e7ae9747\#f7a20704d6ebbe8fb82d0bb579c37c53e7ae9747
