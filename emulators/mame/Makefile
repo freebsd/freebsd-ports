@@ -1,6 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.259
-PORTREVISION=	1
+DISTVERSION=	0.261
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -22,6 +21,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, arm64, x86, and powerpc*
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-svg2pdfconverter>0:textproc/py-sphinxcontrib-svg2pdfconverter@${PY_FLAVOR} \
+		asio>0:net/asio \
+		genie:devel/genie \
 		glm>0:math/glm \
 		rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -30,12 +31,11 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libportmidi.so:audio/portmidi \
 		libpugixml.so:textproc/pugixml \
-		libutf8proc.so:textproc/utf8proc \
-		libuv.so:devel/libuv
+		libutf8proc.so:textproc/utf8proc
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
-USES=		compiler:c++17-lang gl gmake jpeg localbase lua:54 pkgconfig \
-		python:3.9,build sdl shebangfix sqlite:3 xorg
+USES=		compiler:c++17-lang gl gmake jpeg llvm:min=16 localbase \
+		pkgconfig python:3.9,build sdl shebangfix sqlite:3 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
@@ -45,16 +45,20 @@ USE_SDL=	sdl2 ttf2
 USE_XORG=	x11 xext xi xinerama xrender
 
 MAKEFILE=	makefile
-MAKE_ARGS=	TARGETOS=freebsd \
-		VERBOSE=1
-MAKE_ENV=	LDOPTS="${LDFLAGS}" \
-		NO_USE_PORTAUDIO=1 \
+MAKE_ARGS=	SILENT= \
+		verbose=yes
+MAKE_ENV=	NO_USE_PORTAUDIO=1 \
 		NO_USE_PULSEAUDIO=1 \
 		NOWERROR=1 \
-		OPT_FLAGS="${CXXFLAGS}" \
+		OVERRIDE_AR="llvm-ar${LLVM_VERSION}" \
+		OVERRIDE_CC="clang${LLVM_VERSION}" \
+		OVERRIDE_CXX="clang++${LLVM_VERSION}" \
+		OVERRIDE_LD="lld${LLVM_VERSION}" \
 		PRECOMPILE=0 \
 		PYTHON_EXECUTABLE="${PYTHON_CMD}" \
+		TARGETOS=freebsd \
 		USE_PCAP=1 \
+		USE_SYSTEM_LIB_ASIO=1 \
 		USE_SYSTEM_LIB_EXPAT=1 \
 		USE_SYSTEM_LIB_FLAC=1 \
 		USE_SYSTEM_LIB_GLM=1 \
@@ -64,69 +68,92 @@ MAKE_ENV=	LDOPTS="${LDFLAGS}" \
 		USE_SYSTEM_LIB_RAPIDJSON=1 \
 		USE_SYSTEM_LIB_SQLITE3=1 \
 		USE_SYSTEM_LIB_UTF8PROC=1 \
-		USE_SYSTEM_LIB_UV=1 \
 		USE_SYSTEM_LIB_ZLIB=1 \
 		USE_TAPTUN=1
 
 CFLAGS_aarch64=	-march=armv8-a+crc+crypto
 
+EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
+
 SUB_FILES=	mame.ini pkg-message plugin.ini ui.ini
 
 PORTDOCS=	html/*
 
-OPTIONS_DEFINE=	DEBUG DOCS NLS QTDEBUGGER TOOLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=			DOCS NLS OPENMP QTDEBUGGER SSE2 TOOLS
+OPTIONS_RADIO=			BUILDTYPE
+OPTIONS_RADIO_BUILDTYPE=	DEBUG SIZE_OPTIMIZED_CFLAGS \
+				SPEED_OPTIMIZED_CFLAGS
+.if !exists(/usr/include/omp.h)
+OPTIONS_EXCLUDE=		OPENMP
+.endif
+OPTIONS_SUB=			yes
 
-DEBUG_DESC=		Build with debug profiling and symbols
-DOCS_DESC=		Install extensive online MAME documentation
-NLS_DESC=		Install language translations for use in the GUI
-QTDEBUGGER_DESC=	Build with Qt interactive low-level machine debugger
-TOOLS_DESC=		Install tools for machine archiving and development
+BUILDTYPE_DESC=			Application production type
+DEBUG_DESC=			Produce profiling data, and symbols for debugging
+DOCS_DESC=			Install extensive online MAME documentation
+NLS_DESC=			Install language translations for use in the GUI
+QTDEBUGGER_DESC=		Build with Qt interactive low-level machine debugger
+SIZE_OPTIMIZED_CFLAGS_DESC=	Optimize for smaller binaries (-Os)
+SPEED_OPTIMIZED_CFLAGS_DESC=	Optimize for faster binaries (-O3)
+SSE2_DESC=			Build with Streaming SIMD Extensions 2
+TOOLS_DESC=			Additional tools for archiving, development, and multimedia
 
-DEBUG_MAKE_ENV=			DEBUG=1 \
-				OPTIMIZE=0 \
-				PROFILER=1 \
-				SYMBOLS=1
-DEBUG_MAKE_ENV_OFF=		OPTIMIZE=2 \
-				STRIP_SYMBOLS=1
+DEBUG_MAKE_ENV=				DEBUG=1 \
+					OPTIMIZE=g \
+					STRIP_SYMBOLS=0
+DEBUG_MAKE_ENV_OFF=			STRIP_SYMBOLS=1
 # Attempt to avoid address space exhaustion during linking, specifically
 # on armv7, and possibly other architectures:
-DEBUG_LDFLAGS_OFF=		-s
-NLS_USES=			gettext-runtime
-QTDEBUGGER_USES=		qt:5
-QTDEBUGGER_USE=			QT=core,gui,widgets,buildtools:build,qmake:build
-QTDEBUGGER_MAKE_ENV=		USE_QTDEBUG=1
-QTDEBUGGER_MAKE_ENV_OFF=	USE_QTDEBUG=0
-TOOLS_MAKE_ENV=			TOOLS=1
-TOOLS_MAKE_ENV_OFF=		TOOLS=0
+DEBUG_LDFLAGS_OFF=			-s
+NLS_USES=				gettext-runtime
+OPENMP_MAKE_ENV=			OPENMP=1
+OPENMP_MAKE_ENV_OFF=			OPENMP=0
+QTDEBUGGER_USES=			qt:6
+QTDEBUGGER_USE=				QT=base,tools:build
+QTDEBUGGER_MAKE_ENV=			QT_HOME="${PREFIX}" \
+					USE_QTDEBUG=1
+QTDEBUGGER_MAKE_ENV_OFF=		USE_QTDEBUG=0
+SIZE_OPTIMIZED_CFLAGS_MAKE_ENV=		OPTIMIZE=s
+SIZE_OPTIMIZED_CFLAGS_CXXFLAGS=		-Os
+SPEED_OPTIMIZED_CFLAGS_MAKE_ENV=	OPTIMIZE=3
+SPEED_OPTIMIZED_CFLAGS_CXXFLAGS=	-O3
+SSE2_MAKE_ENV=				SSE2=1
+SSE2_MAKE_ENV_OFF=			SSE2=0
+TOOLS_MAKE_ENV=				TOOLS=1
+TOOLS_MAKE_ENV_OFF=			TOOLS=0
 
-_GENIE=		${WRKSRC}/3rdparty/genie
+# man page for command line utility that is not built at all:
+_DIST_EXCLUDES=		docs/man/ldplayer.1
+# Libraries, and shaders for proprietary platforms:
+_DIST_EXCLUDES+=	"bgfx/shaders/dx*" \
+			3rdparty/bgfx/examples/runtime/shaders/dx11 \
+			3rdparty/bgfx/examples/runtime/shaders/metal \
+			3rdparty/dxsdk bgfx/shaders/metal
+# Headers that mask system abstractions required to build MAME:
+_DIST_EXCLUDES+=	3rdparty/bx/include/compat/freebsd/dirent.h \
+			3rdparty/bx/include/compat/freebsd/signal.h
+# Make use of Ports instead of bundled libraries:
+_DIST_EXCLUDES+=	3rdparty/expat 3rdparty/glm 3rdparty/libflac \
+			3rdparty/libjpeg 3rdparty/portmidi 3rdparty/pugixml \
+			3rdparty/rapidjson 3rdparty/sqlite3 \
+			3rdparty/utf8proc 3rdparty/zlib
+# Bundled libraries not used at all:
+_DIST_EXCLUDES+=	3rdparty/genie 3rdparty/portaudio 3rdparty/tap-windows6
+# pre-built GENie binaries for other platforms:
+_DIST_EXCLUDES+=	3rdparty/bx/tools/bin
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
-.if ${ARCH:Mpowerpc*}
-USES+=		llvm:min=16,build
-.else
-USES+=		llvm:15,build
-.endif
-MAKE_ENV+=	OVERRIDE_AR="llvm-ar${LLVM_VERSION}" \
-		OVERRIDE_CC="clang${LLVM_VERSION}" \
-		OVERRIDE_CXX="clang++${LLVM_VERSION}" \
-		OVERRIDE_LD="lld${LLVM_VERSION}"
-.else
-MAKE_ENV+=	OVERRIDE_AR="${AR}" \
-		OVERRIDE_CC="${CC}" \
-		OVERRIDE_CXX="${CXX}" \
-		OVERRIDE_LD="${LD}"
-.endif
-
 .if ${ARCH:Maarch64} || ${ARCH:Mamd64} || ${ARCH:Mpowerpc64*}
-MAKE_ARGS+=	PTR64=1
+MAKE_ENV+=	PTR64=1
+.endif
+
+# Compiling with -pg (PROFILE) causes the linker to run out of memory on i386,
+# build with less profiling data:
+.if ${ARCH:Mi386}
+DEBUG_MAKE_ENV+=	PROFILER=1
+.else
+DEBUG_MAKE_ENV+=	PROFILE=1
 .endif
 
 post-extract:
@@ -134,27 +161,30 @@ post-extract:
 		${WRKSRC}/src/lib/util/localpng.h
 
 post-patch:
-# Prefer some system headers over bundled.
-	${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/dirent.h
-	${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/signal.h
-# Accommodate GENie conception of BSD.
-	${MV} ${_GENIE}/build/gmake.freebsd \
-		${_GENIE}/build/gmake.bsd
 # Patch build to use bundled PNG.
 	${GREP} -rl '"png.h"' ${WRKSRC}/src | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"png.h"|"localpng.h"|'
 	${REINPLACE_CMD} -e 's|"util/png.h"|"util/localpng.h"|' \
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
+# Patch build to use GENie from Ports:
+	${REINPLACE_CMD} -e 's|%%GENIE_PREFIX%%|${PREFIX}/bin/|' \
+	${WRKSRC}/makefile \
+		${WRKSRC}/3rdparty/bx/makefile
 
 do-build-DOCS-on:
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} html SPHINXBUILD=sphinx-build-${PYTHON_VER})
-	${RM} ${WRKSRC}/docs/build/html/.buildinfo
 
 post-build:
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} man SPHINXBUILD=sphinx-build-${PYTHON_VER})
-	${FIND} ${WRKSRC}/language -type f -name "*.po" -delete
+
+post-build-TOOLS-on:
+.for EXTRA_TOOL in nl virtual
+	(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SUBTARGET=${EXTRA_TOOL} \
+		TOOLS=0)
+.endfor
 
 do-install:
 .for DATA in artwork bgfx ctrlr ini hash plugins samples
@@ -171,38 +201,27 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/keymaps/km_${KEYMAP}_LINUX.map \
 		${STAGEDIR}${DATADIR}/keymaps/km_${KEYMAP}.map
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/docs/build/man/MAME.1 \
+	${INSTALL_MAN} ${WRKSRC}/docs/build/man/${PORTNAME:tu}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/docs/man/mame.6 \
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.6 \
 		${STAGEDIR}${PREFIX}/share/man/man6
-
-do-install-DEBUG-on:
-	${INSTALL_PROGRAM} ${WRKSRC}/mamed \
-		${STAGEDIR}${PREFIX}/bin/mame
-
-do-install-DEBUG-off:
-	${INSTALL_PROGRAM} ${WRKSRC}/mame \
-		${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/build && \
-		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -not -regex ^./_sources.*")
 
 do-install-NLS-on:
 	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} language ${STAGEDIR}${DATADIR})
+		${COPYTREE_SHARE} language ${STAGEDIR}${DATADIR} "! -name *.po")
 
 do-install-TOOLS-on:
-.for PROGRAM in castool chdman floptool imgtool jedutil ldresample ldverify \
-	nltool nlwav pngcmp regrep romcmp split srcclean testkeys unidasm
-	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} \
-		${STAGEDIR}${PREFIX}/bin
-.endfor
-.for MANUAL in castool chdman floptool imgtool jedutil ldplayer ldresample \
-	ldverify romcmp
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${MANUAL}.1 \
+	${FIND} ${WRKSRC} -depth 1 -type f -and ! -type d -and ! -name ${PORTNAME} \
+		-perm -o=+x -exec ${INSTALL_PROGRAM} {} ${STAGEDIR}${PREFIX}/bin/ \
+		\;
+	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
-.endfor
 
 .include <bsd.port.mk>
