@@ -129,6 +129,7 @@
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
     SUBDIR += py-technical
+    SUBDIR += py-thepassiveinvestor
     SUBDIR += py-tradingview-ta
     SUBDIR += py-valinvest
     SUBDIR += py-vatnumber
