@@ -1,6 +1,8 @@
 bin/slick-greeter-check-hidpi
+bin/slick-greeter-enable-tap-to-click
 bin/slick-greeter-set-keyboard-layout
 man/man1/slick-greeter-check-hidpi.1.gz
+man/man1/slick-greeter-enable-tap-to-click.1.gz
 man/man1/slick-greeter-set-keyboard-layout.1.gz
 man/man8/slick-greeter.8.gz
 sbin/slick-greeter
@@ -149,6 +151,7 @@ share/locale/zh_TW/LC_MESSAGES/slick-greeter.mo
 %%DATADIR%%/badges/cairo-dock.png
 %%DATADIR%%/badges/cde.svg
 %%DATADIR%%/badges/chromium.svg
+%%DATADIR%%/badges/cinnamon-wayland.svg
 %%DATADIR%%/badges/cinnamon.svg
 %%DATADIR%%/badges/cinnamon2d.svg
 %%DATADIR%%/badges/deepin.png
@@ -181,6 +184,7 @@ share/locale/zh_TW/LC_MESSAGES/slick-greeter.mo
 %%DATADIR%%/badges/larswm.png
 %%DATADIR%%/badges/lubuntu-nexus7.png
 %%DATADIR%%/badges/lxgames.png
+%%DATADIR%%/badges/lxqt.png
 %%DATADIR%%/badges/matchbox.png
 %%DATADIR%%/badges/mate-old.png
 %%DATADIR%%/badges/mate.svg
@@ -189,6 +193,7 @@ share/locale/zh_TW/LC_MESSAGES/slick-greeter.mo
 %%DATADIR%%/badges/openbox-kde.png
 %%DATADIR%%/badges/openbox.png
 %%DATADIR%%/badges/openbsd-cwm.png
+%%DATADIR%%/badges/pademelon.png
 %%DATADIR%%/badges/pantheon.png
 %%DATADIR%%/badges/pekwm.png
 %%DATADIR%%/badges/plasma.png
