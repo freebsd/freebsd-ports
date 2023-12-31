@@ -24,7 +24,5 @@ post-patch:
 	    ${WRKSRC}/dcd.c ${WRKSRC}/infinite.c
 	# Linux? Bugger off!
 	${REINPLACE_CMD} -e 's|linux/||' ${WRKSRC}/process.c
-	${REINPLACE_CMD} -e 's|<endian|<sys/endian|; s|__BYTE_ORDER|_BYTE_ORDER|' \
-	    ${WRKSRC}/endian.h
 
 .include <bsd.port.mk>
