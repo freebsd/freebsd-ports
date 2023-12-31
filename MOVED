@@ -8234,7 +8234,7 @@ graphics/sage||2023-12-31|Has expired: There has been no release for most of the
 dns/updatedd||2023-12-31|Has expired: Last release in 2006 and upstream is dead. Consider migrating to dns/inadyn, dns/ddclient or dns/godns
 multimedia/ppm2fli||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 www/drupal9||2023-12-31|Has expired: Upstream EOL reaches on 2023-11-01
-net/asterisk16|asterisk18|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-09
+net/asterisk16|net/asterisk18|2023-12-31|Has expired: Upstream EOL reaches on 2023-10-09
 games/quake3||2023-12-31|Has expired: BROKEN for more than 4 years on all supported versions after the EOL of 12
 audio/xmradio||2023-12-31|Has expired: Requires defunct bktr
 editors/xi-core||2023-12-31|Has expired: Project is currently discontinued, one depend port broken (editors/xi-term set to deprecation too). Upstream recommends editors/lapce
@@ -8282,8 +8282,8 @@ www/py-dj41-drf-yasg|www/py-dj42-drf-yasg|2023-12-31|Has expired: Extended suppo
 print/ghostscript9-agpl-x11|print/ghostscript10|2023-12-31|Has expired: Obsolete and unsupported upstream, consider using print/ghostscipt10
 print/ghostscript9-agpl-base|print/ghostscript10|2023-12-31|Has expired: Obsolete and unsupported upstream, consider using print/ghostscipt10
 www/py-dj41-django-cors-headers|www/py-dj42-django-cors-headers|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
-databases/mysql57-server|mysql80-server|2023-12-31|Has expired: Upstream support ended in October 2019
-databases/mysql57-client|mysql80-client|2023-12-31|Has expired: Upstream support ended in October 2019
+databases/mysql57-server|databases/mysql80-server|2023-12-31|Has expired: Upstream support ended in October 2019
+databases/mysql57-client|databases/mysql80-client|2023-12-31|Has expired: Upstream support ended in October 2019
 www/py-dj41-django-filter|www/py-dj42-django-filter|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-debug-toolbar|www/py-dj42-django-debug-toolbar|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/kf5-kdewebkit||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
