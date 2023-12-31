@@ -6,6 +6,6 @@ lib/cmake/CCOLAMD/CCOLAMDTargets.cmake
 lib/libccolamd.a
 lib/libccolamd.so
 lib/libccolamd.so.3
-lib/libccolamd.so.3.2.1
+lib/libccolamd.so.%%VER%%
 libdata/pkgconfig/CCOLAMD.pc
 %%PORTDOCS%%%%DOCSDIR%%/CCOLAMD_README.txt

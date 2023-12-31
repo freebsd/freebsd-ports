@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	math
 
 COMMENT=	Constrained column approximate minimum degree ordering
