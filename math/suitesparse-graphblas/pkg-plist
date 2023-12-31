@@ -3,8 +3,7 @@ lib/cmake/GraphBLAS/GraphBLASConfig.cmake
 lib/cmake/GraphBLAS/GraphBLASConfigVersion.cmake
 lib/cmake/GraphBLAS/GraphBLASTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/GraphBLAS/GraphBLASTargets.cmake
-lib/libgraphblas.a
 lib/libgraphblas.so
 lib/libgraphblas.so.8
-lib/libgraphblas.so.8.2.1
+lib/libgraphblas.so.%%VER%%
 libdata/pkgconfig/GraphBLAS.pc
