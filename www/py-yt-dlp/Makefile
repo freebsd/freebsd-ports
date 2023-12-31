@@ -1,5 +1,5 @@
 PORTNAME=	yt-dlp # www/py-yt-dlp is for extending yt-dlp, www/yt-dlp is an application for the end user
-DISTVERSION=	2023.11.16
+DISTVERSION=	2023.12.30
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
