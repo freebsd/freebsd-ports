@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.23.1
+DISTVERSION=	0.9.24
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -29,8 +29,8 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.6:librfxcodec/librfxcodec \
-		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
+GH_TUPLE=	neutrinolabs:librfxcodec:c537401a:librfxcodec/librfxcodec \
+		neutrinolabs:libpainter:b44f2fa:libpainter/libpainter
 
 CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-jpeg \
