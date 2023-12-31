@@ -284,7 +284,7 @@ cargo-extract:
 .    if ${_index} != @git
 	@${MV} ${WRKDIR}/${_crate} ${CARGO_VENDOR_DIR}/${_crate}
 	@${PRINTF} '{"package":"%s","files":{}}' \
-		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}) \
+		$$(${SHA256} -q ${_DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}) \
 		> ${CARGO_VENDOR_DIR}/${_crate}/.cargo-checksum.json
 	@if [ -r ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig ]; then \
 		${MV} ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig \
