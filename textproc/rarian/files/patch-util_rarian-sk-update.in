@@ -1,0 +1,18 @@
+--- util/rarian-sk-update.in.orig	2023-12-09 03:14:08 UTC
++++ util/rarian-sk-update.in
+@@ -19,7 +19,7 @@ bindir=@bindir@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ bindir=@bindir@
+-statedir=@localstatedir@/lib/rarian
++statedir=@localstatedir@/db/rarian
+ convert_dir=@CONVERT_DIR@
+ datarootdir=@datarootdir@
+ datadir=@datadir@
+@@ -422,4 +422,4 @@ rm -rf $tmpdir
+ fi
+ rm -rf $tmpdir
+ 
+-fi # ENABLE_OMF_READ
+\ No newline at end of file
++fi # ENABLE_OMF_READ
