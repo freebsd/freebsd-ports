@@ -10,6 +10,9 @@ LICENSE=	CC-BY-NC-SA-3.0
 LICENSE_FILE=	${FILESDIR}/COPYING.mod_h264_streaming
 LICENSE_DISTFILES=	${PATCHFILES}
 
+DEPRECATED=	Does not build with new lighttpd
+EXPIRATION_DATE=	2024-01-31
+
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 
