@@ -1,8 +1,6 @@
 PORTNAME=	libbson
 DISTVERSION=	1.25.3
 CATEGORIES=	devel
-MASTER_SITES=	https://codeload.github.com/mongodb/${PORTNAME}/tar.gz/${DISTVERSION}?dummy=/
-DISTNAME=	mongo-c-driver-${DISTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	BSON utility library
@@ -11,9 +9,13 @@ WWW=		https://github.com/mongodb/mongo-c-driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe pathfix python:env pkgconfig
+USES=		cmake cpe python:env pkgconfig
 CPE_VENDOR=	mongodb
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mongodb
+GH_PROJECT=	mongo-c-driver
 
 DOCSDIR=	${PREFIX}/share/doc/mongo-c-driver
 
