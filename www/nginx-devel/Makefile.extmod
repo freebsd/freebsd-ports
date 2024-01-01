@@ -2,7 +2,7 @@
 
 OPTIONS_GROUP+=	THIRDPARTYGRP
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE COOKIE_FLAG CT \
+OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
 	DEVEL_KIT ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
 	FIPS_CHECK FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST \
 	HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL \
@@ -33,9 +33,6 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:a84b0f3:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
-COOKIE_FLAG_GH_TUPLE=	AirisX:nginx_cookie_flag_module:c4ff449:cookie_flag
-COOKIE_FLAG_VARS=	DSO_EXTMODS+=cookie_flag
-
 CT_IMPLIES=		HTTP_SSL
 CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
 CT_VARS=		DSO_EXTMODS+=ct
@@ -55,7 +52,7 @@ DYNAMIC_UPSTREAM_IMPLIES=	STREAM
 DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:960eef2:dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 
-DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.2:devel_kit
+DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.3:devel_kit
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
@@ -216,7 +213,7 @@ LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.26rc1:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.26rc2:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
