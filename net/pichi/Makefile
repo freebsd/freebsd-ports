@@ -1,5 +1,5 @@
 PORTNAME=	pichi
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in
