@@ -1,0 +1,8 @@
+squarify is a pure Python implementation of the squarify treemap layout
+algorithm.
+
+squarify is an extension to the treemap method for the visualization of
+hierarchical information, such as directory structures and Organization
+structures, is presented. The Standard treemap method often gives thin,
+elongated rectangles. As a result, rectangles are difficult to compare and
+to select.
