@@ -1,3 +1,3 @@
-TIMESTAMP = 1690287039
-SHA256 (mongo-c-driver-1.24.2.tar.gz) = 25813a220188d40140ca9c36a4b23abfb68fc7cbb37694187cc9852be470abd2
-SIZE (mongo-c-driver-1.24.2.tar.gz) = 8231535
+TIMESTAMP = 1703795554
+SHA256 (mongo-c-driver-1.25.3.tar.gz) = d7cdedc5164b7b8ca39bb45bee789da44097052c882fa84996e4d90eec6fe8d3
+SIZE (mongo-c-driver-1.25.3.tar.gz) = 7306922

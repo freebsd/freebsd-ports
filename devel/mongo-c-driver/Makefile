@@ -1,8 +1,7 @@
 PORTNAME=	mongo-c-driver
-DISTVERSION=	1.24.2
-PORTREVISION=	1
+DISTVERSION=	1.25.3
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/mongodb/${PORTNAME}/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://codeload.github.com/mongodb/${PORTNAME}/tar.gz/${DISTVERSION}?dummy=/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	C Driver for MongoDB
@@ -36,12 +35,14 @@ CRYPTOPROFILE_DESC=	Use system crypto profile (requires OpenSSL)
 MONGODBAWS_DESC=	Enable support for the MONGODB-AWS authentication mechanism
 RDTSCP_DESC=		Fast performance counters on Intel using the RDTSCP instruction
 SRV_DESC=		Enable support for mongodb+srv URIs
-UTF8PROC_DESC=		SCRAM-SHA-256 authentication with non-ASCII passwords
+UTF8PROC_DESC=		SCRAM-SHA-256 authentication with non-ASCII passwords (Use system utf8proc instead of bundled one)
 
 CRYPTOPROFILE_CMAKE_ON=	-DENABLE_CRYPTO_SYSTEM_PROFILE=ON
 CRYPTOPROFILE_CMAKE_OFF=	-DENABLE_CRYPTO_SYSTEM_PROFILE=OFF
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-design>0:textproc/py-sphinx-design@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR}
 DOCS_CMAKE_ON=		-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
 
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
@@ -68,8 +69,9 @@ SRV_CMAKE_OFF=		-DENABLE_SRV=OFF
 SSL_USES=		ssl
 SSL_CMAKE_OFF=		-DENABLE_SSL=OFF
 
-UTF8PROC_CMAKE_ON=	-DUSE_BUNDLED_UTF8PROC=ON
-UTF8PROC_CMAKE_OFF=	-DUSE_BUNDLED_UTF8PROC=OFF
+UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
+UTF8PROC_CMAKE_ON=	-DUSE_BUNDLED_UTF8PROC=OFF
+UTF8PROC_CMAKE_OFF=	-DUSE_BUNDLED_UTF8PROC=ON
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_CMAKE_ON=		-DENABLE_ZSTD=ON
