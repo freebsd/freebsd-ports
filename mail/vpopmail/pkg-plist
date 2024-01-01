@@ -29,13 +29,12 @@ vpopmail/bin/vusagec
 vpopmail/bin/vuserinfo
 vpopmail/etc/inc_deps
 vpopmail/etc/lib_deps
-@exec if [ ! -f %D/vpopmail/etc/defaultdomain ]; then install -o vpopmail -g vchkpw /dev/null %D/vpopmail/etc/defaultdomain; fi
-@unexec if [ -f %D/vpopmail/etc/defaultdomain ] && [ ! -s %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
+@postexec if [ ! -f %D/vpopmail/etc/defaultdomain ]; then install -o vpopmail -g vchkpw /dev/null %D/vpopmail/etc/defaultdomain; fi
+@postunexec if [ -f %D/vpopmail/etc/defaultdomain ] && [ ! -s %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
 @sample vpopmail/etc/tcp.smtp-dist vpopmail/etc/tcp.smtp
 @sample vpopmail/etc/vlimits.default-dist vpopmail/etc/vlimits.default
 %%LDAP%%@sample vpopmail/etc/vpopmail.ldap-dist vpopmail/etc/vpopmail.ldap
-%%LDAP%%@exec echo "You need to specify the LDAP connection settings in the %D/vpopmail/etc/vpopmail.ldap file" | /usr/bin/fmt
-%%MYSQL%%@sample vpopmail/etc/vpopmail.mysql-dist vpopmail/etc/vpopmail.mysql
+%%LDAP%%@preexec echo "You need to specify the LDAP connection settings in the %D/vpopmail/etc/vpopmail.ldap file" | /usr/bin/fmt
 @sample vpopmail/etc/vusagec.conf-dist vpopmail/etc/vusagec.conf
 @owner
 @group
@@ -100,7 +99,7 @@ vpopmail/lib/libvpopmail.a
 @dir(vpopmail,vchkpw,) vpopmail/include
 @dir(vpopmail,vchkpw,) vpopmail/lib
 @dir(vpopmail,vchkpw,) vpopmail
-%%SPAMASSASSIN%%@exec echo "***********************************************************************"
-%%SPAMASSASSIN%%@exec echo "Now you should add the following options to your spamd.sh startup file:"
-%%SPAMASSASSIN%%@exec echo "-v -u vpopmail"
-%%SPAMASSASSIN%%@exec echo "***********************************************************************"
+%%SPAMASSASSIN%%@preexec echo "***********************************************************************"
+%%SPAMASSASSIN%%@preexec echo "Now you should add the following options to your spamd.sh startup file:"
+%%SPAMASSASSIN%%@preexec echo "-v -u vpopmail"
+%%SPAMASSASSIN%%@preexec echo "***********************************************************************"
