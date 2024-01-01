@@ -1,0 +1,11 @@
+--- data/meson.build.orig	2023-09-03 08:27:30 UTC
++++ data/meson.build
+@@ -9,7 +9,7 @@ if get_option('enable-backend')
+     endif
+ 
+     conf_dir = join_paths(sysconfdir, 'geoclue')
+-    configure_file(output: 'geoclue.conf',
++    configure_file(output: 'geoclue.conf.sample',
+                    input: 'geoclue.conf.in',
+                    configuration: conf,
+                    install_dir: conf_dir)

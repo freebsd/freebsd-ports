@@ -1,5 +1,3 @@
-etc/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
-etc/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 @sample %%ETCDIR%%/geoclue.conf.sample
 %%DEMO%%etc/xdg/autostart/geoclue-demo-agent.desktop
 include/libgeoclue-2.0/gclue-client.h
@@ -27,6 +25,8 @@ share/dbus-1/interfaces/org.freedesktop.GeoClue2.Client.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Location.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.xml
+share/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
+share/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 share/dbus-1/system-services/org.freedesktop.GeoClue2.service
 share/gir-1.0/Geoclue-2.0.gir
 %%DOCS%%share/gtk-doc/html/geoclue/gdbus-org.freedesktop.GeoClue2.Agent.html
@@ -76,3 +76,5 @@ share/gir-1.0/Geoclue-2.0.gir
 %%DOCS%%share/gtk-doc/html/libgeoclue/up.png
 share/vala/vapi/libgeoclue-2.0.deps
 share/vala/vapi/libgeoclue-2.0.vapi
+@dir %%ETCDIR%%/conf.d
+@dir %%ETCDIR%%
