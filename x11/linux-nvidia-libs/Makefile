@@ -127,7 +127,12 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-compiler\.so,d'
 LINUX_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 LINUX32_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 .endif
-.if ${NVVERSION} >= 535.05403 # 535.54.03
+
+.if ${NVVERSION} >= 545.00000 # 545.00
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.12
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.12 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.12/'
+.elif ${NVVERSION} >= 535.05403 # 535.54.03
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.11
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.11 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.11/'
@@ -274,6 +279,10 @@ LINUX32_LIBS+=	libnvidia-glvkspirv.so.${PORTVERSION}
 .else
 PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-glvkspirv\.so,d'
 .endif
+.if ${NVVERSION} >= 545.00000 # 545.00
+LINUX_LIBS+=	libnvidia-gpucomp.so.${PORTVERSION}
+LINUX32_LIBS+=  libnvidia-gpucomp.so.${PORTVERSION}
+.endif # 545.00
 .if ${NVVERSION} >= 525.08902 # 525.89.02
 LINUX_LIBS+=	libnvoptix.so.${PORTVERSION} \
 		libnvidia-nvvm.so.${PORTVERSION} \
