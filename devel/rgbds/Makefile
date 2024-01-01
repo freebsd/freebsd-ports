@@ -1,6 +1,5 @@
 PORTNAME=	rgbds
-DISTVERSION=	0.6.1
-PORTREVISION=	2
+DISTVERSION=	0.7.0
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
@@ -11,9 +10,12 @@ WWW=		https://rgbds.gbdev.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png
+BUILD_DEPENDS=	bash>0:shells/bash
+LIB_DEPENDS=	libpng16.so:graphics/png
 
-USES=		bison compiler:c11 dos2unix pkgconfig
+USES=		bison compiler:c11 dos2unix pkgconfig shebangfix
+
+SHEBANG_FILES=	src/bison.sh
 MAKE_ARGS=	Q= # verbose builds
 WRKSRC=		${WRKDIR}/rgbds
 
