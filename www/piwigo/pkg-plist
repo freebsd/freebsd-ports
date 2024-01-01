@@ -3783,6 +3783,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/js/jquery-1.6.4.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/js/jquery.mobile.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/js/klass.min.js
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/js/mcs_sp.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/js/smartpocket.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/js/thumb.arrange.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/language/ar_SA/index.php
@@ -3893,6 +3894,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/footer.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/header.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/identification.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/include/colorbox.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/index.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/infos_errors.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/mainpage_categories.tpl
