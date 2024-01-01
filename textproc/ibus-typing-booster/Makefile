@@ -1,6 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.24.5
-PORTREVISION=	1
+PORTVERSION=	2.24.10
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -66,7 +65,7 @@ PY2FIX=		setup/user_transliteration.py tests/test_m17n_db_info.py	\
 		tests/test_emoji_similar.py tests/test_emoji_candidates.py
 SHR2FIX=	engine/itb_util.py engine/itb_emoji.py engine/hunspell_table.py	\
 		tests/test_compose_sequences.py typing-booster.appdata.xml	\
-		setup/user_transliteration.py
+		setup/user_transliteration.py ${GLIB_SCHEMAS} engine/itb_sound.py
 COMP2DEL=	engine/Makefile setup/Makefile
 
 pre-configure:

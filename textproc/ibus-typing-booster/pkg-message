@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-It is recommanded to install a font with emoji, e.g. x11-fonts/twemoji-color-font-ttf .
+It is recommanded to install a font with emojis, e.g. x11-fonts/twemoji-color-font-ttf or x11-fonts/noto-emoji.
 
 And do not forget to run `ibus restart' after an upgrade.
 EOM
