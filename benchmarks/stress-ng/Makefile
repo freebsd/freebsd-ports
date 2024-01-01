@@ -1,6 +1,7 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
 DISTVERSION=	0.17.03
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -53,6 +54,7 @@ USE_GL=	egl glesv2 gbm
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/configs
+	${TOUCH} ${WRKSRC}/configs/HAVE_CRYPT_H
 .if ${ARCH} == i386
 	${TOUCH} ${WRKSRC}/configs/HAVE_VECMATH
 .endif
@@ -85,6 +87,9 @@ post-patch-GPU-off:
 	${TOUCH} ${WRKSRC}/configs/HAVE_GLES2_H
 	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_GBM
 	${TOUCH} ${WRKSRC}/configs/HAVE_GBM_H
+
+do-configure:
+	cd ${WRKSRC} && ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${_MAKE_JOBS} config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
