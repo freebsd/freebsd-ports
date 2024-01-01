@@ -165,6 +165,7 @@ include/inn/wire.h
 include/inn/xmalloc.h
 include/inn/xwrite.h
 lib/perl/INN/Config.pm
+lib/perl/INN/ovsqlite_client.pm
 lib/perl/INN/Utils/Shlock.pm
 lib/innreport_inn.pm
 lib/innreport-display.conf
