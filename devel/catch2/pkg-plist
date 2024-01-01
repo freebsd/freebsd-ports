@@ -185,9 +185,9 @@ lib/cmake/Catch2/CatchShardTests.cmake
 lib/cmake/Catch2/CatchShardTestsImpl.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.5.0
+lib/libCatch2.so.3.5.1
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.5.0
+lib/libCatch2Main.so.3.5.1
 libdata/pkgconfig/catch2-with-main.pc
 libdata/pkgconfig/catch2.pc
 share/Catch2/gdbinit
