@@ -69,6 +69,12 @@ check_dep() {
 			d=${overlay}/${2}
 			f=
 			case "${d}" in
+			*~*/*) ;; # Ignore ~ in the path which would not be a subpkg
+			*~*)
+			    d=${d%~*}
+				;;
+			esac
+			case "${d}" in
 			*@*/*) ;; # Ignore @ in the path which would not be a flavor
 			*@*)
 				f=${d##*@}

@@ -21,15 +21,22 @@ install_depends()
 {
 	origin=$1
 	target=$2
-	depends_args=$3
+	subpkg=$3
+	depends_args=$4
 	if [ -z "${dp_USE_PACKAGE_DEPENDS}" -a -z "${dp_USE_PACKAGE_DEPENDS_ONLY}" ]; then
 		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
 		return 0
 	fi
 
-	port_var_fetch "${origin}" "${depends_args}" \
-	    PKGFILE pkgfile \
-	    PKGBASE pkgbase
+	if [ -z "${subpkg}" ]; then
+		port_var_fetch "${origin}" "${depends_args}" \
+			PKGFILE pkgfile \
+			PKGBASE pkgbase
+	else
+		port_var_fetch "${origin}" "${depends_args}" \
+			PKGFILE.${subpkg} pkgfile \
+			PKGBASE.${subpkg} pkgbase
+	fi
 
 	if [ -r "${pkgfile}" -a "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   Installing existing package ${pkgfile}"
@@ -123,11 +130,17 @@ for _line in ${dp_RAWDEPENDS} ; do
 		continue
 	fi
 
+	subpkg=
 	case "${origin}" in
 	*@*/*) ;; # Ignore @ in the path which would not be a flavor
 	*@*)
 		export FLAVOR="${origin##*@}"
 		origin=${origin%@*}
+		;;
+	*~*/*) ;; # Ignore ~ in the path which would not be a subpackage
+	*~*)
+		subpkg="${origin##*~}"
+		origin=${origin%~*}
 		;;
 	esac
 
@@ -194,7 +207,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	fi
 
 	# Now actually install the dependencies
-	install_depends "${origin}" "${target}" "${depends_args}"
+	install_depends "${origin}" "${target}" "${subpkg}" "${depends_args}"
 	# Recheck if the installed dependency validates the pattern except for /nonexistent
 	[ "${fct}" = "false" ] || ${fct} "${pattern}"
 	echo "===>   Returning to build of ${dp_PKGNAME}"

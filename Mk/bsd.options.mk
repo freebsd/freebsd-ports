@@ -197,8 +197,8 @@ _ALL_OPTIONS_HELPERS=	${_OPTIONS_DEPENDS:S/$/_DEPENDS/} \
 			CONFIGURE_ENABLE CONFIGURE_OFF CONFIGURE_ON \
 			CONFIGURE_WITH IMPLIES MESON_ARGS MESON_DISABLED \
 			MESON_ENABLED MESON_FALSE MESON_OFF MESON_ON MESON_TRUE \
-			PREVENTS PREVENTS_MSG QMAKE_OFF QMAKE_ON USE USE_OFF \
-			VARS VARS_OFF
+			PREVENTS PREVENTS_MSG QMAKE_OFF QMAKE_ON \
+			SUBPACKAGES SUBPACKAGES_OFF USE USE_OFF VARS VARS_OFF
 
 # The format here is target_family:priority:target-type
 _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
@@ -455,6 +455,19 @@ ALL_OPTIONS=	${OPTIONS_DEFINE}
 _OPTIONS_${target}?=
 .  endfor
 
+# Handle subpackages before the rest to be able to handle options helpers
+# with subpackages
+.  for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
+.    if ${PORT_OPTIONS:M${opt}}
+.      if defined(${opt}_SUBPACKAGES)
+SUBPACKAGES+=	${${opt}_SUBPACKAGES}
+.      endif
+.    else
+.      if defined(${opt}_SUBPACKAGES_OFF)
+SUBPACKAGES+=	${${opt}_SUBPACKAGES_OFF}
+.      endif
+.    endif
+.  endfor
 .  for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
 # PLIST_SUB
 PLIST_SUB?=
@@ -540,6 +553,11 @@ ${flags}+=	${${opt}_${flags}}
 .        if defined(${opt}_${deptype}_DEPENDS)
 ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .        endif
+.        for p in ${SUBPACKAGES}
+.          if defined(${opt}_${deptype}_DEPENDS.${p})
+${deptype}_DEPENDS.{p}+=	${${opt}_${deptype}_DEPENDS.${p}}
+.          endif
+.        endfor
 .      endfor
 .      for target in ${_OPTIONS_TARGETS}
 _target=	${target:C/:.*//}
@@ -611,6 +629,11 @@ ${flags}+=	${${opt}_${flags}_OFF}
 .        if defined(${opt}_${deptype}_DEPENDS_OFF)
 ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .        endif
+.        for p in ${SUBPACKAGES}
+.          if defined(${opt}_${deptype}_DEPENDS_OFF.${p})
+${deptype}_DEPENDS.{p}+=	${${opt}_${deptype}_DEPENDS_OFF.${p}}
+.          endif
+.        endfor
 .      endfor
 .      for target in ${_OPTIONS_TARGETS}
 _target=	${target:C/:.*//}

@@ -6,7 +6,8 @@
 # Strip (owner,group,perm) from keywords
 _strip_perms() {
 	sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
-	    -e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /'
+	    -e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /' \
+		-e 's/^@@[[:alnum:]]+@@//'
 }
 
 # Expand TMPPLIST to absolute paths, splitting files and dirs into separate

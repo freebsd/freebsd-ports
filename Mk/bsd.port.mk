@@ -2196,6 +2196,7 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 _PKGMESSAGES+=	${PKGMESSAGE}
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
+_PLIST?=	${WRKDIR}/.PLIST
 
 # backward compatibility for users
 .    if defined(_PKG_TRANSITIONING_TO_NEW_EXT)
@@ -2228,11 +2229,6 @@ PKG_DBDIR?=		/var/db/pkg
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
 INSTALL_TARGET+=	${LATE_INSTALL_ARGS}
-
-# Integrate with the license auditing framework
-.    if !defined (DISABLE_LICENSES)
-.include "${PORTSDIR}/Mk/bsd.licenses.mk"
-.    endif
 
 # Popular master sites
 .include "${PORTSDIR}/Mk/bsd.sites.mk"
@@ -2607,14 +2603,6 @@ check-categories:
 
 PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
-.    if exists(${PACKAGES})
-PACKAGES:=	${PACKAGES:S/:/\:/g}
-_HAVE_PACKAGES=	yes
-PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
-.    else
-PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
-.    endif
-WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
@@ -2625,6 +2613,75 @@ PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}
 # Temporary workaround to be deleted once every supported version of FreeBSD
 # have a bootstrap which handles the pkg extension.
 PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}.sig
+.    endif
+
+
+_PKGS=	${PKGBASE}
+PORTS_FEATURES+=	SUBPACKAGES
+.    if defined(SUBPACKAGES)
+.      if ${SUBPACKAGES:Mmain}
+DEV_ERROR+=	"SUBPACKAGES cannot contain 'main', it is a reserved value"
+.      endif
+.      for sp in ${SUBPACKAGES}
+.        if ${sp:C/[[:lower:][:digit:]_]//g}
+_BAD_SUBPACKAGES_NAMES+=	${sp}
+.        endif
+.      endfor
+.      if !empty(_BAD_SUBPACKAGES_NAMES)
+DEV_ERROR+=	"SUBPACKAGES cannot subpackages that are not all [a-z0-9_]: ${_BAD_SUBPACKAGES_NAMES}"
+.      endif
+.    endif
+.    for sp in ${SUBPACKAGES}
+# If a FRAMEWORK generated package needs to override its subpackage package name
+# it can do it with this mechanism
+.      if !defined(_PKGS.${sp})
+_PKGS.${sp}=	${PKGBASE}-${sp}
+.      endif
+_PKGS+=	${_PKGS.${sp}}
+PKGBASE.${sp}=	${_PKGS.${sp}}
+_SP.${_PKGS.${sp}}=.${sp}
+.    endfor
+
+.    if !defined(_DID_SUBPACKAGES_HELPERS)
+_DID_SUBPACKAGES_HELPERS=	yes
+_SUBPACKAGE_HELPERS_FILE=	DESCR PKGINSTALL PKGDEINSTALL PKGMESSAGE \
+							PKGPREINSTALL PKGPOSTINSTALL PKGPREDEINSTALL PKGPOSTDEINSTALL \
+							PKGPREUPGRADE PKGPOSTUPGRADE PKGUPGRADE
+
+.      for sp in ${SUBPACKAGES}
+# These overwrite the current value
+.        for v in ${_SUBPACKAGE_HELPERS_FILE}
+${v}.${sp}?=	${$v}.${sp}
+.        endfor
+_PKGMESSAGES.${sp}=		${PKGMESSAGE}.${sp}
+.        if !exists(${DESCR.${sp}})
+DESCR.${sp}=	${DESCR}
+DEV_WARNING+=	"DESCR.${sp} needs to point to an existing file."
+.        endif
+COMMENT.${sp}?=	${COMMENT} (subpkg: ${sp})
+.      endfor
+.    endif
+
+.    if exists(${PACKAGES})
+PACKAGES:=	${PACKAGES:S/:/\:/g}
+_HAVE_PACKAGES=	yes
+_PKGDIR=	${PKGREPOSITORY}
+.    else
+_PKGDIR=	${.CURDIR}
+.    endif
+.    for sp in ${_PKGS}
+PKGNAME${_SP.${sp}}=	${sp}-${PKGVERSION}
+PKGNAMES+=				${PKGNAME${_SP.${sp}}}
+PKGFILE${_SP.${sp}}=	${_PKGDIR}/${PKGNAME${_SP.${sp}}}${PKG_SUFX}
+.    endfor
+_EXTRA_PACKAGE_TARGET_DEP+=	${_PKGDIR}
+.    for sp in ${_PKGS}
+WRKDIR_PKGFILE${_SP.${sp}}=	${WRKDIR}/pkg/${PKGNAME${_SP.${sp}}}${PKG_SUFX}
+.    endfor
+
+# Integrate with the license auditing framework
+.    if !defined (DISABLE_LICENSES)
+.include "${PORTSDIR}/Mk/bsd.licenses.mk"
 .    endif
 
 CONFIGURE_SCRIPT?=	configure
@@ -3402,10 +3459,6 @@ do-test:
 _EXTRA_PACKAGE_TARGET_DEP+= ${PKGFILE}
 _PORTS_DIRECTORIES+=	${PKGREPOSITORY}
 
-${PKGFILE}: ${WRKDIR_PKGFILE} ${PKGREPOSITORY}
-	@${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
-			|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}
-
 .      if ${PKGORIGIN} == "ports-mgmt/pkg" || ${PKGORIGIN} == "ports-mgmt/pkg-devel"
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTREPOSITORY}
 _PORTS_DIRECTORIES+=	${PKGLATESTREPOSITORY}
@@ -3431,14 +3484,29 @@ ${PKGOLDSIGFILE}: ${PKGLATESTREPOSITORY}
 .    endif
 
 # from here this will become a loop for subpackages
-${WRKDIR_PKGFILE}: ${TMPPLIST} create-manifest ${WRKDIR}/pkg
-	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+.    for sp in ${_PKGS}
+${_PLIST}.${sp}: ${TMPPLIST}
+	@if [ "${PKGBASE}" = "${sp}" ]; then \
+		${SED} "/^@comment /d; /@@/d" ${TMPPLIST} > ${.TARGET} ; \
+	else \
+		${SED} -n "s/@@${sp:S/${PKGBASE}-//}@@//p" ${TMPPLIST} > ${.TARGET} ; \
+	fi
+
+${WRKDIR_PKGFILE${_SP.${sp}}}:	${_PLIST}.${sp} create-manifest ${WRKDIR}/pkg
+	@echo "===>   Building ${PKGNAME${_SP.${sp}}}"
+	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR}.${sp} -p ${_PLIST}.${sp} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
-	#
-# Temporary will be later dynamically added per subpackages
-_EXTRA_PACKAGE_TARGET_DEP+=	${WRKDIR_PKGFILE}
+
+_EXTRA_PACKAGE_TARGET_DEP+=	${WRKDIR_PKGFILE${_SP.${sp}}}
+
+${PKGFILE${_SP.${sp}}}: ${WRKDIR_PKGFILE${_SP.${sp}}}
+	@${LN} -f ${WRKDIR_PKGFILE${_SP.${sp}}} ${PKGFILE${_SP.${sp}}} 2>/dev/null \
+		|| ${CP} -f ${WRKDIR_PKGFILE${_SP.${sp}}} ${PKGFILE${_SP.${sp}}}
+
+_EXTRA_PACKAGE_TARGET_DEP+=	${PKGFILE${_SP.${sp}}}
+.    endfor
 # This will be the end of the loop
 
 .    if !target(do-package)
@@ -3455,14 +3523,18 @@ do-package: ${_EXTRA_PACKAGE_TARGET_DEP} ${WRKDIR}/pkg
 
 .    if !target(delete-package)
 delete-package:
-	@${ECHO_MSG} "===>  Deleting package for ${PKGNAME}"
+.      for sp in ${_PKGS}
+	@${ECHO_MSG} "===>  Deleting package for ${sp}"
 # When staging, the package may only be in the workdir if not root
-	@${RM} ${PKGFILE} ${WRKDIR_PKGFILE} 2>/dev/null || :
+	@${RM} ${PKGFILE${_SP.${sp}}} ${WRKDIR_PKGFILE${_SP.${sp}}} 2>/dev/null || :
+.      endfor
 .    endif
 
 .    if !target(delete-package-list)
 delete-package-list:
-	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} ${PKGFILE})"
+.      for sp in ${_PKGS}
+	@${ECHO_CMD} "[ -f ${PKGFILE${_SP.${sp}}} ] && (${ECHO_CMD} deleting ${PKGFILE${_SP.${sp}}}; ${RM} ${PKGFILE${_SP.${sp}}})"
+.      endfor
 .    endif
 
 # Used by scripts and users to install a package from local repository.
@@ -3474,13 +3546,16 @@ _INSTALL_PKG_ARGS=	-f
 .      if defined(INSTALLS_DEPENDS)
 _INSTALL_PKG_ARGS+=	-A
 .      endif
-install-package:
-	@if [ -f "${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}" ]; then \
-	    _pkgfile="${WRKDIR_PKGFILE}"; \
+.      for sp in ${_PKGS}
+install-package: install-package.${sp}
+install-package.${sp}:
+	@if [ -f "${WRKDIR_PKGFILE${_SP.${sp}}}" ]; then \
+	    _pkgfile="${WRKDIR_PKGFILE${_SP.${sp}}}"; \
 	else \
-	    _pkgfile="${PKGFILE}"; \
+	    _pkgfile="${PKGFILE${_SP.${sp}}}"; \
 	fi; \
 	${PKG_ADD} ${_INSTALL_PKG_ARGS} $${_pkgfile}
+.      endfor
 .    endif
 
 # Utility targets follow
@@ -3673,7 +3748,7 @@ install-message:
 test-message:
 	@${ECHO_MSG} "===>  Testing for ${PKGNAME}"
 package-message:
-	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
+	@${ECHO_MSG} "===>  Building packages for ${PKGNAME}"
 
 # Empty pre-* and post-* targets
 
@@ -3743,14 +3818,16 @@ deinstall:
 		${SU_CMD} "${MAKE} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .      else
-	@${ECHO_MSG} "===>  Deinstalling for ${PKGBASE}"
-	@if ${PKG_INFO} -e ${PKGBASE}; then \
-		p=`${PKG_INFO} -q -O ${PKGBASE}`; \
+.        for _sp in ${_PKGS}
+	@${ECHO_MSG} "===>  Deinstalling for ${_sp}"
+	@if ${PKG_INFO} -e ${_sp}; then \
+		p=`${PKG_INFO} -q -O ${_sp}`; \
 		${ECHO_MSG} "===>   Deinstalling $${p}"; \
-		${PKG_DELETE} -f ${PKGBASE} ; \
+		${PKG_DELETE} -f ${_sp} ; \
 	else \
-		${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
+		${ECHO_MSG} "===>   ${_sp} not installed, skipping"; \
 	fi
+.        endfor
 	@${RM} ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .      endif
 .    endif
@@ -3976,7 +4053,7 @@ package-name:
 repackage: pre-repackage package
 
 pre-repackage:
-	@${RM} ${PACKAGE_COOKIE}
+	@${RM} ${PACKAGE_COOKIE} ${TMPPLIST}*
 .    endif
 
 # Build a package but don't check the cookie for installation, also don't
@@ -3994,10 +4071,13 @@ package-noinstall: package
 depends: pkg-depends extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
 .      for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN TEST
+.        for sp in ${_PKGS}
+${deptype}_DEPENDS_ALL+=	${${deptype}_DEPENDS${_SP.${sp}}}
+.        endfor
 ${deptype:tl}-depends:
-.        if defined(${deptype}_DEPENDS) && !defined(NO_DEPENDS)
+.        if !empty(${deptype}_DEPENDS_ALL) && !defined(NO_DEPENDS)
 	@${SETENV} \
-		dp_RAWDEPENDS="${${deptype}_DEPENDS}" \
+		dp_RAWDEPENDS="${${deptype}_DEPENDS_ALL}" \
 		dp_DEPTYPE="${deptype}_DEPENDS" \
 		dp_DEPENDS_TARGET="${DEPENDS_TARGET}" \
 		dp_DEPENDS_PRECLEAN="${DEPENDS_PRECLEAN}" \
@@ -4026,7 +4106,7 @@ ${deptype:tl}-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} ${TEST_DEPENDS}
+_UNIFIED_DEPENDS=${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL} ${TEST_DEPENDS_ALL}
 _DEPEND_SPECIALS=	${_UNIFIED_DEPENDS:M*\:*\:*:C,^[^:]*:([^:]*):.*$,\1,}
 
 .    for d in ${_UNIFIED_DEPENDS:M*\:/*}
@@ -4079,9 +4159,9 @@ ALL-DEPENDS-LIST=			${DEPENDS-LIST} -r ${_UNIFIED_DEPENDS:Q}
 ALL-DEPENDS-FLAVORS-LIST=	${DEPENDS-LIST} -f -r ${_UNIFIED_DEPENDS:Q}
 DEINSTALL-DEPENDS-FLAVORS-LIST=	${DEPENDS-LIST} -f -r ${_UNIFIED_DEPENDS:N${PKG_DEPENDS}:Q}
 MISSING-DEPENDS-LIST=		${DEPENDS-LIST} -m ${_UNIFIED_DEPENDS:Q}
-BUILD-DEPENDS-LIST=			${DEPENDS-LIST} "${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}"
-RUN-DEPENDS-LIST=			${DEPENDS-LIST} "${LIB_DEPENDS} ${RUN_DEPENDS}"
-TEST-DEPENDS-LIST=			${DEPENDS-LIST} ${TEST_DEPENDS:Q}
+BUILD-DEPENDS-LIST=			${DEPENDS-LIST} "${PKG_DEPENDS_ALL} ${EXTRACT_DEPENDS_ALL} ${PATCH_DEPENDS_ALL} ${FETCH_DEPENDS_ALL} ${BUILD_DEPENDS_ALL} ${LIB_DEPENDS_ALL}"
+RUN-DEPENDS-LIST=			${DEPENDS-LIST} "${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL}"
+TEST-DEPENDS-LIST=			${DEPENDS-LIST} ${TEST_DEPENDS_ALL:Q}
 CLEAN-DEPENDS-LIST=			${DEPENDS-LIST} -wr ${_UNIFIED_DEPENDS:Q}
 CLEAN-DEPENDS-LIMITED-LIST=	${DEPENDS-LIST} -w ${_UNIFIED_DEPENDS:Q}
 
@@ -4170,7 +4250,7 @@ fetch-required: fetch
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
 .        for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
 .          if defined(${deptype}_DEPENDS)
-	@targ=fetch; deps="${${deptype}_DEPENDS}"; ${FETCH_LIST}
+	@targ=fetch; deps="${${deptype}_DEPENDS_ALL}"; ${FETCH_LIST}
 .          endif
 .        endfor
 .      endif
@@ -4182,7 +4262,7 @@ fetch-required-list: fetch-list
 .      if !defined(NO_DEPENDS)
 .        for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
 .          if defined(${deptype}_DEPENDS)
-	@targ=fetch-list; deps="${${deptype}_DEPENDS}"; ${FETCH_LIST}
+	@targ=fetch-list; deps="${${deptype}_DEPENDS_ALL}"; ${FETCH_LIST}
 .          endif
 .        endfor
 .      endif
@@ -4221,7 +4301,7 @@ package-depends-list:
 	@${PACKAGE-DEPENDS-LIST}
 .    endif
 
-_LIB_RUN_DEPENDS=	${LIB_DEPENDS} ${RUN_DEPENDS}
+_LIB_RUN_DEPENDS=	${LIB_DEPENDS_ALL} ${RUN_DEPENDS_ALL}
 PACKAGE-DEPENDS-LIST?= \
 	if [ "${CHILD_DEPENDS}" ]; then \
 		installed=$$(${PKG_INFO} -qO ${PKGORIGIN} 2>/dev/null || \
@@ -4239,6 +4319,11 @@ PACKAGE-DEPENDS-LIST?= \
 	checked="${PARENT_CHECKED}"; \
 	for dir in ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}; do \
 		unset flavor; \
+		case $${dir} in \
+		*~*) \
+			dir=$${dir%~*}; \
+			;; \
+		esac; \
 		case $${dir} in \
 		*@*) \
 			flavor=$${dir\#*@}; \
@@ -4268,61 +4353,85 @@ PACKAGE-DEPENDS-LIST?= \
 		fi; \
 	done
 
-ACTUAL-PACKAGE-DEPENDS?= \
+# FIXME: SELF_DEPENDS can only be used to depend on sub packages whose
+# package name has not been overrided by the framework, otherwize the
+# assumption made below that the package name is "PKGBASE-$$self" is broken.
+.    for sp in ${_PKGS}
+ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}?= \
 	depfiles="" ; \
-	for lib in ${LIB_DEPENDS:C/\:.*//}; do \
+	for lib in ${LIB_DEPENDS${_SP.${sp}}:C/\:.*//}; do \
 		depfiles="$$depfiles `${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}`" ; \
 	done ; \
-	${SETENV} PKG_BIN="${PKG_BIN}" ${SH} ${SCRIPTSDIR}/actual-package-depends.sh $${depfiles} ${RUN_DEPENDS:C/(.*)\:.*/"\1"/}
+	for self in ${SELF_DEPENDS${_SP.${sp}}}; do \
+		if [ "$$self" = "main" ]; then \
+			printf "\"%s\": {origin: \"%s\", version: \"%s\"}\n" ${PKGBASE} ${PKGORIGIN} ${PKGVERSION}; \
+		else \
+			printf "\"%s-%s\": {origin: \"%s\", version: \"%s\"}\n" ${PKGBASE} $$self ${PKGORIGIN} ${PKGVERSION}; \
+		fi ; \
+	done ; \
+	${SETENV} PKG_BIN="${PKG_BIN}" ${SH} ${SCRIPTSDIR}/actual-package-depends.sh $${depfiles} ${RUN_DEPENDS${_SP.${sp}}:C/(.*)\:.*/"\1"/}
+.    endfor
 
 PKG_NOTES_ENV?=
 .    for note in ${PKG_NOTES}
 PKG_NOTES_ENV+=	dp_PKG_NOTE_${note}=${PKG_NOTE_${note}:Q}
 .    endfor
 
-create-manifest:
+.    for sp in ${_PKGS}
+PKG_NOTES.${sp}=	${PKG_NOTES}
+PKG_NOTES_ENV.${sp}=	${PKG_NOTES_ENV}
+.      if ${sp} != ${PKGBASE}
+PKG_NOTES.${sp}+=	subpackage
+PKG_NOTES_ENV.${sp}+=	dp_PKG_NOTE_subpackage=${_SP.${sp}:S/^.//1}
+.      endif
+create-manifest: create-manifest.${sp}
+create-manifest.${sp}:
 	@${SETENV} \
 			dp_SCRIPTSDIR='${SCRIPTSDIR}'                         \
-			dp_ACTUAL_PACKAGE_DEPENDS='${ACTUAL-PACKAGE-DEPENDS}' \
+			dp_ACTUAL_PACKAGE_DEPENDS='${ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}}' \
 			dp_CATEGORIES='${CATEGORIES:u:S/$/,/}'                \
-			dp_COMMENT=${COMMENT:Q}                               \
+			dp_COMMENT=${COMMENT${_SP.${sp}}:Q}                   \
 			dp_COMPLETE_OPTIONS_LIST='${COMPLETE_OPTIONS_LIST}'   \
 			dp_DEPRECATED=${DEPRECATED:Q}                         \
-			dp_DESCR='${DESCR}'                                   \
+			dp_DESCR='${DESCR${_SP.${sp}}}'                       \
 			dp_EXPIRATION_DATE='${EXPIRATION_DATE}'               \
 			dp_GROUPS='${GROUPS:u:S/$/,/}'                        \
 			dp_LICENSE='${LICENSE:u:S/$/,/}'                      \
 			dp_LICENSE_COMB='${LICENSE_COMB}'                     \
 			dp_MAINTAINER='${MAINTAINER}'                         \
-			dp_METADIR='${METADIR}'                               \
+			dp_METADIR='${METADIR}.${sp}'                         \
 			dp_NO_ARCH='${NO_ARCH}'                               \
-			dp_PKGBASE='${PKGBASE}'                               \
-			dp_PKGDEINSTALL='${PKGDEINSTALL}'                     \
-			dp_PKGINSTALL='${PKGINSTALL}'                         \
-			dp_PKGMESSAGES='${_PKGMESSAGES}'                      \
+			dp_PKGBASE='${sp}'                                    \
+			dp_PKGDEINSTALL='${PKGDEINSTALL${_SP.${sp}}}'         \
+			dp_PKGINSTALL='${PKGINSTALL${_SP.${sp}}}'             \
+			dp_PKGMESSAGES='${_PKGMESSAGES${_SP.${sp}}}'          \
 			dp_PKGORIGIN='${PKGORIGIN}'                           \
-			dp_PKGPOSTDEINSTALL='${PKGPOSTDEINSTALL}'             \
-			dp_PKGPOSTINSTALL='${PKGPOSTINSTALL}'                 \
-			dp_PKGPREDEINSTALL='${PKGPREDEINSTALL}'               \
-			dp_PKGPREINSTALL='${PKGPREINSTALL}'                   \
+			dp_PKGPOSTDEINSTALL='${PKGPOSTDEINSTALL${_SP.${sp}}}' \
+			dp_PKGPOSTINSTALL='${PKGPOSTINSTALL${_SP.${sp}}}'     \
+			dp_PKGPREDEINSTALL='${PKGPREDEINSTALL${_SP.${sp}}}'   \
+			dp_PKGPREINSTALL='${PKGPREINSTALL${_SP.${sp}}}'       \
 			dp_PKGVERSION='${PKGVERSION}'                         \
 			dp_PKG_BIN='${PKG_BIN}'                               \
 			dp_PKG_IGNORE_DEPENDS='${PKG_IGNORE_DEPENDS}'         \
-			dp_PKG_NOTES='${PKG_NOTES}'                           \
+			dp_PKG_NOTES='${PKG_NOTES.${sp}}'                     \
 			dp_PORT_OPTIONS='${PORT_OPTIONS}'                     \
 			dp_PREFIX='${PREFIX}'                                 \
 			dp_USERS='${USERS:u:S/$/,/}'                          \
 			dp_WWW='${WWW}'                                       \
-			${PKG_NOTES_ENV}                                      \
+			${PKG_NOTES_ENV.${sp}}                                \
 			${SH} ${SCRIPTSDIR}/create-manifest.sh
+.    endfor
 
 # Print out package names.
 
 package-depends:
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
 
-actual-package-depends:
-	@${ACTUAL-PACKAGE-DEPENDS}
+.    for sp in ${_PKGS}
+actual-package-depends: actual-package-depends.${sp}
+actual-package-depends.${sp}:
+	@${ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}}
+.    endfor
 
 # Build packages for port and dependencies
 
@@ -4369,12 +4478,12 @@ install-missing-packages:
 # first to avoid gratuitous breakage.
 
 .    if !target(describe)
-_EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
-_RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
+_EXTRACT_DEPENDS=${EXTRACT_DEPENDS_ALL:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_PATCH_DEPENDS=${PATCH_DEPENDS_ALL:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_FETCH_DEPENDS=${FETCH_DEPENDS_ALL:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_LIB_DEPENDS=${LIB_DEPENDS_ALL:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_BUILD_DEPENDS=${BUILD_DEPENDS_ALL:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
+_RUN_DEPENDS=${RUN_DEPENDS_ALL:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
 .      if exists(${DESCR})
 _DESCR=${DESCR}
 .      else
@@ -4399,11 +4508,11 @@ describe-${f}:
 .      endif # empty(FLAVORS)
 .    endif
 
-.	if empty(FLAVORS) || defined(_DESCRIBE_WITH_FLAVOR)
+.    if empty(FLAVORS) || defined(_DESCRIBE_WITH_FLAVOR)
 
-.		if defined(_DESCRIBE_WITH_FLAVOR)
+.      if defined(_DESCRIBE_WITH_FLAVOR)
 _JSON_OBJ_NAME="\"${FLAVOR}-${.CURDIR:T}\":"
-.		endif
+.      endif
 
 describe-json:
 	@(${ECHO_CMD} "${_JSON_OBJ_NAME} { ";\
@@ -4450,10 +4559,10 @@ describe-json:
 	${ECHO_CMD} \"use_gitlab\":\"${USE_GITLAB}\", ;\
 	${ECHO_CMD} \"www\":\"${WWW:Q}\" ;\
 	${ECHO_CMD} "}" >> ${INDEX_OUT})
-.	else # empty(FLAVORS)
+.    else # empty(FLAVORS)
 describe-json: ${FLAVORS:S/^/describe-json-/}
 _LAST_FLAVOR = ${FLAVORS:[-1]}
-.	for f in ${FLAVORS}
+.      for f in ${FLAVORS}
 describe-json-${f}:
 	@if [ "${f}" == "${FLAVORS:[1]}" ]; then \
 		${ECHO_CMD} "{" ;\
@@ -4465,8 +4574,8 @@ describe-json-${f}:
 		${ECHO_CMD} "}" ;\
 	fi; \
 
-.	endfor
-.	endif # empty(FLAVORS)
+.      endfor
+.    endif # empty(FLAVORS)
 
 www-site:
 	@${ECHO_CMD} ${_WWW}
@@ -4559,6 +4668,13 @@ generate-plist: ${WRKDIR}
 	@for file in ${PLIST_FILES}; do \
 		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} >> ${TMPPLIST}; \
 	done
+.      for sp in ${_PKGS}
+.        if ${sp} != ${PKGBASE}
+	@for file in ${PLIST_FILES${_SP.${sp}}}; do \
+		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's/^/@@${_SP.${sp}:S/^.//}@@/' >> ${TMPPLIST}; \
+	done
+.        endif
+.      endfor
 .      if !empty(PLIST)
 .        for f in ${PLIST}
 	@if [ -f "${f}" ]; then \
@@ -4572,6 +4688,13 @@ generate-plist: ${WRKDIR}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dir ,' >> ${TMPPLIST}
 .      endfor
 
+.      for sp in ${_PKGS}
+.        if ${sp} != ${PKGBASE}
+.          for dir in ${PLIST_DIRS${_SP.${sp}}}
+	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@@${_SP.${sp}:S/^.//}@@@dir ,' >> ${TMPPLIST}
+.          endfor
+.        endif
+.      endfor
 .    endif
 
 ${TMPPLIST}:
@@ -4725,20 +4848,20 @@ stage-qa:
 
 pretty-flavors-package-names: .PHONY
 .    if empty(FLAVORS)
-	@${ECHO_CMD} "no flavor: ${PKGNAME}"
+	@${ECHO_CMD} "no flavor: ${_PKGS}"
 .    else
 .      for f in ${FLAVORS}
 	@${ECHO_CMD} -n "${f}: "
-	@cd ${.CURDIR} && ${SETENV} FLAVOR=${f} ${MAKE} -B -V PKGNAME
+	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V _PKGS
 .      endfor
 .    endif
 
 flavors-package-names: .PHONY
 .    if empty(FLAVORS)
-	@${ECHO_CMD} "${PKGNAME}"
+	@${ECHO_CMD} "${_PKGS}"
 .    else
 .      for f in ${FLAVORS}
-	@cd ${.CURDIR} && ${SETENV} FLAVOR=${f} ${MAKE} -B -V PKGNAME
+	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V _PKGS | ${XARGS} -n 1
 .      endfor
 .    endif
 
@@ -4749,19 +4872,22 @@ STAGE_ARGS=		-i ${STAGEDIR}
 STAGE_ARGS=	-N
 .      endif
 
-fake-pkg:
-.      if defined(INSTALLS_DEPENDS)
-.        if !defined(NO_PKG_REGISTER)
+.      for sp in ${_PKGS}
+fake-pkg: fake-pkg.${sp}
+fake-pkg.${sp}: ${_PLIST}.${sp}
+.        if defined(INSTALLS_DEPENDS)
+.          if !defined(NO_PKG_REGISTER)
 	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
-.        endif
-	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_REGISTER} -d ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
-.      else
-.        if !defined(NO_PKG_REGISTER)
+.          endif
+	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_REGISTER} -d ${STAGE_ARGS} -m ${METADIR}.${sp} -f ${_PLIST}.${sp}
+.        else
+.          if !defined(NO_PKG_REGISTER)
 	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
+.          endif
+	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_REGISTER} ${STAGE_ARGS} -m ${METADIR}.${sp} -f ${_PLIST}.${sp}
 .        endif
-	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_REGISTER} ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
-.      endif
-	@${RM} -r ${METADIR}
+	@${RM} -r ${METADIR}.${sp}
+.      endfor
 .    endif
 
 # Depend is generally meaningless for arbitrary ports, but if someone wants
