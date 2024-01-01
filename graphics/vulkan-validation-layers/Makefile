@@ -15,7 +15,6 @@ BUILD_DEPENDS=	robin-hood-hashing>0:devel/robin-hood-hashing \
 
 USES=		alias cmake compiler:c++11-lib pkgconfig python:build
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/SPIRV-Headers \
