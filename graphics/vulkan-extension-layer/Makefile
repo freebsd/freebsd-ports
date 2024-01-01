@@ -9,13 +9,13 @@ WWW=		https://github.com/KhronosGroup/Vulkan-ExtensionLayer
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
+		vulkan-utility-libraries>0:graphics/vulkan-utility-libraries
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
-GH_TUPLE=	KhronosGroup:Vulkan-Utility-Libraries:${DISTVERSIONPREFIX}${DISTVERSION}:utils/Vulkan-Utility-Libraries
 CMAKE_OFF=	BUILD_TESTS
 
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
