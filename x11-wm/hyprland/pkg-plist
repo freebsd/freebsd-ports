@@ -1,5 +1,6 @@
 bin/Hyprland
 bin/hyprctl
+bin/hyprpm
 man/man1/Hyprland.1.gz
 man/man1/hyprctl.1.gz
 %%DATADIR%%/hyprland.conf
