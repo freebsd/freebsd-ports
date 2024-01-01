@@ -1,5 +1,6 @@
 PORTNAME=	kaldi
 PORTVERSION=	g20231112
+PORTREVISION=	1
 CATEGORIES=	audio # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

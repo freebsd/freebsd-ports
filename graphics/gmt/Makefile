@@ -1,6 +1,6 @@
 PORTNAME=	gmt
 DISTVERSION=	6.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/GenericMappingTools/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src

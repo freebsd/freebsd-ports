@@ -1,5 +1,6 @@
 PORTNAME=	atompaw
 DISTVERSION=	4.2.0.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://users.wfu.edu/natalie/papers/pwpaw/
 

@@ -1,5 +1,6 @@
 PORTNAME=	ergo
 DISTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.ergoscf.org/source/tarfiles/
 

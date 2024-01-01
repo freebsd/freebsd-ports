@@ -1,6 +1,6 @@
 PORTNAME=	levmar
 PORTVERSION=	2.6
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	math
 MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 

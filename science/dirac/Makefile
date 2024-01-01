@@ -1,6 +1,6 @@
 PORTNAME=	dirac
 DISTVERSION=	22.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://zenodo.org/record/6010450/files/
 PKGNAMESUFFIX=	-quantum-chemistry-software

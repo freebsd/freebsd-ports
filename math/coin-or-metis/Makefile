@@ -1,7 +1,7 @@
 PORTNAME=	metis
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://coin-or-tools.github.io/ThirdParty-Metis/:metis
 PKGNAMEPREFIX=	coin-or-
