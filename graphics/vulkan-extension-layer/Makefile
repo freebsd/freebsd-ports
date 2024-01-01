@@ -13,7 +13,6 @@ BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
 GH_TUPLE=	KhronosGroup:Vulkan-Utility-Libraries:${DISTVERSIONPREFIX}${DISTVERSION}:utils/Vulkan-Utility-Libraries
