@@ -1,9 +1,9 @@
 PORTNAME=	exprtk
-DISTVERSION=	0.0.2
+DISTVERSION=	0.0.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	C++ mathematical expression library
+COMMENT=	C++ Mathematical Expression Toolkit Library
 WWW=		https://www.partow.net/programming/exprtk/index.html
 
 LICENSE=	MIT
