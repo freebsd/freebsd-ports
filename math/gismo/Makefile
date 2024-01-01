@@ -1,7 +1,6 @@
 PORTNAME=	gismo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	21.12.0-882
-DISTVERSIONSUFFIX=	-g236b1b29
+DISTVERSION=	23.12.0
 CATEGORIES=	math # geometry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +15,6 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_TESTING_ON=	GISMO_BUILD_UNITTESTS # one test is known to fail: https://github.com/gismo/gismo/issues/466
-
-GH_TUPLE=	gismo:gsElasticity:a94347d:gsElasticity/extensions/gsElasticity \
-		gismo:gsKLShell:5247352:gsKLShell/extensions/gsKLShell \
-		gismo:gsStructuralAnalysis:f18c4b7:gsStructuralAnalysis/extensions/gsStructuralAnalysis \
-		gismo:gsUnitTest:7c42e58:gsUnitTest/extensions/gsUnitTest
 
 CXXFLAGS_powerpc64=	-mvsx
 
