@@ -80,8 +80,8 @@ CONFIGURE_ARGS=	--enable-fast=""	\
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500005
 # linker error when compiling with llvm 17.0.6 on CURRENT - PR 276035
-USES+=			llvm:lib,max=16
-CHOSEN_COMPILER_TYPE=	clang
+# To be removed with llvm-18
+CONFIGURE_ENV+=	ac_cv_sizeof___float128=0
 .endif
 
 .for pm in ${OPTIONS_GROUP_PM}
