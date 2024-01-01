@@ -1,4 +1,4 @@
---- util/meson.build.orig	2023-11-30 12:13:00 UTC
+--- util/meson.build.orig	2023-12-27 10:15:32 UTC
 +++ util/meson.build
 @@ -102,11 +102,7 @@ if have_block
    util_ss.add(files('readline.c'))
@@ -11,5 +11,5 @@
 -  endif
 +  util_ss.add(files('filemonitor-stub.c'))
    util_ss.add(when: 'CONFIG_LINUX', if_true: files('vfio-helpers.c'))
+   util_ss.add(when: 'CONFIG_LINUX', if_true: files('chardev_open.c'))
  endif
- 
