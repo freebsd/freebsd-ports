@@ -708,7 +708,6 @@
     SUBDIR += p5-Math-BigInt-GMP
     SUBDIR += p5-Math-BigInt-Lite
     SUBDIR += p5-Math-BigInt-Pari
-    SUBDIR += p5-Math-BigRat
     SUBDIR += p5-Math-CDF
     SUBDIR += p5-Math-Calc-Units
     SUBDIR += p5-Math-Cephes

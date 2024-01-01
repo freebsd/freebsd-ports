@@ -1,2 +1,0 @@
-Math::BigRat complements Math::BigInt and Math::BigFloat by providing
-support for arbitrary big rational numbers.
