@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hvac>=0.10.6:devel/py-hvac@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic>=1.8<2:devel/py-pydantic@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pydantic>=1.8<2,1:devel/py-pydantic@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

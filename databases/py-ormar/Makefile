@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}databases>=0.3.2,<0.9.0:databases/py-databases@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic>=1.6.1,<1.11.0:devel/py-pydantic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic>=1.6.1,<1.11.0,1:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.0:databases/py-sqlalchemy14@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0:www/py-fastapi@${PY_FLAVOR} \

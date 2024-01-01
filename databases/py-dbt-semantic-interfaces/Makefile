@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	hatch:devel/py-hatch@${PY_FLAVOR} \
 		hatchling:devel/py-hatchling@${PY_FLAVOR}
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic>=1.10,<2:devel/py-pydantic@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic>=1.10,<2,1:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4,<5:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=6,<7:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=8,<11:devel/py-more-itertools@${PY_FLAVOR} \
