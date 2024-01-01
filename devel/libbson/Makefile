@@ -1,7 +1,7 @@
 PORTNAME=	libbson
-DISTVERSION=	1.24.2
+DISTVERSION=	1.25.3
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/mongodb/mongo-c-driver/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://codeload.github.com/mongodb/${PORTNAME}/tar.gz/${DISTVERSION}?dummy=/
 DISTNAME=	mongo-c-driver-${DISTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
@@ -30,7 +30,8 @@ CMAKE_ARGS=	-DBSON_HAVE_STRINGS_H=0
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR}
 DOCS_CMAKE_ON=		-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
 
 post-extract:
