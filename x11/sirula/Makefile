@@ -11,8 +11,6 @@ WWW=		https://github.com/DorianRudolph/sirula
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=	could not compile osstrtools
-
 LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
 USES=		cargo gnome

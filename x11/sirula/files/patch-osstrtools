@@ -1,0 +1,11 @@
+--- cargo-crates/osstrtools-0.2.2/src/lib.rs.orig	2024-01-01 16:19:06 UTC
++++ cargo-crates/osstrtools-0.2.2/src/lib.rs
+@@ -751,7 +751,7 @@ impl WinOsStr for OsStr {
+ 
+     fn as_bytes<'s>(&'s self) -> &'s [u8] {
+         // This should be fine in any case, as OsStr is just a &[u8]
+-        unsafe { (bytes as *const _).cast:() }
++        unsafe { (bytes as *const _).cast() }
+     }
+ }
+ 
