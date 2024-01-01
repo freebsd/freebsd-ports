@@ -123,6 +123,7 @@
     SUBDIR += py-pycoingecko
     SUBDIR += py-python-binance
     SUBDIR += py-python-bitcoinlib
+    SUBDIR += py-python-coinmarketcap
     SUBDIR += py-python-obelisk
     SUBDIR += py-pytrends
     SUBDIR += py-quantecon
