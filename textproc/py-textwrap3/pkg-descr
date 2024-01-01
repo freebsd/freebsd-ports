@@ -1,0 +1,2 @@
+textwrap3 is a compatibility back-port of Python 3.6's textwrap module that
+supports Python 2.6 forward.

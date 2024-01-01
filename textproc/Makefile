@@ -1606,6 +1606,7 @@
     SUBDIR += py-textract
     SUBDIR += py-texttable
     SUBDIR += py-textual
+    SUBDIR += py-textwrap3
     SUBDIR += py-three-merge
     SUBDIR += py-tiktoken
     SUBDIR += py-tinycss
