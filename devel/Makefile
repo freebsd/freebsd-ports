@@ -960,6 +960,7 @@
     SUBDIR += hwloc
     SUBDIR += hwloc2
     SUBDIR += hyperscan
+    SUBDIR += hyprlang
     SUBDIR += ice
     SUBDIR += ice37
     SUBDIR += icestorm
