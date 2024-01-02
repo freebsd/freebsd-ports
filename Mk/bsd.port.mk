@@ -4848,20 +4848,20 @@ stage-qa:
 
 pretty-flavors-package-names: .PHONY
 .    if empty(FLAVORS)
-	@${ECHO_CMD} "no flavor: ${_PKGS}"
+	@${ECHO_CMD} "no flavor: ${PKGNAMES}"
 .    else
 .      for f in ${FLAVORS}
 	@${ECHO_CMD} -n "${f}: "
-	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V _PKGS
+	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V PKGNAMES
 .      endfor
 .    endif
 
 flavors-package-names: .PHONY
 .    if empty(FLAVORS)
-	@${ECHO_CMD} "${_PKGS}"
+	@${ECHO_CMD} "${PKGNAMES}"
 .    else
 .      for f in ${FLAVORS}
-	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V _PKGS | ${XARGS} -n 1
+	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V PKGNAMES | ${XARGS} -n 1
 .      endfor
 .    endif
 
