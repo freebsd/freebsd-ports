@@ -1,4 +1,4 @@
-pycoingecko is Pi ython wrapper for the CoinGecko API.
-
-CoinGecko provides information about cryptocurrency prices, excghange rates,
-market caps, etc.
+Freqtrade is a free and open source crypto trading bot written in Python.
+It is designed to support all major exchanges and be controlled via Telegram or
+webUI. It contains backtesting, plotting and money management tools as well as
+strategy optimization by machine learning.
