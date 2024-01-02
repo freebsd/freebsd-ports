@@ -1,7 +1,6 @@
 PORTNAME=	the-way
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
-PORTREVISION=	1
+DISTVERSION=	0.20.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,13 +21,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.4 \
-		anstream-0.6.5 \
+		anstream-0.6.11 \
 		anstyle-1.0.0 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.2 \
 		arrayvec-0.7.2 \
-		assert_cmd-2.0.12 \
+		assert_cmd-2.0.13 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.66 \
@@ -46,12 +45,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		byteorder-1.4.3 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
+		chrono-0.4.33 \
 		chrono-english-0.1.7 \
 		clap-3.2.23 \
-		clap-4.4.11 \
-		clap_builder-4.4.11 \
-		clap_complete-4.4.4 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
+		clap_complete-4.4.9 \
 		clap_derive-4.4.7 \
 		clap_lex-0.2.4 \
 		clap_lex-0.6.0 \
@@ -91,13 +90,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		expectrl-0.7.1 \
-		eyre-0.6.11 \
+		eyre-0.6.12 \
 		fancy-regex-0.11.0 \
 		fastrand-2.0.1 \
 		flate2-1.0.24 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		form_urlencoded-1.0.1 \
+		form_urlencoded-1.2.1 \
 		fs2-0.4.3 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
@@ -110,16 +109,18 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
+		hoot-0.1.3 \
+		hootbin-0.1.1 \
+		httparse-1.8.0 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.46 \
 		ident_case-1.0.1 \
-		idna-0.2.3 \
+		idna-0.3.0 \
 		indenter-0.3.3 \
 		indexmap-1.9.1 \
-		indexmap-2.1.0 \
+		indexmap-2.2.1 \
 		indicatif-0.17.7 \
 		instant-0.1.12 \
-		itertools-0.11.0 \
 		itoa-1.0.3 \
 		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
@@ -130,7 +131,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		lock_api-0.4.7 \
 		log-0.4.20 \
 		malloc_buf-0.0.6 \
-		matches-0.1.9 \
 		memchr-2.6.4 \
 		memoffset-0.6.5 \
 		memoffset-0.7.1 \
@@ -152,64 +152,63 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		owo-colors-3.5.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
-		percent-encoding-2.1.0 \
+		percent-encoding-2.3.1 \
 		pin-utils-0.1.0 \
 		plist-1.3.1 \
 		portable-atomic-1.6.0 \
-		predicates-3.0.4 \
+		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.5 \
-		proc-macro2-1.0.71 \
+		proc-macro2-1.0.78 \
 		ptyprocess-0.4.1 \
-		quote-1.0.33 \
+		quote-1.0.35 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.3 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.7.1 \
 		regex-syntax-0.8.2 \
-		ring-0.16.20 \
 		ring-0.17.7 \
 		rustc-demangle-0.1.21 \
 		rustix-0.38.28 \
-		rustls-0.21.10 \
-		rustls-webpki-0.101.7 \
+		rustls-0.22.2 \
+		rustls-pki-types-1.1.0 \
+		rustls-webpki-0.102.1 \
 		rustversion-1.0.9 \
 		ryu-1.0.11 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		scanlex-0.1.4 \
 		scopeguard-1.1.0 \
-		sct-0.7.0 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		serde_json-1.0.108 \
-		serde_yaml-0.9.29 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		serde_json-1.0.113 \
+		serde_yaml-0.9.31 \
 		shell-words-1.1.0 \
 		shlex-1.1.0 \
 		skim-0.10.4 \
 		sled-0.34.7 \
 		smallvec-1.9.0 \
-		spin-0.5.2 \
 		spin-0.9.8 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		strum-0.25.0 \
-		strum_macros-0.25.3 \
+		strum-0.26.1 \
+		strum_macros-0.26.1 \
+		subtle-2.5.0 \
 		syn-1.0.105 \
-		syn-2.0.43 \
+		syn-2.0.48 \
 		syntect-5.1.0 \
-		tempfile-3.8.1 \
+		tempfile-3.9.0 \
 		term-0.7.0 \
-		termcolor-1.4.0 \
+		termcolor-1.4.1 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
 		textwrap-0.16.0 \
-		thiserror-1.0.52 \
-		thiserror-impl-1.0.52 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
 		thread_local-1.1.4 \
 		time-0.3.13 \
 		timer-0.2.0 \
@@ -222,10 +221,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-normalization-0.1.21 \
 		unicode-width-0.1.9 \
 		unsafe-libyaml-0.2.10 \
-		untrusted-0.7.1 \
 		untrusted-0.9.0 \
-		ureq-2.9.1 \
-		url-2.2.2 \
+		ureq-2.9.4 \
+		url-2.3.1 \
 		utf8parse-0.2.1 \
 		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
@@ -237,8 +235,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasm-bindgen-macro-0.2.82 \
 		wasm-bindgen-macro-support-0.2.82 \
 		wasm-bindgen-shared-0.2.82 \
-		web-sys-0.3.59 \
-		webpki-roots-0.25.3 \
+		webpki-roots-0.26.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
@@ -274,7 +271,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		xcb-0.8.2 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5 \
-		zeroize-1.5.7
+		zeroize-1.7.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
