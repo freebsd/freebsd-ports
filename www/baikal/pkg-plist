@@ -65,7 +65,6 @@
 %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/User/AddressBooks.html
 %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/User/Calendars.html
 %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/Templates/Users.html
-%%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/html5.js
 %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Resources/main.js
 %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Dashboard.php
 %%WWWDIR%%/Core/Frameworks/BaikalAdmin/Route/Logout.php
@@ -180,7 +179,6 @@
 %%WWWDIR%%/Core/Resources/Web/BaikalAdmin/Templates/User/AddressBooks.html
 %%WWWDIR%%/Core/Resources/Web/BaikalAdmin/Templates/User/Calendars.html
 %%WWWDIR%%/Core/Resources/Web/BaikalAdmin/Templates/Users.html
-%%WWWDIR%%/Core/Resources/Web/BaikalAdmin/html5.js
 %%WWWDIR%%/Core/Resources/Web/BaikalAdmin/main.js
 %%WWWDIR%%/Core/Resources/Web/README.md
 %%WWWDIR%%/Core/Resources/Web/TwitterBootstrap/css/bootstrap-responsive.css
@@ -232,7 +230,6 @@
 %%WWWDIR%%/html/res/core/BaikalAdmin/Templates/User/AddressBooks.html
 %%WWWDIR%%/html/res/core/BaikalAdmin/Templates/User/Calendars.html
 %%WWWDIR%%/html/res/core/BaikalAdmin/Templates/Users.html
-%%WWWDIR%%/html/res/core/BaikalAdmin/html5.js
 %%WWWDIR%%/html/res/core/BaikalAdmin/main.js
 %%WWWDIR%%/html/res/core/README.md
 %%WWWDIR%%/html/res/core/TwitterBootstrap/css/bootstrap-responsive.css
@@ -277,9 +274,6 @@
 %%WWWDIR%%/vendor/psr/log/Psr/Log/Test/TestLogger.php
 %%WWWDIR%%/vendor/psr/log/README.md
 %%WWWDIR%%/vendor/psr/log/composer.json
-%%WWWDIR%%/vendor/sabre/dav/.github/workflows/ci.yml
-%%WWWDIR%%/vendor/sabre/dav/.php_cs.dist
-%%WWWDIR%%/vendor/sabre/dav/.travis.yml
 %%WWWDIR%%/vendor/sabre/dav/LICENSE
 %%WWWDIR%%/vendor/sabre/dav/README.md
 %%WWWDIR%%/vendor/sabre/dav/bin/build.php
@@ -443,6 +437,7 @@
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IMoveTarget.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IMultiGet.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/INode.php
+%%WWWDIR%%/vendor/sabre/dav/lib/DAV/INodeByPath.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IProperties.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IQuota.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Locks/Backend/AbstractBackend.php
@@ -599,6 +594,7 @@
 %%WWWDIR%%/vendor/sabre/http/tests/bootstrap.php
 %%WWWDIR%%/vendor/sabre/http/tests/phpunit.xml
 %%WWWDIR%%/vendor/sabre/http/tests/%%WWWOWN%%/bar.php
+%%WWWDIR%%/vendor/sabre/http/tests/%%WWWOWN%%/connection_aborted.php
 %%WWWDIR%%/vendor/sabre/http/tests/%%WWWOWN%%/foo
 %%WWWDIR%%/vendor/sabre/http/tests/%%WWWOWN%%/large.php
 %%WWWDIR%%/vendor/sabre/uri/.php-cs-fixer.dist.php
@@ -737,6 +733,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
