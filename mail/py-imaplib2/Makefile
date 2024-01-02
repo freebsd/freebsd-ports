@@ -11,7 +11,7 @@ WWW=		https://github.com/jazzband/imaplib2/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		pytest python:3.8-3.9
+USES=		pytest python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
