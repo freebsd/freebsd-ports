@@ -1,6 +1,6 @@
 PORTNAME=	acpi_call
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://projects.ukrweb.net/files/ \
 		http://imax.in.ua/files/
