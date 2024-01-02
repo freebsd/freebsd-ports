@@ -28,10 +28,4 @@ OPTIONS_DEFINE=	NATIVE
 NATIVE_CONFIGURE_ON+=	--enable-optimizations=native
 NATIVE_CONFIGURE_OFF+=	--enable-optimizations=none
 
-.include <bsd.port.pre.mk>
-
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-CFLAGS+=	-mminimal-toc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
