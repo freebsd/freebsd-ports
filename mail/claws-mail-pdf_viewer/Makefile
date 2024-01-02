@@ -1,5 +1,5 @@
 PORTNAME=	pdf_viewer
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	PDF and PostScript viewer plugin for Claws Mail
 WWW=		https://www.claws-mail.org/plugin.php?plugin=pdf_viewer

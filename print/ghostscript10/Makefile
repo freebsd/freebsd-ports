@@ -1,5 +1,6 @@
 PORTNAME=	ghostscript
 DISTVERSION=	10.02.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 PKGNAMESUFFIX=	${GS_MAJOR_VERSION}

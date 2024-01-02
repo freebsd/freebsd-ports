@@ -1,5 +1,6 @@
 PORTNAME=	qpdfview
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
 DISTNAME=	${PORTNAME}-0.5

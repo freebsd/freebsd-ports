@@ -1,6 +1,6 @@
 PORTNAME=	bookworm
 DISTVERSION=	1.1.2
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	deskutils
 
 MAINTAINER=	miguel@gocobachi.dev
