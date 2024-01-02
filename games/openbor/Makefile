@@ -1,8 +1,8 @@
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	7534
+PORTVERSION?=	7580
 .ifndef PKGNAMESUFFIX
-PORTREVISION=	1
+PORTREVISION=	0
 .endif
 CATEGORIES=	games
 
@@ -37,7 +37,7 @@ PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	3bae1dd7
+GH_TAGNAME?=	5ec3ab25
 
 USES+=		cpe gmake pkgconfig sdl
 .if ${PORTVERSION} < 4433
