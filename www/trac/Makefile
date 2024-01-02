@@ -1,9 +1,8 @@
 PORTNAME=	trac
-DISTVERSION=	1.5.4
+DISTVERSION=	1.6
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
-PKGNAMESUFFIX=	-devel
 DISTNAME=	Trac-${DISTVERSION}
 
 MAINTAINER=	samm@FreeBSD.org
@@ -21,8 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 # some tests are failing with 3.8
 USES=		cpe python
 CPE_VENDOR=	edgewall
-
-CONFLICTS_INSTALL=	trac
 
 USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=	tracd
