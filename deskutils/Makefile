@@ -99,6 +99,7 @@
     SUBDIR += gnome-utils
     SUBDIR += gnome-weather
     SUBDIR += gnote
+    SUBDIR += gnotime
     SUBDIR += gnustep-wrapper
     SUBDIR += go-for-it
     SUBDIR += goesimage
