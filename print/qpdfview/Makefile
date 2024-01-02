@@ -18,7 +18,6 @@ USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus gui imageformats linguisttools \
 		printsupport sql sql-sqlite3 svg widgets xml buildtools:build
-USE_CXXSTD=	c++17
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 
