@@ -1,5 +1,6 @@
 PORTNAME=	stumpwm
 DISTVERSION=	23.11
+PORTREVISION=	1
 CATEGORIES=	x11-wm lisp
 MASTER_SITES+=	https://beta.quicklisp.org/archive/alexandria/2023-10-21/:alexandria \
 		https://beta.quicklisp.org/archive/cl-ppcre/2023-06-18/:ppcre \
