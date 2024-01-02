@@ -134,6 +134,7 @@
     SUBDIR += hla
     SUBDIR += hs-brainfuck
     SUBDIR += hs-futhark
+    SUBDIR += hs-koka
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += icc
