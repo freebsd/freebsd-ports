@@ -1,7 +1,6 @@
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
-PORTREVISION=	16
+DISTVERSION=	0.8.4
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -49,14 +48,14 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:06a226fb4e37:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
-		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+		golang:net:7e3656a0809f:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:1957bb5e6d1f:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
