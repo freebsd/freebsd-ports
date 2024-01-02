@@ -1,6 +1,6 @@
 PORTNAME=	aoe
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	https://people.freebsd.org/~sson/aoe/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}

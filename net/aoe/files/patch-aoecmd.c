@@ -1,6 +1,6 @@
---- aoecmd.c.orig	2006-05-26 00:13:09.000000000 +0700
-+++ aoecmd.c	2010-09-13 20:15:55.000000000 +0700
-@@ -44,6 +44,7 @@
+--- aoecmd.c.orig	2006-05-25 17:13:09 UTC
++++ aoecmd.c
+@@ -44,6 +44,7 @@ __FBSDID("$FreeBSD: src/sys/dev/aoe/aoecmd.c,v 1.23.2.
  #include <sys/mutex.h>
  #include <sys/mbuf.h>
  #include <sys/sysctl.h>
@@ -8,7 +8,21 @@
  
  #include <dev/aoe/aoe.h>
  
-@@ -427,29 +428,6 @@
+@@ -197,12 +198,11 @@ rexmit(struct aoedev *d, struct frame *f)
+ {
+ 	/* struct mbuf *m; */
+ 	struct aoe_hdr *h;
+-	struct aoe_atahdr *ah;
+ 
+ 	h = (struct aoe_hdr *) f->f_hdr;
+-	ah = (struct aoe_atahdr *) (h+1);
+ 
+ #ifdef AOE_DEBUG
++	struct aoe_atahdr *ah = (struct aoe_atahdr *) (h+1);
+ 
+ 	IPRINTK("mlen=%ld verfl=%X major=%X minor=%X cmd=%X\n"
+ 		"\ttag=%lX aflags=%X errfeat=%X scnt=%X cmdstat=%X\n"
+@@ -427,29 +427,6 @@ loop:
  	goto loop;
  }
  
@@ -38,7 +52,7 @@
  static void
  ataid_complete(struct aoedev *d, char *id)
  {
-@@ -457,13 +435,13 @@
+@@ -457,13 +434,13 @@ ataid_complete(struct aoedev *d, char *id)
  
  	memcpy(d->ad_ident, id, sizeof d->ad_ident);
  
@@ -55,3 +69,27 @@
  	}
  	if (aoeblk_register(d) != 0)
  		IPRINTK("could not register disk\n");
+@@ -614,7 +591,7 @@ aoecmd_ata_smart(struct aoedev *d, struct ata_ioc_requ
+ 	struct aoe_hdr *h;
+ 	struct aoe_atahdr *ah;
+ 	register daddr_t lba;
+-	int timeout;
++	int error, timeout;
+ 
+ 	timeout = iocmd->ata_ioc_request_timeout;
+ 
+@@ -664,10 +641,12 @@ aoecmd_ata_smart(struct aoedev *d, struct ata_ioc_requ
+ 	iocmd->ata_ioc_request_ata.lba = lba;
+ 
+ 	if (iocmd->ata_ioc_request_flags == ATA_CMD_READ)
+-		copyout(ah+1, iocmd->ata_ioc_request_data, iocmd->ata_ioc_request_count);
++		error = copyout(ah+1, iocmd->ata_ioc_request_data, iocmd->ata_ioc_request_count);
++	else
++		error = 0;
+ 
+ 	f->f_tag = FREETAG;
+-	return (0);
++	return (error);
+ }
+ 
+ /* Set the write caching. */
