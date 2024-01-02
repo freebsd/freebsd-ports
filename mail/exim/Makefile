@@ -1,6 +1,6 @@
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -17,9 +17,11 @@ WWW=		https://www.exim.org/
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	p5-File-FcntlLock>0:devel/p5-File-FcntlLock
+RUN_DEPENDS=	p5-File-FcntlLock>0:devel/p5-File-FcntlLock
+
 USES=		compiler cpe tar:bzip2 perl5
 USE_CSTD=	c99
-USE_PERL5=	run
 
 # Exim build system is job unsafe atm
 MAKE_JOBS_UNSAFE=	yes
@@ -46,9 +48,6 @@ OPTIONS_SUB=	yes
 AUTH_SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 BDB_USES=	bdb
 DMARC_LIB_DEPENDS=	libopendmarc.so:mail/opendmarc
-EMBEDDED_PERL_USE=	perl5=run,build
-EMBEDDED_PERL_BUILD_DEPENDS=	p5-File-FcntlLock>0:devel/p5-File-FcntlLock
-EMBEDDED_PERL_RUN_DEPENDS=	p5-File-FcntlLock>0:devel/p5-File-FcntlLock
 EXIMON_USES=	xorg
 EXIMON_USE=	xorg=x11,xaw,xext,xmu,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
