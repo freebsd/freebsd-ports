@@ -155,11 +155,6 @@ RUSTFLAGS+=	-C target-cpu=${CPUTYPE:C/\+.+//g}
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .  endif
 
-.  if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-USE_GCC?=	yes
-STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
-.  endif
-
 # Helper to shorten cargo calls.
 _CARGO_RUN=		${SETENV} ${MAKE_ENV} ${CARGO_ENV} ${CARGO}
 CARGO_CARGO_RUN=	cd ${WRKSRC}; ${SETENV} CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE=1 ${_CARGO_RUN}
