@@ -21,6 +21,8 @@ GH_PROJECT=	msgpack-c
 CMAKE_OFF=	MSGPACK_BUILD_EXAMPLES MSGPACK_BUILD_TESTS
 TEST_TARGET=	test
 
+.include <bsd.port.pre.mk>
+
 pre-test:
 	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD}
 
@@ -37,4 +39,4 @@ post-install:
 	${LN} -sf libmsgpack-c.${ext} ${STAGEDIR}${PREFIX}/lib/libmsgpackc.${ext}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
