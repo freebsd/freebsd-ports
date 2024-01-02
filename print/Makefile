@@ -221,6 +221,7 @@
     SUBDIR += rubygem-rbpdf
     SUBDIR += rubygem-rbpdf-font
     SUBDIR += rubygem-ttfunk
+    SUBDIR += scribus
     SUBDIR += scribus-devel
     SUBDIR += sgf2tex
     SUBDIR += shrinkpdf
