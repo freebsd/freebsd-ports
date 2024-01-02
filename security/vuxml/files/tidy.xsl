@@ -46,6 +46,7 @@ result in more namespace declarations than we wish.
 <!ENTITY vuln-2021 SYSTEM "vuln/2021.xml">
 <!ENTITY vuln-2022 SYSTEM "vuln/2022.xml">
 <!ENTITY vuln-2023 SYSTEM "vuln/2023.xml">
+<!ENTITY vuln-2024 SYSTEM "vuln/2024.xml">
 ]>
 ]]></xsl:text>
   <xsl:apply-templates />
