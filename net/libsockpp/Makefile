@@ -1,6 +1,6 @@
 PORTNAME=	libsockpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
+DISTVERSION=	1.0.0
 CATEGORIES=	net devel
 
 MAINTAINER=	peter@flytrace.com
