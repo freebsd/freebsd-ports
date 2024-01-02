@@ -8,7 +8,7 @@ include/meep/vec.hpp
 lib/libmeep.a
 lib/libmeep.so
 lib/libmeep.so.32
-lib/libmeep.so.32.0.0
+lib/libmeep.so.32.0.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -33,7 +33,7 @@ lib/libmeep.so.32.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.32
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.32.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.32.0.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
