@@ -11,7 +11,8 @@ WWW=		https://www.qemu.org/
 LICENSE=	GPLv2
 
 .if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
+# At the moment it broken on powerpc64le
 # We need to check if it build with other ARCHS
 .endif
 
