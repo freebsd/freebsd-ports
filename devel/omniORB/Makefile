@@ -10,6 +10,9 @@ WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_armv7=	use of overloaded operator '[]' is ambiguous (with operand types
+BROKEN_FreeBSD_i386=	use of overloaded operator '[]' is ambiguous (with operand types
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		gmake pkgconfig python shebangfix ssl tar:bzip2
