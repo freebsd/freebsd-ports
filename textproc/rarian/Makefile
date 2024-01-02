@@ -1,7 +1,8 @@
 PORTNAME=	rarian
-PORTVERSION=	0.8.5
+DISTVERSION=	0.8.5
 PORTREVISION=	6
 CATEGORIES=	textproc gnome
+MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/releases/${DISTVERSION}/downloads/assets/
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	OMF help system based on the Freedesktop specification
@@ -25,10 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/getopt:misc/getopt \
 		docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 
-USES=		autoreconf gmake gnome libtool localbase pathfix pkgconfig tar:bzip2
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.freedesktop.org
-GL_TAGNAME=	0.8.5
+USES=		gmake libtool localbase pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
