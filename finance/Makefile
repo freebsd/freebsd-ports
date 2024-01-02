@@ -27,6 +27,7 @@
     SUBDIR += fabric
     SUBDIR += fava
     SUBDIR += fixc
+    SUBDIR += freqtrade
     SUBDIR += frontaccounting
     SUBDIR += frontaccounting24
     SUBDIR += gnucash
