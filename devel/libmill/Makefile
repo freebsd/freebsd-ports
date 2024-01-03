@@ -5,7 +5,7 @@ MASTER_SITES=	http://libmill.org/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Go-style concurrency in CGo-style concurrency in C
-WWW=		http://libmill.org
+WWW=		https://github.com/sustrik/libmill
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
