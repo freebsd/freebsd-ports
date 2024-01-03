@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	SF/freepascal/Source/${PORTVERSION}:source \
 		https://downloads.freepascal.org/${PORTNAME}/dist/${PORTVERSION}/source/:source \
@@ -174,6 +174,9 @@ do-install:
 		"${STAGEDIR}${PREFIX}/etc"
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
 		-e 's|^#-Fl/lib;/usr/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt5;${LOCALBASE}/lib/qt6|g' \
-		${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
+			${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample \
+			${STAGEDIR}${PREFIX}/etc/fppkg.cfg.sample \
+			${STAGEDIR}${PREFIX}/etc/fppkg/default \
+			${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/ide/text/fp.cfg
 
 .include <bsd.port.post.mk>
