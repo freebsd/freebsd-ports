@@ -1,6 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +15,8 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.25:graphics/wayland-protocols \
 		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
-LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libtomlplusplus.so:devel/tomlplusplus \
+		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
@@ -28,10 +30,8 @@ USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
 GH_TUPLE=	hyprwm:hyprland-protocols:v0.2-4-g0c2ce70:hyprland_protocols/subprojects/hyprland-protocols \
-		marzer:tomlplusplus:v3.4.0:tomlplusplus/subprojects/tomlplusplus \
 		canihavesomecoffee:udis86:1.7.2-186-g5336633:udis86/subprojects/udis86
 MESON_ARGS=	-Dsystemd=disabled
-MESON_ARGS+=	-Dtomlplusplus:compile_library=false
 
 # XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
