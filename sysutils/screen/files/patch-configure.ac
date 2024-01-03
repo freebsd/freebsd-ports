@@ -1,5 +1,5 @@
 --- configure.ac.orig	2023-08-15 17:29:26.000000000 -0700
-+++ configure.ac	2023-08-19 07:32:42.246552000 -0700
++++ configure.ac	2024-01-02 18:30:11.205776000 -0800
 @@ -669,7 +669,7 @@
      tgetent((char *)0, (char *)0);
  ],,
@@ -9,7 +9,27 @@
  AC_CHECKING(libcurses)
  AC_TRY_LINK([
      #include <curses.h>
-@@ -900,11 +900,11 @@
+@@ -756,19 +756,6 @@
+ fi
+ fi
+ 
+-if test "$cross_compiling" = no ; then
+-AC_CHECKING(for SVR4 ptys)
+-sysvr4ptys=
+-if test -c /dev/ptmx ; then
+-AC_TRY_LINK([
+-    #include <stdlib.h>
+-], [
+-    ptsname(0);grantpt(0);unlockpt(0);
+-],[AC_DEFINE(HAVE_SVR4_PTYS)
+-sysvr4ptys=1])
+-fi
+-fi
+-
+ AC_CHECK_FUNCS(getpt)
+ 
+ dnl check for openpty()
+@@ -900,11 +887,11 @@
  dnl
  dnl    ****  utmp handling  ****
  dnl
@@ -23,7 +43,7 @@
      #include <utmpx.h>
  #define utmp utmpx
  #else
-@@ -917,11 +917,11 @@
+@@ -917,11 +904,11 @@
  [int x = DEAD_PROCESS; pututline((struct utmp *)0); getutent();], AC_DEFINE(GETUTENT),
  olibs="$LIBS"
  LIBS="$LIBS -lgen"
@@ -37,7 +57,7 @@
      #include <utmpx.h>
  #define utmp utmpx
  #else
-@@ -931,13 +931,13 @@
+@@ -931,13 +918,13 @@
  #define pututline _pututline
  #endif
  ],
