@@ -7,6 +7,9 @@ COMMENT=	H.264/MPEG-4 AVC Video Encoding (Library)
 MASTERDIR=	${.CURDIR}/../x264
 PLIST=		${.CURDIR}/pkg-plist
 
+NOT_FOR_ARCHS=	powerpc64le
+NOT_FOR_ARCHS_REASON=	endian test failed
+
 # Clear dependency on libx264 (itself), see x264/Makefile
 LIB_DEPENDS=	#
 
