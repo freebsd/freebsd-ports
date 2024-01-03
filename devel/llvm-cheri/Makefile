@@ -115,6 +115,8 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
+EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}-backport-version-fixes
+
 .include <bsd.port.options.mk>
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk

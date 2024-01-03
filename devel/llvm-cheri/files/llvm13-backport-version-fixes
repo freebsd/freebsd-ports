@@ -1,0 +1,355 @@
+diff --git llvm/tools/lto/CMakeLists.txt llvm/tools/lto/CMakeLists.txt
+index 0af29ad762c5..055ce247e4e3 100644
+--- llvm/tools/lto/CMakeLists.txt
++++ llvm/tools/lto/CMakeLists.txt
+@@ -19,7 +19,11 @@ set(SOURCES
+   lto.cpp
+   )
+ 
+-set(LLVM_EXPORTED_SYMBOL_FILE ${CMAKE_CURRENT_SOURCE_DIR}/lto.exports)
++if (LLVM_LINK_LLVM_DYLIB)
++  set(LLVM_EXPORTED_SYMBOL_FILE ${CMAKE_CURRENT_SOURCE_DIR}/lto.dylib.exports)
++else()
++  set(LLVM_EXPORTED_SYMBOL_FILE ${CMAKE_CURRENT_SOURCE_DIR}/lto.exports)
++endif()
+ 
+ if(CMAKE_SYSTEM_NAME STREQUAL AIX)
+     set(LTO_LIBRARY_TYPE MODULE)
+diff --git llvm/tools/lto/lto.dylib.exports llvm/tools/lto/lto.dylib.exports
+new file mode 100644
+index 000000000000..8fdbd3522b9b
+--- /dev/null
++++ llvm/tools/lto/lto.dylib.exports
+@@ -0,0 +1,76 @@
++lto_get_error_message
++lto_get_version
++lto_initialize_disassembler
++lto_module_create
++lto_module_create_from_fd
++lto_module_create_from_fd_at_offset
++lto_module_create_from_memory
++lto_module_create_from_memory_with_path
++lto_module_create_in_local_context
++lto_module_create_in_codegen_context
++lto_module_get_linkeropts
++lto_module_get_macho_cputype
++lto_module_get_num_symbols
++lto_module_get_symbol_attribute
++lto_module_get_symbol_name
++lto_module_get_target_triple
++lto_module_set_target_triple
++lto_module_is_object_file
++lto_module_is_object_file_for_target
++lto_module_is_object_file_in_memory
++lto_module_is_object_file_in_memory_for_target
++lto_module_has_objc_category
++lto_module_dispose
++lto_api_version
++lto_codegen_set_diagnostic_handler
++lto_codegen_add_module
++lto_codegen_set_module
++lto_codegen_add_must_preserve_symbol
++lto_codegen_compile
++lto_codegen_create
++lto_codegen_create_in_local_context
++lto_codegen_dispose
++lto_codegen_set_debug_model
++lto_codegen_set_pic_model
++lto_codegen_write_merged_modules
++lto_codegen_debug_options
++lto_codegen_debug_options_array
++lto_codegen_set_assembler_args
++lto_codegen_set_assembler_path
++lto_codegen_set_cpu
++lto_codegen_compile_to_file
++lto_codegen_optimize
++lto_codegen_compile_optimized
++lto_codegen_set_should_internalize
++lto_codegen_set_should_embed_uselists
++lto_set_debug_options
++thinlto_create_codegen
++thinlto_codegen_dispose
++thinlto_codegen_add_module
++thinlto_codegen_process
++thinlto_module_get_num_objects
++thinlto_module_get_object
++thinlto_codegen_set_pic_model
++thinlto_codegen_set_cache_dir
++thinlto_codegen_set_cache_pruning_interval
++thinlto_codegen_set_cache_entry_expiration
++thinlto_codegen_set_final_cache_size_relative_to_available_space
++thinlto_codegen_set_cache_size_bytes
++thinlto_codegen_set_cache_size_megabytes
++thinlto_codegen_set_cache_size_files
++thinlto_codegen_set_savetemps_dir
++thinlto_codegen_set_cpu
++thinlto_debug_options
++lto_module_is_thinlto
++thinlto_codegen_add_must_preserve_symbol
++thinlto_codegen_add_cross_referenced_symbol
++thinlto_codegen_set_codegen_only
++thinlto_codegen_disable_codegen
++thinlto_module_get_num_object_files
++thinlto_module_get_object_file
++thinlto_set_generated_objects_dir
++lto_input_create
++lto_input_dispose
++lto_input_get_num_dependent_libraries
++lto_input_get_dependent_library
++lto_runtime_lib_symbols_list
+diff --git llvm/tools/lto/lto.exports llvm/tools/lto/lto.exports
+index 1948bba29b67..8fdbd3522b9b 100644
+--- llvm/tools/lto/lto.exports
++++ llvm/tools/lto/lto.exports
+@@ -44,12 +44,6 @@ lto_codegen_compile_optimized
+ lto_codegen_set_should_internalize
+ lto_codegen_set_should_embed_uselists
+ lto_set_debug_options
+-LLVMCreateDisasm
+-LLVMCreateDisasmCPU
+-LLVMDisasmDispose
+-LLVMDisasmInstruction
+-LLVMSetDisasmOptions
+-LLVMCreateDisasmCPUFeatures
+ thinlto_create_codegen
+ thinlto_codegen_dispose
+ thinlto_codegen_add_module
+diff --git llvm/tools/remarks-shlib/CMakeLists.txt llvm/tools/remarks-shlib/CMakeLists.txt
+index 865436247270..81a1d75964f0 100644
+--- llvm/tools/remarks-shlib/CMakeLists.txt
++++ llvm/tools/remarks-shlib/CMakeLists.txt
+@@ -9,7 +9,11 @@ if(LLVM_ENABLE_PIC)
+     libremarks.cpp
+     )
+ 
+-  set(LLVM_EXPORTED_SYMBOL_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Remarks.exports)
++  if (LLVM_LINK_LLVM_DYLIB)
++    set(LLVM_EXPORTED_SYMBOL_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Remarks.dylib.exports)
++  else()
++    set(LLVM_EXPORTED_SYMBOL_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Remarks.exports)
++  endif()
+ 
+   add_llvm_library(Remarks SHARED INSTALL_WITH_TOOLCHAIN ${SOURCES})
+ 
+diff --git llvm/tools/remarks-shlib/Remarks.dylib.exports llvm/tools/remarks-shlib/Remarks.dylib.exports
+new file mode 100644
+index 000000000000..0c2a3c38c78c
+--- /dev/null
++++ llvm/tools/remarks-shlib/Remarks.dylib.exports
+@@ -0,0 +1 @@
++LLVMRemarkVersion
+diff --git openmp/libomptarget/plugins/exports openmp/libomptarget/plugins/exports
+index 61cc6746defd..cc7beda183af 100644
+--- openmp/libomptarget/plugins/exports
++++ openmp/libomptarget/plugins/exports
+@@ -1,29 +1,6 @@
+ VERS1.0 {
+   global:
+-    __tgt_rtl_is_valid_binary;
+-    __tgt_rtl_is_data_exchangable;
+-    __tgt_rtl_number_of_devices;
+-    __tgt_rtl_init_requires;
+-    __tgt_rtl_init_device;
+-    __tgt_rtl_load_binary;
+-    __tgt_rtl_data_alloc;
+-    __tgt_rtl_data_submit;
+-    __tgt_rtl_data_submit_async;
+-    __tgt_rtl_data_retrieve;
+-    __tgt_rtl_data_retrieve_async;
+-    __tgt_rtl_data_exchange;
+-    __tgt_rtl_data_exchange_async;
+-    __tgt_rtl_data_delete;
+-    __tgt_rtl_run_target_team_region;
+-    __tgt_rtl_run_target_team_region_async;
+-    __tgt_rtl_run_target_region;
+-    __tgt_rtl_run_target_region_async;
+-    __tgt_rtl_synchronize;
+-    __tgt_rtl_register_lib;
+-    __tgt_rtl_unregister_lib;
+-    __tgt_rtl_supports_empty_images;
+-    __tgt_rtl_set_info_flag;
+-    __tgt_rtl_print_device_info;
++    __tgt_rtl*;
+   local:
+     *;
+ };
+diff --git openmp/runtime/cmake/LibompHandleFlags.cmake openmp/runtime/cmake/LibompHandleFlags.cmake
+index 9e19e59ba17d..1ddbc870e0f1 100644
+--- openmp/runtime/cmake/LibompHandleFlags.cmake
++++ openmp/runtime/cmake/LibompHandleFlags.cmake
+@@ -98,7 +98,6 @@ function(libomp_get_ldflags ldflags)
+     IF_DEFINED CMAKE_C_OSX_CURRENT_VERSION_FLAG)
+   libomp_append(ldflags_local "${CMAKE_C_OSX_COMPATIBILITY_VERSION_FLAG}${LIBOMP_VERSION_MAJOR}.${LIBOMP_VERSION_MINOR}"
+     IF_DEFINED CMAKE_C_OSX_COMPATIBILITY_VERSION_FLAG)
+-  libomp_append(ldflags_local -Wl,--warn-shared-textrel LIBOMP_HAVE_WARN_SHARED_TEXTREL_FLAG)
+   libomp_append(ldflags_local -Wl,--as-needed LIBOMP_HAVE_AS_NEEDED_FLAG)
+   libomp_append(ldflags_local "-Wl,--version-script=${LIBOMP_SRC_DIR}/exports_so.txt" LIBOMP_HAVE_VERSION_SCRIPT_FLAG)
+   libomp_append(ldflags_local -static-libgcc LIBOMP_HAVE_STATIC_LIBGCC_FLAG)
+diff --git openmp/runtime/cmake/config-ix.cmake openmp/runtime/cmake/config-ix.cmake
+index 56d0ddb321f6..6608d182692d 100644
+--- openmp/runtime/cmake/config-ix.cmake
++++ openmp/runtime/cmake/config-ix.cmake
+@@ -114,9 +114,8 @@ if(WIN32)
+   libomp_check_linker_flag(/SAFESEH LIBOMP_HAVE_SAFESEH_FLAG)
+ elseif(NOT APPLE)
+   libomp_check_linker_flag(-Wl,-x LIBOMP_HAVE_X_FLAG)
+-  libomp_check_linker_flag(-Wl,--warn-shared-textrel LIBOMP_HAVE_WARN_SHARED_TEXTREL_FLAG)
+   libomp_check_linker_flag(-Wl,--as-needed LIBOMP_HAVE_AS_NEEDED_FLAG)
+-  libomp_check_linker_flag("-Wl,--version-script=${LIBOMP_SRC_DIR}/exports_so.txt" LIBOMP_HAVE_VERSION_SCRIPT_FLAG)
++  libomp_check_linker_flag("-Wl,--version-script=${LIBOMP_SRC_DIR}/exports_test_so.txt" LIBOMP_HAVE_VERSION_SCRIPT_FLAG)
+   libomp_check_linker_flag(-static-libgcc LIBOMP_HAVE_STATIC_LIBGCC_FLAG)
+   libomp_check_linker_flag(-Wl,-z,noexecstack LIBOMP_HAVE_Z_NOEXECSTACK_FLAG)
+ endif()
+diff --git openmp/runtime/src/exports_so.txt openmp/runtime/src/exports_so.txt
+index cb79ae72e67b..16f2438647fe 100644
+--- openmp/runtime/src/exports_so.txt
++++ openmp/runtime/src/exports_so.txt
+@@ -71,10 +71,8 @@ VERSION {
+         __kmp_fork_call;
+         __kmp_invoke_microtask;
+ #if KMP_USE_MONITOR
+-        __kmp_launch_monitor;
+         __kmp_reap_monitor;
+ #endif
+-        __kmp_launch_worker;
+         __kmp_reap_worker;
+         __kmp_release_64;
+         __kmp_wait_64;
+diff --git openmp/runtime/src/exports_test_so.txt openmp/runtime/src/exports_test_so.txt
+new file mode 100644
+index 000000000000..912d160e7c06
+--- /dev/null
++++ openmp/runtime/src/exports_test_so.txt
+@@ -0,0 +1,60 @@
++# exports_test_so.txt #
++
++#
++#//===----------------------------------------------------------------------===//
++#//
++#// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
++#// See https://llvm.org/LICENSE.txt for license information.
++#// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
++#//
++#//===----------------------------------------------------------------------===//
++#
++
++# This is used only to test if the linker supports version scripts. If the full
++# version script it used we may error on undefined symbols and erroneously fail.
++
++VERSION {
++
++    global: # Exported symbols.
++
++        *;         # All symbols as exported for testing.
++
++    local: # Non-exported symbols.
++
++        *;         # All other symbols are not exported.
++
++}; # VERSION
++
++# sets up GCC OMP_ version dependency chain
++OMP_1.0 {
++};
++OMP_2.0 {
++} OMP_1.0;
++OMP_3.0 {
++} OMP_2.0;
++OMP_3.1 {
++} OMP_3.0;
++OMP_4.0 {
++} OMP_3.1;
++OMP_4.5 {
++} OMP_4.0;
++OMP_5.0 {
++} OMP_4.5;
++
++# sets up GCC GOMP_ version dependency chain
++GOMP_1.0 {
++};
++GOMP_2.0 {
++} GOMP_1.0;
++GOMP_3.0 {
++} GOMP_2.0;
++GOMP_4.0 {
++} GOMP_3.0;
++GOMP_4.5 {
++} GOMP_4.0;
++GOMP_5.0 {
++} GOMP_4.5;
++GOMP_5.0.1 {
++} GOMP_5.0;
++
++# end of file #
+diff --git openmp/runtime/src/kmp_runtime.cpp openmp/runtime/src/kmp_runtime.cpp
+index 16d415dc8a74..1d873773bbc2 100644
+--- openmp/runtime/src/kmp_runtime.cpp
++++ openmp/runtime/src/kmp_runtime.cpp
+@@ -8844,3 +8844,20 @@ void __kmp_set_nesting_mode_threads() {
+   if (__kmp_nesting_mode == 1) // turn on nesting for this case only
+     set__max_active_levels(thread, __kmp_nesting_mode_nlevels);
+ }
++
++// Empty symbols to export (see exports_so.txt) when feature is disabled
++extern "C" {
++#if !KMP_STATS_ENABLED
++void __kmp_reset_stats() {}
++#endif
++#if !USE_DEBUGGER
++int __kmp_omp_debug_struct_info = FALSE;
++int __kmp_debugging = FALSE;
++#endif
++#if !USE_ITT_BUILD || !USE_ITT_NOTIFY
++void __kmp_itt_fini_ittlib() {}
++void __kmp_itt_init_ittlib() {}
++#endif
++}
++
++// end of file
+diff --git openmp/runtime/src/kmp_utility.cpp openmp/runtime/src/kmp_utility.cpp
+index c4bfead9d0d6..5846a993619e 100644
+--- openmp/runtime/src/kmp_utility.cpp
++++ openmp/runtime/src/kmp_utility.cpp
+@@ -397,3 +397,16 @@ void __kmp_expand_file_name(char *result, size_t rlen, char *pattern) {
+ 
+   *pos = '\0';
+ }
++
++#if !OMPT_SUPPORT
++extern "C" {
++typedef struct ompt_start_tool_result_t ompt_start_tool_result_t;
++// Define symbols expected by VERSION script
++ompt_start_tool_result_t *ompt_start_tool(unsigned int omp_version,
++                                          const char *runtime_version) {
++  return nullptr;
++}
++
++void ompt_libomp_connect(ompt_start_tool_result_t *result) { result = nullptr; }
++}
++#endif
+diff --git openmp/runtime/src/z_Linux_util.cpp openmp/runtime/src/z_Linux_util.cpp
+index 42ad1d56f9ec..19fca31a2db0 100644
+--- openmp/runtime/src/z_Linux_util.cpp
++++ openmp/runtime/src/z_Linux_util.cpp
+@@ -987,7 +987,7 @@ void __kmp_exit_thread(int exit_status) {
+ #if KMP_USE_MONITOR
+ void __kmp_resume_monitor();
+ 
+-void __kmp_reap_monitor(kmp_info_t *th) {
++extern "C" void __kmp_reap_monitor(kmp_info_t *th) {
+   int status;
+   void *exit_val;
+ 
+@@ -1029,6 +1029,12 @@ void __kmp_reap_monitor(kmp_info_t *th) {
+ 
+   KMP_MB(); /* Flush all pending memory write invalidates.  */
+ }
++#else
++// Empty symbol to export (see exports_so.txt) when
++// monitor thread feature is disabled
++extern "C" void __kmp_reap_monitor(kmp_info_t *th) {
++  (void)th;
++}
+ #endif // KMP_USE_MONITOR
+ 
+ void __kmp_reap_worker(kmp_info_t *th) {
