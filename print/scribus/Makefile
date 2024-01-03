@@ -1,5 +1,5 @@
 PORTNAME=	scribus
-PORTVERSION=	1.6.0
+DISTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
@@ -37,8 +37,7 @@ USE_QT=		buildtools:build core gui linguisttools:build \
 		network opengl printsupport qmake:build widgets xml
 USE_GNOME=	cairo libxml2
 
-CMAKE_ARGS+=	-DWANT_CPP17=YES \
-		-DCMAKE_COLOR_MAKEFILE:BOOL=ON
+CMAKE_ARGS=	-DWANT_CPP17=YES
 
 CONFLICTS_INSTALL=	scribus-devel
 
@@ -46,25 +45,25 @@ OPTIONS_DEFINE=	BOOST DOCS GRAPHICSMAGICK HUNSPELL OSG PDF
 OPTIONS_DEFAULT=BOOST GRAPHICSMAGICK HUNSPELL OSG PDF
 
 BOOST_DESC=	Enable support for Boost-based enhancement
-GRAPHICSMAGICK_DESC=	Use GraphicsMagick instead of ImageMagick
+GRAPHICSMAGICK_DESC=	Use GraphicsMagick for image import support
 HUNSPELL_DESC=	Enable spellchecking via hunspell
 OSG_DESC=	Enable 3D rendering via osg
 PDF_DESC=	Enable PDF export via podofo
 
-BOOST_CMAKE_BOOL=	WITH_BOOST
 BOOST_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+BOOST_CMAKE_BOOL=	WITH_BOOST
 
-GRAPHICSMAGICK_CMAKE_BOOL=	WANT_GRAPHICSMAGICK
 GRAPHICSMAGIC_LIB_DEPENDS=	graphics/GraphicsMagick
+GRAPHICSMAGICK_CMAKE_BOOL=	WANT_GRAPHICSMAGICK
 
-HUNSPELL_CMAKE_BOOL=	WANT_HUNSPELL
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
+HUNSPELL_CMAKE_BOOL=	WANT_HUNSPELL
 
 OSG_LIB_DEPENDS=	libosg.so:graphics/osg
 OSG_CMAKE_BOOL_OFF=	WANT_NOOSG
 
-PDF_CMAKE_BOOL=	WITH_PODOFO
 PDF_LIB_DEPENDS=	libpodofo.so:graphics/podofo
+PDF_CMAKE_BOOL=	WITH_PODOFO
 
 post-install:
 		${LN} -sf ../share/icons/1_5_1/scribus.png \
