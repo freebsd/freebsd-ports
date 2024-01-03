@@ -497,6 +497,7 @@
     SUBDIR += mvfst
     SUBDIR += nakenchat
     SUBDIR += nanomsg
+    SUBDIR += narrowlink
     SUBDIR += nast
     SUBDIR += nats-nkeys
     SUBDIR += nats-nsc

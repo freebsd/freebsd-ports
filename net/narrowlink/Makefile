@@ -1,0 +1,327 @@
+PORTNAME=	narrowlink
+DISTVERSION=	0.2.2
+CATEGORIES=	net
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Self-hosted solution for secure connectivity between devices
+WWW=		https://narrowlink.com
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		cargo
+USE_RC_SUBR=	narrowlink-agent narrowlink-gateway
+USE_GITHUB=	yes
+
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		aead-0.5.2 \
+		aho-corasick-1.1.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.79 \
+		arrayvec-0.7.4 \
+		askama-0.12.1 \
+		askama_derive-0.12.4 \
+		askama_escape-0.10.3 \
+		askama_parser-0.2.0 \
+		asn1-rs-0.5.2 \
+		asn1-rs-derive-0.4.0 \
+		asn1-rs-impl-0.1.0 \
+		async-recursion-1.0.5 \
+		async-stream-0.3.5 \
+		async-stream-impl-0.3.5 \
+		async-trait-0.1.77 \
+		autocfg-1.1.0 \
+		backtrace-0.3.69 \
+		base64-0.21.5 \
+		bindgen-0.69.1 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		block-buffer-0.10.4 \
+		bumpalo-3.14.0 \
+		byteorder-1.5.0 \
+		bytes-1.5.0 \
+		c2rust-bitfields-0.18.0 \
+		c2rust-bitfields-derive-0.18.0 \
+		cc-1.0.83 \
+		cexpr-0.6.0 \
+		cfg-if-1.0.0 \
+		chacha20-0.9.1 \
+		chacha20poly1305-0.10.1 \
+		chrono-0.4.31 \
+		cipher-0.4.4 \
+		clang-sys-1.7.0 \
+		clap_lex-0.6.0 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		cpufeatures-0.2.11 \
+		crossbeam-channel-0.5.10 \
+		crossbeam-utils-0.8.18 \
+		crypto-common-0.1.6 \
+		daemonize-0.5.0 \
+		data-encoding-2.5.0 \
+		der-parser-8.2.0 \
+		deranged-0.3.11 \
+		digest-0.10.7 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
+		displaydoc-0.2.4 \
+		either-1.9.0 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		etherparse-0.13.0 \
+		fnv-1.0.7 \
+		form_urlencoded-1.2.1 \
+		futures-0.3.30 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
+		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.30 \
+		generic-array-0.14.7 \
+		getrandom-0.2.11 \
+		gimli-0.28.1 \
+		glob-0.3.1 \
+		h2-0.3.22 \
+		hashbrown-0.14.3 \
+		hermit-abi-0.3.3 \
+		hmac-0.12.1 \
+		home-0.5.9 \
+		http-0.2.11 \
+		http-body-0.4.6 \
+		httparse-1.8.0 \
+		httpdate-1.0.3 \
+		hyper-0.14.28 \
+		hyper-rustls-0.24.2 \
+		iana-time-zone-0.1.59 \
+		iana-time-zone-haiku-0.1.2 \
+		idna-0.4.0 \
+		idna-0.5.0 \
+		if_chain-1.0.2 \
+		indexmap-2.1.0 \
+		inout-0.1.3 \
+		instant-acme-0.4.1 \
+		ioctl-sys-0.8.0 \
+		ipnet-2.9.0 \
+		ipstack-0.0.2 \
+		itoa-1.0.10 \
+		js-sys-0.3.66 \
+		jsonwebtoken-9.2.0 \
+		keccak-0.1.4 \
+		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
+		libc-0.2.151 \
+		libloading-0.8.1 \
+		libredox-0.0.1 \
+		linux-raw-sys-0.4.12 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
+		memchr-2.7.1 \
+		mime-0.3.17 \
+		mime_guess-2.0.4 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.10 \
+		net-route-0.2.8 \
+		netlink-packet-core-0.7.0 \
+		netlink-packet-route-0.17.1 \
+		netlink-packet-utils-0.5.2 \
+		netlink-proto-0.11.2 \
+		netlink-sys-0.8.5 \
+		nix-0.26.4 \
+		nom-7.1.3 \
+		ntapi-0.4.1 \
+		nu-ansi-term-0.46.0 \
+		num-bigint-0.4.4 \
+		num-integer-0.1.45 \
+		num-traits-0.2.17 \
+		num_cpus-1.16.0 \
+		object-0.32.2 \
+		oid-registry-0.6.1 \
+		once_cell-1.19.0 \
+		opaque-debug-0.3.0 \
+		openssl-probe-0.1.5 \
+		option-ext-0.2.0 \
+		overload-0.1.1 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		paste-1.0.14 \
+		peeking_take_while-0.1.2 \
+		pem-3.0.3 \
+		percent-encoding-2.3.1 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		poly1305-0.8.0 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.17 \
+		prettyplease-0.2.16 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.74 \
+		proxy-stream-0.0.2 \
+		quinn-0.10.2 \
+		quinn-proto-0.10.6 \
+		quinn-udp-0.4.1 \
+		quote-1.0.35 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rcgen-0.11.3 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-lite-0.1.5 \
+		regex-syntax-0.8.2 \
+		ring-0.16.20 \
+		ring-0.17.7 \
+		rlimit-0.10.1 \
+		rtnetlink-0.13.1 \
+		rustc-demangle-0.1.23 \
+		rustc-hash-1.1.0 \
+		rusticata-macros-4.1.0 \
+		rustix-0.38.28 \
+		rustls-0.21.10 \
+		rustls-native-certs-0.6.3 \
+		rustls-pemfile-1.0.4 \
+		rustls-webpki-0.101.7 \
+		ryu-1.0.16 \
+		schannel-0.1.23 \
+		scopeguard-1.2.0 \
+		sct-0.7.1 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.194 \
+		serde_derive-1.0.194 \
+		serde_json-1.0.110 \
+		serde_yaml-0.9.30 \
+		sha1-0.10.6 \
+		sha3-0.10.8 \
+		sharded-slab-0.1.7 \
+		shlex-1.2.0 \
+		signal-hook-registry-1.4.1 \
+		slab-0.4.9 \
+		smallvec-1.11.2 \
+		socket2-0.5.5 \
+		spin-0.5.2 \
+		spin-0.9.8 \
+		subtle-2.5.0 \
+		syn-1.0.109 \
+		syn-2.0.46 \
+		synstructure-0.12.6 \
+		sysinfo-0.30.3 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		thread_local-1.1.7 \
+		time-0.3.31 \
+		time-core-0.1.2 \
+		time-macros-0.2.16 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.35.1 \
+		tokio-macros-2.2.0 \
+		tokio-rustls-0.24.1 \
+		tokio-tungstenite-0.20.1 \
+		tokio-util-0.7.10 \
+		tower-service-0.3.2 \
+		tracing-0.1.40 \
+		tracing-appender-0.2.3 \
+		tracing-attributes-0.1.27 \
+		tracing-core-0.1.32 \
+		tracing-serde-0.1.3 \
+		tracing-subscriber-0.3.18 \
+		try-lock-0.2.5 \
+		tun-0.6.1 \
+		tungstenite-0.20.1 \
+		typenum-1.17.0 \
+		udp-stream-0.0.9 \
+		unicase-2.7.0 \
+		unicode-bidi-0.3.14 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
+		unicode-xid-0.2.4 \
+		universal-hash-0.5.1 \
+		unsafe-libyaml-0.2.10 \
+		untrusted-0.7.1 \
+		untrusted-0.9.0 \
+		url-2.5.0 \
+		utf-8-0.7.6 \
+		uuid-1.6.1 \
+		validator-0.16.1 \
+		validator_derive-0.16.0 \
+		validator_types-0.16.0 \
+		valuable-0.1.0 \
+		version_check-0.9.4 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		web-sys-0.3.66 \
+		webpki-roots-0.25.3 \
+		which-4.4.2 \
+		wildmatch-2.3.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.51.1 \
+		windows-0.52.0 \
+		windows-core-0.51.1 \
+		windows-core-0.52.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		wintun-0.3.2 \
+		x509-parser-0.15.1 \
+		yasna-0.5.2 \
+		zeroize-1.7.0
+
+PROGRAMS=	narrowlink \
+		narrowlink-agent \
+		narrowlink-gateway \
+		narrowlink-token-generator
+
+PLIST_FILES=	${PROGRAMS:S/^/bin\//}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/gateway/src/config.rs
+	@${CP} -r \
+		${WRKSRC}/cargo-crates/tun-0.6.1/src/platform/linux \
+		${WRKSRC}/cargo-crates/tun-0.6.1/src/platform/freebsd
+
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+.for prog in ${PROGRAMS}
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/*/release/${prog} \
+		${STAGEDIR}${PREFIX}/bin
+.endfor
+	# install config files
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+.for what in agent client gateway
+	${INSTALL_DATA} ${WRKSRC}/${what}/sample_${what}.yaml ${STAGEDIR}${ETCDIR}/${what}.yaml.sample
+.endfor
+
+.include <bsd.port.mk>
