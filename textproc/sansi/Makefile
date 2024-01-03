@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/textproc/sansi/
 LICENSE=	ART20 BSD2CLAUSE
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	p5-PerlIO-eol>=0:devel/p5-PerlIO-eol \
 		p5-Modern-Perl>=0:lang/p5-Modern-Perl
 

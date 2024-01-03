@@ -10,6 +10,8 @@ WWW=		https://bsdforge.com/projects/comms/sms_client/
 
 LICENSE=	LGPL20+
 
+BROKEN=		Unfetchable
+
 USES=		tar:xz
 HAS_CONFIGURE=	yes
 SPOOL=		${STAGEDIR}${PREFIX}/var/spool/sms

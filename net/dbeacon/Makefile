@@ -9,6 +9,8 @@ WWW=		http://fivebits.net/proj/dbeacon
 
 LICENSE=	GPLv2+
 
+BROKEN=		Unfetchable
+
 USES=		gmake
 USE_CXXSTD=	c++98
 

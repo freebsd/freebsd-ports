@@ -8,6 +8,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Utility to patch modules and kernel
 WWW=		http://info.iet.unipi.it/~luigi/FreeBSD/
 
+BROKEN=		Unfetchable
+
 USES=		tar:tgz
 
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/kldpatch

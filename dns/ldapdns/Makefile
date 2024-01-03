@@ -11,6 +11,8 @@ WWW=		https://bsdforge.com/projects/dns/ldapdns/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 

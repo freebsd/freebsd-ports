@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/irc/quirc/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 USES=		tk xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wish=${WISH} \

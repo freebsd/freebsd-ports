@@ -7,6 +7,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Library required by smssend (same author)
 WWW=		https://BSDforge.com/projects/misc/skyutils/
 
+BROKEN=		Unfetchable
+
 USES=		autoreconf libtool ssl tar:txz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

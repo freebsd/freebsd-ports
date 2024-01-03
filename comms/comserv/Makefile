@@ -9,6 +9,8 @@ WWW=		https://BSDforge.com/projects/comms/comserv/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+
 USES=		tar:xz
 
 PLIST_FILES=	sbin/comservd etc/comservd.conf.sample \

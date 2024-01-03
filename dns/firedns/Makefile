@@ -13,6 +13,8 @@ WWW=		https://www.firestuff.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring
 
 USES=		tar:bzip2

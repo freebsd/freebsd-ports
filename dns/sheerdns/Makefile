@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/dns/sheerdns/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+
 USES=		gmake tar:xz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

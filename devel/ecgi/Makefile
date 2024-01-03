@@ -9,6 +9,8 @@ WWW=		https://BSDforge.com/projects/devel/ecgi/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable
+
 USES=		gmake tar:xz
 PORTDOCS=	*
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h

@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/audio/streamTranscoder/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libmad.so:audio/libmad \

@@ -8,6 +8,8 @@ MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK nodoka engine and themes
 WWW=		https://pagure.io/nodoka-theme
 
+BROKEN=		Unfetchable
+
 OPTIONS_DEFINE=	ANIMATION ANIMATIONTOLEFT
 ANIMATION_DESC=		Animation support
 ANIMATIONTOLEFT_DESC=	Animation from right to left

@@ -10,6 +10,8 @@ WWW=		http://www.dewn.com/rfc/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	w3m:www/w3m
 
 USES=		perl5 shebangfix

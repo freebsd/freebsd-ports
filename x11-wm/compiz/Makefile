@@ -14,6 +14,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgtop-2.0.so:devel/libgtop \

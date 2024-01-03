@@ -8,6 +8,8 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	UPS daemon for some Belkin UPS's
 WWW=		https://BSDforge.com/projects/sysutils/openupsd/
 
+BROKEN=		Unfetchable
+
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name= --bindir=${PREFIX}/sbin

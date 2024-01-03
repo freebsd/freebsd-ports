@@ -10,6 +10,8 @@ WWW=		https://bsdforge.com/projects/textproc/asm2html/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 USES=		tar:xz
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CC=${CC}

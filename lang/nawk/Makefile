@@ -10,6 +10,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 WWW=		http://cm.bell-labs.com/cm/cs/awkbook/index.html
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out

@@ -10,6 +10,8 @@ WWW=		https://BSDforge.COM/projects/graphics/repng2jpeg/
 
 LICENSE=	GPLv1
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		tar:xz

@@ -11,6 +11,8 @@ WWW=		https://gitlab.com/compiz/compiz-plugins-main
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libpangocairo-1.0.so:x11-toolkits/pango \
 		libstartup-notification-1.so:x11/startup-notification

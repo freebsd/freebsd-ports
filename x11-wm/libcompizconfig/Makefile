@@ -9,6 +9,8 @@ COMMENT=	Alternative configuration system for Compiz
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
 
 GNU_CONFIGURE=	yes

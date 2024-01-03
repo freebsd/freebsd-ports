@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/audio/mp3stat/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 USES=		dos2unix gmake gnome localbase pkgconfig
 DOS2UNIX_FILES=	ui/console/cli.cpp
 USE_GNOME=	gtk20

@@ -7,6 +7,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 WWW=		https://BSDforge.com/projects/dns/dlint
 
+BROKEN=		Unfetchable
+
 USES=		shebangfix tar:xz
 NO_ARCH=	yes
 NO_BUILD=	yes

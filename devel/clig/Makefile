@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/devel/clig
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING-2.0
 
+BROKEN=		Unfetchable
+
 USES=		shebangfix tcl tk
 SHEBANG_FILES=	tcl/*.tcl
 tk_OLD_CMD=	/usr/bin/wish8.0

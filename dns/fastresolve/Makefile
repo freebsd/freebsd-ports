@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/dns/fastresolve/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libadns.so:dns/adns
 RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 

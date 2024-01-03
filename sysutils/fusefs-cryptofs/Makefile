@@ -12,6 +12,8 @@ WWW=		https://BSDforge.com/projects/sysutils/fusefs-cryptofs/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes

@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/x11/xvt/
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+BROKEN=		Unfetchable
+
 PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
 
 USES=		libtool perl5 tar:xz xorg

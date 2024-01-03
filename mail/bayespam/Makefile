@@ -11,6 +11,8 @@ WWW=		https://BSDforge.com/projects/mail/bayespam
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 USES=		shebangfix perl5

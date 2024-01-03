@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/x11-themes/kde-icons-nuovext2/
 LICENSE=	LGPL3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 USES=		tar:xz
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

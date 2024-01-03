@@ -8,6 +8,8 @@ COMMENT=	Tool to send an SMS to any GSM
 WWW=		https://BSDforge.com/projects/misc/smssend/
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libskyutils.so:misc/skyutils
 
 USES=		libtool shebangfix tar:txz

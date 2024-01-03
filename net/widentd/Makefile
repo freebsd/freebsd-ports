@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/net/widentd/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable
+
 USES=		ncurses uidfix tar:xz
 USE_RC_SUBR=	widentd
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man" MK_WERROR=no

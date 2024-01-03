@@ -11,6 +11,8 @@ WWW=		http://ircproxy.sourceforge.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
 USES=		autoreconf tar:bzip2

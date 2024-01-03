@@ -9,6 +9,8 @@ WWW=		https://BSDforge.com/projects/sysutils/cdroot/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+
 USES=		tar:xz
 
 .include <bsd.port.mk>

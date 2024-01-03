@@ -8,6 +8,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Program to print a large (one month per page) calendar
 
+BROKEN=		Unfetchable
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/bigyear man/man1/bigyear.1.gz

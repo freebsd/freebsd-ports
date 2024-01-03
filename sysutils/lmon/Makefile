@@ -11,6 +11,8 @@ WWW=		http://www.bsdconsulting.no/tools/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
 		p5-Mail-Sendmail>=0:mail/p5-Mail-Sendmail \
 		p5-File-Tail>=0:devel/p5-File-Tail

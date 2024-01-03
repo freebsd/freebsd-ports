@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/mail/mbox2imap/
 
 LICENSE=	NONE
 
+BROKEN=		Unfetchable
+
 USES=		python shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 NO_WRKSUBDIR=	yes

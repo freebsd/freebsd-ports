@@ -9,6 +9,8 @@ WWW=		https://BSDforge.com/projects/sysutils/jailadmin/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+
 OPTIONS_DEFINE=		SNMP DOCS
 SNMP_DESC=	install the additional SNMP management components
 

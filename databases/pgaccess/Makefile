@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/databases/pgaccess/
 
 LICENSE=	BSD4CLAUSE
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:databases/pgtcl
 
 USES=		pgsql tk tar:xz

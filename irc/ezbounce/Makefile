@@ -8,6 +8,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Highly configurable IRC Proxy
 WWW=		https://sourceforge.net/projects/ezbounce/
 
+BROKEN=		Unfetchable
+
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS
 OPTIONS_SUB=	yes

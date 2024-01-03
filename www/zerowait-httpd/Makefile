@@ -12,6 +12,8 @@ WWW=		https://www.0w.ru/httpd/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable
+
 USES=		gmake ssl
 USE_RC_SUBR=	0W-httpd
 ALL_TARGET=	#none

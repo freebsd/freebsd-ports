@@ -9,6 +9,8 @@ COMMENT=	Program for mirroring files and directories from FTP server
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

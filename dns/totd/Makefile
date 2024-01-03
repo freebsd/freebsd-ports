@@ -8,6 +8,8 @@ MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 WWW=		https://BSDforge.com/projects/dns/totd/
 
+BROKEN=		Unfetchable
+
 USES=		desthack uidfix
 
 USE_RC_SUBR=	totd

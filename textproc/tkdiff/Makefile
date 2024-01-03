@@ -11,6 +11,8 @@ WWW=		https://sourceforge.net/projects/tkdiff/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Unfetchable
+
 USES=		cpe tar:txz tk:wrapper
 
 DESKTOP_ENTRIES=	"Tkdiff" "Tk frontend for the diff command" \

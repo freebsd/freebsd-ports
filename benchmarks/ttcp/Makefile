@@ -13,6 +13,8 @@ WWW=		https://ftp.arl.army.mil/~mike/ttcp.html
 
 LICENSE=	PD
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS

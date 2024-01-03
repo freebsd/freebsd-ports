@@ -11,6 +11,8 @@ WWW=		https://bsdforge.com/projects/graphics/delaboratory/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		compiler:c++11-lib gmake gnome

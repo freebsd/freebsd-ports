@@ -11,6 +11,8 @@ WWW=		https://www.cs.utah.edu/gdc/projects/urt/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/copyright
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libtiff.so:graphics/tiff
 

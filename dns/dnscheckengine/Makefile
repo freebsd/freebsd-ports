@@ -12,6 +12,8 @@ WWW=		https://dnscheck.iis.se/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
 		p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \

@@ -14,6 +14,8 @@ LICENSE_NAME=	Spread Open-Source License
 LICENSE_FILE=	files/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Unfetchable
+
 USES=		groff perl5 tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build run

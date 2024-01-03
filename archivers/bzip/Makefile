@@ -11,6 +11,8 @@ WWW=		https://bsdforge.com/projects/archivers/bzip/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+
 USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/bzip bin/bunzip \
