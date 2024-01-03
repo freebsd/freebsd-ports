@@ -23,9 +23,10 @@ IGNORE= Incorrect 'USES+= gem:${gem_ARGS}' usage: argument [${arg}] is not recog
 .include "${USESDIR}/ruby.mk"
 
 PKGNAMEPREFIX?=	rubygem-
-EXTRACT_SUFX=	.gem
-EXTRACT_ONLY=
-DIST_SUBDIR=	rubygem
+GEM_EXT=	.gem
+# needs to be disabled that rust cargo directories are correctly extracted
+#EXTRACT_ONLY=
+GEM_DIST_SUBDIR?=	rubygem
 
 BUILD_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
 EXTRACT_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
@@ -63,15 +64,16 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		GEM_DOC_DIR="${GEM_DOC_DIR}" \
 		GEM_SPEC="${GEM_SPEC}" \
 		GEM_CACHE="${GEM_CACHE}" \
-		EXTRACT_SUFX="${EXTRACT_SUFX}"
+		GEM_EXT="${GEM_EXT}"
 
 RUBYGEMBIN=	${LOCALBASE}/bin/gem
 
 .  if defined(DISTFILES)
-GEMFILES=	${DISTFILES:C/:[^:]+$//}
+GEMFILES?=	${DISTFILES:C/:[^:]+$//}
 .  else
-GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
+GEMFILES?=	${DISTNAME}${GEM_EXT}
 .  endif
+DISTFILES+=	${GEM_DIST_SUBDIR}/${GEMFILES}
 
 RUBYGEM_ARGS=-l --no-update-sources --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
 
@@ -81,17 +83,16 @@ RUBYGEM_ARGS+=	--document rdoc,ri
 RUBYGEM_ARGS+=	--no-document
 .  endif
 
-.  if !target(do-extract)
-do-extract:
-	@${SETENV} ${GEM_ENV} ${RUBYGEMBIN} unpack --target=${WRKDIR} ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES}
-	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} spec --ruby ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} > ${GEMSPEC} ; then \
+_USES_extract+=		590:gem-extract
+gem-extract:
+	@${SETENV} ${GEM_ENV} ${RUBYGEMBIN} unpack --target=${WRKDIR} ${DISTDIR}/${GEM_DIST_SUBDIR}/${GEMFILES}
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} spec --ruby ${DISTDIR}/${GEM_DIST_SUBDIR}/${GEMFILES} > ${GEMSPEC} ; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Extraction failed unexpectedly."; \
 			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT_80} ; \
 			fi; \
 		${FALSE}; \
 		fi)
-.  endif
 
 .  if !target(do-build)
 do-build:
