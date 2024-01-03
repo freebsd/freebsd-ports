@@ -9,6 +9,9 @@ WWW=		https://github.com/jmmv/lutok/
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	atf>=0.21:devel/atf
+RUN_DEPENDS=	atf>=0.21:devel/atf
+
 USES=		autoreconf libtool lua pathfix pkgconfig
 USE_CXXSTD=	gnu++11
 USE_GITHUB=	yes
@@ -17,6 +20,7 @@ GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+#TEST_CONFIGURE_WITH=	atf
 # Force the use of the lua version we have chosen via USE_LUA.  If we allow
 # lutok's configure script search for one using pkgconfig files, it might pick
 # a different version.
@@ -30,8 +34,7 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS COPYING NEWS README html/*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES TEST
-OPTIONS_DEFAULT=TEST
+OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen
@@ -39,9 +42,6 @@ DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR} --htmldir=${DOCSDIR}/html
 DOCS_CONFIGURE_OFF=	--without-doxygen
 DOCS_MAKE_ARGS_OFF=	doc_DATA=
 EXAMPLES_MAKE_ARGS_OFF=	dist_examples_DATA=
-TEST_BUILD_DEPENDS=	atf>=0.21:devel/atf
-TEST_RUN_DEPENDS=	atf>=0.21:devel/atf
-TEST_CONFIGURE_WITH=	atf
 
 pre-install-DOCS-off:
 	@${RM} -r ${WRKSRC}/api-docs
