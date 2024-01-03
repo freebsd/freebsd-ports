@@ -11,6 +11,8 @@ WWW=		https://www.apertium.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_15_armv7=	segmentation fault
+
 BUILD_DEPENDS=	apertium>0:textproc/apertium
 LIB_DEPENDS=	libcg3.so:textproc/cg3
 
