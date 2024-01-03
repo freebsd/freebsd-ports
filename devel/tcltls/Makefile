@@ -38,6 +38,7 @@ CFLAGS+=       -Wno-error=int-conversion
 
 post-patch:
 	${MV} ${WRKSRC}/tests/ciphers.test ${WRKSRC}/tests/ciphers.test.broken
+	${REINPLACE_CMD} '/^#define CONST84/s|$$| const|' ${WRKSRC}/tlsInt.h
 
 # Newer openssl-dhparam has no "-C" option, we emulate it here :-/
 post-configure:
