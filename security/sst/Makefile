@@ -1,5 +1,5 @@
 PORTNAME=	sst
-PORTVERSION=	1.23
+PORTVERSION=	1.26
 CATEGORIES=	security
 MASTER_SITES=	http://utcc.utoronto.ca/~pkern/stuff/sst/
 
