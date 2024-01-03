@@ -2357,7 +2357,7 @@
     SUBDIR += tomcat9
     SUBDIR += tomee
     SUBDIR += tor-browser
-    SUBDIR += trac-devel
+    SUBDIR += trac
     SUBDIR += trafficserver
     SUBDIR += transproxy
     SUBDIR += trunk
