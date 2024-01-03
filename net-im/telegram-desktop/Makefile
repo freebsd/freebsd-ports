@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.14.1
+DISTVERSION=	4.14.2
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -64,7 +64,7 @@ USE_QT=		buildtools:build core dbus declarative gui imageformats network qmake:b
 USE_KDE=	coreaddons kimageformats
 .else
 USES+=		qt:6
-USE_QT=		5compat base imageformats lottie shadertools svg tools:build wayland
+USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:build wayland
 .endif
 
 USE_GL=		gl
