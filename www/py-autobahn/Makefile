@@ -64,7 +64,9 @@ COMPLETE_OPTIONS_LIST:=		${COMPLETE_OPTIONS_LIST:NASYNCIO}
 PORT_OPTIONS:=			${PORT_OPTIONS:NASYNCIO}
 
 post-stage:
+.if exists(${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_nvx_utf8validator.abi3.so)
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_nvx_utf8validator.abi3.so
+.endif
 
 do-test-ASYNCIO-on:
 	@cd ${WRKSRC} && USE_ASYNCIO=1 ${PYTHON_CMD} -m pytest -v -rs ${WRKSRC}/autobahn
