@@ -1,13 +1,13 @@
 - correct the directory where to find glaze for testing
 
---- tests/CMakeLists.txt.orig	2023-12-15 09:39:27 UTC
+--- tests/CMakeLists.txt.orig	2024-01-02 19:10:49 UTC
 +++ tests/CMakeLists.txt
-@@ -119,7 +119,7 @@ add_test(
-   "${CMAKE_CURRENT_SOURCE_DIR}/find_package"
-   "${CMAKE_CURRENT_BINARY_DIR}/find_package"
-   --build-options
--  "-Dglaze_ROOT:PATH=${CMAKE_CURRENT_BINARY_DIR}/install"
-+  "-Dglaze_ROOT:PATH=${FREEBSD_STAGEDIR_PREFIX}"
-   "-DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}"
-   "-DBUILD_TESTING=ON"
-   --test-command "${CMAKE_CTEST_COMMAND}" --verbose --output-on-failure # inner ctest command
+@@ -114,7 +114,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+     "${CMAKE_CURRENT_SOURCE_DIR}/find_package"
+     "${CMAKE_CURRENT_BINARY_DIR}/find_package"
+     --build-options
+-    "-Dglaze_ROOT:PATH=${CMAKE_CURRENT_BINARY_DIR}/install"
++    "-Dglaze_ROOT:PATH=${FREEBSD_STAGEDIR_PREFIX}"
+     "-DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}"
+     "-DBUILD_TESTING=ON"
+     --test-command "${CMAKE_CTEST_COMMAND}" --verbose --output-on-failure # inner ctest command
