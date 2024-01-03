@@ -1,7 +1,7 @@
 PORTNAME=	mongo-c-driver
 DISTVERSION=	1.25.3
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://codeload.github.com/mongodb/${PORTNAME}/tar.gz/${DISTVERSION}?dummy=/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	C Driver for MongoDB
@@ -11,11 +11,17 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
+		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
 
 USES=		cmake cpe pathfix pkgconfig python:env
 CPE_VENDOR=	mongodb
+PATHFIX_WRKSRC=	${WRKSRC}/src/libmongoc
 USE_LDCONFIG=	yes
+
+USE_GITHUB=    yes
+GH_ACCOUNT=    mongodb
+GH_PROJECT=    mongo-c-driver
 
 CMAKE_ARGS=	-DENABLE_ZLIB=SYSTEM
 CMAKE_ON=	ENABLE_MONGOC \
@@ -24,10 +30,11 @@ CMAKE_ON=	ENABLE_MONGOC \
 CMAKE_OFF=	BUILD_TESTING \
 		ENABLE_EXAMPLES \
 		ENABLE_TESTS \
-		ENABLE_UNINSTALL
+		ENABLE_UNINSTALL \
+		USE_BUNDLED_UTF8PROC
 
 OPTIONS_DEFINE=		CRYPTOPROFILE DOCS ICU MONGODBAWS RDTSCP SASL SNAPPY \
-			SRV SSL UTF8PROC ZSTD
+			SRV SSL ZSTD
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes
 
@@ -35,7 +42,6 @@ CRYPTOPROFILE_DESC=	Use system crypto profile (requires OpenSSL)
 MONGODBAWS_DESC=	Enable support for the MONGODB-AWS authentication mechanism
 RDTSCP_DESC=		Fast performance counters on Intel using the RDTSCP instruction
 SRV_DESC=		Enable support for mongodb+srv URIs
-UTF8PROC_DESC=		SCRAM-SHA-256 authentication with non-ASCII passwords (Use system utf8proc instead of bundled one)
 
 CRYPTOPROFILE_CMAKE_ON=	-DENABLE_CRYPTO_SYSTEM_PROFILE=ON
 CRYPTOPROFILE_CMAKE_OFF=	-DENABLE_CRYPTO_SYSTEM_PROFILE=OFF
@@ -68,10 +74,6 @@ SRV_CMAKE_OFF=		-DENABLE_SRV=OFF
 
 SSL_USES=		ssl
 SSL_CMAKE_OFF=		-DENABLE_SSL=OFF
-
-UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
-UTF8PROC_CMAKE_ON=	-DUSE_BUNDLED_UTF8PROC=OFF
-UTF8PROC_CMAKE_OFF=	-DUSE_BUNDLED_UTF8PROC=ON
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_CMAKE_ON=		-DENABLE_ZSTD=ON
