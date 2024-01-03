@@ -73,7 +73,7 @@ PROFILE_VARS_OFF=	enable_profile=NO hadrian_setting_profile=False
 
 GHC_VERSION?=		9.4.7
 LLVM_VERSION?=		13
-BOOT_GHC_VERSION?=	9.2.7
+BOOT_GHC_VERSION?=	9.2.8
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION?=	12
 
@@ -106,7 +106,7 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 
 .include <bsd.port.pre.mk>
 
-.if ${GHC_VERSION:C/\..*//g} >= 9 && ${ARCH} != i386 && ${ARCH} != aarch64
+.if ${GHC_VERSION:C/\..*//g} >= 9 && ${ARCH} != i386
 # hadrian build on i386 fails due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=269570
 # relocation R_386_TLS_LE cannot be used with -shared
 USE_HADRIAN=		yes
@@ -115,7 +115,6 @@ USE_HADRIAN=		yes
 .if ${GHC_VERSION:C/\..*//g} >= 9 && ${GHC_VERSION:C/[^\.]*\.//:C/\..*//g} >= 4
 BOOT_SCRIPT=	./boot.source
 IGNORE_i386=	requires Hadrian build which doesn't work on i386
-IGNORE_aarch64=	requires Hadrian build which doesn't work on aarch64
 .else
 BOOT_SCRIPT=	./boot
 .endif
@@ -152,6 +151,8 @@ CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
 BOOT_INSTALL_DIR=	${WRKDIR}/ghc-boot-install
 BOOT_GHC=		${BOOT_INSTALL_DIR}/bin/ghc-${BOOT_GHC_VERSION}
+
+PLIST_SUB+=		GHC_ARCH=${GHC_ARCH}
 
 .if ${BOOT_GHC_VERSION:C/\..*//g} >= 9
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
@@ -277,7 +278,7 @@ create-bootstrap:
 .else
 	cd ${WRKSRC} \
 		&& ${HADRIAN_CMD} binary-dist-xz \
-		&& ${MV} ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
+		&& ${MV} ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
 .endif
 
 	@cd /tmp \
