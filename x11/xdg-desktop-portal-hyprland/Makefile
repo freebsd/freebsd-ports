@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.6
+DISTVERSION=	1.3.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>=1.31:graphics/wayland-protocols
-LIB_DEPENDS=	libsdbus-c++.so:devel/sdbus-cpp \
+LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
+		libsdbus-c++.so:devel/sdbus-cpp \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
