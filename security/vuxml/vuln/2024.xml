@@ -1,3 +1,44 @@
+  <vuln vid="d1b20e09-dbdf-432b-83c7-89f0af76324a">
+    <topic>electron27 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.2.1">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6706.</li>
+	    <li>Security: backported fix for CVE-2023-6705.</li>
+	    <li>Security: backported fix for CVE-2023-6703.</li>
+	    <li>Security: backported fix for CVE-2023-6702.</li>
+	    <li>Security: backported fix for CVE-2023-6704.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6706</cvename>
+      <url>https://github.com/advisories/GHSA-jqrg-rvpw-5fw5</url>
+      <cvename>CVE-2023-6705</cvename>
+      <url>https://github.com/advisories/GHSA-h27f-fw5q-c2gh</url>
+      <cvename>CVE-2023-6703</cvename>
+      <url>https://github.com/advisories/GHSA-9v72-359m-2vx4</url>
+      <cvename>CVE-2023-6702</cvename>
+      <url>https://github.com/advisories/GHSA-7hjc-c62g-4w73</url>
+      <cvename>CVE-2023-6704</cvename>
+      <url>https://github.com/advisories/GHSA-587x-fmc5-99p9</url>
+    </references>
+    <dates>
+      <discovery>2024-01-04</discovery>
+      <entry>2024-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0cee4f9c-5efb-4770-b917-f4e4569e8bec">
     <topic>electron26 -- multiple vulnerabilities</topic>
     <affects>
