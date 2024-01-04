@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	SF/freepascal/Source/${PORTVERSION}:source \
 		https://downloads.freepascal.org/${PORTNAME}/dist/${PORTVERSION}/source/:source \
@@ -111,6 +111,8 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/a52/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+		${WRKSRC}/packages/dbus/fpmake.pp
+	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/dts/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|freebsd,||g' \
 		${WRKSRC}/packages/fpgtk/fpmake.pp
@@ -130,7 +132,7 @@ post-patch:
 		${WRKSRC}/packages/mad/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/modplug/fpmake.pp
-	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+	@${REINPLACE_CMD} -i "" -e 's|Linux|freebsd,linux|g' \
 		${WRKSRC}/packages/newt/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/oggvorbis/fpmake.pp
