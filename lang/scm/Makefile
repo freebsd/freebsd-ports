@@ -1,10 +1,10 @@
 PORTNAME=	scm
 PORTVERSION=	5f3
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b7.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} slib-3b7.zip
+MASTER_SITES=	GNU:scm	\
+		http://groups.csail.mit.edu/mac/ftpdir/scm/:psd1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:scm slib-psd1-3.tar.gz:psd1
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Scheme interpreter
@@ -14,15 +14,16 @@ LICENSE=	LGPL3+
 LICENSE_FILES=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex
+BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib
+RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib
 
-USES=		readline zip
+USES=		readline
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--prefix=${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
 
-#CFLAGS:=	${CFLAGS:N-O*} -O0
+CFLAGS:=	${CFLAGS:N-O*} -O0
 CFLAGS+=	-Wall -Wwrite-strings -Wmissing-declarations -Wredundant-decls -Wcast-qual
 CFLAGS+=	-Wno-unused-label -Wno-uninitialized
 
@@ -51,6 +52,9 @@ SCM_MODULES=	byte.so bytenumb.so differ.so edline.so gsubr.so \
 		ioext.so posix.so ramap.so record.so rgx.so sc2.so \
 		socket.so unix.so
 SCM_MODULES_X11=x.so
+
+post-extract:
+	${LN} -s ${LOCALBASE}/share/slib ${WRKDIR}
 
 .include <bsd.port.options.mk>
 
@@ -98,8 +102,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/scm
 	${INSTALL_LIB} ${SCM_MODULES:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${PREFIX}/lib/scm
-	${TAR} -C ${STAGEDIR}${PREFIX}/lib/scm -xf ${DISTDIR}/${DISTFILES:Mslib*.tar.gz} '*.scm'
-	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${STAGEDIR}${PREFIX}/lib/scm/slib/
-	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${TAR} -C ${STAGEDIR}${PREFIX}/lib/scm -xf ${DISTDIR}/${_DISTFILES:Mslib*.tar.gz} '*.scm'
+	${INSTALL_DATA} ${WRKSRC}/scm.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
