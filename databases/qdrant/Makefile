@@ -1,6 +1,6 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.3
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,16 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	compilation breaks with fatal warning: implicit conversion from 'std::numeric_limits<unsigned long long>::type' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295
 
-BUILD_DEPENDS=	gmake:devel/gmake \
-		protoc:devel/protobuf
+BUILD_DEPENDS=	protoc:devel/protobuf
 
-USES=		cargo perl5 llvm:min=13 pkgconfig
-USE_PERL5=	build
-
+USES=		cargo gmake llvm:min=13 perl5 pkgconfig
 USE_GITHUB=	yes
+USE_PERL5=	build
+USE_RC_SUBR=	qdrant
 
 CARGO_CRATES=	actix-codec-0.5.0 \
-		actix-cors-0.6.4 \
+		actix-cors-0.6.5 \
 		actix-files-0.6.2 \
 		actix-http-3.4.0 \
 		actix-macros-0.2.3 \
@@ -45,6 +44,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		aho-corasick-1.0.2 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
+		allocator-api2-0.2.16 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
@@ -105,13 +105,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ciborium-ll-0.2.0 \
 		cipher-0.4.4 \
 		clang-sys-1.4.0 \
-		clap-4.4.8 \
-		clap_builder-4.4.8 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
-		colored-2.0.4 \
+		colored-2.1.0 \
 		config-0.13.4 \
 		console-0.15.2 \
 		console-api-0.5.0 \
@@ -184,10 +184,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		fsio-0.1.3 \
 		fst-0.4.7 \
 		funty-2.0.0 \
-		futures-0.3.28 \
+		futures-0.3.29 \
 		futures-channel-0.3.29 \
 		futures-core-0.3.29 \
-		futures-executor-0.3.28 \
+		futures-executor-0.3.29 \
 		futures-io-0.3.29 \
 		futures-macro-0.3.29 \
 		futures-sink-0.3.29 \
@@ -197,8 +197,8 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		fxhash-0.2.1 \
 		generator-0.7.4 \
 		generic-array-0.14.6 \
-		geo-0.26.0 \
-		geo-types-0.7.11 \
+		geo-0.27.0 \
+		geo-types-0.7.12 \
 		geographiclib-rs-0.2.3 \
 		geohash-0.13.0 \
 		getopts-0.2.21 \
@@ -211,7 +211,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		half-1.8.2 \
 		hash32-0.2.1 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.0 \
+		hashbrown-0.14.2 \
 		hashring-0.3.3 \
 		hdrhistogram-7.5.2 \
 		heapless-0.7.16 \
@@ -287,7 +287,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		matchit-0.7.0 \
 		memchr-2.5.0 \
 		memmap2-0.5.10 \
-		memmap2-0.9.0 \
+		memmap2-0.9.2 \
 		memoffset-0.7.1 \
 		merge-0.1.0 \
 		merge_derive-0.1.0 \
@@ -314,7 +314,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		once_cell-1.18.0 \
 		oorandom-11.1.3 \
 		ordered-float-2.10.1 \
-		ordered-float-4.1.1 \
+		ordered-float-4.2.0 \
 		ordered-multimap-0.4.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.1 \
@@ -414,7 +414,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rustc_version-0.4.0 \
 		rustix-0.37.27 \
 		rustix-0.38.21 \
-		rustls-0.21.9 \
+		rustls-0.21.10 \
 		rustls-pemfile-1.0.3 \
 		rustls-webpki-0.100.2 \
 		rustls-webpki-0.101.7 \
@@ -433,7 +433,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		seahash-4.1.0 \
 		sealed_test-1.0.0 \
 		sealed_test_derive-1.0.0 \
-		semver-1.0.18 \
+		semver-1.0.20 \
 		serde-1.0.193 \
 		serde-value-0.7.0 \
 		serde_cbor-0.11.2 \
@@ -458,6 +458,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		smol_str-0.2.0 \
 		socket2-0.4.9 \
 		socket2-0.5.5 \
+		spade-2.4.1 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
@@ -468,10 +469,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		symbolic-common-12.2.0 \
 		symbolic-demangle-12.2.0 \
 		syn-1.0.107 \
-		syn-2.0.28 \
+		syn-2.0.32 \
 		sync_wrapper-0.1.1 \
 		sys-info-0.9.1 \
-		sysinfo-0.29.10 \
+		sysinfo-0.29.11 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tap-1.0.1 \
@@ -491,7 +492,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.34.0 \
+		tokio-1.35.0 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.24.1 \
@@ -580,8 +581,8 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		xattr-1.0.1 \
 		yada-0.5.0 \
 		yaml-rust-0.4.5 \
-		zerocopy-0.7.3 \
-		zerocopy-derive-0.7.3 \
+		zerocopy-0.7.31 \
+		zerocopy-derive-0.7.31 \
 		zerofrom-0.1.3 \
 		zerovec-0.9.6 \
 		zip-0.6.6 \
@@ -594,19 +595,28 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		tonic@git+https://github.com/qdrant/tonic?branch=v0.9.2-patched\#060ab88c87955adc59d46a44b4e3b72cb4cc1522 \
 		quantization@git+https://github.com/qdrant/quantization.git\#939fdb627a8edcf92fd71e3c79017156690850e9
 
-OPENSSLINC=	/usr/include
-OPENSSLLIB=	/usr/lib
+QDRANT_DBDIR?=	/var/db/qdrant
+QDRANT_USER?=	nobody
+QDRANT_GROUP?=	nobody
 
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/schema_generator \
-		bin/wal_inspector
+SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+
+PLIST_SUB=	QDRANT_DBDIR=${QDRANT_DBDIR} \
+		QDRANT_GROUP=${QDRANT_GROUP} \
+		QDRANT_USER=${QDRANT_USER}
+
+post-patch:
+	${REINPLACE_CMD} -e "s,%%DBDIR%%,${QDRANT_DBDIR},g; \
+		s,%%ETCDIR%%,${ETCDIR},g" ${WRKSRC}/config/config.yaml
 
 post-install:
-	# install config sample
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/config/config.yaml ${STAGEDIR}${ETCDIR}/config.yaml.sample
-	# strip binaries
-	@${STRIP_CMD} \
+# install config sample
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/tls
+	${MKDIR} ${STAGEDIR}${QDRANT_DBDIR}
+	${INSTALL_DATA} ${WRKSRC}/config/config.yaml ${STAGEDIR}${ETCDIR}/config.yaml.sample
+# strip binaries
+	${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/schema_generator \
 		${STAGEDIR}${PREFIX}/bin/wal_inspector

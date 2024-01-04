@@ -1,1 +1,6 @@
+bin/qdrant
+bin/schema_generator
+bin/wal_inspector
 @sample %%ETCDIR%%/config.yaml.sample
+@dir(%%QDRANT_USER%%,%%QDRANT_GROUP%%,0750) %%ETCDIR%%/tls
+@dir(%%QDRANT_USER%%,%%QDRANT_GROUP%%,0750) %%QDRANT_DBDIR%%
