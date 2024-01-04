@@ -3,6 +3,15 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
 CATEGORIES=	x11 wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f46cff1df2d8.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/151
+PATCHFILES+=	21d216ed7f64.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/pull/154
+PATCHFILES+=	c0b606460a09.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/156
+PATCHFILES+=	df8c154f5793.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/157
+PATCHFILES+=	86a94c3e4edb.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/158
+PATCHFILES+=	1c802128f6cc.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/159
+PATCHFILES+=	379b27281e2c.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/160
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for hyprland
 WWW=		https://github.com/hyprwm/xdg-desktop-portal-hyprland
@@ -25,13 +34,14 @@ qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 qt6_PKGNAMESUFFIX=	-qt6
 
-USES=		compiler:c++11-lib gl meson pkgconfig
+USES=		cmake compiler:c++11-lib gl pkgconfig
 USE_GITHUB=	yes
 USE_GL=		gbm
 GH_ACCOUNT=	hyprwm
 GH_TUPLE=	hyprwm:hyprland-protocols:v0.2:hyprland_protocols/subprojects/hyprland-protocols
-MESON_ARGS=	-Dsystemd=disabled
-PLIST_FILES=	libexec/${PORTNAME} \
+LDFLAGS+=	-Wl,--as-needed # sdbus-cpp deps
+PLIST_FILES=	lib/systemd/user/${PORTNAME}.service \
+		libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
 
@@ -42,22 +52,14 @@ CXXFLAGS+=	-fexperimental-library
 
 post-patch:
 # XXX Merge with hyprland-share-picker instead
-	@${REINPLACE_CMD} '/hyprland-share-picker/d' ${WRKSRC}/meson.build
-
-.ifdef GH_TUPLE
-post-configure:
-	@${REINPLACE_CMD} 's/meson install/& \
-		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
-.endif
+	@${REINPLACE_CMD} '/hyprland-share-picker/d' ${WRKSRC}/CMakeLists.txt
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
-BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
 USES+=		llvm:min=16,build,export
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-CMAKE_BIN=	${LOCALBASE}/bin/cmake
 
 # XXX Move into separate port and standardize via USES
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
