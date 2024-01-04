@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-08-03 18:22:03 UTC
+--- CMakeLists.txt.orig	2023-09-18 18:35:13 UTC
 +++ CMakeLists.txt
 @@ -877,6 +877,7 @@ set(ZIG_BUILD_ARGS
    "-Dtarget=${ZIG_TARGET_TRIPLE}"
