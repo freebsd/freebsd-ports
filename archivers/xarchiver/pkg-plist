@@ -2,10 +2,8 @@ bin/xarchiver
 libexec/thunar-archive-plugin/xarchiver.tap
 man/man1/xarchiver.1.gz
 share/applications/xarchiver.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s01.html

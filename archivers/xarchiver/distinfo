@@ -1,3 +1,5 @@
-TIMESTAMP = 1683228738
-SHA256 (ib-xarchiver-0.5.4.21_GH0.tar.gz) = 65329bff7e901452f3f927d913c47ffca759a36e83e8b82d04fe6945e7393fd4
-SIZE (ib-xarchiver-0.5.4.21_GH0.tar.gz) = 1132417
+TIMESTAMP = 1704355004
+SHA256 (ib-xarchiver-0.5.4.22_GH0.tar.gz) = 425b203f59a5e3d0747e80cbbe0af0beb0f9b77bbe29a9b233e85c54a4ff6193
+SIZE (ib-xarchiver-0.5.4.22_GH0.tar.gz) = 1125943
+SHA256 (5c49e86ffe16cc8a98018ff2f4d2e0ea2b9c0b6c.patch) = f573eb0411705e3e82e3efccace2fe0d32bf436e52378f107daaffec916d0e7b
+SIZE (5c49e86ffe16cc8a98018ff2f4d2e0ea2b9c0b6c.patch) = 1835
