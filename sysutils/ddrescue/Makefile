@@ -1,5 +1,5 @@
 PORTNAME=	ddrescue
-PORTVERSION=	1.25
+PORTVERSION=	1.27
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -15,11 +15,11 @@ CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
 
 INFO=		ddrescue
-PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/ddrescue \
 		bin/ddrescuelog \
 		man/man1/ddrescue.1.gz \
 		man/man1/ddrescuelog.1.gz
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
