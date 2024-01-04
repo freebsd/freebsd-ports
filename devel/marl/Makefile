@@ -1,5 +1,5 @@
 PORTNAME=	marl
-PORTVERSION=	g20210818
+PORTVERSION=	g20231218
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +17,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	4960243
-GH_TUPLE=	google:googletest:fb49e6c:googletest/third_party/googletest
+GH_TAGNAME=	dbf097e
+GH_TUPLE=	google:benchmark:2dd015d:benchmark/third_party/benchmark \
+		google:googletest:fb49e6c:googletest/third_party/googletest
 
 CMAKE_ON=	MARL_BUILD_SHARED MARL_INSTALL
 CMAKE_TESTING_ON=	MARL_BUILD_TESTS MARL_BUILD_EXAMPLES # tests are built but not run, see https://github.com/google/marl/issues/205
