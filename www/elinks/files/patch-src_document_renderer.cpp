@@ -1,6 +1,6 @@
---- src/document/renderer.cpp.orig	2022-12-25 18:17:02 UTC
-+++ src/document/renderer.cpp
-@@ -615,11 +615,11 @@ struct conv_table *
+--- src/document/renderer.c.orig	2023-12-27 03:03:28 UTC
++++ src/document/renderer.c
+@@ -415,11 +415,11 @@ struct conv_table *
  }
  
  struct conv_table *
