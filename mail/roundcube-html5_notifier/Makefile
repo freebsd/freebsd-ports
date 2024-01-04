@@ -17,7 +17,7 @@ RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 USES=		php:flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	stremlau
-IGNORE_WITH_PHP=82 83
+IGNORE_WITH_PHP=83
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/${PORTNAME}
 NO_ARCH=	yes
