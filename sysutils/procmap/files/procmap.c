@@ -35,8 +35,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <unistd.h>
 
 /* The longest possible path is "/proc/curproc/map". */
 #define MAXPATH 18
@@ -86,7 +88,7 @@ main(int argc, char **argv)
 			exit(1);
 		}
 		/* Leave space for a NULL terminator at the end of buf. */
-		if (bytes = read(mfd, buf, size - 1) < 0) {
+		if ((bytes = read(mfd, buf, size - 1)) < 0) {
 			if (errno == EFBIG) {
 				/* Buffer to small; try again. */
 				size <<= 1;
