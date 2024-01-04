@@ -1,0 +1,9 @@
+bin/xss-lock
+share/bash-completion/completions/xss-lock
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/dim-screen.sh
+%%PORTDOCS%%%%DOCSDIR%%/transfer-sleep-lock-generic-delay.sh
+%%PORTDOCS%%%%DOCSDIR%%/transfer-sleep-lock-i3lock.sh
+%%PORTDOCS%%%%DOCSDIR%%/xdg-screensaver.patch
+share/man/man1/xss-lock.1.gz
+share/zsh/site-functions/_xss-lock
