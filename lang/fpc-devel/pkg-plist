@@ -151,6 +151,7 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/mad.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/modplug.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/mysql.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/ncurses.fpm
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/newt.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/numlib.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/odata.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/odbc.fpm
@@ -2048,6 +2049,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ocrt.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ocrt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/panel.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/panel.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/det.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/det.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/dsl.o
@@ -3199,6 +3202,9 @@ man/man5/ptop.cfg.5.gz
 %%EXAMPLESDIR%%-%%PORTVERSION%%/ncurses/examples/tnlshello.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/ncurses/examples/tpad.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/ncurses/examples/twindow.pp
+%%EXAMPLESDIR%%-%%PORTVERSION%%/newt/examples/newt1.pas
+%%EXAMPLESDIR%%-%%PORTVERSION%%/newt/examples/newt2.pas
+%%EXAMPLESDIR%%-%%PORTVERSION%%/newt/examples/newt3.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/numlib/examples/detgpbte.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/numlib/examples/detgpdte.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/numlib/examples/detgsyte.pas

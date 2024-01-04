@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.3.1.20240103
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man
@@ -136,7 +136,7 @@ post-patch:
 		${WRKSRC}/packages/mad/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/modplug/fpmake.pp
-	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+	@${REINPLACE_CMD} -i "" -e 's|Linux|freebsd,linux|g' \
 		${WRKSRC}/packages/newt/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/oggvorbis/fpmake.pp
