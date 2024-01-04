@@ -16,7 +16,7 @@ EXPIRATION_DATE=	2024-01-25
 
 LIB_DEPENDS=	libsphinxbase.so:audio/sphinxbase
 
-USES=		gmake libtool localbse:ldflags pathfix
+USES=		gmake libtool localbase:ldflags pathfix
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 
