@@ -1,3 +1,42 @@
+  <vuln vid="3ee577a9-aad4-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.199</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.199</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop.html">
+	 <p>This update includes 6 security fixes:</p>
+	 <ul>
+	    <li>[1501798] High CVE-2024-0222: Use after free in ANGLE. Reported by Toan (suto) Pham of Qrious Secure on 2023-11-13</li>
+	    <li>[1505009] High CVE-2024-0223: Heap buffer overflow in ANGLE. Reported by Toan (suto) Pham and Tri Dang of Qrious Secure on 2023-11-24</li>
+	    <li>[1505086] High CVE-2024-0224: Use after free in WebAudio. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2023-11-25</li>
+	    <li>[1506923] High CVE-2024-0225: Use after free in WebGPU. Reported by Anonymous on 2023-12-01</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0222</cvename>
+      <cvename>CVE-2024-0223</cvename>
+      <cvename>CVE-2024-0224</cvename>
+      <cvename>CVE-2024-0225</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-03</discovery>
+      <entry>2024-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1b20e09-dbdf-432b-83c7-89f0af76324a">
     <topic>electron27 -- multiple vulnerabilities</topic>
     <affects>
