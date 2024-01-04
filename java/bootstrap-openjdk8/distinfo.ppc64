@@ -1,5 +1,3 @@
 TIMESTAMP = 1577641270
-SHA256 (openjdk8-ppc64-r455236.tar.xz) = 81ac56dbffd860d41e7d6d2a2dc29e6f65ee155db9c92a1c9ccc688b2d7a1f19
-SIZE (openjdk8-ppc64-r455236.tar.xz) = 28179536
 SHA256 (openjdk8-ppc64-r522831.tar.xz) = 2bb8b860e76cf8eb02a0a229d36421046790d7907b2f55a52c95b990072dda00
 SIZE (openjdk8-ppc64-r522831.tar.xz) = 28740136
