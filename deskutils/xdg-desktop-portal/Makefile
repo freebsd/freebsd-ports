@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfuse3.so:sysutils/fusefs-libs3 \
 
 USES=		gettext-tools gmake gnome meson pkgconfig
 
-USE_GNOME=	glib20
+USE_GNOME=	gdkpixbuf2 glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
