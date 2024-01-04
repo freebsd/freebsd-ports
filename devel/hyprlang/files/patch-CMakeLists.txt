@@ -1,9 +1,20 @@
 https://github.com/hyprwm/hyprlang/issues/6
 https://github.com/hyprwm/hyprlang/issues/7
+https://github.com/hyprwm/hyprlang/issues/11
 
 --- CMakeLists.txt.orig	2024-01-02 22:10:42 UTC
 +++ CMakeLists.txt
-@@ -31,16 +31,16 @@ target_link_libraries(hyprlang_test PRIVATE hyprlang)
+@@ -2,7 +2,8 @@ set(PREFIX ${CMAKE_INSTALL_PREFIX})
+ 
+ set(HYPRLANG_VERSION "0.2.1")
+ set(PREFIX ${CMAKE_INSTALL_PREFIX})
+-set(INCLUDE ${CMAKE_INSTALL_INCLUDEDIR})
++include(GNUInstallDirs)
++set(INCLUDE ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+ 
+ project(hyprlang
+     VERSION ${HYPRLANG_VERSION}
+@@ -31,16 +32,16 @@ target_link_libraries(hyprlang_test PRIVATE hyprlang)
  
  add_executable(hyprlang_test "tests/parse/main.cpp")
  target_link_libraries(hyprlang_test PRIVATE hyprlang)
