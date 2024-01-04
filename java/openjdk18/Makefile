@@ -114,7 +114,7 @@ JDK_BUILD_TYPE=		release
 .include <bsd.port.pre.mk>
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk18
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*}
 BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk17
 .endif
 BOOTSTRAP_JDKS+=	${LOCALBASE}/openjdk17
@@ -128,7 +128,7 @@ BOOTSTRAPJDKDIR=	${BJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-.  if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
+.  if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*}
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk17
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk17
 .  else
@@ -165,11 +165,8 @@ CONFIGURE_ARGS+=	--with-extra-cxxflags="${EXTRA_CFLAGS}"
 .if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .endif
-.if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
-CONFIGURE_ARGS+=	--disable-dtrace
-.endif
 .if ${ARCH} == aarch64
-CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs=-XX:-UseCompressedClassPointers
+CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs=-XX:-UseCompressedClassPointers --disable-dtrace
 MAKE_ENV+=		JAVA_TOOL_OPTIONS="-XX:-UseCompressedClassPointers"
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_share_runtime_arguments.cpp
 .endif
