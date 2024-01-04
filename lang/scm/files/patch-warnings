@@ -3437,8 +3437,8 @@
 -
  void init_sc2()
  {
---- scl.c	2015-01-02 22:43:33.000000000 -0500
-+++ scl.c	2015-01-23 18:55:19.000000000 -0500
+--- scl.c	2018-06-29 18:33:08.000000000 -0400
++++ scl.c	2024-01-04 14:02:59.999224000 -0500
 @@ -35,5 +35,7 @@
  static sizet pdbl2str P((double f, char *a, sizet ch));
  static sizet iflo2str P((SCM flt, char *str));
@@ -3447,8 +3447,8 @@
 +#endif
  static long scm_twos_power P((SCM n));
  static double mantexp2dbl P((SCM manstr, int expo));
-@@ -42,35 +44,37 @@
- static SCM ilog P((unsigned long m, SCM b, SCM k, unsigned long *n));
+@@ -43,44 +45,46 @@
+ static double dpows5[23];
  
 -static char s_makrect[] = "make-rectangular", s_makpolar[] = "make-polar",
 +static const char s_makrect[] = "make-rectangular", s_makpolar[] = "make-polar",
@@ -3467,7 +3467,7 @@
  
 -char		s_inexactp[] = "inexact?";
 -static char     s_zerop[] = "zero?", s_abs[] = "abs",
-+const char		s_inexactp[] = "inexact?";
++const char	s_inexactp[] = "inexact?";
 +static const char     s_zerop[] = "zero?", s_abs[] = "abs",
  		s_positivep[] = "positive?", s_negativep[] = "negative?";
 -static char     s_lessp[] = "<", s_grp[] = ">";
@@ -3488,21 +3488,24 @@
 -static char s_str2list[] = "string->list";
 -static char s_st_copy[] = "string-copy", s_st_fill[] = "string-fill!";
 -static char s_vect2list[] = "vector->list", s_ve_fill[] = "vector-fill!";
--static char str_inf0[] = "inf.0", str_nan0[] = "nan.0", str_0[] = "0.0";
+-static char str_inf0[] = "inf.0", str_nan0[] = "nan.0", str_0[] = "0.";
 -static char s_intexpt[] = "integer-expt", s_cintlog[] = "ceiling-integer-log";
 -static char s_dfloat_parts[] = "double-float-parts";
 +static const char s_list_tail[] = "list-tail";
 +static const char s_str2list[] = "string->list";
 +static const char s_st_copy[] = "string-copy", s_st_fill[] = "string-fill!";
 +static const char s_vect2list[] = "vector->list", s_ve_fill[] = "vector-fill!";
-+#if defined(FLOATS) && defined(BIGDIG)
-+static const char str_inf0[] = "inf.0", str_nan0[] = "nan.0", str_0[] = "0.0";
++static const char s_intexpt[] = "integer-expt", s_cintlog[] = "ceiling-integer-log";
++#ifdef BIGDIG
 +static const char s_dfloat_parts[] = "double-float-parts";
 +#endif
-+static const char s_intexpt[] = "integer-expt", s_cintlog[] = "ceiling-integer-log";
  #define s_intlog (&s_cintlog[8])
  
-@@ -81,5 +85,5 @@
+ /*** NUMBERS -> STRINGS ***/
+ #ifdef FLOATS
++static const char str_inf0[] = "inf.0", str_nan0[] = "nan.0", str_0[] = "0.";
+ static int dbl_mant_dig = 0;
+ static double max_dbl_int;       /* Integers less than or equal to max_dbl_int
  				    are representable exactly as doubles. */
  
 -int inf2str(f, a)
@@ -3539,6 +3542,16 @@
 +     const char *str;
       long len;
       register int radix;
+@@ -684,3 +690,3 @@
+     if (point < 23 && INUM(scm_intlength(bmant)) <= dbl_mant_dig)
+-      return ldexp(num2dbl(bmant,ARG1,s_str2number) * dpows5[point], point);
++      return ldexp(num2dbl(bmant,(const char *)(intptr_t)ARG1,s_str2number) * dpows5[point], point);
+     {
+@@ -714,3 +720,3 @@
+   if (-point < 23 && INUM(scm_intlength(bmant)) <= dbl_mant_dig)
+-    return ldexp(num2dbl(bmant,ARG1,s_str2number) / dpows5[-point], point);
++    return ldexp(num2dbl(bmant,(const char *)(intptr_t)ARG1,s_str2number) / dpows5[-point], point);
+   {
 @@ -743,7 +749,7 @@
  
  SCM istr2flo(str, len, radix)
@@ -3774,13 +3787,6 @@
 +static SCM numident(x)
       SCM x;
  {
-@@ -2837,5 +2846,5 @@
-       sizet j = i - (dbl_mant_dig + BITSPERDIG - 1)/BITSPERDIG;
-       BIGDIG *digits = BDIGITS(quo);
--      if (j < 0) j = 0;
-+      if (i <= dbl_mant_dig + BITSPERDIG) j = 0;
-       while (i-- > j) ans = digits[i] + ldexp(ans, BITSPERDIG);
-       bex += j * BITSPERDIG;
 @@ -2915,5 +2924,5 @@
  }
  
@@ -4382,7 +4388,7 @@
 +SCM_EXPORT void    ints_warn P((const char *s1, const char* s2, const char *fname, int linum));
  #endif
  SCM_EXPORT void add_final P((void (*final)(void)));
-@@ -1007,18 +977,12 @@
+@@ -1007,18 +977,13 @@
  SCM_EXPORT SCM  scm_load_string P((SCM str));
  SCM_EXPORT SCM  scm_unexec P((const SCM pathname));
 -SCM_EXPORT SCM     scm_logbitp  P((SCM index, SCM j1));
@@ -4396,7 +4402,7 @@
 -SCM_EXPORT SCM     scm_cintlog P((SCM base, SCM k));
 -SCM_EXPORT SCM     scm_ash P((SCM n, SCM cnt));
 -SCM_EXPORT SCM     scm_bitfield P((SCM n, SCM start, SCM end));
--SCM_EXPORT SCM     scm_logcount P((SCM n));
+ SCM_EXPORT SCM     scm_logcount P((SCM n));
 -SCM_EXPORT SCM     scm_intlength P((SCM n));
 -SCM_EXPORT SCM     scm_copybit P((SCM index, SCM j1, SCM bit));
 +SCM_EXPORT SCM  scm_logbitp  P((SCM index, SCM j1));
@@ -4968,8 +4974,8 @@
 +  bzero(&sad, sizeof(sad));
    ASRTER(NIMP(sockpt) && OPFPORTP(sockpt), sockpt, ARG1, s_getsockname);
    SYSCALL(sts = getsockname(fileno(STREAM(sockpt)),
---- subr.c	2014-05-02 20:06:08.000000000 -0400
-+++ subr.c	2015-01-23 18:55:19.000000000 -0500
+--- subr.c	2017-10-21 22:10:12.000000000 -0400
++++ subr.c	2024-01-04 14:43:25.011483000 -0500
 @@ -25,14 +25,13 @@
  #define s_append (s_st_append+7)
  
@@ -5174,13 +5180,6 @@
 -SCM scm_bitwise_bit_count(n)
 +static const char logtab[] = {0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4};
 +static SCM scm_bitwise_bit_count(n)
-      SCM n;
- {
-@@ -1421,5 +1425,5 @@
- }
- 
--SCM scm_logcount(n)
-+static SCM scm_logcount(n)
       SCM n;
  {
 @@ -1445,5 +1449,5 @@
@@ -5475,12 +5474,15 @@
 +     const BIGDIG *x, *y;
       sizet nx, ny;
       int sgn;
-@@ -2075,4 +2081,5 @@
-   return normbig(z);
+@@ -2076,6 +2082,4 @@
  }
+-UBIGLONG divbigdig(ds, h, div)
+-     BIGDIG *ds;
+-     sizet h;
+-     BIGDIG div;
 +
- UBIGLONG divbigdig(ds, h, div)
-      BIGDIG *ds;
++UBIGLONG divbigdig(BIGDIG *ds, sizet h, BIGDIG div)
+ {
 @@ -2088,5 +2095,5 @@
    return t2;
  }
@@ -5507,8 +5509,8 @@
 +     BIGDIG *y;
       sizet xlen, ylen;
       int sgn, mode;
---- sys.c	2014-04-24 23:01:53.000000000 -0400
-+++ sys.c	2015-01-27 01:32:50.000000000 -0500
+--- sys.c	2017-10-22 19:48:07.000000000 -0400
++++ sys.c	2024-01-04 14:20:24.372143000 -0500
 @@ -26,7 +26,6 @@
  #endif
  
@@ -6058,13 +6060,19 @@
 +static const char s_port_table[] = "port table";
  SCM scm_port_entry(stream, ptype, flags)
       FILE *stream;
-@@ -2073,5 +2079,5 @@
+@@ -2073,6 +2079,10 @@
  }
  
 -static char remsg[] = "remove\n#define ", addmsg[] = "add\n#define ",
-+static const char remsg[] = "remove\n#define ", addmsg[] = "add\n#define ",
-   rdmsg[] = "reduce";
+-  rdmsg[] = "reduce";
++#if defined(BIGDIG) || defined(SHORT_SIZET) || defined(SHORT_INT) || \
++    defined(CDR_DOUBLES) || defined(SINGLES) || defined(STACK_GROWS_UP)
++static const char remsg[] = "remove\n#define ";
++#endif
++static const char addmsg[] = "add\n#define ", rdmsg[] = "reduce";
++
  void init_storage(stack_start_ptr, init_heap_size)
+      STACKITEM *stack_start_ptr;
 @@ -2249,5 +2255,5 @@
  Cambridge, MA 02138
  */
