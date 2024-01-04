@@ -292,7 +292,7 @@ openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
 # free: 344
 # free: 345
 # free: 346
-# free: 347
+eturnal:*:347:347::0:0:eturnal User:/var/spool/eturnal:/bin/sh
 # free: 348
 # free: 349
 _sabnzbd:*:350:350::0:0:sabnzb Daemon:/nonexistent:/usr/sbin/nologin

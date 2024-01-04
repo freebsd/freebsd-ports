@@ -145,6 +145,7 @@
     SUBDIR += endlessh
     SUBDIR += enet
     SUBDIR += eternalterminal
+    SUBDIR += eturnal
     SUBDIR += evans
     SUBDIR += eventviews
     SUBDIR += exabgp4

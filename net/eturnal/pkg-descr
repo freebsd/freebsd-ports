@@ -1,0 +1,5 @@
+eturnal is a clean, scalable STUN and TURN server for Unix-like
+operating systems and Microsoft Windows. Clients can connect using
+UDP, TCP, or TLS over IPv4 or IPv6. For authentication, eturnal
+supports the mechanism described in the REST API for Access to TURN
+Services specification (in addition to static credentials).
