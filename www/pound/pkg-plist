@@ -4,4 +4,5 @@ man/man5/poundctl.tmpl.5.gz
 man/man8/pound.8.gz
 man/man8/poundctl.8.gz
 sbin/pound
+%%DATADIR%%/mvh.inc
 %%DATADIR%%/poundctl.tmpl
