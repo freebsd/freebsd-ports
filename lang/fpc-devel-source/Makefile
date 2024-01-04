@@ -1,6 +1,5 @@
 PORTNAME=	fpc-devel
-PORTVERSION=	3.3.1.20231027
-PORTREVISION=	1
+PORTVERSION=	3.3.1.20240103
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
@@ -16,7 +15,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_COMMIT=	55e72fc0f1505c75f60af706736d32ceca9815a4
+GL_TAGNAME=	f86a9bd5c026c7a10a165a8225bcf83e17c47b25
 
 PORTDATA=	*
 
@@ -25,7 +24,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}-${FPCBASEVER}
 WRKSRC=		${WRKDIR}/${FPCSRCDIR}
 
 FPCBASEVER=	3.3.1
-FPCSRCDIR=	source-${GL_COMMIT}
+FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -85,7 +84,7 @@ post-patch:
 		${WRKSRC}/packages/mad/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/modplug/fpmake.pp
-	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+	@${REINPLACE_CMD} -i "" -e 's|Linux|freebsd,linux|g' \
 		${WRKSRC}/packages/newt/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/oggvorbis/fpmake.pp
