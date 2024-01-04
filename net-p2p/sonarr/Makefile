@@ -1,9 +1,8 @@
 PORTNAME=	sonarr
-PORTVERSION=	3.0.10.1567
-PORTREVISION=	2
+DISTVERSION=	4.0.0.748
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://download.sonarr.tv/v3/main/${PORTVERSION}/
-DISTNAME=	Sonarr.main.${PORTVERSION}.linux
+MASTER_SITES=	https://download.sonarr.tv/v4/main/${PORTVERSION}/
+DISTNAME=	Sonarr.main.${DISTVERSION}.freebsd-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	PVR for Usenet and BitTorrent users
@@ -11,19 +10,22 @@ WWW=		https://sonarr.tv
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
-RUN_DEPENDS=	mediainfo>0:multimedia/mediainfo \
-		mono6.8>0:lang/mono6.8
+ONLY_FOR_ARCHS=	amd64
 
-USES=	sqlite:3
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		icu>0:devel/icu \
+		krb5>0:security/krb5 \
+		libiconv>0:converters/libiconv \
+		libinotify>0:devel/libinotify \
+		libunwind>0:devel/libunwind
+
+USES=	sqlite:3 ssl:run
 USE_RC_SUBR=	sonarr
 
-CONFLICTS_INSTALL=	sonarr-devel
+CONFLICTS_INSTALL=	sonarr
 
-NO_ARCH=	YES
 NO_BUILD=	YES
-
-SUB_FILES=	${PORTNAME} package_info pkg-message
+SUB_FILES=	sonarr package_info pkg-message
 SUB_LIST=	DATADIR=${DATADIR} \
 		GROUPS=${GROUPS} \
 		MAINTAINER=${MAINTAINER} \
@@ -31,25 +33,19 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		PORTNAME=${PORTNAME} \
 		USERS=${USERS}
 
-WRKSRC=	${WRKDIR}/Sonarr
+WRKSRC=		${WRKDIR}/Sonarr
 
-USERS=	sonarr
-GROUPS=	sonarr
-
-OPTIONS_DEFINE=	X11
-
-# Permits image resizing
-X11_LIB_DEPENDS+=libgdiplus.so:x11-toolkits/libgdiplus
-
-.include <bsd.port.options.mk>
+USERS=		sonarr
+GROUPS=		sonarr
 
 post-extract:
 	${RM} -rf ${WRKSRC}/Sonarr.Update
 
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}/bin/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/ "! -name Sonarr.exe"
-	${INSTALL_SCRIPT} ${WRKSRC}/Sonarr.exe ${STAGEDIR}/${DATADIR}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/ "! -name Sonarr -and ! -name ffprobe"
+	${INSTALL_PROGRAM} ${WRKSRC}/Sonarr ${STAGEDIR}/${DATADIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ffprobe ${STAGEDIR}/${DATADIR}/bin/
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
