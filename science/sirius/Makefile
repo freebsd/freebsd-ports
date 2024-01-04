@@ -1,7 +1,6 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.4.3
-PORTREVISION=	3
+DISTVERSION=	7.5.0
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
@@ -29,6 +28,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	electronic-structure
 GH_PROJECT=	SIRIUS
 
+CMAKE_OFF=	SIRIUS_USE_MEMORY_POOL # depends on umpire - not yet ported
+
 OPTIONS_DEFINE=		NLCGLIB
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
@@ -45,5 +46,6 @@ MPICH_USES=		mpi:mpich
 OPENMPI_USES=		mpi:openmpi
 
 # many tests fail, see https://github.com/electronic-structure/SIRIUS/issues/760
+# 7.5.0: tests fail to build, see https://github.com/electronic-structure/SIRIUS/issues/947
 
 .include <bsd.port.mk>
