@@ -16,7 +16,7 @@ LICENSE_FILES=	${WRKSRC}/COPYING.LESSER
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_riscv64=		fails to link: missing sbrk
 
-LIB_DEPENDS=	libgnuregex.so.[6-9]:devel/libgnuregex
+LIB_DEPENDS=	libgnuregex.so.[5-9]:devel/libgnuregex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--prefix=${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS:=	${CFLAGS:N-O*} -O0
+#CFLAGS:=	${CFLAGS:N-O*} -O0
 CFLAGS+=	-Wall -Wwrite-strings -Wmissing-declarations -Wredundant-decls -Wcast-qual
 CFLAGS+=	-Wno-unused-label -Wno-uninitialized
 
