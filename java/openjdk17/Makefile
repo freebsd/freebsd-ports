@@ -155,11 +155,8 @@ CONFIGURE_ARGS+=	--with-extra-cxxflags="${EXTRA_CFLAGS}"
 .if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .endif
-.if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
-CONFIGURE_ARGS+=	--disable-dtrace
-.endif
 .if ${ARCH} == aarch64
-CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs=-XX:-UseCompressedClassPointers
+CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs=-XX:-UseCompressedClassPointers --disable-dtrace
 MAKE_ENV+=		JAVA_TOOL_OPTIONS="-XX:-UseCompressedClassPointers"
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_share_runtime_arguments.cpp
 .endif
