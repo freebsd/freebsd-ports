@@ -13,14 +13,11 @@ WWW=		https://people.csail.mit.edu/jaffer/SCM
 LICENSE=	LGPL3+
 LICENSE_FILES=	${WRKSRC}/COPYING.LESSER
 
-BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_riscv64=		fails to link: missing sbrk
-
-LIB_DEPENDS=	libgnuregex.so.[5-9]:devel/libgnuregex
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex
 
 USES=		readline zip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--prefix=${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
@@ -59,6 +56,10 @@ SCM_MODULES_X11=x.so
 
 .if ${ARCH:Mpowerpc64*}
 USES+=		compiler:gcc-c++11-lib
+.endif
+
+.if ${ARCH} == aarch64 || ${ARCH} == riscv64
+CFLAGS+=	-DLACK_SBRK
 .endif
 
 .include <bsd.port.pre.mk>
