@@ -150,6 +150,7 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/ajdns.sh
 %%DATADIR%%/scripts/ajuser.sh
 %%DATADIR%%/scripts/ascii2oct.sh
+%%DATADIR%%/scripts/create-bridge.sh
 %%DATADIR%%/scripts/dns.sh
 %%DATADIR%%/scripts/dnsmasq-hook.sh
 %%DATADIR%%/scripts/escape-env-val.sh
