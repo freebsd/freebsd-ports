@@ -1,0 +1,14 @@
+include/MpvQt/MpvAbstractItem
+include/MpvQt/MpvController
+include/MpvQt/mpvabstractitem.h
+include/MpvQt/mpvcontroller.h
+include/MpvQt/mpvqt_export.h
+include/MpvQt/mpvqt_version.h
+lib/cmake/MpvQt/FindLibmpv.cmake
+lib/cmake/MpvQt/MpvQtConfig.cmake
+lib/cmake/MpvQt/MpvQtConfigVersion.cmake
+lib/cmake/MpvQt/MpvQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/MpvQt/MpvQtTargets.cmake
+lib/libMpvQt.so
+lib/libMpvQt.so.1
+lib/libMpvQt.so.1.0.0
