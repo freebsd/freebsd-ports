@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.3.1.20240103
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man

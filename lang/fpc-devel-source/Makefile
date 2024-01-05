@@ -1,5 +1,6 @@
 PORTNAME=	fpc-devel
 PORTVERSION=	3.3.1.20240103
+PORTREVISON=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
@@ -17,14 +18,11 @@ GL_ACCOUNT=	fpc
 GL_PROJECT=	source
 GL_TAGNAME=	f86a9bd5c026c7a10a165a8225bcf83e17c47b25
 
-PORTDATA=	*
-
+PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc-devel/files
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}-${FPCBASEVER}
-WRKSRC=		${WRKDIR}/${FPCSRCDIR}
 
 FPCBASEVER=	3.3.1
-FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +34,7 @@ FPC_ARCH=	x86_64
 
 post-extract:
 	${RM} -R ${WRKSRC}/.git*
+	${RM} ${WRKSRC}/packages/fcl-web/examples/httpserver/simplehttpserver
 
 post-patch:
 .if ${OPSYS} == FreeBSD
@@ -51,14 +50,14 @@ post-patch:
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} -i "" -e "s|s<>'c'|(s<>'c') and (s<>'iconv')|" \
 		-e "s|%%FPC_LDPATH%%|${FPC_LDPATH}|g" \
-			${WRKDIR}/${FPCSRCDIR}/compiler/systems/t_bsd.pas
+			${WRKSRC}/compiler/systems/t_bsd.pas
 			@${REINPLACE_CMD} -e 's|defined(bsd) and not ||' \
-		${WRKDIR}/${FPCSRCDIR}/rtl/unix/cwstring.pp
+		${WRKSRC}/rtl/unix/cwstring.pp
 .endif
 	@${REINPLACE_CMD} -i "" -e '/samplecfg/ {s/INSTALLEXE/INSTALLSCR/;}' \
-		${WRKDIR}/${FPCSRCDIR}/compiler/Makefile
+		${WRKSRC}/compiler/Makefile
 	@${REINPLACE_CMD} -i "" -e 's|/usr/local|${PREFIX}|g' \
-		${WRKDIR}/${FPCSRCDIR}/packages/fpmkunit/src/fpmkunit.pp
+		${WRKSRC}/packages/fpmkunit/src/fpmkunit.pp
 # enable or disable units
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/a52/fpmake.pp
@@ -102,6 +101,12 @@ post-patch:
 		${WRKSRC}/packages/wasmtime/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/zorba/fpmake.pp
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dir %%DATADIR%%/|' >> ${PLIST}
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
