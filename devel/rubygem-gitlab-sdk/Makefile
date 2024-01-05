@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-sdk
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,5 +17,10 @@ RUN_DEPENDS=	rubygem-activesupport70>=3.0:devel/rubygem-activesupport70 \
 USES=		gem
 
 NO_ARCH=	yes
+
+# problem is reported upstream:
+# https://gitlab.com/gitlab-org/analytics-section/product-analytics/gl-application-sdk-rb/-/issues/5
+post-extract:
+	${CHMOD} -R o-w ${WRKSRC}
 
 .include <bsd.port.mk>
