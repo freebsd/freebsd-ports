@@ -45,7 +45,6 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
-%%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bsmc.conf
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
 lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
