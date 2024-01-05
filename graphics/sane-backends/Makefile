@@ -1,6 +1,6 @@
 PORTNAME=	sane-backends
 DISTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/110fc43336d0fb5e514f1fdc7360dd87/
 
@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	saned
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-locking \
 		--enable-pthread \
 		--without-systemd
