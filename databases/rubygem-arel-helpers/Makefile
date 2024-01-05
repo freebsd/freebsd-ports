@@ -1,5 +1,6 @@
 PORTNAME=	arel-helpers
 PORTVERSION=	2.14.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/camertron/arel-helpers
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activerecord60>=6.0:databases/rubygem-activerecord60
+RUN_DEPENDS=	rubygem-activerecord70>=7.0:databases/rubygem-activerecord70
 
 USES=		gem
 
