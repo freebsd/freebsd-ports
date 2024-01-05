@@ -1,7 +1,6 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
-PORTREVISION=	1
+DISTVERSION=	0.30.0
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -15,6 +14,7 @@ BROKEN_i386=	sizeof(YYSTYPE) != sizeof(Vec<AST::ast_t*>)
 BUILD_DEPENDS=	bash:shells/bash		\
 		re2c>0:devel/re2c		\
 		dwarfdump:devel/dwarfdump	\
+		pandoc:textproc/hs-pandoc	\
 		rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libzstd.so:archivers/zstd	\
@@ -49,14 +49,15 @@ PORTEXAMPLES=	*
 
 # Xeus: version 3.0.5 is required and xeus-zmq 1.0.2
 # + xtl-quant-stack + cppzmq + nlohmann_json + LibUUID + libzmq4
-BUILD_DEPENDS+=	xtl-quant-stack>=0.7:devel/xtl-quant-stack	\
-		nlohmann-json>0:devel/nlohmann-json	\
-		cppzmq>=4.8.1:net/cppzmq
-LIB_DEPENDS+=	libxeus.so:devel/xeus	\
-		libzmq.so:net/libzmq4	\
-		libxeus-zmq.so:devel/xeus-zmq	\
-		libuuid.so:misc/e2fsprogs-libuuid
-CMAKE_ON+=	WITH_XEUS
+# See https://github.com/lfortran/lfortran/issues/1255
+#BUILD_DEPENDS+=	xtl-quant-stack>=0.7:devel/xtl-quant-stack	\
+#		nlohmann-json>0:devel/nlohmann-json	\
+#		cppzmq>=4.8.1:net/cppzmq
+#LIB_DEPENDS+=	libxeus.so:devel/xeus	\
+#		libzmq.so:net/libzmq4	\
+#		libxeus-zmq.so:devel/xeus-zmq	\
+#		libuuid.so:misc/e2fsprogs-libuuid
+CMAKE_OFF+=	WITH_XEUS
 
 # BFD:
 USE_BINUTILS=	yes
