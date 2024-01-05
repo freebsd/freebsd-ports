@@ -8,7 +8,6 @@ COMMENT=	Client side Ruby SDK for GitLab Application services
 WWW=		https://gitlab.com/gitlab-org/analytics-section/product-analytics/gl-application-sdk-rb
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport70>=3.0:devel/rubygem-activesupport70 \
 		rubygem-rake>=13.0<14:devel/rubygem-rake \
