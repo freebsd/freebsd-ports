@@ -1,5 +1,5 @@
 PORTNAME=	bacnet-stack
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-apps
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		gmake compiler:c++11-lang shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	bacnet-stack
-GH_TAGNAME=	934761d
+GH_TAGNAME=	f64eab7
 
 LDFLAGS=	-lm
 
