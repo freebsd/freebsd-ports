@@ -1857,6 +1857,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gst/gst.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gst/gst.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.o
@@ -2692,6 +2694,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_ttf.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_ttf.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite.o
