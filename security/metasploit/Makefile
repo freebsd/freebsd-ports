@@ -1,6 +1,6 @@
 PORTNAME=	metasploit
 DISTVERSION=	6.2.23
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -168,7 +168,7 @@ post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d ; /win32api/d' \
 		${WRKSRC}/metasploit-framework.gemspec
-	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'||" \
+	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'|| ; /octokit/s|, '~> 4.0'||" \
 		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
