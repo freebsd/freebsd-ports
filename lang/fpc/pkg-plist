@@ -151,6 +151,7 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/paszlib.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pcap.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/postgres.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/proj4.fpm
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/ptc.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pthreads.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pxlib.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/regexpr.fpm
@@ -1660,6 +1661,14 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2.o
@@ -2134,6 +2143,12 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/postgres/postgres3dyn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/postgres/postgres3dyn.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ptc/ptc.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ptc/ptc.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ptc/ptceventqueue.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ptc/ptceventqueue.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ptc/ptcwrapper.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ptc/ptcwrapper.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pxlib/pxlib.o
@@ -2454,6 +2469,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_ttf.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_ttf.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite.o
