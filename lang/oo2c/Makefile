@@ -37,14 +37,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
 BITS=		32
 .else
 BITS=		64
-.endif
-
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-CFLAGS+=	-fnested-functions
 .endif
 
 .include <bsd.port.post.mk>
