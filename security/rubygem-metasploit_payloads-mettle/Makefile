@@ -1,5 +1,5 @@
 PORTNAME=	metasploit_payloads-mettle
-PORTVERSION=	1.0.20
+PORTVERSION=	1.0.26
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
