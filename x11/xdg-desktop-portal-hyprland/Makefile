@@ -1,17 +1,7 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	1.3.1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f46cff1df2d8.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/151
-PATCHFILES+=	21d216ed7f64.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/pull/154
-PATCHFILES+=	c0b606460a09.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/156
-PATCHFILES+=	df8c154f5793.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/157
-PATCHFILES+=	86a94c3e4edb.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/158
-PATCHFILES+=	1c802128f6cc.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/159
-PATCHFILES+=	379b27281e2c.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/160
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for hyprland
