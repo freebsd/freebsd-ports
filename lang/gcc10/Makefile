@@ -62,11 +62,7 @@ CXXFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif ${ARCH} == powerpc64
-. if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 CONFIGURE_ARGS+=	--with-abi=elfv2
-. else
-USE_GCC=	9
-. endif
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
