@@ -1,3 +1,5 @@
-TIMESTAMP = 1689037919
-SHA256 (octave-forge/gnu-octave-pkg-control-control-3.6.1_GH0.tar.gz) = 07485118f2e71cfc38388802d7f77e948fb994f4e0ce7e91dca35ea17ad442cc
-SIZE (octave-forge/gnu-octave-pkg-control-control-3.6.1_GH0.tar.gz) = 2908169
+TIMESTAMP = 1704436563
+SHA256 (octave-forge/gnu-octave-pkg-control-control-4.0.0_GH0.tar.gz) = 758931c1b0331bab28a522e21e22b928c387b698dbef61bb9d8813bab845d79c
+SIZE (octave-forge/gnu-octave-pkg-control-control-4.0.0_GH0.tar.gz) = 331350
+SHA256 (octave-forge/SLICOT-SLICOT-Reference-401037e_GH0.tar.gz) = bbdf70fe0a069ca80567f4421ba428ff9ea99b57f96ca552467032750f48b66f
+SIZE (octave-forge/SLICOT-SLICOT-Reference-401037e_GH0.tar.gz) = 2868815

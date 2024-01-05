@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-control
 DISTVERSIONPREFIX=	control-
-DISTVERSION=	3.6.1
+DISTVERSION=	4.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -12,11 +12,15 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
 USES=		octave autoreconf
 USE_GITHUB=	yes
-GH_ACCOUNT=	gnu-octave
-GH_PROJECT=	pkg-control
+GH_ACCOUNT=	gnu-octave SLICOT:slicot
+GH_PROJECT=	pkg-control SLICOT-Reference:slicot
+GH_TAGNAME=	401037e:slicot
 
 OCTAVE_SRC=	${GH_PROJECT}-control-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
+
+pre-configure:
+	${REINPLACE_CMD} -e '/SC_SRC.*\:\=/s+slicot+${WRKSRC_slicot}'+ ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
