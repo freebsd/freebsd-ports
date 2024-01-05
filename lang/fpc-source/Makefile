@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=.source
 CATEGORIES=	lang
 MASTER_SITES=	SF/freepascal/Source/${PORTVERSION} \
@@ -15,8 +15,7 @@ WWW=		https://www.freepascal.org/
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 
-PORTDATA=	*
-
+PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc/files
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -87,13 +86,21 @@ post-patch:
 		${WRKSRC}/packages/opencl/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/proj4/fpmake.pp
+	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+		${WRKSRC}/packages/ptc/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|os2|freebsd,os2|g' \
 		${WRKSRC}/packages/rexx/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/zorba/fpmake.pp
 
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dir %%DATADIR%%/|' >> ${PLIST}
+
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DATADIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
