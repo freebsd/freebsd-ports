@@ -1,8 +1,8 @@
 PORTNAME=	fontconfig
-DISTVERSION=	2.14.2
+DISTVERSION=	2.15.0
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
+MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/release/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows
