@@ -95,10 +95,6 @@ PLIST_SUB+=	PROF="@comment "
 PLIST_SUB+=	PROF=""
 .endif
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|MKLIB=|s|ar rc|${AR} rc|' \
