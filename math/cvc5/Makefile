@@ -88,6 +88,6 @@ LICENSE=		GPLv3
 CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
 
-PORTSCOUT=	limit:^cvc5-[1-9].* # prevent older generation versions like 1.8
+PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
 .include <bsd.port.mk>
