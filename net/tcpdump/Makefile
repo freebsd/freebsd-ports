@@ -57,6 +57,6 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${STAGEDIR}/${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}/${PREFIX}/man/man1
 
 .include <bsd.port.mk>

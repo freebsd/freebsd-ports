@@ -20,7 +20,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

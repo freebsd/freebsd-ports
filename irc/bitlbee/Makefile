@@ -52,7 +52,7 @@ OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER
 CONFIGURE_ARGS=		--config=/var/db/bitlbee \
 			--pcdir=${PREFIX}/libdata/pkgconfig \
 			--prefix=${PREFIX} \
-			--mandir=${MANPREFIX}/man \
+			--mandir=${PREFIX}/man \
 			--strip=1 \
 			--yahoo=0
 

@@ -244,11 +244,11 @@ post-build-CONTRIB-on:
 
 post-install:
 	(cd ${WRKDIR}/man1/ && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1)
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/man/man1)
 	(cd ${WRKDIR}/man5/ && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man5)
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/man/man5)
 	(cd ${WRKDIR}/man7/ && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man7)
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/man/man7)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
@@ -313,11 +313,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gitk-git/po/*.msg \
 		${STAGEDIR}${PREFIX}/share/gitk/lib/msgs/
 	${INSTALL_DATA} ${WRKDIR}/man1/git-citool.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKDIR}/man1/git-gui.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKDIR}/man1/gitk.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 
 .elif ${SUBPORT} == cvs
 
@@ -331,13 +331,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-cvsserver \
 		${STAGEDIR}${PREFIX}/libexec/git-core/
 	${INSTALL_DATA} ${WRKDIR}/man1/git-cvsimport.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKDIR}/man1/git-cvsexportcommit.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKDIR}/man1/git-cvsserver.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKDIR}/man7/gitcvs-migration.7 \
-		${STAGEDIR}${MANPREFIX}/man/man7/
+		${STAGEDIR}${PREFIX}/man/man7/
 
 .elif ${SUBPORT} == p4
 
@@ -346,7 +346,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py \
 		${STAGEDIR}${PREFIX}/libexec/git-core/git-p4
 	${INSTALL_DATA} ${WRKDIR}/man1/git-p4.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 
 .elif ${SUBPORT} == svn
 
@@ -355,7 +355,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-svn \
 		${STAGEDIR}${PREFIX}/libexec/git-core/
 	${INSTALL_DATA} ${WRKDIR}/man1/git-svn.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>

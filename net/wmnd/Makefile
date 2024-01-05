@@ -23,7 +23,7 @@ PLIST_FILES=	bin/wmnd \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/wmndrc ${STAGEDIR}${EXAMPLESDIR}
 
