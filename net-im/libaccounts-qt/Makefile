@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${FLAVOR:S/qt//}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 wrapper for SSO framework
-WWW=		https://code.google.com/p/accounts-sso/
+WWW=		https://gitlab.com/accounts-sso
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
