@@ -112,6 +112,7 @@ SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/nspr \
 				-I${LOCALBASE}/include/js-102
 SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lnspr4 -lpthread -lm
 SPIDERMONKEY_MESON_ON=		-Dsm-scripting=true -Dspidermonkey=true
+SPIDERMONKEY_IMPLIES=		CURL
 
 TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
 TRE_MESON_TRUE=		tre
