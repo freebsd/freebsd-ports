@@ -1,6 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
+DISTVERSION=	2.4.3
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		byte-slice-cast-1.2.2 \
 		bytes-1.5.0 \
 		cairo-felt-0.8.7 \
-		cairo-vm-0.8.7 \
+		cairo-vm-0.8.4-rc.0 \
 		camino-1.1.6 \
 		cc-1.0.84 \
 		cfg-if-1.0.0 \
