@@ -31,20 +31,7 @@ TEST_BINARY_ALIAS=	node=nodejs
 
 TLIST=		nimgrep nimpretty nimsuggest testament
 
-.if ${CHOSEN_COMPILER_TYPE} == "gcc"
-EXTRA_PATCHES=	${PATCHDIR}/elfv1-patch-build.sh
-.else
-EXTRA_PATCHES=	${PATCHDIR}/clang-patch-build.sh
-.endif
-
 NIMDIR=	${STAGEDIR}${PREFIX}/nim
-
-post-patch:
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-	@${REINPLACE_CMD} -e '/cc =/s/clang/gcc/' ${WRKSRC}/config/nim.cfg
-	@${REINPLACE_CMD} -e s/%%GCC_DEFAULT%%/${GCC_DEFAULT}/ \
-		${WRKSRC}/build.sh ${WRKSRC}/config/nim.cfg
-.endif
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
