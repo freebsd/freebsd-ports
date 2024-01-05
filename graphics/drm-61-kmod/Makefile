@@ -1,6 +1,5 @@
-PORTNAME=	drm-515-kmod
+PORTNAME=	drm-61-kmod
 PORTVERSION=	${DRM_KMOD_DISTVERSION}
-PORTREVISION=	3
 CATEGORIES=	graphics kld
 
 .include "Makefile.version"
@@ -27,8 +26,8 @@ GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400081
-IGNORE=		not supported on older than 14.0, no kernel support
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500008
+IGNORE=		not supported on older than 15.0, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
