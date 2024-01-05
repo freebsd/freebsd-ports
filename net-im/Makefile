@@ -42,7 +42,7 @@
     SUBDIR += kaidan
     SUBDIR += kopete
     SUBDIR += libaccounts-glib
-    SUBDIR += libaccounts-qt5
+    SUBDIR += libaccounts-qt
     SUBDIR += libmesode
     SUBDIR += libnice
     SUBDIR += libnice-gst1

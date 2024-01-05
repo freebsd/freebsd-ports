@@ -1,11 +1,12 @@
 PORTNAME=	purpose
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Offers available actions for a specific purpose
 
-LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
+LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
 		libkaccounts.so:net-im/kaccounts-integration
 RUN_DEPENDS=	accounts-qml-module>=0:sysutils/accounts-qml-module
 

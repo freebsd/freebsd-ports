@@ -1,6 +1,6 @@
 PORTNAME=	kaccounts-integration
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	System to administer web accounts for the KDE desktop
 WWW=		https://projects.kde.org/projects/kdereview/kaccounts-integration
 
 LIB_DEPENDS=	libQCoro5Core.so:devel/qcoro@qt5 \
-		libaccounts-qt5.so:net-im/libaccounts-qt5 \
+		libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
 		libsignon-qt5.so:sysutils/signond@qt5
 RUN_DEPENDS=	signon-ui:sysutils/signon-ui
 
