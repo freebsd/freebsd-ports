@@ -52,7 +52,7 @@ post-stage:
 		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/urbackupclient.conf
 
 	${INSTALL_MAN} ${WRKSRC}/docs/urbackupclientbackend.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .for f in ${CONFFILES}
 	${MV} ${STAGEDIR}${PREFIX}/etc/urbackup/${f} ${STAGEDIR}${PREFIX}/etc/urbackup/${f}.sample
