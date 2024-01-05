@@ -10,7 +10,7 @@ OPTIONS_DEFINE=		DYNAMIC PROFILE
 SLAVE_BUILD_MK=		BUILD_SPHINX_HTML=NO
 
 GHC_VERSION=		8.10.7
-LLVM_VERSION=		10
+LLVM_VERSION=		11
 BASE_PACKAGES=		Cabal-3.2.1.0 array-0.5.4.0 base-4.14.3.0 binary-0.8.8.0 \
 			bytestring-0.10.12.0 containers-0.6.5.1 deepseq-1.4.4.0 \
 			directory-1.3.6.0 exceptions-0.10.4 filepath-1.4.2.1 \
@@ -21,7 +21,7 @@ BASE_PACKAGES=		Cabal-3.2.1.0 array-0.5.4.0 base-4.14.3.0 binary-0.8.8.0 \
 			terminfo-0.4.1.4 text-1.2.4.1 time-1.9.3 \
 			transformers-0.5.6.2 unix-2.7.2.2 xhtml-3000.2.2.1
 BOOT_GHC_VERSION=	8.10.7
-BOOT_LLVM_VERSION=	10
+BOOT_LLVM_VERSION=	11
 
 EXTRA_PATCHES=	${MASTERDIR}/files/extra-utils_llvm-targets_gen-data-layout.sh
 
