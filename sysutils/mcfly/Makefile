@@ -1,7 +1,6 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
-PORTREVISION=	1
+DISTVERSION=	0.8.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
 		autocfg-1.1.0 \
+		autopilot-0.4.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
 		block-0.1.6 \
@@ -170,8 +170,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		windows_x86_64_msvc-0.48.5 \
 		x11-2.21.0 \
 		zerocopy-0.7.28 \
-		zerocopy-derive-0.7.28 \
-		autopilot@git+https://github.com/autopilot-rs/autopilot-rs\#ae5263bfde2e9de1ff0a59c4db6a4a4e8aacb3b9
+		zerocopy-derive-0.7.28
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.bash \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
