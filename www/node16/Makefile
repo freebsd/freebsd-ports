@@ -86,10 +86,6 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
 .include <bsd.port.pre.mk>
 
-.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-common.gypi
-.endif
-
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tools_v8__gypfiles_v8.gyp
 .endif
