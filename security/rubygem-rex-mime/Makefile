@@ -1,5 +1,5 @@
 PORTNAME=	rex-mime
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
