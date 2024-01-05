@@ -18,6 +18,4 @@ USE_QT=		core gui \
 		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
-DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
 .include <bsd.port.mk>
