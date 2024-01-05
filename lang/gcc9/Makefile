@@ -65,12 +65,7 @@ CXXFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif ${ARCH} == powerpc64
-. if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 CONFIGURE_ARGS+=	--with-abi=elfv2
-. else
-MAKE_ARGS+=	CFLAGS_FOR_TARGET="-O0" CXXFLAGS_FOR_TARGET="-O0" BOOT_CFLAGS="-O0"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libgcc_config_rs6000_t-crtstuff
-. endif
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
