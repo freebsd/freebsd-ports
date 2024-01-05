@@ -2929,3 +2929,5 @@ math/p5-Math-BigRat|math/p5-Math-BigInt|2024-01-01|Subsumed into math/p5-Math-Bi
 www/trac-devel|www/trac|2024-01-02|Trac released stable version with py3 support, so removing -devel port
 sysutils/rtx|sysutils/mise|2024-01-03|Project renamed
 x11/hyprland-share-picker|x11/xdg-desktop-portal-hyprland|2024-01-05|Merged into main port
+sysutils/signon-qt5|sysutils/signond|2024-01-05|Renamed to match upstream and support flavors
+net-im/libaccounts-qt5|net-im/libaccounts-qt|2024-01-05|Renamed to support flavors
