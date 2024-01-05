@@ -3,9 +3,7 @@ bin/konsoleprofile
 etc/xdg/konsolerc
 lib/kconf_update_bin/konsole_globalaccel
 lib/kconf_update_bin/konsole_show_menubar
-lib/libkonsoleapp.so.1
 lib/libkonsoleapp.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkonsoleprivate.so.1
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf6/parts/konsolepart.so
 %%QT_PLUGINDIR%%/konsoleplugins/konsole_quickcommandsplugin.so
