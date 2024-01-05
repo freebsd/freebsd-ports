@@ -2743,7 +2743,7 @@ www/yanopaste||2023-12-18|Has expired: Last upstream release was in 2011
 www/py-yt-dlp-devel|www/py-yt-dlp|2023-12-22|Remove the -devel suffix
 math/octave-forge-statistics-bootstrap|math/octave-forge-statistics-resampling|2023-12-24|Name change upstream
 comms/openzwave-devel||2023-12-28|Has expired: Upstream no longer maintained, indicates to move to openzwave JS instead
-net/net/dpdk-22.11|net/dpdk|2023-12-30|Instead of expiring dpdk move dpdk-22.11 to dpdk
+net/dpdk-22.11|net/dpdk|2023-12-30|Instead of expiring dpdk move dpdk-22.11 to dpdk
 databases/ateam_mysql57_ldap_auth||2023-12-31|Depends on upstream EOL MySQL 5.7
 databases/mysql-udf||2023-12-31|Has expired: Upstream last update was in 2007
 databases/mysqlwsrep57-server||2023-12-31|Depends on upstream EOL MySQL 5.7
@@ -2761,7 +2761,7 @@ net-im/gitterdone||2023-12-31|Has expired: Upstream has gone away
 databases/pgpool-II-40||2023-12-31|Has expired: Upstream EOL reaches on 2023-12-31
 www/varnish6|www/varnish7|2023-12-31|Has expired: Unsupported version upstream, consider migrating to www/varnish7
 net-im/teamwords||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
-devel/eris||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+devel/eris||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 devel/zanata-platform||2023-12-31|Has expired: Depends on expired java/wildfly10, last release from 2018
 textproc/bsdgrep||2023-12-31|Has expired: Merged into base from 13
 mail/postforward||2023-12-31|Has expired: Obsolete as postsrsd 2.x uses unix sockets instead of tcp
@@ -2773,22 +2773,22 @@ games/springlobby||2023-12-31|Has expired: Depends on expired games/spring
 graphics/libgfx||2023-12-31|Has expired: unmaintained upstream since sep 2005
 devel/cook||2023-12-31|Has expired: Upstream last release was in 2008
 multimedia/omxplayer||2023-12-31|Has expired: Depends on legacy APIs and interfaces, functionality is being in integrated into VLC
-devel/mercator||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+devel/mercator||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 comms/sdr-wspr||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
-devel/atlas-devel||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+devel/atlas-devel||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 mail/qsheff||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 textproc/py-googletrans||2023-12-31|Has expired: Umaintained for over 3 years, depends on old www/py-httpx013
 multimedia/smtube||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 net/thcrut||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 games/OpenDiablo2||2023-12-31|Has expired: Upstream repository has been archived on Dec 20, 2021
 graphics/figurine||2023-12-31|Has expired: BROKEN for more than 2 years on all supported versions after the EOL of 12
-editors/xi-term||2023-12-31|Has expired: Frontend depends on deprecated editors/xi-core. No upstream activity.
+editors/xi-term||2023-12-31|Has expired: Frontend depends on deprecated editors/xi-core. No upstream activity
 net/wmwlmon||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 devel/strace||2023-12-31|Has expired: BROKEN on all supported versions after EOL of 12
 audio/tuneradio||2023-12-31|Has expired: Requires defunct bktr
-net/skstream||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+net/skstream||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 mail/libspf||2023-12-31|Has expired: Abandonware, last commit upstream 14 years ago. Consider migrating to mail/libspf2
-graphics/sage||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+graphics/sage||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 dns/updatedd||2023-12-31|Has expired: Last release in 2006 and upstream is dead. Consider migrating to dns/inadyn, dns/ddclient or dns/godns
 multimedia/ppm2fli||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 www/drupal9||2023-12-31|Has expired: Upstream EOL reaches on 2023-11-01
@@ -2806,14 +2806,14 @@ comms/uartlirc||2023-12-31|Has expired: BROKEN on all supported versions for mor
 comms/mlan3||2023-12-31|Has expired: BROKEN on all supported versions for more than 2 years after the EOL of 12
 multimedia/fxtv||2023-12-31|Has expired: Requires defunct bktr
 devel/rubygem-aws-sdk-sso|devel/rubygem-aws-sdk-core|2023-12-31|Has expired: SSO is included as part of aws-sdk-core. Use devel/rubygem-aws-sdk-core instead
-devel/libwfut||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+devel/libwfut||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 devel/fuel||2023-12-31|Has expired: Depends on deprecated www/qt5-webkit
 devel/rubygem-aws-sdk-macie||2023-12-31|Has expired: Deprecated by upstream
 sysutils/devcpu-data|sysutils/cpu-microcode|2023-12-31|Has expired: Use sysutils/cpu-microcode
-math/wfmath||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+math/wfmath||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 sysutils/ffs2recov||2023-12-31|Has expired: BROKEN on supported versions after EOL of 12
 sysutils/iichid||2023-12-31|Has expired: Merged into base from 13
-devel/varconf||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years.
+devel/varconf||2023-12-31|Has expired: There has been no release for most of the Worldforge libraries in the past 10 years
 multimedia/bsdbktr_tvtune||2023-12-31|Has expired: Requires defunct bktr
 sysutils/lttng-tools||2023-12-31|Has expired: BROKEN on all supported versions after the EOL of 12
 multimedia/phonon-gstreamer||2023-12-31|Has expired: No longer maintained upstream -- the vlc backend is the one to use
@@ -2836,7 +2836,7 @@ www/py-dj41-django-rich|www/py-dj42-django-rich|2023-12-31|Has expired: Extended
 www/py-dj41-django-redis|www/py-dj42-django-redis|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-prometheus|www/py-dj42-django-prometheus|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-mptt|www/py-dj42-django-mptt|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
-www/py-dj41-drf-yasg|www/py-dj42-drf-yasg|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj41-drf-yasg||2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 print/ghostscript9-agpl-x11|print/ghostscript10|2023-12-31|Has expired: Obsolete and unsupported upstream, consider using print/ghostscipt10
 print/ghostscript9-agpl-base|print/ghostscript10|2023-12-31|Has expired: Obsolete and unsupported upstream, consider using print/ghostscipt10
 www/py-dj41-django-cors-headers|www/py-dj42-django-cors-headers|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
@@ -2851,7 +2851,7 @@ net/wireguard||2023-12-31|Has expired: Only useful for FreeBSD 12 which is EoL s
 net/wireguard-kmod||2023-12-31|Has expired: Only useful for FreeBSD 12 which is EoL soon
 www/py-dj41-django-js-asset|www/py-dj42-django-js-asset|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-django-timezone-field|www/py-dj42-django-timezone-field|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
-lang/gcc8||2023-12-31|Has expired: Unsupported by upstream. Use GCC 11 or newer instead.
+lang/gcc8||2023-12-31|Has expired: Unsupported by upstream. Use GCC 11 or newer instead
 devel/py-dj41-graphene-django|devel/py-dj42-graphene-django|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj41-drf-spectacular-sidecar|www/py-dj42-drf-spectacular-sidecar|2023-12-31|Has expired: Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
 graphics/php80-exif|graphics/php81-exif|2023-12-31|Has expired: Security support ended on 2023-11-26
