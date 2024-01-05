@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.21.0
+DISTVERSION=	1.22.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -68,10 +68,10 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.71 \
+		proc-macro2-1.0.72 \
 		pulldown-cmark-0.9.3 \
 		pulldown-cmark-to-cmark-10.0.4 \
-		quote-1.0.33 \
+		quote-1.0.34 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		regex-1.10.2 \
@@ -102,8 +102,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		term_size-0.3.2 \
 		termcolor-1.4.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.52 \
-		thiserror-impl-1.0.52 \
+		thiserror-1.0.53 \
+		thiserror-impl-1.0.53 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
 		unicase-2.7.0 \
