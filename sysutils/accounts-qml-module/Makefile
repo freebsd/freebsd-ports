@@ -1,6 +1,6 @@
 PORTNAME=	accounts-qml-module
 DISTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
-		libsignon-qt5.so:sysutils/signon-qt5
+		libsignon-qt5.so:sysutils/signond@qt5
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5 tar:bz2
 USE_GL=		gl

@@ -1,5 +1,6 @@
 PORTNAME=	signon-plugin-oauth2
 DISTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 DISTNAME=	archive
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
@@ -8,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Signon OAuth 1.0 and 2.0 plugin for accounts-sso
 WWW=		https://gitlab.com/accounts-sso/signon-plugin-oauth2
 
-LIB_DEPENDS=	libsignon-qt5.so:sysutils/signon-qt5
+LIB_DEPENDS=	libsignon-qt5.so:sysutils/signond@qt5
 
 USES=		compiler:c++11-lang pkgconfig python qmake qt:5
 USE_QT=		core network testlib \
