@@ -32,6 +32,9 @@ VALA_MESON_ENABLED=	vapi
 VALA_BUILD_DEPENDS=	vapigen:lang/vala
 VALA_VARS=		USE+=vala:build
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-export-dynamic|-Wl,--export-dynamic|' ${WRKSRC}/gudev/meson.build
+
 add-plist-docs: ${STAGE_COOKIE}
 	cd ${STAGEDIR}; ${FIND} ${DOCSDIR:C@^/@@} -type f | ${SED} -e 's@^@/@' >> ${TMPPLIST}
 	cd ${STAGEDIR}; ${FIND} ${LOCALBASE:C@^/@@}/share/gtk-doc/html -mindepth 2 -type f | ${SED} -e 's@^@/@' >> ${TMPPLIST}
