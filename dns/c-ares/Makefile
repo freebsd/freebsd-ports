@@ -1,11 +1,8 @@
 PORTNAME=	c-ares
-DISTVERSION=	1.24.0
+DISTVERSION=	1.25.0
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/cares-${DISTVERSION:S/./_/g}/ \
 		https://c-ares.org/download/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	7dd384a99cc385e408e64c3e0af4e0e2136ed034.patch:-p1
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Asynchronous DNS resolver library
