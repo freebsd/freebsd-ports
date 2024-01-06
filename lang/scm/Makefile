@@ -53,6 +53,8 @@ SCM_MODULES=	byte.so bytenumb.so differ.so edline.so gsubr.so \
 		socket.so unix.so
 SCM_MODULES_X11=x.so
 
+EXTRACT_AFTER_ARGS=	--exclude gmalloc.c
+
 post-extract:
 	${LN} -s ${LOCALBASE}/share/slib ${WRKDIR}
 
@@ -85,7 +87,6 @@ post-patch:
 		 s|editline freebsd "" "|editline freebsd "${LIBEDIT_SUB1}| ; \
 		 s|-lreadline")$$|${LIBEDIT_SUB2} -lreadline")| ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/build.scm
-	@${REINPLACE_CMD} -e 's|__osf__|__FreeBSD__|' ${WRKSRC}/gmalloc.c
 	@${REINPLACE_CMD} -e 's|gnuregex\.h|gnu/regex.h|g' ${WRKSRC}/rgx.c
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|g' \
 		${WRKSRC}/xgen.scm
