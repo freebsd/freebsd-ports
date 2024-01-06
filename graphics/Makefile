@@ -392,6 +392,7 @@
     SUBDIR += kdegraphics-svgpart
     SUBDIR += kdegraphics-thumbnailers
     SUBDIR += kdiagram
+    SUBDIR += kdiagram-qt6
     SUBDIR += kf5-kimageformats
     SUBDIR += kf5-kplotting
     SUBDIR += kf5-kquickcharts
