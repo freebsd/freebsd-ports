@@ -1,10 +1,9 @@
 PORTNAME=	slock
-PORTVERSION=	1.4
-PORTREVISION=	2
+DISTVERSION=	1.5
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X screen locker
 WWW=		https://tools.suckless.org/slock
 
