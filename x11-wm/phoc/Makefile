@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.0_beta1
+DISTVERSION=	0.35.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ USE_GNOME=	cairo gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_TUPLE=	World/Phosh:gmobile:v0.0.4-5-g5ae8f59:gmobile/subprojects/gmobile
+GL_TUPLE=	World/Phosh:gmobile:v0.0.4-7-gd5ed9ed:gmobile/subprojects/gmobile
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man5/${PORTNAME}.ini.5.gz \
