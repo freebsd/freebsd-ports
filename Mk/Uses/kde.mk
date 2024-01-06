@@ -967,7 +967,7 @@ kde-libkcddb5_LIB=		libKF${_KDE_VERSION}Cddb.so
 kde-libkcompactdisc5_PORT=	audio/libkcompactdisc
 kde-libkcompactdisc5_LIB=	libKF${_KDE_VERSION}CompactDisc.so
 
-kde-libkdcraw5_PORT=		graphics/libkdcraw
+kde-libkdcraw5_PORT=		graphics/libkdcraw@qt${_KDE_VERSION}
 kde-libkdcraw5_LIB=		libKF${_KDE_VERSION}KDcraw.so
 
 kde-libkdegames5_PORT=		games/libkdegames
