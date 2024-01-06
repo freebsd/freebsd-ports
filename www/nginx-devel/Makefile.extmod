@@ -26,7 +26,7 @@ AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:21931b2:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	google:ngx_brotli:659b4b3:brotli
+BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 
