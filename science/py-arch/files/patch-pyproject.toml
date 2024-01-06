@@ -1,20 +1,13 @@
---- pyproject.toml.orig	2023-05-26 17:31:58 UTC
+--- pyproject.toml.orig	2023-09-27 08:13:24 UTC
 +++ pyproject.toml
-@@ -2,8 +2,8 @@
+@@ -54,8 +54,8 @@ requires = [
  requires = [
    "setuptools>=61",
    "wheel",
--  "setuptools_scm[toml]>=7,<8",
+-  "setuptools_scm[toml]>=8.0.3,<9",
 -  "oldest-supported-numpy>=2022.11.19",
 +  "setuptools_scm[toml]",
 +  "numpy",
-   "numpy; python_version>='3.12'",
-   "cython>=0.29.34"  # Works with 3.0.0b2
- ]
-@@ -29,4 +29,4 @@ exclude = '''
- write_to = "arch/_version.py"
+   "cython>=0.29.34", # Works with 3.0.0b2
  
- [tool.ruff]
--typing-modules = ["arch.typing"]
-\ No newline at end of file
-+typing-modules = ["arch.typing"]
+ ]
