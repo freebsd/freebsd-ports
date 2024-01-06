@@ -3,13 +3,15 @@ PORTVERSION=	2.1
 CATEGORIES=	dns
 MASTER_SITES=	https://BSDforge.com/projects/source/dns/dns_balance/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic load-balancing DNS server
 WWW=		https://www.netlab.cs.tsukuba.ac.jp/~yokota/izumi/dns_balance/
 
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, last release in 2005. Consider using dns/dnsdist
+EXPIRATION_DATE=2024-02-29
 
 USES=		ruby shebangfix tar:xz
 USE_RC_SUBR=	dns_balance
