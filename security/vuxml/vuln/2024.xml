@@ -1,3 +1,39 @@
+  <vuln vid="1f0d0024-ac9c-11ee-8e91-1c697a013f4b">
+    <topic>mantis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mantis-php74</name>
+	<name>mantis-php80</name>
+	<name>mantis-php81</name>
+	<name>mantis-php82</name>
+	<name>mantis-php83</name>
+	<range><lt>2.25.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis 2.25.8 release reports:</p>
+	<blockquote cite="https://mantisbt.org/bugs/changelog_page.php?version_id=370">
+	  <p>Security and maintenance release</p>
+	  <ul>
+	    <li>0032432: Update guzzlehttp/psr7 to 1.9.1 (CVE-2023-29197)</li>
+	    <li>0032981: Information Leakage on DokuWiki Integration (CVE-2023-44394)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29197</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29197</url>
+      <cvename>CVE-2023-44394</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-44394</url>
+    </references>
+    <dates>
+      <discovery>2023-10-14</discovery>
+      <entry>2024-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ee577a9-aad4-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
