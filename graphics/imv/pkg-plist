@@ -3,7 +3,7 @@ bin/imv-dir
 bin/imv-msg
 %%ALL%%bin/imv-wayland
 %%ALL%%bin/imv-x11
-etc/imv_config
+@sample etc/imv_config.sample
 man/man1/imv-dir.1.gz
 man/man1/imv-msg.1.gz
 man/man1/imv.1.gz

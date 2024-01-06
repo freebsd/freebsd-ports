@@ -1,7 +1,7 @@
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -75,5 +75,10 @@ X11_USES=	xorg
 X11_USE=	GL=glu \
 		XORG=x11,xcb
 X11_MESON_ON=	-Dwindows=x11
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' \
+		${WRKSRC}/src/imv.c \
+		${WRKSRC}/doc/imv.1.txt
 
 .include <bsd.port.mk>

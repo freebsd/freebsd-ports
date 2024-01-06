@@ -1,6 +1,6 @@
---- meson.build.orig	2021-03-15 09:06:48 UTC
+--- meson.build.orig	2023-01-18 22:20:52 UTC
 +++ meson.build
-@@ -101,7 +101,7 @@ files_msg = files('src/imv_msg.c', 'src/ipc_common.c')
+@@ -120,7 +120,7 @@ foreach backend : [
  
  enabled_backends = []
  foreach backend : [
@@ -9,3 +9,11 @@
    ['libtiff', 'dependency', 'libtiff-4', []],
    ['libpng', 'dependency', 'libpng', []],
    ['libjpeg', 'dependency', 'libturbojpeg', []],
+@@ -204,6 +204,7 @@ install_data(
+   files('files/imv_config'),
+   install_dir: get_option('sysconfdir'),
+   install_mode: 'rw-r--r--',
++  rename: 'imv_config.sample',
+ )
+ 
+ dep_cmocka = dependency('cmocka', required: get_option('test'))
