@@ -1,5 +1,6 @@
 PORTNAME=	designer
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -20,13 +21,6 @@ BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 
 QT_BINARIES=	yes
-
-OPTIONS_DEFINE=	WEBKIT
-OPTIONS_SUB=	yes
-WEBKIT_DESC=	Build WebKit-based WebView widget
-WEBKIT_QMAKE_ON=	CONFIG+=use_webkit
-WEBKIT_USES=	qt-dist:5,tools
-WEBKIT_USE=	QT=webkit
 
 post-patch:
 # uiplugin is built in x11-toolkits/qt5-uiplugin.
