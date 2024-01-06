@@ -6,10 +6,12 @@ MASTER_SITES=	https://BSDforge.com/projects/source/www/cgichk/
 
 LICENSE=	GPLv2
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site vulnerability scanner
 
 BROKEN=		Unfetchable
+DEPRECATED=	Deprecated utility that checks a list of URLs and lacks HTTPS support
+EXPIRATION_DATE=2024-02-29
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk
