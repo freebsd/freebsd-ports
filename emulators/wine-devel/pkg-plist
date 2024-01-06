@@ -3216,9 +3216,9 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/normnfkd.nls
 %%DATADIR%%/nls/sortdefault.nls
 %%WINE64%%%%DATADIR%%/pkg32.sh
-%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE.md
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%X11%%%%DATADIR%%/fonts/coue1255.fon
