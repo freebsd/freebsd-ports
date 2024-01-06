@@ -4194,6 +4194,7 @@
     SUBDIR += py-Products.ExternalEditor
     SUBDIR += py-Products.PloneLanguageTool
     SUBDIR += py-PyExecJS
+    SUBDIR += py-PyGithub
     SUBDIR += py-PyLD
     SUBDIR += py-PyUtilib
     SUBDIR += py-QtPy
@@ -5298,7 +5299,6 @@
     SUBDIR += py-pyformance
     SUBDIR += py-pygdbmi
     SUBDIR += py-pygit2
-    SUBDIR += py-pygithub
     SUBDIR += py-pygpx
     SUBDIR += py-pyhashxx
     SUBDIR += py-pyhcl

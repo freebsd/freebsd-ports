@@ -109,7 +109,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}javaproperties>=0.5.1:devel/py-javaproperties@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsondiff>=2.0.0:devel/py-jsondiff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semver>=2.13.0:devel/py-semver@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygithub>=1.55:devel/py-pygithub@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}PyGithub>=1.55:devel/py-PyGithub@${PY_FLAVOR}
 
 USES=		azurepy python
 USE_PYTHON=	autoplist concurrent cryptography distutils

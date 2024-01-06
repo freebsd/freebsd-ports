@@ -2931,3 +2931,4 @@ sysutils/rtx|sysutils/mise|2024-01-03|Project renamed
 x11/hyprland-share-picker|x11/xdg-desktop-portal-hyprland|2024-01-05|Merged into main port
 sysutils/signon-qt5|sysutils/signond|2024-01-05|Renamed to match upstream and support flavors
 net-im/libaccounts-qt5|net-im/libaccounts-qt|2024-01-05|Renamed to support flavors
+devel/py-pygithub|devel/py-PyGithub|2024-01-06|Rename port match upstream

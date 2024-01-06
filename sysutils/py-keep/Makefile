@@ -14,7 +14,7 @@ LICENSE_FILE=	${FILESDIR}/LICENSE.md
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}terminaltables>0:textproc/py-terminaltables@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygithub>0:devel/py-pygithub@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}PyGithub>0:devel/py-PyGithub@${PY_FLAVOR}
 
 USES=	python
 USE_PYTHON=	autoplist distutils
