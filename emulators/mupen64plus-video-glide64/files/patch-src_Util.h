@@ -1,5 +1,5 @@
---- mupen64plus-video-glide64/src/Util.h.orig	2015-06-19 14:41:15 UTC
-+++ mupen64plus-video-glide64/src/Util.h
+--- src/Util.h.orig	2015-06-19 14:41:15 UTC
++++ src/Util.h
 @@ -93,7 +93,9 @@ void fix_tex_coord (VERTEX **v);
              lx = lc; \
          }

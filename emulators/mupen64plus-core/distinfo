@@ -1,2 +1,3 @@
-SHA256 (mupen64plus/mupen64plus-bundle-src-2.5.tar.gz) = 9c75b9d826f2d24666175f723a97369b3a6ee159b307f7cc876bbb4facdbba66
-SIZE (mupen64plus/mupen64plus-bundle-src-2.5.tar.gz) = 2178979
+TIMESTAMP = 1704506387
+SHA256 (mupen64plus/mupen64plus-mupen64plus-core-2.5.9.20231104-f500eb58f76e636e231c3cc2b3d904210f0677c9_GH0.tar.gz) = 4a5445d5f2eb97db88e294e606904728caffb208e422c8cf3d6266fab7ab1da4
+SIZE (mupen64plus/mupen64plus-mupen64plus-core-2.5.9.20231104-f500eb58f76e636e231c3cc2b3d904210f0677c9_GH0.tar.gz) = 1731162

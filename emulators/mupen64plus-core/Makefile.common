@@ -1,15 +1,13 @@
 USES+=			dos2unix
 DOS2UNIX_GLOB=		*.c *.cpp *.h *.H *.ini *.conf
 
-DISTNAME=		${PORTNAME}-bundle-src-${PORTVERSION}
 PATCHDIR=		${.CURDIR}/files
-BUILD_WRKSRC?=		${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
-WRKSRC?=		${WRKDIR}/${DISTNAME}
-
-EXTRACT_AFTER_ARGS?=	"${DISTNAME}/source/${PORTNAME}-core/*" \
-				"${DISTNAME}/source/${PORTNAME}${PKGNAMESUFFIX}/*"
+BUILD_WRKSRC?=		${WRKSRC}/projects/unix
 
 .if ${PKGNAMESUFFIX} == "-core"
+BUILD_DEPENDS=		bash:shells/bash \
+			nasm:devel/nasm \
+			vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS+=		libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png
 USES+=			minizip
@@ -31,14 +29,14 @@ post-patch:
 	@cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e \
 		's|g++|${CXX}|g' -e 's|sdl-config|${SDL2_CONFIG}|g' Makefile
 .	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
-		@cd ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/src && \
+		@cd ${WRKSRC}/src && \
 			${REINPLACE_CMD} -e 's|#include <thread>||g' \
 				GlideHQ/TxQuantize.cpp GlideHQ/TxFilter.cpp && \
 			${REINPLACE_CMD} -e 's|(FxU32)NULL|(uintptr_t)NULL|g' \
 				Glide64/Main.cpp
 .	endif
 .	if ${PKGNAMESUFFIX} == "-video-glide64"
-		@cd ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/src && \
+		@cd ${WRKSRC}/src && \
 			${REINPLACE_CMD} -e 's|__builtin_ia32_loadups|_mm_loadu_ps|g' -e \
 				's|__builtin_ia32_storeups|_mm_storeu_ps|g' \
 					3dmath.cpp && \
@@ -88,36 +86,36 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libmupen64plus.so.2.0.0 \
 		${STAGEDIR}${PREFIX}/lib/libmupen64plus.so.2.0.0
 
-	${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/data/* \
+	${INSTALL_DATA} ${WRKSRC}/data/* \
 		${STAGEDIR}${DATADIR}
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/src/api/m64p_*.h \
+	${INSTALL_DATA} ${WRKSRC}/src/api/m64p_*.h \
 		${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/RELEASE \
+	${INSTALL_DATA} ${WRKSRC}/RELEASE \
 		${STAGEDIR}${DOCSDIR}/RELEASE
 	${LN} -sf ${PREFIX}/lib/libmupen64plus.so.2.0.0 ${STAGEDIR}${PREFIX}/lib/libmupen64plus.so.2
 .else
 .	if ${PKGNAMESUFFIX} == "-ui-console"
-		${INSTALL_MAN} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/doc/mupen64plus.6 ${STAGEDIR}${PREFIX}/man/man6/
+		${INSTALL_MAN} ${WRKSRC}/doc/mupen64plus.6 ${STAGEDIR}${PREFIX}/man/man6/
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-video-rice"
-		${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/data/RiceVideoLinux.ini ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/data/RiceVideoLinux.ini ${STAGEDIR}${DATADIR}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-video-glide64"
-		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/data/Glide64.ini ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/data/Glide64.ini ${STAGEDIR}${DATADIR}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
-		${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/data/Glide64mk2.ini ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/data/Glide64mk2.ini ${STAGEDIR}${DATADIR}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-input-sdl"
-		${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/data/InputAutoCfg.ini ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/data/InputAutoCfg.ini ${STAGEDIR}${DATADIR}
 .	endif
 
 .	if ${PKGNAMESUFFIX} != "-ui-console"

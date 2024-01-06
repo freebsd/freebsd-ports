@@ -1,0 +1,39 @@
+--- projects/unix/Makefile.orig	2023-06-11 19:20:38 UTC
++++ projects/unix/Makefile
+@@ -154,7 +154,7 @@ OBJDIR = _obj$(POSTFIX)
+ OPTFLAGS ?= -O3 -flto
+ WARNFLAGS ?= -Wall -Wno-unused-function
+ CFLAGS += $(OPTFLAGS) $(WARNFLAGS) -ffast-math -fno-strict-aliasing -fvisibility=hidden -I$(SRCDIR) -I$(SRCDIR)/Glitch64/inc -DGCC
+-CXXFLAGS += -fvisibility-inlines-hidden -std=gnu++0x
++CXXFLAGS += -fvisibility-inlines-hidden
+ LDFLAGS += $(SHARED)
+ BOOST_SUFFIX ?=
+ 
+@@ -225,6 +225,7 @@ ifeq ($(OS), OSX)
+ endif
+ ifeq ($(OS), FREEBSD)
+   LDLIBS += -lc
++  CPPFLAGS += -DNO_FILTER_THREAD
+ endif
+ ifeq ($(OS), MINGW)
+   ifeq ($(origin GLEW_CFLAGS) $(origin GLEW_LDLIBS), undefined undefined)
+@@ -288,7 +289,7 @@ LDLIBS += $(GL_LDLIBS)
+ ifeq ($(origin SDL_CFLAGS) $(origin SDL_LDLIBS), undefined undefined)
+   SDL_CONFIG = $(CROSS_COMPILE)sdl2-config
+   ifeq ($(shell which $(SDL_CONFIG) 2>/dev/null),)
+-    SDL_CONFIG = $(CROSS_COMPILE)sdl-config
++    SDL_CONFIG = $(CROSS_COMPILE)/usr/local/bin/sdl2-config
+     ifeq ($(shell which $(SDL_CONFIG) 2>/dev/null),)
+       $(error No SDL development libraries found!)
+     else
+@@ -340,8 +341,8 @@ endif
+ endif
+ 
+ # set base program pointers and flags
+-CC        = $(CROSS_COMPILE)gcc
+-CXX       = $(CROSS_COMPILE)g++
++CC        ?= $(CROSS_COMPILE)cc
++CXX       ?= $(CROSS_COMPILE)c++
+ RM       ?= rm -f
+ INSTALL  ?= install
+ MKDIR ?= mkdir -p

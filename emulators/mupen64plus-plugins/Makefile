@@ -1,12 +1,12 @@
 PORTNAME=	mupen64plus
-PORTVERSION=	2.5
+PORTVERSION=	2.5.9
 PORTREVISION=	0
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-plugins
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT=	Third party plugins for Mupen64plus
-WWW=		https://code.google.com/p/mupen64plus/
+WWW=		https://github.com/mupen64plus
 
 USES=		metaport
 

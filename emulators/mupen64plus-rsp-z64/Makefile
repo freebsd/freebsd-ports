@@ -1,10 +1,11 @@
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-rsp-z64
-DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}${EXTRACT_SUFX}:plugin
 
 COMMENT=	Low-level RSP processor plugin for the Mupen64Plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
+
+GH_TAGNAME=	ad877e263e6ee78839cbd12cdd150d17177079cf
 
 USE_GL=		#
 USE_SDL=	#
@@ -17,8 +18,6 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DISTINFO_FILE=		${.CURDIR}/distinfo
-EXTRACT_AFTER_ARGS=	#
-BUILD_WRKSRC=		${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
-WRKSRC=			${WRKDIR}
+RELEASE_DATE=	20230611
 
 .include "${MASTERDIR}/Makefile"
