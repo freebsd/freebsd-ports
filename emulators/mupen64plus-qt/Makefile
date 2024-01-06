@@ -1,6 +1,6 @@
 PORTNAME=	mupen64plus-qt
 DISTVERSION=	1.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
