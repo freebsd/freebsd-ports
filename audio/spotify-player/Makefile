@@ -1,7 +1,6 @@
 PORTNAME=	spotify-player
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.2
-PORTREVISION=	1
+DISTVERSION=	0.16.3
 CATEGORIES=	audio
 
 MAINTAINER=	jfree@FreeBSD.org
@@ -10,6 +9,9 @@ WWW=		https://github.com/aome510/spotify-player
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	fails to build
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
