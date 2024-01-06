@@ -4,13 +4,15 @@ PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	https://BSDforge.com/projects/source/comms/sms_client/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple UNIX SMS client to send messages to phones or pagers
 WWW=		https://bsdforge.com/projects/comms/sms_client/
 
 LICENSE=	LGPL20+
 
 BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, dead upstream and relies on legacy hardware and or networks that are obsolete
+EXPIRATION_DATE=2024-02-29
 
 USES=		tar:xz
 HAS_CONFIGURE=	yes
