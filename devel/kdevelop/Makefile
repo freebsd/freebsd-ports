@@ -3,6 +3,7 @@
 #  devel/kdev-python
 PORTNAME=	kdevelop
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -30,8 +31,8 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		notifyconfig package parts plasma-framework purpose runner \
 		service solid sonnet syntaxhighlighting texteditor textwidgets \
 		threadweaver widgetsaddons windowsystem xmlgui
-USE_QT=		concurrent core dbus declarative gui help network printsupport \
-		script sql widgets xml \
+USE_QT=		concurrent core dbus declarative gui help location network \
+		printsupport script sql webchannel webengine widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
@@ -50,14 +51,6 @@ CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW \
 SO_VER=		512
 SO_VER_LONG=	5.12.230804
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_LONG=${SO_VER_LONG}
-
-OPTIONS_DEFINE=	WEBENGINE
-OPTIONS_DEFAULT=	WEBENGINE
-WEBENGINE_DESC=	Use WebEngine as help reader
-WEBENGINE_USES=	qt:5
-WEBENGINE_USE=	QT=location,webchannel,webengine
-WEBENGINE_USE_OFF=	QT=webkit
-WEBENGINE_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets:BOOL=TRUE
 
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	/bin/zsh
