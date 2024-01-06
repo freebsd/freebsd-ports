@@ -1,9 +1,9 @@
 PORTNAME=	sleuth
-PORTVERSION=	1.4.4
+DISTVERSION=	1.4.4
 CATEGORIES=	dns
-MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
+MASTER_SITES=	https://mj.ucw.cz/download/net/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for checking, and diagnosing DNS zones
 
 LICENSE=	GPLv2
