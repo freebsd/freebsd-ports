@@ -6,6 +6,7 @@
     SUBDIR += adms
     SUBDIR += alliance
     SUBDIR += antimony
+    SUBDIR += apio
     SUBDIR += appcsxcad
     SUBDIR += archimedes
     SUBDIR += astk-client
