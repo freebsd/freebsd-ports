@@ -4,13 +4,15 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/widentd/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC1413 auth/identd daemon providing a fixed fake reply
 WWW=		https://BSDforge.com/projects/net/widentd/
 
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, last release in 2004 and dead upstream. Consider using security/oidentd
+EXPIRATION_DATE=2024-02-29
 
 USES=		ncurses uidfix tar:xz
 USE_RC_SUBR=	widentd
