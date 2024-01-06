@@ -5,9 +5,13 @@ MASTER_SITES=	http://aslookup.bgpview.org/download/ \
 		https://BSDforce.com/source/net/aslookup/
 DISTNAME=	${PORTNAME}-beta${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that searches the sequence of AS numbers
 WWW=		http://aslookup.bgpview.org/index-e.html
+
+BROKEN=		Lookup returns nothing 
+DEPRECATED=	Lookup returns nothing
+EXPIRATION_DATE=2024-02-29
 
 CFLAGS+=	-DARINDB -DJPNICDB -DAPNICDB
 
