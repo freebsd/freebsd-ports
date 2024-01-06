@@ -1,5 +1,5 @@
 PORTNAME=	passman
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 CATEGORIES=	security
 MASTER_SITES=	https://releases.passman.cc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -10,7 +10,7 @@ WWW=		https://passman.cc
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NEXTCLOUD_RUN_DEPENDS=	20
+NEXTCLOUD_RUN_DEPENDS=	26
 
 USES=		nextcloud php:flavors
 
