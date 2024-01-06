@@ -1,3 +1,3 @@
-TIMESTAMP = 1695150384
-SHA256 (rpki-client-8.5.tar.gz) = ab04ad76d5302fccce93b167324b5f08c2384c980f9a046bba934e8358d62c0b
-SIZE (rpki-client-8.5.tar.gz) = 496116
+TIMESTAMP = 1704532680
+SHA256 (rpki-client-8.8.tar.gz) = c784b929c68ea57f674f3e0371c410c35d75da7397d654dd83af66c7072ee667
+SIZE (rpki-client-8.8.tar.gz) = 541743
