@@ -26,6 +26,7 @@ etc/fonts/conf.avail/10-yes-antialias.conf
 etc/fonts/conf.avail/11-lcdfilter-default.conf
 etc/fonts/conf.avail/11-lcdfilter-legacy.conf
 etc/fonts/conf.avail/11-lcdfilter-light.conf
+etc/fonts/conf.avail/11-lcdfilter-none.conf
 etc/fonts/conf.avail/20-unhint-small-vera.conf
 etc/fonts/conf.avail/25-unhint-nonlatin.conf
 etc/fonts/conf.avail/30-metric-aliases.conf
