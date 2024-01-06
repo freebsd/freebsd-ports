@@ -1628,6 +1628,7 @@
     SUBDIR += py-fastapi
     SUBDIR += py-fastapi-users
     SUBDIR += py-feedgenerator
+    SUBDIR += py-flasgger
     SUBDIR += py-flask
     SUBDIR += py-flask-admin
     SUBDIR += py-flask-api
