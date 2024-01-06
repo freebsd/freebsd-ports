@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES+=	x11
 MASTER_SITES=	https://BSDforge.com/projects/source/x11/xvt/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xterm replacement, supporting color, transparency, and more, with less
 WWW=		https://BSDforge.com/projects/x11/xvt/
 
@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 BROKEN=		Unfetchable
+DEPRECATED=	Deprecated in favour or various forks, consider using x11/rxvt-unicode
+EXPIRATION_DATE=2024-02-29
 
 PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
 
