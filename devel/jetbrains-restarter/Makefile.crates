@@ -1,0 +1,4 @@
+CARGO_CRATES=	autocfg-1.1.0 \
+		chrono-0.4.31 \
+		libc-0.2.148 \
+		num-traits-0.2.16
