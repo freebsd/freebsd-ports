@@ -1,0 +1,12 @@
+Correct forgotten version bump. (Mostly for pkg-plist.)
+
+--- CMakeLists.txt.orig	2024-01-07 22:26:57 UTC
++++ CMakeLists.txt
+@@ -1,6 +1,6 @@ cmake_minimum_required(VERSION 3.14)
+ cmake_minimum_required(VERSION 3.14)
+ 
+-project(libXISF VERSION 0.2.10 LANGUAGES CXX C
++project(libXISF VERSION 0.2.11 LANGUAGES CXX C
+     HOMEPAGE_URL https://gitea.nouspiro.space/nou/libXISF
+     DESCRIPTION "LibXISF is C++ library that can read and write XISF files produced by PixInsight.")
+ 
