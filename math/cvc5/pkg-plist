@@ -3,6 +3,7 @@ include/cvc5/cvc5.h
 include/cvc5/cvc5_export.h
 include/cvc5/cvc5_kind.h
 include/cvc5/cvc5_parser.h
+include/cvc5/cvc5_proof_rule.h
 include/cvc5/cvc5_types.h
 lib/cmake/cvc5/cvc5Config.cmake
 lib/cmake/cvc5/cvc5ConfigVersion.cmake
@@ -14,5 +15,5 @@ lib/libcvc5.so.1
 %%JAVA%%lib/libcvc5jni.so
 lib/libcvc5parser.so
 lib/libcvc5parser.so.1
-%%JAVA%%%%JAVASHAREDIR%%/cvc5-1.0.8.jar
+%%JAVA%%%%JAVASHAREDIR%%/cvc5-%%VERSION%%.jar
 %%JAVA%%%%JAVASHAREDIR%%/cvc5.jar
