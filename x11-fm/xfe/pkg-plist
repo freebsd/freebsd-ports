@@ -10,6 +10,10 @@ share/applications/xfe.desktop
 share/applications/xfi.desktop
 share/applications/xfp.desktop
 share/applications/xfw.desktop
+share/icons/hicolor/scalable/apps/xfe.svg
+share/icons/hicolor/scalable/apps/xfi.svg
+share/icons/hicolor/scalable/apps/xfp.svg
+share/icons/hicolor/scalable/apps/xfw.svg
 %%NLS%%share/locale/bs/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfe.mo
@@ -66,6 +70,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/default-theme/bigfilter.png
 %%DATADIR%%/icons/default-theme/bigfloppy.png
 %%DATADIR%%/icons/default-theme/bigfolder.png
+%%DATADIR%%/icons/default-theme/bigfolderlink.png
 %%DATADIR%%/icons/default-theme/bigfolderlocked.png
 %%DATADIR%%/icons/default-theme/bigfolderopen.png
 %%DATADIR%%/icons/default-theme/bigfolderup.png
@@ -202,6 +207,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/default-theme/miniexec.png
 %%DATADIR%%/icons/default-theme/minifolder.png
 %%DATADIR%%/icons/default-theme/minifolderclosed.png
+%%DATADIR%%/icons/default-theme/minifolderlink.png
 %%DATADIR%%/icons/default-theme/minifolderlocked.png
 %%DATADIR%%/icons/default-theme/minifolderopen.png
 %%DATADIR%%/icons/default-theme/minifolderup.png
@@ -389,6 +395,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/gnome-theme/bigfilter.png
 %%DATADIR%%/icons/gnome-theme/bigfloppy.png
 %%DATADIR%%/icons/gnome-theme/bigfolder.png
+%%DATADIR%%/icons/gnome-theme/bigfolderlink.png
 %%DATADIR%%/icons/gnome-theme/bigfolderlocked.png
 %%DATADIR%%/icons/gnome-theme/bigfolderopen.png
 %%DATADIR%%/icons/gnome-theme/bigfolderup.png
@@ -525,6 +532,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/gnome-theme/miniexec.png
 %%DATADIR%%/icons/gnome-theme/minifolder.png
 %%DATADIR%%/icons/gnome-theme/minifolderclosed.png
+%%DATADIR%%/icons/gnome-theme/minifolderlink.png
 %%DATADIR%%/icons/gnome-theme/minifolderlocked.png
 %%DATADIR%%/icons/gnome-theme/minifolderopen.png
 %%DATADIR%%/icons/gnome-theme/minifolderup.png
@@ -712,6 +720,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/kde-theme/bigfilter.png
 %%DATADIR%%/icons/kde-theme/bigfloppy.png
 %%DATADIR%%/icons/kde-theme/bigfolder.png
+%%DATADIR%%/icons/kde-theme/bigfolderlink.png
 %%DATADIR%%/icons/kde-theme/bigfolderlocked.png
 %%DATADIR%%/icons/kde-theme/bigfolderopen.png
 %%DATADIR%%/icons/kde-theme/bigfolderup.png
@@ -848,6 +857,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/kde-theme/miniexec.png
 %%DATADIR%%/icons/kde-theme/minifolder.png
 %%DATADIR%%/icons/kde-theme/minifolderclosed.png
+%%DATADIR%%/icons/kde-theme/minifolderlink.png
 %%DATADIR%%/icons/kde-theme/minifolderlocked.png
 %%DATADIR%%/icons/kde-theme/minifolderopen.png
 %%DATADIR%%/icons/kde-theme/minifolderup.png
@@ -1035,6 +1045,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/xfce-theme/bigfilter.png
 %%DATADIR%%/icons/xfce-theme/bigfloppy.png
 %%DATADIR%%/icons/xfce-theme/bigfolder.png
+%%DATADIR%%/icons/xfce-theme/bigfolderlink.png
 %%DATADIR%%/icons/xfce-theme/bigfolderlocked.png
 %%DATADIR%%/icons/xfce-theme/bigfolderopen.png
 %%DATADIR%%/icons/xfce-theme/bigfolderup.png
@@ -1171,6 +1182,7 @@ share/pixmaps/xfw.xpm
 %%DATADIR%%/icons/xfce-theme/miniexec.png
 %%DATADIR%%/icons/xfce-theme/minifolder.png
 %%DATADIR%%/icons/xfce-theme/minifolderclosed.png
+%%DATADIR%%/icons/xfce-theme/minifolderlink.png
 %%DATADIR%%/icons/xfce-theme/minifolderlocked.png
 %%DATADIR%%/icons/xfce-theme/minifolderopen.png
 %%DATADIR%%/icons/xfce-theme/minifolderup.png
