@@ -2,7 +2,7 @@ PORTNAME=	aha
 DISTVERSION=	0.5.1
 CATEGORIES=	textproc devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ansi HTML Adapter
 WWW=		https://github.com/theZiz/aha
 
