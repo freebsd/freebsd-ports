@@ -33,7 +33,7 @@ MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
 
 .include <bsd.port.pre.mk>
 DEPRECATED=	upstream has gone to subscription model and no longer distributes this version. Try comms/Inspectrum or audio/xanalyser instead
-EXPIRATION_DATE=	20240201
+EXPIRATION_DATE=	2024-02-01
 IGNORE=		upstream has removed distribution
 
 do-build:
