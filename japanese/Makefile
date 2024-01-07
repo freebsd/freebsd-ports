@@ -143,6 +143,7 @@
     SUBDIR += kiten
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
+    SUBDIR += kterm
     SUBDIR += latex-jlisting
     SUBDIR += leafrogue
     SUBDIR += less

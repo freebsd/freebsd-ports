@@ -1,0 +1,37 @@
+--- Imakefile.orig	2016-11-04 21:41:21 UTC
++++ Imakefile
+@@ -13,6 +13,16 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
+       XPOLL_DEF = -DNO_XPOLL_H
+ #endif
+ 
++#ifdef USE_XAW3DLIB
++#undef XawClientLibs
++#define XawClientLibs	-lXaw3d $(XMULIB) $(XTOOLLIB) $(XLIB)
++#endif
++
++#ifdef USE_NEXTAWLIB
++#undef XawClientLibs
++#define XawClientLibs	-lneXtaw $(XMULIB) $(XTOOLLIB) $(XLIB)
++#endif
++
+ /*
+  * add -DWTMP and -DLASTLOG if you want them.
+  */
+@@ -27,7 +37,7 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
+  OSMAJORVERSION = OSMajorVersion
+  OSMINORVERSION = OSMinorVersion
+ 
+-   MAIN_DEFINES = -DUTMP $(TTYGROUPDEF) $(PUCCPTYDDEF) \
++   MAIN_DEFINES = $(TTYGROUPDEF) $(PUCCPTYDDEF) \
+ 		  -DOSMAJORVERSION=$(OSMAJORVERSION) \
+ 		  -DOSMINORVERSION=$(OSMINORVERSION)
+    MISC_DEFINES = /* -DALLOWLOGFILEEXEC */ 
+@@ -72,7 +82,7 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
+ #endif
+ #endif
+ 
+-     TERMCAPLIB = TermcapLibrary
++     TERMCAPLIB = TermcapLibrary -lutil
+ 
+ AllTarget($(PROGRAMS))
+ 

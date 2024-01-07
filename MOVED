@@ -2299,7 +2299,6 @@ devel/rubygem-aws-sdk-s31122|devel/rubygem-aws-sdk-s3|2023-07-09|Remove obsolete
 devel/rubygem-google-protobuf322|devel/rubygem-google-protobuf|2023-07-09|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
 devel/rubygem-grape15|devel/rubygem-grape|2023-07-09|Remove obsoleted port. Use devel/rubygem-grape instead
 textproc/rubygem-nokogiri114|textproc/rubygem-nokogiri|2023-07-09|Remove obsoleted port. Use textproc/rubygem-nokogiri instead
-japanese/kterm||2023-07-12|Has expired: Last upstream release was in 2011
 graphics/gmic-qt@krita|graphics/krita-gmic-plugin|2023-07-14|Forked to a seperate project
 devel/capstone5|devel/capstone|2023-07-15|Keep the latest version without any pkgnamesufix
 games/naev-data||2023-07-15|Remove obsoleted port. Now games/naev installs data files
