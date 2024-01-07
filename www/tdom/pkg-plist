@@ -10,6 +10,7 @@ man/mann/domNode.n.gz
 man/mann/expat.n.gz
 man/mann/expatapi.n.gz
 man/mann/pullparser.n.gz
+man/mann/schema.n.gz
 man/mann/tdomcmd.n.gz
 man/mann/tnc.n.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/category-index.html
