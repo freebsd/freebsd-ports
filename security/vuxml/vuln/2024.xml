@@ -15,7 +15,7 @@
 	<p>Andy Shaw reports:</p>
 	<blockquote cite="https://www.qt.io/blog/security-advisory-potential-integer-overflow-in-qts-http2-implementation">
 	  <p>A potential integer overflow has been discovered in Qt's HTTP2
-	  implementation. If the HTTP2 implementation receives more then 4GiB
+	  implementation. If the HTTP2 implementation receives more than 4GiB
 	  in total headers, or more than 2GiB for any given header pair, then
 	  the internal buffers may overflow.</p>
 	</blockquote>
