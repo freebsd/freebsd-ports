@@ -1,6 +1,6 @@
 PORTNAME=	digikam
 DISTVERSION=	8.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,face,shape \
@@ -30,7 +30,6 @@ LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		libjasper.so:graphics/jasper \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
-		liblqr-1.so:graphics/liblqr-1 \
 		libopencv_core.so:graphics/opencv \
 		libheif.so:graphics/libheif \
 		libpgf.so:graphics/libpgf \
@@ -39,7 +38,7 @@ LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		libx265.so:multimedia/x265
 
 USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 gl \
-		gnome jpeg kde:5 localbase:ldflags magick pkgconfig qt:5 \
+		gnome jpeg kde:5 magick pkgconfig qt:5 \
 		shebangfix tar:xz xorg
 USE_GL=		gl glu
 USE_GNOME=	glib20 libxml2 libxslt
@@ -51,8 +50,8 @@ USE_KDE=	archive auth bookmarks calendarcore codecs completion config \
 		unitconversion widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network \
-		networkauth opengl printsupport sql webchannel widgets \
-		x11extras xml xmlpatterns \
+		networkauth opengl printsupport sql webchannel webengine \
+		widgets x11extras xml xmlpatterns \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
@@ -64,7 +63,7 @@ WITH_CCACHE_BUILD=	yes
 CMAKE_ON=	BUILD_WITH_CCACHE DIGIKAMSC_COMPILE_DIGIKAM ENABLE_KFILEMETADATASUPPORT \
 		CMAKE_DISABLE_FIND_PACKAGE_VAAPI
 
-OPTIONS_DEFINE=		FACEDETECT KDEPIM MEDIAPLAYER NLS WEBENGINE
+OPTIONS_DEFINE=		FACEDETECT KDEPIM MEDIAPLAYER NLS
 OPTIONS_GROUP=		MP
 MP_DESC=		Media player options
 OPTIONS_GROUP_MP=	OPENAL PORTAUDIO PULSEAUDIO
@@ -126,11 +125,6 @@ PULSEAUDIO_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PulseAudio
 PULSEAUDIO_IMPLIES=		MEDIAPLAYER
 
 SQLITE3_USE=		QT=sql-sqlite3:run
-
-WEBENGINE_DESC=		Use Qt WebEngine instead of WebKit
-WEBENGINE_USE=		QT=webengine
-WEBENGINE_USE_OFF=	QT=webkit
-WEBENGINE_CMAKE_BOOL=	ENABLE_QWEBENGINE
 
 PLIST_SUB=		SHLIB_VER=${DISTVERSION}
 
