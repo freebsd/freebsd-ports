@@ -1,3 +1,36 @@
+  <vuln vid="e2f981f1-ad9e-11ee-8b55-4ccc6adda413">
+    <topic>QtNetwork -- potential buffer overflow</topic>
+    <affects>
+      <package>
+	<name>qt5-network</name>
+	<range><lt>5.15.12p148_1</lt></range>
+      </package>
+      <package>
+	<name>qt6-base</name>
+	<range><lt>6.6.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Shaw reports:</p>
+	<blockquote cite="https://www.qt.io/blog/security-advisory-potential-integer-overflow-in-qts-http2-implementation">
+	  <p>A potential integer overflow has been discovered in Qt's HTTP2
+	  implementation. If the HTTP2 implementation receives more then 4GiB
+	  in total headers, or more than 2GiB for any given header pair, then
+	  the internal buffers may overflow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-51714</cvename>
+      <url>https://www.qt.io/blog/security-advisory-potential-integer-overflow-in-qts-http2-implementation</url>
+    </references>
+    <dates>
+      <discovery>2023-12-14</discovery>
+      <entry>2024-01-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f0d0024-ac9c-11ee-8e91-1c697a013f4b">
     <topic>mantis -- multiple vulnerabilities</topic>
     <affects>
