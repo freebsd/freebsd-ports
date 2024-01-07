@@ -1,6 +1,6 @@
 PORTNAME=	unifi7
 PORTVERSION=	7.5.187
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -14,6 +14,9 @@ EXTRACT_ONLY=	unifi_sysvinit_all.deb
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	UniFi Controller v7
 WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
+
+DEPRECATED=	EOLed upstream, switch to newer version
+EXPIRATION_DATE=	2024-02-29
 
 RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
 
