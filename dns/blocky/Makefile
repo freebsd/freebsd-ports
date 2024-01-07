@@ -1,7 +1,6 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22
-PORTREVISION=	2
+DISTVERSION=	0.23
 CATEGORIES=	dns
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
@@ -13,7 +12,7 @@ WWW=		https://0xerr0r.github.io/blocky/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.21,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xERR0R
 USE_RC_SUBR=	blocky
@@ -22,7 +21,8 @@ GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	main.go:${PREFIX}/sbin/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "-w -s \
 		-X github.com/0xERR0R/blocky/util.Version=${DISTVERSION} \
-		-X github.com/0xERR0R/blocky/util.BuildTime=`date '+%Y%m%d-%H%M%S'`"
+		-X github.com/0xERR0R/blocky/util.BuildTime=`date '+%Y%m%d-%H%M%S'` \
+		-X github.com/0xERR0R/blocky/util.Architecture=${ARCH}"
 
 SUB_FILES=	pkg-message
 
