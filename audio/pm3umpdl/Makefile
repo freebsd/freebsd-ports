@@ -8,6 +8,9 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Loading a M3U file into musicpd
 
+DEPRECATED=	Deprecated utility as this is supported natively in musicpd
+EXPIRATION_DATE=2024-02-29
+
 RUN_DEPENDS=	${LOCALBASE}/bin/mpc:audio/musicpc
 
 USES=		perl5
