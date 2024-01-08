@@ -1,5 +1,6 @@
 PORTNAME=	gobject-introspection
 DISTVERSION=	1.78.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -14,8 +15,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
 
-# we need cairo otherwise the generated Cairo gir is broken
-BUILD_DEPENDS=	cairo-trace:graphics/cairo
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 PORTSCOUT=	limitw:1,even
@@ -25,6 +24,11 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddoctool=disabled \
 		-Dpython=${PYTHON_CMD}
+
+OPTIONS_DEFINE=	TEST
+
+TEST_MESON_ENABLED=	cairo
+TEST_LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${WRKSRC}/tools/meson.build
