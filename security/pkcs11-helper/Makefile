@@ -1,5 +1,6 @@
 PORTNAME=	pkcs11-helper
 PORTVERSION=	1.29.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-${PORTVERSION}/
 
@@ -14,7 +15,7 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/COPYING.BSD
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix pkgconfig tar:bzip2 ssl
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2 ssl
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -28,14 +29,16 @@ CONFIGURE_ARGS=	--disable-crypto-engine-gnutls \
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS DOXYGEN
+
+DOXYGEN_CONFIGURE_ENABLE=	doc
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_IMPLIES=	DOCS
 
 PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA|install-data-am:|' \
-		${WRKSRC}/doc/api/Makefile.in
 
 .include <bsd.port.mk>
