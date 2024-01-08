@@ -1,5 +1,5 @@
---- jpeg/jpeg.c	2019-03-22 10:47:24.654594000 -0400
-+++ jpeg/jpeg.c	2021-01-04 14:38:51.161931000 -0500
+--- jpeg/jpeg.c	2023-04-19 09:19:56.206635300 -0400
++++ jpeg/jpeg.c	2024-01-08 11:50:37.142511000 -0500
 @@ -64,5 +64,9 @@
  #include "tkimg.h"
  #ifdef USE_TCL_STUBS
@@ -11,17 +11,18 @@
 +#include <jerror.h>
  #else
  #include "jpeglib.h"
-@@ -70,8 +74,5 @@
+@@ -70,9 +74,6 @@
  #endif
  
 -static int SetupJPegLibrary(Tcl_Interp *interp);
--
--#define MORE_INITIALIZATION \
--    if (SetupJPegLibrary (interp) != TCL_OK) { return TCL_ERROR; }
 +#define MORE_INITIALIZATION {}
  
+-#define MORE_INITIALIZATION \
+-    if (SetupJPegLibrary (interp) != TCL_OK) { return TCL_ERROR; }
+-
  #include "init.c"
-@@ -149,88 +150,4 @@
+ 
+@@ -149,92 +150,4 @@
  
  
 -
@@ -50,18 +51,22 @@
 -    /* overallocat size, so we don't get a core-dump if the library
 -       thinks that the structure is much larger */
 -
--    cinfo = (struct jpeg_compress_struct *) ckalloc(8*sizeof(struct jpeg_compress_struct));
+-    cinfo = (struct jpeg_compress_struct *) attemptckalloc(8*sizeof(struct jpeg_compress_struct));
+-    if (cinfo == NULL) {
+-        Tcl_AppendResult (interp, "Unable to allocate memory for image data.", (char *) NULL);
+-        return TCL_ERROR;
+-    }
 -    cinfo->err = jpeg_std_error(&jerror.pub);
 -    jerror.pub.error_exit = my_error_exit;
 -    jerror.pub.output_message = my_output_message;
 -    /* Establish the setjmp return context for my_error_exit to use. */
--    if (setjmp(jerror.setjmp_buffer)) {
+-    if (SETJMP(jerror.setjmp_buffer)) {
 -      /* If we get here, the JPEG library is invalid. */
 -      jpeg_destroy_compress(cinfo);
 -      ckfree((char *)cinfo);
 -
 -      if (interp) {
--	Tcl_AppendResult(interp, "couldn't use \"", "jpegtcl",
+-	Tcl_AppendResult(interp, "Could not use \"", "jpegtcl",
 -		"\": please upgrade to at least version 6a", (char *) NULL);
 -      }
 -      return TCL_ERROR;
@@ -110,7 +115,7 @@
 -
  /*
   *----------------------------------------------------------------------
-@@ -866,8 +783,6 @@
+@@ -873,8 +786,6 @@
  		case 2: {
  #ifdef USE_JPEGTCL_STUBS
 -		    if (jpeg_simple_progression != NULL) {

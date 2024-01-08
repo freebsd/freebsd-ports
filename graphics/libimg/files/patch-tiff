@@ -7,8 +7,8 @@
 +    vars="tiff.c"
      for i in $vars; do
  	case $i in
---- tiff/tiff.c	2020-08-26 17:17:10.040341300 -0400
-+++ tiff/tiff.c	2021-01-04 15:02:19.857169000 -0500
+--- tiff/tiff.c	2023-10-27 17:01:40.715604300 -0400
++++ tiff/tiff.c	2024-01-08 12:09:34.186075000 -0500
 @@ -20,11 +20,15 @@
  #endif
  #include "tkimg.h"
@@ -84,7 +84,7 @@
 + 
      return TCL_OK;
  }
-@@ -435,8 +399,6 @@
+@@ -438,9 +402,7 @@
  ) {
      TIFF *tif;
 -    char *dir, *tempFileName = NULL, tempFileNameBuffer[1024];
@@ -92,14 +92,20 @@
 +    int result;
      tkimg_MFile handle;
 -    char buffer[4096];
-     char *dataPtr = NULL;
+-    char *dataPtr = NULL;
++    void *dataPtr = NULL;
  
-@@ -445,66 +407,13 @@
+     if (!tkimg_ReadInit(data, '\115', &handle)) {
+@@ -448,70 +410,17 @@
      }
  
 -    if (TIFFClientOpen) {
 -        if (handle.state != IMG_STRING) {
--            dataPtr = ckalloc((handle.length*3)/4 + 2);
+-            dataPtr = attemptckalloc((handle.length*3)/4 + 2);
+-            if (dataPtr == NULL) {
+-                Tcl_AppendResult (interp, "Unable to allocate memory for image data.", (char *) NULL);
+-                return TCL_ERROR;
+-            }
 -            handle.length = tkimg_Read2(&handle, dataPtr, handle.length);
 -            handle.data = dataPtr;
 -        }
@@ -145,8 +151,12 @@
 -        outfile = fopen(tempFileName, "wb");
 -        if (outfile == NULL) {
 -            Tcl_AppendResult(interp, "error open output file", (char *) NULL);
--            return TCL_ERROR;
--        }
++    if (handle.state != IMG_STRING) {
++        dataPtr = attemptckalloc((handle.length*3)/4 + 2);
++        if (dataPtr == NULL) {
++            Tcl_AppendResult (interp, "Unable to allocate memory for image data.", (char *) NULL);
+             return TCL_ERROR;
+         }
 -
 -        count = tkimg_Read2(&handle, buffer, sizeof (buffer));
 -        while (count == sizeof (buffer)) {
@@ -158,35 +168,33 @@
 -        }
 -        fclose(outfile);
 -        tif = TIFFOpen(tempFileName, "r");
--    }
-+    if (handle.state != IMG_STRING) {
-+        dataPtr = ckalloc((handle.length*3)/4 + 2);
 +        handle.length = tkimg_Read2(&handle, dataPtr, handle.length);
 +        handle.data = dataPtr;
-+    }
+     }
 +    handle.state = 0;
 +    tif = TIFFClientOpen("inline data", "r", (thandle_t) &handle,
 +              readString, writeString, seekString, closeDummy,
 +              sizeString, mapDummy, unMapDummy);
  
      if (tif != NULL) {
-@@ -514,7 +423,4 @@
+@@ -522,7 +431,4 @@
          result = TCL_ERROR;
      }
 -    if (tempFileName) {
 -        unlink(tempFileName);
 -    }
      if (result == TCL_ERROR) {
-         Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -540,68 +446,13 @@
+         if (strlen (Tcl_GetStringResult(interp)) == 0 && errorMessage) {
+@@ -550,68 +456,13 @@
  ) {
      TIFF *tif;
 -    char *dir, *tempFileName = NULL, tempFileNameBuffer[1024];
 -    int count, result;
++    int result;
+     tkimg_MFile handle;
 -    char buffer[4096];
--
+ 
 -    if (TIFFClientOpen) {
--        tkimg_MFile handle;
 -        handle.data = (char *) chan;
 -        handle.state = IMG_CHAN;
 -        tif = TIFFClientOpen(fileName, "r", (thandle_t) &handle,
@@ -232,8 +240,7 @@
 -            Tcl_AppendResult(interp, "error open output file", (char *) NULL);
 -            return TCL_ERROR;
 -        }
-+    int result;
- 
+-
 -        count = Tcl_Read(chan, buffer, sizeof (buffer));
 -        while (count == sizeof (buffer)) {
 -            fwrite(buffer, 1, sizeof (buffer), outfile);
@@ -243,53 +250,46 @@
 -            fwrite(buffer, 1, count, outfile);
 -        }
 -        fclose(outfile);
-+    tkimg_MFile handle;
-+    handle.data = (char *) chan;
+-
+-        tif = TIFFOpen(tempFileName, "r");
+-    }
++    handle.data = (void *) chan;
 +    handle.state = IMG_CHAN;
 +    tif = TIFFClientOpen(fileName, "r", (thandle_t) &handle,
 +          readMFile, writeDummy, seekMFile, closeDummy,
 +          sizeMFile, mapDummy, unMapDummy);
- 
--        tif = TIFFOpen(tempFileName, "r");
--    }
++ 
      if (tif) {
          result = CommonRead(interp, tif, format, imageHandle,
-@@ -610,7 +461,4 @@
+@@ -621,7 +472,4 @@
          result = TCL_ERROR;
      }
 -    if (tempFileName) {
 -        unlink(tempFileName);
 -    }
      if (result == TCL_ERROR) {
-         Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -678,5 +526,5 @@
-     npixels = w * h;
- 
--    raster = (uint32*) TkimgTIFFmalloc(npixels * sizeof (uint32));
-+    raster = (uint32*) _TIFFmalloc(npixels * sizeof (uint32));
-     block.width = w;
-     block.height = h;
-@@ -689,5 +537,5 @@
- 
-     if (!TIFFReadRGBAImage(tif, w, h, raster, 0) || errorMessage) {
+         if (strlen (Tcl_GetStringResult(interp)) == 0 && errorMessage) {
+@@ -710,5 +558,5 @@
+             errorMessage = NULL;
+         }
 -        TkimgTIFFfree (raster);
 +        _TIFFfree (raster);
-         if (errorMessage) {
-             Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -705,5 +553,5 @@
+         return TCL_ERROR;
+     }
+@@ -722,5 +570,5 @@
      }
  
 -    TkimgTIFFfree (raster);
 +    _TIFFfree (raster);
-     TIFFClose(tif);
-     return result;
-@@ -718,5 +566,4 @@
+     return TCL_OK;
+ }
+@@ -734,5 +582,4 @@
      int result, comp;
      tkimg_MFile handle;
 -    char *dir, *tempFileName = NULL, tempFileNameBuffer[256];
      Tcl_DString dstring;
      const char *mode;
-@@ -728,46 +575,9 @@
+@@ -744,58 +591,14 @@
      }
  
 -    if (TIFFClientOpen) {
@@ -302,7 +302,12 @@
 -#ifdef WIN32
 -        char dirBuffer[512];
 -        HANDLE h;
--
++    Tcl_DStringInit(&dstring);
++    tkimg_WriteInit(&dstring, &handle);
++    tif = TIFFClientOpen("inline data", mode, (thandle_t) &handle,
++            readString, writeString, seekString, closeDummy,
++            sizeString, mapDummy, unMapDummy);
+ 
 -        dir = dirBuffer;
 -        strcpy(dir, ".");
 -        GetTempPathA(sizeof (dirBuffer), dir);
@@ -334,14 +339,9 @@
 -#endif
 -        tif = TIFFOpen(tempFileName,mode);
 -    }
-+    Tcl_DStringInit(&dstring);
-+    tkimg_WriteInit(&dstring, &handle);
-+    tif = TIFFClientOpen("inline data", mode, (thandle_t) &handle,
-+            readString, writeString, seekString, closeDummy,
-+            sizeString, mapDummy, unMapDummy);
- 
+-
      result = CommonWrite(interp, tif, comp, blockPtr);
-@@ -775,11 +585,4 @@
+     TIFFClose(tif);
  
      if (result != TCL_OK) {
 -        if (tempFileName) {
@@ -353,7 +353,7 @@
 -        }
          Tcl_AppendResult(interp, errorMessage, (char *) NULL);
          ckfree(errorMessage);
-@@ -788,43 +591,13 @@
+@@ -804,43 +607,13 @@
      }
  
 -    if (tempFileName) {
@@ -405,7 +405,7 @@
 +    return TCL_OK;
  }
  
-@@ -1043,9 +816,5 @@
+@@ -1063,9 +836,5 @@
  TkimgTIFFfree(tdata_t data)
  {
 -    if (_TIFFfree) {
@@ -416,7 +416,7 @@
 +    _TIFFfree(data);
  }
  
-@@ -1053,9 +822,5 @@
+@@ -1073,9 +842,5 @@
  TkimgTIFFmalloc(tsize_t size)
  {
 -    if (_TIFFmalloc) {
@@ -427,7 +427,7 @@
 +    return _TIFFmalloc(size);
  }
  
-@@ -1065,8 +830,4 @@
+@@ -1085,8 +850,4 @@
      tsize_t size
  ) {
 -    if (_TIFFrealloc) {
