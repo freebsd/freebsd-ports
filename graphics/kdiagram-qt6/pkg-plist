@@ -215,6 +215,7 @@ share/locale/el/LC_MESSAGES/kchart6_qt.qm
 share/locale/el/LC_MESSAGES/kgantt6_qt.qm
 share/locale/en_GB/LC_MESSAGES/kchart6_qt.qm
 share/locale/en_GB/LC_MESSAGES/kgantt6_qt.qm
+share/locale/eo/LC_MESSAGES/kchart6_qt.qm
 share/locale/eo/LC_MESSAGES/kgantt6_qt.qm
 share/locale/es/LC_MESSAGES/kchart6_qt.qm
 share/locale/es/LC_MESSAGES/kgantt6_qt.qm
@@ -228,6 +229,8 @@ share/locale/fr/LC_MESSAGES/kchart6_qt.qm
 share/locale/fr/LC_MESSAGES/kgantt6_qt.qm
 share/locale/gl/LC_MESSAGES/kchart6_qt.qm
 share/locale/gl/LC_MESSAGES/kgantt6_qt.qm
+share/locale/ia/LC_MESSAGES/kchart6_qt.qm
+share/locale/ia/LC_MESSAGES/kgantt6_qt.qm
 share/locale/it/LC_MESSAGES/kchart6_qt.qm
 share/locale/it/LC_MESSAGES/kgantt6_qt.qm
 share/locale/ja/LC_MESSAGES/kchart6_qt.qm
