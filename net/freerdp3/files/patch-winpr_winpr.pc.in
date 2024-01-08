@@ -1,6 +1,6 @@
---- winpr/winpr.pc.in.orig	2016-10-21 07:29:51 UTC
+--- winpr/winpr.pc.in.orig	2023-12-22 16:29:20 UTC
 +++ winpr/winpr.pc.in
-@@ -9,7 +9,6 @@ Description: WinPR: Windows Portable Run
+@@ -9,7 +9,6 @@ Description: WinPR: Windows Portable Runtime
  URL: http://www.freerdp.com/
  Version: @WINPR_VERSION@
  Requires:

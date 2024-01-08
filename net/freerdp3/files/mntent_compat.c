@@ -37,7 +37,6 @@
 
 /* most of this was ripped from the mount(3) source */
 
-#include "config.h"
 #include "mntent.h"
 #include <stdlib.h>
 #include <string.h>

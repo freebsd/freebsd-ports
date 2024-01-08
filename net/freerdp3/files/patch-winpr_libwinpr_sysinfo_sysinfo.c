@@ -1,6 +1,6 @@
---- winpr/libwinpr/sysinfo/sysinfo.c.orig	2023-12-14 18:03:49 UTC
+--- winpr/libwinpr/sysinfo/sysinfo.c.orig	2023-12-22 16:29:20 UTC
 +++ winpr/libwinpr/sysinfo/sysinfo.c
-@@ -782,13 +782,15 @@ BOOL IsProcessorFeaturePresent(DWORD ProcessorFeature)
+@@ -800,13 +800,15 @@ BOOL IsProcessorFeaturePresent(DWORD ProcessorFeature)
  			break;
  	}
  
