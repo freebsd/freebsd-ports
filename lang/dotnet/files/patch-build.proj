@@ -1,0 +1,33 @@
+--- build.proj.orig	2023-11-01 21:55:24 UTC
++++ build.proj
+@@ -103,8 +103,7 @@
+ 
+   <!-- After building, create the sdk symbols tarball. -->
+   <Target Name="CreateSdkSymbolsTarball"
+-          AfterTargets="Build"
+-          DependsOnTargets="RepackageSymbols">
++          AfterTargets="Build">
+     <ItemGroup>
+       <SdkTarballItem Include="$(OutputPath)dotnet-sdk-*$(TarBallExtension)" />
+     </ItemGroup>
+@@ -115,20 +114,6 @@
+       <SdkLayout>$(ArtifactsTmpDir)Sdk</SdkLayout>
+       <SdkTarball>%(SdkTarballItem.Identity)</SdkTarball>
+     </PropertyGroup>
+-
+-    <MakeDir Directories="$(SdkLayout)" />
+-    <Exec Command="tar -xzf $(SdkTarball) -C $(SdkLayout)"
+-          WorkingDirectory="$(OutputPath)" />
+-
+-    <CreateSdkSymbolsLayout SdkLayoutPath="$(SdkLayout)"
+-                            AllSymbolsPath="$(UnifiedSymbolsLayout)"
+-                            SdkSymbolsLayoutPath="$(SdkSymbolsLayout)"
+-                            FailOnMissingPDBs="true" />
+-
+-    <Exec Command="tar --numeric-owner -czf $(SdkSymbolsTarball) *"
+-          WorkingDirectory="$(SdkSymbolsLayout)" />
+-
+-    <Message Importance="High" Text="Packaged sdk symbols in '$(SdkSymbolsTarball)'" />
+ 
+     <RemoveDir Directories="$(UnifiedSymbolsLayout)" />
+     <RemoveDir Directories="$(SdkSymbolsLayout)" />
