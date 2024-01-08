@@ -97,6 +97,7 @@ bin/tpm2_startauthsession
 bin/tpm2_startup
 bin/tpm2_stirrandom
 bin/tpm2_testparms
+bin/tpm2_tr_encode
 bin/tpm2_unseal
 bin/tpm2_verifysignature
 bin/tpm2_zgen2phase
@@ -237,6 +238,7 @@ man/man1/tpm2_startauthsession.1.gz
 man/man1/tpm2_startup.1.gz
 man/man1/tpm2_stirrandom.1.gz
 man/man1/tpm2_testparms.1.gz
+man/man1/tpm2_tr_encode.1.gz
 man/man1/tpm2_unseal.1.gz
 man/man1/tpm2_verifysignature.1.gz
 man/man1/tpm2_zgen2phase.1.gz

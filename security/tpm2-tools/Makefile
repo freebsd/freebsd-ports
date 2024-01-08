@@ -1,6 +1,5 @@
 PORTNAME=	tpm2-tools
-DISTVERSION=	5.5
-PORTREVISION=	2
+DISTVERSION=	5.6
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tools/releases/download/${DISTVERSION}/
 
