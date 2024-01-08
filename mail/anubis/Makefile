@@ -1,6 +1,5 @@
 PORTNAME=	anubis
-PORTVERSION=	4.2
-PORTREVISION=	17
+PORTVERSION=	4.3
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -11,24 +10,31 @@ WWW=		https://www.gnu.org/software/anubis/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf charsetfix cpe localbase makeinfo \
-		pkgconfig shebangfix
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
+		libgsasl.so:security/libgsasl
+
+USES=		autoreconf charsetfix cpe gettext-tools gmake localbase \
+		makeinfo pkgconfig shebangfix
 CHARSETFIX_MAKEFILEIN=	gnulib.mk
 CPE_VENDOR=	gnu
 SHEBANG_FILES=	contrib/msg2smtp.pl
 USE_RC_SUBR=	anubis
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gnutls \
+		--with-gsasl
 
 INFO=		anubis
 PORTEXAMPLES=	1anubisrc 2anubisrc
 
-OPTIONS_DEFINE=		NLS EXAMPLES EMACS GUILE GNUPG GNUTLS \
-			GSASL LIBWRAP PCRE PAM SOCKS TEST
+OPTIONS_DEFINE=		NLS EXAMPLES EMACS GUILE GNUPG LIBWRAP PCRE PAM \
+			SOCKS TEST
 DB_DESC=		Database backend
 OPTIONS_GROUP=		DB
 OPTIONS_GROUP_DB=	GDBM MYSQL PGSQL
-OPTIONS_DEFAULT=	GDBM GNUPG GNUTLS GSASL GUILE
-OPTIONS_EXCLUDE_aarch64=TEST
+OPTIONS_DEFAULT=	GDBM GNUPG GUILE
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
 
@@ -44,34 +50,22 @@ EMACS_USES=		emacs:build
 EMACS_CONFIGURE_ON=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/anubis
 EMACS_CONFIGURE_OFF=	--with-lispdir=no
 
-GDBM_IMPLIES=		GSASL
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
 
-GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme \
-			libgpg-error.so:security/libgpg-error
+GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GNUPG_CONFIGURE_WITH=	gpgme
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libgcrypt.so:security/libgcrypt
-GNUTLS_CONFIGURE_WITH=	gnutls
-
-GSASL_DESC=		GSASL support (required for databases)
-GSASL_LIB_DEPENDS=	libgsasl.so:security/libgsasl
-GSASL_CONFIGURE_WITH=	gsasl
-
-GUILE_USES=		guile:1.8,alias
+GUILE_USES=		guile:2.2,alias
 GUILE_CONFIGURE_WITH=	guile
 GUILE_PORTEXAMPLES=	anubis.scm anubisrc.guile
 
 LIBWRAP_CONFIGURE_WITH=	tcp-wrappers
 
-MYSQL_IMPLIES=		GSASL
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_VARS=		REQUIRE+=mysql
 
-NLS_USES=		gettext iconv
 NLS_CONFIGURE_ENABLE=	nls
 
 PAM_CONFIGURE_WITH=	pam
@@ -80,12 +74,13 @@ PAM_PORTEXAMPLES=	pam
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
 
-PGSQL_IMPLIES=		GSASL
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_VARS=		REQUIRE+=postgresql
 
 SOCKS_CONFIGURE_WITH=	socks-proxy
+
+TEST_TEST_TARGET=	check
 
 .include <bsd.port.options.mk>
 
@@ -93,14 +88,8 @@ SOCKS_CONFIGURE_WITH=	socks-proxy
 REQUIRE+=	mail
 SUB_LIST+=	REQUIRE="${REQUIRE}"
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/src/headers.h
-	@${REINPLACE_CMD} -e 's,gdbm_db_,db_gdbm_,g' \
-		${WRKSRC}/src/anubisadm.c ${WRKSRC}/src/gdbm.c \
-		${WRKSRC}/src/headers.h ${WRKSRC}/src/main.c
-
 post-patch-TEST-off:
-	@${REINPLACE_CMD} -e 's| testsuite||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's| tests||' ${WRKSRC}/Makefile.am
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

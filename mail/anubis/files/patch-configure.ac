@@ -1,16 +1,16 @@
---- configure.ac.orig	2014-05-23 20:25:28 UTC
+--- configure.ac.orig	2024-01-05 16:09:47 UTC
 +++ configure.ac
-@@ -78,7 +78,6 @@ AH_BOTTOM([
- ])
+@@ -96,7 +96,6 @@ AC_CHECK_LIB(socket, socket)
+ AC_CHECK_FUNCS(daemon putenv)
  
  AC_CHECK_LIB(socket, socket)
 -AC_CHECK_LIB(nsl, gethostbyaddr)
  
- AC_SUBST(ADD_INCLUDES)
- case $build in
-@@ -179,11 +178,21 @@ MU_CHECK_GSASL(0.2.3, [
+ AM_PATH_LIBGCRYPT([1.7.0], [status_gcrypt=yes], [status_gcrypt=no])
+ AM_CONDITIONAL([GCRYPT_COND], [test "$status_gcrypt" = yes])
+@@ -198,11 +197,21 @@ MU_CHECK_GSASL(0.2.3, [
+     ANUBIS_SBIN_ADM='$(adm_sbin_programs)'
      ANUBIS_BIN_ADM='$(adm_bin_programs)'
-     M4_DEFS="$M4_DEFS -DWITH_GSASL"
  
 +    AC_ARG_WITH(gdbm,
 +        AC_HELP_STRING([--with-gdbm],
@@ -30,8 +30,8 @@
 +    fi
  
      AC_ARG_WITH(mysql,
- 	AC_HELP_STRING([--with-mysql],
-@@ -285,8 +294,8 @@ AC_ARG_WITH(pam,
+ 	AS_HELP_STRING([--with-mysql],[Configure to work with MySQL]),
+@@ -301,8 +310,8 @@ if test "$with_pam" = "yes"; then
  	[with_pam=no])
  if test "$with_pam" = "yes"; then
   AC_CHECK_LIB(pam, main,, with_pam=no)
@@ -42,7 +42,7 @@
  fi
  if test "$with_pam" = "yes"; then
   AC_MSG_RESULT([Enabling PAM support...])
-@@ -300,7 +309,6 @@ AC_ARG_WITH(tcp-wrappers,
+@@ -315,7 +324,6 @@ if test "$with_tcp_wrappers" = "yes"; then
  	[with_tcp_wrappers=no])
  if test "$with_tcp_wrappers" = "yes"; then
   AC_CHECK_LIB(wrap, main,, with_tcp_wrappers=no)
