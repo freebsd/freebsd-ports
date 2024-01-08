@@ -1,6 +1,6 @@
 PORTNAME=	asmixer
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://tigr.net/afterstep/download/asmixer/
 
@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
-PLIST_FILES=	bin/asmixer man/man1/asmixer.1.gz
+PLIST_FILES=	bin/asmixer share/man/man1/asmixer.1.gz
 
 post-patch:
 .for i in asmixer.c configure autoconf/config.h.in
@@ -30,6 +30,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asmixer ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/asmixer.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/asmixer.1
+		${STAGEDIR}${PREFIX}/share/man/man1/asmixer.1
 
 .include <bsd.port.mk>

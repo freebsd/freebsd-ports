@@ -1,6 +1,6 @@
 PORTNAME=	xcd
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio tk
 MASTER_SITES=	LOCAL/cy
 
@@ -16,7 +16,7 @@ WITH_CDROM_PLAYER?=	cd0
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CDDIR="${PREFIX}/lib/xcd" \
 		BITMAPDIR="${PREFIX}/lib/xcd" \
-		MANDIR="${MANPREFIX}/man/man1"
+		MANDIR="${PREFIX}/share/man/man1"
 
 pre-extract:
 	@${ECHO_CMD} ""

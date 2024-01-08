@@ -5,7 +5,7 @@ bin/pacpl
 %%ETCDIR%%/pacpl.png
 libexec/PACPL-Convert
 %%KDE4%%libexec/PACPL-Konvert
-man/man1/pacpl.1.gz
+share/man/man1/pacpl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.module

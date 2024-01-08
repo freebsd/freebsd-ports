@@ -1,6 +1,6 @@
 PORTNAME=	asmix
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://tigr.net/afterstep/download/asmix/ \
 		http://www.sourcefiles.org/Utilities/Console/A-B/
@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
-PLIST_FILES=	bin/asmix man/man1/asmix.1.gz
+PLIST_FILES=	bin/asmix share/man/man1/asmix.1.gz
 
 post-patch:
 .for i in asmix.c configure autoconf/config.h.in
@@ -33,6 +33,6 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} asmix \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} asmix.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

@@ -46,7 +46,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autozen ${WRKSRC}/seq2wav ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/zentime ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/autozen.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/autozen.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.seq ${STAGEDIR}${DATADIR}
 
