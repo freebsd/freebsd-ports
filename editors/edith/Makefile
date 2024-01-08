@@ -1,6 +1,6 @@
 PORTNAME=	edith
 PORTVERSION=	1.58
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors linux
 MASTER_SITES=	http://www.groenink.com/pub/edith/
 DISTFILES=	edith1.55.common.tar.gz \
@@ -36,6 +36,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EDITHDIR}/${i}
 	${INSTALL_DATA} ${WRKSRC}/${i}/* ${STAGEDIR}${EDITHDIR}/${i}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/edith.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/edith.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

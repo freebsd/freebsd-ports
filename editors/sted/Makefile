@@ -1,5 +1,6 @@
 PORTNAME=	sted
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	LOCAL/gabor
 
@@ -14,7 +15,7 @@ WRKSRC=		${WRKDIR}/sted
 MAKE_ARGS=	CC="${CC}" C_OPTS="${CFLAGS}" L_OPTS="${LDFLAGS} -lncurses"
 
 PORTDOCS=	CHANGES README
-PLIST_FILES=	bin/sted man/man1/sted.1.gz
+PLIST_FILES=	bin/sted share/man/man1/sted.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,7 +24,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sted ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sted.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/sted.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

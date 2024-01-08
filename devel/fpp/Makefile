@@ -1,6 +1,6 @@
 PORTNAME=	fpp
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	NL/fortran/ \
 		http://ports.toco-domains.de/
@@ -17,13 +17,13 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	README fpp_spec fpp_license.ps
 
 PLIST_FILES=	bin/fpp \
-		man/man1/fpp.1.gz
+		share/man/man1/fpp.1.gz
 
 .include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsd44/fpp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man1/fpp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/fpp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 

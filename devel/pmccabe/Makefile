@@ -1,5 +1,6 @@
 PORTNAME=	pmccabe
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/p/pmccabe/ \
 		http://dist.codelabs.ru/fbsd/pmccabe/
@@ -25,7 +26,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in ${MANPAGE}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>
