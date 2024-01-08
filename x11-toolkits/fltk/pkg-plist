@@ -149,6 +149,10 @@ lib/libfltk.a
 lib/libfltk.so
 lib/libfltk.so.1
 lib/libfltk.so.1.3
+%%CAIRO%%lib/libfltk_cairo.a
+%%CAIRO%%lib/libfltk_cairo.so
+%%CAIRO%%lib/libfltk_cairo.so.1
+%%CAIRO%%lib/libfltk_cairo.so.1.3
 lib/libfltk_forms.a
 lib/libfltk_forms.so
 lib/libfltk_forms.so.1

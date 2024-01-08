@@ -1,0 +1,52 @@
+--- src/Makefile.orig	2023-12-09 13:58:40 UTC
++++ src/Makefile
+@@ -573,13 +573,13 @@ install: $(LIBNAME) $(DSONAME) \
+ 	-$(INSTALL_DIR) $(DESTDIR)$(libdir)
+ 	-$(INSTALL_DIR) $(DESTDIR)$(bindir)
+ 	$(RM) $(DESTDIR)$(libdir)/$(LIBBASENAME)
+-	$(INSTALL_LIB) $(LIBNAME) $(DESTDIR)$(libdir)
+-	$(INSTALL_LIB) $(FLLIBNAME) $(DESTDIR)$(libdir)
+-	$(INSTALL_LIB) $(IMGLIBNAME) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(LIBNAME) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(FLLIBNAME) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(IMGLIBNAME) $(DESTDIR)$(libdir)
+ 	$(RANLIB) $(DESTDIR)$(libdir)/$(LIBBASENAME)
+ 	$(RANLIB) $(DESTDIR)$(libdir)/$(FLLIBBASENAME)
+ 	if test x$(GLLIBNAME) != x; then \
+-		$(INSTALL_LIB) $(GLLIBNAME) $(DESTDIR)$(libdir); \
++		$(INSTALL_DATA) $(GLLIBNAME) $(DESTDIR)$(libdir); \
+ 		$(RANLIB) $(DESTDIR)$(libdir)/$(GLLIBBASENAME); \
+ 	fi
+ 	$(RANLIB) $(DESTDIR)$(libdir)/$(IMGLIBBASENAME)
+@@ -587,6 +587,7 @@ install: $(LIBNAME) $(DSONAME) \
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk.so*;\
+ 		$(INSTALL_LIB) libfltk.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir); \
+ 		$(LN) libfltk.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk.so;\
++		$(LN) libfltk.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk.so.$(FL_DSO_VERSION:R);\
+ 	fi
+ 	if test x$(DSONAME) = xlibfltk.sl.$(FL_DSO_VERSION); then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk.sl*;\
+@@ -618,6 +619,7 @@ install: $(LIBNAME) $(DSONAME) \
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_forms.so*;\
+ 		$(INSTALL_LIB) libfltk_forms.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir); \
+ 		$(LN) libfltk_forms.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_forms.so;\
++		$(LN) libfltk_forms.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_forms.so.$(FL_DSO_VERSION:R);\
+ 	fi
+ 	if test x$(FLDSONAME) = xlibfltk_forms.sl.$(FL_DSO_VERSION); then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_forms.sl*;\
+@@ -649,6 +651,7 @@ install: $(LIBNAME) $(DSONAME) \
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_gl.so*;\
+ 		$(INSTALL_LIB) libfltk_gl.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir); \
+ 		$(LN) libfltk_gl.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_gl.so;\
++		$(LN) libfltk_gl.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_gl.so.$(FL_DSO_VERSION:R);\
+ 	fi
+ 	if test x$(GLDSONAME) = xlibfltk_gl.sl.$(FL_DSO_VERSION); then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_gl.sl*;\
+@@ -680,6 +683,7 @@ install: $(LIBNAME) $(DSONAME) \
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_images.so*;\
+ 		$(INSTALL_LIB) libfltk_images.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir); \
+ 		$(LN) libfltk_images.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_images.so;\
++		$(LN) libfltk_images.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_images.so.$(FL_DSO_VERSION:R);\
+ 	fi
+ 	if test x$(IMGDSONAME) = xlibfltk_images.sl.$(FL_DSO_VERSION); then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_images.sl*;\
