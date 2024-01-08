@@ -1,6 +1,6 @@
 PORTNAME=	amazon-ssm-plugin
-DISTVERSION=	1.2.463.0
-PORTREVISION=	4
+DISTVERSION=	1.2.536.0
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nork@FreeBSD.org
@@ -32,7 +32,7 @@ GH_TUPLE=	eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eia
 		stretchr:testify:6cb3b85ef5a0:stretchr_testify/vendor/github.com/stretchr/testify \
 		twinj:uuid:70cac2bcd273:twinj_uuid/vendor/github.com/twinj/uuid \
 		xtaci:smux:09e2c01560df:xtaci_smux/vendor/github.com/xtaci/smux
-#customized#	aws:aws-sdk-go:v1.40.17:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go
+#shrinked?#	aws:aws-sdk-go:v1.44.302:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go
 #customized#	cihub:seelog:c510775bb50d:cihub_seelog/vendor/github.com/cihub/seelog
 
 PORTDOCS=	NOTICE README.md RELEASENOTES.md THIRD-PARTY VERSION
