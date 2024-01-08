@@ -18,7 +18,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 CATEGORIES+=	perl5
 
-CONFIGURE_ARGS+=	--without-gnome-keyring \
+CONFIGURE_ARGS+=	--with-swig-perl=${PERL} \
+			--without-swig-python \
+			--without-swig-ruby \
+			--without-gnome-keyring \
 			--without-kwallet \
 			--with-apxs=no
 
