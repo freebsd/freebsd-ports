@@ -18,6 +18,6 @@ PLIST_FILES=	bin/ubench \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ubench ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ubench.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ubench.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
