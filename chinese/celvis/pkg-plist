@@ -1,4 +1,4 @@
 bin/celvis
 bin/cvi
 bin/virec
-man/man1/celvis.1.gz
+share/man/man1/celvis.1.gz

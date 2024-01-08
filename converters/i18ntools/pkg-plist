@@ -3,10 +3,10 @@ bin/mbm
 bin/ptrans
 bin/uhtrans
 bin/utrans
-man/man1/hutrans.1.gz
-man/man1/ptrans.1.gz
-man/man1/uhtrans.1.gz
-man/man1/utrans.1.gz
+share/man/man1/hutrans.1.gz
+share/man/man1/ptrans.1.gz
+share/man/man1/uhtrans.1.gz
+share/man/man1/utrans.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tools/fgetu8.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/fputu8.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/index.html

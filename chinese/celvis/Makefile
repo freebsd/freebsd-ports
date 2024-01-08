@@ -26,6 +26,6 @@ do-install:
 	@# install target in celvis Makefile is not too good -- this is easier
 	${INSTALL_PROGRAM} ${WRKSRC}/celvis ${WRKSRC}/virec ${STAGEDIR}${PREFIX}/bin
 	${LN} -s celvis ${STAGEDIR}${PREFIX}/bin/cvi
-	${INSTALL_MAN} ${FILESDIR}/celvis.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/celvis.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

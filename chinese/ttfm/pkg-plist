@@ -1,5 +1,5 @@
 bin/ttfinfo
 bin/ttfm.sh
-man/man1/ttfm.sh.1.gz
+share/man/man1/ttfm.sh.1.gz
 %%DATADIR%%/gscjk.ttfm
 %%DATADIR%%/xttfm.ttfm

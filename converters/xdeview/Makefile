@@ -1,6 +1,6 @@
 PORTNAME=	xdeview
 PORTVERSION=	0.5.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters tcl tk
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
@@ -28,7 +28,7 @@ CPPFLAGS+=	-I${TCL_INCLUDEDIR} -DHAVE_TCL \
 LDFLAGS+=	-lX11 -ltcl${TCL_VER:S/.//} \
 		-ltk${TCL_VER:S/.//} -lm
 
-PLIST_FILES=	bin/uuwish bin/xdeview man/man1/xdeview.1.gz
+PLIST_FILES=	bin/uuwish bin/xdeview share/man/man1/xdeview.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -41,7 +41,7 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uuwish
-	${INSTALL_MAN} ${WRKSRC}/man/xdeview.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/xdeview.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
