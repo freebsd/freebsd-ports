@@ -1,5 +1,5 @@
-TIMESTAMP = 1674382108
-SHA256 (proftpd-1.3.8.tar.gz) = f7139e7377a2cb059b8b9b14d76a6df5f440e3181cb15ae890d43bbcae574748
-SIZE (proftpd-1.3.8.tar.gz) = 19744412
+TIMESTAMP = 1704671194
+SHA256 (proftpd-1.3.8b.tar.gz) = 183ab7c6107de271a2959ff268f55c9b6c76b2cf0029e6584fccc019686601e0
+SIZE (proftpd-1.3.8b.tar.gz) = 19752808
 SHA256 (mod_clamav-v0.14rc2.tar.gz) = 0a865a659541f7ff5c46532c79aac652cdd004f604fb6a874f57dfb95bfe5a1e
 SIZE (mod_clamav-v0.14rc2.tar.gz) = 19721
