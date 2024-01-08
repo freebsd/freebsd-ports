@@ -1,6 +1,6 @@
 PORTNAME=	pcsc-cyberjack
 DISTVERSION=	3.99.5final.SP15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP15/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -17,9 +17,10 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYRIGHT.LGPL
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libxml2.so:textproc/libxml2
 
-USES=		autoreconf compiler:gcc-c++11-lib dos2unix gmake libtool pkgconfig \
+USES=		autoreconf compiler:c++11-lib dos2unix gmake libtool pkgconfig \
 		tar:bzip2
 
+USE_GCC=	12
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
