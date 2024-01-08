@@ -1,0 +1,12 @@
+https://gitlab.freedesktop.org/mesa/mesa/-/issues/10404
+
+--- src/gallium/frontends/rusticl/meson.build.orig	2024-01-08 19:47:52 UTC
++++ src/gallium/frontends/rusticl/meson.build
+@@ -223,6 +223,7 @@ rusticl_llvm_bindings_rs = rust.bindgen(
+     dep_clang,
+     dep_llvm,
+     dep_llvmspirvlib,
++    dep_spirv_tools,
+   ],
+   args : [
+     # we want to limit what to generate bindings for
