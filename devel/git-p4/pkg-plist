@@ -1,2 +1,2 @@
 libexec/git-core/git-p4
-man/man1/git-p4.1.gz
+share/man/man1/git-p4.1.gz

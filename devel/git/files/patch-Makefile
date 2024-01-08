@@ -1,12 +1,10 @@
---- Makefile.orig	2022-10-02 23:02:46 UTC
+--- Makefile.orig	2023-11-20 02:07:41 UTC
 +++ Makefile
-@@ -542,17 +542,17 @@ bindir = $(prefix)/bin
- 
+@@ -606,16 +606,16 @@ mandir = $(prefix)/share/man
  prefix = $(HOME)
  bindir = $(prefix)/bin
--mandir = $(prefix)/share/man
+ mandir = $(prefix)/share/man
 -infodir = $(prefix)/share/info
-+mandir = $(prefix)/man
 +infodir = $(prefix)/info
  gitexecdir = libexec/git-core
  mergetoolsdir = $(gitexecdir)/mergetools
@@ -23,7 +21,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -577,8 +577,8 @@ INSTALL = install
+@@ -640,8 +640,8 @@ INSTALL = install
  TAR = tar
  FIND = find
  INSTALL = install
@@ -34,7 +32,7 @@
  XGETTEXT = xgettext
  MSGCAT = msgcat
  MSGFMT = msgfmt
-@@ -1539,9 +1539,9 @@ ifndef NO_OPENSSL
+@@ -1650,9 +1650,9 @@ ifndef NO_OPENSSL
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -47,7 +45,7 @@
  	else
  		OPENSSL_LINK =
  	endif
-@@ -2442,7 +2442,7 @@ else # NO_PERL
+@@ -2559,7 +2559,7 @@ else # NO_PERL
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -56,7 +54,7 @@
  	$(QUIET_GEN) \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \
-@@ -2458,7 +2458,7 @@ $(SCRIPT_PYTHON_GEN): % : %.py
+@@ -2575,7 +2575,7 @@ $(SCRIPT_PYTHON_GEN): % : %.py
  $(SCRIPT_PYTHON_GEN): GIT-CFLAGS GIT-PREFIX GIT-PYTHON-VARS
  $(SCRIPT_PYTHON_GEN): % : %.py
  	$(QUIET_GEN) \
@@ -65,7 +63,7 @@
  	    $< >$@+ && \
  	chmod +x $@+ && \
  	mv $@+ $@
-@@ -3238,7 +3238,7 @@ install: all
+@@ -3451,7 +3451,7 @@ install: all
  	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'

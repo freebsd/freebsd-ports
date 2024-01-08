@@ -1,2 +1,2 @@
 libexec/git-core/git-svn
-man/man1/git-svn.1.gz
+share/man/man1/git-svn.1.gz
