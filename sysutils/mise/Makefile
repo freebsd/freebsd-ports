@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.1.7
+DISTVERSION=	2024.1.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +31,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-compression-0.4.5 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
+		backtrace-ext-0.2.1 \
 		base64-0.21.5 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
@@ -51,10 +52,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		clap_mangen-0.2.16 \
-		color-eyre-0.6.2 \
 		color-print-0.3.5 \
 		color-print-proc-macro-0.3.5 \
-		color-spantrace-0.2.1 \
 		colorchoice-1.0.0 \
 		confique-0.2.5 \
 		confique-macro-0.0.9 \
@@ -91,7 +90,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.8 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		eyre-0.6.11 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
 		fiat-crypto-0.2.5 \
@@ -141,6 +139,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		insta-1.34.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
+		is-terminal-0.4.10 \
+		is_ci-1.1.1 \
 		itertools-0.12.0 \
 		itoa-1.0.10 \
 		jobserver-0.1.27 \
@@ -154,6 +154,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
 		memchr-2.7.1 \
+		miette-5.10.0 \
+		miette-derive-5.10.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
@@ -235,7 +237,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
-		sharded-slab-0.1.7 \
 		shared_child-1.0.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
@@ -243,6 +244,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		similar-2.4.0 \
 		simplelog-0.12.1 \
 		slab-0.4.9 \
+		smawk-0.3.2 \
 		socket2-0.5.5 \
 		spin-0.9.8 \
 		spki-0.7.3 \
@@ -250,6 +252,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum-0.25.0 \
 		strum_macros-0.25.3 \
 		subtle-2.5.0 \
+		supports-color-2.1.0 \
+		supports-hyperlinks-2.1.0 \
+		supports-unicode-2.0.0 \
 		syn-1.0.109 \
 		syn-2.0.43 \
 		sys-info-0.9.1 \
@@ -261,10 +266,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tempfile-3.9.0 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
+		terminal_size-0.1.17 \
 		terminal_size-0.3.0 \
+		textwrap-0.15.2 \
 		thiserror-1.0.53 \
 		thiserror-impl-1.0.53 \
-		thread_local-1.1.7 \
 		time-0.3.31 \
 		time-core-0.1.2 \
 		time-macros-0.2.16 \
@@ -280,8 +286,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
-		tracing-error-0.2.0 \
-		tracing-subscriber-0.3.18 \
 		try-lock-0.2.5 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
@@ -293,6 +297,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-ucd-version-0.9.0 \
 		unicode-bidi-0.3.14 \
 		unicode-ident-1.0.12 \
+		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.11 \
@@ -300,7 +305,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		url-2.5.0 \
 		urlencoding-2.1.3 \
 		utf8parse-0.2.1 \
-		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		versions-6.0.0 \
