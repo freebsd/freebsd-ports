@@ -11,15 +11,15 @@ LICENSE=	GPLv2
 
 USES=		gmake xorg
 
-OPTIONS_DEFINE=	EXAMPLES
-
 USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dummy-driver --enable-drivers=freebsd_sysctl
 
-PORTEXAMPLES=	wmndrc
 PLIST_FILES=	bin/wmnd \
 		man/man1/wmnd.1.gz
+PORTEXAMPLES=	wmndrc
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${STAGEDIR}${PREFIX}/bin
