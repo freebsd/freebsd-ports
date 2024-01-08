@@ -35,7 +35,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 USES=		compiler:c++17-lang gl gmake jpeg llvm:min=16 localbase \
-		pkgconfig python:3.9,build sdl shebangfix sqlite:3 xorg
+		pkgconfig python:build sdl shebangfix sqlite:3 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
