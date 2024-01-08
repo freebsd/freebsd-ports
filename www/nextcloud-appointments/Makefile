@@ -12,7 +12,7 @@ WWW=		https://apps.nextcloud.com/apps/appointments
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NEXTCLOUD_RUN_DEPENDS=	25
+NEXTCLOUD_RUN_DEPENDS=	26
 
 USES=		nextcloud php:flavors
 
