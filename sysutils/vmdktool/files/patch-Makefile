@@ -1,0 +1,8 @@
+--- Makefile.orig	2024-01-08 16:38:12 UTC
++++ Makefile
+@@ -28,4 +28,4 @@ install:
+ 
+ install:
+ 	install -s vmdktool ${DESTDIR}${PREFIX}/bin/
+-	install vmdktool.8 ${DESTDIR}${PREFIX}/man/man8/
++	install vmdktool.8 ${DESTDIR}${PREFIX}/share/man/man8/
