@@ -1,11 +1,11 @@
 PORTNAME=	flruler
 PORTVERSION=	1.05
 CATEGORIES=	x11
-MASTER_SITES=	http://seriss.com/people/erco/fltk/flruler/
+MASTER_SITES=	${WWW}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	On-screen pixel ruler
-WWW=		https://seriss.com/people/erco/fltk/flruler/
+WWW=		https://www.seriss.com/people/erco/fltk/flruler/
 
 LICENSE=	GPLv2
 
