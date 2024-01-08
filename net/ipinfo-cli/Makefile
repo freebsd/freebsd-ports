@@ -1,7 +1,6 @@
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
-DISTVERSION=	3.2.0
-PORTREVISION=	1
+DISTVERSION=	3.3.0
 CATEGORIES=	net
 
 MAINTAINER=	nulldutra@proton.me
@@ -15,7 +14,7 @@ USES=	go:modules
 
 USE_GITHUB=	yes
 GH_PROJECT=	cli
-GH_TUPLE=	golang:sys:v0.13.0:golang_sys
+GH_TUPLE=	golang:sys:v0.16.0:golang_sys
 
 GO_TARGET=	./ipinfo
 
