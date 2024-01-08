@@ -139,7 +139,7 @@ static struct mntent *
 statfs_to_mntent (struct statfs *mntbuf)
 {
 	static char opts_buf[40], *tmp;
-	
+
 	_mntent.mnt_fsname = mntbuf->f_mntfromname;
 	_mntent.mnt_dir = mntbuf->f_mntonname;
 	_mntent.mnt_type = mntbuf->f_fstypename;
@@ -151,7 +151,7 @@ statfs_to_mntent (struct statfs *mntbuf)
 	} else {
 		*opts_buf = '\0';
 	}
-	_mntent.mnt_opts = opts_buf;	
+	_mntent.mnt_opts = opts_buf;
 	_mntent.mnt_freq = _mntent.mnt_passno = 0;
 	return (&_mntent);
 }

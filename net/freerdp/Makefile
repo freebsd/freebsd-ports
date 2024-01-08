@@ -1,6 +1,6 @@
 PORTNAME=	freerdp
 DISTVERSION=	2.11.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -47,12 +47,13 @@ OPTIONS_RADIO_SCALE=	CAIRO SWSCALE
 OPTIONS_SUB=		yes
 
 OPTIONS_DEFINE_aarch64=	NEON
+OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_armv6=	NEON
 OPTIONS_DEFINE_armv7=	NEON
-OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_i386=	SSE
 OPTIONS_DEFAULT_aarch64=	NEON
 OPTIONS_DEFAULT_amd64=	SSE
+OPTIONS_DEFAULT_armv7=	NEON
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_BOOL=	WITH_ALSA
@@ -61,8 +62,9 @@ BROKENFOCUS_DESC=	Work around focus bug in some WMs (PR \#254908)
 BROKENFOCUS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-focusbug.diff
 
 CAIRO_DESC=		Use CAIRO image library for screen resizing
-CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_CMAKE_BOOL=	WITH_CAIRO
+CAIRO_USES=		gnome
+CAIRO_USE=		gnome=cairo
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_BOOL=	WITH_CUPS
