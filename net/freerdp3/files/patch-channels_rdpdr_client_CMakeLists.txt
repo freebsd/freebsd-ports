@@ -1,0 +1,10 @@
+--- channels/rdpdr/client/CMakeLists.txt.orig	2020-06-09 02:02:41 UTC
++++ channels/rdpdr/client/CMakeLists.txt
+@@ -24,6 +24,7 @@ set(${MODULE_PREFIX}_SRCS
+ 	irp.h
+ 	devman.c
+ 	devman.h
++	mntent_compat.c
+ 	rdpdr_main.c
+ 	rdpdr_main.h
+ 	rdpdr_capabilities.c
