@@ -1,5 +1,5 @@
 PORTNAME=	klog
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -33,8 +33,10 @@ PLIST_FILES=	bin/klog \
 		${DATADIR}/translations/klog_fr.qm \
 		${DATADIR}/translations/klog_hr.qm \
 		${DATADIR}/translations/klog_it.qm \
+		${DATADIR}/translations/klog_lv.qm \
 		${DATADIR}/translations/klog_ja.qm \
 		${DATADIR}/translations/klog_pl.qm \
+		${DATADIR}/translations/klog_uk.qm \
 		man/man1/klog.1.gz
 
 post-patch:
