@@ -1,5 +1,6 @@
 PORTNAME=	lwm
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 
@@ -22,14 +23,14 @@ MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	`pkg-config --cflags sm x11 xext ice` -DSHAPE
 LDFLAGS+=	`pkg-config --libs sm x11 xext ice`
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

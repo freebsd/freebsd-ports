@@ -1,5 +1,6 @@
 PORTNAME=	lupe
 PORTVERSION=	0.08c
+PORTREVISION=	1
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -20,7 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXext -lm
 
 PORTDOCS=	${PORTNAME}.doc
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 post-extract:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.1
@@ -31,7 +32,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

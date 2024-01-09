@@ -1,6 +1,6 @@
 PORTNAME=	middleman
 PORTVERSION=	1.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/middle-man/Source/${PORTNAME}
 
@@ -38,7 +38,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${MMAN_CACHE}
-	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.xml \
 		${STAGEDIR}${PREFIX}/etc/mman.xml.sample

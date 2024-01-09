@@ -1,6 +1,6 @@
 PORTNAME=	tvtwm
 PORTVERSION=	pl11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	XCONTRIB/window_managers
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -21,10 +21,10 @@ CFLAGS+=	-Wno-return-type
 WRKSRC=		${WRKDIR}/tvtwm
 
 PLIST_FILES=	bin/tvtwm \
-		man/man1/tvtwm.1.gz
+		share/man/man1/tvtwm.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tvtwm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tvtwm.man ${STAGEDIR}${MANPREFIX}/man/man1/tvtwm.1
+	${INSTALL_MAN} ${WRKSRC}/tvtwm.man ${STAGEDIR}${PREFIX}/share/man/man1/tvtwm.1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	astime
 PORTVERSION=	2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	AFTERSTEP/apps/astime/ \
 		http://tigr.net/afterstep/download/astime/
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
-PLIST_FILES=	bin/astime man/man1/astime.1.gz
+PLIST_FILES=	bin/astime share/man/man1/astime.1.gz
 
 post-build:
 	@${LN} -sf astime.man ${WRKSRC}/astime.1
@@ -25,6 +25,6 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} astime \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} astime.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

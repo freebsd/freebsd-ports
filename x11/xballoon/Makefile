@@ -1,6 +1,6 @@
 PORTNAME=	xballoon
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://kozos.jp/myfreesoft/
 
@@ -13,7 +13,7 @@ USE_XORG=	xpm xmu xaw
 ALL_TARGET=	xballoon
 
 PLIST_FILES=	bin/xballoon \
-		man/man1/xballoon.1.gz
+		share/man/man1/xballoon.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
@@ -22,6 +22,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xballoon ${STAGEDIR}${PREFIX}/bin/xballoon
-	${INSTALL_MAN} ${WRKSRC}/xballoon.man ${STAGEDIR}${MANPREFIX}/man/man1/xballoon.1
+	${INSTALL_MAN} ${WRKSRC}/xballoon.man ${STAGEDIR}${PREFIX}/share/man/man1/xballoon.1
 
 .include <bsd.port.mk>
