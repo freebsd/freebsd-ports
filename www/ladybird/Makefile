@@ -1,5 +1,5 @@
 PORTNAME=	ladybird
-PORTVERSION=	g20231216
+PORTVERSION=	g20240109
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/unicode-org/cldr-json/releases/download/${CLDRVERSION}/:cldr \
 		https://www.unicode.org/Public/${UCDVERSION}/ucd/:ucd \
@@ -27,14 +27,13 @@ ONLY_FOR_ARCHS_REASON=	other architectures not recognised by build system
 BROKEN_i386=	Userland/Libraries/LibJIT/GDBElf.cpp:29:24: bit cast source size does not equal destination size
 
 BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list
-LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf
 
 USES=		cmake:testing compiler:c++20-lang gl localbase:ldflags python:build qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	SerenityOS
 GH_PROJECT=	serenity
-GH_TAGNAME=	36f0499cc84ccfcb2d1867b683ec732d247a6827
+GH_TAGNAME=	343d6b001fa94d9707d443f00d295fdfcc4f1511
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_QT=		base tools:build wayland multimedia
@@ -60,6 +59,11 @@ PLIST_FILES=	${PLIST_FILES_${ARCH}}
 PLIST_FILES_amd64=	lib/liblagom-x86.so \
 			lib/liblagom-x86.so.0 \
 			lib/liblagom-x86.so.0.0.0
+
+OPTIONS_DEFINE=	PULSEAUDIO
+OPTIONS_DEFAULT=	PULSEAUDIO
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_CMAKE_BOOL=	HAVE_PULSEAUDIO
 
 post-extract:
 	${MKDIR} ${CONFIGURE_WRKSRC}/caches/PublicSuffix
