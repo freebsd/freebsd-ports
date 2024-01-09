@@ -1,6 +1,6 @@
 PORTNAME=	genpatch
 PORTVERSION=	1.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -16,9 +16,9 @@ SUB_LIST=	WORKPATH=${PORTWORK}
 PLIST_FILES=	bin/dupe \
 		bin/genpatch \
 		bin/portfix \
-		man/man1/dupe.1.gz \
-		man/man1/genpatch.1.gz \
-		man/man1/portfix.1.gz
+		share/man/man1/dupe.1.gz \
+		share/man/man1/genpatch.1.gz \
+		share/man/man1/portfix.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -41,6 +41,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/genpatch ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/portfix  ${STAGEDIR}${PREFIX}/bin
 	(cd ${FILESDIR} && ${INSTALL_MAN} dupe.1 genpatch.1 portfix.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

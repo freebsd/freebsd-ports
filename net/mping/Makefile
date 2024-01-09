@@ -1,5 +1,6 @@
 PORTNAME=	mping
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mping.uninett.no/
 
@@ -13,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/mping \
-		man/man8/mping.8.gz
+		share/man/man8/mping.8.gz
 PORTDOCS=	ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mping ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/man/mping.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/mping.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	inplace
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		LOCAL/knu
@@ -11,13 +11,13 @@ WWW=		https://akinori.org/ #inplace
 
 USES=		tar:bzip2 uidfix ruby shebangfix
 
-MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"
+MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${PREFIX}/share"
 MAKEFILE=	BSDmakefile
 
 SHEBANG_FILES=	lib/inplace.rb
 
 PLIST_FILES=	bin/inplace \
-		man/man1/inplace.1.gz
+		share/man/man1/inplace.1.gz
 
 test: build
 	cd ${WRKSRC}; ${MAKE} test

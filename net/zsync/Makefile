@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${_BINS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${_MANPAGE:S,^,${WRKSRC}/doc/,} \
-		${STAGEDIR}${MANPREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

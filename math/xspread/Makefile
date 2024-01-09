@@ -1,6 +1,6 @@
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://archive.debian.org/%SUBDIR%/ \
 		http://mirror.safehostnet.com/debian-archive/%SUBDIR%/ \
@@ -20,8 +20,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	*
-PLIST_FILES=	bin/pxspread bin/xspread man/man1/pxspread.1.gz \
-		man/man1/xspread.1.gz
+PLIST_FILES=	bin/pxspread bin/xspread \
+		share/man/man1/pxspread.1.gz \
+		share/man/man1/xspread.1.gz
 
 OPTIONS_DEFINE=	X11 DOCS
 
@@ -38,8 +39,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pxspread ${STAGEDIR}${PREFIX}/bin/pxspread
 	${INSTALL_PROGRAM} ${WRKSRC}/xspread ${STAGEDIR}${PREFIX}/bin/xspread
-	${INSTALL_MAN} ${WRKSRC}/pxspread.man ${STAGEDIR}${MANPREFIX}/man/man1/pxspread.1
-	${INSTALL_MAN} ${WRKSRC}/xspread.man ${STAGEDIR}${MANPREFIX}/man/man1/xspread.1
+	${INSTALL_MAN} ${WRKSRC}/pxspread.man ${STAGEDIR}${PREFIX}/share/man/man1/pxspread.1
+	${INSTALL_MAN} ${WRKSRC}/xspread.man ${STAGEDIR}${PREFIX}/share/man/man1/xspread.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

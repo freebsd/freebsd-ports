@@ -1,6 +1,6 @@
 PORTNAME=	gtk-gnutella
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-O -Dyacc='byacc' \
 		-Dprefix='${PREFIX}' \
 		-Dprivlib='${DATADIR}' \
-		-Dmansrc='${MANPREFIX}/man/man1' \
+		-Dmansrc='${PREFIX}/share/man/man1' \
 		-Dlocale='${PREFIX}/share/locale' \
 		-Dcc='${CC}' -Doptimize='${CFLAGS}' \
 		-Dccflags='${CPPFLAGS}' -Dldflags='${LDFLAGS}' \

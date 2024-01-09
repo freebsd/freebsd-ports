@@ -1,6 +1,6 @@
 PORTNAME=	portal
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/culot/portal
 LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	culot
@@ -26,6 +26,6 @@ LDFLAGS+=	-L${NCURSESLIB}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>
