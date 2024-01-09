@@ -2,17 +2,17 @@
 - --version is a GNUism which BSD diff doesn't support
 - Skip bogus NEON check when soft-enabled on armv6
 
---- configure.orig	2023-02-08 01:33:51 UTC
+--- configure.orig	2024-01-09 21:12:22 UTC
 +++ configure
-@@ -107,6 +107,7 @@ all_platforms="${all_platforms} arm64-win64-vs17"
- all_platforms="${all_platforms} arm64-win64-vs15"
- all_platforms="${all_platforms} arm64-win64-vs16"
+@@ -110,6 +110,7 @@ all_platforms="${all_platforms} arm64-win64-vs17-clang
+ all_platforms="${all_platforms} arm64-win64-vs16-clangcl"
  all_platforms="${all_platforms} arm64-win64-vs17"
+ all_platforms="${all_platforms} arm64-win64-vs17-clangcl"
 +all_platforms="${all_platforms} armv6-linux-gcc"
  all_platforms="${all_platforms} armv7-android-gcc"   #neon Cortex-A8
  all_platforms="${all_platforms} armv7-darwin-gcc"    #neon Cortex-A8
  all_platforms="${all_platforms} armv7-linux-rvct"    #neon Cortex-A8
-@@ -124,6 +125,7 @@ all_platforms="${all_platforms} ppc64le-linux-gcc"
+@@ -127,6 +128,7 @@ all_platforms="${all_platforms} ppc64le-linux-gcc"
  all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
  all_platforms="${all_platforms} ppc64le-linux-gcc"
@@ -20,7 +20,7 @@
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -183,7 +185,7 @@ done
+@@ -187,7 +189,7 @@ done
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
  
@@ -29,7 +29,7 @@
    die "diff missing: Try installing diffutils via your package manager."
  fi
  
-@@ -621,9 +623,6 @@ EOF
+@@ -633,9 +635,6 @@ EOF
  
      check_header vpx/vpx_integer.h -I${source_path} && enable_feature vpx_ports
  

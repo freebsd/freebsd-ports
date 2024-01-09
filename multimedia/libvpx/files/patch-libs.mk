@@ -1,6 +1,6 @@
---- libs.mk.orig	2017-01-12 20:27:27 UTC
+--- libs.mk.orig	2024-01-09 21:12:22 UTC
 +++ libs.mk
-@@ -339,8 +339,8 @@ else
+@@ -408,8 +408,8 @@ endif
  	$(qexec)echo 'Libs.private: -lm' >> $@
  endif
  	$(qexec)echo 'Cflags: -I$${includedir}' >> $@
@@ -9,5 +9,5 @@
 +INSTALL-LIBS-yes += libdata/pkgconfig/vpx.pc
 +INSTALL_MAPS += libdata/pkgconfig/%.pc %.pc
  CLEAN-OBJS += vpx.pc
- endif
  
+ ifeq ($(CONFIG_ENCODERS),yes)
