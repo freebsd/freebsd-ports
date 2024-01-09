@@ -1,0 +1,13 @@
+--- getversion.orig	2023-10-25 08:03:45 UTC
++++ getversion
+@@ -74,8 +74,8 @@ generate_version_string_from_dir() {
+ 
+ if [ -s "RELEASE" ]; then
+     cat RELEASE
+-elif [ "`git rev-parse --is-inside-work-tree 2>/dev/null`" = "true" ]; then
+-    generate_version_string
++#elif [ "`git rev-parse --is-inside-work-tree 2>/dev/null`" = "true" ]; then
++#    generate_version_string
+ elif [ -n "`generate_version_string_from_dir`" ]; then
+     generate_version_string_from_dir
+ else

@@ -1,12 +1,13 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-common
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Common components between a munin node and server
 WWW=		https://munin-monitoring.org/
+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay

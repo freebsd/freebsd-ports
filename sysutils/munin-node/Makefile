@@ -1,12 +1,13 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Node-specific part of Munin
 WWW=		https://munin-monitoring.org/
+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
@@ -25,6 +26,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Net-Server>=0:net/p5-Net-Server
 
 USES=		cpe gmake perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	munin-monitoring
 USE_RC_SUBR=	munin-asyncd munin-node
 
 SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node \
