@@ -1,6 +1,6 @@
---- Makefile.am.orig	2017-01-31 14:52:10 UTC
+--- Makefile.am.orig	2023-03-30 02:10:16 UTC
 +++ Makefile.am
-@@ -51,7 +51,8 @@ endif
+@@ -51,7 +51,8 @@ install-data-hook:
  install-data-hook:
  	mkdir -p $(DESTDIR)$(datadir)/@PACKAGE@/; \
  	for d in $$(cat data-manifest); do \
@@ -10,7 +10,7 @@
  	mv $(DESTDIR)$(datadir)/@PACKAGE@/test $(DESTDIR)$(datadir)/@PACKAGE@/tests; \
  	cp test/testcases/xmlonly.sh $(DESTDIR)$(datadir)/@PACKAGE@/tests/testcases/configbasic-xml.filter
  
-@@ -66,7 +67,7 @@ all-local:
+@@ -61,7 +62,7 @@ all-local:
  		--build-base $(shell readlink -f $(builddir))/build \
  		--verbose)
  
@@ -18,4 +18,4 @@
 +python_prefix = --prefix=$(prefix) --root=$(DESTDIR)
  
  install-exec-local:
- 	-mkdir -p $(DESTDIR)$(pkgpythondir)
+ 	$(INSTALL) -d -m 770 $(DESTDIR)/${localstatedir}/log/crmsh
