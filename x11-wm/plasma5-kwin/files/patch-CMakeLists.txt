@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -394,9 +394,12 @@
+                  HAVE_SCHED_RESET_ON_FORK
+                  "Required for running kwin_wayland with real-time scheduling")
+ 
+ 
+-pkg_check_modules(PipeWire IMPORTED_TARGET libpipewire-0.3>=0.3.29)
+-add_feature_info(PipeWire PipeWire_FOUND "Required for Wayland screencasting")
++option(KWIN_BUILD_PIPEWIRE "Required for Wayland screencasting" ON)
++if (KWIN_BUILD_PIPEWIRE)
++    pkg_check_modules(PipeWire IMPORTED_TARGET libpipewire-0.3>=0.3.29 REQUIRED)
++    add_feature_info(PipeWire PipeWire_FOUND "Required for Wayland screencasting")
++endif()
+ 
+ if (KWIN_BUILD_NOTIFICATIONS)
+     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Notifications)
