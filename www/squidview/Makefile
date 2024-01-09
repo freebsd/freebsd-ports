@@ -1,5 +1,6 @@
 PORTNAME=	squidview
 PORTVERSION=	0.86
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.rillion.net/squidview/
 
@@ -23,6 +24,6 @@ do-install:
 	${INSTALL_DATA} ${DATAFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DATADIR}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_MAN} ${WRKSRC}/squidview.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/squidview.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

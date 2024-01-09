@@ -1,5 +1,6 @@
 PORTNAME=	migrate
 PORTVERSION=	3.6.11
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -39,9 +40,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-n ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PORTNAME}-n ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${LN} -sf ${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}-n.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}-n.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

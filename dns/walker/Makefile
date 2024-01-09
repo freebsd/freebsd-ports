@@ -1,6 +1,6 @@
 PORTNAME=	walker
 PORTVERSION=	3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/walker/releases/
 
@@ -19,14 +19,14 @@ SHEBANG_FILES=	walker
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/walker man/man1/walker.1.gz
+PLIST_FILES=	bin/walker share/man/man1/walker.1.gz
 PORTDOCS=	index.html
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/walker ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/walker.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/walker.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -48,9 +48,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/z80-asm ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/z80-mon ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,6 @@
 PORTNAME=	cvs2cl
 PORTVERSION=	2.73
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/ \
 		http://www.sysfault.org/freebsd/${DIST_SUBDIR}/
@@ -21,7 +22,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -36,6 +37,6 @@ pre-install:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

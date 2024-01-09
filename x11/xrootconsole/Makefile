@@ -1,6 +1,6 @@
 PORTNAME=	xrootconsole
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ WWW=		https://sourceforge.net/projects/xrootconsole/
 USES=		gmake xorg
 USE_XORG=	x11
 
-PLIST_FILES=	bin/xrootconsole man/man1/xrootconsole.1.gz
+PLIST_FILES=	bin/xrootconsole share/man/man1/xrootconsole.1.gz
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC =|CC ?=|g ; \
 		 s|^CFLAGS = -O2|CFLAGS +=|g ; \
@@ -19,6 +19,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrootconsole ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xrootconsole.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xrootconsole.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

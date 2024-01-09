@@ -69,7 +69,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/signal-cli.1 \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DBUS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/services

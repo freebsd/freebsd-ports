@@ -1,7 +1,7 @@
 bin/flexbackup
 etc/flexbackup.conf.sample
-man/man1/flexbackup.1.gz
-man/man5/flexbackup.conf.5.gz
+share/man/man1/flexbackup.1.gz
+share/man/man5/flexbackup.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,6 +1,6 @@
 PORTNAME=	tifmerge
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 DISTNAME=	tiff
@@ -19,7 +19,7 @@ PLIST_FILES=	lib/libtifmerge.a \
 		include/tifmerge.h \
 		lib/libtifmerge.so \
 		lib/libtifmerge.so.1 \
-		man/man3/tifmerge.3.gz
+		share/man/man3/tifmerge.3.gz
 
 post-extract:
 	@${MV} ${WRKSRC}/TIFMERGE.H ${WRKSRC}/tifmerge.h
@@ -33,6 +33,6 @@ do-install:
 	${LN} -fs libtifmerge.so.1 ${STAGEDIR}${PREFIX}/lib/libtifmerge.so
 	${INSTALL_DATA} ${WRKSRC}/libtifmerge.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/tifmerge.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/tifmerge.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/tifmerge.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	freeguide
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
@@ -18,7 +19,7 @@ USE_ANT=	yes
 NO_ARCH=	yes
 
 MAKE_ARGS=	-Dinstall_share_dir=${STAGEDIR}${PREFIX}/share \
-		-Dinstall_man1_dir=${STAGEDIR}${MAN1PREFIX} \
+		-Dinstall_man1_dir=${STAGEDIR}${PREFIX}/share \
 		-Dinstall_java_bin=${JAVA} \
 		-Dinstall_real_doc_dir=${DOCSDIR} \
 		-Dinstall_bin_dir=${STAGEDIR}${PREFIX}/bin \

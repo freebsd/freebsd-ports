@@ -1,5 +1,6 @@
 PORTNAME=	birthday
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
@@ -15,11 +16,11 @@ USES=		gmake tar:bzip2
 ALL_TARGET=	birthday
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DUNIX"
 
-PLIST_FILES=	bin/birthday man/man1/birthday.1.gz
+PLIST_FILES=	bin/birthday share/man/man1/birthday.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/birthday ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/birthday.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/birthday.1
+		${STAGEDIR}${PREFIX}/share/man/man1/birthday.1
 
 .include <bsd.port.mk>

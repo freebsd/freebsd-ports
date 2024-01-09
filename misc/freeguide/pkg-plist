@@ -1,5 +1,5 @@
 bin/freeguide
-man/man1/freeguide.1.gz
+share/man/man1/freeguide.1.gz
 %%DOCSDIR%%/DownloadAndInstall/RecentChanges.html
 %%DOCSDIR%%/DownloadAndInstall/LinuxOthers.html
 %%DOCSDIR%%/DownloadAndInstall/LinuxDebian.html

@@ -1,6 +1,6 @@
 PORTNAME=	lcdtest
 PORTVERSION=	1.18
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -21,7 +21,7 @@ USES=		sdl
 USE_SDL=	sdl image ttf
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}.1.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
 
@@ -43,7 +43,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/desktop/${PORTNAME}.desktop \

@@ -1,5 +1,6 @@
 PORTNAME=	rman
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/polyglotman/polyglotman/${PORTVERSION}
 
@@ -7,9 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse compile man pages from formatted form
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		BINDIR="${PREFIX}/bin" MANDIR="${MAN1PREFIX}/man/man1"
+		BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/share/man/man1"
 
-PLIST_FILES=	bin/rman man/man1/rman.1.gz
+PLIST_FILES=	bin/rman share/man/man1/rman.1.gz
 
 .include <bsd.port.options.mk>
 

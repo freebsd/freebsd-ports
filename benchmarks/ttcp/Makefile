@@ -1,6 +1,6 @@
 PORTNAME=	ttcp
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	https://BSDforge.com/projects/source/benchmarks/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
@@ -31,7 +31,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttcp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

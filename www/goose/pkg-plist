@@ -1,4 +1,4 @@
 bin/goose
-man/man1/goose.1.gz
+share/man/man1/goose.1.gz
 %%DATADIR%%/GoogleSearch.wsdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/goose.conf.example

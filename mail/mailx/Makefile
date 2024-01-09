@@ -35,7 +35,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mail ${STAGEDIR}${PREFIX}/bin/mailx
 	${INSTALL_MAN} ${WRKSRC}/mail.1.gz \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1/mailx.1.gz
+		${STAGEDIR}${PREFIX}/share/man/man1/mailx.1.gz
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/mailx
 	${INSTALL_DATA} ${DISTDIR}/mailx-memo-2.2.8R \
 		${STAGEDIR}${DOCSDIR}

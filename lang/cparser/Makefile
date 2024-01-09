@@ -1,5 +1,6 @@
 PORTNAME=	cparser
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libfirm.so:devel/libfirm
 USES=		gmake pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/cparser \
-		man/man1/cparser.1.gz
+		share/man/man1/cparser.1.gz
 
 BUILDDIR=	optimize
 
@@ -29,6 +30,6 @@ post-patch-DEBUG-off:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${BUILDDIR}/cparser ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cparser.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cparser.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

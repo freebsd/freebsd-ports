@@ -1,5 +1,6 @@
 PORTNAME=	httperf
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,14 +17,14 @@ MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 		exec_prefix=${PREFIX}
 
 PLIST_FILES=	bin/httperf \
-		man/man1/httperf.1.gz
+		share/man/man1/httperf.1.gz
 PORTDOCS=	ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 do-install-DOCS-on:

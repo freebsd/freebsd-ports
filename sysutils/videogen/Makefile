@@ -1,6 +1,6 @@
 PORTNAME=	videogen
 PORTVERSION=	0.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.dynaweb.hu/opensource/videogen/download/
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAKE_JOBS_UNSAFE=yes
 
-PLIST_FILES=	bin/videogen man/man1/videogen.1.gz
+PLIST_FILES=	bin/videogen share/man/man1/videogen.1.gz
 PORTDOCS=	BUGS CHANGES README THANKS
 PORTEXAMPLES=	*
 
@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1x ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1x ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

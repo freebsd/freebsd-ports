@@ -1,5 +1,6 @@
 PORTNAME=	dbacl
 PORTVERSION=	1.14.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 PROGRAMS=	bayesol dbacl mailinspect hmine hypex
 SCRIPTS=	mailcross mailtoe mailfoot
 MAN=		bayesol.1 dbacl.1 mailcross.1 mailinspect.1 mailtoe.1 mailfoot.1
-PLIST_FILES=	${PROGRAMS:S,^,bin/,} ${SCRIPTS:S,^,bin/,} ${MAN:S,^,man/man1/,:S,$,.gz,}
+PLIST_FILES=	${PROGRAMS:S,^,bin/,} ${SCRIPTS:S,^,bin/,} ${MAN:S,^,share/man/man1/,:S,$,.gz,}
 DOCS=		AUTHORS ChangeLog README doc/dbacl.ps \
 		doc/email.html doc/tutorial.html doc/costs.ps
 PORTDOCS=	${DOCS:T}
@@ -35,7 +36,7 @@ do-install:
 		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/man && \
-		${INSTALL_MAN} ${MAN} ${STAGEDIR}${MAN1PREFIX}/man/man1
+		${INSTALL_MAN} ${MAN} ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	japana
 PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese www
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	japana
 
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.default \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
@@ -24,7 +24,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/default.conf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.default
 

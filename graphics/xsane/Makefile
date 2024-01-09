@@ -1,6 +1,6 @@
 PORTNAME=	xsane
 PORTVERSION=	0.999
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -48,7 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@POSUB@ doc|@POSUB@|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.man ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 

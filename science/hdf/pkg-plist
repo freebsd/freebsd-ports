@@ -90,11 +90,11 @@ lib/libmfhdf.a
 lib/libmfhdf.so
 lib/libmfhdf.so.3
 lib/libmfhdf.so.3.0.0
-man/man1/hdf.1.gz
-man/man1/hdfunpac.1.gz
-man/man1/ncdump.1.gz
-man/man1/ncgen.1.gz
-man/man3/gr_chunk.3.gz
+share/man/man1/hdf.1.gz
+share/man/man1/hdfunpac.1.gz
+share/man/man1/ncdump.1.gz
+share/man/man1/ncgen.1.gz
+share/man/man3/gr_chunk.3.gz
 %%DATADIR%%4_examples/README
 %%DATADIR%%4_examples/c/AN_create_annotation.c
 %%DATADIR%%4_examples/c/AN_get_annotation_info.c

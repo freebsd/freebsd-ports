@@ -1,5 +1,6 @@
 PORTNAME=	unoconv
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://dag.wieers.com/home-made/${PORTNAME}/ \
 		SF/nemysisfreebsdp/textproc/:icons
@@ -43,7 +44,7 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

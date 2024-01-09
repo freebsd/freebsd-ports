@@ -1,6 +1,6 @@
 PORTNAME=	fracplanet
 PORTVERSION=	0.5.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons
@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/

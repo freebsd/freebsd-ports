@@ -1,6 +1,6 @@
 bin/ldapdiff
 @sample etc/ldapdiff.conf.sample
-man/man1/ldapdiff.1.gz
+share/man/man1/ldapdiff.1.gz
 %%DATADIR%%/samples/addentry.sh
 %%DATADIR%%/samples/webtomware_without_jpeg.user.ldif
 %%DATADIR%%/samples/webtomware.init.ldif

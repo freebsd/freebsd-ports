@@ -1,6 +1,6 @@
 PORTNAME=	denature
 PORTVERSION=	0.6.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,7 @@ USE_JAVA=	yes
 POD2MAN?=	pod2man
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/denature man/man1/denature.1.gz
+PLIST_FILES=	bin/denature share/man/man1/denature.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -33,6 +33,6 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/denature ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/denature.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/denature.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

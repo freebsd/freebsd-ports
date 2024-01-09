@@ -1,6 +1,6 @@
 PORTNAME=	mysqlsla
 PORTVERSION=	2.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		perl5 shebangfix
 WRKSRC_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/mysqlsla \
-		man/man3/mysqlsla.3.gz
+		share/man/man3/mysqlsla.3.gz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	daniel-nichter
@@ -31,6 +31,6 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/mysqlsla ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mysqlsla.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/mysqlsla.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>

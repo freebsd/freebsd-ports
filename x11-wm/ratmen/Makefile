@@ -1,6 +1,6 @@
 PORTNAME=	ratmen
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
@@ -15,10 +15,10 @@ USES=		perl5 xorg
 USE_XORG=	x11
 USE_PERL5=	build
 
-PLIST_FILES=	bin/ratmen man/man1/ratmen.1.gz
+PLIST_FILES=	bin/ratmen share/man/man1/ratmen.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratmen ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ratmen.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ratmen.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
