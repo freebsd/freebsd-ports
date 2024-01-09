@@ -1,7 +1,6 @@
 PORTNAME=	btop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.13
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -12,12 +11,18 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
-USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	aristocratos
 
-CXXFLAGS_i386=	-latomic
-CXXFLAGS_powerpc=	-latomic
 MAKE_ARGS=	STRIP=true ADDFLAGS="${CXXFLAGS} ${LDFLAGS}" VERBOSE=true
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1302507
+USE_GCC=	yes
+.if ${ARCH} == i386 || ${ARCH} == powerpc
+LDFLAGS+=	-latomic
+.endif
+.endif
 
 .include <bsd.port.mk>

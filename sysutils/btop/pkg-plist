@@ -3,6 +3,7 @@ share/applications/btop.desktop
 %%DATADIR%%/README.md
 %%DATADIR%%/themes/HotPurpleTrafficLight.theme
 %%DATADIR%%/themes/adapta.theme
+%%DATADIR%%/themes/adwaita.theme
 %%DATADIR%%/themes/ayu.theme
 %%DATADIR%%/themes/dracula.theme
 %%DATADIR%%/themes/dusklight.theme
@@ -14,6 +15,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/gruvbox_dark.theme
 %%DATADIR%%/themes/gruvbox_dark_v2.theme
 %%DATADIR%%/themes/gruvbox_material_dark.theme
+%%DATADIR%%/themes/horizon.theme
 %%DATADIR%%/themes/kyli0x.theme
 %%DATADIR%%/themes/matcha-dark-sea.theme
 %%DATADIR%%/themes/monokai.theme
