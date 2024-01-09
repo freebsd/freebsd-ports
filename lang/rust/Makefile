@@ -159,7 +159,7 @@ post-patch:
 post-patch-PORT_LLVM-on:
 # WASM target hardcodes bundled lld
 	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_VERSION}"|' \
-		${WRKSRC}/compiler/rustc_target/src/spec/wasm_base.rs
+		${WRKSRC}/compiler/rustc_target/src/spec/base/wasm.rs
 
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
