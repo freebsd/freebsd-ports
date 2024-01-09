@@ -1,5 +1,6 @@
 PORTNAME=	stowES
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://os.inf.tu-dresden.de/~adam/stowES/download/
 
@@ -18,7 +19,7 @@ NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO \
 		${PORTNAME}.html ${PORTNAME}.pod ${PORTNAME}.txt
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -27,7 +28,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	s5
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://meyerweb.com/eric/tools/s5/v/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -33,6 +33,6 @@ do-install:
 	@(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} "*.html ${S5_SUBDIRS}" ${STAGEDIR}${S5_DIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/s5 ${STAGEDIR}${PREFIX}/bin/s5
-	${INSTALL_MAN} ${WRKDIR}/s5.1 ${STAGEDIR}${MANPREFIX}/man/man1/s5.1
+	${INSTALL_MAN} ${WRKDIR}/s5.1 ${STAGEDIR}${PREFIX}/share/man/man1/s5.1
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snort-rep ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/snort-rep.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/snort-rep.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/snort-rep-mail ${STAGEDIR}${EXAMPLESDIR}
 

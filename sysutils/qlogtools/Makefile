@@ -1,6 +1,6 @@
 PORTNAME=	qlogtools
 PORTVERSION=	3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-configure:
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${STAGEDIR}${MANPREFIX}/man"	> ${WRKSRC}/conf-man
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/share/man"	> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${STRIP} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 

@@ -1,6 +1,6 @@
 PORTNAME=	asmem
 PORTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	https://tigr.net/afterstep/download/asmem/
 
@@ -24,6 +24,6 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asmem ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/asmem.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/asmem.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

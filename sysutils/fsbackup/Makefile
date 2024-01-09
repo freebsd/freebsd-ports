@@ -1,6 +1,6 @@
 PORTNAME=	fsbackup
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.opennet.ru/dev/fsbackup/src/
 DISTNAME=	fsbackup-1.2pl1
@@ -19,7 +19,7 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	*.pl contrib/*.pl
 
 do-install:
-	cd ${WRKSRC}; ./install.pl --prefix=${PREFIX}/fsbackup --prefix-man=${MANPREFIX}/man/man1 --dest=${STAGEDIR}
+	cd ${WRKSRC}; ./install.pl --prefix=${PREFIX}/fsbackup --prefix-man=${PREFIX}/share/man/man1 --dest=${STAGEDIR}
 	${RM} ${STAGEDIR}${PREFIX}/fsbackup/fsbackup.1
 
 .include <bsd.port.mk>

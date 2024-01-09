@@ -24,6 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/catdvi ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/catdvi.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/catdvi.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

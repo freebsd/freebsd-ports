@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/unroff ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/misc
 .for i in doc/tmac.hyper misc/sample.unroff
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}/misc

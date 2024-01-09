@@ -1,6 +1,6 @@
 PORTNAME=	sectok
 PORTVERSION=	20030825
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -31,6 +31,6 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

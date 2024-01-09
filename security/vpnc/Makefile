@@ -1,6 +1,6 @@
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	security net-vpn
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 		LOCAL/ehaupt
@@ -61,7 +61,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/sbin/vpnc-disconnect
 	${INSTALL_DATA} ${WRKSRC}/vpnc.conf \
 		${STAGEDIR}${PREFIX}/etc/vpnc.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/vpnc.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/vpnc.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -69,6 +69,6 @@ do-install-DOCS-on:
 
 do-install-DECRYPT-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cisco-decrypt.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cisco-decrypt.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

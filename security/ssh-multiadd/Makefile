@@ -1,5 +1,6 @@
 PORTNAME=	ssh-multiadd
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SUNSITE/system/network/telnet
 
@@ -9,7 +10,7 @@ COMMENT=	Tool to add multiple ssh keys to the authentication agent
 USES=		python:run
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/ssh-multiadd man/man1/ssh-multiadd.1.gz
+PLIST_FILES=	bin/ssh-multiadd share/man/man1/ssh-multiadd.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -18,6 +19,6 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ssh-multiadd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ssh-multiadd.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ssh-multiadd.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

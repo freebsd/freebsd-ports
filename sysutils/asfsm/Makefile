@@ -15,10 +15,10 @@ GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/asfsm man/man1/asfsm.1.gz
+PLIST_FILES=	bin/asfsm share/man/man1/asfsm.1.gz
 
 post-build:
-	@${LN} -sf asfsm.man ${WRKSRC}/asfsm.1
+	@${LN} -sf asfsm.man share/${WRKSRC}/asfsm.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asfsm ${STAGEDIR}${PREFIX}/bin
