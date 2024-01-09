@@ -6,6 +6,7 @@
 /* eslint-disable no-console */
 
 const https = require('https');
+const { HttpsProxyAgent } = require('https-proxy-agent');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -52,7 +53,11 @@ async function downloadIfNeeded() {
 function download() {
   console.log(`downloading ${URL}`);
   return new Promise((resolve, reject) => {
-    https.get(URL, async res => {
+    let options = {};
+    if (process.env.HTTPS_PROXY != undefined) {
+      options.agent = new HttpsProxyAgent(process.env.HTTPS_PROXY);
+    }
+    https.get(URL, options, async res => {
       try {
         const out = fs.createWriteStream(tmpFile);
 

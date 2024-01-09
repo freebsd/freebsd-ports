@@ -1,5 +1,6 @@
 PORTNAME=	popa3d
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/pub/projects/popa3d/
@@ -81,7 +82,7 @@ pre-install:
 do-install:
 	${INSTALL} ${COPY} -m 500 \
 	    ${WRKSRC}/popa3d ${STAGEDIR}${PREFIX}/libexec/popa3d
-	${INSTALL_MAN} ${WRKSRC}/popa3d.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/popa3d.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 .if ${PORT_OPTIONS:MSMTP_AFTER_POP3} && !defined(WITHOUT_POPAUTH_M4)
 	${MKDIR} ${STAGEDIR}${CFDIR}/hack
 	${INSTALL_DATA} ${FILESDIR}/popauth.m4 ${STAGEDIR}${CFDIR}/hack/

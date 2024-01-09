@@ -1,22 +1,20 @@
---- CMakeLists.txt.orig	2023-04-20 16:01:48 UTC
+--- CMakeLists.txt.orig	2023-10-04 06:49:20 UTC
 +++ CMakeLists.txt
-@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
- 
- project(pyf3d)
+@@ -5,7 +5,7 @@ include(f3dPython)
+ list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake")
+ include(f3dPython)
  
 -find_package(Python 3.6 COMPONENTS Interpreter Development)
 +find_package(Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development)
  find_package(pybind11 2.2 REQUIRED)
  
  pybind11_add_module(pyf3d MODULE F3DPythonBindings.cxx)
-@@ -33,6 +33,10 @@ endif()
- if (APPLE OR UNIX)
-   set_target_properties(pyf3d PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
- endif ()
-+
-+set(PYTHON_INSTALL_PATH "${CMAKE_INSTALL_LIBDIR}/python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages")
-+install(TARGETS pyf3d
-+  LIBRARY DESTINATION ${PYTHON_INSTALL_PATH} COMPONENT pythonmodule)
+@@ -21,7 +21,7 @@ set(f3d_python_package_suffix "python${Python_VERSION_
  
- # testing
- if(BUILD_TESTING)
+ set(f3d_python_package_name "f3d")
+ set(f3d_python_package_suffix "python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages")
+-set(f3d_module_dir "${CMAKE_BINARY_DIR}$<${F3D_MULTI_CONFIG_GENERATOR}:/$<CONFIG>>/${f3d_python_package_name}")
++set(f3d_module_dir "${CMAKE_BINARY_DIR}/${f3d_python_package_name}") # workaround for https://github.com/f3d-app/f3d/issues/1149
+ 
+ set_target_properties(pyf3d PROPERTIES
+   CXX_STANDARD 14

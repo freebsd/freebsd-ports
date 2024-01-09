@@ -1,5 +1,6 @@
 PORTNAME=	fasta
 PORTVERSION=	21.1.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta2/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/fasta/fasta2/
@@ -38,12 +39,12 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${MAN_FILES:S,^,${WRKSRC}/,} \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 .for mlink in tfasta lfasta plfasta fastx tfastx
-	${LN} -s fasta.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/${mlink}.1.gz
+	${LN} -s fasta.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/${mlink}.1.gz
 .endfor
-	${LN} -s align.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/align0.1.gz
-	${LN} -s align.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/plalign.1.gz
+	${LN} -s align.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/align0.1.gz
+	${LN} -s align.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/plalign.1.gz
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

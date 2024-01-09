@@ -1,6 +1,6 @@
 PORTNAME=	viz
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/fenner
 
@@ -14,12 +14,12 @@ USES=		tar:tgz
 
 MAKE_ARGS=	CC="${CC}" DEFS="${CFLAGS}"
 
-PLIST_FILES=	bin/viz bin/inviz man/man1/viz.1.gz man/man1/inviz.1.gz
+PLIST_FILES=	bin/viz bin/inviz share/man/man1/viz.1.gz share/man/man1/inviz.1.gz
 
 do-install:
 .for f in viz inviz
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>

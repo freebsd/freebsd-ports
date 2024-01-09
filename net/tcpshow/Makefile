@@ -1,6 +1,6 @@
 PORTNAME=	tcpshow
 PORTVERSION=	1.74
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	LOCAL/obrien
 DISTFILES=	tcpshow.c tcpshow.1
@@ -20,6 +20,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tcpshow.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tcpshow.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -5,10 +5,10 @@ bin/spipe
 bin/tai2tai64n
 bin/tai64n2tai
 bin/teepipe
-man/man1/multipipe.1.gz
-man/man1/multitail.1.gz
-man/man1/qfilelog.1.gz
-man/man1/spipe.1.gz
-man/man1/tai2tai64n.1.gz
-man/man1/tai64n2tai.1.gz
-man/man1/teepipe.1.gz
+share/man/man1/multipipe.1.gz
+share/man/man1/multitail.1.gz
+share/man/man1/qfilelog.1.gz
+share/man/man1/spipe.1.gz
+share/man/man1/tai2tai64n.1.gz
+share/man/man1/tai64n2tai.1.gz
+share/man/man1/teepipe.1.gz

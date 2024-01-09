@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.74.1
+PORTVERSION?=	1.75.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -68,8 +68,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2023-10-05
-RUST_BOOTSTRAP_VERSION?=	1.73.0
+BOOTSTRAPS_DATE?=		2023-11-16
+RUST_BOOTSTRAP_VERSION?=	1.74.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -159,7 +159,7 @@ post-patch:
 post-patch-PORT_LLVM-on:
 # WASM target hardcodes bundled lld
 	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_VERSION}"|' \
-		${WRKSRC}/compiler/rustc_target/src/spec/wasm_base.rs
+		${WRKSRC}/compiler/rustc_target/src/spec/base/wasm.rs
 
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64

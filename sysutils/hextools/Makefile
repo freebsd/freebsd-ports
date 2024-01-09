@@ -1,5 +1,6 @@
 PORTNAME=	hextools
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://avl.enemy.org/utils/hextools/
 
@@ -16,7 +17,7 @@ CONFLICTS_INSTALL=	z80pack # bin/bin2hex
 
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/hex2bin bin/bin2hex man/man1/bin2hex.1.gz man/man1/hex2bin.1.gz
+PLIST_FILES=	bin/hex2bin bin/bin2hex share/man/man1/bin2hex.1.gz share/man/man1/hex2bin.1.gz
 ALL_TARGET=	build
 
 post-extract:
@@ -25,7 +26,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex2bin ${STAGEDIR}${PREFIX}/bin/hex2bin
 	${INSTALL_PROGRAM} ${WRKSRC}/hexdump ${STAGEDIR}${PREFIX}/bin/bin2hex
-	${INSTALL_MAN} ${WRKSRC}/hex2bin.1 ${STAGEDIR}${MANPREFIX}/man/man1/hex2bin.1
-	${INSTALL_MAN} ${WRKSRC}/hexdump.1 ${STAGEDIR}${MANPREFIX}/man/man1/bin2hex.1
+	${INSTALL_MAN} ${WRKSRC}/hex2bin.1 ${STAGEDIR}${PREFIX}/share/man/man1/hex2bin.1
+	${INSTALL_MAN} ${WRKSRC}/hexdump.1 ${STAGEDIR}${PREFIX}/share/man/man1/bin2hex.1
 
 .include <bsd.port.mk>

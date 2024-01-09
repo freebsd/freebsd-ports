@@ -1,6 +1,6 @@
 PORTNAME=	retawq
 DISTVERSION=	0.2.6c
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.2.6c
 
@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
 
 PLIST_FILES=	bin/retawq \
-		man/man1/retawq.1.gz \
+		share/man/man1/retawq.1.gz \
 		share/locale/de/LC_MESSAGES/retawq.mo \
 		share/locale/es/LC_MESSAGES/retawq.mo \
 		share/locale/fr/LC_MESSAGES/retawq.mo \
@@ -43,7 +43,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/retawq ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .for lang in de es fr pt_BR
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \

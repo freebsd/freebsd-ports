@@ -1,5 +1,6 @@
 PORTNAME=	since
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://welz.org.za/projects/since/
 
@@ -13,10 +14,10 @@ USES=		gmake
 
 ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/since man/man1/since.1.gz
+PLIST_FILES=	bin/since share/man/man1/since.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/since ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/since.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/since.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

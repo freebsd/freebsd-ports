@@ -1,5 +1,6 @@
 PORTNAME=	xbomb
 PORTVERSION=	2.2b
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.org.uk/software/xbomb/download/
 
@@ -20,7 +21,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xbomb ${STAGEDIR}${PREFIX}/bin/xbomb
-	${INSTALL_MAN} ${WRKSRC}/xbomb.6 ${STAGEDIR}${MANPREFIX}/man/man6/xbomb.6
+	${INSTALL_MAN} ${WRKSRC}/xbomb.6 ${STAGEDIR}${PREFIX}/share/man/man6/xbomb.6
 	${INSTALL_DATA} ${WRKSRC}/xbomb.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XBomb
 	@${MKDIR} ${STAGEDIR}/var/games/xbomb
 	@${TOUCH} ${STAGEDIR}/var/games/xbomb/xbomb3.hi.sample

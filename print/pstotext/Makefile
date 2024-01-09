@@ -1,6 +1,6 @@
 PORTNAME=	pstotext
 PORTVERSION=	1.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	http://ftp.gwdg.de/pub/ghostscript/contrib/ \
 		http://ftp.sunet.se/pub/text-processing/postscript/interpreters/ghostscript/contrib/ \
@@ -22,7 +22,7 @@ SUB_LIST=	LICENSE=${LICENSE} \
 		LICENSE_DIR=${_LICENSE_DIR}
 
 PLIST_FILES=	bin/pstotext \
-		man/man1/pstotext.1.gz
+		share/man/man1/pstotext.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -31,6 +31,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pstotext ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

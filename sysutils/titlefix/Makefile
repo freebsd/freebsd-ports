@@ -1,5 +1,6 @@
 PORTNAME=	titlefix
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,6 +24,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf ${PORTNAME} titlefixid3
 	@cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf ${PORTNAME} titleid3
-	@${INSTALL_MAN} ${MAN1S:S,^,${WRKSRC}/man1/,} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${INSTALL_MAN} ${MAN1S:S,^,${WRKSRC}/man1/,} ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

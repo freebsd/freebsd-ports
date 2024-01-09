@@ -2360,6 +2360,9 @@
     SUBDIR += tomee
     SUBDIR += tor-browser
     SUBDIR += trac
+    SUBDIR += trac-accountmanager
+    SUBDIR += trac-spamfilter
+    SUBDIR += trac-tocmacro
     SUBDIR += trafficserver
     SUBDIR += transproxy
     SUBDIR += trunk

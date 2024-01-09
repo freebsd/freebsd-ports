@@ -1,6 +1,6 @@
 PORTNAME=	iselect
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	OSSP/tool/iselect
 
@@ -21,7 +21,7 @@ perl_OLD_CMD=	/sw/bin/perl
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/iselect man/man1/iselect.1.gz
+PLIST_FILES=	bin/iselect share/man/man1/iselect.1.gz
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	SLANG EXAMPLES
@@ -36,7 +36,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iselect ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/iselect.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/iselect.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/example && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}

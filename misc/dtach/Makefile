@@ -1,5 +1,6 @@
 PORTNAME=	dtach
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
@@ -14,13 +15,13 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	dtach
 
 PORTDOCS=	README
-PLIST_FILES=	bin/dtach man/man1/dtach.1.gz
+PLIST_FILES=	bin/dtach share/man/man1/dtach.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dtach ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dtach.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dtach.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -3,4 +3,4 @@ include/biblesync/biblesync.hh
 lib/libbiblesync.so
 lib/libbiblesync.so.2.1.0
 libdata/pkgconfig/biblesync.pc
-man/man7/biblesync.7.gz
+share/man/man7/biblesync.7.gz

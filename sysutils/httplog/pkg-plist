@@ -1,2 +1,2 @@
-man/man8/httplog.8.gz
 sbin/httplog
+share/man/man8/httplog.8.gz

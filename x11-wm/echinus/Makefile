@@ -1,6 +1,6 @@
 PORTNAME=	echinus
 PORTVERSION=	0.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://plhk.ru/static/echinus/
 
@@ -25,7 +25,7 @@ PLIST_FILES=	bin/echinus \
 		etc/echinus/iconify.xbm \
 		etc/echinus/max.xbm \
 		etc/echinus/echinusrc \
-		man/man1/echinus.1.gz
+		share/man/man1/echinus.1.gz
 
 SUB_FILES=	pkg-message
 
@@ -34,7 +34,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILES:S,^,${WRKSRC}/,} ${STAGEDIR}${ETCDIR}/
 

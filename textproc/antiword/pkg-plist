@@ -1,6 +1,6 @@
 bin/antiword
 bin/kantiword
-man/man1/antiword.1.gz
+share/man/man1/antiword.1.gz
 %%DATADIR%%/8859-1.txt
 %%DATADIR%%/8859-10.txt
 %%DATADIR%%/8859-11.txt

@@ -98,8 +98,8 @@ sbin/assplog
 %%DATADIR%%/stat.pl
 %%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
-man/man8/assp.8.gz
-man/man8/assplog.8.gz
+share/man/man8/assp.8.gz
+share/man/man8/assplog.8.gz
 %%ASSP_HOME%%/files
 %%ASSP_HOME%%/images
 %%ASSP_HOME%%/rebuildspamdb.pl

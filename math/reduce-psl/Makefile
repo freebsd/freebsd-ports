@@ -1,5 +1,6 @@
 PORTNAME=	reduce
 PORTVERSION=	${SFSUBDIR:S/snapshot_//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	SF/reduce-algebra/${SFSUBDIR}/
 PKGNAMESUFFIX=	-psl
@@ -37,7 +38,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${FILESDIR}/runpsl.sh ${STAGEDIR}${PREFIX}/bin/redpsl
-	${INSTALL_MAN} ${FILESDIR}/redpsl.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${FILESDIR}/redpsl.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${MKDIR} ${STAGEDIR}${DATADIR}/psl
 	${INSTALL_PROGRAM} ${REDUCE_BINS}/psl/bpsl ${STAGEDIR}${DATADIR}/psl/
 	(cd ${REDUCE_BINS}/psl && ${COPYTREE_SHARE} . \

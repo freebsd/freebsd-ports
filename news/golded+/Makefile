@@ -1,5 +1,6 @@
 PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	news mail
 MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots/${_SNAPDATE}
 DISTNAME=	gpsrc-115-${SNAPDATE}
@@ -46,7 +47,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gedlnx ${STAGEDIR}${PREFIX}/bin/golded
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gnlnx ${STAGEDIR}${PREFIX}/bin/goldnode
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rddtlnx ${STAGEDIR}${PREFIX}/bin/rddt
-	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in charset colorset config template
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/$i;

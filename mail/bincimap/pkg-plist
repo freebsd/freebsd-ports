@@ -1,9 +1,9 @@
 bin/bincimapd
 bin/bincimap-up
 @sample etc/bincimap/bincimap.conf.sample
-man/man1/bincimap-up.1.gz
-man/man1/bincimapd.1.gz
-man/man5/bincimap.conf.5.gz
+share/man/man1/bincimap-up.1.gz
+share/man/man1/bincimapd.1.gz
+share/man/man5/bincimap.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

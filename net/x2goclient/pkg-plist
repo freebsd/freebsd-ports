@@ -1,5 +1,5 @@
 bin/x2goclient
-man/man1/x2goclient.1.gz
+share/man/man1/x2goclient.1.gz
 share/applications/x2goclient.desktop
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO.GPGCARD
 share/icons/hicolor/128x128/apps/x2goclient.png

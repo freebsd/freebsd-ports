@@ -1,6 +1,6 @@
 PORTNAME=	prn
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	PORTS_JP
 DISTNAME=	${PORTNAME}
@@ -19,9 +19,9 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} cmtdefs ${STAGEDIR}${DATADIR})
 .for i in cmt cprn prn psconv
 	(cd ${WRKSRC} && ${INSTALL_MAN} ${i}.jman \
-		${STAGEDIR}${MANPREFIX}/man/man1/${i}.1)
+		${STAGEDIR}${PREFIX}/share/man/man1/${i}.1)
 .endfor
 	(cd ${WRKSRC} && ${INSTALL_MAN} cmtdefs.jman \
-		${STAGEDIR}${MAN5PREFIX}/man/man5/cmtdefs.5)
+		${STAGEDIR}${PREFIX}/share/man/man5/cmtdefs.5)
 
 .include <bsd.port.mk>

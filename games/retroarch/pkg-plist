@@ -1,8 +1,8 @@
 bin/retroarch
 bin/retroarch-cg2glsl
 etc/retroarch.cfg
-man/man6/retroarch-cg2glsl.6.gz
-man/man6/retroarch.6.gz
+share/man/man6/retroarch-cg2glsl.6.gz
+share/man/man6/retroarch.6.gz
 share/applications/retroarch.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -102,7 +102,7 @@ post-build-CLIENTS-on:
 .endfor
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/man/quakeforge.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/quakeforge.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-CLIENTS-on:
 	@(cd ${WRKDIR} && ${COPYTREE_SHARE} icons \

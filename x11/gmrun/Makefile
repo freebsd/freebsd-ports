@@ -1,36 +1,34 @@
 PORTNAME=	gmrun
-PORTVERSION=	0.9.2
-PORTREVISION=	15
+DISTVERSION=	1.4w
 CATEGORIES=	x11
-MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	Customizable program to run programs, with tab-completion
-WWW=		https://sourceforge.net/projects/gmrun/
+COMMENT=	Run utiliy with a slim design and bash style auto-completion
+WWW=		https://github.com/wdlkmpx/gmrun
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libpopt.so:devel/popt
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++11-lang gmake gnome localbase:ldflags pkgconfig
+USES=		desktop-file-utils gmake gnome pkgconfig
 
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GITHUB=	yes
+GH_ACCOUNT=	wdlkmpx
+
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-stlport
+INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/gmrun ${DATADIR}/gmrunrc
-PORTDOCS=	README
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e '/my_alphasort/s#const void\*#const struct dirent**#g' \
-		${WRKSRC}/src/gtkcompletionline.cc
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/gmrunrc \
+		${STAGEDIR}${PREFIX}/etc/gmrunrc.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 libexec/popa3d
-man/man8/popa3d.8.gz
+share/man/man8/popa3d.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%SMTP_AFTER_POP3%%%%PORTDOCS%%%%DOCSDIR%%/POPAUTH

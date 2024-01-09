@@ -1,6 +1,6 @@
 PORTNAME=	darkbot
 PORTVERSION=	6f6.r6
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://darkbot.sourceforge.net/archive/unix/ \
@@ -28,7 +28,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/
 	${MKDIR} ${STAGEDIR}${ETCDIR}/dat ${STAGEDIR}${ETCDIR}/logs
 	${TOUCH} ${STAGEDIR}${ETCDIR}/logs/.pkgcreate
 	cd ${WRKSRC}/dat; \

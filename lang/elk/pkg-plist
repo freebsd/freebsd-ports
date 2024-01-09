@@ -151,4 +151,4 @@ lib/libelk.so.0.0.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/track.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/useful.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/wm-delete.scm
-man/man1/elk.1.gz
+share/man/man1/elk.1.gz

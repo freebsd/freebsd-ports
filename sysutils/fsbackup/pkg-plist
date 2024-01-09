@@ -10,6 +10,6 @@ fsbackup/scripts/pgsql_backup.sh
 fsbackup/scripts/sysbackup.sh
 fsbackup/scripts/sysrestore.sh
 fsbackup/scripts/sqlite_backup.sh
-man/man1/fsbackup.1.gz
+share/man/man1/fsbackup.1.gz
 @dir fsbackup/cache
 @dir fsbackup/sys_backup

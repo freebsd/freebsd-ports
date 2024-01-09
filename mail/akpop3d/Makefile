@@ -1,5 +1,6 @@
 PORTNAME=	akpop3d
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://synflood.at/akpop3d/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/akpop3d man/man8/akpop3d.8.gz
+PLIST_FILES=	bin/akpop3d share/man/man8/akpop3d.8.gz
 
 OPTIONS_DEFINE=		SSL
 OPTIONS_DEFAULT=	SSL
@@ -30,6 +31,6 @@ pre-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/akpop3d ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/akpop3d.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/akpop3d.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

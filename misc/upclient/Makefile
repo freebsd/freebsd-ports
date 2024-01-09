@@ -1,6 +1,6 @@
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
 		SF/${PORTNAME}/UpClient%205%20beta/5.0b8%20Security%20Update
@@ -42,7 +42,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/products/upclient \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/src/products/upclient.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} -m 640 ${WRKSRC}/src/products/upclient.conf \
 		${STAGEDIR}${PREFIX}/etc/upclient.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \

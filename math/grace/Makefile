@@ -1,6 +1,6 @@
 PORTNAME=	grace
 PORTVERSION=	5.1.25
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
@@ -66,11 +66,11 @@ post-configure:
 		's|$$(GRACE_HOME)/bin|$$(PREFIX)/bin|'
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/[c-g]*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/[c-g]*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${FILESDIR}/mini-xmgr3.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 	${LN} -sf xmgrace ${STAGEDIR}${PREFIX}/bin/grace
-	${LN} -sf grace.1 ${STAGEDIR}${MANPREFIX}/man/man1/xmgrace.1
+	${LN} -sf grace.1 ${STAGEDIR}${PREFIX}/share/man/man1/xmgrace.1
 	${LN} -sf ${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
 	${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 

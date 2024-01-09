@@ -1,6 +1,6 @@
 PORTNAME=	libafterimage
 PORTVERSION=	1.20
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/afterstep/libAfterImage/${PORTVERSION}
 DISTNAME=	libAfterImage-${PORTVERSION}
@@ -45,6 +45,6 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libAfterImage.so
 	(cd ${WRKSRC}/apps && ${INSTALL_MAN} ascompose.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/ascompose.1x)
+		${STAGEDIR}${PREFIX}/share/man/man1/ascompose.1x)
 
 .include <bsd.port.mk>

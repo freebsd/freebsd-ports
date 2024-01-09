@@ -1,6 +1,6 @@
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -142,7 +142,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/mrxvtrc ${STAGEDIR}${PREFIX}/etc/mrxvt/mrxvtrc.sample
 	${INSTALL_DATA} ${WRKSRC}/share/default.menu ${STAGEDIR}${PREFIX}/etc/mrxvt/default.menu.sample
 	${INSTALL_DATA} ${WRKSRC}/share/submenus.menu ${STAGEDIR}${PREFIX}/etc/mrxvt/submenus.menu.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/mrxvtset.pl ${STAGEDIR}${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/settitle.c ${STAGEDIR}${EXAMPLESDIR}/scripts

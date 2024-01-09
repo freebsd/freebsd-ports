@@ -1,5 +1,6 @@
 PORTNAME=	sssnips
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://devel.ringlet.net/files/misc/sssnips/
 
@@ -10,10 +11,10 @@ WWW=		https://devel.ringlet.net/misc/sssnips/
 LICENSE=	BSD2CLAUSE
 
 USES=		gmake tar:xz
-MAKE_ENV=	BINGRP=wheel MANDIR=${MANPREFIX}/man/man
+MAKE_ENV=	BINGRP=wheel MANDIR=${PREFIX}/share/man/man
 
 PLIST_FILES=	${PROGRAMS:S@^@bin/@} \
-		${PROGRAMS:S@^@man/man1/@:S@$@.1.gz@}
+		${PROGRAMS:S@^@share/man/man1/@:S@$@.1.gz@}
 
 PROGRAMS=	bigfile csort declean getkey git-ss git-ssnoq git-ssq \
 		hostsearch mkv noagent qidiff qpr resock signfiles stun \

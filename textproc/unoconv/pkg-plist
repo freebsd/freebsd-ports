@@ -1,5 +1,5 @@
 bin/unoconv
-man/man1/unoconv.1.gz
+share/man/man1/unoconv.1.gz
 share/pixmaps/unoconv.png
 %%DATADIR%%/tests/document-example.odt
 %%DATADIR%%/tests/spreadsheet-example.csv

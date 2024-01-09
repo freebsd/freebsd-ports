@@ -1,6 +1,6 @@
---- SConstruct.orig	2023-05-10 02:21:42 UTC
+--- SConstruct.orig	2023-12-17 21:00:26 UTC
 +++ SConstruct
-@@ -1269,9 +1269,9 @@ if has_option('variables-help'):
+@@ -1262,9 +1262,9 @@ if has_option('variables-help'):
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
@@ -13,7 +13,7 @@
  
  install_actions.setup(env, get_option('install-action'))
  
-@@ -2196,7 +2196,7 @@ if env.TargetOSIs('posix'):
+@@ -2189,7 +2189,7 @@ if env.TargetOSIs('posix'):
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -22,7 +22,7 @@
                  PROGLINKFLAGS=['-pie'],
              )
  
-@@ -2211,7 +2211,7 @@ if env.TargetOSIs('posix'):
+@@ -2204,7 +2204,7 @@ if env.TargetOSIs('posix'):
                           "-Wno-unknown-pragmas",
                           "-Winvalid-pch"] )
      # env.Append( " -Wconversion" ) TODO: this doesn't really work yet

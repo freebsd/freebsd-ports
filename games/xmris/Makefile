@@ -1,6 +1,6 @@
 PORTNAME=	xmris
 PORTVERSION=	4.04
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -25,9 +25,9 @@ do-install:
 	${LN} -sf xmris ${STAGEDIR}${PREFIX}/bin/xmsit
 .for i in xmred xmris
 	(cd ${WRKSRC} && ${INSTALL_MAN} ${i}.man \
-		${STAGEDIR}${MANPREFIX}/man/man6/${i}.6)
+		${STAGEDIR}${PREFIX}/share/man/man6/${i}.6)
 .endfor
-	${LN} -sf xmris.6 ${STAGEDIR}${MANPREFIX}/man/man6/xmsit.6
+	${LN} -sf xmris.6 ${STAGEDIR}${PREFIX}/share/man/man6/xmsit.6
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
 	(cd ${WRKSRC} && ${INSTALL_DATA} Xmris \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults)

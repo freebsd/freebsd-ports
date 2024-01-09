@@ -1,5 +1,5 @@
 bin/vectoroids
-man/man6/vectoroids.6.gz
+share/man/man6/vectoroids.6.gz
 share/pixmaps/vectoroids.png
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/images/redspot-e.bmp

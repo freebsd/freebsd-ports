@@ -1,6 +1,6 @@
 PORTNAME=	hdf
 PORTVERSION=	4.2.15
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/HDF${PORTVERSION}/src/ \
@@ -21,6 +21,7 @@ USES=		fortran jpeg libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-jpeg=${LOCALBASE} \
 		--with-szlib=${LOCALBASE}
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share/
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -45,11 +46,11 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/hdfunpac.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	# Allow to build on PowerPC
 	@${REINPLACE_CMD} -e '/if defined (__APPLE__)/ \
 		s,),) || defined(__powerpc__),' ${WRKSRC}/hdf/src/hdfi.h
 	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 \
-		${STAGEDIR}${MAN3PREFIX}/man/man3
+		${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.post.mk>

@@ -1,4 +1,6 @@
-TIMESTAMP = 1704205773
+TIMESTAMP = 1704799854
+SHA256 (prometheus-client-mmap-1.0.2.gem) = f88ef1d375f24b651970bef567101a53edcedd1f5c21922c0c0b3fbec623def5
+SIZE (prometheus-client-mmap-1.0.2.gem) = 58368
 SHA256 (rust/crates/ahash-0.8.3.crate) = 2c99f64d1e06488f620f932677e24bc6e2897582980441ae90a671415bd7ec2f
 SIZE (rust/crates/ahash-0.8.3.crate) = 42416
 SHA256 (rust/crates/aho-corasick-0.7.20.crate) = cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac
@@ -169,5 +171,3 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.48.0.crate) = 7896dbc1f41e08872e9d5
 SIZE (rust/crates/windows_x86_64_gnullvm-0.48.0.crate) = 366536
 SHA256 (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
 SIZE (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 671422
-SHA256 (rubygem/prometheus-client-mmap-1.0.2.gem) = f88ef1d375f24b651970bef567101a53edcedd1f5c21922c0c0b3fbec623def5
-SIZE (rubygem/prometheus-client-mmap-1.0.2.gem) = 58368

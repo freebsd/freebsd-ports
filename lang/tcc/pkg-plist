@@ -13,7 +13,7 @@ lib/tcc/bcheck.o
 %%AMD64%%lib/tcc/alloca86_64.o
 lib/tcc/libtcc1.o
 lib/tcc/libtcc1.a
-man/man1/tcc.1.gz
+share/man/man1/tcc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tcc-doc.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex2.c

@@ -1,5 +1,6 @@
 PORTNAME=	httpry
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://dumpsterventures.com/jason/httpry/
 
@@ -25,7 +26,7 @@ PLIST_SUB+=	EXTRASCRIPTS="@comment "
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .if ${PORT_OPTIONS:MEXTRASCRIPTS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/httpry-scripts
 	(cd ${WRKSRC}/scripts/ && \

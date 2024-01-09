@@ -1,6 +1,6 @@
 PORTNAME=	eqe
 PORTVERSION=	1.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	http://rlehy.free.fr/
 
@@ -35,8 +35,8 @@ post-patch:
 post-install:
 	@pod2man ${WRKSRC}/doc/eqe.pod ${WRKSRC}/doc/eqe.1
 	@pod2man ${WRKSRC}/doc/eqedit.pod ${WRKSRC}/doc/eqedit.1
-	${INSTALL_MAN} ${WRKSRC}/doc/eqe.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/eqedit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/eqe.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/eqedit.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,6 @@
 PORTNAME=	linrename
 PORTVERSION=	2.25.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 #MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}
 MASTER_SITES=	http://ftp.ntu.edu.tw/ftp/linux/%SUBDIR%/ \
@@ -24,7 +25,7 @@ CPPFLAGS+=	-I../include \
 		-Dprogram_invocation_short_name=\"${PROGNAME}\" \
 		-DPACKAGE_STRING=\"util-linux\ ${PORTVERSION}\"
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	${LN} -sf rename.1 ${BUILD_WRKSRC}/${PORTNAME}.1
@@ -37,6 +38,6 @@ do-build:
 do-install:
 	cd ${INSTALL_WRKSRC} \
 		&& ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin \
-		&& ${INSTALL_MAN} ${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		&& ${INSTALL_MAN} ${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

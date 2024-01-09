@@ -1,5 +1,6 @@
 PORTNAME=	dbview
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SUNSITE/apps/database/proprietary
 
@@ -9,7 +10,7 @@ WWW=		https://www.infodrom.org/projects/dbview/
 
 LICENSE=	GPLv2+
 
-PLIST_FILES=	bin/dbview man/man1/dbview.1.gz
+PLIST_FILES=	bin/dbview share/man/man1/dbview.1.gz
 PORTDOCS=	README dBASE
 
 OPTIONS_DEFINE=	DOCS
@@ -22,7 +23,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbview ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dbview.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dbview.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

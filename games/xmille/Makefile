@@ -1,6 +1,6 @@
 PORTNAME=	xmille
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games
 DISTNAME=	${PORTNAME}
@@ -19,7 +19,7 @@ CFLAGS+=	-Wno-error=return-type
 
 WRKSRC=		${WRKDIR}/Mille
 
-PLIST_FILES=	bin/xmille man/man1/xmille.1.gz
+PLIST_FILES=	bin/xmille share/man/man1/xmille.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -32,6 +32,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmille ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xmille.man ${STAGEDIR}${MANPREFIX}/man/man1/xmille.1
+	${INSTALL_MAN} ${WRKSRC}/xmille.man ${STAGEDIR}${PREFIX}/share/man/man1/xmille.1
 
 .include <bsd.port.mk>

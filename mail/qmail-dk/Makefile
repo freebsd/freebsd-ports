@@ -1,6 +1,6 @@
 PORTNAME=	dk
 PORTVERSION=	0.54
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	QMAIL
 PKGNAMEPREFIX=	qmail-
@@ -22,7 +22,7 @@ PREFIX?=	${QMAIL_PREFIX}
 
 WRKSRC=		${WRKDIR}/qmail-1.03
 PLIST_FILES=	"@(qmailq,,4711) bin/qmail-dk" \
-		man/man8/qmail-dk.8.gz
+		share/man/man8/qmail-dk.8.gz
 ALL_TARGET=	qmail-dk qmail-dk.8
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -56,6 +56,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qmail-dk ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/qmail-dk.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/qmail-dk.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

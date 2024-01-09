@@ -1,6 +1,6 @@
 PORTNAME=	gkrellkam
 PORTVERSION=	2.0.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${PORTVERSION}
 PKGNAMESUFFIX=	2
@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake pkgconfig
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellkam2.so \
-		man/man5/gkrellkam-list.5.gz
+		share/man/man5/gkrellkam-list.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -31,6 +31,6 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_LIB} gkrellkam2.so \
 		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins)
 	(cd ${WRKSRC} && ${INSTALL_MAN} gkrellkam-list.5 \
-		${STAGEDIR}${MAN5PREFIX}/man/man5)
+		${STAGEDIR}${PREFIX}/share/man/man5)
 
 .include <bsd.port.mk>

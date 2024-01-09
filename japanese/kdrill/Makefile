@@ -1,5 +1,6 @@
 PORTNAME=	kdrill
 PORTVERSION=	6.5
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -14,6 +15,7 @@ USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 DATADIR=	${PREFIX}/share/dict/kdrill
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man1
 
 .include <bsd.port.options.mk>
 
@@ -29,7 +31,7 @@ post-install:
 	(cd ${WRKSRC}/makedic && ${INSTALL_PROGRAM} ${i} \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC}/makedic && ${INSTALL_MAN} ${i}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in fullkatahira.edic hira.edic hiraplus.edic kata.edic kataplus.edic

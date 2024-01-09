@@ -1,6 +1,6 @@
 PORTNAME=	mybashburn
 PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -47,7 +47,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/man/mybashburn.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/mybashburn.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_SCRIPT} ${WRKSRC}/MyBashBurn.sh ${STAGEDIR}${PREFIX}/bin/mybashburn
 	${INSTALL_DATA} ${WRKSRC}/etc/mybashburnrc ${STAGEDIR}${PREFIX}/etc/mybashburnrc.sample
 	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "burning config convert lang menus misc" ${STAGEDIR}${DATADIR}/)

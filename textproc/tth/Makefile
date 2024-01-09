@@ -1,6 +1,6 @@
 PORTNAME=	tth
 PORTVERSION=	4.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/ \
 		http://redundancy.redundancy.org/mirror/
@@ -30,6 +30,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/tth_manual.html ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

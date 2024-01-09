@@ -1,5 +1,5 @@
 bin/isomaster
-man/man1/isomaster.1.gz
+share/man/man1/isomaster.1.gz
 share/applications/isomaster.desktop
 %%DATADIR%%/icons/add2-kearone.png
 %%DATADIR%%/icons/delete-kearone.png

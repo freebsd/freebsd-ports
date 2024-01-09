@@ -1,5 +1,6 @@
 PORTNAME=	xlife
 PORTVERSION=	6.7.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://litwr2.atspace.eu/xlife/
 
@@ -48,8 +49,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gen-multirules ${WRKSRC}/xlife ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf xlife ${STAGEDIR}${PREFIX}/bin/lifeconv
 	${INSTALL_SCRIPT} ${WRKSRC}/table2r ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xlife.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
-	${LN} -sf xlife.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/lifeconv.6
+	${INSTALL_MAN} ${WRKSRC}/xlife.6 ${STAGEDIR}${PREFIX}/share/man/man6
+	${LN} -sf xlife.6 ${STAGEDIR}${PREFIX}/share/man/man6/lifeconv.6
 	@${MKDIR} ${STAGEDIR}${DATADIR}/patterns
 	@(cd ${WRKSRC}/patterns && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/patterns)
 

@@ -1,6 +1,6 @@
 PORTNAME=	vtkmpeg2encode
 PORTVERSION=	${VTK_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia math
 MASTER_SITES=	http://www.vtk.org/files/support/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -33,7 +33,7 @@ PLIST_FILES=	lib/${MPEGLIB}.so.${PORTVERSION} \
 		include/vtk-${VTK_VERSION:R}/mpeg2enc.h \
 		include/vtk-${VTK_VERSION:R}/mpeg2enc_config.h \
 		include/vtk-${VTK_VERSION:R}/vlc.h \
-		man/man3/vtkmpeg2encode.3.gz
+		share/man/man3/vtkmpeg2encode.3.gz
 
 post-build:
 	${MV} ${WRKSRC}/${MPEGLIB}.so ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION}
@@ -53,6 +53,6 @@ do-install:
 			${WRKSRC}/mpeg2enc_config.h \
 			${WRKSRC}/vlc.h \
 			${STAGEDIR}${PREFIX}/include/vtk-${VTK_VERSION:R}
-	${INSTALL_MAN}	${WRKDIR}/vtkmpeg2encode.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	${INSTALL_MAN}	${WRKDIR}/vtkmpeg2encode.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>

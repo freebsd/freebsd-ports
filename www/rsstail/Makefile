@@ -11,14 +11,14 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmrss.so:textproc/libmrss
 
-MAKE_ENV=	bindir="${PREFIX}/bin" mandir="${MANPREFIX}/man/man1"
+MAKE_ENV=	bindir="${PREFIX}/bin" mandir="${PREFIX}/share/man/man1"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USES=		iconv tar:tgz
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \

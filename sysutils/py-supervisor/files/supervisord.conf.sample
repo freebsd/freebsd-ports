@@ -72,7 +72,7 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 ; or inet_http_server section.
 
 [supervisorctl]
-serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
+serverurl=unix:///var/run/supervisor/supervisor.sock ; use a unix:// URL  for a unix socket
 ;serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket
 ;username=chris              ; should be same as in [*_http_server] if set
 ;password=123                ; should be same as in [*_http_server] if set

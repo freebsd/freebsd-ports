@@ -1,12 +1,13 @@
 PORTNAME=	mdpop3d
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.corpit.ru/home/mjt/mdpop3d/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and small POP3 daemon implementation with Maildir support
 
-PLIST_FILES=	libexec/mdpop3d man/man8/mdpop3d.8.gz
+PLIST_FILES=	libexec/mdpop3d share/man/man8/mdpop3d.8.gz
 
 OPTIONS_DEFINE=	PAM APOP
 APOP_DESC=	Build with APOP command support (requires PAM)
@@ -31,6 +32,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/mdpop3d.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/mdpop3d.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

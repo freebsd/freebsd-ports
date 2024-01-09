@@ -19,14 +19,14 @@ GH_ACCOUNT=	fanglingsu
 GH_PROJECT=	vimb
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-MAKE_ARGS=	MANPREFIX=${STAGEDIR}${PREFIX}/man \
+MAKE_ARGS=	MANPREFIX=${STAGEDIR}${PREFIX}/share/man \
 		V=1 \
 		version="${DISTVERSION}"
 LDFLAGS+=	-Wl,--as-needed
 
 PLIST_FILES=	bin/vimb \
 		lib/vimb/webext_main.so \
-		man/man1/vimb.1.gz \
+		share/man/man1/vimb.1.gz \
 		share/applications/vimb.desktop \
 		share/metainfo/vimb.metainfo.xml
 

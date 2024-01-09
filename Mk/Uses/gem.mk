@@ -24,8 +24,8 @@ IGNORE= Incorrect 'USES+= gem:${gem_ARGS}' usage: argument [${arg}] is not recog
 
 PKGNAMEPREFIX?=	rubygem-
 EXTRACT_SUFX=	.gem
-EXTRACT_ONLY=
-DIST_SUBDIR=	rubygem
+# disabled to be able that extract other archives into the gem folder like cargo archives which are required to compile gems that require rust
+#EXTRACT_ONLY?=
 
 BUILD_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
 EXTRACT_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
@@ -67,10 +67,20 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 
 RUBYGEMBIN=	${LOCALBASE}/bin/gem
 
-.  if defined(DISTFILES)
-GEMFILES=	${DISTFILES:C/:[^:]+$//}
+.  if defined(GEMS_SKIP_SUBDIR)
+# do not define a DIST_SUBDIR, currently required to have cargo archives available in the gem source directory to be able to compile it
+#DIST_SUBDIR=
 .  else
-GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	rubygem
+.  endif
+
+.  if defined(DISTFILES)
+# this should maybe be reworked, as if a gem port is used together with cargo archives, the DISTFILES also includes the cargo archives
+# this is currently overwritten in the port that requires this
+# the cargo archives should be filtered out here or better we should only have here gem archives included
+GEMFILES?=	${DISTFILES:C/:[^:]+$//}
+.  else
+GEMFILES?=	${DISTNAME}${EXTRACT_SUFX}
 .  endif
 
 RUBYGEM_ARGS=-l --no-update-sources --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
@@ -81,8 +91,8 @@ RUBYGEM_ARGS+=	--document rdoc,ri
 RUBYGEM_ARGS+=	--no-document
 .  endif
 
-.  if !target(do-extract)
-do-extract:
+_USES_extract+=	590:gem-extract
+gem-extract:
 	@${SETENV} ${GEM_ENV} ${RUBYGEMBIN} unpack --target=${WRKDIR} ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES}
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} spec --ruby ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} > ${GEMSPEC} ; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
@@ -91,7 +101,6 @@ do-extract:
 			fi; \
 		${FALSE}; \
 		fi)
-.  endif
 
 .  if !target(do-build)
 do-build:

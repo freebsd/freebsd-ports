@@ -1,5 +1,5 @@
 bin/makeindex
-man/man1/makeindex.1.gz
+share/man/man1/makeindex.1.gz
 share/texmf/makeindx/din.ist
 share/texmf/makeindx/icase.ist
 share/texmf/makeindx/latex.ist

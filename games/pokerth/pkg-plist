@@ -1,6 +1,6 @@
 bin/pokerth
 bin/pokerth_server
-man/man1/pokerth.1.gz
+share/man/man1/pokerth.1.gz
 share/applications/pokerth.desktop
 share/pixmaps/pokerth.png
 %%DATADIR%%/data/data-copyright.txt

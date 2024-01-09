@@ -4,8 +4,8 @@ It otherwise wastes significant time (there are a lot of individual
 files) and stages host docs, wasm docs, which unstages the host
 docs first.
 
---- src/bootstrap/install.rs.orig	2022-05-01 20:28:31 UTC
-+++ src/bootstrap/install.rs
+--- src/bootstrap/src/core/build_steps/install.rs.orig	2022-05-01 20:28:31 UTC
++++ src/bootstrap/src/core/build_steps/install.rs
 @@ -138,7 +138,7 @@ macro_rules! install {
  }
  

@@ -3,6 +3,6 @@ bin/latex2gif
 bin/ps2gif
 bin/ps2png
 bin/tth
-man/man1/tth.1.gz
+share/man/man1/tth.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/tth_manual.html

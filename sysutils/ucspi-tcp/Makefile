@@ -1,6 +1,6 @@
 PORTNAME=	ucspi-tcp
 PORTVERSION=	0.88
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
 		LOCAL/garga/ucspi-tcp
@@ -127,7 +127,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${file_name} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file_name in ${MAN_FILES}
-	${INSTALL_MAN} ${WRKSRC}-man/${file_name} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}-man/${file_name} ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 .include <bsd.port.post.mk>

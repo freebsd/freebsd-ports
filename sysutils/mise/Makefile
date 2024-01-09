@@ -1,11 +1,11 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.1.12
+DISTVERSION=	2024.1.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Runtime Executor (asdf rust clone)
-WWW=		https://github.com/jdxcode/mise
+WWW=		https://github.com/jdx/mise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

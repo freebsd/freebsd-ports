@@ -1,0 +1,2 @@
+Trac plugin that allows different ways to reject contributions that contain
+spam. Bayes database, regexp, RBL, Captcha and other options are supported.
