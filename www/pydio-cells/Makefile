@@ -1,6 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.2
+DISTVERSION=	4.3.3
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -31,14 +31,6 @@ OPTIONS_DEFAULT=	BASH ZSH
 
 BASH_PLIST_FILES=	etc/bash_completion.d/${PORTNAME}
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
-
-post-fetch:
-	# `sourcegraph/appdash-data` doesn't fetch from the proxy, so replace it with the direct GitHub link.
-	# Remove when no longer required for a successful `fetch`
-	#
-	(cd ${DISTDIR}/${DIST_SUBDIR}; \
-		[ -e go.mod ] || (${CP} ${GO_MODFILE} go.mod; \
-			${GO_CMD} mod edit -replace "sourcegraph.com/sourcegraph/appdash-data=github.com/sourcegraph/appdash-data@v0.0.0-20151005221446-73f23eafcf67"))
 
 post-build-BASH-on:
 	${SETENV} CELLS_WORKING_DIR=${WRKDIR}/wrkdir \
