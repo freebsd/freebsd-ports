@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Simple X screen locker
 WWW=		https://tools.suckless.org/slock
 
