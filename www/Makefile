@@ -2361,7 +2361,8 @@
     SUBDIR += tor-browser
     SUBDIR += trac
     SUBDIR += trac-accountmanager
-    SUBDIT += trac-spamfilter
+    SUBDIR += trac-spamfilter
+    SUBDIR += trac-tocmacro
     SUBDIR += trafficserver
     SUBDIR += transproxy
     SUBDIR += trunk
