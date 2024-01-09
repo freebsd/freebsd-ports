@@ -13,8 +13,10 @@ RUN_DEPENDS=	rubygem-rb_sys>=0.9<1:lang/rubygem-rb_sys
 
 USES=		cargo gem gmake llvm:build
 
-# Required to be able to build the rust library the port uses
-GEMFILES:=	${DISTNAME}${GEM_EXT}
+# Required to be able to build the rust library the gem uses
+GEMFILES:=	${DISTNAME}.gem
+DISTFILES+=	${DISTNAME}.gem
+GEMS_SKIP_SUBDIR=	1
 CARGO_VENDOR_DIR=	${WRKSRC}/ext/fast_mmaped_file_rs/cargo-crates
 CARGO_CARGOTOML=	${WRKSRC}/ext/fast_mmaped_file_rs/Cargo.toml
 CARGO_CARGOLOCK=	${WRKSRC}/ext/fast_mmaped_file_rs/Cargo.lock
