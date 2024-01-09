@@ -1,6 +1,5 @@
 PORTNAME=	scribus
-DISTVERSION=	1.6.0
-PORTREVISION=	1
+DISTVERSION=	1.6.1
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -33,8 +32,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gnome jpeg \
 		pkgconfig python qt:5 shared-mime-info tar:xz
-USE_QT=		buildtools:build core gui linguisttools:build \
-		network opengl printsupport qmake:build widgets xml
+USE_QT=		buildtools:build core gui linguisttools:build network opengl \
+		printsupport qmake:build widgets xml
 USE_GNOME=	cairo libxml2
 
 CMAKE_ARGS=	-DWANT_CPP17=YES
