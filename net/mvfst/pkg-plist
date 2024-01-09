@@ -6,7 +6,6 @@ include/quic/api/HighResQuicTimer.h
 include/quic/api/IoBufQuicBatch.h
 include/quic/api/LibevQuicAsyncUDPSocket.h
 include/quic/api/LibevQuicEventBase.h
-include/quic/api/LibevQuicTimer.h
 include/quic/api/LoopDetectorCallback.h
 include/quic/api/QuicAsyncUDPSocket.h
 include/quic/api/QuicAsyncUDPSocketImpl.h
@@ -62,7 +61,6 @@ include/quic/common/Variant.h
 include/quic/common/events/FollyQuicEventBase.h
 include/quic/common/events/HighResQuicTimer.h
 include/quic/common/events/LibevQuicEventBase.h
-include/quic/common/events/LibevQuicTimer.h
 include/quic/common/events/QuicEventBase.h
 include/quic/common/events/QuicTimer.h
 include/quic/common/events/TimerFDQuicTimer.h
