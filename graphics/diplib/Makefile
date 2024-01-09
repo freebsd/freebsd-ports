@@ -1,5 +1,5 @@
 PORTNAME=	diplib
-DISTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,8 @@ WWW=		https://diplib.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+LIB_DEPENDS=	libglfw.so:graphics/glfw
 
 USES=		cmake:testing gl
 USE_GL=		gl glut
