@@ -1,5 +1,6 @@
 PORTNAME=	bbftp-server
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://software.in2p3.fr/bbftp/dist/ \
 		ftp://ftp.in2p3.fr/pub/bbftp/
@@ -27,7 +28,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbftpd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../doc/bbftpd.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

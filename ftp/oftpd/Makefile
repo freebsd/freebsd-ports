@@ -1,5 +1,6 @@
 PORTNAME=	oftpd
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
@@ -16,7 +17,7 @@ USES=		cpe
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS
-PLIST_FILES=	sbin/oftpd man/man8/oftpd.8.gz
+PLIST_FILES=	sbin/oftpd share/man/man8/oftpd.8.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -28,7 +29,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

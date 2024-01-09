@@ -1,6 +1,6 @@
 PORTNAME=	editss
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/jylefort
 
@@ -25,6 +25,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/editss ${STAGEDIR}${PREFIX}/libexec
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/editssrc ${WRKSRC}/ships ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/editss.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/editss.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 .include <bsd.port.mk>

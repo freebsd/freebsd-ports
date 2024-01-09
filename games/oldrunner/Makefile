@@ -1,5 +1,6 @@
 PORTNAME=	oldrunner
 PORTVERSION=	20120131
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/culot
 
@@ -15,7 +16,7 @@ MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/oldrunner ${DATADIR_REL}/original.lvl man/man6/oldrunner.6.gz
+PLIST_FILES=	bin/oldrunner ${DATADIR_REL}/original.lvl share/man/man6/oldrunner.6.gz
 PLIST_DIRS=	${DATADIR_REL}
 
 post-patch:
@@ -26,6 +27,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/oldrunner ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/levels/original.lvl ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/oldrunner.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/oldrunner.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 .include <bsd.port.mk>

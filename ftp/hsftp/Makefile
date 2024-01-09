@@ -1,6 +1,6 @@
 PORTNAME=	hsftp
 PORTVERSION=	1.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/ \
 		http://www.alaskaparadise.com/freebsd/
@@ -19,7 +19,7 @@ READLINE_DESC=	Enable readline support
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-PLIST_FILES=	bin/hsftp man/man1/hsftp.1.gz
+PLIST_FILES=	bin/hsftp share/man/man1/hsftp.1.gz
 
 OPENSSH_RUN_DEPENDS=		ssh:security/openssh-portable
 OPENSSH_CONFIGURE_WITH=		openssh
@@ -32,6 +32,6 @@ pre-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hsftp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/hsftp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hsftp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

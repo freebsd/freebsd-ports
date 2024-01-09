@@ -1,5 +1,5 @@
 bin/bbftpd
-man/man1/bbftpd.1.gz
+share/man/man1/bbftpd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO

@@ -1,5 +1,5 @@
 @(root,games,6755) bin/nighthawk
-man/man6/nighthawk.6.gz
+share/man/man6/nighthawk.6.gz
 %%DATADIR%%/data/Anoyle/Bridge.f
 %%DATADIR%%/data/Anoyle/Bridge.m
 %%DATADIR%%/data/Anoyle/Engineering.f
@@ -200,4 +200,4 @@ man/man6/nighthawk.6.gz
 %%DATADIR%%/data/xpm/standard/ship_complete.xpm
 %%DATADIR%%/data/xpm/standard/trans_terminated.xpm
 %%DATADIR%%/data/xpm/xpm.i
-@unexec if [ ! -s /var/games/nighthawk.scores ]; then rm -f /var/games/nighthawk.scores; fi
+@rmempty /var/games/nighthawk.scores

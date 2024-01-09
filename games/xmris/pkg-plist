@@ -1,9 +1,9 @@
 @(,games,2555) bin/xmris
 @(,games,2555) bin/xmsit
 @(,games,2555) bin/xmred
-man/man6/xmred.6.gz
-man/man6/xmris.6.gz
-man/man6/xmsit.6.gz
+share/man/man6/xmred.6.gz
+share/man/man6/xmris.6.gz
+share/man/man6/xmsit.6.gz
 lib/X11/app-defaults/Xmris
 lib/X11/xmris/alphabet.gdn
 lib/X11/xmris/digits.gdn

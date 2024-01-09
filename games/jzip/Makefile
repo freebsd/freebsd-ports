@@ -1,5 +1,6 @@
 PORTNAME=	jzip
 PORTVERSION=	2.0.1g
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/mph
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -14,7 +15,7 @@ USES=		ncurses zip
 CPPFLAGS+=	-DPOSIX -DHAVE_GETOPT
 
 PORTDOCS=	Jzip.doc
-PLIST_FILES=	bin/jzip man/man1/jzip.1.gz
+PLIST_FILES=	bin/jzip share/man/man1/jzip.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,7 +31,7 @@ post-patch:
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} jzip ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_DATA} jzip.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_DATA} jzip.1 ${STAGEDIR}${PREFIX}/share/man/man1)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} Jzip.doc ${STAGEDIR}${DOCSDIR})
 

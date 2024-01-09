@@ -1,6 +1,6 @@
 PORTNAME=	xpanex
 PORTVERSION=	5.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games/xpuzzles
 
@@ -13,12 +13,12 @@ USES=		imake xorg
 USE_XORG=	x11 xext xt sm ice
 
 PLIST_FILES=	bin/xpanex \
-		man/man1/xpanex.1.gz \
+		share/man/man1/xpanex.1.gz \
 		lib/X11/app-defaults/Panex
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xpanex ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Panex.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Panex
-	${INSTALL_MAN} ${WRKSRC}/xpanex.man ${STAGEDIR}${MANPREFIX}/man/man1/xpanex.1
+	${INSTALL_MAN} ${WRKSRC}/xpanex.man ${STAGEDIR}${PREFIX}/share/man/man1/xpanex.1
 
 .include <bsd.port.mk>

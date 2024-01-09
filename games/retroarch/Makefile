@@ -1,5 +1,6 @@
 PORTNAME=	RetroArch
 DISTVERSION=	1.16.0.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games emulators
 
@@ -29,7 +30,7 @@ SHEBANG_FILES=	libretro-common/glsym/glgen.py libretro-common/glsym/rglgen.py \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-threads --disable-discord \
 		--sysconfdir=${LOCALBASE}/etc
-CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
+CONFIGURE_ENV+=	MAN_DIR=${PREFIX}/share/man
 LDFLAGS_i386=	-Wl,-znotext
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}

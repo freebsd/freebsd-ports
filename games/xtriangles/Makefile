@@ -1,6 +1,6 @@
 PORTNAME=	xtriangles
 PORTVERSION=	5.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games/xpuzzles
 
@@ -14,12 +14,12 @@ USE_XORG=	x11 xext xt sm ice
 
 PLIST_FILES=	bin/xtriangles \
 		lib/X11/app-defaults/Triangles \
-		man/man1/xtriangles.1.gz
+		share/man/man1/xtriangles.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtriangles ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Triangles.ad \
 		 ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Triangles
-	${INSTALL_MAN} ${WRKSRC}/xtriangles.man ${STAGEDIR}${MANPREFIX}/man/man1/xtriangles.1
+	${INSTALL_MAN} ${WRKSRC}/xtriangles.man ${STAGEDIR}${PREFIX}/share/man/man1/xtriangles.1
 
 .include <bsd.port.mk>
