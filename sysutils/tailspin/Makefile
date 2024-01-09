@@ -1,5 +1,6 @@
 PORTNAME=	tailspin
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
