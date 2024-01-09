@@ -2103,7 +2103,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/commons-vfs2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/error_prone_annotations.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/failureaccess.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/graal-sdk.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/fastdoubleparser.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/graph-query-ir.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/guava.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/guice.jar
@@ -2111,7 +2111,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/jackson-annotations.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/jackson-core.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/jackson-databind.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/jackson-dataformat-yaml.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/javax.inject.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/jsr305.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/listenablefuture.jar
@@ -2122,7 +2121,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/reactive-streams.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/rxjava.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/slf4j-api.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/truffle-api.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph/lib/rdfgraph_help.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph/lib/sdordf-client.jar
@@ -2181,6 +2179,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/ext/dbtools-modeler-cli-ext.jar
 %%DATADIR%%/sqldeveloper/lib/ext/dbtools-modeler-common.jar
 %%DATADIR%%/sqldeveloper/lib/ext/liquibase-core.jar
+%%DATADIR%%/sqldeveloper/lib/fastdoubleparser.jar
 %%DATADIR%%/sqldeveloper/lib/guava-with-lf.jar
 %%DATADIR%%/sqldeveloper/lib/httpclient5.jar
 %%DATADIR%%/sqldeveloper/lib/httpcore5.jar
