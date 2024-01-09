@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.42.0
-PORTREVISION=	1
+DISTVERSION=	6.43.2
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -86,11 +85,11 @@ MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	25
+ELECTRON_VER_MAJOR=	27
 
 # sh get_deps.sh
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.32.1-e1ac48debb399ceff8f2868f0b5ecb75c2fc2ed0-integrity
-NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.34.4-00e4952f511d5f63d6f150bb1e8eace115d07e0a-integrity
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.36.0-9deb971b9ae3894e24f4413ada66f09f2b325ac4-integrity
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.34.5-33855d02845b0e8b476d7b611774127215966512-integrity
 NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.6.0-0413f4d0626b99838cd64ad09c88720aa2bec6ed-integrity
 NPM_ESBUILD_VERS=	0.18.20
 SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
