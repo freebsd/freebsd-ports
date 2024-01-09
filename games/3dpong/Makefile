@@ -1,6 +1,6 @@
 PORTNAME=	3dpong
 PORTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/3dpong/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -39,7 +39,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sounds/*.au ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6/
+		${STAGEDIR}${PREFIX}/share/man/man6/
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 

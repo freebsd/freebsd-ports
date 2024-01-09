@@ -1,6 +1,6 @@
 PORTNAME=	battalion
 PORTVERSION=	1.4b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.evl.uic.edu/aej/BATTALION/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -26,7 +26,7 @@ CFLAGS+=	-I${LOCALBASE}/include/X11 \
 		-DLINUXVERSION -DLINUXAUDIO
 LIBS+=		-lX11 -lm
 
-PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man6/${PORTNAME}.6.gz
 PORTDATA=	*
 PORTDOCS=	*
 
@@ -47,7 +47,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/battalion ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/battalionSUN4/battalion.man \
-		${STAGEDIR}${MAN6PREFIX}/man/man6/battalion.6
+		${STAGEDIR}${PREFIX}/share/man/man6/battalion.6
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/battalionSUN4/battalion.data/battalion.sho \
 		${STAGEDIR}${DATADIR}

@@ -1,5 +1,6 @@
 PORTNAME=	extipl
 PORTVERSION=	5.04
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	OSDN/${PORTNAME}
 
@@ -24,7 +25,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/English

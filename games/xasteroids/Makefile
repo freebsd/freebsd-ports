@@ -1,6 +1,6 @@
 PORTNAME=	xasteroids
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
@@ -22,7 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11 -lm
 
 PLIST_FILES=	bin/xasteroids \
-		man/man6/xasteroids.6.gz
+		share/man/man6/xasteroids.6.gz
 
 post-extract:
 	@${LN} -sf xast.man ${WRKSRC}/xasteroids.6
@@ -33,6 +33,6 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xasteroids ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} xasteroids.6 ${STAGEDIR}${MAN6PREFIX}/man/man6)
+	(cd ${WRKSRC} && ${INSTALL_MAN} xasteroids.6 ${STAGEDIR}${PREFIX}/share/man/man6)
 
 .include <bsd.port.mk>

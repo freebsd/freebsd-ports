@@ -1,5 +1,6 @@
 PORTNAME=	block
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/strategy
 
@@ -22,8 +23,8 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/block ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bed ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/block.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/bed.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/block.6 ${STAGEDIR}${PREFIX}/share/man/man6
+	${INSTALL_MAN} ${WRKSRC}/bed.6 ${STAGEDIR}${PREFIX}/share/man/man6
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for file in 1 2 3 4 5 6
 	${INSTALL_DATA} ${WRKSRC}/${file}.block \

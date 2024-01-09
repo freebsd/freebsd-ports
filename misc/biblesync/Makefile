@@ -1,5 +1,6 @@
 PORTNAME=	biblesync
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,9 +23,5 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 post-patch:
 	${REINPLACE_CMD} s,/bibleysnc,, ${WRKSRC}/biblesync.pc.in
-
-post-install:
-	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/share/man/man7/biblesync.7 ${STAGEDIR}${MAN7PREFIX}/man/man7
-	${RM} -R ${STAGEDIR}${PREFIX}/share/man
 
 .include <bsd.port.mk>

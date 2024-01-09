@@ -1,5 +1,6 @@
 PORTNAME=	ser2net
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
-		man/man8/${PORTNAME}.8.gz
+		share/man/man8/${PORTNAME}.8.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,7 +38,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 

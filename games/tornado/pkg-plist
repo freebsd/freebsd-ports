@@ -1,11 +1,11 @@
 @(,games,2755) bin/tornado
-man/de/man6/tornado.6.gz
-man/fr/man6/tornado.6.gz
-man/it/man6/tornado.6.gz
-man/man6/tornado.6.gz
-man/nl/man6/tornado.6.gz
-man/no/man6/tornado.6.gz
-man/ru/man6/tornado.6.gz
+share/man/de/man6/tornado.6.gz
+share/man/fr/man6/tornado.6.gz
+share/man/it/man6/tornado.6.gz
+share/man/man6/tornado.6.gz
+share/man/nl/man6/tornado.6.gz
+share/man/no/man6/tornado.6.gz
+share/man/ru/man6/tornado.6.gz
 share/locale/de/LC_MESSAGES/tornado.mo
 share/locale/es/LC_MESSAGES/tornado.mo
 share/locale/fr/LC_MESSAGES/tornado.mo

@@ -1,5 +1,5 @@
 @sample(,kmem,) etc/upclient.conf.sample
-man/man8/upclient.8.gz
+share/man/man8/upclient.8.gz
 sbin/clientchk
 sbin/upchk
 @(,kmem,2555) sbin/upclient

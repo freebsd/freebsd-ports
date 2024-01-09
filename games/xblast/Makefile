@@ -1,6 +1,6 @@
 PORTNAME=	xblast
 PORTVERSION=	2.10.4
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION} \
 		SF/${PORTNAME}/Images/${IMAGES_DATE}:images \
@@ -65,7 +65,7 @@ post-patch:
 		's|"Vera.ttf"|"${FONTSDIR}/Vera.ttf"|g' ${WRKSRC}/sdl_text.c
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/xblast.man ${STAGEDIR}${MAN6PREFIX}/man/man6/xblast.6
+	${INSTALL_MAN} ${WRKSRC}/xblast.man ${STAGEDIR}${PREFIX}/share/man/man6/xblast.6
 	@${MKDIR} ${STAGEDIR}${DATADIR}/image
 	@cd ${WRKDIR}/images-${IMAGES_DATE} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/image "-not -name Imakefile"

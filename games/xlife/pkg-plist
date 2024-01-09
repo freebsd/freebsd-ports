@@ -2,8 +2,8 @@ bin/gen-multirules
 bin/lifeconv
 bin/table2r
 bin/xlife
-man/man6/lifeconv.6.gz
-man/man6/xlife.6.gz
+share/man/man6/lifeconv.6.gz
+share/man/man6/xlife.6.gz
 %%DATADIR%%/patterns/boundedgrid/14-2-t.l
 %%DATADIR%%/patterns/boundedgrid/beginning-plain.l
 %%DATADIR%%/patterns/boundedgrid/beginning-torus.l

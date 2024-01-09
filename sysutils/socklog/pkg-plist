@@ -3,8 +3,8 @@ bin/socklog-conf
 bin/socklog
 bin/tryto
 bin/uncat
-man/man1/tryto.1.gz
-man/man1/uncat.1.gz
-man/man8/socklog-check.8.gz
-man/man8/socklog-conf.8.gz
-man/man8/socklog.8.gz
+share/man/man1/tryto.1.gz
+share/man/man1/uncat.1.gz
+share/man/man8/socklog-check.8.gz
+share/man/man8/socklog-conf.8.gz
+share/man/man8/socklog.8.gz

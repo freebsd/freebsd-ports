@@ -1,5 +1,6 @@
 PORTNAME=	assp
 PORTVERSION=	1.9.9.14158
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
@@ -133,8 +134,8 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKDIR}/assplog.pl ${STAGEDIR}${PREFIX}/sbin/assplog
 
-	${INSTALL_MAN} ${WRKDIR}/assp.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKDIR}/assplog.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKDIR}/assp.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKDIR}/assplog.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/510.assp ${STAGEDIR}${PREFIX}/etc/periodic/daily/
 	@${MKDIR} ${STAGEDIR}${ASSP_HOME}
