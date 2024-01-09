@@ -1,5 +1,6 @@
 PORTNAME=	libxfce4util
 PORTVERSION=	4.18.1
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -32,6 +33,7 @@ GIR_CONFIGURE_ON=	--enable-introspection=yes
 GIR_CONFIGURE_OFF=	--enable-introspection=no
 
 NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ENV=	LIBS=-lintl LDFLAGS=-L${LOCALBASE}/lib
 NLS_USES=		gettext-runtime
 
 VAPI_USES=		vala:build
