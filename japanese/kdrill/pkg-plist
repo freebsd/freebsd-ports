@@ -2,9 +2,9 @@ bin/kdrill
 bin/makedic
 bin/makeedict
 lib/X11/app-defaults/KDrill
-man/man1/kdrill.1.gz
-man/man1/makedic.1.gz
-man/man1/makeedict.1.gz
+share/man/man1/kdrill.1.gz
+share/man/man1/makedic.1.gz
+share/man/man1/makeedict.1.gz
 %%DATADIR%%/fullkatahira.edic
 %%DATADIR%%/hira.edic
 %%DATADIR%%/hiraplus.edic

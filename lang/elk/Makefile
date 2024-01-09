@@ -1,6 +1,6 @@
 PORTNAME=	elk
 PORTVERSION=	3.99.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://sam.zoy.org/elk/
 
@@ -41,7 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc examples||g' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
 		${TAR} -C ${STAGEDIR}${EXAMPLESDIR} --unlink -xf -

@@ -1,6 +1,6 @@
 PORTNAME=	icontact
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.panix.com/~mbh/icontact/
 
@@ -20,7 +20,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/icontact ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xvtoppm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/icontact.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/xvtoppm.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/icontact.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xvtoppm.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

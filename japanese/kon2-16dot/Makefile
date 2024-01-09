@@ -1,6 +1,6 @@
 PORTNAME=	kon2
 PORTVERSION=	0.3
-PORTREVISION=	7
+PORTREVISION=	8
 # '+=' is for slave ports
 CATEGORIES+=	japanese
 MASTER_SITES=	PORTS_JP
@@ -68,7 +68,8 @@ post-configure:
 		done
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/src/kon.1 ${STAGEDIR}${MANPREFIX}/man/ja/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/src/kon.1 ${STAGEDIR}${PREFIX}/share/man/ja/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

@@ -1,6 +1,6 @@
 PORTNAME=	cocor
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.psg.com/pub/modula-2/coco/ \
 		ftp://ftp.ssw.uni-linz.ac.at/pub/Coco/C/ \
@@ -31,7 +31,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "cplus2 taste taste_cp" \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME})

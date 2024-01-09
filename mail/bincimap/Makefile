@@ -1,6 +1,6 @@
 PORTNAME=	bincimap
 PORTVERSION=	1.2.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}final
@@ -19,6 +19,7 @@ USE_CXXSTD=	c++14
 USE_RC_SUBR=	bincimapd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share/
 
 DOCS=		AUTHORS ChangeLog README doc/bincimap* \
 		doc/manual/bincimap-manual.ps
@@ -37,9 +38,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/bincimap.conf \
 		${STAGEDIR}${ETCDIR}/bincimap.conf.sample
 	cd ${WRKSRC}/man && ${INSTALL_MAN} bincimap-up.1 bincimapd.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/bincimap.conf.5 \
-		${STAGEDIR}${MANPREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib

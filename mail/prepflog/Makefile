@@ -16,12 +16,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	johnfawcett
 
 SHEBANG_FILES=	prepflog.pl
-PLIST_FILES=	bin/prepflog man/man1/prepflog.1.gz
+PLIST_FILES=	bin/prepflog share/man/man1/prepflog.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${LOCALBASE}/bin/pod2man ${WRKSRC}/prepflog.pl > \
-		${STAGEDIR}${MANPREFIX}/man/man1/prepflog.1
+		${STAGEDIR}${PREFIX}/share/man/man1/prepflog.1
 
 .include <bsd.port.mk>

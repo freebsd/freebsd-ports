@@ -1,4 +1,4 @@
 bin/icontact
 bin/xvtoppm
-man/man1/icontact.1.gz
-man/man1/xvtoppm.1.gz
+share/man/man1/icontact.1.gz
+share/man/man1/xvtoppm.1.gz

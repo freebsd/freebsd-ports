@@ -1,6 +1,6 @@
 PORTNAME=	gotmail
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail perl5
 MASTER_SITES=	SF
 
@@ -19,13 +19,13 @@ SHEBANG_FILES=	gotmail
 NO_ARCH=	yes
 
 PORTDOCS=	ChangeLog README sample.gotmailrc
-PLIST_FILES=	bin/gotmail man/man1/gotmail.1.gz
+PLIST_FILES=	bin/gotmail share/man/man1/gotmail.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:

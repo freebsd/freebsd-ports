@@ -1,7 +1,7 @@
 bin/slrn
 bin/slrnpull
-man/man1/slrn.1.gz
-man/ja/man1/slrn.1.gz
+share/man/man1/slrn.1.gz
+share/man/ja/man1/slrn.1.gz
 share/slrn/color.sl
 share/slrn/ispell.sl
 share/slrn/nn.sl

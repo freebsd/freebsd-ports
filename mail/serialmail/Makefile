@@ -1,6 +1,6 @@
 PORTNAME=	serialmail
 PORTVERSION=	0.75
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.gbnet.net/pub/qmail/ \
@@ -63,7 +63,7 @@ do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin && \
-		${INSTALL_MAN} ${MAN} ${STAGEDIR}${MANPREFIX}/man/man1
+		${INSTALL_MAN} ${MAN} ${STAGEDIR}${PREFIX}/share/man/man1
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

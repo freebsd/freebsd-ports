@@ -1,5 +1,6 @@
 PORTNAME=	irssistats
 PORTVERSION=	0.75
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://royale.zerezo.com/irssistats/
 
@@ -20,7 +21,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/* ${STAGEDIR}${DATADIR}
 

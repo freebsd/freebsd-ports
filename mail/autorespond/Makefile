@@ -1,5 +1,6 @@
 PORTNAME=	autorespond
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
@@ -9,7 +10,7 @@ PATCHFILES=	${DISTNAME}-conf-strcasestr.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple autoresponder for qmail
 
-PLIST_FILES=	bin/autorespond man/man1/autorespond.1.gz
+PLIST_FILES=	bin/autorespond share/man/man1/autorespond.1.gz
 
 .if defined(WITHOUT_MDOC_MANPAGE)
 AR_MANPAGE=	${WRKSRC}/autorespond.1
@@ -24,6 +25,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autorespond ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${AR_MANPAGE} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${AR_MANPAGE} ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

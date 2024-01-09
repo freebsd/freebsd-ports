@@ -1,5 +1,6 @@
 PORTNAME=	smtpfeed
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/smtpfeed/
 
@@ -17,7 +18,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	FEATURES FEATURES.j FYI FYI.j INSTALL INSTALL.j \
 		ML-ADMIN ML-ADMIN.j OPTIONS OPTIONS.j README README.j \
 		RELEASE.NOTE SIGNAL SIGNAL.j TODO smtpfeed.html
-PLIST_FILES=	libexec/smtpfeed man/man8/smtpfeed.8.gz
+PLIST_FILES=	libexec/smtpfeed share/man/man8/smtpfeed.8.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -26,7 +27,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smtpfeed ${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/smtpfeed.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/smtpfeed.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

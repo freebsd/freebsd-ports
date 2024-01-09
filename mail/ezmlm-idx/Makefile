@@ -1,6 +1,6 @@
 PORTNAME=	ezmlm-idx
 PORTVERSION=	7.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/ezmlm/archive/${PORTVERSION}/
 
@@ -78,7 +78,7 @@ post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} -s -rdynamic ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
 .endif
-	@${ECHO_CMD} "${MANPREFIX}/man" > ${WRKSRC}/conf-man
+	@${ECHO_CMD} "${PREFIX}/share/man" > ${WRKSRC}/conf-man
 	@${ECHO_CMD} "${QMAIL_PREFIX}" > ${WRKSRC}/conf-qmail
 	@${REINPLACE_CMD} -e 's,/etc/ezmlm/,${PREFIX}/etc/ezmlm/,' \
 		${WRKSRC}/idx.h

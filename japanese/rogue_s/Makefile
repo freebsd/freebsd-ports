@@ -1,6 +1,6 @@
 PORTNAME=	rogue_s
 PORTVERSION=	1.3a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese games
 MASTER_SITES=	LOCAL/knu PORTS_JP
 DISTFILES=	rogue_s.tar.z rogue_s.patch02.z rogue_s.patch03.z \
@@ -22,7 +22,7 @@ MAKE_ENV+=	DATADIR="${DATADIR}"
 
 SUB_FILES=	rogue_s.6
 
-PLIST_FILES=	bin/rogue_s man/ja/man6/rogue_s.6.gz
+PLIST_FILES=	bin/rogue_s share/man/ja/man6/rogue_s.6.gz
 PORTDATA=	mesg mesg_E mesg_fj mesg_utmc
 PORTDOCS=	README README.1st README.doc options.doc rogue.doc
 
@@ -46,7 +46,8 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rogue ${STAGEDIR}${PREFIX}/bin/rogue_s
-	${INSTALL_MAN} ${WRKDIR}/rogue_s.6 ${STAGEDIR}${MANPREFIX}/man/ja/man6/rogue_s.6
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man6/
+	${INSTALL_MAN} ${WRKDIR}/rogue_s.6 ${STAGEDIR}${PREFIX}/share/man/ja/man6/rogue_s.6
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mesg ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mesg_E ${STAGEDIR}${DATADIR}
