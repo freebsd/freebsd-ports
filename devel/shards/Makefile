@@ -1,6 +1,6 @@
 PORTNAME=	shards
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
+DISTVERSION=	0.17.3
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	crystal:lang/crystal
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libgc-threaded.so:devel/boehm-gc-threaded \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libyaml.so:textproc/libyaml
 RUN_DEPENDS=	git:devel/git
 
@@ -25,7 +25,7 @@ GH_TUPLE=	crystal-lang:crystal-molinillo:v0.2.0:molinillo/lib/molinillo
 MAKE_ARGS+=	CRYSTAL="${LOCALBASE}/bin/crystal" \
 		FLAGS="--release --no-debug" \
 		MANDIR="${STAGEDIR}${PREFIX}/man" \
-		SHARDS_CONFIG_BUILD_COMMIT="9d17faf6a7e8"
+		SHARDS_CONFIG_BUILD_COMMIT="d75b004dd3d0"
 
 PLIST_FILES=	bin/shards \
 		man/man1/shards.1.gz \
