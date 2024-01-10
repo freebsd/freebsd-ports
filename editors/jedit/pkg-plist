@@ -1,5 +1,5 @@
 bin/jedit
-man/man1/jedit.1.gz
+share/man/man1/jedit.1.gz
 share/java/jedit/jars/QuickNotepad.jar
 share/java/jedit/jedit.jar
 share/java/jedit/keymaps/Alan_keys.props

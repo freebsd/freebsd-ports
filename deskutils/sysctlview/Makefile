@@ -35,7 +35,7 @@ IGNORE=		not supported on anything but FreeBSD
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sysctlview ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sysctlview.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/sysctlview.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .for i in 16 22 24 32 36 48 64 72 96 128 192 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/
 	${INSTALL_DATA} ${WRKSRC}/icon/sysctlview-${i}.png \

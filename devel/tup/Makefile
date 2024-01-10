@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/contrib/syntax/*.vim \
 		${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax

@@ -1,5 +1,6 @@
 PORTNAME=	xa65
 PORTVERSION=	2.3.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 DISTNAME=	xa-${PORTVERSION}
@@ -19,8 +20,8 @@ do-install:
 .for file in file65 ldo65 reloc65 printcbm uncpk
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${LN} -sf xa.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/xa65.1
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${LN} -sf xa.1 ${STAGEDIR}${PREFIX}/share/man/man1/xa65.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

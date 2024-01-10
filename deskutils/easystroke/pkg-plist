@@ -1,5 +1,5 @@
 bin/easystroke
-man/man1/easystroke.1.gz
+share/man/man1/easystroke.1.gz
 share/applications/easystroke.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/easystroke.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/easystroke.mo

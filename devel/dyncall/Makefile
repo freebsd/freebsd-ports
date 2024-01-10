@@ -1,5 +1,6 @@
 PORTNAME=	dyncall
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.dyncall.org/r${DISTVERSION}/ \
 		http://www.potion-studios.com/
@@ -46,6 +47,6 @@ do-install:
 		${WRKSRC}/dyncall/dyncall.3 \
 		${WRKSRC}/dyncallback/dyncallback.3 \
 		${WRKSRC}/dynload/dynload.3 \
-		${STAGEDIR}${MAN3PREFIX}/man/man3
+		${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.post.mk>

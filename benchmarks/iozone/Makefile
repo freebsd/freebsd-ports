@@ -1,5 +1,6 @@
 PORTNAME=	iozone
 DISTVERSION=	3_506
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -25,7 +26,7 @@ CONFLICTS_INSTALL=	iozone21
 WRKSRC_SUBDIR=	src/current
 
 PLIST_FILES=	bin/iozone \
-		man/man1/iozone.1.gz
+		share/man/man1/iozone.1.gz
 
 OPTIONS_DEFINE=		SSH THREADS
 OPTIONS_DEFAULT=	SSH THREADS
@@ -46,6 +47,6 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

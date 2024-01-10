@@ -1,7 +1,7 @@
 PORTNAME=	cannonball
 DISTVERSION=	0.34
 DISTVERSIONPREFIX=v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 
 MAINTAINER=	fox@FreeBSD.org
@@ -38,7 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cmake/res/tilemap.bin ${STAGEDIR}${DATADIR}/res/tilemap.bin
 	${INSTALL_DATA} ${WRKSRC}/cmake/res/tilepatch.bin ${STAGEDIR}${DATADIR}/res/tilepatch.bin
 	${INSTALL_DATA} ${WRKSRC}/cmake/config.xml ${STAGEDIR}${DATADIR}/conf/config.xml
-	${INSTALL_MAN} ${WRKSRC}/docs/cannonball.6 ${STAGEDIR}${MAN1PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/docs/cannonball.6 ${STAGEDIR}${PREFIX}/share/man/man6
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/cmake/cannonball ${STAGEDIR}${PREFIX}/libexec
 

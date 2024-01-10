@@ -1,7 +1,7 @@
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.35.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -51,6 +51,6 @@ post-install-DOCS-on:
 
 post-install-MANPAGES-on:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run \
-		./cmd/gen-docs --manpage --path ${STAGEDIR}${MAN1PREFIX}/man/man1)
+		./cmd/gen-docs --manpage --path ${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	cvsd
 PORTVERSION=	1.0.24
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 		http://wiftp.com/
@@ -31,8 +32,8 @@ do-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/cvsd
 	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${STAGEDIR}${PREFIX}/etc/cvsd/cvsd.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

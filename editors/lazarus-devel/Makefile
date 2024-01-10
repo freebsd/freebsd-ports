@@ -1,5 +1,6 @@
 PORTNAME=	lazarus
 DISTVERSION=	3.1.0.20231222
+PORTREVISION=	1
 PKGNAMESUFFIX?=  -gtk2-devel
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -98,7 +99,7 @@ pre-install:
 		@${ECHO_CMD} ${FILE} >> ${PLIST}
 .	endfor
 .	for m in ${MAN1S}
-		@${ECHO_CMD} man/man1/${m}.gz >> ${PLIST}
+		@${ECHO_CMD} share/man/man1/${m}.gz >> ${PLIST}
 .	endfor
 
 	@${ECHO_CMD} "%%DATADIR%%/docs" >> ${PLIST}
@@ -172,7 +173,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA}	${WRKSRC}/Makefile* ${WRKSRC}/fpmake*  ${STAGEDIR}${DATADIR}
 .for FILE in ${MAN1S}
-	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 	${LN} -sf ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
 

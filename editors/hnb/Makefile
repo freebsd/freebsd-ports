@@ -1,5 +1,6 @@
 PORTNAME=	hnb
 PORTVERSION=	1.9.18
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -18,7 +19,7 @@ GH_ACCOUNT=	fraggerfox
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -26,7 +27,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/hnb ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN}	${WRKSRC}/doc/hnb.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN}	${WRKSRC}/doc/hnb.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

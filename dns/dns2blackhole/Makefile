@@ -1,5 +1,6 @@
 PORTNAME=	dns2blackhole
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -23,6 +24,6 @@ do-install:
 		${STAGEDIR}${ETCDIR}/dns2blackhole-unbound.conf.sample
 
 	${INSTALL_MAN} ${WRKSRC}/dns2blackhole.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

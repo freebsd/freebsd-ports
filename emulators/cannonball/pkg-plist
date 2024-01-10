@@ -1,6 +1,6 @@
 bin/cannonball
 libexec/cannonball
-man/man6/cannonball.6.gz
+share/man/man6/cannonball.6.gz
 %%DATADIR%%/conf/config.xml
 %%DATADIR%%/res/tilemap.bin
 %%DATADIR%%/res/tilepatch.bin

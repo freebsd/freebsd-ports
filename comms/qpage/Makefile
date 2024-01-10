@@ -1,6 +1,6 @@
 PORTNAME=	qpage
 PORTVERSION=	3.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms
 MASTER_SITES=	http://tomiii.com/qpage/qpage.org/download/
 
@@ -65,7 +65,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qpage ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/qpage.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/qpage.1
+		${STAGEDIR}${PREFIX}/share/man/man1/qpage.1
 	${INSTALL_DATA} ${WRKSRC}/example.cf \
 		${STAGEDIR}${PREFIX}/etc/qpage.conf.sample
 	${MKDIR} ${STAGEDIR}/var/spool/qpage

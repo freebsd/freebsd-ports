@@ -1,5 +1,6 @@
 PORTNAME=	gengetopt
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -37,7 +38,7 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.info \
 		${STAGEDIR}${PREFIX}/${INFO_PATH}

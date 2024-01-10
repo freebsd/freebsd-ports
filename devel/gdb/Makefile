@@ -1,6 +1,6 @@
 PORTNAME=	gdb
 DISTVERSION=	13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -136,7 +136,7 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/gdb \
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/gdb${VER}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/gdb${VER}.1
 	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
 
@@ -144,17 +144,17 @@ do-install-KGDB-on:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/kgdb \
 		${STAGEDIR}${PREFIX}/bin/kgdb${VER}
 	${INSTALL_MAN} ${FILESDIR}/kgdb/kgdb.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/kgdb${VER}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/kgdb${VER}.1
 
 do-install-TUI-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
 
 do-install-GDB_LINK-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
-	${LN} -sf gdb${VER}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/gdb.1
+	${LN} -sf gdb${VER}.1 ${STAGEDIR}${PREFIX}/share/man/man1/gdb.1
 .if ${PORT_OPTIONS:MKGDB}
 	${LN} -sf kgdb${VER} ${STAGEDIR}${PREFIX}/bin/kgdb
-	${LN} -sf kgdb${VER}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/kgdb.1
+	${LN} -sf kgdb${VER}.1 ${STAGEDIR}${PREFIX}/share/man/man1/kgdb.1
 .endif
 
 do-install-PYTHON-on:

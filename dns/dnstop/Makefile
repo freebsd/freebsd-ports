@@ -1,5 +1,6 @@
 PORTNAME=	dnstop
 PORTVERSION=	20140915
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 
@@ -13,10 +14,10 @@ USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dnstop \
-		man/man8/dnstop.8.gz
+		share/man/man8/dnstop.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnstop ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/dnstop.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/dnstop.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>

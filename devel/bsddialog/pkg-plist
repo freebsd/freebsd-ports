@@ -5,5 +5,5 @@ include/bsddialog_theme.h
 lib/libbsddialog.a
 lib/libbsddialog.so
 lib/libbsddialog.so.1.0.1
-man/man1/bsddialog.1.gz
-man/man3/bsddialog.3.gz
+share/man/man1/bsddialog.1.gz
+share/man/man3/bsddialog.3.gz

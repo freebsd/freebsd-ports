@@ -152,7 +152,7 @@ lib/ugene/ugene
 lib/ugene/ugenecl
 lib/ugene/ugenem
 lib/ugene/ugeneui
-man/man1/ugene.1.gz
+share/man/man1/ugene.1.gz
 share/applications/ugene.desktop
 share/icons/hicolor/32x32/mimetypes/application-x-ugene-ext.png
 share/mime/packages/application-x-ugene.xml

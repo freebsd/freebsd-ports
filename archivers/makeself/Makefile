@@ -1,5 +1,6 @@
 PORTNAME=	makeself
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/megastep/makeself/releases/download/release-${PORTVERSION}/
 EXTRACT_SUFX=	.run
@@ -21,7 +22,7 @@ PLIST_FILES=	bin/makeself \
 		bin/makeself-header \
 		bin/makeself-header.sh \
 		bin/makeself.sh \
-		man/man1/makeself.1.gz
+		share/man/man1/makeself.1.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
@@ -31,7 +32,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin
 	@${LN} -sf ${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/makeself.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/makeself.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,6 @@
 PORTNAME=	tkcvs
 PORTVERSION=	8.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		http://www.twobarleycorns.net/
@@ -25,7 +26,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkcvs/tkcvs ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tkcvs/tkcvs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tkcvs/tkcvs.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/tkcvs
 	${INSTALL_DATA} ${WRKSRC}/tkcvs/*.tcl ${STAGEDIR}${PREFIX}/lib/tkcvs
 	${INSTALL_DATA} ${WRKSRC}/tkcvs/tclIndex ${STAGEDIR}${PREFIX}/lib/tkcvs

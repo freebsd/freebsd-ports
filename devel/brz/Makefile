@@ -41,7 +41,7 @@ DULWICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0:devel/py-dulwich@${PY_FLA
 SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/brz.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/brz.1 ${STAGEDIR}${PREFIX}/man/man1
 	${STRIP_CMD} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/breezy/*.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/breezy/bzr/*.so

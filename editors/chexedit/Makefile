@@ -24,6 +24,6 @@ CFLAGS+=	-fcommon
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/hexedit ${STAGEDIR}${PREFIX}/bin/chexedit
-	${INSTALL_MAN} ${WRKSRC}/docs/hexedit.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/chexedit.1
+	${INSTALL_MAN} ${WRKSRC}/docs/hexedit.1 ${STAGEDIR}${PREFIX}/share/man/man1/chexedit.1
 
 .include <bsd.port.mk>

@@ -111,8 +111,8 @@ include/fio/y.tab.h
 include/fio/zbd.h
 include/fio/zbd_types.h
 include/fio/zone-dist.h
-man/man1/fio.1.gz
-man/man1/fio_generate_plots.1.gz
+share/man/man1/fio.1.gz
+share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1mbs_clients.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1mbs_clients.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read.fio

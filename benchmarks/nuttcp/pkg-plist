@@ -4,4 +4,4 @@ bin/nuttcp
 %%DATADIR%%/LICENSE
 %%DATADIR%%/README
 %%DATADIR%%/examples.txt
-man/man8/nuttcp.8.gz
+share/man/man8/nuttcp.8.gz

@@ -1,5 +1,6 @@
 PORTNAME=	picocom
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	rmm1.bob@gmail.com
@@ -14,10 +15,10 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	npat-efault
 
-PLIST_FILES=	bin/picocom man/man1/picocom.1.gz
+PLIST_FILES=	bin/picocom share/man/man1/picocom.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	morse
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.catb.org/~esr/morse/ \
 		LOCAL/db
@@ -12,7 +12,7 @@ WWW=		http://www.catb.org/~esr/morse/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	bin/morsec bin/QSO man/man1/QSO.1.gz man/man1/morsec.1.gz
+PLIST_FILES=	bin/morsec bin/QSO share/man/man1/QSO.1.gz share/man/man1/morsec.1.gz
 
 OPTIONS_SINGLE=	SOUND
 OPTIONS_SINGLE_SOUND=	OSS X11 PULSEAUDIO
@@ -37,7 +37,7 @@ PULSEAUDIO_USES=	pkgconfig
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/morse ${STAGEDIR}${PREFIX}/bin/morsec
 	${INSTALL_PROGRAM} ${WRKSRC}/QSO ${STAGEDIR}${PREFIX}/bin/QSO
-	${INSTALL_MAN} ${WRKSRC}/morse.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/morsec.1
-	${INSTALL_MAN} ${WRKSRC}/QSO.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/QSO.1
+	${INSTALL_MAN} ${WRKSRC}/morse.1 ${STAGEDIR}${PREFIX}/share/man/man1/morsec.1
+	${INSTALL_MAN} ${WRKSRC}/QSO.1 ${STAGEDIR}${PREFIX}/share/man/man1/QSO.1
 
 .include <bsd.port.mk>

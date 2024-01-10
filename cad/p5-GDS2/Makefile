@@ -18,7 +18,7 @@ USE_PERL5=	configure
 SHEBANG_FILES=	Examples/*
 PLIST_FILES=	${SITE_PERL}/GDS2.pm \
 		${PROGRAMS:S,^,bin/,} \
-		${MAN3PREFIX}/man/man3/GDS2.3.gz
+		${PREFIX}/man/man3/GDS2.3.gz
 
 PROGRAMS=	gds2dump gdsdump2gds modgds2 gdslayers testgds2 \
 		gdspath4topath0 testgdt

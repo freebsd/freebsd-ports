@@ -1,6 +1,6 @@
 PORTNAME=	easystroke
 DISTVERSION=	0.6.0-9
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=	-gf7c1614
 CATEGORIES=	deskutils
 
@@ -44,7 +44,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.appdata.xml ${STAGEDIR}${PREFIX}/share/metainfo/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-NLS-on:
 	(cd ${WRKSRC}/po/ && \

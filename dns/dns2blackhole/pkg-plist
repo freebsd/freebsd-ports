@@ -4,4 +4,4 @@ bin/dns2blackhole-update1
 bin/dns2blackhole-update2
 bin/dns2blackhole-whitelist
 @sample %%ETCDIR%%/dns2blackhole-unbound.conf.sample
-man/man8/dns2blackhole.8.gz
+share/man/man8/dns2blackhole.8.gz

@@ -17,6 +17,6 @@ PLIST_FILES=	bin/countdown \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/countdown ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/countdown.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/countdown.1
+	${INSTALL_MAN} ${WRKSRC}/countdown.1 ${STAGEDIR}${PREFIX}/share/man/man1/countdown.1
 
 .include <bsd.port.mk>

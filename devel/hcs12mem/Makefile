@@ -1,5 +1,6 @@
 PORTNAME=	hcs12mem
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -28,7 +29,7 @@ do-install:
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DATS:S,^,${WRKSRC}/target/,} ${STAGEDIR}${DATADIR}/
-	${INSTALL_MAN}	${WRKSRC}/doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN}	${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

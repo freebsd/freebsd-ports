@@ -20,7 +20,7 @@ USES=		gettext gmake
 USE_JAVA=	yes
 JAVA_VERSION=	8+
 
-MAKE_ARGS=	MANPREFIX=${MAN1PREFIX}/share/man/man1
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man/man1
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	DEBUG=enable
 .endif

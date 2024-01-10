@@ -1,6 +1,6 @@
 PORTNAME=	nttcp
 PORTVERSION=	1.47
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://freeware.sgi.com/source/nttcp/ \
 		LOCAL/martymac
@@ -19,10 +19,10 @@ USES=		gmake
 MAKE_ENV+=	OPT="${CFLAGS}"
 NOPRECIOUSMAKEVARS=yes
 
-PLIST_FILES=	bin/nttcp man/man1/nttcp.1.gz
+PLIST_FILES=	bin/nttcp share/man/man1/nttcp.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nttcp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nttcp.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nttcp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

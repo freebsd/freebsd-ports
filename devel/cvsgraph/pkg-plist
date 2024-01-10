@@ -1,7 +1,7 @@
 bin/cvsgraph
 etc/cvsgraph.conf.sample
-man/man1/cvsgraph.1.gz
-man/man5/cvsgraph.conf.5.gz
+share/man/man1/cvsgraph.1.gz
+share/man/man5/cvsgraph.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/README.Automatic_documentation

@@ -1,5 +1,6 @@
 PORTNAME=	ugene
 PORTVERSION=	40.1
+PORTREVISION=	1
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -27,7 +28,7 @@ USE_QT=		buildtools:build linguisttools:build \
 USE_XORG=	x11 xtst
 
 QMAKE_ARGS=	INSTALL_PREFIX="${PREFIX}" UGENE_INSTALL_DATA="${DATADIR}" \
-		INSTALL_MANDIR="${MAN1PREFIX}/man" \
+		INSTALL_MANDIR="${PREFIX}/share/man" \
 		UGENE_LRELEASE="${LRELEASE}" UGENE_LUPDATE="${LUPDATE}" \
 		UGENE_USE_BUNDLED_SQLITE=0
 ALL_TARGET=	release
