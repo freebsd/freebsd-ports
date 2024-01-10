@@ -1,5 +1,5 @@
 PORTNAME=	crystal
-DISTVERSION=	1.7.3
+DISTVERSION=	1.10.1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${BOOTSTRAP_LLVM_VERSION} \
+BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${BOOTSTRAP_LLVM_VERSION}:devel/llvm${BOOTSTRAP_LLVM_VERSION} \
 		git:devel/git
 LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libevent.so:devel/libevent \
@@ -24,6 +24,7 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libgmp.so:math/gmp \
 		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libxml2.so:textproc/libxml2 \
 		libyaml.so:textproc/libyaml
 RUN_DEPENDS=	pkg-config:devel/pkgconf
@@ -33,8 +34,8 @@ USES=		compiler gmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 
-COMMIT_ID=		879691b2e326
-LLVM_VERSION?=		14
+COMMIT_ID=		84f389ac5424
+LLVM_VERSION?=		16
 BOOTSTRAP_LLVM_VERSION=	14
 BOOTSTRAP_VERSION=	1.5.1
 BOOTSTRAP_NAME=		crystal-${BOOTSTRAP_VERSION}-${ARCH}-llvm${BOOTSTRAP_LLVM_VERSION}
@@ -71,7 +72,7 @@ IGNORE=		not supported on anything but FreeBSD
 # present in FreeBSD base. We splice in the correct info based on
 # FreeBSD version and hope it doesn't change during minor releases.
 # See post-patch for the substitutions of these patches.
-.if ${SSL_DEFAULT} == "base"
+.if ${SSL_DEFAULT} == "base" && ${OSREL:R} < 13
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_openssl_lib__crypto.cr \
 		${PATCHDIR}/extra-patch-src_openssl_lib__ssl.cr
 .endif
@@ -83,9 +84,16 @@ post-extract:
 	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-unknown-freebsd
 
 post-patch:
-.if ${SSL_DEFAULT} == "base" && ${OSREL:R} < 15
+.if ${SSL_DEFAULT} == "base" && ${OSREL:R} <= 13
 	@${REINPLACE_CMD} -i '' \
 		-e 's|CRYSTAL_SSL_VERSION|1.1.1|g' \
+		-e 's|CRYSTAL_SSL_LDFLAGS|${OPENSSLLIB}|g' \
+		${WRKSRC}/src/openssl/lib_ssl.cr \
+		${WRKSRC}/src/openssl/lib_crypto.cr
+.endif
+.if ${SSL_DEFAULT} == "base" && ${OSREL:R} >= 14
+	@${REINPLACE_CMD} -i '' \
+		-e 's|CRYSTAL_SSL_VERSION|3.0.10|g' \
 		-e 's|CRYSTAL_SSL_LDFLAGS|${OPENSSLLIB}|g' \
 		${WRKSRC}/src/openssl/lib_ssl.cr \
 		${WRKSRC}/src/openssl/lib_crypto.cr
