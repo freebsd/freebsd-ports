@@ -3811,6 +3811,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex26.c
 %%DATADIR%%/examples/src/mat/tests/ex260.c
 %%DATADIR%%/examples/src/mat/tests/ex261.c
+%%DATADIR%%/examples/src/mat/tests/ex262f.F90
 %%DATADIR%%/examples/src/mat/tests/ex27.c
 %%DATADIR%%/examples/src/mat/tests/ex28.c
 %%DATADIR%%/examples/src/mat/tests/ex29.c
@@ -4307,6 +4308,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/output/ex259_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex259_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex25_1.out
+%%DATADIR%%/examples/src/mat/tests/output/ex262f_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex26_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex26_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex27_1.out
