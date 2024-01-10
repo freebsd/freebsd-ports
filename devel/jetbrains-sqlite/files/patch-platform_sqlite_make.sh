@@ -1,5 +1,5 @@
---- platform/sqlite/make.sh.orig	2023-07-25 23:43:08 UTC
-+++ platform/sqlite/make.sh
+--- make.sh.orig	2023-07-25 23:43:08 UTC
++++ make.sh
 @@ -23,6 +23,10 @@ if [ "$OS" == "mac" ]; then
    if [ "$ARCH" == "x86_64" ]; then
      cFlags+=" --target=x86_64-apple-darwin18.7.0"
