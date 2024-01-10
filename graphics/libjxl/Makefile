@@ -1,10 +1,7 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a0cb9b7c4249.patch:-p1 # https://github.com/libjxl/libjxl/pull/3085
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
@@ -22,7 +19,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	jbeich:skcms:42030a7:skcms/third_party/skcms \
-		libjxl:testdata:6c94363:testdata/testdata \
+		libjxl:testdata:ff8d743:testdata/testdata \
 		webmproject:sjpeg:e5ab130:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
