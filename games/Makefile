@@ -241,6 +241,7 @@
     SUBDIR += entombed
     SUBDIR += enygma
     SUBDIR += epiphany-game
+    SUBDIR += etlegacy
     SUBDIR += etracer
     SUBDIR += euchre
     SUBDIR += eureka
