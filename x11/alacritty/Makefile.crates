@@ -235,7 +235,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		winit-0.29.7 \
+		winit-0.29.9 \
 		winnow-0.5.30 \
 		winreg-0.51.0 \
 		wio-0.2.2 \
