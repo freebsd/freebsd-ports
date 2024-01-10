@@ -1,0 +1,16 @@
+The OSS4 backend doesn't currently work on FreeBSD. Use the OSS3 backend
+as a fallback instead.
+
+PR: 273476
+
+--- CMakeLists.txt.orig	2024-01-09 20:14:13 UTC
++++ CMakeLists.txt
+@@ -126,7 +126,7 @@ if (HAVE_SOUNDCARD_H OR HAVE_SYS_SOUNDCARD_H)
+ 
+   if (${TEST_COMPILE_RESULT} AND (${TEST_RUN_RESULT} EQUAL 0))
+     message(STATUS "Detected OSS version ${TEST_RESULT_VERSION}")
+-    if (${TEST_RESULT_VERSION} GREATER_EQUAL 0x040000)
++    if (${TEST_RESULT_VERSION} GREATER_EQUAL 0x040000 AND NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+       message(STATUS "Building with OSS 4 support")
+       set(HAVE_OSS_4 true)
+       add_definitions(-DHAVE_OSS_4)
