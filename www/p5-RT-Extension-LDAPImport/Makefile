@@ -24,8 +24,6 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-MAN3PREFIX=	${PREFIX}
-
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
