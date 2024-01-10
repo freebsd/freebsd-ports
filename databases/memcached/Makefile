@@ -1,5 +1,5 @@
 PORTNAME=	memcached
-PORTVERSION=	1.6.22
+PORTVERSION=	1.6.23
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
@@ -19,7 +19,7 @@ USE_RC_SUBR=	memcached
 
 SHEBANG_FILES=	scripts/memcached-tool
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-coverage \
 		--program-prefix= \
 		--with-libevent=${LOCALBASE}
@@ -45,10 +45,8 @@ DOCS_BUILD_DEPENDS=	xml2rfc:textproc/xml2rfc
 DOCS_CONFIGURE_ENABLE=	docs
 DTRACE_CONFIGURE_ENABLE=	dtrace
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASL_USES=	localbase:ldflags
 SASL_CONFIGURE_ENABLE=	sasl
-SASL_CFLAGS=		-I${LOCALBASE}/include
-SASL_CPPFLAGS+=		${CFLAGS}
-SASL_LDFLAGS=		-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
