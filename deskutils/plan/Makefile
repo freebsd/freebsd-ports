@@ -2,7 +2,7 @@
 
 PORTNAME=	plan
 PORTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES+=	deskutils
 MASTER_SITES=	https://cschubert.com/distfiles/plan/ \
 		ftp://ftp.bitrot.de/pub/plan/ \
