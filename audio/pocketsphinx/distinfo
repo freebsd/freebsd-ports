@@ -1,2 +1,3 @@
-SHA256 (pocketsphinx-0.8.tar.gz) = 874c4c083d91c8ff26a2aec250b689e537912ff728923c141c4dac48662cce7a
-SIZE (pocketsphinx-0.8.tar.gz) = 23781837
+TIMESTAMP = 1703377948
+SHA256 (cmusphinx-pocketsphinx-v5.0.2_GH0.tar.gz) = c2c58aa702195c46c44575fb9ed5790e749ab647df648b4557cc963aeac638b2
+SIZE (cmusphinx-pocketsphinx-v5.0.2_GH0.tar.gz) = 34210066
