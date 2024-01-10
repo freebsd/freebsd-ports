@@ -1,5 +1,6 @@
 PORTNAME=	igt-gpu-tools
 DISTVERSION=	1.26.1266
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jfree@FreeBSD.org
@@ -29,10 +30,12 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 
 SHEBANG_FILES=	scripts/code_cov_gather_on_test scripts/code_cov_parse_info
-MESON_ARGS=	-Dvalgrind=disabled
+PLIST_SUB+=	DOCS="@comment "
+MESON_ARGS=	-Ddocs=disabled -Dvalgrind=disabled
 
-OPTIONS_DEFINE=		CHAMELIUM DOCS RUNNER TEST
-OPTIONS_DEFAULT=	DOCS RUNNER TEST
+#OPTIONS_DEFINE=		CHAMELIUM DOCS RUNNER TEST
+OPTIONS_DEFINE=		CHAMELIUM RUNNER TEST
+OPTIONS_DEFAULT=	RUNNER TEST
 
 OPTIONS_SUB=	yes
 
@@ -46,9 +49,9 @@ CHAMELIUM_LIB_DEPENDS=		libasound.so:audio/alsa-lib \
 				libxmlrpc.so:net/xmlrpc-c
 CHAMELIUM_MESON_ENABLED=	chamelium
 
-DOCS_IMPLIES=		TEST
-DOCS_BUILD_DEPENDS=	gtkdoc-mkhtml:textproc/gtk-doc
-DOCS_MESON_ENABLED=	docs
+#DOCS_IMPLIES=		TEST
+#DOCS_BUILD_DEPENDS=	gtkdoc-mkhtml:textproc/gtk-doc
+#DOCS_MESON_ENABLED=	docs
 
 RUNNER_IMPLIES=		TEST
 RUNNER_LIB_DEPENDS=	libjson-c.so:devel/json-c \
