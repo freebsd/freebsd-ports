@@ -193,8 +193,8 @@ CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
 		--install_path arch="${PREFIX}/${SITE_ARCH_REL}" \
 		--install_path script="${PREFIX}/bin" \
 		--install_path bin="${PREFIX}/bin" \
-		--install_path libdoc="${MAN3PREFIX}/man/man3" \
-		--install_path bindoc="${MAN1PREFIX}/man/man1"
+		--install_path libdoc="${PERLMANPREFIX}/man/man3" \
+		--install_path bindoc="${PERLMANPREFIX}/man/man1"
 CONFIGURE_SCRIPT?=	Build.PL
 PL_BUILD?=	Build
 CONFIGURE_ARGS+=--destdir ${STAGEDIR}
@@ -251,8 +251,7 @@ TEST_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" LD="${CC}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${PREFIX}/${SITE_PERL_REL}
-MAN1PREFIX?=		${PREFIX}/${SITE_PERL_REL}
+PERLMANPREFIX?=		${PREFIX}/${SITE_PERL_REL}
 .undef HAS_CONFIGURE
 
 .    if !target(do-configure)
