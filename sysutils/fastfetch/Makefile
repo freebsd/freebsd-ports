@@ -12,10 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libyyjson.so:devel/yyjson
 
-FLAVORS=	full lite
-FLAVOR?=	${FLAVORS:[1]}
-lite_PKGNAMESUFFIX=	-lite
-
 USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
@@ -23,10 +19,8 @@ GH_ACCOUNT=	fastfetch-cli
 OPTIONS_DEFINE=	LIBPCI VULKAN WAYLAND XCB GIO DCONF DBUS XFCONF \
 		SQLITE3 IMAGEMAGICK CHAFA GLX OPENCL PULSEAUDIO
 
-.if ${FLAVOR} == full
 OPTIONS_DEFAULT=	VULKAN WAYLAND XCB GIO DCONF DBUS XFCONF \
 		SQLITE3 IMAGEMAGICK CHAFA GLX OPENCL PULSEAUDIO
-.endif
 
 DCONF_DESC=	Needed for values that are only stored in DConf + Fallback for GSettings
 CHAFA_DESC=	Image output as ascii art
