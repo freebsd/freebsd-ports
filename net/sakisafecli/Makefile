@@ -20,6 +20,6 @@ CFLAGS+=	-fPIC
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sakisafecli/sakisafecli ${STAGEDIR}${PREFIX}/bin/sakisafecli
 	${INSTALL_MAN} ${WRKSRC}/sakisafecli/sakisafecli.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/sakisafecli/sakisafeclirc.5 ${STAGEDIR}${MAN1PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/sakisafecli/sakisafeclirc.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>

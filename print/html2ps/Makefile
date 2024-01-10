@@ -1,6 +1,6 @@
 PORTNAME=	html2ps
 DISTVERSION=	1.0b7
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	LOCAL/hrs
@@ -24,8 +24,8 @@ SUB_FILES=	html2psrc
 
 PLIST_FILES=	bin/html2ps \
 		etc/html2psrc \
-		man/man1/html2ps.1.gz \
-		man/man5/html2psrc.5.gz \
+		share/man/man1/html2ps.1.gz \
+		share/man/man5/html2psrc.5.gz \
 		${DATADIR_REL}/html2ps.html \
 		${DATADIR_REL}/hyphen.tex
 
@@ -40,8 +40,8 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/html2ps ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/html2psrc ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/html2ps.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/html2psrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/html2ps.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/html2psrc.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/html2ps.html ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/hyphen.tex ${STAGEDIR}${DATADIR}

@@ -1,5 +1,6 @@
 PORTNAME=	hatop
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils net
 
@@ -19,14 +20,14 @@ SHEBANG_FILES=	bin/hatop
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/hatop man/man1/hatop.1.gz
+PLIST_FILES=	bin/hatop share/man/man1/hatop.1.gz
 PORTDOCS=	HACKING KEYBINDS README.rst
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/hatop ${STAGEDIR}${PREFIX}/bin/hatop
-	${INSTALL_MAN} ${WRKSRC}/man/hatop.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/hatop.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

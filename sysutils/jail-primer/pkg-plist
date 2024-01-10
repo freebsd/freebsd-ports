@@ -13,5 +13,5 @@ bin/jail.rcconf.stop
 bin/jail.ssh.jailcell
 etc/rc.d/jail.jailconf.bootime
 etc/rc.d/jail.rcconf.bootime
-man/man8/jail-primer.8.gz
+share/man/man8/jail-primer.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/jail-primer.html

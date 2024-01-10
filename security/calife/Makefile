@@ -1,6 +1,6 @@
 PORTNAME=	calife
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://assets.keltia.net/calife/
 
@@ -19,8 +19,8 @@ CONFIGURE_ARGS+=	--with-pam
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/calife ${STAGEDIR}${PREFIX}/bin/calife
-	${INSTALL_MAN} ${WRKSRC}/calife.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/calife.auth.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/calife.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/calife.auth.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${WRKSRC}/calife.auth-dist ${STAGEDIR}${PREFIX}/etc/calife.auth.sample
 	${INSTALL_DATA} ${WRKSRC}/pam/freebsd9 ${STAGEDIR}${PREFIX}/etc/pam.d/calife.sample
 

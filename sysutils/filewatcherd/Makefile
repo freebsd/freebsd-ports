@@ -1,5 +1,6 @@
 PORTNAME=	filewatcherd
 DISTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
@@ -17,14 +18,14 @@ USE_RC_SUBR=	filewatcherd
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	etc/watchtab.sample \
-		man/man5/watchtab.5.gz \
-		man/man8/filewatcherd.8.gz \
+		share/man/man5/watchtab.5.gz \
+		share/man/man8/filewatcherd.8.gz \
 		sbin/filewatcherd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/filewatcherd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/filewatcherd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/watchtab.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/filewatcherd.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/watchtab.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${FILESDIR}/watchtab.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

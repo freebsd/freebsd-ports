@@ -2,4 +2,4 @@ sbin/bruteblock
 sbin/bruteblockd
 @sample etc/bruteblock/proftpd.conf.sample
 @sample etc/bruteblock/ssh.conf.sample
-man/man8/bruteblock.8.gz
+share/man/man8/bruteblock.8.gz

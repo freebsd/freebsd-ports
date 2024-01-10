@@ -25,7 +25,7 @@ SHEBANG_FILES=	tenshi
 
 MAKE_ARGS=	bindir="${PREFIX}/sbin" \
 		docdir="${DOCSDIR}" \
-		mandir="${MAN8PREFIX}/share/man" \
+		mandir="${PREFIX}/share/man" \
 		sysconfdir="${PREFIX}/etc"
 
 NO_ARCH=	yes

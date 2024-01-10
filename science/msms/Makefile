@@ -1,5 +1,6 @@
 PORTNAME=	msms
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://mgltools.scripps.edu/downloads/tars/releases/MSMSRELEASE/REL${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${ARCH_MSMS_DIST}Linux2_${DISTVERSION}
@@ -25,13 +26,13 @@ ARCH_MSMS_FILE=	${ARCH:S/amd64/x86_64/:S/i386/i86/}
 DISTINFO_FILE=	${MASTERDIR}/distinfo-${ARCH}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 post-extract:
 	@${AWK} -f ${FILESDIR}/extract-license.awk < ${WRKSRC}/README > ${LICENSE_FILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.${ARCH_MSMS_FILE}Linux2.${DISTVERSION}${ARCH:S/amd64/.staticgcc/:S/${ARCH}//} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	yadm
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
@@ -18,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	TheLocehiliosan
 
 PLIST_FILES=	bin/yadm \
-		man/man1/yadm.1.gz
+		share/man/man1/yadm.1.gz
 
 OPTIONS_DEFINE=	J2CTL
 
@@ -31,7 +32,7 @@ J2CTL_USES=		python
 do-install:
 	@${MKDIR} ${STAGEDIR}
 	${INSTALL_MAN} ${WRKSRC}/yadm.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_SCRIPT} ${WRKSRC}/yadm \
 		${STAGEDIR}${PREFIX}/bin/
 

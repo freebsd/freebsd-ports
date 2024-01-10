@@ -1,5 +1,6 @@
 PORTNAME=	zogftw
 PORTVERSION=	0.0.2022.06.25
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.fabiankeil.de/sourcecode/zogftw/
 DISTNAME=	${PORTNAME}-2022-06-25-03982c7
@@ -15,7 +16,7 @@ NO_BUILD=	yes
 PORTSCOUT=	ignore:1
 
 PLIST_FILES=	sbin/zogftw \
-		man/man8/zogftw.8.gz
+		share/man/man8/zogftw.8.gz
 
 OPTIONS_DEFINE=		EXECUTE_TESTS GNUPG
 OPTIONS_DEFAULT=	GNUPG
@@ -35,6 +36,6 @@ execute-tests: extract
 
 do-install: execute-tests
 	${INSTALL_SCRIPT} ${WRKSRC}/zogftw ${STAGEDIR}${PREFIX}/sbin/zogftw
-	${INSTALL_MAN} ${WRKSRC}/zogftw.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/zogftw.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

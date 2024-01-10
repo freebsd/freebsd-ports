@@ -43,8 +43,8 @@ TEST_TARGET=	check
 MAN1_DE=	leafnode-version.1 newsq.1
 MAN8_DE=	applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 MANLANG=	"" de.ISO8859-1
-MAN1DIR_DE=	${MAN1PREFIX}/man/de.ISO8859-1/man1
-MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
+MAN1DIR_DE=	${PREFIX}/man/de.ISO8859-1/man1
+MAN8DIR_DE=	${PREFIX}/man/de.ISO8859-1/man8
 
 DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
@@ -75,7 +75,7 @@ post-install:
 .endif
 	${MKDIR} ${STAGEDIR}${MAN1DIR_DE} ${STAGEDIR}${MAN8DIR_DE}
 	cd ${WRKSRC}/doc_german && \
-	${INSTALL_MAN} ${MAN1_DE} ${STAGEDIR}${MAN1PREFIX}/man/de.ISO8859-1/man1 && \
-	${INSTALL_MAN} ${MAN8_DE} ${STAGEDIR}${MAN8PREFIX}/man/de.ISO8859-1/man8
+	${INSTALL_MAN} ${MAN1_DE} ${STAGEDIR}${PREFIX}/man/de.ISO8859-1/man1 && \
+	${INSTALL_MAN} ${MAN8_DE} ${STAGEDIR}${PREFIX}/man/de.ISO8859-1/man8
 
 .include <bsd.port.post.mk>

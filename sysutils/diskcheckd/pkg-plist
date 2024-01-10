@@ -1,4 +1,4 @@
 @sample etc/diskcheckd.conf.sample
-man/man5/diskcheckd.conf.5.gz
-man/man8/diskcheckd.8.gz
+share/man/man5/diskcheckd.conf.5.gz
+share/man/man8/diskcheckd.8.gz
 sbin/diskcheckd

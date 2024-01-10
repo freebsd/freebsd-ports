@@ -1,6 +1,6 @@
 PORTNAME=	atop
 PORTVERSION=	2.0.2.b3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	samm@FreeBSD.org
@@ -36,9 +36,9 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/atop ${STAGEDIR}${PREFIX}/bin
 		${LN} -sf atop ${STAGEDIR}${PREFIX}/bin/atopsar
 .for manpage in atop.1 atopsar.1
-		${INSTALL_MAN} ${WRKSRC}/man/${manpage} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${INSTALL_MAN} ${WRKSRC}/man/${manpage} ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
-		${INSTALL_MAN} ${WRKSRC}/man/atoprc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5/
+		${INSTALL_MAN} ${WRKSRC}/man/atoprc.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 		@${MKDIR} ${STAGEDIR}${LOGDIR}
 		@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}

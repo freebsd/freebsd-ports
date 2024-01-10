@@ -1,7 +1,7 @@
 PORTNAME=	smug
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -29,7 +29,7 @@ COMPLETIONS_DESC=	Install bash and fish shell completions
 
 COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish
-MANPAGES_PLIST_FILES=		man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=		share/man/man1/${PORTNAME}.1.gz
 
 post-install-COMPLETIONS-on:
 .for _shell in bash fish
@@ -44,6 +44,6 @@ post-install-DOCS-on:
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

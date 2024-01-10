@@ -1,5 +1,6 @@
 PORTNAME=	ddrescue
 PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -17,8 +18,8 @@ CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 INFO=		ddrescue
 PLIST_FILES=	bin/ddrescue \
 		bin/ddrescuelog \
-		man/man1/ddrescue.1.gz \
-		man/man1/ddrescuelog.1.gz
+		share/man/man1/ddrescue.1.gz \
+		share/man/man1/ddrescuelog.1.gz
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
@@ -26,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 .for i in ddrescue ddrescuelog
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/ddrescue.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 

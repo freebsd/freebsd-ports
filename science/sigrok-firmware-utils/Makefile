@@ -1,6 +1,6 @@
 PORTNAME=	firmware
 PORTVERSION=	20140418
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	#none
 PKGNAMEPREFIX=	sigrok-
@@ -28,7 +28,7 @@ EX_FILES=	sigrok-fwextract-hantek-dso \
 
 PLIST_FILES=	${PY_FILES:S,^,bin/,} \
 		${EX_FILES:S,^,bin/,} \
-		${EX_FILES:S,^,man/man1/,:S,$,.1.gz,}
+		${EX_FILES:S,^,share/man/man1/,:S,$,.1.gz,}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -44,7 +44,7 @@ do-install:
 .endfor
 .for fil in ${EX_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${fil} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${fil}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${fil}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>

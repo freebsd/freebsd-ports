@@ -27,7 +27,7 @@ PORTDATA=	mtm.ti
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/mtm.1 \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1/mtm.1
+		${STAGEDIR}${PREFIX}/share/man/man1/mtm.1
 	@${MKDIR} ${STAGEDIR}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mtm ${STAGEDIR}${PREFIX}/bin/mtm
 	@${MKDIR} ${STAGEDIR}${DATADIR}

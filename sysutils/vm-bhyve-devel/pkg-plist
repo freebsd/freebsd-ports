@@ -17,7 +17,7 @@ lib/vm-bhyve/vm-switch-vale
 lib/vm-bhyve/vm-switch-vxlan
 lib/vm-bhyve/vm-util
 lib/vm-bhyve/vm-zfs
-man/man8/vm.8.gz
+share/man/man8/vm.8.gz
 sbin/vm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alpine.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arch.conf

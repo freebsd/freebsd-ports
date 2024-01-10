@@ -1,5 +1,6 @@
 PORTNAME=	pkg_cutleaves
 PORTVERSION=	20181216
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,7 +16,7 @@ NO_BUILD=	yes
 SHEBANG_FILES=	pkg_cutleaves
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	sbin/pkg_cutleaves man/man1/pkg_cutleaves.1.gz
+PLIST_FILES=	sbin/pkg_cutleaves share/man/man1/pkg_cutleaves.1.gz
 NO_ARCH=	yes
 
 do-extract:
@@ -34,6 +35,6 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg_cutleaves ${STAGEDIR}${PREFIX}/sbin/pkg_cutleaves
-	${INSTALL_MAN} ${WRKSRC}/pkg_cutleaves.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pkg_cutleaves.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

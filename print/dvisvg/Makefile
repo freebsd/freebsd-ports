@@ -1,6 +1,6 @@
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 MASTER_SITES=	http://dvisvg.sourceforge.net/files/
 
@@ -29,7 +29,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dvisvg ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dvisvg.man \
-	    ${STAGEDIR}${MAN1PREFIX}/man/man1/dvisvg.1
+	    ${STAGEDIR}${PREFIX}/share/man/man1/dvisvg.1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDIR}/${PORTNAME}
 .for file in dvisvg.map font2svg.enc font2svg.ps
 	${INSTALL_DATA} ${WRKSRC}/${file} \

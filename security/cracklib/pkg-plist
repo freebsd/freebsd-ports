@@ -7,8 +7,8 @@ lib/libcrack.so.2.9.0
 libdata/cracklib/cracklib-words.hwm
 libdata/cracklib/cracklib-words.pwd
 libdata/cracklib/cracklib-words.pwi
-man/man3/FascistCheck.3.gz
-man/man3/cracklib.3.gz
+share/man/man3/FascistCheck.3.gz
+share/man/man3/cracklib.3.gz
 sbin/cracklib-check
 sbin/cracklib-format
 sbin/cracklib-packer

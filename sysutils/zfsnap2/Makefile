@@ -1,7 +1,7 @@
 PORTNAME=	zfsnap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-beta3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	2
 
@@ -37,7 +37,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PERIODICDIR}/${period}
 	${INSTALL_SCRIPT} ${WRKSRC}/periodic/${period}_zfsnap.sh ${STAGEDIR}${PERIODICDIR}/${period}/402.zfsnap
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/man8/zfsnap.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/zfsnap.8
+	${INSTALL_MAN} ${WRKSRC}/man/man8/zfsnap.8 ${STAGEDIR}${PREFIX}/share/man/man8/zfsnap.8
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}/${file}

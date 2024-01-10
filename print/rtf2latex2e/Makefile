@@ -1,5 +1,6 @@
 PORTNAME=	rtf2latex2e
 DISTVERSION=	2-2-2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/2-2
 
@@ -11,6 +12,6 @@ LICENSE=	GPLv2
 
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" \
-		mandir=${MAN1PREFIX}/man/
+		mandir=${PREFIX}/share/man/
 
 .include <bsd.port.mk>

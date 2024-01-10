@@ -1,6 +1,6 @@
 PORTNAME=	keyboard-daemon
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
@@ -15,21 +15,19 @@ LIB_DEPENDS=	libcfu.so:devel/libcfu
 USES=		tar:bzip2
 
 USE_RC_SUBR=	${PORTNAME:S/-/_/}
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	for f in ${WRKSRC}/examples/*; do	\
 	    ${INSTALL_DATA} $$f ${STAGEDIR}${EXAMPLESDIR};	\
 	done
-.endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 bin/testssl.sh
-man/man1/testssl.1.gz
+share/man/man1/testssl.1.gz
 %%DATADIR%%/etc/Apple.pem
 %%DATADIR%%/etc/DST Root CA X3.txt
 %%DATADIR%%/etc/Java.pem

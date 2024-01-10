@@ -72,8 +72,8 @@ post-build-DOCS-on:
 		'! ( -name .lock -or -name .buildinfo )'
 
 post-build-MANPAGES-on:
-	${MKDIR} ${STAGEDIR}${MAN7PREFIX}/share/man/man7/
-	${MKDIR} ${STAGEDIR}${MAN7PREFIX}/share/man/man1/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man7/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1/
 	cd ${WRKSRC}/docs && ${GMAKE} man && \
 	${INSTALL_MAN} offlineimapui.7 ${STAGEDIR}${PREFIX}/share/man/man7/ && \
 	${INSTALL_MAN} offlineimap.1 ${STAGEDIR}${PREFIX}/share/man/man1/

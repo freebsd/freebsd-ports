@@ -1,5 +1,6 @@
 PORTNAME=	lnav
 DISTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -18,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
 PLIST_FILES=	bin/lnav \
-		man/man1/lnav.1.gz
+		share/man/man1/lnav.1.gz
 
 OPTIONS_DEFINE=		CURL
 OPTIONS_DEFAULT=	CURL
@@ -29,6 +30,6 @@ CURL_CONFIGURE_WITH=	libcurl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lnav ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lnav.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lnav.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

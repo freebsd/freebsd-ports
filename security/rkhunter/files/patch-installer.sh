@@ -1,15 +1,15 @@
---- installer.sh.orig	2014-02-24 02:37:15 UTC
+--- installer.sh.orig	2018-02-19 23:49:06 UTC
 +++ installer.sh
-@@ -392,7 +392,7 @@ selectTemplate() { # Take input from the "--install pa
+@@ -393,7 +393,7 @@ selectTemplate() { # Take input from the "--install pa
  	RKHINST_ETC_DIR="${SYSCONFIGDIR}"
  	RKHINST_BIN_DIR="${BINDIR}"
  	RKHINST_SCRIPT_DIR="${LIBDIR}/${APPNAME}/scripts"
 -	RKHINST_MAN_DIR="${SHAREDIR}/man/man8"
-+	RKHINST_MAN_DIR="${PREFIX}/man/man8"
++	RKHINST_MAN_DIR="${PREFIX}/share/man/man8"
  
  	if [ "${RKHINST_LAYOUT}" = "oldschool" ]; then
  		RKHINST_DB_DIR="${VARDIR}/${APPNAME}/db"
-@@ -406,12 +406,12 @@ selectTemplate() { # Take input from the "--install pa
+@@ -407,12 +407,12 @@ selectTemplate() { # Take input from the "--install pa
  	elif [ "${RKHINST_LAYOUT}" = "TXZ" ]; then
  		RKHINST_DB_DIR="${VARDIR}/lib/${APPNAME}/db"
  		RKHINST_TMP_DIR="${VARDIR}/lib/${APPNAME}/tmp"
@@ -24,7 +24,7 @@
  	fi
  
  	RKHINST_LANG_DIR="${RKHINST_DB_DIR}/i18n"
-@@ -1099,22 +1099,6 @@ doRemove()  {
+@@ -1070,22 +1070,6 @@ doRemove()  {
  			fi
  		fi
  	done

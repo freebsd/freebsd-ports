@@ -2,6 +2,7 @@ PORTNAME=	screenFetch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9.1-64
 DISTVERSIONSUFFIX=	-gb1f0893
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -29,13 +30,13 @@ GH_ACCOUNT=	KittyKatt
 
 PLIST_FILES=	bin/screenFetch \
 		bin/screenfetch \
-		man/man1/screenfetch.1.gz
+		share/man/man1/screenfetch.1.gz
 PORTDOCS=	CHANGELOG README.mkdn TODO
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:tl}-dev ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${LN} -fs ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/screenfetch
-	${INSTALL_MAN} ${WRKSRC}/screenfetch.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/screenfetch.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

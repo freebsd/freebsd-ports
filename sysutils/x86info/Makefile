@@ -1,5 +1,6 @@
 PORTNAME=	x86info
 DISTVERSION=	1.31snap03
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ler@FreeBSD.org
@@ -19,7 +20,7 @@ GH_TAGNAME=	1b41e8b
 
 USES=		gmake pkgconfig python:build
 
-PLIST_FILES=	bin/lsmsr bin/x86info man/man8/lsmsr.8.gz man/man1/x86info.1.gz
+PLIST_FILES=	bin/lsmsr bin/x86info share/man/man8/lsmsr.8.gz share/man/man1/x86info.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -33,7 +34,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/lsmsr/lsmsr ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/x86info.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/lsmsr/lsmsr.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/x86info.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lsmsr/lsmsr.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

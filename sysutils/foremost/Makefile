@@ -1,5 +1,6 @@
 PORTNAME=	foremost
 PORTVERSION=	1.5.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://foremost.sourceforge.net/pkg/
 
@@ -11,7 +12,7 @@ USES=		gmake
 ALL_TARGET=	freebsd
 CFLAGS+=	-fcommon
 
-PLIST_FILES=	bin/foremost etc/foremost.conf.sample man/man8/foremost.8.gz
+PLIST_FILES=	bin/foremost etc/foremost.conf.sample share/man/man8/foremost.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-Wall -O2|${CFLAGS}|' ${WRKSRC}/Makefile
@@ -22,6 +23,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/foremost.conf ${STAGEDIR}${PREFIX}/etc/foremost.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/foremost.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/foremost.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

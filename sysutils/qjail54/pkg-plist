@@ -1,11 +1,11 @@
 bin/qjail
 @sample etc/qjail.portsnap.conf.sample
 etc/rc.d/qjail.bootime
-man/man8/qjail.8.gz
-man/man8/qjail-intro.8.gz
-man/man8/qjail-howto.8.gz
-man/man8/qjail-vnet-howto.8.gz
-man/man8/qjail-ipv6-testing.8.gz
+share/man/man8/qjail.8.gz
+share/man/man8/qjail-intro.8.gz
+share/man/man8/qjail-howto.8.gz
+share/man/man8/qjail-vnet-howto.8.gz
+share/man/man8/qjail-ipv6-testing.8.gz
 %%EXAMPLESDIR%%/vnet/ipfw.host.rules
 %%EXAMPLESDIR%%/vnet/ipfw.vnet.rules
 %%EXAMPLESDIR%%/vnet/ipf.host.rules

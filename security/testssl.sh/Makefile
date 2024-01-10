@@ -1,6 +1,7 @@
 PORTNAME=	testssl.sh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -32,7 +33,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/testssl.sh ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/testssl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/testssl.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "etc utils" ${STAGEDIR}${DATADIR}
 
 do-test:

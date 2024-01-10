@@ -2,6 +2,7 @@ PORTNAME=	alfio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3
 DISTVERSIONSUFFIX=	-bis
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -18,7 +19,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	etc/rc.d/alfio \
-		man/man8/alfio.8.gz
+		share/man/man8/alfio.8.gz
 
 do-patch:
 	${REINPLACE_CMD} s,%%LOCALBASE%%,${LOCALBASE},g ${WRKSRC}/alfio
@@ -26,6 +27,6 @@ do-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/alfio ${STAGEDIR}${PREFIX}/etc/rc.d
-	${INSTALL_MAN}	${WRKSRC}/alfio.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN}	${WRKSRC}/alfio.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

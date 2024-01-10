@@ -1,5 +1,6 @@
 PORTNAME=	diskcheckd
 PORTVERSION=	20150220
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	# part of port
 DISTFILES=	# part of port
@@ -27,7 +28,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diskcheckd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA}	${FILESDIR}/diskcheckd.conf ${STAGEDIR}${PREFIX}/etc/diskcheckd.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${STAGEDIR}${MAN8PREFIX}/man/man5/diskcheckd.conf.5
-	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${STAGEDIR}${PREFIX}/share/man/man5/diskcheckd.conf.5
+	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

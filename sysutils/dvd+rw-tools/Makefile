@@ -1,6 +1,6 @@
 PORTNAME=	dvd+rw-tools
 PORTVERSION=	7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
@@ -27,7 +27,7 @@ USES=		gmake
 BIN_FILES=	dvd+rw-booktype dvd+rw-format dvd+rw-mediainfo \
 		dvd-ram-control growisofs
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} \
-		man/man1/growisofs.1.gz
+		share/man/man1/growisofs.1.gz
 PORTDOCS=	index.html
 
 OPTIONS_DEFINE=	DOCS
@@ -39,7 +39,7 @@ do-install:
 .for i in ${BIN_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,5 @@
-man/man1/calife.1.gz
-man/man5/calife.auth.5.gz
+share/man/man1/calife.1.gz
+share/man/man5/calife.auth.5.gz
 @sample etc/calife.auth.sample
 @sample etc/pam.d/calife.sample
 @mode 04755

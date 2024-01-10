@@ -1,5 +1,6 @@
 PORTNAME=	reop
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://humungus.tedunangst.com/r/reop/d/
 
@@ -19,12 +20,12 @@ MAKE_ARGS+=	CFLAGS+="-I${LOCALBASE}/include -Iother -Wno-pointer-sign" \
 		PREFIX="${STAGEDIR}${PREFIX}"
 
 PLIST_FILES=	bin/reop \
-		man/man1/reop.1.gz
+		share/man/man1/reop.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

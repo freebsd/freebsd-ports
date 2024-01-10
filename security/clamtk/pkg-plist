@@ -1,5 +1,5 @@
 bin/clamtk
-man/man1/clamtk.1.gz
+share/man/man1/clamtk.1.gz
 %%SITE_PERL%%/ClamTk/Analysis.pm
 %%SITE_PERL%%/ClamTk/App.pm
 %%SITE_PERL%%/ClamTk/Assistant.pm

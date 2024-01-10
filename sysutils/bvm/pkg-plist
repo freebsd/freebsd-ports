@@ -6,4 +6,4 @@ bin/bvmdhcp
 @sample %%ETCDIR%%/switch.conf.sample
 @sample %%ETCDIR%%/dhcp.conf.sample
 etc/rc.d/bvmd
-man/man8/bvm.8.gz
+share/man/man8/bvm.8.gz

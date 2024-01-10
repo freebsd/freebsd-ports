@@ -53,7 +53,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${MANPAGENAME}.4 ${STAGEDIR}${PREFIX}/share/man/man4/
 
 .for link in ${MANPAGELINKS}
-	${LN} ${STAGEDIR}${MAN4PREFIX}/share/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${PREFIX}/share/man/man4/${link}.4
+	${LN} ${STAGEDIR}${PREFIX}/share/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${PREFIX}/share/man/man4/${link}.4
 .endfor
 
 .include <bsd.port.post.mk>

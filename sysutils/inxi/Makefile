@@ -1,5 +1,6 @@
 PORTNAME=	inxi
 DISTVERSION=	3.3.11-1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -32,7 +33,7 @@ SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	${PORTNAME}.changelog README.txt
 
 OPTIONS_DEFINE=	DOCS
@@ -45,7 +46,7 @@ RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
