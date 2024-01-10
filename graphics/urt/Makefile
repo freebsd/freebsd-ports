@@ -4,7 +4,7 @@ PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/utah-raster/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit and library for raster image processing
 WWW=		https://www.cs.utah.edu/gdc/projects/urt/
 
@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/copyright
 
 BROKEN=		Unfetchable
+DEPRECATED=	Defunct upstream
+EXPIRATION_DATE=	2024-02-11
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libtiff.so:graphics/tiff
@@ -35,7 +37,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=       -Wno-error=int-conversion
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 post-install:
