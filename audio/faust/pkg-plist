@@ -179,6 +179,7 @@ include/faust/gui/CInterface.h
 include/faust/gui/ControlSequenceUI.h
 include/faust/gui/ControlUI.h
 include/faust/gui/DaisyControlUI.h
+include/faust/gui/DaisyPatchInitControlUI.h
 include/faust/gui/DecoratorUI.h
 include/faust/gui/Esp32ControlUI.h
 include/faust/gui/Esp32Reader.h
@@ -268,7 +269,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.69.3
+lib/libfaust.so.2.70.3
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h

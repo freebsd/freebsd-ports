@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.69.3
+DISTVERSION=	2.70.3
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +31,8 @@ CXXFLAGS+=	-I${WRKSRC}/compiler/generator/cpp # fatal error: 'cpp_code_container
 CXXFLAGS+=	`llvm-config${LLVM_VERSION} --cflags` -DLLVM_${LLVM_VERSION}0 # for the llvm backend
 CXXFLAGS_riscv64=	-fPIC # attempt to fix failure: can't create dynamic relocation R_RISCV_HI20 against symbol: vtable for LV2UI in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 LDFLAGS+=	-lexecinfo
+
+TEST_ENV=	PATH=${STAGEDIR}${PREFIX}/bin:${PATH}
 
 OPTIONS_DEFINE=		EXAMPLES HIGHLIGHT HTTPD_LIB
 OPTIONS_DEFAULT=	HIGHLIGHT HTTPD_LIB
@@ -73,10 +75,10 @@ post-install-HIGHLIGHT-on:
 	${INSTALL_DATA} ${WRKSRC}/syntax-highlighting/faust.vim ${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax/
 	# 6) EMACS TODO
 
-do-test: install
+do-test:
 	@${CP} ${FILESDIR}/example-freeverb_demo.dsp ${TEST_WRKSRC}
 	@cd ${TEST_WRKSRC} && \
-		faust2jaqt example-freeverb_demo.dsp && \
-		./example-freeverb_demo
+		${SETENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
+		${SETENV} ${TEST_ENV} ./example-freeverb_demo
 
 .include <bsd.port.mk>
