@@ -503,10 +503,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # MANPREFIX		- The directory prefix for manual pages.
 #				  Default: ${PREFIX}
-# MAN<sect>PREFIX
-#				- If manual pages of some sections install in different
-#				  locations than others, use these.
-#				  Default: ${MANPREFIX}
 #
 # Set the following to specify all .info files your port installs.
 #
@@ -2753,11 +2749,6 @@ MANDIRS+=	${PREFIX}/share/man
 .    endif
 
 MANDIRS+=	${MANPREFIX}/man
-.    for sect in 1 2 3 4 5 6 7 8 9
-MAN${sect}PREFIX?=	${MANPREFIX}
-.    endfor
-MANLPREFIX?=	${MANPREFIX}
-MANNPREFIX?=	${MANPREFIX}
 INFO_PATH?=	share/info
 
 .    if defined(INFO)
