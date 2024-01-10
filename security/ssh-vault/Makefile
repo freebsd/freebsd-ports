@@ -1,7 +1,8 @@
 PORTNAME=	ssh-vault
-PORTVERSION=	0.12.6
-PORTREVISION=	16
+PORTVERSION=	1.0.10
 CATEGORIES=	security
+MASTER_SITES=	CRATESIO
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Encrypt/decrypt using ssh keys
@@ -10,18 +11,256 @@ WWW=		https://ssh-vault.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		cargo localbase ssl
 
-USE_GITHUB=	yes
-GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
-GH_TUPLE=	golang:crypto:a0c6ece:gocrypto/vendor/golang.org/x/crypto \
-		golang:sys:v0.5.0:gosys/vendor/golang.org/x/sys \
-		ssh-vault:crypto:3700ed0:crypto/vendor/github.com/ssh-vault/crypto \
-		ssh-vault:ssh2pem:fdda4b3:ssh2pem/vendor/github.com/ssh-vault/ssh2pem
-
-GO_TARGET=	./cmd/ssh-vault
-GO_BUILDFLAGS=	-ldflags "-s -w -X main.version=${PORTVERSION}"
+CARGO_CRATES=   addr2line-0.21.0 \
+                adler-1.0.2 \
+                aead-0.5.2 \
+                aes-0.8.3 \
+                aes-gcm-0.10.3 \
+                aho-corasick-1.1.2 \
+                anstream-0.6.5 \
+                anstyle-1.0.4 \
+                anstyle-parse-0.2.3 \
+                anstyle-query-1.0.2 \
+                anstyle-wincon-3.0.2 \
+                anyhow-1.0.75 \
+                async-trait-0.1.74 \
+                autocfg-1.1.0 \
+                backtrace-0.3.69 \
+                base16ct-0.2.0 \
+                base58-0.2.0 \
+                base64-0.21.5 \
+                base64ct-1.6.0 \
+                bcrypt-pbkdf-0.10.0 \
+                bitflags-1.3.2 \
+                bitflags-2.4.1 \
+                block-buffer-0.10.4 \
+                block-padding-0.3.3 \
+                blowfish-0.9.1 \
+                bumpalo-3.14.0 \
+                byteorder-1.5.0 \
+                bytes-1.5.0 \
+                cbc-0.1.2 \
+                cc-1.0.83 \
+                cfg-if-1.0.0 \
+                chacha20-0.9.1 \
+                chacha20poly1305-0.10.1 \
+                cipher-0.4.4 \
+                clap-4.4.11 \
+                clap_builder-4.4.11 \
+                clap_lex-0.6.0 \
+                colorchoice-1.0.0 \
+                config-0.13.4 \
+                const-oid-0.9.6 \
+                core-foundation-0.9.4 \
+                core-foundation-sys-0.8.6 \
+                cpufeatures-0.2.11 \
+                crypto-bigint-0.5.5 \
+                crypto-common-0.1.6 \
+                ctr-0.9.2 \
+                curve25519-dalek-4.1.1 \
+                curve25519-dalek-derive-0.1.1 \
+                der-0.7.8 \
+                digest-0.10.7 \
+                ecdsa-0.16.9 \
+                ed25519-2.2.3 \
+                ed25519-dalek-2.1.0 \
+                elliptic-curve-0.13.8 \
+                encoding_rs-0.8.33 \
+                equivalent-1.0.1 \
+                errno-0.3.8 \
+                fastrand-2.0.1 \
+                ff-0.13.0 \
+                fiat-crypto-0.2.5 \
+                fnv-1.0.7 \
+                foreign-types-0.3.2 \
+                foreign-types-shared-0.1.1 \
+                form_urlencoded-1.2.1 \
+                futures-channel-0.3.29 \
+                futures-core-0.3.29 \
+                futures-io-0.3.29 \
+                futures-sink-0.3.29 \
+                futures-task-0.3.29 \
+                futures-util-0.3.29 \
+                generic-array-0.14.7 \
+                getrandom-0.2.11 \
+                ghash-0.5.0 \
+                gimli-0.28.1 \
+                group-0.13.0 \
+                h2-0.3.22 \
+                hashbrown-0.14.3 \
+                hermit-abi-0.3.3 \
+                hex-literal-0.4.1 \
+                hkdf-0.12.4 \
+                hmac-0.12.1 \
+                home-0.5.5 \
+                http-0.2.11 \
+                http-body-0.4.6 \
+                httparse-1.8.0 \
+                httpdate-1.0.3 \
+                hyper-0.14.27 \
+                hyper-tls-0.5.0 \
+                idna-0.5.0 \
+                indexmap-2.1.0 \
+                inout-0.1.3 \
+                ipnet-2.9.0 \
+                itoa-1.0.10 \
+                js-sys-0.3.66 \
+                lazy_static-1.4.0 \
+                libc-0.2.151 \
+                libm-0.2.8 \
+                linked-hash-map-0.5.6 \
+                linux-raw-sys-0.4.12 \
+                lock_api-0.4.11 \
+                log-0.4.20 \
+                md5-0.7.0 \
+                memchr-2.6.4 \
+                mime-0.3.17 \
+                minimal-lexical-0.2.1 \
+                miniz_oxide-0.7.1 \
+                mio-0.8.10 \
+                native-tls-0.2.11 \
+                nom-7.1.3 \
+                num-bigint-dig-0.8.4 \
+                num-integer-0.1.45 \
+                num-iter-0.1.43 \
+                num-traits-0.2.17 \
+                num_cpus-1.16.0 \
+                object-0.32.1 \
+                once_cell-1.19.0 \
+                opaque-debug-0.3.0 \
+                openssl-0.10.61 \
+                openssl-macros-0.1.1 \
+                openssl-probe-0.1.5 \
+                openssl-src-300.2.1+3.2.0 \
+                openssl-sys-0.9.97 \
+                p256-0.13.2 \
+                p384-0.13.0 \
+                p521-0.13.3 \
+                parking_lot-0.12.1 \
+                parking_lot_core-0.9.9 \
+                pathdiff-0.2.1 \
+                pbkdf2-0.12.2 \
+                pem-rfc7468-0.7.0 \
+                percent-encoding-2.3.1 \
+                pin-project-lite-0.2.13 \
+                pin-utils-0.1.0 \
+                pkcs1-0.7.5 \
+                pkcs8-0.10.2 \
+                pkg-config-0.3.27 \
+                platforms-3.2.0 \
+                poly1305-0.8.0 \
+                polyval-0.6.1 \
+                ppv-lite86-0.2.17 \
+                primeorder-0.13.6 \
+                proc-macro2-1.0.70 \
+                quote-1.0.33 \
+                rand-0.8.5 \
+                rand_chacha-0.3.1 \
+                rand_core-0.6.4 \
+                redox_syscall-0.4.1 \
+                regex-1.10.2 \
+                regex-automata-0.4.3 \
+                regex-syntax-0.8.2 \
+                reqwest-0.11.22 \
+                rfc6979-0.4.0 \
+                rpassword-7.3.1 \
+                rsa-0.9.6 \
+                rtoolbox-0.0.2 \
+                rustc-demangle-0.1.23 \
+                rustc_version-0.4.0 \
+                rustix-0.38.28 \
+                ryu-1.0.16 \
+                schannel-0.1.22 \
+                scopeguard-1.2.0 \
+                sec1-0.7.3 \
+                secrecy-0.8.0 \
+                security-framework-2.9.2 \
+                security-framework-sys-2.9.1 \
+                semver-1.0.20 \
+                serde-1.0.193 \
+                serde_derive-1.0.193 \
+                serde_json-1.0.108 \
+                serde_urlencoded-0.7.1 \
+                sha2-0.10.8 \
+                shell-words-1.1.0 \
+                signature-2.2.0 \
+                slab-0.4.9 \
+                smallvec-1.11.2 \
+                socket2-0.4.10 \
+                socket2-0.5.5 \
+                spin-0.5.2 \
+                spki-0.7.3 \
+                ssh-cipher-0.2.0 \
+                ssh-encoding-0.2.0 \
+                ssh-key-0.6.3 \
+                strsim-0.10.0 \
+                subtle-2.5.0 \
+                syn-2.0.41 \
+                system-configuration-0.5.1 \
+                system-configuration-sys-0.5.0 \
+                temp-env-0.3.6 \
+                tempfile-3.8.1 \
+                tinyvec-1.6.0 \
+                tinyvec_macros-0.1.1 \
+                tokio-1.35.0 \
+                tokio-native-tls-0.3.1 \
+                tokio-util-0.7.10 \
+                tower-service-0.3.2 \
+                tracing-0.1.40 \
+                tracing-core-0.1.32 \
+                try-lock-0.2.5 \
+                typenum-1.17.0 \
+                unicode-bidi-0.3.14 \
+                unicode-ident-1.0.12 \
+                unicode-normalization-0.1.22 \
+                universal-hash-0.5.1 \
+                url-2.5.0 \
+                utf8parse-0.2.1 \
+                vcpkg-0.2.15 \
+                version_check-0.9.4 \
+                want-0.3.1 \
+                wasi-0.11.0+wasi-snapshot-preview1 \
+                wasm-bindgen-0.2.89 \
+                wasm-bindgen-backend-0.2.89 \
+                wasm-bindgen-futures-0.4.39 \
+                wasm-bindgen-macro-0.2.89 \
+                wasm-bindgen-macro-support-0.2.89 \
+                wasm-bindgen-shared-0.2.89 \
+                web-sys-0.3.66 \
+                winapi-0.3.9 \
+                winapi-i686-pc-windows-gnu-0.4.0 \
+                winapi-x86_64-pc-windows-gnu-0.4.0 \
+                windows-sys-0.48.0 \
+                windows-sys-0.52.0 \
+                windows-targets-0.48.5 \
+                windows-targets-0.52.0 \
+                windows_aarch64_gnullvm-0.48.5 \
+                windows_aarch64_gnullvm-0.52.0 \
+                windows_aarch64_msvc-0.48.5 \
+                windows_aarch64_msvc-0.52.0 \
+                windows_i686_gnu-0.48.5 \
+                windows_i686_gnu-0.52.0 \
+                windows_i686_msvc-0.48.5 \
+                windows_i686_msvc-0.52.0 \
+                windows_x86_64_gnu-0.48.5 \
+                windows_x86_64_gnu-0.52.0 \
+                windows_x86_64_gnullvm-0.48.5 \
+                windows_x86_64_gnullvm-0.52.0 \
+                windows_x86_64_msvc-0.48.5 \
+                windows_x86_64_msvc-0.52.0 \
+                winreg-0.50.0 \
+                x25519-dalek-2.0.0 \
+                yaml-rust-0.4.5 \
+                zeroize-1.7.0 \
+                zeroize_derive-1.4.2
 
 PLIST_FILES=	bin/ssh-vault
+
+.include <bsd.port.options.mk>
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ssh-vault
 
 .include <bsd.port.mk>
