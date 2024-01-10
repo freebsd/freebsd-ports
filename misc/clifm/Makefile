@@ -1,5 +1,5 @@
 PORTNAME=	clifm
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -21,6 +21,10 @@ ALL_TARGET=	build
 MAKE_ENV=	LIBS_FreeBSD="-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-lreadline -lintl -lmagic"
 SHEBANG_FILES=	misc/tools/deroff.py misc/tools/manpages_comp_gen.py
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^set enable-bracketed-paste/s,on,off,' \
+		${WRKSRC}/misc/readline.clifm
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.clifm \
