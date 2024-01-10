@@ -1,5 +1,5 @@
 PORTNAME=	libretro-fbalpha2012
-DISTVERSION=	0.20220327
+DISTVERSION=	0.20231101
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +20,7 @@ PLIST_FILES=	lib/libretro/fbalpha2012_libretro.so
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	fbalpha2012
-GH_TAGNAME=	7f8860543a81ba79c0e1ce1aa219af44568c628a
+GH_TAGNAME=	b7ac554c53561d41640372f23dab15cd6fc4f0c4
 
 CXXFLAGS+=	-Wno-c++11-narrowing
 
