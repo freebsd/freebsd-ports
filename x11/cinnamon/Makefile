@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon
 PORTVERSION=	5.4.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -64,16 +64,18 @@ SHEBANG_FILES=	files/* src/data-to-c.pl
 USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-MESON_ARGS=	-Ddisable_networkmanager=true
+PLIST_SUB+=	PORTDOCS="@comment "
+MESON_ARGS=	-Ddocs=false -Ddisable_networkmanager=true
 
 GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_DEFAULT=	DOCS NLS
+#OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-DOCS_MESON_TRUE=	docs
+#DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
+#DOCS_MESON_TRUE=	docs
 
 NLS_RUN_DEPENDS=	cinnamon-translations>0:misc/cinnamon-translations
 
