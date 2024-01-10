@@ -179,6 +179,7 @@
     SUBDIR += py-libsedml
     SUBDIR += py-loompy
     SUBDIR += py-macs2
+    SUBDIR += py-macs3
     SUBDIR += py-mrcfile
     SUBDIR += py-multiqc
     SUBDIR += py-ont-fast5-api

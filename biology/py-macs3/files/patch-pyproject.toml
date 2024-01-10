@@ -1,0 +1,6 @@
+--- pyproject.toml.orig	2024-01-06 15:00:01 UTC
++++ pyproject.toml
+@@ -1,2 +1,2 @@
+ [build-system]
+-requires=['setuptools>=60.0', 'numpy>=1.19', 'cykhash>=2.0,<3.0', 'Cython~=3.0', 'hmmlearn>=0.3']
++requires=['setuptools>=60.0', 'numpy>=1.19', 'cykhash>=2.0,<3.0', 'Cython>=0', 'hmmlearn>=0.3']
