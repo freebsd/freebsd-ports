@@ -1,2 +1,0 @@
-GCC, the GNU C/C++ Compiler, customized to build the FreeBSD base system.
-To use GCC for other purposes, please use one of the lang/gcc* packages.
