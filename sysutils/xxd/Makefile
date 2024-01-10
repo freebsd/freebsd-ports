@@ -37,6 +37,6 @@ VIM_DISTVERSION!=	${BSDMAKE} -f ${VIM_PORT}/Makefile -V DISTVERSION
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDOCS}/xxd.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKDOCS}/xxd.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

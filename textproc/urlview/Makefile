@@ -1,6 +1,6 @@
 PORTNAME=	urlview
 PORTVERSION=	0.9.20131021
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -17,7 +17,7 @@ GH_TAGNAME=	45443109
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/urlview \
 		etc/urlview.conf.sample \
-		man/man1/urlview.1.gz
+		share/man/man1/urlview.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
@@ -26,7 +26,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/urlview ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/urlview.man ${STAGEDIR}${MAN1PREFIX}/man/man1/urlview.1
+	${INSTALL_MAN} ${WRKSRC}/urlview.man ${STAGEDIR}${PREFIX}/share/man/man1/urlview.1
 	${INSTALL_DATA} ${WRKSRC}/sample.urlview \
 		${STAGEDIR}${PREFIX}/etc/urlview.conf.sample
 

@@ -1,7 +1,7 @@
 PORTNAME=	oneshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -51,6 +51,6 @@ post-install-DOCS-on:
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${GO_WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	grap
 PORTVERSION=	1.46
+PORTREVISION=	1
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
@@ -20,7 +21,7 @@ PORTEXAMPLES=	*
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.doc \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/grap.defines ${WRKSRC}/grap.tex.defines \
 		${STAGEDIR}${DATADIR}

@@ -1,6 +1,7 @@
 PORTNAME=	doublecmd
 PORTVERSION=	1.1.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -246,7 +247,7 @@ pre-install:
 	@cd ${WRKSRC}/sdk && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/sdk/|' >> ${PLIST}
 
-	@${ECHO_CMD} "man/man1/doublecmd.1.gz" >> ${PLIST}
+	@${ECHO_CMD} "share/man/man1/doublecmd.1.gz" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx
@@ -341,7 +342,7 @@ do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
-	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

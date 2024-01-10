@@ -1,5 +1,6 @@
 PORTNAME=	libsoldout
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://instinctive.eu/code/
 
@@ -23,7 +24,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/soldout
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/soldout
 	${INSTALL_DATA} ${WRKSRC}/libsoldout.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/mkd2*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/mkd2*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>

@@ -135,7 +135,7 @@ post-install:
 	${ECHO_CMD} @dir ${UNIT_TMPDIR} >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
 	${INSTALL_MAN} ${WRKSRC}/build/share/man/man8/unitd.8 \
-		${STAGEDIR}${MAN8PREFIX}/share/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 .endif
 
 .include "../../www/unit/version.mk"

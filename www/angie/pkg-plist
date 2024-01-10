@@ -10,7 +10,7 @@ sbin/angie-nodebug
 sbin/angie
 %%DEBUG%%sbin/angie-debug
 
-man/man8/angie.8.gz
+share/man/man8/angie.8.gz
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/CHANGES.ru
 %%DOCSDIR%%/README.rst

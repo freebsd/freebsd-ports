@@ -1,5 +1,6 @@
 PORTNAME=	django
 PORTVERSION=	3.2.23
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
@@ -26,7 +27,7 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
-PLIST_FILES=	man/man1/django-admin.1.gz
+PLIST_FILES=	share/man/man1/django-admin.1.gz
 PORTDOCS=	*
 
 SHEBANG_FILES=	django/bin/django-admin.py \
@@ -56,7 +57,7 @@ post-build-HTMLDOCS-on:
 	cd ${WRKSRC}/docs && ${GMAKE} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${PREFIX}/share/man/man1
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"	* See http://docs.djangoproject.com/ for complete documentation"
 	@${ECHO_MSG}	""

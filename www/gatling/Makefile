@@ -1,5 +1,6 @@
 PORTNAME=	gatling
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	www benchmarks ftp
 MASTER_SITES=	https://www.fefe.de/gatling/
 
@@ -28,7 +29,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	${PLIST_BIN:S,^,bin/,} \
 		${PLIST_SBIN:S,^,sbin/,} \
-		man/man8/gatling.8.gz \
+		share/man/man8/gatling.8.gz \
 		sbin/gatling_wrapper
 
 PORTDOCS=	CHANGES README README.antidos README.cgi README.ftp \
@@ -48,7 +49,7 @@ TLS_DESC=		Build and install tlsgatling
 ZLIB_DESC=		Compress outgoing data
 
 BENCHMARKS_MAKE_ENV=		BENCHMARKS=1
-BENCHMARKS_PLIST_FILES=		man/man1/bench.1.gz
+BENCHMARKS_PLIST_FILES=		share/man/man1/bench.1.gz
 BENCHMARKS_PORTDOCS=		README.bindbench README.forkbench \
 				README.httpbench README.manymapbench \
 				README.mmapbench
@@ -92,9 +93,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .if !empty(BENCH1)
-	cd ${WRKSRC} && ${INSTALL_MAN} ${BENCH1} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	cd ${WRKSRC} && ${INSTALL_MAN} ${BENCH1} ${STAGEDIR}${PREFIX}/share/man/man1
 .endif
-	cd ${WRKSRC} && ${INSTALL_MAN} ${GATLING8} ${STAGEDIR}${MAN8PREFIX}/man/man8
+	cd ${WRKSRC} && ${INSTALL_MAN} ${GATLING8} ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

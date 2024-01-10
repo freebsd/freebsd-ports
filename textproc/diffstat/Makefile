@@ -1,5 +1,6 @@
 PORTNAME=	diffstat
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/ \
 		ftp://ftp.invisible-island.net/${PORTNAME}/
@@ -15,10 +16,10 @@ USES=		tar:tgz
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-PLIST_FILES=	bin/diffstat man/man1/diffstat.1.gz
+PLIST_FILES=	bin/diffstat share/man/man1/diffstat.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

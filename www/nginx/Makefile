@@ -390,7 +390,7 @@ do-install-NAXSI-on:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/vimfiles
 	cd ${WRKSRC}/contrib/vim && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/vim/vimfiles
-	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${CAT} ${WRKSRC}/conf/nginx.conf >> ${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
 post-install-WWW-on:

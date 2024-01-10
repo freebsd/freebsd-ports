@@ -1,5 +1,5 @@
 PORTNAME=	bsd-spell
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.1
 CATEGORIES=	textproc
@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/usr.bin/spell/special.math ${STAGEDIR}${PREFIX}/share/dict
 	${INSTALL_DATA} ${WRKSRC}/usr.bin/spell/stop ${STAGEDIR}${PREFIX}/share/dict
 
-	${INSTALL_MAN} ${WRKSRC}/usr.bin/spell/spell.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/usr.bin/deroff/deroff.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/usr.bin/spell/spell.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/usr.bin/deroff/deroff.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

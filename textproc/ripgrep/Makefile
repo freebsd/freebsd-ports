@@ -1,6 +1,6 @@
 PORTNAME=	ripgrep
 DISTVERSION=	14.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -69,7 +69,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 
 PLIST_FILES=	bin/rg \
 		etc/bash_completion.d/rg.bash \
-		man/man1/rg.1.gz \
+		share/man/man1/rg.1.gz \
 		share/fish/vendor_completions.d/rg.fish \
 		share/zsh/site-functions/_rg
 
@@ -93,7 +93,7 @@ SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
 	${STAGEDIR}${PREFIX}/bin/rg --generate man > ${WRKDIR}/rg.1
-	${INSTALL_MAN} ${WRKDIR}/rg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/rg.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 	${STAGEDIR}${PREFIX}/bin/rg --generate complete-bash > ${STAGEDIR}${PREFIX}/etc/bash_completion.d/rg.bash
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/

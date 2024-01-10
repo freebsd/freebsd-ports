@@ -1,7 +1,7 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
@@ -25,14 +25,14 @@ MAKEFILE=	makefile
 GH_ACCOUNT=	CMB
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/man-edbrowse-freebsd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/doc/man-edbrowse-freebsd.1 ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	${INSTALL_PROGRAM} ${WRKSRC}/src/edbrowse ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:

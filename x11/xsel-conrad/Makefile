@@ -1,6 +1,6 @@
 PORTNAME=	xsel
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vergenet.net/~conrad/software/xsel/download/
 PKGNAMESUFFIX=	-conrad
@@ -20,14 +20,14 @@ CONFLICTS_INSTALL=	xsel
 USES=		autoreconf localbase xorg
 USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1x ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1x ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \

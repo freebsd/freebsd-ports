@@ -1,6 +1,6 @@
 PORTNAME?=	x3270
 PORTVERSION=	4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11 net
 MASTER_SITES=	http://x3270.bgp.nu/download/04.02/
 DISTFILES=	suite3270-${PORTVERSION}ga10-src.tgz
@@ -64,13 +64,13 @@ PLIST_SUB+=	DBCS="@comment "
 
 post-install:
 .for m in b3270 c3270 pr3287 s3270 tcl3270
-	@(cd ${WRKSRC} ; ${INSTALL_MAN} ${m}/${m}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${m}.1)
+	@(cd ${WRKSRC} ; ${INSTALL_MAN} ${m}/${m}.man ${STAGEDIR}${PREFIX}/share/man/man1/${m}.1)
 .endfor
 .if ! defined(C3270)
-	${INSTALL_MAN} ${WRKSRC}/x3270/x3270.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270.1
-	${INSTALL_MAN} ${WRKSRC}/x3270if/x3270if.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270if.1
+	${INSTALL_MAN} ${WRKSRC}/x3270/x3270.man ${STAGEDIR}${PREFIX}/share/man/man1/x3270.1
+	${INSTALL_MAN} ${WRKSRC}/x3270if/x3270if.man ${STAGEDIR}${PREFIX}/share/man/man1/x3270if.1
 .endif
-	${INSTALL_MAN} ${WRKSRC}/c3270/ibm_hosts.man ${STAGEDIR}${MAN5PREFIX}/man/man5/ibm_hosts.5
+	${INSTALL_MAN} ${WRKSRC}/c3270/ibm_hosts.man ${STAGEDIR}${PREFIX}/share/man/man5/ibm_hosts.5
 
 	@(cd ${WRKSRC}/x3270/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	@(cd ${WRKSRC}/x3270 && ${COPYTREE_SHARE} html ${STAGEDIR}${EXAMPLESDIR})

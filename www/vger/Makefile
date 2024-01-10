@@ -1,5 +1,6 @@
 PORTNAME=	vger
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://tildegit.org/solene/vger/archive/
 DISTFILES=	${PORTVERSION}.tar.gz
@@ -17,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${CP} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/gemini
