@@ -1,3 +1,36 @@
+  <vuln vid="ec8e4040-afcd-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.216</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.216</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_9.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[1513379] High CVE-2024-0333: Insufficient data validation in Extensions. Reported by Malcolm Stagg (@malcolmst) of SODIUM-24, LLC on 2023-12-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0333</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_9.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-09</discovery>
+      <entry>2024-01-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2f981f1-ad9e-11ee-8b55-4ccc6adda413">
     <topic>QtNetwork -- potential buffer overflow</topic>
     <affects>
