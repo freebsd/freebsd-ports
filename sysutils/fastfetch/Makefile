@@ -1,5 +1,6 @@
 PORTNAME=	fastfetch
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -36,61 +37,48 @@ XFCONF_DESC=	Needed for XFWM theme and XFCE Terminal font
 
 LIBPCI_CMAKE_BOOL=	ENABLE_LIBPCI
 LIBPCI_BUILD_DEPENDS=	${LOCALBASE}/lib/libpci.so:devel/libpci
-LIBPCI_RUN_DEPENDS=	${LOCALBASE}/lib/libpci.so:devel/libpci
 
 VULKAN_CMAKE_BOOL=	ENABLE_VULKAN
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader \
 			${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/lib/libwayland-server.so:graphics/wayland
-WAYLAND_RUN_DEPENDS=	${LOCALBASE}/lib/libwayland-server.so:graphics/wayland
 
 XCB_CMAKE_BOOL=	ENABLE_XCB ENABLE_XCB_RANDR
 XCB_BUILD_DEPENDS=	${LOCALBASE}/lib/libxcb-randr.so:x11/libxcb
-XCB_RUN_DEPENDS=	${LOCALBASE}/lib/libxcb-randr.so:x11/libxcb
 
 GIO_CMAKE_BOOL=	ENABLE_GIO
 GIO_BUILD_DEPENDS=	${LOCALBASE}/lib/libgio-2.0.so:devel/glib20
-GIO_RUN_DEPENDS=	${LOCALBASE}/lib/libgio-2.0.so:devel/glib20
 
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
 DBUS_BUILD_DEPENDS=	${LOCALBASE}/lib/libdbus-1.so:devel/dbus
-DBUS_RUN_DEPENDS=	${LOCALBASE}/lib/libdbus-1.so:devel/dbus
 
 DCONF_CMAKE_BOOL=	ENABLE_DCONF
 DCONF_BUILD_DEPENDS=	${LOCALBASE}/lib/libdconf.so:devel/dconf
-DCONF_RUN_DEPENDS=	${LOCALBASE}/lib/libdconf.so:devel/dconf
 
 XFCONF_CMAKE_BOOL=	ENABLE_XFCONF
 XFCONF_BUILD_DEPENDS=	${LOCALBASE}/lib/libxfconf-0.so:x11/xfce4-conf
-XFCONF_RUN_DEPENDS=	${LOCALBASE}/lib/libxfconf-0.so:x11/xfce4-conf
 
 SQLITE3_CMAKE_BOOL=	ENABLE_SQLITE3
 SQLITE3_BUILD_DEPENDS=	${LOCALBASE}/lib/libsqlite3.so:databases/sqlite3
-SQLITE3_RUN_DEPENDS=	${LOCALBASE}/lib/libsqlite3.so:databases/sqlite3
 
 IMAGEMAGICK_CMAKE_BOOL=	ENABLE_IMAGEMAGICK7
-IMAGEMAGICK_USES=	magick:7,build,run
+IMAGEMAGICK_USES=	magick:7,build
 
 CHAFA_IMPLIES=	IMAGEMAGICK
 CHAFA_CMAKE_BOOL=	ENABLE_CHAFA
 CHAFA_BUILD_DEPENDS=	${LOCALBASE}/lib/libchafa.so:graphics/chafa
-CHAFA_RUN_DEPENDS=	${LOCALBASE}/lib/libchafa.so:graphics/chafa
 
 GLX_CMAKE_BOOL=	ENABLE_GLX
 GLX_BUILD_DEPENDS=	${LOCALBASE}/lib/libGLX.so:graphics/libglvnd
-GLX_RUN_DEPENDS=	${LOCALBASE}/lib/libGLX.so:graphics/libglvnd
 
 OPENCL_CMAKE_BOOL=	ENABLE_OPENCL
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenCL.so:devel/ocl-icd \
 			${LOCALBASE}/include/CL/cl.h:devel/opencl
-OPENCL_RUN_DEPENDS=	${LOCALBASE}/lib/libOpenCL.so:devel/ocl-icd
 
 PULSEAUDIO_CMAKE_BOOL=	ENABLE_PULSE
 PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/lib/libpulse.so:audio/pulseaudio
-PULSEAUDIO_RUN_DEPENDS=	${LOCALBASE}/lib/libpulse.so:audio/pulseaudio
 
 CMAKE_ARGS=	-DTARGET_DIR_ETC:STRING="${LOCALBASE}/etc" \
 		-DENABLE_SYSTEM_YYJSON:BOOL=ON
