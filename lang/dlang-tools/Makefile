@@ -1,6 +1,6 @@
 PORTNAME=	tools
 PORTVERSION=	2.101.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 PKGNAMEPREFIX=	dlang-
@@ -32,6 +32,6 @@ do-install:
 .for f in ${TOOLS_LIST} dustmite
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/man1/rdmd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/rdmd.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

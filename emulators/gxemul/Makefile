@@ -1,5 +1,6 @@
 PORTNAME=	gxemul
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://gavare.se/gxemul/src/
 
@@ -20,7 +21,7 @@ CONFIGURE_ENV=	CXX=${CXX} \
 BINARY_ALIAS=	doxygen=${FALSE}
 
 PLIST_FILES=	bin/gxemul \
-		man/man1/gxemul.1.gz
+		share/man/man1/gxemul.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS X11
@@ -33,7 +34,7 @@ X11_CONFIGURE_OFF=	--disable-x
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/gxemul.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/gxemul.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

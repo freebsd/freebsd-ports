@@ -1,5 +1,6 @@
 PORTNAME=	rdesktop
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net comms
 
@@ -71,7 +72,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/rdesktop.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/rdesktop.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/keymaps
 	${INSTALL_DATA} ${WRKSRC}/keymaps/* ${STAGEDIR}${DATADIR}/keymaps
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

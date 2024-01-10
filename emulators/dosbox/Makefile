@@ -23,7 +23,7 @@ DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/dosbox.ico" "dosbox" \
 		"System;Emulator;" true
 
-PLIST_FILES=	bin/dosbox man/man1/dosbox.1.gz share/pixmaps/dosbox.ico
+PLIST_FILES=	bin/dosbox share/man/man1/dosbox.1.gz share/pixmaps/dosbox.ico
 PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS
@@ -43,7 +43,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dosbox ${STAGEDIR}${PREFIX}/bin/dosbox
 	${INSTALL_DATA} ${WRKSRC}/src/dosbox.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/docs/dosbox.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/dosbox.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

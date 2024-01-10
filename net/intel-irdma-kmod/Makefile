@@ -1,5 +1,6 @@
 PORTNAME=	irdma
 PORTVERSION=	1.2.17
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES?=	https://downloadmirror.intel.com/786091/
 
@@ -23,12 +24,12 @@ MAKE_ENV=	WERROR=""
 MAKE_FLAGS=	`make -C ${PORTSDIR}/net/intel-ice-kmod -V WRKSRC`
 MAKEFILE=
 PLIST_FILES=	${KMODDIR}/${PORTNAME}_updated.ko \
-		man/man4/irdma.4.gz
+		share/man/man4/irdma.4.gz
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/src/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}/${PORTNAME}_updated.ko
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.4.gz ${STAGEDIR}${MAN4PREFIX}/man/man4/
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.4.gz ${STAGEDIR}${PREFIX}/share/man/man4/
 
 .include <bsd.port.mk>

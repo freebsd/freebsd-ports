@@ -20,7 +20,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/exifgrep ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/exifprobe ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/exifgrep.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/exifprobe.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/exifgrep.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/exifprobe.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

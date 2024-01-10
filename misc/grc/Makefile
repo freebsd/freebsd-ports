@@ -1,5 +1,6 @@
 PORTNAME=	grc
 PORTVERSION=	1.13
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -36,7 +37,7 @@ post-patch:
 do-install:
 .for i in grc grcat
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${i}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${i}.1 ${STAGEDIR}${PREFIX}/share/man/man1)
 .endfor
 	(cd ${WRKSRC} && ${INSTALL_DATA} grc.conf ${STAGEDIR}${PREFIX}/etc)
 	@${MKDIR} ${STAGEDIR}${DATADIR}

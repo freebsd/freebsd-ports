@@ -1,5 +1,5 @@
 bin/empty
-man/man1/empty.1.gz
+share/man/man1/empty.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

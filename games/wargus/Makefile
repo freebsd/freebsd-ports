@@ -37,7 +37,7 @@ STORMLIB_CMAKE_BOOL=	WITH_STORMLIB StormLib_FIND_REQUIRED
 STORMLIB_LIB_DEPENDS=	libstorm.so:archivers/stormlib
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.6 ${STAGEDIR}${MAN6PREFIX}/share/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/doc/*.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

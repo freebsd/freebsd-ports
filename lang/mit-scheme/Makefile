@@ -1,6 +1,6 @@
 PORTNAME=	mit-scheme
 PORTVERSION=	9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU/mit-scheme/stable.pkg/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${MIT_SCHEME_ARCH}
@@ -67,7 +67,7 @@ do-build:
 
 do-install:
 	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src && ${MAKE_CMD} install DESTDIR=${STAGEDIR}
-	${INSTALL_MAN} ${WRKDIR}/mit-scheme-${PORTVERSION}/doc/scheme.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKDIR}/mit-scheme-${PORTVERSION}/doc/scheme.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 	[ $$(${LS} ${STAGEDIR}${PREFIX}/lib/mit-scheme-${MIT_SCHEME_ARCH}/lib/ | wc -l) = 0 ] || \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mit-scheme-${MIT_SCHEME_ARCH}/lib/*.so

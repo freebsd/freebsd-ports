@@ -17,8 +17,7 @@
  
  ### Location of man page
 -MANLOC = $(PREFIX)/man/man1
-+MAN1PREFIX?=	${PREFIX}
-+MANLOC = $(DESTDIR)$(MAN1PREFIX)/man/man1
++MANLOC = $(DESTDIR)$(PREFIX)/share/man/man1
  
  ### Location of help file
 -HELPLOC = $(PREFIX)/lib

@@ -1,5 +1,6 @@
 PORTNAME=	haproxy
 DISTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/2.9/src/
 
@@ -73,7 +74,7 @@ OPENSSL_MAKE_ARGS+=	USE_QUIC=1 USE_QUIC_OPENSSL_COMPAT=1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/admin/halog/halog ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

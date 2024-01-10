@@ -1,6 +1,6 @@
 PORTNAME=	luajit
 DISTVERSION=	2.0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	https://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
@@ -41,6 +41,6 @@ LDFLAGS+=	-lm -pthread
 post-install:
 	${LN} -sf ${PORTNAME}-${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

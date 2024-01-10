@@ -1,6 +1,6 @@
 PORTNAME=	librep
 PORTVERSION=	0.92.7
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	http://download.tuxfamily.org/librep/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -49,7 +49,7 @@ post-build-INFO-on:
 		makeinfo --no-split  -I . librep.texi -o librep.info
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-INFO-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/librep.info ${STAGEDIR}${PREFIX}/${INFO_PATH}

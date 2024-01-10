@@ -11,10 +11,11 @@ WWW=		https://hp.vector.co.jp/authors/VA000501/
 USES=		zip
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
-PLIST_FILES=	bin/qkc man/ja/man1/qkc.1.gz
+PLIST_FILES=	bin/qkc share/man/ja/man1/qkc.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qkc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${STAGEDIR}${MAN1PREFIX}/man/ja/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${STAGEDIR}${PREFIX}/share/man/ja/man1
 
 .include <bsd.port.mk>

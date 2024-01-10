@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.3.1.20240103
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man
@@ -168,8 +168,8 @@ do-install:
 		${MAKE_CMD} install ${MAKE_ARGS} ${BOOTPPC})
 
 	# Installing manpages
-	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/man/man5/* ${STAGEDIR}${MAN1PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKDIR}/man/man5/* ${STAGEDIR}${PREFIX}/share/man/man5
 	# symlinking compiler
 	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ../lib/fpc/${FPCBASEVER}/${PPNAME})
 	# creating sample configuration file

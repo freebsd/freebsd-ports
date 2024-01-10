@@ -1,8 +1,8 @@
 bin/grc
 bin/grcat
 etc/grc.conf
-man/man1/grc.1.gz
-man/man1/grcat.1.gz
+share/man/man1/grc.1.gz
+share/man/man1/grcat.1.gz
 %%DATADIR%%/conf.ant
 %%DATADIR%%/conf.blkid
 %%DATADIR%%/conf.common

@@ -3,10 +3,10 @@ bin/cpm
 bin/yaze
 bin/z80
 libexec/yaze_bin
-man/man1/cdm.1.gz
-man/man1/cpm.1.gz
-man/man1/yaze.1.gz
-man/man1/z80.1.gz
+share/man/man1/cdm.1.gz
+share/man/man1/cpm.1.gz
+share/man/man1/yaze.1.gz
+share/man/man1/z80.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/00-INDEX.doc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-2.20

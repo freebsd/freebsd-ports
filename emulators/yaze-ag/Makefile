@@ -1,5 +1,6 @@
 PORTNAME=	yaze-ag
 DISTVERSION=	2.51.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/
 
@@ -22,7 +23,7 @@ MAKE_ENV=	BINDIR=${PREFIX}/bin \
 		DSKDIR=${DATADIR}/disks \
 		LIBDIR=${DATADIR} \
 		LIBEXECDIR=${PREFIX}/libexec \
-		MANDIR=${MAN1PREFIX}/man/man1 \
+		MANDIR=${PREFIX}/share/man/man1 \
 		OPTIMIZE="${CFLAGS}"
 
 CONFLICTS_INSTALL=	cpmtools

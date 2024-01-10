@@ -13,7 +13,7 @@
  
  man_file.files = manual/auralquiz.6
 -man_file.path = /usr/share/man/man6/
-+man_file.path = %%MAN6PREFIX%%/share/man/man6/
++man_file.path = %%PREFIX%%/share/man/man6/
  
  #icon32_png.files = icon/32x32/auralquiz.png
 -#icon32_png.path = /usr/share/icons/hicolor/32x32/apps/

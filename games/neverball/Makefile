@@ -34,7 +34,7 @@ NLS_MAKE_ENV_OFF=	ENABLE_NLS=0
 
 do-install:
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
-	${INSTALL_MAN} ${WRKSRC}/dist/*.6 ${STAGEDIR}${MAN6PREFIX}/share/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/dist/*.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 .for f in neverball neverputt
 	${INSTALL_DATA} ${WRKSRC}/dist/${f}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/

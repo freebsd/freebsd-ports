@@ -1,5 +1,5 @@
 bin/wtf
-man/man6/wtf.6.gz
+share/man/man6/wtf.6.gz
 %%DATADIR%%/acronyms
 %%DATADIR%%/acronyms-o
 %%DATADIR%%/acronyms.comp

@@ -1,5 +1,6 @@
 PORTNAME=	parpd
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.iks-jena.de/pub/mitarb/lutz/parpd/
 
@@ -14,7 +15,7 @@ USES=		compiler tar:tgz
 USE_RC_SUBR=	parpd
 
 NO_TEST=	yes
-PLIST_FILES=	sbin/parpd man/man8/parpd.8.gz
+PLIST_FILES=	sbin/parpd share/man/man8/parpd.8.gz
 
 .include <bsd.port.pre.mk>
 
@@ -25,6 +26,6 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/parpd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${INSTALL_WRKSRC}/parpd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${INSTALL_WRKSRC}/parpd.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.post.mk>

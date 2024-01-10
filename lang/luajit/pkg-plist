@@ -22,4 +22,4 @@ share/luajit-%%VERSION%%/jit/dis_x86.lua
 share/luajit-%%VERSION%%/jit/dump.lua
 share/luajit-%%VERSION%%/jit/v.lua
 share/luajit-%%VERSION%%/jit/vmdef.lua
-man/man1/luajit.1.gz
+share/man/man1/luajit.1.gz

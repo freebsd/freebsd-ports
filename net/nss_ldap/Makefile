@@ -1,6 +1,6 @@
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/ \
 		LOCAL/martymac
@@ -69,6 +69,6 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${STAGEDIR}/${PREFIX}/lib/nss_ldap.so.1
 	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${STAGEDIR}/${PREFIX}/etc/nss_ldap.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/nss_ldap.5 ${STAGEDIR}/${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/nss_ldap.5 ${STAGEDIR}/${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>

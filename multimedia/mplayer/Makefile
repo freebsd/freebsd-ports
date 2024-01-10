@@ -89,7 +89,7 @@ post-install:
 .endfor
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 	@${LN} -sf mplayer ${STAGEDIR}${PREFIX}/bin/gmplayer
-	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
+	@(cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
 	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${STAGEDIR}${PREFIX}/share/pixmaps/mplayer.png
 .endif
 

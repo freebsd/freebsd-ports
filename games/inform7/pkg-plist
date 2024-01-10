@@ -5,7 +5,7 @@ bin/dumb-glulxe
 bin/i7
 bin/inform6
 bin/ni
-man/man6/i7.6.gz
+share/man/man6/i7.6.gz
 %%DATADIR%%/Internal/Templates/Vorple/zvm.min.js
 %%DATADIR%%/Internal/Templates/Vorple/vorple.parchment.min.js
 %%DATADIR%%/Internal/Templates/Vorple/vorple.css

@@ -1,5 +1,6 @@
 PORTNAME=	powwow
 PORTVERSION=	1.2.23
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://hoopajoo.net/static/projects/ \
 		LOCAL/otis/games_powwow/
@@ -24,8 +25,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/powwow-muc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/catrw ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/follow ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${MAN6PREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/man/powwow.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/man/powwow.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

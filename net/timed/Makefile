@@ -1,6 +1,6 @@
 PORTNAME=	timed
 PORTVERSION=	8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	se@FreeBSD.org
@@ -20,7 +20,7 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/${f}/${f} \
 			${STAGEDIR}${PREFIX}/sbin
 		${INSTALL_MAN} ${WRKSRC}/${f}/${f}.8 \
-			${STAGEDIR}${MAN8PREFIX}/man/man8/
+			${STAGEDIR}${PREFIX}/share/man/man8/
 .endfor
 		${INSTALL_SCRIPT} ${WRKSRC}/rc.d/timed \
 			${STAGEDIR}${PREFIX}/etc/rc.d/

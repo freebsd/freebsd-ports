@@ -17,7 +17,7 @@
 %%EXIM%%sbin/exiqgrep
 %%EXIM%%sbin/exiqsumm
 %%EXIM%%sbin/exiwhat
-%%EXIM%%man/man8/exim.8.gz
+%%EXIM%%share/man/man8/exim.8.gz
 %%EXIMON%%sbin/eximon
 %%EXIMON%%sbin/eximon.bin
 %%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS

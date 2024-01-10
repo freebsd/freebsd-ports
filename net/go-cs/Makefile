@@ -1,7 +1,7 @@
 PORTNAME=	go-cs
 PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	net
 
 MAINTAINER=	akosela@andykosela.com
@@ -17,11 +17,11 @@ GH_ACCOUNT=	akosela
 
 CONFLICTS_INSTALL=	clearsilver csound # bin/cs
 
-PLIST_FILES=	bin/cs man/man1/cs.1.gz
+PLIST_FILES=	bin/cs share/man/man1/cs.1.gz
 
 GO_TARGET=	./cs
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/cs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cs.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

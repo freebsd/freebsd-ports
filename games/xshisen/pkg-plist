@@ -74,6 +74,6 @@ lib/X11/ja_JP.eucJP/app-defaults/XShisen
 %%DATADIR%%/s2/sha.xpm
 %%DATADIR%%/s2/ton.xpm
 @(,games,0660) %%DATADIR%%/xshisen.scores
-man/man6/xshisen.6.gz
-man/ja/man6/xshisen.6.gz
+share/man/man6/xshisen.6.gz
+share/man/ja/man6/xshisen.6.gz
 @preexec [ -d %D/lib/X11/ja_JP.EUC/ -a -d %D/lib/X11/ja_JP.EUC/app-defaults ] && ln -s %D/lib/X11/ja_JP.eucJP/app-defaults/XShisen %D/lib/X11/ja_JP.EUC/app-defaults || true

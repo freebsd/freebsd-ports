@@ -1,5 +1,6 @@
 PORTNAME=	ssocr
 PORTVERSION=	2.23.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ \
 		LOCAL/ehaupt
@@ -16,11 +17,10 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/ssocr \
-		man/man1/ssocr.1.gz
+		share/man/man1/ssocr.1.gz
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

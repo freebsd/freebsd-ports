@@ -1,9 +1,9 @@
 bin/evolvotron
 bin/evolvotron_mutate
 bin/evolvotron_render
-man/man1/evolvotron.1.gz
-man/man1/evolvotron_mutate.1.gz
-man/man1/evolvotron_render.1.gz
+share/man/man1/evolvotron.1.gz
+share/man/man1/evolvotron_mutate.1.gz
+share/man/man1/evolvotron_render.1.gz
 share/icons/hicolor/128x128/apps/evolvotron.png
 share/icons/hicolor/32x32/apps/evolvotron.png
 share/icons/hicolor/48x48/apps/evolvotron.png

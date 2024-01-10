@@ -295,8 +295,8 @@ post-patch:
 		${WRKSRC}/xbmc/platform/linux/input/LibInputSettings.cpp
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1
-	cd ${STAGEDIR}${MAN1PREFIX}/share/man/man1 && ${LN} -s kodi.bin.1.gz kodi.1.gz
+	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${LN} -s kodi.bin.1.gz kodi.1.gz
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} JsonSchemaBuilder kodi-TexturePacker
 	${FIND} ${STAGEDIR}${PREFIX}/lib/kodi -type f -name '*.so' -print0 | ${XARGS} -0 ${STRIP_CMD}
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/firewalld

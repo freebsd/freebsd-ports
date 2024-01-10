@@ -1,7 +1,7 @@
 PORTNAME=	bsdgames
 PORTVERSION=	0.75
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ USES=		ncurses tar:xz uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	pianojockl
 
-MAKE_ARGS=	BINGRP=${BINGRP}
+MAKE_ARGS=	BINGRP=${BINGRP} MANDIR="${PREFIX}/share/man/man"
 MAKE_ENV=	WITHOUT_WERROR=yes
 
 CFLAGS+=	-fcommon
@@ -37,7 +37,7 @@ post-install:
 # avoid conflict with games/bs and shells/fish
 .for prog in bs fish
 	${MV} ${STAGEDIR}${PREFIX}/bin/${prog} ${STAGEDIR}${PREFIX}/bin/${prog}-game
-	${MV} ${STAGEDIR}${MAN6PREFIX}/man/man6/${prog}.6.gz ${STAGEDIR}${MAN6PREFIX}/man/man6/${prog}-game.6.gz
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man6/${prog}.6.gz ${STAGEDIR}${PREFIX}/share/man/man6/${prog}-game.6.gz
 .endfor
 
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score

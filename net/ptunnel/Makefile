@@ -1,6 +1,6 @@
 PORTNAME=	ptunnel
 PORTVERSION=	0.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.uit.no/~daniels/PingTunnel/
 DISTNAME=	PingTunnel-${PORTVERSION}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 WRKSRC=		${WRKDIR}/PingTunnel
-PLIST_FILES=	bin/ptunnel man/man8/ptunnel.8.gz
+PLIST_FILES=	bin/ptunnel share/man/man8/ptunnel.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d' -e "/^CFLAGS/d" ${WRKSRC}/${MAKEFILE}
@@ -22,6 +22,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ptunnel ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ptunnel.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ptunnel.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

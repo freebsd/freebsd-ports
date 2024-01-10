@@ -77,7 +77,7 @@ lib/pidgin/transparency.so
 lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
-man/man1/pidgin.1.gz
+share/man/man1/pidgin.1.gz
 %%PERLMAN:%%man/man3/Pidgin.3.gz
 share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png

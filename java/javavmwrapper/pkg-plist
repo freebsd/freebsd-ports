@@ -5,10 +5,10 @@ bin/manvm
 bin/registervm
 bin/unregistervm
 @sample etc/javavm_opts.conf.dist etc/javavm_opts.conf
-man/man1/checkvms.1.gz
-man/man1/javavm.1.gz
-man/man1/manvm.1.gz
-man/man1/registervm.1.gz
-man/man1/unregistervm.1.gz
-man/man5/javavm_opts.conf.5.gz
-man/man5/javavms.5.gz
+share/man/man1/checkvms.1.gz
+share/man/man1/javavm.1.gz
+share/man/man1/manvm.1.gz
+share/man/man1/registervm.1.gz
+share/man/man1/unregistervm.1.gz
+share/man/man5/javavm_opts.conf.5.gz
+share/man/man5/javavms.5.gz

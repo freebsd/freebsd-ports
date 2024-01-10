@@ -26,7 +26,7 @@ CONFIGURE_ENV+=	TMPDIR="${WRKSRC}" \
 CONFIGURE_ARGS=	--cc="${CC}" \
 		--host-cc="${CC}" \
 		--as="${AS}" \
-		--mandir="${PREFIX}/man" \
+		--mandir="${PREFIX}/share/man" \
 		--extra-cflags="-I${PREFIX}/include -I${LOCALBASE}/include" \
 		--extra-libs="-L${PREFIX}/lib" \
 		--disable-alsa \

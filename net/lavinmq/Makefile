@@ -1,6 +1,7 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -77,14 +78,14 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}/var/db/lavinmq \
 		${STAGEDIR}/var/log/lavinmq \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/extras/config.ini \
 		${STAGEDIR}${ETCDIR}/config.ini.sample
 .for f in lavinmq lavinmqctl lavinmqperf
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/man1/${f}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 do-install-DOCS-on:

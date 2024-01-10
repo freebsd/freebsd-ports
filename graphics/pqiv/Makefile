@@ -1,6 +1,6 @@
 PORTNAME=	pqiv
 PORTVERSION=	2.12
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -64,7 +64,7 @@ GTK3_USE=		GNOME=gtk30
 MAKEFILE=	GNUmakefile
 
 PORTDOCS=	README.markdown
-PLIST_FILES=	bin/pqiv man/man1/pqiv.1.gz
+PLIST_FILES=	bin/pqiv share/man/man1/pqiv.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -78,7 +78,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pqiv ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pqiv.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pqiv.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DOCSDIR}
 

@@ -10,7 +10,7 @@
       See dhclient(8), using the following command, for details about other
       possible options:
 
-	    MANPATH=%%MAN1PREFIX%%/man man 8 dhclient
+	    MANPATH=%%PREFIX%%/man man 8 dhclient
 EOM
 }
 ]

@@ -1,5 +1,6 @@
 PORTNAME=	f2c
 PORTVERSION=	20200916
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	NETLIB/f2c
 DISTFILES=	${SIMPLEDIST} libf2c.zip src.tgz
@@ -65,7 +66,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/f2c ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/f2c.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/src/f2c.1t ${STAGEDIR}${MAN1PREFIX}/man/man1/f2c.1
+	${INSTALL_MAN} ${WRKSRC}/src/f2c.1t ${STAGEDIR}${PREFIX}/share/man/man1/f2c.1
 	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libf2c/libf2c.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libf2c.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libf2c.so

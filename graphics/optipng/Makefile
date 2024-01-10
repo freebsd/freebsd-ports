@@ -1,5 +1,6 @@
 PORTNAME=	optipng
 DISTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${DISTVERSION}
 
@@ -20,7 +21,7 @@ CONFIGURE_ARGS=	--with-system-libpng \
 		--with-system-zlib
 
 PLIST_FILES=	bin/optipng \
-		man/man1/optipng.1.gz
+		share/man/man1/optipng.1.gz
 PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
 		png_optimization.html todo.txt
 
@@ -28,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng/optipng ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/src/optipng/man/optipng.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/src/optipng/man/optipng.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 

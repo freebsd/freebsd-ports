@@ -31,6 +31,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

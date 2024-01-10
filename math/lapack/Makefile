@@ -1,9 +1,9 @@
 PORTNAME?=	lapack
 PORTVERSION=	3.12.0
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-PORTREVISION=	0
+PORTREVISION=	1
 .else
-PORTREVISION?=	0	# Never remove this line, keep PORTREVISION?=0 in case.
+PORTREVISION?=	1	# Never remove this line, keep PORTREVISION?=0 in case.
 .endif
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Reference-LAPACK/lapack/archive/refs/tags/:src	\
@@ -128,9 +128,9 @@ post-build:
 pre-su-install:
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
 	cd ${WRKDIR} && ${FIND} man/man3 -type f | ${GREP} -v Users_julie | \
-	tee ${WRKDIR}/manpages | ${SED} 's|$$|.gz|' >> ${TMPPLIST}
+	tee ${WRKDIR}/manpages | ${SED} 's|^|share/|; s|$$|.gz|' >> ${TMPPLIST}
 	cd ${WRKDIR} && \
-	${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${MAN3PREFIX}/man/man3 < ${WRKDIR}/manpages
+	${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${PREFIX}/share/man/man3 < ${WRKDIR}/manpages
 .endif
 
 post-install:
