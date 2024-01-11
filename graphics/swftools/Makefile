@@ -1,6 +1,6 @@
 PORTNAME=	swftools
 PORTVERSION=	0.9.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://www.swftools.org/ \
 		http://www.c-s.li/ports/
@@ -67,7 +67,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .for i in ${LMAN1}
-	${INSTALL_DATA} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}/swfs
 	${INSTALL_DATA} ${WRKSRC}/swfs/*.swf ${STAGEDIR}${DATADIR}/swfs/
