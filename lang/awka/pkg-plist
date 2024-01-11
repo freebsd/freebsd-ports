@@ -2,6 +2,6 @@ bin/awka
 lib/libawka.a
 lib/libawka.so
 include/libawka.h
-man/man1/awka.1.gz
-man/man5/awka-elm.5.gz
-man/man5/awka-elmref.5.gz
+share/man/man1/awka.1.gz
+share/man/man5/awka-elm.5.gz
+share/man/man5/awka-elmref.5.gz

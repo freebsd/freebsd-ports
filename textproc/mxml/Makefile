@@ -1,5 +1,6 @@
 PORTNAME=	mxml
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/michaelrsweet/mxml/releases/download/v${DISTVERSION}/
 

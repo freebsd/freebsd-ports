@@ -1,4 +1,4 @@
 bin/exctags
 include/readtags.h
 lib/readtags.o
-man/man1/exctags.1.gz
+share/man/man1/exctags.1.gz

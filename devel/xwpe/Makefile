@@ -1,5 +1,6 @@
 PORTNAME=	xwpe
 PORTVERSION=	1.5.30a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SUNSITE/apps/editors/X \
 		http://www.identicalsoftware.com/xwpe/ \

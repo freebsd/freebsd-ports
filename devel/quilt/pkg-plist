@@ -2,8 +2,8 @@ bin/guards
 bin/quilt
 etc/bash_completion.d/quilt
 etc/quilt.quiltrc
-man/man1/guards.1.gz
-man/man1/quilt.1.gz
+share/man/man1/guards.1.gz
+share/man/man1/quilt.1.gz
 share/emacs/site-lisp/quilt.el
 %%NLS%%share/locale/de/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/quilt.mo

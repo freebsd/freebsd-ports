@@ -1,5 +1,5 @@
 bin/cvswrap
-man/man1/cvswrap.1.gz
-man/man5/cvswrap.conf.5.gz
+share/man/man1/cvswrap.1.gz
+share/man/man5/cvswrap.conf.5.gz
 share/examples/cvswrap/accesscheck.c
 share/examples/cvswrap/cvswrap.conf
