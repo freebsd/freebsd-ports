@@ -1,6 +1,6 @@
 PORTNAME=	pocketsphinx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.3
 CATEGORIES=	audio accessibility
 
 MAINTAINER=	bofh@FreeBSD.org
