@@ -1,3 +1,47 @@
+  <vuln vid="8337251b-b07b-11ee-b0d7-84a93843eb75">
+    <topic>OpenSSL -- Vector register corruption on PowerPC</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.12_2,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.12_2</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.4_2</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.4_2</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20240109.txt">
+	  <p>The POLY1305 MAC (message authentication code) implementation
+	    contains a bug that might corrupt the internal state of applications running
+	    on PowerPC CPU based platforms if the CPU provides vector instructions.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6129</cvename>
+      <url>https://www.openssl.org/news/secadv/20240109.txt</url>
+    </references>
+    <dates>
+	<discovery>2024-01-09</discovery>
+      <entry>2024-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec8e4040-afcd-11ee-86bb-a8a1599412c6">
     <topic>chromium -- security fix</topic>
     <affects>
