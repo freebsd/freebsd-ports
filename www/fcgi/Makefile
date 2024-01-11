@@ -1,6 +1,6 @@
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/adamw
 PKGNAMESUFFIX=	-devkit
@@ -28,8 +28,8 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcgi++.so.0.0.0
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
 	(cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name *\.[13]")
 

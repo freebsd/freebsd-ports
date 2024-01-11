@@ -1,5 +1,6 @@
 PORTNAME=	ufdbGuard
 PORTVERSION=	1.35.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:tl}/1.35
 
@@ -23,7 +24,7 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--with-bz2-lib=/usr/lib \
 		--with-bz2-inc=/usr/include \
 		--with-ufdb-user=root \
-		--with-ufdb-mandir=${MANPREFIX}/man \
+		--with-ufdb-mandir=${PREFIX}/share/man \
 		--with-ufdb-logdir=${LOGDIR} \
 		--with-ufdb-piddir=${RUNDIR} \
 		--with-ufdb-samplesdir=${EXAMPLESDIR} \

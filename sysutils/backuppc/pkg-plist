@@ -74,7 +74,7 @@ lib/BackupPC/Xfer/Tar.pm
 lib/BackupPC/Zip/FileMember.pm
 lib/Net/FTP/AutoReconnect.pm
 lib/Net/FTP/RetrHandle.pm
-man/man1/backuppc.1.gz
+share/man/man1/backuppc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BackupPC.html
 %%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
 %%WWWDIR%%/0000000.gif

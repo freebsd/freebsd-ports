@@ -1,5 +1,6 @@
 PORTNAME=	c2man
 PORTVERSION=	${VERSION}.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ciselant.de/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${VERSION}@${PATCHLEVEL}
@@ -21,7 +22,7 @@ PATCHLEVEL=	42
 NO_WRKSUBDIR=	yes
 NO_INSTALL=	yes
 
-PLIST_FILES=	bin/c2man man/man1/c2man.1.gz
+PLIST_FILES=	bin/c2man share/man/man1/c2man.1.gz
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
@@ -29,6 +30,6 @@ CONFIGURE_ARGS=	-des -Dcc="${CC}" -Dccflags="${CFLAGS}" -Dldflags="${LDFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

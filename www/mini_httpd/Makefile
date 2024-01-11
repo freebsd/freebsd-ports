@@ -1,6 +1,6 @@
 PORTNAME=	mini_httpd
 PORTVERSION=	1.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://www.acme.com/software/mini_httpd/
 
@@ -30,9 +30,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd.sh \
 		${STAGEDIR}${PREFIX}/etc/rc.d/mini_httpd
 	${INSTALL_MAN} ${WRKSRC}/htpasswd.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}-htpasswd.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}-htpasswd.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} ${WRKSRC}/mini_httpd.cnf \
 		${STAGEDIR}${PREFIX}/etc/mini_httpd.cnf.sample
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

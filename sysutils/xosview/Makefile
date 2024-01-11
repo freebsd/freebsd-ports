@@ -1,6 +1,6 @@
 PORTNAME=	xosview
 DISTVERSION=	1.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	otaciliodearaujo@gmail.com
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hills
 
 USE_XORG=	x11 xpm
-MAKE_ENV=	OPTFLAGS="" PLATFORM=bsd MANDIR=${MANPREFIX}/man
+MAKE_ENV=	OPTFLAGS="" PLATFORM=bsd MANDIR=${PREFIX}/share/man
 ALL_TARGET=	xosview
 
 DESKTOP_ENTRIES="XOsview" "" "" "xosview" "" ""

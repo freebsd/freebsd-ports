@@ -1,4 +1,4 @@
 bin/reptyr
-man/fr/man1/reptyr.1.gz
-man/man1/reptyr.1.gz
+share/man/fr/man1/reptyr.1.gz
+share/man/man1/reptyr.1.gz
 share/bash-completion/completions/reptyr

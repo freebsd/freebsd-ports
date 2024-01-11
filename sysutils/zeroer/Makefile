@@ -1,6 +1,6 @@
 PORTNAME=	zeroer
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		localbase:ldflags
-PLIST_FILES=	bin/zeroer man/man1/zeroer.1.gz
+PLIST_FILES=	bin/zeroer share/man/man1/zeroer.1.gz
 PORTDOCS=	README
 
 LDFLAGS+=	-lpopt
@@ -27,7 +27,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

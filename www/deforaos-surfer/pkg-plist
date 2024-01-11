@@ -1,9 +1,9 @@
 bin/helper
 bin/htmlapp
 bin/surfer
-%%PORTDOCS%%man/man1/helper.1.gz
-%%PORTDOCS%%man/man1/htmlapp.1.gz
-%%PORTDOCS%%man/man1/surfer.1.gz
+%%PORTDOCS%%share/man/man1/helper.1.gz
+%%PORTDOCS%%share/man/man1/htmlapp.1.gz
+%%PORTDOCS%%share/man/man1/surfer.1.gz
 share/applications/org.defora.helper.desktop
 share/applications/org.defora.htmlapp.desktop
 share/applications/org.defora.surfer.desktop

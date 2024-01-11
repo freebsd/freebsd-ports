@@ -7,4 +7,4 @@
 -	$(INSTALL) -s clean $(PREFIX)/bin
 -	$(INSTALL) clean.1 $(PREFIX)/man/man1
 +	$(INSTALL) -s clean $(DESTDIR)$(PREFIX)/bin
-+	$(INSTALL) clean.1 $(DESTDIR)$(MANPREFIX)/man/man1
++	$(INSTALL) clean.1 $(DESTDIR)$(PREFIX)/share/man/man1

@@ -1,5 +1,5 @@
 bin/ml1
-man/man1/ml1.1.gz
+share/man/man1/ml1.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ml1appy.pdf
 %%PORTDOCS%%%%DOCSDIR%%/ml1sig.pdf

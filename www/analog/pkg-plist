@@ -385,4 +385,4 @@ bin/analog
 %%IMGDIR%%/sq8.png
 %%IMGDIR%%/sq9.png
 %%IMGDIR%%/sqg.png
-man/man1/analog.1.gz
+share/man/man1/analog.1.gz

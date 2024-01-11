@@ -1,5 +1,6 @@
 PORTNAME=	cntlm
 PORTVERSION=	0.92.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
@@ -39,6 +40,6 @@ do-install:
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} cntlm.conf.sample \
 		${STAGEDIR}${PREFIX}/etc)
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} cntlm.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 
 .include <bsd.port.mk>

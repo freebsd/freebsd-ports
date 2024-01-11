@@ -1,5 +1,6 @@
 PORTNAME=	pot
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -54,7 +55,7 @@ do-install:
 		${STAGEDIR}${ETCDIR}/flavours
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/pot/flavours/slim.sh \
 		${STAGEDIR}${ETCDIR}/flavours
-	${INSTALL_MAN} ${WRKDIR}/pot.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKDIR}/pot.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-ZSH-on:
 	( cd ${WRKSRC}/share/zsh && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/zsh)

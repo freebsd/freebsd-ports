@@ -1,6 +1,6 @@
 PORTNAME=	incron
 DISTVERSION=	2017-11-13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	joh.hendriks@gmail.com
@@ -24,7 +24,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ARGS=	PREFIX="${PREFIX}" USER=${UID}	\
 		DOCDIR="${PREFIX}/etc"	\
-		MANPATH=${MANPREFIX}/man
+		MANPATH=${PREFIX}/share/man
 
 CPPFLAGS+=	-D__NR_inotify_init
 LDFLAGS+=	-linotify

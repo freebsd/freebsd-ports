@@ -1,5 +1,6 @@
 PORTNAME=	cbsd
 DISTVERSION=	14.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -63,7 +64,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/cbsd/sbin/src \
 		${STAGEDIR}${PREFIX}/cbsd/tools/src
 	${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig
 	${RLN} ${STAGEDIR}${CBSD_HOME}/share/bsdconfig/cbsd \
 		${STAGEDIR}${PREFIX}/libexec/bsdconfig/cbsd

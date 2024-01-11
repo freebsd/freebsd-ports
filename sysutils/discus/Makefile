@@ -1,5 +1,6 @@
 PORTNAME=	discus
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@ny-central.org
@@ -26,7 +27,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${MKDIR} ${STAGEDIR}/${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/discusrc ${STAGEDIR}/${ETCDIR}/discusrc.sample
-	${INSTALL_MAN} ${WRKSRC}/discus.1 ${STAGEDIR}/${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/discus.1 ${STAGEDIR}/${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/discus.py ${STAGEDIR}/${PREFIX}/sbin/discus
 
 do-install-DOCS-on:

@@ -1,7 +1,7 @@
 PORTNAME=	powermon
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yamagi@yamagi.org
@@ -21,12 +21,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamagi
 MAKE_ENV=	NCURSESLIBS="${NCURSESLIBS}" VERBOSE=1
 
-PLIST_FILES=	man/man8/powermon.8.gz sbin/powermon
+PLIST_FILES=	share/man/man8/powermon.8.gz sbin/powermon
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/release/powermon \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/misc/powermon.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

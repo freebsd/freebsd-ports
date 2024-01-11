@@ -1,6 +1,6 @@
 PORTNAME=	tmux
 DISTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	23
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 
 PLIST_FILES=	bin/tmux \
-		man/man1/tmux.1.gz \
+		share/man/man1/tmux.1.gz \
 		etc/bash_completion.d/tmux
 
 PORTDOCS=	CHANGES FAQ README TODO
@@ -51,7 +51,7 @@ post-configure-LIBEVENT_STATIC-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tmux ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tmux.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tmux.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC_bash}/completions/tmux ${STAGEDIR}${PREFIX}/etc/bash_completion.d/tmux
 

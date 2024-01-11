@@ -1,5 +1,6 @@
 PORTNAME=	rex
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils tcl
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/
 
@@ -13,11 +14,11 @@ RUN_DEPENDS=	expect:lang/expect
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/rex man/man8/rex.8.gz
+PLIST_FILES=	bin/rex share/man/man8/rex.8.gz
 
 do-install:
 	cd ${WRKSRC} && ${WRKSRC}/install --prefix=${STAGEDIR}${PREFIX} \
 		--sysconfdir=${PREFIX}/etc \
-		--mandir=${STAGEDIR}${MANPREFIX}/man
+		--mandir=${STAGEDIR}${PREFIX}/share/man
 
 .include <bsd.port.mk>

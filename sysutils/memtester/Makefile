@@ -1,5 +1,6 @@
 PORTNAME=	memtester
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/old-versions/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe
 CPE_VENDOR=	pryopus
 
-PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man8/${PORTNAME}.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|' \
@@ -23,6 +24,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

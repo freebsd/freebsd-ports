@@ -1,5 +1,6 @@
 PORTNAME=	splitpatch
 PORTVERSION=	1.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release/
 CATEGORIES=	textproc
 
@@ -19,13 +20,13 @@ MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/splitpatch \
-		man/man1/splitpatch.1.gz
+		share/man/man1/splitpatch.1.gz
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

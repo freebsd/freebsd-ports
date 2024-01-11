@@ -1,5 +1,5 @@
-man/man8/userneu.8.gz
-man/man8/userquick.8.gz
+share/man/man8/userneu.8.gz
+share/man/man8/userquick.8.gz
 sbin/userneu.pl
 sbin/userquick.pl
 sbin/smbrepair.pl

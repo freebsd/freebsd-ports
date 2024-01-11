@@ -1,5 +1,6 @@
 PORTNAME=	entr
 PORTVERSION=	5.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://eradman.com/entrproject/code/
 
@@ -13,9 +14,9 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKEFILE=	Makefile.bsd
-MAKE_ARGS=	MANPREFIX=${MANPREFIX}/man
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
 TEST_TARGET=	test
-PLIST_FILES=	bin/entr man/man1/entr.1.gz
+PLIST_FILES=	bin/entr share/man/man1/entr.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/entr

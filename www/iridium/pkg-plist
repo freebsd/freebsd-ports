@@ -134,7 +134,7 @@ bin/iridium
 %%DATADIR%%/v8_context_snapshot.bin
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_khronos_validation.so
-man/man1/iridium.1.gz
+share/man/man1/iridium.1.gz
 share/applications/iridium-browser.desktop
 share/icons/hicolor/128x128/apps/iridium.png
 share/icons/hicolor/22x22/apps/iridium.png

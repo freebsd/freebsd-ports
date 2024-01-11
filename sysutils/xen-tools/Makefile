@@ -1,6 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 DISTVERSION=	4.18.0.20231212
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 
 USE_GITLAB=	yes
@@ -56,7 +57,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CONFIGURE_ARGS+=	--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin \
 			--with-system-ovmf=${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd \
-			--mandir=${MANPREFIX}/man \
+			--mandir=${PREFIX}/share/man \
 			--disable-golang
 
 SHEBANG_FILES=	tools/misc/xencov_split \

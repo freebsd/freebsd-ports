@@ -136,7 +136,7 @@ bin/ungoogled-chromium
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_khronos_validation.so
 %%DRIVER%%bin/ungoogled-chromedriver
-man/man1/ungoogled-chromium.1.gz
+share/man/man1/ungoogled-chromium.1.gz
 share/applications/ungoogled-chromium.desktop
 share/icons/hicolor/128x128/apps/ungoogled-chromium.png
 share/icons/hicolor/22x22/apps/ungoogled-chromium.png

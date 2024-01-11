@@ -1,5 +1,6 @@
 PORTNAME=	snap
 DISTVERSION=	1.01
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~wchunhao/ports/snap/
@@ -12,12 +13,12 @@ NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
 
-PLIST_FILES=	sbin/snap etc/snap.conf man/man8/snap.8.gz
+PLIST_FILES=	sbin/snap etc/snap.conf share/man/man8/snap.8.gz
 SHEBANG_FILES=	snap
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snap ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/snap.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/snap.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} ${WRKSRC}/snap.conf ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

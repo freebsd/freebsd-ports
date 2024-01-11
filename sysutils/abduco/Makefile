@@ -1,5 +1,6 @@
 PORTNAME=	abduco
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/abduco/
 
@@ -11,9 +12,9 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ARGS=	CPPFLAGS="${CPPFLAGS}" STRIP="${STRIP_CMD}" \
-		MANPREFIX="${MANPREFIX}/man"
+		MANPREFIX="${PREFIX}/share/man"
 PLIST_FILES=	bin/abduco \
-		man/man1/abduco.1.gz
+		share/man/man1/abduco.1.gz
 
 MAKE_JOBS_UNSAFE=	yes
 

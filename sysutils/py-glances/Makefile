@@ -1,6 +1,7 @@
 PORTNAME=	glances
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,12 +27,12 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 PLIST_FILES=	${ETCDIR}/${PORTNAME}.conf.sample \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-test:
 	@(cd ${WRKSRC} && ${SETENV} coverage-${PYTHON_VER} run --source=${PORTNAME} unitest.py)

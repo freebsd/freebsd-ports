@@ -1,5 +1,6 @@
 PORTNAME=	calamaris
 PORTVERSION=	2.99.4.5
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/files/calamaris/
 PKGNAMESUFFIX=	-devel
@@ -22,7 +23,7 @@ SHEBANG_FILES=	calamaris calamaris-cache-convert
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/calamaris-cache-convert ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}

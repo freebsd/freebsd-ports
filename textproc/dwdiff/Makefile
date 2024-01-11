@@ -1,6 +1,6 @@
 PORTNAME=	dwdiff
 PORTVERSION=	2.1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	https://os.ghalkes.nl/dist/ \
 		http://fossies.org/unix/privat/
@@ -28,6 +28,6 @@ UNICODE_USES=	localbase:ldflags pkgconfig
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-verbose-compile
-MAKE_ARGS+=	prefix=${PREFIX:Q} mandir="${MANPREFIX}/man" docdir=${DOCSDIR:Q}
+MAKE_ARGS+=	prefix=${PREFIX:Q} mandir="${PREFIX}/share/man" docdir=${DOCSDIR:Q}
 
 .include <bsd.port.mk>

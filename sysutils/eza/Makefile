@@ -1,7 +1,7 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -230,7 +230,7 @@ post-install:
 
 post-install-MANPAGES-on:
 .for i in ${_MARKDOWN_FILES}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${STAGEDIR}${MANPREFIX}/share/man/man${i:C/.*\.//}
+	${INSTALL_MAN} ${WRKSRC}/man/${i} ${STAGEDIR}${PREFIX}/share/man/man${i:C/.*\.//}
 .endfor
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	syslinux
 PORTVERSION=	6.03
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
@@ -19,7 +20,7 @@ MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	bios
 
 PLIST_FILES=	bin/syslinux \
-		man/man1/syslinux.1.gz
+		share/man/man1/syslinux.1.gz
 PORTDATA=	*
 
 pre-patch:
@@ -34,7 +35,7 @@ post-patch:
 do-install:
 	${STRIP_CMD} ${WRKSRC}/bios/mtools/syslinux
 	${INSTALL_PROGRAM} ${WRKSRC}/bios/mtools/syslinux ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${FIND} -d ${WRKSRC} -type d -empty -delete
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "bios efi32 efi64" ${STAGEDIR}${DATADIR})

@@ -18,8 +18,8 @@ etc/free-sa/SMTP_delivery_rejected.filter.sample
 etc/free-sa/SMTP_receiving_rejected.filter.sample
 etc/free-sa/free-sa.conf.sample
 etc/free-sa/users.filter.sample
-man/man1/free-sa.1.gz
-man/man5/free-sa.conf.5.gz
+share/man/man1/free-sa.1.gz
+share/man/man5/free-sa.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ

@@ -1,5 +1,6 @@
 PORTNAME=	fsc
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	samm@FreeBSD.org
@@ -8,8 +9,8 @@ WWW=		https://github.com/bsdtrhodes/freebsd-fscd/
 
 LICENSE=	BSD2CLAUSE
 
-PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd man/man5/fscd.conf.5.gz \
-		man/man8/fscadm.8.gz man/man8/fscd.8.gz
+PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd share/man/man5/fscd.conf.5.gz \
+		share/man/man8/fscadm.8.gz share/man/man8/fscd.8.gz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdtrhodes
@@ -32,10 +33,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fscd/fscd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/fscd ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/fscd/fscd.conf.5.gz \
-		${STAGEDIR}${MANPREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${WRKSRC}/fscd/fscd.8.gz \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} ${WRKSRC}/fscadm/fscadm.8.gz \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

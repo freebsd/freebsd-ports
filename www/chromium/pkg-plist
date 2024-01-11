@@ -136,7 +136,7 @@ bin/chrome
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_khronos_validation.so
 %%DRIVER%%bin/chromedriver
-man/man1/chrome.1.gz
+share/man/man1/chrome.1.gz
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png

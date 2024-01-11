@@ -5,7 +5,7 @@ bin/cbsd
 @owner
 @group
 @mode
-man/man8/cbsd.8.gz
+share/man/man8/cbsd.8.gz
 %%BHYVE_GOP%%cbsd/upgrade/patch/efigop.fd
 %%FBSD%%cbsd/misc/next-vale-port
 %%FBSD%%cbsd/tools/bridge

@@ -1,5 +1,6 @@
 PORTNAME=	expat
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/libexpat/libexpat/releases/download/R_${DISTVERSION:S|.|_|g}/
 
@@ -34,6 +35,6 @@ TEST_TARGET=	check
 PLIST_SUB=	EXPAT_VERSION=${DISTVERSION}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/xmlwf.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/xmlwf.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

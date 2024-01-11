@@ -1,6 +1,6 @@
 PORTNAME=	mapchan
 PORTVERSION=	3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SF
 
@@ -32,7 +32,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s|utmp.h|utmpx.h|" ${WRKSRC}/mapchan.c
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

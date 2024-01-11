@@ -1,5 +1,6 @@
 PORTNAME=	ansifilter
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
@@ -14,7 +15,7 @@ USES=		compiler:c++11-lib gmake tar:bzip2
 
 MAKEFILE=	makefile
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	ChangeLog.adoc README.adoc
 
 OPTIONS_DEFINE=		DOCS QT5
@@ -45,7 +46,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	xmbmon
 PORTVERSION=	205
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -36,11 +36,11 @@ X11_PLIST_FILES=	"@mode 4555"\
 			bin/xmbmon \
 			@mode\
 			lib/X11/app-defaults/XMBmon \
-			man/man1/${PORTNAME}.1x.gz
+			share/man/man1/${PORTNAME}.1x.gz
 CLI_PLIST_FILES=	"@mode 4555"\
 			bin/mbmon \
 			@mode\
-			man/man1/mbmon.1.gz
+			share/man/man1/mbmon.1.gz
 CLI_VARS=		USE_RC_SUBR=mbmon
 
 post-patch:
@@ -58,11 +58,11 @@ do-install-X11-on:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/xmbmon.resources \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XMBmon
-	${INSTALL_MAN} ${WRKSRC}/xmbmon.1x ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xmbmon.1x ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-CLI-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/mbmon ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mbmon.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mbmon.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

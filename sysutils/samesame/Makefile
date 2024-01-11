@@ -1,6 +1,6 @@
 PORTNAME=	samesame
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		LOCAL/dhn
@@ -18,7 +18,7 @@ CONFLICTS=	samefile
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-samechflags --enable-samechmod \
-		--mandir="${MANPREFIX}/man" --prefix="${PREFIX}" \
+		--mandir="${PREFIX}/share/man" --prefix="${PREFIX}" \
 		--includedir="${LOCALBASE}/include" --libdir="${LOCALBASE}/lib"
 USES=		tar:bzip2
 TEST_TARGET=	check

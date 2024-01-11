@@ -1,7 +1,7 @@
 PORTNAME=	jira-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 DIST_SUBDIR=	jira-cli
 
@@ -20,6 +20,6 @@ GO_BUILDFLAGS=	-ldflags="-X github.com/ankitpokhrel/jira-cli/internal/version.Ve
 GO_TARGET=	./cmd/jira
 
 post-install:
-	${STAGEDIR}${PREFIX}/bin/jira man -g -o ${STAGEDIR}${MANPREFIX}/man/man7
+	${STAGEDIR}${PREFIX}/bin/jira man -g -o ${STAGEDIR}${PREFIX}/share/man/man7
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ CFLAGS+=	-Werror
 WARNS=		6
 
 BINDIR=	${PREFIX}/bin
-MANDIR=	${MANPREFIX}/man/man
+MANDIR=	${PREFIX}/share/man/man
 LDADD=	-L${.CURDIR:H}/lib -lrxp
 
 .include <bsd.prog.mk>

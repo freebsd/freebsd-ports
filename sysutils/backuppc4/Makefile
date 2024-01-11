@@ -1,6 +1,6 @@
 PORTNAME=	backuppc
 DISTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
 		SF
@@ -82,7 +82,7 @@ do-install:
 	pod2man --section=1 --release=${PORTVERSION} \
 		--name=BackupPC --center="BackupPC user guide" \
 		${WRKSRC}/doc/BackupPC.pod ${WRKSRC}/${PORTNAME}.1
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	${CP} ${WRKSRC}/doc/BackupPC.html ${STAGEDIR}${WWWDIR}
 	${RM} ${STAGEDIR}${ETCDIR}/config.pl

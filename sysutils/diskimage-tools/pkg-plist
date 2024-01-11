@@ -1,6 +1,6 @@
-man/man1/img2dev.1.gz
-man/man1/mount_image.1.gz
-man/man1/umount_image.1.gz
+share/man/man1/img2dev.1.gz
+share/man/man1/mount_image.1.gz
+share/man/man1/umount_image.1.gz
 sbin/img2dev
 sbin/mount_image
 sbin/umount_image

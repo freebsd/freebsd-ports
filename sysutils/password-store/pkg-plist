@@ -1,7 +1,7 @@
 bin/pass
 libexec/password-store/pass
 libexec/password-store/platform/freebsd.sh
-man/man1/pass.1.gz
+share/man/man1/pass.1.gz
 %%CONTRIB%%%%DATADIR%%/dmenu/README.md
 %%CONTRIB%%%%DATADIR%%/dmenu/passmenu
 %%CONTRIB%%%%DATADIR%%/emacs/Cask

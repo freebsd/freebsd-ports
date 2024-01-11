@@ -1,6 +1,6 @@
 PORTNAME=	tailspin
 DISTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tspin
 	${INSTALL_MAN} ${WRKSRC}/man/tspin.1 \
-		${STAGEDIR}${MANPREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/tspin

@@ -1,5 +1,6 @@
 PORTNAME=	highlnk
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://perli.net/projekte/highlnk/ \
 		LOCAL/ehaupt
@@ -10,7 +11,7 @@ WWW=		https://perli.net/projekte/highlnk/
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/highlnk man/man1/highlnk.1.gz
+PLIST_FILES=	bin/highlnk share/man/man1/highlnk.1.gz
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
@@ -24,7 +25,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

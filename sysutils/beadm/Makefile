@@ -1,5 +1,6 @@
 PORTNAME=	beadm
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
@@ -18,12 +19,12 @@ NO_BUILD=	yes
 CONFLICTS_INSTALL=	beadm-devel
 
 PLIST_FILES=	sbin/${PORTNAME} \
-		man/man8/${PORTNAME}.8.gz
+		share/man/man8/${PORTNAME}.8.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8/
+		${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>
