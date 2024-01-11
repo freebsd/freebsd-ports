@@ -1,6 +1,6 @@
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
@@ -165,7 +165,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.conf \
 		${STAGEDIR}${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
 .for i in ${LMAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${STAGEDIR}${PREFIX}/man/man1/${i}
+	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${STAGEDIR}${PREFIX}/share/man/man1/${i}
 .endfor
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/geolizer
