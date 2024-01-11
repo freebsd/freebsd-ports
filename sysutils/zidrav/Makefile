@@ -1,6 +1,6 @@
 PORTNAME=	zidrav
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}4unix/${PORTVERSION}
 DISTNAME=	zidrav4unix-${PORTVERSION}
@@ -14,11 +14,11 @@ LICENSE=	GPLv2
 USE_CXXSTD=	gnu++98
 CFLAGS=		-std=gnu++98
 ALL_TARGET=	zidrav
-PLIST_FILES=	bin/zidrav man/man1/zidrav.1.gz
+PLIST_FILES=	bin/zidrav share/man/man1/zidrav.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zidrav ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.options.mk>
 
