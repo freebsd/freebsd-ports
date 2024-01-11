@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2023-04-01 21:01:51 UTC
+--- src/CMakeLists.txt.orig	2024-01-07 17:14:52 UTC
 +++ src/CMakeLists.txt
 @@ -10,7 +10,6 @@ find_package(GoogleGumboParser REQUIRED)
  find_package(Qt6 REQUIRED COMPONENTS
@@ -8,15 +8,27 @@
      Network
      Widgets
  )
-@@ -72,6 +71,7 @@ target_compile_definitions(${TARGET_NAME}
+@@ -30,6 +29,11 @@ set(MY_SOURCES ${MY_SOURCES}
+     ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
+ )
+ 
++set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
++    PROPERTIES COMPILE_DEFINITIONS
++    BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED
++)
++
+ set(MY_HEADERS ${MY_HEADERS}
+     ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.h
+ )
+@@ -72,6 +76,7 @@ target_compile_definitions(${TARGET_NAME}
          UNICODE
  )
  
 +if(false)
  qt_add_translations(${TARGET_NAME}
      TS_FILES
-         ${CMAKE_SOURCE_DIR}/src/locale/dza_ar_EG.ts  # Arabic
-@@ -93,6 +93,7 @@ qt_add_translations(${TARGET_NAME}
+         ${CMAKE_SOURCE_DIR}/src/locale/arrowdl_ar_EG.ts  # Arabic
+@@ -93,6 +98,7 @@ qt_add_translations(${TARGET_NAME}
      QM_FILES_OUTPUT_VARIABLE
          qm_files
  )
@@ -24,7 +36,7 @@
  
  if(MSVC OR MSYS OR MINGW) # for detecting Windows compilers
  
-@@ -123,7 +124,7 @@ else() # MacOS or Unix Compilers
+@@ -125,7 +131,7 @@ else() # MacOS or Unix Compilers
      target_link_libraries(${TARGET_NAME}
          PRIVATE
              ${GoogleGumboParser_LIBRARIES}
