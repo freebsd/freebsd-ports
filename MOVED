@@ -36,7 +36,7 @@ security/py-gtts-token|audio/py-gtts|2021-01-17|Has expired: Obsolete, please us
 graphics/qt-avif-image-plugin|graphics/kf5-kimageformats|2021-01-18|Part of kimageformats since KDE Frameworks 5.78.0
 archivers/libunrar5|archivers/libunrar6|2021-01-19|Renamed to match current major version of libunrar
 devel/electron7|devel/electron9|2021-01-21|EOLed upstream, switch to newer major version
-www/riot-web|www/element-web|2021-01-22|Project renamed
+www/riot-web|www/element-web|2021-01-22|Project was renamed upstream
 sysutils/bareos16-client|sysutils/bareos18-client|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 sysutils/bareos16-client-static|sysutils/bareos18-client|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 sysutils/bareos16-server|sysutils/bareos18-server|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
@@ -375,7 +375,7 @@ dns/opendd||2021-05-15|Has expired: Abandonware
 www/py-django30|www/py-django31|2021-05-16|Has expired: Has expired: Extended support has expired on April 6th, 2021. Use www/py-django31 or www/py-django32 instead
 net-mgmt/unifi-devel|net-mgmt/unifi6|2021-05-16|Has expired: Use net-mgmt/unifi6 instead
 print/rubygem-pdf-core07|print/rubygem-pdf-core|2021-05-16|Obsoleted. Use print/rubygem-pdf-core instead
-security/bitwarden_rs|security/vaultwarden|2021-05-16|Project was renamed
+security/bitwarden_rs|security/vaultwarden|2021-05-16|Project was renamed upstream
 sysutils/kdiskmark|benchmarks/kdiskmark|2021-05-18|Moved to a more appropriate category
 sysutils/edk2@xen|sysutils/edk2@xen_x64|2021-05-18|Add Xen arch to the flavor name to be futur-proof
 devel/py-jupyter_core|devel/py-jupyter-core|2021-05-18|Renamed to match upstream naming
@@ -389,7 +389,7 @@ x11/phosh||2021-05-29|Incomplete
 multimedia/libav|multimedia/ffmpeg|2021-05-31|Has expired: Unmaintained upstream, use multimedia/ffmpeg instead
 devel/py-iterpipes||2021-06-06|Has expired: Unmaintained upstream, uses old Python
 devel/py-aspyct||2021-06-06|Has expired: Unmaintained upstream, uses old Python
-irc/oragono|irc/ergo|2021-06-08|Project renamed
+irc/oragono|irc/ergo|2021-06-08|Project was renamed upstream
 devel/py-castellan1|devel/py-castellan|2021-06-10|Remove obsoleted port. Use devel/py-castellan instead
 devel/py-cliff2|devel/py-cliff|2021-06-10|Remove obsoleted port. Use devel/py-cliff instead
 devel/py-cmd208|devel/py-cmd2|2021-06-10|Remove obsoleted port. Use devel/py-cmd2 instead
@@ -694,7 +694,7 @@ security/putty-gtk2||2021-12-15|Has expired: putty-gtk2 is being phased out
 games/xnethack-nox11|games/xnethack@nox11|2021-12-16|Turned into flavor
 devel/py-dexml||2021-12-20|Has expired: Use devel/py-dexml2
 misc/cmatrix|games/cmatrix|2021-12-20|Move to a more appropriate category
-games/homura|games/suyimazu|2021-12-21|Project renamed
+games/homura|games/suyimazu|2021-12-21|Project was renamed upstream
 textproc/py-markdown-math|textproc/py-python-markdown-math|2021-12-21|Renamed to match upstream naming
 databases/rubygem-flipper-active_record017|databases/rubygem-flipper-active_record|2021-12-21|Remove obsoleted port. Use databases/rubygem-flipper-active_record instead
 databases/rubygem-mysql204|databases/rubygem-mysql2|2021-12-21|Remove obsoleted port. Use databases/rubygem-mysql2 instead
@@ -839,7 +839,7 @@ www/py-dj31-djangorestframework||2021-12-31|Has expired: Extended support of Dja
 astro/google-earth||2022-01-01|Has expired: Needs newer version to connect to server
 net/tramp||2022-01-01|Has expired: Not updated in 5 years and now part of Emacs
 archivers/p7zip-codec-rar||2022-01-01|Has expired: Unmaintained for years and has known vulnerabilities
-textproc/askgit|textproc/mergestat|2022-01-03|Project renamed
+textproc/askgit|textproc/mergestat|2022-01-03|Project was renamed upstream
 emulators/qemu-utils|emulators/qemu@tools|2022-01-10|Has expired: Use emulators/qemu@tools
 emulators/qemu42||2022-01-10|Has expired: Use emulators/qemu or emulators/qemu-devel
 devel/py-click6|devel/py-click|2022-01-11|Remove obsoleted port. Use devel/py-click instead
@@ -968,7 +968,7 @@ textproc/rubygem-rouge326|textproc/rubygem-rouge|2022-01-29|Remove obsoleted por
 lang/scala-docs||2022-01-31|New 3.x versions dropped archived documentation
 x11/gnome3|x11/gnome|2022-01-31|GNOME has moved past version 3, including the Ports version
 security/krb5-117|security/krb5|2022-02-01|Has expired: EOL one year after the release of krb5 1.19
-www/annie|www/lux|2022-02-03|Project renamed
+www/annie|www/lux|2022-02-03|Project was renamed upstream
 devel/rubygem-gettext_i18n_rails_js-rails60|devel/rubygem-gettext_i18n_rails_js-rails61|2022-02-07|Obsolete use devel/rubygem-gettext_i18n_rails_js-rails61 instead
 security/rubygem-devise-two-factor-rails60|security/rubygem-devise-two-factor-rails61|2022-02-07|Obsolete use security/rubygem-devise-two-factor-rails61 instead
 korean/nanumcoding-ttf|korean/nanum-gothic-coding|2022-02-10|Renamed to match upstream naming
@@ -983,8 +983,8 @@ graphics/copperspice|x11-toolkits/copperspice|2022-02-20|Revive in more appropri
 math/mathics-django||2022-02-20|Mathics-Django now requires npm: you can use math/mathicsscript instead
 net-mgmt/percona-monitoring-plugins||2022-02-22|Has expired: Upstream EOL reached on 2020-08-01
 math/coinmumps|math/coin-or-mumps|2022-02-23|Renamed into a more appropriate name
-www/py-weboob|www/py-woob|2022-02-24|Project renamed
-www/py-weboob-qt|www/py-woob-qt|2022-02-24|Project renamed
+www/py-weboob|www/py-woob|2022-02-24|Project was renamed upstream
+www/py-weboob-qt|www/py-woob-qt|2022-02-24|Project was renamed upstream
 math/py-pyipopt||2022-02-24|Removed: not compatible with the latest Ipopt-3.14.4 and abandoned upstream
 x11-toolkits/py-wxPython40|x11-toolkits/py-wxPython4|2022-02-25|Renamed to py-wxPython4
 graphics/libgaiagraphics|graphics/librasterlite2|2022-02-27|Has expired: Abandoned upstream, replaced by graphics/librasterlite2
@@ -1039,7 +1039,7 @@ databases/postgresql96-plperl||2022-03-11|Has expired: PostgreSQL-9.6 has reache
 databases/postgresql96-plpython||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-pltcl||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-server||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
-net-im/pidgin-bs|net-im/pidgin-bot-sentry|2022-03-13|Project was renamed
+net-im/pidgin-bs|net-im/pidgin-bot-sentry|2022-03-13|Project was renamed upstream
 math/qalculate|math/qalculate-gtk|2022-03-14|Renamed to match upstream naming
 deskutils/nautilus-actions||2022-03-15|Abandonware
 devel/ORBit2||2022-03-15|Gnome2 library unused anymore
@@ -1618,7 +1618,7 @@ x11-servers/xorg-nestserver|x11-servers/xorg-server@xnest|2022-08-02|Merged into
 x11-servers/xorg-vfbserver|x11-servers/xorg-server@xvfb|2022-08-02|Merged into the flavorized version
 x11-servers/xorg-dmx||2022-08-02|Discontinued upstream
 lang/go117||2022-08-02|Upstream support ended
-games/fishfight|games/jumpy|2022-08-02|Project renamed
+games/fishfight|games/jumpy|2022-08-02|Project was renamed upstream
 mail/roundcube-mobilecube||2022-08-05|Removed, broken and no upstream updates
 mail/roundcube-mvision2||2022-08-05|Removed, broken and no upstream updates
 mail/roundcube-umich||2022-08-05|Removed, broken and no upstream updates
@@ -2152,7 +2152,7 @@ sysutils/cfengine-masterfiles319||2023-06-03|Removed, part of expired sysutils/c
 net-mgmt/nrpe3|net-mgmt/nrpe|2023-06-03|Has expired: Fails to build with recent OpenSSL so use net-mgmt/nrpe
 games/spacezero||2023-06-03|Has expired: broken, abandoned upstream, depends on deprecated gtk2
 net/gnu-dico|net/dico|2023-06-03|Renamed to match upstream naming
-editors/o|editors/orbiton|2023-06-04|Project was renamed
+editors/o|editors/orbiton|2023-06-04|Project was renamed upstream
 databases/rubygem-pg14|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Use databases/rubygem-pg instead
 databases/rubygem-redis-namespace18|databases/rubygem-redis-namespace|2023-06-05|Remove obsoleted port. Use databases/rubygem-redis-namespace instead
 devel/poetry|devel/py-poetry|2023-06-05|Remove obsoleted port. Use devel/py-poetry instead
@@ -2178,7 +2178,7 @@ emulators/skyeye||2023-06-17|Has expired: Upstream last release was in 2014
 x11/deforaos-desktop||2023-06-18|Removed, needs expired x11/deforaos-panel
 textproc/apache-solr9|textproc/apache-solr|2023-06-18|New stable release
 games/poker-eval||2023-06-20|Upstream vanished
-graphics/3d-ascii-viewer-c|graphics/3d-ascii-viewer|2023-06-21|Project was renamed
+graphics/3d-ascii-viewer-c|graphics/3d-ascii-viewer|2023-06-21|Project was renamed upstream
 archivers/libunrar6|archivers/libunrar|2023-06-21|Moved to unversioned origin. Use archivers/libunrar instead
 japanese/font-plemoljp-nfj||2023-06-22|Removed by upstream
 graphics/fotofix||2023-06-23|Has expired: Depends on expired graphics/IPA
@@ -2492,7 +2492,7 @@ security/openssl30|security/openssl|2023-10-14|Upgrade security/openssl to 3.0
 x11-fonts/gnu-unifont-ttf|x11-fonts/gnu-unifont-otf|2023-10-16|Remove obsoleted port. Use x11-fonts/gnu-unifont-otf instead
 mail/slapd-cyrus||2023-10-20|Has expired: Last upstream release was in 2013
 net/pacemaker1|net/pacemaker2|2023-10-22|Hasn't built in a long time, last upstream release was a while ago, use pacemaker2
-multimedia/subsync|multimedia/ffsubsync|2023-10-22|Project was renamed
+multimedia/subsync|multimedia/ffsubsync|2023-10-22|Project was renamed upstream
 dns/libasr-devel||2023-10-25|Has expired: libasr will be maintained only as part of OpenSMTPD
 dns/libasr||2023-10-25|Has expired: libasr will be maintained only as part of OpenSMTPD
 textproc/xalan-c||2023-10-28|Has expired: Upstream no longer continuing; please consider textproc/libxslt, textproc/qt5-xmlpatterns or SaxonC as potential alternatives
@@ -2639,7 +2639,7 @@ devel/mingw32-zlib||2023-11-21|Has expired: Last upstream release was in 2014 an
 devel/mingw32-gcc||2023-11-21|Has expired: Upstream release was in 2015 and mingw32 project is defunct
 www/guile-www||2023-11-21|Has expired: Last upstream release was in 2002 and no longer relevant nowadays
 x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2023-11-21|Out of date: use x11-toolkits/wlroots for now
-games/suyimazu|games/mizuma|2023-11-22|Project renamed
+games/suyimazu|games/mizuma|2023-11-22|Project was renamed upstream
 www/dfileserver||2023-11-22|Has expired: Obsolete, consider using www/darkhttpd
 devel/sdts++||2023-11-22|Has expired: Last upstream release was in 2003 and both MASTER_SITES and WWW are unreachable
 databases/postgis30||2023-11-22|Removed
@@ -2926,7 +2926,7 @@ www/qt5-webkit||2023-12-31|Has expired: No longer actively maintained, increasin
 textproc/py-grako||2023-12-31|Project is abandoned
 math/p5-Math-BigRat|math/p5-Math-BigInt|2024-01-01|Subsumed into math/p5-Math-BigInt
 www/trac-devel|www/trac|2024-01-02|Trac released stable version with py3 support, so removing -devel port
-sysutils/rtx|sysutils/mise|2024-01-03|Project renamed
+sysutils/rtx|sysutils/mise|2024-01-03|Project was renamed upstream
 x11/hyprland-share-picker|x11/xdg-desktop-portal-hyprland|2024-01-05|Merged into main port
 sysutils/signon-qt5|sysutils/signond|2024-01-05|Renamed to match upstream and support flavors
 net-im/libaccounts-qt5|net-im/libaccounts-qt|2024-01-05|Renamed to support flavors
