@@ -15,6 +15,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8.gz \
-		${STAGEDIR}${MANPREFIX}/share/man/man8/
+		${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>
