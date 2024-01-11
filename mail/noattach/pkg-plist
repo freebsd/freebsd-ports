@@ -1,6 +1,5 @@
 etc/noattach.patterns-dist
 libexec/noattach
-man/man8/noattach.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -11,3 +10,4 @@ man/man8/noattach.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/noattach.patterns
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/noattach.patterns.johncon
+share/man/man8/noattach.8.gz

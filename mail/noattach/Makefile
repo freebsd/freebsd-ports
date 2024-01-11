@@ -1,6 +1,6 @@
 PORTNAME=	noattach
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
@@ -24,7 +24,7 @@ MAKE_ENV+=	MILTER_INCLUDES="${MILTERINC}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noattach ${STAGEDIR}${PREFIX}/libexec/noattach
-	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
 		${STAGEDIR}${PREFIX}/etc/noattach.patterns-dist
 
