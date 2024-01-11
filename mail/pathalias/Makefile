@@ -1,5 +1,6 @@
 PORTNAME=	pathalias
 PORTVERSION=	9.16
+PORTREVISIOMN=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 
@@ -10,10 +11,10 @@ USES=		tar:Z
 
 ALL_TARGET=	pathalias
 
-PLIST_FILES=	bin/pathalias man/man8/pathalias.8.gz
+PLIST_FILES=	bin/pathalias share/man/man8/pathalias.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pathalias ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/pathalias.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/pathalias.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>
