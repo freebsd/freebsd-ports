@@ -21,10 +21,7 @@ lib/libKF6Purpose.so.6
 lib/libKF6PurposeWidgets.so
 lib/libKF6PurposeWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PurposeWidgets.so.6
-lib/libPhabricatorHelpers.so.%%KDE_FRAMEWORKS_VERSION%%
-lib/libPhabricatorHelpers.so.6
-lib/libReviewboardHelpers.so.%%KDE_FRAMEWORKS_VERSION%%
-lib/libReviewboardHelpers.so.6
+lib/libReviewboardHelpers.a
 lib/libexec/kf6/purposeprocess
 %%QT_PLUGINDIR%%/kf6/kfileitemaction/sharefileitemaction.so
 %%QT_PLUGINDIR%%/kf6/purpose/barcodeplugin.so

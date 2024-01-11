@@ -107,6 +107,7 @@ lib/libKirigamiPlatform.so.6
 %%QT_QMLDIR%%/org/kde/kirigami/private/KirigamiPrivatePlugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kirigami/private/MobileDialogLayer.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/PrivateActionToolButton.qml
+%%QT_QMLDIR%%/org/kde/kirigami/private/PullDownIndicator.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/SwipeItemEventFilter.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/globaltoolbar/AbstractPageHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/globaltoolbar/BreadcrumbControl.qml

@@ -169,7 +169,6 @@ lib/libKF6WidgetsAddons.so
 lib/libKF6WidgetsAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6WidgetsAddons.so.6
 %%QT_PLUGINDIR%%/designer/kwidgetsaddons6widgets.so
-share/kf6/kcharselect/kcharselect-data
 share/locale/af/LC_MESSAGES/kwidgetsaddons6_qt.qm
 share/locale/ar/LC_MESSAGES/kwidgetsaddons6_qt.qm
 share/locale/as/LC_MESSAGES/kwidgetsaddons6_qt.qm

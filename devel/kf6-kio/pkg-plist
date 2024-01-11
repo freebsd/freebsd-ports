@@ -79,7 +79,6 @@ include/KF6/KIOCore/kio/global.h
 include/KF6/KIOCore/kio/ioworker_defaults.h
 include/KF6/KIOCore/kio/job.h
 include/KF6/KIOCore/kio/job_base.h
-include/KF6/KIOCore/kio/jobclasses.h
 include/KF6/KIOCore/kio/jobtracker.h
 include/KF6/KIOCore/kio/jobuidelegateextension.h
 include/KF6/KIOCore/kio/jobuidelegatefactory.h
