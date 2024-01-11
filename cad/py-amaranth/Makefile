@@ -25,12 +25,8 @@ GH_ACCOUNT=	amaranth-lang
 
 NO_ARCH=	yes
 
+MAKE_ENV=	PDM_BUILD_SCM_VERSION=${DISTVERSION} # this allows to build from a tarball (otherwise PDM wouldn't be able to determine the version)
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%VERSION%%|${DISTVERSION}|' \
-		${WRKSRC}/pyproject.toml
 
 do-install: # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272771
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
