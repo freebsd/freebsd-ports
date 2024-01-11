@@ -11,7 +11,8 @@
 #  postgresql_data="/var/db/%%PG_USER%%/data%%PG_VERSION%%"
 #  postgresql_flags="-w -s -m fast"
 #  postgresql_initdb_flags="--encoding=utf-8 --lc-collate=C"
-#  postgresql_login_class="default"
+#  # leave empty to use the login class set in in /etc/passwd:
+#  postgresql_login_class="my_custom_login_class"
 #  postgresql_profiles=""
 #
 # See %%PREFIX%%/share/doc/postgresql/README-server for more info
@@ -29,12 +30,13 @@ command=%%PREFIX%%/bin/pg_ctl
 load_rc_config postgresql
 
 # set defaults
-postgresql_enable=${postgresql_enable:-"NO"}
-postgresql_flags=${postgresql_flags:-"-w -s -m fast"}
-postgresql_user=${postgresql_user:-"%%PG_USER%%"}
-eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data%%PG_VERSION%%"}
-postgresql_login_class=${postgresql_login_class:-"default"}
-postgresql_initdb_flags=${postgresql_initdb_flags:-"--encoding=utf-8 --lc-collate=C"}
+: ${postgresql_enable:="NO"}
+: ${postgresql_flags:="-w -s -m fast"}
+: ${postgresql_user:="%%PG_USER%%"}
+eval _pgdir="~${postgresql_user}/data%%PG_VERSION%%"
+: ${postgresql_data:="${_pgdir}"}
+: ${postgresql_login_class:=""}
+: ${postgresql_initdb_flags:="--encoding=utf-8 --lc-collate=C"}
 
 name=postgresql
 rcvar=postgresql_enable
@@ -62,6 +64,7 @@ if [ -n "$2" ]; then
 		eval postgresql_enable="\${postgresql_${profile}_enable:-${postgresql_enable}}"
 		eval postgresql_data="\${postgresql_${profile}_data:-${postgresql_data}}"
 		eval postgresql_flags="\${postgresql_${profile}_flags:-${postgresql_flags}}"
+		eval postgresql_login_class="\$postgresql_${profile}_login_class:-${postgresql_login_class}}"
 		eval postgresql_initdb_flags="\${postgresql_${profile}_initdb_flags:-${postgresql_initdb_flags}}"
 	fi
 else
@@ -104,12 +107,16 @@ command_args="-D ${postgresql_data} ${postgresql_flags}"
 
 postgresql_command()
 {
-    ${su_cmd} -l -c ${postgresql_login_class} ${postgresql_user} -c "exec ${command} ${command_args} ${rc_arg}"
+    ${su_cmd} ${postgresql_login_class:+-c ${postgresql_login_class}} \
+	    -l ${postgresql_user} \
+	    -c "exec ${command} ${command_args} ${rc_arg}"
 }
 
 postgresql_initdb()
 {
-    ${su_cmd} -l -c ${postgresql_login_class} ${postgresql_user} -c "exec %%PREFIX%%/bin/initdb ${postgresql_initdb_flags} -D ${postgresql_data} -U ${postgresql_user}"
+    ${su_cmd} ${postgresql_login_class:+-c ${postgresql_login_class}} \
+	    -l ${postgresql_user} \
+	    -c "exec %%PREFIX%%/bin/initdb ${postgresql_initdb_flags} -D ${postgresql_data} -U ${postgresql_user}"
 }
 
 run_rc_command "$1"

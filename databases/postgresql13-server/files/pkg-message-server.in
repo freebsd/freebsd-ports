@@ -14,7 +14,7 @@ is a periodic script, %%PREFIX%%/etc/periodic/daily/502.pgsql, that
 you may find useful. You can use it to backup and perform vacuum on all
 databases nightly. Per default, it performs `vacuum analyze'. See the
 script for instructions. For autovacuum settings, please review
-~postgres/data/postgresql.conf.
+~%%PG_USER%%/data/postgresql.conf.
 
 If you plan to access your PostgreSQL server using ODBC, please
 consider running the SQL script %%PREFIX%%/share/postgresql/odbc.sql
@@ -30,28 +30,33 @@ To set limits, environment stuff like locale and collation and other
 things, you can set up a class in /etc/login.conf before initializing
 the database. Add something similar to this to /etc/login.conf:
 ---
-postgres:\
+%%PG_USER%%:\
 	:lang=en_US.UTF-8:\
 	:setenv=LC_COLLATE=C:\
 	:tc=default:
 ---
 and run `cap_mkdb /etc/login.conf'.
-Then add 'postgresql_login_class="postgres"' to /etc/rc.conf.
+Then add 'postgresql_login_class="%%PG_USER%%"' to /etc/rc.conf, or
+set it as the %%PG_USER%% user's login class in /etc/passwd.
 
 ======================================================================
 
+To use PostgreSQL, enable it in rc.conf using
+
+  sysrc postgresql_enable=yes
+
 To initialize the database, run
 
-  %%PREFIX%%/etc/rc.d/postgresql initdb
+  service postgresql initdb
 
 You can then start PostgreSQL by running:
 
-  %%PREFIX%%/etc/rc.d/postgresql start
+  service postgresql start
 
-For postmaster settings, see ~postgres/data/postgresql.conf
+For postmaster settings, see ~%%PG_USER%%/data/postgresql.conf
 
 NB. FreeBSD's PostgreSQL port logs to syslog by default
-    See ~postgres/data/postgresql.conf for more info
+    See ~%%PG_USER%%/data/postgresql.conf for more info
 
 NB. If you're not using a checksumming filesystem like ZFS, you might
     wish to enable data checksumming. It can be enabled during
@@ -61,9 +66,6 @@ NB. If you're not using a checksumming filesystem like ZFS, you might
     and make sure you understand the performance implications.
 
 ======================================================================
-
-To run PostgreSQL at startup, add
-'postgresql_enable="YES"' to /etc/rc.conf
 EOM
 }
 ]
