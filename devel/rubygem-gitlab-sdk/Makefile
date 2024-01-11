@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-sdk
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,7 @@ WWW=		https://gitlab.com/gitlab-org/analytics-section/product-analytics/gl-appli
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport70>=3.0:devel/rubygem-activesupport70 \
+RUN_DEPENDS=	rubygem-activesupport70>=5.2:devel/rubygem-activesupport70 \
 		rubygem-rake>=13.0<14:devel/rubygem-rake \
 		rubygem-snowplow-tracker>=0.8.0<0.9:devel/rubygem-snowplow-tracker
 
