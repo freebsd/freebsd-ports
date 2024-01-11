@@ -1,0 +1,10 @@
+--- Makefile.orig	2024-01-11 01:31:30 UTC
++++ Makefile
+@@ -30,6 +30,7 @@ all: __control_slicot_functions__.oct \
+ # uppressing warnings on indexing errors
+ #
+ slicotlibrary.a: slicot
++	cp TG04BX.f $(SC_SRC)
+ 	cd $(SC_SRC) && $(MKOCTFILE) -w -c MA02ID.f; mv MA02ID.f x && $(MKOCTFILE) -c *.f && mv x MA02ID.f
+ 	$(AR) -rc slicotlibrary.a $(SC_SRC)/*.o
+ 
