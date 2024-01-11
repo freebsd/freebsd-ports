@@ -17,6 +17,7 @@ include/guacamole/fips.h
 include/guacamole/hash.h
 include/guacamole/layer-types.h
 include/guacamole/layer.h
+include/guacamole/mem.h
 include/guacamole/object-types.h
 include/guacamole/object.h
 include/guacamole/parser-constants.h
@@ -26,10 +27,12 @@ include/guacamole/plugin-constants.h
 include/guacamole/plugin.h
 include/guacamole/pool-types.h
 include/guacamole/pool.h
+include/guacamole/private/mem.h
 include/guacamole/protocol-constants.h
 include/guacamole/protocol-types.h
 include/guacamole/protocol.h
 include/guacamole/recording.h
+include/guacamole/rwlock.h
 include/guacamole/socket-constants.h
 include/guacamole/socket-fntypes.h
 %%SSL%%include/guacamole/socket-ssl.h
@@ -68,12 +71,12 @@ include/guacamole/wol.h
 %%VNC%%lib/libguac-client-vnc.so.0.0.0
 lib/libguac.a
 lib/libguac.so
-lib/libguac.so.21
-lib/libguac.so.21.1.0
+lib/libguac.so.23
+lib/libguac.so.23.0.0
 lib/libguac-terminal.a
 lib/libguac-terminal.so
 lib/libguac-terminal.so.0
-lib/libguac-terminal.so.0.0.0
+lib/libguac-terminal.so.0.1.0
 %%GUACENC%%man/man1/guacenc.1.gz
 %%GUACLOG%%man/man1/guaclog.1.gz
 man/man5/guacd.conf.5.gz
