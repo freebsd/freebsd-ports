@@ -1,7 +1,8 @@
 PORTNAME=	libwraster
 PORTVERSION=	0.96.0
 CATEGORIES=	x11-wm windowmaker
-MASTER_SITES=	http://windowmaker.org/pub/source/release/
+MASTER_SITES=	https://www.windowmaker.org/pub/source/release/ \
+		https://github.com/window-maker/wmaker/releases/download/wmaker-${PORTVERSION}/ LOCAL/danfe
 DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
