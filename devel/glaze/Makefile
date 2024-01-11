@@ -1,6 +1,6 @@
 PORTNAME=	glaze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.5
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	ut>0:devel/ut
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang eigen:3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stephenberry
