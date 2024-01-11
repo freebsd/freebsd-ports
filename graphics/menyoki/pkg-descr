@@ -1,0 +1,7 @@
+menyoki is a screencast and screenshot utility that can also perform various
+image related operations such as making/splitting GIFs and
+modifying/analyzing/viewing image files. It aims to be a lightweight command
+line tool for either helping out on day-to-day life operations or complicated
+detail-centric issues. Originally it was designed to record/screenshot terminal
+windows but it can be tweaked easily for other purposes with command line
+arguments, environment variables, or a configuration file.
