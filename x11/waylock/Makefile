@@ -1,6 +1,6 @@
 PORTNAME=	waylock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.4
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,8 +19,8 @@ RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ifreund
-GH_TUPLE=	ifreund:zig-wayland:b9c6fcb:zig_wayland/deps/zig-wayland \
-		ifreund:zig-xkbcommon:e93ceb0:zig_xkbcommon/deps/zig-xkbcommon
+GH_TUPLE=	ifreund:zig-wayland:65475ba:zig_wayland/deps/zig-wayland \
+		ifreund:zig-xkbcommon:7b188de:zig_xkbcommon/deps/zig-xkbcommon
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
