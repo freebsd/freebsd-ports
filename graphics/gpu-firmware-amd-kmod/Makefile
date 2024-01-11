@@ -1,5 +1,6 @@
 PORTNAME=	gpu-firmware-amd-kmod
 PORTVERSION=	20230625
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -23,6 +24,13 @@ FLAVORS=	aldebaran \
 		carrizo \
 		cyan_skillfish2 \
 		fiji \
+		gc_10_3_6 \
+		gc_10_3_7 \
+		gc_11_0_0 \
+		gc_11_0_1 \
+		gc_11_0_2 \
+		gc_11_0_3 \
+		gc_11_0_4 \
 		hainan \
 		hawaii \
 		kabini \
@@ -62,7 +70,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod-firmware
-GH_TAGNAME=	20230625_4
+GH_TAGNAME=	20230625_5
 
 MAKE_ENV=	KMODS="amdgpukmsfw"
 MAKE_ENV+=	AMDGPUKMODS="${FLAVOR}"

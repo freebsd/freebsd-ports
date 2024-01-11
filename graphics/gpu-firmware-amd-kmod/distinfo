@@ -1,3 +1,3 @@
-TIMESTAMP = 1704270557
-SHA256 (freebsd-drm-kmod-firmware-20230625-20230625_4_GH0.tar.gz) = 509eb439ba85e051016127c59d32cf15f873db6558c6da8fe0af76536259152d
-SIZE (freebsd-drm-kmod-firmware-20230625-20230625_4_GH0.tar.gz) = 30535277
+TIMESTAMP = 1704988772
+SHA256 (freebsd-drm-kmod-firmware-20230625-20230625_5_GH0.tar.gz) = ef2f00be3838ef47d02c5c6bb1db823ff1b650bd90a4f1013c1b1ac295dc6b7f
+SIZE (freebsd-drm-kmod-firmware-20230625-20230625_5_GH0.tar.gz) = 32408504
