@@ -1,6 +1,6 @@
 PORTNAME=	vsftpd
 PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	https://security.appspot.com/downloads/ \
 		GENTOO
@@ -95,8 +95,8 @@ do-install:
 	${LN} ${STAGEDIR}${PREFIX}/libexec/vsftpd ${STAGEDIR}${PREFIX}/libexec/vsftpd6
 	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/vsftpd6.conf ${STAGEDIR}${PREFIX}/etc/vsftpd6.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${MKDIR} ${STAGEDIR}/var/ftp ${STAGEDIR}${PREFIX}/share/vsftpd/empty
 
 do-install-DOCS-on:
