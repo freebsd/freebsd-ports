@@ -1,6 +1,6 @@
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	news comms
 MASTER_SITES=	SUNSITE/system/fido
 
@@ -58,10 +58,10 @@ pre-install:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/ifmail/*
 .for i in ${LMAN8}
-	${INSTALL_MAN} ${WRKSRC}/ifgate/${i} ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/ifgate/${i} ${STAGEDIR}${PREFIX}/share/man/man8/
 .endfor
 .for i in ${LMAN3}
-	${INSTALL_MAN} ${WRKSRC}/iflib/${i} ${STAGEDIR}${PREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKSRC}/iflib/${i} ${STAGEDIR}${PREFIX}/share/man/man3/
 .endfor
 
 post-install-DOCS-on:

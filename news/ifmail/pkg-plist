@@ -1,6 +1,3 @@
-man/man3/parsedate.3.gz
-man/man8/ifmail.8.gz
-man/man8/iftoss.8.gz
 @owner ifmail
 @group uucp
 @mode 04711
@@ -156,5 +153,8 @@ libexec/ifmail/nlpatch
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/routes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/scheduler.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/sm.conf
+share/man/man3/parsedate.3.gz
+share/man/man8/ifmail.8.gz
+share/man/man8/iftoss.8.gz
 @preexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ; echo "ifcico		60179/tcp  #ifcico server (ifmail)") > /etc/services
 @postunexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ) > /etc/services
