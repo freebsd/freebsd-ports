@@ -142,6 +142,7 @@
     SUBDIR += svlint
     SUBDIR += svls
     SUBDIR += sweethome3d
+    SUBDIR += symbiyosys
     SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += uhdm
