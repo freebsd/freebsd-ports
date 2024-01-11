@@ -98,7 +98,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
-		-e 's|%%MAN1PREFIX%%|${MAN1PREFIX}|g' \
 		-e 's|%%PANDORA_ETCDIR%%|${PANDORA_ETCDIR}|g' \
 		-e 's|%%PANDORA_LOGDIR%%|${PANDORA_LOGDIR}|g' \
 		-e 's|%%PANDORA_SPOOLDIR%%|${PANDORA_SPOOLDIR}|g' \
