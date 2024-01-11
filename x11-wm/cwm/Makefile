@@ -1,5 +1,6 @@
 PORTNAME=	cwm
 DISTVERSION=	7.4
+PORTREVISION= 	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 
@@ -11,10 +12,10 @@ LICENSE=	ISCL
 
 USES=		pkgconfig xorg
 USE_XORG=	x11 xft xrandr
-MAKE_ARGS=	MANPREFIX="${MANPREFIX}/man"
+MAKE_ARGS=	MANPREFIX="${PREFIX}/share/man"
 PLIST_FILES=	bin/cwm \
-		man/man1/cwm.1.gz \
-		man/man5/cwmrc.5.gz
+		share/man/man1/cwm.1.gz \
+		share/man/man5/cwmrc.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} 's@/usr/X11R6@${LOCALBASE}@' ${WRKSRC}/cwmrc.5

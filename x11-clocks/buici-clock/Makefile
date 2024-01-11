@@ -1,6 +1,6 @@
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -25,7 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/buici
 
 PLIST_FILES=	bin/buici-clock \
-		man/man1/buici-clock.1.gz
+		share/man/man1/buici-clock.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -34,6 +34,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/buici-clock ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/buici-clock.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/buici-clock.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -32,7 +32,7 @@ USE_GNOME=	gtk30 cairo gdkpixbuf2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \

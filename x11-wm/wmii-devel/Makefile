@@ -1,6 +1,6 @@
 PORTNAME=	wmii
 PORTVERSION=	3.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/
 PKGNAMESUFFIX=	-devel
@@ -23,7 +23,7 @@ USE_XORG=	x11 xext xrandr xrender xinerama xft
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
 		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
-		MAN="${MANPREFIX}/man" DOC="${DOCSDIR}"
+		MAN="${PREFIX}/share/man" DOC="${DOCSDIR}"
 MAKE_ENV=	noisycc=1	# unmute build commands, useful for logs
 
 OPTIONS_DEFINE=	DOCS

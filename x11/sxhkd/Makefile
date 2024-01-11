@@ -1,5 +1,6 @@
 PORTNAME=	sxhkd
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -20,14 +21,13 @@ GH_ACCOUNT=	baskerville
 
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/sxhkd \
-		man/man1/sxhkd.1.gz
+		share/man/man1/sxhkd.1.gz
 
 OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	${MKDIR} ${STAGEDIR}${BINDIR} ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

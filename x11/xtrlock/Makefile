@@ -1,5 +1,6 @@
 PORTNAME=	xtrlock
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -29,6 +30,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtrlock ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xtrlock.man ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/xtrlock.man ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

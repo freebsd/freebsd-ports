@@ -1,6 +1,6 @@
 PORTNAME=	cool-retro-term
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -31,6 +31,6 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/packaging/debian/cool-retro-term.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

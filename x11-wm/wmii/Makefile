@@ -1,6 +1,6 @@
 PORTNAME=	wmii
 DISTVERSION=	3.6	# this is stable version; for 3.9.x, use -devel port
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/
 
@@ -19,7 +19,7 @@ USE_XORG=	x11 xorgproto xt xext
 
 CONFLICTS=	wmii-devel
 
-MAKE_ARGS=	PREFIX="${PREFIX}" MAN="${MANPREFIX}/man" \
+MAKE_ARGS=	PREFIX="${PREFIX}" MAN="${PREFIX}/share/man" \
 		INCLUDE="${LOCALBASE}/include" \
 		INCX11="-I${LOCALBASE}/include" \
 		LIBX11="-L${LOCALBASE}/lib -lX11 -lixp" \

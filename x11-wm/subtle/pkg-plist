@@ -11,8 +11,8 @@ etc/xdg/subtle/subtle.rb
 %%RUBY_SITELIBDIR%%/subtle/sur/specification.rb
 %%RUBY_SITELIBDIR%%/subtle/sur/test.rb
 %%RUBY_SITELIBDIR%%/subtle/sur/version.rb
-man/man1/subtle.1.gz
-man/man1/subtler.1.gz
-man/man1/subtlext.1.gz
-man/man1/sur.1.gz
-man/man1/surserver.1.gz
+share/man/man1/subtle.1.gz
+share/man/man1/subtler.1.gz
+share/man/man1/subtlext.1.gz
+share/man/man1/sur.1.gz
+share/man/man1/surserver.1.gz

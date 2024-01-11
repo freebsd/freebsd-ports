@@ -15,8 +15,7 @@ USES=		cpe xorg
 CPE_VENDOR=	suckless
 USE_XORG=	x11 xext xorgproto xrandr xt
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
-		X11INC="${LOCALBASE}/include" CC="${CC}" \
-		MANPREFIX="${PREFIX}/share/man"
+		X11INC="${LOCALBASE}/include" CC="${CC}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include||;s|-L/usr/lib||;s|= -Os|+=|'\

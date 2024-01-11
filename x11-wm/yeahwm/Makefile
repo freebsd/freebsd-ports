@@ -1,5 +1,6 @@
 PORTNAME=	yeahwm
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://phrat.de/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,7 +15,7 @@ MAKE_ARGS=	CC="${CC}" XROOT="${LOCALBASE}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	bin/yeahwm man/man1/yeahwm.1.gz
+PLIST_FILES=	bin/yeahwm share/man/man1/yeahwm.1.gz
 PORTDOCS=	README*
 
 OPTIONS_DEFINE=	DOCS MOTIF
@@ -31,7 +32,7 @@ post-patch-MOTIF-off:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yeahwm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/yeahwm.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/yeahwm.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

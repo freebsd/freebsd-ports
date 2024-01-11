@@ -1,6 +1,6 @@
 PORTNAME=	xvattr
 DISTVERSION=	1.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11
 MASTER_SITES=	LOCAL/fuz
 DISTNAME=	xvattr_${DISTVERSION}.orig
@@ -20,7 +20,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11 xv
 
 PLIST_FILES=	bin/xvattr bin/gxvattr \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 WRKSRC=		${WRKDIR}/xvattr-${DISTVERSION}
@@ -37,6 +37,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/g${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

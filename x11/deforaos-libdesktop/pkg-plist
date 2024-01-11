@@ -38,4 +38,4 @@ libdata/pkgconfig/libDesktop.pc
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/style.css
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/up-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/up.png
-%%PORTDOCS%%man/man1/widget.1.gz
+%%PORTDOCS%%share/man/man1/widget.1.gz

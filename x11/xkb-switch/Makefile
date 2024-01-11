@@ -1,5 +1,6 @@
 PORTNAME=	xkb-switch
 PORTVERSION=	1.8.5
+PORTREVIDSION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -14,7 +15,7 @@ GH_ACCOUNT=	ierton
 USE_XORG=	x11 xkbfile
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DMAN_COMPRESSION="gz" -DMANDIR="${MANPREFIX}/man"
+CMAKE_ARGS=	-DMAN_COMPRESSION="gz" -DMANDIR="${MANPREFIX}/share/man"
 
 OPTIONS_DEFINE=	DOCS
 
@@ -22,7 +23,7 @@ PLIST_FILES=	bin/xkb-switch \
 		lib/libxkbswitch.so \
 		lib/libxkbswitch.so.1 \
 		lib/libxkbswitch.so.1.8.5 \
-		man/man1/xkb-switch.1.gz
+		share/man/man1/xkb-switch.1.gz
 
 PORTDOCS=	README.md
 

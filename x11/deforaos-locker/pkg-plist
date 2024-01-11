@@ -15,10 +15,10 @@ lib/Locker/demos/xterm.so
 lib/Locker/plugins/openmoko.so
 lib/Locker/plugins/suspend.so
 lib/Locker/plugins/systray.so
-%%PORTDOCS%%man/html1/locker.html.gz
-%%PORTDOCS%%man/html1/lockerctl.html.gz
-%%PORTDOCS%%man/man1/locker.1.gz
-%%PORTDOCS%%man/man1/lockerctl.1.gz
+%%PORTDOCS%%share/man/html1/locker.html.gz
+%%PORTDOCS%%share/man/html1/lockerctl.html.gz
+%%PORTDOCS%%share/man/man1/locker.1.gz
+%%PORTDOCS%%share/man/man1/lockerctl.1.gz
 share/applications/org.defora.locker-settings.desktop
 share/doc/Locker/COPYING
 share/doc/Locker/README.md

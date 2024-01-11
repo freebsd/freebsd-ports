@@ -1,6 +1,7 @@
 PORTNAME=	xmenu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -19,11 +20,11 @@ GH_ACCOUNT=	phillbush
 USE_XORG=	x11 xft xinerama
 
 MAKE_ARGS=	FREETYPEINC="${LOCALBASE}/include/freetype2" \
-		MANPREFIX="${PREFIX}/man" \
+		MANPREFIX="${PREFIX}/share/man" \
 		PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	CHANGELOG README.md
 PORTEXAMPLES=	icons/* xmenu.sh
 

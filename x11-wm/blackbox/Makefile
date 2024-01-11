@@ -50,6 +50,6 @@ post-install:
 post-install-TOOLS_ONLY-on:
 	@${REINPLACE_CMD} -E '/[^s]\/blackbox|bstyleconvert|lib|include/d' \
 		${TMPPLIST}
-	${INSTALL_MAN} ${MANPAGES:S#^#${WRKSRC}/doc/#} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${MANPAGES:S#^#${WRKSRC}/doc/#} ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
