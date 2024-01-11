@@ -19,13 +19,14 @@ USES=		jpeg
 CONFLICTS_INSTALL=	sekrit-twc-zimg-* # include/zimg.h
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
 		--with-dynaload-cflags="${CFLAGS} -shared" \
 		--with-gd-includes="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib"
 
 PLIST_FILES=	include/zimg.h bin/zimg \
-		man/man1/zimg.1.gz
+		share/man/man1/zimg.1.gz
 
 CFLAGS+=	-DHAVE_GD_FREETYPE
 
