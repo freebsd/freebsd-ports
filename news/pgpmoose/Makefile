@@ -1,6 +1,6 @@
 PORTNAME=	pgpmoose
 PORTVERSION=	1.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news security
 # Distribution broken
 # MASTER_SITES=	http://people.qualcomm.com/ggr/
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .for i in ${LMAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 .include <bsd.port.mk>
