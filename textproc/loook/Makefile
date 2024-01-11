@@ -1,5 +1,6 @@
 PORTNAME=	loook
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mechtilde.de/Loook/Downloads/
 DIST_SUBDIR=	python
@@ -16,8 +17,6 @@ USES=		python gettext-tools:build
 
 WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/loook.1.gz \
-		man/de/man1/loook.1.gz \
 		share/applications/loook.desktop \
 		share/locale/cs/LC_MESSAGES/loook.mo \
 		share/locale/de/LC_MESSAGES/loook.mo \
@@ -26,6 +25,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/fr/LC_MESSAGES/loook.mo \
 		share/locale/it/LC_MESSAGES/loook.mo \
 		share/locale/nl/LC_MESSAGES/loook.mo \
+		share/man/man1/loook.1.gz \
+		share/man/de/man1/loook.1.gz \
 		share/pixmaps/loook.png \
 
 LCMESSAGES=	cs de en es fr it nl
@@ -43,11 +44,11 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	-${MKDIR} ${STAGEDIR}${PREFIX}/man/de/man1
+	-${MKDIR} ${STAGEDIR}${PREFIX}/share/man/de/man1
 	${INSTALL_MAN} ${WRKSRC}/man/loook.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/man/de/loook.1 \
-		${STAGEDIR}${PREFIX}/man/de/man1/
+		${STAGEDIR}${PREFIX}/share/man/de/man1/
 	${INSTALL_DATA} ${WRKSRC}/loook.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/loook.png \
