@@ -130,9 +130,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/conf/config ${STAGEDIR}${NEWSBIN}/
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} install
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN1} ${STAGEDIR}${PREFIX}/man/man1/
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN5} ${STAGEDIR}${PREFIX}/man/man5/
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN8} ${STAGEDIR}${PREFIX}/man/man8/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN1} ${STAGEDIR}${PREFIX}/share/man/man1/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN5} ${STAGEDIR}${PREFIX}/share/man/man5/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN8} ${STAGEDIR}${PREFIX}/share/man/man8/
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/newsctl
 	cd ${WRKSRC} && ${INSTALL_DATA} ${NO_EG_FILES:S,^,*/,} \
