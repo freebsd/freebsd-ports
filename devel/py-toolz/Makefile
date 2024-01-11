@@ -12,7 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/pytoolz/toolz/issues/573
+
 NO_ARCH=	yes
+
+# 'from tlz import curry' fails, see https://github.com/pytoolz/toolz/issues/573
 
 .include <bsd.port.mk>
