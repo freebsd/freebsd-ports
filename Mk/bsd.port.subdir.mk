@@ -137,9 +137,7 @@ _JAVA_PORTS_INSTALLED!=		${MAKE} -V _JAVA_PORTS_INSTALLED USE_JAVA=1 -f ${PORTSD
 .  endif
 _EXPORTED_VARS+=	_JAVA_PORTS_INSTALLED
 
-.  if !defined(UID)
-UID!=	${ID} -u
-.  endif
+UID?=	${.MAKE.UID}
 _EXPORTED_VARS+=	UID
 
 .endif
