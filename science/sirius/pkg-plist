@@ -176,7 +176,6 @@ lib/cmake/sirius/cudalibs_target.cmake
 lib/cmake/sirius/hdf5_target.cmake
 lib/cmake/sirius/modules/FindCRAY_LIBSCI.cmake
 lib/cmake/sirius/modules/FindElpa.cmake
-lib/cmake/sirius/modules/FindFilesystem.cmake
 lib/cmake/sirius/modules/FindLibSPG.cmake
 lib/cmake/sirius/modules/FindLibVDWXC.cmake
 lib/cmake/sirius/modules/FindLibXC.cmake
