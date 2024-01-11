@@ -9,16 +9,3 @@
  CFLAGS   += -std=c99 -pedantic -Wall -Wextra
  LDLIBS   := -lxcb -lxcb-util -lxcb-icccm -lxcb-ewmh -lxcb-xtest
  
-@@ -26,9 +26,9 @@ $(NAME): $(OBJ)
- 
- install:
- 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
--	cp -p $(NAME) "$(DESTDIR)$(BINPREFIX)"
--	mkdir -p "$(DESTDIR)$(MANPREFIX)/man1"
--	cp -p doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)/man1"
-+	$(BSD_INSTALL_PROGRAM) $(NAME) "$(DESTDIR)$(BINPREFIX)"
-+	mkdir -p "$(DESTDIR)$(MANPREFIX)/man/man1"
-+	$(BSD_INSTALL_MAN) doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)/man/man1"
- 
- uninstall:
- 	rm -f "$(DESTDIR)$(BINPREFIX)/$(NAME)"
