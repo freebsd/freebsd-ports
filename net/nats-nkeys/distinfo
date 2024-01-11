@@ -1,7 +1,7 @@
-TIMESTAMP = 1699088546
-SHA256 (nats-io-nkeys-v0.4.6_GH0.tar.gz) = dd90780b2268e5106fd5f19a848cb2a0396fdda488be9a4c79b3de5ca7e665c8
-SIZE (nats-io-nkeys-v0.4.6_GH0.tar.gz) = 25589
-SHA256 (golang-crypto-v0.14.0_GH0.tar.gz) = 0c4a544080fe2e26e8cee929a123a9663cee81db155d1d66ccb0b38b395614b8
-SIZE (golang-crypto-v0.14.0_GH0.tar.gz) = 1797313
-SHA256 (golang-sys-v0.13.0_GH0.tar.gz) = 8877d20a8f1b2533ddef00e65b6b3b9cebbcbffa319ed525df0bc229f583e2b6
-SIZE (golang-sys-v0.13.0_GH0.tar.gz) = 1442250
+TIMESTAMP = 1704962103
+SHA256 (nats-io-nkeys-v0.4.7_GH0.tar.gz) = 5b2652f8b4ae80828c221375d41d1b129a1012e4055bc0f0a39f5a828afef2b4
+SIZE (nats-io-nkeys-v0.4.7_GH0.tar.gz) = 25573
+SHA256 (golang-crypto-v0.17.0_GH0.tar.gz) = a921c84634495d0d6fe25d81ff0cc7bd1e045865ffe95a7e329cd6f7eceaef6d
+SIZE (golang-crypto-v0.17.0_GH0.tar.gz) = 1809419
+SHA256 (golang-sys-v0.15.0_GH0.tar.gz) = b0bc04c5a1d1ae7c5962e66f19def881b5ab2191cc08cce5021fe7e952ed5484
+SIZE (golang-sys-v0.15.0_GH0.tar.gz) = 1443508
