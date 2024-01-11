@@ -1,5 +1,6 @@
 PORTNAME=	sma
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/dinoex \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -20,7 +21,7 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sma ${STAGEDIR}${PREFIX}/bin/sma
-	${INSTALL_MAN} ${WRKSRC}/sma.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/sma.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
