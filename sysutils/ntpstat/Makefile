@@ -20,7 +20,7 @@ SHEBANG_FILES=	ntpstat
 USE_GITHUB=	yes
 GH_ACCOUNT=	mlichvar
 
-MAKE_ARGS=	prefix="${STAGEDIR}${PREFIX}" mandir="${STAGEDIR}${PREFIX}/share"
+MAKE_ARGS=	prefix="${STAGEDIR}${PREFIX}"
 NO_BUILD=	yes
 NO_ARCH=	yes
 
