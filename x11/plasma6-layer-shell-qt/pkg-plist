@@ -11,3 +11,7 @@ lib/libLayerShellQtInterface.so
 lib/libLayerShellQtInterface.so.%%KDE_PLASMA_VERSION%%
 lib/libLayerShellQtInterface.so.6
 %%QT_PLUGINDIR%%/wayland-shell-integration/liblayer-shell.so
+%%QT_QMLDIR%%/org/kde/layershell/LayerShellQtQml.qmltypes
+%%QT_QMLDIR%%/org/kde/layershell/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/layershell/libLayerShellQtQml.so
+%%QT_QMLDIR%%/org/kde/layershell/qmldir

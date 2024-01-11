@@ -100,7 +100,7 @@ KDE_PLASMA5_VERSION?=		5.27.10
 KDE_PLASMA5_BRANCH?=		stable
 
 # Next KDE Plasma desktop
-KDE_PLASMA6_VERSION?=		5.91.0
+KDE_PLASMA6_VERSION?=		5.92.0
 KDE_PLASMA6_BRANCH?=		unstable
 
 # Current KDE frameworks.
@@ -793,7 +793,7 @@ kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma${_KDE_VERSION}-xdg-desktop-por
 kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kde
 
 kde-plasma5support_PORT=	devel/plasma${_KDE_VERSION}-plasma5support
-kde-plasma5support_LIB=		libKF${_KDE_VERSION}Plasma5Support.so
+kde-plasma5support_LIB=		libPlasma5Support.so
 
 kde-kirigami-addons_PORT5=	x11-toolkits/kirigami-addons
 kde-kirigami-addons_PORT6=	x11-toolkits/kirigami-addons-devel

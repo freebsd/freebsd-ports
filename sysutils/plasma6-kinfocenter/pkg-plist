@@ -266,6 +266,7 @@ share/locale/ja/LC_MESSAGES/kcm_nic.mo
 share/locale/ja/LC_MESSAGES/kcm_samba.mo
 share/locale/ja/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ja/LC_MESSAGES/kcmusb.mo
+share/locale/ja/LC_MESSAGES/kinfocenter.mo
 share/locale/ka/LC_MESSAGES/kcm_about-distro.mo
 share/locale/ka/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ka/LC_MESSAGES/kcm_nic.mo
