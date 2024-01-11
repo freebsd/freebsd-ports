@@ -69,6 +69,10 @@ start_precmd=%%RC_NAME%%_start_precmd
 		export DOTNET_SYSTEM_NET_DISABLEIPV6=1
 	fi
 
+	if [ `uname -K` -ge 1400092 ]; then
+		export CLR_OPENSSL_VERSION_OVERRIDE=30
+	fi
+
 	export LD_LIBRARY_PATH=%%PREFIX%%/lib/emby-server/lib:%%LOCALBASE%%/lib
 }
 
