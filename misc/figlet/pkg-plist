@@ -59,8 +59,8 @@ bin/showfigfonts
 %%DATADIR%%/ushebrew.flc
 %%DATADIR%%/uskata.flc
 %%DATADIR%%/utf8.flc
-man/man6/chkfont.6.gz
-man/man6/figlet.6.gz
-man/man6/figlist.6.gz
-man/man6/showfigfonts.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/figfont.txt
+share/man/man6/chkfont.6.gz
+share/man/man6/figlet.6.gz
+share/man/man6/figlist.6.gz
+share/man/man6/showfigfonts.6.gz
