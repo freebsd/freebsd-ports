@@ -1,21 +1,20 @@
 PORTNAME=	thewalrus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	1
+DISTVERSION=	0.21.0
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # doesn't contain tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source library for hafnian calculation
-WWW=		https://github.com/XanaduAI/thewalrus
+WWW=		https://the-walrus.readthedocs.io/en/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}dask>0:devel/py-dask@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>0:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numba>0:devel/py-numba@${PY_FLAVOR} \
+		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
