@@ -1,5 +1,6 @@
 PORTNAME=	pkg_jail
 PORTVERSION=	2.14
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -26,10 +27,10 @@ do-install:
 	${INSTALL_SCRIPT} make-base update-base update-pkg \
 		${STAGEDIR}${PREFIX}/sbin/ )
 .for i in ${LMAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 .for i in ${LMAN8}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/man/man8/
 .endfor
 
 .include <bsd.port.mk>
