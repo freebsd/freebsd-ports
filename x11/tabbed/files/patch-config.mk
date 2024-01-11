@@ -1,11 +1,7 @@
 --- config.mk.orig	2014-01-21 18:22:03 UTC
 +++ config.mk
-@@ -5,15 +5,15 @@ VERSION = 0.6
- 
- # paths
- PREFIX = /usr/local
--MANPREFIX = ${PREFIX}/share/man
-+MANPREFIX = ${PREFIX}/man
+@@ -8,12 +8,12 @@ MANPREFIX = ${PREFIX}/share/man
+ MANPREFIX = ${PREFIX}/share/man
  
  # includes and libs
 -INCS = -I. -I/usr/include
@@ -20,10 +16,3 @@
  LDFLAGS = -s ${LIBS}
  
  # Solaris
-@@ -21,5 +21,5 @@ LDFLAGS = -s ${LIBS}
- #LDFLAGS = ${LIBS}
- 
- # compiler and linker
--CC = cc
-+CC?= cc
- 
