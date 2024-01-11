@@ -309,50 +309,50 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  			free(cipher_list);
  			return 0;
  		}
---- work/openssh/clientloop.c.orig	2022-02-23 03:31:11.000000000 -0800
-+++ work/openssh/clientloop.c	2022-03-02 12:53:47.624273000 -0800
-@@ -1571,6 +1571,15 @@ client_request_x11(struct ssh *ssh, const char *reques
+--- work/openssh/clientloop.c.orig	2023-12-18 06:59:50.000000000 -0800
++++ work/openssh/clientloop.c	2024-01-08 16:27:47.806586000 -0800
+@@ -1813,6 +1813,15 @@ client_request_x11(struct ssh *ssh, const char *reques
  	sock = x11_connect_display(ssh);
  	if (sock < 0)
  		return NULL;
 +#ifdef HPN_ENABLED
 +	/* again is this really necessary for X11? */
 +	if (!options.hpn_disabled)
-+		c = channel_new(ssh, "x11",
++		c = channel_new(ssh, "x11-connection",
 +		    SSH_CHANNEL_X11_OPEN, sock, sock, -1,
 +		    options.hpn_buffer_size,
 +		    CHAN_X11_PACKET_DEFAULT, 0, "x11", 1);
 +	else
 +#endif
- 	c = channel_new(ssh, "x11",
+ 	c = channel_new(ssh, "x11-connection",
  	    SSH_CHANNEL_X11_OPEN, sock, sock, -1,
  	    CHAN_TCP_WINDOW_DEFAULT, CHAN_X11_PACKET_DEFAULT, 0, "x11", 1);
-@@ -1606,6 +1615,14 @@ client_request_agent(struct ssh *ssh, const char *requ
+@@ -1848,6 +1857,14 @@ client_request_agent(struct ssh *ssh, const char *requ
  	else
  		debug2_fr(r, "ssh_agent_bind_hostkey");
  
 +#ifdef HPN_ENABLED
 +	if (!options.hpn_disabled)
-+		c = channel_new(ssh, "authentication agent connection",
++		c = channel_new(ssh, "agent-connection",
 +		    SSH_CHANNEL_OPEN, sock, sock, -1,
 +		    options.hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT, 0,
 +		    "authentication agent connection", 1);
 +	else
 +#endif
- 	c = channel_new(ssh, "authentication agent connection",
+ 	c = channel_new(ssh, "agent-connection",
  	    SSH_CHANNEL_OPEN, sock, sock, -1,
  	    CHAN_X11_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0,
-@@ -1634,6 +1651,12 @@ client_request_tun_fwd(struct ssh *ssh, int tun_mode,
+@@ -1876,6 +1893,12 @@ client_request_tun_fwd(struct ssh *ssh, int tun_mode,
  	}
  	debug("Tunnel forwarding using interface %s", ifname);
  
 +#ifdef HPN_ENABLED
 +	if (!options.hpn_disabled)
-+		c = channel_new(ssh, "tun", SSH_CHANNEL_OPENING, fd, fd, -1,
++		c = channel_new(ssh, "tun-connection", SSH_CHANNEL_OPENING, fd, fd, -1,
 +		    options.hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
 +	else
 +#endif
- 	c = channel_new(ssh, "tun", SSH_CHANNEL_OPENING, fd, fd, -1,
+ 	c = channel_new(ssh, "tun-connection", SSH_CHANNEL_OPENING, fd, fd, -1,
  	    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
  	c->datagram = 1;
 --- work/openssh/compat.c.orig	2021-04-15 20:55:25.000000000 -0700
@@ -421,9 +421,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  echo ""
  
---- work/openssh/kex.c.orig	2021-04-15 20:55:25.000000000 -0700
-+++ work/openssh/kex.c	2021-04-28 14:38:31.761909000 -0700
-@@ -960,6 +960,20 @@ kex_choose_conf(struct ssh *ssh)
+--- work/openssh/kex.c.orig	2023-12-18 06:59:50.000000000 -0800
++++ work/openssh/kex.c	2024-01-08 16:24:07.547292000 -0800
+@@ -1252,6 +1252,20 @@ kex_choose_conf(struct ssh *ssh, uint32_t seq)
  			peer[ncomp] = NULL;
  			goto out;
  		}
@@ -444,7 +444,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		debug("kex: %s cipher: %s MAC: %s compression: %s",
  		    ctos ? "client->server" : "server->client",
  		    newkeys->enc.name,
-@@ -1170,7 +1184,7 @@ send_error(struct ssh *ssh, char *msg)
+@@ -1462,7 +1476,7 @@ kex_exchange_identification(struct ssh *ssh, int timeo
   */
  int
  kex_exchange_identification(struct ssh *ssh, int timeout_ms,
@@ -452,13 +452,13 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +    const char *version_addendum, int hpn_disabled)
  {
  	int remote_major, remote_minor, mismatch, oerrno = 0;
- 	size_t len, i, n;
-@@ -1187,8 +1201,13 @@ kex_exchange_identification(struct ssh *ssh, int timeo
+ 	size_t len, n;
+@@ -1479,8 +1493,13 @@ kex_exchange_identification(struct ssh *ssh, int timeo
  	sshbuf_reset(our_version);
  	if (version_addendum != NULL && *version_addendum == '\0')
  		version_addendum = NULL;
--	if ((r = sshbuf_putf(our_version, "SSH-%d.%d-%.100s%s%s\r\n",
-+	if ((r = sshbuf_putf(our_version, "SSH-%d.%d-%.100s%s%s%s\r\n",
+-	if ((r = sshbuf_putf(our_version, "SSH-%d.%d-%s%s%s\r\n",
++	if ((r = sshbuf_putf(our_version, "SSH-%d.%d-%s%s%s%s\r\n",
  	    PROTOCOL_MAJOR_2, PROTOCOL_MINOR_2, SSH_VERSION,
 +#ifdef HPN_ENABLED
 +	    hpn_disabled ? "" : SSH_HPN,
@@ -1269,11 +1269,11 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  # Example of overriding settings on a per-user basis
  #Match User anoncvs
  #	X11Forwarding no
---- version.h.orig	2023-07-18 23:31:34.000000000 -0700
-+++ version.h	2023-07-21 07:27:08.311422000 -0700
+--- work/openssh/version.h.orig	2023-12-18 06:59:50.000000000 -0800
++++ work/openssh/version.h	2024-01-08 16:22:25.632475000 -0800
 @@ -4,3 +4,4 @@
  
- #define SSH_PORTABLE	"p2"
+ #define SSH_PORTABLE	"p1"
  #define SSH_RELEASE	SSH_VERSION SSH_PORTABLE
 +#define SSH_HPN         "-hpn14v15"
 --- work/openssh/kex.h.orig	2019-07-10 17:35:36.523216000 -0700
