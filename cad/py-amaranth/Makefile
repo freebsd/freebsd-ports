@@ -1,7 +1,6 @@
 PORTNAME=	amaranth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3-160
-DISTVERSIONSUFFIX=	-gb952005
+DISTVERSION=	0.4.0
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,11 +10,12 @@ WWW=		https://amaranth-lang.org/docs/amaranth/latest/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyvcd>0:cad/py-pyvcd@${PY_FLAVOR}
+TEST_DEPENDS=	sby:cad/symbiyosys \
+		yosys:cad/yosys
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -25,13 +25,9 @@ GH_ACCOUNT=	amaranth-lang
 
 NO_ARCH=	yes
 
-# workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272771
-PEP517_INSTALL_CMD=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION:S/-/.post/}*.whl
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|from setuptools_scm.git import parse as parse_git|return "v${DISTVERSION}"|' \
-		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
 		-e 's|%%VERSION%%|${DISTVERSION}|' \
 		${WRKSRC}/pyproject.toml
