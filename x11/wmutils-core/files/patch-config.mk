@@ -1,10 +1,6 @@
---- config.mk.orig	2019-10-16 17:08:21 UTC
+--- config.mk.orig	2022-07-01 20:47:48 UTC
 +++ config.mk
-@@ -1,9 +1,9 @@
--PREFIX = /usr
-+PREFIX ?= /usr/local
- MANPREFIX = $(PREFIX)/man
- 
+@@ -4,6 +4,6 @@ LD      = $(CC)
  CC      = cc
  LD      = $(CC)
  
