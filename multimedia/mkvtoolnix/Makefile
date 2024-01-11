@@ -48,9 +48,6 @@ BINARY_ALIAS=	qmake=${QMAKE} \
 		rcc=${RCC} \
 		uic=${UIC}
 
-USES		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env qt:6 tar:xz
-USES_GUI=	desktop-file-utils gl shared-mime-info
-USE_GL_GUI=
 # Flavor handling
 _USES_qt6=		compiler:c++17-lang desktop-file-utils gl iconv localbase \
 			pkgconfig qmake:no_env qt:6 shared-mime-info tar:xz
@@ -67,10 +64,8 @@ PLIST_SUB+=		${_PLIST_SUB_${FLAVOR}}
 
 # Options handling
 OPTIONS_DEFINE=	DVDREAD FLAC NLS MANTRANS GUI
-OPTIONS_DEFAULT=	FLAC GUI
+OPTIONS_DEFAULT=	FLAC
 OPTIONS_SUB=	yes
-
-GUI_SUBPACKAGES=	gui
 
 DVDREAD_DESC=		Support reading DVD chapters via libdvdread
 DVDREAD_LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
