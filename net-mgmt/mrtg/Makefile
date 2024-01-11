@@ -1,6 +1,6 @@
 PORTNAME=	mrtg
 PORTVERSION=	2.17.10
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -95,13 +95,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \
 		${STAGEDIR}${ETCDIR}/mrtg.cfg.sample
 	${INSTALL_DATA} ${MANPAGE:S,^,${WRKSRC}/doc/,} \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_DATA} ${MANPAGE3:S,^,${WRKSRC}/doc/,} \
-		${STAGEDIR}${PREFIX}/man/man3
+		${STAGEDIR}${PREFIX}/share/man/man3/
 	cd ${WRKSRC}/lib/mrtg2 && \
 		${COPYTREE_SHARE} "*.pm" ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} \
-		${STAGEDIR}${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
