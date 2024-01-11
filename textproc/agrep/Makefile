@@ -1,6 +1,6 @@
 PORTNAME=	agrep
 PORTVERSION=	2.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	GENTOO \
 		ftp://ftp.cs.arizona.edu/agrep/ \
@@ -24,7 +24,7 @@ CONFLICTS_INSTALL=	rubygem-amatch # bin/agrep
 
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-PLIST_FILES=	bin/agrep man/man1/agrep.1.gz
+PLIST_FILES=	bin/agrep share/man/man1/agrep.1.gz
 PORTDOCS=	COPYRIGHT agrep.algorithms agrep.ps.1.Z agrep.ps.2.Z
 
 OPTIONS_DEFINE=	DOCS
@@ -34,7 +34,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/agrep ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/agrep.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/agrep.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
