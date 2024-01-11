@@ -12,5 +12,7 @@ USES=		xorg
 USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	bin/wmname
+MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" \
+		X11LIB="${PREFIX}/lib" X11INC="${PREFIX}/include"
 
 .include <bsd.port.mk>
