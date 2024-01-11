@@ -1,11 +1,6 @@
 --- config.mk.orig	2016-10-04 08:01:36 UTC
 +++ config.mk
-@@ -1,8 +1,8 @@
--PREFIX = /usr
--MANPREFIX = $(PREFIX)/share/man
-+PREFIX ?= /usr/local
-+MANPREFIX = $(PREFIX)/man
- 
+@@ -4,5 +4,5 @@ LD = $(CC)
  CC = cc
  LD = $(CC)
  

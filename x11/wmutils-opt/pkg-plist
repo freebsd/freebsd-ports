@@ -2,7 +2,7 @@ bin/chwb2
 bin/wew
 bin/wname
 bin/xmmv
-man/man1/chwb2.1.gz
-man/man1/wew.1.gz
-man/man1/wname.1.gz
-man/man1/xmmv.1.gz
+share/man/man1/chwb2.1.gz
+share/man/man1/wew.1.gz
+share/man/man1/wname.1.gz
+share/man/man1/xmmv.1.gz
