@@ -1,5 +1,5 @@
 PORTNAME=	lockbox
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
