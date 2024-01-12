@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-PORTVERSION=	13.0.1
+PORTVERSION=	13.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -42,7 +42,7 @@ RUBY_USES=		ruby
 RUBY_CONFIGURE_ON=	--enable-mruby
 SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack-c \
-			libzmq.so:net/libzmq2
+			libzmq.so:net/libzmq4
 SUGGEST_CONFIGURE_ON=	--enable-zeromq \
 			--with-libevent=${LOCALBASE} \
 			--with-message-pack=${LOCALBASE}
