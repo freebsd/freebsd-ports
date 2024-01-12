@@ -1,6 +1,6 @@
 PORTNAME=	meta1
 PORTVERSION=	1.1.0a.18.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.MeTA1.org/download/.alpha/baddns/
 DISTNAME=	${PORTNAME}-1.1.Alpha19.0
@@ -26,6 +26,7 @@ IGNORE=		your system does not support sysvipc
 USES=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dependency-tracking
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CPPFLAGS+=	-DMTA_NETINET6
 MAKE_ENV+=	META1CONFDIR="${META1CONFDIR}"
 PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
