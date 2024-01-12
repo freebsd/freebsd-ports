@@ -5,9 +5,11 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		LOCAL/ehaupt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
 WWW=		http://vobcopy.org/projects/c/c.shtml
+
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
