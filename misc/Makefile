@@ -428,6 +428,7 @@
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
     SUBDIR += py-icoextract
+    SUBDIR += py-instructor
     SUBDIR += py-ipyfastscape
     SUBDIR += py-kartograph
     SUBDIR += py-laspy
