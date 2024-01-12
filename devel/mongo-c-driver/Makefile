@@ -1,6 +1,5 @@
 PORTNAME=	mongo-c-driver
-DISTVERSION=	1.25.3
-PORTREVISION=	1
+DISTVERSION=	1.25.4
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
@@ -17,11 +16,10 @@ LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
 USES=		cmake cpe pathfix pkgconfig python:env
 CPE_VENDOR=	mongodb
 PATHFIX_WRKSRC=	${WRKSRC}/src/libmongoc
+USE_GITHUB=	yes
+GH_ACCOUNT=	mongodb
+GH_PROJECT=	mongo-c-driver
 USE_LDCONFIG=	yes
-
-USE_GITHUB=    yes
-GH_ACCOUNT=    mongodb
-GH_PROJECT=    mongo-c-driver
 
 CMAKE_ARGS=	-DENABLE_ZLIB=SYSTEM
 CMAKE_ON=	ENABLE_MONGOC \
