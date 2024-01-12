@@ -1178,6 +1178,7 @@
     SUBDIR += suitesparse-lagraph
     SUBDIR += suitesparse-ldl
     SUBDIR += suitesparse-mongoose
+    SUBDIR += suitesparse-paru
     SUBDIR += suitesparse-rbio
     SUBDIR += suitesparse-spex
     SUBDIR += suitesparse-spqr

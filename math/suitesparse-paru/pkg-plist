@@ -1,0 +1,14 @@
+include/suitesparse/ParU.hpp
+include/suitesparse/ParU_C.h
+include/suitesparse/ParU_definitions.h
+lib/cmake/ParU/ParUConfig.cmake
+lib/cmake/ParU/ParUConfigVersion.cmake
+lib/cmake/ParU/ParUTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ParU/ParUTargets.cmake
+lib/libparu.a
+lib/libparu.so
+lib/libparu.so.0
+lib/libparu.so.%%VER%%
+libdata/pkgconfig/ParU.pc
+%%PORTDOCS%%%%DOCSDIR%%/ParU_README.md
+%%PORTDOCS%%%%DOCSDIR%%/paru_user_guide.pdf
