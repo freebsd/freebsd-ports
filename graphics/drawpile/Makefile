@@ -32,4 +32,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 PORTSCOUT=	limit:^\d+\. # prevent tags like 'continuous'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == armv7
+BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276269
+.endif
+
+.include <bsd.port.post.mk>
