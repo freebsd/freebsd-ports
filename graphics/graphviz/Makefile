@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
 PORTVERSION=	9.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
@@ -26,6 +26,7 @@ USES=		compiler:c++11-lang cpe pathfix shebangfix gmake bison \
 		tcl:build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 # sincos is broken on armv6, see ports/220591
 CFLAGS_armv6=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
 		-fno-builtin-sincosf -fno-builtin-sinf -fno-builtin-cosf \
