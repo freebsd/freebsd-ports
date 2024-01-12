@@ -49,8 +49,8 @@ lib/totem/plugins/vimeo/libvimeo.so
 lib/totem/plugins/vimeo/vimeo.plugin
 libdata/pkgconfig/totem.pc
 libexec/totem-gallery-thumbnailer
-man/man1/totem-video-thumbnailer.1.gz
-man/man1/totem.1.gz
+share/man/man1/totem-video-thumbnailer.1.gz
+share/man/man1/totem.1.gz
 share/GConf/gsettings/opensubtitles.convert
 share/GConf/gsettings/pythonconsole.convert
 share/GConf/gsettings/totem.convert

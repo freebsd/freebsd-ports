@@ -51,9 +51,9 @@ lib/libosinfo-1.0.so
 lib/libosinfo-1.0.so.0
 lib/libosinfo-1.0.so.%%SHLIB_VER%%
 libdata/pkgconfig/libosinfo-1.0.pc
-man/man1/osinfo-detect.1.gz
-man/man1/osinfo-install-script.1.gz
-man/man1/osinfo-query.1.gz
+share/man/man1/osinfo-detect.1.gz
+share/man/man1/osinfo-install-script.1.gz
+share/man/man1/osinfo-query.1.gz
 share/gir-1.0/Libosinfo-1.0.gir
 %%GTKDOC%%share/gtk-doc/html/Libosinfo/Libosinfo-OsinfoFilter.html
 %%GTKDOC%%share/gtk-doc/html/Libosinfo/Libosinfo-osinfo-avatar-format.html

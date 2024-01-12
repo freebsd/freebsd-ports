@@ -1,5 +1,6 @@
 PORTNAME=	pacman
 DISTVERSION=	6.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/
 

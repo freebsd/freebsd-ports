@@ -8,7 +8,7 @@ lib/libopenslide.so
 lib/libopenslide.so.1
 lib/libopenslide.so.1.0.0
 libdata/pkgconfig/openslide.pc
-man/man1/openslide-quickhash1sum.1.gz
-man/man1/openslide-show-properties.1.gz
-man/man1/openslide-write-png.1.gz
-man/man1/slidetool.1.gz
+share/man/man1/openslide-quickhash1sum.1.gz
+share/man/man1/openslide-show-properties.1.gz
+share/man/man1/openslide-write-png.1.gz
+share/man/man1/slidetool.1.gz

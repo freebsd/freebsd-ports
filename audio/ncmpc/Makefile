@@ -1,5 +1,6 @@
 PORTNAME=	ncmpc
 PORTVERSION=	0.48
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/ncmpc/0/
 

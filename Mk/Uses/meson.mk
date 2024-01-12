@@ -33,7 +33,6 @@ BUILD_DEPENDS+=		meson:devel/meson
 USE_LOCALE?=	en_US.UTF-8
 
 CONFIGURE_ARGS+=	--prefix ${PREFIX} \
-			--mandir man \
 			--infodir ${INFO_PATH}
 
 # Enable all optional features to make builds deterministic. Consumers can

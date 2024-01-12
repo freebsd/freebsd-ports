@@ -66,7 +66,7 @@ bin/meld
 %%PYTHON_SITELIBDIR%%/meld/vc/svn.py
 %%PYTHON_SITELIBDIR%%/meld/vcview.py
 %%PYTHON_SITELIBDIR%%/meld/windowstate.py
-man/man1/meld.1.gz
+share/man/man1/meld.1.gz
 share/applications/org.gnome.Meld.desktop
 share/help/C/meld/command-line.page
 share/help/C/meld/file-changes.page

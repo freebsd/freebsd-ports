@@ -68,10 +68,10 @@ libdata/pkgconfig/colorhug.pc
 libexec/colord
 libexec/colord-session
 %%SANE%%libexec/colord-sane
-%%MANPAGES%%man/man1/cd-create-profile.1.gz
-%%MANPAGES%%man/man1/cd-fix-profile.1.gz
-%%MANPAGES%%man/man1/cd-it8.1.gz
-%%MANPAGES%%man/man1/colormgr.1.gz
+%%MANPAGES%%share/man/man1/cd-create-profile.1.gz
+%%MANPAGES%%share/man/man1/cd-fix-profile.1.gz
+%%MANPAGES%%share/man/man1/cd-it8.1.gz
+%%MANPAGES%%share/man/man1/colormgr.1.gz
 %%COMPLETION%%share/bash-completion/completions/colormgr
 share/color/icc/colord/AdobeRGB1998.icc
 share/color/icc/colord/AppleRGB.icc

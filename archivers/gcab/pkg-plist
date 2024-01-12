@@ -9,7 +9,7 @@ lib/libgcab-1.0.so
 lib/libgcab-1.0.so.0
 lib/libgcab-1.0.so.0.2.0
 libdata/pkgconfig/libgcab-1.0.pc
-man/man1/gcab.1.gz
+share/man/man1/gcab.1.gz
 share/gir-1.0/GCab-1.0.gir
 share/locale/bs/LC_MESSAGES/gcab.mo
 share/locale/cs/LC_MESSAGES/gcab.mo

@@ -1,5 +1,5 @@
 bin/gnome-sudoku
-man/man6/gnome-sudoku.6.gz
+share/man/man6/gnome-sudoku.6.gz
 share/applications/org.gnome.Sudoku.desktop
 share/dbus-1/services/org.gnome.Sudoku.service
 share/help/C/gnome-sudoku/basics.page

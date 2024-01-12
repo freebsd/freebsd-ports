@@ -7,9 +7,9 @@ libexec/gnome-session-check-accelerated
 libexec/gnome-session-check-accelerated-gl-helper
 libexec/gnome-session-check-accelerated-gles-helper
 libexec/gnome-session-failed
-man/man1/gnome-session-inhibit.1.gz
-man/man1/gnome-session-quit.1.gz
-man/man1/gnome-session.1.gz
+share/man/man1/gnome-session-inhibit.1.gz
+share/man/man1/gnome-session-quit.1.gz
+share/man/man1/gnome-session.1.gz
 share/GConf/gsettings/gnome-session.convert
 %%DATADIR%%/hardware-compatibility
 %%DATADIR%%/sessions/gnome-dummy.session

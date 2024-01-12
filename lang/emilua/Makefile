@@ -1,6 +1,7 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com

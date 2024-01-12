@@ -11,7 +11,7 @@ lib/hexchat/python/_hexchat.py
 lib/hexchat/python/hexchat.py
 lib/hexchat/python/xchat.py
 libdata/pkgconfig/hexchat-plugin.pc
-man/man1/hexchat.1.gz
+share/man/man1/hexchat.1.gz
 share/metainfo/io.github.Hexchat.appdata.xml
 share/applications/io.github.Hexchat.desktop
 %%DBUS%%share/dbus-1/services/org.hexchat.service.service

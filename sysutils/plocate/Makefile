@@ -1,5 +1,6 @@
 PORTNAME=	plocate
 DISTVERSION=	1.1.19
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://plocate.sesse.net/download/
 

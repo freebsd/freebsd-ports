@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION?=	1.8.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

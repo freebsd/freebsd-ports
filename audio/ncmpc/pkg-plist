@@ -6,7 +6,7 @@ bin/ncmpc
 %%LYRICS%%lib/ncmpc/lyrics/30-karaoke_texty.py
 %%LYRICS%%lib/ncmpc/lyrics/50-genius.py
 %%LYRICS%%lib/ncmpc/lyrics/52-zeneszoveg.py
-%%MANPAGES%%man/man1/ncmpc.1.gz
+%%MANPAGES%%share/man/man1/ncmpc.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ncmpc.mo

@@ -1,5 +1,5 @@
 bin/lightsoff
-man/man6/lightsoff.6.gz
+share/man/man6/lightsoff.6.gz
 share/applications/org.gnome.LightsOff.desktop
 share/dbus-1/services/org.gnome.LightsOff.service
 share/help/C/lightsoff/basic.page

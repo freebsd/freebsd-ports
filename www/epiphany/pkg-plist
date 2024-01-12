@@ -5,7 +5,7 @@ lib/epiphany/libephysync.so
 lib/epiphany/web-process-extensions/libephywebprocessextension.so
 libexec/epiphany-search-provider
 libexec/epiphany/ephy-profile-migrator
-man/man1/epiphany.1.gz
+share/man/man1/epiphany.1.gz
 share/applications/org.gnome.Epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.SearchProvider.service
 %%DATADIR%%/default-bookmarks.rdf

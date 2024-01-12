@@ -35,7 +35,7 @@ lib/libgvnc-1.0.so.0.0.1
 libdata/pkgconfig/gtk-vnc-2.0.pc
 libdata/pkgconfig/gvnc-1.0.pc
 %%PULSEAUDIO%%libdata/pkgconfig/gvncpulse-1.0.pc
-man/man1/gvnccapture.1.gz
+share/man/man1/gvnccapture.1.gz
 share/gir-1.0/GVnc-1.0.gir
 %%PULSEAUDIO%%share/gir-1.0/GVncPulse-1.0.gir
 share/gir-1.0/GtkVnc-2.0.gir

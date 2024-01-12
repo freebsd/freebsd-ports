@@ -1,6 +1,6 @@
 PORTNAME=	jack-example-tools
 DISTVERSION=	4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	dev@submerge.ch

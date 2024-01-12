@@ -17,7 +17,7 @@ libdata/pkgconfig/libgeoclue-2.0.pc
 libexec/geoclue
 %%DEMO%%libexec/geoclue-2.0/demos/agent
 libexec/geoclue-2.0/demos/where-am-i
-man/man5/geoclue.5.gz
+share/man/man5/geoclue.5.gz
 %%DEMO%%share/applications/geoclue-demo-agent.desktop
 share/applications/geoclue-where-am-i.desktop
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml

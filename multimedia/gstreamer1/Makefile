@@ -1,5 +1,6 @@
 PORTNAME=	gstreamer
 PORTVERSION=	1.22.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1

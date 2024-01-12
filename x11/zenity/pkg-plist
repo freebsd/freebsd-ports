@@ -1,6 +1,6 @@
 bin/gdialog
 bin/zenity
-man/man1/zenity.1.gz
+share/man/man1/zenity.1.gz
 share/help/C/zenity/calendar.page
 share/help/C/zenity/color-selection.page
 share/help/C/zenity/entry.page

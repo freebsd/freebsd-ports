@@ -1,5 +1,5 @@
 bin/gnome-mahjongg
-man/man6/gnome-mahjongg.6.gz
+share/man/man6/gnome-mahjongg.6.gz
 share/applications/org.gnome.Mahjongg.desktop
 %%DATADIR%%/maps/mahjongg.map
 %%DATADIR%%/themes/edu_kang_xi.png

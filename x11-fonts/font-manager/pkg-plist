@@ -3,7 +3,7 @@ lib/font-manager/libfontmanager.so
 lib/font-manager/libfontmanager.so.0
 lib/font-manager/libfontmanager.so.%%PORTVERSION%%
 libexec/font-manager/font-viewer
-man/man1/font-manager.1.gz
+share/man/man1/font-manager.1.gz
 share/applications/org.gnome.FontManager.desktop
 share/applications/org.gnome.FontViewer.desktop
 share/dbus-1/services/org.gnome.FontManager.service

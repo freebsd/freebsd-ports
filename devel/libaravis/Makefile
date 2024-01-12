@@ -1,6 +1,6 @@
 PORTNAME=		libaravis
 DISTVERSION=		0.8.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		devel
 
 PATCH_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

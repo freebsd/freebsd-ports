@@ -1,5 +1,5 @@
 bin/celluloid
-man/man1/celluloid.1.gz
+share/man/man1/celluloid.1.gz
 share/applications/io.github.celluloid_player.Celluloid.desktop
 share/dbus-1/services/io.github.celluloid_player.Celluloid.service
 share/icons/hicolor/scalable/apps/io.github.celluloid_player.Celluloid.svg

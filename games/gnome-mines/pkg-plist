@@ -1,5 +1,5 @@
 bin/gnome-mines
-man/man6/gnome-mines.6.gz
+share/man/man6/gnome-mines.6.gz
 share/applications/org.gnome.Mines.desktop
 %%DATADIR%%/themes/bgcolors/1mines.svg
 %%DATADIR%%/themes/bgcolors/2mines.svg

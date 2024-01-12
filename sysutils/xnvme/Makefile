@@ -1,5 +1,6 @@
 PORTNAME=	xnvme
 DISTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/OpenMPDK/xNVMe/releases/download/v${DISTVERSION}/
 

@@ -72,7 +72,7 @@ lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gedit.py
 libdata/pkgconfig/gedit.pc
-man/man1/gedit.1.gz
+share/man/man1/gedit.1.gz
 share/applications/org.gnome.gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
 %%DATADIR%%/gir-1.0/Gedit-3.0.gir

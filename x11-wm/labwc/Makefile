@@ -1,5 +1,6 @@
 PORTNAME=	labwc
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,11 +35,11 @@ LIBRSVG2_MESON_ENABLED=	svg
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
-			man/man5/${PORTNAME}-actions.5.gz \
-			man/man5/${PORTNAME}-config.5.gz \
-			man/man5/${PORTNAME}-menu.5.gz \
-			man/man5/${PORTNAME}-theme.5.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man5/${PORTNAME}-actions.5.gz \
+			share/man/man5/${PORTNAME}-config.5.gz \
+			share/man/man5/${PORTNAME}-menu.5.gz \
+			share/man/man5/${PORTNAME}-theme.5.gz
 
 NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls

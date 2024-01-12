@@ -1,5 +1,5 @@
 bin/frogr
-man/man1/frogr.1.gz
+share/man/man1/frogr.1.gz
 share/applications/org.gnome.frogr.desktop
 %%DATADIR%%/gtkbuilder/frogr-context-menu.ui
 %%DATADIR%%/gtkbuilder/frogr-main-view.ui

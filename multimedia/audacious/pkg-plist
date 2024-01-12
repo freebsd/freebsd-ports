@@ -56,8 +56,8 @@ lib/libaudtag.so
 lib/libaudtag.so.3
 lib/libaudtag.so.3.0.0
 libdata/pkgconfig/audacious.pc
-man/man1/audacious.1.gz
-man/man1/audtool.1.gz
+share/man/man1/audacious.1.gz
+share/man/man1/audtool.1.gz
 share/applications/audacious.desktop
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING

@@ -1,5 +1,6 @@
 PORTNAME=	tio
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

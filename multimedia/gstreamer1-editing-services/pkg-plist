@@ -72,7 +72,7 @@ lib/libges-%%VERSION%%.so.0
 lib/libges-%%VERSION%%.so.%%SOVERSION%%
 %%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.py
 libdata/pkgconfig/gst-editing-services-%%VERSION%%.pc
-man/man1/ges-launch-%%VERSION%%.1.gz
+share/man/man1/ges-launch-%%VERSION%%.1.gz
 %%BASH%%share/bash-completion/completions/ges-launch-%%VERSION%%
 share/gir-1.0/GES-%%VERSION%%.gir
 share/gstreamer-%%VERSION%%/validate/scenarios/ges-edit-clip-while-paused.scenario

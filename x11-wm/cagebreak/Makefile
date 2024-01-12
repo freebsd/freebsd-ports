@@ -1,5 +1,6 @@
 PORTNAME=	cagebreak
 DISTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,9 +34,9 @@ OPTIONS_DEFAULT=MANPAGES X11
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_TRUE=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
-			man/man5/${PORTNAME}-config.5.gz \
-			man/man7/${PORTNAME}-socket.7.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man5/${PORTNAME}-config.5.gz \
+			share/man/man7/${PORTNAME}-socket.7.gz
 
 X11_MESON_TRUE=	xwayland
 

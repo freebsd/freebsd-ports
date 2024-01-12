@@ -1,5 +1,6 @@
 PORTNAME=	wayout
 DISTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~proycon/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 PKGNAMEPREFIX=	sxmo-
@@ -28,7 +29,7 @@ EPOLL_MESON_ENABLED=	handle-signals
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 post-install:
 # Rename to avoid conflict with x11/wayout

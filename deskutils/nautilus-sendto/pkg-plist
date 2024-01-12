@@ -1,5 +1,5 @@
 bin/nautilus-sendto
-man/man1/nautilus-sendto.1.gz
+share/man/man1/nautilus-sendto.1.gz
 share/appdata/nautilus-sendto.metainfo.xml
 share/locale/af/LC_MESSAGES/nautilus-sendto.mo
 share/locale/an/LC_MESSAGES/nautilus-sendto.mo

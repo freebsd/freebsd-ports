@@ -30,7 +30,7 @@ bin/pithos
 %%PYTHON_SITELIBDIR%%/pithos/plugins/notify.py
 %%PYTHON_SITELIBDIR%%/pithos/plugins/screensaver_pause.py
 %%PYTHON_SITELIBDIR%%/pithos/util.py
-man/man1/pithos.1.gz
+share/man/man1/pithos.1.gz
 share/applications/io.github.Pithos.desktop
 share/dbus-1/services/io.github.Pithos.service
 share/icons/hicolor/48x48/apps/io.github.Pithos-tray.png

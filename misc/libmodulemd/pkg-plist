@@ -30,5 +30,5 @@ lib/libmodulemd.so
 lib/libmodulemd.so.2
 lib/libmodulemd.so.2.15.0
 libdata/pkgconfig/modulemd-2.0.pc
-man/man1/modulemd-validator.1.gz
+share/man/man1/modulemd-validator.1.gz
 share/gir-1.0/Modulemd-2.0.gir

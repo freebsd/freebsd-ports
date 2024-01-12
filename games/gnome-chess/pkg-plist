@@ -1,6 +1,6 @@
 bin/gnome-chess
 %%ETCDIR%%/engines.conf
-man/man6/gnome-chess.6.gz
+share/man/man6/gnome-chess.6.gz
 share/applications/org.gnome.Chess.desktop
 share/dbus-1/services/org.gnome.Chess.service
 share/help/C/gnome-chess/bug-filing.page

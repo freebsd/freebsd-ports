@@ -1,5 +1,6 @@
 PORTNAME=	gtk-update-icon-cache
 PORTVERSION=	3.24.31
+PORTREVISION=	1
 CATEGORIES=	graphics
 DIST_SUBDIR=	gnome
 

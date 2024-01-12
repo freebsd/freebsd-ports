@@ -1,6 +1,6 @@
 PORTNAME=	kiwix-tools
 DISTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	olce.freebsd.ports@certner.fr

@@ -1,6 +1,6 @@
 bin/gtranslator
 include/gtr-marshal.h
-man/man1/gtranslator.1.gz
+share/man/man1/gtranslator.1.gz
 share/applications/org.gnome.Gtranslator.desktop
 %%DATADIR%%/sourceview/gtranslator.lang
 %%DATADIR%%/ui/gtr-languages.ini

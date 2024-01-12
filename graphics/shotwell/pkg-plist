@@ -14,7 +14,7 @@ lib/shotwell/plugins/builtin/libshotwell-transitions.so
 %%FACED%%libexec/shotwell/shotwell-facedetect
 libexec/shotwell/shotwell-settings-migrator
 libexec/shotwell/shotwell-video-thumbnailer
-man/man1/shotwell.1.gz
+share/man/man1/shotwell.1.gz
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
 share/help/C/shotwell/edit-adjustments.page

@@ -1,5 +1,6 @@
 PORTNAME=	jose
 DISTVERSION=	11
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	hdholm@alumni.iastate.edu

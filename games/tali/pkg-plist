@@ -1,5 +1,5 @@
 bin/tali
-man/man6/tali.6.gz
+share/man/man6/tali.6.gz
 @preunexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
 @preunexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
 share/applications/org.gnome.Tali.desktop

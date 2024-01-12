@@ -1,5 +1,5 @@
 bin/baobab
-man/man1/baobab.1.gz
+share/man/man1/baobab.1.gz
 share/applications/org.gnome.baobab.desktop
 share/dbus-1/services/org.gnome.baobab.service
 share/help/C/baobab/index.page

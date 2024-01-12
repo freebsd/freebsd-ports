@@ -91,7 +91,7 @@ lib/knot-resolver/upgrade-4-to-5.lua
 lib/knot-resolver/zonefile.lua
 lib/libkres.a
 libdata/pkgconfig/libkres.pc
-man/man8/kresd.8.gz
+share/man/man8/kresd.8.gz
 sbin/kres-cache-gc
 sbin/kresc
 sbin/kresd

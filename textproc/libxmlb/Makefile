@@ -1,5 +1,6 @@
 PORTNAME=	libxmlb
 DISTVERSION=	0.3.14
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/hughsie/${PORTNAME}/releases/download/${DISTVERSION}/
 

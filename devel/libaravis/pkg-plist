@@ -86,7 +86,7 @@ lib/libaravis-0.8.so
 lib/libaravis-0.8.so.0
 lib/libaravis-0.8.so.0.8.20
 libdata/pkgconfig/aravis-0.8.pc
-%%PORTDOCS%%man/man1/arv-tool-0.8.1.gz
+%%PORTDOCS%%share/man/man1/arv-tool-0.8.1.gz
 %%GIR%%share/gir-1.0/Aravis-0.8.gir
 %%PORTDOCS%%%%DOCSDIR%%/ArvBuffer.html
 %%PORTDOCS%%%%DOCSDIR%%/ArvCamera.html

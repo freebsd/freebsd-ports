@@ -1,5 +1,6 @@
 PORTNAME=	geoclue
 DISTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	net devel gnome
 
 MAINTAINER=	desktop@FreeBSD.org

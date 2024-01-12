@@ -1,6 +1,7 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.35.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,7 +31,7 @@ GL_ACCOUNT=	World/Phosh
 GL_TUPLE=	World/Phosh:gmobile:v0.0.4-7-gd5ed9ed:gmobile/subprojects/gmobile
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man5/${PORTNAME}.ini.5.gz \
+		share/man/man5/${PORTNAME}.ini.5.gz \
 		share/applications/sm.puri.Phoc.desktop \
 		share/icons/hicolor/symbolic/apps/sm.puri.Phoc.svg
 GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
@@ -40,6 +41,6 @@ OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_TRUE=	man
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

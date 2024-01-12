@@ -1,5 +1,6 @@
 PORTNAME=	swayidle
 DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -35,7 +36,7 @@ BASU_MESON_ENABLED=	logind
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 # Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon

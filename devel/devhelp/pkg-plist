@@ -28,7 +28,7 @@ lib/libdevhelp-3.so
 lib/libdevhelp-3.so.6
 lib/libdevhelp-3.so.6.3.0
 libdata/pkgconfig/libdevhelp-3.0.pc
-man/man1/devhelp.1.gz
+share/man/man1/devhelp.1.gz
 share/applications/org.gnome.Devhelp.desktop
 share/dbus-1/services/org.gnome.Devhelp.service
 %%DATADIR%%/assistant/assistant.css

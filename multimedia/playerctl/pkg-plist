@@ -12,7 +12,7 @@ lib/libplayerctl.so
 lib/libplayerctl.so.2
 lib/libplayerctl.so.%%VERSION%%
 libdata/pkgconfig/playerctl.pc
-man/man1/playerctl.1.gz
+share/man/man1/playerctl.1.gz
 share/bash-completion/completions/playerctl.bash
 share/dbus-1/services/org.mpris.MediaPlayer2.playerctld.service
 %%INTROSPECTION%%share/gir-1.0/Playerctl-2.0.gir

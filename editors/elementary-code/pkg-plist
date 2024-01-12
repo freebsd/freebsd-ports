@@ -24,7 +24,7 @@ lib/libcodecore.so
 lib/libcodecore.so.0
 lib/libcodecore.so.0.0
 libdata/pkgconfig/codecore.pc
-man/man1/io.elementary.code.1.gz
+share/man/man1/io.elementary.code.1.gz
 share/applications/io.elementary.code.desktop
 share/gtksourceview-4/styles/elementary-dark.xml
 share/gtksourceview-4/styles/elementary-light.xml

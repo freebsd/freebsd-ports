@@ -1,5 +1,6 @@
 PORTNAME=	xorg
 PORTVERSION=	21.1.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -33,7 +34,7 @@ PLIST=
 PKGMESSAGE=
 BINARY_NAME=	${FLAVOR:C/^(.).*/\1/:tu}${FLAVOR:C/^.//}
 PLIST_FILES=	bin/${BINARY_NAME} \
-		man/man1/${BINARY_NAME}.1.gz
+		share/man/man1/${BINARY_NAME}.1.gz
 PLIST_DIRS=	/var/lib/xkb /var/lib
 .endif
 
@@ -131,7 +132,7 @@ post-install:
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/xorg/protocol.txt
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/xorg
-	${RM} ${STAGEDIR}${PREFIX}/man/man1/Xserver.1
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man1/Xserver.1
 	${MKDIR} -p ${STAGEDIR}/var/lib/xkb
 .endif
 

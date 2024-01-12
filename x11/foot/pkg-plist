@@ -1,10 +1,10 @@
 bin/foot
 bin/footclient
 @sample etc/xdg/foot/foot.ini.sample
-%%PORTDOCS%%man/man1/foot.1.gz
-%%PORTDOCS%%man/man1/footclient.1.gz
-%%PORTDOCS%%man/man5/foot.ini.5.gz
-%%PORTDOCS%%man/man7/foot-ctlseqs.7.gz
+%%PORTDOCS%%share/man/man1/foot.1.gz
+%%PORTDOCS%%share/man/man1/footclient.1.gz
+%%PORTDOCS%%share/man/man5/foot.ini.5.gz
+%%PORTDOCS%%share/man/man7/foot-ctlseqs.7.gz
 share/applications/org.codeberg.dnkl.foot-server.desktop
 share/applications/org.codeberg.dnkl.foot.desktop
 share/applications/org.codeberg.dnkl.footclient.desktop

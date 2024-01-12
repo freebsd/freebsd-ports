@@ -1,6 +1,6 @@
 PORTNAME=	lv2lint
 DISTVERSION=	0.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://git.open-music-kontrollers.ch/lv2/lv2lint/snapshot/
 
@@ -23,6 +23,6 @@ RUN_DEPENDS=	curl>0:ftp/curl \
 USES=		compiler:c++11-lang meson pkgconfig tar:xz
 
 PLIST_FILES=	bin/lv2lint \
-		man/man1/lv2lint.1.gz
+		share/man/man1/lv2lint.1.gz
 
 .include <bsd.port.mk>

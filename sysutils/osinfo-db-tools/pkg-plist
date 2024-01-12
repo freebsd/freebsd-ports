@@ -2,10 +2,10 @@ bin/osinfo-db-export
 bin/osinfo-db-import
 bin/osinfo-db-path
 bin/osinfo-db-validate
-man/man1/osinfo-db-export.1.gz
-man/man1/osinfo-db-import.1.gz
-man/man1/osinfo-db-path.1.gz
-man/man1/osinfo-db-validate.1.gz
+share/man/man1/osinfo-db-export.1.gz
+share/man/man1/osinfo-db-import.1.gz
+share/man/man1/osinfo-db-path.1.gz
+share/man/man1/osinfo-db-validate.1.gz
 share/locale/ca/LC_MESSAGES/osinfo-db-tools.mo
 share/locale/cs/LC_MESSAGES/osinfo-db-tools.mo
 share/locale/de/LC_MESSAGES/osinfo-db-tools.mo

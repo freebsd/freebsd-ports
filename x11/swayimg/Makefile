@@ -1,6 +1,7 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -27,8 +28,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	artemsen
 MESON_ARGS=	-Dversion="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
-		man/man5/${PORTNAME}rc.5.gz \
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man5/${PORTNAME}rc.5.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/64x64/apps/${PORTNAME}.png \
 		${DATADIR}/swayimgrc \

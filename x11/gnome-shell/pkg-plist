@@ -18,8 +18,8 @@ libexec/gnome-shell-calendar-server
 libexec/gnome-shell-hotplug-sniffer
 libexec/gnome-shell-overrides-migration.sh
 libexec/gnome-shell-perf-helper
-man/man1/gnome-extensions.1.gz
-man/man1/gnome-shell.1.gz
+share/man/man1/gnome-extensions.1.gz
+share/man/man1/gnome-shell.1.gz
 share/applications/evolution-calendar.desktop
 share/applications/org.gnome.Extensions.desktop
 share/applications/org.gnome.Shell.Extensions.desktop

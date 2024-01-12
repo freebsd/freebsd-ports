@@ -1,6 +1,6 @@
 bin/gnome-contacts
 libexec/gnome-contacts-search-provider
-%%MANPAGES%%man/man1/gnome-contacts.1.gz
+%%MANPAGES%%share/man/man1/gnome-contacts.1.gz
 share/applications/org.gnome.Contacts.desktop
 share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 share/dbus-1/services/org.gnome.Contacts.service

@@ -1,5 +1,5 @@
 bin/gcolor3
-man/man1/gcolor3.1.gz
+share/man/man1/gcolor3.1.gz
 share/applications/nl.hjdskes.gcolor3.desktop
 share/icons/hicolor/scalable/apps/nl.hjdskes.gcolor3.svg
 share/icons/hicolor/symbolic/apps/nl.hjdskes.gcolor3-symbolic.svg

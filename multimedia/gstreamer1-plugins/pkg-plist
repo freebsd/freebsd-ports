@@ -207,9 +207,9 @@ libdata/pkgconfig/gstreamer-rtsp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-sdp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-tag-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-video-%%VERSION%%.pc
-man/man1/gst-device-monitor-%%VERSION%%.1.gz
-man/man1/gst-discoverer-%%VERSION%%.1.gz
-man/man1/gst-play-%%VERSION%%.1.gz
+share/man/man1/gst-device-monitor-%%VERSION%%.1.gz
+share/man/man1/gst-discoverer-%%VERSION%%.1.gz
+share/man/man1/gst-play-%%VERSION%%.1.gz
 share/gir-%%VERSION%%/GstAllocators-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstApp-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstAudio-%%VERSION%%.gir

@@ -147,7 +147,7 @@ include/irssi/src/lib-config/module.h
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/TextUI/TextUI.so
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/UI/UI.so
 libdata/pkgconfig/irssi-1.pc
-man/man1/irssi.1.gz
+share/man/man1/irssi.1.gz
 %%CAPSICUM%%%%PORTDOCS%%%%DOCSDIR%%/capsicum.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.html
 %%PORTDOCS%%%%DOCSDIR%%/design.txt

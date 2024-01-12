@@ -2,8 +2,8 @@ bin/budgie-screensaver
 bin/budgie-screensaver-command
 etc/pam.d/budgie-screensaver
 libexec/budgie-screensaver-dialog
-man/man1/budgie-screensaver-command.1.gz
-man/man1/budgie-screensaver.1.gz
+share/man/man1/budgie-screensaver-command.1.gz
+share/man/man1/budgie-screensaver.1.gz
 share/applications/budgie-screensaver.desktop
 share/locale/af/LC_MESSAGES/budgie-screensaver.mo
 share/locale/an/LC_MESSAGES/budgie-screensaver.mo

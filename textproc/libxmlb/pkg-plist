@@ -31,7 +31,7 @@ libexec/installed-tests/libxmlb/test.xml.gz.gz.gz
 libexec/installed-tests/libxmlb/test.xml.xz
 libexec/installed-tests/libxmlb/test.xml.zstd
 libexec/installed-tests/libxmlb/xb-self-test
-man/man1/xb-tool.1.gz
+share/man/man1/xb-tool.1.gz
 share/gir-1.0/Xmlb-2.0.gir
 %%PORTDOCS%%share/gtk-doc/html/libxmlb/annotation-glossary.html
 %%PORTDOCS%%share/gtk-doc/html/libxmlb/api-index-full.html

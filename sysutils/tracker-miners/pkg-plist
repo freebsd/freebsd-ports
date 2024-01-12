@@ -31,10 +31,10 @@ libexec/tracker-extract
 libexec/tracker-miner-fs
 libexec/tracker-miner-rss
 libexec/tracker-writeback
-man/man1/tracker-extract.1.gz
-man/man1/tracker-miner-fs.1.gz
-man/man1/tracker-miner-rss.1.gz
-man/man1/tracker-writeback.1.gz
+share/man/man1/tracker-extract.1.gz
+share/man/man1/tracker-miner-fs.1.gz
+share/man/man1/tracker-miner-rss.1.gz
+share/man/man1/tracker-writeback.1.gz
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.RSS.service

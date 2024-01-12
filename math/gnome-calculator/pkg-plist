@@ -13,8 +13,8 @@ lib/libgci-1.so.0.0.0
 libdata/pkgconfig/gcalc-2.pc
 libdata/pkgconfig/gci-1.pc
 libexec/gnome-calculator-search-provider
-man/man1/gcalccmd.1.gz
-man/man1/gnome-calculator.1.gz
+share/man/man1/gcalccmd.1.gz
+share/man/man1/gnome-calculator.1.gz
 share/applications/org.gnome.Calculator.desktop
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
 share/gir-1.0/GCalc-2.gir

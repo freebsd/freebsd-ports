@@ -1,5 +1,5 @@
 bin/dosbox-staging
-man/man1/dosbox-staging.1.gz
+share/man/man1/dosbox-staging.1.gz
 share/applications/dosbox-staging.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README

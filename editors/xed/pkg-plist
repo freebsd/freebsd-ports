@@ -51,7 +51,7 @@ lib/xed/plugins/time.plugin
 lib/xed/plugins/trailsave.plugin
 lib/xed/plugins/wordcompletion.plugin
 libdata/pkgconfig/xed.pc
-man/man1/xed.1.gz
+share/man/man1/xed.1.gz
 share/applications/xed.desktop
 share/dbus-1/services/org.x.editor.service
 %%PORTDOCS%%share/gtk-doc/html/xed/XedApp.html

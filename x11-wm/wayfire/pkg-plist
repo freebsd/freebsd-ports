@@ -117,7 +117,7 @@ lib/wayfire/libwsets.so
 lib/wayfire/libxdg-activation.so
 lib/wayfire/libzoom.so
 libdata/pkgconfig/wayfire.pc
-man/man1/wayfire.1.gz
+share/man/man1/wayfire.1.gz
 %%EXAMPLESDIR%%/wayfire.ini
 %%DATADIR%%/metadata/alpha.xml
 %%DATADIR%%/metadata/animate.xml

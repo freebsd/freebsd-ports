@@ -1,8 +1,8 @@
 bin/fnott
 bin/fnottctl
-man/man1/fnott.1.gz
-man/man1/fnottctl.1.gz
-man/man5/fnott.ini.5.gz
+share/man/man1/fnott.1.gz
+share/man/man1/fnottctl.1.gz
+share/man/man5/fnott.ini.5.gz
 share/applications/fnott.desktop
 %%DATADIR%%/fnott.ini
 share/zsh/site-functions/_fnott

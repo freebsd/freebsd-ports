@@ -1,5 +1,6 @@
 PORTNAME=	gnome-planner
 PORTVERSION=	0.14.6.20220531
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

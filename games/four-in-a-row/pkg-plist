@@ -1,5 +1,5 @@
 bin/four-in-a-row
-man/man6/four-in-a-row.6.gz
+share/man/man6/four-in-a-row.6.gz
 share/applications/org.gnome.Four-in-a-row.desktop
 share/dbus-1/services/org.gnome.Four-in-a-row.service
 %%DATADIR%%/sounds/bad.ogg

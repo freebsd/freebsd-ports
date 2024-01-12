@@ -1,5 +1,6 @@
 PORTNAME=	wf-recorder
 DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
 
@@ -20,7 +21,7 @@ USES=		compiler:c++11-lang gl meson pkgconfig tar:xz
 USE_GL=		gbm
 
 PLIST_FILES=	bin/wf-recorder \
-		man/man1/wf-recorder.1.gz
+		share/man/man1/wf-recorder.1.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		DOCS PULSEAUDIO

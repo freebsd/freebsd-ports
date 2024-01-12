@@ -1,5 +1,5 @@
 bin/gnome-2048
-man/man6/gnome-2048.6.gz
+share/man/man6/gnome-2048.6.gz
 share/applications/org.gnome.TwentyFortyEight.desktop
 share/help/C/gnome-2048/index.page
 share/help/C/gnome-2048/media/gnome-2048.png

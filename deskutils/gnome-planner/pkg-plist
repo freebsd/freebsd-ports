@@ -10,7 +10,7 @@ lib/planner/plugins/libsql-plugin.so
 lib/planner/plugins/libxmlplanner-plugin.so
 lib/planner/storage-modules/libstorage-mrproject-1.so
 lib/planner/storage-modules/libstorage-sql.so
-man/man1/planner.1.gz
+share/man/man1/planner.1.gz
 share/GConf/gsettings/planner.convert
 share/applications/planner.desktop
 share/glib-2.0/schemas/org.gnome.Planner.gschema.xml

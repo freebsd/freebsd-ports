@@ -1,7 +1,7 @@
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,7 +36,7 @@ ICONSFONT_RUN_DEPENDS=	font-awesome>0:x11-fonts/font-awesome
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build

@@ -5,4 +5,4 @@ lib/libxcvt.so
 lib/libxcvt.so.0
 lib/libxcvt.so.0.1.2
 libdata/pkgconfig/libxcvt.pc
-man/man1/cvt.1.gz
+share/man/man1/cvt.1.gz

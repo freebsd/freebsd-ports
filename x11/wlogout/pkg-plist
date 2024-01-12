@@ -1,8 +1,8 @@
 bin/wlogout
 @sample %%ETCDIR%%/layout.sample
 @sample %%ETCDIR%%/style.css.sample
-%%MANPAGES%%man/man1/wlogout.1.gz
-%%MANPAGES%%man/man5/wlogout.5.gz
+%%MANPAGES%%share/man/man1/wlogout.1.gz
+%%MANPAGES%%share/man/man5/wlogout.5.gz
 share/bash-completion/completions/wlogout.bash
 share/fish/completions/wlogout.fish
 %%DATADIR%%/assets/CREDIT.md

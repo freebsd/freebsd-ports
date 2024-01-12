@@ -6,7 +6,7 @@ lib/libwacom.so.2.6.1
 lib/udev/hwdb.d/65-libwacom.hwdb
 lib/udev/rules.d/65-libwacom.rules
 libdata/pkgconfig/libwacom.pc
-man/man1/libwacom-list-local-devices.1.gz
+share/man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/bamboo-0fg-m-p-alt.tablet
 %%DATADIR%%/bamboo-0fg-s-p-alt.tablet
 %%DATADIR%%/bamboo-0fg-s-p.tablet
