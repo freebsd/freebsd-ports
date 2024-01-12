@@ -11,8 +11,7 @@ WWW=		https://github.com/soedinglab/metaeuk
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
-BROKEN_i386=		link fails: error: undefined symbol: roundevenf, see https://github.com/soedinglab/metaeuk/issues/85
-BROKEN_armv7=		link fails: error: undefined symbol: roundevenf, see https://github.com/soedinglab/metaeuk/issues/85
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # 32-bit platforms produce wrong results based on https://github.com/soedinglab/metaeuk/issues/85#issuecomment-1888379107
 BROKEN_powerpc64=	link fails: error: undefined symbol: roundevenf, see https://github.com/soedinglab/metaeuk/issues/85
 
 BUILD_DEPENDS=	xxd:editors/vim
