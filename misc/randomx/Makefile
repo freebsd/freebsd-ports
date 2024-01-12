@@ -10,6 +10,8 @@ WWW=		https://github.com/tevador/RandomX
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64le=	compilation error: vectorized code fails to compile, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276282
+
 USES=		cmake:testing compiler:c++11-lang
 USE_LDCONFIG=	yes
 
