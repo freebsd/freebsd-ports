@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-doc
-PORTVERSION=	20231208
+PORTVERSION=	20240111
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/doceng
@@ -10,7 +10,7 @@ COMMENT?=	Documentation from the FreeBSD Documentation Project
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	docproj>=4.1.7:textproc/docproj
+BUILD_DEPENDS=	docproj>=4.1.8:textproc/docproj
 
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/doc/documentation
