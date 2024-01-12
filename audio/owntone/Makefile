@@ -1,6 +1,6 @@
 PORTNAME=	owntone
 DISTVERSION=	28.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/owntone/owntone-server/releases/download/${DISTVERSION}/
 
@@ -36,6 +36,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-install_systemd \
 		--with-owntone-user=${OWNTONE_USER} \
 		--with-owntone-group=${OWNTONE_USER}
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 
