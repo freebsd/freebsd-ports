@@ -11,6 +11,8 @@ WWW=		https://wiki.hyperledger.org/display/fabric
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # compilation fails on non-64-bit systems: fabric-amcl/core/FP256BN/FP.go:111:19: cannot convert MConst (constant 30564559323915749 of type Chunk) to type int
+
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyperledger
