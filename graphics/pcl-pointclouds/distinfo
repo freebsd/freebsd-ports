@@ -1,5 +1,9 @@
-TIMESTAMP = 1702336547
+TIMESTAMP = 1705027526
 SHA256 (pcl-pointclouds/1.13.1/source.tar.gz) = be4d499c066203a3c296e2f7e823d6209be5983415f2279310ed1c9abb361d30
 SIZE (pcl-pointclouds/1.13.1/source.tar.gz) = 68804995
 SHA256 (pcl-pointclouds/1.13.1/google-googletest-release-1.11.0_GH0.tar.gz) = b4870bf121ff7795ba20d20bcdd8627b8e088f2d1dab299a031c1034eddc93d5
 SIZE (pcl-pointclouds/1.13.1/google-googletest-release-1.11.0_GH0.tar.gz) = 886330
+SHA256 (pcl-pointclouds/1.13.1/69a2392e4c5976bd4dc1e33cc4659fa210f68485.patch) = cab166f332aa3a820b1116e70f341fd862f3b706f98184c902933bc652e07d4e
+SIZE (pcl-pointclouds/1.13.1/69a2392e4c5976bd4dc1e33cc4659fa210f68485.patch) = 6712
+SHA256 (pcl-pointclouds/1.13.1/c1c907f842e6e5eced7382d7e1a983fa2a3810c2.patch) = d9e28fce1703d6de3893d256d40cb896f1e88ee8aea3adac2d24b5aec22c89a7
+SIZE (pcl-pointclouds/1.13.1/c1c907f842e6e5eced7382d7e1a983fa2a3810c2.patch) = 1914
