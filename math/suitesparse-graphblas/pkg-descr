@@ -7,3 +7,5 @@ types. When applied to sparse adjacency matrices, these algebraic
 operations are equivalent to computations on graphs. GraphBLAS provides
 a powerful and expressive framework for creating graph algorithms based
 on the elegant mathematics of sparse matrix operations on a semiring.
+
+See also <https://github.com/GraphBLAS/>.

@@ -1,9 +1,9 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	8.3.1
+PORTVERSION=	9.0.0
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms in the language of linear algebra
-WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
+WWW=		https://graphblas.org/
 
 LICENSE=	APACHE20
 
@@ -15,7 +15,7 @@ CMAKE_ARGS+=	-DGRAPHBLAS_COMPACT:BOOL=On	\
 USE_LDCONFIG=	yes
 
 PORTDOCS=	CSC20_OpenMP_GraphBLAS.pdf Davis_HPEC18.pdf	\
-		GraphBLAS_API_C_2.0.0.pdf	\
+		GraphBLAS_API_C_v2.1.0.pdf	\
 		GraphBLAS_UserGuide.pdf HPEC19.pdf	\
 		HPEC20_Python_and_MATLAB.pdf lagraph-grapl19.pdf	\
 		toms_graphblas.pdf toms_parallel_grb2.pdf	\
