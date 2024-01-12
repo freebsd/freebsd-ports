@@ -1,3 +1,3 @@
-TIMESTAMP = 1691548339
-SHA256 (dbt-duckdb-1.6.0.tar.gz) = e36776d6ee7aa1554a236b7ffa93c556c4419920134a3801feef7c64b706db16
-SIZE (dbt-duckdb-1.6.0.tar.gz) = 45586
+TIMESTAMP = 1701384521
+SHA256 (dbt-duckdb-1.7.0.tar.gz) = e2479f5fdd5177eea37c081d8ea126d80ec51d95e69ea31132ade396538bf0a0
+SIZE (dbt-duckdb-1.7.0.tar.gz) = 49217

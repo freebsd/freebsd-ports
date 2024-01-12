@@ -1,5 +1,5 @@
 PORTNAME=	dbt-duckdb
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ WWW=		https://github.com/jwills/dbt-duckdb
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbt-core>=1.6.0,<2:databases/py-dbt-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbt-core>=1.7.0,<2:databases/py-dbt-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}duckdb>=0.7.0:databases/py-duckdb@${PY_FLAVOR}
 
 USES=		python
