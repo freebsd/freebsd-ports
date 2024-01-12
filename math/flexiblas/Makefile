@@ -1,6 +1,5 @@
 PORTNAME=	flexiblas
-PORTVERSION=	3.3.1
-PORTREVISION=	2
+PORTVERSION=	3.4.1
 CATEGORIES=	math
 MASTER_SITES=	https://csc.mpi-magdeburg.mpg.de/mpcsc/software/flexiblas/
 
@@ -18,6 +17,8 @@ USES=		cmake:testing fortran python tar:xz
 
 CONFIGURE_ENV=	PYTHON_EXECUTABLE=${PYTHON_CMD}
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	VE=${PORTVERSION:R}
 
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DFIND_DEBUG:BOOL=ON

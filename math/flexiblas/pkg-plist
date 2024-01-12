@@ -28,13 +28,13 @@ lib/flexiblas/libflexiblas_netlib.so
 %%OPENBLAS%%lib/flexiblas/libflexiblas_openblasopenmp.so
 lib/libflexiblas.so
 lib/libflexiblas.so.3
-lib/libflexiblas.so.3.3
+lib/libflexiblas.so.%%VE%%
 lib/libflexiblas_api.so
 lib/libflexiblas_api.so.3
-lib/libflexiblas_api.so.3.3
+lib/libflexiblas_api.so.%%VE%%
 lib/libflexiblas_mgmt.so
 lib/libflexiblas_mgmt.so.3
-lib/libflexiblas_mgmt.so.3.3
+lib/libflexiblas_mgmt.so.%%VE%%
 libdata/pkgconfig/flexiblas.pc
 libdata/pkgconfig/flexiblas_api.pc
 share/man/man1/flexiblas.1.gz
