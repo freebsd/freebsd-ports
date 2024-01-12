@@ -1,5 +1,6 @@
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfakekey.so:x11/libfakekey \
 		libwayland-client.so:graphics/wayland \
-		libKF5PulseAudioQt.so:audio/pulseaudio-qt
+		libKF5PulseAudioQt.so:audio/pulseaudio-qt@qt5
 BUILD_DEPENDS=	kpeoplevcard>0:net/kpeoplevcard \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		wayland-protocols>=0:graphics/wayland-protocols \
