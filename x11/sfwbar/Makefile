@@ -22,7 +22,8 @@ GH_ACCOUNT=	LBCrion
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-MESON_ARGS=		-Dbsdctl=enabled -Dnetwork=enabled -Dbluez=enabled -Didleinhibit=enabled -Diwd=enabled
+MESON_ARGS=		-Dbsdctl=enabled -Dnetwork=enabled -Dbluez=enabled \
+			-Didleinhibit=enabled -Diwd=enabled --mandir=share/man
 
 SUB_FILES=		pkg-message
 
