@@ -1,4 +1,4 @@
 bin/seaview
-man/man1/seaview.1.gz
+share/man/man1/seaview.1.gz
 %%DATADIR%%/seaview.html
 share/pixmaps/seaview.xpm

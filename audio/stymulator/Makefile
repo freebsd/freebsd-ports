@@ -1,6 +1,6 @@
 PORTNAME=	stymulator
 PORTVERSION=	0.21a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://atariarea.krap.pl/stymulator/files/ \
 		LOCAL/ehaupt
@@ -18,8 +18,8 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 MANPAGE1=	ymplayer.1 ym2wav.1
-PLIST_FILES=	bin/ym2wav bin/ymplayer bin/stymulator man/man1/ymplayer.1.gz \
-		man/man1/ym2wav.1.gz
+PLIST_FILES=	bin/ym2wav bin/ymplayer bin/stymulator share/man/man1/ymplayer.1.gz \
+		share/man/man1/ym2wav.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lncurses|$$(LDFLAGS) -lncurses|' \
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ymplayer ${STAGEDIR}${PREFIX}/bin
 	${LN} ${STAGEDIR}${PREFIX}/bin/ymplayer ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for f in ${MANPAGE1}
-	${INSTALL_MAN} ${FILESDIR}/${f} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/${f} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>

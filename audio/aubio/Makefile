@@ -1,6 +1,6 @@
 PORTNAME=	aubio
 PORTVERSION=	0.4.9
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	audio
 MASTER_SITES=	https://aubio.org/pub/
 
@@ -56,7 +56,7 @@ FFTW_LIB_DEPENDS=		libfftw3f.so:math/fftw3-float
 
 MANPAGES_BUILD_DEPENDS=		txt2man:textproc/txt2man
 MANPAGES_CONFIGURE_ENABLE=	manpages
-MANPAGES_CONFIGURE_ON=		--mandir=${MANPREFIX}/man
+MANPAGES_CONFIGURE_ON=		--mandir=${PREFIX}/share/man
 
 SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_ENABLE=	sndfile

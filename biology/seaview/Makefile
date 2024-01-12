@@ -1,6 +1,6 @@
 PORTNAME=	seaview
 PORTVERSION=	5.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
@@ -43,7 +43,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} seaview.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} seaview.html \
 		${STAGEDIR}${DATADIR})

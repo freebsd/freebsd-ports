@@ -1,5 +1,5 @@
 bin/vym
-man/man1/vym.1.gz
+share/man/man1/vym.1.gz
 share/applications/vym.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/vym.pdf

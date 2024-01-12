@@ -1,6 +1,6 @@
 PORTNAME=	mpdas
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
@@ -21,10 +21,10 @@ USE_RC_SUBR=	mpdas
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/mpdas \
-		man/man1/mpdas.1.gz
+		share/man/man1/mpdas.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpdas ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mpdas.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mpdas.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -2,4 +2,4 @@ bin/avrdude
 etc/avrdude.conf
 include/libavrdude.h
 lib/libavrdude.a
-man/man1/avrdude.1.gz
+share/man/man1/avrdude.1.gz

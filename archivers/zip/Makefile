@@ -1,6 +1,6 @@
 PORTNAME=	zip
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -23,14 +23,14 @@ MAKEFILE=	unix/Makefile
 ALL_TARGET=	generic
 
 PLIST_FILES=	bin/zip bin/zipcloak bin/zipnote bin/zipsplit \
-		man/man1/zip.1.gz man/man1/zipcloak.1.gz \
-		man/man1/zipnote.1.gz man/man1/zipsplit.1.gz
+		share/man/man1/zip.1.gz share/man/man1/zipcloak.1.gz \
+		share/man/man1/zipnote.1.gz share/man/man1/zipsplit.1.gz
 PORTDOCS=	*
 
 do-install:
 .for p in ${PLIST_FILES:Mbin*:T}
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${p}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${p}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 do-install-DOCS-on:

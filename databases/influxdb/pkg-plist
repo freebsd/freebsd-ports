@@ -2,15 +2,15 @@ bin/influx
 bin/influx_inspect
 bin/influxd
 bin/influx_stress
-%%MANPAGES%%man/man1/influx.1.gz
-%%MANPAGES%%man/man1/influx_inspect.1.gz
-%%MANPAGES%%man/man1/influx_stress.1.gz
-%%MANPAGES%%man/man1/influxd-backup.1.gz
-%%MANPAGES%%man/man1/influxd-config.1.gz
-%%MANPAGES%%man/man1/influxd-restore.1.gz
-%%MANPAGES%%man/man1/influxd-run.1.gz
-%%MANPAGES%%man/man1/influxd-version.1.gz
-%%MANPAGES%%man/man1/influxd.1.gz
+%%MANPAGES%%share/man/man1/influx.1.gz
+%%MANPAGES%%share/man/man1/influx_inspect.1.gz
+%%MANPAGES%%share/man/man1/influx_stress.1.gz
+%%MANPAGES%%share/man/man1/influxd-backup.1.gz
+%%MANPAGES%%share/man/man1/influxd-config.1.gz
+%%MANPAGES%%share/man/man1/influxd-restore.1.gz
+%%MANPAGES%%share/man/man1/influxd-run.1.gz
+%%MANPAGES%%share/man/man1/influxd-version.1.gz
+%%MANPAGES%%share/man/man1/influxd.1.gz
 @dir(%%INFLUXD_USER%%,%%INFLUXD_GROUP%%,0750) %%INFLUXD_DBDIR%%
 @dir(%%INFLUXD_USER%%,%%INFLUXD_GROUP%%,0750) %%INFLUXD_LOGDIR%%
 @dir(%%INFLUXD_USER%%,%%INFLUXD_GROUP%%,0750) %%INFLUXD_PIDDIR%%

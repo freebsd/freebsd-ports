@@ -1,6 +1,6 @@
 PORTNAME=	squeezelite
 DISTVERSION=	1.9.9.1422
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	jockl@pianojockl.org
@@ -49,10 +49,10 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 RESAMPLE_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
 
 PLIST_FILES=		bin/${PORTNAME} \
-			man/man1/${PORTNAME}.1.gz
+			share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

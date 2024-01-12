@@ -585,7 +585,7 @@ libexec/couchdb3/releases/start_erl.data
 libexec/couchdb3/share/server/main-ast-bypass.js
 libexec/couchdb3/share/server/main-coffee.js
 libexec/couchdb3/share/server/main.js
-man/man1/apachecouchdb.1.gz
+share/man/man1/apachecouchdb.1.gz
 %%PORTDOCS%%%%WWWDIR%%/docs/_images/23379351593_0c480537de_q.jpg
 %%PORTDOCS%%%%WWWDIR%%/docs/_images/TLS-Handshake.png
 %%PORTDOCS%%%%WWWDIR%%/docs/_images/fair-enough.png

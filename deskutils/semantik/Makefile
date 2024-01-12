@@ -1,5 +1,6 @@
 PORTNAME=	semantik
 DISTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	https://waf.io/
 
@@ -43,6 +44,6 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-d \
 		${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.${PORTVERSION}
-	${INSTALL_MAN} ${WRKSRC}/src/data/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/src/data/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

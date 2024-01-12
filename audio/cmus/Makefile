@@ -1,7 +1,7 @@
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,7 +19,7 @@ USES=		compiler:c11 cpe gmake iconv ncurses pkgconfig
 USE_GITHUB=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${PREFIX}/share/man \
 		exampledir=${EXAMPLESDIR}
 # So the build does not use gcc for compiling ttman
 CONFIGURE_ARGS+=	HOSTCC=${CC}

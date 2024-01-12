@@ -1,6 +1,6 @@
 PORTNAME=	ibp
 PORTVERSION=	0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ \
 		LOCAL/db
@@ -18,6 +18,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ibp ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ibp.1 ${STAGEDIR}${MANPREFIX}/man/man1/ibp.1
+	${INSTALL_MAN} ${WRKSRC}/ibp.1 ${STAGEDIR}${PREFIX}/share/man/man1/ibp.1
 
 .include <bsd.port.mk>

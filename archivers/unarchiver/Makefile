@@ -1,6 +1,6 @@
 PORTNAME=	unar
 PORTVERSION=	1.10.1
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://wakaba.c3.cx/releases/TheUnarchiver/
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
@@ -23,7 +23,7 @@ MAKEFILE=	Makefile.freebsd
 WRKSRC=		${WRKDIR}/The\ Unarchiver
 BUILD_WRKSRC=	${WRKSRC}/XADMaster
 
-PLIST_FILES=	bin/lsar bin/unar man/man1/lsar.1.gz man/man1/unar.1.gz
+PLIST_FILES=	bin/lsar bin/unar share/man/man1/lsar.1.gz share/man/man1/unar.1.gz
 PORTDOCS=	README.md
 PORTEXAMPLES=	lsar.bash_completion unar.bash_completion
 
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/XADMaster/??ar ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/Extra/??ar.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Extra/??ar.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -59,6 +59,6 @@ post-patch:
 
 post-install-PYTHON-off:
 	${RM} -R ${STAGEDIR}${PREFIX}/bin/ecamonitor
-	${RM} -R ${STAGEDIR}${MANPREFIX}/man/man1/ecamonitor.1.gz
+	${RM} -R ${STAGEDIR}${PREFIX}/man/man1/ecamonitor.1.gz
 
 .include <bsd.port.mk>

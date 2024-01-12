@@ -6,7 +6,7 @@ include/uade/uadeconfstructure.h
 lib/libuade.so
 lib/uade/uadecore
 libdata/pkgconfig/libuade.pc
-man/man1/uade123.1.gz
+share/man/man1/uade123.1.gz
 %%DATADIR%%/eagleplayer.conf
 %%DATADIR%%/players/ADPCM_mono
 %%DATADIR%%/players/AM-Composer

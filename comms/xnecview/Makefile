@@ -1,6 +1,6 @@
 PORTNAME=	xnecview
 PORTVERSION=	1.36
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 
@@ -13,11 +13,11 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		gmake gnome pkgconfig tar:tgz
 USE_GNOME=	gtk20
 
-PLIST_FILES=	bin/xnecview man/man1/xnecview.1.gz
+PLIST_FILES=	bin/xnecview share/man/man1/xnecview.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xnecview ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xnecview.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/xnecview.1
+		${STAGEDIR}${PREFIX}/share/man/man1/xnecview.1
 
 .include <bsd.port.mk>

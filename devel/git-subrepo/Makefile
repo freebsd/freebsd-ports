@@ -1,5 +1,6 @@
 PORTNAME=	git-subrepo
 DISTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jhb@FreeBSD.org
@@ -20,6 +21,6 @@ GH_ACCOUNT=	ingydotnet
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-MAKE_ARGS=	INSTALL_MAN1="\$${DESTDIR}\$${MANPREFIX}/man/man1"
+MAKE_ARGS=	INSTALL_MAN1="\$${DESTDIR}\$${PREFIX}/share/man/man1"
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	sqsh
 PORTVERSION=	2.5.16.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R:R}
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-readline
 ALL_TARGET=	build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
 
-PLIST_FILES=	bin/sqsh etc/sqshrc.default man/man1/sqsh.1.gz
+PLIST_FILES=	bin/sqsh etc/sqshrc.default share/man/man1/sqsh.1.gz
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -38,7 +38,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sqsh ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/sqsh.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/sqsh.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/global.sqshrc ${STAGEDIR}${PREFIX}/etc/sqshrc.default
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	gspiceui
 PORTVERSION=	1.1.00
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/gSpiceUI/${PORTNAME}-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -25,7 +25,7 @@ DESKTOP_ENTRIES=	"GSpiceUI" "Circuit Simulator GUI" \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/gspiceui share/pixmaps/gspiceui-48x48.xpm \
-		man/man1/gspiceui.1.gz
+		share/man/man1/gspiceui.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -41,7 +41,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gspiceui ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/icons/gspiceui-48x48.xpm \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_MAN} ${WRKSRC}/gspiceui.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gspiceui.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} \
 		"! -name Makefile")

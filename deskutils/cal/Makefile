@@ -1,5 +1,6 @@
 PORTNAME=	cal
 DISTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://unicorn.us.com/pub/
 DISTNAME=	${PORTNAME}${DISTVERSION:C/[^0-9]//}
@@ -26,7 +27,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cal ${STAGEDIR}${PREFIX}/bin/cal
-	${INSTALL_MAN}  ${WRKSRC}/src/cal.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN}  ${WRKSRC}/src/cal.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/cal.col ${STAGEDIR}${ETCDIR}/cal.col.sample
 	${INSTALL_DATA} ${WRKSRC}/cal.dat ${STAGEDIR}${ETCDIR}/cal.dat.sample

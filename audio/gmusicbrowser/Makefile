@@ -1,6 +1,6 @@
 PORTNAME=	gmusicbrowser
 PORTVERSION=	1.1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://gmusicbrowser.org/download/
 
@@ -34,7 +34,7 @@ NLS_RUN_DEPENDS=	p5-Locale-gettext>=1.0:devel/p5-Locale-gettext
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MANPREFIX}/man/man1/${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/share/man/man1/${MAN1}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && (for d in layouts pix plugins; do \

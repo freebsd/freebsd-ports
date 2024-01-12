@@ -1,5 +1,5 @@
 PORTNAME=	xcwcp
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	X11 CW Tutor using unixcw
 WWW=		https://www.ibiblio.org/pub/linux/apps/ham/morse/
@@ -18,13 +18,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xcwcp
 XCWCP=		yes
 PLIST_FILES=	bin/xcwcp \
-		man/man1/xcwcp.1.gz
+		share/man/man1/xcwcp.1.gz
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 PLIST=		${.CURDIR}/pkg-plist
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xcwcp/xcwcp ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/src/xcwcp/xcwcp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/src/xcwcp/xcwcp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include "${MASTERDIR}/Makefile"

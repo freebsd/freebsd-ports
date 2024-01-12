@@ -1,6 +1,6 @@
 PORTNAME=	critcl
 PORTVERSION=	3.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -37,8 +37,9 @@ post-patch:
 
 do-install:
 	(cd ${WRKSRC} && ${TCLSH} build.tcl install --prefix ${PREFIX} --exec-prefix ${PREFIX} --dest-dir ${STAGEDIR})
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/man/mann
 	${INSTALL_MAN} ${WRKSRC}/embedded/man/files/critcl_*.n	\
-		${STAGEDIR}${MANPREFIX}/man/mann/
+		${STAGEDIR}${PREFIX}/share/man/mann/
 
 do-test:
 	(cd ${WRKSRC} && ${TCLSH} build.tcl test)

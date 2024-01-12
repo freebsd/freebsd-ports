@@ -1,5 +1,6 @@
 PORTNAME=	gqrx
 PORTVERSION=	2.17.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -58,13 +59,13 @@ CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 PLIST_FILES=	bin/gqrx \
 		share/applications/dk.gqrx.gqrx.desktop \
-		man/man1/gqrx.1.gz
+		share/man/man1/gqrx.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/gqrx ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/dk.gqrx.gqrx.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_MAN} ${WRKSRC}/resources/gqrx.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

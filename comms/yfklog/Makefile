@@ -1,6 +1,6 @@
 PORTNAME=	yfklog
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/yfklog/ \
 		LOCAL/db
@@ -33,7 +33,7 @@ post-patch:
 	     ${WRKSRC}/yfk ${WRKSRC}/yfksubs.pl
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/yfk ${STAGEDIR}${PREFIX}/bin/yfklog
-	${INSTALL_DATA} ${FILESDIR}/yfklog.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${FILESDIR}/yfklog.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/yfklog
 	${INSTALL_SCRIPT} ${WRKSRC}/yfksubs.pl ${STAGEDIR}${PREFIX}/share/yfklog/yfksubs.pl
 	${INSTALL_DATA} ${_DISTDIR}/yfk.png ${STAGEDIR}${PREFIX}/share/pixmaps/yfklog.png

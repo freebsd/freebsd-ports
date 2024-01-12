@@ -1,6 +1,7 @@
 PORTNAME=	libjodycode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tom@hur.st
@@ -23,10 +24,10 @@ PLIST_FILES=	include/libjodycode.h \
 		lib/libjodycode.so \
 		lib/libjodycode.so.${DISTVERSION} \
 		lib/libjodycode.so.${MAJOR_VERSION} \
-		man/man7/libjodycode.7.gz
+		share/man/man7/libjodycode.7.gz
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.7 ${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.7 ${STAGEDIR}${PREFIX}/share/man/man7
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}.h
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.a ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.a
 	${INSTALL_LIB} ${WRKSRC}/${PORTNAME}.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib

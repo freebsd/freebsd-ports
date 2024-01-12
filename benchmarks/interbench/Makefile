@@ -1,6 +1,6 @@
 PORTNAME=	interbench
 PORTVERSION=	0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://ck.kolivas.org/apps/${PORTNAME}/
 
@@ -14,7 +14,7 @@ USES=		gmake tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man8/${PORTNAME}.8.gz
 PORTDOCS=	readme readme.interactivity
 
 OPTIONS_DEFINE=	DOCS
@@ -31,7 +31,7 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

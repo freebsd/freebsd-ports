@@ -1,5 +1,6 @@
 PORTNAME=	avrdude
 PORTVERSION=	7.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 #PORTREVISION=	0
 CATEGORIES=	devel
@@ -26,6 +27,6 @@ PARPORT_CMAKE_ON=	-DHAVE_PARPORT=1
 # man page currently not handled by CMake
 # https://github.com/avrdudes/avrdude/issues/947
 post-install:
-	${GZIP_CMD} < ${WRKSRC}/src/avrdude.1 > ${STAGEDIR}/${MANPREFIX}/man/man1/avrdude.1.gz
+	${GZIP_CMD} < ${WRKSRC}/src/avrdude.1 > ${STAGEDIR}/${PREFIX}/share/man/man1/avrdude.1.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	pyradio
 DISTVERSION=	0.9.2.22
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -48,10 +48,10 @@ METADATA_DESC=	Insert tags, chapters and cover into recordings
 MPV_DESC=	Mpv media player support
 VLC_DESC=	VLC media player support
 
-DOCS_PLIST_FILES=	man/man1/pyradio.1.gz \
-			man/man1/pyradio_rb.1.gz \
-			man/man1/pyradio_rec.1.gz \
-			man/man1/pyradio_server.1.gz
+DOCS_PLIST_FILES=	share/man/man1/pyradio.1.gz \
+			share/man/man1/pyradio_rb.1.gz \
+			share/man/man1/pyradio_rec.1.gz \
+			share/man/man1/pyradio_server.1.gz
 METADATA_RUN_DEPENDS+=	mkvinfo:multimedia/mkvtoolnix
 MPLAYER_RUN_DEPENDS+=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
@@ -70,7 +70,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/pyradio*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/pyradio*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

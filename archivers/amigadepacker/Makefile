@@ -1,5 +1,6 @@
 PORTNAME=	amigadepacker
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/amigadepacker/ \
 		LOCAL/ehaupt
@@ -17,10 +18,10 @@ USE_CSTD=	gnu89
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/amigadepacker man/man1/amigadepacker.1.gz
+PLIST_FILES=	bin/amigadepacker share/man/man1/amigadepacker.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

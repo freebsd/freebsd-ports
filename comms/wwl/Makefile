@@ -1,5 +1,6 @@
 PORTNAME=	wwl
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio astro geography
 MASTER_SITES=	http://www.db.net/downloads/ \
 		LOCAL/db
@@ -14,7 +15,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wwl ${STAGEDIR}${PREFIX}/bin
 	@${RM} ${STAGEDIR}${PREFIX}/bin/locator
 	@${LN} -sf wwl ${STAGEDIR}${PREFIX}/bin/locator
-	@${INSTALL_DATA} ${WRKSRC}/wwl.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/wwl.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 
