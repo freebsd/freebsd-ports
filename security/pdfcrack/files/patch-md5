@@ -1,0 +1,88 @@
+--- md5.h	2015-07-25 16:10:57.000000000 -0400
++++ md5.h	2024-01-12 12:57:19.536200000 -0500
+@@ -20,17 +20,18 @@
+ #ifndef _MD5_H_
+ #define _MD5_H_
++#include <sys/types.h>
+ #include <stdint.h>
+ 
+ void 
+-md5(const uint8_t *msg, const unsigned int msgLen, uint8_t *digest);
++md5(const uint8_t *msg, size_t msgLen, uint8_t *digest);
+ 
+ /** init function for md5_50 which chooses a md5_50 optimised for msgLen, 
+     if one is available */
+ void
+-md5_50_init(const unsigned int msgLen);
++md5_50_init(size_t msgLen);
+ 
+ /** md5_50 is basically for(i=0; i<50; i++) { md5(msg, msgLen, msg); } */
+ void
+-md5_50(uint8_t *msg, const unsigned int msgLen);
++md5_50(uint8_t *msg, size_t msgLen);
+ 
+ #endif /** _MD5_H_ */
+--- md5.c	2022-10-31 09:55:15.000000000 -0400
++++ md5.c	2024-01-12 12:59:03.846526000 -0500
+@@ -48,20 +48,18 @@
+ #define DD 0x10325476
+ 
+-static void (*md5_50_variant)();
+-static void md5_50f(uint8_t *msg, const unsigned int msgLen);
+-static void md5_50s(uint8_t *msg, const unsigned int msgLen);
++static void (*md5_50_variant)(uint8_t *, size_t msgLen);
+ 
+ void 
+-md5(const uint8_t *msg, const unsigned int msgLen, uint8_t *digest) {
++md5(const uint8_t *msg, size_t msgLen, uint8_t *digest) {
+   uint32_t x[16];
+   register uint32_t a, b, c, d;
+   uint32_t aa, bb, cc, dd;
+-  int n64;
+-  int i, j;
+-  unsigned int k;
++  size_t n64, i;
++  int j;
++  size_t k;
+   
+   /** compute number of 64-byte blocks
+       (length + pad byte (0x80) + 8 bytes for length) */
+-  n64 = ((int)msgLen + 72) / 64;
++  n64 = (msgLen + 72) / 64;
+   
+   /** initialize a, b, c, d */
+@@ -76,5 +74,5 @@
+ 
+     /** grab a 64-byte block */
+-    for (j = 0; j < 16 && (signed)k < (signed)msgLen - 3; ++j, k += 4)
++    for (j = 0; j < 16 && k + 3 < msgLen; ++j, k += 4)
+       x[j] = ((((((unsigned)msg[k+3] << 8) + (unsigned)msg[k+2]) << 8) + (unsigned)msg[k+1]) << 8) + msg[k];
+     if (i == n64 - 1) {
+@@ -198,5 +196,5 @@
+ 
+ static void
+-md5_50s(uint8_t *msg, const unsigned int msgLen) {
++md5_50s(uint8_t *msg, size_t msgLen) {
+   int i;
+   for(i=0; i<50; i++) { md5(msg, msgLen, msg); }
+@@ -205,5 +203,5 @@
+ /** fast version of "for(i=0; i<50; i++) { md5(msg, 16, msg); }" */
+ static void 
+-md5_50f(uint8_t *msg, const unsigned int msgLen __attribute__((unused))) {
++md5_50f(uint8_t *msg, size_t msgLen __attribute__((unused))) {
+   register uint32_t a, b, c, d;
+   int i;
+@@ -323,5 +321,5 @@
+ 
+ void
+-md5_50_init(const unsigned int msgLen) {
++md5_50_init(size_t msgLen) {
+   if(msgLen == 16)
+     md5_50_variant = &md5_50f;
+@@ -331,5 +329,5 @@
+ 
+ void
+-md5_50(uint8_t *msg, const unsigned int msgLen) {
++md5_50(uint8_t *msg, size_t msgLen) {
+   md5_50_variant(msg, msgLen);
+ }
