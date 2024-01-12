@@ -1,0 +1,3 @@
+RustPython is a Python interpreter written in Rust. RustPython can be embedded
+into Rust programs to use Python as a scripting language for your application,
+or it can be compiled to WebAssembly in order to run Python in the browser.

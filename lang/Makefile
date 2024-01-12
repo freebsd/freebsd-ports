@@ -322,6 +322,7 @@
     SUBDIR += rust
     SUBDIR += rust-bootstrap
     SUBDIR += rust-nightly
+    SUBDIR += rustpython
     SUBDIR += s7
     SUBDIR += sagittarius-scheme
     SUBDIR += sather-specification
