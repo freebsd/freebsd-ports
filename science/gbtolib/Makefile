@@ -12,6 +12,8 @@ WWW=		https://zenodo.org/record/5798035 #.Yo1sazXMKV4
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	compilation fails in the Fortran code: Error: Kind -1 not supported for type REAL at (1)
+BROKEN_powerpc64le=	compilation fails in the Fortran code: Error: Kind -1 not supported for type REAL at (1)
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
