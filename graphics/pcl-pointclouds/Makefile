@@ -7,6 +7,9 @@ PKGNAMESUFFIX=	-pointclouds
 DISTNAME=	source
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${DISTVERSION}
 
+PATCH_SITES=	https://github.com/PointCloudLibrary/pcl/commit/
+PATCHFILES+=	69a2392e4c5976bd4dc1e33cc4659fa210f68485.patch:-p1 # https://github.com/PointCloudLibrary/pcl/pull/5903 fixing https://github.com/PointCloudLibrary/pcl/issues/5902
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
 WWW=		https://pointclouds.org/
