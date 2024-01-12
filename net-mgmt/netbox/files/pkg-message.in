@@ -29,7 +29,6 @@ The following steps are required to finish the upgrade:
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
 # python%%PYTHON_VER%% manage.py reindex --lazy
 # python%%PYTHON_VER%% manage.py clearsessions
-# python%%PYTHON_VER%% manage.py clearcache
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
 EOD
@@ -322,6 +321,58 @@ EOD
    * devel/py-dulwich			-> non-default GIT option
    * www/py-dj42-django-auth-ldap	-> non-default LDAP option
    * www/py-boto3			-> non-default S3 option
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.7.0
+  message: <<EOD
+1. The NetBox 3.7 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * The following fields have been removed from the Webhook model:
+
+     "content_types", "type_create", "type_update", "type_delete",
+     "type_job_start", "type_job_end", "enabled", and "conditions".
+
+     Webhooks are now tied to events via event rules. New event rules will be
+     created for any existing webhooks automatically upon upgrade.
+
+   * The "ui_visibility" field on the custom field model has been replaced with
+     two new fields: "ui_visible" and "ui_editable".
+
+     These new fields will have their values mapped from the original field
+     automatically upon upgrade.
+
+   * The "FeatureQuery" class used internally for querying content types by
+     model feature has been removed. It has been replaced by the new
+     "with_feature()" manager method on NetBox's proxy model for ContentType
+     ("core.models.ContentType").
+
+   * The internal ConfigRevision model has moved from "extras" to "core".
+     Configuration history will be retained throughout the upgrade process.
+
+   * The L2VPN and L2VPNTermination models have moved from the "ipam" app to
+     the new "vpn" app. All object data will be retained, however please note
+     that the relevant API endpoints have likewise moved to "/api/vpn/".
+
+   * The "CustomFieldsMixin", "SavedFiltersMixin", and "TagsMixin" classes
+     have moved from the "extras.forms.mixins" module to
+     "netbox.forms.mixins".
+
+   * The "netbox.models.features.WebhooksMixin" class has been renamed
+     to "EventRulesMixin".
+
+2. The following dependency is now optional and has therefore been converted
+   to a corresponding SENTRY option:
+
+   * devel/py-sentry-sdk	-> non-default SENTRY option
+
+3. Please note that the command "python%%PYTHON_VER%% manage.py clearcache" has
+   been removed.
+
+   The general update instructions in this pkg-message and the netbox sample rc
+   script (available via the EXAMPLES option) have also been updated
+   accordingly.
 EOD
 }
 ]
