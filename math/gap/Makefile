@@ -13,6 +13,8 @@ BUILD_DEPENDS=	bash:shells/bash
 BUILD_DEPENDS+=	automake:devel/automake # attempt to fix the intermittent failure: WARNING: 'automake-1.16' is missing on your system.
 LIB_DEPENDS=	libgmp.so:math/gmp
 
+BROKEN_powerpc64=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct GAPState) < 32768': GAPState is too big
+
 USES=		gmake libtool localbase perl5 readline shebangfix
 USE_PERL5=	run
 USE_LDCONFIG=	yes
