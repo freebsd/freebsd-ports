@@ -1,5 +1,5 @@
 LIB=	mng
-LDADD=	-lm -L${LIBDIR} -lz -llcms -ljpeg
+LDADD=	-lm -L${LIBDIR} -lz -llcms2 -ljpeg
 
 MK_PROFILE=	no
 SHLIB_MAJOR?=	1
@@ -8,7 +8,7 @@ SHLIB_MINOR?=	0
 SRCS!=		${MAKE} -f ${.CURDIR}/makefiles/makefile.unix -V SOURCES
 
 CFLAGS+=	-I${INCDIR}
-.if ${WITH_MNG_OPTIMIZE} == "true"
+.if ${WITH_MNG_OPTIMIZE} == "truex"
 .for f in CHUNKINITFREE OBJCLEANUP CHUNKASSIGN CHUNKREADER
 CFLAGS+=	-DMNG_OPTIMIZE_$f
 .endfor
