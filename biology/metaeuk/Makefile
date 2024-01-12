@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # 32-bit platforms produce wrong results based on https://github.com/soedinglab/metaeuk/issues/85#issuecomment-1888379107
 NOT_FOR_ARCHS+=	powerpc64 # many modules produce wrong results on big-endian architectures
-BROKEN_powerpc64le=	clang fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276268
 
 BUILD_DEPENDS=	xxd:editors/vim
 TEST_DEPENDS=	bash:shells/bash
@@ -34,7 +33,9 @@ OPTIONS_DEFINE=		NATIVE
 
 NATIVE_CMAKE_BOOL=	NATIVE_ARCH
 
-.if !exists(/usr/include/omp.h)
+.include <bsd.port.options.mk>
+
+.if !exists(/usr/include/omp.h) || ${ARCH} == powerpc64le # https://github.com/soedinglab/metaeuk/issues/85, https://github.com/llvm/llvm-project/issues/63807
 CMAKE_ARGS+=	-DREQUIRE_OPENMP:BOOL=OFF
 
 post-patch: # workaround for https://github.com/soedinglab/metaeuk/issues/55
