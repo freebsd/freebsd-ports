@@ -1,5 +1,6 @@
 PORTNAME=	miniupnpc
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		https://miniupnp.tuxfamily.org/files/
@@ -19,6 +20,7 @@ CPE_VENDOR=	miniupnp_project
 
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX} LIBDIR=lib
+MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 
 .include <bsd.port.pre.mk>
 
@@ -31,6 +33,7 @@ USE_RC_SUBR=	miniupnpc
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/upnpc \
+		${STAGEDIR}${PREFIX}/bin/upnp-listdevices \
 		${STAGEDIR}${PREFIX}/lib/libminiupnpc.so.17
 .endif
 
