@@ -24,9 +24,9 @@ lib/Phone/plugins/smscrypt.so
 lib/Phone/plugins/systray.so
 lib/Phone/plugins/ussd.so
 libdata/pkgconfig/Phone.pc
-%%PORTDOCS%%man/man1/gprs.1.gz
-%%PORTDOCS%%man/man1/phone.1.gz
-%%PORTDOCS%%man/man1/phonectl.1.gz
+%%PORTDOCS%%share/man/man1/gprs.1.gz
+%%PORTDOCS%%share/man/man1/phone.1.gz
+%%PORTDOCS%%share/man/man1/phonectl.1.gz
 share/applications/org.defora.phone-contacts.desktop
 share/applications/org.defora.phone-dialer.desktop
 share/applications/org.defora.phone-log.desktop
