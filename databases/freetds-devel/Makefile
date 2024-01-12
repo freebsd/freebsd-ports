@@ -1,5 +1,6 @@
 PORTNAME=	freetds
 PORTVERSION=	1.4.144
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -13,16 +14,18 @@ WWW=		http://www.freetds.org/
 
 LICENSE=	LGPL20
 
-USES=		autoreconf compiler:c11 cpe gettext-tools gmake iconv \
+USES=		compiler:c11 cpe gettext-tools gmake iconv \
 	libtool:keepla localbase:ldflags pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+		--docdir=${DOCSDIR} \
 		--enable-msdblib \
 		--enable-sybase-compat \
 		--sysconfdir=${ETCDIR} \
-		--with-tdsver=${TDS_VER}
+		--with-tdsver=${TDS_VER} \
+		--mandir=${PREFIX}/share/man
 
 INSTALL_TARGET=	install-strip
 
@@ -69,15 +72,14 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|libgnutls-config|pkg-config gnutls|g' \
 		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/pool.conf|/pool.conf.sample|g ; \
-		 s| common.h||g ; \
-		 s|%%DOCSDIR%%|${STAGEDIR}${DOCSDIR}|g ; \
-		 s|%%ICONV_LIB%%|${ICONV_LIB}|'
+	@${REINPLACE_CMD} -e 's|/pool.conf|/pool.conf.sample|g' \
+		${WRKSRC}/src/pool/Makefile.in
 	@${REINPLACE_CMD} -e 's|/freetds.conf|/freetds.conf.sample|g ; \
-		 s|/locales.conf|/locales.conf.sample|g' ${WRKSRC}/Makefile.am
+		s|/locales.conf|/locales.conf.sample|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$ODBC_INC/isql.h|$$ODBC_INC/libiodbc/isql.h|g ; \
 		s|$$ODBC_INC/isqlext.h|$$ODBC_INC/libiodbc/isqlext.h|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ ${ICONV_LIB}|g' \
+		${WRKSRC}/src/tds/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${ETCDIR}/interfaces.sample
