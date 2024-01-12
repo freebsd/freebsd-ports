@@ -11,10 +11,9 @@ WWW=		https://github.com/fabiangreffrath/crispy-doom
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
-		libpng.so:graphics/png \
-		libfluidsynth.so:audio/fluidsynth
+		libpng.so:graphics/png
 
-USES=		autoreconf desktop-file-utils pkgconfig python:build sdl shebangfix
+USES=		autoreconf pkgconfig python:build sdl shebangfix
 
 CONFLICTS_INSTALL=	chocolate-doom
 
@@ -28,6 +27,14 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fabiangreffrath
+
+.include <bsd.port.options.mk>
+
+.if !${ABI:Mpurecap}
+USES+=		desktop-file-utils
+# fluidsynth needs glib
+LIB_DEPENDS+=	libfluidsynth.so:audio/fluidsynth
+.endif
 
 post-patch:
 	${REINPLACE_CMD} "s|python3|${PYTHON_VERSION}|" ${WRKSRC}/configure.ac
