@@ -5,12 +5,15 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.cs.cornell.edu/andru/release/ \
 		ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Puzzle of pushing objects to the goals
 WWW=		https://www.cs.cornell.edu/andru/xsokoban.html
 
+LICENSE=	PD
+
 USES=		imake xorg
-USE_XORG=	xpm
+USE_XORG=	xpm x11 xext
+MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban
 
