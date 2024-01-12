@@ -2,10 +2,6 @@ bin/lmove
 bin/rpost
 bin/suck
 bin/testhost
-man/man1/suck.1.gz
-man/man1/rpost.1.gz
-man/man1/testhost.1.gz
-man/man1/lmove.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get.news.generic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get.news.inn
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl_kill.pl
@@ -18,3 +14,7 @@ man/man1/lmove.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suckkillfile.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sucknewsrc.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suckothermsgs.sample
+share/man/man1/suck.1.gz
+share/man/man1/rpost.1.gz
+share/man/man1/testhost.1.gz
+share/man/man1/lmove.1.gz
