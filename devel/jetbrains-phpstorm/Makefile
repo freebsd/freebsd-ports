@@ -1,5 +1,5 @@
 PORTNAME=	phpstorm
-DISTVERSION=	2023.2.3
+DISTVERSION=	2023.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -18,16 +18,15 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
-		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite \
+		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
+		jetbrains-sqlite>=233.11799.241:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		cpe desktop-file-utils python:run shebangfix
+USES=		cpe python:run
 
 CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-
-SHEBANG_FILES=	bin/restart.py
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 NO_ARCH=	yes
@@ -36,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/PhpStorm-232.10072.32
+WRKSRC=		${WRKDIR}/PhpStorm-233.13135.108
 
 do-install:
 # Linux/Windows/OS X only so remove them
@@ -44,7 +43,9 @@ do-install:
 		${WRKSRC}/bin/fsnotifier \
 		${WRKSRC}/bin/remote-dev-server.sh \
 		${WRKSRC}/bin/repair \
+		${WRKSRC}/bin/restarter \
 		${WRKSRC}/jbr \
+		${WRKSRC}/lib/async-profiler \
 		${WRKSRC}/lib/jna \
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
@@ -71,6 +72,8 @@ do-install:
 # Use pty4j replacement provided by devel/jetbrains-pty4j
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/x86-64
 	${LN} -sf ../../../../../pty4j/amd64/libpty.so ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/x86-64/libpty.so
+# Use restarter provided by devel/jetbrains-restarter
+	${LN} -sf ../../restarter/restarter ${STAGEDIR}${DATADIR}/bin/restarter
 # Use sqlite replacement provided by devel/jetbrains-sqlite
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/native/linux-x86_64
 	${LN} -sf ../../../../sqlite/amd64/libsqliteij.so ${STAGEDIR}${DATADIR}/lib/native/linux-x86_64/libsqliteij.so
