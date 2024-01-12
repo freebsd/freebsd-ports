@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms based on GraphBLAS
