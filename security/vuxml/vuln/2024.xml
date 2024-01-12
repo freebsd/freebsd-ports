@@ -1,3 +1,45 @@
+  <vuln vid="28b42ef5-80cd-440c-904b-b7fbca74c73d">
+    <topic>electron{26,27} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.5</lt></range>
+      </package>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.5">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0224.</li>
+	    <li>Security: backported fix for CVE-2024-0225.</li>
+	    <li>Security: backported fix for CVE-2024-0223.</li>
+	    <li>Security: backported fix for CVE-2024-0222.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0224</cvename>
+      <url>https://github.com/advisories/GHSA-83wx-v283-85g9</url>
+      <cvename>CVE-2024-0225</cvename>
+      <url>https://github.com/advisories/GHSA-gqr9-4fcc-c9jq</url>
+      <cvename>CVE-2024-0223</cvename>
+      <url>https://github.com/advisories/GHSA-w8x8-g534-x4rp</url>
+      <cvename>CVE-2024-0222</cvename>
+      <url>https://github.com/advisories/GHSA-c87c-56pw-mwgh</url>
+    </references>
+    <dates>
+      <discovery>2024-01-10</discovery>
+      <entry>2024-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4c8c2218-b120-11ee-90ec-001b217b3468">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
