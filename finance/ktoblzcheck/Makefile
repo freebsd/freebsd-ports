@@ -1,6 +1,5 @@
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.53
-PORTREVISION=	9
+PORTVERSION=	1.57
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME} \
 		LOCAL/jhale/${PORTNAME}:bankdata
@@ -14,16 +13,19 @@ WWW=		https://ktoblzcheck.sourceforge.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pathfix python:build
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR}
+LIB_DEPENDS=	libcurl.so:ftp/curl
+
+USES=		cmake localbase pathfix python:build sqlite
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	INSTALL_RAW_BANKDATA_FILE
-CMAKE_OFF=	ENABLE_BANKDATA_DOWNLOAD
+CMAKE_OFF=	ENABLE_BANKDATA_DOWNLOAD \
+		INSTALL_RAW_BANKDATA_FILE
 
-PLIST_SUB=	BANKDATA_DATE=${BANKDATA_DATE}
 PORTDOCS=	README.md
 
-BANKDATA_DATE=	20231204
+BANKDATA_DATE=	20240108
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 OPTIONS_SUB=	yes
@@ -35,10 +37,12 @@ DOXYGEN_CMAKE_BOOL_OFF=		CMAKE_DISABLE_FIND_PACKAGE_Doxygen
 TEST_TARGET=			test
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_DATADIR}\/man|$${CMAKE_INSTALL_MANDIR}|' ${WRKSRC}/doc/CMakeLists.txt
-	@(cd ${WRKSRC}/src/bankdata && ${RM} bankdata_*.txt blz_*.txt)
 	@${CP} ${WRKDIR}/${PORTNAME}-bankdata-${BANKDATA_DATE}/blz_${BANKDATA_DATE}.txt ${WRKSRC}/src/bankdata
-	@${TOUCH} ${WRKSRC}/src/bankdata/bankdata_${BANKDATA_DATE}.txt
+	@${CP} ${WRKDIR}/${PORTNAME}-bankdata-${BANKDATA_DATE}/ch_data.txt ${WRKSRC}/src/bankdata
+	@${CP} ${WRKDIR}/${PORTNAME}-bankdata-${BANKDATA_DATE}/nl_data.xlsx ${WRKSRC}/src/bankdata
+	@${CP} ${WRKDIR}/${PORTNAME}-bankdata-${BANKDATA_DATE}/sepa_${BANKDATA_DATE}.txt ${WRKSRC}/src/bankdata/sepa
+	@${REINPLACE_CMD} -e 's|%%BANKDATA_DATE%%|'"$$(date -j -f "%Y%m%d" "+%d.%m.%Y" ${BANKDATA_DATE})"'|' \
+		${WRKSRC}/src/bankdata/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
