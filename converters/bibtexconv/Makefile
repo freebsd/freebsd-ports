@@ -1,5 +1,6 @@
 PORTNAME=	bibtexconv
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	https://www.nntb.no/~dreibh/bibtexconv/download/
 
@@ -16,7 +17,7 @@ USES=		bison cmake ssl python:3.9+ shebangfix tar:xz
 
 SHEBANG_FILES=	src/ietf2bibtex
 
-CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${EXAMPLESDIR} -DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
+CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${EXAMPLESDIR}
 
 OPTIONS_DEFINE=	EXAMPLES
 

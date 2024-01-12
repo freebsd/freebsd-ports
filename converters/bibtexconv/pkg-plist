@@ -1,9 +1,9 @@
 bin/bibtexconv
 bin/bibtexconv-odt
 bin/ietf2bibtex
-man/man1/bibtexconv-odt.1.gz
-man/man1/bibtexconv.1.gz
-man/man1/ietf2bibtex.1.gz
+share/man/man1/bibtexconv-odt.1.gz
+share/man/man1/bibtexconv.1.gz
+share/man/man1/ietf2bibtex.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleReferences.bib
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Images/ListItem-Collapsed.dia
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Images/ListItem-Collapsed.svg
