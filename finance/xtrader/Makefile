@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments
 WWW=		https://xtrader.sourceforge.net/
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2024-02-29
+
 LIB_DEPENDS=	libptypes.so:devel/ptypes \
 		libfltk.so.1:x11-toolkits/fltk
 
