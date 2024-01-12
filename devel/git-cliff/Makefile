@@ -13,6 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
 
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs:358:10 # see https://github.com/rust-lang/rust/issues/119901
+
 USES=		cargo
 
 USE_GITHUB=	yes
