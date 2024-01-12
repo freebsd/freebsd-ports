@@ -1,5 +1,6 @@
 PORTNAME=	sqldeveloper
 DISTVERSION=	23.1.1.345.2114
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-no-jre
 CATEGORIES=	databases java
 # https://www.oracle.com/tools/downloads/sqldev-downloads.html
@@ -21,6 +22,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	11+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME}.desktop ${PORTNAME}.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
@@ -74,6 +76,9 @@ do-install:
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}/${DATADIR}/\{} \;
 	${ECHO_MSG} " [ DONE ]"
 .endfor
+
+	${RM} -r ${STAGEDIR}/${DATADIR}/modules/javafx
+	${RM} -r ${STAGEDIR}/${DATADIR}/netbeans/platform/modules/lib
 
 	@${ECHO_MSG} ">> Installing icon and desktop file ..."
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/share/applications/ \
