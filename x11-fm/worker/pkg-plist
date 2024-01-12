@@ -92,6 +92,10 @@ share/metainfo/de.boomerangsworld.worker.metainfo.xml
 %%DATADIR%%/config-updates/update-4.8.1.conf
 %%DATADIR%%/config-updates/update-4.10.0-utf8.conf
 %%DATADIR%%/config-updates/update-4.10.0.conf
+%%DATADIR%%/config-updates/update-4.10.1-utf8.conf
+%%DATADIR%%/config-updates/update-4.10.1.conf
+%%DATADIR%%/config-updates/update-5.0.0-utf8.conf
+%%DATADIR%%/config-updates/update-5.0.0.conf
 %%DATADIR%%/hints-english
 %%DATADIR%%/hints-english.utf8
 %%DATADIR%%/scripts/aa.pattern_rename.sh
