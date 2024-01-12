@@ -1,6 +1,6 @@
 PORTNAME=	a2ps
 PORTVERSION=	4.15.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 USES=		cpe perl5 gperf pkgconfig localbase gmake
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INFO=		a2ps ogonkify regex
 I18N_PACKAGE=	i18n-fonts-0.1
 
