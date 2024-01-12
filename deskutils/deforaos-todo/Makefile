@@ -1,6 +1,6 @@
 PORTNAME=	todo
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.defora.org/os/download/download/4429/
 PKGNAMEPREFIX=	deforaos-
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Mailer/plugin.h:mail/deforaos-mailer
 USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS+=	PREFIX=${PREFIX}
-
-MAKE_ENV=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 
 CONFLICTS_INSTALL=	devtodo # man/man1/todo.1.gz
 
