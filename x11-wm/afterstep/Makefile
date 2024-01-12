@@ -1,6 +1,6 @@
 PORTNAME=	afterstep
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	LOCAL/dinoex
 PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
@@ -20,6 +20,7 @@ PORTSCOUT=	limit:^1\.[0-9.]*$$
 USES=		imake xorg
 USE_XORG=	xpm xext x11
 USE_CSTD=	gnu89
+MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 INSTALL_TARGET=	install install.man
 CFLAGS+=	-Wno-return-type
 
