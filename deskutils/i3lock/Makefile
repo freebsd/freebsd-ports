@@ -22,10 +22,6 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
-MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
-		X11INC="${LOCALBASE}/include" CC="${CC}" \
-		MANDIR="${MANPREFIX}/man"
-
 PLIST_FILES=	bin/i3lock \
 		man/man1/i3lock.1.gz \
 		etc/pam.d/i3lock
