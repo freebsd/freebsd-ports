@@ -1,3 +1,39 @@
+  <vuln vid="4c8c2218-b120-11ee-90ec-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.7.0</ge><lt>16.7.2</lt></range>
+	<range><ge>16.6.0</ge><lt>16.6.4</lt></range>
+	<range><ge>8.13.0</ge><lt>16.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/">
+	  <p>Account Takeover via Password Reset without user interactions</p>
+	  <p>Attacker can abuse Slack/Mattermost integrations to execute slash commands as another user</p>
+	  <p>Bypass CODEOWNERS approval removal</p>
+	  <p>Workspaces able to be created under different root namespace</p>
+	  <p>Commit signature validation ignores headers after signature</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-7028</cvename>
+      <cvename>CVE-2023-5356</cvename>
+      <cvename>CVE-2023-4812</cvename>
+      <cvename>CVE-2023-6955</cvename>
+      <cvename>CVE-2023-2030</cvename>
+      <url>https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-01-11</discovery>
+      <entry>2024-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8337251b-b07b-11ee-b0d7-84a93843eb75">
     <topic>OpenSSL -- Vector register corruption on PowerPC</topic>
     <affects>
