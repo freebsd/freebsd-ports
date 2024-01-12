@@ -1013,7 +1013,7 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
-_LIST_OF_WITH_FEATURES=	bind_now debug lto pie relro sanitize ssp
+_LIST_OF_WITH_FEATURES=	bind_now debug debuginfo lto pie relro sanitize ssp
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
@@ -2650,7 +2650,7 @@ _SUBPACKAGE_HELPERS_FILE=	DESCR PKGINSTALL PKGDEINSTALL PKGMESSAGE \
 ${v}.${sp}?=	${$v}.${sp}
 .        endfor
 _PKGMESSAGES.${sp}=		${PKGMESSAGE}.${sp}
-.        if !exists(${DESCR.${sp}})
+.        if !exists(${DESCR.${sp}}) && ${sp} != debuginfo
 DESCR.${sp}=	${DESCR}
 DEV_WARNING+=	"DESCR.${sp} needs to point to an existing file."
 .        endif
@@ -5471,7 +5471,7 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 				900:add-plist-info 910:add-plist-docs 920:add-plist-examples \
 				930:add-plist-data 940:add-plist-post ${POST_PLIST:C/^/990:/} \
 				${_OPTIONS_install} ${_USES_install} \
-				${_OPTIONS_stage} ${_USES_stage}
+				${_OPTIONS_stage} ${_USES_stage} ${_FEATURES_stage}
 .    if defined(DEVELOPER)
 _STAGE_SEQ+=	995:stage-qa
 .    else

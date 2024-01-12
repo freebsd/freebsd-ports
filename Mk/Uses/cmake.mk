@@ -70,13 +70,15 @@ RUN_DEPENDS+=		${CMAKE_BIN}:devel/cmake-core
 
 .    if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE?=	Debug
+.    elif defined(WITH_DEBUGINFO)
+CMAKE_BUILD_TYPE?=	RelWithDebInfo
 .    else
 CMAKE_BUILD_TYPE?=	Release
 .    endif #defined(WITH_DEBUG)
 
 PLIST_SUB+=		CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:tl}"
 
-.    if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
+.    if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG) && !defined(WITH_DEBUGINFO)
 INSTALL_TARGET?=	install/strip
 .    endif
 
