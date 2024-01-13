@@ -249,8 +249,10 @@ CMAKE_ARGS+=	-DCMAKE_MODULE_PATH="${LOCALBASE};${KDE_PREFIX}" \
 		-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=true
 
 # Set man-page installation prefix.
-CMAKE_ARGS+=	-DKDE_INSTALL_MANDIR:PATH="${KDE_PREFIX}/man" \
-		-DMAN_INSTALL_DIR:PATH="${KDE_PREFIX}/man"
+# TODO: Remove the KDE_MAN_PREFIX knob once all kde ports are switched to use share/man
+KDE_MAN_PREFIX?=	${KDE_PREFIX}/man
+CMAKE_ARGS+=	-DKDE_INSTALL_MANDIR:PATH="${KDE_MAN_PREFIX}" \
+		-DMAN_INSTALL_DIR:PATH="${KDE_MAN_PREFIX}"
 
 # Disable autotests unless TEST_TARGET is defined.
 .    if !defined(TEST_TARGET)
