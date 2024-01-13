@@ -1,4 +1,5 @@
 bin/gerbera
+%%DATADIR%%/js/audio.js
 %%DATADIR%%/js/common.js
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/metadata.js
@@ -48,7 +49,6 @@ bin/gerbera
 %%DATADIR%%/web/js/jquery.gerbera.trail.js
 %%DATADIR%%/web/js/jquery.gerbera.tree.js
 %%DATADIR%%/web/js/jquery.gerbera.tweak.js
-%%DATADIR%%/web/js/md5.js
 %%DATADIR%%/web/mr_reg.xml
 %%DATADIR%%/web/vendor/bootstrap/css/bootstrap-grid.min.css
 %%DATADIR%%/web/vendor/bootstrap/css/bootstrap-grid.min.css.map
@@ -66,16 +66,19 @@ bin/gerbera
 %%DATADIR%%/web/vendor/font-awesome/fonts/fontawesome-webfont.ttf
 %%DATADIR%%/web/vendor/font-awesome/fonts/fontawesome-webfont.woff
 %%DATADIR%%/web/vendor/font-awesome/fonts/fontawesome-webfont.woff2
-%%DATADIR%%/web/vendor/jquery/jquery-3.6.0.min.js
-%%DATADIR%%/web/vendor/jquery/jquery-3.6.0.min.map
+%%DATADIR%%/web/vendor/jquery/jquery.min.js
+%%DATADIR%%/web/vendor/jquery/jquery.min.map
 %%DATADIR%%/web/vendor/jquery/jquery-ui.min.js
 %%DATADIR%%/web/vendor/js-cookie.min.js
 %%DATADIR%%/web/vendor/lato/LICENCE.md
 %%DATADIR%%/web/vendor/lato/lato-v14-latin-ext_latin-regular.woff
 %%DATADIR%%/web/vendor/lato/lato-v14-latin-ext_latin-regular.woff2
-%%DATADIR%%/web/vendor/popper/popper.js
+%%DATADIR%%/web/vendor/md5.min.js
+%%DATADIR%%/web/vendor/md5.min.js.map
+%%DATADIR%%/web/vendor/popper/popper.min.js
+%%DATADIR%%/web/vendor/popper/popper.min.js.map
 %%DATADIR%%/web/vendor/tether/tether.min.js
-man/man1/gerbera.1.gz
+share/man/man1/gerbera.1.gz
 @owner %%USER%%
 @group %%GROUP%%
 @dir /var/db/gerbera
