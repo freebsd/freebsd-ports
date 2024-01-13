@@ -1,18 +1,18 @@
---- Cargo.lock.orig	2023-11-08 12:15:54 UTC
-+++ Cargo.lock
-@@ -1949,9 +1949,9 @@ name = "openssl"
+--- Cargo.lock.orig	2023-11-27 22:02:10.307152728 +0100
++++ Cargo.lock	2023-11-27 22:02:36.794399157 +0100
+@@ -2000,9 +2000,9 @@
  
  [[package]]
  name = "openssl"
 -version = "0.10.57"
-+version = "0.10.59"
++version = "0.10.60"
  source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "bac25ee399abb46215765b1cb35bc0212377e58a061560d8b29b024fd0430e7c"
-+checksum = "7a257ad03cd8fb16ad4172fedf8094451e1af1c4b70097636ef2eac9a5f0cc33"
++checksum = "79a4c6c3a2b158f7f8f2a2fc5a969fa3a068df6fc9dbb4a43845436e3af7c800"
  dependencies = [
   "bitflags 2.4.1",
   "cfg-if",
-@@ -1981,18 +1981,18 @@ name = "openssl-src"
+@@ -2032,18 +2032,18 @@
  
  [[package]]
  name = "openssl-src"
@@ -28,10 +28,10 @@
  [[package]]
  name = "openssl-sys"
 -version = "0.9.92"
-+version = "0.9.95"
++version = "0.9.96"
  source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "db7e971c2c2bba161b2d2fdf37080177eff520b3bc044787c7f1f5f9e78d869b"
-+checksum = "40a4130519a360279579c2053038317e40eff64d13fd3f004f9e1b72b8a6aaf9"
++checksum = "3812c071ba60da8b5677cc12bcb1d42989a65553772897a7e0355545a819838f"
  dependencies = [
   "cc",
   "libc",
