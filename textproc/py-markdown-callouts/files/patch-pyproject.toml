@@ -2,6 +2,15 @@ Use the more lightweight py-poetry-core instead py-poetry.
 
 --- pyproject.toml.orig	2022-09-18 20:43:59 UTC
 +++ pyproject.toml
+@@ -13,7 +13,7 @@ python = "^3.6"
+ 
+ [tool.poetry.dependencies]
+ python = "^3.6"
+-Markdown = "^3.3.3"
++Markdown = ">=3.3.3"
+ 
+ [tool.poetry.dev-dependencies]
+ pytest = "^6.1.2"
 @@ -48,5 +48,5 @@ filterwarnings = ["ignore::DeprecationWarning:.*:",
                    "default::DeprecationWarning:markdown_callouts.*:"]
  
