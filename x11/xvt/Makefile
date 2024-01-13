@@ -11,7 +11,7 @@ WWW=		https://BSDforge.com/projects/x11/xvt/
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-DEPRECATED=	Deprecated in favour or various forks, consider using x11/rxvt-unicode
+DEPRECATED=	Deprecated in favour of various forks, consider using x11/rxvt-unicode
 EXPIRATION_DATE=2024-02-29
 
 PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
