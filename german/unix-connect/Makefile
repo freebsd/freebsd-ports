@@ -60,20 +60,16 @@ CNEWS_CONFIGURE_ON=	--with-news=cnews
 INN_CONFIGURE_ON=	--with-news=inn
 NO_NEWS_CONFIGURE_ON=	--with-news=no
 
-.include <bsd.port.options.mk>
-
 pre-install:
 	${MKDIR} ${STAGEDIR}/var/spool
 
-post-install:
-.if ${PORT_OPTIONS:MCNEWS}
+post-install-CNEWS-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/mail-and-news/cnews/viazconnect \
 		${STAGEDIR}${PREFIX}/libexec/uconnect/
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC1:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
-.endif
 
 .include <bsd.port.mk>
