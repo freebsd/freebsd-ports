@@ -1,5 +1,5 @@
 PORTNAME=	duplicity
-PORTVERSION=	0.8.23
+PORTVERSION=	2.1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -25,7 +25,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils noflavors
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	bin/duplicity bin/rdiffdir
+SHEBANG_FILES=	bin/duplicity
 
 PORTDOCS=	CHANGELOG.md COPYING README.md README-REPO.md README-LOG.md
 
