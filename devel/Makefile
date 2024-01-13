@@ -182,9 +182,8 @@
     SUBDIR += apitrace
     SUBDIR += app-builder
     SUBDIR += appstream
-    SUBDIR += appstream-compose
     SUBDIR += appstream-glib
-    SUBDIR += appstream-qt
+    SUBDIR += appstream-qt5
     SUBDIR += apr1
     SUBDIR += arachne-pnr
     SUBDIR += arcanist
