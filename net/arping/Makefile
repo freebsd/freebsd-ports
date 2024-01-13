@@ -1,6 +1,5 @@
 PORTNAME=	arping
-DISTVERSION=	2.21
-PORTREVISION=	1
+DISTVERSION=	2.24
 CATEGORIES=	net
 MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
@@ -17,6 +16,6 @@ USES=		localbase
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	sbin/arping man/man8/arping.8.gz
+PLIST_FILES=	include/arping.h man/man8/arping.8.gz sbin/arping
 
 .include <bsd.port.mk>
