@@ -1,6 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	1.4.20180118
-PORTREVISION=	7
+DISTVERSION=	1.4.20220802
 CATEGORIES=	audio
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 PKGNAMESUFFIX=	-lv2
@@ -26,7 +25,7 @@ USES=		gmake localbase tar:bz2
 
 BB_ACCOUNT=	agraef
 BB_PROJECT=	faust-lv2
-BB_COMMIT=	4dc83e28e998
+BB_COMMIT=	27ed7cb9cb49
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
@@ -38,5 +37,8 @@ OPTIONS_DEFAULT_amd64=	SIMD
 OPTIONS_DEFAULT_i386=	SIMD
 
 SIMD_CFLAGS=	-msse -msse2 -mfpmath=sse
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/faust.lv2/*.so
 
 .include <bsd.port.mk>
