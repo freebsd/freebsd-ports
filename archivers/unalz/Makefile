@@ -10,8 +10,6 @@ WWW=		https://bsdforge.com/projects/archivers/unalz/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
-BROKEN=		Unfetchable
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		cpe iconv localbase:ldflags tar:xz

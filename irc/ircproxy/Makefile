@@ -11,7 +11,6 @@ WWW=		http://ircproxy.sourceforge.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable
 DEPRECATED=	Abandonware, last release in 2010 and dead upstream. Consider using irc/soju or irc/znc
 EXPIRATION_DATE=2024-02-29
 

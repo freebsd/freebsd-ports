@@ -8,7 +8,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to print a large (one month per page) calendar
 
-BROKEN=		Unfetchable
 DEPRECATED=	Last release in 2001 and dead upstream, consider using deskutils/pal
 EXPIRATION_DATE=2024-02-29
 

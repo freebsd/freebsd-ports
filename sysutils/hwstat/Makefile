@@ -10,8 +10,6 @@ WWW=		https://BSDforge.com/projects/sysutils/hwstat/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable
-
 USES=		uidfix
 MAKE_ARGS+=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man
 PLIST_FILES=	bin/hwstat man/man1/hwstat.1.gz

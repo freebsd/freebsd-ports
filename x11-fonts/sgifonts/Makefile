@@ -12,8 +12,6 @@ WWW=		http://oss.sgi.com/projects/sgi_propack/
 
 LICENSE=	MIT
 
-BROKEN=		Unfetchable
-
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts

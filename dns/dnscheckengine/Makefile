@@ -12,7 +12,6 @@ WWW=		https://dnscheck.iis.se/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Unfetchable
 DEPRECATED=	Deprecated upstream in favour of Zonemaster Project
 EXPIRATION_DATE=2024-02-29
 

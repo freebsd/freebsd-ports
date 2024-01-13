@@ -12,8 +12,6 @@ WWW=		https://BSDforge.com/projects/sysutils/cronolog-devel
 
 LICENSE=	APACHE10
 
-BROKEN=		Unfetchable
-
 USES=		shebangfix tar:xz
 
 SHEBANG_FILES=	src/cronosplit

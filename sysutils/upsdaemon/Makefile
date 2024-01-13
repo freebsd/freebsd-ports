@@ -9,8 +9,6 @@ WWW=		https://BSDforge.com/projects/sysutils/upsdaemon/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable
-
 USE_RC_SUBR=	upsdaemon
 
 .include <bsd.port.mk>

@@ -8,8 +8,6 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Shows moving blobs
 WWW=		https://BSDforge.com/projects/x11/wmblob/
 
-BROKEN=		Unfetchable
-
 USES=		gnome pkgconfig tar:xz xorg
 USE_XORG=	xpm
 USE_GNOME=	gtk20

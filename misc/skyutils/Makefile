@@ -7,7 +7,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library required by smssend (same author)
 WWW=		https://BSDforge.com/projects/misc/skyutils/
 
-BROKEN=		Unfetchable
 DEPRECATED=	Library used for deprecated port misc/smssend
 EXPIRATION_DATE=2024-02-29
 

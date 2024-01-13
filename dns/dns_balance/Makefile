@@ -9,7 +9,6 @@ WWW=		https://www.netlab.cs.tsukuba.ac.jp/~yokota/izumi/dns_balance/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable
 DEPRECATED=	Abandonware, last release in 2005. Consider using dns/dnsdist
 EXPIRATION_DATE=2024-02-29
 

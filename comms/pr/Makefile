@@ -10,8 +10,6 @@ WWW=		https://BSDforge.com/projects/comms/pr/
 
 LICENSE=	ARTPERL10
 
-BROKEN=		Unfetchable
-
 USES=		shebangfix tar:xz
 SHEBANG_FILES=	sbin/PortRedirector sbin/PortTest
 NO_BUILD=	YES

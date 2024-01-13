@@ -11,7 +11,6 @@ WWW=		https://www.cs.utah.edu/gdc/projects/urt/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/copyright
 
-BROKEN=		Unfetchable
 DEPRECATED=	Defunct upstream
 EXPIRATION_DATE=	2024-02-11
 

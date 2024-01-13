@@ -10,7 +10,6 @@ WWW=		https://BSDforge.com/projects/net/widentd/
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		Unfetchable
 DEPRECATED=	Abandonware, last release in 2004 and dead upstream. Consider using security/oidentd
 EXPIRATION_DATE=2024-02-29
 

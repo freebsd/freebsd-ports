@@ -12,8 +12,6 @@ WWW=		https://BSDforge.com/projects/sysutils/fusefs-chironfs/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/copyright
 
-BROKEN=		Unfetchable
-
 USES=		fuse localbase:ldflags
 GNU_CONFIGURE=	yes
 

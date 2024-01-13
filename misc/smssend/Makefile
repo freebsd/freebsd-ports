@@ -8,7 +8,6 @@ COMMENT=	Tool to send an SMS to any GSM
 WWW=		https://BSDforge.com/projects/misc/smssend/
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable
 DEPRECATED=	Depends on legacy websites / pages to send SMS
 EXPIRATION_DATE=2024-02-29
 

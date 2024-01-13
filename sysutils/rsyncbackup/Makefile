@@ -10,8 +10,6 @@ WWW=		https://BSDforge.com/projects/sysutils/rsync-backup/
 
 LICENSE=	GPLv2+
 
-BROKEN=		Unfetchable
-
 RUN_DEPENDS=	rsync:net/rsync
 
 CONFIGSRC=	${WRKSRC}/config

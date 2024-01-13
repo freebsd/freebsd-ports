@@ -10,7 +10,6 @@ WWW=		https://bsdforge.com/projects/comms/sms_client/
 
 LICENSE=	LGPL20+
 
-BROKEN=		Unfetchable
 DEPRECATED=	Abandonware, dead upstream and relies on legacy hardware and or networks that are obsolete
 EXPIRATION_DATE=2024-02-29
 

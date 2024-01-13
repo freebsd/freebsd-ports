@@ -8,8 +8,6 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Integrate Twitter with Pidgin (AKA microblog-purple)
 WWW=		https://BSDforge.com/projects/net-im/mbpurple/
 
-BROKEN=		Unfetchable
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 

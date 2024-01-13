@@ -10,8 +10,6 @@ WWW=		https://BSDforge.com/projects/print/font2svg
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable
-
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		ghostscript:run

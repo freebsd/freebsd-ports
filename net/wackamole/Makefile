@@ -15,8 +15,6 @@ LICENSE_NAME=	CNDS Open-Source License
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		Unfetchable
-
 LIB_DEPENDS=	libspread.so:net/spread
 
 USES=		tar:xz

@@ -7,8 +7,6 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Adobe Utopia typeface for Groff
 WWW=		http://www.mammothcheese.ca/munger.html
 
-BROKEN=		Unfetchable
-
 MAKE_ARGS=	DEST=${STAGEDIR}${DATADIR}/devps \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \

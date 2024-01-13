@@ -9,7 +9,6 @@ LICENSE=	GPLv2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site vulnerability scanner
 
-BROKEN=		Unfetchable
 DEPRECATED=	Deprecated utility that checks a list of URLs and lacks HTTPS support
 EXPIRATION_DATE=2024-02-29
 

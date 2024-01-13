@@ -11,8 +11,6 @@ WWW=		https://BSDforge.com/projects/textproc/smi/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Unfetchable
-
 PORTDOCS=	README.md
 
 PLIST_FILES=	bin/smi share/man/man1/smi.1.gz

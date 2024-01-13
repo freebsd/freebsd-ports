@@ -9,7 +9,6 @@ WWW=		https://BSDforge.com/projects/comms/comserv/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable
 DEPRECATED=	Abandonware, last release in 2002. Consider using comms/remserial
 EXPIRATION_DATE=2024-02-29
 
