@@ -15,8 +15,6 @@ LICENSE_TEXT=	may contain iconic, visual, graphical or other\
 		consent of either the trademark or the patent holder
 LICENSE_PERMS=	auto-accept
 
-BROKEN=		Unfetchable
-
 NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/"black and white"

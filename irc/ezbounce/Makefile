@@ -8,7 +8,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Highly configurable IRC Proxy
 WWW=		https://sourceforge.net/projects/ezbounce/
 
-BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, last release in 2009 and dead upstream. Consider using irc/soju or irc/znc
+EXPIRATION_DATE=2024-02-29
 
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS

@@ -9,7 +9,8 @@ COMMENT=	Alternative configuration system for Compiz
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable
+DEPRECATED=	Abandoned project
+EXPIRATION_DATE=	2024-02-10
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
 

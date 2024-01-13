@@ -13,8 +13,6 @@ LICENSE_NAME=	The University of Newcastle upon Tyne
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept
 
-BROKEN=		Unfetchable
-
 USES=		uidfix
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd

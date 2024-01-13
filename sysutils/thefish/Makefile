@@ -10,8 +10,6 @@ WWW=		https://BSDforge.com/projects/sysutils/thefish
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable
-
 USES=		gnome pkgconfig tar:xz
 
 OPTIONS_SINGLE=		X11

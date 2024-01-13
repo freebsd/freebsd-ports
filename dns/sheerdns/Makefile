@@ -10,7 +10,8 @@ WWW=		https://BSDforge.com/projects/dns/sheerdns/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream dead and last update over 10 years ago
+EXPIRATION_DATE=2024-02-29
 
 USES=		gmake tar:xz
 

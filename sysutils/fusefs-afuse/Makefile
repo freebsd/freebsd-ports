@@ -12,8 +12,6 @@ WWW=		https://github.com/pcarrier/afuse
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable
-
 USES=		cpe fuse pkgconfig
 GNU_CONFIGURE=	yes
 
