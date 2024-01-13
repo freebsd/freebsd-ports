@@ -1537,6 +1537,7 @@
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/XML.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/libsodium.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/ASN1.php
+%%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/IEEE.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/Raw.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/SSH2.php
 %%WWWDIR%%/src/libs/phpseclib/phpseclib/phpseclib/Crypt/EC/Parameters.php
@@ -1977,6 +1978,8 @@
 %%WWWDIR%%/src/libs/symfony/http-client/Internal/NativeClientState.php
 %%WWWDIR%%/src/libs/symfony/http-client/Internal/PushedResponse.php
 %%WWWDIR%%/src/libs/symfony/http-client/LICENSE
+%%WWWDIR%%/src/libs/symfony/http-client/Messenger/PingWebhookMessage.php
+%%WWWDIR%%/src/libs/symfony/http-client/Messenger/PingWebhookMessageHandler.php
 %%WWWDIR%%/src/libs/symfony/http-client/MockHttpClient.php
 %%WWWDIR%%/src/libs/symfony/http-client/NativeHttpClient.php
 %%WWWDIR%%/src/libs/symfony/http-client/NoPrivateNetworkHttpClient.php
@@ -2000,6 +2003,7 @@
 %%WWWDIR%%/src/libs/symfony/http-client/Retry/RetryStrategyInterface.php
 %%WWWDIR%%/src/libs/symfony/http-client/RetryableHttpClient.php
 %%WWWDIR%%/src/libs/symfony/http-client/ScopingHttpClient.php
+%%WWWDIR%%/src/libs/symfony/http-client/Test/HarFileResponseFactory.php
 %%WWWDIR%%/src/libs/symfony/http-client/TraceableHttpClient.php
 %%WWWDIR%%/src/libs/symfony/http-client/UriTemplateHttpClient.php
 %%WWWDIR%%/src/libs/symfony/http-client/composer.json
@@ -2015,6 +2019,7 @@
 %%WWWDIR%%/src/libs/symfony/http-foundation/Exception/RequestExceptionInterface.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Exception/SessionNotFoundException.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Exception/SuspiciousOperationException.php
+%%WWWDIR%%/src/libs/symfony/http-foundation/Exception/UnexpectedValueException.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/ExpressionRequestMatcher.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/File/Exception/AccessDeniedException.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/File/Exception/CannotWriteFileException.php
@@ -2104,11 +2109,13 @@
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseFormatSame.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseHasCookie.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseHasHeader.php
+%%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseHeaderLocationSame.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseHeaderSame.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseIsRedirected.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseIsSuccessful.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseIsUnprocessable.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/Test/Constraint/ResponseStatusCodeSame.php
+%%WWWDIR%%/src/libs/symfony/http-foundation/UriSigner.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/UrlHelper.php
 %%WWWDIR%%/src/libs/symfony/http-foundation/composer.json
 %%WWWDIR%%/src/libs/symfony/mailer/CHANGELOG.md
@@ -2245,6 +2252,7 @@
 %%WWWDIR%%/src/libs/symfony/mime/Test/Constraint/EmailHasHeader.php
 %%WWWDIR%%/src/libs/symfony/mime/Test/Constraint/EmailHeaderSame.php
 %%WWWDIR%%/src/libs/symfony/mime/Test/Constraint/EmailHtmlBodyContains.php
+%%WWWDIR%%/src/libs/symfony/mime/Test/Constraint/EmailSubjectContains.php
 %%WWWDIR%%/src/libs/symfony/mime/Test/Constraint/EmailTextBodyContains.php
 %%WWWDIR%%/src/libs/symfony/mime/composer.json
 %%WWWDIR%%/src/libs/symfony/polyfill-intl-idn/Idn.php
