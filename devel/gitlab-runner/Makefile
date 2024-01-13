@@ -1,11 +1,15 @@
 PORTNAME=	gitlab-runner
 DISTVERSION=	16.7.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
 DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
+
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
+PATCHFILES+=	4551.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4551, Allow FreeBSD to be used with Docker builds
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
