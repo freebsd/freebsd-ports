@@ -11,6 +11,8 @@ WWW=		https://github.com/xrelkd/clipcat
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	build breaks, see https://github.com/rust-lang/rust/issues/119914
+
 BUILD_DEPENDS=	protoc:devel/protobuf
 
 USES=		cargo localbase:ldflags llvm:min=13,build python:build xorg
