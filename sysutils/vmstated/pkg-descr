@@ -1,0 +1,4 @@
+vmstated is a user-space daemon that manages bhyve virtual
+machines. It provides hook scripts for easy network and storage setup
+and maintains records on a virtual machine's state while it is
+running.
