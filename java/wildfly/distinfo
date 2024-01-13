@@ -1,3 +1,3 @@
-TIMESTAMP = 1705050010
-SHA256 (wildfly-22.0.1.Final.tar.gz) = 08d1e420331d0b6ad6c36a4dd782a110152cabfa23439e6ecd9a7c4d50bffd01
-SIZE (wildfly-22.0.1.Final.tar.gz) = 202127284
+TIMESTAMP = 1705130484
+SHA256 (wildfly-23.0.2.Final.tar.gz) = 6525f6372a8dbddb84d7e3a466dbef1e046253c2bcd682c29fd0f4c1ec606fc4
+SIZE (wildfly-23.0.2.Final.tar.gz) = 211139693
