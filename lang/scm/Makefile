@@ -26,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS:=	${CFLAGS:N-O*} -O0
 CFLAGS+=	-Wall -Wwrite-strings -Wmissing-declarations -Wredundant-decls -Wcast-qual
 CFLAGS+=	-Wno-unused-label -Wno-uninitialized
+CFLAGS_i386=	-O
 
 SUB_FILES=	require.scm
 
