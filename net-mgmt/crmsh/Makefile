@@ -1,5 +1,6 @@
 PORTNAME=	crmsh
 PORTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	flo@FreeBSD.org
@@ -22,19 +23,18 @@ USES=		autoreconf cpe gmake python shebangfix
 CPE_VENDOR=	clusterlabs
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/lib/ocf
-
-NO_ARCH=	yes
-
-CONFLICTS_INSTALL=	crm114 # bin/crm
-
 SHEBANG_FILES=	bin/crm scripts/*/*.py test/cib-tests.sh test/evaltest.sh \
 		test/features/steps/behave_agent.py \
 		test/list-undocumented-commands.py test/run-functional-tests \
 		test/testcases/confbasic-xml.filter \
 		test/update-expected-output.sh utils/crm_clean.py \
 		utils/crm_pkg.py utils/crm_rpmcheck.py
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/lib/ocf
+
+CONFLICTS_INSTALL=	crm114 # bin/crm
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		DOCS MANPAGES
 OPTIONS_DEFAULT=	MANPAGES

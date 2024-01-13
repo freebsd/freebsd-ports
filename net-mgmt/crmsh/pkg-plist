@@ -1,5 +1,5 @@
 bin/crm
-etc/crm/crm.conf.sample
+@sample etc/crm/crm.conf.sample
 etc/crm/profiles.yml
 %%PYTHON_SITELIBDIR%%/crmsh-4.5.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/crmsh-4.5.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
