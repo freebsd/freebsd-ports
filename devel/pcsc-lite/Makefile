@@ -12,11 +12,10 @@ LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix perl5 pkgconfig python shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python:env shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
-PYTHON_NO_DEPENDS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-libsystemd \
@@ -27,14 +26,19 @@ INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	src/spy/pcsc-spy
 SUB_FILES=	pkg-message
 
-LIB_DEPENDS+=	libpolkit-gobject-1.so:sysutils/polkit
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES POLKIT
 OPTIONS_GROUP=		FEATURES
 OPTIONS_GROUP_FEATURES=	FILTER
+OPTIONS_DEFAULT=	POLKIT
+
 FEATURES_DESC=		Default features knobs
 FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
+POLKIT_DESC=		Enable polkit support
+
 FILTER_CONFIGURE_ENABLE=	filter
+
+POLKIT_LIB_DEPENDS=		libpolkit-gobject-1.so:sysutils/polkit
+POLKIT_CONFIGURE_ENABLE=	polkit
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
