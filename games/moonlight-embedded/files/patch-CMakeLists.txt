@@ -1,45 +1,14 @@
---- CMakeLists.txt.orig	2023-09-01 23:40:56 UTC
+--- CMakeLists.txt.orig	2023-11-03 06:08:34 UTC
 +++ CMakeLists.txt
-@@ -5,14 +5,11 @@ SET(CMAKE_C_STANDARD 99)
- include(${CMAKE_ROOT}/Modules/GNUInstallDirs.cmake)
- include(${CMAKE_SOURCE_DIR}/cmake/generate_version_header.cmake)
+@@ -87,6 +87,11 @@ add_executable(moonlight ${SRC_LIST})
+ target_link_libraries(moonlight m)
+ target_link_libraries(moonlight gamestream)
  
--add_compile_options(-Wall -Wextra -Wno-unused-parameter -Wno-pointer-sign -Wno-sign-compare -Wno-switch)
--
- aux_source_directory(./src SRC_LIST)
- list(APPEND SRC_LIST ./src/input/evdev.c ./src/input/mapping.c ./src/input/udev.c)
- 
- set(MOONLIGHT_DEFINITIONS)
- 
--find_package(ALSA)
- find_package(Opus REQUIRED)
- find_package(Broadcom-OMX)
- find_package(Freescale)
-@@ -46,10 +43,8 @@ if (ENABLE_FFMPEG)
-   endif()
- endif()
- if (ENABLE_PULSE)
--  pkg_check_modules(PULSE libpulse-simple)
- endif()
- if (ENABLE_CEC)
--  pkg_check_modules(CEC libcec>=4)
- endif()
- 
- pkg_check_modules(MMAL mmal)
-@@ -91,7 +86,6 @@ if (CEC_FOUND)
++if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++  set(ALSA_FOUND FALSE)
++  target_sources(moonlight PRIVATE ./src/audio/oss.c)
++endif()
++
+ if (CEC_FOUND)
    list(APPEND MOONLIGHT_DEFINITIONS HAVE_LIBCEC)
    list(APPEND MOONLIGHT_OPTIONS CEC)
-   target_sources(moonlight PRIVATE ./src/input/cec.c)
--  target_include_directories(moonlight PRIVATE ./third_party/libcec ${CEC_INCLUDE_DIRS})
-   target_link_libraries(moonlight ${CEC_LIBRARIES})
- endif()
- 
-@@ -158,7 +152,7 @@ if (SOFTWARE_FOUND)
-   if(X11_FOUND)
-     list(APPEND MOONLIGHT_DEFINITIONS HAVE_X11)
-     list(APPEND MOONLIGHT_OPTIONS X11)
--    target_sources(moonlight PRIVATE ./src/video/x11.c ./src/video/egl.c ./src/input/x11.c)
-+    target_sources(moonlight PRIVATE ./src/video/x11.c ./src/video/egl.c ./src/input/x11.c ./src/audio/oss.c)
-     target_include_directories(moonlight PRIVATE ${XLIB_INCLUDE_DIRS} ${EGL_INCLUDE_DIRS} ${GLES_INCLUDE_DIRS})
-     target_link_libraries(moonlight ${XLIB_LIBRARIES} ${EGL_LIBRARIES} ${GLES_LIBRARIES})
-   endif()

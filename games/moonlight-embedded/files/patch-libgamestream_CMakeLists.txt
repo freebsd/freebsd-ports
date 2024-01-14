@@ -1,4 +1,4 @@
---- libgamestream/CMakeLists.txt.orig	2023-09-01 23:40:56 UTC
+--- libgamestream/CMakeLists.txt.orig	2023-11-03 06:08:34 UTC
 +++ libgamestream/CMakeLists.txt
 @@ -3,7 +3,7 @@ set(SO_VERSION 4)
  find_package(LibUUID REQUIRED)

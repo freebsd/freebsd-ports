@@ -1,5 +1,5 @@
 PORTNAME=	moonlight-embedded
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-embedded/releases/download/v${DISTVERSION}/
 
@@ -33,10 +33,20 @@ USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-DHAS_SOCKLEN_T=1 -I${LOCALBASE}/include/libepoll-shim/
 LDFLAGS+=	-lepoll-shim
+CMAKE_OFF=	ENABLE_CEC ENABLE_PULSE
+CMAKE_ON=	ENET_NO_INSTALL
 
-post-patch:
-	@${REINPLACE_CMD} -e 's@/usr/local@${PREFIX}@' \
+PLIST_FILES=	bin/moonlight \
+		"@sample etc/moonlight.conf.sample" \
+		share/man/man1/moonlight.1.gz \
+		share/moonlight/gamecontrollerdb.txt
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|/etc/moonlight/|${PREFIX}/etc/moonlight/|g' \
 		${WRKSRC}/docs/README.pod
+	@${REINPLACE_CMD} -e 's@/usr/local@${PREFIX}@' \
+		-e 's@/etc@${PREFIX}/etc@' \
+		${WRKSRC}/src/config.c
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/moonlight.conf \
