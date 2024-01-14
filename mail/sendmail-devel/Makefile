@@ -1,6 +1,6 @@
 PORTNAME=	sendmail
-PORTVERSION=	8.18.0.2
-PORTREVISION=	3
+PORTVERSION=	8.18.0.6
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
@@ -48,10 +48,10 @@ MILTER_SOVER?=	6
 
 OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS DANE SASL SASLAUTHD LDAP \
 			BDB GDBM SOCKETMAP CYRUSLOOKUP BLACKLISTD SMTPUTF8 \
-			PICKY_HELO_CHECK BARELF MILTER MTA_STS \
+			PICKY_HELO_CHECK MILTER MTA_STS \
 			TLS_CERT_CHAIN DOCS
 OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS DANE SASL SASLAUTHD BDB1 \
-			BLACKLISTD PICKY_HELO_CHECK BARELF MILTER
+			BLACKLISTD PICKY_HELO_CHECK MILTER
 NO_OPTIONS_SORT=yes
 SHMEM_DESC=		System V shared memory support
 LA_DESC=		load averages support
@@ -64,7 +64,6 @@ SOCKETMAP_DESC=		Enable socketmap feature
 BLACKLISTD_DESC=	Enable blacklistd support
 CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
-BARELF_DESC=		Enable checking for "bare LF" in message
 MILTER_DESC=		Enable milter support
 SMTPUTF8_DESC=		Enable unicode address support
 MTA_STS_DESC=		Enable MTA-STS support (option SOCKETMAP and TLS needed)
@@ -197,11 +196,6 @@ do-configure:
 .if ${PORT_OPTIONS:MPICKY_HELO_CHECK}
 	${ECHO_CMD} \
 	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DPICKY_HELO_CHECK'\'')' \
-		>> ${WCONF}/site.config.m4
-.endif
-.if ${PORT_OPTIONS:MBARELF}
-	${ECHO_CMD} \
-	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_BARE_LF'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 .if ! ${PORT_OPTIONS:MSHMEM}
