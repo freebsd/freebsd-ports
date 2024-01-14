@@ -1,11 +1,11 @@
 PORTNAME=	thonny
 PORTVERSION=	4.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel education python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	kenrap@kennethraplee.com
 COMMENT=	Python IDE for beginners
 WWW=		https://thonny.org/
 
