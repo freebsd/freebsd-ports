@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	9.0-rc4
+DISTVERSION=	9.0-rc5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/9.0/
