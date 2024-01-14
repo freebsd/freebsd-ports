@@ -1,5 +1,5 @@
 PORTNAME=	nickle
-PORTVERSION=	2.96
+PORTVERSION=	2.97
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
@@ -10,7 +10,9 @@ WWW=		https://www.nickle.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake localbase ncurses readline
+USES=		gmake localbase ncurses readline shebangfix
+
+SHEBANG_FILES=	bench/runbench.sh
 
 GNU_CONFIGURE=	yes
 PORTEXAMPLES=	*
