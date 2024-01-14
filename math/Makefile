@@ -436,6 +436,7 @@
     SUBDIR += lcalc
     SUBDIR += ldouble
     SUBDIR += lean
+    SUBDIR += lean4
     SUBDIR += lemon
     SUBDIR += levmar
     SUBDIR += lib2geom

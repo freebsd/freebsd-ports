@@ -1,0 +1,23 @@
+--- src/CMakeLists.txt.orig	2023-12-21 22:11:33 UTC
++++ src/CMakeLists.txt
+@@ -352,6 +352,11 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+   string(APPEND LEANC_EXTRA_FLAGS " -fPIC")
+   string(APPEND LEANSHARED_LINKER_FLAGS " -Wl,-rpath=\\$$ORIGIN/..:\\$$ORIGIN")
+   string(APPEND CMAKE_EXE_LINKER_FLAGS " -lleanshared -Wl,-rpath=\\\$ORIGIN/../lib:\\\$ORIGIN/../lib/lean")
++elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++  string(APPEND CMAKE_CXX_FLAGS " -fPIC -ftls-model=initial-exec")
++  string(APPEND LEANC_EXTRA_FLAGS " -fPIC")
++  string(APPEND LEANSHARED_LINKER_FLAGS " -Wl,-rpath=\\$$ORIGIN/..:\\$$ORIGIN")
++  string(APPEND CMAKE_EXE_LINKER_FLAGS " -lleanshared -Wl,-rpath=\\\$ORIGIN/../lib:\\\$ORIGIN/../lib/lean")
+ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   string(APPEND CMAKE_CXX_FLAGS " -ftls-model=initial-exec")
+   string(APPEND LEANSHARED_LINKER_FLAGS " -install_name @rpath/libleanshared.dylib")
+@@ -592,7 +597,7 @@ endif()
+   file(CREATE_LINK ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}/src/lean RESULT _IGNORE_RES SYMBOLIC)
+ endif()
+ 
+-install(DIRECTORY "${CMAKE_SOURCE_DIR}/" DESTINATION src/lean
++install(DIRECTORY "${CMAKE_SOURCE_DIR}/" DESTINATION share/lean4/src/lean
+         FILES_MATCHING
+         PATTERN "*.lean"
+         PATTERN "*.md"

@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+================================================================================
+You installed Lean: The Theorem Prover.
+
+(1) Please note that Lean requires /proc to be mounted.
+
+    The usual way to do this is to add this line to /etc/fstab:
+    proc /proc procfs rw 0 0
+
+    and then run this command as root:
+    # mount /proc
+
+(2) You might also want to install mathlibtools (math/mathlibtools) in case
+    you need to use the mathematical library of Lean.
+    mathlibtools download this library to user's home directory for further
+    use by Lean.
+================================================================================
+EOM
+}
+]
