@@ -284,6 +284,7 @@
     SUBDIR += vile
     SUBDIR += vim
     SUBDIR += vim-colorschemes-legacy
+    SUBDIR += vim-lsp
     SUBDIR += vis
     SUBDIR += vscode
     SUBDIR += web-mode
