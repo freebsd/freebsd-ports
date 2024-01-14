@@ -13,7 +13,6 @@ share/man/man1/sfddiff.1.gz
 share/applications/org.fontforge.FontForge.desktop
 %%DATADIR%%/cidmap/Adobe-CNS1-6.cidmap
 %%DATADIR%%/cidmap/Adobe-GB1-5.cidmap
-%%DATADIR%%/cidmap/Adobe-Identity-0.cidmap
 %%DATADIR%%/cidmap/Adobe-Japan1-5.cidmap
 %%DATADIR%%/cidmap/Adobe-Japan1-6.cidmap
 %%DATADIR%%/cidmap/Adobe-Japan1-7.cidmap
@@ -399,6 +398,7 @@ share/locale/fr/LC_MESSAGES/FontForge.mo
 share/locale/hr/LC_MESSAGES/FontForge.mo
 share/locale/it/LC_MESSAGES/FontForge.mo
 share/locale/ja/LC_MESSAGES/FontForge.mo
+share/locale/ka_GE/LC_MESSAGES/FontForge.mo
 share/locale/ko/LC_MESSAGES/FontForge.mo
 share/locale/ml/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
