@@ -1,5 +1,5 @@
 PORTNAME=	pg8000
-PORTVERSION=	1.28.1
+PORTVERSION=	1.30.4
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,16 @@ WWW=		https://github.com/tlocke/pg8000
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scramp>=0:security/py-scramp@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}versioningit>=2.1.0:devel/py-versioningit@${PY_FLAVOR}
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.2:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scramp>=1.4.4:security/py-scramp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.0:devel/py-asn1crypto@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pg8000-112 # lib/python3.8/site-packages/pg8000/__init__.py
 
