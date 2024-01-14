@@ -1,5 +1,5 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.27.2
+DISTVERSION=	0.27.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aho-corasick-1.0.1 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.4 \
-		ansi_term-0.12.1 \
 		anstream-0.5.0 \
 		anstyle-1.0.2 \
 		anstyle-parse-0.2.1 \
@@ -38,7 +37,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
 		bumpalo-3.12.0 \
-		byteorder-1.4.3 \
+		byteorder-1.5.0 \
 		bytes-1.5.0 \
 		camino-1.1.1 \
 		cargo-platform-0.1.2 \
@@ -57,6 +56,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		coveralls-api-0.6.0 \
 		crc32fast-1.3.2 \
 		deflate-1.0.0 \
+		derive_more-0.99.17 \
 		encoding_rs-0.8.33 \
 		enum-display-0.1.3 \
 		enum-display-macro-0.1.3 \
@@ -75,7 +75,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-sink-0.3.28 \
 		futures-task-0.3.28 \
 		futures-util-0.3.28 \
-		gimli-0.28.0 \
+		gimli-0.28.1 \
 		git2-0.18.1 \
 		glob-0.3.1 \
 		gzip-header-1.0.0 \
@@ -112,7 +112,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linux-raw-sys-0.4.10 \
 		llvm_profparser-0.3.3 \
 		log-0.4.17 \
-		matchers-0.0.1 \
+		matchers-0.1.0 \
 		matches-0.1.9 \
 		md5-0.7.0 \
 		memchr-2.6.3 \
@@ -125,26 +125,28 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		native-tls-0.2.11 \
 		nix-0.27.1 \
 		nom-7.1.1 \
+		nu-ansi-term-0.46.0 \
 		num-traits-0.2.15 \
 		num_cpus-1.16.0 \
 		object-0.26.2 \
-		object-0.32.1 \
+		object-0.32.2 \
 		once_cell-1.13.1 \
 		openssl-0.10.57 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.25.0+1.1.1t \
 		openssl-sys-0.9.92 \
+		overload-0.1.1 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.76 \
 		procfs-0.16.0 \
 		procfs-core-0.16.0 \
 		quick-error-1.2.3 \
 		quick-xml-0.31.0 \
-		quote-1.0.33 \
+		quote-1.0.35 \
 		redox_syscall-0.2.16 \
 		regex-1.10.2 \
 		regex-automata-0.1.10 \
@@ -157,16 +159,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.21 \
 		rusty-fork-0.3.0 \
-		ruzstd-0.4.0 \
+		ruzstd-0.5.0 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
 		semver-1.0.13 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
-		serde_json-1.0.108 \
+		serde-1.0.195 \
+		serde_derive-1.0.195 \
+		serde_json-1.0.111 \
 		serde_spanned-0.6.4 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.4 \
@@ -177,13 +179,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.28 \
+		syn-2.0.46 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.3.0 \
 		thiserror-1.0.32 \
-		thiserror-core-1.0.38 \
-		thiserror-core-impl-1.0.38 \
 		thiserror-impl-1.0.32 \
 		thread_local-1.1.4 \
 		tinyvec-1.6.0 \
@@ -198,8 +198,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
-		tracing-log-0.1.3 \
-		tracing-subscriber-0.2.25 \
+		tracing-log-0.2.0 \
+		tracing-subscriber-0.3.18 \
 		try-lock-0.2.4 \
 		twox-hash-1.6.3 \
 		unicase-2.7.0 \
