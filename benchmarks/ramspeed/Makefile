@@ -14,6 +14,10 @@ LICENSE_NAME=	Alasir Licence
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell
 
+BROKEN=		crashes upon execution, PR 275276
+DEPRECATED=	Upstream is dead and port is unfetchable
+EXPIRATION_DATE=2024-02-29
+
 USE_BINUTILS=	yes
 
 PLIST_FILES=	bin/ramspeed
