@@ -12,6 +12,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/bin/pycharm.sh
 %%DATADIR%%/bin/pycharm.svg
 %%DATADIR%%/bin/pycharm64.vmoptions
+%%DATADIR%%/bin/restarter
 %%DATADIR%%/build.txt
 %%DATADIR%%/help/ReferenceCard.pdf
 %%DATADIR%%/help/ReferenceCardForMac.pdf

@@ -1,5 +1,6 @@
 PORTNAME=	pycharm-ce
-DISTVERSION=	2023.3.2
+PORTVERSION=	2023.3.2
+PORTREVISION=	1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -14,6 +15,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
+		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
 USES=		python:run shebangfix
@@ -37,8 +39,7 @@ post-extract:
 	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -type d -empty -delete
 	@${RM} -r ${WRKSRC}/plugins/cwm-plugin/quiche-native
 	@${RM} -r ${WRKSRC}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process
-# Remove the bundled native Pty4J support libraries, they are replaced
-# by java/intellij-pty4j
+# Remove the bundled native Pty4J support libraries, they are replaced by java/jetbrains-pty4j
 	@${RM} -r ${WRKSRC}/lib/pty4j
 # Remove bundled linux-only JRE
 	@${RM} -r ${WRKSRC}/jbr
@@ -61,6 +62,8 @@ do-install:
 # Use pty4j replacement provided by devel/jetbrains-pty4j
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/x86-64
 	${LN} -sf ../../../../../jetbrains/pty4j/amd64/libpty.so ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/x86-64/libpty.so
+# Use restarter provided by devel/jetbrains-restarter
+	${LN} -sf ../../jetbrains/restarter/restarter ${STAGEDIR}${DATADIR}/bin/restarter
 # Use sqlite replacement provided by devel/jetbrains-sqlite
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/native/linux-x86_64
 	${LN} -sf ../../../../jetbrains/sqlite/amd64/libsqliteij.so ${STAGEDIR}${DATADIR}/lib/native/linux-x86_64/libsqliteij.so
