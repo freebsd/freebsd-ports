@@ -103,6 +103,7 @@
     SUBDIR += gir-to-d
     SUBDIR += gjs
     SUBDIR += gleam
+    SUBDIR += gluon
     SUBDIR += gnat12
     SUBDIR += gnatcross-binutils-aarch64
     SUBDIR += gnatcross-sysroot-aarch64
