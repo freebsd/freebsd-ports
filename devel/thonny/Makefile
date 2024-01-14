@@ -24,7 +24,20 @@ RUN_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python desktop-file-utils
+USE_PYTHON=	distutils
+
+ICON_SIZES=	16 22 32 48 64 128 192 256
+
+post-patch:
+	@${SED} -i '' -e "s|Exec=/usr/bin/|Exec=|" ${WRKSRC}/packaging/linux/*.desktop
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/packaging/linux/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
+.for sz in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${sz}x${sz}/apps
+	${INSTALL_DATA} ${WRKSRC}/packaging/icons/thonny-${sz}x${sz}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${sz}x${sz}/apps/thonny.png
+.endfor
 
 .include <bsd.port.mk>
