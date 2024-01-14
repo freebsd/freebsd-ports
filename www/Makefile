@@ -2311,6 +2311,7 @@
     SUBDIR += sogo2-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spreadlogd
+    SUBDIR += sqlpage
     SUBDIR += sqstat
     SUBDIR += squid
     SUBDIR += squid-langpack

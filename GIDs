@@ -808,7 +808,7 @@ plocate:*:860:
 # free: 864
 # free: 865
 # free: 866
-# free: 867
+sqlpage:*:867:
 jellyfin:*:868:
 keyd:*:869:
 buildbot:*:870:

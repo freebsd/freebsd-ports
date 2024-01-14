@@ -1,0 +1,11 @@
+{
+  // This is a json5 file where comments are allowed.
+  // Documentation for the configuration can be found here:
+  // https://github.com/lovasoa/SQLpage/blob/main/configuration.md
+  //
+  // If you keep database login credentials here, make sure to set
+  // access appropriately: chown sqlpage and chmod 600 
+
+  "database_url": "sqlite:///var/db/sqlpage/sqlpage.db?mode=rwc",
+  "web_root": "/usr/local/www/sqlpage",
+}

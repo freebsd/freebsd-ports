@@ -1,0 +1,7 @@
+bin/sqlpage
+@sample %%ETCDIR%%/sqlpage.json.sample
+@sample etc/newsyslog.conf.d/sqlpage.conf.sample
+@preunexec if cmp -s %D/%%WWWDIR%%/index.sql %D/%%DATADIR%%/index.sql; then rm -f %D/%%WWWDIR%%/index.sql; fi
+%%DATADIR%%/index.sql
+@postexec [ -f %D/%%WWWDIR%%/index.sql ] || cp %D/%%DATADIR%%/index.sql %D/%%WWWDIR%%/index.sql
+@dir %%WWWDIR%%
