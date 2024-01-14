@@ -1,0 +1,12 @@
+A Wayland compositor inspired by Window Maker.
+
+Key features:
+
+* Compositor for windows in stacking mode.
+* Supports multiple workspaces.
+* Appearance inspired by Window Maker, following the look and feel of NeXTSTEP.
+* Easy to use, lightweight, low gimmicks and fast.
+* Dock and clip, to be extended for dockable apps.
+
+Wayland Maker is in early development stage. For existing and planned features
+see https://github.com/phkaeser/wlmaker/blob/main/doc/ROADMAP.md

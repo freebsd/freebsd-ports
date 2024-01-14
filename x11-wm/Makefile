@@ -122,6 +122,7 @@
     SUBDIR += wayfire
     SUBDIR += wayfire-plugins-extra
     SUBDIR += windowmaker
+    SUBDIR += wlmaker
     SUBDIR += wm2
     SUBDIR += wmakerconf
     SUBDIR += wmanager

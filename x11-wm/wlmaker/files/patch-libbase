@@ -1,0 +1,33 @@
+https://github.com/phkaeser/libbase/pull/2
+
+--- submodules/libbase/subprocess.c.orig	2023-11-05 16:20:38 UTC
++++ submodules/libbase/subprocess.c
+@@ -27,6 +27,7 @@
+ #include <limits.h>
+ #include <errno.h>
+ #include <poll.h>
++#include <signal.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <regex.h>
+--- submodules/libbase/time.c.orig	2023-11-05 16:20:38 UTC
++++ submodules/libbase/time.c
+@@ -19,7 +19,8 @@
+  */
+ 
+ /// clock_gettime(2) is a POSIX extension, needs this macro.
+-#define _POSIX_C_SOURCE 199309L
++/// gettimeofday(2) is a XSI extension, needs this macro.
++#define _XOPEN_SOURCE 500
+ 
+ #include "log.h"
+ #include "time.h"
+@@ -30,7 +31,7 @@
+ #include <time.h>
+ #include <sys/time.h>
+ 
+-#undef _POSIX_C_SOURCE
++#undef _XOPEN_SOURCE
+ 
+ /* == Methods ============================================================== */
+ 
