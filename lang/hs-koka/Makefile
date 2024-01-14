@@ -1,6 +1,6 @@
 PORTNAME=	koka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	3.0.1
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -114,17 +114,19 @@ USE_CABAL=	Diff-0.5_1 \
 		transformers-compat-0.7.2 \
 		type-equality-1_6 \
 		unliftio-core-0.2.1.0_3 \
-		unordered-containers-0.2.19.1_3 \
+		unordered-containers-0.2.20_1 \
 		utf8-string-1.0.2 \
 		uuid-1.3.15_3 \
 		uuid-types-1.0.5.1 \
 		vector-0.13.1.0 \
-		vector-stream-0.1.0.0_3 \
+		vector-stream-0.1.0.1 \
 		void-0.7.3 \
 		witherable-0.4.2_4
 
 CABAL_EXECUTABLES=	${PORTNAME}
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
+
+PLIST_SUB+=	VER=${DISTVERSIONFULL}
 
 post-install:
 	cd ${WRKSRC} && \
