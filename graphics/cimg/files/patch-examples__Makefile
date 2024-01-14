@@ -1,6 +1,6 @@
---- examples/Makefile.orig	2022-08-19 17:18:04 UTC
+--- examples/Makefile.orig	2024-01-10 06:42:56 UTC
 +++ examples/Makefile
-@@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ ' ../CImg.h | t
+@@ -89,7 +89,7 @@ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
  SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
  
@@ -9,7 +9,7 @@
  
  EXE_PRE =
  EXE_EXT =
-@@ -111,7 +111,7 @@ IS_ICPC = 1
+@@ -111,7 +111,7 @@ CXXVER = $(CXX)
  endif
  
  CXXVER = $(CXX)
@@ -18,7 +18,7 @@
  LIBS = -lm
  ifdef IS_GCC
  CXXVER = $(shell $(CXX) -v 2>&1 | tail -n 1)
-@@ -151,7 +151,7 @@ DEBUG_CFLAGS = -Dcimg_verbosity=3 -Dcimg_strict_warnin
+@@ -151,7 +151,7 @@ VT100_CFLAGS = -Dcimg_use_vt100
  VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
@@ -27,7 +27,7 @@
  ifdef IS_GCC
  # Add -mtune=generic for GCC if supported.
  NO_MTUNE_GENERIC = $(shell $(CXX) -mtune=generic -E - < /dev/null > /dev/null 2>&1; echo $$?)
-@@ -176,9 +176,9 @@ endif
+@@ -176,9 +176,9 @@ OPENCV_DEFINE = -Dcimg_use_opencv
  
  # Flags to enable OpenCV support.
  OPENCV_DEFINE = -Dcimg_use_opencv
@@ -39,7 +39,7 @@
  
  # Flags used to disable display capablities of CImg
  NODISPLAY_CFLAGS = -Dcimg_display=0
-@@ -228,7 +228,7 @@ JPEG_LIBS = -ljpeg
+@@ -228,7 +228,7 @@ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
  TIFF_DEFINE = -Dcimg_use_tiff
  TIFF_INCDIR =
  TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
@@ -48,7 +48,7 @@
  
  # Flags to enable native support for loading HEIF image files, using the libheif library.
  # ( https://github.com/strukturag/libheif )
-@@ -247,16 +247,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lminc2 -lnetcdf -
+@@ -247,16 +247,16 @@ OPENEXR_DEFINE = -Dcimg_use_openexr
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -95,7 +95,7 @@
  
  # Flags to compile GIMP plug-ins.
  ifeq ($(MSYSTEM),MINGW32)
-@@ -372,6 +372,7 @@ $(TIFF_LIBS) \
+@@ -372,6 +372,7 @@ $(XSHM_LIBS)" \
  $(HEIF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
@@ -103,7 +103,15 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -465,8 +466,11 @@ $(ZLIB_CFLAGS) \
+@@ -452,6 +453,7 @@ $(OPT_CFLAGS) \
+ 	@$(MAKE) \
+ "CONF_CFLAGS = \
+ $(OPT_CFLAGS) \
++$(OPENMP_CFLAGS) \
+ $(VT100_CFLAGS) \
+ $(X11_CFLAGS) \
+ $(XSHM_CFLAGS) \
+@@ -465,8 +467,11 @@ $(MAGICK_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
@@ -115,7 +123,7 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -479,6 +483,8 @@ $(ZLIB_LIBS) \
+@@ -479,6 +484,8 @@ $(MAGICK_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
