@@ -44,6 +44,7 @@ DPDK_CPUTYPE=default
 
 MESON_ARGS=	-Ddefault_library=shared \
 		-Denable_kmods=true \
+		-Dc_link_args=-Wl,--undefined-version \
 		-Dmachine=${DPDK_CPUTYPE}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${DISTVERSION}
