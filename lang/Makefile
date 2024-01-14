@@ -205,6 +205,7 @@
     SUBDIR += nawk
     SUBDIR += nbfc
     SUBDIR += neko
+    SUBDIR += neocmakelsp
     SUBDIR += nesasm
     SUBDIR += newlisp
     SUBDIR += nhc98
