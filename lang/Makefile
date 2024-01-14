@@ -6,6 +6,7 @@
     SUBDIR += angelscript
     SUBDIR += antimony
     SUBDIR += apache-commons-jelly
+    SUBDIR += asm-lsp
     SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += awka
