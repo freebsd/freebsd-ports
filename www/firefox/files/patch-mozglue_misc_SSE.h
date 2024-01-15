@@ -12,7 +12,7 @@ index 71903756ea19..3591cc0f38e8 100644
  
  # Are we targeting x86 or x64?  If so, build gfxAlphaRecoverySSE2.cpp.
 -if CONFIG["INTEL_ARCHITECTURE"]:
-+if CONFIG["INTEL_ARCHITECTURE"] and CONFIG['CPU_ARCH'] == 'x86_64':
++if CONFIG["INTEL_ARCHITECTURE"] and CONFIG['TARGET_CPU'] == 'x86_64':
      SOURCES += ["gfxAlphaRecoverySSE2.cpp"]
      # The file uses SSE2 intrinsics, so it needs special compile flags on some
      # compilers.
