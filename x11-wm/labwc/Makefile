@@ -1,7 +1,10 @@
 PORTNAME=	labwc
 DISTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	774eb2170f11.patch:-p1 # https://github.com/labwc/labwc/pull/1429
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
