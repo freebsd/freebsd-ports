@@ -1,3 +1,5 @@
-TIMESTAMP = 1705134061
+TIMESTAMP = 1705316425
 SHA256 (leanprover-lean4-v4.5.0-rc1_GH0.tar.gz) = 8b5ae344816670adb2a68859b2f4c309592feb32674d477e46e061275f9e8129
 SIZE (leanprover-lean4-v4.5.0-rc1_GH0.tar.gz) = 17060956
+SHA256 (leanprover-std4-v4.5.0-rc1_GH0.tar.gz) = 2b2812f5b6f89ef4facc8d2bf09ecc33f5e9918f80573fa29662314102ca0455
+SIZE (leanprover-std4-v4.5.0-rc1_GH0.tar.gz) = 437646
