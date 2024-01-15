@@ -1,5 +1,6 @@
 PORTNAME=	tnef
 PORTVERSION=	1.4.12
+PORTREVISION=	1
 CATEGORIES=	converters mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
@@ -15,11 +16,11 @@ CPE_VENDOR=	tnef_project
 
 OPTIONS_DEFINE=	DOCS
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS BUGS NEWS README.md THANKS
 PLIST_FILES=	bin/tnef \
-		man/man1/tnef.1.gz
+		share/man/man1/tnef.1.gz
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
