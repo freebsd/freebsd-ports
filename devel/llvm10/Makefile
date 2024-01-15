@@ -19,6 +19,9 @@ LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE:=	${LICENSE:NARM}
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=	2024-03-31
+
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
 LLVM_SUFFIX=	${LLVM_MAJOR}
