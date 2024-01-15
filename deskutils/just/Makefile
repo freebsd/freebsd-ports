@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.22.1
+DISTVERSION=	1.23.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +43,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		fastrand-2.0.1 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
-		getrandom-0.2.11 \
+		getrandom-0.2.12 \
 		heck-0.3.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
@@ -77,7 +77,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
-		rustix-0.38.28 \
+		rustix-0.38.30 \
 		rustversion-1.0.14 \
 		ryu-1.0.16 \
 		semver-1.0.21 \
@@ -99,7 +99,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		tempfile-3.9.0 \
 		temptree-0.2.0 \
 		term_size-0.3.2 \
-		termcolor-1.4.0 \
+		termcolor-1.4.1 \
 		textwrap-0.11.0 \
 		thiserror-1.0.56 \
 		thiserror-impl-1.0.56 \
