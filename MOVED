@@ -2936,3 +2936,4 @@ net/downzemall|net/arrowdl|2024-01-11|Project was renamed upstream
 misc/mc-nox11|misc/mc|2024-01-15|No longer useful (misc/mc does not require Xlib at runtime)
 www/mongrel2||2024-01-15|Has expired: BROKEN for more than 2 years on all platforms after the EOL of 12
 net/unison232|net/unison240|2024-01-15|Has expired: More recent versions are in the tree consider using net/unison240
+science/libtensorflow1||2024-01-15|Has expired: Broken for more than a year

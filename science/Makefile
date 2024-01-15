@@ -163,7 +163,6 @@
     SUBDIR += libssm
     SUBDIR += libsvm
     SUBDIR += libsvm-python
-    SUBDIR += libtensorflow1
     SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
