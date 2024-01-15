@@ -1,6 +1,6 @@
 PORTNAME=	sharutils
 PORTVERSION=	4.15.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
@@ -14,7 +14,7 @@ USES=		charsetfix cpe perl5 tar:xz
 
 OPTIONS_DEFINE=	NLS
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 INFO=		sharutils
