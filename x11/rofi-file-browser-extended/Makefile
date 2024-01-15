@@ -1,5 +1,6 @@
 PORTNAME=	rofi-file-browser-extended
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -17,10 +18,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	marvinkreis
 USE_GNOME=	cairo glib20
 
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man/man1 \
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man/man1 \
 		-DROFI_PLUGINS_DIR=${PREFIX}/lib/rofi
 
 PLIST_FILES=	lib/rofi/filebrowser.so \
-		man/man1/rofi-file-browser-extended.1.gz
+		share/man/man1/rofi-file-browser-extended.1.gz
 
 .include <bsd.port.mk>
