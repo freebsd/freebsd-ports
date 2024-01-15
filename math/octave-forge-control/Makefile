@@ -21,6 +21,9 @@ OCTAVE_SRC=	${GH_PROJECT}-control-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 
+post-patch:
+	${MV} ${WRKSRC}/TG04BX.f ${WRKSRC_slicot}/src
+
 pre-configure:
 	${REINPLACE_CMD} -e '/SC_SRC.*\:\=/s+slicot+${WRKSRC_slicot}'+ ${WRKSRC}/Makefile
 
