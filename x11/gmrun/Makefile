@@ -1,5 +1,6 @@
 PORTNAME=	gmrun
 DISTVERSION=	1.4w
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	garga@FreeBSD.org
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wdlkmpx
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	README.md
