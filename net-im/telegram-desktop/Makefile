@@ -105,8 +105,8 @@ TELEGRAM_API_ID=	601761
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079
-USES+=	llvm:max=15,build
+.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1400000 && ${OSVERSION} < 1400091) || ${OSVERSION} < 1302507)
+USES+=	llvm:min=16,build
 .else
 USES+=	compiler:c++20-lang
 .endif
