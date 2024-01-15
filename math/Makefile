@@ -304,6 +304,7 @@
     SUBDIR += edenmath
     SUBDIR += eigen3
     SUBDIR += eispack
+    SUBDIR += elan
     SUBDIR += elemental
     SUBDIR += elementary-calculator
     SUBDIR += elpa

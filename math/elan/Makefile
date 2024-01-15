@@ -1,0 +1,262 @@
+PORTNAME=	elan
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.0
+CATEGORIES=	math
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Lean version manager
+WWW=		https://github.com/leanprover/elan
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	gmake:devel/gmake
+LIB_DEPENDS=	libcurl.so:ftp/curl
+
+USES=		cargo perl5
+USE_PERL5=	build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	leanprover
+
+CARGO_CRATES=	addr2line-0.19.0 \
+		adler-1.0.2 \
+		aes-0.7.5 \
+		aho-corasick-1.0.1 \
+		aligned-0.4.1 \
+		ansi_term-0.12.1 \
+		as-slice-0.2.1 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		backtrace-0.3.67 \
+		base64-0.21.0 \
+		base64ct-1.0.1 \
+		bitflags-1.3.2 \
+		block-buffer-0.9.0 \
+		block-buffer-0.10.4 \
+		bumpalo-3.12.1 \
+		byteorder-1.4.3 \
+		bytes-1.4.0 \
+		bzip2-0.4.4 \
+		bzip2-sys-0.1.11+1.0.8 \
+		cc-1.0.79 \
+		cfg-if-1.0.0 \
+		cipher-0.3.0 \
+		clap-2.34.0 \
+		constant_time_eq-0.1.5 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.4 \
+		cpufeatures-0.2.7 \
+		crc32fast-1.3.2 \
+		crossbeam-utils-0.8.15 \
+		crypto-common-0.1.6 \
+		curl-0.4.44 \
+		curl-sys-0.4.61+curl-8.0.1 \
+		cvt-0.1.2 \
+		digest-0.9.0 \
+		digest-0.10.6 \
+		dirs-3.0.2 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.3.7 \
+		dirs-sys-next-0.1.2 \
+		either-1.8.1 \
+		encoding_rs-0.8.32 \
+		env_proxy-0.4.1 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		error-chain-0.12.4 \
+		fastrand-1.9.0 \
+		filetime-0.2.21 \
+		flate2-1.0.25 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.1.0 \
+		fs_at-0.1.5 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
+		futures-util-0.3.28 \
+		gcc-0.3.55 \
+		generic-array-0.14.7 \
+		getrandom-0.2.9 \
+		gimli-0.27.2 \
+		h2-0.3.18 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.1 \
+		hmac-0.12.1 \
+		http-0.2.9 \
+		http-body-0.4.5 \
+		httparse-1.8.0 \
+		httpdate-1.0.2 \
+		hyper-0.14.26 \
+		hyper-tls-0.5.0 \
+		idna-0.3.0 \
+		indexmap-1.9.3 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.10 \
+		ipnet-2.7.2 \
+		itertools-0.10.5 \
+		itoa-1.0.6 \
+		jobserver-0.1.26 \
+		js-sys-0.3.61 \
+		json-0.12.4 \
+		lazy_static-1.4.0 \
+		libc-0.2.142 \
+		libz-sys-1.1.8 \
+		linux-raw-sys-0.3.4 \
+		log-0.4.17 \
+		markdown-0.3.0 \
+		memchr-2.5.0 \
+		mime-0.3.17 \
+		miniz_oxide-0.6.2 \
+		mio-0.8.6 \
+		native-tls-0.2.11 \
+		nix-0.26.2 \
+		normpath-1.1.1 \
+		object-0.30.3 \
+		ole32-sys-0.2.0 \
+		once_cell-1.17.1 \
+		opaque-debug-0.3.0 \
+		openssl-0.10.51 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-src-111.25.3+1.1.1t \
+		openssl-sys-0.9.86 \
+		password-hash-0.3.2 \
+		pbkdf2-0.10.1 \
+		percent-encoding-2.2.0 \
+		pest-2.5.7 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		pipeline-0.5.0 \
+		pkg-config-0.3.26 \
+		ppv-lite86-0.2.17 \
+		proc-macro2-1.0.56 \
+		quote-1.0.26 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.2.16 \
+		redox_syscall-0.3.5 \
+		redox_users-0.4.3 \
+		regex-1.8.1 \
+		regex-syntax-0.7.1 \
+		remove_dir_all-0.8.2 \
+		reqwest-0.11.16 \
+		rustc-demangle-0.1.23 \
+		rustix-0.37.14 \
+		rustversion-1.0.12 \
+		ryu-1.0.13 \
+		same-file-1.0.6 \
+		schannel-0.1.21 \
+		scopeguard-1.1.0 \
+		security-framework-2.8.2 \
+		security-framework-sys-2.8.0 \
+		semver-0.11.0 \
+		semver-parser-0.10.2 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
+		serde_json-1.0.96 \
+		serde_urlencoded-0.7.1 \
+		sha1-0.10.5 \
+		sha2-0.9.9 \
+		sha2-0.10.6 \
+		slab-0.4.8 \
+		smart-default-0.6.0 \
+		socket2-0.4.9 \
+		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
+		strsim-0.8.0 \
+		subtle-2.4.1 \
+		syn-1.0.109 \
+		syn-2.0.15 \
+		tar-0.4.38 \
+		tempfile-3.5.0 \
+		term-0.7.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		time-0.3.20 \
+		time-core-0.1.0 \
+		time-macros-0.2.8 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.27.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-util-0.7.7 \
+		toml-0.5.11 \
+		tower-service-0.3.2 \
+		tracing-0.1.37 \
+		tracing-core-0.1.30 \
+		try-lock-0.2.4 \
+		typenum-1.16.0 \
+		ucd-trie-0.1.5 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.8 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		url-2.3.1 \
+		vcpkg-0.2.15 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.3 \
+		want-0.3.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-futures-0.4.34 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
+		web-sys-0.3.61 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
+		winreg-0.8.0 \
+		winreg-0.10.1 \
+		xattr-0.2.3 \
+		zip-0.6.2 \
+		zstd-0.10.2+zstd.1.5.2 \
+		zstd-safe-4.1.6+zstd.1.5.2 \
+		zstd-sys-1.6.3+zstd.1.5.2
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-init
+	@${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-init ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
