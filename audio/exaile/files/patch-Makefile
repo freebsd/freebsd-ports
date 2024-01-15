@@ -1,14 +1,5 @@
 --- Makefile.orig	2018-02-09 15:54:09 UTC
 +++ Makefile
-@@ -6,7 +6,7 @@ EPREFIX        = $(PREFIX)
- 
- LIBINSTALLDIR  = $(EPREFIX)/lib
- DATADIR        = $(PREFIX)/share
--MANPREFIX      = $(PREFIX)/share
-+MANPREFIX     ?= $(PREFIX)/share
- # /etc if PREFIX is /usr, $PREFIX/etc otherwise.
- ETCDIR        := $(shell [ "$(PREFIX)" = "/usr" ] && echo /etc || echo "$(PREFIX)/etc")
- XDGCONFDIR     = $(ETCDIR)/xdg
 @@ -23,6 +23,7 @@ EXAILELIBDIR   = $(DESTDIR)$(LIBINSTALLDIR)/exaile
  EXAILESHAREDIR = $(DESTDIR)$(DATADIR)/exaile
  EXAILECONFDIR  = $(DESTDIR)$(XDGCONFDIR)/exaile
