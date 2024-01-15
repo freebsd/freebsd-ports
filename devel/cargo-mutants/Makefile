@@ -1,7 +1,7 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.12.2
-PORTREVISION=	1
+DISTVERSION=	24.1.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -119,6 +119,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		regex-syntax-0.8.2 \
 		rustix-0.37.25 \
 		rustix-0.38.13 \
+		rustversion-1.0.14 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
@@ -131,6 +132,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		similar-2.2.1 \
 		smallvec-1.11.0 \
 		strsim-0.10.0 \
+		strum-0.25.0 \
+		strum_macros-0.25.3 \
 		subprocess-0.2.9 \
 		syn-2.0.33 \
 		tempfile-3.8.0 \
