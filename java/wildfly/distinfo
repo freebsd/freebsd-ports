@@ -1,3 +1,3 @@
-TIMESTAMP = 1705320872
-SHA256 (wildfly-24.0.1.Final.tar.gz) = 783f3c2f980779873abc70bc9517511d6506936c1b611c028e773ee91e54ee8f
-SIZE (wildfly-24.0.1.Final.tar.gz) = 210680621
+TIMESTAMP = 1705326043
+SHA256 (wildfly-25.0.1.Final.tar.gz) = 41c2f2a9cbc286f76f50c309054af4f2da081ed04e13eec03188d7d27592b16b
+SIZE (wildfly-25.0.1.Final.tar.gz) = 220115626
