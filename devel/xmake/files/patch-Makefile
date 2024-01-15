@@ -1,15 +1,15 @@
---- ./Makefile.orig	2014-02-19 12:33:07.233262579 +0100
-+++ ./Makefile	2014-02-19 12:33:45.211272300 +0100
-@@ -6,7 +6,7 @@
+--- Makefile.orig	2002-12-11 20:51:25 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ IBDIR= $(PREFIX)/bin
  EXE= xmake
  PREFIX ?= /usr/local
  IBDIR= $(PREFIX)/bin
 -IMDIR= $(PREFIX)/man/man1
-+IMDIR= $(MANPREFIX)/man/man1
++IMDIR= $(MANPREFIX)/share/man/man1
  BSD_INSTALL_PROGRAM ?= install -c -s -m 755
  BSD_INSTALL_MAN ?= install -c -m 644
  
-@@ -19,6 +19,6 @@
+@@ -19,6 +19,6 @@ install: all
  	rm -f $(OBJS) $(EXE)
  
  install: all
