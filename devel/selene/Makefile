@@ -10,6 +10,8 @@ WWW=		https://kampfkarren.github.io/selene/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # next release should fix this
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kampfkarren
