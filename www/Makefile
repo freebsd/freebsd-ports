@@ -430,7 +430,6 @@
     SUBDIR += moinmoin
     SUBDIR += moinmoincli
     SUBDIR += mongoose
-    SUBDIR += mongrel2
     SUBDIR += monolith
     SUBDIR += moodle41
     SUBDIR += moodle42
