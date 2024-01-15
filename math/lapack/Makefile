@@ -1,7 +1,7 @@
 PORTNAME?=	lapack
 PORTVERSION=	3.12.0
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-PORTREVISION=	1
+PORTREVISION=	2
 .else
 PORTREVISION?=	1	# Never remove this line, keep PORTREVISION?=0 in case.
 .endif
@@ -127,7 +127,7 @@ post-build:
 
 pre-su-install:
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-	cd ${WRKDIR} && ${FIND} man/man3 -type f | ${GREP} -v Users_julie | \
+	cd ${WRKDIR} && ${FIND} man/man3 -type f | ${GREP} -v '/\._' | \
 	tee ${WRKDIR}/manpages | ${SED} 's|^|share/|; s|$$|.gz|' >> ${TMPPLIST}
 	cd ${WRKDIR} && \
 	${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${PREFIX}/share/man/man3 < ${WRKDIR}/manpages
