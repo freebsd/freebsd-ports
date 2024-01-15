@@ -11,6 +11,8 @@ WWW=		https://github.com/yamafaktory/yume
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/yamafaktory/yume/issues/4
+
 USES=		cargo
 
 USE_GITHUB=	yes
