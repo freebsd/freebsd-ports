@@ -11,6 +11,8 @@ WWW=		https://github.com/out-of-cheese-error/the-way
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/out-of-cheese-error/the-way/issues/160
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	out-of-cheese-error
