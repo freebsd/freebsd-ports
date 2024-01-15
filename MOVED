@@ -2933,3 +2933,4 @@ net-im/libaccounts-qt5|net-im/libaccounts-qt|2024-01-05|Renamed to support flavo
 devel/py-pygithub|devel/py-PyGithub|2024-01-06|Rename port match upstream
 devel/freebsd-gcc9||2024-01-09|No longer able to build base system, use GCC 12 or later instead
 net/downzemall|net/arrowdl|2024-01-11|Project was renamed upstream
+misc/mc-nox11|misc/mc|2023-01-15|No longer useful (misc/mc does not require Xlib at runtime)

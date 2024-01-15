@@ -259,7 +259,6 @@
     SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
-    SUBDIR += mc-nox11
     SUBDIR += mdp
     SUBDIR += meshoptimizer
     SUBDIR += metalink-checker
