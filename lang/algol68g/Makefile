@@ -1,5 +1,5 @@
 PORTNAME=	algol68g
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.6
 CATEGORIES=	lang
 MASTER_SITES=	https://jmvdveer.home.xs4all.nl/
 
@@ -13,7 +13,9 @@ USES=		readline
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	CURL GSL PGSQL PLOTUTILS RMATH
+PORTDOCS=	AUTHORS NEWS README
+
+OPTIONS_DEFINE=	CURL DOCS GSL PGSQL PLOTUTILS RMATH
 OPTIONS_DEFAULT=	CURL GSL PGSQL PLOTUTILS RMATH
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
@@ -35,10 +37,11 @@ RMATH_LIB_DEPENDS=	libRmath.so:math/libRmath
 RMATH_CONFIGURE_ENABLE=	mathlib
 
 post-patch:
-#	Skip broken check, assume our $CC works
-	@${REINPLACE_CMD} -Ee 's/.*(\*-freebsd)/\1/' \
-		-e 's|"xgcc"|"x${CC}"|; s/-ldl //' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^install-data-am/s/install-docDATA//' \
+# Trim architecture constraints from the target triple to allow building
+# on every platform FreeBSD supports (now or in the future)
+	@${REINPLACE_CMD} -e 's/.*\(\*-freebsd\)/\1/' ${WRKSRC}/configure
+# Do not install GPLv3 boilerplate and ChangeLog which redirects to NEWS
+	@${REINPLACE_CMD} -e '/^doc_DATA/s/ COPYING ChangeLog//' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
