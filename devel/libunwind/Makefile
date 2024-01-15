@@ -27,7 +27,7 @@ PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|pp
 
 CPE_VENDOR=	libunwind_project
 
-LIBUNWIND_VERSION=	1.7.2
+LIBUNWIND_VERSION=	1.8.0
 
 .include <bsd.port.options.mk>
 
