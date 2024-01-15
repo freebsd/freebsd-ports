@@ -1,6 +1,6 @@
 bin/wmbiff
-man/man1/wmbiff.1.gz
-man/man5/wmbiffrc.5.gz
+share/man/man1/wmbiff.1.gz
+share/man/man5/wmbiffrc.5.gz
 %%DATADIR%%/sample.wmbiffrc
 %%DATADIR%%/skins/wmbiff-classic-master-contrast.xpm
 %%DATADIR%%/skins/wmbiff-classic-master-led.xpm

@@ -1,6 +1,6 @@
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	https://www.dockapps.net/download/
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 USES=		pkgconfig xorg
 
 USE_XORG=	x11 xext xpm
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	GNUTLS
