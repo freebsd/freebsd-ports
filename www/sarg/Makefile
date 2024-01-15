@@ -1,6 +1,6 @@
 PORTNAME=	sarg
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +18,7 @@ OPTIONS_SUB=	yes
 PHP_DESC=	Install PHP for reporting generating
 
 USES=		autoreconf gmake
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}" \
 		--enable-fontdir="${ETCDIR}/fonts" \
 		--enable-imagedir="${ETCDIR}/images"
