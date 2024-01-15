@@ -13,6 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/rustwasm/wasm-pack/issues/1361
+
 BUILD_DEPENDS=	gmake:devel/gmake \
 		zstd>0:archivers/zstd
 LIB_DEPENDS=	libcurl.so:ftp/curl
