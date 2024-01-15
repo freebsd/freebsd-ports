@@ -225,6 +225,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fits.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fl32.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fl32.so
+%%FLIF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/flif.la
+%%FLIF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/flif.so
 %%FPX%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fpx.la
 %%FPX%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fpx.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ftxt.la
@@ -446,12 +448,12 @@ lib/libMagickCore-7.a
 lib/libMagickCore-7.la
 lib/libMagickCore-7.so
 lib/libMagickCore-7.so.10
-lib/libMagickCore-7.so.10.0.0
+lib/libMagickCore-7.so.10.0.1
 lib/libMagickWand-7.a
 lib/libMagickWand-7.la
 lib/libMagickWand-7.so
 lib/libMagickWand-7.so.10
-lib/libMagickWand-7.so.10.0.0
+lib/libMagickWand-7.so.10.0.1
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
@@ -776,6 +778,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/montage.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/motion-picture.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/multispectral-imagery.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/news.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/opencl.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/openmp.html
@@ -816,5 +819,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/wand.c
 %%PORTDOCS%%%%DOCSDIR%%-7/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/support.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/vpat.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/wand.png
 %%PORTDOCS%%%%DOCSDIR%%-7/www/webp.html
