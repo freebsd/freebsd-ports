@@ -74,7 +74,7 @@ include/hydrogen/core/Timeline.h
 include/hydrogen/core/Version.h
 include/hydrogen/core/rt_clock.h
 lib/libhydrogen-core-%%HYDROGEN_VERSION%%.so
-man/man1/hydrogen.1.gz
+share/man/man1/hydrogen.1.gz
 share/appdata/org.hydrogenmusic.Hydrogen.appdata.xml
 share/applications/org.hydrogenmusic.Hydrogen.desktop
 %%DATADIR%%/data/click.wav
