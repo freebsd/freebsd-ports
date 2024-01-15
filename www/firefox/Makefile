@@ -1,6 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	121.0.1
-PORTREVISION=	2
+DISTVERSION=	122.0
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.95:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=8.2.2:print/harfbuzz \
+		harfbuzz>=8.3.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.39:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
