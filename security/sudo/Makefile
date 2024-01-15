@@ -1,5 +1,6 @@
 PORTNAME=	sudo
 PORTVERSION=	1.9.15p5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -15,8 +16,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cpe libtool pkgconfig
 CPE_VENDOR=	todd_miller
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man \
+		--sysconfdir=${PREFIX}/etc \
 		--with-env-editor \
 		--with-ignore-dot \
 		--with-logfac=${LOGFAC} \
