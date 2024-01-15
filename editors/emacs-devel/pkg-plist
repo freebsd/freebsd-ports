@@ -3603,6 +3603,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elixir-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/erts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/erts-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/etags-regen.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/etags-regen.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/etags.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/etags.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/executable.el.gz
