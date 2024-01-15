@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	compilation breaks with fatal warning: implicit conversion from 'std::numeric_limits<unsigned long long>::type' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/qdrant/qdrant/issues/3392
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 
