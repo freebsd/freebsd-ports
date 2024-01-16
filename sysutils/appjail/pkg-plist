@@ -166,3 +166,4 @@ libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
 %%EXAMPLESDIR%%/templates/linux.conf
 %%EXAMPLESDIR%%/templates/vnet.conf
 %%EXAMPLESDIR%%/templates/xorg.conf
+%%DATADIR%%/scripts/create-bridge.sh
