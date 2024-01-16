@@ -1,5 +1,5 @@
 bin/nvim
-man/man1/nvim.1.gz
+share/man/man1/nvim.1.gz
 share/applications/nvim.desktop
 share/icons/hicolor/128x128/apps/nvim.png
 %%NLS%%share/locale/af/LC_MESSAGES/nvim.mo
