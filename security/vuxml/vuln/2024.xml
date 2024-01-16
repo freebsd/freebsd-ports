@@ -1,3 +1,83 @@
+  <vuln vid="7467c611-b490-11ee-b903-001fc69cd6dc">
+    <topic>xorg server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.11,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nextserver</name>
+	<range><lt>21.1.11,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>23.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg/2024-January/061525.html">
+	  <ul>
+	    <li>CVE-2023-6816: Heap buffer overflow in DeviceFocusEvent
+	    and ProcXIQueryPointer
+
+	    <p>Both DeviceFocusEvent and the XIQueryPointer reply contain a bit
+	    for each logical button currently down. Buttons can be arbitrarily
+	    mapped to any value up to 255 but the X.Org Server was only
+	    allocating space for the device's number of buttons,
+	    leading to a heap overflow if a bigger value was used.</p></li>
+	    <li>CVE-2024-0229: Reattaching to different master device may lead
+	    to out-of-bounds memory access
+
+	    <p>If a device has both a button class and a key class and
+	    numButtons is zero, we can get an out-of-bounds write due
+	    to event under-allocation in the DeliverStateNotifyEvent
+	    function.</p></li>
+
+	    <li>CVE-2024-21885: Heap buffer overflow in
+	    XISendDeviceHierarchyEvent
+
+	    <p>The XISendDeviceHierarchyEvent() function allocates space to
+	    store up to MAXDEVICES (256) xXIHierarchyInfo structures in info.
+	    If a device with a given ID was removed and a new device with
+	    the same ID added both in the same operation,
+	    the single device ID will lead to two info structures being
+	    written to info.
+	    Since this case can occur for every device ID at once,
+	    a total of two times MAXDEVICES info structures might be written
+	    to the allocation, leading to a heap buffer overflow.</p></li>
+
+	    <li>CVE-2024-21886: Heap buffer overflow in DisableDevice
+
+	    <p>The DisableDevice() function is called whenever an enabled device
+	    is disabled and it moves the device from the inputInfo.devices
+	    linked list to the inputInfo.off_devices linked list.
+	    However, its link/unlink operation has an issue during the recursive
+	    call to DisableDevice() due to the prev pointer pointing to a
+	    removed device.
+	    This issue leads to a length mismatch between the total number of
+	    devices and the number of device in the list, leading to a heap
+	    overflow and, possibly, to local privilege escalation.</p></li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6816</cvename>
+      <cvename>CVE-2024-0229</cvename>
+      <cvename>CVE-2024-21885</cvename>
+      <cvename>CVE-2024-21886</cvename>
+      <url>https://lists.x.org/archives/xorg/2024-January/061525.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-16</discovery>
+      <entry>2024-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28b42ef5-80cd-440c-904b-b7fbca74c73d">
     <topic>electron{26,27} -- multiple vulnerabilities</topic>
     <affects>
