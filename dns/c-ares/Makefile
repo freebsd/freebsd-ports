@@ -1,5 +1,6 @@
 PORTNAME=	c-ares
 DISTVERSION=	1.25.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/cares-${DISTVERSION:S/./_/g}/ \
 		https://c-ares.org/download/
@@ -15,8 +16,6 @@ USES=		cmake compiler:c++11-lang pathfix
 USE_LDCONFIG=	yes
 
 CONFLICTS=	py*-ripe.atlas.tools
-
-CMAKE_ARGS=		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 
 OPTIONS_DEFINE=		TEST
 
