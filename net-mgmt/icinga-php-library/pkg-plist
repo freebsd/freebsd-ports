@@ -82,6 +82,7 @@
 %%WWWDIR%%/asset/static/img/select-icon.svg
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
+%%WWWDIR%%/patches/ramsey-collection.patch
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/brick/math/LICENSE
 %%WWWDIR%%/vendor/brick/math/composer.json
@@ -112,6 +113,10 @@
 %%WWWDIR%%/vendor/composer/installed.json
 %%WWWDIR%%/vendor/composer/installed.php
 %%WWWDIR%%/vendor/composer/platform_check.php
+%%WWWDIR%%/vendor/cweagans/composer-patches/composer.json
+%%WWWDIR%%/vendor/cweagans/composer-patches/src/PatchEvent.php
+%%WWWDIR%%/vendor/cweagans/composer-patches/src/PatchEvents.php
+%%WWWDIR%%/vendor/cweagans/composer-patches/src/Patches.php
 %%WWWDIR%%/vendor/doctrine/collections/.doctrine-project.json
 %%WWWDIR%%/vendor/doctrine/collections/LICENSE
 %%WWWDIR%%/vendor/doctrine/collections/composer.json
