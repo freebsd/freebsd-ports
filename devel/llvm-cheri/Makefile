@@ -156,7 +156,7 @@ USES+=		${_USES_PYTHON}
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
-.include "${.CURDIR}/Makefile.MAN1SRCS"
+.sinclude "${.CURDIR}/Makefile.MAN1SRCS"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import ${LIT_MOD_NAME}|' \
