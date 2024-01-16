@@ -61,7 +61,6 @@ include/wangle/client/persistence/LRUPersistentCache-inl.h
 include/wangle/client/persistence/LRUPersistentCache.h
 include/wangle/client/persistence/PersistentCache.h
 include/wangle/client/persistence/PersistentCacheCommon.h
-include/wangle/client/persistence/SharedMutexCacheLockGuard.h
 include/wangle/client/persistence/test/Mocks.h
 include/wangle/client/persistence/test/TestUtil.h
 include/wangle/client/ssl/SSLSessionCacheData.h
