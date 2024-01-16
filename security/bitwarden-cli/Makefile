@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2023.12.1
+DISTVERSION=	2024.1.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -49,7 +49,7 @@ PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 PREFETCH_FILE=	${PORTNAME}-${DISTVERSION}-node-modules${EXTRACT_SUFX}
-PREFETCH_TIMESTAMP=	1703830974
+PREFETCH_TIMESTAMP=	61171200
 PKG_NODE_VER=	18.15.0
 PKG_FETCH_VER=	3.5
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
@@ -89,7 +89,7 @@ post-extract:
 
 post-patch:
 	# apply FreeBSD patches for node
-	for p in ${.CURDIR:H:H}/www/node${NODEJS_VERSION}/files/patch-*; do \
+	for p in ${PATCHDIR}/node/patch-*;do \
 		${PATCH} -s -p0 -d ${WRKDIR}/node-v${PKG_NODE_VER} < $${p}; \
 	done
 	# apply node patch from pkg-fetch

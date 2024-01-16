@@ -1,6 +1,6 @@
 {
   "name": "@bitwarden/web-vault",
-  "version": "2023.12.0",
+  "version": "2024.1.0",
   "scripts": {
     "build:oss": "webpack",
     "build:bit": "webpack -c ../../bitwarden_license/bit-web/webpack.config.js",
@@ -12,6 +12,7 @@
     "build:bit:qa": "cross-env NODE_ENV=production ENV=qa npm run build:bit",
     "build:bit:euprd": "cross-env NODE_ENV=production ENV=euprd npm run build:bit",
     "build:bit:euqa": "cross-env NODE_ENV=production ENV=euqa npm run build:bit",
+    "build:bit:usdev": "cross-env NODE_ENV=production ENV=usdev npm run build:bit",
     "build:bit:cloud": "cross-env NODE_ENV=production ENV=cloud npm run build:bit",
     "build:oss:selfhost:watch": "cross-env ENV=selfhosted npm run build:oss:watch",
     "build:bit:selfhost:watch": "cross-env ENV=selfhosted npm run build:bit:watch",
