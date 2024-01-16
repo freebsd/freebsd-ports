@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.0.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	30
@@ -24,9 +24,9 @@ CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3? cyrus-imapd3?-http
 USES=		compiler:c11 cpe gmake libtool perl5 pkgconfig ssl
 USE_RC_SUBR=	imapd
 CYRUS_PREFIX=	${PREFIX}/cyrus
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libexecdir=${CYRUS_PREFIX}/libexec \
-		--mandir=${PREFIX}/share/man \
 		--sbindir=${CYRUS_PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-user=${CYRUS_USER} \
