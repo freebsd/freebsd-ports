@@ -23,7 +23,15 @@ Wazuh Agent was installed
 
   # /var/ossec/packages_files/agent_installation_scripts
 
-5) Add Wazuh agent to /etc/rc.conf
+5) FreeBSD SCA files are installed by default to the following directory:
+
+   # /var/ossec/packages_files/agent_installation_scripts/sca/freebsd
+
+   For more information about FreeBSD SCA updates take a look at:
+
+   https://github.com/alonsobsd/wazuh-freebsd
+
+6) Add Wazuh agent to /etc/rc.conf
 
   # sysrc wazuh_agent_enable="YES"
 
@@ -31,11 +39,11 @@ Wazuh Agent was installed
 
   # service wazuh-agent enable
 
-6) Start Wazuh agent
+7) Start Wazuh agent
 
   # service wazuh-agent start
 
-7) Enjoy it ;)
+8) Enjoy it ;)
 EOM
 }
 ]
