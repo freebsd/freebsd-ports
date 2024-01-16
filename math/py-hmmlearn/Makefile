@@ -25,7 +25,7 @@ USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 post-stage:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hmmlearn/_hmmc.cpython-39.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hmmlearn/_hmmc.cpython-${PYTHON_SUFFIX}.so
 
 # 2023-12-29: Tests currently fail due to known upstream issues
 do-test:
