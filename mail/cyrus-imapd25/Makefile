@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.5.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	25
@@ -23,9 +23,10 @@ CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3? cyrus-imapd3?-http
 
 USES=		cpe libtool perl5 ssl
 USE_RC_SUBR=	imapd
-GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man \
+		--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${CYRUS_PREFIX} \
 		--with-cyrus-user=${CYRUS_USER} \
 		--with-cyrus-group=${CYRUS_GROUP} \
@@ -183,7 +184,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/man.d/cyrus-imapd.conf
 .for s in 1 3 5
 .  for m in ${MAN_MAN${s}}
-	@${ECHO_CMD} man/man${s}/${m}.${s}.gz >> ${TMPPLIST}
+	@${ECHO_CMD} share/man/man${s}/${m}.${s}.gz >> ${TMPPLIST}
 .  endfor
 .endfor
 .for s in 1 3
