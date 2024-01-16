@@ -1,5 +1,5 @@
 PORTNAME=	joomla
-DISTVERSION=	5-0-0
+DISTVERSION=	5-0-2
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla5/${DISTVERSION}/
 PKGNAMESUFFIX=	5
