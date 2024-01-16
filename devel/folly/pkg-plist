@@ -433,8 +433,9 @@ include/folly/experimental/observer/WithJitter.h
 include/folly/experimental/observer/detail/Core.h
 include/folly/experimental/observer/detail/GraphCycleDetector.h
 include/folly/experimental/observer/detail/ObserverManager.h
+include/folly/experimental/settings/Immutables.h
 include/folly/experimental/settings/Settings.h
-include/folly/experimental/settings/SettingsMetadata.h
+include/folly/experimental/settings/Types.h
 include/folly/experimental/settings/detail/SettingsImpl.h
 include/folly/experimental/symbolizer/Dwarf.h
 include/folly/experimental/symbolizer/DwarfImpl.h
