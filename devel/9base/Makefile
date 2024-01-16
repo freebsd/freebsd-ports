@@ -25,6 +25,7 @@ rc_CMD=		${PREFIX}/9/bin/rc
 MAKE_ARGS=	PREFIX="${PREFIX}/9" CC="${CC}" \
 		CFLAGS="${CFLAGS} -I. -c" LDFLAGS="${LDFLAGS} -L."
 MAKE_JOBS_UNSAFE=	yes
+MANDIRS=	${PREFIX}/9/share/man
 
 # Fix build on current
 CFLAGS+=	-fcommon
