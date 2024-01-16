@@ -438,6 +438,7 @@
     SUBDIR += ldouble
     SUBDIR += lean
     SUBDIR += lean4
+    SUBDIR += lean4-std
     SUBDIR += leangz
     SUBDIR += lemon
     SUBDIR += levmar
