@@ -1,8 +1,8 @@
 bin/dolphin-emu
 bin/dolphin-emu-nogui
 bin/dolphin-tool
-man/man6/dolphin-emu-nogui.6.gz
-man/man6/dolphin-emu.6.gz
+share/man/man6/dolphin-emu-nogui.6.gz
+share/man/man6/dolphin-emu.6.gz
 share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GC/dsp_coef.bin
 %%DATADIR%%/sys/GC/dsp_rom.bin
