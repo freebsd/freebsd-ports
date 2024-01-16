@@ -1,6 +1,6 @@
 PORTNAME=	commons-math
 PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	APACHE_COMMONS_SOURCE \
 		https://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
@@ -23,7 +23,7 @@ USE_ANT=	yes
 USE_JAVA=	yes
 USE_LOCALE=	en_US.ISO8859-1
 
-ALL_TARGET=	jar
+ALL_TARGET=	compile jar
 MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true
 
 JARFILE=	${PORTNAME:S,3,,}-3.6.jar
