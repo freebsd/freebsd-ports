@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-01-11 10:03:52 UTC
++++ meson.build
+@@ -393,7 +393,7 @@
+ )
+ 
+ xmlxxconfig_h_meson = files('libxml++config.h.meson')
+-install_includeconfigdir = install_libdir / xmlxx_pcname / 'include'
++install_includeconfigdir = install_includedir / xmlxx_pcname / 'include'
+ configure_file(
+   input: xmlxxconfig_h_meson,
+   output: 'libxml++config.h',

@@ -41,6 +41,6 @@ include/libxml++-%%API_VERSION%%/libxml++/validators/xsdvalidator.h
 include/libxml++-%%API_VERSION%%/libxml++/xsdschema.h
 lib/libxml++-%%VERSION%%.a
 lib/libxml++-%%VERSION%%.so
-lib/libxml++-%%VERSION%%.so.0
-lib/libxml++-%%VERSION%%.so.0.0.0
+lib/libxml++-%%VERSION%%.so.1
+lib/libxml++-%%VERSION%%.so.1.0.0
 libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
