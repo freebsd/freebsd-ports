@@ -1,6 +1,6 @@
 PORTNAME=	squidclamav
 PORTVERSION=	7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	SF
 
@@ -17,7 +17,8 @@ USES=		cpe libtool shebangfix
 CPE_VENDOR=	darold
 
 SHEBANG_FILES=	cgi-bin/clwarn.cgi*
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--sysconfdir="${PREFIX}/etc/c-icap" \
 		--with-c-icap=${LOCALBASE}

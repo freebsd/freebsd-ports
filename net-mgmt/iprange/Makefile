@@ -1,6 +1,6 @@
 PORTNAME=	iprange
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/firehol/iprange/releases/download/v${PORTVERSION}/
 
@@ -12,7 +12,8 @@ LICENSE=	GPLv2+
 
 USES=		tar:xz
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/iprange \
 		share/man/man1/iprange.1.gz

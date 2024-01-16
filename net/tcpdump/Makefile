@@ -1,6 +1,6 @@
 PORTNAME=	tcpdump
 PORTVERSION=	4.99.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
 USES=		cpe gmake
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	sbin/tcpdump \
 		share/man/man1/tcpdump.1.gz

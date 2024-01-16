@@ -1,6 +1,6 @@
 PORTNAME=	jed
 DISTVERSION=	0.99-19
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v${PORTVERSION:R}/ \
@@ -25,7 +25,8 @@ HOSTLOOKUP_DESC=Look-up for hostname
 OPTIONS_SUB=	yes
 USES=		tar:bzip2
 DIST_SUBDIR=	jed
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 
