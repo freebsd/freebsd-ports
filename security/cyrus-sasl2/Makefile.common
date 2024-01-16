@@ -11,10 +11,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		gmake
 USE_LDCONFIG=	yes
 USES+=		ssl
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-CONFIGURE_ARGS+=--mandir=${PREFIX}/share/man \
-		--sysconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
 		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--with-dbpath=${SASLDB_DIR}/sasldb2 \
