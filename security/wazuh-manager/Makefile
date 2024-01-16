@@ -1,9 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.1
-PORTREVISION=	1
+DISTVERSION=	4.7.2
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/23/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/24/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -23,17 +22,23 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		autoconf>=2.71:devel/autoconf
 LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
-		libnghttp2.so:www/libnghttp2
+		libnghttp2.so:www/libnghttp2 \
+		libffi.so:devel/libffi \
+		libarrow.so:databases/arrow
 
 USES=		cpe gmake perl5 python:3.9 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
+GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes OPTIMIZE_CPYTHON=no
 
 WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
+WAZUH_EXTRAFILE=	alonsobsd-${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME}_GH0${EXTRACT_SUFX}
+WAZUH_EXTRAFILE_TAGNAME=cd0051b
+
 EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
 			curl.tar.gz:wazuh_sources \
 			jemalloc.tar.gz:wazuh_sources \
@@ -119,7 +124,7 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 
 WAZUHPREFIX=	/var/ossec
 
-WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+WZPYTHONWHEELS=	aiohttp-3.9.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		cffi-1.14.4-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		cryptography-3.3.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		frozenlist-1.2.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -161,16 +166,21 @@ post-extract:
 .for FILE in ${EXTERNAL_DISTFILES}
 	@cd ${WRKSRC}/src/external && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_sources//} ${EXTRACT_AFTER_ARGS}
 .endfor
+	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_EXTRAFILE} ${EXTRACT_AFTER_ARGS}
+	@${MV} ${WRKDIR}/${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME} ${WRKDIR}/wazuh-freebsd
+
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHEFILE} ${EXTRACT_AFTER_ARGS}
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHENAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 .	for FILE in ${WZPYTHONWHEELS}
 		@${MV} ${WRKSRC}/src/wazuh-cache/${FILE} ${WRKSRC}/src/wazuh-cache/${FILE:S/${FBSD_VERSION_BASE}/${FBSD_RELEASE}/}
 .	endfor
 	@${RM} ${WRKSRC}/src/external/cpython/python
+
+	@${MKDIR} ${WRKSRC}/ruleset/sca/freebsd
+	@cd ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/sca && ${CP} *.yml ${WRKSRC}/ruleset/sca/freebsd/
 	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${MV} "{}" "{}.disabled" \;
 
 post-patch:
-	${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_HOST_NAME_MAX|g' ${WRKSRC}/src/wazuh_modules/wm_database.c
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
 	${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/src/external/cpython/configure
 
@@ -222,9 +232,14 @@ do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/src/default-firewall-drop ${STAGEDIR}${WAZUHPREFIX}/active-response/bin/firewall-drop
 
+# Install rules files
 	${INSTALL_DATA} ${WRKSRC}/ruleset/rules/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/rules
+	${INSTALL_DATA} ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/rules/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/rules
 
+# Install decoders files
 	${INSTALL_DATA} ${WRKSRC}/ruleset/decoders/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/decoders
+	${INSTALL_DATA} ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/decoders/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/decoders
+
 	${INSTALL_DATA} ${WRKSRC}/ruleset/rootcheck/db/*.txt ${STAGEDIR}${WAZUHPREFIX}/etc/rootcheck
 
 	${INSTALL_DATA} ${WRKSRC}/etc/local_decoder.xml ${STAGEDIR}${WAZUHPREFIX}/etc/decoders/local_decoder.xml.sample
@@ -276,6 +291,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle
 
+# Install SCA files
 	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml.disabled" -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca/ \;
 
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhext.so ${STAGEDIR}${WAZUHPREFIX}/lib
@@ -317,6 +333,8 @@ do-install:
 		${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/etc/templates/
 	cd ${WRKSRC}/src && ${COPYTREE_SHARE} init \
 		${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/src/
+	cd ${WRKSRC}/ruleset && ${COPYTREE_SHARE} sca \
+		${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/
 
 	${INSTALL_SCRIPT} ${WRKSRC}/gen_ossec.sh ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/
 	${INSTALL_SCRIPT} ${WRKSRC}/add_localfiles.sh ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/
@@ -324,6 +342,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/os_dbd/postgresql.schema ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3.9
+	@${FIND} ${STAGEDIR}${WAZUHPREFIX}/framework -type f -name "*.so" -exec ${STRIP_CMD} "{}" \;
 .for FILE in ${WZSHEBANG_FILES}
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||g' ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/${FILE}
 .endfor
