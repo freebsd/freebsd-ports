@@ -1,13 +1,12 @@
---- config.mk.orig	2008-07-30 19:11:59.000000000 +0200
-+++ config.mk	2008-07-30 19:13:21.000000000 +0200
-@@ -4,20 +4,20 @@
+--- config.mk.orig	2008-07-29 18:24:03 UTC
++++ config.mk
+@@ -4,20 +4,20 @@ VERSION = 0.2
  # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
--MANPREFIX = ${PREFIX}/share/man
 +PREFIX ?= /usr/local
-+MANPREFIX = ${PREFIX}/man
+ MANPREFIX = ${PREFIX}/share/man
  
 -X11INC = /usr/X11R6/include
 -X11LIB = /usr/X11R6/lib
