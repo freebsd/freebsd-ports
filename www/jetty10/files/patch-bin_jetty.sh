@@ -1,6 +1,6 @@
---- bin/jetty.sh.orig	2016-03-19 21:43:53 UTC
+--- bin/jetty.sh.orig	2024-01-15 19:55:56 UTC
 +++ bin/jetty.sh
-@@ -166,7 +166,7 @@ then
+@@ -313,7 +313,7 @@ then
    ETC=$HOME/etc
  fi
  
@@ -9,3 +9,12 @@
    if [ -f "$CONFIG" ] ; then
      readConfig "$CONFIG"
    fi
+@@ -459,7 +459,7 @@ then
+   (( DEBUG )) && echo "$JETTY_CONF: (begin read) JETTY_ARGS.length=${#JETTY_ARGS[@]}"
+   while read -r CONF
+   do
+-    if expr "$CONF" : '#' >/dev/null ; then
++    if expr -- "$CONF" : '#' >/dev/null ; then
+       continue
+     fi
+ 
