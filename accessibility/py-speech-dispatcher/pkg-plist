@@ -1,5 +1,4 @@
 bin/spd-conf
-share/man/man1/spd-conf.1.gz
 %%PYTHON_SITELIBDIR%%/speechd/__init__.py
 %%PYTHON_SITELIBDIR%%/speechd/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/speechd/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -21,5 +20,6 @@ share/man/man1/spd-conf.1.gz
 %%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/speechd_config/buildconfig.py
 %%PYTHON_SITELIBDIR%%/speechd_config/config.py
+share/man/man1/spd-conf.1.gz
 share/sounds/speech-dispatcher/test.wav
 %%DATADIR%%/conf/desktop/speechd.desktop

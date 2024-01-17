@@ -1,11 +1,7 @@
 PORTNAME=	speech-dispatcher
-DISTVERSION=	0.11.2
-PORTREVISION=	4
+DISTVERSION=	0.11.5
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/brailcom/speechd/commit/
-PATCHFILES=	c204a23db76345d0bce2cdf395517c99699a8a4a.diff:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Common interface to speech synthesis
@@ -19,14 +15,15 @@ LIB_DEPENDS=	libdotconf.so:devel/dotconf \
 		libltdl.so:devel/libltdl \
 		libsndfile.so:audio/libsndfile
 
-USES=		alias autoreconf gettext gmake gnome libtool makeinfo pathfix pkgconfig
+USES=		alias gettext gmake gnome libtool makeinfo pathfix pkgconfig
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-espeak-ng=no \
 		--with-baratinoo=no \
 		--with-kali=no \
-		--with-ibmtts=no
+		--with-ibmtts=no \
+		--with-oss \
+		--without-systemdsystemunitdir
 CFLAGS+=	-fcommon -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
@@ -43,7 +40,7 @@ ETCFILES=	clients/emacs.conf modules/cicero.conf modules/dtk-generic.conf \
 		modules/flite.conf modules/llia_phon-generic.conf modules/mary-generic.conf \
 		modules/mimic3-generic.conf modules/swift-generic.conf speechd.conf
 
-PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README TODO
+PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README* TODO
 
 INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
 
@@ -86,8 +83,14 @@ ETCFILES+=		modules/voxin.conf
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
-		${WRKSRC}/src/modules/*.c \
+# ibmtts.c is omitted, because it is disabled by default
+.for f in espeak.c ivona.c pico.c
+	${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,g' \
+		${WRKSRC}/src/modules/${f}
+.endfor
+	${REINPLACE_CMD} -e 's,/etc,${LOCALBASE}/etc,g ;\
+		s,/usr/bin,${LOCALBASE}/bin,g ;\
+		s,/usr/share,${LOCALBASE}/share,g' \
 		${WRKSRC}/config/modules/*.conf
 
 post-install:
@@ -107,9 +110,9 @@ NO_ARCH=	yes
 USES+=		python shebangfix
 SHEBANG_FILES=	src/api/python/speechd_config/spd-conf
 USE_PYTHON=	flavors
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 
 .endif
 
