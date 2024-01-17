@@ -1,5 +1,7 @@
+%%AARCH64%%%%CLIENT%%bin/etl.aarch64
 %%AMD64%%%%CLIENT%%bin/etl.x86_64
 %%I386%%%%CLIENT%%bin/etl.i386
+%%AARCH64%%%%DEDICATED%%bin/etlded.aarch64
 %%AMD64%%%%DEDICATED%%bin/etlded.x86_64
 %%I386%%%%DEDICATED%%bin/etlded.i386
 lib/etlegacy/etmain/campaigncycle.cfg
@@ -116,12 +118,15 @@ lib/etlegacy/legacy/luascripts/wolfadmin/util/settings.lua
 lib/etlegacy/legacy/luascripts/wolfadmin/util/tables.lua
 lib/etlegacy/legacy/luascripts/wolfadmin/util/timers.lua
 lib/etlegacy/legacy/luascripts/wolfadmin/util/util.lua
+%%AARCH64%%lib/etlegacy/legacy/qagame.mp.fbsd.aarch64.so
 %%AMD64%%lib/etlegacy/legacy/qagame.mp.fbsd.x86_64.so
 %%I386%%lib/etlegacy/legacy/qagame.mp.fbsd.i386.so
 lib/etlegacy/legacy/rules.toml
 lib/etlegacy/legacy/wolfadmin.toml
+%%AARCH64%%lib/etlegacy/librenderer_opengl1_aarch64.so
 %%AMD64%%lib/etlegacy/librenderer_opengl1_x86_64.so
 %%I386%%lib/etlegacy/librenderer_opengl1_i386.so
+%%AARCH64%%share/applications/com.etlegacy.ETLegacy.aarch64.desktop
 %%AMD64%%share/applications/com.etlegacy.ETLegacy.x86_64.desktop
 %%I386%%share/applications/com.etlegacy.ETLegacy.i386.desktop
 %%DOCSDIR%%/INSTALL.txt

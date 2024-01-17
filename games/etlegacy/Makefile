@@ -1,5 +1,6 @@
 PORTNAME=	etlegacy
 DISTVERSION=	2.81.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.etlegacy.com/geoip/:geoip \
 		https://mirror.etlegacy.com/wolfadmin/:wolfadmin
@@ -54,10 +55,16 @@ SUB_FILES=	pkg-message
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	I386="" \
+		AARCH64="@comment " \
 		AMD64="@comment "
 .elif ${ARCH} == "amd64"
 PLIST_SUB+=	I386="@comment " \
+		AARCH64="@comment " \
 		AMD64=""
+.elif ${ARCH} == "aarch64"
+PLIST_SUB+=	I386="@comment " \
+		AARCH64="" \
+		AMD64="@comment"
 .endif
 
 .if ! ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MDEDICATED}
