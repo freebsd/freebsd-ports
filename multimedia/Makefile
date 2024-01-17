@@ -3,7 +3,6 @@
     SUBDIR += Bento4
     SUBDIR += ab-av1
     SUBDIR += ab25
-    SUBDIR += acidrip
     SUBDIR += aegisub
     SUBDIR += alass
     SUBDIR += aom

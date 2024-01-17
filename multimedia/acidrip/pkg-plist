@@ -1,7 +1,0 @@
-bin/acidrip
-%%SITE_PERL%%/AcidRip/acidrip.pm
-%%SITE_PERL%%/AcidRip/interface.pm
-%%SITE_PERL%%/AcidRip/logo.png
-%%SITE_PERL%%/AcidRip/messages.pm
-%%SITE_PERL%%/AcidRip/signals.pm
-%%PERL5_MAN1%%/acidrip.1.gz
