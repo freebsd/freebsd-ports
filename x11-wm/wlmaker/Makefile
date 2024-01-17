@@ -1,7 +1,7 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1-430
-DISTVERSIONSUFFIX=	-ged7a302
+DISTVERSION=	0.1-433
+DISTVERSIONSUFFIX=	-g5a6b8ab
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -29,9 +29,8 @@ USES=		cmake compiler:c11 gnome pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:c215f7d:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:9a7149e:libbase/submodules/libbase
 CFLAGS+=	-ffile-prefix-map="${WRKSRC}"=
-LDFLAGS+=	-Wl,--as-needed # https://github.com/phkaeser/wlmaker/issues/12
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
 		share/icons/${PORTNAME}/chrome-48x48.png \

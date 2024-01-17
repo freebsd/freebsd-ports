@@ -1,9 +1,0 @@
-https://github.com/phkaeser/wlmaker/issues/13
-
---- apps/CMakeLists.txt.orig	2024-01-14 14:29:59 UTC
-+++ apps/CMakeLists.txt
-@@ -19,3 +19,4 @@ TARGET_LINK_LIBRARIES(wlmclock libwlclient primitives 
- ADD_EXECUTABLE(wlmclock wlmclock.c)
- TARGET_INCLUDE_DIRECTORIES(wlmclock PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
- TARGET_LINK_LIBRARIES(wlmclock libwlclient primitives m)
-+INSTALL(TARGETS wlmclock DESTINATION bin)
