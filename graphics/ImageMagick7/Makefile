@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libltdl.so:devel/libltdl	\
 		libzstd.so:archivers/zstd	\
 		libzip.so:archivers/libzip
+TEST_DEPENDS=	gsfonts>=0:print/gsfonts
 
 FLAVORS=		x11 nox11
 FLAVOR?=		${FLAVORS:[1]}
@@ -49,10 +50,12 @@ SAMPLE_FILES=	colors.xml delegates.xml log.xml mime.xml policy.xml \
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
+TEST_TARGET=	check
+
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FLIF FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG JXL LCMS2 LZMA LQR MODULES \
-		OPENEXR OPENMP PDF PERL PNG TESTS TIFF WEBP WMF THREADS \
+		OPENEXR OPENMP PDF PERL PNG TIFF WEBP WMF THREADS \
 		16BIT_PIXEL HDRI HEIF RAW
 OPTIONS_DEFAULT=16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE HEIF \
 		JPEG2000 JBIG JPEG JXL LCMS2 LZMA LQR MODULES OPENEXR PDF PERL PNG \
@@ -72,7 +75,7 @@ CONFIGURE_ARGS+=	--without-x
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
 FFMPEG_DESC=		VIDEO codec support as FFmpeg
-TESTS_DESC=		Run bundled self-tests after build
+FLIF_DESC=		Free Lossless Image Format support
 #SIMD_CONFIGURE_WITH=	gcc-arch
 CONFIGURE_ARGS+=	--without-gcc-arch
 
@@ -165,8 +168,6 @@ RAW_IMPLIES=		LCMS2
 SVG_DESC=		SVG vector image format support (via librsvg, implies the x11 option)
 SVG_CONFIGURE_WITH=	rsvg
 SVG_USE=		gnome=cairo,gdkpixbuf2,librsvg2
-
-TESTS_TEST_DEPENDS=	gsfonts>=0:print/gsfonts
 
 TIFF_CONFIGURE_WITH=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
@@ -346,10 +347,5 @@ post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/ImageMagick-7/${i} \
 		${STAGEDIR}${PREFIX}/etc/ImageMagick-7/${i}.sample
 .endfor
-
-post-install-TESTS-on: test
-
-do-test:
-	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} ${_MAKE_JOBS} check
 
 .include <bsd.port.mk>
