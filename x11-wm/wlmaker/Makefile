@@ -5,6 +5,8 @@ DISTVERSIONSUFFIX=	-ged7a302
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0179c3c5a837.patch:-p1 # https://github.com/phkaeser/libbase/pull/2
+PATCHFILES+=	811db3b1582a.patch:-p1 # https://github.com/phkaeser/libbase/pull/2
 PATCHFILES+=	486758619471.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
 PATCHFILES+=	3a64446b128a.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
 PATCHFILES+=	2a7108e964e0.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
