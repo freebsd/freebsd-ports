@@ -15,7 +15,6 @@
     SUBDIR += bug5
     SUBDIR += c2t
     SUBDIR += cconv
-    SUBDIR += celvis
     SUBDIR += chiconv
     SUBDIR += chinese-calendar
     SUBDIR += cless
