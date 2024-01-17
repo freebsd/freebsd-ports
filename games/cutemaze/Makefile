@@ -1,8 +1,7 @@
 PORTNAME=	cutemaze
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	games
-MASTER_SITES=	http://gottcode.org/${PORTNAME}/
+MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Simple, top-down game in which mazes are randomly generated

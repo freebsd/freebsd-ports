@@ -1,6 +1,5 @@
 bin/cutemaze
 share/applications/cutemaze.desktop
-share/man/man6/cutemaze.6.gz
 %%NLS%%%%DATADIR%%/translations/cutemaze_cs.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_de.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_el.qm
@@ -10,6 +9,7 @@ share/man/man6/cutemaze.6.gz
 %%NLS%%%%DATADIR%%/translations/cutemaze_fi.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_fr.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_he.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_it.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_lt.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_nl.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_pl.qm
@@ -30,4 +30,5 @@ share/icons/hicolor/48x48/apps/cutemaze.png
 share/icons/hicolor/512x512/apps/cutemaze.png
 share/icons/hicolor/64x64/apps/cutemaze.png
 share/icons/hicolor/scalable/apps/cutemaze.svg
+share/man/man6/cutemaze.6.gz
 share/metainfo/cutemaze.appdata.xml
