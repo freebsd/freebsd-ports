@@ -1,3 +1,35 @@
+  <vuln vid="a8326b61-eda0-4c03-9a5b-49ebd8f41c1a">
+    <topic>electron27 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.2.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0518.</li>
+	    <li>Security: backported fix for CVE-2024-0517.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0518</cvename>
+      <url>https://github.com/advisories/GHSA-4pvg-f3m8-ff3j</url>
+      <cvename>CVE-2024-0517</cvename>
+      <url>https://github.com/advisories/GHSA-v39r-662x-j524</url>
+    </references>
+    <dates>
+      <discovery>2024-01-17</discovery>
+      <entry>2024-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1bc07be0-b514-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
