@@ -1,6 +1,5 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.0.22
-PORTREVISION=	1
+DISTVERSION=	1.0.23
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -14,7 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libprotobuf.so:devel/protobuf \
 		libtag.so:audio/taglib
 
 FLAVORS=		qt6 qt5
