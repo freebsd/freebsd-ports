@@ -23,6 +23,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	foot:x11/foot
 
 USES=		cmake compiler:c11 gnome pkgconfig
 USE_GITHUB=	yes
