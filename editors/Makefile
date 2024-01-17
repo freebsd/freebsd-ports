@@ -36,7 +36,6 @@
     SUBDIR += e93
     SUBDIR += ecce
     SUBDIR += ecrire
-    SUBDIR += edith
     SUBDIR += editorconfig-core-c
     SUBDIR += elementary-code
     SUBDIR += emacs
