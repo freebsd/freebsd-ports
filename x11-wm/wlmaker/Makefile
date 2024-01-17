@@ -29,6 +29,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 GH_ACCOUNT=	phkaeser
 GH_TUPLE=	phkaeser:libbase:c215f7d:libbase/submodules/libbase
+CFLAGS+=	-ffile-prefix-map="${WRKSRC}"=
 LDFLAGS+=	-Wl,--as-needed # https://github.com/phkaeser/wlmaker/issues/12
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
