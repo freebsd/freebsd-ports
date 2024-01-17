@@ -129,7 +129,6 @@
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl
-    SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
     SUBDIR += jvim3
