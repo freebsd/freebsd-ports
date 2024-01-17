@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2024-01-16 00:28:44 UTC
++++ CMakeLists.txt
+@@ -142,6 +142,12 @@ target_link_libraries (
+     ${QT_LIBRARIES}
+ )
+ 
++target_compile_options(
++    pdfmixtool
++    PUBLIC
++    ${MAGICK_CFLAGS_OTHER}
++)
++
+ INSTALL(TARGETS pdfmixtool RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+ INSTALL(FILES resources/eu.scarpetta.PDFMixTool.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+ INSTALL(FILES resources/eu.scarpetta.PDFMixTool.appdata.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
