@@ -60,12 +60,13 @@ share/man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-logitech.quirks
 %%DATADIR%%/30-vendor-madcatz.quirks
 %%DATADIR%%/30-vendor-microsoft.quirks
+%%DATADIR%%/30-vendor-oracle.quirks
+%%DATADIR%%/30-vendor-qemu.quirks
 %%DATADIR%%/30-vendor-razer.quirks
 %%DATADIR%%/30-vendor-synaptics.quirks
 %%DATADIR%%/30-vendor-trust.quirks
 %%DATADIR%%/30-vendor-vmware.quirks
 %%DATADIR%%/30-vendor-wacom.quirks
-%%DATADIR%%/50-framework.quirks
 %%DATADIR%%/50-system-acer.quirks
 %%DATADIR%%/50-system-apple.quirks
 %%DATADIR%%/50-system-asus.quirks
@@ -73,9 +74,11 @@ share/man/man1/libinput.1.gz
 %%DATADIR%%/50-system-chuwi.quirks
 %%DATADIR%%/50-system-cyborg.quirks
 %%DATADIR%%/50-system-dell.quirks
+%%DATADIR%%/50-system-framework.quirks
 %%DATADIR%%/50-system-gigabyte.quirks
 %%DATADIR%%/50-system-google.quirks
 %%DATADIR%%/50-system-gpd.quirks
+%%DATADIR%%/50-system-graviton.quirks
 %%DATADIR%%/50-system-hp.quirks
 %%DATADIR%%/50-system-huawei.quirks
 %%DATADIR%%/50-system-lenovo.quirks
