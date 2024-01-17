@@ -89,7 +89,6 @@
     SUBDIR += lazarus-qt6-devel
     SUBDIR += le
     SUBDIR += leafpad
-    SUBDIR += led
     SUBDIR += libreoffice
     SUBDIR += libreoffice-af
     SUBDIR += libreoffice-am
