@@ -1,5 +1,5 @@
 PORTNAME=	fldigi
-DISTVERSION=	4.2.03
+DISTVERSION=	4.2.04
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME} \
 		http://www.w1hkj.com/files/fldigi/
