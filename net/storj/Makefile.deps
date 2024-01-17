@@ -69,11 +69,15 @@ GH_TUPLE=	\
 		jackc:pgx:v5.3.1:jackc_pgx/vendor/github.com/jackc/pgx/v5 \
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
+		jtolio:crawlspace:3ec5cc6b36c5:jtolio_crawlspace/vendor/github.com/jtolio/crawlspace \
+		jtolio:crawlspace:57d90b78ce62:jtolio_crawlspace_tools \
 		jtolio:eventkit:4668f79ff72d:jtolio_eventkit/vendor/github.com/jtolio/eventkit \
 		jtolio:mito:d78ef06bb77b:jtolio_mito/vendor/github.com/jtolio/mito \
 		jtolio:noiseconn:88105e6c8ac6:jtolio_noiseconn/vendor/github.com/jtolio/noiseconn \
 		klauspost:compress:v1.15.10:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v2.0.12:klauspost_cpuid/vendor/github.com/klauspost/cpuid/v2 \
+		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
+		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
 		magiconair:properties:v1.8.5:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -94,6 +98,7 @@ GH_TUPLE=	\
 		quic-go:quic-go:v0.40.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		redis:go-redis:v9.0.3:redis_go_redis/vendor/github.com/redis/go-redis/v9 \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		rogpeppe:go-internal:v1.10.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
 		segmentio:backo-go:23eae7c10bd3:segmentio_backo_go/vendor/github.com/segmentio/backo-go \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
@@ -106,13 +111,13 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:30983e2956c6:storj_common/vendor/storj.io/common \
+		storj:common:1fa84867e323:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
-		storj:infectious:v0.0.1:storj_infectious/vendor/storj.io/infectious \
+		storj:infectious:v0.0.2:storj_infectious/vendor/storj.io/infectious \
 		storj:monkit-jaeger:f15e6e8b7e8c:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:c4ba17033c6c:storj_picobuf/vendor/storj.io/picobuf \
-		storj:private:ae62725d6691:storj_private/vendor/storj.io/private \
-		storj:uplink:0de4b39f3dc5:storj_uplink/vendor/storj.io/uplink \
+		storj:private:c439a594bc1d:storj_private/vendor/storj.io/private \
+		storj:uplink:44ad61188b55:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v75.8.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v75 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -130,8 +135,10 @@ GH_TUPLE=	\
 		zeebo:errs:v1.3.0:zeebo_errs/vendor/github.com/zeebo/errs \
 		zeebo:errs:v2.0.3:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
+		zeebo:goof:8a73f2ee257d:zeebo_goof/vendor/github.com/zeebo/goof \
 		zeebo:incenc:0d92902eec54:zeebo_incenc/vendor/github.com/zeebo/incenc \
 		zeebo:ini:cc8fbd8d9599:zeebo_ini/vendor/github.com/zeebo/ini \
 		zeebo:mwc:v0.0.4:zeebo_mwc/vendor/github.com/zeebo/mwc \
 		zeebo:structs:f2db46069602:zeebo_structs/vendor/github.com/zeebo/structs \
+		zeebo:sudo:v1.0.2:zeebo_sudo/vendor/github.com/zeebo/sudo \
 		zyedidia:generic:v1.2.1:zyedidia_generic/vendor/github.com/zyedidia/generic
