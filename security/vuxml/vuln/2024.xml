@@ -1,3 +1,40 @@
+  <vuln vid="1bc07be0-b514-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.224</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_16.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[1515930] High CVE-2024-0517: Out of bounds write in V8. Reported by Toan (suto) Pham of Qrious Secure on 2024-01-06</li>
+	    <li>[1507412] High CVE-2024-0518: Type Confusion in V8. Reported by Ganjiang Zhou(@refrain_areu) of ChaMd5-H1 team on 2023-12-03</li>
+	    <li>[1517354] High CVE-2024-0519: Out of bounds memory access in V8. Reported by Anonymous on 2024-01-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0517</cvename>
+      <cvename>CVE-2024-0518</cvename>
+      <cvename>CVE-2024-0519</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-16</discovery>
+      <entry>2024-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7467c611-b490-11ee-b903-001fc69cd6dc">
     <topic>xorg server -- Multiple vulnerabilities</topic>
     <affects>
