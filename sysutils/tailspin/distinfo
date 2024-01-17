@@ -1,4 +1,4 @@
-TIMESTAMP = 1704712469
+TIMESTAMP = 1705450074
 SHA256 (rust/crates/addr2line-0.20.0.crate) = f4fa78e18c64fce05e902adecd7a5eed15a5e0a3439f7b0e169f0252214865e3
 SIZE (rust/crates/addr2line-0.20.0.crate) = 39558
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -305,5 +305,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.0.crate) = dff9641d1cd4be8d1a070daf
 SIZE (rust/crates/windows_x86_64_msvc-0.52.0.crate) = 821600
 SHA256 (rust/crates/winnow-0.5.15.crate) = 7c2e3184b9c4e92ad5167ca73039d0c42476302ab603e2fec4487511f38ccefc
 SIZE (rust/crates/winnow-0.5.15.crate) = 145621
-SHA256 (bensadeh-tailspin-2.3.0_GH0.tar.gz) = f523a9ccf59e6d5ae4bb66a5b0a4d480832f604c09a3c2f4dd00b5efc8f1b03d
-SIZE (bensadeh-tailspin-2.3.0_GH0.tar.gz) = 3888659
+SHA256 (bensadeh-tailspin-2.4.0_GH0.tar.gz) = ce86f2fd96543c62446f016ce332cd381d63d89c7094263459093ef2133a70a3
+SIZE (bensadeh-tailspin-2.4.0_GH0.tar.gz) = 3889783
