@@ -1,7 +1,7 @@
 PORTNAME=	wildfly
-PORTVERSION=	25.0.1
+PORTVERSION=	26.1.3
 CATEGORIES=	java www
-MASTER_SITES=	https://download.jboss.org/wildfly/${WILDFLY_VERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
