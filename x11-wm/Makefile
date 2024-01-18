@@ -114,7 +114,6 @@
     SUBDIR += swayfx
     SUBDIR += tinywm
     SUBDIR += transset
-    SUBDIR += treewm
     SUBDIR += twm
     SUBDIR += vtwm
     SUBDIR += wayfire
