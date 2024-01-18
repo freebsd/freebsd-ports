@@ -1,4 +1,4 @@
---- configure.ac.orig	2023-12-20 06:28:06 UTC
+--- configure.ac.orig	2024-01-16 12:19:32 UTC
 +++ configure.ac
 @@ -55,6 +55,7 @@ AH_BOTTOM([
  
@@ -34,7 +34,7 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1666,7 +1666,7 @@ PHP_SUBST(install_binary_targets)
+@@ -1667,7 +1667,7 @@ PHP_SUBST(install_binary_targets)
  PHP_SUBST(install_targets)
  PHP_SUBST(install_binary_targets)
  
