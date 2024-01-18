@@ -1,7 +1,7 @@
 PORTNAME=	baka-mplayer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -33,7 +33,7 @@ NLS_USES=	qt:5
 NLS_USE=	QT=linguisttools:build
 NLS_QMAKE_ON=	CONFIG+="install_translations"
 NOTO_DESC=	Original look with Noto Sans font
-NOTO_RUN_DEPENDS=	noto>0:x11-fonts/noto
+NOTO_RUN_DEPENDS=	noto-sans>0:x11-fonts/noto-sans
 
 post-patch:
 	${REINPLACE_CMD} '/^Comment/s,=.*,=${COMMENT},' \

@@ -1,6 +1,6 @@
 PORTNAME=	cooledit
 DISTVERSION=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SUNSITE/apps/editors/X/cooledit
 
@@ -15,9 +15,9 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYRIGHT.gpl
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	font-misc-misc>0:x11-fonts/font-misc-misc \
-		noto-basic>0:x11-fonts/noto-basic \
-		noto-emoji>0:x11-fonts/noto-emoji \
-		noto-extra>0:x11-fonts/noto-extra
+		noto-color-emoji>0:x11-fonts/noto-color-emoji \
+		noto-sans>0:x11-fonts/noto-sans \
+		noto-sans-mono>0:x11-fonts/noto-sans-mono
 
 USES=		gettext-runtime libtool:build pkgconfig python xorg
 USE_XORG=	x11 xt

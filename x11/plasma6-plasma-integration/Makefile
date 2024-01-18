@@ -1,5 +1,6 @@
 PORTNAME=	plasma-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	Qt Platform Theme integration plugins for the Plasma workspaces
@@ -8,8 +9,10 @@ MAINTAINER=	kde@FreeBSD.org
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hack-font>0:x11-fonts/hack-font \
-		noto-basic>0:x11-fonts/noto-basic \
-		noto-emoji>0:x11-fonts/noto-emoji
+		noto-color-emoji>0:x11-fonts/noto-color-emoji \
+		noto-sans>0:x11-fonts/noto-sans \
+		noto-sans-mono>0:x11-fonts/noto-sans-mono \
+		noto-serif>0:x11-fonts/noto-serif
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_KDE=	bookmarks breeze colorscheme completion config configwidgets \

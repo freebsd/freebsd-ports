@@ -1,7 +1,7 @@
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -48,7 +48,7 @@ OPTIONS_DEFINE=	EMOJI ZSH
 OPTIONS_DEFAULT=EMOJI ZSH
 
 EMOJI_DESC=	Enable emojis in console output
-EMOJI_RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji
+EMOJI_RUN_DEPENDS=	noto-color-emoji>0:x11-fonts/noto-color-emoji
 
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 

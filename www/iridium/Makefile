@@ -1,5 +1,6 @@
 PORTNAME=	iridium
 PORTVERSION=	2024.01.120
+PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -69,7 +70,9 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libxshmfence.so:x11/libxshmfence
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		noto-basic>0:x11-fonts/noto-basic
+		noto-sans>0:x11-fonts/noto-sans \
+		noto-sans-mono>0:x11-fonts/noto-sans-mono \
+		noto-serif>0:x11-fonts/noto-serif
 
 USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake gnome \
 		iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \

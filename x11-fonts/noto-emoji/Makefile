@@ -1,28 +1,24 @@
-PORTNAME=	noto
-PORTVERSION=	2.038
+PORTNAME=	noto-emoji
+DISTVERSION=	2.001
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
-PKGNAMESUFFIX=	-emoji
-DISTFILES=	NotoColorEmoji.ttf
-DIST_SUBDIR=	Noto
-EXTRACT_ONLY=	# empty
+MASTER_SITES=	LOCAL/tijl
 
-MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Google Noto Fonts family (Emoji)
-WWW=		https://fonts.google.com/noto \
-		https://github.com/googlefonts/noto-emoji
+MAINTAINER=	tijl@FreeBSD.org
+COMMENT=	Noto Emoji font (monochrome)
+WWW=		https://fonts.google.com/noto/specimen/Noto+Emoji
 
-LICENSE=	APACHE20
+USES=		noto
 
-USES=		fonts
-
-NO_ARCH=	yes
-NO_BUILD=	yes
-
-PLIST_FILES=	${FONTSDIR}/NotoColorEmoji.ttf
-
-do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/NotoColorEmoji.ttf ${STAGEDIR}${FONTSDIR}
+NOTONAME=	NotoEmoji
+NOTOTAG=	8857a069793e5db4a378c8a7316db684189e339a
+NOTOLICSITES=	https://github.com/google/fonts/raw/${NOTOTAG}/ofl/notoemoji/
+NOTOSITES=	https://fonts.gstatic.com/s/notoemoji/v47/
+NOTOLICFILE=	OFL.txt
+NOTOFILES=	bMrnmSyK7YY-MEu6aWjPDs-ar6uWaGWuob_10jwvS-FGJCMY.ttf Light \
+		bMrnmSyK7YY-MEu6aWjPDs-ar6uWaGWuob-r0jwvS-FGJCMY.ttf Regular \
+		bMrnmSyK7YY-MEu6aWjPDs-ar6uWaGWuob-Z0jwvS-FGJCMY.ttf Medium \
+		bMrnmSyK7YY-MEu6aWjPDs-ar6uWaGWuob911TwvS-FGJCMY.ttf SemiBold \
+		bMrnmSyK7YY-MEu6aWjPDs-ar6uWaGWuob9M1TwvS-FGJCMY.ttf Bold
 
 .include <bsd.port.mk>
