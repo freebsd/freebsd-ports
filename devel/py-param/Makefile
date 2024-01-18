@@ -1,5 +1,5 @@
 PORTNAME=	param
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
