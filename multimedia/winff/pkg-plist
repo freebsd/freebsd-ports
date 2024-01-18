@@ -5,6 +5,7 @@ man/man1/winff.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/WinFF.es.pdf
 %%PORTDOCS%%%%DOCSDIR%%/WinFF.fr.pdf
 %%PORTDOCS%%%%DOCSDIR%%/WinFF.nl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/WinFF.pt.pdf
 share/pixmaps/winff.png
 %%DATADIR%%/languages/winff.ab.po
 %%DATADIR%%/languages/winff.ar.po
@@ -12,7 +13,6 @@ share/pixmaps/winff.png
 %%DATADIR%%/languages/winff.bg.po
 %%DATADIR%%/languages/winff.ca.po
 %%DATADIR%%/languages/winff.cs.po
-%%DATADIR%%/languages/winff.de_DE.po
 %%DATADIR%%/languages/winff.de.po
 %%DATADIR%%/languages/winff.el.po
 %%DATADIR%%/languages/winff.en_GB.po
