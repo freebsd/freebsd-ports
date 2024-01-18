@@ -204,6 +204,7 @@ man/man1/simpleftp.1.gz
 man/man1/sm.1.gz
 man/man3/INN::Config.3pm.gz
 man/man3/INN::Utils::Shlock.3pm.gz
+man/man3/INN::ovsqlite_client.3pm.gz
 man/man3/libinn_clientlib.3.gz
 man/man3/libinn_dbz.3.gz
 man/man3/libinn_inndcomm.3.gz
