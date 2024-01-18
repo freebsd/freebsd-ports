@@ -1,13 +1,16 @@
+Add minimal support to `pkg-config imlib2`; imlib2-config has been
+dropped since imlib2-1.7.5.
+
 --- Makefile.orig	2021-11-19 07:48:49 UTC
 +++ Makefile
-@@ -1,8 +1,8 @@
+@@ -1,8 +1,8 @@ O = telak.o fetch.o image.o parse.o toon.o
  VERSION = $(shell grep '^Version' ChangeLog | head -n 1 | cut -d' ' -f2 | tr -d ' ')
  BIN = telak
  O = telak.o fetch.o image.o parse.o toon.o
 -LDFLAGS = $(shell imlib2-config --libs) $(shell curl-config --libs) -lgcrypt -lX11
 -CFLAGS = -pg -W -Wall $(shell curl-config --cflags) $(shell imlib2-config --cflags) -DTELAK_USER_AGENT="\"$(BIN) $(VERSION)\"" -DTELAK_VERSION="\"$(VERSION)\"" -g
-+LDFLAGS += $(shell imlib2-config --libs) $(shell curl-config --libs) -lgcrypt -lX11
-+CFLAGS += -W -Wall $(shell curl-config --cflags) $(shell imlib2-config --cflags) -DTELAK_USER_AGENT="\"$(BIN) $(VERSION)\"" -DTELAK_VERSION="\"$(VERSION)\""
++LDFLAGS += $(shell pkg-config imlib2 --libs) $(shell curl-config --libs) -lgcrypt -lX11
++CFLAGS += -W -Wall $(shell curl-config --cflags) $(shell pkg-config imlib2 --cflags) -DTELAK_USER_AGENT="\"$(BIN) $(VERSION)\"" -DTELAK_VERSION="\"$(VERSION)\""
  
  BINDIR=$(DESTDIR)/usr/bin
  MANDIR=$(DESTDIR)/usr/share/man/man1

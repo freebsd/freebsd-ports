@@ -1,7 +1,7 @@
 PORTNAME=	telak
-PORTVERSION=	0.7
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libImlib2.so:graphics/imlib2
 
-USES=		gmake xorg
+USES=		gmake pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	jd
 USE_XORG=	x11
