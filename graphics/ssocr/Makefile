@@ -1,6 +1,6 @@
 PORTNAME=	ssocr
 PORTVERSION=	2.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ \
 		LOCAL/ehaupt
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
-USES=		gmake tar:bzip2
+USES=		gmake pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/ssocr \
 		share/man/man1/ssocr.1.gz
