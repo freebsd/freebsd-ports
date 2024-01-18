@@ -1,6 +1,5 @@
 PORTNAME=	polkit
-DISTVERSION=	123
-PORTREVISION=	2
+DISTVERSION=	124
 CATEGORIES=	sysutils gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -27,6 +26,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 
 MESON_ARGS=	-Dpam_include=system \
+		-Dpam_prefix='etc/pam.d' \
 		-Dpolkitd_user=${USERS} \
 		-Dexamples=false \
 		-Dsession_tracking=ConsoleKit \
@@ -51,8 +51,8 @@ DUKTAPE_MESON_ON=	-Djs_engine='duktape'
 SPIDERMONKEY_LIB_DEPENDS=	libmozjs-102.so:lang/spidermonkey102
 SPIDERMONKEY_MESON_ON=		-Djs_engine='mozjs'
 
-MANPAGES_BUILD_DEPENDS=	docbook-sgml>=4.5:textproc/docbook-sgml \
-			docbook-xsl>=1.76:textproc/docbook-xsl
+MANPAGES_BUILD_DEPENDS=	docbook-sgml>0:textproc/docbook-sgml \
+			docbook-xsl>0:textproc/docbook-xsl
 MANPAGES_USE=		gnome=libxslt:build
 MANPAGES_MESON_TRUE=	man
 
