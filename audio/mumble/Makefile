@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/
 
 PATCH_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/commit/
 PATCHFILES=	952dfaf4983097d7b9c9b5d9f5b01ffeb6d3463d.patch:-p1 # Fix detection of unbundled GSL
-#PATCHFILES+=	589bfbfd634925b47b3a812745bc5a423b7f4285.patch:-p1 # Install 32-bit lib on FreeBSD
+PATCHFILES+=	589bfbfd634925b47b3a812745bc5a423b7f4285.patch:-p1 # Install 32-bit lib on FreeBSD
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
