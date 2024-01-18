@@ -118,7 +118,6 @@
     SUBDIR += tvtwm
     SUBDIR += twm
     SUBDIR += vtwm
-    SUBDIR += w9wm
     SUBDIR += wayfire
     SUBDIR += wayfire-plugins-extra
     SUBDIR += windowmaker
