@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.25:graphics/wayland-protocols \
-		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
+		wayland-protocols>=1.25:graphics/wayland-protocols
 LIB_DEPENDS=	libtomlplusplus.so:devel/tomlplusplus \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \

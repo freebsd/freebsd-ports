@@ -20,8 +20,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wf-config>=0.8.0<0.9.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
-		glm>=0.9.8:math/glm \
-		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
+		glm>=0.9.8:math/glm
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \

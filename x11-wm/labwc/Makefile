@@ -13,8 +13,7 @@ WWW=		https://github.com/labwc/labwc
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
+		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \

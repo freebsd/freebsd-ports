@@ -12,8 +12,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.15:graphics/wayland-protocols \
-		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
+		wayland-protocols>=1.15:graphics/wayland-protocols
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \

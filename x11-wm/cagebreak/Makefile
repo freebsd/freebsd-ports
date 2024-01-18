@@ -11,8 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
+		wayland-protocols>=1.14:graphics/wayland-protocols
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
