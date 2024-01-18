@@ -86,7 +86,6 @@
     SUBDIR += oroborus
     SUBDIR += peksystray
     SUBDIR += pekwm
-    SUBDIR += phluid
     SUBDIR += phoc
     SUBDIR += picom
     SUBDIR += piewm
