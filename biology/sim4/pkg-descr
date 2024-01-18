@@ -1,8 +1,0 @@
-This package implements the Sim4 algorithm for aligning expressed DNA
-with genomic sequences, described in the paper:
-
-L. Florea, G. Hartzell, Z. Zhang, G. Rubin, and W. Miller (1998)
-"A computer program for aligning a cDNA sequence with a genomic DNA sequence."
-Genome Research 8, 967-974.
-
-Port maintained by the FreeBSD bio-porters mailing list.
