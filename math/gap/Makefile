@@ -14,6 +14,7 @@ BUILD_DEPENDS+=	automake:devel/automake # attempt to fix the intermittent failur
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 BROKEN_powerpc64=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct GAPState) < 32768': GAPState is too big
+BROKEN_powerpc64le=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct GAPState) < 32768': GAPState is too big
 
 USES=		gmake libtool localbase perl5 readline shebangfix
 USE_PERL5=	run
