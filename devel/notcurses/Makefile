@@ -1,7 +1,7 @@
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ABIVERSION}.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/:docs
 DISTFILES=	${PORTNAME}-doc-${DISTVERSION}.tar.gz:docs
@@ -53,9 +53,9 @@ post-patch-DOCS-off:
 		${WRKSRC}/CMakeLists.txt
 
 post-install-MANPAGES-on:
-	${MKDIR} ${STAGEDIR}${MANPREFIX}/man/man1 ${STAGEDIR}${MANPREFIX}/man/man3
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1 ${STAGEDIR}${PREFIX}/share/man/man3
 	# we don't want to install e.g. "notcurses-x.x.1"
-	${FIND} ${WRKDIR} -maxdepth 1 -type f -iname \*.1 -execdir ${INSTALL_MAN} {} ${STAGEDIR}${MANPREFIX}/man/man1 \;
-	${FIND} ${WRKDIR} -maxdepth 1 -type f -iname \*.3 -execdir ${INSTALL_MAN} {} ${STAGEDIR}${MANPREFIX}/man/man3 \;
+	${FIND} ${WRKDIR} -maxdepth 1 -type f -iname \*.1 -execdir ${INSTALL_MAN} {} ${STAGEDIR}${PREFIX}/share/man/man1 \;
+	${FIND} ${WRKDIR} -maxdepth 1 -type f -iname \*.3 -execdir ${INSTALL_MAN} {} ${STAGEDIR}${PREFIX}/share/man/man3 \;
 
 .include <bsd.port.mk>
