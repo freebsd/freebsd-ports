@@ -1,6 +1,6 @@
---- ref_gl/sul_png.c.orig	2005-12-27 10:57:45.000000000 +0100
-+++ ref_gl/sul_png.c	2012-04-29 06:53:31.000000000 +0200
-@@ -177,7 +177,7 @@
+--- ref_gl/sul_png.c.orig	2005-12-27 09:57:45 UTC
++++ ref_gl/sul_png.c
+@@ -177,7 +177,7 @@ void GL_ScreenShot_PNG (void)
  		return;
  	}
  
