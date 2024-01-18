@@ -10,6 +10,9 @@ WWW=		http://ruby-dbi.sourceforge.net
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Upstream vaporized and does not work with latest MySQL
+EXPIRATION_DATE=	2024-02-18
+
 RUN_DEPENDS=	rubygem-dbi>=0:databases/rubygem-dbi \
 		rubygem-mysql>=0:databases/rubygem-mysql
 
