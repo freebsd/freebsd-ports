@@ -1,6 +1,6 @@
 PORTNAME=	mumble
 DISTVERSION=	1.5.517
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -21,16 +21,16 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libopus.so:audio/opus \
 		libspeexdsp.so:audio/speexdsp \
+		libabsl_base.so:devel/abseil \
 		libpcre2-8.so:devel/pcre2 \
 		libPocoXML.so:devel/poco \
 		libPocoZip.so:devel/poco \
 		libprotobuf.so:devel/protobuf \
 		libexpat.so:textproc/expat2
 
-USES=		cmake compiler:c++17-lang cpe desktop-file-utils gl \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils \
 		pkgconfig python:build qt:5 ssl xorg
 USE_CXXSTD=	c++17
-USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_QT=		buildtools:build concurrent core gui l10n linguist:build network \
 		qmake:build sql sql-sqlite3:run svg widgets xml
