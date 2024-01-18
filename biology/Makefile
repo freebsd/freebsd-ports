@@ -218,7 +218,6 @@
     SUBDIR += seqan-apps
     SUBDIR += seqan1
     SUBDIR += seqan3
-    SUBDIR += seqio
     SUBDIR += seqkit
     SUBDIR += seqtk
     SUBDIR += seqwish
