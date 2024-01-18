@@ -1,7 +1,7 @@
 WLR_SUFFIX=	015
-SOVERSION=	10
+WLR_SOVERSION=	10
 
-LIB_DEPENDS:=	${LIB_DEPENDS:S/wlroots.so/&.${SOVERSION}/:S/wlroots$/&${WLR_SUFFIX}/}
+LIB_DEPENDS:=	${LIB_DEPENDS:S/wlroots.so/&.${WLR_SOVERSION}/:S/wlroots$/&${WLR_SUFFIX}/}
 
 USES+=		localbase # -isystem
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/wlroots${WLR_SUFFIX}/libdata/pkgconfig"
