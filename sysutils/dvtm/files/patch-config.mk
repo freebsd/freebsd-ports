@@ -1,13 +1,6 @@
 --- config.mk.orig	2016-01-09 11:40:56 UTC
 +++ config.mk
-@@ -4,14 +4,19 @@ VERSION = 0.15
- # Customize below to fit your system
- 
- PREFIX ?= /usr/local
--MANPREFIX = ${PREFIX}/share/man
-+MANPREFIX = ${PREFIX}/man
- # specify your systems terminfo directory
- # leave empty to install into your home folder
+@@ -10,8 +10,13 @@ INCS = -I.
  TERMINFO := ${DESTDIR}${PREFIX}/share/terminfo
  
  INCS = -I.
