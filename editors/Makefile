@@ -69,7 +69,6 @@
     SUBDIR += jed
     SUBDIR += jedit
     SUBDIR += joe
-    SUBDIR += jove
     SUBDIR += jucipp
     SUBDIR += jupp
     SUBDIR += kak-lsp
