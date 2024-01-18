@@ -94,7 +94,6 @@
     SUBDIR += plasma6-kwin
     SUBDIR += pwm
     SUBDIR += qtile
-    SUBDIR += ratmen
     SUBDIR += ratpoison
     SUBDIR += river
     SUBDIR += rubygem-uh-layout
