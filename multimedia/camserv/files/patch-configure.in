@@ -1,6 +1,9 @@
+Add minimal support to `pkg-config imlib2`; imlib2-config has been
+dropped since imlib2-1.7.5.
+
 --- configure.in.orig	2002-05-12 18:06:12 UTC
 +++ configure.in
-@@ -9,15 +9,13 @@ AM_INIT_AUTOMAKE(camserv,$CAMSERV_VER_MA
+@@ -9,15 +9,13 @@ AM_MAINTAINER_MODE
  AM_CONFIG_HEADER(include/camserv_config.h:config.in)
  AM_MAINTAINER_MODE
  
@@ -19,7 +22,20 @@
  
  AC_CHECK_LIB(m,sqrt)
  AC_CHECK_LIB(jpeg,jpeg_start_compress)
-@@ -55,7 +53,7 @@ AC_PATH_PROG(GDKPIXBUF_CONFIG,gdk-pixbuf
+@@ -35,6 +33,12 @@ if test "$IMLIB2_CONFIG"x != "x"; then
+ 		 CFLAGS="$CFLAGS $IMLIB2_CFLAGS"
+ 		 ;;
+ 	esac
++	else
++		if pkg-config imlib2; then
++			IMLIB2_CFLAGS=`pkg-config --cflags imlib2`
++		 	IMLIB2_LIBS=`pkg-config --libs imlib2`
++			AC_CHECK_HEADER(Imlib2.h,have_imlib2=yes)
++		fi
+ fi	
+ 
+ AC_SUBST(IMLIB2_CFLAGS)
+@@ -55,7 +59,7 @@ if test "$GDKPIXBUF_CONFIG"x != "x"; then
  if test "$GDKPIXBUF_CONFIG"x != "x"; then
  	GDKPIXBUF_VERSION=`$GDKPIXBUF_CONFIG --version`
  	case "$GDKPIXBUF_VERSION" in
@@ -28,7 +44,7 @@
  		 GDKPIXBUF_CFLAGS=`$GDKPIXBUF_CONFIG --cflags`
  		 GDKPIXBUF_LIBS=`$GDKPIXBUF_CONFIG --libs`
  		 CFLAGS="$CFLAGS $GDKPIXBUF_CFLAGS"
-@@ -93,7 +91,7 @@ AC_CHECK_HEADERS(linux/videodev.h,
+@@ -93,7 +97,7 @@ AM_CONDITIONAL(VIDEO_V4L, test $video_v4l = yes)
  [video_v4l=yes],[video_v4l=no])
  AM_CONDITIONAL(VIDEO_V4L, test $video_v4l = yes)
  
