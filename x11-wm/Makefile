@@ -65,7 +65,6 @@
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp
     SUBDIR += libwraster
-    SUBDIR += lwm
     SUBDIR += lxappearance-obconf
     SUBDIR += lxqt
     SUBDIR += lxqt-panel
