@@ -41,36 +41,28 @@
 
 #include "kgdb.h"
 
-struct aarch64fbsd_info
+struct aarch64_fbsd_kern_info
 {
-  int osreldate;
+  LONGEST osreldate = 0;
 };
 
 /* Per-program-space data key.  */
-static const registry<program_space>::key<aarch64fbsd_info> aarch64fbsd_pspace_data;
+static const registry<program_space>::key<aarch64_fbsd_kern_info>
+aarch64_fbsd_kern_pspace_data;
 
-static void
-aarch64fbsd_pspace_data_cleanup (struct program_space *pspace, void *arg)
-{
-  struct aarch64fbsd_info *info = (struct aarch64fbsd_info *)arg;
-
-  xfree (info);
-}
-
-/* Get the current aarch64_fbsd data.  If none is found yet, add it
+/* Get the current aarch64_fbsd_kern data.  If none is found yet, add it
    now.  This function always returns a valid object.  */
 
-static struct aarch64fbsd_info *
-get_aarch64fbsd_info (void)
+static struct aarch64_fbsd_kern_info *
+get_aarch64_fbsd_kern_info (void)
 {
-  struct aarch64fbsd_info *info;
+  struct aarch64_fbsd_kern_info *info;
 
-  info = aarch64fbsd_pspace_data.get (current_program_space);
+  info = aarch64_fbsd_kern_pspace_data.get (current_program_space);
   if (info != nullptr)
     return info;
 
-  info = aarch64fbsd_pspace_data.emplace (current_program_space);
-
+  info = aarch64_fbsd_kern_pspace_data.emplace (current_program_space);
   info->osreldate = parse_and_eval_long ("osreldate");
   return info;
 }
@@ -111,14 +103,13 @@ static void
 aarch64_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 {
   const struct regset *pcbregset;
-  struct aarch64fbsd_info *info = get_aarch64fbsd_info();
+  struct aarch64_fbsd_kern_info *info = get_aarch64_fbsd_kern_info();
   gdb_byte buf[8 * 33];
 
   if (info->osreldate >= 1400084)
     pcbregset = &aarch64_fbsd_pcbregset;
   else
     pcbregset = &aarch64_fbsd13_pcbregset;
-
   if (target_read_memory (pcb_addr, buf, sizeof buf) == 0)
     regcache_supply_regset (pcbregset, regcache, -1, buf,
 			    sizeof (buf));
@@ -132,8 +123,8 @@ static const struct regcache_map_entry aarch64_fbsd_trapframe_map[] =
     { 1, AARCH64_CPSR_REGNUM, 8 },
     { 1, REGCACHE_MAP_SKIP, 8 },	/* esr */
     { 1, REGCACHE_MAP_SKIP, 8 },	/* far */
-    { 30, AARCH64_X0_REGNUM, 8 },	/* x0 ... x29 */
-    { 0 },
+    { 30, AARCH64_X0_REGNUM, 8 }, /* x0 ... x29 */
+    { 0 }
   };
 
 /* In kernels prior to __FreeBSD_version 1400084, struct trapframe
@@ -146,8 +137,8 @@ static const struct regcache_map_entry aarch64_fbsd13_trapframe_map[] =
     { 1, AARCH64_PC_REGNUM, 8 },
     { 1, AARCH64_CPSR_REGNUM, 4 },
     { 1, REGCACHE_MAP_SKIP, 4 },	/* esr */
-    { 30, AARCH64_X0_REGNUM, 8 },	/* x0 ... x29 */
-    { 0 },
+    { 30, AARCH64_X0_REGNUM, 8 }, /* x0 ... x29 */
+    { 0 }
   };
 
 static struct trad_frame_cache *
@@ -155,9 +146,9 @@ aarch64_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
-  struct aarch64fbsd_info *info = get_aarch64fbsd_info();
+  struct aarch64_fbsd_kern_info *info = get_aarch64_fbsd_kern_info();
   struct trad_frame_cache *cache;
-  CORE_ADDR func, pc, sp;
+  CORE_ADDR func, offset, pc, sp;
   const char *name;
   int i, tf_size;
 
@@ -165,29 +156,24 @@ aarch64_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
     return ((struct trad_frame_cache *)*this_cache);
 
   const struct regcache_map_entry *trapframe_map;
-
   if (info->osreldate >= 1400084)
-    {
-      trapframe_map = aarch64_fbsd_trapframe_map;
-    }
+    trapframe_map = aarch64_fbsd_trapframe_map;
   else
-    {
-      trapframe_map = aarch64_fbsd13_trapframe_map;
-    }
+    trapframe_map = aarch64_fbsd13_trapframe_map;
 
   cache = trad_frame_cache_zalloc (this_frame);
   *this_cache = cache;
 
-  func = get_frame_func (this_frame);
   sp = get_frame_register_unsigned (this_frame, AARCH64_SP_REGNUM);
-
-  find_pc_partial_function (func, &name, NULL, NULL);
 
   tf_size = regcache_map_entry_size (trapframe_map);
   trad_frame_set_reg_regmap (cache, trapframe_map, sp, tf_size);
 
   /* Read $PC from trap frame.  */
-  pc = read_memory_unsigned_integer (sp + 2 * 8, 8, byte_order);
+  func = get_frame_func (this_frame);
+  find_pc_partial_function (func, &name, NULL, NULL);
+  offset = regcache_map_offset (trapframe_map, AARCH64_PC_REGNUM, gdbarch);
+  pc = read_memory_unsigned_integer (sp + offset, 8, byte_order);
 
   if (pc == 0 && strcmp(name, "fork_trampoline") == 0)
     {
@@ -197,7 +183,7 @@ aarch64_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
   else
     {
       /* Construct the frame ID using the function start.  */
-      trad_frame_set_id (cache, frame_id_build (sp + tf_size, func));
+      trad_frame_set_id (cache, frame_id_build (sp, func));
     }
 
   return cache;
