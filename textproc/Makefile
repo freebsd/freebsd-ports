@@ -1529,6 +1529,7 @@
     SUBDIR += py-qrcode
     SUBDIR += py-rdflib
     SUBDIR += py-readchar
+    SUBDIR += py-readthedocs-sphinx-ext
     SUBDIR += py-readtime
     SUBDIR += py-recommonmark
     SUBDIR += py-regex
