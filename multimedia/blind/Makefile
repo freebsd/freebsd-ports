@@ -1,5 +1,6 @@
 PORTNAME=	blind
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://dl.suckless.org/tools/
 
