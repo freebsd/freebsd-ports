@@ -1,9 +1,13 @@
   <vuln vid="a8326b61-eda0-4c03-9a5b-49ebd8f41c1a">
-    <topic>electron27 -- multiple vulnerabilities</topic>
+    <topic>electron{26,27} -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>electron26</name>
+	<range><lt>26.6.6</lt></range>
+      </package>
+      <package>
 	<name>electron27</name>
-	<range><lt>27.2.3</lt></range>
+	<range><lt>27.2.4</lt></range>
       </package>
     </affects>
     <description>
@@ -27,6 +31,7 @@
     <dates>
       <discovery>2024-01-17</discovery>
       <entry>2024-01-17</entry>
+      <modified>2024-01-18</modified>
     </dates>
   </vuln>
 
