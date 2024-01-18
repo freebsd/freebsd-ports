@@ -1,6 +1,6 @@
---- configure.orig	2022-12-24 23:00:29 UTC
+--- configure.orig	2023-12-23 23:38:33 UTC
 +++ configure
-@@ -13804,7 +13804,7 @@ case "$host_os" in
+@@ -14931,7 +14931,7 @@ case "$host_os" in
  fi
  
  case "$host_os" in
@@ -9,7 +9,7 @@
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it is static).
  	if test "$cf_nculib_root" = ncurses ; then
-@@ -16120,7 +16120,7 @@ case "$host_os" in
+@@ -17249,7 +17249,7 @@ case "$host_os" in
  fi
  
  case "$host_os" in
@@ -18,18 +18,18 @@
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it is static).
  	if test "$cf_nculib_root" = ncurses ; then
-@@ -16983,7 +16983,7 @@ case "$host_os" in
+@@ -18116,7 +18116,7 @@ case "$host_os" in
  
  if test "$cf_result" = no ; then
  case "$host_os" in
 -freebsd*)
 +XXXfreebsd*)
- 	echo "$as_me:16987: checking for tgoto in -lmytinfo" >&5
+ 	echo "$as_me:18120: checking for tgoto in -lmytinfo" >&5
  echo $ECHO_N "checking for tgoto in -lmytinfo... $ECHO_C" >&6
  if test "${ac_cv_lib_mytinfo_tgoto+set}" = set; then
-@@ -21363,13 +21363,15 @@ fi
- 
-        if test "$enable_nntps" = "yes" && test "$have_libtls" = "no" || test "$enable_nntps" = "openssl"; then
+@@ -22699,13 +22699,15 @@ echo $ECHO_N "checking for OpenSSL... $ECHO_C" >&6
+ echo "$as_me:22699: checking for OpenSSL" >&5
+ echo $ECHO_N "checking for OpenSSL... $ECHO_C" >&6
  
 -if test "$PKG_CONFIG" != none && "$PKG_CONFIG" --exists "openssl"; then
 -	test -n "$verbose" && echo "	found package openssl" 1>&6
@@ -38,7 +38,7 @@
 +#	test -n "$verbose" && echo "	found package openssl" 1>&6
 +if true; then
  
- echo "${as_me:-configure}:21369: testing found package openssl ..." 1>&5
+ echo "${as_me:-configure}:22705: testing found package openssl ..." 1>&5
  
 -	cf_pkgconfig_incs="`$PKG_CONFIG --cflags "openssl" 2>/dev/null`"
 -	cf_pkgconfig_libs="`$PKG_CONFIG --libs   "openssl" 2>/dev/null`"
@@ -46,4 +46,4 @@
 +	cf_pkgconfig_libs="-lssl -lcrypto"
  	test -n "$verbose" && echo "	package openssl CFLAGS: $cf_pkgconfig_incs" 1>&6
  
- echo "${as_me:-configure}:21375: testing package openssl CFLAGS: $cf_pkgconfig_incs ..." 1>&5
+ echo "${as_me:-configure}:22711: testing package openssl CFLAGS: $cf_pkgconfig_incs ..." 1>&5
