@@ -60,7 +60,6 @@
     SUBDIR += korgwm
     SUBDIR += kwinft
     SUBDIR += labwc
-    SUBDIR += larswm
     SUBDIR += leftwm
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp
