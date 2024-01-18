@@ -1,7 +1,7 @@
 PORTNAME=	adcli
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net-mgmt net security
-MASTER_SITES=	https://gitlab.freedesktop.org/sbose/adcli//uploads/30880d967e79cee789194435e70fbf30/
+MASTER_SITES=	https://gitlab.freedesktop.org/realmd/adcli/-/archive/${PORTVERSION}/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tool for performing actions on an Active Directory domain
@@ -27,11 +27,9 @@ CONFIGURE_ENV+=	ac_cv_path_KRB5_CONFIG=${KRB5CONFIG}	\
 	ac_cv_path_XMLTO=${PORT_OPTIONS:MDOCS:S|DOCS|${LOCALBASE}/bin/xmlto|:S|^$|${TRUE}|}
 CONFIGURE_ARGS=	--sysconfdir=/etc
 
-USES=	autoreconf ldap libtool
-
-# Kerberos may or may not be there, but LDAP always is:
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${ICONV_INCLUDE_PATH}
+LDFLAGS+=	-L${ICONV_LIB_PATH} ${ICONV_LIB}
+USES=	autoreconf iconv ldap libtool localbase tar:bz2
 
 DOCS_BUILD_DEPENDS=	xmlto:textproc/xmlto
 GSSAPI_BASE_USES=	gssapi
