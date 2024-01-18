@@ -287,6 +287,7 @@
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
+    SUBDIR += freeciv21
     SUBDIR += freecol
     SUBDIR += freedink
     SUBDIR += freedink-data
