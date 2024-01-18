@@ -1,9 +1,9 @@
---- gtk/Makefile.orig	2021-03-05 01:52:42 UTC
+--- gtk/Makefile.orig	2024-01-17 13:18:38 UTC
 +++ gtk/Makefile
-@@ -136,7 +136,7 @@ cleaner: FORCE
- 		readtest_lines.cc \
+@@ -156,7 +156,7 @@ cleaner: FORCE
  		gcc111libbid.a \
- 		*.o *.d *.i *.ii *.s symlinks core.*
+ 		*.o *.d *.i *.ii *.s symlinks core.* \
+ 		raw2txt txt2raw
 -	rm -rf IntelRDFPMathLib20U1
 +	#rm -rf IntelRDFPMathLib20U1
  
