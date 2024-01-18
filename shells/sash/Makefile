@@ -1,5 +1,6 @@
 PORTNAME=	sash
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://members.tip.net.au/~dbell/programs/
 
