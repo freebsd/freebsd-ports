@@ -1,0 +1,5 @@
+Orch is a program orchestration tool, inspired by expect(1) but scripted with
+lua.  This utility allows scripted manipulation of programs for, e.g., testing
+or automation purposes.  Orch drives spawn processes over a pts(4)
+pseudo-terminal, which allows for a broader range of interactions with a program
+under orchestration.

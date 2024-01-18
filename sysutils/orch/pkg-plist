@@ -1,0 +1,5 @@
+bin/orch
+share/orch/examples/cat.orch
+share/orch/examples/nc.orch
+share/orch/orch.lua
+share/man/man1/orch.1.gz
