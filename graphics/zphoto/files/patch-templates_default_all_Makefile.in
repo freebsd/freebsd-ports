@@ -1,6 +1,6 @@
---- templates/default/all/Makefile.in.org	2014-06-21 19:51:31.487457236 +0900
-+++ templates/default/all/Makefile.in	2014-06-21 19:51:46.935435015 +0900
-@@ -369,9 +369,9 @@
+--- templates/default/all/Makefile.in.orig	2004-07-20 16:49:24 UTC
++++ templates/default/all/Makefile.in
+@@ -369,9 +369,9 @@ install-data-local:
  	| sh
  
  install-data-local:
