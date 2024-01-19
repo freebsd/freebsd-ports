@@ -12,6 +12,9 @@ WWW=		https://cserv.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last upstream release was in 2002, reconsider using multimedia/ustreamer or multimedia/ffmpeg
+EXPIRATION_DATE=	2024-02-29
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf jpeg libtool pkgconfig
