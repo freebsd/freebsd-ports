@@ -11,6 +11,8 @@ WWW=		https://gluon-lang.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
+
 USES=		cargo
 
 USE_GITHUB=	yes
