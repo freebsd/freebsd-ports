@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.43.2
+DISTVERSION=	6.44.1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
