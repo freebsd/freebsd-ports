@@ -12,6 +12,9 @@ WWW=		https://www.network-weathermap.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	WWW vaporized and has not been updated in last 14 years
+EXPIRATION_DATE=	2024-03-31
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Getopt.php:devel/pear@${PHP_FLAVOR} \
 		rrdtool:databases/rrdtool
 
