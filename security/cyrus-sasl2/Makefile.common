@@ -102,6 +102,15 @@ SASLDB_NAME=	sasldb2
 SASLDB=	"@comment "
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
+.if ${PORT_OPTIONS:MOPIE} && ${PORT_OPTIONS:MOTP}
+CONFIGURE_ARGS+=--with-opie=${LOCALBASE}
+LIB_DEPENDS+=	libopie.so:security/opie
+.else
+CONFIGURE_ARGS+=--without-opie
+.endif
+.endif
+
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
 		SASLDB_DIR=${SASLDB_DIR} SASLDB_NAME=${SASLDB_NAME}
