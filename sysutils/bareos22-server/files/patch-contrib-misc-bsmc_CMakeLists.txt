@@ -1,0 +1,11 @@
+--- contrib/misc/bsmc/CMakeLists.txt	2023-04-07 17:32:44.243346000 -0500
++++ contrib/misc/bsmc/CMakeLists.txt	2023-04-07 17:33:04.594841000 -0500
+@@ -27,7 +27,7 @@
+ )
+ 
+ install(
+-  FILES etc/bareos/bsmc.conf
++  FILES etc/bareos/bsmc.conf.sample
+   PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ
+   DESTINATION "${confdir}"
+ )

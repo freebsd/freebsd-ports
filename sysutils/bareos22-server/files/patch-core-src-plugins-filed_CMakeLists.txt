@@ -1,0 +1,13 @@
+--- core/src/plugins/filed/CMakeLists.txt	2020-12-16 02:46:16.000000000 -0500
++++ core/src/plugins/filed/CMakeLists.txt	2020-12-23 22:56:13.843714000 -0500
+@@ -41,7 +41,9 @@
+ 
+ include_directories(${OPENSSL_INCLUDE_DIR})
+ 
+-add_subdirectory(python)
++if(python)
++  add_subdirectory(python)
++endif()
+ 
+ add_library(bpipe-fd MODULE bpipe/bpipe-fd.cc)
+ set_target_properties(bpipe-fd PROPERTIES PREFIX "")
