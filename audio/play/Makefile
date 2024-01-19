@@ -9,6 +9,9 @@ COMMENT=	Simple audio file player
 
 LICENSE=	NONE
 
+DEPRECATED=	Upstream vaporized and last release was in 2000
+EXPIRATION_DATE=	2024-02-19
+
 USES=		uidfix
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/man/ja/man" BINDIR="${PREFIX}/bin"
