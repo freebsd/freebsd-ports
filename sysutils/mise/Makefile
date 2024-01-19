@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.1.22
+DISTVERSION=	2024.1.23
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
 		arrayvec-0.5.2 \
-		async-compression-0.4.5 \
+		async-compression-0.4.6 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.7 \
@@ -115,11 +115,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		globset-0.4.14 \
 		globwalk-0.8.1 \
 		globwalk-0.9.1 \
-		h2-0.3.23 \
+		h2-0.3.24 \
 		hashbrown-0.14.3 \
 		heck-0.3.3 \
 		heck-0.4.1 \
-		hermit-abi-0.3.3 \
+		hermit-abi-0.3.4 \
 		home-0.5.9 \
 		http-0.2.11 \
 		http-body-0.4.6 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.28 \
+		pkg-config-0.3.29 \
 		platforms-3.3.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
@@ -198,8 +198,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.8.0 \
-		rayon-core-1.12.0 \
+		rayon-1.8.1 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
@@ -288,7 +288,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-bidi-0.3.14 \
+		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
