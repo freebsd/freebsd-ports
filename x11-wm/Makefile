@@ -53,7 +53,6 @@
     SUBDIR += i3
     SUBDIR += icewm
     SUBDIR += ittywm
-    SUBDIR += jewel
     SUBDIR += jwm
     SUBDIR += kickshaw
     SUBDIR += korgwm
