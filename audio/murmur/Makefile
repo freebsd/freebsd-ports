@@ -1,9 +1,8 @@
 PORTNAME=	murmur
-PORTVERSION=	1.3.3
-PORTREVISION=	7
+PORTVERSION=	1.3.4
 CATEGORIES=	audio net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Server component of Mumble
 WWW=		https://www.mumble.info/
 
@@ -11,7 +10,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libprotobuf.so:devel/protobuf
 
 USES=		compiler:c++11-lang qmake pkgconfig python:build qt:5 ssl
 BROKEN_SSL=	openssl openssl31
