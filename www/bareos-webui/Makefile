@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	22.1.3
+DISTVERSION=	23.0.1
 CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	-webui
 
@@ -54,7 +54,6 @@ do-install:
 		${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/*.php ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/composer* ${STAGEDIR}${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/webui/phpunit.xml ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/install/directors.ini ${STAGEDIR}${PREFIX}/${ETCDIRWEBUI}/directors.ini
 	${INSTALL_DATA} ${WRKSRC}/webui/install/configuration.ini ${STAGEDIR}${PREFIX}/${ETCDIRWEBUI}/configuration.ini
 	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/console/admin.conf.example ${STAGEDIR}${ETCDIR}/bareos-dir.d/console/admin.conf.sample

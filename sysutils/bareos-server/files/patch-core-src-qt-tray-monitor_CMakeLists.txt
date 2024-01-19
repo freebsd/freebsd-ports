@@ -1,0 +1,32 @@
+--- core/src/qt-tray-monitor/CMakeLists.txt	2024-01-19 16:46:50.252975000 -0500
++++ core/src/qt-tray-monitor/CMakeLists.txt	2024-01-19 16:52:05.137955000 -0500
+@@ -27,20 +27,19 @@
+ set(CMAKE_AUTOUIC ON)
+ set(CMAKE_AUTORCC ON)
+ 
+-find_package(Qt6 COMPONENTS Core Widgets)
+-if(Qt6Widgets_FOUND)
+-  message(STATUS "Found QT6Widgets")
+-else()
+-  message(STATUS "QT6Widgets NOT found, checking for Qt5 ...")
++if(bat-qt6)
++  find_package(Qt6 COMPONENTS Core Widgets)
++  if(Qt6Widgets_FOUND)
++    message(STATUS "Found QT6Widgets")
++  else()
++    message(FATAL_ERROR "QT6Widgets NOT found, cannot build tray-monitor")
++  endif()
++else()
+   find_package(Qt5 COMPONENTS Core Widgets)
+   if(Qt5Widgets_FOUND)
+     message(STATUS "Found QT5Widgets")
+   else()
+-    message(STATUS "QT5Widgets NOT found, checking for Qt4 ...")
+-    find_package(Qt4)
+-    if(NOT Qt4_FOUND)
+-      message(FATAL_ERROR "Both Qt5 and Qt4 not found, cannot build tray-monitor")
+-    endif()
++    message(STATUS "QT5Widgets NOT found, cannot build tray-monitor")
+   endif()
+ endif()
+ 

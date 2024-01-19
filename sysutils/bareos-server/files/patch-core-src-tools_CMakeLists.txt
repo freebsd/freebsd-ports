@@ -1,0 +1,43 @@
+--- core/src/tools/CMakeLists.txt	2023-12-13 17:44:47.000000000 -0500
++++ core/src/tools/CMakeLists.txt	2024-01-18 23:59:23.120490000 -0500
+@@ -69,10 +69,39 @@
+ endif()
+ 
+ if(NOT client-only)
++  set(FDSRCS
++    ../filed/accurate.cc
++    ../filed/authenticate.cc
++    ../filed/crypto.cc
++    ../filed/evaluate_job_command.cc
++    ../filed/fd_plugins.cc
++    ../filed/fileset.cc
++    ../filed/sd_cmds.cc
++    ../filed/verify.cc
++    ../filed/accurate_htable.cc
++    ../filed/backup.cc
++    ../filed/dir_cmd.cc
++    ../filed/filed_globals.cc
++    ../filed/heartbeat.cc
++    ../filed/socket_server.cc
++    ../filed/verify_vol.cc
++    ../filed/accurate_lmdb.cc
++    ../filed/compression.cc
++    ../filed/estimate.cc
++    ../filed/filed_conf.cc
++    ../filed/restore.cc
++    ../filed/status.cc
++    ../filed/filed_utils.cc
++  )
++
++  include_directories(../fastlz/include)
++  add_library(fd_objects STATIC ${FDSRCS})
++  target_link_libraries(fd_objects PRIVATE bareos bareosfastlz ${ZLIB_LIBRARIES})
++
+   set(TSTFNDSRCS testfind.cc testfind_fd.cc dummysockets.cc)
+   add_executable(testfind ${TSTFNDSRCS})
+   target_link_libraries(
+-    testfind dird_objects fd_objects bareosfind CLI11::CLI11
++    testfind dird_objects fd_objects bareosfind CLI11::CLI11 ${JANSSON_LIBRARIES}
+   )
+   list(APPEND TOOLS_SBIN testfind)
+ endif()

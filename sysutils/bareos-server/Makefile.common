@@ -1,6 +1,6 @@
 post-patch:
 	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
 .endif
 
@@ -10,7 +10,7 @@ post-build:
 .endif
 
 pre-install:
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
 .	for d in client director monitor storage
 		${MKDIR} ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}
 		${FIND} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bareos-fd ${STAGEDIR}${PREFIX}/sbin/bareos-fd-static
 	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${STAGEDIR}${PREFIX}/sbin/bconsole-static
 .endif
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
 # Install config files and preserve existing ones
 .for d in client director monitor storage
 	${INSTALL_SCRIPT} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
