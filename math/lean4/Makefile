@@ -11,6 +11,8 @@ WWW=		https://lean-lang.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
