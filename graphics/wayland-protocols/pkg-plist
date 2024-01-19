@@ -1,4 +1,5 @@
 share/pkgconfig/wayland-protocols.pc
+%%DATADIR%%/stable/linux-dmabuf/linux-dmabuf-v1.xml
 %%DATADIR%%/stable/presentation-time/presentation-time.xml
 %%DATADIR%%/stable/viewporter/viewporter.xml
 %%DATADIR%%/stable/xdg-shell/xdg-shell.xml
@@ -8,6 +9,7 @@ share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/staging/ext-foreign-toplevel-list/ext-foreign-toplevel-list-v1.xml
 %%DATADIR%%/staging/ext-idle-notify/ext-idle-notify-v1.xml
 %%DATADIR%%/staging/ext-session-lock/ext-session-lock-v1.xml
+%%DATADIR%%/staging/ext-transient-seat/ext-transient-seat-v1.xml
 %%DATADIR%%/staging/fractional-scale/fractional-scale-v1.xml
 %%DATADIR%%/staging/security-context/security-context-v1.xml
 %%DATADIR%%/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
