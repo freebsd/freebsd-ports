@@ -1,3 +1,32 @@
+  <vuln vid="2264566a-a890-46eb-a895-7881dd220bd0">
+    <topic>electron26 -- Out of bounds memory access in V8</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.7">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0519.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0519</cvename>
+      <url>https://github.com/advisories/GHSA-vg6w-jr5m-86c8</url>
+    </references>
+    <dates>
+      <discovery>2024-01-18</discovery>
+      <entry>2024-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8326b61-eda0-4c03-9a5b-49ebd8f41c1a">
     <topic>electron{26,27} -- multiple vulnerabilities</topic>
     <affects>
