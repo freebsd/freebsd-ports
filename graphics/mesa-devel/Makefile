@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.0-branchpoint-300
-DISTVERSIONSUFFIX=	-g6e4bb8253ed
+DISTVERSION=	24.0-branchpoint-446
+DISTVERSIONSUFFIX=	-g459b5222511
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -10,6 +10,8 @@ PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	72f7e51d22b3.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/6881
 PATCHFILES+=	7c565db35d39.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/27184
 PATCHFILES+=	2930dcbb3329.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
+PATCHFILES+=	a7cfb8baae21.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/27181
+PATCHFILES+=	3d470bcad1d6.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/27181
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenCL, OpenGL, Vulkan)
