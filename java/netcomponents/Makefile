@@ -7,7 +7,7 @@ DISTNAME=	NetComponents-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library with common network protocol implementations
-WWW=		http://www.savarese.org/oro/downloads/index.html #NetComponents
+WWW=		https://www.savarese.org/oro/index.html
 
 # Converted from RESTRICTED
 LICENSE=	NetComponents
@@ -15,11 +15,17 @@ LICENSE_NAME=	NetComponents
 LICENSE_TEXT=	May not redistribute except as part of a new software product
 LICENSE_PERMS=	auto-accept
 
-PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+DEPRECATED=	Last upstream release was in 2000 and upstream unmaintained consider using net/apache-commons-net
+EXPIRATION_DATE=	2024-03-31
+
 USES=		zip
 USE_JAVA=	yes
-WRKSRC=		${WRKDIR}/NetComponents-1.3.8a
+
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/NetComponents-1.3.8a
+
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
 JARFILE=	NetComponents.jar
 
