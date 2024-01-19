@@ -1,3 +1,5 @@
-TIMESTAMP = 1654190595
-SHA256 (taskw-2.0.0.tar.gz) = 1109bdf9bde7a9b32a5007a302c878303ff65188b64225ac74a3289a4c548bdd
-SIZE (taskw-2.0.0.tar.gz) = 42577
+TIMESTAMP = 1705657220
+SHA256 (ralphbean-taskw-2.0.0_GH0.tar.gz) = 194c469d2be96cd47c7e0f6de214e752b195111fd4edd0731ab059baa3a2bebd
+SIZE (ralphbean-taskw-2.0.0_GH0.tar.gz) = 58235
+SHA256 (168.patch) = cca07d97a3d4b87f8dedbacfde4c2e828e5fb5cd9ec3f37ff9036787148f7df8
+SIZE (168.patch) = 8634
