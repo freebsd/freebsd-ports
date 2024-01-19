@@ -10,7 +10,8 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Simple Emacs-Perl Interface
 WWW=		https://metacpan.org/release/Sepia
 
-LICENSE=	NONE
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Size>=0:devel/p5-Devel-Size \
