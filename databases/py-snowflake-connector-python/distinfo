@@ -1,3 +1,3 @@
-TIMESTAMP = 1701367506
-SHA256 (snowflake-connector-python-3.5.0.tar.gz) = 654e4a1f68a491544bd8f7c5ab02eb8531df67c5f4309d5253bd204044f8a1b3
-SIZE (snowflake-connector-python-3.5.0.tar.gz) = 702274
+TIMESTAMP = 1712271603
+SHA256 (snowflake-connector-python-3.8.0.tar.gz) = b5b5e85d02b4348a1f2d6c67df4829aa3387967b0133d2b7fa31d190d0609c31
+SIZE (snowflake-connector-python-3.8.0.tar.gz) = 733956
