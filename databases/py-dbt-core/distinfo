@@ -1,3 +1,3 @@
-TIMESTAMP = 1701374624
-SHA256 (dbt-core-1.7.3.tar.gz) = a8f06203cd003ebcdda2af953f60c2b44fc0c69bd6cba79338225daedb1f41e1
-SIZE (dbt-core-1.7.3.tar.gz) = 913570
+TIMESTAMP = 1712271004
+SHA256 (dbt-core-1.7.11.tar.gz) = c2dc28251a7b08c13a298ca19aefd3b796357ba9d894b59ef5b47eb26871be06
+SIZE (dbt-core-1.7.11.tar.gz) = 915708
