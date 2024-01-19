@@ -14,6 +14,9 @@ WWW=		http://www.aegisub.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	BROKEN for nearly a year
+EXPIRATION_DATE=	2024-02-29
+
 BROKEN=		fails to build
 BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
 NOT_FOR_ARCHS=		powerpc64 powerpc64le
