@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.3
 CATEGORIES=	security
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Fast vulnerability scanner
 WWW=		https://github.com/projectdiscovery/nuclei
 

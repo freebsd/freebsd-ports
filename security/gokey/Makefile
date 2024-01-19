@@ -4,7 +4,7 @@ DISTVERSION=	0.1.2
 PORTREVISION=	9
 CATEGORIES=	security
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Simple password manager write in Go
 WWW=		https://github.com/cloudflare/gokey
 

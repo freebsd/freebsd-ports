@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Chaoskube periodically kills random pods in your Kubernetes cluster
 WWW=		https://github.com/linki/chaoskube
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	ipinfo-
 DISTVERSION=	3.3.0
 CATEGORIES=	net
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Official Command Line Interface for the IPinfo API
 WWW=		https://github.com/ipinfo/cli
 

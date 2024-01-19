@@ -4,7 +4,7 @@ DISTVERSION=	0.5.1
 PORTREVISION=	10
 CATEGORIES=	security
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Go Security Static Analysis
 WWW=		https://github.com/praetorian-inc/gokart
 

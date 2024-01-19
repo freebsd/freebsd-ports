@@ -4,7 +4,7 @@ DISTVERSION=	1.6.2
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Prometheus push acceptor for ephemeral and batch jobs
 WWW=		https://github.com/prometheus/pushgateway
 
