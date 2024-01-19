@@ -1,5 +1,5 @@
 PORTNAME=	libudisks
-DISTVERSION=	2.10.0
+DISTVERSION=	2.10.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/storaged-project/udisks/releases/download/udisks-${DISTVERSION}/
 DISTNAME=	udisks-${DISTVERSION}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 # NLS is disabled.
 USES=		gettext-tools:build gmake gnome libtool pathfix pkgconfig \
 		tar:bz2
-USE_GNOME=	glib20 introspection
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
