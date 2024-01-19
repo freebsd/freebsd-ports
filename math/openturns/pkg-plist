@@ -55,6 +55,7 @@ include/openturns/BlendedStep.hxx
 include/openturns/BlockIndependentDistribution.hxx
 include/openturns/Bonmin.hxx
 include/openturns/BootstrapExperiment.hxx
+include/openturns/BoundaryMesher.hxx
 include/openturns/BoundingVolumeHierarchy.hxx
 include/openturns/Box.hxx
 include/openturns/BoxCoxEvaluation.hxx
@@ -407,6 +408,7 @@ include/openturns/LaguerreFactory.hxx
 include/openturns/Laplace.hxx
 include/openturns/LaplaceFactory.hxx
 include/openturns/Last.hxx
+include/openturns/LatentVariableModel.hxx
 include/openturns/LeastSquaresDistributionFactory.hxx
 include/openturns/LeastSquaresExpansion.hxx
 include/openturns/LeastSquaresMetaModelSelection.hxx
@@ -714,7 +716,6 @@ include/openturns/RegularGridEnclosingSimplex.hxx
 include/openturns/RegularGridNearestNeighbour.hxx
 include/openturns/ResourceMap.hxx
 include/openturns/ReverseHaltonSequence.hxx
-include/openturns/Rfunctions.hxx
 include/openturns/Rice.hxx
 include/openturns/RiceFactory.hxx
 include/openturns/RiskyAndFast.hxx
@@ -733,6 +734,7 @@ include/openturns/SampleImplementation.hxx
 include/openturns/SamplingStrategy.hxx
 include/openturns/SamplingStrategyImplementation.hxx
 include/openturns/Secant.hxx
+include/openturns/SimplicialCubature.hxx
 include/openturns/SimulatedAnnealingLHS.hxx
 include/openturns/SimulationAlgorithm.hxx
 include/openturns/SimulationResult.hxx
@@ -782,6 +784,8 @@ include/openturns/StorageManager.hxx
 include/openturns/StratifiedExperiment.hxx
 include/openturns/StrongMaximumTest.hxx
 include/openturns/Student.hxx
+include/openturns/StudentCopula.hxx
+include/openturns/StudentCopulaFactory.hxx
 include/openturns/StudentFactory.hxx
 include/openturns/StudentFunctions.hxx
 include/openturns/Study.hxx
@@ -828,6 +832,7 @@ include/openturns/TriangularMatrix.hxx
 include/openturns/TruncatedDistribution.hxx
 include/openturns/TruncatedNormal.hxx
 include/openturns/TruncatedNormalFactory.hxx
+include/openturns/TruncatedOverMesh.hxx
 include/openturns/Tuples.hxx
 include/openturns/TypedCollectionInterfaceObject.hxx
 include/openturns/TypedInterfaceObject.hxx
@@ -992,6 +997,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/Bonmin_doc.i
 %%PYTHON%%include/openturns/swig/BootstrapExperiment.i
 %%PYTHON%%include/openturns/swig/BootstrapExperiment_doc.i
+%%PYTHON%%include/openturns/swig/BoundaryMesher.i
+%%PYTHON%%include/openturns/swig/BoundaryMesher_doc.i
 %%PYTHON%%include/openturns/swig/BoundingVolumeHierarchy.i
 %%PYTHON%%include/openturns/swig/BoundingVolumeHierarchy_doc.i
 %%PYTHON%%include/openturns/swig/Box.i
@@ -1067,11 +1074,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/ComparisonOperatorImplementation.i
 %%PYTHON%%include/openturns/swig/ComparisonOperator_doc.i
 %%PYTHON%%include/openturns/swig/ComplexMatrix.i
-%%PYTHON%%include/openturns/swig/ComplexMatrixImplementation.i
-%%PYTHON%%include/openturns/swig/ComplexMatrixImplementation_doc.i
 %%PYTHON%%include/openturns/swig/ComplexMatrix_doc.i
 %%PYTHON%%include/openturns/swig/ComplexTensor.i
-%%PYTHON%%include/openturns/swig/ComplexTensorImplementation.i
 %%PYTHON%%include/openturns/swig/ComplexTensor_doc.i
 %%PYTHON%%include/openturns/swig/ComposedCopula.i
 %%PYTHON%%include/openturns/swig/ComposedCopula_doc.i
@@ -1215,6 +1219,7 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/EfficientGlobalOptimization.i
 %%PYTHON%%include/openturns/swig/EfficientGlobalOptimization_doc.i
 %%PYTHON%%include/openturns/swig/EllipticalDistribution.i
+%%PYTHON%%include/openturns/swig/EllipticalDistribution_doc.i
 %%PYTHON%%include/openturns/swig/EmpiricalBernsteinCopula.i
 %%PYTHON%%include/openturns/swig/EmpiricalBernsteinCopula_doc.i
 %%PYTHON%%include/openturns/swig/EnclosingSimplexAlgorithm.i
@@ -1636,6 +1641,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/Laplace_doc.i
 %%PYTHON%%include/openturns/swig/Last.i
 %%PYTHON%%include/openturns/swig/Last_doc.i
+%%PYTHON%%include/openturns/swig/LatentVariableModel.i
+%%PYTHON%%include/openturns/swig/LatentVariableModel_doc.i
 %%PYTHON%%include/openturns/swig/LeastSquaresDistributionFactory.i
 %%PYTHON%%include/openturns/swig/LeastSquaresDistributionFactory_doc.i
 %%PYTHON%%include/openturns/swig/LeastSquaresExpansion.i
@@ -1759,6 +1766,7 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/MeixnerFactory.i
 %%PYTHON%%include/openturns/swig/MeixnerFactory_doc.i
 %%PYTHON%%include/openturns/swig/MemoizeEvaluation.i
+%%PYTHON%%include/openturns/swig/MemoizeEvaluation_doc.i
 %%PYTHON%%include/openturns/swig/MemoizeFunction.i
 %%PYTHON%%include/openturns/swig/MemoizeFunction_doc.i
 %%PYTHON%%include/openturns/swig/Mesh.i
@@ -1830,8 +1838,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/NearestNeighbourAlgorithmImplementation.i
 %%PYTHON%%include/openturns/swig/NearestNeighbourAlgorithmImplementation_doc.i
 %%PYTHON%%include/openturns/swig/NearestNeighbourAlgorithm_doc.i
-%%PYTHON%%include/openturns/swig/NearestPointChecker.i
-%%PYTHON%%include/openturns/swig/NearestPointCheckerResult.i
 %%PYTHON%%include/openturns/swig/NearestPointProblem.i
 %%PYTHON%%include/openturns/swig/NearestPointProblem_doc.i
 %%PYTHON%%include/openturns/swig/NegativeBinomial.i
@@ -2102,6 +2108,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/SamplingStrategy_doc.i
 %%PYTHON%%include/openturns/swig/Secant.i
 %%PYTHON%%include/openturns/swig/Secant_doc.i
+%%PYTHON%%include/openturns/swig/SimplicialCubature.i
+%%PYTHON%%include/openturns/swig/SimplicialCubature_doc.i
 %%PYTHON%%include/openturns/swig/SimulatedAnnealingLHS.i
 %%PYTHON%%include/openturns/swig/SimulatedAnnealingLHS_doc.i
 %%PYTHON%%include/openturns/swig/SimulationAlgorithm.i
@@ -2193,6 +2201,10 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/StrongMaximumTest.i
 %%PYTHON%%include/openturns/swig/StrongMaximumTest_doc.i
 %%PYTHON%%include/openturns/swig/Student.i
+%%PYTHON%%include/openturns/swig/StudentCopula.i
+%%PYTHON%%include/openturns/swig/StudentCopulaFactory.i
+%%PYTHON%%include/openturns/swig/StudentCopulaFactory_doc.i
+%%PYTHON%%include/openturns/swig/StudentCopula_doc.i
 %%PYTHON%%include/openturns/swig/StudentFactory.i
 %%PYTHON%%include/openturns/swig/StudentFactory_doc.i
 %%PYTHON%%include/openturns/swig/Student_doc.i
@@ -2225,9 +2237,7 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/TemperatureProfileImplementation.i
 %%PYTHON%%include/openturns/swig/TemperatureProfileImplementation_doc.i
 %%PYTHON%%include/openturns/swig/TemperatureProfile_doc.i
-%%PYTHON%%include/openturns/swig/Tensor.i
-%%PYTHON%%include/openturns/swig/TensorImplementation.i
-%%PYTHON%%include/openturns/swig/TensorImplementation_doc.i
+%%PYTHON%%include/openturns/swig/Tensor.i%%PYTHON%%
 %%PYTHON%%include/openturns/swig/TensorProductExperiment.i
 %%PYTHON%%include/openturns/swig/TensorProductExperiment_doc.i
 %%PYTHON%%include/openturns/swig/Tensor_doc.i
@@ -2272,6 +2282,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/TruncatedNormalFactory.i
 %%PYTHON%%include/openturns/swig/TruncatedNormalFactory_doc.i
 %%PYTHON%%include/openturns/swig/TruncatedNormal_doc.i
+%%PYTHON%%include/openturns/swig/TruncatedOverMesh.i
+%%PYTHON%%include/openturns/swig/TruncatedOverMesh_doc.i
 %%PYTHON%%include/openturns/swig/Tuples.i
 %%PYTHON%%include/openturns/swig/Tuples_doc.i
 %%PYTHON%%include/openturns/swig/TypedCollectionInterfaceObject.i
@@ -2416,10 +2428,10 @@ lib/cmake/openturns/OpenTURNS-Targets.cmake
 lib/cmake/openturns/OpenTURNSConfig.cmake
 lib/cmake/openturns/OpenTURNSConfigVersion.cmake
 lib/libOT.so
-lib/libOT.so.0.22
-lib/libOT.so.0.22.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.21.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.21.dist-info/WHEEL
+lib/libOT.so.0.23
+lib/libOT.so.0.23.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.22.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.22.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/DistFunc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/FittingTest.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/HypothesisTest.py
@@ -2512,6 +2524,7 @@ lib/libOT.so.0.22.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/ishigami_function.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/linthurst.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/logistic_model.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/oscillator.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/portpirie.csv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/racetime.csv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/rain.csv
@@ -2524,4 +2537,4 @@ lib/libOT.so.0.22.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/wooster.csv
 %%PYTHON_SITELIBDIR%%/openturns/viewer.py
 %%PYTHON_SITELIBDIR%%/openturns/weightedexperiment.py
-share/gdb/auto-load/usr/local/lib/libOT.so.0.22.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libOT.so.0.23.0-gdb.py
