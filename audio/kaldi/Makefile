@@ -24,7 +24,7 @@ CMAKE_OFF=	KALDI_BUILD_TEST
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DKALDI_VERSION=${PORTVERSION}
 
-CXXFLAGS_i386=	-msse # SSE is off by default on i386 and compilation fails: /usr/local/include/fst/float-weight.h:99:2: error: "Please compile with -msse -mfpmath=sse, or equivalent."
+CXXFLAGS_i386=	-msse -mfpmath=sse # SSE is off by default on i386 and compilation fails: /usr/local/include/fst/float-weight.h:99:2: error: "Please compile with -msse -mfpmath=sse, or equivalent."
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
