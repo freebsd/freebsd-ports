@@ -1,5 +1,5 @@
 PORTNAME=	dwave-preprocessing
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.5
 CATEGORIES=	science # quantum-computing
 
 MAINTAINER=	yuri@FreeBSD.org
