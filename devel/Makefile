@@ -1428,6 +1428,7 @@
     SUBDIR += libubox
     SUBDIR += libudev-devd
     SUBDIR += libuinputplus
+    SUBDIR += libuiohook
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum

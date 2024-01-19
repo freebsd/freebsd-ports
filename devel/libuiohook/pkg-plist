@@ -1,0 +1,7 @@
+include/uiohook.h
+lib/cmake/uiohook/uiohook-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/uiohook/uiohook-config.cmake
+lib/libuiohook.so
+lib/libuiohook.so.1
+lib/libuiohook.so.1.2.0
+libdata/pkgconfig/uiohook.pc
