@@ -285,6 +285,7 @@
 %%DATADIR%%/docs/development/search.md
 %%DATADIR%%/docs/development/signals.md
 %%DATADIR%%/docs/development/style-guide.md
+%%DATADIR%%/docs/development/translations.md
 %%DATADIR%%/docs/development/user-preferences.md
 %%DATADIR%%/docs/development/web-ui.md
 %%DATADIR%%/docs/extra.css
@@ -328,7 +329,6 @@
 %%DATADIR%%/docs/integrations/synchronized-data.md
 %%DATADIR%%/docs/integrations/webhooks.md
 %%DATADIR%%/docs/introduction.md
-%%DATADIR%%/docs/media/admin_ui_run_permission.png
 %%DATADIR%%/docs/media/authentication/azure_ad_add_app_registration.png
 %%DATADIR%%/docs/media/authentication/azure_ad_add_client_secret.png
 %%DATADIR%%/docs/media/authentication/azure_ad_app_registration.png
@@ -346,15 +346,19 @@
 %%DATADIR%%/docs/media/development/github_fork_button.png
 %%DATADIR%%/docs/media/development/github_fork_dialog.png
 %%DATADIR%%/docs/media/development/github_new_issue.png
+%%DATADIR%%/docs/media/development/transifex_download.png
 %%DATADIR%%/docs/media/installation/netbox_application_stack.png
 %%DATADIR%%/docs/media/installation/upgrade_paths.png
+%%DATADIR%%/docs/media/misc/netbox_cloud.png
 %%DATADIR%%/docs/media/misc/netbox_logo.png
+%%DATADIR%%/docs/media/misc/reference_architecture.png
 %%DATADIR%%/docs/media/models/dcim_cable_trace.png
 %%DATADIR%%/docs/media/power_distribution.png
 %%DATADIR%%/docs/media/release-notes/netbox30_ui.png
+%%DATADIR%%/docs/media/run_permission.png
 %%DATADIR%%/docs/media/screenshots/cable-trace.png
 %%DATADIR%%/docs/media/screenshots/home-dark.png
-%%DATADIR%%/docs/media/screenshots/netbox-ui.png
+%%DATADIR%%/docs/media/screenshots/home-light.png
 %%DATADIR%%/docs/media/screenshots/prefixes-list.png
 %%DATADIR%%/docs/media/screenshots/rack.png
 %%DATADIR%%/docs/models/circuits/circuit.md
@@ -1267,6 +1271,7 @@
 %%DATADIR%%/tenancy/migrations/0011_contactassignment_tags.py
 %%DATADIR%%/tenancy/migrations/0012_contactassignment_custom_fields.py
 %%DATADIR%%/tenancy/migrations/0013_gfk_indexes.py
+%%DATADIR%%/tenancy/migrations/0014_contactassignment_ordering.py
 %%DATADIR%%/tenancy/migrations/__init__.py
 %%DATADIR%%/tenancy/models/__init__.py
 %%DATADIR%%/tenancy/models/contacts.py
@@ -1516,6 +1521,7 @@
 %%DATADIR%%/vpn/graphql/types.py
 %%DATADIR%%/vpn/migrations/0001_initial.py
 %%DATADIR%%/vpn/migrations/0002_move_l2vpn.py
+%%DATADIR%%/vpn/migrations/0003_ipaddress_multiple_tunnel_terminations.py
 %%DATADIR%%/vpn/migrations/__init__.py
 %%DATADIR%%/vpn/models/__init__.py
 %%DATADIR%%/vpn/models/crypto.py
