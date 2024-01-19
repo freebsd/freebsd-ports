@@ -1,5 +1,3 @@
-TIMESTAMP = 1669081398
-SHA256 (firebird/Firebird-4.0.2.2816-0.tar.xz) = fb28140cec1eb32ea683bdf552dd1d6b7d455db61282fcf96fae18b3103af6c6
-SIZE (firebird/Firebird-4.0.2.2816-0.tar.xz) = 30665764
-SHA256 (firebird/96931200340c8e0abcd3529b8e443d5ab62adfa5.patch) = cf70a42c4d92b06ecf7a75131ed04dfbb471aba8c78eda66a3412f12b9084d58
-SIZE (firebird/96931200340c8e0abcd3529b8e443d5ab62adfa5.patch) = 4011
+TIMESTAMP = 1705444780
+SHA256 (firebird/Firebird-4.0.4.3010-0.tar.xz) = 9ae13f9a1b5e9a36acfdd27b0dcd57b29d8d161f4f0199b18c6b8a183e9d4a75
+SIZE (firebird/Firebird-4.0.4.3010-0.tar.xz) = 30691012

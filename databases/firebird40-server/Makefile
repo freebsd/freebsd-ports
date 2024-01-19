@@ -1,10 +1,9 @@
 PORTNAME=	firebird
-PORTVERSION=	4.0.2
-PORTREVISION=	2
+PORTVERSION=	4.0.4
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.2816-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.3010-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libtommath.so:math/libtommath \
 		libtomcrypt.so:security/libtomcrypt
 
-CONFLICTS_INSTALL=	firebird25 firebird30
+CONFLICTS_INSTALL=	firebird30
 
 USES=		cpe gmake pkgconfig localbase:ldflags libedit tar:xz
 USE_CXXSTD=	c++11
