@@ -647,6 +647,8 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/portability/SIMDIntrinsicsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/portability/StdAllocatorConstCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidConstParamsInDecls.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidNestedConditionalOperatorCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidReturnWithVoidValueCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidUnconditionalPreprocessorIfCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/BracesAroundStatementsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/ConstReturnTypeCheck.h
@@ -723,6 +725,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/ARCMigrate/ARCMT.h
 %%CLANG%%llvm-devel/include/clang/ARCMigrate/ARCMTActions.h
 %%CLANG%%llvm-devel/include/clang/ARCMigrate/FileRemapper.h
+%%CLANG%%llvm-devel/include/clang/AST/APNumericStorage.h
 %%CLANG%%llvm-devel/include/clang/AST/APValue.h
 %%CLANG%%llvm-devel/include/clang/AST/AST.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTConcept.h
@@ -947,7 +950,6 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/AttrList.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttrSubMatchRulesList.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttrSubjectMatchRules.h
-%%CLANG%%llvm-devel/include/clang/Basic/AttrTokenKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttributeCommonInfo.h
 %%CLANG%%llvm-devel/include/clang/Basic/Attributes.h
 %%CLANG%%llvm-devel/include/clang/Basic/BitmaskEnum.h
@@ -1067,6 +1069,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/PrettyStackTrace.h
 %%CLANG%%llvm-devel/include/clang/Basic/ProfileList.h
 %%CLANG%%llvm-devel/include/clang/Basic/RISCVVTypes.def
+%%CLANG%%llvm-devel/include/clang/Basic/RegularKeywordAttrInfo.inc
 %%CLANG%%llvm-devel/include/clang/Basic/SanitizerSpecialCaseList.h
 %%CLANG%%llvm-devel/include/clang/Basic/Sanitizers.def
 %%CLANG%%llvm-devel/include/clang/Basic/Sanitizers.h
@@ -1588,6 +1591,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Derived.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/EnvironmentDefaults.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Exceptions.h
+%%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Execute.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Inquiry.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Intrinsics.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Numeric.h
@@ -1696,6 +1700,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Runtime/descriptor.h
 %%FLANG%%llvm-devel/include/flang/Runtime/entry-names.h
 %%FLANG%%llvm-devel/include/flang/Runtime/exceptions.h
+%%FLANG%%llvm-devel/include/flang/Runtime/execute.h
 %%FLANG%%llvm-devel/include/flang/Runtime/extensions.h
 %%FLANG%%llvm-devel/include/flang/Runtime/inquiry.h
 %%FLANG%%llvm-devel/include/flang/Runtime/io-api.h
@@ -2281,6 +2286,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Utility/StringLexer.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StringList.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StructuredData.h
+%%LLDB%%llvm-devel/include/lldb/Utility/SupportFile.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ThreadSafeDenseMap.h
 %%LLDB%%llvm-devel/include/lldb/Utility/TildeExpressionResolver.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Timeout.h
@@ -2660,6 +2666,7 @@ llvm-devel/include/llvm/CodeGen/CallBrPrepare.h
 llvm-devel/include/llvm/CodeGen/CallingConvLower.h
 llvm-devel/include/llvm/CodeGen/CodeGenCommonISel.h
 llvm-devel/include/llvm/CodeGen/CodeGenPassBuilder.h
+llvm-devel/include/llvm/CodeGen/CodeGenPrepare.h
 llvm-devel/include/llvm/CodeGen/CommandFlags.h
 llvm-devel/include/llvm/CodeGen/ComplexDeinterleavingPass.h
 llvm-devel/include/llvm/CodeGen/CostTable.h
@@ -2713,6 +2720,7 @@ llvm-devel/include/llvm/CodeGen/GlobalISel/MIPatternMatch.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegBankSelect.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/Utils.h
+llvm-devel/include/llvm/CodeGen/GlobalMerge.h
 llvm-devel/include/llvm/CodeGen/HardwareLoops.h
 llvm-devel/include/llvm/CodeGen/ISDOpcodes.h
 llvm-devel/include/llvm/CodeGen/IndirectBrExpand.h
@@ -2838,6 +2846,7 @@ llvm-devel/include/llvm/CodeGen/SelectionDAGAddressAnalysis.h
 llvm-devel/include/llvm/CodeGen/SelectionDAGISel.h
 llvm-devel/include/llvm/CodeGen/SelectionDAGNodes.h
 llvm-devel/include/llvm/CodeGen/SelectionDAGTargetInfo.h
+llvm-devel/include/llvm/CodeGen/ShadowStackGCLowering.h
 llvm-devel/include/llvm/CodeGen/SjLjEHPrepare.h
 llvm-devel/include/llvm/CodeGen/SlotIndexes.h
 llvm-devel/include/llvm/CodeGen/Spiller.h
@@ -2875,14 +2884,17 @@ llvm-devel/include/llvm/Config/TargetMCAs.def
 llvm-devel/include/llvm/Config/Targets.def
 llvm-devel/include/llvm/Config/abi-breaking.h
 llvm-devel/include/llvm/Config/llvm-config.h
-llvm-devel/include/llvm/DWARFLinker/DWARFLinker.h
-llvm-devel/include/llvm/DWARFLinker/DWARFLinkerCompileUnit.h
-llvm-devel/include/llvm/DWARFLinker/DWARFLinkerDeclContext.h
-llvm-devel/include/llvm/DWARFLinker/DWARFStreamer.h
-llvm-devel/include/llvm/DWARFLinkerParallel/AddressesMap.h
-llvm-devel/include/llvm/DWARFLinkerParallel/DWARFFile.h
-llvm-devel/include/llvm/DWARFLinkerParallel/DWARFLinker.h
-llvm-devel/include/llvm/DWARFLinkerParallel/StringPool.h
+llvm-devel/include/llvm/DWARFLinker/AddressesMap.h
+llvm-devel/include/llvm/DWARFLinker/Classic/DWARFLinker.h
+llvm-devel/include/llvm/DWARFLinker/Classic/DWARFLinkerCompileUnit.h
+llvm-devel/include/llvm/DWARFLinker/Classic/DWARFLinkerDeclContext.h
+llvm-devel/include/llvm/DWARFLinker/Classic/DWARFStreamer.h
+llvm-devel/include/llvm/DWARFLinker/DWARFFile.h
+llvm-devel/include/llvm/DWARFLinker/DWARFLinkerBase.h
+llvm-devel/include/llvm/DWARFLinker/IndexedValuesMap.h
+llvm-devel/include/llvm/DWARFLinker/Parallel/DWARFLinker.h
+llvm-devel/include/llvm/DWARFLinker/StringPool.h
+llvm-devel/include/llvm/DWARFLinker/Utils.h
 llvm-devel/include/llvm/DWP/DWP.h
 llvm-devel/include/llvm/DWP/DWPError.h
 llvm-devel/include/llvm/DWP/DWPStringPool.h
@@ -3276,6 +3288,7 @@ llvm-devel/include/llvm/Frontend/Debug/Options.h
 llvm-devel/include/llvm/Frontend/Directive/DirectiveBase.td
 llvm-devel/include/llvm/Frontend/Driver/CodeGenOptions.h
 llvm-devel/include/llvm/Frontend/HLSL/HLSLResource.h
+llvm-devel/include/llvm/Frontend/Offloading/OffloadWrapper.h
 llvm-devel/include/llvm/Frontend/Offloading/Utility.h
 llvm-devel/include/llvm/Frontend/OpenACC/ACC.h.inc
 llvm-devel/include/llvm/Frontend/OpenACC/ACC.inc
@@ -3444,6 +3457,7 @@ llvm-devel/include/llvm/IR/TypedPointerType.h
 llvm-devel/include/llvm/IR/Use.h
 llvm-devel/include/llvm/IR/UseListOrder.h
 llvm-devel/include/llvm/IR/User.h
+llvm-devel/include/llvm/IR/VFABIDemangler.h
 llvm-devel/include/llvm/IR/VPIntrinsics.def
 llvm-devel/include/llvm/IR/Value.def
 llvm-devel/include/llvm/IR/Value.h
@@ -4291,7 +4305,9 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataLayoutAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/FlatLinearValueConstraints.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Liveness.h
+%%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Barvinok.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Fraction.h
+%%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/GeneratingFunction.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/IntegerRelation.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/LinearTransform.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/MPInt.h
@@ -4846,6 +4862,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/ROCDLOpsTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/ROCDLOpsTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/Transforms/AddComdats.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/Transforms/DIExpressionLegalization.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/Transforms/DIExpressionRewriter.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/Transforms/LegalizeForExport.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/Transforms/OptimizeForNVVM.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/LLVMIR/Transforms/Passes.h
@@ -4981,6 +4999,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Mesh/Transforms/Passes.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/Mesh/Transforms/Simplifications.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Mesh/Transforms/Spmdization.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Mesh/Transforms/Transforms.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/NVGPU/IR/NVGPU.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/NVGPU/IR/NVGPU.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/NVGPU/IR/NVGPU.td
@@ -5276,6 +5295,11 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Utils/QuantUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Tosa/Utils/ShapeUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Traits.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/DebugExtension/DebugExtension.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/DebugExtension/DebugExtensionOps.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/DebugExtension/DebugExtensionOps.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/DebugExtension/DebugExtensionOps.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/DebugExtension/DebugExtensionOps.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/IR/MatchInterfaces.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/IR/MatchInterfaces.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/IR/MatchInterfaces.h.inc
@@ -5483,6 +5507,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/IR/Operation.h
 %%MLIR%%llvm-devel/include/mlir/IR/OperationSupport.h
 %%MLIR%%llvm-devel/include/mlir/IR/OwningOpRef.h
+%%MLIR%%llvm-devel/include/mlir/IR/PDLPatternMatch.h.inc
 %%MLIR%%llvm-devel/include/mlir/IR/PatternBase.td
 %%MLIR%%llvm-devel/include/mlir/IR/PatternMatch.h
 %%MLIR%%llvm-devel/include/mlir/IR/Properties.td
@@ -6234,6 +6259,7 @@ llvm-devel/lib/libLLVM.so
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMCoroutines.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMCoverage.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMDWARFLinker.a
+%%STATIC_LIBS%%llvm-devel/lib/libLLVMDWARFLinkerClassic.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMDWARFLinkerParallel.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMDWP.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMDebugInfoBTF.a
@@ -6562,7 +6588,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMemRefUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMemorySlotInterfaces.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMeshDialect.a
-%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMeshTestSimplifications.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMeshTest.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMeshTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRMlirOptMain.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRNVGPUDialect.a
@@ -6607,6 +6633,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRReduce.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRReduceLib.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRRewrite.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRRewritePDL.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRRuntimeVerifiableOpInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSCFDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRSCFTestPasses.a
@@ -6687,6 +6714,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTosaToSCF.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTosaToTensor.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTosaTransforms.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDebugExtension.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDialectTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDialectUtils.a
