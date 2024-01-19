@@ -18,9 +18,9 @@ libdata/pkgconfig/p11-kit-1.pc
 libexec/p11-kit/p11-kit-remote
 libexec/p11-kit/p11-kit-server
 libexec/p11-kit/trust-extract-compat
-%%MANPAGES%%man/man1/trust.1.gz
-%%MANPAGES%%man/man5/pkcs11.conf.5.gz
-%%MANPAGES%%man/man8/p11-kit.8.gz
+%%MANPAGES%%share/man/man1/trust.1.gz
+%%MANPAGES%%share/man/man5/pkcs11.conf.5.gz
+%%MANPAGES%%share/man/man8/p11-kit.8.gz
 share/bash-completion/completions/p11-kit
 share/bash-completion/completions/trust
 %%DOCS%%share/gtk-doc/html/p11-kit/config-example.html

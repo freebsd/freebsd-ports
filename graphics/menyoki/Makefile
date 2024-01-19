@@ -1,0 +1,209 @@
+PORTNAME=	menyoki
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.0
+CATEGORIES=	graphics
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Screen{shot,cast} and perform ImageOps on the command line
+WWW=		https://menyoki.cli.rs/
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo xorg
+USE_XORG=	x11 xrandr
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	orhun
+
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.7.6 \
+		android_system_properties-0.1.5 \
+		ansi_colours-1.2.1 \
+		ansi_term-0.12.1 \
+		arrayvec-0.7.2 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		base64-0.13.1 \
+		bit_field-0.10.2 \
+		bitflags-1.3.2 \
+		bumpalo-3.12.0 \
+		bytemuck-1.13.1 \
+		byteorder-1.4.3 \
+		bytesize-1.2.0 \
+		cc-1.0.79 \
+		cfg-if-1.0.0 \
+		chrono-0.4.23 \
+		clap-2.34.0 \
+		codespan-reporting-0.11.1 \
+		color_quant-1.1.0 \
+		colored-2.0.0 \
+		console-0.15.5 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.7 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.14 \
+		crossbeam-utils-0.8.15 \
+		crossterm-0.25.0 \
+		crossterm_winapi-0.9.0 \
+		crunchy-0.2.2 \
+		ctor-0.1.26 \
+		ctrlc-3.2.5 \
+		cxx-1.0.91 \
+		cxx-build-1.0.91 \
+		cxxbridge-flags-1.0.91 \
+		cxxbridge-macro-1.0.91 \
+		device_query-1.1.2 \
+		diff-0.1.13 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
+		dlv-list-0.3.0 \
+		dominant_color-0.3.0 \
+		either-1.8.1 \
+		encode_unicode-0.3.6 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		exr-1.5.3 \
+		fallible_collections-0.4.6 \
+		fastrand-1.9.0 \
+		fern_colored-0.6.1 \
+		flate2-1.0.25 \
+		flume-0.10.14 \
+		futures-core-0.3.26 \
+		futures-sink-0.3.26 \
+		getrandom-0.2.8 \
+		gif-0.11.4 \
+		gif-0.12.0 \
+		gif-dispose-4.0.0 \
+		gifski-1.10.0 \
+		half-2.2.1 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		hex-0.4.3 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
+		image-0.24.5 \
+		imagequant-4.1.0 \
+		imgref-1.9.4 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.5 \
+		jobserver-0.1.26 \
+		jpeg-decoder-0.3.0 \
+		js-sys-0.3.61 \
+		kamadak-exif-0.5.5 \
+		lazy_static-1.4.0 \
+		lebe-0.5.2 \
+		libc-0.2.139 \
+		libwebp-sys-0.4.2 \
+		link-cplusplus-1.0.8 \
+		linux-raw-sys-0.1.4 \
+		lock_api-0.4.9 \
+		lodepng-3.7.2 \
+		log-0.4.17 \
+		loop9-0.1.3 \
+		macos-accessibility-client-0.0.1 \
+		make-cmd-0.1.0 \
+		memoffset-0.8.0 \
+		miniz_oxide-0.6.2 \
+		mio-0.8.6 \
+		mutate_once-0.1.1 \
+		nanorand-0.7.0 \
+		natord-1.0.9 \
+		nix-0.26.2 \
+		noisy_float-0.2.0 \
+		num-integer-0.1.45 \
+		num-rational-0.4.1 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		once_cell-1.17.1 \
+		ordered-multimap-0.4.3 \
+		output_vt100-0.1.3 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.7 \
+		pin-project-1.0.12 \
+		pin-project-internal-1.0.12 \
+		pkg-config-0.3.26 \
+		png-0.17.7 \
+		pretty_assertions-1.3.0 \
+		proc-macro2-1.0.51 \
+		quick-error-2.0.1 \
+		quote-1.0.23 \
+		rayon-1.6.1 \
+		rayon-core-1.10.2 \
+		readkey-0.1.7 \
+		readmouse-0.2.1 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		resize-0.7.4 \
+		rgb-0.8.36 \
+		rust-ini-0.18.0 \
+		rustix-0.36.8 \
+		scoped_threadpool-0.1.9 \
+		scopeguard-1.1.0 \
+		scratch-1.0.3 \
+		signal-hook-0.3.15 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.1 \
+		simd-adler32-0.3.4 \
+		sixel-rs-0.3.3 \
+		sixel-sys-0.3.1 \
+		smallvec-1.10.0 \
+		spin-0.9.5 \
+		static_assertions-1.1.0 \
+		strsim-0.8.0 \
+		syn-1.0.109 \
+		tempfile-3.4.0 \
+		term_size-0.3.2 \
+		termcolor-1.2.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		thread_local-1.1.7 \
+		threadpool-1.8.1 \
+		tiff-0.8.1 \
+		time-0.1.45 \
+		unicode-ident-1.0.6 \
+		unicode-width-0.1.10 \
+		version_check-0.9.4 \
+		viuer-0.6.2 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
+		webp-0.2.2 \
+		weezl-0.1.7 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.1 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1 \
+		x11-2.21.0 \
+		yansi-0.5.1 \
+		zune-inflate-0.2.50
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	@${CP} -r \
+		${WRKSRC}/cargo-crates/device_query-1.1.2/src/device_state/linux \
+		${WRKSRC}/cargo-crates/device_query-1.1.2/src/device_state/freebsd
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

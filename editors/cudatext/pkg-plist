@@ -117,7 +117,9 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_markdown.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_matlab.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_maya.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_mdx.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_mediawiki.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_mojo.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_mustache.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_nim.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_nsi.png
@@ -146,6 +148,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_razor.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_reason.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_red.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_rescript.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_rest.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_rexx.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_rmd.png

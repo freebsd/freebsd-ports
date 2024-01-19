@@ -1,36 +1,36 @@
---- spyder/dependencies.py.orig	2023-08-29 21:53:14 UTC
+--- spyder/dependencies.py.orig	2023-11-08 03:05:24 UTC
 +++ spyder/dependencies.py
-@@ -40,7 +40,7 @@ IPYTHON_REQVER = (
+@@ -44,7 +44,7 @@ IPYTHON_REQVER = ">=8.12.2,<8.13.0" if PY38 else ">=8.
+ # (check way to add dist.info/egg.info from packages without wheels available)
  INTERVALTREE_REQVER = None if is_pynsist() else '>=3.0.2'
- IPYTHON_REQVER = (
-     ">=7.31.1,<9.0.0,!=8.8.0,!=8.9.0,!=8.10.0,!=8.11.0,!=8.12.0,!=8.12.1")
--JEDI_REQVER = '>=0.17.2,<0.19.0'
+ IPYTHON_REQVER = ">=8.12.2,<8.13.0" if PY38 else ">=8.13.0,<9.0.0,!=8.17.1"
+-JEDI_REQVER = '>=0.17.2,<0.20.0'
 +JEDI_REQVER = '>=0.17.2'
  JELLYFISH_REQVER = '>=0.7'
  JSONSCHEMA_REQVER = '>=3.2.0'
  KEYRING_REQVER = '>=17.0.0'
-@@ -54,20 +54,20 @@ PYLINT_VENV_REQVER = '>=3.0.2'
+@@ -58,20 +58,20 @@ PYLINT_VENV_REQVER = '>=3.0.2'
  PYGMENTS_REQVER = '>=2.0'
- PYLINT_REQVER = '>=2.5.0,<3.0'
+ PYLINT_REQVER = '>=2.5.0,<3.1'
  PYLINT_VENV_REQVER = '>=3.0.2'
--PYLSP_REQVER = '>=1.7.4,<1.8.0'
-+PYLSP_REQVER = '>=1.7.4'
+-PYLSP_REQVER = '>=1.9.0,<1.10.0'
++PYLSP_REQVER = '>=1.9.0'
  PYLSP_BLACK_REQVER = '>=1.2.0,<3.0.0'
  PYLS_SPYDER_REQVER = '>=0.4.0'
  PYXDG_REQVER = '>=0.26'
  PYZMQ_REQVER = '>=22.1.0'
--QDARKSTYLE_REQVER = '>=3.0.2,<3.2.0'
-+QDARKSTYLE_REQVER = '>=3.0.2'
+-QDARKSTYLE_REQVER = '>=3.2.0,<3.3.0'
++QDARKSTYLE_REQVER = '>=3.2.0'
  QSTYLIZER_REQVER = '>=0.2.2'
  QTAWESOME_REQVER = '>=1.2.1'
--QTCONSOLE_REQVER = '>=5.4.2,<5.5.0'
-+QTCONSOLE_REQVER = '>=5.4.2'
+-QTCONSOLE_REQVER = '>=5.5.0,<5.6.0'
++QTCONSOLE_REQVER = '>=5.5.0'
  QTPY_REQVER = '>=2.1.0'
  RTREE_REQVER = '>=0.9.7'
  SETUPTOOLS_REQVER = '>=49.6.0'
  SPHINX_REQVER = '>=0.6.6'
--SPYDER_KERNELS_REQVER = '>=2.4.4,<2.5.0'
-+SPYDER_KERNELS_REQVER = '>=2.4.4'
+-SPYDER_KERNELS_REQVER = '>=2.5.0,<2.6.0'
++SPYDER_KERNELS_REQVER = '>=2.5.0'
  TEXTDISTANCE_REQVER = '>=4.2.0'
  THREE_MERGE_REQVER = '>=0.1.1'
  # None for pynsist install for now

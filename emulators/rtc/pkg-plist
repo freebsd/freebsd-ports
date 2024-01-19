@@ -1,3 +1,0 @@
-include/rtc.h
-/%%KMODDIR%%/rtc.ko
-%%EXAMPLESDIR%%/test.c

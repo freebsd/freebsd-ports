@@ -1,6 +1,6 @@
 PORTNAME=	icc
 PORTVERSION=	8.1.038
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang linux devel
 MASTER_SITES=	#empty
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
@@ -176,7 +176,7 @@ do-install:
 	cd ${WRKSRC}/opt && ${FIND} . -print | \
 		${CPIO} -pdu --quiet ${STAGEDIR}${PREFIX}
 
-	${MV} ${STAGEDIR}${PREFIX}/${COMPILERDIR}/man/man1/icc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MV} ${STAGEDIR}${PREFIX}/${COMPILERDIR}/man/man1/icc.1 ${STAGEDIR}${PREFIX}/man/man1
 	${RM} -r ${STAGEDIR}${PREFIX}/${COMPILERDIR}/man
 
 .if ${PORT_OPTIONS:MDOCS}

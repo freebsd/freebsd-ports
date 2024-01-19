@@ -14,12 +14,12 @@ RUN_DEPENDS=	screen:sysutils/screen
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/screenie man/man1/screenie.1.gz
+PLIST_FILES=	sbin/screenie share/man/man1/screenie.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

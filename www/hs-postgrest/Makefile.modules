@@ -1,13 +1,13 @@
-USE_CABAL=	HTTP-4000.4.1_2 \
+USE_CABAL=	HTTP-4000.4.1_3 \
 		HUnit-1.6.2.0 \
-		OneTuple-0.4.1.1 \
-		Only-0.1_1 \
-		QuickCheck-2.14.2 \
+		OneTuple-0.4.1.1_1 \
+		Only-0.1_2 \
+		QuickCheck-2.14.3 \
 		Ranged-sets-0.4.0_2 \
 		StateVar-1.2.2 \
-		adjunctions-4.4.2_1 \
+		adjunctions-4.4.2_2 \
 		aeson-2.1.2.1_3 \
-		aeson-pretty-0.8.9_2 \
+		aeson-pretty-0.8.10 \
 		ansi-terminal-1.0 \
 		ansi-terminal-types-0.11.5_1 \
 		ansi-wl-pprint-0.6.9_4 \
@@ -15,40 +15,45 @@ USE_CABAL=	HTTP-4000.4.1_2 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.1 \
-		async-2.2.4_3 \
-		attoparsec-0.14.4_3 \
+		assoc-1.1_1 \
+		async-2.2.4_4 \
+		attoparsec-0.14.4_5 \
+		attoparsec-aeson-2.1.0.0 \
 		auto-update-0.1.6 \
-		base-compat-0.13.0 \
-		base-compat-batteries-0.13.0 \
-		base-orphans-0.9.0 \
+		base-compat-0.13.1 \
+		base-compat-batteries-0.13.1 \
+		base-orphans-0.9.1 \
 		base-unicode-symbols-0.2.4.2 \
-		base64-bytestring-1.2.1.0 \
-		basement-0.0.15 \
-		bifunctors-5.6.1 \
-		binary-parser-0.5.7.3 \
-		bsb-http-chunked-0.0.0.4_3 \
+		base64-bytestring-1.2.1.0_1 \
+		basement-0.0.16 \
+		bifunctors-5.6.1_2 \
+		binary-parser-0.5.7.4 \
+		bsb-http-chunked-0.0.0.4_4 \
 		byteorder-1.0.4 \
 		bytestring-strict-builder-0.4.5.6 \
 		bytestring-tree-builder-0.2.7.10 \
 		cabal-doctest-1.0.9_3 \
+		cache-0.1.3.0_1 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.0_1 \
+		cassava-0.5.3.0_5 \
 		cereal-0.5.8.3 \
-		charset-0.3.9 \
+		charset-0.3.10_1 \
+		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		comonad-5.0.8_1 \
+		comonad-5.0.8_2 \
 		concise-0.1.0.1 \
 		configurator-pg-0.2.7 \
 		contravariant-1.5.5 \
 		contravariant-extras-0.3.5.3 \
 		cookie-0.4.6 \
-		cryptohash-md5-0.11.101.0_2 \
-		cryptohash-sha1-0.11.101.0_2 \
+		cryptohash-md5-0.11.101.0_3 \
+		cryptohash-sha1-0.11.101.0_3 \
+		crypton-0.33 \
+		crypton-x509-1.7.6_1 \
 		cryptonite-0.30 \
-		data-array-byte-0.1.0.1_1 \
+		data-array-byte-0.1.0.1_2 \
 		data-bword-0.1.0.2 \
 		data-checked-0.3 \
 		data-default-0.7.1.1 \
@@ -58,139 +63,142 @@ USE_CABAL=	HTTP-4000.4.1_2 \
 		data-default-instances-old-locale-0.0.1 \
 		data-dword-0.3.2.1 \
 		data-endian-0.1.1 \
-		data-fix-0.3.2_4 \
+		data-fix-0.3.2_5 \
 		data-serializer-0.3.5 \
 		data-textual-0.3.0.3 \
-		deferred-folds-0.9.18.3 \
+		deferred-folds-0.9.18.5 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0 \
+		dlist-1.0_1 \
 		easy-file-0.2.5 \
 		either-5.0.2_1 \
 		entropy-0.4.1.10_1 \
-		fast-logger-3.2.1 \
-		foldable1-classes-compat-0.1_2 \
-		foldl-1.4.14_2 \
-		free-5.2_1 \
-		fuzzyset-0.2.3 \
-		generically-0.1.1_1 \
+		extra-1.7.14 \
+		fast-logger-3.2.2 \
+		foldable1-classes-compat-0.1_4 \
+		foldl-1.4.15_1 \
+		free-5.2_3 \
+		fuzzyset-0.2.4 \
+		generically-0.1.1_2 \
 		generics-sop-0.5.1.3 \
 		gitrev-1.3.1 \
 		happy-1.20.1.1 \
-		hashable-1.4.2.0_1 \
+		hashable-1.4.3.0_1 \
 		hashtables-1.3.1 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.12 \
-		hasql-1.6.3 \
-		hasql-dynamic-statements-0.3.1.2 \
-		hasql-implicits-0.1.1 \
-		hasql-notifications-0.2.0.5 \
-		hasql-pool-0.9.0.1 \
+		hasql-1.6.3.2 \
+		hasql-dynamic-statements-0.3.1.2_1 \
+		hasql-implicits-0.1.1_1 \
+		hasql-notifications-0.2.0.6 \
+		hasql-pool-0.10 \
 		hasql-transaction-1.0.1.2 \
 		heredoc-0.2.0.0 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.9 \
+		hsc2hs-0.68.10_1 \
 		http-date-0.0.11 \
-		http-media-0.8.0.0_8 \
+		http-media-0.8.1.1_1 \
 		http-types-0.12.3 \
-		http2-4.1.2 \
-		indexed-profunctors-0.1.1 \
-		indexed-traversable-0.1.2.1 \
-		indexed-traversable-instances-0.1.1.2_1 \
-		insert-ordered-containers-0.2.5.2 \
-		integer-logarithms-1.0.3.1_4 \
+		http2-4.2.2 \
+		indexed-profunctors-0.1.1.1 \
+		indexed-traversable-0.1.3 \
+		indexed-traversable-instances-0.1.1.2_2 \
+		insert-ordered-containers-0.2.5.3_1 \
+		integer-logarithms-1.0.3.1_5 \
 		interpolatedstring-perl6-1.0.2 \
-		invariant-0.6.1 \
+		invariant-0.6.2_1 \
 		iproute-1.7.12 \
-		isomorphism-class-0.1.0.9 \
+		isomorphism-class-0.1.0.10 \
 		jose-0.10 \
-		kan-extensions-5.2.5_1 \
-		lens-5.2.2 \
-		lens-aeson-1.2.2 \
+		kan-extensions-5.2.5_2 \
+		lens-5.2.3_2 \
+		lens-aeson-1.2.3_2 \
 		megaparsec-9.2.2 \
 		memory-0.18.0 \
 		monad-time-0.4.0.0 \
 		mtl-compat-0.2.2 \
-		network-3.1.3.0 \
-		network-byte-order-0.1.6_1 \
+		network-3.1.4.0_1 \
+		network-byte-order-0.1.7 \
 		network-info-0.2.1 \
 		network-ip-0.3.0.3 \
-		network-uri-2.6.4.2 \
+		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
-		optics-core-0.4.1_1 \
-		optics-extra-0.4.2.1_1 \
-		optics-th-0.4.1_4 \
-		optparse-applicative-0.17.0.0 \
-		parallel-3.2.2.0_6 \
-		parser-combinators-1.3.0 \
-		parsers-0.12.11 \
+		optics-core-0.4.1.1 \
+		optics-extra-0.4.2.1_2 \
+		optics-th-0.4.1_6 \
+		optparse-applicative-0.17.1.0_1 \
+		parallel-3.2.2.0_7 \
+		parser-combinators-1.3.0_1 \
+		parsers-0.12.11_2 \
 		pem-0.2.4 \
 		postgresql-binary-0.13.1 \
-		postgresql-libpq-0.9.5.0_1 \
-		primitive-0.8.0.0 \
+		postgresql-libpq-0.10.0.0_1 \
+		primitive-0.8.0.0_1 \
 		profunctors-5.6.2_3 \
-		protolude-0.3.3 \
+		protolude-0.3.3_2 \
 		psqueues-0.2.7.3 \
 		ptr-0.16.8.4 \
-		random-1.2.1.1 \
+		random-1.2.1.1_1 \
 		recv-0.1.0 \
-		reflection-2.1.7 \
-		regex-base-0.94.0.2_1 \
-		regex-tdfa-1.3.2 \
+		reflection-2.1.7_1 \
+		regex-base-0.94.0.2_4 \
+		regex-tdfa-1.3.2.2_2 \
 		resourcet-1.3.0 \
 		retry-0.9.3.1 \
 		safe-0.3.19 \
-		safe-exceptions-0.1.7.3 \
-		scientific-0.3.7.0_5 \
-		semialign-1.3 \
-		semigroupoids-6.0.0.1 \
+		safe-exceptions-0.1.7.4_1 \
+		scientific-0.3.7.0_7 \
+		semialign-1.3_1 \
+		semigroupoids-6.0.0.1_1 \
 		semigroups-0.20 \
-		simple-sendfile-0.2.31 \
-		sop-core-0.5.0.2_2 \
-		split-0.2.3.5 \
-		splitmix-0.1.0.4_2 \
-		streaming-commons-0.2.2.6 \
-		strict-0.5 \
-		strict-list-0.1.7.1 \
+		simple-sendfile-0.2.32 \
+		sop-core-0.5.0.2_3 \
+		split-0.2.4 \
+		splitmix-0.1.0.5 \
+		streaming-commons-0.2.2.6_1 \
+		strict-0.5_1 \
+		strict-list-0.1.7.2 \
 		swagger2-2.8.7 \
-		syb-0.7.2.3 \
-		tagged-0.8.7 \
+		syb-0.7.2.4 \
+		tagged-0.8.8 \
 		template-haskell-compat-v0208-0.1.9.2 \
 		text-builder-0.6.7 \
 		text-builder-dev-0.3.3.2 \
 		text-latin1-0.3.1 \
-		text-metrics-0.3.2_2 \
+		text-metrics-0.3.2_3 \
 		text-printer-0.5.0.2 \
-		text-short-0.1.5_2 \
+		text-short-0.1.5_3 \
 		th-abstraction-0.5.0.0 \
-		th-compat-0.1.4_2 \
-		th-expand-syns-0.4.11.0_1 \
-		th-lift-0.8.3 \
-		th-orphans-0.13.14_1 \
+		th-compat-0.1.4_3 \
+		th-expand-syns-0.4.11.0_2 \
+		th-lift-0.8.4 \
+		th-orphans-0.13.14_2 \
 		th-reify-many-0.1.10 \
-		these-1.2 \
-		time-compat-1.9.6.1_5 \
-		time-manager-0.0.0_1 \
+		these-1.2_1 \
+		time-compat-1.9.6.1_6 \
+		time-manager-0.0.1 \
+		timeit-2.0_2 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		type-hint-0.1 \
-		unix-compat-0.7 \
-		unix-time-0.4.9 \
-		unliftio-0.2.24.0 \
-		unliftio-core-0.2.1.0_2 \
-		unordered-containers-0.2.19.1_2 \
+		unix-compat-0.5.4_2 \
+		unix-time-0.4.11 \
+		unliftio-0.2.25.0 \
+		unliftio-core-0.2.1.0_3 \
+		unordered-containers-0.2.19.1_3 \
 		utf8-string-1.0.2 \
-		uuid-1.3.15_2 \
-		uuid-types-1.0.5_4 \
-		vault-0.3.1.5_3 \
-		vector-0.12.3.1_4 \
+		uuid-1.3.15_3 \
+		uuid-types-1.0.5.1 \
+		vault-0.3.1.5_5 \
+		vector-0.13.1.0 \
+		vector-stream-0.1.0.0_3 \
 		void-0.7.3 \
 		wai-3.2.3 \
 		wai-cors-0.2.7 \
 		wai-extra-3.1.13.0_1 \
 		wai-logger-2.4.0 \
-		warp-3.3.25 \
+		warp-3.3.29 \
 		witherable-0.4.2_4 \
 		word8-0.1.3 \
 		x509-1.7.7 \
-		zlib-0.6.3.0_1
+		zlib-0.6.3.0_4

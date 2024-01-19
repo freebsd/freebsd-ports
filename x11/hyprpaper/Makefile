@@ -1,10 +1,8 @@
 PORTNAME=	hyprpaper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	81d6b682f6e6.patch:-p1 # https://github.com/hyprwm/hyprpaper/pull/117
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Blazing fast Wayland wallpaper utility with IPC controls
@@ -15,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
+		libwayland-client.so:graphics/wayland \
+		libwebp.so:graphics/webp
 
 USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags pkgconfig
 USE_GNOME=	cairo

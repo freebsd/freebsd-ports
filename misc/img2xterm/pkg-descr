@@ -1,1 +1,3 @@
-Display images in terminal
+img2xterm is a program that can display bitmap images on 256-colour terminals
+by converting them into Unicode block characters and xterm compatible control
+sequences.

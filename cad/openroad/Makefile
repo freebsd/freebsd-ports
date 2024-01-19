@@ -1,8 +1,7 @@
 PORTNAME=	openroad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0-2930
-DISTVERSIONSUFFIX=	-gaa6d690df
-PORTREVISION=	4
+DISTVERSION=	2.0-11595
+DISTVERSIONSUFFIX=	-g31d7e3dc5
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -19,24 +18,40 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
 BUILD_DEPENDS=	base64:converters/base64 \
+		bash:shells/bash \
 		boost-libs>0:devel/boost-libs \
 		coin-or-lemon>0:math/lemon \
 		gmake:devel/gmake \
 		swig:devel/swig
-LIB_DEPENDS=	libcudd.so:math/cudd \
+LIB_DEPENDS=	libabsl_flags_parse.so:devel/abseil \
+		libCbc.so:math/cbc \
+		libCgl.so:math/cgl \
+		libClpSolver.so:math/clp \
+		libcoinasl.so:math/asl \
+		libcoinmumps.so:math/coin-or-mumps \
+		libCoinUtils.so:math/coinutils \
+		libcudd.so:math/cudd \
 		libfmt.so:devel/libfmt \
+		libnauty.so:math/nauty \
+		libopenblas.so:math/openblas \
+		libortools.so:math/or-tools \
+		libOsi.so:math/osi \
+		libprotobuf.so:devel/protobuf \
+		libre2.so:devel/re2 \
 		libspdlog.so:devel/spdlog
 
-USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 localbase:ldflags python:build readline tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
+USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 \
+		localbase:ldflags pkgconfig python:build readline tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
 USE_QT=		core gui widgets buildtools:build qmake:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-OpenROAD-Project
 GH_PROJECT=	OpenROAD
-GH_TUPLE=	The-OpenROAD-Project:OpenSTA:d42313d:The_OpenROAD_Project_OpenSTA/src/sta \
-		The-OpenROAD-Project:abc:d1cd437:abc/third-party/abc
+GH_TUPLE=	The-OpenROAD-Project:OpenSTA:42b994d:The_OpenROAD_Project_OpenSTA/src/sta \
+		The-OpenROAD-Project:abc:95b3543:abc/third-party/abc
 
-CMAKE_OFF=	BUILD_PYTHON FREEBSD_BUILD_TESTS
+CMAKE_OFF=	BUILD_PYTHON \
+		ENABLE_TESTS
 CMAKE_ON=	BUILD_TCL
 CMAKE_ARGS=	-DFREEBSD_TCL_VER=${TCL_VER:S/.//} -DFREEBSD_TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
 

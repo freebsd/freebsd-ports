@@ -1,9 +1,9 @@
 bin/golded
 bin/goldnode
 bin/rddt
-man/man1/golded.1.gz
-man/man1/goldnode.1.gz
-man/man1/rddt.1.gz
+share/man/man1/golded.1.gz
+share/man/man1/goldnode.1.gz
+share/man/man1/rddt.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charset/1125_i-5.chs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charset/1125_u8.chs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charset/12501250.chs

@@ -11,6 +11,7 @@ WWW=		https://github.com/cdcseacave/openMVS
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation is broken because of the use of discontinued C++ features, see https://github.com/cdcseacave/openMVS/issues/1075
 BROKEN_aarch64=	use of undeclared identifier '__builtin_ia32_emms' # https://github.com/cdcseacave/openMVS/issues/847
 
 BUILD_DEPENDS=	cgal>0:math/cgal \

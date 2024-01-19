@@ -1,5 +1,6 @@
 PORTNAME=	selene
 DISTVERSION=	0.26.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +9,8 @@ WWW=		https://kampfkarren.github.io/selene/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # next release should fix this
 
 USES=		cargo
 USE_GITHUB=	yes

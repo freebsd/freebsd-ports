@@ -1,5 +1,6 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	120.0.6099.129
+PORTVERSION=	120.0.6099.216
+PORTREVISION=	1
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
@@ -343,9 +344,9 @@ do-configure:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in \
-		${STAGEDIR}${MANPREFIX}/man/man1/ungoogled-chromium.1
+		${STAGEDIR}${PREFIX}/share/man/man1/ungoogled-chromium.1
 	@${SED} -i "" -e 's,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g' \
-		${STAGEDIR}${MANPREFIX}/man/man1/ungoogled-chromium.1
+		${STAGEDIR}${PREFIX}/share/man/man1/ungoogled-chromium.1
 	${CP} ${WRKSRC}/chrome/app/theme/chromium/product_logo_22_mono.png ${WRKSRC}/chrome/app/theme/chromium/product_logo_22.png
 .for s in 22 24 48 64 128 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps

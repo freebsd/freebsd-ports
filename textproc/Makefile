@@ -84,7 +84,6 @@
     SUBDIR += br-aspell
     SUBDIR += bsd-spell
     SUBDIR += bsddiff
-    SUBDIR += bsdgrep
     SUBDIR += btparse
     SUBDIR += c2html
     SUBDIR += c2man
@@ -528,6 +527,7 @@
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
     SUBDIR += ov
+    SUBDIR += ox-gfm.el
     SUBDIR += p5-AI-Categorizer
     SUBDIR += p5-Algorithm-CheckDigits
     SUBDIR += p5-Algorithm-RabinKarp
@@ -898,6 +898,7 @@
     SUBDIR += p5-Text-Decorator
     SUBDIR += p5-Text-Delimited
     SUBDIR += p5-Text-Diff
+    SUBDIR += p5-Text-Diff-FormattedHTML
     SUBDIR += p5-Text-Diff-HTML
     SUBDIR += p5-Text-Diff-Parser
     SUBDIR += p5-Text-Diff3
@@ -1249,15 +1250,6 @@
     SUBDIR += peco
     SUBDIR += peg
     SUBDIR += perl2html
-    SUBDIR += php80-ctype
-    SUBDIR += php80-dom
-    SUBDIR += php80-enchant
-    SUBDIR += php80-pspell
-    SUBDIR += php80-simplexml
-    SUBDIR += php80-xml
-    SUBDIR += php80-xmlreader
-    SUBDIR += php80-xmlwriter
-    SUBDIR += php80-xsl
     SUBDIR += php81-ctype
     SUBDIR += php81-dom
     SUBDIR += php81-enchant
@@ -1297,6 +1289,7 @@
     SUBDIR += py-Morfessor
     SUBDIR += py-QDarkStyle
     SUBDIR += py-RTFDE
+    SUBDIR += py-TatSu
     SUBDIR += py-Tempita
     SUBDIR += py-accessible-pygments
     SUBDIR += py-acora
@@ -1306,6 +1299,8 @@
     SUBDIR += py-agate-excel
     SUBDIR += py-alabaster
     SUBDIR += py-ansi2html
+    SUBDIR += py-ansicolors
+    SUBDIR += py-ansiwrap
     SUBDIR += py-anyascii
     SUBDIR += py-arabic-reshaper
     SUBDIR += py-asciinema
@@ -1373,8 +1368,6 @@
     SUBDIR += py-genshi
     SUBDIR += py-gensim
     SUBDIR += py-gi-docgen
-    SUBDIR += py-googletrans
-    SUBDIR += py-grako
     SUBDIR += py-grapheme
     SUBDIR += py-griffe
     SUBDIR += py-guess-language
@@ -1536,6 +1529,7 @@
     SUBDIR += py-qrcode
     SUBDIR += py-rdflib
     SUBDIR += py-readchar
+    SUBDIR += py-readthedocs-sphinx-ext
     SUBDIR += py-readtime
     SUBDIR += py-recommonmark
     SUBDIR += py-regex
@@ -1616,6 +1610,7 @@
     SUBDIR += py-textract
     SUBDIR += py-texttable
     SUBDIR += py-textual
+    SUBDIR += py-textwrap3
     SUBDIR += py-three-merge
     SUBDIR += py-tiktoken
     SUBDIR += py-tinycss
@@ -1672,6 +1667,7 @@
     SUBDIR += randlm
     SUBDIR += rapidxml
     SUBDIR += raptor2
+    SUBDIR += rarian
     SUBDIR += rasqal
     SUBDIR += re-flex
     SUBDIR += re_graph

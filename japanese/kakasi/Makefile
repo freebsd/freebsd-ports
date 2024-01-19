@@ -11,6 +11,7 @@ WWW=		http://kakasi.namazu.org/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		iconv libtool
 USE_LDCONFIG=	yes
 
@@ -28,8 +29,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-Wno-unused-result//' ${WRKSRC}/configure
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1/
 	${INSTALL_MAN} ${WRKSRC}/man/kakasi.1.ja \
-		${STAGEDIR}${MAN1PREFIX}/man/ja/man1/kakasi.1
+		${STAGEDIR}${PREFIX}/share/man/ja/man1/kakasi.1
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

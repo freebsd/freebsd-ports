@@ -5,4 +5,4 @@ include/mc_protocol.h
 lib/libmdcached.a
 lib/libmdcached.so
 lib/libmdcached.so.1
-man/man1/mdcached.1.gz
+share/man/man1/mdcached.1.gz

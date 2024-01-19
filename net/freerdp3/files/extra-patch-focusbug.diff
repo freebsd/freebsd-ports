@@ -1,0 +1,10 @@
+--- client/X11/xf_keyboard.c.orig	2021-09-02 06:23:36 UTC
++++ client/X11/xf_keyboard.c
+@@ -183,7 +183,6 @@ void xf_keyboard_release_all_keypress(xfContext* xfc)
+ 			xfc->KeyboardState[keycode] = FALSE;
+ 		}
+ 	}
+-	xf_sync_kbd_state(xfc);
+ }
+ 
+ BOOL xf_keyboard_key_pressed(xfContext* xfc, KeySym keysym)

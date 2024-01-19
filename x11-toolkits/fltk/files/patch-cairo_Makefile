@@ -1,0 +1,17 @@
+--- cairo/Makefile.orig	2023-12-09 13:58:40 UTC
++++ cairo/Makefile
+@@ -98,12 +98,13 @@ clean:
+ install: $(CAIROLIBNAME) $(CAIRODSONAME)
+ 	echo "Installing libfltk_cairo$(LIBEXT) in $(libdir)..."
+ 	-$(INSTALL_DIR) $(DESTDIR)$(libdir)
+-	$(INSTALL_LIB) $(CAIROLIBNAME) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(CAIROLIBNAME) $(DESTDIR)$(libdir)
+ 
+ 	if test x$(CAIRODSONAME) = xlibfltk_cairo.so.$(FL_DSO_VERSION); then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_cairo.so*;\
+ 		$(INSTALL_LIB) libfltk_cairo.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir); \
+ 		$(LN) libfltk_cairo.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_cairo.so;\
++		$(LN) libfltk_cairo.so.$(FL_DSO_VERSION) $(DESTDIR)$(libdir)/libfltk_cairo.so.$(FL_DSO_VERSION:R);\
+ 	fi
+ 	if test x$(CAIRODSONAME) = xsrc/libfltk_cairo.sl.$(FL_DSO_VERSION); then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_cairo.sl*;\

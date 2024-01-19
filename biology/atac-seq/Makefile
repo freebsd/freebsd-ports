@@ -1,5 +1,5 @@
 PORTNAME=	atac-seq
-DISTVERSION=	0.1.3
+DISTVERSION=	0.2.0
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
@@ -24,5 +24,11 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		curl>0:ftp/curl
 
 USES=		metaport python
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} != FreeBSD || ${OSVERSION} >= 1302509
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR}
+.endif
 
 .include <bsd.port.mk>

@@ -14,11 +14,11 @@ lib/libfcgi.a
 lib/libfcgi.so
 lib/libfcgi.so.0
 lib/libfcgi.so.0.0.0
-man/man1/cgi-fcgi.1.gz
-man/man3/FCGI_Accept.3.gz
-man/man3/FCGI_Finish.3.gz
-man/man3/FCGI_SetExitStatus.3.gz
-man/man3/FCGI_StartFilterData.3.gz
+share/man/man1/cgi-fcgi.1.gz
+share/man/man3/FCGI_Accept.3.gz
+share/man/man3/FCGI_Finish.3.gz
+share/man/man3/FCGI_SetExitStatus.3.gz
+share/man/man3/FCGI_StartFilterData.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ap_guida.htm
 %%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ap_guide.htm
 %%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/apaman.htm

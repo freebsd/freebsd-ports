@@ -1,0 +1,22 @@
+Obtained from Debian...
+
+	-mi
+
+Description: Add missing "edit-line" feature
+ Don't know why it was missing.
+Author: astian <astian@elude.in>
+Forwarded: no
+Last-Update: 2018-03-03
+
+--- edline.c
++++ edline.c
+@@ -65,6 +65,9 @@ void init_edline()
+   make_subr(s_def_outport, tc7_subr_0, def_outport);
+   make_subr(s_readline, tc7_subr_1, lreadline);
+   make_subr(s_add_history, tc7_subr_1, ladd_history);
++
++  add_feature("edit-line");
++
+   if (scm_ldprog(s_Iedline))
+     wta(*loc_errobj, "couldn't init", s_Iedline);
+ }

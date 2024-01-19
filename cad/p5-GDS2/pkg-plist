@@ -1,0 +1,9 @@
+bin/gds2dump
+bin/gdsdump2gds
+bin/gdslayers
+bin/gdspath4topath0
+bin/modgds2
+bin/testgds2
+bin/testgdt
+%%SITE_PERL%%/GDS2.pm
+%%PERL5_MAN3%%/GDS2.3.gz

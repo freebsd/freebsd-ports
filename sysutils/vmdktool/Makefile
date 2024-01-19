@@ -15,10 +15,10 @@ USES=		perl5
 # We need the prove utility from Perl 5.
 USE_PERL5=	test
 
-PLIST_FILES=	bin/vmdktool \
-		man/man8/vmdktool.8.gz
-
 ALL_TARGET=	vmdktool
 TEST_TARGET=	test
+
+PLIST_FILES=	bin/vmdktool \
+		share/man/man8/vmdktool.8.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- event.hpp.orig	2007-08-02 14:11:31.000000000 +0200
-+++ event.hpp	2007-08-02 14:11:45.000000000 +0200
-@@ -74,7 +74,7 @@
+--- event.hpp.orig	2004-12-06 02:57:32 UTC
++++ event.hpp
+@@ -74,7 +74,7 @@ class EventManager { (public)
          list<Event *>::iterator k;
          for (k = events.begin(); k != events.end(); ++k) {
              Event *e = *k;

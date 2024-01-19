@@ -3,9 +3,9 @@ bin/pland
 bin/netplan
 bin/notifier
 bin/Killpland
-man/man1/netplan.1.gz
-man/man1/plan.1.gz
-man/man4/plan.4.gz
+share/man/man1/netplan.1.gz
+share/man/man1/plan.1.gz
+share/man/man4/plan.4.gz
 %%PORTDOCS%%%%DOCSDIR%%/Mkdoc
 %%PORTDOCS%%%%DOCSDIR%%/Mkdoc.nawk
 %%PORTDOCS%%%%DOCSDIR%%/plan.help

@@ -1,6 +1,5 @@
 @sample etc/owntone.conf.sample
 lib/owntone/owntone-sqlext.so
-man/man8/owntone.8.gz
 sbin/owntone
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
@@ -29,6 +28,7 @@ sbin/owntone
 %%PORTDOCS%%%%DOCSDIR%%/docs/playlists.md
 %%PORTDOCS%%%%DOCSDIR%%/docs/smart-playlists.md
 %%PORTDOCS%%%%DOCSDIR%%/scripts/pairinghelper.sh
+share/man/man8/owntone.8.gz
 %%DATADIR%%/htdocs/android-chrome-192x192.png
 %%DATADIR%%/htdocs/android-chrome-512x512.png
 %%DATADIR%%/htdocs/apple-touch-icon.png

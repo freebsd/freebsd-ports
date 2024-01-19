@@ -31,11 +31,11 @@ do-install:
 .endfor
 
 .for man in ${MAN1FILES}
-		${INSTALL_MAN} ${WRKSRC}/${man}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/${man}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .for man in ${MAN5FILES}
-		${INSTALL_MAN} ${WRKSRC}/${man}.5 ${STAGEDIR}${MAN1PREFIX}/man/man5
+		${INSTALL_MAN} ${WRKSRC}/${man}.5 ${STAGEDIR}${PREFIX}/share/man/man5
 .endfor
 
 .include <bsd.port.mk>

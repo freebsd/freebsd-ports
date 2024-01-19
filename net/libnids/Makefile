@@ -1,6 +1,6 @@
 PORTNAME=	libnids
 PORTVERSION=	1.24
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/nids.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/src/libnids.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/src/libnids.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/src/libnids.3 ${STAGEDIR}${PREFIX}/share/man/man3
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README doc/* ${STAGEDIR}${DOCSDIR})
 

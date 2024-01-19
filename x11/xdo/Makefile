@@ -16,7 +16,8 @@ USES=		gmake localbase:ldflags xorg
 USE_XORG=	xcb
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
+MAKE_ARGS=	MANPREFIX="${PREFIX}/share/man"
 
-PLIST_FILES=	bin/xdo man/man1/xdo.1.gz
+PLIST_FILES=	bin/xdo share/man/man1/xdo.1.gz
 
 .include <bsd.port.mk>

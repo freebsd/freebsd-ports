@@ -1,6 +1,6 @@
 PORTNAME=	x2goclient
 PORTVERSION=	4.1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -47,7 +47,7 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/x2goclient.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/desktop/x2goclient.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 .for i in 16x16 32x32 48x48 64x64 128x128

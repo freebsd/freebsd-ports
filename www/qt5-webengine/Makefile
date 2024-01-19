@@ -19,6 +19,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -123,7 +124,7 @@ QT_BINARIES=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
 PLIST_SUB+=	BE="" LE="@comment "
 .else
 PLIST_SUB+=	BE="@comment " LE=""
@@ -151,7 +152,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(MODULE_VERSION = ).*|\1${QT5_VERSION}|' \
 		${WRKSRC}/.qmake.conf
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
 	@${REINPLACE_CMD} -e 's/icudtl.dat/icudtb.dat/' \
 		${WRKSRC}/src/core/core_module.pro
 .endif

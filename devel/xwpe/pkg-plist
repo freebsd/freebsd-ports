@@ -2,10 +2,10 @@ bin/we
 bin/wpe
 bin/xwe
 bin/xwpe
-man/man1/we.1.gz
-man/man1/wpe.1.gz
-man/man1/xwe.1.gz
-man/man1/xwpe.1.gz
+share/man/man1/we.1.gz
+share/man/man1/wpe.1.gz
+share/man/man1/xwe.1.gz
+share/man/man1/xwpe.1.gz
 %%DATADIR%%/help.key
 %%DATADIR%%/help.xwpe
 %%DATADIR%%/syntax_def

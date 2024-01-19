@@ -129,8 +129,10 @@ include/enlightenment/e_signals.h
 include/enlightenment/e_slidecore.h
 include/enlightenment/e_slider.h
 include/enlightenment/e_slidesel.h
+include/enlightenment/e_sound.h
 include/enlightenment/e_spectrum.h
 include/enlightenment/e_startup.h
+include/enlightenment/e_state.h
 include/enlightenment/e_sys.h
 include/enlightenment/e_system.h
 include/enlightenment/e_test.h
@@ -562,6 +564,7 @@ share/applications/enlightenment_paledit.desktop
 %%DATADIR%%/data/images/test.jpg
 %%DATADIR%%/data/images/test.png
 %%DATADIR%%/data/images/test.svg
+%%DATADIR%%/data/images/wayland.png
 %%DATADIR%%/data/input_methods/fcitx.imc
 %%DATADIR%%/data/input_methods/gcin.imc
 %%DATADIR%%/data/input_methods/hime.imc
@@ -606,6 +609,7 @@ share/icons/hicolor/scalable/places/enlightenment_badge-symbolic.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/it/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/enlightenment.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/km/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/enlightenment.mo

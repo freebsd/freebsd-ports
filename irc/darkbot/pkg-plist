@@ -11,4 +11,4 @@ bin/darkbot
 @sample %%ETCDIR%%/dat/randomstuff.ini.dist %%ETCDIR%%/dat/randomstuff.ini
 @sample %%ETCDIR%%/dat/seen.db.dist %%ETCDIR%%/dat/seen.db
 %%ETCDIR%%/logs/.pkgcreate
-man/man1/darkbot.1.gz
+share/man/man1/darkbot.1.gz

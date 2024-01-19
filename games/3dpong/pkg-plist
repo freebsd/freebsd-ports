@@ -1,5 +1,5 @@
 bin/3dpong
-man/man6/3dpong.6.gz
+share/man/man6/3dpong.6.gz
 %%DATADIR%%/hit.au
 %%DATADIR%%/score.au
 %%DATADIR%%/wall.au

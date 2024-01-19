@@ -1,6 +1,6 @@
 PORTNAME=	libkolabxml
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.2.1-3
+DISTVERSIONSUFFIX=	-g27d1927
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/kde/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
@@ -14,10 +14,14 @@ WWW=		https://kolab.org/
 # are considered LGPL3-licensed, though.
 LICENSE=	LGPL3+
 
-BUILD_DEPENDS=	xsdcxx:devel/xsd
+BUILD_DEPENDS=	libxsd>=4.2.0:devel/libxsd \
+		xsdcxx:devel/xsd
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libxerces-c.so.3:textproc/xerces-c3
+
+USES=		cmake tar:xz
+USE_LDCONFIG=	yes
 
 # TODO: Conditionally enable the bindings based on OPTIONs.
 CMAKE_OFF=	BUILD_TESTS \
@@ -27,16 +31,13 @@ CMAKE_OFF=	BUILD_TESTS \
 		JAVA_BINDINGS \
 		PHP_BINDINGS \
 		PYTHON_BINDINGS
-USES=		cmake tar:xz
-USE_CXXSTD=	c++11
-USE_LDCONFIG=	yes
 
-PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+PLIST_SUB=	SHLIB_VER=${PORTVERSION:R}
 
 create-distfile:
 	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
 	${SH} ${FILESDIR}/create_libkolabxml_release.sh \
 		${DISTDIR}/${DIST_SUBDIR} \
-		${DISTVERSION}
+		${DISTVERSIONFULL}
 
 .include <bsd.port.mk>

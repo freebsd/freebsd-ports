@@ -1,4 +1,4 @@
-The buildah package provides a command line tool which can be used to
+The Buildah package provides a command line tool which can be used to
 * create a working container from scratch
 or
 * create a working container from an image as a starting point

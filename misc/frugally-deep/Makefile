@@ -1,6 +1,6 @@
 PORTNAME=	frugally-deep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.25-p0
+DISTVERSION=	0.15.30
 CATEGORIES=	misc # deep-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ HPP_DEPENDS=	functionalplus>0:devel/functionalplus \
 		nlohmann-json>0:devel/nlohmann-json
 BUILD_DEPENDS=	${HPP_DEPENDS}
 RUN_DEPENDS=	${HPP_DEPENDS}
-TEST_DEPENDS=	doctest>0:devel/doctest \
+xTEST_DEPENDS=	doctest>0:devel/doctest \
 		${PYTHON_PKGNAMEPREFIX}keras>0:math/py-keras@${PY_FLAVOR}
 
 USES=		cmake compiler:c++14-lang eigen:3,build,run python:test

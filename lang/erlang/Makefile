@@ -12,8 +12,6 @@ WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 
-BROKEN_sparc64=	Fails to build: error: fp_except undeclared
-
 USES=		compiler cpe gmake ncurses perl5
 CPE_VENDOR=	erlang
 CPE_PRODUCT=	erlang/otp

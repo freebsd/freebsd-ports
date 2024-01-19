@@ -1,0 +1,129 @@
+#!/bin/sh
+
+# PROVIDE: qdrant
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to run qdrant:
+#
+# qdrant_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
+# qdrant(_profile)?_enable (bool):	Set it to "YES" to enable qdrant.
+#				Default is "NO".
+# qdrant(_profile)?_config (str):	Full name of config file
+#				Default is "%%ETCDIR%%/config.yaml" or
+#				"%%ETCDIR%%/config(.profile)?.yaml
+# qdrant(_profile)?_flags (flags):	Set extra flags here. More options in qdrant(1)
+#				Default is empty "".
+# qdrant(_profile)?_user (user):	Set user to run qdrant.
+#				Default is "nobody".
+# qdrant(_profile)?_group (group):	Set group to run qdrant.
+#				Default is "nobody".
+# qdrant(_profile)?_post_start (str):   Set extra commands that should be executed after qdrant was successfully
+#                               started here.
+#                               Default is empty "".
+
+. /etc/rc.subr
+
+name="qdrant"
+rcvar=qdrant_enable
+
+_piddir="/var/run/qdrant"
+pidfile="${_piddir}/qdrant.pid"
+
+: ${qdrant_enable="NO"}
+: ${qdrant_config="%%ETCDIR%%/config.yaml"}
+: ${qdrant_user="nobody"}
+: ${qdrant_group="nobody"}
+
+load_rc_config ${name}
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${qdrant_profiles}" ]; then
+		pidfile="${_piddir}/qdrant.${profile}.pid"
+		eval qdrant_enable="\${qdrant_${profile}_enable:-${qdrant_enable}}"
+		eval qdrant_config="\${qdrant_${profile}_config:-${qdrant_config}}"
+                eval qdrant_user="\${qdrant_${profile}_user:-${qdrant_user}}"
+                eval qdrant_group="\${qdrant_${profile}_group:-${qdrant_group}}"
+		eval qdrant_flags="\${qdrant_${profile}_flags:-${qdrant_flags}}"
+		eval qdrant_post_start="\${qdrant_${profile}_post_start:-${qdrant_post_start}}"
+	else
+		echo "%%PREFIX%%/etc/rc.d/qdrant%%RC_SUBR_SUFFIX%%: extra argument ignored"
+	fi
+else
+	if [ -n "${qdrant_profiles}" -a -n "$1" ]; then
+		for profile in ${qdrant_profiles}; do
+			eval _enable="\${qdrant_${profile}_enable}"
+			case "${_enable:-${qdrant_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+				;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=qdrant_enable
+				else
+					_var=qdrant_"${profile}"_enable
+				fi
+				warn "Bad value" \
+				    "'${_enable:-${qdrant_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> qdrant profile: ${profile}"
+			if %%PREFIX%%/etc/rc.d/qdrant%%RC_SUBR_SUFFIX%% $1 ${profile} ; then
+				success="${profile} ${success:-}"
+			else
+				failed="${profile} (${retcode}) ${failed:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+qdrant_poststart()
+{
+    if [ -n "$qdrant_post_start" ]; then
+        eval $qdrant_post_start
+    fi
+}
+
+qdrant_poststop()
+{
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
+
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
+}
+
+_profsuffx=""
+if [ -n "${profile}" ]; then
+	_profsuffx="-${profile}"
+fi
+
+required_files="$qdrant_config"
+procname=%%PREFIX%%/bin/qdrant
+command="/usr/sbin/daemon"
+command_args="-f -S -p ${pidfile} \
+	-t qdrant${_profsuffx} \
+	%%PREFIX%%/bin/qdrant --config-path $qdrant_config"
+
+
+start_precmd="install -d -o $qdrant_user -g $qdrant_group -m 755 $_piddir"
+start_postcmd="${name}_poststart"
+stop_postcmd="${name}_poststop"
+
+run_rc_command "$1"

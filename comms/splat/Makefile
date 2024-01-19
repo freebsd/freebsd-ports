@@ -1,6 +1,6 @@
 PORTNAME=	splat
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/kd2bd/ \
 		LOCAL/db
@@ -121,7 +121,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/postdownload ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/english/man/splat.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/english/man/splat.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

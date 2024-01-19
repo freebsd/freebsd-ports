@@ -23,11 +23,6 @@ TEST_TARGET=	test
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-# required for __sync _* atomic operations on sparc
-USE_GCC=	yes
-.endif
-
 pre-test:
 	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD}
 
@@ -35,7 +30,6 @@ pre-test:
 # until upstream makes up its mind.
 post-install:
 	${LN} -sf msgpack-c.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/msgpack.pc
-
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/msgpackc
 .for tgt in config-version config targets-${CMAKE_BUILD_TYPE:tl} targets
 	${LN} -sf ../msgpack-c/msgpack-c-${tgt}.cmake \

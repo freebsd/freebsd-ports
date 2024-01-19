@@ -12,8 +12,6 @@ WWW=		http://web.archive.org/web/20061005045333/http://www.clanlib.org/hermes/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=		interchanges red and blue colour channels in images
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool tar:bzip2

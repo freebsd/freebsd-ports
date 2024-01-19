@@ -1,7 +1,7 @@
 PORTNAME=	runiq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-PORTREVISION=	9
+DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,69 +15,194 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	whitfin
 
-CARGO_CRATES=	atty-0.2.14 \
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		ahash-0.8.7 \
+		aho-corasick-1.1.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.5 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		autocfg-0.1.8 \
 		autocfg-1.1.0 \
+		backtrace-0.3.69 \
+		base64-0.13.1 \
 		bitflags-1.3.2 \
-		bytelines-2.4.0 \
-		bytes-1.3.0 \
+		bitvec-1.0.1 \
+		block-buffer-0.10.4 \
+		bson-2.8.1 \
+		bstr-1.9.0 \
+		bumpalo-3.14.0 \
+		bytelines-2.5.0 \
+		bytesize-1.3.0 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		clap-3.2.23 \
-		clap_derive-3.2.18 \
-		clap_lex-0.2.4 \
-		fnv-1.0.7 \
-		futures-0.3.25 \
-		futures-channel-0.3.25 \
-		futures-core-0.3.25 \
-		futures-executor-0.3.25 \
-		futures-io-0.3.25 \
-		futures-macro-0.3.25 \
-		futures-sink-0.3.25 \
-		futures-task-0.3.25 \
-		futures-util-0.3.25 \
-		getrandom-0.2.8 \
+		chrono-0.4.31 \
+		chrono-tz-0.8.5 \
+		chrono-tz-build-0.2.1 \
+		clap-4.4.13 \
+		clap_builder-4.4.12 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
+		cli-table-0.4.7 \
+		cli-table-derive-0.4.5 \
+		cloudabi-0.0.3 \
+		colorchoice-1.0.0 \
+		core-foundation-sys-0.8.6 \
+		cpufeatures-0.2.12 \
+		crossbeam-deque-0.8.4 \
+		crossbeam-epoch-0.9.17 \
+		crossbeam-utils-0.8.18 \
+		crypto-common-0.1.6 \
+		csv-1.3.0 \
+		csv-core-0.1.11 \
+		deranged-0.3.11 \
+		deunicode-1.4.2 \
+		digest-0.10.7 \
+		equivalent-1.0.1 \
+		failure-0.1.8 \
+		failure_derive-0.1.8 \
+		fake-1.3.0 \
+		format_num-0.1.0 \
+		fuchsia-cprng-0.1.1 \
+		funty-2.0.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.11 \
+		gimli-0.28.1 \
+		globset-0.4.14 \
+		globwalk-0.8.1 \
+		growable-bloom-filter-2.1.0 \
 		hashbrown-0.12.3 \
-		heck-0.4.0 \
-		hermit-abi-0.1.19 \
-		indexmap-1.9.2 \
-		libc-0.2.139 \
-		memchr-2.5.0 \
-		once_cell-1.17.0 \
-		os_str_bytes-6.4.1 \
-		pin-project-lite-0.2.9 \
-		pin-utils-0.1.0 \
+		hashbrown-0.14.3 \
+		heck-0.4.1 \
+		hex-0.4.3 \
+		humansize-2.1.3 \
+		iana-time-zone-0.1.59 \
+		iana-time-zone-haiku-0.1.2 \
+		identity-hash-0.1.0 \
+		ignore-0.4.21 \
+		indexmap-1.9.3 \
+		indexmap-2.1.0 \
+		itoa-1.0.10 \
+		jen-1.7.0 \
+		js-sys-0.3.66 \
+		lazy_static-1.4.0 \
+		libc-0.2.151 \
+		libm-0.2.8 \
+		log-0.4.20 \
+		memchr-2.7.1 \
+		miniz_oxide-0.7.1 \
+		nanoid-0.4.0 \
+		num-traits-0.2.17 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		parse-zoneinfo-0.3.0 \
+		percent-encoding-2.3.1 \
+		pest-2.7.6 \
+		pest_derive-2.7.6 \
+		pest_generator-2.7.6 \
+		pest_meta-2.7.6 \
+		phf-0.11.2 \
+		phf_codegen-0.11.2 \
+		phf_generator-0.11.2 \
+		phf_shared-0.11.2 \
+		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.49 \
-		quote-1.0.23 \
+		proc-macro2-1.0.76 \
+		quote-1.0.35 \
+		radium-0.7.0 \
+		rand-0.6.5 \
 		rand-0.8.5 \
+		rand_chacha-0.1.1 \
 		rand_chacha-0.3.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
 		rand_core-0.6.4 \
-		scalable_bloom_filter-0.1.1 \
-		siphasher-0.2.3 \
-		slab-0.4.7 \
-		static_assertions-1.1.0 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
+		rustc-demangle-0.1.23 \
+		rustversion-1.0.14 \
+		ryu-1.0.16 \
+		same-file-1.0.6 \
+		serde-1.0.195 \
+		serde_bytes-0.11.14 \
+		serde_derive-1.0.195 \
+		serde_json-1.0.111 \
+		sha2-0.10.8 \
+		siphasher-0.3.11 \
+		slug-0.1.5 \
 		strsim-0.10.0 \
-		syn-1.0.107 \
-		termcolor-1.1.3 \
-		textwrap-0.16.0 \
-		tokio-1.23.0 \
-		twox-hash-1.6.3 \
-		unicode-ident-1.0.6 \
+		strum-0.25.0 \
+		strum_macros-0.25.3 \
+		syn-1.0.109 \
+		syn-2.0.48 \
+		synstructure-0.12.6 \
+		tap-1.0.1 \
+		tera-1.19.1 \
+		termcolor-1.4.0 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		time-0.3.31 \
+		time-core-0.1.2 \
+		time-macros-0.2.16 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.6 \
+		unic-char-property-0.9.0 \
+		unic-char-range-0.9.0 \
+		unic-common-0.9.0 \
+		unic-segment-0.9.0 \
+		unic-ucd-segment-0.9.0 \
+		unic-ucd-version-0.9.0 \
+		unicode-ident-1.0.12 \
+		unicode-width-0.1.11 \
+		unicode-xid-0.2.4 \
+		utf8parse-0.2.1 \
+		uuid-1.6.1 \
 		version_check-0.9.4 \
+		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0
+		windows-core-0.52.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		wyz-0.5.1 \
+		xxhash-rust-0.8.8 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32
 
 PLIST_FILES=	bin/${PORTNAME}
 

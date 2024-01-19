@@ -19,4 +19,4 @@
 +
 +install: $(PROJECT) $(PROJECT).1 strip
 +	install $(PROJECT) $(DESTDIR)$(PREFIX)/bin
-+	install $(PROJECT).1 $(DESTDIR)$(MANPREFIX)/man/man1
++	install $(PROJECT).1 $(DESTDIR)$(PREFIX)/share/man/man1

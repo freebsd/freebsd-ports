@@ -4,15 +4,12 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	System tray dockapp similar to the GNOME notification area applet
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Standalone system tray (notification area) dockapp
 WWW=		https://peksystray.sourceforge.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Last upstream release was in 2007
-EXPIRATION_DATE=	2024-01-18
 
 USES=		tar:bzip2 xorg
 USE_XORG=	ice sm x11
@@ -24,5 +21,7 @@ PLIST_FILES=	bin/peksystray
 post-patch:
 	@${REINPLACE_CMD} -e 's|@x_includes@|| ; s|@x_libraries@||' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/fprintf/s|, err|, "%s"&|' \
+		${WRKSRC}/src/peksystray.c
 
 .include <bsd.port.mk>

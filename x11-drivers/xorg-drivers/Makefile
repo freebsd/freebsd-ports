@@ -66,14 +66,10 @@ OPTIONS_DEFAULT_amd64=	VESA
 OPTIONS_DEFINE_i386:=	${OPTIONS_DEFINE_amd64} GEODE
 OPTIONS_DEFAULT_i386:=	${OPTIONS_DEFAULT_amd64}
 
-OPTIONS_DEFINE_sparc64=	SUNFFB
-OPTIONS_DEFAULT_sparc64=SUNFFB
-
 AMDGPU_DESC=		Install amdgpu video driver
 ATI_DESC=		Install ati (radeon) video driver
 GEODE_DESC=		Install geode video driver
 INTEL_DESC=		Install intel video driver
-SUNFFB_DESC=		Install sunffb video driver
 VMMOUSE_DESC=		Install vmmouse input driver
 VMWARE_DESC=		Install vmware video driver
 
@@ -90,10 +86,6 @@ VIDEO_DRIVERS+=	amdgpu ati intel vmware
 
 .if ${ARCH}==i386
 VIDEO_DRIVERS+= geode
-.endif
-
-.if ${ARCH}==sparc64
-VIDEO_DRIVERS+=	sunffb
 .endif
 
 .for type in input video

@@ -1,5 +1,6 @@
 PORTNAME=	pkg_cleanup
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
@@ -9,7 +10,7 @@ COMMENT=	Interactive program for deinstalling 'leaf' packages
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/pkg_cleanup \
-		man/man1/pkg_cleanup.1.gz
+		share/man/man1/pkg_cleanup.1.gz
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -17,6 +18,6 @@ do-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pkg_cleanup ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/pkg_cleanup.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pkg_cleanup.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

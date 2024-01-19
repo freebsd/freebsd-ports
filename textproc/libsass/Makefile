@@ -1,6 +1,5 @@
 PORTNAME=	libsass
-DISTVERSION=	3.6.5
-PORTREVISION=	0
+DISTVERSION=	3.6.6
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -12,21 +11,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf compiler:c++11-lib cpe gmake libtool pathfix
 CPE_VENDOR=	sass-lang
-USE_GITHUB=	yes
+PATHFIX_MAKEFILEIN=	GNUmakefile.am
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sass
+
+GNU_CONFIGURE=	yes
+MAKEFILE=	GNUmakefile
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-static
 
-GH_ACCOUNT=	sass
-GNU_CONFIGURE=	yes
-
-INSTALL_TARGET=	install-strip
-
-MAKEFILE=	GNUmakefile
-
-PATHFIX_MAKEFILEIN=	GNUmakefile.am
-
 post-patch:
-	@${ECHO_CMD} "${ECHO_CMD} \"${PORTVERSION}\"" > ${WRKSRC}/version.sh
+	@${ECHO_CMD} "${ECHO_CMD} \"${DISTVERSION}\"" > ${WRKSRC}/version.sh
 
 .include <bsd.port.mk>

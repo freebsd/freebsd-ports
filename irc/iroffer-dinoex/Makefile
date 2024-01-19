@@ -1,6 +1,6 @@
 PORTNAME=	iroffer
 PORTVERSION=	3.33
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://iroffer.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -69,8 +69,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${PREFIX}/man/man7/
+	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${PREFIX}/share/man/man7/
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -145,6 +145,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Palmer.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Rothera.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Troll.pm
+%%SITE_PERL%%/DateTime/TimeZone/Antarctica/Vostok.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Almaty.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Amman.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Anadyr.pm

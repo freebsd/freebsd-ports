@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	7.3.1
+SSPVERSION=	7.5.1
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -45,7 +45,6 @@ MAKE_ENV=	JOBS="${MAKE_JOBS_NUMBER}" \
 		INSTALL="${STAGEDIR}${PREFIX}" \
 		INSTALL_DOC="${STAGEDIR}${DOCSDIR}" \
 		INSTALL_INCLUDE="${STAGEDIR}${PREFIX}/include/${SSPNAME}"
-CMAKE_ARGS+=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${SSPNAME}"
 LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 
 INSTALL_TARGET=	install # skip USES=cmake
@@ -61,6 +60,7 @@ OPTIONS_DEFAULT+=	OPTIMIZED_CFLAGS
 
 .if ${MPORTNAME} == config ||	\
 	${MPORTNAME} == CHOLMOD ||	\
+	${MPORTNAME} == ParU ||	\
 	${MPORTNAME} == SPQR ||	\
 	${MPORTNAME} == UMFPACK
 OPTIONS_RADIO+=		BLAS
@@ -89,16 +89,13 @@ OPENMP_CMAKE_BOOL=	OPENMP
 OPENMP_CMAKE_BOOL_OFF=	NOPENMP
 
 DEMOS_DESC=		Build the demonstrations
-DEMOS_CMAKE_BOOL=	DEMO
+DEMOS_CMAKE_BOOL=	SUITESPARSE_DEMOS
 
 .if !defined(WITH_DEBUG)
 OPTIMIZED_CFLAGS_CFLAGS=	-O3
 OPTIMIZED_CFLAGS_CXXFLAGS=	-O3
 LDFLAGS+=	-s
 .endif
-
-post-extract:
-	${RM} -r ${WRKSRC}/metis-*
 
 post-install:
 .if ! ${MPORTNAME} == config
@@ -112,8 +109,6 @@ post-install:
 # See PR 230888 : Missing 64 bit atomic functions for i386
 USE_GCC=	yes
 LDFLAGS+=	-latomic
-.elif defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-USE_GCC=	yes
 .else
 USES+=	compiler:c++11-lib
 .endif

@@ -1,10 +1,18 @@
---- cmake/ConfigureChecks.cmake.orig	2022-09-14 12:12:21 UTC
+--- cmake/ConfigureChecks.cmake.orig	2024-01-01 18:36:58 UTC
 +++ cmake/ConfigureChecks.cmake
-@@ -51,6 +51,7 @@ check_symbol_exists(clearenv     "stdlib.h"         HA
- check_symbol_exists(setenv       "stdlib.h"         HAVE_SETENV)             #  dbus-sysdeps.c
- check_symbol_exists(unsetenv     "stdlib.h"         HAVE_UNSETENV)           #  dbus-sysdeps.c
- check_symbol_exists(clearenv     "stdlib.h"         HAVE_CLEARENV)           #  dbus-sysdeps.c
-+check_symbol_exists(closefrom    "unistd.h"         HAVE_CLOSEFROM)          #  dbus-sysdeps-unix.c
- check_symbol_exists(writev       "sys/uio.h"        HAVE_WRITEV)             #  dbus-sysdeps.c, dbus-sysdeps-win.c
- check_symbol_exists(setrlimit    "sys/resource.h"   HAVE_SETRLIMIT)          #  dbus-sysdeps.c, dbus-sysdeps-win.c, test/test-segfault.c
- check_symbol_exists(socketpair   "sys/socket.h"     HAVE_SOCKETPAIR)         #  dbus-sysdeps.c
+@@ -17,6 +17,7 @@ check_include_file(io.h         HAVE_IO_H)      # inte
+ check_include_file(grp.h        HAVE_GRP_H)     # dbus-sysdeps-util-win.c
+ check_include_file(inttypes.h     HAVE_INTTYPES_H)   # dbus-pipe.h
+ check_include_file(io.h         HAVE_IO_H)      # internal
++check_include_file(linux/close_range.h HAVE_LINUX_CLOSE_RANGE_H)
+ check_include_file(locale.h     HAVE_LOCALE_H)
+ check_include_file(memory.h     HAVE_MEMORY_H)
+ check_include_file(signal.h     HAVE_SIGNAL_H)
+@@ -31,6 +32,7 @@ check_include_file(sys/stat.h     HAVE_SYS_STAT_H)
+ check_include_file(sys/random.h     HAVE_SYS_RANDOM_H)
+ check_include_file(sys/resource.h     HAVE_SYS_RESOURCE_H)
+ check_include_file(sys/stat.h     HAVE_SYS_STAT_H)
++check_include_file(sys/syscall.h HAVE_SYS_SYSCALL_H)
+ check_include_file(sys/types.h     HAVE_SYS_TYPES_H)
+ check_include_file(sys/uio.h     HAVE_SYS_UIO_H)
+ check_include_file(sys/prctl.h  HAVE_SYS_PRCTL_H)

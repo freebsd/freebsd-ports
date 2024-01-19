@@ -1,6 +1,6 @@
-TIMESTAMP = 1702458969
-SHA256 (xwayland-23.2.3.tar.xz) = eb9d9aa7232c47412c8835ec15a97c575f03563726c787754ff0c019bd07e302
-SIZE (xwayland-23.2.3.tar.xz) = 1298840
+TIMESTAMP = 1705425188
+SHA256 (xwayland-23.2.4.tar.xz) = a99e159b6d0d33098b3b6ab22a88bfcece23c8b9d0ca72c535c55dcb0681b46b
+SIZE (xwayland-23.2.4.tar.xz) = 1299748
 SHA256 (cd6c9c1246af.patch) = a50fd4511793a53cacefbca2c8436cf43d36ce21d245aadb5d17e16653580d75
 SIZE (cd6c9c1246af.patch) = 3730
 SHA256 (707c37b7ab9e.patch) = db8a2acbc8b8ceeeef0c6aa4b06b632ef074b1319194cc9794e3ae715062e425

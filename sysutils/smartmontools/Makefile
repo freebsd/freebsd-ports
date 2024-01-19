@@ -1,5 +1,6 @@
 PORTNAME=	smartmontools
 DISTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -17,7 +18,7 @@ SHEBANG_FILES=	examplescripts/Example5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-sample \
-		--with-gnupg=no \
+		--with-gnupg=yes \
 		--with-initscriptdir=${PREFIX}/etc/rc.d \
 		--with-nvme-devicescan=yes
 

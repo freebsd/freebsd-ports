@@ -2,10 +2,10 @@ bin/gcm-import
 bin/gcm-inspect
 bin/gcm-picker
 bin/gcm-viewer
-man/man1/gcm-import.1.gz
-man/man1/gcm-inspect.1.gz
-man/man1/gcm-picker.1.gz
-man/man1/gcm-viewer.1.gz
+share/man/man1/gcm-import.1.gz
+share/man/man1/gcm-inspect.1.gz
+share/man/man1/gcm-picker.1.gz
+share/man/man1/gcm-viewer.1.gz
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
 share/applications/org.gnome.ColorProfileViewer.desktop

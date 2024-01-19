@@ -13,7 +13,7 @@ CONFIGS = %%CONFIGS%%
 DEFAULT_MUTEX_PROTOCOL = PrioInherit
 
 prefix              = %%PREFIX%%
-install_mandir      = %%MANPREFIX%%/man
+install_mandir      = ${prefix}/share/man
 install_slicedir    = %%DATADIR%%
 install_configdir   = %%DATADIR%%/config
 install_docdir      = %%DOCSDIR%%

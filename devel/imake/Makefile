@@ -1,5 +1,5 @@
 PORTNAME=	imake
-PORTVERSION=	1.0.8
+DISTVERSION=	1.0.10
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	gccmakedep:devel/gccmakedep \
 		makedepend:devel/makedepend \
 		${LOCALBASE}/lib/X11/config/xorg.cf:x11/xorg-cf-files
 
-USES=		shebangfix perl5 pkgconfig xorg xorg-cat:util
+USES=		shebangfix tar:xz perl5 pkgconfig xorg xorg-cat:util
 USE_XORG=	xorgproto
 USE_PERL5=	run
 

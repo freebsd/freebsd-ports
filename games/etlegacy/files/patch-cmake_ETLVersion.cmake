@@ -1,0 +1,18 @@
+--- cmake/ETLVersion.cmake.orig	2024-01-09 22:59:31 UTC
++++ cmake/ETLVersion.cmake
+@@ -97,6 +97,7 @@ endmacro(GENERATENUMBER)
+ endmacro(GENERATENUMBER)
+ 
+ 
++if(NOT CMAKE_SYSTEM MATCHES "FreeBSD")
+ execute_process(COMMAND git describe --abbrev=7
+ 		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+ 		OUTPUT_STRIP_TRAILING_WHITESPACE
+@@ -105,6 +106,7 @@ execute_process(COMMAND git describe --abbrev=0
+ 		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+ 		OUTPUT_STRIP_TRAILING_WHITESPACE
+ 		OUTPUT_VARIABLE GIT_DESCRIBE_TAG)
++endif()
+ 
+ if(GIT_DESCRIBE)
+ 	set(ETL_CMAKE_VERSION ${GIT_DESCRIBE})

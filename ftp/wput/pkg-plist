@@ -1,7 +1,7 @@
 bin/wdel
 bin/wput
-man/man1/wdel.1.gz
-man/man1/wput.1.gz
+share/man/man1/wdel.1.gz
+share/man/man1/wput.1.gz
 %%NLS%%share/locale/da/LC_MESSAGES/wput.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wput.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wput.mo

@@ -1,6 +1,6 @@
 PORTNAME=	es
 PORTVERSION=	0.9.b1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 DISTNAME=	es-0.9-beta1
@@ -16,6 +16,6 @@ CONFIGURE_ARGS=	--with-readline
 CFLAGS:=	${CFLAGS:N-O*}
 ALL_TARGET=	es
 
-PLIST_FILES=	bin/es man/man1/es.1.gz
+PLIST_FILES=	bin/es share/man/man1/es.1.gz
 
 .include <bsd.port.mk>

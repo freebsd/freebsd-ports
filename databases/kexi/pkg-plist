@@ -36,7 +36,6 @@ lib/libkformdesigner3.2.so
 lib/libkformdesigner3.2.so.3.2
 lib/libkformdesigner3.2.so.3.2.0
 %%QT_PLUGINDIR%%/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.main.so
-%%WEBKIT%%%%QT_PLUGINDIR%%/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.web-browser.so
 %%QT_PLUGINDIR%%/kexi/3.2/kexi_csvimportexportplugin.so
 %%QT_PLUGINDIR%%/kexi/3.2/kexi_formplugin.so
 %%QT_PLUGINDIR%%/kexi/3.2/kexi_migrationplugin.so
@@ -86,7 +85,6 @@ share/icons/hicolor/64x64/apps/kexi-3.2.png
 %%DATADIR%%/3.2/examples/Simple_Database.kexi
 %%DATADIR%%/3.2/icons/kexi_breeze.rcc
 %%DATADIR%%/3.2/icons/org.kexi-project.form.widgets.main_breeze.rcc
-%%WEBKIT%%%%DATADIR%%/3.2/icons/org.kexi-project.form.widgets.web-browser_breeze.rcc
 %%DATADIR%%/3.2/status/contribution_details.ui
 %%DATADIR%%/3.2/status/contribution_help.ui
 %%DATADIR%%/3.2/status/status.rcc

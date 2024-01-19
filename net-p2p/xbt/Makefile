@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/asio.hpp:devel/boost-libs
 
 USES=		compiler:c++17-lang mysql pkgconfig
+IGNORE_WITH_MYSQL=	105m 106m 1011m
 USE_GITHUB=	yes
 GH_ACCOUNT=	OlafvdSpek
 GH_TAGNAME=	9c7dbc4

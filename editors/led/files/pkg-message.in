@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-An example configuration file is located in
-%%DOCSDIR%%/sample.ledrc; to use it,
-copy it to ~/.ledrc and edit it to your liking.
-EOM
-}
-]

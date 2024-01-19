@@ -43,9 +43,9 @@ lib/libappstream-glib.so
 lib/libappstream-glib.so.8
 lib/libappstream-glib.so.8.0.10
 libdata/pkgconfig/appstream-glib.pc
-%%MANPAGES%%man/man1/appstream-builder.1.gz
-%%MANPAGES%%man/man1/appstream-compose.1.gz
-%%MANPAGES%%man/man1/appstream-util.1.gz
+%%MANPAGES%%share/man/man1/appstream-builder.1.gz
+%%MANPAGES%%share/man/man1/appstream-compose.1.gz
+%%MANPAGES%%share/man/man1/appstream-util.1.gz
 share/aclocal/appdata-xml.m4
 share/aclocal/appstream-xml.m4
 share/bash-completion/completions/appstream-builder

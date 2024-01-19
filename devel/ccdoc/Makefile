@@ -1,5 +1,6 @@
 PORTNAME=	ccdoc
 PORTVERSION=	0.8r41
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://ccdoc.sourceforge.net/downloads/
 DISTNAME=	src
@@ -17,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}v${PORTVERSION:S/.//g}/src
 MAKEFILE=	mkopt_gcc.mk
 ALL_TARGET=	bld
 PLIST_FILES=	bin/ccdoc \
-		man/man1/ccdoc.1.gz
+		share/man/man1/ccdoc.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -35,7 +36,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin_opt_gcc_/ccdoc.exe \
 		${STAGEDIR}${PREFIX}/bin/ccdoc
 	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/

@@ -1,6 +1,6 @@
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	ftp://ftp.nstu.ru/pub/mirrors/xanim.va.pubnix.com/:main \
 		LOCAL/dinoex:main,DEFAULT \
@@ -24,8 +24,9 @@ USES=		alias imake xorg
 USE_GCC=	yes
 USE_XORG=	xext xt sm ice xext x11
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
+MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 DLLDIR=		${PREFIX}/lib/X11/xanim
-PLIST_FILES+=	bin/xanim man/man1/xanim.1.gz
+PLIST_FILES+=	bin/xanim share/man/man1/xanim.1.gz
 
 post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}

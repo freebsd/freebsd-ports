@@ -1,6 +1,5 @@
 PORTNAME=	wabt
-DISTVERSION=	1.0.33
-PORTREVISION=	1
+DISTVERSION=	1.0.34
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ GH_TUPLE=	dabeaz:ply:d776a2e:dabeaz_ply/third_party/ply \
 		nodejs:uvwasi:55eff19:nodejs_uvwasi/third_party/uvwasi \
 		okdshin:PicoSHA2:27fcf69:picosha/third_party/picosha2 \
 		simd-everywhere:simde:54b8c8f:simde/third_party/simde \
-		WebAssembly:testsuite:7ef86dd:WebAssembly_testsuite/third_party/testsuite \
+		WebAssembly:testsuite:c2a67a5:WebAssembly_testsuite/third_party/testsuite \
 		WebAssembly:wasm-c-api:b6dd1fb:WebAssembly_wasm_c_api/third_party/wasm-c-api
 
 CMAKE_ON=	BUILD_SHARED_LIBS USE_SYSTEM_GTEST

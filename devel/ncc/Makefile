@@ -1,6 +1,6 @@
 PORTNAME=	ncc
 PORTVERSION=	2.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://students.ceid.upatras.gr/~sxanth/ncc/
 
@@ -43,7 +43,7 @@ do-install:
 	${LN} -sf nccnav ${STAGEDIR}${PREFIX}/bin/nccnavi
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ncc
 	${INSTALL_DATA}	${WRKSRC}/doc/nognu ${STAGEDIR}${PREFIX}/include/ncc
-	${INSTALL_MAN} ${WRKSRC}/ncc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ncc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

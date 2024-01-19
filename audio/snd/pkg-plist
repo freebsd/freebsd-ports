@@ -1,7 +1,7 @@
 bin/snd
 bin/snd-info
 bin/sndplay
-man/man1/snd.1.gz
+share/man/man1/snd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.Snd
 %%PORTDOCS%%%%DOCSDIR%%/README.Snd
 %%PORTDOCS%%%%DOCSDIR%%/extsnd.html

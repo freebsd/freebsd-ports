@@ -3,6 +3,7 @@ bin/ppmtoinfo
 bin/requestchoice
 lib/X11/amiwm/Background
 lib/X11/amiwm/Keyboard
+lib/X11/amiwm/Launcher
 lib/X11/amiwm/Xinitrc
 lib/X11/amiwm/Xsession
 lib/X11/amiwm/Xsession2

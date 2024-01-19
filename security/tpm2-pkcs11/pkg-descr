@@ -1,0 +1,3 @@
+PKCS #11 is a Public-Key Cryptography Standard that defines a standard method to
+access cryptographic services from tokens/devices. This package allows to use
+a TPM2 device as the cryptographic token.

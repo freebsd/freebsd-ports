@@ -1,5 +1,5 @@
-man/man5/userneu.conf.5.gz
-man/man8/userneu.8.gz
+share/man/man5/userneu.conf.5.gz
+share/man/man8/userneu.8.gz
 sbin/userneu.pl
 sbin/smbrepair.pl
 sbin/userquick

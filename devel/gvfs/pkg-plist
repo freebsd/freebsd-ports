@@ -34,10 +34,10 @@ libexec/gvfsd-sftp
 %%SMB%%libexec/gvfsd-smb
 %%SMB%%libexec/gvfsd-smb-browse
 libexec/gvfsd-trash
-%%FUSE%%man/man1/gvfsd-fuse.1.gz
-man/man1/gvfsd-metadata.1.gz
-man/man1/gvfsd.1.gz
-man/man7/gvfs.7.gz
+%%FUSE%%share/man/man1/gvfsd-fuse.1.gz
+share/man/man1/gvfsd-metadata.1.gz
+share/man/man1/gvfsd.1.gz
+share/man/man7/gvfs.7.gz
 %%AVAHI%%share/GConf/gsettings/gvfs-dns-sd.convert
 %%SMB%%share/GConf/gsettings/gvfs-smb.convert
 share/dbus-1/services/org.gtk.vfs.Daemon.service

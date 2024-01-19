@@ -1,5 +1,5 @@
 bin/five-or-more
-man/man6/five-or-more.6.gz
+share/man/man6/five-or-more.6.gz
 share/applications/org.gnome.five-or-more.desktop
 %%DATADIR%%/five-or-more-preferences.ui
 %%DATADIR%%/five-or-more.ui

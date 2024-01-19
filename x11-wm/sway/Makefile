@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION?=	1.8.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -18,8 +18,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.24:graphics/wayland-protocols \
-		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
+		wayland-protocols>=1.24:graphics/wayland-protocols
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \

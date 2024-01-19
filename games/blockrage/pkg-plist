@@ -1,5 +1,5 @@
 bin/blockrage
-man/man6/blockrage.6.gz
+share/man/man6/blockrage.6.gz
 %%DATADIR%%/blockrage
 %%DATADIR%%/blockrage-fhs.rc
 %%DATADIR%%/blockrage.cfg

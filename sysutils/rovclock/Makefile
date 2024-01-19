@@ -1,5 +1,6 @@
 PORTNAME=	rovclock
 PORTVERSION=	0.6e
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.hasw.net/linux/
 
@@ -14,7 +15,7 @@ BROKEN_riscv64=		fails to compile: rovclock.c:30:10: 'machine/pio.h' file not fo
 
 USES=		tar:bzip2
 
-PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/${PORTNAME}
+PLIST_FILES=	share/man/man8/${PORTNAME}.8.gz sbin/${PORTNAME}
 PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
@@ -25,7 +26,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

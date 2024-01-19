@@ -1,6 +1,6 @@
 PORTNAME=	mpdscribble
 PORTVERSION=	0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/${PORTNAME}/${PORTVERSION}/
 
@@ -27,7 +27,7 @@ SOUP_CONFIGURE_OFF=	--with-http-client=curl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpdscribble ${STAGEDIR}${PREFIX}/bin/mpdscribble
-	${INSTALL_MAN} ${WRKSRC}/doc/mpdscribble.1 ${STAGEDIR}${MANPREFIX}/man/man1/mpdscribble.1
+	${INSTALL_MAN} ${WRKSRC}/doc/mpdscribble.1 ${STAGEDIR}${PREFIX}/share/man/man1/mpdscribble.1
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdscribble.conf ${STAGEDIR}${PREFIX}/etc/mpdscribble.conf.sample
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

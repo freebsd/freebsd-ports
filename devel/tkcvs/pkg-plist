@@ -121,7 +121,7 @@ lib/tkcvs/tooltips.tcl
 lib/tkcvs/ui_misc.tcl
 lib/tkcvs/vendor_merge.tcl
 lib/tkcvs/workdir.tcl
-man/man1/tkcvs.1.gz
+share/man/man1/tkcvs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

@@ -1,0 +1,4 @@
+Air is a simple program to call ChatGPT API from command line with markdown
+to ANSI output.
+
+This project replaces `aid` (written in Dart) and implement `chatgpt` and `llama-cpp`.

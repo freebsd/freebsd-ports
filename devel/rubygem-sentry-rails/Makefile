@@ -1,6 +1,5 @@
 PORTNAME=	sentry-rails
-PORTVERSION=	5.8.0
-PORTREVISION=	1
+PORTVERSION=	5.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-railties70>=5.0.0:www/rubygem-railties70 \
-		rubygem-sentry-ruby=5.8.0<5.9:devel/rubygem-sentry-ruby
+		rubygem-sentry-ruby>=5.10.0<5.11:devel/rubygem-sentry-ruby
 
 USES=		gem
 

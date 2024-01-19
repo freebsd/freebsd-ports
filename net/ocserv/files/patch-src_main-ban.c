@@ -1,6 +1,6 @@
---- src/main-ban.c.orig	2023-01-29 14:09:45 UTC
+--- src/main-ban.c.orig	2023-12-17 10:19:23 UTC
 +++ src/main-ban.c
-@@ -408,8 +408,8 @@ static bool test_local_ipv6(struct sockaddr_in6 * remo
+@@ -407,8 +407,8 @@ static bool test_local_ipv6(struct sockaddr_in6 * remo
  	unsigned index = 0;
  
  	for (index = 0; index < 4; index ++) {

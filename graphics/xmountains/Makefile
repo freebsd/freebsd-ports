@@ -1,5 +1,6 @@
 PORTNAME=	xmountains
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
 		https://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/
@@ -15,7 +16,7 @@ USES=		xorg
 USE_XORG=	xbitmaps x11
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz
+		share/man/man6/${PORTNAME}.6.gz
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
@@ -29,6 +30,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 .include <bsd.port.mk>

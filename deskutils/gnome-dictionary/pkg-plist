@@ -1,5 +1,5 @@
 bin/gnome-dictionary
-man/man1/gnome-dictionary.1.gz
+share/man/man1/gnome-dictionary.1.gz
 share/applications/org.gnome.Dictionary.desktop
 share/dbus-1/services/org.gnome.Dictionary.service
 share/gdict-1.0/sources/default.desktop

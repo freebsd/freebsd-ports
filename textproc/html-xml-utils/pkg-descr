@@ -1,1 +1,5 @@
-Simple utilities for manipulating HTML and XML files.
+A number of simple C programs for manipulating HTML & XML: number headings,
+make a table of contents, make an index, manage bibliographic references
+(a simple implementation of refer(1) for HTML), list all links,
+create cross-references, extract elements that match a (CSS) selector, etc.
+Most are meant to be used in a Unix pipe or in shell scripts.

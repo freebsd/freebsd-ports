@@ -1,6 +1,6 @@
 PORTNAME=	password-store
 PORTVERSION=	1.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.zx2c4.com/${PORTNAME}/snapshot/
 
@@ -52,7 +52,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/platform
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/pass
 	${INSTALL_SCRIPT} ${WRKSRC}/src/platform/freebsd.sh ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/platform/
-	${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${MANPREFIX}/man/man1/pass.1
+	${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${PREFIX}/share/man/man1/pass.1
 
 do-install-CONTRIB-on:
 	@${RM} ${WRKSRC}/contrib/emacs/.gitignore

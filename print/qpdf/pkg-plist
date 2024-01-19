@@ -71,7 +71,7 @@ include/qpdf/qpdfjob-c.h
 include/qpdf/qpdflogger-c.h
 lib/libqpdf.so
 lib/libqpdf.so.29
-lib/libqpdf.so.29.6.3
+lib/libqpdf.so.29.7.0
 lib/cmake/qpdf/libqpdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qpdf/libqpdfTargets.cmake
 lib/cmake/qpdf/qpdfConfig.cmake
@@ -81,6 +81,9 @@ man/man1/fix-qdf.1.gz
 man/man1/qpdf.1.gz
 man/man1/zlib-flate.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README-doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/examples/extend-c-api-impl.cc
+%%PORTDOCS%%%%DOCSDIR%%/examples/extend-c-api.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/extend-c-api.h
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-attach-file.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-bookmarks.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-c-objects.c

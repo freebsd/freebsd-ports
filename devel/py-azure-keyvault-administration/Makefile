@@ -1,5 +1,5 @@
 PORTNAME=	azure-keyvault-administration
-DISTVERSION=	4.3.0
+DISTVERSION=	4.4.0b2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_F
 		${PYTHON_PKGNAMEPREFIX}azure-core>=1.24.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6.1:devel/py-isodate@${PY_FLAVOR}
 
-USES=		azurepy python zip
+USES=		azurepy python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

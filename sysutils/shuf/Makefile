@@ -17,6 +17,6 @@ PLIST_FILES=	bin/shuf \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shuf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/shuf.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/shuf.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

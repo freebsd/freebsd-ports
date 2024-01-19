@@ -6,6 +6,6 @@ lib/cmake/CXSparse/CXSparseTargets.cmake
 lib/libcxsparse.a
 lib/libcxsparse.so
 lib/libcxsparse.so.4
-lib/libcxsparse.so.4.2.1
+lib/libcxsparse.so.%%VER%%
 libdata/pkgconfig/CXSparse.pc
 %%PORTDOCS%%%%DOCSDIR%%/CXSparse_README.txt

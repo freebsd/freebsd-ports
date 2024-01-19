@@ -1,5 +1,6 @@
 PORTNAME=	wmnd
 PORTVERSION=	0.4.18
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/
 
@@ -11,19 +12,19 @@ LICENSE=	GPLv2
 
 USES=		gmake xorg
 
-OPTIONS_DEFINE=	EXAMPLES
-
 USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dummy-driver --enable-drivers=freebsd_sysctl
 
-PORTEXAMPLES=	wmndrc
 PLIST_FILES=	bin/wmnd \
-		man/man1/wmnd.1.gz
+		share/man/man1/wmnd.1.gz
+PORTEXAMPLES=	wmndrc
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/wmndrc ${STAGEDIR}${EXAMPLESDIR}
 

@@ -1,6 +1,7 @@
 PORTNAME=	svlint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	cad devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalance
 
 CARGO_CRATES=	aho-corasick-1.1.2 \
-		anyhow-1.0.75 \
+		anyhow-1.0.77 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -51,14 +52,14 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		nom-packrat-macros-0.7.0 \
 		nom-recursive-0.5.0 \
 		nom-recursive-macros-0.5.0 \
-		nom-tracable-0.9.0 \
-		nom-tracable-macros-0.9.0 \
+		nom-tracable-0.9.1 \
+		nom-tracable-macros-0.9.1 \
 		nom_locate-4.2.0 \
 		once_cell-1.19.0 \
 		os_str_bytes-6.6.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.70 \
+		proc-macro2-1.0.71 \
 		quote-1.0.33 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
@@ -70,7 +71,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_regex-1.1.0 \
-		serde_spanned-0.6.4 \
+		serde_spanned-0.6.5 \
 		str-concat-0.2.0 \
 		strsim-0.10.0 \
 		sv-filelist-parser-0.1.3 \
@@ -81,12 +82,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		sv-parser-pp-0.13.3 \
 		sv-parser-syntaxtree-0.13.3 \
 		syn-1.0.109 \
-		syn-2.0.41 \
+		syn-2.0.43 \
 		term-0.7.0 \
 		termcolor-1.4.0 \
 		textwrap-0.16.0 \
-		thiserror-1.0.51 \
-		thiserror-impl-1.0.51 \
+		thiserror-1.0.52 \
+		thiserror-impl-1.0.52 \
 		toml-0.8.8 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.21.0 \
@@ -107,7 +108,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.48.5 \
-		winnow-0.5.30
+		winnow-0.5.31
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/mdgen

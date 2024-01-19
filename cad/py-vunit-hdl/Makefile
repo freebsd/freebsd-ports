@@ -18,11 +18,15 @@ RUN_DEPENDS=	ghdl:cad/ghdl
 TEST_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 42 tests fail, see https://github.com/VUnit/vunit/issues/941
+USE_PYTHON=	pep517 autoplist pytest # 1 test fails, see https://github.com/VUnit/vunit/issues/982
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VUnit
 GH_PROJECT=	vunit
+GH_TUPLE=	Paebbels:JSON-for-VHDL:95e848b:j4v/vunit/vhdl/JSON-for-VHDL \
+		OSVVM:OSVVM:2104430:osvvm/vunit/vhdl/osvvm
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 

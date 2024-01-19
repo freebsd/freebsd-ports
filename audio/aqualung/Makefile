@@ -4,12 +4,15 @@ PORTREVISION=	25
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music player with rich features
 WWW=		https://aqualung.jeremyevans.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on legacy libraries such as GTK2 and FFmpeg 4, consider using audio/strawberry instead
+EXPIRATION_DATE=2024-02-29
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \

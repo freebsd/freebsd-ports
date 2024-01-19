@@ -2,7 +2,7 @@
 
 if [ "$2" = "POST-INSTALL" ]; then
 	cd $PKG_PREFIX/lib/scm && $PKG_PREFIX/bin/scm -l mkimpcat.scm
-	cd $PKG_PREFIX/lib/scm && $PKG_PREFIX/bin/scm -l slib/mklibcat.scm
+	cd $PKG_PREFIX/lib/scm && $PKG_PREFIX/bin/scm -l ${PKG_PREFIX}/share/slib/mklibcat.scm
 elif [ "$2" = "DEINSTALL" ] ; then
 	rm -f $PKG_PREFIX/lib/scm/slibcat
 	rm -f $PKG_PREFIX/lib/scm/implcat

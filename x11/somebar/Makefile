@@ -1,5 +1,6 @@
 PORTNAME=	somebar
 DISTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~raphi/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -18,7 +19,7 @@ USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GNOME=	cairo pango
 EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 pre-everything::
 	@${ECHO_MSG} "To build ${PORTNAME} with your own config.hpp set ${PORTNAME:tu}_CONF variable"

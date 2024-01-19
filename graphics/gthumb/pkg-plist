@@ -194,7 +194,7 @@ lib/gthumb/extensions/slideshow.extension
 lib/gthumb/extensions/terminal.extension
 lib/gthumb/extensions/webalbums.extension
 libdata/pkgconfig/gthumb.pc
-man/man1/gthumb.1.gz
+share/man/man1/gthumb.1.gz
 share/aclocal/gthumb.m4
 share/applications/org.gnome.gThumb.desktop
 %%DATADIR%%/albumthemes/Classic/back.png

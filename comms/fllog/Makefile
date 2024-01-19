@@ -1,7 +1,8 @@
 PORTNAME=	fllog
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/fldigi/${PORTNAME}
+MASTER_SITES=	SF/fldigi/${PORTNAME} \
+		http://www.w1hkj.com/files/fllog/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio logging program
@@ -11,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
-USES=		gmake
+USES=		gmake desktop-file-utils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 

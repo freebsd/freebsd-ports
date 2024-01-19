@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared-memory-based hashmaps
 WWW=		https://shmap.sourceforge.net/
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libmm.so:devel/mm
 
 USES=		libtool

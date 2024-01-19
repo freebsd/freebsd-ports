@@ -1,5 +1,6 @@
 PORTNAME=	ztrack
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -15,7 +16,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM" \
 		LIBS="${LDFLAGS} -lncurses"
 ALL_TARGET=	ztrack
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz \
+PLIST_FILES=	bin/${PORTNAME} share/man/man6/${PORTNAME}.6.gz \
 		${DESKTOPDIR}/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
 
@@ -24,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}

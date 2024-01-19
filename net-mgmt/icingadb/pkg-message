@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+When using this package for the first time, you must first create the
+CITEXT extension in your databaes.  Issue this command: 
+
+create extension if not exists citext;
+
+EOM
+}
+]

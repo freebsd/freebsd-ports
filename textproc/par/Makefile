@@ -1,5 +1,6 @@
 PORTNAME=	par
 PORTVERSION=	1.53.0
+PORTREVISION=	2
 PKGNAMESUFFIX=	_format
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nicemice.net/par/
@@ -13,13 +14,13 @@ CONFLICTS=	quake-par
 
 ALL_TARGET=	#
 PLIST_FILES=	bin/par \
-		man/man1/par.1.gz
+		share/man/man1/par.1.gz
 
 do-configure:
 	(cd ${WRKSRC}; ${CP} protoMakefile Makefile)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/par ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/par.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/par.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

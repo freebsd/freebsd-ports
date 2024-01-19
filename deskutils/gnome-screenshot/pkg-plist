@@ -1,5 +1,5 @@
 bin/gnome-screenshot
-man/man1/gnome-screenshot.1.gz
+share/man/man1/gnome-screenshot.1.gz
 share/applications/org.gnome.Screenshot.desktop
 share/dbus-1/services/org.gnome.Screenshot.service
 share/icons/hicolor/scalable/apps/org.gnome.Screenshot.svg

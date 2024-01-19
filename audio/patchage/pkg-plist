@@ -1,5 +1,5 @@
 bin/patchage
-man/man1/patchage.1.gz
+share/man/man1/patchage.1.gz
 share/applications/patchage.desktop
 share/icons/hicolor/128x128/apps/patchage.png
 share/icons/hicolor/16x16/apps/patchage.png

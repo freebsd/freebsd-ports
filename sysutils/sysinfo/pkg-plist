@@ -1,6 +1,6 @@
 @sample etc/sysinfo.conf.sample
-man/man5/sysinfo.conf.5.gz
-man/man8/sysinfo.8.gz
+share/man/man5/sysinfo.conf.5.gz
+share/man/man8/sysinfo.8.gz
 sbin/sysinfo
 share/sysinfo/common.subr
 share/sysinfo/modules/bios

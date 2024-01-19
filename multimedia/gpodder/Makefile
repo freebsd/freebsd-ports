@@ -1,5 +1,5 @@
 PORTNAME=	gpodder
-DISTVERSION=	3.11.1
+DISTVERSION=	3.11.4
 CATEGORIES=	multimedia python
 
 MAINTAINER=	rm@FreeBSD.org

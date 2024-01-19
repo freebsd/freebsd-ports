@@ -5,11 +5,14 @@ PORTEPOCH=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound editor for the GNOME/GTK 2 desktop
 WWW=		http://www.metadecks.org/software/sweep/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Abandonware, last release in 2008 and upstream is dead. Consider using audio/audacity
+EXPIRATION_DATE=2024-02-29
 
 LIB_DEPENDS=	libmad.so:audio/libmad \
 		libsamplerate.so:audio/libsamplerate \

@@ -1,9 +1,0 @@
---- scripts/sdl-includepath.sh.orig	2022-12-03 08:13:04 UTC
-+++ scripts/sdl-includepath.sh
-@@ -26,5 +26,5 @@ fi
- 		fi
- 	fi
- fi
--echo $SDL_CFLAGS | egrep -o -e "\\-I\\S+" | sed -e 's/^-I//'
-+echo $SDL_CFLAGS | egrep -o -e "-I[^[:space:]]+" | sed -e 's/^-I//'
- exit 0

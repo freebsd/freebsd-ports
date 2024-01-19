@@ -1,6 +1,6 @@
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
@@ -52,7 +52,7 @@ ALL_TARGET=	freebsd
 MAKE_ENV+=	INSTALLROOT=${PREFIX} INSTALL_PREFIX=${STAGEDIR} \
 		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
 		SINSTALLDIR=${PREFIX}/sbin \
-		MANDIR=${MAN1PREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8 \
+		MANDIR=${PREFIX}/share/man/man1 SMANDIR=${PREFIX}/share/man/man8 \
 		VERSION=${PORTVERSION}
 
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${LOCALBASE}/share/gkrellm2/themes\"' \

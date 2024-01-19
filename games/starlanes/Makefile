@@ -1,5 +1,6 @@
 PORTNAME=	starlanes
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/strategy
 
@@ -7,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic space-age stock trading game
 
 USES=		ncurses
-PLIST_FILES=	bin/starlanes man/man6/starlanes.6.gz
+PLIST_FILES=	bin/starlanes share/man/man6/starlanes.6.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -20,6 +21,6 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} starlanes ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} starlanes.6 ${STAGEDIR}${MAN6PREFIX}/man/man6)
+	(cd ${WRKSRC} && ${INSTALL_MAN} starlanes.6 ${STAGEDIR}${PREFIX}/share/man/man6)
 
 .include <bsd.port.mk>

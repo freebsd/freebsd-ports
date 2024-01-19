@@ -57,7 +57,6 @@ PGSQL_CONFIGURE_WITH=	--with-postgresql=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-postgresql
 
 MYSQL_USES=		mysql
-MYSQL_BROKEN=		configure: error: MySQL client library exports symbols (EVP_CIPHER_CTX_init) clashing with OpenSSL.
 MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
 MYSQL_CONFIGURE_OFF=	--without-mysql
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}

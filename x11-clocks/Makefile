@@ -16,7 +16,6 @@
     SUBDIR += emiclock
     SUBDIR += eyeclock
     SUBDIR += glclock
-    SUBDIR += intclock
     SUBDIR += kteatime
     SUBDIR += ktimer
     SUBDIR += lmclock

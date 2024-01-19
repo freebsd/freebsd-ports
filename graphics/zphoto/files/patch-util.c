@@ -1,6 +1,6 @@
---- util.c.orig	2010-12-04 00:36:16.000000000 +0900
-+++ util.c	2010-12-04 00:36:52.000000000 +0900
-@@ -389,7 +389,7 @@
+--- util.c.orig	2004-07-20 16:48:11 UTC
++++ util.c
+@@ -389,7 +389,7 @@ zphoto_get_image_suffixes (void)
  zphoto_get_image_suffixes (void)
  {
      static char *empty[] = { NULL };

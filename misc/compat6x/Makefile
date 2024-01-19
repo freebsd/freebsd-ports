@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenience package to install the compat6x libraries
 
-ONLY_FOR_ARCHS=		amd64 i386 sparc64
+ONLY_FOR_ARCHS=		amd64 i386
 
 USES=		tar:bzip2
 NO_BUILD=	yes

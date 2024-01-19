@@ -1,6 +1,20 @@
---- core/CMakeLists.txt	2022-11-09 05:57:28.000000000 -0500
-+++ core/CMakeLists.txt	2022-11-18 00:05:47.668001000 -0500
-@@ -256,7 +256,9 @@
+--- core/CMakeLists.txt	2023-10-23 04:42:47.000000000 -0500
++++ core/CMakeLists.txt	2024-01-05 00:28:46.889990000 -0500
+@@ -44,10 +44,11 @@
+   set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
+ endif(CCACHE_FOUND)
+ 
+-# switch on CXX 11 Support
++# switch on CXX 14 Support
+ #
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
++set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+ include(CheckCCompilerFlag)
+ include(CheckCXXCompilerFlag)
+@@ -256,7 +257,9 @@
    set(PSCMD "ps -ax -o pid,command")
    include_directories(/usr/local/include)
    link_directories(/usr/local/lib)
@@ -11,7 +25,7 @@
    check_cxx_compiler_flag(
      -Wunused-but-set-variable compiler_will_warn_of_unused_but_set_variable
    )
-@@ -326,7 +328,9 @@
+@@ -326,7 +329,9 @@
    add_definitions("-D_FILE_OFFSET_BITS=64")
  endif()
  
@@ -22,7 +36,7 @@
  
  if(developer)
    add_definitions("-DDEVELOPER=1")
-@@ -350,7 +354,7 @@
+@@ -350,7 +355,7 @@
  if(NOT client-only)
    # droplet does not build on solaris because of sys/cdefs.h: No such file or
    # directory
@@ -31,7 +45,7 @@
      if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/droplet/CMakeLists.txt)
        message(
          FATAL_ERROR
-@@ -774,7 +778,6 @@
+@@ -774,7 +779,6 @@
  
  add_subdirectory(scripts)
  add_subdirectory(manpages)

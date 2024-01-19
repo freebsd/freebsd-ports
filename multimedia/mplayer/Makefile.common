@@ -3,7 +3,7 @@
 # before we include bsd.port.pre.mk
 
 MPLAYER_PORT_VERSION=	1.5.0
-MPLAYER_SNAPSHOT_DATE=	2023-09-24
+MPLAYER_SNAPSHOT_DATE=	2024-01-06
 MASTER_SITES=	LOCAL/riggs/mplayer
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
@@ -26,7 +26,7 @@ CONFIGURE_ENV+=	TMPDIR="${WRKSRC}" \
 CONFIGURE_ARGS=	--cc="${CC}" \
 		--host-cc="${CC}" \
 		--as="${AS}" \
-		--mandir="${PREFIX}/man" \
+		--mandir="${PREFIX}/share/man" \
 		--extra-cflags="-I${PREFIX}/include -I${LOCALBASE}/include" \
 		--extra-libs="-L${PREFIX}/lib" \
 		--disable-alsa \

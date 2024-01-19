@@ -1,6 +1,6 @@
 PORTNAME=	ezmlm
 PORTVERSION=	0.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.fu-berlin.de/unix/mail/qmail/ \
@@ -44,8 +44,8 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
-		${INSTALL_MAN} *.1 ${STAGEDIR}${MANPREFIX}/man/man1 && \
-		${INSTALL_MAN} *.5 ${STAGEDIR}${MANPREFIX}/man/man5
+		${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/share/man/man1 && \
+		${INSTALL_MAN} *.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

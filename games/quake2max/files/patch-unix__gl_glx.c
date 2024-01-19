@@ -1,6 +1,6 @@
---- unix/gl_glx.c.orig	Wed Jan 11 10:04:12 2006
-+++ unix/gl_glx.c	Sat Dec 30 18:21:42 2006
-@@ -475,7 +475,6 @@
+--- unix/gl_glx.c.orig	2006-01-11 13:04:12 UTC
++++ unix/gl_glx.c
+@@ -475,7 +475,6 @@ static void HandleEvents(void)
  	while (XPending(dpy)) {
  
  		XNextEvent(dpy, &event);
@@ -8,7 +8,7 @@
  		switch(event.type) {
  		case KeyPress:
        		myxtime = event.xkey.time;
-@@ -490,15 +489,13 @@
+@@ -490,15 +489,13 @@ static void HandleEvents(void)
  		case MotionNotify:
  			if (mouse_active) {
  				if (dgamouse) {

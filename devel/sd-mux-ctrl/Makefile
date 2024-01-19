@@ -1,6 +1,6 @@
 PORTNAME=	sd-mux-ctrl
 DISTVERSION=	g20200217
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://git.tizen.org/cgit/tools/testlab/sd-mux/snapshot/sd-mux-9dd189d973da64e033a0c5c2adb3d94b23153d94.tar.bz2?/
 
@@ -22,9 +22,9 @@ USES=		cmake pkgconfig tar:bz2
 WRKSRC=		${WRKDIR}/sd-mux-9dd189d973da64e033a0c5c2adb3d94b23153d94
 
 PLIST_FILES=	bin/sd-mux-ctrl \
-		man/man1/sd-mux-ctrl.1.gz
+		share/man/man1/sd-mux-ctrl.1.gz
 
 post-install:
-		${INSTALL_MAN} ${WRKSRC}/doc/man/sd-mux-ctrl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/doc/man/sd-mux-ctrl.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

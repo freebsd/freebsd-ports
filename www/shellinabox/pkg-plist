@@ -1,3 +1,3 @@
 bin/shellinaboxd
-man/man1/shellinaboxd.1.gz
+share/man/man1/shellinaboxd.1.gz
 @dir(shellinabox,shellinabox,700) etc/shellinabox

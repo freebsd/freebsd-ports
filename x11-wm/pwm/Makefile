@@ -1,6 +1,6 @@
 PORTNAME=	pwm
 PORTVERSION=	2007.07.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -27,7 +27,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pwm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pwm.1x ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pwm.1x ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/pwm ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/pwm/*.conf ${STAGEDIR}${PREFIX}/etc/pwm
 	${MV} ${STAGEDIR}${PREFIX}/etc/pwm/sample.conf ${STAGEDIR}${PREFIX}/etc/pwm/pwm.conf.sample

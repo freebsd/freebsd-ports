@@ -2,5 +2,5 @@ bin/jvim
 bin/jvim3
 bin/jgrep
 lib/jvim3.hlp
-man/man1/jvim3.1.gz
+share/man/man1/jvim3.1.gz
 @sample etc/jvim3rc.dist etc/jvim3rc

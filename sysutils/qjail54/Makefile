@@ -1,5 +1,6 @@
 PORTNAME=	qjail
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 PKGNAMESUFFIX=	54
@@ -32,7 +33,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/qjail.portsnap.conf.sample
 .for i in qjail qjail-intro qjail-howto qjail-vnet-howto \
 	qjail-ipv6-testing
-	${INSTALL_MAN}   ${WRKSRC}/${i}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN}   ${WRKSRC}/${i}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 .endfor
 
 # note examples are mandatory. qjail will not function without them

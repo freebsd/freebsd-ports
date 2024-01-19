@@ -1,5 +1,5 @@
 PORTNAME=	smplayer
-DISTVERSION=	23.6.0
+DISTVERSION=	23.12.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
@@ -14,7 +14,7 @@ USES=		cpe compiler:c++11-lang desktop-file-utils dos2unix gl \
 		gmake qmake qt:5 tar:bzip2 xorg
 USE_GL=		gl
 USE_QT=		buildtools:build linguisttools:build \
-		core dbus gui network script widgets xml
+		core dbus declarative gui network widgets xml
 USE_XORG=	x11 xext
 
 CPE_VENDOR=	ricardo_villalba

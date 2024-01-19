@@ -1,0 +1,4 @@
+This port installs the module ParU of SuiteSparse.
+
+ParU is a set of routines for solving sparse linear system via parallel
+multifrontal LU factorization algorithms.

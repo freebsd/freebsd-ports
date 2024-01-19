@@ -57,7 +57,7 @@ lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.8
-lib/libwcs.so.8.2.1
+lib/libwcs.so.%%VERSION%%
 libdata/pkgconfig/wcslib.pc
 %%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
@@ -392,7 +392,6 @@ man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_19.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_1a.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_1b.js
-%%PORTDOCS%%%%DOCSDIR%%/html/search/all_1c.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_2.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_3.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_4.js
@@ -485,7 +484,6 @@ man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_10.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_11.js
-%%PORTDOCS%%%%DOCSDIR%%/html/search/pages_12.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_2.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_3.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_4.js

@@ -1,6 +1,6 @@
 PORTNAME=	entt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.2
+DISTVERSION=	3.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,5 +21,8 @@ CMAKE_TESTING_ON=	ENTT_BUILD_TESTING ENTT_FIND_GTEST_PACKAGE
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+post-install: # https://github.com/skypjack/entt/issues/1104
+	@${RM} ${STAGEDIR}${PREFIX}/include/BUILD.bazel
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ lib/libmxml.so
 lib/libmxml.so.1
 lib/libmxml.so.1.6
 libdata/pkgconfig/mxml.pc
-man/man3/mxml.3.gz
+share/man/man3/mxml.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 @comment %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE

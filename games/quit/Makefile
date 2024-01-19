@@ -1,6 +1,6 @@
 PORTNAME=	quit
 PORTVERSION=	1.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	games
 MASTER_SITES=	https://fukuchi.org/archive/shortshort/
 
@@ -19,7 +19,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quit ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/quit.1 ${STAGEDIR}${MAN1PREFIX}/man/ja/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/quit.1 ${STAGEDIR}${PREFIX}/man/ja/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/quit.txt \
 		${STAGEDIR}${DOCSDIR}

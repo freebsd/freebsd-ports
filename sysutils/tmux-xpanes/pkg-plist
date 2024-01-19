@@ -1,4 +1,4 @@
 bin/xpanes
-man/man1/xpanes.1.gz
+share/man/man1/xpanes.1.gz
 share/zsh/site-functions/_xpanes
 %%PORTDOCS%%%%DOCSDIR%%/README.md

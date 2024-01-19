@@ -1,5 +1,6 @@
 PORTNAME=	edid-decode
 PORTVERSION=	0.1.20231124
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -19,7 +20,7 @@ PLIST_FILES=	bin/edid-decode \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 dist: clean
 	@${MKDIR} ${WRKSRC}

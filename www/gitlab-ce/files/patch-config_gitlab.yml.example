@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2023-10-20 08:41:39 UTC
+--- config/gitlab.yml.example.orig	2023-12-20 08:52:18 UTC
 +++ config/gitlab.yml.example
 @@ -456,7 +456,7 @@ production: &base
    ## GitLab Pages
@@ -22,14 +22,12 @@
  
      # File that contains the shared secret key for verifying access for gitlab-pages.
      # Default is '.gitlab_pages_secret' relative to Rails.root (i.e. root of the GitLab app).
-@@ -1196,14 +1196,14 @@ production: &base
-     # real path not the symlink.
+@@ -1194,13 +1194,13 @@ production: &base
+   repositories:
      storages: # You must have at least a `default` storage path.
        default:
--        path: /home/git/repositories/
 -        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
-+        path: %%PREFIX%%/git/repositories/
-+        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port) # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
++        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
@@ -40,7 +38,7 @@
      # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
      # keep_time: 604800   # default: 0 (forever) (in seconds)
      # pg_schema: public     # default: nil, it means that all schemas will be backed up
-@@ -1238,12 +1238,12 @@ production: &base
+@@ -1235,12 +1235,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -56,7 +54,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1258,13 +1258,13 @@ production: &base
+@@ -1255,13 +1255,13 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -72,7 +70,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1288,13 +1288,13 @@ production: &base
+@@ -1285,13 +1285,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -88,7 +86,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1315,18 +1315,18 @@ production: &base
+@@ -1312,18 +1312,18 @@ production: &base
  
      # Sidekiq exporter is a dedicated Prometheus metrics server optionally running alongside Sidekiq.
      sidekiq_exporter:
@@ -114,7 +112,7 @@
  
      # Web exporter is a dedicated Prometheus metrics server optionally running alongside Puma.
      web_exporter:
-@@ -1551,13 +1551,13 @@ test:
+@@ -1548,13 +1548,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:

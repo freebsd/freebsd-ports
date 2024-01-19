@@ -14,8 +14,6 @@ LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
-
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libivykis.so:devel/ivykis

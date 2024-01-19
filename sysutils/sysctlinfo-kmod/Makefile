@@ -1,5 +1,6 @@
 PORTNAME=	sysctlinfo-kmod
 DISTVERSION=	20221211
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -17,8 +18,8 @@ GL_TAGNAME=	be57d5a892d0a908172664f87afeed0627e9ddf2
 
 PLIST_FILES=	${KMODDIR}/sysctlinfo.ko \
 		include/sysctlinfo.h \
-		man/man3/sysctlinfo.3.gz \
-		man/man4/sysctlinfo.4.gz
+		share/man/man3/sysctlinfo.3.gz \
+		share/man/man4/sysctlinfo.4.gz
 
 PORTEXAMPLES=	*
 
@@ -34,8 +35,8 @@ IGNORE=		not supported on anything but FreeBSD
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/sysctlinfo.ko ${STAGEDIR}${KMODDIR}
 	${INSTALL_DATA} ${WRKSRC}/sysctlinfo.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/sysctlinfo.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/sysctlinfo.4 ${STAGEDIR}${MAN4PREFIX}/man/man4
+	${INSTALL_MAN} ${WRKSRC}/sysctlinfo.3 ${STAGEDIR}${PREFIX}/share/man/man3
+	${INSTALL_MAN} ${WRKSRC}/sysctlinfo.4 ${STAGEDIR}${PREFIX}/share/man/man4
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

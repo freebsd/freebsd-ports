@@ -35,7 +35,7 @@ include/rapidfuzz/distance/Postfix_impl.hpp
 include/rapidfuzz/distance/Prefix.hpp
 include/rapidfuzz/distance/Prefix_impl.hpp
 include/rapidfuzz/fuzz.hpp
-include/rapidfuzz/fuzz.impl
+include/rapidfuzz/fuzz_impl.hpp
 include/rapidfuzz/rapidfuzz_all.hpp
 lib/cmake/rapidfuzz/rapidfuzzConfig.cmake
 lib/cmake/rapidfuzz/rapidfuzzConfigVersion.cmake

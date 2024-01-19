@@ -1,6 +1,6 @@
 PORTNAME=	immortal
 PORTVERSION=	0.24.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
@@ -31,7 +31,7 @@ GO_TARGET=	./cmd/immortal \
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/src/github.com/immortal/immortal/man/*.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/src/github.com/immortal/immortal/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/www.yml ${STAGEDIR}${EXAMPLESDIR}/www.yml.sample

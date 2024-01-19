@@ -1,6 +1,6 @@
 PORTNAME=	findomain
 DISTVERSION=	5.0.0
-PORTREVISION=	23
+PORTREVISION=	25
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -264,7 +264,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 WRKSRC=		${WRKDIR}/Findomain-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 _DOCS=		docs/create_telegram_webhook.md README.md
 PORTDOCS=	${_DOCS:T}
 
@@ -281,7 +281,7 @@ SCREENSHOT_RUN_DEPENDS=	chrome:www/chromium
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

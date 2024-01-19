@@ -26,4 +26,4 @@ lib/finch/gntlastlog.so
 lib/finch/gnttinyurl.so
 lib/finch/grouping.so
 libdata/pkgconfig/finch.pc
-man/man1/finch.1.gz
+share/man/man1/finch.1.gz

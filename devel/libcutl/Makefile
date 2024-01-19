@@ -1,8 +1,7 @@
 PORTNAME=	libcutl
-PORTVERSION=	1.10.0
-PORTREVISION=	22
+PORTVERSION=	1.11.0
 CATEGORIES=	devel
-MASTER_SITES=	https://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	https://www.codesynthesis.com/download/xsd/4.2/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C++ utility library with generic and independent components
@@ -11,36 +10,25 @@ WWW=		https://www.codesynthesis.com/projects/libcutl/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=	Does not build: cannot configure with boost
+BUILD_DEPENDS=	build2>=0.16.0:devel/build2
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libexpat.so:textproc/expat2
-
-USES=		compiler:c++11-lib libtool
-# libcutl 1.10.0 is not compatible with C++17, which is the default since clang
-# 16. This means ports depending on it also need to use at most C++14.
-USE_CXXSTD=	c++11
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-
-# The checks for external boost and external expat are quite limited and do not
-# add the ${LOCALBASE} paths correctly (libboost.m4 uses wrong paths and
-# libexpat.m4 does nothing at all).
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CONFIGURE_ARGS=	--disable-static \
-		--with-boost=${LOCALBASE} \
-		--with-external-boost \
-		--with-external-expat \
-		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+USES=		compiler:c++2b-lang
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-# Avoid conflict with C++20 <version> by adding .txt suffix
-	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
-	@${REINPLACE_CMD} -i .c++20 '/doc_DATA/s/version/&.txt/' \
-		${WRKSRC}/Makefile.in
+B_CMD=		${LOCALBASE}/bin/b
+B_ARGS=		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
+
+do-build:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${B_CMD} configure ${B_ARGS} \
+		config.cxx=${CXX} \
+		config.cxx.coptions="${CXXFLAGS}" \
+		config.cxx.loptions="${LDFLAGS} ${STRIP}" \
+		config.bin.lib=shared \
+		config.bin.rpath=${PREFIX}/lib \
+		config.install.chroot=${STAGEDIR} \
+		config.install.root=${PREFIX}
+do-install:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${B_CMD} install ${B_ARGS}
 
 .include <bsd.port.mk>

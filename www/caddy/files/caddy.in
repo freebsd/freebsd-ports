@@ -150,7 +150,9 @@ caddy_prestop()
         echo "done"
         exit 0
     else
-        if echo "${result}" | grep -q "connection refused"; then
+        if echo "${result}" | grep -q -e "connection refused" \
+            -e "connect: no such file or directory"; then
+
             echo "admin interface unavailable; using pidfile"
             return 0
         else

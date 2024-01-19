@@ -22,11 +22,10 @@ ONLY_FOR_ARCHS_REASON=	uses _mm_popcnt_u64() function
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
-		libmysqlclient.so:databases/mysql57-client \
 		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake localbase:ldflags shebangfix perl5 python ssl tar:tgz
+USES=		gmake localbase:ldflags mysql shebangfix perl5 python ssl tar:tgz
 
 RESTRICTED=	Redistribution is limited, see license
 

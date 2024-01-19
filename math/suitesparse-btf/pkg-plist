@@ -6,6 +6,6 @@ lib/cmake/BTF/BTFTargets.cmake
 lib/libbtf.a
 lib/libbtf.so
 lib/libbtf.so.2
-lib/libbtf.so.2.2.1
+lib/libbtf.so.%%VER%%
 libdata/pkgconfig/BTF.pc
 %%PORTDOCS%%%%DOCSDIR%%/BTF_README.txt

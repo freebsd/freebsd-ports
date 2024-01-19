@@ -1,6 +1,6 @@
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib --enable-locale --disable-freetype
 CONFIGURE_ENV=	mgp_cv_path_perl=${PERL}
 CPPFLAGS+=	-I..
+MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 LATE_INSTALL_ARGS=	install.man
 
 PORTDOCS=	${DOCS} sample emacs-lisp scripts
@@ -68,7 +69,7 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/contrib/xmindpath/xmindpath.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL} ${WRKSRC}/contrib/xmindpath/xmindpath \
 		${STAGEDIR}${PREFIX}/bin/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xmindpath

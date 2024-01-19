@@ -1,6 +1,6 @@
---- console/scantv.c.orig	Wed Feb 11 23:14:16 2004
-+++ console/scantv.c	Wed Feb 11 23:15:04 2004
-@@ -245,7 +245,11 @@
+--- console/scantv.c.orig	2020-05-15 23:32:25 UTC
++++ console/scantv.c
+@@ -261,7 +261,11 @@ main(int argc, char **argv)
  		fprintf(stderr,"no station\n");
  		continue;
  	    }

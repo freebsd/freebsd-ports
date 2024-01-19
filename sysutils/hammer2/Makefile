@@ -10,8 +10,6 @@ WWW=		https://github.com/kusumi/freebsd_hammer2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-IGNORE_FreeBSD_12=	Not supported on FreeBSD 12
-
 USES=		kmod uidfix
 
 USE_GITHUB=	yes

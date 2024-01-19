@@ -17,13 +17,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	configure patch
-MAKE_JOBS_UNSAFE=	yes
 
 SHEBANG_FILES=	lib/Razor2/Client/*.pm \
 		lib/Razor2/Signature/*.pm \
 		lib/Razor2/*.pm
 
 MAKE_ARGS+=	PERLPREFIX=${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:2.85
 

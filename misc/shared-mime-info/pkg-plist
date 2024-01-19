@@ -1,6 +1,6 @@
 bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
-man/man1/update-mime-database.1.gz
+share/man/man1/update-mime-database.1.gz
 share/gettext/its/shared-mime-info.its
 share/gettext/its/shared-mime-info.loc
 share/locale/af/LC_MESSAGES/shared-mime-info.mo

@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon
 PORTVERSION=	5.4.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -69,7 +69,7 @@ MESON_ARGS=	-Ddisable_networkmanager=true
 GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
 OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_DEFAULT=	DOCS NLS
+OPTIONS_EXCLUDE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc

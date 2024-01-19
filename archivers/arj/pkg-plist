@@ -3,7 +3,7 @@ bin/arj-register
 bin/arjdisp
 bin/rearj
 lib/arj/arjcrypt.so
-man/man1/arj-register.1.gz
-man/man1/arj.1.gz
-man/man1/arjdisp.1.gz
-man/man1/rearj.1.gz
+share/man/man1/arj-register.1.gz
+share/man/man1/arj.1.gz
+share/man/man1/arjdisp.1.gz
+share/man/man1/rearj.1.gz

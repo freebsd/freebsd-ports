@@ -1,5 +1,5 @@
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.53.0
+PORTVERSION=	2.55.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,6 @@ WWW=		https://pypi.org/project/azure-cli-core/
 
 LICENSE=	MIT
 
-# argcomplete~=3.1.1, testing with an older version, it seems harmless
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=3.1.1:devel/py-argcomplete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.1.0:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanfriendly>=10.0:textproc/py-humanfriendly@${PY_FLAVOR} \

@@ -1,7 +1,7 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.28.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -21,7 +21,7 @@ GH_ACCOUNT=	canop
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	CHANGELOG.md README.md features.md
 
 OPTIONS_DEFINE=		CLIPBOARD DOCS
@@ -47,7 +47,7 @@ pre-build:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

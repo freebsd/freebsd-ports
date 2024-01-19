@@ -153,10 +153,13 @@ _LICENSE_LIST_PORT_VARS=	PERMS NAME GROUPS
 # 					  few more targets only.
 
 _LICENSE_DIR?=		${PREFIX}/share/licenses/${PKGNAME}
+.    for sp in ${_PKGS}
+_LICENSE_DIR.${sp}?=		${PREFIX}/share/licenses/${PKGNAME${_SP.${sp}}}
+_LICENSE_CATALOG.${sp}?=	${_LICENSE_DIR.${sp}}/catalog.mk
+_LICENSE_REPORT.${sp}?=	${_LICENSE_DIR.${sp}}/LICENSE
+.    endfor
 _LICENSE_STORE?=	${PORTSDIR}/Templates/Licenses
-_LICENSE_CATALOG?=	${_LICENSE_DIR}/catalog.mk
 _LICENSE_CATALOG_TMP?=	${WRKDIR}/.license-catalog.mk
-_LICENSE_REPORT?=	${_LICENSE_DIR}/LICENSE
 _LICENSE_REPORT_TMP?=	${WRKDIR}/.license-report
 _LICENSE_COOKIE?=	${WRKDIR}/.license_done.${PORTNAME}.${PREFIX:S/\//_/g}
 
@@ -771,30 +774,47 @@ ${_LICENSE_COOKIE}:
 # Package list entries, and installation
 
 .    if !defined(NO_LICENSES_INSTALL)
-PLIST_FILES+=	${_LICENSE_CATALOG} \
-				${_LICENSE_REPORT}
-
-.      if ${_LICENSE_COMB} == "single"
-PLIST_FILES+=	${_LICENSE_DIR}/${_LICENSE}
-.      else
-.        for lic in ${_LICENSE}
-.          if defined(_LICENSE_FILE_${lic})
-PLIST_FILES+=	${_LICENSE_DIR}/${lic}
+.      for sp in ${_PKGS}
+.        if ${sp} == ${PKGBASE}
+PLIST_FILES+=	${_LICENSE_CATALOG.${sp}} \
+				${_LICENSE_REPORT.${sp}}
+.          if ${_LICENSE_COMB} == "single"
+PLIST_FILES+=	${_LICENSE_DIR.${sp}}/${_LICENSE}
+.          else
+.            for lic in ${_LICENSE}
+.              if defined(_LICENSE_FILE_${lic})
+PLIST_FILES+=	${_LICENSE_DIR.${sp}}/${lic}
+.              endif
+.            endfor
 .          endif
-.        endfor
-.      endif
+.        else
+PLIST_FILES${_SP.${sp}}+=	${_LICENSE_CATALOG.${sp}} \
+				${_LICENSE_REPORT.${sp}}
+.          if ${_LICENSE_COMB} == "single"
+PLIST_FILES${_SP.${sp}}+=	${_LICENSE_DIR.${sp}}/${_LICENSE}
+.          else
+.            for lic in ${_LICENSE}
+.              if defined(_LICENSE_FILE_${lic})
+PLIST_FILES${_SP.${sp}}+=	${_LICENSE_DIR.${sp}}/${lic}
+.              endif
+.            endfor
+.          endif
+.        endif
 
-install-license:
-	@${MKDIR} ${STAGEDIR}${_LICENSE_DIR}
-	@${INSTALL_DATA} ${_LICENSE_CATALOG_TMP} ${STAGEDIR}${_LICENSE_CATALOG}
-	@${INSTALL_DATA} ${_LICENSE_REPORT_TMP} ${STAGEDIR}${_LICENSE_REPORT}
-.      if ${_LICENSE_COMB} == "single"
-	@${INSTALL_DATA} ${_LICENSE_FILE} ${STAGEDIR}${_LICENSE_DIR}/${_LICENSE}
-.      else
-.        for lic in ${_LICENSE}
-	@${INSTALL_DATA} ${_LICENSE_FILE_${lic}} ${STAGEDIR}${_LICENSE_DIR}/${lic}
-.        endfor
-.      endif
+
+install-license: install-license.${sp}
+install-license.${sp}:
+	@${MKDIR} ${STAGEDIR}${_LICENSE_DIR.${sp}}
+	@${INSTALL_DATA} ${_LICENSE_CATALOG_TMP} ${STAGEDIR}${_LICENSE_CATALOG.${sp}}
+	@${INSTALL_DATA} ${_LICENSE_REPORT_TMP} ${STAGEDIR}${_LICENSE_REPORT.${sp}}
+.        if ${_LICENSE_COMB} == "single"
+	@${INSTALL_DATA} ${_LICENSE_FILE} ${STAGEDIR}${_LICENSE_DIR.${sp}}/${_LICENSE}
+.        else
+.          for lic in ${_LICENSE}
+	@${INSTALL_DATA} ${_LICENSE_FILE_${lic}} ${STAGEDIR}${_LICENSE_DIR.${sp}}/${lic}
+.          endfor
+.        endif
+.      endfor
 .    endif
 
 .  else	# !LICENSE

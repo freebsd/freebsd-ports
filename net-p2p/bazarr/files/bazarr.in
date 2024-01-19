@@ -34,6 +34,8 @@ start_precmd=bazarr_precmd
 
 bazarr_precmd()
 {
+	export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+
 	if [ ! -d ${bazarr_datadir} ]; then
 		install -d -o ${bazarr_user} ${bazarr_datadir}
 	fi

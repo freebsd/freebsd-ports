@@ -2,6 +2,7 @@
 
 PORTNAME=	pear
 DISTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://depot.galaxyproject.org/software/pear/
 PKGNAMESUFFIX=	-merger
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
-PLIST_FILES=	bin/pearRM man/man1/pearRM.1.gz
+PLIST_FILES=	bin/pearRM share/man/man1/pearRM.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -28,6 +29,6 @@ USE_GCC=	yes
 do-install:
 	@${CP} ${WRKSRC}/man/pear.1 ${WRKSRC}/man/pearRM.1
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pear ${STAGEDIR}${PREFIX}/bin/pearRM
-	${INSTALL_MAN} ${WRKSRC}/man/pearRM.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pearRM.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

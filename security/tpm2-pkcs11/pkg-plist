@@ -1,0 +1,4 @@
+lib/libtpm2_pkcs11.so
+lib/libtpm2_pkcs11.so.0
+lib/libtpm2_pkcs11.so.0.0.0
+libdata/pkgconfig/tpm2-pkcs11.pc

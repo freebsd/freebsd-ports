@@ -1,5 +1,6 @@
 PORTNAME=	ccid
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 
@@ -31,7 +32,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd.1 \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
 
 .include <bsd.port.mk>

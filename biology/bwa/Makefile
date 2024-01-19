@@ -1,7 +1,7 @@
 PORTNAME=	bwa
 PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 
 PATCH_SITES=	https://github.com/lh3/bwa/commit/
@@ -25,18 +25,15 @@ USE_PERL5=	run
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 
-PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl man/man1/bwa.1.gz
+PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl share/man/man1/bwa.1.gz
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
 # Avoid #error in emmintrin.h
-CFLAGS+=	-msse2
-.endif
+CFLAGS_i386=	-msse2
+CFLAGS_amd64=	-msse2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bwa ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

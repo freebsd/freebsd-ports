@@ -1,5 +1,6 @@
 PORTNAME=	cweb
 PORTVERSION=	3.64a.a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX/web/c_cpp/cweb
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([a-z])$/\1/}
@@ -24,7 +25,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ctangle ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cweave ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cweb.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cweb.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/c++lib.w ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp

@@ -39,6 +39,7 @@ include/lttoolbox/sorted_vector.h
 include/lttoolbox/sorted_vector.hpp
 include/lttoolbox/state.h
 include/lttoolbox/string_utils.h
+include/lttoolbox/symbol_iter.h
 include/lttoolbox/tmx_compiler.h
 include/lttoolbox/trans_exe.h
 include/lttoolbox/transducer.h

@@ -1,5 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -70,7 +71,7 @@ SCIM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SCIM
 SCIM_LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 SCIM_DESC=		Enable SCIM backend for input dialog
 ACCOUNTS_LIB_DEPENDS=	libkaccounts.so:net-im/kaccounts-integration \
-			libaccounts-qt5.so:net-im/libaccounts-qt5
+			libaccounts-qt5.so:net-im/libaccounts-qt@qt5
 ACCOUNTS_USE=		gnome=intltool
 ACCOUNTS_DESC=		Accounts management library support
 PIPEWIRE_DESC=		Use runtime dependency QML module 'org.kde.pipewire'

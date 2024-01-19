@@ -224,6 +224,9 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain2/ui_options_replaygain2.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain2/ui_options_replaygain2.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/save_and_rewrite_header.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/script_logger/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/script_logger/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/script_logger/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc

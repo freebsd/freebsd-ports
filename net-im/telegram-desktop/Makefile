@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.12.2
-PORTREVISION=	2
+DISTVERSION=	4.14.4
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -65,7 +64,7 @@ USE_QT=		buildtools:build core dbus declarative gui imageformats network qmake:b
 USE_KDE=	coreaddons kimageformats
 .else
 USES+=		qt:6
-USE_QT=		5compat base imageformats lottie shadertools svg tools:build wayland
+USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:build wayland
 .endif
 
 USE_GL=		gl
@@ -106,8 +105,8 @@ TELEGRAM_API_ID=	601761
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079
-USES+=	llvm:max=15,build
+.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1400000 && ${OSVERSION} < 1400091) || ${OSVERSION} < 1302507)
+USES+=	llvm:min=16,build
 .else
 USES+=	compiler:c++20-lang
 .endif

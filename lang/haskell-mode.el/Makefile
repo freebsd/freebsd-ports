@@ -1,6 +1,6 @@
 PORTNAME=	haskell-mode
-DISTVERSION=	17.2
-PORTREVISION=	8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	17.5
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -10,17 +10,20 @@ WWW=		https://projects.haskell.org/haskellmode-emacs/
 
 LICENSE=	GPLv3
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		fails to build
-.endif
-
 USES=		emacs gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 
-PORTDOCS=	NEWS README.md
+#EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox
+
 ALL_TARGET=	haskell-mode-autoloads.el
+
 NO_ARCH=	yes
+SUB_FILES=	pkg-message
+
+PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
+PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
+PORTDOCS=	NEWS README.md
 
 OPTIONS_DEFINE=	DOCS
 
@@ -50,7 +53,6 @@ ELISPFILES=	\
 		haskell-load.el \
 		haskell-menu.el \
 		haskell-mode-autoloads.el \
-		haskell-mode-pkg.el \
 		haskell-mode.el \
 		haskell-modules.el \
 		haskell-move-nested.el \
@@ -69,10 +71,6 @@ ELISPFILES=	\
 		highlight-uses-mode.el \
 		inf-haskell.el \
 		w3m-haddock.el
-
-PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
-PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
-SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ELISPDIR}

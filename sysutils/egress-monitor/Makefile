@@ -9,8 +9,6 @@ WWW=		https://github.com/mekanix/egress-monitor
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	casper sysctl service works only in 13.0 and onward
-
 USES=		uidfix
 USE_RC_SUBR=	egress-monitor
 SUB_FILES=	pkg-message

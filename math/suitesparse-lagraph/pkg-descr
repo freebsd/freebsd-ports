@@ -1,0 +1,4 @@
+This port installs the module LAGraph of SuiteSparse.
+
+LAGraph is a library plus a test harness for collecting algorithms that use
+GraphBLAS.

@@ -1,6 +1,6 @@
 PORTNAME=	sfwbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0_beta13
+DISTVERSION=	1.0_beta14
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
@@ -23,7 +23,8 @@ GH_ACCOUNT=	LBCrion
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-MESON_ARGS=		-Dbsdctl=enabled -Dnetwork=enabled -Dbluez=enabled -Didleinhibit=enabled
+MESON_ARGS=		-Dbsdctl=enabled -Dnetwork=enabled -Dbluez=enabled \
+			-Didleinhibit=enabled -Diwd=enabled
 
 SUB_FILES=		pkg-message
 

@@ -9,4 +9,4 @@ lib/libuchardet.so
 lib/libuchardet.so.0
 lib/libuchardet.so.0.0.8%%VERSION_SUFFIX%%
 libdata/pkgconfig/uchardet.pc
-man/man1/uchardet.1.gz
+share/man/man1/uchardet.1.gz

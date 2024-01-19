@@ -2,5 +2,5 @@ bin/abcde
 bin/abcde-musicbrainz-tool
 bin/cddb-tool
 @sample etc/abcde.conf.sample
-man/man1/abcde.1.gz
-man/man1/cddb-tool.1.gz
+share/man/man1/abcde.1.gz
+share/man/man1/cddb-tool.1.gz

@@ -1,10 +1,11 @@
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-video-arachnoid
-DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}${EXTRACT_SUFX}:plugin
 
 COMMENT=	The arachnoid video plugin for Mupen64plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
+
+GH_TAGNAME=	8187d1135ced0102f99d8305b52e0e75b01ef917
 
 USES+=		gl
 USE_GL=		gl glu
@@ -18,8 +19,6 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DISTINFO_FILE=		${.CURDIR}/distinfo
-EXTRACT_AFTER_ARGS=	#
-BUILD_WRKSRC=		${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
-WRKSRC=			${WRKDIR}
+RELEASE_DATE=	20230611
 
 .include "${MASTERDIR}/Makefile"

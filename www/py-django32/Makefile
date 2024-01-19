@@ -1,5 +1,6 @@
 PORTNAME=	django
 PORTVERSION=	3.2.23
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
@@ -15,6 +16,9 @@ WWW=		https://www.djangoproject.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Django 3.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2024. Upgrade to a later Django version. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=2024-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asgiref>0:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${PY_FLAVOR}
@@ -26,7 +30,7 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
-PLIST_FILES=	man/man1/django-admin.1.gz
+PLIST_FILES=	share/man/man1/django-admin.1.gz
 PORTDOCS=	*
 
 SHEBANG_FILES=	django/bin/django-admin.py \
@@ -56,7 +60,7 @@ post-build-HTMLDOCS-on:
 	cd ${WRKSRC}/docs && ${GMAKE} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${PREFIX}/share/man/man1
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"	* See http://docs.djangoproject.com/ for complete documentation"
 	@${ECHO_MSG}	""

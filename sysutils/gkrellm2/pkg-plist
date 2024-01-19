@@ -5,8 +5,8 @@ include/gkrellm2/gkrellmd.h
 include/gkrellm2/log.h
 %%CLIENT%%libdata/pkgconfig/gkrellm.pc
 libdata/pkgconfig/gkrellmd.pc
-%%CLIENT%%man/man1/gkrellm.1.gz
-man/man8/gkrellmd.8.gz
+%%CLIENT%%share/man/man1/gkrellm.1.gz
+share/man/man8/gkrellmd.8.gz
 sbin/gkrellmd
 @sample %%EXAMPLESDIR%%/gkrellmd.conf etc/gkrellmd.conf
 %%CLIENT%%%%NLS%%share/locale/bg/LC_MESSAGES/gkrellm.mo

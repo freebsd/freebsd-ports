@@ -1,0 +1,6 @@
+MMSegmentation is a toolbox that provides a framework for unified implementation
+and evaluation of semant ic segmentation methods, and contains high-quality
+implementations of popular semantic segmentation methods and datasets.
+
+MMSeg consists of 7 main parts including apis, structures, datasets, models,
+engine, evaluation and visualization.

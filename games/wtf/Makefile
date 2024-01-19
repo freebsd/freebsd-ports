@@ -1,5 +1,6 @@
 PORTNAME=	wtf
 PORTVERSION=	20230906
+PORTREvISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
@@ -21,7 +22,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wtf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wtf.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/wtf.6 ${STAGEDIR}${PREFIX}/share/man/man6
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/acronyms ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/acronyms.comp ${STAGEDIR}${DATADIR}

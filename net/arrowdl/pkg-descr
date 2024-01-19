@@ -1,0 +1,5 @@
+ArrowDL is a multi-platform mass download manager.  It helps one to
+select, organize, prioritize, and run many downloads in parallel.
+
+Based on the Qt framework, ArrowDL is written in C/C++ and supports
+various download types (regular files, video streams, torrents).

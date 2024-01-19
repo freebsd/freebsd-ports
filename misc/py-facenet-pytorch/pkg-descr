@@ -1,0 +1,2 @@
+facenet-pytorch is a collection of pretrained PyTorch face detection (MTCNN) and
+facial recognition (InceptionResnet) models.

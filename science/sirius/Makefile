@@ -1,7 +1,6 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.4.3
-PORTREVISION=	3
+DISTVERSION=	7.5.2
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
@@ -11,6 +10,8 @@ WWW=		https://github.com/electronic-structure/SIRIUS
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
 
 LIB_DEPENDS=	libcosta.so:math/costa \
 		libgsl.so:math/gsl \
@@ -29,6 +30,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	electronic-structure
 GH_PROJECT=	SIRIUS
 
+CMAKE_OFF=	SIRIUS_USE_MEMORY_POOL # depends on umpire - not yet ported
+
 OPTIONS_DEFINE=		NLCGLIB
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
@@ -45,5 +48,6 @@ MPICH_USES=		mpi:mpich
 OPENMPI_USES=		mpi:openmpi
 
 # many tests fail, see https://github.com/electronic-structure/SIRIUS/issues/760
+# 7.5.0: tests fail to build, see https://github.com/electronic-structure/SIRIUS/issues/947
 
 .include <bsd.port.mk>

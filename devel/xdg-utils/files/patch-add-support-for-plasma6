@@ -1,0 +1,139 @@
+From 08d0894e5dc1cfb20ffd1dc2a765fd9b04138bd9 Mon Sep 17 00:00:00 2001
+From: Nicolas Fella <nicolas.fella@gmx.de>
+Date: Wed, 5 Jul 2023 09:29:52 +0200
+Subject: [PATCH 1/4] xdg-mime: Use defapp_generic on Plasma 6
+
+defapp_kde uses the no longer existing kmimetypetrader
+
+It doesn't do anything particularly special anyway so we might as well use defapp_generic
+---
+ scripts/xdg-mime.in | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+diff --git scripts/xdg-mime.in b/scripts/xdg-mime.in
+index d194b0e..19712b5 100644
+--- scripts/xdg-mime.in.orig
++++ scripts/xdg-mime.in
+@@ -610,15 +610,12 @@ fi
+ if [ "$action" = "defapp" ]; then
+     detectDE
+ 
+-    case "$DE" in
+-        kde)
++    if [ "$DE" == "kde" ] && [ "$KDE_SESSION_VERSION" -lt "6" ]; then
+         defapp_kde "$mimetype"
+-        ;;
++    fi
++
++    defapp_generic "$mimetype"
+ 
+-        *)
+-        defapp_generic "$mimetype"
+-        ;;
+-    esac
+     exit_failure_operation_impossible "no method available for quering default application for '$mimetype'"
+ fi
+ 
+-- 
+GitLab
+
+
+From 4fd41276c9e5dae0a087ed5726f1dca263edd394 Mon Sep 17 00:00:00 2001
+From: Nicolas Fella <nicolas.fella@gmx.de>
+Date: Wed, 5 Jul 2023 09:48:17 +0200
+Subject: [PATCH 2/4] xdg-mime: Use kmimetypefinder (without suffix) on Plasma
+ 6
+
+---
+ scripts/xdg-mime.in | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git scripts/xdg-mime.in b/scripts/xdg-mime.in
+index 19712b5..f78079e 100644
+--- scripts/xdg-mime.in.orig
++++ scripts/xdg-mime.in
+@@ -60,6 +60,10 @@ info_kde()
+           DEBUG 1 "Running kmimetypefinder${KDE_SESSION_VERSION} \"$1\""
+           kmimetypefinder${KDE_SESSION_VERSION} "$1" 2>/dev/null | head -n 1
+         ;;
++        6)
++          DEBUG 1 "Running kmimetypefinder \"$1\""
++          kmimetypefinder "$1" 2>/dev/null | head -n 1
++        ;;
+       esac
+     else
+         DEBUG 1 "Running kfile \"$1\""
+-- 
+GitLab
+
+
+From c10cdaf8a03997cc18e51ee6299f0dcc02c34870 Mon Sep 17 00:00:00 2001
+From: Nicolas Fella <nicolas.fella@gmx.de>
+Date: Wed, 5 Jul 2023 09:55:21 +0200
+Subject: [PATCH 3/4] xdg-open: Use correct kde-open on Plasma 6
+
+---
+ scripts/xdg-open.in | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git scripts/xdg-open.in b/scripts/xdg-open.in
+index 50e31e6..2456aa7 100644
+--- scripts/xdg-open.in.orig
++++ scripts/xdg-open.in
+@@ -130,6 +130,9 @@ open_kde()
+         5)
+           kde-open${KDE_SESSION_VERSION} "$1"
+         ;;
++        6)
++          kde-open "$1"
++        ;;
+       esac
+     else
+         kfmclient exec "$1"
+-- 
+GitLab
+
+
+From eb8a24bb0923bfcb74c29a3147d920ee7a5ff83d Mon Sep 17 00:00:00 2001
+From: Nicolas Fella <nicolas.fella@gmx.de>
+Date: Wed, 5 Jul 2023 11:02:20 +0200
+Subject: [PATCH 4/4] xdg-settings: Use right config tools on Plasma 6
+
+---
+ scripts/xdg-settings.in | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git scripts/xdg-settings.in b/scripts/xdg-settings.in
+index ab18d3a..fed5932 100755
+--- scripts/xdg-settings.in.orig
++++ scripts/xdg-settings.in
+@@ -148,6 +148,8 @@ read_kde_config()
+     configkey="$3"
+     if [ x"${KDE_SESSION_VERSION}" = x"5" ]; then
+         application="`kreadconfig5 --file $configfile --group $configsection --key $configkey`"
++    elif [ x"${KDE_SESSION_VERSION}" = x"6" ]; then
++        application="`kreadconfig6 --file $configfile --group $configsection --key $configkey`"
+     else
+         application="`kreadconfig --file $configfile --group $configsection --key $configkey`"
+     fi
+@@ -267,6 +269,8 @@ set_browser_kde()
+     set_browser_mime "$1" "text/html" || return
+     if [ x"${KDE_SESSION_VERSION}" = x"5" ]; then
+         kwriteconfig5 --file kdeglobals --group General --key BrowserApplication "$1"
++    elif [ x"${KDE_SESSION_VERSION}" = x"6" ]; then
++        kwriteconfig6 --file kdeglobals --group General --key BrowserApplication "$1"
+     else
+         kwriteconfig --file kdeglobals --group General --key BrowserApplication "$1"
+     fi
+@@ -624,6 +628,8 @@ set_url_scheme_handler_kde()
+         binary="`desktop_file_to_binary "$2"`"
+         if [ x"${KDE_SESSION_VERSION}" = x"5" ]; then
+             kwriteconfig5 --file emaildefaults --group PROFILE_Default --key EmailClient "$binary"
++        elif [ x"${KDE_SESSION_VERSION}" = x"6" ]; then
++            kwriteconfig6 --file emaildefaults --group PROFILE_Default --key EmailClient "$binary"
+         else
+             kwriteconfig --file emaildefaults --group PROFILE_Default --key EmailClient "$binary"
+         fi
+-- 
+GitLab
+

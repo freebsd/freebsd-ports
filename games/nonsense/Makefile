@@ -1,6 +1,6 @@
 PORTNAME=	nonsense
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -24,6 +24,6 @@ do-install:
 		${MKDIR} ${STAGEDIR}${DATADIR}/template
 		${INSTALL_DATA} ${WRKSRC}/*.data ${STAGEDIR}${DATADIR}/data
 		${INSTALL_DATA} ${WRKSRC}/*.template ${STAGEDIR}${DATADIR}/template
-		${INSTALL_MAN} ${WRKSRC}/nonsense.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+		${INSTALL_MAN} ${WRKSRC}/nonsense.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 .include <bsd.port.mk>

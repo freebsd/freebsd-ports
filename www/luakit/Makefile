@@ -11,9 +11,6 @@ WWW=		https://luakit.github.io
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON_sparc64=	Does not install on sparc64
-
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \

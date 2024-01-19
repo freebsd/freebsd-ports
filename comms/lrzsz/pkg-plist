@@ -4,5 +4,5 @@ bin/lrz
 bin/lsb
 bin/lsx
 bin/lsz
-man/man1/lrz.1.gz
-man/man1/lsz.1.gz
+share/man/man1/lrz.1.gz
+share/man/man1/lsz.1.gz

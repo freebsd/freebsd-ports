@@ -1,0 +1,11 @@
+TIMESTAMP = 1702039441
+SHA256 (jetbrains/rust/crates/autocfg-1.1.0.crate) = d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa
+SIZE (jetbrains/rust/crates/autocfg-1.1.0.crate) = 13272
+SHA256 (jetbrains/rust/crates/chrono-0.4.31.crate) = 7f2c685bad3eb3d45a01354cedb7d5faa66194d1d58ba6e267a8de788f79db38
+SIZE (jetbrains/rust/crates/chrono-0.4.31.crate) = 214513
+SHA256 (jetbrains/rust/crates/libc-0.2.148.crate) = 9cdc71e17332e86d2e1d38c1f99edcb6288ee11b815fb1a4b049eaa2114d369b
+SIZE (jetbrains/rust/crates/libc-0.2.148.crate) = 690988
+SHA256 (jetbrains/rust/crates/num-traits-0.2.16.crate) = f30b0abd723be7e2ffca1272140fac1a2f084c77ec3e123c192b66af1ee9e6c2
+SIZE (jetbrains/rust/crates/num-traits-0.2.16.crate) = 50130
+SHA256 (jetbrains/JetBrains-intellij-community-233.11799.241-d2a6e82bfbe694a6a94c6eeec195c9a4a6f43aa7_GH0.tar.gz) = 71c9a3e6a364931c166be59b7993b5cb4f1e5a10c9d526b9fd8e919f51c29be6
+SIZE (jetbrains/JetBrains-intellij-community-233.11799.241-d2a6e82bfbe694a6a94c6eeec195c9a4a6f43aa7_GH0.tar.gz) = 202821149

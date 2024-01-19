@@ -1,5 +1,6 @@
 PORTNAME=	ripmime
 PORTVERSION=	1.4.1.0
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -14,7 +15,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	inflex
 WRKSRC=		${WRKDIR}/ripMIME-${PORTVERSION}
-PLIST_FILES=	bin/ripmime man/man1/ripmime.1.gz
+PLIST_FILES=	bin/ripmime share/man/man1/ripmime.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!^CFLAGS=!CFLAGS ?=!' \
@@ -23,6 +24,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

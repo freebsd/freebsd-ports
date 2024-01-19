@@ -1,6 +1,6 @@
---- unix/vid_menu.c.orig	Wed Dec 28 10:23:32 2005
-+++ unix/vid_menu.c	Thu Mar 22 00:37:42 2007
-@@ -37,7 +37,7 @@
+--- unix/vid_menu.c.orig	2005-12-28 13:23:32 UTC
++++ unix/vid_menu.c
+@@ -37,7 +37,7 @@ static cvar_t *gl_driver;
  static cvar_t *gl_picmip;
  static cvar_t *gl_texturemode;
  static cvar_t *gl_anisotropic;

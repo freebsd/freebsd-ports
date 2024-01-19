@@ -13,7 +13,7 @@ WWW=		https://www.mono-project.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	riscv64 riscv64sf sparc64
+NOT_FOR_ARCHS=	riscv64 riscv64sf
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \

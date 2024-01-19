@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-pthread
 
-PLIST_FILES=	bin/aget man/man1/aget.1.gz
+PLIST_FILES=	bin/aget share/man/man1/aget.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aget ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/aget.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/aget.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

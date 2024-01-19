@@ -1,5 +1,6 @@
 PORTNAME=	ppmd
 PORTVERSION=	20050811
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -14,13 +15,13 @@ USES=		cpe
 CPE_VENDOR=	ppmd_project
 
 PORTDOCS=	read_me.txt
-PLIST_FILES=	bin/ppmd man/man1/ppmd.1.gz
+PLIST_FILES=	bin/ppmd share/man/man1/ppmd.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

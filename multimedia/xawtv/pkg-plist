@@ -20,7 +20,6 @@ bin/xawtv-remote
 lib/xawtv/bilinear.so
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/cubic.so
-%%BKTR%%lib/xawtv/drv0-bsd.so
 lib/xawtv/flt-disor.so
 lib/xawtv/flt-gamma.so
 lib/xawtv/flt-invert.so

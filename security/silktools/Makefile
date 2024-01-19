@@ -1,5 +1,5 @@
 PORTNAME=	silktools
-PORTVERSION=	3.19.2
+PORTVERSION=	3.22.1
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 DISTNAME=	silk-${PORTVERSION}

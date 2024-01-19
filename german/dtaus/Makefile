@@ -1,5 +1,6 @@
 PORTNAME=	dtaus
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	german finance
 MASTER_SITES=	http://www.infodrom.org/projects/dtaus/download/
 
@@ -10,7 +11,7 @@ WWW=		https://www.infodrom.org/projects/dtaus/
 LICENSE=	GPLv2
 
 ALL_TARGET=	dtaus
-PLIST_FILES=	bin/dtaus man/man1/dtaus.1.gz man/man5/dtaus.5.gz
+PLIST_FILES=	bin/dtaus share/man/man1/dtaus.1.gz share/man/man5/dtaus.5.gz
 PORTDOCS=	ChangeLog README TODO dtaus.txt
 PORTEXAMPLES=	dtaus.cls sample.ctl
 
@@ -27,8 +28,8 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dtaus ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/dtaus.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/dtaus.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/dtaus.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/dtaus.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}

@@ -25,6 +25,7 @@ include/nng/protocol/survey0/survey.h
 include/nng/supplemental/http/http.h
 include/nng/supplemental/tls/engine.h
 include/nng/supplemental/tls/tls.h
+include/nng/supplemental/util/idhash.h
 include/nng/supplemental/util/options.h
 include/nng/supplemental/util/platform.h
 include/nng/transport/inproc/inproc.h

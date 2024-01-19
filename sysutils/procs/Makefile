@@ -1,6 +1,7 @@
 PORTNAME=	procs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,8 +11,7 @@ WWW=		https://github.com/dalance/procs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to build: mismatched types ... expected `[i8; 9]`, found `[u8; 9]`
-BROKEN_i386=	fails to build: mismatched types ... expected `i64`, found `i32`
+BROKEN_armv7=	fails to build: mismatched types ... expected `i64`, found `i32`, see https://github.com/dalance/bsd-kvm/issues/2
 
 USES=		cargo llvm:lib
 

@@ -1,6 +1,6 @@
 PORTNAME=	crashme
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/kris
 DISTNAME=	crashme
@@ -16,12 +16,12 @@ USES=		gmake tar:tgz
 NO_WRKSUBDIR=	yes
 
 MAKEFILE=	makefile
-PLIST_FILES=	bin/crashme bin/pddet man/man1/crashme.1.gz
+PLIST_FILES=	bin/crashme bin/pddet share/man/man1/crashme.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crashme ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/pddet ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/crashme.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/crashme.1
+		${STAGEDIR}${PREFIX}/share/man/man1/crashme.1
 
 .include <bsd.port.mk>

@@ -51,7 +51,7 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 21;
+my $minor = 22;
 my $micro = 0;
 
 # default setting - for FreeBSD
@@ -1406,6 +1406,11 @@ sub checkmakefile {
 			}
 		}
 		$rawwhole .= $_;
+		if (/\\$/) {
+			# Concat continued lines.
+			chomp $rawwhole;
+			chop $rawwhole;
+		}
 	}
 	close(IN);
 

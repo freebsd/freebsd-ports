@@ -12,6 +12,9 @@ WWW=		https://sonarr.tv
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Use net-p2p/sonarr instead
+EXPIRATION_DATE=	2024-03-01
+
 ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \

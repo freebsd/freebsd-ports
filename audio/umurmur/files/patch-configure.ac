@@ -1,8 +1,8 @@
---- configure.ac.orig	2015-04-07 10:01:12 UTC
+--- configure.ac.orig	2021-03-21 20:49:04 UTC
 +++ configure.ac
-@@ -113,7 +113,7 @@ AS_IF([test "x$enable_shmapi" != xno],
- 
- 
+@@ -118,7 +118,7 @@ AS_IF([test "x$enable_shmapi" != xno],
+ 	AM_CONDITIONAL(USE_SHAREDMEMORY_API, false)
+ ])
  
 -AC_DEFINE([DEFAULT_CONFIG], ["/etc/umurmur.conf"], [Default config])
 +AC_DEFINE([DEFAULT_CONFIG], ["%%PREFIX%%/etc/umurmur.conf"], [Default config])

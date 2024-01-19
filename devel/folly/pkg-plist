@@ -149,6 +149,7 @@ include/folly/container/HeterogeneousAccess.h
 include/folly/container/IntrusiveHeap.h
 include/folly/container/Iterator.h
 include/folly/container/Merge.h
+include/folly/container/Reserve.h
 include/folly/container/SparseByteSet.h
 include/folly/container/View.h
 include/folly/container/WeightedEvictingCacheMap.h
@@ -161,7 +162,9 @@ include/folly/container/detail/F14Policy.h
 include/folly/container/detail/F14SetFallback.h
 include/folly/container/detail/F14Table.h
 include/folly/container/detail/Util.h
+include/folly/container/detail/tape_detail.h
 include/folly/container/heap_vector_types.h
+include/folly/container/tape.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
 include/folly/detail/AsyncTrace.h
@@ -430,8 +433,9 @@ include/folly/experimental/observer/WithJitter.h
 include/folly/experimental/observer/detail/Core.h
 include/folly/experimental/observer/detail/GraphCycleDetector.h
 include/folly/experimental/observer/detail/ObserverManager.h
+include/folly/experimental/settings/Immutables.h
 include/folly/experimental/settings/Settings.h
-include/folly/experimental/settings/SettingsMetadata.h
+include/folly/experimental/settings/Types.h
 include/folly/experimental/settings/detail/SettingsImpl.h
 include/folly/experimental/symbolizer/Dwarf.h
 include/folly/experimental/symbolizer/DwarfImpl.h

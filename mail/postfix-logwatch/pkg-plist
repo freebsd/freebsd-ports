@@ -1,3 +1,3 @@
 @sample %%ETCDIR%%/postfix-logwatch.conf.sample
 bin/postfix-logwatch
-man/man1/postfix-logwatch.1.gz
+share/man/man1/postfix-logwatch.1.gz

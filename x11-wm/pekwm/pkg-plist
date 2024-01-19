@@ -91,9 +91,9 @@ bin/pekwm_wm
 %%ETCDIR%%/panel
 %%ETCDIR%%/start
 %%ETCDIR%%/vars
-man/man1/pekwm.1.gz
-man/man1/pekwm_bg.1.gz
-man/man1/pekwm_dialog.1.gz
-man/man1/pekwm_panel.1.gz
-man/man1/pekwm_screenshot.1.gz
-man/man1/pekwm_theme.1.gz
+share/man/man1/pekwm.1.gz
+share/man/man1/pekwm_bg.1.gz
+share/man/man1/pekwm_dialog.1.gz
+share/man/man1/pekwm_panel.1.gz
+share/man/man1/pekwm_screenshot.1.gz
+share/man/man1/pekwm_theme.1.gz

@@ -119,7 +119,7 @@ lib/cocor/taste_cp/xrefp.o
 lib/cocor/taste_cp/xrefs.cpp
 lib/cocor/taste_cp/xrefs.hpp
 lib/cocor/taste_cp/xrefs.o
-man/man1/cocor.1.gz
+share/man/man1/cocor.1.gz
 %%DATADIR%%/compiler.frm
 %%DATADIR%%/cplus2/compiler.frm
 %%DATADIR%%/cplus2/parser_c.frm

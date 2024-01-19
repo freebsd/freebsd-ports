@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/README
 #BUILD_DEPENDS=	gsed:textproc/gsed
 #BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
-USES=		ada autoreconf gmake pkgconfig tar:tgz
+USES=		ada autoreconf gmake ncurses pkgconfig tar:tgz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
@@ -49,13 +49,5 @@ post-install:
 do-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} THIS=${PORTNAME} install.html)
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=		ncurses
-.else
-USES+=		ncurses:port
-.endif
 
 .include <bsd.port.mk>

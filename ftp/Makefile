@@ -51,8 +51,6 @@
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
     SUBDIR += pget
-    SUBDIR += php80-curl
-    SUBDIR += php80-ftp
     SUBDIR += php81-curl
     SUBDIR += php81-ftp
     SUBDIR += php82-curl

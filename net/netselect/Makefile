@@ -11,11 +11,11 @@ LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	apenwarr
 
 OPTIONS_DEFINE=	SUID DOCS
 OPTIONS_SUB=	yes
+
 SUID_DESC=	Install with the setuid bit to allow use by non-root users
 
 do-build:

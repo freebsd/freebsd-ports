@@ -1,7 +1,6 @@
 PORTNAME=	openage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	2
+DISTVERSION=	0.5.3
 CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -14,7 +13,12 @@ LICENSE_FILE=	${WRKSRC}/legal/GPLv3
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toml>=0:textproc/py-toml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lz4>=0:archivers/py-lz4@${PY_FLAVOR} \
+		doxygen:devel/doxygen \
+		${LOCALBASE}/include/toml.hpp:devel/toml11
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -29,13 +33,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:base python:3.8-3.9 qt:5 sdl shebangfix
+USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:base python qt:6 sdl shebangfix
 SHEBANG_FILES=	configure run.py.in buildsystem/cythonize.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech
 USE_SDL=	image2 sdl2
 USE_GL=		gl glu
-USE_QT=		core declarative gui network buildtools:build qmake:build
+USE_QT=		base multimedia tools:build
 USE_PYTHON=	cython
 USE_LDCONFIG=	yes
 

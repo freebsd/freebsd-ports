@@ -1,5 +1,6 @@
 PORTNAME=	tcptrace
 PORTVERSION=	6.6.8
+PORTREVISION=	1
 CATEGORIES=	net
 #MASTER_SITES=	http://www.tcptrace.org/download/
 
@@ -19,7 +20,7 @@ GH_TAGNAME=	508f73a
 
 PLIST_FILES=	bin/tcptrace \
 		bin/xpl2gpl \
-		man/man1/tcptrace.1.gz
+		share/man/man1/tcptrace.1.gz
 
 PORTDOCS=	ARGS CHANGES FAQ README README.mailing_list \
 		README.modules README.tline_graphs README.tput_graphs \
@@ -30,7 +31,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/xpl2gpl ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

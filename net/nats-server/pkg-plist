@@ -59,6 +59,9 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_b_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_c_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/test.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/tls_multi_cert_1.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/tls_multi_cert_2.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/tls_multi_cert_3.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/tls_test.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/tls_verify_test.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/token_authentication_1.conf

@@ -1,5 +1,6 @@
 PORTNAME=	mbgtools
 DISTVERSION=	fbsd-1.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.meinberg.de/download/drivers/
 
@@ -10,7 +11,6 @@ WWW=		https://www.meinbergglobal.com/english/sw/
 LICENSE=	BSD2CLAUSE
 
 BROKEN_mips64=		fails to compile: unused variables
-BROKEN_sparc64=		fails to compile: error in structure definitions
 
 USES=		kmod uidfix
 USE_RC_SUBR=	mbgsvcd

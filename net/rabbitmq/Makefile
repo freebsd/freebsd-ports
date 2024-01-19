@@ -1,5 +1,6 @@
 PORTNAME=	rabbitmq
 DISTVERSION=	3.11.26
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -27,7 +28,7 @@ SHEBANG_FILES=	deps/rabbitmq_management/bin/rabbitmqadmin
 MAKE_ARGS+=	PYTHON=${PYTHON_CMD}
 MAKE_ENV+=	PATH="${LOCALBASE}/lib/${_ERLANG_LIB}/bin:${PATH}" \
 		RMQ_LIBDIR="${PREFIX}/lib" \
-		MANDIR="${PREFIX}/man" \
+		MANDIR="${PREFIX}/share/man" \
 		DESTDIR="${STAGEDIR}"
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	install
@@ -75,8 +76,8 @@ post-install:
 .for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-queues rabbitmq-server rabbitmq-streams rabbitmq-tanzu rabbitmq-upgrade rabbitmqctl vmware-rabbitmq
 	${LN} -s ../lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/*.8  ${STAGEDIR}${MAN1PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/rabbitmq-env.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/*.8  ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/rabbitmq-env.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 post-install-ADMIN-on:
 	${INSTALL} ${WRKSRC}/deps/rabbitmq_management/bin/rabbitmqadmin ${STAGEDIR}${PREFIX}/bin

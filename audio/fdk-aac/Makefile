@@ -12,9 +12,6 @@ LICENSE_NAME=	Software License for The Fraunhofer FDK AAC Codec Library for Andr
 LICENSE_FILE=	${WRKSRC}/NOTICE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-NOT_FOR_ARCHS=		sparc64
-NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
-
 USES=		cmake
 USE_LDCONFIG=	yes
 

@@ -1,5 +1,5 @@
 etc/periodic/daily/500.ampache-cron
-man/man1/ampache.1.gz
+share/man/man1/ampache.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGEMENTS.md
 %%PORTDOCS%%%%DOCSDIR%%/API-Errors.md
 %%PORTDOCS%%%%DOCSDIR%%/API-JSON-methods.md

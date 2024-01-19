@@ -1,5 +1,6 @@
 PORTNAME=	kermit
 PORTVERSION=	10.0.beta10
+PORTREVISION=	1
 CATEGORIES=	comms ftp net
 MASTER_SITES=	https://www.kermitproject.org/ftp/kermit/test/tar/ \
 		ftp://ftp.kermitproject.org/kermit/test/tar/
@@ -19,7 +20,7 @@ ALL_TARGET=	freebsd+ssl
 MAKE_ARGS=	CC="${CC}" CC2="${CC}" \
 		SSLINC="-I${OPENSSLINC}" SSLLIB="-L${OPENSSLLIB}"
 
-PLIST_FILES=	bin/kermit man/man1/kermit.1.gz
+PLIST_FILES=	bin/kermit share/man/man1/kermit.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -30,7 +31,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wermit ${STAGEDIR}${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr \
-		${STAGEDIR}${MANPREFIX}/man/man1/kermit.1
+		${STAGEDIR}${PREFIX}/share/man/man1/kermit.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

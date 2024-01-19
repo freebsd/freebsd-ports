@@ -11,7 +11,7 @@ lib/liblz4.so
 lib/liblz4.so.1
 lib/liblz4.so.%%PORTVERSION%%
 libdata/pkgconfig/liblz4.pc
-man/man1/lz4.1.gz
-man/man1/lz4c.1.gz
-man/man1/lz4cat.1.gz
-man/man1/unlz4.1.gz
+share/man/man1/lz4.1.gz
+share/man/man1/lz4c.1.gz
+share/man/man1/lz4cat.1.gz
+share/man/man1/unlz4.1.gz

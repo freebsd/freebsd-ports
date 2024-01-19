@@ -84,6 +84,7 @@ share/ECM/modules/ECMCoverageOption.cmake
 share/ECM/modules/ECMCreateQmFromPoFiles.cmake
 share/ECM/modules/ECMDeprecationSettings.cmake
 share/ECM/modules/ECMEnableSanitizers.cmake
+share/ECM/modules/ECMFeatureSummary.cmake
 share/ECM/modules/ECMFindModuleHelpers.cmake
 share/ECM/modules/ECMFindQmlModule.cmake
 share/ECM/modules/ECMFindQmlModule.cmake.in

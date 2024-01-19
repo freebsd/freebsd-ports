@@ -1,4 +1,4 @@
-man/man1/haproxy.1.gz
+share/man/man1/haproxy.1.gz
 sbin/halog
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/51Degrees-device-detection.txt

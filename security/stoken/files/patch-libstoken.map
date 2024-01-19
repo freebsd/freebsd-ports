@@ -1,0 +1,11 @@
+--- libstoken.map.orig	2023-03-09 18:40:27 UTC
++++ libstoken.map
+@@ -58,8 +58,6 @@ global:
+ 	__stoken_read_rcfile;
+ 	__stoken_write_rcfile;
+ 	__stoken_zap_rcfile_data;
+-	stoken__strcasestr;
+-	stoken__mkstemps;
+ 	/* NOTE: this can break non-GNU toolchains */
+ 	Java_*;
+ local:

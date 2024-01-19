@@ -3,9 +3,9 @@ bin/dm-tool
 @sample %%ETCDIR%%/keys.conf.sample
 @sample %%ETCDIR%%/lightdm.conf.sample
 @sample %%ETCDIR%%/users.conf.sample
-etc/pam.d/lightdm
-etc/pam.d/lightdm-autologin
-etc/pam.d/lightdm-greeter
+@sample etc/pam.d/lightdm.sample
+@sample etc/pam.d/lightdm-autologin.sample
+@sample etc/pam.d/lightdm-greeter.sample
 include/lightdm-gobject-1/lightdm.h
 include/lightdm-gobject-1/lightdm/greeter.h
 include/lightdm-gobject-1/lightdm/language.h
@@ -14,12 +14,25 @@ include/lightdm-gobject-1/lightdm/power.h
 include/lightdm-gobject-1/lightdm/session.h
 include/lightdm-gobject-1/lightdm/system.h
 include/lightdm-gobject-1/lightdm/user.h
+%%QT5%%include/lightdm-qt5-3/QLightDM/Greeter
+%%QT5%%include/lightdm-qt5-3/QLightDM/Power
+%%QT5%%include/lightdm-qt5-3/QLightDM/SessionsModel
+%%QT5%%include/lightdm-qt5-3/QLightDM/UsersModel
+%%QT5%%include/lightdm-qt5-3/QLightDM/greeter.h
+%%QT5%%include/lightdm-qt5-3/QLightDM/power.h
+%%QT5%%include/lightdm-qt5-3/QLightDM/sessionsmodel.h
+%%QT5%%include/lightdm-qt5-3/QLightDM/usersmodel.h
 %%VAPI%%lib/girepository-1.0/LightDM-1.typelib
 lib/liblightdm-gobject-1.a
 lib/liblightdm-gobject-1.so
 lib/liblightdm-gobject-1.so.0
 lib/liblightdm-gobject-1.so.0.0.0
+%%QT5%%lib/liblightdm-qt5-3.a
+%%QT5%%lib/liblightdm-qt5-3.so
+%%QT5%%lib/liblightdm-qt5-3.so.0
+%%QT5%%lib/liblightdm-qt5-3.so.0.0.0
 libdata/pkgconfig/liblightdm-gobject-1.pc
+%%QT5%%libdata/pkgconfig/liblightdm-qt5-3.pc
 libexec/lightdm-guest-session
 man/man1/dm-tool.1.gz
 man/man1/lightdm.1.gz

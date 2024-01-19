@@ -1,6 +1,7 @@
 PORTNAME=	luv
-DISTVERSION=	1.45.0-0
+DISTVERSION=	1.47.0-0
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/luvit/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	libuv bindings for lua
@@ -13,13 +14,8 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		cmake luajit
 USE_LDCONFIG=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	luvit keplerproject:compat
-GH_PROJECT=	luv lua-compat-5.3:compat
-GH_TAGNAME=	e245d3a:compat
-GH_SUBDIR=	deps/lua-compat-5.3:compat
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 CMAKE_ON=	BUILD_SHARED_LIBS WITH_SHARED_LIBUV
 CMAKE_OFF=	BUILD_MODULE
@@ -29,7 +25,7 @@ CMAKE_ARGS=	-DLUA_BUILD_TYPE=System \
 
 PLIST_FILES=	lib/libluv.so \
 		lib/libluv.so.1 \
-		lib/libluv.so.1.45.0 \
+		lib/libluv.so.1.47.0 \
 		libdata/pkgconfig/libluv.pc \
 		include/luv/util.h \
 		include/luv/luv.h \
@@ -38,14 +34,8 @@ PLIST_FILES=	lib/libluv.so \
 
 PORTDOCS=	docs.md
 
-PORTEXAMPLES=	*
-
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs.md ${STAGEDIR}${DOCSDIR}
-
-post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

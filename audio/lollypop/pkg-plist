@@ -219,7 +219,7 @@ bin/lollypop
 %%PYTHON_SITELIBDIR%%/lollypop/ws_listenbrainz.py
 %%PYTHON_SITELIBDIR%%/lollypop/ws_token.py
 libexec/lollypop-sp
-man/man1/lollypop.1.gz
+share/man/man1/lollypop.1.gz
 share/applications/org.gnome.Lollypop.desktop
 share/dbus-1/services/org.gnome.Lollypop.SearchProvider.service
 share/gnome-shell/search-providers/org.gnome.Lollypop.SearchProvider.ini

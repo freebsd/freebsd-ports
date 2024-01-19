@@ -1,5 +1,5 @@
 bin/docbook2odf
-man/man1/docbook2odf.1.gz
+share/man/man1/docbook2odf.1.gz
 share/applications/docbook2odf.desktop
 %%DATADIR%%/tests/Makefile
 %%DATADIR%%/tests/README

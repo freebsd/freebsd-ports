@@ -65,8 +65,6 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc64le
-# sparc64 fails due to lack of valid AtomicCounter implementation in
-# src/common/classes/fb_atomic.h; presumably other tier-2s would as well
 
 INSTALL_FB=	${INSTALL} ${COPY}
 

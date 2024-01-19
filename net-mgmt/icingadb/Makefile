@@ -1,7 +1,7 @@
 PORTNAME=	icingadb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -11,7 +11,9 @@ WWW=		https://icinga.com/docs/icinga-db/latest/doc/02-Installation/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:modules pgsql
+
+WANT_PGSQL=	contrib
 
 USE_RC_SUBR=	icingadb
 

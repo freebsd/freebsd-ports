@@ -1,8 +1,8 @@
 bin/immortal
 bin/immortalctl
 bin/immortaldir
-man/man8/immortal.8.gz
-man/man8/immortalctl.8.gz
-man/man8/immortaldir.8.gz
+share/man/man8/immortal.8.gz
+share/man/man8/immortalctl.8.gz
+share/man/man8/immortaldir.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/www.yml.sample
 @dir %%ETCDIR%%

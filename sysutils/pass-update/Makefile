@@ -1,6 +1,7 @@
 PORTNAME=	pass-update
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
@@ -23,10 +24,10 @@ NO_BUILD=	yes
 MAKE_ENV=	BASHCOMPDIR=${PREFIX}/share/bash-completions/completions \
 		DESTDIR=${STAGEDIR} \
 		LIBDIR=${PREFIX}/libexec \
-		MANDIR=${MANPREFIX}/man
+		MANDIR=${PREFIX}/share/man
 
 PLIST_FILES=	libexec/password-store/extensions/update.bash \
-		man/man1/pass-update.1.gz \
+		share/man/man1/pass-update.1.gz \
 		share/bash-completions/completions/pass-update \
 		share/zsh/site-functions/_pass-update
 

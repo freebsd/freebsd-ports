@@ -1,5 +1,6 @@
 PORTNAME=	lha
 PORTVERSION=	1.14i.20211125
+PORTREVISION=	1
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	-ac
 
@@ -25,17 +26,17 @@ GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/lha-ac \
-		man/ja/man1/lha-ac.1.gz \
-		man/man1/lha-ac.1.gz
+		share/man/ja/man1/lha-ac.1.gz \
+		share/man/man1/lha-ac.1.gz
 
 OPTIONS_DEFINE=		NLS
 NLS_CONFIGURE_ON=	--enable-multibyte-filename=auto
 NLS_CONFIGURE_OFF=	--disable-multibyte-filename
 
 do-install:
-	-${MKDIR} ${STAGEDIR}${MANPREFIX}/man/ja/man1
+	-${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lha ${STAGEDIR}${PREFIX}/bin/lha-ac
-	${INSTALL_MAN} ${WRKSRC}/man/lha.1 ${STAGEDIR}${MANPREFIX}/man/man1/lha-ac.1
-	${INSTALL_MAN} ${WRKSRC}/man/lha.n ${STAGEDIR}${MANPREFIX}/man/ja/man1/lha-ac.1
+	${INSTALL_MAN} ${WRKSRC}/man/lha.1 ${STAGEDIR}${PREFIX}/share/man/man1/lha-ac.1
+	${INSTALL_MAN} ${WRKSRC}/man/lha.n ${STAGEDIR}${PREFIX}/share/man/ja/man1/lha-ac.1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.16
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	net
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -17,6 +17,7 @@ USE_XORG=	x11 xcb xdamage xfixes xrandr xinerama xext xtst xau xrender \
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GITHUB=	yes

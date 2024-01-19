@@ -1,6 +1,6 @@
 PORTNAME=	fpc
-PORTVERSION=	3.3.1.20231027
-PORTREVISION=	2
+PORTVERSION=	3.3.1.20240103
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man
@@ -29,9 +29,9 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_COMMIT=	55e72fc0f1505c75f60af706736d32ceca9815a4
+GL_TAGNAME=	f86a9bd5c026c7a10a165a8225bcf83e17c47b25
 
-FPCSRCDIR=	source-${GL_COMMIT}
+FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -85,7 +85,7 @@ do-extract:
 	@${TAR} -xzf ${_DISTDIR}/fpc-${MANVER}.man.tar.gz --directory ${WRKDIR}
 # unpack source distribution
 	@(cd ${WRKDIR} && ${GZIP_CMD} -dc \
-		${_DISTDIR}/${PORTNAME}-source-${GL_COMMIT}_GL0${EXTRACT_SUFX} | \
+		${_DISTDIR}/${PORTNAME}-source-${GL_TAGNAME}_GL0${EXTRACT_SUFX} | \
 		${TAR} -xf -)
 
 post-patch:
@@ -136,7 +136,7 @@ post-patch:
 		${WRKSRC}/packages/mad/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/modplug/fpmake.pp
-	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+	@${REINPLACE_CMD} -i "" -e 's|Linux|freebsd,linux|g' \
 		${WRKSRC}/packages/newt/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/oggvorbis/fpmake.pp
@@ -168,8 +168,8 @@ do-install:
 		${MAKE_CMD} install ${MAKE_ARGS} ${BOOTPPC})
 
 	# Installing manpages
-	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/man/man5/* ${STAGEDIR}${MAN1PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKDIR}/man/man5/* ${STAGEDIR}${PREFIX}/share/man/man5
 	# symlinking compiler
 	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ../lib/fpc/${FPCBASEVER}/${PPNAME})
 	# creating sample configuration file
@@ -178,6 +178,9 @@ do-install:
 		"${STAGEDIR}${PREFIX}/etc"
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
 		-e 's|^#-Fl/lib;/usr/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt5;${LOCALBASE}/lib/qt6|g' \
-		${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
+			${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample \
+			${STAGEDIR}${PREFIX}/etc/fppkg.cfg.sample \
+			${STAGEDIR}${PREFIX}/etc/fppkg/default \
+			${STAGEDIR}${PREFIX}/lib/fpc/${FPCBASEVER}/ide/text/fp.cfg
 
 .include <bsd.port.post.mk>

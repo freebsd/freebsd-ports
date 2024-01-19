@@ -1,6 +1,7 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -10,6 +11,8 @@ WWW=		https://rizin.re
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+NOT_FOR_ARCHS=	armv6 armv7
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 LIB_DEPENDS=	libcapstone.so:devel/capstone \

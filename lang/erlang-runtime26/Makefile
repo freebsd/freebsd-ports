@@ -1,6 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	26.2.1
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime26
 DIST_SUBDIR=	erlang
@@ -10,8 +11,6 @@ COMMENT=	Functional programming language from Ericsson
 WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
-
-BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
 USES=		compiler cpe gmake ncurses perl5
 CPE_VENDOR=	erlang
@@ -27,7 +26,6 @@ CONFIGURE_ARGS=	--enable-dirty-schedulers \
 		--enable-kernel-poll \
 		--enable-smp-support \
 		--enable-threads
-MAKE_ARGS=	all
 
 _ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
@@ -39,7 +37,7 @@ WRKSRC=		${WRKSRC_otp}
 
 OPTIONS_DEFINE=		CHUNKS CORBA DTRACE JAVA KQUEUE ODBC OPENSSL SCTP \
 			SHARING WX
-OPTIONS_DEFAULT=	CORBA DTRACE KQUEUE OPENSSL SCTP SHARING
+OPTIONS_DEFAULT=	CHUNKS CORBA DTRACE KQUEUE OPENSSL SCTP SHARING
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -65,8 +63,6 @@ WX_DESC=	Enable WX application
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-CHUNKS_MAKE_ARGS+=		DOC_TARGETS=chunks \
-				docs
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
@@ -119,6 +115,12 @@ post-configure-ODBC-on:
 
 post-configure-ODBC-off:
 	echo "disabled by port options" > ${WRKSRC}/lib/odbc/SKIP
+
+post-install-CHUNKS-on:
+	cd ${WRKSRC_otp} && \
+		${SETENV} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} release_docs DOC_TARGETS=chunks \
+		RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
 
 post-build-CORBA-on:
 	cd ${WRKSRC_corba} && \

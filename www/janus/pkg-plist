@@ -109,10 +109,6 @@ libexec/janus/transports/libjanus_pfunix.so.2.0.1
 libexec/janus/transports/libjanus_websockets.so
 libexec/janus/transports/libjanus_websockets.so.2
 libexec/janus/transports/libjanus_websockets.so.2.0.1
-man/man1/janus-cfgconv.1.gz
-%%POSTPROCESSING%%man/man1/janus-pp-rec.1.gz
-man/man1/janus.1.gz
-%%POSTPROCESSING%%man/man1/mjr2pcap.1.gz
 share/doc/janus-gateway/README.md
 %%DATADIR%%/demos/admin.html
 %%DATADIR%%/demos/admin.js
@@ -188,5 +184,9 @@ share/doc/janus-gateway/README.md
 %%DATADIR%%/streams/test_gstreamer1.sh
 %%DATADIR%%/streams/test_gstreamer1_multistream.sh
 %%DATADIR%%/streams/test_gstreamer_multistream.sh
+share/man/man1/janus-cfgconv.1.gz
+%%POSTPROCESSING%%share/man/man1/janus-pp-rec.1.gz
+share/man/man1/janus.1.gz
+%%POSTPROCESSING%%share/man/man1/mjr2pcap.1.gz
 @dir %%DATADIR%%/duktape
 @dir %%DATADIR%%/lua

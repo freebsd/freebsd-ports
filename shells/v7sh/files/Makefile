@@ -13,11 +13,7 @@ SRCS=   args.c blok.c builtin.c cmd.c ctype.c error.c expand.c \
 
 CWARNFLAGS?=	-ansi -Wbad-function-cast
 WARNS?=	6
-.if ${OSREL:R} < 13
-NO_WERROR=1
-.else
 MK_WERROR=no
-.endif
 WFORMAT=0
 
 .include <bsd.prog.mk>

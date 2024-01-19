@@ -1,6 +1,6 @@
 PORTNAME=	massadmin
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -20,11 +20,11 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
-PLIST_FILES=	bin/massadmin man/man1/massadmin.1.gz
+PLIST_FILES=	bin/massadmin share/man/man1/massadmin.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,12 +1,13 @@
 bin/cxref
 bin/cxref-cc
+%%CPP%%bin/cxref-cpp
+%%CPP%%bin/cxref-cpp-configure
 bin/cxref-query
-man/man1/cxref-query.1.gz
-man/man1/cxref.1.gz
 %%DATADIR%%/README
 %%DATADIR%%/README.xrgr
 %%DATADIR%%/cflow.el
 %%DATADIR%%/cxref.el
+%%CPP%%%%DATADIR%%/cxref-cpp.defines
 %%DATADIR%%/cxref_includes.pl
 %%DATADIR%%/daVinvi_function.pl
 %%DATADIR%%/daVinvi_include.pl
@@ -17,3 +18,7 @@ man/man1/cxref.1.gz
 %%DATADIR%%/tree.pl
 %%DATADIR%%/xrefgraph.py
 %%DATADIR%%/xrgr.pl
+%%CPP%%share/man/man1/cxref-cpp-configure.1.gz
+%%CPP%%share/man/man1/cxref-cpp.1.gz
+share/man/man1/cxref-query.1.gz
+share/man/man1/cxref.1.gz

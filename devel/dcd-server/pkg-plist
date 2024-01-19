@@ -13,5 +13,5 @@ include/d/dcd/server/autocomplete/util.d
 include/d/dcd/server/main.d
 include/d/dcd/server/server.d
 lib/d/libdcd.a
-man/man1/dcd-server.1.gz
+share/man/man1/dcd-server.1.gz
 @dir include/d/common

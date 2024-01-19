@@ -1,6 +1,6 @@
 define(`confEBINDIR',`%%PREFIX%%/libexec')
-define(`confMANROOT',`%%PREFIX%%/man/cat')
-define(`confMANROOTMAN',`%%PREFIX%%/man/man')
+define(`confMANROOT',`%%PREFIX%%/share/man/cat')
+define(`confMANROOTMAN',`%%PREFIX%%/share/man/man')
 define(`confMBINDIR',`%%PREFIX%%/sbin')
 define(`confSBINDIR',`%%PREFIX%%/sbin')
 define(`confUBINDIR',`%%PREFIX%%/bin')

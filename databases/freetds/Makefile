@@ -1,6 +1,7 @@
 PORTNAME=	freetds
 PORTVERSION=	1.4.10
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
 		ftp://ftp.freetds.org/pub/freetds/stable/
@@ -13,11 +14,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		autoreconf cpe gettext gmake iconv libtool:keepla localbase:ldflag \
+USES=		cpe gettext gmake iconv libtool:keepla localbase:ldflags \
 		pkgconfig readline tar:bzip2
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-msdblib \
 		--enable-sybase-compat \
 		--sysconfdir=${ETCDIR} \
@@ -67,14 +68,14 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/freetds.conf|/freetds.conf.sample|g ; \
-		 s|/locales.conf|/locales.conf.sample|g ; \
-		 s| common.h||g' \
-		 ${WRKSRC}/Makefile.am
+		s|/locales.conf|/locales.conf.sample|g ; \
+		s| common.h||g' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/pool.conf|/pool.conf.sample|g' \
-		 ${WRKSRC}/src/pool/Makefile.am
+		${WRKSRC}/src/pool/Makefile.in
 	@${REINPLACE_CMD} -e 's|\($$with_iodbc/include\)|\1/libiodbc|g ; \
-		 s| odbcss.h||g' \
-		${WRKSRC}/configure.ac
+		s| odbcss.h||g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${ETCDIR}/interfaces.sample

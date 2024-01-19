@@ -56,13 +56,14 @@ EXAMPLES_CMAKE_BOOL=	WANT_EXAMPLES WANT_DEMOS
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	WANT_PULSEAUDIO
+CMAKE_ARGS=-DMANDIR=${PREFIX}/share/man
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install-DOCS-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${MAN3PREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${PREFIX}/share/man/man3/
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "README.txt docs/src docs/html" ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:

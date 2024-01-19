@@ -12,4 +12,4 @@
 %%CHROOT%%%%EXAMPLESDIR%%/setup_chroot.sh
 %%CHROOT%%%%EXAMPLESDIR%%/config.h
 etc/scponly/debuglevel
-man/man8/scponly.8.gz
+share/man/man8/scponly.8.gz

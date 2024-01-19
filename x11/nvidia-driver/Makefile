@@ -14,7 +14,7 @@
 PORTNAME?=	nvidia-driver
 DISTVERSION?=	${NVIDIA_DISTVERSION}
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -189,7 +189,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
 # Pull the right header after FreeBSD src r347984
-.if ${OSVERSION} >= 1300029 && ${NVVERSION} >= 358.009
+.if ${NVVERSION} >= 358.009
 	${REINPLACE_CMD} -e '/^#include/s:lock\.h:mutex.h:' \
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
 .endif
@@ -355,7 +355,7 @@ post-install: .SILENT
 .elif ${NVVERSION} < 465.01901
 	${REINPLACE_CMD} -e '/lib32\/libnvidia-glvkspirv\.so/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 470.074
+.if ${NVVERSION} < 470.074 || ${NVVERSION} >= 545.000
 	${REINPLACE_CMD} -e '/libnvidia-vulkan-producer\.so/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 495.02905
@@ -366,6 +366,10 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/libnvidia-allocator\.so/d ; \
 		/nvidia-drm_gbm\.so/d' ${TMPPLIST}
 .endif
+.if ${NVVERSION} < 545.000
+	${REINPLACE_CMD} -e '/libnvidia-gpucomp\.so/d' ${TMPPLIST}
+.endif
+
 .if ${NVVERSION} < 410.057
 # Rename some libraries and install a libmap file to resolve conflict with
 # Mesa libraries.

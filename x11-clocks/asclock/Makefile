@@ -1,6 +1,6 @@
 PORTNAME=	asclock
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	XCONTRIB/applications
 DISTNAME=	${PORTNAME}
@@ -14,7 +14,8 @@ CONFLICTS_INSTALL=	asclock-xlib
 
 USES=		tar:tgz imake xorg
 USE_XORG=	xpm xext x11
-PLIST_FILES=	bin/asclock man/man1/asclock.1.gz
+MAKE_ARGS+=	MANPATH="${PREFIX}/share/man" 
+PLIST_FILES=	bin/asclock share/man/man1/asclock.1.gz
 
 OPTIONS_DEFINE=
 OPTIONS_SINGLE=	LANG

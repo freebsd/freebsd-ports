@@ -10,7 +10,7 @@ WWW=		https://www.freerainbowtables.com
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=	aarch64 armv6 armv7 mips mips64 riscv64 sparc64
+NOT_FOR_ARCHS=	aarch64 armv6 armv7 mips mips64 riscv64
 NOT_FOR_ARCHS_REASON=	cannot detect endianness
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

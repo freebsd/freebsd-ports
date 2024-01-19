@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230111:
+AUTHOR: bapt@FreeBSD.org
+
+  MAN[1-8LN]PREFIX variable has been removed from the framework, use PREFIX
+  directly.
+
 20230929:
 AUTHOR: sunpoet@FreeBSD.org
 

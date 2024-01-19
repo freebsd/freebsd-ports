@@ -1,7 +1,7 @@
 libexec/tangd
-man/man1/tangd-rotate-keys.1.gz
-man/man1/tang-show-keys.1.gz
-man/man8/tang.8.gz
+share/man/man1/tangd-rotate-keys.1.gz
+share/man/man1/tang-show-keys.1.gz
+share/man/man8/tang.8.gz
 libexec/tangd-keygen
 libexec/tangd-rotate-keys
 bin/tang-show-keys

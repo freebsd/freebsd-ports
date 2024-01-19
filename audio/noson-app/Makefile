@@ -2,7 +2,7 @@ PORTNAME=	noson-app
 DISTVERSION=	5.6.3
 CATEGORIES=	audio net
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and smart SONOS controller
 WWW=		https://janbar.github.io/noson-app/index.html
 

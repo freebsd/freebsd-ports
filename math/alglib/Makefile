@@ -1,5 +1,5 @@
 PORTNAME=	alglib
-DISTVERSION=	4.00.0
+DISTVERSION=	4.01.0
 CATEGORIES=	math science
 MASTER_SITES=	https://www.alglib.net/translator/re/
 EXTRACT_SUFX=	.cpp.gpl.zip

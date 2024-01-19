@@ -1,5 +1,6 @@
 PORTNAME=	bftpd
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +21,7 @@ CFLAGS+=	-fcommon
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
-		man/man8/bftpd.8.gz
+		share/man/man8/bftpd.8.gz
 PORTDOCS=	en pl sk
 
 OPTIONS_DEFINE=	DOCS
@@ -32,7 +33,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/bftpd.conf ${STAGEDIR}${PREFIX}/etc/bftpd.conf.sample
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 

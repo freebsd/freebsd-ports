@@ -1,6 +1,6 @@
 PORTNAME=	bandwhich
 DISTVERSION=	0.20.0
-PORTREVISION=	30
+PORTREVISION=	32
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -262,10 +262,10 @@ CARGO_CRATES=	adler-0.2.3 \
 		resolv-conf@git+https://github.com/tailhook/resolv-conf?rev=83c0f25ebcb0615550488692c5213ca1ae4acd8f\#83c0f25ebcb0615550488692c5213ca1ae4acd8f
 
 PLIST_FILES=	bin/bandwhich \
-		man/man1/bandwhich.1.gz
+		share/man/man1/bandwhich.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bandwhich
-	${INSTALL_MAN} ${WRKSRC}/docs/bandwhich.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/bandwhich.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

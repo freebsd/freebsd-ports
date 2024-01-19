@@ -1,6 +1,6 @@
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
-PORTREVISION=	21
+PORTREVISION=	22
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/cserv/${PORTNAME}/${PORTVERSION}
@@ -12,9 +12,12 @@ WWW=		https://cserv.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last upstream release was in 2002, reconsider using multimedia/ustreamer or multimedia/ffmpeg
+EXPIRATION_DATE=	2024-02-29
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		autoreconf jpeg libtool
+USES=		autoreconf jpeg libtool pkgconfig
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

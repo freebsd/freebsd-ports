@@ -1,7 +1,7 @@
 PORTNAME=	userneu
 PORTVERSION=	1.38
 DISTVERSIONSUFFIX=	_1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://btw23.de/johannes/userneu/ \
 		http://home.arcor.de/fehlner/fbsd_ports/ \
@@ -31,7 +31,7 @@ EXAMPLES=	list-sample
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} userneu.8 userquick.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} userneu.8 userquick.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}

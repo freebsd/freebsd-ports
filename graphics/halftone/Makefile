@@ -1,5 +1,5 @@
 PORTNAME=	halftone
-DISTVERSION=	0.4.0
+DISTVERSION=	0.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

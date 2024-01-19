@@ -154,7 +154,7 @@ include/mgba/script/macros.h
 include/mgba/script/types.h
 lib/libmgba.so
 lib/libmgba.so.0.10
-lib/libmgba.so.0.10.2
+lib/libmgba.so.0.10.3
 %%LIBRETRO%%lib/libretro/mgba_libretro.so
 %%QT5%%share/applications/io.mgba.mGBA.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES

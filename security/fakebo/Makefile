@@ -1,6 +1,6 @@
 PORTNAME=	fakebo
 PORTVERSION=	0.4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -23,7 +23,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fakebo ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fakebo.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/fakebo.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/fakebo.conf.dist ${STAGEDIR}${PREFIX}/etc/fakebo.conf.sample
 
 do-install-DOCS-on:

@@ -39,7 +39,7 @@ OPTIONS_SUB=		yes
 
 ZIG_DESC=		Include Zig language support
 
-ZIG_BUILD_DEPENDS=	zig>0:lang/zig
+ZIG_BUILD_DEPENDS=	zig010>0:lang/zig010
 
 CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so
 ZIG_CMAKE_OFF=	-DZIG=OFF

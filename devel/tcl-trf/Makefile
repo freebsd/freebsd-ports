@@ -1,6 +1,6 @@
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tcltrf/tcltrf/${PORTVERSION}
 PKGNAMEPREFIX=	tcl-
@@ -33,9 +33,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/Trf
 	${INSTALL_DATA} ${WRKSRC}/libTrf${PORTVERSION}.so \
 		${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/Trf/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/mann/
 	for m in ${WRKSRC}/doc/man/*.n	;	\
 	do	\
-		${INSTALL_MAN} $$m ${STAGEDIR}${MANNPREFIX}/man/mann/ ;\
+		${INSTALL_MAN} $$m ${STAGEDIR}${PREFIX}/share/man/mann/ ;\
 	done
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/Trf/libTrf${PORTVERSION}.so
 

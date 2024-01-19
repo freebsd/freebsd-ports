@@ -1,6 +1,6 @@
 PORTNAME=	gnormalize
 PORTVERSION=	0.63
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -45,7 +45,7 @@ RUN_DEPENDS+=	cdparanoia:audio/cdparanoia
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^PREFIX=.*,PREFIX=${PREFIX},; \
-		s,^MANDIR=.*,MANDIR=${MANPREFIX}/man,; \
+		s,^MANDIR=.*,MANDIR=${PREFIX}/share/man,; \
 		s,^BASE=.*,BASE=${DATADIR},' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/share/gnormalize,${DATADIR},' \

@@ -1,3 +1,3 @@
 CNI plugins for container networking support. This is used by
-container engines such as podman and buildah to setup and teardown
+container engines such as Podman and Buildah to setup and teardown
 network access for containers.

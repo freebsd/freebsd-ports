@@ -1,0 +1,2 @@
+libxsd-frontend is a compiler frontend for the W3C XML Schema definition
+language. It includes parser, semantic graph types and traversal mechanism.

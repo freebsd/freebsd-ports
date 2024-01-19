@@ -1,14 +1,3 @@
-CMake Error at layers/CMakeLists.txt:74 (target_link_libraries):
-  Target "VkLayer_utils" links to:
-
-    Vulkan::LayerSettings
-
-  but the target was not found.  Possible reasons include:
-
-    * There is a typo in the target name.
-    * A find_package call is missing for an IMPORTED target.
-    * An ALIAS target is missing.
-
 CMake Error at layers/CMakeLists.txt:318 (target_link_libraries):
   Target "vvl" links to:
 
@@ -20,15 +9,10 @@ CMake Error at layers/CMakeLists.txt:318 (target_link_libraries):
     * A find_package call is missing for an IMPORTED target.
     * An ALIAS target is missing.
 
---- CMakeLists.txt.orig	2023-10-07 00:41:35 UTC
+--- CMakeLists.txt.orig	2023-12-20 00:20:05 UTC
 +++ CMakeLists.txt
-@@ -72,8 +72,14 @@ find_package(VulkanUtilityLibraries CONFIG QUIET)
- find_package(VulkanHeaders CONFIG QUIET)
- 
+@@ -79,6 +79,9 @@ find_package(SPIRV-Headers CONFIG QUIET)
  find_package(VulkanUtilityLibraries CONFIG QUIET)
-+if (NOT TARGET Vulkan::UtilityHeaders OR NOT TARGET Vulkan::LayerSettings)
-+    add_subdirectory(Vulkan-Utility-Libraries EXCLUDE_FROM_ALL SYSTEM)
-+endif()
  
  find_package(SPIRV-Headers CONFIG QUIET)
 +if (NOT TARGET SPIRV-Headers::SPIRV-Headers)

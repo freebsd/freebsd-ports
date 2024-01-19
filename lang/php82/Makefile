@@ -1,5 +1,5 @@
 PORTNAME=	php82
-DISTVERSION=	8.2.14
+DISTVERSION=	8.2.15
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -22,6 +22,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${MANPREFIX}/share
 CONFIGURE_ARGS+=	--disable-all \
 			--program-prefix="" \
 			--with-config-file-scan-dir=${PREFIX}/etc/php \
@@ -49,10 +50,7 @@ OPTIONS_EXCLUDE_armv7=	DTRACE
 # Bug 197128:  No ASM code for MIPS/MIPS64, disable FPM
 OPTIONS_EXCLUDE_mips=	DTRACE FPM
 OPTIONS_EXCLUDE_mips64=	DTRACE FPM
-OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
 OPTIONS_EXCLUDE_riscv64=	DTRACE
-OPTIONS_EXCLUDE_sparc64=	DTRACE
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=			yes
 
@@ -179,7 +177,7 @@ COMMENT=	The ${PHP_MODNAME} shared extension for php
 USES+=		php:ext,noflavors
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
 PHP_VER=	82
-IGNORE_WITH_PHP=	80 81 83
+IGNORE_WITH_PHP=	81 83
 
 EXTSUBDIR=	${DISTNAME}/ext/${PHP_MODNAME}
 WRKSRC=		${WRKDIR}/${EXTSUBDIR}

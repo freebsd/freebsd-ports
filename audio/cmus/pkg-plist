@@ -41,7 +41,7 @@
 bin/cmus
 bin/cmus-remote
 etc/bash_completion.d/_cmus.bash
-man/man1/cmus-remote.1.gz
-man/man1/cmus.1.gz
-man/man7/cmus-tutorial.7.gz
+share/man/man1/cmus-remote.1.gz
+share/man/man1/cmus.1.gz
+share/man/man7/cmus-tutorial.7.gz
 share/zsh/site-functions/_cmus

@@ -16,6 +16,7 @@ include/marl/sanitizers.h
 include/marl/scheduler.h
 include/marl/task.h
 include/marl/thread.h
+include/marl/thread_local.h
 include/marl/ticket.h
 include/marl/trace.h
 include/marl/tsa.h

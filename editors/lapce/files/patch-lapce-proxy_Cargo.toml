@@ -1,18 +1,13 @@
---- lapce-proxy/Cargo.toml.orig	2023-02-12 19:26:27 UTC
+Do not use vendored openssl
+
+--- lapce-proxy/Cargo.toml.orig	2023-11-01 10:54:40 UTC
 +++ lapce-proxy/Cargo.toml
-@@ -49,7 +49,7 @@ which = "4.2.5"
- which = "4.2.5"
+@@ -48,7 +48,7 @@ libc = "0.2"
+ libc = "0.2"
  
  # git
--git2 = { version = "0.16.1", features = ["vendored-openssl"] }
-+git2 = { version = "0.16.1", features = [] }
+-git2 = { version = "0.18.1", features = ["vendored-openssl"] }
++git2 = { version = "0.18.1" }
  
  # deleting files
- trash = "2.1.5"
-@@ -72,4 +72,4 @@ objc = "0.2"
- [target.'cfg(target_os = "macos")'.dependencies]
- cocoa = "0.24"
- objc = "0.2"
--libc = "0.2"
-\ No newline at end of file
-+libc = "0.2"
+ trash = "3.0.6"

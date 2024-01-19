@@ -1,5 +1,6 @@
 PORTNAME=	git-annex
 PORTVERSION=	10.20230407
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -324,7 +325,7 @@ post-build:
 
 post-install:
 .for man in ${MAN1PAGES}
-	${INSTALL_MAN} ${WRKSRC}/doc/${man}.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/${man}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 post-stage:

@@ -19,7 +19,6 @@ LICENSE_PERMS_LLVM=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN_armv6=		fails to compile: AArch64TargetMachine.cpp: relocation truncated to fit: R_ARM_CALL against symbol '__aeabi_uldivmod'
 BROKEN_armv7=		fails to compile: AArch64TargetMachine.cpp: relocation truncated to fit: R_ARM_CALL against symbol '__aeabi_uldivmod'
 BROKEN_riscv64=		fails to build: CMake Error at cmake/config-ix.cmake:407: Unknown architecture riscv64
-BROKEN_FreeBSD_12_powerpc64=	fails to build: src/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetClient.h:722:26: could not convert '((llvm::orc::remote::OrcRemoteTargetClient<ChannelT>*)this)->callB<llvm::orc::remote::OrcRemoteTargetRPCAPI::ReadMem>(Src, Size)'
 
 LIB_DEPENDS=	libgtest.so:devel/googletest \
 		libz3.so:math/z3

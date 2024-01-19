@@ -13,6 +13,9 @@ WWW=		https://www.phpbb.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
+DEPRECATED=	Last upstream was released in 2008 use chinese/phpbb3
+EXPIRATION_DATE=	2024-02-29
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 CONFLICTS_INSTALL=	phpbb phpbb3 zh-phpbb3-tw # share/doc/phpbb/AUTHORS share/doc/phpbb/CHANGELOG.html

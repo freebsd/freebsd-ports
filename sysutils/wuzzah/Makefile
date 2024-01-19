@@ -1,5 +1,6 @@
 PORTNAME=	wuzzah
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-PLIST_FILES=	bin/wuzzah man/man1/wuzzah.1.gz
+PLIST_FILES=	bin/wuzzah share/man/man1/wuzzah.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' -e 's|^\(SUBDIRS.*\)utmpx|\1|p' \
@@ -22,6 +23,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

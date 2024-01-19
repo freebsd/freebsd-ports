@@ -1,5 +1,6 @@
 PORTNAME=	opencl
 PORTVERSION=	3.0.14
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org

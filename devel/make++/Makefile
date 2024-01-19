@@ -1,5 +1,6 @@
 PORTNAME=	make++
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	SF/${PORTNAME:S/+/p/g}/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
@@ -14,7 +15,7 @@ LICENSE_COMB=	dual
 USES=		perl5 tar:txz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--htmldir=${DOCSDIR}/html
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-04-02 15:19:10.000000000 +0200
-+++ Makefile.in	2013-05-15 11:20:52.000000000 +0200
-@@ -68,25 +68,12 @@
+--- Makefile.in.orig	2020-05-15 23:32:25 UTC
++++ Makefile.in
+@@ -69,24 +69,11 @@ LIBV4L		:= @LIBV4L@
  FOUND_EXPLAIN	:= @FOUND_EXPLAIN@
  
  # build final cflags
@@ -19,11 +19,10 @@
  
  # for gcc3
  #CFLAGS   += -std-gnu99
- 
+-
 -# shared objects need -fPIC
 -%.so : CFLAGS   += -fPIC
 -%.so : CXXFLAGS += -fPIC
--
+ 
  # libraries
  LDLIBS  := @LDLIBS@
- 

@@ -1,10 +1,8 @@
 PORTNAME=	kyua
-PORTVERSION=	0.13
-PORTREVISION=	6
+DISTVERSION=	0.13
+PORTREVISION=	7
 PORTEPOCH=	3
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
-		LOCAL/jmmv
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Testing framework for infrastructure software
@@ -14,7 +12,10 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	liblutok.so:devel/lutok
 
-USES=		lua pkgconfig sqlite
+USES=		autoreconf lua pkgconfig sqlite
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd
+GH_TAGNAME=	84c8ec8
 USE_CXXSTD=	gnu++11
 
 GNU_CONFIGURE=	yes

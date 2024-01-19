@@ -9,6 +9,6 @@ include/spice-server/spice.h
 include/spice-server/spice-audio.h
 include/spice-server/spice-version.h
 include/spice-server/spice-qxl.h
-lib/libspice-server.so.1.14.1
+lib/libspice-server.so.1.14.3
 lib/libspice-server.so
 lib/libspice-server.so.1

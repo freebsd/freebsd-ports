@@ -19,10 +19,6 @@ OPTIONS_DEFAULT=	OPENMP
 
 OPENMP_CONFIGURE_ENABLE=	openmp
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-USE_GCC=	yes
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/data.table/libs/data_table.so
 

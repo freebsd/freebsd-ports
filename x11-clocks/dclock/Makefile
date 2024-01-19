@@ -1,6 +1,6 @@
 PORTNAME=	dclock
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://opencircuitdesign.com/~tim/programs/dclock/archive/
 
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README TODO
 PLIST_FILES=	bin/dclock \
 		lib/X11/app-defaults/DClock \
-		man/man1/${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}.1.gz \
 		%%DATADIR%%/sounds/bell.wav \
 		%%DATADIR%%/sounds/digital.wav
 
@@ -46,7 +46,7 @@ do-build:
 do-install:
 	(cd ${WRKSRC} \
 		&& ${INSTALL_PROGRAM} dclock ${STAGEDIR}${PREFIX}/bin \
-		&& ${INSTALL_MAN} dclock.1 ${STAGEDIR}${MANPREFIX}/man/man1 \
+		&& ${INSTALL_MAN} dclock.1 ${STAGEDIR}${PREFIX}/share/man/man1 \
 		&& ${INSTALL_DATA} Dclock.ad \
 			${STAGEDIR}${PREFIX}/lib/X11/app-defaults/DClock)
 	@${MKDIR} ${STAGEDIR}${DATADIR}/sounds

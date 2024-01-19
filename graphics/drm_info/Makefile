@@ -1,6 +1,7 @@
 PORTNAME=	drm_info
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +25,7 @@ OPTIONS_DEFAULT=MANPAGES PCI
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 PCI_DESC=		Print PCI device names via libpci
 PCI_LIB_DEPENDS=	libpci.so:devel/libpci

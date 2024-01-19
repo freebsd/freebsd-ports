@@ -1,6 +1,6 @@
 PORTNAME=	runj
-DISTVERSION=	g20230316
-PORTREVISION?=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,11 +11,8 @@ LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	samuelkarp
-GH_TAGNAME=	8158e558a
 
-.include "Makefile.deps"
+GO_MODULE=	github.com/samuelkarp/runj
 
 GO_TARGET=	./cmd/runj \
 		./cmd/runj-entrypoint \

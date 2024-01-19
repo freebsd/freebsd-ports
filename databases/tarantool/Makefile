@@ -1,5 +1,5 @@
 PORTNAME=	tarantool
-PORTVERSION=	2.11.2
+PORTVERSION=	3.0.0
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 
@@ -10,13 +10,12 @@ WWW=		https://tarantool.io/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to compile: mmintrin.h:50:12: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different siz
-BROKEN_riscv64=		fails to compile: mmintrin.h:50:12: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different siz
 NOT_FOR_ARCHS=		armv6 i386 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 BUILD_DEPENDS=	gsed:textproc/gsed \
-		msgpuck>=2.0_6:devel/msgpuck
+		msgpuck>=2.0_6:devel/msgpuck \
+		curl>=8.4.0:ftp/curl
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicui18n.so:devel/icu \
 		libmsgpuck.so:devel/msgpuck \
@@ -25,6 +24,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cmake:noninja compiler:c++11-lang cpe gettext-runtime gmake iconv perl5 readline ssl
 USE_PERL5=	build
+
+CONFLICTS_INSTALL=	tarantool2
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CMAKE_ARGS=	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${ETCDIR} \
@@ -52,9 +53,6 @@ TT_RUNDIR?=	/var/run/tarantool
 
 post-patch:
 	@${ECHO_CMD} ${PORTVERSION}-0 > ${WRKSRC}/VERSION
-	@${GREP} -lr 'msgpuck/msgpuck.h' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|msgpuck/msgpuck.h|msgpuck.h|'
-	@${REINPLACE_CMD} -e 's|libmsgpuck.a|libmsgpuck.so|' ${WRKSRC}/cmake/FindMsgPuck.cmake
-	@${REINPLACE_CMD} -e 's|lib/msgpuck.h|msgpuck.h|' ${WRKSRC}/src/lib/core/decimal.c
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/tarantool/

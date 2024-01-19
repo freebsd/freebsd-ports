@@ -24,37 +24,15 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <sys/param.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <sys/ioctl.h>
-#include <sys/resource.h>
-#include <sys/select.h>
-#include <sys/time.h>
-#include <sys/wait.h>
-#include <errno.h>
-#include <err.h>
-#include <kvm.h>
-#include <limits.h>
-#include <paths.h>
-
-/* libgdb stuff. */
-#include <defs.h>
-#include <frame.h>
-#include <frame-unwind.h>
-#include <inferior.h>
-#include <interps.h>
-#include <cli-out.h>
-#include <main.h>
-#include <objfiles.h>
+#include "defs.h"
+#include "interps.h"
+#include "main.h"
+#include "osabi.h"
+#include "run-on-main-thread.h"
 #include "serial.h"
-#include <target.h>
-#include <top.h>
-#include <ui-file.h>
-#include <bfd.h>
-#include <gdbcore.h>
 
-#include <unistd.h>
+#include <err.h>
+#include <paths.h>
 
 #include "kgdb.h"
 
@@ -65,21 +43,6 @@ static char *dumpnr;
 static char *kernel;
 static char *remote;
 static char *vmcore;
-
-/*
- * TODO:
- * - test remote kgdb (see if threads and klds work)
- * - possibly split kthr.c out into a separate thread_stratum target that
- *   uses new_objfile test to push itself when a FreeBSD kernel is loaded
- *   (check for kernel osabi) (probably don't bother with this)
- * + test alternate kgdb_lookup()
- * + fix kgdb build on amd64 to include i386 cross-debug support
- * - propose expanded libkvm interface that supports cross-debug and moves
- *   MD bits of kgdb into the library (examining PCB's and exporting a
- *   stable-ABI struct of registers, similarly for trapframe handling and
- *   stop-pcb stuff
- * + use tid's as lwp IDs instead of PIDs in ptid's
- */
 
 static void
 usage(void)
@@ -406,5 +369,6 @@ main(int argc, char *argv[])
 	/* Terminate argv list. */
 	add_arg(&args, NULL);
 
+	gdb_assert (is_main_thread ());
 	return (gdb_main(&args));
 }

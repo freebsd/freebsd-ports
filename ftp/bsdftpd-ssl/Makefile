@@ -1,6 +1,6 @@
 PORTNAME=	bsdftpd-ssl
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.sourcefiles.org/System/Daemons/FTP/ \
 		LOCAL/sunpoet
@@ -48,15 +48,15 @@ do-build:
 do-install:
 # Client part
 	${INSTALL_PROGRAM} ${WRKSRC}/ftp/ftps ${STAGEDIR}${PREFIX}/bin/ftps
-	${INSTALL_MAN} ${WRKSRC}/ftp/ftps.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/ftps.1.gz
+	${INSTALL_MAN} ${WRKSRC}/ftp/ftps.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/ftps.1.gz
 # Server part
 .if ${PORT_OPTIONS:MSERVER}
 	${INSTALL_PROGRAM} ${WRKSRC}/ftpd/ftpd ${STAGEDIR}${PREFIX}/libexec/ftpd
-	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpchroot.5.gz ${STAGEDIR}${MANPREFIX}/man/man5/ftpchroot.5.gz
-	${INSTALL_MAN} ${WRKSRC}/ftpd/xferlog.5.gz ${STAGEDIR}${MANPREFIX}/man/man5/xferlog.5.gz
-	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpd.8.gz ${STAGEDIR}${MANPREFIX}/man/man8/ftpd.8.gz
-	${LN} -s ftpchroot.5.gz ${STAGEDIR}${MANPREFIX}/man/man5/ftpchroot-ssl.5.gz
-	${LN} -s ftpd.8.gz ${STAGEDIR}${MANPREFIX}/man/man8/ftpd-ssl.8.gz
+	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpchroot.5.gz ${STAGEDIR}${PREFIX}/share/man/man5/ftpchroot.5.gz
+	${INSTALL_MAN} ${WRKSRC}/ftpd/xferlog.5.gz ${STAGEDIR}${PREFIX}/share/man/man5/xferlog.5.gz
+	${INSTALL_MAN} ${WRKSRC}/ftpd/ftpd.8.gz ${STAGEDIR}${PREFIX}/share/man/man8/ftpd.8.gz
+	${LN} -s ftpchroot.5.gz ${STAGEDIR}${PREFIX}/share/man/man5/ftpchroot-ssl.5.gz
+	${LN} -s ftpd.8.gz ${STAGEDIR}${PREFIX}/share/man/man8/ftpd-ssl.8.gz
 .endif
 
 post-install:

@@ -1,5 +1,6 @@
 PORTNAME=	nsysctl
 DISTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -16,7 +17,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_TAGNAME=	5d92b5a19300c56a95db0012c659f64f36fb1bce
 
-PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
+PLIST_FILES=	share/man/man8/${PORTNAME}.8.gz \
 		sbin/${PORTNAME}
 PORTDOCS=	CHANGELOG
 PORTEXAMPLES=	file.conf
@@ -31,7 +32,7 @@ IGNORE=		not supported on anything but FreeBSD
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

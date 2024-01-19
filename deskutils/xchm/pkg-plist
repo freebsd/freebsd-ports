@@ -1,5 +1,4 @@
 bin/xchm
-man/man1/xchm.1.gz
 share/applications/xchm.desktop
 share/icons/hicolor/128x128/apps/xchm.png
 share/icons/hicolor/128x128/apps/xchmdoc.png
@@ -9,6 +8,7 @@ share/icons/hicolor/32x32/apps/xchm.png
 share/icons/hicolor/32x32/apps/xchmdoc.png
 share/icons/hicolor/48x48/apps/xchm.png
 share/icons/hicolor/48x48/apps/xchmdoc.png
+share/man/man1/xchm.1.gz
 share/metainfo/xchm.appdata.xml
 %%NLS%%share/locale/be/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xchm.mo

@@ -1,5 +1,5 @@
 PORTNAME=	liboqs
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org

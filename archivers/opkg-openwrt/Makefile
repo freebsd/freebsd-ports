@@ -1,6 +1,6 @@
 PORTNAME=	opkg
 DISTVERSION=	20180803
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers sysutils
 PKGNAMESUFFIX=	-openwrt
 
@@ -46,7 +46,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/opkg-key ${STAGEDIR}${PREFIX}/bin
 .for file in opkg-cl.1 opkg-key.1
 	${INSTALL_MAN} ${WRKSRC}/man/${file}.in \
-		${STAGEDIR}${MANPREFIX}/man/man1/${file}
+		${STAGEDIR}${PREFIX}/share/man/man1/${file}
 .endfor
 
 .include <bsd.port.post.mk>

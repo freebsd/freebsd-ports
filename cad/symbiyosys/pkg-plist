@@ -1,0 +1,15 @@
+bin/sby
+share/yosys/python3/sby_autotune.py
+share/yosys/python3/sby_cmdline.py
+share/yosys/python3/sby_core.py
+share/yosys/python3/sby_design.py
+share/yosys/python3/sby_engine_abc.py
+share/yosys/python3/sby_engine_aiger.py
+share/yosys/python3/sby_engine_btor.py
+share/yosys/python3/sby_engine_smtbmc.py
+share/yosys/python3/sby_jobserver.py
+share/yosys/python3/sby_mode_bmc.py
+share/yosys/python3/sby_mode_cover.py
+share/yosys/python3/sby_mode_live.py
+share/yosys/python3/sby_mode_prove.py
+share/yosys/python3/sby_sim.py

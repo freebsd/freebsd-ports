@@ -40,6 +40,6 @@ lib/lv2/synthpod.lv2/xpress.png
 lib/synthpod/lv2/manifest.ttl
 lib/synthpod/lv2/synthpod_bundle.so
 lib/synthpod/lv2/synthpod_bundle.ttl
-%%DUMMY%%man/man1/synthpod_dummy.1.gz
-%%JACK%%man/man1/synthpod_jack.1.gz
-%%X11%%man/man1/synthpod_sandbox.1.gz
+%%DUMMY%%share/man/man1/synthpod_dummy.1.gz
+%%JACK%%share/man/man1/synthpod_jack.1.gz
+%%X11%%share/man/man1/synthpod_sandbox.1.gz

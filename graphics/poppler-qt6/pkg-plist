@@ -9,5 +9,5 @@ include/poppler/qt6/poppler-qt6.h
 include/poppler/qt6/poppler-version.h
 lib/libpoppler-qt6.so
 lib/libpoppler-qt6.so.3
-lib/libpoppler-qt6.so.3.2.0
+lib/libpoppler-qt6.so.3.4.0
 libdata/pkgconfig/poppler-qt6.pc

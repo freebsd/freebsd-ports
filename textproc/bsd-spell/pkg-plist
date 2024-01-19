@@ -1,8 +1,8 @@
 libexec/spellprog
 bin/bspell
 bin/deroff
-man/man1/spell.1.gz
-man/man1/deroff.1.gz
+share/man/man1/spell.1.gz
+share/man/man1/deroff.1.gz
 share/dict/american
 share/dict/british
 share/dict/special.4bsd

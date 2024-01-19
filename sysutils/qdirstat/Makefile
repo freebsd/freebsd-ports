@@ -1,5 +1,5 @@
 PORTNAME=	qdirstat
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org

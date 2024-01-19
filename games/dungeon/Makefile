@@ -1,6 +1,6 @@
 PORTNAME=	dungeon
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/:source \
 		ftp://ftp.ifarchive.com/if-archive/games/source/:source \
@@ -24,7 +24,7 @@ USES=		ncurses
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/dungeon \
-		man/man6/dungeon.6.gz \
+		share/man/man6/dungeon.6.gz \
 		%%DATADIR%%/dundat \
 		%%PORTDOCS%%%%DOCSDIR%%/dungn32b.zip
 PLIST_DIRS=	%%DATADIR%%
@@ -57,7 +57,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/dungeon-gdt/dundat ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/DUNGEON.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6/dungeon.6
+		${STAGEDIR}${PREFIX}/share/man/man6/dungeon.6
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

@@ -1,0 +1,11 @@
+--- test-mktemp.orig	2023-02-08 07:57:20 UTC
++++ test-mktemp
+@@ -53,7 +53,7 @@ MKTEMP='mktemp -p /tmp/ $1'
+ testfun temp.XXXXXX
+ 
+ # FreeBSD way
+-MKTEMP="mktemp -t /tmp"
++MKTEMP="mktemp -t $1"
+ testfun temp.XXXXXX
+ 
+ # Plain mktemp

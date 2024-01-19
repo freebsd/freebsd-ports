@@ -1,7 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.0.8
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -37,6 +36,8 @@ CMAKE_OFF=		BUILD_BINDINGS_PYTHON USE_PYTHON3 # Python binding should be a separ
 CMAKE_TESTING_ON=	ENABLE_UNIT_TESTING
 CMAKE_TESTING_TARGET=	check # check target runs only quick tests (based on https://github.com/cvc5/cvc5/issues/9569#issuecomment-1484943348)
 #CMAKE_TESTING_TARGET=	test # test target also runs longer tests, 2 of which fail, see https://github.com/cvc5/cvc5/issues/9569
+
+PLIST_SUB=		VERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=			COCOALIB EDITLINE JAVA
 OPTIONS_GROUP=			SOLVERS
@@ -88,6 +89,6 @@ LICENSE=		GPLv3
 CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
 
-PORTSCOUT=	limit:^cvc5-[1-9].* # prevent older generation versions like 1.8
+PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
 .include <bsd.port.mk>

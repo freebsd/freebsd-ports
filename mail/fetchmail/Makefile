@@ -105,10 +105,4 @@ post-install-DOCS-on:
 CONFIGURE_ARGS+=	--enable-opie
 .endif
 
-.if ${OPSYS} == FreeBSD && (${ARCH:Mpowerpc*} && ${OSREL:R} < 13)
-# as of 2019-10-02, powerpc's base compiler does not yield a working fetchmail.
-# https://svnweb.freebsd.org/ports?view=revision&revision=513614 -- pkubaj@
-USE_GCC=	yes
-.endif
-
 .include <bsd.port.post.mk>

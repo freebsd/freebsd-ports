@@ -10,6 +10,9 @@ WWW=		http://ptypes.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned upstream, doesn't fetch
+EXPIRATION_DATE=	2024-02-29
+
 SHLIB_VER=	21
 
 PTYPES_CFLAGS=	${CFLAGS}

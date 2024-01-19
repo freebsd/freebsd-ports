@@ -10,7 +10,6 @@ WWW=		https://github.com/REGoth-project/REGoth
 
 LICENSE=	GPLv3
 
-BROKEN_FreeBSD_12_powerpc64=	fails to build: /usr/include/math.h:251:8: error: conflicting declaration of C function 'double pow(double, double)'
 BROKEN_FreeBSD_13_powerpc64=	fails to build: mmintrin.h:33:5: error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 BROKEN_riscv64=			fails to build: mmintrin.h:33:5: error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 

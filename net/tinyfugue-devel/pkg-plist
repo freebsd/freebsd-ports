@@ -57,4 +57,4 @@ lib/%%DISTNAME%%-lib/tf.py
 lib/%%DISTNAME%%-lib/tf4.py
 lib/%%DISTNAME%%-lib/tfutil.py
 lib/%%DISTNAME%%-lib/urlwatch.py
-man/man1/%%DISTNAME%%.1.gz
+share/man/man1/%%DISTNAME%%.1.gz

@@ -1,6 +1,6 @@
 bin/portscout
 @sample etc/portscout.conf.sample
-man/man1/portscout.1.gz
+share/man/man1/portscout.1.gz
 %%DATADIR%%/templates/index.html
 %%DATADIR%%/templates/maintainer.html
 %%DATADIR%%/templates/reminder-no-maintainer.mail

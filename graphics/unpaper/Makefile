@@ -1,6 +1,6 @@
 PORTNAME=	unpaper
 DISTVERSION=	7.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		https://www.flameeyes.eu/files/
@@ -21,6 +21,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 USES=		meson pkgconfig python:build tar:xz
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

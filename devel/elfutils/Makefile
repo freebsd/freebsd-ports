@@ -14,7 +14,6 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
 BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
-BROKEN_sparc64=		sparc patch does not apply cleanly to 0.172
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libcurl.so:ftp/curl
@@ -22,8 +21,11 @@ BUILD_DEPENDS=	gnulib>=0:devel/gnulib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+# Although the following line is synonymous to USES=localbase
+# it breaks the build
 CFLAGS+=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/share/gnulib/lib
+		-I${LOCALBASE}/share/gnulib/lib \
+		-DFREEBSD_HAS_MEMPCPY
 LDFLAGS+=	${LOCALBASE}/lib/libargp.so \
 		${LOCALBASE}/lib/libintl.so
 
@@ -47,12 +49,6 @@ CFLAGS+=	-Wno-null-dereference -Wno-unused-value
 CONFIGURE_ARGS+=	--program-prefix=eu-
 # Disable debuginfod until option support can be added:
 CONFIGURE_ARGS+=	--disable-debuginfod
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300512 # 2021-07-17
-CFLAGS+=	-DFREEBSD_HAS_MEMPCPY
-.endif
 
 pre-configure:
 	@${CP} -a \

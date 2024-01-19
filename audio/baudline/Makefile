@@ -1,8 +1,8 @@
 PORTNAME=	baudline
 PORTVERSION=	1.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
-# We have permission from author Erik Olsen <erik@sigblips.net> for the
+# We did have permission from author Erik Olsen <erik@sigblips.net> for the
 # package cluster to automatically fetch baudline
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
@@ -26,19 +26,15 @@ ONLY_FOR_ARCHS=	i386 amd64
 PORTDOCS=	README_unix.txt
 PLIST_FILES=	bin/baudline
 
-OPTIONS_DEFINE=		MPG123 DOCS
+OPTIONS_DEFINE=		DOCS MPG123
 OPTIONS_DEFAULT=	MPG123
 
 MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		may not be automatically fetched due to licensing\
-		restrictions. You must manually fetch ${DISTFILES} from\
-		http://www.baudline.com/download.html. Once ${DISTFILES}\
-		has been downloaded, move it to ${DISTDIR} and then\
-		restart this build
-.endif
+DEPRECATED=	upstream has gone to subscription model and no longer distributes this version. Try comms/Inspectrum or audio/xanalyser instead
+EXPIRATION_DATE=	2024-02-01
+IGNORE=		upstream has removed distribution
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/baudline

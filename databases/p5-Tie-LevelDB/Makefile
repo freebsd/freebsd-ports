@@ -14,7 +14,6 @@ LICENSE_COMB=	dual
 
 NOT_FOR_ARCHS=		aarch64 riscv64
 NOT_FOR_ARCHS_REASON=	does not build: Please implement AtomicPointer for this platform
-BROKEN_sparc64=	does not build: unrecognized command line options
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 

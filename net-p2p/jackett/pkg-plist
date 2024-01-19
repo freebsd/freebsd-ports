@@ -156,6 +156,7 @@
 %%DATADIR%%/Definitions/crt2fa.yml
 %%DATADIR%%/Definitions/dajiao.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
+%%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/deildu.yml
 %%DATADIR%%/Definitions/demonoid.yml
@@ -203,7 +204,6 @@
 %%DATADIR%%/Definitions/finvip.yml
 %%DATADIR%%/Definitions/fluxzone.yml
 %%DATADIR%%/Definitions/freefarm.yml
-%%DATADIR%%/Definitions/frozenlayer.yml
 %%DATADIR%%/Definitions/fsm.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
@@ -226,6 +226,7 @@
 %%DATADIR%%/Definitions/haidan.yml
 %%DATADIR%%/Definitions/haitang.yml
 %%DATADIR%%/Definitions/happyfappy.yml
+%%DATADIR%%/Definitions/haresclub.yml
 %%DATADIR%%/Definitions/hawke-uno.yml
 %%DATADIR%%/Definitions/hd-club.yml
 %%DATADIR%%/Definitions/hd-unit3d-api.yml
@@ -284,6 +285,7 @@
 %%DATADIR%%/Definitions/keepfriends.yml
 %%DATADIR%%/Definitions/kickasstorrents-to.yml
 %%DATADIR%%/Definitions/kickasstorrents-ws.yml
+%%DATADIR%%/Definitions/kimoji.yml
 %%DATADIR%%/Definitions/kinorun.yml
 %%DATADIR%%/Definitions/kinozal-magnet.yml
 %%DATADIR%%/Definitions/kinozal.yml
@@ -434,6 +436,7 @@
 %%DATADIR%%/Definitions/shanaproject.yml
 %%DATADIR%%/Definitions/shareisland-api.yml
 %%DATADIR%%/Definitions/sharewood.yml
+%%DATADIR%%/Definitions/sharkpt.yml
 %%DATADIR%%/Definitions/showrss.yml
 %%DATADIR%%/Definitions/siambit.yml
 %%DATADIR%%/Definitions/simpleanime.yml
@@ -449,7 +452,6 @@
 %%DATADIR%%/Definitions/speedmasterhd.yml
 %%DATADIR%%/Definitions/speedtorrentreloaded.yml
 %%DATADIR%%/Definitions/spiritofrevolution.yml
-%%DATADIR%%/Definitions/sporthd.yml
 %%DATADIR%%/Definitions/sportscult.yml
 %%DATADIR%%/Definitions/springsunday.yml
 %%DATADIR%%/Definitions/sugoimusic.yml
@@ -463,6 +465,7 @@
 %%DATADIR%%/Definitions/teamos.yml
 %%DATADIR%%/Definitions/tekno3d.yml
 %%DATADIR%%/Definitions/teracod.yml
+%%DATADIR%%/Definitions/thecrazyones.yml
 %%DATADIR%%/Definitions/theempire.yml
 %%DATADIR%%/Definitions/thefallingangels.yml
 %%DATADIR%%/Definitions/thegeeks.yml
@@ -534,7 +537,6 @@
 %%DATADIR%%/Definitions/trezzorcookie.yml
 %%DATADIR%%/Definitions/tribalmixes.yml
 %%DATADIR%%/Definitions/trupornolabs.yml
-%%DATADIR%%/Definitions/turkseed.yml
 %%DATADIR%%/Definitions/turktorrent.yml
 %%DATADIR%%/Definitions/tvchaosuk.yml
 %%DATADIR%%/Definitions/tvroad.yml
@@ -547,7 +549,6 @@
 %%DATADIR%%/Definitions/unionfansub.yml
 %%DATADIR%%/Definitions/uniongang.yml
 %%DATADIR%%/Definitions/universaltorrents.yml
-%%DATADIR%%/Definitions/unleashthecartoons.yml
 %%DATADIR%%/Definitions/unlimitz.yml
 %%DATADIR%%/Definitions/uploadcx.yml
 %%DATADIR%%/Definitions/utopia.yml

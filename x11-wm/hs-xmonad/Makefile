@@ -1,5 +1,6 @@
 PORTNAME=	xmonad
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -24,7 +25,7 @@ CABAL_REVISION=	2
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

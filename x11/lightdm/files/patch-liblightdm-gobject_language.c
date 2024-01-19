@@ -1,8 +1,8 @@
 https://bugs.launchpad.net/lightdm/+bug/790186
 
---- liblightdm-gobject/language.c.orig	2018-08-29 22:30:07 UTC
+--- liblightdm-gobject/language.c.orig	2021-02-15 22:06:28 UTC
 +++ liblightdm-gobject/language.c
-@@ -57,6 +57,12 @@ G_DEFINE_TYPE_WITH_PRIVATE (LightDMLanguage, lightdm_l
+@@ -55,6 +55,12 @@ static GList *languages = NULL;
  static gboolean have_languages = FALSE;
  static GList *languages = NULL;
  
@@ -15,7 +15,7 @@ https://bugs.launchpad.net/lightdm/+bug/790186
  static void
  update_languages (void)
  {
-@@ -83,7 +89,7 @@ update_languages (void)
+@@ -81,7 +87,7 @@ update_languages (void)
                  continue;
  
              /* Ignore the non-interesting languages */
@@ -24,7 +24,7 @@ https://bugs.launchpad.net/lightdm/+bug/790186
                  continue;
  
              LightDMLanguage *language = g_object_new (LIGHTDM_TYPE_LANGUAGE, "code", code, NULL);
-@@ -94,12 +100,6 @@ update_languages (void)
+@@ -92,12 +98,6 @@ update_languages (void)
      have_languages = TRUE;
  }
  
@@ -37,7 +37,7 @@ https://bugs.launchpad.net/lightdm/+bug/790186
  /* Get a valid locale name that can be passed to setlocale(), so we always can use nl_langinfo() to get language and country names. */
  static gchar *
  get_locale_name (const gchar *code)
-@@ -131,7 +131,7 @@ get_locale_name (const gchar *code)
+@@ -129,7 +129,7 @@ get_locale_name (const gchar *code)
      for (gint i = 0; avail_locales[i]; i++)
      {
          const gchar *loc = avail_locales[i];

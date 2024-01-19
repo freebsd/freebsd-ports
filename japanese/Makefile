@@ -129,7 +129,6 @@
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl
-    SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
     SUBDIR += jvim3
@@ -143,6 +142,7 @@
     SUBDIR += kiten
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
+    SUBDIR += kterm
     SUBDIR += latex-jlisting
     SUBDIR += leafrogue
     SUBDIR += less

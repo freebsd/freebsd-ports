@@ -1,9 +1,7 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.4
+DISTVERSION=	1.2.5
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Next-generation AMQP 0.9.1 based message broker
@@ -18,12 +16,12 @@ BUILD_DEPENDS=	crystal:lang/crystal \
 USES=		pkgconfig ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
-GH_TUPLE=	84codes:http-protection:893a191d55e301e0df96d6dd0f7d72c527bddeb8:a/deps/http-protection \
+GH_TUPLE=	\
+		84codes:lz4.cr:6cc0d0096207821222317ee02ea23d5296ad4023:a/deps/lz4.cr \
 		84codes:systemd.cr:v2.0.0:systemd/deps/systemd.cr \
-		cloudamqp:amq-protocol.cr:v1.1.2:proto/deps/amq-protocol.cr \
-		cloudamqp:amqp-client.cr:v1.0.10:client/deps/amqp-client.cr \
+		cloudamqp:amq-protocol.cr:v1.1.11:proto/deps/amq-protocol.cr \
+		cloudamqp:amqp-client.cr:v1.0.12:client/deps/amqp-client.cr \
 		luislavena:radix:v0.4.1:radix/deps/radix \
-		schovi:baked_file_system:v0.10.0:baked/deps/baked_file_system \
 		tbrand:router.cr:v0.2.8:router/deps/router.cr
 
 USE_RC_SUBR=	lavinmq
@@ -40,7 +38,7 @@ SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
+.if ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
 BROKEN=	fails to compile: undefined symbol: EVP_MD_size
 .endif
 
@@ -77,14 +75,14 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}/var/db/lavinmq \
 		${STAGEDIR}/var/log/lavinmq \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/extras/config.ini \
 		${STAGEDIR}${ETCDIR}/config.ini.sample
 .for f in lavinmq lavinmqctl lavinmqperf
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/man1/${f}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 do-install-DOCS-on:

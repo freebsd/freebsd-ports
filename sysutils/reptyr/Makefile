@@ -1,5 +1,6 @@
 PORTNAME=	reptyr
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	reptyr-
 CATEGORIES=	sysutils
 
@@ -13,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nelhage
 
 MAKE_ARGS=	BASHCOMPDIR=${PREFIX}/share/bash-completion/completions \
-		MANDIR=${MANPREFIX}/man
+		MANDIR=${PREFIX}/share/man
 USES=		gmake
 
 ONLY_FOR_ARCHS=	i386 amd64

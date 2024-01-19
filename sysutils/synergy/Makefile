@@ -1,7 +1,7 @@
 PORTNAME=	synergy
 DISTVERSION=	1.14.6.19
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	sysutils
 
@@ -64,7 +64,7 @@ do-install: # https://github.com/symless/synergy-core/issues/6895
 .for f in synergyc synergys
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${f}.man \
-		${STAGEDIR}${MANPREFIX}/share/man/man1/${f}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${f}.1
 .endfor
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/syntool ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/synergy.conf.example-basic ${STAGEDIR}${PREFIX}/etc/synergy.conf.sample # server config

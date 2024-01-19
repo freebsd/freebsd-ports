@@ -1,5 +1,6 @@
 PORTNAME=	portmaster
 PORTVERSION=	3.29
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	se@FreeBSD.org
@@ -16,7 +17,7 @@ OPTIONS_DEFAULT=BASH ZSH
 
 PLIST_FILES=	sbin/portmaster \
 		etc/portmaster.rc.sample \
-		man/man8/portmaster.8.gz
+		share/man/man8/portmaster.8.gz
 
 BASH_PLIST_FILES=	etc/bash_completion.d/portmaster.sh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_portmaster
@@ -37,7 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/files/portmaster.rc.sample \
 	    ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/files/portmaster.8 \
-	    ${STAGEDIR}${MAN8PREFIX}/man/man8
+	    ${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

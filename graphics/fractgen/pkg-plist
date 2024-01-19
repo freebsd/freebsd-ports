@@ -1,5 +1,5 @@
 bin/fractgen
-man/man1/fractgen.1.gz
+share/man/man1/fractgen.1.gz
 share/applications/fractgen.desktop
 share/icons/hicolor/512x512/apps/fractgen.png
 share/mime/packages/fractgen.xml

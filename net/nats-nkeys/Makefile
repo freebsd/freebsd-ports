@@ -1,6 +1,5 @@
 PORTNAME=	nkeys
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
@@ -15,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
-GH_TUPLE=	golang:crypto:v0.14.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys
+GH_TUPLE=	golang:crypto:v0.17.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./nk
 

@@ -4,7 +4,7 @@ DISTVERSION=	0.16.0
 PORTREVISION=	17
 CATEGORIES=	sysutils textproc
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Generate documentation from Terraform modules
 WWW=		https://github.com/terraform-docs/terraform-docs
 

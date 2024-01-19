@@ -38,7 +38,7 @@ pre-configure:
 		 s|$$(MAKEFLAGS)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|"-O3"|""|' ${WRKSRC}/metis/GKlib/GKlibSystem.cmake
-.if ((${ARCH}=="amd64") || (${ARCH}=="aarch64") || (${ARCH}=="sparc64") || (${ARCH}=="ppc64"))
+.if ((${ARCH}=="amd64") || (${ARCH}=="aarch64") || (${ARCH}=="ppc64"))
 	@${REINPLACE_CMD} -e \
 		's|IDXTYPEWIDTH 32|IDXTYPEWIDTH 64|' \
 		${WRKSRC}/metis/include/metis.h

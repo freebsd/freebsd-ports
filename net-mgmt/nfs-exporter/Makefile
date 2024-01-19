@@ -1,6 +1,6 @@
 PORTNAME=	nfs-exporter
 DISTVERSION=	0.4.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CRATESIO
 MASTER_SITE_SUBDIR=	freebsd-${PORTNAME}/${DISTVERSION}
@@ -25,19 +25,13 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 USES=		cargo
 USE_RC_SUBR=	nfs_exporter
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1302000
 SUB_LIST=	USER=nobody
-.else
-SUB_LIST=	USER=root
-.endif
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man8/${PORTNAME}.8.gz
+		share/man/man8/${PORTNAME}.8.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

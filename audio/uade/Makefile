@@ -1,5 +1,6 @@
 PORTNAME=	uade
 PORTVERSION=	3.03
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade3/ \
 		LOCAL/ehaupt
@@ -23,7 +24,7 @@ SHEBANG_FILES=	configure write_audio/generate_amiga_oscilloscope_view
 
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man/man1 \
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man/man1 \
 		--no-debug \
 		--prefix=${PREFIX} \
 		--without-write-audio

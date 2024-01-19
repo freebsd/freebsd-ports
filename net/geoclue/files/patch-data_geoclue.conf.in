@@ -1,0 +1,25 @@
+Remove pantheon-agent-geoclue2, not anymore maintained by upstream (since 2023-05-09)
+
+--- data/geoclue.conf.in.orig	2023-09-03 08:27:30 UTC
++++ data/geoclue.conf.in
+@@ -10,7 +10,7 @@
+ 
+ # Whitelist of desktop IDs (without .desktop part) of all agents we recognise,
+ # separated by a ';'.
+-whitelist=@demo_agent@gnome-shell;io.elementary.desktop.agent-geoclue2;sm.puri.Phosh;lipstick
++whitelist=@demo_agent@gnome-shell;sm.puri.Phosh;lipstick
+ 
+ # Network NMEA source configuration options
+ [network-nmea]
+@@ -138,11 +138,6 @@ system=true
+ users=
+ 
+ [org.gnome.Shell]
+-allowed=true
+-system=true
+-users=
+-
+-[io.elementary.desktop.agent-geoclue2]
+ allowed=true
+ system=true
+ users=

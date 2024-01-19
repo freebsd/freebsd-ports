@@ -1,5 +1,6 @@
 PORTNAME=	i2pd
-DISTVERSION=	2.50.1
+DISTVERSION=	2.50.2
+PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -56,7 +57,7 @@ post-patch: # fix config file
 	@${REINPLACE_CMD} -e 's|/var/lib/${PORTNAME}|${_WRITEDATADIR}|g' ${WRKSRC}/contrib/i2pd.conf
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${WRKDIR}/i2pd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/i2pd.conf.sample
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

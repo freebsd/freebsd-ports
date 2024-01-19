@@ -1,6 +1,6 @@
 PORTNAME=	aspostit
 PORTVERSION=	1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	AFTERSTEP/apps/aspostit
 
@@ -14,7 +14,7 @@ USE_XORG=	xpm xaw xext x11
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/aspostit man/man1/aspostit.1.gz
+PLIST_FILES=	bin/aspostit share/man/man1/aspostit.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -27,6 +27,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aspostit ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/aspostit.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/aspostit.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

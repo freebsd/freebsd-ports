@@ -1,6 +1,6 @@
 PORTNAME=	cpupdate
 DISTVERSION=	g20180513
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -32,7 +32,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kernschmelze
 GH_TAGNAME=	48e42d5
 
-PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
+PLIST_FILES=	sbin/${PORTNAME} share/man/man8/${PORTNAME}.8.gz
 
 # MCE DB r274
 CPM_ACCOUNT=	platomav
@@ -65,7 +65,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.options.mk>
 

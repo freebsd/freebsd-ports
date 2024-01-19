@@ -50,7 +50,7 @@ do-install:
 		${COPYTREE_SHARE} \* ${STAGEDIR}/${PREFIX}/lib/klystrack/key/
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/klystrack.1 \
-		${STAGEDIR}${MANPREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/Default.kt \
 		${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/linux/klystrack.desktop \

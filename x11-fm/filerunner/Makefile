@@ -1,21 +1,21 @@
 PORTNAME=	filerunner
-PORTVERSION=	19.07.08.17
+PORTVERSION=	23.03.07.16
 CATEGORIES=	x11-fm tk
 MASTER_SITES=	SF/${PORTNAME}/release-${PORTVERSION}
 DISTNAME=	fr-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based filemanager with FTP capabilities
 WWW=		https://sourceforge.net/projects/filerunner/
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		tk:run
+USE_LDCONFIG=	yes
+
 NO_BUILD=	yes
 
-USES+=		tk:run
-
-USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/env wish|${WISH}|' ${WRKSRC}/fr

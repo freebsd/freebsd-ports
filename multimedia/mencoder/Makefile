@@ -91,7 +91,7 @@ post-patch: common-post-patch
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/DOCS/man/en/mplayer.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/mencoder.1
+	${INSTALL_MAN} ${WRKSRC}/DOCS/man/en/mplayer.1 ${STAGEDIR}${PREFIX}/share/man/man1/mencoder.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${CHMOD} 755 ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tools

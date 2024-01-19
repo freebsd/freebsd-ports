@@ -1,0 +1,8 @@
+--- requirements.txt.orig	2024-01-06 14:55:53 UTC
++++ requirements.txt
+@@ -1,4 +1,4 @@
+-Cython~=3.0
++Cython>=0
+ numpy>=1.19
+ hmmlearn>=0.3
+ cykhash>=2.0,<3.0 

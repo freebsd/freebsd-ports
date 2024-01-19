@@ -131,4 +131,4 @@ lib/%%CONS_TEST%%/t/t0146.t
 lib/%%CONS_TEST%%/t/t0147.t
 lib/%%CONS_TEST%%/Test/Cmd.pm
 lib/%%CONS_TEST%%/Test/Cmd/Cons.pm
-man/man1/cons-test.1.gz
+share/man/man1/cons-test.1.gz

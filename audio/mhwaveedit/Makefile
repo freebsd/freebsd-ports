@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--without-alsalib \
 		--with-build-time="-"
 
 BROKEN_powerpc64=	fails to compile on powerpc64: convert_inc.c: conflicting types for 'C_FLOAT_PCM32SBEPM'
-BROKEN_sparc64=		fails to compile on sparc64
 
 OPTIONS_DEFINE=		DOUBLE_SAMPLES JACK LADSPA OSS PORTAUDIO \
 			PULSEAUDIO SAMPLERATE SDL SNDFILE NLS

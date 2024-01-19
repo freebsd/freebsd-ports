@@ -14,7 +14,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc=	does not install
-BROKEN_sparc64=	does not install
 
 USES=		gmake localbase sdl
 USE_CSTD=	gnu89

@@ -1,0 +1,4 @@
+lib/compat/libcrypto.so.111
+lib/compat/libssl.so.111
+lib32/compat/libcrypto.so.111
+lib32/compat/libssl.so.111

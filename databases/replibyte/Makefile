@@ -1,7 +1,7 @@
 PORTNAME=	replibyte
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,8 @@ WWW=		https://www.replibyte.com/docs/introduction
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BROKEN_i386=	error: unsupported platform; error[E0308]: mismatched type, see https://github.com/Qovery/Replibyte/issues/255
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	only these architectures are allowed for target_os="freebsd" in wasmer-vm-2.2.1/src/trap/traphandlers.rs
 
 USES=		cargo
 USE_GITHUB=	yes

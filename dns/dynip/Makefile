@@ -1,5 +1,6 @@
 PORTNAME=	dynip
 PORTVERSION=	0.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -21,7 +22,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/rc.d/dynip
 
 	${INSTALL_MAN} ${WRKSRC}/dynip.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/dynip_daily     \

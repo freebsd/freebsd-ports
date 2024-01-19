@@ -1,5 +1,6 @@
 PORTNAME=	jedit
 PORTVERSION=	5.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	SF
@@ -50,6 +51,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${STAGEDIR}${PREFIX}/bin/jedit
 	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/doc/jedit.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-	${INSTALL_MAN} ${WRKDIR}/jedit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/jedit.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	berry
 DISTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -18,7 +19,7 @@ GH_ACCOUNT=	JLErvin
 USE_XORG=	x11 xft xinerama
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man \
 		--prefix=${PREFIX}
 
 PLIST_FILES=	bin/${PORTNAME} \

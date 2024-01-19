@@ -1,0 +1,36 @@
+https://github.com/hyprwm/hyprlang/issues/6
+https://github.com/hyprwm/hyprlang/issues/7
+https://github.com/hyprwm/hyprlang/issues/11
+
+--- CMakeLists.txt.orig	2024-01-02 22:10:42 UTC
++++ CMakeLists.txt
+@@ -2,7 +2,8 @@ set(PREFIX ${CMAKE_INSTALL_PREFIX})
+ 
+ set(HYPRLANG_VERSION "0.2.1")
+ set(PREFIX ${CMAKE_INSTALL_PREFIX})
+-set(INCLUDE ${CMAKE_INSTALL_INCLUDEDIR})
++include(GNUInstallDirs)
++set(INCLUDE ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+ 
+ project(hyprlang
+     VERSION ${HYPRLANG_VERSION}
+@@ -31,16 +32,16 @@ target_link_libraries(hyprlang_test PRIVATE hyprlang)
+ 
+ add_executable(hyprlang_test "tests/parse/main.cpp")
+ target_link_libraries(hyprlang_test PRIVATE hyprlang)
+-add_test(NAME "Parsing" WORKING_DIRECTORY "../tests/" COMMAND hyprlang_test "parse")
++add_test(NAME "Parsing" WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/tests/" COMMAND hyprlang_test "parse")
+ add_dependencies(tests hyprlang_test)
+ 
+ add_executable(hyprlang_fuzz "tests/fuzz/main.cpp")
+ target_link_libraries(hyprlang_fuzz PRIVATE hyprlang)
+-add_test(NAME "Fuzz" WORKING_DIRECTORY "../tests/" COMMAND hyprlang_fuzz "fuzz")
++add_test(NAME "Fuzz" WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/tests/" COMMAND hyprlang_fuzz "fuzz")
+ add_dependencies(tests hyprlang_fuzz)
+ 
+ # Installation
+ install(TARGETS hyprlang
+         PUBLIC_HEADER DESTINATION include
+         LIBRARY DESTINATION lib)
+-install(FILES build/hyprlang.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pkgconfig)
++install(FILES ${CMAKE_BINARY_DIR}/hyprlang.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pkgconfig)

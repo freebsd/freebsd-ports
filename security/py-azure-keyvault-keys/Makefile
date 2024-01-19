@@ -1,5 +1,5 @@
 PORTNAME=	azure-keyvault-keys
-PORTVERSION=	4.8.0
+DISTVERSION=	4.9.0b3
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=1.1<2:www/py-azure-common@${PY
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6.1:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.1:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist concurrent cryptography distutils
 
 NO_ARCH=	yes

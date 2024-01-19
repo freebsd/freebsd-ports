@@ -277,6 +277,9 @@ include/thrift/lib/cpp2/debug_thrift_data_difference/diff.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/pretty_print.h
 include/thrift/lib/cpp2/detail/EventHandlerRuntime.h
 include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
+include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
+include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-pre.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
@@ -564,8 +567,11 @@ include/thrift/lib/cpp2/transport/util/ConnectionManager.h
 include/thrift/lib/cpp2/transport/util/ConnectionThread.h
 include/thrift/lib/cpp2/type/AlignedPtr.h
 include/thrift/lib/cpp2/type/Any.h
+include/thrift/lib/cpp2/type/AnyDebugWriter.h
+include/thrift/lib/cpp2/type/AnyTesting.h
 include/thrift/lib/cpp2/type/AnyValue.h
 include/thrift/lib/cpp2/type/BaseType.h
+include/thrift/lib/cpp2/type/Field.h
 include/thrift/lib/cpp2/type/Id.h
 include/thrift/lib/cpp2/type/Name.h
 include/thrift/lib/cpp2/type/NativeType.h

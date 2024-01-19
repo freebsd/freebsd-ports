@@ -1,6 +1,6 @@
 include/nids.h
 lib/libnids.a
-man/man3/libnids.3.gz
+share/man/man3/libnids.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/API.html
 %%PORTDOCS%%%%DOCSDIR%%/API.txt
 %%PORTDOCS%%%%DOCSDIR%%/LINUX

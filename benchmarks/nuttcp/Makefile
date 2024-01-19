@@ -1,5 +1,6 @@
 PORTNAME=	nuttcp
 PORTVERSION=	8.2.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://nuttcp.net/nuttcp/beta/ http://nuttcp.net/nuttcp/latest/:latest
 DISTFILES=	${PORTNAME}-${PORTVERSION}.c ${NUTTSCPDISTFILE} ${PORTNAME}.8:latest examples.txt:latest LICENSE:latest README:latest
@@ -43,7 +44,7 @@ do-install-NUTTSCP-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 .	for file in LICENSE README examples.txt

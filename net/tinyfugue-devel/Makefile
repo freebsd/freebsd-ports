@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink=no \
 		--exec-prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
-		--mandir=${PREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--datadir=${PREFIX}/lib --with-inclibpfx=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}
 PLIST_SUB=	DISTNAME=tf-development
@@ -44,6 +44,7 @@ post-build:
 	${STRIP_CMD} ${WRKSRC}/src/tf
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${STAGEDIR}${PREFIX}/man/man1/tf-development.1
+	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman \
+		${STAGEDIR}${PREFIX}/share/man/man1/tf-development.1
 
 .include <bsd.port.mk>

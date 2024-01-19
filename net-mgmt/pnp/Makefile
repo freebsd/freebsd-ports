@@ -98,6 +98,6 @@ post-install:
 .for f in ${SAMPLE_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/sample-config/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/npcd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/npcd.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

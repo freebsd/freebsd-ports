@@ -1,5 +1,5 @@
 bin/logsurfer
-man/man1/logsurfer.1.gz
-man/man4/logsurfer.conf.4.gz
+share/man/man1/logsurfer.1.gz
+share/man/man4/logsurfer.conf.4.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

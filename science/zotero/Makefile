@@ -14,7 +14,6 @@ LICENSE=	AGPLv3
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	uses FreeBSD 13.x precompiled binaries
-BROKEN_FreeBSD_12=	uses FreeBSD 13.x precompiled binaries
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \

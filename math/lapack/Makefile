@@ -1,7 +1,7 @@
 PORTNAME?=	lapack
-PORTVERSION=	3.11.0
+PORTVERSION=	3.12.0
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-PORTREVISION=	1
+PORTREVISION=	2
 .else
 PORTREVISION?=	1	# Never remove this line, keep PORTREVISION?=0 in case.
 .endif
@@ -9,7 +9,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://github.com/Reference-LAPACK/lapack/archive/refs/tags/:src	\
 		http://www.netlib.org/lapack/:man	\
 		LOCAL/thierry/lapack-${PORTVERSION}/:man
-DISTFILES=	v${PORTVERSION:R}${EXTRACT_SUFX}:src
+DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}:src
 .if make(makesum) || !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
 DISTFILES+=	manpages.tgz:man
 .endif
@@ -22,7 +22,7 @@ WWW?=		https://www.netlib.org/lapack/
 LICENSE?=	BSD3CLAUSE
 
 USES=		cmake:testing cpe fortran
-WRKSRC=		${WRKDIR}/lapack-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/lapack-${PORTVERSION}
 # The actual math/scilab needs deprecated functions - to be removed later
 CMAKE_ON=	BUILD_SHARED_LIBS BUILD_DEPRECATED
 USE_LDCONFIG=	yes
@@ -73,6 +73,7 @@ PLIST_SUB+=		BLAS="@comment " CBLAS="@comment " LAPACK="@comment " XLAPACK="" LA
 LIB_DEPENDS+=		libblas.so:math/blas
 . if defined(MAINTAINER_MODE)
 USES+=			python:build,test
+BINARY_ALIAS+=		python3=${PYTHON_CMD}
 . endif
 CMAKE_ON+=		USE_OPTIMIZED_BLAS BUILD_TESTING
 CMAKE_ARGS+=		-DBLAS_LIBRARIES="${LOCALBASE}/lib/libblas.so"
@@ -101,10 +102,6 @@ pre-configure:
 		${WRKSRC}/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS}	\
 		${SED} -i ".bak" -e 's|^ifdef|.ifdef|;s|^endif|.endif|'
-.if defined(MAINTAINER_MODE)
-	${REINPLACE_CMD} -e 's|PythonInterp 2.7|PythonInterp ${PYTHON_VER}|'	\
-		${WRKSRC}/CMakeLists.txt
-.endif
 
 post-build:
 .if defined(BLAS_SLAVEPORT)
@@ -130,10 +127,10 @@ post-build:
 
 pre-su-install:
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-	cd ${WRKDIR} && ${FIND} man/man3 -type f | ${GREP} -v Users_julie | \
-	tee ${WRKDIR}/manpages | ${SED} 's|$$|.gz|' >> ${TMPPLIST}
+	cd ${WRKDIR} && ${FIND} man/man3 -type f | ${GREP} -v '/\._' | \
+	tee ${WRKDIR}/manpages | ${SED} 's|^|share/|; s|$$|.gz|' >> ${TMPPLIST}
 	cd ${WRKDIR} && \
-	${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${MAN3PREFIX}/man/man3 < ${WRKDIR}/manpages
+	${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${PREFIX}/share/man/man3 < ${WRKDIR}/manpages
 .endif
 
 post-install:

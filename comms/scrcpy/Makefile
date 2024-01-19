@@ -1,6 +1,7 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
@@ -28,7 +29,7 @@ MESON_ARGS=	-Dportable=false \
 
 PLIST_FILES=	bin/scrcpy \
 		etc/bash_completion.d/scrcpy \
-		man/man1/scrcpy.1.gz \
+		share/man/man1/scrcpy.1.gz \
 		share/applications/scrcpy-console.desktop \
 		share/applications/scrcpy.desktop \
 		share/icons/hicolor/256x256/apps/scrcpy.png \

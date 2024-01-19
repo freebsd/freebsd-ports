@@ -63,7 +63,7 @@ EXCEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0:textproc/py-openpyxl@${P
 			${PYTHON_PKGNAMEPREFIX}tableschema-to-template>=0.0:textproc/py-tableschema-to-template@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlrd>=1.2:textproc/py-xlrd@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlwt>=1.2:textproc/py-xlwt@${PY_FLAVOR}
-GITHUB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygithub>=1.50:devel/py-pygithub@${PY_FLAVOR}
+GITHUB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyGithub>=1.50:devel/py-PyGithub@${PY_FLAVOR}
 GSHEETS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygsheets>=2.0:www/py-pygsheets@${PY_FLAVOR}
 HTML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyquery>=1.4:devel/py-pyquery@${PY_FLAVOR}
 JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ijson>=3.0:devel/py-ijson@${PY_FLAVOR} \

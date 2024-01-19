@@ -1,6 +1,6 @@
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.36.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -28,9 +28,5 @@ USES=		compiler:c++11-lang desktop-file-utils gettext gnome meson \
 USE_GNOME=	cairo gtk30 vte3
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dtests=false
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|'share/man/man1'|'man/man1'|g" \
-		${WRKSRC}/man/meson.build
 
 .include <bsd.port.mk>

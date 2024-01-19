@@ -1,0 +1,9 @@
+apispec plugins for integrating with various web frameworks.
+
+These plugins used to be in apispec.ext but have since been moved to their own
+package.
+
+Included plugins:
+* apispec_webframeworks.bottle
+* apispec_webframeworks.flask
+* apispec_webframeworks.tornado

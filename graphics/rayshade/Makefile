@@ -18,6 +18,9 @@ LICENSE_NAME=	Rayshade license
 LICENSE_FILE=	${WRKSRC}/Doc/Copyright
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+DEPRECATED=	Defunct upstream with last release in 1992
+EXPIRATION_DATE=	2024-02-10
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/librle.a:graphics/urt
 
 HAS_CONFIGURE=	yes

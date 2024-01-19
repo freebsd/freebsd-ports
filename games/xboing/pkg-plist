@@ -82,7 +82,6 @@ lib/X11/xboing/levels/level78.data
 lib/X11/xboing/levels/level79.data
 lib/X11/xboing/levels/level80.data
 lib/X11/xboing/levels/new.data
-man/man1/xboing.1.gz
 %%SOUND%%lib/X11/xboing/sounds/Doh1.au
 %%SOUND%%lib/X11/xboing/sounds/Doh2.au
 %%SOUND%%lib/X11/xboing/sounds/Doh3.au
@@ -130,6 +129,7 @@ man/man1/xboing.1.gz
 %%SOUND%%lib/X11/xboing/sounds/wzzz2.au
 %%SOUND%%lib/X11/xboing/sounds/youagod.au
 lib/X11/xboing/problems.doc
+share/man/man1/xboing.1.gz
 @postexec touch %D/lib/X11/xboing/.xboing.scr
 @rmtry(root,games,664) lib/X11/xboing/.xboing.scr
 @dir(root,games,775) lib/X11/xboing

@@ -51,7 +51,13 @@ RUN_DEPENDS=	gpu-firmware-radeon-kmod-aruba>0:graphics/gpu-firmware-radeon-kmod@
 		gpu-firmware-radeon-kmod-sumo2>0:graphics/gpu-firmware-radeon-kmod@sumo2 \
 		gpu-firmware-radeon-kmod-tahiti>0:graphics/gpu-firmware-radeon-kmod@tahiti \
 		gpu-firmware-radeon-kmod-turks>0:graphics/gpu-firmware-radeon-kmod@turks \
-		gpu-firmware-radeon-kmod-verde>0:graphics/gpu-firmware-radeon-kmod@verde
+		gpu-firmware-radeon-kmod-verde>0:graphics/gpu-firmware-radeon-kmod@verde \
+		gpu-firmware-amd-kmod-cyan-skillfish2>0:graphics/gpu-firmware-amd-kmod@cyan_skillfish2 \
+		gpu-firmware-amd-kmod-dimgrey-cavefish>0:graphics/gpu-firmware-amd-kmod@dimgrey_cavefish \
+		gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
+		gpu-firmware-amd-kmod-navy-flounder>0:graphics/gpu-firmware-amd-kmod@navy_flounder \
+		gpu-firmware-amd-kmod-sienna-cichlid>0:graphics/gpu-firmware-amd-kmod@sienna_cichlid \
+		gpu-firmware-amd-kmod-vangogh>0:graphics/gpu-firmware-amd-kmod@vangogh
 
 .include <bsd.port.pre.mk>
 
@@ -105,14 +111,6 @@ RUN_DEPENDS+=	gpu-firmware-amd-kmod-aldebaran>0:graphics/gpu-firmware-amd-kmod@a
 		gpu-firmware-amd-kmod-vegam>0:graphics/gpu-firmware-amd-kmod@vegam \
 		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde \
 		gpu-firmware-amd-kmod-yellow-carp>0:graphics/gpu-firmware-amd-kmod@yellow_carp
-.if ${OSVERSION} >= 1301000
-RUN_DEPENDS+=		gpu-firmware-amd-kmod-cyan-skillfish2>0:graphics/gpu-firmware-amd-kmod@cyan_skillfish2 \
-		gpu-firmware-amd-kmod-dimgrey-cavefish>0:graphics/gpu-firmware-amd-kmod@dimgrey_cavefish \
-		gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
-		gpu-firmware-amd-kmod-navy-flounder>0:graphics/gpu-firmware-amd-kmod@navy_flounder \
-		gpu-firmware-amd-kmod-sienna-cichlid>0:graphics/gpu-firmware-amd-kmod@sienna_cichlid \
-		gpu-firmware-amd-kmod-vangogh>0:graphics/gpu-firmware-amd-kmod@vangogh
-.endif
 .endif
 
 .include <bsd.port.post.mk>

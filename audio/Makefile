@@ -480,14 +480,12 @@
     SUBDIR += mp3ck
     SUBDIR += mp3gain
     SUBDIR += mp3guessenc
-    SUBDIR += mp3info
     SUBDIR += mp3lint
     SUBDIR += mp3mover
     SUBDIR += mp3plot
     SUBDIR += mp3rename
     SUBDIR += mp3riot
     SUBDIR += mp3splt
-    SUBDIR += mp3splt-gtk
     SUBDIR += mp3stat
     SUBDIR += mp3unicode
     SUBDIR += mp3val
@@ -828,7 +826,6 @@
     SUBDIR += tse3
     SUBDIR += tta
     SUBDIR += tuner
-    SUBDIR += tuneradio
     SUBDIR += twolame
     SUBDIR += uade
     SUBDIR += umix
@@ -883,7 +880,6 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmp
-    SUBDIR += xmradio
     SUBDIR += xoscope
     SUBDIR += xsynth-dssi
     SUBDIR += xuidesigner

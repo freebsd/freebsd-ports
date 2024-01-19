@@ -1,25 +1,26 @@
---- Makefile.orig	2015-12-12 13:51:41 UTC
+--- Makefile.orig	2018-12-15 09:19:02 UTC
 +++ Makefile
-@@ -1,18 +1,23 @@
+@@ -1,18 +1,24 @@
 -CC = cc
 -CFLAGS = -g -O2 -Wall -pedantic
-+CC? = cc
-+CFLAGS? = -g -O2 -Wall -pedantic
++CC ?= cc
++CFLAGS ?= -g -O2 -Wall -pedantic
  # CFLAGS = -O3
  SHAR = shar 
  # SHAR = shar -T
  PERL = perl
  RM = rm -rf
- VERSION = 2.1.4
+ VERSION = 2.1.5
 -MKDIR = mkdir
 -prefix = /usr/local
-+MKDIR? = mkdir
++MKDIR ?= mkdir
 +prefix = $(DESTDIR)$(PREFIX)
 +manprefix = $(DESTDIR)$(MANPREFIX)
  PYTHON2 = python
  PYTHON3 = python
-+BSD_INSTALL_PROGRAM?=	${INSTALL} -s -o root -g wheel -m 555
-+BSD_INSTALL_MAN?=	${INSTALL}    -o root -g wheel -m 444
++BSD_INSTALL_PROGRAM?= ${INSTALL} -s -o root -g wheel -m 555
++BSD_INSTALL_MAN?= ${INSTALL}    -o root -g wheel -m 444
++ICONV_CMD?=	iconv
  
  .PHONY: clean install test tar shar
  
@@ -28,7 +29,7 @@
  nkf : nkf.o utf8tbl.o
  	$(CC) $(CFLAGS) $(LDFLAGS) -o nkf nkf.o utf8tbl.o
  
-@@ -47,17 +52,17 @@ install: install-main install-man instal
+@@ -47,17 +53,20 @@ install-main:
  
  install-main:
  	-$(MKDIR) $(prefix)/bin
@@ -43,13 +44,17 @@
 +	-$(MKDIR) $(manprefix)/man/man1
 +	${BSD_INSTALL_MAN} nkf.1 $(manprefix)/man/man1/
  
- install-man-ja:
+-install-man-ja:
 -	-$(MKDIR) $(prefix)/man/ja
 -	-$(MKDIR) $(prefix)/man/ja/man1
 -	cp -f nkf.1j $(prefix)/man/ja/man1/nkf.1
-+	-$(MKDIR) $(manprefix)/man/ja
-+	-$(MKDIR) $(manprefix)/man/ja/man1
-+	${BSD_INSTALL_MAN} nkf.1j $(manprefix)/man/ja/man1/nkf.1
++nkf.1u: nkf.1j
++	${ICONV_CMD} -f iso-2022-jp -t utf-8 < $? > $@
++
++install-man-ja: nkf.1u
++	-$(MKDIR) $(manprefix)/man/ja.UTF-8
++	-$(MKDIR) $(manprefix)/man/ja.UTF-8/man1
++	${BSD_INSTALL_MAN} nkf.1u $(manprefix)/man/ja.UTF-8/man1/nkf.1
  
  shar:
  	-mkdir nkf-$(VERSION)

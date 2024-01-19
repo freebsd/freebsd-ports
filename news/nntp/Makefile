@@ -1,6 +1,6 @@
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -33,7 +33,7 @@ NEWSOV?=	${VARBASE}/news/over.view
 MAKE_ENV+=	DBLIBS="${LOCALBASE}/lib/libcnews.a -lcrypt -lutil"
 MAKE_ENV+=	ETCDIR="${STAGEDIR}${PREFIX}/sbin"
 MAKE_ENV+=	BINDIR="${STAGEDIR}${NEWSBIN}"
-MAKE_ENV+=	MANDIR="${STAGEDIR}${PREFIX}/man"
+MAKE_ENV+=	MANDIR="${STAGEDIR}${PREFIX}/share/man"
 MAKE_ENV+=	EXECDIR="${STAGEDIR}${PREFIX}/libexec"
 
 OPTIONS_DEFINE=	DOCS
@@ -63,7 +63,7 @@ pre-configure:
 		-e "s=/var/news=${NEWSARTS}=" \
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
 		-e "s=/usr/local/sbin=${PREFIX}/sbin=" \
-		-e "s=/usr/local/man=${PREFIX}/man=" \
+		-e "s=/usr/local/man=${PREFIX}/share/man=" \
 		${WRKSRC}/conf.h
 
 pre-install:

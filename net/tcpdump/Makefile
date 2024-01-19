@@ -1,6 +1,6 @@
 PORTNAME=	tcpdump
 PORTVERSION=	4.99.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -19,9 +19,10 @@ LIB_DEPENDS=	libpcap.so.1:net/libpcap
 USES=		cpe gmake
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	sbin/tcpdump \
-		man/man1/tcpdump.1.gz
+		share/man/man1/tcpdump.1.gz
 
 UNPRIV_USER?=	tcpdump
 CHROOTDIR?=	/var/run/tcpdump
@@ -57,6 +58,6 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${STAGEDIR}/${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}/${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

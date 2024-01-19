@@ -1,6 +1,6 @@
 PORTNAME=	cvsgraph
 DISTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	https://www.vagrearg.org/cvsgraph/release/
 
@@ -35,8 +35,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf ${STAGEDIR}${PREFIX}/etc/cvsgraph.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/cvsgraph.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cvsgraph.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/cvsgraph.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cvsgraph.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	beav
 PORTVERSION=	1.40.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}.orig
@@ -26,7 +26,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beav ${STAGEDIR}${PREFIX}/bin/beav
-	${INSTALL_MAN} ${WRKSRC}/beav.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/beav.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

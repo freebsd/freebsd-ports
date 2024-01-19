@@ -1,6 +1,6 @@
 PORTNAME=	noffle
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28devel%29/${PORTVERSION}
 
@@ -38,9 +38,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/noffle.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/noffle.conf.5 \
-		${STAGEDIR}${MANPREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${WRKSRC}/noffle.conf.example \
 		${STAGEDIR}${PREFIX}/etc/noffle.conf.sample
 	@${MKDIR} ${STAGEDIR}${SPOOL_DIR}/data \

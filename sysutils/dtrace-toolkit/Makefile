@@ -1,6 +1,6 @@
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -96,7 +96,7 @@ do-install:
 
 .for MANPAGE in dtruss hotkernel procsystime opensnoop shellsnoop
 	${RLN} ${STAGEDIR}${DATADIR}/Man/man1m/${MANPAGE}.1m \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${MANPAGE}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${MANPAGE}.1
 .endfor
 	${ECHO_CMD} 'MANPATH ${DATADIR}/Man' > ${STAGEDIR}${PREFIX}/etc/man.d/${PORTNAME}.conf
 

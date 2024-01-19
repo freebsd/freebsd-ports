@@ -4273,9 +4273,9 @@ lib/libitkopenjpeg-%%ITK_VER%%.so
 lib/libitkopenjpeg-%%ITK_VER%%.so.1
 lib/libitksys-%%ITK_VER%%.so
 lib/libitksys-%%ITK_VER%%.so.1
-lib/liblpsolve55.so
-lib/liblpsolve55.so.5
-lib/liblpsolve55.so.5.5.2
+lib/liblpsolve55_itk.so
+lib/liblpsolve55_itk.so.5
+lib/liblpsolve55_itk.so.5.5.2
 lib/rtkelektasynergygeometry.py
 lib/rtkorageometry.py
 lib/rtksimulatedgeometry.py

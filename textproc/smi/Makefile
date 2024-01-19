@@ -1,6 +1,6 @@
 PORTNAME=	smi
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc www
 MASTER_SITES=	https://BSDforge.com/projects/source/textproc/${PORTNAME}/
 
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTDOCS=	README.md
 
-PLIST_FILES=	bin/smi man/man1/smi.1.gz
+PLIST_FILES=	bin/smi share/man/man1/smi.1.gz
 
 USES=		tar:xz uidfix
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 MAKE_ENV=	PROG="${PORTNAME}" FILES="${PORTDOCS}" \
 		BINDIR="${PREFIX}/bin" FILESDIR="${DOCSDIR}" \
-		MANDIR="${MANPREFIX}/man/man"
+		MANDIR="${PREFIX}/share/man/man"
 CFLAGS+=	-DVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS

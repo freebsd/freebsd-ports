@@ -1,6 +1,6 @@
 PORTNAME=	nighthawk
 PORTVERSION=	3.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade
 
@@ -30,7 +30,7 @@ do-install:
 	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} nighthawk \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC}/doc &&  ${INSTALL_MAN} nighthawk.6 \
-		${STAGEDIR}${MANPREFIX}/man/man6)
+		${STAGEDIR}${PREFIX}/share/man/man6)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${TAR} -C ${WRKSRC} --exclude ".xvpics" -cf - data | \
 		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -

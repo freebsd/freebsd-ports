@@ -1,6 +1,6 @@
 PORTNAME=	arp-sk
 PORTVERSION=	0.0.16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://sid.rstack.org/arp-sk/files/
 EXTRACT_SUFX=	.tgz
@@ -13,10 +13,10 @@ LIB_DEPENDS=	libnet.so:net/libnet
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}
 
-PLIST_FILES=	sbin/arp-sk man/man1/arp-sk.1.gz
+PLIST_FILES=	sbin/arp-sk share/man/man1/arp-sk.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/arp-sk ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/arp-sk.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/arp-sk.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -19,5 +19,5 @@ lib/libkiwix.so
 lib/libkiwix.so.%%PORTMAJ%%
 lib/libkiwix.so.%%PORTVERSION%%
 libdata/pkgconfig/kiwix.pc
-man/man1/kiwix-compile-i18n.1.gz
-man/man1/kiwix-compile-resources.1.gz
+share/man/man1/kiwix-compile-i18n.1.gz
+share/man/man1/kiwix-compile-resources.1.gz

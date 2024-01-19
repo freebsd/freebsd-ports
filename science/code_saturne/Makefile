@@ -1,5 +1,6 @@
 PORTNAME=	code_saturne
 PORTVERSION=	8.1.0
+PORTREVISION=	2
 CATEGORIES=	science parallel
 MASTER_SITES=	https://www.code-saturne.org/releases/
 
@@ -23,7 +24,6 @@ LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo	\
 		libmedC.so:french/med
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}	\
 		${MPI4PY}	\
-		pbs-config:sysutils/torque	\
 		xmgrace:math/grace	\
 		bash:shells/bash	\
 		xterm:x11/xterm

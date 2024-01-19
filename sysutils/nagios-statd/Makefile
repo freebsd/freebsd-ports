@@ -1,6 +1,6 @@
 PORTNAME=	nagios-statd
 PORTVERSION=	3.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python net-mgmt
 MASTER_SITES=	http://www.twoevils.org/files/netsaint_statd/
 
@@ -21,8 +21,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/nagios-stat ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/sbin/nagios-statd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/share/man1/nagios-stat.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/share/man8/nagios-statd.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	o3read
 PORTVERSION=	0.0.4
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://siag.nu/pub/o3read/ \
 		GENTOO
@@ -20,7 +21,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/o3totxt ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/o3tohtml ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/utf8tolatin1 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

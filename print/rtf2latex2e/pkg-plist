@@ -1,5 +1,5 @@
 bin/rtf2latex2e
-man/man1/rtf2latex2e.1.gz
+share/man/man1/rtf2latex2e.1.gz
 %%DATADIR%%/latex-encoding.latin1
 %%DATADIR%%/rtf-encoding.cp1250
 %%DATADIR%%/latex-encoding

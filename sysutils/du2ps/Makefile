@@ -1,5 +1,6 @@
 PORTNAME=	du2ps
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://line.to/mac/soft/du2ps/
 
@@ -16,7 +17,7 @@ USES=		tar:tgz
 ALL_TARGET=	# empty
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-PLIST_FILES=	bin/du2ps man/ja/man1/du2ps.1.gz man/man1/du2ps.1.gz
+PLIST_FILES=	bin/du2ps share/man/ja/man1/du2ps.1.gz share/man/man1/du2ps.1.gz
 PORTDOCS=	README.ver1 README.ver2 README.xdu du2ps.pdf du2psj.pdf
 
 OPTIONS_DEFINE=	DOCS
@@ -26,9 +27,10 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/du2ps.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/du2ps.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1/
 	${INSTALL_MAN} ${WRKSRC}/du2ps.1.ja \
-		${STAGEDIR}${MANPREFIX}/man/ja/man1/du2ps.1
+		${STAGEDIR}${PREFIX}/share/man/ja/man1/du2ps.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

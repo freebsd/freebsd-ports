@@ -16,7 +16,7 @@ WWW=		https://www.distributed.net/
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/:S/powerpc64/powerpc/}-elf
 DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH:S/powerpc64/powerpc/}
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 
 USE_RC_SUBR=	dnetc
 NO_BUILD=	yes
@@ -40,12 +40,6 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd9-${ARCH:S/i386/x86/}
 VERSION=	2.9112.521
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd10-${ARCH}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd10-${ARCH}
-
-.elif ${ARCH} == sparc64
-VERSION=	2.9109.518
-REVISION=	1
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
 
 .elif ${ARCH} == powerpc || ${ARCH} == powerpc64
 VERSION=	2.9109.518

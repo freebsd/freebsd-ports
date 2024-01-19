@@ -1,6 +1,6 @@
---- ref_gl/gl_model.c.orig	Sun Jan  1 15:07:39 2006
-+++ ref_gl/gl_model.c	Thu Mar 22 00:33:43 2007
-@@ -227,7 +227,7 @@
+--- ref_gl/gl_model.c.orig	2006-01-01 18:07:39 UTC
++++ ref_gl/gl_model.c
+@@ -227,7 +227,7 @@ static void R_GetTexSize (char *name, mtexinfo_t *out)
  	}
  
  
@@ -9,7 +9,7 @@
  	if (rs && rs->picsize.enable)
  	{
  		if (r_numTexSizes < MAX_IMAGES)
-@@ -459,7 +459,7 @@
+@@ -459,7 +459,7 @@ model_t *Mod_ForName (const char *name, qboolean crash
  				while (img != NULL) {
  					strcpy(rs,mod->skins[i]->name);
  					rs[strlen(rs)-4]=0;
@@ -18,7 +18,7 @@
  					if (mod->script[i])
  						RS_ReadyScript((rscript_t *)mod->script[i]);
  					i++;
-@@ -1374,7 +1374,7 @@
+@@ -1374,7 +1374,7 @@ void Mod_LoadAliasModel (model_t *mod, void *buffer)
  		strcpy(rs,(char *)pheader + pheader->ofs_skins + i*MAX_SKINNAME);
  
  		rs[strlen(rs)-4]=0;
@@ -27,7 +27,7 @@
  		if (mod->script[i])
  			RS_ReadyScript((rscript_t *)mod->script[i]);
  	}
-@@ -1465,7 +1465,7 @@
+@@ -1465,7 +1465,7 @@ void R_BeginRegistration (char *model)
  }
  
  

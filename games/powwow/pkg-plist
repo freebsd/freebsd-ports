@@ -3,6 +3,6 @@ bin/follow
 bin/powwow
 bin/powwow-movieplay
 bin/powwow-muc
-man/man6/powwow.6.gz
+share/man/man6/powwow.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/powwow.doc
 %%PORTDOCS%%%%DOCSDIR%%/powwow.help

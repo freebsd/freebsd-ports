@@ -1,6 +1,6 @@
 PORTNAME=	boxes
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -28,7 +28,7 @@ GLOBALCONF=	${DATADIR}/boxes-config
 
 PLIST_FILES=	${DATADIR_REL}/${PORTNAME}-config \
 		bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 PORTDOCS=	README.md
 
@@ -42,7 +42,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-config ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

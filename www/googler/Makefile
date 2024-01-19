@@ -1,5 +1,6 @@
 PORTNAME=	googler
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -18,7 +19,7 @@ GH_ACCOUNT=	jarun
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/googler man/man1/googler.1.gz
+PLIST_FILES=	bin/googler share/man/man1/googler.1.gz
 
 SHEBANG_FILES=	googler
 
@@ -28,7 +29,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}/${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}/${PREFIX}/share/man/man1/
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest tests

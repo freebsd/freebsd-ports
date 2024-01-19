@@ -1,6 +1,5 @@
-SHA256 (scm-5f2.zip) = 29f182bb5e675d4dcffac897b5e08c59739513fd09e5f1928c2c5419ca921114
-SIZE (scm-5f2.zip) = 954890
-SHA256 (slib-3b5.zip) = f8b64a9820c2ccbdb263a0cb7bcf4caadce0857fdf4e2f52111ca33b4a131760
-SIZE (slib-3b5.zip) = 1105432
+TIMESTAMP = 1704405648
+SHA256 (scm-5f3.tar.gz) = 9f40d420e89e00978abe491d2253d69c9e58c9ae4f8be6128dd091fa7340c0ad
+SIZE (scm-5f3.tar.gz) = 915357
 SHA256 (slib-psd1-3.tar.gz) = 1665fc6cf572e6d8d99e81b4f6b1e65b04a095b69baebd85d0085ad552dc2955
 SIZE (slib-psd1-3.tar.gz) = 62397

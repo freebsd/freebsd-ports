@@ -160,6 +160,7 @@ man/man5/kyuafile.5.gz
 %%TEST%%tests/kyua/utils/process/child_test
 %%TEST%%tests/kyua/utils/process/deadline_killer_test
 %%TEST%%tests/kyua/utils/process/exceptions_test
+%%TEST%%tests/kyua/utils/process/executor_pid_test
 %%TEST%%tests/kyua/utils/process/executor_test
 %%TEST%%tests/kyua/utils/process/fdstream_test
 %%TEST%%tests/kyua/utils/process/helpers

@@ -85,7 +85,7 @@
 %%COMPILERDIR%%/licenses/clicense
 %%COMPILERDIR%%/licenses/credist.txt
 %%COMPILERDIR%%/licenses/lgpltext
-man/man1/icc.1.gz
+share/man/man1/icc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BEA_License_Agreement.txt
 %%PORTDOCS%%%%DOCSDIR%%/C++ReleaseNotes.htm
 %%PORTDOCS%%%%DOCSDIR%%/Disclaimer.txt

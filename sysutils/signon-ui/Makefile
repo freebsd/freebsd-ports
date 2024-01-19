@@ -3,6 +3,7 @@ PORTNAME=	signon-ui
 # > git rev-list 0.17+15.10.20150810-0ubuntu1.. --count
 DISTVERSION=	0.17-355
 DISTVERSIONSUFFIX=	-g4368bb7
+PORTREVISION=	4
 CATEGORIES=	sysutils kde
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -13,9 +14,9 @@ WWW=		https://gitlab.com/accounts-sso/signon-ui
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
+LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
 		libnotify.so:devel/libnotify \
-		libsignon-qt5.so:sysutils/signon-qt5 \
+		libsignon-qt5.so:sysutils/signond@qt5 \
 		libproxy.so:net/libproxy
 
 USES=		compiler:c++11-lang gettext-runtime gl gnome pkgconfig python \

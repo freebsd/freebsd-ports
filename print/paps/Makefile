@@ -1,7 +1,7 @@
 PORTNAME=	paps
 PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GNOME=	cairo pango
 
 SHEBANG_FILES=	${WRKSRC}/scripts/src-to-paps
 
-PLIST_FILES=	bin/paps man/man1/paps.1.gz
+PLIST_FILES=	bin/paps share/man/man1/paps.1.gz
 
 post-install:
 	${ECHO_CMD} "bin/src-to-paps" >> ${TMPPLIST}

@@ -17,7 +17,6 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC \
 	libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++11-lang localbase:ldflags mysql:80 ssl
-IGNORE_WITH_MYSQL=	57 57p 57w
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DWITH_UNIXODBC=1 -DDISABLE_GUI=1

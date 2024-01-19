@@ -1,5 +1,5 @@
 PORTNAME=	librdkafka
-DISTVERSION=	2.2.0
+DISTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_mips=		fails to build: undefined reference to __sync_add_and_fetch_4
 BROKEN_mips64=		fails to build: undefined reference to __sync_add_and_fetch_4
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+	${LOCALBASE}/include/rapidjson/schema.h:devel/rapidjson
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 	liblz4.so:archivers/liblz4 \
 	libzstd.so:archivers/zstd
@@ -25,11 +26,10 @@ GH_ACCOUNT=	edenhill
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_ARGS+=	--disable-sasl --enable-ssl
+CONFIGURE_ARGS+=	--disable-sasl \
+					--enable-ssl \
+					--enable-strip
 
 USE_LDCONFIG=	yes
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
 
 .include <bsd.port.mk>

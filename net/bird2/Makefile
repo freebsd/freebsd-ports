@@ -64,9 +64,6 @@ RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 
 .if ${FLAVOR:U} == netlink
 CONFIGURE_ARGS+=--with-sysconfig=bsd-netlink
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302000
-IGNORE=	No netlink support
-.endif
 .endif
 
 .include <bsd.port.mk>

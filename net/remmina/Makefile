@@ -130,6 +130,7 @@ bash_CMD=		${SH_BIN}
 post-patch:
 	${REINPLACE_CMD} -e 's,FreeBSD,FreeBSD|DragonFly,' \
 		${WRKSRC}/CMakeLists.txt
+	${RM} ${WRKSRC}/cmake/FindFREERDP3.cmake
 
 post-patch-EXEC-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(exec)/d' ${WRKSRC}/plugins/CMakeLists.txt

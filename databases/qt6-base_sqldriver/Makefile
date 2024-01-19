@@ -30,4 +30,8 @@ sqlite_USES=		sqlite:3
 sqlite_CMAKE_ON=	QT_FEATURE_system_sqlite
 ${FLAVOR}_PLIST=	${.CURDIR}/pkg-plist.${FLAVOR}
 
+.if ${FLAVOR:U} == mysql
+IGNORE_WITH_MYSQL=	105m 106m 1011m
+.endif
+
 .include <bsd.port.mk>

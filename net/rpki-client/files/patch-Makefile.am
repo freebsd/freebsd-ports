@@ -1,6 +1,6 @@
---- Makefile.am.orig	2020-07-02 21:03:35 UTC
+--- Makefile.am.orig	2023-12-18 09:15:10 UTC
 +++ Makefile.am
-@@ -23,20 +23,8 @@ EXTRA_DIST = README.md VERSION LICENSE $(tal_DATA)
+@@ -25,20 +25,8 @@ install-data-hook:
  
  install-data-hook:
  	-@if [ ! -d "$(DESTDIR)$(RPKI_BASE_DIR)" ]; then \

@@ -1,5 +1,5 @@
 @(,games,2755) bin/xbomb
-man/man6/xbomb.6.gz
+share/man/man6/xbomb.6.gz
 lib/X11/app-defaults/XBomb
 @sample(,games,664) /var/games/xbomb/xbomb3.hi.sample
 @sample(,games,664) /var/games/xbomb/xbomb4.hi.sample

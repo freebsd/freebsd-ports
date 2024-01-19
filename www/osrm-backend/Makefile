@@ -31,16 +31,12 @@ OPTIONS_DEFINE=	DEBUG
 
 USE_RC_SUBR=	osrm
 
+CXXFLAGS+=	-Wno-range-loop-construct
+
 USERS=		osrm
 GROUPS=		osrm
 
 CMAKE_ON=	BUILD_STATIC_LIBS
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1300084
-CXXFLAGS+=	-Wno-range-loop-construct
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror=all -Werror=extra|-Werror=extra|g' \
@@ -49,4 +45,4 @@ post-patch:
 pre-install:
 	@${MKDIR} ${STAGEDIR}/var/db/osrm-backend
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

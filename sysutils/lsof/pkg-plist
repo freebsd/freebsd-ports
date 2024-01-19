@@ -1,4 +1,4 @@
-man/man8/lsof.8.gz
+share/man/man8/lsof.8.gz
 @group kmem
 @mode 2755
 sbin/lsof

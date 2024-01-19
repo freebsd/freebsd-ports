@@ -1,4 +1,0 @@
-Mercator is a procedural terrain library. It is primarily aimed at terrain for
-multiplayer online games and forms one of the WorldForge core libraries.
-It is intended to be used as a terrain library on both the client, and the
-server.

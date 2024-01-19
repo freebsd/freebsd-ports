@@ -1,17 +1,20 @@
 PORTNAME=	ttcp
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	https://BSDforge.com/projects/source/benchmarks/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 WWW=		https://ftp.arl.army.mil/~mike/ttcp.html
 
 LICENSE=	PD
+
+DEPRECATED=     Abandonware, no release in over 20 years. Consider using benchmarks/iperf3 or benchmarks/nttcp
+EXPIRATION_DATE=2024-02-29
 
 NO_WRKSUBDIR=	yes
 
@@ -27,7 +30,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttcp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

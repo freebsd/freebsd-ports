@@ -1,5 +1,6 @@
 PORTNAME=	spegla
 PORTVERSION=	1.1p5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ftp
 
@@ -13,8 +14,8 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
 LICENSE_BSD2CLAUSE_REGEX="/ \* [Cc]opyright/,/ \*\//!d;s,^ \*,,;s,^/,,"
-MAKE_ARGS=	MANDIR=${MAN1PREFIX}/man/man
-PLIST_FILES=	bin/spegla man/man1/spegla.1.gz
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
+PLIST_FILES=	bin/spegla share/man/man1/spegla.1.gz
 PORTEXAMPLES=	freebsd.org spegla.conf spegla.sh
 
 OPTIONS_DEFINE=	EXAMPLES IPV6

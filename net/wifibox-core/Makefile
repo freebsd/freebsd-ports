@@ -22,7 +22,6 @@ OPTIONS_SINGLE_RECOVERY=	RECOVER_RESTART_VMM \
 				RECOVER_NONE
 
 OPTIONS_DEFAULT=		RECOVER_RESTART_VMM
-OPTIONS_EXCLUDE_FreeBSD_12=	BHYVE_PLUS
 
 RECOVER_RESTART_VMM_DESC=	Restart the vmm(4) kernel module on resume
 RECOVER_SUSPEND_GUEST_DESC=	Stop the guest on suspend, start on resume
@@ -33,7 +32,7 @@ BHYVE_PLUS_DESC=		Use bhyve+ (experimental)
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBHYVE_PLUS} || (${OSVERSION} < 1300000)
+.if ${PORT_OPTIONS:MBHYVE_PLUS}
 RUN_DEPENDS+=	bhyve+>0:sysutils/bhyve+
 _BHYVE_PLUS=	yes
 .endif

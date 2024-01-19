@@ -1,0 +1,2 @@
+TinyExpr is a very small parser and evaluation library for evaluating math
+expressions from C. It's open-source, free, and is extremely easy to use.

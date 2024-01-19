@@ -51,6 +51,7 @@ include/glaze/ext/eigen.hpp
 include/glaze/ext/jsonrpc.hpp
 include/glaze/file/file_ops.hpp
 include/glaze/file/file_watch.hpp
+include/glaze/file/hostname_include.hpp
 include/glaze/glaze.hpp
 include/glaze/glaze_exceptions.hpp
 include/glaze/json.hpp

@@ -6,10 +6,10 @@ bin/setfondname
 bin/showfond
 bin/tobin
 bin/ufond
-man/man1/dfont2res.1.gz
-man/man1/fondu.1.gz
-man/man1/frombin.1.gz
-man/man1/lumper.1.gz
-man/man1/showfond.1.gz
-man/man1/tobin.1.gz
-man/man1/ufond.1.gz
+share/man/man1/dfont2res.1.gz
+share/man/man1/fondu.1.gz
+share/man/man1/frombin.1.gz
+share/man/man1/lumper.1.gz
+share/man/man1/showfond.1.gz
+share/man/man1/tobin.1.gz
+share/man/man1/ufond.1.gz

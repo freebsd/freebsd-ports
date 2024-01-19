@@ -84,6 +84,7 @@ include/fluent-bit/flb_mem.h
 include/fluent-bit/flb_meta.h
 include/fluent-bit/flb_metrics.h
 include/fluent-bit/flb_metrics_exporter.h
+include/fluent-bit/flb_motd.h
 include/fluent-bit/flb_mp.h
 include/fluent-bit/flb_net_dns.h
 include/fluent-bit/flb_network.h

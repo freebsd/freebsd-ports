@@ -1,6 +1,6 @@
 PORTNAME=	powerline-status
 PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -44,7 +44,7 @@ do-build-DOCS-on:
 
 do-install-DOCS-on:
 .for file in powerline.1 powerline-daemon.1 powerline-lint.1 powerline-config.1
-	${INSTALL_DATA} ${WRKSRC}/docs/_build/man/${file} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/docs/_build/man/${file} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 	cd ${WRKSRC}/docs/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '! -name .buildinfo'
 

@@ -56,14 +56,10 @@ FPC_DEFAULT?=		3.2.2
 .  else
 FPC_DEFAULT?=		3.3.1
 .  endif
-# Possible values: 8 (last to support powerpcspe), 9, 10, 11, 12
+# Possible values: 9, 10, 11, 12
 # (Any other version is completely unsupported and not meant for general use.)
-.  if ${ARCH} == "powerpcspe"
-GCC_DEFAULT?=		8
-.  else
 GCC_DEFAULT?=		12
-.  endif
-# Possible values: 9, agpl, 10
+# Possible values: 10
 GHOSTSCRIPT_DEFAULT?=	10
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
@@ -105,7 +101,7 @@ LUAJIT_DEFAULT?=	luajit-devel
 .  endif
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT?=		5.20
-# Possible values: 5.7, 8.0, 8.1, 10.5m, 10.6m, 10.11m, 5.7w
+# Possible values: 8.0, 8.1, 10.5m, 10.6m, 10.11m
 MYSQL_DEFAULT?=		8.0
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
@@ -128,9 +124,9 @@ _PERL5_FROM_BIN!=	${LOCALBASE}/bin/perl -e 'printf "%vd\n", $$^V;'
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .  endif
-# Possible values: 11, 12, 13, 14, 15, 16
+# Possible values: 12, 13, 14, 15, 16
 PGSQL_DEFAULT?=		15
-# Possible values: 8.0, 8.1, 8.2, 8.3
+# Possible values: 8.1, 8.2, 8.3
 PHP_DEFAULT?=		8.2
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
@@ -147,7 +143,7 @@ RUBY_DEFAULT?=		3.1
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
 # Possible values: 4.13, 4.16
-SAMBA_DEFAULT?=		4.13
+SAMBA_DEFAULT?=		4.16
 # Possible values: base, openssl, openssl111, openssl31, openssl32, libressl, libressl-devel
 .  if !defined(SSL_DEFAULT)
 #	If no preference was set, check for an installed base version

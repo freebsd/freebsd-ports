@@ -1,6 +1,6 @@
-pache Log4j 2 is an upgrade to Log4j that provides significant improvements over
-its predecessor, Log4j 1.x, and provides many of the improvements available in
-Logback while fixing some inherent problems in Logback's architecture.
+Apache Log4j 2 is an upgrade to Log4j that provides significant improvements
+over its predecessor, Log4j 1.x, and provides many of the improvements available
+in Logback while fixing some inherent problems in Logback's architecture.
 
 Log4J is an open source library based on the work of many authors.
 It allows the developer to control which log statements are output
@@ -8,3 +8,5 @@ with arbitrary granularity. It is fully configurable at runtime
 using external configuration files. Best of all, Log4J has a gentle
 learning curve. Beware: judging from user feedback, it is also quite
 addictive.
+
+See also <https://github.com/apache/logging-log4j2>.

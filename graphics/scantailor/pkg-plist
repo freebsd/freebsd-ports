@@ -3,5 +3,10 @@ share/applications/scantailor.desktop
 share/icons/hicolor/scalable/apps/ScanTailor.svg
 share/mime/packages/scantailor-project.xml
 share/pixmaps/scantailor.png
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_de.qm
 %%NLS%%%%DATADIR%%-advanced/translations/scantailor_es.qm
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_fr.qm
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_ko.qm
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_pl.qm
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_pt.qm
 %%NLS%%%%DATADIR%%-advanced/translations/scantailor_ru.qm

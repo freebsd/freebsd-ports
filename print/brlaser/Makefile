@@ -1,11 +1,11 @@
 PORTNAME=	brlaser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2
+DISTVERSION=	6.2.6
 CATEGORIES=	print
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Brother laser printer driver
-WWW=		https://github.com/QORTEC/brlaser/
+WWW=		https://github.com/Owl-Maintain/brlaser
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -16,7 +16,7 @@ USES=		cmake:insource,noninja compiler:c++11-lang
 
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	QORTEC
+GH_ACCOUNT=	Owl-Maintain
 GH_PROJECT=	brlaser
 
 PLIST_FILES=	libexec/cups/filter/rastertobrlaser \

@@ -1,6 +1,6 @@
 PORTNAME=	xroach
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://cyber.dabamos.de/pub/distfiles/
 DISTNAME=	${PORTNAME}
@@ -16,11 +16,11 @@ DPADD+=		${LOCALBASE}/lib/libX11.a ${LIBM}
 LDADD+=		-lX11 -lm
 
 BINDIR=		${LOCALBASE}/bin
-MANDIR=		${LOCALBASE}/man/man
+MANDIR=		${LOCALBASE}/share/man/man
 BINOWN=		bin
 BINMODE=	755
 
-PLIST_FILES=	bin/xroach man/man6/xroach.6.gz
+PLIST_FILES=	bin/xroach share/man/man6/xroach.6.gz
 
 .include <bsd.port.options.mk>
 
@@ -30,6 +30,6 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 do-install:
 	${INSTALL_PROGRAM} -s ${WRKSRC}/xroach ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MAN6PREFIX}/man/man6/${PORTNAME}.6
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/share/man/man6/${PORTNAME}.6
 
 .include <bsd.port.mk>

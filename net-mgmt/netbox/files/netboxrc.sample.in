@@ -101,7 +101,6 @@ netbox_upgrade()
 		%%PYTHON_CMD%% manage.py remove_stale_contenttypes --no-input
 		%%PYTHON_CMD%% manage.py reindex --lazy
 		%%PYTHON_CMD%% manage.py clearsessions
-		%%PYTHON_CMD%% manage.py clearcache
 		echo "Please restart NetBox and the WSGI environment."
 	else
 		echo "NetBox is not running!"

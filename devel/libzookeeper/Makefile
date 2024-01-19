@@ -1,11 +1,11 @@
 PORTNAME=	zookeeper
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.3
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	lib
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dmitry.wagin@ya.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C client interface to Zookeeper server
 WWW=		https://zookeeper.apache.org/
 

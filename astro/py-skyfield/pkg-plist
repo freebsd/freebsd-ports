@@ -107,6 +107,8 @@
 %%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/stellarium.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/text_pck.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/text_pck.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/tycho2.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/tycho2.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/data/constellations.gz
 %%PYTHON_SITELIBDIR%%/skyfield/data/constellations.npz
 %%PYTHON_SITELIBDIR%%/skyfield/data/delta_t.npz
@@ -123,6 +125,7 @@
 %%PYTHON_SITELIBDIR%%/skyfield/data/spice.py
 %%PYTHON_SITELIBDIR%%/skyfield/data/stellarium.py
 %%PYTHON_SITELIBDIR%%/skyfield/data/text_pck.py
+%%PYTHON_SITELIBDIR%%/skyfield/data/tycho2.py
 %%PYTHON_SITELIBDIR%%/skyfield/descriptorlib.py
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/accuracy-efficiency.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/almanac.rst
@@ -247,6 +250,8 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_searchlib.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_stars.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_stars.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_stars_tycho2.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_stars_tycho2.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_strs_and_reprs.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_strs_and_reprs.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_text_pck.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -294,6 +299,7 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_satellite_events.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_searchlib.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_stars.py
+%%PYTHON_SITELIBDIR%%/skyfield/tests/test_stars_tycho2.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_strs_and_reprs.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_text_pck.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_timelib.py

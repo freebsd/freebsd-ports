@@ -1,5 +1,5 @@
 bin/fsearch
-man/man1/fsearch.1.gz
+share/man/man1/fsearch.1.gz
 share/applications/io.github.cboxdoerfer.FSearch.desktop
 share/icons/hicolor/scalable/apps/io.github.cboxdoerfer.FSearch.svg
 share/locale/ar/LC_MESSAGES/fsearch.mo

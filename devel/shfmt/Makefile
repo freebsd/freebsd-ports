@@ -1,7 +1,7 @@
 PORTNAME=	shfmt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -19,10 +19,10 @@ GO_TARGET=	./cmd/shfmt
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${DISTVERSIONFULL}"
 
 PLIST_FILES=	bin/shfmt \
-		man/man1/shfmt.1.gz
+		share/man/man1/shfmt.1.gz
 
 post-install:
 	scdoc < ${WRKSRC}/cmd/shfmt/shfmt.1.scd \
-		> ${STAGEDIR}${MAN1PREFIX}/man/man1/shfmt.1
+		> ${STAGEDIR}${PREFIX}/share/man/man1/shfmt.1
 
 .include <bsd.port.mk>

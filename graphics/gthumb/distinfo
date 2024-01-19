@@ -3,3 +3,5 @@ SHA256 (gnome/gthumb-3.12.2.tar.xz) = 97f8afe522535216541ebbf1e3b546d12a6beb38a8
 SIZE (gnome/gthumb-3.12.2.tar.xz) = 7585700
 SHA256 (gnome/2133520496afd179702953a5d07aa99b5209f9cf.patch) = 96c82ad7390d3c39e421f1e0e6b129492f07dc9239d54791ed41713659dd496a
 SIZE (gnome/2133520496afd179702953a5d07aa99b5209f9cf.patch) = 2358
+SHA256 (gnome/306d0eeca5ef.patch) = db219738ed0c6349c9c60fee0df4d05b50304fbea5018aa145f9286840676b64
+SIZE (gnome/306d0eeca5ef.patch) = 2011

@@ -1,5 +1,5 @@
 PORTNAME=	RPostgreSQL
-DISTVERSION=	0.7-5
+DISTVERSION=	0.7-6
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,9 +10,7 @@ WWW=		https://cran.r-project.org/web/packages/RPostgreSQL/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CRAN_DEPENDS=	R-cran-DBI>=0.3:databases/R-cran-DBI
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-DBI>=0.3:databases/R-cran-DBI
 
 USES=		cran:auto-plist,compiles pgsql shebangfix
 

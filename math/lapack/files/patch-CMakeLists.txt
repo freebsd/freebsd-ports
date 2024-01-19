@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2023-11-24 20:41:15 UTC
++++ CMakeLists.txt
+@@ -223,6 +223,7 @@ if(BLAS_LIBRARIES)
+ 
+ # Check the usage of the user provided BLAS libraries
+ if(BLAS_LIBRARIES)
++  enable_language(Fortran)
+   include(CheckFortranFunctionExists)
+   set(CMAKE_REQUIRED_LIBRARIES ${BLAS_LIBRARIES})
+   CHECK_FORTRAN_FUNCTION_EXISTS("dgemm" BLAS_FOUND)

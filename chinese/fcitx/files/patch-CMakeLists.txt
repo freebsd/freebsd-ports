@@ -1,17 +1,16 @@
---- CMakeLists.txt.orig	2015-12-12 08:02:09 UTC
+--- CMakeLists.txt.orig	2020-08-01 01:40:38 UTC
 +++ CMakeLists.txt
-@@ -206,16 +206,21 @@ if (NOT DEFINED SYSCONFDIR)
+@@ -200,16 +200,21 @@ endif()
      set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH "sys config directory [default=PREFIX/etc/]")
  endif()
  
 -set(includedir "${CMAKE_INSTALL_PREFIX}/include")
 -set(libdir ${LIB_INSTALL_DIR})
 -set(pkgconfdir ${LIBDATA_INSTALL_DIR}/pkgconfig)
--set(mandir ${MAN_INSTALL_DIR})
 +set(includedir "${PREFIX}/include")
 +set(libdir ${PREFIX}/lib)
 +set(pkgconfdir ${PREFIX}/libdata/pkgconfig)
-+set(mandir ${MANPREFIX}/man)
+ set(mandir ${MAN_INSTALL_DIR})
  set(addondir ${libdir}/${package} )
 -set(pkgdatadir ${prefix}/share/${package})
 +set(addondestdir "\${PREFIX}/lib/${package}" )
@@ -28,7 +27,7 @@
  
  list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${LIB_INSTALL_DIR}" _isSystemPlatformLibDir)
  list(FIND CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "${LIB_INSTALL_DIR}" _isSystemCxxLibDir)
-@@ -228,9 +233,13 @@ endif("${_isSystemPlatformLibDir}" STREQ
+@@ -222,9 +227,13 @@ set(FCITX4_ADDON_INSTALL_DIR ${addondir})
  
  # For FcitxMacro
  set(FCITX4_ADDON_INSTALL_DIR ${addondir})

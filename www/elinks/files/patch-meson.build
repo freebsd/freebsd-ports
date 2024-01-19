@@ -1,6 +1,6 @@
---- meson.build.orig	2023-05-01 08:45:22 UTC
+--- meson.build.orig	2023-12-25 11:25:27 UTC
 +++ meson.build
-@@ -178,6 +178,10 @@ if compiler.has_header('fcntl.h')
+@@ -211,6 +211,10 @@ endif
      conf_data.set('HAVE_FCNTL_H', 1)
  endif
  
@@ -11,18 +11,17 @@
  if compiler.has_header('libgen.h')
      conf_data.set('HAVE_LIBGEN_H', 1)
  endif
-@@ -344,8 +348,8 @@ gnutlsdeps = []
- ssldeps = []
- 
+@@ -396,7 +400,8 @@ if conf_data.get('CONFIG_OPENSSL')
  if conf_data.get('CONFIG_OPENSSL')
--    ssldeps = dependency('openssl', static: st)
--    deps += ssldeps
-+    deps += compiler.find_library('crypto', dirs: '%%OPENSSLLIB%%')
-+    deps += compiler.find_library('ssl', dirs: '%%OPENSSLLIB%%')
+     ssldeps = dependency('openssl', static: st, required: false)
+     if not ssldeps.found()
+-        ssldeps = compiler.find_library('ssl', static: st, dirs: [get_option('prefix')+'/lib', '/usr/local/lib'])
++        ssldeps = compiler.find_library('crypto', static: st, dirs: [get_option('prefix')+'/lib', '/usr/local/lib'])
++        ssldeps += compiler.find_library('ssl', static: st, dirs: [get_option('prefix')+'/lib', '/usr/local/lib'])
+     endif
+     deps += ssldeps
      conf_data.set('USE_OPENSSL', true)
-     conf_data.set('CONFIG_GNUTLS', false)
- elif conf_data.get('CONFIG_GNUTLS')
-@@ -845,7 +849,7 @@ if compiler.has_function('iconv', prefix: '#include <i
+@@ -959,7 +964,7 @@ endif
      conf_data.set('HAVE_ICONV', 1)
  endif
  
@@ -31,7 +30,7 @@
      conf_data.set('HAVE_ALLOCA', 1)
  endif
  
-@@ -861,7 +865,7 @@ if compiler.has_function('gnutls_certificate_set_x509_
+@@ -975,7 +980,7 @@ endif
      conf_data.set('HAVE_GNUTLS_CERTIFICATE_SET_X509_SYSTEM_TRUST', 1)
  endif
  

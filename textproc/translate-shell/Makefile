@@ -1,7 +1,7 @@
 PORTNAME=	translate-shell
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.7.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -27,7 +27,7 @@ TEST_ENV=	LC_ALL=C.UTF-8
 TEST_TARGET=	test
 NO_ARCH=	yes
 PLIST_FILES=	bin/trans \
-		man/man1/trans.1.gz
+		share/man/man1/trans.1.gz
 
 OPTIONS_DEFINE=	ASPELL FRIBIDI READLINE TEXT2SPEECH
 
@@ -43,6 +43,6 @@ TEXT2SPEECH_RUN_DEPENDS=	espeak-ng:audio/espeak-ng
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/build/trans ${STAGEDIR}${PREFIX}/bin/trans
-	${INSTALL_MAN} ${WRKSRC}/man/trans.1 ${STAGEDIR}${MANPREFIX}/man/man1/trans.1
+	${INSTALL_MAN} ${WRKSRC}/man/trans.1 ${STAGEDIR}${PREFIX}/share/man/man1/trans.1
 
 .include <bsd.port.mk>

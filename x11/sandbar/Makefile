@@ -10,8 +10,6 @@ WWW=		https://github.com/kolunmi/sandbar
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	ld: error: undefined symbol: memfd_create
-
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		tllist>=1.0.1:devel/tllist \
 		wayland-protocols>0:graphics/wayland-protocols

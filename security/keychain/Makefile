@@ -1,5 +1,6 @@
 PORTNAME=	keychain
 PORTVERSION=	2.8.5
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	garga@FreeBSD.org
@@ -19,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/keychain.1.gz
+		share/man/man1/keychain.1.gz
 
 PORTDOCS=	ChangeLog README.md
 
@@ -27,13 +28,9 @@ PORTDOCS=	ChangeLog README.md
 RUN_DEPENDS+=	ssh-agent:security/openssh-portable
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '1 s,^.*,#!/bin/sh,' \
-		${WRKSRC}/${PORTNAME}
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

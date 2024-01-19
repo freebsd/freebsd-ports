@@ -1,11 +1,4 @@
 %%QT_PLUGINDIR%%/platformthemes/KDEPlasmaPlatformTheme6.so
-share/kconf_update/fonts_akregator.pl
-share/kconf_update/fonts_akregator.upd
-share/kconf_update/fonts_global.pl
-share/kconf_update/fonts_global.upd
-share/kconf_update/fonts_global_toolbar.upd
-share/kconf_update/fonts_kate.pl
-share/kconf_update/fonts_kate.upd
 share/locale/ar/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ast/LC_MESSAGES/plasmaintegration5.mo
 share/locale/az/LC_MESSAGES/plasmaintegration5.mo
@@ -29,6 +22,7 @@ share/locale/hi/LC_MESSAGES/plasmaintegration5.mo
 share/locale/hu/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ia/LC_MESSAGES/plasmaintegration5.mo
 share/locale/id/LC_MESSAGES/plasmaintegration5.mo
+share/locale/is/LC_MESSAGES/plasmaintegration5.mo
 share/locale/it/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ja/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ka/LC_MESSAGES/plasmaintegration5.mo

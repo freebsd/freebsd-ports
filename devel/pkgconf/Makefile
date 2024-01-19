@@ -28,7 +28,6 @@ TEST_TARGET=	check
 CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/pkgconfig:${PREFIX}/share/pkgconfig \
 		--with-system-libdir=/usr/lib \
 		--with-system-includedir=/usr/include
-MAKE_ARGS=	MANDIR="${MAN1PREFIX}/man/man1"
 
 OPTIONS_DEFINE=	DOCS
 

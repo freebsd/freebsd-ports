@@ -1,5 +1,5 @@
 bin/gtk-update-icon-cache
-%%MANPAGES%%man/man1/gtk-update-icon-cache.1.gz
+%%MANPAGES%%share/man/man1/gtk-update-icon-cache.1.gz
 share/locale/af/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/am/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/an/LC_MESSAGES/gtk-update-icon-cache.mo

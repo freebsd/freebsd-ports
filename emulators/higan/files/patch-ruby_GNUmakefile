@@ -1,0 +1,11 @@
+--- ruby/GNUmakefile.orig	2023-12-26 07:36:47 UTC
++++ ruby/GNUmakefile
+@@ -65,7 +65,7 @@ ifeq ($(platform),bsd)
+ 
+ ifeq ($(platform),bsd)
+   ruby.options += -lX11 -lXext -lXrandr
+-  ruby.options += $(if $(findstring audio.openal,$(ruby)),-lopenal -fuse-ld=bfd)
++  ruby.options += $(if $(findstring audio.openal,$(ruby)),-lopenal)
+   # -fuse-ld=bfd: see FreeBSD bug 219089
+ endif
+ 

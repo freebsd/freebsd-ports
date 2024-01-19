@@ -1,7 +1,7 @@
 PORTNAME=	fhist
 PORTVERSION=	1.21
 DISTVERSIONSUFFIX=	.D001
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -26,8 +26,8 @@ ALL_TARGET=	all-bin
 MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge \
-		man/man1/fcomp.1.gz man/man1/fhist.1.gz \
-		man/man1/fmerge.1.gz
+		share/man/man1/fcomp.1.gz share/man/man1/fhist.1.gz \
+		share/man/man1/fmerge.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -51,7 +51,7 @@ post-build:
 do-install:
 .for file in fcomp fhist fmerge
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lib/en/man1/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lib/en/man1/${file}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/en/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/lib/en/LC_MESSAGES/${file}.mo \

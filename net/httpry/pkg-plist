@@ -1,5 +1,5 @@
 bin/httpry
-man/man1/httpry.1.gz
+share/man/man1/httpry.1.gz
 %%EXTRASCRIPTS%%bin/httpry-scripts/parse_log.pl
 %%EXTRASCRIPTS%%bin/httpry-scripts/rotate_log.pl
 %%EXTRASCRIPTS%%bin/httpry-scripts/process_logs

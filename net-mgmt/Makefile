@@ -74,7 +74,6 @@
     SUBDIR += flowd
     SUBDIR += flowviewer
     SUBDIR += fprobe
-    SUBDIR += glpi-plugins-fusioninventory-server
     SUBDIR += gnu-ipcalc
     SUBDIR += gping
     SUBDIR += grepcidr
@@ -289,7 +288,6 @@
     SUBDIR += pandorafms_server
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
-    SUBDIR += php80-snmp
     SUBDIR += php81-snmp
     SUBDIR += php82-snmp
     SUBDIR += php83-snmp
@@ -406,10 +404,6 @@
     SUBDIR += xymon-client
     SUBDIR += xymon-server
     SUBDIR += yaf
-    SUBDIR += zabbix4-agent
-    SUBDIR += zabbix4-java
-    SUBDIR += zabbix4-proxy
-    SUBDIR += zabbix4-server
     SUBDIR += zabbix5-agent
     SUBDIR += zabbix5-java
     SUBDIR += zabbix5-proxy

@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-For installation instructions of devel/zanata-platform port, visit
-https://wiki.freebsd.org/Zanata/Install
-EOM
-}
-]

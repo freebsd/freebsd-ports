@@ -1,9 +1,8 @@
 PORTNAME=	tDOM
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	www
 MASTER_SITES=	http://tdom.org/downloads/
-DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
-EXTRACT_SUFX=	-src.tgz
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance processing of XML and HTML data with Tcl
@@ -16,13 +15,13 @@ USES=		tcl:tea
 
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 EXTRACT_AFTER_ARGS=--exclude 'expat*/*.c' --exclude 'expat*/[a-mo-z]*.h' \
-		--exclude 'domalloc*'
+		--exclude 'domalloc*' --exclude win
 
 TEST_TARGET=	test
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-DOCS=		CHANGES README
+DOCS=		CHANGES README.md
 
 OPTIONS_DEFINE=	DOCS HTML5
 OPTIONS_DEFAULT=${OPTIONS_DEFINE} EBASE

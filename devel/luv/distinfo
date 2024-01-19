@@ -1,5 +1,3 @@
-TIMESTAMP = 1688306039
-SHA256 (luvit-luv-1.45.0-0_GH0.tar.gz) = 97e89940f9eeaa8dfb34f1c19f80dd373299c42719d15228ec790f415d4e4965
-SIZE (luvit-luv-1.45.0-0_GH0.tar.gz) = 130334
-SHA256 (keplerproject-lua-compat-5.3-e245d3a_GH0.tar.gz) = a735f9f1def98ba09afb60289b0ae0b89094a9428d2324dfd4e35e2f092bf3ea
-SIZE (keplerproject-lua-compat-5.3-e245d3a_GH0.tar.gz) = 53702
+TIMESTAMP = 1704526500
+SHA256 (luv-1.47.0-0.tar.gz) = 2b5c460fad3b86ea7cfbfaa8bb284506e8f8a354bdd735bde5d664a7b2b1f8bd
+SIZE (luv-1.47.0-0.tar.gz) = 1479479

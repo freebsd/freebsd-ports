@@ -3,7 +3,7 @@ bin/semantik-d
 lib/libsemantik.so
 lib/libsemantik.so.1
 lib/libsemantik.so.%%PORTVERSION%%
-man/man1/semantik.1.gz
+share/man/man1/semantik.1.gz
 share/applications/semantik-d.desktop
 share/applications/semantik.desktop
 share/icons/hicolor/scalable/apps/semantik-d.svg

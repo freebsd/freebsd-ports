@@ -1,6 +1,6 @@
 PORTNAME=	gupnp-tools
 PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -25,6 +25,8 @@ USES=		gettext-tools gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 libxml2
 
 USE_LDCONFIG=	yes
+
+CFLAGS+=	-Wno-error=deprecated-declarations
 
 OPTIONS_DEFINE=	AV_TOOLS
 OPTIONS_DEFAULT=AV_TOOLS

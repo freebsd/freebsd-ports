@@ -1,57 +1,41 @@
 PORTNAME=	vobcopy
-PORTVERSION=	1.2.0
-PORTREVISION=	8
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://vobcopy.org/download/ \
-		LOCAL/ehaupt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
-WWW=		http://vobcopy.org/projects/c/c.shtml
+WWW=		https://github.com/barak/vobcopy
+
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_ARGS=	--with-lfs --with-dvdread-libs=${LOCALBASE}
+USES=		autoreconf localbase iconv
+USE_GITHUB=	yes
+GH_ACCOUNT=	barak
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CFLAGS+=	-DUSE_STATFS_FOR_DEV=1
+MAKE_ARGS=	CCLD="${CC}"
 
-ALL_TARGET=	${PORTNAME}
+PLIST_FILES=	bin/vobcopy \
+		share/man/de/man1/vobcopy.1.gz \
+		share/man/man1/vobcopy.1.gz
 
-PLIST_FILES=	bin/vobcopy man/man1/vobcopy.1.gz
-PORTDOCS=	COPYING Changelog README TODO \
+PORTDOCS=	COPYING ChangeLog Changelog README Release-Notes TODO \
 		alternative_programs.txt
-OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -E -e 's|(fopen\( *"/etc/)mtab|\1fstab|; \
-		s|iso9660|cd9660|' ${WRKSRC}/dvd.c
-	@${REINPLACE_CMD} -E -e 's|declare -i i=0||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-# -CURRENT after 500041 has getopt_long
-# do not use libgnugetopt
-	@${REINPLACE_CMD} -E \
-		-e 's|-lgnugetopt||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-# fix typo
-	@${REINPLACE_CMD} -E \
-		-e 's|FreeBSD_Version|FreeBSD_version|' \
-		${WRKSRC}/dvd.c
-# no such flag under FreeBSD
-# fdatasync(2) -> fsync(2)
-	@${REINPLACE_CMD} -E \
-		-e 's|O_LARGEFILE|0|' \
-		-e 's|fdatasync|fsync|g' \
-		${WRKSRC}/vobcopy.c
+OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_DEFAULT=	NLS
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=   nls
+NLS_LIBS=	-lintl
 
 post-configure:
-	@${REINPLACE_CMD} -E -e 's|^CC.+||; s|^PREFIX.+||; \
-		s|/usr/local/|${LOCALBASE}/|' \
-		${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${STAGEDIR}${PREFIX}/bin/vobcopy
-	${INSTALL_MAN} ${WRKSRC}/vobcopy.1${MAN1_SUFX} \
-		${STAGEDIR}${MANPREFIX}/man/man1/vobcopy.1
+	${REINPLACE_CMD} -e 's|/usr/local/share/|${PREFIX}/share/|' \
+		${WRKSRC}/vobcopy.c
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

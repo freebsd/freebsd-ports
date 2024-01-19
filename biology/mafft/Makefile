@@ -28,14 +28,6 @@ MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 		MKDIR="${MKDIR}" \
 		LN="${LN}"
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${ARCH} == sparc64
-	@${REINPLACE_CMD} -e 's|ENABLE_MULTITHREAD = -Denablemultithread||' \
-		${BUILD_WRKSRC}/Makefile
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

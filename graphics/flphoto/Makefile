@@ -1,6 +1,6 @@
 PORTNAME=	flphoto
 PORTVERSION=	1.3.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fltk/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -29,8 +29,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flphoto ${STAGEDIR}${PREFIX}/bin/flphoto
-	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${STAGEDIR}${MAN1PREFIX}/man/man1/flphoto.1
-	${INSTALL_MAN} ${WRKSRC}/doc/album.man ${STAGEDIR}${MAN5PREFIX}/man/man5/album.5
+	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${STAGEDIR}${PREFIX}/share/man/man1/flphoto.1
+	${INSTALL_MAN} ${WRKSRC}/doc/album.man ${STAGEDIR}${PREFIX}/share/man/man5/album.5
 .for lang in de en_CA en_GB es fr it nl pt
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.po \

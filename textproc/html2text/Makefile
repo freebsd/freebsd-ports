@@ -1,6 +1,6 @@
 PORTNAME=	html2text
 PORTVERSION=	1.3.2a
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SUNSITE/apps/www/converters \
@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 USE_CXXSTD=	gnu++98
 
 PORTDOCS=	CHANGES CREDITS KNOWN_BUGS README TODO
-PLIST_FILES=	bin/html2text man/man1/html2text.1.gz man/man5/html2textrc.5.gz
+PLIST_FILES=	bin/html2text share/man/man1/html2text.1.gz share/man/man5/html2textrc.5.gz
 
 CONFLICTS=	py*-html2text py*-html2text2018 # bin/html2text
 
@@ -37,8 +37,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/html2text ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/html2text.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/html2textrc.5.gz ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/html2text.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/html2textrc.5.gz ${STAGEDIR}${PREFIX}/share/man/man5
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

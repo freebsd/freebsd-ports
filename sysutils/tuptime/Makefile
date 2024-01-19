@@ -1,6 +1,6 @@
 PORTNAME=	tuptime
 DISTVERSION=	5.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
@@ -31,11 +31,11 @@ PLIST_FILES=    bin/tuptime \
 		"@dir(${USERS},${GROUPS},755) /var/lib/tuptime" \
 		"@dir etc/cron.d" \
 		"etc/cron.d/tuptime" \
-		man/man1/tuptime.1.gz
+		share/man/man1/tuptime.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/tuptime ${STAGEDIR}${PREFIX}/bin/tuptime
-	${INSTALL_MAN} ${WRKSRC}/src/man/tuptime.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/man/tuptime.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/lib/tuptime

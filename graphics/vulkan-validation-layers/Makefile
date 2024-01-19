@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.274
+DISTVERSION=	1.3.275
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,15 +11,14 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	robin-hood-hashing>0:devel/robin-hood-hashing \
 		spirv-tools>0:graphics/spirv-tools \
-		vulkan-headers>0:graphics/vulkan-headers
+		vulkan-headers>0:graphics/vulkan-headers \
+		vulkan-utility-libraries>0:graphics/vulkan-utility-libraries
 
 USES=		alias cmake compiler:c++11-lib pkgconfig python:build
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/SPIRV-Headers \
-		KhronosGroup:Vulkan-Utility-Libraries:${DISTVERSIONPREFIX}${DISTVERSION}:utils/Vulkan-Utility-Libraries
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/SPIRV-Headers
 CMAKE_OFF=	BUILD_TESTS
 
 OPTIONS_DEFINE=	WAYLAND XCB XLIB

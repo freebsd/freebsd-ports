@@ -1,6 +1,6 @@
 PORTNAME=	zgv
 PORTVERSION=	5.9
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 
@@ -50,7 +50,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/zgv ${STAGEDIR}${PREFIX}/bin/zgv
-	${INSTALL_MAN} ${WRKSRC}/doc/zgv.1 ${STAGEDIR}${MANPREFIX}/man/man1/zgv.1
+	${INSTALL_MAN} ${WRKSRC}/doc/zgv.1 ${STAGEDIR}${PREFIX}/share/man/man1/zgv.1
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.zgvrc ${STAGEDIR}${PREFIX}/etc/zgvrc.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/zgv ${STAGEDIR}${PREFIX}/${INFO_PATH}/zgvrc.info
 

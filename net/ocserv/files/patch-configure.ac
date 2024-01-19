@@ -1,4 +1,4 @@
---- configure.ac.orig	2023-07-11 12:47:23 UTC
+--- configure.ac.orig	2023-12-14 11:45:13 UTC
 +++ configure.ac
 @@ -16,7 +16,7 @@ AM_PROG_CC_C_O
  AC_PROG_SED
@@ -9,7 +9,7 @@
  fi
  
  AC_PATH_PROG(CTAGS, ctags, [:])
-@@ -223,7 +223,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
+@@ -219,7 +219,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
  fi
  
  have_readline=no

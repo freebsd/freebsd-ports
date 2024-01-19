@@ -1,6 +1,6 @@
 PORTNAME=	rkhunter
 PORTVERSION=	1.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -37,7 +37,7 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ./installer.sh --layout custom ${STAGEDIR}${PREFIX} --install
 	${INSTALL_MAN} ${WRKSRC}/files/${PORTNAME}.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/security
 	${INSTALL_SCRIPT} ${WRKDIR}/415.${PORTNAME} ${STAGEDIR}${PREFIX}/etc/periodic/security
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

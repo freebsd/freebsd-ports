@@ -1,6 +1,6 @@
 PORTNAME=	sysinfo
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danger \
 		http://danger.rulez.sk/projects/sysinfo/
@@ -33,7 +33,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/common.subr ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_BIN} modules ${STAGEDIR}${DATADIR})
-	${INSTALL_MAN} ${WRKSRC}/doc/sysinfo.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/sysinfo.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/sysinfo.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/sysinfo.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

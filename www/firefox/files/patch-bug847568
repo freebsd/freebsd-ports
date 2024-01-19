@@ -1,11 +1,11 @@
 # Allow building against system-wide graphite2/harfbuzz.
 
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index a1b58eb..a0a0943 100644
+index 07d48e7f9748..a35804b443e5 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1289,6 +1289,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
-         'proxy.h',
+@@ -1304,6 +1304,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
+         "proxy.h",
      ]
  
 +if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
@@ -21,14 +21,14 @@ index a1b58eb..a0a0943 100644
 +        'harfbuzz/hb.h',
 +    ]
 +
- if CONFIG['MOZ_SYSTEM_LIBVPX']:
+ if CONFIG["MOZ_SYSTEM_ICU"]:
      system_headers += [
-         'vpx_mem/vpx_mem.h',
+         "unicode/calendar.h",
 diff --git dom/base/moz.build dom/base/moz.build
-index d390adf..4508f19 100644
+index 26fe7e716da8..9015fc360402 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -576,6 +576,9 @@ FINAL_LIBRARY = "xul"
+@@ -608,6 +608,9 @@ FINAL_LIBRARY = "xul"
  if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
      CXXFLAGS += CONFIG["MOZ_GTK3_CFLAGS"]
  
@@ -40,7 +40,7 @@ index d390adf..4508f19 100644
      script="gen-usecounters.py",
 diff --git gfx/graphite2/geckoextra/moz.build gfx/graphite2/geckoextra/moz.build
 new file mode 100644
-index 0000000..24e8d7a
+index 000000000000..24e8d7a03274
 --- /dev/null
 +++ gfx/graphite2/geckoextra/moz.build
 @@ -0,0 +1,21 @@
@@ -66,7 +66,7 @@ index 0000000..24e8d7a
 +
 +FINAL_LIBRARY = 'gkmedias'
 diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
-index b91d9c1..a97e6eb 100755
+index b91d9c161cc7..a97e6eb20322 100755
 --- gfx/graphite2/moz-gr-update.sh
 +++ gfx/graphite2/moz-gr-update.sh
 @@ -1,6 +1,7 @@
@@ -95,8 +95,9 @@ index b91d9c1..a97e6eb 100755
  
  echo
  echo If gfx/graphite2/src/files.mk has changed, please make corresponding
-diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
-index 3180257..4587a3b 100644
+diff --git gfx/harfbuzz/README-mozilla.fbsd gfx/harfbuzz/README-mozilla.fbsd
+new file mode 100644
+index 000000000000..2a10eb1e2b42
 --- /dev/null
 +++ gfx/harfbuzz/README-mozilla.fbsd
 @@ -0,0 +1,4 @@
@@ -105,7 +106,7 @@ index 3180257..4587a3b 100644
 +with checkout version or increment latest tag by one if it's not based
 +on upstream release.
 diff --git gfx/moz.build gfx/moz.build
-index 4d6d63d..cd57b0c 100644
+index 56ea317bedfc..07dd7f66f1bc 100644
 --- gfx/moz.build
 +++ gfx/moz.build
 @@ -10,6 +10,14 @@ with Files("**"):
@@ -133,10 +134,10 @@ index 4d6d63d..cd57b0c 100644
      "thebes",
      "ipc",
 diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
-index 5e0fd17..860b80a 100755
+index c161d24df853..8c7dd395b371 100755
 --- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
-@@ -96,6 +96,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -91,6 +91,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -147,10 +148,10 @@ index 5e0fd17..860b80a 100755
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
 diff --git gfx/skia/moz.build gfx/skia/moz.build
-index 524bd28..615c93b 100755
+index 83aa2957a938..0859316a1f09 100644
 --- gfx/skia/moz.build
 +++ gfx/skia/moz.build
-@@ -488,6 +488,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -601,6 +601,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -161,10 +162,10 @@ index 524bd28..615c93b 100755
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
-index baa6f09..4f02a9e 100644
+index 97f02d59f51a..04c75cc7234d 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -286,7 +286,13 @@ if CONFIG["MOZ_WAYLAND"]:
+@@ -290,7 +290,13 @@ if CONFIG["MOZ_WAYLAND"]:
  
  LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
@@ -177,13 +178,13 @@ index baa6f09..4f02a9e 100644
 +if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
 +    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
  
- if CONFIG["CC_TYPE"] == "clang":
-     # Suppress warnings from Skia header files.
+ CXXFLAGS += ["-Werror=switch"]
+ 
 diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
-index 301eb9a..7cece5e 100644
+index 2bbd00415cae..f66bd37695d4 100644
 --- intl/unicharutil/util/moz.build
 +++ intl/unicharutil/util/moz.build
-@@ -25,6 +25,9 @@ UNIFIED_SOURCES += [
+@@ -24,6 +24,9 @@ UNIFIED_SOURCES += [
      "nsUnicodeProperties.cpp",
  ]
  
@@ -194,7 +195,7 @@ index 301eb9a..7cece5e 100644
  
  GeneratedFile(
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
-index f769e27..315bdd4 100644
+index 784a1631fba9..574e739e22a0 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
 @@ -102,6 +102,9 @@ GeneratedFile(
@@ -208,10 +209,10 @@ index f769e27..315bdd4 100644
  LOCAL_INCLUDES += [
      "/netwerk/base",
 diff --git old-configure.in old-configure.in
-index d147957..d332b34 100644
+index 86424df3f879..09c0bd470172 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -1335,6 +1335,27 @@ fi
+@@ -1141,6 +1141,27 @@ fi
  AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
  AC_SUBST(MOZ_MACBUNDLE_ID)
  
@@ -240,10 +241,10 @@ index d147957..d332b34 100644
  dnl = Child Process Name for IPC
  dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
-index 2c3f869..e8a9d23 100644
+index da1d8c47f83e..e5fa5d5c45a1 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -269,6 +269,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
+@@ -295,6 +295,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
  if CONFIG["MOZ_SYSTEM_WEBP"]:
      OS_LIBS += CONFIG["MOZ_WEBP_LIBS"]
  
@@ -257,10 +258,10 @@ index 2c3f869..e8a9d23 100644
      OS_LIBS += CONFIG["MOZ_LIBEVENT_LIBS"]
  
 diff --git toolkit/moz.configure toolkit/moz.configure
-index 0069865..9bb1864 100644
+index f93a5d64fec8..6cd072f7aaeb 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -1058,6 +1058,25 @@ def geckodriver_default(enable_tests, target, cross_compile, hazard, asan, autom
+@@ -1279,6 +1279,25 @@ def geckodriver_default(enable_tests, target, cross_compile, hazard, asan, autom
          return False
      return True
  

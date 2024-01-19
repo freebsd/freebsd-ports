@@ -434,4 +434,4 @@ lib/playonbsd/resources/images/toolbar/play.png
 lib/playonbsd/resources/images/toolbar/run.png
 lib/playonbsd/resources/images/toolbar/stop.png
 lib/playonbsd/resources/sounds/irc.wav
-man/man1/playonbsd.1.gz
+share/man/man1/playonbsd.1.gz

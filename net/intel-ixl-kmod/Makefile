@@ -1,6 +1,6 @@
 PORTNAME?=	ixl
 PORTVERSION?=	1.13.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES?=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -33,11 +33,11 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 MANPAGENAME?=	${PORTNAME}
 MANPAGELINKS?=	if_${PORTNAME}
 PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
-		man/man4/${MANPAGENAME}.4.gz
+		share/man/man4/${MANPAGENAME}.4.gz
 MAKE_ENV+=	WERROR=""
 
 .for link in ${MANPAGELINKS}
-PLIST_FILES+=	man/man4/${link}.4.gz
+PLIST_FILES+=	share/man/man4/${link}.4.gz
 .endfor
 
 .include <bsd.port.pre.mk>
@@ -50,10 +50,10 @@ ONLY_FOR_ARCHS_REASON=	only supported on 32-bit architectures
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/if_${PORTNAME}.ko ${STAGEDIR}${KMODDIR}/if_${PORTNAME}_updated.ko
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGENAME}.4 ${STAGEDIR}${PREFIX}/share/man/man4/
 
 .for link in ${MANPAGELINKS}
-	${LN} ${STAGEDIR}${MAN4PREFIX}/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/${link}.4
+	${LN} ${STAGEDIR}${PREFIX}/share/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${PREFIX}/share/man/man4/${link}.4
 .endfor
 
 .include <bsd.port.post.mk>

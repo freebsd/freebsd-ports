@@ -77,7 +77,7 @@ lib/pidgin/transparency.so
 lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
-man/man1/pidgin.1.gz
+share/man/man1/pidgin.1.gz
 %%PERLMAN:%%man/man3/Pidgin.3.gz
 share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png
@@ -645,67 +645,3 @@ share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-offline.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-pending.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-xa.png
 share/pixmaps/pidgin/tray/hicolor/index.theme
-@dir include/pidgin
-@dir share/icons/hicolor/16x16/apps
-@dir share/icons/hicolor/16x16
-@dir share/icons/hicolor/22x22/apps
-@dir share/icons/hicolor/22x22
-@dir share/icons/hicolor/48x48/apps
-@dir share/icons/hicolor/48x48
-@dir share/icons/hicolor/24x24/apps
-@dir share/icons/hicolor/24x24
-@dir share/icons/hicolor/32x32/apps
-@dir share/icons/hicolor/32x32
-@dir share/icons/hicolor/scalable/apps
-@dir share/icons/hicolor/scalable
-@dir share/icons/hicolor
-@dir share/icons
-@dir share/pixmaps/pidgin/animations/16
-@dir share/pixmaps/pidgin/animations
-@dir share/pixmaps/pidgin/buttons
-@dir share/pixmaps/pidgin/dialogs/16
-@dir share/pixmaps/pidgin/dialogs/64
-@dir share/pixmaps/pidgin/dialogs/scalable
-@dir share/pixmaps/pidgin/dialogs
-@dir share/pixmaps/pidgin/emblems/16
-@dir share/pixmaps/pidgin/emblems/scalable
-@dir share/pixmaps/pidgin/emblems
-@dir share/pixmaps/pidgin/emotes/default
-@dir share/pixmaps/pidgin/emotes/none
-@dir share/pixmaps/pidgin/emotes/small
-@dir share/pixmaps/pidgin/emotes
-@dir share/pixmaps/pidgin/protocols/16
-@dir share/pixmaps/pidgin/protocols/22
-@dir share/pixmaps/pidgin/protocols/48
-@dir share/pixmaps/pidgin/protocols/scalable
-@dir share/pixmaps/pidgin/protocols
-@dir share/pixmaps/pidgin/status/11/rtl
-@dir share/pixmaps/pidgin/status/11
-@dir share/pixmaps/pidgin/status/16/rtl
-@dir share/pixmaps/pidgin/status/16
-@dir share/pixmaps/pidgin/status/22/rtl
-@dir share/pixmaps/pidgin/status/22
-@dir share/pixmaps/pidgin/status/32/rtl
-@dir share/pixmaps/pidgin/status/32
-@dir share/pixmaps/pidgin/status/48/rtl
-@dir share/pixmaps/pidgin/status/48
-@dir share/pixmaps/pidgin/status
-@dir share/pixmaps/pidgin/toolbar/11
-@dir share/pixmaps/pidgin/toolbar/16
-@dir share/pixmaps/pidgin/toolbar/22
-@dir share/pixmaps/pidgin/toolbar/32
-@dir share/pixmaps/pidgin/toolbar/48
-@dir share/pixmaps/pidgin/toolbar
-@dir share/pixmaps/pidgin/tray/16
-@dir share/pixmaps/pidgin/tray/hicolor/16x16/status
-@dir share/pixmaps/pidgin/tray/hicolor/16x16
-@dir share/pixmaps/pidgin/tray/hicolor/22x22/status
-@dir share/pixmaps/pidgin/tray/hicolor/22x22
-@dir share/pixmaps/pidgin/tray/hicolor/32x32/status
-@dir share/pixmaps/pidgin/tray/hicolor/32x32
-@dir share/pixmaps/pidgin/tray/hicolor/48x48/status
-@dir share/pixmaps/pidgin/tray/hicolor/48x48
-@dir share/pixmaps/pidgin/tray/hicolor
-@dir share/pixmaps/pidgin/tray
-@dir share/pixmaps/pidgin
-@dir lib/pidgin

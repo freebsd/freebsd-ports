@@ -31,6 +31,7 @@ SHEBANG_FILES=	examples/ipsec-secgw/test/pkttest.py \
 		usertools/dpdk-telemetry.py
 MESON_ARGS=	-Ddefault_library=shared \
 		-Denable_kmods=true \
+		-Dc_link_args=-Wl,--undefined-version \
 		-Dmachine=default
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${PORTVERSION}

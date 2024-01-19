@@ -1,0 +1,8 @@
+This package is a collection of hooks for PyInstaller and allows it to
+work seamlessly when a package does not work with PyInstaller or has
+data files that are needed at runtime.
+
+Various hooks are avaiable.  A runtime hook helps the bootloader to
+launch an app, setting up the environment. A package hook tells
+PyInstaller what to include in the final application - such as the
+data files and hidden imports.

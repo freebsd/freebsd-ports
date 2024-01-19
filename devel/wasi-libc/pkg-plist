@@ -95,6 +95,7 @@ share/wasi-sysroot/include/cpio.h
 share/wasi-sysroot/include/crypt.h
 share/wasi-sysroot/include/ctype.h
 share/wasi-sysroot/include/dirent.h
+share/wasi-sysroot/include/dlfcn.h
 share/wasi-sysroot/include/endian.h
 share/wasi-sysroot/include/err.h
 share/wasi-sysroot/include/errno.h

@@ -38,9 +38,9 @@ lib/libgrlpls-0.3.so.0.%%LIBVER%%.0
 libdata/pkgconfig/grilo-0.3.pc
 libdata/pkgconfig/grilo-net-0.3.pc
 libdata/pkgconfig/grilo-pls-0.3.pc
-%%UI%%man/man1/grilo-test-ui-0.3.1.gz
-man/man1/grl-inspect-0.3.1.gz
-man/man1/grl-launch-0.3.1.gz
+%%UI%%share/man/man1/grilo-test-ui-0.3.1.gz
+share/man/man1/grl-inspect-0.3.1.gz
+share/man/man1/grl-launch-0.3.1.gz
 share/gir-1.0/Grl-0.3.gir
 share/gir-1.0/GrlNet-0.3.gir
 share/gir-1.0/GrlPls-0.3.gir

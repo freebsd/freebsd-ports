@@ -164,8 +164,8 @@ lib/rhythmbox/plugins/power-manager/power-manager.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
 libdata/pkgconfig/rhythmbox.pc
 libexec/rhythmbox-metadata
-man/man1/rhythmbox-client.1.gz
-man/man1/rhythmbox.1.gz
+share/man/man1/rhythmbox-client.1.gz
+share/man/man1/rhythmbox.1.gz
 share/applications/org.gnome.Rhythmbox3.desktop
 share/applications/org.gnome.Rhythmbox3.device.desktop
 share/dbus-1/services/org.gnome.Rhythmbox3.service

@@ -195,10 +195,10 @@ lib/libgirepository-1.0.so.1
 lib/libgirepository-1.0.so.1.0.0
 libdata/pkgconfig/gobject-introspection-1.0.pc
 libdata/pkgconfig/gobject-introspection-no-export-1.0.pc
-man/man1/g-ir-compiler.1.gz
-man/man1/g-ir-doc-tool.1.gz
-man/man1/g-ir-generate.1.gz
-man/man1/g-ir-scanner.1.gz
+share/man/man1/g-ir-compiler.1.gz
+share/man/man1/g-ir-doc-tool.1.gz
+share/man/man1/g-ir-generate.1.gz
+share/man/man1/g-ir-scanner.1.gz
 share/aclocal/introspection.m4
 share/gir-1.0/DBus-1.0.gir
 share/gir-1.0/DBusGLib-1.0.gir

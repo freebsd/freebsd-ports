@@ -234,10 +234,6 @@ PLIST_SUB+=	BSDUSER="@comment "
 PLIST_SUB+=	BSDUSER=""
 .endif
 
-.if ${ARCH} == "sparc64"
-CONFIGURE_ARGS+=	--sparc_cpu=v9
-.endif
-
 PLIST_SUB+=	LINUXBOOT_DMA=""
 .endif
 

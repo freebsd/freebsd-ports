@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	9.0-rc3
+DISTVERSION=	9.0-rc5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/9.0/
@@ -170,7 +170,7 @@ post-install:
 .endif
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in README ANNOUNCE AUTHORS
+.for i in ANNOUNCE.md AUTHORS README.md
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg

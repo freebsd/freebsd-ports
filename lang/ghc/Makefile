@@ -71,14 +71,14 @@ GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 PROFILE_VARS=		enable_profile=YES hadrian_setting_profile=True
 PROFILE_VARS_OFF=	enable_profile=NO hadrian_setting_profile=False
 
-GHC_VERSION?=		9.4.6
+GHC_VERSION?=		9.4.7
 LLVM_VERSION?=		13
-BOOT_GHC_VERSION?=	9.2.7
+BOOT_GHC_VERSION?=	9.2.8
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION?=	12
 
 BASE_PACKAGES?=		Cabal-3.8.1.0 array-0.5.4.0 base-4.17.2.0 binary-0.8.9.1 \
-			bytestring-0.11.5.1 containers-0.6.7 deepseq-1.4.8.0 \
+			bytestring-0.11.5.2 containers-0.6.7 deepseq-1.4.8.0 \
 			directory-1.3.7.1 exceptions-0.10.5 filepath-1.4.2.2 \
 			ghc-${GHC_VERSION} ghc-bignum-1.3 ghc-compact-0.1.0.0 \
 			ghc-prim-0.9.1 haskeline-0.8.2 hpc-0.6.1.0 \
@@ -106,7 +106,7 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 
 .include <bsd.port.pre.mk>
 
-.if ${GHC_VERSION:C/\..*//g} >= 9 && ${ARCH} != i386 && ${ARCH} != aarch64
+.if ${GHC_VERSION:C/\..*//g} >= 9 && ${ARCH} != i386
 # hadrian build on i386 fails due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=269570
 # relocation R_386_TLS_LE cannot be used with -shared
 USE_HADRIAN=		yes
@@ -115,7 +115,6 @@ USE_HADRIAN=		yes
 .if ${GHC_VERSION:C/\..*//g} >= 9 && ${GHC_VERSION:C/[^\.]*\.//:C/\..*//g} >= 4
 BOOT_SCRIPT=	./boot.source
 IGNORE_i386=	requires Hadrian build which doesn't work on i386
-IGNORE_aarch64=	requires Hadrian build which doesn't work on aarch64
 .else
 BOOT_SCRIPT=	./boot
 .endif
@@ -153,6 +152,8 @@ BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
 BOOT_INSTALL_DIR=	${WRKDIR}/ghc-boot-install
 BOOT_GHC=		${BOOT_INSTALL_DIR}/bin/ghc-${BOOT_GHC_VERSION}
 
+PLIST_SUB+=		GHC_ARCH=${GHC_ARCH}
+
 .if ${BOOT_GHC_VERSION:C/\..*//g} >= 9
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
 .endif
@@ -167,7 +168,7 @@ PLIST=			${.CURDIR}/../ghc92/pkg-plist
 .endif
 
 # This version of ncurses is needed by bootstrap compiler
-.if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
+.if empty(PORT_OPTIONS:MBOOT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
@@ -277,7 +278,7 @@ create-bootstrap:
 .else
 	cd ${WRKSRC} \
 		&& ${HADRIAN_CMD} binary-dist-xz \
-		&& ${MV} ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
+		&& ${MV} ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
 .endif
 
 	@cd /tmp \

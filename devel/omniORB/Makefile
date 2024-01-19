@@ -1,6 +1,5 @@
 PORTNAME=	omniORB
 DISTVERSION=	${ABI_VER}.${ABI_MAJOR_VER}.${ABI_MINOR_VER}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -9,6 +8,9 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
+
+NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS_REASON=	use of overloaded operator '[]' is ambiguous (with operand types
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -44,7 +46,7 @@ STATIC_CONFIGURE_OFF=	--disable-static
 
 ABI_VER=		4
 ABI_MAJOR_VER=		3
-ABI_MINOR_VER=		1
+ABI_MINOR_VER=		2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
@@ -55,8 +57,8 @@ post-install:
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl')"
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be')"
 	${INSTALL_DATA} ${WRKSRC}/sample.cfg ${STAGEDIR}${PREFIX}/etc/omniORB.cfg.sample
-	@cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} *.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	@cd ${WRKSRC}/man/man8 && ${INSTALL_MAN} *.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	@cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	@cd ${WRKSRC}/man/man8 && ${INSTALL_MAN} *.8 ${STAGEDIR}${PREFIX}/share/man/man8
 .for i in catior convertior omniMapper omniNames omnicpp nameclt omkdepend \
 	genior
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}

@@ -17,7 +17,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		pkgconfig xorg
 USE_XORG=	x11 xext xft
 
-PLIST_FILES=	bin/st man/man1/st.1.gz
+PLIST_FILES=	bin/st share/man/man1/st.1.gz
+MAKE_ARGS=	PREFIX="${PREFIX}" VERSION="${PORTVERSION}" \
+		X11INC="${LOCALBASE}/include" X11LIB="${LOCALBASE}/lib"
 
 # This way we avoid running tic on st.info which does not work as expected.
 BINARY_ALIAS=	tic=true
@@ -45,12 +47,7 @@ post-patch:
 	@${ECHO_MSG} "creating config.h from ${ST_CONF}"
 	@${LN} -sf ${ST_CONF} ${WRKSRC}/config.h
 .endif
-	@${REINPLACE_CMD} -e 's|^VERSION = .*|VERSION = ${PORTVERSION}|' \
-		-e 's|^PREFIX = .*|PREFIX = ${PREFIX}|' \
-		-e "s|^MANPREFIX = .*|MANPREFIX = ${MANPREFIX}/man|" \
-		-e "s|^X11INC = .*|X11INC = ${LOCALBASE}/include|" \
-		-e "s|^X11LIB = .*|X11LIB = ${LOCALBASE}/lib|" \
-		-e "s|^CPPFLAGS =|CPPFLAGS +=|" \
+	@${REINPLACE_CMD} -e "s|^CPPFLAGS =|CPPFLAGS +=|" \
 		${WRKSRC}/config.mk
 
 post-install:

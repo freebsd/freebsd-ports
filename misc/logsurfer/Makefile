@@ -1,6 +1,6 @@
 PORTNAME=	logsurfer
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.crypt.gen.nz/logsurfer/ \
 		ZI

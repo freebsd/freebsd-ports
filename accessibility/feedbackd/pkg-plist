@@ -10,9 +10,9 @@ lib/libfeedback-0.0.so.0
 libdata/pkgconfig/libfeedback-0.0.pc
 %%DAEMON%%libexec/fbd-ledctrl
 %%DAEMON%%libexec/feedbackd
-%%MANPAGES%%man/man1/fbcli.1.gz
-%%MANPAGES%%man/man1/fbd-theme-validate.1.gz
-%%MANPAGES%%man/man8/feedbackd.8.gz
+%%MANPAGES%%share/man/man1/fbcli.1.gz
+%%MANPAGES%%share/man/man1/fbd-theme-validate.1.gz
+%%MANPAGES%%share/man/man8/feedbackd.8.gz
 share/dbus-1/interfaces/org.sigxcpu.Feedback.xml
 %%DAEMON%%share/dbus-1/services/org.sigxcpu.Feedback.service
 %%PORTDOCS%%%%DOCSDIR%%/Event-naming-spec-0.0.0.html

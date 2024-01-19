@@ -52,7 +52,9 @@ MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
+MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
 MYSQL_SSL_CONFIGURE_ENABLE=	mysql-ssl-support
+MYSQL_SSL_VARS=		IGNORE_WITH_MYSQL="80"
 ODBC_BROKEN=		fails to build with ODBC=on
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_WITH=	odbc

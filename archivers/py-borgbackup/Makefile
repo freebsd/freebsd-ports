@@ -40,8 +40,8 @@ FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
 _BORGHOME=${WRKDIR}/testhome
 _BORGENV=-i BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
 post-install:
-	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${PREFIX}/share/man/man1/
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/ -name "*.so" \
 		-exec ${STRIP_CMD} {} \;
 	@${ECHO_MSG} "----> running borg smoke tests"

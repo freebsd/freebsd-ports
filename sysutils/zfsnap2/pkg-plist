@@ -2,7 +2,7 @@
 etc/periodic/daily/402.zfsnap
 etc/periodic/monthly/402.zfsnap
 etc/periodic/weekly/402.zfsnap
-man/man8/zfsnap.8.gz
+share/man/man8/zfsnap.8.gz
 sbin/zfsnap
 %%DATADIR%%/commands/destroy.sh
 %%DATADIR%%/commands/recurseback.sh

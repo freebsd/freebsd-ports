@@ -1,12 +1,13 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collector part of Munin
 WWW=		https://munin-monitoring.org/
+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-CGI>=0:www/p5-CGI \
@@ -51,10 +52,10 @@ PLIST_SUB+=	WWWGRP=${WWWGRP} \
 
 post-install:
 	(cd ${WRKSRC}/build/doc; \
-		${INSTALL_MAN} munin.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
-		${INSTALL_MAN} munin-cron.8 munin-graph.8 munin-html.8 munin-limits.8 munin-update.8 ${STAGEDIR}${MAN8PREFIX}/man/man8; \
+		${INSTALL_MAN} munin.conf.5 ${STAGEDIR}${PREFIX}/man/man5; \
+		${INSTALL_MAN} munin-cron.8 munin-graph.8 munin-html.8 munin-limits.8 munin-update.8 ${STAGEDIR}${PREFIX}/man/man8; \
 	)
-	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
+	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do ${MV} $$i $$i.sample; done)
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
 	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-master.newsyslog
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/cron.d

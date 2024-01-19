@@ -92,7 +92,7 @@ lib/aisleriot/guile/2.2/yukon.go
 lib/aisleriot/guile/2.2/zebra.go
 lib/valgrind/aisleriot.supp
 libexec/aisleriot/ar-cards-renderer
-man/man6/sol.6.gz
+share/man/man6/sol.6.gz
 %%DATADIR%%/cards/anglo.svgz
 %%DATADIR%%/cards/anglo_bitmap.svgz
 %%DATADIR%%/cards/bellot.svgz

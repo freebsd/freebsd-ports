@@ -1,6 +1,6 @@
 PORTNAME=	fselect
 DISTVERSION=	0.8.4
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jhspetersson
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 _DOCS=		docs/usage.md README.md
 PORTDOCS=	${_DOCS:T}
 
@@ -38,7 +38,7 @@ LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

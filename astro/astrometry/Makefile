@@ -44,7 +44,6 @@ LDFLAGS+=	-lz
 
 CONFLICTS_INSTALL=	afni p5-Text-RecordParser # bin/imstat bin/tabmerge
 
-MANDIRS=	${MANPREFIX}/man/man1
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS EXAMPLES

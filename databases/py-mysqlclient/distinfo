@@ -1,3 +1,3 @@
-TIMESTAMP = 1687512745
-SHA256 (mysqlclient-2.2.0.tar.gz) = 04368445f9c487d8abb7a878e3d23e923e6072c04a6c320f9e0dc8a82efba14e
-SIZE (mysqlclient-2.2.0.tar.gz) = 89543
+TIMESTAMP = 1703603120
+SHA256 (mysqlclient-2.2.1.tar.gz) = 2c7ad15b87293b12fd44b47c46879ec95ec647f4567e866ccd70b8337584e9b2
+SIZE (mysqlclient-2.2.1.tar.gz) = 89966

@@ -1,6 +1,6 @@
---- configure.orig	2020-12-30 00:12:14 UTC
+--- configure.orig	2021-09-14 14:43:44 UTC
 +++ configure
-@@ -14937,7 +14937,7 @@ fi
+@@ -14938,7 +14938,7 @@ case "${ax_cv_c_compiler_vendor}" in
  esac
  
  case "${ax_cv_c_compiler_vendor}" in
@@ -9,3 +9,46 @@
          # SSE/SSE2
          if test "$have_sse2" = "yes" -a "x$SSE2_CFLAGS" = x; then
              if test "$PRECISION" = d; then flag=msse2; else flag=msse; fi
+@@ -15293,14 +15293,14 @@ else
+ if test "x$ax_check_compiler_flags" = xyes; then
+ 	ALTIVEC_CFLAGS="-faltivec"
+ else
+-	 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -maltivec -mabi=altivec" >&5
+-$as_echo_n "checking whether C compiler accepts -maltivec -mabi=altivec... " >&6; }
+-if ${ax_cv_c_flags__maltivec__mabi_altivec+:} false; then :
++	 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -maltivec" >&5
++$as_echo_n "checking whether C compiler accepts -maltivec... " >&6; }
++if ${ax_cv_c_flags__maltivec+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+       ax_save_FLAGS=$CFLAGS
+-      CFLAGS="-maltivec -mabi=altivec"
++      CFLAGS="-maltivec"
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -15313,19 +15313,19 @@ if ac_fn_c_try_compile "$LINENO"; then :
+ }
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
+-  ax_cv_c_flags__maltivec__mabi_altivec=yes
++  ax_cv_c_flags__maltivec=yes
+ else
+-  ax_cv_c_flags__maltivec__mabi_altivec=no
++  ax_cv_c_flags__maltivec=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+       CFLAGS=$ax_save_FLAGS
+ fi
+ 
+-eval ax_check_compiler_flags=$ax_cv_c_flags__maltivec__mabi_altivec
++eval ax_check_compiler_flags=$ax_cv_c_flags__maltivec
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_check_compiler_flags" >&5
+ $as_echo "$ax_check_compiler_flags" >&6; }
+ if test "x$ax_check_compiler_flags" = xyes; then
+-	ALTIVEC_CFLAGS="-maltivec -mabi=altivec -DFAKE__VEC__"
++	ALTIVEC_CFLAGS="-maltivec -DFAKE__VEC__"
+ else
+ 	 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -fvec" >&5
+ $as_echo_n "checking whether C compiler accepts -fvec... " >&6; }

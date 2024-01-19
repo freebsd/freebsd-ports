@@ -1,5 +1,6 @@
 PORTNAME=	LLnextgen
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://os.ghalkes.nl/LLnextgen/releases/
 
@@ -19,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/LLnextgen ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/LLnextgen.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/LLnextgen.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

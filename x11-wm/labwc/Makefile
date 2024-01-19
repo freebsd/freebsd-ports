@@ -1,6 +1,10 @@
 PORTNAME=	labwc
 DISTVERSION=	0.7.0
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	774eb2170f11.patch:-p1 # https://github.com/labwc/labwc/pull/1429
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
@@ -9,8 +13,7 @@ WWW=		https://github.com/labwc/labwc
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
+		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
@@ -34,11 +37,11 @@ LIBRSVG2_MESON_ENABLED=	svg
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
-			man/man5/${PORTNAME}-actions.5.gz \
-			man/man5/${PORTNAME}-config.5.gz \
-			man/man5/${PORTNAME}-menu.5.gz \
-			man/man5/${PORTNAME}-theme.5.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man5/${PORTNAME}-actions.5.gz \
+			share/man/man5/${PORTNAME}-config.5.gz \
+			share/man/man5/${PORTNAME}-menu.5.gz \
+			share/man/man5/${PORTNAME}-theme.5.gz
 
 NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls

@@ -1,7 +1,7 @@
 PORTNAME=	xinetd
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	2-3-15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	garga@FreeBSD.org
@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-loadavg
 ALL_TARGET=	build
 
+PORTSCOUT=	ignore:1
+
 OPTIONS_DEFINE=	IPV6 LIBWRAP XCONV
 OPTIONS_DEFAULT=	LIBWRAP XCONV
 OPTIONS_SUB=	yes
@@ -36,17 +38,15 @@ LIBWRAP_CONFIGURE_WITH=	libwrap
 XCONV_USES=	perl5
 XCONV_USE=	PERL5=run
 
-PORTSCOUT=	ignore:1
-
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/xinetd/xconfig.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xinetd/xinetd ${STAGEDIR}${PREFIX}/sbin/xinetd
 	${INSTALL_SCRIPT} ${WRKSRC}/xinetd/xconv.pl ${STAGEDIR}${PREFIX}/bin/xconv
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.conf.man ${STAGEDIR}${PREFIX}/man/man5/xinetd.conf.5
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xconv.pl.8 ${STAGEDIR}${PREFIX}/man/man8/xconv.8
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.man ${STAGEDIR}${PREFIX}/man/man8/xinetd.8
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.log.man ${STAGEDIR}${PREFIX}/man/man8/xinetd.log.8
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.conf.man ${STAGEDIR}${PREFIX}/share/man/man5/xinetd.conf.5
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xconv.pl.8 ${STAGEDIR}${PREFIX}/share/man/man8/xconv.8
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.man ${STAGEDIR}${PREFIX}/share/man/man8/xinetd.8
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.log.man ${STAGEDIR}${PREFIX}/share/man/man8/xinetd.log.8
 
 .include <bsd.port.mk>

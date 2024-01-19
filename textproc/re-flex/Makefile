@@ -1,5 +1,6 @@
 PORTNAME=	re-flex
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -32,6 +33,6 @@ post-install:
 	 ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/include/reflex)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lex.vim ${STAGEDIR}${DATADIR}/lex.vim
-	${INSTALL_MAN} ${WRKSRC}/doc/man/reflex.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/reflex.1 ${STAGEDIR}/${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

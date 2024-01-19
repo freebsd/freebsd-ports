@@ -1,5 +1,6 @@
 PORTNAME=	imerge
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		LOCAL/knu
@@ -10,10 +11,10 @@ WWW=		https://github.com/knu/imerge
 
 USES=		tar:bzip2 uidfix
 
-MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"
+MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${PREFIX}/share"
 MAKEFILE=	BSDmakefile
 
 PLIST_FILES=	bin/imerge \
-		man/man1/imerge.1.gz
+		share/man/man1/imerge.1.gz
 
 .include <bsd.port.mk>

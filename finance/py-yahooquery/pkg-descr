@@ -1,0 +1,3 @@
+Yahooquery is a python interface to unofficial Yahoo Finance API endpoints.
+The package allows a user to retrieve nearly all the data visible via the
+Yahoo Finance front-end.

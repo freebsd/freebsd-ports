@@ -1,6 +1,6 @@
 PORTNAME=	pspresent
 PORTVERSION=	1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.zmatt.net/pspresent/
 
@@ -15,13 +15,13 @@ USE_XORG=	x11 xext xinerama
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDLIBS="${LDFLAGS}"
 ALL_TARGET=	pspresent
 
-PLIST_FILES=	bin/pspresent man/man1/pspresent.1.gz
+PLIST_FILES=	bin/pspresent share/man/man1/pspresent.1.gz
 
 CFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBXINERAMA
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXext -lXinerama
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pspresent ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pspresent.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pspresent.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -709,9 +709,6 @@ post-install: post-install-rm-junk post-install-fix-manpages
 				-${FIND} ${STAGEDIR}${PREFIX}/lib -name '*.so*' \
 					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
 .endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000 # Work around bug 255626. Remove after 12.4 is EOL.
-				${RM} ${STAGEDIR}${LOCALBASE}/bin/ecp.* ${STAGEDIR}${LOCALBASE}/sbin/ecp.*
-.endif
 
 post-install-FRUIT-off:
 				${RM} ${STAGEDIR}${SAMBA4_MODULEDIR}/vfs/fruit.so

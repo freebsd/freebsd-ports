@@ -1,8 +1,0 @@
-#!/bin/sh
-
-case $2 in
-POST-INSTALL)
-	cd $PKG_PREFIX/lib/fte/config; $PKG_PREFIX/bin/cfte main.fte $PKG_PREFIX/lib/fte/system.fterc
-	exit 0
-	;;
-esac

@@ -1,7 +1,7 @@
 PORTNAME=	xfuse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0-alpha
-PORTREVISION=	23
+PORTREVISION=	25
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -52,10 +52,10 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/xfs-fuse \
-		man/man1/xfs-fuse.1.gz
+		share/man/man1/xfs-fuse.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xfs-fuse
-	${INSTALL_MAN} ${WRKSRC}/doc/xfs-fuse.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/xfs-fuse.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

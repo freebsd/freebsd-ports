@@ -1,6 +1,6 @@
 PORTNAME=	surfer
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Surfer/
 PKGNAMEPREFIX=	deforaos-
@@ -24,7 +24,7 @@ USE_XORG=	x11
 USE_GNOME=	gtk30 cairo gdkpixbuf2
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes

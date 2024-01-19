@@ -16,7 +16,6 @@ GH_TAGNAME=	099beb2
 GH_TUPLE=	floodyberry:ed25519-donna:8757bd4:floodyberry_ed25519_donna/ed25519-donna
 
 BROKEN_mips64=		fails to compile: ed25519-donna-portable.h:85:4: Need a uint128_t implementation!
-BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: ed25519-donna-portable.h: warning: ALIGN redefined
 
 USES=		perl5 ssl tar:bzip2
 USE_PERL5=	build

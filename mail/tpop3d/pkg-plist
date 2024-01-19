@@ -1,4 +1,4 @@
 @sample etc/tpop3d.conf.sample
-man/man5/tpop3d.conf.5.gz
-man/man8/tpop3d.8.gz
+share/man/man5/tpop3d.conf.5.gz
+share/man/man8/tpop3d.8.gz
 sbin/tpop3d

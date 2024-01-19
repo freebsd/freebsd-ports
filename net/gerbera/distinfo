@@ -1,5 +1,3 @@
-TIMESTAMP = 1694942560
-SHA256 (gerbera-gerbera-v1.12.1_GH0.tar.gz) = 2144a7c4a13e8b43aa0c911fbeae65f05e2c42254ddd03be5c41f5fcf103a93c
-SIZE (gerbera-gerbera-v1.12.1_GH0.tar.gz) = 4368573
-SHA256 (37957aac0aea776e6f843af2358916f81056a405.patch) = ffa2fedae292fd02c30149af2c6ecd715f2e29ad1b53766958aaec1274b2b623
-SIZE (37957aac0aea776e6f843af2358916f81056a405.patch) = 8400
+TIMESTAMP = 1705147817
+SHA256 (gerbera-gerbera-v2.0.0_GH0.tar.gz) = db2015a9e67ce896600221d912b402cbdeee9d1898761f6c6425c7182fffac2e
+SIZE (gerbera-gerbera-v2.0.0_GH0.tar.gz) = 4219702

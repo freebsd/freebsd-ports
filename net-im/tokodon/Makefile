@@ -1,5 +1,6 @@
 PORTNAME=	tokodon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +17,8 @@ RUN_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
 USES=		cmake desktop-file-utils gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		dbusaddons i18n jobwidgets kio kirigami2 notifications \
-		qqc2-desktop-style service solid widgetsaddons windowsystem \
+		purpose qqc2-desktop-style service solid widgetsaddons \
+		windowsystem \
 		ecm:build \
 		itemmodels:run
 USE_QT=		concurrent core dbus declarative gui multimedia network \

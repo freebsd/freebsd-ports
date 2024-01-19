@@ -1,4 +1,10 @@
---- CMakeLists.txt.orig	2023-09-23 11:56:30 UTC
+Fix build with CMake >= 3.28.0. FREETYPE_LIBRARY has not officially been
+part of the user-facing interface of the FindFreetype module since CMake
+2.6.0 [1] and has only been coincidentally defined up until this point.
+
+[1] https://gitlab.kitware.com/cmake/cmake/-/commit/d18fb61c76c720ec5b1ac2cc4f30a5beaf071c33
+
+--- CMakeLists.txt.orig	2023-09-17 19:36:53 UTC
 +++ CMakeLists.txt
 @@ -1,7 +1,7 @@
  ## CMakeLists.txt
@@ -9,7 +15,7 @@
  ## This file is free software; the copyright holder gives
  ## unlimited permission to copy and/or distribute it, with or
  ## without modifications, as long as this notice is preserved.
-@@ -598,7 +598,7 @@ if(WITH_ASYMPTOTE AND MIKTEX_NATIVE_WINDOWS)
+@@ -598,7 +598,7 @@ set(QT_SERIES "5" CACHE STRING "The Qt series to be us
  endif()
  
  set(QT_SERIES "5" CACHE STRING "The Qt series to be used.")
@@ -18,7 +24,7 @@
  ###############################################################################
  ## fixed values
  
-@@ -655,7 +655,7 @@ elseif(MIKTEX_MONTH_VERSION EQUAL 11)
+@@ -655,7 +655,7 @@ elseif(MIKTEX_MONTH_VERSION EQUAL 12)
      set(MIKTEX_MONTH_NAME_VERSION "November")
  elseif(MIKTEX_MONTH_VERSION EQUAL 12)
      set(MIKTEX_MONTH_NAME_VERSION "December")
@@ -27,7 +33,7 @@
  
  if(MIKTEX_LINUX)
      set(MIKTEX_LINUX_DIST
-@@ -1249,6 +1249,10 @@ if(USE_SYSTEM_ZZIP)
+@@ -1249,6 +1249,10 @@ endif()
      find_package(ZZIP REQUIRED)
  endif()
  
@@ -47,3 +53,21 @@
      add_subdirectory(${MIKTEX_REL_BZIP2_DIR})
  endif()
  
+@@ -1609,7 +1613,7 @@ if(USE_SYSTEM_FREETYPE2)
+ endif()
+ 
+ if(USE_SYSTEM_FREETYPE2)
+-    get_filename_component(suffix ${FREETYPE_LIBRARY} EXT)
++    get_filename_component(suffix ${FREETYPE_LIBRARIES} EXT)
+     if (suffix STREQUAL CMAKE_SHARED_LIBRARY_SUFFIX)
+         add_library(MiKTeX::Imported::FREETYPE2 SHARED IMPORTED)
+     else()
+@@ -1617,7 +1621,7 @@ if(USE_SYSTEM_FREETYPE2)
+     endif()
+     set_target_properties(MiKTeX::Imported::FREETYPE2
+         PROPERTIES
+-        IMPORTED_LOCATION "${FREETYPE_LIBRARY}"
++        IMPORTED_LOCATION "${FREETYPE_LIBRARIES}"
+         INTERFACE_COMPILE_DEFINITIONS "HAVE_FT2BUILD_H=1;HAVE_LIBFREETYPE=1"
+         INTERFACE_INCLUDE_DIRECTORIES "${FREETYPE_INCLUDE_DIRS}"
+     )

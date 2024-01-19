@@ -8,4 +8,4 @@ bin/dget
 bin/dustmite
 bin/rdmd
 bin/tolf
-man/man1/rdmd.1.gz
+share/man/man1/rdmd.1.gz

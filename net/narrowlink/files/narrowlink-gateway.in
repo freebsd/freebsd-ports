@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: narrowlink_gateway
+# REQUIRE: NETWORKING SERVERS
+
+. /etc/rc.subr
+
+name="narrowlink_gateway"
+rcvar="narrowlink_gateway_enable"
+
+narrowlink_gateway_enable=${narrowlink_gateway_enable:-"NO"}
+narrowlink_gateway_args=${narrowlink_gateway_args:-""}
+
+pidfile=/var/run/${name}.pid
+logfile=/var/log/${name}.log
+procname=%%PREFIX%%/bin/narrowlink-gateway
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -o ${logfile} ${procname} ${narrowlink_gateway_args}"
+
+mkdir -p /var/run/narrowlink
+cd /var/run/narrowlink
+
+load_rc_config $name
+run_rc_command "$1"

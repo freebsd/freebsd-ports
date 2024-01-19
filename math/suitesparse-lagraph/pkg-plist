@@ -1,0 +1,17 @@
+include/suitesparse/LAGraph.h
+include/suitesparse/LAGraphX.h
+lib/cmake/LAGraph/FindGraphBLAS.cmake
+lib/cmake/LAGraph/LAGraphConfig.cmake
+lib/cmake/LAGraph/LAGraphConfigVersion.cmake
+lib/cmake/LAGraph/LAGraphTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LAGraph/LAGraphTargets.cmake
+lib/liblagraph.a
+lib/liblagraph.so
+lib/liblagraph.so.1
+lib/liblagraph.so.%%VER%%
+lib/liblagraphx.a
+lib/liblagraphx.so
+lib/liblagraphx.so.1
+lib/liblagraphx.so.%%VER%%
+libdata/pkgconfig/LAGraph.pc
+%%PORTDOCS%%%%DOCSDIR%%/LAGraph_README.md

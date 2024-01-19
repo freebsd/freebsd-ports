@@ -13,6 +13,6 @@ include/dynload.h
 lib/libdyncall_s.a
 lib/libdyncallback_s.a
 lib/libdynload_s.a
-man/man3/dyncall.3.gz
-man/man3/dyncallback.3.gz
-man/man3/dynload.3.gz
+share/man/man3/dyncall.3.gz
+share/man/man3/dyncallback.3.gz
+share/man/man3/dynload.3.gz

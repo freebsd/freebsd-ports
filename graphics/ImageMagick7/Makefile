@@ -1,6 +1,6 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.0-62
-PORTREVISION=	9
+DISTVERSION=	7.1.1-26
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
 		https://mirror.dogado.de/imagemagick/releases/ \
@@ -17,6 +17,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl	\
+		libzstd.so:archivers/zstd	\
 		libzip.so:archivers/libzip
 
 FLAVORS=		x11 nox11
@@ -37,8 +38,7 @@ SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \
-		--without-flif \
-		--without-zstd
+		--with-zstd
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
@@ -50,11 +50,11 @@ SAMPLE_FILES=	colors.xml delegates.xml log.xml mime.xml policy.xml \
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FONTCONFIG FPX FREETYPE \
+OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FLIF FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG JXL LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PDF PERL PNG TESTS TIFF WEBP WMF THREADS \
 		16BIT_PIXEL HDRI HEIF RAW
-OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE HEIF \
+OPTIONS_DEFAULT=16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE HEIF \
 		JPEG2000 JBIG JPEG JXL LCMS2 LZMA LQR MODULES OPENEXR PDF PERL PNG \
 		TIFF WEBP WMF THREADS HDRI RAW
 
@@ -94,6 +94,9 @@ FONTCONFIG_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig
 
 FREETYPE_CONFIGURE_WITH=	freetype
 FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
+
+FLIF_CONFIGURE_WITH=	flif
+FLIF_LIB_DEPENDS=	libflif.so:graphics/flif
 
 # FPX (FlashPIX) images
 FPX_CONFIGURE_WITH=	fpx
@@ -329,6 +332,7 @@ post-patch:
 		${WRKSRC}/MagickCore/ImageMagick.pc.in \
 		${WRKSRC}/MagickWand/MagickWand-config.in \
 		${WRKSRC}/MagickWand/MagickWand.pc.in
+	@${REINPLACE_CMD} -e '/^export PKG_CONFIG_LIBDIR/d' ${WRKSRC}/MagickWand/MagickWand-config.in
 
 pre-configure:
 .if defined(_IMAGEMAGICK_THREADS_PERL_MSG)

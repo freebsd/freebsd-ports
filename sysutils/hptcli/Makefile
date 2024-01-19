@@ -1,6 +1,6 @@
 PORTNAME=	hptcli
 PORTVERSION=	3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.freenas.org/distfiles/
 DISTNAME=	CLI-FreeBSD-3.6-1-120913
@@ -29,7 +29,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/hptraidconf.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hptraidconf.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .if ${ARCH} == "i386"
 	${INSTALL_PROGRAM} ${WRKSRC}/hptraidconf-8.0 ${STAGEDIR}${PREFIX}/bin/hptraidconf
 	${INSTALL_PROGRAM} ${WRKSRC}/hptsvr-3.6/hptsvr-8.0 ${STAGEDIR}${PREFIX}/sbin/hptsvr

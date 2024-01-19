@@ -1,5 +1,5 @@
---- ../boring-3809a7e1ca2f60a9495620da514f8432f148cde7/boring-sys/deps/boringssl-fips/CMakeLists.txt.orig	2019-08-08 23:12:19 UTC
-+++ ../boring-3809a7e1ca2f60a9495620da514f8432f148cde7/boring-sys/deps/boringssl-fips/CMakeLists.txt
+--- ../boring-8245063ae6eb97d909982b89fad45bb7f0a2a1a0/boring-sys/deps/boringssl-fips/CMakeLists.txt.orig	2019-08-08 23:12:19 UTC
++++ ../boring-8245063ae6eb97d909982b89fad45bb7f0a2a1a0/boring-sys/deps/boringssl-fips/CMakeLists.txt
 @@ -466,7 +466,7 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "mips")
  elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "mips")
    # Just to avoid the “unknown processor” error.

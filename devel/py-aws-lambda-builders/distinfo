@@ -1,3 +1,3 @@
-TIMESTAMP = 1679693211
-SHA256 (aws_lambda_builders-1.28.0.tar.gz) = 6ea2fb607057436f03e2a8a857b5c5cbd18f7b2b907c53c2b461e65f843a4f38
-SIZE (aws_lambda_builders-1.28.0.tar.gz) = 82787
+TIMESTAMP = 1704463735
+SHA256 (aws_lambda_builders-1.45.0.tar.gz) = 5c19a6628eecf21578cd9c521e747f4a2163c62c527cd840b11b62a10b661348
+SIZE (aws_lambda_builders-1.45.0.tar.gz) = 95197

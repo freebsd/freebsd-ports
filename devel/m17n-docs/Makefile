@@ -18,9 +18,9 @@ DOCSDIR=	${PREFIX}/share/doc/m17n
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/en
-	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${STAGEDIR}${MAN3PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/man/man5/* ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${STAGEDIR}${PREFIX}/share/man/man3
+	${INSTALL_MAN} ${WRKSRC}/man/man5/* ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${WRKSRC}/usr/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/en
 	(cd ${WRKSRC}/usr/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/en/)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja

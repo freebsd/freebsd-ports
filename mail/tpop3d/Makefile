@@ -1,6 +1,6 @@
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH
 
@@ -45,6 +45,7 @@ MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql
+MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--enable-auth-pgsql \
 			--with-pgsql-lib-dir=${LOCALBASE}/lib \
@@ -69,8 +70,8 @@ post-patch:
 do-install:
 	${INSTALL_DATA} ${FILESDIR}/tpop3d.conf.dist \
 		${STAGEDIR}${DEFAULT_CONFIG}
-	${INSTALL_MAN} ${WRKSRC}/tpop3d.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/tpop3d.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/tpop3d.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/tpop3d.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/tpop3d ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

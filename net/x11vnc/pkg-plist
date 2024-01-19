@@ -1,4 +1,4 @@
 bin/x11vnc
 bin/Xdummy
-man/man1/x11vnc.1.gz
 share/applications/x11vnc.desktop
+share/man/man1/x11vnc.1.gz

@@ -1,7 +1,7 @@
 PORTNAME=	xsettingsd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-2
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-g1b2bcca
 CATEGORIES=	x11
 
@@ -19,8 +19,8 @@ USE_XORG=	x11
 
 PLIST_FILES=	bin/dump_xsettings \
 		bin/xsettingsd \
-		man/man1/dump_xsettings.1.gz \
-		man/man1/xsettingsd.1.gz
+		share/man/man1/dump_xsettings.1.gz \
+		share/man/man1/xsettingsd.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +33,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dump_xsettings ${WRKSRC}/xsettingsd \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dump_xsettings.1 ${WRKSRC}/xsettingsd.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

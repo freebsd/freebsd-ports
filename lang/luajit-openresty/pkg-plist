@@ -30,4 +30,4 @@ share/luajit-%%VERSION%%/jit/p.lua
 share/luajit-%%VERSION%%/jit/v.lua
 share/luajit-%%VERSION%%/jit/vmdef.lua
 share/luajit-%%VERSION%%/jit/zone.lua
-man/man1/luajit.1.gz
+share/man/man1/luajit.1.gz

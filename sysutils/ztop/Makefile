@@ -1,6 +1,7 @@
 PORTNAME=	ztop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.3
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -15,10 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	asomers
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-		${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

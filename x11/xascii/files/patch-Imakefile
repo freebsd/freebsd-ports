@@ -4,7 +4,7 @@
  LOCAL_LIBRARIES = XawClientLibs
  
 +BINDIR = ${PREFIX}/bin
-+MANPATH = ${PREFIX}${MAN1PREFIX}/man
++MANPATH = ${PREFIX}/share/man
 +
  SRCS = xascii.c
  OBJS = xascii.o

@@ -12,8 +12,6 @@ WWW=				https://gitlab.com/samba-freebsd/
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
-IGNORE_FreeBSD_12=		only runs on FreeBSD 13.1 and above due use of O_EMPTY_PATH
-
 USES=				cpe
 
 CONFLICTS_INSTALL?=		samba4*
@@ -558,6 +556,10 @@ MAKE_ENV+=			RPCGEN_CPP="${CPP}"
 #.if ${readline_ARGS} == port
 #CFLAGS+=			-D_FUNCTION_DEF
 #.endif
+# Some symbols in samba's linker version scripts are not defined, but since the
+# scripts are generated dynamically, suppress errors with lld >= 17 due to these
+# undefined symbols.
+LDFLAGS+=			-Wl,--undefined-version
 
 SAMBA4_SUB=			SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 				SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \

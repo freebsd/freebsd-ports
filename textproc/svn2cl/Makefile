@@ -1,5 +1,6 @@
 PORTNAME=	svn2cl
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://arthurdejong.org/svn2cl/
 
@@ -21,7 +22,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/svn2cl.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/svn2cl.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in ${DATAFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}

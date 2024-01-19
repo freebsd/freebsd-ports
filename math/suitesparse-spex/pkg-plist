@@ -1,4 +1,6 @@
 include/suitesparse/SPEX.h
+lib/cmake/SPEX/FindGMP.cmake
+lib/cmake/SPEX/FindMPFR.cmake
 lib/cmake/SPEX/SPEXConfig.cmake
 lib/cmake/SPEX/SPEXConfigVersion.cmake
 lib/cmake/SPEX/SPEXTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -6,7 +8,7 @@ lib/cmake/SPEX/SPEXTargets.cmake
 lib/libspex.a
 lib/libspex.so
 lib/libspex.so.2
-lib/libspex.so.2.2.1
+lib/libspex.so.%%VER%%
 libdata/pkgconfig/SPEX.pc
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_README.md
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_UserGuide.pdf

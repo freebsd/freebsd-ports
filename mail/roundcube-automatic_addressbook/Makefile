@@ -15,7 +15,7 @@ RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.8:mail/roundcube@${PHP_FLAVOR}
 USES=		php:flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	sblaisot
-IGNORE_WITH_PHP=82 83
+IGNORE_WITH_PHP=83
 
 WWWDIR=		${RCDIR}/plugins/automatic_addressbook
 NO_ARCH=	yes

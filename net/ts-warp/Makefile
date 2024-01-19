@@ -22,9 +22,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/ts-warp.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/ts-warp_pf_freebsd.conf \
 		${STAGEDIR}${PREFIX}/etc/ts-warp_pf.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/man/ts-pass.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/ts-warp.sh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/ts-warp.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/man/ts-warp.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/ts-pass.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/ts-warp.sh.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/ts-warp.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/ts-warp.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

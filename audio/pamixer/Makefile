@@ -1,5 +1,6 @@
 PORTNAME=	pamixer
 DISTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -16,6 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cdemoulins
 
 PLIST_FILES=	bin/pamixer \
-		man/man1/pamixer.1.gz
+		share/man/man1/pamixer.1.gz
 
 .include <bsd.port.mk>

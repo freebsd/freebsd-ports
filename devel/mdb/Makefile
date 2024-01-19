@@ -31,16 +31,6 @@ CFLAGS+=	-DMDB_PREFIX=\\\"${PREFIX}\\\" -g
 IGNORE=		requires full source tree with CDDL sources
 .endif
 
-.if ${OSVERSION} < 1300015 && ${COMPILER_TYPE} == "clang" && \
-    ${COMPILER_VERSION} >= 80
-# clang 8 cannot compile due to enum redefinitions in kernel.h
-BROKEN=		Depends on removed llvm70
-# BUILD_DEPENDS+=	${LOCALBASE}/bin/clang70:devel/llvm70
-# CPP=	${LOCALBASE}/bin/clang-cpp70
-# CC=	${LOCALBASE}/bin/clang70
-# CXX=	${LOCALBASE}/bin/clang++70
-.endif
-
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/mdb/kvm/${MACHINE_ARCH}
 

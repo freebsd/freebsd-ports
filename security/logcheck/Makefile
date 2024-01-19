@@ -1,5 +1,6 @@
 PORTNAME=	logcheck
 DISTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -95,10 +96,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
 		${STAGEDIR}${EXAMPLESDIR}/crontab.in
 .for i in ${MAN1_FILES}
-	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 .for i in ${MAN8_FILES}
-	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${PREFIX}/share/man/man8
 .endfor
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

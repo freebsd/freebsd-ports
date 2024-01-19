@@ -2,7 +2,7 @@ PORTNAME=	fx
 DISTVERSION=	31.0.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	nulldutra@proton.me
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Terminal JSON viewer
 WWW=		https://github.com/antonmedv/fx
 

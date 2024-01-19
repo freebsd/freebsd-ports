@@ -14,7 +14,6 @@
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_static_module.so
 %%DSO%%%%CACHE_PURGE%%libexec/nginx/ngx_http_cache_purge_module.so
-%%DSO%%%%COOKIE_FLAG%%libexec/nginx/ngx_http_cookie_flag_filter_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_http_ssl_ct_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_ssl_ct_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
@@ -40,7 +39,6 @@
 %%DSO%%%%HTTP_IP2PROXY%%libexec/nginx/ngx_http_ip2proxy_module.so
 %%DSO%%%%HTTP_JSON_STATUS%%libexec/nginx/ngx_http_json_status_module.so
 %%DSO%%%%HTTP_MOGILEFS%%libexec/nginx/ngx_http_mogilefs_module.so
-%%DSO%%%%HTTP_MP4_H264%%libexec/nginx/ngx_http_h264_streaming_module.so
 %%DSO%%%%HTTP_NOTICE%%libexec/nginx/ngx_http_notice_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/nginx/ngx_http_push_stream_module.so

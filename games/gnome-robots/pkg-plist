@@ -1,5 +1,5 @@
 bin/gnome-robots
-man/man6/gnome-robots.6.gz
+share/man/man6/gnome-robots.6.gz
 share/applications/org.gnome.Robots.desktop
 share/dbus-1/services/org.gnome.Robots.service
 %%DATADIR%%/games/classic_robots.cfg

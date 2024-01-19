@@ -1,5 +1,6 @@
 PORTNAME=	bcwipe
 PORTVERSION=	1.9.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.jetico.com/linux/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/g:S/-/./}
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
-PLIST_FILES=	bin/bcwipe man/man1/bcwipe.1.gz
+PLIST_FILES=	bin/bcwipe share/man/man1/bcwipe.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,fprintf(stderr\,string),fprintf(stderr\,\"%s\"\,string),g" ${WRKSRC}/wipe.c
@@ -29,6 +30,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bcwipe ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bcwipe.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bcwipe.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

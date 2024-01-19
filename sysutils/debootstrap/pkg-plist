@@ -1,4 +1,4 @@
-man/man8/debootstrap.8.gz
+share/man/man8/debootstrap.8.gz
 sbin/debootstrap
 %%DATADIR%%/functions
 %%DATADIR%%/scripts/aequorea

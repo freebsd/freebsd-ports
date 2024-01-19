@@ -19,7 +19,7 @@ NO_WRKSUBDIR=	yes
 # Personal Preferences, Where to install.
 PBX_VAR=${STAGEDIR}${PREFIX}/var/log/pbx
 PBX_ETC=${STAGEDIR}${PREFIX}/etc/pbx
-PBX_MAN=${STAGEDIR}${PREFIX}/man/man1
+PBX_MAN=${STAGEDIR}${PREFIX}/share/man/man1
 PBX_BIN=${STAGEDIR}${PREFIX}/bin
 PBX_DOC=${STAGEDIR}${DOCSDIR}
 ESTIC=${WRKSRC}/estic

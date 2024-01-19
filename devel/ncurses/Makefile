@@ -12,8 +12,6 @@ WWW=		https://invisible-island.net/ncurses/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=	cannot build: coredump: illegal instruction
-
 USES=		cpe pkgconfig shebangfix
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes

@@ -1,5 +1,5 @@
 bin/dconf-editor
-man/man1/dconf-editor.1.gz
+share/man/man1/dconf-editor.1.gz
 share/applications/ca.desrt.dconf-editor.desktop
 share/bash-completion/completions/dconf-editor
 share/dbus-1/services/ca.desrt.dconf-editor.service

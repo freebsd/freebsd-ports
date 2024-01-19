@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-08-17 20:17:24 UTC
+--- CMakeLists.txt.orig	2024-01-06 23:03:16 UTC
 +++ CMakeLists.txt
-@@ -96,7 +96,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
+@@ -113,7 +113,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
  install(TARGETS treesheets DESTINATION ${TREESHEETS_BINDIR})
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  install(FILES TS/readme.html DESTINATION ${TREESHEETS_DOCDIR})

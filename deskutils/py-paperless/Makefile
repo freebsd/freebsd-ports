@@ -1,6 +1,6 @@
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -115,7 +115,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/db/paperless/consume/input \
 		${STAGEDIR}/var/db/paperless/media \
 		${STAGEDIR}/var/db/paperless/sqlite
-	${INSTALL_MAN} ${WRKDIR}/paperless.7 ${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKDIR}/paperless.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/presentation

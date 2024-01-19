@@ -1,6 +1,7 @@
 PORTNAME=	bgs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,8 +18,10 @@ USE_XORG=	x11 xinerama
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gottox
 
+MAKE_ARGS=	PREFIX="${PREFIX}"
+
 PLIST_FILES=	bin/bgs \
-		man/man1/bgs.1.gz
+		share/man/man1/bgs.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bgs

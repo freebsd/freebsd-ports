@@ -1,5 +1,5 @@
 PORTNAME=	recog
-PORTVERSION=	2.3.23
+PORTVERSION=	3.1.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,14 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
-USES=		gem python:env shebangfix
+USES=		gem
 
 NO_ARCH=	yes
-SHEBANG_FILES=	update_cpes.py .vscode/bin/monitor-recog-fingerprints.sh
-PLIST_FILES=	bin/recog_cleanup \
-		bin/recog_export \
-		bin/recog_match \
-		bin/recog_standardize \
-		bin/recog_verify
+PLIST_FILES=	bin/recog_match
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.6
+DISTVERSION=	1.3.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,15 +10,13 @@ WWW=		https://github.com/hyprwm/xdg-desktop-portal-hyprland
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	libc++ too old
-
 BUILD_DEPENDS=	wayland-protocols>=1.31:graphics/wayland-protocols
-LIB_DEPENDS=	libsdbus-c++.so:devel/sdbus-cpp \
+LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
+		libsdbus-c++.so:devel/sdbus-cpp \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
 RUN_DEPENDS=	grim:x11/grim \
-		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR} \
 		slurp:x11/slurp
 
 FLAVORS=	qt5 qt6
@@ -26,39 +24,35 @@ qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 qt6_PKGNAMESUFFIX=	-qt6
 
-USES=		compiler:c++11-lib gl meson pkgconfig
+USES=		cmake compiler:c++11-lib gl pkgconfig qt:5
 USE_GITHUB=	yes
 USE_GL=		gbm
+USE_QT=		qmake:build buildtools:build core gui wayland:run widgets
 GH_ACCOUNT=	hyprwm
 GH_TUPLE=	hyprwm:hyprland-protocols:v0.2:hyprland_protocols/subprojects/hyprland-protocols
-MESON_ARGS=	-Dsystemd=disabled
-PLIST_FILES=	libexec/${PORTNAME} \
+LDFLAGS+=	-Wl,--as-needed # GL, sdbus-cpp deps
+PLIST_FILES=	bin/hyprland-share-picker \
+		lib/systemd/user/${PORTNAME}.service \
+		libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
+
+.if ${FLAVOR:U} == qt6
+USES:=		${USES:S/qt:5/qt:6/}
+USE_QT=		base wayland:run
+.endif
 
 # XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
 CXXFLAGS+=	-fexperimental-library
 .endif
 
-post-patch:
-# XXX Merge with hyprland-share-picker instead
-	@${REINPLACE_CMD} '/hyprland-share-picker/d' ${WRKSRC}/meson.build
-
-.ifdef GH_TUPLE
-post-configure:
-	@${REINPLACE_CMD} 's/meson install/& \
-		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
-.endif
-
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
-BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
 USES+=		llvm:min=16,build,export
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-CMAKE_BIN=	${LOCALBASE}/bin/cmake
 
 # XXX Move into separate port and standardize via USES
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx

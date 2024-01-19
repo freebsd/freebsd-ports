@@ -1,6 +1,6 @@
 PORTNAME=	cvsdadm
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
 		SAVANNAH
@@ -23,13 +23,13 @@ PORTDOCS=	cvsdadm.README
 SHEBANG_FILES=	cvsdadm
 
 PLIST_FILES=	bin/cvsdadm \
-		man/man1/cvsdadm.1.gz
+		share/man/man1/cvsdadm.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsdadm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cvsdadm.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cvsdadm.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

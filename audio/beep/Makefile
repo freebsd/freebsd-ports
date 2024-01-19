@@ -1,6 +1,6 @@
 PORTNAME=	beep
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/garga/${PORTNAME}
 
@@ -13,7 +13,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-PLIST_FILES=	bin/beep man/man1/beep.1.gz
+PLIST_FILES=	bin/beep share/man/man1/beep.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} 's|machine/speaker\.h|dev/speaker/speaker.h|' \

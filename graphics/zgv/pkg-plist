@@ -1,6 +1,6 @@
 @(,,4555) bin/zgv
 etc/zgvrc.sample
-man/man1/zgv.1.gz
+share/man/man1/zgv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

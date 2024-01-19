@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-credential
-PORTVERSION=	5.0.9
+PORTVERSION=	6.0.6
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-pg>=0:databases/rubygem-pg \
-		rubygem-railties60>=6.0:www/rubygem-railties60 \
+		rubygem-railties70>=7.0:www/rubygem-railties70 \
 		rubygem-rex-socket>=0:security/rubygem-rex-socket \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip

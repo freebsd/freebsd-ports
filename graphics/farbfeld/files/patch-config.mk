@@ -1,11 +1,6 @@
 --- config.mk.orig	2018-04-11 10:59:06 UTC
 +++ config.mk
-@@ -5,14 +5,14 @@ VERSION = 4
- 
- # paths
- PREFIX = /usr/local
--MANPREFIX = $(PREFIX)/share/man
-+MANPREFIX = $(PREFIX)/man
+@@ -9,10 +9,10 @@ CPPFLAGS = -D_DEFAULT_SOURCE
  
  # flags
  CPPFLAGS = -D_DEFAULT_SOURCE

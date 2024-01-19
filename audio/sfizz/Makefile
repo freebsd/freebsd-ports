@@ -69,10 +69,6 @@ VST_CMAKE_BOOL=		SFIZZ_VST
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 1301505) # 20d21e43514502c0a346f3c2cdb1d8cd8c7cc6b0 commit in 13 fixed booleans in stdatomic.h that were causing breakage
-BROKEN=		fails to compile: unknown type name '_Bool'
-.endif
-
 post-install-LV2-on:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/lv2/sfizz.lv2/Contents/Binary/sfizz.so \

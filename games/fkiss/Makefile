@@ -1,6 +1,6 @@
 PORTNAME=	fkiss
 PORTVERSION=	0.33a
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/fkiss/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a//}
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
-PLIST_FILES=	bin/fkiss man/man1/fkiss.1.gz
+PLIST_FILES=	bin/fkiss share/man/man1/fkiss.1.gz
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -43,7 +43,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fkiss ${STAGEDIR}${PREFIX}/bin/fkiss
 	${INSTALL_MAN} ${WRKSRC}/fkiss.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/fkiss.1
+		${STAGEDIR}${PREFIX}/share/man/man1/fkiss.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

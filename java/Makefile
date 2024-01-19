@@ -107,6 +107,6 @@
     SUBDIR += trove4j
     SUBDIR += veditor
     SUBDIR += visualvm
-    SUBDIR += wildfly10
+    SUBDIR += wildfly
 
 .include <bsd.port.subdir.mk>

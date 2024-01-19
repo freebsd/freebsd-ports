@@ -9,12 +9,3 @@
      if (fp == NULL)
          return;
      while (!feof (fp))
-@@ -105,7 +105,7 @@ static void open_tempbookletfile(char *mode)
-     if(ptempbooklet_file == NULL)
-     {
-             fprintf(stderr, "ERROR: Unable to open temp file %s\n", temp_filename);
--            return 1;
-+            return;
-     }  
-     chmod(temp_filename, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
- 

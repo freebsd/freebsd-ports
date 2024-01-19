@@ -1,7 +1,7 @@
---- sendmail/readcf.c.orig	2019-02-15 10:30:19 UTC
+--- sendmail/readcf.c.orig	2023-12-19 05:29:19 UTC
 +++ sendmail/readcf.c
-@@ -2988,6 +2988,10 @@ static struct optioninfo
- 	{ "ClientCACertPath",			O_CLTCACERTPATH, OI_NONE },
+@@ -3208,6 +3208,10 @@ static struct optioninfo
+ 	{ "CipherSuites",		O_CIPHERSUITES,	OI_NONE	},
  #endif
  
 +#if USE_BLACKLIST
@@ -11,7 +11,7 @@
  	{ NULL,				'\0',		OI_NONE	}
  };
  
-@@ -4661,6 +4665,12 @@ setoption(opt, val, safe, sticky, e)
+@@ -4946,6 +4950,12 @@ setoption(opt, val, safe, sticky, e)
  		break;
  #endif
  

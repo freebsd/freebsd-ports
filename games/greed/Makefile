@@ -1,5 +1,6 @@
 PORTNAME=	greed
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
@@ -21,7 +22,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/greed ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/greed.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/greed.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 	@${MKDIR} ${STAGEDIR}${SCOREFILE:H}
 	${TOUCH} ${STAGEDIR}${SCOREFILE}.sample
 

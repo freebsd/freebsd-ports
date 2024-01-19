@@ -1,6 +1,6 @@
 PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		http://hp.vector.co.jp/authors/VA003457/vim/vim3/2.1b/

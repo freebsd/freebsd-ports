@@ -1,6 +1,6 @@
 bin/calamaris
 bin/calamaris-cache-convert
-man/man1/calamaris.1.gz
+share/man/man1/calamaris.1.gz
 %%SITE_ARCH%%/calAxestype.pm
 %%SITE_ARCH%%/calAxestype3d.pm
 %%SITE_ARCH%%/calBars3d.pm

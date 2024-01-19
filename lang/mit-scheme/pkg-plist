@@ -783,5 +783,5 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-w32.pkd
 %%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
 %%PGSQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
 %%X11%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prx11.so
-man/man1/scheme.1.gz
+share/man/man1/scheme.1.gz
 @dir lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib

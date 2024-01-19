@@ -14,6 +14,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --enable-shared=yes
 USE_LDCONFIG=	yes
 
-BROKEN_sparc64=	Does not compile on sparc64: gcc coredump
-
 .include <bsd.port.mk>

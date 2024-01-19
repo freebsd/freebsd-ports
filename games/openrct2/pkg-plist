@@ -25,6 +25,7 @@ share/man/man6/openrct2.6.gz
 share/metainfo/openrct2.appdata.xml
 share/mime/packages/openrct2.xml
 %%DATADIR%%/assetpack/openrct2.music.alternative.parkap
+%%DATADIR%%/assetpack/openrct2.music.cover.parkap
 %%DATADIR%%/assetpack/openrct2.sound.parkap
 %%DATADIR%%/g2.dat
 %%DATADIR%%/language/ar-EG.txt
@@ -58,11 +59,17 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/official/footpath_railings/openrct2.footpath_railings.invisible.json
 %%DATADIR%%/object/official/footpath_surface/openrct2.footpath_surface.invisible.json
 %%DATADIR%%/object/official/footpath_surface/openrct2.footpath_surface.queue_invisible.json
+%%DATADIR%%/object/official/music/openrct2.audio.title.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.acid.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.blizzard.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.dodgems.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.extraterrestrial.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.fairground2.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.galaxy.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.mystic.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.prehistoric.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.ragtime2.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.rock4.parkobj
 %%DATADIR%%/object/official/ride/openrct2.ride.alpine_coaster.parkobj
 %%DATADIR%%/object/official/ride/openrct2.ride.hybrid_coaster.parkobj
 %%DATADIR%%/object/official/ride/openrct2.ride.single_rail_coaster.parkobj
@@ -105,6 +112,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct1/footpath_surface/rct1.footpath_surface.crazy_paving.parkobj
 %%DATADIR%%/object/rct1/footpath_surface/rct1.footpath_surface.dirt.parkobj
 %%DATADIR%%/object/rct1/footpath_surface/rct1.footpath_surface.queue_blue.parkobj
+%%DATADIR%%/object/rct1/footpath_surface/rct1.footpath_surface.road.parkobj
 %%DATADIR%%/object/rct1/footpath_surface/rct1.footpath_surface.tarmac.parkobj
 %%DATADIR%%/object/rct1/footpath_surface/rct1.footpath_surface.tiles_brown.parkobj
 %%DATADIR%%/object/rct1/footpath_surface/rct1aa.footpath_surface.ash.parkobj

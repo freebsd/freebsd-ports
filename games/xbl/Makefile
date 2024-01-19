@@ -1,5 +1,6 @@
 PORTNAME=	xbl
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.univ-lyon1.fr/thierry.excoffier/XBL/
 
@@ -19,7 +20,7 @@ MAKE_ARGS=	USE_SETGID="" \
 		RESOURCEDIR="${PREFIX}/lib/X11/app-defaults" \
 		BINDIR="${PREFIX}/bin" \
 		SCOREDIR="${PREFIX}/lib/X11/xbl" \
-		MANPATH="${MANPREFIX}/man" \
+		MANPATH="${PREFIX}/share/man" \
 		LIBS="-lm -lX11" \
 		LDOPTIONS="${LDFLAGS}"
 
@@ -32,7 +33,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bl ${STAGEDIR}${PREFIX}/bin/xbl
-	${INSTALL_MAN} ${WRKSRC}/xbl.man ${STAGEDIR}${MANPREFIX}/man/man1/xbl.1
+	${INSTALL_MAN} ${WRKSRC}/xbl.man ${STAGEDIR}${PREFIX}/share/man/man1/xbl.1
 	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Xbl
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xbl
 	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${STAGEDIR}${PREFIX}/lib/X11/xbl/Xbl

@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	compilation fails: runaway processes and out-of-memory conditions
+BROKEN_i386=	compilation fails: clang runs out of memory
+BROKEN_armv7=	compilation fails: clang runs out of memory
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libgmpxx.so:math/gmp

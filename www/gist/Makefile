@@ -1,6 +1,7 @@
 PORTNAME=	gist
 PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www net
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
@@ -22,13 +23,13 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/gist \
-		man/man1/gist.1.gz
+		share/man/man1/gist.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/build/gist
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/build/gist ${STAGEDIR}${PREFIX}/bin/gist
-	${INSTALL_MAN} ${WRKSRC}/build/gist.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/build/gist.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

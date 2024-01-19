@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.11.1
+DISTVERSION=	1.11.2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +21,6 @@ LIB_DEPENDS=	libelf.so:devel/elfutils \
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
 		bash:shells/bash
 TEST_DEPENDS=	check>0:devel/check
-.if !exists(/usr/include/unwind.h)
-LIB_DEPENDS+=	libunwind.so:devel/libunwind
-.endif
 
 USES=		autoreconf compiler:c++14-lang localbase pkgconfig shebangfix
 

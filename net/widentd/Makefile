@@ -4,22 +4,19 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/widentd/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC1413 auth/identd daemon providing a fixed fake reply
 WWW=		https://BSDforge.com/projects/net/widentd/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandonware, last release in 2004 and dead upstream. Consider using security/oidentd
+EXPIRATION_DATE=2024-02-29
+
 USES=		ncurses uidfix tar:xz
 USE_RC_SUBR=	widentd
-MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man" MK_WERROR=no
 
 PLIST_FILES=	sbin/widentd man/man8/widentd.8.gz
 
 .include <bsd.port.mk>
-
-.if ${OSREL:R} < 13
-MAKE_ENV+=NO_WERROR=1
-.else
-MAKE_ENV+=MK_WERROR=no
-.endif

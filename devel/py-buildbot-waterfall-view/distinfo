@@ -1,3 +1,3 @@
-TIMESTAMP = 1701769611
-SHA256 (buildbot-waterfall-view-3.10.0.tar.gz) = f7608d7c1206722bf59b1f78f216b5620bc51a1c79849b1b9f59ff0485e63d3f
-SIZE (buildbot-waterfall-view-3.10.0.tar.gz) = 194355
+TIMESTAMP = 1703695985
+SHA256 (buildbot-waterfall-view-3.10.1.tar.gz) = 72ed3eeba0c77fc1dfbdfc7f22f5727b1c25dc8d0c98b8c9acd0c13cbc68ec18
+SIZE (buildbot-waterfall-view-3.10.1.tar.gz) = 194349

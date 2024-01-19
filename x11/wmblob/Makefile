@@ -1,6 +1,6 @@
 PORTNAME=	wmblob
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	https://BSDforge.com/projects/source/x11/wmblob/
 
@@ -13,10 +13,10 @@ USE_XORG=	xpm
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/wmblob man/man1/wmblob.1.gz
+PLIST_FILES=	bin/wmblob share/man/man1/wmblob.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmblob ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/wmblob.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/wmblob.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

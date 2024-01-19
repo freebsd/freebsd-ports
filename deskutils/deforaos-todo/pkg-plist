@@ -1,5 +1,5 @@
 bin/todo
-%%PORTDOCS%%man/man1/todo.1.gz
+%%PORTDOCS%%share/man/man1/todo.1.gz
 share/applications/deforaos-todo.desktop
 share/icons/hicolor/16x16/apps/todo.png
 share/icons/hicolor/24x24/apps/todo.png

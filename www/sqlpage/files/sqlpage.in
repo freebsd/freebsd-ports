@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: sqlpage
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `sqlpage':
+#
+# sqlpage_enable="YES"
+#
+# and be sure to configure %%PREFIX%%/etc/sqlpage/sqlpage.json
+#
+# Additional variables you can define are:
+#
+# sqlpage_user:		Username to run sqlpage
+#			Default: sqlpage
+
+. /etc/rc.subr
+
+name=sqlpage
+rcvar=sqlpage_enable
+
+command=/usr/sbin/daemon
+pidfile=/var/run/${name}.pid
+pidfile_daemon=/var/run/${name}_daemon.pid
+procname=%%PREFIX%%/bin/${name}
+sqlpage_chdir=%%PREFIX%%/etc
+
+# read configuration and set defaults
+load_rc_config ${name}
+: ${sqlpage_enable:="NO"}
+: ${sqlpage_user:="${name}"}
+
+command_args="-P ${pidfile_daemon} -p ${pidfile} -t ${name} -Ho /var/log/${name} ${procname}"
+
+start_precmd=sqlpage_precmd
+
+# Sets up a pidfile the daemon user can access
+sqlpage_precmd()
+{
+	/usr/bin/install -o ${sqlpage_user} -m 0600 /dev/null ${pidfile}
+	/usr/bin/install -o ${sqlpage_user} -m 0600 /dev/null ${pidfile_daemon}
+	/usr/bin/touch /var/log/${name}
+	/usr/sbin/chown ${sqlpage_user}:${sqlpage_user} /var/log/${name}
+}
+
+run_rc_command "$1"

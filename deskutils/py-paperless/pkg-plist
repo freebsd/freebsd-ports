@@ -326,7 +326,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/reminders/views.py
 %%PYTHON_SITELIBDIR%%/paperless/setup.cfg
 %%PYTHON_SITELIBDIR%%/paperless/tox.ini
-man/man7/paperless.7.gz
+share/man/man7/paperless.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sshd_config

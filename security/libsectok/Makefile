@@ -1,6 +1,6 @@
 PORTNAME=	libsectok
 PORTVERSION=	20030619
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 
@@ -11,7 +11,7 @@ WWW=		http://www.citi.umich.edu/projects/smartcard/sectok.html
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/sectok.h lib/libsectok.a lib/libsectok.so \
-		lib/libsectok.so.3 man/man3/sectok.3.gz
+		lib/libsectok.so.3 share/man/man3/sectok.3.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -33,6 +33,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib)
 	${LN} -s libsectok.so.3 ${STAGEDIR}${PREFIX}/lib/libsectok.so
 	(cd ${WRKSRC} && ${INSTALL_MAN} sectok.3 \
-		${STAGEDIR}${MANPREFIX}/man/man3)
+		${STAGEDIR}${PREFIX}/share/man/man3)
 
 .include <bsd.port.mk>

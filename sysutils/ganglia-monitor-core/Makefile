@@ -94,9 +94,9 @@ post-install:
 		${WRKSRC}/mans/gmetric.1 \
 		${WRKSRC}/mans/gmond.1 \
 		${WRKSRC}/mans/gstat.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
-		${STAGEDIR}${MANPREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
 	@${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
 
@@ -106,6 +106,6 @@ post-install-GMETAD-on:
 	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
 		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

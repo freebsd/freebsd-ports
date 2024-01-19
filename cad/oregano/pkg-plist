@@ -1,6 +1,6 @@
 bin/microtests
 bin/oregano
-man/man1/oregano.1.gz
+share/man/man1/oregano.1.gz
 share/applications/oregano.desktop
 share/help/C/oregano/figures/Screenshot-zener.oregano.png
 share/help/C/oregano/figures/oregano-Generate-List.png

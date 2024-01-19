@@ -1,6 +1,6 @@
 PORTNAME=	wmtop
 PORTVERSION=	0.84
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
@@ -18,7 +18,7 @@ CFLAGS+=	-fcommon  # clang11/gcc10
 
 PORTDOCS=	BUGS CHANGES README TODO
 PLIST_FILES=	bin/wmtop \
-		man/man1/wmtop.1.gz
+		share/man/man1/wmtop.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -28,7 +28,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmtop ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmtop.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/wmtop.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

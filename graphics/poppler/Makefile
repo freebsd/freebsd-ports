@@ -1,6 +1,5 @@
 PORTNAME=	poppler
-DISTVERSION=	23.05.0
-PORTREVISION=	2
+DISTVERSION=	23.12.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -17,7 +16,8 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		libnss3.so:security/nss \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libgpgmepp.so:security/gpgme-cpp
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs \
 		gsed:textproc/gsed
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
@@ -56,7 +56,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=128
+PLIST_SUB+=	SHLIB_VER=133
 
 OPTIONS_DEFINE=		CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG

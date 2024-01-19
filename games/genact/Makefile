@@ -1,10 +1,9 @@
 PORTNAME=	genact
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
-PORTREVISION=	25
+DISTVERSION=	1.3.0
 CATEGORIES=	games
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Nonsense activity generator
 WWW=		https://github.com/svenstaro/genact
 
@@ -12,158 +11,16 @@ LICENSE=	APACHE20 BSD3CLAUSE ISCL MIT UNLICENSE
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-USES=	cargo
+USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	svenstaro
 
-PLIST_FILES=	bin/genact
-
-CARGO_CRATES=	aho-corasick-0.7.15 \
-		ansi_term-0.11.0 \
-		anyhow-1.0.38 \
-		async-attributes-1.1.2 \
-		async-channel-1.6.1 \
-		async-executor-1.4.0 \
-		async-global-executor-2.0.2 \
-		async-io-1.3.1 \
-		async-lock-2.3.0 \
-		async-mutex-1.4.0 \
-		async-std-1.9.0 \
-		async-task-4.0.3 \
-		async-trait-0.1.48 \
-		atomic-waker-1.0.0 \
-		atty-0.2.14 \
-		autocfg-1.0.1 \
-		base-x-0.2.8 \
-		bitflags-1.2.1 \
-		blocking-1.0.2 \
-		bumpalo-3.6.1 \
-		cache-padded-1.1.1 \
-		cc-1.0.67 \
-		cfg-if-0.1.10 \
-		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-2.33.3 \
-		concurrent-queue-1.2.2 \
-		console_error_panic_hook-0.1.6 \
-		const_fn-0.4.5 \
-		crossbeam-utils-0.8.3 \
-		ctor-0.1.19 \
-		ctrlc-3.1.8 \
-		discard-1.0.4 \
-		event-listener-2.5.1 \
-		fake-2.4.0 \
-		fastrand-1.4.0 \
-		form_urlencoded-1.0.1 \
-		futures-0.3.13 \
-		futures-channel-0.3.13 \
-		futures-core-0.3.13 \
-		futures-executor-0.3.13 \
-		futures-io-0.3.13 \
-		futures-lite-1.11.3 \
-		futures-macro-0.3.13 \
-		futures-sink-0.3.13 \
-		futures-task-0.3.13 \
-		futures-util-0.3.13 \
-		getrandom-0.2.2 \
-		gloo-timers-0.2.1 \
-		heck-0.3.2 \
-		hermit-abi-0.1.18 \
-		humansize-1.1.0 \
-		humantime-2.1.0 \
-		idna-0.2.2 \
-		instant-0.1.9 \
-		itoa-0.4.7 \
-		js-sys-0.3.49 \
-		kernel32-sys-0.2.2 \
-		kv-log-macro-1.0.7 \
-		lazy_static-1.4.0 \
-		libc-0.2.90 \
-		libm-0.2.1 \
-		log-0.4.14 \
-		matches-0.1.8 \
-		memchr-2.3.4 \
-		nb-connect-1.0.3 \
-		nix-0.20.0 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		once_cell-1.7.2 \
-		parking-2.0.0 \
-		percent-encoding-2.1.0 \
-		pin-project-lite-0.2.6 \
-		pin-utils-0.1.0 \
-		polling-2.0.2 \
-		ppv-lite86-0.2.10 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.24 \
-		progress_string-0.1.1 \
-		quote-1.0.9 \
-		rand-0.8.3 \
-		rand_chacha-0.3.0 \
-		rand_core-0.6.2 \
-		rand_distr-0.4.0 \
-		rand_hc-0.3.0 \
-		regex-1.4.5 \
-		regex-syntax-0.6.23 \
-		rustc_version-0.2.3 \
-		ryu-1.0.5 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.124 \
-		serde_derive-1.0.124 \
-		serde_json-1.0.64 \
-		sha1-0.6.0 \
-		slab-0.4.2 \
-		socket2-0.3.19 \
-		standback-0.2.15 \
-		stdweb-0.4.20 \
-		stdweb-derive-0.5.3 \
-		stdweb-internal-macros-0.2.9 \
-		stdweb-internal-runtime-0.1.5 \
-		strsim-0.8.0 \
-		structopt-0.3.21 \
-		structopt-derive-0.4.14 \
-		syn-1.0.64 \
-		term_size-1.0.0-beta1 \
-		textwrap-0.11.0 \
-		time-0.1.43 \
-		time-0.2.26 \
-		time-macros-0.1.1 \
-		time-macros-impl-0.1.1 \
-		tinyvec-1.1.1 \
-		tinyvec_macros-0.1.0 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.17 \
-		unicode-segmentation-1.7.1 \
-		unicode-width-0.1.8 \
-		unicode-xid-0.2.1 \
-		url-2.2.1 \
-		value-bag-1.0.0-alpha.6 \
-		vec-arena-1.0.0 \
-		vec_map-0.8.2 \
-		version_check-0.9.3 \
-		waker-fn-1.1.0 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.72 \
-		wasm-bindgen-backend-0.2.72 \
-		wasm-bindgen-futures-0.4.22 \
-		wasm-bindgen-macro-0.2.72 \
-		wasm-bindgen-macro-support-0.2.72 \
-		wasm-bindgen-shared-0.2.72 \
-		web-sys-0.3.49 \
-		wepoll-sys-3.0.1 \
-		winapi-0.2.8 \
-		winapi-0.3.9 \
-		winapi-build-0.1.1 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		yansi-0.5.0
+PLIST_FILES=	bin/genact \
+		share/man/man1/genact.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/genact
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} --print-manpage > ${WRKSRC}/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

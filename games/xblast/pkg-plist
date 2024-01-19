@@ -1,6 +1,6 @@
 bin/xblast
 %%NO_SDL%%%%SOUND%%bin/xbsndsrv
-man/man6/xblast.6.gz
+share/man/man6/xblast.6.gz
 %%NLS%%share/locale/de/LC_MESSAGES/xblast.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xblast.mo
 %%DATADIR%%/image/block/EPFL_stop.ppm

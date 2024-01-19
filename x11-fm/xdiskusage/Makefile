@@ -1,5 +1,6 @@
 PORTNAME=	xdiskusage
 PORTVERSION=	1.54
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/
@@ -21,7 +22,7 @@ USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 CXXFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`
 
-PLIST_FILES=	bin/xdiskusage man/man1/xdiskusage.1.gz
+PLIST_FILES=	bin/xdiskusage share/man/man1/xdiskusage.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^configure:/d; /autoconf/d' \
@@ -31,6 +32,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdiskusage ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xdiskusage.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xdiskusage.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

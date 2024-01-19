@@ -1,5 +1,6 @@
 PORTNAME=	memdump
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.porcupine.org/forensics/
 
@@ -16,13 +17,13 @@ ALL_TARGET=	what
 MAKE_ARGS=	OPT="${CFLAGS}" DEBUG=''
 
 PORTDOCS=	README
-PLIST_FILES=	bin/memdump man/man1/memdump.1.gz
+PLIST_FILES=	bin/memdump share/man/man1/memdump.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/memdump ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/memdump.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/memdump.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

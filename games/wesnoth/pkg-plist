@@ -11,6 +11,7 @@ share/icons/hicolor/512x512/apps/wesnoth-icon.png
 share/icons/hicolor/64x64/apps/wesnoth-icon.png
 share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%CAMPAIGN%%bin/campaignd
+%%NLS%%%%SERVER%%share/man/bg/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/ca/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/cs/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/de/man6/wesnothd.6.gz
@@ -23,9 +24,11 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%%%SERVER%%share/man/ja/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/pt_BR/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/ru/man6/wesnothd.6.gz
+%%NLS%%%%SERVER%%share/man/sk/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/tr/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/zh_CN/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%share/man/zh_TW/man6/wesnothd.6.gz
+%%NLS%%share/man/bg/man6/wesnoth.6.gz
 %%NLS%%share/man/ca/man6/wesnoth.6.gz
 %%NLS%%share/man/cs/man6/wesnoth.6.gz
 %%NLS%%share/man/de/man6/wesnoth.6.gz
@@ -37,6 +40,7 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%share/man/ja/man6/wesnoth.6.gz
 %%NLS%%share/man/pt_BR/man6/wesnoth.6.gz
 %%NLS%%share/man/ru/man6/wesnoth.6.gz
+%%NLS%%share/man/sk/man6/wesnoth.6.gz
 %%NLS%%share/man/tr/man6/wesnoth.6.gz
 %%NLS%%share/man/zh_CN/man6/wesnoth.6.gz
 %%NLS%%share/man/zh_TW/man6/wesnoth.6.gz
@@ -215,6 +219,31 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-wc.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-dw.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-help.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-sota.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth-wc.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-dm.mo
@@ -1496,6 +1525,7 @@ share/icons/HighContrast/scalable/apps/wesnoth-icon.svg
 %%NLS%%@dir share/man/ar/man6
 %%NLS%%@dir share/man/bg/man6
 %%NLS%%@dir share/man/ca_ES@valencia/man6
+%%NLS%%@dir share/man/cy/man6
 %%NLS%%@dir share/man/da/man6
 %%NLS%%@dir share/man/el/man6
 %%NLS%%@dir share/man/en@shaw/man6

@@ -289,7 +289,7 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 			    lookup_struct_elt (proc_sym->type (), "td_oncpu",
 				0);
 			thread_off_td_oncpu = td_oncpu.offset / 8;
-			thread_oncpu_size = FIELD_BITSIZE(*td_oncpu.field) / 8;
+			thread_oncpu_size = td_oncpu.field->bitsize () / 8;
 		} catch (const gdb_exception_error &e2) {
 			proc_off_p_pid = offsetof(struct proc, p_pid);
 			proc_off_p_comm = offsetof(struct proc, p_comm);

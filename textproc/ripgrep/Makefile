@@ -1,6 +1,6 @@
 PORTNAME=	ripgrep
-DISTVERSION=	13.0.0
-PORTREVISION=	25
+DISTVERSION=	14.0.3
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -12,85 +12,64 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 
-BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
-
 USES=		cargo cpe
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		atty-0.2.14 \
-		base64-0.13.0 \
-		bitflags-1.2.1 \
-		bstr-0.2.16 \
-		bytecount-0.6.2 \
-		cc-1.0.68 \
-		cfg-if-0.1.10 \
+CARGO_CRATES=	aho-corasick-1.1.2 \
+		anyhow-1.0.75 \
+		autocfg-1.1.0 \
+		bstr-1.8.0 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		clap-2.33.3 \
-		crossbeam-channel-0.5.1 \
-		crossbeam-utils-0.8.5 \
-		encoding_rs-0.8.28 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
+		encoding_rs-0.8.33 \
 		encoding_rs_io-0.1.7 \
-		fnv-1.0.7 \
-		fs_extra-1.2.0 \
-		glob-0.3.0 \
-		globset-0.4.7 \
-		grep-0.2.8 \
-		grep-cli-0.1.6 \
-		grep-matcher-0.1.5 \
-		grep-pcre2-0.1.5 \
-		grep-printer-0.1.6 \
-		grep-regex-0.1.9 \
-		grep-searcher-0.1.8 \
-		hermit-abi-0.1.18 \
-		ignore-0.4.18 \
-		itoa-0.4.7 \
-		jemalloc-sys-0.3.2 \
-		jemallocator-0.3.2 \
-		jobserver-0.1.22 \
-		lazy_static-1.4.0 \
-		libc-0.2.97 \
-		libm-0.1.4 \
-		log-0.4.14 \
-		memchr-2.4.0 \
-		memmap2-0.3.0 \
-		num_cpus-1.13.0 \
-		once_cell-1.7.2 \
-		packed_simd_2-0.3.8 \
-		pcre2-0.2.3 \
-		pcre2-sys-0.2.5 \
-		pkg-config-0.3.19 \
-		proc-macro2-1.0.27 \
-		quote-1.0.9 \
-		regex-1.5.4 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
-		ryu-1.0.5 \
+		glob-0.3.1 \
+		itoa-1.0.9 \
+		jemalloc-sys-0.5.4+5.3.0-patched \
+		jemallocator-0.5.4 \
+		jobserver-0.1.27 \
+		lexopt-0.3.0 \
+		libc-0.2.150 \
+		libm-0.2.8 \
+		log-0.4.20 \
+		memchr-2.6.4 \
+		memmap2-0.9.0 \
+		memoffset-0.9.0 \
+		num-traits-0.2.17 \
+		packed_simd-0.3.9 \
+		pcre2-0.2.6 \
+		pcre2-sys-0.2.7 \
+		pkg-config-0.3.27 \
+		proc-macro2-1.0.70 \
+		quote-1.0.33 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
-		serde-1.0.126 \
-		serde_derive-1.0.126 \
-		serde_json-1.0.64 \
-		strsim-0.8.0 \
-		syn-1.0.73 \
-		termcolor-1.1.2 \
-		textwrap-0.11.0 \
-		thread_local-1.1.3 \
-		unicode-width-0.1.8 \
-		unicode-xid-0.2.2 \
-		walkdir-2.3.2 \
+		scopeguard-1.2.0 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
+		serde_json-1.0.108 \
+		syn-2.0.39 \
+		termcolor-1.4.0 \
+		textwrap-0.16.0 \
+		unicode-ident-1.0.12 \
+		walkdir-2.4.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
-
-RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
-CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
 
 PLIST_FILES=	bin/rg \
 		etc/bash_completion.d/rg.bash \
-		man/man1/rg.1.gz \
+		share/man/man1/rg.1.gz \
 		share/fish/vendor_completions.d/rg.fish \
 		share/zsh/site-functions/_rg
 
@@ -107,25 +86,20 @@ PCRE2_DESC=	${PCRE_DESC} version 2
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE2_VARS=	CARGO_FEATURES+=pcre2
 
-SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=encoding_rs,packed_simd_2
+SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=encoding_rs,packed_simd
 SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}}
 SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
-	${INSTALL_MAN} ${RIPGREP_OUTDIR}/rg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${STAGEDIR}${PREFIX}/bin/rg --generate man > ${WRKDIR}/rg.1
+	${INSTALL_MAN} ${WRKDIR}/rg.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
-	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${STAGEDIR}${PREFIX}/bin/rg --generate complete-bash > ${STAGEDIR}${PREFIX}/etc/bash_completion.d/rg.bash
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
-	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.fish \
-		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
+	${STAGEDIR}${PREFIX}/bin/rg --generate complete-fish > ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/rg.fish
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-	${INSTALL_DATA} ${WRKSRC}/complete/_rg \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${STAGEDIR}${PREFIX}/bin/rg --generate complete-zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_rg
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

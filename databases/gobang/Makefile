@@ -1,7 +1,7 @@
 PORTNAME=	gobang
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0-alpha.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://github.com/tako8ki/gobang
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/TaKO8Ki/gobang/issues/180
 
 USES=		cargo
 USE_GITHUB=	yes

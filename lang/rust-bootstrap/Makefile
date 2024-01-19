@@ -2,7 +2,7 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.74.0
+PORTVERSION=	1.75.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
@@ -64,9 +64,6 @@ _RUST_LLVM_TARGET_riscv64=		RISCV
 
 .if ${OPSYS} != FreeBSD
 IGNORE=	is only for FreeBSD
-.endif
-.if (${FLAVOR} == powerpc64le || ${FLAVOR} == riscv64) && ${OSVERSION} < 1300116
-IGNORE=	will not build on 12.x due to old system
 .endif
 
 .if exists(${PATCHDIR}/${FLAVOR:S/_/-/})

@@ -1,5 +1,6 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.16
+DISTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,13 +21,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.76 \
+		anyhow-1.0.79 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.5 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
-		bstr-1.8.0 \
+		bstr-1.9.0 \
 		bumpalo-3.14.0 \
 		bytes-1.5.0 \
 		cc-1.0.83 \
@@ -42,12 +43,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
-		futures-channel-0.3.29 \
-		futures-core-0.3.29 \
-		futures-io-0.3.29 \
-		futures-sink-0.3.29 \
-		futures-task-0.3.29 \
-		futures-util-0.3.29 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-io-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
 		gimli-0.28.1 \
 		h2-0.3.22 \
 		hashbrown-0.14.3 \
@@ -59,7 +60,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		httpdate-1.0.3 \
 		hyper-0.14.28 \
 		hyper-tls-0.5.0 \
-		iana-time-zone-0.1.58 \
+		iana-time-zone-0.1.59 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		indexmap-2.1.0 \
@@ -67,10 +68,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itoa-1.0.10 \
 		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.151 \
+		libc-0.2.152 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		mime-0.3.17 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.10 \
@@ -78,41 +79,41 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		normpath-1.1.1 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
-		object-0.32.1 \
+		object-0.32.2 \
 		once_cell-1.19.0 \
 		opener-0.6.1 \
-		openssl-0.10.61 \
+		openssl-0.10.62 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.97 \
+		openssl-sys-0.9.98 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.28 \
-		proc-macro2-1.0.70 \
-		quote-1.0.33 \
+		proc-macro2-1.0.76 \
+		quote-1.0.35 \
 		redox_syscall-0.4.1 \
 		regex-automata-0.4.3 \
 		reqwest-0.11.23 \
 		rustc-demangle-0.1.23 \
 		rustix-0.38.28 \
 		ryu-1.0.16 \
-		schannel-0.1.22 \
+		schannel-0.1.23 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		serde_json-1.0.108 \
+		serde-1.0.195 \
+		serde_derive-1.0.195 \
+		serde_json-1.0.111 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.28 \
+		serde_yaml-0.9.30 \
 		slab-0.4.9 \
 		socket2-0.5.5 \
-		syn-2.0.42 \
+		syn-2.0.48 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tempfile-3.8.1 \
-		thiserror-1.0.51 \
-		thiserror-impl-1.0.51 \
+		tempfile-3.9.0 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.35.1 \
@@ -140,7 +141,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-core-0.51.1 \
+		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \

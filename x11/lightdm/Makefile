@@ -1,6 +1,6 @@
 PORTNAME=	lightdm
 PORTVERSION=	1.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/canonical/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
@@ -9,58 +9,77 @@ COMMENT=	Lightweight Display Manager
 WWW=		https://github.com/canonical/lightdm
 
 # library/bindings are LGPLv2 or LGPLv3, the rest GPLv3+
-LICENSE=	LGPL20 LGPL3 GPLv3
+LICENSE=	GPLv3 LGPL20 LGPL3
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPL3
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LGPL2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL3
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPL3
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
-		libck-connector.so:sysutils/consolekit2 \
-		libgcrypt.so:security/libgcrypt \
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libxklavier.so:x11/libxklavier
+RUN_DEPENDS=	accountsservice>=0:sysutils/accountsservice \
+		ck-launch-session:sysutils/consolekit2
 
-USES=		compiler:c++11-lang cpe gettext gmake gnome libtool localbase \
-		pathfix pkgconfig tar:xz xorg
+USES=		autoreconf compiler:c++11-lang cpe gettext gmake gnome \
+		libtool localbase pathfix pkgconfig tar:xz xorg
 CPE_VENDOR=	${PORTNAME}_project
 USE_CXXSTD=	c++11
 USE_GNOME=	glib20 intltool
-USE_XORG=	x11 xcb xdmcp
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	lightdm
+USE_XORG=	x11 xcb xdmcp
 
+GNU_CONFIGURE=		yes
+# tests causes PAM errors
+CONFIGURE_ARGS=		--disable-libaudit \
+			--disable-tests
+INSTALL_TARGET=		install-strip
+LIBS=			-lutil
 CONFLICTS_INSTALL=	sddm
+PORTSCOUT=		limitw:1,even
+SUB_FILES=		Xsession
+USERS=			lightdm
+GROUPS=			lightdm video
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-tests # PAM errors
-INSTALL_TARGET=	install-strip
-USERS=		lightdm
-GROUPS=		lightdm video
-PORTSCOUT=	limitw:1,even
-SUB_FILES=	Xsession
+OPTIONS_DEFINE=		DOCS QT5 VAPI
+OPTIONS_DEFAULT=	VAPI
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	DOCS VAPI
-OPTIONS_DEFAULT=VAPI
-OPTIONS_SUB=	yes
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools \
+			gtkdoc-check:textproc/gtk-doc
+DOCS_CONFIGURE_ON=	--enable-gtk-doc
 
-DOCS_BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
-DOCS_CONFIGURE_ENABLE=	gtk-doc
+QT5_USES=		qt:5
+QT5_USE=		QT=buildtools,core,dbus,gui
+QT5_CONFIGURE_ENABLE=	liblightdm-qt5
 
 VAPI_USES=		vala:build
+VAPI_USE=		GNOME=introspection:build
 VAPI_CONFIGURE_ENABLE=	vala
-VAPI_USE=		gnome=introspection:build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/data/lightdm.conf
 
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e '/^GTK_DOC_CHECK/d' \
+		-e '/^YELP_HELP_INIT/d' \
+		-e '/^doc\/Makefile/d' \
+		-e '/^help\/Makefile/d' \
+		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc help//' \
+		${WRKSRC}/Makefile.am
+
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/etc/init
-	${INSTALL_SCRIPT} ${WRKDIR}/Xsession ${STAGEDIR}${PREFIX}/etc/lightdm/
-	${MV} ${STAGEDIR}${PREFIX}/etc/lightdm/keys.conf ${STAGEDIR}${PREFIX}/etc/lightdm/keys.conf.sample
-	${MV} ${STAGEDIR}${PREFIX}/etc/lightdm/lightdm.conf ${STAGEDIR}${PREFIX}/etc/lightdm/lightdm.conf.sample
-	${MV} ${STAGEDIR}${PREFIX}/etc/lightdm/users.conf ${STAGEDIR}${PREFIX}/etc/lightdm/users.conf.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/Xsession ${STAGEDIR}${ETCDIR}
+	${MV} ${STAGEDIR}${ETCDIR}/keys.conf ${STAGEDIR}${ETCDIR}/keys.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/lightdm.conf ${STAGEDIR}${ETCDIR}/lightdm.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/users.conf ${STAGEDIR}${ETCDIR}/users.conf.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/lightdm ${STAGEDIR}${PREFIX}/etc/pam.d/lightdm.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/lightdm-autologin ${STAGEDIR}${PREFIX}/etc/pam.d/lightdm-autologin.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/lightdm-greeter ${STAGEDIR}${PREFIX}/etc/pam.d/lightdm-greeter.sample
 	${MKDIR} ${STAGEDIR}/var/cache/lightdm \
 		${STAGEDIR}/var/log/lightdm \
 		${STAGEDIR}/var/run/lightdm

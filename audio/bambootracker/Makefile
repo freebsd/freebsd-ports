@@ -1,6 +1,7 @@
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/BambooTracker/BambooTracker/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}
@@ -54,12 +55,12 @@ QMAKE_ARGS+=	CONFIG+="use_pulse"
 .endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${PREFIX}/share/man/man1
 	${MV} ${STAGEDIR}${PREFIX}/share/BambooTracker/demos/* ${STAGEDIR}${EXAMPLESDIR}/
-	${MV} ${STAGEDIR}${MANPREFIX}/share/man/en/man1/BambooTracker.1 ${STAGEDIR}${MANPREFIX}/share/man/man1/
+	${MV} ${STAGEDIR}${PREFIX}/share/man/en/man1/BambooTracker.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/BambooTracker/demos
-	${RMDIR} ${STAGEDIR}${MANPREFIX}/share/man/en/man1
-	${RMDIR} ${STAGEDIR}${MANPREFIX}/share/man/en
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/man/en/man1
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/man/en
 
 # maintainer targets
 try-latest: clean extract

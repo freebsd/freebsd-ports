@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 derp-do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${STAGEDIR}${PREFIX}/man/man1)
 .for file in ${STAGEDIR}${MISC_DATA}
 	(cd ${WRKSRC}/misc && ${INSTALL_DATA} ${file} ${STAGEDIR}${DATADIR})
 .endfor

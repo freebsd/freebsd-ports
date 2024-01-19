@@ -10,6 +10,9 @@ WWW=		https://github.com/Snaipe/BoxFort
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpc64le
+NOT_FOR_ARCHS_REASON=	configure error: Problem encountered: Architecture "ppc64" is not supported (and similar messages about other architectures)
+
 USES=		meson
 USE_LDCONFIG=	yes
 

@@ -262,6 +262,7 @@ include/d/glibd-2/glib/Node.d
 include/d/glibd-2/glib/Once.d
 include/d/glibd-2/glib/OptionContext.d
 include/d/glibd-2/glib/OptionGroup.d
+include/d/glibd-2/glib/PathBuf.d
 include/d/glibd-2/glib/Pattern.d
 include/d/glibd-2/glib/Private.d
 include/d/glibd-2/glib/PtrArray.d

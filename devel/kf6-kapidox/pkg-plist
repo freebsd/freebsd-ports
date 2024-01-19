@@ -2,12 +2,6 @@ bin/depdiagram_generate_all
 bin/kapidox-depdiagram-generate
 bin/kapidox-depdiagram-prepare
 bin/kapidox-generate
-%%PYTHON_SITELIBDIR%%/kapidox-5.102.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/kapidox-5.102.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/kapidox-5.102.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/kapidox-5.102.0-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/kapidox-5.102.0-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/kapidox-5.102.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/kapidox/__init__.py
 %%PYTHON_SITELIBDIR%%/kapidox/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/kapidox/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc

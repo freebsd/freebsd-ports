@@ -1,7 +1,7 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3-2
-DISTVERSIONSUFFIX=	-g2d731f1
+DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,66 +23,64 @@ CARGO_CRATES=	base64-0.21.5 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		clipboard-win-5.0.0 \
-		console-0.15.7 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
-		ctrlc-3.4.1 \
-		encode_unicode-0.3.6 \
+		ctrlc-3.4.2 \
 		endian-type-0.1.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		error-code-3.0.0 \
 		fastrand-2.0.1 \
-		fd-lock-4.0.1 \
+		fd-lock-4.0.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.11 \
 		hashbrown-0.14.3 \
-		home-0.5.5 \
+		home-0.5.9 \
 		idna-0.5.0 \
 		indexmap-2.1.0 \
 		instant-0.1.12 \
 		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		native-tls-0.2.11 \
 		nibble_vec-0.1.0 \
 		nix-0.27.1 \
 		once_cell-1.19.0 \
-		openssl-0.10.61 \
+		openssl-0.10.62 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.97 \
+		openssl-sys-0.9.98 \
 		percent-encoding-2.3.1 \
-		pkg-config-0.3.27 \
+		pkg-config-0.3.28 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.70 \
-		quote-1.0.33 \
+		proc-macro2-1.0.76 \
+		quote-1.0.35 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.4.1 \
 		ring-0.17.7 \
-		rustix-0.38.27 \
-		rustls-0.21.9 \
+		rustix-0.38.28 \
+		rustls-0.21.10 \
 		rustls-webpki-0.101.7 \
 		rustyline-13.0.0 \
-		schannel-0.1.22 \
+		schannel-0.1.23 \
 		sct-0.7.1 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		serde_spanned-0.6.4 \
+		serde-1.0.195 \
+		serde_derive-1.0.195 \
+		serde_spanned-0.6.5 \
 		smallvec-1.11.2 \
 		spin-0.9.8 \
-		syn-2.0.39 \
-		tempfile-3.8.1 \
+		syn-2.0.48 \
+		tempfile-3.9.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.8 \
@@ -109,34 +107,25 @@ CARGO_CRATES=	base64-0.21.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.0 \
-		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.0 \
-		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.0 \
-		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.0 \
-		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.0 \
-		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.0 \
-		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.0 \
-		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.26
+		winnow-0.5.33
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib

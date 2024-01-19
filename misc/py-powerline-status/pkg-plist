@@ -1,4 +1,4 @@
-%%PORTDOCS%%man/man1/powerline-config.1.gz
-%%PORTDOCS%%man/man1/powerline-daemon.1.gz
-%%PORTDOCS%%man/man1/powerline-lint.1.gz
-%%PORTDOCS%%man/man1/powerline.1.gz
+%%PORTDOCS%%share/man/man1/powerline-config.1.gz
+%%PORTDOCS%%share/man/man1/powerline-daemon.1.gz
+%%PORTDOCS%%share/man/man1/powerline-lint.1.gz
+%%PORTDOCS%%share/man/man1/powerline.1.gz

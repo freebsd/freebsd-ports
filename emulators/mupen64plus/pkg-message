@@ -26,7 +26,8 @@ video) of Mupen64Plus and
 
 5) If you want to install a GUI frontend of mupen64plus, you can install
 
-   emulators/wxmupen64plus
+   emulators/mupen64plus-qt
+   emulators/py-m64py
 
 6) Enjoy it ;)
 EOM

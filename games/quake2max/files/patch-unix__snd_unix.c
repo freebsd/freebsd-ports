@@ -1,5 +1,5 @@
---- unix/snd_unix.c.orig	2006-01-01 20:46:30.000000000 +0800
-+++ unix/snd_unix.c	2013-09-05 13:28:24.000000000 +0800
+--- unix/snd_unix.c.orig	2006-01-01 12:46:30 UTC
++++ unix/snd_unix.c
 @@ -59,7 +59,7 @@ qboolean SNDDMA_Init(void)
  	extern uid_t saved_euid;
  

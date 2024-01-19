@@ -20,7 +20,7 @@ PERIODICS=	200.mysqlbackup.daily \
 
 PLIST_FILES=	bin/mysqlbackup \
 		${PERIODICS:C,^(.*)\.(.*)$,\2/\1,:S,^,etc/periodic/,} \
-		man/man1/mysqlbackup.1.gz
+		share/man/man1/mysqlbackup.1.gz
 
 pre-install:
 	@${REINPLACE_CMD} ${SUB_LIST:S,$,!g,:S,^, -e s!%%,:S,=,%%!,} \
@@ -33,7 +33,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/periodic/${periodic:E}/${periodic:R}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/mysqlbackup.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/mysqlbackup.1
+		${STAGEDIR}${PREFIX}/share//man/man1/mysqlbackup.1
 	${INSTALL_SCRIPT} ${WRKSRC}/mysqlbackup \
 		${STAGEDIR}${PREFIX}/bin/mysqlbackup
 

@@ -5,7 +5,7 @@ lib/rkhunter/scripts/check_modules.pl
 lib/rkhunter/scripts/filehashsha.pl
 lib/rkhunter/scripts/readlink.sh
 lib/rkhunter/scripts/stat.pl
-man/man8/rkhunter.8.gz
+share/man/man8/rkhunter.8.gz
 var/lib/rkhunter/db/backdoorports.dat
 @sample var/lib/rkhunter/db/i18n/cn.sample
 @sample var/lib/rkhunter/db/i18n/de.sample

@@ -1,10 +1,10 @@
 PORTNAME=	slock
-PORTVERSION=	1.4
-PORTREVISION=	2
+DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Simple X screen locker
 WWW=		https://tools.suckless.org/slock
 
@@ -15,8 +15,7 @@ USES=		cpe xorg
 CPE_VENDOR=	suckless
 USE_XORG=	x11 xext xorgproto xrandr xt
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
-		X11INC="${LOCALBASE}/include" CC="${CC}" \
-		MANPREFIX="${MANPREFIX}/man"
+		X11INC="${LOCALBASE}/include" CC="${CC}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include||;s|-L/usr/lib||;s|= -Os|+=|'\

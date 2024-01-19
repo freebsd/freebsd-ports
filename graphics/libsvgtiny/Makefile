@@ -1,5 +1,5 @@
 PORTNAME=	libsvgtiny
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/

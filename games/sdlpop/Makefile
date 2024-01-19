@@ -10,7 +10,7 @@ WWW=		https://github.com/NagyD/SDLPoP
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	SDLPoP-1.18.1/src/types.h:54:2: This program is not (yet) prepared for big endian CPUs, please contact the author.
 
 USES=		cmake localbase:ldflags sdl

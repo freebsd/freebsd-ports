@@ -1,0 +1,562 @@
+  <vuln vid="2264566a-a890-46eb-a895-7881dd220bd0">
+    <topic>electron26 -- Out of bounds memory access in V8</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.7">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0519.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0519</cvename>
+      <url>https://github.com/advisories/GHSA-vg6w-jr5m-86c8</url>
+    </references>
+    <dates>
+      <discovery>2024-01-18</discovery>
+      <entry>2024-01-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a8326b61-eda0-4c03-9a5b-49ebd8f41c1a">
+    <topic>electron{26,27} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.6</lt></range>
+      </package>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.2.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0518.</li>
+	    <li>Security: backported fix for CVE-2024-0517.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0518</cvename>
+      <url>https://github.com/advisories/GHSA-4pvg-f3m8-ff3j</url>
+      <cvename>CVE-2024-0517</cvename>
+      <url>https://github.com/advisories/GHSA-v39r-662x-j524</url>
+    </references>
+    <dates>
+      <discovery>2024-01-17</discovery>
+      <entry>2024-01-17</entry>
+      <modified>2024-01-18</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="1bc07be0-b514-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.224</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_16.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[1515930] High CVE-2024-0517: Out of bounds write in V8. Reported by Toan (suto) Pham of Qrious Secure on 2024-01-06</li>
+	    <li>[1507412] High CVE-2024-0518: Type Confusion in V8. Reported by Ganjiang Zhou(@refrain_areu) of ChaMd5-H1 team on 2023-12-03</li>
+	    <li>[1517354] High CVE-2024-0519: Out of bounds memory access in V8. Reported by Anonymous on 2024-01-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0517</cvename>
+      <cvename>CVE-2024-0518</cvename>
+      <cvename>CVE-2024-0519</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-16</discovery>
+      <entry>2024-01-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7467c611-b490-11ee-b903-001fc69cd6dc">
+    <topic>xorg server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.11,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nextserver</name>
+	<range><lt>21.1.11,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>23.2.4</lt></range>
+      </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><lt>21.0.99.1.653</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg/2024-January/061525.html">
+	  <ul>
+	    <li>CVE-2023-6816: Heap buffer overflow in DeviceFocusEvent
+	    and ProcXIQueryPointer
+
+	    <p>Both DeviceFocusEvent and the XIQueryPointer reply contain a bit
+	    for each logical button currently down. Buttons can be arbitrarily
+	    mapped to any value up to 255 but the X.Org Server was only
+	    allocating space for the device's number of buttons,
+	    leading to a heap overflow if a bigger value was used.</p></li>
+	    <li>CVE-2024-0229: Reattaching to different master device may lead
+	    to out-of-bounds memory access
+
+	    <p>If a device has both a button class and a key class and
+	    numButtons is zero, we can get an out-of-bounds write due
+	    to event under-allocation in the DeliverStateNotifyEvent
+	    function.</p></li>
+
+	    <li>CVE-2024-21885: Heap buffer overflow in
+	    XISendDeviceHierarchyEvent
+
+	    <p>The XISendDeviceHierarchyEvent() function allocates space to
+	    store up to MAXDEVICES (256) xXIHierarchyInfo structures in info.
+	    If a device with a given ID was removed and a new device with
+	    the same ID added both in the same operation,
+	    the single device ID will lead to two info structures being
+	    written to info.
+	    Since this case can occur for every device ID at once,
+	    a total of two times MAXDEVICES info structures might be written
+	    to the allocation, leading to a heap buffer overflow.</p></li>
+
+	    <li>CVE-2024-21886: Heap buffer overflow in DisableDevice
+
+	    <p>The DisableDevice() function is called whenever an enabled device
+	    is disabled and it moves the device from the inputInfo.devices
+	    linked list to the inputInfo.off_devices linked list.
+	    However, its link/unlink operation has an issue during the recursive
+	    call to DisableDevice() due to the prev pointer pointing to a
+	    removed device.
+	    This issue leads to a length mismatch between the total number of
+	    devices and the number of device in the list, leading to a heap
+	    overflow and, possibly, to local privilege escalation.</p></li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6816</cvename>
+      <cvename>CVE-2024-0229</cvename>
+      <cvename>CVE-2024-21885</cvename>
+      <cvename>CVE-2024-21886</cvename>
+      <url>https://lists.x.org/archives/xorg/2024-January/061525.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-16</discovery>
+      <entry>2024-01-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="28b42ef5-80cd-440c-904b-b7fbca74c73d">
+    <topic>electron{26,27} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.5</lt></range>
+      </package>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.5">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0224.</li>
+	    <li>Security: backported fix for CVE-2024-0225.</li>
+	    <li>Security: backported fix for CVE-2024-0223.</li>
+	    <li>Security: backported fix for CVE-2024-0222.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0224</cvename>
+      <url>https://github.com/advisories/GHSA-83wx-v283-85g9</url>
+      <cvename>CVE-2024-0225</cvename>
+      <url>https://github.com/advisories/GHSA-gqr9-4fcc-c9jq</url>
+      <cvename>CVE-2024-0223</cvename>
+      <url>https://github.com/advisories/GHSA-w8x8-g534-x4rp</url>
+      <cvename>CVE-2024-0222</cvename>
+      <url>https://github.com/advisories/GHSA-c87c-56pw-mwgh</url>
+    </references>
+    <dates>
+      <discovery>2024-01-10</discovery>
+      <entry>2024-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4c8c2218-b120-11ee-90ec-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.7.0</ge><lt>16.7.2</lt></range>
+	<range><ge>16.6.0</ge><lt>16.6.4</lt></range>
+	<range><ge>8.13.0</ge><lt>16.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/">
+	  <p>Account Takeover via Password Reset without user interactions</p>
+	  <p>Attacker can abuse Slack/Mattermost integrations to execute slash commands as another user</p>
+	  <p>Bypass CODEOWNERS approval removal</p>
+	  <p>Workspaces able to be created under different root namespace</p>
+	  <p>Commit signature validation ignores headers after signature</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-7028</cvename>
+      <cvename>CVE-2023-5356</cvename>
+      <cvename>CVE-2023-4812</cvename>
+      <cvename>CVE-2023-6955</cvename>
+      <cvename>CVE-2023-2030</cvename>
+      <url>https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-01-11</discovery>
+      <entry>2024-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8337251b-b07b-11ee-b0d7-84a93843eb75">
+    <topic>OpenSSL -- Vector register corruption on PowerPC</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.12_2,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.12_2</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.4_2</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.4_2</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20240109.txt">
+	  <p>The POLY1305 MAC (message authentication code) implementation
+	    contains a bug that might corrupt the internal state of applications running
+	    on PowerPC CPU based platforms if the CPU provides vector instructions.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6129</cvename>
+      <url>https://www.openssl.org/news/secadv/20240109.txt</url>
+    </references>
+    <dates>
+	<discovery>2024-01-09</discovery>
+      <entry>2024-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ec8e4040-afcd-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.216</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.216</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_9.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[1513379] High CVE-2024-0333: Insufficient data validation in Extensions. Reported by Malcolm Stagg (@malcolmst) of SODIUM-24, LLC on 2023-12-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0333</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_9.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-09</discovery>
+      <entry>2024-01-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e2f981f1-ad9e-11ee-8b55-4ccc6adda413">
+    <topic>QtNetwork -- potential buffer overflow</topic>
+    <affects>
+      <package>
+	<name>qt5-network</name>
+	<range><lt>5.15.12p148_1</lt></range>
+      </package>
+      <package>
+	<name>qt6-base</name>
+	<range><lt>6.6.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Shaw reports:</p>
+	<blockquote cite="https://www.qt.io/blog/security-advisory-potential-integer-overflow-in-qts-http2-implementation">
+	  <p>A potential integer overflow has been discovered in Qt's HTTP2
+	  implementation. If the HTTP2 implementation receives more than 4GiB
+	  in total headers, or more than 2GiB for any given header pair, then
+	  the internal buffers may overflow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-51714</cvename>
+      <url>https://www.qt.io/blog/security-advisory-potential-integer-overflow-in-qts-http2-implementation</url>
+    </references>
+    <dates>
+      <discovery>2023-12-14</discovery>
+      <entry>2024-01-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1f0d0024-ac9c-11ee-8e91-1c697a013f4b">
+    <topic>mantis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mantis-php74</name>
+	<name>mantis-php80</name>
+	<name>mantis-php81</name>
+	<name>mantis-php82</name>
+	<name>mantis-php83</name>
+	<range><lt>2.25.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis 2.25.8 release reports:</p>
+	<blockquote cite="https://mantisbt.org/bugs/changelog_page.php?version_id=370">
+	  <p>Security and maintenance release</p>
+	  <ul>
+	    <li>0032432: Update guzzlehttp/psr7 to 1.9.1 (CVE-2023-29197)</li>
+	    <li>0032981: Information Leakage on DokuWiki Integration (CVE-2023-44394)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29197</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29197</url>
+      <cvename>CVE-2023-44394</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-44394</url>
+    </references>
+    <dates>
+      <discovery>2023-10-14</discovery>
+      <entry>2024-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3ee577a9-aad4-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.199</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.199</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop.html">
+	 <p>This update includes 6 security fixes:</p>
+	 <ul>
+	    <li>[1501798] High CVE-2024-0222: Use after free in ANGLE. Reported by Toan (suto) Pham of Qrious Secure on 2023-11-13</li>
+	    <li>[1505009] High CVE-2024-0223: Heap buffer overflow in ANGLE. Reported by Toan (suto) Pham and Tri Dang of Qrious Secure on 2023-11-24</li>
+	    <li>[1505086] High CVE-2024-0224: Use after free in WebAudio. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2023-11-25</li>
+	    <li>[1506923] High CVE-2024-0225: Use after free in WebGPU. Reported by Anonymous on 2023-12-01</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0222</cvename>
+      <cvename>CVE-2024-0223</cvename>
+      <cvename>CVE-2024-0224</cvename>
+      <cvename>CVE-2024-0225</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-03</discovery>
+      <entry>2024-01-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d1b20e09-dbdf-432b-83c7-89f0af76324a">
+    <topic>electron27 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.2.1">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6706.</li>
+	    <li>Security: backported fix for CVE-2023-6705.</li>
+	    <li>Security: backported fix for CVE-2023-6703.</li>
+	    <li>Security: backported fix for CVE-2023-6702.</li>
+	    <li>Security: backported fix for CVE-2023-6704.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6706</cvename>
+      <url>https://github.com/advisories/GHSA-jqrg-rvpw-5fw5</url>
+      <cvename>CVE-2023-6705</cvename>
+      <url>https://github.com/advisories/GHSA-h27f-fw5q-c2gh</url>
+      <cvename>CVE-2023-6703</cvename>
+      <url>https://github.com/advisories/GHSA-9v72-359m-2vx4</url>
+      <cvename>CVE-2023-6702</cvename>
+      <url>https://github.com/advisories/GHSA-7hjc-c62g-4w73</url>
+      <cvename>CVE-2023-6704</cvename>
+      <url>https://github.com/advisories/GHSA-587x-fmc5-99p9</url>
+    </references>
+    <dates>
+      <discovery>2024-01-04</discovery>
+      <entry>2024-01-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0cee4f9c-5efb-4770-b917-f4e4569e8bec">
+    <topic>electron26 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.4">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6704.</li>
+	    <li>Security: backported fix for CVE-2023-6705.</li>
+	    <li>Security: backported fix for CVE-2023-6703.</li>
+	    <li>Security: backported fix for CVE-2023-6702.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6704</cvename>
+      <url>https://github.com/advisories/GHSA-587x-fmc5-99p9</url>
+      <cvename>CVE-2023-6705</cvename>
+      <url>https://github.com/advisories/GHSA-h27f-fw5q-c2gh</url>
+      <cvename>CVE-2023-6703</cvename>
+      <url>https://github.com/advisories/GHSA-9v72-359m-2vx4</url>
+      <cvename>CVE-2023-6702</cvename>
+      <url>https://github.com/advisories/GHSA-7hjc-c62g-4w73</url>
+    </references>
+    <dates>
+      <discovery>2024-01-04</discovery>
+      <entry>2024-01-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="13d83980-9f18-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Prefix Truncation Attack in the SSH protocol</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.0</ge><lt>14.0_4</lt></range>
+	<range><ge>13.2</ge><lt>13.2_9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The SSH protocol executes an initial handshake between the
+	server and the client.  This protocol handshake includes the
+	possibility of several extensions allowing different options to be
+	selected.  Validation of the packets in the handshake is done through
+	sequence numbers.</p>
+	<h1>Impact:</h1>
+	<p>A man in the middle attacker can silently manipulate handshake
+	messages to truncate extension negotiation messages potentially
+	leading to less secure client authentication algorithms or deactivating
+	keystroke timing attack countermeasures.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-48795</cvename>
+      <freebsdsa>SA-23:19.openssh</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-12-19</discovery>
+      <entry>2024-01-02</entry>
+    </dates>
+  </vuln>

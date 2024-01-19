@@ -12,12 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libflite.so:audio/flite
 
-FLAVORS=			asterisk18 asterisk16
+FLAVORS=			asterisk18
 FLAVOR?=			${FLAVORS:[1]}
-
-asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
-asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 
 asterisk18_PKGNAMEPREFIX=       asterisk18-
 asterisk18_BUILD_DEPENDS=       asterisk:net/asterisk18

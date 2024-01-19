@@ -67,11 +67,11 @@ lib/libvips.so.42
 lib/libvips.so.42.17.1
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
-man/man1/vips.1.gz
-man/man1/vipsedit.1.gz
-man/man1/vipsheader.1.gz
-man/man1/vipsprofile.1.gz
-man/man1/vipsthumbnail.1.gz
+share/man/man1/vips.1.gz
+share/man/man1/vipsedit.1.gz
+share/man/man1/vipsheader.1.gz
+share/man/man1/vipsprofile.1.gz
+share/man/man1/vipsthumbnail.1.gz
 %%PORTDOCS%%share/gtk-doc/html/libvips/Cite.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/Combine.png
 %%PORTDOCS%%share/gtk-doc/html/libvips/Examples.html

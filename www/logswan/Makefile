@@ -1,5 +1,5 @@
 PORTNAME=	logswan
-DISTVERSION=	2.1.13
+DISTVERSION=	2.1.14
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fcambus/logswan/releases/download/${DISTVERSION}/
 

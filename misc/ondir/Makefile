@@ -1,6 +1,6 @@
 PORTNAME=	ondir
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://swapoff.org/files/${PORTNAME}/
 
@@ -17,10 +17,11 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		CFLAGS="${CFLAGS} -DVERSION=\\\"${PORTVERSION}\\\" -DGLOBAL_CONF=\\\"${PREFIX}/etc/ondirrc\\\"" \
 		LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

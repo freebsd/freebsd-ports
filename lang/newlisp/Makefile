@@ -40,7 +40,7 @@ GSL_DESC=	GSL (GNU Scientific Library)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64"
 CFLAGS+=	-DNEWLISP64
 .endif
 

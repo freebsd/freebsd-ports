@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+This package requires Google's CDM library which can be installed by compiling the
+www/linux-widevine-cdm port.
+EOM
+}
+]

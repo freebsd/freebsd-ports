@@ -1,5 +1,6 @@
 PORTNAME=	couchdb3
 DISTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -89,7 +90,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/rel/couchdb/etc/vm.args \
 		${STAGEDIR}${ETCDIR}/vm.args.sample
 	${INSTALL_MAN} ${WRKSRC}/share/docs/man/apachecouchdb.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 # prune build artefacts and surplus headers
 	${FIND} -E ${WRKSRC} -type f \
 		-regex '.*\.(a|buildinfo|c|cc|cmd|d|o|orig|h|cpp)' -print -delete

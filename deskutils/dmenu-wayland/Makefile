@@ -1,5 +1,6 @@
 PORTNAME=	dmenu-wayland
 PORTVERSION=	0.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils wayland
 
@@ -27,6 +28,6 @@ USE_GNOME=	cairo glib20 pango
 PLIST_FILES=	bin/dmenu-wl \
 		bin/dmenu-wl_path \
 		bin/dmenu-wl_run \
-		man/man1/dmenu-wl.1.gz
+		share/man/man1/dmenu-wl.1.gz
 
 .include <bsd.port.mk>

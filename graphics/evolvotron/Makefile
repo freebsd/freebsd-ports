@@ -1,6 +1,6 @@
 PORTNAME=	evolvotron
 DISTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 .for i in evolvotron evolvotron_mutate evolvotron_render
 	${INSTALL_PROGRAM} ${WRKSRC}/obj/${i}/${i} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${i}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${i}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/

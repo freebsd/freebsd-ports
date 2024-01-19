@@ -23,6 +23,6 @@ MAKE_ARGS=	CONF=${OPSYS:tl}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drawterm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/drawterm.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/drawterm.1
+	${INSTALL_MAN} ${WRKSRC}/drawterm.1 ${STAGEDIR}${PREFIX}/share/man/man1/drawterm.1
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 PORTNAME=	wlrctl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~brocellous/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -24,6 +25,6 @@ OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

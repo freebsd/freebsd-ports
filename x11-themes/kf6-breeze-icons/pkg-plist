@@ -9091,6 +9091,7 @@ share/icons/breeze-dark/devices/16/network-wireless-hotspot.svg
 share/icons/breeze-dark/devices/16/network-wireless-symbolic.svg
 share/icons/breeze-dark/devices/16/network-wireless.svg
 share/icons/breeze-dark/devices/16/phone-apple-iphone-symbolic.svg
+share/icons/breeze-dark/devices/16/phone-battery-symbolic.svg
 share/icons/breeze-dark/devices/16/phone-battery.svg
 share/icons/breeze-dark/devices/16/phone-symbolic.svg
 share/icons/breeze-dark/devices/16/phone.svg
@@ -9227,6 +9228,7 @@ share/icons/breeze-dark/devices/22/network-wireless-hotspot-symbolic.svg
 share/icons/breeze-dark/devices/22/network-wireless-hotspot.svg
 share/icons/breeze-dark/devices/22/network-wireless-symbolic.svg
 share/icons/breeze-dark/devices/22/network-wireless.svg
+share/icons/breeze-dark/devices/22/phone-battery-symbolic.svg
 share/icons/breeze-dark/devices/22/phone-battery.svg
 share/icons/breeze-dark/devices/22/phone-symbolic.svg
 share/icons/breeze-dark/devices/22/phone.svg
@@ -9249,7 +9251,9 @@ share/icons/breeze-dark/devices/32/drive-harddisk-symbolic.svg
 share/icons/breeze-dark/devices/32/drive-symbolic.svg
 share/icons/breeze-dark/devices/32/input-keyboard-symbolic.svg
 share/icons/breeze-dark/devices/32/input-mouse-battery-symbolic.svg
+share/icons/breeze-dark/devices/32/phone-apple-iphone-symbolic.svg
 share/icons/breeze-dark/devices/32/phone-battery-symbolic.svg
+share/icons/breeze-dark/devices/32/phone-battery.svg
 share/icons/breeze-dark/devices/32/phone-symbolic.svg
 share/icons/breeze-dark/devices/32/printer-symbolic.svg
 share/icons/breeze-dark/devices/32/video-display-brightness-symbolic.svg
@@ -9303,6 +9307,7 @@ share/icons/breeze-dark/devices/64/multimedia-player.svg
 share/icons/breeze-dark/devices/64/network-card.svg
 share/icons/breeze-dark/devices/64/network-rj11-female.svg
 share/icons/breeze-dark/devices/64/network-rj45-female.svg
+share/icons/breeze-dark/devices/64/phone-apple-iphone.svg
 share/icons/breeze-dark/devices/64/phone.svg
 share/icons/breeze-dark/devices/64/printer.svg
 share/icons/breeze-dark/devices/64/scanner.svg
@@ -12859,6 +12864,9 @@ share/icons/breeze-dark/status/16/security-medium-symbolic.svg
 share/icons/breeze-dark/status/16/security-medium.svg
 share/icons/breeze-dark/status/16/semi-starred-symbolic-rtl.svg
 share/icons/breeze-dark/status/16/semi-starred-symbolic.svg
+share/icons/breeze-dark/status/16/smartphoneconnected.svg
+share/icons/breeze-dark/status/16/smartphonedisconnected.svg
+share/icons/breeze-dark/status/16/smartphonetrusted.svg
 share/icons/breeze-dark/status/16/starred-symbolic.svg
 share/icons/breeze-dark/status/16/state-download-symbolic.svg
 share/icons/breeze-dark/status/16/state-download.svg
@@ -13561,6 +13569,9 @@ share/icons/breeze-dark/status/22/security-medium-symbolic.svg
 share/icons/breeze-dark/status/22/security-medium.svg
 share/icons/breeze-dark/status/22/showinfo-hover.svg
 share/icons/breeze-dark/status/22/showinfo.svg
+share/icons/breeze-dark/status/22/smartphoneconnected.svg
+share/icons/breeze-dark/status/22/smartphonedisconnected.svg
+share/icons/breeze-dark/status/22/smartphonetrusted.svg
 share/icons/breeze-dark/status/22/state-download-symbolic.svg
 share/icons/breeze-dark/status/22/state-download.svg
 share/icons/breeze-dark/status/22/state-error-symbolic.svg
@@ -13733,6 +13744,9 @@ share/icons/breeze-dark/status/32/rotation-locked-landscape-symbolic.svg
 share/icons/breeze-dark/status/32/rotation-locked-landscape.svg
 share/icons/breeze-dark/status/32/rotation-locked-portrait-symbolic.svg
 share/icons/breeze-dark/status/32/rotation-locked-portrait.svg
+share/icons/breeze-dark/status/32/smartphoneconnected.svg
+share/icons/breeze-dark/status/32/smartphonedisconnected.svg
+share/icons/breeze-dark/status/32/smartphonetrusted.svg
 share/icons/breeze-dark/status/32/software-updates-additional.svg
 share/icons/breeze-dark/status/32/software-updates-important.svg
 share/icons/breeze-dark/status/32/software-updates-inactive.svg
@@ -13754,6 +13768,9 @@ share/icons/breeze-dark/status/64/image-missing.svg
 share/icons/breeze-dark/status/64/security-high.svg
 share/icons/breeze-dark/status/64/security-low.svg
 share/icons/breeze-dark/status/64/security-medium.svg
+share/icons/breeze-dark/status/64/smartphoneconnected.svg
+share/icons/breeze-dark/status/64/smartphonedisconnected.svg
+share/icons/breeze-dark/status/64/smartphonetrusted.svg
 share/icons/breeze/actions/12/mobile-close-app.svg
 share/icons/breeze/actions/12/mobile-task-switcher.svg
 share/icons/breeze/actions/12/object-fill.svg
@@ -22853,6 +22870,7 @@ share/icons/breeze/devices/16/network-wireless-hotspot.svg
 share/icons/breeze/devices/16/network-wireless-symbolic.svg
 share/icons/breeze/devices/16/network-wireless.svg
 share/icons/breeze/devices/16/phone-apple-iphone-symbolic.svg
+share/icons/breeze/devices/16/phone-battery-symbolic.svg
 share/icons/breeze/devices/16/phone-battery.svg
 share/icons/breeze/devices/16/phone-symbolic.svg
 share/icons/breeze/devices/16/phone.svg
@@ -22991,6 +23009,7 @@ share/icons/breeze/devices/22/network-wireless-hotspot-symbolic.svg
 share/icons/breeze/devices/22/network-wireless-hotspot.svg
 share/icons/breeze/devices/22/network-wireless-symbolic.svg
 share/icons/breeze/devices/22/network-wireless.svg
+share/icons/breeze/devices/22/phone-battery-symbolic.svg
 share/icons/breeze/devices/22/phone-battery.svg
 share/icons/breeze/devices/22/phone-symbolic.svg
 share/icons/breeze/devices/22/phone.svg
@@ -23015,7 +23034,9 @@ share/icons/breeze/devices/32/drive-harddisk-symbolic.svg
 share/icons/breeze/devices/32/drive-symbolic.svg
 share/icons/breeze/devices/32/input-keyboard-symbolic.svg
 share/icons/breeze/devices/32/input-mouse-battery-symbolic.svg
+share/icons/breeze/devices/32/phone-apple-iphone-symbolic.svg
 share/icons/breeze/devices/32/phone-battery-symbolic.svg
+share/icons/breeze/devices/32/phone-battery.svg
 share/icons/breeze/devices/32/phone-symbolic.svg
 share/icons/breeze/devices/32/printer-symbolic.svg
 share/icons/breeze/devices/32/video-display-brightness-symbolic.svg
@@ -23069,6 +23090,7 @@ share/icons/breeze/devices/64/multimedia-player.svg
 share/icons/breeze/devices/64/network-card.svg
 share/icons/breeze/devices/64/network-rj11-female.svg
 share/icons/breeze/devices/64/network-rj45-female.svg
+share/icons/breeze/devices/64/phone-apple-iphone.svg
 share/icons/breeze/devices/64/phone.svg
 share/icons/breeze/devices/64/printer.svg
 share/icons/breeze/devices/64/scanner.svg
@@ -26639,6 +26661,9 @@ share/icons/breeze/status/16/security-medium-symbolic.svg
 share/icons/breeze/status/16/security-medium.svg
 share/icons/breeze/status/16/semi-starred-symbolic-rtl.svg
 share/icons/breeze/status/16/semi-starred-symbolic.svg
+share/icons/breeze/status/16/smartphoneconnected.svg
+share/icons/breeze/status/16/smartphonedisconnected.svg
+share/icons/breeze/status/16/smartphonetrusted.svg
 share/icons/breeze/status/16/starred-symbolic.svg
 share/icons/breeze/status/16/state-download-symbolic.svg
 share/icons/breeze/status/16/state-download.svg
@@ -27343,6 +27368,9 @@ share/icons/breeze/status/22/security-medium-symbolic.svg
 share/icons/breeze/status/22/security-medium.svg
 share/icons/breeze/status/22/showinfo-hover.svg
 share/icons/breeze/status/22/showinfo.svg
+share/icons/breeze/status/22/smartphoneconnected.svg
+share/icons/breeze/status/22/smartphonedisconnected.svg
+share/icons/breeze/status/22/smartphonetrusted.svg
 share/icons/breeze/status/22/state-download-symbolic.svg
 share/icons/breeze/status/22/state-download.svg
 share/icons/breeze/status/22/state-error-symbolic.svg
@@ -27517,6 +27545,9 @@ share/icons/breeze/status/32/rotation-locked-landscape-symbolic.svg
 share/icons/breeze/status/32/rotation-locked-landscape.svg
 share/icons/breeze/status/32/rotation-locked-portrait-symbolic.svg
 share/icons/breeze/status/32/rotation-locked-portrait.svg
+share/icons/breeze/status/32/smartphoneconnected.svg
+share/icons/breeze/status/32/smartphonedisconnected.svg
+share/icons/breeze/status/32/smartphonetrusted.svg
 share/icons/breeze/status/32/software-updates-additional.svg
 share/icons/breeze/status/32/software-updates-important.svg
 share/icons/breeze/status/32/software-updates-inactive.svg
@@ -27538,3 +27569,6 @@ share/icons/breeze/status/64/image-missing.svg
 share/icons/breeze/status/64/security-high.svg
 share/icons/breeze/status/64/security-low.svg
 share/icons/breeze/status/64/security-medium.svg
+share/icons/breeze/status/64/smartphoneconnected.svg
+share/icons/breeze/status/64/smartphonedisconnected.svg
+share/icons/breeze/status/64/smartphonetrusted.svg

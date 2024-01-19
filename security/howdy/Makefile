@@ -16,7 +16,7 @@ RUN_DEPENDS=	opencv>0:graphics/opencv \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${LOCALBASE}/share/dlib-models/shape_predictor_5_face_landmarks.dat:misc/dlib-models
 
-USES=		python:3.8-3.10,run shebangfix
+USES=		python:run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boltgolt

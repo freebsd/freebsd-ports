@@ -1,5 +1,5 @@
 PORTNAME=	ocserv
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	https://www.infradead.org/ocserv/download/
 
@@ -56,15 +56,14 @@ RADIUS_CONFIGURE_OFF=	--without-radius
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} 's|/usr/bin/ocserv-fw|${PREFIX}/bin/ocserv-fw|g' \
-		${WRKSRC}/src/main-user.c
-	${REINPLACE_CMD} 's|/usr/bin/ocserv\\-fw|${PREFIX}/bin/ocserv\\-fw|g' \
+	${REINPLACE_CMD} 's|/usr/bin/ocserv\\-fw|${PREFIX}/libexec/ocserv\\-fw|g' \
 		${WRKSRC}/doc/ocserv.8
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%ETCDIR%%|${ETCDIR}|g' \
 		-e 's|%%USERS%%|${USERS}|g' \
 		-e 's|%%GROUPS%%|${GROUPS}|g' \
-		${WRKSRC}/doc/sample.config
+		${WRKSRC}/doc/sample.config \
+		${WRKSRC}/src/main-user.c
 .if "${PREFIX}" != "" && "${PREFIX}" != "/" && "${PREFIX}" != "/usr"
 	${REINPLACE_CMD} -E 's|^(#define DEFAULT_CFG_FILE ")(/etc/ocserv/ocserv.conf")|\1${PREFIX}\2|' ${WRKSRC}/src/config.c
 	${REINPLACE_CMD} -E 's|^(#define DEFAULT_OCPASSWD ")(/etc/ocserv/ocpasswd")|\1${PREFIX}\2|' ${WRKSRC}/src/ocpasswd/ocpasswd.c

@@ -1,5 +1,6 @@
 PORTNAME=	fasta3
 PORTVERSION=	36.3.8
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta36/
 DISTNAME=	fasta-${PORTVERSION}
@@ -53,10 +54,10 @@ post-install:
 .endfor
 .for manpage in ${MAN1_FILES}
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${manpage} \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 .endfor
 .for links in ${MAN1_LINKS}
-	(${LN} -sf fasta36.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${links})
+	(${LN} -sf fasta36.1 ${STAGEDIR}${PREFIX}/share/man/man1/${links})
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in COPYRIGHT FASTA_LIST README

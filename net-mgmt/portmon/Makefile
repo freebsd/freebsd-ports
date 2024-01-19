@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/extras/portmon.8 \
-		${STAGEDIR}${MAN8PREFIX}/share/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_DATA} ${WRKSRC}/extras/portmon.hosts.sample \
 		${STAGEDIR}${PREFIX}/etc
 

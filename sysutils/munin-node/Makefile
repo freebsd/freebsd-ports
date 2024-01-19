@@ -1,12 +1,14 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Node-specific part of Munin
 WWW=		https://munin-monitoring.org/
+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
@@ -25,6 +27,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Net-Server>=0:net/p5-Net-Server
 
 USES=		cpe gmake perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	munin-monitoring
 USE_RC_SUBR=	munin-asyncd munin-node
 
 SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node \
@@ -32,6 +36,7 @@ SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node \
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
+MAKE_ENV=	MANDIR=${PREFIX}/share/man
 ALL_TARGET=	build-node build-plugins build/node/_bin/munin-async \
 		build/node/_bin/munin-asyncd
 INSTALL_TARGET=	install-node-prime install-async-prime install-plugins-prime
@@ -92,11 +97,11 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
 		${STAGEDIR}${ETCDIR}/plugins.conf.sample
 	(cd ${WRKSRC}/node/blib/bindoc; \
-		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \
+		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 ${STAGEDIR}${PREFIX}/share/man/man1; \
 	)
 	(cd ${WRKSRC}/build/doc; \
-		${INSTALL_MAN} munin-node.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
-		${INSTALL_MAN} munin.8 ${STAGEDIR}${MAN8PREFIX}/man/man8; \
+		${INSTALL_MAN} munin-node.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5; \
+		${INSTALL_MAN} munin.8 ${STAGEDIR}${PREFIX}/share/man/man8; \
 	)
 	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-node.newsyslog
 

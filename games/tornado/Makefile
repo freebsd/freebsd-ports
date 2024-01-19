@@ -1,6 +1,6 @@
 PORTNAME=	tornado
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	https://kiza.eu/media/software/tornado/
 
@@ -38,11 +38,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tornado \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/man/tornado.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6
+		${STAGEDIR}${PREFIX}/share/man/man6
 .for i in de fr it nl no ru
-	@${MKDIR} ${STAGEDIR}${MAN6PREFIX}/man/${i}/man6
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man/${i}/man6
 	${INSTALL_MAN} ${WRKSRC}/doc/man/${i}/tornado.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/${i}/man6
+		${STAGEDIR}${PREFIX}/share/man/${i}/man6
 .endfor
 .for i in de es fr it nl no pt ru
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES

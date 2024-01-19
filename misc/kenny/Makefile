@@ -1,6 +1,6 @@
 PORTNAME=	kenny
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc perl5
 MASTER_SITES=	https://aklv.github.io/distfiles/ \
 		http://www.cgarbs.de/stuff/
@@ -24,7 +24,7 @@ NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/kenny \
-		man/man1/kenny.1.gz
+		share/man/man1/kenny.1.gz
 
 POD2MAN?=	${LOCALBASE}/bin/pod2man
 
@@ -33,6 +33,6 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 bin/ftps
-man/man1/ftps.1.gz
+share/man/man1/ftps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -17,11 +17,11 @@ man/man1/ftps.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cert/cert-dummy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cert/xCA.sh
 %%SERVER%%libexec/ftpd
-%%SERVER%%man/man5/ftpchroot.5.gz
-%%SERVER%%man/man5/ftpchroot-ssl.5.gz
-%%SERVER%%man/man5/xferlog.5.gz
-%%SERVER%%man/man8/ftpd.8.gz
-%%SERVER%%man/man8/ftpd-ssl.8.gz
+%%SERVER%%share/man/man5/ftpchroot.5.gz
+%%SERVER%%share/man/man5/ftpchroot-ssl.5.gz
+%%SERVER%%share/man/man5/xferlog.5.gz
+%%SERVER%%share/man/man8/ftpd.8.gz
+%%SERVER%%share/man/man8/ftpd-ssl.8.gz
 %%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.examples
 %%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpchroot
 %%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpusers

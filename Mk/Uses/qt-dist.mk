@@ -108,15 +108,15 @@ DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
 _KDE_3d=		0
-_KDE_base=		135
+_KDE_base=		148
 _KDE_charts=		0
 _KDE_connectivity=	6
 _KDE_datavis3d=		0
-_KDE_declarative=	30
+_KDE_declarative=	32
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
 _KDE_imageformats=	12
-_KDE_location=		4
+_KDE_location=		6
 _KDE_multimedia=	2
 _KDE_networkauth=	0
 _KDE_quick3d=		1
@@ -133,10 +133,10 @@ _KDE_serialbus=		0
 _KDE_serialport=	0
 _KDE_speech=		1
 _KDE_svg=		6
-_KDE_tools=		3
+_KDE_tools=		4
 _KDE_translations=	0
 _KDE_virtualkeyboard=	0
-_KDE_wayland=		59
+_KDE_wayland=		60
 _KDE_webchannel=	3
 _KDE_webengine=			5
 _KDE_webengine_BRANCH=		5.15
@@ -261,7 +261,7 @@ _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_fe
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_common_bsd_bsd.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-clang_qmake.conf
-.    if ${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)) || ${ARCH} == sparc64
+.    if ${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang))
 _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-g++_qmake.conf
@@ -548,4 +548,3 @@ qt-create-kde-distfile:
 		${_KDE_${_QT_DIST}_BRANCH}
 
 .endif # defined(_QT_DIST_MK_INCLUDED)
-

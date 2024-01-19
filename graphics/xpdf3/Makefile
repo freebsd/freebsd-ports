@@ -1,6 +1,6 @@
 PORTNAME=	xpdf
 PORTVERSION=	3.04
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics print
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/old/
 .if !defined(MASTERDIR)

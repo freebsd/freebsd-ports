@@ -1,5 +1,5 @@
 PORTNAME=	network_interface
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

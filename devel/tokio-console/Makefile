@@ -1,7 +1,7 @@
 PORTNAME=	tokio-console
 DISTVERSIONPREFIX=	tokio-console-v
-DISTVERSION=	0.1.7
-PORTREVISION=	9
+DISTVERSION=	0.1.10
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,197 +18,211 @@ GH_PROJECT=	console
 
 WRKSRC_SUBDIR=	${PORTNAME}
 
-CARGO_CRATES=	addr2line-0.17.0 \
+CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.56 \
-		async-stream-0.3.3 \
-		async-stream-impl-0.3.3 \
-		async-trait-0.1.53 \
+		aho-corasick-1.1.2 \
+		anyhow-1.0.79 \
+		async-stream-0.3.5 \
+		async-stream-impl-0.3.5 \
+		async-trait-0.1.77 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		axum-0.5.0 \
-		axum-core-0.2.0 \
-		backtrace-0.3.64 \
-		base64-0.13.0 \
+		axum-0.6.20 \
+		axum-core-0.3.4 \
+		backtrace-0.3.69 \
+		base64-0.21.5 \
 		bitflags-1.3.2 \
-		byteorder-1.4.3 \
-		bytes-1.1.0 \
+		bitflags-2.4.1 \
+		byteorder-1.5.0 \
+		bytes-1.5.0 \
 		cassowary-0.3.0 \
-		cc-1.0.73 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		clap-3.1.18 \
-		clap_complete-3.1.4 \
-		clap_derive-3.1.18 \
-		clap_lex-0.2.0 \
-		color-eyre-0.5.11 \
-		color-spantrace-0.1.6 \
+		clap-3.2.25 \
+		clap_complete-3.2.5 \
+		clap_derive-3.2.25 \
+		clap_lex-0.2.4 \
+		color-eyre-0.6.2 \
+		color-spantrace-0.2.1 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.4 \
-		crossbeam-utils-0.8.8 \
-		crossterm-0.20.0 \
-		crossterm_winapi-0.8.0 \
+		crossbeam-channel-0.5.10 \
+		crossbeam-utils-0.8.18 \
+		crossterm-0.26.1 \
+		crossterm_winapi-0.9.1 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
-		either-1.6.1 \
-		eyre-0.6.7 \
-		fastrand-1.7.0 \
-		fixedbitset-0.4.1 \
-		flate2-1.0.22 \
+		either-1.9.0 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		eyre-0.6.11 \
+		fastrand-2.0.1 \
+		fixedbitset-0.4.2 \
+		flate2-1.0.28 \
 		fnv-1.0.7 \
-		form_urlencoded-1.0.1 \
-		futures-0.3.21 \
-		futures-channel-0.3.21 \
-		futures-core-0.3.21 \
-		futures-executor-0.3.21 \
-		futures-io-0.3.21 \
-		futures-macro-0.3.21 \
-		futures-sink-0.3.21 \
-		futures-task-0.3.21 \
-		futures-util-0.3.21 \
-		getrandom-0.2.6 \
-		gimli-0.26.1 \
-		h2-0.3.13 \
-		hashbrown-0.11.2 \
-		hdrhistogram-7.5.0 \
-		heck-0.4.0 \
+		form_urlencoded-1.2.1 \
+		futures-0.3.30 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
+		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
+		getrandom-0.2.11 \
+		gimli-0.28.1 \
+		h2-0.3.22 \
+		hashbrown-0.12.3 \
+		hashbrown-0.14.3 \
+		hdrhistogram-7.5.4 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		http-0.2.6 \
-		http-body-0.4.4 \
-		http-range-header-0.3.0 \
-		httparse-1.6.0 \
-		httpdate-1.0.2 \
+		hermit-abi-0.3.3 \
+		home-0.5.9 \
+		http-0.2.11 \
+		http-body-0.4.6 \
+		httparse-1.8.0 \
+		httpdate-1.0.3 \
 		humantime-2.1.0 \
-		hyper-0.14.18 \
+		hyper-0.14.28 \
 		hyper-timeout-0.4.1 \
-		idna-0.2.3 \
+		idna-0.5.0 \
 		indenter-0.3.3 \
-		indexmap-1.8.1 \
-		instant-0.1.12 \
-		itertools-0.10.3 \
-		itoa-1.0.1 \
+		indexmap-1.9.3 \
+		indexmap-2.1.0 \
+		itertools-0.11.0 \
+		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.121 \
-		lock_api-0.4.7 \
-		log-0.4.16 \
+		libc-0.2.151 \
+		libredox-0.0.1 \
+		linux-raw-sys-0.4.12 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
 		matchers-0.1.0 \
-		matches-0.1.9 \
-		matchit-0.5.0 \
-		memchr-2.4.1 \
-		mime-0.3.16 \
+		matchit-0.7.3 \
+		memchr-2.7.1 \
+		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.4.4 \
-		mio-0.7.14 \
-		mio-0.8.2 \
-		miow-0.3.7 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.10 \
 		multimap-0.8.3 \
-		nom-7.1.1 \
-		ntapi-0.3.7 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.1 \
-		object-0.27.1 \
-		once_cell-1.10.0 \
-		os_str_bytes-6.0.0 \
-		owo-colors-1.3.0 \
-		parking_lot-0.11.2 \
-		parking_lot-0.12.0 \
-		parking_lot_core-0.8.5 \
-		parking_lot_core-0.9.2 \
-		percent-encoding-2.1.0 \
-		petgraph-0.6.0 \
-		pin-project-1.0.10 \
-		pin-project-internal-1.0.10 \
-		pin-project-lite-0.2.8 \
+		nom-7.1.3 \
+		nu-ansi-term-0.46.0 \
+		num-traits-0.2.17 \
+		num_cpus-1.16.0 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		os_str_bytes-6.6.1 \
+		overload-0.1.1 \
+		owo-colors-3.5.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		percent-encoding-2.3.1 \
+		petgraph-0.6.4 \
+		pin-project-1.1.3 \
+		pin-project-internal-1.1.3 \
+		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
-		ppv-lite86-0.2.16 \
-		prettyplease-0.1.9 \
+		ppv-lite86-0.2.17 \
+		prettyplease-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.36 \
-		prost-0.11.0 \
-		prost-build-0.11.1 \
-		prost-derive-0.11.0 \
-		prost-types-0.11.0 \
-		quote-1.0.17 \
+		proc-macro2-1.0.75 \
+		prost-0.12.3 \
+		prost-build-0.12.3 \
+		prost-derive-0.12.3 \
+		prost-types-0.12.3 \
+		quote-1.0.35 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
-		rand_core-0.6.3 \
-		redox_syscall-0.2.13 \
-		redox_users-0.4.3 \
-		regex-1.5.5 \
+		rand_core-0.6.4 \
+		ratatui-0.20.1 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		regex-1.10.2 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
-		remove_dir_all-0.5.3 \
-		rustc-demangle-0.1.21 \
-		ryu-1.0.9 \
-		scopeguard-1.1.0 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
-		sharded-slab-0.1.4 \
-		signal-hook-0.3.13 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.6.29 \
+		regex-syntax-0.8.2 \
+		rustc-demangle-0.1.23 \
+		rustix-0.38.28 \
+		rustversion-1.0.14 \
+		ryu-1.0.16 \
+		scopeguard-1.2.0 \
+		serde-1.0.194 \
+		serde_derive-1.0.194 \
+		serde_json-1.0.111 \
+		sharded-slab-0.1.7 \
+		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.0 \
-		slab-0.4.6 \
-		smallvec-1.8.0 \
-		socket2-0.4.4 \
+		signal-hook-registry-1.4.1 \
+		slab-0.4.9 \
+		smallvec-1.11.2 \
+		socket2-0.5.5 \
 		strsim-0.10.0 \
-		syn-1.0.90 \
-		sync_wrapper-0.1.1 \
-		tempfile-3.3.0 \
-		termcolor-1.1.3 \
-		textwrap-0.15.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
-		thread_local-1.1.4 \
-		tinyvec-1.5.1 \
-		tinyvec_macros-0.1.0 \
-		tokio-1.17.0 \
+		syn-1.0.109 \
+		syn-2.0.48 \
+		sync_wrapper-0.1.2 \
+		tempfile-3.9.0 \
+		termcolor-1.4.0 \
+		textwrap-0.16.0 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		thread_local-1.1.7 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.35.1 \
 		tokio-io-timeout-1.2.0 \
-		tokio-macros-1.7.0 \
-		tokio-stream-0.1.8 \
-		tokio-util-0.7.1 \
-		toml-0.5.8 \
-		tonic-0.8.0 \
-		tonic-build-0.8.0 \
-		tower-0.4.12 \
-		tower-http-0.2.5 \
-		tower-layer-0.3.1 \
-		tower-service-0.3.1 \
-		tracing-0.1.32 \
-		tracing-attributes-0.1.20 \
-		tracing-core-0.1.24 \
-		tracing-error-0.1.2 \
-		tracing-futures-0.2.5 \
+		tokio-macros-2.2.0 \
+		tokio-stream-0.1.14 \
+		tokio-util-0.7.10 \
+		toml-0.5.11 \
+		tonic-0.10.2 \
+		tonic-build-0.10.2 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
+		tower-service-0.3.2 \
+		tracing-0.1.40 \
+		tracing-attributes-0.1.27 \
+		tracing-core-0.1.32 \
+		tracing-error-0.2.0 \
 		tracing-journald-0.2.4 \
-		tracing-log-0.1.2 \
-		tracing-subscriber-0.2.25 \
-		tracing-subscriber-0.3.11 \
-		try-lock-0.2.3 \
-		tui-0.16.0 \
-		unicode-bidi-0.3.7 \
-		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.9.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
-		url-2.2.2 \
+		tracing-log-0.2.0 \
+		tracing-subscriber-0.3.18 \
+		try-lock-0.2.5 \
+		unicode-bidi-0.3.14 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
+		unicode-segmentation-1.10.1 \
+		unicode-width-0.1.11 \
+		url-2.5.0 \
 		valuable-0.1.0 \
 		version_check-0.9.4 \
-		want-0.3.0 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
+		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-4.2.5 \
+		which-4.4.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.34.0 \
-		windows_aarch64_msvc-0.34.0 \
-		windows_i686_gnu-0.34.0 \
-		windows_i686_msvc-0.34.0 \
-		windows_x86_64_gnu-0.34.0 \
-		windows_x86_64_msvc-0.34.0
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0
 
 PLIST_FILES=	bin/${PORTNAME}
 

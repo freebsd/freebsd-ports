@@ -37,7 +37,7 @@ OPENGL_MAKE_ENV_OFF=	WITH_OPENGL=false
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wizznic ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "data packs" ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/wizznic.6 ${STAGEDIR}${MAN6PREFIX}/share/man/man6
+	${INSTALL_MAN} ${WRKSRC}/doc/wizznic.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

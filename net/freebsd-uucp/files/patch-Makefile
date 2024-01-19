@@ -1,0 +1,11 @@
+--- uucpd/Makefile.orig	2017-02-04 12:57:51 UTC
++++ uucpd/Makefile
+@@ -5,7 +5,7 @@ PROG=	uucpd
+ MAN=	uucpd.8
+ MAN8=	uucpd.8
+ BINDIR=	${PREFIX}/libexec
+-MANDIR=	${PREFIX}/man/man
++MANDIR=	${PREFIX}/share/man/man
+ LDADD=  -lcrypt -lutil
+ DPADD=  ${LIBCRYPT} ${LIBUTIL}
+ CFLAGS+= -DPREFIX=\"${PREFIX}\"

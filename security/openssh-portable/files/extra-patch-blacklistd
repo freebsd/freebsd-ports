@@ -277,9 +277,9 @@
 --- auth2.c.orig	2020-11-16 17:10:36.772062000 -0800
 +++ auth2.c	2020-11-16 17:12:04.852943000 -0800
 @@ -58,6 +58,7 @@
- #endif
  #include "monitor_wrap.h"
  #include "digest.h"
+ #include "kex.h"
 +#include "blacklist_client.h"
  
  /* import */
@@ -317,7 +317,7 @@
 @@ -1882,6 +1883,7 @@ sshpkt_vfatal(struct ssh *ssh, int r, const char *fmt,
  	case SSH_ERR_NO_KEX_ALG_MATCH:
  	case SSH_ERR_NO_HOSTKEY_ALG_MATCH:
- 		if (ssh && ssh->kex && ssh->kex->failed_choice) {
+ 		if (ssh->kex && ssh->kex->failed_choice) {
 +			BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, ssh, "ssh");
  			ssh_packet_clear_keys(ssh);
  			errno = oerrno;
@@ -372,12 +372,12 @@
  #Compression delayed
  #ClientAliveInterval 0
  #ClientAliveCountMax 3
---- sshd_config.5.orig	2020-11-16 16:57:58.533307000 -0800
-+++ sshd_config.5	2020-11-16 17:00:02.635070000 -0800
-@@ -1703,6 +1703,20 @@ for authentication using
- .Cm TrustedUserCAKeys .
- For more details on certificates, see the CERTIFICATES section in
- .Xr ssh-keygen 1 .
+--- sshd_config.5.orig  2023-12-18 15:59:50.000000000 +0100
++++ sshd_config.5       2024-01-06 16:36:17.025742000 +0100
+@@ -1855,6 +1855,20 @@ This option may be useful in conjunction with
+ is to never expire connections for having no open channels.
+ This option may be useful in conjunction with
+ .Cm ChannelTimeout .
 +.It Cm UseBlacklist
 +Specifies whether
 +.Xr sshd 8

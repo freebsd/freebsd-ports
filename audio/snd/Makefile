@@ -1,6 +1,6 @@
 PORTNAME=	snd
 PORTVERSION=	22.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://ccrma.stanford.edu/software/snd/ \
 		SF
@@ -60,7 +60,7 @@ do-install:
 .for i in snd snd-info sndplay
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/snd.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/snd.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-S7-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -1,5 +1,6 @@
 PORTNAME=	fasd
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	mail@dbalan.in
@@ -11,9 +12,8 @@ LICENSE=	MIT
 USE_GITHUB=	yes
 GH_ACCOUNT=	clvv
 
-MAKE_ARGS+=	prefix=${PREFIX} \
-		MANDIR=${MANPREFIX}/man
+MAKE_ARGS+=	prefix=${PREFIX}
 
-PLIST_FILES=	bin/fasd man/man1/fasd.1.gz
+PLIST_FILES=	bin/fasd share/man/man1/fasd.1.gz
 
 .include <bsd.port.mk>

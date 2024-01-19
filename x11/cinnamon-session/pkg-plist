@@ -2,8 +2,8 @@ bin/cinnamon-session
 bin/cinnamon-session-quit
 libexec/cinnamon-session-check-accelerated
 libexec/cinnamon-session-check-accelerated-helper
-man/man1/cinnamon-session-quit.1.gz
-man/man1/cinnamon-session.1.gz
+share/man/man1/cinnamon-session-quit.1.gz
+share/man/man1/cinnamon-session.1.gz
 %%DATADIR%%/csm-inhibit-dialog.glade
 %%DATADIR%%/hardware-compatibility
 share/icons/hicolor/16x16/apps/cinnamon-session-properties.png

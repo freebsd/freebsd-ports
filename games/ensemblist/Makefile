@@ -1,6 +1,6 @@
 PORTNAME=	ensemblist
 PORTVERSION=	040126
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -16,7 +16,7 @@ USE_XORG=	xmu
 USE_GL=		glut
 MAKE_ARGS=	CC="${CC}" DATADIR="${DATADIR}"
 
-PLIST_FILES=	bin/ensemblist man/man6/ensemblist.6.gz
+PLIST_FILES=	bin/ensemblist share/man/man6/ensemblist.6.gz
 PORTDATA=	*
 PORTDOCS=	*
 
@@ -27,6 +27,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/datas/* ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	${INSTALL_MAN} ${WRKSRC}/ensemblist.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/ensemblist.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 .include <bsd.port.mk>

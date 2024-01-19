@@ -68,9 +68,9 @@ pre-install:
 
 post-install::
 	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_MAN} timidity.1 \
-		${STAGEDIR}${MANPREFIX}/man/ja/man1)
+		${STAGEDIR}${PREFIX}/man/ja/man1)
 	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_MAN} timidity.cfg.5 \
-		${STAGEDIR}${MANPREFIX}/man/ja/man5)
+		${STAGEDIR}${PREFIX}/man/ja/man5)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/C && ${INSTALL_DATA} ${DOCFILES} \
 		${STAGEDIR}${DOCSDIR})

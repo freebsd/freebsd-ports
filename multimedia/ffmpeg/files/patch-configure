@@ -15,14 +15,19 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -5537,6 +5531,7 @@ case $target_os in
-         disable symver
-         ;;
-     freebsd)
-+        enable section_data_rel_ro
-         ;;
-     bsd/os)
-         add_extralibs -lpoll -lgnugetopt
+@@ -6705,10 +6699,10 @@ enabled libglslang && { check_lib spirv_compiler glsla
+ enabled libfribidi        && require_pkg_config libfribidi fribidi fribidi.h fribidi_version_info
+ enabled libharfbuzz       && require_pkg_config libharfbuzz harfbuzz hb.h hb_buffer_create
+ enabled libglslang && { check_lib spirv_compiler glslang/Include/glslang_c_interface.h glslang_initialize_process \
+-                            -lglslang -lMachineIndependent -lOSDependent -lHLSL -lOGLCompiler -lGenericCodeGen \
++                            -lglslang -lMachineIndependent -lOSDependent -lGenericCodeGen \
+                             -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++ -lm ||
+                         require spirv_compiler glslang/Include/glslang_c_interface.h glslang_initialize_process \
+-                            -lglslang -lOSDependent -lHLSL -lOGLCompiler \
++                            -lglslang -lOSDependent \
+                             -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++ -lm; }
+ enabled libgme            && { check_pkg_config libgme libgme gme/gme.h gme_new_emu ||
+                                require libgme gme/gme.h gme_new_emu -lgme -lstdc++; }
 @@ -7018,7 +7013,7 @@ fi
  
  if enabled x86; then

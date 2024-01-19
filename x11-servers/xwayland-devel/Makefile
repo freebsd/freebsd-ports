@@ -1,13 +1,13 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-603
-DISTVERSIONSUFFIX=	-gf59871587
+DISTVERSION=	21.0.99.1-653
+DISTVERSIONSUFFIX=	-g2ef0f1116
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES+=	https://github.com/mirror/${GL_PROJECT}/commit/:github
 PATCHFILES+=	cd6c9c1246af.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	707c37b7ab9e.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	91b97b031290.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	3b0d1a3a2296.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 
@@ -48,8 +48,8 @@ MESON_ARGS=	-D${PORTNAME}=true \
 PLIST_FILES=	bin/Xwayland \
 		"@comment lib/xorg/protocol.txt" \
 		libdata/pkgconfig/xwayland.pc \
-		"@comment man/man1/Xserver.1.gz" \
-		man/man1/Xwayland.1.gz \
+		"@comment share/man/man1/Xserver.1.gz" \
+		share/man/man1/Xwayland.1.gz \
 		share/applications/org.freedesktop.Xwayland.desktop
 
 # Keep in sync with xorg-server

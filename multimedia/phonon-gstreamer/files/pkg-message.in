@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You'll need to install some GStreamer plugins to make Phonon able to
-play something via this backend: multimedia/gstreamer1-plugins-all
-will let you choose among all of them.
-EOM
-}
-]

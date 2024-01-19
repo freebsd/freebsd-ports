@@ -14,10 +14,6 @@ WWW=		http://openlab.ring.gr.jp/skk/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/READMEs/COPYING
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		fails to build
-.endif
-
 USES=		emacs
 
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" \

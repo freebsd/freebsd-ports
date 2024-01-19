@@ -5,7 +5,7 @@ DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accounts and SSO framework for Linux and POSIX based platforms
-WWW=		https://code.google.com/p/accounts-sso/
+WWW=		https://gitlab.com/accounts-sso
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,6 +1,6 @@
 PORTNAME=	zphoto
 PORTVERSION=	1.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 
@@ -8,25 +8,29 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zooming photo album generator
 WWW=		http://namazu.org/~satoru/zphoto/
 
-LIB_DEPENDS=	libming.so:graphics/ming \
-		libpopt.so:devel/popt \
-		libImlib2.so:graphics/imlib2
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias gmake localbase perl5
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+		libming.so:graphics/ming \
+		libpopt.so:devel/popt
+
+USES=		alias gmake localbase perl5 pkgconfig
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-avifile
 
-OPTIONS_DEFINE=		ZIP NLS
+OPTIONS_DEFINE=		NLS ZIP
 OPTIONS_DEFAULT=	ZIP
 OPTIONS_SUB=		yes
 
-ZIP_DESC=		Enable zip support
+ZIP_DESC=	Enable zip support
+
+NLS_USES=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
+
 ZIP_RUN_DEPENDS=	zip:archivers/zip
 ZIP_CONFIGURE_OFF=	--disable-zip
-
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<ming.h>|<ming/ming.h>|g' ${WRKSRC}/*.c ${WRKSRC}/configure

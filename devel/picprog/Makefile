@@ -1,5 +1,6 @@
 PORTNAME=	picprog
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
@@ -15,7 +16,7 @@ OPTIONS_DEFINE=	DOCS
 USES=		gmake
 
 PLIST_FILES=	bin/picprog \
-		man/man1/picprog.1.gz
+		share/man/man1/picprog.1.gz
 
 PORTDOCS=	README anybrowser3.png jdm84ne3.png jdm84pcb6.png picprog.html
 
@@ -28,7 +29,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picprog ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/picprog.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/picprog.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in README *.png picprog.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

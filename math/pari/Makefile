@@ -54,12 +54,6 @@ PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.pre.mk>
-
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-CFLAGS+=	-mminimal-toc
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E '/libpari_base\=/s/-tls|-gmp//' \
 		${WRKSRC}/Configure
@@ -79,4 +73,4 @@ do-test-PTHREADS-on:
 do-test-MPI-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} test-parallel RUNTEST="mpirun -np 3"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

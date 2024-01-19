@@ -4,6 +4,7 @@ lib/xfce4/panel/plugins/libdocklike.so
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-docklike-plugin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-docklike-plugin.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-docklike-plugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-docklike-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-docklike-plugin.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-docklike-plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-docklike-plugin.mo

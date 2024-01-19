@@ -1,4 +1,0 @@
-bin/moonlight
-@sample etc/moonlight.conf.sample
-share/man/man1/moonlight.1.gz
-share/moonlight/gamecontrollerdb.txt

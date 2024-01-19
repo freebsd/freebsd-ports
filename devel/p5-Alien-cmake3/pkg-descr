@@ -1,0 +1,3 @@
+This Alien distribution provides an external dependency on the build
+tool CMake version 3.x or better.  CMake is a popular alternative to
+GNU autotools.

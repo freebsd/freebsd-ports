@@ -1,6 +1,6 @@
 PORTNAME=	cracklib
 PORTVERSION=	2.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cracklib/cracklib/releases/download/v${PORTVERSION}/ \
 		LOCAL/cy
@@ -36,8 +36,8 @@ NLS_USES=	gettext
 CONFIGURE_ARGS+=--without-python
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
-	${LN} -s ${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/FascistCheck.3
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.3 ${STAGEDIR}${PREFIX}/share/man/man3/
+	${LN} -s ${PORTNAME}.3 ${STAGEDIR}${PREFIX}/share/man/man3/FascistCheck.3
 	@${MKDIR} ${STAGEDIR}${DICTPATH}
 	@PATH=$${PATH}:${STAGEDIR}${PREFIX}/sbin LD_LIBRARY_PATH=/lib:/usr/lib:${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/sbin/create-cracklib-dict -o ${STAGEDIR}${DICTPATH}/cracklib-words ${_DISTDIR}/${WORDS_DISTFILE}
 

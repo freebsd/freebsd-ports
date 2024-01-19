@@ -1,8 +1,7 @@
 PORTNAME=	tanglet
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	games
-MASTER_SITES=	http://gottcode.org/tanglet/
+MASTER_SITES=	https://gottcode.org/tanglet/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Single player word finding game based on Boggle

@@ -88,10 +88,6 @@ _SUF2=		,${PORTEPOCH}
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-USE_GCC=	yes
-.endif
-
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc
 CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
 CONFIGURE_ENV+=		ac_cv_func__setjmp=yes

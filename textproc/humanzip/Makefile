@@ -1,5 +1,6 @@
 PORTNAME=	humanzip
 PORTVERSION=	0.5
+PORTREVISION= 	1
 CATEGORIES=	textproc archivers
 MASTER_SITES=	SAVANNAH
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTDOCS=	CHANGELOG README TODO
 PLIST_FILES=	bin/humanunzip bin/humanzip \
-		man/man1/humanunzip.1.gz man/man1/humanzip.1.gz
+		share/man/man1/humanunzip.1.gz share/man/man1/humanzip.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -26,8 +27,8 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin)
 .endfor
 	(cd ${WRKSRC} && ${INSTALL_MAN} humanzip.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
-	${LN} -sf humanzip.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/humanunzip.1
+		${STAGEDIR}${PREFIX}/share/man/man1)
+	${LN} -sf humanzip.1 ${STAGEDIR}${PREFIX}/share/man/man1/humanunzip.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

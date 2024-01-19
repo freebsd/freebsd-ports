@@ -1,8 +1,8 @@
 %%WWWDIR%%/.github/ISSUE_TEMPLATE.md
 %%WWWDIR%%/.github/workflows/L10n-update.yml
+%%WWWDIR%%/.github/workflows/php.yml
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/.gitlab-ci.yml
-%%WWWDIR%%/.travis.yml
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/clicommands/BasketCommand.php
@@ -246,6 +246,12 @@
 %%WWWDIR%%/doc/screenshot/director/74_self-service-api/7401-director_self-service-dashboard.png
 %%WWWDIR%%/doc/screenshot/director/74_self-service-api/7402-director_self-service-choose-source.png
 %%WWWDIR%%/doc/screenshot/director/74_self-service-api/7403-director_self-service-settings.png
+%%WWWDIR%%/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-01-cidr_based_filters.png
+%%WWWDIR%%/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-02-wrap_startup_log_lines.png
+%%WWWDIR%%/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-03-template_usage.png
+%%WWWDIR%%/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-04-upload_basket_snapshot.png
+%%WWWDIR%%/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-05-notification_user-var.png
+%%WWWDIR%%/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-06-notification_user-var_rendered.png
 %%WWWDIR%%/doc/screenshot/director/93_testing/931_director_testing_duration.png
 %%WWWDIR%%/doc/screenshot/director/93_testing/932_director_testing_output_testdox.png
 %%WWWDIR%%/doc/screenshot/director/93_testing/933_director_testing_history.png
@@ -254,6 +260,9 @@
 %%WWWDIR%%/library/Director/Application/Dependency.php
 %%WWWDIR%%/library/Director/Application/DependencyChecker.php
 %%WWWDIR%%/library/Director/Application/MemoryLimit.php
+%%WWWDIR%%/library/Director/Auth/MonitoringRestriction.php
+%%WWWDIR%%/library/Director/Auth/Permission.php
+%%WWWDIR%%/library/Director/Auth/Restriction.php
 %%WWWDIR%%/library/Director/CheckPlugin/Check.php
 %%WWWDIR%%/library/Director/CheckPlugin/CheckResult.php
 %%WWWDIR%%/library/Director/CheckPlugin/CheckResults.php
@@ -378,6 +387,7 @@
 %%WWWDIR%%/library/Director/Data/ImportExportDeniedProperties.php
 %%WWWDIR%%/library/Director/Data/InvalidDataException.php
 %%WWWDIR%%/library/Director/Data/Json.php
+%%WWWDIR%%/library/Director/Data/ObjectImporter.php
 %%WWWDIR%%/library/Director/Data/PropertiesFilter.php
 %%WWWDIR%%/library/Director/Data/PropertiesFilter/ArrayCustomVariablesFilter.php
 %%WWWDIR%%/library/Director/Data/PropertiesFilter/CustomVariablesFilter.php
@@ -412,6 +422,7 @@
 %%WWWDIR%%/library/Director/Db/Branch/MergeErrorModificationForMissingObject.php
 %%WWWDIR%%/library/Director/Db/Branch/MergeErrorRecreateOnMerge.php
 %%WWWDIR%%/library/Director/Db/Branch/PlainObjectPropertyDiff.php
+%%WWWDIR%%/library/Director/Db/Branch/PreferredBranchSupport.php
 %%WWWDIR%%/library/Director/Db/Branch/UuidLookup.php
 %%WWWDIR%%/library/Director/Db/Cache/CustomVariableCache.php
 %%WWWDIR%%/library/Director/Db/Cache/GroupMembershipCache.php
@@ -431,6 +442,7 @@
 %%WWWDIR%%/library/Director/Deployment/DeploymentStatus.php
 %%WWWDIR%%/library/Director/DirectorObject/Automation/Basket.php
 %%WWWDIR%%/library/Director/DirectorObject/Automation/BasketContent.php
+%%WWWDIR%%/library/Director/DirectorObject/Automation/BasketDiff.php
 %%WWWDIR%%/library/Director/DirectorObject/Automation/BasketSnapshot.php
 %%WWWDIR%%/library/Director/DirectorObject/Automation/BasketSnapshotFieldResolver.php
 %%WWWDIR%%/library/Director/DirectorObject/Automation/CompareBasketObject.php
@@ -449,6 +461,9 @@
 %%WWWDIR%%/library/Director/Exception/JsonException.php
 %%WWWDIR%%/library/Director/Exception/NestingError.php
 %%WWWDIR%%/library/Director/Field/FieldSpec.php
+%%WWWDIR%%/library/Director/Field/FormFieldSuggestion.php
+%%WWWDIR%%/library/Director/Filter/CidrExpression.php
+%%WWWDIR%%/library/Director/Filter/FilterEnrichment.php
 %%WWWDIR%%/library/Director/Health.php
 %%WWWDIR%%/library/Director/Hook/BranchSupportHook.php
 %%WWWDIR%%/library/Director/Hook/DataTypeHook.php
@@ -482,12 +497,12 @@
 %%WWWDIR%%/library/Director/Import/PurgeStrategy/PurgeStrategy.php
 %%WWWDIR%%/library/Director/Import/Sync.php
 %%WWWDIR%%/library/Director/Import/SyncUtils.php
+%%WWWDIR%%/library/Director/Integration/MonitoringModule/Monitoring.php
 %%WWWDIR%%/library/Director/Job/ConfigJob.php
 %%WWWDIR%%/library/Director/Job/HousekeepingJob.php
 %%WWWDIR%%/library/Director/Job/ImportJob.php
 %%WWWDIR%%/library/Director/Job/SyncJob.php
 %%WWWDIR%%/library/Director/KickstartHelper.php
-%%WWWDIR%%/library/Director/Monitoring.php
 %%WWWDIR%%/library/Director/Objects/DirectorActivityLog.php
 %%WWWDIR%%/library/Director/Objects/DirectorDatafield.php
 %%WWWDIR%%/library/Director/Objects/DirectorDatafieldCategory.php
@@ -548,7 +563,6 @@
 %%WWWDIR%%/library/Director/Objects/IcingaUserGroup.php
 %%WWWDIR%%/library/Director/Objects/IcingaVar.php
 %%WWWDIR%%/library/Director/Objects/IcingaZone.php
-%%WWWDIR%%/library/Director/Objects/ImportExportHelper.php
 %%WWWDIR%%/library/Director/Objects/ImportRowModifier.php
 %%WWWDIR%%/library/Director/Objects/ImportRun.php
 %%WWWDIR%%/library/Director/Objects/ImportSource.php
@@ -649,7 +663,6 @@
 %%WWWDIR%%/library/Director/Web/Controller/Extension/DirectorDb.php
 %%WWWDIR%%/library/Director/Web/Controller/Extension/ObjectRestrictions.php
 %%WWWDIR%%/library/Director/Web/Controller/Extension/RestApi.php
-%%WWWDIR%%/library/Director/Web/Controller/Extension/SingleObjectApiHandler.php
 %%WWWDIR%%/library/Director/Web/Controller/ObjectController.php
 %%WWWDIR%%/library/Director/Web/Controller/ObjectsController.php
 %%WWWDIR%%/library/Director/Web/Controller/TemplateController.php
@@ -734,6 +747,7 @@
 %%WWWDIR%%/library/Director/Web/Table/ObjectsTableHost.php
 %%WWWDIR%%/library/Director/Web/Table/ObjectsTableHostTemplateChoice.php
 %%WWWDIR%%/library/Director/Web/Table/ObjectsTableService.php
+%%WWWDIR%%/library/Director/Web/Table/ObjectsTableSetMembers.php
 %%WWWDIR%%/library/Director/Web/Table/ObjectsTableZone.php
 %%WWWDIR%%/library/Director/Web/Table/PropertymodifierTable.php
 %%WWWDIR%%/library/Director/Web/Table/QuickTable.php
@@ -781,6 +795,8 @@
 %%WWWDIR%%/library/Director/Web/Window.php
 %%WWWDIR%%/module.info
 %%WWWDIR%%/phpcs.xml
+%%WWWDIR%%/phpstan-baseline.neon
+%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/phpunit.xml
 %%WWWDIR%%/public/css/module.less
 %%WWWDIR%%/public/img/globe.png
@@ -931,6 +947,10 @@
 %%WWWDIR%%/schema/mysql-migrations/upgrade_179.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_180.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_182.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_183.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_184.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_186.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_187.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_63.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_64.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_65.sql
@@ -1052,6 +1072,10 @@
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_180.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_181.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_182.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_183.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_184.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_186.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_187.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_77.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_78.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_79.sql
@@ -1127,6 +1151,4 @@
 %%WWWDIR%%/test/php/library/Director/Resolver/TemplateTreeTest.php
 %%WWWDIR%%/test/php/library/Director/Restriction/MatchingFilterTest.php
 %%WWWDIR%%/test/phpunit-compat.php
-%%WWWDIR%%/test/setup_vendor.sh
-%%WWWDIR%%/test/travis-prepare.sh
 @dir(%%DIRECTOR_USER%%,DIRECTOR_GROUP%%,0775) /var/run/icinga-director

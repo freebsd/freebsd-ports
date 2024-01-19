@@ -1,5 +1,6 @@
 PORTNAME=	okular
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org

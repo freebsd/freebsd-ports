@@ -1,6 +1,7 @@
 PORTNAME=	wtype
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,6 +18,6 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	atx
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

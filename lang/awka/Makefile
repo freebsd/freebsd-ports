@@ -1,6 +1,6 @@
 PORTNAME=	awka
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://awka.sourceforge.net/
 

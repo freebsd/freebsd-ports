@@ -1,6 +1,6 @@
 PORTNAME=	gtkchtheme
 PORTVERSION=	0.3.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11
 MASTER_SITES=	http://plasmasturm.org/code/gtk-chtheme/
 DISTNAME=	gtk-chtheme-${PORTVERSION}
@@ -16,10 +16,10 @@ USES=		gmake gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/gtk-chtheme \
-		man/man1/gtk-chtheme.1.gz
+		share/man/man1/gtk-chtheme.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtk-chtheme ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

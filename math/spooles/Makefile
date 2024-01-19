@@ -36,16 +36,12 @@ DOCS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
 		Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
 		PP99.ps.gz ReferenceManual.ps.gz
 
+PICFLAG?=	-fpic
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
-.endif
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
 .endif
 
 .SILENT:

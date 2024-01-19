@@ -1,6 +1,6 @@
---- config.cpp.orig
+--- config.cpp.orig	2005-06-20 11:20:44 UTC
 +++ config.cpp
-@@ -64,8 +64,9 @@
+@@ -64,8 +64,9 @@ get_boolean (char *value) 
  }
  
  

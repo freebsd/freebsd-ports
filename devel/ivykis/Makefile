@@ -1,6 +1,7 @@
 PORTNAME=	ivykis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.42.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	algernon@madhouse-project.org
@@ -18,5 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	buytenh
 
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} -e '/iv_inotify/d' ${WRKSRC}/libivykis.posix.ver
 
 .include <bsd.port.mk>

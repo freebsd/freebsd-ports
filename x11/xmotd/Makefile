@@ -1,6 +1,6 @@
 PORTNAME=	xmotd
 DISTVERSION=	1.17.3b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ee.ryerson.ca/~elf/pub/
 
@@ -15,7 +15,7 @@ USES=		imake:noman xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 PLIST_FILES=	bin/xmotd \
-		man/man8/xmotd.8.gz
+		share/man/man8/xmotd.8.gz
 
 OPTIONS_DEFINE=	HTML MOTIF XPM
 
@@ -48,6 +48,6 @@ post-patch-XPM-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${STAGEDIR}${LOCALBASE}/bin/xmotd
-	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

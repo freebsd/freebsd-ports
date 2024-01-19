@@ -1,5 +1,5 @@
 bin/gtk-gnutella
-man/man1/gtk-gnutella.1.gz
+share/man/man1/gtk-gnutella.1.gz
 share/appdata/gtk-gnutella.appdata.xml
 share/applications/gtk-gnutella.desktop
 %%DATADIR%%/%%ARCH%%-%%OPSYS%%/gtk-gnutella.nm

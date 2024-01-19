@@ -3,11 +3,14 @@ DISTVERSION=	3.00b1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.mikekohn.net/nakenchat/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small (under 50k) chat server with many features
 WWW=		http://nakenchat.naken.cc/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Discontinued upstream and never left BETA stage
+EXPIRATION_DATE=2024-02-29
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	nakenchat

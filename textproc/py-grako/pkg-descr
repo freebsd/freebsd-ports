@@ -1,6 +1,0 @@
-Grako (for grammar compiler) is a tool that takes grammars in a variation of
-EBNF as input, and outputs memoizing (Packrat) PEG parsers in Python.
-
-Grako can also compile a grammar stored in a string into a Grammar object that
-can be used to parse any given input, much like the re module does with regular
-expressions.

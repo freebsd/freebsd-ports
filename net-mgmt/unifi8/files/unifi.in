@@ -46,6 +46,7 @@ load_rc_config ${name}
 : ${unifi_chdir=%%JAVASHAREDIR%%/unifi}
 : ${unifi_java_home=%%JAVA_HOME%%}
 : ${unifi_javaflags="-Djava.awt.headless=true -Xmx1024M \
+	-Djava.net.preferIPv4Stack=false \
 	--add-opens java.base/java.lang=ALL-UNNAMED \
 	--add-opens java.base/java.time=ALL-UNNAMED \
 	--add-opens java.base/sun.security.util=ALL-UNNAMED \

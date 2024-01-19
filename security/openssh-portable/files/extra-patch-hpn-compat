@@ -16,12 +16,12 @@ r294563 was incomplete; re-add the client-side options as well.
 
 ------------------------------------------------------------------------
 
---- readconf.c.orig	2023-02-03 11:17:45.506822000 -0800
-+++ readconf.c	2023-02-03 11:30:14.894959000 -0800
-@@ -323,6 +323,12 @@ static struct {
- 	{ "knownhostscommand", oKnownHostsCommand },
- 	{ "requiredrsasize", oRequiredRSASize },
+--- readconf.c.orig	2023-12-19 17:09:41.366788000 -0800
++++ readconf.c	2023-12-19 17:10:24.155247000 -0800
+@@ -329,6 +329,12 @@
  	{ "enableescapecommandline", oEnableEscapeCommandline },
+ 	{ "obscurekeystroketiming", oObscureKeystrokeTiming },
+ 	{ "channeltimeout", oChannelTimeout },
 +	{ "hpndisabled", oDeprecated },
 +	{ "hpnbuffersize", oDeprecated },
 +	{ "tcprcvbufpoll", oDeprecated },
@@ -31,9 +31,9 @@ r294563 was incomplete; re-add the client-side options as well.
  
  	{ NULL, oBadOption }
  };
---- servconf.c.orig	2023-02-02 04:21:54.000000000 -0800
-+++ servconf.c	2023-02-03 11:31:00.387624000 -0800
-@@ -695,6 +695,10 @@ static struct {
+--- servconf.c.orig	2023-12-19 17:11:52.320491000 -0800
++++ servconf.c	2023-12-19 17:12:43.950318000 -0800
+@@ -693,6 +693,10 @@
  	{ "requiredrsasize", sRequiredRSASize, SSHCFG_ALL },
  	{ "channeltimeout", sChannelTimeout, SSHCFG_ALL },
  	{ "unusedconnectiontimeout", sUnusedConnectionTimeout, SSHCFG_ALL },

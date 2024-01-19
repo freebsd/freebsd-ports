@@ -1,6 +1,5 @@
 bin/ebusd
 bin/ebusctl
-bin/ebusfeed
 bin/ebuspicloader
 %%MQTT%%%%ETCDIR%%/mqtt-hassio.cfg
 %%MQTT%%%%ETCDIR%%/mqtt-integration.cfg

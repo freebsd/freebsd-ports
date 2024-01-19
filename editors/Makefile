@@ -36,7 +36,6 @@
     SUBDIR += e93
     SUBDIR += ecce
     SUBDIR += ecrire
-    SUBDIR += edith
     SUBDIR += editorconfig-core-c
     SUBDIR += elementary-code
     SUBDIR += emacs
@@ -46,7 +45,6 @@
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += focuswriter
-    SUBDIR += fte
     SUBDIR += fxite
     SUBDIR += gedit
     SUBDIR += gedit-plugins
@@ -67,11 +65,9 @@
     SUBDIR += hnb
     SUBDIR += hte
     SUBDIR += imhex
-    SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
     SUBDIR += joe
-    SUBDIR += jove
     SUBDIR += jucipp
     SUBDIR += jupp
     SUBDIR += kak-lsp
@@ -91,7 +87,6 @@
     SUBDIR += lazarus-qt6-devel
     SUBDIR += le
     SUBDIR += leafpad
-    SUBDIR += led
     SUBDIR += libreoffice
     SUBDIR += libreoffice-af
     SUBDIR += libreoffice-am
@@ -233,7 +228,6 @@
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
     SUBDIR += parinfer-rust
-    SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += picpas
     SUBDIR += pluma
@@ -285,6 +279,7 @@
     SUBDIR += vile
     SUBDIR += vim
     SUBDIR += vim-colorschemes-legacy
+    SUBDIR += vim-lsp
     SUBDIR += vis
     SUBDIR += vscode
     SUBDIR += web-mode
@@ -294,8 +289,6 @@
     SUBDIR += wxhexeditor
     SUBDIR += xcoral
     SUBDIR += xed
-    SUBDIR += xi-core
-    SUBDIR += xi-term
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yudit

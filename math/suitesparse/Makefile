@@ -1,5 +1,5 @@
 PORTNAME=	suitesparse
-PORTVERSION=	7.3.1
+PORTVERSION=	7.5.1
 CATEGORIES=	math
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -16,8 +16,10 @@ RUN_DEPENDS=	suitesparse-config>0:math/suitesparse-config		\
 		suitesparse-cxsparse>0:math/suitesparse-cxsparse	\
 		suitesparse-graphblas>0:math/suitesparse-graphblas	\
 		suitesparse-klu>0:math/suitesparse-klu			\
+		suitesparse-lagraph>0:math/suitesparse-lagraph		\
 		suitesparse-ldl>0:math/suitesparse-ldl			\
 		suitesparse-mongoose>0:math/suitesparse-mongoose	\
+		suitesparse-paru>0:math/suitesparse-paru		\
 		suitesparse-rbio>0:math/suitesparse-rbio		\
 		suitesparse-spex>0:math/suitesparse-spex		\
 		suitesparse-spqr>0:math/suitesparse-spqr		\

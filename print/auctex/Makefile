@@ -11,10 +11,6 @@ WWW=		https://www.gnu.org/software/auctex/
 
 LICENSE=	GPLv3
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		tex.el:0:0: error: wrong-type-argument: (stringp nil)
-.endif
-
 USES=		emacs ghostscript gmake tex
 USE_TEX=	latex texhash
 

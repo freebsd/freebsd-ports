@@ -1,17 +1,16 @@
 PORTNAME=	homebank
-PORTVERSION=	5.7
-PORTREVISION=	1
+PORTVERSION=	5.7.3
 CATEGORIES=	finance
-MASTER_SITES=	http://homebank.free.fr/public/sources/
+MASTER_SITES=	https://www.gethomebank.org/public/sources/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Free, easy, personal accounting for everyone
-WWW=		http://homebank.free.fr/
+WWW=		https://www.gethomebank.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libosp.so:textproc/opensp
 
 GNU_CONFIGURE=	yes

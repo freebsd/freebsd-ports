@@ -1,8 +1,7 @@
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0-78
+DISTVERSION=	2.1
 PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gd67601b7
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,33 +16,18 @@ ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values corre
 
 #HPP_DEPENDS=	cereal>0:devel/cereal # external cereal is currently broken, see https://github.com/openMVG/openMVG/issues/1963
 #BUILD_DEPENDS=	${HPP_DEPENDS}
-LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
-		libblas.so:math/blas \
-		libcamd.so:math/suitesparse-camd \
-		libCbc.so:math/cbc \
-		libccolamd.so:math/suitesparse-ccolamd \
+BUILD_DEPENDS=	tbb>0:devel/tbb # configure only checks TBB headers
+LIB_DEPENDS=	libblas.so:math/blas \
 		libceres.so:math/ceres-solver \
-		libCgl.so:math/cgl \
-		libcholmod.so:math/suitesparse-cholmod \
 		libClp.so:math/clp \
-		libcoinasl.so:math/asl \
 		libCoinUtils.so:math/coinutils \
-		libcolamd.so:math/suitesparse-colamd \
-		libcoinmumps.so:math/coin-or-mumps \
-		libcxsparse.so:math/suitesparse-cxsparse \
 		libemon.so:math/lemon \
 		libflann_cpp.so:math/flann \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
-		libglpk.so:math/glpk \
-		libgmp.so:math/gmp \
-		libjbig.so:graphics/jbigkit \
 		libmetis.so:math/metis \
-		libopenblas.so:math/openblas \
 		libOsi.so:math/osi \
 		libpng.so:graphics/png \
-		libspqr.so:math/suitesparse-spqr \
-		libsuitesparseconfig.so:math/suitesparse-config \
 		libtiff.so:graphics/tiff \
 		libunwind.so:devel/libunwind
 LIB_DEPENDS+=	liblz4.so:archivers/liblz4 # workaround for https://github.com/openMVG/openMVG/issues/1798

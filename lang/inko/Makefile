@@ -1,6 +1,7 @@
 PORTNAME=	inko
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://inko-lang.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # build fails on non-64-bit architectures: Inko requires a 64-bits architecture
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 

@@ -1,5 +1,6 @@
 PORTNAME=	kaccounts-providers
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	2
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,8 +9,8 @@ WWW=		https://projects.kde.org/projects/kdereview/kaccounts-providers
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libkaccounts.so:net-im/kaccounts-integration \
-		libaccounts-qt5.so:net-im/libaccounts-qt5 \
-		libsignon-qt5.so:sysutils/signon-qt5
+		libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
+		libsignon-qt5.so:sysutils/signond@qt5
 
 USES=		cmake compiler:c++11-lang gettext gnome kde:5 pkgconfig qt:5 \
 		tar:xz

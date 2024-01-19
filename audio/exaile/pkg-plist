@@ -123,7 +123,7 @@ lib/exaile/xlgui/widgets/playlist_columns.py
 lib/exaile/xlgui/widgets/queue.py
 lib/exaile/xlgui/widgets/rating.py
 lib/exaile/xlgui/widgets/smart_playlist_editor.py
-man/man1/exaile.1.gz
+share/man/man1/exaile.1.gz
 share/appdata/exaile.appdata.xml
 share/applications/exaile.desktop
 share/dbus-1/services/org.exaile.Exaile.service

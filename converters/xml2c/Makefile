@@ -21,6 +21,6 @@ PLIST_FILES=	bin/xml2c \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xml2c ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xml2c.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/xml2c.1
+	${INSTALL_MAN} ${WRKSRC}/xml2c.1 ${STAGEDIR}${PREFIX}/share/man/man1/xml2c.1
 
 .include <bsd.port.mk>

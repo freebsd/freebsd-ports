@@ -1,6 +1,6 @@
---- unix/sys_unix.c.orig	Wed Jan 11 10:06:28 2006
-+++ unix/sys_unix.c	Sat Dec 30 02:03:37 2006
-@@ -36,10 +36,6 @@
+--- unix/sys_unix.c.orig	2006-01-11 13:06:28 UTC
++++ unix/sys_unix.c
+@@ -36,10 +36,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include <sys/mman.h>
  #include <errno.h>
  
@@ -11,7 +11,7 @@
  #include <dlfcn.h>
  
  #include "../qcommon/qcommon.h"
-@@ -220,15 +216,8 @@
+@@ -220,15 +216,8 @@ void *Sys_GetGameAPI (void *parms)
  	void	*(*GetGameAPI) (void *);
  
  	char	name[MAX_OSPATH];
@@ -28,7 +28,7 @@
  
  	setreuid(getuid(), getuid());
  	setegid(getgid());
-@@ -236,8 +225,6 @@
+@@ -236,8 +225,6 @@ void *Sys_GetGameAPI (void *parms)
  	if (game_library)
  		Com_Error (ERR_FATAL, "Sys_GetGameAPI without Sys_UnloadingGame");
  
@@ -37,7 +37,7 @@
  	Com_Printf("------- Loading %s -------\n", gamename);
  
  	// now run through the search paths
-@@ -247,7 +234,7 @@
+@@ -247,7 +234,7 @@ void *Sys_GetGameAPI (void *parms)
  		path = FS_NextPath (path);
  		if (!path)
  			return NULL;		// couldn't find one anywhere

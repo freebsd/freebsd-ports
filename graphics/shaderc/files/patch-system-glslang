@@ -21,15 +21,15 @@ ld: error: undefined symbol: ConstructCompiler(EShLanguage, int)
    INCLUDE_DIRS include ${shaderc_SOURCE_DIR}/libshaderc_util/include ${glslang_SOURCE_DIR}
                 ${spirv-tools_SOURCE_DIR}/include
                 ${SPIRV-Headers_SOURCE_DIR}/include
---- libshaderc_util/CMakeLists.txt.orig	2020-12-09 21:30:21 UTC
+--- libshaderc_util/CMakeLists.txt.orig	2024-01-03 17:45:00 UTC
 +++ libshaderc_util/CMakeLists.txt
-@@ -46,8 +46,8 @@ add_definitions(-DENABLE_HLSL)
+@@ -46,8 +46,8 @@ target_link_libraries(shaderc_util PRIVATE
  
  find_package(Threads)
  target_link_libraries(shaderc_util PRIVATE
--  glslang OSDependent OGLCompiler HLSL glslang SPIRV
+-  glslang SPIRV
 -  SPIRV-Tools-opt ${CMAKE_THREAD_LIBS_INIT})
-+  glslang MachineIndependent GenericCodeGen OSDependent OGLCompiler HLSL glslang SPIRV
++  glslang MachineIndependent GenericCodeGen SPIRV
 +  SPIRV-Tools-opt SPIRV-Tools ${CMAKE_THREAD_LIBS_INIT})
  
  shaderc_add_tests(

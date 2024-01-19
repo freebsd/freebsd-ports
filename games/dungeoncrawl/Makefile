@@ -1,5 +1,6 @@
 PORTNAME=	dungeoncrawl
 PORTVERSION=	4.0.0.b26
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/ \
 		http://www.sourcefiles.org/Games/Role_Play/
@@ -17,7 +18,7 @@ CXXFLAGS+=	-fsigned-char
 MAKEFILE=	makefile.bsd
 
 PORTDOCS=	buglist.txt crawl.txt
-PLIST_FILES=	bin/dungeoncrawl man/man6/dungeoncrawl.6.gz
+PLIST_FILES=	bin/dungeoncrawl share/man/man6/dungeoncrawl.6.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,7 +36,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crawl \
 		${STAGEDIR}${PREFIX}/bin/dungeoncrawl
 	${INSTALL_MAN} ${WRKSRC}/../docs/crawl.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6/dungeoncrawl.6
+		${STAGEDIR}${PREFIX}/share/man/man6/dungeoncrawl.6
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

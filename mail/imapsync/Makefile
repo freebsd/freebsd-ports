@@ -1,5 +1,6 @@
 PORTNAME=	imapsync
 PORTVERSION=	2.229
+PORTREVISION=	1
 DISTVERSIONPREFIX=	imapsync-
 CATEGORIES=	mail perl5
 
@@ -41,13 +42,13 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^1\.(\d\.){3}
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 POD2MAN?=	pod2man
 
 do-install:
 	${POD2MAN} ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

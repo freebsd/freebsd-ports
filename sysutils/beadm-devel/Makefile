@@ -1,6 +1,6 @@
 PORTNAME=	beadm
 PORTVERSION=	1.2.99.20180708
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	\
@@ -23,12 +23,12 @@ NO_BUILD=	YES
 CONFLICTS_INSTALL=	beadm
 
 PLIST_FILES=	sbin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
 	    ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-	  ${STAGEDIR}${MANPREFIX}/man/man1/
+	  ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

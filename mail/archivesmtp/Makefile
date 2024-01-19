@@ -1,6 +1,6 @@
 PORTNAME=	archivesmtp
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dancingfortune.com/projects/archivesmtp/files/
 
@@ -32,10 +32,10 @@ pre-build:
 	${CP} ${FILESDIR}/src-Makefile ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL} -s ${WRKSRC}/src/archivesmtp ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/src/archivesmtp.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL} -s ${WRKSRC}/src/archivesmtp ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/src/archivesmtp.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	# Install sample configuration file
-	${INSTALL_DATA} ${WRKSRC}/src/archivesmtp.conf.sample ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/src/archivesmtp.conf.sample ${STAGEDIR}${PREFIX}/etc/
 	# Create socket directory
 	@${MKDIR} ${STAGEDIR}${SOCKETBASE}/${SOCKETDIR}
 

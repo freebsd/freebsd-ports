@@ -1,13 +1,13 @@
 bin/noffle
-man/man1/noffle.1.gz
-man/man5/noffle.conf.5.gz
+share/man/man1/noffle.1.gz
+share/man/man5/noffle.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/noffle.lsm
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
-etc/noffle.conf.sample
+@sample etc/noffle.conf.sample
 @dir %%SPOOL_DIR%%/data
 @dir %%SPOOL_DIR%%/lock
 @dir %%SPOOL_DIR%%/outgoing

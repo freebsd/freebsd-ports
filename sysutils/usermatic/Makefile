@@ -1,5 +1,6 @@
 PORTNAME=	usermatic
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://btw23.de/johannes/usermatic/\
 		http://home.arcor.de/fehlner/fbsd_ports/\
@@ -25,8 +26,8 @@ EXAMPLES=	digestion/list_digested digestion/list_raw \
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} digestion.pl.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} hunter-seeker.pl.8 newusers.pl.8 reaper.pl.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} digestion.pl.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} hunter-seeker.pl.8 newusers.pl.8 reaper.pl.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 	cd ${WRKSRC}/digestion && ${INSTALL_SCRIPT}  digestion.pl ${STAGEDIR}${PREFIX}/sbin
 	cd ${WRKSRC}/hunter-seeker && ${INSTALL_SCRIPT} hunter-seeker.pl \

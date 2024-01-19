@@ -55,9 +55,9 @@ do-install:
 		${STAGEDIR}${ETCDIR}/revaliases.sample
 	${INSTALL_DATA} ${WRKSRC}/ssmtp.conf \
 		${STAGEDIR}${ETCDIR}/ssmtp.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${INSTALL_MAN} ${WRKSRC}/ssmtp.conf.5 \
-		${STAGEDIR}${MAN5PREFIX}/share/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 
 replace:
 	@${REINPLACE_CMD} -e 's,^[^#],#&,g' ${_MAILERCONF}

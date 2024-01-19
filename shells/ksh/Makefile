@@ -10,7 +10,8 @@
 
 DISTVERSIONPREFIX=	v
 PORTNAME=	ksh
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	cy@FreeBSD.org
@@ -65,7 +66,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/ksh${PSUFFIX}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/ksh${PSUFFIX}.1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${STAGEDIR}${PREFIX}/share/man/man1/ksh${PSUFFIX}.1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}${PSUFFIX}/
 	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}${PSUFFIX}/
 

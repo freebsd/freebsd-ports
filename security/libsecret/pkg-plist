@@ -21,7 +21,7 @@ lib/libsecret-1.so.0
 lib/libsecret-1.so.0.0.0
 libdata/pkgconfig/libsecret-1.pc
 libdata/pkgconfig/libsecret-unstable.pc
-man/man1/secret-tool.1.gz
+share/man/man1/secret-tool.1.gz
 %%DOCSDIR%%-1/RedHatDisplay-Black.woff
 %%DOCSDIR%%-1/RedHatDisplay-Black.woff2
 %%DOCSDIR%%-1/RedHatDisplay-BlackItalic.woff

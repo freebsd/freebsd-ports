@@ -434,7 +434,6 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/widgets/settings/settingsMainContainer.json
 %%DATADIR%%/config/widgets/turnOptionsDropdownLibrary.json
 %%DATADIR%%/config/widgets/turnOptionsTab.json
-%%DATADIR%%/config/widgets/turnTimer.json
 %%QT%%%%DATADIR%%/launcher/icons/about-project.png
 %%QT%%%%DATADIR%%/launcher/icons/menu-editor.png
 %%QT%%%%DATADIR%%/launcher/icons/menu-game.png

@@ -1,5 +1,5 @@
 bin/naev
-man/man6/naev.6.gz
+share/man/man6/naev.6.gz
 share/applications/org.naev.Naev.desktop
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/Readme.md

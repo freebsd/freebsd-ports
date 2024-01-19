@@ -2,7 +2,7 @@ bin/vkmark
 %%DRM%%lib/vkmark/kms.so
 %%WAYLAND%%lib/vkmark/wayland.so
 %%X11%%lib/vkmark/xcb.so
-man/man1/vkmark.1.gz
+share/man/man1/vkmark.1.gz
 %%DATADIR%%/models/cat.3ds
 %%DATADIR%%/models/cube.3ds
 %%DATADIR%%/models/horse.3ds

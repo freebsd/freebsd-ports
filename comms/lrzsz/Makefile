@@ -1,6 +1,6 @@
 PORTNAME=	lrzsz
 PORTVERSION=	0.12.20
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms
 MASTER_SITES=	http://ohse.de/uwe/releases/
 
@@ -15,6 +15,7 @@ USES=		cpe
 CPE_VENDOR=	lrzsz_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 ALL_TARGET=	all # vcheck
 
 CONFLICTS_INSTALL=	lrzip # bin/lrz

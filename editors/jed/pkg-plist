@@ -177,5 +177,5 @@ lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/xformreg.sl
 lib/jed/lib/yankpop.sl
-man/man1/jed.1.gz
-man/man1/rgrep.1.gz
+share/man/man1/jed.1.gz
+share/man/man1/rgrep.1.gz

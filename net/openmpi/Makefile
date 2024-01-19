@@ -1,6 +1,6 @@
 PORTNAME=	openmpi
 PORTVERSION=	4.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 

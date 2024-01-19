@@ -1,0 +1,7 @@
+elan is a small tool for managing your installations of the Lean theorem prover.
+It places `lean` and `lake` binaries in your `PATH` that automatically select
+and, if necessary, download the Lean version described in your project's
+lean-toolchain file.
+
+You can also install, select, run, and uninstall Lean versions manually using
+the commands of the `elan` executable.

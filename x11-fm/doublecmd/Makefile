@@ -1,7 +1,7 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.0.11
-PORTREVISION=	3
+PORTVERSION=	1.1.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -13,8 +13,9 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
 DOS2UNIX_FILES=	components/multithreadprocs/mtpcpu.pas src/dmhelpmanager.pas
@@ -24,16 +25,16 @@ GH_TAGNAME=	1.0.10:help
 USE_GNOME=	cairo glib20
 USE_XORG=	x11
 
-LAZARUS_NO_FLAVORS=	qt6
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk \
-			components/CmdLine/cmdbox.lpk \
 			components/multithreadprocs/multithreadprocslaz.lpk \
-			components/dcpcrypt/dcpcrypt.lpk \
+			components/kascrypt/kascrypt.lpk \
 			components/doublecmd/doublecmd_common.lpk \
+			components/Image32/Image32.lpk \
 			components/KASToolBar/kascomp.lpk \
 			components/viewer/viewerpackage.lpk \
 			components/gifanim/pkg_gifanim.lpk \
-			components/synunihighlighter/synuni.lpk
+			components/synunihighlighter/synuni.lpk \
+			components/virtualterminal/virtualterminal.lpk
 LAZBUILD_ARGS=		--pcp=${WRKSRC}/tmppcp -d
 
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
@@ -42,21 +43,22 @@ PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DEBUG DOCS
-OPTIONS_DEFAULT=	DSX_LOCATE WCX_CPIO WCX_DEB WCX_RPM WCX_UNRAR WCX_ZIP \
-			WDX_AUDIOINFO WDX_DEB WDX_RPM WDX_SCRIPTS WDX_TEXTLINE \
-			WDX_XPI WFX_FTP WFX_SAMBA
+OPTIONS_DEFAULT=	DSX_LOCATE WCX_BASE64 WCX_CPIO WCX_DEB WCX_RPM WCX_UNRAR \
+			WCX_ZIP WDX_AUDIOINFO WDX_DEB WDX_RPM WDX_SCRIPTS \
+			WDX_TEXTLINE WFX_FTP WFX_SAMBA
 
 OPTIONS_GROUP=		DSX WCX WDX WFX WLX
 OPTIONS_GROUP_DSX=	DSX_LOCATE
-OPTIONS_GROUP_WCX=	WCX_CPIO WCX_DEB WCX_RPM WCX_UNBZ2 WCX_UNRAR WCX_ZIP
-OPTIONS_GROUP_WDX=	WDX_AUDIOINFO WDX_DEB WDX_RPM WDX_SCRIPTS WDX_TEXTLINE \
-			WDX_XPI
+OPTIONS_GROUP_WCX=	WCX_BASE64 WCX_CPIO WCX_DEB WCX_RPM WCX_UNBZ2 WCX_UNRAR \
+			WCX_ZIP
+OPTIONS_GROUP_WDX=	WDX_AUDIOINFO WDX_DEB WDX_RPM WDX_SCRIPTS WDX_TEXTLINE
 OPTIONS_GROUP_WFX=	WFX_FTP WFX_SAMBA
 OPTIONS_GROUP_WLX=	WLX_MPLAYER
 
 DSX_DESC=		Search plugins
 DSX_LOCATE_DESC=	Support locate command
 
+WCX_BASE64_DESC=	BASE64 plugin support
 WCX_CPIO_DESC=	CPIO format support
 WCX_DEB_DESC=	Debian package archive support
 WCX_DESC=	Packer plugins to work with archives
@@ -71,7 +73,6 @@ WDX_DESC=		Plugins to display and search extended file attributes
 WDX_RPM_DESC=		Red Hat package file information
 WDX_SCRIPTS_DESC=	Add support to use custom Lua scripts
 WDX_TEXTLINE_DESC=	Show and replace single lines in text files
-WDX_XPI_DESC=		Mozilla plugin file information
 
 WFX_DESC=	File system plugins
 WFX_FTP_DESC=	FTP protocol support
@@ -92,6 +93,10 @@ LAZBUILD_ARGS+=	--bm="Debug"
 
 .if ${PORT_OPTIONS:MWFX_FTP}
 LAZARUS_PROJECT_FILES+=	plugins/wfx/ftp/src/ftp.lpi
+.endif
+
+.if ${PORT_OPTIONS:MWCX_BASE64}
+LAZARUS_PROJECT_FILES+= plugins/wcx/base64/src/base64wcx.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWCX_CPIO}
@@ -128,10 +133,6 @@ LAZARUS_PROJECT_FILES+=	plugins/wdx/rpm_wdx/src/rpm_wdx.lpi
 
 .if ${PORT_OPTIONS:MWDX_DEB}
 LAZARUS_PROJECT_FILES+=	plugins/wdx/deb_wdx/src/deb_wdx.lpi
-.endif
-
-.if ${PORT_OPTIONS:MWDX_XPI}
-LAZARUS_PROJECT_FILES+=	plugins/wdx/xpi_wdx/src/xpi_wdx.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWDX_TEXTLINE}
@@ -177,6 +178,9 @@ pre-install:
 	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wlx" >> ${PLIST}
 	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/dsx" >> ${PLIST}
 
+.if ${PORT_OPTIONS:MWCX_BASE64}
+	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/base64/base64.wcx" >> ${PLIST}
+.endif
 .if ${PORT_OPTIONS:MWCX_CPIO}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/cpio/cpio.wcx" >> ${PLIST}
 .endif
@@ -205,9 +209,6 @@ pre-install:
 .if ${PORT_OPTIONS:MWDX_DEB}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wdx/deb_wdx/deb_wdx.wdx" >> ${PLIST}
 .endif
-.if ${PORT_OPTIONS:MWDX_XPI}
-	@${ECHO_CMD} "%%DATADIR%%/plugins/wdx/xpi_wdx/xpi_wdx.wdx" >> ${PLIST}
-.endif
 .if ${PORT_OPTIONS:MWDX_SCRIPTS}
 	@cd ${WRKSRC}/plugins/wdx/scripts && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/plugins/wdx/scripts/|' >> ${PLIST}
@@ -231,9 +232,9 @@ pre-install:
 	@${ECHO_CMD} "%%DATADIR%%/plugins/dsx/dsxlocate/dsxlocate.dsx" >> ${PLIST}
 .endif
 
-.for FILE in %%DATADIR%%/doublecmd.ext.example %%DATADIR%%/pixmaps.txt \
-	%%DATADIR%%/multiarc.ini bin/doublecmd share/applications/doublecmd.desktop \
-	share/pixmaps/doublecmd.png share/icons/hicolor/scalable/apps/doublecmd.svg
+.for FILE in %%DATADIR%%/pixmaps.txt %%DATADIR%%/multiarc.ini bin/doublecmd \
+	share/applications/doublecmd.desktop share/pixmaps/doublecmd.png \
+	share/icons/hicolor/scalable/apps/doublecmd.svg
 	@${ECHO_CMD} ${FILE} >> ${PLIST}
 .endfor
 
@@ -246,7 +247,7 @@ pre-install:
 	@cd ${WRKSRC}/sdk && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/sdk/|' >> ${PLIST}
 
-	@${ECHO_CMD} "man/man1/doublecmd.1.gz" >> ${PLIST}
+	@${ECHO_CMD} "share/man/man1/doublecmd.1.gz" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx
@@ -254,6 +255,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wfx
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wlx
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/dsx
+
+.if ${PORT_OPTIONS:MWCX_BASE64}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/base64
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/base64/base64.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/base64/
+.endif
 .if ${PORT_OPTIONS:MWCX_CPIO}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/cpio
 	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/cpio/cpio.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/cpio/
@@ -291,10 +297,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/deb_wdx/
 	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/deb_wdx/deb_wdx.wdx ${STAGEDIR}${DATADIR}/plugins/wdx/deb_wdx/
 .endif
-.if ${PORT_OPTIONS:MWDX_XPI}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/xpi_wdx/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/xpi_wdx/xpi_wdx.wdx ${STAGEDIR}${DATADIR}/plugins/wdx/xpi_wdx/
-.endif
 .if ${PORT_OPTIONS:MWDX_SCRIPTS}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/scripts/
 	${INSTALL_DATA} ${WRKSRC}/plugins/wdx/scripts/* ${STAGEDIR}${DATADIR}/plugins/wdx/scripts/
@@ -330,7 +332,7 @@ do-install:
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 
-.for FILE in doublecmd.ext.example pixmaps.txt multiarc.ini
+.for FILE in default/pixmaps.txt default/multiarc.ini
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
 
@@ -340,7 +342,7 @@ do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
-	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

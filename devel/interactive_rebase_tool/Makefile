@@ -1,6 +1,6 @@
 PORTNAME=	interactive_rebase_tool
 DISTVERSION=	2.3.0
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -157,10 +157,10 @@ CARGO_CRATES=	aho-corasick-1.0.2 \
 		claim@git+https://github.com/Turbo87/rust-claim.git?rev=23892a3\#23892a345d38e1434303143a73033925284ad04d
 
 PLIST_FILES=	bin/interactive-rebase-tool \
-		man/man1/interactive-rebase-tool.1.gz
+		share/man/man1/interactive-rebase-tool.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/interactive-rebase-tool
-	${INSTALL_MAN} ${WRKSRC}/src/interactive-rebase-tool.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/interactive-rebase-tool.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -2,12 +2,12 @@
 {
   type: install
   message: <<EOM
-The FreeBSD port of the podman container engine is experimental and should be
+The FreeBSD port of the Podman container engine is experimental and should be
 used for evaluation and testing purposes only.
 
 $ sudo podman run --rm docker.io/dougrabson/hello
 
-podman can restart containers after a host is rebooted. To enable this, use:
+Podman can restart containers after a host is rebooted. To enable this, use:
 
 $ sudo sysrc podman_enable=YES
 
@@ -27,7 +27,7 @@ EOM
   type: upgrade
   maximum_version: 4.7.1
   message: <<EOM
-In podman-4.7.0 and later, registry authentication creds moved from
+In Podman-4.7.0 and later, registry authentication creds moved from
 /run/containers/0/auth.json to /root/.config/containers/auth.json. Either move
 the file to the new location or just re-authenticate to the required registries.
 EOM

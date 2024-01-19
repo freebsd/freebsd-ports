@@ -6,8 +6,8 @@
  
 -BINDIR=/usr/local/bin
 -MANPATH=/usr/local/man
-+BINDIR=${LOCALBASE}/bin
-+MANPATH=${LOCALBASE}${MAN1PREFIX}/man
++BINDIR=${PREFIX}/bin
++MANPATH=${PREFIX}/share/man
  MANSUFFIX=1
  
  XCOMM Build xcut and manpage

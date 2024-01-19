@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:configure
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		compiler:c11 libtool mysql pkgconfig shebangfix
-IGNORE_WITH_MYSQL=	57p 57w
+IGNORE_WITH_MYSQL=	105m 106m 1011m 81
 
 SHEBANG_FILES=	data/rpm/post.sh data/rpm/preun.sh
 

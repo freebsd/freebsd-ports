@@ -172,6 +172,7 @@ lib/libnutscan.so.2.0.3
 %%MANPAGES%%%%DEV%%man/man3/nutscan_scan_eaton_serial.3.gz
 %%MANPAGES%%%%DEV%%man/man3/nutscan_scan_ipmi.3.gz
 %%MANPAGES%%%%DEV%%man/man3/nutscan_scan_nut.3.gz
+%%MANPAGES%%%%DEV%%man/man3/nutscan_scan_nut_simulation.3.gz
 %%MANPAGES%%%%DEV%%man/man3/nutscan_scan_snmp.3.gz
 %%MANPAGES%%%%DEV%%man/man3/nutscan_scan_usb.3.gz
 %%MANPAGES%%%%DEV%%man/man3/nutscan_scan_xml_http_range.3.gz

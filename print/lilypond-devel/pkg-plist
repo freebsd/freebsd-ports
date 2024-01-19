@@ -279,6 +279,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-outside-staff-priorities.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-paper-sizes.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-paper-variables.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/document-script-priorities.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-translation.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-type-predicates.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/documentation-generate.scm

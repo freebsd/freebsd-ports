@@ -40,7 +40,7 @@ bin/cool-retro-term
 %%QT_QMLDIR%%/QMLTermWidget/kb-layouts/vt420pc.keytab
 %%QT_QMLDIR%%/QMLTermWidget/libqmltermwidget.so
 %%QT_QMLDIR%%/QMLTermWidget/qmldir
-man/man1/cool-retro-term.1.gz
+share/man/man1/cool-retro-term.1.gz
 share/applications/cool-retro-term.desktop
 share/icons/hicolor/128x128/apps/cool-retro-term.png
 share/icons/hicolor/256x256/apps/cool-retro-term.png

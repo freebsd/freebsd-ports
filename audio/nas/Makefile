@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+FPIC=	-fpic
 
 post-configure:
 # Work around shortcomings of the Imake.rules et. al:
@@ -27,13 +27,7 @@ post-configure:
 	    -e 's,\(\$$(AR) \$$@ \$$\)(OBJS),\1(OBJS:S|^|unshared/|),' \
 		${WRKSRC}/lib/audio/Makefile
 
-.if ${ARCH} == "sparc64"
-FPIC=	-fPIC
-.else
-FPIC=	-fpic
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudio.so.2
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

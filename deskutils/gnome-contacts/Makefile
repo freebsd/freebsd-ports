@@ -1,6 +1,6 @@
 PORTNAME=	gnome-contacts
 PORTVERSION=	41.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 

@@ -1,6 +1,6 @@
 PORTNAME=	docbook2odf
 PORTVERSION=	0.244
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
@@ -37,7 +37,7 @@ do-install:
 	${LN} -sf ${EXAMPLESDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

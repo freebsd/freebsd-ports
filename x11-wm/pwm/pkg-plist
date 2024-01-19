@@ -5,6 +5,6 @@ etc/pwm/look-beoslike.conf
 etc/pwm/look-brownsteel.conf
 etc/pwm/menus-default.conf
 @sample etc/pwm/pwm.conf.sample
-man/man1/pwm.1x.gz
+share/man/man1/pwm.1x.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/config.txt

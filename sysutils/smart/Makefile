@@ -1,6 +1,6 @@
 PORTNAME=	smart
 DISTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	ctuffli
 
-PLIST_FILES=	man/man8/smart.8.gz \
+PLIST_FILES=	share/man/man8/smart.8.gz \
 		sbin/atasmart \
 		sbin/nvmesmart \
 		sbin/scsismart \
@@ -26,6 +26,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/[ans]*${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/smart.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/smart.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

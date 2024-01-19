@@ -1,0 +1,10 @@
+include/vulkan/layer/vk_layer_settings.h
+include/vulkan/layer/vk_layer_settings.hpp
+include/vulkan/utility/vk_dispatch_table.h
+include/vulkan/utility/vk_format_utils.h
+include/vulkan/utility/vk_struct_helper.hpp
+include/vulkan/vk_enum_string_helper.h
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets.cmake
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibrariesConfig.cmake
+lib/libVulkanLayerSettings.a

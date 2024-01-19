@@ -1,4 +1,4 @@
-PORTVERSION=		3.1.7
+PORTVERSION=		3.1.8
 PKGNAMESUFFIX=		3
 
 WWW=		https://corosync.github.io/corosync/

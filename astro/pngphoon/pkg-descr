@@ -1,0 +1,16 @@
+This program is intended as an alternative to the great xphoon program
+(X PHase of mOON).  xphoon is a program that displays the actual phase
+of the moon on the X11 root window. Nowadays all desktop systems like
+KDE hide the X11 rootwindow with an own background image, so xphoon
+could paint as much in the root window as it likes to, but nothing was
+to been seen.
+
+Modern desktops have an advanced interface for programs to dynamically
+provide background images in png format. Alternatively they just track
+when the background image file has been changed. That is what this
+program was originally written for.
+
+The image must have a width of at least 760 pixels to place the moon.
+If the image is smaller just the stars will be drawn. And by the way:
+it is pronounced "pingphoon" (like "typhoon").
+

@@ -21,10 +21,10 @@ lib/libpaho-mqtt3c.so.1.3.12
 lib/libpaho-mqtt3cs.so
 lib/libpaho-mqtt3cs.so.1
 lib/libpaho-mqtt3cs.so.1.3.12
-man/man1/paho_c_pub.1.gz
-man/man1/paho_c_sub.1.gz
-man/man1/paho_cs_pub.1.gz
-man/man1/paho_cs_sub.1.gz
+share/man/man1/paho_c_pub.1.gz
+share/man/man1/paho_c_sub.1.gz
+share/man/man1/paho_cs_pub.1.gz
+share/man/man1/paho_cs_sub.1.gz
 share/doc/Eclipse Paho C/CONTRIBUTING.md
 share/doc/Eclipse Paho C/README.md
 share/doc/Eclipse Paho C/edl-v10

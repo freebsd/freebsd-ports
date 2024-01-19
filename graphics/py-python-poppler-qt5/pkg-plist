@@ -21,6 +21,6 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/popplerqt5/version.sip
 %%PYTHON_SITELIBDIR%%/popplerqt5%%_PY_SONAME%%.so
 %%PYTHON_SITELIBDIR%%/popplerqt5.so
-%%PYTHON_SITELIBDIR%%/python_poppler_qt5-0.75.0.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/python_poppler_qt5-0.75.0.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/python_poppler_qt5-0.75.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/python_poppler_qt5-21.3.0.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/python_poppler_qt5-21.3.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/python_poppler_qt5-21.3.0.dist-info/RECORD

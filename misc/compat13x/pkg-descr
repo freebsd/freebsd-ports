@@ -1,0 +1,12 @@
+This package allows you to install the compat13x libraries on your
+system, so you can use legacy binaries that depend on them.
+
+Ports usage example:
+
+--
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1400000
+LIB_DEPENDS+=	libcrypto.so.111:misc/compat13x
+.endif
+--

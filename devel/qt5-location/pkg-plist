@@ -359,6 +359,10 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_positionpoll.so.debug
 %%QT_PLUGINDIR%%/position/libqtposition_serialnmea.so
 %%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_serialnmea.so.debug
+%%QT_QMLDIR%%/Qt/labs/location/liblocationlabsplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/Qt/labs/location/liblocationlabsplugin.so.debug
+%%QT_QMLDIR%%/Qt/labs/location/plugins.qmltypes
+%%QT_QMLDIR%%/Qt/labs/location/qmldir
 %%QT_QMLDIR%%/QtLocation/libdeclarative_location.so
 %%DEBUG%%%%QT_QMLDIR%%/QtLocation/libdeclarative_location.so.debug
 %%QT_QMLDIR%%/QtLocation/plugins.qmltypes

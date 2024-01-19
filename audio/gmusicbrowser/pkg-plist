@@ -1,6 +1,6 @@
 bin/gmusicbrowser
 share/applications/gmusicbrowser.desktop
-man/man1/gmusicbrowser.man.gz
+share/man/man1/gmusicbrowser.man.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gmusicbrowser.mo

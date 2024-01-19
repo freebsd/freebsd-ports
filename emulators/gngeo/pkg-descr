@@ -1,8 +1,0 @@
-GnGeo is a NeoGeo emulator for Linux (and maybe some other UNIX). It use the
-following cpu core:
-
-* The 68k core from the generator project by James Ponder.
-* Starscream 680x0 emulation library by Neill Corlett
-* Raze Z80 emulator by Richard Mitton.
-* Z80 Mame core from the Mame project.
-* YM2610 Mame core by Tatsuyuki Satoh.

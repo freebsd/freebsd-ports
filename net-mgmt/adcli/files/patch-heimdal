@@ -500,7 +500,13 @@ Submitted upstream:
  #include <ldap.h>
  #include <sasl/sasl.h>
 --- library/adutil.c	2021-02-20 08:51:40.000000000 -0500
-+++ library/adutil.c	2021-10-12 22:06:04.556460000 -0400
++++ library/adutil.c	2024-01-18 18:14:00.000000000 -0400
+@@ -30,5 +30,4 @@
+ #include <assert.h>
+ #include <ctype.h>
+-#include <endian.h>
+ #include <errno.h>
+ #include <stdio.h>
 @@ -38,4 +38,9 @@
  #include <time.h>
  #include <sys/wait.h>

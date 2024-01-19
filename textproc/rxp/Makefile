@@ -1,6 +1,6 @@
 PORTNAME=	rxp
 PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 

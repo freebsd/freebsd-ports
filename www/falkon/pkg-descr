@@ -1,17 +1,17 @@
-Falkon is a new-ish and very fast QtWebEngine browser. It aims to be a
-lightweight web browser available on all major platforms. Falkon
-has all standard functions you expect from a web browser. It includes
-bookmarks, history (both also in sidebar) and tabs. Beyond that, you
-block ads with a builtin AdBlock plugin, block Flash content with
-Click2Flash and edit the local CA Certificates database with an SSL Manager.
+Falkon is a very fast web browser that uses QtWebEngine, and aims to be
+lightweight on all major platforms. It has all the standard functions
+that are expected from a web browser, including bookmarks, history,
+sidebar, and tabs. Plus: integral AdBlock, and editing of the local CA
+certificate database with an SSL manager.
 
-Falkon has a wide range of features supported by KDE Frameworks
-and many integration points with KDE Plasma. A "-qtonly" flavor is
-available without these features:
+Falkon has a wide range of features that are supported by KDE
+Frameworks, and many integration points with KDE Plasma.
+
+The "qtonly" flavor omits these features:
 - spellchecking
 - word completion
 - crash reporting
 - progress notifications
 - KIO (virtual filesystem) support
 - wallet integration
-- content-sharing
+- content sharing.

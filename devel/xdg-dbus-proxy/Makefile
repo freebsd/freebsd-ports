@@ -1,5 +1,6 @@
 PORTNAME=	xdg-dbus-proxy
 DISTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,6 +24,6 @@ OPTIONS_DEFAULT=MANPAGES
 MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
 MANPAGES_MESON_ENABLED=	man
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

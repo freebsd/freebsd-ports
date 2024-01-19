@@ -1,6 +1,6 @@
 PORTNAME=	ssync
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linuxfocus.org/~guido/
 
@@ -31,6 +31,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ssyncd.init \
 		${STAGEDIR}${PREFIX}/etc/rc.d/ssyncd.init
 	${INSTALL_MAN} ${WRKSRC}/ssync.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/ssync.1
+		${STAGEDIR}${PREFIX}/share/man/man1/ssync.1
 
 .include <bsd.port.mk>

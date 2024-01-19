@@ -1,6 +1,6 @@
 PORTNAME=	socat
 DISTVERSION=	1.8.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/filan \
 		bin/procan \
 		bin/socat \
 		"@sample etc/socat-instances.conf.sample" \
-		man/man1/socat.1.gz
+		share/man/man1/socat.1.gz
 PORTDOCS=	EXAMPLES FAQ README SECURITY
 
 OPTIONS_DEFINE=	DOCS READLINE IPV6DEFAULT
@@ -46,7 +46,7 @@ do-install:
 .for f in filan procan socat
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/socat-instances.conf.sample ${STAGEDIR}${PREFIX}/etc

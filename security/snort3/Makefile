@@ -62,12 +62,6 @@ STATICDAQ_CMAKE_BOOL=		ENABLE_STATIC_DAQ
 THREADSANITIZER_CMAKE_BOOL=	ENABLE_THREAD_SANITIZER
 TSC_CMAKE_BOOL=			ENABLE_TSC_CLOCK
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-BUILD_DEPENDS=	flex>0:textproc/flex
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|_LIBDIR}/pkgconfig|_PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/cmake/create_pkg_config.cmake

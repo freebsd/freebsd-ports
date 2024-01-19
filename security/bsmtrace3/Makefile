@@ -32,9 +32,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-	    ${STAGEDIR}${MAN1PREFIX}/share/man/man1
+	    ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.conf.5 \
-		${STAGEDIR}${MAN5PREFIX}/share/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	dnrd
 PORTVERSION=	2.20.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	SF
 
@@ -36,7 +36,7 @@ RANDOM_CONFIGURE_ENABLE=	random-src
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnrd ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/doc/dnrd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/doc/dnrd.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/doc/master.sample ${STAGEDIR}${ETCDIR}/
 
 do-install-DOCS-on:

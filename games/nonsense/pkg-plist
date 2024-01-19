@@ -23,4 +23,4 @@ bin/nonsense
 %%DATADIR%%/template/slashdot.html.template
 %%DATADIR%%/template/slashdot.rdf.template
 %%DATADIR%%/template/techdirt.html.template
-man/man6/nonsense.6.gz
+share/man/man6/nonsense.6.gz

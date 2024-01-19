@@ -1,9 +1,9 @@
-podman (Pod Manager) is a fully featured container engine that is a
-simple daemonless tool.  podman provides a Docker-CLI comparable
+Podman (Pod Manager) is a fully featured container engine that is a
+simple daemonless tool.  Podman provides a Docker-CLI comparable
 command line that eases the transition from other container engines
 and allows the management of pods, containers and images.  Simply put:
 alias docker=podman.
 
-podman uses Buildah(1) internally to create container images.  Both
+Podman uses Buildah(1) internally to create container images.  Both
 tools share image (not container) storage, hence each can use or
 manipulate images (but not containers) created by the other.

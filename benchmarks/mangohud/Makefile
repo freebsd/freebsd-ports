@@ -32,7 +32,7 @@ MESON_ARGS=	-Duse_system_vulkan=enabled -Dwith_xnvctrl=disabled
 CPPFLAGS+=	-DPROCDIR=\\\"${LINUXBASE}/proc\\\"
 
 PLIST_FILES=	bin/mangohud lib/mangohud/libMangoHud.so \
-		lib/mangohud/libMangoHud_dlsym.so man/man1/mangohud.1.gz \
+		lib/mangohud/libMangoHud_dlsym.so share/man/man1/mangohud.1.gz \
 		share/vulkan/implicit_layer.d/MangoHud.json
 PORTEXAMPLES=	MangoHud.conf.example
 

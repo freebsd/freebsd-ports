@@ -1,6 +1,6 @@
 PORTNAME=	kpcli
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/kpcli/
 EXTRACT_SUFX=	.pl
@@ -27,7 +27,7 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:security/p5-Crypt-Rijndael \
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	kpcli
-PLIST_FILES=	bin/kpcli man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/kpcli share/man/man1/${PORTNAME}.1.gz
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		PWSAFE3
@@ -44,6 +44,6 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

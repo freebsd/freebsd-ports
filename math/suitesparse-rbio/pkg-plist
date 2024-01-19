@@ -6,6 +6,6 @@ lib/cmake/RBio/RBioTargets.cmake
 lib/librbio.a
 lib/librbio.so
 lib/librbio.so.4
-lib/librbio.so.4.2.1
+lib/librbio.so.%%VER%%
 libdata/pkgconfig/RBio.pc
 %%PORTDOCS%%%%DOCSDIR%%/RBio_README.txt

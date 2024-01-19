@@ -1,8 +1,7 @@
 PORTNAME=	bcpp
-PORTVERSION=	20230130
+PORTVERSION=	20240111
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
-		https://invisible-mirror.net/archives/${PORTNAME}/
+MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility similar to indent for C++ code

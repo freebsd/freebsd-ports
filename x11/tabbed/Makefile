@@ -1,5 +1,6 @@
 PORTNAME=	tabbed
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
@@ -15,8 +16,9 @@ USE_XORG=	x11
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/tabbed \
-		man/man1/tabbed.1.gz
+		share/man/man1/tabbed.1.gz
 PORTDOCS=	LICENSE README
+MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}"
 
 pre-everything::
 	@${ECHO_MSG} "You can build tabbed with your own config.h using the TABBED_CONF knob:"

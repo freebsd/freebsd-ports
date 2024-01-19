@@ -240,7 +240,7 @@ share/rep/lisp/ring.jl
 share/rep/lisp/ring.jlc
 share/rep/lisp/symbol-table.jl
 share/rep/lisp/symbol-table.jlc
-man/man1/rep-remote.1.gz
-man/man1/rep-xgettext.1.gz
-man/man1/rep.1.gz
-man/man1/repdoc.1.gz
+share/man/man1/rep-remote.1.gz
+share/man/man1/rep-xgettext.1.gz
+share/man/man1/rep.1.gz
+share/man/man1/repdoc.1.gz

@@ -23,13 +23,7 @@ PLIST_FILES=	bin/disasm \
 		lib/libdistorm3.so \
 		lib/libdistorm3.so.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
 PICFLAG?=	-fpic
-.endif
 
 do-build:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -50,4 +44,4 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/disasm ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

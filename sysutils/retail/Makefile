@@ -1,24 +1,24 @@
 PORTNAME=	retail
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/retail/download/ \
 		http://www.bsdstore.ru/downloads/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for incremental logfile reader
 WWW=		http://xjack.org/retail/
 
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/retail man/man1/retail.1.gz
+
+PLIST_FILES=	bin/retail share/man/man1/retail.1.gz
 
 post-configure:
-	${REINPLACE_CMD} -e 's/%.o: %.c \*.h ..\/config.h//g' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's/%.o: %.c \*.h ..\/config.h//g; \
+		s|man/man1|share/man/man1|g' ${WRKSRC}/src/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/retail.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 %%PRIVOXY_TOOLS%%bin/uagen.pl
 %%PRIVOXY_TOOLS%%bin/url-pattern-translator.pl
 sbin/privoxy
-man/man8/privoxy.8.gz
+share/man/man8/privoxy.8.gz
 etc/privoxy/default.action
 etc/privoxy/default.filter
 etc/privoxy/regression-tests.action

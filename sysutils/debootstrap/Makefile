@@ -1,6 +1,6 @@
 PORTNAME=	debootstrap
 PORTVERSION=	${DEB_VERSION}n${DEB_NMU}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DEB_VERSION}+nmu${DEB_NMU}
@@ -45,6 +45,6 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/debootstrap.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8/debootstrap.8
+		${STAGEDIR}${PREFIX}/share/man/man8/debootstrap.8
 
 .include <bsd.port.mk>

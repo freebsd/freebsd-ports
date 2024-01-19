@@ -399,6 +399,8 @@
 %%DATADIR%%/plugins/kate/kate.plugin.zsh
 %%DATADIR%%/plugins/keychain/README.md
 %%DATADIR%%/plugins/keychain/keychain.plugin.zsh
+%%DATADIR%%/plugins/kind/README.md
+%%DATADIR%%/plugins/kind/kind.plugin.zsh
 %%DATADIR%%/plugins/kitchen/README.md
 %%DATADIR%%/plugins/kitchen/_kitchen
 %%DATADIR%%/plugins/kn/README.md
@@ -464,6 +466,8 @@
 %%DATADIR%%/plugins/microk8s/microk8s.plugin.zsh
 %%DATADIR%%/plugins/minikube/README.md
 %%DATADIR%%/plugins/minikube/minikube.plugin.zsh
+%%DATADIR%%/plugins/mise/README.md
+%%DATADIR%%/plugins/mise/mise.plugin.zsh
 %%DATADIR%%/plugins/mix-fast/README.md
 %%DATADIR%%/plugins/mix-fast/mix-fast.plugin.zsh
 %%DATADIR%%/plugins/mix/README.md
@@ -544,6 +548,8 @@
 %%DATADIR%%/plugins/pod/_pod
 %%DATADIR%%/plugins/podman/README.md
 %%DATADIR%%/plugins/podman/podman.plugin.zsh
+%%DATADIR%%/plugins/poetry-env/README.md
+%%DATADIR%%/plugins/poetry-env/poetry-env.plugin.zsh
 %%DATADIR%%/plugins/poetry/README.md
 %%DATADIR%%/plugins/poetry/poetry.plugin.zsh
 %%DATADIR%%/plugins/postgres/README.md
@@ -600,6 +606,7 @@
 %%DATADIR%%/plugins/ros/_ros
 %%DATADIR%%/plugins/rsync/README.md
 %%DATADIR%%/plugins/rsync/rsync.plugin.zsh
+%%DATADIR%%/plugins/rtx/rtx.plugin.zsh
 %%DATADIR%%/plugins/ruby/README.md
 %%DATADIR%%/plugins/ruby/ruby.plugin.zsh
 %%DATADIR%%/plugins/rust/README.md
@@ -646,6 +653,8 @@
 %%DATADIR%%/plugins/singlechar/singlechar.plugin.zsh
 %%DATADIR%%/plugins/skaffold/README.md
 %%DATADIR%%/plugins/skaffold/skaffold.plugin.zsh
+%%DATADIR%%/plugins/snap/README.md
+%%DATADIR%%/plugins/snap/snap.plugin.zsh
 %%DATADIR%%/plugins/spring/README.md
 %%DATADIR%%/plugins/spring/_spring
 %%DATADIR%%/plugins/sprunge/README.md
@@ -786,6 +795,7 @@
 %%DATADIR%%/plugins/z/MANUAL.md
 %%DATADIR%%/plugins/z/README.md
 %%DATADIR%%/plugins/z/_z
+%%DATADIR%%/plugins/z/img/demo.gif
 %%DATADIR%%/plugins/z/img/mit_license.svg
 %%DATADIR%%/plugins/z/img/zsh_4.3.11_plus.svg
 %%DATADIR%%/plugins/z/z.plugin.zsh

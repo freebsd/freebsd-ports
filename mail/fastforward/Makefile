@@ -1,5 +1,6 @@
 PORTNAME=	fastforward
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/
 
@@ -15,15 +16,15 @@ FILES=	fastforward printforward setforward newaliases printmaillist setmaillist 
 
 PORTDOCS=	ALIASES
 
-PLIST_FILES=	${FILES:S,^,bin/,} ${FILES:S,^,man/man1/,:S,$,.1.gz,} ${FILES:S,^,man/cat1/,:S,$,.0.gz,}
+PLIST_FILES=	${FILES:S,^,bin/,} \
+		${FILES:S,^,share/man/man1/,:S,$,.1.gz,}
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 .for binfile in ${FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${binfile} ${STAGEDIR}${PREFIX}/bin/${binfile}
-	${INSTALL_MAN} ${WRKSRC}/${binfile}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${binfile}.0 ${STAGEDIR}${MAN1PREFIX}/man/cat1
+	${INSTALL_MAN} ${WRKSRC}/${binfile}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

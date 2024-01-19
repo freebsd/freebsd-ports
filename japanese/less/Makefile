@@ -1,6 +1,7 @@
 PORTNAME=	less
 PORTVERSION=	382.262.03.01
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -17,7 +18,7 @@ CONFIGURE_ARGS=	--with-cs-regex
 PORTDOCS=	README.iso README.iso.jp README.lesw.euc \
 		README.regex README.regex.jp README.ext.jp
 PLIST_FILES=	bin/jless bin/jlesskey bin/jlessecho \
-		man/man1/jless.1.gz man/man1/jlesskey.1.gz
+		share/man/man1/jless.1.gz share/man/man1/jlesskey.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

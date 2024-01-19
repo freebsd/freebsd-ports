@@ -1,0 +1,5 @@
+Mojo::DOM58 is a minimalistic and relaxed pure-Perl HTML/XML DOM parser
+based on Mojo::DOM.  It supports the HTML Living Standard, Extensible
+Markup Language (XML) 1.0, and matching based on CSS3 selectors.  It will
+even try to interpret broken HTML and XML, so you should not use it for
+validation.

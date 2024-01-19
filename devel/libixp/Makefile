@@ -1,6 +1,6 @@
 PORTNAME=	libixp
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.suckless.org/libs/
 
@@ -39,6 +39,6 @@ do-install:
 	${LN} -sf libixp.so.1 ${STAGEDIR}${PREFIX}/lib/libixp.so
 	${LN} -sf libixp_pthread.so.1 ${STAGEDIR}${PREFIX}/lib/libixp_pthread.so
 	${INSTALL_PROGRAM} ${WRKSRC}/cmd/ixpc.O ${STAGEDIR}${PREFIX}/bin/ixpc
-	${INSTALL_MAN} ${WRKSRC}/man/ixpc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/ixpc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

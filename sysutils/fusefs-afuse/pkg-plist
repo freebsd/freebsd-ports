@@ -1,3 +1,3 @@
 bin/afuse
 @comment bin/afuse-avahissh
-man/man1/afuse.1.gz
+share/man/man1/afuse.1.gz

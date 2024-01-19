@@ -1,29 +1,20 @@
---- config.toml.example.orig	2023-09-21 08:51:45 UTC
+--- config.toml.example.orig	2023-12-20 08:48:30 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
- # Documentation lives at https://docs.gitlab.com/ee/administration/gitaly/ and
- # https://docs.gitlab.com/ee//administration/gitaly/reference
+ # For Gitaly documentation, see https://docs.gitlab.com/ee/administration/gitaly/
  
+ # A path which Gitaly should open a Unix socket.
 -socket_path = "/home/git/gitlab/tmp/sockets/private/gitaly.socket"
 +socket_path = "%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket"
  
- # The directory where Gitaly's executables are stored
+ # Directory containing Gitaly executables.
 -bin_dir = "/home/git/gitaly/_build/bin"
 +bin_dir = "%%PREFIX%%/share/gitaly/bin/"
  
- # # Optional: The directory where Gitaly can create all files required to
+ # # Optional. The directory where Gitaly can create all files required to
  # # properly operate at runtime. If not set, Gitaly will create a directory in
-@@ -22,7 +22,7 @@ bin_dir = "/home/git/gitaly/_build/bin"
- # # Optional: configure where the Gitaly creates the sockets for internal connections. If unset, Gitaly will create a randomly
- # # named temp directory each time it boots.
- # # Non Gitaly clients should never connect to these sockets.
--# internal_socket_dir = "/home/git/gitlab/tmp/sockets/private/internal"
-+internal_socket_dir = "%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/internal"
- 
- # # Optional: authenticate Gitaly requests using a shared secret
- # [auth]
-@@ -33,9 +33,9 @@ bin_dir = "/home/git/gitaly/_build/bin"
- # certificate_path = '/home/git/cert.cert'
+@@ -39,9 +39,9 @@ bin_dir = "/home/git/gitaly/_build/bin"
+ # # Path to the key.
  # key_path = '/home/git/key.pem'
  
 -# # Git settings
@@ -35,16 +26,16 @@
  # catfile_cache_size = 100
  #
  # [[git.config]]
-@@ -44,7 +44,7 @@ bin_dir = "/home/git/gitaly/_build/bin"
- 
- [[storage]]
+@@ -53,7 +53,7 @@ bin_dir = "/home/git/gitaly/_build/bin"
+ # # The name of the storage
  name = "default"
+ # # The path to the storage.
 -path = "/home/git/repositories"
 +path = "%%PREFIX%%/git/repositories"
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -54,9 +54,9 @@ path = "/home/git/repositories"
+@@ -63,9 +63,9 @@ path = "/home/git/repositories"
  #
  
  # # You can optionally configure Gitaly to output JSON-formatted log messages to stdout
@@ -54,9 +45,9 @@
 -dir = "/home/git/gitlab/log"
 +dir = "%%PREFIX%%/www/gitlab-ce/log"
  # format = "json"
- # # Optional: Set log level to only log entries with that severity or above
+ # # Optional. Set log level to only log entries with that severity or above
  # # One of, in order: debug, info, warn, errror, fatal, panic
-@@ -71,11 +71,11 @@ dir = "/home/git/gitlab/log"
+@@ -80,11 +80,11 @@ dir = "/home/git/gitlab/log"
  # grpc_latency_buckets = [0.001, 0.005, 0.025, 0.1, 0.5, 1.0, 10.0, 30.0, 60.0, 300.0, 1500.0]
  
  [hooks]

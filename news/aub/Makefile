@@ -17,13 +17,15 @@ NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	COPYING README aubconf.example
-PLIST_FILES=	bin/aub man/man1/aub.1.sgml.gz man/man1/aubconf.1.sgml.gz
+PLIST_FILES=	bin/aub \
+		share/man/man1/aub.1.sgml.gz \
+		share/man/man1/aubconf.1.sgml.gz
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/aub*.1.sgml ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/aub*.1.sgml ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

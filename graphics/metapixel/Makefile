@@ -1,6 +1,6 @@
 PORTNAME=	metapixel
 PORTVERSION=	1.0.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 		http://mirror.roe.ch/dist/metapixel/
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/metapixel \
 		bin/metapixel-imagesize \
 		bin/metapixel-prepare \
 		bin/metapixel-sizesort \
-		man/man1/metapixel.1.gz
+		share/man/man1/metapixel.1.gz
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	metapixelrc
 
@@ -40,7 +40,7 @@ do-install:
 		metapixel-imagesize ${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} metapixel-prepare \
 		metapixel-sizesort ${STAGEDIR}${PREFIX}/bin)
-	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

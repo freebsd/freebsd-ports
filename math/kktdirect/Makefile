@@ -1,6 +1,6 @@
 PORTNAME=	kktdirect
 PORTVERSION=	0.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.ubc.ca/~rbridson/download/ LOCAL/bf
 DISTNAME=	KKTDirect${PORTVERSION}
@@ -19,13 +19,9 @@ PLIST_FILES=	include/kktdirect.h lib/libkktdirect.a lib/libkktdirect_pic.a \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
 PICFLAG?=	-fpic
-.endif
+
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)
 WITH_BLAS?=	gotoblas

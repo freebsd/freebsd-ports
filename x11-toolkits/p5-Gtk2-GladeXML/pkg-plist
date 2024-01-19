@@ -1,6 +1,0 @@
-%%SITE_ARCH%%/Gtk2/GladeXML.pm
-%%SITE_ARCH%%/Gtk2/GladeXML/Install/Files.pm
-%%SITE_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.h
-%%SITE_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.typemap
-%%SITE_ARCH%%/auto/Gtk2/GladeXML/GladeXML.so
-%%PERL5_MAN3%%/Gtk2::GladeXML.3.gz

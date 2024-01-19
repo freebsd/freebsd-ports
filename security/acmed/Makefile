@@ -1,7 +1,7 @@
 PORTNAME=	acmed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.0
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,9 +22,9 @@ CARGO_FEATURES=	openssl_dyn
 CARGO_INSTALL_PATH=	./acmed ./tacd
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/en/acmed.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/man/en/acmed.toml.5 ${STAGEDIR}${MAN5PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/man/en/tacd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/en/acmed.8 ${STAGEDIR}${PREFIX}/share/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/en/acmed.toml.5 ${STAGEDIR}${PREFIX}/share/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/man/en/tacd.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/acmed
 	${INSTALL_DATA} ${WRKSRC}/acmed/config/acmed.toml ${STAGEDIR}${PREFIX}/etc/acmed/acmed.toml.sample
 	${INSTALL_DATA} ${WRKSRC}/acmed/config/default_hooks.toml ${STAGEDIR}${PREFIX}/etc/acmed/default_hooks.toml.sample

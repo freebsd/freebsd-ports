@@ -13,6 +13,8 @@ WWW=		https://glaxnimate.mattbas.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
+BROKEN_armv7=	lrelease coredumps, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276285
+
 BUILD_DEPENDS=	pip:devel/py-pip@${PY_FLAVOR}
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpotrace.so:graphics/libpotrace

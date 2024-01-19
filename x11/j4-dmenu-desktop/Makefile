@@ -23,7 +23,7 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/j4-dmenu-desktop.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/j4-dmenu-desktop.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

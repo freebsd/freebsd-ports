@@ -1,5 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Desktop
@@ -11,7 +12,7 @@ BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 		xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libicuuc.so:devel/icu \
-		liboauth2plugin.so:sysutils/signon-plugin-oauth2 \
+		liboauth2plugin.so:sysutils/signon-plugin-oauth2@qt6 \
 		libwayland-client.so:graphics/wayland \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \

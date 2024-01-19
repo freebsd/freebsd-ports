@@ -1,0 +1,46 @@
+Allow building jpegli against system libjpeg-turbo.
+
+This is an old version of https://github.com/libjxl/libjxl/pull/3085
+
+--- CMakeLists.txt.orig	2024-01-10 09:51:57 UTC
++++ CMakeLists.txt
+@@ -81,13 +81,6 @@ endif()
+   set(BUNDLE_LIBPNG_DEFAULT NO)
+ endif()
+ 
+-
+-if(EXISTS "${PROJECT_SOURCE_DIR}/third_party/libjpeg-turbo/jconfig.h.in")
+-  set(ENABLE_JPEGLI_DEFAULT YES)
+-else()
+-  set(ENABLE_JPEGLI_DEFAULT NO)
+-endif()
+-
+ # Standard cmake naming for building shared libraries.
+ get_property(SHARED_LIBS_SUPPORTED GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS)
+ option(BUILD_SHARED_LIBS "Build shared libraries instead of static ones" ${SHARED_LIBS_SUPPORTED})
+@@ -98,7 +91,7 @@ set(JPEGXL_ENABLE_TOOLS true CACHE BOOL
+     "Build JPEGXL developer tools.")
+ set(JPEGXL_ENABLE_TOOLS true CACHE BOOL
+     "Build JPEGXL user tools: cjxl and djxl.")
+-set(JPEGXL_ENABLE_JPEGLI ${ENABLE_JPEGLI_DEFAULT} CACHE BOOL
++set(JPEGXL_ENABLE_JPEGLI true CACHE BOOL
+     "Build jpegli library.")
+ set(JPEGXL_ENABLE_JPEGLI_LIBJPEG true CACHE BOOL
+     "Build libjpeg.so shared library based on jpegli.")
+--- lib/jpegli.cmake.orig	2024-01-10 09:51:57 UTC
++++ lib/jpegli.cmake
+@@ -23,12 +23,14 @@ endif()
+   set(JPEG_LIB_VERSION 80)
+ endif()
+ 
++if(JPEGXL_INSTALL_JPEGLI_LIBJPEG)
+ configure_file(
+   ../third_party/libjpeg-turbo/jconfig.h.in include/jpegli/jconfig.h)
+ configure_file(
+   ../third_party/libjpeg-turbo/jpeglib.h include/jpegli/jpeglib.h COPYONLY)
+ configure_file(
+   ../third_party/libjpeg-turbo/jmorecfg.h include/jpegli/jmorecfg.h COPYONLY)
++endif()
+ 
+ add_library(jpegli-static STATIC EXCLUDE_FROM_ALL "${JPEGXL_INTERNAL_JPEGLI_SOURCES}")
+ target_compile_options(jpegli-static PRIVATE "${JPEGXL_INTERNAL_FLAGS}")

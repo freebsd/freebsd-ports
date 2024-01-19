@@ -200,9 +200,9 @@ lib/trans/xlt/tex-dcr.in
 lib/trans/xlt/tex-dcr.out
 lib/trans/xlt/wingding
 lib/trans/xlt/wingreek
-man/man1/checkiso.1.gz
-man/man1/checkuni.1.gz
-man/man1/transce8.1.gz
-man/man1/transhtm.1.gz
-man/man1/transiso.1.gz
-man/man1/transtab.1.gz
+share/man/man1/checkiso.1.gz
+share/man/man1/checkuni.1.gz
+share/man/man1/transce8.1.gz
+share/man/man1/transhtm.1.gz
+share/man/man1/transiso.1.gz
+share/man/man1/transtab.1.gz

@@ -6,11 +6,11 @@ bin/grconvert
 bin/xmgrace
 include/grace_np.h
 lib/libgrace_np.a
-man/man1/convcal.1.gz
-man/man1/grace.1.gz
-man/man1/gracebat.1.gz
-man/man1/grconvert.1.gz
-man/man1/xmgrace.1.gz
+share/man/man1/convcal.1.gz
+share/man/man1/grace.1.gz
+share/man/man1/gracebat.1.gz
+share/man/man1/grconvert.1.gz
+share/man/man1/xmgrace.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/10.1.dat
 %%PORTDOCS%%%%DOCSDIR%%/10a.dat
 %%PORTDOCS%%%%DOCSDIR%%/10b.dat

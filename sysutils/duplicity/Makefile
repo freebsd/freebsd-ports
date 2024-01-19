@@ -1,95 +1,75 @@
 PORTNAME=	duplicity
-PORTVERSION=	0.8.23
+DISTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
-WWW=		https://duplicity.nongnu.org
+WWW=		https://duplicity.gitlab.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
+TEST_DEPENDS=	gtar>0:archivers/gtar \
+		par2cmdline>0:archivers/par2cmdline
 
 USES=		cpe localbase python shebangfix
 CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	autoplist distutils noflavors
 USE_LDCONFIG=	yes
+USE_PYTHON=	autoplist noflavors pep517 pytest
 
-SHEBANG_FILES=	bin/duplicity bin/rdiffdir
+SHEBANG_FILES=	bin/duplicity testing/overrides/bin/*
 
-PORTDOCS=	CHANGELOG.md COPYING README.md README-REPO.md README-LOG.md
+PORTDOCS=	CONTRIBUTING.md README-LOG.md README-REPO.md README-TESTING.md \
+		README.md
 
-POST_PLIST=	trim-duplicity-testing
-
-OPTIONS_DEFINE=		B2 DOCS FTP FTPS GDOCS NLS S3
+OPTIONS_DEFINE=		B2 DOCS DROPBOX FTP FTPS GDOCS NLS S3
+OPTIONS_DEFAULT=	B2 DROPBOX GNUPG2 S3
 OPTIONS_GROUP=		GPG
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG GNUPG2
-OPTIONS_DEFAULT=	B2 FTP FTPS GNUPG2 S3
 
-B2_DESC=		Backblaze B2 backend
-FTP_DESC=		FTP backend
-FTPS_DESC=		FTPS backend
-GDOCS_DESC=		Google Docs backend
-GPG_DESC=		GnuPG support
-GNUPG_DESC=		Use GnuPG 1
-GNUPG2_DESC=		Use GnuPG 2
-S3_DESC=		Amazon S3 backend
+B2_DESC=	Backblaze B2 backend
+DROPBOX_DESC=	Dropbox backend
+FTP_DESC=	FTP backend
+FTPS_DESC=	FTPS backend
+GDOCS_DESC=	Google Docs backend
+GPG_DESC=	GnuPG support
+GNUPG_DESC=	Use GnuPG 1
+GNUPG2_DESC=	Use GnuPG 2
+S3_DESC=	Amazon S3 backend
 
 B2_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}b2sdk>=0.1.8:devel/py-b2sdk@${PY_FLAVOR}
+DROPBOX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dropbox>0:www/py-dropbox@${PY_FLAVOR}
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
 GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydrive>0:devel/py-pydrive@${PY_FLAVOR}
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
 GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
-NLS_USES=		gettext
-S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:devel/py-boto@${PY_FLAVOR}
-
-post-patch:
-.for f in cfbackend _cf_cloudfiles _cf_pyrax giobackend
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
-.endfor
-	@${REINPLACE_CMD} '/self.inplace = True/d' ${WRKSRC}/setup.py
-
-post-patch-NLS-off:
-	@${REINPLACE_CMD} -e '109,133d' \
-		${WRKSRC}/setup.py
-
-post-patch-FTP-off:
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/ftpbackend.py
-
-post-patch-FTPS-off:
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/ftpsbackend.py
-
-post-patch-S3-off:
-.for f in botobackend _boto_multi _boto_single
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
-.endfor
-
-post-patch-GDOCS-off:
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/gdocsbackend.py
-
-post-patch-B2-off:
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/b2backend.py
+NLS_USES=		gettext-tools
+NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py
+S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/duplicity/_librsync*.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-trim-duplicity-testing:
-	@${REINPLACE_CMD} '/\/testing\//d' ${TMPPLIST}
+pre-test:
+	@${REINPLACE_CMD} -e 's,python3,${PYTHON_CMD:T},' \
+		${WRKSRC}/testing/functional/__init__.py
 
 .include <bsd.port.mk>

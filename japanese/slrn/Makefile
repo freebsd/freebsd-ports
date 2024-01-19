@@ -1,5 +1,6 @@
 PORTNAME=	slrn
 PORTVERSION=	0.9.6.2
+PORTREVISION=	1
 CATEGORIES=	japanese news
 MASTER_SITES=	http://dists.lovepeers.org/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -23,6 +24,7 @@ CONFLICTS=	slrn-0.*
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 JDOCSRC=	${WRKDIR}/${PORTNAME}-doc-j0.9.5.6-0
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,8 +37,9 @@ post-patch:
 		${WRKSRC}/autoconf/Makefile.in
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
 	${INSTALL_MAN} ${JDOCSRC}/slrn.1 \
-		${STAGEDIR}${MANPREFIX}/man/ja/man1
+		${STAGEDIR}${PREFIX}/share/man/ja/man1
 	${CP} -a ${JDOCSRC} ${STAGEDIR}${PREFIX}/share/doc/slrn/ja
 
 .include <bsd.port.mk>

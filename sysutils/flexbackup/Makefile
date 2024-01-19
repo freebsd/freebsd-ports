@@ -1,6 +1,6 @@
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
@@ -44,9 +44,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf \
 		${STAGEDIR}${PREFIX}/etc/flexbackup.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/flexbackup.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 \
-		${STAGEDIR}${MAN5PREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 
 post-install-DOCS-on:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCLIST}" ${STAGEDIR}${DOCSDIR}

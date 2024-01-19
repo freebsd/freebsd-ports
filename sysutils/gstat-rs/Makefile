@@ -1,6 +1,7 @@
 PORTNAME=	gstat-rs
 DISTVERSIONPREFIX=	gstat-v
 DISTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -30,6 +31,6 @@ PLIST_FILES=	sbin/gstat-rs \
 post-install:
 	${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/gstat ${STAGEDIR}${PREFIX}/sbin/gstat-rs
 	${RM} ${STAGEDIR}${PREFIX}/bin/gstat
-	${INSTALL_MAN} ${WRKSRC}/gstat/doc/gstat.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8/gstat-rs.8
+	${INSTALL_MAN} ${WRKSRC}/gstat/doc/gstat.8 ${STAGEDIR}${PREFIX}/share/man/man8/gstat-rs.8
 
 .include <bsd.port.mk>

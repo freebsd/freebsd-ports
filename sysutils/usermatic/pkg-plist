@@ -1,7 +1,7 @@
-man/man1/digestion.pl.1.gz
-man/man8/hunter-seeker.pl.8.gz
-man/man8/newusers.pl.8.gz
-man/man8/reaper.pl.8.gz
+share/man/man1/digestion.pl.1.gz
+share/man/man8/hunter-seeker.pl.8.gz
+share/man/man8/newusers.pl.8.gz
+share/man/man8/reaper.pl.8.gz
 sbin/digestion.pl
 sbin/hunter-seeker.pl
 sbin/reaper.pl

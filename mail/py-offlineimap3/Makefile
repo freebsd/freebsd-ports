@@ -1,6 +1,7 @@
 PORTNAME=	offlineimap3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.0.0-18
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g${GH_TAGNAME}
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2020.6.20:security/py-certifi@${PY_
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.9:net/py-urllib3@${PY_FLAVOR}
 
-# Upstream doesn't have exact version currently only able to test up to 3.9 since
-# imaplib2 is 3.6-3.9.
-USES=		pytest python:3.8-3.9
+USES=		pytest python
 
 # Project is currently not publishing to pypi sdist.  pypi/naming status:
 # https://github.com/OfflineIMAP/offlineimap3/issues/111
@@ -56,8 +55,8 @@ DOCS_BUILD_DEPENDS=	${COMMON_BUILD_DEPENDS} \
 GSSAPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.6.9:security/py-gssapi@${PY_FLAVOR}
 
 MANPAGES_BUILD_DEPENDS=	${COMMON_BUILD_DEPENDS}
-MANPAGES_PLIST_FILES+=	man/man1/offlineimap.1.gz \
-			man/man7/offlineimapui.7.gz
+MANPAGES_PLIST_FILES+=	share/man/man1/offlineimap.1.gz \
+			share/man/man7/offlineimapui.7.gz
 
 # In concurrent env. sphinx-build is only exist for py38 add "-${PYTHON_VER}" to command
 post-patch:
@@ -73,11 +72,11 @@ post-build-DOCS-on:
 		'! ( -name .lock -or -name .buildinfo )'
 
 post-build-MANPAGES-on:
-	${MKDIR} ${STAGEDIR}${MAN7PREFIX}/man/man7/
-	${MKDIR} ${STAGEDIR}${MAN7PREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man7/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1/
 	cd ${WRKSRC}/docs && ${GMAKE} man && \
-	${INSTALL_MAN} offlineimapui.7 ${STAGEDIR}${MAN7PREFIX}/man/man7/ && \
-	${INSTALL_MAN} offlineimap.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} offlineimapui.7 ${STAGEDIR}${PREFIX}/share/man/man7/ && \
+	${INSTALL_MAN} offlineimap.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -1,5 +1,6 @@
 PORTNAME=	nenscript
 PORTVERSION=	1.13.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.ai.mit.edu/projects/im/magnus/nenscript/
 
@@ -16,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nenscript ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nenscript.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nenscript.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

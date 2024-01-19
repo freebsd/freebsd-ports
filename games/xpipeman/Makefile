@@ -1,6 +1,6 @@
 PORTNAME=	xpipeman
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/strategy
 DISTNAME=	${PORTNAME}
@@ -23,7 +23,7 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xpipeman ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xpipeman.man ${STAGEDIR}${MANPREFIX}/man/man6/xpipeman.6
+	${INSTALL_MAN} ${WRKSRC}/xpipeman.man ${STAGEDIR}${PREFIX}/share/man/man6/xpipeman.6
 	${INSTALL} -c ${FILESDIR}/xpipescores ${STAGEDIR}${PREFIX}/lib/X11
 
 .include <bsd.port.mk>

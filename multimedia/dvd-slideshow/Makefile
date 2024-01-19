@@ -1,7 +1,7 @@
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.8.4
-DISTVERSIONSUFFIX=	-2
-PORTREVISION=	11
+DISTVERSIONSUFFIX=	-1
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}${DISTVERSIONSUFFIX} \
 		SF/${PORTNAME}/${PORTNAME}-themes/${THEMEVERSION}-1:themes
@@ -60,7 +60,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${s} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for m in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
-	${INSTALL_MAN} ${WRKSRC}/man/${m}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${m}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${STAGEDIR}${DOCSDIR}

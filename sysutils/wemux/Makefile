@@ -1,7 +1,7 @@
 PORTNAME=	wemux
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	cs@FreeBSD.org
@@ -28,6 +28,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wemux.in ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/wemux.conf.example ${STAGEDIR}${ETCDIR}/wemux.conf.example
-	${INSTALL_MAN} ${WRKSRC}/man/wemux.1.in ${STAGEDIR}${MANPREFIX}/man/man1/wemux.1
+	${INSTALL_MAN} ${WRKSRC}/man/wemux.1.in ${STAGEDIR}${PREFIX}/share/man/man1/wemux.1
 
 .include <bsd.port.mk>

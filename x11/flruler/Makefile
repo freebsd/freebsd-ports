@@ -1,11 +1,12 @@
 PORTNAME=	flruler
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://seriss.com/people/erco/fltk/flruler/
+MASTER_SITES=	${WWW}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	On-screen pixel ruler
-WWW=		https://seriss.com/people/erco/fltk/flruler/
+WWW=		https://www.seriss.com/people/erco/fltk/flruler/
 
 LICENSE=	GPLv2
 
@@ -15,7 +16,7 @@ USES=		gmake perl5 xorg
 USE_PERL5=	build
 USE_XORG=	x11 xcursor xext xfixes xft xinerama
 
-PLIST_FILES=	bin/flruler man/man1/flruler.1.gz \
+PLIST_FILES=	bin/flruler share/man/man1/flruler.1.gz \
 		share/icons/hicolor/128x128/apps/flruler.png
 PORTDOCS=	*
 
@@ -31,7 +32,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
 	${INSTALL_DATA} ${WRKSRC}/misc/flruler-icon.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/${PORTNAME}.png

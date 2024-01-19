@@ -6,7 +6,7 @@ beforeinstall:
 afterinstall:
 	# Install man-pages
 	set -x; for m in *.man; do	\
-		${INSTALL_MAN} $$m ${STAGEDIR}${MAN1PREFIX}/man/man1/$${m%%.man}.1;	\
+		${INSTALL_MAN} $$m ${STAGEDIR}${PREFIX}/share/man/man1/$${m%%.man}.1;	\
 	done
 	${INSTALL_SCRIPT} `${MAKE} -f makefile -V CMDFILES`	\
 		${STAGEDIR}${PREFIX}/bin/

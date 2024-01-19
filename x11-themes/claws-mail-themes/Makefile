@@ -1,5 +1,5 @@
 PORTNAME=	claws-mail-themes
-PORTVERSION=	20140629
+PORTVERSION=	20221017
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
@@ -14,6 +14,8 @@ LICENSE_TEXT=	Licenses for the themes in this port range from GPLv2 \
 		Please read the licenses, if any, located in the root of each theme \
 		for other possible rescrictions.
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
+USES-	tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes

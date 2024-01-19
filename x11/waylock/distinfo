@@ -1,7 +1,7 @@
-TIMESTAMP = 1675710261
-SHA256 (ifreund-waylock-v0.6.2_GH0.tar.gz) = b39e62241be0607339a531c0572805f7545f05292addd4708f99e836a6b14f59
-SIZE (ifreund-waylock-v0.6.2_GH0.tar.gz) = 18391
-SHA256 (ifreund-zig-wayland-ace6aee_GH0.tar.gz) = c6ebbf0d56db36a732d2e58deff090503b68928ceed538737de7cd4ea36681c6
-SIZE (ifreund-zig-wayland-ace6aee_GH0.tar.gz) = 55916
-SHA256 (ifreund-zig-xkbcommon-bfd1f97_GH0.tar.gz) = 0a5835a5eb216c1a59e20e59277270fc5ce5f440becadf6487965286ba4c1ce8
-SIZE (ifreund-zig-xkbcommon-bfd1f97_GH0.tar.gz) = 20467
+TIMESTAMP = 1704942460
+SHA256 (waylock-v0.6.4.tar.gz) = acac075525ee4556a4a3f6dae3d97867e262f12e2ca2b59d7e63ff1e6effb45e
+SIZE (waylock-v0.6.4.tar.gz) = 19236
+SHA256 (zig-wayland-65475ba.tar.gz) = b9f4d8b481bbcbee53b27333d4474b0cda1d5746036f23e9eca84f00e984d552
+SIZE (zig-wayland-65475ba.tar.gz) = 56234
+SHA256 (zig-xkbcommon-7b188de.tar.gz) = ff71b52b8f9c106981ec92db265ef155dd4543aee4c4a0c60f37eab72aa6a208
+SIZE (zig-xkbcommon-7b188de.tar.gz) = 21739

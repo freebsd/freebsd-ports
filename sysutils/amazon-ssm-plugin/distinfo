@@ -1,6 +1,6 @@
-TIMESTAMP = 1679341186
-SHA256 (aws-session-manager-plugin-1.2.463.0_GH0.tar.gz) = 3dae895516e3951a0f8c58acadb9491618a1ee31e263e47a499d37e161918480
-SIZE (aws-session-manager-plugin-1.2.463.0_GH0.tar.gz) = 21657184
+TIMESTAMP = 1704579871
+SHA256 (aws-session-manager-plugin-1.2.536.0_GH0.tar.gz) = 848bcd54acbcb214fec5913355892030f146d89e481f4afced5c125c3f773ddd
+SIZE (aws-session-manager-plugin-1.2.536.0_GH0.tar.gz) = 40204923
 SHA256 (eiannone-keyboard-6d2a597fd0f1_GH0.tar.gz) = fb97638e3f16a94233a809d50f01e7a20657a44e3cec0e9a00907b0ed909051a
 SIZE (eiannone-keyboard-6d2a597fd0f1_GH0.tar.gz) = 7962
 SHA256 (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = b7530d973d0ab0e58ad8ce1b9a4b963d6f57b3d72f2f9e13d49846976361b1cd

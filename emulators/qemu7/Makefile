@@ -1,6 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	7.2.7
-PORTREVISION=	1
+PORTVERSION=	7.2.8
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -12,7 +11,8 @@ WWW=		https://www.qemu.org/
 LICENSE=	GPLv2
 
 .if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
+# At the moment it broken on powerpc64le
 # We need to check if it build with other ARCHS
 .endif
 
@@ -215,10 +215,6 @@ MAKE_ARGS+=	ARCH=${ARCH:C/powerpc64.*/ppc64/}
 PLIST_SUB+=	BSDUSER="@comment "
 .else
 PLIST_SUB+=	BSDUSER=""
-.endif
-
-.if ${ARCH} == "sparc64"
-CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""

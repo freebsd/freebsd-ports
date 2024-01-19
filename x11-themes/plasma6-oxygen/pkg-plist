@@ -595,6 +595,7 @@ share/locale/gl/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/gu/LC_MESSAGES/oxygen_style_config.mo
 share/locale/gu/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/he/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/he/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/he/LC_MESSAGES/oxygen_style_config.mo
 share/locale/he/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/hi/LC_MESSAGES/oxygen_style_config.mo
@@ -775,6 +776,7 @@ share/locale/zh_TW/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_config.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_demo.mo
+share/metainfo/org.kde.oxygen.appdata.xml
 share/plasma/look-and-feel/org.kde.oxygen/contents/defaults
 share/plasma/look-and-feel/org.kde.oxygen/contents/previews/preview.png
 share/plasma/look-and-feel/org.kde.oxygen/contents/previews/splash.png

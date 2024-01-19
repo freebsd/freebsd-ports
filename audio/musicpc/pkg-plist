@@ -1,2 +1,2 @@
 bin/mpc
-%%PORTDOCS%%man/man1/mpc.1.gz
+%%PORTDOCS%%share/man/man1/mpc.1.gz

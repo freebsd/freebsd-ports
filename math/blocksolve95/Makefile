@@ -1,6 +1,6 @@
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	28
+PORTREVISION=	30
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
 		http://ftp.mcs.anl.gov/pub/BlockSolve95/
@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/lib/lib${BOPT}/${PETSC_ARCH}/libBS95.a	\
 		${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA}	${INCLUDES:S|^|${WRKSRC}/include/|} ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${STAGEDIR}${MANPREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${STAGEDIR}${PREFIX}/man/man3
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

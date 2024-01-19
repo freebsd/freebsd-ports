@@ -1,6 +1,6 @@
 PORTNAME=	xshisen
 PORTVERSION=	1.51
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/hrs
 
@@ -31,9 +31,10 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/xshisen.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6/xshisen.6
+		${STAGEDIR}${PREFIX}/share/man/man6/xshisen.6
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man6
 	${INSTALL_MAN} ${WRKSRC}/man/xshisen.6.ja_JP.eucJP \
-		${STAGEDIR}${MAN6PREFIX}/man/ja/man6/xshisen.6
+		${STAGEDIR}${PREFIX}/share/man/ja/man6/xshisen.6
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
 	${INSTALL_DATA} ${WRKSRC}/lang/XShisen.ad \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XShisen

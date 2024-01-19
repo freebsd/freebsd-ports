@@ -1,10 +1,10 @@
 PORTNAME=	abcde
 DISTVERSION=	2.9.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://abcde.einval.com/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 WWW=		https://abcde.einval.com/
 
@@ -65,7 +65,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} abcde.conf \
 		${STAGEDIR}${PREFIX}/etc/abcde.conf.sample)
 	(cd ${WRKSRC} && ${INSTALL_MAN} abcde.1 cddb-tool.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 post-install-MUSICBRAINZ-on:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} abcde-musicbrainz-tool \
 		${STAGEDIR}${PREFIX}/bin)

@@ -1,8 +1,0 @@
---- src/common/testpoint/Makefile.am.orig	2017-01-12 17:07:16 UTC
-+++ src/common/testpoint/Makefile.am
-@@ -3,4 +3,4 @@ AM_CPPFLAGS =
- noinst_LTLIBRARIES = libtestpoint.la
- 
- libtestpoint_la_SOURCES = testpoint.h testpoint.c
--libtestpoint_la_LIBADD = -ldl
-+libtestpoint_la_LIBADD =

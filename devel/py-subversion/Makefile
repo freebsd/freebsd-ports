@@ -21,7 +21,10 @@ SVN_BUILD_BINDINGS=	yes
 
 CATEGORIES+=	python
 
-CONFIGURE_ARGS+=	--without-gnome-keyring \
+CONFIGURE_ARGS+=	--with-swig-python=${PYTHON_CMD} \
+			--without-swig-perl \
+			--without-swig-ruby \
+			--without-gnome-keyring \
 			--without-kwallet \
 			--with-apxs=no
 

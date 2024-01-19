@@ -2,8 +2,8 @@ bin/acmed
 bin/tacd
 %%ETCDIR%%/acmed.toml.sample
 %%ETCDIR%%/default_hooks.toml.sample
-man/man5/acmed.toml.5.gz
-man/man8/acmed.8.gz
-man/man8/tacd.8.gz
+share/man/man5/acmed.toml.5.gz
+share/man/man8/acmed.8.gz
+share/man/man8/tacd.8.gz
 @dir %%ETCDIR%%/accounts
 @dir %%ETCDIR%%/certs

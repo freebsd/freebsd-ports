@@ -27,6 +27,15 @@
        {
  	 dialog_popup (DIALOG_ERROR, NULL, NULL,
  		       _("Can't save theme file\n`%s'\n"
+@@ -2897,7 +2897,7 @@ getstyle_call (const char *themename)
+  */
+ {
+    char *quotedname = protect_quotes (g_strdup (themename));
+-   char	*cmdline    = g_strconcat (GETSTYLE, " -t \"", quotedname, "\"", NULL);
++   char	*cmdline    = g_strconcat (GETSTYLE, " -t > \"", quotedname, "\"", NULL);
+    bool_t success   = !system (cmdline);
+ 
+    Free (cmdline);
 @@ -3526,17 +3526,17 @@ compute_preview (GtkWidget *progress_bar, GtkWidget *p
     path  = get_pixmap_path (pname);
  

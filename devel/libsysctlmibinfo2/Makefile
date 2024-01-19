@@ -1,5 +1,6 @@
 PORTNAME=	libsysctlmibinfo2
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
@@ -24,7 +25,7 @@ PLIST_FILES=	include/sysctlmibinfo2.h \
 		lib/libsysctlmibinfo2.a \
 		lib/libsysctlmibinfo2.so \
 		lib/libsysctlmibinfo2.so.2.0.1 \
-		man/man3/sysctlmibinfo2.3.gz
+		share/man/man3/sysctlmibinfo2.3.gz
 
 PORTEXAMPLES=	*
 
@@ -36,7 +37,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libsysctlmibinfo2.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libsysctlmibinfo2.so.2.0.1 ${STAGEDIR}${PREFIX}/lib
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo2.so.2.0.1 ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo2.so
-	${INSTALL_MAN} ${WRKSRC}/sysctlmibinfo2.3.gz ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/sysctlmibinfo2.3.gz ${STAGEDIR}${PREFIX}/share/man/man3
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

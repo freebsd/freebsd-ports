@@ -1,6 +1,6 @@
 PORTNAME=	wmii
 DISTVERSION=	3.6	# this is stable version; for 3.9.x, use -devel port
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/
 
@@ -19,7 +19,7 @@ USE_XORG=	x11 xorgproto xt xext
 
 CONFLICTS=	wmii-devel
 
-MAKE_ARGS=	PREFIX="${PREFIX}" MAN="${MANPREFIX}/man" \
+MAKE_ARGS=	PREFIX="${PREFIX}" MAN="${PREFIX}/share/man" \
 		INCLUDE="${LOCALBASE}/include" \
 		INCX11="-I${LOCALBASE}/include" \
 		LIBX11="-L${LOCALBASE}/lib -lX11 -lixp" \
@@ -43,7 +43,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|CFLAGS += -DIXPlint|& -DIXP_NEEDAPI=89|' \
 		${WRKSRC}/config.mk
 # Fix brain-damaged piece of code which breaks on arches where `size_t'
-# is not 32-bit unsigned integer (e.g. amd64, sparc64)
+# is not 32-bit unsigned integer (e.g. amd64)
 	${REINPLACE_CMD} -e '/wmii_strlcat/d' ${WRKSRC}/include/util.h
 	${REINPLACE_CMD} -e 's|strlcat|wmii_&|' ${WRKSRC}/include/util.h \
 		${WRKSRC}/cmd/util.c ${WRKSRC}/cmd/wmii/client.c

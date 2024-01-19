@@ -1,7 +1,7 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -14,7 +14,6 @@ WWW=		https://gitlab.gnome.org/World/Phosh/squeekboard
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_12_powerpc64=	fails to compile: rs.e2mg9us3-cgu.14:(.text.imservice_handle_commit_state+0x228): undefined reference to 'eekboard_context_service_show_keyboard'
 BROKEN_FreeBSD_13_powerpc64=	fails to link: ld: error: undefined symbol: eekboard_context_service_get_overlay
 
 BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols

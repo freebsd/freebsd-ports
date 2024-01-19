@@ -1,6 +1,6 @@
 PORTNAME=	compton
 DISTVERSION=	20160907
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 
 MAINTAINER=	parakleta@darkreality.org
@@ -55,9 +55,9 @@ DOCS_BUILD_DEPENDS=	a2x:textproc/asciidoc \
 			xsltproc:textproc/libxslt \
 			docbook-xml>0:textproc/docbook-xml \
 			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
-DOCS_MAKE_ARGS=		DOCDIR=${DOCSDIR} MANDIR=${MANPREFIX}/man/man1
+DOCS_MAKE_ARGS=		DOCDIR=${DOCSDIR} MANDIR=${PREFIX}/share/man/man1
 DOCS_ALL_TARGET=	docs
-DOCS_PLIST_FILES=	man/man1/compton.1.gz man/man1/compton-trans.1.gz
+DOCS_PLIST_FILES=	share/man/man1/compton.1.gz share/man/man1/compton-trans.1.gz
 DOCS_PORTDOCS=		README.md cdbus-driver.sh
 
 post-patch:

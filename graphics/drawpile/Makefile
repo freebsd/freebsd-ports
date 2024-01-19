@@ -1,6 +1,5 @@
 PORTNAME=	Drawpile
-DISTVERSION=	2.1.20
-PORTREVISION=	4
+DISTVERSION=	2.2.0
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,20 +7,32 @@ COMMENT=	Collaborative drawing program
 WWW=		https://drawpile.net
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
-LIB_DEPENDS=	libgif.so:graphics/giflib \
-		libmicrohttpd.so:www/libmicrohttpd \
-		libminiupnpc.so:net/miniupnpc \
-		libsodium.so:security/libsodium \
-		libvpx.so:multimedia/libvpx
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
+USES=		cargo cmake compiler:c++17-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
+USE_QT=		core gui multimedia network sql svg widgets xml \
+		buildtools:build linguisttools:build qmake:build
+USE_KDE=	archive dnssd
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}
-USE_QT=		core gui multimedia network sql svg widgets buildtools:build linguisttools:build qmake:build
-USE_KDE=	archive dnssd
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_CRATES=	aho-corasick-1.0.5 \
+		anyhow-1.0.75 \
+		memchr-2.6.1 \
+		once_cell-1.18.0 \
+		regex-1.9.4 \
+		regex-automata-0.3.7 \
+		regex-syntax-0.7.5 \
+		xflags-0.3.1 \
+		xflags-macros-0.3.1
+
+BINARY_ALIAS=	lconvert=${QT_BINDIR}/lconvert
 
 OPTIONS_DEFINE=	DOCS
 
@@ -32,4 +43,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 PORTSCOUT=	limit:^\d+\. # prevent tags like 'continuous'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+#.if ${ARCH} == armv7
+#BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276269
+#.endif
+
+.include <bsd.port.post.mk>

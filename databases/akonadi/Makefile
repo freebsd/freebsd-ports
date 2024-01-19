@@ -1,5 +1,6 @@
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libkaccounts.so:net-im/kaccounts-integration \
-		libaccounts-qt5.so:net-im/libaccounts-qt5
+		libaccounts-qt5.so:net-im/libaccounts-qt@qt5
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 

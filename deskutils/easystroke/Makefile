@@ -1,6 +1,6 @@
 PORTNAME=	easystroke
 DISTVERSION=	0.6.0-9
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=	-gf7c1614
 CATEGORIES=	deskutils
 
@@ -10,8 +10,6 @@ WWW=		https://github.com/thjaeger/easystroke
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_12_powerpc64=	fails to build on powerpc64 elfv1: handler.cc:560:27: call of overloaded 'abs(float&)' is ambiguous
 
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server
@@ -46,7 +44,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.appdata.xml ${STAGEDIR}${PREFIX}/share/metainfo/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-NLS-on:
 	(cd ${WRKSRC}/po/ && \

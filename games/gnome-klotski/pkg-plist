@@ -1,5 +1,5 @@
 bin/gnome-klotski
-man/man6/gnome-klotski.6.gz
+share/man/man6/gnome-klotski.6.gz
 share/applications/org.gnome.Klotski.desktop
 share/dbus-1/services/org.gnome.Klotski.service
 share/help/C/gnome-klotski/figures/gnotski_start_window.png

@@ -16,6 +16,7 @@ share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/QDirStat-for-Servers.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/Shadowed-by-Mount.md
+%%PORTDOCS%%%%DOCSDIR%%/Treemap.md
 %%PORTDOCS%%%%DOCSDIR%%/Troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/Unpkg-View.md
 %%PORTDOCS%%%%DOCSDIR%%/cache-file-format.txt

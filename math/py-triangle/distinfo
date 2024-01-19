@@ -1,3 +1,5 @@
-TIMESTAMP = 1606687316
-SHA256 (triangle-20200424.tar.gz) = fc207641f8f39986f7d2bee1b91688a588cd235d2e67777422f94e61fece27e9
-SIZE (triangle-20200424.tar.gz) = 1559222
+TIMESTAMP = 1704470771
+SHA256 (drufat-triangle-v20230923_GH0.tar.gz) = 5fd7ff55c65601d6a1b8ac6485f413633c930685c4eaae950131f3a99868bc97
+SIZE (drufat-triangle-v20230923_GH0.tar.gz) = 1449399
+SHA256 (drufat-triangle-c-8b9e104_GH0.tar.gz) = e8f0c1523c016b017a4e47967360c6e6d97b8d6ac27290fd384bebc458e2e7bf
+SIZE (drufat-triangle-c-8b9e104_GH0.tar.gz) = 153986

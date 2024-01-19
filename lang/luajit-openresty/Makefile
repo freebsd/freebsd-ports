@@ -1,7 +1,7 @@
 PORTNAME=	luajit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1-20230911
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-openresty
 
@@ -44,6 +44,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libluajit-5.1.so.${LUAJIT_SOVERSION}
 	${LN} -sf ${PORTNAME}-${LUAJIT_SOVERSION} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

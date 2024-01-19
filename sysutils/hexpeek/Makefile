@@ -1,7 +1,7 @@
 PORTNAME=	hexpeek
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.20200804
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.hexpeek.com/releases/${DISTNAME}/
 
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/hexdiff \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN}  ${WRKSRC}/etc/hexpeek.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN}  ${WRKSRC}/etc/hexpeek.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-test:
 	${MAKE} -C ${WRKSRC}/test test

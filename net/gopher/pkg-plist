@@ -3,6 +3,6 @@ bin/gophfilt
 etc/gopher/gopher.rc
 etc/gopher/gopherremote.rc
 etc/gopher/gopher.hlp
-man/man1/gopher.1.gz
-man/man1/gophfilt.1.gz
-man/man5/gopherrc.5.gz
+share/man/man1/gopher.1.gz
+share/man/man1/gophfilt.1.gz
+share/man/man5/gopherrc.5.gz

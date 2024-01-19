@@ -1,5 +1,6 @@
 PORTNAME=	fzy
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -13,7 +14,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	jhawthorn
 
-PLIST_FILES=	bin/fzy man/man1/fzy.1.gz
+PLIST_FILES=	bin/fzy share/man/man1/fzy.1.gz
 
 OPTIONS_DEFINE=		TMUX DVTM
 OPTIONS_DEFAULT=	TMUX
@@ -34,7 +35,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fzy ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fzy.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/fzy.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-TMUX-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fzy-tmux ${STAGEDIR}${PREFIX}/bin

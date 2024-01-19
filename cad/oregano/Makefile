@@ -1,7 +1,7 @@
 PORTNAME=	oregano
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.84.43
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,9 +27,6 @@ GLIB_SCHEMAS=	io.ahoi.oregano.gschema.xml
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} 's|$${MANDIR}|${MANPREFIX}/man|' ${WRKSRC}/data/wscript
 
 post-stage:
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/oregano bin/microtests

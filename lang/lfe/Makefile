@@ -37,15 +37,17 @@ post-install-bin:
 post-install-man1:
 	cd ${WRKSRC}/doc/man && \
 	    ${INSTALL_MAN} lfe.1 lfescript.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
+
 post-install-man3:
 	cd ${WRKSRC}/doc/man && \
 	    ${INSTALL_MAN} lfe_bits.3 lfe_cl.3 lfe_clj.3 lfe_comp.3 \
 		lfe_docs.3 lfe_gen.3 lfe_io.3 lfe_lib.3 lfe_macro.3 \
-		${STAGEDIR}${MAN1PREFIX}/man/man3
+		${STAGEDIR}${PREFIX}/share/man/man3
+
 post-install-man7:
 	cd ${WRKSRC}/doc/man && \
 	    ${INSTALL_MAN} lfe_guide.7 lfe_types.7 \
-		${STAGEDIR}${MAN1PREFIX}/man/man7
+		${STAGEDIR}${PREFIX}/share/man/man7
 
 .include <bsd.port.mk>

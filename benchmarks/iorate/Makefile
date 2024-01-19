@@ -1,5 +1,6 @@
 PORTNAME=	iorate
 DISTVERSION=	3-05
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://sites.google.com/site/vwiorate/downloads/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -24,7 +25,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iorate ${WRKSRC}/ior_rand \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cycle ${WRKSRC}/gen_* ${WRKSRC}/run_* \
 		${STAGEDIR}${DATADIR}

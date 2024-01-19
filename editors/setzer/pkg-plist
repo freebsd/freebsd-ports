@@ -140,7 +140,7 @@ bin/setzer
 %%PYTHON_SITELIBDIR%%/setzer/workspace/workspace_controller.py
 %%PYTHON_SITELIBDIR%%/setzer/workspace/workspace_presenter.py
 %%PYTHON_SITELIBDIR%%/setzer/workspace/workspace_viewgtk.py
-man/man1/setzer.1.gz
+share/man/man1/setzer.1.gz
 share/Setzer/resources/bibliography_styles/abbrv.png
 share/Setzer/resources/bibliography_styles/abbrvnat.png
 share/Setzer/resources/bibliography_styles/achemso.png

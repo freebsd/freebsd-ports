@@ -1,5 +1,6 @@
 PORTNAME=	javavmwrapper
 PORTVERSION=	2.7.9
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -47,10 +48,10 @@ do-install:
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/manvm
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/registervm
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/unregistervm
-	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/registervm.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/unregistervm.1
-	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man1/unregistervm.1
+	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${FILESDIR}/javavm_opts.conf.dist \
 		${STAGEDIR}${PREFIX}/etc/javavm_opts.conf.dist
 

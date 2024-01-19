@@ -1,7 +1,7 @@
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.10
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -72,7 +72,7 @@ do-build-MANPAGES-on:
 	@cd ${WRKSRC}/man && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 do-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install:
 	${MKDIR} ${STAGEDIR}${INFLUXD_DBDIR} \

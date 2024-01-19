@@ -15,8 +15,6 @@ USES=		motif libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CFLAGS_sparc64=	-O0
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 

@@ -1,6 +1,6 @@
 PORTNAME=	dnsproxy
 PORTVERSION=	1.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
@@ -18,14 +18,14 @@ USES=		groff
 USE_RC_SUBR=	dnsproxy
 
 PLIST_FILES=	etc/${PORTNAME}/dnsproxy.conf.sample \
-		man/man1/dnsproxy.1.gz \
+		share/man/man1/dnsproxy.1.gz \
 		sbin/dnsproxy
 
 SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/dnsproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dnsproxy.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/dnsproxy.conf ${STAGEDIR}${ETCDIR}/dnsproxy.conf.sample
 

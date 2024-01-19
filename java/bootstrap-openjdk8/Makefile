@@ -21,7 +21,7 @@ DISTVERSION_aarch64=	r453316
 DISTVERSION_amd64=	r450802
 DISTVERSION_arm=	r450802
 DISTVERSION_i386=	r450802
-DISTVERSION_ppc64=	r455236 # see below for ELFv2
+DISTVERSION_ppc64=	r522831
 DISTVERSION_ppc64le=	r555661
 
 JDK_ARCH=	${ARCH:C/armv.*/arm/:S/powerpc/ppc/}
@@ -39,10 +39,6 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321
-.endif
-
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-DISTVERSION_ppc64=	r522831
 .endif
 
 do-install:

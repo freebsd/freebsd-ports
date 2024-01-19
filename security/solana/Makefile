@@ -1,6 +1,7 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.9
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,9 @@ WWW=		https://solana.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
+BROKEN_armv7=		compilation failure: error[E0512]: cannot transmute between types of different sizes, or dependently-sized types --> programs/bpf_loader/src/syscalls/mod.rs:489:21
+BROKEN_i386=		fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs:358:10 # see https://github.com/rust-lang/rust/issues/119901
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
 		protoc:devel/protobuf \

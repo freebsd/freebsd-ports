@@ -1,5 +1,5 @@
 bin/fracplanet
-man/man1/fracplanet.1.gz
+share/man/man1/fracplanet.1.gz
 share/icons/hicolor/32x32/apps/fracplanet.png
 share/icons/hicolor/48x48/apps/fracplanet.png
 share/icons/hicolor/64x64/apps/fracplanet.png

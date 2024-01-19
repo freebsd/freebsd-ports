@@ -1,5 +1,6 @@
 PORTNAME=	inform7
 PORTVERSION=	6L38
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ifarchive.org/if-archive/infocom/compilers/inform7/executables/
 DISTNAME=	I7_6L38_FreeBSD
@@ -24,7 +25,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${CP} -R ${WRKSRC}/Internal ${STAGEDIR}${DATADIR}
 
-	${INSTALL_MAN} ${FILESDIR}/i7.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${FILESDIR}/i7.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 .if ${ARCH} == "i386"
 	${INSTALL_PROGRAM} ${WRKSRC}/ni.i386 ${STAGEDIR}${PREFIX}/bin/ni

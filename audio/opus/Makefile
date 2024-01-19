@@ -21,11 +21,4 @@ CONFIGURE_ARGS=	--enable-custom-modes \
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-.include <bsd.port.options.mk>
-
-# drop after FreeBSD 12 EOL
-.if ${ARCH} == "arm"
-CONFIGURE_ARGS+=--enable-fixed-point
-.endif
-
 .include <bsd.port.mk>

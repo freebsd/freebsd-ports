@@ -1,7 +1,6 @@
 PORTNAME=	buildah
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.2
-PORTREVISION=	1
+DISTVERSION=	1.33.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -12,7 +11,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash \
 		go-md2man:textproc/go-md2man \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		as:devel/binutils
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	containernetworking-plugins>=0:net/containernetworking-plugins \
 		containers-common>=0:sysutils/containers-common \

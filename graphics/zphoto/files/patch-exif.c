@@ -1,6 +1,6 @@
---- exif.c.orig	2004-06-07 18:58:04.000000000 +0900
-+++ exif.c	2010-12-03 21:25:38.562390923 +0900
-@@ -33,11 +33,11 @@
+--- exif.c.orig	2004-06-07 09:58:04 UTC
++++ exif.c
+@@ -33,11 +33,11 @@ enum {
      HEADER_OFFSET2 = 8
  };
  
@@ -17,7 +17,7 @@
  
  #define SWAP_ENDIAN_SHORT(val) ((unsigned short) ( \
      (((unsigned short) (val) & (unsigned short) 0x00ff) << 8) | \
-@@ -46,14 +46,14 @@
+@@ -46,14 +46,14 @@ is_little_endian ()
  static int 
  is_little_endian ()
  {
@@ -35,7 +35,7 @@
  	if (memcmp(p, x, 4) == 0) {
  	    retval = 1;
  	} else {
-@@ -63,8 +63,8 @@
+@@ -63,8 +63,8 @@ is_little_endian ()
      return retval;
  }
  
@@ -46,7 +46,7 @@
  {
      if (is_little_endian()) {
  	return x;
-@@ -83,8 +83,8 @@
+@@ -83,8 +83,8 @@ ushort_from_be (unsigned short x)
      }
  }
  
@@ -57,7 +57,7 @@
  {
      if (is_little_endian()) {
  	return SWAP_ENDIAN_LONG(x);
-@@ -115,7 +115,7 @@
+@@ -115,7 +115,7 @@ static int
  
  
  static int
@@ -66,7 +66,7 @@
  {
      int x = fseek(stream, offset, whence);
      if (x != 0)
-@@ -142,16 +142,16 @@
+@@ -142,16 +142,16 @@ typedef void	(*TraverseFunc)	 (FILE *fp,
  typedef void	(*TraverseFunc)	 (FILE *fp,
                                    unsigned short tag, 
                                    unsigned short type, 
@@ -87,7 +87,7 @@
                      void *data)
  {
      if (tag == 0x8769) {
-@@ -163,12 +163,12 @@
+@@ -163,12 +163,12 @@ get_time (FILE *fp, 
  get_time (FILE *fp, 
            unsigned short tag,
            unsigned short type,
@@ -103,7 +103,7 @@
          char buf[BUFSIZ];
          struct tm t;
  
-@@ -204,16 +204,16 @@
+@@ -204,16 +204,16 @@ read_ushort (FILE *fp, int le_exif_p)
          return ushort_from_be(x);
  }
  
@@ -126,7 +126,7 @@
  }
  
  static int
-@@ -225,12 +225,12 @@
+@@ -225,12 +225,12 @@ read_directory (FILE *fp, TraverseFunc func, void *dat
      n = read_ushort(fp, le_exif_p);
      for (i = 0; i < n; i++) {
          unsigned short tag, type;

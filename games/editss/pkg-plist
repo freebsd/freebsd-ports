@@ -1,5 +1,5 @@
 bin/editss
 libexec/editss
-man/man6/editss.6.gz
+share/man/man6/editss.6.gz
 %%DATADIR%%/editssrc
 %%DATADIR%%/ships

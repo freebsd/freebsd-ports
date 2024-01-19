@@ -1,6 +1,7 @@
 PORTNAME=	mako
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,9 +31,9 @@ OPTIONS_DEFAULT=MANPAGES PIXBUF
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
-			man/man1/${PORTNAME}ctl.1.gz \
-			man/man5/${PORTNAME}.5.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man1/${PORTNAME}ctl.1.gz \
+			share/man/man5/${PORTNAME}.5.gz
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	icons

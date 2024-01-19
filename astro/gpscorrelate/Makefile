@@ -1,6 +1,6 @@
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	astro geography
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,7 +25,7 @@ GH_ACCOUNT=	freefoote
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 libxml2 pango
 
 PLIST_FILES=	bin/gpscorrelate bin/gpscorrelate-gui \
-		man/man1/gpscorrelate.1.gz man/man1/gpscorrelate-gui.1.gz
+		share/man/man1/gpscorrelate.1.gz share/man/man1/gpscorrelate-gui.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -47,9 +47,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate-gui ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/gpscorrelate.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${LN} -sf gpscorrelate.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/gpscorrelate-gui.1
+		${STAGEDIR}${PREFIX}/share/man/man1/gpscorrelate-gui.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

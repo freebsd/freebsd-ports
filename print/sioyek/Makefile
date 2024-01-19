@@ -1,7 +1,7 @@
 PORTNAME=	sioyek
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -16,7 +16,8 @@ LIB_DEPENDS=	libmupdf.so:graphics/mupdf \
 		libfreetype.so:print/freetype2 \
 		libjbig2dec.so:graphics/jbig2dec \
 		libmujs.so:lang/mujs \
-		libopenjp2.so:graphics/openjpeg
+		libopenjp2.so:graphics/openjpeg \
+		libsynctex.so:devel/tex-synctex
 
 USES=		desktop-file-utils jpeg gl qmake qt:5 sqlite
 USE_GITHUB=	yes

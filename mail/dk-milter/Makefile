@@ -1,6 +1,6 @@
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 
@@ -107,7 +107,7 @@ post-install:
 .for i in dk-filter.8
 	@${RM} ${STAGEDIR}${PREFIX}/man/cat8/${i} \
 		${STAGEDIR}${PREFIX}/man/cat8/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${PREFIX}/share/man/man8/
 .endfor
 
 post-install-DOCS-on:

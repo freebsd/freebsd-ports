@@ -1,7 +1,6 @@
 PORTNAME=	gtkcord4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16-1
-PORTREVISION=	1
+DISTVERSION=	0.0.17
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,22 +20,22 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 		alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		danieljoos:wincred:v1.1.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		diamondburned:adaptive:fa139be203a8:diamondburned_adaptive/vendor/github.com/diamondburned/adaptive \
-		diamondburned:arikawa:4224b93c4e01:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
-		diamondburned:chatkit:f172e4a1e35d:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
-		diamondburned:gotk4-adwaita:26f1789529b0:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
+		diamondburned:arikawa:9809321f6ff4:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
+		diamondburned:chatkit:4e4c83fb3925:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
+		diamondburned:gotk4-adwaita:503b3cb0406c:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
 		diamondburned:gotk4:eb41da62b149:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
-		diamondburned:gotkit:ace9cfa5e044:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
-		diamondburned:ningen:c71ae51f868b:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
+		diamondburned:gotkit:0395decac74f:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
+		diamondburned:ningen:970026175e1a:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
 		go4org:go4:f5505b9728dd:go4org_go4/vendor/go4.org \
 		go4org:unsafe-assume-no-moving-gc:e7c30c78aeb2:go4org_unsafe_assume_no_moving_gc/vendor/go4.org/unsafe/assume-no-moving-gc \
 		godbus:dbus:v5.0.6:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
-		golang:crypto:v0.1.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.17.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:image:e7cb96979f69:golang_image/vendor/golang.org/x/image \
-		golang:sync:886fb9371eb4:golang_sync/vendor/golang.org/x/sync \
-		golang:text:v0.4.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
+		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:time:1f47c861a9ac:golang_time/vendor/golang.org/x/time \
 		gorilla:schema:v1.2.0:gorilla_schema/vendor/github.com/gorilla/schema \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \

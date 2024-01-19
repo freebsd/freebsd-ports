@@ -1,0 +1,10 @@
+Gluon is a small, statically-typed, functional programming language designed for
+application embedding.
+
+Features:
+* Seatically-typed
+* Type inference
+* Simple embedding
+* UTF-8 by default
+* Separate heaps
+* Thread-safe

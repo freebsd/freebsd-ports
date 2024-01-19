@@ -47,7 +47,7 @@ lib/libVTKExtensionsReaders.a
 lib/libVTKExtensionsRendering.a
 lib/libf3d.so
 lib/libf3d.so.2
-lib/libf3d.so.2.1
+lib/libf3d.so.2.2
 %%ALEMBIC%%share/applications/f3d-plugin-alembic.desktop
 %%ASSIMP%%share/applications/f3d-plugin-assimp.desktop
 %%DRACO%%share/applications/f3d-plugin-draco.desktop

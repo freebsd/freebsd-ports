@@ -1,6 +1,6 @@
---- src/audio/oss.c.orig	2023-09-24 06:52:39 UTC
+--- src/audio/oss.c.orig	2024-01-01 05:31:28 UTC
 +++ src/audio/oss.c
-@@ -0,0 +1,102 @@
+@@ -0,0 +1,105 @@
 +/*
 + * This file is part of Moonlight Embedded.
 + *
@@ -20,21 +20,24 @@
 + * along with Moonlight; if not, see <http://www.gnu.org/licenses/>.
 + */
 +
++#ifdef __FreeBSD__
 +#include <sys/soundcard.h>
++#include <sys/ioctl.h>
 +#include "audio.h"
 +
-+#include <stdio.h>
 +#include <opus_multistream.h>
 +
-+#include <sys/ioctl.h>
-+#include <unistd.h>
++#include <errno.h>
 +#include <fcntl.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
 +
 +static OpusMSDecoder* decoder;
 +static short* pcmBuffer;
 +static int samplesPerFrame;
 +static int channelCount;
-+static int fd;
++static int fd = -1;
 +
 +static int oss_renderer_init(int audioConfiguration, POPUS_MULTISTREAM_CONFIGURATION opusConfig, void* context, int arFlags) {
 +  int rc;
@@ -46,27 +49,26 @@
 +  if (pcmBuffer == NULL)
 +    return -1;
 +
-+  char* oss_name = "/dev/dsp";
++  const char* oss_name = "/dev/dsp";
 +  fd = open(oss_name, O_WRONLY);
-+  // buffer size for fragment ,selector 12 is 4096;11 is 2048;10 is 1024; 13is 8192
 +  if (fd == -1) {
-+    close(fd);
-+    printf("Open audio device /dev/dsp faild!!!");
++    printf("Open audio device /dev/dsp failed! error %d\n", errno);
 +    return -1;
 +  }
++  // buffer size for fragment ,selector 12 is 4096;11 is 2048;10 is 1024; 13is 8192
 +  int frag = 12;
 +  if (ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &frag) == -1)
-+    printf("Set framgment for /dev/dsp faild.");
++    printf("Set fragment for /dev/dsp failed.");
 +
 +  int format = AFMT_S16_LE;
 +  int channels = opusConfig->channelCount;
 +  int rate = opusConfig->sampleRate;
 +  if (ioctl(fd, SNDCTL_DSP_SETFMT, &format) == -1)
-+    printf("Set framgment for /dev/dsp faild.");
++    printf("Set format for /dev/dsp failed.");
 +  if (ioctl(fd, SNDCTL_DSP_CHANNELS, &channels) == -1)
-+    printf("Set channels for /dev/dsp faild.");
++    printf("Set channels for /dev/dsp failed.");
 +  if (ioctl(fd, SNDCTL_DSP_SPEED, &rate) == -1)
-+    printf("Set sameple rate for /dev/dsp faild.");
++    printf("Set sample rate for /dev/dsp failed.");
 +
 +  return 0;
 +}
@@ -82,9 +84,9 @@
 +    pcmBuffer = NULL;
 +  }
 +
-+  if (fd != 0) {
++  if (fd != -1) {
 +    close(fd);
-+    fd = 0;
++    fd = -1;
 +  }
 +}
 +
@@ -92,7 +94,7 @@
 +  int decodeLen = opus_multistream_decode(decoder, data, length, pcmBuffer, samplesPerFrame, 0);
 +  if (decodeLen > 0) {
 +    write(fd, pcmBuffer, decodeLen * channelCount * sizeof(short));
-+  } else {
++  } else if (decodeLen < 0) {
 +    printf("Opus error from decode: %d\n", decodeLen);
 +  }
 +}
@@ -103,3 +105,4 @@
 +  .decodeAndPlaySample = oss_renderer_decode_and_play_sample,
 +  .capabilities = CAPABILITY_DIRECT_SUBMIT | CAPABILITY_SUPPORTS_ARBITRARY_AUDIO_DURATION,
 +};
++#endif

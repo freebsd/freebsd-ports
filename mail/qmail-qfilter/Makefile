@@ -1,6 +1,6 @@
 PORTNAME=	qmail-qfilter
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-configure:
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${STAGEDIR}${MANPREFIX}/man" > ${WRKSRC}/conf-man
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/share/man" > ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-bgincs

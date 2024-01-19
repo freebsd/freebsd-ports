@@ -1,6 +1,7 @@
 PORTNAME=	choparp
-PORTVERSION=	20150613
 DISTVERSIONPREFIX=	release/
+DISTVERSION=	20150613
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	garga@FreeBSD.org
@@ -14,7 +15,7 @@ GH_ACCOUNT=	quinot
 USE_RC_SUBR=	choparp
 LDFLAGS+=	-lpcap
 
-PLIST_FILES=	sbin/choparp man/man8/choparp.8.gz
+PLIST_FILES=	sbin/choparp share/man/man8/choparp.8.gz
 
 do-build:
 	( cd ${WRKSRC}/src && \
@@ -24,6 +25,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- qcommon/files.c.orig	Wed Jan  4 07:33:05 2006
-+++ qcommon/files.c	Sat Dec 30 02:02:16 2006
-@@ -775,6 +775,9 @@
+--- qcommon/files.c.orig	2006-01-04 10:33:05 UTC
++++ qcommon/files.c
+@@ -775,6 +775,9 @@ void FS_SetGamedir (char *dir)
  		if (fs_cddir->string[0])
  		
  		FS_AddGameDirectory (va("%s/%s", fs_cddir->string, dir) );
@@ -10,7 +10,7 @@
  #ifdef LIBDIR
  		FS_AddGameDirectory(va("%s/%s", LIBDIR, dir));
  #endif
-@@ -999,16 +1002,7 @@
+@@ -999,16 +1002,7 @@ void FS_InitFilesystem (void)
  	// basedir <path>
  	// allows the game to run from outside the data tree
  	//
@@ -27,7 +27,7 @@
  
  	sv_defaultpaks = Cvar_Get ("sv_defaultpaks", "0", CVAR_ARCHIVE);
  
-@@ -1024,8 +1018,11 @@
+@@ -1024,8 +1018,11 @@ void FS_InitFilesystem (void)
  	//
  	// start up with baseq2 by default
  	//

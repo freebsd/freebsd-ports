@@ -2,7 +2,7 @@ PORTNAME=	cfiles
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8-6
 DISTVERSIONSUFFIX=	-g327d47f
-PORTREVISION=	28
+PORTREVISION=	30
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ GH_ACCOUNT=	mananapr
 MAKE_ARGS=	CC=${CC} NCURSES_CFLAGS=-I/usr/include NCURSES_LIBS=/usr/lib/libncursesw.so
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}.1.gz \
 		${DATADIR}/scripts/clearimg \
 		${DATADIR}/scripts/displayimg
 
@@ -50,7 +50,7 @@ do-install:
 .for s in clearimg displayimg
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${s} ${STAGEDIR}${DATADIR}/scripts
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/cfiles.1 ${STAGEDIR}${MAN5PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cfiles.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.pre.mk>
 

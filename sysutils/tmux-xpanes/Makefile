@@ -1,6 +1,7 @@
 PORTNAME=		tmux-xpanes
 DISTVERSIONPREFIX=	v
 DISTVERSION=		4.1.4
+PORTREVISION=	1
 CATEGORIES=		sysutils
 
 MAINTAINER=	vidar@karlsen.tech
@@ -29,7 +30,7 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} bin/xpanes ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} man/xpanes.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	cd ${WRKSRC} && ${INSTALL_MAN} man/xpanes.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${WRKSRC} && ${INSTALL_DATA} completion/zsh/_xpanes \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 

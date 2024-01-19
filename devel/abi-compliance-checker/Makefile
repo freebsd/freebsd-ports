@@ -31,6 +31,8 @@ SHEBANG_FILES=	checker/*.pl adumper/*.pl
 
 CTAGS?=		exctags
 
+PICFLAG?=	-fpic
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPORTS_BINUTILS}
@@ -40,12 +42,6 @@ READELF?=	${PREFIX}/bin/readelf
 OBJDUMP?=	${PREFIX}/bin/objdump
 .else
 CPPFILT?=	/usr/bin/c++filt
-.endif
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
 .endif
 
 # Only vtable-dumper is a C program; the rest is all perl script

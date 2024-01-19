@@ -1,6 +1,6 @@
 PORTNAME=	fldiff
 PORTVERSION=	1.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -32,7 +32,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fldiff ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fldiff.man ${STAGEDIR}${MAN1PREFIX}/man/man1/fldiff.1
+	${INSTALL_MAN} ${WRKSRC}/fldiff.man ${STAGEDIR}${PREFIX}/share/man/man1/fldiff.1
 	${INSTALL_DATA} ${WRKSRC}/fldiff.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/fldiff.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

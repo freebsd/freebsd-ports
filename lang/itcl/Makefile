@@ -36,7 +36,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libitcl.so
 
 .for FILE in ${MAN_3}
-	${INSTALL_DATA} ${WRKSRC}/doc/${FILE:S/Itcl_//} ${STAGEDIR}${MAN3PREFIX}/man/man3/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE:S/Itcl_//} ${STAGEDIR}${PREFIX}/man/man3/${FILE}
 .endfor
 
 .include <bsd.port.mk>

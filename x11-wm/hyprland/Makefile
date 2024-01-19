@@ -1,11 +1,8 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.1
+DISTVERSION=	0.34.0
 PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ef445093f9fb.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/4188
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -14,13 +11,11 @@ WWW=		https://hyprland.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	libc++ too old
-
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.25:graphics/wayland-protocols \
-		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
-LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		wayland-protocols>=1.25:graphics/wayland-protocols
+LIB_DEPENDS=	libtomlplusplus.so:devel/tomlplusplus \
+		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \

@@ -1,12 +1,12 @@
 PORTNAME=	zookeeper
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.3
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		APACHE/logging/log4j/${ZOOKEEPER_LOG4J2_VERSION}/:log4j2
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dmitry.wagin@ya.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Coordination Service for Distributed Applications
 WWW=		https://zookeeper.apache.org/
 
@@ -35,7 +35,7 @@ ZOOKEEPER_USER?=		zookeeper
 ZOOKEEPER_GROUP?=		zookeeper
 ZOOKEEPER_DBDIR?=		/var/db/zookeeper
 ZOOKEEPER_LOGDIR?=		/var/log/zookeeper
-ZOOKEEPER_LOG4J2_VERSION?=	2.19.0
+ZOOKEEPER_LOG4J2_VERSION?=	2.22.0
 
 USERS=		${ZOOKEEPER_USER}
 GROUPS=		${ZOOKEEPER_GROUP}
@@ -51,7 +51,7 @@ OPTIONS_DEFINE=	DOCS LOG4J2
 OPTIONS_SUB=	yes
 
 LOG4J2_DESC=		Use log4j-2 instead Logback
-LOG4J2_DISTFILES=	apache-log4j-${ZOOKEEPER_LOG4J2_VERSION}-bin${EXTRACT_SUFX}:log4j2
+LOG4J2_DISTFILES=	apache-log4j-${ZOOKEEPER_LOG4J2_VERSION}-bin.zip:log4j2
 LOG4J2_PLIST_SUB=	ZOOKEEPER_LOG4J2_VERSION=${ZOOKEEPER_LOG4J2_VERSION}
 LOG4J2_JARS=		log4j-api-${ZOOKEEPER_LOG4J2_VERSION}.jar \
 			log4j-core-${ZOOKEEPER_LOG4J2_VERSION}.jar \
@@ -80,7 +80,7 @@ do-install-DOCS-on:
 do-install-LOG4J2-on:
 	${RM} ${STAGEDIR}${DATADIR}/logback-*
 .for f in ${LOG4J2_JARS}
-	${INSTALL_DATA} ${WRKDIR}/apache-log4j-${ZOOKEEPER_LOG4J2_VERSION}-bin/${f} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${DATADIR}/
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/log4j2.properties ${STAGEDIR}${ETCDIR}/log4j2.properties.sample
 

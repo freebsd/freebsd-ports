@@ -1,5 +1,6 @@
 PORTNAME=	freerdp
 DISTVERSION=	2.11.4
+PORTREVISION=	2
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -7,6 +8,8 @@ MASTER_SITES=	https://pub.freerdp.com/releases/ \
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 PATCHFILES+=	61983cd6dcb86097d91b7ef405abc1266444a368.patch:-p1 # ffmpeg6 support: AVPicture
 								   # https://github.com/FreeRDP/FreeRDP/pull/8941
+PATCHFILES+=	78cdb555c57c33b7f331cb280ac2f615cb87fa74.patch:-p1 # add additional neon check
+								   # https://github.com/FreeRDP/FreeRDP/issues/9746
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -23,8 +26,8 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 USES=		alias cmake compiler:c++11-lib cpe localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 
-PATCHVERSION=	${PORTVERSION}
-MAJORVERSION=	${PORTVERSION:R:R}
+PATCHVERSION=	${DISTVERSION}
+MAJORVERSION=	${DISTVERSION:R:R}
 
 CMAKE_ARGS+=	${CMAKE_ARGS_${ARCH}}
 CMAKE_ON=	WITH_CHANNELS WITH_OPENSSL WITH_OSS WITH_ZLIB CHANNEL_URBDRC_CLIENT
@@ -34,11 +37,10 @@ CMAKE_OFF=	WITH_DSP_EXPERIMENTAL WITH_GPROF WITH_GSSAPI WITH_GSTREAMER_0_10 WITH
 		WITH_SANITIZE_THREAD WITH_SERVER WITH_SERVER_INTERFACE \
 		WITH_SMARTCARD_INSPECT WITH_THIRD_PARTY WITH_VALGRIND_MEMCHECK
 
-CMAKE_ARGS_aarch64+=	-DWITH_NEON=ON
-CFLAGS_aarch64+=	-D__ARM_NEON__=__ARM_NEON # clang
-
 PLIST_SUB+=	PATCHVERSION="${PATCHVERSION}"
 PLIST_SUB+=	MAJORVERSION="${MAJORVERSION}"
+
+PORTSCOUT=	limit:^2\.
 
 OPTIONS_DEFINE=		ALSA BROKENFOCUS CUPS FAAC FAAD FFMPEG GSM GSTREAMER \
 			ICU JPEG LAME MANPAGES OPENH264 PCSC \
@@ -48,11 +50,14 @@ OPTIONS_RADIO=		SCALE
 OPTIONS_RADIO_SCALE=	CAIRO SWSCALE
 OPTIONS_SUB=		yes
 
+OPTIONS_DEFINE_aarch64=	NEON
+OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_armv6=	NEON
 OPTIONS_DEFINE_armv7=	NEON
-OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFAULT_aarch64=	NEON
 OPTIONS_DEFAULT_amd64=	SSE
+OPTIONS_DEFAULT_armv7=	NEON
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_BOOL=	WITH_ALSA
@@ -61,8 +66,9 @@ BROKENFOCUS_DESC=	Work around focus bug in some WMs (PR \#254908)
 BROKENFOCUS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-focusbug.diff
 
 CAIRO_DESC=		Use CAIRO image library for screen resizing
-CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_CMAKE_BOOL=	WITH_CAIRO
+CAIRO_USES=		gnome
+CAIRO_USE=		gnome=cairo
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_BOOL=	WITH_CUPS
@@ -97,11 +103,8 @@ LAME_CMAKE_BOOL=	WITH_LAME
 MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
 MANPAGES_CMAKE_BOOL=	WITH_MANPAGES
 
-NEON_DESC=		Enable	Media Processing Engine instructions
+NEON_DESC=		Enable Media Processing Engine instructions
 NEON_CMAKE_BOOL=	WITH_NEON
-.if ! ${CFLAGS:M-march*}
-NEON_CFLAGS=		-march=armv7-a
-.endif
 
 OPENH264_DESC=		H.264 video codec support via OpenH264
 OPENH264_LIB_DEPENDS=	libopenh264.so:multimedia/openh264

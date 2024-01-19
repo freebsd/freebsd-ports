@@ -1,6 +1,6 @@
 PORTNAME=	hurl
 DISTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -21,10 +21,10 @@ CARGO_INSTALL_PATH=	packages/hurl packages/hurlfmt
 
 PLIST_FILES=	bin/hurl \
 		bin/hurlfmt \
-		man/man1/hurl.1.gz \
-		man/man1/hurlfmt.1.gz
+		share/man/man1/hurl.1.gz \
+		share/man/man1/hurlfmt.1.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/manual/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/manual/*.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

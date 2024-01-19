@@ -1,6 +1,6 @@
 PORTNAME=	fractal
 DISTVERSION=	4.4.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${DISTVERSION}/
 # XXX USES=cargo omits the default source archive by default

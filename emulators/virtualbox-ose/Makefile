@@ -202,11 +202,6 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1300513 || ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400026)
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Devices_PC_DevFwCommon.cpp
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 # 1) llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
 # 2) llvm15 in FreeBSD miscompiles virtualbox 6.1 causing errors: PR#270189.

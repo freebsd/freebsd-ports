@@ -1,5 +1,6 @@
 PORTNAME=	primegen
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/primegen/
 
@@ -13,9 +14,9 @@ ALL_TARGET=	default
 PLIST_FILES=	bin/primes bin/primegaps \
 		include/primegen.h \
 		lib/libprimegen.a \
-		man/man1/primes.1.gz \
-		man/man1/primegaps.1.gz \
-		man/man3/primegen.3.gz
+		share/man/man1/primes.1.gz \
+		share/man/man1/primegaps.1.gz \
+		share/man/man3/primegen.3.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,primegen\.a,lib&,' ${WRKSRC}/Makefile \
@@ -31,8 +32,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/primegaps ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/primegen.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libprimegen.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/primes.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/primegaps.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/primegen.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/primes.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/primegaps.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/primegen.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>

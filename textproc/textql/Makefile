@@ -1,6 +1,6 @@
 PORTNAME=	textql
 PORTVERSION=	g20210706
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 
 MAINTAINER=	ume@FreeBSD.org
@@ -21,10 +21,10 @@ GH_TUPLE=	mattn:go-runewidth:v0.0.2:mattn_go_runewidth/vendor/github.com/mattn/g
 GO_TARGET=	textql/main.go:textql
 
 PLIST_FILES=	bin/textql \
-		man/man1/textql.1.gz
+		share/man/man1/textql.1.gz
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/textql.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

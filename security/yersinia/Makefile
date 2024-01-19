@@ -1,6 +1,6 @@
 PORTNAME=	yersinia
 PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 # MASTER_SITES=	http://www.yersinia.net/download/
 PKGNAMESUFFIX=	-gtk
@@ -22,7 +22,7 @@ GH_TUPLE=	tomac:yersinia:8c0d7c5
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/yersinia \
-		man/man8/yersinia.8.gz
+		share/man/man8/yersinia.8.gz
 
 OPTIONS_DEFINE=	PORTS_PCAP
 
@@ -38,6 +38,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>

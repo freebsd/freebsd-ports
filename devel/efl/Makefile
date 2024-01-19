@@ -1,6 +1,6 @@
 PORTNAME=	efl
-DISTVERSION=	1.26.3
-PORTREVISION=	12
+DISTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -43,11 +43,10 @@ OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS PHYSICS PULSEAUDIO SDL VNC EFLONE EL
 OPTIONS_GROUP=		EMOTION INPUT LOADER BINDINGS
 OPTIONS_GROUP_EMOTION=	GSTREAMER V4L
 OPTIONS_GROUP_INPUT=	IBUS SCIM XIM
-OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF AVIF HEIF
+OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF AVIF HEIF JXL
 OPTIONS_GROUP_BINDINGS=	LUA CXX
 OPTIONS_GROUP_WAYLAND=	WAYLAND
 OPTIONS_SINGLE=		CRYPTO ENGINE LUAL
-OPTIONS_SINGLE_CRYPTO=	OPENSSL GNUTLS
 OPTIONS_SINGLE_ENGINE=	OPENGL OPENGLES NONE
 OPTIONS_SINGLE_LUAL=	LUAJIT LUALANG
 OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PULSEAUDIO EXAMPLES GSTREAMER V4L SCIM XIM \
@@ -64,6 +63,7 @@ SCIM_DESC=		Smart Common Input Method
 XIM_DESC=		X Input Method
 SVG_DESC=		Vector graphics support
 XCF_DESC=		Gimp image format support
+JXL_DESC=		JPEG XL image format support
 LUAL_DESC=		LUA
 LUALANG_DESC=		Use Lua
 LUAJIT_DESC=		Use Luajit
@@ -99,6 +99,7 @@ ELUA_MESON_TRUE=	elua
 EXAMPLES_MESON_TRUE=	build-examples
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_MESON_TRUE=	docs
 
 VNC_MESON_TRUE=		vnc-server
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
@@ -138,13 +139,6 @@ XIM_VARS_OFF=		xim_disabler=xim
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_VARS_OFF=	openjpeg_disabler=jp2k
 
-GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-			libgnutls.so:security/gnutls
-GNUTLS_MESON_ON=	-Dcrypto=gnutls
-GNUTLS_MESON_OFF=	-Dcrypto=openssl
-GNUTLS_CFLAGS=		-I${LOCALBASE}/include/gnutls/
-GNUTLS_BROKEN=		GNUTLS option is broken by the upstream bug: https://phab.enlightenment.org/T8807
-
 PDF_LIB_DEPENDS=	libpoppler.so:graphics/poppler
 PDF_VARS_OFF=		pdf_disabler=pdf
 
@@ -166,6 +160,9 @@ HEIF_VARS_OFF=		heif_disabler=heif
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_VARS_OFF=		webp_disabler=webp
+
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_VARS_OFF=		jxl_disabler=jxl
 
 XCF_VARS_OFF=		xcf_disabler=xcf
 
@@ -191,6 +188,8 @@ SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SDL_MESON_TRUE=		sdl
 
+MESON_ARGS+=		-Dcrypto=openssl
+
 IMF_DISABLERS=		${IBUS_DISABLER} ${SCIM_DISABLER} ${XIM_DISABLER}
 
 MESON_ARGS+=		-Decore-imf-loaders-disabler="${IMF_DISABLERS:ts,}"
@@ -198,7 +197,7 @@ MESON_ARGS+=		-Decore-imf-loaders-disabler="${IMF_DISABLERS:ts,}"
 EVAS_DISABLERS=		json ${OPENJPEG_DISABLER} ${PDF_DISABLER} \
 			${PS_DISABLER} ${RAW_DISABLER} ${SVG_DISABLER} \
 			${AVIF_DISABLER} ${HEIF_DISABLER} ${WEBP_DISABLER} \
-			${XCF_DISABLER}
+			${XCF_DISABLER} ${JXL_DISABLER}
 
 MESON_ARGS+=		-Devas-loaders-disabler="${EVAS_DISABLERS:ts,}"
 

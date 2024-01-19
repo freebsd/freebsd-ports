@@ -1,5 +1,6 @@
 PORTNAME=	portconfig
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -17,10 +18,10 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

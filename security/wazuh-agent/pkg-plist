@@ -161,6 +161,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/12/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9/sca.files
@@ -301,9 +302,14 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/23/cis_apple_macOS_14.0.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian11.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian12.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian7.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian8.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian9.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd12.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd13.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd14.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd15.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/generic/sca_unix_audit.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i_bastille.yml
@@ -430,6 +436,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/12
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9
@@ -508,6 +515,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/23
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/debian
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/freebsd
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/generic
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/hpux
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/mongodb

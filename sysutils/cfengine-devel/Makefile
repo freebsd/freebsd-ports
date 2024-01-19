@@ -2,9 +2,9 @@ PORTNAME=	cfengine
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-CFENGINE_HASH=		574818ccb
-LIBNTECH_HASH=		5726ca8
-CFENGINE_COMMIT_DATE=	2023.12.05
+CFENGINE_HASH=		ec6c4cf1e
+LIBNTECH_HASH=		1899478
+CFENGINE_COMMIT_DATE=	2023.12.22
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
@@ -60,7 +60,6 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgresql=${LOCALBASE}
 
 MYSQL_USES=		mysql
-MYSQL_BROKEN=		configure: error: MySQL client library exports symbols (EVP_CIPHER_CTX_init) clashing with OpenSSL.
 MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql

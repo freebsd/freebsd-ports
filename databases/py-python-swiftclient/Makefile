@@ -1,5 +1,6 @@
 PORTNAME=	python-swiftclient
 PORTVERSION=	3.13.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +24,6 @@ NO_ARCH=	yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/swift.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1
+	    ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

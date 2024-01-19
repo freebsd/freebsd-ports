@@ -1,5 +1,6 @@
 PORTNAME=	tzdialog
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
@@ -9,10 +10,10 @@ WWW=		https://druidbsd.sourceforge.net/
 
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/tzdialog man/man8/tzdialog.8.gz
+PLIST_FILES=	sbin/tzdialog share/man/man8/tzdialog.8.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

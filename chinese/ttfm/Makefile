@@ -1,6 +1,6 @@
 PORTNAME=	ttfm
 PORTVERSION=	0.9.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese print
 MASTER_SITES=	LOCAL/rafan/chinese
 
@@ -29,7 +29,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttfinfo ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/ttfm.sh ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for module in gscjk.ttfm xttfm.ttfm
 	${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${STAGEDIR}${DATADIR}/

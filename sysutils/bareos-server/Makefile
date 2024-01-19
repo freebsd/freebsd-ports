@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	22.0.3
+DISTVERSION=	22.1.3
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -215,7 +215,7 @@ post-extract:
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 	${MKDIR} ${STAGEDIR}${ETCDIR}/bconsole.d/
-	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.d/bconsole.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf.sample ${STAGEDIR}${ETCDIR}/bconsole.d/bconsole.conf.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bareos ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample

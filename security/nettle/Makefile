@@ -36,10 +36,6 @@ EXAMPLES_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "sparc64"
-CONFIGURE_ENV+=	CCPIC=-fPIC
-.endif
-
 .if ${ARCH} == "mips64"
 post-patch:
 	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure

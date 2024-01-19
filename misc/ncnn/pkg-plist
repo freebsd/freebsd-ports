@@ -33,6 +33,7 @@ include/ncnn/simplemath.h
 include/ncnn/simpleocv.h
 include/ncnn/simpleomp.h
 include/ncnn/simplestl.h
+include/ncnn/simplevk.h
 include/ncnn/vulkan_header_fix.h
 lib/cmake/ncnn/ncnn-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ncnn/ncnn.cmake

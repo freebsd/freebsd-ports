@@ -1,12 +1,13 @@
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.0
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	7d3116962bd8.patch:-p1 # https://github.com/cmus/cmus/pull/1221
 PATCHFILES+=	07ce2dc7082a.patch:-p1 # https://github.com/cmus/cmus/pull/1254
+PATCHFILES+=	0e07ddc14234.patch:-p1 # https://github.com/cmus/cmus/pull/1269
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
@@ -19,7 +20,7 @@ USES=		compiler:c11 cpe gmake iconv ncurses pkgconfig
 USE_GITHUB=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${PREFIX}/share/man \
 		exampledir=${EXAMPLESDIR}
 # So the build does not use gcc for compiling ttman
 CONFIGURE_ARGS+=	HOSTCC=${CC}

@@ -1,5 +1,6 @@
 PORTNAME=	fdm
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -15,9 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nicm
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
-PLIST_FILES=	bin/fdm man/man1/fdm.1.gz man/man5/fdm.conf.5.gz
+PLIST_FILES=	bin/fdm share/man/man1/fdm.1.gz share/man/man5/fdm.conf.5.gz
 PORTDOCS=	CHANGES README MANUAL
 PORTEXAMPLES=	*
 

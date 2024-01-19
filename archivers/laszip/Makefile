@@ -1,17 +1,21 @@
 PORTNAME=	laszip
-DISTVERSION=	3.4.3
+DISTVERSION=	3.5.1
 CATEGORIES=	archivers
-MASTER_SITES=	https://github.com/LASzip/LASzip/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Library for lossless LAS compression
 WWW=		https://laszip.org/
 
-LICENSE=	LGPL21
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++0x tar:bz2
+USES=		cmake compiler:c++0x
+USE_GITHUB=	yes
+GH_ACCOUNT=	LASzip
+GH_PROJECT=	LASzip
+GH_TAGNAME=	80f9298
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
+ 

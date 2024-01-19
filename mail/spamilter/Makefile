@@ -43,13 +43,10 @@ LIBSPF_CFLAGS=		-I${LOCALBASE}/include
 LIBSPF_LDFLAGS=		-L${LOCALBASE}/lib
 IPFWMTAD_PLIST_FILES=	bin/ipfwmtad
 IPFWMTAD_USES=	ssl
+BROKEN_SSL=	base openssl openssl31 openssl32 openssl33
+BROKEN_SSL_REASON=	Option IPFWMTAD requires OpenSSL 1.1.1
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPFWMTAD}
-BROKEN_FreeBSD_12=	option IPFWMTAD needs old openssl
-BROKEN_FreeBSD_13=	option IPFWMTAD needs old openssl
-.endif
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 

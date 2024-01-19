@@ -11,9 +11,6 @@ WWW=		https://www.mythtv.org/wiki/MythMusic
 
 LICENSE=	GPLv2
 
-DEPRECATED=    Depends on deprecated www/qt5-webkit via multimedia/mythtv
-EXPIRATION_DATE=       2023-12-31
-
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \

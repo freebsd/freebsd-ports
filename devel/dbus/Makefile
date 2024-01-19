@@ -1,6 +1,6 @@
 PORTNAME=	dbus
 DISTVERSION=	1.14.10
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus/
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--disable-apparmor \
 		--disable-systemd \
 		--with-session-socket-dir=/tmp \
 		--with-test-socket-dir=${WRKDIR}
+CONFIGURE_ENV=	have_ld_version_script=yes
 
 INSTALL_TARGET=	install-strip
 

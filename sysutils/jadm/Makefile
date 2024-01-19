@@ -1,5 +1,6 @@
 PORTNAME=	jadm
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,9 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.14.0:security/py-paramiko@${PY_F
 
 USES=		python
 USE_PYTHON=	distutils autoplist
-PLIST_FILES=	man/man8/jadm.8.gz
+PLIST_FILES=	share/man/man8/jadm.8.gz
 
 pre-install:
-	${INSTALL_MAN} ${WRKSRC}/man8/jadm.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man8/jadm.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

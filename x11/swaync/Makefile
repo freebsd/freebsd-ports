@@ -1,7 +1,7 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -31,9 +31,9 @@ OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_TRUE=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
-			man/man1/${PORTNAME}-client.1.gz \
-			man/man5/${PORTNAME}.5.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man1/${PORTNAME}-client.1.gz \
+			share/man/man5/${PORTNAME}.5.gz
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build

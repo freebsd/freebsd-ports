@@ -1,7 +1,0 @@
-The purpose of this library is to simplify the creation of computer graphics
-software. Specifically, it is targeted towards cross-platform development
-using the OpenGL rendering API and the FLTK interface toolkit. It attempts
-to provide facilities which are useful in the majority of graphics programs.
-
-This release introduces some (relatively small) incompatible changes with
-1.0.x versions of the library. Details on changes can be found below.

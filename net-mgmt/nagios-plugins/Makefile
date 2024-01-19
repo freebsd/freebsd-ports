@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share \
 # Also, force some commands with their expected paths so that they don't get
 # disabled.
 CONFIGURE_ARGS+=	--with-ping-command="/sbin/ping -n -t %d -c %d %s" \
-			--with-ping6-command="${_PING6_CMD}" \
+			--with-ping6-command="/sbin/ping6 -n -t %d -c %d %s" \
 			ac_cv_path_PATH_TO_PING6=/sbin/ping6 \
 			ac_cv_path_PATH_TO_PING=/sbin/ping \
 			ac_cv_path_PATH_TO_QMAIL_QSTAT=/var/qmail/bin/qmail-qstat \
@@ -125,12 +125,6 @@ NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1300041
-_PING6_CMD=	/sbin/ping6 -n -X %d -c %d %s
-.else
-_PING6_CMD=	/sbin/ping6 -n -t %d -c %d %s
-.endif
 
 .if !exists(/usr/bin/ssh) && empty(PORT_OPTIONS:MSSH_PORTABLE)
 PLIST_SUB+=	SSH="@comment "

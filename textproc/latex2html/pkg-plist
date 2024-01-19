@@ -3,7 +3,7 @@ bin/pstoimg
 bin/texexpand
 lib/latex2html/cfgcache.pm
 lib/latex2html/l2hconf.pm
-man/man1/latex2html.1.gz
+share/man/man1/latex2html.1.gz
 %%DATADIR%%/IndicTeX-HTML/README
 %%DATADIR%%/IndicTeX-HTML/bengali.perl
 %%DATADIR%%/IndicTeX-HTML/bengali.sty

@@ -1,5 +1,6 @@
 PORTNAME=	dwarfdump
 PORTVERSION=	20161124
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.prevanders.net/
 DISTNAME=	libdwarf-${PORTVERSION}
@@ -17,7 +18,7 @@ WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/dwarfdump
 USES=		localbase:ldflags
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/dwarfdump man/man1/dwarfdump.1.gz
+PLIST_FILES=	bin/dwarfdump share/man/man1/dwarfdump.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -35,6 +36,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dwarfdump ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dwarfdump.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dwarfdump.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

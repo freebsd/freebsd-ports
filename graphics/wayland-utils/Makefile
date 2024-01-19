@@ -1,5 +1,6 @@
 PORTNAME=	wayland-utils
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +18,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	wayland
 PLIST_FILES=	bin/wayland-info \
-		man/man1/wayland-info.1.gz
+		share/man/man1/wayland-info.1.gz
 
 OPTIONS_DEFINE=	DRM
 OPTIONS_DEFAULT=DRM

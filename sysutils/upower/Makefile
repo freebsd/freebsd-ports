@@ -1,5 +1,6 @@
 PORTNAME=	upower
 DISTVERSION=	1.90.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	desktop@FreeBSD.org

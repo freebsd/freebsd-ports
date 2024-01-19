@@ -1,7 +1,7 @@
 bin/bspc
 bin/bspwm
-man/man1/bspc.1.gz
-man/man1/bspwm.1.gz
+share/man/man1/bspc.1.gz
+share/man/man1/bspwm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md

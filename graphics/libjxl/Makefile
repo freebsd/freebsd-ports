@@ -1,6 +1,6 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,8 +19,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	jbeich:skcms:42030a7:skcms/third_party/skcms \
-		libjpeg-turbo:libjpeg-turbo:2.1.5.1:libjpeg_turbo/third_party/libjpeg-turbo \
-		libjxl:testdata:6c94363:testdata/testdata \
+		libjxl:testdata:ff8d743:testdata/testdata \
 		webmproject:sjpeg:e5ab130:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS

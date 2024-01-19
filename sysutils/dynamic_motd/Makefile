@@ -10,8 +10,6 @@ WWW=		https://github.com/sstallion/dynamic_motd
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_12=	requires FreeBSD 13.0 or later
-
 NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstallion

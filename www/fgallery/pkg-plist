@@ -1,5 +1,5 @@
 bin/fgallery
-man/man1/fgallery.1.gz
+share/man/man1/fgallery.1.gz
 %%DATADIR%%/album/index.css
 %%DATADIR%%/album/index.html
 %%DATADIR%%/album/index.js

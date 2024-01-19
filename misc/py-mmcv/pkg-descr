@@ -1,0 +1,8 @@
+MMCV is a foundational library for computer vision research and provides
+the following functionalities:
+
+* Image/Video processing
+* Image and annotation visualization
+* Image transformation
+* Various CNN architectures
+* High-quality implementation of common CUDA ops

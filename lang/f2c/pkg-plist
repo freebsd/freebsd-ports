@@ -4,4 +4,4 @@ include/f2c.h
 lib/libf2c.a
 lib/libf2c.so
 lib/libf2c.so.%%LIBVER%%
-man/man1/f2c.1.gz
+share/man/man1/f2c.1.gz

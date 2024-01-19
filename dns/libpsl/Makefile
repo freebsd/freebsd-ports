@@ -1,6 +1,6 @@
 PORTNAME=	libpsl
 PORTVERSION=	0.21.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/rockdaboot/libpsl/releases/download/${PORTVERSION}/
 
@@ -45,6 +45,6 @@ IDN2_MESON_ON=		-Druntime=libidn2
 IDN2_USES=		iconv
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/psl-make-dafsa ${STAGEDIR}${PREFIX}/man/man1/psl-make-dafsa.1
+	${RM} ${STAGEDIR}${PREFIX}/bin/psl-make-dafsa ${STAGEDIR}${PREFIX}/share/man/man1/psl-make-dafsa.1
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	frotz
 PORTVERSION=	2.51
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	dave@661.org
@@ -21,7 +22,7 @@ ALL_TARGET=	nosound dumb
 INSTALL_TARGET=	frotz
 
 PLIST_FILES=	bin/frotz \
-		man/man6/frotz.6.gz
+		share/man/man6/frotz.6.gz
 
 PORTDOCS=	AUTHORS ChangeLog HOW_TO_PLAY README
 PORTEXAMPLES=	frotz.conf-big frotz.conf-small
@@ -30,12 +31,12 @@ OPTIONS_DEFINE=		DOCS EXAMPLES DUMB
 DUMB_DESC=		Install dfrotz (dumb frotz)
 
 DUMB_PLIST_FILES=	bin/dfrotz \
-			man/man6/dfrotz.6.gz
+			share/man/man6/dfrotz.6.gz
 DUMB_PORTDOCS=	DUMB
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -43,7 +44,7 @@ do-install-DOCS-on:
 
 do-install-DUMB-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/d${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/d${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/doc/d${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

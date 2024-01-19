@@ -1,6 +1,6 @@
---- client/menu.c.orig	Tue Dec 27 10:06:52 2005
-+++ client/menu.c	Thu Mar 22 00:36:51 2007
-@@ -898,7 +898,7 @@
+--- client/menu.c.orig	2005-12-27 13:06:52 UTC
++++ client/menu.c
+@@ -898,7 +898,7 @@ static void StartNetworkServerFunc( void *unused )
  
  void Multiplayer_MenuInit( void )
  {
@@ -9,7 +9,7 @@
  	if (!server_menu)
  		server_menu = Cvar_Get ("server_menu", "1", 0);
  
-@@ -4784,7 +4784,7 @@
+@@ -4784,7 +4784,7 @@ static qboolean IconOfSkinExists( char *skin, char **f
  	return false;
  }
  

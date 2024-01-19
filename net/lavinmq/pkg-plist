@@ -5,6 +5,6 @@
 bin/lavinmq
 bin/lavinmqctl
 bin/lavinmqperf
-man/man1/lavinmq.1.gz
-man/man1/lavinmqctl.1.gz
-man/man1/lavinmqperf.1.gz
+share/man/man1/lavinmq.1.gz
+share/man/man1/lavinmqctl.1.gz
+share/man/man1/lavinmqperf.1.gz

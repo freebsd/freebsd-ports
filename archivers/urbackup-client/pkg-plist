@@ -2,7 +2,7 @@ bin/blockalign
 bin/urbackupclientctl
 %%GUI%%bin/urbackupclientgui
 sbin/urbackupclientbackend
-@(,,0444) man/man1/urbackupclientbackend.1.gz
+share/man/man1/urbackupclientbackend.1.gz
 @mode 0600
 @sample etc/urbackup/mariadbdump.conf.sample
 @sample etc/urbackup/mariadbxtrabackup.conf.sample

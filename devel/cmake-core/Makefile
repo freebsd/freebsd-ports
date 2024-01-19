@@ -4,6 +4,9 @@ DISTVERSION=	${_CMAKE_VERSION}
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
 
+PATCH_SITES=	https://gitlab.kitware.com/cmake/cmake/-/commit/
+PATCHFILES=	61436858e431b137252b3d5e63ee579c7c575103.patch:-p1 # Fix pkg-config trailing whitespace
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform Makefile generator
 WWW=		https://www.cmake.org/

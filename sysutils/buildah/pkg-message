@@ -1,4 +1,4 @@
-The FreeBSD port of the buildah image building tool is experimental and should
+The FreeBSD port of the Buildah image building tool is experimental and should
 be used for evaluation and testing purposes only.
 
 Basic usage follows:

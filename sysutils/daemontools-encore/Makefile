@@ -1,5 +1,6 @@
 PORTNAME=	daemontools-encore
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/daemontools-encore/
 
@@ -82,7 +83,7 @@ PLIST_FILES=	\
 	%%DOCSDIR%%/LICENSE  \
 	%%DOCSDIR%%/CHANGES  \
 	%%DOCSDIR%%/CHANGES.djb \
-	${MANFILES:S,^,man/man8/,:S,$,.gz,}
+	${MANFILES:S,^,share/man/man8/,:S,$,.gz,}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/svscanboot.sh ${STAGEDIR}${PREFIX}/bin/svscanboot
@@ -94,7 +95,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for manfile in ${MANFILES}
-	${INSTALL_MAN} ${WRKSRC}/${manfile} ${STAGEDIR}${MAN1PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${manfile} ${STAGEDIR}${PREFIX}/share/man/man8/
 .endfor
 
 .include <bsd.port.mk>

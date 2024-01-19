@@ -21,7 +21,7 @@ lib/libSystem.so
 lib/libSystem.so.1
 lib/libSystem.so.1.0
 libdata/pkgconfig/libSystem.pc
-%%PORTDOCS%%man/man1/configctl.1.gz
+%%PORTDOCS%%share/man/man1/configctl.1.gz
 %%PORTDOCS%%share/gtk-doc/html/libSystem/libSystem-license.html
 %%PORTDOCS%%share/gtk-doc/html/libSystem/libSystem-mutator.html
 %%PORTDOCS%%share/gtk-doc/html/libSystem/libSystem-variable.html

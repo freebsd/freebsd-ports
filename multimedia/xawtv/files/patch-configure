@@ -1,6 +1,6 @@
---- configure.orig	2013-04-02 15:20:33.000000000 +0200
-+++ configure	2013-05-15 11:26:05.000000000 +0200
-@@ -5244,7 +5244,7 @@
+--- configure.orig	2020-05-15 23:35:58 UTC
++++ configure
+@@ -5296,7 +5296,7 @@ if ${ac_cv_lib_zvbi_vbi_capture_fd+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5277,7 +5277,7 @@
+@@ -5329,7 +5329,7 @@ $as_echo "$ac_cv_lib_zvbi_vbi_capture_fd" >&6; }
  if test "x$ac_cv_lib_zvbi_vbi_capture_fd" = xyes; then :
  
  $as_echo "#define HAVE_ZVBI 1" >>confdefs.h
@@ -18,7 +18,7 @@
  fi
  
  else
-@@ -5379,7 +5379,7 @@
+@@ -5431,7 +5431,7 @@ $as_echo "$ac_cv_lib_dv_dv_decoder_new" >&6; }
  if test "x$ac_cv_lib_dv_dv_decoder_new" = xyes; then :
  
  $as_echo "#define HAVE_DV 1" >>confdefs.h
@@ -27,8 +27,8 @@
  fi
  
  else
-@@ -5914,23 +5914,14 @@
-
+@@ -5966,23 +5966,14 @@ VERSION="`head -1 $srcdir/Changes`"
+ 
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for X11 config directory" >&5
  $as_echo_n "checking for X11 config directory... " >&6; }
 -x11conf=/usr/lib/X11
@@ -38,8 +38,8 @@
 +x11conf=/etc/X11
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $x11conf" >&5
  $as_echo "$x11conf" >&6; }
-
-
+ 
+ 
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for X11 app-defaults directory" >&5
  $as_echo_n "checking for X11 app-defaults directory... " >&6; }
 -resdir=/usr/lib/X11
@@ -52,5 +52,4 @@
 +resdir=/usr/X11R6/lib/X11
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $resdir/app-defaults" >&5
  $as_echo "$resdir/app-defaults" >&6; }
-
-
+ 

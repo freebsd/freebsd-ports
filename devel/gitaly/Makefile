@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.6.2
+DISTVERSION=	16.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MY_DEPENDS=	git>=2.42.0:devel/git
 BUILD_DEPENDS=	bash>0:shells/bash \
 		${LOCALBASE}/bin/cmake:devel/cmake-core \
+		pcre2>0:devel/pcre2 \
+		http-parser>0:www/http-parser \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		libhttp_parser.so:www/http-parser
 
 USES=		cpe gmake go:modules,no_targets iconv pkgconfig ssl
 

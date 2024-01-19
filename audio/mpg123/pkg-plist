@@ -8,13 +8,13 @@ include/out123.h
 include/syn123.h
 lib/libmpg123.so
 lib/libmpg123.so.0
-lib/libmpg123.so.0.48.1
+lib/libmpg123.so.0.48.2
 lib/libout123.so
 lib/libout123.so.0
-lib/libout123.so.0.5.0
+lib/libout123.so.0.5.1
 lib/libsyn123.so
 lib/libsyn123.so.0
-lib/libsyn123.so.0.2.2
+lib/libsyn123.so.0.2.3
 lib/mpg123/output_dummy.so
 lib/mpg123/output_oss.so
 %%SNDIO%%lib/mpg123/output_sndio.so

@@ -1,6 +1,6 @@
 PORTNAME=	xstarroll
 PORTVERSION=	1.1b
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://kozos.jp/myfreesoft/
@@ -16,7 +16,7 @@ USE_XORG=	xpm xt xaw
 ALL_TARGET=	xstarroll
 
 PLIST_FILES=	bin/xstarroll \
-		man/man1/xstarroll.1.gz
+		share/man/man1/xstarroll.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
@@ -25,6 +25,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xstarroll ${STAGEDIR}${PREFIX}/bin/xstarroll
-	${INSTALL_MAN} ${WRKSRC}/xstarroll.man ${STAGEDIR}${MANPREFIX}/man/man1/xstarroll.1
+	${INSTALL_MAN} ${WRKSRC}/xstarroll.man ${STAGEDIR}${PREFIX}/share/man/man1/xstarroll.1
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	lz4
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/lz4/lz4/releases/download/v${PORTVERSION}/

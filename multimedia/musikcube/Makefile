@@ -29,10 +29,12 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:noninja compiler:c++17-lang pkgconfig ssl
+USES=		cmake:noninja compiler:c++17-lang ncurses pkgconfig ssl
 USES+=		localbase # workaround for https://github.com/clangen/musikcube/issues/600
 USE_LDCONFIG=	yes
 CMAKE_ON=	USE_BASU
+CMAKE_ARGS+=	-DNCURSES_DISABLE_LIB_SUFFIXES=false
+CMAKE_ON+=	FREEBSD_USE_BASE_NCURSES
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
@@ -43,18 +45,5 @@ post-install:
 		share/musikcube/musikcube \
 		share/musikcube/musikcubed \
 		share/musikcube/plugins/*.so
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=		ncurses
-CMAKE_ARGS+=	-DNCURSES_DISABLE_LIB_SUFFIXES=false
-CMAKE_ON+=	FREEBSD_USE_BASE_NCURSES
-.else
-USES+=		ncurses:port
-CFLAGS+=	-I${LOCALBASE}/include/ncurses
-CMAKE_ARGS+=	-DNCURSES_DISABLE_LIB_SUFFIXES=true
-CMAKE_OFF+=	FREEBSD_USE_BASE_NCURSES
-.endif
 
 .include <bsd.port.mk>

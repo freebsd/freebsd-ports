@@ -1,6 +1,6 @@
 PORTNAME=	prql
-DISTVERSION=	0.11.0
-PORTREVISION=	0
+DISTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -30,7 +30,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
-		anyhow-1.0.75 \
+		anyhow-1.0.76 \
 		ariadne-0.3.0 \
 		arrayvec-0.7.2 \
 		arrow-49.0.0 \
@@ -355,7 +355,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
-		serde_yaml-0.9.27 \
+		serde_yaml-0.9.29 \
 		sha1-0.10.5 \
 		sha2-0.10.7 \
 		sharded-slab-0.1.4 \
@@ -371,7 +371,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		sqlformat-0.2.3 \
-		sqlparser-0.40.0 \
+		sqlparser-0.41.0 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
 		stringprep-0.1.2 \
@@ -383,7 +383,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		subprocess-0.2.9 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.41 \
+		syn-2.0.43 \
 		tap-1.0.1 \
 		tar-0.4.38 \
 		target-lexicon-0.12.11 \
@@ -403,7 +403,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.0 \
+		tokio-1.35.1 \
 		tokio-macros-2.2.0 \
 		tokio-postgres-0.7.10 \
 		tokio-rustls-0.23.4 \
@@ -429,7 +429,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode_categories-0.1.1 \
 		unindent-0.2.3 \
 		unreachable-1.0.0 \
-		unsafe-libyaml-0.2.9 \
+		unsafe-libyaml-0.2.10 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
 		url-2.3.1 \

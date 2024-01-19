@@ -1,9 +1,7 @@
 PORTNAME=	xsd
-DISTVERSION=	4.1.0.a11
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	+dep
+DISTVERSION=	4.2.0
 CATEGORIES=	devel
-MASTER_SITES=	https://codesynthesis.com/~boris/tmp/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://www.codesynthesis.com/download/${PORTNAME}/${DISTVERSION:R}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	W3C XML Schema to C++ translator
@@ -12,43 +10,38 @@ WWW=		https://www.codesynthesis.com/projects/xsd/
 LICENSE=		FLOSSE GPLv2
 LICENSE_COMB=		dual
 LICENSE_NAME_FLOSSE=	FLOSS Exception
-LICENSE_FILE_FLOSSE=	${WRKSRC}/xsd/FLOSSE
+LICENSE_FILE_FLOSSE=	${WRKSRC}/FLOSSE
 LICENSE_PERMS_FLOSSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/build-0.3/abspath.make:devel/build
-# libxsd-frontend should come from a separate port as well, but at the moment
-# its distribution as a separate tarball is so poor that it does not even have
-# a `make install'.
+BUILD_DEPENDS=	build2>=0:devel/build2
 LIB_DEPENDS=	libcutl.so:devel/libcutl \
-		libxerces-c.so:textproc/xerces-c3
+		libxerces-c.so:textproc/xerces-c3 \
+		libxsd-frontend.so:devel/libxsd-frontend
 
-USES=		compiler:c++11-lang ghostscript:build gmake localbase:ldflags tar:bzip2
-# devel/libcutl 1.10.0 does not work with C++17 which is the default since
-# clang 16. This can be removed once that port starts working with C++17 and
-# has its own USE_CXXSTD removed.
-USE_CXXSTD=	c++11
+USES=		compiler:c++2b-lang pkgconfig
 
-MAKEFILE=	makefile
-MAKE_ARGS=	EXTERNAL_LIBCUTL=y \
-		install_prefix=${STAGEDIR}${PREFIX} \
-		install_man_dir=${STAGEDIR}${MANPREFIX}/man \
-		verbose=1
-ALL_TARGET=	# no default target should be passed to gmake.
+OPTIONS_DEFINE=	DOCS
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+B_CMD=		${LOCALBASE}/bin/b
+B_ARGS=		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
 
-post-patch:
-# Use devel/build instead of the port's bundled copy.
-	${RM} -r ${WRKSRC}/build-0.3
-	${LN} -s ${LOCALBASE}/include/build-0.3 ${WRKSRC}/build-0.3
-# Avoid conflict with C++20 <version> by adding .txt suffix
-	@${MV} ${WRKSRC}/libxsd-frontend/version \
-		${WRKSRC}/libxsd-frontend/version.txt
+do-build:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${B_CMD} configure ${B_ARGS} \
+		config.cxx=${CXX} \
+		config.cxx.coptions="${CXXFLAGS}" \
+		config.cxx.loptions="${LDFLAGS} ${STRIP}" \
+		config.bin.lib=shared \
+		config.bin.rpath=${PREFIX}/lib \
+		config.install.chroot=${STAGEDIR} \
+		config.install.root=${PREFIX}
+
+do-install:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${B_CMD} install ${B_ARGS}
 
 post-install:
-# Install examples into the right directory.
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${MV} ${STAGEDIR}${DOCSDIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-	${RMDIR} ${STAGEDIR}${DOCSDIR}/examples
+# Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
+# called `xsd'.
+	@cd ${STAGEDIR}${PREFIX}/bin && ${MV} xsd xsdcxx
+	@cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${MV} xsd.1 xsdcxx.1
 
 .include <bsd.port.mk>

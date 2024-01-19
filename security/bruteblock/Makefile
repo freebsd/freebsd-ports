@@ -1,6 +1,6 @@
 PORTNAME=	bruteblock
 PORTVERSION=	0.0.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 MASTER_SITES=	https://samm.kiev.ua/bruteblock/
 
@@ -30,7 +30,7 @@ do-install:
 .for file in ssh proftpd
 	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${STAGEDIR}${CONFDIR}/${file}.conf.sample
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

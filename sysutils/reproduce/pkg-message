@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+This port requires either sysutils/appjail or sysutils/appjail-devel
+to work properly.
+EOM
+}
+]

@@ -1,6 +1,6 @@
 PORTNAME=	sqlgrey
 PORTVERSION=	1.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 
@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${STAGEDIR}${PREFIX}/sbin
-	cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${STAGEDIR}${MANPREFIX}/man/man1/sqlgrey.1
+	cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${STAGEDIR}${PREFIX}/share/man/man1/sqlgrey.1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in ${ETCFILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${ETCDIR}/${i}.sample

@@ -1,6 +1,6 @@
 PORTNAME=	sunclock
 PORTVERSION=	3.57
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -49,7 +49,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} sunclock \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} sunclock.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} Sunclockrc \
 		${STAGEDIR}${DATADIR})

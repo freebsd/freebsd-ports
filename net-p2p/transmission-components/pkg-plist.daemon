@@ -1,6 +1,6 @@
 bin/transmission-daemon
 @dir %%ETCDIR%%/home
-man/man1/transmission-daemon.1.gz
+share/man/man1/transmission-daemon.1.gz
 %%WEB%%%%DATADIR%%/public_html/images/favicon.ico
 %%WEB%%%%DATADIR%%/public_html/images/favicon.png
 %%WEB%%%%DATADIR%%/public_html/images/webclip-icon.png

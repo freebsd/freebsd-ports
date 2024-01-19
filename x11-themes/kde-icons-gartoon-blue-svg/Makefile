@@ -9,7 +9,7 @@ COMMENT=	KDE Gartoon Blue SVG iconset
 WWW=		http://www.kde-look.org/content/show.php?content=17362
 
 DEPRCATED=	Upstream WWW returns NOT FOUND
-EXPIRATION_DATE=	2023-01-25
+EXPIRATION_DATE=	2024-01-25
 
 USES=		tar:bzip2
 

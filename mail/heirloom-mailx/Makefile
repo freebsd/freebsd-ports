@@ -1,6 +1,6 @@
 PORTNAME=	mailx
 PORTVERSION=	12.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	mail
 MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
@@ -27,21 +27,17 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-MAKE_ARGS+=	IPv6="-DHAVE_IPv6_FUNCS"
-.endif
+IPV6_MAKE_ARGS=	-IPv6="-DHAVE_IPv6_FUNCS"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/nail.rc ${STAGEDIR}${PREFIX}/etc/nail.rc.sample
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

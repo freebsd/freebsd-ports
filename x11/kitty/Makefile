@@ -96,11 +96,6 @@ USES+=		ncurses:port
 USES+=		ncurses
 .endif
 
-# fix clang static_assert on 12.x releases, https://github.com/kovidgoyal/kitty/pull/5398
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kitty_data-types.h
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -i.bak -e "s:'go':'${GO_CMD}':1" ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -i.bak -e "s:%%DATADIR%%:${DATADIR}:1" \
@@ -127,8 +122,8 @@ do-install:
 	       	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/terminfo/kitty.terminfo \
 		${STAGEDIR}${PREFIX}/share/misc/
-	${INSTALL_MAN} ${BUILD_DIR}/share/man/man1/kitty.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
-	${INSTALL_MAN} ${BUILD_DIR}/share/man/man5/kitty.conf.5 ${STAGEDIR}${MANPREFIX}/share/man/man5
+	${INSTALL_MAN} ${BUILD_DIR}/share/man/man1/kitty.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${BUILD_DIR}/share/man/man5/kitty.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${STRIP_CMD} ${_STRIP_TARGETS:S|^|${STAGEDIR}${DATADIR}/|}
 
 do-install-DOCS-on:

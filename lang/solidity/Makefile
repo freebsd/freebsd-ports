@@ -10,7 +10,7 @@ WWW=		https://github.com/ethereum/solidity
 
 LICENSE=	GPLv3
 
-NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	solidity currently does not support big endian systems
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \

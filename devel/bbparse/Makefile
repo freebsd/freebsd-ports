@@ -10,7 +10,6 @@ WWW=		https://github.com/Netflix/bbparse
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_12=does not build
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USE_GITHUB=	yes

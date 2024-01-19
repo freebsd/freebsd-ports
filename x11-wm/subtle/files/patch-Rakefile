@@ -5,11 +5,10 @@
    "cc"         => ENV["CC"] || "gcc",
    "destdir"    => ENV["DESTDIR"] || "",
 -  "prefix"     => "/usr",
--  "manprefix"  => "$(prefix)/share/man",
++  "prefix"     => ENV["PREFIX"] || "/usr",
+   "manprefix"  => "$(prefix)/share/man",
 -  "bindir"     => "$(destdir)/$(prefix)/bin",
 -  "sysconfdir" => "$(destdir)/etc",
-+  "prefix"     => ENV["PREFIX"] || "/usr",
-+  "manprefix"  => "%s/man" % (ENV["MANPREFIX"] || "$(prefix)/share"),
 +  "bindir"     => "$(destdir)$(prefix)/bin",
 +  "sysconfdir" => "$(destdir)$(prefix)/etc",
    "configdir"  => "$(sysconfdir)/xdg/$(PKG_NAME)",
@@ -62,7 +61,7 @@
          unless libs.nil?
            # Update flags
            @options["cpppath"] << " %s" % [ cflags ]
-@@ -495,6 +498,7 @@ task(:config) do
+@@ -495,6 +498,7 @@ Configuration.......: #{@options["configdir"]}
  -----------------
  Binaries............: #{@options["bindir"]}
  Configuration.......: #{@options["configdir"]}
@@ -70,7 +69,7 @@
  Extension...........: #{@options["extdir"]}
  
  Xpm support.........: #{@options["xpm"]}
-@@ -503,6 +507,8 @@ Xinerama support....: #{@options["xinera
+@@ -503,6 +507,8 @@ Debugging messages..: #{@options["debug"]}
  XRandR support......: #{@options["xrandr"]}
  XTest support.......: #{@options["xtest"]}
  Debugging messages..: #{@options["debug"]}

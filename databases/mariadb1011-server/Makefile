@@ -23,6 +23,8 @@ WWW=		https://mariadb.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+#EXPIRATION_DATE=	2028-02-01
+
 LIB_DEPENDS+=	libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libpcre2-8.so:devel/pcre2 \

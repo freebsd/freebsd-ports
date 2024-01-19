@@ -1,6 +1,6 @@
 PORTNAME=	pal
 PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}cal/${PORTNAME}/${PORTVERSION}
 
@@ -29,6 +29,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.conf \
 		${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template \
-		${STAGEDIR}${MANPREFIX}/man/man1/pal.1
+		${STAGEDIR}${PREFIX}/share/man/man1/pal.1
 
 .include <bsd.port.mk>

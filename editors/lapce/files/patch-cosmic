@@ -1,0 +1,11 @@
+--- ../cosmic-text-f7a20704d6ebbe8fb82d0bb579c37c53e7ae9747/src/font/fallback/mod.rs.orig	2023-12-31 09:09:22.570192000 +0000
++++ ../cosmic-text-f7a20704d6ebbe8fb82d0bb579c37c53e7ae9747/src/font/fallback/mod.rs	2023-12-31 09:09:48.358365000 +0000
+@@ -11,7 +11,7 @@
+ use self::platform::*;
+ 
+ #[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows",)))]
+-#[path = "other.rs"]
++#[path = "unix.rs"]
+ mod platform;
+ 
+ #[cfg(target_os = "macos")]

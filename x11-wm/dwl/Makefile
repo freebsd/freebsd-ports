@@ -15,8 +15,7 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.dwm
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.17.0:x11-toolkits/wlroots
+		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \

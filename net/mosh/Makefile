@@ -17,7 +17,8 @@ USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-utempter --without-ncurses
 CONFIGURE_ENV+=	OpenSSL_CFLAGS="-I${OPENSSLINC}" OpenSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-		TINFO_CFLAGS="-I/usr/include" ac_cv_have_decl_bswap64=yes
+		TINFO_CFLAGS="-I/usr/include" ac_cv_have_decl_bswap64=yes \
+		ac_cv_have_decl___builtin_bswap64=yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++17
 

@@ -1,6 +1,6 @@
 PORTNAME=	ml1
 PORTVERSION=	4.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 		http://www.ancientgeek.org.uk/distfiles/
@@ -26,7 +26,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ml1 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ml1.1.gz \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

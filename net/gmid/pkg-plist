@@ -1,6 +1,10 @@
 @sample etc/gmid.conf.sample
+bin/gemexp
 bin/gg
 bin/gmid
+bin/titan
+man/man1/gemexp.1.gz
 man/man1/gg.1.gz
-man/man1/gmid.1.gz
+man/man1/titan.1.gz
 man/man5/gmid.conf.5.gz
+man/man8/gmid.8.gz

@@ -231,7 +231,6 @@
     SUBDIR += totd
     SUBDIR += udns
     SUBDIR += unbound
-    SUBDIR += updatedd
     SUBDIR += utdns
     SUBDIR += vhostcname
     SUBDIR += vizone

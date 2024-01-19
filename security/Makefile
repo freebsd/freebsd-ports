@@ -802,8 +802,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php80-filter
-    SUBDIR += php80-sodium
     SUBDIR += php81-filter
     SUBDIR += php81-sodium
     SUBDIR += php82-filter
@@ -1329,6 +1327,7 @@
     SUBDIR += tpm-quote-tools
     SUBDIR += tpm-tools
     SUBDIR += tpm2-abrmd
+    SUBDIR += tpm2-pkcs11
     SUBDIR += tpm2-tools
     SUBDIR += tpm2-tss
     SUBDIR += transcrypt

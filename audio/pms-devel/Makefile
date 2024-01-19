@@ -1,6 +1,5 @@
 PORTNAME=	pms-devel
-PORTVERSION=	0.0.20221112
-PORTREVISION=	10
+PORTVERSION=	0.0.20231224
 CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -10,12 +9,12 @@ WWW=		https://github.com/ambientsound/pms
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ambientsound
+GH_ACCOUNT=	kimtore
 GH_PROJECT=	pms
-GH_TAGNAME=	40d6e37
+GH_TAGNAME=	628d497
 
 GH_TUPLE=	\
 		RoaringBitmap:roaring:v0.9.4:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
@@ -38,23 +37,23 @@ GH_TUPLE=	\
 		blevesearch:zapx:v15.3.5:blevesearch_zapx_v15/vendor/github.com/blevesearch/zapx/v15 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		fhs:gompd:v2.0.0:fhs_gompd/vendor/github.com/fhs/gompd \
+		fhs:gompd:v2.3.0:fhs_gompd_v2/vendor/github.com/fhs/gompd/v2 \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v2.5.3:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		gdamore:tcell:v2.7.0:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.15.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		json-iterator:go:f7279a603ede:json_iterator_go/vendor/github.com/json-iterator/go \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		rivo:uniseg:v0.4.3:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		stretchr:testify:v1.7.1:stretchr_testify/vendor/github.com/stretchr/testify
 
 GO_BUILDFLAGS=	-ldflags "-X main.buildVersion=${DISTVERSION}"

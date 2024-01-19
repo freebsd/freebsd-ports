@@ -1,7 +1,7 @@
 PORTNAME=	InsightToolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science biology
 MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v${DISTVERSION}/:data
 DISTFILES=	InsightData-${DISTVERSION}.tar.gz:data
@@ -89,6 +89,14 @@ post-extract:
 pre-configure: # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257789
 	@${SETENV} ${MAKE_ENV} ${CC} -c -fPIC ${FILESDIR}/ftime.c -o ${WRKSRC}/libftime.o
 	@${AR} -rcs ${WRKSRC}/libftime.a ${WRKSRC}/libftime.o
+
+post-configure: # fix conflict with lp_solve by renaming the shared library to liblp_solve55_itk, see https://github.com/InsightSoftwareConsortium/ITK/issues/4031
+	@${REINPLACE_CMD} \
+		-e 's|lpsolve55|lpsolve55_itk|g' \
+		${WRKSRC}/Modules/Remote/RTK/CMakeLists.txt \
+		${WRKSRC}/Modules/Remote/RTK/src/CMakeLists.txt \
+		${WRKSRC}/Modules/Remote/RTK/utilities/lp_solve/CMakeLists.txt
+
 
 post-install: # remove contentless docs
 	@${RM} -r ${STAGEDIR}${PREFIX}/share

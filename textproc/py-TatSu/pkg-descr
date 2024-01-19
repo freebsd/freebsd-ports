@@ -1,0 +1,10 @@
+TatSu is a tool that takes grammars in a variation of EBNF as input, and outputs
+memoizing (Packrat) PEG parsers in Python.
+
+TatSu can compile a grammar stored in a string into a tatsu.grammars.Grammar
+object that can be used to parse any given input, much like the re module does
+with regular expressions, or it can generate a Python module that implements the
+parser.
+
+TatSu supports left-recursive rules in PEG grammars, and it honors
+left-associativity in the resulting parse trees.

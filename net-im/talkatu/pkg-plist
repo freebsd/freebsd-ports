@@ -27,7 +27,7 @@ lib/libtalkatu.so.0
 lib/libtalkatu.so.0.1.0
 lib/girepository-1.0/Talkatu-0.0.typelib
 libdata/pkgconfig/talkatu.pc
-man/man1/talkatu-demo.1.gz
+share/man/man1/talkatu-demo.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

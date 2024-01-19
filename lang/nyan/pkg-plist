@@ -1,4 +1,5 @@
 bin/nyancat
+include/nyan/api_error.h
 include/nyan/ast.h
 include/nyan/basic_type.h
 include/nyan/c3.h
@@ -12,6 +13,7 @@ include/nyan/error.h
 include/nyan/file.h
 include/nyan/id_token.h
 include/nyan/inheritance_change.h
+include/nyan/lang_error.h
 include/nyan/lexer/bracket.h
 include/nyan/lexer/impl.h
 include/nyan/lexer/lexer.h
@@ -27,6 +29,8 @@ include/nyan/object.h
 include/nyan/object_history.h
 include/nyan/object_info.h
 include/nyan/object_state.h
+include/nyan/object_notifier.h
+include/nyan/object_notifier_types.h
 include/nyan/ops.h
 include/nyan/parser.h
 include/nyan/patch_info.h
@@ -37,6 +41,7 @@ include/nyan/token_stream.h
 include/nyan/transaction.h
 include/nyan/type.h
 include/nyan/util.h
+include/nyan/util/flags.h
 include/nyan/value/boolean.h
 include/nyan/value/container.h
 include/nyan/value/file.h
@@ -48,6 +53,10 @@ include/nyan/value/set_base.h
 include/nyan/value/text.h
 include/nyan/value/value.h
 include/nyan/value/value_holder.h
+include/nyan/value/container_types.h
+include/nyan/value/dict.h
+include/nyan/value/none.h
+include/nyan/value_token.h
 include/nyan/view.h
 lib/cmake/nyan/nyanConfig.cmake
 lib/cmake/nyan/nyanConfigVersion.cmake
@@ -55,4 +64,4 @@ lib/cmake/nyan/nyanTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nyan/nyanTargets.cmake
 lib/libnyan.so
 lib/libnyan.so.1
-lib/libnyan.so.1.0
+lib/libnyan.so.0.3.0

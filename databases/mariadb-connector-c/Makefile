@@ -1,5 +1,5 @@
 PORTNAME=	mariadb-connector-c
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.8
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \

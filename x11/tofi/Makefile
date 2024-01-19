@@ -1,6 +1,7 @@
 PORTNAME=	tofi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,10 +35,10 @@ OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}-drun.1.gz \
-			man/man1/${PORTNAME}-run.1.gz \
-			man/man1/${PORTNAME}.1.gz \
-			man/man5/${PORTNAME}.5.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}-drun.1.gz \
+			share/man/man1/${PORTNAME}-run.1.gz \
+			share/man/man1/${PORTNAME}.1.gz \
+			share/man/man5/${PORTNAME}.5.gz
 
 post-patch:
 # Respect PREFIX for system config and *.desktop

@@ -1,5 +1,6 @@
 PORTNAME=	mcwm
 PORTVERSION=	20130209
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://hack.org/mc/hacks/mcwm/
 
@@ -17,7 +18,8 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 USES=		tar:bzip2 xorg
 USE_XORG=	xcb
 
-PLIST_FILES=	bin/mcwm bin/hidden man/man1/mcwm.1.gz man/man1/hidden.1.gz
+PLIST_FILES=	bin/mcwm bin/hidden share/man/man1/mcwm.1.gz \
+		share/man/man1/hidden.1.gz
 PORTDOCS=	README NEWS
 
 OPTIONS_DEFINE=	DOCS
@@ -37,10 +39,10 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	${INSTALL_PROGRAM} ${WRKSRC}/hidden ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hidden.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/hidden.1
+		${STAGEDIR}${PREFIX}/share/man/man1/hidden.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

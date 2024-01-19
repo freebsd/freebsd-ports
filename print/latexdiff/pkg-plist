@@ -3,6 +3,6 @@ bin/latexdiff-fast
 bin/latexdiff-so
 bin/latexdiff-vc
 bin/latexrevise
-man/man1/latexdiff.1.gz
-man/man1/latexdiff-vc.1.gz
-man/man1/latexrevise.1.gz
+share/man/man1/latexdiff.1.gz
+share/man/man1/latexdiff-vc.1.gz
+share/man/man1/latexrevise.1.gz

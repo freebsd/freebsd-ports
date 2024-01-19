@@ -1,0 +1,10 @@
+SQLPage transforms your SQL queries into stunning websites
+
+SQLPage is a tool that allows you to build websites using nothing more than SQL
+queries. You write simple text files containing SQL queries, SQLPage runs them
+on your database, and renders the results as a website.
+
+You can display the information you SELECT from your database in lists, tables,
+cards and other user interface widgets. But you can also INSERT, UPDATE and
+DELETE data from your database using SQLPage, and build a full webapp with
+Create, Read, Update, Delete functionality.

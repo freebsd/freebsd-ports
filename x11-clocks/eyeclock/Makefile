@@ -1,6 +1,6 @@
 PORTNAME=	eyeclock
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://ftp.vector.co.jp/12/89/1347/
 DISTNAME=	eyeclk20
@@ -25,7 +25,7 @@ do-install:
 	octopusclock punpunclock silicagelclock taroclock umeharaclock
 	${LN} -sf eyeclock ${STAGEDIR}${PREFIX}/bin/${link}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/eyeclock.man ${STAGEDIR}${MANPREFIX}/man/man1/eyeclock.1
+	${INSTALL_MAN} ${WRKSRC}/eyeclock.man ${STAGEDIR}${PREFIX}/share/man/man1/eyeclock.1
 	${INSTALL_DATA} ${WRKSRC}/EyeClock.daemon \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/EyeClock
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/EyeClock

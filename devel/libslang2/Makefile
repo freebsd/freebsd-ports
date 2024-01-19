@@ -1,5 +1,6 @@
 PORTNAME=	libslang2
 PORTVERSION=	2.3.3
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jedsoft.org/releases/slang/
 DISTNAME=	slang-${PORTVERSION}
@@ -14,6 +15,7 @@ USES=		ncurses tar:bzip2
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all static

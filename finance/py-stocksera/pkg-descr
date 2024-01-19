@@ -1,0 +1,6 @@
+The stocksera module is the official API for Stocksera.
+
+It provides access to sata sources:
+Yahoo Finance, Finviz, Finnhub, FinancialModellingPrep, IBKR, Reddit, Finra,
+SEC, CompaniesMarketCap, SenateStockWatcher, HouseStockWatcher, Polygon,
+ARKFunds.io, Stocktwits, Twitter, Federal Reserve and much more...

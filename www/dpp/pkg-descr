@@ -1,0 +1,19 @@
+D++ is a lightweight and efficient library for Discord written in modern C++,
+covering as much of the API specification as possible with an incredibly small
+memory footprint even when caching large amounts of data.
+
+Library Features:
+* Support for Discord API v10
+* Really small memory footprint
+* Efficient caching system for guilds, channels, guild members, roles, users
+* Sharding and clustering (Many shards, one process: specify the number of
+  shards, or let the library decide)
+* Highly optimised ETF (Erlang Term Format) support for very fast websocket
+  throughput
+* Slash Commands/Interactions support
+* Voice support (sending and receiving audio)
+* The entire Discord API is available for use in the library
+* Stable Windows support
+* Ready-made compiled packages for Windows, Raspberry Pi (ARM64/ARM7/ARMv6),
+  Debian x86/x64, and RPM based distributions
+* Highly scalable for large amounts of guilds and users

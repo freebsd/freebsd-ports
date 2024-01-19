@@ -1,5 +1,0 @@
-bin/gngeo
-man/man1/gngeo.1.gz
-%%DATADIR%%/gngeo_data.zip
-%%DATADIR%%/romrc
-%%EXAMPLESDIR%%/gngeorc

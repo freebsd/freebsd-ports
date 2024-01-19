@@ -63,12 +63,4 @@ CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
 		ac_cv_lib_charset_locale_charset=no
 .endif
 
-# Prior to 1301508 we didn't ship openssl.pc which libarchive now expects
-# so we need to use the old approach on older versions of FreeBSD
-# which is not to define Requires.private in libarchive.pc
-
-.if ${PORT_OPTIONS:MOPENSSL} && ${OPSYS} == FreeBSD && ${OSVERSION} < 1301508
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-pkgconfig-compat
-.endif
-
 .include <bsd.port.post.mk>

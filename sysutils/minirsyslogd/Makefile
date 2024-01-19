@@ -1,6 +1,6 @@
 PORTNAME=	minirsyslogd
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/
 
@@ -15,6 +15,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8.gz \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>

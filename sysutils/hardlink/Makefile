@@ -1,5 +1,6 @@
 PORTNAME=	hardlink
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jak-linux.org/projects/hardlink/ \
 		DEBIAN
@@ -15,7 +16,7 @@ USES=		cpe pkgconfig tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 
 PLIST_FILES=	bin/hardlink \
-		man/man1/hardlink.1.gz
+		share/man/man1/hardlink.1.gz
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 PORTSCOUT=	limit:(?<!~rc[0-9])$$
@@ -28,6 +29,6 @@ PCRE_MAKE_ENV_OFF=	ENABLE=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hardlink ${STAGEDIR}${PREFIX}/bin/hardlink
-	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/hardlink.1
+	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${STAGEDIR}${PREFIX}/share/man/man1/hardlink.1
 
 .include <bsd.port.mk>

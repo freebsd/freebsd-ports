@@ -10,6 +10,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/JWT.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/LDAPSource.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/LDAPSourceSchema.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NGMimeBodyPart+SOGo.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NGMimeFileData+SOGo.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSArray+DAV.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSArray+Utilities.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSCalendarDate+SOGo.h
@@ -45,6 +46,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoGCSFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoLDAPDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoMailer.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoMobileProvision.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoObject.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoParentFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoPermissions.h
@@ -744,7 +746,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.9
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.9.0
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs

@@ -1,5 +1,6 @@
 PORTNAME=	dxpc
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/
 
@@ -17,10 +18,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
 MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}" \
 		bindir=${STAGEDIR}${PREFIX}/bin \
-		man1dir=${STAGEDIR}${MAN1PREFIX}/man/man1
+		man1dir=${STAGEDIR}${PREFIX}/share/man/man1
 
 PLIST_FILES=	bin/dxpc \
-		man/man1/dxpc.1.gz
+		share/man/man1/dxpc.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-R$$withval/lib||' ${WRKSRC}/configure

@@ -1,6 +1,7 @@
 PORTNAME=	keama
 ISCVERSION=	4.4.3-P1
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/${PORTNAME}/${PORTVERSION:S/P/-P/g} \
 		ZI
@@ -20,6 +21,7 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=--localstatedir=/var
 CPPFLAGS+=	-D_PATH_DHCPD_CONF='\"${PREFIX}/etc/dhcpd.conf\"'
 CFLAGS+=	-fPIC
@@ -29,7 +31,7 @@ SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
-PLIST_FILES=	sbin/keama man/man8/keama.8.gz \
+PLIST_FILES=	sbin/keama share/man/man8/keama.8.gz \
 		%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md \
 		%%PORTDOCS%%%%DOCSDIR%%/README.md \
 

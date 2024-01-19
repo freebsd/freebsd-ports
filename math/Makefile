@@ -304,6 +304,7 @@
     SUBDIR += edenmath
     SUBDIR += eigen3
     SUBDIR += eispack
+    SUBDIR += elan
     SUBDIR += elemental
     SUBDIR += elementary-calculator
     SUBDIR += elpa
@@ -436,6 +437,9 @@
     SUBDIR += lcalc
     SUBDIR += ldouble
     SUBDIR += lean
+    SUBDIR += lean4
+    SUBDIR += lean4-std
+    SUBDIR += leangz
     SUBDIR += lemon
     SUBDIR += levmar
     SUBDIR += lib2geom
@@ -708,7 +712,6 @@
     SUBDIR += p5-Math-BigInt-GMP
     SUBDIR += p5-Math-BigInt-Lite
     SUBDIR += p5-Math-BigInt-Pari
-    SUBDIR += p5-Math-BigRat
     SUBDIR += p5-Math-CDF
     SUBDIR += p5-Math-Calc-Units
     SUBDIR += p5-Math-Cephes
@@ -844,8 +847,6 @@
     SUBDIR += petanque
     SUBDIR += petiga
     SUBDIR += pffft
-    SUBDIR += php80-bcmath
-    SUBDIR += php80-gmp
     SUBDIR += php81-bcmath
     SUBDIR += php81-gmp
     SUBDIR += php82-bcmath
@@ -951,6 +952,7 @@
     SUBDIR += py-hdmedians
     SUBDIR += py-hepstats
     SUBDIR += py-heyoka
+    SUBDIR += py-hmmlearn
     SUBDIR += py-igraph
     SUBDIR += py-iminuit
     SUBDIR += py-intspan
@@ -1070,6 +1072,7 @@
     SUBDIR += py-spot
     SUBDIR += py-spreg
     SUBDIR += py-spvcm
+    SUBDIR += py-squarify
     SUBDIR += py-ssm
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
@@ -1176,8 +1179,10 @@
     SUBDIR += suitesparse-cxsparse
     SUBDIR += suitesparse-graphblas
     SUBDIR += suitesparse-klu
+    SUBDIR += suitesparse-lagraph
     SUBDIR += suitesparse-ldl
     SUBDIR += suitesparse-mongoose
+    SUBDIR += suitesparse-paru
     SUBDIR += suitesparse-rbio
     SUBDIR += suitesparse-spex
     SUBDIR += suitesparse-spqr
@@ -1200,6 +1205,7 @@
     SUBDIR += the-algorithms-c++
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
+    SUBDIR += tinyexpr
     SUBDIR += tinymt
     SUBDIR += tlapack
     SUBDIR += tmv
@@ -1227,7 +1233,6 @@
     SUBDIR += vtk9
     SUBDIR += wavelib
     SUBDIR += wcalc
-    SUBDIR += wfmath
     SUBDIR += wxmaxima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin

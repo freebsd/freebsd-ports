@@ -1,6 +1,6 @@
 PORTNAME=	dia2code
 PORTVERSION=	0.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -23,9 +23,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFLICTS_INSTALL=	dia2code+
 
 PLIST_FILES=	bin/dia2code \
-		man/man1/dia2code.1.gz
+		share/man/man1/dia2code.1.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/dia2code.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dia2code.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

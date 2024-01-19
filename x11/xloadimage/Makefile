@@ -1,6 +1,6 @@
 PORTNAME=	xloadimage
 PORTVERSION=	4.1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 graphics
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}.${VERSION}
@@ -54,9 +54,9 @@ do-install:
 		${LN} -sf xloadimage xsetbg && \
 		${LN} -sf xloadimage xview )
 	${INSTALL_PROGRAM} ${WRKSRC}/uufilter ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${STAGEDIR}${MAN1PREFIX}/man/man1/uufilter.1
-	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${STAGEDIR}${MAN1PREFIX}/man/man1/xloadimage.1
-	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && \
+	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${STAGEDIR}${PREFIX}/share/man/man1/uufilter.1
+	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${STAGEDIR}${PREFIX}/share/man/man1/xloadimage.1
+	@(cd ${STAGEDIR}${PREFIX}/share/man/man1 && \
 		${LN} -sf xloadimage.1 xsetbg.1 && \
 		${LN} -sf xloadimage.1 xview.1 )
 	${INSTALL_DATA} ${WRKSRC}/xloadimagerc ${STAGEDIR}${PREFIX}/etc/xloadimagerc.sample

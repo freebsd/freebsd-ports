@@ -1,6 +1,6 @@
 PORTNAME=	greyfix
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.kim-minh.com/pub/greyfix/ \
 		http://stereochro.me/distfiles/
@@ -25,6 +25,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}/var/db/greyfix
 	${INSTALL_PROGRAM} ${WRKSRC}/greyfix ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${FILESDIR}/greyfix.8 ${STAGEDIR}${MAN1PREFIX}/man/man8/
+	${INSTALL_MAN} ${FILESDIR}/greyfix.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>

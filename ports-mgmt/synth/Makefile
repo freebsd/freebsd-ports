@@ -28,14 +28,6 @@ WATCHDOG_DESC=	Build with watchdog monitor
 
 WATCHDOG_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-nowatchdog-portscan-buildcycle.adb
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=		ncurses:base
-.else
-USES+=		ncurses:port
-.endif
-
 .include <bsd.port.pre.mk>
 
 post-extract:

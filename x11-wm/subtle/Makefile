@@ -1,5 +1,6 @@
 PORTNAME=	subtle
 PORTVERSION=	0.11.3224
+PORTREVISION=	1
 CATEGORIES=	x11-wm ruby
 MASTER_SITES=	https://subtle.subforge.org/attachments/download/81/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-xi

@@ -197,10 +197,10 @@
 @sample %%ETCDIR%%/logcheck.logfiles.d/syslog.logfiles.sample
 @group
 bin/logcheck-test
-man/man1/logcheck-test.1.gz
-man/man8/logcheck.8.gz
-man/man8/logtail.8.gz
-man/man8/logtail2.8.gz
+share/man/man1/logcheck-test.1.gz
+share/man/man8/logcheck.8.gz
+share/man/man8/logtail.8.gz
+share/man/man8/logtail2.8.gz
 sbin/logcheck
 sbin/logtail
 sbin/logtail2

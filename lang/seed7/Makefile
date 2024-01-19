@@ -14,7 +14,7 @@ WWW=		https://seed7.sourceforge.net/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 

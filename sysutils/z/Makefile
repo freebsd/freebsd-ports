@@ -1,5 +1,6 @@
 PORTNAME=	z
 PORTVERSION=	1.12
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -16,11 +17,11 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 PLIST_FILES=	${DATADIR_REL}/z.sh \
-		man/man1/z.1.gz
+		share/man/man1/z.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/z.sh ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/z.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/z.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

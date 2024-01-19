@@ -13,6 +13,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20
+USE_CXXSTD=	c++11
 CONFIGURE_ARGS=	--disable-uspell \
 		--disable-voikko
 

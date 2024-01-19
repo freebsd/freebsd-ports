@@ -1,5 +1,5 @@
 bin/cawbird
-man/man1/cawbird.1.gz
+share/man/man1/cawbird.1.gz
 share/applications/uk.co.ibboard.cawbird.desktop
 share/dbus-1/services/uk.co.ibboard.cawbird.service
 share/icons/hicolor/16x16/apps/uk.co.ibboard.cawbird.png

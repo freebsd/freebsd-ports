@@ -5,4 +5,4 @@ etc/kon.cfg
 @(bin,bin,) share/fonts/bdf/k14.bdf.gz
 @(bin,bin,) share/fonts/bdf/8x16rk.bdf.gz
 @(bin,bin,) share/fonts/bdf/jiskan16.bdf.gz
-man/ja/man1/kon.1.gz
+share/man/ja/man1/kon.1.gz

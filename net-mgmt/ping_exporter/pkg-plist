@@ -1,6 +1,4 @@
-@mode 4755
 bin/ping_exporter
-@mode
 @sample %%ETCDIR%%.yml.sample
 %%DATADIR%%/newsyslog.conf.d/ping_exporter.conf
 %%DATADIR%%/syslog.d/ping_exporter.conf

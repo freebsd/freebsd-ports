@@ -1,5 +1,6 @@
 PORTNAME=	devd-mount
 DISTVERSION=	0.1.0-7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gc4810d4
 CATEGORIES=	sysutils
 
@@ -22,7 +23,7 @@ PLIST_FILES=	sbin/devd-mount \
 		sbin/automount \
 		etc/devd/devd-mount.conf \
 		"@sample etc/devd-mount.conf.sample" \
-		man/man8/devd-mount.8.gz
+		share/man/man8/devd-mount.8.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/devd-mount ${STAGEDIR}${PREFIX}/sbin
@@ -32,6 +33,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/devd-mount.conf \
 		${STAGEDIR}${PREFIX}/etc/devd-mount.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/Man/devd-mount.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

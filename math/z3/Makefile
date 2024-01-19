@@ -1,6 +1,6 @@
 PORTNAME=	z3
 DISTVERSIONPREFIX=	z3-
-DISTVERSION=	4.12.1
+DISTVERSION=	4.12.4
 CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/Z3Prover/z3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN_i386=	internal linker error: wrote incorrect addend value 0x2042E5B instead of 0x0 for dynamic relocation R_386_32 at offset 0x813397 against symbol __gxx_personality_v0
 
 USES=		compiler:c++11-lang python:build
 USE_GITHUB=	yes
@@ -35,6 +33,7 @@ GMP_CONFIGURE_ON=	--gmp
 GMP_USES=		localbase:ldflags
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
+CXXFLAGS_i386=	-fPIC
 CXXFLAGS_armv7=	-fPIC
 CXXFLAGS_powerpc=	-fPIC
 LDFLAGS_i386=		-Wl,-znotext

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 mips64 mips64el mips64elhf mips64hf powerpc64 powerpc64le riscv64 riscv64sf
 ONLY_FOR_ARCHS_REASON=	only 64-bit platforms are supported
-IGNORE_FreeBSD_12=does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix

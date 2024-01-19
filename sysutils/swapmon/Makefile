@@ -1,5 +1,6 @@
 PORTNAME=	swapmon
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,7 +16,7 @@ NO_ARCH=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
-PLIST_FILES=	sbin/swapmon man/man1/swapmon.1.gz
+PLIST_FILES=	sbin/swapmon share/man/man1/swapmon.1.gz
 
 post-extract:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/${PORTNAME}.sh.in \
@@ -25,6 +26,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	pcal
 PORTVERSION=	4.11.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -34,7 +35,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/html/pcal.cgi ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/html/pcal.pl ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/doc/pcal.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/pcal.1
+		${STAGEDIR}${PREFIX}/share/man/man1/pcal.1
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

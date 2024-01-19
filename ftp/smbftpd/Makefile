@@ -9,22 +9,22 @@ MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	FTP daemon using Samba-like share management mechanism
 WWW=		https://www.twbsd.org/enu/smbftpd/index.php
 
-OPTIONS_DEFINE=	MYSQL PGSQL SSL ICONV
-ICONV_DESC=	Enable codepage to unicode conversion for UTF-8 FTP
-
-HAS_CONFIGURE=	yes
-MAKE_ENV+=	OSTYPE=FreeBSD
-CONFIGURE_ARGS+=	"--prefix=${PREFIX}"
-
 USES=		cpe perl5
 USE_RC_SUBR=	${PORTNAME}
 
-MYSQL_USES=	mysql
-MYSQL_CONFIGURE_WITH=	mysql
-PGSQL_USES=	pgsql
-PGSQL_CONFIGURE_WITH=	pgsql
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	"--prefix=${PREFIX}"
+
+MAKE_ENV+=	OSTYPE=FreeBSD
+
+OPTIONS_DEFINE=	PGSQL SSL ICONV
+
+ICONV_DESC=	Enable codepage to unicode conversion for UTF-8 FTP
+
 ICONV_USES=	iconv
 ICONV_CONFIGURE_WITH=	iconv
+PGSQL_USES=	pgsql
+PGSQL_CONFIGURE_WITH=	pgsql
 SSL_CONFIGURE_WITH=		ssl
 
 post-extract:

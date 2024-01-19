@@ -7,7 +7,6 @@ COMMENT=	Measures the TCP handshake RTT using the stats(9) statistics framework
 
 LICENSE=	BSD2CLAUSE
 
-IGNORE_FreeBSD_12=requires kernel OSVERSION 1300062 or above
 USE_GITHUB=	yes
 GH_ACCOUNT=	KlaraSystems
 GH_TAGNAME=	1c857b8bd6e071290d118c96c051fbdf7db40129

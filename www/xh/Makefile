@@ -1,7 +1,7 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.0
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -28,7 +28,7 @@ COMPLETIONS_DESC=		Install shell completions for bash, fish and zsh
 COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
-MANPAGES_PLIST_FILES=		man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=		share/man/man1/${PORTNAME}.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -47,6 +47,6 @@ post-install-DOCS-on:
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

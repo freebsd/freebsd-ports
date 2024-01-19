@@ -4,12 +4,12 @@
 # Usage:	USES=ghostscript or USES=ghostscript:args
 # Valid ARGS:	<version>, build, lib, run, test, x11
 #
-# version 	The chooseable versions are 9, agpl and 10. If no version is
-#		specified version 10 is selected. 9 and agpl are synonymous.
+# version 	The chooseable versions are 10 only. If no version is
+#		specified version 10 is selected.
 #
 #		USES=ghostscript:10	    # Use Ghostscript 10
 #		USES=ghostscript:run	# Use to set default Ghostscript as a run dependency
-#		USES=ghostscript:9,build # Use Ghostscript 9 as a build dependency.
+#		USES=ghostscript:10,build # Use Ghostscript 10 as a build dependency.
 #
 # build		Ghostscript is used as BUILD_DEPENDS
 # lib		Ghostscript is used as LIB_DEPENDS
@@ -29,15 +29,15 @@ _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 # allowed versions
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_GS_VERSION=	9 agpl 10
+_GS_VERSION=	10
 
 _GS_ARGS=	${ghostscript_ARGS}
 
-.  if ${_GS_ARGS:N9:N10:Nagpl:Nbuild:Nlib:Nrun:Ntest:Nx11}
+.  if ${_GS_ARGS:N10:Nbuild:Nlib:Nrun:Ntest:Nx11}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .  endif
 
-.  if ${GHOSTSCRIPT_DEFAULT:N9:Nagpl:N10}
+.  if ${GHOSTSCRIPT_DEFAULT:N10}
 IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}
 .  endif
 
@@ -72,48 +72,25 @@ _GS_RUN_DEP=	yes
 _V=${V}
 .    if ${_V:M10}
 _GS_SELECTED?=		10
-.    elif ${_V:M9}
-_GS_SELECTED?=		9-agpl
-.    elif ${_V:Magpl}
-_GS_SELECTED?=		9-agpl
 .    endif
 .  endfor
 
-.  undef _GS_STATIC
-.  if empty(_GS_SELECTED:M9-agpl)
-_GS_STATIC=	yes
-.  endif
-
-# Resolve minor version number for X11.so library.
 .  if !empty(_GS_SELECTED:M10)
-_GS_VERSION_MINOR=	10.02.0
-.  elif !empty(_GS_SELECTED:M9-agpl)
-_GS_VERSION_MINOR=	9.56.1
+_GS_FULL_VERSION=	10.02.0
 .  endif
 
 # dependencies
 _GS_LIB=	libgs.so
-_GS_PKGNAME=	ghostscript${_GS_SELECTED}${_GS_STATIC:?:-base}
-_GS_X11_PKGNAME=ghostscript${_GS_SELECTED}${_GS_STATIC:?:-x11}
-_GS_PORT=	print/ghostscript${_GS_SELECTED}${_GS_STATIC:?:-base}
-_GS_X11_PORT=	print/ghostscript${_GS_SELECTED}${_GS_STATIC:?:-x11}
+_GS_PKGNAME=	ghostscript${_GS_SELECTED}
+_GS_PORT=	print/ghostscript${_GS_SELECTED}
 
 .  for type in BUILD LIB RUN TEST
 .    if defined(_GS_${type}_DEP)
-.      if !defined(_GS_STATIC) || !${_GS_ARGS:Mx11}
 .        if ${type:MLIB}
 ${type}_DEPENDS+=	${_GS_LIB}:${_GS_PORT}
 .        else
-${type}_DEPENDS+=	${_GS_PKGNAME}>=${_GS_VERSION_MINOR}:${_GS_PORT}
+${type}_DEPENDS+=	${_GS_PKGNAME}>=${_GS_FULL_VERSION}:${_GS_PORT}
 .        endif
-.      endif
-.      if ${_GS_ARGS:Mx11}
-.        if ${type:MLIB}
-${type}_DEPENDS+=	${_GS_LIB}:${_GS_X11_PORT}
-.        else
-${type}_DEPENDS+=	${_GS_X11_PKGNAME}>=${_GS_VERSION_MINOR}:${_GS_X11_PORT}
-.        endif
-.      endif
 .    endif
 .  endfor
 

@@ -24,6 +24,8 @@ WWW=		https://mariadb.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+#EXPIRATION_DATE=	2025-06-01
+
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 # Ugly workaround for MariaDB/CMake library detection

@@ -12,7 +12,7 @@ lib/libentangle_backend.so.0.0.0
 lib/libentangle_frontend.so
 lib/libentangle_frontend.so.0
 lib/libentangle_frontend.so.0.0.0
-man/man1/entangle.1.gz
+share/man/man1/entangle.1.gz
 share/appdata/entangle.appdata.xml
 share/applications/entangle.desktop
 %%DATADIR%%/plugins/eclipse/schemas/gschemas.compiled

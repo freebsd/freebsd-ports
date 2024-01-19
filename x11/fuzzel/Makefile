@@ -1,5 +1,6 @@
 PORTNAME=	fuzzel
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -24,8 +25,8 @@ USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/xdg/${PORTNAME}/${PORTNAME}.ini.sample" \
-		man/man1/${PORTNAME}.1.gz \
-		man/man5/${PORTNAME}.ini.5.gz \
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man5/${PORTNAME}.ini.5.gz \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 

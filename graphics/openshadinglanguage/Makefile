@@ -15,7 +15,6 @@ WWW=		https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_FreeBSD_12_powerpc64=	fails to compile: llvm_ops.cpp:101:10: fatal error: 'iostream' file not found
 BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__threading_support:135:3: Unsupported architecture
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \

@@ -1,5 +1,6 @@
 PORTNAME=	opencvs
 PORTVERSION=	20151230
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/opencvs/ \
 		LOCAL/johans
@@ -14,12 +15,12 @@ WRKSRC=		${WRKDIR}/cvs
 
 USES=		uidfix
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
-		MANDIR="${MANPREFIX}/man/man" \
-		CATDIR="${MANPREFIX}/man/man"
+		MANDIR="${PREFIX}/share/man/man" \
+		CATDIR="${PREFIX}/share/man/man"
 
 PLIST_FILES=	bin/opencvs \
-		man/man1/opencvs.1.gz \
-		man/man5/opencvs.5.gz \
-		man/man7/cvsintro.7.gz
+		share/man/man1/opencvs.1.gz \
+		share/man/man5/opencvs.5.gz \
+		share/man/man7/cvsintro.7.gz
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	aws-ec2-imdsv2-get
 DISTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	cperciva@FreeBSD.org

@@ -1,3 +1,3 @@
-TIMESTAMP = 1628472509
-SHA256 (modulemd-2.13.0.tar.xz) = cc72ce5ff48ce9a4f6c9b6606ccf5a0e75c59c35449668cfe985722ef28f9cbc
-SIZE (modulemd-2.13.0.tar.xz) = 292548
+TIMESTAMP = 1703543372
+SHA256 (modulemd-2.15.0.tar.xz) = 15458323d1d1f614f9e706f623794f95d23e59f4c37deeaa16877463aee34af5
+SIZE (modulemd-2.15.0.tar.xz) = 321088

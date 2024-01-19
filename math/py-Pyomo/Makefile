@@ -1,5 +1,5 @@
 PORTNAME=	Pyomo
-DISTVERSION=	6.5.0
+DISTVERSION=	6.7.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-parallel>0:devel/py-pytest-parallel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython concurrent autoplist pytest # 1 test fails, see https://github.com/Pyomo/pyomo/issues/2547
+USE_PYTHON=	distutils cython concurrent autoplist pytest # 1 test fails but it is known to be broken by the upstream, see https://github.com/Pyomo/pyomo/issues/2547
 
 USE_GITHUB=	yes
 GH_PROJECT=	pyomo

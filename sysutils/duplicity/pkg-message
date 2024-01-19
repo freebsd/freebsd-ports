@@ -5,7 +5,6 @@
  require manual installation of their respective dependencies because
  they are not yet available in the ports tree:
 
-   - The Dropbox backend
    - The HSI backend
    - The mega backend for mega.co.nz
    - The swift backend for OpenStack Object Storage
@@ -16,22 +15,6 @@
 
  For gnupg 2 insert "pinentry-mode loopback" into ~/.gnupg/gpg.conf
  and "allow-loopback-pinentry" into ~/.gnupg/gpg-agent.conf
-EOM
-}
-{ type: upgrade
-  maximum_version: "0.8.12"
-  message: <<EOM
-  The sysutils/duplicity port has been updated to 0.8.12, current stable
-  release. A new port sysutils/duplicity07 has been created to keep version
-  0.7.19 in the tree, as it uses a deprecated version of Python, it will be
-  removed soon. It will be kept for a while just in case some incompatibilities
-  still show up.
-
-  If you would like to keep using 0.7.19, please run the following command
-  to update pkg database:
-
-    pkg set -n duplicity:duplicity07
-    pkg set -o sysutils/duplicity:sysutils/duplicity07
 EOM
 }
 ]

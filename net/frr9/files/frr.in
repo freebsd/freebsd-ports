@@ -53,8 +53,8 @@ check_config()
 {
     echo "Checking $daemon.conf"
 	# pimd doesn't support -C
-	if [ "$daemon" = "pimd" ]; then
-		echo "Ignored"
+	if [ "$daemon" = "pimd" -o "$daemon" = "staticd" ]; then
+		echo "confchk $daemon ignored"
 	else
     	$command $daemon_flags -C
     	result=$?

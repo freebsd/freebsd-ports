@@ -1,6 +1,6 @@
 PORTNAME=	sshfs
 PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
@@ -27,6 +27,6 @@ PLIST_FILES=	bin/sshfs
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	rst2man:textproc/py-docutils
-DOCS_PLIST_FILES=	man/man1/sshfs.1.gz
+DOCS_PLIST_FILES=	share/man/man1/sshfs.1.gz
 
 .include <bsd.port.mk>

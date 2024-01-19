@@ -9,9 +9,6 @@ WWW=		https://umurmur.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to compile: fatal error: byteswap.h file not found
-BROKEN_armv6=		fails to compile: fatal error: byteswap.h file not found
-
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libprotobuf-c.so:devel/protobuf-c
 

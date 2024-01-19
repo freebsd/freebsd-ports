@@ -77,10 +77,6 @@ GOARM_armv7=	7
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == riscv64 && ${OSREL:R} < 13
-IGNORE=		go/riscv64 requires FreeBSD 13 or later
-.endif
-
 post-extract:
 	@[ -z "${GH_TAGNAME}" ] || \
 		${ECHO_CMD} "devel ${DISTVERSION}-${GH_TAGNAME} ${OPSYS:tl}/${GOARCH_${ARCH}}" > ${WRKSRC}/VERSION

@@ -1,6 +1,6 @@
 PORTNAME=	tw_cli
 PORTVERSION=	9.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
 DISTNAME=	CLI_freebsd-from_the_10-2-2-1_9-5-5-1_codesets
@@ -26,7 +26,7 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	407.status-3ware-raid
 PORTDOCS=	tw_cli.8.html
 PLIST_FILES=	etc/periodic/daily/407.status-3ware-raid\
-		man/man8/tw_cli.8.gz sbin/tw_cli
+		share/man/man8/tw_cli.8.gz sbin/tw_cli
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${ARCH:S,i386,x86,:S,amd64,x86_64,}/tw_cli\
 		${STAGEDIR}${PREFIX}/sbin/tw_cli
 	${INSTALL_MAN} ${WRKSRC}/tw_cli.8.nroff\
-		${STAGEDIR}${MAN8PREFIX}/man/man8/tw_cli.8
+		${STAGEDIR}${PREFIX}/share/man/man8/tw_cli.8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/407.status-3ware-raid \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily/

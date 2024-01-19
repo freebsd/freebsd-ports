@@ -1,5 +1,6 @@
 PORTNAME=	freebsd-git-devtools
 PORTVERSION=	20230925
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://cgit.freebsd.org/src/plain/tools/tools/git/
 DISTFILES=	git-arc.sh?id=${_REV} \
@@ -26,7 +27,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/git-arc \
 		bin/mfc-candidates \
-		man/man1/git-arc.1.gz
+		share/man/man1/git-arc.1.gz
 
 _REV=		61f8df6a13a357e1d45c22a2016b87491f10de87
 
@@ -38,6 +39,6 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-arc.sh ${STAGEDIR}${PREFIX}/bin/git-arc
 	${INSTALL_SCRIPT} ${WRKSRC}/mfc-candidates.sh ${STAGEDIR}${PREFIX}/bin/mfc-candidates
-	${INSTALL_MAN} ${WRKSRC}/git-arc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/git-arc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 bin/slurm
-man/man1/slurm.1.gz
+share/man/man1/slurm.1.gz
 %%DATADIR%%/black.theme
 %%DATADIR%%/blue.theme
 %%DATADIR%%/cyan.theme

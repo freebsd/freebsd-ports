@@ -1,5 +1,6 @@
 PORTNAME=		playumidi
 PORTVERSION=		0.8.3
+PORTREVISION=	1
 CATEGORIES=		audio
 MASTER_SITES=		OSDN/${PORTNAME}
 
@@ -10,7 +11,7 @@ WWW=			https://ja.osdn.net/projects/playumidi/
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-PLIST_FILES=		bin/playumidi man/man1/playumidi.1.gz
+PLIST_FILES=		bin/playumidi share/man/man1/playumidi.1.gz
 
 OPTIONS_DEFINE=		LIBICONV DEBUG
 OPTIONS_DEFAULT=	LIBICONV
@@ -24,6 +25,6 @@ LIBICONV_MAKE_ARGS=	-DWITH_ICONV
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/playumidi ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/playumidi.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/playumidi.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

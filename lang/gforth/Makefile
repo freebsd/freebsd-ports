@@ -47,7 +47,7 @@ WORDSIZE=32
 WORDSIZE=64
 .endif
 
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == sparc64
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
 BYTEORDER=b
 .else
 BYTEORDER=l

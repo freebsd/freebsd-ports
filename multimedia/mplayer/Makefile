@@ -38,8 +38,6 @@ X11VM_DESC?=	X11 VidMode support
 
 SUB_FILES=	pkg-message
 
-CONFLICTS=	mplayer2-2.*
-
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 USES+=		iconv pkgconfig
 
@@ -91,7 +89,7 @@ post-install:
 .endfor
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 	@${LN} -sf mplayer ${STAGEDIR}${PREFIX}/bin/gmplayer
-	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
+	@(cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
 	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${STAGEDIR}${PREFIX}/share/pixmaps/mplayer.png
 .endif
 

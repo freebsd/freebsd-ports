@@ -1,5 +1,6 @@
 PORTNAME=	ipsc
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://archive.debian.org/debian/pool/main/i/ipsc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:sysutils/prips:build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 ALL_TARGET=	ipsc
-PLIST_FILES=	bin/ipsc man/man8/ipsc.8.gz
+PLIST_FILES=	bin/ipsc share/man/man8/ipsc.8.gz
 
 PRIPS_WRKSRC!=	cd ${.CURDIR}/../prips && ${MAKE} -V WRKSRC
 
@@ -22,6 +23,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

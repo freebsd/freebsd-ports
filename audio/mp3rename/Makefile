@@ -7,6 +7,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Renaming program for MP3 files based on their ID3 tag
 
+DEPRECATED=	Doesn't support ID3v2 tags properly
+EXPIRATION_DATE=2024-02-29
+
 CONFLICTS_INSTALL=	p5-MP3-Tag-Utils # bin/mp3rename
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig

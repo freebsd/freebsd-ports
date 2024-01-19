@@ -1,5 +1,6 @@
 PORTNAME=	abcselect
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.lautengesellschaft.de/cdmm/
 DISTNAME=	${PORTNAME}
@@ -15,10 +16,10 @@ NO_BUILD=	yes
 SHEBANG_FILES=	abcselect
 
 PLIST_FILES=	bin/abcselect \
-		man/man1/abcselect.1.gz
+		share/man/man1/abcselect.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcselect ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/abcselect.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/abcselect.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

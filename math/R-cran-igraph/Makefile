@@ -9,8 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/igraph/
 
 LICENSE=	GPLv2+
 
-BROKEN_sparc64=	does not compile on sparc64: uses i386 assembler
-
 LIB_DEPENDS=	libglpk.so:math/glpk \
 		libgmp.so:math/gmp
 RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \

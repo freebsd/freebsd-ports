@@ -1,5 +1,5 @@
 bin/viewnior
-man/man1/viewnior.1.gz
+share/man/man1/viewnior.1.gz
 share/applications/viewnior.desktop
 share/icons/hicolor/16x16/apps/viewnior.png
 share/icons/hicolor/22x22/apps/viewnior.png

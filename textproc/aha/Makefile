@@ -1,8 +1,9 @@
 PORTNAME=	aha
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ansi HTML Adapter
 WWW=		https://github.com/theZiz/aha
 
@@ -13,9 +14,9 @@ USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	theZiz
 
-MAKE_ARGS=	MANDIR="${MANPREFIX}/man"
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man"
 PLIST_FILES=	bin/aha \
-		man/man1/aha.1.gz
+		share/man/man1/aha.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aha

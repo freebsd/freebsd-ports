@@ -1,6 +1,6 @@
 PORTNAME=	isomaster
 PORTVERSION=	1.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
@@ -32,7 +32,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} isomaster \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} isomaster.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
 .for i in add2-kearone.png delete-kearone.png extract2-kearone.png \
 	folder-new-kearone.png go-back-kearone.png isomaster.png

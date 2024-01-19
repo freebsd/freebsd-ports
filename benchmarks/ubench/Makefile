@@ -1,5 +1,6 @@
 PORTNAME=	ubench
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SUNSITE/system/benchmark
 
@@ -13,10 +14,10 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	ubench
 
 PLIST_FILES=	bin/ubench \
-		man/man8/ubench.8.gz
+		share/man/man8/ubench.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ubench ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ubench.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ubench.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

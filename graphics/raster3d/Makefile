@@ -1,6 +1,6 @@
 PORTNAME=	raster3d
 DISTVERSION=	3.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${DISTVERSION:R}-${DISTVERSION:E}
@@ -46,7 +46,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/worms ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/*.l ${STAGEDIR}${MANLPREFIX}/man/manl
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/manl
+	${INSTALL_MAN} ${WRKSRC}/doc/*.l ${STAGEDIR}${PREFIX}/share/man/manl
 	@${MKDIR} ${STAGEDIR}${DATADIR}/materials
 	${INSTALL_DATA} ${WRKSRC}/materials/* ${STAGEDIR}${DATADIR}/materials
 

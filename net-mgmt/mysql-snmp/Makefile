@@ -2,6 +2,7 @@ PORTNAME=	mysql-snmp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2-17
 DISTVERSIONSUFFIX=	-g1d0b409
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -36,7 +37,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/snmp/mibs
 	${INSTALL_DATA} ${WRKSRC}/MYSQL-SERVER-MIB.txt \
 		${STAGEDIR}${PREFIX}/share/snmp/mibs
-	${INSTALL_MAN} ${WRKSRC}/mysql-snmp.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mysql-snmp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} opennms ${STAGEDIR}/${DATADIR})
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

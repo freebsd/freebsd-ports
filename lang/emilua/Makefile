@@ -1,6 +1,7 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
@@ -10,7 +11,6 @@ WWW=		https://emilua.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-IGNORE_FreeBSD_12=	not supported by Emilua ('memfd_create' was not declared in this scope)
 IGNORE_FreeBSD_13=	not supported by Emilua ('clearenv' was not declared in this scope)
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \

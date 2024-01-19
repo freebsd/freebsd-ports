@@ -20,6 +20,9 @@ SVN_BUILD_BINDINGS=	yes
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CONFIGURE_ARGS+=	--enable-javahl \
+			--without-swig-perl \
+			--without-siwg-python \
+			--without-swig-ruby \
 			--with-jdk=${JAVA_HOME} \
 			--with-jikes=no \
 			--without-gnome-keyring \

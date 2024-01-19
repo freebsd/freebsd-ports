@@ -1,5 +1,5 @@
 PORTNAME=	fltk
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://www.fltk.org/pub/${PORTNAME}/${PORTVERSION}/
@@ -28,21 +28,20 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	CAIRO EXAMPLES
+OPTIONS_SUB=	yes
+
+CAIRO_CONFIGURE_ON=	--enable-cairo
+CAIRO_USES=	gnome
+CAIRO_USE=	GNOME=cairo XORG=pixman
 
 post-patch: .SILENT
-	prefix="${PREFIX}" ; plength=$$(($${#prefix}+10)) ; \
-	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${plength}|;}" \
+	prefix="${PREFIX}" ; fplen=$$(($${#prefix}+10)) ; \
+	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${fplen}|;}" \
 		${WRKSRC}/src/Fl_Preferences.cxx
 	${REINPLACE_CMD} -e 's,$$(docdir)/examples,${EXAMPLESDIR},' \
 		${WRKSRC}/test/Makefile
-	${REINPLACE_CMD} -e '/^INSTALL_BIN/s,-m,${STRIP} &, ; \
+	${REINPLACE_CMD} -e '/^INSTALL_[BL]I/s,-m,${STRIP} &, ; \
 		s,^\.SILENT,#&,' ${WRKSRC}/makeinclude.in
-
-post-install:
-.for x in fltk fltk_forms fltk_gl fltk_images
-	${LN} -sf lib${x}.so.${PORTVERSION:R} \
-		${STAGEDIR}${PREFIX}/lib/lib${x}.so.1
-.endfor
 
 .include <bsd.port.mk>

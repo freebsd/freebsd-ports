@@ -38,8 +38,6 @@ MAKE_ENV=	LIBCRYPTO_RPATH=${OPENSSLBASE}/lib
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${RMDIR} ${WRKSRC}/.gnulib ${WRKSRC}/include/oasis-pkcs11
 	@${MV} ${WRKSRC_gnulib} ${WRKSRC}/.gnulib
@@ -47,17 +45,6 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC} && BUILD_PORT=1 ${WRKSRC}/bootstrap.sh
-
-# FreeBSD<13 does not have system-deployed openssl information through PKGCONFIG
-# We need to provide a hint at configure time
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} <= 1300000 )
-LIBCRYPTO_CFLAGS+=	-pthread
-LIBCRYPTO_LIBS+=	-lcrypto
-
-do-configure:
-	@cd ${WRKSRC} && ./configure LIBCRYPTO_CFLAGS=${LIBCRYPTO_CFLAGS} LIBCRYPTO_LIBS=${LIBCRYPTO_LIBS}
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

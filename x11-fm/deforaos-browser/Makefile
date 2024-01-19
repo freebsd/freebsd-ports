@@ -1,6 +1,6 @@
 PORTNAME=	deforaos-browser
 PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Browser/
 DISTNAME=	Browser-${PORTVERSION}
@@ -29,7 +29,7 @@ USE_GNOME=	gtk30 cairo gdkpixbuf2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 CONFLICTS_INSTALL=	schilyutils silo # bin/browser bin/copy
 post-patch:

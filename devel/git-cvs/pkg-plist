@@ -2,7 +2,7 @@ bin/git-cvsserver
 libexec/git-core/git-cvsexportcommit
 libexec/git-core/git-cvsimport
 libexec/git-core/git-cvsserver
-man/man1/git-cvsexportcommit.1.gz
-man/man1/git-cvsimport.1.gz
-man/man1/git-cvsserver.1.gz
-man/man7/gitcvs-migration.7.gz
+share/man/man1/git-cvsexportcommit.1.gz
+share/man/man1/git-cvsimport.1.gz
+share/man/man1/git-cvsserver.1.gz
+share/man/man7/gitcvs-migration.7.gz

@@ -1,6 +1,7 @@
 PORTNAME=	deltup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/jjwhitney/Deltup/archive/refs/tags/ \
 		http://www.bzip.org/${BZIP2_102}/:bzip2102src \
@@ -38,7 +39,7 @@ WRKSRC_BZIP2_103=	${WRKDIR}/bzip2-${BZIP2_103}
 PLIST_FILES=	bin/bzip2_1.0.2 \
 		bin/bzip2_1.0.3 \
 		bin/deltup \
-		man/man1/deltup.1.gz
+		share/man/man1/deltup.1.gz
 
 PORTDOCS=	ChangeLog README
 
@@ -63,7 +64,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/deltup ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC_BZIP2_102}/bzip2 ${STAGEDIR}${PREFIX}/bin/bzip2_1.0.2
 	${INSTALL_PROGRAM} ${WRKSRC_BZIP2_103}/bzip2 ${STAGEDIR}${PREFIX}/bin/bzip2_1.0.3
-	${INSTALL_MAN} ${WRKSRC}/deltup.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/deltup.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}

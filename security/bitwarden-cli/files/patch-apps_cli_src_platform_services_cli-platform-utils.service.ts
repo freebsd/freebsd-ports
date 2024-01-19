@@ -1,15 +1,15 @@
---- apps/cli/src/platform/services/cli-platform-utils.service.ts.orig	2023-07-25 08:24:23 UTC
+--- apps/cli/src/platform/services/cli-platform-utils.service.ts.orig	2024-01-09 15:12:51 UTC
 +++ apps/cli/src/platform/services/cli-platform-utils.service.ts
-@@ -24,7 +24,7 @@ export class CliPlatformUtilsService implements Platfo
+@@ -27,7 +27,7 @@ export class CliPlatformUtilsService implements Platfo
          case "darwin":
-           this.deviceCache = DeviceType.MacOsDesktop;
+           this.deviceCache = DeviceType.MacOsCLI;
            break;
 -        case "linux":
 +        case "linux": case "freebsd":
          default:
-           this.deviceCache = DeviceType.LinuxDesktop;
+           this.deviceCache = DeviceType.LinuxCLI;
            break;
-@@ -76,7 +76,7 @@ export class CliPlatformUtilsService implements Platfo
+@@ -79,7 +79,7 @@ export class CliPlatformUtilsService implements Platfo
    }
  
    launchUri(uri: string, options?: any): void {

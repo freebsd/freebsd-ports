@@ -1,13 +1,12 @@
 --- Makefile.orig	2022-10-04 17:34:08 UTC
 +++ Makefile
-@@ -4,13 +4,13 @@ NAME = sic
+@@ -4,13 +4,13 @@ VERSION = 1.3
  VERSION = 1.3
  
  # paths
 -PREFIX = /usr/local
--MANPREFIX = ${PREFIX}/share/man
 +PREFIX ?= /usr/local
-+MANPREFIX = ${PREFIX}/man
+ MANPREFIX = ${PREFIX}/share/man
  
  # use system flags.
 -SIC_CFLAGS = ${CFLAGS}
@@ -19,7 +18,7 @@
  
  BIN = sic
  SRC = ${BIN:=.c}
-@@ -45,15 +45,15 @@ dist:
+@@ -45,15 +45,15 @@ install: all
  
  install: all
  	mkdir -p ${DESTDIR}${PREFIX}/bin

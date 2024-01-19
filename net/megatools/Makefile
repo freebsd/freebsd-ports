@@ -1,5 +1,6 @@
 PORTNAME=	megatools
 PORTVERSION=	1.11.1.20230212
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://megatools.megous.com/builds/
 

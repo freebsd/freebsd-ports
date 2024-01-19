@@ -1,8 +1,8 @@
-%%GSASL%%bin/anubisusr
+bin/anubisusr
 bin/msg2smtp.pl
 sbin/anubis
 man/man1/anubis.1.gz
-%%GSASL%%sbin/anubisadm
+sbin/anubisadm
 %%GUILE%%share/anubis/entire-msg.scm
 %%GUILE%%share/anubis/remailer.scm
 %%GUILE%%share/anubis/rot-13.scm
@@ -13,6 +13,7 @@ man/man1/anubis.1.gz
 %%NLS%%share/locale/es/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/id/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/it/LC_MESSAGES/anubis.mo
@@ -20,6 +21,7 @@ man/man1/anubis.1.gz
 %%NLS%%share/locale/nb/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/anubis.mo

@@ -1,6 +1,6 @@
---- src/conf.c.orig	2015-04-07 10:01:12 UTC
+--- src/conf.c.orig	2021-03-21 20:49:04 UTC
 +++ src/conf.c
-@@ -89,23 +89,23 @@ const char *getStrConf(param_t param)
+@@ -90,23 +90,23 @@ const char *getStrConf(param_t param)
  		case CERTIFICATE:
  			setting = config_lookup(&configuration, "certificate");
  			if (!setting)

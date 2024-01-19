@@ -1,5 +1,6 @@
 PORTNAME=	cascade
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/rfcascade/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,7 +12,7 @@ GNU_CONFIGURE=	yes
 USES=		groff
 PORTDOCS=	ex1.gif index.html
 PORTEXAMPLES=	README.examples ex1.cas ex1.gif ex1.out cascade-mode.el
-PLIST_FILES=	bin/cascade man/man1/cascade.1.gz
+PLIST_FILES=	bin/cascade share/man/man1/cascade.1.gz
 
 CONFLICTS_INSTALL=	cascade-compiler
 
@@ -19,7 +20,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cascade ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cascade.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cascade.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* \
 		${WRKSRC}/cascade-mode.el ${STAGEDIR}${EXAMPLESDIR}

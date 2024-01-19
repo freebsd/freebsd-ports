@@ -22,7 +22,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O2
 
 .include <bsd.port.options.mk>
 
-.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
 USES+=		compiler:gcc-c++11-lib
 .endif
 

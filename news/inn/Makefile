@@ -191,9 +191,7 @@ PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
 
 .include <bsd.port.pre.mk>
 
-.if !defined(GID)
-GID!=	id -g
-.endif
+GID?=	${.MAKE.GID}
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \

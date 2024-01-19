@@ -1,11 +1,11 @@
-TIMESTAMP = 1698950086
-SHA256 (desktop-app-tg_owt-0.0.20231101-71cce98_GH0.tar.gz) = 1e48900bd7d84efc737670962559d8845f52eaa382add32766f9fa1259e24e78
-SIZE (desktop-app-tg_owt-0.0.20231101-71cce98_GH0.tar.gz) = 13720179
+TIMESTAMP = 1704135050
+SHA256 (desktop-app-tg_owt-0.0.20231221-afd9d5d_GH0.tar.gz) = 3dd334d8547936526d58fc895a07c19ac9045240f8197f8b319ed9c960e95b67
+SIZE (desktop-app-tg_owt-0.0.20231221-afd9d5d_GH0.tar.gz) = 13719106
 SHA256 (abseil-abseil-cpp-8c0b94e_GH0.tar.gz) = e995f06ce4fd4a9641e6a8e5d8d2258710eef481a07307a3e727012f1a83c442
 SIZE (abseil-abseil-cpp-8c0b94e_GH0.tar.gz) = 1957422
 SHA256 (cisco-libsrtp-a566a9_GH0.tar.gz) = 3a02196f8bb36ff640cb1d24920414f9c80e3d7ca78304cab0e6a70ca72a683f
 SIZE (cisco-libsrtp-a566a9_GH0.tar.gz) = 638802
 SHA256 (google-crc32c-21fc8ef_GH0.tar.gz) = 9cb6093f9a554f9fb8397ce9a1a07eec44f1ae0918d7816b60c7b14ef745e082
 SIZE (google-crc32c-21fc8ef_GH0.tar.gz) = 29818
-SHA256 (klemensn-libyuv-04821d_GH0.tar.gz) = 73e76d6999ae912c373f0d9f800fe41417bbb3e5177c58197b37b0f83a0909b5
-SIZE (klemensn-libyuv-04821d_GH0.tar.gz) = 559543
+SHA256 (klemensn-libyuv-3aae5c7_GH0.tar.gz) = 7e0ed4ef518c0a1e10fc20573cd8695ad3bc55a19496deb0d48e773be0d52c3e
+SIZE (klemensn-libyuv-3aae5c7_GH0.tar.gz) = 565631

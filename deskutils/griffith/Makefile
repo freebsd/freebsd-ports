@@ -1,5 +1,6 @@
 PORTNAME=	griffith
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -39,7 +40,7 @@ post-patch:
 .for f in docs/en/Makefile docs/pl/Makefile docs/pt/Makefile
 	@${REINPLACE_CMD} -e \
 		'/^PREFIX/s|?=|=|g ; s|/usr|${PREFIX}|; \
-		 /^MANDIR/s|=.*|=${STAGEDIR}${MANPREFIX}/man|g' \
+		 /^MANDIR/s|=.*|=${STAGEDIR}${PREFIX}/share/man|g' \
 		 ${WRKSRC}/${f}
 .endfor
 

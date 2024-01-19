@@ -1,5 +1,6 @@
 PORTNAME=	bluegps-linux
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.harbaum.org/till/bluegps/
 
@@ -8,6 +9,6 @@ COMMENT=	Command line tool to download datalogs from the Royaltek RBT-3000 bluet
 WWW=		http://www.harbaum.org/till/bluegps/
 
 USES=		tar:tgz
-PLIST_FILES=	bin/bluegps man/man1/bluegps.1.gz
+PLIST_FILES=	bin/bluegps share/man/man1/bluegps.1.gz
 
 .include <bsd.port.mk>

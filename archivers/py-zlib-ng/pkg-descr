@@ -1,0 +1,2 @@
+Faster zlib and gzip compatible compression and decompression by providing
+Python bindings for the zlib-ng library.
