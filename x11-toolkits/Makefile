@@ -174,6 +174,7 @@
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4
     SUBDIR += pythonqt
+    SUBDIR += qhotkey
     SUBDIR += qml-box2d
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
