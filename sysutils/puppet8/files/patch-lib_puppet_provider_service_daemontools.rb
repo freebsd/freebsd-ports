@@ -1,15 +1,15 @@
---- lib/puppet/provider/service/daemontools.rb.orig	2023-03-27 22:00:42 UTC
+--- lib/puppet/provider/service/daemontools.rb.orig	2023-12-21 23:41:03 UTC
 +++ lib/puppet/provider/service/daemontools.rb
-@@ -39,7 +39,7 @@ Puppet::Type.type(:service).provide :daemontools, :par
+@@ -41,7 +41,7 @@ Puppet::Type.type(:service).provide :daemontools, :par
  
    EOT
  
--  commands :svc  => "/usr/bin/svc", :svstat => "/usr/bin/svstat"
-+  commands :svc  => "%%PREFIX%%/bin/svc", :svstat => "%%PREFIX%%/bin/svstat"
+-  commands :svc => "/usr/bin/svc", :svstat => "/usr/bin/svstat"
++  commands :svc => "%%PREFIX%%/bin/svc", :svstat => "%%PREFIX%%/bin/svstat"
  
    class << self
      attr_writer :defpath
-@@ -86,7 +86,7 @@ Puppet::Type.type(:service).provide :daemontools, :par
+@@ -88,7 +88,7 @@ Puppet::Type.type(:service).provide :daemontools, :par
    # find the service dir on this node
    def servicedir
      unless @servicedir

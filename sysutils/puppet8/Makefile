@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	8.3.1
+PORTVERSION=	8.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -45,14 +45,14 @@ OPTIONS_DEFINE=		DOCS EXAMPLES
 # Get versions from
 # https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
 # for f in configs/components/module-puppetlabs-*.json; do echo ${${f#*/module-puppetlabs-}%.json}=${${$(jq .ref $f)#*/v}%\"}; done
-FORGE_MODULES=	augeas_core=1.3.0 \
-		cron_core=1.2.0 \
+FORGE_MODULES=	augeas_core=1.4.0 \
+		cron_core=1.2.1 \
 		host_core=1.2.0 \
 		mount_core=1.2.0 \
-		scheduled_task=3.1.1 \
+		scheduled_task=3.2.0 \
 		selinux_core=1.3.0 \
 		sshkeys_core=2.4.0 \
-		yumrepo_core=1.2.0 \
+		yumrepo_core=2.0.0 \
 		zfs_core=1.4.0 \
 		zone_core=1.1.0
 
