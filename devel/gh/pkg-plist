@@ -9,6 +9,7 @@
 %%MANPAGES%%share/man/man1/gh-auth-refresh.1.gz
 %%MANPAGES%%share/man/man1/gh-auth-setup-git.1.gz
 %%MANPAGES%%share/man/man1/gh-auth-status.1.gz
+%%MANPAGES%%share/man/man1/gh-auth-switch.1.gz
 %%MANPAGES%%share/man/man1/gh-auth-token.1.gz
 %%MANPAGES%%share/man/man1/gh-auth.1.gz
 %%MANPAGES%%share/man/man1/gh-browse.1.gz
