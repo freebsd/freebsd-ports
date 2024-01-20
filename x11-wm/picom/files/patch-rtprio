@@ -1,0 +1,54 @@
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276962
+https://github.com/yshui/picom/commit/023103c62074
+https://github.com/yshui/picom/commit/dff77aae27cf
+
+--- src/meson.build.orig	2024-01-28 18:17:19 UTC
++++ src/meson.build
+@@ -23,7 +23,7 @@ required_packages = [
+ # Some XCB packages are here because their versioning differs (see check below).
+ required_packages = [
+ 	'pixman-1', 'x11', 'x11-xcb', 'xcb-image', 'xcb-renderutil', 'xcb-util',
+-	'xext'
++	'xext', 'threads',
+ ]
+ 
+ foreach i : required_packages
+@@ -59,7 +59,7 @@ if get_option('opengl')
+ 
+ if get_option('opengl')
+ 	cflags += ['-DCONFIG_OPENGL', '-DGL_GLEXT_PROTOTYPES']
+-	deps += [dependency('gl', required: true), dependency('egl', required: true), dependency('threads', required:true)]
++	deps += [dependency('gl', required: true), dependency('egl', required: true)]
+ 	srcs += [ 'opengl.c' ]
+ endif
+ 
+--- src/picom.c.orig	2024-01-28 18:17:19 UTC
++++ src/picom.c
+@@ -17,6 +17,7 @@
+ #include <fcntl.h>
+ #include <inttypes.h>
+ #include <math.h>
++#include <pthread.h>
+ #include <sched.h>
+ #include <stddef.h>
+ #include <stdio.h>
+@@ -2557,15 +2558,16 @@ void set_rr_scheduling(void) {
+ 
+ 	int ret;
+ 	struct sched_param param;
+-
+-	ret = sched_getparam(0, &param);
++	int old_policy;
++	ret = pthread_getschedparam(pthread_self(), &old_policy, &param);
+ 	if (ret != 0) {
+ 		log_debug("Failed to get old scheduling priority");
+ 		return;
+ 	}
+ 
+ 	param.sched_priority = priority;
+-	ret = sched_setscheduler(0, SCHED_RR, &param);
++
++	ret = pthread_setschedparam(pthread_self(), SCHED_RR, &param);
+ 	if (ret != 0) {
+ 		log_info("Failed to set real-time scheduling priority to %d.", priority);
+ 		return;
