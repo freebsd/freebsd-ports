@@ -144,7 +144,7 @@ _INCLUDE_USES_LAZARUS_POST_MK=	yes
 .    if !target(do-build)
 do-build:
 .      for PROJECT_FILE in ${LAZARUS_PROJECT_FILES}
-		@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${LAZBUILD_CMD} \
+		@(cd ${BUILD_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${LAZBUILD_CMD} \
 			${LAZBUILD_ARGS} --ws=${LCL_PLATFORM} --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE})
 .      endfor
 .    endif # !target(do-build)

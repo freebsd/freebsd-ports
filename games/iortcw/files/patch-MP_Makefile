@@ -1,0 +1,73 @@
+--- MP/Makefile.orig	2019-03-16 18:09:48 UTC
++++ MP/Makefile
+@@ -101,14 +101,6 @@ export ARCH
+ endif
+ export ARCH
+ 
+-# For historical compatibility reasons on non-windows
+-# platform output files use i386 instead of x86
+-ifeq ($(ARCH),x86)
+-  ifndef MINGW
+-    FILE_ARCH=i386
+-  endif
+-endif
+-
+ ifndef FILE_ARCH
+ FILE_ARCH=$(ARCH)
+ endif
+@@ -369,7 +361,7 @@ CLIENT_EXTRA_FILES=
+ EXTRA_FILES=
+ CLIENT_EXTRA_FILES=
+ 
+-ifneq (,$(findstring "$(COMPILE_PLATFORM)", "linux" "gnu_kfreebsd" "kfreebsd-gnu" "gnu"))
++ifneq (,$(findstring "$(COMPILE_PLATFORM)", "linux" "gnu_kfreebsd" "kfreebsd-gnu" "gnu" "freebsd" "netbsd" "openbsd"))
+   TOOLS_CFLAGS += -DARCH_STRING=\"$(COMPILE_ARCH)\"
+ endif
+ 
+@@ -752,7 +744,7 @@ ifneq (,$(findstring "$(PLATFORM)", "freebsd" "openbsd
+ ifneq (,$(findstring "$(PLATFORM)", "freebsd" "openbsd" "netbsd"))
+ 
+   BASE_CFLAGS = -Wall -fno-strict-aliasing \
+-    -pipe -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
++    -pipe -DUSE_ICON -DARCH_STRING=\\\"$(FILE_ARCH)\\\" -DMAP_ANONYMOUS=MAP_ANON
+   CLIENT_CFLAGS += $(SDL_CFLAGS)
+ 
+   OPTIMIZEVM = -O3
+@@ -761,7 +753,6 @@ ifneq (,$(findstring "$(PLATFORM)", "freebsd" "openbsd
+   ifeq ($(ARCH),x86_64)
+     OPTIMIZEVM = -O3
+     OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+-    FILE_ARCH = amd64
+   endif
+   ifeq ($(ARCH),x86)
+     OPTIMIZEVM = -O3 -march=i586
+@@ -787,13 +778,8 @@ ifneq (,$(findstring "$(PLATFORM)", "freebsd" "openbsd
+     OPTIMIZE = $(OPTIMIZEVM)
+   endif
+ 
+-  ifeq ($(USE_CURL),1)
+-    CLIENT_CFLAGS += $(CURL_CFLAGS)
+-    USE_CURL_DLOPEN=0
+-  endif
+-
+   SHLIBEXT=so
+-  SHLIBCFLAGS=-fPIC
++  SHLIBCFLAGS=-fPIC -fvisibility=hidden
+   SHLIBLDFLAGS=-shared $(LDFLAGS)
+ 
+   THREAD_LIBS=-lpthread
+@@ -805,12 +791,14 @@ ifneq (,$(findstring "$(PLATFORM)", "freebsd" "openbsd
+   RENDERER_LIBS = $(SDL_LIBS)
+ 
+   ifeq ($(USE_OPENAL),1)
++    CLIENT_CFLAGS += $(OPENAL_CFLAGS)
+     ifneq ($(USE_OPENAL_DLOPEN),1)
+       CLIENT_LIBS += $(THREAD_LIBS) $(OPENAL_LIBS)
+     endif
+   endif
+ 
+   ifeq ($(USE_CURL),1)
++    CLIENT_CFLAGS += $(CURL_CFLAGS)
+     ifneq ($(USE_CURL_DLOPEN),1)
+       CLIENT_LIBS += $(CURL_LIBS)
+     endif

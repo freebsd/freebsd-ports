@@ -192,7 +192,7 @@ go-post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
-		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
+		${SETENVI} ${WRK_ENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 .  endif
 
 _USES_extract+=	800:go-post-extract
@@ -201,9 +201,9 @@ _USES_extract+=	800:go-post-extract
 # already in MODCACHE), vendor them so we can patch them if needed.
 go-post-extract:
 	@${ECHO_MSG} "===> Tidying ${GO_MODNAME} dependencies";
-	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
+	@(cd ${GO_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
 	@${ECHO_MSG} "===> Vendoring ${GO_MODNAME} dependencies";
-	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
+	@(cd ${GO_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
 .  else
 # Legacy (GOPATH) build mode, setup directory structure expected by Go for the main module.
 go-post-extract:
@@ -220,7 +220,7 @@ do-build:
 		pkg=$$(${ECHO_CMD} $${t} | \
 			${SED} -Ee 's/^([^:]*).*$$/\1/' -e 's/^${PORTNAME}$$/./'); \
 		${ECHO_MSG} "===>  Building $${out} from $${pkg}"; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
 			-o ${GO_WRKDIR_BIN}/$${out} \
 			$${pkg}; \
 	done)
@@ -246,7 +246,7 @@ do-test:
 	(cd ${GO_WRKSRC}; \
 	for t in ${GO_TESTTARGET}; do \
 		${ECHO_MSG} "===>  Testing $${t}"; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} test ${GO_TESTFLAGS} $${t}; \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} test ${GO_TESTFLAGS} $${t}; \
 	done)
 .  endif
 
@@ -254,7 +254,7 @@ do-test:
 gomod-clean:
 .    if exists(${GO_CMD})
 	@${ECHO_MSG} "===>  Cleaning Go module cache"
-	@${SETENV} ${GO_ENV} ${GO_CMD} clean -modcache
+	@${SETENVI} ${WRK_ENV} ${GO_ENV} ${GO_CMD} clean -modcache
 .    else
 	@${ECHO_MSG} "===>    Skipping since ${GO_CMD} is not installed"
 .    endif
@@ -279,11 +279,11 @@ gomod-vendor-deps:
 	fi
 
 gomod-vendor: gomod-vendor-deps patch
-	@cd ${WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} mod vendor; \
+	@cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${GO_ENV} ${GO_CMD} mod vendor; \
 	[ -r vendor/modules.txt ] && ${_MODULES2TUPLE_CMD} vendor/modules.txt
 
 gomod-vendor-diff: gomod-vendor-deps patch
-	@cd ${WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} mod vendor; \
+	@cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${GO_ENV} ${GO_CMD} mod vendor; \
 	[ -r vendor/modules.txt ] && ${_MODULES2TUPLE_CMD} vendor/modules.txt | ${SED} 's|GH_TUPLE=|	|; s| \\$$||' | ${GREP} -v '		\\' > ${WRKDIR}/GH_TUPLE-new.txt && \
 	echo ${GH_TUPLE} | ${TR} -s " " "\n" | ${SED} "s|^|		|" > ${WRKDIR}/GH_TUPLE-old.txt && \
 	${DIFF} ${WRKDIR}/GH_TUPLE-old.txt ${WRKDIR}/GH_TUPLE-new.txt || exit 0

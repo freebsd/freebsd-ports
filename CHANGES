@@ -10,7 +10,22 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20230111:
+20240229:
+AUTHOR: tijl@FreeBSD.org
+
+  A new command SETENVI that clears the environment and a new variable
+  WRK_ENV that contains a basic environment to use with SETENVI have
+  been added.
+  Ports that run (parts of) the upstream build system directly using
+  commands like "${SETENV} ${MAKE_ENV} ${MAKE_CMD} ..." should change
+  that to "${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ...".  This way
+  the build system runs with a clean environment without interference
+  from the user environment or ports framework environment.  Ports can
+  add extra environment variables to WRK_ENV similar to CONFIGURE_ENV,
+  MAKE_ENV, TEST_ENV, and so on, but WRK_ENV is used in all targets
+  while the latter are target-specific.
+
+20240111:
 AUTHOR: bapt@FreeBSD.org
 
   MAN[1-8LN]PREFIX variable has been removed from the framework, use PREFIX

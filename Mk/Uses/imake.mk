@@ -36,7 +36,7 @@ XMKMF_ARGS+=		-a
 .  if ! ${imake_ARGS:Menv}
 .    if !target(do-configure)
 do-configure:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF} ${XMKMF_ARGS})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${XMKMF} ${XMKMF_ARGS})
 .    endif
 
 .    if ! ${imake_ARGS:Mnoman}

@@ -50,13 +50,13 @@
    model=ppc
  fi; system=elf ;; #(
 +  powerpc64le*-*-freebsd*) :
-+    arch=power; model=ppc64le; system=bsd_elf;; #(
++    arch=power; model=ppc64le; system=freebsd;; #(
 +  powerpc*-*-freebsd*) :
 +    arch=power; if $arch64; then :
 +  model=ppc64
 +else
 +  model=ppc
-+fi; system=bsd_elf ;; #(
++fi; system=freebsd ;; #(
    powerpc-*-netbsd*) :
      arch=power; model=ppc; system=netbsd ;; #(
    powerpc-*-openbsd*) :
@@ -69,7 +69,16 @@
    earmv6*-*-netbsd*) :
      arch=arm; model=armv6; system=netbsd ;; #(
    earmv7*-*-netbsd*) :
-@@ -13544,6 +13560,8 @@ fi; system=elf ;; #(
+@@ -13534,6 +13550,8 @@ fi; system=elf ;; #(
+     arch=amd64; system=dragonfly ;; #(
+   x86_64-*-freebsd*) :
+     arch=amd64; system=freebsd ;; #(
++  amd64-*-freebsd*) :
++    arch=amd64; system=freebsd ;; #(
+   x86_64-*-netbsd*) :
+     arch=amd64; system=netbsd ;; #(
+   x86_64-*-openbsd*) :
+@@ -13544,6 +13562,8 @@ fi; system=elf ;; #(
      arch=amd64; system=mingw64 ;; #(
    aarch64-*-linux*) :
      arch=arm64; system=linux ;; #(
@@ -78,7 +87,7 @@
    x86_64-*-cygwin*) :
      arch=amd64; system=cygwin
   ;; #(
-@@ -13714,6 +13732,8 @@ case "$arch,$system" in #(
+@@ -13714,6 +13734,8 @@ case "$arch,$system" in #(
      profiling=true ;; #(
    amd64,openbsd) :
      profiling=true ;; #(
@@ -87,14 +96,21 @@
    amd64,freebsd) :
      profiling=true ;; #(
    amd64,netbsd) :
-@@ -13721,6 +13741,10 @@ case "$arch,$system" in #(
-   arm,netbsd) :
+@@ -13722,11 +13744,17 @@ case "$arch,$system" in #(
      profiling=true ;; #(
    amd64,gnu) :
-+    profiling=true ;; #(
-+  arm64,freebsd*) :
-+    profiling=true ;; #(
-+  arm,freebsd*) :
      profiling=true ;; #(
++  arm64,freebsd) :
++    profiling=true ;; #(
++  arm,freebsd) :
++    profiling=true ;; #(
    arm,linux*) :
+     profiling=true ;; #(
+   power,elf) :
+     profiling=true ;; #(
+   power,bsd*) :
++    profiling=true ;; #(
++  power,freebsd) :
+     profiling=true ;; #(
+   power,netbsd) :
      profiling=true ;; #(

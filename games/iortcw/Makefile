@@ -1,6 +1,6 @@
 PORTNAME=	iortcw
 PORTVERSION=	1.51c
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -30,11 +30,11 @@ MAKE_ARGS=	BINDIR="${STAGEDIR}${PREFIX}/bin" \
 
 LDFLAGS_i386=	-Wl,-znotext
 
-PLIST_SUB=	ARCH="${ARCH}" \
+PLIST_SUB=	ARCH="${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc/ppc/}" \
 		WOLFDIR="${WOLFDIR}"
 
 SUB_FILES=	iowolfded iowolfmp iowolfsp pkg-message
-SUB_LIST=	ARCH="${ARCH}" \
+SUB_LIST=	ARCH="${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc/ppc/}" \
 		DISTVERSION="${DISTVERSION}" \
 		WOLFDIR="${PREFIX}/${WOLFDIR}"
 

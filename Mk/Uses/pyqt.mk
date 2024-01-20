@@ -228,13 +228,13 @@ post-patch:
 
 .    if !target(do-build)
 do-build:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SIP} ${SIP_ARGS}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} -C ./build)
+	(cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${SIP} ${SIP_ARGS}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} -C ./build)
 
 .    endif  # !target(do-build)
 
 .    if !target(do-install)
 do-install:
-	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
+	(cd ${WRKSRC} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
 .    endif  # !target(do-install)
 
 .  endif  # defined(PYQT_DIST)

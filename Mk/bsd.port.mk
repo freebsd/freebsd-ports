@@ -669,6 +669,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For options see bsd.options.mk
 #
+# WRK_ENV		- Environment used when running the upstream build system.
+#				  Target-specific environment variables can be defined using
+#				  CONFIGURE_ENV, MAKE_ENV, TEST_ENV, and similar variables.
+#
 # For fetch:
 #
 # FETCH_BINARY	- Path to ftp/http fetch command if not in $PATH.
@@ -1629,6 +1633,16 @@ PKG_NOTE_expiration_date=	${EXPIRATION_DATE}
 PKG_NOTES+=	flavor
 PKG_NOTE_flavor=	${FLAVOR}
 .    endif
+
+WRK_ENV+=		HOME=${WRKDIR} \
+				PWD="$${PWD}"
+.    for e in OSVERSION PATH TERM TMPDIR \
+				UNAME_b UNAME_i UNAME_K UNAME_m UNAME_n \
+				UNAME_p UNAME_r UNAME_s UNAME_U UNAME_v
+.      ifdef ${e}
+WRK_ENV+=		${e}=${${e}:Q}
+.      endif
+.    endfor
 
 TEST_ARGS?=		${MAKE_ARGS}
 TEST_ENV?=		${MAKE_ENV}
@@ -3335,7 +3349,7 @@ do-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@(cd ${CONFIGURE_WRKSRC} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
-		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+		if ! ${SETENVI} ${WRK_ENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
 	    INSTALL="/usr/bin/install -c" \
@@ -3352,7 +3366,8 @@ do-configure:
 .    endif
 
 # Build
-DO_MAKE_BUILD?=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS:N${DESTDIRNAME}=*}
+DO_MAKE_BUILD?=	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+				${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS:N${DESTDIRNAME}=*}
 .    if !target(do-build)
 do-build:
 	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} ${ALL_TARGET}; then \
@@ -3443,13 +3458,15 @@ check-install-conflicts:
 
 .    if !target(do-install) && !defined(NO_INSTALL)
 do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${FAKEROOT} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .    endif
 
 # Test
 
 .    if !target(do-test) && defined(TEST_TARGET)
-DO_MAKE_TEST?=	${SETENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS:N${DESTDIRNAME}=*}
+DO_MAKE_TEST?=	${SETENVI} ${WRK_ENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+				${MAKEFILE} ${TEST_ARGS:N${DESTDIRNAME}=*}
 do-test:
 	@(cd ${TEST_WRKSRC}; if ! ${DO_MAKE_TEST} ${TEST_TARGET}; then \
 		if [ -n "${TEST_FAIL_MESSAGE}" ] ; then \

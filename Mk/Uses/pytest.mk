@@ -60,7 +60,7 @@ _PYTEST_FILTER_EXPRESSION=	${_PYTEST_ALL_IGNORED_TESTS:C/^(.)/and not \1/:tW:C/^
 
 .  if !target(do-test)
 do-test:
-	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest \
+	@cd ${TEST_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest \
 		-k '${_PYTEST_FILTER_EXPRESSION}' \
 		-v -rs -o addopts= \
 		${PYTEST_ARGS}
