@@ -3,7 +3,6 @@
     SUBDIR += afterstep
     SUBDIR += afterstep-stable
     SUBDIR += amiwm
-    SUBDIR += antiwm
     SUBDIR += aphelia
     SUBDIR += awesome
     SUBDIR += awesome-vicious
