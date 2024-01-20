@@ -1,7 +1,6 @@
 PORTNAME=	niri
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0-alpha.3
-PORTREVISION=	1
+DISTVERSION=	0.1.0-beta.1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,9 +16,10 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
-USES=		cargo gl
+USES=		cargo gl gnome
 USE_GITHUB=	yes
 USE_GL=		gbm
+USE_GNOME=	cairo pango
 GH_ACCOUNT=	YaLTeR
 CARGO_FEATURES=	--no-default-features dbus
 PLIST_FILES=	bin/${PORTNAME} \
