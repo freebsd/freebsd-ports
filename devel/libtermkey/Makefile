@@ -1,5 +1,6 @@
 PORTNAME=	libtermkey
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtermkey/
 
@@ -10,11 +11,12 @@ WWW=		https://www.leonerd.org.uk/code/libtermkey/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool:build ncurses pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile
 LIB_DEPENDS=	libunibilium.so:devel/unibilium
+
+USES=		gmake libtool:build ncurses pathfix pkgconfig
 USE_LDCONFIG=	yes
-MAKE_ARGS=	MANDIR=${MANPREFIX}/man
+
+PATHFIX_MAKEFILEIN=	Makefile
 
 post-install:
 	#${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtermkey.so.1.14.1
