@@ -1,7 +1,6 @@
 PORTNAME=	genimage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16-10
-DISTVERSIONSUFFIX=	-g2b9d870
+DISTVERSION=	17
 #MASTER_SITES=	https://github.com/pengutronix/genimage/releases/download/v${DISTVERSION}/
 CATEGORIES=	sysutils
 
