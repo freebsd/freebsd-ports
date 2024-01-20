@@ -1,15 +1,9 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	78cdb555c57c33b7f331cb280ac2f615cb87fa74.patch:-p1 # Use NEON instructions on all platforms
-								   # https://github.com/FreeRDP/FreeRDP/issues/9746
-PATCHFILES+=	a371309672bfb1a8de4f558422ea8e7ee08190ea.patch:-p1 # enable wayland on BSD
-								   # https://github.com/FreeRDP/FreeRDP/pull/9730
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
