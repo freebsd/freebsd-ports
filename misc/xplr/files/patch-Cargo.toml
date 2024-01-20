@@ -1,11 +1,11 @@
---- Cargo.toml.orig	2023-05-22 04:45:42 UTC
+--- Cargo.toml.orig	2024-01-20 20:26:47 UTC
 +++ Cargo.toml
-@@ -72,7 +72,7 @@ features = ['serde']
+@@ -73,7 +73,7 @@ version = "0.9.2"
  
  [dependencies.mlua]
- version = "0.8.9"
+ version = "0.9.2"
 -features = ['luajit', 'vendored', 'serialize', 'send']
 +features = ['luajit', 'serialize', 'send']
  
  [dependencies.tui-input]
- version = "0.7.0"
+ version = "0.8.0"
