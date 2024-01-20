@@ -2137,6 +2137,7 @@
     SUBDIR += yi-hunspell
     SUBDIR += yodl
     SUBDIR += yq
+    SUBDIR += ytt
     SUBDIR += zed
     SUBDIR += zenxml
     SUBDIR += zorba
