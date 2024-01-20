@@ -1,6 +1,15 @@
---- crmsh/utils.py.orig	2021-08-12 08:25:45 UTC
+--- crmsh/utils.py.orig	2024-01-09 08:38:25 UTC
 +++ crmsh/utils.py
-@@ -1667,7 +1667,7 @@ def list_corosync_node_names():
+@@ -1564,7 +1564,7 @@ def get_pcmk_version():
+ 
+ 
+ def get_pcmk_version():
+-    cmd = "/usr/sbin/pacemakerd --version"
++    cmd = "%%PREFIX%%/sbin/pacemakerd --version"
+     out = sh.cluster_shell().get_stdout_or_raise_error(cmd)
+     version = out.split()[1]
+     logger.debug("Found pacemaker version: %s", version)
+@@ -1725,7 +1725,7 @@ def list_corosync_node_names():
      in corosync.conf
      '''
      try:
@@ -9,7 +18,7 @@
          lines = open(cfg).read().split('\n')
          name_re = re.compile(r'\s*name:\s+(.*)')
          names = []
-@@ -1686,7 +1686,7 @@ def list_corosync_nodes():
+@@ -1744,7 +1744,7 @@ def list_corosync_nodes():
      in corosync.conf
      '''
      try:
