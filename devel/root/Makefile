@@ -1,5 +1,6 @@
 PORTNAME=	root
 DISTVERSION=	6.30.02
+PORTREVISION=	1
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	${BUILD_AND_RUN_DEPENDS}
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
+		libgsl.so:math/gsl \
 		liblz4.so:archivers/liblz4 \
 		libopenblas.so:math/openblas \
 		libpcre.so:devel/pcre \
@@ -38,7 +40,7 @@ SHEBANG_FILES=	config/rootssh etc/dictpch/makepch.py etc/proof/utils/circle.sh \
 
 # Flags and environment variables for building
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
-CMAKE_ON=	gnuinstall soversion
+CMAKE_ON=	gnuinstall soversion mathmore
 CMAKE_OFF=	builtin_gtest clad
 CONFIGURE_WRKSRC?=	${WRKDIR}/.build
 MAKE_ENV+=		ROOTSYS=${CONFIGURE_WRKSRC}
