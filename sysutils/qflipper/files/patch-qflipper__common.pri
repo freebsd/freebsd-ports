@@ -17,19 +17,19 @@
 -!equals(HAS_VERSION, 0) {
 -    GIT_VERSION = unknown
 -}
-+GIT_VERSION = 1.2.1
++GIT_VERSION = 1.3.3
  
 -GIT_COMMIT = $$system("git rev-parse --short=8 HEAD","lines", HAS_COMMIT)
 -!equals(HAS_COMMIT, 0) {
 -    GIT_COMMIT = unknown
 -}
-+GIT_COMMIT = 3ec0fd9d
++GIT_COMMIT = bfce851
  
 -GIT_TIMESTAMP = $$system("git log -1 --pretty=format:%ct","lines", HAS_TIMESTAMP)
 -!equals(HAS_TIMESTAMP, 0) {
 -    GIT_TIMESTAMP = 0
 -}
-+GIT_TIMESTAMP = 1664810141
++GIT_TIMESTAMP = 1705727789
  
  DEFINES += APP_NAME=\\\"$$NAME\\\" \
             APP_VERSION=\\\"$$GIT_VERSION\\\" \

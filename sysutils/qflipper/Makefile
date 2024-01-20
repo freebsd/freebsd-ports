@@ -1,5 +1,5 @@
 PORTNAME=	qFlipper
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
