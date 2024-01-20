@@ -1,4 +1,5 @@
 bin/rtl_433
+@sample etc/rtl_433.conf etc/rtl_433.conf.sample
 @sample etc/rtl_433/CAME-TOP432.conf etc/rtl_433/CAME-TOP432.conf.sample
 @sample etc/rtl_433/ContinentalRemote.conf etc/rtl_433/ContinentalRemote.conf.sample
 @sample etc/rtl_433/DrivewayAlert.conf etc/rtl_433/DrivewayAlert.conf.sample

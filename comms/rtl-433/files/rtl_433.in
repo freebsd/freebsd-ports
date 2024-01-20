@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: rtl_433
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/rtl_433 to enable this service:
+#
+# rtl_433_enable (bool):        Set to NO by default.
+#                               Set it to "YES" to enable rtl_433.
+# rtl_433_config (str):         Set to /usr/local/etc/rtl_433.conf by default.
+#                               Path to configuration file.
+# rtl_433_user (str):           Set to "root" by default.
+#                               User to run rtl_433
+
+. /etc/rc.subr
+
+name=rtl_433
+rcvar=rtl_433_enable
+
+load_rc_config $name
+
+: ${rtl_433_enable:="NO"}
+: ${rtl_433_config:="/usr/local/etc/rtl_433.conf"}
+: ${rtl_433_user:="root"}
+
+pidfile="/var/run/${name}.pid"
+procname="/usr/local/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-S -m 3 -s info -l daemon -p ${pidfile} ${procname} -c ${rtl_433_config}"
+
+run_rc_command "$1"
