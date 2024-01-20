@@ -1,0 +1,5 @@
+A libpurple/Pidgin plugin for WhatsApp.
+
+This is a re-write of purple-gowhatsapp, switching back-ends from
+go-whatsapp to whatsmeow. whatsmeow is written by Tulir Asokan. It
+has multi-device support.
