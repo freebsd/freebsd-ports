@@ -15,5 +15,5 @@ lib/libcreg.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pycreg.a
 %%PYTHON_SITELIBDIR%%/pycreg.so
 libdata/pkgconfig/libcreg.pc
-man/man1/creginfo.1.gz
-man/man3/libcreg.3.gz
+share/man/man1/creginfo.1.gz
+share/man/man3/libcreg.3.gz
