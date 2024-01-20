@@ -4,8 +4,7 @@
 # Support of GTK is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.9.3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -35,11 +34,11 @@ OPTIONS_SUB=	yes
 
 SOUND_DESC=	Sound (audio) support via canberra
 
-SOUND_LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-			libcanberra-gtk3.so:audio/libcanberra-gtk3
-SOUND_CONFIGURE_ENABLE=	sound
-
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
+
+SOUND_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+			libcanberra.so:audio/libcanberra
+SOUND_CONFIGURE_ENABLE=	sound
 
 .include <bsd.port.mk>
