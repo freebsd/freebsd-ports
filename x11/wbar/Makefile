@@ -1,6 +1,6 @@
 PORTNAME=	wbar
 PORTVERSION=	2.3.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/
 
