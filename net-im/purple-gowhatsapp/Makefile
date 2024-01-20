@@ -18,7 +18,7 @@ USES=	go:no_targets cmake dos2unix
 OPTIONS_MULTI=			DB-backend
 OPTIONS_MULTI_DB-backend=	SQLITE3 POSTGRES MYSQL
 OPTIONS_DEFAULT=SQLITE3
-.for o in ${OPTIONS_MULTI_DB}
+.for o in ${OPTIONS_MULTI_DB-backend}
 $o_DESC=	Support use of $o for storing account information
 .endfor
 
