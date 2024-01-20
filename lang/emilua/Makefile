@@ -1,7 +1,6 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
@@ -11,7 +10,8 @@ WWW=		https://emilua.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-IGNORE_FreeBSD_13=	not supported by Emilua ('clearenv' was not declared in this scope)
+IGNORE_FreeBSD_12=	not supported by Emilua
+IGNORE_FreeBSD_13=	not supported by Emilua
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		boost-libs>0:devel/boost-libs \
@@ -30,8 +30,7 @@ USES=		localbase luajit:luajit-openresty meson ncurses pathfix \
 		pkgconfig ssl
 USE_GCC=	12
 USE_GITHUB=	nodefault
-GH_TUPLE=	BoostGSoC14:boost.http:93ae527c89ffc517862e1f5f54c8a257278f1195:emilua_http/subprojects/emilua-http \
-		breese:trial.protocol:79149f6:trial_protocol/subprojects/trial-protocol
+GH_TUPLE=	breese:trial.protocol:79149f6:trial_protocol/subprojects/trial-protocol
 USE_GITLAB=	yes
 
 CONFIGURE_ENV+=	BOOST_INCLUDEDIR="${LOCALBASE}/include" \
@@ -40,15 +39,12 @@ CONFIGURE_ENV+=	BOOST_INCLUDEDIR="${LOCALBASE}/include" \
 MESON_ARGS=	--buildtype=plain \
 		--wrap-mode=nodownload \
 		-Db_pch=false \
-		-Denable_http=true \
 		-Denable_manpages=true \
 		-Denable_tests=true
 
 CXXFLAGS+=	"-DFMT_HEADER_ONLY"
 
 post-extract:
-	${CP} ${WRKSRC}/subprojects/packagefiles/emilua-http/meson.build \
-		${WRKSRC}/subprojects/emilua-http/
 	${CP} ${WRKSRC}/subprojects/packagefiles/trial.protocol/meson.build \
 		${WRKSRC}/subprojects/trial-protocol/
 
