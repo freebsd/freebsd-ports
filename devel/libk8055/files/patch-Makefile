@@ -1,5 +1,5 @@
---- Makefile.orig	2006-07-29 18:03:43.000000000 +0800
-+++ Makefile	2014-05-27 17:29:02.806622803 +0800
+--- Makefile.orig	2006-07-29 10:03:43 UTC
++++ Makefile
 @@ -1,22 +1,22 @@
 -cc = gcc
 +CC ?= gcc
@@ -11,7 +11,7 @@
 +bindir = ${PREFIX}/bin
 +libdir = ${PREFIX}/lib
 +includedir = ${PREFIX}/include
-+mandir = ${MANPREFIX}/man/man1
++mandir = ${PREFIX}/share/man/man1
  OBJS = main.o libk8055.o
  # if your are using Linux comment out next line
 -CFLAGS = -DDAEMON -Wall -D_BSD
@@ -32,7 +32,7 @@
  	-ln -sf libk8055.so.0.2 libk8055.so
  
  libk8055.c: k8055.h
-@@ -24,29 +24,29 @@ libk8055.c: k8055.h
+@@ -24,33 +24,33 @@ all: k8055_prog libk8055.so.0.1
  all: k8055_prog libk8055.so.0.1
  
  %.o: %.c
@@ -43,10 +43,12 @@
 -	$(cc) $(OBJS) -o $(exec) $(libs)
 +	$(CC) $(OBJS) -o $(exec) $(libs)
  	strip $(exec)
-     
+-    
++
  clean:
  	rm -f *.o libk8055.so libk8055.so.0.2 $(exec)
-     
+-    
++
  install: k8055_prog libk8055.so.0.1
 -	cp -f $(exec) $(bindir)/
 -	if !(test -d $(libdir)); then \
@@ -70,7 +72,13 @@
 +	  mkdir $(DESTDIR)$(mandir); \
  	fi
 -	cp -f man/k8055.1.gz $(mandir)/
+-    
 +	cp -f man/k8055.1.gz $(DESTDIR)$(mandir)/
-     
++
  uninstall:
  	rm -f $(bindir)/$(exec) $(libdir)/libk8055* $(includedir)/k8055.h
+-    
++
+ test: k8055_prog
+ 	killall $(exec)
+ 	./$(exec)
