@@ -1,7 +1,7 @@
 PORTNAME=	jdupes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.27.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
@@ -23,7 +23,7 @@ MAKE_FLAGS=	EXTERNAL_HASH_LIB=1
 LDFLAGS+=	-ljodycode -lxxhash
 
 PLIST_FILES=	bin/jdupes \
-		man/man1/jdupes.1.gz
+		share/man/man1/jdupes.1.gz
 
 OPTIONS_DEFINE=		LOW_MEMORY
 LOW_MEMORY_DESC=	Minimally-featured build for embedded systems
@@ -31,6 +31,6 @@ LOW_MEMORY_MAKE_ENV=	LOW_MEMORY=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
