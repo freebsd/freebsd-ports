@@ -1,7 +1,8 @@
 PORTNAME=	cf
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.7
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ee.lbl.gov/
+MASTER_SITES=	https://ee.lbl.gov/downloads/cf/ \
+		LOCAL/leres/cf
 PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@FreeBSD.org
@@ -13,9 +14,10 @@ LICENSE=	BSD3CLAUSE
 INSTALL_TARGET=	install install-man
 
 PLIST_FILES=	bin/cf \
-		man/man1/cf.1.gz
+		share/man/man1/cf.1.gz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFLICTS_INSTALL=	cf # bin/cf
 
