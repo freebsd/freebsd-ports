@@ -1,5 +1,6 @@
 PORTNAME=	whatweb
 DISTVERSION=	0.5.5-${GH_TAGNAME}
+PORTREVISION=	1
 CATEGORIES=	security www
 
 MAINTAINER=	jamie@catflap.org
@@ -34,7 +35,7 @@ do-install:
 	( cd ${WRKSRC}/${dir} && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${RUBY_SITELIBDIR}/whatweb/${dir} )
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/whatweb.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/whatweb.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/whatweb ${STAGEDIR}${PREFIX}/bin/whatweb
 
 do-install-DOCS-on:

@@ -1,5 +1,5 @@
 bin/whatweb
-man/man1/whatweb.1.gz
+share/man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/addons/country-scanner
 %%RUBY_SITELIBDIR%%/whatweb/addons/verify-nikto
 %%RUBY_SITELIBDIR%%/whatweb/lib/colour.rb
