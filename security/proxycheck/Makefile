@@ -1,5 +1,6 @@
 PORTNAME=	proxycheck
 PORTVERSION=	0.49a
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/ \
 		http://www.it.ca/~paul/src/
@@ -16,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/proxycheck ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/proxycheck.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/proxycheck.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
 
