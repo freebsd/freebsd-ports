@@ -1,6 +1,6 @@
 PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	SF
 
@@ -22,7 +22,7 @@ MAKE_ARGS=	CC="${CC}" \
 		LIBDIR="" \
 		LIBS="-lical -lX11 -lXext -lXpm -lm"
 
-PLIST_FILES=	bin/wmCalendar man/man1/wmCalendar.1.gz
+PLIST_FILES=	bin/wmCalendar share/man/man1/wmCalendar.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
@@ -30,6 +30,6 @@ post-patch:
 			${WRKSRC}/Makefile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmCalendar.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/wmCalendar.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
