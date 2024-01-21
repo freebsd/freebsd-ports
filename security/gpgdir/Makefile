@@ -1,6 +1,6 @@
 PORTNAME=	gpgdir
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	https://www.cipherdyne.org/~cipherdy/gpgdir/download/ \
 		http://www.cipherdyne.org/gpgdir/download/
@@ -22,10 +22,10 @@ SHEBANG_FILES=	gpgdir
 
 CONFLICTS_INSTALL=	signing-party # bin/gpgdir
 
-PLIST_FILES=	bin/gpgdir man/man1/gpgdir.1.gz
+PLIST_FILES=	bin/gpgdir share/man/man1/gpgdir.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gpgdir ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gpgdir.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gpgdir.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
