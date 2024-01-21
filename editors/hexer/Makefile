@@ -1,6 +1,6 @@
 PORTNAME=	hexer
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://devel.ringlet.net/files/editors/hexer/ \
 		LOCAL/ehaupt
@@ -14,12 +14,15 @@ LICENSE_NAME=	Sascha Demetrio Custom License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-OPTIONS_DEFINE=	MYC
-MYC_DESC=	Builtin calculator
-OPTIONS_SUB=	yes
-OPTIONS_DEFAULT=MYC
-
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man1
 ALL_TARGET=	all
+
+OPTIONS_DEFINE=	MYC
+OPTIONS_DEFAULT=MYC
+OPTIONS_SUB=	yes
+
+MYC_DESC=	Builtin calculator
+
 MYC_ALL_TARGET=	myc
 
 .include <bsd.port.options.mk>
