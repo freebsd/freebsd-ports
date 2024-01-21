@@ -1,6 +1,6 @@
 PORTNAME=	ctrace
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.pratyeka.org/ctrace/download/
 
@@ -16,10 +16,10 @@ NO_BUILD=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	ctrace
 
-PLIST_FILES=	sbin/ctrace man/man1/ctrace.1.gz
+PLIST_FILES=	sbin/ctrace share/man/man1/ctrace.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/ctrace.man ${STAGEDIR}${PREFIX}/man/man1/ctrace.1
+	${INSTALL_MAN} ${WRKSRC}/ctrace.man ${STAGEDIR}${PREFIX}/share/man/man1/ctrace.1
 
 .include <bsd.port.mk>
