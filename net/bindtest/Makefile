@@ -1,6 +1,6 @@
 PORTNAME=	bindtest
 PORTVERSION=	1.56
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/kame/misc/ \
@@ -14,7 +14,7 @@ WWW=		https://www.kame.net/newsletter/20010504/
 
 USES=		tar:tgz
 
-PLIST_FILES=	bin/bindtest bin/bindtest.sh man/man1/bindtest.1.gz
+PLIST_FILES=	bin/bindtest bin/bindtest.sh share/man/man1/bindtest.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -26,6 +26,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bindtest ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/test.sh \
 		${STAGEDIR}${PREFIX}/bin/bindtest.sh
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
