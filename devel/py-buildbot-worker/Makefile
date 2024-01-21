@@ -40,7 +40,7 @@ fix-plist:
 	${REINPLACE_CMD} -e 's|^${BUILDBOT_REMOVE_ME}$$||' ${TMPPLIST}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/buildbot-worker.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/buildbot-worker.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-test:
 	${MKDIR} ${WRKDIR}/tmp
