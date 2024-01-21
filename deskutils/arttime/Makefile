@@ -1,5 +1,5 @@
 PORTNAME=	arttime
-PORTVERSION=	2.1.3
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/terminfo/x/xterm-256color:misc/terminfo-db \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	poetaman
-GH_TAGNAME=	6716e6b
 
 NO_ARCH=	yes
 NO_BUILD=	yes
