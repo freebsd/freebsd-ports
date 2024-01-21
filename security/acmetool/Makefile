@@ -1,7 +1,7 @@
 PORTNAME=	acmetool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
@@ -59,7 +59,7 @@ post-build:
 	${GO_WRKDIR_BIN}/${PORTNAME} --help-man > ${WRKSRC}/${PORTNAME}.8
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${MKDIR} ${STAGEDIR}/var/db/acme
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/acme/hooks
 
