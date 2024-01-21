@@ -1,5 +1,6 @@
 PORTNAME=	isal
 DISTVERSION=	g20220517
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-kmod
 
@@ -23,9 +24,9 @@ GH_TAGNAME=	b9f0356
 GH_TUPLE=	intel:isa-l_crypto:v2.22.0:isal_crypto/isa-l_crypto
 
 PLIST_FILES=	${KMODDIR}/isal.ko \
-		man/man4/isal.4.gz
+		share/man/man4/isal.4.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/isal.4 ${STAGEDIR}${MANPREFIX}/man/man4/isal.4
+	${INSTALL_MAN} ${WRKSRC}/isal.4 ${STAGEDIR}${PREFIX}/share/man/man4/isal.4
 
 .include <bsd.port.mk>
