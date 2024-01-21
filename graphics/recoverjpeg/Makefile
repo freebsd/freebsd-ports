@@ -1,6 +1,6 @@
 PORTNAME=	recoverjpeg
 PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://rfc1149.net/download/${PORTNAME}/ \
 		LOCAL/ehaupt
@@ -14,8 +14,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	exif:graphics/exif
 
 USES=		magick:6,run python shebangfix
+SHEBANG_FILES=	scripts/remove-duplicates
 GNU_CONFIGURE=	yes
 
-SHEBANG_FILES=	scripts/remove-duplicates
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
