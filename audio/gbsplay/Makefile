@@ -1,5 +1,6 @@
 PORTNAME=	gbsplay
 DISTVERSION=	0.0.94
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 
@@ -19,7 +20,8 @@ GH_ACCOUNT=	mmitch
 
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
+			--prefix=${PREFIX} \
 			--sysconfdir=${PREFIX}/etc \
 			--without-xmmsplugin
 
@@ -38,6 +40,9 @@ NAS_CONFIGURE_ENABLE=	nas
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-i18n
 NLS_LDFLAGS=		-lintl
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/\(gbsplayrc\)|${PREFIX}/etc/\1|" \
