@@ -21,6 +21,7 @@ GH_ACCOUNT=	mikebrady
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-avahi \
 		--with-libdaemon \
@@ -66,9 +67,6 @@ PULSEAUDIO_CONFIGURE_ON=	--with-pa
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ON=	--with-sndio
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-Wno-clobbered -Wno-psabi //' \

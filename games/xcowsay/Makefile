@@ -19,6 +19,7 @@ USES=		gettext gmake gnome pkgconfig
 USE_CSTD=	c99
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	DBUS
 
@@ -26,8 +27,5 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_ENABLE=	dbus
 DBUS_CFLAGS=		-DWITH_DBUS
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

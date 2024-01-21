@@ -23,6 +23,7 @@ LICENSE_FILE=		${WRKSRC}/COPYING
 USES=			bison cpe iconv localbase pathfix
 CPE_VENDOR=		gnu
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins \
@@ -76,9 +77,6 @@ LDFLAGS+=		-Wl,-export-dynamic
 STANDARD_PATH=		/sbin:/bin:/usr/sbin:/usr/bin
 CPPFLAGS+=		-DDEFAULT_PATH_VALUE='\"${STANDARD_PATH}:${LOCALBASE}/sbin:${LOCALBASE}/bin\"' \
 			-DSTANDARD_UTILS_PATH='\"${STANDARD_PATH}\"'
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 # Ensure y.tab.c is regenerated

@@ -18,6 +18,7 @@ USES=		cpe gmake libtool pkgconfig tar:xz
 CPE_VENDOR=	broadcom
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 # libopts options are required when using autogen
 CONFIGURE_ARGS=	--disable-libopts-install \
 		--disable-local-libopts \
@@ -39,8 +40,5 @@ LIBPCAP_PORTS_DESC=	Build with net/libpcap
 LIBPCAP_BASE_CONFIGURE_ON=	--with-libpcap=/usr/lib
 # needs .so version (see: 262976)
 LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so.1:net/libpcap
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

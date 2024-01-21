@@ -15,6 +15,7 @@ LIB_DEPENDS=	libxmp.so:audio/libxmp
 
 USES=		gmake localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 
@@ -33,9 +34,6 @@ PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\ install-conf||' ${WRKSRC}/Makefile.in

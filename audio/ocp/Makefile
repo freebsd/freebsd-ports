@@ -28,6 +28,7 @@ USES=		compiler:c11 dos2unix gmake gnome iconv jpeg localbase:ldflags \
 		makeinfo ncurses pkgconfig shared-mime-info tar:xz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dir-suffix="" \
 		--without-sdl \
@@ -98,9 +99,6 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp

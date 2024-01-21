@@ -17,6 +17,7 @@ USES=		gmake
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-conf=${PREFIX}/etc/tsocks.conf
 
@@ -36,9 +37,6 @@ HOSTNAMES_CONFIGURE_OFF=	--disable-hostnames
 MUTE_CONFIGURE_ON=		--disable-debug
 OLDMETHOD_CONFIGURE_ON=		--enable-oldmethod
 SOCKSDNS_CONFIGURE_ON=		--enable-socksdns
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/tsocks

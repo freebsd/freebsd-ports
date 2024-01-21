@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vermaseren
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-native \
 			--enable-largefile \
 			--enable-scalar \
@@ -35,9 +36,6 @@ OPENMPI_LIB_DEPENDS=		libgcc_s.so.1:lang/gcc9 \
 OPENMPI_CONFIGURE_ENABLE=	parform
 OPENMPI_CONFIGURE_ENV+=		MPICC="${MPICC}" \
 				MPICXX="${MPICXX}"
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.options.mk>
 

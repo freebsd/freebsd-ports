@@ -14,10 +14,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dagwieers
 
 GNU_CONFIGURE=		yes
-CONFLICTS_INSTALL=	security/1password-client
-
-# remove after manprefix migration
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFLICTS_INSTALL=	security/1password-client
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|\(OPENLOG_VOID\) 0|\1 1|' ${WRKSRC}/config.h

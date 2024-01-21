@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 USES=		autoreconf cpe gettext-tools gmake ssl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-cafile=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${OPENSSLINC}
 LIBS+=		-L${OPENSSLLIB}
@@ -25,9 +26,6 @@ OPTIONS_SUB=	yes
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${RM} -r ${WRKSRC}/intl

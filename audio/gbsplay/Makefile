@@ -19,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mmitch
 
 HAS_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
 			--prefix=${PREFIX} \
@@ -40,9 +41,6 @@ NAS_CONFIGURE_ENABLE=	nas
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-i18n
 NLS_LDFLAGS=		-lintl
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/\(gbsplayrc\)|${PREFIX}/etc/\1|" \

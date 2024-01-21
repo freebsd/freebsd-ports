@@ -18,8 +18,6 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 USES=		compiler:c++11-lang gmake jpeg localbase:ldflags pkgconfig
 
 GNU_CONFIGURE=	yes
-
-# remove after manprefix migration
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:

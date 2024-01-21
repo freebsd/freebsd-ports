@@ -16,8 +16,6 @@ RUN_DEPENDS=	exif:graphics/exif
 USES=		magick:6,run python shebangfix
 SHEBANG_FILES=	scripts/remove-duplicates
 GNU_CONFIGURE=	yes
-
-# remove after manprefix migration
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

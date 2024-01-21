@@ -14,6 +14,7 @@ LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -27,9 +28,6 @@ OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} "s|/dev/dvd|${DEFAULT_DVD_DEVICE}|g" \

@@ -15,12 +15,10 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-fPIC
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

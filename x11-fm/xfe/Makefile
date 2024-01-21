@@ -23,6 +23,7 @@ USE_GNOME=	intltool
 USE_XORG=	x11 xcb xft xrandr xrender
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 LDFLAGS+=	-pthread
 
@@ -32,9 +33,6 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 .for i in XFileExplorer.cpp help.h xfedefs.h

@@ -14,14 +14,12 @@ LICENSE=	GPLv2
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFLICTS=	chef filters
 
 SUB_FILES=	pkg-message
 
 INFO=		talkfilters
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-extract:
 	@${ECHO} ${DO_NADA} > ${WRKSRC}/install-sh

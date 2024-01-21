@@ -17,8 +17,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USES=		autoreconf jpeg localbase:ldconfig tar:bzip2
 GNU_CONFIGURE=	yes
-
-# remove after manprefix migration
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

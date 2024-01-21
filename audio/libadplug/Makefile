@@ -21,14 +21,12 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--enable-maintainer-mode
 
 INSTALL_TARGET=	install-strip
 
 INFO=		libadplug
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-# remove after manprefix migration
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
