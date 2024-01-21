@@ -1,5 +1,6 @@
 PORTNAME=	jp2a
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/Talinx/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -26,11 +27,11 @@ LDFLAGS+=	-lm
 
 PLIST_FILES=	bin/jp2a \
 		etc/bash_completion.d/jp2a \
-		man/man1/jp2a.1.gz
+		share/man/man1/jp2a.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/jp2a ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/jp2a.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/jp2a.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completion/bash/jp2a \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
