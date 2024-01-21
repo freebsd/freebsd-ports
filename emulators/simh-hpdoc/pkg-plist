@@ -1,4 +1,4 @@
-man/man1/hpdoc.1.gz
+share/man/man1/hpdoc.1.gz
 %%DOCSDIR%%/simh_doc.pdf
 %%DOCSDIR%%/simh_supplement.pdf
 %%APPNOTES%%%%DOCSDIR%%/hp_1000_io_simulation.pdf

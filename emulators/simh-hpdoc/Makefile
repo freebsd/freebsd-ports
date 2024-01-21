@@ -1,5 +1,6 @@
 PORTNAME=	hpdoc
 DISTVERSION=	3.11.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/hp/releases/:src \
 		http://simh.trailing-edge.com/hp/docs/:app \
@@ -41,7 +42,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/SCP/doc/simh_doc.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/SCP/doc/simh_supplement.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/hpdoc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/hpdoc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-APPNOTES-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
