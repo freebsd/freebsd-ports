@@ -11,6 +11,8 @@ WWW=		https://github.com/dalance/procs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails due to the broken bsd-kvm-0.1.4 crate, see https://github.com/dalance/bsd-kvm/issues/1#issuecomment-1902529988
+
 USES=		cargo llvm:lib
 
 USE_GITHUB=	yes
