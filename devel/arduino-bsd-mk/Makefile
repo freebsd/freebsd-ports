@@ -1,5 +1,5 @@
 PORTNAME=	arduino-bsd-mk
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	https://xse.com/leres/arduino/arduino-bsd-mk/ \
 		LOCAL/leres/arduino-bsd-mk
@@ -19,9 +19,12 @@ NO_MTREE=	yes
 
 PORTEXAMPLES=	*
 
-PLIST_FILES=	${ALL_FILES} ${ALL_SCRIPTS:R} man/man7/bsd.arduino.mk.7.gz
+PLIST_FILES=	${ALL_FILES} ${ALL_SCRIPTS:R} \
+		share/man/man7/bsd.arduino.mk.7.gz
 
 OPTIONS_DEFINE+=	EXAMPLES
+
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share
 
 ALL_FILES=	arduino-bsd-mk/bsd.arduino.mk
 
