@@ -1,5 +1,6 @@
 PORTNAME=	pimd
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -26,6 +27,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/pimd.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pimd.in \
 		${STAGEDIR}${PREFIX}/etc/rc.d/pimd
-	${INSTALL_MAN} ${WRKSRC}/pimd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/pimd.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>
