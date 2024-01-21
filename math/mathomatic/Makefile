@@ -1,6 +1,6 @@
 PORTNAME=	mathomatic
-PORTVERSION=	16.0.5
-PORTREVISION=	2
+DISTVERSION=	16.0.5
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -17,20 +17,20 @@ GH_ACCOUNT=	mfillpot
 GH_TAGNAME=	ceb0861
 
 MAKEFILE=	makefile
-TEST_TARGET=	check  # test fails
-
-PORTDOCS=	*
-PLIST_FILES=	bin/mathomatic man/man1/mathomatic.1.gz \
-		share/pixmaps/mathomatic.png \
-		share/applications/mathomatic.desktop
-
 MAKE_ARGS=	READLINE=1
+TEST_TARGET=	check # test fails
+
+PLIST_FILES=	bin/mathomatic \
+		share/applications/mathomatic.desktop \
+		share/man/man1/mathomatic.1.gz \
+		share/pixmaps/mathomatic.png
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${STAGEDIR}${PREFIX}/share/pixmaps
