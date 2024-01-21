@@ -4,10 +4,10 @@ bin/dq
 %%ETCDIR%%cache/env/ROOT
 %%ETCDIR%%cache/root/servers/@
 %%ETCDIR%%cache/run
-man/man1/dq.1.gz
-man/man8/dqcache-makekey.8.gz
-man/man8/dqcache-start.8.gz
-man/man8/dqcache.8.gz
+share/man/man1/dq.1.gz
+share/man/man8/dqcache-makekey.8.gz
+share/man/man8/dqcache-start.8.gz
+share/man/man8/dqcache.8.gz
 sbin/dqcache
 sbin/dqcache-makekey
 sbin/dqcache-start

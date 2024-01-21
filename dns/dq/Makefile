@@ -1,5 +1,6 @@
 PORTNAME=	dq
 PORTVERSION=	20240101
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -28,7 +29,7 @@ post-install:
 	${ECHO_CMD} "${ETCDIR}cache/root" > ${STAGEDIR}${ETCDIR}cache/env/ROOT
 	${CP} files/root-servers-list ${STAGEDIR}${ETCDIR}cache/root/servers/@
 	${CP} ${WRKDIR}/run ${STAGEDIR}${ETCDIR}cache/run
-	${INSTALL_MAN} ${WRKSRC}/man/dq*.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/dq*.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/dq*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/dq*.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
