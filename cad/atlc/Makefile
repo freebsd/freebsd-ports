@@ -22,5 +22,6 @@ MAKE_ARGS=	examplesdir=${EXAMPLESDIR} \
 		htmldir=${DOCSDIR}/html-docs \
 		jpgdir=${DOCSDIR}/html-docs/jpgs \
 		qexdir=${DOCSDIR}/qex-december-1996 \
+		mandir=${PREFIX}/share/man
 
 .include <bsd.port.mk>
