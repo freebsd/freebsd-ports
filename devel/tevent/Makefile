@@ -1,6 +1,6 @@
 PORTNAME=			tevent
 DISTVERSION=			0.13.0
-PORTREVISION=			1
+PORTREVISION=			2
 PORTEPOCH=			0
 CATEGORIES=			devel
 MASTER_SITES=			SAMBA
@@ -23,8 +23,7 @@ CONFIGURE_LOG=			bin/config.log
 PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
 PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR:S;^${PREFIX}/;;}
 
-CONFIGURE_ARGS=			--mandir=${MANPREFIX}/man \
-				--disable-rpath \
+CONFIGURE_ARGS=			--disable-rpath \
 				--disable-rpath-install \
 				--bundled-libraries=!talloc,cmocka \
 				--builtin-libraries=replace \
