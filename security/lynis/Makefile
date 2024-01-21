@@ -1,5 +1,6 @@
 PORTNAME=	lynis
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://cisofy.com/files/
 
@@ -29,7 +30,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/default.prf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/default.prf.sample
