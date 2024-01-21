@@ -1,6 +1,6 @@
 PORTNAME=	fcrackzip
 DISTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security archivers
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-lzip
 
-PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo man/man1/fcrackzip.1.gz
+PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo share/man/man1/fcrackzip.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/zipinfo/fcrackzipinfo/g' ${WRKSRC}/zipinfo.c
@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fcrackzip ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/zipinfo \
 		${STAGEDIR}${PREFIX}/bin/fcrackzipinfo
-	${INSTALL_MAN} ${WRKSRC}/fcrackzip.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/fcrackzip.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
