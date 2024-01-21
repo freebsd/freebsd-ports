@@ -1,6 +1,5 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.44.0
-PORTREVISION=	1
+DISTVERSION=	3.45.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -75,13 +74,13 @@ OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			SORT_REF STATIC STMT TRUSTED_SCHEMA UNKNOWN_SQL UNLOCK_NOTIFY \
 			UPDATE_LIMIT URI URI_AUTHORITY
 .endif
-OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
+OPTIONS_DEFAULT=	DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
 			RTREE SECURE_DELETE STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
 # FTS3_TOKEN used by audio/clementine-player, mail/thunderbird, www/seamonkey
 # FTS5 used by sysutils/tracker
-# JSON1 used by net-im/py-matrix-synapse
+# JSON1 used by net-im/py-matrix-synapse (since SQLite 3.38.0 included by default)
 # DBPAGE used by audio/audacity (since 3.0.0)
 # DQS used by multimedia/emby-server, multimedia/tautulli, net/vnstat, www/qutebrowser
 #
@@ -113,7 +112,7 @@ OPTIONS_SUB=		yes
 ARMOR_DESC=		Detect misuse of the API # https://www.sqlite.org/compile.html#enable_api_armor
 DBPAGE_DESC=		Enable DBPAGE Virtual Table # https://sqlite.org/compile.html#enable_dbpage_vtab
 DBSTAT_DESC=		Enable DBSTAT Virtual Table # https://www.sqlite.org/dbstat.html
-DIRECT_READ_DESC=	File is read directly from disk
+DIRECT_READ_DESC=	File is read directly from disk # https://sqlite.org/compile.html#direct_overflow_read
 DQS_DESC=		Double-quoted String Literals # https://www.sqlite.org/compile.html#dqs
 EXTENSION_DESC=		Allow loadable extensions
 FTS3_TOKEN_DESC=	Enable two-args version fts3_tokenizer # https://www.sqlite.org/compile.html#enable_fts3_tokenizer, https://www.sqlite.org/fts3.html#f3tknzr
@@ -125,7 +124,7 @@ MEMMAN_DESC=		Allow it to release unused memory
 METADATA_DESC=		Enable column metadata
 NORMALIZE_DESC=		Enable normalized sql function
 NULL_TRIM_DESC=		Omits NULL columns at the ends of rows # https://sqlite.org/compile.html#enable_null_trim
-OFFSET_DESC=		Enable sqlite_offset() returning record's file offset # http://www.sqlite.org/compile.html#enable_offset_sql_func
+OFFSET_DESC=		Enable sqlite_offset() returning records file offset # http://www.sqlite.org/compile.html#enable_offset_sql_func
 OPT_EXT_DESC=		Optional extensions
 OPT_FUNC_DESC=		Optional functions
 RAMT_DESC=		Where to store temporary file # https://www.sqlite.org/tempfiles.html#tempstore
@@ -158,7 +157,7 @@ URI_DESC=		Enable use the URI filename
 ARMOR_CPPFLAGS=	-DSQLITE_ENABLE_API_ARMOR=1
 DBPAGE_CPPFLAGS=	-DSQLITE_ENABLE_DBPAGE_VTAB=1
 DBSTAT_CPPFLAGS=	-DSQLITE_ENABLE_DBSTAT_VTAB=1
-DIRECT_READ_CPPFLAGS=	-DSQLITE_DIRECT_OVERFLOW_READ=1
+DIRECT_READ_CPPFLAGS_OFF=	-DSQLITE_DIRECT_OVERFLOW_READ=0
 DQS_CPPFLAGS=	-DSQLITE_DQS=3
 DQS_CPPFLAGS_OFF=	-DSQLITE_DQS=0
 EXTENSION_CONFIGURE_ENABLE=	load-extension
@@ -217,7 +216,16 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 .include <bsd.port.options.mk>
 
 # _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-_YEAR=	2023
+_YEAR=	2024
+
+# Recommended options
+# https://sqlite.org/compile.html#strict_subtype
+.if defined(SQLITE_STRICT_SUBTYPE)
+CPPFLAGS+=	-DSQLITE_STRICT_SUBTYPE=${SQLITE_STRICT_SUBTYPE}
+.else
+# This recommended option helps to identify problems in the implementation of application-defined SQL functions early in the development cycle.
+CPPFLAGS+=	-DSQLITE_STRICT_SUBTYPE=1
+.endif
 
 # Platform Configuration
 # -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]
