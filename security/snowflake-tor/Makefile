@@ -1,7 +1,7 @@
 PORTNAME=		snowflake
 DISTVERSIONPREFIX=	v
 PORTVERSION=		2.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=		security net
 PKGNAMESUFFIX=		-tor
 
@@ -60,9 +60,9 @@ post-patch:
 	  ${WRKDIR}/${GO_MODULE}@v${PORTVERSION}/broker/broker.go
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/man/man1
 .	for b in client proxy
-	  ${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}-$b.1 ${STAGEDIR}/${MANPREFIX}/man/man1
+	  ${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}-$b.1 ${STAGEDIR}/${PREFIX}/share/man/man1
 	  ${MV} ${STAGEDIR}/${PREFIX}/bin/$b ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}-$b
 .	endfor
 	${MV} ${STAGEDIR}/${PREFIX}/bin/broker ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}-broker
