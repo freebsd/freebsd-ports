@@ -1,6 +1,6 @@
 PORTNAME=	op
-PORTVERSION=	1.34
-PORTREVISION=	2
+DISTVERSION=	1.34
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,8 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	dagwieers
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 CONFLICTS_INSTALL=	security/1password-client
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|\(OPENLOG_VOID\) 0|\1 1|' ${WRKSRC}/config.h
