@@ -1,5 +1,6 @@
 PORTNAME=	shairport-sync
 DISTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -65,6 +66,9 @@ PULSEAUDIO_CONFIGURE_ON=	--with-pa
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ON=	--with-sndio
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-Wno-clobbered -Wno-psabi //' \
