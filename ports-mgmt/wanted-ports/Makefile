@@ -1,5 +1,5 @@
 PORTNAME=	wanted-ports
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 #PORTREVISION is set from ${CFGFILE}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
@@ -18,7 +18,7 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 		PKGNAME=${PKGNAME}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .if defined(WANTEDPORTSCFG)
 CFGFILE=	${WANTEDPORTSCFG}
@@ -32,6 +32,6 @@ CFGFILE?=	/var/db/${PORTNAME}.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
