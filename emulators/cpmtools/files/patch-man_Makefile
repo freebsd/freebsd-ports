@@ -5,7 +5,7 @@
  MANEXT=1
  #MANDIR=/usr/man/man${MANEXT}
 -MANDIR=/usr/local/man/man${MANEXT}
-+MANDIR=${PREFIX}/man/man${MANEXT}
++MANDIR=${PREFIX}/share/man/man${MANEXT}
  
  install:
 -	cp cpm.1 ${DESTDIR}/${MANDIR}/cpm.${MANEXT}
