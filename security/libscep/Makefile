@@ -1,6 +1,7 @@
 PORTNAME=	libscep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -28,13 +29,13 @@ CMAKE_OFF=	BUILD_CLI
 
 PLIST_FILES=	include/scep.h \
 		lib/libscep.so \
-		man/man1/libscep.1.gz
+		share/man/man1/libscep.1.gz
 
 post-build:
 	(cd ${WRKSRC}/docs;\
 	BUILDDIR=${BUILD_WRKSRC} SPHINXBUILD=sphinx-build-${PYTHON_VER} ${GMAKE} -e man)
 
 post-install:
-	${INSTALL_MAN} ${BUILD_WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${BUILD_WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
