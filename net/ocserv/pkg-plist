@@ -1,9 +1,9 @@
 bin/occtl
 bin/ocpasswd
 libexec/ocserv-fw
-man/man8/occtl.8.gz
-man/man8/ocpasswd.8.gz
-man/man8/ocserv.8.gz
+share/man/man8/occtl.8.gz
+share/man/man8/ocpasswd.8.gz
+share/man/man8/ocserv.8.gz
 @sample etc/ocserv/ocserv.conf.sample
 sbin/ocserv
 sbin/ocserv-worker
