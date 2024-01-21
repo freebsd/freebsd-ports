@@ -1,6 +1,6 @@
 PORTNAME=	anki
 DISTVERSION=	23.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -157,7 +157,7 @@ do-install:
 	cd ${WRKSRC}/qt/bundle/lin \
 		&& ${INSTALL_DATA} anki.xpm anki.png ${STAGEDIR}${PREFIX}/share/pixmaps \
 		&& ${INSTALL_DATA} anki.desktop ${STAGEDIR}${PREFIX}/share/applications \
-		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${WRKSRC}/qt/tools \
 		&& ${INSTALL_SCRIPT} runanki.system.in ${STAGEDIR}${PREFIX}/bin/anki
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/anki/_rsbridge.so

@@ -1,5 +1,5 @@
 bin/anki
-man/man1/anki.1.gz
+share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/colors.py
 %%DATADIR%%/_aqt/data/qt/icons.qrc
 %%DATADIR%%/_aqt/data/qt/icons/anki.png
