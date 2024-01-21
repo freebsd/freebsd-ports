@@ -1,8 +1,15 @@
-Index: Makefile
-diff -u Makefile.orig Makefile
---- Makefile.orig	2013-06-02 23:07:08.000000000 +0900
-+++ Makefile	2013-10-05 01:00:09.143956067 +0900
-@@ -94,11 +94,11 @@
+--- Makefile.orig	2013-06-02 14:07:08 UTC
++++ Makefile
+@@ -41,7 +41,7 @@ BINDIR=		$(PREFIX)/sbin
+ .if (${OPSYS} == "NetBSD")
+ MANDIR=		$(PREFIX)/man
+ .else
+-MANDIR=		$(PREFIX)/man/man
++MANDIR=		$(PREFIX)/share/man/man
+ .endif
+ MAN=		dtcps.8 dtcpc.8 dtcpauth.8
+ 
+@@ -94,11 +94,11 @@ dtcpauth.8:	dtcpauth.8.in
  
  realinstall:
  	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 555 dtcps \

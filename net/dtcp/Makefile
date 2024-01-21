@@ -1,6 +1,6 @@
 PORTNAME=	dtcp
 PORTVERSION=	20130602
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/
 
@@ -22,7 +22,7 @@ MAKE_ENV+=	RUBY=${RUBY}
 SUB_LIST+=	RUBY=${RUBY}
 
 PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps \
-		man/man8/dtcpauth.8.gz man/man8/dtcpc.8.gz \
-		man/man8/dtcps.8.gz
+		share/man/man8/dtcpauth.8.gz share/man/man8/dtcpc.8.gz \
+		share/man/man8/dtcps.8.gz
 
 .include <bsd.port.mk>
