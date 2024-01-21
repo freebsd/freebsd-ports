@@ -1,8 +1,8 @@
 bin/fpscan
 bin/fpupdate
-@unexec if [ -L /etc/f-prot.conf ]; then rm /etc/f-prot.conf; fi
+@postunexec if [ -L /etc/f-prot.conf ]; then rm /etc/f-prot.conf; fi
 @sample etc/f-prot.conf.sample
-@exec if [ ! -e /etc/f-prot.conf ]; then ln -s %D/etc/f-prot.conf /etc/f-prot.conf; fi
+@preexec if [ ! -e /etc/f-prot.conf ]; then ln -s %D/etc/f-prot.conf /etc/f-prot.conf; fi
 etc/periodic/daily/900.fpupdate
 libexec/f-prot/README
 libexec/f-prot/antivir.def
@@ -10,9 +10,9 @@ libexec/f-prot/fpscan
 libexec/f-prot/fpupdate
 libexec/f-prot/license.key
 libexec/f-prot/product.data
-man/man1/fpscan.1.gz
-man/man5/f-prot.conf.5.gz
-man/man8/fpupdate.8.gz
+share/man/man1/fpscan.1.gz
+share/man/man5/f-prot.conf.5.gz
+share/man/man8/fpupdate.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE-FPAV
