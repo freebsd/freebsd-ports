@@ -1,6 +1,6 @@
 PORTNAME=	rate
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 
@@ -15,10 +15,10 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-lcompat
 CFLAGS+=	-DOPEN_BSD=1 -DHAVE_REGEX -DSTREAM_ANALYZER -DIOCTL_GETWINSIZE -DAUTOSENSE_DLH
 
-PLIST_FILES=	bin/rate man/man1/rate.1.gz
+PLIST_FILES=	bin/rate share/man/man1/rate.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rate ${STAGEDIR}${PREFIX}/bin/rate
-	${INSTALL_MAN} ${WRKSRC}/doc/rate.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/rate.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
