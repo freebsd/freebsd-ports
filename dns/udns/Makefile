@@ -1,6 +1,6 @@
 PORTNAME=	udns
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/udns/
 
@@ -45,10 +45,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${STAGEDIR}${PREFIX}/bin/dnsget
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${STAGEDIR}${PREFIX}/bin/rblcheck
 .for FILE in dnsget.1 rblcheck.1
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/share/man/man1/${FILE}
 .endfor
 .for FILE in udns.3
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man3/${FILE}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/share/man/man3/${FILE}
 .endfor
 
 post-install:

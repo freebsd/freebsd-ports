@@ -5,6 +5,6 @@ lib/libudns.a
 lib/libudns.so
 lib/libudns.so.0
 libdata/pkgconfig/libudns.pc
-man/man1/dnsget.1.gz
-man/man1/rblcheck.1.gz
-man/man3/udns.3.gz
+share/man/man1/dnsget.1.gz
+share/man/man1/rblcheck.1.gz
+share/man/man3/udns.3.gz
