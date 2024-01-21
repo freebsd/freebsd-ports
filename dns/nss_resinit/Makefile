@@ -1,6 +1,6 @@
 PORTNAME=	nss_resinit
 PORTVERSION=	20060412
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.mahoroba.org/~ume/FreeBSD/
 
@@ -10,9 +10,10 @@ COMMENT=	Resolver re-initialization NSS module
 LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 
 PLIST_FILES=	lib/nss_resinit.so lib/nss_resinit.so.1 \
-		man/man8/nss_resinit.8.gz
+		share/man/man8/nss_resinit.8.gz
 
 .include <bsd.port.pre.mk>
 
