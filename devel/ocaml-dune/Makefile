@@ -1,5 +1,6 @@
 PORTNAME=	dune
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -17,8 +18,7 @@ USE_OCAML_FINDLIB=	yes
 SUB_FILES=	setup.ml
 SUB_LIST=	OCAML_SITELIBDIR="${PREFIX}/${OCAML_SITELIBDIR}" \
 		OCAML_LIBDIR="${PREFIX}/${OCAML_LIBDIR}" \
-		OCAML_DOCSDIR="${OCAML_DOCSDIR}" \
-		MANPREFIX="${MANPREFIX}"
+		OCAML_DOCSDIR="${OCAML_DOCSDIR}"
 
 CONFLICTS_INSTALL=	wdune
 
@@ -32,6 +32,8 @@ post-patch:
 # FreeBSD-specific hack, do not nag upstream (for now)
 	@${REINPLACE_CMD} -e '/doc_root = Path.relative/ \
 		s:"doc:"${OCAML_DOCSDIR:S,^${PREFIX}/,,}:' \
+		${WRKSRC}/src/dune_rules/install.ml
+	@${REINPLACE_CMD} -e 's|\"man\"|\"share/man\"|g' \
 		${WRKSRC}/src/dune_rules/install.ml
 
 pre-configure:
