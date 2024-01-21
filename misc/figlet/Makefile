@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/showfigfonts ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.flf ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.flc ${STAGEDIR}${DATADIR}/
-	${INSTALL_MAN} ${WRKSRC}/*.6 ${STAGEDIR}${MANPREFIX}/share/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/*.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
