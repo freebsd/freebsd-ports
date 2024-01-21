@@ -2,10 +2,10 @@ bin/xfe
 bin/xfi
 bin/xfp
 bin/xfw
-man/man1/xfe.1.gz
-man/man1/xfi.1.gz
-man/man1/xfp.1.gz
-man/man1/xfw.1.gz
+share/man/man1/xfe.1.gz
+share/man/man1/xfi.1.gz
+share/man/man1/xfp.1.gz
+share/man/man1/xfw.1.gz
 share/applications/xfe.desktop
 share/applications/xfi.desktop
 share/applications/xfp.desktop

@@ -1,6 +1,6 @@
 PORTNAME=	xfe
 DISTVERSION=	1.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -32,6 +32,9 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 .for i in XFileExplorer.cpp help.h xfedefs.h
