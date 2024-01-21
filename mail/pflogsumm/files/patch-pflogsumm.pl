@@ -1,6 +1,6 @@
---- pflogsumm.pl.orig	2020-09-06 10:15:06.176055000 +0200
-+++ pflogsumm.pl	2020-09-06 10:15:43.839326000 +0200
-@@ -1536,7 +1536,7 @@
+--- pflogsumm.pl.orig	2024-01-21 13:07:50 UTC
++++ pflogsumm.pl
+@@ -1536,7 +1536,7 @@ sub gimme_domain {
      # split domain/ipaddr into separates
      # newer versions of Postfix have them "dom.ain[i.p.add.ress]"
      # older versions of Postfix have them "dom.ain/i.p.add.ress"
