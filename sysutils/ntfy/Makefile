@@ -15,11 +15,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.11
 USE_GITHUB=	yes
 GH_ACCOUNT=	dschep
 USE_PYTHON=	distutils noflavors autoplist
 
 NO_ARCH=	yes
+
+post-patch:
+# Fix build with Python 3.11
+	@${REINPLACE_CMD} -e 's|getargspec|getfullargspec|' \
+		${WRKSRC}/ntfy/__init__.py
 
 .include <bsd.port.mk>
