@@ -1,5 +1,6 @@
 PORTNAME=		bc
 PORTVERSION=		6.7.5
+PORTREVISION=	1
 CATEGORIES=		math lang
 MASTER_SITES=		https://github.com/gavinhoward/bc/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=		gh-
@@ -41,8 +42,8 @@ pre-build:
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/bc ${STAGEDIR}${PREFIX}/bin/
 		${LN} ${STAGEDIR}${PREFIX}/bin/bc ${STAGEDIR}${PREFIX}/bin/dc
-		${INSTALL_MAN} ${WRKSRC}/manuals/bc.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
-		${INSTALL_MAN} ${WRKSRC}/manuals/dc.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+		${INSTALL_MAN} ${WRKSRC}/manuals/bc.1 ${STAGEDIR}${PREFIX}/share/man/man1
+		${INSTALL_MAN} ${WRKSRC}/manuals/dc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/C
 		${WRKSRC}/scripts/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME}
 		${MV} ${STAGEDIR}${PREFIX}/share/nls/en_US/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
