@@ -4,7 +4,7 @@
    next unless l =~ /errmsg\.h|mysqld_error\.h/
    fn = l.split(/\"/)[1]
    IO.foreach(fn) do |m|
-+    next if m == 'ER_UNKNOWN_ERROR_CODE'
++    next if m =~ /ER_UNKNOWN_ERROR_CODE/
 +
      if m =~ /^#define\s+([CE]R_[0-9A-Z_]+)/ then
        error_syms << $1
