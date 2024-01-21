@@ -218,6 +218,7 @@
     SUBDIR += rpm4
     SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
+    SUBDIR += rubygem-bzip2-ffi
     SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-fpm
     SUBDIR += rubygem-libarchive
