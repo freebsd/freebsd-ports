@@ -1,5 +1,6 @@
 PORTNAME=	pod2mdoc
-PORTVERSION=	0.2
+DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/pod2mdoc/snapshots/
 
@@ -13,13 +14,13 @@ USES=	tar:tgz
 ALL_TARGET=	pod2mdoc
 
 PLIST_FILES=	bin/pod2mdoc \
-		man/man1/pod2mdoc.1.gz
+		share/man/man1/pod2mdoc.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/OHASH=1/OHASH=0/g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pod2mdoc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pod2mdoc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pod2mdoc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
