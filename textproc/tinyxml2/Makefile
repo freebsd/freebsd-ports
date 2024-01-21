@@ -1,5 +1,5 @@
 PORTNAME=	tinyxml2
-PORTVERSION=	9.0.0
+DISTVERSION=	10.0.0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
@@ -10,29 +10,23 @@ WWW=		https://github.com/leethomason/tinyxml2
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:insource compiler:c++11-lang cpe dos2unix pathfix
-
-CMAKE_OFF=	BUILD_TESTS
-CMAKE_ON=	BUILD_SHARED_LIBS
+USES=		cmake:testing compiler:c++11-lang cpe dos2unix pathfix
+CPE_VENDOR=	tinyxml2_project
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+USE_GITHUB=     yes
+GH_ACCOUNT=     leethomason
 
-GH_ACCOUNT=	leethomason
-USE_GITHUB=	yes
+CMAKE_TESTING_ON=	tinyxml2_BUILD_TESTING
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-CPE_VENDOR=	tinyxml2_project
+CMAKE_OFF=	tinyxml2_BUILD_TESTING
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 OPTIONS_DEFINE=	EXAMPLES
-
-post-install:
-	${AR} cq ${STAGEDIR}${PREFIX}/lib/libtinyxml2.a ${WRKSRC}/CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} resources ${STAGEDIR}${EXAMPLESDIR}/
-
-do-test:
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xmltest && ./xmltest
 
 .include <bsd.port.mk>
