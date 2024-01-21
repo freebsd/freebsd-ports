@@ -37,6 +37,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rc_scripts/freebsd \
 	    ${STAGEDIR}${PREFIX}/etc/rc.d/spfmilter
 	${INSTALL_MAN} ${WRKSRC}/spfmilter.8 \
-	    ${STAGEDIR}${MANPREFIX}/share/man/man8
+	    ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
