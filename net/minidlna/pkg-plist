@@ -1,7 +1,7 @@
 sbin/minidlnad
 @sample etc/minidlna.conf.sample
-man/man5/minidlna.conf.5.gz
-man/man8/minidlnad.8.gz
+share/man/man5/minidlna.conf.5.gz
+share/man/man8/minidlnad.8.gz
 %%NLS%%share/locale/da/LC_MESSAGES/minidlna.mo
 %%NLS%%share/locale/de/LC_MESSAGES/minidlna.mo
 %%NLS%%share/locale/es/LC_MESSAGES/minidlna.mo
