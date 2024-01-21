@@ -1,5 +1,6 @@
 PORTNAME=	tcpreplay
 DISTVERSION=	4.4.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -38,5 +39,8 @@ LIBPCAP_PORTS_DESC=	Build with net/libpcap
 LIBPCAP_BASE_CONFIGURE_ON=	--with-libpcap=/usr/lib
 # needs .so version (see: 262976)
 LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so.1:net/libpcap
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
