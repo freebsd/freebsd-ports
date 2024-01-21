@@ -1,5 +1,5 @@
 bin/atari800
-man/man1/atari800.1.gz
+share/man/man1/atari800.1.gz
 %%DATADIR%%/atari800.cfg
 %%DATADIR%%/ataribas.rom
 %%DATADIR%%/atariosb.rom

@@ -1,6 +1,6 @@
 PORTNAME=	atari800
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/atari800/ \
 		SF/${PORTNAME}/ROM/Original%20XL%20ROM:x \
@@ -81,7 +81,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${STAGEDIR}${PREFIX}/bin/atari800
-	${INSTALL_MAN} ${WRKSRC}/atari800.man ${STAGEDIR}${MANPREFIX}/man/man1/atari800.1
+	${INSTALL_MAN} ${WRKSRC}/atari800.man ${STAGEDIR}${PREFIX}/share/man/man1/atari800.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/atari800.cfg ${STAGEDIR}${DATADIR}
 .for rom in ${ATARI_XF}
