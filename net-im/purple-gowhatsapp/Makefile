@@ -10,6 +10,7 @@ WWW=		https://github.com/hoehermann/purple-gowhatsapp
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=	downloads things at build time, which breaks under poudriere
 LIB_DEPENDS=	libpurple.so:net-im/libpurple	\
 		libopusfile.so:audio/opusfile
 
