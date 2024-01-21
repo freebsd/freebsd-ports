@@ -1,5 +1,6 @@
 PORTNAME=	balance
 PORTVERSION=	3.57
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.inlab.net/wp-content/uploads/2018/05/
 
@@ -18,6 +19,6 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/balance ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/balance.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/balance.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
