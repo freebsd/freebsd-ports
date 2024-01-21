@@ -77,8 +77,8 @@
 %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW/LC_MESSAGES/deluge.mo
-man/man1/deluge-console.1.gz
-man/man1/deluge-gtk.1.gz
-man/man1/deluge-web.1.gz
-man/man1/deluge.1.gz
-man/man1/deluged.1.gz
+share/man/man1/deluge-console.1.gz
+share/man/man1/deluge-gtk.1.gz
+share/man/man1/deluge-web.1.gz
+share/man/man1/deluge.1.gz
+share/man/man1/deluged.1.gz
