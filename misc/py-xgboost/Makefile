@@ -11,6 +11,8 @@ WWW=		https://xgboost.ai/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_i386=	compilation fails, see https://github.com/dmlc/xgboost/issues/10002
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.12.1:devel/py-hatchling@${PY_FLAVOR}
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
