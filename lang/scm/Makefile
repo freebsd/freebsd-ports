@@ -1,5 +1,6 @@
 PORTNAME=	scm
 PORTVERSION=	5f3
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU:scm	\
 		http://groups.csail.mit.edu/mac/ftpdir/scm/:psd1
@@ -98,7 +99,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scm ${WRKSRC}/scmlit \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/scm.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scm.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/scm
 	${INSTALL_DATA} ${WRKDIR}/require.scm ${SCM_DATA:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${PREFIX}/lib/scm

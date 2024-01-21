@@ -46,4 +46,4 @@ lib/scm/slib/psd/version.scm
 %%X11%%lib/scm/x11.scm
 %%X11%%lib/scm/xatoms.scm
 %%X11%%lib/scm/xevent.scm
-man/man1/scm.1.gz
+share/man/man1/scm.1.gz
