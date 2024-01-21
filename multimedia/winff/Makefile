@@ -1,5 +1,6 @@
 PORTNAME=	WinFF
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -57,7 +58,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/languages
 	${INSTALL_DATA} ${BUILD_WRKSRC}/presets.xml ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/languages/* ${STAGEDIR}${DATADIR}/languages/
-	${INSTALL_MAN} ${BUILD_WRKSRC}/${_PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${BUILD_WRKSRC}/${_PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${BUILD_WRKSRC}/winff-icons/48x48/${_PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
