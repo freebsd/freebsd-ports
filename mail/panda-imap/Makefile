@@ -1,6 +1,6 @@
 PORTNAME=	panda-imap
 PORTVERSION=	20130621
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -71,15 +71,15 @@ do-install:
 		${WRKSRC}/mlock/mlock ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${STAGEDIR}${PREFIX}/bin/mboxtest
 	${INSTALL_MAN} \
-		${WRKSRC}/src/imapd/imapd.8 ${STAGEDIR}${PREFIX}/man/man8/imapd.8
+		${WRKSRC}/src/imapd/imapd.8 ${STAGEDIR}${PREFIX}/share/man/man8/imapd.8
 	${INSTALL_MAN} \
-		${WRKSRC}/src/ipopd/ipopd.8 ${STAGEDIR}${PREFIX}/man/man8/ipopd.8
+		${WRKSRC}/src/ipopd/ipopd.8 ${STAGEDIR}${PREFIX}/share/man/man8/ipopd.8
 	${INSTALL_PROGRAM} ${WRKSRC}/dmail/dmail ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/mailutil/mailutil ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/tmail/tmail ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/src/dmail/dmail.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/src/dmail/dmail.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-DOCS-on:
 	${MKDIR} -m 0755 -p ${STAGEDIR}${DOCSDIR}
