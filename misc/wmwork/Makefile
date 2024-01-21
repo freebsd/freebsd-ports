@@ -1,6 +1,6 @@
 PORTNAME=	wmwork
 PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://people.debian.org/~godisch/wmwork/ \
 		LOCAL/xride
@@ -16,14 +16,14 @@ USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 WRKSRC_SUBDIR=	src
 
-PLIST_FILES=	bin/wmwork man/man1/wmwork.1.gz
+PLIST_FILES=	bin/wmwork share/man/man1/wmwork.1.gz
 PORTDOCS=	CHANGES README
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
