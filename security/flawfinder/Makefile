@@ -1,5 +1,6 @@
 PORTNAME=	flawfinder
 PORTVERSION=	2.0.19
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.dwheeler.com/flawfinder/ \
 		PACKETSTORM/UNIX/security
@@ -16,7 +17,7 @@ SHEBANG_FILES=	flawfinder.py
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/flawfinder man/man1/flawfinder.1.gz
+PLIST_FILES=	bin/flawfinder share/man/man1/flawfinder.1.gz
 PORTDOCS=	ChangeLog README.md flawfinder.pdf flawfinder.ps
 PORTEXAMPLES=	correct-results-004.txt correct-results-005.txt \
 		correct-results-006.txt correct-results-008.txt \
@@ -33,7 +34,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/flawfinder.py ${STAGEDIR}${PREFIX}/bin/flawfinder
-	${INSTALL_MAN} ${WRKSRC}/flawfinder.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/flawfinder.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
