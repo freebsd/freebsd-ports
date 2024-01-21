@@ -1,5 +1,6 @@
 PORTNAME=	xterm
-PORTVERSION=	389
+DISTVERSION=	389
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -79,6 +80,9 @@ XINERAMA_USE=			XORG=xinerama,xorgproto
 XINERAMA_CONFIGURE_OFF=		--without-xinerama
 
 ICONVERSION=	1
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-extract:
 	@${CP} ${WRKDIR}/bsd-xterm-icons-${ICONVERSION}/*.png \
