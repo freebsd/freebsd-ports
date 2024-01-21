@@ -1,6 +1,6 @@
 PORTNAME=	tsocks
 DISTVERSION=	1.8.b5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.8%20beta%205 \
 		http://ftp1.sourceforge.net/tsocks/ \
@@ -36,6 +36,9 @@ HOSTNAMES_CONFIGURE_OFF=	--disable-hostnames
 MUTE_CONFIGURE_ON=		--disable-debug
 OLDMETHOD_CONFIGURE_ON=		--enable-oldmethod
 SOCKSDNS_CONFIGURE_ON=		--enable-socksdns
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/tsocks
