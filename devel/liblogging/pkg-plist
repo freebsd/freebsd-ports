@@ -14,5 +14,5 @@ lib/liblogging-stdlog.so.0
 lib/liblogging-stdlog.so.0.1.0
 libdata/pkgconfig/liblogging-rfc3195.pc
 libdata/pkgconfig/liblogging-stdlog.pc
-man/man1/stdlogctl.1.gz
-man/man3/stdlog.3.gz
+share/man/man1/stdlogctl.1.gz
+share/man/man3/stdlog.3.gz
