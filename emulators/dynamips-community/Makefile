@@ -1,6 +1,7 @@
 PORTNAME=	dynamips
-PORTVERSION=	0.2.17
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.17
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-community
 
@@ -32,8 +33,8 @@ CMAKE_ARGS+=	-DDYNAMIPS_CODE=${DYNAMIPS_CODE} -DDYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 .include <bsd.port.pre.mk>
 
 PLIST_FILES=	bin/${PORTNAME} bin/nvram_export \
-		man/man1/${PORTNAME}.1.gz man/man1/nvram_export.1.gz \
-		man/man7/hypervisor_mode.7.gz
+		share/man/man1/${PORTNAME}.1.gz share/man/man1/nvram_export.1.gz \
+		share/man/man7/hypervisor_mode.7.gz
 
 PORTDOCS=	*
 
@@ -46,9 +47,9 @@ DYNAMIPS_ARCH=	nojit
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/nvram_export ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/nvram_export.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/hypervisor_mode.7 ${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/nvram_export.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/hypervisor_mode.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
