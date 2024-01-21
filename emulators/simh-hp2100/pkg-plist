@@ -1,5 +1,5 @@
 bin/hp2100
-man/man1/hp2100.1.gz
+share/man/man1/hp2100.1.gz
 %%DOCSDIR%%/hp2100_bugfixes.txt
 %%DOCSDIR%%/hp2100_diag.txt
 %%DOCSDIR%%/hp2100_guide.pdf
