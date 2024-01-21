@@ -1,15 +1,15 @@
 --- Makefile.orig	2017-02-26 15:02:56 UTC
 +++ Makefile
-@@ -9,7 +9,7 @@
+@@ -9,7 +9,7 @@ bindir ?= ${prefix}/bin
  prefix ?= /usr/local
  bindir ?= ${prefix}/bin
  
 -mandir ?= ${prefix}/man/man1
-+mandir ?= ${MANPREFIX}/man/man1
++mandir ?= ${MANPREFIX}/share/man/man1
  
  # For system that doesn't support mkdir -p.
  # If you have Linux, don't bother.
-@@ -23,13 +23,13 @@ BINMODE=755
+@@ -23,13 +23,13 @@ LOGDIRMODE=700
  LOGDIRMODE=700
  
  # Compiler to use
@@ -26,7 +26,7 @@
  
  # The makefile standards document I read says that I have to put it here...
  SHELL = /bin/sh
-@@ -66,11 +66,11 @@ clean:
+@@ -66,11 +66,11 @@ strip:
  strip:
  	strip $(PROGRAM)
  
