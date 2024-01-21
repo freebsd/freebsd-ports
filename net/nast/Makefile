@@ -1,5 +1,6 @@
 PORTNAME=	nast
 DISTVERSION=	0.2.1-g20210616
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -19,13 +20,13 @@ GH_TAGNAME=	96f4f8edd457772485415aaf5404ea56cf2b311f
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fcommon
 
-PLIST_FILES=	bin/nast man/man8/nast.8.gz
+PLIST_FILES=	bin/nast share/man/man8/nast.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
