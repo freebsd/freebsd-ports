@@ -1,6 +1,6 @@
 PORTNAME=	vxtools
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.penguin.cz/pub/users/mhi/vxfs/
 
@@ -14,8 +14,8 @@ do-install:
 .for f in vxls vxmount vxumount vxcat vxidump vxcd vxpwd prtvtoc
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/prtvtoc.8 ${STAGEDIR}${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/vxmount.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/vxumount.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/prtvtoc.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/vxmount.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/vxumount.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
