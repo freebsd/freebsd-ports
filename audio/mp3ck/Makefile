@@ -10,10 +10,10 @@ WWW=		https://mp3ck.sourceforge.net/
 DEPRECATED=	Last release in 2005 and dead upstream, consider using multimedia/ffmpeg
 EXPIRATION_DATE=2024-02-29
 
+PLIST_FILES=	bin/mp3ck share/man/man1/mp3ck.1.gz
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
-
-PLIST_FILES=	bin/mp3ck man/man1/mp3ck.1.gz
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
