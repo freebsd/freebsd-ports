@@ -1,5 +1,5 @@
 PORTNAME=	weechat
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -67,11 +67,6 @@ TCL_USES=		tcl
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
-
-.if !empty(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} == 2
-CMAKE_ARGS+=	-DENABLE_PYTHON2:BOOL=true \
-#		-DPYTHON_LIBRARIES=${LOCALBASE}/lib
-.endif
 
 post-patch:
 .if ${LOCALBASE} != "/usr/local"
