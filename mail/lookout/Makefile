@@ -1,6 +1,6 @@
 PORTNAME=	lookout
 DISTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://catb.org/~esr/lookout/
 
@@ -12,10 +12,10 @@ USES=		python shebangfix
 NO_BUILD=	yes
 SHEBANG_FILES=	lookout
 
-PLIST_FILES=	bin/lookout man/man1/lookout.1.gz
+PLIST_FILES=	bin/lookout share/man/man1/lookout.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lookout ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lookout.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lookout.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
