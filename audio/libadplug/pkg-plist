@@ -76,4 +76,4 @@ lib/libadplug-%%PORTVERSION%%.so.0.0.0
 lib/libadplug.a
 lib/libadplug.so
 libdata/pkgconfig/adplug.pc
-man/man1/adplugdb.1.gz
+share/man/man1/adplugdb.1.gz
