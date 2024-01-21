@@ -7,4 +7,4 @@ lib/libiec16022.so
 lib/libiec16022.so.0
 lib/libiec16022.so.0.1.0
 libdata/pkgconfig/libiec16022.pc
-man/man1/iec16022.1.gz
+share/man/man1/iec16022.1.gz

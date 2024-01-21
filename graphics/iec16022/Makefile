@@ -1,5 +1,6 @@
 PORTNAME=	iec16022
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/rdoeffinger/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,5 +19,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-fPIC
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
