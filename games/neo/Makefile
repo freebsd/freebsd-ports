@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/neo ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/neo.6 ${STAGEDIR}${MANPREFIX}/share/man/man6
+	${INSTALL_MAN} ${WRKSRC}/doc/neo.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
