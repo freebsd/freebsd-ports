@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
@@ -95,7 +95,7 @@ post-stage:
 	# Install v1.10.0 vncserver script and manpage.
 	# See: https://cgit.freebsd.org/ports/commit/net/tigervnc-server?id=e6d3d07
 	${INSTALL_SCRIPT} ${FILESDIR}/v1.10.0-vncserver ${STAGEDIR}${PREFIX}/bin/vncserver
-	${INSTALL_MAN} ${FILESDIR}/v1.10.0-vncserver.man ${STAGEDIR}${MANPREFIX}/share/man/man8/vncserver.8
+	${INSTALL_MAN} ${FILESDIR}/v1.10.0-vncserver.man ${STAGEDIR}${PREFIX}/share/man/man8/vncserver.8
 
 post-install:
 	cd ${WRKSRC}/unix/xserver/hw/vnc/ && \
