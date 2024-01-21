@@ -1,5 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	5.0.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	50
@@ -10,6 +11,9 @@ WWW=		https://www.redmine.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
+
+DEPRECATED=		Requires ruby31
+EXPIRATION_DATE=	2025-03-31
 
 RUN_DEPENDS=	rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
 		rubygem-globalid-rails61>0:databases/rubygem-globalid-rails61 \
@@ -45,6 +49,7 @@ RUN_DEPENDS+=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet \
 		rubygem-deckar01-task_list>=2.3.1:www/rubygem-deckar01-task_list
 
 USES=		cpe ruby
+BROKEN_RUBY32=	yes
 
 CONFLICTS_INSTALL=	redmine42
 
