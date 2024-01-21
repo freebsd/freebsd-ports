@@ -19,8 +19,9 @@ LIB_DEPENDS=	libignition-math6.so:math/ignition-math \
 		liburdfdom_world.so:devel/ros-urdfdom
 RUN_DEPENDS=	ignition-tools>0:devel/ignition-tools
 
-USES=		cmake compiler:c++17-lang pkgconfig
+USES=		cmake compiler:c++17-lang pkgconfig ruby:build
 USE_LDCONFIG=	yes
+BROKEN_RUBY32=	yes
 
 CMAKE_OFF=	BUILD_TESTING
 
