@@ -1,7 +1,7 @@
 PORTNAME=	sslh
 PORTVERSION=	1.22c
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -30,7 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	sbin/sslh-fork \
 		sbin/sslh-select \
 		"@sample etc/sslh.conf.sample" \
-		man/man8/sslh.8.gz
+		share/man/man8/sslh.8.gz
 
 PORTEXAMPLES=	example.cfg test.cfg udp.cfg
 
@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslh-select ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/basic.cfg \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
