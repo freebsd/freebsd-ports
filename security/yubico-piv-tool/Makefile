@@ -1,6 +1,6 @@
 PORTNAME=	yubico-piv-tool
 PORTVERSION=	2.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubico-piv-tool/Releases/
 
@@ -20,7 +20,7 @@ USES=		compiler cmake:noninja gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-D LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" \
 		-D LIBCRYPTO_LDFLAGS="-L${OPENSSLLIB} -lcrypto -L${LOCALBASE}/lib -pthread" \
-		-D YKPIV_INSTALL_MAN_DIR="${LOCALBASE}/man" \
+		-D YKPIV_INSTALL_MAN_DIR="${LOCALBASE}/share/man" \
 		-D YKPIV_INSTALL_PKGCONFIG_DIR="${LOCALBASE}/libdata/pkgconfig"
 
 PLIST_FILES=	bin/yubico-piv-tool \
@@ -36,7 +36,7 @@ PLIST_FILES=	bin/yubico-piv-tool \
 		lib/libykpiv.so.${PORTVERSION} \
 		libdata/pkgconfig/ykcs11.pc \
 		libdata/pkgconfig/ykpiv.pc \
-		man/man1/yubico-piv-tool.1.gz
+		share/man/man1/yubico-piv-tool.1.gz
 
 .include <bsd.port.pre.mk>
 
