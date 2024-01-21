@@ -1283,10 +1283,6 @@ lib/zeek/python/zeekctl/plugins/lb_pf_ring.py
 lib/zeek/python/zeekctl/plugins/ps.py
 lib/zeek/python/zeekctl/plugins/zeek_port_warning.py
 lib/zeek/python/zeekctl/plugins/zzz_af_packet.py
-%%ZEEKCTL%%man/man1/trace-summary.1.gz
-man/man1/zeek-cut.1.gz
-man/man8/zeek.8.gz
-%%ZEEKCTL%%man/man8/zeekctl.8.gz
 share/btest/data/Scripts/README
 share/btest/data/Scripts/canonify-zeek-log
 share/btest/data/Scripts/canonify-zeek-log-sorted
@@ -1320,6 +1316,10 @@ share/btest/scripts/spicy/diff-remove-abspath
 share/btest/scripts/spicy/diff-remove-timestamps
 share/btest/scripts/spicy/diff-sort
 %%SPICY%%share/hilti/hilti.hlt
+%%ZEEKCTL%%share/man/man1/trace-summary.1.gz
+share/man/man1/zeek-cut.1.gz
+share/man/man8/zeek.8.gz
+%%ZEEKCTL%%share/man/man8/zeekctl.8.gz
 %%SPICY%%share/spicy/filter.spicy
 %%SPICY%%share/spicy/spicy-driver-host.cc
 %%SPICY%%share/spicy/spicy.spicy
@@ -2099,6 +2099,9 @@ share/btest/scripts/spicy/diff-sort
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch
 %%ZEEKCTL%%@dir spool/brokerstore
 %%ZEEKCTL%%@dir spool
+@dir share/man/man8
+@dir share/man/man1
+@dir share/man
 %%ZEEKCTL%%@dir logs
 %%SPICY%%@dir lib/zeek/spicy
 @dir lib/zeek/plugins
