@@ -1,5 +1,6 @@
 PORTNAME=	hp3000
 DISTVERSION=	3.11-0.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/hp/releases/:src \
 		http://simh.trailing-edge.com/hp/docs/:app \
@@ -37,7 +38,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hp3000 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/hp3000.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/hp3000.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/SCP/doc/*.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/SCP/doc/hp3000_guide.pdf ${STAGEDIR}${DOCSDIR}
