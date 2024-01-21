@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 PLIST_FILES=	share/man/man1/r2e.1.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/r2e.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/r2e.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
