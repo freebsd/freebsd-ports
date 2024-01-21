@@ -1,5 +1,6 @@
 PORTNAME=	maradns
 PORTVERSION=	2.0.15
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/
 
@@ -43,9 +44,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/duende ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/mqhash ${STAGEDIR}${PREFIX}/bin
 
-	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.8 ${STAGEDIR}${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_full_mararc ${STAGEDIR}${ETCDIR}/mararc.sample
