@@ -1,7 +1,7 @@
 PORTNAME=	yorick
 DISTVERSIONPREFIX=	y_
 DISTVERSION=	2_2_04
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang math
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -46,7 +46,7 @@ post-install:
 	@${RM} -r ${WRKSRC}/relocatable/doc ${PREFIX}/lib/${PORTNAME}
 	@${MV} ${WRKSRC}/relocatable ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .for f in gist yorick
-	${INSTALL_MAN} ${WRKSRC}/doc/${f}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${f}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/bin/${f}
 	${LN} -sf ../lib/${PORTNAME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor

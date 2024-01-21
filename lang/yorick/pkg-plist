@@ -177,5 +177,5 @@ lib/yorick/lib/libdep.sh
 lib/yorick/lib/libyor.a
 lib/yorick/lib/main.o
 lib/yorick/yorick.el
-man/man1/gist.1.gz
-man/man1/yorick.1.gz
+share/man/man1/gist.1.gz
+share/man/man1/yorick.1.gz
