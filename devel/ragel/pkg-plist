@@ -1,5 +1,5 @@
 bin/ragel
-man/man1/ragel.1.gz
+share/man/man1/ragel.1.gz
 %%TEXDOCS%%%%DOCSDIR%%/bmconcat.pdf
 %%TEXDOCS%%%%DOCSDIR%%/bmnull.pdf
 %%TEXDOCS%%%%DOCSDIR%%/bmnum.pdf
