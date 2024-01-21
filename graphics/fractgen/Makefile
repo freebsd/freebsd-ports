@@ -1,17 +1,17 @@
 PORTNAME=	fractgen
-PORTVERSION=	2.1.11
-PORTREVISION=	1
+DISTVERSION=	2.1.14
 CATEGORIES=	graphics
-MASTER_SITES=	https://www.uni-due.de/~be0001/fractalgenerator/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/fractalgenerator/download/
 
-MAINTAINER=	dreibh@iem.uni-due.de
+MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	Fractal Generator
-WWW=		https://www.uni-due.de/~be0001/fractalgenerator/
+WWW=		https://www.nntb.no/~dreibh/fractalgenerator/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang tar:xz cmake qt:5
+USES=		cmake compiler:c++14-lang desktop-file-utils shared-mime-info \
+		tar:xz qt:5
 USE_QT=		core xml widgets printsupport gui \
 		buildtools:build qmake:build linguisttools:build
 
