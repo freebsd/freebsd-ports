@@ -831,7 +831,6 @@
     SUBDIR += qdrant
     SUBDIR += qof
     SUBDIR += qt5-sql
-    SUBDIR += qt5-sqldrivers-ibase
     SUBDIR += qt5-sqldrivers-mysql
     SUBDIR += qt5-sqldrivers-odbc
     SUBDIR += qt5-sqldrivers-pgsql

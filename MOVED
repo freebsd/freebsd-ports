@@ -2964,3 +2964,4 @@ x11-wm/larswm||2024-01-18|Has expired: Last upstream release was in 2010
 x11-wm/flwm||2024-01-19|Has expired: Last upstream release and activity was in 2015
 x11-wm/jewel||2024-01-19|Has expired: Last upstream release was in 2004
 x11-wm/antiwm||2024-01-20|Has expired: Last upstream release was in 2009
+databases/qt5-sqldrivers-ibase||2024-01-21|Has expired: No fix with the oldest Firebird and BROKEN around 1 year
