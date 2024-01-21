@@ -1,5 +1,5 @@
 bin/ypsilon
-man/man1/ypsilon.1.gz
+share/man/man1/ypsilon.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gears.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glut-demo.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtk-hello.scm
