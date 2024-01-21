@@ -1,5 +1,6 @@
 PORTNAME=	pkgs_which
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,18 +16,16 @@ PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+DOCS_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_FILES+=	man/man1/${PORTNAME}.1.gz
-.endif
+.include <bsd.port.options.mk>
 
 do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/bin
 		${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 		${MKDIR} ${STAGEDIR}${PREFIX}/man/man1
-		${LOCALBASE}/bin/pod2man ${FILESDIR}/${PORTNAME} >${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
-.endif
+		${LOCALBASE}/bin/pod2man ${FILESDIR}/${PORTNAME} >${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
