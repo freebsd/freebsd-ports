@@ -1,6 +1,7 @@
 PORTNAME=	ctris
-PORTVERSION=	0.42.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.42.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,12 +12,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
-MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	dominikhackl
 
-PLIST_FILES=	bin/ctris man/man6/ctris.6.gz
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
+
+PLIST_FILES=	bin/ctris \
+		share/man/man6/ctris.6.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|v0\.42|v${PORTVERSION}|" ${WRKSRC}/ctris.h
@@ -25,7 +27,7 @@ post-patch:
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/ctris.6.gz \
-		${STAGEDIR}${PREFIX}/man/man6/ctris.6.gz
+		${STAGEDIR}${PREFIX}/share/man/man6/ctris.6.gz
 	${INSTALL_PROGRAM} ${WRKSRC}/ctris ${STAGEDIR}${PREFIX}/bin/ctris
 
 .include <bsd.port.mk>
