@@ -1,6 +1,6 @@
 PORTNAME=	regutil
 PORTVERSION=	1.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://home.interlog.com/~ptjm/ \
 		http://www.ancientgeek.org.uk/distfiles/
@@ -26,7 +26,7 @@ CFLAGS+=	-D_WANT_SEMUN
 SUB_FILES=	regutil.1
 
 PLIST_FILES=	lib/librexxutil.so \
-		man/man1/regutil.1.gz
+		share/man/man1/regutil.1.gz
 
 PORTDOCS=	regutil.pdf
 PORTEXAMPLES=	*.rex
@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/librexxutil.so ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKDIR}/regutil.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/regutil.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
