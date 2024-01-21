@@ -1,6 +1,6 @@
 PORTNAME=	isync
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+DISTVERSION=	1.4.4
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -26,6 +26,9 @@ MAKE_ARGS+=	SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${BDB_LIB_DIR}
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in

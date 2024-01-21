@@ -2,5 +2,5 @@ bin/mbsync
 bin/mbsync-get-cert
 bin/mdconvert
 @sample etc/mbsyncrc.sample
-man/man1/mbsync.1.gz
-man/man1/mdconvert.1.gz
+share/man/man1/mbsync.1.gz
+share/man/man1/mdconvert.1.gz
