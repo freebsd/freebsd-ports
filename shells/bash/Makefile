@@ -1,6 +1,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		26
 PORTVERSION=		5.2.${PATCHLEVEL:S/^0//g}
+PORTREVISION=		1
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -75,6 +76,9 @@ LDFLAGS+=		-Wl,-export-dynamic
 STANDARD_PATH=		/sbin:/bin:/usr/sbin:/usr/bin
 CPPFLAGS+=		-DDEFAULT_PATH_VALUE='\"${STANDARD_PATH}:${LOCALBASE}/sbin:${LOCALBASE}/bin\"' \
 			-DSTANDARD_UTILS_PATH='\"${STANDARD_PATH}\"'
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 # Ensure y.tab.c is regenerated
