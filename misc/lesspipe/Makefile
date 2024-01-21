@@ -1,6 +1,7 @@
 PORTNAME=	lesspipe
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.06
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	slaven@rezic.de
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	--yes --prefix=${PREFIX}
 SHEBANG_FILES=	archive_color code2color lesscomplete lesspipe.sh
 
 PLIST_FILES=	bin/archive_color bin/code2color bin/lesscomplete bin/lesspipe.sh \
-		etc/bash_completion.d/less_completion man/man1/lesspipe.1.gz \
+		etc/bash_completion.d/less_completion share/man/man1/lesspipe.1.gz \
 		share/zsh/site-functions/_less
 
 SUB_FILES=	pkg-message
@@ -40,6 +41,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/less_completion ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/_less ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_MAN} ${WRKSRC}/lesspipe.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lesspipe.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
