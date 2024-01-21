@@ -1,6 +1,6 @@
 PORTNAME=	etlegacy
 DISTVERSION=	2.81.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.etlegacy.com/geoip/:geoip \
 		https://mirror.etlegacy.com/wolfadmin/:wolfadmin
@@ -48,6 +48,10 @@ CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl \
 			libtheora.so:multimedia/libtheora
 CLIENT_USES=		gl jpeg openal:soft,alut minizip sdl xorg
 CLIENT_USE=		GL=gl,glu,glew SDL=sdl2 XORG=x11,xxf86dga,xxf86vm
+
+DEDICATED_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libcjson.so:devel/libcjson
+DEDICATED_USES=		minizip
 
 SUB_FILES=	pkg-message
 
