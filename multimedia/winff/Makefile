@@ -6,14 +6,11 @@ MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 DISTNAME=	${_PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert your videos quickly, easily, and all at once
 WWW=		https://www.biggmatt.com/p/winff.html
 
 LICENSE=	GPLv3
-
-DEPRECATED=	Depends on legacy libraries such as GTK2 and isn't up to date with current available formats, consider using multimedia/handbrake
-EXPIRATION_DATE=2024-02-29
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
