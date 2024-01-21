@@ -1,5 +1,3 @@
-include/rtc/aacrtppacketizer.hpp
-include/rtc/av1packetizationhandler.hpp
 include/rtc/av1rtppacketizer.hpp
 include/rtc/candidate.hpp
 include/rtc/channel.hpp
@@ -8,20 +6,14 @@ include/rtc/configuration.hpp
 include/rtc/datachannel.hpp
 include/rtc/description.hpp
 include/rtc/global.hpp
-include/rtc/h264packetizationhandler.hpp
 include/rtc/h264rtppacketizer.hpp
 include/rtc/h265nalunit.hpp
-include/rtc/h265packetizationhandler.hpp
 include/rtc/h265rtppacketizer.hpp
-include/rtc/mediachainablehandler.hpp
 include/rtc/mediahandler.hpp
-include/rtc/mediahandlerelement.hpp
-include/rtc/mediahandlerrootelement.hpp
 include/rtc/message.hpp
 include/rtc/nalunit.hpp
-include/rtc/opuspacketizationhandler.hpp
-include/rtc/opusrtppacketizer.hpp
 include/rtc/peerconnection.hpp
+include/rtc/plihandler.hpp
 include/rtc/reliability.hpp
 include/rtc/rtc.h
 include/rtc/rtc.hpp
@@ -40,5 +32,5 @@ lib/cmake/LibDataChannel/LibDataChannelConfigVersion.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets.cmake
 lib/libdatachannel.so
-lib/libdatachannel.so.0.19
-lib/libdatachannel.so.0.19.5
+lib/libdatachannel.so.0.20
+lib/libdatachannel.so.0.20.1
