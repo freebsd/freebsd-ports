@@ -1,5 +1,6 @@
 PORTNAME=	n2n
 PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}
+PORTREVISION=	1
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -23,9 +24,9 @@ GH_ACCOUNT=	ntop
 
 PLIST_FILES=	sbin/edge \
 		sbin/supernode \
-		man/man1/supernode.1.gz \
-		man/man7/n2n.7.gz \
-		man/man8/edge.8.gz
+		share/man/man1/supernode.1.gz \
+		share/man/man7/n2n.7.gz \
+		share/man/man8/edge.8.gz
 
 LIB_DEPENDS+=	libzstd.so:archivers/zstd
 
@@ -39,8 +40,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/edge ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/supernode ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/edge.8 ${STAGEDIR}${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/supernode.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/n2n.7 ${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/edge.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/supernode.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/n2n.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 .include <bsd.port.mk>
