@@ -1,6 +1,6 @@
 PORTNAME=	simh
 PORTVERSION=	3.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/:src \
 		http://www.ml1.org.uk/distfiles/:pdf \
@@ -58,7 +58,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/BIN/* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/VAX/ka655x.bin ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/simh.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/simh.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
