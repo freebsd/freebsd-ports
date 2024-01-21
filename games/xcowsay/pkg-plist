@@ -4,7 +4,7 @@ bin/xcowsay
 bin/xcowthink
 share/locale/pt_BR/LC_MESSAGES/xcowsay.mo
 share/locale/ru/LC_MESSAGES/xcowsay.mo
-man/man6/xcowsay.6.gz
+share/man/man6/xcowsay.6.gz
 %%DATADIR%%/cow_large.png
 %%DATADIR%%/cow_med.png
 %%DATADIR%%/cow_small.png
