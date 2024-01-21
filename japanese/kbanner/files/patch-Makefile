@@ -1,12 +1,12 @@
---- Makefile.orig	Tue Jul 13 02:06:57 2004
-+++ Makefile	Thu Apr 14 18:01:24 2005
-@@ -1,21 +1,20 @@
+--- Makefile.orig	2004-07-13 01:06:57 UTC
++++ Makefile
+@@ -1,21 +1,20 @@ SHELL = /bin/sh
  SHELL = /bin/sh
 -DESTDIR = /usr/local/bin
 -MANUAL = /usr/local/man/man1/kbanner.1
 -CFLAGS = -O
 +DESTDIR = 
-+MANUAL = ${PREFIX}/man/man1/kbanner.1
++MANUAL = ${PREFIX}/share/man/man1/kbanner.1
  OBJ = kbanner.o font1.o font2.o font3.o
  
  .SUFFIXES: .c .o
