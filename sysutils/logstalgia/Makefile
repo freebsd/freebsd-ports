@@ -1,6 +1,6 @@
 PORTNAME=	logstalgia
 DISTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://github.com/acaudwell/${PORTNAME}/releases/download/${DISTNAME}/
 
@@ -25,6 +25,7 @@ USE_SDL=	image2 sdl2
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-unused-but-set-variable||' \
