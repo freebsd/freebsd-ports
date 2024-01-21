@@ -10,6 +10,9 @@ WWW=		https://trufflesecurity.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails see details here: https://github.com/golang/go/issues/65187
+BROKEN_i386=	compilation fails see details here: https://github.com/golang/go/issues/65187
+
 USES=		go:1.21,modules
 
 GO_MODULE=	github.com/trufflesecurity/trufflehog/v3
