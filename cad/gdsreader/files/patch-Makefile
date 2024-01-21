@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Feb 24 12:15:23 2005
-+++ Makefile	Sun Apr 29 01:04:11 2007
-@@ -1,10 +1,15 @@
+--- Makefile.orig	2005-02-24 03:15:23 UTC
++++ Makefile
+@@ -1,11 +1,16 @@
  
 -CC = gcc
 -INSTROOT=/usr/local
@@ -8,18 +8,21 @@
 +INSTROOT?=${PREFIX}
  BINDIR=$(INSTROOT)/bin
 -DOCDIR=$(INSTROOT)/doc/gdsreader-0.3.2
+-MANDIR=$(INSTROOT)/man/man1
 +DOCDIR=$(INSTROOT)/share/doc/gdsreader
 +EXDIR=$(INSTROOT)/share/examples/gdsreader
- MANDIR=$(INSTROOT)/man/man1
++MANDIR=$(INSTROOT)/share/man/man1
  
+-#CFLAGS = -I. 
 +INSTALL_PROGRAM?=	${BSD_INSTALL_PROGRAM}
 +INSTALL_DATA?=	${BSD_INSTALL_DATA}
 +INSTALL_MAN?=	${BSD_INSTALL_MAN}
 +
- #CFLAGS = -I. 
++#CFLAGS = -I.
  CFLAGS = -I. -Wall -g #-pg
  LDFLAGS = #-pg
-@@ -19,11 +24,16 @@
+ 
+@@ -19,18 +24,20 @@ install: gdsreader maptolayer
  	${CC} ${LDFLAGS} -o gdsreader ${OBJS} -lm
  
  install: gdsreader maptolayer
@@ -30,7 +33,7 @@
 -	mkdir -p $(MANDIR) && cp -f maptolayer.1 gdsreader.1 $(MANDIR)
 +	mkdir -p $(DESTDIR)$(BINDIR) && ${INSTALL_PROGRAM} maptolayer gdsreader $(DESTDIR)$(BINDIR)
 +	mkdir -p $(DESTDIR)$(MANDIR) && ${INSTALL_MAN} maptolayer.1 gdsreader.1 $(DESTDIR)$(MANDIR)
-+
+ 
 +install-docs:
 +	mkdir -p $(DESTDIR)$(DOCDIR) && ${INSTALL_DATA} README README.povray \
 +		ChangeLog $(DESTDIR)$(DOCDIR)
@@ -38,6 +41,13 @@
 +install-data:
 +	mkdir -p $(DESTDIR)$(EXDIR) && ${INSTALL_DATA} layers.config test.gds \
 +		layers.config.7HP.5ML layers.config.5AM.4ML $(DESTDIR)$(EXDIR)
- 
++
  maptolayer: maptolayer.c
  	$(CC) -o maptolayer maptolayer.c
+ 
+ clean:
+ 	rm -f *.o *.bak core out result.xg result.txt result.ps gdsreader \
+ 	 maptolayer result.pov
+-
+-
+-
