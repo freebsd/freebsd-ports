@@ -1,6 +1,6 @@
 PORTNAME=	nyx
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	PYPI
 
@@ -19,9 +19,9 @@ USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes
 
-PLIST_FILES=	man/man1/nyx.1.gz
+PLIST_FILES=	share/man/man1/nyx.1.gz
 
 post-install:
-		${INSTALL_MAN} ${WRKSRC}/nyx.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/nyx.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
