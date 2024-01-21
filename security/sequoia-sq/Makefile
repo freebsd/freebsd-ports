@@ -1,7 +1,7 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.31.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 PKGNAMEPREFIX=	sequoia-
 
@@ -40,7 +40,7 @@ post-install-FISH-on:
 
 post-install-MANPAGES-on:
 	${FIND} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/build/${PKGNAMEPREFIX}${PORTNAME}-*/out -name "*.1" \
-		-exec ${INSTALL_MAN} {} ${STAGEDIR}${MANPREFIX}/man/man1 \;
+		-exec ${INSTALL_MAN} {} ${STAGEDIR}${PREFIX}/share/man/man1 \;
 
 post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
