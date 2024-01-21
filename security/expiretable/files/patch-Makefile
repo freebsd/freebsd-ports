@@ -1,6 +1,15 @@
 --- Makefile.orig	2006-01-11 13:09:05 UTC
 +++ Makefile
-@@ -21,8 +21,8 @@ MAN=expiretable.1
+@@ -2,7 +2,7 @@ INSTALL_BIN?=${PREFIX}/sbin
+ 
+ PREFIX?=/usr/local
+ INSTALL_BIN?=${PREFIX}/sbin
+-INSTALL_MAN?=${PREFIX}/man/man1
++INSTALL_MAN?=${PREFIX}/share/man/man1
+ 
+ INSTALL?=`which install`
+ GROFF?=`which groff`
+@@ -21,14 +21,14 @@ install: ${TARGET}
  all: ${TARGET}
  
  install: ${TARGET}
@@ -11,3 +20,15 @@
  
  clean:
  	rm -f ${TARGET}
+ 	rm -f ${OBJECTS}
+ 	rm -f llib-lexpiretable.ln
+-	
++
+ obj: ${OBJECTS}
+ 
+ html:
+@@ -42,4 +42,3 @@ ${TARGET}: ${OBJECTS}
+ 
+ .c.o:
+ 	${CC} ${CFLAGS} -c $< -o $@
+-

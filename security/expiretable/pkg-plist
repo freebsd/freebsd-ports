@@ -1,2 +1,2 @@
 @(,bin,) sbin/expiretable
-@(,bin,) man/man1/expiretable.1.gz
+@(,bin,) share/man/man1/expiretable.1.gz
