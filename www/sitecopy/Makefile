@@ -1,6 +1,6 @@
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 		GENTOO
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libneon.so:www/neon
 USES=		gmake gnome localbase
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--with-neon --with-libxml2
 
