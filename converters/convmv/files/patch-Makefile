@@ -5,7 +5,7 @@
 -PREFIX=/usr/local
 -MANDIR=$(PREFIX)/share/man
 +PREFIX?=/usr/local
-+MANDIR=$(PREFIX)/man
++MANDIR=$(PREFIX)/share/man
  TAR=tar
  FIND=find
  SED=sed
