@@ -1,5 +1,6 @@
 PORTNAME=	mftrace
-PORTVERSION=	1.2.20
+DISTVERSION=	1.2.20
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 		LOCAL/nivit/${PORTNAME}/
@@ -29,12 +30,12 @@ PLIST_FILES=	\
 		bin/mftrace \
 		%%PYTHON_SITELIBDIR%%/afm.py \
 		%%PYTHON_SITELIBDIR%%/tfm.py \
-		man/man1/mftrace.1.gz
+		share/man/man1/mftrace.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2pbm ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mftrace ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mftrace.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mftrace.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tfm.py ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/afm.py ${STAGEDIR}${PYTHON_SITELIBDIR}
