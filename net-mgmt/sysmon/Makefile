@@ -1,6 +1,6 @@
 PORTNAME=	sysmon
 PORTVERSION=	0.93
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
@@ -35,7 +35,7 @@ do-install:
 		${WRKSRC}/examples/sysmon.conf.dist \
 			${STAGEDIR}${PREFIX}/etc/sysmon.conf.sample
 .for man in ${MANPAGE}
-	${INSTALL_MAN} ${WRKSRC}/docs/${man:S/.8//} ${STAGEDIR}${MANPREFIX}/man/man8/${man}
+	${INSTALL_MAN} ${WRKSRC}/docs/${man:S/.8//} ${STAGEDIR}${PREFIX}/share/man/man8/${man}
 .endfor
 
 do-install-DOCS-on:
