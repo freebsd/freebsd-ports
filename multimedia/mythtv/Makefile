@@ -1,7 +1,7 @@
 PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	33.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libtag.so:audio/taglib \
 		libexiv2.so:graphics/exiv2 \
 		libva.so:multimedia/libva \
-		libva-glx.so:multimedia/libva-glx \
 		libbluray.so:multimedia/libbluray \
 		libass.so:multimedia/libass \
 		libfftw3_threads.so:math/fftw3 \

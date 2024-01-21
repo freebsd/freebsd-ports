@@ -1,6 +1,6 @@
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	62
+PORTREVISION=	63
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
@@ -119,9 +119,6 @@ GNASH_RENDERERS+=	agg
 IGNORE=		support for OpenGL is currently broken, use option AGG
 GNASH_RENDERERS+=	ogl
 LIB_DEPENDS+=		libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
-. if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=		libva-glx.so:multimedia/libva-glx
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
