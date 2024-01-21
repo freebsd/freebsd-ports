@@ -11,6 +11,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	error: use of undeclared identifier 'DCHECK': https://github.com/facebook/folly/issues/1168
+BROKEN_powerpc=		compilation fails: Big endian requires a redesigned table (assert in folly/detail/base64_detail/Base64SWAR.cpp:107)
+BROKEN_powerpc64=	compilation fails: Big endian requires a redesigned table (assert in folly/detail/base64_detail/Base64SWAR.cpp:107)
 
 BUILD_DEPENDS=	elfutils>0:devel/elfutils # workaround for missing symbols like DW_UT_compile: https://github.com/facebook/folly/issues/1654
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
