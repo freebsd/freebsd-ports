@@ -1,5 +1,6 @@
 PORTNAME=	weex
-PORTVERSION=	2.8.4.2
+DISTVERSION=	2.8.4.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,6 +25,9 @@ OPTIONS_SUB=	yes
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${RM} -r ${WRKSRC}/intl

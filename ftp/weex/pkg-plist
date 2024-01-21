@@ -1,5 +1,5 @@
 bin/weex
-man/man1/weex.1.gz
+share/man/man1/weex.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.weexrc
 %%NLS%%share/locale/de/LC_MESSAGES/weex.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weex.mo
