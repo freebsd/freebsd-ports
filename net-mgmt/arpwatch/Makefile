@@ -1,5 +1,5 @@
 PORTNAME=	arpwatch
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://ee.lbl.gov/downloads/arpwatch/ \
 		LOCAL/leres/arpwatch
@@ -17,6 +17,7 @@ USES=		python:run
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sendmail=/usr/sbin/sendmail
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SUB_FILES=	pkg-message
 
