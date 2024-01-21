@@ -11,6 +11,8 @@ WWW=		https://bitbucket.org/icl/lapackpp/src/master/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		congifure fails due to cmake scripts convolution, see https://github.com/icl-utk-edu/lapackpp/issues/56#issuecomment-1902763786
+
 BUILD_DEPENDS=	lapacke>0:math/lapacke
 LIB_DEPENDS=	libblaspp.so:math/blaspp \
 		libopenblas.so:math/openblas
