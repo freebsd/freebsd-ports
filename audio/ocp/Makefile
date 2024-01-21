@@ -1,6 +1,6 @@
 PORTNAME=	ocp
 PORTVERSION=	0.2.106
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
@@ -98,6 +98,9 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
+
+# remove after manprefix migration
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp

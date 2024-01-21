@@ -20,7 +20,7 @@ lib/ocp/autoload/95-playym.so
 lib/ocp/autoload/freverb.so
 lib/ocp/autoload/ireverb.so
 lib/ocp/libocp.so
-man/man1/ocp.1.gz
+share/man/man1/ocp.1.gz
 share/mime/audio/x-a2m.xml
 share/mime/audio/x-adl.xml
 share/mime/audio/x-adlib-midi.xml
