@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--disable-cpucheck
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
 
-PLIST_FILES=	bin/zsnes man/man1/zsnes.1.gz
+PLIST_FILES=	bin/zsnes share/man/man1/zsnes.1.gz
 
 NO_OPTIONS_SORT=yes
 OPTIONS_DEFINE=	X11 OPENGL DEBUGGER JMA AO
@@ -57,6 +57,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
