@@ -40,6 +40,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PKGBASE}
 	${INSTALL_MAN} ${WRKSRC}/watch.1 \
-		${STAGEDIR}${MANPREFIX}/share/man/man1/${PKGBASE}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PKGBASE}.1
 
 .include <bsd.port.mk>

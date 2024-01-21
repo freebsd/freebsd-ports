@@ -25,9 +25,9 @@ PLIST_FILES=	bin/dhex \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${PREFIX}/share/man/man1
 .for f in ${MANPAGE5}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MANPREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/man/man5
 .endfor
 
 .include <bsd.port.mk>
