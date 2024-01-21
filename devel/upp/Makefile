@@ -37,13 +37,13 @@ IDE_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libnotify.so:devel/libnotify \
 		libpng.so:graphics/png
-IDE_PLIST_FILES=	bin/theide ${MANPREFIX}/man/man1/theide.1.gz
+IDE_PLIST_FILES=	bin/theide ${PREFIX}/share/man/man1/theide.1.gz
 IDE_USES=	gnome xorg
 IDE_USE=	XORG=x11 GNOME=cairo,gdkpixbuf2,gtk30
 UDC_DESC=	Install spelling dictionaries (*.udc files)
 UDC_VARS=	PORTDATA+=*.udc
 UMK_DESC=	Build/install UMK (U++ MaKe command line utility)
-UMK_PLIST_FILES=	bin/umk ${MANPREFIX}/man/man1/umk.1.gz
+UMK_PLIST_FILES=	bin/umk ${PREFIX}/share/man/man1/umk.1.gz
 USEMALLOC_DESC=	Compile without U++ heap allocator
 USEMALLOC_VARS=	MACRO_FLAGS+=-DflagUSEMALLOC
 # SDL/OPENGL/MYSQL/PGSQL dependencies are only for run-time for use by executables built by the IDE
@@ -104,10 +104,10 @@ do-install:
 
 do-install-IDE-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/theide ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/uppsrc/ide/theide.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/uppsrc/ide/theide.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-UMK-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/umk ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/uppsrc/umk/umk.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/uppsrc/umk/umk.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>
