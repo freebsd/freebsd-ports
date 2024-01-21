@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpurple.so:net-im/libpurple	\
 		libopusfile.so:audio/opusfile
 
-USES=	go:no_targets cmake dos2unix
+USES=	go:no_targets cmake dos2unix localbase:ldflags
 
 OPTIONS_MULTI=			DB-backend
-OPTIONS_MULTI_DB-backend=	SQLITE3 POSTGRES MYSQL
+OPTIONS_MULTI_DB-backend=	SQLITE3 PGSQL MYSQL
 OPTIONS_DEFAULT=SQLITE3
 .for o in ${OPTIONS_MULTI_DB-backend}
 $o_DESC=	Support use of $o for storing account information
@@ -30,15 +30,14 @@ CMAKE_ARGS=	-DPURPLE_INCLUDE_DIRS=${LOCALBASE}/include/libpurple	\
 		-DPURPLE_LIBRARY_DIRS=${LOCALBASE}/lib	\
 		-DPURPLE_PLUGIN_DIR=${PREFIX}/lib/purple-2 \
 		-DPURPLE_DATA_DIR=${PREFIX}/share
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch-POSTGRES-off:
+post-patch-PGSQL-off:
 	${REINPLACE_CMD} '/lib\/pq/d' ${WRKSRC}/src/go/login.go
 
 post-patch-MYSQL-off:
 	${REINPLACE_CMD} '/go-sql-driver\/mysql/d' ${WRKSRC}/src/go/login.go
 
-post-patch-SQLIT3-off:
+post-patch-SQLITE3-off:
 	${REINPLACE_CMD} '/mattn\/go-sqlite3/d' ${WRKSRC}/src/go/login.go
 
 # The downloaded Go-files are read-only and the simple rm -f does not work
