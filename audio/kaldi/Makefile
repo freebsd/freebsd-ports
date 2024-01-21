@@ -9,6 +9,8 @@ WWW=		https://kaldi-asr.org/
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	compilation fails: compile with -msse -mfpmath=sse, or equivalent, when these flags are already provided, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276505
+
 LIB_DEPENDS=	libcblas.so:math/cblas \
 		libfst.so:math/openfst \
 		liblapack.so:math/lapack
