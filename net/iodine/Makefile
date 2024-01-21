@@ -1,5 +1,6 @@
 PORTNAME=	iodine
-PORTVERSION=	0.8.0
+DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://code.kryo.se/iodine/
 
@@ -22,8 +23,9 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodine ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodined ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/iodine.8 ${STAGEDIR}${MANPREFIX}/man/man8
-	${GZIP_CMD} ${STAGEDIR}${MANPREFIX}/man/man8/iodine.8
+	${INSTALL_MAN} ${WRKSRC}/man/iodine.8 ${STAGEDIR}${PREFIX}/share/man/man8
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in README.md CHANGELOG
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
