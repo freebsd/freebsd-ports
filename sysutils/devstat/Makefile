@@ -1,6 +1,6 @@
 PORTNAME=	devstat
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -16,10 +16,10 @@ GH_ACCOUNT=	trociny
 MAKE_ENV+=	NO_OBJ=yes
 
 PLIST_FILES=	bin/devstat \
-		man/man8/devstat.8.gz
+		share/man/man8/devstat.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/devstat ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/devstat.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/devstat.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
