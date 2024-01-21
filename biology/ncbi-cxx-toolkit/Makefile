@@ -11,6 +11,7 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 
 BROKEN_armv6=	platform not defined for FreeBSD arm, see https://github.com/ncbi/ncbi-cxx-toolkit-public/issues/2
+BROKEN_armv7=	link fails due to a missing function, see https://github.com/ncbi/ncbi-cxx-toolkit-public/issues/8
 
 LIB_DEPENDS=	libbz2.so:archivers/bzip2 \
 		libcdd.so:math/cddlib \
