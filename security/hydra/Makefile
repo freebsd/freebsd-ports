@@ -1,7 +1,7 @@
 PORTNAME=	hydra
 DISTVERSIONPREFIX=v
 DISTVERSION=	9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	rm@FreeBSD.org
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLINC} \
 		--with-ssl-lib=${OPENSSLLIB}
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
-		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
+		share/man/man1/hydra.1.gz share/man/man1/pw-inspector.1.gz
 
 OPTIONS_DEFINE=	FIREBIRD SSH SUBVERSION X11
 OPTIONS_DEFAULT=SSH
@@ -37,7 +37,7 @@ X11_USES=		gettext gnome pkgconfig
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 X11_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
-X11_PLIST_FILES=	bin/xhydra man/man1/xhydra.1.gz
+X11_PLIST_FILES=	bin/xhydra share/man/man1/xhydra.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -55,10 +55,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pw-inspector ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/dpl4hydra.sh ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/hydra-wizard.sh ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/hydra.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hydra.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${STAGEDIR}${PREFIX}/share/man/man1
 post-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/hydra-gtk/src/xhydra ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>
