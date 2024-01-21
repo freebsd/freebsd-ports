@@ -1,7 +1,7 @@
 PORTNAME=	cjdns
 DISTVERSIONPREFIX=	cjdns-v
 DISTVERSION=	21.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ GH_ACCOUNT=	cjdelisle
 USE_RC_SUBR=	cjdns
 SUB_FILES=	cjdns pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE}
-PLIST_FILES=	bin/cjdroute bin/run-cjdroute man/man5/cjdroute.conf.5.gz
+PLIST_FILES=	bin/cjdroute bin/run-cjdroute share/man/man5/cjdroute.conf.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/|${LOCALBASE}/etc/|g' \
@@ -31,7 +31,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cjdroute ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/sh/run-cjdroute.sh ${STAGEDIR}${PREFIX}/bin/run-cjdroute
-	${INSTALL_MAN} ${WRKSRC}/doc/man/cjdroute.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/man/cjdroute.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 do-test:
 	${WRKSRC}/cjdroute --bench
