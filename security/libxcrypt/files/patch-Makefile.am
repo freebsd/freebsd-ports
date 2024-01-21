@@ -1,0 +1,22 @@
+- workaround for symbol map containing missing symbols, see https://github.com/besser82/libxcrypt/issues/181
+
+--- Makefile.am.orig	2024-01-21 03:27:38 UTC
++++ Makefile.am
+@@ -154,12 +154,12 @@ libcrypt_la_LDFLAGS = -version-info $(libcrypt_la_VERS
+ 
+ libcrypt_la_LDFLAGS = -version-info $(libcrypt_la_VERSION)
+ 
+-if HAVE_VSCRIPT
+-libcrypt_la_LDFLAGS += $(VSCRIPT_LDFLAGS),$(builddir)/libcrypt.map
+-APPLY_SYMVERS = yes
+-else
++#if HAVE_VSCRIPT
++#libcrypt_la_LDFLAGS += $(VSCRIPT_LDFLAGS),$(builddir)/libcrypt.map
++#APPLY_SYMVERS = yes
++#else
+ APPLY_SYMVERS = no
+-endif
++#endif
+ 
+ libcrypt_la_LDFLAGS += $(UNDEF_FLAG) $(TEXT_RELOC_FLAG) $(AM_LDFLAGS)
+ 
