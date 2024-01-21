@@ -1,6 +1,6 @@
 PORTNAME=	peps
 PORTVERSION=	2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://peps.redprince.net/peps/ \
 		ftp://ftp.peps.redprince.net/unix/peps/
@@ -18,14 +18,14 @@ MAKE_ENV=	GSPATH="${LOCALBASE}/bin/gs" GZPATH="/usr/bin/gzip" \
 ALL_TARGET=	peps
 PLIST_FILES=	bin/peps \
 		etc/peps.mime \
-		man/man1/peps.1.gz
+		share/man/man1/peps.1.gz
 PORTDOCS=	peps.pdf
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/peps ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/peps.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/peps.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/peps.mime ${STAGEDIR}${PREFIX}/etc
 
 post-install-DOCS-on:
