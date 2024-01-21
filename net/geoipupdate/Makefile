@@ -1,5 +1,6 @@
 PORTNAME=	geoipupdate
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -24,8 +25,8 @@ OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	lowdown:textproc/lowdown
-MANPAGES_PLIST_FILES=	man/man1/geoipupdate.1.gz \
-			man/man5/GeoIP.conf.5.gz
+MANPAGES_PLIST_FILES=	share/man/man1/geoipupdate.1.gz \
+			share/man/man5/GeoIP.conf.5.gz
 
 PLIST_FILES=	bin/geoipupdate \
 		'@sample etc/GeoIP.conf.sample' \
@@ -52,8 +53,8 @@ do-install-DOCS-on:
 	cd ${WRKSRC}/build && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/build/geoipupdate.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/build/GeoIP.conf.5  ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/build/geoipupdate.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/build/GeoIP.conf.5  ${STAGEDIR}${PREFIX}/share/man/man5
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} test ${GO_TESTFLAGS} ./...
