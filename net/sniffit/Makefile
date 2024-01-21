@@ -29,8 +29,8 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sniffit ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/sniffit.5 ${STAGEDIR}${MANPREFIX}/share/man/man5
-	${INSTALL_MAN} ${WRKSRC}/man/sniffit.8 ${STAGEDIR}${MANPREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/sniffit.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/sniffit.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
