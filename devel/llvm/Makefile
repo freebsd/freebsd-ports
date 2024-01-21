@@ -86,7 +86,7 @@ do-install:
 .endfor
 .for _man in ${MAN1SRCS}
 	${LN} -s ${_man:R}${LLVM_SUFFIX}.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man}
+	    ${STAGEDIR}${PREFIX}/man/man1/${_man}
 .endfor
 
 .include <bsd.port.mk>

@@ -192,7 +192,7 @@ post-install-DOCS-on:
 .endif
 .for _man in ${MAN1SRCS}
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
-	    ${STAGEDIR}${MANPREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
+	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
 .endfor
 .if ! ${PORT_OPTIONS:MLIT}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
@@ -200,7 +200,7 @@ post-install-DOCS-on:
 .endif
 #.if ${PORT_OPTIONS:MCLANG}
 #	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1 \
-#	    ${STAGEDIR}${MANPREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
+#	    ${STAGEDIR}${PREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
 #.endif
 .if !${PORT_OPTIONS:MLLDB}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lldb-tblgen.1
