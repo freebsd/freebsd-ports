@@ -1,5 +1,5 @@
 bin/cdlabelgen
-man/man1/cdlabelgen.1.gz
+share/man/man1/cdlabelgen.1.gz
 share/cdlabelgen/cd.eps
 share/cdlabelgen/cdda.eps
 share/cdlabelgen/debian-color.eps
