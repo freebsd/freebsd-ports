@@ -1,6 +1,6 @@
 PORTNAME=		shrinkpdf
 PORTVERSION=		1.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=		1
 CATEGORIES=		print graphics
@@ -19,11 +19,11 @@ SUB_FILES=		${PORTNAME}.1
 NO_BUILD=		yes
 NO_ARCH=		yes
 
-PLIST_FILES=		bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=		bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKDIR}/shrinkpdf.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/shrinkpdf.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
