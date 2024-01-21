@@ -1,6 +1,6 @@
 PORTNAME=	nsscache
 PORTVERSION=	0.49
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
@@ -28,8 +28,8 @@ NO_ARCH=	yes
 
 PLIST_FILES=	'@dir /var/db/nsscache' \
 		'@sample etc/nsscache.conf.sample' \
-		man/man1/nsscache.1.gz \
-		man/man5/nsscache.conf.5.gz
+		share/man/man1/nsscache.1.gz \
+		share/man/man5/nsscache.conf.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/nsscache.conf|${PREFIX}/etc/nsscache.conf|g' ${WRKSRC}/nss_cache/config.py
@@ -38,8 +38,8 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsscache.conf ${STAGEDIR}${PREFIX}/etc/nsscache.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/nsscache.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/nsscache.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/nsscache.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nsscache.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	@${MKDIR} ${STAGEDIR}/var/db/nsscache
 
 do-test:
