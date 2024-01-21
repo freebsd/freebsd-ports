@@ -1,5 +1,6 @@
 PORTNAME=	runas
 DISTVERSION=	0.2.0
+PORTREVISIOn=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,6 +13,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
-PLIST_FILES=	bin/asroot bin/runas man/man1/asroot.1.gz man/man1/runas.1.gz
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share
+
+PLIST_FILES=	bin/asroot bin/runas share/man/man1/asroot.1.gz share/man/man1/runas.1.gz
 
 .include <bsd.port.mk>
