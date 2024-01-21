@@ -1,5 +1,6 @@
 PORTNAME=	virtualenv
 PORTVERSION=	20.25.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -52,7 +53,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.4:devel/py-c
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-towncrier>=0.3.2a0:textproc/py-sphinxcontrib-towncrier@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}towncrier>=22.8.0:textproc/py-towncrier@${PY_FLAVOR}
 DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
-DOCS_PLIST_FILES=	man/man1/virtualenv.1.gz
+DOCS_PLIST_FILES=	share/man/man1/virtualenv.1.gz
 DOCS_PORTDOCS=		* .buildinfo
 
 # Fix the Exception:
@@ -71,6 +72,6 @@ post-patch:
 
 post-install-DOCS-on:
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
-	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${MANPREFIX}/man/man1
+	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
