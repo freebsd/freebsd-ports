@@ -1,13 +1,13 @@
 --- fnc.bld.mk.orig	2023-11-27 08:16:26 UTC
 +++ fnc.bld.mk
 @@ -4,8 +4,8 @@ CC ?=		cc
- 
+
  # CONFIGURATION
  CC ?=		cc
 -PREFIX ?=	/usr/local
 -MANDIR ?=	/share/man
 +PREFIX ?=	%%PREFIX%%
-+MANDIR ?=	/man
++MANDIR ?=	/share/man
  VERSION ?=	%%VERSION%%
  HASH !=		cut -f 1 manifest.uuid
  DATE !=		sed '2q;d' manifest | cut -d ' ' -f 2 | tr T ' '
@@ -22,7 +22,7 @@
  		-DDATE="${DATE}"
 @@ -89,10 +89,10 @@ install:
  	@echo "generated compile_commands.json"
- 
+
  install:
 -	mkdir -p -m 0755 ${PREFIX}/bin
 -	mkdir -p -m 0755 ${PREFIX}${MANDIR}/man1
@@ -32,6 +32,6 @@
 +	mkdir -p -m 0755 ${DESTDIR}${PREFIX}${MANDIR}/man1
 +	install -s -m 0755 src/fnc ${DESTDIR}${PREFIX}/bin/fnc
 +	install -m 0644 src/fnc.1 ${DESTDIR}${PREFIX}${MANDIR}/man1/fnc.1
- 
+
  uninstall:
  	rm -f ${PREFIX}/bin/fnc ${PREFIX}${MANDIR}/man1/fnc.1
