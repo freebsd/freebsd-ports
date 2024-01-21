@@ -21,7 +21,7 @@ PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*$$ # otherwise it picks up the deleted t
 
 post-install:
 .for n in 1 5 7
-	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${MANPREFIX}/man/man${n}
+	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${PREFIX}/share/man/man${n}
 .endfor
 
 .include <bsd.port.mk>
