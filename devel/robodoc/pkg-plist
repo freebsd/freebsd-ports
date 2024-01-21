@@ -1,7 +1,7 @@
 bin/robodoc
 bin/robohdrs
-man/man1/robodoc.1.gz
-man/man1/robohdrs.1.gz
+share/man/man1/robodoc.1.gz
+share/man/man1/robohdrs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
