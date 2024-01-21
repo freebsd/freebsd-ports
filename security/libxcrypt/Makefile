@@ -1,6 +1,7 @@
 PORTNAME=	libxcrypt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.36
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://github.com/besser82/libxcrypt
 
 LICENSE=	LGPL21
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
