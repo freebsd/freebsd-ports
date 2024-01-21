@@ -53,9 +53,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/20k_c1.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/20k_c2.txt
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/calligra.php
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/calligra.ttf
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/calligra.z
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/CevicheOne-Regular-Licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/CevicheOne-Regular.php
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/CevicheOne-Regular.ttf
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/CevicheOne-Regular.z
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/countries.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/logo.png
