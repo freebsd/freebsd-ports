@@ -1,0 +1,1 @@
+Implements GLFM (as used by GitLab) using a Rust-based markdown parser.
