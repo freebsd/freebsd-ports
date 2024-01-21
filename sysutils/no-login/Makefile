@@ -7,6 +7,6 @@ MASTER_SITES=	LOCAL/wes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Refuse a login to a user, and make a note of it in syslog
 
-PLIST_FILES=	bin/nologin man/man8/${PORTNAME}.8.gz
+PLIST_FILES=	bin/nologin share/man/man8/${PORTNAME}.8.gz
 
 .include <bsd.port.mk>
