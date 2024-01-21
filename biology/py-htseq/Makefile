@@ -24,7 +24,7 @@ USES=		python
 USE_PYTHON=	autoplist cython distutils pytest
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/HTSeq/_StepVector.cpython-39.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/HTSeq/_HTSeq.cpython-39.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/HTSeq/_StepVector.cpython-${PYTHON_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/HTSeq/_HTSeq.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.mk>
