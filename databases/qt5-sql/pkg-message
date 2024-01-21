@@ -3,7 +3,6 @@
   message: <<EOM
 To enable Qt database support, install the database plugin ports. The
 following plugin ports are available:
- - databases/qt5-sqldrivers-ibase	InterBase/Firebird
  - databases/qt5-sqldrivers-mysql	MySQL
  - databases/qt5-sqldrivers-odbc	Open Database Connectivity
  - databases/qt5-sqldrivers-pgsql	PostgreSQL

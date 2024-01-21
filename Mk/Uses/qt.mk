@@ -156,9 +156,6 @@ _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			sql-pgsql sql-sqlite2 sql-sqlite3 sql-tds testlib uiplugin \
 			uitools webglplugin websockets-qml \
 			widgets x11extras xml xmlpatterns
-.  if ${ARCH} == amd64 || ${ARCH} == i386
-_USE_QT5_ONLY+=		sql-ibase
-.  endif
 
 _USE_QT6_ONLY=		5compat base coap graphs httpserver languageserver lottie pdf positioning \
 			quick3dphysics quickeffectmaker shadertools tools translations \
@@ -360,7 +357,7 @@ qt-sql-pgsql_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsqlpsql.so
 
 qt-sql-sqlite3_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsqlite.so
 
-.  for db in ibase mysql odbc pgsql sqlite2 sqlite3 tds
+.  for db in mysql odbc pgsql sqlite2 sqlite3 tds
 qt-sql-${db}_PORT=	databases/${_QT_RELNAME}-sqldrivers-${db}
 qt-sql-${db}_PATH?=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsql${db:C/^sql//}.so
 .  endfor
