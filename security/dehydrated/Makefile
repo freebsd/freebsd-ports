@@ -1,6 +1,7 @@
 PORTNAME=	dehydrated
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1-5
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-ge3ef43c
 CATEGORIES=	security
 
@@ -53,7 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/config ${STAGEDIR}${ETCDIR}/config.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/hook.sh ${STAGEDIR}${ETCDIR}/hook.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt ${STAGEDIR}${ETCDIR}/domains.txt.sample
-	${INSTALL_MAN} ${WRKSRC}/docs/man/dehydrated.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/dehydrated.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/dehydrated
