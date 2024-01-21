@@ -16,6 +16,6 @@ USES=		tar:bzip2
 BB_TAGNAME=	8cfe6814ce52
 WRKSRC=		${WRKDIR}/caia-swin-${PORTNAME}-${BB_TAGNAME}
 
-PLIST_FILES=	bin/spp man/man1/spp.1.gz
+PLIST_FILES=	bin/spp share/man/man1/spp.1.gz
 
 .include <bsd.port.mk>

@@ -1,17 +1,32 @@
---- Makefile.orig	2015-05-21 00:10:33 UTC
+--- Makefile.orig	2020-11-09 06:43:39 UTC
 +++ Makefile
-@@ -39,8 +39,8 @@ INCLUDES =  $(SRCDIR)/crc32.h \
- SLIBS=  -pthread -lpcap
+@@ -5,7 +5,7 @@
+ #
+ #    <default>  : see target "all"
+ #    all        : build all source and binaries
+-#    clean      : clean up object files and binaries 
++#    clean      : clean up object files and binaries
+ #
+ #  Amiel Heyde
+ #
+@@ -36,13 +36,13 @@ INCLUDES =  $(SRCDIR)/crc32.h \
+             $(SRCDIR)/rtp.h \
+             $(SRCDIR)/config.h
+ 
+-            
+ 
++
+ SLIBS=  -pthread -lpcap -lm
  BINDIR=./bin
  PROGRAM= $(BINDIR)/$(NAME)
 -CFLAGS += -I/usr/local/include 
 -LDFLAGS += -L/usr/local/lib
-+CFLAGS += -I$(LOCALBASE)/include 
++CFLAGS += -I$(LOCALBASE)/include
 +LDFLAGS += -L$(LOCALBASE)/lib
  INSTALL= install
  
  
-@@ -48,11 +48,11 @@ INSTALL= install
+@@ -50,11 +50,11 @@ INSTALL= install
  # If, for some reason, you don't want debugging info to bewww
  # logged, then comment the following line.
  #
@@ -25,7 +40,14 @@
  
  # turn on optimisation
  CFLAGS += -O2
-@@ -79,13 +79,10 @@ clean:
+@@ -76,19 +76,16 @@ $(PROGRAM): $(OBJECTS)
+ 
+ $(PROGRAM): $(OBJECTS)
+ 	    mkdir -p bin
+-	    $(CC) -o $@ $(OBJECTS) $(CFLAGS) $(LDFLAGS) $(SLIBS) 
++	    $(CC) -o $@ $(OBJECTS) $(CFLAGS) $(LDFLAGS) $(SLIBS)
+ 
+ clean:
  	    rm -f $(PROGRAM) *.o $(SRCDIR)/*.o *~
  
  install:
@@ -37,7 +59,15 @@
 +	$(BSD_INSTALL_PROGRAM) $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
  	@echo "Installing manual page"
 -	$(INSTALL) -c -m 644 doc/spp.1 /usr/local/man/man1/	
-+	$(BSD_INSTALL_MAN) doc/spp.1 $(DESTDIR)$(PREFIX)/man/man1/	
++	$(BSD_INSTALL_MAN) doc/spp.1 $(DESTDIR)$(PREFIX)/share/man/man1/
  
  # target 'distro'
  #
+@@ -99,7 +96,3 @@ distro:
+ distro:
+ #Make a gzip archive with only the necessary files
+ 	mkdir $(DISTRONAME); rsync -av --exclude .hgtags --exclude .hg --exclude bin --exclude spp-0.4.2 . $(DISTRONAME); tar --exclude="*.svn*" --exclude="*.o" --exclude="*~" --exclude="*.old" --exclude="*.orig" --exclude="*.kde*" --exclude="*.out" --exclude="*.new" --exclude="*Doxyfile*" --exclude="*bin/spp*" --exclude="src-fork" --exclude="spp-*.tar.gz" --format=ustar -cvf ${DISTRONAME}.tar ${DISTRONAME}; rm -rf $(DISTRONAME); gzip $(DISTRONAME).tar;
+-
+-
+-
+-
