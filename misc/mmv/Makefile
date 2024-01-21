@@ -1,6 +1,6 @@
 PORTNAME=	mmv
 PORTVERSION=	1.01b.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_1.01b.orig
@@ -34,10 +34,10 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmv ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/mmv.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/mmv.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 .for i in mcp mad mln
 	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${i}
-	${LN} -sf ${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/${i}.1
+	${LN} -sf ${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/${i}.1
 .endfor
 
 .include <bsd.port.mk>
