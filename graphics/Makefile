@@ -584,6 +584,7 @@
     SUBDIR += nanosvg
     SUBDIR += netpbm
     SUBDIR += nip2
+    SUBDIR += noaa-apt
     SUBDIR += nomacs
     SUBDIR += nplot
     SUBDIR += npretty

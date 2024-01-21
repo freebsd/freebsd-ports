@@ -1,0 +1,9 @@
+noaa-apt is a NOAA APT image decoder.
+
+noaa-apt takes a recorded WAV file and decodes the image.
+
+Users can buy a RTL-SDR for less than 30USD. They look like a USB drive but they
+have a connector for antennas. Using SDR software like GQRX and SDR# users can
+receive FM signals, for example broadcast FM (around 100MHz) or better, receive
+APT signals from NOAA satellites (around 137MHz) and then decode them with
+noaa-apt.
