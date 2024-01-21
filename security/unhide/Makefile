@@ -1,6 +1,7 @@
 PORTNAME=	unhide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	20210124
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
@@ -15,8 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	YJesus
 GH_PROJECT=	Unhide
 
-PLIST_FILES=	man/man8/unhide.8.gz \
-		man/man8/unhide-tcp.8.gz \
+PLIST_FILES=	share/man/man8/unhide.8.gz \
+		share/man/man8/unhide-tcp.8.gz \
 		sbin/unhide \
 		sbin/unhide-tcp
 
