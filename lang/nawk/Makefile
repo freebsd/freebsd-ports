@@ -22,6 +22,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/a.out ${STAGEDIR}${PREFIX}/bin/nawk
 	${INSTALL_MAN} ${WRKSRC}/awk.1 \
-		${STAGEDIR}${MANPREFIX}/share/man/man1/nawk.1
+		${STAGEDIR}${PREFIX}/share/man/man1/nawk.1
 
 .include <bsd.port.mk>
