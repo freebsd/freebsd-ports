@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 USES=		tar:bz2
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 PLIST_FILES=	bin/cksfv \
 		share/man/man1/cksfv.1.gz
