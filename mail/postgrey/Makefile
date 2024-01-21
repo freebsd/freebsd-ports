@@ -1,6 +1,6 @@
 PORTNAME=	postgrey
 PORTVERSION=	1.37
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -74,7 +74,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/postfix/postgrey_${i}.sample
 .endfor
 	cd ${WRKSRC} && \
-		${INSTALL_MAN} ${MANPAGES} ${STAGEDIR}${MANPREFIX}/man/man1
+		${INSTALL_MAN} ${MANPAGES} ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
