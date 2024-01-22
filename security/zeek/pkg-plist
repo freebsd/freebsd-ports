@@ -739,6 +739,7 @@ include/zeek/analyzer/protocol/login/Telnet.h
 include/zeek/analyzer/protocol/login/events.bif.h
 include/zeek/analyzer/protocol/login/functions.bif.h
 include/zeek/analyzer/protocol/mime/MIME.h
+include/zeek/analyzer/protocol/mime/consts.bif.h
 include/zeek/analyzer/protocol/mime/events.bif.h
 include/zeek/analyzer/protocol/modbus/Modbus.h
 include/zeek/analyzer/protocol/modbus/events.bif.h
@@ -1379,6 +1380,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_KRB.types.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Login.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Login.functions.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_MIME.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_MIME.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_MQTT.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_MQTT.types.bif.zeek
