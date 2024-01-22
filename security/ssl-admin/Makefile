@@ -1,6 +1,6 @@
 PORTNAME=	ssl-admin
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/ecrist/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -19,7 +19,7 @@ HAS_CONFIGURE=	yes
 
 MAKE_ENV=	BINDIR=${PREFIX}/bin \
 		ETCDIR=${PREFIX}/etc \
-		MANDIR=${MANPREFIX}/man
+		MANDIR=${PREFIX}/share/man
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
