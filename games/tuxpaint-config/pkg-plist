@@ -1,5 +1,5 @@
 bin/tuxpaint-config
-man/man1/tuxpaint-config.1.gz
+share/man/man1/tuxpaint-config.1.gz
 share/applications/tuxpaint-config.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
