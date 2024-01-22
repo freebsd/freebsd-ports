@@ -1,5 +1,6 @@
 PORTNAME=	vchanger
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -16,6 +17,7 @@ SHEBANG_FILES=	scripts/vchanger-genudevrules \
 		scripts/vchanger-umount-uuid.sh \
 		scripts/vchanger-mount-uuid.sh
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 OPTIONS_DEFINE=	DOCS
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
