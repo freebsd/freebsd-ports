@@ -1,7 +1,7 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -27,11 +27,11 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PLIST_FILES=	bin/gpg-tui \
 		bin/gpg-tui-completions \
-		man/man1/gpg-tui.1.gz
+		share/man/man1/gpg-tui.1.gz
 
 post-install:
-		${INSTALL_DATA} ${WRKSRC}/man/gpg-tui.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-		${STRIP_CMD} ${STAGEDIR}${MANPREFIX}/bin/gpg-tui-completions
-		${STRIP_CMD} ${STAGEDIR}${MANPREFIX}/bin/gpg-tui
+		${INSTALL_DATA} ${WRKSRC}/man/gpg-tui.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gpg-tui-completions
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gpg-tui
 
 .include <bsd.port.mk>
