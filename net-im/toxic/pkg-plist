@@ -1,6 +1,6 @@
 bin/toxic
-man/man1/toxic.1.gz
-man/man5/toxic.conf.5.gz
+share/man/man1/toxic.1.gz
+share/man/man5/toxic.conf.5.gz
 share/applications/toxic.desktop
 %%DATADIR%%/nameservers
 %%DATADIR%%/sounds/ToxicContactOffline.wav
