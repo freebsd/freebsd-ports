@@ -1,5 +1,5 @@
 bin/ciscoconfd
 bin/ciscoconfr
-man/man8/ciscoconfd.8.gz
-man/man8/ciscoconfr.8.gz
+share/man/man8/ciscoconfd.8.gz
+share/man/man8/ciscoconfr.8.gz
 @dir share/cisco/RCS
