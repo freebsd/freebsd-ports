@@ -1,7 +1,7 @@
 bin/vlock
-man/man1/vlock.1.gz
-man/man5/vlock-plugins.5.gz
-man/man8/vlock-main.8.gz
+share/man/man1/vlock.1.gz
+share/man/man5/vlock-plugins.5.gz
+share/man/man8/vlock-main.8.gz
 %%VLOCKSCRIPTS%%lib/vlock/scripts/amarok
 %%VLOCKSCRIPTS%%lib/vlock/scripts/example_script
 %%VLOCKSCRIPTS%%lib/vlock/scripts/mplayer

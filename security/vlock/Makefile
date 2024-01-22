@@ -1,6 +1,6 @@
 PORTNAME=	vlock
 PORTVERSION=	2.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/ \
 		LOCAL/martymac
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-plugins --enable-pam \
 		--prefix=${PREFIX} \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--with-modules="${VLOCKMODULES}" \
 		--with-scripts="${VLOCKSCRIPTS}" \
 		VLOCK_GROUP="nobody" \
