@@ -1,5 +1,6 @@
 PORTNAME=	freevrrpd
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -26,6 +27,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/freevrrpd \
 		${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
