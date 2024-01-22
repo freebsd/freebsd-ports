@@ -1,6 +1,6 @@
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -73,15 +73,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libcompface.so.1 ${STAGEDIR}${PREFIX}/lib/libcompface.so
-	${INSTALL_MAN} ${WRKSRC}/compface/compface.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/compface/compface.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/compface/compface.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/compface/compface.3 ${STAGEDIR}${PREFIX}/share/man/man3
 	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/faces/faces ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${STAGEDIR}${LOCALBASE}/lib/X11/app-defaults/Faces
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

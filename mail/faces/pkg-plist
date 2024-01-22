@@ -8,5 +8,5 @@ include/compface.h
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1
-man/man1/compface.1.gz
-man/man3/compface.3.gz
+share/man/man1/compface.1.gz
+share/man/man3/compface.3.gz
