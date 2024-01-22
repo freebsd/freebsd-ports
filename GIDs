@@ -279,7 +279,7 @@ honeytrap:*:333:
 # free: 336
 daapd:*:337:
 murmur:*:338:
-# free: 339
+mumble-server:*:339:
 wildfire:*:340:
 stunnel:*:341:
 openfire:*:342:
