@@ -1,5 +1,6 @@
 PORTNAME=	libressl
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -40,6 +41,7 @@ LIBTLS_CONFIGURE_ENABLE=	libtls-only
 NC_CONFIGURE_ENABLE=		nc
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
@@ -67,7 +69,7 @@ post-install:
 	${LN} -s /etc/ssl/certs ${STAGEDIR}${PREFIX}/etc/ssl/certs
 
 post-stage-MAN3-on:
-	(cd ${STAGEDIR}${MANPREFIX}; ${FIND} man/man3 -not -type d | \
+	(cd ${STAGEDIR}${PREFIX}; ${FIND} share/man/man3 -not -type d | \
 		${SED} 's/$$/.gz/' >> ${TMPPLIST})
 
 .include <bsd.port.mk>
