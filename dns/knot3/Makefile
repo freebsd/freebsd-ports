@@ -1,5 +1,6 @@
 PORTNAME=	knot
 DISTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -21,7 +22,7 @@ USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-recvmmsg=no \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 .if !defined(UTILS_ONLY) && !defined(LIB_ONLY)
