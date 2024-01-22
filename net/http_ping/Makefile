@@ -9,6 +9,9 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Measure HTTP Latency
 WWW=		https://www.acme.com/software/http_ping/
 
+DEPRECATED=	Supports only HTTP/1.0
+EXPIRATION_DATE=2024-02-29
+
 USES=		ssl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-I${OPENSSLINC}
