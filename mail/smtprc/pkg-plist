@@ -2,7 +2,7 @@ bin/smtprc
 etc/smtprc/auto.conf.sample
 etc/smtprc/email.tmpl.sample
 etc/smtprc/rcheck.conf.sample
-man/man1/smtprc.1.gz
-%%WITHGUI%%man/man1/gsmtprc.1.gz
+share/man/man1/smtprc.1.gz
+%%WITHGUI%%share/man/man1/gsmtprc.1.gz
 %%WITHGUI%%bin/gsmtprc
 %%PORTDOCS%%share/doc/smtprc/README
