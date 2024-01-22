@@ -30,7 +30,7 @@ CFLAGS+=	-fcommon
 SUB_FILES=	${PORTNAME}.conf
 PLIST_SUB=	LIBEXECDIR=heirloom/libexec
 
-MANPREFIX=	${PREFIX}/heirloom/share
+MANDIRS=	${PREFIX}/heirloom/share/man
 DATADIR=	${PREFIX}/heirloom/share
 
 MACDIR?=	${DATADIR}/tmac
@@ -42,7 +42,7 @@ PUBDIR?=	${DATADIR}/pub
 BINDIR?=	${PREFIX}/heirloom/bin
 LIBDIR?=	${PREFIX}/heirloom/libexec
 PSTDIR?=	${DATADIR}/font/devpost/postscript
-MANDIR?=	${MANPREFIX}/man
+MANDIR?=	${PREFIX}/heirloom/share/man
 
 PORTDOCS=	 *
 
