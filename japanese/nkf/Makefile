@@ -1,5 +1,6 @@
 PORTNAME=	nkf
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	japanese
 
@@ -16,6 +17,6 @@ GH_TAGNAME=	v${PORTVERSION:C/\./_/g}
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		ICONV_CMD="${ICONV_CMD}"
-PLIST_FILES=	bin/nkf man/man1/nkf.1.gz man/ja.UTF-8/man1/nkf.1.gz
+PLIST_FILES=	bin/nkf share/man/man1/nkf.1.gz share/man/ja/man1/nkf.1.gz
 
 .include <bsd.port.mk>
