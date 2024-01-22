@@ -1,5 +1,6 @@
 PORTNAME=	robotfindskitten
 PORTVERSION=	2.8284271.702
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -42,7 +43,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/robotfindskitten ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/nki/vanilla.nki ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/robotfindskitten.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/doc/robotfindskitten.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 .if ${PORT_OPTIONS:MEXTRANKI}
 .for NKI in ${SUB_FILES}
