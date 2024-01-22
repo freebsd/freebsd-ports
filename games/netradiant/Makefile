@@ -1,6 +1,6 @@
 PORTNAME=	netradiant
 PORTVERSION=	20150621
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games cad
 MASTER_SITES=	http://ingar.intranifty.net/gtkradiant/files/ LOCAL/danfe \
 		http://ingar.intranifty.net/gtkradiant/files/gamepacks/:gp
@@ -64,7 +64,7 @@ do-install:
 	@${RMDIR} ${WRKSRC}/install/games
 	${CP} -a ${WRKSRC}/install/* ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${DISTDIR}/q3map2.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${DISTDIR}/q3map2.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-GAMEPACK-on:
 .for g in ${GAMES}
