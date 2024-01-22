@@ -230,9 +230,9 @@ libexec/inspircd/modules/m_xline_db.so
 %%POSIX%%libexec/inspircd/modules/m_regex_posix.so
 %%SQLITE%%libexec/inspircd/modules/m_sqlite3.so
 %%SSLREHASH%%libexec/inspircd/modules/m_sslrehashsignal.so
-man/man1/inspircd-genssl.1.gz
-man/man1/inspircd-testssl.1.gz
-man/man1/inspircd.1.gz
+share/man/man1/inspircd-genssl.1.gz
+share/man/man1/inspircd-testssl.1.gz
+share/man/man1/inspircd.1.gz
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,750) %%INSPIRCD_DBDIR%%
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,755) %%INSPIRCD_LOGDIR%%
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,755) %%INSPIRCD_RUNDIR%%
