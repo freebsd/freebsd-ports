@@ -1,5 +1,6 @@
 PORTNAME=	s-nail
 DISTVERSION=	14.9.24
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 
@@ -24,7 +25,7 @@ MAKEFILE=	makefile
 MAKE_ENV=	EXTRA_CFLAGS="-DLIBICONV_PLUG" \
 		INCS=-I${LOCALBASE}/include \
 		VAL_IDNA=idn2 \
-		VAL_MANDIR=${MANPREFIX}/man \
+		VAL_MANDIR=${PREFIX}/share/man \
 		VAL_MIME_TYPES_SYS=${PREFIX}/etc/mime.types \
 		VAL_PREFIX=${PREFIX}
 TEST_TARGET=	test
@@ -32,7 +33,7 @@ TEST_TARGET=	test
 PLIST_FILES=	bin/s-nail \
 		"@sample etc/s-nail.rc.sample" \
 		libexec/s-nail-dotlock \
-		man/man1/s-nail.1.gz
+		share/man/man1/s-nail.1.gz
 
 PORTDOCS=	NEWS README
 
