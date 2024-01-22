@@ -37,4 +37,4 @@ include/algol68g/a68g-torrix.h
 include/algol68g/a68g-transput.h
 include/algol68g/a68g-types.h
 include/algol68g/a68g.h
-man/man1/a68g.1.gz
+share/man/man1/a68g.1.gz
