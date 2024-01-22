@@ -1,6 +1,6 @@
 PORTNAME=	rawtherapee
 PORTVERSION=	5.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	https://rawtherapee.com/shared/source/ \
 		LOCAL/mandree/
@@ -141,7 +141,7 @@ _OPT_FLAGS+=	-mstackrealign
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
+	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${PREFIX}/share/man/man1/"#' \
 		${WRKSRC}/CMakeLists.txt
 
 TESTIMAGES=	${FILESDIR}/../testimages
