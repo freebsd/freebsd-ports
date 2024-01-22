@@ -18,7 +18,7 @@
 +
 +install:
 +	${BSD_INSTALL_PROGRAM} tetris ${DESTDIR}${PREFIX}/bin/bsdtris
-+	${BSD_INSTALL_MAN} tetris.6 ${DESTDIR}${MANPREFIX}/man/man6/bsdtris.6
++	${BSD_INSTALL_MAN} tetris.6 ${DESTDIR}${PREFIX}/share/man/man6/bsdtris.6
 +	${MKDIR} ${DESTDIR}/var/games
 +
 +clean:

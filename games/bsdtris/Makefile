@@ -1,6 +1,6 @@
 PORTNAME=	bsdtris
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-01092003

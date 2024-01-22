@@ -1,4 +1,4 @@
 @(,games,) bin/bsdtris
-man/man6/bsdtris.6.gz
+share/man/man6/bsdtris.6.gz
 @postexec touch /var/games/bsdtris.scores ; chmod 664 /var/games/bsdtris.scores ; chgrp games /var/games/bsdtris.scores
 @rmempty /var/games/bsdtris.scores
