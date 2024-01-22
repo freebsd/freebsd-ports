@@ -1,6 +1,6 @@
 bin/postfwd
 etc/postfwd
-man/man8/postfwd.8.gz
-man/man8/postfwd1.8.gz
-man/man8/postfwd2.8.gz
-man/man8/postfwd3.8.gz
+share/man/man8/postfwd.8.gz
+share/man/man8/postfwd1.8.gz
+share/man/man8/postfwd2.8.gz
+share/man/man8/postfwd3.8.gz
