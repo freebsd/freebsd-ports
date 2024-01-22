@@ -1,6 +1,6 @@
 PORTNAME=	hbiff
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		LOCAL/obrien
@@ -14,7 +14,7 @@ USE_XORG=	x11
 CFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS+=	-lX11
 
-PLIST_FILES=	bin/hbiff man/man1/hbiff.1.gz
+PLIST_FILES=	bin/hbiff share/man/man1/hbiff.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -30,6 +30,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>
