@@ -1,5 +1,5 @@
 PORTNAME=	worker
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		compiler:c++14-lang localbase pkgconfig python:run \
 		shebangfix tar:bzip2 xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_XORG=	ice sm x11 xinerama
 
 SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
