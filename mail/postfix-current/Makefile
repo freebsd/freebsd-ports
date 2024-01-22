@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.9-20240106
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -193,7 +193,7 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
 			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
 			-DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" \
-			-DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" \
+			-DDEF_MANPAGE_DIR=\\\"${PREFIX}/share/man\\\" \
 			-DDEF_README_DIR=\\\"${READMEDIR}\\\" \
 			-DDEF_HTML_DIR=\\\"${READMEDIR}\\\" \
 			-DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" \
@@ -323,7 +323,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g;\
 		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
 		s!^(setgid_group =)!\1 maildrop!g;\
-		s!^(manpage_directory =)!\1 ${MANPREFIX}/man!g;\
+		s!^(manpage_directory =)!\1 ${PREFIX}/share/man!g;\
 		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
 		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
 		s!(:|= )/etc/postfix!\1$$config_directory!g;\
@@ -383,14 +383,14 @@ do-install:
 		meta_directory=${META_DIRECTORY} \
 		html_directory=${READMEDIR} \
 		mailq_path=${PREFIX}/bin/mailq \
-		manpage_directory=${MANPREFIX}/man \
+		manpage_directory=${PREFIX}/share/man \
 		newaliases_path=${PREFIX}/bin/newaliases \
 		readme_directory=${READMEDIR} \
 		sendmail_path=${PREFIX}/sbin/sendmail )
 
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${STAGEDIR}${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
-	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 # == do not overwrite existing config
 	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
@@ -426,6 +426,6 @@ do-install:
 
 do-install-TEST-on:
 	${INSTALL_PROGRAM} ${BINTEST:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
