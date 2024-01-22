@@ -1,5 +1,6 @@
 PORTNAME=	weechat
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -54,7 +55,7 @@ ICONV_USES=		iconv
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 LUA_USES=		lua pkgconfig
 MANPAGES_CMAKE_BOOL=	ENABLE_MAN
-MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
+MANPAGES_CMAKE_ON=	-DMANDIR=${PREFIX}/share/man
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
 NLS_USES=		gettext
 PERL_USES=		perl5
