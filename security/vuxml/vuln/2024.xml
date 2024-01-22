@@ -1,3 +1,30 @@
+  <vuln vid="fedf7e71-61bd-49ec-aaf0-6da14bdbb319">
+    <topic>zeek -- potential DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>6.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v6.0.3">
+	  <p>A specially-crafted series of packets containing nested
+	  MIME entities can cause Zeek to spend large amounts of
+	  time parsing the entities. </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v6.0.3</url>
+    </references>
+    <dates>
+      <discovery>2024-01-22</discovery>
+      <entry>2024-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2264566a-a890-46eb-a895-7881dd220bd0">
     <topic>electron26 -- Out of bounds memory access in V8</topic>
     <affects>
