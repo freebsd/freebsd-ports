@@ -1,6 +1,6 @@
 PORTNAME=	xzgv
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -21,7 +21,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
-PLIST_FILES=	bin/xzgv man/man1/xzgv.1.gz
+PLIST_FILES=	bin/xzgv share/man/man1/xzgv.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
@@ -30,6 +30,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xzgv ${STAGEDIR}${LOCALBASE}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/xzgv.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/xzgv.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
