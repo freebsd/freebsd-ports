@@ -1,7 +1,7 @@
 bin/smbtorture
 sbin/samba-gpupdate
-man/man1/smbtorture.1.gz
-man/man8/samba-gpupdate.8.gz
+share/man/man1/smbtorture.1.gz
+share/man/man8/samba-gpupdate.8.gz
 include/samba4/policy.h
 lib/samba4/libsamba-policy%%PYTHON_EXT_SUFFIX%%.so
 lib/samba4/libsamba-policy%%PYTHON_EXT_SUFFIX%%.so.0
