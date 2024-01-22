@@ -1,6 +1,6 @@
 PORTNAME?=		inn
 PORTVERSION?=		2.7.1
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		news
 MASTER_SITES=		ISC
 MASTER_SITE_SUBDIR?=	${PORTNAME}
@@ -58,7 +58,7 @@ VARBASE?=	/var
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 CONFIGURE_ENV+=		ac_cv_prog_AWK="${AWK}"
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man		\
 			--prefix=${INN_NEWSBASE}		\
 			--with-spool-dir=${INN_NEWSSPOOL}	\
 			--with-log-dir=${INN_LOGDIR}		\
