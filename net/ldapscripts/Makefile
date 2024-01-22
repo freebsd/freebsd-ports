@@ -1,6 +1,6 @@
 PORTNAME=	ldapscripts
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
@@ -17,8 +17,7 @@ OPTIONS_DEFINE=	SASL DOCS
 
 USES=		iconv ldap tar:tgz
 LIBDIR=	${PREFIX}/lib/${PORTNAME}
-MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
-		ETCDIR=${ETCDIR}
+MAKE_ENV+=	ETCDIR=${ETCDIR}
 
 SUB_FILES=	pkg-message
 
@@ -28,7 +27,8 @@ PORTDOCS=	README CHANGELOG VERSION TODO
 # and set paths to OpenLDAP binaries
 post-patch:
 	${REINPLACE_CMD} "s|^all:.*|all:|g" ${WRKSRC}/Makefile
-	${REINPLACE_CMD} "s|^PREFIX = .*|PREFIX = ${PREFIX}|g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} "s|^PREFIX = .*|PREFIX = ${PREFIX}|g ; \
+		s|MANDIR =.*|MANDIR ?= ${PREFIX}/share/man|g" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} \
 	-e "s|^LDAPSEARCHBIN=.*|LDAPSEARCHBIN=\"${LOCALBASE}/bin/ldapsearch\"|g" \
 	-e "s|^LDAPADDBIN=.*|LDAPADDBIN=\"${LOCALBASE}/bin/ldapadd\"|g" \
