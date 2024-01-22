@@ -1,5 +1,6 @@
 PORTNAME=	tnylpo
 DISTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	joerg@FreeBSD.org
@@ -20,9 +21,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tnylpo ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tnylpo-convert ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tnylpo.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/tnylpo-convert.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/mine/mine.com \
 		${STAGEDIR}${PREFIX}/share/${PORTNAME}
