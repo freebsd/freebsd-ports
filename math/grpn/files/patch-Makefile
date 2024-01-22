@@ -7,7 +7,7 @@
 -PREFIX = /usr/local
 -MANDIR = ${PREFIX}/man
 +PREFIX ?= /usr/local
-+MANDIR ?= ${MANPREFIX}/man
++MANDIR ?= ${PREFIX}/share/man
  
  # What compiler should be used
 -CC = gcc 
