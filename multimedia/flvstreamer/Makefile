@@ -9,6 +9,9 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Open source command-line RTMP client
 WWW=		https://savannah.nongnu.org/projects/flvstreamer/
 
+DEPRECATED=	Last release 2010 and no active development since, consider using multimedia/ffmpeg
+EXPIRATION_DATE=2024-02-29
+
 USES=		gmake
 ALL_TARGET=	posix
 WRKSRC=		${WRKDIR}/${PORTNAME}
