@@ -1,5 +1,5 @@
 bin/SciTE
 bin/scite
-man/man1/scite.1.gz
+share/man/man1/scite.1.gz
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
