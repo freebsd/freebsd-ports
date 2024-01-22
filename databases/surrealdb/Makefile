@@ -10,6 +10,8 @@ WWW=		https://surrealdb.com
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: memory allocation of 109051908 bytes failed
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm:15
