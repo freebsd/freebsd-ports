@@ -1,6 +1,6 @@
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	mail
 MASTER_SITES+=	QMAIL
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -784,7 +784,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e "s/void *main/int main/g" ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e "/int main/ s/argc, *argv/int argc, char **argv/" ${WRKSRC}/install.c
-	@${ECHO_CMD} "MANPATH ${MANPREFIX}/man" > ${WRKDIR}/qmail.conf
+	@${ECHO_CMD} "MANPATH ${PREFIX}/share/man" > ${WRKDIR}/qmail.conf
 
 do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
@@ -832,9 +832,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/qmailsend ${STAGEDIR}${PREFIX}/boot
 .endif
 .for i in 1 5 7 8
-	@${MKDIR} ${STAGEDIR}${PREFIX}/man/man$i
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man$i
 . for j in ${MMAN${i}}
-	${INSTALL_MAN} ${WRKSRC}/$j ${STAGEDIR}${PREFIX}/man/man${i}
+	${INSTALL_MAN} ${WRKSRC}/$j ${STAGEDIR}${PREFIX}/share/man/man${i}
 . endfor
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
