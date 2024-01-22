@@ -1,8 +1,8 @@
 bin/chronyc
 @sample etc/chrony.conf.sample
-man/man1/chronyc.1.gz
-man/man5/chrony.conf.5.gz
-man/man8/chronyd.8.gz
+share/man/man1/chronyc.1.gz
+share/man/man5/chrony.conf.5.gz
+share/man/man8/chronyd.8.gz
 sbin/chronyd
 @dir(chronyd,chronyd) /var/db/chrony
 %%HTMLDOCS%%%%DOCSDIR%%/chrony.conf.html

@@ -1,5 +1,6 @@
 PORTNAME=	chrony
 DISTVERSION=	4.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://chrony-project.org/releases/ \
 		LOCAL/mandree
@@ -23,7 +24,7 @@ CONFIGURE_ARGS=	--chronyvardir=/var/db/${PORTNAME} \
 		--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
 		--enable-ntp-signd \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc \
 		--without-tomcrypt
