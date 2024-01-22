@@ -1,5 +1,6 @@
 PORTNAME=	mp
 DISTVERSION=	5.61
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -117,6 +118,6 @@ do-install-DOCS-on:
 .endfor
 
 do-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/mp-5.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mp-5.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

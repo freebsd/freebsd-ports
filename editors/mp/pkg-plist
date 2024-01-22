@@ -1,5 +1,5 @@
 bin/mp-5
-%%MANPAGES%%man/man1/mp-5.1.gz
+%%MANPAGES%%share/man/man1/mp-5.1.gz
 %%GUI%%share/applications/minimum-profit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
