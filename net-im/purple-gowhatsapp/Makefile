@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpurple.so:net-im/libpurple	\
 		libopusfile.so:audio/opusfile
 
-USES=	go:no_targets cmake dos2unix localbase:ldflags
+USES=		go:no_targets cmake dos2unix localbase:ldflags pkgconfig
 
 OPTIONS_MULTI=			DB-backend
 OPTIONS_MULTI_DB-backend=	SQLITE3 PGSQL MYSQL
