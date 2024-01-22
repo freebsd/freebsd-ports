@@ -1,6 +1,6 @@
 PORTNAME=	dbmail
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--enable-manpages \
 			--sysconfdir=${LOCALBASE}/etc \
 			--with-zdb=${LOCALBASE}
 
-MAKE_ARGS+=	mandir=${MANPREFIX}/man
+MAKE_ARGS+=	mandir=${PREFIX}/share/man
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	DBMAIL_GROUP="${DBMAIL_GROUP}" \
