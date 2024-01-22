@@ -997,8 +997,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/x86/Tolk.lib
 %%DATADIR%%/x86/dolapi32.dll
 %%DATADIR%%/x86/nvdaControllerClient32.dll
-man/man6/openbve-objectviewer.6.gz
-man/man6/openbve-routeviewer.6.gz
-man/man6/openbve.6.gz
+share/man/man6/openbve-objectviewer.6.gz
+share/man/man6/openbve-routeviewer.6.gz
+share/man/man6/openbve.6.gz
 share/applications/openbve.desktop
 share/pixmaps/openbve.png
