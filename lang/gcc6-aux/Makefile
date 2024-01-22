@@ -75,7 +75,7 @@ REVFILE=		${WRKSRC}/gcc/REVISION
 PHASEFILE=		${WRKSRC}/gcc/DEV-PHASE
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
 PKG_PREFIX=		${PREFIX}/${PORTNAME}
-MANPREFIX=		${PREFIX}/${PORTNAME}/share
+MANDIRS=		${PREFIX}/${PORTNAME}/share
 BSFILENAME=		ada-bootstrap.${GARCH}.${OPSYS:tl}.${OSREL:S/.//}.tar.bz2
 
 # If we find gnatmake and friends in a standard location, then we'll use this
