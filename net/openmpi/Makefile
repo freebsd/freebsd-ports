@@ -1,6 +1,6 @@
 PORTNAME=	openmpi
 PORTVERSION=	4.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -33,7 +33,7 @@ PLIST_SUB+=	MPIDIR=${MPIDIR}
 CONFIGURE_ENV+=		DISABLE_gds_ds12=1 DISABLE_gds_ds21=1
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
-			--mandir=${PREFIX}/${MPIDIR}/man \
+			--mandir=${PREFIX}/${MPIDIR}/share/man \
 			--program-prefix= \
 			--with-hwloc=external \
 			--with-libltdl \
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib
 
-MANPREFIX=	${PREFIX}/${MPIDIR}
+MANDIRS=	${PREFIX}/${MPIDIR}/share/man
 
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
