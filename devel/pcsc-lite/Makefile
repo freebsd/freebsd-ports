@@ -18,6 +18,7 @@ USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-libsystemd \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-ipcdir=/var/run
