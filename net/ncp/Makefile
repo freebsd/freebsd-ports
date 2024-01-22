@@ -1,5 +1,6 @@
 PORTNAME=	ncp
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://dl.fefe.de/ http://dl.mteege.de/fefe/
 
@@ -11,7 +12,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:devel/libowfat
 
 USES=		tar:bzip2
 
-PLIST_FILES=	bin/ncp bin/npush bin/npoll man/man1/ncp.1.gz man/man1/npush.1.gz
+PLIST_FILES=	bin/ncp bin/npush bin/npoll share/man/man1/ncp.1.gz share/man/man1/npush.1.gz
 
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -27,7 +28,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ncp ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ncp.1 ${WRKSRC}/npush.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${LN} -s ncp ${STAGEDIR}${PREFIX}/bin/npush
 	${LN} -s ncp ${STAGEDIR}${PREFIX}/bin/npoll
 
