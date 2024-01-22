@@ -1,6 +1,6 @@
 @sample etc/relayd.conf.sample
-man/man5/relayd.conf.5.gz
-man/man8/relayctl.8.gz
-man/man8/relayd.8.gz
+share/man/man5/relayd.conf.5.gz
+share/man/man8/relayctl.8.gz
+share/man/man8/relayd.8.gz
 sbin/relayctl
 sbin/relayd
