@@ -1,5 +1,6 @@
 PORTNAME=	sortmail
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/
 
@@ -13,7 +14,7 @@ NO_BUILD=	yes
 do-install:
 .for f in recomposemail decomposemail sortmail
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>
