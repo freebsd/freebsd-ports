@@ -1,5 +1,6 @@
 PORTNAME=	msoak
 DISTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ports@jpmens.net
@@ -19,7 +20,7 @@ GH_ACCOUNT=	jpmens
 CFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-llua-${LUA_VER} -lmosquitto -lconfig
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-		BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man
+		BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/share/man
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/msoak
