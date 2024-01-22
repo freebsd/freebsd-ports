@@ -61,10 +61,6 @@ USES+=		compiler:c++11-lang
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-finline-limit=80 -finline-functions -finline-functions-called-once
-.endif
-
 post-install: # fix absolute symbolic link to be relative
 	@${RM} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so
 	@${RLN} ${STAGEDIR}${PREFIX}/lib/calf/libcalf.so ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so
