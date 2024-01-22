@@ -4,4 +4,4 @@ bin/kadnode-ctl
 @sample %%ETCDIR%%/peers.txt.sample
 %%NSS%%lib/nss_kadnode.so
 %%NSS%%lib/nss_kadnode.so.1
-man/man1/kadnode.1.gz
+share/man/man1/kadnode.1.gz

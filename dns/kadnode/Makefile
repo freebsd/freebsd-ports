@@ -1,7 +1,7 @@
 PORTNAME=	kadnode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 
 MAINTAINER=	moritzwarning@web.de
@@ -62,7 +62,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/kadnode.conf \
 		${STAGEDIR}${ETCDIR}/kadnode.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/misc/manpage \
-		${STAGEDIR}${MANPREFIX}/man/man1/kadnode.1
+		${STAGEDIR}${PREFIX}/share/man/man1/kadnode.1
 
 do-install-NSS-on:
 	${INSTALL_LIB} ${WRKSRC}/build/libnss_kadnode-2.0.so \
