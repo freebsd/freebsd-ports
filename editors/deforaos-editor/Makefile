@@ -1,6 +1,6 @@
 PORTNAME=	editor
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.defora.org/os/download/download/4398/
 PKGNAMEPREFIX=	deforaos-
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libfreetype.so:print/freetype2
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20 cairo gdkpixbuf2
