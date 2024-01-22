@@ -24,8 +24,8 @@ lib/libpari.so
 lib/libpari.so.%%PORTVERSION%%
 lib/libpari.so.8
 lib/pari/pari.cfg
-man/man1/gp-%%GP_VERSION%%.1.gz
-man/man1/gp.1.gz
-man/man1/gphelp.1.gz
-man/man1/pari.1.gz
-man/man1/tex2mail.1.gz
+share/man/man1/gp-%%GP_VERSION%%.1.gz
+share/man/man1/gp.1.gz
+share/man/man1/gphelp.1.gz
+share/man/man1/pari.1.gz
+share/man/man1/tex2mail.1.gz
