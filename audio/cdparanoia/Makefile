@@ -13,8 +13,9 @@ WWW=		https://www.xiph.org/paranoia/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-GNU_CONFIGURE=	yes
 USES=		gmake
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 
 post-patch:

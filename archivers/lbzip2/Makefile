@@ -11,11 +11,12 @@ WWW=		https://lbzip2.org/
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/lbunzip2 bin/lbzcat bin/lbzip2 \
-		man/man1/lbunzip2.1.gz \
-		man/man1/lbzcat.1.gz \
-		man/man1/lbzip2.1.gz
+		share/man/man1/lbunzip2.1.gz \
+		share/man/man1/lbzcat.1.gz \
+		share/man/man1/lbzip2.1.gz
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
 

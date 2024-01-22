@@ -9,4 +9,4 @@ lib/libcdda_paranoia.a
 lib/libcdda_paranoia.so
 lib/libcdda_paranoia.so.0
 lib/libcdda_paranoia.so.0.9.8
-man/man1/cdparanoia.1.gz
+share/man/man1/cdparanoia.1.gz
