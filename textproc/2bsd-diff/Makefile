@@ -1,6 +1,6 @@
 PORTNAME=	diff
 PORTVERSION=	2.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.tuhs.org/Archive/Distributions/UCB/2.11BSD/ \
 		http://www.d20hobbies.com/2.11BSD/
@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/bin/diff
 
 PLIST_FILES=	bin/2diff \
 		libexec/2diffh \
-		man/man1/2diff.1.gz
+		share/man/man1/2diff.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \

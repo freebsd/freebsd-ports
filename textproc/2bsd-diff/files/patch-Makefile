@@ -39,4 +39,4 @@
 -	install -s diffh ${DESTDIR}/usr/libexec/diffh
 +	${BSD_INSTALL_PROGRAM} diff  ${DESTDIR}${DIFF}
 +	${BSD_INSTALL_PROGRAM} diffh ${DESTDIR}${DIFFH}
-+	${BSD_INSTALL_MAN}     ../../man/man1/diff.1 ${DESTDIR}${MANPREFIX}/man/man1/2diff.1
++	${BSD_INSTALL_MAN}     ../../man/man1/diff.1 ${DESTDIR}${PREFIX}/share/man/man1/2diff.1
