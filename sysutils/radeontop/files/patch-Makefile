@@ -36,7 +36,7 @@
 +	$(INSTALL) -m755 $(xcblib) $(DESTDIR)$(PREFIX)/$(LIBDIR)
  endif
 -	$(INSTALL) -D -m644 radeontop.1 $(DESTDIR)/$(PREFIX)/$(MANDIR)/man1/radeontop.1
-+	$(INSTALL) -m644 radeontop.1 $(DESTDIR)$(MANPREFIX)/man/man1
++	$(INSTALL) -m644 radeontop.1 $(DESTDIR)$(PREFIX)/share/man/man1
  ifeq ($(nls), 1)
  	$(MAKE) -C translations install PREFIX=$(PREFIX)
  endif

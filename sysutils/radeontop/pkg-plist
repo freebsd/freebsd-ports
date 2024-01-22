@@ -1,6 +1,6 @@
 bin/radeontop
 lib/libradeontop_xcb.so
-man/man1/radeontop.1.gz
+share/man/man1/radeontop.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/radeontop.mo
 %%NLS%%share/locale/de/LC_MESSAGES/radeontop.mo
 %%NLS%%share/locale/el/LC_MESSAGES/radeontop.mo
