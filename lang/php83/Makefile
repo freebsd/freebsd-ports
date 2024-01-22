@@ -22,7 +22,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${MANPREFIX}/share
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	\
 		--disable-all \
 		--program-prefix="" \
