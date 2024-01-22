@@ -1,6 +1,6 @@
 PORTNAME=	hostapd
 PORTVERSION=	2.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
 PKGNAMESUFFIX=	29
@@ -22,8 +22,8 @@ BUILD_WRKSRC=	${WRKSRC}/hostapd
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-PLIST_FILES=	sbin/hostapd sbin/hostapd_cli man/man1/hostapd_cli.1.gz \
-		man/man8/hostapd.8.gz
+PLIST_FILES=	sbin/hostapd sbin/hostapd_cli share/man/man1/hostapd_cli.1.gz \
+		share/man/man8/hostapd.8.gz
 .if !exists(/etc/rc.d/hostapd)
 USE_RC_SUBR=	hostapd
 .endif
@@ -39,8 +39,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd_cli \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/hostapd/hostapd_cli.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/hostapd/hostapd.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
