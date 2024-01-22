@@ -1,5 +1,6 @@
 PORTNAME=	Math-Pari
 PORTVERSION=	2.01080900
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN  \
 		http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/2.3/:pari \
@@ -55,7 +56,7 @@ pre-configure:
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ld="${LD}" perl="${PERL}" ranlib="${RANLIB}" \
-	    ./Configure --mandir=${MANPREFIX}/man/man1 \
+	    ./Configure --mandir=${PREFIX}/share/man/man1 \
 		--prefix=${PREFIX} \
 		--share-prefix=${PREFIX}/share \
 		--with-gmp=${LOCALBASE}
