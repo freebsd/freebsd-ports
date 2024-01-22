@@ -11,11 +11,11 @@
 @(games,games,2755) %%DATADIR%%/slashem
 @owner
 @group
-man/man6/dgn_comp.6.gz
-man/man6/dlb.6.gz
-man/man6/lev_comp.6.gz
-man/man6/recover.6.gz
-man/man6/slashem.6.gz
+share/man/man6/dgn_comp.6.gz
+share/man/man6/dlb.6.gz
+share/man/man6/lev_comp.6.gz
+share/man/man6/recover.6.gz
+share/man/man6/slashem.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample.slashemrc
 %%PORTDOCS%%%%DOCSDIR%%/slamfaq.txt
