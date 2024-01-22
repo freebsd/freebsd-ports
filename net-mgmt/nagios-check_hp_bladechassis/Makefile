@@ -1,5 +1,6 @@
 PORTNAME=	check_hp_bladechassis
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://folk.uio.no/trondham/software/files/ \
 		ZI
@@ -18,7 +19,7 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
 
-PLIST_FILES=	libexec/nagios/check_hp_bladechassis man/man8/check_hp_bladechassis.8.gz
+PLIST_FILES=	libexec/nagios/check_hp_bladechassis share/man/man8/check_hp_bladechassis.8.gz
 SHEBANG_FILES=	check_hp_bladechassis
 
 do-install:
@@ -26,6 +27,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/check_hp_bladechassis \
 		${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_MAN} ${WRKSRC}/check_hp_bladechassis.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
