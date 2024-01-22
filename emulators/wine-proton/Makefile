@@ -136,7 +136,7 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/wine-wow64.sh           ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine
 .endif
 	${RM} -r ${STAGEDIR}${PREFIX}/${PORTNAME}/include
-	${RM} -r ${STAGEDIR}${MANPREFIX}/man
+	${RM} -r ${STAGEDIR}${PREFIX}/man
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
