@@ -1,5 +1,6 @@
 PORTNAME=	kpathsea
 PORTVERSION=	6.3.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -15,6 +16,7 @@ USES=		libtool pathfix tar:xz tex
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
@@ -33,11 +35,11 @@ post-install:
 	    for f in kpsetool kpsewhere; do \
 		${INSTALL_SCRIPT} $${f}.sh ${STAGEDIR}${PREFIX}/bin/$$f; \
 		${INSTALL_MAN} ../../tl_support/$${f}.1 \
-		    ${STAGEDIR}${MANPREFIX}/man/man1/$${f}.1; \
+		    ${STAGEDIR}${PREFIX}/share/man/man1/$${f}.1; \
 	    done; \
 	    for l in kpsexpand kpsepath; do \
 		${LN} -sf kpsetool ${STAGEDIR}${PREFIX}/bin/$$l; \
-		${LN} -sf kpsetool.1 ${STAGEDIR}${MANPREFIX}/man/man1/$${l}.1; \
+		${LN} -sf kpsetool.1 ${STAGEDIR}${PREFIX}/share/man/man1/$${l}.1; \
 	    done)
 
 .include <bsd.port.mk>
