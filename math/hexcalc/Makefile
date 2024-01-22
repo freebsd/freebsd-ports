@@ -1,6 +1,6 @@
 PORTNAME=	hexcalc
 PORTVERSION=	1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.berklix.com/~jhs/ftp/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}
@@ -21,12 +21,12 @@ COMMENT=	Multi-radix calculator for x11
 USES=		xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
-PLIST_FILES=	bin/hexcalc man/man1/hexcalc.1.gz
+PLIST_FILES=	bin/hexcalc share/man/man1/hexcalc.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hexcalc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hexcalc.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/hexcalc.1
+		${STAGEDIR}${PREFIX}/share/man/man1/hexcalc.1
 	@# The manual installed OK on 9.1-RELEASE without do-install,
 	@# but manual install failed on 9.2-RELEASE & 10.0-RELEASE,
 	@# so I added do-install, which does no harm on 9.1 & 9.2.
