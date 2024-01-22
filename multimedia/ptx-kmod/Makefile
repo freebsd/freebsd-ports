@@ -12,6 +12,9 @@ WWW=		https://d.hatena.ne.jp/bsdaemon/20100429/1272556078
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Legacy PCI-based hardware released around 2009 and 2010
+EXPIRATION_DATE=2024-02-29
+
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 USES=		kmod shebangfix
