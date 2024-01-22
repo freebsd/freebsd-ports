@@ -230,6 +230,6 @@ share/applications/luakit.desktop
 %%DATADIR%%/resources/icons/tab-icon-private@2x.png
 %%DATADIR%%/resources/icons/tab-icon-security-error.png
 %%DATADIR%%/resources/icons/tab-icon-security-error@2x.png
-man/man1/luakit.1.gz
+share/man/man1/luakit.1.gz
 share/pixmaps/luakit.png
 share/pixmaps/luakit.svg
