@@ -2,7 +2,7 @@ bin/luakit
 etc/xdg/luakit/rc.lua
 etc/xdg/luakit/theme.lua
 lib/luakit/luakit.so
-man/man1/luakit.1.gz
+share/man/man1/luakit.1.gz
 share/applications/luakit.desktop
 share/pixmaps/luakit.png
 share/pixmaps/luakit.svg
