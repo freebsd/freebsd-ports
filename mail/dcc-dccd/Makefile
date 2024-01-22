@@ -1,5 +1,6 @@
 PORTNAME=	dcc-dccd
 PORTVERSION=	2.3.168
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
 DISTNAME=	dcc-${PORTVERSION}
@@ -30,7 +31,7 @@ CONFIGURE_ARGS=	-q \
 		--without-DCC-MD5 \
 		--with-uid=${DCCUSER} \
 		--bindir=${PREFIX}/bin \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--with-installroot=\$${${DESTDIRNAME}} \
 		--with-configsuffix=.sample \
 		--with-make-cmd=${MAKE_CMD} \
