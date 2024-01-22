@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 USE_XORG=	x11 xft xinerama
 GH_ACCOUNT=	phillbush
 EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
-MANPREFIX=	${PREFIX}/share/man
+MAKE_ARGS=	MANPREFIX="${PREFIX}/share/man"
 MAKE_ENV=	LOCALINC="${LOCALBASE}/include" \
 		LOCALLIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" \
