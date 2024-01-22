@@ -98,9 +98,9 @@ lib/rspamd/librspamd-ev.so
 lib/rspamd/librspamd-kann.so
 lib/rspamd/librspamd-replxx.so
 lib/rspamd/librspamd-server.so
-man/man1/rspamadm.1.gz
-man/man1/rspamc.1.gz
-man/man8/rspamd.8.gz
+share/man/man1/rspamadm.1.gz
+share/man/man1/rspamc.1.gz
+share/man/man8/rspamd.8.gz
 %%DATADIR%%/effective_tld_names.dat
 %%DATADIR%%/elastic/kibana.json
 %%DATADIR%%/elastic/rspamd_template.json

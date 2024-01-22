@@ -1,6 +1,6 @@
 PORTNAME=	rspamd
 PORTVERSION=	3.7.a1.20230808
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -34,7 +34,6 @@ CMAKE_ARGS+=	-DBUILD_PORT=yes \
 		-DGIT_ID=${GH_TAGNAME} \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DLOGDIR=/var/log/rspamd \
-		-DMANDIR=${MANPREFIX}/man \
 		-DRUNDIR=/var/run/rspamd
 
 DEBUG_FLAGS=	-g -O0
