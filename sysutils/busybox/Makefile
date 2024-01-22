@@ -1,6 +1,6 @@
 PORTNAME=	busybox
 PORTVERSION=	1.36.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
@@ -31,7 +31,7 @@ USE_GCC=	yes
 MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		SKIP_STRIP=y V=1
-PLIST_FILES=	bin/busybox man/man1/busybox.1.gz
+PLIST_FILES=	bin/busybox share/man/man1/busybox.1.gz
 PORTDOCS=	*
 
 post-patch:
@@ -54,7 +54,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} busybox \
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC}/docs && ${INSTALL_MAN} busybox.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . \
