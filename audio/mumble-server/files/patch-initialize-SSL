@@ -1,0 +1,34 @@
+Description: the SSL library must be initialized, otherwise mumble and
+   mumble-server both fail to find the available ciphers after a rebuild
+   with openssl_1.0.2d-3.  The two calls used are based on:
+     https://wiki.openssl.org/index.php/SSL/TLS_Client#Initialization
+Author: Colomban Wendling <lists.ban@herbesfolles.org>
+        Christohper Knadle <Chris.Knadle@coredump.us>
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=804363
+Bug-Mumble: https://github.com/mumble-voip/mumble/issues/1876
+Last-Updated: 2015-11-10
+
+--- src/mumble/main.cpp.orig	2019-08-30 01:01:56 UTC
++++ src/mumble/main.cpp
+@@ -132,6 +132,9 @@ int main(int argc, char **argv) {
+ 
+ 	os_init();
+ 
++	SSL_library_init();
++	SSL_load_error_strings();
++
+ 	bool bAllowMultiple = false;
+ 	bool suppressIdentity = false;
+ 	bool customJackClientName = false;
+--- src/murmur/main.cpp.orig	2019-08-30 01:01:56 UTC
++++ src/murmur/main.cpp
+@@ -205,6 +205,9 @@ int main(int argc, char **argv) {
+ 	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+ #endif
+ 
++	SSL_library_init();
++	SSL_load_error_strings();
++
+ #ifdef Q_OS_WIN
+ 	// By default, windbus expects the path to dbus-daemon to be in PATH, and the path
+ 	// should contain bin\\, and the path to the config is hardcoded as ..\etc
