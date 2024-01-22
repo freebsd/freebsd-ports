@@ -16,5 +16,5 @@ lib/libjpegxr.so.1
 lib/libjxrglue.a
 lib/libjxrglue.so
 lib/libjxrglue.so.1
-man/man1/JxrDecApp.1.gz
-man/man1/JxrEncApp.1.gz
+share/man/man1/JxrDecApp.1.gz
+share/man/man1/JxrEncApp.1.gz
