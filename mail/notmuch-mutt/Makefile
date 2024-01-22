@@ -1,3 +1,4 @@
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-mutt
 
@@ -13,7 +14,7 @@ RUN_DEPENDS=	mutt:mail/mutt \
 
 USES=		gmake perl5
 
-MAKE_ARGS+=	mandir=${MANPREFIX}/man prefix=${PREFIX}
+MAKE_ARGS+=	mandir=${PREFIX}/share/man prefix=${PREFIX}
 MASTERDIR=	${.CURDIR}/../notmuch
 NO_ARCH=	yes
 WRKSRC_SUBDIR=	contrib/notmuch-mutt
@@ -33,6 +34,6 @@ post-install-EXAMPLES-off:
 	@${RM} -r ${STAGEDIR}${PREFIX}/etc/Muttrc.d
 
 post-install-MANPAGES-off:
-	@${RM} ${STAGEDIR}${MANPREFIX}/man/man1/notmuch-mutt.1
+	@${RM} ${STAGEDIR}${PREFIX}/share/man/man1/notmuch-mutt.1
 
 .include "${MASTERDIR}/Makefile"
