@@ -1,7 +1,6 @@
 PORTNAME=	cargo-generate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.4
-PORTREVISION=	4
+DISTVERSION=	0.19.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -19,7 +18,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cargo localbase ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	ashleygwilliams
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md README.md \
