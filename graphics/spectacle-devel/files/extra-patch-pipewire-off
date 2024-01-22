@@ -1,0 +1,108 @@
+--- CMakeLists.txt.orig	2024-01-09 02:09:50 UTC
++++ CMakeLists.txt
+@@ -77,10 +77,14 @@ find_package(LayerShellQt REQUIRED)
+ find_package(Wayland REQUIRED COMPONENTS Client)
+ find_package(PlasmaWaylandProtocols REQUIRED)
+ find_package(LayerShellQt REQUIRED)
+-find_package(KPipeWire)
++option(DISABLE_PIPEWIRE "Disable PipeWire support." OFF)
++if(NOT DISABLE_PIPEWIRE)
++    find_package(KPipeWire REQUIRED)
++    set(PIPEWIRE_FOUND 1)
++endif()
+ set_package_properties(KPipeWire PROPERTIES DESCRIPTION
+     "Used to record pipewire streams into a file"
+-    TYPE REQUIRED
++    TYPE OPTIONAL
+ )
+ 
+ # optional components
+--- src/CMakeLists.txt.orig	2024-01-09 02:09:50 UTC
++++ src/CMakeLists.txt
+@@ -11,6 +11,10 @@ ecm_qt_declare_logging_category(SPECTACLE_SRCS HEADER 
+ ecm_qt_declare_logging_category(SPECTACLE_SRCS HEADER spectacle_core_debug.h IDENTIFIER SPECTACLE_CORE_LOG CATEGORY_NAME org.kde.spectacle.core DESCRIPTION "spectacle (core)" EXPORT SPECTACLE)
+ ecm_qt_declare_logging_category(SPECTACLE_SRCS HEADER spectacle_gui_debug.h IDENTIFIER SPECTACLE_GUI_LOG CATEGORY_NAME org.kde.spectacle.gui DESCRIPTION "spectacle (gui)" EXPORT SPECTACLE)
+ 
++if(PIPEWIRE_FOUND)
++    list(APPEND SPECTACLE_SRCS Platforms/VideoPlatformWayland.cpp)
++endif()
++
+ add_executable(spectacle
+     ${SPECTACLE_SRCS}
+     Main.cpp
+@@ -49,7 +53,6 @@ add_executable(spectacle
+     Platforms/PlatformNull.cpp
+     Platforms/ImagePlatformKWin.cpp
+     Platforms/VideoPlatform.cpp
+-    Platforms/VideoPlatformWayland.cpp
+     Platforms/screencasting.cpp
+ )
+ 
+@@ -80,6 +83,10 @@ ki18n_wrap_ui(spectacle
+     Gui/SettingsDialog/VideoSaveOptions.ui
+ )
+ 
++if(PIPEWIRE_FOUND)
++    target_link_libraries(spectacle K::KPipeWireRecord)
++endif()
++
+ target_link_libraries(spectacle PRIVATE
+     Qt::Concurrent
+     Qt::DBus
+@@ -102,7 +109,6 @@ target_link_libraries(spectacle PRIVATE
+     KF6::XmlGui
+     KF6::GuiAddons
+     KF6::KirigamiPlatform
+-    K::KPipeWireRecord
+     Wayland::Client
+     LayerShellQt::Interface
+ )
+--- src/Config.h.in.orig	2024-01-09 02:09:50 UTC
++++ src/Config.h.in
+@@ -7,6 +7,9 @@
+ /* Define to 1 if we have Purpose */
+ #cmakedefine PURPOSE_FOUND 1
+ 
++/* Define to 1 if we are building with PIPEWIRE */
++#cmakedefine PIPEWIRE_FOUND 1
++
+ /* Set the Spectacle version from CMake */
+ #cmakedefine SPECTACLE_VERSION "@SPECTACLE_VERSION@"
+ 
+--- src/Platforms/PlatformLoader.cpp.orig	2024-01-09 02:09:50 UTC
++++ src/Platforms/PlatformLoader.cpp
+@@ -11,7 +11,9 @@
+ 
+ #include "ImagePlatformKWin.h"
+ #include "PlatformNull.h"
++#ifdef PIPEWIRE_FOUND
+ #include "VideoPlatformWayland.h"
++#endif
+ 
+ #ifdef XCB_FOUND
+ #include "ImagePlatformXcb.h"
+@@ -73,9 +75,12 @@ VideoPlatformPtr getForcedVideoPlatform()
+         return nullptr;
+     }
+ 
++#ifdef PIPEWIRE_FOUND
+     if (platformName == VideoPlatformWayland::staticMetaObject.className()) {
+         return std::make_unique<VideoPlatformWayland>();
+-    } else if (platformName == VideoPlatformNull::staticMetaObject.className()) {
++    } else 
++#endif
++    if (platformName == VideoPlatformNull::staticMetaObject.className()) {
+         return std::make_unique<VideoPlatformNull>();
+     } else if (!platformName.isEmpty()) {
+         qWarning() << "SPECTACLE_VIDEO_PLATFORM:" << platformName << "is invalid";
+@@ -89,8 +94,10 @@ VideoPlatformPtr loadVideoPlatform()
+     if (auto platform = getForcedVideoPlatform()) {
+         return platform;
+     }
++#ifdef PIPEWIRE_FOUND
+     if (KWindowSystem::isPlatformWayland()) {
+         return std::make_unique<VideoPlatformWayland>();
+     }
++#endif
+     return std::make_unique<VideoPlatformNull>();
+ }

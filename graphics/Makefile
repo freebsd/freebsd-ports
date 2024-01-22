@@ -1115,6 +1115,7 @@
     SUBDIR += skanlite
     SUBDIR += skanpage
     SUBDIR += spectacle
+    SUBDIR += spectacle-devel
     SUBDIR += spirv-tools
     SUBDIR += springgraph
     SUBDIR += squish
