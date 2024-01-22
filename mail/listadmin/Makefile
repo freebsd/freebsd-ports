@@ -26,6 +26,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/listadmin.pl \
 		${STAGEDIR}${PREFIX}/bin/listadmin
 	${INSTALL_MAN} ${WRKSRC}/listadmin.man \
-		${STAGEDIR}${MANPREFIX}/share/man/man1/listadmin.1
+		${STAGEDIR}${PREFIX}/share/man/man1/listadmin.1
 
 .include <bsd.port.mk>
