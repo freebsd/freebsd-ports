@@ -1,7 +1,7 @@
 PORTNAME=	ipe
 PORTVERSION=	7.2.23
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
 
@@ -34,7 +34,7 @@ MAKE_ENV=	DL_LIBS="" \
 		INSTALL_PROGRAMS="${INSTALL_PROGRAM}" \
 		INSTALL_ROOT="${STAGEDIR}" \
 		IPEDOCDIR="${DOCSDIR}" \
-		IPEMANDIR="${MANPREFIX}/man/man1" \
+		IPEMANDIR="${PREFIX}/share/man/man1" \
 		IPEPREFIX="${PREFIX}" \
 		JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
