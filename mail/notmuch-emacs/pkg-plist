@@ -42,5 +42,5 @@
 %%EMACS_SITE_LISPDIR%%/notmuch-wash.elc
 %%EMACS_SITE_LISPDIR%%/notmuch.el.gz
 %%EMACS_SITE_LISPDIR%%/notmuch.elc
-%%MANPAGES%%man/man1/notmuch-emacs-mua.1.gz
+%%MANPAGES%%share/man/man1/notmuch-emacs-mua.1.gz
 bin/notmuch-emacs-mua
