@@ -14,7 +14,6 @@ USES=		gmake tar:bzip2
 
 MAKE_ARGS=	V=1
 
-PLIST_FILES=	bin/b43-fwcutter \
-		man/man1/b43-fwcutter.1.gz
+PLIST_FILES=	bin/b43-fwcutter share/man/man1/b43-fwcutter.1.gz
 
 .include <bsd.port.mk>
