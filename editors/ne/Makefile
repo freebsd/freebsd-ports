@@ -1,5 +1,6 @@
 PORTNAME=	ne
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 
@@ -43,7 +44,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ne
-	${INSTALL_MAN} ${WRKSRC}/doc/ne.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ne.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/ne.info.gz \
 		${STAGEDIR}${PREFIX}/${INFO_PATH}/
 
