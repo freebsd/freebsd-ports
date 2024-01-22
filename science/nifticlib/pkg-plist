@@ -12,4 +12,4 @@ lib/libfslio.a
 lib/libnifticdf.a
 lib/libniftiio.a
 lib/libznz.a
-man/man1/nifticlib.1.gz
+share/man/man1/nifticlib.1.gz
