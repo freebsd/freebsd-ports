@@ -1,5 +1,6 @@
 PORTNAME=	iiview
 PORTVERSION=	0.31
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -18,7 +19,7 @@ USE_XORG=	xpm x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	nakal
 
-PLIST_FILES=	bin/iiview man/man1/iiview.1.gz
+PLIST_FILES=	bin/iiview share/man/man1/iiview.1.gz
 
 MAKE_JOBS_UNSAFE=	yes
 
