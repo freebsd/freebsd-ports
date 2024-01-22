@@ -17,7 +17,7 @@ SECURECGIDIR = ${PREFIX}/www/xymon/cgi-secure
 # Where to put logfiles
 XYMONLOGDIR = /var/log/xymon
 # Where to install manpages
-MANROOT = ${PREFIX}/man
+MANROOT = ${PREFIX}/share/man
 # How to run fping or xymonping
 FPING = fping
 
