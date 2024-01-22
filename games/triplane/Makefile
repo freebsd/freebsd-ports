@@ -1,6 +1,6 @@
 PORTNAME=	triplane
 PORTVERSION=	1.08.r20130224
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		SF/${PORTNAME}

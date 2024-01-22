@@ -32,8 +32,8 @@
 +	$(BSD_INSTALL_PROGRAM) triplane $(DESTDIR)$(PREFIX)/bin/triplane
 +	mkdir -p mkdir -p $(DESTDIR)$(DATADIR)
 +	$(BSD_INSTALL_DATA) fokker.dks $(DESTDIR)$(DATADIR)/fokker.dks
-+	mkdir -p $(DESTDIR)$(MANPREFIX)/man/man6
-+	$(BSD_INSTALL_MAN) doc/triplane.6 $(DESTDIR)$(MANPREFIX)/man/man6/triplane.6
++	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man6
++	$(BSD_INSTALL_MAN) doc/triplane.6 $(DESTDIR)$(PREFIX)/share/man/man6/triplane.6
  test:
  	if [ ! -d triplane-testsuite ]; then echo Please darcs get http://iki.fi/lindi/darcs/triplane-testsuite; false; fi
  	SDL_VIDEODRIVER=dummy bash tools/run-all-tests tools/run-one-test ./triplane triplane-testsuite
