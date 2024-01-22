@@ -61,7 +61,7 @@ INFO_PATH=	${PORTNAME}-${FULL_VERSION}/share/doc/gcc-${TARGET}/info
 INFO=		annotate as bfd binutils cpp cppinternals gcc \
 		gccinstall gccint gdb gprof ld stabs
 
-MANPREFIX=	${PREFIX}/${PORTNAME}-${FULL_VERSION}/${DOCS_SUFFIX}
+MANDIRS=	${PREFIX}/${PORTNAME}-${FULL_VERSION}/${DOCS_SUFFIX}/man
 DOCSDIR=	${PREFIX}/${PORTNAME}-${FULL_VERSION}/${DOCS_SUFFIX}
 EXAMPLESDIR=	${PREFIX}/${PORTNAME}-${FULL_VERSION}/share/gcc-${TARGET}/samples
 
