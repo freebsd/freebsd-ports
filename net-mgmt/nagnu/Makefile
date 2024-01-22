@@ -1,6 +1,6 @@
 PORTNAME=	nagnu
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	fredrik@min-hemsida.net
@@ -16,7 +16,7 @@ USES=		ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	frlen
 PLIST_FILES=	bin/nagnu \
-		man/man8/nagnu.8.gz \
+		share/man/man8/nagnu.8.gz \
 		share/examples/nagnu/nagnu.conf.sample
 
 GNU_CONFIGURE=	yes
@@ -30,6 +30,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/examples/nagnu/nagnu.conf.sample
 
 	${INSTALL_MAN} ${WRKSRC}/docs/nagnu.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
