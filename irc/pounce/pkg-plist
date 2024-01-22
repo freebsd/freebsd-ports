@@ -1,5 +1,5 @@
 bin/calico
 bin/pounce
-man/man1/calico.1.gz
-man/man1/pounce.1.gz
+share/man/man1/calico.1.gz
+share/man/man1/pounce.1.gz
 @dir /var/run/calico
