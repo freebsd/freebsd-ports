@@ -1,5 +1,6 @@
 PORTNAME=	xfractint
 PORTVERSION=	20.04p16
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fractint.net/ftp/current/linux/ \
 		http://www.fractint.org/ftp/current/linux/
@@ -25,7 +26,7 @@ DESKTOP_ENTRIES=	"Xfracint" \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xfractint ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/unix/xfractint.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/xfractint.1
+		${STAGEDIR}${PREFIX}/share/man/man1/xfractint.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/fractint.hlp ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sstools.ini ${STAGEDIR}${DATADIR}

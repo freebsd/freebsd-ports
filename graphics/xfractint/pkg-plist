@@ -1,5 +1,5 @@
 bin/xfractint
-man/man1/xfractint.1.gz
+share/man/man1/xfractint.1.gz
 %%DATADIR%%/formulas/fierce.frm
 %%DATADIR%%/formulas/fract_sy.frm
 %%DATADIR%%/formulas/fract001.frm
