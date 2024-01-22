@@ -1,6 +1,7 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
@@ -25,6 +26,9 @@ GO_BUILDFLAGS=	-ldflags "-w -s \
 		-X github.com/0xERR0R/blocky/util.Architecture=${ARCH}"
 
 SUB_FILES=	pkg-message
+
+PLIST_FILES=	"@sample etc/blocky-config.yml.sample" \
+		sbin/blocky
 
 post-install:
 		${INSTALL_DATA} ${FILESDIR}/blocky-config.yml.sample ${STAGEDIR}${PREFIX}/etc/blocky-config.yml.sample
