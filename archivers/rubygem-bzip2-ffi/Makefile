@@ -1,5 +1,5 @@
 PORTNAME=	bzip2-ffi
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
