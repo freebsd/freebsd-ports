@@ -3,7 +3,7 @@
   message: <<EOM
 To avoid conflicts, example scripts and man pages have been renamed by
 prefixing them with "expect_".
-They are in %%PREFIX%%/bin and %%MANPREFIX%%/man/man1, respectively.
+They are in %%PREFIX%%/bin and %%PREFIX%%/share/man/man1, respectively.
 EOM
 }
 ]

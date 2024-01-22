@@ -9,12 +9,28 @@
  	    rm -f $$i ; \
  	  else true; fi ; \
  	done
-@@ -259,7 +259,7 @@ install-doc: doc
- 	$(INSTALL_DATA) $(srcdir)/libexpect.man $(DESTDIR)$(mandir)/man3/libexpect.3
+@@ -254,12 +254,12 @@ install-doc: doc
+ 	@mkdir -p $(DESTDIR)$(mandir)/man3
+ 	@echo "Installing documentation in $(DESTDIR)$(mandir)"
+ # install Expect man page
+-	$(INSTALL_DATA) $(srcdir)/expect.man $(DESTDIR)$(mandir)/man1/expect.1
++	$(INSTALL_DATA) $(srcdir)/expect.man $(DESTDIR)$(prefix)/share/man/man1/expect.1
+ # install man page for Expect library
+-	$(INSTALL_DATA) $(srcdir)/libexpect.man $(DESTDIR)$(mandir)/man3/libexpect.3
++	$(INSTALL_DATA) $(srcdir)/libexpect.man $(DESTDIR)$(prefix)/share/man/man3/libexpect.3
  	-for i in $(SCRIPT_MANPAGE_LIST) ; do \
  	  if [ -f $(srcdir)/example/$$i.man ] ; then \
 -	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(mandir)/man1/$$i.1 ; \
-+	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(mandir)/man1/expect_$$i.1 ; \
++	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(prefix)/share/man/man1/expect_$$i.1 ; \
  	  else true; fi ; \
  	done
  
+@@ -502,7 +502,7 @@ expect-$(VERSION).tar.gz:	expect-$(VERSION).tar
+ # variable in configure.in
+ #========================================================================
+ 
+-clean:  
++clean:
+ 	-test -z "$(BINARIES)" || rm -f $(BINARIES)
+ 	-rm -f *.$(OBJEXT) core *.core
+ 	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
