@@ -1,6 +1,6 @@
 PORTNAME=	catgirl
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc
 MASTER_SITES=	https://git.causal.agency/catgirl/snapshot/
 
@@ -16,10 +16,10 @@ USES=		compiler:c++11-lang ncurses pkgconfig
 LIB_DEPENDS+=	libtls.so:security/libretls
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/share/man
 
 PLIST_FILES=	bin/catgirl \
-		man/man1/catgirl.1.gz
+		share/man/man1/catgirl.1.gz
 
 .include <bsd.port.pre.mk>
 
