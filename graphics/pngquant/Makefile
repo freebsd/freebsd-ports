@@ -1,7 +1,7 @@
 PORTNAME=	pngquant
 PORTVERSION=	2.18.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://pngquant.org/
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-libimagequant
 
 PORTDOCS=	CHANGELOG README.md
 PLIST_FILES=	bin/pngquant \
-				man/man1/pngquant.1.gz
+				share/man/man1/pngquant.1.gz
 
 OPTIONS_DEFINE=	OPTIMIZED_FLAGS OPENMP LCMS2 DEBUG DOCS
 OPTIONS_DEFINE_i386=	SSE
@@ -52,7 +52,7 @@ SSE_CONFIGURE_ENABLE=sse
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngquant ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pngquant.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pngquant.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
