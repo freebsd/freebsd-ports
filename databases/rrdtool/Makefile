@@ -1,6 +1,6 @@
 PORTNAME=	rrdtool
 DISTVERSION=	1.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases graphics
 MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}/
 
@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	rrdcached
 SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl examples/stripes.py
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-tcl
 CONFIGURE_ENV=	RRDDOCDIR=${DOCSDIR:Q}
 INSTALL_TARGET=	install-strip

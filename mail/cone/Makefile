@@ -1,6 +1,6 @@
 PORTNAME=	cone
 DISTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -29,6 +29,7 @@ USE_GNOME=	libxml2
 SHEBANG_FILES=	sysconftool
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-certdb=${PREFIX}/share/cone/rootcerts \

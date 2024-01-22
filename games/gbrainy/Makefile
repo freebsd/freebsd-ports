@@ -1,6 +1,6 @@
 PORTNAME=	gbrainy
 DISTVERSION=	2.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	https://gent.softcatala.org/jmas/gbrainy/
@@ -22,6 +22,7 @@ USE_GNOME=	intltool
 SHEBANG_FILES=	src/Clients/Classical/gbrainy.in
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_ENV+=	MONO_REGISTRY_PATH=${WRKDIR}
 
 OPTIONS_DEFINE=	NLS

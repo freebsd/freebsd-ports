@@ -3,9 +3,9 @@ bin/leaf
 bin/mailtool
 @sample etc/cone.dist etc/cone
 libexec/cone
-man/man1/cone.1.gz
-man/man1/leaf.1.gz
-man/man1/mailtool.1.gz
+share/man/man1/cone.1.gz
+share/man/man1/leaf.1.gz
+share/man/man1/mailtool.1.gz
 sbin/cone-sysconftool
 %%DATADIR%%/APPLICATION.PDF.filter
 %%DATADIR%%/FAQ.html

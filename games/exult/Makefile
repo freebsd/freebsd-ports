@@ -1,6 +1,6 @@
 PORTNAME=	exult
 DISTVERSION?=	1.8
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -22,6 +22,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xext
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static \
 		--enable-shared \
 		--with-icondir=${PREFIX}/share/pixmaps

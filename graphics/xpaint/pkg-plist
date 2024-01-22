@@ -4,8 +4,8 @@ bin/vxp2ps
 bin/vxp2tex
 bin/xpaint
 bin/xpaint_generate_toolicons
-man/man1/imgmerge.1.gz
-man/man1/xpaint.1.gz
+share/man/man1/imgmerge.1.gz
+share/man/man1/xpaint.1.gz
 share/X11/app-defaults/XPaint
 share/X11/app-defaults/XPaint.big
 share/X11/app-defaults/XPaint.medium

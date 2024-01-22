@@ -1,5 +1,6 @@
 PORTNAME=	xarchiver
 DISTVERSION=	0.5.4.22
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -26,6 +27,7 @@ GH_ACCOUNT=	ib
 USE_GNOME=	cairo gdkpixbuf2 glib20 intltool
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTSCOUT=	limit:^\d\.\d\.\d\.\d+$ # avoid tags like identical_to_xfce_git_content
 

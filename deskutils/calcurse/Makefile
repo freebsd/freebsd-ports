@@ -1,5 +1,6 @@
 PORTNAME=	calcurse
 DISTVERSION=	4.8.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/ \
 		https://fossies.org/linux/privat/
@@ -17,6 +18,7 @@ SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 		contrib/vdir/calcurse-vdir \
 		contrib/vdir/calcurse-vdir.py
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--without-asciidoc
 
 OPTIONS_DEFINE=		CALDAV DOCS NLS

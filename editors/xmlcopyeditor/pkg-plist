@@ -1,5 +1,5 @@
 bin/xmlcopyeditor
-man/man1/xmlcopyeditor.1.gz
+share/man/man1/xmlcopyeditor.1.gz
 share/applications/xmlcopyeditor.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/xmlcopyeditor.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xmlcopyeditor.mo

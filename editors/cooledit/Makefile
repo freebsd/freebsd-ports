@@ -1,5 +1,6 @@
 PORTNAME=	cooledit
 DISTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SUNSITE/apps/editors/X/cooledit
 
@@ -22,6 +23,7 @@ USES=		gettext-runtime libtool:build pkgconfig python xorg
 USE_XORG=	x11 xt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		CJK

@@ -1,6 +1,6 @@
 PORTNAME=	xmlcopyeditor
 DISTVERSION=	1.3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${DISTVERSION}
 
@@ -27,6 +27,7 @@ USE_WX=		3.0 # fails to build with 3.2
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

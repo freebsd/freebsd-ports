@@ -34,10 +34,10 @@ lib/libadf.so
 lib/libadf.so.1
 lib/libadf.so.1.0.0
 libdata/pkgconfig/adflib.pc
-man/man1/adf_floppy_create.1.gz
-man/man1/adf_floppy_format.1.gz
-man/man1/adf_show_metadata.1.gz
-man/man1/unadf.1.gz
+share/man/man1/adf_floppy_create.1.gz
+share/man/man1/adf_floppy_format.1.gz
+share/man/man1/adf_show_metadata.1.gz
+share/man/man1/unadf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/API.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

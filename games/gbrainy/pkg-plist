@@ -4,7 +4,7 @@ lib/gbrainy/gbrainy.Core.dll.config
 lib/gbrainy/gbrainy.Games.dll
 lib/gbrainy/gbrainy.exe
 lib/gbrainy/gbrainy.exe.config
-man/man6/gbrainy.6.gz
+share/man/man6/gbrainy.6.gz
 share/applications/gbrainy.desktop
 share/games/gbrainy/box.svg
 share/games/gbrainy/classic_background.svg

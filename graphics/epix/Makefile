@@ -1,6 +1,6 @@
 PORTNAME=	epix
 DISTVERSION=	1.2.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/${PORTNAME}/
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		gmake makeinfo tar:bzip2 tex
 USE_TEX=	dvipsk:build latex
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-runtime=${CXX}
 

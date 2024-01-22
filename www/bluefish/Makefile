@@ -1,6 +1,6 @@
 PORTNAME=	bluefish
 DISTVERSION=	2.2.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www editors
 MASTER_SITES=	https://www.bennewitz.com/bluefish/stable/source/ \
 		SF
@@ -25,6 +25,7 @@ SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/jsbeautify \
 		src/plugin_zencoding/zencoding/filters/*.py \
 		src/plugin_zencoding/zencoding/*.py
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-update-databases \
 		--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \

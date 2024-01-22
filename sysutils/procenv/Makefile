@@ -1,5 +1,6 @@
 PORTNAME=	procenv
 DISTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -19,10 +20,11 @@ GH_ACCOUNT=	jamesodhunt
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/procenv \
-		man/man1/procenv.1.gz
+		share/man/man1/procenv.1.gz
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS

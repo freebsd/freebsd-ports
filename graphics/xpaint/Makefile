@@ -1,6 +1,6 @@
 PORTNAME=	xpaint
 DISTVERSION=	3.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
@@ -27,6 +27,7 @@ USE_XORG=	ice sm x11 xext xft xmu xpm xt
 
 SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 # util/Makefile and vxp2ps/Makefile needs it
 BINARY_ALIAS=	make=${GMAKE}
