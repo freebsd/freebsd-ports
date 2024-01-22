@@ -15,7 +15,7 @@
  install: all
 -	install -m 755 $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
 +	$(BSD_INSTALL_PROGRAM) $(PROGRAM) $(DESTDIR)$(PREFIX)/bin
-+	$(BSD_INSTALL_MAN) misc/$(PROGRAM).6 $(DESTDIR)$(MANPREFIX)/man/man6
++	$(BSD_INSTALL_MAN) misc/$(PROGRAM).6 $(DESTDIR)$(PREFIX)/share/man/man6
 +	$(BSD_INSTALL_DATA) misc/$(PROGRAM).desktop \
 +		$(DESTDIR)$(PREFIX)/share/applications
  	install -d $(INSTALL_DIR)/games

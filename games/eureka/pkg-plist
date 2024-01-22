@@ -1,5 +1,5 @@
 bin/eureka
-man/man6/eureka.6.gz
+share/man/man6/eureka.6.gz
 share/applications/eureka.desktop
 %%DATADIR%%/about_logo.png
 %%DATADIR%%/bindings.cfg
