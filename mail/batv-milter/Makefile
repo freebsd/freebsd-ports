@@ -51,7 +51,7 @@ post-install:
 .if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/batv-filter
 .endif
-	@${RM} ${MANPREFIX}/man/cat8/batv-filter.8 ${MANPREFIX}/man/cat8/batv-filter.8.gz
+	@${RM} ${PREFIX}/share/man/cat8/batv-filter.8 ${PREFIX}/share/man/cat8/batv-filter.8.gz
 	${INSTALL_MAN} ${WRKSRC}/*/batv-filter.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
