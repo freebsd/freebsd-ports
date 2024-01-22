@@ -1,0 +1,18 @@
+--- imap/src/c-client/nntp.c.orig	2023-01-10 16:23:24 UTC
++++ imap/src/c-client/nntp.c
+@@ -335,7 +335,6 @@ void nntp_list (MAILSTREAM *stream,char *ref,char *pat
+ {
+   MAILSTREAM *st = stream;
+   char *s,*t,*lcl,pattern[MAILTMPLEN],name[MAILTMPLEN],wildmat[MAILTMPLEN];
+-  int showuppers = pat[strlen (pat) - 1] == '%';
+   if (!*pat) {
+     if (nntp_canonicalize (ref,"*",pattern,NIL)) {
+ 				/* tie off name at root */
+@@ -352,6 +351,7 @@ void nntp_list (MAILSTREAM *stream,char *ref,char *pat
+ 			wildmat[0] ? wildmat : NIL) == NNTPGLIST) ||
+ 	    (nntp_send (LOCAL->nntpstream,"LIST",NIL) == NNTPGLIST))) {
+ 				/* namespace format name? */
++    int showuppers = pat[strlen (pat) - 1] == '%';
+     if (*(lcl = strchr (strcpy (name,pattern),'}') + 1) == '#') lcl += 6;
+ 				/* process data until we see final dot */
+     while ((s = net_getline (LOCAL->nntpstream->netstream)) != NULL) {
