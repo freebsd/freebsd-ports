@@ -1,5 +1,6 @@
 PORTNAME=	mutt
 DISTVERSION=	2.2.12
+PORTREVISION=	1
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/
@@ -20,6 +21,7 @@ USE_PERL5=	build
 SHEBANG_FILES=	contrib/smime_keys_test.pl doc/gen-map-doc smime_keys.pl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-fcntl \
 		--enable-compressed \
 		--enable-external-dotlock \
@@ -166,7 +168,7 @@ URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 .include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 pre-configure::
 # Stop make from setgid mutt_dotlock
