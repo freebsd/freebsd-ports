@@ -8,6 +8,9 @@ MAINTAINER=	darcsis@gmail.com
 COMMENT=	Alternative for replaygain
 WWW=		https://gnormalize.sourceforge.net/
 
+DEPRECATED=	Last release in 2008, upstream is dead, depends on deprecated library GTK2 and uses legacy workarounds that can potentially cause lossy conversions. Consider using audio/rsgain and audio/cyanrip
+EXPIRATION_DATE=2024-02-29
+
 RUN_DEPENDS+=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		wavegain:audio/wavegain
 
