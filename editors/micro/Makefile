@@ -1,7 +1,7 @@
 PORTNAME=	micro
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -45,7 +45,7 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.1 \
-		${STAGEDIR}${MANPREFIX}/share/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/assets/*.svg \
