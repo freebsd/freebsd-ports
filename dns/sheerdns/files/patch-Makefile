@@ -33,4 +33,4 @@
 -	install sheerdns.8 /usr/share/man/man8/
 -	install sheerdns.8 /usr/man/man8/
 +	install sheerdnshash sheerdns $(DESTDIR)$(PREFIX)/sbin
-+	install sheerdns.8 $(DESTDIR)$(MANPREFIX)/man/man8
++	install sheerdns.8 $(DESTDIR)$(PREFIX)/share/man/man8
