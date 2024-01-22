@@ -1,5 +1,5 @@
 bin/sc-im
-man/man1/sc-im.1.gz
+share/man/man1/sc-im.1.gz
 share/sc-im/plot_bar
 share/sc-im/plot_line
 share/sc-im/plot_pie
