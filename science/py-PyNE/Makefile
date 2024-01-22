@@ -1,12 +1,11 @@
 PORTNAME=	PyNE
-DISTVERSION=	0.7.7
-PORTREVISION=	4
+DISTVERSION=	0.7.8
 CATEGORIES=	science # physics
 MASTER_SITES=	https://raw.githubusercontent.com/pyne/data/master/:decay \
 		https://raw.githubusercontent.com/pyne/data/master/:cram \
 		https://raw.githubusercontent.com/pyne/data/master/:dlc \
 		https://raw.githubusercontent.com/pyne/data/master/:clc \
-		https://github.com/pyne/data/master/:nuc_data
+		https://raw.githubusercontent.com/pyne/data/master/:nuc_data
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	decay.tar.gz:decay \
 		cram.tar.gz:cram \
@@ -24,17 +23,20 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_armv7=	clang runs out of memory
-BROKEN_FreeBSD_14=	fails to build: no member named std in namespace std
 
-PY_DEPENDS=	${PYNUMPY} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}progress>0:devel/py-progress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} # the dependency list is only in ubuntu.sh, see https://github.com/pyne/pyne/issues/1518
+PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}OpenMC>0:science/py-OpenMC@${PY_FLAVOR}
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PY_DEPENDS}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-		libMOAB.so:math/moab \
-		libsz.so:science/libaec
+		libMOAB.so:math/moab
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		compiler:c++17-lang fortran python
@@ -45,6 +47,7 @@ GH_ACCOUNT=	pyne
 GH_PROJECT=	pyne
 
 MAKE_ENV=	DESTDIR=${STAGEDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 FFLAGS+=	-fallow-argument-mismatch
 
 # all arguments are described here: http://pyne.io/install/source.html#source
@@ -70,6 +73,8 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET}
 	# also install nuc_data.h5 because it is referred to in the code and is required by Jupyter notebooks
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/prebuilt_nuc_data.h5 ${STAGEDIR}${PYTHON_SITELIBDIR}/pyne/nuc_data.h5
+	# remove stray files
+	${RM} ${STAGEDIR}${PREFIX}/bin/ubuntu.sh
 	# strip
 	${STRIP_CMD} \
 		${STAGEDIR}${LOCALBASE}/lib/lib*.so \
