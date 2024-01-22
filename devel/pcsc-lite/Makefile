@@ -31,10 +31,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES POLKIT
 OPTIONS_GROUP=		FEATURES
 OPTIONS_GROUP_FEATURES=	FILTER
 OPTIONS_DEFAULT=	POLKIT
+OPTIONS_SUB=	yes
 
-FEATURES_DESC=		Default features knobs
-FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
-POLKIT_DESC=		Enable polkit support
+FEATURES_DESC=	Default features knobs
+FILTER_DESC=	Control (Ignore or Extend) reported reader names
+POLKIT_DESC=	Polkit authorization support
 
 FILTER_CONFIGURE_ENABLE=	filter
 
