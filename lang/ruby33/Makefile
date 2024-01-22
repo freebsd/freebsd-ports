@@ -27,6 +27,7 @@ CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
 		--enable-install-static-library \
@@ -159,7 +160,7 @@ post-install:
 # Link "ruby.1.gz" to "ruby31.1.gz", etc.
 #
 . for FILE in ${INSTALLED_MANUALS}
-	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}.1.gz
+	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/${FILE}.1.gz
 . endfor
 .endif
 

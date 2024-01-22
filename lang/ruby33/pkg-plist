@@ -1091,8 +1091,8 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/yaml/dbm.rb
 %%RUBY_LIBDIR%%/yaml/store.rb
 libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
-%%IF_DEFAULT%%man/man1/ruby.1.gz
-man/man1/ruby%%RUBY_SUFFIX%%.1.gz
+%%IF_DEFAULT%%share/man/man1/ruby.1.gz
+share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog/ChangeLog-0.06_to_0.52
