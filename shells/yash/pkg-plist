@@ -1,6 +1,6 @@
 bin/yash
-man/ja/man1/yash.1.gz
-man/man1/yash.1.gz
+share/man/ja/man1/yash.1.gz
+share/man/man1/yash.1.gz
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/yash.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/yash.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/yash.mo
