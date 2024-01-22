@@ -1,6 +1,6 @@
 PORTNAME=	tthsum
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 		LOCAL/ehaupt
@@ -16,7 +16,7 @@ CONFLICTS=	microdc2
 
 USES=		gmake
 
-PLIST_FILES=	bin/tthsum man/man1/tthsum.1.gz
+PLIST_FILES=	bin/tthsum share/man/man1/tthsum.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 TEST_TARGET=	runtest
