@@ -13,7 +13,7 @@
 +SSL_INC=	-I${OPENSSLINC}
 +SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
 +BINDIR =	${PREFIX}/bin
-+MANDIR =	${MANPREFIX}/man/man1
++MANDIR =	${PREFIX}/share/man/man1
 +CC?=		gcc -Wall
 +CFLAGS+=	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
  #CFLAGS =	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
