@@ -1,6 +1,6 @@
 PORTNAME=	volleyball
 PORTVERSION=	0.8.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/volleyball/descargas/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,12 +14,12 @@ WWW=		http://www.losersjuegos.com.ar/juegos/volleyball
 USES=		gmake sdl
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
+CONFIGURE_ARGS=	--mandir="${PREFIX}/share/man" --disable-nls # strangeness in nls support
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lm
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/volleyball.6.gz
+		share/man/man6/volleyball.6.gz
 PORTDOCS=	*
 PORTDATA=	*
 
