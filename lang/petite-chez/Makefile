@@ -1,6 +1,6 @@
 PORTNAME=	petite-chez
 PORTVERSION=	8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.scheme.com/download/ \
 		http://tx97.net/pub/distfiles/
@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/csv${PORTVERSION}/custom
 HAS_CONFIGURE=	yes
 USES=		iconv
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \
-		--installman=${MANPREFIX}/man \
+		--installman=${PREFIX}/share/man \
 		--temproot=${STAGEDIR} \
 		--force-relink \
 		--nogzip-man-pages \
