@@ -1,5 +1,6 @@
 PORTNAME=	git-crypt
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.agwa.name/projects/git-crypt/downloads/ \
 		LOCAL/ashish/
@@ -22,9 +23,9 @@ MAKE_ENV+=	PREFIX=${PREFIX} "CXXFLAGS=${CXXFLAGS}" \
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_MAKE_ARGS=		ENABLE_MAN=yes \
-			MANDIR=${MANPREFIX}/man \
+			MANDIR=${PREFIX}/share/man \
 			DOCBOOK_XSL=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 USES=		compiler:c++11-lang gmake ssl
 
