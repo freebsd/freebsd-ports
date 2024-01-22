@@ -1,6 +1,6 @@
 PORTNAME=	qmail-autoresponder
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-configure:
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"		> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${STAGEDIR}${MANPREFIX}/man"	> ${WRKSRC}/conf-man
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/share/man"	> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"			> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
 
