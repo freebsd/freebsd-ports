@@ -146,8 +146,8 @@ lib/clisp/data/UnicodeDataFull.txt
 lib/clisp/linkkit/clisp.h
 lib/clisp/linkkit/modprep.lisp
 lib/clisp/linkkit/modules.c
-man/man1/clisp-link.1.gz
-man/man1/clisp.1.gz
+share/man/man1/clisp-link.1.gz
+share/man/man1/clisp.1.gz
 share/aclocal/clisp.m4
 %%DATADIR%%/emacs/clhs.el
 %%DATADIR%%/emacs/clisp-coding.el
