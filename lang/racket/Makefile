@@ -1,5 +1,6 @@
 PORTNAME=	racket
 PORTVERSION=	8.11.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -31,7 +32,7 @@ USE_GNOME=	cairo pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-liblz4 \
 		--enable-pthread \
-		--mandir=${MANPREFIX}/man
+		--mandir=${PREFIX}/share/man
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
 USE_LDCONFIG=	yes
