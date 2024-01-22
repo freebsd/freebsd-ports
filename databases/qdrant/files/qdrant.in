@@ -35,6 +35,7 @@ pidfile="${_piddir}/qdrant.pid"
 : ${qdrant_config="%%ETCDIR%%/config.yaml"}
 : ${qdrant_user="nobody"}
 : ${qdrant_group="nobody"}
+: ${qdrant_flags=""}
 
 load_rc_config ${name}
 
@@ -119,7 +120,8 @@ procname=%%PREFIX%%/bin/qdrant
 command="/usr/sbin/daemon"
 command_args="-f -S -p ${pidfile} \
 	-t qdrant${_profsuffx} \
-	%%PREFIX%%/bin/qdrant --config-path $qdrant_config"
+	%%PREFIX%%/bin/qdrant --config-path $qdrant_config \
+	$qdrant_flags"
 
 
 start_precmd="install -d -o $qdrant_user -g $qdrant_group -m 755 $_piddir"
