@@ -1,5 +1,5 @@
 @(,games,2755) bin/xtet42
-man/man6/xtet42.6.gz
+share/man/man6/xtet42.6.gz
 @sample(,games,664) /var/games/xtet42/.xtet42.hiscore.sample
 @sample(,games,664) /var/games/xtet42/.xtet42.hiscore.single.sample
 @sample(,games,664) /var/games/xtet42/.xtet42.log.sample
