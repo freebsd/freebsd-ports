@@ -12,6 +12,10 @@ COMMENT=	Intrusion detection and Policy enforcement / auditing software
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream is gone and notes refers to Windows 98 as the newest OS
+EXPIRATION_DATE=2024-02-29
+
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	YES
