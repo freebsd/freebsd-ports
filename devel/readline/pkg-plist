@@ -16,8 +16,8 @@ lib/libreadline.so.8
 lib/libreadline.so.%%PORTVERSION%%
 libdata/pkgconfig/history.pc
 libdata/pkgconfig/readline.pc
-man/man3/history.3.gz
-man/man3/readline.3.gz
+share/man/man3/history.3.gz
+share/man/man3/readline.3.gz
 %%DATADIR%%/excallback.c
 %%DATADIR%%/fileman.c
 %%DATADIR%%/histexamp.c
