@@ -1,6 +1,6 @@
 PORTNAME=	bdftopcf
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,6 +14,8 @@ USES=		localbase xorg xorg-cat:app
 
 USE_XORG=	xorgproto
 
-PLIST_FILES=	bin/bdftopcf man/man1/bdftopcf.1.gz
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+PLIST_FILES=	bin/bdftopcf share/man/man1/bdftopcf.1.gz
 
 .include <bsd.port.mk>
