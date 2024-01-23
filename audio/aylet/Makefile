@@ -1,6 +1,6 @@
 PORTNAME=	aylet
-PORTVERSION=	0.5
-PORTREVISION=	7
+DISTVERSION=	0.5
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.worldofspectrum.org/pub/sinclair/music/players-unix/ \
 		LOCAL/ehaupt
@@ -17,16 +17,19 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gettext-runtime pkgconfig
 
-OPTIONS_DEFINE=	GUI
-OPTIONS_DEFAULT=GUI
-OPTIONS_SUB=	yes
+ALL_TARGET=	aylet
+
+PLIST_FILES=	%%GUI%%bin/xaylet \
+		bin/aylet \
+		share/man/man1/aylet.1.gz
+
+OPTIONS_DEFINE=		GUI
+OPTIONS_DEFAULT=	GUI
+OPTIONS_SUB=		yes
 
 GUI_USES=	gnome
 GUI_USE=	GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
 
-ALL_TARGET=	aylet
 GUI_ALL_TARGET=	xaylet
-
-PLIST_FILES=	bin/aylet %%GUI%%bin/xaylet man/man1/aylet.1.gz
 
 .include <bsd.port.mk>

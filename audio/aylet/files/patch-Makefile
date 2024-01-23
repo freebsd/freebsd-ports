@@ -25,11 +25,11 @@
 +BINDIR=$(DESTDIR)$(PREFIX)/bin
  XBINDIR=$(BINDIR)
 -MANDIR=$(PREFIX)/man/man1
-+MANDIR=$(DESTDIR)$(PREFIX)/man/man1
++MANDIR=$(DESTDIR)$(PREFIX)/share/man/man1
  
  # if you want the X version to be installed in the usual X executables
  # directory, uncomment this (altering if necessary):
-@@ -37,25 +37,27 @@ MANDIR=$(PREFIX)/man/man1
+@@ -37,25 +37,27 @@ XOBJS=main.o sound.o uigtk.o z80.o drv-oss.o drv-obsd.
  OBJS=main.o sound.o ui.o z80.o drv-oss.o drv-obsd.o
  XOBJS=main.o sound.o uigtk.o z80.o drv-oss.o drv-obsd.o
  
