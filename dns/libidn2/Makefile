@@ -1,5 +1,6 @@
 PORTNAME=	libidn2
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
@@ -20,6 +21,7 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-libunistring-prefix=${LOCALBASE} \
 		ac_cv_prog_RONN=${TRUE}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
