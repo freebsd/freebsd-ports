@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 USE_GNOME=	intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_file__proc_self_maps=yes \
 		ac_cv_file__proc_self_mem=yes
 

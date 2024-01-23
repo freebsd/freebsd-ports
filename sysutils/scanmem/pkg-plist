@@ -13,8 +13,6 @@ lib/libscanmem.a
 lib/libscanmem.so
 lib/libscanmem.so.1
 lib/libscanmem.so.1.0.0
-%%X11%%man/man1/gameconqueror.1.gz
-man/man1/scanmem.1.gz
 %%X11%%share/appdata/GameConqueror.appdata.xml
 %%X11%%share/applications/GameConqueror.desktop
 %%X11%%share/gameconqueror/GameConqueror.py
@@ -45,6 +43,8 @@ man/man1/scanmem.1.gz
 %%X11%%share/locale/ja/LC_MESSAGES/GameConqueror.mo
 %%X11%%share/locale/ru/LC_MESSAGES/GameConqueror.mo
 %%X11%%share/locale/sr_ME/LC_MESSAGES/GameConqueror.mo
+%%X11%%share/man/man1/gameconqueror.1.gz
+share/man/man1/scanmem.1.gz
 %%X11%%share/polkit-1/actions/org.freedesktop.gameconqueror.policy
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%X11%%%%PORTDOCS%%%%DOCSDIR%%/TODO

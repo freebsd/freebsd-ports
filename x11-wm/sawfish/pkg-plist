@@ -32,9 +32,6 @@ lib/sawfish/selection.so
 lib/sawfish/x.a
 lib/sawfish/x.so
 libdata/pkgconfig/sawfish.pc
-man/man1/sawfish-client.1.gz
-man/man1/sawfish-config.1.gz
-man/man1/sawfish.1.gz
 share/applications/sawfish-config.desktop
 share/applications/sawfish.desktop
 share/gnome/wm-properties/sawfish-wm.desktop
@@ -96,6 +93,9 @@ share/ksmserver/windowmanagers/sawfish.desktop
 %%NLS%%share/locale/wa/LC_MESSAGES/sawfish.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sawfish.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sawfish.mo
+share/man/man1/sawfish-client.1.gz
+share/man/man1/sawfish-config.1.gz
+share/man/man1/sawfish.1.gz
 %%DATADIR%%/images/cabinet-missing.png
 %%DATADIR%%/lisp/anim-outline.jl
 %%DATADIR%%/lisp/anim-outline.jlc

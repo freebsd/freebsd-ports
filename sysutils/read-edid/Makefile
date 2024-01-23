@@ -11,7 +11,7 @@ LIB_DEPENDS=	libx86.so:devel/libx86
 
 USES=		cmake localbase
 
-PLIST_FILES=	bin/get-edid bin/parse-edid man/man1/get-edid.1.gz
+PLIST_FILES=	bin/get-edid bin/parse-edid share/man/man1/get-edid.1.gz
 PORTDOCS=	AUTHORS ChangeLog LICENSE README
 
 OPTIONS_DEFINE=	DOCS

@@ -14,6 +14,7 @@ LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 USES=		gnome pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	gdkpixbuf2 glib20
 
 PORTDOCS=	AUTHORS NEWS

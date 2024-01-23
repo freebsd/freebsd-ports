@@ -16,6 +16,7 @@ LIB_DEPENDS=	libticables2.so:comms/libticables2	\
 		libticonv.so:converters/libticonv
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USES=		autoreconf compiler:c11 desktop-file-utils gettext gmake gnome \
 		groff libtool localbase pkgconfig shared-mime-info tar:bzip2

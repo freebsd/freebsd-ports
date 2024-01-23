@@ -17,6 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		compiler:c++11-lang iconv perl5 pkgconfig shebangfix \
 		tar:zst xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	data/hxtools_bashrc.bash data/hxtools_profile.bash \
 		examples/git-deconstruct examples/rc4 sadmin/hxnetload \
 		sadmin/ldif-duplicate-attrs sadmin/ldif-leading-spaces \

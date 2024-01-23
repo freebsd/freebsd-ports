@@ -23,6 +23,7 @@ GH_ACCOUNT=	freedesktop
 GH_PROJECT=	libfprint-${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	sysconfdir="${ETCDIR}/"
 

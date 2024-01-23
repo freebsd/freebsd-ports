@@ -24,6 +24,7 @@ USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz xorg
 USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2 gdkpixbuf2xlib intltool
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugins="${LXPANEL_PLUGINS}"
 INSTALL_TARGET=	install-strip

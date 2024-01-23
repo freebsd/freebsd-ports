@@ -23,6 +23,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 SHEBANG_FILES=	scripts/getfile.pl.in scripts/upgrade.pl.in
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 LIBS=		-lintl -lX11 -lWUtil
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

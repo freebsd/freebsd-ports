@@ -20,6 +20,7 @@ USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	NROFF=echo
 CPE_VENDOR=	fltk_project
@@ -31,9 +32,9 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	CAIRO EXAMPLES
 OPTIONS_SUB=	yes
 
-CAIRO_CONFIGURE_ON=	--enable-cairo
 CAIRO_USES=	gnome
 CAIRO_USE=	GNOME=cairo XORG=pixman
+CAIRO_CONFIGURE_ON=	--enable-cairo
 
 post-patch: .SILENT
 	prefix="${PREFIX}" ; fplen=$$(($${#prefix}+10)) ; \

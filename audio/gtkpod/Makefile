@@ -19,6 +19,7 @@ SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
 		scripts/sync-palm-jppy.py
 USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

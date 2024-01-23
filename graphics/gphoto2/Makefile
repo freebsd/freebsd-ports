@@ -18,6 +18,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 USES=		gmake jpeg pkgconfig tar:bzip2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	POPT_CFLAGS="$$(pkg-config --cflags popt)" \
 		POPT_LIBS="$$(pkg-config --libs popt)"
 CONFIGURE_ARGS=	--without-cdk

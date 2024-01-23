@@ -1,5 +1,4 @@
 bin/gxkb
-man/man1/gxkb.1.gz
 share/applications/gxkb.desktop
 %%DATADIR%%/flags/am.png
 %%DATADIR%%/flags/bg.png
@@ -36,4 +35,5 @@ share/applications/gxkb.desktop
 %%DATADIR%%/flags/uz.png
 %%DATADIR%%/flags/zz.png
 %%DATADIR%%/logo.png
+share/man/man1/gxkb.1.gz
 share/pixmaps/gxkb.xpm

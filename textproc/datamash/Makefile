@@ -11,6 +11,7 @@ LICENSE=	GPLv3+
 
 USES=		gmake iconv perl5
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 USE_PERL5=	test
 

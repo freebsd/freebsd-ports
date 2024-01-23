@@ -22,8 +22,9 @@ MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 
 INFO=		gawk gawkinet gawkworkflow pm-gawk
 
-GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool readline tar:lz
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}

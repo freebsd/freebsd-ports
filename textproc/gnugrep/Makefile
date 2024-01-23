@@ -14,6 +14,7 @@ CONFLICTS=	bsd-grep
 
 USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g
 TEST_TARGET=	check
 

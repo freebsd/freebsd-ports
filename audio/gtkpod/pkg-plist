@@ -1,5 +1,4 @@
 bin/gtkpod
-man/man1/gtkpod.1.gz
 %%DATADIR%%/data/default-cover.png
 %%DATADIR%%/data/gtkpod-add-dirs.png
 %%DATADIR%%/data/gtkpod-add-files.png
@@ -93,3 +92,4 @@ share/locale/ro/LC_MESSAGES/gtkpod.mo
 share/locale/ru/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
 share/locale/zh_CN/LC_MESSAGES/gtkpod.mo
+share/man/man1/gtkpod.1.gz

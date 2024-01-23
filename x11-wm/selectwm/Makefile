@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnome pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 
 PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo \
-		man/man1/selectwm.1.gz
+		share/man/man1/selectwm.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS = /s,-s -O2 -Wall ,,' \

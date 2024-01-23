@@ -22,8 +22,6 @@ lib/lxpanel/plugins/volume.so
 %%WEATHER%%lib/lxpanel/plugins/weather.so
 lib/lxpanel/plugins/xkb.so
 libdata/pkgconfig/lxpanel.pc
-man/man1/lxpanel.1.gz
-man/man1/lxpanelctl.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxpanel.mo
@@ -255,3 +253,5 @@ man/man1/lxpanelctl.1.gz
 %%DATADIR%%/xkeyboardconfig/layouts.cfg
 %%DATADIR%%/xkeyboardconfig/models.cfg
 %%DATADIR%%/xkeyboardconfig/toggle.cfg
+share/man/man1/lxpanel.1.gz
+share/man/man1/lxpanelctl.1.gz
