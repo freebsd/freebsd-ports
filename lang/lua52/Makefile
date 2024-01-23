@@ -1,5 +1,6 @@
 PORTNAME=	lua
 PORTVERSION=	5.2.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	52
@@ -56,13 +57,15 @@ post-patch:
 		s,readline/,editline/,g ; \
 		/history\.h/d" \
 		${WRKSRC}/src/luaconf.h ${WRKSRC}/src/lua.c
+	@${REINPLACE_CMD} -e "s|man/man|share/man/man|g" \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblua-${LUA_VER}.so
-	@${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
-		${STAGEDIR}${PREFIX}/man/man1/lua52.1
-	@${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \
-		${STAGEDIR}${PREFIX}/man/man1/luac52.1
+	@${MV} ${STAGEDIR}${PREFIX}/share/man/man1/lua.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/lua52.1
+	@${MV} ${STAGEDIR}${PREFIX}/share/man/man1/luac.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/luac52.1
 	${INSTALL_DATA} ${WRKDIR}/lua-${LUA_VER}.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
