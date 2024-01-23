@@ -36,12 +36,12 @@ lib/libodbcinst.so.2.0.0
 libdata/pkgconfig/odbc.pc
 libdata/pkgconfig/odbccr.pc
 libdata/pkgconfig/odbcinst.pc
-man/man1/dltest.1.gz
-man/man1/isql.1.gz
-man/man1/iusql.1.gz
-man/man1/odbc_config.1.gz
-man/man1/odbcinst.1.gz
-man/man5/odbc.ini.5.gz
-man/man5/odbcinst.ini.5.gz
-man/man7/unixODBC.7.gz
+share/man/man1/dltest.1.gz
+share/man/man1/isql.1.gz
+share/man/man1/iusql.1.gz
+share/man/man1/odbc_config.1.gz
+share/man/man1/odbcinst.1.gz
+share/man/man5/odbc.ini.5.gz
+share/man/man5/odbcinst.ini.5.gz
+share/man/man7/unixODBC.7.gz
 @dir etc/ODBCDataSources
