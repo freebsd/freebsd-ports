@@ -2,7 +2,7 @@ bin/flex
 bin/flex++
 include/flex/FlexLexer.h
 lib/libfl.a
-man/man1/flex.1.gz
+share/man/man1/flex.1.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/da/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/de/LC_MESSAGES/flex.mo
