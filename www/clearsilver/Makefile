@@ -1,6 +1,6 @@
 PORTNAME=	clearsilver
 PORTVERSION=	0.10.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
@@ -10,6 +10,7 @@ WWW=		http://www.clearsilver.net/
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-apache --disable-perl --disable-ruby \
 		--disable-java --disable-csharp --disable-python
 
