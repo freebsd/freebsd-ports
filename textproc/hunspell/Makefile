@@ -1,5 +1,6 @@
 PORTNAME=	hunspell
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 MASTER_SITES=	https://github.com/hunspell/hunspell/releases/download/v${PORTVERSION}/
 CATEGORIES=	textproc
 DIST_SUBDIR=	${PORTNAME}
@@ -19,6 +20,7 @@ USE_PERL5=	run
 
 CONFIGURE_ARGS=	--disable-nls ${ICONV_CONFIGURE_ARG} --with-readline --with-ui
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
