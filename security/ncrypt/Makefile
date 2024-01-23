@@ -11,6 +11,9 @@ WWW=		https://ncrypt.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=     Last release in 2015 and no active development since, consider using security/age
+EXPIRATION_DATE=2024-03-31
+
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
 
