@@ -10,6 +10,9 @@ COMMENT=	Passive L7 flow fingerprinting tool
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	Abandonware, last release in 2006 and no longer relevant
+EXPIRATION_DATE=2024-02-29
+
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
