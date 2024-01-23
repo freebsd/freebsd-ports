@@ -1,5 +1,6 @@
 PORTNAME=	popt
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
 		http://ftp.rpm.org/popt/releases/popt-1.x/
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe iconv libtool pathfix
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes

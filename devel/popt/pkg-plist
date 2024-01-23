@@ -4,7 +4,7 @@ lib/libpopt.so
 lib/libpopt.so.0
 lib/libpopt.so.0.0.2
 libdata/pkgconfig/popt.pc
-man/man3/popt.3.gz
+share/man/man3/popt.3.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/popt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/popt.mo
 %%NLS%%share/locale/da/LC_MESSAGES/popt.mo
