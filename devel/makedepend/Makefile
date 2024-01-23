@@ -1,5 +1,6 @@
 PORTNAME=	makedepend
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -12,6 +13,8 @@ LICENSE=	MIT
 USES=		xorg xorg-cat:util
 USE_XORG=	xorgproto
 
-PLIST_FILES=	bin/makedepend man/man1/makedepend.1.gz
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+PLIST_FILES=	bin/makedepend share/man/man1/makedepend.1.gz
 
 .include <bsd.port.mk>
