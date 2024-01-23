@@ -15,6 +15,9 @@ LICENSE_NAME=	f-prot
 LICENSE_TEXT=	Free for personal users on personal workstations only
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	F-Prot Antivirus reached end-of-life on July 31, 2021
+EXPIRATION_DATE=2024-02-29
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	900.fpupdate fpscan fpupdate
