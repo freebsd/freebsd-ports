@@ -1,5 +1,6 @@
 PORTNAME=	zstd
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
 
@@ -24,7 +25,8 @@ MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		V=1
+		V=1 \
+		MANDIR=${PREFIX}/share/man
 TEST_TARGET=	shortest
 USE_LDCONFIG=	yes
 
@@ -52,6 +54,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/zstdConfigVersion.cmake ${STAGEDIR}${PREFIX}/lib/cmake/zstd/zstdConfigVersion.cmake
 	${INSTALL_DATA} ${WRKDIR}/zstdTargets-BUILD_TYPE.cmake ${STAGEDIR}${PREFIX}/lib/cmake/zstd/zstdTargets-${BUILD_TYPE:tl}.cmake
 	${INSTALL_DATA} ${FILESDIR}/zstdTargets.cmake ${STAGEDIR}${PREFIX}/lib/cmake/zstd/zstdTargets.cmake
-	${LN} -s zstd.1.gz ${STAGEDIR}${PREFIX}/man/man1/zstdmt.1.gz
+	${LN} -s zstd.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/zstdmt.1.gz
 
 .include <bsd.port.mk>
