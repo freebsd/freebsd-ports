@@ -1549,6 +1549,7 @@
     SUBDIR += py-django-hierarkey
     SUBDIR += py-django-hijack
     SUBDIR += py-django-htmlmin
+    SUBDIR += py-django-htmx
     SUBDIR += py-django-i18nfield
     SUBDIR += py-django-jquery-js
     SUBDIR += py-django-js-asset
