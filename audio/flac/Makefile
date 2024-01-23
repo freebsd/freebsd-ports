@@ -1,5 +1,6 @@
 PORTNAME=	flac
 DISTVERSION=	1.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
@@ -26,6 +27,7 @@ EXTRACT_CMD=	${SETENV} LC_ALL=C.UTF-8 ${TAR}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static \
 		--with-ogg="${LOCALBASE}" \
 		--disable-doxygen-docs \
