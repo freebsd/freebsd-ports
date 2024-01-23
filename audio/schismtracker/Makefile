@@ -1,5 +1,6 @@
 PORTNAME=	schismtracker
-PORTVERSION=	20231029
+DISTVERSION=	20231029
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/schismtracker/schismtracker/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.source
@@ -16,10 +17,11 @@ USES=		compiler:c++11-lib desktop-file-utils localbase python sdl xorg
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/schismtracker \
-		man/man1/schismtracker.1.gz \
+		share/man/man1/schismtracker.1.gz \
 		share/applications/schism.desktop \
 		share/pixmaps/schism-icon-128.png \
 		share/pixmaps/schism-itf-icon-128.png
