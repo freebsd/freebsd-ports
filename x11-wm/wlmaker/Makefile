@@ -1,15 +1,8 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1-434
-DISTVERSIONSUFFIX=	-g6652766
+DISTVERSION=	0.1-438
+DISTVERSIONSUFFIX=	-gebcc667
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0179c3c5a837.patch:-p1 # https://github.com/phkaeser/libbase/pull/2
-PATCHFILES+=	811db3b1582a.patch:-p1 # https://github.com/phkaeser/libbase/pull/2
-PATCHFILES+=	486758619471.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
-PATCHFILES+=	3a64446b128a.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
-PATCHFILES+=	2a7108e964e0.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland compositor inspired by Window Maker
@@ -29,7 +22,7 @@ USES=		cmake compiler:c11 gnome pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:9a7149e:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:c7a0cca:libbase/submodules/libbase
 CFLAGS+=	-ffile-prefix-map="${WRKSRC}"=
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
