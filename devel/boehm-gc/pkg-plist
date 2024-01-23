@@ -34,4 +34,4 @@ lib/libgctba.so
 lib/libgctba.so.1
 lib/libgctba.so.1.5.0
 libdata/pkgconfig/bdw-gc.pc
-man/man3/gc.3.gz
+share/man/man3/gc.3.gz

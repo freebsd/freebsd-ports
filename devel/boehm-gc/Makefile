@@ -1,5 +1,6 @@
 PORTNAME=	gc
 DISTVERSION=	8.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -25,6 +26,7 @@ CPE_PRODUCT=	garbage_collector
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # NOTE: do not --disable-static, static is useful for e.g. lang/crystal
 CONFIGURE_ARGS=	--enable-cplusplus \
 		--enable-mmap \
