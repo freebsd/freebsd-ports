@@ -1,3 +1,36 @@
+  <vuln vid="9532a361-b84d-11ee-b0d7-84a93843eb75">
+    <topic>TinyMCE -- mXSS in multiple plugins</topic>
+    <affects>
+      <package>
+	<name>tinymce</name>
+	<range><lt>6.7.3</lt></range>
+      </package>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TinyMCE reports:</p>
+	<blockquote cite="https://github.com/tinymce/tinymce/security/advisories/GHSA-v626-r774-j7f8">
+	  <p>Special characters in unescaped text nodes can trigger mXSS
+	    when using TinyMCE undo/redo, getContentAPI, resetContentAPI,
+	    and Autosave plugin</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-48219</cvename>
+      <url>https://github.com/tinymce/tinymce/security/advisories/GHSA-v626-r774-j7f8</url>
+      <url>https://github.com/roundcube/roundcubemail/releases/tag/1.6.6</url>
+    </references>
+    <dates>
+      <discovery>2023-11-15</discovery>
+      <entry>2024-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fedf7e71-61bd-49ec-aaf0-6da14bdbb319">
     <topic>zeek -- potential DoS vulnerability</topic>
     <affects>
