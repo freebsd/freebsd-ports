@@ -1,5 +1,6 @@
 PORTNAME=	libiconv
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
@@ -15,6 +16,7 @@ USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static \
 		--disable-nls \
 		--docdir=${DOCSDIR} \
