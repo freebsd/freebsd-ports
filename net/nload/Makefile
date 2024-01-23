@@ -1,6 +1,6 @@
 PORTNAME=	nload
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+DISTVERSION=	0.7.4
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.roland-riegel.de/nload/ \
 		LOCAL/ehaupt
@@ -11,10 +11,12 @@ WWW=		http://www.roland-riegel.de/nload/
 
 LICENSE=	GPLv2
 
-USES=		ncurses
-GNU_CONFIGURE=	yes
+USES=				ncurses
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/nload man/man1/nload.1.gz
+PLIST_FILES=	bin/nload \
+		share/man/man1/nload.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(/etc/nload\.conf\)|${PREFIX}\1|" \
