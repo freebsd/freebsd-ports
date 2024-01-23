@@ -1,5 +1,6 @@
 PORTNAME=	coreutils
 PORTVERSION=	9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
@@ -18,6 +19,7 @@ TEST_TARGET=	check
 PIE_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # A rather nasty hack to stop gnustat from conflicting with base gstat
 # bugs.freebsd.org/160060
 CONFIGURE_ARGS=	--program-prefix=g	\
