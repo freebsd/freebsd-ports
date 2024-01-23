@@ -1,5 +1,6 @@
 PORTNAME=	libmaxminddb
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
@@ -14,6 +15,7 @@ USES=		compiler:c11 cpe gmake libtool
 
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
