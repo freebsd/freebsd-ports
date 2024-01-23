@@ -113,9 +113,12 @@ aarch64c)
 	elif [ "$CHERIBSD_VERSION" -le 20220828 ]; then
 		tls_flags=
 		vararg_flags="-Xclang -morello-vararg=new"
-	else
+	elif [ "$CHERIBSD_VERSION" -le 20230804 ]; then
 		tls_flags=
 		vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs=caller-only"
+	else
+		tls_flags=
+		vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs"
 	fi
 
 	arch_cflags="-march=morello -mabi=purecap $tls_flags $vararg_flags"
