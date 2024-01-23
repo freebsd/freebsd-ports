@@ -29,4 +29,4 @@ include/gnumake.h
 %%NLS%%share/locale/vi/LC_MESSAGES/make.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/make.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/make.mo
-man/man1/gmake.1.gz
+share/man/man1/gmake.1.gz
