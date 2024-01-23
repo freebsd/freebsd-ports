@@ -5,7 +5,7 @@
  datarootdir	= @datarootdir@
  BIN_DIR		= $(prefix)/bin
 -MAN_DIR		= $(datarootdir)/man
-+MAN_DIR		= $(prefix)/man
++MAN_DIR		= $(prefix)/share/man
  DOC_DIR		= $(datarootdir)/doc/most
  SYS_INITFILE	= @sysconfdir@/most.conf
  MKINSDIR	= ../autoconf/mkinsdir.sh

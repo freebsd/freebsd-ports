@@ -1,5 +1,6 @@
 PORTNAME=	most
-PORTVERSION=	5.2.0
+DISTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.jedsoft.org/releases/most/ \
 		LOCAL/ehaupt
@@ -18,7 +19,7 @@ CONFIGURE_ARGS+=	--enable-mmap
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/most \
-		man/man1/most.1.gz
+		share/man/man1/most.1.gz
 PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.rc most.txt
 
 OPTIONS_DEFINE=	DOCS
