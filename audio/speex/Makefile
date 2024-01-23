@@ -1,5 +1,6 @@
 PORTNAME=	speex
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 
 USES=		cpe libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 CPE_VENDOR=	xiph
