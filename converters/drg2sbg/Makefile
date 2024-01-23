@@ -1,6 +1,7 @@
 PORTNAME=	drg2sbg
-PORTVERSION=	2.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	converters audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -10,12 +11,14 @@ WWW=		https://github.com/manuel-arguelles/drg2sbg
 LICENSE=	GPLv2
 
 USES=		autoreconf
-GNU_CONFIGURE=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	manuel-arguelles
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/drg2sbg bin/drgbuilder man/man1/drg2sbg.1.gz \
-		man/man1/drgbuilder.1.gz
+PLIST_FILES=	bin/drg2sbg \
+		bin/drgbuilder \
+		share/man/man1/drg2sbg.1.gz \
+		share/man/man1/drgbuilder.1.gz
 
 .include <bsd.port.mk>
