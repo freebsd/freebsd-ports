@@ -1,5 +1,5 @@
 bin/gm4
-man/man1/gm4.1.gz
+share/man/man1/gm4.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize2.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comments.m4
