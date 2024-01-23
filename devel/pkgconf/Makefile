@@ -1,6 +1,6 @@
 PORTNAME=	pkgconf
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.ariadne.space/${PORTNAME}/
@@ -22,6 +22,7 @@ TEST_DEPENDS=	kyua:devel/kyua
 
 USES=		cpe tar:xz libtool pathfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
