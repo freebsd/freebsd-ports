@@ -1,13 +1,13 @@
 PORTNAME=	retro12
-DISTVERSION=	2023.3
+DISTVERSION=	2024.1
 CATEGORIES=	lang
-MASTER_SITES=	http://forthworks.com/retro/r/ \
-		https://forthworks.com/retro/r/
+MASTER_SITES=	http://retroforth.org/r/ \
+		https://retroforth.org/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	crc@forthworks.com
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
-WWW=		https://forthworks.com/retro
+WWW=		https://retroforth.org
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
