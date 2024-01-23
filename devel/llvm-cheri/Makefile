@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -69,8 +69,8 @@ GH_TAGNAME=	${LLVM_COMMIT}
 .sinclude "${.PARSEDIR}/Makefile.snapshot"
 .endif
 
-OPTIONS_DEFINE=	CLANG DOCS LIT LLD STATIC_LIBS
-OPTIONS_DEFAULT=	CLANG LIT LLD
+OPTIONS_DEFINE=	CLANG DOCS LIT LLD STATIC_LIBS XTOOLCHAIN
+OPTIONS_DEFAULT=	CLANG LIT LLD XTOOLCHAIN
 OPTIONS_SUB=	yes
 
 CLANG_DESC=		Build clang
@@ -78,8 +78,6 @@ CLANG_PORTDOCS=		clang
 CLANG_USES=		perl5
 # scan-build does require, but users can install it manually.
 CLANG_USE=		PERL5=build
-PLIST_FILES+=		share/toolchains/llvm${LLVM_SUFFIX}.mk
-SUB_FILES+=		xtoolchain.mk
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
@@ -95,6 +93,9 @@ LLD_DESC=		Install lld linker
 LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:devel/swig
+XTOOLCHAIN_DESC=	Install cross toolchain file
+XTOOLCHAIN_PLIST_FILES+=share/toolchains/llvm${LLVM_SUFFIX}.mk
+XTOOLCHAIN_SUB_FILES+=	xtoolchain.mk
 STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)
 
 LLVM_TARGETS?=		AArch64;ARM;PowerPC;RISCV;X86
@@ -171,9 +172,6 @@ post-patch-LLD-on:
 			${PATCH_WRKSRC}/lld/docs/conf.py
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
-	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
-	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
@@ -219,6 +217,11 @@ post-install-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${CHOSEN_COMPILER_TYPE} == clang
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
 .endif
+
+post-install-XTOOLCHAIN-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains
+	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
+	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
