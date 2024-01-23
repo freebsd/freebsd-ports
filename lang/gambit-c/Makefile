@@ -37,7 +37,7 @@ GCC_DESC=	Build with GCC from ports
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGCC}
-USE_GCC=	yes
+USE_GCC=	12
 .endif
 
 post-patch:
