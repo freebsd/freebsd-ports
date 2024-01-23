@@ -1,5 +1,6 @@
 PORTNAME=	libinotify
 PORTVERSION=	20211018
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libinotify-kqueue/libinotify-kqueue/releases/download/${PORTVERSION}/
 
@@ -14,6 +15,7 @@ USES=		libtool
 
 CONFIGURE_ARGS=	--enable-skip-subfiles=fusefs,smbfs
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
