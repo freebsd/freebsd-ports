@@ -1,5 +1,6 @@
 PORTNAME=	libgcrypt
 DISTVERSION=	1.10.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -18,6 +19,7 @@ USES=		cpe libtool tar:bzip2
 CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-drng-support
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
