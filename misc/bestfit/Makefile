@@ -1,5 +1,6 @@
 PORTNAME=	bestfit
-PORTVERSION=	0.2.0
+DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -9,8 +10,10 @@ WWW=		https://savannah.nongnu.org/projects/bestfit/
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/bestfit man/man1/bestfit.1.gz
+PLIST_FILES=	bin/bestfit \
+		share/man/man1/bestfit.1.gz
 
 .include <bsd.port.mk>
