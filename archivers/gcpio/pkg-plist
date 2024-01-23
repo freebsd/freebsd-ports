@@ -1,5 +1,4 @@
 bin/gcpio
-man/man1/gcpio.1.gz
 %%NLS%%share/locale/bg/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/da/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/de/LC_MESSAGES/cpio.mo
@@ -28,3 +27,4 @@ man/man1/gcpio.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/cpio.mo
+share/man/man1/gcpio.1.gz

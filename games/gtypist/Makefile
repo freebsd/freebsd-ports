@@ -1,6 +1,6 @@
 PORTNAME=	gtypist
 PORTVERSION=	2.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games education
 MASTER_SITES=	GNU
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 
 USES=		iconv ncurses shebangfix tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	EMACS=no \
 		ac_cv_header_ncursesw_ncurses_h=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKDIR}/include

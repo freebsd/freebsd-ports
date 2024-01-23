@@ -1,6 +1,6 @@
 PORTNAME=	galculator
 PORTVERSION=	2.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=v
 CATEGORIES=	math
 
@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 USES=		autoreconf gettext gmake gnome libtool localbase pkgconfig
 USE_GNOME=	cairo intltool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_SINGLE=		GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3

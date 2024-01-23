@@ -1,7 +1,5 @@
 bin/gtar
 libexec/grmt
-man/man1/gtar.1.gz
-man/man8/grmt.8.gz
 %%NLS%%share/locale/bg/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tar.mo
@@ -41,3 +39,5 @@ man/man8/grmt.8.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tar.mo
+share/man/man1/gtar.1.gz
+share/man/man8/grmt.8.gz

@@ -1,5 +1,4 @@
 bin/galculator
-man/man1/galculator.1.gz
 share/appdata/galculator.appdata.xml
 share/applications/galculator.desktop
 %%DATADIR%%/ui/about.ui
@@ -48,4 +47,5 @@ share/locale/tr/LC_MESSAGES/galculator.mo
 share/locale/uk/LC_MESSAGES/galculator.mo
 share/locale/zh_CN/LC_MESSAGES/galculator.mo
 share/locale/zh_TW/LC_MESSAGES/galculator.mo
+share/man/man1/galculator.1.gz
 share/pixmaps/galculator.xpm
