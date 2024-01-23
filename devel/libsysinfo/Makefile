@@ -1,7 +1,7 @@
 PORTNAME=	libsysinfo
 PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	imp@bsdimp.com
@@ -24,10 +24,14 @@ PLIST_FILES=	include/sys/sysinfo.h \
 		lib/libsysinfo.so \
 		lib/libsysinfo.so.0 \
 		libdata/pkgconfig/libsysinfo.pc \
-		man/man3/sysinfo.3.gz
+		share/man/man3/sysinfo.3.gz
 
 SUB_FILES=	libsysinfo.pc
 SUB_LIST=	PREFIX="${PREFIX}" PORTVERSION="${PORTVERSION}" COMMENT="${COMMENT}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man|share/man/man|g' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/libsysinfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
