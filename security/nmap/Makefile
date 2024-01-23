@@ -1,5 +1,6 @@
 PORTNAME=	nmap
 DISTVERSION=	7.94
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -23,6 +24,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		tar:bzip2 gmake cpe
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS PCAP SSH2 SSL
