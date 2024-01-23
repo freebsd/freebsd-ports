@@ -18,7 +18,7 @@
  includedir = $(prefix)/include
  datarootdir = $(prefix)/share
 -mandir = $(datarootdir)/man
-+mandir = $(prefix)/man
++mandir = $(prefix)/share/man
  
  ########################################################################
  
