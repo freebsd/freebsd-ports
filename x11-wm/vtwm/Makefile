@@ -1,5 +1,6 @@
 PORTNAME=	vtwm
 PORTVERSION=	5.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,12 +15,13 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=	pkgconfig xorg
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_XORG=	x11 xext xft xinerama xpm xmu xrandr
 
 PLIST_FILES=	bin/vtwm \
 		bin/nexpm \
 		etc/system.vtwmrc \
-		man/man1/vtwm.1.gz
+		share/man/man1/vtwm.1.gz
 
 OPTIONS_DEFINE=	SOUND
 SOUND_DESC=	Sound support (via rplay)
