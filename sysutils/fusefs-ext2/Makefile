@@ -1,6 +1,7 @@
 PORTNAME=	fusefs-ext2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -20,6 +21,7 @@ GH_PROJECT=	fuse-ext2
 GH_TAGNAME=	ea7bacf
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include/e2fsprogs
 LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath \
@@ -28,6 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath \
 PLIST_FILES=	bin/fuse-ext2 \
 		bin/fuse-ext2.probe \
 		libdata/pkgconfig/fuse-ext2.pc \
-		man/man1/fuse-ext2.1.gz
+		share/man/man1/fuse-ext2.1.gz
 
 .include <bsd.port.mk>
