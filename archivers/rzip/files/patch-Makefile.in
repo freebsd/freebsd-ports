@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2006-02-14 00:38:23 UTC
++++ Makefile.in
+@@ -4,7 +4,7 @@ INSTALL_BIN=$(exec_prefix)/bin
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ INSTALL_BIN=$(exec_prefix)/bin
+-INSTALL_MAN=$(prefix)/man
++INSTALL_MAN=$(prefix)/share/man
+ 
+ LIBS=@LIBS@
+ CC=@CC@
