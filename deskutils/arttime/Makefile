@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bring curated text/ascii art to artless terminals
-WWW=		https://github.com/poetaman/Arttime
+WWW=		https://github.com/poetaman/arttime
 
 LICENSE=	Arttime CFLAv1 GPLv3
 LICENSE_COMB=	multi
