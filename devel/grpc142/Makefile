@@ -12,6 +12,10 @@ WWW=		https://grpc.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+DEPRECATED=	Please use devel/grpc instead
+EXPIRATION_DATE=	2024-03-20
+
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libbenchmark.so:devel/benchmark \
 		libcares.so:dns/c-ares \
