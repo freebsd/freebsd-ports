@@ -21,5 +21,5 @@ lib/mpg123/output_oss.so
 libdata/pkgconfig/libmpg123.pc
 libdata/pkgconfig/libout123.pc
 libdata/pkgconfig/libsyn123.pc
-man/man1/out123.1.gz
-man/man1/mpg123.1.gz
+share/man/man1/out123.1.gz
+share/man/man1/mpg123.1.gz
