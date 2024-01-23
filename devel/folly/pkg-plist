@@ -164,6 +164,7 @@ include/folly/container/detail/F14Table.h
 include/folly/container/detail/Util.h
 include/folly/container/detail/tape_detail.h
 include/folly/container/heap_vector_types.h
+include/folly/container/range_traits.h
 include/folly/container/tape.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
@@ -454,6 +455,8 @@ include/folly/experimental/symbolizer/Symbolizer.h
 include/folly/experimental/symbolizer/detail/Debug.h
 include/folly/ext/test_ext.h
 include/folly/external/farmhash/farmhash.h
+include/folly/external/fast-crc32/avx512_crc32c_v8s3x4.h
+include/folly/external/fast-crc32/sse_crc32c_v8s3x3.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
 include/folly/fibers/AtomicBatchDispatcher-inl.h
