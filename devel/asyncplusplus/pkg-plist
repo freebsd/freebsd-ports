@@ -1,6 +1,6 @@
-cmake/Async++-%%CMAKE_BUILD_TYPE%%.cmake
-cmake/Async++.cmake
 cmake/Async++Config.cmake
+cmake/asyncxx-targets-%%CMAKE_BUILD_TYPE%%.cmake
+cmake/asyncxx-targets.cmake
 include/async++.h
 include/async++/aligned_alloc.h
 include/async++/cancel.h
@@ -17,4 +17,5 @@ include/async++/task.h
 include/async++/task_base.h
 include/async++/traits.h
 include/async++/when_all_any.h
+%%STATIC%%lib/libasync++.a
 lib/libasync++.so
