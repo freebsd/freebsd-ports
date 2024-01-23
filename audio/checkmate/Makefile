@@ -1,5 +1,6 @@
 PORTNAME=	checkmate
-PORTVERSION=	0.21
+DISTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.gissen.nl/ \
 		LOCAL/ehaupt
@@ -10,8 +11,10 @@ WWW=		https://checkmate.gissen.nl/
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/mpck man/man1/mpck.1.gz
+PLIST_FILES=	bin/mpck \
+		share/man/man1/mpck.1.gz
 
 .include <bsd.port.mk>
