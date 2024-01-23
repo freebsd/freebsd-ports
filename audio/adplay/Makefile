@@ -1,7 +1,7 @@
 PORTNAME=	adplay
-PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+DISTVERSION=	1.8.1
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -21,12 +21,13 @@ GH_ACCOUNT=	adplug
 GH_PROJECT=	${PORTNAME}-unix
 GH_TUPLE=	adplug:database:${DBVERSION}:database/database-${DBVERSION}
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS+=		--sharedstatedir=${DATADIR}
 
 PLIST_FILES=	${DATADIR}/adplug/adplug.db \
 		bin/adplay \
-		man/man1/adplay.1.gz
+		share/man/man1/adplay.1.gz
 
 OPTIONS_DEFINE=	ALSA SDL
 
