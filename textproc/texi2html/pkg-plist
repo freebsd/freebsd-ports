@@ -1,5 +1,5 @@
 bin/%%PROGRAM_PREFIX%%texi2html
-man/man1/%%PROGRAM_PREFIX%%texi2html.1.gz
+share/man/man1/%%PROGRAM_PREFIX%%texi2html.1.gz
 %%DATADIR%%/i18n/de.thl
 %%DATADIR%%/i18n/en.thl
 %%DATADIR%%/i18n/es.thl

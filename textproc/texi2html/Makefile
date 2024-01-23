@@ -1,6 +1,6 @@
 PORTNAME=	texi2html
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH
@@ -10,6 +10,7 @@ COMMENT=	Texinfo to HTML converter
 WWW=		https://www.nongnu.org/texi2html/
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
