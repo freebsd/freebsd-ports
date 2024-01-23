@@ -1,5 +1,6 @@
 PORTNAME=	rhash
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,7 +18,7 @@ LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/man" \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/share/man" \
 		--pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		--enable-lib-static --enable-openssl-runtime \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
