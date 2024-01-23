@@ -1,6 +1,6 @@
 PORTNAME=	fftw3
 DISTVERSION=	3.3.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -19,6 +19,7 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	smallcheck #bigcheck check exhaustive-check paranoid-check
 TEST_WRKSRC=	${WRKSRC}/tests
@@ -180,7 +181,7 @@ post-configure-G77_WRAPPERS-on:
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/FFTW3LibraryDepends.cmake ${STAGEDIR}${PREFIX}/lib/cmake/fftw3${FFTW3_SUFX}
 .if ${FFTW3_FLAVOR} != "default"
-	${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 .endif
 
