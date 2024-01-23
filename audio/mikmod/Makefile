@@ -1,5 +1,6 @@
 PORTNAME=	mikmod
-PORTVERSION=	3.2.8
+DISTVERSION=	3.2.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		LOCAL/ehaupt
@@ -12,12 +13,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 
-USES=		gmake ncurses
-GNU_CONFIGURE=	yes
+USES=				gmake ncurses
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/mikmod \
-		man/man1/mikmod.1.gz \
-		%%DATADIR%%/mikmodrc
+PLIST_FILES=	%%DATADIR%%/mikmodrc \
+		bin/mikmod \
+		share/man/man1/mikmod.1.gz
 PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS
