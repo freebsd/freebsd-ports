@@ -44,7 +44,7 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 USES=		cmake compiler:gcc-c++11-lib desktop-file-utils gl gnome jpeg \
 		llvm:15,build lua:54 perl5 pkgconfig sdl shebangfix sqlite \
 		tar:xz xorg
-USE_GCC=	yes
+USE_GCC=	12
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
