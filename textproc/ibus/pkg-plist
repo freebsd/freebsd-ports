@@ -57,7 +57,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.527
+lib/libibus-1.0.so.5.0.529
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -271,6 +271,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/id/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/ibus10.mo

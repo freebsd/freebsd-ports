@@ -1,6 +1,5 @@
 PORTNAME=	ibus
-PORTVERSION=	1.5.27
-PORTREVISION=	3
+PORTVERSION=	1.5.29
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -23,7 +22,7 @@ USES=		autoreconf compiler cpe gmake gnome libtool localbase \
 		pathfix pkgconfig python shebangfix
 CPE_VENDOR=	ibus_project
 USE_GITHUB=	yes
-USE_GNOME=	glib20 intltool librsvg2 pygobject3
+USE_GNOME=	glib20 intltool pygobject3
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 SHEBANG_GLOB=	*.sh
@@ -38,11 +37,12 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/src/tests
 
-OPTIONS_DEFINE=	ENGINE VAPI GTK2 GTK3 GINTRO DCONF XIM EMOJI DOCS NLS WAYLAND
-OPTIONS_DEFAULT=	GTK2 GTK3 VAPI GINTRO DCONF XIM ENGINE EMOJI
+OPTIONS_DEFINE=	APPINDICATOR ENGINE VAPI GTK2 GTK3 GINTRO DCONF XIM EMOJI DOCS NLS WAYLAND
+OPTIONS_DEFAULT=	APPINDICATOR GTK2 GTK3 VAPI GINTRO DCONF XIM ENGINE EMOJI
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
 
+APPINDICATOR_DESC=	Enable appindicator support
 DCONF_DESC=	Use dconf for configuration
 EMOJI_DESC=	Install emoji dictionary
 ENGINE_DESC=	Install ibus simple engine
@@ -52,6 +52,8 @@ GTK3_DESC=	Install GTK3 client and panel
 WAYLAND_DESC=	Enable Wayland support
 XIM_DESC=	Install XIM server
 
+APPINDICATOR_CONFIGURE_ENABLE=	appindicator
+APPINDICATOR_LIB_DEPENDS=	libdbusmenu-glib.so:devel/libdbusmenu
 DCONF_USE=		GNOME=dconf
 DCONF_CONFIGURE_ENABLE=	dconf
 DCONF_VARS=		GLIB_SCHEMAS=org.freedesktop.ibus.gschema.xml
