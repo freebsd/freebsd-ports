@@ -8,7 +8,7 @@ bin/luac%%LUA_VER_STR%%
 lib/liblua-%%LUA_VER%%.a
 lib/liblua-%%LUA_VER%%.so
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
-man/man1/lua%%LUA_VER_STR%%.1.gz
-man/man1/luac%%LUA_VER_STR%%.1.gz
+share/man/man1/lua%%LUA_VER_STR%%.1.gz
+share/man/man1/luac%%LUA_VER_STR%%.1.gz
 @dir %%LUA_MODLIBDIR%%
 @dir %%LUA_MODSHAREDIR%%
