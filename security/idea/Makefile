@@ -22,7 +22,6 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man/manl
 	${INSTALL_MAN} ${WRKSRC}/manl/idea.l ${STAGEDIR}${PREFIX}/share/man/manl
 	${INSTALL_PROGRAM} -m 0555 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
