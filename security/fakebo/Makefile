@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/fakebo/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Remote admin software that hasn't been relevant for last 15 years
+EXPIRATION_DATE=2024-02-29
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USES=		autoreconf
