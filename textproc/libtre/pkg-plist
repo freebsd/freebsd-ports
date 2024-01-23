@@ -7,7 +7,7 @@ lib/libtre.so
 lib/libtre.so.5
 lib/libtre.so.5.0.0
 libdata/pkgconfig/tre.pc
-man/man1/tre_agrep.1.gz
+share/man/man1/tre_agrep.1.gz
 %%NLS%%share/locale/fi/LC_MESSAGES/tre.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tre.mo
 %%PORTDOCS%%%%DOCSDIR%%/tre-api.html

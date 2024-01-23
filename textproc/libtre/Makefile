@@ -1,6 +1,6 @@
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/ \
 		LOCAL/bf
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		libtool localbase:ldflags pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
