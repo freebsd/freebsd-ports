@@ -1,6 +1,6 @@
 --- ifd/Makefile.am.orig	2021-11-03 13:00:16 UTC
 +++ ifd/Makefile.am
-@@ -23,6 +23,11 @@ bundleosxdir=$(usbdropdir)/libifd-cyberjack.bundle/Con
+@@ -23,8 +23,13 @@ bundleosxdir=$(usbdropdir)/libifd-cyberjack.bundle/Con
  bundleosx_LTLIBRARIES=libifd-cyberjack.la
  endif
  
@@ -12,3 +12,6 @@
  libifd_cyberjack_la_SOURCES=ifd.cpp
  libifd_cyberjack_la_LDFLAGS=-version-info @CYBERJACK_SO_CURRENT@:@CYBERJACK_SO_REVISION@:@CYBERJACK_SO_AGE@ -no-undefined
  #libifd_cyberjack_la_LIBADD=$(top_builddir)/cjeca32/libeca.la $(top_builddir)/cjeca32/ausb/libausb.la
+-libifd_cyberjack_la_LIBADD=$(top_builddir)/cjeca32/libeca.la -lstdc++
++libifd_cyberjack_la_LIBADD=$(top_builddir)/cjeca32/libeca.la
+ 
