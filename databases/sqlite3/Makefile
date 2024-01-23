@@ -1,5 +1,6 @@
 PORTNAME=	sqlite3
 DISTVERSION=	3.45.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -34,6 +35,7 @@ USES=	libtool pathfix zip
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET+=	sqldiff
@@ -266,7 +268,7 @@ post-configure:
 
 post-install:
 .if !defined(TEA)
-	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/man/man1"
+	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/share/man/man1"
 	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
 	${INSTALL_PROGRAM} "${WRKSRC}/sqldiff" "${STAGEDIR}${PREFIX}/bin"
@@ -284,7 +286,8 @@ post-install-STRIP-on:
 
 post-install-TCL-on:
 	${INSTALL_PROGRAM} "${WRKSRC}/${PORTNAME}_analyzer" "${STAGEDIR}${PREFIX}/bin"
-	${INSTALL_MAN} "${WRKSRC}/autoconf/tea/doc/${PORTNAME}.n" "${STAGEDIR}${PREFIX}/man/mann/${PORTNAME}.tcl${TCL_VER:S/.//g}.n"
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/mann
+	${INSTALL_MAN} "${WRKSRC}/autoconf/tea/doc/${PORTNAME}.n" "${STAGEDIR}${PREFIX}/share/man/mann/${PORTNAME}.tcl${TCL_VER:S/.//g}.n"
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} "${STAGEDIR}${EXAMPLESDIR}"
 	${INSTALL_SCRIPT} "${WRKDIR}/${SUB_FILES}" "${WRKSRC}/contrib/sqlitecon.tcl" "${STAGEDIR}${EXAMPLESDIR}"

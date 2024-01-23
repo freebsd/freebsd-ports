@@ -8,8 +8,8 @@
 %%NO_TEA%%lib/libsqlite3.so.0
 %%NO_TEA%%lib/libsqlite3.so.0.8.6
 %%NO_TEA%%libdata/pkgconfig/sqlite3.pc
-%%NO_TEA%%man/man1/sqlite3.1.gz
-%%TCL%%man/mann/sqlite3.%%TCLSUF%%.n.gz
+%%NO_TEA%%share/man/man1/sqlite3.1.gz
+%%TCL%%share/man/mann/sqlite3.%%TCLSUF%%.n.gz
 %%TCL%%lib/%%TCLVER%%/sqlite3/libtclsqlite3.so
 %%TCL%%lib/%%TCLVER%%/sqlite3/pkgIndex.tcl
 %%TCL%%%%EXAMPLES%%share/examples/sqlite3/example.tcl
