@@ -8,6 +8,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netcat clone with more features and crypto
 WWW=		http://tigerteam.se/dl/sbd/
 
+BROKEN=		Unfetchable
+DEPRECATED=     Abandonware and unfetchable, consider using ncat in security/nmap
+EXPIRATION_DATE=2024-02-29
+
 ALL_TARGET=	unix
 
 PLIST_FILES=	bin/sbd
