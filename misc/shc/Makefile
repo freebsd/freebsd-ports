@@ -1,5 +1,6 @@
 PORTNAME=	shc
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -12,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:tgz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neurobin
 
-PLIST_FILES=	bin/shc man/man1/shc.1.gz
+PLIST_FILES=	bin/shc share/man/man1/shc.1.gz
 
 .include <bsd.port.mk>
