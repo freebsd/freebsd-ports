@@ -1,5 +1,6 @@
 PORTNAME=	libp11
 PORTVERSION=	0.4.12
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security devel
 
@@ -11,11 +12,15 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		autoreconf cpe libtool pkgconfig ssl
+USES=		autoreconf cpe gmake libtool pkgconfig ssl
 CPE_VENDOR=	opensc_project
 CPE_PRODUCT=	opensc
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
+
+DOXYGEN_CONFIGURE_ENABLE=	api-doc
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_IMPLIES=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenSC
