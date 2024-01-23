@@ -1,9 +1,10 @@
 PORTNAME=	recursor
-DISTVERSION=	4.9.2
+DISTVERSION=	5.0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
 DISTNAME=	pdns-${PORTNAME}-${DISTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
@@ -18,10 +19,11 @@ NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
-LIB_DEPENDS=	libboost_context.so:devel/boost-libs
+LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
+		libcurl.so:ftp/curl
 
-USES=		autoreconf compiler:c++11-lib cpe gmake libtool \
-		localbase:ldflags pkgconfig ssl tar:bzip2
+USES=		autoreconf cargo compiler:c++11-lib cpe gmake libtool \
+		localbase:ldflags pkgconfig python:build ssl tar:bzip2
 
 CPE_VENDOR=	powerdns
 USE_RC_SUBR=	pdns-recursor
@@ -29,10 +31,19 @@ USE_RC_SUBR=	pdns-recursor
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 		--with-libsodium=no \
+		--with-service-user=pdns \
+		--with-service-group=pdns_recursor \
 		--without-net-snmp \
 		--without-systemd
 
+CARGO_CARGOLOCK=	${WRKSRC}/settings/rust/Cargo.lock
+CARGO_CARGOTOML=	${WRKSRC}/settings/rust/Cargo.toml
+CARGO_BUILD=		no
+CARGO_INSTALL=		no
+CARGO_TEST=		no
+
 SUB_FILES=	pkg-message
+TARGET_ORDER_OVERRIDE=	750:cargo-configure
 
 USERS=		pdns_recursor
 GROUPS=		pdns
@@ -53,6 +64,9 @@ LUAJIT_USES=		luajit
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 
 LUA_USES=	lua
+
+#pre-configure:
+#	@cd ${WRKSRC}/settings && ${PYTHON_CMD} generate.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pdns-recursor

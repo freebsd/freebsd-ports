@@ -1,4 +1,5 @@
 @sample etc/pdns/recursor.conf-dist etc/pdns/recursor.conf
+etc/pdns/recursor.yml-dist
 bin/rec_control
 sbin/pdns_recursor
 man/man1/pdns_recursor.1.gz
