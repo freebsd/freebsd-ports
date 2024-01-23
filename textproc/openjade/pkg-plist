@@ -46,4 +46,4 @@ lib/libostyle.so.0.0.1
 %%DATADIR%%/spsanch.dsl
 %%DATADIR%%/spsanch.sgml
 %%DATADIR%%/style-sheet.dtd
-man/man1/openjade.1.gz
+share/man/man1/openjade.1.gz
