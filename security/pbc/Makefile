@@ -11,6 +11,9 @@ WWW=		https://crypto.stanford.edu/pbc/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2013 and no development since
+EXPIRATION_DATE=2024-02-29
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		bison libtool
