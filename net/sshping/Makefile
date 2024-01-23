@@ -1,6 +1,7 @@
 PORTNAME=	sshping
-PORTVERSION=	0.1.4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,10 +15,10 @@ LIB_DEPENDS=	libssh.so:security/libssh
 
 USES=		cmake localbase:ldflags perl5
 USE_GITHUB=	yes
+GH_ACCOUNT=	spook
 USE_PERL5=	build
 
-GH_ACCOUNT=	spook
-
-PLIST_FILES=	bin/sshping man/man8/sshping.8.gz
+PLIST_FILES=	bin/sshping \
+		share/man/man8/sshping.8.gz
 
 .include <bsd.port.mk>
