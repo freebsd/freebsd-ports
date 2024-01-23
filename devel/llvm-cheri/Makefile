@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -114,7 +114,10 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
-EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}-backport-version-fixes
+EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}
+.if ${.PARSEDIR} != ${.CURDIR} && exists(${.CURDIR}/files)
+EXTRA_PATCHES+=	${.CURDIR}/files
+.endif
 
 .include <bsd.port.options.mk>
 

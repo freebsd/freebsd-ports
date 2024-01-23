@@ -14,8 +14,10 @@ LLVM_MAN1SRCS= \
 	llvm-diff.1 \
 	llvm-dis.1 \
 	llvm-dwarfdump.1 \
+	llvm-dwarfutil.1 \
 	llvm-exegesis.1 \
 	llvm-extract.1 \
+	llvm-ifs.1 \
 	llvm-install-name-tool.1 \
 	llvm-lib.1 \
 	llvm-libtool-darwin.1 \
@@ -33,6 +35,7 @@ LLVM_MAN1SRCS= \
 	llvm-ranlib.1 \
 	llvm-readelf.1 \
 	llvm-readobj.1 \
+	llvm-remark-size-diff.1 \
 	llvm-size.1 \
 	llvm-stress.1 \
 	llvm-strings.1 \
