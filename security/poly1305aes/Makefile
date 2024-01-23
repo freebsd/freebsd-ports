@@ -9,6 +9,9 @@ WWW=		https://cr.yp.to/mac.html
 
 LICENSE=	PD
 
+DEPRECATED=	Fails to build on Tier 1 and most other platforms
+EXPIRATION_DATE=2024-02-29
+
 BROKEN_aarch64=		fails to build: poly1305aes.impl.do: fatal: all tests failed
 BROKEN_armv6=		fails to build: poly1305aes.impl.do: fatal: all tests failed
 BROKEN_armv7=		fails to build: poly1305aes.impl.do: fatal: all tests failed
