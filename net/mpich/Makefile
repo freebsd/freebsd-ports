@@ -76,9 +76,9 @@ CONFIGURE_ARGS=	--enable-fast=""	\
 		LIBS="-L${LOCALBASE}/lib -lepoll-shim -ljson-c -lm"	\
 		BASH_SHELL=${LOCALBASE}/bin/bash
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500005
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} == 170
 # linker error when compiling with llvm 17.0.6 on CURRENT - PR 276035
 # To be removed with llvm-18
 CONFIGURE_ENV+=	ac_cv_sizeof___float128=0
@@ -115,4 +115,4 @@ post-extract:
 post-patch:
 	${RM} -r ${WRKSRC}/www
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
