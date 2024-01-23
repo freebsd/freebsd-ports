@@ -4,4 +4,4 @@ lib/libex.a
 lib/libex.so
 lib/libex.so.10
 lib/libex.so.10.0.26
-man/man3/ex.3.gz
+share/man/man3/ex.3.gz
