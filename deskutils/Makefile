@@ -190,6 +190,7 @@
     SUBDIR += nanonote
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
+    SUBDIR += normcap
     SUBDIR += note
     SUBDIR += notekit
     SUBDIR += notes
