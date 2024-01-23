@@ -1,6 +1,6 @@
 PORTNAME=	libao
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ao/
 
@@ -14,6 +14,7 @@ USES=		cpe libtool pathfix pkgconfig
 CPE_VENDOR=	xiph
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static \
 		--disable-alsa \
 		--disable-arts \
