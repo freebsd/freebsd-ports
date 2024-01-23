@@ -11,6 +11,9 @@ WWW=		https://github.com/wernerd/ZRTPCPP
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obscure protocol that never got any traction, superseded by SRTP
+EXPIRATION_DATE=2024-02-29 
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	wernerd
 GH_PROJECT=	ZRTPCPP
