@@ -1,6 +1,6 @@
 PORTNAME=	jpegoptim
 DISTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.kokkonen.net/tjko/src/
 
@@ -15,9 +15,10 @@ USES=		cpe gmake jpeg localbase:ldflags
 CPE_VENDOR=	${PORTNAME}_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/jpegoptim \
-		man/man1/jpegoptim.1.gz
+		share/man/man1/jpegoptim.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
