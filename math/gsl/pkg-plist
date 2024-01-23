@@ -276,8 +276,8 @@ lib/libgslcblas.so
 lib/libgslcblas.so.0
 lib/libgslcblas.so.0.0.0
 libdata/pkgconfig/gsl.pc
-man/man1/gsl-config.1.gz
-man/man1/gsl-histogram.1.gz
-man/man1/gsl-randist.1.gz
-man/man3/gsl.3.gz
+share/man/man1/gsl-config.1.gz
+share/man/man1/gsl-histogram.1.gz
+share/man/man1/gsl-randist.1.gz
+share/man/man3/gsl.3.gz
 share/aclocal/gsl.m4
