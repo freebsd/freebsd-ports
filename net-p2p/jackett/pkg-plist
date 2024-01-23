@@ -100,7 +100,6 @@
 %%DATADIR%%/Definitions/beitai.yml
 %%DATADIR%%/Definitions/beload.yml
 %%DATADIR%%/Definitions/bestcore.yml
-%%DATADIR%%/Definitions/beyond-hd.yml
 %%DATADIR%%/Definitions/bibliotik.yml
 %%DATADIR%%/Definitions/bigfangroup.yml
 %%DATADIR%%/Definitions/bitbazis.yml
@@ -132,7 +131,6 @@
 %%DATADIR%%/Definitions/carpathians.yml
 %%DATADIR%%/Definitions/carphunter.yml
 %%DATADIR%%/Definitions/carpt.yml
-%%DATADIR%%/Definitions/cartoonchaos.yml
 %%DATADIR%%/Definitions/cathoderaytube.yml
 %%DATADIR%%/Definitions/catorrent.yml
 %%DATADIR%%/Definitions/centraltorrent.yml
@@ -246,6 +244,7 @@
 %%DATADIR%%/Definitions/hdpt.yml
 %%DATADIR%%/Definitions/hdroute.yml
 %%DATADIR%%/Definitions/hdsky.yml
+%%DATADIR%%/Definitions/hdspace.yml
 %%DATADIR%%/Definitions/hdtime.yml
 %%DATADIR%%/Definitions/hdtorrentsit.yml
 %%DATADIR%%/Definitions/hdturk.yml
@@ -314,7 +313,6 @@
 %%DATADIR%%/Definitions/lst.yml
 %%DATADIR%%/Definitions/mactorrentsdownload.yml
 %%DATADIR%%/Definitions/madsrevolution.yml
-%%DATADIR%%/Definitions/magico.yml
 %%DATADIR%%/Definitions/majomparade.yml
 %%DATADIR%%/Definitions/makingoff.yml
 %%DATADIR%%/Definitions/marinetracker.yml
@@ -422,7 +420,7 @@
 %%DATADIR%%/Definitions/rockbox.yml
 %%DATADIR%%/Definitions/romanianmetaltorrents.yml
 %%DATADIR%%/Definitions/rousi.yml
-%%DATADIR%%/Definitions/rptscene-api.yml
+%%DATADIR%%/Definitions/rptscene.yml
 %%DATADIR%%/Definitions/rudub.yml
 %%DATADIR%%/Definitions/rustorka.yml
 %%DATADIR%%/Definitions/rutor.yml
@@ -467,6 +465,7 @@
 %%DATADIR%%/Definitions/teamos.yml
 %%DATADIR%%/Definitions/tekno3d.yml
 %%DATADIR%%/Definitions/teracod.yml
+%%DATADIR%%/Definitions/tgay.yml
 %%DATADIR%%/Definitions/thecrazyones.yml
 %%DATADIR%%/Definitions/theempire.yml
 %%DATADIR%%/Definitions/thefallingangels.yml
@@ -528,14 +527,13 @@
 %%DATADIR%%/Definitions/torrenttrader.yml
 %%DATADIR%%/Definitions/torrentview.yml
 %%DATADIR%%/Definitions/torrentwhiz.yml
-%%DATADIR%%/Definitions/torrentz2eu.yml
 %%DATADIR%%/Definitions/torrentz2nz.yml
-%%DATADIR%%/Definitions/totallykids.yml
 %%DATADIR%%/Definitions/totheglory.yml
 %%DATADIR%%/Definitions/totheglorycookie.yml
 %%DATADIR%%/Definitions/trackermk.yml
 %%DATADIR%%/Definitions/traht.yml
 %%DATADIR%%/Definitions/trancetraffic.yml
+%%DATADIR%%/Definitions/trellas.yml
 %%DATADIR%%/Definitions/trezzor.yml
 %%DATADIR%%/Definitions/trezzorcookie.yml
 %%DATADIR%%/Definitions/tribalmixes.yml
