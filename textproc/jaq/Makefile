@@ -1,7 +1,6 @@
 PORTNAME=	jaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ CARGO_INSTALL_PATH=	jaq
 CARGO_CRATES=	ahash-0.8.6 \
 		aho-corasick-1.1.2 \
 		allocator-api2-0.2.16 \
-		ariadne-0.3.0 \
+		ariadne-0.4.0 \
 		atty-0.2.14 \
 		base64-0.21.5 \
 		bincode-1.3.3 \
@@ -33,7 +32,6 @@ CARGO_CRATES=	ahash-0.8.6 \
 		clap_lex-0.3.2 \
 		colored_json-3.0.1 \
 		dyn-clone-1.0.11 \
-		either-1.8.1 \
 		env_logger-0.10.0 \
 		equivalent-1.0.0 \
 		fastrand-1.9.0 \
@@ -44,7 +42,6 @@ CARGO_CRATES=	ahash-0.8.6 \
 		hifijson-0.2.0 \
 		indexmap-2.1.0 \
 		instant-0.1.12 \
-		itertools-0.10.5 \
 		itoa-1.0.9 \
 		libc-0.2.147 \
 		libm-0.2.8 \
@@ -86,8 +83,8 @@ CARGO_CRATES=	ahash-0.8.6 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yansi-0.5.1 \
-		zerocopy-0.7.20 \
-		zerocopy-derive-0.7.20
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32
 
 PLIST_FILES=	bin/${PORTNAME}
 
