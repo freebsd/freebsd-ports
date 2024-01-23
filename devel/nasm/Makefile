@@ -1,5 +1,6 @@
 PORTNAME=	nasm
 PORTVERSION=	2.16.01
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	https://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \
@@ -18,14 +19,15 @@ CPE_PRODUCT=	netwide_assembler
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_func_strspn=yes
 
 MAKE_ARGS+=	INSTALLROOT=${STAGEDIR}
 
 PLIST_FILES=	bin/nasm \
 		bin/ndisasm \
-		man/man1/nasm.1.gz \
-		man/man1/ndisasm.1.gz
+		share/man/man1/nasm.1.gz \
+		share/man/man1/ndisasm.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
