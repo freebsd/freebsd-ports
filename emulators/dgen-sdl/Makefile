@@ -14,6 +14,8 @@ USES=		gl gmake sdl
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
+CONFIGURE_ARGS+=	--disable-asm
+
 PLIST_FILES=	bin/dgen \
 		bin/dgen_tobin \
 		share/man/man1/dgen.1.gz \
