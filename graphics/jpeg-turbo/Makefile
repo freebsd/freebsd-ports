@@ -1,6 +1,6 @@
 PORTNAME=	jpeg-turbo
 DISTVERSION=	3.0.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${DISTVERSION}
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
@@ -29,7 +29,8 @@ DOCSDIR=	${PREFIX}/share/doc/libjpeg-turbo
 
 CMAKE_ON=	WITH_JPEG8
 # See https://github.com/libjpeg-turbo/libjpeg-turbo/issues/705
-CMAKE_ARGS=	-DCMAKE_CTEST_ARGUMENTS="-E;'djpeg12-shared-3x2-float-prog-cmp|djpeg12-static-3x2-float-prog-cmp'"
+CMAKE_ARGS=	-DCMAKE_CTEST_ARGUMENTS="-E;'djpeg12-shared-3x2-float-prog-cmp|djpeg12-static-3x2-float-prog-cmp'"aa \
+			-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
 
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
