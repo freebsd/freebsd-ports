@@ -1,5 +1,6 @@
 PORTNAME=	libev
 DISTVERSION=	4.33
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
