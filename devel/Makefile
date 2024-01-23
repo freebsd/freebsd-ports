@@ -1034,6 +1034,7 @@
     SUBDIR += juce
     SUBDIR += juce706
     SUBDIR += judy
+    SUBDIR += jujutsu
     SUBDIR += jwasm
     SUBDIR += kBuild
     SUBDIR += kapptemplate
