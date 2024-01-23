@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2015-02-27 14:24:48 UTC
++++ Makefile.in
+@@ -435,7 +435,7 @@ cardpeek_SOURCES = asn1.c asn1.h bytestring.c bytestri
+ 	cardpeek_public_key.h win32/config.h $(am__append_1) \
+ 	$(am__append_3)
+ EXTRA_cardpeek_SOURCES = cardpeek.c osx/cardpeek-osx.m
+-doc_DATA = doc/cardpeek_ref.en.pdf 
++doc_DATA = AUTHORS README doc/cardpeek_ref.en.pdf
+ cardpeek_LDADD = cardpeek_resources.$(OBJEXT) @LUA_LIBS@ @PCSC_LIBS@ @GLIB_LIBS@ @GTK_LIBS@ @CURL_LIBS@ @ICONV_LIBS@
+ cardpeek_LDFLAGS = -g $(am__append_2)
+ dist_man_MANS = cardpeek.1
+@@ -595,7 +595,7 @@ osx/cardpeek-osx.$(OBJEXT): osx/$(am__dirstamp) \
+ 
+ cardpeek$(EXEEXT): $(cardpeek_OBJECTS) $(cardpeek_DEPENDENCIES) $(EXTRA_cardpeek_DEPENDENCIES) 
+ 	@rm -f cardpeek$(EXEEXT)
+-	$(AM_V_OBJCLD)$(cardpeek_LINK) $(cardpeek_OBJECTS) $(cardpeek_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(LINK) $(cardpeek_OBJECTS) $(cardpeek_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
