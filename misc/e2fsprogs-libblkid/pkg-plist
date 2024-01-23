@@ -5,4 +5,4 @@ lib/libblkid.so.1
 lib/libblkid.so
 lib/libblkid.a
 libdata/pkgconfig/blkid.pc
-man/man3/libblkid.3.gz
+share/man/man3/libblkid.3.gz
