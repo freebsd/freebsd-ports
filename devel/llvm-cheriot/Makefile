@@ -12,10 +12,6 @@ PLIST=		${.CURDIR}/pkg-plist
 LLVM_TARGETS=          RISCV
 CMAKE_FLAGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=riscv32-unknown-unknown
 
-.if exists(${.CURDIR}/files)
-EXTRA_PATCHES=	${.CURDIR}/files
-.endif
-
 .include "${.CURDIR}/Makefile.snapshot"
 
 MASTERDIR=	${.CURDIR}/../llvm-cheri
