@@ -1,5 +1,6 @@
 PORTNAME=	aspell
 PORTVERSION=	0.60.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/aspell
@@ -16,6 +17,7 @@ OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
 		--enable-docdir=${DOCSDIR}	\
 		--enable-curses="${NCURSESLIBS}" \
