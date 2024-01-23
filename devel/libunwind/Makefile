@@ -1,5 +1,6 @@
 PORTNAME=	libunwind
 PORTVERSION=	20230730	# This is the release date on https://github.com/libunwind/libunwind/releases
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
 DISTNAME=	${PORTNAME}-${LIBUNWIND_VERSION}
@@ -20,6 +21,7 @@ CONFIGURE_ARGS=	--disable-cxx-exceptions \
 		--disable-unwind-header \
 		ac_cv_path_LATEX2MAN=${TRUE}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
