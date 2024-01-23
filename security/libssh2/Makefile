@@ -1,5 +1,6 @@
 PORTNAME=	libssh2
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh2.org/download/ \
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c11 cpe libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
