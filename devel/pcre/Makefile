@@ -1,6 +1,6 @@
 PORTNAME=	pcre
 PORTVERSION=	8.45
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.pcre.org/pub/pcre/ \
 		SF
@@ -19,6 +19,7 @@ USES_powerpcspe=	compiler:c++11-lang
 USE_LDCONFIG=		yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-pcre16 \
 		--enable-pcre32 \
 		--enable-pcre8 \
