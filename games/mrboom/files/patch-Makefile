@@ -1,6 +1,6 @@
---- Makefile.orig	2020-12-30 21:19:43 UTC
+--- Makefile.orig	2023-09-30 09:08:22 UTC
 +++ Makefile
-@@ -3,7 +3,6 @@ AR             := ar
+@@ -3,20 +3,19 @@ STRIP          := strip
  INSTALL        := install
  RM             := rm
  STRIP          := strip
@@ -8,7 +8,13 @@
  BINDIR         ?= bin
  LIBDIR         ?= lib
  DATADIR        ?= share
-@@ -16,7 +15,7 @@ CFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CFLAGS))
+ LIBRETRO_DIR   ?= libretro
+ WANT_BPP       := 32
+ 
+-MANDIR := man/man6
++MANDIR := share/man/man6
+ CFLAGS := $(filter-out -D_FORTIFY_SOURCE=1,$(CFLAGS))
+ CFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CFLAGS))
  CFLAGS := $(filter-out -D_FORTIFY_SOURCE,$(CFLAGS))
  CXXFLAGS := $(filter-out -D_FORTIFY_SOURCE=1,$(CXXFLAGS))
  CXXFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CXXFLAGS))
@@ -17,12 +23,12 @@
  CPPFLAGS := $(filter-out -D_FORTIFY_SOURCE=1,$(CPPFLAGS))
  CPPFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CPPFLAGS))
  CPPFLAGS := $(filter-out -D_FORTIFY_SOURCE,$(CPPFLAGS))
-@@ -572,7 +571,7 @@ else
+@@ -628,7 +627,7 @@ endif
     endif
  endif
  
 -CFLAGS += -DMRBOOM -DHAVE_IBXM -D_FORTIFY_SOURCE=0 -DPLATFORM=\"$(platform)\" -DGIT_VERSION=\"$(GIT_VERSION)\"
 +CFLAGS += -DMRBOOM -DHAVE_IBXM -D_FORTIFY_SOURCE=0 -DPLATFORM=\"$(platform)\"
  
- SDL2LIBS :=  -lSDL2  -lSDL2_mixer -lminizip
- 
+ ifneq ($(FALCON),)
+    SDLLIBS := -mshort -L/usr/m68k-atari-mint/sys-root/usr/lib/m68020-60 -lSDL_mixer -lSDL -lSDLmain -lFLAC -lmikmod -lgem -lldg  -lgem -lm -lvorbisfile -lvorbis -logg -lmpg123 
