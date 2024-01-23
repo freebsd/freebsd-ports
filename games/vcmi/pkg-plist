@@ -132,6 +132,8 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Sprites/lobby/dropdown.json
 %%DATADIR%%/Mods/vcmi/Sprites/lobby/dropdownNormal.png
 %%DATADIR%%/Mods/vcmi/Sprites/lobby/dropdownPressed.png
+%%DATADIR%%/Mods/vcmi/Sprites/lobby/selectionTabSortDate.json
+%%DATADIR%%/Mods/vcmi/Sprites/lobby/selectionTabSortDate.png
 %%DATADIR%%/Mods/vcmi/Sprites/mapFormatIcons/vcmi1.png
 %%DATADIR%%/Mods/vcmi/Sprites/settingsWindow/button190.json
 %%DATADIR%%/Mods/vcmi/Sprites/settingsWindow/button190Normal.png
@@ -447,6 +449,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%QT%%%%DATADIR%%/launcher/icons/mod-update.png
 %%QT%%%%DATADIR%%/launcher/icons/room-private.png
 %%QT%%%%DATADIR%%/launcher/translation/chinese.qm
+%%QT%%%%DATADIR%%/launcher/translation/czech.qm
 %%QT%%%%DATADIR%%/launcher/translation/english.qm
 %%QT%%%%DATADIR%%/launcher/translation/french.qm
 %%QT%%%%DATADIR%%/launcher/translation/german.qm
@@ -496,6 +499,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%QT%%%%DATADIR%%/mapeditor/icons/zoom_minus.png
 %%QT%%%%DATADIR%%/mapeditor/icons/zoom_plus.png
 %%QT%%%%DATADIR%%/mapeditor/icons/zoom_zero.png
+%%QT%%%%DATADIR%%/mapeditor/translation/czech.qm
 %%QT%%%%DATADIR%%/mapeditor/translation/english.qm
 %%QT%%%%DATADIR%%/mapeditor/translation/french.qm
 %%QT%%%%DATADIR%%/mapeditor/translation/german.qm
