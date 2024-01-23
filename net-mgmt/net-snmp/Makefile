@@ -1,6 +1,6 @@
 PORTNAME=	snmp
 PORTVERSION=	5.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
@@ -42,6 +42,7 @@ MAKE_JOBS_UNSAFE=	yes
 PORTSCOUT=	skipv:5.7.2.1
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_RC_SUBR=	snmpd snmptrapd
 USE_LDCONFIG=	yes
 USES=		cpe libtool perl5 ssl
@@ -287,7 +288,7 @@ post-build:
 	${FIND} ${WRKSRC}/perl -name Makefile | \
 	${XARGS} ${REINPLACE_CMD} -E -e '\
 		s!^(PREFIX) = .*!\1 = ${PREFIX}!; \
-		s!^(INSTALLMAN3DIR|INSTALLSITEMAN3DIR) = .*!\1 = ${PREFIX}/man/man3!; \
+		s!^(INSTALLMAN3DIR|INSTALLSITEMAN3DIR) = .*!\1 = ${PREFIX}/share/man/man3!; \
 		s!^(INSTALLSITELIB|INSTALLSITEARCH) = /usr/local/(.*)!\1 = ${PREFIX}/\2!; \
 		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
 		'
