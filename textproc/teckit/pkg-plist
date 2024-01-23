@@ -13,9 +13,9 @@ lib/libTECkit_Compiler.so
 lib/libTECkit_Compiler.so.0
 lib/libTECkit_Compiler.so.0.0.0
 libdata/pkgconfig/teckit.pc
-man/man1/sfconv.1.gz
-man/man1/teckit_compile.1.gz
-man/man1/txtconv.1.gz
+share/man/man1/sfconv.1.gz
+share/man/man1/teckit_compile.1.gz
+share/man/man1/txtconv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSING.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

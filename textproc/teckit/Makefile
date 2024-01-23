@@ -1,5 +1,6 @@
 PORTNAME=	teckit
 DISTVERSION=	2.5.11
+PORTREVISION=	1
 CATEGORIES=	textproc converters
 MASTER_SITES=	https://github.com/silnrsi/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -14,6 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
