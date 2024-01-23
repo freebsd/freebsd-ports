@@ -70,6 +70,7 @@
 %%DATADIR%%/Definitions/acidlounge.yml
 %%DATADIR%%/Definitions/acrossthetasman.yml
 %%DATADIR%%/Definitions/aftershock.yml
+%%DATADIR%%/Definitions/agsvpt.yml
 %%DATADIR%%/Definitions/aidoruonline.yml
 %%DATADIR%%/Definitions/aither-api.yml
 %%DATADIR%%/Definitions/amigosshare.yml
@@ -109,7 +110,6 @@
 %%DATADIR%%/Definitions/bitporn.yml
 %%DATADIR%%/Definitions/bitru.yml
 %%DATADIR%%/Definitions/bitsearch.yml
-%%DATADIR%%/Definitions/bitsexy.yml
 %%DATADIR%%/Definitions/bitspyder.yml
 %%DATADIR%%/Definitions/bitturk.yml
 %%DATADIR%%/Definitions/bluebird.yml
@@ -221,7 +221,6 @@
 %%DATADIR%%/Definitions/gktorrent.yml
 %%DATADIR%%/Definitions/glodls.yml
 %%DATADIR%%/Definitions/greekdiamond.yml
-%%DATADIR%%/Definitions/greekteam.yml
 %%DATADIR%%/Definitions/gtorrentpro.yml
 %%DATADIR%%/Definitions/haidan.yml
 %%DATADIR%%/Definitions/haitang.yml
@@ -234,7 +233,6 @@
 %%DATADIR%%/Definitions/hdarea.yml
 %%DATADIR%%/Definitions/hdatmos.yml
 %%DATADIR%%/Definitions/hdc.yml
-%%DATADIR%%/Definitions/hdchina.yml
 %%DATADIR%%/Definitions/hdcztorrent.yml
 %%DATADIR%%/Definitions/hddolby.yml
 %%DATADIR%%/Definitions/hdfans.yml
@@ -279,7 +277,7 @@
 %%DATADIR%%/Definitions/jme-reunit3d-api.yml
 %%DATADIR%%/Definitions/joyhd.yml
 %%DATADIR%%/Definitions/jpopsuki.yml
-%%DATADIR%%/Definitions/jptv.yml
+%%DATADIR%%/Definitions/jptv-api.yml
 %%DATADIR%%/Definitions/kamept.yml
 %%DATADIR%%/Definitions/karagarga.yml
 %%DATADIR%%/Definitions/keepfriends.yml
@@ -295,6 +293,7 @@
 %%DATADIR%%/Definitions/kufei.yml
 %%DATADIR%%/Definitions/kufirc.yml
 %%DATADIR%%/Definitions/laidbackmanor.yml
+%%DATADIR%%/Definitions/lastdigitalunderground.yml
 %%DATADIR%%/Definitions/lastfiles.yml
 %%DATADIR%%/Definitions/lat-team-api.yml
 %%DATADIR%%/Definitions/le-cinephile.yml
@@ -324,6 +323,7 @@
 %%DATADIR%%/Definitions/mdan.yml
 %%DATADIR%%/Definitions/megamixtracker.yml
 %%DATADIR%%/Definitions/megapeer.yml
+%%DATADIR%%/Definitions/mendigosdaweb.yml
 %%DATADIR%%/Definitions/mesevilag.yml
 %%DATADIR%%/Definitions/metalguru.yml
 %%DATADIR%%/Definitions/metaltracker.yml
@@ -418,9 +418,11 @@
 %%DATADIR%%/Definitions/rintor.yml
 %%DATADIR%%/Definitions/rintornet.yml
 %%DATADIR%%/Definitions/riperam.yml
+%%DATADIR%%/Definitions/rmhd.yml
 %%DATADIR%%/Definitions/rockbox.yml
 %%DATADIR%%/Definitions/romanianmetaltorrents.yml
 %%DATADIR%%/Definitions/rousi.yml
+%%DATADIR%%/Definitions/rptscene-api.yml
 %%DATADIR%%/Definitions/rudub.yml
 %%DATADIR%%/Definitions/rustorka.yml
 %%DATADIR%%/Definitions/rutor.yml
@@ -486,6 +488,7 @@
 %%DATADIR%%/Definitions/tjupt.yml
 %%DATADIR%%/Definitions/tlfbits.yml
 %%DATADIR%%/Definitions/tmghub.yml
+%%DATADIR%%/Definitions/tocashare.yml
 %%DATADIR%%/Definitions/tokyotosho.yml
 %%DATADIR%%/Definitions/torlock.yml
 %%DATADIR%%/Definitions/tornado.yml
