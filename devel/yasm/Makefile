@@ -1,5 +1,6 @@
 PORTNAME=	yasm
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://www.tortall.net/projects/yasm/releases/
 
@@ -12,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 OPTIONS_DEFINE=	NLS
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-python --disable-python-bindings
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
