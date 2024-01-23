@@ -1,5 +1,6 @@
 PORTNAME=	libffi
 DISTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -15,6 +16,7 @@ TEST_DEPENDS=	runtest:misc/dejagnu
 USES=		compiler:c11 cpe libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPE_VENDOR=	libffi_project
 
 CONFIGURE_ARGS=	--disable-multi-os-directory

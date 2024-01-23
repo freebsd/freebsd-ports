@@ -5,7 +5,7 @@ lib/libffi.so
 lib/libffi.so.8
 lib/libffi.so.8.1.2
 libdata/pkgconfig/libffi.pc
-man/man3/ffi.3.gz
-man/man3/ffi_call.3.gz
-man/man3/ffi_prep_cif.3.gz
-man/man3/ffi_prep_cif_var.3.gz
+share/man/man3/ffi.3.gz
+share/man/man3/ffi_call.3.gz
+share/man/man3/ffi_prep_cif.3.gz
+share/man/man3/ffi_prep_cif_var.3.gz
