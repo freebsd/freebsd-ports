@@ -1,5 +1,6 @@
 PORTNAME=	libgpg-error
 PORTVERSION=	1.47
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -18,6 +19,7 @@ CPE_VENDOR=	gnupg
 
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPP+=			-P
 CONFIGURE_ARGS=		--enable-static=yes \
 			--enable-install-gpg-error-config
