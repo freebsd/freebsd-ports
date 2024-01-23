@@ -1,6 +1,6 @@
 PORTNAME=	mecab
 PORTVERSION=	0.996
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE&dummy=/
 
@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
 
 INSTALL_TARGET=	install-strip
