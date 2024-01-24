@@ -1,6 +1,5 @@
 PORTNAME=	giacxcas
-DISTVERSION=	1.9.0-55
-PORTREVISION=	1
+DISTVERSION=	1.9.0-85
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoa/cocoalib/tgz/:cocoa \
@@ -43,7 +42,7 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libsamplerate.so:audio/libsamplerate
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		blaslapack compiler:c++14-lang desktop-file-utils fortran \
+USES=		autoreconf blaslapack compiler:c++14-lang desktop-file-utils fortran \
 		gettext gl gmake gnome jpeg libtool localbase ncurses perl5 \
 		python readline shebangfix tex xorg
 GNU_CONFIGURE=	yes
@@ -71,7 +70,8 @@ CPPFLAGS+=	-I${COCOALIB-GIAC}/include \
 		-I${FLTKDEV-GIAC} \
 		-Wno-narrowing
 LDFLAGS+=	-L${COCOALIB-GIAC}/lib \
-		-L${FLTKDEV-GIAC}/lib
+		-L${FLTKDEV-GIAC}/lib \
+		-lintl
 
 WRKSRC=		${WRKDIR}/giac-${DISTVERSION:C/-[0-9]*//}
 FLTKDEV-GIAC=	${WRKDIR}/fltk-1.3.0
@@ -147,6 +147,7 @@ pre-build:
 	@cd ${COCOALIB-GIAC} && ${DO_MAKE_BUILD} \
 		CXXFLAGS_SPECIFIC="${CXXFLAGS}" library
 	@cd ${FLTKDEV-GIAC}/src && ${DO_MAKE_BUILD}
+	@cd ${WRKSRC}/src && ${CXX} -o mkjs mkjs.cc
 
 post-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "Exemples [a-z]*" \
