@@ -1,7 +1,6 @@
 PORTNAME=	clipcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.2
-PORTREVISION=	0
+DISTVERSION=	0.16.4
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -80,7 +79,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap-3.2.25 \
 		clap-4.4.18 \
 		clap_builder-4.4.18 \
-		clap_complete-4.4.8 \
+		clap_complete-4.4.9 \
 		clap_derive-4.4.7 \
 		clap_lex-0.2.4 \
 		clap_lex-0.6.0 \
@@ -303,8 +302,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.4 \
 		regex-syntax-0.8.2 \
 		resolve-path-0.1.0 \
 		rust-ini-0.17.0 \
@@ -324,13 +323,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_repr-0.1.18 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.4.0 \
-		serde_with_macros-3.4.0 \
+		serde_with-3.5.0 \
+		serde_with_macros-3.5.0 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
 		shadow-rs-0.26.1 \
 		sharded-slab-0.1.7 \
-		shlex-1.2.0 \
+		shlex-1.3.0 \
 		sigfinn-0.2.0 \
 		signal-hook-registry-1.4.1 \
 		simd-adler32-0.3.7 \
