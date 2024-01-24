@@ -18,8 +18,6 @@ GL_TAGNAME=	${LLVM_COMMIT}
 # Regularly tested targets as part of Android development
 LLVM_TARGETS=	AArch64;ARM;BPF;X86
 
-.include "${.CURDIR}/Makefile.snapshot"
-
 MASTERDIR=	${.CURDIR}/../llvm-cheri
 
 .include "${MASTERDIR}/Makefile"
