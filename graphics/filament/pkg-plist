@@ -157,7 +157,6 @@ include/utils/PrivateImplementation-impl.h
 include/utils/PrivateImplementation.h
 include/utils/SingleInstanceComponentManager.h
 include/utils/Slice.h
-include/utils/SpinLock.h
 include/utils/StructureOfArrays.h
 include/utils/algorithm.h
 include/utils/bitset.h
