@@ -34,7 +34,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		as-raw-xcb-connection-1.0.0 \
 		ascii-1.1.0 \
 		ash-0.32.1 \
-		assets_manager-0.10.2 \
+		assets_manager-0.11.1 \
 		async-channel-1.9.0 \
 		async-trait-0.1.73 \
 		atomic-polyfill-0.1.11 \
@@ -591,6 +591,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		syn-0.15.44 \
 		syn-1.0.109 \
 		syn-2.0.32 \
+		sync_file-0.2.7 \
 		sync_wrapper-0.1.2 \
 		tap-1.0.1 \
 		tar-0.4.40 \
