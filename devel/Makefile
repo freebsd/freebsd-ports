@@ -7606,6 +7606,7 @@
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen-cli
     SUBDIR += rust-cbindgen
+    SUBDIR += rust-mode
     SUBDIR += rustc-demangle
     SUBDIR += rvi
     SUBDIR += rvm

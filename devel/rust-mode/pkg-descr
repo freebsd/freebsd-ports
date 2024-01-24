@@ -1,0 +1,17 @@
+rust-mode makes editing Rust code with Emacs enjoyable. It requires
+Emacs 25 or later, and is included in both Emacs Prelude and Spacemacs
+by default.
+
+This mode provides:
+- Syntax highlighting (for Font Lock Mode)
+- Indentation
+- Integration with Cargo, clippy and rustfmt
+
+This mode does not provide auto completion, or jumping to function /
+trait definitions. See Auto-completion below for tips on how to enable
+this.
+
+If you are missing features in rust-mode, please check out rustic
+before you open a feature request. It depends on rust-mode and
+provides additional features. This allows us to keep rust-mode
+light-weight for users that are happy with basic functionality.
