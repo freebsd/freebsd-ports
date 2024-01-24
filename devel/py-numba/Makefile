@@ -1,6 +1,5 @@
 PORTNAME=	numba
-DISTVERSION=	0.56.2
-PORTREVISION=	6
+DISTVERSION=	0.57.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>1.11,1:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>1.11,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 LIB_DEPENDS=	libtbb.so:devel/onetbb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llvmlite>=0.31.0:devel/py-llvmlite@${PY_FLAVOR}
 
@@ -28,7 +29,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/numba/tests
 
 post-patch:
-	@${SED} -i.bak 's#1\.24#1\.26#g' ${WRKSRC}/setup.py
+	@${SED} -i.bak 's#1\.25#1\.26#g' ${WRKSRC}/setup.py
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
