@@ -1,3 +1,39 @@
+  <vuln vid="8b03d274-56ca-489e-821a-cf32f07643f0">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.422</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.426.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-01-24/">
+	  <h1>Description</h1>
+	  <h5>(Critical) SECURITY-3314 / CVE-2024-23897</h5>
+	  <p>Arbitrary file read vulnerability through the CLI can lead to RCE</p>
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3315 / CVE-2024-23898</h5>
+	  <p>Cross-site WebSocket hijacking vulnerability in the CLI</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-23897</cvename>
+      <cvename>CVE-2024-23898</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-01-24/</url>
+    </references>
+    <dates>
+      <discovery>2024-01-24</discovery>
+      <entry>2024-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9532a361-b84d-11ee-b0d7-84a93843eb75">
     <topic>TinyMCE -- mXSS in multiple plugins</topic>
     <affects>
