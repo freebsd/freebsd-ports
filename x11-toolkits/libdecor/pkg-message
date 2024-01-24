@@ -1,0 +1,10 @@
+[
+{ type: upgrade
+  maximum_version: "0.2.2"
+  message: <<EOD
+Plugins with extra dependencies moved into subpackages:
+- libdecor-cairo
+- libdecor-gtk3
+EOD
+}
+]

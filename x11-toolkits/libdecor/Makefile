@@ -1,5 +1,6 @@
 PORTNAME=	libdecor
 DISTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,17 +23,28 @@ OPTIONS_DEFINE=	CAIRO DBUS GTK3
 OPTIONS_DEFAULT=CAIRO DBUS GTK3
 OPTIONS_SUB=	yes
 
+CAIRO_SUBPACKAGES=	cairo
 CAIRO_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
-CAIRO_USES=		gnome
-CAIRO_USE=		GNOME=cairo,pango
+#USES.cairo=		gnome
+#USE_GNOME.cairo=	cairo pango
+LIB_DEPENDS.cairo=	libgobject-2.0.so:devel/glib20 \
+			libcairo.so:graphics/cairo \
+			libpango-1.0.so:x11-toolkits/pango
+SELF_DEPENDS.cairo=	main
 
 # Unused by the main library
-DBUS_LIB_DEPENDS=	${"${PORT_OPTIONS:NDBUS}":?libdbus-1.so\:devel/dbus:}
+LIB_DEPENDS.cairo+=	libdbus-1.so:devel/dbus
+LIB_DEPENDS.gtk3+=	libdbus-1.so:devel/dbus
 DBUS_MESON_ENABLED=	dbus
 
+GTK3_SUBPACKAGES=	gtk3
 GTK3_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
-GTK3_USES=		gnome
-GTK3_USE=		GNOME=cairo,gtk30
+#USES.gtk3=		gnome
+#USE_GNOME.gtk3=		cairo gtk30
+LIB_DEPENDS.gtk3+=	libglib-2.0.so:devel/glib20 \
+			libcairo.so:graphics/cairo \
+			libgtk-3.so:x11-toolkits/gtk30
+SELF_DEPENDS.gtk3=	main
 GTK3_MESON_ENABLED=	gtk
 
 post-patch-CAIRO-off:
