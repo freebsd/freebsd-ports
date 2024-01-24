@@ -10,7 +10,9 @@ WWW=		https://github.com/martinvonz/jj/README.md
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo ssl
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+USES=		cargo localbase ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinvonz
 GH_PROJECT=	jj
