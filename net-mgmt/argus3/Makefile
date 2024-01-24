@@ -1,6 +1,6 @@
 PORTNAME=	argus
 PORTVERSION=	3.0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -39,8 +39,8 @@ do-install:
 .for i in argus-lsof argus-snmp	argus-vmstat argusbug
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${STAGEDIR}${PREFIX}/bin/$i
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/man5/argus.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/man/man8/argus.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/man5/argus.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/man/man8/argus.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/Archive ${STAGEDIR}${EXAMPLESDIR}/Config \
 		 ${STAGEDIR}${EXAMPLESDIR}/Deployment ${STAGEDIR}${EXAMPLESDIR}/Startup \
 		 ${STAGEDIR}${EXAMPLESDIR}/System

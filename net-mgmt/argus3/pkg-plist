@@ -4,8 +4,8 @@ bin/argus-snmp
 bin/argus-vmstat
 bin/argusbug
 sbin/argus
-man/man5/argus.conf.5.gz
-man/man8/argus.8.gz
+share/man/man5/argus.conf.5.gz
+share/man/man8/argus.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Archive/argusarchive
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Config/argus.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Deployment/sample
