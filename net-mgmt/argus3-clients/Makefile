@@ -1,5 +1,6 @@
 PORTNAME=	argus-clients
 PORTVERSION=	3.0.8.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -54,13 +55,13 @@ do-install:
 .for i in ra.1 rabins.1 racluster.1 raconvert.1 racount.1 radump.1 raevent.1 \
 	rafilteraddr.1 ragraph.1 ragrep.1 rahisto.1 ralabel.1 ranonymize.1 \
 	rapath.1 rapolicy.1 rasort.1 rasplit.1 rastream.1 rastrip.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/share/man/man1
 .endfor
 .for i in racluster.5 radium.conf.5 ralabel.conf.5 ranonymize.5 rarc.5
-	${INSTALL_MAN} ${WRKSRC}/man/man5/$i ${STAGEDIR}/${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/man5/$i ${STAGEDIR}/${PREFIX}/share/man/man5
 .endfor
 .for i in radium.8
-	${INSTALL_MAN} ${WRKSRC}/man/man8/$i ${STAGEDIR}/${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/man8/$i ${STAGEDIR}/${PREFIX}/share/man/man8
 .endfor
 
 do-install-MYSQL-on:
@@ -68,7 +69,7 @@ do-install-MYSQL-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
 .endfor
 .for i in rasql.1 rasqlinsert.1 rasqltimeindex.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/share/man/man1
 .endfor
 
 do-install-DOCS-on:
