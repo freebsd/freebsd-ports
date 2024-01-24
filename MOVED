@@ -2977,3 +2977,4 @@ x11-themes/kde-icons-graphite-rade8||2024-01-25|Has expired: Upstream WWW return
 x11-themes/kde-icons-lime-rade8||2024-01-25|Has expired: Upstream WWW returns Not Found
 x11-themes/kde-icons-lush||2024-01-25|Has expired: Upstream WWW returns Not Found
 audio/sphinxbase||2024-01-25|Has expired: Upstream last release was in 2012
+devel/libasyncplusplus|devel/asyncplusplus|2024-01-27|Remove duplicated port
