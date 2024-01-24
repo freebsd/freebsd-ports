@@ -18,7 +18,7 @@ BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 USES=		cargo gnome gstreamer meson pkgconfig python:build shebangfix ssl
 USE_GITLAB=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER=	bad gl # webrtc
+USE_GSTREAMER=	bad # webrtc
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs
@@ -59,7 +59,7 @@ DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 DAV1D_MESON_ENABLED=	dav1d
 
 GTK4_LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
-GTK4_USE=		GNOME=gtk40
+GTK4_USE=		GNOME=gtk40 GSTREAMER=gl
 GTK4_MESON_ENABLED=	gtk4
 
 PANGO_USE=		GNOME=cairo,pango
