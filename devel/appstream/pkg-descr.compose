@@ -1,7 +1,0 @@
-AppStream is a collaborative effort for making machine-readable software
-metadata easily available to programs that need it. It is part of the
-Freedesktop ecosystem and provides a convenient way to retrieve information
-about available software.
-
-AppStream-compose is a library and a frontend CLI tool to scan filesystem and
-generate AppStream XML.

@@ -2937,8 +2937,6 @@ misc/mc-nox11|misc/mc|2024-01-15|No longer useful (misc/mc does not require Xlib
 www/mongrel2||2024-01-15|Has expired: BROKEN for more than 2 years on all platforms after the EOL of 12
 net/unison232|net/unison240|2024-01-15|Has expired: More recent versions are in the tree consider using net/unison240
 science/libtensorflow1||2024-01-15|Has expired: Broken for more than a year
-devel/appstream-compose||2024-01-15|Became a subpackage of devel/appstream
-devel/appstream-qt|devel/appstream-qt5|2024-01-15|The Qt6 flavor became a subpackage of devel/appstream
 japanese/jed||2024-01-17|Has expired: Upstream site vaporized and returns NXDOMAIN consider using editors/jed
 editors/fte||2024-01-17|Has expired: Upstream last release was in 2001
 chinese/celvis||2024-01-17|Has expired: Last upstream release was in 2001
