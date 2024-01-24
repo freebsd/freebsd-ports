@@ -1,7 +1,7 @@
 bin/bip
 bin/bipmkpw
-man/man1/bip.1.gz
-man/man1/bipmkpw.1.gz
-man/man5/bip.conf.5.gz
+share/man/man1/bip.1.gz
+share/man/man1/bipmkpw.1.gz
+share/man/man5/bip.conf.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bip.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bip.vim
