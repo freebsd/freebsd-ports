@@ -1,6 +1,6 @@
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
@@ -22,6 +22,7 @@ USE_PERL5=	build
 SHEBANG_FILES=	cfg/doxy4win.pl
 USE_XORG=	xi
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
 # avoid renaming of soxt-config and soxt-config.1
 USE_LDCONFIG=	yes
