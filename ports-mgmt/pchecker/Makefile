@@ -1,5 +1,5 @@
 PORTNAME=	pchecker
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://aklv.github.io/distfiles/
 
