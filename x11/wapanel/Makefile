@@ -1,6 +1,6 @@
 PORTNAME=	wapanel
 DISTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,9 @@ OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_DEFAULT=PULSEAUDIO
 OPTIONS_SUB=	yes
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_SUBPACKAGES=	pulseaudio
+LIB_DEPENDS.pulseaudio=	libpulse.so:audio/pulseaudio
+SELF_DEPENDS.pulseaudio=main
 PULSEAUDIO_MESON_TRUE=	volume-control
 
 post-patch:

@@ -1,0 +1,9 @@
+[
+{ type: upgrade
+  maximum_version: "1.1.0_4"
+  message: <<EOD
+Applets with extra dependencies moved into subpackages:
+- wapanel-pulseaudio
+EOD
+}
+]
