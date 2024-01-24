@@ -1,9 +1,9 @@
 bin/qjackctl
-share/man/fr/man1/qjackctl.1.gz
-share/man/man1/qjackctl.1.gz
 share/applications/org.rncbc.qjackctl.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qjackctl.png
 share/icons/hicolor/scalable/apps/org.rncbc.qjackctl.svg
+share/man/fr/man1/qjackctl.1.gz
+share/man/man1/qjackctl.1.gz
 share/metainfo/org.rncbc.qjackctl.metainfo.xml
 %%DATADIR%%/translations/qjackctl_cs.qm
 %%DATADIR%%/translations/qjackctl_de.qm
@@ -16,4 +16,5 @@ share/metainfo/org.rncbc.qjackctl.metainfo.xml
 %%DATADIR%%/translations/qjackctl_pt.qm
 %%DATADIR%%/translations/qjackctl_ru.qm
 %%DATADIR%%/translations/qjackctl_sk.qm
+%%DATADIR%%/translations/qjackctl_tr.qm
 %%DATADIR%%/translations/qjackctl_uk.qm
