@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 USES=		ncurses readline gettext-tools autoreconf localbase
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README \
 		THANKS TODO

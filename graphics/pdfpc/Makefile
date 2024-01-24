@@ -27,8 +27,6 @@ USE_XORG=	x11
 
 USE_GITHUB=	yes
 
-CMAKE_ARGS=	-DMANDIR:STRING="man/"
-
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/pdfpcrc \
 		${STAGEDIR}${PREFIX}/etc/pdfpcrc.sample

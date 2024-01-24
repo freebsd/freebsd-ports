@@ -1,6 +1,6 @@
 PORTNAME=	groff
 PORTVERSION=	1.23.0
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -19,6 +19,7 @@ CPE_VENDOR=	gnu
 USE_CXXSTD=	gnu++98
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk \
 			--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
 			--without-gs \
