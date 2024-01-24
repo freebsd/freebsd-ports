@@ -1659,6 +1659,7 @@
     SUBDIR += nss_wrapper
     SUBDIR += nsync
     SUBDIR += nuitka
+    SUBDIR += ob-rust
     SUBDIR += obby
     SUBDIR += objconv
     SUBDIR += objecthash
