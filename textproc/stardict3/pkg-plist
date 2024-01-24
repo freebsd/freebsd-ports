@@ -9,7 +9,6 @@ lib/stardict/plugins/stardict_wiki_parsedata.so
 lib/stardict/plugins/stardict_wordnet.so
 lib/stardict/plugins/stardict_wordnet_parsedata.so
 lib/stardict/plugins/stardict_xdxf_parsedata.so
-man/man1/stardict.1.gz
 share/applications/stardict.desktop
 share/locale/ar/LC_MESSAGES/stardict.mo
 share/locale/be/LC_MESSAGES/stardict.mo
@@ -37,6 +36,7 @@ share/locale/uk/LC_MESSAGES/stardict.mo
 share/locale/vi/LC_MESSAGES/stardict.mo
 share/locale/zh_CN/LC_MESSAGES/stardict.mo
 share/locale/zh_TW/LC_MESSAGES/stardict.mo
+share/man/man1/stardict.1.gz
 share/pixmaps/stardict.png
 share/stardict/dic/stardict-dict/res/huzheng.png
 share/stardict/dic/stardict-dict/res/huzheng_redhat.png

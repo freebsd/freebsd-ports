@@ -1,5 +1,6 @@
 PORTNAME=	matio
 PORTVERSION=	1.5.26
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -14,6 +15,7 @@ USES=		7z compiler:c11 cpe libtool pathfix
 CPE_VENDOR=	matio_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	SHLIB_VER=11.1.1
