@@ -1,6 +1,7 @@
 PORTNAME=	jujutsu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	se@FreeBSD.org
@@ -17,10 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	martinvonz
 GH_PROJECT=	jj
 
-__ARCH=		${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}
-
 do-install:
-		${INSTALL_PROGRAM} ${WRKDIR}/target/${__ARCH}/release/jj \
+		${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/jj \
 			${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
