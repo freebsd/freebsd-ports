@@ -389,6 +389,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BoolPointerImplicitConversionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BranchCloneCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/CastingThroughVoidCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/ChainedComparisonCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/ComparePointerToMemberVirtualFunctionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/CopyConstructorInitCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/DanglingHandleCheck.h
@@ -676,9 +677,11 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/OperatorsRepresentationCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/QualifiedAutoCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantAccessSpecifiersCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantCastingCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantControlFlowCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantDeclarationCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantFunctionPtrDereferenceCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantInlineSpecifierCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantMemberInitCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantPreprocessorCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantSmartptrGetCheck.h
@@ -4351,6 +4354,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AffineToStandard/AffineToStandard.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithCommon/AttrToLLVMConverter.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithToAMDGPU/ArithToAMDGPU.h
+%%MLIR%%llvm-devel/include/mlir/Conversion/ArithToArmSME/ArithToArmSME.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithToLLVM/ArithToLLVM.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithToSPIRV/ArithToSPIRV.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArmNeon2dToIntr/ArmNeon2dToIntr.h
@@ -5931,7 +5935,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_mve.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_neon.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_neon_sve_bridge.h
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_sme_draft_spec_subject_to_change.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_sme.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_sve.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_vector_types.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/armintr.h
@@ -6067,6 +6071,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/prfchiintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/prfchwintrin.h
 %%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/profile/InstrProfData.inc
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/profile/instr_prof_interface.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ptwriteintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/raointintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/rdpruintrin.h
@@ -6430,6 +6435,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithToAMDGPU.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithToArmSME.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithToLLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithToSPIRV.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArithTransforms.a
@@ -6859,6 +6865,8 @@ llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%git
 %%LLDB%%llvm-devel/lib/liblldb.so
 %%LLDB%%llvm-devel/lib/liblldb.so.%%LLVM_MAJOR%%git
 %%LLDB%%llvm-devel/lib/liblldb.so.%%LLVM_RELEASE%%git
+%%MLIR%%llvm-devel/lib/libmlir_arm_runner_utils.so
+%%MLIR%%llvm-devel/lib/libmlir_arm_runner_utils.so.%%LLVM_MAJOR%%git
 %%MLIR%%llvm-devel/lib/libmlir_arm_sme_abi_stubs.so
 %%MLIR%%llvm-devel/lib/libmlir_arm_sme_abi_stubs.so.%%LLVM_MAJOR%%git
 %%MLIR%%llvm-devel/lib/libmlir_async_runtime.so
