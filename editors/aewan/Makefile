@@ -1,6 +1,6 @@
 PORTNAME=	aewan
 PORTVERSION=	1.0.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,12 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake ncurses
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/aecat bin/aewan bin/aemakeflic \
-		man/man1/aecat.1.gz \
-		man/man1/aewan.1.gz \
-		man/man1/aemakeflic.1.gz \
-		man/man5/aewan.5.gz
+		share/man/man1/aecat.1.gz \
+		share/man/man1/aewan.1.gz \
+		share/man/man1/aemakeflic.1.gz \
+		share/man/man5/aewan.5.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
