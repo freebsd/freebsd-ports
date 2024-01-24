@@ -1,6 +1,6 @@
 PORTNAME=	quake2max
 PORTVERSION=	0.45
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	Quake2maX_${PORTVERSION}-src_unix
@@ -9,6 +9,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OpenGL-only Quake II engine modification
+WWW=		https://icculus.org/~ravage/quake2/ \
+		http://web.archive.org/web/20060104020511/http://www.planetquake.com/quake2max/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gnu.txt

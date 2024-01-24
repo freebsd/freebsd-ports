@@ -1,0 +1,157 @@
+--- client/cl_parse.c.orig	2002-10-10 09:40:17 UTC
++++ client/cl_parse.c
+@@ -474,6 +474,9 @@ void CL_LoadClientinfo (clientinfo_t *ci, char *s)
+ 	strncpy(ci->cinfo, s, sizeof(ci->cinfo));
+ 	ci->cinfo[sizeof(ci->cinfo)-1] = 0;
+ 
++	// sku - avoid potential buffer overflow vulnerability
++	s = ci->cinfo;
++
+ 	// isolate the player's name
+ 	strncpy(ci->name, s, sizeof(ci->name));
+ 	ci->name[sizeof(ci->name)-1] = 0;
+@@ -602,6 +605,7 @@ void CL_ParseConfigString (void)
+ 	int		i;
+ 	char	*s;
+ 	char	olds[MAX_QPATH];
++	int		length;
+ 
+ 	i = MSG_ReadShort (&net_message);
+ 	if (i < 0 || i >= MAX_CONFIGSTRINGS)
+@@ -610,6 +614,12 @@ void CL_ParseConfigString (void)
+ 
+ 	strncpy (olds, cl.configstrings[i], sizeof(olds));
+ 	olds[sizeof(olds) - 1] = 0;
++
++	// sku - avoid potential buffer overflow vulnerability
++	length = strlen (s);
++	if (length > sizeof cl.configstrings - sizeof cl.configstrings[0] * i - 1) {
++		Com_Error (ERR_DROP, "CL_ParseConfigString: oversize configstring");
++	}
+ 
+ 	strcpy (cl.configstrings[i], s);
+ 
+--- qcommon/cmd.c.orig	2002-12-12 08:44:37 UTC
++++ qcommon/cmd.c
+@@ -217,6 +217,10 @@ void Cbuf_Execute (void)
+ 		}
+ 			
+ 				
++		// sku - remove potential buffer overflow vulnerability
++		if (i > sizeof line - 1) {
++			i = sizeof line - 1;
++		}
+ 		memcpy (line, text, i);
+ 		line[i] = 0;
+ 		
+@@ -679,7 +683,8 @@ void Cmd_TokenizeString (char *text, qboolean macroExp
+ 		{
+ 			int		l;
+ 
+-			strcpy (cmd_args, text);
++			// sku - remove potential buffer overflow vulnerability
++			strncpy (cmd_args, text, sizeof cmd_args);
+ 
+ 			// strip off any trailing whitespace
+ 			l = strlen(cmd_args) - 1;
+--- qcommon/common.c.orig	2002-12-13 11:33:44 UTC
++++ qcommon/common.c
+@@ -776,7 +776,9 @@ char *MSG_ReadString (sizebuf_t *msg_read)
+ 	l = 0;
+ 	do
+ 	{
+-		c = MSG_ReadChar (msg_read);
++		// sku - replaced MSG_ReadChar with MSG_ReadByte to avoid
++		// potential vulnerability
++		c = MSG_ReadByte (msg_read);
+ 		if (c == -1 || c == 0)
+ 			break;
+ 		string[l] = c;
+@@ -796,7 +798,9 @@ char *MSG_ReadStringLine (sizebuf_t *msg_read)
+ 	l = 0;
+ 	do
+ 	{
+-		c = MSG_ReadChar (msg_read);
++		// sku - replaced MSG_ReadChar with MSG_ReadByte to avoid
++		// potential vulnerability
++		c = MSG_ReadByte (msg_read);
+ 		if (c == -1 || c == 0 || c == '\n')
+ 			break;
+ 		string[l] = c;
+--- server/sv_main.c.orig	2003-05-07 07:19:06 UTC
++++ server/sv_main.c
+@@ -314,8 +314,9 @@ void SVC_DirectConnect (void)
+ 
+ 	challenge = atoi(Cmd_Argv(3));
+ 
+-	strncpy (userinfo, Cmd_Argv(4), sizeof(userinfo)-1);
+-	userinfo[sizeof(userinfo) - 1] = 0;
++	// sku - reserve 32 bytes for the IP address
++	strncpy (userinfo, Cmd_Argv(4), sizeof userinfo - 32);
++	userinfo[sizeof userinfo - 32] = 0;
+ 
+ 	// force the IP key/value pair so the game can filter based on ip
+ 	Info_SetValueForKey (userinfo, "ip", NET_AdrToString(net_from));
+@@ -363,6 +364,11 @@ void SVC_DirectConnect (void)
+ 			&& ( cl->netchan.qport == qport 
+ 			|| adr.port == cl->netchan.remote_address.port ) )
+ 		{
++			// sku - avoid reusing slot of the client already connected
++			if (cl->state != cs_zombie) {
++				Netchan_OutOfBandPrint (NS_SERVER, adr, "print\nConnected client from this IP is already present.\n");
++				return;
++			}
+ 			if (!NET_IsLocalAddress (adr) && (svs.realtime - cl->lastconnect) < ((int)sv_reconnect_limit->value * 1000))
+ 			{
+ 				Com_DPrintf ("%s:reconnect rejected : too soon\n", NET_AdrToString (adr));
+--- server/sv_user.c.orig	2002-04-13 09:00:30 UTC
++++ server/sv_user.c
+@@ -142,6 +142,9 @@ void SV_Configstrings_f (void)
+ 	}
+ 	
+ 	start = atoi(Cmd_Argv(2));
++	if (start < 0) {
++		start = 0;	// sku - catch negative offsets
++	}
+ 
+ 	// write a packet full of data
+ 
+@@ -150,9 +153,18 @@ void SV_Configstrings_f (void)
+ 	{
+ 		if (sv.configstrings[start][0])
+ 		{
++			int length;
++
++			// sku - write configstrings that exceed MAX_QPATH in proper-sized chunks
++			length = strlen (sv.configstrings[start]);
++			if (length > MAX_QPATH) {
++				length = MAX_QPATH;
++			}
++
+ 			MSG_WriteByte (&sv_client->netchan.message, svc_configstring);
+ 			MSG_WriteShort (&sv_client->netchan.message, start);
+-			MSG_WriteString (&sv_client->netchan.message, sv.configstrings[start]);
++			SZ_Write (&sv_client->netchan.message, sv.configstrings[start], length);
++			MSG_WriteByte (&sv_client->netchan.message, 0);
+ 		}
+ 		start++;
+ 	}
+@@ -199,6 +211,9 @@ void SV_Baselines_f (void)
+ 	}
+ 	
+ 	start = atoi(Cmd_Argv(2));
++	if (start < 0) {
++		start = 0;
++	}
+ 
+ 	memset (&nullstate, 0, sizeof(nullstate));
+ 
+@@ -398,7 +413,7 @@ Dumps the serverinfo info string
+ */
+ void SV_ShowServerinfo_f (void)
+ {
+-	Info_Print (Cvar_Serverinfo());
++//	Info_Print (Cvar_Serverinfo());
+ }
+ 
+ 

@@ -1,0 +1,32 @@
+--- ref_gl/gl_rmain.c.orig	2006-01-12 15:58:43 UTC
++++ ref_gl/gl_rmain.c
+@@ -3683,6 +3683,8 @@ int R_Init( void *hinstance, void *hWnd )
+ 	err = qglGetError();
+ 	if ( err != GL_NO_ERROR )
+ 		ri.Con_Printf (PRINT_ALL, "glGetError() = 0x%x\n", err);
++
++	return 0;
+ }
+ 
+ /*
+--- unix/net_udp.c.orig	2002-12-13 11:59:20 UTC
++++ unix/net_udp.c
+@@ -125,6 +125,7 @@ qboolean	NET_CompareBaseAdr (netadr_t a, netadr_t b)
+ 			return true;
+ 		return false;
+ 	}
++	return false;
+ }
+ 
+ char	*NET_AdrToString (netadr_t a)
+--- unix/qsh_unix.c.orig	2006-01-11 13:05:49 UTC
++++ unix/qsh_unix.c
+@@ -150,7 +150,7 @@ void Sys_Mkdir (char *path)
+     mkdir (path, 0777);
+ }
+ 
+-char *strlwr (char *s)
++void strlwr (char *s)
+ {
+ 	while (*s) {
+ 		*s = tolower(*s);
