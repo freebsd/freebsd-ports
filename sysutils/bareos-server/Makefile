@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
 DISTVERSION=	23.0.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -166,16 +166,8 @@ CMAKE_ARGS+=	-Dbuild-dird=ON \
 # Server default database
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
-MYSQL_VARS=	DBTYPE=mysql
-MYSQL_SUB_LIST=	REQ_MYSQL=mysql REQ_PGSQL=""
 PGSQL_CMAKE_ON=		-Dpostgresql=ON
 PGSQL_USES=	pgsql
-PGSQL_VARS=	DBTYPE=postgresql
-PGSQL_SUB_LIST=		REQ_MYSQL="" REQ_PGSQL=postgresql
-SQLITE3_VARS=	DBTYPE=sqlite3
-
-PLIST_SUB+=		DBTYPE=${DBTYPE}
-
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
@@ -226,11 +218,5 @@ post-install:
 .else
 .include "${MASTERDIR}/Makefile.common"
 .endif # -client and -server are defined
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-USES+=	llvm:max=15
-.endif
 
 .include <bsd.port.mk>
