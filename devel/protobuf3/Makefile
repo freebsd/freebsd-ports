@@ -13,8 +13,6 @@ WWW=		https://protobuf.dev/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=	fails to compile: no atomic ops available
-
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
 USES=		compiler:c++11-lang cpe libtool localbase pathfix pkgconfig

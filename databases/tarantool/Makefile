@@ -10,7 +10,7 @@ WWW=		https://tarantool.io/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		armv6 i386 powerpc64 sparc64
+NOT_FOR_ARCHS=		armv6 i386 powerpc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 BUILD_DEPENDS=	gsed:textproc/gsed \
