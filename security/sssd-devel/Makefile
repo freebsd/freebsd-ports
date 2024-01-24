@@ -1,5 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
 
@@ -100,8 +101,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-gpo-cache-path=/var/db/sss/gpo_cache  \
 		--without-semanage \
 		--with-app-libs=${LOCALBASE}/lib/sssd/modules \
-		--with-sudo \
-		--with-sudo-lib-path=${LOCALBASE}/lib \
 		--without-autofs \
 		--with-files-provider \
 		--with-passkey \
