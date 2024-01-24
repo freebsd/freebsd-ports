@@ -1,5 +1,4 @@
 bin/grisbi
-man/man1/grisbi.1.gz
 share/applications/grisbi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/C/contents_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/C/grisbi-manuel.html
@@ -543,6 +542,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-grisbi.svg
 %%NLS%%share/locale/ro/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grisbi.mo
+share/man/man1/grisbi.1.gz
 share/metainfo/grisbi.metainfo.xml
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
