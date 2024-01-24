@@ -1,6 +1,6 @@
 PORTNAME=	libmodbus
 PORTVERSION=	3.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	https://libmodbus.org/releases/
 
@@ -15,6 +15,7 @@ USES=		cpe gmake libtool pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
