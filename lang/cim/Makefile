@@ -1,6 +1,6 @@
 PORTNAME=	cim
 PORTVERSION=	3.37
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://simula67.at.ifi.uio.no/Cim/
 
@@ -14,6 +14,7 @@ USES=		libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check-TESTS
