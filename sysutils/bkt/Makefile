@@ -1,6 +1,5 @@
 PORTNAME=	bkt
-PORTVERSION=	0.7.1
-PORTREVISION=	4
+DISTVERSION=	0.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,9 +13,23 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dimo414
 
-PLIST_FILES=	bin/bkt
+OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
+
+MANPAGES_DESC=		Build and install auto-generated manpages
+MANPAGES_BUILD_DEPENDS=	help2man:misc/help2man
+
+post-build-MANPAGES-on:
+	help2man -s 1 -Nn "${COMMENT}" \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME} \
+		-o ${WRKSRC}/${PORTNAME}.1
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bkt
+
+post-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
