@@ -4,7 +4,7 @@ bin/siege.config
 bin/siege2csv.pl
 %%ETCDIR%%/siegerc
 %%ETCDIR%%/urls.txt
-man/man1/bombardment.1.gz
-man/man1/siege.1.gz
-man/man1/siege.config.1.gz
-man/man1/siege2csv.1.gz
+share/man/man1/bombardment.1.gz
+share/man/man1/siege.1.gz
+share/man/man1/siege.config.1.gz
+share/man/man1/siege2csv.1.gz
