@@ -11,6 +11,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
+FLAVORS=	default gstreamer
+default_CONFLICTS_INSTALL=	${PORTNAME}-gstreamer
+gstreamer_PKGNAMESUFFIX=	-gstreamer
+gstreamer_CONFLICTS_INSTALL=	${PORTNAME}
+gstreamer_OPTIONS_SLAVE=	GSTREAMER
+
 USES=		gl meson pkgconfig
 USE_GITLAB=	yes
 USE_GL=		egl gbm glesv2
@@ -23,6 +29,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 OPTIONS_DEFINE=	GSTREAMER PNG
 OPTIONS_DEFAULT=PNG
+OPTIONS_SLAVE=	${${FLAVOR}_OPTIONS_SLAVE}
 
 GSTREAMER_USES=		gnome gstreamer
 GSTREAMER_USE=		GNOME=glib20
