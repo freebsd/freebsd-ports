@@ -1,46 +1,5 @@
 --- scripts/configure.orig	2023-08-30 06:00:02 UTC
 +++ scripts/configure
-@@ -6589,12 +6589,12 @@ if test $usingTcl ; then
- if test $usingTcl ; then
-   case $target in
-     *-sunos4*|*-*-netbsd*|NetBSD-*|FreeBSD-*|OpenBSD-*)
--      TCL_LIB_NAME="tcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
--      TK_LIB_NAME="tk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}"
-+      TCL_LIB_NAME="tcl86"
-+      TK_LIB_NAME="tk86"
-       ;;
-     *)
--      TCL_LIB_NAME="tcl${TCL_MAJOR_VERSION}.${TCL_MINOR_VERSION}"
--      TK_LIB_NAME="tk${TK_MAJOR_VERSION}.${TK_MINOR_VERSION}"
-+      TCL_LIB_NAME="tcl86"
-+      TK_LIB_NAME="tk86"
-       ;;
-   esac
- 
-@@ -6620,9 +6620,9 @@ $as_echo_n "checking for wish executable... " >&6; }
-       for wishexe in \
-         wish-X11 \
-         wish \
--        wish${TK_VERSION} \
-+        wish8.6 \
-         wish.exe \
--        wish${TK_VERSION}.exe
-+        wish8.6.exe
-       do
-         if test -r "$dir/$wishexe" ; then
-           WISH_EXE=$dir/$wishexe
-@@ -6656,9 +6656,9 @@ $as_echo_n "checking for tclsh executable... " >&6; }
-   do
-     for tclshexe in \
-       tclsh \
--      tclsh${TK_VERSION} \
-+      tclsh8.6 \
-       tclsh.exe \
--      tclsh${TK_VERSION}.exe
-+      tclsh8.6.exe
-     do
-       if test -r "$dir/$tclshexe" ; then
-         TCLSH_EXE=$dir/$tclshexe
 @@ -8182,7 +8182,7 @@ fi
      esac
    fi
