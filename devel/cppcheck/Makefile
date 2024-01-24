@@ -12,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
-BROKEN_FreeBSD_14=	fails to compile: static_assert failed due to requirement
-
 USES=		compiler:c++11-lib cmake shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	danmar
