@@ -18,4 +18,3 @@ GH_TAGNAME=	80f9298
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
- 
