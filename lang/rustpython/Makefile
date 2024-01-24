@@ -9,6 +9,8 @@ WWW=		https://rustpython.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to compile, see https://github.com/rusqlite/rusqlite/issues/1440
+
 USES=		cargo
 
 USE_GITHUB=	yes
