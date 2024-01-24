@@ -1,5 +1,5 @@
 bin/xlog
-man/man1/xlog.1.gz
+share/man/man1/xlog.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
