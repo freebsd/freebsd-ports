@@ -1,5 +1,6 @@
 PORTNAME=	universal-ctags
 PORTVERSION=	p6.1.20240121.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -14,6 +15,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	ctags
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=u
 
 TEST_TARGET=	check

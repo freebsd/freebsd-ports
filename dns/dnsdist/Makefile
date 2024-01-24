@@ -1,5 +1,6 @@
 PORTNAME=	dnsdist
 DISTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
@@ -28,6 +29,7 @@ CPE_VENDOR=	powerdns
 USE_RC_SUBR=	dnsdist
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--enable-dns-over-https \
 		--enable-dns-over-tls \
