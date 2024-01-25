@@ -1,0 +1,4 @@
+sbin/bsdlabel
+sbin/disklabel
+share/man/man8/bsdlabel.8.gz
+share/man/man8/disklabel.8.gz

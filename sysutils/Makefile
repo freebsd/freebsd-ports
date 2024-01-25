@@ -1,5 +1,6 @@
     COMMENT = System utilities
 
+    SUBDIR += FreeBSD-bsdlabel
     SUBDIR += 3dm
     SUBDIR += 3mux
     SUBDIR += 44bsd-more
