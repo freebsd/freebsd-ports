@@ -11,6 +11,8 @@ WWW=		https://github.com/LLNL/lbann
 
 LICENSE=	APACHE20
 
+BROKEN=		many C++ errors, broken until the upstream would help, see https://github.com/LLNL/lbann/issues/2407
+
 BUILD_DEPENDS=	cereal>0:devel/cereal \
 		dihydrogen>0:math/dihydrogen \
 		zstr>0:archivers/zstr
