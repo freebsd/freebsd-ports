@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	18.20.2
+PORTVERSION=	18.21.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -30,7 +30,8 @@ USE_RC_SUBR=	asterisk
 
 SHEBANG_FILES=	agi/agi-test.agi \
 		agi/jukebox.agi \
-		contrib/scripts/astversion
+		contrib/scripts/astversion \
+		contrib/scripts/ast_coredumper
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
