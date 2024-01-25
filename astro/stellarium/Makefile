@@ -1,5 +1,5 @@
 PORTNAME=	stellarium
-PORTVERSION=	23.3
+PORTVERSION=	23.4
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -10,6 +10,9 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 WWW=		https://stellarium.org/
 
 LICENSE=	GPLv2+
+
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
+		libnlopt.so:math/nlopt@minimal
 
 USES=		cmake compiler:c++11-lang desktop-file-utils \
 		perl5 qt:5 shared-mime-info tar:xz
