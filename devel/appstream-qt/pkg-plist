@@ -26,5 +26,5 @@ include/AppStreamQt%%QT_VER_SUFFIX%%/video.h
 lib/cmake/AppStreamQt%%QT_VER_SUFFIX%%/AppStreamQt%%QT_VER_SUFFIX%%Config.cmake
 lib/cmake/AppStreamQt%%QT_VER_SUFFIX%%/AppStreamQt%%QT_VER_SUFFIX%%ConfigVersion.cmake
 lib/libAppStreamQt%%QT_VER_SUFFIX%%.so
-lib/libAppStreamQt%%QT_VER_SUFFIX%%.so.1.0.0
+lib/libAppStreamQt%%QT_VER_SUFFIX%%.so.1.0.1
 lib/libAppStreamQt%%QT_VER_SUFFIX%%.so.3

@@ -2,8 +2,8 @@
 # being overriden by devel/appstream-qt slave port
 
 PORTNAME?=	AppStream
-DISTVERSION=	1.0.0
-PORTREVISION?=	1
+DISTVERSION=	1.0.1
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
