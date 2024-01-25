@@ -2971,3 +2971,4 @@ audio/sphinx||2024-01-25|Has expired: Upstream advises to use audio/pocketsphinx
 games/linux-quake3-demo||2024-01-25|Has expired: Cannot be fetched from GENTOO sites
 games/linux-ut2003-demo||2024-01-25|Has expired: Cannot be fetched anymore from GENTOO Master Sites
 x11-themes/kde-icons-nuvola||2024-01-25|Has expired: Unfetchable and upstream WWW returns Not Found
+x11-themes/kde-icons-gartoon-blue-svg||2024-01-25|Has expired
