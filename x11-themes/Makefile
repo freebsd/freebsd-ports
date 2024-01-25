@@ -92,7 +92,6 @@
     SUBDIR += icons-tango-extras
     SUBDIR += irssi-themes
     SUBDIR += kde-icons-black-and-white
-    SUBDIR += kde-icons-gartoon-svg
     SUBDIR += kde-icons-graphite-rade8
     SUBDIR += kde-icons-lime-rade8
     SUBDIR += kde-icons-lush

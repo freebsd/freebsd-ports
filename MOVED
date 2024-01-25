@@ -2972,3 +2972,4 @@ games/linux-quake3-demo||2024-01-25|Has expired: Cannot be fetched from GENTOO s
 games/linux-ut2003-demo||2024-01-25|Has expired: Cannot be fetched anymore from GENTOO Master Sites
 x11-themes/kde-icons-nuvola||2024-01-25|Has expired: Unfetchable and upstream WWW returns Not Found
 x11-themes/kde-icons-gartoon-blue-svg||2024-01-25|Has expired
+x11-themes/kde-icons-gartoon-svg||2024-01-25|Has expired: Upstream WWW returns NOT FOUND
