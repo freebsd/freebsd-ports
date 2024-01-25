@@ -1,3 +1,3 @@
-TIMESTAMP = 1702145950
-SHA256 (containerd-containerd-v1.7.11_GH0.tar.gz) = 1f3ca2a15bedcaada4a7c3cde6126fb553226944b599f98bd71d616dfd02861a
-SIZE (containerd-containerd-v1.7.11_GH0.tar.gz) = 10037690
+TIMESTAMP = 1706186575
+SHA256 (containerd-containerd-v1.7.12_GH0.tar.gz) = bf523aa866d1152403807708b1239ee9b992c1afd526df0a83e744ce67a1f98e
+SIZE (containerd-containerd-v1.7.12_GH0.tar.gz) = 10042712
