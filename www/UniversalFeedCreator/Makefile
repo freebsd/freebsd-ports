@@ -1,6 +1,5 @@
 PORTNAME=	UniversalFeedCreator
-PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTVERSION=	1.8.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -25,7 +24,7 @@ DOTFILES=	.editorconfig .gitattributes .gitignore .travis.yml
 do-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}
 
-	# install everything +x, because it's easier
+# install everything +x, because it's easier
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR})
 
 .for _dot in ${DOTFILES}
