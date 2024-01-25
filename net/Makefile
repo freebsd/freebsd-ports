@@ -210,7 +210,6 @@
     SUBDIR += gorss
     SUBDIR += gost
     SUBDIR += gotthard
-    SUBDIR += gq
     SUBDIR += graphpath
     SUBDIR += grilo
     SUBDIR += grilo-plugins
