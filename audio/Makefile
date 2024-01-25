@@ -763,7 +763,6 @@
     SUBDIR += speex
     SUBDIR += speexdsp
     SUBDIR += spek
-    SUBDIR += sphinx
     SUBDIR += sphinxbase
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
