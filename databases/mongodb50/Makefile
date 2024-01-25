@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.23
+DISTVERSION=	5.0.24
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -37,9 +37,11 @@ USE_RC_SUBR=	mongod
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
+# --modules= disables "enterprise" module from src/mongo/db/modules/
 MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
+		--modules= \
 		--runtime-hardening=on \
 		--use-system-libunwind \
 		--use-system-pcre \
