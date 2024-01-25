@@ -1,5 +1,5 @@
 PORTNAME=	cln
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
