@@ -1,8 +1,7 @@
 PORTNAME=	openmpi
-PORTVERSION=	4.1.5
-PORTREVISION=	4
+PORTVERSION=	4.1.6
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
+MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,21 +20,22 @@ LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 USES=		fortran gmake libtool:keepla localbase perl5 \
 		pkgconfig shebangfix tar:bzip2
 
-HAS_CONFIGURE=	yes
+CONFLICTS_INSTALL=	openmpi-5*
+
 USE_PERL5=	build
 
 MPIBASE?=	mpi
-MPIDIR?=	${MPIBASE}/${PKGBASE}
+MPIDIR?=	${MPIBASE}/${PORTNAME}
 
-PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
 # Workaround for https://github.com/open-mpi/ompi/issues/7516
 CONFIGURE_ENV+=		DISABLE_gds_ds12=1 DISABLE_gds_ds21=1
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
-			--mandir=${PREFIX}/${MPIDIR}/share/man \
-			--program-prefix= \
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/${MPIDIR}/share
+CONFIGURE_ARGS+=	--program-prefix= \
 			--with-hwloc=external \
 			--with-libltdl \
 			--without-ofi \
@@ -51,6 +51,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib
 
 MANDIRS=	${PREFIX}/${MPIDIR}/share/man
+
+TEST_TARGET=	check
 
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
@@ -116,8 +118,8 @@ PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE="@comment "
 PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE=""
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${LOCALBASE}/libdata/pkgconfig|g' \
+pre-configure:
+	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${LOCALBASE}/libdata/pkgconfig|g' \
 		${WRKSRC}/ompi/tools/wrappers/Makefile.am \
 		${WRKSRC}/ompi/tools/wrappers/Makefile.in \
 		${WRKSRC}/opal/tools/wrappers/Makefile.am \
@@ -126,7 +128,7 @@ post-patch:
 		${WRKSRC}/orte/tools/wrappers/Makefile.in \
 		${WRKSRC}/opal/mca/pmix/pmix3x/pmix/Makefile.am \
 		${WRKSRC}/opal/mca/pmix/pmix3x/pmix/Makefile.in
-	@${REINPLACE_CMD} 's|define MCA_hwloc_external_.*header "|&${LOCALBASE}/include/|' \
+	${REINPLACE_CMD} 's|define MCA_hwloc_external_.*header "|&${LOCALBASE}/include/|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
