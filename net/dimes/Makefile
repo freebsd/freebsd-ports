@@ -9,6 +9,9 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Distributed research project for measurement topology of the Internet
 WWW=		http://netdimes.org
 
+DEPRECATED=	The project vaporized in early 2005 and is no longer active
+EXPIRATION_DATE=	2024-02-29
+
 NO_PACKAGE=	There is the string in properties.xml which system-depends
 
 WRKSRC=		${WRKDIR}/DIMES
