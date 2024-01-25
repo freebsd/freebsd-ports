@@ -2968,3 +2968,4 @@ net/gq||2024-01-25|Has expired: Upstream last release was in 2008
 databases/isql-viewer||2024-01-25|Has expired: Requires old mysql versions and last upstream release was in 2004
 audio/sphinx3||2024-01-25|Has expired: Upstream advises on using audio/pocketsphinx
 audio/sphinx||2024-01-25|Has expired: Upstream advises to use audio/pocketsphinx
+games/linux-quake3-demo||2024-01-25|Has expired: Cannot be fetched from GENTOO sites
