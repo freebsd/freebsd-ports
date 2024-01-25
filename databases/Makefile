@@ -101,7 +101,6 @@
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
     SUBDIR += iplike
-    SUBDIR += isql-viewer
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g
     SUBDIR += jetbrains-datagrip
