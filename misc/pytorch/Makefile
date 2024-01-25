@@ -12,9 +12,7 @@ WWW=		https://pytorch.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#BROKEN_aarch64=	configure fails: CMake Error at third_party/XNNPACK/CMakeLists.txt:94 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD
-#BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
-#BROKEN_FreeBSD_14=	fails to compile calling a private constructor of class
+BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		${LOCALBASE}/include/fxdiv.h:devel/fxdiv
