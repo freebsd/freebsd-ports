@@ -585,7 +585,6 @@
     SUBDIR += linux-steam-utils
     SUBDIR += linux-unrealgold
     SUBDIR += linux-ut
-    SUBDIR += linux-ut2003-demo
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += linwarrior
     SUBDIR += lizzie
