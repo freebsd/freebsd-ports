@@ -2,7 +2,7 @@
 # https://aur.archlinux.org/cgit/aur.git/?h=vivaldi-widevine
 
 PORTNAME=	widevine-cdm
-PORTVERSION=	4.10.2662.3
+PORTVERSION=	4.10.2710.0
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/
 PKGNAMEPREFIX=	linux-
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 PLIST_FILES=	lib/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so \
 		lib/WidevineCdm/manifest.json
 
-CHROME_VERSION=	116.0.5845.179-1
+CHROME_VERSION=	121.0.6167.85-1
 
 post-extract:
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.xz ${EXTRACT_AFTER_ARGS}
