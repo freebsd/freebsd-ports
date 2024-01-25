@@ -99,7 +99,6 @@
     SUBDIR += kde-icons-lush
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-nuovext2
-    SUBDIR += kde-icons-nuvola
     SUBDIR += kf5-breeze-icons
     SUBDIR += kf5-kemoticons
     SUBDIR += kf5-kiconthemes
