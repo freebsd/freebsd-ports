@@ -1,6 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
+DISTVERSION=	0.18.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,60 +16,59 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tarka
 
 CARGO_CRATES=	aho-corasick-1.1.2 \
-		anstream-0.6.5 \
+		anstream-0.6.11 \
 		anstyle-1.0.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.1 \
-		anyhow-1.0.75 \
+		anstyle-wincon-3.0.2 \
+		anyhow-1.0.79 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.1 \
+		bitflags-2.4.2 \
 		blocking-threadpool-1.0.1 \
-		bstr-1.8.0 \
+		bstr-1.9.0 \
 		cfg-if-1.0.0 \
-		clap-4.4.11 \
-		clap_builder-4.4.11 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
-		console-0.15.7 \
-		crossbeam-channel-0.5.9 \
-		crossbeam-deque-0.8.3 \
-		crossbeam-epoch-0.9.15 \
-		crossbeam-utils-0.8.17 \
-		deranged-0.3.9 \
+		console-0.15.8 \
+		crossbeam-channel-0.5.11 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.19 \
+		deranged-0.3.11 \
 		encode_unicode-0.3.6 \
 		errno-0.3.8 \
 		fastrand-2.0.1 \
 		fslock-0.2.1 \
-		getrandom-0.2.11 \
+		getrandom-0.2.12 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
-		ignore-0.4.21 \
+		ignore-0.4.22 \
 		indicatif-0.17.7 \
 		instant-0.1.12 \
-		itoa-1.0.9 \
+		itoa-1.0.10 \
 		lazy_static-0.2.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.151 \
+		libc-0.2.152 \
 		libm-0.2.8 \
-		linux-raw-sys-0.4.12 \
-		linux-raw-sys-0.6.2 \
+		linux-raw-sys-0.4.13 \
+		linux-raw-sys-0.6.4 \
 		log-0.4.20 \
-		memchr-2.6.4 \
-		memoffset-0.9.0 \
+		memchr-2.7.1 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
-		portable-atomic-1.5.1 \
+		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.70 \
-		quote-1.0.33 \
+		proc-macro2-1.0.77 \
+		quote-1.0.35 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -78,63 +77,44 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		redox_syscall-0.4.1 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
-		rustix-0.38.28 \
+		rustix-0.38.30 \
 		same-file-1.0.6 \
-		scopeguard-1.2.0 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
+		serde-1.0.195 \
+		serde_derive-1.0.195 \
 		simplelog-0.12.1 \
 		strsim-0.10.0 \
-		syn-2.0.41 \
-		tempfile-3.8.1 \
+		syn-2.0.48 \
+		tempfile-3.9.0 \
 		termcolor-1.1.3 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
-		time-0.3.30 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		time-0.3.31 \
 		time-core-0.1.2 \
-		time-macros-0.2.15 \
+		time-macros-0.2.16 \
 		unbytify-0.2.0 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.11 \
 		utf8parse-0.2.1 \
-		uuid-1.6.1 \
+		uuid-1.7.0 \
 		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.45.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.42.2 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.0 \
-		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.0 \
-		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.0 \
-		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.0 \
-		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.0 \
-		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.0 \
-		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.0 \
-		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		xattr-1.1.3
+		xattr-1.3.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
