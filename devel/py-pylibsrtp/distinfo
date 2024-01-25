@@ -1,3 +1,3 @@
-TIMESTAMP = 1701695971
-SHA256 (pylibsrtp-0.9.1.tar.gz) = 3a51d7a18aa2338e10f54c1bd03e94fd760fabb69c2f5bf1dc590305b7ec2402
-SIZE (pylibsrtp-0.9.1.tar.gz) = 11717
+TIMESTAMP = 1706204341
+SHA256 (pylibsrtp-0.10.0.tar.gz) = d8001912d7f51bd05b4ea3551747930631777fd37892cf3bfe0e541a742e699f
+SIZE (pylibsrtp-0.10.0.tar.gz) = 10557
