@@ -2966,3 +2966,4 @@ databases/qt5-sqldrivers-ibase||2024-01-21|Has expired: No fix with the oldest F
 multimedia/libva-glx|multimedia/libva|2024-01-21|Merged into main port
 net/gq||2024-01-25|Has expired: Upstream last release was in 2008
 databases/isql-viewer||2024-01-25|Has expired: Requires old mysql versions and last upstream release was in 2004
+audio/sphinx3||2024-01-25|Has expired: Upstream advises on using audio/pocketsphinx
