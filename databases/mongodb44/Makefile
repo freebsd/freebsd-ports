@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.4.27
+DISTVERSION=	4.4.28
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 USES=		compiler:c++17-lang cpe python:build scons
 USE_RC_SUBR=	mongod
 
-# --module= disables "enterprise" module from src/mongo/db/modules/
+# --modules= disables "enterprise" module from src/mongo/db/modules/
 MAKE_ARGS=	--use-system-zlib \
 		--use-system-pcre \
 		--use-system-snappy \
