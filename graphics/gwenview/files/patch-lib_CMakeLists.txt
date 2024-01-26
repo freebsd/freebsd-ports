@@ -1,0 +1,20 @@
+--- lib/CMakeLists.txt.orig	2023-11-30 17:00:43 UTC
++++ lib/CMakeLists.txt
+@@ -157,7 +157,7 @@ set(gwenviewlib_SRCS
+     touch/touch_helper.cpp
+     ${GV_JPEG_DIR}/transupp.c
+     )
+-if (kImageAnnotator_FOUND)
++if (kImageAnnotator${KIMAGEANNOTATOR_SUFFIX}_FOUND)
+     set(gwenviewlib_SRCS ${gwenviewlib_SRCS}
+         annotate/annotatedialog.cpp
+         annotate/annotateoperation.cpp
+@@ -338,7 +338,7 @@ endif()
+         )
+ endif()
+ 
+-if(kImageAnnotator_FOUND)
++if(kImageAnnotator${KIMAGEANNOTATOR_SUFFIX}_FOUND)
+     target_link_libraries(gwenviewlib kImageAnnotator::kImageAnnotator)
+ endif()
+ 

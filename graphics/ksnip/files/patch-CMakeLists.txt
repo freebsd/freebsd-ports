@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2023-03-15 09:08:40 UTC
++++ CMakeLists.txt
+@@ -61,10 +61,10 @@ set(KIMAGEANNOTATOR_MIN_VERSION 0.6.1)
+ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED ${QT_COMPONENTS})
+ 
+ set(KIMAGEANNOTATOR_MIN_VERSION 0.6.1)
+-find_package(kImageAnnotator ${KIMAGEANNOTATOR_MIN_VERSION} REQUIRED)
++find_package(kImageAnnotator-Qt5 ${KIMAGEANNOTATOR_MIN_VERSION} REQUIRED)
+ 
+-set(KCOLORPICKER_MIN_VERSION 0.2.0)
+-find_package(kColorPicker ${KCOLORPICKER_MIN_VERSION} REQUIRED)
++set(KCOLORPICKER_MIN_VERSION 0.3.0)
++find_package(kColorPicker-Qt5 ${KCOLORPICKER_MIN_VERSION} REQUIRED)
+ 
+ set(BASEPATH "${CMAKE_SOURCE_DIR}")
+ include_directories("${BASEPATH}")
