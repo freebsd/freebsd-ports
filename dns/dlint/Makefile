@@ -3,7 +3,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	dns
 MASTER_SITES=	https://BSDforge.com/projects/source/dns/dlint/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 WWW=		https://BSDforge.com/projects/dns/dlint
 

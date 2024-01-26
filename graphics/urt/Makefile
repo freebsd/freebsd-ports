@@ -4,15 +4,12 @@ PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/utah-raster/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Toolkit and library for raster image processing
 WWW=		https://www.cs.utah.edu/gdc/projects/urt/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/copyright
-
-DEPRECATED=	Defunct upstream
-EXPIRATION_DATE=	2024-02-11
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libtiff.so:graphics/tiff

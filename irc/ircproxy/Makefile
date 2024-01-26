@@ -4,15 +4,12 @@ PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	https://BSDforge.com/projects/source/irc/ircproxy/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	IRC proxy/bouncer daemon
 WWW=		http://ircproxy.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Abandonware, last release in 2010 and dead upstream. Consider using irc/soju or irc/znc
-EXPIRATION_DATE=2024-02-29
 
 LIB_DEPENDS=	libcares.so:dns/c-ares
 

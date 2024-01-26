@@ -7,14 +7,11 @@ DISTFILES=	ttcp.c ttcp.1 README
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 WWW=		https://ftp.arl.army.mil/~mike/ttcp.html
 
 LICENSE=	PD
-
-DEPRECATED=     Abandonware, no release in over 20 years. Consider using benchmarks/iperf3 or benchmarks/nttcp
-EXPIRATION_DATE=2024-02-29
 
 NO_WRKSUBDIR=	yes
 
