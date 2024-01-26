@@ -1,6 +1,5 @@
 PORTNAME=	chirp
-PORTVERSION=	20230731
-PORTREVISION=	1
+DISTVERSION=	20240120
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 DIST_SUBDIR=	chirp
@@ -25,28 +24,33 @@ SHEBANG_GLOB=	*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kk7ds
-GH_TAGNAME=	c49fb6d8a46270a47718b0b4857695d5d0d83780
+GH_TAGNAME=	2205c0f
 
 USE_GNOME=	gtk-update-icon-cache
 
-USE_PYTHON=	autoplist pep517 pytest
+USE_PYTHON=	pep517 pytest
 
 USE_WX=	3.2
 WX_COMPS=	python:run
 
-PLIST_FILES=	share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.png
-
 PORTSCOUT=	ignore:1
 NO_ARCH=	yes
 
-post-patch:
-	@${ECHO} "Version: ${PORTVERSION}" > ${WRKSRC}/PKG-INFO
+pre-build:
+	@${REINPLACE_CMD} -e 's|version=0|version=${PORTVERSION}|' \
+		${WRKSRC}/setup.py
 
 post-install:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/share && \
 		${INSTALL_DATA} ${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps && \
 		${INSTALL_DATA} ${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/share/locale
+	@cd ${WRKSRC}/chirp && \
+		${COPYTREE_SHARE}  locale ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/
+	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/locale/Makefile
+	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/locale/check_parameters.py
+	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/locale/README.md
 
 .include <bsd.port.pre.mk>
 
