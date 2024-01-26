@@ -1,5 +1,5 @@
 PORTNAME=	libtool
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Generic shared library support script
 WWW=		https://www.gnu.org/software/libtool/
@@ -13,6 +13,7 @@ BUILD_DEPENDS=	gm4:devel/m4
 RUN_DEPENDS=	gm4:devel/m4
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-ltdl-install
 TEST_TARGET=	check
 
