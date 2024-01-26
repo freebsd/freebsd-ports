@@ -1,3 +1,5 @@
-TIMESTAMP = 1701783742
-SHA256 (project-repo-cagebreak-2.2.3_GH0.tar.gz) = c10ae2644962423b979fecda9863bde75d80ffc39d2fe3a202d817ff0946c63e
-SIZE (project-repo-cagebreak-2.2.3_GH0.tar.gz) = 215239
+TIMESTAMP = 1706266383
+SHA256 (project-repo-cagebreak-2.3.0_GH0.tar.gz) = fd18e9d3cfffb8369dd850d329765687fbbda4dcb1bc3e846b683b2a6ac4d739
+SIZE (project-repo-cagebreak-2.3.0_GH0.tar.gz) = 239717
+SHA256 (4cd7a8d9ac66.patch) = 90afbb2f7fc9e663ba027f0cfec3b193079cab820c3ad998930e4b9486cd0bc3
+SIZE (4cd7a8d9ac66.patch) = 1555
