@@ -1,6 +1,5 @@
 PORTNAME=	pt2-clone
-PORTVERSION=	1.65.1
-PORTREVISION=	1
+PORTVERSION=	1.66.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
@@ -23,8 +22,8 @@ USE_SDL=	sdl2
 CFLAGS_i386+=	-msse2
 
 PLIST_FILES=	bin/pt2-clone \
-		share/man/man1/pt2-clone.1.gz \
 		share/applications/pt2-clone.desktop \
+		share/man/man1/pt2-clone.1.gz \
 		share/pixmaps/pt2-clone.png
 
 EXTRASVERSION=	2
