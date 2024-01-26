@@ -1,5 +1,6 @@
 PORTNAME=	lcms2
 PORTVERSION=	2.16
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mm2/Little-CMS/releases/download/lcms${PORTVERSION}/
 
@@ -15,6 +16,7 @@ USES=		cpe libtool localbase:ldflags pathfix
 
 CONFIGURE_ARGS=	--with-fastfloat --with-threaded
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
@@ -36,7 +38,7 @@ TIFFICC_CONFIGURE_WITH=	tiff
 TIFFICC_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/utils/linkicc/linkicc.1 ${WRKSRC}/utils/psicc/psicc.1 ${WRKSRC}/utils/transicc/transicc.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/utils/linkicc/linkicc.1 ${WRKSRC}/utils/psicc/psicc.1 ${WRKSRC}/utils/transicc/transicc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
