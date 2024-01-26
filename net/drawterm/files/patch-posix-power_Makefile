@@ -1,0 +1,11 @@
+--- posix-power/Makefile.orig	2023-09-03 17:22:52 UTC
++++ posix-power/Makefile
+@@ -2,8 +2,6 @@ LIB=../libmachdep.a
+ include ../Make.config
+ LIB=../libmachdep.a
+ 
+-CFLAGS+= -Wa,-mregnames
+-
+ OFILES=\
+ 	getcallerpc.$O\
+ 	tas.$O
