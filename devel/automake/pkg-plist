@@ -2,10 +2,10 @@ bin/aclocal
 bin/aclocal-%%BUILD_VERSION%%
 bin/automake
 bin/automake-%%BUILD_VERSION%%
-man/man1/aclocal.1.gz
-man/man1/aclocal-%%BUILD_VERSION%%.1.gz
-man/man1/automake.1.gz
-man/man1/automake-%%BUILD_VERSION%%.1.gz
+share/man/man1/aclocal.1.gz
+share/man/man1/aclocal-%%BUILD_VERSION%%.1.gz
+share/man/man1/automake.1.gz
+share/man/man1/automake-%%BUILD_VERSION%%.1.gz
 share/aclocal/README
 share/aclocal-%%BUILD_VERSION%%/amversion.m4
 share/aclocal-%%BUILD_VERSION%%/ar-lib.m4
