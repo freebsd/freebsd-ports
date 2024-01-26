@@ -1,5 +1,6 @@
 PORTNAME=	autoconf
 PORTVERSION=	2.71
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -24,6 +25,7 @@ VERSION=	2.71
 USES=		perl5 tar:xz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-suffix=${VERSION} \
 		--without-lispdir
 CONFIGURE_ENV=	AWK=${AWK} \
