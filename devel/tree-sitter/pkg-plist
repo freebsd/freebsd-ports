@@ -1,5 +1,4 @@
 include/tree_sitter/api.h
-include/tree_sitter/parser.h
 lib/libtree-sitter.a
 lib/libtree-sitter.so
 lib/libtree-sitter.so.0
