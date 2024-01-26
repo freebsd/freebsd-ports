@@ -1,5 +1,6 @@
 PORTNAME=	check
 PORTVERSION=	0.15.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libcheck/check/releases/download/${PORTVERSION}/
 
@@ -14,6 +15,7 @@ USES=		libtool makeinfo pathfix pkgconfig
 
 CONFIGURE_ENV=	ac_cv_path_AWK_PATH=${AWK}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
