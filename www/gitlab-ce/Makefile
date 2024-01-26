@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.8.0
+PORTVERSION=	16.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -27,7 +27,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	gitlab-elasticsearch-indexer>=4.6.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=16.8.0:net/gitlab-agent \
 	gitlab-pages>=${PORTVERSION}:www/gitlab-pages \
-	gitlab-shell>=14.32.0:devel/gitlab-shell \
+	gitlab-shell>=14.33.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.2.11:databases/redis \
 	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
@@ -146,7 +146,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-rouge>=4.2.0<4.3:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.16<2:textproc/rubygem-nokogiri \
-	rubygem-gitlab-glfm-markdown>=0.0.10<0.1:textproc/rubygem-gitlab-glfm-markdown \
+	rubygem-gitlab-glfm-markdown>=0.0.11<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.4<4:textproc/rubygem-diffy \
 	rubygem-rack22>=2.2.8,3<2.3,3:www/rubygem-rack22 \
@@ -233,7 +233,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
 	rubygem-ssh_data>=1.3<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=1.3.0<1.4:net/rubygem-spamcheck \
-	rubygem-gitaly>=16.7.0.rc1<16.8.0:net/rubygem-gitaly \
+	rubygem-gitaly>=16.7.0.rc1<16.9.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.3.0,1<0.4.0,1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.58.0<2:net/rubygem-grpc \
 	rubygem-google-protobuf>=3.25.2<4:devel/rubygem-google-protobuf \

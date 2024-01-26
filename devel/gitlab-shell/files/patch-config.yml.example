@@ -1,4 +1,4 @@
---- config.yml.example.orig	2021-02-05 17:09:18 UTC
+--- config.yml.example.orig	2024-01-19 10:36:34 UTC
 +++ config.yml.example
 @@ -13,7 +13,7 @@ user: git
  # only listen on a Unix domain socket. For Unix domain sockets use
@@ -10,7 +10,7 @@
  # When a http+unix:// is used in gitlab_url, this is the relative URL root to GitLab.
  # Not used if gitlab_url is http:// or https://.
 @@ -29,7 +29,7 @@ http_settings:
-   self_signed_cert: false
+ #
  
  # File used as authorized_keys for gitlab user
 -auth_file: "/home/git/.ssh/authorized_keys"
