@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	math
 
 COMMENT=	Column approximate minimum degree ordering algorithm
