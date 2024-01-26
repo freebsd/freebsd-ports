@@ -68,7 +68,7 @@ PLIST_SUB+=	I386="@comment " \
 .elif ${ARCH} == "aarch64"
 PLIST_SUB+=	I386="@comment " \
 		AARCH64="" \
-		AMD64="@comment"
+		AMD64="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MDEDICATED}
