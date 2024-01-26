@@ -1,5 +1,6 @@
 PORTNAME=	mysqltcl
 PORTVERSION=	3.052
+PORTREVISION=	1
 CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
@@ -8,7 +9,6 @@ COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 WWW=		http://www.xdobry.de/mysqltcl/
 
 USES=		mysql tcl
-IGNORE_WITH_MYSQL=	80 81
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/${PORTNAME}-${PORTVERSION}/libmysqltcl${PORTVERSION}.so \
