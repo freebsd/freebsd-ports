@@ -37,9 +37,9 @@ lib/libxslt.so.1.1.37
 lib/xsltConf.sh
 libdata/pkgconfig/libexslt.pc
 libdata/pkgconfig/libxslt.pc
-man/man1/xsltproc.1.gz
-man/man3/libexslt.3.gz
-man/man3/libxslt.3.gz
+share/man/man1/xsltproc.1.gz
+share/man/man3/libexslt.3.gz
+share/man/man3/libxslt.3.gz
 share/aclocal/libxslt.m4
 share/gtk-doc/html/libexslt/general.html
 share/gtk-doc/html/libexslt/home.png
