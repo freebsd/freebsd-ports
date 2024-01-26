@@ -38,10 +38,10 @@ libdata/pkgconfig/libwebp.pc
 libdata/pkgconfig/libwebpdecoder.pc
 libdata/pkgconfig/libwebpdemux.pc
 libdata/pkgconfig/libwebpmux.pc
-%%IMGCONV%%man/man1/cwebp.1.gz
-%%IMGCONV%%man/man1/dwebp.1.gz
-%%IMGCONV%%man/man1/gif2webp.1.gz
-%%IMGCONV%%man/man1/img2webp.1.gz
-%%X11%%man/man1/vwebp.1.gz
-man/man1/webpinfo.1.gz
-man/man1/webpmux.1.gz
+%%IMGCONV%%share/man/man1/cwebp.1.gz
+%%IMGCONV%%share/man/man1/dwebp.1.gz
+%%IMGCONV%%share/man/man1/gif2webp.1.gz
+%%IMGCONV%%share/man/man1/img2webp.1.gz
+%%X11%%share/man/man1/vwebp.1.gz
+share/man/man1/webpinfo.1.gz
+share/man/man1/webpmux.1.gz
