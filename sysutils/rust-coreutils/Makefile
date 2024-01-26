@@ -1,6 +1,5 @@
 PORTNAME=	rust-coreutils
-DISTVERSION=	0.0.23
-PORTREVISION=	2
+DISTVERSION=	0.0.24
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -37,14 +36,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		blake2b_simd-1.0.2 \
 		blake3-1.5.0 \
 		block-buffer-0.10.3 \
-		bstr-1.8.0 \
+		bstr-1.9.0 \
 		bumpalo-3.11.1 \
 		bytecount-0.6.7 \
 		byteorder-1.5.0 \
 		cc-1.0.79 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
+		chrono-0.4.32 \
 		clang-sys-1.4.0 \
 		clap-4.4.2 \
 		clap_builder-4.4.2 \
@@ -53,7 +52,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		clap_mangen-0.2.9 \
 		colorchoice-1.0.0 \
 		compare-0.1.0 \
-		console-0.15.7 \
+		console-0.15.8 \
 		const-random-0.1.16 \
 		const-random-macro-0.1.16 \
 		constant_time_eq-0.3.0 \
@@ -66,19 +65,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		cpp_macros-0.5.9 \
 		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.8 \
-		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.14 \
-		crossbeam-utils-0.8.15 \
+		crossbeam-channel-0.5.10 \
+		crossbeam-deque-0.8.4 \
+		crossbeam-epoch-0.9.17 \
+		crossbeam-utils-0.8.18 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		ctrlc-3.4.1 \
 		custom_derive-0.1.7 \
-		data-encoding-2.4.0 \
-		data-encoding-macro-0.1.13 \
-		data-encoding-macro-internal-0.1.11 \
+		data-encoding-2.5.0 \
+		data-encoding-macro-0.1.14 \
+		data-encoding-macro-internal-0.1.12 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dlv-list-0.5.0 \
@@ -87,11 +86,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		either-1.8.0 \
 		encode_unicode-0.3.6 \
 		env_logger-0.8.4 \
-		errno-0.3.5 \
+		errno-0.3.8 \
 		exacl-0.11.0 \
 		fastrand-2.0.0 \
 		file_diff-1.0.0 \
-		filetime-0.2.22 \
+		filetime-0.2.23 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
 		fs_extra-1.3.0 \
@@ -125,7 +124,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		io-lifetimes-1.0.11 \
-		itertools-0.11.0 \
+		itertools-0.12.0 \
 		itoa-1.0.4 \
 		js-sys-0.3.64 \
 		keccak-0.1.4 \
@@ -133,22 +132,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.150 \
+		libc-0.2.152 \
 		libloading-0.7.4 \
 		libm-0.2.7 \
 		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.10 \
+		linux-raw-sys-0.4.12 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
-		lscolors-0.15.0 \
+		lscolors-0.16.0 \
 		match_cfg-0.1.0 \
 		md-5-0.10.6 \
-		memchr-2.6.2 \
+		memchr-2.7.1 \
 		memmap2-0.9.0 \
-		memoffset-0.8.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
-		mio-0.8.6 \
+		mio-0.8.10 \
 		nix-0.27.1 \
 		nom-7.1.3 \
 		notify-6.0.1 \
@@ -158,13 +156,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-traits-0.2.17 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
 		ordered-multimap-0.6.0 \
 		os_display-0.1.3 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.8 \
+		parking_lot_core-0.9.9 \
 		parse_datetime-0.5.0 \
 		peeking_take_while-0.1.2 \
 		phf-0.11.2 \
@@ -190,11 +188,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_pcg-0.3.1 \
 		rayon-1.8.0 \
 		rayon-core-1.12.0 \
-		redox_syscall-0.3.5 \
-		redox_syscall-0.4.0 \
+		redox_syscall-0.4.1 \
 		reference-counted-singleton-0.1.2 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.4 \
 		regex-syntax-0.8.2 \
 		relative-path-1.8.0 \
 		rlimit-0.10.1 \
@@ -205,10 +202,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.37.26 \
-		rustix-0.38.21 \
+		rustix-0.38.30 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		self_cell-1.0.2 \
+		self_cell-1.0.3 \
 		selinux-0.4.0 \
 		selinux-sys-0.6.2 \
 		semver-1.0.14 \
@@ -223,13 +220,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		siphasher-0.3.10 \
 		slab-0.4.7 \
 		sm3-0.4.2 \
-		smallvec-1.11.0 \
+		smallvec-1.13.0 \
 		smawk-0.3.1 \
 		socket2-0.5.3 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
 		syn-2.0.23 \
-		tempfile-3.8.1 \
+		tempfile-3.9.0 \
 		terminal_size-0.2.6 \
 		terminal_size-0.3.0 \
 		textwrap-0.16.0 \
@@ -265,23 +262,32 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.0 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		xattr-1.0.1 \
+		windows_x86_64_msvc-0.52.0 \
+		xattr-1.3.1 \
 		yansi-0.5.1 \
 		z85-3.0.5 \
 		zip-0.6.6
