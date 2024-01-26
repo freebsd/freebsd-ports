@@ -1,9 +1,8 @@
 PORTNAME=	luit
-PORTVERSION=	20230201
+PORTVERSION=	20240102
 CATEGORIES=	x11
 MASTER_SITES=	https://invisible-island.net/archives/luit/ \
-		https://invisible-mirror.net/archives/luit/ \
-		ftp://ftp.invisible-island.net/pub/luit/
+		https://invisible-mirror.net/archives/luit/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Locale and ISO 2022 support for Unicode terminals
