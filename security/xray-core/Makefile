@@ -1,10 +1,9 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.4
-PORTREVISION=	1
+DISTVERSION=	1.8.7
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202309080643/:geoip \
-		https://github.com/v2fly/domain-list-community/releases/download/20230911142809/:geosite
+MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202401250041/:geoip \
+		https://github.com/v2fly/domain-list-community/releases/download/20240123112230/:geosite
 DISTFILES=	geoip.dat:geoip \
 		dlc.dat:geosite
 EXTRACT_ONLY=	v${DISTVERSION}.zip \
@@ -17,7 +16,7 @@ WWW=		https://github.com/XTLS/Xray-core
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:modules,1.21
 
 USE_RC_SUBR=	xray
 SUB_FILES=	pkg-message
