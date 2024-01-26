@@ -1,18 +1,18 @@
 PORTNAME=	mattermost
-PORTVERSION=	7.10.5
-PORTREVISION=	1
+PORTVERSION=	8.1.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/:gomod
+MASTER_SITES=	LOCAL/decke/${PORTNAME}-${DISTVERSIONFULL}/:gomod
 PKGNAMESUFFIX=	-server
 DISTFILES=	go.mod:gomod
 
+# implicit-approval+ for decke
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open source Slack-alternative in Golang and React
 WWW=		https://mattermost.org/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
@@ -24,10 +24,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mattermost
 USE_RC_SUBR=	mattermostd
 
-GO_MODULE=	github.com/mattermost/mattermost-server/v6
+GO_MODULE=	github.com/mattermost/mattermost/server/v8
 GO_TARGET=	./cmd/mattermost ./scripts/config_generator
-GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/v6/model.BuildNumber=${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost/server/public/model.BuildNumber=${PORTVERSION}"
 
+WRKSRC_SUBDIR=	server
 WWWDIR=		${PREFIX}/www/mattermost
 
 MATTERMOSTD_USER=	mattermost
