@@ -1,6 +1,6 @@
---- electron/spec/api-crash-reporter-spec.ts.orig	2023-10-20 08:29:17 UTC
+--- electron/spec/api-crash-reporter-spec.ts.orig	2024-01-23 09:41:40 UTC
 +++ electron/spec/api-crash-reporter-spec.ts
-@@ -12,7 +12,7 @@ import * as uuid from 'uuid';
+@@ -11,7 +11,7 @@ const isWindowsOnArm = process.platform === 'win32' &&
  import { setTimeout } from 'node:timers/promises';
  
  const isWindowsOnArm = process.platform === 'win32' && process.arch === 'arm64';
@@ -9,7 +9,7 @@
  
  type CrashInfo = {
    prod: string
-@@ -45,7 +45,7 @@ function checkCrash (expectedProcessType: string, fiel
+@@ -44,7 +44,7 @@ function checkCrash (expectedProcessType: string, fiel
  
    // TODO(nornagon): minidumps are sometimes (not always) turning up empty on
    // 32-bit Linux.  Figure out why.
@@ -18,7 +18,7 @@
      expect(fields.upload_file_minidump.length).to.be.greaterThan(0);
    }
  }
-@@ -182,7 +182,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -181,7 +181,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
  
      // Ensures that passing in crashpadHandlerPID flag for Linx child processes
      // does not affect child proocess args.
@@ -27,7 +27,7 @@
        const { port, waitForCrash } = await startServer();
        let exitCode: number | null = null;
        const appPath = path.join(__dirname, 'fixtures', 'apps', 'crash');
-@@ -531,7 +531,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -530,7 +530,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
        }
      }
  
@@ -36,7 +36,7 @@
        : ['main', 'renderer', 'sandboxed-renderer', 'node'];
      for (const crashingProcess of processList) {
        describe(`when ${crashingProcess} crashes`, () => {
-@@ -543,7 +543,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -542,7 +542,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
              return app.getPath('crashDumps');
            });
            let reportsDir = crashesDir;
@@ -45,7 +45,7 @@
              reportsDir = path.join(crashesDir, 'completed');
            } else if (process.platform === 'win32') {
              reportsDir = path.join(crashesDir, 'reports');
-@@ -567,7 +567,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -566,7 +566,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
            expect(remoteCrashesDir).to.equal(crashesDir);
  
            let reportsDir = crashesDir;
