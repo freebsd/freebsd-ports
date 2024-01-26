@@ -1,4 +1,4 @@
---- Gemfile.orig	2023-12-20 08:52:18 UTC
+--- Gemfile.orig	2024-01-17 10:09:09 UTC
 +++ Gemfile
 @@ -58,7 +58,7 @@ gem 'neighbor', '~> 0.2.3' # rubocop:todo Gemfile/Miss
  
@@ -33,15 +33,15 @@
  gem 'elasticsearch-model', '~> 7.2' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'elasticsearch-api',   '7.13.3' # rubocop:todo Gemfile/MissingFeatureCategory
--gem 'aws-sdk-core', '~> 3.190.0' # rubocop:todo Gemfile/MissingFeatureCategory
+-gem 'aws-sdk-core', '~> 3.190.2' # rubocop:todo Gemfile/MissingFeatureCategory
 +gem 'aws-sdk-core', '~> 3.190' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'aws-sdk-cloudformation', '~> 1' # rubocop:todo Gemfile/MissingFeatureCategory
--gem 'aws-sdk-s3', '~> 1.141.0' # rubocop:todo Gemfile/MissingFeatureCategory
-+gem 'aws-sdk-s3', '~> 1.141' # rubocop:todo Gemfile/MissingFeatureCategory
+-gem 'aws-sdk-s3', '~> 1.142.0' # rubocop:todo Gemfile/MissingFeatureCategory
++gem 'aws-sdk-s3', '~> 1.142' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'faraday_middleware-aws-sigv4', '~>0.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'typhoeus', '~> 1.4.0' # Used with Elasticsearch to support http keep-alive connections # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -391,93 +391,10 @@ gem 'prometheus-client-mmap', '~> 1.0', '>= 1.0.2', re
+@@ -392,134 +392,15 @@ gem 'prometheus-client-mmap', '~> 1.1', require: 'prom
  
  gem 'warning', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
@@ -60,7 +60,7 @@
 -
 -  gem 'listen', '~> 3.7' # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'ruby-lsp', "~> 0.13.1", require: false, feature_category: :tooling
+-  gem 'ruby-lsp', "~> 0.13.2", require: false, feature_category: :tooling
 -
 -  gem 'ruby-lsp-rails', "~> 0.2.8", feature_category: :tooling
 -
@@ -70,7 +70,7 @@
 -group :development, :test do
 -  gem 'deprecation_toolkit', '~> 1.5.1', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'bullet', '~> 7.1.2' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'parser', '~> 3.2', '>= 3.2.2.4' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'parser', '~> 3.3', '>= 3.3.0.2' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'pry-byebug' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'pry-rails', '~> 0.3.9' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'pry-shell', '~> 0.6.4' # rubocop:todo Gemfile/MissingFeatureCategory
@@ -78,7 +78,7 @@
 -  gem 'awesome_print', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
 -  gem 'database_cleaner-active_record', '~> 2.1.0', feature_category: :database
--  gem 'factory_bot_rails', '~> 6.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'factory_bot_rails', '~> 6.4.3' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'rspec-rails', '~> 6.1.0', feature_category: :shared
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
@@ -89,7 +89,7 @@
 -
 -  gem 'gitlab-styles', '~> 11.0.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'haml_lint', '~> 0.52', require: false # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'haml_lint', '~> 0.53', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'bundler-audit', '~> 0.9.1', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
 -  # Benchmarking & profiling
@@ -111,7 +111,7 @@
 -
 -  gem 'sigdump', '~> 0.2.4', require: 'sigdump/setup' # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'pact', '~> 1.63' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'pact', '~> 1.64' # rubocop:todo Gemfile/MissingFeatureCategory
 -
 -  # For now we only use vite in development / test, and not for production builds
 -  # See: https://gitlab.com/gitlab-org/frontend/rfcs/-/issues/106
@@ -126,7 +126,7 @@
  end
  
 -group :development, :test, :coverage do
--  gem 'simplecov', '~> 0.21', require: false, feature_category: :tooling
+-  gem 'simplecov', '~> 0.22', require: false, feature_category: :tooling
 -  gem 'simplecov-lcov', '~> 0.8.0', require: false, feature_category: :tooling
 -  gem 'simplecov-cobertura', '~> 2.1.0', require: false, feature_category: :tooling
 -  gem 'undercover', '~> 0.4.4', require: false, feature_category: :tooling
@@ -135,10 +135,14 @@
  # Gems required in omnibus-gitlab pipeline
  group :development, :test, :omnibus do
    gem 'license_finder', '~> 7.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
-@@ -489,36 +406,6 @@ group :development, :test, :monorepo do
-   gem 'gitlab-rspec_flaky', path: 'gems/gitlab-rspec_flaky', feature_category: :tooling
  end
  
+-# Gems required in various pipelines
+-group :development, :test, :monorepo do
+-  gem 'gitlab-rspec', path: 'gems/gitlab-rspec' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'gitlab-rspec_flaky', path: 'gems/gitlab-rspec_flaky', feature_category: :tooling
+-end
+-
 -group :test do
 -  gem 'fuubar', '~> 2.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'rspec-retry', '~> 0.6.2', feature_category: :tooling
@@ -161,27 +165,27 @@
 -  gem 'test-prof', '~> 1.3.1' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'rspec_junit_formatter' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'guard-rspec' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'axe-core-rspec' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'axe-core-rspec', '~> 4.8.0', feature_category: :tooling
 -
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'gitlab_quality-test_tooling', '~> 1.9.0', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 1.11.0', require: false, feature_category: :tooling
 -end
 -
  gem 'octokit', '~> 6.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
  gem 'gitlab-mail_room', '~> 0.0.24', require: 'mail_room', feature_category: :shared
-@@ -556,7 +443,7 @@ gem 'gitaly', '~> 16.7.0-rc1', feature_category: :gita
+@@ -557,7 +438,7 @@ gem 'gitaly', '~> 16.7.0-rc1', feature_category: :gita
  # KAS GRPC protocol definitions
  gem 'kas-grpc', '~> 0.3.0', feature_category: :deployment_management
  
 -gem 'grpc', '~> 1.58.0' # rubocop:todo Gemfile/MissingFeatureCategory
 +gem 'grpc', '~> 1.58' # rubocop:todo Gemfile/MissingFeatureCategory
  
- gem 'google-protobuf', '~> 3.25', '>= 3.25.1' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-protobuf', '~> 3.25', '>= 3.25.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -577,7 +464,7 @@ gem 'grape_logging', '~> 1.8', feature_category: :api
+@@ -578,7 +459,7 @@ gem 'grape_logging', '~> 1.8', feature_category: :api
  gem 'gitlab-net-dns', '~> 0.9.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Countries list
@@ -190,7 +194,7 @@
  
  gem 'retriable', '~> 3.1.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -643,6 +530,7 @@ gem 'app_store_connect' # rubocop:todo Gemfile/Missing
+@@ -644,6 +525,7 @@ gem 'app_store_connect' # rubocop:todo Gemfile/Missing
  gem 'telesignenterprise', '~> 2.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # BufferedIO patch
@@ -198,7 +202,7 @@
  # Updating this version will require updating scripts/allowed_warnings.txt
  gem 'net-protocol', '~> 0.1.3' # rubocop:todo Gemfile/MissingFeatureCategory
  # Lock this until we make DNS rebinding work with the updated net-http:
-@@ -650,5 +538,11 @@ gem 'net-protocol', '~> 0.1.3' # rubocop:todo Gemfile/
+@@ -651,5 +533,11 @@ gem 'net-protocol', '~> 0.1.3' # rubocop:todo Gemfile/
  gem 'net-http', '= 0.1.1' # rubocop:todo Gemfile/MissingFeatureCategory
  
  gem 'duo_api', '~> 1.3' # rubocop:todo Gemfile/MissingFeatureCategory
