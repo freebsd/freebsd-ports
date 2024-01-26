@@ -1,0 +1,2 @@
+Syrupy is a zero-dependency pytest snapshot plugin. It enables developers to
+write tests which assert immutability of computed results.
