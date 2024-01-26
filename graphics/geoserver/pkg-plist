@@ -567,7 +567,6 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/FastInfoset-1.2.15.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/GeographicLib-Java-1.49.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/JavaAPIforKml-2.2.0.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/activation-1.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/aircompressor-0.20.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/antlr4-runtime-4.7.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/apiguardian-api-1.1.1.jar
@@ -724,7 +723,9 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/jai_codec-%%VER3%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jai_core-%%VER3%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jai_imageio-1.1.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jakarta.activation-1.2.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jakarta.annotation-api-1.3.4.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jakarta.mail-1.6.7.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/janino-3.0.8.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jasypt-1.9.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jasypt-springsecurity3-1.9.2.jar
@@ -791,7 +792,6 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/log4j-jcl-2.17.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/log4j-jul-2.17.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/log4j-slf4j-impl-2.17.2.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/mail-1.4.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/marlin-0.9.3.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/mxparser-1.2.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/net.opengis.fes-%%GT%%.jar
@@ -805,7 +805,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/org.eclipse.emf.ecore.xmi-2.15.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/org.eclipse.xsd-2.12.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/org.w3.xlink-%%GT%%.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/oshi-core-6.2.2.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/oshi-core-6.4.10.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/picocontainer-1.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/pngj-2.0.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/postgresql-42.6.0.jar
