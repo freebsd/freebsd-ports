@@ -1,5 +1,6 @@
 PORTNAME=	curl
 PORTVERSION=	8.5.0
+PORTREVISION=	1
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
@@ -32,6 +33,7 @@ CONFIGURE_ARGS=	--disable-werror \
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
 USE_LDCONFIG=	yes
