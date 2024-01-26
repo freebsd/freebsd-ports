@@ -1,9 +1,7 @@
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
 PORTVERSION?=	7582
-.ifndef PKGNAMESUFFIX
-PORTREVISION=	0
-.endif
+PORTREVISION?=	0
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
