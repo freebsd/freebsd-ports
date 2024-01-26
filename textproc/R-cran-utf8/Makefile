@@ -3,7 +3,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Unicode Text Processing
 WWW=		https://cran.r-project.org/web/packages/utf8/
 

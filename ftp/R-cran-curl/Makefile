@@ -3,7 +3,7 @@ DISTVERSION=	5.2.0
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Modern and Flexible Web Client for R
 WWW=		https://cran.r-project.org/web/packages/curl/
 

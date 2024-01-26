@@ -2,7 +2,7 @@ PORTNAME=	zathura-pdf-mupdf
 DISTVERSION=	0.4.1
 CATEGORIES=	graphics
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	MuPDF render PDF plugin for Zathura PDF viewer
 WWW=		https://pwmt.org/projects/zathura-pdf-mupdf/
 

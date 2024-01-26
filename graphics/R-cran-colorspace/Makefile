@@ -3,7 +3,7 @@ DISTVERSION=	2.1-0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Color Space Manipulation
 WWW=		https://cran.r-project.org/web/packages/colorspace/
 

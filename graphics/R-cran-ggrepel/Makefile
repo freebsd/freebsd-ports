@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Help to avoid overlapping text labels of ggplot2
 WWW=		https://cran.r-project.org/web/packages/ggrepel/
 

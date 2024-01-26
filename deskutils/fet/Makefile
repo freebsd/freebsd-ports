@@ -8,7 +8,7 @@ MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://timetabling.de/download/old/
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Free timetabling software
 WWW=		https://lalescu.ro/liviu/fet/
 

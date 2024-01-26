@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
 CATEGORIES=	graphics
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Terminal Image and Video Viewer
 WWW=		https://github.com/hzeller/timg
 

@@ -3,7 +3,7 @@ PORTVERSION=	0.6.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Vector Helpers
 WWW=		https://cran.r-project.org/web/packages/vctrs/
 

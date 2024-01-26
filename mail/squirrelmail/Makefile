@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Webmail system which accesses mail over IMAP
 WWW=		https://www.squirrelmail.org/
 

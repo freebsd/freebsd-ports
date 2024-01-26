@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/archive/
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Lightweight PDF viewer and toolkit
 WWW=		https://www.mupdf.com/
 

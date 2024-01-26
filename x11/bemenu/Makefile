@@ -2,7 +2,7 @@ PORTNAME=	bemenu
 DISTVERSION=	0.6.16
 CATEGORIES=	x11
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Dynamic menu library and client program inspired by dmenu
 WWW=		https://github.com/Cloudef/bemenu
 

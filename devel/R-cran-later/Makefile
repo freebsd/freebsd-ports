@@ -3,7 +3,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Utilities for Delaying Function Execution
 WWW=		https://cran.r-project.org/web/packages/later/
 

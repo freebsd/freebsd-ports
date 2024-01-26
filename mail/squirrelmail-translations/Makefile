@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	squirrelmail-${PORTVERSION}_0200-SVN.locales
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	NLS translations for Squirrelmail (mail/squirrelmail)
 WWW=		https://www.squirrelmail.org/
 

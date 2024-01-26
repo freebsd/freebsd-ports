@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.5
 CATEGORIES=	x11
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	STAnd-aLONE system tray
 WWW=		https://kolbusa.github.io/stalonetray/
 

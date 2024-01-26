@@ -3,7 +3,7 @@ DISTVERSION=	1.8.2
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Character String Processing Facilities
 WWW=		http://www.gagolewski.com/software/stringi/
 
