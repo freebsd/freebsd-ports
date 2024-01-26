@@ -1,5 +1,6 @@
 PORTNAME=	wget
 DISTVERSION=	1.21.4
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	GNU
 
@@ -17,6 +18,7 @@ USES=		charsetfix cpe iconv localbase pkgconfig tar:lz
 USE_CSTD=	c99
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 OPTIONS_SUB=	yes
 
 OPTIONS_RADIO=	SSL
