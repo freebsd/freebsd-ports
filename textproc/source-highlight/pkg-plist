@@ -98,9 +98,9 @@ lib/libsource-highlight.so
 lib/libsource-highlight.so.4
 lib/libsource-highlight.so.4.0.1
 libdata/pkgconfig/source-highlight.pc
-man/man1/check-regexp.1.gz
-man/man1/source-highlight-settings.1.gz
-man/man1/source-highlight.1.gz
+share/man/man1/check-regexp.1.gz
+share/man/man1/source-highlight-settings.1.gz
+share/man/man1/source-highlight.1.gz
 %%DATADIR%%/Hello.css
 %%DATADIR%%/Hello2.css
 %%DATADIR%%/ada.lang
