@@ -69,6 +69,7 @@ EBUR128_IMPLIES=	GSTREAMER
 
 GSTREAMER_USES=		gstreamer
 GSTREAMER_CMAKE_BOOL=	ENABLE_GSTREAMER
+GSTREAMER_USE=		GSTREAMER=cdparanoia,chromaprint,faac,faad,flac,lame,mpg123,neon,opus,shout2,soup,taglib,twolame,vorbis
 
 ICONV_USES=		iconv:translit
 
