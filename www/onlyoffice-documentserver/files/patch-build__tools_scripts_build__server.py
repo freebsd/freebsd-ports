@@ -14,7 +14,7 @@
        base.copy_file(custom_public_key, server_build_dir + '/Common/sources')
  
 -  pkg_target = "node14"
-+  pkg_target = "node16"
++  pkg_target = "node18"
  
 +  if ("freebsd" == base.host_platform()):
 +    pkg_target += "-freebsd"

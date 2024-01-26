@@ -17,16 +17,17 @@
            "create": [
              "./build/server"
            ]
-@@ -57,9 +58,11 @@
-     "grunt": "^1.4.1",
-     "grunt-banner": "^0.6.0",
-     "grunt-check-dependencies": "^1.0.0",
+@@ -57,10 +58,12 @@
+     "grunt": "1.5.3",
+     "grunt-banner": "0.6.0",
+     "grunt-check-dependencies": "1.0.0",
 +    "grunt-cli": "^1.4.3",
-     "grunt-contrib-clean": "^2.0.0",
-     "grunt-contrib-copy": "^1.0.0",
-     "grunt-mkdir": "^1.1.0",
--    "grunt-stripcomments": "^0.7.2"
-+    "grunt-stripcomments": "^0.7.2",
+     "grunt-contrib-clean": "2.0.0",
+     "grunt-contrib-copy": "1.0.0",
+     "grunt-mkdir": "1.1.0",
+-    "grunt-stripcomments": "0.7.2"
++    "grunt-stripcomments": "0.7.2",
 +    "pkg": "^5.5.1"
-   }
- }
+   },
+   "devDependencies": {
+     "@jest/globals": "29.5.0",

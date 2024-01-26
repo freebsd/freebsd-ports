@@ -1,6 +1,6 @@
 --- build_tools/scripts/core_common/modules/v8_89.py.orig	2023-06-14 09:52:10.504034000 +0200
 +++ build_tools/scripts/core_common/modules/v8_89.py	2023-06-14 11:18:31.776490000 +0200
-@@ -83,39 +83,41 @@ def make():
+@@ -83,40 +83,40 @@ def make():
      base.create_dir(base_dir)
  
    os.chdir(base_dir)
@@ -31,9 +31,10 @@
 +#
 +#  if ("windows" == base.host_platform()):
 +#    base.replaceInFile("v8/build/config/win/BUILD.gn", ":static_crt", ":dynamic_crt")
-+#
 +#    if not base.is_file("v8/src/base/platform/wrappers.cc"):
 +#      base.writeFile("v8/src/base/platform/wrappers.cc", "#include \"src/base/platform/wrappers.h\"\n")
++#  else:
++#    base.replaceInFile("depot_tools/gclient_paths.py", "@functools.lru_cache", "")
 +#
 +#  if not base.is_file("v8/third_party/jinja2/tests.py.bak"):
 +#    base.copy_file("v8/third_party/jinja2/tests.py", "v8/third_party/jinja2/tests.py.bak")
@@ -61,20 +62,19 @@
 -
 -  if ("windows" == base.host_platform()):
 -    base.replaceInFile("v8/build/config/win/BUILD.gn", ":static_crt", ":dynamic_crt")
--
 -    if not base.is_file("v8/src/base/platform/wrappers.cc"):
 -      base.writeFile("v8/src/base/platform/wrappers.cc", "#include \"src/base/platform/wrappers.h\"\n")
+-  else:
+-    base.replaceInFile("depot_tools/gclient_paths.py", "@functools.lru_cache", "")
 -
 -  if not base.is_file("v8/third_party/jinja2/tests.py.bak"):
 -    base.copy_file("v8/third_party/jinja2/tests.py", "v8/third_party/jinja2/tests.py.bak")
 -    base.replaceInFile("v8/third_party/jinja2/tests.py", "from collections import Mapping", "try:\n    from collections.abc import Mapping\nexcept ImportError:\n    from collections import Mapping")
 -
-+# ~/onlyoffice-documentserver-ports/work/DocumentServer-7.4.0/core/Common/3dParty/v8_89_89
-+  print(base_dir)
    os.chdir("v8")
    
    gn_args = ["v8_static_library=true",
-@@ -124,6 +126,10 @@ def make():
+@@ -125,6 +125,10 @@ def make():
               "v8_use_external_startup_data=false",
               "use_custom_libcxx=false",
               "treat_warnings_as_errors=false"]
