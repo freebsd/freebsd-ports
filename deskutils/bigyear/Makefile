@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Program to print a large (one month per page) calendar
 
+DEPRECATED=    Last release in 2001 and dead upstream, consider using deskutils/pal
+EXPIRATION_DATE=2024-02-29
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/bigyear man/man1/bigyear.1.gz

@@ -10,6 +10,9 @@ WWW=		https://BSDforge.com/projects/net/widentd/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandonware, last release in 2004 and dead upstream. Consider using security/oidentd
+EXPIRATION_DATE=2024-02-29
+
 USES=		ncurses uidfix tar:xz
 USE_RC_SUBR=	widentd
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man" MK_WERROR=no

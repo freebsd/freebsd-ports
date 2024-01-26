@@ -9,6 +9,9 @@ WWW=		https://www.netlab.cs.tsukuba.ac.jp/~yokota/izumi/dns_balance/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Abandonware, last release in 2005. Consider using dns/dnsdist
+EXPIRATION_DATE=2024-02-29
+
 USES=		ruby shebangfix tar:xz
 USE_RC_SUBR=	dns_balance
 

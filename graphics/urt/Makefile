@@ -11,6 +11,9 @@ WWW=		https://www.cs.utah.edu/gdc/projects/urt/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/copyright
 
+DEPRECATED=    Defunct upstream
+EXPIRATION_DATE=       2024-02-11
+
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libtiff.so:graphics/tiff
 

@@ -13,6 +13,9 @@ WWW=		https://ftp.arl.army.mil/~mike/ttcp.html
 
 LICENSE=	PD
 
+DEPRECATED=	Abandonware, no release in over 20 years. Consider using benchmarks/iperf3 or benchmarks/nttcp
+EXPIRATION_DATE=2024-02-29
+
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS

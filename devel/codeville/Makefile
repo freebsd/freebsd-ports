@@ -10,6 +10,9 @@ WWW=		https://bsdforge.com/projects/devel/codeville/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Abandonware, dead upstream for at least 10 years. Consider using devel/git or devel/mercurial
+EXPIRATION_DATE=2024-02-29
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 

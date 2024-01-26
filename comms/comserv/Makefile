@@ -9,6 +9,9 @@ WWW=		https://BSDforge.com/projects/comms/comserv/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Abandonware, last release in 2002. Consider using comms/remserial
+EXPIRATION_DATE=2024-02-29
+
 USES=		tar:xz
 
 PLIST_FILES=	sbin/comservd etc/comservd.conf.sample \
