@@ -1,4 +1,4 @@
---- Gemfile.orig	2024-01-17 10:09:09 UTC
+--- Gemfile.orig	2024-01-24 16:26:54 UTC
 +++ Gemfile
 @@ -58,7 +58,7 @@ gem 'neighbor', '~> 0.2.3' # rubocop:todo Gemfile/Miss
  
@@ -176,7 +176,13 @@
  gem 'octokit', '~> 6.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
  gem 'gitlab-mail_room', '~> 0.0.24', require: 'mail_room', feature_category: :shared
-@@ -557,7 +438,7 @@ gem 'gitaly', '~> 16.7.0-rc1', feature_category: :gita
+@@ -552,12 +433,12 @@ gem 'ssh_data', '~> 1.3' # rubocop:todo Gemfile/Missin
+ gem 'spamcheck', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+ # Gitaly GRPC protocol definitions
+-gem 'gitaly', '~> 16.7.0-rc1', feature_category: :gitaly
++gem 'gitaly', '~> 16.7', feature_category: :gitaly
+ 
  # KAS GRPC protocol definitions
  gem 'kas-grpc', '~> 0.3.0', feature_category: :deployment_management
  
