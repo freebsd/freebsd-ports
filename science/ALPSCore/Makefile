@@ -34,7 +34,7 @@ DOXYGEN_CMAKE_BOOL=	Documentation
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 OPENMPI_CMAKE_BOOL=	ENABLE_MPI
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 
 PORTDOCS=	*
 

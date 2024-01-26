@@ -11,7 +11,7 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Library for obtaining a sequence of successive coarse grids
 WWW=		http://www.mgnet.org/mgnet-codes-parmgridgen.html
 
-LIB_DEPENDS=	libmpi.so:net/openmpi
+LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 
 ALL_TARGET=	parallel
 USES=		gmake

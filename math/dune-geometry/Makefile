@@ -11,7 +11,7 @@ WWW=		https://www.dune-project.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi \
+BUILD_DEPENDS=	openmpi4>0:net/openmpi4 \
 		vc>0:devel/vc
 LIB_DEPENDS=	libdunecommon.so:math/dune-common \
 		libopenblas.so:math/openblas \

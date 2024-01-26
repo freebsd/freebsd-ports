@@ -18,7 +18,7 @@ LIB_DEPENDS=	libalberta_utilities.so:math/alberta \
 		libdunegrid.so:math/dune-grid \
 		libduneuggrid.so:math/dune-uggrid \
 		libmetis.so:math/metis \
-		libmpi.so:net/openmpi \
+		libmpi_cxx.so:net/openmpi4 \
 		libopenblas.so:math/openblas \
 		libtbb.so:devel/onetbb
 

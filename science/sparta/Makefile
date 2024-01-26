@@ -37,7 +37,7 @@ MPI_CXXFLAGS=			-I${LOCALBASE}/mpi/openmpi/include
 MPI_LDFLAGS=			${LOCALBASE}/mpi/openmpi/lib/libmpi.so \
 				${LOCALBASE}/mpi/openmpi/lib/libmpi_cxx.so \
 				-Wl,-rpath=${LOCALBASE}/mpi/openmpi/lib
-MPI_LIB_DEPENDS=		libmpi.so:net/openmpi
+MPI_LIB_DEPENDS=		libmpi_cxx.so:net/openmpi4
 
 PORTSCOUT=	ignore:1 # due to a special version tagging scheme that this project uses portscout fails to find new versions, watching their release page instead
 

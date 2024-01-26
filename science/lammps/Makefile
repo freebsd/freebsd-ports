@@ -63,7 +63,7 @@ EXCEPTIONS_DESC=	Enable the use of C++ exceptions
 EXCEPTIONS_CMAKE_BOOL=	LAMMPS_EXCEPTIONS
 
 MPI_CMAKE_BOOL=		BUILD_MPI PKG_MPIIO
-MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+MPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 MPI_USES=		compiler:c11
 
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG

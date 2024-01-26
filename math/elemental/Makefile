@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
-		libmpi_cxx.so:net/openmpi \
+		libmpi_cxx.so:net/openmpi4 \
 		libopenblas.so:math/openblas \
 		libqd.so:math/qd
 TEST_DEPENDS=	catch>0:devel/catch

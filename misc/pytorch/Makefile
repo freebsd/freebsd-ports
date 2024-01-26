@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gmake:devel/gmake \
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libblis.so:math/blis \
 		libopenblas.so:math/openblas \
-		libmpi.so:net/openmpi \
+		libmpi_cxx.so:net/openmpi4 \
 		libonnx.so:misc/onnx \
 		libpthreadpool.so:devel/pthreadpool \
 		libprotobuf.so:devel/protobuf \
