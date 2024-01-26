@@ -477,7 +477,7 @@ lib/libguile-%%GUILE_VER%%.so.1
 lib/libguile-%%GUILE_VER%%.so.1.6.0
 lib/libguile-%%GUILE_VER%%.so.1.6.0-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
-man/man1/guile%%GUILE_SFX%%.1.gz
+share/man/man1/guile%%GUILE_SFX%%.1.gz
 @comment share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm

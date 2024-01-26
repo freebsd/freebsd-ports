@@ -1,6 +1,6 @@
 PORTNAME?=	guile
 PORTVERSION=	3.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX?=	3
@@ -33,6 +33,7 @@ USES+=		guile:${PORTVERSION:R},env \
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-suffix=-${GUILE_VER} \
 		--enable-lto=no
 # LTO is unconditionally off here because it fails to build with llvm,
@@ -93,8 +94,8 @@ post-install:
 	for p in guile guild guile-tools guile-config guile-snarf; do \
 	  ${LN} -s $${p}-${GUILE_VER} ${STAGEDIR}${PREFIX}/bin/$${p}${GUILE_SFX}; \
 	done
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/guile-${GUILE_VER}.1 \
-	      ${STAGEDIR}${PREFIX}/man/man1/guile${GUILE_SFX}.1
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/guile-${GUILE_VER}.1 \
+	      ${STAGEDIR}${PREFIX}/share/man/man1/guile${GUILE_SFX}.1
 
 .endif # empty(NO_BUILD)
 
