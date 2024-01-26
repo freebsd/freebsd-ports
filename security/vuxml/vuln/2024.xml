@@ -1,3 +1,40 @@
+  <vuln vid="61fe903b-bc2e-11ee-b06e-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.8.0</ge><lt>16.8.1</lt></range>
+	<range><ge>16.7.0</ge><lt>16.7.4</lt></range>
+	<range><ge>16.6.0</ge><lt>16.6.6</lt></range>
+	<range><ge>12.7.0</ge><lt>16.5.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/01/25/critical-security-release-gitlab-16-8-1-released/">
+	  <p>Arbitrary file write while creating workspace</p>
+	  <p>ReDoS in Cargo.toml blob viewer</p>
+	  <p>Arbitrary API PUT requests via HTML injection in user's name</p>
+	  <p>Disclosure of the public email in Tags RSS Feed</p>
+	  <p>Non-Member can update MR Assignees of owned MRs</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0402</cvename>
+      <cvename>CVE-2023-6159</cvename>
+      <cvename>CVE-2023-5933</cvename>
+      <cvename>CVE-2023-5612</cvename>
+      <cvename>CVE-2024-0456</cvename>
+      <url>https://about.gitlab.com/releases/2024/01/25/critical-security-release-gitlab-16-8-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-01-25</discovery>
+      <entry>2024-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b03d274-56ca-489e-821a-cf32f07643f0">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
