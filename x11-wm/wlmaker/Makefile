@@ -32,6 +32,11 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/${PORTNAME}/terminal-48x48.png \
 		${NULL}
 
+.if !empty(MACHINE_ARCH:Namd64:Ni386)
+# https://github.com/phkaeser/libbase/issues/7
+USE_GCC=	yes
+.endif
+
 post-patch:
 # Drop dependency on unreleased version of libwayland
 	@${REINPLACE_CMD} -e 's/1\.22\.90/1.22.0/' \
