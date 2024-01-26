@@ -1,5 +1,6 @@
 PORTNAME=	gdb
 DISTVERSION=	14.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -28,6 +29,7 @@ CONFIGURE_ARGS=	--program-suffix=${VER} \
 		--disable-sim \
 		--enable-targets=all --enable-64-bit-bfd \
 		--with-separate-debug-dir=/usr/lib/debug \
+		--with-additional-debug-dirs=${LOCALBASE}/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
 		--without-libunwind-ia64
 CONFIGURE_OUTSOURCE=	yes
