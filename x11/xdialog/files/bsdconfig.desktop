@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.5
+Encoding=UTF-8
+Type=Application
+Name=bsdconfig
+GenericName=System configuration utility
+Icon=bsdconfig
+Exec=/usr/sbin/bsdconfig -X
+Comment=Set up many system configuration settings
+Terminal=false
+StartupNotify=false
+Categories=Settings;System;GTK;
