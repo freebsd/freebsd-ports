@@ -1,6 +1,5 @@
 PORTNAME=	fdupes
-DISTVERSION=	2.2.1
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/adrianlopezroche/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -18,13 +17,14 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 PLIST_FILES=	bin/fdupes \
 		share/man/man1/fdupes.1.gz
 
-OPTIONS_DEFINE=		NCURSES
+OPTIONS_DEFINE=		NCURSES SQLITE
 OPTIONS_DEFAULT=	NCURSES
 
 NCURSES_LIB_DEPENDS=	libpcre2-32.so:devel/pcre2
 NCURSES_USES=		ncurses:base
 NCURSES_CONFIGURE_OFF=	--without-ncurses
-
 NCURSES_PLIST_FILES=	share/man/man7/fdupes-help.7.gz
+SQLITE_USES=		sqlite
+SQLITE_CONFIGURE_OFF=	--without-sqlite
 
 .include <bsd.port.mk>
