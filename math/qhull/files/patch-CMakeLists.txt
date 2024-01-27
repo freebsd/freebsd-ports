@@ -1,16 +1,7 @@
 Install docs into share/doc/ rather than include/
 
---- CMakeLists.txt.orig	2021-09-27 03:45:38 UTC
+--- CMakeLists.txt.orig	2020-09-04 01:23:31 UTC
 +++ CMakeLists.txt
-@@ -128,7 +128,7 @@ else()
- endif()
- if(MAN_INSTALL_DIR)
- else()
--    set(MAN_INSTALL_DIR share/man/man1)
-+    set(MAN_INSTALL_DIR man/man1)
- endif()
- if(DOC_INSTALL_DIR)
- else()
 @@ -737,7 +737,7 @@ foreach(pkgconfig IN ITEMS "${qhull_SHAREDR};Qhull ree
      if(LIBRARY_NAME STREQUAL "libqhull")
          set(LIBRARY_NAME "qhull")
