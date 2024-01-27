@@ -4,6 +4,7 @@ bin/fldigi
 man/man1/fldigi.1.gz
 %%FLARQ%%share/applications/flarq.desktop
 share/applications/fldigi.desktop
+%%NLS%%share/locale/ca/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/de/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/el/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/fldigi.mo
