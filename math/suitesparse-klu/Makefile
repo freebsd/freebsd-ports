@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	math
 
 COMMENT=	Sparse LU factorization, for circuit simulation
