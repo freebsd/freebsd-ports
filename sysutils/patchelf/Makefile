@@ -1,5 +1,6 @@
 PORTNAME=	patchelf
 DISTVERSION=	0.14.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/NixOS/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf compiler:c++11-lang gmake tar:bz2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
