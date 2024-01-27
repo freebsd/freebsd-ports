@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	11.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	avr-
@@ -32,6 +32,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gcci/avr/${SUFFIX}
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-libssp \
 		--enable-languages="c c++" \
 		--target=avr \
