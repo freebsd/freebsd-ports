@@ -1,9 +1,10 @@
 PORTNAME=	docopt
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse command line arguments based on nothing more than a usage message
 WWW=		https://github.com/docopt/docopt.rb
 

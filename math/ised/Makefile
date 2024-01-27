@@ -1,10 +1,10 @@
 PORTNAME=	ised
 PORTVERSION=	2.7.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for generating number sequences and arithmetic evaluation
 WWW=		https://ised.sourceforge.net/
 

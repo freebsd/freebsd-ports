@@ -1,10 +1,10 @@
 PORTNAME=	armadillo
 DISTVERSION=	12.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ linear algebra library
 WWW=		https://arma.sourceforge.net/
 

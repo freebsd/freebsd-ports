@@ -1,8 +1,9 @@
 PORTNAME=	massxpert
 DISTVERSION=	6.0.3
+PORTREVISION=	1
 CATEGORIES=	science
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software suite for (bio)chemists
 WWW=		http://www.msxpertsuite.org
 

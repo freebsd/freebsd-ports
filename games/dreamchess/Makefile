@@ -1,9 +1,9 @@
 PORTNAME=	dreamchess
 DISTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL chess game
 WWW=		https://www.dreamchess.org
 

@@ -1,10 +1,11 @@
 PORTNAME=	cocoalib
 DISTVERSION=	0.99800
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://cocoa.dima.unige.it/cocoa/cocoalib/tgz/
 DISTNAME=	CoCoALib-${DISTVERSION}
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for doing Computations in Commutative Algebra
 WWW=		https://cocoa.dima.unige.it
 
