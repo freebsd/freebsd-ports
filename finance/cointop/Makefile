@@ -11,6 +11,9 @@ WWW=		https://github.com/miguelmota/cointop
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Repo archived upstream Nov 18, 2023
+EXPIRATION_DATE=2024-02-29
+
 USES=		go:modules
 GO_MODULE=	github.com/${PORTNAME}-sh/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
