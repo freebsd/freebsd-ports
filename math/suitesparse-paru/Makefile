@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	math parallel
 
 COMMENT=	Parallel unsymmetric multifrontal method
