@@ -1,11 +1,11 @@
---- subcmds/tui.go.orig	2020-12-04 00:20:42 UTC
+--- subcmds/tui.go.orig	1979-11-29 23:00:00 UTC
 +++ subcmds/tui.go
-@@ -111,7 +111,7 @@ func (p *TuiCmd) SetFlags(f *flag.FlagSet) {
+@@ -72,7 +72,7 @@ func (p *TuiCmd) SetFlags(f *flag.FlagSet) {
+ 	defaultResultsDir := filepath.Join(wd, "results")
+ 	f.StringVar(&config.Conf.ResultsDir, "results-dir", defaultResultsDir, "/path/to/results")
  
- 	f.StringVar(&p.cveDict.Type, "cvedb-type", "",
- 		"DB type of go-cve-dictionary (sqlite3, mysql, postgres or redis)")
--	f.StringVar(&p.cveDict.SQLite3Path, "cvedb-path", "", "/path/to/sqlite3")
-+	f.StringVar(&p.cveDict.SQLite3Path, "cvedb-path", "", "/var/db/vuls/cve.sqlite3")
- 	f.StringVar(&p.cveDict.URL, "cvedb-url", "",
- 		"http://go-cve-dictionary.com:1323 or DB connection string")
+-	defaultConfPath := filepath.Join(wd, "config.toml")
++	defaultConfPath := "%%ETCDIR%%/config.toml"
+ 	f.StringVar(&p.configPath, "config", defaultConfPath, "/path/to/toml")
  
+ 	f.BoolVar(&config.Conf.RefreshCve, "refresh-cve", false,

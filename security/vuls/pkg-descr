@@ -8,3 +8,7 @@ Vuls' features include:
 - scan middleware that are not included in OS package management;
 - nondestructive testing;
 - email and slack notification.
+
+Vuls uses the port security/go-cve-dictionary to look up information about
+packages' CVEs. Install that port separately somewhere in your infrastructure
+and point to it for CVE queries.
