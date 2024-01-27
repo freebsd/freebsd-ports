@@ -1,7 +1,7 @@
---- Makefile.orig	2018-12-25 13:50:45 UTC
+--- Makefile.orig	2024-01-25 22:32:28 UTC
 +++ Makefile
-@@ -71,7 +71,7 @@ xmmsdir     := $(DESTDIR)$(XMMSPREFIX)$(XMMS_INPUT_PLU
- man1dir     := $(mandir)/man1
+@@ -69,7 +69,7 @@ contribdir  := $(docdir)/contrib
+ man3dir     := $(mandir)/man3
  man5dir     := $(mandir)/man5
  contribdir  := $(docdir)/contrib
 -exampledir  := $(docdir)/examples
@@ -9,13 +9,13 @@
  
  DISTDIR := gbsplay-$(VERSION)
  
-@@ -82,10 +82,10 @@ GBSPLAYLDFLAGS :=
+@@ -86,10 +86,10 @@ export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAG
  
  export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAGS
  
--docs               := README HISTORY COPYRIGHT
-+docs               := README
- docs-dist          := INSTALL CODINGSTYLE TESTSUITE gbsformat.txt
+-docs               := README.md HISTORY COPYRIGHT
++docs               := README.md
+ docs-dist          := INSTALL.md CODINGSTYLE gbsformat.txt
 -contribs           := contrib/gbs2ogg.sh contrib/gbsplay.bashcompletion
 -examples           := examples/nightmode.gbs examples/gbsplayrc_sample
 +contribs           := contrib/gbs2ogg.sh

@@ -1,3 +1,4 @@
+bin/gbs2gb
 bin/gbsinfo
 bin/gbsplay
 @sample etc/gbsplayrc.sample
@@ -7,7 +8,7 @@ share/man/man1/gbsplay.1.gz
 share/man/man5/gbsplayrc.5.gz
 share/applications/gbsplay.desktop
 share/applications/mimeinfo.cache
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/contrib/gbs2ogg.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nightmode.gbs
 %%NLS%%share/locale/de/LC_MESSAGES/gbsplay.mo
