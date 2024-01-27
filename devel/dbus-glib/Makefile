@@ -1,5 +1,6 @@
 PORTNAME=	dbus-glib
 PORTVERSION=	0.112
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 
@@ -19,6 +20,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freedesktop
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc

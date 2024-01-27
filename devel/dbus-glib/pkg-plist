@@ -11,7 +11,7 @@ lib/libdbus-glib-1.so.2
 lib/libdbus-glib-1.so.2.3.5
 libdata/pkgconfig/dbus-glib-1.pc
 libexec/dbus-bash-completion-helper
-man/man1/dbus-binding-tool.1.gz
+share/man/man1/dbus-binding-tool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch02.html
