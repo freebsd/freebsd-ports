@@ -11,7 +11,7 @@ WWW=		https://dri.freedesktop.org/
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
 USES=		gnome meson pkgconfig tar:xz
