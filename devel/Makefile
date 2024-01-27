@@ -5492,6 +5492,7 @@
     SUBDIR += py-q
     SUBDIR += py-qasync
     SUBDIR += py-qcs-api-client
+    SUBDIR += py-qcs-sdk-python
     SUBDIR += py-qstylizer
     SUBDIR += py-qt5
     SUBDIR += py-qt5-pyqt
