@@ -55,6 +55,7 @@ include/kj/async-queue.h
 include/kj/async-unix.h
 include/kj/async-win32.h
 include/kj/async.h
+include/kj/cidr.h
 include/kj/common.h
 include/kj/compat/gtest.h
 include/kj/compat/gzip.h
