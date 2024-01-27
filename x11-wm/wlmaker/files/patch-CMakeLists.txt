@@ -1,0 +1,18 @@
+https://github.com/phkaeser/wlmaker/issues/28
+
+--- CMakeLists.txt.orig	2024-01-27 20:11:04 UTC
++++ CMakeLists.txt
+@@ -50,8 +50,12 @@ OPTION(config_DOXYGEN_CRITICAL "Whether to fail on dox
+ OPTION(config_DOXYGEN_CRITICAL "Whether to fail on doxygen warnings" OFF)
+ 
+ # Toplevel compile options, for GCC.
+-IF(CMAKE_C_COMPILER_ID STREQUAL "GNU")
++IF(CMAKE_C_COMPILER_ID MATCHES "Clang|GNU")
+   ADD_COMPILE_OPTIONS(-Wall -Wextra -Werror)
++
++  IF(CMAKE_C_COMPILER_ID MATCHES "Clang")
++    ADD_COMPILE_OPTIONS(-Wno-self-assign)
++  ENDIF(CMAKE_C_COMPILER_ID MATCHES "Clang")
+ 
+   IF(config_DEBUG)
+     ADD_COMPILE_OPTIONS(-ggdb -DDEBUG)
