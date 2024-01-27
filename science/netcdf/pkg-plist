@@ -20,11 +20,11 @@ lib/libnetcdf.so
 lib/libnetcdf.so.19
 lib/libnetcdf.so.19.2.2
 libdata/pkgconfig/netcdf.pc
-man/man1/nccopy.1.gz
-man/man1/ncdump.1.gz
-man/man1/ncgen.1.gz
-man/man1/ncgen3.1.gz
-man/man3/netcdf.3.gz
+share/man/man1/nccopy.1.gz
+share/man/man1/ncdump.1.gz
+share/man/man1/ncgen.1.gz
+share/man/man1/ncgen3.1.gz
+share/man/man3/netcdf.3.gz
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/InstallTreeWindows.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/accessing_subsets.html
