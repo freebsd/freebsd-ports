@@ -1,6 +1,6 @@
 PORTNAME=	php81
 DISTVERSION=	8.1.27
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
@@ -25,6 +25,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-all \
 			--program-prefix="" \
 			--with-config-file-scan-dir=${PREFIX}/etc/php \
