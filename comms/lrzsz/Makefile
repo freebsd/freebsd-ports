@@ -1,6 +1,6 @@
 PORTNAME=	lrzsz
 PORTVERSION=	0.12.20
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms
 MASTER_SITES=	http://ohse.de/uwe/releases/
 
@@ -25,5 +25,8 @@ OPTIONS_DEFINE=	NLS
 NLS_USES=		gettext
 NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/lrzsz.mo
 NLS_CONFIGURE_ENABLE=	nls
+
+post-patch:
+	${REINPLACE_CMD} '/checking for syslog/,+140d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
