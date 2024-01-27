@@ -18,6 +18,6 @@ lib/libenchant-2.so
 lib/libenchant-2.so.2
 lib/libenchant-2.so.%%LIBVERSION%%
 libdata/pkgconfig/enchant-2.pc
-man/man1/enchant-2.1.gz
-man/man1/enchant-lsmod-2.1.gz
+share/man/man1/enchant-2.1.gz
+share/man/man1/enchant-lsmod-2.1.gz
 %%DATADIR%%/enchant.ordering
