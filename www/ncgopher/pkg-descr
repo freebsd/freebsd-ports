@@ -1,0 +1,5 @@
+ncgopher is a gopher, gemini and finger client for the modern internet.
+
+It features history, download, bookmarks, TLS support and can rely
+on external tools to work with HTML, images and telnet.
+It is written in Rust.

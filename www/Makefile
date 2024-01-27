@@ -443,6 +443,7 @@
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
+    SUBDIR += ncgopher
     SUBDIR += neon
     SUBDIR += netrik
     SUBDIR += netstiff
