@@ -1,5 +1,5 @@
 PORTNAME=	plex-ttf
-DISTVERSION=	6.3.0
+DISTVERSION=	6.4.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/IBM/plex/releases/download/v${DISTVERSION}/TrueType${EXTRACT_SUFX}?dummy=/
 
