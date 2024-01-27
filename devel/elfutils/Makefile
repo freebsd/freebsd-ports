@@ -1,5 +1,6 @@
 PORTNAME=	elfutils
 DISTVERSION=	0.187
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
@@ -40,6 +41,7 @@ NLS_CONFIGURE_ENABLE=	nls
 USES=		autoreconf cpe gmake libtool pkgconfig tar:bzip2
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-Wno-error -Wno-format-nonliteral
