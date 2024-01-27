@@ -1,5 +1,6 @@
 PORTNAME=	libXcomposite
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -13,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 EXTRACT_SUFX=	.tar.xz
 USES=		xorg xorg-cat:lib
 USE_XORG=	x11 xfixes xext xorgproto
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
