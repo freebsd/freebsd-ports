@@ -22,4 +22,4 @@ lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa
 lib/ocaml/ocamlbuild/signatures.cmi
 lib/ocaml/ocamlbuild/signatures.cmti
 lib/ocaml/ocamlbuild/signatures.mli
-man/man1/ocamlbuild.1.gz
+share/man/man1/ocamlbuild.1.gz
