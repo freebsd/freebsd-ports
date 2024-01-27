@@ -1,6 +1,6 @@
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	www
 
 MAINTAINER?=	nobutaka@FreeBSD.org
@@ -30,6 +30,7 @@ SNAPDATE=	20230129
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-gc=${LOCALBASE} \
 		ac_cv_path_PERL=${PERL}
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
@@ -98,6 +99,7 @@ post-install:
 	for i in ${DOCS_COMMON} ${DOCS_EN} ; do \
 		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/doc/w3m/ ; \
 	done
-	${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${STAGEDIR}${PREFIX}/man/ja/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${STAGEDIR}${PREFIX}/share/man/ja/man1
 
 .include <bsd.port.mk>
