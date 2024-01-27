@@ -1,6 +1,7 @@
 PORTNAME=	gvm-tools
 DISTVERSION=	24.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +11,7 @@ WWW=		https://github.com/greenbone/gvm-tools
 
 LICENSE=	GPLv3+
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gvm>=0:security/py-python-gvm@${PY_FLAVOR}
 
 USE_GITHUB=	yes
@@ -17,7 +19,7 @@ GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}
 
 USES=		python
-USE_PYTHON=	pep517
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 

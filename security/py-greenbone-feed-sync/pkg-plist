@@ -44,8 +44,14 @@ bin/greenbone-scapdata-sync
 %%PYTHON_SITELIBDIR%%/greenbone/tests/test_main.py
 %%PYTHON_SITELIBDIR%%/greenbone/tests/test_parser.py
 %%PYTHON_SITELIBDIR%%/greenbone/tests/test_rsync.py
+%%PYTHON_SITELIBDIR%%/greenbone_feed_sync-23.10.0.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/greenbone_feed_sync-23.10.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/greenbone_feed_sync-23.10.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/greenbone_feed_sync-23.10.0.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/greenbone_feed_sync-23.10.0.dist-info/entry_points.txt
 @dir(gvm,gvm,750) etc/gvm
 @dir(gvm,gvm,750) /var/lib/gvm
 @dir(gvm,gvm,750) /var/lib/notus
 @dir(gvm,gvm,750) /var/lib/openvas/plugins
 @dir(gvm,gvm,750) /var/lib/openvas
+@dir /var/lib
