@@ -10,6 +10,8 @@ WWW=		https://firstbober.github.io/wapanel/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	https://github.com/Firstbober/wapanel/issues/39
+
 BUILD_DEPENDS=	toml11>0:devel/toml11 \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
