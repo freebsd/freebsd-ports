@@ -10,5 +10,5 @@ lib/libminizip.so
 lib/libminizip.so.1
 lib/libminizip.so.1.0.0
 libdata/pkgconfig/minizip.pc
-man/man1/miniunzip.1.gz
-man/man1/minizip.1.gz
+share/man/man1/miniunzip.1.gz
+share/man/man1/minizip.1.gz
