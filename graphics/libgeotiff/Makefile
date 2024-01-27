@@ -1,6 +1,6 @@
 PORTNAME=	libgeotiff
 PORTVERSION=	1.7.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
 		LOCAL/sunpoet
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-zip=/usr
 CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
