@@ -1,1 +1,13 @@
-A scrollable-tiling Wayland compositor.
+niri is a scrollable-tiling Wayland compositor inspired by PaperWM.
+Windows are tiled on an infinite horizontal strip that scrolls left
+and right. They don't "overflow" onto adjacent monitors. Opening a new
+window never resizes existing ones.
+
+Features:
+- Scrollable tiling
+- Dynamic workspaces like in GNOME
+- Built-in screenshot UI
+- Monitor screencasting through xdg-desktop-portal-gnome
+- Touchpad gesture to switch workspaces
+- Configurable layout: gaps, borders, struts, window sizes
+- Live-reloading config
