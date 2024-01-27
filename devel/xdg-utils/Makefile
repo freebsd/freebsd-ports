@@ -1,6 +1,6 @@
 PORTNAME=	xdg-utils
 PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://portland.freedesktop.org/download/
 
@@ -20,6 +20,7 @@ CPE_VENDOR=	freedesktop
 
 CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/minixmlto
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 MAKE_ENV=	PREFER_DOCBOOK2MDOC=1
 
