@@ -1222,6 +1222,7 @@
     SUBDIR += rubygem-vault
     SUBDIR += rubygem-webauthn
     SUBDIR += rubygem-webpush
+    SUBDIR += rust-rage
     SUBDIR += rustscan
     SUBDIR += s2n-tls
     SUBDIR += safesh

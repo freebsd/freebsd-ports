@@ -1,0 +1,3 @@
+A secure, modern file encryption tool and Rust library utilizing the age
+format, offering small explicit keys, no configuration options, and
+UNIX-style composability.
