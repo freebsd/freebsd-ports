@@ -1,6 +1,6 @@
 PORTNAME=	mailutils
 PORTVERSION=	3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
 
@@ -18,6 +18,7 @@ TEST_DEPENDS=	automake:devel/automake
 USES=		cpe gmake iconv libtool localbase readline tar:xz
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	comsatd imap4d pop3d
 INSTALL_TARGET=	install-strip
