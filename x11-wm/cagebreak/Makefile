@@ -1,9 +1,6 @@
 PORTNAME=	cagebreak
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4cd7a8d9ac66.patch:-p1 # https://github.com/project-repo/cagebreak/pull/74
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland tiling compositor inspired by ratpoison
