@@ -1,5 +1,6 @@
 PORTNAME=	squashfs-tools-ng
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://infraroot.at/pub/squashfs/
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 USES=		libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
