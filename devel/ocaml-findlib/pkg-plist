@@ -51,7 +51,7 @@ bin/safe_camlp4
 %%OCAML_SITELIBDIR%%/threads/META
 %%OCAML_SITELIBDIR%%/unix/META
 lib/ocaml/topfind
-man/man1/ocamlfind.1.gz
-man/man5/META.5.gz
-man/man5/findlib.conf.5.gz
-man/man5/site-lib.5.gz
+share/man/man1/ocamlfind.1.gz
+share/man/man5/META.5.gz
+share/man/man5/findlib.conf.5.gz
+share/man/man5/site-lib.5.gz
