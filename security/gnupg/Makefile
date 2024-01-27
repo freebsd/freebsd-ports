@@ -1,6 +1,6 @@
 PORTNAME=	gnupg
 DISTVERSION=	2.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -30,6 +30,7 @@ CPE_VENDOR=	gnupg
 
 CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INFO=		gnupg
 TEST_TARGET=	check
 TEST_ARGS=	TESTARGS=--parallel
