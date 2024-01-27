@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.12
+DISTVERSION=	0.25.13
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -117,7 +117,7 @@ USE_CABAL=	Diff-0.5_1 \
 		regex-pcre-builtin-0.95.2.3.8.44_6 \
 		regex-tdfa-1.3.2.2_2 \
 		row-types-1.0.1.2_1 \
-		safe-0.3.20 \
+		safe-0.3.21 \
 		scientific-0.3.7.0_7 \
 		semialign-1.3_1 \
 		semigroupoids-6.0.0.1_1 \
@@ -137,7 +137,7 @@ USE_CABAL=	Diff-0.5_1 \
 		text-rope-0.2 \
 		text-short-0.1.5_3 \
 		th-abstraction-0.6.0.0_1 \
-		th-compat-0.1.4_3 \
+		th-compat-0.1.4_4 \
 		th-expand-syns-0.4.11.0_2 \
 		th-lift-0.8.4 \
 		th-orphans-0.13.14_2 \
@@ -158,7 +158,7 @@ USE_CABAL=	Diff-0.5_1 \
 		vector-binary-instances-0.2.5.2_5 \
 		vector-stream-0.1.0.1 \
 		vector-th-unbox-0.2.2_5 \
-		versions-6.0.4 \
+		versions-6.0.5 \
 		void-0.7.3 \
 		witherable-0.4.2_4 \
 		zlib-0.6.3.0_4
