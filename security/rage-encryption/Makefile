@@ -2,7 +2,7 @@ PORTNAME=	rage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
 CATEGORIES=	security
-PKGNAMEPREFIX=	rust-
+PKGNAMESUFFIX=	-encryption
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple, modern, and secure file encryption tool, using the age format

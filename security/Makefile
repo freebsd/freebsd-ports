@@ -1073,6 +1073,7 @@
     SUBDIR += qtkeychain
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
+    SUBDIR += rage-encryption
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += rcracki_mt
@@ -1222,7 +1223,6 @@
     SUBDIR += rubygem-vault
     SUBDIR += rubygem-webauthn
     SUBDIR += rubygem-webpush
-    SUBDIR += rust-rage
     SUBDIR += rustscan
     SUBDIR += s2n-tls
     SUBDIR += safesh
