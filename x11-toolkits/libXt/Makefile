@@ -1,5 +1,6 @@
 PORTNAME=	libXt
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
@@ -15,6 +16,7 @@ USE_XORG=	x11 sm ice xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxt
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-specs
 
 INSTALL_TARGET=	install-strip
