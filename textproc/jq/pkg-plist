@@ -6,4 +6,4 @@ lib/libjq.so
 lib/libjq.so.1
 lib/libjq.so.1.0.4
 libdata/pkgconfig/libjq.pc
-man/man1/jq.1.gz
+share/man/man1/jq.1.gz
