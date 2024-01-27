@@ -1,5 +1,6 @@
 PORTNAME=	libXxf86dga
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,6 +15,8 @@ USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxxf86dga
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
