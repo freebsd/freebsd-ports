@@ -2,6 +2,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	4.08.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
@@ -30,6 +31,7 @@ USES=		cpe compiler:c11 gmake shebangfix tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 ALL_TARGET=	world.opt
 STRIP=
 PIE_UNSAFE=	yes
