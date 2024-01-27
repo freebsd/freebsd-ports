@@ -1,7 +1,6 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.7.1
-PORTREVISION=	2
+DISTVERSION=	23.0.0
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -40,10 +39,10 @@ post-build:
 MASTER_SITES+=	LOCAL/acm/gsa/:npm_cache
 DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
 NPM_ARGS=	run build
-.endif
 
 post-extract:
 	@${MV} ${WRKDIR}/node_modules ${WRKSRC}
+.endif
 
 do-build:
 	@cd ${WRKSRC} && \

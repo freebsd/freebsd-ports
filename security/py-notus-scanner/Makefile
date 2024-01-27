@@ -1,7 +1,6 @@
 PORTNAME=	notus-scanner
-DISTVERSION=	22.6.0
+DISTVERSION=	22.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,6 @@ WWW=		https://github.com/greenbone/notus-scanner
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry2setup>0:devel/py-poetry2setup@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paho-mqtt>0:net/py-paho-mqtt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
@@ -26,7 +24,7 @@ GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	pep517
 
 NO_ARCH=	yes
 
@@ -46,9 +44,6 @@ post-patch:
 	${REINPLACE_CMD} '36d' ${WRKSRC}/pyproject.toml
 	@${RM} ${WRKSRC}/notus/scanner/cli/parser.py.orig
 	@${RM} ${WRKSRC}/notus/scanner/config.py.orig
-
-pre-configure:
-	@cd ${WRKSRC} && poetry2setup > ${WRKSRC}/setup.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/notus-scanner

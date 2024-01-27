@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: ospd_openvas
-# REQUIRE: NETWORKING
+# REQUIRE: NETWORKING redis
 # KEYWORD: shutdown
 #
 # Configuration settings for ospd_openvas in /etc/rc.conf:

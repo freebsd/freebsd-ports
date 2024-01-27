@@ -1,5 +1,5 @@
---- src/manage_sql.c	2023-01-13 03:21:14.000000000 -0500
-+++ src/manage_sql.c	2023-04-02 02:07:02.924919000 -0500
+--- src/manage_sql.c	2024-01-12 03:14:29.000000000 -0500
++++ src/manage_sql.c	2024-01-26 16:42:23.043251000 -0500
 @@ -54,7 +54,6 @@
  #include <errno.h>
  #include <glib/gstdio.h>
@@ -16,7 +16,7 @@
  #include <gvm/util/fileutils.h>
  #include <gvm/util/gpgmeutils.h>
  #include <gvm/util/serverutils.h>
-@@ -9122,7 +9120,7 @@
+@@ -9431,7 +9429,7 @@
    g_debug ("   HTTP_GET %s", url);
  
    cmd = (gchar **) g_malloc (5 * sizeof (gchar *));
@@ -25,10 +25,10 @@
    cmd[1] = g_strdup ("-O");
    cmd[2] = g_strdup ("-");
    cmd[3] = g_strdup (url);
-@@ -15366,8 +15364,6 @@
-     }
+@@ -15775,8 +15773,6 @@
  
    cleanup_iterator (&nvts);
+   cleanup_iterator (&prefs);
 -
 -  malloc_trim (0);
  }

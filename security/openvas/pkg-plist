@@ -3,10 +3,10 @@ bin/openvas-nasl-lint
 @sample %%ETCDIR%%/openvas_log.conf.sample
 lib/libopenvas_misc.so
 lib/libopenvas_misc.so.22
-lib/libopenvas_misc.so.22.7.6
+lib/libopenvas_misc.so.22.7.9
 lib/libopenvas_nasl.so
 lib/libopenvas_nasl.so.22
-lib/libopenvas_nasl.so.22.7.6
+lib/libopenvas_nasl.so.22.7.9
 sbin/openvas
 share/man/man1/openvas-nasl-lint.1.gz
 share/man/man1/openvas-nasl.1.gz

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: notus_scanner
-# REQUIRE: NETWORKING
+# REQUIRE: NETWORKING mosquitto
 # KEYWORD: shutdown
 #
 # Configuration settings for ospd_openvas in /etc/rc.conf:
