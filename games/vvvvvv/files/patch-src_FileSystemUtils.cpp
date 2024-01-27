@@ -1,29 +1,37 @@
---- src/FileSystemUtils.cpp.orig	2021-12-22 13:20:25 UTC
+--- src/FileSystemUtils.cpp.orig	2024-01-10 16:27:34 UTC
 +++ src/FileSystemUtils.cpp
-@@ -1,3 +1,4 @@
-+#include <errno.h>
- #include <iostream>
- #include <iterator>
- #include <physfs.h>
-@@ -154,6 +155,12 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
- 	}
+@@ -1,10 +1,12 @@
+ #include "FileSystemUtils.h"
  
- 	/* Mount the stock content last */
-+	if (assetsPath && access(assetsPath, R_OK) == -1) {
-+		printf("%s: %s\n", assetsPath, strerror(errno));
-+		printf("Trying %sdata.zip instead.\n", output);
-+		assetsPath = NULL;
-+	}
++#include <errno.h>
+ #include <physfs.h>
+ #include <SDL.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <tinyxml2.h>
++#include <unistd.h>
+ 
+ #include "Alloc.h"
+ #include "BinaryBlob.h"
+@@ -315,6 +317,12 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+     doesFontsDirExist = mount_pre_datazip(NULL, "fonts", "graphics/", fontsDir);
+ 
+     /* Mount the stock content last */
++    if (assetsPath && access(assetsPath, R_OK) == -1) {
++        vlog_info("%s: %s", assetsPath, strerror(errno));
++        vlog_info("Trying %sdata.zip instead.", output);
++        assetsPath = NULL;
++    }
 +
- 	if (assetsPath)
- 	{
- 		SDL_strlcpy(output, assetsPath, sizeof(output));
-@@ -161,7 +168,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
- 	else
- 	{
- 		SDL_snprintf(output, sizeof(output), "%s%s",
--			basePath,
-+			output,
- 			"data.zip"
- 		);
- 	}
+     if (assetsPath)
+     {
+         SDL_strlcpy(output, assetsPath, sizeof(output));
+@@ -322,7 +330,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+     else
+     {
+         SDL_snprintf(output, sizeof(output), "%s%s",
+-            basePath,
++            output,
+             "data.zip"
+         );
+     }
