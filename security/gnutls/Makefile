@@ -1,5 +1,6 @@
 PORTNAME=	gnutls
 PORTVERSION=	3.7.10
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -23,6 +24,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-guile \
 		--with-system-priority-file=${PREFIX}/etc/gnutls/config \
 		--with-default-trust-store-dir=/etc/ssl/certs \
