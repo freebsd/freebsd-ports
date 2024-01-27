@@ -769,10 +769,10 @@ libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto-wrapper
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto1
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/gengtype
-man/man1/%%GCC_TARGET%%-cpp.1.gz
-man/man1/%%GCC_TARGET%%-g++.1.gz
-man/man1/%%GCC_TARGET%%-gcc.1.gz
-man/man1/%%GCC_TARGET%%-gcov-dump.1.gz
-man/man1/%%GCC_TARGET%%-gcov-tool.1.gz
-man/man1/%%GCC_TARGET%%-gcov.1.gz
-man/man1/%%GCC_TARGET%%-lto-dump.1.gz
+share/man/man1/%%GCC_TARGET%%-cpp.1.gz
+share/man/man1/%%GCC_TARGET%%-g++.1.gz
+share/man/man1/%%GCC_TARGET%%-gcc.1.gz
+share/man/man1/%%GCC_TARGET%%-gcov-dump.1.gz
+share/man/man1/%%GCC_TARGET%%-gcov-tool.1.gz
+share/man/man1/%%GCC_TARGET%%-gcov.1.gz
+share/man/man1/%%GCC_TARGET%%-lto-dump.1.gz
