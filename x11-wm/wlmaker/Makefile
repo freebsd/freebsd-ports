@@ -1,7 +1,7 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1-438
-DISTVERSIONSUFFIX=	-gebcc667
+DISTVERSION=	0.1-439
+DISTVERSIONSUFFIX=	-ga4483c1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USES=		cmake compiler:c11 gnome pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:c7a0cca:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:722571f:libbase/submodules/libbase
 CFLAGS+=	-ffile-prefix-map="${WRKSRC}"=
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
@@ -31,11 +31,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/${PORTNAME}/firefox-48x48.png \
 		share/icons/${PORTNAME}/terminal-48x48.png \
 		${NULL}
-
-.if !empty(MACHINE_ARCH:Namd64:Ni386)
-# https://github.com/phkaeser/libbase/issues/7
-USE_GCC=	yes
-.endif
 
 post-patch:
 # Drop dependency on unreleased version of libwayland
