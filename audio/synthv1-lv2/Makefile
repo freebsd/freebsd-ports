@@ -1,5 +1,5 @@
 PORTNAME=	synthv1
-DISTVERSION=	0.9.33
+DISTVERSION=	0.9.34
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-lv2
@@ -15,8 +15,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblo.so:audio/liblo
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 \
-		shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags pkgconfig qt:6 shared-mime-info
 USE_QT=		base svg tools:build
 USE_GL=		gl
 
