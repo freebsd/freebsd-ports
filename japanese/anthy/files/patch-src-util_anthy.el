@@ -18,3 +18,21 @@
  	(if anthy-xemacs
  	    (if (coding-system-p (find-coding-system 'euc-japan))
  		(set-process-coding-system proc 'euc-japan 'euc-japan))
+@@ -864,7 +864,7 @@
+ ;; leim の activate
+ ;;
+ (defun anthy-leim-activate (&optional name)
+-  (setq inactivate-current-input-method-function 'anthy-leim-inactivate)
++  (setq deactivate-current-input-method-function 'anthy-leim-inactivate)
+   (setq anthy-leim-active-p t)
+   (anthy-update-mode)
+   (when (eq (selected-window) (minibuffer-window))
+@@ -874,7 +874,7 @@
+ ;; emacsのバグ避けらしいです
+ ;;
+ (defun anthy-leim-exit-from-minibuffer ()
+-  (inactivate-input-method)
++  (deactivate-input-method)
+   (when (<= (minibuffer-depth) 1)
+     (remove-hook 'minibuffer-exit-hook 'anthy-leim-exit-from-minibuffer)))
+ 
