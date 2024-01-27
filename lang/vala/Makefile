@@ -1,5 +1,6 @@
 PORTNAME=	vala
 DISTVERSION=	${_VALA_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
@@ -18,6 +19,7 @@ USES=		bison cpe gettext-runtime gmake gnome libtool \
 USE_GNOME=	glib20 gnomeprefix libxslt:build
 CPE_VENDOR=	gnome
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-valadoc
 INSTALL_TARGET=	install-strip
