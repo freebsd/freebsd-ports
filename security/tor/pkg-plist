@@ -4,11 +4,11 @@ bin/tor-print-ed-signing-cert
 bin/tor-resolve
 bin/torify
 @sample etc/tor/torrc.sample
-%%MANPAGES%%man/man1/tor-gencert.1.gz
-%%MANPAGES%%man/man1/tor-print-ed-signing-cert.1.gz
-%%MANPAGES%%man/man1/tor-resolve.1.gz
-%%MANPAGES%%man/man1/tor.1.gz
-%%MANPAGES%%man/man1/torify.1.gz
+%%MANPAGES%%share/man/man1/tor-gencert.1.gz
+%%MANPAGES%%share/man/man1/tor-print-ed-signing-cert.1.gz
+%%MANPAGES%%share/man/man1/tor-resolve.1.gz
+%%MANPAGES%%share/man/man1/tor.1.gz
+%%MANPAGES%%share/man/man1/torify.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tor-gencert.html
 %%PORTDOCS%%%%DOCSDIR%%/tor-print-ed-signing-cert.html
 %%PORTDOCS%%%%DOCSDIR%%/tor-resolve.html
