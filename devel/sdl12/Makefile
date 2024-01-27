@@ -1,6 +1,6 @@
 PORTNAME=	sdl
 PORTVERSION=	1.2.15
-PORTREVISION=	16
+PORTREVISION=	17
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
@@ -22,6 +22,7 @@ CPE_PRODUCT=	simple_directmedia_layer
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_header_libusbhid_h=no
 CONFIGURE_ARGS=	--disable-alsa --disable-alsatest \
 		--disable-arts --disable-video-directfb --disable-video-ggi
