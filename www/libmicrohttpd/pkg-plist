@@ -4,5 +4,5 @@ lib/libmicrohttpd.so
 lib/libmicrohttpd.so.12
 lib/libmicrohttpd.so.12.61.0
 libdata/pkgconfig/libmicrohttpd.pc
-man/man3/libmicrohttpd.3.gz
+share/man/man3/libmicrohttpd.3.gz
 share/info/libmicrohttpd_performance_data.png
