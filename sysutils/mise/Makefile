@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.1.24
+DISTVERSION=	2024.1.30
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,10 +44,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.5.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
+		chrono-0.4.33 \
 		clap-4.4.18 \
 		clap_builder-4.4.18 \
-		clap_complete-4.4.8 \
+		clap_complete-4.4.9 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		clap_mangen-0.2.17 \
@@ -70,10 +70,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
 		ctor-0.2.6 \
-		ctrlc-3.4.2 \
 		curve25519-dalek-4.1.1 \
 		curve25519-dalek-derive-0.1.1 \
-		demand-0.4.0 \
+		demand-1.0.1 \
 		der-0.7.8 \
 		deranged-0.3.11 \
 		diff-0.1.13 \
@@ -147,7 +146,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.152 \
 		libgit2-sys-0.16.1+1.7.1 \
-		libz-sys-1.1.14 \
+		libz-sys-1.1.15 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.20 \
@@ -157,7 +156,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.10 \
 		native-tls-0.2.11 \
-		nix-0.27.1 \
 		nom-7.1.3 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
@@ -192,7 +190,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.76 \
+		proc-macro2-1.0.78 \
 		quick-xml-0.23.1 \
 		quote-1.0.35 \
 		rand-0.8.5 \
@@ -201,8 +199,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-1.8.1 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
 		reqwest-0.11.23 \
 		ring-0.17.7 \
@@ -226,9 +224,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.21 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		serde_json-1.0.112 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -236,6 +234,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		shared_child-1.0.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
+		signal-hook-0.3.17 \
+		signal-hook-registry-1.4.1 \
 		signature-2.2.0 \
 		similar-2.4.0 \
 		simplelog-0.12.1 \
@@ -338,7 +338,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.34 \
+		winnow-0.5.35 \
 		winreg-0.50.0 \
 		xattr-1.3.1 \
 		yaml-rust-0.4.5 \
