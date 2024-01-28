@@ -8,11 +8,11 @@ include/emacs-module.h
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/rcs2log
-man/man1/ctags.1.gz
-man/man1/ebrowse.1.gz
-man/man1/emacs.1.gz
-man/man1/emacsclient.1.gz
-man/man1/etags.1.gz
+share/man/man1/ctags.1.gz
+share/man/man1/ebrowse.1.gz
+share/man/man1/emacs.1.gz
+share/man/man1/emacsclient.1.gz
+share/man/man1/etags.1.gz
 share/applications/emacs.desktop
 share/applications/emacs-mail.desktop
 share/applications/emacsclient.desktop

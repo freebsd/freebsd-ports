@@ -1,5 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	29.2
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -33,6 +34,7 @@ USES=		cpe gmake localbase:ldflags ncurses pkgconfig tar:xz
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-build-details \
 			--localstatedir=/var \
 			--without-gconf \
