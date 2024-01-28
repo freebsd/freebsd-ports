@@ -1,5 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	30.0.50.20240115
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -27,6 +28,7 @@ GH_ACCOUNT=	emacs-mirror
 GH_TAGNAME=	43612103c221ffb300536798e2b8a8adb753f594
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-build-details \
 			--localstatedir=/var \
 			--without-gconf \
