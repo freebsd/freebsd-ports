@@ -82,6 +82,7 @@ FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default4
 FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/firefox-snap/firefox.desktop
 
 .if ${ARCH} == powerpc64
+CFLAGS+=	-DHWY_COMPILE_ONLY_SCALAR
 MOZ_OPTIONS+=	--without-wasm-sandboxed-libraries
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
