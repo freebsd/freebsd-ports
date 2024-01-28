@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	5
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
@@ -44,6 +44,7 @@ SVNFSTYPE?=	fsfs
 SVNGROUP?=	svn
 SVNUSER?=	svn
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--without-swig-perl \
 			--without-swig-python \
 			--without-swig-ruby \
