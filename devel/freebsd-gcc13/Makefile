@@ -1,5 +1,6 @@
 PORTNAME=	gcc
 DISTVERSION=	13.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -39,6 +40,7 @@ SUB_LIST=	BU_PREFIX=${BU_PREFIX} \
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--enable-gnu-indirect-function \
@@ -117,7 +119,7 @@ PLIST+=		${.CURDIR}/pkg-plist.i386
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-${GCC_TARGET}-*
 	${RM} ${STAGEDIR}${PREFIX}/share/info/*
-	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man7/*
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
 	# Conflicts with sys/x86/include/float.h
