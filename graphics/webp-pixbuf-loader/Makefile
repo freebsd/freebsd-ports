@@ -1,5 +1,5 @@
 PORTNAME=	webp-pixbuf-loader
-DISTVERSION=	0.2.4
+DISTVERSION=	0.2.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -16,8 +16,5 @@ USE_GNOME=	glib20 gdkpixbuf2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aruiz
-
-#post-install:
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gdk-pixbuf-2.0/*/loaders/*
 
 .include <bsd.port.mk>
