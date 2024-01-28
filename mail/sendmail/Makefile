@@ -218,7 +218,6 @@ post-build:
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/etc/mail \
-		${STAGEDIR}${PREFIX}/share/man/cat1 \
 		${STAGEDIR}${PREFIX}/share/man/cat5 \
 		${STAGEDIR}${PREFIX}/share/man/cat8
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
