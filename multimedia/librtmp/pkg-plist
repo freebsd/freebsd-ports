@@ -6,4 +6,4 @@ lib/librtmp.a
 lib/librtmp.so
 lib/librtmp.so.1
 libdata/pkgconfig/librtmp.pc
-man/man3/librtmp.3.gz
+share/man/man3/librtmp.3.gz

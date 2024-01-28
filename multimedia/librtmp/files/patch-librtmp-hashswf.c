@@ -1,4 +1,4 @@
---- librtmp/hashswf.c.orig	2016-02-29 01:15:13 UTC
+--- librtmp/hashswf.c.orig	2019-03-30 21:33:00 UTC
 +++ librtmp/hashswf.c
 @@ -37,10 +37,17 @@
  #define SHA256_DIGEST_LENGTH	32
@@ -22,7 +22,7 @@
  #elif defined(USE_GNUTLS)
  #include <nettle/hmac.h>
  #ifndef SHA256_DIGEST_LENGTH
-@@ -48,19 +55,51 @@
+@@ -48,20 +55,52 @@
  #endif
  #undef HMAC_CTX
  #define HMAC_CTX	struct hmac_sha256_ctx
@@ -63,7 +63,7 @@
 +			ctx = HMAC_CTX_new(); \
 +		HMAC_Init_ex(ctx, (unsigned char *)key, len, EVP_sha256(), 0); \
 +	} while (0);
-+#endif
+ #endif
 +#define HMAC_crunch(ctx, buf, len)	HMAC_Update(ctx, (unsigned char *)buf, len)
 +#define HMAC_finish(ctx, dig, dlen)	HMAC_Final(ctx, (unsigned char *)dig, &dlen);
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
@@ -79,10 +79,11 @@
 +		ctx = NULL; \
 +	} while (0)
 +#endif
- #endif
++#endif
  
  extern void RTMP_TLS_Init();
-@@ -289,7 +328,7 @@ leave:
+ extern TLS_CTX RTMP_TLS_ctx;
+@@ -298,7 +337,7 @@ struct info
  struct info
  {
    z_stream *zs;

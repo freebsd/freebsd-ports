@@ -1,6 +1,6 @@
---- librtmp/Makefile.orig	2016-02-29 01:15:13 UTC
+--- librtmp/Makefile.orig	2019-03-30 21:33:00 UTC
 +++ librtmp/Makefile
-@@ -1,19 +1,21 @@
+@@ -1,19 +1,21 @@ VERSION=v2.4
  VERSION=v2.4
  
 -prefix=/usr/local
@@ -9,8 +9,9 @@
  incdir=$(prefix)/include/librtmp
  bindir=$(prefix)/bin
  libdir=$(prefix)/lib
+-mandir=$(prefix)/man
 +libdatadir=$(prefix)/libdata
- mandir=$(prefix)/man
++mandir=$(prefix)/share/man
  BINDIR=$(DESTDIR)$(bindir)
  INCDIR=$(DESTDIR)$(incdir)
  LIBDIR=$(DESTDIR)$(libdir)
@@ -26,7 +27,7 @@
  
  SYS=posix
  CRYPTO=OPENSSL
-@@ -23,14 +25,14 @@ DEF_OPENSSL=-DUSE_OPENSSL
+@@ -23,14 +25,14 @@ REQ_GNUTLS=gnutls,hogweed,nettle
  DEF_GNUTLS=-DUSE_GNUTLS
  DEF_=-DNO_CRYPTO
  REQ_GNUTLS=gnutls,hogweed,nettle
@@ -43,7 +44,7 @@
  LIB_POLARSSL=-lpolarssl $(LIBZ)
  PRIVATE_LIBS=$(LIBS_$(SYS))
  CRYPTO_LIB=$(LIB_$(CRYPTO)) $(PRIVATE_LIBS)
-@@ -74,8 +76,9 @@ SO_INST=$(SOINST_$(SHARED))
+@@ -74,8 +76,9 @@ OPT=-O2
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
  OPT=-O2
