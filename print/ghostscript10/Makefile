@@ -1,6 +1,6 @@
 PORTNAME=	ghostscript
 DISTVERSION=	10.02.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 PKGNAMESUFFIX=	${GS_MAJOR_VERSION}
@@ -48,6 +48,7 @@ EXTRACT_AFTER_ARGS=	--exclude cups/libs \
 			--exclude zlib
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall

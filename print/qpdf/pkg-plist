@@ -77,9 +77,9 @@ lib/cmake/qpdf/libqpdfTargets.cmake
 lib/cmake/qpdf/qpdfConfig.cmake
 lib/cmake/qpdf/qpdfConfigVersion.cmake
 libdata/pkgconfig/libqpdf.pc
-man/man1/fix-qdf.1.gz
-man/man1/qpdf.1.gz
-man/man1/zlib-flate.1.gz
+share/man/man1/fix-qdf.1.gz
+share/man/man1/qpdf.1.gz
+share/man/man1/zlib-flate.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README-doc.txt
 %%PORTDOCS%%%%DOCSDIR%%/examples/extend-c-api-impl.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/extend-c-api.c

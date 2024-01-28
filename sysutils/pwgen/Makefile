@@ -1,5 +1,6 @@
 PORTNAME=	pwgen
 PORTVERSION=	2.08
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
@@ -11,10 +12,11 @@ WWW=		https://sourceforge.net/projects/pwgen/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		cpe
 CPE_VENDOR=	pwgen_project
 
 PLIST_FILES=	bin/pwgen \
-		man/man1/pwgen.1.gz
+		share/man/man1/pwgen.1.gz
 
 .include <bsd.port.mk>

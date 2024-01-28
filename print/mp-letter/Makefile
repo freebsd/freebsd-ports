@@ -1,5 +1,6 @@
 PORTNAME=	mp-${PAPERSIZE}
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/obrien
 DISTNAME=	mp-3.0.1
@@ -21,7 +22,7 @@ MAKEFILE=	Makefile.dist
 
 post-install:
 .for a in ${LINKS}
-	${LN} -sf mp.1 ${STAGEDIR}${PREFIX}/man/man1/${a}.1
+	${LN} -sf mp.1 ${STAGEDIR}${PREFIX}/share/man/man1/${a}.1
 .endfor
 
 .include <bsd.port.mk>

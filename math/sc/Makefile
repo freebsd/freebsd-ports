@@ -1,6 +1,6 @@
 PORTNAME=	sc
 PORTVERSION=	7.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SUNSITE/apps/financial/spreadsheet
 
@@ -15,6 +15,7 @@ post-patch:
 		-e '/^CFLAGS=/s,=.*,=-DSYSV3 ${CFLAGS} -O0,' \
 		-e '/^LIBDIR=/s,=.*,=$${DESTDIR}${DATADIR},' \
 		-e '/^MANDIR=/s,=,=$${DESTDIR},' \
+		-e '/^MANDIR=/s,$${prefix},$${prefix}/share,' \
 		-e '/^EXDIR=/s,=.*,=$${DESTDIR}${PREFIX}/bin,' \
 		-e '/^YACC=/s,=.*,=${YACC},' \
 		-e '/usr.bin.crypt/s,^# *,,' \

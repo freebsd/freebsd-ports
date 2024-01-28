@@ -2,5 +2,5 @@ bin/rtmpdump
 sbin/rtmpgw
 sbin/rtmpsrv
 sbin/rtmpsuck
-man/man1/rtmpdump.1.gz
-man/man8/rtmpgw.8.gz
+share/man/man1/rtmpdump.1.gz
+share/man/man8/rtmpgw.8.gz
