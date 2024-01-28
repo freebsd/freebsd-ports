@@ -1,14 +1,13 @@
 PORTNAME=	colord
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.4.7
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 WWW=		https://www.freedesktop.org/software/colord
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgusb.so:devel/libgusb \

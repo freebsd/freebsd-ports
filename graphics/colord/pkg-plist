@@ -41,7 +41,6 @@ include/colord-1/colorhug/ch-inhx32.h
 include/colord-1/colorhug/ch-math.h
 include/colord-1/colorhug/ch-version.h
 include/colord-1/colorhug/colorhug.h
-%%SENSOR%%lib/colord-sensors/libcolord_sensor_argyll.a
 %%SENSOR%%lib/colord-sensors/libcolord_sensor_argyll.so
 lib/colord-plugins/libcolord_sensor_camera.so
 lib/colord-plugins/libcolord_sensor_scanner.so
@@ -62,7 +61,6 @@ lib/libcolordcompat.so
 lib/libcolordprivate.so
 lib/libcolordprivate.so.2
 lib/libcolordprivate.so.2.0.5
-@comment lib/systemd/user/colord-session.service
 libdata/pkgconfig/colord.pc
 libdata/pkgconfig/colorhug.pc
 libexec/colord
@@ -193,6 +191,7 @@ share/locale/id/LC_MESSAGES/colord.mo
 share/locale/is/LC_MESSAGES/colord.mo
 share/locale/it/LC_MESSAGES/colord.mo
 share/locale/ja/LC_MESSAGES/colord.mo
+share/locale/ka/LC_MESSAGES/colord.mo
 share/locale/kk/LC_MESSAGES/colord.mo
 share/locale/kn/LC_MESSAGES/colord.mo
 share/locale/ko/LC_MESSAGES/colord.mo
@@ -210,8 +209,10 @@ share/locale/pt/LC_MESSAGES/colord.mo
 share/locale/pt_BR/LC_MESSAGES/colord.mo
 share/locale/ro/LC_MESSAGES/colord.mo
 share/locale/ru/LC_MESSAGES/colord.mo
+share/locale/si/LC_MESSAGES/colord.mo
 share/locale/sk/LC_MESSAGES/colord.mo
 share/locale/sl/LC_MESSAGES/colord.mo
+share/locale/sq/LC_MESSAGES/colord.mo
 share/locale/sr/LC_MESSAGES/colord.mo
 share/locale/sr@latin/LC_MESSAGES/colord.mo
 share/locale/sv/LC_MESSAGES/colord.mo
