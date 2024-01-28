@@ -1,9 +1,9 @@
 include/libmng.h
 include/libmng_conf.h
 include/libmng_types.h
-man/man3/libmng.3.gz
-man/man5/jng.5.gz
-man/man5/mng.5.gz
+share/man/man3/libmng.3.gz
+share/man/man5/jng.5.gz
+share/man/man5/mng.5.gz
 lib/libmng.a
 lib/libmng.so
 lib/libmng.so.1
