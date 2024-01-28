@@ -1,5 +1,5 @@
 PORTNAME=	sendmail
-PORTVERSION=	8.18.0.6
+PORTVERSION=	8.18.0.9
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
@@ -220,6 +220,7 @@ post-build:
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/etc/mail \
+		${STAGEDIR}${PREFIX}/share/man/cat1 \
 		${STAGEDIR}${PREFIX}/share/man/cat5 \
 		${STAGEDIR}${PREFIX}/share/man/cat8
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
