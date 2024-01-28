@@ -56,9 +56,9 @@ lib/libgsf-1.so
 lib/libgsf-1.so.%%LIBSHORTVER%%
 lib/libgsf-1.so.%%LIBSHORTVER%%.0.%%LIBMINORVER%%
 libdata/pkgconfig/libgsf-1.pc
-man/man1/gsf-office-thumbnailer.1.gz
-man/man1/gsf-vba-dump.1.gz
-man/man1/gsf.1.gz
+share/man/man1/gsf-office-thumbnailer.1.gz
+share/man/man1/gsf-vba-dump.1.gz
+share/man/man1/gsf.1.gz
 share/gir-1.0/Gsf-1.gir
 share/gtk-doc/html/gsf/annotation-glossary.html
 share/gtk-doc/html/gsf/api.html
