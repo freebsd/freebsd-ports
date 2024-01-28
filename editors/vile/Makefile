@@ -1,5 +1,5 @@
 PORTNAME=	vile
-PORTVERSION=	9.8y
+PORTVERSION=	9.8z
 CATEGORIES=	editors
 MASTER_SITES=	https://invisible-island.net/archives/vile/current/ \
 		https://invisible-mirror.net/archives/vile/current/
