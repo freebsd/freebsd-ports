@@ -1,7 +1,7 @@
 PORTNAME=	essentia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1_beta5-859
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-gb247091f
 CATEGORIES=	audio
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,11 +20,17 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
+PATCH_SITES=	https://raw.githubusercontent.com/MTG/essentia/d02b6c752046802a711530e2bcd5feafca42247d/
+PATCH_FILES=	waf
+
 USES=		eigen:3 pkgconfig python
 USE_PYTHON=	pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MTG
+
+post-extract:
+	@${CP} ${DISTDIR}/waf ${WRKSRC}/
 
 do-configure:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${BUILD_ENV} ${PYTHON_CMD} waf configure --only-python
