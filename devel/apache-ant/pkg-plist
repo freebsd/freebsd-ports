@@ -71,5 +71,5 @@
 %%DATADIR%%/lib/ant.pom
 %%DATADIR%%/lib/libraries.properties
 bin/ant
-man/man1/ant.1.gz
-man/man5/build.xml.5.gz
+share/man/man1/ant.1.gz
+share/man/man5/build.xml.5.gz

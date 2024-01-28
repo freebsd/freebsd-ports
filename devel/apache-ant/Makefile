@@ -1,5 +1,6 @@
 PORTNAME=	apache-ant
 DISTVERSION=	1.10.13
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/ant/binaries:bin \
 		https://deb.debian.org/debian/pool/main/a/ant/:man
@@ -57,8 +58,8 @@ do-install:
 .endfor
 
 	@${ECHO_MSG} -n ">> Installing manpages..."
-	${INSTALL_MAN} ${WRKSRC}/debian/ant.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/debian/build.xml.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/debian/ant.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/debian/build.xml.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	@${ECHO_MSG} " [ DONE ]"
 
 .if ${PORT_OPTIONS:MDOCS}
