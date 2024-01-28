@@ -139,7 +139,7 @@ lib/libguilereadline-v-17.so
 lib/libguilereadline-v-17.so.17
 lib/libguilereadline-v-17.so.17.0.3
 libdata/pkgconfig/guile-1.8.pc
-man/man1/guile%%GUILE_SFX%%.1.gz
+share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/boot-9.scm
