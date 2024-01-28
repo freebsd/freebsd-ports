@@ -3,8 +3,8 @@ bin/nspptview
 bin/nsxlview
 bin/ppthtml
 bin/xlhtml
-man/man1/ppthtml.1.gz
-man/man1/xlhtml.1.gz
+share/man/man1/ppthtml.1.gz
+share/man/man1/xlhtml.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/xlhtml/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/xlhtml/README
 %%PORTDOCS%%%%DOCSDIR%%/xlhtml/THANKS
