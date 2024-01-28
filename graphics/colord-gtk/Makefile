@@ -1,14 +1,13 @@
 PORTNAME=	colord-gtk
-PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 WWW=		https://www.freedesktop.org/software/colord
 
-LICENSE=	LGPL3
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
