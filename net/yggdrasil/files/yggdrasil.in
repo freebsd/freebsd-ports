@@ -1,14 +1,14 @@
 #!/bin/sh
 #
 # Put the yggdrasil and yggdrasilctl binaries into /usr/local/bin
-# Then copy this script into /etc/rc.d/yggdrasil
+# Then copy this script into /usr/local/etc/rc.d/yggdrasil
 # Finally, run:
 #   1. chmod +x /etc/rc.d/yggdrasil /usr/local/bin/{yggdrasil,yggdrasilctl}
-#   2. echo "yggdrasil_enable=yes" >> /etc/rc.d
+#   2. sysrc yggdrasil_enable=YES
 #   3. service yggdrasil start
 #
 # PROVIDE: yggdrasil
-# REQUIRE: networking
+# REQUIRE: NETWORKING
 # KEYWORD:
 
 . /etc/rc.subr
@@ -19,9 +19,10 @@ rcvar="yggdrasil_enable"
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 
+yggdrasil_command="%%PREFIX%%/bin/yggdrasil"
 pidfile="/var/run/yggdrasil/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${yggdrasil_command}"
+command_args="-P ${pidfile} -r -S -m 3 -s info -T yggdrasil ${yggdrasil_command}"
 
 yggdrasil_start()
 {
@@ -39,7 +40,7 @@ yggdrasil_start()
 	mkdir -p /var/run/yggdrasil
 
 	logger -s -t yggdrasil "Starting yggdrasil"
-	${command} ${command_args} %%PREFIX%%/bin/yggdrasil -useconffile %%PREFIX%%/etc/yggdrasil.conf \
+	${command} ${command_args} -useconffile %%PREFIX%%/etc/yggdrasil.conf \
 		1>/var/log/yggdrasil.stdout.log \
 		2>/var/log/yggdrasil.stderr.log &
 }
