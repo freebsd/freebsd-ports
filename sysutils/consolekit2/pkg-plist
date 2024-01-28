@@ -29,11 +29,11 @@ libexec/ck-collect-session-info
 %%X11%%@(,,4755) libexec/ck-get-x11-display-device
 %%X11%%libexec/ck-get-x11-server-pid
 libexec/ck-remove-directory
-man/man1/ck-history.1.gz
-man/man1/ck-launch-session.1.gz
-man/man1/ck-list-sessions.1.gz
-man/man1/console-kit-daemon.1m.gz
-man/man8/pam_ck_connector.8.gz
+share/man/man1/ck-history.1.gz
+share/man/man1/ck-launch-session.1.gz
+share/man/man1/ck-list-sessions.1.gz
+share/man/man1/console-kit-daemon.1m.gz
+share/man/man8/pam_ck_connector.8.gz
 sbin/ck-log-system-restart
 sbin/ck-log-system-start
 sbin/ck-log-system-stop
