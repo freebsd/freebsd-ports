@@ -1,5 +1,6 @@
 PORTNAME=	dmake
 PORTVERSION=	4.13.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -17,11 +18,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jimjag
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 
 CONFLICTS_INSTALL=	sunpromake
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/dmake.tf ${STAGEDIR}${PREFIX}/man/man1/dmake.1
+	${INSTALL_MAN} ${WRKSRC}/man/dmake.tf ${STAGEDIR}${PREFIX}/share/man/man1/dmake.1
 
 .include <bsd.port.mk>
