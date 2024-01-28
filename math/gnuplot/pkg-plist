@@ -1,6 +1,6 @@
 bin/gnuplot
 %%X11%%libexec/gnuplot/5.4/gnuplot_x11
-man/man1/gnuplot.1.gz
+share/man/man1/gnuplot.1.gz
 %%DATADIR%%/5.4/PostScript/8859-1.ps
 %%DATADIR%%/5.4/PostScript/8859-15.ps
 %%DATADIR%%/5.4/PostScript/8859-2.ps
