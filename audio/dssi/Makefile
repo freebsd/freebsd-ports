@@ -1,6 +1,6 @@
 PORTNAME=	dssi
 PORTVERSION=	1.1.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 
 USES=		gmake pathfix pkgconfig localbase libtool xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_XORG=	x11
 
 PORTDOCS=	ChangeLog README

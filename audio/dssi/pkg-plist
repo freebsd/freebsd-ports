@@ -13,8 +13,8 @@ lib/dssi/less_trivial_synth.so
 lib/dssi/trivial_sampler.so
 lib/dssi/trivial_synth.so
 libdata/pkgconfig/dssi.pc
-man/man1/dssi_analyse_plugin.1.gz
-man/man1/dssi_list_plugins.1.gz
-man/man1/dssi_osc_send.1.gz
-man/man1/dssi_osc_update.1.gz
-man/man1/jack-dssi-host.1.gz
+share/man/man1/dssi_analyse_plugin.1.gz
+share/man/man1/dssi_list_plugins.1.gz
+share/man/man1/dssi_osc_send.1.gz
+share/man/man1/dssi_osc_update.1.gz
+share/man/man1/jack-dssi-host.1.gz
