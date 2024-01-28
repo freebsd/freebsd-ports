@@ -1,0 +1,4 @@
+bin/entice
+share/applications/entice.desktop
+%%DATADIR%%/themes/default.edj
+share/icons/hicolor/128x128/apps/entice.png
