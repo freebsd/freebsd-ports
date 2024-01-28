@@ -45,6 +45,7 @@ lib/libcdk.a
 lib/libcdk.so
 lib/libcdk.so.5
 lib/libcdk.so.5.0
+man/man1/cdk5-config.1.gz
 man/man3/Beep.3.gz
 man/man3/CDKallocStrings.3.gz
 man/man3/CDKcountStrings.3.gz
@@ -394,6 +395,7 @@ man/man3/getCDKSwindowContents.3.gz
 man/man3/getCDKTemplateBox.3.gz
 man/man3/getCDKTemplateMin.3.gz
 man/man3/getCDKTemplateValue.3.gz
+man/man3/getCdkTitle.3.gz
 man/man3/getCDKUScaleBox.3.gz
 man/man3/getCDKUScaleHighValue.3.gz
 man/man3/getCDKUScaleLowValue.3.gz
@@ -1048,8 +1050,6 @@ man/man3/waitCDKLabel.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cli/samples/slider.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cli/samples/template.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cli/samples/viewer.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cli/utils/adduser
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cli/utils/netconfig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/appointment.c
@@ -1100,3 +1100,5 @@ man/man3/waitCDKLabel.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/uslider_ex.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/viewer_ex.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/viewer_ex2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/mentry_ex2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/scroll_ex2.c
