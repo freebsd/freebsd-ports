@@ -1,6 +1,6 @@
 PORTNAME=	xmlstarlet
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/xmlstar/${PORTNAME}/${PORTVERSION}
 
@@ -14,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GNOME=	libxslt
 USES=		gnome iconv
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \
 		${ICONV_CONFIGURE_ARG} \
 		--disable-static-libs
-PLIST_FILES=	bin/xml man/man1/xmlstarlet.1.gz
+PLIST_FILES=	bin/xml share/man/man1/xmlstarlet.1.gz
 PORTDOCS=	xmlstarlet.txt \
 		xmlstarlet-man.xml \
 		xmlstarlet-ug.html xmlstarlet-ug.pdf \
