@@ -1,6 +1,6 @@
 --- Makefile.orig	2022-08-04 18:46:46 UTC
 +++ Makefile
-@@ -43,8 +43,8 @@
+@@ -43,8 +43,8 @@ WAV49	= -DWAV49
  # CC		= /usr/lang/acc
  # CCFLAGS 	= -c -O
  
@@ -11,7 +11,7 @@
  
  LD 		= $(CC)
  
-@@ -59,6 +59,7 @@
+@@ -59,6 +59,7 @@ LD 		= $(CC)
  ######### Includes needed by $(CC)
  
  # LDINC	= -L/usr/gnu/lib/gcc-2.1/gcc-lib/sparc-sun-sunos4.1.2/2.1
@@ -19,7 +19,7 @@
  ######### Library paths needed by $(LD)
  
  # LDLIB	= -lgcc
-@@ -71,7 +72,7 @@
+@@ -71,7 +72,7 @@ LD 		= $(CC)
  # Leave INSTALL_ROOT empty (or just don't execute "make install") to
  # not install gsm and toast outside of this directory.
  
@@ -28,16 +28,27 @@
  
  # Where do you want to install the gsm library, header file, and manpages?
  #
-@@ -80,7 +81,7 @@
+@@ -80,8 +81,8 @@ GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
  
  GSM_INSTALL_ROOT = $(INSTALL_ROOT)
  GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
 -GSM_INSTALL_INC = $(GSM_INSTALL_ROOT)/inc
+-GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
 +GSM_INSTALL_INC = $(GSM_INSTALL_ROOT)/include
- GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
++GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/share/man/man3
  
  
-@@ -106,7 +107,7 @@
+ # Where do you want to install the toast binaries and their manpage?
+@@ -91,7 +92,7 @@ TOAST_INSTALL_BIN = $(TOAST_INSTALL_ROOT)/bin
+ 
+ TOAST_INSTALL_ROOT	  = $(INSTALL_ROOT)
+ TOAST_INSTALL_BIN = $(TOAST_INSTALL_ROOT)/bin
+-TOAST_INSTALL_MAN = $(TOAST_INSTALL_ROOT)/man/man1
++TOAST_INSTALL_MAN = $(TOAST_INSTALL_ROOT)/share/man/man1
+ 
+ #  Other tools
+ 
+@@ -106,7 +107,7 @@ RANLIB	 	= ranlib
  COMPRESSFLAGS 	= 
  # RANLIB 	= true
  RANLIB	 	= ranlib
@@ -46,7 +57,7 @@
  #
  #    You shouldn't have to configure below this line if you're porting.
  # 
-@@ -129,17 +130,19 @@
+@@ -129,17 +130,19 @@ INC	= $(ROOT)/inc
  # DEBUG	= -DNDEBUG
  ######### Remove -DNDEBUG to enable assertions.
  
@@ -68,7 +79,7 @@
  
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
-@@ -257,7 +260,8 @@
+@@ -257,7 +260,8 @@ GSM_INSTALL_TARGETS =	\
  # Install targets
  
  GSM_INSTALL_TARGETS =	\
@@ -78,7 +89,7 @@
  		$(GSM_INSTALL_INC)/gsm.h		\
  		$(GSM_INSTALL_MAN)/gsm.3		\
  		$(GSM_INSTALL_MAN)/gsm_explode.3	\
-@@ -272,14 +276,16 @@
+@@ -272,14 +276,16 @@ TOAST_INSTALL_TARGETS =	\
  
  
  # Default rules
@@ -97,7 +108,7 @@
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -299,26 +305,30 @@
+@@ -299,26 +305,30 @@ install:	toastinstall gsminstall
  
  # The basic API: libgsm
  
@@ -139,7 +150,7 @@
  # The local bin and lib directories
  
  $(BIN):
-@@ -342,62 +352,59 @@
+@@ -342,62 +352,59 @@ gsmuninstall:
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
@@ -230,7 +241,7 @@
  
  # Distribution
  
-@@ -473,22 +480,22 @@
+@@ -473,22 +480,22 @@ $(TST)/test-result:	$(TST)/lin2cod $(TST)/cod2lin $(TO
  $(TST)/test-result:	$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/run
  			( cd $(TST); ./run ) 
  

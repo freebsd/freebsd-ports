@@ -5,8 +5,8 @@ include/gsm.h
 lib/libgsm.a
 lib/libgsm.so
 lib/libgsm.so.1
-man/man1/toast.1.gz
-man/man3/gsm.3.gz
-man/man3/gsm_explode.3.gz
-man/man3/gsm_option.3.gz
-man/man3/gsm_print.3.gz
+share/man/man1/toast.1.gz
+share/man/man3/gsm.3.gz
+share/man/man3/gsm_explode.3.gz
+share/man/man3/gsm_option.3.gz
+share/man/man3/gsm_print.3.gz
