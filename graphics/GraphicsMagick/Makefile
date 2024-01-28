@@ -1,6 +1,6 @@
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.40
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--without-dps --without-gdi32 --without-perl --without-trio
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
