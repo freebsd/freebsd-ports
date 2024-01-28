@@ -1,5 +1,6 @@
 PORTNAME=	web2c
 PORTVERSION=	${TEXLIVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -24,6 +25,7 @@ USE_TEX=	kpathsea ptexenc
 USE_XORG=	pixman
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-aleph \
 			--disable-eptex \
 			--disable-euptex \
