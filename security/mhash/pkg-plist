@@ -9,4 +9,4 @@ lib/libmhash.a
 lib/libmhash.so
 lib/libmhash.so.2
 lib/libmhash.so.2.0.1
-man/man3/mhash.3.gz
+share/man/man3/mhash.3.gz
