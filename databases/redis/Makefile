@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.2.3
+DISTVERSION=	7.2.4
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
