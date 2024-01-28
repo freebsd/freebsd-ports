@@ -1,6 +1,8 @@
 bin/dsbmixer
+bin/dsbmixer-dbus
 @(root,wheel,4750) libexec/dsbmixer_backend
-libexec/dsbmixer_restart_pa
+libexec/dsbmixer-pa
 share/applications/dsbmixer.desktop
 %%DATADIR%%/dsbmixer_de.qm
 %%DATADIR%%/dsbmixer_fr.qm
+%%DATADIR%%/dsbmixer_sv.qm
