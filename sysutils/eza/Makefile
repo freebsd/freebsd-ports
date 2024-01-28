@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
+DISTVERSION=	0.17.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -24,7 +24,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		anes-0.1.6 \
 		ansi_colours-1.2.2 \
 		ansiterm-0.12.2 \
-		anstream-0.6.4 \
+		anstream-0.6.11 \
 		anstyle-1.0.3 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
@@ -39,7 +39,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		cast-0.3.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
+		chrono-0.4.33 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
@@ -138,12 +138,12 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
 		serde_json-1.0.107 \
-		serde_spanned-0.6.3 \
-		shlex-1.2.0 \
+		serde_spanned-0.6.5 \
+		shlex-1.3.0 \
 		similar-2.2.1 \
 		siphasher-0.3.11 \
-		snapbox-0.4.14 \
-		snapbox-macros-0.3.6 \
+		snapbox-0.4.16 \
+		snapbox-macros-0.3.7 \
 		syn-2.0.29 \
 		tempfile-3.8.0 \
 		terminal_size-0.3.0 \
@@ -156,9 +156,9 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		toml_datetime-0.6.3 \
-		toml_edit-0.20.1 \
-		trycmd-0.14.19 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.21.0 \
+		trycmd-0.14.20 \
 		unicode-bidi-0.3.5 \
 		unicode-ident-1.0.11 \
 		unicode-normalization-0.1.17 \
