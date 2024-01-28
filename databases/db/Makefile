@@ -17,7 +17,7 @@ CFLAGS+=	-D__dead=""
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/db \
-		man/man1/db.1.gz
+		share/man/man1/db.1.gz
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -27,6 +27,6 @@ do-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/db ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/db.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/db.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
