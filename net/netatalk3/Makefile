@@ -1,6 +1,6 @@
 PORTNAME=	netatalk
 PORTVERSION=	3.1.18
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:S/./-/g}
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libevent.so:devel/libevent
 
-USES=		bdb:5+ cpe gettext gmake iconv libtool perl5 pkgconfig shebangfix ssl tar:bzip2
+USES=		bdb:18 cpe gettext gmake iconv libtool perl5 pkgconfig shebangfix ssl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
