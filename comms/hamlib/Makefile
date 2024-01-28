@@ -1,5 +1,6 @@
 PORTNAME=	hamlib
 PORTVERSION=	4.5.5
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -22,6 +23,7 @@ USE_PYTHON=	py3kplist
 # $TCL_INCLUDE_SPEC
 SHEBANG_FILES=	bindings/perltest.pl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-perl-binding \
 		--with-tcl-binding --with-tcl=${TCL_LIBDIR} \
 		--with-libusb \
