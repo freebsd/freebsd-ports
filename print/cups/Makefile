@@ -1,6 +1,6 @@
 PORTNAME=	cups
 DISTVERSION=	2.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/cups/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	-source.tar.gz
@@ -21,6 +21,7 @@ CPE_VENDOR=	linuxfoundation
 CONFLICTS=	LPRng
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-relro						\
 		--with-cups-user=${USERS}				\
 		--with-cups-group=${GROUPS}				\
