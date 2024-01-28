@@ -1,5 +1,5 @@
 PORTNAME=	makemkv
-DISTVERSION=	1.17.5
+DISTVERSION=	1.17.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
@@ -48,8 +48,8 @@ SUB_FILES=	update-makemkv-drives
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 
-FDKAACVERSION=	2.0.2
-FFMPEGVERSION=	6.0
+FDKAACVERSION=	2.0.3
+FFMPEGVERSION=	6.1.1
 
 DISTFL_MAKEMKV=	makemkv-oss-${DISTVERSION}.tar.gz \
 		makemkv-bin-${DISTVERSION}.tar.gz
