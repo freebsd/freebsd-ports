@@ -1,0 +1,15 @@
+This is a daemon that manages network configuration of FreeBSD.
+
+The daemon can manage:
+ - some system network parameters
+ - interfaces
+ -  routes
+ -  wireless networks (using wpa_supplicant)
+
+nmdaemon should be started as root, it opens a unix socket where
+clients can connect. The permissions of the unix socket are managed
+by nmdaemon and provided by it's configuration file.
+
+To communicate with nmdaemon one should use JSON formatted commands,
+nmdaemon answers with JSON formatted data too.
+The syntax and examples of the commands can be found in commands.md.
