@@ -1,5 +1,6 @@
 PORTNAME=	ldns
 DISTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -17,6 +18,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-dane-ta-usage \
 			--with-ssl=${OPENSSLBASE}
 MAKE_JOBS_UNSAFE=	yes
@@ -116,9 +118,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/packaging/libldns.pc \
 		 ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_MAN} ${WRKSRC}/packaging/ldns-config.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/ldns_*.3 \
-		${STAGEDIR}${PREFIX}/man/man3
+		${STAGEDIR}${PREFIX}/share/man/man3
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.3
 .if ${PORT_OPTIONS:MDRILL}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/drill
