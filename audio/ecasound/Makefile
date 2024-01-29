@@ -1,6 +1,6 @@
 PORTNAME=	ecasound
 PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
@@ -19,6 +19,7 @@ USES=		gmake libtool localbase:ldflags ncurses pkgconfig \
 		readline shebangfix
 SHEBANG_FILES=	ecatools/ecamonitor
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \
 		--enable-sys-readline=no \
@@ -59,6 +60,6 @@ post-patch:
 
 post-install-PYTHON-off:
 	${RM} -R ${STAGEDIR}${PREFIX}/bin/ecamonitor
-	${RM} -R ${STAGEDIR}${PREFIX}/man/man1/ecamonitor.1.gz
+	${RM} -R ${STAGEDIR}${PREFIX}/share/man/man1/ecamonitor.1.gz
 
 .include <bsd.port.mk>
