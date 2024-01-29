@@ -1,8 +1,6 @@
 bin/kdenlive
 bin/kdenlive_render
 %%QT_PLUGINDIR%%/kf5/thumbcreator/mltpreview.so
-man/man1/kdenlive.1.gz
-man/man1/kdenlive_render.1.gz
 share/applications/org.kde.kdenlive.desktop
 share/config.kcfg/kdenlivesettings.kcfg
 %%PORTDOCS%%%%DOCSDIR%%/Kdenlive/AUTHORS
@@ -560,6 +558,8 @@ share/locale/ug/LC_MESSAGES/kdenlive.mo
 share/locale/uk/LC_MESSAGES/kdenlive.mo
 share/locale/zh_CN/LC_MESSAGES/kdenlive.mo
 share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
+share/man/man1/kdenlive.1.gz
+share/man/man1/kdenlive_render.1.gz
 share/metainfo/org.kde.kdenlive.appdata.xml
 share/mime/packages/org.kde.kdenlive.xml
 share/mime/packages/westley.xml

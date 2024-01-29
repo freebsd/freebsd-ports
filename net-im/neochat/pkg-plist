@@ -1,12 +1,4 @@
 bin/neochat
-man/ca/man1/neochat.1.gz
-man/es/man1/neochat.1.gz
-man/it/man1/neochat.1.gz
-man/man1/neochat.1.gz
-man/nl/man1/neochat.1.gz
-man/sv/man1/neochat.1.gz
-man/tr/man1/neochat.1.gz
-man/uk/man1/neochat.1.gz
 share/applications/org.kde.neochat.desktop
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
@@ -50,5 +42,13 @@ share/locale/tr/LC_MESSAGES/neochat.mo
 share/locale/uk/LC_MESSAGES/neochat.mo
 share/locale/zh_CN/LC_MESSAGES/neochat.mo
 share/locale/zh_TW/LC_MESSAGES/neochat.mo
+share/man/ca/man1/neochat.1.gz
+share/man/es/man1/neochat.1.gz
+share/man/it/man1/neochat.1.gz
+share/man/man1/neochat.1.gz
+share/man/nl/man1/neochat.1.gz
+share/man/sv/man1/neochat.1.gz
+share/man/tr/man1/neochat.1.gz
+share/man/uk/man1/neochat.1.gz
 share/metainfo/org.kde.neochat.appdata.xml
 share/qlogging-categories5/neochat.categories
