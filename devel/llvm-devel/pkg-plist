@@ -6071,7 +6071,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/prfchiintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/prfchwintrin.h
 %%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/profile/InstrProfData.inc
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/profile/instr_prof_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/profile/instr_prof_interface.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ptwriteintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/raointintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/rdpruintrin.h
