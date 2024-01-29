@@ -1,0 +1,28 @@
+Avoid various systemd dependencies
+
+--- data/cosmic.desktop.orig	2024-01-29 00:48:40 UTC
++++ data/cosmic.desktop
+@@ -1,7 +1,7 @@ Commment=This session logs you into Cosmic
+ [Desktop Entry]
+ Name=Cosmic
+ Commment=This session logs you into Cosmic
+-Exec=/usr/bin/cosmic-service
++Exec=cosmic-comp
+ Type=Application
+ DesktopNames=pop:COSMIC
+ X-GDM-SessionRegisters=false
+\ No newline at end of file
+--- src/main.rs.orig	2024-01-29 00:48:40 UTC
++++ src/main.rs
+@@ -35,6 +35,11 @@ fn main() -> Result<()> {
+     logger::init_logger()?;
+     info!("Cosmic starting up!");
+ 
++    // Advise xdg-desktop-portal which *-portals.conf to load
++    std::env::set_var("XDG_CURRENT_DESKTOP", "cosmic");
++    // Mimic wlroots, used by https://github.com/qt/qtbase/commit/4b4870a12cd9
++    std::env::set_var("XDG_SESSION_TYPE", "wayland");
++
+     // init event loop
+     let mut event_loop = EventLoop::try_new().with_context(|| "Failed to initialize event loop")?;
+     // init wayland

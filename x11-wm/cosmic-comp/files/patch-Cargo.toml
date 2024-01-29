@@ -1,0 +1,19 @@
+===>   Updating Cargo.lock
+error: failed to resolve patches for `https://github.com/Smithay/smithay.git`
+
+Caused by:
+  patch for `smithay` in `https://github.com/Smithay/smithay.git` failed to resolve
+
+Caused by:
+  The patch location `https://github.com/smithay/smithay?rev=f1e7fc18a` does not appear to contain any packages matching the name `smithay`.
+*** Error code 101
+
+--- Cargo.toml.orig	2024-01-29 00:48:40 UTC
++++ Cargo.toml
+@@ -89,6 +89,3 @@ lto = "fat"
+ 
+ [profile.release]
+ lto = "fat"
+-
+-[patch."https://github.com/Smithay/smithay.git"]
+-smithay = { git = "https://github.com/smithay//smithay", rev = "f1e7fc18a" }

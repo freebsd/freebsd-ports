@@ -20,6 +20,7 @@
     SUBDIR += compiz-plugins-main
     SUBDIR += compiz-plugins-unsupported
     SUBDIR += compton
+    SUBDIR += cosmic-comp
     SUBDIR += ctwm
     SUBDIR += cwm
     SUBDIR += deforaos-panel
