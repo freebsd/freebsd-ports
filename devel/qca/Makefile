@@ -1,5 +1,6 @@
 PORTNAME=	qca
 DISTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -20,8 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USES=		cmake compiler:c++11-lang qt:${FLAVOR:S/qt//} tar:xz
 CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \
 		-DPKGCONFIG_INSTALL_PREFIX=${PREFIX}/libdata/pkgconfig \
-		-DQCA_FEATURE_INSTALL_DIR=${QT_MKSPECDIR}/features \
-		-DQCA_MAN_INSTALL_DIR=${PREFIX}/man
+		-DQCA_FEATURE_INSTALL_DIR=${QT_MKSPECDIR}/features
 CONFIGURE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
 
