@@ -631,6 +631,7 @@
     SUBDIR += octave-forge-pythonic
     SUBDIR += octave-forge-quaternion
     SUBDIR += octave-forge-queueing
+    SUBDIR += octave-forge-rtree
     SUBDIR += octave-forge-secs1d
     SUBDIR += octave-forge-secs2d
     SUBDIR += octave-forge-secs3d
