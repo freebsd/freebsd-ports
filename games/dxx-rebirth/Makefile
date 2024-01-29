@@ -13,6 +13,8 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/GPL-3.txt
 LICENSE_FILE_PARALLAX=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS_PARALLAX=	dist-mirror pkg-mirror auto-accept
 
+BROKEN_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276700
+
 BUILD_DEPENDS=	as:devel/binutils
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
