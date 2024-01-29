@@ -1,5 +1,6 @@
 PORTNAME=	stow
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -16,6 +17,7 @@ TEST_DEPENDS=	p5-Test-Output>0:devel/p5-Test-Output
 USES=		gmake perl5 tar:bzip2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=	DOCS
 
