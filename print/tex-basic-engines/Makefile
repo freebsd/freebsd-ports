@@ -1,5 +1,6 @@
 PORTNAME=	basic-engines
 PORTVERSION=	${TEXLIVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -16,6 +17,7 @@ USES=		libtool localbase pkgconfig tar:xz tex
 USE_TEX=	kpathsea web2c
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		${EXCLUDE_ENGINES:S/^/--disable-/} \
 			--disable-missing \
 			--with-system-kpathsea \
