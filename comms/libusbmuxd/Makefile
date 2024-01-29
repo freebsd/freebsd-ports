@@ -1,5 +1,6 @@
 PORTNAME=	libusbmuxd
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -17,6 +18,7 @@ CONFLICTS_INSTALL=usbmuxd-1.0.[6-8]
 USES=		cpe libtool pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	libimobiledevice
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
