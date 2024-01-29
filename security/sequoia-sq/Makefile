@@ -1,7 +1,6 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
-PORTREVISION=	6
+DISTVERSION=	0.33.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	sequoia-
 
@@ -21,30 +20,40 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	sequoia-pgp
 GL_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS_DEFINE=	BASH FISH MANPAGES ZSH
-OPTIONS_DEFAULT=	BASH FISH MANPAGES ZSH
+CARGO_ENV+=	ASSET_OUT_DIR=${CARGO_TARGET_DIR}
+
+OPTIONS_DEFINE=	BASH ELVISH FISH MANPAGES ZSH
+OPTIONS_DEFAULT=	BASH ELVISH FISH MANPAGES ZSH
 OPTIONS_SUB=	yes
+
+ELVISH_DESC=	Install Elvish module
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${PORTNAME}.bash \
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.bash \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
+
+post-install-ELVISH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/elvish/lib
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.elv \
+		${STAGEDIR}${PREFIX}/share/elvish/lib
 
 post-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${PORTNAME}.fish \
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions
 
 post-install-MANPAGES-on:
-	${FIND} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/build/${PKGNAMEPREFIX}${PORTNAME}-*/out -name "*.1" \
+	${FIND} ${CARGO_TARGET_DIR}/man-pages -name "*.1" \
 		-exec ${INSTALL_MAN} {} ${STAGEDIR}${PREFIX}/share/man/man1 \;
 
 post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/_${PORTNAME} \
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/_${PORTNAME} \
+	${CARGO_TARGET_DIR}/shell-completions/_${PORTNAME}.ps1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.mk>
