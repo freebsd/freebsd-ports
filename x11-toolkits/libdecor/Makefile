@@ -33,8 +33,8 @@ LIB_DEPENDS.cairo=	libgobject-2.0.so:devel/glib20 \
 SELF_DEPENDS.cairo=	main
 
 # Unused by the main library
-LIB_DEPENDS.cairo+=	libdbus-1.so:devel/dbus
-LIB_DEPENDS.gtk3+=	libdbus-1.so:devel/dbus
+LIB_DEPENDS.cairo+=	${"${PORT_OPTIONS:MDBUS}":?libdbus-1.so\:devel/dbus:}
+LIB_DEPENDS.gtk3+=	${"${PORT_OPTIONS:MDBUS}":?libdbus-1.so\:devel/dbus:}
 DBUS_MESON_ENABLED=	dbus
 
 GTK3_SUBPACKAGES=	gtk3
