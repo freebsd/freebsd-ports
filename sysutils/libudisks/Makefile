@@ -1,5 +1,6 @@
 PORTNAME=	libudisks
 DISTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/storaged-project/udisks/releases/download/udisks-${DISTVERSION}/
 DISTNAME=	udisks-${DISTVERSION}
@@ -26,6 +27,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # --with-libintl-prefix is needed because otherwise
 # configure won't find libintl when PREFIX != LOCALBASE.
 CONFIGURE_ARGS=	--disable-daemon \
