@@ -38,8 +38,8 @@ include/linuxsampler/scriptvm/ScriptVMFactory.h
 include/linuxsampler/scriptvm/common.h
 lib/linuxsampler/liblinuxsampler.a
 lib/linuxsampler/liblinuxsampler.so
-lib/linuxsampler/liblinuxsampler.so.6
-lib/linuxsampler/liblinuxsampler.so.6.0.0
+lib/linuxsampler/liblinuxsampler.so.7
+lib/linuxsampler/liblinuxsampler.so.7.0.0
 lib/linuxsampler/plugins/.keep_me
 lib/lv2/linuxsampler.lv2/linuxsampler.a
 lib/lv2/linuxsampler.lv2/linuxsampler.so
