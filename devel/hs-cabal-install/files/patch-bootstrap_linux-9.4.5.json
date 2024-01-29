@@ -1,5 +1,5 @@
---- bootstrap/linux-9.4.4.json.orig	2023-03-09 15:46:30 UTC
-+++ bootstrap/linux-9.4.4.json
+--- bootstrap/linux-9.4.5.json.orig	2023-11-07 21:11:28 UTC
++++ bootstrap/linux-9.4.5.json
 @@ -6,7 +6,7 @@
          },
          {
@@ -13,7 +13,7 @@
          },
          {
              "package": "base",
--            "version": "4.17.0.0"
+-            "version": "4.17.1.0"
 +            "version": "4.17.2.0"
          },
          {
@@ -22,36 +22,21 @@
          },
          {
              "package": "ghc-boot-th",
--            "version": "9.4.4"
+-            "version": "9.4.5"
 +            "version": "9.4.7"
          },
          {
              "package": "pretty",
-@@ -38,11 +38,11 @@
+@@ -38,7 +38,7 @@
          },
          {
              "package": "bytestring",
--            "version": "0.11.3.1"
+-            "version": "0.11.4.0"
 +            "version": "0.11.5.2"
          },
          {
              "package": "containers",
--            "version": "0.6.6"
-+            "version": "0.6.7"
-         },
-         {
-             "package": "binary",
-@@ -74,15 +74,15 @@
-         },
-         {
-             "package": "text",
--            "version": "2.0.1"
-+            "version": "2.0.2"
-         },
-         {
-             "package": "parsec",
--            "version": "3.1.15.0"
-+            "version": "3.1.16.1"
+@@ -82,7 +82,7 @@
          },
          {
              "package": "process",
