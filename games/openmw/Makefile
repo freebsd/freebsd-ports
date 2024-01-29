@@ -11,6 +11,9 @@ WWW=		https://openmw.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276702
+BROKEN_FreeBSD_15_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276702
+
 LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg \
 		libboost_thread.so:devel/boost-libs \
 		libMyGUIEngine.so:x11-toolkits/mygui \
