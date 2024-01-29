@@ -1,5 +1,5 @@
 PORTNAME=	duckstation
-PORTVERSION=	20231209
+PORTVERSION=	20240125
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 
@@ -27,7 +27,7 @@ USES=		cmake compiler:c++20-lang gl pkgconfig qt:6 sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	stenzek
 # See: https://github.com/stenzek/duckstation/commits/latest
-GH_TAGNAME=	a9ee2a3
+GH_TAGNAME=	a38d692
 
 USE_GL=		egl
 USE_SDL=	sdl2
