@@ -5523,7 +5523,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
       </package>
       <package>
 	<name>krb5-devel</name>
-	<range><lt>2023.08.07</lt></range>
+	<range><lt>1.22.2023.08.07</lt></range>
       </package>
     </affects>
     <description>
