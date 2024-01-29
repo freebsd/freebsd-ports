@@ -1,9 +1,3 @@
-man/man7/ecm-developer.7.gz
-man/man7/ecm-find-modules.7.gz
-man/man7/ecm-kde-modules.7.gz
-man/man7/ecm-modules.7.gz
-man/man7/ecm-toolchains.7.gz
-man/man7/ecm.7.gz
 share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
@@ -331,3 +325,9 @@ share/doc/ECM/html/module/QtVersionOption.html
 share/doc/ECM/html/search.html
 share/doc/ECM/html/searchindex.js
 share/doc/ECM/html/toolchain/Android.html
+share/man/man7/ecm-developer.7.gz
+share/man/man7/ecm-find-modules.7.gz
+share/man/man7/ecm-kde-modules.7.gz
+share/man/man7/ecm-modules.7.gz
+share/man/man7/ecm-toolchains.7.gz
+share/man/man7/ecm.7.gz

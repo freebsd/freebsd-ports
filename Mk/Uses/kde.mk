@@ -231,6 +231,7 @@ DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
 .        if ${_KDE_VERSION:M6}
 DESCR=			${.CURDIR:H:H}/x11/kf6-frameworks/pkg-descr
 .        endif
+KDE_MAN_PREFIX?=	${KDE_PREFIX}/share/man
 .      else
 IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 .      endif
