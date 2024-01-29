@@ -1,7 +1,7 @@
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzip.so:archivers/libzip \
 		libzmq.so:net/libzmq4
 
-USES=		desktop-file-utils gmake gnome libarchive localbase pkgconfig python:build sqlite # compiler:c++17-lang
+USES=		desktop-file-utils gmake gnome libarchive llvm:15 localbase pkgconfig python:build sqlite # compiler:c++17-lang; llvm:15 is a workaround for bug#263870
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
 
 USE_GITHUB=	yes
@@ -37,12 +37,6 @@ GH_PROJECT=	horizon
 MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-LLVM_VER=	12 # workaround for bug#263870
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CPP=		clang-cpp${LLVM_VER}
-CC=		clang${LLVM_VER}
-CXX=		clang++${LLVM_VER}
 
 # Patch sources to force using include files installed by graphics/podofo09
 post-patch:
