@@ -1,5 +1,6 @@
 PORTNAME=	findutils
 DISTVERSION=	4.9.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -14,6 +15,7 @@ USES=		charsetfix cpe gmake localbase tar:xz
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
 
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"

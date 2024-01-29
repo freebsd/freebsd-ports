@@ -3,11 +3,11 @@ bin/glocate
 bin/gupdatedb
 bin/gxargs
 libexec/gfrcode
-man/man1/gfind.1.gz
-man/man1/glocate.1.gz
-man/man1/gupdatedb.1.gz
-man/man1/gxargs.1.gz
-man/man5/glocatedb.5.gz
+share/man/man1/gfind.1.gz
+share/man/man1/glocate.1.gz
+share/man/man1/gupdatedb.1.gz
+share/man/man1/gxargs.1.gz
+share/man/man5/glocatedb.5.gz
 %%NLS%%share/locale/be/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/findutils.mo
