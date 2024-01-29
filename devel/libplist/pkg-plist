@@ -23,4 +23,4 @@ lib/libplist-2.0.so.3
 lib/libplist-2.0.so.3.3.0
 libdata/pkgconfig/libplist++-2.0.pc
 libdata/pkgconfig/libplist-2.0.pc
-man/man1/plistutil.1.gz
+share/man/man1/plistutil.1.gz
