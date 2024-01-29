@@ -182,6 +182,9 @@ include/pybind11/detail/internals.h
 include/pybind11/detail/type_caster_base.h
 include/pybind11/detail/typeid.h
 include/pybind11/eigen.h
+include/pybind11/eigen/common.h
+include/pybind11/eigen/matrix.h
+include/pybind11/eigen/tensor.h
 include/pybind11/embed.h
 include/pybind11/eval.h
 include/pybind11/functional.h
@@ -195,6 +198,7 @@ include/pybind11/pytypes.h
 include/pybind11/stl.h
 include/pybind11/stl_bind.h
 include/pybind11/stl/filesystem.h
+include/pybind11/type_caster_pyobject_ptr.h
 include/stlgeom/meshstlsurface.hpp
 include/stlgeom/stlgeom.hpp
 include/stlgeom/stlline.hpp
