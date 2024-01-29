@@ -7,8 +7,10 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable, distributed, collaborative, document-graph database
 WWW=		https://surrealdb.com
 
-LICENSE=	APACHE20
+LICENSE=	BSL11
+LICENSE_NAME=	Business Source License 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BROKEN_i386=	compilation fails: memory allocation of 109051908 bytes failed
 
