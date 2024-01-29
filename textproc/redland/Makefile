@@ -1,6 +1,6 @@
 PORTNAME=	redland
 PORTVERSION=	1.0.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	scripts/touch-mtime.pl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-threestore=no \
 		--with-virtuoso=no
 
