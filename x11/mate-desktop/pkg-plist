@@ -22,8 +22,8 @@ lib/libmate-desktop-2.so
 lib/libmate-desktop-2.so.17
 lib/libmate-desktop-2.so.17.1.4
 libdata/pkgconfig/mate-desktop-2.0.pc
-man/man1/mate-about.1.gz
-man/man1/mate-color-select.1.gz
+share/man/man1/mate-about.1.gz
+share/man/man1/mate-color-select.1.gz
 share/applications/mate-about.desktop
 share/applications/mate-color-select.desktop
 %%PORTDOCS%%%%DOCSDIR%%/MateBG.html
