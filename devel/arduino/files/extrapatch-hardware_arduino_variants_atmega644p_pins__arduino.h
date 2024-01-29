@@ -1,6 +1,6 @@
---- /dev/null	2012-12-26 20:59:44.000000000 -0800
-+++ hardware/arduino/variants/atmega644p/pins_arduino.h	2012-12-26 21:12:00.000000000 -0800
-@@ -0,0 +1,224 @@
+--- hardware/arduino/variants/atmega644p/pins_arduino.h.orig	2024-01-29 03:40:21 UTC
++++ hardware/arduino/variants/atmega644p/pins_arduino.h
+@@ -0,0 +1,229 @@
 +/*
 +  pins_arduino.h - Pin definition functions for Arduino
 +  Part of Arduino - http://www.arduino.cc/
@@ -22,7 +22,7 @@
 +  Free Software Foundation, Inc., 59 Temple Place, Suite 330,
 +  Boston, MA  02111-1307  USA
 +
-+  $Id: pins_arduino.h 5 2012-07-30 03:39:31Z leres $
++  $Id: pins_arduino.h,v 1.2 2021/06/20 20:01:08 leres Exp $
 +*/
 +
 +#ifndef Pins_Arduino_h
@@ -59,6 +59,11 @@
 +#define digitalPinToPCMSK(p)    (((p) <= 7) ? (&PCMSK2) : (((p) <= 13) ? (&PCMSK0) : (((p) <= 21) ? (&PCMSK1) : ((uint8_t *)0))))
 +#define digitalPinToPCMSKbit(p) (((p) <= 7) ? (p) : (((p) <= 13) ? ((p) - 8) : ((p) - 14)))
 +#endif
++
++#define digitalPinToInterrupt(p) \
++    ((p) == 2 ? 2 : \
++    ((p) == 10 ? 0 : \
++    ((p) == 11 ? 1 : NOT_AN_INTERRUPT)))
 +
 +#ifdef ARDUINO_MAIN
 +
