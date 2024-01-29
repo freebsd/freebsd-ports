@@ -1,6 +1,6 @@
 PORTNAME=	marco
 PORTVERSION=	1.26.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -29,6 +29,7 @@ USE_XORG=	ice sm x11 xcomposite xcursor xdamage xext xfixes \
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.marco.gschema.xml
