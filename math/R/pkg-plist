@@ -1613,8 +1613,8 @@ lib/R/share/texmf/tex/latex/Sweave.sty
 lib/R/share/texmf/tex/latex/jss.cls
 lib/R/share/texmf/tex/latex/omscmtt.fd
 libdata/pkgconfig/libR.pc
-man/man1/R.1.gz
-man/man1/Rscript.1.gz
+share/man/man1/R.1.gz
+share/man/man1/Rscript.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/BioC_mirrors.csv
 %%DOCSDIR%%/COPYING
