@@ -1,6 +1,6 @@
 PORTNAME=	uim
 PORTVERSION=	1.9.0.b.${SNAPDATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
@@ -29,6 +29,7 @@ GH_TUPLE=	uim:sigscheme:beb8fbd:sigscheme \
 SNAPDATE=	20220927
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--enable-maintainer-mode
 
 OPTIONS_DEFINE=	DOCS X11
