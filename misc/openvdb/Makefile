@@ -11,6 +11,8 @@ WWW=		https://www.openvdb.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
+
 LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libboost_system.so:devel/boost-libs \
 		libImath.so:math/Imath \
