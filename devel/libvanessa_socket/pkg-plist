@@ -5,4 +5,4 @@ lib/libvanessa_socket.so
 lib/libvanessa_socket.so.2
 lib/libvanessa_socket.so.2.1.0
 libdata/pkgconfig/vanessa-socket.pc
-man/man1/vanessa_socket_pipe.1.gz
+share/man/man1/vanessa_socket_pipe.1.gz

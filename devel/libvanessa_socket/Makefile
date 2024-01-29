@@ -1,6 +1,6 @@
 PORTNAME=	libvanessa_socket
 PORTVERSION=	0.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://horms.net/projects/vanessa/download/vanessa_socket/${PORTVERSION}/
 DISTNAME=	vanessa_socket-${PORTVERSION}
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libvanessa_logger.so:devel/libvanessa_logger \
 USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
