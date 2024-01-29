@@ -44,6 +44,7 @@
     SUBDIR += cython3
     SUBDIR += dhall
     SUBDIR += dlang-tools
+    SUBDIR += dotnet
     SUBDIR += duktape
     SUBDIR += duktape-lib
     SUBDIR += ecl
