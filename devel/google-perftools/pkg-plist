@@ -48,4 +48,4 @@ libdata/pkgconfig/libtcmalloc.pc
 libdata/pkgconfig/libtcmalloc_debug.pc
 libdata/pkgconfig/libtcmalloc_minimal.pc
 libdata/pkgconfig/libtcmalloc_minimal_debug.pc
-man/man1/pprof.1.gz
+share/man/man1/pprof.1.gz

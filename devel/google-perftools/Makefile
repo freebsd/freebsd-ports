@@ -1,7 +1,7 @@
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
 DISTVERSION=	2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -18,6 +18,7 @@ BROKEN_riscv64=	error: Cannot calculate stack trace: will need to write for your
 
 USES=		compiler:c11 gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
