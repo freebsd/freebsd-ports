@@ -5,7 +5,7 @@ lib/libtwolame.so
 lib/libtwolame.so.0
 lib/libtwolame.so.0.0.0
 libdata/pkgconfig/twolame.pc
-man/man1/twolame.1.gz
+share/man/man1/twolame.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/NEWS
