@@ -1,0 +1,4 @@
+sbin/certspotter
+@sample etc/certspotter/watchlist.sample
+@dir(%%CERTSPOTTER_USER%%,%%CERTSPOTTER_GROUP%%,700) /var/db/certspotter
+@dir(%%CERTSPOTTER_USER%%,%%CERTSPOTTER_GROUP%%,0775) /var/run/certspotter

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: certspotter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# certspotter_enable (bool):	Set to YES to enable certspotter.
+#				Set to NO by default.
+# certspotter_statedir (path):	State dir. Set to /var/db/certspotter
+#				by default.
+# certspotter_watchlist (path):	File listing the monitored domains.
+#				Set to %%ETCIDIR%%/watchlist by default.
+# certspotter_email (string):	The email address notifications will be
+#				sent to. Set to root by default.
+# certspotter_user (string):	The user account used to run the daemon.
+#				Default: %%CERTSPOTTER_USER%%
+
+. /etc/rc.subr
+
+name=certspotter
+rcvar=certspotter_enable
+
+load_rc_config $name
+
+: ${certspotter_enable:="NO"}
+: ${certspotter_statedir="/var/db/certspotter"}
+: ${certspotter_watchlist="%%ETCDIR%%/watchlist"}
+: ${certspotter_user:="%%CERTSPOTTER_USER%%"}
+: ${certspotter_email:="root"}
+
+pidfile=/var/run/certspotter/${name}.pid
+command=%%PREFIX%%/sbin/certspotter
+start_cmd="certspotter_start"
+
+certspotter_start()
+{
+        echo "Starting ${name}."
+        /usr/sbin/daemon -c -f -p ${pidfile} -u ${certspotter_user} %%PREFIX%%/sbin/certspotter -state_dir $certspotter_statedir -watchlist $certspotter_watchlist -email $certspotter_email -start_at_end
+}
+
+run_rc_command "$1"

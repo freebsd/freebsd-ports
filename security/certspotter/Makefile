@@ -1,0 +1,35 @@
+PORTNAME=	certspotter
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.18.0
+CATEGORIES=	security www
+
+MAINTAINER=	flo@FreeBSD.org
+COMMENT=	Certificate Transparency Monitor
+WWW=		https://github.com/SSLMate/certspotter
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go:1.21,modules
+USE_RC_SUBR=	certspotter
+GO_MODULE=	software.sslmate.com/src/certspotter
+GO_TARGET=	./cmd/${PORTNAME}:${PREFIX}/sbin/${PORTNAME}
+
+CERTSPOTTER_USER?=	certspotter
+CERTSPOTTER_GROUP?=	certspotter
+
+SUB_LIST+=	CERTSPOTTER_GROUP=${CERTSPOTTER_GROUP} \
+		CERTSPOTTER_USER=${CERTSPOTTER_USER}
+
+USERS=		${CERTSPOTTER_USER}
+GROUPS=		${CERTSPOTTER_GROUP}
+
+PLIST_SUB+=	CERTSPOTTER_GROUP=${CERTSPOTTER_GROUP} \
+		CERTSPOTTER_USER=${CERTSPOTTER_USER}
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	@${ECHO_CMD} "example.org" > ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/watchlist.sample
+	@${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
+.include <bsd.port.mk>
