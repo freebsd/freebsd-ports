@@ -36,6 +36,7 @@ USE_PERL5=		build
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
