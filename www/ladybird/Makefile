@@ -25,6 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	other architectures not recognised by build system
 BROKEN_i386=	Userland/Libraries/LibJIT/GDBElf.cpp:29:24: bit cast source size does not equal destination size
+BROKEN_FreeBSD_15_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276703
 
 BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf
