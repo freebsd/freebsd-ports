@@ -155,7 +155,7 @@ CARGO_CRATES=	actix-codec-0.5.1 \
 		impl-more-0.1.6 \
 		include_dir-0.7.3 \
 		include_dir_macros-0.7.3 \
-		indexmap-2.2.0 \
+		indexmap-2.2.1 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
 		is-terminal-0.4.10 \
@@ -261,7 +261,7 @@ CARGO_CRATES=	actix-codec-0.5.1 \
 		semver-1.0.21 \
 		serde-1.0.196 \
 		serde_derive-1.0.196 \
-		serde_json-1.0.112 \
+		serde_json-1.0.113 \
 		serde_plain-1.0.2 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
