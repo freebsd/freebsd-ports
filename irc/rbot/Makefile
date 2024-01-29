@@ -1,6 +1,6 @@
 PORTNAME=	rbot
 PORTVERSION=	20160325
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	irc ruby
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 USES=		cpe ruby:setup
 
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 NO_ARCH=	yes
 

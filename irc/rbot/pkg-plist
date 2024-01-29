@@ -42,7 +42,7 @@ bin/rbotdb
 %%RUBY_SITELIBDIR%%/rbot/registry/tc.rb
 %%RUBY_SITELIBDIR%%/rbot/rfc2812.rb
 %%RUBY_SITELIBDIR%%/rbot/timer.rb
-man/rbot.xml.gz
+share/man/rbot.xml.gz
 %%DATADIR%%/contrib/plugins/stats.rb
 %%DATADIR%%/contrib/plugins/vandale.rb
 %%DATADIR%%/filters/rss.rb
