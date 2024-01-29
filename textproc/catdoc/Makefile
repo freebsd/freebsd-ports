@@ -1,5 +1,6 @@
 PORTNAME=	catdoc
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/ \
 		https://mirror.amdmi3.ru/distfiles/
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-install-root="${STAGEDIR}"
 CPE_VENDOR=	fossies
 
