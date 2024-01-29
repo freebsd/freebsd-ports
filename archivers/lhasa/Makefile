@@ -1,5 +1,6 @@
 PORTNAME=	lhasa
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://soulsphere.org/projects/lhasa/ \
 		http://suyai.innolan.net/
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf cpe pathfix libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--program-suffix=sa
 INSTALL_TARGET=	install-strip
