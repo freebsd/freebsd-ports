@@ -6,7 +6,13 @@
  clean: clean-test clean-dist
  clean-all: clean clean-cache
  completions: completion-bash completion-fish completion-zsh
-@@ -39,7 +39,7 @@ PYTHON ?= /usr/bin/env python3
+@@ -34,12 +34,12 @@ BINDIR ?= $(PREFIX)/bin
+ 
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+-MANDIR ?= $(PREFIX)/man
++MANDIR ?= $(PREFIX)/share/man
+ SHAREDIR ?= $(PREFIX)/share
  PYTHON ?= /usr/bin/env python3
  
  # set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
