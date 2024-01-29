@@ -7,6 +7,9 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SVGAlib demo which displays trippy mathematical images in cycling colors
 WWW=		http://www.noah.org/acidwarp/index.html
 
+DEPRECATED= Unmaintained by upstream use acidwarp-sdl instead
+EXPIRATION_DATE=	2024-02-29
+
 LIB_DEPENDS=	libvga.so:graphics/svgalib
 
 ONLY_FOR_ARCHS=	i386
