@@ -11,12 +11,13 @@ bin/korgdump
 bin/rifftree
 bin/sf2dump
 bin/sf2extract
+bin/wav2gig
 include/libgig/Akai.h
 include/libgig/DLS.h
 include/libgig/Korg.h
 include/libgig/RIFF.h
-include/libgig/Serialization.h
 include/libgig/SF.h
+include/libgig/Serialization.h
 include/libgig/gig.h
 lib/libgig/libakai.a
 lib/libgig/libakai.so
@@ -24,8 +25,8 @@ lib/libgig/libakai.so.0
 lib/libgig/libakai.so.0.0.0
 lib/libgig/libgig.a
 lib/libgig/libgig.so
-lib/libgig/libgig.so.10
-lib/libgig/libgig.so.10.0.0
+lib/libgig/libgig.so.11
+lib/libgig/libgig.so.11.0.0
 libdata/pkgconfig/akai.pc
 libdata/pkgconfig/gig.pc
 man/man1/akaidump.1.gz
@@ -41,3 +42,4 @@ man/man1/korgdump.1.gz
 man/man1/rifftree.1.gz
 man/man1/sf2dump.1.gz
 man/man1/sf2extract.1.gz
+man/man1/wav2gig.1.gz
