@@ -6,10 +6,10 @@ bin/verilator_coverage
 bin/verilator_gantt
 bin/verilator_profcfunc
 libdata/pkgconfig/verilator.pc
-man/man1/verilator.1.gz
-man/man1/verilator_coverage.1.gz
-man/man1/verilator_gantt.1.gz
-man/man1/verilator_profcfunc.1.gz
+share/man/man1/verilator.1.gz
+share/man/man1/verilator_coverage.1.gz
+share/man/man1/verilator_gantt.1.gz
+share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/bin/verilator_ccache_report
 %%DATADIR%%/bin/verilator_difftree
 %%DATADIR%%/bin/verilator_includer
