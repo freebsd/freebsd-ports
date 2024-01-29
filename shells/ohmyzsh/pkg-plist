@@ -346,9 +346,9 @@
 %%DATADIR%%/plugins/heroku/README.md
 %%DATADIR%%/plugins/heroku/heroku.plugin.zsh
 %%DATADIR%%/plugins/history-substring-search/README.md
+%%DATADIR%%/plugins/history-substring-search/dependencies/OMZ-README.md
 %%DATADIR%%/plugins/history-substring-search/history-substring-search.plugin.zsh
 %%DATADIR%%/plugins/history-substring-search/history-substring-search.zsh
-%%DATADIR%%/plugins/history-substring-search/update-from-upstream.zsh
 %%DATADIR%%/plugins/history/README.md
 %%DATADIR%%/plugins/history/history.plugin.zsh
 %%DATADIR%%/plugins/hitchhiker/.gitignore
