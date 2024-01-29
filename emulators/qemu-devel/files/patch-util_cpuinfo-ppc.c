@@ -1,13 +1,16 @@
---- util/cpuinfo-ppc.c.orig	2023-08-29 11:28:39 UTC
+--- util/cpuinfo-ppc.c.orig	2024-01-26 18:16:35 UTC
 +++ util/cpuinfo-ppc.c
-@@ -9,8 +9,14 @@
+@@ -6,11 +6,17 @@
+ #include "qemu/osdep.h"
+ #include "host/cpuinfo.h"
+ 
+-#include <asm/cputable.h>
  #ifdef CONFIG_GETAUXVAL
  # include <sys/auxv.h>
- #else
--# include <asm/cputable.h>
 +# ifdef __linux__
 +#  include <asm/cputable.h>
 +# endif
+ #else
  # include "elf.h"
 +#endif
 +
