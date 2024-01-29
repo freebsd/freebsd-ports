@@ -1,6 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	8.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--cc=${CC} \
 			--extra-ldflags=-L${LOCALBASE}/lib \
 			--extra-ldflags=-L/usr/lib \
 			--localstatedir=/var \
-			--mandir=${PREFIX}/man \
+			--mandir=${PREFIX}/share/man \
 			--prefix=${PREFIX} \
 			--python=${PYTHON_CMD}
 .if ${FLAVOR:U} == guestagent
