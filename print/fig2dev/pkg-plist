@@ -2,10 +2,10 @@ bin/fig2dev
 bin/fig2ps2tex
 bin/pic2tpic
 bin/transfig
-man/man1/fig2dev.1.gz
-man/man1/fig2ps2tex.1.gz
-man/man1/pic2tpic.1.gz
-man/man1/transfig.1.gz
+share/man/man1/fig2dev.1.gz
+share/man/man1/fig2ps2tex.1.gz
+share/man/man1/pic2tpic.1.gz
+share/man/man1/transfig.1.gz
 %%DATADIR%%/i18n/cs_CZ.ps
 %%DATADIR%%/i18n/hr_HR.ps
 %%DATADIR%%/i18n/hu_HU.ps
