@@ -1,5 +1,6 @@
 PORTNAME=	libdatovka
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/libdatovka/
 
@@ -30,6 +31,7 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-fatalwarnings \
 			--enable-openssl-backend \
 			--with-docbook-xsl-stylesheets=${LOCALBASE}/share/xsl/docbook
