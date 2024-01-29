@@ -1,6 +1,5 @@
 PORTNAME=	libei
 DISTVERSION=	1.2.0
-PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -35,10 +34,7 @@ OPTIONS_DEFAULT=BASU
 OPTIONS_SUB=	yes
 
 BASU_DESC=		XDG RemoteDesktop portal via basu
-BASU_SUBPACKAGES=	basu
-COMMENT.basu=		${BASU_DESC}
-LIB_DEPENDS.basu=	libbasu.so:devel/basu \
-			libepoll-shim.so:devel/libepoll-shim
+BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_MESON_ENABLED=	liboeffis
 
 .ifdef GH_TUPLE

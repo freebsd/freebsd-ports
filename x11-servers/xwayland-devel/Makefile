@@ -2,7 +2,6 @@ PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
 DISTVERSION=	21.0.99.1-664
 DISTVERSIONSUFFIX=	-g133e0d651
-PORTREVISION=	1
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -65,18 +64,14 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
-OPTIONS_DEFINE=	BASU CSD EI NVIDIA
-OPTIONS_DEFAULT=BASU CSD EI
-
-BASU_DESC=		Emulated input via libei portal
-BASU_LIB_DEPENDS=	liboeffis.so:x11/libei~basu
-BASU_IMPLIES=		EI
+OPTIONS_DEFINE=	CSD EI NVIDIA
+OPTIONS_DEFAULT=CSD EI
 
 CSD_DESC=		Client-side decorations via libdecor
 CSD_LIB_DEPENDS=	libdecor-0.so:x11-toolkits/libdecor
 CSD_MESON_TRUE=		libdecor
 
-EI_DESC=		Emulated input via libei socket
+EI_DESC=		Emulated input via libei
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_MESON_OFF=		-Dxwayland_ei=false
 
