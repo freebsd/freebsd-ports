@@ -1,6 +1,6 @@
 PORTNAME=	libfabric
 DISTVERSION=	1.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ofiwg/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,6 +18,7 @@ USES=		gmake libtool pkgconfig tar:bz2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # workaround for https://github.com/ofiwg/libfabric/issues/7901
 
@@ -33,7 +34,7 @@ OPTIONS_SUB=			yes
 PROVIDERS_DESC=			Providers to build:
 
 OPTIONS_MULTI_PROVIDERS+=	VERBS
-VERBS_PLIST_FILES=		man/man7/fi_verbs.7.gz
+VERBS_PLIST_FILES=		share/man/man7/fi_verbs.7.gz
 
 .for p in ${OPTIONS_MULTI_PROVIDERS}
 ${p}_DESC=			'${p:tl}' provider
