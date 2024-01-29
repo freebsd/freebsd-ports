@@ -1,5 +1,6 @@
 PORTNAME=	xauth
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,6 +20,7 @@ SHEBANG_LANG=	nobash
 nobash_OLD_CMD=	/bin/bash
 nobash_CMD=	/bin/sh
 
-PLIST_FILES=	bin/xauth man/man1/xauth.1.gz
+PLIST_FILES=	bin/xauth share/man/man1/xauth.1.gz
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
