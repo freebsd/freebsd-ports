@@ -1,5 +1,6 @@
 PORTNAME=	gmp-ecm
 DISTVERSION=	7.0.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://gitlab.inria.fr/zimmerma/ecm/uploads/${GL_TAG}/
 DISTNAME=	ecm-${DISTVERSION}
@@ -19,6 +20,7 @@ USES=		gmake libtool
 
 GL_TAG=		89f6f0d65d3e980cef33dc922004e4b2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
 		--with-gmp=${LOCALBASE} \
 		--enable-shared \
@@ -30,6 +32,6 @@ PLIST_FILES=	bin/ecm include/ecm.h \
 		lib/libecm.so \
 		lib/libecm.so.1 \
 		lib/libecm.so.1.0.0 \
-		man/man1/ecm.1.gz
+		share/man/man1/ecm.1.gz
 
 .include <bsd.port.mk>
