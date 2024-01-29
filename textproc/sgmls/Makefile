@@ -1,6 +1,6 @@
 PORTNAME=	sgmls
 PORTVERSION=	1.1.91
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sgmls/
 
@@ -10,6 +10,7 @@ COMMENT=	SGML parser
 USES=		tar:Z
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man1
 INSTALL_TARGET=	install install.man
 TEST_TARGET=	test
 
