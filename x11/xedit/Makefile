@@ -1,6 +1,6 @@
 PORTNAME=	xedit
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,5 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg xorg-cat:app
 USE_XORG=	x11 xmu xt xaw7
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

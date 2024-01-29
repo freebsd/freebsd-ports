@@ -1,5 +1,6 @@
 PORTNAME=	xfontsel
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -8,5 +9,7 @@ WWW=		https://www.x.org/
 
 USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xmu xt
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
 bin/oclock
-man/man1/oclock.1.gz
+share/man/man1/oclock.1.gz
 share/X11/app-defaults/Clock-color

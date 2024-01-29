@@ -1,5 +1,6 @@
 PORTNAME=	x11perf
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,5 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe xorg xorg-cat:app
 USE_XORG=	x11 xmuu xrender xft xext
 CPE_VENDOR=	xfree86
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
