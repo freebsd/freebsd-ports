@@ -11,4 +11,4 @@ lib/libfwnt.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyfwnt.a
 %%PYTHON_SITELIBDIR%%/pyfwnt.so
 libdata/pkgconfig/libfwnt.pc
-man/man3/libfwnt.3.gz
+share/man/man3/libfwnt.3.gz
