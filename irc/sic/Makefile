@@ -1,5 +1,6 @@
 PORTNAME=	sic
 PORTVERSION=	0.23a
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/irc/sic/
 
@@ -10,6 +11,7 @@ LICENSE=	GPLv2
 
 USES=		ncurses tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
