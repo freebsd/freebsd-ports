@@ -2979,3 +2979,4 @@ x11-themes/kde-icons-lush||2024-01-25|Has expired: Upstream WWW returns Not Foun
 audio/sphinxbase||2024-01-25|Has expired: Upstream last release was in 2012
 devel/libasyncplusplus|devel/asyncplusplus|2024-01-27|Remove duplicated port
 security/rust-rage|security/rage-encryption|2024-01-27|Renamed as per the preferred fallback name suggested by upstream
+emulators/wine7|emulators/wine|2024-01-30|Has expired: emulators/wine itself now again provides 32-bit support as well as WoW64
