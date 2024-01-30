@@ -1,6 +1,6 @@
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/obrien \
 		http://sepwww.stanford.edu/sep/prof/
@@ -27,7 +27,7 @@ EXTRACT_AFTER_ARGS=	| ${SH}
 ALL_TARGET=	all tests
 USES=		fortran
 
-PLIST_FILES=	bin/ratfor bin/ratfor77 man/man1/ratfor.1.gz
+PLIST_FILES=	bin/ratfor bin/ratfor77 share/man/man1/ratfor.1.gz
 
 post-patch:
 	@${PATCH} -d ${WRKSRC} --quiet < ${WRKSRC}/testw.patch
@@ -35,6 +35,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratfor77 ${STAGEDIR}${PREFIX}/bin
 	${RLN} ${STAGEDIR}${PREFIX}/bin/ratfor77 ${STAGEDIR}${PREFIX}/bin/ratfor
-	${INSTALL_MAN} ${WRKSRC}/ratfor.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ratfor.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
