@@ -26,9 +26,9 @@ lib/libgconf-2.so.4
 lib/libgconf-2.so.4.1.5
 libdata/pkgconfig/gconf-2.0.pc
 libexec/gconfd-2
-man/man1/gconftool-2.1.gz
-man/man1/gsettings-data-convert.1.gz
-man/man1/gsettings-schema-convert.1.gz
+share/man/man1/gconftool-2.1.gz
+share/man/man1/gsettings-data-convert.1.gz
+share/man/man1/gsettings-schema-convert.1.gz
 share/aclocal/gconf-2.m4
 share/dbus-1/services/org.gnome.GConf.service
 share/gir-1.0/GConf-2.0.gir

@@ -1,6 +1,6 @@
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	GConf-${PORTVERSION}
@@ -22,6 +22,7 @@ USES+=		gettext gmake gnome libtool pathfix pkgconfig python:run \
 USE_GNOME=	libxml2 dconf intltool introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--with-gtk=2.0 \
 		--without-openldap \
