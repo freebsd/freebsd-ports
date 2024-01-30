@@ -1,6 +1,7 @@
 PORTNAME=	yafc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	ftp
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -17,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sebastinas
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-krb5=no \
 		--with-openssl=${OPENSSLBASE} \
 		--with-socks5=no \
@@ -24,7 +26,7 @@ CONFIGURE_ARGS=	--with-krb5=no \
 CONFIGURE_ENV=	ac_cv_ipv6=yes
 
 PLIST_FILES=	bin/yafc \
-		man/man1/yafc.1.gz
+		share/man/man1/yafc.1.gz
 PORTEXAMPLES=	inputrc yafcrc
 
 OPTIONS_DEFINE=		BASH EXAMPLES INFO NLS READLINE SSH
@@ -54,7 +56,7 @@ post-patch-INFO-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.am
 
 post-install-INFO-off:
-	${INSTALL_MAN} ${WRKSRC}/doc/yafc.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/yafc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
