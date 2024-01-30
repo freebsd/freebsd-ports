@@ -1,5 +1,6 @@
 PORTNAME=	radare2
 DISTVERSION=	5.8.8
+PORTREVISION=	1
 PORTEVISION=	1
 CATEGORIES=	devel
 
@@ -26,6 +27,7 @@ GH_SUBDIR=	libr/arch/p/arm/v35/arch-arm64:arm64 \
 		libr/arch/p/arm/v35/arch-armv7:armv7
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-syscapstone
 
 MAKE_ENV+=	HOST_CC=${CC}
