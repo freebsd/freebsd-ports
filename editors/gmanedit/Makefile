@@ -1,6 +1,6 @@
 PORTNAME=	gmanedit
 PORTVERSION=	0.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -22,6 +22,7 @@ USES=		gettext gmake gnome localbase:ldflags pathfix pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 LDFLAGS+=	-lz
 
