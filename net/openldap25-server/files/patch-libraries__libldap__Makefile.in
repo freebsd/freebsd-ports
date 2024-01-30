@@ -1,6 +1,6 @@
---- libraries/libldap/Makefile.in.orig	2021-07-27 17:44:47 UTC
+--- libraries/libldap/Makefile.in.orig	2024-01-29 18:53:15 UTC
 +++ libraries/libldap/Makefile.in
-@@ -86,13 +86,6 @@ install-local: $(CFFILES) FORCE
+@@ -84,13 +84,6 @@ install-local: $(CFFILES) FORCE
  	$(LTFINISH) $(DESTDIR)$(libdir)
  	-$(MKDIR) $(DESTDIR)$(sysconfdir)
  	@for i in $(CFFILES); do \

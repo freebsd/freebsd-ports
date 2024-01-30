@@ -1,6 +1,6 @@
---- libraries/libldap/tls_o.c.orig	2021-07-27 17:44:47 UTC
+--- libraries/libldap/tls_o.c.orig	2024-01-29 18:53:15 UTC
 +++ libraries/libldap/tls_o.c
-@@ -275,7 +275,7 @@ tlso_ctx_free ( tls_ctx *ctx )
+@@ -279,7 +279,7 @@ tlso_ctx_free ( tls_ctx *ctx )
  	SSL_CTX_free( c );
  }
  
@@ -9,12 +9,12 @@
  static char *
  tlso_stecpy( char *dst, const char *src, const char *end )
  {
-@@ -411,7 +411,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
- 	}
+@@ -425,7 +425,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
  
  	if ( lo->ldo_tls_ciphersuite ) {
+ 		char *oldsuites = lt->lt_ciphersuite;
 -#if OPENSSL_VERSION_NUMBER >= 0x10101000
 +#if OPENSSL_VERSION_NUMBER >= 0x10101000 && !defined(OPENSSL_NO_TLS1_3)
- 		tlso_ctx_cipher13( ctx, lt->lt_ciphersuite );
+ 		tlso_ctx_cipher13( ctx, lt->lt_ciphersuite, &oldsuites );
  #endif
- 		if ( !SSL_CTX_set_cipher_list( ctx, lt->lt_ciphersuite ) )
+ 		if ( oldsuites && !SSL_CTX_set_cipher_list( ctx, oldsuites ) )
