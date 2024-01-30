@@ -10,9 +10,9 @@ include/Xbae/patchlevel.h
 lib/libXbae.so
 lib/libXbae.so.4
 lib/libXbae.so.4.0.60
-man/man3/XbaeCaption.3.gz
-man/man3/XbaeInput.3.gz
-man/man3/XbaeMatrix.3.gz
+share/man/man3/XbaeCaption.3.gz
+share/man/man3/XbaeInput.3.gz
+share/man/man3/XbaeMatrix.3.gz
 share/Xbae/FAQ.html
 share/Xbae/NEWS
 share/Xbae/README
