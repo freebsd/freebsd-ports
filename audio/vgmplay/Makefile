@@ -1,56 +1,37 @@
 PORTNAME=	vgmplay
-PORTVERSION=	0.40.9
-PORTREVISION=	2
+PORTVERSION=	0.51.1
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/vgmrips/${PORTNAME}/releases/download/${PORTVERSION}/
-DISTNAME=	${PORTNAME:S/vgmp/VGMP/}_${PORTVERSION:S/.//:S/./-/}_src
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Command-line player for VGM (video game music) files
-WWW=		https://github.com/vgmrips/vgmplay
+WWW=		https://vgmrips.net/
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/licenses/GPL.txt
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/vgm-player.pc:audio/libvgm
+LIB_DEPENDS=	libinih.so:devel/inih
 
-USES=		7z compiler dos2unix gmake
+USES=		cmake iconv pkgconfig
 
-NO_WRKSUBDIR=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	ValleyBell
+GH_PROJECT=	${PORTNAME}-libvgm
 
-OPTIONS_SINGLE=	AUDIO
-OPTIONS_SINGLE_AUDIO=	OSS LIBAO
-OPTIONS_DEFAULT=	OSS
+PLIST_FILES=	bin/vgmplay \
+		${EXAMPLESDIR}/vgmplay.ini
 
-OSS_DESC=	Use OSS (/dev/dsp)
-LIBAO_DESC=	Use libao
+OPTIONS_DEFINE=		MEDIACONTROLS
+OPTIONS_DEFAULT=	# none
 
-OSS_MAKE_ENV+=	USE_LIBAO=0
-LIBAO_MAKE_ENV+=	USE_LIBAO=1
-LIBAO_LIB_DEPENDS=	libao.so:audio/libao
-LIBAO_USES=	localbase:ldflags
+MEDIACONTROLS_DESC=	Media Controls via D-Bus
 
-MAKE_ENV+=	PREFIX=${LOCALBASE} ${MAKE_ENV_${ARCH}}
-MAKE_ENV_powerpc=	BYTE_ORDER=2
-MAKE_ENV_powerpc64=	BYTE_ORDER=2
-MAKE_ENV_powerpc64le=	BYTE_ORDER=1
-MAKE_ENV_powerpcspe=	BYTE_ORDER=2
-
-PLIST_FILES=	bin/vgmplay bin/vgm2pcm bin/vgm2wav share/man/man1/vgmplay.1.gz ${EXAMPLESDIR}/vgmplay.ini
-
-.include <bsd.port.pre.mk>
+MEDIACONTROLS_CMAKE_ON=	-DMEDIA_CONTROLS:STRING="DBUS"
+MEDIACONTROLS_CMAKE_OFF=-DMEDIA_CONTROLS:STRING="OFF"
+MEDIACONTROLS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 post-patch:
-	${REINPLACE_CMD} -e 's/@//' ${WRKSRC}/Makefile
-.if ${CHOSEN_COMPILER_TYPE} != clang
-	${REINPLACE_CMD} -e 's/-Wno-unused-but-set-variable//' ${WRKSRC}/Makefile
-.endif
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|/usr/share/vgmplay|${EXAMPLESDIR}|; s|VGMPlay|vgmplay|g;' ${WRKSRC}/vgmplay.1
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/main.cpp
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vgmplay ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vgm2pcm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vgm2wav ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vgmplay.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+post-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/VGMPlay.ini ${STAGEDIR}${EXAMPLESDIR}/vgmplay.ini
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
