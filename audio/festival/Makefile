@@ -1,6 +1,6 @@
 PORTNAME=	festival
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz	\
@@ -107,7 +107,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/festival.sh ${STAGEDIR}${PREFIX}/bin/festival
 	${INSTALL_SCRIPT} ${WRKDIR}/festival_client.sh ${STAGEDIR}${PREFIX}/bin/festival_client
 	${INSTALL_DATA} ${WRKDIR}/sitevars.scm ${STAGEDIR}${DATADIR}/lib/sitevars.scm
-	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${STAGEDIR}${PREFIX}/man/man1/festival.1
-	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${STAGEDIR}${PREFIX}/man/man1/festival_client.1
+	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${STAGEDIR}${PREFIX}/share/man/man1/festival.1
+	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${STAGEDIR}${PREFIX}/share/man/man1/festival_client.1
 
 .include <bsd.port.mk>
