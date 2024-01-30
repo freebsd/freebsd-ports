@@ -1,6 +1,6 @@
---- src/makefile.bsd.orig	2014-07-10 22:00:00 UTC
+--- src/makefile.bsd.orig	2022-12-23 08:44:41 UTC
 +++ src/makefile.bsd
-@@ -20,7 +20,7 @@ bindir	= $(prefix)/bin
+@@ -20,17 +20,17 @@ rundir	= $(prefix)/share/mined
  mandir	= $(prefix)/share/man
  rundir	= $(prefix)/share/mined
  # FreeBSD:
@@ -9,8 +9,11 @@
  # NetBSD (few packages), OpenBSD:
  #docdir	= $(lprefix)/share/doc/html/mined
  
-@@ -30,7 +30,7 @@ lbindir	= $(lprefix)/bin
- lmandir	= $(lprefix)/man
+ # directories for target "make localinstall"
+ lprefix	= $(root)/usr/local
+ lbindir	= $(lprefix)/bin
+-lmandir	= $(lprefix)/man
++lmandir	= $(lprefix)/share/man
  lrundir	= $(lprefix)/share/mined
  # FreeBSD, OpenBSD:
 -#ldocdir	= $(lprefix)/share/doc/mined
