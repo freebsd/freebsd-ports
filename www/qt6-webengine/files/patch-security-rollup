@@ -8,6 +8,23 @@ Addresses the following security issues:
 - CVE-2023-6347
 - CVE-2023-6510
 - Security bug 1485266
+- CVE-2023-6702
+- CVE-2023-6703
+- CVE-2023-6705
+- CVE-2023-6706
+- Security bug 1506726
+- Security bug 1505632
+- Security bug 1488199
+- CVE-2023-7024
+- CVE-2024-0333
+- CVE-2024-0225
+- CVE-2024-0224
+- CVE-2024-0223
+- CVE-2024-0222
+- Security bug 1511689
+- CVE-2024-0519
+- CVE-2025-0518
+- Security bug 1506535
 
 From 669506a53474e3d7637666d3c53f6101fb94d96f Mon Sep 17 00:00:00 2001
 From: Nidhi Jaju <nidhijaju@chromium.org>
@@ -653,3 +670,2593 @@ index dc308525002..48d30860e5e 100644
    absl::optional<DragStart> drag_start_;
  
    // Responsible for handling gesture-nav and pull-to-refresh UI.
+From fe07848de4cd69e57f79528a70c75075ca2951dc Mon Sep 17 00:00:00 2001
+From: Zakhar Voit <voit@google.com>
+Date: Thu, 14 Dec 2023 11:11:43 +0000
+Subject: [PATCH] [Backport] CVE-2023-6702: Type Confusion in V8
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/5110982:
+Fix the case when the closure has run
+
+M114 changes:
+- replace IsNativeContext(*context) by context->IsNativeContext()
+
+We were using the closure pointing to NativeContext as a marker that the
+closure has run, but async stack trace code was confused about it.
+
+(cherry picked from commit bde3d360097607f36cd1d17cbe8412b84eae0a7f)
+
+Bug: chromium:1501326
+Change-Id: I30d438f3b2e3fdd7562ea9a79dde4561ce9b0083
+Cr-Original-Commit-Position: refs/heads/main@{#90949}
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5110982
+Commit-Queue: Marja Hölttä <marja@chromium.org>
+Auto-Submit: Marja Hölttä <marja@chromium.org>
+Cr-Commit-Position: refs/branch-heads/12.0@{#18}
+Cr-Branched-From: ed7b4caf1fb8184ad9e24346c84424055d4d430a-refs/heads/12.0.267@{#1}
+Cr-Branched-From: 210e75b19db4352c9b78dce0bae11c2dc3077df4-refs/heads/main@{#90651}
+(cherry picked from commit cbd09b2ca928f1fd929ef52e173aa81213e38cb8)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526344
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/v8/src/execution/isolate.cc | 24 +++++++++++++++++++++---
+ 1 file changed, 21 insertions(+), 3 deletions(-)
+
+diff --git a/chromium/v8/src/execution/isolate.cc b/chromium/v8/src/execution/isolate.cc
+index 1c6c464dd6f..d0dc49cd754 100644
+--- src/3rdparty/chromium/v8/src/execution/isolate.cc.orig
++++ src/3rdparty/chromium/v8/src/execution/isolate.cc
+@@ -974,7 +974,13 @@ void CaptureAsyncStackTrace(Isolate* isolate, Handle<JSPromise> promise,
+                                     isolate);
+       builder->AppendPromiseCombinatorFrame(function, combinator);
+ 
+-      // Now peak into the Promise.all() resolve element context to
++      if (context->IsNativeContext()) {
++        // NativeContext is used as a marker that the closure was already
++        // called. We can't access the reject element context any more.
++        return;
++      }
++
++      // Now peek into the Promise.all() resolve element context to
+       // find the promise capability that's being resolved when all
+       // the concurrent promises resolve.
+       int const index =
+@@ -993,7 +999,13 @@ void CaptureAsyncStackTrace(Isolate* isolate, Handle<JSPromise> promise,
+           context->native_context().promise_all_settled(), isolate);
+       builder->AppendPromiseCombinatorFrame(function, combinator);
+ 
+-      // Now peak into the Promise.allSettled() resolve element context to
++      if (context->IsNativeContext()) {
++        // NativeContext is used as a marker that the closure was already
++        // called. We can't access the reject element context any more.
++        return;
++      }
++
++      // Now peek into the Promise.allSettled() resolve element context to
+       // find the promise capability that's being resolved when all
+       // the concurrent promises resolve.
+       int const index =
+@@ -1011,7 +1023,13 @@ void CaptureAsyncStackTrace(Isolate* isolate, Handle<JSPromise> promise,
+                                     isolate);
+       builder->AppendPromiseCombinatorFrame(function, combinator);
+ 
+-      // Now peak into the Promise.any() reject element context to
++      if (context->IsNativeContext()) {
++        // NativeContext is used as a marker that the closure was already
++        // called. We can't access the reject element context any more.
++        return;
++      }
++
++      // Now peek into the Promise.any() reject element context to
+       // find the promise capability that's being resolved when any of
+       // the concurrent promises resolve.
+       int const index = PromiseBuiltins::kPromiseAnyRejectElementCapabilitySlot;
+From e935bf78711c7b8e3938eb3b58d6d61fa7fc2127 Mon Sep 17 00:00:00 2001
+From: Paul Semel <paulsemel@chromium.org>
+Date: Wed, 6 Dec 2023 15:52:56 +0000
+Subject: [PATCH] [Backport] CVE-2023-6703: Use after free in Blink
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5071252:
+[M120] ImageBitmapFactory: fix empty context dcheck
+
+Approved by:
+https://bugs.chromium.org/p/chromium/issues/detail?id=1502102#c34
+
+(cherry picked from commit c4d2f15b8f97076c8fd0f9aa5814b94db698b75c)
+
+Fixed: 1502102
+Change-Id: Ib42d2897d62136ae835561bcf56884b5624060a5
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5071252
+Commit-Queue: Paul Semel <paulsemel@chromium.org>
+Reviewed-by: Jean-Philippe Gravel <jpgravel@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1230617}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5088373
+Auto-Submit: Arthur Sonzogni <arthursonzogni@google.com>
+Reviewed-by: Paul Semel <paulsemel@chromium.org>
+Cr-Commit-Position: refs/branch-heads/6099@{#1416}
+Cr-Branched-From: e6ee4500f7d6549a9ac1354f8d056da49ef406be-refs/heads/main@{#1217362}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526345
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../modules/canvas/imagebitmap/image_bitmap_factories.cc      | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_factories.cc b/chromium/third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_factories.cc
+index 99feb736a50..3a546a64fe8 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_factories.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_factories.cc
+@@ -156,7 +156,9 @@ ScriptPromise ImageBitmapFactories::CreateImageBitmapFromBlob(
+     ImageBitmapSource* bitmap_source,
+     absl::optional<gfx::Rect> crop_rect,
+     const ImageBitmapOptions* options) {
+-  DCHECK(script_state->ContextIsValid());
++  if (!script_state->ContextIsValid()) {
++    return ScriptPromise();
++  }
+ 
+   // imageOrientation: 'from-image' will be used to replace imageOrientation:
+   // 'none'. Adding a deprecation warning when 'none' is called in
+From d5f5cda70cad9ce87e306a1843cf5970bda04236 Mon Sep 17 00:00:00 2001
+From: Guido Urdaneta <guidou@chromium.org>
+Date: Fri, 1 Dec 2023 08:19:24 +0000
+Subject: [PATCH] [Backport] CVE-2023-6705: Use after free in WebRTC
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5077845:
+Drop frames received on the wrong task runner
+
+It can happen during transfer that a frame is posted from the
+background media thread to the task runner of the old execution
+context, which can lead to races and UAF.
+
+This CL makes underlying sources drop frames received on the
+wrong task runner to avoid the problem.
+
+Bug: 1505708
+Change-Id: I686228d88cb1c48bdf8c0b6bf85edd280a54300a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5077845
+Commit-Queue: Guido Urdaneta <guidou@chromium.org>
+Reviewed-by: Tony Herre <toprice@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1231802}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526346
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../rtc_encoded_audio_underlying_source.cc             | 10 +++++++++-
+ .../rtc_encoded_video_underlying_source.cc             | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_audio_underlying_source.cc b/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_audio_underlying_source.cc
+index 56926ce628fb..64348f4a273e 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_audio_underlying_source.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_audio_underlying_source.cc
+@@ -60,7 +60,15 @@ void RTCEncodedAudioUnderlyingSource::Trace(Visitor* visitor) const {
+ 
+ void RTCEncodedAudioUnderlyingSource::OnFrameFromSource(
+     std::unique_ptr<webrtc::TransformableFrameInterface> webrtc_frame) {
+-  DCHECK(task_runner_->BelongsToCurrentThread());
++  // It can happen that a frame is posted to the task runner of the old
++  // execution context during a stream transfer to a new context.
++  // TODO(https://crbug.com/1506631): Make the state updates related to the
++  // transfer atomic and turn this into a DCHECK.
++  if (!task_runner_->BelongsToCurrentThread()) {
++    DVLOG(1) << "Dropped frame posted to incorrect task runner. This can "
++                "happen during transfer.";
++    return;
++  }
+   // If the source is canceled or there are too many queued frames,
+   // drop the new frame.
+   if (!disconnect_callback_ || !GetExecutionContext()) {
+diff --git a/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_video_underlying_source.cc b/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_video_underlying_source.cc
+index 54ca7d1529b1..8fb1d8460e28 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_video_underlying_source.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/peerconnection/rtc_encoded_video_underlying_source.cc
+@@ -58,7 +58,15 @@ void RTCEncodedVideoUnderlyingSource::Trace(Visitor* visitor) const {
+ 
+ void RTCEncodedVideoUnderlyingSource::OnFrameFromSource(
+     std::unique_ptr<webrtc::TransformableVideoFrameInterface> webrtc_frame) {
+-  DCHECK(task_runner_->BelongsToCurrentThread());
++  // It can happen that a frame is posted to the task runner of the old
++  // execution context during a stream transfer to a new context.
++  // TODO(https://crbug.com/1506631): Make the state updates related to the
++  // transfer atomic and turn this into a DCHECK.
++  if (!task_runner_->BelongsToCurrentThread()) {
++    DVLOG(1) << "Dropped frame posted to incorrect task runner. This can "
++                "happen during transfer.";
++    return;
++  }
+   // If the source is canceled or there are too many queued frames,
+   // drop the new frame.
+   if (!disconnect_callback_ || !GetExecutionContext()) {
+From 9050bef97ea5f15232210e6d1096e9badc04d13e Mon Sep 17 00:00:00 2001
+From: Yi Gu <yigu@chromium.org>
+Date: Tue, 28 Nov 2023 15:51:40 +0000
+Subject: [PATCH] [Backport] CVE-2023-6706: Use after free in FedCM
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5095846:
+[M114-LTS][FedCM] Check API permission before showing accounts UI
+
+M114 merge issues:
+  content/browser/webid/federated_auth_request_impl.h/cc:
+    - The GetApiPermissionStatus() doesn't exist in 114, it uses api_permission_delegate_
+    directly.
+
+The accounts fetch could be delayed for legitimate reasons. A user may be
+able to disable FedCM API (e.g. via settings or dismissing another FedCM
+UI on the same RP origin) before the browser receives the accounts
+response.
+
+This patch checks the API permission before showing the accounts UI.
+
+Change-Id: Idbbe88912941113ec3f54d7f222845cd774dc897
+Bug: 1500921
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5064052
+Commit-Queue: Yi Gu <yigu@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1229912}
+(cherry picked from commit 98676a2f66c4b4b802316eef70f4aab77e631f85)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526347
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../browser/webid/federated_auth_request_impl.cc    | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/chromium/content/browser/webid/federated_auth_request_impl.cc b/chromium/content/browser/webid/federated_auth_request_impl.cc
+index cbae35e588c..8242b6cc502 100644
+--- src/3rdparty/chromium/content/browser/webid/federated_auth_request_impl.cc.orig
++++ src/3rdparty/chromium/content/browser/webid/federated_auth_request_impl.cc
+@@ -867,6 +867,19 @@ void FederatedAuthRequestImpl::MaybeShowAccountsDialog() {
+     return;
+   }
+ 
++  // The accounts fetch could be delayed for legitimate reasons. A user may be
++  // able to disable FedCM API (e.g. via settings or dismissing another FedCM UI
++  // on the same RP origin) before the browser receives the accounts response.
++  // We should exit early without showing any UI.
++  if (api_permission_delegate_->GetApiPermissionStatus(GetEmbeddingOrigin()) !=
++      FederatedApiPermissionStatus::GRANTED) {
++    CompleteRequestWithError(
++        FederatedAuthRequestResult::kErrorDisabledInSettings,
++        TokenStatus::kDisabledInSettings,
++        /*should_delay_callback=*/true);
++    return;
++  }
++
+   // The RenderFrameHost may be alive but not visible in the following
+   // situations:
+   // Situation #1: User switched tabs
+From 4f5687248f9993cf1dacdc034a203b9e2d61c324 Mon Sep 17 00:00:00 2001
+From: Vasiliy Telezhnikov <vasilyt@chromium.org>
+Date: Fri, 1 Dec 2023 17:45:27 +0000
+Subject: [PATCH] [Backport] Security bug 1506726
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5078779:
+Check for slugs count before deserializing Slugs in DrawSlugOp
+
+Count is part of serialized data and while we never serialize values
+less then 1, it can be any value when coming over IPC, we should check
+that it's positive before substacting one.
+
+Bug: 1506726
+Change-Id: I244f50a682f2e852b22ba88f1e9cddddb0fdfcb9
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5078779
+Reviewed-by: Peng Huang <penghuang@chromium.org>
+Commit-Queue: Vasiliy Telezhnikov <vasilyt@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1232013}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526348
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/cc/paint/paint_op.cc | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/chromium/cc/paint/paint_op.cc b/chromium/cc/paint/paint_op.cc
+index 225630cb462..6f8c3df3d22 100644
+--- src/3rdparty/chromium/cc/paint/paint_op.cc.orig
++++ src/3rdparty/chromium/cc/paint/paint_op.cc
+@@ -971,10 +971,12 @@ PaintOp* DrawSlugOp::Deserialize(PaintOpReader& reader, void* output) {
+   reader.Read(&op->flags);
+   unsigned int count = 0;
+   reader.Read(&count);
+-  reader.Read(&op->slug);
+-  op->extra_slugs.resize(count - 1);
+-  for (auto& extra_slug : op->extra_slugs) {
+-    reader.Read(&extra_slug);
++  if (count > 0) {
++    reader.Read(&op->slug);
++    op->extra_slugs.resize(count - 1);
++    for (auto& extra_slug : op->extra_slugs) {
++      reader.Read(&extra_slug);
++    }
+   }
+   return op;
+ }
+From 6237d58de03877b9ff5bf5bfad1e0eeb6a4c4b4c Mon Sep 17 00:00:00 2001
+From: Kai Ninomiya <kainino@chromium.org>
+Date: Wed, 29 Nov 2023 17:44:48 +0000
+Subject: [PATCH] [Backport] Security bug 1505632
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5069480:
+Fix reinit order in ContextProviderCommandBuffer::BindToCurrentSequence
+
+See comments for explanation.
+
+Bug: 1505632
+Change-Id: I0f43821a9708af91303048332e9fae5e100deee5
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5069480
+Reviewed-by: Saifuddin Hitawala <hitawala@chromium.org>
+Commit-Queue: Kai Ninomiya <kainino@chromium.org>
+Reviewed-by: Brendon Tiszka <tiszka@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1230735}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526349
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../gpu/context_provider_command_buffer.cc    | 24 +++++++++-----
+ .../cpp/gpu/context_provider_command_buffer.h | 31 ++++++++++++++++---
+ 2 files changed, 44 insertions(+), 11 deletions(-)
+
+diff --git a/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc b/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc
+index 6637a9f89dc..d29c926a49e 100644
+--- src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc.orig
++++ src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc
+@@ -169,13 +169,13 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+     }
+ 
+     // The transfer buffer is used to serialize Dawn commands
+-    transfer_buffer_ =
++    auto transfer_buffer =
+         std::make_unique<gpu::TransferBuffer>(webgpu_helper.get());
+ 
+     // The WebGPUImplementation exposes the WebGPUInterface, as well as the
+     // gpu::ContextSupport interface.
+     auto webgpu_impl = std::make_unique<gpu::webgpu::WebGPUImplementation>(
+-        webgpu_helper.get(), transfer_buffer_.get(), command_buffer_.get());
++        webgpu_helper.get(), transfer_buffer.get(), command_buffer_.get());
+     bind_result_ = webgpu_impl->Initialize(memory_limits_);
+     if (bind_result_ != gpu::ContextResult::kSuccess) {
+       DLOG(ERROR) << "Failed to initialize WebGPUImplementation.";
+@@ -187,8 +187,11 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+     std::string unique_context_name =
+         base::StringPrintf("%s-%p", type_name.c_str(), webgpu_impl.get());
+ 
++    // IMPORTANT: These hold raw_ptrs to each other, so must be set together.
++    // See note in the header (and keep it up to date if things change).
+     impl_ = webgpu_impl.get();
+     webgpu_interface_ = std::move(webgpu_impl);
++    transfer_buffer_ = std::move(transfer_buffer);
+     helper_ = std::move(webgpu_helper);
+   } else if (attributes_.enable_raster_interface &&
+              !attributes_.enable_gles2_interface &&
+@@ -206,14 +209,14 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+     }
+     // The transfer buffer is used to copy resources between the client
+     // process and the GPU process.
+-    transfer_buffer_ =
++    auto transfer_buffer =
+         std::make_unique<gpu::TransferBuffer>(raster_helper.get());
+ 
+     // The RasterImplementation exposes the RasterInterface, as well as the
+     // gpu::ContextSupport interface.
+     DCHECK(channel_);
+     auto raster_impl = std::make_unique<gpu::raster::RasterImplementation>(
+-        raster_helper.get(), transfer_buffer_.get(),
++        raster_helper.get(), transfer_buffer.get(),
+         attributes_.bind_generates_resource,
+         attributes_.lose_context_when_out_of_memory, command_buffer_.get(),
+         channel_->image_decode_accelerator_proxy());
+@@ -230,8 +233,11 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+     raster_impl->TraceBeginCHROMIUM("gpu_toplevel",
+                                     unique_context_name.c_str());
+ 
++    // IMPORTANT: These hold raw_ptrs to each other, so must be set together.
++    // See note in the header (and keep it up to date if things change).
+     impl_ = raster_impl.get();
+     raster_interface_ = std::move(raster_impl);
++    transfer_buffer_ = std::move(transfer_buffer);
+     helper_ = std::move(raster_helper);
+   } else {
+     // The GLES2 helper writes the command buffer protocol.
+@@ -246,7 +252,7 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+ 
+     // The transfer buffer is used to copy resources between the client
+     // process and the GPU process.
+-    transfer_buffer_ =
++    auto transfer_buffer =
+         std::make_unique<gpu::TransferBuffer>(gles2_helper.get());
+ 
+     // The GLES2Implementation exposes the OpenGLES2 API, as well as the
+@@ -259,13 +265,13 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+       // we only use it if grcontext_support was requested.
+       gles2_impl = std::make_unique<
+           skia_bindings::GLES2ImplementationWithGrContextSupport>(
+-          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer_.get(),
++          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer.get(),
+           attributes_.bind_generates_resource,
+           attributes_.lose_context_when_out_of_memory,
+           support_client_side_arrays, command_buffer_.get());
+     } else {
+       gles2_impl = std::make_unique<gpu::gles2::GLES2Implementation>(
+-          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer_.get(),
++          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer.get(),
+           attributes_.bind_generates_resource,
+           attributes_.lose_context_when_out_of_memory,
+           support_client_side_arrays, command_buffer_.get());
+@@ -276,8 +282,11 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+       return bind_result_;
+     }
+ 
++    // IMPORTANT: These hold raw_ptrs to each other, so must be set together.
++    // See note in the header (and keep it up to date if things change).
+     impl_ = gles2_impl.get();
+     gles2_impl_ = std::move(gles2_impl);
++    transfer_buffer_ = std::move(transfer_buffer);
+     helper_ = std::move(gles2_helper);
+   }
+ 
+@@ -311,6 +320,7 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentSequence() {
+             switches::kEnableGpuClientTracing)) {
+       // This wraps the real GLES2Implementation and we should always use this
+       // instead when it's present.
++      // IMPORTANT: This holds a raw_ptr to gles2_impl_.
+       trace_impl_ = std::make_unique<gpu::gles2::GLES2TraceImplementation>(
+           gles2_impl_.get());
+       gl = trace_impl_.get();
+diff --git a/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h b/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
+index e434c1b4fc4..b25506f3b32 100644
+--- src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h.orig
++++ src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
+@@ -162,19 +162,42 @@ class ContextProviderCommandBuffer
+   // associated shared images are destroyed.
+   std::unique_ptr<gpu::ClientSharedImageInterface> shared_image_interface_;
+ 
+-  base::Lock context_lock_;  // Referenced by command_buffer_.
++  //////////////////////////////////////////////////////////////////////////////
++  // IMPORTANT NOTE: All of the objects in this block are part of a complex   //
++  // graph of raw pointers (holder or pointee of various raw_ptrs). They are  //
++  // defined in topological order: only later items point to earlier items.   //
++  // - When writing any member, always ensure its pointers to earlier members
++  //   are guaranteed to stay alive.
++  // - When clearing OR overwriting any member, always ensure objects that
++  //   point to it have already been cleared.
++  //     - The topological order of definitions guarantees that the
++  //       destructors will be called in the correct order (bottom to top).
++  //     - When overwriting multiple members, similarly do so in reverse order.
++  //
++  // Please note these comments are likely not to stay perfectly up-to-date.
++
++  base::Lock context_lock_;
++  // Points to the context_lock_ field of `this`.
+   std::unique_ptr<gpu::CommandBufferProxyImpl> command_buffer_;
++
++  // Points to command_buffer_.
+   std::unique_ptr<gpu::CommandBufferHelper> helper_;
++  // Points to helper_.
+   std::unique_ptr<gpu::TransferBuffer> transfer_buffer_;
+ 
++  // Points to transfer_buffer_, helper_, and command_buffer_.
+   std::unique_ptr<gpu::gles2::GLES2Implementation> gles2_impl_;
++  // Points to gles2_impl_.
+   std::unique_ptr<gpu::gles2::GLES2TraceImplementation> trace_impl_;
++  // Points to transfer_buffer_, helper_, and command_buffer_.
+   std::unique_ptr<gpu::raster::RasterInterface> raster_interface_;
++  // Points to transfer_buffer_, helper_, and command_buffer_.
+   std::unique_ptr<gpu::webgpu::WebGPUInterface> webgpu_interface_;
++  // This is an alias for gles2_impl_, raster_interface_, or webgpu_interface_.
++  raw_ptr<gpu::ImplementationBase> impl_ = nullptr;
+ 
+-  // Owned by one of gles2_impl_, raster_interface_, or webgpu_interface_. It
+-  // must be declared last and cleared first.
+-  raw_ptr<gpu::ImplementationBase> impl_;
++  // END IMPORTANT NOTE                                                       //
++  //////////////////////////////////////////////////////////////////////////////
+ 
+   std::unique_ptr<skia_bindings::GrContextForGLES2Interface> gr_context_;
+ #if BUILDFLAG(SKIA_USE_DAWN)
+From 536f81c3de46e6e1ac2b23ed610f9526bce14fe4 Mon Sep 17 00:00:00 2001
+From: pthier <pthier@chromium.org>
+Date: Tue, 24 Oct 2023 13:28:22 +0200
+Subject: [PATCH] [Backport] Security bug 1488199 (1/3)
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/4971832:
+[regexp] Fix stack check in native code when interrupt was requested
+
+When an interrupt was requested at the time we hit the stack check, the
+check to ensure we have enough space for local variables was skipped.
+
+Bug: chromium:1488199
+Change-Id: I95d82fe737420d2ef43c1ace35560cfd5860829b
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/4971832
+Commit-Queue: Patrick Thier <pthier@chromium.org>
+Reviewed-by: Jakob Linke <jgruber@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#90560}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523712
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../regexp/arm/regexp-macro-assembler-arm.cc  | 23 +++++++-----
+ .../regexp/arm/regexp-macro-assembler-arm.h   |  5 +--
+ .../arm64/regexp-macro-assembler-arm64.cc     | 21 ++++++-----
+ .../arm64/regexp-macro-assembler-arm64.h      |  6 ++--
+ .../ia32/regexp-macro-assembler-ia32.cc       | 19 ++++++----
+ .../regexp/ia32/regexp-macro-assembler-ia32.h |  5 +--
+ .../v8/src/regexp/regexp-macro-assembler.cc   |  5 +--
+ .../v8/src/regexp/regexp-macro-assembler.h    |  2 +-
+ .../regexp/x64/regexp-macro-assembler-x64.cc  | 36 +++++++++++--------
+ .../regexp/x64/regexp-macro-assembler-x64.h   |  4 +--
+ 10 files changed, 78 insertions(+), 48 deletions(-)
+
+diff --git a/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc b/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
+index 8aa815db2ac..6b167fe3dc2 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
++++ src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
+@@ -754,11 +754,13 @@ Handle<HeapObject> RegExpMacroAssemblerARM::GetCode(Handle<String> source) {
+     __ mov(r0, Operand(stack_limit));
+     __ ldr(r0, MemOperand(r0));
+     __ sub(r0, sp, r0, SetCC);
++    Operand extra_space_for_variables(num_registers_ * kSystemPointerSize);
++
+     // Handle it if the stack pointer is already below the stack limit.
+     __ b(ls, &stack_limit_hit);
+     // Check if there is room for the variable number of registers above
+     // the stack limit.
+-    __ cmp(r0, Operand(num_registers_ * kSystemPointerSize));
++    __ cmp(r0, extra_space_for_variables);
+     __ b(hs, &stack_ok);
+     // Exit with OutOfMemory exception. There is not enough space on the stack
+     // for our working registers.
+@@ -766,7 +768,7 @@ Handle<HeapObject> RegExpMacroAssemblerARM::GetCode(Handle<String> source) {
+     __ jmp(&return_r0);
+ 
+     __ bind(&stack_limit_hit);
+-    CallCheckStackGuardState();
++    CallCheckStackGuardState(extra_space_for_variables);
+     __ cmp(r0, Operand::Zero());
+     // If returned value is non-zero, we exit with the returned value as result.
+     __ b(ne, &return_r0);
+@@ -1158,16 +1160,18 @@ void RegExpMacroAssemblerARM::ClearRegisters(int reg_from, int reg_to) {
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerARM::CallCheckStackGuardState() {
++void RegExpMacroAssemblerARM::CallCheckStackGuardState(Operand extra_space) {
+   DCHECK(!isolate()->IsGeneratingEmbeddedBuiltins());
+   DCHECK(!masm_->options().isolate_independent_code);
+ 
+-  __ PrepareCallCFunction(3);
++  __ PrepareCallCFunction(4);
+ 
++  // Extra space for variables to consider in stack check.
++  __ mov(arg_reg_4, extra_space);
+   // RegExp code frame pointer.
+-  __ mov(r2, frame_pointer());
++  __ mov(arg_reg_3, frame_pointer());
+   // InstructionStream of self.
+-  __ mov(r1, Operand(masm_->CodeObject()));
++  __ mov(arg_reg_2, Operand(masm_->CodeObject()));
+ 
+   // We need to make room for the return address on the stack.
+   int stack_alignment = base::OS::ActivationFrameAlignment();
+@@ -1195,7 +1199,6 @@ void RegExpMacroAssemblerARM::CallCheckStackGuardState() {
+   __ mov(code_pointer(), Operand(masm_->CodeObject()));
+ }
+ 
+-
+ // Helper function for reading a value out of a stack frame.
+ template <typename T>
+ static T& frame_entry(Address re_frame, int frame_offset) {
+@@ -1210,7 +1213,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerARM::CheckStackGuardState(Address* return_address,
+                                                   Address raw_code,
+-                                                  Address re_frame) {
++                                                  Address re_frame,
++                                                  uintptr_t extra_space) {
+   InstructionStream re_code = InstructionStream::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolateOffset),
+@@ -1220,7 +1224,8 @@ int RegExpMacroAssemblerARM::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputStringOffset),
+       frame_entry_address<const byte*>(re_frame, kInputStartOffset),
+-      frame_entry_address<const byte*>(re_frame, kInputEndOffset));
++      frame_entry_address<const byte*>(re_frame, kInputEndOffset),
++      extra_space);
+ }
+ 
+ 
+diff --git a/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h b/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h
+index 44be0d920b6..e8d9f6d76de 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h
++++ src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.h
+@@ -88,7 +88,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+-                                  Address re_frame);
++                                  Address re_frame, uintptr_t extra_space);
+ 
+  private:
+   // Offsets from frame_pointer() of function parameters and stored registers.
+@@ -152,7 +152,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM
+   // Check whether we are exceeding the stack limit on the backtrack stack.
+   void CheckStackLimit();
+ 
+-  void CallCheckStackGuardState();
++  void CallCheckStackGuardState(
++      Operand extra_space_for_variables = Operand::Zero());
+   void CallIsCharacterInRangeArray(const ZoneList<CharacterRange>* ranges);
+ 
+   // The ebp-relative location of a regexp register.
+diff --git a/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc b/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+index d453922f6bf..e8d48236621 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
++++ src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+@@ -866,13 +866,14 @@ Handle<HeapObject> RegExpMacroAssemblerARM64::GetCode(Handle<String> source) {
+     __ Mov(x10, stack_limit);
+     __ Ldr(x10, MemOperand(x10));
+     __ Subs(x10, sp, x10);
++    Operand extra_space_for_variables(num_wreg_to_allocate * kWRegSize);
+ 
+     // Handle it if the stack pointer is already below the stack limit.
+     __ B(ls, &stack_limit_hit);
+ 
+     // Check if there is room for the variable number of registers above
+     // the stack limit.
+-    __ Cmp(x10, num_wreg_to_allocate * kWRegSize);
++    __ Cmp(x10, extra_space_for_variables);
+     __ B(hs, &stack_ok);
+ 
+     // Exit with OutOfMemory exception. There is not enough space on the stack
+@@ -881,7 +882,7 @@ Handle<HeapObject> RegExpMacroAssemblerARM64::GetCode(Handle<String> source) {
+     __ B(&return_w0);
+ 
+     __ Bind(&stack_limit_hit);
+-    CallCheckStackGuardState(x10);
++    CallCheckStackGuardState(x10, extra_space_for_variables);
+     // If returned value is non-zero, we exit with the returned value as result.
+     __ Cbnz(w0, &return_w0);
+ 
+@@ -1433,7 +1434,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerARM64::CheckStackGuardState(
+     Address* return_address, Address raw_code, Address re_frame,
+-    int start_index, const byte** input_start, const byte** input_end) {
++    int start_index, const byte** input_start, const byte** input_end,
++    uintptr_t extra_space) {
+   InstructionStream re_code = InstructionStream::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolateOffset), start_index,
+@@ -1441,7 +1443,7 @@ int RegExpMacroAssemblerARM64::CheckStackGuardState(
+           frame_entry<int>(re_frame, kDirectCallOffset)),
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputStringOffset), input_start,
+-      input_end);
++      input_end, extra_space);
+ }
+ 
+ 
+@@ -1460,21 +1462,24 @@ void RegExpMacroAssemblerARM64::CheckPosition(int cp_offset,
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerARM64::CallCheckStackGuardState(Register scratch) {
++void RegExpMacroAssemblerARM64::CallCheckStackGuardState(Register scratch,
++                                                         Operand extra_space) {
+   DCHECK(!isolate()->IsGeneratingEmbeddedBuiltins());
+   DCHECK(!masm_->options().isolate_independent_code);
+ 
+   // Allocate space on the stack to store the return address. The
+   // CheckStackGuardState C++ function will override it if the code
+-  // moved. Allocate extra space for 2 arguments passed by pointers.
+-  // AAPCS64 requires the stack to be 16 byte aligned.
++  // moved. Allocate extra space for 3 arguments (2 for input start/end and 1
++  // for gap). AAPCS64 requires the stack to be 16 byte aligned.
+   int alignment = masm_->ActivationFrameAlignment();
+   DCHECK_EQ(alignment % 16, 0);
+   int align_mask = (alignment / kXRegSize) - 1;
+-  int xreg_to_claim = (3 + align_mask) & ~align_mask;
++  int xreg_to_claim = (4 + align_mask) & ~align_mask;
+ 
+   __ Claim(xreg_to_claim);
+ 
++  __ Mov(x0, extra_space);
++  __ Poke(x0, 3 * kSystemPointerSize);
+   // CheckStackGuardState needs the end and start addresses of the input string.
+   __ Poke(input_end(), 2 * kSystemPointerSize);
+   __ Add(x5, sp, 2 * kSystemPointerSize);
+diff --git a/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h b/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h
+index a5164472b71..05b4eb5bd7b 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h
++++ src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.h
+@@ -95,7 +95,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM64
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+                                   Address re_frame, int start_offset,
+                                   const byte** input_start,
+-                                  const byte** input_end);
++                                  const byte** input_end,
++                                  uintptr_t extra_space);
+ 
+  private:
+   static constexpr int kFramePointerOffset = 0;
+@@ -174,7 +175,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM64
+   // Check whether we are exceeding the stack limit on the backtrack stack.
+   void CheckStackLimit();
+ 
+-  void CallCheckStackGuardState(Register scratch);
++  void CallCheckStackGuardState(Register scratch,
++                                Operand extra_space = Operand(0));
+   void CallIsCharacterInRangeArray(const ZoneList<CharacterRange>* ranges);
+ 
+   // Location of a 32 bit position register.
+diff --git a/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc b/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc
+index 6370e7e57da..8dff4abcb25 100644
+--- src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc
++++ src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc
+@@ -801,11 +801,13 @@ Handle<HeapObject> RegExpMacroAssemblerIA32::GetCode(Handle<String> source) {
+         ExternalReference::address_of_jslimit(isolate());
+     __ mov(eax, esp);
+     __ sub(eax, StaticVariable(stack_limit));
++    Immediate extra_space_for_variables(num_registers_ * kSystemPointerSize);
++
+     // Handle it if the stack pointer is already below the stack limit.
+     __ j(below_equal, &stack_limit_hit);
+     // Check if there is room for the variable number of registers above
+     // the stack limit.
+-    __ cmp(eax, num_registers_ * kSystemPointerSize);
++    __ cmp(eax, extra_space_for_variables);
+     __ j(above_equal, &stack_ok);
+     // Exit with OutOfMemory exception. There is not enough space on the stack
+     // for our working registers.
+@@ -814,7 +816,7 @@ Handle<HeapObject> RegExpMacroAssemblerIA32::GetCode(Handle<String> source) {
+ 
+     __ bind(&stack_limit_hit);
+     __ push(backtrack_stackpointer());
+-    CallCheckStackGuardState(ebx);
++    CallCheckStackGuardState(ebx, extra_space_for_variables);
+     __ pop(backtrack_stackpointer());
+     __ or_(eax, eax);
+     // If returned value is non-zero, we exit with the returned value as result.
+@@ -1214,9 +1216,12 @@ void RegExpMacroAssemblerIA32::ClearRegisters(int reg_from, int reg_to) {
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerIA32::CallCheckStackGuardState(Register scratch) {
+-  static const int num_arguments = 3;
++void RegExpMacroAssemblerIA32::CallCheckStackGuardState(Register scratch,
++                                                        Immediate extra_space) {
++  static const int num_arguments = 4;
+   __ PrepareCallCFunction(num_arguments, scratch);
++  // Extra space for variables.
++  __ mov(Operand(esp, 3 * kSystemPointerSize), extra_space);
+   // RegExp code frame pointer.
+   __ mov(Operand(esp, 2 * kSystemPointerSize), ebp);
+   // InstructionStream of self.
+@@ -1247,7 +1252,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerIA32::CheckStackGuardState(Address* return_address,
+                                                    Address raw_code,
+-                                                   Address re_frame) {
++                                                   Address re_frame,
++                                                   uintptr_t extra_space) {
+   InstructionStream re_code = InstructionStream::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolateOffset),
+@@ -1257,7 +1263,8 @@ int RegExpMacroAssemblerIA32::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputStringOffset),
+       frame_entry_address<const byte*>(re_frame, kInputStartOffset),
+-      frame_entry_address<const byte*>(re_frame, kInputEndOffset));
++      frame_entry_address<const byte*>(re_frame, kInputEndOffset),
++      extra_space);
+ }
+ 
+ 
+diff --git a/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h b/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h
+index 649c61d880e..a33b687c8c3 100644
+--- src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h
++++ src/3rdparty/chromium/v8/src/regexp/ia32/regexp-macro-assembler-ia32.h
+@@ -89,7 +89,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerIA32
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+-                                  Address re_frame);
++                                  Address re_frame, uintptr_t extra_space);
+ 
+  private:
+   Operand StaticVariable(const ExternalReference& ext);
+@@ -159,7 +159,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerIA32
+   // Check whether we are exceeding the stack limit on the backtrack stack.
+   void CheckStackLimit();
+ 
+-  void CallCheckStackGuardState(Register scratch);
++  void CallCheckStackGuardState(Register scratch,
++                                Immediate extra_space = Immediate(0));
+   void CallIsCharacterInRangeArray(const ZoneList<CharacterRange>* ranges);
+ 
+   // The ebp-relative location of a regexp register.
+diff --git a/chromium/v8/src/regexp/regexp-macro-assembler.cc b/chromium/v8/src/regexp/regexp-macro-assembler.cc
+index 2fcb0a425ec..19c4cc9c8dd 100644
+--- src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.cc
++++ src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.cc
+@@ -284,14 +284,15 @@ bool NativeRegExpMacroAssembler::CanReadUnaligned() const {
+ int NativeRegExpMacroAssembler::CheckStackGuardState(
+     Isolate* isolate, int start_index, RegExp::CallOrigin call_origin,
+     Address* return_address, InstructionStream re_code, Address* subject,
+-    const byte** input_start, const byte** input_end) {
++    const byte** input_start, const byte** input_end,
++    uintptr_t gap) {
+   DisallowGarbageCollection no_gc;
+   Address old_pc = PointerAuthentication::AuthenticatePC(return_address, 0);
+   DCHECK_LE(re_code.instruction_start(), old_pc);
+   DCHECK_LE(old_pc, re_code.instruction_end());
+ 
+   StackLimitCheck check(isolate);
+-  bool js_has_overflowed = check.JsHasOverflowed();
++  bool js_has_overflowed = check.JsHasOverflowed(gap);
+ 
+   if (call_origin == RegExp::CallOrigin::kFromJs) {
+     // Direct calls from JavaScript can be interrupted in two ways:
+diff --git a/chromium/v8/src/regexp/regexp-macro-assembler.h b/chromium/v8/src/regexp/regexp-macro-assembler.h
+index 2ba9e2d28d0..4d16f8a98ad 100644
+--- src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.h
++++ src/3rdparty/chromium/v8/src/regexp/regexp-macro-assembler.h
+@@ -334,7 +334,7 @@ class NativeRegExpMacroAssembler: public RegExpMacroAssembler {
+                                   Address* return_address,
+                                   InstructionStream re_code, Address* subject,
+                                   const byte** input_start,
+-                                  const byte** input_end);
++                                  const byte** input_end, uintptr_t gap);
+ 
+   static Address word_character_map_address() {
+     return reinterpret_cast<Address>(&word_character_map[0]);
+diff --git a/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc b/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
+index b6b2f5f5606..83f5cbf2d29 100644
+--- src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
++++ src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
+@@ -842,11 +842,13 @@ Handle<HeapObject> RegExpMacroAssemblerX64::GetCode(Handle<String> source) {
+     __ movq(r9, rsp);
+     __ Move(kScratchRegister, stack_limit);
+     __ subq(r9, Operand(kScratchRegister, 0));
++    Immediate extra_space_for_variables(num_registers_ * kSystemPointerSize);
++
+     // Handle it if the stack pointer is already below the stack limit.
+     __ j(below_equal, &stack_limit_hit);
+     // Check if there is room for the variable number of registers above
+     // the stack limit.
+-    __ cmpq(r9, Immediate(num_registers_ * kSystemPointerSize));
++    __ cmpq(r9, extra_space_for_variables);
+     __ j(above_equal, &stack_ok);
+     // Exit with OutOfMemory exception. There is not enough space on the stack
+     // for our working registers.
+@@ -856,7 +858,8 @@ Handle<HeapObject> RegExpMacroAssemblerX64::GetCode(Handle<String> source) {
+     __ bind(&stack_limit_hit);
+     __ Move(code_object_pointer(), masm_.CodeObject());
+     __ pushq(backtrack_stackpointer());
+-    CallCheckStackGuardState();  // Preserves no registers beside rbp and rsp.
++    // CallCheckStackGuardState preserves no registers beside rbp and rsp.
++    CallCheckStackGuardState(extra_space_for_variables);
+     __ popq(backtrack_stackpointer());
+     __ testq(rax, rax);
+     // If returned value is non-zero, we exit with the returned value as result.
+@@ -1267,35 +1270,38 @@ void RegExpMacroAssemblerX64::ClearRegisters(int reg_from, int reg_to) {
+ 
+ // Private methods:
+ 
+-void RegExpMacroAssemblerX64::CallCheckStackGuardState() {
++void RegExpMacroAssemblerX64::CallCheckStackGuardState(Immediate extra_space) {
+   // This function call preserves no register values. Caller should
+   // store anything volatile in a C call or overwritten by this function.
+-  static const int num_arguments = 3;
++  static const int num_arguments = 4;
+   __ PrepareCallCFunction(num_arguments);
+ #ifdef V8_TARGET_OS_WIN
++  // Fourth argument: Extra space for variables.
++  __ movq(arg_reg_4, extra_space);
+   // Second argument: InstructionStream of self. (Do this before overwriting
+-  // r8).
+-  __ movq(rdx, code_object_pointer());
++  // r8 (arg_reg_3)).
++  __ movq(arg_reg_2, code_object_pointer());
+   // Third argument: RegExp code frame pointer.
+-  __ movq(r8, rbp);
++  __ movq(arg_reg_3, rbp);
+   // First argument: Next address on the stack (will be address of
+   // return address).
+-  __ leaq(rcx, Operand(rsp, -kSystemPointerSize));
++  __ leaq(arg_reg_1, Operand(rsp, -kSystemPointerSize));
+ #else
++  // Fourth argument: Extra space for variables.
++  __ movq(arg_reg_4, extra_space);
+   // Third argument: RegExp code frame pointer.
+-  __ movq(rdx, rbp);
++  __ movq(arg_reg_3, rbp);
+   // Second argument: InstructionStream of self.
+-  __ movq(rsi, code_object_pointer());
++  __ movq(arg_reg_2, code_object_pointer());
+   // First argument: Next address on the stack (will be address of
+   // return address).
+-  __ leaq(rdi, Operand(rsp, -kSystemPointerSize));
++  __ leaq(arg_reg_1, Operand(rsp, -kSystemPointerSize));
+ #endif
+   ExternalReference stack_check =
+       ExternalReference::re_check_stack_guard_state();
+   CallCFunctionFromIrregexpCode(stack_check, num_arguments);
+ }
+ 
+-
+ // Helper function for reading a value out of a stack frame.
+ template <typename T>
+ static T& frame_entry(Address re_frame, int frame_offset) {
+@@ -1310,7 +1316,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int RegExpMacroAssemblerX64::CheckStackGuardState(Address* return_address,
+                                                   Address raw_code,
+-                                                  Address re_frame) {
++                                                  Address re_frame,
++                                                  uintptr_t extra_space) {
+   InstructionStream re_code = InstructionStream::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolateOffset),
+@@ -1320,7 +1327,8 @@ int RegExpMacroAssemblerX64::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputStringOffset),
+       frame_entry_address<const byte*>(re_frame, kInputStartOffset),
+-      frame_entry_address<const byte*>(re_frame, kInputEndOffset));
++      frame_entry_address<const byte*>(re_frame, kInputEndOffset),
++      extra_space);
+ }
+ 
+ 
+diff --git a/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h b/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
+index bfe8290a19c..85dacfddf6a 100644
+--- src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
++++ src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
+@@ -88,7 +88,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int CheckStackGuardState(Address* return_address, Address raw_code,
+-                                  Address re_frame);
++                                  Address re_frame, uintptr_t extra_space);
+ 
+  private:
+   // Offsets from rbp of function parameters and stored registers.
+@@ -198,7 +198,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
+   // Check whether we are exceeding the stack limit on the backtrack stack.
+   void CheckStackLimit();
+ 
+-  void CallCheckStackGuardState();
++  void CallCheckStackGuardState(Immediate extra_space = Immediate(0));
+   void CallIsCharacterInRangeArray(const ZoneList<CharacterRange>* ranges);
+ 
+   // The rbp-relative location of a regexp register.
+From b2748c8718a07d0bfbfcdde10866c43c1708676e Mon Sep 17 00:00:00 2001
+From: Lu Yahan <yahan@iscas.ac.cn>
+Date: Wed, 25 Oct 2023 10:44:00 +0800
+Subject: [PATCH] [Backport] Security bug 1488199 (2/3)
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/4975715:
+[riscv][regexp] Fix stack check in native code when interrupt was requested
+
+Port commit 7f1aaf2a1c763c8aa1358ec8ed24f39bfa17b767
+
+Bug: chromium:1488199
+
+Change-Id: I6b2567267cee0b30230b2e42b8606188011b4463
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/4975715
+Auto-Submit: Yahan Lu <yahan@iscas.ac.cn>
+Commit-Queue: Yahan Lu <yahan@iscas.ac.cn>
+Commit-Queue: Ji Qiu <qiuji@iscas.ac.cn>
+Reviewed-by: Ji Qiu <qiuji@iscas.ac.cn>
+Cr-Commit-Position: refs/heads/main@{#90597}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523713
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../regexp/riscv/regexp-macro-assembler-riscv.cc  | 15 ++++++++++-----
+ .../regexp/riscv/regexp-macro-assembler-riscv.h   |  5 +++--
+ 2 files changed, 13 insertions(+), 7 deletions(-)
+
+diff --git a/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc b/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc
+index 5bf630d6200..30337c75978 100644
+--- src/3rdparty/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc
++++ src/3rdparty/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc
+@@ -732,18 +732,19 @@ Handle<HeapObject> RegExpMacroAssemblerRISCV::GetCode(Handle<String> source) {
+       __ li(a0, Operand(stack_limit));
+       __ LoadWord(a0, MemOperand(a0));
+       __ SubWord(a0, sp, a0);
++      Operand extra_space_for_variables(num_registers_ * kSystemPointerSize);
+       // Handle it if the stack pointer is already below the stack limit.
+       __ Branch(&stack_limit_hit, le, a0, Operand(zero_reg));
+       // Check if there is room for the variable number of registers above
+       // the stack limit.
+-      __ Branch(&stack_ok, uge, a0, Operand(num_registers_ * kPointerSize));
++      __ Branch(&stack_ok, uge, a0, extra_space_for_variables);
+       // Exit with OutOfMemory exception. There is not enough space on the stack
+       // for our working registers.
+       __ li(a0, Operand(EXCEPTION));
+       __ jmp(&return_a0);
+ 
+       __ bind(&stack_limit_hit);
+-      CallCheckStackGuardState(a0);
++      CallCheckStackGuardState(a0, extra_space_for_variables);
+       // If returned value is non-zero, we exit with the returned value as
+       // result.
+       __ Branch(&return_a0, ne, a0, Operand(zero_reg));
+@@ -1142,7 +1143,8 @@ bool RegExpMacroAssemblerRISCV::CanReadUnaligned() const { return false; }
+ #endif
+ // Private methods:
+ 
+-void RegExpMacroAssemblerRISCV::CallCheckStackGuardState(Register scratch) {
++void RegExpMacroAssemblerRISCV::CallCheckStackGuardState(Register scratch,
++                                                         Operand extra_space) {
+   DCHECK(!isolate()->IsGeneratingEmbeddedBuiltins());
+   DCHECK(!masm_->options().isolate_independent_code);
+ 
+@@ -1155,6 +1157,7 @@ void RegExpMacroAssemblerRISCV::CallCheckStackGuardState(Register scratch) {
+   __ And(sp, sp, Operand(-stack_alignment));
+   __ StoreWord(scratch, MemOperand(sp));
+ 
++  __ li(a3, extra_space);
+   __ mv(a2, frame_pointer());
+   // InstructionStream of self.
+   __ li(a1, Operand(masm_->CodeObject()), CONSTANT_SIZE);
+@@ -1215,7 +1218,8 @@ static T* frame_entry_address(Address re_frame, int frame_offset) {
+ 
+ int64_t RegExpMacroAssemblerRISCV::CheckStackGuardState(Address* return_address,
+                                                         Address raw_code,
+-                                                        Address re_frame) {
++                                                        Address re_frame,
++                                                        uintptr_t extra_space) {
+   InstructionStream re_code = InstructionStream::cast(Object(raw_code));
+   return NativeRegExpMacroAssembler::CheckStackGuardState(
+       frame_entry<Isolate*>(re_frame, kIsolateOffset),
+@@ -1225,7 +1229,8 @@ int64_t RegExpMacroAssemblerRISCV::CheckStackGuardState(Address* return_address,
+       return_address, re_code,
+       frame_entry_address<Address>(re_frame, kInputStringOffset),
+       frame_entry_address<const byte*>(re_frame, kInputStartOffset),
+-      frame_entry_address<const byte*>(re_frame, kInputEndOffset));
++      frame_entry_address<const byte*>(re_frame, kInputEndOffset),
++      extra_space);
+ }
+ 
+ MemOperand RegExpMacroAssemblerRISCV::register_location(int register_index) {
+diff --git a/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.h b/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.h
+index 90a1d314cc7..aa45a531b85 100644
+--- src/3rdparty/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.h
++++ src/3rdparty/chromium/v8/src/regexp/riscv/regexp-macro-assembler-riscv.h
+@@ -91,7 +91,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerRISCV
+   // returning.
+   // {raw_code} is an Address because this is called via ExternalReference.
+   static int64_t CheckStackGuardState(Address* return_address, Address raw_code,
+-                                      Address re_frame);
++                                      Address re_frame, uintptr_t extra_space);
+ 
+   void print_regexp_frame_constants();
+ 
+@@ -165,7 +165,8 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerRISCV
+   // Check whether we are exceeding the stack limit on the backtrack stack.
+   void CheckStackLimit();
+ 
+-  void CallCheckStackGuardState(Register scratch);
++  void CallCheckStackGuardState(Register scratch,
++                                Operand extra_space_for_variables = Operand(0));
+   void CallIsCharacterInRangeArray(const ZoneList<CharacterRange>* ranges);
+ 
+   // The ebp-relative location of a regexp register.
+From c660893ad341e4d5a81ddaf8b23dadcb6cd51660 Mon Sep 17 00:00:00 2001
+From: pthier <pthier@chromium.org>
+Date: Mon, 30 Oct 2023 11:59:09 +0100
+Subject: [PATCH] [Backport] Security bug 1488199 (3/3)
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/4987306:
+[regexp][arm64] Fix stack check extra space argument
+
+Pass argument in register instead of the stack.
+
+Bug: chromium:1488199, v8:14415
+Change-Id: Ic9967c9f2ca5da1981a0138ddb5f0335ab7f1425
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/4987306
+Commit-Queue: Patrick Thier <pthier@chromium.org>
+Reviewed-by: Camillo Bruni <cbruni@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#90669}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/523714
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc  | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc b/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+index e8d48236621..dd3f047ffc4 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
++++ src/3rdparty/chromium/v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc
+@@ -1469,17 +1469,16 @@ void RegExpMacroAssemblerARM64::CallCheckStackGuardState(Register scratch,
+ 
+   // Allocate space on the stack to store the return address. The
+   // CheckStackGuardState C++ function will override it if the code
+-  // moved. Allocate extra space for 3 arguments (2 for input start/end and 1
+-  // for gap). AAPCS64 requires the stack to be 16 byte aligned.
++  // moved. Allocate extra space for 2 arguments passed by pointers.
++  // AAPCS64 requires the stack to be 16 byte aligned.
+   int alignment = masm_->ActivationFrameAlignment();
+   DCHECK_EQ(alignment % 16, 0);
+   int align_mask = (alignment / kXRegSize) - 1;
+-  int xreg_to_claim = (4 + align_mask) & ~align_mask;
++  int xreg_to_claim = (3 + align_mask) & ~align_mask;
+ 
+   __ Claim(xreg_to_claim);
+ 
+-  __ Mov(x0, extra_space);
+-  __ Poke(x0, 3 * kSystemPointerSize);
++  __ Mov(x6, extra_space);
+   // CheckStackGuardState needs the end and start addresses of the input string.
+   __ Poke(input_end(), 2 * kSystemPointerSize);
+   __ Add(x5, sp, 2 * kSystemPointerSize);
+From 243fab4932e66121061ada4bb4724ed341c6622e Mon Sep 17 00:00:00 2001
+From: Gustaf Ullberg <gustaf@chromium.org>
+Date: Tue, 19 Dec 2023 18:08:19 +0000
+Subject: [PATCH] [Backport] CVE-2023-7024: Heap buffer overflow in WebRTC
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5136295:
+WebRtcAudioSink: Stop on invalid configuration
+
+Bug: 1513170
+Change-Id: Ia4ca55e9eafb81789b28b8b8c54e615ac28df633
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5136295
+Reviewed-by: Harald Alvestrand <hta@chromium.org>
+Commit-Queue: Gustaf Ullberg <gustaf@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1239233}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530064
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../blink/renderer/platform/peerconnection/webrtc_audio_sink.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc b/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc
+index cd9f2edbf6e..209a2277056 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc
+@@ -121,7 +121,7 @@ void WebRtcAudioSink::OnData(const media::AudioBus& audio_bus,
+ }
+ 
+ void WebRtcAudioSink::OnSetFormat(const media::AudioParameters& params) {
+-  DCHECK(params.IsValid());
++  CHECK(params.IsValid());
+   SendLogMessage(base::StringPrintf("OnSetFormat([label=%s] {params=[%s]})",
+                                     adapter_->label().c_str(),
+                                     params.AsHumanReadableString().c_str()));
+From 6027a6d13bd29c144d3340d997dac822f625086e Mon Sep 17 00:00:00 2001
+From: Joshua Pawlicki <waffles@chromium.org>
+Date: Wed, 20 Dec 2023 22:33:06 +0000
+Subject: [PATCH] [Backport] CVE-2024-0333: Insufficient data validation in
+ Extensions
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5141787:
+crx_file: Error early for CRXs with ZIP markers in header.
+
+Bug: 1513379
+Change-Id: I029b4f15778df0c150866b1f49a9b5b2924690ed
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5141787
+Commit-Queue: Joshua Pawlicki <waffles@chromium.org>
+Auto-Submit: Joshua Pawlicki <waffles@chromium.org>
+Code-Coverage: findit-for-me@appspot.gserviceaccount.com <findit-for-me@appspot.gserviceaccount.com>
+Commit-Queue: Sorin Jianu <sorin@chromium.org>
+Reviewed-by: Sorin Jianu <sorin@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1239849}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530065
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/components/crx_file/crx_verifier.cc | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/chromium/components/crx_file/crx_verifier.cc b/chromium/components/crx_file/crx_verifier.cc
+index 2378aa5a951..cf038c50bdb 100644
+--- src/3rdparty/chromium/components/crx_file/crx_verifier.cc
++++ src/3rdparty/chromium/components/crx_file/crx_verifier.cc
+@@ -4,6 +4,7 @@
+ 
+ #include "components/crx_file/crx_verifier.h"
+ 
++#include <algorithm>
+ #include <climits>
+ #include <cstring>
+ #include <iterator>
+@@ -43,6 +44,9 @@ constexpr uint8_t kPublisherTestKeyHash[] = {
+     0x5f, 0x64, 0xf3, 0xa6, 0x17, 0x03, 0x0d, 0xde, 0x21, 0x61, 0xbe,
+     0xb7, 0x95, 0x91, 0x95, 0x83, 0x68, 0x12, 0xe9, 0x78, 0x1e};
+ 
++constexpr uint8_t kEocd[] = {'P', 'K', 0x05, 0x06};
++constexpr uint8_t kEocd64[] = {'P', 'K', 0x06, 0x07};
++
+ using VerifierCollection =
+     std::vector<std::unique_ptr<crypto::SignatureVerifier>>;
+ using RepeatedProof = google::protobuf::RepeatedPtrField<AsymmetricKeyProof>;
+@@ -109,6 +113,18 @@ VerifierResult VerifyCrx3(
+       header_size) {
+     return VerifierResult::ERROR_HEADER_INVALID;
+   }
++
++  // If the header contains a ZIP EOCD or EOCD64 token, unzipping may not work
++  // correctly.
++  if (std::search(std::begin(header_bytes), std::end(header_bytes),
++                  std::begin(kEocd),
++                  std::end(kEocd)) != std::end(header_bytes) ||
++      std::search(std::begin(header_bytes), std::end(header_bytes),
++                  std::begin(kEocd64),
++                  std::end(kEocd64)) != std::end(header_bytes)) {
++    return VerifierResult::ERROR_HEADER_INVALID;
++  }
++
+   CrxFileHeader header;
+   if (!header.ParseFromArray(header_bytes.data(), header_size))
+     return VerifierResult::ERROR_HEADER_INVALID;
+From 70667dfeaa0cac885821a5fd1479502ff02c78ae Mon Sep 17 00:00:00 2001
+From: Austin Eng <enga@chromium.org>
+Date: Tue, 19 Dec 2023 17:25:51 +0000
+Subject: [PATCH] [Backport] CVE-2024-0225: Use after free in WebGPU
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5133239:
+Use cross thread handles to bind args for async webgpu context creation
+
+(cherry picked from commit 542b278a0c1de7202f4bf5e3e5cbdc2dd6c337d4)
+
+Fixed: 1506923
+Change-Id: I174703cbd993471e3afb39c0cfa4cce2770755f7
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5113019
+Reviewed-by: Corentin Wallez <cwallez@chromium.org>
+Commit-Queue: Austin Eng <enga@chromium.org>
+Reviewed-by: Stephen White <senorblanco@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1237179}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5133239
+Cr-Commit-Position: refs/branch-heads/6099@{#1551}
+Cr-Branched-From: e6ee4500f7d6549a9ac1354f8d056da49ef406be-refs/heads/main@{#1217362}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530066
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../blink/renderer/modules/webgpu/gpu.cc      | 19 ++++++++++++++++---
+ .../web_graphics_context_3d_provider_util.cc  |  7 +++----
+ .../web_graphics_context_3d_provider_util.h   |  5 +++--
+ 3 files changed, 22 insertions(+), 9 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/webgpu/gpu.cc b/chromium/third_party/blink/renderer/modules/webgpu/gpu.cc
+index df95fe1d397..273c874affb 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/webgpu/gpu.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/webgpu/gpu.cc
+@@ -35,11 +35,13 @@
+ #include "third_party/blink/renderer/platform/graphics/gpu/dawn_control_client_holder.h"
+ #include "third_party/blink/renderer/platform/graphics/gpu/webgpu_callback.h"
+ #include "third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.h"
++#include "third_party/blink/renderer/platform/heap/cross_thread_handle.h"
+ #include "third_party/blink/renderer/platform/heap/garbage_collected.h"
+ #include "third_party/blink/renderer/platform/heap/thread_state.h"
+ #include "third_party/blink/renderer/platform/instrumentation/use_counter.h"
+ #include "third_party/blink/renderer/platform/privacy_budget/identifiability_digest_helpers.h"
+ #include "third_party/blink/renderer/platform/weborigin/kurl.h"
++#include "third_party/blink/renderer/platform/wtf/cross_thread_functional.h"
+ 
+ namespace blink {
+ 
+@@ -288,9 +290,19 @@ void GPU::RequestAdapterImpl(ScriptState* script_state,
+     CreateWebGPUGraphicsContext3DProviderAsync(
+         execution_context->Url(),
+         execution_context->GetTaskRunner(TaskType::kWebGPU),
+-        WTF::BindOnce(
+-            [](GPU* gpu, ExecutionContext* execution_context,
++        CrossThreadBindOnce(
++            [](CrossThreadHandle<GPU> gpu_handle,
++               CrossThreadHandle<ExecutionContext> execution_context_handle,
+                std::unique_ptr<WebGraphicsContext3DProvider> context_provider) {
++              auto unwrap_gpu = MakeUnwrappingCrossThreadHandle(gpu_handle);
++              auto unwrap_execution_context =
++                  MakeUnwrappingCrossThreadHandle(execution_context_handle);
++              if (!unwrap_gpu || !unwrap_execution_context) {
++                return;
++              }
++              auto* gpu = unwrap_gpu.GetOnCreationThread();
++              auto* execution_context =
++                  unwrap_execution_context.GetOnCreationThread();
+               const KURL& url = execution_context->Url();
+               context_provider =
+                   CheckContextProvider(url, std::move(context_provider));
+@@ -312,7 +324,8 @@ void GPU::RequestAdapterImpl(ScriptState* script_state,
+                 std::move(callback).Run();
+               }
+             },
+-            WrapPersistent(this), WrapPersistent(execution_context)));
++            MakeCrossThreadHandle(this),
++            MakeCrossThreadHandle(execution_context)));
+     return;
+   }
+ 
+diff --git a/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.cc b/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.cc
+index f859f3e62c5..3d9890b9b4a 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.cc
+@@ -121,8 +121,8 @@ CreateWebGPUGraphicsContext3DProvider(const KURL& url) {
+ void CreateWebGPUGraphicsContext3DProviderAsync(
+     const KURL& url,
+     scoped_refptr<base::SingleThreadTaskRunner> current_thread_task_runner,
+-    base::OnceCallback<void(std::unique_ptr<WebGraphicsContext3DProvider>)>
+-        callback) {
++    WTF::CrossThreadOnceFunction<
++        void(std::unique_ptr<WebGraphicsContext3DProvider>)> callback) {
+   if (IsMainThread()) {
+     std::move(callback).Run(
+         Platform::Current()->CreateWebGPUGraphicsContext3DProvider(url));
+@@ -140,8 +140,7 @@ void CreateWebGPUGraphicsContext3DProviderAsync(
+             AccessMainThreadForWebGraphicsContext3DProvider()),
+         FROM_HERE,
+         CrossThreadBindOnce(&CreateWebGPUGraphicsContextOnMainThreadAsync, url,
+-                            current_thread_task_runner,
+-                            CrossThreadBindOnce(std::move(callback))));
++                            current_thread_task_runner, std::move(callback)));
+   }
+ }
+ 
+diff --git a/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.h b/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.h
+index 8fcab24bfec..8b785cc30ac 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.h
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.h
+@@ -10,6 +10,7 @@
+ #include "third_party/blink/public/platform/web_graphics_context_3d_provider.h"
+ #include "third_party/blink/renderer/platform/platform_export.h"
+ #include "third_party/blink/renderer/platform/weborigin/kurl.h"
++#include "third_party/blink/renderer/platform/wtf/functional.h"
+ 
+ namespace blink {
+ 
+@@ -42,8 +43,8 @@ CreateWebGPUGraphicsContext3DProvider(const KURL& url);
+ PLATFORM_EXPORT void CreateWebGPUGraphicsContext3DProviderAsync(
+     const KURL& url,
+     scoped_refptr<base::SingleThreadTaskRunner> current_thread_task_runner,
+-    base::OnceCallback<void(std::unique_ptr<WebGraphicsContext3DProvider>)>
+-        callback);
++    WTF::CrossThreadOnceFunction<
++        void(std::unique_ptr<WebGraphicsContext3DProvider>)> callback);
+ 
+ }  // namespace blink
+ 
+From a3d7e657936027aa3f3a257d3afd525c81c152f0 Mon Sep 17 00:00:00 2001
+From: Hongchan Choi <hongchan@chromium.org>
+Date: Tue, 12 Dec 2023 02:36:08 +0000
+Subject: [PATCH] [Backport] CVE-2024-0224: Use after free in WebAudio
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5112992:
+Wrap buffer read index in delay kernel
+
+The current code assumes that the first buffer read index in the delay
+kernel does not go out of bound. This CL applies the wrapping function
+to the read index array.
+
+(cherry picked from commit fb96fd5f41bec823dbb208d9a7d53fbbf4d16ce4)
+
+Bug: 1505086
+Test: Locally confirmed the repro does not crash anymore
+Change-Id: Idca3dfc7dec5b5a7f9b22d87135e2d775729631a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5072113
+Commit-Queue: Hongchan Choi <hongchan@chromium.org>
+Reviewed-by: Michael Wilson <mjwilson@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1231040}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5112992
+Auto-Submit: Hongchan Choi <hongchan@chromium.org>
+Commit-Queue: Rubber Stamper <rubber-stamper@appspot.gserviceaccount.com>
+Bot-Commit: Rubber Stamper <rubber-stamper@appspot.gserviceaccount.com>
+Cr-Commit-Position: refs/branch-heads/6099@{#1498}
+Cr-Branched-From: e6ee4500f7d6549a9ac1354f8d056da49ef406be-refs/heads/main@{#1217362}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530067
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../renderer/platform/audio/audio_delay_dsp_kernel.cc  |  2 +-
+ .../audio/cpu/arm/audio_delay_dsp_kernel_neon.cc       |  7 +++++--
+ .../audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc       | 10 +++++++---
+ 3 files changed, 13 insertions(+), 6 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc b/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc
+index b6613ff3df7b..2e17efd95802 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc
+@@ -155,7 +155,7 @@ int AudioDelayDSPKernel::ProcessARateScalar(unsigned start,
+   const float* delay_times = delay_times_.Data();
+ 
+   for (unsigned i = start; i < frames_to_process; ++i) {
+-    double delay_time = delay_times[i];
++    double delay_time = std::fmax(delay_times[i], 0);
+     double desired_delay_frames = delay_time * sample_rate;
+ 
+     double read_position = w_index + buffer_length - desired_delay_frames;
+diff --git a/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc b/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc
+index e3c6fd5eb064..8bf0d2a57305 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc
+@@ -60,6 +60,7 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+   int w_index = write_index_;
+ 
+   const float32x4_t v_sample_rate = vdupq_n_f32(sample_rate);
++  const float32x4_t v_all_zeros = vdupq_n_f32(0);
+ 
+   // The buffer length as a float and as an int so we don't need to constant
+   // convert from one to the other.
+@@ -87,7 +88,8 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+   int k = 0;
+ 
+   for (int n = 0; n < number_of_loops; ++n, k += 4) {
+-    const float32x4_t v_delay_time = vld1q_f32(delay_times + k);
++    const float32x4_t v_delay_time = vmaxq_f32(vld1q_f32(delay_times + k),
++                                               v_all_zeros);
+     const float32x4_t v_desired_delay_frames =
+         vmulq_f32(v_delay_time, v_sample_rate);
+ 
+@@ -100,7 +102,8 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+         WrapPositionVector(v_read_position, v_buffer_length_float);
+ 
+     // Get indices into the buffer for the samples we need for interpolation.
+-    const int32x4_t v_read_index1 = vcvtq_s32_f32(v_read_position);
++    const int32x4_t v_read_index1 = WrapIndexVector(
++        vcvtq_s32_f32(v_read_position), v_buffer_length_int);
+     const int32x4_t v_read_index2 = WrapIndexVector(
+         vaddq_s32(v_read_index1, vdupq_n_s32(1)), v_buffer_length_int);
+ 
+diff --git a/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc b/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc
+index fc409b192d62..c2443da23e55 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc
+@@ -58,10 +58,10 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+ 
+   const float sample_rate = SampleRate();
+   const float* delay_times = delay_times_.Data();
+-
+   int w_index = write_index_;
+ 
+   const __m128 v_sample_rate = _mm_set1_ps(sample_rate);
++  const __m128 v_all_zeros = _mm_setzero_ps();
+ 
+   // The buffer length as a float and as an int so we don't need to constant
+   // convert from one to the other.
+@@ -84,7 +84,10 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+   int k = 0;
+ 
+   for (int n = 0; n < number_of_loops; ++n, k += 4) {
+-    const __m128 v_delay_time = _mm_loadu_ps(delay_times + k);
++    // It's possible that `delay_time` contains negative values. Make sure
++    // they are greater than zero.
++    const __m128 v_delay_time = _mm_max_ps(_mm_loadu_ps(delay_times + k),
++                                           v_all_zeros);
+     const __m128 v_desired_delay_frames =
+         _mm_mul_ps(v_delay_time, v_sample_rate);
+ 
+@@ -97,7 +100,8 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+         WrapPositionVector(v_read_position, v_buffer_length_float);
+ 
+     // Get indices into the buffer for the samples we need for interpolation.
+-    const __m128i v_read_index1 = _mm_cvttps_epi32(v_read_position);
++    const __m128i v_read_index1 = WrapIndexVector(
++        _mm_cvttps_epi32(v_read_position), v_buffer_length_int);
+     const __m128i v_read_index2 = WrapIndexVector(
+         _mm_add_epi32(v_read_index1, _mm_set1_epi32(1)), v_buffer_length_int);
+ 
+From 4d4242d5d572e9427465e1833a711f50d4e30973 Mon Sep 17 00:00:00 2001
+From: Shahbaz Youssefi <syoussefi@chromium.org>
+Date: Thu, 30 Nov 2023 13:53:00 -0500
+Subject: [PATCH] [Backport] CVE-2024-0223: Heap buffer overflow in ANGLE (1/3)
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/angle/angle/+/5077407:
+Translator: Optimize field-name-collision check
+
+As each field of the struct was encountered, its name was linearly
+checked against previously added fields.  That's O(n^2).
+
+The name collision check is now moved to when the struct is completely
+defined, and is done with an unordered_map.
+
+Bug: chromium:1505009
+Change-Id: If28d738254a541450912eba4ed168424dad9d8be
+Reviewed-on: https://chromium-review.googlesource.com/c/angle/angle/+/5077407
+Commit-Queue: Shahbaz Youssefi <syoussefi@chromium.org>
+Reviewed-by: Roman Lavrov <romanl@google.com>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530069
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../src/compiler/translator/ParseContext.cpp  | 39 +++++++++----------
+ .../src/compiler/translator/ParseContext.h    |  5 +--
+ 2 files changed, 20 insertions(+), 24 deletions(-)
+
+diff --git a/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp b/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp
+index b3d90a1a279..638cea22976 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp
+@@ -4665,6 +4665,9 @@ TIntermDeclaration *TParseContext::addInterfaceBlock(
+     const TVector<unsigned int> *arraySizes,
+     const TSourceLoc &arraySizesLine)
+ {
++    // Ensure there are no duplicate field names
++    checkDoesNotHaveDuplicateFieldNames(fieldList, nameLine);
++
+     const bool isGLPerVertex = blockName == "gl_PerVertex";
+     // gl_PerVertex is allowed to be redefined and therefore not reserved
+     if (!isGLPerVertex)
+@@ -6172,28 +6175,25 @@ TDeclarator *TParseContext::parseStructArrayDeclarator(const ImmutableString &id
+     return new TDeclarator(identifier, arraySizes, loc);
+ }
+ 
+-void TParseContext::checkDoesNotHaveDuplicateFieldName(const TFieldList::const_iterator begin,
+-                                                       const TFieldList::const_iterator end,
+-                                                       const ImmutableString &name,
+-                                                       const TSourceLoc &location)
++void TParseContext::checkDoesNotHaveDuplicateFieldNames(const TFieldList *fields,
++                                                        const TSourceLoc &location)
+ {
+-    for (auto fieldIter = begin; fieldIter != end; ++fieldIter)
++    TUnorderedMap<ImmutableString, uint32_t, ImmutableString::FowlerNollVoHash<sizeof(size_t)>>
++        fieldNames;
++    for (TField *field : *fields)
+     {
+-        if ((*fieldIter)->name() == name)
++        // Note: operator[] adds this name to the map if it doesn't already exist, and initializes
++        // its value to 0.
++        uint32_t count = ++fieldNames[field->name()];
++        if (count != 1)
+         {
+-            error(location, "duplicate field name in structure", name);
++            error(location, "Duplicate field name in structure", field->name());
+         }
+     }
+ }
+ 
+ TFieldList *TParseContext::addStructFieldList(TFieldList *fields, const TSourceLoc &location)
+ {
+-    for (TFieldList::const_iterator fieldIter = fields->begin(); fieldIter != fields->end();
+-         ++fieldIter)
+-    {
+-        checkDoesNotHaveDuplicateFieldName(fields->begin(), fieldIter, (*fieldIter)->name(),
+-                                           location);
+-    }
+     return fields;
+ }
+ 
+@@ -6201,12 +6201,8 @@ TFieldList *TParseContext::combineStructFieldLists(TFieldList *processedFields,
+                                                    const TFieldList *newlyAddedFields,
+                                                    const TSourceLoc &location)
+ {
+-    for (TField *field : *newlyAddedFields)
+-    {
+-        checkDoesNotHaveDuplicateFieldName(processedFields->begin(), processedFields->end(),
+-                                           field->name(), location);
+-        processedFields->push_back(field);
+-    }
++    processedFields->insert(processedFields->end(), newlyAddedFields->begin(),
++                            newlyAddedFields->end());
+     return processedFields;
+ }
+ 
+@@ -6299,7 +6295,10 @@ TTypeSpecifierNonArray TParseContext::addStructure(const TSourceLoc &structLine,
+         }
+     }
+ 
+-    // ensure we do not specify any storage qualifiers on the struct members
++    // Ensure there are no duplicate field names
++    checkDoesNotHaveDuplicateFieldNames(fieldList, structLine);
++
++    // Ensure we do not specify any storage qualifiers on the struct members
+     for (unsigned int typeListIndex = 0; typeListIndex < fieldList->size(); typeListIndex++)
+     {
+         TField &field              = *(*fieldList)[typeListIndex];
+diff --git a/chromium/third_party/angle/src/compiler/translator/ParseContext.h b/chromium/third_party/angle/src/compiler/translator/ParseContext.h
+index ee0cebe4f00..ca8dab269d6 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.h
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.h
+@@ -354,10 +354,7 @@ class TParseContext : angle::NonCopyable
+                                             const TSourceLoc &loc,
+                                             const TVector<unsigned int> *arraySizes);
+ 
+-    void checkDoesNotHaveDuplicateFieldName(const TFieldList::const_iterator begin,
+-                                            const TFieldList::const_iterator end,
+-                                            const ImmutableString &name,
+-                                            const TSourceLoc &location);
++    void checkDoesNotHaveDuplicateFieldNames(const TFieldList *fields, const TSourceLoc &location);
+     TFieldList *addStructFieldList(TFieldList *fields, const TSourceLoc &location);
+     TFieldList *combineStructFieldLists(TFieldList *processedFields,
+                                         const TFieldList *newlyAddedFields,
+From d0b3ab561418251a16c18ef5eba488294a209848 Mon Sep 17 00:00:00 2001
+From: Shahbaz Youssefi <syoussefi@chromium.org>
+Date: Thu, 30 Nov 2023 14:12:42 -0500
+Subject: [PATCH] [Backport] CVE-2024-0223: Heap buffer overflow in ANGLE (2/3)
+
+Cherry-pick of patch originally reviewed pn
+https://chromium-review.googlesource.com/c/angle/angle/+/5074629:
+Translator: Fail compilation if too many struct fields
+
+If there are too many struct fields, SPIR-V cannot be produced (as it
+has a hard limit of 16383 fields).  The Nvidia GL driver has also been
+observed to fail when there are too many fields.
+
+Bug: chromium:1505009
+Change-Id: If9b01716c1cab35a6e537da64421e29fe0eda91e
+Reviewed-on: https://chromium-review.googlesource.com/c/angle/angle/+/5074629
+Commit-Queue: Shahbaz Youssefi <syoussefi@chromium.org>
+Reviewed-by: Roman Lavrov <romanl@google.com>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530070
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../src/compiler/translator/ParseContext.cpp  | 19 +++++++++++++++++++
+ .../src/compiler/translator/ParseContext.h    |  3 +++
+ 2 files changed, 22 insertions(+)
+
+diff --git a/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp b/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp
+index 638cea22976..5a4352b51ae 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.cpp
+@@ -4665,6 +4665,8 @@ TIntermDeclaration *TParseContext::addInterfaceBlock(
+     const TVector<unsigned int> *arraySizes,
+     const TSourceLoc &arraySizesLine)
+ {
++    checkDoesNotHaveTooManyFields(blockName, fieldList, nameLine);
++
+     // Ensure there are no duplicate field names
+     checkDoesNotHaveDuplicateFieldNames(fieldList, nameLine);
+ 
+@@ -6192,6 +6194,21 @@ void TParseContext::checkDoesNotHaveDuplicateFieldNames(const TFieldList *fields
+     }
+ }
+ 
++void TParseContext::checkDoesNotHaveTooManyFields(const ImmutableString &name,
++                                                  const TFieldList *fields,
++                                                  const TSourceLoc &location)
++{
++    // Check that there are not too many fields.  SPIR-V has a limit of 16383 fields, and it would
++    // be reasonable to apply that limit to all outputs.  For example, it was observed that 32768
++    // fields cause the Nvidia GL driver to fail compilation, so such a limit is not too specific to
++    // SPIR-V.
++    constexpr size_t kMaxFieldCount = 16383;
++    if (fields->size() > kMaxFieldCount)
++    {
++        error(location, "Too many fields in the struct (limit is 16383)", name);
++    }
++}
++
+ TFieldList *TParseContext::addStructFieldList(TFieldList *fields, const TSourceLoc &location)
+ {
+     return fields;
+@@ -6295,6 +6312,8 @@ TTypeSpecifierNonArray TParseContext::addStructure(const TSourceLoc &structLine,
+         }
+     }
+ 
++    checkDoesNotHaveTooManyFields(structName, fieldList, structLine);
++
+     // Ensure there are no duplicate field names
+     checkDoesNotHaveDuplicateFieldNames(fieldList, structLine);
+ 
+diff --git a/chromium/third_party/angle/src/compiler/translator/ParseContext.h b/chromium/third_party/angle/src/compiler/translator/ParseContext.h
+index ca8dab269d6..dca714a9e3d 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.h
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/ParseContext.h
+@@ -355,6 +355,9 @@ class TParseContext : angle::NonCopyable
+                                             const TVector<unsigned int> *arraySizes);
+ 
+     void checkDoesNotHaveDuplicateFieldNames(const TFieldList *fields, const TSourceLoc &location);
++    void checkDoesNotHaveTooManyFields(const ImmutableString &name,
++                                       const TFieldList *fields,
++                                       const TSourceLoc &location);
+     TFieldList *addStructFieldList(TFieldList *fields, const TSourceLoc &location);
+     TFieldList *combineStructFieldLists(TFieldList *processedFields,
+                                         const TFieldList *newlyAddedFields,
+From fda3dd792d69ae6697fd63bebebd280a6c2aedd4 Mon Sep 17 00:00:00 2001
+From: Shahbaz Youssefi <syoussefi@chromium.org>
+Date: Thu, 30 Nov 2023 15:42:32 -0500
+Subject: [PATCH] [Backport] CVE-2024-0223: Heap buffer overflow in ANGLE (3/3)
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/angle/angle/+/5077408:
+Translator: Limit private variable size to 64KB
+
+This is indirectly fixing an issue where passing large arrays in SPIR-V
+such that an internal cast is needed (such as array inside interface
+block copied to local varaible) causes an overflow of the instruction
+length limit (in the absence of OpCopyLogical).
+
+By limiting the size of private variables to 32KB, this limitation is
+indirectly enforced.  It was observed that all the test shaders added in
+this CL fail on the Nvidia OpenGL drivers, so such a limit seems to be
+reasonble.
+
+Bug: chromium:1505009
+Change-Id: Ia36134b2bf8501a5b875814db3566be28b183e0f
+Reviewed-on: https://chromium-review.googlesource.com/c/angle/angle/+/5077408
+Reviewed-by: Charlie Lao <cclao@google.com>
+Reviewed-by: Geoff Lang <geofflang@chromium.org>
+Commit-Queue: Shahbaz Youssefi <syoussefi@chromium.org>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530091
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../src/compiler/translator/Compiler.cpp      |  12 +-
+ .../ValidateTypeSizeLimitations.cpp           | 131 +++++++++++++-----
+ 2 files changed, 107 insertions(+), 36 deletions(-)
+
+diff --git a/chromium/third_party/angle/src/compiler/translator/Compiler.cpp b/chromium/third_party/angle/src/compiler/translator/Compiler.cpp
+index b5b4ccf1c2d..cc5d026099d 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/Compiler.cpp
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/Compiler.cpp
+@@ -770,11 +770,6 @@ bool TCompiler::checkAndSimplifyAST(TIntermBlock *root,
+         return false;
+     }
+ 
+-    if (shouldLimitTypeSizes() && !ValidateTypeSizeLimitations(root, &mSymbolTable, &mDiagnostics))
+-    {
+-        return false;
+-    }
+-
+     if (!ValidateFragColorAndFragData(mShaderType, mShaderVersion, mSymbolTable, &mDiagnostics))
+     {
+         return false;
+@@ -1053,6 +1048,13 @@ bool TCompiler::checkAndSimplifyAST(TIntermBlock *root,
+         return false;
+     }
+ 
++    // Run after RemoveUnreferencedVariables, validate that the shader does not have excessively
++    // large variables.
++    if (shouldLimitTypeSizes() && !ValidateTypeSizeLimitations(root, &mSymbolTable, &mDiagnostics))
++    {
++        return false;
++    }
++
+     // Built-in function emulation needs to happen after validateLimitations pass.
+     GetGlobalPoolAllocator()->lock();
+     initBuiltInFunctionEmulator(&mBuiltInFunctionEmulator, compileOptions);
+diff --git a/chromium/third_party/angle/src/compiler/translator/ValidateTypeSizeLimitations.cpp b/chromium/third_party/angle/src/compiler/translator/ValidateTypeSizeLimitations.cpp
+index f0ff9cb11ac..07e41d99354 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/ValidateTypeSizeLimitations.cpp
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/ValidateTypeSizeLimitations.cpp
+@@ -24,10 +24,11 @@ namespace
+ // Arbitrarily enforce that all types declared with a size in bytes of over 2 GB will cause
+ // compilation failure.
+ //
+-// For local and global variables, the limit is much lower (16MB) as that much memory won't fit in
++// For local and global variables, the limit is much lower (64KB) as that much memory won't fit in
+ // the GPU registers anyway.
+-constexpr size_t kMaxVariableSizeInBytes        = static_cast<size_t>(2) * 1024 * 1024 * 1024;
+-constexpr size_t kMaxPrivateVariableSizeInBytes = static_cast<size_t>(16) * 1024 * 1024;
++constexpr size_t kMaxVariableSizeInBytes             = static_cast<size_t>(2) * 1024 * 1024 * 1024;
++constexpr size_t kMaxPrivateVariableSizeInBytes      = static_cast<size_t>(64) * 1024;
++constexpr size_t kMaxTotalPrivateVariableSizeInBytes = static_cast<size_t>(16) * 1024 * 1024;
+ 
+ // Traverses intermediate tree to ensure that the shader does not
+ // exceed certain implementation-defined limits on the sizes of types.
+@@ -70,43 +71,111 @@ class ValidateTypeSizeLimitationsTraverser : public TIntermTraverser
+                 continue;
+             }
+ 
+-            const TType &variableType = asSymbol->getType();
+-
+-            // Create a ShaderVariable from which to compute
+-            // (conservative) sizing information.
+-            ShaderVariable shaderVar;
+-            setCommonVariableProperties(variableType, variable, &shaderVar);
+-
+-            // Compute the std140 layout of this variable, assuming
+-            // it's a member of a block (which it might not be).
+-            Std140BlockEncoder layoutEncoder;
+-            BlockEncoderVisitor visitor("", "", &layoutEncoder);
+-            // Since the size limit's arbitrary, it doesn't matter
+-            // whether the row-major layout is correctly determined.
+-            bool isRowMajorLayout = false;
+-            TraverseShaderVariable(shaderVar, isRowMajorLayout, &visitor);
+-            if (layoutEncoder.getCurrentOffset() > kMaxVariableSizeInBytes)
++            if (!validateVariableSize(variable, asSymbol->getLine()))
+             {
+-                error(asSymbol->getLine(),
+-                      "Size of declared variable exceeds implementation-defined limit",
+-                      asSymbol->getName());
+                 return false;
+             }
++        }
++
++        return true;
++    }
++
++    void visitFunctionPrototype(TIntermFunctionPrototype *node) override
++    {
++        const TFunction *function = node->getFunction();
++        const size_t paramCount   = function->getParamCount();
++
++        for (size_t paramIndex = 0; paramIndex < paramCount; ++paramIndex)
++        {
++            validateVariableSize(*function->getParam(paramIndex), node->getLine());
++        }
++    }
++
++    bool validateVariableSize(const TVariable &variable, const TSourceLoc &location)
++    {
++        const TType &variableType = variable.getType();
++
++        // Create a ShaderVariable from which to compute
++        // (conservative) sizing information.
++        ShaderVariable shaderVar;
++        setCommonVariableProperties(variableType, variable, &shaderVar);
++
++        // Compute the std140 layout of this variable, assuming
++        // it's a member of a block (which it might not be).
++        Std140BlockEncoder layoutEncoder;
++        BlockEncoderVisitor visitor("", "", &layoutEncoder);
++        // Since the size limit's arbitrary, it doesn't matter
++        // whether the row-major layout is correctly determined.
++        bool isRowMajorLayout = false;
++        TraverseShaderVariable(shaderVar, isRowMajorLayout, &visitor);
++        if (layoutEncoder.getCurrentOffset() > kMaxVariableSizeInBytes)
++        {
++            error(location, "Size of declared variable exceeds implementation-defined limit",
++                  variable.name());
++            return false;
++        }
++
++        // Skip over struct declarations.  As long as they are not used (or if they are used later
++        // in a less-restricted context (such as a UBO or SSBO)), they can be larger than
++        // kMaxPrivateVariableSizeInBytes.
++        if (variable.symbolType() == SymbolType::Empty && variableType.isStructSpecifier())
++        {
++            return true;
++        }
++
++        switch (variableType.getQualifier())
++        {
++            // List of all types that need to be limited (for example because they cause overflows
++            // in drivers, or create trouble for the SPIR-V gen as the number of an instruction's
++            // arguments cannot be more than 64KB (see OutputSPIRVTraverser::cast)).
++
++            // Local/global variables
++            case EvqTemporary:
++            case EvqGlobal:
++            case EvqConst:
++
++            // Function arguments
++            case EvqParamIn:
++            case EvqParamOut:
++            case EvqParamInOut:
++            case EvqParamConst:
++
++            // Varyings
++            case EvqVaryingIn:
++            case EvqVaryingOut:
++            case EvqSmoothOut:
++            case EvqFlatOut:
++            case EvqNoPerspectiveOut:
++            case EvqCentroidOut:
++            case EvqSampleOut:
++            case EvqSmoothIn:
++            case EvqFlatIn:
++            case EvqNoPerspectiveIn:
++            case EvqCentroidIn:
++            case EvqVertexOut:
++            case EvqFragmentIn:
++            case EvqGeometryIn:
++            case EvqGeometryOut:
++            case EvqPerVertexIn:
++            case EvqPerVertexOut:
++            case EvqPatchIn:
++            case EvqPatchOut:
++            case EvqTessControlIn:
++            case EvqTessControlOut:
++            case EvqTessEvaluationIn:
++            case EvqTessEvaluationOut:
+ 
+-            const bool isPrivate = variableType.getQualifier() == EvqTemporary ||
+-                                   variableType.getQualifier() == EvqGlobal ||
+-                                   variableType.getQualifier() == EvqConst;
+-            if (isPrivate)
+-            {
+                 if (layoutEncoder.getCurrentOffset() > kMaxPrivateVariableSizeInBytes)
+                 {
+-                    error(asSymbol->getLine(),
++                    error(location,
+                           "Size of declared private variable exceeds implementation-defined limit",
+-                          asSymbol->getName());
++                          variable.name());
+                     return false;
+                 }
+                 mTotalPrivateVariablesSize += layoutEncoder.getCurrentOffset();
+-            }
++                break;
++            default:
++                break;
+         }
+ 
+         return true;
+@@ -115,7 +184,7 @@ class ValidateTypeSizeLimitationsTraverser : public TIntermTraverser
+     void validateTotalPrivateVariableSize()
+     {
+         if (mTotalPrivateVariablesSize.ValueOrDefault(std::numeric_limits<size_t>::max()) >
+-            kMaxPrivateVariableSizeInBytes)
++            kMaxTotalPrivateVariableSizeInBytes)
+         {
+             mDiagnostics->error(
+                 TSourceLoc{},
+From 5bbe9cf3b48b80901df6b446520581809f88e945 Mon Sep 17 00:00:00 2001
+From: Shahbaz Youssefi <syoussefi@chromium.org>
+Date: Tue, 5 Dec 2023 13:36:53 -0500
+Subject: [PATCH] [Backport] CVE-2024-0222: Use after free in ANGLE
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/angle/angle/+/5143829:
+M120: Vulkan: Don't crash when glCopyTexImage2D redefines itself
+
+The Vulkan backend marks a level being redefined as such before doing
+the copy.  If a single-level texture was being redefined, it releases it
+so it can be immediately reallocated.  If the source of the copy is the
+same texture, this causes a crash.
+
+This can be properly supported by using a temp image to do the copy, but
+that is not implemented in this change.
+
+Bug: chromium:1501798
+Change-Id: I3a902b1e9eec41afd385d9c75a8c95dc986070a8
+Reviewed-on: https://chromium-review.googlesource.com/c/angle/angle/+/5143829
+Reviewed-by: Cody Northrop <cnorthrop@google.com>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530092
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../libANGLE/renderer/vulkan/TextureVk.cpp    | 23 ++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp b/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp
+index 903def6e88e..fcd3bfa02f3 100644
+--- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp
++++ src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp
+@@ -698,8 +698,28 @@ angle::Result TextureVk::copyImage(const gl::Context *context,
+         gl::GetInternalFormatInfo(internalFormat, GL_UNSIGNED_BYTE);
+     const vk::Format &vkFormat = renderer->getFormat(internalFormatInfo.sizedInternalFormat);
+ 
++    // The texture level being redefined might be the same as the one bound to the framebuffer.
++    // This _could_ be supported by using a temp image before redefining the level (and potentially
++    // discarding the image).  However, this is currently unimplemented.
++    FramebufferVk *framebufferVk = vk::GetImpl(source);
++    RenderTargetVk *colorReadRT  = framebufferVk->getColorReadRenderTarget();
++    vk::ImageHelper *srcImage    = &colorReadRT->getImageForCopy();
++    const bool isCubeMap         = index.getType() == gl::TextureType::CubeMap;
++    gl::LevelIndex levelIndex(getNativeImageIndex(index).getLevelIndex());
++    const uint32_t layerIndex    = index.hasLayer() ? index.getLayerIndex() : 0;
++    const uint32_t redefinedFace = isCubeMap ? layerIndex : 0;
++    const uint32_t sourceFace    = isCubeMap ? colorReadRT->getLayerIndex() : 0;
++    const bool isSelfCopy = mImage == srcImage && levelIndex == colorReadRT->getLevelIndex() &&
++                            redefinedFace == sourceFace;
++
+     ANGLE_TRY(redefineLevel(context, index, vkFormat, newImageSize));
+ 
++    if (isSelfCopy)
++    {
++        UNIMPLEMENTED();
++        return angle::Result::Continue;
++    }
++
+     return copySubImageImpl(context, index, gl::Offset(0, 0, 0), sourceArea, internalFormatInfo,
+                             source);
+ }
+@@ -1784,7 +1804,8 @@ angle::Result TextureVk::redefineLevel(const gl::Context *context,
+                 mImage->getLevelCount() == 1 && mImage->getFirstAllocatedLevel() == levelIndexGL;
+ 
+             // If incompatible, and redefining the single-level image, release it so it can be
+-            // recreated immediately.  This is an optimization to avoid an extra copy.
++            // recreated immediately.  This is needed so that the texture can be reallocated with
++            // the correct format/size.
+             if (!isCompatibleRedefinition && isUpdateToSingleLevelImage)
+             {
+                 releaseImage(contextVk);
+From 4ce1bbed853cba46f9ab6d1546e10253cc42f619 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20Br=C3=BCning?= <michael.bruning@qt.io>
+Date: Sun, 14 Jan 2024 23:48:08 +0100
+Subject: [PATCH] Fixup: [Backport] Security bug 1488199
+
+Add register aliases following respective platform calling
+conventions.
+
+Change-Id: I8f844cd4db35393580f2a0adae6a4095584087a5
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530630
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ chromium/v8/src/codegen/arm/register-arm.h         | 6 ++++++
+ chromium/v8/src/codegen/arm64/register-arm64.h     | 6 ++++++
+ chromium/v8/src/codegen/loong64/register-loong64.h | 6 ++++++
+ chromium/v8/src/codegen/mips64/register-mips64.h   | 6 ++++++
+ chromium/v8/src/codegen/ppc/register-ppc.h         | 6 ++++++
+ chromium/v8/src/codegen/riscv/register-riscv.h     | 5 +++++
+ chromium/v8/src/codegen/s390/register-s390.h       | 6 ++++++
+ 7 files changed, 41 insertions(+)
+
+diff --git a/chromium/v8/src/codegen/arm/register-arm.h b/chromium/v8/src/codegen/arm/register-arm.h
+index 4edcddaa6f5a..40d07e4984e8 100644
+--- src/3rdparty/chromium/v8/src/codegen/arm/register-arm.h
++++ src/3rdparty/chromium/v8/src/codegen/arm/register-arm.h
+@@ -84,6 +84,12 @@ GENERAL_REGISTERS(DECLARE_REGISTER)
+ #undef DECLARE_REGISTER
+ constexpr Register no_reg = Register::no_reg();
+ 
++// ARM calling convention
++constexpr Register arg_reg_1 = r0;
++constexpr Register arg_reg_2 = r1;
++constexpr Register arg_reg_3 = r2;
++constexpr Register arg_reg_4 = r3;
++
+ // Returns the number of padding slots needed for stack pointer alignment.
+ constexpr int ArgumentPaddingSlots(int argument_count) {
+   // No argument padding required.
+diff --git a/chromium/v8/src/codegen/arm64/register-arm64.h b/chromium/v8/src/codegen/arm64/register-arm64.h
+index 24878e9d2567..a90412ae2061 100644
+--- src/3rdparty/chromium/v8/src/codegen/arm64/register-arm64.h
++++ src/3rdparty/chromium/v8/src/codegen/arm64/register-arm64.h
+@@ -525,6 +525,12 @@ ALIAS_REGISTER(VRegister, fp_scratch2, d31);
+ 
+ #undef ALIAS_REGISTER
+ 
++// Arm64 calling convention
++constexpr Register arg_reg_1 = x0;
++constexpr Register arg_reg_2 = x1;
++constexpr Register arg_reg_3 = x2;
++constexpr Register arg_reg_4 = x3;
++
+ // AreAliased returns true if any of the named registers overlap. Arguments set
+ // to NoReg are ignored. The system stack pointer may be specified.
+ V8_EXPORT_PRIVATE bool AreAliased(
+diff --git a/chromium/v8/src/codegen/loong64/register-loong64.h b/chromium/v8/src/codegen/loong64/register-loong64.h
+index 07c975223b26..724103587cf5 100644
+--- src/3rdparty/chromium/v8/src/codegen/loong64/register-loong64.h
++++ src/3rdparty/chromium/v8/src/codegen/loong64/register-loong64.h
+@@ -186,6 +186,12 @@ DEFINE_REGISTER_NAMES(Register, GENERAL_REGISTERS)
+ DEFINE_REGISTER_NAMES(FPURegister, DOUBLE_REGISTERS)
+ 
+ // Give alias names to registers for calling conventions.
++
++constexpr Register arg_reg_1 = a0;
++constexpr Register arg_reg_2 = a1;
++constexpr Register arg_reg_3 = a2;
++constexpr Register arg_reg_4 = a3;
++
+ constexpr Register kReturnRegister0 = a0;
+ constexpr Register kReturnRegister1 = a1;
+ constexpr Register kReturnRegister2 = a2;
+diff --git a/chromium/v8/src/codegen/mips64/register-mips64.h b/chromium/v8/src/codegen/mips64/register-mips64.h
+index 00feb1c01c14..f3d5bd5c7985 100644
+--- src/3rdparty/chromium/v8/src/codegen/mips64/register-mips64.h
++++ src/3rdparty/chromium/v8/src/codegen/mips64/register-mips64.h
+@@ -278,6 +278,12 @@ DEFINE_REGISTER_NAMES(FPURegister, DOUBLE_REGISTERS)
+ DEFINE_REGISTER_NAMES(MSARegister, SIMD128_REGISTERS)
+ 
+ // Give alias names to registers for calling conventions.
++
++constexpr Register arg_reg_1 = a0;
++constexpr Register arg_reg_2 = a1;
++constexpr Register arg_reg_3 = a2;
++constexpr Register arg_reg_4 = a3;
++
+ constexpr Register kReturnRegister0 = v0;
+ constexpr Register kReturnRegister1 = v1;
+ constexpr Register kReturnRegister2 = a0;
+diff --git a/chromium/v8/src/codegen/ppc/register-ppc.h b/chromium/v8/src/codegen/ppc/register-ppc.h
+index bdcb12b9d2d8..a2085e0e593b 100644
+--- src/3rdparty/chromium/v8/src/codegen/ppc/register-ppc.h
++++ src/3rdparty/chromium/v8/src/codegen/ppc/register-ppc.h
+@@ -152,6 +152,12 @@ constexpr Register kPtrComprCageBaseRegister = r27;  // callee save
+ constexpr Register kPtrComprCageBaseRegister = kRootRegister;
+ #endif
+ 
++// PPC64 calling convention
++constexpr Register arg_reg_1 = r3;
++constexpr Register arg_reg_2 = r4;
++constexpr Register arg_reg_3 = r5;
++constexpr Register arg_reg_4 = r6;
++
+ // Returns the number of padding slots needed for stack pointer alignment.
+ constexpr int ArgumentPaddingSlots(int argument_count) {
+   // No argument padding required.
+diff --git a/chromium/v8/src/codegen/riscv/register-riscv.h b/chromium/v8/src/codegen/riscv/register-riscv.h
+index c530c54b4ea1..d45fa80b5c91 100644
+--- src/3rdparty/chromium/v8/src/codegen/riscv/register-riscv.h
++++ src/3rdparty/chromium/v8/src/codegen/riscv/register-riscv.h
+@@ -271,6 +271,11 @@ DEFINE_REGISTER_NAMES(FPURegister, DOUBLE_REGISTERS)
+ DEFINE_REGISTER_NAMES(VRegister, VECTOR_REGISTERS)
+ 
+ // Give alias names to registers for calling conventions.
++constexpr Register arg_reg_1 = a0;
++constexpr Register arg_reg_2 = a1;
++constexpr Register arg_reg_3 = a2;
++constexpr Register arg_reg_4 = a3;
++
+ constexpr Register kReturnRegister0 = a0;
+ constexpr Register kReturnRegister1 = a1;
+ constexpr Register kReturnRegister2 = a2;
+diff --git a/chromium/v8/src/codegen/s390/register-s390.h b/chromium/v8/src/codegen/s390/register-s390.h
+index b3e5a49f2db5..6320135a2400 100644
+--- src/3rdparty/chromium/v8/src/codegen/s390/register-s390.h
++++ src/3rdparty/chromium/v8/src/codegen/s390/register-s390.h
+@@ -116,6 +116,12 @@ constexpr Register no_reg = Register::no_reg();
+ constexpr Register kRootRegister = r10;  // Roots array pointer.
+ constexpr Register cp = r13;             // JavaScript context pointer.
+ 
++// s390x calling convention
++constexpr Register arg_reg_1 = r2;
++constexpr Register arg_reg_2 = r3;
++constexpr Register arg_reg_3 = r4;
++constexpr Register arg_reg_4 = r5;
++
+ // Returns the number of padding slots needed for stack pointer alignment.
+ constexpr int ArgumentPaddingSlots(int argument_count) {
+   // No argument padding required.
+From d3328103b5e8336449108b8ba13549ced9caf404 Mon Sep 17 00:00:00 2001
+From: Evan Stade <estade@chromium.org>
+Date: Fri, 15 Dec 2023 21:38:02 +0000
+Subject: [PATCH] [Backport] Security bug 1511689
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/deps/sqlite/+/5123910:
+Fix a spurious "misuse of aggregate function" error that could occur when an aggregate function was used within the FROM clause of a sub-select of the select that owns the aggregate. e.g. "SELECT (SELECT x FROM (SELECT sum(t1.a) AS x)) FROM t1". [forum:/forumpost/c9970a37ed | Forum post c9970a37ed].
+
+FossilOrigin-Name: 4470f657d2069972d02a00983252dec1f814d90c0d8d0906e320e955111e8c11
+(cherry picked from commit 5e4233a9e48b124d4d342b757b34e4ae849f5cf8)
+
+Bug: 1511689
+Change-Id: I69263fc0a5fa66df5c09b964864568f2fc7a6ca5
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/deps/sqlite/+/5123910
+Auto-Submit: Evan Stade <estade@chromium.org>
+Commit-Queue: Ayu Ishii <ayui@chromium.org>
+Reviewed-by: Ayu Ishii <ayui@chromium.org>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530068
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ chromium/third_party/sqlite/src/amalgamation/sqlite3.c     | 6 +++++-
+ chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c | 6 +++++-
+ chromium/third_party/sqlite/src/src/resolve.c              | 7 +++++--
+ chromium/third_party/sqlite/src/src/sqliteInt.h            | 1 +
+ 4 files changed, 16 insertions(+), 4 deletions(-)
+
+diff --git a/chromium/third_party/sqlite/src/amalgamation/sqlite3.c b/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
+index d7766b7d7ec..b353aa88348 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
++++ src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
+@@ -18804,6 +18804,7 @@ struct NameContext {
+   int nRef;            /* Number of names resolved by this context */
+   int nNcErr;          /* Number of errors encountered while resolving names */
+   int ncFlags;         /* Zero or more NC_* flags defined below */
++  int nNestedSelect;   /* Number of nested selects using this NC */
+   Select *pWinSelect;  /* SELECT statement for any window functions */
+ };
+ 
+@@ -104749,11 +104750,12 @@ static int resolveExprStep(Walker *pWalker, Expr *pExpr){
+           while( pNC2
+               && sqlite3ReferencesSrcList(pParse, pExpr, pNC2->pSrcList)==0
+           ){
+-            pExpr->op2++;
++            pExpr->op2 += (1 + pNC2->nNestedSelect);
+             pNC2 = pNC2->pNext;
+           }
+           assert( pDef!=0 || IN_RENAME_OBJECT );
+           if( pNC2 && pDef ){
++            pExpr->op2 += pNC2->nNestedSelect;
+             assert( SQLITE_FUNC_MINMAX==NC_MinMaxAgg );
+             assert( SQLITE_FUNC_ANYORDER==NC_OrderAgg );
+             testcase( (pDef->funcFlags & SQLITE_FUNC_MINMAX)!=0 );
+@@ -105314,6 +105316,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+ 
+     /* Recursively resolve names in all subqueries in the FROM clause
+     */
++    if( pOuterNC ) pOuterNC->nNestedSelect++;
+     for(i=0; i<p->pSrc->nSrc; i++){
+       SrcItem *pItem = &p->pSrc->a[i];
+       if( pItem->pSelect && (pItem->pSelect->selFlags & SF_Resolved)==0 ){
+@@ -105338,6 +105341,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+         }
+       }
+     }
++    if( pOuterNC ) pOuterNC->nNestedSelect--;
+ 
+     /* Set up the local name-context to pass to sqlite3ResolveExprNames() to
+     ** resolve the result-set expression list.
+diff --git a/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c b/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c
+index 0819ea6a615..5c72a44dd6b 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c
++++ src/3rdparty/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c
+@@ -18817,6 +18817,7 @@ struct NameContext {
+   int nRef;            /* Number of names resolved by this context */
+   int nNcErr;          /* Number of errors encountered while resolving names */
+   int ncFlags;         /* Zero or more NC_* flags defined below */
++  int nNestedSelect;   /* Number of nested selects using this NC */
+   Select *pWinSelect;  /* SELECT statement for any window functions */
+ };
+ 
+@@ -104762,11 +104763,12 @@ static int resolveExprStep(Walker *pWalker, Expr *pExpr){
+           while( pNC2
+               && sqlite3ReferencesSrcList(pParse, pExpr, pNC2->pSrcList)==0
+           ){
+-            pExpr->op2++;
++            pExpr->op2 += (1 + pNC2->nNestedSelect);
+             pNC2 = pNC2->pNext;
+           }
+           assert( pDef!=0 || IN_RENAME_OBJECT );
+           if( pNC2 && pDef ){
++            pExpr->op2 += pNC2->nNestedSelect;
+             assert( SQLITE_FUNC_MINMAX==NC_MinMaxAgg );
+             assert( SQLITE_FUNC_ANYORDER==NC_OrderAgg );
+             testcase( (pDef->funcFlags & SQLITE_FUNC_MINMAX)!=0 );
+@@ -105327,6 +105329,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+ 
+     /* Recursively resolve names in all subqueries in the FROM clause
+     */
++    if( pOuterNC ) pOuterNC->nNestedSelect++;
+     for(i=0; i<p->pSrc->nSrc; i++){
+       SrcItem *pItem = &p->pSrc->a[i];
+       if( pItem->pSelect && (pItem->pSelect->selFlags & SF_Resolved)==0 ){
+@@ -105351,6 +105354,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+         }
+       }
+     }
++    if( pOuterNC ) pOuterNC->nNestedSelect--;
+ 
+     /* Set up the local name-context to pass to sqlite3ResolveExprNames() to
+     ** resolve the result-set expression list.
+diff --git a/chromium/third_party/sqlite/src/src/resolve.c b/chromium/third_party/sqlite/src/src/resolve.c
+index 4b36ecca348..c5228a7f097 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/src/resolve.c
++++ src/3rdparty/chromium/third_party/sqlite/src/src/resolve.c
+@@ -1211,11 +1211,12 @@ static int resolveExprStep(Walker *pWalker, Expr *pExpr){
+           while( pNC2 
+               && sqlite3ReferencesSrcList(pParse, pExpr, pNC2->pSrcList)==0
+           ){
+-            pExpr->op2++;
++            pExpr->op2 += (1 + pNC2->nNestedSelect);
+             pNC2 = pNC2->pNext;
+           }
+           assert( pDef!=0 || IN_RENAME_OBJECT );
+           if( pNC2 && pDef ){
++            pExpr->op2 += pNC2->nNestedSelect;
+             assert( SQLITE_FUNC_MINMAX==NC_MinMaxAgg );
+             assert( SQLITE_FUNC_ANYORDER==NC_OrderAgg );
+             testcase( (pDef->funcFlags & SQLITE_FUNC_MINMAX)!=0 );
+@@ -1776,6 +1777,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+   
+     /* Recursively resolve names in all subqueries in the FROM clause
+     */
++    if( pOuterNC ) pOuterNC->nNestedSelect++;
+     for(i=0; i<p->pSrc->nSrc; i++){
+       SrcItem *pItem = &p->pSrc->a[i];
+       if( pItem->pSelect && (pItem->pSelect->selFlags & SF_Resolved)==0 ){
+@@ -1800,7 +1802,8 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+         }
+       }
+     }
+-  
++    if( pOuterNC ) pOuterNC->nNestedSelect--;
++
+     /* Set up the local name-context to pass to sqlite3ResolveExprNames() to
+     ** resolve the result-set expression list.
+     */
+diff --git a/chromium/third_party/sqlite/src/src/sqliteInt.h b/chromium/third_party/sqlite/src/src/sqliteInt.h
+index 2614f4be458..07bc4def106 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/src/sqliteInt.h
++++ src/3rdparty/chromium/third_party/sqlite/src/src/sqliteInt.h
+@@ -3321,6 +3321,7 @@ struct NameContext {
+   int nRef;            /* Number of names resolved by this context */
+   int nNcErr;          /* Number of errors encountered while resolving names */
+   int ncFlags;         /* Zero or more NC_* flags defined below */
++  int nNestedSelect;   /* Number of nested selects using this NC */
+   Select *pWinSelect;  /* SELECT statement for any window functions */
+ };
+ 
+From 54da597d9f7e7b9f331a15077eba6485b68280ab Mon Sep 17 00:00:00 2001
+From: Toon Verwaest <verwaest@chromium.org>
+Date: Thu, 11 Jan 2024 10:47:17 +0100
+Subject: [PATCH] [Backport] CVE-2024-0519: Out of bounds memory access in V8
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/5192447:
+Merged: [runtime] Drop fast last-property deletion
+
+This interacts badly with other optimizations and isn't particularly
+common.
+
+Bug: chromium:1517354
+(cherry picked from commit 389ea9be7d68bb189e16da79f6414edbd4f7594f)
+
+Change-Id: Ie16aa38e8984c4879491c0d9a0ca9df0e041fd1d
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5192447
+Auto-Submit: Toon Verwaest <verwaest@chromium.org>
+Reviewed-by: Leszek Swirski <leszeks@chromium.org>
+Cr-Commit-Position: refs/branch-heads/12.0@{#32}
+Cr-Branched-From: ed7b4caf1fb8184ad9e24346c84424055d4d430a-refs/heads/12.0.267@{#1}
+Cr-Branched-From: 210e75b19db4352c9b78dce0bae11c2dc3077df4-refs/heads/main@{#90651}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/531577
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/v8/src/runtime/runtime-object.cc | 174 ----------------------
+ 1 file changed, 174 deletions(-)
+
+diff --git a/chromium/v8/src/runtime/runtime-object.cc b/chromium/v8/src/runtime/runtime-object.cc
+index 2d4965549b2..ee8a9fbd147 100644
+--- src/3rdparty/chromium/v8/src/runtime/runtime-object.cc
++++ src/3rdparty/chromium/v8/src/runtime/runtime-object.cc
+@@ -81,184 +81,10 @@ MaybeHandle<Object> Runtime::HasProperty(Isolate* isolate,
+                           : ReadOnlyRoots(isolate).false_value_handle();
+ }
+ 
+-namespace {
+-
+-// This function sets the sentinel value in a deleted field. Thes sentinel has
+-// to look like a proper standalone object because the slack tracking may
+-// complete at any time. For this reason we use the filler map word.
+-// If V8_MAP_PACKING is enabled, then the filler map word is a packed filler
+-// map. Otherwise, the filler map word is the same as the filler map.
+-inline void ClearField(Isolate* isolate, JSObject object, FieldIndex index) {
+-  if (index.is_inobject()) {
+-    MapWord filler_map_word =
+-        ReadOnlyRoots(isolate).one_pointer_filler_map_word();
+-#ifndef V8_MAP_PACKING
+-    DCHECK_EQ(filler_map_word.ToMap(),
+-              ReadOnlyRoots(isolate).one_pointer_filler_map());
+-#endif
+-    int offset = index.offset();
+-    TaggedField<MapWord>::Release_Store(object, offset, filler_map_word);
+-  } else {
+-    object.property_array().set(
+-        index.outobject_array_index(),
+-        ReadOnlyRoots(isolate).one_pointer_filler_map());
+-  }
+-}
+-
+-void GeneralizeAllTransitionsToFieldAsMutable(Isolate* isolate, Handle<Map> map,
+-                                              Handle<Name> name) {
+-  InternalIndex descriptor(map->NumberOfOwnDescriptors());
+-
+-  Handle<Map> target_maps[kPropertyAttributesCombinationsCount];
+-  int target_maps_count = 0;
+-
+-  // Collect all outgoing field transitions.
+-  {
+-    DisallowGarbageCollection no_gc;
+-    TransitionsAccessor transitions(isolate, *map);
+-    transitions.ForEachTransitionTo(
+-        *name,
+-        [&](Map target) {
+-          DCHECK_EQ(descriptor, target.LastAdded());
+-          DCHECK_EQ(*name, target.GetLastDescriptorName(isolate));
+-          PropertyDetails details = target.GetLastDescriptorDetails(isolate);
+-          // Currently, we track constness only for fields.
+-          if (details.kind() == PropertyKind::kData &&
+-              details.constness() == PropertyConstness::kConst) {
+-            target_maps[target_maps_count++] = handle(target, isolate);
+-          }
+-          DCHECK_IMPLIES(details.kind() == PropertyKind::kAccessor,
+-                         details.constness() == PropertyConstness::kConst);
+-        },
+-        &no_gc);
+-    CHECK_LE(target_maps_count, kPropertyAttributesCombinationsCount);
+-  }
+-
+-  for (int i = 0; i < target_maps_count; i++) {
+-    Handle<Map> target = target_maps[i];
+-    PropertyDetails details =
+-        target->instance_descriptors(isolate).GetDetails(descriptor);
+-    Handle<FieldType> field_type(
+-        target->instance_descriptors(isolate).GetFieldType(descriptor),
+-        isolate);
+-    MapUpdater::GeneralizeField(isolate, target, descriptor,
+-                                PropertyConstness::kMutable,
+-                                details.representation(), field_type);
+-    DCHECK_EQ(PropertyConstness::kMutable, target->instance_descriptors(isolate)
+-                                               .GetDetails(descriptor)
+-                                               .constness());
+-  }
+-}
+-
+-bool DeleteObjectPropertyFast(Isolate* isolate, Handle<JSReceiver> receiver,
+-                              Handle<Object> raw_key) {
+-  // This implements a special case for fast property deletion: when the
+-  // last property in an object is deleted, then instead of normalizing
+-  // the properties, we can undo the last map transition, with a few
+-  // prerequisites:
+-  // (1) The receiver must be a regular object and the key a unique name.
+-  Handle<Map> receiver_map(receiver->map(), isolate);
+-  if (receiver_map->IsSpecialReceiverMap()) return false;
+-  DCHECK(receiver_map->IsJSObjectMap());
+-
+-  if (!raw_key->IsUniqueName()) return false;
+-  Handle<Name> key = Handle<Name>::cast(raw_key);
+-  // (2) The property to be deleted must be the last property.
+-  int nof = receiver_map->NumberOfOwnDescriptors();
+-  if (nof == 0) return false;
+-  InternalIndex descriptor(nof - 1);
+-  Handle<DescriptorArray> descriptors(
+-      receiver_map->instance_descriptors(isolate), isolate);
+-  if (descriptors->GetKey(descriptor) != *key) return false;
+-  // (3) The property to be deleted must be deletable.
+-  PropertyDetails details = descriptors->GetDetails(descriptor);
+-  if (!details.IsConfigurable()) return false;
+-  // (4) The map must have a back pointer.
+-  Handle<Object> backpointer(receiver_map->GetBackPointer(), isolate);
+-  if (!backpointer->IsMap()) return false;
+-  Handle<Map> parent_map = Handle<Map>::cast(backpointer);
+-  // (5) The last transition must have been caused by adding a property
+-  // (and not any kind of special transition).
+-  if (parent_map->NumberOfOwnDescriptors() != nof - 1) return false;
+-
+-  // Preconditions successful. No more bailouts after this point.
+-
+-  // Zap the property to avoid keeping objects alive. Zapping is not necessary
+-  // for properties stored in the descriptor array.
+-  if (details.location() == PropertyLocation::kField) {
+-    DisallowGarbageCollection no_gc;
+-
+-    // Invalidate slots manually later in case we delete an in-object tagged
+-    // property. In this case we might later store an untagged value in the
+-    // recorded slot.
+-    isolate->heap()->NotifyObjectLayoutChange(*receiver, no_gc,
+-                                              InvalidateRecordedSlots::kNo);
+-    FieldIndex index =
+-        FieldIndex::ForPropertyIndex(*receiver_map, details.field_index());
+-    // Special case deleting the last out-of object property.
+-    if (!index.is_inobject() && index.outobject_array_index() == 0) {
+-      DCHECK(!parent_map->HasOutOfObjectProperties());
+-      // Clear out the properties backing store.
+-      receiver->SetProperties(ReadOnlyRoots(isolate).empty_fixed_array());
+-    } else {
+-      ClearField(isolate, JSObject::cast(*receiver), index);
+-      if (index.is_inobject()) {
+-        // We need to clear the recorded slot in this case because in-object
+-        // slack tracking might not be finished. This ensures that we don't
+-        // have recorded slots in free space.
+-        isolate->heap()->ClearRecordedSlot(*receiver,
+-                                           receiver->RawField(index.offset()));
+-      }
+-    }
+-  }
+-  // If the {receiver_map} was marked stable before, then there could be
+-  // optimized code that depends on the assumption that no object that
+-  // reached this {receiver_map} transitions away from it without triggering
+-  // the "deoptimize dependent code" mechanism.
+-  receiver_map->NotifyLeafMapLayoutChange(isolate);
+-  // Finally, perform the map rollback.
+-  receiver->set_map(*parent_map, kReleaseStore);
+-#if VERIFY_HEAP
+-  if (v8_flags.verify_heap) {
+-    receiver->HeapObjectVerify(isolate);
+-    receiver->property_array().PropertyArrayVerify(isolate);
+-  }
+-#endif
+-
+-  // If the {descriptor} was "const" so far, we need to update the
+-  // {receiver_map} here, otherwise we could get the constants wrong, i.e.
+-  //
+-  //   o.x = 1;
+-  //   [change o.x's attributes or reconfigure property kind]
+-  //   delete o.x;
+-  //   o.x = 2;
+-  //
+-  // could trick V8 into thinking that `o.x` is still 1 even after the second
+-  // assignment.
+-
+-  // Step 1: Migrate object to an up-to-date shape.
+-  if (parent_map->is_deprecated()) {
+-    JSObject::MigrateInstance(isolate, Handle<JSObject>::cast(receiver));
+-    parent_map = handle(receiver->map(), isolate);
+-  }
+-
+-  // Step 2: Mark outgoing transitions from the up-to-date version of the
+-  // parent_map to same property name of any kind or attributes as mutable.
+-  // Also migrate object to the up-to-date map to make the object shapes
+-  // converge sooner.
+-  GeneralizeAllTransitionsToFieldAsMutable(isolate, parent_map, key);
+-
+-  return true;
+-}
+-
+-}  // namespace
+-
+ Maybe<bool> Runtime::DeleteObjectProperty(Isolate* isolate,
+                                           Handle<JSReceiver> receiver,
+                                           Handle<Object> key,
+                                           LanguageMode language_mode) {
+-  if (DeleteObjectPropertyFast(isolate, receiver, key)) return Just(true);
+-
+   bool success = false;
+   PropertyKey lookup_key(isolate, key, &success);
+   if (!success) return Nothing<bool>();
+From be7a2c69bf21ed5c1185840cc651608dfad95b75 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Dominik=20Inf=C3=BChr?= <dinfuehr@chromium.org>
+Date: Mon, 18 Dec 2023 09:15:00 +0100
+Subject: [PATCH] [Backport] CVE-2024-0518: Type Confusion in V8
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/5125960:
+[codegen] Install BytecodeArray last in SharedFunctionInfo
+
+Maglev assumes that when a SharedFunctionInfo has a BytecodeArray,
+then it should also have FeedbackMetadata. However, this may not
+hold with concurrent compilation when the SharedFunctionInfo is
+re-compiled after being flushed. Here the BytecodeArray was installed
+on the SFI before the FeedbackMetadata and a concurrent thread could
+observe the BytecodeArray but not the FeedbackMetadata.
+
+Drive-by: Reset the age field before setting the BytecodeArray as
+well. This ensures that the concurrent marker will not observe the
+old age for the new BytecodeArray.
+
+Bug: chromium:1507412
+Change-Id: I8855ed7ecc50c4a47d2c89043d62ac053858bc75
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5125960
+Reviewed-by: Leszek Swirski <leszeks@chromium.org>
+Commit-Queue: Dominik Inführ <dinfuehr@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#91568}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/531578
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/v8/src/codegen/compiler.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/v8/src/codegen/compiler.cc b/chromium/v8/src/codegen/compiler.cc
+index 5d3ee6e6a0c..47b58f1874f 100644
+--- src/3rdparty/chromium/v8/src/codegen/compiler.cc
++++ src/3rdparty/chromium/v8/src/codegen/compiler.cc
+@@ -686,11 +686,11 @@ void InstallUnoptimizedCode(UnoptimizedCompilationInfo* compilation_info,
+     }
+ #endif  // V8_ENABLE_WEBASSEMBLY
+ 
+-    shared_info->set_bytecode_array(*compilation_info->bytecode_array());
+-
+     Handle<FeedbackMetadata> feedback_metadata = FeedbackMetadata::New(
+         isolate, compilation_info->feedback_vector_spec());
+     shared_info->set_feedback_metadata(*feedback_metadata, kReleaseStore);
++
++    shared_info->set_bytecode_array(*compilation_info->bytecode_array());
+   } else {
+ #if V8_ENABLE_WEBASSEMBLY
+     DCHECK(compilation_info->has_asm_wasm_data());
+From 7b40abebdec3e2931c88010fedc96c49fbba1731 Mon Sep 17 00:00:00 2001
+From: Mike Wasserman <msw@chromium.org>
+Date: Tue, 9 Jan 2024 01:07:39 +0000
+Subject: [PATCH] [Backport] Security bug 1506535
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5146875:
+[M120 merge] Speculative fix for UAF in content::WebContentsImpl::ExitFullscreenMode
+
+(cherry picked from commit c1cda70a433a0c625b280eb88ed6ff4f4feffa12)
+
+Bug: 1506535, 854815
+Change-Id: Iace64d63f8cea2dbfbc761ad233db42451ec101c
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5146875
+Commit-Queue: John Abd-El-Malek <jam@chromium.org>
+Auto-Submit: Mike Wasserman <msw@chromium.org>
+Reviewed-by: John Abd-El-Malek <jam@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1240353}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5178801
+Cr-Commit-Position: refs/branch-heads/6099@{#1727}
+Cr-Branched-From: e6ee4500f7d6549a9ac1354f8d056da49ef406be-refs/heads/main@{#1217362}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/531579
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/content/browser/web_contents/web_contents_impl.cc | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/chromium/content/browser/web_contents/web_contents_impl.cc b/chromium/content/browser/web_contents/web_contents_impl.cc
+index 59bbb727e6b..8b3f7055430 100644
+--- src/3rdparty/chromium/content/browser/web_contents/web_contents_impl.cc
++++ src/3rdparty/chromium/content/browser/web_contents/web_contents_impl.cc
+@@ -3600,7 +3600,12 @@ void WebContentsImpl::ExitFullscreenMode(bool will_cause_resize) {
+     static_cast<RenderWidgetHostViewBase*>(view)->ExitFullscreenMode();
+ 
+   if (delegate_) {
++    // This may spin the message loop and destroy this object crbug.com/1506535
++    base::WeakPtr<WebContentsImpl> weak_ptr = weak_factory_.GetWeakPtr();
+     delegate_->ExitFullscreenModeForTab(this);
++    if (!weak_ptr) {
++      return;
++    }
+ 
+     if (keyboard_lock_widget_)
+       delegate_->CancelKeyboardLockRequest(this);
