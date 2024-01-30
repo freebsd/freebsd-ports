@@ -1,5 +1,6 @@
 PORTNAME=	libprelude
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-siem.org/attachments/download/1395/
 
@@ -18,6 +19,7 @@ USES=		libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-lua \
 		--without-python3 \
 		--without-swig \
