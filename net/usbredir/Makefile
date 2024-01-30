@@ -1,5 +1,6 @@
 PORTNAME=	usbredir
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://spice-space.org/download/usbredir/
 
@@ -14,6 +15,7 @@ USES=		gmake libtool pathfix pkgconfig tar:bzip2
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 post-patch:
