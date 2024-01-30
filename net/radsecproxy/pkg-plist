@@ -1,7 +1,7 @@
 bin/radsecproxy-conf
 bin/radsecproxy-hash
 etc/radsecproxy.conf-example
-man/man8/radsecproxy-hash.8.gz
-man/man8/radsecproxy.8.gz
-man/man5/radsecproxy.conf.5.gz
+share/man/man8/radsecproxy-hash.8.gz
+share/man/man8/radsecproxy.8.gz
+share/man/man5/radsecproxy.conf.5.gz
 sbin/radsecproxy
