@@ -1,7 +1,7 @@
 PORTNAME=	acpica
-PORTVERSION=	20230331
+PORTVERSION=	20230628
 CATEGORIES=	sysutils devel
-MASTER_SITES=	https://downloadmirror.intel.com/776304/ \
+MASTER_SITES=	https://downloadmirror.intel.com/783534/ \
 		LOCAL/jkim
 PKGNAMESUFFIX=	-tools
 DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
