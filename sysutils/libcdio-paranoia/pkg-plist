@@ -12,5 +12,5 @@ lib/libcdio_paranoia.so.2
 lib/libcdio_paranoia.so.2.0.0
 libdata/pkgconfig/libcdio_cdda.pc
 libdata/pkgconfig/libcdio_paranoia.pc
-man/ja/man1/cd-paranoia.1.gz
-man/man1/cd-paranoia.1.gz
+share/man/ja/man1/cd-paranoia.1.gz
+share/man/man1/cd-paranoia.1.gz
