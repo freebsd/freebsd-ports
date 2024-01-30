@@ -264,8 +264,8 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_Native_Plugin.so
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_RawTherapee_Plugin.so
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_UFRaw_Plugin.so
-man/man1/cleanup_digikamdb.1.gz
-man/man1/digitaglinktree.1.gz
+share/man/man1/cleanup_digikamdb.1.gz
+share/man/man1/digitaglinktree.1.gz
 share/applications/org.kde.digikam.desktop
 share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/about/css/bootstrap-theme.min.css

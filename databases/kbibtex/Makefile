@@ -1,6 +1,6 @@
 PORTNAME=	kbibtex
 DISTVERSION=	0.10.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}
 
@@ -27,6 +27,8 @@ USE_QT=		concurrent core dbus gui location network networkauth \
 		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS+=	-DKDE_INSTALL_MANDIR:PATH=${PREFIX}/share/man
 
 OPTIONS_DEFINE=			WEBENGINE
 OPTIONS_DEFAULT_aarch64=	WEBENGINE

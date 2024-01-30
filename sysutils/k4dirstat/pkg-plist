@@ -1,5 +1,4 @@
 bin/k4dirstat
-man/man1/k4dirstat.1.gz
 share/applications/k4dirstat.desktop
 share/config.kcfg/k4dirstat.kcfg
 %%PORTDOCS%%%%DOCSDIR%%/feedback-mail.png
@@ -22,3 +21,4 @@ share/icons/hicolor/scalable/apps/k4dirstat.svgz
 %%NLS%%share/locale/lt/LC_MESSAGES/k4dirstat.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/k4dirstat.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/k4dirstat.mo
+share/man/man1/k4dirstat.1.gz

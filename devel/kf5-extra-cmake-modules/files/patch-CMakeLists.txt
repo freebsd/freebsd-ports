@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-09-15 12:44:43 UTC
+--- CMakeLists.txt.orig	2023-12-23 00:45:39 UTC
 +++ CMakeLists.txt
-@@ -76,12 +76,12 @@ set(KDE_MODULES_INSTALL_DIR       ${SHAR
+@@ -44,7 +44,7 @@ set(TOOLCHAIN_MODULES_INSTALL_DIR ${SHARE_INSTALL_DIR}
  set(MODULES_INSTALL_DIR           ${SHARE_INSTALL_DIR}/ECM/modules/)
  set(TOOLCHAIN_MODULES_INSTALL_DIR ${SHARE_INSTALL_DIR}/ECM/toolchain/)
  
@@ -9,9 +9,3 @@
      CACHE
      PATH
      "HTML and QtHelp documentation"
- )
--set(MAN_INSTALL_DIR ${SHARE_INSTALL_DIR}/man
-+set(MAN_INSTALL_DIR man
-     CACHE
-     PATH
-     "man pages"

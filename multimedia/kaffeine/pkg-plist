@@ -1,12 +1,4 @@
 bin/kaffeine
-man/ca/man1/kaffeine.1.gz
-man/it/man1/kaffeine.1.gz
-man/man1/kaffeine.1.gz
-man/nl/man1/kaffeine.1.gz
-man/pt/man1/kaffeine.1.gz
-man/pt_BR/man1/kaffeine.1.gz
-man/sv/man1/kaffeine.1.gz
-man/uk/man1/kaffeine.1.gz
 share/applications/org.kde.kaffeine.desktop
 share/doc/HTML/ca/kaffeine/application-x-subrip.png
 share/doc/HTML/ca/kaffeine/audio-volume-high.png
@@ -247,6 +239,14 @@ share/locale/ug/LC_MESSAGES/kaffeine.mo
 share/locale/uk/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
 share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
+share/man/ca/man1/kaffeine.1.gz
+share/man/it/man1/kaffeine.1.gz
+share/man/man1/kaffeine.1.gz
+share/man/nl/man1/kaffeine.1.gz
+share/man/pt/man1/kaffeine.1.gz
+share/man/pt_BR/man1/kaffeine.1.gz
+share/man/sv/man1/kaffeine.1.gz
+share/man/uk/man1/kaffeine.1.gz
 share/metainfo/org.kde.kaffeine.appdata.xml
 share/profiles/kaffeine.profile.xml
 share/solid/actions/kaffeine_play_audiocd.desktop

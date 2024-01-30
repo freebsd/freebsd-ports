@@ -1,5 +1,4 @@
 bin/kamerka
-man/man1/kamerka.1.gz
 share/applications/kamerka.desktop
 share/config.kcfg/kamerka.kcfg
 %%DATADIR%%/camera_click.ogg
@@ -19,4 +18,5 @@ share/knotifications5/kamerka.notifyrc
 %%NLS%%share/locale/uk/LC_MESSAGES/kamerka.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kamerka.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kamerka.mo
+share/man/man1/kamerka.1.gz
 share/pixmaps/kamerka.png

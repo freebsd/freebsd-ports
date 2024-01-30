@@ -1,5 +1,6 @@
 PORTNAME=	k4dirstat
 DISTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	eduardo@FreeBSD.org

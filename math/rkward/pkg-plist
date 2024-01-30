@@ -19,13 +19,6 @@ bin/rkward
 %%INSTTEST%%lib/R/library/rkwardtests/html/00Index.html
 %%INSTTEST%%lib/R/library/rkwardtests/html/R.css
 lib/libexec/rkward.rbackend
-man/ca/man1/rkward.1.gz
-man/de/man1/rkward.1.gz
-man/it/man1/rkward.1.gz
-%%PORTDOCS%%man/man1/rkward.1.gz
-man/nl/man1/rkward.1.gz
-man/sv/man1/rkward.1.gz
-man/uk/man1/rkward.1.gz
 share/applications/org.kde.rkward.desktop
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
@@ -90,6 +83,13 @@ share/ktexteditor_snippets/data/RKWardutils.xml
 %%NLS%%share/locale/uk/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rkward.mo
+share/man/ca/man1/rkward.1.gz
+share/man/de/man1/rkward.1.gz
+share/man/it/man1/rkward.1.gz
+%%PORTDOCS%%share/man/man1/rkward.1.gz
+share/man/nl/man1/rkward.1.gz
+share/man/sv/man1/rkward.1.gz
+share/man/uk/man1/rkward.1.gz
 share/metainfo/org.kde.rkward.appdata.xml
 share/mime/packages/vnd.kde.rkward-output.xml
 share/mime/packages/vnd.kde.rmarkdown.xml
