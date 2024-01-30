@@ -1,5 +1,6 @@
 PORTNAME=	exif
 PORTVERSION=	0.6.22
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libexif/exif/releases/download/exif-${PORTVERSION:S|.|_|g}-release/
 
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 USES=		cpe gmake localbase pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CPE_VENDOR=	curtis_galloway
 

@@ -30,36 +30,36 @@ lib/bind-tools/libisccfg.so
 lib/bind-tools/libisccfg-9.19.3-dev.so
 lib/bind-tools/libns.so
 lib/bind-tools/libns-9.19.3-dev.so
-man/man1/arpaname.1.gz
-man/man1/delv.1.gz
-man/man1/dig.1.gz
-man/man1/dnssec-cds.1.gz
-man/man1/dnssec-dsfromkey.1.gz
-man/man1/dnssec-importkey.1.gz
-man/man1/dnssec-keyfromlabel.1.gz
-man/man1/dnssec-keygen.1.gz
-man/man1/dnssec-revoke.1.gz
-man/man1/dnssec-settime.1.gz
-man/man1/dnssec-signzone.1.gz
-man/man1/dnssec-verify.1.gz
-@comment man/man1/dnstap-read.1.gz
-man/man1/host.1.gz
-man/man1/mdig.1.gz
-@comment man/man1/named-checkconf.1.gz
-@comment man/man1/named-checkzone.1.gz
-@comment man/man1/named-compilezone.1.gz
-@comment man/man1/named-journalprint.1.gz
-@comment man/man1/named-nzd2nzf.1.gz
-man/man1/named-rrchecker.1.gz
-man/man1/nsec3hash.1.gz
-man/man1/nslookup.1.gz
-man/man1/nsupdate.1.gz
-@comment man/man5/named.conf.5.gz
-@comment man/man5/rndc.conf.5.gz
-@comment man/man8/ddns-confgen.8.gz
-@comment man/man8/filter-a.8.gz
-@comment man/man8/filter-aaaa.8.gz
-@comment man/man8/named.8.gz
-@comment man/man8/rndc-confgen.8.gz
-@comment man/man8/rndc.8.gz
-@comment man/man8/tsig-keygen.8.gz
+share/man/man1/arpaname.1.gz
+share/man/man1/delv.1.gz
+share/man/man1/dig.1.gz
+share/man/man1/dnssec-cds.1.gz
+share/man/man1/dnssec-dsfromkey.1.gz
+share/man/man1/dnssec-importkey.1.gz
+share/man/man1/dnssec-keyfromlabel.1.gz
+share/man/man1/dnssec-keygen.1.gz
+share/man/man1/dnssec-revoke.1.gz
+share/man/man1/dnssec-settime.1.gz
+share/man/man1/dnssec-signzone.1.gz
+share/man/man1/dnssec-verify.1.gz
+@comment share/man/man1/dnstap-read.1.gz
+share/man/man1/host.1.gz
+share/man/man1/mdig.1.gz
+@comment share/man/man1/named-checkconf.1.gz
+@comment share/man/man1/named-checkzone.1.gz
+@comment share/man/man1/named-compilezone.1.gz
+@comment share/man/man1/named-journalprint.1.gz
+@comment share/man/man1/named-nzd2nzf.1.gz
+share/man/man1/named-rrchecker.1.gz
+share/man/man1/nsec3hash.1.gz
+share/man/man1/nslookup.1.gz
+share/man/man1/nsupdate.1.gz
+@comment share/man/man5/named.conf.5.gz
+@comment share/man/man5/rndc.conf.5.gz
+@comment share/man/man8/ddns-confgen.8.gz
+@comment share/man/man8/filter-a.8.gz
+@comment share/man/man8/filter-aaaa.8.gz
+@comment share/man/man8/named.8.gz
+@comment share/man/man8/rndc-confgen.8.gz
+@comment share/man/man8/rndc.8.gz
+@comment share/man/man8/tsig-keygen.8.gz

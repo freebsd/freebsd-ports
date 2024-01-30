@@ -1,5 +1,6 @@
 PORTNAME=	webfs
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -14,7 +15,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USES=		gmake
 MAKEFILE=	GNUmakefile
 
-PLIST_FILES=	sbin/webfsd man/man1/webfsd.1.gz
+PLIST_FILES=	sbin/webfsd share/man/man1/webfsd.1.gz
 
 OPTIONS_DEFINE=		OPENSSL
 OPENSSL_MAKE_ENV=	LDLIBS="-lssl -lcrypto" USE_DIET=no
@@ -32,6 +33,6 @@ post-patch-OPENSSL-off:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/webfsd.man ${STAGEDIR}${PREFIX}/man/man1/webfsd.1
+	${INSTALL_MAN} ${WRKSRC}/webfsd.man ${STAGEDIR}${PREFIX}/share/man/man1/webfsd.1
 
 .include <bsd.port.mk>

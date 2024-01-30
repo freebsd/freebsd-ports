@@ -4,8 +4,8 @@ lib/libuptimed.a
 lib/libuptimed.so
 lib/libuptimed.so.0
 lib/libuptimed.so.0.0.0
-man/man1/uprecords.1.gz
-man/man8/uptimed.8.gz
+share/man/man1/uprecords.1.gz
+share/man/man8/uptimed.8.gz
 sbin/uptimed
 www/cgi-bin/uprecords.cgi
 www/cgi-bin/uprecords.conf.sample

@@ -1,5 +1,5 @@
 bin/xfig
-man/man1/xfig.1.gz
+share/man/man1/xfig.1.gz
 share/X11/app-defaults/Fig
 share/applications/xfig.desktop
 %%PORTDOCS%%%%DOCSDIR%%/FORMAT1.3

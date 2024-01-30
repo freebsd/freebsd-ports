@@ -1,5 +1,6 @@
 PORTNAME=	sshpass
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/sshpass/${PORTVERSION}
 
@@ -12,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/sshpass \
-		man/man1/sshpass.1.gz
+		share/man/man1/sshpass.1.gz
 
 .include <bsd.port.mk>

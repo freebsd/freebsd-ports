@@ -4,11 +4,11 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	0
+PORTREVISION=	2
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	dns net
 # XXX: put the ISC master_site
@@ -65,6 +65,7 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-linux-caps \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \

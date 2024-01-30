@@ -4,10 +4,10 @@ PORTNAME=	bind
 DISTVERSION=	9.18.20
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	1
+PORTREVISION=	2
 .else
 # dns/bind918 here
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
@@ -50,6 +50,7 @@ CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 .endif
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-linux-caps \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \

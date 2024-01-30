@@ -1,6 +1,6 @@
 PORTNAME=	xfig
 PORTVERSION=	3.2.8b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/mcj/
 
@@ -25,6 +25,7 @@ USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 CPE_VENDOR=	xfig_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CFLAGS+=	-Wno-return-type
 
 CONFLICTS=	xfig-3.1* xfig-3.2.[1234]* xfig-[12].*
