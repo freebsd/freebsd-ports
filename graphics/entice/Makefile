@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libefl.so:devel/efl \
 		libexif.so:graphics/libexif
 
-USES=		compiler:c11 desktop-file-utils meson
+USES=		compiler:c11 desktop-file-utils meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vtorri
 GH_PROJECT=	entice
