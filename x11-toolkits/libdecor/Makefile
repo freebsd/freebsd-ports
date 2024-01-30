@@ -38,13 +38,13 @@ LIB_DEPENDS.gtk3+=	${"${PORT_OPTIONS:MDBUS}":?libdbus-1.so\:devel/dbus:}
 DBUS_MESON_ENABLED=	dbus
 
 EXAMPLES_SUBPACKAGES=	examples
-EXAMPLES_MESON_TRUE=	demo install_demo
 EXAMPLES_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS.examples+=	libxkbcommon.so:x11/libxkbcommon
 #USES.examples=		gl
 #USE_GL.examples=	egl opengl
 LIB_DEPENDS.examples+=	libEGL.so:graphics/libglvnd
 SELF_DEPENDS.examples=	main
+EXAMPLES_MESON_TRUE=	demo install_demo
 
 GTK3_SUBPACKAGES=	gtk3
 GTK3_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
