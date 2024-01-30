@@ -1,6 +1,6 @@
 PORTNAME=	mpich
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	mpd
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USES=		compiler:c11 libtool localbase perl5 pkgconfig python:build
 USE_LDCONFIG=	yes
