@@ -1,9 +1,9 @@
 bin/sysconftoolize
 bin/sysconftoolcheck
-man/man1/sysconftool.1.gz
-man/man1/sysconftoolcheck.1.gz
-man/man1/sysconftoolize.1.gz
-man/man7/sysconftool.7.gz
+share/man/man1/sysconftool.1.gz
+share/man/man1/sysconftoolcheck.1.gz
+share/man/man1/sysconftoolize.1.gz
+share/man/man7/sysconftool.7.gz
 share/aclocal/sysconftool.m4
 %%DATADIR%%/sysconftool
 %%DATADIR%%/sysconftoolize.pl
