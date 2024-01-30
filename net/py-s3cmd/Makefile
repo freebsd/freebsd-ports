@@ -1,5 +1,6 @@
 PORTNAME=	s3cmd
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	SF/s3tools/${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,9 +31,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	${REINPLACE_CMD} -e 's,share/man,man,' ${WRKSRC}/setup.py
 
 post-patch-DOCS-on:
 	${REINPLACE_CMD} -e 's,doc/packages,doc,' ${WRKSRC}/setup.py
