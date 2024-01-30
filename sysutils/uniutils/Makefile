@@ -1,5 +1,6 @@
 PORTNAME=	uniutils
 PORTVERSION=	2.28
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -12,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	ascii2binary:converters/ascii2binary
 
-GNU_CONFIGURE=	yes
 USES=		gettext localbase tar:bz2
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 LIBS+=		-lintl
 
