@@ -1,6 +1,6 @@
 PORTNAME=	drm-kmod
 PORTVERSION=	20220907
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -24,6 +24,7 @@ RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-510-kmod
 _DRM_ARCHS=	aarch64 i386
 .  elif ${OSVERSION} >= 1400097 && ${OSVERSION} < 1500008
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-515-kmod
+_DRM_ARCHS=	amd64 powerpc64 powerpc64le
 .  elif ${OSVERSION} >= 1500008
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-61-kmod
 _DRM_ARCHS=	amd64 powerpc64 powerpc64le
