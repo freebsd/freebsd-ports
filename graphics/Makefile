@@ -165,6 +165,7 @@
     SUBDIR += enblend
     SUBDIR += engauge-digitizer
     SUBDIR += entangle
+    SUBDIR += entice
     SUBDIR += eog
     SUBDIR += eog-plugins
     SUBDIR += eom
