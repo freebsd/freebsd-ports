@@ -41,7 +41,6 @@ LLVM_MAN1SRCS= \
 	llvm-readelf.1 \
 	llvm-readobj.1 \
 	llvm-reduce.1 \
-	llvm-remark-size-diff.1 \
 	llvm-remarkutil.1 \
 	llvm-size.1 \
 	llvm-stress.1 \
