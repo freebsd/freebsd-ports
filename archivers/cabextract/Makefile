@@ -1,5 +1,6 @@
 PORTNAME=	cabextract
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/ \
 		LOCAL/sunpoet
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe iconv
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPE_VENDOR=	cabextract_project
 
@@ -25,7 +27,7 @@ DOCS=		AUTHORS ChangeLog NEWS README TODO \
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/ja/cabextract.1 ${STAGEDIR}${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ja/cabextract.1 ${STAGEDIR}${PREFIX}/share/man/ja/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
