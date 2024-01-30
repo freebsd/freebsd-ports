@@ -1,6 +1,5 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20231029
-PORTREVISION=	1
+DISTVERSION=	20240129
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/schismtracker/schismtracker/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.source
