@@ -1,14 +1,5 @@
---- configure.orig	2021-05-06 14:10:24 UTC
+--- configure.orig	2024-01-28 15:28:41 UTC
 +++ configure
-@@ -106,7 +106,7 @@ sub run_cmd {
- }
- 
- sub cplusplus_lang {
--    my @compilers = ( $cxx, 'g++', 'c++' );
-+    my @compilers = ( $cxx, 'g++10', 'c++' );
-     my $x;
-     my $program = <<EOF;
- #include <list>
 @@ -357,7 +357,7 @@ sub header_check {
  
  	log_file("test.cc");
@@ -18,7 +9,7 @@
  	    print ": no\n";
  	    $y = header_def($x);
  	    print CONFIGH "#undef $y\n";
-@@ -511,17 +511,9 @@ if (!header_check("stdio.h","stdlib.h","string.h","uni
+@@ -511,17 +511,9 @@ header_check("strings.h");
  #optional headers
  header_check("strings.h");
  

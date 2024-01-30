@@ -1,7 +1,7 @@
 PORTNAME=	eboard
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/eboard-extras/pack%201%20patchlevel%202/:p1 \
 		SF/${PORTNAME}/eboard-extras/pack%202/:p2
@@ -11,16 +11,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
-COMMENT=	GTK chess board interface (mainly for FICS and chessd)
+COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 WWW=		https://www.bergo.eng.br/eboard/
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
+		libharfbuzz.so:print/harfbuzz \
+		libpng16.so:graphics/png
 
-USES=		compiler:c++11-lang gnome gstreamer perl5 pkgconfig shebangfix tar:bzip2
+USES=		compiler:c++11-lang gnome gstreamer perl5 pkgconfig \
+		shebangfix tar:bzip2
 # eboard 1.1.13 is not compatible with C++17, which is the default since
 # clang 16. This means ports depending on it also need to use at most C++14.
 USE_CXXSTD=	c++11
@@ -34,13 +36,14 @@ SHEBANG_FILES=	configure
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--extra-inc=${LOCALBASE}/include \
-		--extra-ld=${LOCALBASE}/lib
+		--extra-ld=${LOCALBASE}/lib \
+		--man-prefix=${PREFIX}/share/man
 
 INSTALL_TARGET=	install install-man
 
 DESKTOP_ENTRIES="eboard" \
 		"Play chess" \
-		"${PREFIX}/share/pixmaps/eboard.xpm" \
+		"${DATADIR}/gnupiece.xpm" \
 		"eboard" \
 		"Game;BoardGame;GTK;" \
 		true
@@ -63,6 +66,9 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/eboard
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/eboard/timeseal.FreeBSD
+	(cd ${WRKSRC}/xpm/ && ${CP} gnupiece.xpm ${STAGEDIR}${DATADIR})
 # There is no timeseal port ATM :(
 #	@${LN} -sf ${LOCALBASE}/bin/timeseal \
 #		${STAGEDIR}${DATADIR}/timeseal.FreeBSD
