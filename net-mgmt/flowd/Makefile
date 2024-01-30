@@ -1,6 +1,6 @@
 PORTNAME=	flowd
 PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mindrot.org/files/flowd/
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake shebangfix
 SHEBANG_FILES=	tools/*.pl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_RC_SUBR=	flowd
 PORTDOCS=	README INSTALL

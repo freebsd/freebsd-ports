@@ -32,6 +32,9 @@ X11_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile-nox11
 post-patch-X11-off:
 	@${REINPLACE_CMD} -e '/fonts/d' ${WRKSRC}/Makefile
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^MAN.DIR/s,/man,/share/man,' ${WRKSRC}/Makefile
+
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/mailcap \
 		${STAGEDIR}${PREFIX}/etc/mailcap.sample
