@@ -14,9 +14,9 @@ libexec/clock-applet
 libexec/fish-applet
 libexec/notification-area-applet
 libexec/wnck-applet
-man/man1/mate-desktop-item-edit.1.gz
-man/man1/mate-panel-test-applets.1.gz
-man/man1/mate-panel.1.gz
+share/man/man1/mate-desktop-item-edit.1.gz
+share/man/man1/mate-panel-test-applets.1.gz
+share/man/man1/mate-panel.1.gz
 share/applications/mate-panel.desktop
 share/dbus-1/services/org.mate.panel.applet.ClockAppletFactory.service
 share/dbus-1/services/org.mate.panel.applet.FishAppletFactory.service
