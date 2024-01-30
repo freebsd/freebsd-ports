@@ -1,0 +1,2 @@
+A more modular rewrite of most components from VGMPlay. will include
+sub-libraries for audio output, sound emulation and VGM playback.
