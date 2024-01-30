@@ -1,6 +1,6 @@
 PORTNAME=	gtorrentviewer
 PORTVERSION=	0.2b
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/GTorrentViewer/${PORTVERSION}
 DISTNAME=	GTorrentViewer-${PORTVERSION}
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \
 		--with-desktopdir=${PREFIX}/share/applications
 CPPFLAGS+=	-I${LOCALBASE}/include
