@@ -13,5 +13,5 @@ lib/libgdome.so
 lib/libgdome.so.0
 lib/libgdome.so.0.8.1
 libdata/pkgconfig/gdome2.pc
-man/man1/gdome-config.1.gz
+share/man/man1/gdome-config.1.gz
 share/aclocal/gdome2.m4
