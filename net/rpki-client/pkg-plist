@@ -7,7 +7,7 @@ etc/rpki/lacnic.constraints
 etc/rpki/lacnic.tal
 etc/rpki/ripe.constraints
 etc/rpki/ripe.tal
-man/man8/rpki-client.8.gz
+share/man/man8/rpki-client.8.gz
 sbin/rpki-client
 @dir(%%USERS%%,,0755) /var/cache/rpki-client
 @dir(%%USERS%%,,0755) /var/db/rpki-client

@@ -1,5 +1,6 @@
 PORTNAME=	rpki-client
 DISTVERSION=	8.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD
 MASTER_SITE_SUBDIR=rpki-client
@@ -18,6 +19,7 @@ RUN_DEPENDS=	rsync>0:net/rsync
 USES=		autoreconf:build libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libtls=libtls
 
 USERS=		_rpki-client
