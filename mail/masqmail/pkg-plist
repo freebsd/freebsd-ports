@@ -3,12 +3,12 @@ bin/mservdetect
 @sample(mailnull,mail,) %%ETCDIR%%/masqmail.conf.sample
 @sample(mailnull,mail,) %%ETCDIR%%/masqmail.route.sample
 @sample(mailnull,mail,) %%ETCDIR%%/openssl.route.sample
-man/man1/mservdetect.1.gz
-man/man5/masqmail.aliases.5.gz
-man/man5/masqmail.conf.5.gz
-man/man5/masqmail.route.5.gz
-man/man8/masqmail.8.gz
-man/man8/rmail.8.gz
+share/man/man1/mservdetect.1.gz
+share/man/man5/masqmail.aliases.5.gz
+share/man/man5/masqmail.conf.5.gz
+share/man/man5/masqmail.route.5.gz
+share/man/man8/masqmail.8.gz
+share/man/man8/rmail.8.gz
 sbin/masqmail
 sbin/rmail
 %%DATADIR%%/tpl/failmsg.tpl

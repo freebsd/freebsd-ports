@@ -1,5 +1,6 @@
 PORTNAME=	masqmail
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 
@@ -13,6 +14,7 @@ USE_GNOME=	glib20
 USES=		cpe gnome pkgconfig
 USE_RC_SUBR=	masqmail
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS=	--with-user=mailnull --with-group=mail \
 		--with-confdir=${ETCDIR} --with-logdir=/var/log/masqmail
