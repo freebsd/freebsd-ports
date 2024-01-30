@@ -2363,6 +2363,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/tests/ex8.c
 %%DATADIR%%/examples/src/dm/tests/ex9.c
 %%DATADIR%%/examples/src/dm/tests/makefile
+%%DATADIR%%/examples/src/dm/tests/noflux_check.c
 %%DATADIR%%/examples/src/dm/tests/output/ex10_1.out
 %%DATADIR%%/examples/src/dm/tests/output/ex11_1.out
 %%DATADIR%%/examples/src/dm/tests/output/ex11_2.out
@@ -2458,6 +2459,10 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/tests/output/ex8_glvis.out
 %%DATADIR%%/examples/src/dm/tests/output/ex9_composite_nest_l2g_nsize-1.out
 %%DATADIR%%/examples/src/dm/tests/output/ex9_composite_nest_l2g_nsize-2.out
+%%DATADIR%%/examples/src/dm/tests/output/noflux_check.out
+%%DATADIR%%/examples/src/dm/tests/output/noflux_check_2.out
+%%DATADIR%%/examples/src/dm/tests/output/noflux_check_4.out
+%%DATADIR%%/examples/src/dm/tests/output/noflux_check_8.out
 %%DATADIR%%/examples/src/dm/tutorials/ex1.c
 %%DATADIR%%/examples/src/dm/tutorials/ex10.c
 %%DATADIR%%/examples/src/dm/tutorials/ex11f90.F90
