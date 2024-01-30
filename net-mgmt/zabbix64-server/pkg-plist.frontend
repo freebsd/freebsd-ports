@@ -1382,6 +1382,8 @@
 %%WWWDIR%%/locale/ja/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ka/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/ka/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/kk/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/kk/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ko/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/ko/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/lt/LC_MESSAGES/frontend.mo
