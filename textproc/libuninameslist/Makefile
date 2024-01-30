@@ -1,5 +1,6 @@
 PORTNAME=	libuninameslist
 DISTVERSION=	20221022
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/fontforge/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-dist-${DISTVERSION}
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
