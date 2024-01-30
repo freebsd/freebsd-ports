@@ -1,5 +1,6 @@
 PORTNAME=	jacal
 PORTVERSION=	1c8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
@@ -15,6 +16,9 @@ RUN_DEPENDS=	scm:lang/scm \
 USES=		gmake zip
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+				--mandir=${PREFIX}/share/man
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
