@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	3
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -125,6 +125,7 @@ INSTALL_TARGET=	distro-pack-install
 SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
 		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
 		python shebangfix shared-mime-info ssl tar:xz xorg
@@ -389,8 +390,8 @@ post-install:
 	${FIND} -s lib/libreoffice -type d -empty \
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
-	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in applications bash-completion icons metainfo mime
+	${FIND} -s bin lib -not -type d >> ${TMPPLIST}
+.for subdir in applications bash-completion icons man metainfo mime
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
