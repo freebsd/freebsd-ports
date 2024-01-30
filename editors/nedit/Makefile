@@ -1,5 +1,6 @@
 PORTNAME=	nedit
 PORTVERSION=	5.7
+PORTREVISION=	1
 CATEGORIES=	editors
 #MASTER_SITES=	LOCAL/swills
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/
@@ -18,8 +19,8 @@ ALL_TARGET=	freebsd
 PLIST_FILES=	bin/nclient \
 		bin/nedit \
 		lib/X11/app-defaults/NEdit.ad \
-		man/man1/nclient.1.gz \
-		man/man1/nedit.1.gz
+		share/man/man1/nclient.1.gz \
+		share/man/man1/nedit.1.gz
 
 post-build:
 	cd ${WRKSRC} && make docs
