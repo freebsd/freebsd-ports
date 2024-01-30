@@ -91,12 +91,16 @@ include/quic/congestion_control/TokenlessPacer.h
 include/quic/congestion_control/third_party/windowed_filter.h
 include/quic/dsr/DSRPacketizationRequestSender.h
 include/quic/dsr/Types.h
+include/quic/dsr/XskContainer.h
+include/quic/dsr/XskSender.h
 include/quic/dsr/backend/DSRPacketizer.h
 include/quic/dsr/frontend/PacketBuilder.h
 include/quic/dsr/frontend/Scheduler.h
 include/quic/dsr/frontend/WriteCodec.h
 include/quic/dsr/frontend/WriteFunctions.h
+include/quic/dsr/packet_utils.h
 include/quic/dsr/test/Mocks.h
+include/quic/dsr/xsk_lib.h
 include/quic/fizz/client/handshake/FizzClientExtensions.h
 include/quic/fizz/client/handshake/FizzClientHandshake.h
 include/quic/fizz/client/handshake/FizzClientQuicHandshakeContext.h
@@ -262,3 +266,5 @@ lib/libmvfst_transport_knobs.so
 lib/libmvfst_transport_knobs.so.0
 lib/libmvfst_transport_settings_functions.so
 lib/libmvfst_transport_settings_functions.so.0
+lib/libmvfst_xsk.so
+lib/libmvfst_xsk.so.0
