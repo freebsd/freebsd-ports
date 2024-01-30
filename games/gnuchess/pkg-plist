@@ -1,7 +1,7 @@
 bin/gnuchess
 bin/gnuchessu
 bin/gnuchessx
-man/man1/gnuchess.1.gz
+share/man/man1/gnuchess.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.in
