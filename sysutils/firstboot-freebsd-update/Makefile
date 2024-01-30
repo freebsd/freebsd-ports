@@ -1,5 +1,5 @@
 PORTNAME=	firstboot-freebsd-update
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
