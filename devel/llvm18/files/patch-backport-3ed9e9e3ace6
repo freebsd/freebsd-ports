@@ -1,0 +1,342 @@
+commit 3ed9e9e3ace6f9ce320cf4e75cffa04a7c7241b5
+Author: Corentin Jabot <corentinjabot@gmail.com>
+Date:   Tue Aug 29 19:53:19 2023 +0200
+
+    [Clang] Add captures to the instantiation scope of lambda call operators
+    
+    Like concepts checking, a trailing return type of a lambda
+    in a dependent context may refer to captures in which case
+    they may need to be rebuilt, so the map of local decl
+    should include captures.
+    
+    This patch reveal a pre-existing issue.
+    `this` is always recomputed by TreeTransform.
+    
+    `*this` (like all captures) only become `const`
+    after the parameter list.
+    
+    However, if try to recompute the value of `this` (in a parameter)
+    during template instantiation while determining the type of the call operator,
+    we will determine  it to be const (unless the lambda is mutable).
+    
+    There is no good way to know at that point that we are in a parameter
+    or not, the easiest/best solution is to transform the type of this.
+    
+    Note that doing so break a handful of HLSL tests.
+    So this is a prototype at this point.
+    
+    Fixes #65067
+    Fixes #63675
+    
+    Reviewed By: erichkeane
+    
+    Differential Revision: https://reviews.llvm.org/D159126
+
+diff --git clang/docs/ReleaseNotes.rst clang/docs/ReleaseNotes.rst
+index 2d0302c399fb..6a3a6bb8ad42 100644
+--- clang/docs/ReleaseNotes.rst
++++ clang/docs/ReleaseNotes.rst
+@@ -270,6 +270,11 @@ Bug Fixes to C++ Support
+ - Fix crash when parsing the requires clause of some generic lambdas.
+   (`#64689 <https://github.com/llvm/llvm-project/issues/64689>`_)
+ 
++- Fix crash when the trailing return type of a generic and dependent
++  lambda refers to an init-capture.
++  (`#65067 <https://github.com/llvm/llvm-project/issues/65067>`_` and
++   `#63675 <https://github.com/llvm/llvm-project/issues/63675>`_`)
++
+ Bug Fixes to AST Handling
+ ^^^^^^^^^^^^^^^^^^^^^^^^^
+ - Fixed an import failure of recursive friend class template.
+diff --git clang/include/clang/Sema/Sema.h clang/include/clang/Sema/Sema.h
+index 1bb096c667e3..566655818a85 100644
+--- clang/include/clang/Sema/Sema.h
++++ clang/include/clang/Sema/Sema.h
+@@ -7365,6 +7365,14 @@ public:
+ 
+   sema::LambdaScopeInfo *RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator);
+ 
++  class LambdaScopeForCallOperatorInstantiationRAII
++      : private FunctionScopeRAII {
++  public:
++    LambdaScopeForCallOperatorInstantiationRAII(
++        Sema &SemasRef, FunctionDecl *FD, MultiLevelTemplateArgumentList MLTAL,
++        LocalInstantiationScope &Scope);
++  };
++
+   /// Check whether the given expression is a valid constraint expression.
+   /// A diagnostic is emitted if it is not, false is returned, and
+   /// PossibleNonPrimary will be set to true if the failure might be due to a
+diff --git clang/lib/Sema/SemaConcept.cpp clang/lib/Sema/SemaConcept.cpp
+index fa3dadf68229..d1fa8e783122 100644
+--- clang/lib/Sema/SemaConcept.cpp
++++ clang/lib/Sema/SemaConcept.cpp
+@@ -600,11 +600,6 @@ bool Sema::SetupConstraintScope(
+       if (addInstantiatedParametersToScope(FD, FromMemTempl->getTemplatedDecl(),
+                                            Scope, MLTAL))
+         return true;
+-      // Make sure the captures are also added to the instantiation scope.
+-      if (isLambdaCallOperator(FD) &&
+-          addInstantiatedCapturesToScope(FD, FromMemTempl->getTemplatedDecl(),
+-                                         Scope, MLTAL))
+-        return true;
+     }
+ 
+     return false;
+@@ -629,11 +624,6 @@ bool Sema::SetupConstraintScope(
+     // child-function.
+     if (addInstantiatedParametersToScope(FD, InstantiatedFrom, Scope, MLTAL))
+       return true;
+-
+-    // Make sure the captures are also added to the instantiation scope.
+-    if (isLambdaCallOperator(FD) &&
+-        addInstantiatedCapturesToScope(FD, InstantiatedFrom, Scope, MLTAL))
+-      return true;
+   }
+ 
+   return false;
+@@ -712,20 +702,8 @@ bool Sema::CheckFunctionConstraints(const FunctionDecl *FD,
+   }
+   CXXThisScopeRAII ThisScope(*this, Record, ThisQuals, Record != nullptr);
+ 
+-  // When checking the constraints of a lambda, we need to restore a
+-  // LambdaScopeInfo populated with correct capture information so that the type
+-  // of a variable referring to a capture is correctly const-adjusted.
+-  FunctionScopeRAII FuncScope(*this);
+-  if (isLambdaCallOperator(FD)) {
+-    LambdaScopeInfo *LSI = RebuildLambdaScopeInfo(
+-        const_cast<CXXMethodDecl *>(cast<CXXMethodDecl>(FD)));
+-    // Constraints are checked from the parent context of the lambda, so we set
+-    // AfterParameterList to false, so that `tryCaptureVariable` finds
+-    // explicit captures in the appropriate context.
+-    LSI->AfterParameterList = false;
+-  } else {
+-    FuncScope.disable();
+-  }
++  LambdaScopeForCallOperatorInstantiationRAII LambdaScope(
++      *this, const_cast<FunctionDecl *>(FD), *MLTAL, Scope);
+ 
+   return CheckConstraintSatisfaction(
+       FD, {FD->getTrailingRequiresClause()}, *MLTAL,
+@@ -913,15 +891,10 @@ bool Sema::CheckInstantiatedFunctionTemplateConstraints(
+     ThisQuals = Method->getMethodQualifiers();
+     Record = Method->getParent();
+   }
+-  CXXThisScopeRAII ThisScope(*this, Record, ThisQuals, Record != nullptr);
+-  FunctionScopeRAII FuncScope(*this);
+ 
+-  if (isLambdaCallOperator(Decl)) {
+-    LambdaScopeInfo *LSI = RebuildLambdaScopeInfo(cast<CXXMethodDecl>(Decl));
+-    LSI->AfterParameterList = false;
+-  } else {
+-    FuncScope.disable();
+-  }
++  CXXThisScopeRAII ThisScope(*this, Record, ThisQuals, Record != nullptr);
++  LambdaScopeForCallOperatorInstantiationRAII LambdaScope(
++      *this, const_cast<FunctionDecl *>(Decl), *MLTAL, Scope);
+ 
+   llvm::SmallVector<Expr *, 1> Converted;
+   return CheckConstraintSatisfaction(Template, TemplateAC, Converted, *MLTAL,
+diff --git clang/lib/Sema/SemaDecl.cpp clang/lib/Sema/SemaDecl.cpp
+index 027c6c3e4222..998060542609 100644
+--- clang/lib/Sema/SemaDecl.cpp
++++ clang/lib/Sema/SemaDecl.cpp
+@@ -15382,6 +15382,10 @@ LambdaScopeInfo *Sema::RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator) {
+   LSI->CallOperator = CallOperator;
+   LSI->Lambda = LambdaClass;
+   LSI->ReturnType = CallOperator->getReturnType();
++  // This function in calls in situation where the context of the call operator
++  // is not entered, so we set AfterParameterList to false, so that
++  // `tryCaptureVariable` finds explicit captures in the appropriate context.
++  LSI->AfterParameterList = false;
+   const LambdaCaptureDefault LCD = LambdaClass->getLambdaCaptureDefault();
+ 
+   if (LCD == LCD_None)
+diff --git clang/lib/Sema/SemaLambda.cpp clang/lib/Sema/SemaLambda.cpp
+index 5256d91a19a0..1702ddb3ee0f 100644
+--- clang/lib/Sema/SemaLambda.cpp
++++ clang/lib/Sema/SemaLambda.cpp
+@@ -20,6 +20,7 @@
+ #include "clang/Sema/ScopeInfo.h"
+ #include "clang/Sema/SemaInternal.h"
+ #include "clang/Sema/SemaLambda.h"
++#include "clang/Sema/Template.h"
+ #include "llvm/ADT/STLExtras.h"
+ #include <optional>
+ using namespace clang;
+@@ -2254,3 +2255,34 @@ ExprResult Sema::BuildBlockForLambdaConversion(SourceLocation CurrentLocation,
+ 
+   return BuildBlock;
+ }
++
++Sema::LambdaScopeForCallOperatorInstantiationRAII::
++    LambdaScopeForCallOperatorInstantiationRAII(
++        Sema &SemasRef, FunctionDecl *FD, MultiLevelTemplateArgumentList MLTAL,
++        LocalInstantiationScope &Scope)
++    : FunctionScopeRAII(SemasRef) {
++  if (!isLambdaCallOperator(FD)) {
++    FunctionScopeRAII::disable();
++    return;
++  }
++
++  if (FD->isTemplateInstantiation() && FD->getPrimaryTemplate()) {
++    FunctionTemplateDecl *PrimaryTemplate = FD->getPrimaryTemplate();
++    if (const auto *FromMemTempl =
++            PrimaryTemplate->getInstantiatedFromMemberTemplate()) {
++      SemasRef.addInstantiatedCapturesToScope(
++          FD, FromMemTempl->getTemplatedDecl(), Scope, MLTAL);
++    }
++  }
++
++  else if (FD->getTemplatedKind() == FunctionDecl::TK_MemberSpecialization ||
++           FD->getTemplatedKind() == FunctionDecl::TK_DependentNonTemplate) {
++    FunctionDecl *InstantiatedFrom =
++        FD->getTemplatedKind() == FunctionDecl::TK_MemberSpecialization
++            ? FD->getInstantiatedFromMemberFunction()
++            : FD->getInstantiatedFromDecl();
++    SemasRef.addInstantiatedCapturesToScope(FD, InstantiatedFrom, Scope, MLTAL);
++  }
++
++  SemasRef.RebuildLambdaScopeInfo(cast<CXXMethodDecl>(FD));
++}
+diff --git clang/lib/Sema/SemaTemplateInstantiateDecl.cpp clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
+index 63f022d5c2ff..37a7d6204413 100644
+--- clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
++++ clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
+@@ -2426,6 +2426,9 @@ Decl *TemplateDeclInstantiator::VisitCXXMethodDecl(
+       cast<Decl>(Owner)->isDefinedOutsideFunctionOrMethod());
+   LocalInstantiationScope Scope(SemaRef, MergeWithParentScope);
+ 
++  Sema::LambdaScopeForCallOperatorInstantiationRAII LambdaScope(
++      SemaRef, const_cast<CXXMethodDecl *>(D), TemplateArgs, Scope);
++
+   // Instantiate enclosing template arguments for friends.
+   SmallVector<TemplateParameterList *, 4> TempParamLists;
+   unsigned NumTempParamLists = 0;
+diff --git clang/lib/Sema/TreeTransform.h clang/lib/Sema/TreeTransform.h
+index 7323140bc336..603a23275889 100644
+--- clang/lib/Sema/TreeTransform.h
++++ clang/lib/Sema/TreeTransform.h
+@@ -12325,7 +12325,16 @@ TreeTransform<Derived>::TransformCXXNullPtrLiteralExpr(
+ template<typename Derived>
+ ExprResult
+ TreeTransform<Derived>::TransformCXXThisExpr(CXXThisExpr *E) {
+-  QualType T = getSema().getCurrentThisType();
++
++  // In lambdas, the qualifiers of the type depends of where in
++  // the call operator `this` appear, and we do not have a good way to
++  // rebuild this information, so we transform the type.
++  //
++  // In other contexts, the type of `this` may be overrided
++  // for type deduction, so we need to recompute it.
++  QualType T = getSema().getCurLambda() ?
++                   getDerived().TransformType(E->getType())
++                 : getSema().getCurrentThisType();
+ 
+   if (!getDerived().AlwaysRebuild() && T == E->getType()) {
+     // Mark it referenced in the new context regardless.
+diff --git clang/test/SemaCXX/lambda-capture-type-deduction.cpp clang/test/SemaCXX/lambda-capture-type-deduction.cpp
+index 9855122c9627..7bf36a6a9cab 100644
+--- clang/test/SemaCXX/lambda-capture-type-deduction.cpp
++++ clang/test/SemaCXX/lambda-capture-type-deduction.cpp
+@@ -260,3 +260,40 @@ void f(int) {
+ void test() { f<int>(0);  }
+ 
+ }
++
++namespace GH65067 {
++
++template <typename> class a {
++public:
++  template <typename b> void c(b f) { d<int>(f)(0); }
++  template <typename, typename b> auto d(b f) {
++    return [f = f](auto arg) -> a<decltype(f(arg))> { return {}; };
++  }
++};
++a<void> e;
++auto fn1() {
++  e.c([](int) {});
++}
++
++}
++
++namespace GH63675 {
++
++template <class _Tp> _Tp __declval();
++struct __get_tag {
++  template <class _Tag> void operator()(_Tag);
++};
++template <class _ImplFn> struct __basic_sender {
++  using __tag_t = decltype(__declval<_ImplFn>()(__declval<__get_tag>()));
++  _ImplFn __impl_;
++};
++auto __make_basic_sender = []<class... _Children>(
++                               _Children... __children) {
++  return __basic_sender{[... __children = __children]<class _Fun>(
++                     _Fun __fun) -> decltype(__fun(__children...)) {}};
++};
++void __trans_tmp_1() {
++  __make_basic_sender(__trans_tmp_1);
++}
++
++}
+diff --git clang/test/SemaCXX/this-type-deduction-concept.cpp clang/test/SemaCXX/this-type-deduction-concept.cpp
+new file mode 100644
+index 000000000000..a0c1f605ccef
+--- /dev/null
++++ clang/test/SemaCXX/this-type-deduction-concept.cpp
+@@ -0,0 +1,54 @@
++
++// This test case came up in the review of
++// https://reviews.llvm.org/D159126
++// when transforming `this` within a
++// requires expression, we need to make sure
++// the type of this (and its qualifiers) is respected.
++namespace D159126 {
++
++template <class _Tp>
++concept __member_begin = requires(_Tp __t) {
++  __t.begin();
++};
++
++struct {
++  template <class _Tp>
++  requires __member_begin<_Tp>
++  auto operator()(_Tp &&) {}
++} inline begin;
++
++template <class>
++concept range = requires {
++  begin;
++};
++
++template <class _Tp>
++concept __can_compare_begin = requires(_Tp __t) {
++  begin(__t);
++};
++
++struct {
++  template <__can_compare_begin _Tp> void operator()(_Tp &&);
++} empty;
++
++template <range _Rp> struct owning_view {
++  _Rp __r_;
++public:
++  void empty() const requires requires { empty(__r_); };
++};
++
++template <class T>
++concept HasEmpty = requires(T t) {
++  t.empty();
++};
++
++struct ComparableIters {
++    void begin();
++};
++
++static_assert(HasEmpty<owning_view<ComparableIters&>>);
++static_assert(HasEmpty<owning_view<ComparableIters&&>>);
++static_assert(!HasEmpty<owning_view<const ComparableIters&>>);
++static_assert(!HasEmpty<owning_view<const ComparableIters&&>>);
++
++}

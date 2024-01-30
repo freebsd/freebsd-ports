@@ -1,0 +1,211 @@
+commit 158f4f30adb4bfd390057742a32934e4344e8fd3
+Author: Corentin Jabot <corentinjabot@gmail.com>
+Date:   Mon Aug 21 18:07:43 2023 +0200
+
+    [Clang] Do not change the type of captured vars when checking lambda constraints
+    
+    When checking the constraint of a lambda, we need to respect the constness
+    of the call operator when establishing the type of capture variables.
+    
+    In D124351, this was done by adding const to the captured variable...
+    However, that would change the type of the variable outside of the scope
+    of the lambda, which is clearly not the desired outcome.
+    
+    Instead, to ensure const-correctness, we need to populate
+    a LambdaScopeInfo with the capture variables before checking the
+    constraints of a generic lambda.
+    
+    There is no changelog as I'd like to tentatively propose we backport
+    this change to RC3 as it is a regression introduced in the Clang 17
+    cycle.
+    
+    Fixes #61267
+    
+    Reviewed By: aaron.ballman, #clang-language-wg
+    
+    Differential Revision: https://reviews.llvm.org/D158433
+
+diff --git clang/include/clang/Sema/Sema.h clang/include/clang/Sema/Sema.h
+index c992e8763057..807a52886ccb 100644
+--- clang/include/clang/Sema/Sema.h
++++ clang/include/clang/Sema/Sema.h
+@@ -7343,6 +7343,8 @@ public:
+                                            CXXConversionDecl *Conv,
+                                            Expr *Src);
+ 
++  sema::LambdaScopeInfo *RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator);
++
+   /// Check whether the given expression is a valid constraint expression.
+   /// A diagnostic is emitted if it is not, false is returned, and
+   /// PossibleNonPrimary will be set to true if the failure might be due to a
+diff --git clang/lib/Sema/SemaConcept.cpp clang/lib/Sema/SemaConcept.cpp
+index f24b549dd2ef..fa3dadf68229 100644
+--- clang/lib/Sema/SemaConcept.cpp
++++ clang/lib/Sema/SemaConcept.cpp
+@@ -13,12 +13,14 @@
+ #include "clang/Sema/SemaConcept.h"
+ #include "TreeTransform.h"
+ #include "clang/AST/ASTLambda.h"
++#include "clang/AST/DeclCXX.h"
+ #include "clang/AST/ExprConcepts.h"
+ #include "clang/AST/RecursiveASTVisitor.h"
+ #include "clang/Basic/OperatorPrecedence.h"
+ #include "clang/Sema/EnterExpressionEvaluationContext.h"
+ #include "clang/Sema/Initialization.h"
+ #include "clang/Sema/Overload.h"
++#include "clang/Sema/ScopeInfo.h"
+ #include "clang/Sema/Sema.h"
+ #include "clang/Sema/SemaDiagnostic.h"
+ #include "clang/Sema/SemaInternal.h"
+@@ -540,11 +542,6 @@ bool Sema::addInstantiatedCapturesToScope(
+   auto AddSingleCapture = [&](const ValueDecl *CapturedPattern,
+                               unsigned Index) {
+     ValueDecl *CapturedVar = LambdaClass->getCapture(Index)->getCapturedVar();
+-    if (cast<CXXMethodDecl>(Function)->isConst()) {
+-      QualType T = CapturedVar->getType();
+-      T.addConst();
+-      CapturedVar->setType(T);
+-    }
+     if (CapturedVar->isInitCapture())
+       Scope.InstantiatedLocal(CapturedPattern, CapturedVar);
+   };
+@@ -714,6 +711,22 @@ bool Sema::CheckFunctionConstraints(const FunctionDecl *FD,
+     Record = const_cast<CXXRecordDecl *>(Method->getParent());
+   }
+   CXXThisScopeRAII ThisScope(*this, Record, ThisQuals, Record != nullptr);
++
++  // When checking the constraints of a lambda, we need to restore a
++  // LambdaScopeInfo populated with correct capture information so that the type
++  // of a variable referring to a capture is correctly const-adjusted.
++  FunctionScopeRAII FuncScope(*this);
++  if (isLambdaCallOperator(FD)) {
++    LambdaScopeInfo *LSI = RebuildLambdaScopeInfo(
++        const_cast<CXXMethodDecl *>(cast<CXXMethodDecl>(FD)));
++    // Constraints are checked from the parent context of the lambda, so we set
++    // AfterParameterList to false, so that `tryCaptureVariable` finds
++    // explicit captures in the appropriate context.
++    LSI->AfterParameterList = false;
++  } else {
++    FuncScope.disable();
++  }
++
+   return CheckConstraintSatisfaction(
+       FD, {FD->getTrailingRequiresClause()}, *MLTAL,
+       SourceRange(UsageLoc.isValid() ? UsageLoc : FD->getLocation()),
+@@ -902,10 +915,13 @@ bool Sema::CheckInstantiatedFunctionTemplateConstraints(
+   }
+   CXXThisScopeRAII ThisScope(*this, Record, ThisQuals, Record != nullptr);
+   FunctionScopeRAII FuncScope(*this);
+-  if (isLambdaCallOperator(Decl))
+-    PushLambdaScope();
+-  else
++
++  if (isLambdaCallOperator(Decl)) {
++    LambdaScopeInfo *LSI = RebuildLambdaScopeInfo(cast<CXXMethodDecl>(Decl));
++    LSI->AfterParameterList = false;
++  } else {
+     FuncScope.disable();
++  }
+ 
+   llvm::SmallVector<Expr *, 1> Converted;
+   return CheckConstraintSatisfaction(Template, TemplateAC, Converted, *MLTAL,
+diff --git clang/lib/Sema/SemaDecl.cpp clang/lib/Sema/SemaDecl.cpp
+index 3925e2a7f338..0d5f696bf040 100644
+--- clang/lib/Sema/SemaDecl.cpp
++++ clang/lib/Sema/SemaDecl.cpp
+@@ -15289,11 +15289,10 @@ Sema::CheckForFunctionRedefinition(FunctionDecl *FD,
+   FD->setInvalidDecl();
+ }
+ 
+-static void RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator,
+-                                   Sema &S) {
+-  CXXRecordDecl *const LambdaClass = CallOperator->getParent();
++LambdaScopeInfo *Sema::RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator) {
++  CXXRecordDecl *LambdaClass = CallOperator->getParent();
+ 
+-  LambdaScopeInfo *LSI = S.PushLambdaScope();
++  LambdaScopeInfo *LSI = PushLambdaScope();
+   LSI->CallOperator = CallOperator;
+   LSI->Lambda = LambdaClass;
+   LSI->ReturnType = CallOperator->getReturnType();
+@@ -15317,7 +15316,7 @@ static void RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator,
+     if (C.capturesVariable()) {
+       ValueDecl *VD = C.getCapturedVar();
+       if (VD->isInitCapture())
+-        S.CurrentInstantiationScope->InstantiatedLocal(VD, VD);
++        CurrentInstantiationScope->InstantiatedLocal(VD, VD);
+       const bool ByRef = C.getCaptureKind() == LCK_ByRef;
+       LSI->addCapture(VD, /*IsBlock*/false, ByRef,
+           /*RefersToEnclosingVariableOrCapture*/true, C.getLocation(),
+@@ -15334,6 +15333,7 @@ static void RebuildLambdaScopeInfo(CXXMethodDecl *CallOperator,
+     }
+     ++I;
+   }
++  return LSI;
+ }
+ 
+ Decl *Sema::ActOnStartOfFunctionDef(Scope *FnBodyScope, Decl *D,
+@@ -15437,7 +15437,7 @@ Decl *Sema::ActOnStartOfFunctionDef(Scope *FnBodyScope, Decl *D,
+     assert(inTemplateInstantiation() &&
+            "There should be an active template instantiation on the stack "
+            "when instantiating a generic lambda!");
+-    RebuildLambdaScopeInfo(cast<CXXMethodDecl>(D), *this);
++    RebuildLambdaScopeInfo(cast<CXXMethodDecl>(D));
+   } else {
+     // Enter a new function scope
+     PushFunctionScope();
+diff --git clang/lib/Sema/SemaExpr.cpp clang/lib/Sema/SemaExpr.cpp
+index 34284a8d9381..ac6c3ba6b357 100644
+--- clang/lib/Sema/SemaExpr.cpp
++++ clang/lib/Sema/SemaExpr.cpp
+@@ -19722,13 +19722,6 @@ bool Sema::tryCaptureVariable(
+         FunctionScopesIndex == MaxFunctionScopesIndex && VarDC == DC)
+       return true;
+ 
+-    // When evaluating some attributes (like enable_if) we might refer to a
+-    // function parameter appertaining to the same declaration as that
+-    // attribute.
+-    if (const auto *Parm = dyn_cast<ParmVarDecl>(Var);
+-        Parm && Parm->getDeclContext() == DC)
+-      return true;
+-
+     // Only block literals, captured statements, and lambda expressions can
+     // capture; other scopes don't work.
+     DeclContext *ParentDC =
+@@ -19756,6 +19749,14 @@ bool Sema::tryCaptureVariable(
+       CSI->getCapture(Var).markUsed(BuildAndDiagnose);
+       break;
+     }
++
++    // When evaluating some attributes (like enable_if) we might refer to a
++    // function parameter appertaining to the same declaration as that
++    // attribute.
++    if (const auto *Parm = dyn_cast<ParmVarDecl>(Var);
++        Parm && Parm->getDeclContext() == DC)
++      return true;
++
+     // If we are instantiating a generic lambda call operator body,
+     // we do not want to capture new variables.  What was captured
+     // during either a lambdas transformation or initial parsing
+diff --git clang/test/SemaCXX/lambda-capture-type-deduction.cpp clang/test/SemaCXX/lambda-capture-type-deduction.cpp
+index e524d3bc20ab..9855122c9627 100644
+--- clang/test/SemaCXX/lambda-capture-type-deduction.cpp
++++ clang/test/SemaCXX/lambda-capture-type-deduction.cpp
+@@ -246,3 +246,17 @@ void check_params_tpl() {
+     static_assert(is_same<int&, decltype((ap))>);
+   };
+ }
++
++namespace GH61267 {
++template <typename> concept C = true;
++
++template<typename>
++void f(int) {
++  int i;
++  [i]<C P>(P) {}(0);
++  i = 4;
++}
++
++void test() { f<int>(0);  }
++
++}
