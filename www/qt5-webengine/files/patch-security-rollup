@@ -4,6 +4,17 @@ Addresses the following security issues:
 - CVE-2023-6347
 - CVE-2023-6510
 - Security bug 1488199
+- CVE-2023-6345
+- CVE-2023-6702
+- Security bug 1505632
+- CVE-2024-0222
+- CVE-2024-0333
+- CVE-2024-0518
+- CVE-2024-0519
+- Security bug 1506535
+- CVE-2023-7024
+- CVE-2024-0224
+- Security bug 1511689
 
 From 8ca846140881c9480b18bc9645b38fb9ea565ea3 Mon Sep 17 00:00:00 2001
 From: Ken Rockot <rockot@google.com>
@@ -720,3 +731,1190 @@ index 1e5342dd42e..aaab0c52344 100644
    // CheckStackGuardState needs the end and start addresses of the input string.
    __ Poke(input_end(), 2 * kSystemPointerSize);
    __ Add(x5, sp, 2 * kSystemPointerSize);
+From 7eb931bc199e72fbf95aed22c9dd370269862c6c Mon Sep 17 00:00:00 2001
+From: Michal Klocek <michal.klocek@qt.io>
+Date: Mon, 8 Jan 2024 11:23:07 +0100
+Subject: [PATCH] [Backport] CVE-2023-6345: Integer overflow in Skia
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Cherry-pick of patch originally reviewed on
+https://skia-review.googlesource.com/c/skia/+/782936:
+Avoid combining extremely large meshes.
+
+Bug: chromium:1505053
+
+Fixes: QTBUG-120589
+Change-Id: I42f2ff872bbf054686ec7af0cc85ff63055fcfbf
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/528729
+Reviewed-by: Michael Brüning <michael.bruning@qt.io>
+---
+ chromium/third_party/skia/src/gpu/ops/GrDrawVerticesOp.cpp | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/skia/src/gpu/ops/GrDrawVerticesOp.cpp b/chromium/third_party/skia/src/gpu/ops/GrDrawVerticesOp.cpp
+index 0a80e674325f..e50293b4dfe9 100644
+--- src/3rdparty/chromium/third_party/skia/src/gpu/ops/GrDrawVerticesOp.cpp
++++ src/3rdparty/chromium/third_party/skia/src/gpu/ops/GrDrawVerticesOp.cpp
+@@ -757,7 +757,11 @@ GrOp::CombineResult DrawVerticesOp::onCombineIfPossible(GrOp* t, GrRecordingCont
+         return CombineResult::kCannotCombine;
+     }
+ 
+-    if (fVertexCount + that->fVertexCount > SkTo<int>(UINT16_MAX)) {
++    if (fVertexCount > INT32_MAX - that->fVertexCount) {
++        return CombineResult::kCannotCombine;
++    }
++
++    if (fVertexCount > SkTo<int>(UINT16_MAX) - that->fVertexCount) {
+         return CombineResult::kCannotCombine;
+     }
+ 
+From 31c7c9445955762102fdcd04e71da6114e1fcb4c Mon Sep 17 00:00:00 2001
+From: Zakhar Voit <voit@google.com>
+Date: Thu, 14 Dec 2023 11:11:43 +0000
+Subject: [PATCH] [Backport] CVE-2023-6702: Type Confusion in V8
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/5110982:
+[M114-LTS][promises, async stack traces] Fix the case when the closure has run
+
+M114 changes:
+- replace IsNativeContext(*context) by context->IsNativeContext()
+
+We were using the closure pointing to NativeContext as a marker that the
+closure has run, but async stack trace code was confused about it.
+
+(cherry picked from commit bde3d360097607f36cd1d17cbe8412b84eae0a7f)
+
+Bug: chromium:1501326
+Change-Id: I30d438f3b2e3fdd7562ea9a79dde4561ce9b0083
+Cr-Original-Commit-Position: refs/heads/main@{#90949}
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5110982
+Commit-Queue: Marja Hölttä <marja@chromium.org>
+Auto-Submit: Marja Hölttä <marja@chromium.org>
+Cr-Commit-Position: refs/branch-heads/12.0@{#18}
+Cr-Branched-From: ed7b4caf1fb8184ad9e24346c84424055d4d430a-refs/heads/12.0.267@{#1}
+Cr-Branched-From: 210e75b19db4352c9b78dce0bae11c2dc3077df4-refs/heads/main@{#90651}
+(cherry picked from commit cbd09b2ca928f1fd929ef52e173aa81213e38cb8)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526232
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/v8/src/execution/isolate.cc | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/v8/src/execution/isolate.cc b/chromium/v8/src/execution/isolate.cc
+index c1c3bd1b24a6..99b851ef96d7 100644
+--- src/3rdparty/chromium/v8/src/execution/isolate.cc
++++ src/3rdparty/chromium/v8/src/execution/isolate.cc
+@@ -944,7 +944,13 @@ void CaptureAsyncStackTrace(Isolate* isolate, Handle<JSPromise> promise,
+       builder->AppendPromiseCombinatorFrame(function, combinator,
+                                             FrameArray::kIsPromiseAll, context);
+ 
+-      // Now peak into the Promise.all() resolve element context to
++      if (context->IsNativeContext()) {
++        // NativeContext is used as a marker that the closure was already
++        // called. We can't access the reject element context any more.
++        return;
++      }
++
++      // Now peek into the Promise.all() resolve element context to
+       // find the promise capability that's being resolved when all
+       // the concurrent promises resolve.
+       int const index =
+@@ -963,7 +969,13 @@ void CaptureAsyncStackTrace(Isolate* isolate, Handle<JSPromise> promise,
+       builder->AppendPromiseCombinatorFrame(function, combinator,
+                                             FrameArray::kIsPromiseAny, context);
+ 
+-      // Now peak into the Promise.any() reject element context to
++      if (context->IsNativeContext()) {
++        // NativeContext is used as a marker that the closure was already
++        // called. We can't access the reject element context any more.
++        return;
++      }
++
++      // Now peek into the Promise.any() reject element context to
+       // find the promise capability that's being resolved when any of
+       // the concurrent promises resolve.
+       int const index = PromiseBuiltins::kPromiseAnyRejectElementCapabilitySlot;
+From 73c9c09a8b314b8c66bbe3d2648d6bfe18d5d4a8 Mon Sep 17 00:00:00 2001
+From: Kai Ninomiya <kainino@chromium.org>
+Date: Wed, 29 Nov 2023 17:44:48 +0000
+Subject: [PATCH] [Backport] Security bug 1505632
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5069480:
+Fix reinit order in ContextProviderCommandBuffer::BindToCurrentSequence
+
+See comments for explanation.
+
+Bug: 1505632
+Change-Id: I0f43821a9708af91303048332e9fae5e100deee5
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5069480
+Reviewed-by: Saifuddin Hitawala <hitawala@chromium.org>
+Commit-Queue: Kai Ninomiya <kainino@chromium.org>
+Reviewed-by: Brendon Tiszka <tiszka@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1230735}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/526233
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../gpu/context_provider_command_buffer.cc    | 24 +++++++++----
+ .../cpp/gpu/context_provider_command_buffer.h | 34 ++++++++++++++++---
+ 2 files changed, 47 insertions(+), 11 deletions(-)
+
+diff --git a/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc b/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc
+index e8b9ff4983d4..d79b97fd3748 100644
+--- src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc
++++ src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.cc
+@@ -164,13 +164,13 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+     }
+ 
+     // The transfer buffer is used to serialize Dawn commands
+-    transfer_buffer_ =
++    auto transfer_buffer =
+         std::make_unique<gpu::TransferBuffer>(webgpu_helper.get());
+ 
+     // The WebGPUImplementation exposes the WebGPUInterface, as well as the
+     // gpu::ContextSupport interface.
+     auto webgpu_impl = std::make_unique<gpu::webgpu::WebGPUImplementation>(
+-        webgpu_helper.get(), transfer_buffer_.get(), command_buffer_.get());
++        webgpu_helper.get(), transfer_buffer.get(), command_buffer_.get());
+     bind_result_ = webgpu_impl->Initialize(memory_limits_);
+     if (bind_result_ != gpu::ContextResult::kSuccess) {
+       DLOG(ERROR) << "Failed to initialize WebGPUImplementation.";
+@@ -182,8 +182,11 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+     std::string unique_context_name =
+         base::StringPrintf("%s-%p", type_name.c_str(), webgpu_impl.get());
+ 
++    // IMPORTANT: These hold raw_ptrs to each other, so must be set together.
++    // See note in the header (and keep it up to date if things change).
+     impl_ = webgpu_impl.get();
+     webgpu_interface_ = std::move(webgpu_impl);
++    transfer_buffer_ = std::move(transfer_buffer);
+     helper_ = std::move(webgpu_helper);
+   } else if (attributes_.enable_raster_interface &&
+              !attributes_.enable_gles2_interface &&
+@@ -201,14 +204,14 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+     }
+     // The transfer buffer is used to copy resources between the client
+     // process and the GPU process.
+-    transfer_buffer_ =
++    auto transfer_buffer =
+         std::make_unique<gpu::TransferBuffer>(raster_helper.get());
+ 
+     // The RasterImplementation exposes the RasterInterface, as well as the
+     // gpu::ContextSupport interface.
+     DCHECK(channel_);
+     auto raster_impl = std::make_unique<gpu::raster::RasterImplementation>(
+-        raster_helper.get(), transfer_buffer_.get(),
++        raster_helper.get(), transfer_buffer.get(),
+         attributes_.bind_generates_resource,
+         attributes_.lose_context_when_out_of_memory, command_buffer_.get(),
+         channel_->image_decode_accelerator_proxy());
+@@ -225,8 +228,11 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+     raster_impl->TraceBeginCHROMIUM("gpu_toplevel",
+                                     unique_context_name.c_str());
+ 
++    // IMPORTANT: These hold raw_ptrs to each other, so must be set together.
++    // See note in the header (and keep it up to date if things change).
+     impl_ = raster_impl.get();
+     raster_interface_ = std::move(raster_impl);
++    transfer_buffer_ = std::move(transfer_buffer);
+     helper_ = std::move(raster_helper);
+   } else {
+     // The GLES2 helper writes the command buffer protocol.
+@@ -241,7 +247,7 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+ 
+     // The transfer buffer is used to copy resources between the client
+     // process and the GPU process.
+-    transfer_buffer_ =
++    auto transfer_buffer =
+         std::make_unique<gpu::TransferBuffer>(gles2_helper.get());
+ 
+     // The GLES2Implementation exposes the OpenGLES2 API, as well as the
+@@ -254,13 +260,13 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+       // we only use it if grcontext_support was requested.
+       gles2_impl = std::make_unique<
+           skia_bindings::GLES2ImplementationWithGrContextSupport>(
+-          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer_.get(),
++          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer.get(),
+           attributes_.bind_generates_resource,
+           attributes_.lose_context_when_out_of_memory,
+           support_client_side_arrays, command_buffer_.get());
+     } else {
+       gles2_impl = std::make_unique<gpu::gles2::GLES2Implementation>(
+-          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer_.get(),
++          gles2_helper.get(), /*share_group=*/nullptr, transfer_buffer.get(),
+           attributes_.bind_generates_resource,
+           attributes_.lose_context_when_out_of_memory,
+           support_client_side_arrays, command_buffer_.get());
+@@ -271,8 +277,11 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+       return bind_result_;
+     }
+ 
++    // IMPORTANT: These hold raw_ptrs to each other, so must be set together.
++    // See note in the header (and keep it up to date if things change).
+     impl_ = gles2_impl.get();
+     gles2_impl_ = std::move(gles2_impl);
++    transfer_buffer_ = std::move(transfer_buffer);
+     helper_ = std::move(gles2_helper);
+   }
+ 
+@@ -306,6 +315,7 @@ gpu::ContextResult ContextProviderCommandBuffer::BindToCurrentThread() {
+             switches::kEnableGpuClientTracing)) {
+       // This wraps the real GLES2Implementation and we should always use this
+       // instead when it's present.
++      // IMPORTANT: This holds a raw_ptr to gles2_impl_.
+       trace_impl_ = std::make_unique<gpu::gles2::GLES2TraceImplementation>(
+           gles2_impl_.get());
+       gl = trace_impl_.get();
+diff --git a/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h b/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
+index 22d80baf765b..9a867177048e 100644
+--- src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
++++ src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
+@@ -156,18 +156,44 @@ class ContextProviderCommandBuffer
+   // associated shared images are destroyed.
+   std::unique_ptr<gpu::ClientSharedImageInterface> shared_image_interface_;
+ 
+-  base::Lock context_lock_;  // Referenced by command_buffer_.
++  //////////////////////////////////////////////////////////////////////////////
++  // IMPORTANT NOTE: All of the objects in this block are part of a complex   //
++  // graph of raw pointers (holder or pointee of various raw_ptrs). They are  //
++  // defined in topological order: only later items point to earlier items.   //
++  // - When writing any member, always ensure its pointers to earlier members
++  //   are guaranteed to stay alive.
++  // - When clearing OR overwriting any member, always ensure objects that
++  //   point to it have already been cleared.
++  //     - The topological order of definitions guarantees that the
++  //       destructors will be called in the correct order (bottom to top).
++  //     - When overwriting multiple members, similarly do so in reverse order.
++  //
++  // Please note these comments are likely not to stay perfectly up-to-date.
++
++  base::Lock context_lock_;
++  // Points to the context_lock_ field of `this`.
+   std::unique_ptr<gpu::CommandBufferProxyImpl> command_buffer_;
++
++  // Points to command_buffer_.
+   std::unique_ptr<gpu::CommandBufferHelper> helper_;
++  // Points to helper_.
+   std::unique_ptr<gpu::TransferBuffer> transfer_buffer_;
+ 
+-  // Owned by either gles2_impl_ or raster_interface_, not both.
+-  gpu::ImplementationBase* impl_;
++  // Points to transfer_buffer_, helper_, and command_buffer_.
+   std::unique_ptr<gpu::gles2::GLES2Implementation> gles2_impl_;
++  // Points to gles2_impl_.
+   std::unique_ptr<gpu::gles2::GLES2TraceImplementation> trace_impl_;
+-  std::unique_ptr<gpu::raster::RasterInterface> raster_interface_;
++  // Points to transfer_buffer_, helper_, and command_buffer_.
++   std::unique_ptr<gpu::raster::RasterInterface> raster_interface_;
++  // Points to transfer_buffer_, helper_, and command_buffer_.
+   std::unique_ptr<gpu::webgpu::WebGPUInterface> webgpu_interface_;
+ 
++  // END IMPORTANT NOTE                                                       //
++  //////////////////////////////////////////////////////////////////////////////
++
++  // Owned by either gles2_impl_ or raster_interface_, not both.
++  gpu::ImplementationBase* impl_;
++
+   std::unique_ptr<skia_bindings::GrContextForGLES2Interface> gr_context_;
+ #if BUILDFLAG(SKIA_USE_DAWN)
+   std::unique_ptr<skia_bindings::GrContextForWebGPUInterface>
+From 2d8ce130db72ce75e2ca8b51f3c32938fbff9143 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20Br=C3=BCning?= <michael.bruning@qt.io>
+Date: Mon, 8 Jan 2024 15:39:03 +0100
+Subject: [PATCH] Fixup: [Backport] Security bug 1505632
+
+Change-Id: I8af12a1fecededb373145fd89362e08b030f1d7f
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/528821
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../viz/public/cpp/gpu/context_provider_command_buffer.h        | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h b/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
+index 9a867177048..0ac70dae7e9 100644
+--- src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
++++ src/3rdparty/chromium/services/viz/public/cpp/gpu/context_provider_command_buffer.h
+@@ -192,7 +192,7 @@ class ContextProviderCommandBuffer
+   //////////////////////////////////////////////////////////////////////////////
+ 
+   // Owned by either gles2_impl_ or raster_interface_, not both.
+-  gpu::ImplementationBase* impl_;
++  gpu::ImplementationBase* impl_ = nullptr;
+ 
+   std::unique_ptr<skia_bindings::GrContextForGLES2Interface> gr_context_;
+ #if BUILDFLAG(SKIA_USE_DAWN)
+From c8088aea77818f87d42f709ddcb743b907c38e9c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20Br=C3=BCning?= <michael.bruning@qt.io>
+Date: Sun, 14 Jan 2024 23:48:08 +0100
+Subject: [PATCH] Fixup: [Backport] Security bug 1488199
+
+Add register aliases following respective platform calling
+conventions. Also fix a typo.
+
+Change-Id: I8f844cd4db35393580f2a0adae6a4095584087a5
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/530618
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ chromium/v8/src/codegen/arm/register-arm.h               | 6 ++++++
+ chromium/v8/src/codegen/arm64/register-arm64.h           | 6 ++++++
+ chromium/v8/src/codegen/mips64/register-mips64.h         | 6 ++++++
+ chromium/v8/src/codegen/ppc/register-ppc.h               | 6 ++++++
+ chromium/v8/src/codegen/s390/register-s390.h             | 6 ++++++
+ chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc | 4 ++--
+ 6 files changed, 32 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/v8/src/codegen/arm/register-arm.h b/chromium/v8/src/codegen/arm/register-arm.h
+index 6cb6c602c254..8deddc5804b1 100644
+--- src/3rdparty/chromium/v8/src/codegen/arm/register-arm.h
++++ src/3rdparty/chromium/v8/src/codegen/arm/register-arm.h
+@@ -119,6 +119,12 @@ GENERAL_REGISTERS(DECLARE_REGISTER)
+ #undef DECLARE_REGISTER
+ constexpr Register no_reg = Register::no_reg();
+ 
++// ARM calling convention
++constexpr Register arg_reg_1 = r0;
++constexpr Register arg_reg_2 = r1;
++constexpr Register arg_reg_3 = r2;
++constexpr Register arg_reg_4 = r3;
++
+ constexpr bool kPadArguments = false;
+ constexpr bool kSimpleFPAliasing = false;
+ constexpr bool kSimdMaskRegisters = false;
+diff --git a/chromium/v8/src/codegen/arm64/register-arm64.h b/chromium/v8/src/codegen/arm64/register-arm64.h
+index fbbb0a18dadf..06026a065bbf 100644
+--- src/3rdparty/chromium/v8/src/codegen/arm64/register-arm64.h
++++ src/3rdparty/chromium/v8/src/codegen/arm64/register-arm64.h
+@@ -482,6 +482,12 @@ ALIAS_REGISTER(VRegister, fp_scratch2, d31);
+ 
+ #undef ALIAS_REGISTER
+ 
++// Arm64 calling convention
++constexpr Register arg_reg_1 = x0;
++constexpr Register arg_reg_2 = x1;
++constexpr Register arg_reg_3 = x2;
++constexpr Register arg_reg_4 = x3;
++
+ // AreAliased returns true if any of the named registers overlap. Arguments set
+ // to NoReg are ignored. The system stack pointer may be specified.
+ V8_EXPORT_PRIVATE bool AreAliased(
+diff --git a/chromium/v8/src/codegen/mips64/register-mips64.h b/chromium/v8/src/codegen/mips64/register-mips64.h
+index d7b45eda3838..05aba9fcbd2f 100644
+--- src/3rdparty/chromium/v8/src/codegen/mips64/register-mips64.h
++++ src/3rdparty/chromium/v8/src/codegen/mips64/register-mips64.h
+@@ -362,6 +362,12 @@ DEFINE_REGISTER_NAMES(FPURegister, DOUBLE_REGISTERS)
+ DEFINE_REGISTER_NAMES(MSARegister, SIMD128_REGISTERS)
+ 
+ // Give alias names to registers for calling conventions.
++
++constexpr Register arg_reg_1 = a0;
++constexpr Register arg_reg_2 = a1;
++constexpr Register arg_reg_3 = a2;
++constexpr Register arg_reg_4 = a3;
++
+ constexpr Register kReturnRegister0 = v0;
+ constexpr Register kReturnRegister1 = v1;
+ constexpr Register kReturnRegister2 = a0;
+diff --git a/chromium/v8/src/codegen/ppc/register-ppc.h b/chromium/v8/src/codegen/ppc/register-ppc.h
+index eded9622c4cc..352b95192023 100644
+--- src/3rdparty/chromium/v8/src/codegen/ppc/register-ppc.h
++++ src/3rdparty/chromium/v8/src/codegen/ppc/register-ppc.h
+@@ -209,6 +209,12 @@ constexpr Register kConstantPoolRegister = r28;  // Constant pool.
+ constexpr Register kRootRegister = r29;          // Roots array pointer.
+ constexpr Register cp = r30;                     // JavaScript context pointer.
+ 
++// PPC64 calling convention
++constexpr Register arg_reg_1 = r3;
++constexpr Register arg_reg_2 = r4;
++constexpr Register arg_reg_3 = r5;
++constexpr Register arg_reg_4 = r6;
++
+ constexpr bool kPadArguments = false;
+ constexpr bool kSimpleFPAliasing = true;
+ constexpr bool kSimdMaskRegisters = false;
+diff --git a/chromium/v8/src/codegen/s390/register-s390.h b/chromium/v8/src/codegen/s390/register-s390.h
+index 009248a65ca0..6904802d0150 100644
+--- src/3rdparty/chromium/v8/src/codegen/s390/register-s390.h
++++ src/3rdparty/chromium/v8/src/codegen/s390/register-s390.h
+@@ -167,6 +167,12 @@ constexpr Register no_reg = Register::no_reg();
+ constexpr Register kRootRegister = r10;  // Roots array pointer.
+ constexpr Register cp = r13;             // JavaScript context pointer.
+ 
++// s390x calling convention
++constexpr Register arg_reg_1 = r2;
++constexpr Register arg_reg_2 = r3;
++constexpr Register arg_reg_3 = r4;
++constexpr Register arg_reg_4 = r5;
++
+ constexpr bool kPadArguments = false;
+ constexpr bool kSimpleFPAliasing = true;
+ constexpr bool kSimdMaskRegisters = false;
+diff --git a/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc b/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
+index 099fc62fa07b..5580b24308a7 100644
+--- src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
++++ src/3rdparty/chromium/v8/src/regexp/arm/regexp-macro-assembler-arm.cc
+@@ -1059,9 +1059,9 @@ void RegExpMacroAssemblerARM::CallCheckStackGuardState(Operand extra_space) {
+   // Extra space for variables to consider in stack check.
+   __ mov(arg_reg_4, extra_space);
+   // RegExp code frame pointer.
+-  __ mov(arg_reg3, frame_pointer());
++  __ mov(arg_reg_3, frame_pointer());
+   // Code of self.
+-  __ mov(arg_reg2, Operand(masm_->CodeObject()));
++  __ mov(arg_reg_2, Operand(masm_->CodeObject()));
+ 
+   // We need to make room for the return address on the stack.
+   int stack_alignment = base::OS::ActivationFrameAlignment();
+From aac73f3a715655476ce5b347a9614d1ca0ba9b93 Mon Sep 17 00:00:00 2001
+From: Shahbaz Youssefi <syoussefi@chromium.org>
+Date: Tue, 5 Dec 2023 13:36:53 -0500
+Subject: [PATCH] [Backport] CVE-2024-0222: Use after free in ANGLE
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/angle/angle/+/5143829:
+M120: Vulkan: Don't crash when glCopyTexImage2D redefines itself
+
+The Vulkan backend marks a level being redefined as such before doing
+the copy.  If a single-level texture was being redefined, it releases it
+so it can be immediately reallocated.  If the source of the copy is the
+same texture, this causes a crash.
+
+This can be properly supported by using a temp image to do the copy, but
+that is not implemented in this change.
+
+Bug: chromium:1501798
+Change-Id: I3a902b1e9eec41afd385d9c75a8c95dc986070a8
+Reviewed-on: https://chromium-review.googlesource.com/c/angle/angle/+/5143829
+Reviewed-by: Cody Northrop <cnorthrop@google.com>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532069
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../libANGLE/renderer/vulkan/TextureVk.cpp    | 23 ++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp b/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp
+index 1950375b9b19..a098da4bfd33 100644
+--- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp
++++ src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/TextureVk.cpp
+@@ -466,8 +466,28 @@ angle::Result TextureVk::copyImage(const gl::Context *context,
+         gl::GetInternalFormatInfo(internalFormat, GL_UNSIGNED_BYTE);
+     const vk::Format &vkFormat = renderer->getFormat(internalFormatInfo.sizedInternalFormat);
+ 
++    // The texture level being redefined might be the same as the one bound to the framebuffer.
++    // This _could_ be supported by using a temp image before redefining the level (and potentially
++    // discarding the image).  However, this is currently unimplemented.
++    FramebufferVk *framebufferVk = vk::GetImpl(source);
++    RenderTargetVk *colorReadRT  = framebufferVk->getColorReadRenderTarget();
++    vk::ImageHelper *srcImage    = &colorReadRT->getImageForCopy();
++    const bool isCubeMap         = index.getType() == gl::TextureType::CubeMap;
++    gl::LevelIndex levelIndex(getNativeImageIndex(index).getLevelIndex());
++    const uint32_t layerIndex    = index.hasLayer() ? index.getLayerIndex() : 0;
++    const uint32_t redefinedFace = isCubeMap ? layerIndex : 0;
++    const uint32_t sourceFace    = isCubeMap ? colorReadRT->getLayerIndex() : 0;
++    const bool isSelfCopy = mImage == srcImage && levelIndex == colorReadRT->getLevelIndex() &&
++                            redefinedFace == sourceFace;
++
+     ANGLE_TRY(redefineLevel(context, index, vkFormat, newImageSize));
+ 
++    if (isSelfCopy)
++    {
++        UNIMPLEMENTED();
++        return angle::Result::Continue;
++    }
++
+     return copySubImageImpl(context, index, gl::Offset(0, 0, 0), sourceArea, internalFormatInfo,
+                             source);
+ }
+@@ -1393,7 +1413,8 @@ angle::Result TextureVk::redefineLevel(const gl::Context *context,
+                 mImage->getLevelCount() == 1 && mImage->getBaseLevel() == levelIndexGL;
+ 
+             // If incompatible, and redefining the single-level image, release it so it can be
+-            // recreated immediately.  This is an optimization to avoid an extra copy.
++            // recreated immediately.  This is needed so that the texture can be reallocated with
++            // the correct format/size.
+             if (!isCompatibleRedefinition && isUpdateToSingleLevelImage)
+             {
+                 releaseImage(contextVk);
+From b3bd93f5093ceef2bcf0c2346a2b761455ab842a Mon Sep 17 00:00:00 2001
+From: Joshua Pawlicki <waffles@chromium.org>
+Date: Wed, 20 Dec 2023 22:33:06 +0000
+Subject: [PATCH] [Backport] CVE-2024-0333: Insufficient data validation in
+ Extensions
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5141787:
+crx_file: Error early for CRXs with ZIP markers in header.
+
+Bug: 1513379
+Change-Id: I029b4f15778df0c150866b1f49a9b5b2924690ed
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5141787
+Commit-Queue: Joshua Pawlicki <waffles@chromium.org>
+Auto-Submit: Joshua Pawlicki <waffles@chromium.org>
+Code-Coverage: findit-for-me@appspot.gserviceaccount.com <findit-for-me@appspot.gserviceaccount.com>
+Commit-Queue: Sorin Jianu <sorin@chromium.org>
+Reviewed-by: Sorin Jianu <sorin@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1239849}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532070
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/components/crx_file/crx_verifier.cc | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/chromium/components/crx_file/crx_verifier.cc b/chromium/components/crx_file/crx_verifier.cc
+index cbd7d777b6a6..d03cadb150db 100644
+--- src/3rdparty/chromium/components/crx_file/crx_verifier.cc
++++ src/3rdparty/chromium/components/crx_file/crx_verifier.cc
+@@ -4,6 +4,7 @@
+ 
+ #include "components/crx_file/crx_verifier.h"
+ 
++#include <algorithm>
+ #include <cstring>
+ #include <iterator>
+ #include <memory>
+@@ -44,6 +45,9 @@ constexpr uint8_t kPublisherTestKeyHash[] = {
+     0x5f, 0x64, 0xf3, 0xa6, 0x17, 0x03, 0x0d, 0xde, 0x21, 0x61, 0xbe,
+     0xb7, 0x95, 0x91, 0x95, 0x83, 0x68, 0x12, 0xe9, 0x78, 0x1e};
+ 
++constexpr uint8_t kEocd[] = {'P', 'K', 0x05, 0x06};
++constexpr uint8_t kEocd64[] = {'P', 'K', 0x06, 0x07};
++
+ using VerifierCollection =
+     std::vector<std::unique_ptr<crypto::SignatureVerifier>>;
+ using RepeatedProof = google::protobuf::RepeatedPtrField<AsymmetricKeyProof>;
+@@ -109,6 +113,18 @@ VerifierResult VerifyCrx3(
+   if (ReadAndHashBuffer(header_bytes.data(), header_size, file, hash) !=
+       static_cast<int>(header_size))
+     return VerifierResult::ERROR_HEADER_INVALID;
++
++  // If the header contains a ZIP EOCD or EOCD64 token, unzipping may not work
++  // correctly.
++  if (std::search(std::begin(header_bytes), std::end(header_bytes),
++                  std::begin(kEocd),
++                  std::end(kEocd)) != std::end(header_bytes) ||
++      std::search(std::begin(header_bytes), std::end(header_bytes),
++                  std::begin(kEocd64),
++                  std::end(kEocd64)) != std::end(header_bytes)) {
++    return VerifierResult::ERROR_HEADER_INVALID;
++  }
++
+   CrxFileHeader header;
+   if (!header.ParseFromArray(header_bytes.data(), header_size))
+     return VerifierResult::ERROR_HEADER_INVALID;
+From 520c290ba211017b31324cc9f361c0388433616a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Dominik=20Inf=C3=BChr?= <dinfuehr@chromium.org>
+Date: Mon, 18 Dec 2023 09:15:00 +0100
+Subject: [PATCH] [Backport] CVE-2024-0518: Type Confusion in V8
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/5125960:
+[codegen] Install BytecodeArray last in SharedFunctionInfo
+
+Maglev assumes that when a SharedFunctionInfo has a BytecodeArray,
+then it should also have FeedbackMetadata. However, this may not
+hold with concurrent compilation when the SharedFunctionInfo is
+re-compiled after being flushed. Here the BytecodeArray was installed
+on the SFI before the FeedbackMetadata and a concurrent thread could
+observe the BytecodeArray but not the FeedbackMetadata.
+
+Drive-by: Reset the age field before setting the BytecodeArray as
+well. This ensures that the concurrent marker will not observe the
+old age for the new BytecodeArray.
+
+Bug: chromium:1507412
+Change-Id: I8855ed7ecc50c4a47d2c89043d62ac053858bc75
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5125960
+Reviewed-by: Leszek Swirski <leszeks@chromium.org>
+Commit-Queue: Dominik Inführ <dinfuehr@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#91568}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532071
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ chromium/v8/src/codegen/compiler.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/v8/src/codegen/compiler.cc b/chromium/v8/src/codegen/compiler.cc
+index f09658ebdf62..f963b0d92684 100644
+--- src/3rdparty/chromium/v8/src/codegen/compiler.cc
++++ src/3rdparty/chromium/v8/src/codegen/compiler.cc
+@@ -543,11 +543,11 @@ void InstallUnoptimizedCode(UnoptimizedCompilationInfo* compilation_info,
+       shared_info->set_is_asm_wasm_broken(true);
+     }
+ 
+-    shared_info->set_bytecode_array(*compilation_info->bytecode_array());
+-
+     Handle<FeedbackMetadata> feedback_metadata = FeedbackMetadata::New(
+         isolate, compilation_info->feedback_vector_spec());
+     shared_info->set_feedback_metadata(*feedback_metadata);
++
++    shared_info->set_bytecode_array(*compilation_info->bytecode_array());
+   } else {
+     DCHECK(compilation_info->has_asm_wasm_data());
+     // We should only have asm/wasm data when finalizing on the main thread.
+From 6fb8d851a5048e85877ae33b1800c122c8cd034d Mon Sep 17 00:00:00 2001
+From: Toon Verwaest <verwaest@chromium.org>
+Date: Thu, 11 Jan 2024 10:47:17 +0100
+Subject: [PATCH] [Backport] CVE-2024-0519: Out of bounds memory access in V8
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/v8/v8/+/5192447:
+Merged: [runtime] Drop fast last-property deletion
+
+This interacts badly with other optimizations and isn't particularly
+common.
+
+Bug: chromium:1517354
+(cherry picked from commit 389ea9be7d68bb189e16da79f6414edbd4f7594f)
+
+Change-Id: Ie16aa38e8984c4879491c0d9a0ca9df0e041fd1d
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5192447
+Auto-Submit: Toon Verwaest <verwaest@chromium.org>
+Reviewed-by: Leszek Swirski <leszeks@chromium.org>
+Cr-Commit-Position: refs/branch-heads/12.0@{#32}
+Cr-Branched-From: ed7b4caf1fb8184ad9e24346c84424055d4d430a-refs/heads/12.0.267@{#1}
+Cr-Branched-From: 210e75b19db4352c9b78dce0bae11c2dc3077df4-refs/heads/main@{#90651}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532072
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ chromium/v8/src/runtime/runtime-object.cc | 160 ----------------------
+ 1 file changed, 160 deletions(-)
+
+diff --git a/chromium/v8/src/runtime/runtime-object.cc b/chromium/v8/src/runtime/runtime-object.cc
+index bd5d23dce45f..075bc0c665d3 100644
+--- src/3rdparty/chromium/v8/src/runtime/runtime-object.cc
++++ src/3rdparty/chromium/v8/src/runtime/runtime-object.cc
+@@ -92,170 +92,10 @@ MaybeHandle<Object> Runtime::HasProperty(Isolate* isolate,
+                           : ReadOnlyRoots(isolate).false_value_handle();
+ }
+ 
+-namespace {
+-
+-void GeneralizeAllTransitionsToFieldAsMutable(Isolate* isolate, Handle<Map> map,
+-                                              Handle<Name> name) {
+-  InternalIndex descriptor(map->NumberOfOwnDescriptors());
+-
+-  Handle<Map> target_maps[kPropertyAttributesCombinationsCount];
+-  int target_maps_count = 0;
+-
+-  // Collect all outgoing field transitions.
+-  {
+-    DisallowHeapAllocation no_gc;
+-    TransitionsAccessor transitions(isolate, *map, &no_gc);
+-    transitions.ForEachTransitionTo(
+-        *name,
+-        [&](Map target) {
+-          DCHECK_EQ(descriptor, target.LastAdded());
+-          DCHECK_EQ(*name, target.GetLastDescriptorName(isolate));
+-          PropertyDetails details = target.GetLastDescriptorDetails(isolate);
+-          // Currently, we track constness only for fields.
+-          if (details.kind() == kData &&
+-              details.constness() == PropertyConstness::kConst) {
+-            target_maps[target_maps_count++] = handle(target, isolate);
+-          }
+-          DCHECK_IMPLIES(details.kind() == kAccessor,
+-                         details.constness() == PropertyConstness::kConst);
+-        },
+-        &no_gc);
+-    CHECK_LE(target_maps_count, kPropertyAttributesCombinationsCount);
+-  }
+-
+-  for (int i = 0; i < target_maps_count; i++) {
+-    Handle<Map> target = target_maps[i];
+-    PropertyDetails details =
+-        target->instance_descriptors(isolate)
+-            .GetDetails(descriptor);
+-    Handle<FieldType> field_type(
+-        target->instance_descriptors(isolate)
+-            .GetFieldType(descriptor),
+-        isolate);
+-    Map::GeneralizeField(isolate, target, descriptor,
+-                         PropertyConstness::kMutable, details.representation(),
+-                         field_type);
+-    DCHECK_EQ(PropertyConstness::kMutable,
+-              target->instance_descriptors(isolate)
+-                  .GetDetails(descriptor)
+-                  .constness());
+-  }
+-}
+-
+-bool DeleteObjectPropertyFast(Isolate* isolate, Handle<JSReceiver> receiver,
+-                              Handle<Object> raw_key) {
+-  // This implements a special case for fast property deletion: when the
+-  // last property in an object is deleted, then instead of normalizing
+-  // the properties, we can undo the last map transition, with a few
+-  // prerequisites:
+-  // (1) The receiver must be a regular object and the key a unique name.
+-  Handle<Map> receiver_map(receiver->map(), isolate);
+-  if (receiver_map->IsSpecialReceiverMap()) return false;
+-  DCHECK(receiver_map->IsJSObjectMap());
+-
+-  if (!raw_key->IsUniqueName()) return false;
+-  Handle<Name> key = Handle<Name>::cast(raw_key);
+-  // (2) The property to be deleted must be the last property.
+-  int nof = receiver_map->NumberOfOwnDescriptors();
+-  if (nof == 0) return false;
+-  InternalIndex descriptor(nof - 1);
+-  Handle<DescriptorArray> descriptors(receiver_map->instance_descriptors(),
+-                                      isolate);
+-  if (descriptors->GetKey(descriptor) != *key) return false;
+-  // (3) The property to be deleted must be deletable.
+-  PropertyDetails details = descriptors->GetDetails(descriptor);
+-  if (!details.IsConfigurable()) return false;
+-  // (4) The map must have a back pointer.
+-  Handle<Object> backpointer(receiver_map->GetBackPointer(), isolate);
+-  if (!backpointer->IsMap()) return false;
+-  Handle<Map> parent_map = Handle<Map>::cast(backpointer);
+-  // (5) The last transition must have been caused by adding a property
+-  // (and not any kind of special transition).
+-  if (parent_map->NumberOfOwnDescriptors() != nof - 1) return false;
+-
+-  // Preconditions successful. No more bailouts after this point.
+-
+-  // Zap the property to avoid keeping objects alive. Zapping is not necessary
+-  // for properties stored in the descriptor array.
+-  if (details.location() == kField) {
+-    DisallowHeapAllocation no_allocation;
+-
+-    // Invalidate slots manually later in case we delete an in-object tagged
+-    // property. In this case we might later store an untagged value in the
+-    // recorded slot.
+-    isolate->heap()->NotifyObjectLayoutChange(*receiver, no_allocation,
+-                                              InvalidateRecordedSlots::kNo);
+-    FieldIndex index =
+-        FieldIndex::ForPropertyIndex(*receiver_map, details.field_index());
+-    // Special case deleting the last out-of object property.
+-    if (!index.is_inobject() && index.outobject_array_index() == 0) {
+-      DCHECK(!parent_map->HasOutOfObjectProperties());
+-      // Clear out the properties backing store.
+-      receiver->SetProperties(ReadOnlyRoots(isolate).empty_fixed_array());
+-    } else {
+-      Object filler = ReadOnlyRoots(isolate).one_pointer_filler_map();
+-      JSObject::cast(*receiver).RawFastPropertyAtPut(index, filler);
+-      // We must clear any recorded slot for the deleted property, because
+-      // subsequent object modifications might put a raw double there.
+-      // Slot clearing is the reason why this entire function cannot currently
+-      // be implemented in the DeleteProperty stub.
+-      if (index.is_inobject() && !receiver_map->IsUnboxedDoubleField(index)) {
+-        // We need to clear the recorded slot in this case because in-object
+-        // slack tracking might not be finished. This ensures that we don't
+-        // have recorded slots in free space.
+-        isolate->heap()->ClearRecordedSlot(*receiver,
+-                                           receiver->RawField(index.offset()));
+-        MemoryChunk* chunk = MemoryChunk::FromHeapObject(*receiver);
+-        chunk->InvalidateRecordedSlots(*receiver);
+-      }
+-    }
+-  }
+-  // If the {receiver_map} was marked stable before, then there could be
+-  // optimized code that depends on the assumption that no object that
+-  // reached this {receiver_map} transitions away from it without triggering
+-  // the "deoptimize dependent code" mechanism.
+-  receiver_map->NotifyLeafMapLayoutChange(isolate);
+-  // Finally, perform the map rollback.
+-  receiver->synchronized_set_map(*parent_map);
+-#if VERIFY_HEAP
+-  receiver->HeapObjectVerify(isolate);
+-  receiver->property_array().PropertyArrayVerify(isolate);
+-#endif
+-
+-  // If the {descriptor} was "const" so far, we need to update the
+-  // {receiver_map} here, otherwise we could get the constants wrong, i.e.
+-  //
+-  //   o.x = 1;
+-  //   [change o.x's attributes or reconfigure property kind]
+-  //   delete o.x;
+-  //   o.x = 2;
+-  //
+-  // could trick V8 into thinking that `o.x` is still 1 even after the second
+-  // assignment.
+-
+-  // Step 1: Migrate object to an up-to-date shape.
+-  if (parent_map->is_deprecated()) {
+-    JSObject::MigrateInstance(isolate, Handle<JSObject>::cast(receiver));
+-    parent_map = handle(receiver->map(), isolate);
+-  }
+-
+-  // Step 2: Mark outgoing transitions from the up-to-date version of the
+-  // parent_map to same property name of any kind or attributes as mutable.
+-  // Also migrate object to the up-to-date map to make the object shapes
+-  // converge sooner.
+-  GeneralizeAllTransitionsToFieldAsMutable(isolate, parent_map, key);
+-
+-  return true;
+-}
+-
+-}  // namespace
+-
+ Maybe<bool> Runtime::DeleteObjectProperty(Isolate* isolate,
+                                           Handle<JSReceiver> receiver,
+                                           Handle<Object> key,
+                                           LanguageMode language_mode) {
+-  if (DeleteObjectPropertyFast(isolate, receiver, key)) return Just(true);
+-
+   bool success = false;
+   LookupIterator::Key lookup_key(isolate, key, &success);
+   if (!success) return Nothing<bool>();
+From 1dbdcfd64885f0dc034e73dacf6ef4e20f8351bf Mon Sep 17 00:00:00 2001
+From: Mike Wasserman <msw@chromium.org>
+Date: Tue, 9 Jan 2024 01:07:39 +0000
+Subject: [PATCH] [Backport] Security bug 1506535
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5146875:
+[M120 merge] Speculative fix for UAF in content::WebContentsImpl::ExitFullscreenMode
+
+(cherry picked from commit c1cda70a433a0c625b280eb88ed6ff4f4feffa12)
+
+Bug: 1506535, 854815
+Change-Id: Iace64d63f8cea2dbfbc761ad233db42451ec101c
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5146875
+Commit-Queue: John Abd-El-Malek <jam@chromium.org>
+Auto-Submit: Mike Wasserman <msw@chromium.org>
+Reviewed-by: John Abd-El-Malek <jam@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1240353}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5178801
+Cr-Commit-Position: refs/branch-heads/6099@{#1727}
+Cr-Branched-From: e6ee4500f7d6549a9ac1354f8d056da49ef406be-refs/heads/main@{#1217362}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532073
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/content/browser/web_contents/web_contents_impl.cc | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/chromium/content/browser/web_contents/web_contents_impl.cc b/chromium/content/browser/web_contents/web_contents_impl.cc
+index 0627170ed036..23d4268a1b67 100644
+--- src/3rdparty/chromium/content/browser/web_contents/web_contents_impl.cc
++++ src/3rdparty/chromium/content/browser/web_contents/web_contents_impl.cc
+@@ -3278,7 +3278,12 @@ void WebContentsImpl::ExitFullscreenMode(bool will_cause_resize) {
+   }
+ 
+   if (delegate_) {
++    // This may spin the message loop and destroy this object crbug.com/1506535
++    base::WeakPtr<WebContentsImpl> weak_ptr = weak_factory_.GetWeakPtr();
+     delegate_->ExitFullscreenModeForTab(this);
++    if (!weak_ptr) {
++      return;
++    }
+ 
+     if (keyboard_lock_widget_)
+       delegate_->CancelKeyboardLockRequest(this);
+From 1c6050c84b2a8bd14a96787ca845a3aec0d87a4f Mon Sep 17 00:00:00 2001
+From: Gustaf Ullberg <gustaf@chromium.org>
+Date: Tue, 19 Dec 2023 18:08:19 +0000
+Subject: [PATCH] [Backport] CVE-2023-7024: Heap buffer overflow in WebRTC
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5136295:
+WebRtcAudioSink: Stop on invalid configuration
+
+Bug: 1513170
+Change-Id: Ia4ca55e9eafb81789b28b8b8c54e615ac28df633
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5136295
+Reviewed-by: Harald Alvestrand <hta@chromium.org>
+Commit-Queue: Gustaf Ullberg <gustaf@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1239233}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532066
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../blink/renderer/platform/peerconnection/webrtc_audio_sink.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc b/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc
+index a0f2c5e8005f..0542a9a7d4c0 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/peerconnection/webrtc_audio_sink.cc
+@@ -115,7 +115,7 @@ void WebRtcAudioSink::OnData(const media::AudioBus& audio_bus,
+ }
+ 
+ void WebRtcAudioSink::OnSetFormat(const media::AudioParameters& params) {
+-  DCHECK(params.IsValid());
++  CHECK(params.IsValid());
+   SendLogMessage(base::StringPrintf("OnSetFormat([label=%s] {params=[%s]})",
+                                     adapter_->label().c_str(),
+                                     params.AsHumanReadableString().c_str()));
+From 525ae23fbd019ab819a2f7e26e43bfce4ee79c51 Mon Sep 17 00:00:00 2001
+From: Hongchan Choi <hongchan@chromium.org>
+Date: Tue, 12 Dec 2023 02:36:08 +0000
+Subject: [PATCH] [Backport] CVE-2024-0224: Use after free in WebAudio
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5112992:
+Wrap buffer read index in delay kernel
+
+The current code assumes that the first buffer read index in the delay
+kernel does not go out of bound. This CL applies the wrapping function
+to the read index array.
+
+(cherry picked from commit fb96fd5f41bec823dbb208d9a7d53fbbf4d16ce4)
+
+Bug: 1505086
+Test: Locally confirmed the repro does not crash anymore
+Change-Id: Idca3dfc7dec5b5a7f9b22d87135e2d775729631a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5072113
+Commit-Queue: Hongchan Choi <hongchan@chromium.org>
+Reviewed-by: Michael Wilson <mjwilson@chromium.org>
+Cr-Original-Commit-Position: refs/heads/main@{#1231040}
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5112992
+Auto-Submit: Hongchan Choi <hongchan@chromium.org>
+Commit-Queue: Rubber Stamper <rubber-stamper@appspot.gserviceaccount.com>
+Bot-Commit: Rubber Stamper <rubber-stamper@appspot.gserviceaccount.com>
+Cr-Commit-Position: refs/branch-heads/6099@{#1498}
+Cr-Branched-From: e6ee4500f7d6549a9ac1354f8d056da49ef406be-refs/heads/main@{#1217362}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532067
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../renderer/platform/audio/audio_delay_dsp_kernel.cc  |  2 +-
+ .../audio/cpu/arm/audio_delay_dsp_kernel_neon.cc       |  7 +++++--
+ .../audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc       | 10 +++++++---
+ 3 files changed, 13 insertions(+), 6 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc b/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc
+index 25818dcf2aa7..c34118e953ac 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/audio/audio_delay_dsp_kernel.cc
+@@ -150,7 +150,7 @@ int AudioDelayDSPKernel::ProcessARateScalar(unsigned start,
+   const float* delay_times = delay_times_.Data();
+ 
+   for (unsigned i = start; i < frames_to_process; ++i) {
+-    double delay_time = delay_times[i];
++    double delay_time = std::fmax(delay_times[i], 0);
+     double desired_delay_frames = delay_time * sample_rate;
+ 
+     double read_position = w_index + buffer_length - desired_delay_frames;
+diff --git a/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc b/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc
+index 2843bd60b8ba..803f3e724423 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/arm/audio_delay_dsp_kernel_neon.cc
+@@ -60,6 +60,7 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+   int w_index = write_index_;
+ 
+   const float32x4_t v_sample_rate = vdupq_n_f32(sample_rate);
++  const float32x4_t v_all_zeros = vdupq_n_f32(0);
+ 
+   // The buffer length as a float and as an int so we don't need to constant
+   // convert from one to the other.
+@@ -87,7 +88,8 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+   int k = 0;
+ 
+   for (int n = 0; n < number_of_loops; ++n, k += 4) {
+-    const float32x4_t v_delay_time = vld1q_f32(delay_times + k);
++    const float32x4_t v_delay_time = vmaxq_f32(vld1q_f32(delay_times + k),
++                                               v_all_zeros);
+     const float32x4_t v_desired_delay_frames =
+         vmulq_f32(v_delay_time, v_sample_rate);
+ 
+@@ -100,7 +102,8 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+         WrapPositionVector(v_read_position, v_buffer_length_float);
+ 
+     // Get indices into the buffer for the samples we need for interpolation.
+-    const int32x4_t v_read_index1 = vcvtq_s32_f32(v_read_position);
++    const int32x4_t v_read_index1 = WrapIndexVector(
++        vcvtq_s32_f32(v_read_position), v_buffer_length_int);
+     const int32x4_t v_read_index2 = WrapIndexVector(
+         vaddq_s32(v_read_index1, vdupq_n_s32(1)), v_buffer_length_int);
+ 
+diff --git a/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc b/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc
+index fe2aef95aeda..dd368ee4b0f4 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/audio/cpu/x86/audio_delay_dsp_kernel_sse2.cc
+@@ -56,10 +56,10 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+ 
+   const float sample_rate = this->SampleRate();
+   const float* delay_times = delay_times_.Data();
+-
+   int w_index = write_index_;
+ 
+   const __m128 v_sample_rate = _mm_set1_ps(sample_rate);
++  const __m128 v_all_zeros = _mm_setzero_ps();
+ 
+   // The buffer length as a float and as an int so we don't need to constant
+   // convert from one to the other.
+@@ -82,7 +82,10 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+   int k = 0;
+ 
+   for (int n = 0; n < number_of_loops; ++n, k += 4) {
+-    const __m128 v_delay_time = _mm_loadu_ps(delay_times + k);
++    // It's possible that `delay_time` contains negative values. Make sure
++    // they are greater than zero.
++    const __m128 v_delay_time = _mm_max_ps(_mm_loadu_ps(delay_times + k),
++                                           v_all_zeros);
+     const __m128 v_desired_delay_frames =
+         _mm_mul_ps(v_delay_time, v_sample_rate);
+ 
+@@ -95,7 +98,8 @@ std::tuple<unsigned, int> AudioDelayDSPKernel::ProcessARateVector(
+         WrapPositionVector(v_read_position, v_buffer_length_float);
+ 
+     // Get indices into the buffer for the samples we need for interpolation.
+-    const __m128i v_read_index1 = _mm_cvttps_epi32(v_read_position);
++    const __m128i v_read_index1 = WrapIndexVector(
++        _mm_cvttps_epi32(v_read_position), v_buffer_length_int);
+     const __m128i v_read_index2 = WrapIndexVector(
+         _mm_add_epi32(v_read_index1, _mm_set1_epi32(1)), v_buffer_length_int);
+ 
+From c96132ccf271137bbd3f5b1a8c9c172650e69526 Mon Sep 17 00:00:00 2001
+From: Evan Stade <estade@chromium.org>
+Date: Fri, 15 Dec 2023 21:38:02 +0000
+Subject: [PATCH] [Backport] Security bug 1511689
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/deps/sqlite/+/5123910:
+Fix a spurious "misuse of aggregate function" error that could occur when an aggregate function was used within the FROM clause of a sub-select of the select that owns the aggregate. e.g. "SELECT (SELECT x FROM (SELECT sum(t1.a) AS x)) FROM t1". [forum:/forumpost/c9970a37ed | Forum post c9970a37ed].
+
+FossilOrigin-Name: 4470f657d2069972d02a00983252dec1f814d90c0d8d0906e320e955111e8c11
+(cherry picked from commit 5e4233a9e48b124d4d342b757b34e4ae849f5cf8)
+
+Bug: 1511689
+Change-Id: I69263fc0a5fa66df5c09b964864568f2fc7a6ca5
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/deps/sqlite/+/5123910
+Auto-Submit: Evan Stade <estade@chromium.org>
+Commit-Queue: Ayu Ishii <ayui@chromium.org>
+Reviewed-by: Ayu Ishii <ayui@chromium.org>
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/532068
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/third_party/sqlite/src/amalgamation/sqlite3.c     | 6 +++++-
+ chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c | 6 +++++-
+ chromium/third_party/sqlite/src/src/resolve.c              | 7 +++++--
+ chromium/third_party/sqlite/src/src/sqliteInt.h            | 1 +
+ 4 files changed, 16 insertions(+), 4 deletions(-)
+
+diff --git a/chromium/third_party/sqlite/src/amalgamation/sqlite3.c b/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
+index d7766b7d7ec..b353aa88348 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
++++ src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
+@@ -18804,6 +18804,7 @@ struct NameContext {
+   int nRef;            /* Number of names resolved by this context */
+   int nNcErr;          /* Number of errors encountered while resolving names */
+   int ncFlags;         /* Zero or more NC_* flags defined below */
++  int nNestedSelect;   /* Number of nested selects using this NC */
+   Select *pWinSelect;  /* SELECT statement for any window functions */
+ };
+ 
+@@ -104749,11 +104750,12 @@ static int resolveExprStep(Walker *pWalker, Expr *pExpr){
+           while( pNC2
+               && sqlite3ReferencesSrcList(pParse, pExpr, pNC2->pSrcList)==0
+           ){
+-            pExpr->op2++;
++            pExpr->op2 += (1 + pNC2->nNestedSelect);
+             pNC2 = pNC2->pNext;
+           }
+           assert( pDef!=0 || IN_RENAME_OBJECT );
+           if( pNC2 && pDef ){
++            pExpr->op2 += pNC2->nNestedSelect;
+             assert( SQLITE_FUNC_MINMAX==NC_MinMaxAgg );
+             assert( SQLITE_FUNC_ANYORDER==NC_OrderAgg );
+             testcase( (pDef->funcFlags & SQLITE_FUNC_MINMAX)!=0 );
+@@ -105314,6 +105316,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+ 
+     /* Recursively resolve names in all subqueries in the FROM clause
+     */
++    if( pOuterNC ) pOuterNC->nNestedSelect++;
+     for(i=0; i<p->pSrc->nSrc; i++){
+       SrcItem *pItem = &p->pSrc->a[i];
+       if( pItem->pSelect && (pItem->pSelect->selFlags & SF_Resolved)==0 ){
+@@ -105338,6 +105341,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+         }
+       }
+     }
++    if( pOuterNC ) pOuterNC->nNestedSelect--;
+ 
+     /* Set up the local name-context to pass to sqlite3ResolveExprNames() to
+     ** resolve the result-set expression list.
+diff --git a/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c b/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c
+index 0819ea6a615..5c72a44dd6b 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c
++++ src/3rdparty/chromium/third_party/sqlite/src/amalgamation_dev/sqlite3.c
+@@ -18817,6 +18817,7 @@ struct NameContext {
+   int nRef;            /* Number of names resolved by this context */
+   int nNcErr;          /* Number of errors encountered while resolving names */
+   int ncFlags;         /* Zero or more NC_* flags defined below */
++  int nNestedSelect;   /* Number of nested selects using this NC */
+   Select *pWinSelect;  /* SELECT statement for any window functions */
+ };
+ 
+@@ -104762,11 +104763,12 @@ static int resolveExprStep(Walker *pWalker, Expr *pExpr){
+           while( pNC2
+               && sqlite3ReferencesSrcList(pParse, pExpr, pNC2->pSrcList)==0
+           ){
+-            pExpr->op2++;
++            pExpr->op2 += (1 + pNC2->nNestedSelect);
+             pNC2 = pNC2->pNext;
+           }
+           assert( pDef!=0 || IN_RENAME_OBJECT );
+           if( pNC2 && pDef ){
++            pExpr->op2 += pNC2->nNestedSelect;
+             assert( SQLITE_FUNC_MINMAX==NC_MinMaxAgg );
+             assert( SQLITE_FUNC_ANYORDER==NC_OrderAgg );
+             testcase( (pDef->funcFlags & SQLITE_FUNC_MINMAX)!=0 );
+@@ -105327,6 +105329,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+ 
+     /* Recursively resolve names in all subqueries in the FROM clause
+     */
++    if( pOuterNC ) pOuterNC->nNestedSelect++;
+     for(i=0; i<p->pSrc->nSrc; i++){
+       SrcItem *pItem = &p->pSrc->a[i];
+       if( pItem->pSelect && (pItem->pSelect->selFlags & SF_Resolved)==0 ){
+@@ -105351,6 +105354,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+         }
+       }
+     }
++    if( pOuterNC ) pOuterNC->nNestedSelect--;
+ 
+     /* Set up the local name-context to pass to sqlite3ResolveExprNames() to
+     ** resolve the result-set expression list.
+diff --git a/chromium/third_party/sqlite/src/src/resolve.c b/chromium/third_party/sqlite/src/src/resolve.c
+index 4b36ecca348..c5228a7f097 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/src/resolve.c
++++ src/3rdparty/chromium/third_party/sqlite/src/src/resolve.c
+@@ -1211,11 +1211,12 @@ static int resolveExprStep(Walker *pWalker, Expr *pExpr){
+           while( pNC2 
+               && sqlite3ReferencesSrcList(pParse, pExpr, pNC2->pSrcList)==0
+           ){
+-            pExpr->op2++;
++            pExpr->op2 += (1 + pNC2->nNestedSelect);
+             pNC2 = pNC2->pNext;
+           }
+           assert( pDef!=0 || IN_RENAME_OBJECT );
+           if( pNC2 && pDef ){
++            pExpr->op2 += pNC2->nNestedSelect;
+             assert( SQLITE_FUNC_MINMAX==NC_MinMaxAgg );
+             assert( SQLITE_FUNC_ANYORDER==NC_OrderAgg );
+             testcase( (pDef->funcFlags & SQLITE_FUNC_MINMAX)!=0 );
+@@ -1776,6 +1777,7 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+   
+     /* Recursively resolve names in all subqueries in the FROM clause
+     */
++    if( pOuterNC ) pOuterNC->nNestedSelect++;
+     for(i=0; i<p->pSrc->nSrc; i++){
+       SrcItem *pItem = &p->pSrc->a[i];
+       if( pItem->pSelect && (pItem->pSelect->selFlags & SF_Resolved)==0 ){
+@@ -1800,7 +1802,8 @@ static int resolveSelectStep(Walker *pWalker, Select *p){
+         }
+       }
+     }
+-  
++    if( pOuterNC ) pOuterNC->nNestedSelect--;
++
+     /* Set up the local name-context to pass to sqlite3ResolveExprNames() to
+     ** resolve the result-set expression list.
+     */
+diff --git a/chromium/third_party/sqlite/src/src/sqliteInt.h b/chromium/third_party/sqlite/src/src/sqliteInt.h
+index 2614f4be458..07bc4def106 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/src/sqliteInt.h
++++ src/3rdparty/chromium/third_party/sqlite/src/src/sqliteInt.h
+@@ -3321,6 +3321,7 @@ struct NameContext {
+   int nRef;            /* Number of names resolved by this context */
+   int nNcErr;          /* Number of errors encountered while resolving names */
+   int ncFlags;         /* Zero or more NC_* flags defined below */
++  int nNestedSelect;   /* Number of nested selects using this NC */
+   Select *pWinSelect;  /* SELECT statement for any window functions */
+ };
+ 
