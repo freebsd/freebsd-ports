@@ -1,6 +1,6 @@
 PORTNAME=	tasksh
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 

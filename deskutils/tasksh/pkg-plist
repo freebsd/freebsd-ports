@@ -1,5 +1,5 @@
 bin/tasksh
-man/man1/tasksh.1.gz
+share/man/man1/tasksh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
