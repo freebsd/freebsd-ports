@@ -1,6 +1,6 @@
 PORTNAME=	libzmq2
 DISTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/zeromq/zeromq2-x/releases/download/${DISTVERSIONFULL}/zeromq-2.2.0.tar.gz
 DISTNAME=	zeromq-${DISTVERSION}
@@ -19,6 +19,7 @@ USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
