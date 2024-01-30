@@ -1,3 +1,6 @@
+%%EXAMPLES%%@@examples@@bin/libdecor-c++-demo
+%%EXAMPLES%%@@examples@@bin/libdecor-demo
+%%EXAMPLES%%@@examples@@bin/libdecor-egl
 include/libdecor-0/libdecor.h
 lib/libdecor-0.so
 lib/libdecor-0.so.0

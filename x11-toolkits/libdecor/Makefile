@@ -1,6 +1,6 @@
 PORTNAME=	libdecor
 DISTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,9 +17,8 @@ USES=		meson pkgconfig
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-MESON_ARGS=	-Ddemo=false
 
-OPTIONS_DEFINE=	CAIRO DBUS GTK3
+OPTIONS_DEFINE=	EXAMPLES CAIRO DBUS GTK3
 OPTIONS_DEFAULT=CAIRO DBUS GTK3
 OPTIONS_SUB=	yes
 
@@ -34,8 +33,18 @@ SELF_DEPENDS.cairo=	main
 
 # Unused by the main library
 LIB_DEPENDS.cairo+=	${"${PORT_OPTIONS:MDBUS}":?libdbus-1.so\:devel/dbus:}
+LIB_DEPENDS.examples+=	${"${PORT_OPTIONS:MDBUS}":?libdbus-1.so\:devel/dbus:}
 LIB_DEPENDS.gtk3+=	${"${PORT_OPTIONS:MDBUS}":?libdbus-1.so\:devel/dbus:}
 DBUS_MESON_ENABLED=	dbus
+
+EXAMPLES_SUBPACKAGES=	examples
+EXAMPLES_MESON_TRUE=	demo install_demo
+EXAMPLES_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+LIB_DEPENDS.examples+=	libxkbcommon.so:x11/libxkbcommon
+#USES.examples=		gl
+#USE_GL.examples=	egl opengl
+LIB_DEPENDS.examples+=	libEGL.so:graphics/libglvnd
+SELF_DEPENDS.examples=	main
 
 GTK3_SUBPACKAGES=	gtk3
 GTK3_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
