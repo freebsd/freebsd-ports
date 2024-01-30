@@ -1,3 +1,103 @@
+  <vuln vid="a25b323a-bed9-11ee-bdd6-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.6.1_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=112-based">
+	  <p>Backports for 15 security bugs in Chromium:</p>
+	  <ul>
+	    <li>[1505053] High CVE-2023-6345: Integer overflow in Skia</li>
+	    <li>[1500856] High CVE-2023-6346: Use after free in WebAudio</li>
+	    <li>[1494461] High CVE-2023-6347: Use after free in Mojo</li>
+	    <li>[1501326] High CVE-2023-6702: Type Confusion in V8</li>
+	    <li>[1502102] High CVE-2023-6703: Use after free in Blink</li>
+	    <li>[1505708] High CVE-2023-6705: Use after free in WebRTC</li>
+	    <li>[1500921] High CVE-2023-6706: Use after free in FedCM</li>
+	    <li>[1513170] High CVE-2023-7024: Heap buffer overflow in WebRTC</li>
+	    <li>[1501798] High CVE-2024-0222: Use after free in ANGLE</li>
+	    <li>[1505009] High CVE-2024-0223: Heap buffer overflow in ANGLE</li>
+	    <li>[1505086] High CVE-2024-0224: Use after free in WebAudio</li>
+	    <li>[1506923] High CVE-2024-0225: Use after free in WebGPU</li>
+	    <li>[1513379] High CVE-2024-0333: Insufficient data validation in Extensions</li>
+	    <li>[1507412] High CVE-2024-0518: Type Confusion in V8</li>
+	    <li>[1517354] High CVE-2024-0519: Out of bounds memory access in V8</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6345</cvename>
+      <cvename>CVE-2023-6346</cvename>
+      <cvename>CVE-2023-6347</cvename>
+      <cvename>CVE-2023-6702</cvename>
+      <cvename>CVE-2023-6703</cvename>
+      <cvename>CVE-2023-6705</cvename>
+      <cvename>CVE-2023-6706</cvename>
+      <cvename>CVE-2023-7024</cvename>
+      <cvename>CVE-2024-0222</cvename>
+      <cvename>CVE-2024-0223</cvename>
+      <cvename>CVE-2024-0224</cvename>
+      <cvename>CVE-2024-0225</cvename>
+      <cvename>CVE-2024-0333</cvename>
+      <cvename>CVE-2024-0518</cvename>
+      <cvename>CVE-2024-0519</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=112-based</url>
+    </references>
+    <dates>
+      <discovery>2024-01-08</discovery>
+      <entry>2024-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a11e7dd1-bed4-11ee-bdd6-4ccc6adda413">
+    <topic>qt5-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.16.p5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 8 security bugs in Chromium:</p>
+	  <ul>
+	    <li>[1505053] High CVE-2023-6345: Integer overflow in Skia</li>
+	    <li>[1501326] High CVE-2023-6702: Type Confusion in V8</li>
+	    <li>[1513170] High CVE-2023-7024: Heap buffer overflow in WebRTC</li>
+	    <li>[1501798] High CVE-2024-0222: Use after free in ANGLE</li>
+	    <li>[1505086] High CVE-2024-0224: Use after free in WebAudio</li>
+	    <li>[1513379] High CVE-2024-0333: Insufficient data validation in Extensions</li>
+	    <li>[1507412] High CVE-2024-0518: Type Confusion in V8</li>
+	    <li>[1517354] High CVE-2024-0519: Out of bounds memory access in V8</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6345</cvename>
+      <cvename>CVE-2023-6702</cvename>
+      <cvename>CVE-2023-7024</cvename>
+      <cvename>CVE-2024-0222</cvename>
+      <cvename>CVE-2024-0224</cvename>
+      <cvename>CVE-2024-0333</cvename>
+      <cvename>CVE-2024-0518</cvename>
+      <cvename>CVE-2024-0519</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-01-08</discovery>
+      <entry>2024-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b5e22ec5-bc4b-11ee-b0b5-b42e991fc52e">
     <topic>rclone -- Multiple vulnerabilities</topic>
     <affects>
