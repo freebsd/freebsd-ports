@@ -1,6 +1,6 @@
---- contrib/slapd-modules/smbk5pwd/Makefile.orig	2021-06-03 18:40:31 UTC
+--- contrib/slapd-modules/smbk5pwd/Makefile.orig	2024-01-29 18:52:23 UTC
 +++ contrib/slapd-modules/smbk5pwd/Makefile
-@@ -21,8 +21,8 @@ LDAP_LIB = $(LDAP_BUILD)/libraries/libldap_r/libldap_r
+@@ -21,8 +21,8 @@ SSL_LIB = -lcrypto
  SSL_INC = 
  SSL_LIB = -lcrypto
  
@@ -9,5 +9,5 @@
 +HEIMDAL_INC = -I/usr/include
 +HEIMDAL_LIB = -L/usr/lib -lkrb5 -lkadm5srv
  
- LIBTOOL = $(LDAP_BUILD)/libtool
- CC = gcc
+ PLAT = UNIX
+ NT_LIB = -L$(LDAP_BUILD)/servers/slapd -lslapd
