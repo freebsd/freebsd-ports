@@ -15,5 +15,5 @@ lib/libpfq_socket.so.0.0.0
 lib/libpfqueue.so
 lib/libpfqueue.so.0
 lib/libpfqueue.so.0.0.0
-man/man1/pfqueue.1.gz
-man/man5/pfqueue.conf.5.gz
+share/man/man1/pfqueue.1.gz
+share/man/man5/pfqueue.conf.5.gz
