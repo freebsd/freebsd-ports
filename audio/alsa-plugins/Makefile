@@ -1,6 +1,6 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/plugins/
 
@@ -20,22 +20,27 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
 
 OPTIONS_DEFINE=		FFMPEG JACK PULSEAUDIO SAMPLERATE SPEEX
-OPTIONS_DEFAULT=	PULSEAUDIO
+OPTIONS_DEFAULT=	FFMPEG JACK PULSEAUDIO SAMPLERATE SPEEX
 OPTIONS_SUB=		yes
 
-FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
+FFMPEG_SUBPACKAGES=		ffmpeg
+LIB_DEPENDS.ffmpeg=		${LIB_DEPENDS} libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	libav
 
-JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_SUBPACKAGES=	jack
+LIB_DEPENDS.jack=	${LIB_DEPENDS} libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
 
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_SUBPACKAGES=		pulseaudio
+LIB_DEPENDS.pulseaudio=		${LIB_DEPENDS} libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
-SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:audio/libsamplerate
+SAMPLERATE_SUBPACKAGES=		samplerate
+LIB_DEPENDS.samplerate=		${LIB_DEPENDS} libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
 
-SPEEX_LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
+SPEEX_SUBPACKAGES=	speex
+LIB_DEPENDS.speex=	${LIB_DEPENDS} libspeexdsp.so:audio/speexdsp
 SPEEX_CONFIGURE_ON=	--with-speex=lib
 SPEEX_CONFIGURE_OFF=	--without-speex
 

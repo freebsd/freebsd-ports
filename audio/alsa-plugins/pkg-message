@@ -1,0 +1,13 @@
+[
+{ type: upgrade
+  maximum_version: "1.2.7.1_2"
+  message: <<EOD
+Plugins with extra dependencies moved into subpackages:
+- alsa-plugins-ffmpeg
+- alsa-plugins-jack
+- alsa-plugins-pulseaudio
+- alsa-plugins-samplerate
+- alsa-plugins-speex
+EOD
+}
+]
