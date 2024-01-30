@@ -764,6 +764,7 @@ include/folly/portability/Syslog.h
 include/folly/portability/Time.h
 include/folly/portability/Unistd.h
 include/folly/portability/Windows.h
+include/folly/portability/openat2.h
 include/folly/python/AsyncioExecutor.h
 include/folly/python/async_generator.h
 include/folly/python/coro.h
