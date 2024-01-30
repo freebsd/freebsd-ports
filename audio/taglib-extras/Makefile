@@ -7,6 +7,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra taglib features for Amarok 2.2
 WWW=		http://websvn.kde.org/trunk/kdesupport/taglib-extras/
 
+DEPRECATED=		Incompatible with taglib 2.x and unmaintained upstream since 2015
+EXPIRATION_DATE=	2024-02-14
+
 LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		cmake
