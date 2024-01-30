@@ -1,6 +1,6 @@
 PORTNAME=	scapy
 PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,6 @@ SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
 post-patch:
 	@${RM} ${WRKSRC}/test/__init__.py
-	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} "s,/usr/share/,${LOCALBASE}/share/," \
 		${WRKSRC}/scapy/modules/nmap.py
 	@${REINPLACE_CMD} "s,/etc/,${LOCALBASE}/etc/," \
