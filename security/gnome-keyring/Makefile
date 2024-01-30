@@ -1,6 +1,6 @@
 PORTNAME=	gnome-keyring
 PORTVERSION=	42.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -28,6 +28,7 @@ USES=		compiler:c11 cpe gettext gmake gnome libtool localbase \
 		pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib"
 INSTALL_TARGET=	install-strip
