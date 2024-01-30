@@ -1,5 +1,6 @@
 PORTNAME=	ibus
 PORTVERSION=	1.5.29
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -27,6 +28,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 SHEBANG_GLOB=	*.sh
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
 		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
 		--disable-python2 --disable-python-library \
