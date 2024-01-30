@@ -35,8 +35,7 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
 
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
-			libspeexdsp.so:audio/speexdsp
+SPEEX_LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 SPEEX_CONFIGURE_ON=	--with-speex=lib
 SPEEX_CONFIGURE_OFF=	--without-speex
 
