@@ -1,5 +1,5 @@
 @(,,4511) bin/mrxvt
-man/man1/mrxvt.1.gz
+share/man/man1/mrxvt.1.gz
 share/pixmaps/mrxvt-csh.png
 share/pixmaps/mrxvt-csh.xpm
 share/pixmaps/mrxvt-root.png
