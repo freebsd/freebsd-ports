@@ -8,4 +8,4 @@ bin/tcpsic
 bin/tcpsic6
 bin/udpsic
 bin/udpsic6
-man/man1/isic.1.gz
+share/man/man1/isic.1.gz
