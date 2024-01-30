@@ -1,6 +1,6 @@
 PORTNAME=	libmpeg2
 PORTVERSION=	0.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 
@@ -10,6 +10,7 @@ WWW=		http://libmpeg2.sourceforge.net/
 
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared
