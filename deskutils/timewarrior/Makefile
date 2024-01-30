@@ -1,5 +1,6 @@
 PORTNAME=	timewarrior
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -20,6 +21,6 @@ GH_TUPLE=	GothenburgBitFactory:libshared:47c3262:libshared/src/libshared
 CMAKE_ARGS+=	-DTIMEW_DOCDIR=${DOCSDIR}
 
 post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/man/man1/CMakeFiles ${STAGEDIR}${PREFIX}/man/man7/CMakeFiles
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/man/man1/CMakeFiles ${STAGEDIR}${PREFIX}/share/man/man7/CMakeFiles
 
 .include <bsd.port.mk>
