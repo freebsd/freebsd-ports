@@ -1,5 +1,6 @@
 PORTNAME=	funionfs
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://funionfs.apiou.org/file/
 PKGNAMEPREFIX=	fusefs-
@@ -12,8 +13,9 @@ LICENSE=	GPLv2+
 
 USES=		fuse localbase
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/funionfs man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/funionfs share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^struct unionfs_desc,extern &,' \
