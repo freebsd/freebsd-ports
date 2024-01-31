@@ -1,5 +1,6 @@
 PORTNAME=	regina
 PORTVERSION=	3.9.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-rexx/${PORTNAME}-rexx/${PORTVERSION}:source \
 		SF/${PORTNAME}-rexx/${PORTNAME}-documentation/3.9.1:docs
@@ -19,6 +20,7 @@ USES=		gmake iconv ncurses
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	rxstack
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-addon-dir=${PREFIX}/lib/Regina-REXX/addons
 CONFIGURE_ENV=	ac_cv_c_char_unsigned=yes
 MAKE_JOBS_UNSAFE=	yes
@@ -48,7 +50,7 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKDIR}/regutil.pdf ${STAGEDIR}${DOCSDIR}
 
 post-stage:
-	@${LN} -f ${STAGEDIR}/${PREFIX}/man/man1/regina.1.gz \
-		${STAGEDIR}/${PREFIX}/man/man1/rexx.1.gz
+	@${LN} -f ${STAGEDIR}/${PREFIX}/share/man/man1/regina.1.gz \
+		${STAGEDIR}/${PREFIX}/share/man/man1/rexx.1.gz
 
 .include <bsd.port.mk>
