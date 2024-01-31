@@ -216,13 +216,13 @@ lib/cmake/CycloneDDS/CycloneDDSTargets.cmake
 lib/cmake/CycloneDDS/idlc/Generate.cmake
 lib/libcycloneddsidl.so
 lib/libcycloneddsidl.so.0
-lib/libcycloneddsidl.so.0.10.2
+lib/libcycloneddsidl.so.0.10.4
 lib/libdds_security_ac.so
 lib/libdds_security_auth.so
 lib/libdds_security_crypto.so
 lib/libddsc.so
 lib/libddsc.so.0
-lib/libddsc.so.0.10.2
+lib/libddsc.so.0.10.4
 libdata/pkgconfig/CycloneDDS.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.rst
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md

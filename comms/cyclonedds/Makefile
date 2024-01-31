@@ -1,5 +1,5 @@
 PORTNAME=	CycloneDDS
-DISTVERSION=	0.10.2
+DISTVERSION=	0.10.4
 CATEGORIES=	comms
 
 MAINTAINER=	flo@purplekraken.com
@@ -9,9 +9,9 @@ WWW=		https://cyclonedds.io/
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libiceoryx_posh.so:comms/iceoryx
+LIB_DEPENDS=	libiceoryx_binding_c.so:comms/iceoryx
 
-USES=		bison cmake
+USES=		bison cmake pathfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eclipse-cyclonedds
