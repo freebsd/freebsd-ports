@@ -124,6 +124,7 @@
     SUBDIR += cs-mythes
     SUBDIR += csb-aspell
     SUBDIR += csvdiff
+    SUBDIR += csvlens
     SUBDIR += csvq
     SUBDIR += ctpl
     SUBDIR += ctpp2
