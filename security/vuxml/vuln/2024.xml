@@ -1,3 +1,36 @@
+  <vuln vid="bbcb1584-c068-11ee-bdd6-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.6.1_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=112-based">
+	  <p>Backports for 3 security bugs in Chromium:</p>
+	  <ul>
+	    <li>[1505080] High CVE-2024-0807: Use after free in WebAudio</li>
+	    <li>[1504936] Critical CVE-2024-0808: Integer underflow in WebUI</li>
+	    <li>[1496250] Medium CVE-2024-0810: Insufficient policy enforcement in DevTools</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0807</cvename>
+      <cvename>CVE-2024-0808</cvename>
+      <cvename>CVE-2024-0810</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=112-based</url>
+    </references>
+    <dates>
+      <discovery>2024-01-30</discovery>
+      <entry>2024-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10dee731-c069-11ee-9190-84a93843eb75">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
