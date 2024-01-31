@@ -43,5 +43,8 @@ post-patch:
 		 -e 's/google-chrome/chrome/' \
 		${WRKSRC}/src/dock.c \
 		${WRKSRC}/src/${PORTNAME}.c
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276743
+	@${GREP} -Flr _POSIX_C_SOURCE ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		'/_POSIX_C_SOURCE/d'
 
 .include <bsd.port.mk>
