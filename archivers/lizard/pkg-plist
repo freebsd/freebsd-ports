@@ -3,6 +3,7 @@ bin/lizardcat
 bin/unlizard
 include/lizard_common.h
 include/lizard_compress.h
+include/lizard_decompress.h
 include/lizard_frame.h
 lib/liblizard.a
 lib/liblizard.so
