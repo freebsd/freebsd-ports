@@ -1,4 +1,3 @@
-share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/abbreviations
 %%NO_EMBED_DATA%%%%DATADIR%%/data/bash_completion.tpl
 %%NO_EMBED_DATA%%%%DATADIR%%/data/creole.lua
@@ -155,6 +154,7 @@ share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/lo.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/lt.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/lv.yaml
+%%NO_EMBED_DATA%%%%DATADIR%%/data/translations/nb.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/nl.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/nn.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/no.yaml
