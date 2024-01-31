@@ -1,24 +1,34 @@
---- sendmail/srvrsmtp.c.orig	2021-08-03 10:35:09 UTC
+--- sendmail/srvrsmtp.c.orig	2024-01-31 06:38:32 UTC
 +++ sendmail/srvrsmtp.c
-@@ -940,6 +940,9 @@ smtp(nullserver, d_flags, e)
- #if _FFR_BADRCPT_SHUTDOWN
- 	int n_badrcpts_adj;
+@@ -940,6 +940,9 @@ do								\
+ # define SHOWCMDINREPLY(inp) inp
+ # define SHOWSHRTCMDINREPLY(inp) shortenstring(inp, MAXSHORTSTR)
  #endif
 +#ifdef USE_BLACKLIST
 +	int saved_bl_fd;
 +#endif
  
- 	RESET_AUTH_FAIL_LOG_USER;
- 	SevenBitInput_Saved = SevenBitInput;
-@@ -1442,6 +1445,7 @@ smtp(nullserver, d_flags, e)
- 					  (int) tp.tv_sec +
- 						(tp.tv_usec >= 500000 ? 1 : 0)
+ void
+ smtp(nullserver, d_flags, e)
+@@ -1528,6 +1531,8 @@ smtp(nullserver, d_flags, e)
+ 			/* check if data is on the socket during the pause */
+ 			if ((tp = channel_readable(InChannel, msecs)) != NULL)
+ 			{
++				int fd;
++
+ 				greetcode = "554";
+ 				nullserver = "Command rejected";
+ 				sm_syslog(LOG_INFO, e->e_id,
+@@ -1537,6 +1542,8 @@ smtp(nullserver, d_flags, e)
+ 					  (int) tp->tv_sec +
+ 						(tp->tv_usec >= 500000 ? 1 : 0)
  					 );
++				fd = sm_io_getinfo(InChannel, SM_IO_WHAT_FD, NULL);
 +				BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, fd, "pre-greeting traffic");
  			}
  		}
  	}
-@@ -1544,6 +1548,10 @@ smtp(nullserver, d_flags, e)
+@@ -1655,6 +1662,10 @@ smtp(nullserver, d_flags, e)
  		SmtpPhase = "server cmd read";
  		sm_setproctitle(true, e, "server %s cmd read", CurSmtpClient);
  
@@ -29,7 +39,7 @@
  		/* handle errors */
  		if (sm_io_error(OutChannel) ||
  		    (p = sfgets(inp, sizeof(inp), InChannel,
-@@ -1860,8 +1868,11 @@ smtp(nullserver, d_flags, e)
+@@ -1965,8 +1976,11 @@ smtp(nullserver, d_flags, e)
  #define LOGAUTHFAIL	\
  	do	\
  	{	\
@@ -41,7 +51,7 @@
  		if (LogLevel >= 9)	\
  			sm_syslog(LOG_WARNING, e->e_id,	\
  				  "AUTH failure (%s): %s (%d) %s%s%.*s, relay=%.100s",	\
-@@ -2011,6 +2022,9 @@ smtp(nullserver, d_flags, e)
+@@ -2116,6 +2130,9 @@ smtp(nullserver, d_flags, e)
  			DELAY_CONN("AUTH");
  			if (!sasl_ok || n_mechs <= 0)
  			{
@@ -51,7 +61,7 @@
  				message("503 5.3.3 AUTH not available");
  				break;
  			}
-@@ -3704,10 +3718,17 @@ doquit:
+@@ -3841,10 +3858,17 @@ smtp(nullserver, d_flags, e)
  				**  timeouts for the same connection.
  				*/
  
@@ -69,7 +79,7 @@
  			if (tTd(93, 100))
  			{
  				/* return to handle next connection */
-@@ -3789,7 +3810,10 @@ doquit:
+@@ -3926,7 +3950,10 @@ smtp(nullserver, d_flags, e)
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
@@ -80,7 +90,7 @@
  				message("421 4.7.0 %s Too many bad commands; closing connection",
  					MyHostName);
  
-@@ -3843,6 +3867,9 @@ doquit:
+@@ -3980,6 +4007,9 @@ smtp(nullserver, d_flags, e)
  		}
  #if SASL
  		}
