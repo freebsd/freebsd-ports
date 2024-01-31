@@ -1,7 +1,7 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.1.9
+PORTVERSION=	3.1.10
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	math devel graphics
