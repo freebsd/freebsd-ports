@@ -317,7 +317,6 @@
     SUBDIR += libwww
     SUBDIR += lightsquid
     SUBDIR += lighttpd
-    SUBDIR += lighttpd-mod_h264_streaming
     SUBDIR += limesurvey
     SUBDIR += linklint
     SUBDIR += links

@@ -1,2 +1,0 @@
-@sample etc/lighttpd/conf.d/h264_streaming.conf.sample
-lib/lighttpd/mod_h264_streaming.so
