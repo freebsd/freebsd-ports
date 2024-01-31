@@ -2,15 +2,11 @@
 
 TARGET="$(realpath "$0")"
 
-if [ -z "$WINESERVER" ]
-then
-  if [ -f "${TARGET%/*}/wineserver" ]
-  then
-    export WINESERVER="${TARGET%/*}/wineserver"
-  fi
-  if [ -f "${TARGET%/*}/wineserver32" ]
-  then
+if [ -z "$WINESERVER" ]; then
+  if [ -f "${TARGET%/*}/wineserver32" ]; then
     export WINESERVER="${TARGET%/*}/wineserver32"
+  elif [ -f "${TARGET%/*}/wineserver" ]; then
+    export WINESERVER="${TARGET%/*}/wineserver"
   fi
 fi
 
