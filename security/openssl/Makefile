@@ -1,6 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	3.0.12
-PORTREVISION=	2
+PORTVERSION=	3.0.13
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
