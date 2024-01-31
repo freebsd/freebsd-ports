@@ -1,6 +1,6 @@
 PORTNAME=	zbar
 DISTVERSION=	0.23.90
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	https://linuxtv.org/downloads/zbar/
 
@@ -14,6 +14,7 @@ USES=		autoreconf gettext-tools gmake iconv libtool localbase:ldflags pathfix pk
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-java --without-npapi --without-python \
 		--enable-codes=ean,databar,code128,code93,code39,codabar,i25,qrcode,sqcode,pdf417
 

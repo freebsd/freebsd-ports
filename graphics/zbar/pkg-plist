@@ -40,9 +40,9 @@ lib/libzbar.so.0.3.0
 %%GTK3%%libdata/pkgconfig/zbar-gtk.pc
 %%QT5%%libdata/pkgconfig/zbar-qt.pc
 libdata/pkgconfig/zbar.pc
-%%DOCS%%%%V4L%%man/man1/zbarcam.1.gz
-%%DOCS%%%%GRAPHICSMAGICK%%man/man1/zbarimg.1.gz
-%%DOCS%%%%IMAGEMAGICK%%man/man1/zbarimg.1.gz
+%%DOCS%%%%V4L%%share/man/man1/zbarcam.1.gz
+%%DOCS%%%%GRAPHICSMAGICK%%share/man/man1/zbarimg.1.gz
+%%DOCS%%%%IMAGEMAGICK%%share/man/man1/zbarimg.1.gz
 %%GIR%%share/gir-1.0/ZBar-1.0.gir
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/zbar.mo
 %%NLS%%%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
