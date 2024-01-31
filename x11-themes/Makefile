@@ -2,6 +2,7 @@
 
     SUBDIR += Kvantum
     SUBDIR += adapta-backgrounds
+    SUBDIR += adw-gtk3
     SUBDIR += adapta-gtk-theme
     SUBDIR += adwaita-icon-theme
     SUBDIR += adwaita-qt5
