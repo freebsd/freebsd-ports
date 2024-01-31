@@ -5,7 +5,7 @@
  datarootdir := $(prefix)/share
  docdir := $(datarootdir)/doc/julia
 -mandir := $(datarootdir)/man
-+mandir := $(prefix)/man
++mandir := $(prefix)/share/man
  man1dir := $(mandir)/man1
  includedir := $(prefix)/include
  sysconfdir := $(prefix)/etc
