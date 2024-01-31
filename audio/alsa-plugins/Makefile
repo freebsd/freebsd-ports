@@ -25,7 +25,6 @@ OPTIONS_SUB=		yes
 FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	libav
 
-JACK_IMPLIES=		SAMPLERATE
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
 
