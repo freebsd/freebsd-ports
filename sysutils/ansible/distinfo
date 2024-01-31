@@ -1,3 +1,3 @@
-TIMESTAMP = 1701836360
-SHA256 (ansible-9.1.0.tar.gz) = 5ad94991fb0e0e53a770a9ffcf1b68047f61b2282d948a7d2682ecd8fb8fa1bf
-SIZE (ansible-9.1.0.tar.gz) = 48839908
+TIMESTAMP = 1706674640
+SHA256 (ansible-9.2.0.tar.gz) = a207a4a00a45e5cd178a7f94ca42afe26f23c9d27be49901ea8c45d18a07b7c6
+SIZE (ansible-9.2.0.tar.gz) = 41217761
