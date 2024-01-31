@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.1.30
+DISTVERSION=	2024.1.33
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ansi-str-0.8.0 \
 		ansitok-0.2.0 \
 		anstream-0.6.11 \
-		anstyle-1.0.4 \
+		anstyle-1.0.5 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap_complete-4.4.9 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
-		clap_mangen-0.2.17 \
+		clap_mangen-0.2.18 \
 		color-eyre-0.6.2 \
 		color-print-0.3.5 \
 		color-print-proc-macro-0.3.5 \
@@ -133,13 +133,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
-		indexmap-2.1.0 \
+		indexmap-2.2.1 \
 		indicatif-0.17.7 \
 		indoc-2.0.4 \
 		insta-1.34.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
-		itertools-0.12.0 \
+		itertools-0.12.1 \
 		itoa-1.0.10 \
 		jobserver-0.1.27 \
 		js-sys-0.3.67 \
@@ -226,7 +226,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.21 \
 		serde-1.0.196 \
 		serde_derive-1.0.196 \
-		serde_json-1.0.112 \
+		serde_json-1.0.113 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -244,8 +244,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		strsim-0.10.0 \
-		strum-0.25.0 \
-		strum_macros-0.25.3 \
+		strum-0.26.1 \
+		strum_macros-0.26.1 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.48 \
