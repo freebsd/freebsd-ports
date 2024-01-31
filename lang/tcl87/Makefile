@@ -1,6 +1,6 @@
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${TCL_VERSION} \
 		TCLTK/tcl8_7
@@ -47,6 +47,7 @@ INSTALL_TARGET+=install-libraries \
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tcl${TCL_VER} \
