@@ -1,5 +1,6 @@
 PORTNAME=	vde
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 #MASTER_SITES=	https://github.com/virtualsquare/vde-2/archive/refs/tags/
@@ -23,6 +24,7 @@ GH_PROJECT=	${PORTNAME}-${PKGNAMESUFFIX}
 
 CONFLICTS=	vde
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 MAKE_ENV=	V=1
 MAKE_JOBS_UNSAFE=yes
@@ -42,8 +44,8 @@ post-patch:
 		${WRKSRC}/man/Makefile.am
 
 post-install:
-	${LN} -sf unixcmd.1 ${STAGEDIR}${PREFIX}/man/man1/vdecmd.1
-	${LN} -sf vdeq.1 ${STAGEDIR}${PREFIX}/man/man1/vdeqemu.1
-	${LN} -sf vdeq.1 ${STAGEDIR}${PREFIX}/man/man1/vdekvm.1
+	${LN} -sf unixcmd.1 ${STAGEDIR}${PREFIX}/share/man/man1/vdecmd.1
+	${LN} -sf vdeq.1 ${STAGEDIR}${PREFIX}/share/man/man1/vdeqemu.1
+	${LN} -sf vdeq.1 ${STAGEDIR}${PREFIX}/share/man/man1/vdekvm.1
 
 .include <bsd.port.mk>
