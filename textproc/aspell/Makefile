@@ -12,17 +12,12 @@ WWW=		http://aspell.net/
 LICENSE=	LGPL21
 
 USES=		cpe gmake iconv libtool ncurses perl5 shebangfix
-
-OPTIONS_DEFINE=	NLS DOCS
-OPTIONS_SUB=	yes
-
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
 		--enable-docdir=${DOCSDIR}	\
 		--enable-curses="${NCURSESLIBS}" \
 		--enable-static
-
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/aspell-import
 CPE_VENDOR=	gnu
@@ -32,17 +27,13 @@ VERINST=	${PORTVERSION:R:R}
 SUB_FILES=	aspell.ver
 PLIST_SUB=	VER=${VERINST}
 SUB_LIST=	VERINST=${VERINST}
-INFO=	aspell-dev aspell
+INFO=		aspell aspell-dev
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-.include <bsd.port.options.mk>
-
-# Does not link without at least -O
-.if !defined(CFLAGS) || ${CFLAGS:M-O*} == ""
-CFLAGS+=		-O
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/aspell.ver ${STAGEDIR}${PREFIX}/etc
