@@ -1,6 +1,6 @@
---- userdb/pw2userdb.in.orig	Wed Jul 19 13:55:15 2000
-+++ userdb/pw2userdb.in	Tue Mar  1 21:58:51 2005
-@@ -7,6 +7,8 @@
+--- userdb/pw2userdb.in.orig	2013-08-25 18:57:38 UTC
++++ userdb/pw2userdb.in
+@@ -6,6 +6,8 @@
  # Copyright 1998 - 1999 Double Precision, Inc.  See COPYING for
  # distribution information.
  
@@ -9,7 +9,7 @@
  use Getopt::Long;
  
  #
-@@ -22,42 +24,66 @@
+@@ -21,42 +23,66 @@ $passwd="/etc/passwd" unless $passwd =~ /./;
  	if $vpopuid;
  
  $passwd="/etc/passwd" unless $passwd =~ /./;
@@ -27,20 +27,37 @@
 -	chop if /\n$/;
 -	next if /^#/;
 -	($acct,$passwd,$uid,$gid,$name,$home,$shell)=split( /:/ );
--
++	open(PASSWD, $shadow) || die "$!\n";
+ 
 -	($uid,$gid)=($fixed_uid,$fixed_gid) if $vpopuid;
--
++	while (<PASSWD>)
++	{
++		chop if /\n$/;
++		next if /^#/;
++		($acct,$passwd,$uid,$gid,$class,$change,$expire,$name,$home,$shell)=split( /:/ );
+ 
 -	$PASSWORD{$acct}=$passwd if $passwd ne "x";
 -	$UID{$acct}=$uid;
 -	$GID{$acct}=$gid;
 -	$HOME{$acct}=$home;
 -	$SHELL{$acct}=$shell;
--
++		($uid,$gid)=($fixed_uid,$fixed_gid) if $vpopuid;
++		$name =~ s/\|/./g;      # Just in case
+ 
 -	$name =~ s/\|/./g;	# Just in case
 -	$GECOS{$acct}=$name;
 -}
 -close (PASSWD);
-+	open(PASSWD, $shadow) || die "$!\n";
++		$PASSWORD{$acct}=$passwd;
++		$UID{$acct}=$uid;
++		$GID{$acct}=$gid;
++		$HOME{$acct}=$home;
++		$SHELL{$acct}=$shell;
++		$GECOS{$acct}=$name;
++	}
++	close (PASSWD);
++} else {
++	open(PASSWD, $passwd) || die "$!\n";
  
 -if ( -f $shadow && ! $noshadow)
 -{
@@ -51,26 +68,7 @@
 +		chop if /\n$/;
  		next if /^#/;
 -		($acct,$passwd,$dummy)=split(/:/);
-+		($acct,$passwd,$uid,$gid,$class,$change,$expire,$name,$home,$shell)=split( /:/ );
-+
-+		($uid,$gid)=($fixed_uid,$fixed_gid) if $vpopuid;
-+		$name =~ s/\|/./g;      # Just in case
-+
- 		$PASSWORD{$acct}=$passwd;
-+		$UID{$acct}=$uid;
-+		$GID{$acct}=$gid;
-+		$HOME{$acct}=$home;
-+		$SHELL{$acct}=$shell;
-+		$GECOS{$acct}=$name;
-+	}
-+	close (PASSWD);
-+} else {
-+	open(PASSWD, $passwd) || die "$!\n";
-+
-+	while (<PASSWD>)
-+	{
-+		chop if /\n$/;
-+		next if /^#/;
+-		$PASSWORD{$acct}=$passwd;
 +		($acct,$passwd,$uid,$gid,$name,$home,$shell)=split( /:/ );
 +
 +		($uid,$gid)=($fixed_uid,$fixed_gid) if $vpopuid;
@@ -83,7 +81,8 @@
 +
 +		$name =~ s/\|/./g;	# Just in case
 +		$GECOS{$acct}=$name;
-+	}
+ 	}
+-	close (SHADOW);
 +	close (PASSWD);
 +
 +	if ( -f $shadow && ! $noshadow)
@@ -97,8 +96,7 @@
 +			$PASSWORD{$acct}=$passwd;
 +		}
 +		close (SHADOW);
- 	}
--	close (SHADOW);
++	}
  }
  
  while ( defined ($key=each %UID))

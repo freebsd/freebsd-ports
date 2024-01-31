@@ -1,4 +1,4 @@
---- configure.orig	2022-05-27 01:32:50 UTC
+--- configure.orig	2024-01-28 13:22:04 UTC
 +++ configure
 @@ -669,6 +669,10 @@ LTLIBOBJS
  am__EXEEXT_FALSE
@@ -21,7 +21,7 @@
  LIBAUTHPWD
  LIBAUTHSHADOW
  SHADOWLIBS
-@@ -1609,6 +1616,7 @@ Optional Packages:
+@@ -1610,6 +1617,7 @@ Optional Packages:
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -29,7 +29,7 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -3492,7 +3500,7 @@ fi
+@@ -3493,7 +3501,7 @@ fi
  fi
  
  fi
@@ -38,7 +38,7 @@
  
  
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for a race-free mkdir -p" >&5
-@@ -19167,8 +19175,12 @@ then
+@@ -19387,8 +19395,12 @@ then
  
  if test "$doauthuserdb" = "no"
  then
@@ -51,7 +51,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -19612,7 +19624,21 @@ fi
+@@ -19832,7 +19844,21 @@ fi
  fi
  
  
@@ -73,7 +73,7 @@
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
    HAVE_LDAP_FALSE='#'
-@@ -19817,6 +19843,256 @@ fi
+@@ -20037,6 +20063,256 @@ fi
  
  
  
@@ -330,7 +330,7 @@
  # Check whether --with-authpgsqlrc was given.
  if test ${with_authpgsqlrc+y}
  then :
-@@ -20170,8 +20446,8 @@ then
+@@ -20390,8 +20666,8 @@ then
  	SQLITE_LIBS="`pkg-config --libs sqlite3 2>/dev/null`"
          saveLIBS="$LIBS"
  	LIBS="$SQLITE_LIBS $LIBS"
@@ -341,7 +341,7 @@
  then :
    doauthsqlite="yes"
  
-@@ -20189,14 +20465,14 @@ else
+@@ -20409,14 +20685,14 @@ else
  else
  	saveLIBS="$LIBS"
  	LIBS="$SQLITE_LIBS $LIBS"

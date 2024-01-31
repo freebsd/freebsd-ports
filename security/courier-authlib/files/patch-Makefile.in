@@ -1,4 +1,4 @@
---- Makefile.in.orig	2022-05-27 01:32:50 UTC
+--- Makefile.in.orig	2024-01-28 13:22:04 UTC
 +++ Makefile.in
 @@ -95,11 +95,10 @@ host_triplet = @host@
  POST_UNINSTALL = :
@@ -123,7 +123,7 @@
  	$(libcourierauth_la_SOURCES) \
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
-@@ -568,6 +578,7 @@ LIBAUTHUSERDB = @LIBAUTHUSERDB@
+@@ -569,6 +579,7 @@ LIBAUTHUSERDB = @LIBAUTHUSERDB@
  LIBAUTHSHADOW = @LIBAUTHSHADOW@
  LIBAUTHSQLITE = @LIBAUTHSQLITE@
  LIBAUTHUSERDB = @LIBAUTHUSERDB@
@@ -131,7 +131,7 @@
  LIBDB = @LIBDB@
  LIBDL = @LIBDL@
  LIBGDBM = @LIBGDBM@
-@@ -701,7 +712,10 @@ AUTOMAKE_OPTIONS = dist-bzip2
+@@ -702,7 +713,10 @@ AUTOMAKE_OPTIONS = dist-bzip2
  userdb = @userdb@
  using_systemd = @using_systemd@
  AUTOMAKE_OPTIONS = dist-bzip2
@@ -143,7 +143,7 @@
  AM_CPPFLAGS = -I liblock $(LTDLINCL)
  BUILT_SOURCES = authdaemonrc.h $(BUILT1) $(GITFILES) \
  	$(man3:%.3=%.html) $(man1:%.1=%.html) authsqliterc.h \
-@@ -709,16 +723,18 @@ modules = @LIBAUTHUSERDB@ \
+@@ -710,16 +724,18 @@ modules = @LIBAUTHUSERDB@ \
  modules = @LIBAUTHUSERDB@ \
  	@LIBAUTHPAM@ @LIBAUTHPWD@ @LIBAUTHSHADOW@ \
  	@LIBAUTHPGSQL@ @LIBAUTHLDAP@ @LIBAUTHMYSQL@ @LIBAUTHSQLITE@ \
@@ -166,7 +166,7 @@
  	libauthpgsql.la \
  	libauthldap.la \
  	libauthmysql.la \
-@@ -791,6 +807,13 @@ libauthshadow_la_LDFLAGS = $(commonldflags)
+@@ -792,6 +808,13 @@ libauthshadow_la_LDFLAGS = $(commonldflags)
  libauthshadow_la_LIBADD = $(commonlibadd) $(libauthshadow_t)
  libauthshadow_la_LDFLAGS = $(commonldflags)
  
@@ -180,7 +180,7 @@
  # The authpgsql module
  libauthpgsql_t = @PGSQL_LIBS@ @LIBM@ @NETLIBS@
  libauthpgsql_la_SOURCES = authpgsql.c authpgsqllib.cpp authpgsql.h
-@@ -878,8 +901,8 @@ libcourierauthsaslclient_la_LDFLAGS = -export-symbols-
+@@ -880,8 +903,8 @@ libcourierauthsaslclient_la_LDFLAGS = -export-symbols-
  
  libcourierauthsaslclient_la_LIBADD = libcourierauth.la
  libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$' -version-info @LIBVERSION_INFO@
@@ -191,7 +191,7 @@
  
  courierauthconfig_SOURCES = authinfo.c
  authpasswd_SOURCES = authpasswd.c
-@@ -896,7 +919,7 @@ authenumerate_LDADD = libcourierauth.la \
+@@ -898,7 +921,7 @@ authenumerate_LDADD = libcourierauth.la \
  authenumerate_LDADD = libcourierauth.la \
  	libs/numlib/libnumlib.la
  
@@ -200,7 +200,7 @@
  
  #
  # The main daemon.
-@@ -927,7 +950,7 @@ extraman3 = auth_generic_meta.3 auth_login_meta.3 auth
+@@ -929,7 +952,7 @@ extraman3 = auth_generic_meta.3 auth_login_meta.3 auth
  extraman3 = auth_generic_meta.3 auth_login_meta.3 auth_getuserinfo_meta.3 \
  	auth_sasl_ex.3
  
@@ -209,7 +209,7 @@
  man_MANS = $(man1) $(man3) $(extraman3)
  BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
  	authdaemonrc.h packageversion.h \
-@@ -986,7 +1009,7 @@ stamp-h1: $(srcdir)/courier_auth_config.h.in $(top_bui
+@@ -988,7 +1011,7 @@ stamp-h1: $(srcdir)/courier_auth_config.h.in $(top_bui
  stamp-h1: $(srcdir)/courier_auth_config.h.in $(top_builddir)/config.status
  	@rm -f stamp-h1
  	cd $(top_builddir) && $(SHELL) ./config.status courier_auth_config.h
@@ -218,7 +218,7 @@
  	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
  	rm -f stamp-h1
  	touch $@
-@@ -1158,73 +1181,76 @@ clean-pkglibLTLIBRARIES:
+@@ -1160,73 +1183,76 @@ clean-pkglibLTLIBRARIES:
  	  rm -f $${locs}; \
  	}
  
@@ -316,7 +316,7 @@
  	@rm -f courierauthconfig$(EXEEXT)
  	$(AM_V_CCLD)$(LINK) $(courierauthconfig_OBJECTS) $(courierauthconfig_LDADD) $(LIBS)
  install-pkglibexecSCRIPTS: $(pkglibexec_SCRIPTS)
-@@ -1351,6 +1377,8 @@ distclean-compile:
+@@ -1353,6 +1379,8 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authtest.Po@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdb.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdbpwd.Plo@am__quote@ # am--include-marker
@@ -325,7 +325,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpassword.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpasswordmd5.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpasswordsha1.Plo@am__quote@ # am--include-marker
-@@ -1366,6 +1394,7 @@ distclean-compile:
+@@ -1368,6 +1396,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthshadow.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthuserdb.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthuserdbcommon.Plo@am__quote@ # am--include-marker
@@ -333,7 +333,7 @@
  
  $(am__depfiles_remade):
  	@$(MKDIR_P) $(@D)
-@@ -1935,6 +1964,8 @@ distclean: distclean-recursive
+@@ -1937,6 +1966,8 @@ distclean: distclean-recursive
  	-rm -f ./$(DEPDIR)/authtest.Po
  	-rm -f ./$(DEPDIR)/authuserdb.Plo
  	-rm -f ./$(DEPDIR)/authuserdbpwd.Plo
@@ -342,7 +342,7 @@
  	-rm -f ./$(DEPDIR)/checkpassword.Plo
  	-rm -f ./$(DEPDIR)/checkpasswordmd5.Plo
  	-rm -f ./$(DEPDIR)/checkpasswordsha1.Plo
-@@ -1950,6 +1981,7 @@ distclean: distclean-recursive
+@@ -1952,6 +1983,7 @@ distclean: distclean-recursive
  	-rm -f ./$(DEPDIR)/preauthshadow.Plo
  	-rm -f ./$(DEPDIR)/preauthuserdb.Plo
  	-rm -f ./$(DEPDIR)/preauthuserdbcommon.Plo
@@ -350,7 +350,7 @@
  	-rm -f Makefile
  distclean-am: clean-am distclean-compile distclean-generic \
  	distclean-hdr distclean-libtool distclean-tags
-@@ -1966,18 +1998,26 @@ info-am:
+@@ -1968,18 +2000,26 @@ info-am:
  
  info-am:
  
@@ -385,7 +385,7 @@
  install-html: install-html-recursive
  
  install-html-am:
-@@ -2120,13 +2160,16 @@ uninstall-man: uninstall-man1 uninstall-man3
+@@ -2122,13 +2162,16 @@ uninstall-man: uninstall-man1 uninstall-man3
  
  .PRECIOUS: Makefile
  
@@ -404,7 +404,7 @@
  
  @HAVE_AUTHPGSQL_TRUE@uninstall-authpgsqlrc:
  @HAVE_AUTHPGSQL_TRUE@	rm -f $(DESTDIR)@authpgsqlrc@.dist
-@@ -2144,8 +2187,6 @@ authpgsqlrc.h:
+@@ -2146,8 +2189,6 @@ authpgsqlrc.h:
  @HAVE_LDAP_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authldaprc@` || :
  @HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authldaprc \
  @HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.dist
@@ -413,7 +413,7 @@
  
  @HAVE_LDAP_TRUE@uninstall-authldaprc:
  @HAVE_LDAP_TRUE@	rm -f $(DESTDIR)@authldaprc@.dist
-@@ -2156,6 +2197,18 @@ authpgsqlrc.h:
+@@ -2158,6 +2199,18 @@ authpgsqlrc.h:
  @HAVE_LDAP_FALSE@uninstall-authldaprc:
  @HAVE_LDAP_FALSE@	@:
  
@@ -432,7 +432,7 @@
  authldaprc.h:
  	echo "#define AUTHLDAPRC \"@authldaprc@\"" >authldaprc.h
  
-@@ -2163,8 +2216,6 @@ authldaprc.h:
+@@ -2165,8 +2218,6 @@ authldaprc.h:
  @HAVE_AUTHMYSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authmysqlrc@` || :
  @HAVE_AUTHMYSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authmysqlrc \
  @HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.dist
@@ -441,7 +441,7 @@
  
  @HAVE_AUTHMYSQL_TRUE@uninstall-authmysqlrc:
  @HAVE_AUTHMYSQL_TRUE@	rm -f $(DESTDIR)@authmysqlrc@.dist
-@@ -2182,8 +2233,6 @@ authmysqlrc.h:
+@@ -2184,8 +2235,6 @@ authmysqlrc.h:
  @HAVE_AUTHSQLITE_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authsqliterc@` || :
  @HAVE_AUTHSQLITE_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authsqliterc \
  @HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.dist
@@ -450,7 +450,7 @@
  
  @HAVE_AUTHSQLITE_TRUE@uninstall-authsqliterc:
  @HAVE_AUTHSQLITE_TRUE@	rm -f $(DESTDIR)@authsqliterc@.dist
-@@ -2202,17 +2251,21 @@ authpiperc.h:
+@@ -2204,17 +2253,21 @@ authpiperc.h:
  authpiperc.h:
  	echo "#define PIPE_PROGRAM \"@authProg@\"" >authpiperc.h
  
@@ -481,7 +481,7 @@
  authdaemonrc.h:
  	echo "#define AUTHDAEMONRC \"@authdaemonrc@\"" >authdaemonrc.h
  	echo "#define AUTHDAEMONVAR \"@authdaemonvar@\"" >>authdaemonrc.h
-@@ -2268,24 +2321,24 @@ install-data-hook: install-authdaemonrc install-authpg
+@@ -2270,24 +2323,24 @@ install-data-hook: install-authdaemonrc install-authpg
  # automake still a bit stupid...
  
  install-data-hook: install-authdaemonrc install-authpgsqlrc \
@@ -518,7 +518,7 @@
  		$(INSTALL_SCRIPT) userdb/pw2userdb \
  				$(DESTDIR)$(sbindir)/pw2userdb ; \
  		$(INSTALL_SCRIPT) userdb/makeuserdb \
-@@ -2296,9 +2349,10 @@ uninstall-hook: uninstall-authldaprc uninstall-authdae
+@@ -2298,9 +2351,10 @@ uninstall-hook: uninstall-authldaprc uninstall-authdae
  				$(DESTDIR)$(sbindir)/userdbpw
  
  uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc uninstall-authsqliterc
@@ -530,7 +530,7 @@
  				$(DESTDIR)$(sbindir)/pw2userdb \
  				$(DESTDIR)$(sbindir)/makeuserdb \
  				$(DESTDIR)$(sbindir)/userdb \
-@@ -2308,7 +2362,7 @@ authlib.3: authlib.3.in
+@@ -2310,7 +2364,7 @@ authlib.3: authlib.3.in
  	$(SHELL) ./config.status --file=authlib.html
  
  authlib.3: authlib.3.in

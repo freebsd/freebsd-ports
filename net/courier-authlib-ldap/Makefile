@@ -1,4 +1,3 @@
-PORTREVISION=	1
 PKGNAMESUFFIX=	-ldap
 
 COMMENT=	LDAP support for the Courier authentication library
