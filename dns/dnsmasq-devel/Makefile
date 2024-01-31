@@ -1,5 +1,5 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.89test1 # remember to bump PORTEPOCH when going from test to rc!
+DISTVERSION=	2.90test3 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	5
@@ -16,8 +16,8 @@ WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 LICENSE=	GPLv2
 
-#DEPRECATED=	Short-lived test branch, to be removed after v2.89 release
-IGNORE=		please use dns/dnsmasq, which is newer
+DEPRECATED=	Short-lived test branch, to be removed after v2.90 release
+#IGNORE=		please use dns/dnsmasq, which is newer
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
