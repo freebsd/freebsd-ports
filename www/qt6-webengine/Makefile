@@ -12,7 +12,7 @@
 
 PORTNAME?=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION?=	3 # Master port for print/qt6-pdf. Please keep this line.
+PORTREVISION?=	4 # Master port for print/qt6-pdf. Please keep this line.
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt6-
 
