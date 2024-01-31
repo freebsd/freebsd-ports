@@ -1,5 +1,6 @@
 PORTNAME=	newt
 PORTVERSION=	0.52.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/newt/
 
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 USES=		autoreconf gmake localbase ncurses pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_ENV=	PCFLAGS="${CFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
