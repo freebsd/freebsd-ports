@@ -28,7 +28,7 @@ PLIST_FILES=	bin/cargo-capi \
 .include <bsd.port.pre.mk>
 
 # prevent address space exhaustion on armv6/armv7
-.if ${ARCH:Marmv?}
+.if ${ARCH:Marmv?} || ${ARCH} == powerpc
 LTO_UNSAFE=	yes
 .endif
 
