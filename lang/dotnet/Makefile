@@ -15,6 +15,8 @@ WWW=		https://dot.net
 
 LICENSE=	MIT
 
+ONLY_FOR_ARCHS=	amd64
+
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		git:devel/git \
