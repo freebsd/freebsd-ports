@@ -1,4 +1,4 @@
-TIMESTAMP = 1701797644
+TIMESTAMP = 1706685975
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
@@ -205,8 +205,8 @@ SHA256 (rust/crates/lock_api-0.4.7.crate) = 327fa5b6a6940e4699ec49a9beae1ea4845c
 SIZE (rust/crates/lock_api-0.4.7.crate) = 25371
 SHA256 (rust/crates/log-0.4.17.crate) = abb12e687cfb44aa40f41fc3978ef76448f9b6038cad6aef4259d3c095a2382e
 SIZE (rust/crates/log-0.4.17.crate) = 38028
-SHA256 (rust/crates/mac_address-1.1.3.crate) = df1d1bc1084549d60725ccc53a2bfa07f67fe4689fda07b05a36531f2988104a
-SIZE (rust/crates/mac_address-1.1.3.crate) = 12447
+SHA256 (rust/crates/mac_address-1.1.5.crate) = 4863ee94f19ed315bf3bc00299338d857d4b5bc856af375cc97d237382ad3856
+SIZE (rust/crates/mac_address-1.1.5.crate) = 12191
 SHA256 (rust/crates/machine-uid-0.2.0.crate) = 1f1595709b0a7386bcd56ba34d250d626e5503917d05d32cdccddcd68603e212
 SIZE (rust/crates/machine-uid-0.2.0.crate) = 4352
 SHA256 (rust/crates/matches-0.1.9.crate) = a3e378b66a060d48947b590737b30a1be76706c8dd7b8ba0f2fe3989c68a853f
@@ -571,5 +571,5 @@ SHA256 (open-trade-async-speed-limit-f89f702ae01d4016429543d2f0dda1086157e420_GH
 SIZE (open-trade-async-speed-limit-f89f702ae01d4016429543d2f0dda1086157e420_GH0.tar.gz) = 19735
 SHA256 (open-trade-tokio-socks-3de8300fbce37e2cdaef042e016aa95058d007cf_GH0.tar.gz) = b7e2559a69f67cf2569ae52b779534e355a5cb5a1b6211a0468867b2ee0602c9
 SIZE (open-trade-tokio-socks-3de8300fbce37e2cdaef042e016aa95058d007cf_GH0.tar.gz) = 15074
-SHA256 (rustdesk-rustdesk-server-1.1.9_GH0.tar.gz) = 8435d39978151560d14972247981be01ba605b02405ee0aea2747e60f891466e
-SIZE (rustdesk-rustdesk-server-1.1.9_GH0.tar.gz) = 623896
+SHA256 (rustdesk-rustdesk-server-1.1.10-3_GH0.tar.gz) = ca7203984a798f82651486657ada0968a562f29094ce2c39226ec43278f26b9b
+SIZE (rustdesk-rustdesk-server-1.1.10-3_GH0.tar.gz) = 623978
