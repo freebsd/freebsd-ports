@@ -444,6 +444,8 @@ lib/libiceoryx_posh_roudi.so
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/iceoryx-v2-0-1.md
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/iceoryx-v2-0-2.md
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/iceoryx-v2-0-3.md
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/iceoryx-v2-0-4.md
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/iceoryx-v2-0-5.md
 %%PORTDOCS%%share/doc/iceoryx_binding_c/LICENSE
 %%PORTDOCS%%share/doc/iceoryx_hoofs/LICENSE
 %%PORTDOCS%%share/doc/iceoryx_posh/3rd_party_licenses/cpptoml/LICENSE
