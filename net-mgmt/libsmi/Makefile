@@ -1,6 +1,6 @@
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 		LOCAL/bms
@@ -16,6 +16,7 @@ INSTALL_TARGET=	install-strip
 PIBDIR=		${PREFIX}/share/smi/pibs
 MIBDIR=		${PREFIX}/share/smi/mibs
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--with-data-dir=${PREFIX}/share/smi \
 		--with-pibdir=${PIBDIR} --with-mibdir=${MIBDIR}
 
