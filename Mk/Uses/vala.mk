@@ -25,7 +25,7 @@ BUILD_DEPENDS+=		${_VALA_BINARY}:${_VALA_PORT}
 
 # remove after https://gitlab.gnome.org/GNOME/vala/-/issues/1408 is fixed
 .include "${USESDIR}/compiler.mk"
-.  if ${ARCH} != powerpc && ${CHOSEN_COMPILER_TYPE} == "clang"
+.  if ${CHOSEN_COMPILER_TYPE} == "clang"
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .  endif
 
