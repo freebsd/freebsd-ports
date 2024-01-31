@@ -1,3 +1,34 @@
+  <vuln vid="67c2eb06-5579-4595-801b-30355be24654">
+    <topic>lizard -- Negative size passed to memcpy resulting in memory corruption</topic>
+    <affects>
+      <package>
+	<name>lizard</name>
+	<range><lt>1.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/inikep/lizard/issues/16">
+	  <p>In Lizard v1.0 and LZ5 v2.0 (the prior release, before the product
+	was renamed), there is an unchecked buffer size during a memcpy in
+	the Lizard_decompress_LIZv1 function (lib/lizard_decompress_liz.h).
+	Remote attackers can leverage this vulnerability to cause a denial
+	of service via a crafted input file, as well as achieve remote code
+	execution.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2018-11498</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2018-11498</url>
+    </references>
+    <dates>
+      <discovery>2018-05-26</discovery>
+      <entry>2024-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a25b323a-bed9-11ee-bdd6-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
