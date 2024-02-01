@@ -1,9 +1,9 @@
 PORTNAME=	listenv
-PORTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Environments Behaving (Almost) as Lists
 WWW=		https://cran.r-project.org/web/packages/listenv/
 
