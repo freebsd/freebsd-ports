@@ -42,12 +42,13 @@ Avoid various systemd dependencies
      let cli = Cli::parse();
  
      let _client = tracy_client::Client::start();
-@@ -128,6 +114,10 @@ fn main() {
+@@ -128,6 +114,11 @@ fn main() {
          socket_name.to_string_lossy()
      );
  
 +    // Advise xdg-desktop-portal which *-portals.conf to load
 +    env::set_var("XDG_CURRENT_DESKTOP", "niri");
++    // Mimic wlroots, used by https://github.com/qt/qtbase/commit/4b4870a12cd9
 +    env::set_var("XDG_SESSION_TYPE", "wayland");
 +
      if is_systemd_service {
