@@ -1,3 +1,40 @@
+  <vuln vid="13a8c4bf-cb2b-48ec-b49c-a3875c72b3e8">
+    <topic>electron{26,27,28} -- Use after free in Web Audio</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.8</lt></range>
+      </package>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.1</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers reports:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.8">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-0807.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0807</cvename>
+      <url>https://github.com/advisories/GHSA-hjm7-v5pw-x89r</url>
+    </references>
+    <dates>
+      <discovery>2024-01-31</discovery>
+      <entry>2024-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bbcb1584-c068-11ee-bdd6-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
