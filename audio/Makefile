@@ -53,7 +53,6 @@
     SUBDIR += bamp-lv2
     SUBDIR += bangr-lv2
     SUBDIR += baresip
-    SUBDIR += baudline
     SUBDIR += bcg729
     SUBDIR += bchoppr-lv2
     SUBDIR += beep

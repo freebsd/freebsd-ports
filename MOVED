@@ -2983,3 +2983,4 @@ emulators/wine7|emulators/wine|2024-01-30|Has expired: emulators/wine itself now
 security/py-service_identity|security/py-service-identity|2024-01-31|Has expired: Use security/py-service-identity
 www/lighttpd-mod_h264_streaming||2024-01-31|Has expired: Does not build with new lighttpd
 audio/stmp||2024-02-01|Has expired: Broken for more than a year
+audio/baudline||2024-02-01|Has expired: upstream has gone to subscription model and no longer distributes this version. Try comms/Inspectrum or audio/xanalyser instead
