@@ -21,7 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 # Generic nodes are not supported by procfs(5)
-	@${REINPLACE_CMD} -e 's,/proc,/compat/linux&,g' \
+	@${REINPLACE_CMD} -e 's,/proc,${LINUXBASE}&,g' \
 		${WRKSRC_crate_lxinfo}/src/info.rs
 
 .include <bsd.port.mk>
