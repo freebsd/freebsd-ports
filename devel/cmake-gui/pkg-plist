@@ -1,6 +1,6 @@
 bin/cmake-gui
-man/man1/cmake-gui.1.gz
 share/applications/cmake-gui.desktop
 share/icons/hicolor/128x128/apps/CMakeSetup.png
 share/icons/hicolor/32x32/apps/CMakeSetup.png
+share/man/man1/cmake-gui.1.gz
 share/mime/packages/cmakecache.xml
