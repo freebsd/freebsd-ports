@@ -4,7 +4,7 @@ DISTVERSION=	0.42.4
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	algernon@madhouse-project.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Asynchronous I/O readiness notification library
 WWW=		https://github.com/buytenh/ivykis
 
