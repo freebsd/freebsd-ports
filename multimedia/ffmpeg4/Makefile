@@ -256,6 +256,7 @@ GLSLANG_BUILD_DEPENDS=	glslang>0:graphics/glslang \
 			spirv-tools>0:graphics/spirv-tools
 GLSLANG_CONFIGURE_ENABLE=	libglslang
 GLSLANG_LDFLAGS=	-lm
+GLSLANG_IMPLIES=	VULKAN
 
 # gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -548,7 +549,6 @@ VPX_CONFIGURE_ENABLE=	libvpx
 VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_ENABLE=	vulkan
-VULKAN_IMPLIES=		GLSLANG
 
 # webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
