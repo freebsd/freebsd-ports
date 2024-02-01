@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.1.33
+DISTVERSION=	2024.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -89,7 +89,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.8 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		eyre-0.6.11 \
+		eyre-0.6.12 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
 		fiat-crypto-0.2.5 \
@@ -133,7 +133,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
-		indexmap-2.2.1 \
+		indexmap-2.2.2 \
 		indicatif-0.17.7 \
 		indoc-2.0.4 \
 		insta-1.34.0 \
@@ -144,7 +144,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.27 \
 		js-sys-0.3.67 \
 		lazy_static-1.4.0 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libgit2-sys-0.16.1+1.7.1 \
 		libz-sys-1.1.15 \
 		linked-hash-map-0.5.6 \
@@ -202,7 +202,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-1.10.3 \
 		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.23 \
+		reqwest-0.11.24 \
 		ring-0.17.7 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
@@ -249,6 +249,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.48 \
+		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -271,9 +272,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
-		toml-0.8.8 \
+		toml-0.8.9 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.21.0 \
+		toml_edit-0.21.1 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -338,7 +339,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.35 \
+		winnow-0.5.36 \
 		winreg-0.50.0 \
 		xattr-1.3.1 \
 		yaml-rust-0.4.5 \
