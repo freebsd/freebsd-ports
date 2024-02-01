@@ -1,4 +1,4 @@
-TIMESTAMP = 1706511025
+TIMESTAMP = 1706816309
 SHA256 (cabal/Cabal-3.10.2.1/Cabal-3.10.2.1.tar.gz) = 8887629840890bfb3c9cdf642aaa98b6f1ceb1c3bf02c6f867991ada121ef549
 SIZE (cabal/Cabal-3.10.2.1/Cabal-3.10.2.1.tar.gz) = 396181
 SHA256 (cabal/Cabal-3.10.2.1/revision/1.cabal) = 0f7cc73c7c0c18464ce249c97267a5188d796690a926d73b6e084a4612a66e32
@@ -427,7 +427,7 @@ SHA256 (cabal/ekg-core-0.1.1.7.0.0.0.0.1.tar.gz) = a70da0df63b8886fdfcfc32b669f9
 SIZE (cabal/ekg-core-0.1.1.7.0.0.0.0.1.tar.gz) = 13772
 SHA256 (cabal/ekg-forward-0.4.tar.gz) = 5e66b691fd51f001d05024df2dc2431d25397316a680cbb1a7b7ec7180ae3693
 SIZE (cabal/ekg-forward-0.4.tar.gz) = 16441
-SHA256 (cabal/ekg-forward-0.4/revision/2.cabal) = aeedf811d6fb62c1a1448a315542f1ead38e135a75925d9449245776eafa9221
+SHA256 (cabal/ekg-forward-0.4/revision/2.cabal) = c9e7ddc7ddf41d490bac509aae79bca06d6c532a3c77cea49ab63b2a202bc424
 SIZE (cabal/ekg-forward-0.4/revision/2.cabal) = 4328
 SHA256 (cabal/ekg-json-0.1.0.7.0.0.0.0.2.tar.gz) = 19de27e437a4497f3511f3f46b87d1354640f6dd29f26f6e6502fd48707712c5
 SIZE (cabal/ekg-json-0.1.0.7.0.0.0.0.2.tar.gz) = 3228
