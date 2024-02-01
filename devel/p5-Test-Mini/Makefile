@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PVANDE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kurt.lidl@cello.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides lightweight unit testing framework
 WWW=		https://metacpan.org/release/Test-Mini
 

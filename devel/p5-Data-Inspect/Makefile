@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OWL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kurt.lidl@cello.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another pretty-printer for perl objects
 WWW=		https://metacpan.org/release/Data-Inspect
 
