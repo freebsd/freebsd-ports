@@ -44,7 +44,7 @@ PYTHON_CMAKE_BOOL=	PYTHON
 
 _MAJORVER=	3_1
 _VER=		29
-_MINVER=	8
+_MINVER=	9
 _PLVER=		0
 
 post-patch:
