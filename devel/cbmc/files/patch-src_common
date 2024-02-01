@@ -1,0 +1,11 @@
+--- src/common.orig	2024-02-01 00:44:35 UTC
++++ src/common
+@@ -64,7 +64,7 @@ else ifeq ($(filter-out FreeBSD,$(BUILD_ENV_)),)
+   YFLAGS ?= -v
+ else ifeq ($(filter-out FreeBSD,$(BUILD_ENV_)),)
+   CP_CXXFLAGS +=
+-  LINKLIB = ar rcT $@ $^
++  LINKLIB = llvm-ar rcT $@ $^
+   LINKBIN = $(CXX) $(LINKFLAGS) -o $@ -Wl,--start-group $^ -Wl,--end-group $(LIBS)
+   LINKNATIVE = $(HOSTCXX) $(HOSTLINKFLAGS) -o $@ $^
+   ifeq ($(origin CC),default)
