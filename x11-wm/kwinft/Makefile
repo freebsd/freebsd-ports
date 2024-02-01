@@ -65,7 +65,7 @@ post-patch:
 		${WRKSRC}/base/wayland/filtered_display.cpp \
 		${WRKSRC}/desktop/kde/service_utils.h
 # Generic nodes are not supported by procfs(5)
-	@${REINPLACE_CMD} -e '/mounts/s,/proc,/compat/linux&,' \
+	@${REINPLACE_CMD} -e '/mounts/s,/proc,${LINUXBASE}&,' \
 		${WRKSRC}/debug/perf/ftrace_impl.cpp
 
 .include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
