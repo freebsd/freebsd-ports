@@ -276,7 +276,7 @@ _reticulum:*:327:327::0:0:Reticulum Daemon:/nonexistent:/usr/sbin/nologin
 galene:*:328:328::0:0:Galene Visioconference server:/nonexistent:/usr/sbin/nologin
 certspotter:*:329:329::0:0:Cert Spotter user:/nonexistent:/usr/sbin/nologin
 orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
-# free: 331
+svxlink:*:331:331::0:0:svxlink server:/nonexistent:/usr/sbin/nologin
 # free: 332
 honeytrap:*:333:333::0:0:HoneyTrap Daemon:/nonexistent:/usr/sbin/nologin
 # free: 334
