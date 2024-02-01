@@ -1,5 +1,5 @@
 PORTNAME=	terra
-DISTVERSION=	1.7-65
+DISTVERSION=	1.7-71
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,6 +17,6 @@ BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-ncdf4>0:math/R-cran-ncdf4
 
-USES=		compiler:c++17-lang cran:auto-plist,compiles sqlite:3
+USES=		cran:auto-plist,compiles sqlite:3
 
 .include <bsd.port.mk>
