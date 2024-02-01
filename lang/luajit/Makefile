@@ -8,7 +8,7 @@ DISTNAME=	LuaJIT-${DISTVERSION}
 PATCH_SITES=	https://github.com/LuaJIT/LuaJIT/commit/
 PATCHFILES=	a4f4f5b83564a1075bea0ac7c1fd8768be1caff7.patch:-p1
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Lua
 WWW=		https://luajit.org/luajit.html
 
