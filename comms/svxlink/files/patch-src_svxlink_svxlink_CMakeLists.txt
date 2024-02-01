@@ -1,0 +1,12 @@
+--- src/svxlink/svxlink/CMakeLists.txt.orig	2021-03-09 23:15:07 UTC
++++ src/svxlink/svxlink/CMakeLists.txt
+@@ -55,6 +55,9 @@ add_version_target(SVXLINK VERSION_DEPENDS)
+ set(VERSION_DEPENDS)
+ add_version_target(SVXLINK VERSION_DEPENDS)
+ 
++# Needed on FreeBSD
++string(PREPEND CMAKE_CXX_FLAGS "-Wl,-export-dynamic ")
++
+ # Build the executable
+ add_executable(svxlink
+   MsgHandler.cpp Module.cpp Logic.cpp SimplexLogic.cpp RepeaterLogic.cpp
