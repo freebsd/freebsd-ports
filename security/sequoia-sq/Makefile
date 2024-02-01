@@ -1,6 +1,7 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.33.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	sequoia-
 
@@ -8,7 +9,7 @@ MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Sequoia-PGP command line tool
 WWW=		https://sequoia-pgp.org/
 
-LICENSE=	GPLv2+
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libnettle.so:security/nettle \
