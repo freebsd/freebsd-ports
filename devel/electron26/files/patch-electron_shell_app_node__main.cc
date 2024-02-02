@@ -1,4 +1,4 @@
---- electron/shell/app/node_main.cc.orig	2024-01-10 12:22:10 UTC
+--- electron/shell/app/node_main.cc.orig	2024-01-29 19:56:59 UTC
 +++ electron/shell/app/node_main.cc
 @@ -48,7 +48,7 @@
  #include "shell/common/mac/codesign_util.h"
@@ -9,16 +9,16 @@
  #include "components/crash/core/app/crashpad.h"  // nogncheck
  #include "shell/app/electron_crash_reporter_client.h"
  #include "shell/common/crash_keys.h"
-@@ -82,7 +82,7 @@ void ExitIfContainsDisallowedFlags(const std::vector<s
-   }
+@@ -99,7 +99,7 @@ bool UnsetHijackableEnvs(base::Environment* env) {
  }
+ #endif
  
 -#if IS_MAS_BUILD()
 +#if IS_MAS_BUILD() || BUILDFLAG(IS_BSD)
  void SetCrashKeyStub(const std::string& key, const std::string& value) {}
  void ClearCrashKeyStub(const std::string& key) {}
  #endif
-@@ -93,7 +93,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
+@@ -110,7 +110,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -27,7 +27,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -253,7 +253,7 @@ int NodeMain(int argc, char* argv[]) {
+@@ -270,7 +270,7 @@ int NodeMain(int argc, char* argv[]) {
        // Setup process.crashReporter in child node processes
        gin_helper::Dictionary reporter = gin::Dictionary::CreateEmpty(isolate);
        reporter.SetMethod("getParameters", &GetParameters);
