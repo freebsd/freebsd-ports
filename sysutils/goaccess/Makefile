@@ -1,6 +1,5 @@
 PORTNAME=	goaccess
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	https://tar.goaccess.io/
 
