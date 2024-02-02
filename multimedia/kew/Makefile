@@ -1,0 +1,36 @@
+PORTNAME=	kew
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2-2
+DISTVERSIONSUFFIX=	-gf8e5bf1
+CATEGORIES=	multimedia
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Command-line music player
+WWW=		https://github.com/ravachol/kew
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libchafa.so:graphics/chafa \
+		libfftw3f.so:math/fftw3-float \
+		libfreeimage.so:graphics/freeimage \
+		libopus.so:audio/opus \
+		libopusfile.so:audio/opusfile \
+		libvorbis.so:audio/libvorbis
+
+USES=		gettext-runtime gmake gnome pkgconfig
+USE_GNOME=	glib20
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ravachol
+
+MAKE_ARGS=	CC=${CC} PREFIX=${PREFIX}
+
+PLIST_FILES=	bin/kew \
+		share/man/man1/kew.1.gz
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kew
+
+.include <bsd.port.mk>
