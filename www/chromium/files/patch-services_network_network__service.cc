@@ -1,6 +1,6 @@
---- services/network/network_service.cc.orig	2023-12-10 06:10:27 UTC
+--- services/network/network_service.cc.orig	2024-01-30 07:53:34 UTC
 +++ services/network/network_service.cc
-@@ -96,7 +96,7 @@
+@@ -100,7 +100,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -9,7 +9,7 @@
      BUILDFLAG(IS_CHROMEOS_LACROS)
  
  #include "components/os_crypt/sync/key_storage_config_linux.h"
-@@ -998,7 +998,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
+@@ -1070,7 +1070,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
    net::SetExplicitlyAllowedPorts(ports);
  }
  
@@ -18,7 +18,7 @@
  void NetworkService::SetGssapiLibraryLoadObserver(
      mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
          gssapi_library_load_observer) {
-@@ -1080,7 +1080,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
+@@ -1160,7 +1160,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
    );
  }
  

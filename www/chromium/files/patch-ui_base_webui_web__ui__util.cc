@@ -1,6 +1,6 @@
---- ui/base/webui/web_ui_util.cc.orig	2023-12-10 06:10:27 UTC
+--- ui/base/webui/web_ui_util.cc.orig	2024-01-30 07:53:34 UTC
 +++ ui/base/webui/web_ui_util.cc
-@@ -38,7 +38,7 @@ namespace {
+@@ -39,7 +39,7 @@ namespace {
  constexpr float kMaxScaleFactor = 1000.0f;
  
  std::string GetFontFamilyMd() {
@@ -9,7 +9,7 @@
    return "Roboto, " + GetFontFamily();
  #else
    return GetFontFamily();
-@@ -216,7 +216,7 @@ std::string GetFontFamily() {
+@@ -217,7 +217,7 @@ std::string GetFontFamily() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

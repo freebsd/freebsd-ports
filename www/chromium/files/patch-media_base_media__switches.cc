@@ -1,6 +1,6 @@
---- media/base/media_switches.cc.orig	2023-12-10 06:10:27 UTC
+--- media/base/media_switches.cc.orig	2024-01-30 07:53:34 UTC
 +++ media/base/media_switches.cc
-@@ -17,7 +17,7 @@
+@@ -21,7 +21,7 @@
  #include "ui/gl/gl_features.h"
  #include "ui/gl/gl_utils.h"
  
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -702,7 +702,7 @@ BASE_FEATURE(kFallbackAfterDecodeError,
+@@ -708,7 +708,7 @@ BASE_FEATURE(kFallbackAfterDecodeError,
  // Show toolbar button that opens dialog for controlling media sessions.
  BASE_FEATURE(kGlobalMediaControls,
               "GlobalMediaControls",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -725,7 +725,7 @@ BASE_FEATURE(kGlobalMediaControlsCrOSUpdatedUI,
+@@ -731,7 +731,7 @@ BASE_FEATURE(kGlobalMediaControlsCrOSUpdatedUI,
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
               "MediaRemotingWithoutFullscreen",
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -737,7 +737,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
+@@ -743,7 +743,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
  BASE_FEATURE(kGlobalMediaControlsPictureInPicture,
               "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -776,7 +776,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -777,7 +777,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -45,7 +45,7 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  BASE_FEATURE(kVaapiVideoDecodeLinux,
-@@ -856,7 +856,7 @@ BASE_FEATURE(kVaapiVp9SModeHWEncoding,
+@@ -863,7 +863,7 @@ BASE_FEATURE(kVaapiVp9SModeHWEncoding,
               "VaapiVp9SModeHWEncoding",
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
@@ -54,7 +54,16 @@
  // Enables the new V4L2StatefulVideoDecoder instead of V4L2VideoDecoder.
  BASE_FEATURE(kV4L2FlatStatelessVideoDecoder,
               "V4L2FlatStatelessVideoDecoder",
-@@ -1384,7 +1384,7 @@ const base::Feature MEDIA_EXPORT kUseOutOfProcessVideo
+@@ -967,7 +967,7 @@ BASE_FEATURE(kLiveCaptionUseWaitK,
+ // Live Caption can be used in multiple languages, as opposed to just English.
+ BASE_FEATURE(kLiveCaptionMultiLanguage,
+              "LiveCaptionMultiLanguage",
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -1402,7 +1402,7 @@ const base::Feature MEDIA_EXPORT kUseOutOfProcessVideo
  };
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  

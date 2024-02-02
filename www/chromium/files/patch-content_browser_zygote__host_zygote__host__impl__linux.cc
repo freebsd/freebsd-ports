@@ -1,4 +1,4 @@
---- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2022-11-30 08:12:58 UTC
+--- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2024-01-30 07:53:34 UTC
 +++ content/browser/zygote_host/zygote_host_impl_linux.cc
 @@ -19,8 +19,10 @@
  #include "build/chromeos_buildflags.h"
@@ -63,9 +63,9 @@
      base::FileHandleMappingVector additional_remapped_fds) {
 +#if !BUILDFLAG(IS_BSD)
    int fds[2];
-   CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds));
+   CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET | SOCK_CLOEXEC, 0, fds));
    CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
-@@ -224,9 +235,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -225,9 +236,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
  
    AddZygotePid(pid);
    return pid;

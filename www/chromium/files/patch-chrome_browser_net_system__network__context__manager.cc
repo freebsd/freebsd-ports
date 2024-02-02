@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2024-01-30 07:53:34 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -92,7 +92,7 @@
  
@@ -104,8 +104,8 @@
    pref_change_registrar_.Add(kGssapiDesiredPref, auth_pref_callback);
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
  
-@@ -577,7 +577,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
- #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
+@@ -570,7 +570,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+ #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
@@ -113,7 +113,7 @@
    pref_change_registrar_.Add(
        prefs::kEnforceLocalAnchorConstraintsEnabled,
        base::BindRepeating(&SystemNetworkContextManager::
-@@ -632,7 +632,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -625,7 +625,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -122,16 +122,16 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -661,7 +661,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
-   registry->RegisterBooleanPref(prefs::kChromeRootStoreEnabled, false);
- #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
+@@ -649,7 +649,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+   registry->RegisterIntegerPref(prefs::kMaxConnectionsPerProxy, -1);
+ 
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    // Note that the default value is not relevant because the pref is only
    // evaluated when it is managed.
    registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
-@@ -670,11 +670,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -658,11 +658,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
  
    registry->RegisterListPref(prefs::kExplicitlyAllowedNetworkPorts);
  
@@ -145,7 +145,7 @@
    registry->RegisterBooleanPref(prefs::kReceivedHttpAuthNegotiateHeader, false);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -727,7 +727,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -715,7 +715,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    OnNewHttpAuthDynamicParams(http_auth_dynamic_params);
    network_service->ConfigureHttpAuthPrefs(std::move(http_auth_dynamic_params));
  
@@ -154,7 +154,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -938,7 +938,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -929,7 +929,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  
@@ -163,8 +163,8 @@
    if (!enabled) {
      g_network_service_will_allow_gssapi_library_load = true;
    }
-@@ -1052,7 +1052,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
- #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
+@@ -1010,7 +1010,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
+ }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)

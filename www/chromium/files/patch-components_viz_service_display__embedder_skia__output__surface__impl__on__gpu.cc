@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/skia_output_surface_impl_on_gpu.cc.orig	2023-12-10 06:10:27 UTC
+--- components/viz/service/display_embedder/skia_output_surface_impl_on_gpu.cc.orig	2024-01-30 07:53:34 UTC
 +++ components/viz/service/display_embedder/skia_output_surface_impl_on_gpu.cc
-@@ -1567,7 +1567,12 @@ void SkiaOutputSurfaceImplOnGpu::CopyOutputNV12(
+@@ -1564,7 +1564,12 @@ void SkiaOutputSurfaceImplOnGpu::CopyOutputNV12(
  
        // Issue readbacks from the surfaces:
        for (size_t i = 0; i < CopyOutputResult::kNV12MaxPlanes; ++i) {

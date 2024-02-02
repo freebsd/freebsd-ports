@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.h.orig	2023-12-10 06:10:27 UTC
+--- chrome/browser/net/system_network_context_manager.h.orig	2024-01-30 07:53:34 UTC
 +++ chrome/browser/net/system_network_context_manager.h
 @@ -185,7 +185,7 @@ class SystemNetworkContextManager {
    class URLLoaderFactoryForSystem;
@@ -9,8 +9,8 @@
    class GssapiLibraryLoadObserver
        : public network::mojom::GssapiLibraryLoadObserver {
     public:
-@@ -229,7 +229,7 @@ class SystemNetworkContextManager {
- #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
+@@ -221,7 +221,7 @@ class SystemNetworkContextManager {
+   void UpdateExplicitlyAllowedNetworkPorts();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
@@ -18,7 +18,7 @@
    // Applies the current value of the kEnforceLocalAnchorConstraintsEnabled
    // pref to the enforcement state.
    void UpdateEnforceLocalAnchorConstraintsEnabled();
-@@ -277,7 +277,7 @@ class SystemNetworkContextManager {
+@@ -269,7 +269,7 @@ class SystemNetworkContextManager {
  
    static absl::optional<bool> certificate_transparency_enabled_for_testing_;
  

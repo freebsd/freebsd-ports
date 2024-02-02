@@ -1,7 +1,7 @@
---- ui/base/x/x11_display_manager.cc.orig	2023-11-03 10:09:45 UTC
+--- ui/base/x/x11_display_manager.cc.orig	2024-01-30 07:53:34 UTC
 +++ ui/base/x/x11_display_manager.cc
 @@ -15,7 +15,7 @@
- #include "ui/gfx/x/x11_atom_cache.h"
+ #include "ui/gfx/x/randr.h"
  #include "ui/gfx/x/xproto.h"
  
 -#if BUILDFLAG(IS_LINUX)

@@ -1,6 +1,6 @@
---- net/cert/cert_verify_proc.h.orig	2023-08-17 07:33:31 UTC
+--- net/cert/cert_verify_proc.h.orig	2024-01-30 07:53:34 UTC
 +++ net/cert/cert_verify_proc.h
-@@ -79,7 +79,7 @@ class NET_EXPORT CertVerifyProc
+@@ -130,7 +130,7 @@ class NET_EXPORT CertVerifyProc
      kMaxValue = kChainLengthOne
    };
  

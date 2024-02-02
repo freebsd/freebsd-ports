@@ -1,10 +1,10 @@
 PORTNAME=	chromium
-PORTVERSION=	120.0.6099.224
+PORTVERSION=	121.0.6167.85
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		chrome-linux-${PORTVERSION}-llvm16.profdata${EXTRACT_SUFX}:external
+		chrome-linux-${PORTVERSION}-llvm17.profdata${EXTRACT_SUFX}:external
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -33,7 +33,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libspeechd.so:accessibility/speech-dispatcher \
-		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
 		libspeex.so:audio/speex \
@@ -99,6 +98,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=true \
+		enable_log_error_not_reached=true \
 		enable_nacl=false \
 		enable_remoting=false \
 		enable_rust=false \
@@ -111,7 +111,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		treat_warnings_as_errors=false \
 		use_allocator_shim=false \
 		use_aura=true \
-		use_custom_libcxx=false \
+		use_custom_libcxx=true \
+		use_custom_libunwind=true \
 		use_lld=true \
 		use_partition_alloc=true \
 		use_partition_alloc_as_malloc=false \
@@ -228,8 +229,8 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 160
-LLVM_DEFAULT=		16
+.if ${COMPILER_VERSION} < 170
+LLVM_DEFAULT=		17
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
@@ -286,7 +287,7 @@ pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		dav1d flac fontconfig freetype harfbuzz-ng icu libdrm libevent libpng \
-		libusb libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/third_party/ffmpeg && \
 		${PYTHON_CMD} chromium/scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \

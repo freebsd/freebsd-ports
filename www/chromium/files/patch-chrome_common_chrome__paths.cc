@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/common/chrome_paths.cc.orig	2024-01-30 07:53:34 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -30,7 +30,7 @@
  #include "base/apple/foundation_util.h"
@@ -63,16 +63,16 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -590,7 +590,7 @@ bool PathProvider(int key, base::FilePath* result) {
-       break;
+@@ -591,7 +591,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(ENABLE_EXTENSIONS) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD))
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -604,6 +604,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -605,6 +605,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(
            FILE_PATH_LITERAL("/etc/opt/chrome/native-messaging-hosts"));

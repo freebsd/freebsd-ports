@@ -1,6 +1,41 @@
---- content/common/BUILD.gn.orig	2023-12-10 06:10:27 UTC
+--- content/common/BUILD.gn.orig	2024-01-30 07:53:34 UTC
 +++ content/common/BUILD.gn
-@@ -438,6 +438,9 @@ if (is_linux || is_chromeos) {
+@@ -404,20 +404,29 @@ source_set("common") {
+   }
+ 
+   if (is_linux || is_chromeos) {
+-    sources += [
+-      "gpu_pre_sandbox_hook_linux.cc",
+-      "gpu_pre_sandbox_hook_linux.h",
+-    ]
++    if (is_bsd) {
++      sources += [
++        "gpu_pre_sandbox_hook_bsd.cc",
++        "gpu_pre_sandbox_hook_bsd.h",
++      ]
++    } else {
++      sources += [
++        "gpu_pre_sandbox_hook_linux.cc",
++        "gpu_pre_sandbox_hook_linux.h",
++      ]
++    }
+     public_deps += [ "//sandbox/policy" ]
+     deps += [
+       ":sandbox_support_linux",
+       ":set_process_title_linux",
+       "//media/gpu:buildflags",
+       "//sandbox/linux:sandbox_services",
+-      "//sandbox/linux:seccomp_bpf",
+       "//sandbox/policy:chromecast_sandbox_allowlist_buildflags",
+       "//third_party/fontconfig",
+     ]
++    if (use_seccomp_bpf) {
++      deps += [ "//sandbox/linux:seccomp_bpf" ]
++    }
+     if (use_v4l2_codec) {
+       deps += [ "//media/gpu/v4l2" ]
+     }
+@@ -487,6 +496,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]
