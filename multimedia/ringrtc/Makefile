@@ -1,6 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.34.5
+DISTVERSION=	2.36.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -55,7 +55,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	5993b
+WEBRTC_REV=	5993d
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		609cafa975c8a29d3b2f686c9a42530a556835fe
@@ -95,6 +95,10 @@ GN_ARGS+=	rtc_build_examples=false \
 		treat_warnings_as_errors=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}"
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.36.0-67d1b48bd4c1ea31c155ea14a0bd28f04e46eff5-integrity
+NPM_SIGNAL_DIR=	npm-@signalapp-libsignal-client-0.39.1-15b41f15c516ae3eecf8a098a9c9c7aac00444d7-integrity
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.6.0-0413f4d0626b99838cd64ad09c88720aa2bec6ed-integrity
+SQLCIPHER=	sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 
 MAKE_ARGS=	-C out/${BUILDTYPE}
 
