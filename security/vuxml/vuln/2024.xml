@@ -1,3 +1,91 @@
+  <vuln vid="dc9e5237-c197-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>121.0.6167.139</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>121.0.6167.139</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[1511567] High CVE-2024-1060: Use after free in Canvas. Reported by Anonymous on 2023-12-14</li>
+	    <li>[1514777] High CVE-2024-1059: Use after free in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2023-12-29</li>
+	    <li>[1511085] High CVE-2024-1077: Use after free in Network. Reported by Microsoft Security Research Center on 2023-12-13</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1060</cvename>
+      <cvename>CVE-2024-1059</cvename>
+      <cvename>CVE-2024-1077</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-30</discovery>
+      <entry>2024-02-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="72d6d757-c197-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>121.0.6167.85</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>121.0.6167.85</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_23.html">
+	 <p>This update includes 17 security fixes:</p>
+	 <ul>
+	    <li>[1484394] High CVE-2024-0812: Inappropriate implementation in Accessibility. Reported by Anonymous on 2023-09-19</li>
+	    <li>[1504936] High CVE-2024-0808: Integer underflow in WebUI. Reported by Lyra Rebane (rebane2001) on 2023-11-24</li>
+	    <li>[1496250] Medium CVE-2024-0810: Insufficient policy enforcement in DevTools. Reported by Shaheen Fazim on 2023-10-26</li>
+	    <li>[1463935] Medium CVE-2024-0814: Incorrect security UI in Payments. Reported by Muneaki Nishimura (nishimunea) on 2023-07-11</li>
+	    <li>[1477151] Medium CVE-2024-0813: Use after free in Reading Mode. Reported by @retsew0x01 on 2023-08-30</li>
+	    <li>[1505176] Medium CVE-2024-0806: Use after free in Passwords. Reported by 18楼梦想改造家 on 2023-11-25</li>
+	    <li>[1514925] Medium CVE-2024-0805: Inappropriate implementation in Downloads. Reported by Om Apip on 2024-01-01</li>
+	    <li>[1515137] Medium CVE-2024-0804: Insufficient policy enforcement in iOS Security UI. Reported by Narendra Bhati of Suma Soft Pvt. Ltd. Pune (India)  on 2024-01-03</li>
+	    <li>[1494490] Low CVE-2024-0811: Inappropriate implementation in Extensions API. Reported by Jann Horn of Google Project Zero on 2023-10-21</li>
+	    <li>[1497985] Low CVE-2024-0809: Inappropriate implementation in Autofill. Reported by Ahmed ElMasry on 2023-10-31</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0812</cvename>
+      <cvename>CVE-2024-0808</cvename>
+      <cvename>CVE-2024-0810</cvename>
+      <cvename>CVE-2024-0814</cvename>
+      <cvename>CVE-2024-0813</cvename>
+      <cvename>CVE-2024-0806</cvename>
+      <cvename>CVE-2024-0805</cvename>
+      <cvename>CVE-2024-0804</cvename>
+      <cvename>CVE-2024-0811</cvename>
+      <cvename>CVE-2024-0809</cvename>
+      <url>https://chromereleases.googleblog.com/2024/01/stable-channel-update-for-desktop_23.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-23</discovery>
+      <entry>2024-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13a8c4bf-cb2b-48ec-b49c-a3875c72b3e8">
     <topic>electron{26,27,28} -- Use after free in Web Audio</topic>
     <affects>
