@@ -16,6 +16,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	mismatched types: expected \`i32\`, found \`i64\`
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 FLAVORS=			x11 wayland
 wayland_LIB_DEPENDS=		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
