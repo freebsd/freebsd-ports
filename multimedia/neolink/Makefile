@@ -12,6 +12,8 @@ WWW=		https://github.com/thirtythreeforty/neolink
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
+
 LIB_DEPENDS=	libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server
 
 USES=	cargo gnome gstreamer
