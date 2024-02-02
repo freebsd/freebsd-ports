@@ -1,4 +1,4 @@
---- third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig	2024-01-09 18:29:07 UTC
+--- third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig	2024-01-30 07:53:34 UTC
 +++ third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c
 @@ -91,9 +91,23 @@ static int arm_get_cpu_caps(void) {
    return flags;
@@ -21,7 +21,7 @@
 +    elf_aux_info(type, &ret, sizeof(ret));
 +    return ret;
 +}
-+#endif  
++#endif
  
  // Define hwcap values ourselves: building with an old auxv header where these
  // hwcap values are not defined should not prevent features from being enabled.

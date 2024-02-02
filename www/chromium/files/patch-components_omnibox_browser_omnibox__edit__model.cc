@@ -1,8 +1,8 @@
---- components/omnibox/browser/omnibox_edit_model.cc.orig	2023-05-31 08:12:17 UTC
+--- components/omnibox/browser/omnibox_edit_model.cc.orig	2024-01-30 07:53:34 UTC
 +++ components/omnibox/browser/omnibox_edit_model.cc
-@@ -23,6 +23,7 @@
- #include "base/trace_event/trace_event.h"
+@@ -24,6 +24,7 @@
  #include "base/trace_event/typed_macros.h"
+ #include "build/branding_buildflags.h"
  #include "build/build_config.h"
 +#include "build/branding_buildflags.h"
  #include "components/bookmarks/browser/bookmark_model.h"

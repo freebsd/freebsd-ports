@@ -1,11 +1,11 @@
---- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2023-05-31 08:12:17 UTC
+--- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2024-01-30 07:53:34 UTC
 +++ third_party/blink/renderer/modules/ml/webnn/features.gni
-@@ -7,7 +7,7 @@ declare_args() {
+@@ -6,7 +6,7 @@ import("//build/config/chrome_build.gni")
+ declare_args() {
    # This enables building WebNN with XNNPACK. Currently only available for
-   # Windows and Linux on x64 or x86.
-   build_webnn_with_xnnpack =
--      (is_linux || is_win) && (current_cpu == "x64" || current_cpu == "x86")
-+      !is_bsd && (is_win && (current_cpu == "x64" || current_cpu == "x86"))
+   # Windows, macOS and Linux on x64, x86 and arm64.
+-  build_webnn_with_xnnpack = (is_linux || is_win || is_mac) &&
++  build_webnn_with_xnnpack = !is_bsd && (is_linux || is_win || is_mac) &&
+                              (current_cpu == "x64" || current_cpu == "x86" ||
+                               (current_cpu == "arm64" && !is_win))
  
-   # This build flag enables WebNN on ChromeOS platform to access hardware
-   # acceleration by using ModelLoader mojo interface.

@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2023-12-10 06:10:27 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2024-01-30 07:53:34 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
 @@ -12,11 +12,11 @@
  #include <string.h>
@@ -11,10 +11,10 @@
  
 -#if BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
- #define HAVE_DLADDR
  #include <dlfcn.h>
  #endif
-@@ -25,7 +25,7 @@ namespace partition_alloc::internal::base::debug {
+ 
+@@ -24,7 +24,7 @@ namespace partition_alloc::internal::base::debug {
  
  namespace {
  
@@ -23,7 +23,7 @@
  
  constexpr size_t kBufferSize = 4096u;
  
-@@ -359,7 +359,7 @@ void PrintStackTraceInternal(const void** trace, size_
+@@ -358,7 +358,7 @@ void PrintStackTraceInternal(const void** trace, size_
  }
  #endif  // !BUILDFLAG(IS_APPLE)
  

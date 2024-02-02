@@ -1,6 +1,6 @@
---- components/optimization_guide/core/tflite_model_executor.h.orig	2023-10-11 18:22:24 UTC
+--- components/optimization_guide/core/tflite_model_executor.h.orig	2024-01-30 07:53:34 UTC
 +++ components/optimization_guide/core/tflite_model_executor.h
-@@ -240,7 +240,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
+@@ -241,7 +241,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
    void SendForBatchExecution(
        BatchExecutionCallback callback_on_complete,
        base::TimeTicks start_time,
@@ -12,7 +12,7 @@
        override {
      DCHECK(execution_task_runner_->RunsTasksInCurrentSequence());
      DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-@@ -262,7 +266,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
+@@ -263,7 +267,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
    // Starts the synchronous execution of the model. Returns model outputs.
    // Model needs to be loaded. Synchronous calls do not load or unload model.
    std::vector<absl::optional<OutputType>> SendForBatchExecutionSync(
@@ -24,7 +24,7 @@
        override {
      DCHECK(execution_task_runner_->RunsTasksInCurrentSequence());
      DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-@@ -417,7 +425,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
+@@ -421,7 +429,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
    // executes it on the model execution thread.
    void LoadModelFileAndBatchExecute(
        BatchExecutionCallback callback_on_complete,
@@ -36,7 +36,7 @@
      DCHECK(execution_task_runner_->RunsTasksInCurrentSequence());
      DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
  
-@@ -434,7 +446,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
+@@ -438,7 +450,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
  
    // Batch executes the loaded model for inputs.
    void BatchExecuteLoadedModel(
@@ -48,7 +48,7 @@
        std::vector<absl::optional<OutputType>>* outputs) {
      DCHECK(execution_task_runner_->RunsTasksInCurrentSequence());
      DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-@@ -494,7 +510,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
+@@ -498,7 +514,11 @@ class TFLiteModelExecutor : public ModelExecutor<Outpu
    // Unloads the model if needed.
    void BatchExecuteLoadedModelAndRunCallback(
        BatchExecutionCallback callback_on_complete,

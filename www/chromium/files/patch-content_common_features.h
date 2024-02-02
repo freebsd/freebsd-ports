@@ -1,8 +1,8 @@
---- content/common/features.h.orig	2023-12-10 06:10:27 UTC
+--- content/common/features.h.orig	2024-01-30 07:53:34 UTC
 +++ content/common/features.h
-@@ -37,7 +37,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDeviceMonitorMac)
+@@ -38,7 +38,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDeviceMonitorMac)
+ #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnumerateDevicesHideDeviceIDs);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableBackForwardCacheForScreenReader);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

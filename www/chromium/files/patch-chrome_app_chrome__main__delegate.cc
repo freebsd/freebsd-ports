@@ -1,6 +1,6 @@
---- chrome/app/chrome_main_delegate.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2024-01-30 07:53:34 UTC
 +++ chrome/app/chrome_main_delegate.cc
-@@ -145,7 +145,7 @@
+@@ -146,7 +146,7 @@
  #include "components/about_ui/credit_utils.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -189,16 +189,16 @@
+@@ -190,16 +190,16 @@
  #include "v8/include/v8.h"
  #endif
  
@@ -29,7 +29,7 @@
  #include "chrome/browser/policy/policy_path_parser.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -337,7 +337,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
+@@ -338,7 +338,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
  // and resources loaded.
  bool SubprocessNeedsResourceBundle(const std::string& process_type) {
    return
@@ -38,7 +38,7 @@
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -422,7 +422,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
+@@ -423,7 +423,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -47,7 +47,7 @@
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -600,7 +600,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -601,7 +601,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -56,7 +56,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -690,7 +690,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
+@@ -691,7 +691,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -65,7 +65,7 @@
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::GetCommon().RecordStartupProcessCreationTime(
-@@ -1044,7 +1044,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
+@@ -1048,7 +1048,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
    base::InitializeCpuReductionExperiment();
    base::sequence_manager::internal::SequenceManagerImpl::InitializeFeatures();
    base::sequence_manager::internal::ThreadController::InitializeFeatures();
@@ -74,7 +74,7 @@
    base::MessagePumpLibevent::InitializeFeatures();
  #elif BUILDFLAG(IS_MAC)
    base::PlatformThread::InitFeaturesPostFieldTrial();
-@@ -1196,7 +1196,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
+@@ -1200,7 +1200,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
  
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.
@@ -83,7 +83,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1226,7 +1226,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
+@@ -1230,7 +1230,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
  #if BUILDFLAG(IS_CHROMEOS)
    chromeos::dbus_paths::RegisterPathProvider();
  #endif
@@ -92,7 +92,7 @@
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1637,7 +1637,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1641,7 +1641,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      CHECK(!loaded_locale.empty()) << "Locale could not be found for " << locale;
    }
  
@@ -101,7 +101,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
      if (command_line.HasSwitch(switches::kPreCrashpadCrashTest)) {
-@@ -1746,7 +1746,7 @@ absl::variant<int, content::MainFunctionParams> Chrome
+@@ -1750,7 +1750,7 @@ absl::variant<int, content::MainFunctionParams> Chrome
  
    // This entry is not needed on Linux, where the NaCl loader
    // process is launched via nacl_helper instead.

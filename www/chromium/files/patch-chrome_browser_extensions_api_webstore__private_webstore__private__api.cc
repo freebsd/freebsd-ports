@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/webstore_private/webstore_private_api.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/extensions/api/webstore_private/webstore_private_api.cc.orig	2024-01-30 07:53:34 UTC
 +++ chrome/browser/extensions/api/webstore_private/webstore_private_api.cc
-@@ -919,7 +919,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
+@@ -904,7 +904,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
          RequestExtensionApproval(contents);
          return;
        }

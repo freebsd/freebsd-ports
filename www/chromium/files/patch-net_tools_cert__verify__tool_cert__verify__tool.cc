@@ -1,15 +1,15 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2023-12-10 06:10:27 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-01-30 07:53:34 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
-@@ -31,7 +31,7 @@
- #include "net/url_request/url_request_context_builder.h"
- #include "net/url_request/url_request_context_getter.h"
+@@ -32,7 +32,7 @@
+ #include "third_party/boringssl/src/pki/trust_store.h"
+ #include "third_party/boringssl/src/pki/trust_store_collection.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -63,7 +63,7 @@ void SetUpOnNetworkThread(
+@@ -64,7 +64,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
@@ -18,7 +18,7 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -545,7 +545,7 @@ int main(int argc, char** argv) {
+@@ -562,7 +562,7 @@ int main(int argc, char** argv) {
    std::string impls_str = command_line.GetSwitchValueASCII("impls");
    if (impls_str.empty()) {
      // Default value.

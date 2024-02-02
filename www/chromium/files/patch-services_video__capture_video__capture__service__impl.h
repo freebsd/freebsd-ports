@@ -1,6 +1,6 @@
---- services/video_capture/video_capture_service_impl.h.orig	2023-09-13 12:11:42 UTC
+--- services/video_capture/video_capture_service_impl.h.orig	2024-01-30 07:53:34 UTC
 +++ services/video_capture/video_capture_service_impl.h
-@@ -24,7 +24,7 @@
+@@ -26,7 +26,7 @@
  #include "services/video_capture/ash/video_capture_device_factory_ash.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -9,7 +9,7 @@
  #include "services/viz/public/cpp/gpu/gpu.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -62,7 +62,7 @@ class VideoCaptureServiceImpl : public mojom::VideoCap
+@@ -69,7 +69,7 @@ class VideoCaptureServiceImpl : public mojom::VideoCap
  #if BUILDFLAG(IS_WIN)
    void OnGpuInfoUpdate(const CHROME_LUID& luid) override;
  #endif
@@ -18,7 +18,7 @@
    void SetVizGpu(std::unique_ptr<viz::Gpu> viz_gpu);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
   private:
-@@ -87,7 +87,7 @@ class VideoCaptureServiceImpl : public mojom::VideoCap
+@@ -105,7 +105,7 @@ class VideoCaptureServiceImpl : public mojom::VideoCap
        factory_receivers_ash_;
  #endif
  

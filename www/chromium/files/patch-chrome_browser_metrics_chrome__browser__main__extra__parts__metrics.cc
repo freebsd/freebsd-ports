@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2024-01-30 07:53:34 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 @@ -78,8 +78,10 @@
  
@@ -12,7 +12,7 @@
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -108,7 +110,7 @@
+@@ -104,7 +106,7 @@
  #include "chromeos/crosapi/cpp/crosapi_constants.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -21,7 +21,7 @@
  #include "chrome/browser/metrics/pressure/pressure_metrics_reporter.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -117,7 +119,7 @@
+@@ -113,7 +115,7 @@
  #include "components/user_manager/user_manager.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -30,7 +30,7 @@
  #include "components/power_metrics/system_power_monitor.h"
  #endif
  
-@@ -917,7 +919,7 @@ void RecordStartupMetrics() {
+@@ -837,7 +839,7 @@ void RecordStartupMetrics() {
  
    // Record whether Chrome is the default browser or not.
    // Disabled on Linux due to hanging browser tests, see crbug.com/1216328.
@@ -39,7 +39,7 @@
    shell_integration::DefaultWebClientState default_state =
        shell_integration::GetDefaultBrowser();
    base::UmaHistogramEnumeration("DefaultBrowser.State", default_state,
-@@ -1239,11 +1241,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
+@@ -1145,11 +1147,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
    }
  #endif  // !BUILDFLAG(IS_ANDROID)
  
