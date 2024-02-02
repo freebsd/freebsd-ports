@@ -1,7 +1,7 @@
 PORTNAME=	gradle
-PORTVERSION=	8.2.1
+PORTVERSION=	8.6
 CATEGORIES=	devel java
-MASTER_SITES=	https://downloads.gradle.org/distributions/
+MASTER_SITES=	https://services.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
 
 MAINTAINER=	ygy@FreeBSD.org

@@ -12,3 +12,5 @@ provides a declarative way to describe all kinds of builds through
 sensible defaults. Gradle is quickly becoming the build system of
 choice for many open source projects, leading edge enterprises and
 legacy automation challenges.
+
+See also <https://github.com/gradle/gradle>.
