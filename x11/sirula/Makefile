@@ -11,6 +11,8 @@ WWW=		https://github.com/DorianRudolph/sirula
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
+
 LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
 USES=		cargo gnome
