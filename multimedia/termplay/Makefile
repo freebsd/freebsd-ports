@@ -12,6 +12,8 @@ WWW=		https://github.com/jD91mZM2/termplay
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
+
 LIB_DEPENDS=	libsixel.so:graphics/libsixel
 
 USES=		cargo gnome gstreamer
