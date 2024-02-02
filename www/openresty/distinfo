@@ -1,3 +1,3 @@
-TIMESTAMP = 1689838584
-SHA256 (openresty-1.21.4.2.tar.gz) = 5b1eded25c1d4ed76c0336dfae50bd94d187af9c85ead244135dd5ae363b2e2a
-SIZE (openresty-1.21.4.2.tar.gz) = 5653425
+TIMESTAMP = 1705067826
+SHA256 (openresty-1.25.3.1.tar.gz) = 32ec1a253a5a13250355a075fe65b7d63ec45c560bbe213350f0992a57cd79df
+SIZE (openresty-1.25.3.1.tar.gz) = 5849755
