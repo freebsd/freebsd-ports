@@ -13,6 +13,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_powerpc64=	compilation fails: use of undeclared identifier 'power_cpu_has_arch_3_00', see https://github.com/rust-lang/libz-sys/issues/183
+BROKEN_powerpc64le=	compilation fails: use of undeclared identifier 'power_cpu_has_arch_3_00', see https://github.com/rust-lang/libz-sys/issues/183
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cargo
