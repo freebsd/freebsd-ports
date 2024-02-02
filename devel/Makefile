@@ -1387,6 +1387,7 @@
     SUBDIR += libs11n
     SUBDIR += libsavitar
     SUBDIR += libscca
+    SUBDIR += libscfg
     SUBDIR += libsearpc
     SUBDIR += libserdes
     SUBDIR += libserialport
