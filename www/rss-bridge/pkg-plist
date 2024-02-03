@@ -4,7 +4,6 @@
 %%WWWDIR%%/actions/FindfeedAction.php
 %%WWWDIR%%/actions/FrontpageAction.php
 %%WWWDIR%%/actions/HealthAction.php
-%%WWWDIR%%/actions/SetBridgeCacheAction.php
 %%WWWDIR%%/actions/ListAction.php
 %%WWWDIR%%/bridges/ABCNewsBridge.php
 %%WWWDIR%%/bridges/ABolaBridge.php
@@ -22,6 +21,7 @@
 %%WWWDIR%%/bridges/AllocineFRSortiesBridge.php
 %%WWWDIR%%/bridges/AmazonBridge.php
 %%WWWDIR%%/bridges/AmazonPriceTrackerBridge.php
+%%WWWDIR%%/bridges/AnnasArchiveBridge.php
 %%WWWDIR%%/bridges/AnidexBridge.php
 %%WWWDIR%%/bridges/AnimeUltimeBridge.php
 %%WWWDIR%%/bridges/AppleAppStoreBridge.php
@@ -38,6 +38,7 @@
 %%WWWDIR%%/bridges/AutoJMBridge.php
 %%WWWDIR%%/bridges/AwwwardsBridge.php
 %%WWWDIR%%/bridges/BAEBridge.php
+%%WWWDIR%%/bridges/BMDSystemhausBlogBridge.php
 %%WWWDIR%%/bridges/BadDragonBridge.php
 %%WWWDIR%%/bridges/BakaUpdatesMangaReleasesBridge.php
 %%WWWDIR%%/bridges/BandcampBridge.php
@@ -53,6 +54,7 @@
 %%WWWDIR%%/bridges/BugzillaBridge.php
 %%WWWDIR%%/bridges/BundesbankBridge.php
 %%WWWDIR%%/bridges/BundestagParteispendenBridge.php
+%%WWWDIR%%/bridges/BundesverbandFuerFreieKammernBridge.php
 %%WWWDIR%%/bridges/BukowskisBridge.php
 %%WWWDIR%%/bridges/CBCEditorsBlogBridge.php
 %%WWWDIR%%/bridges/CNETBridge.php
@@ -77,8 +79,10 @@
 %%WWWDIR%%/bridges/CryptomeBridge.php
 %%WWWDIR%%/bridges/CssSelectorBridge.php
 %%WWWDIR%%/bridges/CssSelectorComplexBridge.php
+%%WWWDIR%%/bridges/CssSelectorFeedExpanderBridge.php
 %%WWWDIR%%/bridges/CubariBridge.php
 %%WWWDIR%%/bridges/CuriousCatBridge.php
+%%WWWDIR%%/bridges/DagensNyheterDirektBridge.php
 %%WWWDIR%%/bridges/DailymotionBridge.php
 %%WWWDIR%%/bridges/DanbooruBridge.php
 %%WWWDIR%%/bridges/DansTonChatBridge.php
@@ -86,10 +90,12 @@
 %%WWWDIR%%/bridges/DauphineLibereBridge.php
 %%WWWDIR%%/bridges/DavesTrailerPageBridge.php
 %%WWWDIR%%/bridges/DealabsBridge.php
+%%WWWDIR%%/bridges/DemosBerlinBridge.php
 %%WWWDIR%%/bridges/DerpibooruBridge.php
 %%WWWDIR%%/bridges/DesoutterBridge.php
 %%WWWDIR%%/bridges/DeutscheWelleBridge.php
 %%WWWDIR%%/bridges/DevToBridge.php
+%%WWWDIR%%/bridges/DeutscherAeroClubBridge.php
 %%WWWDIR%%/bridges/DeveloppezDotComBridge.php
 %%WWWDIR%%/bridges/DiarioDoAlentejoBridge.php
 %%WWWDIR%%/bridges/DiarioDeNoticiasBridge.php
@@ -102,9 +108,12 @@
 %%WWWDIR%%/bridges/Drive2ruBridge.php
 %%WWWDIR%%/bridges/DuckDuckGoBridge.php
 %%WWWDIR%%/bridges/EBayBridge.php
+%%WWWDIR%%/bridges/EDDHPiRepsBridge.php
+%%WWWDIR%%/bridges/EDDHPresseschauBridge.php
 %%WWWDIR%%/bridges/EZTVBridge.php
 %%WWWDIR%%/bridges/EconomistBridge.php
 %%WWWDIR%%/bridges/EconomistWorldInBriefBridge.php
+%%WWWDIR%%/bridges/EdfPricesBridge.php
 %%WWWDIR%%/bridges/EliteDangerousGalnetBridge.php
 %%WWWDIR%%/bridges/ElloBridge.php
 %%WWWDIR%%/bridges/ElsevierBridge.php
@@ -123,20 +132,25 @@
 %%WWWDIR%%/bridges/FM4Bridge.php
 %%WWWDIR%%/bridges/FSecureBlogBridge.php
 %%WWWDIR%%/bridges/FabriceBellardBridge.php
-%%WWWDIR%%/bridges/FallGuysBridge.php
 %%WWWDIR%%/bridges/FacebookBridge.php
+%%WWWDIR%%/bridges/FallGuysBridge.php
+%%WWWDIR%%/bridges/FarsideNitterBridge.php
+%%WWWDIR%%/bridges/FeedExpanderTestBridge.php
 %%WWWDIR%%/bridges/FeedMergeBridge.php
 %%WWWDIR%%/bridges/FeedReducerBridge.php
+%%WWWDIR%%/bridges/FiaBridge.php
 %%WWWDIR%%/bridges/FicbookBridge.php
 %%WWWDIR%%/bridges/FiderBridge.php
 %%WWWDIR%%/bridges/FilterBridge.php
 %%WWWDIR%%/bridges/FinanzflussBridge.php
 %%WWWDIR%%/bridges/FindACrewBridge.php
 %%WWWDIR%%/bridges/FirefoxAddonsBridge.php
+%%WWWDIR%%/bridges/FirefoxReleaseNotesBridge.php
 %%WWWDIR%%/bridges/FirstLookMediaTechBridge.php
 %%WWWDIR%%/bridges/FlaschenpostBridge.php
 %%WWWDIR%%/bridges/FlashbackBridge.php
 %%WWWDIR%%/bridges/FlickrBridge.php
+%%WWWDIR%%/bridges/FliegermagazinBridge.php
 %%WWWDIR%%/bridges/FolhaDeSaoPauloBridge.php
 %%WWWDIR%%/bridges/ForGifsBridge.php
 %%WWWDIR%%/bridges/Formula1Bridge.php
@@ -193,6 +207,7 @@
 %%WWWDIR%%/bridges/IGNBridge.php
 %%WWWDIR%%/bridges/IPBBridge.php
 %%WWWDIR%%/bridges/IKWYDBridge.php
+%%WWWDIR%%/bridges/IdealoBridge.php
 %%WWWDIR%%/bridges/IdenticaBridge.php
 %%WWWDIR%%/bridges/ImgsedBridge.php
 %%WWWDIR%%/bridges/IndeedBridge.php
@@ -213,6 +228,7 @@
 %%WWWDIR%%/bridges/KhinsiderBridge.php
 %%WWWDIR%%/bridges/KilledbyGoogleBridge.php
 %%WWWDIR%%/bridges/KitsuBridge.php
+%%WWWDIR%%/bridges/KleinanzeigenBridge.php
 %%WWWDIR%%/bridges/KoFiBridge.php
 %%WWWDIR%%/bridges/KonachanBridge.php
 %%WWWDIR%%/bridges/KoreusBridge.php
@@ -226,11 +242,16 @@
 %%WWWDIR%%/bridges/LegoIdeasBridge.php
 %%WWWDIR%%/bridges/LesJoiesDuCodeBridge.php
 %%WWWDIR%%/bridges/ListverseBridge.php
+%%WWWDIR%%/bridges/LogicMastersBridge.php
 %%WWWDIR%%/bridges/LolibooruBridge.php
+%%WWWDIR%%/bridges/LuftfahrtBundesAmtBridge.php
+%%WWWDIR%%/bridges/LuftsportSHBridge.php
 %%WWWDIR%%/bridges/MagellantvBridge.php
 %%WWWDIR%%/bridges/Mailman2Bridge.php
 %%WWWDIR%%/bridges/MallTvBridge.php
 %%WWWDIR%%/bridges/MangaDexBridge.php
+%%WWWDIR%%/bridges/MangaReaderBridge.php
+%%WWWDIR%%/bridges/ManyVidsBridge.php
 %%WWWDIR%%/bridges/MarktplaatsBridge.php
 %%WWWDIR%%/bridges/MastodonBridge.php
 %%WWWDIR%%/bridges/MediapartBlogsBridge.php
@@ -241,6 +262,7 @@
 %%WWWDIR%%/bridges/MoebooruBridge.php
 %%WWWDIR%%/bridges/MoinMoinBridge.php
 %%WWWDIR%%/bridges/MondeDiploBridge.php
+%%WWWDIR%%/bridges/MotatosBridge.php
 %%WWWDIR%%/bridges/MozillaBugTrackerBridge.php
 %%WWWDIR%%/bridges/MozillaSecurityBridge.php
 %%WWWDIR%%/bridges/MsnMondeBridge.php
@@ -256,9 +278,10 @@
 %%WWWDIR%%/bridges/NautiljonBridge.php
 %%WWWDIR%%/bridges/NewOnNetflixBridge.php
 %%WWWDIR%%/bridges/NewgroundsBridge.php
-%%WWWDIR%%/bridges/NextInpactBridge.php
+%%WWWDIR%%/bridges/NextInkBridge.php
 %%WWWDIR%%/bridges/NextgovBridge.php
 %%WWWDIR%%/bridges/NiceMatinBridge.php
+%%WWWDIR%%/bridges/NintendoBridge.php
 %%WWWDIR%%/bridges/NikonDownloadCenterBridge.php
 %%WWWDIR%%/bridges/NineGagBridge.php
 %%WWWDIR%%/bridges/NiusBridge.php
@@ -270,6 +293,7 @@
 %%WWWDIR%%/bridges/NyaaTorrentsBridge.php
 %%WWWDIR%%/bridges/OLXBridge.php
 %%WWWDIR%%/bridges/OMonlineBridge.php
+%%WWWDIR%%/bridges/OglafBridge.php
 %%WWWDIR%%/bridges/OnVaSortirBridge.php
 %%WWWDIR%%/bridges/OneFortuneADayBridge.php
 %%WWWDIR%%/bridges/OpenlyBridge.php
@@ -341,6 +365,7 @@
 %%WWWDIR%%/bridges/SkimfeedBridge.php
 %%WWWDIR%%/bridges/SleeperFantasyFootballBridge.php
 %%WWWDIR%%/bridges/SlusheBridge.php
+%%WWWDIR%%/bridges/SongkickBridge.php
 %%WWWDIR%%/bridges/SoundcloudBridge.php
 %%WWWDIR%%/bridges/SplCenterBridge.php
 %%WWWDIR%%/bridges/SpotifyBridge.php
@@ -369,6 +394,7 @@
 %%WWWDIR%%/bridges/TheRedHandFilesBridge.php
 %%WWWDIR%%/bridges/TheWhiteboardBridge.php
 %%WWWDIR%%/bridges/TheYeteeBridge.php
+%%WWWDIR%%/bridges/ThreadsBridge.php
 %%WWWDIR%%/bridges/TikTokBridge.php
 %%WWWDIR%%/bridges/TinyLetterBridge.php
 %%WWWDIR%%/bridges/TldrTechBridge.php
@@ -410,6 +436,7 @@
 %%WWWDIR%%/bridges/WordPressPluginUpdateBridge.php
 %%WWWDIR%%/bridges/WorldCosplayBridge.php
 %%WWWDIR%%/bridges/WorldOfTanksBridge.php
+%%WWWDIR%%/bridges/WorldbankBridge.php
 %%WWWDIR%%/bridges/XPathBridge.php
 %%WWWDIR%%/bridges/XbooruBridge.php
 %%WWWDIR%%/bridges/XenForoBridge.php
@@ -436,8 +463,6 @@
 %%WWWDIR%%/formats/PlaintextFormat.php
 %%WWWDIR%%/formats/SfeedFormat.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/lib/ApiAuthenticationMiddleware.php
-%%WWWDIR%%/lib/AuthenticationMiddleware.php
 %%WWWDIR%%/lib/BridgeFactory.php
 %%WWWDIR%%/lib/CacheFactory.php
 %%WWWDIR%%/lib/CacheInterface.php
@@ -448,9 +473,9 @@
 %%WWWDIR%%/lib/Debug.php
 %%WWWDIR%%/lib/FeedExpander.php
 %%WWWDIR%%/lib/FeedItem.php
+%%WWWDIR%%/lib/FeedParser.php
 %%WWWDIR%%/lib/FormatAbstract.php
 %%WWWDIR%%/lib/FormatFactory.php
-%%WWWDIR%%/lib/FormatInterface.php
 %%WWWDIR%%/lib/ParameterValidator.php
 %%WWWDIR%%/lib/RssBridge.php
 %%WWWDIR%%/lib/TwitterClient.php
@@ -461,6 +486,7 @@
 %%WWWDIR%%/lib/http.php
 %%WWWDIR%%/lib/logger.php
 %%WWWDIR%%/lib/php8backports.php
+%%WWWDIR%%/lib/seotags.php
 %%WWWDIR%%/lib/url.php
 %%WWWDIR%%/lib/utils.php
 %%WWWDIR%%/static/bootstrap.min.css
@@ -473,8 +499,6 @@
 %%WWWDIR%%/static/logo_600px.png
 %%WWWDIR%%/static/rss-bridge.js
 %%WWWDIR%%/static/style.css
-%%WWWDIR%%/static/twitter-form.png
-%%WWWDIR%%/static/twitter-rasmus.png
 %%WWWDIR%%/templates/base.html.php
 %%WWWDIR%%/templates/bridge-error.html.php
 %%WWWDIR%%/templates/connectivity.html.php
@@ -482,6 +506,7 @@
 %%WWWDIR%%/templates/exception.html.php
 %%WWWDIR%%/templates/frontpage.html.php
 %%WWWDIR%%/templates/html-format.html.php
+%%WWWDIR%%/templates/token.html.php
 %%WWWDIR%%/vendor/parsedown/Parsedown.php
 %%WWWDIR%%/vendor/php-urljoin/src/urljoin.php
 %%WWWDIR%%/vendor/simplehtmldom/simple_html_dom.php

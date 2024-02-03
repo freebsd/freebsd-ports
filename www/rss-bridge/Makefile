@@ -1,5 +1,5 @@
 PORTNAME=	rss-bridge
-DISTVERSION=	2023-09-24
+DISTVERSION=	2024-02-02
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -17,11 +17,12 @@ USE_PHP=	curl mbstring simplexml zip
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
 
-OPTIONS_DEFINE=	SQLITE
-OPTIONS_DEFAULT=SQLITE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		SQLITE
+OPTIONS_DEFAULT=	SQLITE
+OPTIONS_SUB=		yes
 
 SQLITE_DESC=	Enable sqlite-based cache support (requires sqlite)
 
@@ -35,6 +36,8 @@ do-install:
 	    -or -name UNLICENSE -or -name app.json -or -name composer.json \
 	    -or -name composer.lock -or -name docker-bake.hcl \
 	    -or -name docker-entrypoint.sh \
+	    -or -path ./bin -or -path ./bin/cache-clear \
+	    -or -path ./bin/cache-prune \
 	    -or -path ./config -or -path ./config/nginx.conf \
 	    -or -path ./config/php-fpm.conf -or -path ./config/php.ini \
 	    -or -regex ./.devcontainer.* -or -regex ./contrib.* \
