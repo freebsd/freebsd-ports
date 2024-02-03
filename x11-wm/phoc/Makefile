@@ -1,7 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.0
-PORTREVISION=	1
+DISTVERSION=	0.36.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +8,7 @@ COMMENT=	Phone compositor
 WWW=		https://gitlab.gnome.org/World/Phosh/phoc
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.15:graphics/wayland-protocols
