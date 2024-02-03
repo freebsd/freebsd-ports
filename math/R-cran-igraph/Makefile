@@ -1,5 +1,5 @@
 PORTNAME=	igraph
-DISTVERSION=	1.6.0
+DISTVERSION=	2.0.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +16,8 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-pkgconfig>=2.0.0:devel/R-cran-pkgconfig \
-		R-cran-rlang>0:devel/R-cran-rlang
+		R-cran-rlang>0:devel/R-cran-rlang \
+		R-cran-vctrs>0:devel/R-cran-vctrs
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles gnome
 USE_GNOME=	libxml2
