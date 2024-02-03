@@ -1,7 +1,7 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.1.6
 DISTVERSIONSUFFIX=	-1.el7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio linux
 MASTER_SITES=	CENTOS_LINUX
 MASTER_SITE_SUBDIR=	centos/${LINUX_DIST_VER}/os/Source/SPackages/ \
@@ -105,6 +105,7 @@ do-install:
 		${LOCALBASE}/bin/gmake install-strip \
 		DESTDIR=${STAGEDIR}${LINUXBASE})
 	${RM} -r ${STAGEDIR}${LINUXBASE}${LIBDIR_${ARCH}}/alsa-lib/*.la
-	${RM} -r ${STAGEDIR}${LINUXBASE}/etc ${STAGEDIR}${LINUXBASE}/usr/share
+	${LN} -sf ../../../usr/share/alsa/alsa.conf.d/50-oss.conf \
+		${STAGEDIR}${LINUXBASE}/etc/alsa/conf.d
 
 .include <bsd.port.mk>

@@ -1,2 +1,4 @@
+etc/alsa/conf.d/50-oss.conf
 usr/lib/alsa-lib/libasound_module_ctl_oss.so
 usr/lib/alsa-lib/libasound_module_pcm_oss.so
+usr/share/alsa/alsa.conf.d/50-oss.conf
