@@ -1,6 +1,5 @@
 bin/solfege
 etc/solfege
-man/man1/solfege.1.gz
 share/applications/solfege.desktop
 share/locale/ca/LC_MESSAGES/solfege.mo
 share/locale/cs/LC_MESSAGES/solfege.mo
@@ -26,6 +25,7 @@ share/locale/sv/LC_MESSAGES/solfege.mo
 share/locale/tr/LC_MESSAGES/solfege.mo
 share/locale/vi/LC_MESSAGES/solfege.mo
 share/locale/zh_CN/LC_MESSAGES/solfege.mo
+share/man/man1/solfege.1.gz
 share/pixmaps/solfege.svg
 %%DATADIR%%/default.config
 %%DATADIR%%/exercises/standard/csound-tree.txt
