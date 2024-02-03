@@ -1,6 +1,5 @@
 PORTNAME=	jose
-DISTVERSION=	11
-PORTREVISION=	1
+DISTVERSION=	12
 CATEGORIES=	net
 
 MAINTAINER=	hdholm@alumni.iastate.edu
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libjansson.so:devel/jansson
 USES=		compiler:c11 meson ninja pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	latchset
-GH_TAGNAME=	v11
+GH_TAGNAME=	v12
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
