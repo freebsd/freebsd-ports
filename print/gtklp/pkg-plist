@@ -1,7 +1,5 @@
 bin/gtklp
 bin/gtklpq
-man/man1/gtklp.1.gz
-man/man1/gtklpq.1.gz
 share/icons/hicolor/16x16/apps/gtklp.xpm
 share/icons/hicolor/24x24/apps/gtklp.xpm
 share/icons/hicolor/32x32/apps/gtklp.xpm
@@ -27,3 +25,5 @@ share/locale/ru/LC_MESSAGES/gtklp.mo
 share/locale/uk_UA/LC_MESSAGES/gtklp.mo
 share/locale/zh_CN/LC_MESSAGES/gtklp.mo
 share/locale/zh_TW/LC_MESSAGES/gtklp.mo
+share/man/man1/gtklp.1.gz
+share/man/man1/gtklpq.1.gz
