@@ -1,5 +1,5 @@
 PORTNAME=	phpstorm
-DISTVERSION=	2023.3.2
+DISTVERSION=	2023.3.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -17,9 +17,9 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
-		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
-		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
-		jetbrains-sqlite>=233.11799.241:devel/jetbrains-sqlite \
+		jetbrains-pty4j>=0.12.25:devel/jetbrains-pty4j \
+		jetbrains-restarter>=233.14015.106:devel/jetbrains-restarter \
+		jetbrains-sqlite>=233.14015.106:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
 USES=		cpe python:run
@@ -35,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/PhpStorm-233.13135.108
+WRKSRC=		${WRKDIR}/PhpStorm-233.14015.96
 
 do-install:
 # Linux/Windows/OS X only so remove them
