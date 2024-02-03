@@ -1,5 +1,5 @@
 PORTNAME=	cachecontrol
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>0:www/py-cherrypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist concurrent pytest
+USE_PYTHON=	pep517 autoplist concurrent pytest # 24 tests fail, see https://github.com/psf/cachecontrol/issues/331
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	py*-cachecontrol # bin/doesitcache
