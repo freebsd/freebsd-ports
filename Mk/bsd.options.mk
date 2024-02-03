@@ -555,7 +555,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .        endif
 .        for p in ${SUBPACKAGES}
 .          if defined(${opt}_${deptype}_DEPENDS.${p})
-${deptype}_DEPENDS.{p}+=	${${opt}_${deptype}_DEPENDS.${p}}
+${deptype}_DEPENDS.${p}+=	${${opt}_${deptype}_DEPENDS.${p}}
 .          endif
 .        endfor
 .      endfor
@@ -631,7 +631,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .        endif
 .        for p in ${SUBPACKAGES}
 .          if defined(${opt}_${deptype}_DEPENDS_OFF.${p})
-${deptype}_DEPENDS.{p}+=	${${opt}_${deptype}_DEPENDS_OFF.${p}}
+${deptype}_DEPENDS.${p}+=	${${opt}_${deptype}_DEPENDS_OFF.${p}}
 .          endif
 .        endfor
 .      endfor
