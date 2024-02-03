@@ -1,6 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.1
+DISTVERSION=	0.19.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,7 +75,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		rand_distr-0.4.3 \
 		rand_xorshift-0.3.0 \
 		redox_syscall-0.4.1 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
 		rustix-0.38.30 \
 		same-file-1.0.6 \
