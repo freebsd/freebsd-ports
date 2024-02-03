@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2.2
+DISTVERSION=	2024.2.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,10 +47,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-0.4.33 \
 		clap-4.4.18 \
 		clap_builder-4.4.18 \
-		clap_complete-4.4.9 \
+		clap_complete-4.4.10 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
-		clap_mangen-0.2.18 \
+		clap_mangen-0.2.19 \
 		color-eyre-0.6.2 \
 		color-print-0.3.5 \
 		color-print-proc-macro-0.3.5 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-macros-0.2.17 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.1 \
+		tokio-1.36.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
@@ -315,7 +315,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.90 \
 		wasm-bindgen-shared-0.2.90 \
 		web-sys-0.3.67 \
-		webpki-roots-0.25.3 \
+		webpki-roots-0.25.4 \
 		which-6.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -340,7 +340,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.36 \
+		winnow-0.5.37 \
 		winreg-0.50.0 \
 		xattr-1.3.1 \
 		yaml-rust-0.4.5 \
