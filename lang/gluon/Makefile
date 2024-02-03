@@ -11,6 +11,7 @@ WWW=		https://gluon-lang.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_armv7=	compilation fails: (1) error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic` (2) LLVM ERROR: out of memory
 BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
 
 USES=		cargo
