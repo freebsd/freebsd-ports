@@ -1,5 +1,6 @@
 PORTNAME=	chromium
 PORTVERSION=	121.0.6167.85
+PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -360,6 +361,7 @@ do-install:
 	# SwiftShader
 .if ${ARCH} != aarch64
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libvk_swiftshader.so ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/vk_swiftshader_icd.json ${STAGEDIR}${DATADIR}
 .endif
 
 post-install-DEBUG-on:
