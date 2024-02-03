@@ -1,5 +1,6 @@
 PORTNAME=	cmake
 DISTVERSION=	${_CMAKE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-gui-${FLAVOR}
 
@@ -10,7 +11,7 @@ WWW=		https://www.cmake.org
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libjsoncpp.so:devel/jsoncpp \
@@ -18,12 +19,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		librhash.so:security/rhash
 
 FLAVORS=		qt5 qt6
-FLAVOR?=		qt5
+FLAVOR?=		qt6
 qt5_CONFLICTS_INSTALL=	cmake-gui-qt6
 qt6_CONFLICTS_INSTALL=	cmake-gui-qt5
 
 USES=		cmake:run,insource compiler:c++11-lang desktop-file-utils libarchive \
-		shared-mime-info qt:${FLAVOR:S/qt//}
+		python:build shared-mime-info qt:${FLAVOR:S/qt//}
 _USE_QT_qt5=	core gui widgets buildtools:build qmake:build
 _USE_QT_qt6=	base
 USE_QT=		${_USE_QT_${FLAVOR}}

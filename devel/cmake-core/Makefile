@@ -17,10 +17,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		librhash.so:security/rhash
 
 USES=		cmake:_internal compiler:c++11-lang cpe localbase ncurses ssl
-
 CPE_VENDOR=	cmake_project
+
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
 		--docdir="/${DOCSDIR_REL}" \
@@ -37,20 +36,24 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--no-system-curl \
 		--no-system-nghttp2 \
 		--parallel=${MAKE_JOBS_NUMBER} \
+		--verbose \
 		--init="${WRKSRC}/InitialCache.cmake"
+.if defined(WITH_CCACHE_BUILD)
+CONFIGURE_ARGS+=	--enable-ccache
+.endif
+CONFIGURE_ENV=	MAKE=${MAKE}
 
-# Quick fix to enable build with non-base SSL (PR: 274512)
+# Quick fix to enable build with non-base SSL (CFLAGS/LDFLAGS only) (PR: 274512)
 CFLAGS+=	-I${OPENSSLINC}
+CXXFLAGS+=	-D__BSD_VISIBLE
 LDFLAGS+=	-L${OPENSSLLIB}
 
 OPTIONS_DEFINE=		DOCS CPACK
 OPTIONS_DEFAULT=	CPACK
 OPTIONS_SUB=		yes
 
-CPACK_DESC=		Enable FreeBSD generator in CPack (experimental)
+CPACK_DESC=		Enable FreeBSD generator in CPack
 CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
-
-CXXFLAGS+=	-D__BSD_VISIBLE
 
 .include <bsd.port.pre.mk>
 
@@ -93,6 +96,8 @@ post-patch:
 		${WRKSRC}/Modules/FindDCMTK.cmake
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/Modules/FindFLEX.cmake
+	@${REINPLACE_CMD} -e 's|_compiler=\"ccache|_compiler="${CCACHE_BIN}|g' \
+		${WRKSRC}/bootstrap
 
 # cmake-gui(1) is installed by devel/cmake-gui. Remove the man page's source to
 # prevent it from being built/installed by devel/cmake.
