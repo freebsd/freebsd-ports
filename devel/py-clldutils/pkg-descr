@@ -1,0 +1,3 @@
+Originally, clldutils started out as a library for functionality often
+used in clld web apps. Over time, it turned into a toolbox for various
+data curation tasks, with a focus on cross-linguistic data.
