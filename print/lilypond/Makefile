@@ -1,5 +1,6 @@
 PORTNAME=	lilypond
 DISTVERSION=	2.24.3
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
@@ -31,12 +32,13 @@ USE_CXXSTD=	c++14
 USE_GNOME=	pango
 USE_PERL5=	build
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-			FLEX=${FLEX} \
-			HOME=${WRKDIR} \
-			YACC=${YACC} \
-			GUILE_FLAVOR=guile-${GUILE_VER}
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ENV+=			ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
+				FLEX=${FLEX} \
+				GUILE_FLAVOR=guile-${GUILE_VER} \
+				HOME=${WRKDIR} \
+				YACC=${YACC}
 
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all
