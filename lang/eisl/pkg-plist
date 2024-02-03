@@ -35,6 +35,7 @@ bin/eisl
 %%DATADIR%%/library/ndbm.lsp
 %%DATADIR%%/library/ndbm.o
 %%DATADIR%%/library/opengl.lsp
+%%DATADIR%%/library/opengl.o
 %%DATADIR%%/library/persist.lsp
 %%DATADIR%%/library/plot.lsp
 %%DATADIR%%/library/plot.o
@@ -45,6 +46,7 @@ bin/eisl
 %%DATADIR%%/library/queue.lsp
 %%DATADIR%%/library/regex.lsp
 %%DATADIR%%/library/regex.o
+%%DATADIR%%/library/roman.lsp
 %%DATADIR%%/library/sedit.lsp
 %%DATADIR%%/library/seq.lsp
 %%DATADIR%%/library/sort.lsp
