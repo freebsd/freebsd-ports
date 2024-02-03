@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 BROKEN_i386=	fails to build: no matching member function for call to 'read'
+BROKEN_powerpc=	fails to build: no matching member function for call to 'read'
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
