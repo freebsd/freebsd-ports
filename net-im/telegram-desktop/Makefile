@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.14.9
+DISTVERSION=	4.14.12
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -50,7 +50,7 @@ qt6_PKGNAMESUFFIX=	-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
-USES=		cmake desktop-file-utils gl gnome jpeg localbase \
+USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome jpeg localbase \
 		minizip openal pkgconfig python:build ssl xorg
 
 USE_GITHUB=	nodefault
@@ -107,8 +107,12 @@ TELEGRAM_API_ID=	601761
 
 .if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1400000 && ${OSVERSION} < 1400091) || ${OSVERSION} < 1302507)
 USES+=	llvm:min=16,build
-.else
-USES+=	compiler:c++20-lang
+USES:=	${USES:Ncompiler\:*} # XXX avoid warnings
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+CMAKE_ARGS+=	-DCMAKE_CC_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache" \
+		-DCMAKE_CPP_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache" \
+		-DCMAKE_CXX_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache"
+.endif
 .endif
 
 post-extract:
