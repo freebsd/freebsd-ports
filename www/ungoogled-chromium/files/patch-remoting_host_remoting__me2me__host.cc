@@ -1,4 +1,4 @@
---- remoting/host/remoting_me2me_host.cc.orig	2023-12-23 12:33:28 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2024-02-03 15:42:55 UTC
 +++ remoting/host/remoting_me2me_host.cc
 @@ -127,7 +127,7 @@
  #include "remoting/host/mac/permission_utils.h"
@@ -119,7 +119,7 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   absl::optional<bool> host_username_match_required =
+   std::optional<bool> host_username_match_required =
        policies.FindBool(policy::key::kRemoteAccessHostMatchUsername);
    if (!host_username_match_required.has_value()) {
 @@ -1800,7 +1800,7 @@ void HostProcess::StartHost() {

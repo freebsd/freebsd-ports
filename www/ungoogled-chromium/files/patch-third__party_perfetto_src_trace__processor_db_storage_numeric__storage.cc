@@ -1,6 +1,6 @@
---- third_party/perfetto/src/trace_processor/db/storage/numeric_storage.cc.orig	2023-12-23 12:33:28 UTC
+--- third_party/perfetto/src/trace_processor/db/storage/numeric_storage.cc.orig	2024-02-03 15:42:55 UTC
 +++ third_party/perfetto/src/trace_processor/db/storage/numeric_storage.cc
-@@ -251,8 +251,13 @@ BitVector NumericStorage::LinearSearchInternal(FilterO
+@@ -267,8 +267,13 @@ BitVector NumericStorageBase::LinearSearchInternal(Fil
    } else if (const auto* i32 = std::get_if<int32_t>(&*val)) {
      auto* start = static_cast<const int32_t*>(data_) + range.start;
      TypedLinearSearch(*i32, start, op, builder);

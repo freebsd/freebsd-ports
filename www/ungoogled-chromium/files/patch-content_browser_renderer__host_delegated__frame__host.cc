@@ -1,6 +1,6 @@
---- content/browser/renderer_host/delegated_frame_host.cc.orig	2023-09-17 07:59:53 UTC
+--- content/browser/renderer_host/delegated_frame_host.cc.orig	2024-02-03 15:42:55 UTC
 +++ content/browser/renderer_host/delegated_frame_host.cc
-@@ -312,7 +312,7 @@ void DelegatedFrameHost::EmbedSurface(
+@@ -317,7 +317,7 @@ void DelegatedFrameHost::EmbedSurface(
  
    if (!primary_surface_id ||
        primary_surface_id->local_surface_id() != local_surface_id_) {

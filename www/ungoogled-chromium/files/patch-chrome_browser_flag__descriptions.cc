@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2024-02-03 15:42:55 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -7255,7 +7255,7 @@ const char kLacrosMergeIcuDataFileDescription[] =
+@@ -7424,7 +7424,7 @@ const char kLacrosMergeIcuDataFileDescription[] =
      "Enables sharing common areas of icudtl.dat between Ash and Lacros.";
  #endif  // #if BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -9,7 +9,7 @@
  const char kGetAllScreensMediaName[] = "GetAllScreensMedia API";
  const char kGetAllScreensMediaDescription[] =
      "When enabled, the getAllScreensMedia API for capturing multiple screens "
-@@ -7494,7 +7494,7 @@ const char kSearchWebInSidePanelDescription[] =
+@@ -7664,7 +7664,7 @@ const char kSearchWebInSidePanelDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  const char kQuickCommandsName[] = "Quick Commands";
  const char kQuickCommandsDescription[] =
      "Enable a text interface to browser features. Invoke with Ctrl-Space.";
-@@ -7503,7 +7503,7 @@ const char kQuickCommandsDescription[] =
+@@ -7673,7 +7673,7 @@ const char kQuickCommandsDescription[] =
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
  const char kFollowingFeedSidepanelName[] = "Following feed in the sidepanel";
  const char kFollowingFeedSidepanelDescription[] =
      "Enables the following feed in the sidepanel.";
-@@ -7518,7 +7518,7 @@ const char kEnableProtoApiForClassifyUrlDescription[] 
+@@ -7688,7 +7688,7 @@ const char kEnableProtoApiForClassifyUrlDescription[] 
      "instead of JSON.";
  #endif
  
@@ -36,7 +36,7 @@
  const char kEnableNetworkServiceSandboxName[] =
      "Enable the network service sandbox.";
  const char kEnableNetworkServiceSandboxDescription[] =
-@@ -7542,7 +7542,7 @@ const char kWebShareDescription[] =
+@@ -7712,7 +7712,7 @@ const char kWebShareDescription[] =
      "platforms.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
  
@@ -45,7 +45,7 @@
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -7562,7 +7562,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
+@@ -7732,7 +7732,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
      "Bluetooth";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -54,7 +54,7 @@
  const char kSkipUndecryptablePasswordsName[] =
      "Skip undecryptable passwords to use the available decryptable "
      "passwords.";
-@@ -7576,7 +7576,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
+@@ -7746,7 +7746,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
      "storage and requests initial sync.";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
@@ -63,7 +63,7 @@
  const char kAsyncDnsName[] = "Async DNS resolver";
  const char kAsyncDnsDescription[] = "Enables the built-in DNS resolver.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
-@@ -7675,7 +7675,7 @@ const char kElasticOverscrollDescription[] =
+@@ -7852,7 +7852,7 @@ const char kElementCaptureDescription[] =
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -72,9 +72,9 @@
  const char kUIDebugToolsName[] = "Debugging tools for UI";
  const char kUIDebugToolsDescription[] =
      "Enables additional keyboard shortcuts to help debugging.";
-@@ -7721,7 +7721,7 @@ const char kEnableAudioFocusEnforcementDescription[] =
-     "any one time. Requires #enable-media-session-service to be enabled too.";
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -7904,7 +7904,7 @@ const char kComposeName[] = "CCO Edits";
+ const char kComposeDescription[] = "Enables CCO editing feature";
+ #endif  // BUILDFLAG(ENABLE_COMPOSE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)

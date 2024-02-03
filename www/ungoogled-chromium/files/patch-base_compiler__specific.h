@@ -1,4 +1,4 @@
---- base/compiler_specific.h.orig	2023-05-05 12:12:41 UTC
+--- base/compiler_specific.h.orig	2024-02-03 15:42:55 UTC
 +++ base/compiler_specific.h
 @@ -41,9 +41,9 @@
  // Annotate a function indicating it should not be inlined.
@@ -12,8 +12,8 @@
  #define NOINLINE __attribute__((noinline))
  #elif defined(COMPILER_MSVC)
  #define NOINLINE __declspec(noinline)
-@@ -51,9 +51,9 @@
- #define NOINLINE
+@@ -60,9 +60,9 @@
+ #define NOOPT
  #endif
  
 -#if defined(__clang__) && defined(NDEBUG) && HAS_ATTRIBUTE(always_inline)
@@ -24,7 +24,7 @@
  #define ALWAYS_INLINE inline __attribute__((__always_inline__))
  #elif defined(COMPILER_MSVC) && defined(NDEBUG)
  #define ALWAYS_INLINE __forceinline
-@@ -69,7 +69,7 @@
+@@ -78,7 +78,7 @@
  // prevent code folding, see NO_CODE_FOLDING() in base/debug/alias.h.
  // Use like:
  //   NOT_TAIL_CALLED void FooBar();

@@ -1,6 +1,6 @@
---- apps/ui/views/app_window_frame_view.cc.orig	2023-12-23 12:33:28 UTC
+--- apps/ui/views/app_window_frame_view.cc.orig	2024-02-03 15:42:55 UTC
 +++ apps/ui/views/app_window_frame_view.cc
-@@ -149,7 +149,7 @@ gfx::Rect AppWindowFrameView::GetWindowBoundsForClient
+@@ -148,7 +148,7 @@ gfx::Rect AppWindowFrameView::GetWindowBoundsForClient
    gfx::Rect window_bounds = client_bounds;
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

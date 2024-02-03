@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2023-12-23 12:33:28 UTC
+--- content/utility/services.cc.orig	2024-02-03 15:42:55 UTC
 +++ content/utility/services.cc
 @@ -67,7 +67,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -27,7 +27,7 @@
  #include "media/capture/capture_switches.h"
  #include "services/viz/public/cpp/gpu/gpu.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-@@ -224,7 +224,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -225,7 +225,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -36,7 +36,7 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -306,7 +306,7 @@ auto RunVideoCapture(
+@@ -307,7 +307,7 @@ auto RunVideoCapture(
      mojo::PendingReceiver<video_capture::mojom::VideoCaptureService> receiver) {
    auto service = std::make_unique<UtilityThreadVideoCaptureServiceImpl>(
        std::move(receiver), base::SingleThreadTaskRunner::GetCurrentDefault());
@@ -45,7 +45,7 @@
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {
      mojo::PendingRemote<viz::mojom::Gpu> remote_gpu;
      content::UtilityThread::Get()->BindHostReceiver(
-@@ -345,7 +345,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+@@ -346,7 +346,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -54,7 +54,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryProcessService(
      mojo::PendingReceiver<
-@@ -356,7 +356,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+@@ -357,7 +357,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -63,7 +63,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -379,7 +379,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
+@@ -380,7 +380,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
    // loop of type IO that can get notified when pipes have data.
    services.Add(RunNetworkService);
  

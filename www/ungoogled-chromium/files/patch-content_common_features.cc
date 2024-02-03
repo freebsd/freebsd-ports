@@ -1,6 +1,6 @@
---- content/common/features.cc.orig	2023-12-23 12:33:28 UTC
+--- content/common/features.cc.orig	2024-02-03 15:42:55 UTC
 +++ content/common/features.cc
-@@ -154,7 +154,7 @@ BASE_FEATURE(kEnableBackForwardCacheForScreenReader,
+@@ -174,7 +174,7 @@ BASE_FEATURE(kEnableBackForwardCacheForScreenReader,
               base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enables error reporting for JS errors inside DevTools frontend host
@@ -9,7 +9,7 @@
  BASE_FEATURE(kEnableDevToolsJsErrorReporting,
               "EnableDevToolsJsErrorReporting",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -246,7 +246,7 @@ BASE_FEATURE(kGroupNIKByJoiningOrigin,
+@@ -256,7 +256,7 @@ BASE_FEATURE(kGroupNIKByJoiningOrigin,
  // process and having browser process handle adjusting thread properties (nice
  // value, c-group, latency sensitivity...) for children which have sandbox
  // restrictions.
