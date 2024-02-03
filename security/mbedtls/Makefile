@@ -1,6 +1,6 @@
 PORTNAME=	mbedtls
-PORTVERSION=	2.28.6
 DISTVERSIONPREFIX=${PORTNAME}-
+DISTVERSION=	2.28.7
 CATEGORIES=	security devel
 
 MAINTAINER=	tijl@FreeBSD.org
@@ -11,30 +11,33 @@ LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake python:test shebangfix
+USES=		cmake:testing python:build,test shebangfix
 SHEBANG_FILES=	scripts/*.py tests/scripts/*.py
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mbed-TLS
 
-ALL_TARGET=	no_test
-TEST_TARGET=	test
-MAKE_ENV=	PYTHON=${PYTHON_CMD} SHARED=1
-USE_LDCONFIG=	yes
+PORTSCOUT=	limit:^${DISTVERSION:R:S/./\./g}\.
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-PORTSCOUT=	limit:^${PORTVERSION:R:S/./\./g}\.
+CMAKE_TESTING_ON=	ENABLE_TESTING
 
-post-patch:
-	@${RM} ${WRKSRC}/include/mbedtls/*.orig
-	@${REINPLACE_CMD} \
-		-e 's/PREFIX/NAMEPREFIX/' \
-		-e 's/$$(DESTDIR)/&$$(PREFIX)/' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's/-fpic//' ${WRKSRC}/library/Makefile
+CMAKE_OFF=	ENABLE_TESTING
+CMAKE_ON=	CMAKE_BUILD_RPATH_USE_ORIGIN \
+		ENABLE_PROGRAMS \
+		ENABLE_ZLIB_SUPPORT \
+		LINK_WITH_PTHREAD \
+		USE_SHARED_MBEDTLS_LIBRARY
+
+pre-configure:
+	@${WRKSRC}/scripts/config.py -f ${WRKSRC}/include/mbedtls/config.h set MBEDTLS_SSL_DTLS_SRTP
+	@${WRKSRC}/scripts/config.py -f ${WRKSRC}/include/mbedtls/config.h set MBEDTLS_THREADING_C
+	@${WRKSRC}/scripts/config.py -f ${WRKSRC}/include/mbedtls/config.h set MBEDTLS_THREADING_PTHREAD
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/bin -type f -not -name \*.sh \
-		-exec ${STRIP_CMD} {} +
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	@cd ${STAGEDIR}${PREFIX}/bin && for f in *; do \
+		${MV} "$$f" "mbedtls_$$f"; \
+	done
 
 .include <bsd.port.mk>
