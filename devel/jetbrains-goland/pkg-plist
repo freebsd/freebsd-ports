@@ -22,7 +22,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-233.13135.104
+%%DATADIR%%/lib/build-marker-GO-233.14015.113
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -70,6 +70,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-connector-basic.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-transport-file.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-transport-http.jar
+%%DATADIR%%/plugins/ae-database/lib/ae-database.jar
 %%DATADIR%%/plugins/charts/lib/charts.jar
 %%DATADIR%%/plugins/clouds-docker-gateway/lib/clouds-docker-gateway.jar
 %%DATADIR%%/plugins/clouds-docker-impl/lib/clouds-docker-impl.jar
@@ -98,8 +99,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-266795519c66-911b893a1778.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-266795519c66-911b893a1778.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-e58f7cfedaf7-155fe4b6e3a0.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-e58f7cfedaf7-155fe4b6e3a0.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
@@ -155,8 +156,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-c44b541a36ca.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-c44b541a36ca.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-985749b364ce.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-985749b364ce.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/diagnosticMessages.json
