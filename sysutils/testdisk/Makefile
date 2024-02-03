@@ -1,10 +1,9 @@
 PORTNAME=	testdisk
-DISTVERSION=	7.1
-PORTREVISION=	1
+DISTVERSION=	7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 WWW=		https://www.cgsecurity.org/wiki/TestDisk
 
@@ -13,17 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		jpeg localbase:ldflags ncurses tar:bzip2
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-qt --without-ewf
-
-PLIST_FILES=	bin/fidentify bin/photorec bin/testdisk \
-		man/man8/fidentify.8.gz man/man8/photorec.8.gz \
-		man/man8/testdisk.8.gz man/zh_CN/man8/fidentify.8.gz \
-		man/zh_CN/man8/photorec.8.gz man/zh_CN/man8/testdisk.8.gz
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=			--disable-qt \
+				--without-ewf
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	ICONV PROGSREISERFS NTFS DOCS
+OPTIONS_DEFINE=		DOCS ICONV NTFS PROGSREISERFS
 OPTIONS_DEFAULT=	ICONV
 
 NTFS_DESC=		Support NTFS via fuse-ntfs extensions
@@ -35,7 +31,7 @@ ICONV_CONFIGURE_OFF=	--without-iconv
 NTFS_LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
 NTFS_CONFIGURE_OFF=	--without-ntfs3g
 
-PROGSREISERFS_LIB_DEPENDS=	libreiserfs.so:sysutils/progsreiserfs
+PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so:sysutils/progsreiserfs
 PROGSREISERFS_CONFIGURE_OFF=	--without-reiserfs
 
 .include <bsd.port.mk>
