@@ -1,5 +1,5 @@
 PORTNAME=	keycloak
-DISTVERSION=	23.0.1
+PORTVERSION=	23.0.5
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -23,7 +23,7 @@ SHEBANG_FILES=	bin/kc.sh \
 USE_JAVA=	yes
 JAVA_VERSION=	17+
 JAVA_OS=	native
-JAVA_VENDOR=	openjdk oracle
+JAVA_VENDOR=	openjdk
 JAVA_RUN=	yes
 
 USE_RC_SUBR=	keycloak
