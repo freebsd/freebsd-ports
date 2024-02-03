@@ -22,7 +22,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-WS-233.13135.92
+%%DATADIR%%/lib/build-marker-WS-233.14015.89
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -58,6 +58,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/license/third-party-libraries.json
 %%DATADIR%%/license/yourkit-license-redist.txt
 %%DATADIR%%/modules/module-descriptors.jar
+%%DATADIR%%/plugins/ae-database/lib/ae-database.jar
 %%DATADIR%%/plugins/angularJS/lib/angularJS.jar
 %%DATADIR%%/plugins/angularJS/ngCli/commands/generate-impl.js
 %%DATADIR%%/plugins/angularJS/ngCli/commands/generate.json
@@ -161,8 +162,8 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-c44b541a36ca.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-c44b541a36ca.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-985749b364ce.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-985749b364ce.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/diagnosticMessages.json
