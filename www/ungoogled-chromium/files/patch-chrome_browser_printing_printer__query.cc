@@ -1,8 +1,8 @@
---- chrome/browser/printing/printer_query.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/browser/printing/printer_query.cc.orig	2024-02-03 15:42:55 UTC
 +++ chrome/browser/printing/printer_query.cc
 @@ -341,7 +341,7 @@ void PrinterQuery::UpdatePrintSettings(base::Value::Di
      crash_key = std::make_unique<crash_keys::ScopedPrinterInfo>(
-         print_backend->GetPrinterDriverInfo(printer_name));
+         printer_name, print_backend->GetPrinterDriverInfo(printer_name));
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_CUPS)
 +#if (BUILDFLAG(IS_BSD) || BUILDFLAG(IS_LINUX)) && BUILDFLAG(USE_CUPS)

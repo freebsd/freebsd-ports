@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-11-04 07:08:51 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2024-02-03 15:42:55 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -319,7 +319,7 @@ declare_args() {
+@@ -333,7 +333,7 @@ declare_args() {
    # pkeys support is explicitly disabled in all Cronet builds, as some test
    # dependencies that use partition_allocator are compiled in AOSP against a
    # version of glibc that does not include pkeys syscall numbers.

@@ -1,6 +1,15 @@
---- components/commerce/core/commerce_feature_list.cc.orig	2023-12-23 12:33:28 UTC
+--- components/commerce/core/commerce_feature_list.cc.orig	2024-02-03 15:42:55 UTC
 +++ components/commerce/core/commerce_feature_list.cc
-@@ -225,7 +225,7 @@ BASE_FEATURE(kShoppingCollection,
+@@ -168,7 +168,7 @@ BASE_FEATURE(kPriceInsights,
+              "PriceInsights",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kPriceInsightsRegionLaunched,
+              "PriceInsightsRegionLaunched",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -249,7 +249,7 @@ BASE_FEATURE(kShoppingCollection,
  
  BASE_FEATURE(kShoppingList, "ShoppingList", base::FEATURE_DISABLED_BY_DEFAULT);
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

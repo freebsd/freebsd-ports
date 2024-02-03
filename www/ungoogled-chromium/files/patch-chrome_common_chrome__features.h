@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.h.orig	2023-12-23 12:33:28 UTC
+--- chrome/common/chrome_features.h.orig	2024-02-03 15:42:55 UTC
 +++ chrome/common/chrome_features.h
-@@ -61,13 +61,13 @@ BASE_DECLARE_FEATURE(kAppShimNotificationAttribution);
+@@ -62,13 +62,13 @@ BASE_DECLARE_FEATURE(kAppShimNotificationAttribution);
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kAsyncDns);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -16,7 +16,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kBackgroundModeAllowRestart);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -204,7 +204,7 @@ BASE_DECLARE_FEATURE(kDesktopPWAsTabStripSettings);
+@@ -227,7 +227,7 @@ BASE_DECLARE_FEATURE(kDesktopPWAsTabStripSettings);
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kDesktopPWAsWebBundles);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -25,7 +25,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKeepForceInstalledPreinstalledApps);
-@@ -523,7 +523,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -562,7 +562,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kLacrosSharedComponentsDir);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -34,7 +34,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -531,7 +531,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -570,7 +570,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

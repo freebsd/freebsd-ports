@@ -1,4 +1,4 @@
---- content/public/common/content_switches.cc.orig	2023-12-23 12:33:28 UTC
+--- content/public/common/content_switches.cc.orig	2024-02-03 15:42:55 UTC
 +++ content/public/common/content_switches.cc
 @@ -364,6 +364,8 @@ const char kEnableIsolatedWebAppsInRenderer[] =
  // builds.
@@ -9,7 +9,7 @@
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -994,7 +996,7 @@ const char kEnableAutomation[] = "enable-automation";
+@@ -1007,7 +1009,7 @@ const char kPreventResizingContentsForTesting[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

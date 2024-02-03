@@ -1,4 +1,4 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2024-02-03 15:42:55 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
 @@ -46,7 +46,7 @@
  #include "printing/backend/cups_connection_pool.h"
@@ -38,7 +38,7 @@
    // are using `TestPrintingContext`.
 @@ -681,7 +681,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
    crash_keys_ = std::make_unique<crash_keys::ScopedPrinterInfo>(
-       print_backend_->GetPrinterDriverInfo(*printer_name));
+       *printer_name, print_backend_->GetPrinterDriverInfo(*printer_name));
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_CUPS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_CUPS)
