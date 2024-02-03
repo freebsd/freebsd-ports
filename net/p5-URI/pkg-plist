@@ -26,6 +26,7 @@
 %%SITE_PERL%%/URI/file/Unix.pm
 %%SITE_PERL%%/URI/file/Win32.pm
 %%SITE_PERL%%/URI/ftp.pm
+%%SITE_PERL%%/URI/geo.pm
 %%SITE_PERL%%/URI/gopher.pm
 %%SITE_PERL%%/URI/http.pm
 %%SITE_PERL%%/URI/https.pm
@@ -64,6 +65,7 @@
 %%PERL5_MAN3%%/URI::_punycode.3.gz
 %%PERL5_MAN3%%/URI::data.3.gz
 %%PERL5_MAN3%%/URI::file.3.gz
+%%PERL5_MAN3%%/URI::geo.3.gz
 %%PERL5_MAN3%%/URI::icap.3.gz
 %%PERL5_MAN3%%/URI::icaps.3.gz
 %%PERL5_MAN3%%/URI::ldap.3.gz
