@@ -20,6 +20,7 @@ GH_ACCOUNT=	uNetworking
 GH_PROJECT=	uSockets
 
 MAKE_ARGS=	WITH_OPENSSL=1
+CFLAGS+=	-fPIC # -fPIC is required for the build to succeed, see https://github.com/uNetworking/uSockets/issues/217
 CXXFLAGS+=	-fPIC
 
 ALL_TARGET=	default
