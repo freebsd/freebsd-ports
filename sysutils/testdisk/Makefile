@@ -31,7 +31,7 @@ ICONV_CONFIGURE_OFF=	--without-iconv
 NTFS_LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
 NTFS_CONFIGURE_OFF=	--without-ntfs3g
 
-PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so:sysutils/progsreiserfs
+PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so.0:sysutils/progsreiserfs
 PROGSREISERFS_CONFIGURE_OFF=	--without-reiserfs
 
 .include <bsd.port.mk>
