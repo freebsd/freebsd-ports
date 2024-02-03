@@ -1,6 +1,7 @@
 PORTNAME=	frescobaldi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	print kde python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,9 +31,6 @@ LILYPOND_DESC=	Use unstable LilyPond (lilypond-devel)
 LILYPOND_RUN_DEPENDS=		lilypond:print/lilypond-devel
 LILYPOND_RUN_DEPENDS_OFF=	lilypond:print/lilypond
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|'share/man/man1'|'man/man1'|' \
-		${WRKSRC}/setup.py
 post-build:
 	(cd ${WRKSRC} && ${GMAKE} -C linux)
 
