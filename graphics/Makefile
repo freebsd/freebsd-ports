@@ -115,6 +115,7 @@
     SUBDIR += cosmoplayer
     SUBDIR += cptutils
     SUBDIR += crw
+    SUBDIR += ctl
     SUBDIR += curator
     SUBDIR += curtail
     SUBDIR += cuttlefish
