@@ -10,6 +10,10 @@ WWW=		https://github.com/ned14/quickcpplib
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
 
+BROKEN_powerpc=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276824
+NOT_FOR_ARCHS=		powerpc64 powerpc64le
+NOT_FOR_ARCHS_REASON=	test/timing.h:113:2: error: Unsupported platform
+
 USES=		cmake:testing
 
 USE_GITHUB=	yes
