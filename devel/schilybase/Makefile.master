@@ -55,6 +55,7 @@ MAKE_CMD=	${"${BOOTSTRAP_SMAKE}" == "yes":?${WRKSRC}/psmake/smake:smake}
 
 PLIST_SUB+=	OPSYS=${OPSYS:tl} ARCH=${ARCH} COMPILER_TYPE=${COMPILER_TYPE}
 PLIST=		${.CURDIR}/pkg-plist
+PKGHELP?=	${.CURDIR}/pkg-help
 PKGMESSAGE?=	${.CURDIR}/pkg-message
 DESCR=		${.CURDIR}/pkg-descr
 
