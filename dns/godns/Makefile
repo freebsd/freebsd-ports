@@ -1,6 +1,6 @@
 PORTNAME=	godns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.5
+DISTVERSION=	3.0.7
 CATEGORIES=	dns
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -16,12 +16,15 @@ USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	TimothyYe
 
+GO_TARGET=	./cmd/${PORTNAME}
+
 GH_TUPLE=	\
 		alexcesaro:quotedprintable:2caba252f4dc:alexcesaro_quotedprintable/vendor/gopkg.in/alexcesaro/quotedprintable.v3 \
 		bitly:go-simplejson:v0.5.0:bitly_go_simplejson/vendor/github.com/bitly/go-simplejson \
 		bmizerany:assert:b7ed37b82869:bmizerany_assert/vendor/github.com/bmizerany/assert \
 		bwmarrin:discordgo:v0.27.1:bwmarrin_discordgo/vendor/github.com/bwmarrin/discordgo \
 		fatih:color:v1.15.0:fatih_color/vendor/github.com/fatih/color \
+		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-gomail:gomail:81ebce5c23df:go_gomail_gomail/vendor/gopkg.in/gomail.v2 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
@@ -49,8 +52,6 @@ GH_TUPLE=	\
 		ovh:go-ovh:v1.4.1:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus
-
-GO_TARGET=	./cmd/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
