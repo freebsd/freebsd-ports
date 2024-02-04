@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # 32-bit platforms produce wrong results based on https://github.com/soedinglab/metaeuk/issues/85#issuecomment-1888379107
 NOT_FOR_ARCHS+=	powerpc64 # many modules produce wrong results on big-endian architectures
+BROKEN_powerpc64le=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276268
 
 BUILD_DEPENDS=	xxd:editors/vim
 TEST_DEPENDS=	bash:shells/bash
