@@ -12,6 +12,7 @@ LICENSE_NAME=	Business Source License 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+BROKEN_armv7=	compilation fails: memory allocation of 83886084 bytes failed
 BROKEN_i386=	compilation fails: memory allocation of 109051908 bytes failed
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
