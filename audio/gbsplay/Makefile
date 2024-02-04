@@ -1,5 +1,5 @@
 PORTNAME=	gbsplay
-DISTVERSION=	0.0.95
+DISTVERSION=	0.0.96
 PORTEPOCH=	1
 CATEGORIES=	audio
 
@@ -27,8 +27,6 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
 			--sysconfdir=${PREFIX}/etc
 
 MAKE_ENV+=	EXAMPLESDIR="${STAGEDIR}${EXAMPLESDIR}"
-
-CFLAGS+=	-D__BSD_VISIBLE=1
 
 CONFLICTS_INSTALL=	mate-control-center # share/applications/mimeinfo.cache
 
