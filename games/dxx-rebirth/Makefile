@@ -36,7 +36,8 @@ MAKE_ARGS+=	lto=1
 
 .if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
 CXXFLAGS+=	-Wno-error=missing-field-initializers -Wno-error=maybe-uninitialized
-USES+=		compiler:gcc-c++11-lib
+USES+=		compiler:c++11-lib
+USE_GCC=	12
 .endif
 
 post-install:
