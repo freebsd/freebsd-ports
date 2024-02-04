@@ -1,6 +1,6 @@
 PORTNAME=	xtestpicture
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	LOCAL/joerg
 
@@ -9,6 +9,6 @@ COMMENT=	Create a full-screen image to adjust your monitor
 
 USES=		imake xorg
 USE_XORG=	x11 xext
-PLIST_FILES=	bin/xtestpicture man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/xtestpicture share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

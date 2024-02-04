@@ -41,7 +41,7 @@ BINDIR = %%PREFIX%%/bin
 # where the manual pages go
 # MANDIR = /usr/local/man/manl/
 # MANDIR = /RW/esprit/users/sander/PUBLIC/MAN/
-MANDIR = %%PREFIX%%/man/manl
+MANDIR = %%PREFIX%%/share/man/manl
 
 # what the manual extension is
 MANEXT = l

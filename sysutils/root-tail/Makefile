@@ -1,5 +1,6 @@
 PORTNAME=	root-tail
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dist.schmorp.de/${PORTNAME}/
 
@@ -15,6 +16,6 @@ USES=		imake xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/root-tail \
-		man/man1/root-tail.1.gz
+		share/man/man1/root-tail.1.gz
 
 .include <bsd.port.mk>

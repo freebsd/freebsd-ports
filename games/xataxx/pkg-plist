@@ -1,5 +1,5 @@
 bin/xataxx
-man/man6/xataxx.6.gz
+share/man/man6/xataxx.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/1.xbd

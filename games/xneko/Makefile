@@ -1,6 +1,6 @@
 PORTNAME=	xneko
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/dinoex
@@ -12,7 +12,7 @@ COMMENT=	The classic cat-and-mouse
 NO_WRKSUBDIR=	yes
 USES=		imake xorg
 USE_XORG=	x11
-PLIST_FILES=	bin/xneko man/man6/xneko.6.gz
+PLIST_FILES=	bin/xneko share/man/man6/xneko.6.gz
 
 .include <bsd.port.options.mk>
 

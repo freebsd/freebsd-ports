@@ -1,6 +1,6 @@
 PORTNAME=	skkinput
 PORTVERSION=	2.06.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11
 MASTER_SITES=	OSDN/skkinput2
 
@@ -14,7 +14,7 @@ USES=		imake xorg
 USE_XORG=	ice sm x11 xext xt xmu
 
 PLIST_FILES=	bin/skkinput lib/X11/app-defaults/Skkinput \
-		man/ja/man1/skkinput.1.gz man/man1/skkinput.1.gz
+		share/man/ja/man1/skkinput.1.gz share/man/man1/skkinput.1.gz
 PORTDOCS=	*.jis ChangeLog skkinputlisp.doc dot.skkinput
 
 OPTIONS_DEFINE=	DOCS

@@ -13,8 +13,6 @@ EXPIRATION_DATE=	2024-03-31
 USES=		imake:notall motif tar:Z xorg
 USE_XORG=	ice sm x11 xext xmu xt
 
-MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man1
-
 PLIST_FILES=	bin/asedit \
 		lib/X11/app-defaults/Asedit \
 		lib/X11/app-defaults/Asedit-sgi \

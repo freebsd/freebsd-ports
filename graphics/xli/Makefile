@@ -23,10 +23,6 @@ PLIST_FILES=	bin/xli bin/xlito bin/xview bin/xsetbg \
 XLI_SNAPVER=	2006-11-10
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/xli.1.gz \
-		${STAGEDIR}${PREFIX}/share/man/man1/xli.1.gz
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/xlito.1.gz \
-		${STAGEDIR}${PREFIX}/share/man/man1/xlito.1.gz
 	${RLN} ${STAGEDIR}${PREFIX}/share/man/man1/xli.1.gz \
 		${STAGEDIR}${PREFIX}/share/man/man1/xview.1.gz
 	${RLN} ${STAGEDIR}${PREFIX}/share/man/man1/xli.1.gz \

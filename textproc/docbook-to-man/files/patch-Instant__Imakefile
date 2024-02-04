@@ -1,6 +1,6 @@
 --- Instant/Imakefile.orig	1996-06-17 03:50:29 UTC
 +++ Instant/Imakefile
-@@ -1,14 +1,18 @@
+@@ -1,14 +1,17 @@
  #define IHaveSubdirs
  #define PassCDebugFlags
 +#undef BuildInstallHtmlManPage
@@ -11,7 +11,6 @@
 -ROOT		= /usr/local
 +PREFIX		?= /usr/local
 +ROOT		= ${PREFIX}
-+MANPATH		= ${ROOT}/man
  BINDIR		= $(ROOT)/bin
  
  INCLUDES	= -Itptregexp
@@ -21,7 +20,7 @@
  DEFINES		= -DDEF_TPT_LIB=\"$(TPTLIB)\"
  
  SRCS	= main.c util.c info.c translate.c traninit.c tranvar.c tables.c \
-@@ -19,4 +23,4 @@ OBJS	= main.o util.o info.o translate.o traninit.o tra
+@@ -19,4 +22,4 @@ DependSubdirs($(SUBDIRS))
  MakeSubdirs($(SUBDIRS))
  DependSubdirs($(SUBDIRS))
  

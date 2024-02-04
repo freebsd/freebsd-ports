@@ -1,6 +1,6 @@
 bin/mgdiff
 lib/X11/app-defaults/Mgdiff
-man/man1/mgdiff.1.gz
+share/man/man1/mgdiff.1.gz
 share/pixmaps/mgdiff-48x48.xpm
 share/pixmaps/mgdiff.xbm
 share/pixmaps/mgdiff.xpm

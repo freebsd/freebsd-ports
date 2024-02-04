@@ -1,6 +1,6 @@
 PORTNAME=	xstroke
 PORTVERSION=	0.5.12
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11
 MASTER_SITES=	http://ftp.gwdg.de/pub/linux/handhelds/projects/xstroke/release-0.5/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		bison:alias imake localbase xorg
 USE_XORG=	xft x11 xext xi xtst
 
-PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet man/man1/xstroke.1.gz
+PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet share/man/man1/xstroke.1.gz
 
 CFLAGS+=	-I.
 LDFLAGS+=	-lpthread

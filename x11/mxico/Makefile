@@ -3,7 +3,7 @@
 
 PORTNAME=	mxico
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://people.freebsd.org/~maho/mxico/
 

@@ -1,5 +1,4 @@
 bin/scavenger
-man/man6/scavenger.6.gz
 lib/X11/scavenger/badguy.lbm
 lib/X11/scavenger/brownblue.lbm
 lib/X11/scavenger/death.raw
@@ -13,3 +12,4 @@ lib/X11/scavenger/reddevil.lbm
 lib/X11/scavenger/regularguy.lbm
 lib/X11/scavenger/spiralthing.lbm
 lib/X11/scavenger/victory.raw
+share/man/man6/scavenger.6.gz

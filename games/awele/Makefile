@@ -1,6 +1,6 @@
 PORTNAME=	awele
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games tk
 MASTER_SITES=	XCONTRIB/games
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,7 +15,7 @@ USE_XORG=	x11
 
 MAKE_ARGS=	AWELE_DIR=${STAGEDIR}${PREFIX}/bin
 
-PLIST_FILES=	bin/awelewish bin/xawele man/man6/xawele.6.gz
+PLIST_FILES=	bin/awelewish bin/xawele share/man/man6/xawele.6.gz
 
 .include <bsd.port.options.mk>
 

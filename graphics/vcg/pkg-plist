@@ -3,9 +3,9 @@ bin/pbmrot90
 bin/pbmshift
 bin/vcgdemomaker
 bin/xvcg
-man/manl/pbm2hp.l.gz
-man/manl/pbmrot90.l.gz
-man/manl/pbmshift.l.gz
-man/manl/vcg.l.gz
-man/manl/vcgdemomaker.l.gz
-man/manl/xvcg.l.gz
+share/man/manl/pbm2hp.l.gz
+share/man/manl/pbmrot90.l.gz
+share/man/manl/pbmshift.l.gz
+share/man/manl/vcg.l.gz
+share/man/manl/vcgdemomaker.l.gz
+share/man/manl/xvcg.l.gz

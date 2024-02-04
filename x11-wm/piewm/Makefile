@@ -1,6 +1,6 @@
 PORTNAME=	piewm
 PORTVERSION=	1.04
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.catwhisker.org/~david/FreeBSD/distfiles/ https://web.archive.org/web/20160424061632if_/http://www.crynwr.com/piewm/ LOCAL/dhw
 

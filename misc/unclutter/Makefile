@@ -1,6 +1,6 @@
 PORTNAME=	unclutter
 PORTVERSION=	8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	XCONTRIB/utilities
 
@@ -12,6 +12,6 @@ USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/unclutter \
-		man/man1/unclutter.1.gz
+		share/man/man1/unclutter.1.gz
 
 .include <bsd.port.mk>

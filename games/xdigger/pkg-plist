@@ -1,5 +1,5 @@
 @(,games,2755) bin/xdigger
-man/man6/xdigger.6.gz
+share/man/man6/xdigger.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/diamond.au

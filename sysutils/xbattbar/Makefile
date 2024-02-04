@@ -1,6 +1,6 @@
 PORTNAME=	xbattbar
 PORTVERSION=	1.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.corbina.net/gentoo-distfiles/d6/	\
 		https://ftp.fau.de/gentoo/distfiles/		\
@@ -19,6 +19,6 @@ USES=		imake xorg
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
 PLIST_FILES=	bin/xbattbar \
-		man/man1/xbattbar.1.gz
+		share/man/man1/xbattbar.1.gz
 
 .include <bsd.port.mk>

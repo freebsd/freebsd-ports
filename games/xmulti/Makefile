@@ -1,6 +1,6 @@
 PORTNAME=	xmulti
 PORTVERSION=	2.00b4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.denpa.org/~go/xmulti/
 DISTFILES=	xmul200b4.tgz

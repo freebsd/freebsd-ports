@@ -1,6 +1,6 @@
 PORTNAME=	t3d
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://bernd-paysan.de/
 DISTNAME=	t3d
@@ -20,6 +20,6 @@ NO_WRKSUBDIR=	yes
 USES=		imake xorg
 USE_XORG=	x11 xext
 
-PLIST_FILES=	bin/t3d man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/t3d share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- simplech.src/Imakefile.orig	Mon Oct  9 14:27:40 2000
-+++ simplech.src/Imakefile	Wed Jul 30 20:46:21 2003
-@@ -3,9 +3,7 @@
+--- simplech.src/Imakefile.orig	2000-10-09 12:27:40 UTC
++++ simplech.src/Imakefile
+@@ -3,11 +3,9 @@
  
  #     CDEBUGFLAGS = -g -Wall -O3
        CDEBUGFLAGS = -Wall -O3
@@ -8,5 +8,8 @@
  
 -           PREFIX = /usr/local
             BINDIR = $(PREFIX)/bin
-            MANDIR = $(PREFIX)/man/man6
+-           MANDIR = $(PREFIX)/man/man6
++           MANDIR = $(PREFIX)/share/man/man6
          MANSUFFIX = 6
+ 
+              SRCS = simplech.c

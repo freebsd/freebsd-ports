@@ -1,4 +1,4 @@
 bin/mxico
-man/man1/mxico.1.gz
+share/man/man1/mxico.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/READMEj

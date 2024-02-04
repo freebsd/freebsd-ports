@@ -1,4 +1,4 @@
 bin/piewm
 bin/ssetroot
 lib/X11/piewm/system.twmrc
-man/man1/piewm.1.gz
+share/man/man1/piewm.1.gz

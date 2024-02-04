@@ -1,6 +1,6 @@
 PORTNAME=	xrisk
 PORTVERSION=	2.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/ \
 		http://mirror.amdmi3.ru/distfiles/

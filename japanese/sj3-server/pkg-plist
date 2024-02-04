@@ -11,8 +11,8 @@ etc/sj3/sjrc
 etc/sj3/sjrk
 lib/sj3/dict/sj3main.dic
 sbin/sj3serv
-man/ja/man1/sj3.1.gz
-man/ja/man1/sj3dic.1.gz
-man/ja/man1/sj3mkdic.1.gz
-man/ja/man1/sj3serv.1.gz
+share/man/ja/man1/sj3.1.gz
+share/man/ja/man1/sj3dic.1.gz
+share/man/ja/man1/sj3mkdic.1.gz
+share/man/ja/man1/sj3serv.1.gz
 @dir(%%USERS%%,%%GROUPS%%,0775) lib/sj3/dict/user

@@ -24,7 +24,6 @@ USES=		alias imake xorg
 USE_GCC=	yes
 USE_XORG=	xext xt sm ice xext x11
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
-MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 DLLDIR=		${PREFIX}/lib/X11/xanim
 PLIST_FILES+=	bin/xanim share/man/man1/xanim.1.gz
 

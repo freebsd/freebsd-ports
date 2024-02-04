@@ -1,6 +1,6 @@
 PORTNAME=	tgif
 PORTVERSION=	4.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		http://groups.yahoo.com/group/tgif4-announce/files/ \

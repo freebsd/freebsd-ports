@@ -1,5 +1,6 @@
 PORTNAME=	xphoon
 PORTVERSION=	20000613
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -10,6 +11,6 @@ WWW=		https://xphoon.sourceforge.net/
 USES=		imake xorg
 USE_XORG=	x11 xext
 
-PLIST_FILES=	bin/xphoon man/man1/xphoon.1.gz
+PLIST_FILES=	bin/xphoon share/man/man1/xphoon.1.gz
 
 .include <bsd.port.mk>

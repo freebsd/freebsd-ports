@@ -1,6 +1,6 @@
 PORTNAME=	bibview
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print databases
 MASTER_SITES=	TEX/biblio/bibtex/utils/bibview-2.0
 

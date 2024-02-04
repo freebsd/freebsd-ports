@@ -89,7 +89,7 @@ pre-install:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/kterm.1.gz \
 	    ${STAGEDIR}${PREFIX}/share/man/ja/man1
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/kterm.1.gz \
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/kterm.1.gz \
 	    ${STAGEDIR}${PREFIX}/share/man/man1/
 pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

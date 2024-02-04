@@ -1,6 +1,6 @@
 PORTNAME=	sxpc
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/utilities
 EXTRACT_SUFX=	.shar.Z
@@ -15,6 +15,6 @@ EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SH}
 
-PLIST_FILES=	bin/sxpc man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/sxpc share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

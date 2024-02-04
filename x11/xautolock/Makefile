@@ -1,6 +1,6 @@
 PORTNAME=	xautolock
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SUNSITE/X11/screensavers
 
@@ -16,6 +16,6 @@ XLOCK_DESC=	Force dependency on x11/xlockmore
 
 XLOCK_RUN_DEPENDS=	xlock:x11/xlockmore
 
-PLIST_FILES=	bin/xautolock man/man1/xautolock.1.gz
+PLIST_FILES=	bin/xautolock share/man/man1/xautolock.1.gz
 
 .include <bsd.port.mk>

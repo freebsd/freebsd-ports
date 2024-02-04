@@ -1,5 +1,6 @@
 PORTNAME=	2d-rewriter
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org

@@ -71,7 +71,7 @@ lib/X11/xfig/bitmaps/vert_leftshingle.bmp
 lib/X11/xfig/bitmaps/vert_rightshingle.bmp
 lib/X11/xfig/bitmaps/vert_saw.bmp
 lib/X11/xfig/bitmaps/vertical.bmp
-man/man1/fig2dev.1.gz
-man/man1/fig2ps2tex.1.gz
-man/man1/pic2tpic.1.gz
-man/man1/transfig.1.gz
+share/man/man1/fig2dev.1.gz
+share/man/man1/fig2ps2tex.1.gz
+share/man/man1/pic2tpic.1.gz
+share/man/man1/transfig.1.gz

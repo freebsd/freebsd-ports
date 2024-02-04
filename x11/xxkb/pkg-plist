@@ -1,6 +1,6 @@
 bin/xxkb
 lib/X11/app-defaults/XXkb
-man/man1/xxkb.1.gz
+share/man/man1/xxkb.1.gz
 %%DATADIR%%/bg15.xpm
 %%DATADIR%%/bg48.xpm
 %%DATADIR%%/by15.xpm
