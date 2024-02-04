@@ -10,6 +10,8 @@ WWW=		https://github.com/yhirose/cpp-httplib
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	configure fails: OpenSSL is too old: Found unsuitable version "1.1.1t", but required is at least "3.0.0"
+
 TEST_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake localbase:ldflags python:test # localbase only for tests
