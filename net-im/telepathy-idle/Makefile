@@ -1,6 +1,5 @@
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTVERSION=	0.2.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
