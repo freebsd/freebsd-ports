@@ -6,7 +6,7 @@ CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 PKGNAMESUFFIX=	34
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
 WWW=		https://github.com/coreos/etcd
 
