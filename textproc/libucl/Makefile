@@ -1,6 +1,5 @@
 PORTNAME=	libucl
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	textproc devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -50,12 +49,5 @@ SIGNATURES_USES=		ssl
 URLS_CONFIGURE_ENABLE=	urls
 
 UTILS_CONFIGURE_ENABLE=	utils
-
-.include <bsd.port.options.mk>
-
-# https://github.com/vstakhov/libucl/issues/203
-.if ${PORT_OPTIONS:MSIGNATURES} && ((${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl)
-BROKEN=	Signatures checking support does not build with OpenSSL 1.1.1
-.endif
 
 .include <bsd.port.mk>
