@@ -1,6 +1,6 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.16.6
+DISTVERSION?=	1.17.1
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -30,11 +30,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
 		google:cpu_features:v0.8.0-27-gfd4ffc1:cpu_features/ext/cpu_features \
+		rtissera:libchdr:26d27ca:libchdr/ext/libchdr \
 		unknownbrackets:ppsspp-debugger:9776332:debugger/assets/debugger \
 		KhronosGroup:SPIRV-Cross:sdk-1.3.239.0:SPIRV/ext/SPIRV-Cross \
-		Kingcom:armips:v0.11.0-188-g7bd1ec9:armips/ext/armips \
+		Kingcom:armips:v0.11.0-195-ga8d71f0:armips/ext/armips \
 		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem \
-		RetroAchievements:rcheevos:v10.7.1-37-g24dc84c:rcheevos/ext/rcheevos \
+		RetroAchievements:rcheevos:v11.0.0-26-ge7989c3:rcheevos/ext/rcheevos \
 		Tencent:rapidjson:v1.1.0-415-g73063f50:rapidjson/ext/rapidjson
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
