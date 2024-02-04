@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2023.11.119
-PORTREVISION=	3
+PORTVERSION=	2024.01.120
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -338,6 +337,7 @@ do-install:
 .if ${ARCH} != aarch64
 	@${MKDIR} ${STAGEDIR}${DATADIR}/swiftshader
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libvk_swiftshader.so ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/vk_swiftshader_icd.json ${STAGEDIR}${DATADIR}
 .endif
 
 post-install-DEBUG-on:
