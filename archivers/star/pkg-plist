@@ -9,6 +9,11 @@ bin/suntar
 bin/ustar
 etc/default/srmt
 etc/default/star
+include/schily/strar.h
+lib/libstreamar.a
+lib/libstreamar.so
+lib/libstreamar.so.1.0
+%%PROFILE%%lib/profiled/libstreamar.a
 sbin/srmt
 share/doc/srmt/default-srmt.sample
 %%GNUTAR%%share/man/man1/gnutar.1.gz
@@ -22,3 +27,4 @@ share/man/man1/strar.1.gz
 share/man/man1/suntar.1.gz
 share/man/man1/ustar.1.gz
 share/man/man5/star.5.gz
+share/man/man5/streamarchive.5.gz
