@@ -12,6 +12,8 @@ WWW=		https://github.com/werman/noise-suppression-for-voice
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	link fails: ld: error: undefined symbol: __atomic_store and ld: error: undefined symbol: __atomic_load
+
 BUILD_DEPENDS=	juce>0:devel/juce \
 		lv2>0:audio/lv2
 LIB_DEPENDS=	libfreetype.so:print/freetype2
