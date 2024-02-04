@@ -63,6 +63,7 @@ include/openssl/pkcs7.h
 include/openssl/pkcs8.h
 include/openssl/poly1305.h
 include/openssl/pool.h
+include/openssl/posix_time.h
 include/openssl/rand.h
 include/openssl/rc4.h
 include/openssl/ripemd.h
