@@ -12,6 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation breaks: unexpected token in operand, see https://github.com/google/filament/issues/6131
 BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
+BROKEN_powerpc=		compilation breaks: invalid register name, see https://github.com/google/filament/issues/7552
+BROKEN_powerpc64=	compilation breaks: invalid register name, see https://github.com/google/filament/issues/7552
+BROKEN_powerpc64le=	compilation breaks: invalid register name, see https://github.com/google/filament/issues/7552
 
 BUILD_DEPENDS=	bash:shells/bash \
 		evdev-proto>0:devel/evdev-proto
