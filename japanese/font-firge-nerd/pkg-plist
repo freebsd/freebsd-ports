@@ -2,11 +2,7 @@ etc/fonts/conf.avail/20-unhint-firge-nerd.conf
 etc/fonts/conf.avail/62-fonts-firge-nerd.conf
 etc/fonts/conf.d/20-unhint-firge-nerd.conf
 etc/fonts/conf.d/62-fonts-firge-nerd.conf
-%%FIRGENERD%%%%FONTSDIR%%/FirgeNerd-Regular.ttf
-%%FIRGENERD%%%%FONTSDIR%%/FirgeNerd-Bold.ttf
 %%FIRGENERD_CONS%%%%FONTSDIR%%/FirgeNerdConsole-Regular.ttf
 %%FIRGENERD_CONS%%%%FONTSDIR%%/FirgeNerdConsole-Bold.ttf
-%%FIRGE35NERD%%%%FONTSDIR%%/Firge35Nerd-Regular.ttf
-%%FIRGE35NERD%%%%FONTSDIR%%/Firge35Nerd-Bold.ttf
 %%FIRGE35NERD_CONS%%%%FONTSDIR%%/Firge35NerdConsole-Regular.ttf
 %%FIRGE35NERD_CONS%%%%FONTSDIR%%/Firge35NerdConsole-Bold.ttf
