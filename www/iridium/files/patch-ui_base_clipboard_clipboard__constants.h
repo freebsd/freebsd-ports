@@ -1,6 +1,6 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2023-03-13 07:33:08 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2024-02-04 14:46:08 UTC
 +++ ui/base/clipboard/clipboard_constants.h
-@@ -47,7 +47,7 @@ extern const char kMimeTypeDataTransferEndpoint[];
+@@ -48,7 +48,7 @@ extern const char kMimeTypeDataTransferEndpoint[];
  
  // ----- LINUX & CHROMEOS & FUCHSIA MIME TYPES -----
  

@@ -131,6 +131,7 @@ bin/iridium
 %%DATADIR%%/resources/inspector_overlay/main.js
 %%DATADIR%%/snapshot_blob.bin
 %%NOT_AARCH64%%%%DATADIR%%/libvk_swiftshader.so
+%%NOT_AARCH64%%%%DATADIR%%/vk_swiftshader_icd.json
 %%DATADIR%%/v8_context_snapshot.bin
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_khronos_validation.so
