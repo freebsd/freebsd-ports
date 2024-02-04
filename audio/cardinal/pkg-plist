@@ -1,10 +1,21 @@
 bin/Cardinal
+bin/CardinalMini
+bin/CardinalNative
+lib/clap/Cardinal.clap/Cardinal.clap
+lib/clap/Cardinal.clap/CardinalFX.clap
+lib/clap/Cardinal.clap/CardinalSynth.clap
 lib/lv2/Cardinal.lv2/Cardinal.so
 lib/lv2/Cardinal.lv2/Cardinal.ttl
 lib/lv2/Cardinal.lv2/manifest.ttl
 lib/lv2/CardinalFX.lv2/CardinalFX.so
 lib/lv2/CardinalFX.lv2/CardinalFX.ttl
 lib/lv2/CardinalFX.lv2/manifest.ttl
+lib/lv2/CardinalMini.lv2/CardinalMini_dsp.so
+lib/lv2/CardinalMini.lv2/CardinalMini_dsp.ttl
+lib/lv2/CardinalMini.lv2/CardinalMini_ui.so
+lib/lv2/CardinalMini.lv2/CardinalMini_ui.ttl
+lib/lv2/CardinalMini.lv2/manifest.ttl
+lib/lv2/CardinalMini.lv2/modgui.ttl
 lib/lv2/CardinalSynth.lv2/CardinalSynth.so
 lib/lv2/CardinalSynth.lv2/CardinalSynth.ttl
 lib/lv2/CardinalSynth.lv2/manifest.ttl
@@ -24,6 +35,85 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/8Mode/res/8Mode_ss_0.svg
 %%DATADIR%%/8Mode/res/8Mode_ss_1.svg
 %%DATADIR%%/8Mode/res/SNsoft_Panel.svg
+%%DATADIR%%/AS/res/2chMixer.svg
+%%DATADIR%%/AS/res/4chMixer.svg
+%%DATADIR%%/AS/res/8chMixer.svg
+%%DATADIR%%/AS/res/ADSR.svg
+%%DATADIR%%/AS/res/AtNuVrTr.svg
+%%DATADIR%%/AS/res/BPMCalc.svg
+%%DATADIR%%/AS/res/BPMCalc2.svg
+%%DATADIR%%/AS/res/BPMClock.svg
+%%DATADIR%%/AS/res/Blanks/BlankPanel4.svg
+%%DATADIR%%/AS/res/Blanks/BlankPanel6.svg
+%%DATADIR%%/AS/res/Blanks/BlankPanel8.svg
+%%DATADIR%%/AS/res/Blanks/as-BlankPanelSpecial0.svg
+%%DATADIR%%/AS/res/Blanks/as-BlankPanelSpecial1.svg
+%%DATADIR%%/AS/res/Blanks/as-BlankPanelSpecial2.svg
+%%DATADIR%%/AS/res/Blanks/as-BlankPanelSpecial3.svg
+%%DATADIR%%/AS/res/Blanks/as-BlankPanelSpecial4.svg
+%%DATADIR%%/AS/res/CV2T.svg
+%%DATADIR%%/AS/res/DelayPlus.svg
+%%DATADIR%%/AS/res/DelayPlusStereo.svg
+%%DATADIR%%/AS/res/Flow.svg
+%%DATADIR%%/AS/res/KillGate.svg
+%%DATADIR%%/AS/res/LaunchGate.svg
+%%DATADIR%%/AS/res/Merge2_5.svg
+%%DATADIR%%/AS/res/MonoVUmeter.svg
+%%DATADIR%%/AS/res/Multiple2_5.svg
+%%DATADIR%%/AS/res/Phaser.svg
+%%DATADIR%%/AS/res/QuadVCA.svg
+%%DATADIR%%/AS/res/ReScale.svg
+%%DATADIR%%/AS/res/Reverb.svg
+%%DATADIR%%/AS/res/ReverbStereo.svg
+%%DATADIR%%/AS/res/SEQ16.svg
+%%DATADIR%%/AS/res/SawOSC.svg
+%%DATADIR%%/AS/res/Segment7Standard.ttf
+%%DATADIR%%/AS/res/SignalDelay.svg
+%%DATADIR%%/AS/res/SineOSC.svg
+%%DATADIR%%/AS/res/Steps.svg
+%%DATADIR%%/AS/res/StereoVUmeter.svg
+%%DATADIR%%/AS/res/SuperDrive.svg
+%%DATADIR%%/AS/res/SuperDriveStereo.svg
+%%DATADIR%%/AS/res/Tremolo.svg
+%%DATADIR%%/AS/res/TremoloStereo.svg
+%%DATADIR%%/AS/res/Triggers.svg
+%%DATADIR%%/AS/res/TriggersMKI.svg
+%%DATADIR%%/AS/res/TriggersMKII.svg
+%%DATADIR%%/AS/res/TriggersMKIII.svg
+%%DATADIR%%/AS/res/VCA.svg
+%%DATADIR%%/AS/res/WaveShaper.svg
+%%DATADIR%%/AS/res/WaveShaperStereo.svg
+%%DATADIR%%/AS/res/ZeroCV2T.svg
+%%DATADIR%%/AS/res/as_CKSSH_0.svg
+%%DATADIR%%/AS/res/as_CKSSH_1.svg
+%%DATADIR%%/AS/res/as_CKSSThree_0.svg
+%%DATADIR%%/AS/res/as_CKSSThree_1.svg
+%%DATADIR%%/AS/res/as_CKSSThree_2.svg
+%%DATADIR%%/AS/res/as_CKSS_0.svg
+%%DATADIR%%/AS/res/as_CKSS_1.svg
+%%DATADIR%%/AS/res/as_CKSS_white_0.svg
+%%DATADIR%%/AS/res/as_CKSS_white_1.svg
+%%DATADIR%%/AS/res/as_FaderPot.svg
+%%DATADIR%%/AS/res/as_FxKnobBlack.svg
+%%DATADIR%%/AS/res/as_FxKnobBlack_bg.svg
+%%DATADIR%%/AS/res/as_FxKnobWhite.svg
+%%DATADIR%%/AS/res/as_FxKnobWhite_bg.svg
+%%DATADIR%%/AS/res/as_JumboLEDBezel44_0.svg
+%%DATADIR%%/AS/res/as_JumboLEDBezel44_1.svg
+%%DATADIR%%/AS/res/as_JumboLEDBezel60_0.svg
+%%DATADIR%%/AS/res/as_JumboLEDBezel60_1.svg
+%%DATADIR%%/AS/res/as_LFO.svg
+%%DATADIR%%/AS/res/as_PJ301M.svg
+%%DATADIR%%/AS/res/as_PJ301M_output_port.svg
+%%DATADIR%%/AS/res/as_SlidePot.svg
+%%DATADIR%%/AS/res/as_SlidePotHandle.svg
+%%DATADIR%%/AS/res/as_bigLEDBezel.svg
+%%DATADIR%%/AS/res/as_hexscrew.svg
+%%DATADIR%%/AS/res/as_knob.svg
+%%DATADIR%%/AS/res/as_knobBlack.svg
+%%DATADIR%%/AS/res/as_knobBlack_bg.svg
+%%DATADIR%%/AS/res/as_knob_bg.svg
+%%DATADIR%%/AS/res/saxmono.ttf
 %%DATADIR%%/AaronStatic/res/ChordCV.svg
 %%DATADIR%%/AaronStatic/res/DiatonicCV.svg
 %%DATADIR%%/AaronStatic/res/RandomNoteCV.svg
@@ -414,6 +504,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/BaconPlugs/res/1f60d.svg
 %%DATADIR%%/BaconPlugs/res/1f953.svg
 %%DATADIR%%/BaconPlugs/res/BaconSliderHandle.svg
+%%DATADIR%%/BaconPlugs/res/FiraMono-Regular.ttf
 %%DATADIR%%/BaconPlugs/res/HelpActive.svg
 %%DATADIR%%/BaconPlugs/res/HelpActiveSmall.svg
 %%DATADIR%%/BaconPlugs/res/HelpGraySmall.svg
@@ -493,6 +584,8 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Befaco/res/components/BefacoTinyKnobLightGrey_bg.svg
 %%DATADIR%%/Befaco/res/components/BefacoTinyKnobRed_bg.svg
 %%DATADIR%%/Befaco/res/components/BefacoTinyPointWhite.svg
+%%DATADIR%%/Befaco/res/components/CKSSThree_bg.svg
+%%DATADIR%%/Befaco/res/components/CKSSThree_fg.svg
 %%DATADIR%%/Befaco/res/components/CrossfaderBackground.svg
 %%DATADIR%%/Befaco/res/components/CrossfaderHandle.svg
 %%DATADIR%%/Befaco/res/components/Davies1900hBlack.svg
@@ -510,6 +603,10 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Befaco/res/components/SwitchNarrow_0.svg
 %%DATADIR%%/Befaco/res/components/SwitchNarrow_1.svg
 %%DATADIR%%/Befaco/res/components/SwitchNarrow_2.svg
+%%DATADIR%%/Befaco/res/components/SwitchTallVert_bg.svg
+%%DATADIR%%/Befaco/res/components/SwitchTallVert_fg.svg
+%%DATADIR%%/Befaco/res/components/SwitchWideHoriz_bg.svg
+%%DATADIR%%/Befaco/res/components/SwitchWideHoriz_fg.svg
 %%DATADIR%%/Befaco/res/fonts/Segment7Standard.otf
 %%DATADIR%%/Befaco/res/panels/ABC.svg
 %%DATADIR%%/Befaco/res/panels/ADSR.svg
@@ -521,9 +618,11 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Befaco/res/panels/Mex.svg
 %%DATADIR%%/Befaco/res/panels/Mixer.svg
 %%DATADIR%%/Befaco/res/panels/Morphader.svg
+%%DATADIR%%/Befaco/res/panels/MotionMTR.svg
 %%DATADIR%%/Befaco/res/panels/Muxlicer.svg
 %%DATADIR%%/Befaco/res/panels/NoisePlethora.svg
 %%DATADIR%%/Befaco/res/panels/Percall.svg
+%%DATADIR%%/Befaco/res/panels/PonyVCO.svg
 %%DATADIR%%/Befaco/res/panels/Rampage.svg
 %%DATADIR%%/Befaco/res/panels/STMix.svg
 %%DATADIR%%/Befaco/res/panels/SamplingModulator.svg
@@ -635,6 +734,8 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Bidoo/res/DUKE.svg
 %%DATADIR%%/Bidoo/res/EDSAROS.svg
 %%DATADIR%%/Bidoo/res/EMILE.svg
+%%DATADIR%%/Bidoo/res/ENCORE.svg
+%%DATADIR%%/Bidoo/res/ENCOREExpander.svg
 %%DATADIR%%/Bidoo/res/FLAME.svg
 %%DATADIR%%/Bidoo/res/FORK.svg
 %%DATADIR%%/Bidoo/res/FREIN.svg
@@ -659,6 +760,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Bidoo/res/REI.svg
 %%DATADIR%%/Bidoo/res/SIGMA.svg
 %%DATADIR%%/Bidoo/res/SPORE.svg
+%%DATADIR%%/Bidoo/res/TAPE.svg
 %%DATADIR%%/Bidoo/res/TIARE.svg
 %%DATADIR%%/Bidoo/res/TOCANTE.svg
 %%DATADIR%%/Bidoo/res/VOID.svg
@@ -1070,6 +1172,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/BogaudioModules/res/port.svg
 %%DATADIR%%/BogaudioModules/res/slider_switch_2_14px_0.svg
 %%DATADIR%%/BogaudioModules/res/slider_switch_2_14px_1.svg
+%%DATADIR%%/Cardinal/res/AIDA-X.svg
 %%DATADIR%%/Cardinal/res/AudioFile.svg
 %%DATADIR%%/Cardinal/res/AudioToCVPitch.svg
 %%DATADIR%%/Cardinal/res/Blank.svg
@@ -1082,10 +1185,15 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Cardinal/res/HostMIDIGate.svg
 %%DATADIR%%/Cardinal/res/HostMIDIMap.svg
 %%DATADIR%%/Cardinal/res/HostParameters.svg
+%%DATADIR%%/Cardinal/res/HostParamsMap.svg
 %%DATADIR%%/Cardinal/res/HostTime.svg
 %%DATADIR%%/Cardinal/res/Ildaeil.svg
 %%DATADIR%%/Cardinal/res/MPV.svg
 %%DATADIR%%/Cardinal/res/Miku/Miku.png
+%%DATADIR%%/Cardinal/res/aida-x-background-p2.png
+%%DATADIR%%/Cardinal/res/aida-x-knob.svg
+%%DATADIR%%/Cardinal/res/aida-x-logo.png
+%%DATADIR%%/Cardinal/res/aida-x-scale.svg
 %%DATADIR%%/Cardinal/res/glBars.svg
 %%DATADIR%%/CatroModulo/res/CM-1.svg
 %%DATADIR%%/CatroModulo/res/CM-10.svg
@@ -1216,6 +1324,8 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/ComponentLibrary/PJ3410.svg
 %%DATADIR%%/ComponentLibrary/Plug.svg
 %%DATADIR%%/ComponentLibrary/PlugPort.svg
+%%DATADIR%%/ComponentLibrary/Rail-hcdark.svg
+%%DATADIR%%/ComponentLibrary/Rail-light.svg
 %%DATADIR%%/ComponentLibrary/Rail.svg
 %%DATADIR%%/ComponentLibrary/Rogan1PBlue.svg
 %%DATADIR%%/ComponentLibrary/Rogan1PBlue_fg.svg
@@ -1427,6 +1537,12 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/DrumKit/res/samples/tomi/13.raw
 %%DATADIR%%/DrumKit/res/samples/tomi/14.raw
 %%DATADIR%%/ESeries/res/E340.svg
+%%DATADIR%%/EnigmaCurry/res/10hp.svg
+%%DATADIR%%/EnigmaCurry/res/3hp.svg
+%%DATADIR%%/EnigmaCurry/res/6hp.svg
+%%DATADIR%%/EnigmaCurry/res/fonts/Fantasque/FantasqueSansMono-Regular.ttf
+%%DATADIR%%/EnigmaCurry/res/fonts/dseg/DSEG14Modern-Regular.ttf
+%%DATADIR%%/EnigmaCurry/res/fonts/manrope/Manrope-Regular.ttf
 %%DATADIR%%/ExpertSleepers-Encoders/res/8CV.svg
 %%DATADIR%%/ExpertSleepers-Encoders/res/8GT.svg
 %%DATADIR%%/ExpertSleepers-Encoders/res/Calibrator.svg
@@ -1568,6 +1684,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Fundamental/res/WTLFO.svg
 %%DATADIR%%/Fundamental/res/WTVCO.svg
 %%DATADIR%%/Fundamental/res/components/ADSR-bg.svg
+%%DATADIR%%/Fundamental/res/components/Quantizer-keyboard.svg
 %%DATADIR%%/Fundamental/res/components/Scope-bg.svg
 %%DATADIR%%/Fundamental/res/components/button-off.svg
 %%DATADIR%%/Fundamental/res/components/button-on.svg
@@ -1683,6 +1800,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/GrandeModular/res/BlackButton0.svg
 %%DATADIR%%/GrandeModular/res/BlackButton1.svg
 %%DATADIR%%/GrandeModular/res/Clip.svg
+%%DATADIR%%/GrandeModular/res/Compare3.svg
 %%DATADIR%%/GrandeModular/res/LFO3.svg
 %%DATADIR%%/GrandeModular/res/LFO4.svg
 %%DATADIR%%/GrandeModular/res/Logic.svg
@@ -1718,6 +1836,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/GrandeModular/res/SquareButton1.svg
 %%DATADIR%%/GrandeModular/res/SquareButton1dim.svg
 %%DATADIR%%/GrandeModular/res/Tails.svg
+%%DATADIR%%/GrandeModular/res/Tails4.svg
 %%DATADIR%%/GrandeModular/res/TinyLightFlat.svg
 %%DATADIR%%/GrandeModular/res/TriangleLEDButton0.svg
 %%DATADIR%%/GrandeModular/res/TriangleLEDButton1.svg
@@ -2185,8 +2304,25 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Meander/res/Meander.png
 %%DATADIR%%/Meander/res/Meander.svg
 %%DATADIR%%/Meander/res/OFL.txt
+%%DATADIR%%/Meander/res/Progression-Edit-Panel-Help.png
 %%DATADIR%%/Meander/res/TinyPJ301M.svg
 %%DATADIR%%/Meander/res/Ubuntu Condensed 400.ttf
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/ADSR Faders.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/ADSR Knobs.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Delay Mono.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Delay Stereo.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Empty.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Granular.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/LFO.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Level-Mute.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Looper.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Mixer.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Plaits.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Plateau.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Sampler.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/VCF.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/VCO.vcvm
+%%DATADIR%%/MindMeldModular/presets/PatchMaster/Wave Folder.vcvm
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityPresets/Circadian Sound/Creative/Pluck Swell (Warped).smpr
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityPresets/Circadian Sound/Creative/Pluck(Ping)-Swell(Pong).smpr
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityPresets/Circadian Sound/Creative/Ramp (Riser).smpr
@@ -2456,6 +2592,36 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/Circadian Sound/Stepped/Quant Melo 5.smsh
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/Circadian Sound/Stepped/Quant Melo 6.smsh
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/CommunityShapes.txt
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Computational.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Databend.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Fall from 128.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Fallacy.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Insect Sequence.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Jitters.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Meow.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Motion Swap.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pandemonium.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 1.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 10.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 11.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 12.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 2.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 3.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 4.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 5.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 6.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 7.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 8.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Pattern 9.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Quantify.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Quick Fall.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Shake.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Sputterstep.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Switcher.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Trapedic.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Waverider.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Wobbledown.smsh
+%%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/DATABROTH/Woggle.smsh
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/Eurikon/Controllah/1 - Controllah.smsh
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/Eurikon/Controllah/2 - Controllah.smsh
 %%DATADIR%%/MindMeldModular/res/ShapeMaster/CommunityShapes/Eurikon/Controllah/3 - Controllah.smsh
@@ -3003,6 +3169,10 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/MindMeldModular/res/comp/bass/solo-round-on.svg
 %%DATADIR%%/MindMeldModular/res/comp/big-knob-pointer.svg
 %%DATADIR%%/MindMeldModular/res/comp/bigger-knob-pointer.svg
+%%DATADIR%%/MindMeldModular/res/comp/dots-7.5_120.svg
+%%DATADIR%%/MindMeldModular/res/comp/dots-7.5c_120.svg
+%%DATADIR%%/MindMeldModular/res/comp/dots-8.0_112.svg
+%%DATADIR%%/MindMeldModular/res/comp/dots-8.0c_112.svg
 %%DATADIR%%/MindMeldModular/res/comp/eq/band1-off.svg
 %%DATADIR%%/MindMeldModular/res/comp/eq/band1-on.svg
 %%DATADIR%%/MindMeldModular/res/comp/eq/band2-off.svg
@@ -3034,6 +3204,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/MindMeldModular/res/comp/knob-red-7.5.svg
 %%DATADIR%%/MindMeldModular/res/comp/knob-red-8.svg
 %%DATADIR%%/MindMeldModular/res/comp/led-button.svg
+%%DATADIR%%/MindMeldModular/res/comp/logo.svg
 %%DATADIR%%/MindMeldModular/res/comp/mixer/dim-off.svg
 %%DATADIR%%/MindMeldModular/res/comp/mixer/dim-on.svg
 %%DATADIR%%/MindMeldModular/res/comp/mixer/fade-off.svg
@@ -3053,6 +3224,17 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/MindMeldModular/res/comp/mixer/mute-on.svg
 %%DATADIR%%/MindMeldModular/res/comp/mixer/solo-off.svg
 %%DATADIR%%/MindMeldModular/res/comp/mixer/solo-on.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/Omri-logo.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/Trimpot.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/Trimpot_bg.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/button-lg.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/button-md.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/button-sm.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/fader-large-bg.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/fader-xlarge-bg.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/fader-xxlarge-bg.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/knob-bg-13.svg
+%%DATADIR%%/MindMeldModular/res/comp/patchset/knob-grey-13.svg
 %%DATADIR%%/MindMeldModular/res/comp/round-button4-grey.svg
 %%DATADIR%%/MindMeldModular/res/comp/shape/E1-on.svg
 %%DATADIR%%/MindMeldModular/res/comp/shape/E2-on.svg
@@ -3086,12 +3268,57 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/MindMeldModular/res/dark/auxspander-jr.svg
 %%DATADIR%%/MindMeldModular/res/dark/auxspander.svg
 %%DATADIR%%/MindMeldModular/res/dark/eqmaster.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Aux-A-D-Grps.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Aux-A.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Aux-B.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Aux-C.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Aux-D.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Bus-M_S.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Bus-Snd-Pan-Rtn.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/M_S-Grp-Mstr.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Mute-Grps.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Mute.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/16track/Solo.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/8track/Aux-A-D-GrpsJr.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/8track/Aux-A_B-1-8Jr.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/8track/Aux-C_D-1-8Jr.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/8track/Aux-M-1-8-GrpsJr.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/8track/M_S-1-8Jr.svg
+%%DATADIR%%/MindMeldModular/res/dark/meld/8track/M_S-Grp-MstrJr.svg
 %%DATADIR%%/MindMeldModular/res/dark/meld/meld-1-8.svg
 %%DATADIR%%/MindMeldModular/res/dark/meld/meld-9-16.svg
 %%DATADIR%%/MindMeldModular/res/dark/meld/meld-grp-aux.svg
 %%DATADIR%%/MindMeldModular/res/dark/mixmaster-jr.svg
 %%DATADIR%%/MindMeldModular/res/dark/mixmaster.svg
 %%DATADIR%%/MindMeldModular/res/dark/ms-melder.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/RouteMaster1to5.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/RouteMaster1to5stereo.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/RouteMaster5to1.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/RouteMaster5to1stereo.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/master-channel.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-bg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-blank-smaller.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-blank-xsm.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-blank-xxsm.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-button-lg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-button-md.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-button-sm.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-fader-lg-u.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-fader-lg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-fader-xlg-u.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-fader-xlg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-fader-xxlg-u.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-fader-xxlg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-knob-lg-u.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-knob-lg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-knob-md-u.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-knob-md.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-knob-sm-u.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-knob-sm.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-vsep-bg-noline.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/pm-vsep-bg.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/rm-ctrl-four.svg
+%%DATADIR%%/MindMeldModular/res/dark/patchset/title-divider.svg
 %%DATADIR%%/MindMeldModular/res/dark/unmeld-1-8.svg
 %%DATADIR%%/MindMeldModular/res/dark/unmeld-9-16.svg
 %%DATADIR%%/MindMeldModular/res/dark/unmeld-grp-aux.svg
@@ -3269,6 +3496,8 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/PathSet/res/GlassPane.svg
 %%DATADIR%%/PathSet/res/IceTray.svg
 %%DATADIR%%/PathSet/res/Nudge.svg
+%%DATADIR%%/PathSet/res/OneShot.svg
+%%DATADIR%%/PathSet/res/PlusPane.svg
 %%DATADIR%%/PathSet/res/ShiftyExpander.svg
 %%DATADIR%%/PathSet/res/ShiftyMod.svg
 %%DATADIR%%/PathSet/res/WhiteKnob.svg
@@ -3289,6 +3518,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/PinkTrombone/res/pinktromboneold.svg
 %%DATADIR%%/PluginManifests/21kHz.json
 %%DATADIR%%/PluginManifests/8Mode.json
+%%DATADIR%%/PluginManifests/AS.json
 %%DATADIR%%/PluginManifests/AaronStatic.json
 %%DATADIR%%/PluginManifests/Algoritmarte.json
 %%DATADIR%%/PluginManifests/AmalgamatedHarmonics.json
@@ -3307,6 +3537,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/PluginManifests/ChowDSP.json
 %%DATADIR%%/PluginManifests/DrumKit.json
 %%DATADIR%%/PluginManifests/ESeries.json
+%%DATADIR%%/PluginManifests/EnigmaCurry.json
 %%DATADIR%%/PluginManifests/ExpertSleepers-Encoders.json
 %%DATADIR%%/PluginManifests/Extratone.json
 %%DATADIR%%/PluginManifests/FehlerFabrik.json
@@ -3334,19 +3565,29 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/PluginManifests/PathSet.json
 %%DATADIR%%/PluginManifests/PinkTrombone.json
 %%DATADIR%%/PluginManifests/Prism.json
+%%DATADIR%%/PluginManifests/RebelTech.json
+%%DATADIR%%/PluginManifests/Sapphire.json
 %%DATADIR%%/PluginManifests/ValleyAudio.json
 %%DATADIR%%/PluginManifests/WhatTheRack.json
 %%DATADIR%%/PluginManifests/ZZC.json
+%%DATADIR%%/PluginManifests/ZamAudio.json
 %%DATADIR%%/PluginManifests/ZetaCarinaeModules.json
+%%DATADIR%%/PluginManifests/alefsbits.json
 %%DATADIR%%/PluginManifests/cf.json
+%%DATADIR%%/PluginManifests/dBiz.json
+%%DATADIR%%/PluginManifests/forsitan-modulare.json
+%%DATADIR%%/PluginManifests/h4n4-modules.json
 %%DATADIR%%/PluginManifests/ihtsyn.json
 %%DATADIR%%/PluginManifests/kocmoc.json
 %%DATADIR%%/PluginManifests/mscHack.json
+%%DATADIR%%/PluginManifests/myth-modules.json
 %%DATADIR%%/PluginManifests/nonlinearcircuits.json
 %%DATADIR%%/PluginManifests/rackwindows.json
 %%DATADIR%%/PluginManifests/repelzen.json
 %%DATADIR%%/PluginManifests/sonusmodular.json
 %%DATADIR%%/PluginManifests/stocaudio.json
+%%DATADIR%%/PluginManifests/stoermelder-packone.json
+%%DATADIR%%/PluginManifests/surgext.json
 %%DATADIR%%/PluginManifests/unless_modules.json
 %%DATADIR%%/PluginManifests/voxglitch.json
 %%DATADIR%%/Prism/res/ComponentLibrary/PrismButton_0.svg
@@ -3384,6 +3625,32 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Prism/res/RobotoCondensed-Regular.ttf
 %%DATADIR%%/Prism/res/prism_Droplet.svg
 %%DATADIR%%/Prism/res/prism_Rainbow.svg
+%%DATADIR%%/RebelTech/res/components/BefacoInputPort.svg
+%%DATADIR%%/RebelTech/res/components/BefacoOutputPort.svg
+%%DATADIR%%/RebelTech/res/components/Pot.svg
+%%DATADIR%%/RebelTech/res/components/Pot_bg.svg
+%%DATADIR%%/RebelTech/res/components/TonicButton_0.svg
+%%DATADIR%%/RebelTech/res/components/TonicButton_1.svg
+%%DATADIR%%/RebelTech/res/panels/CLK.svg
+%%DATADIR%%/RebelTech/res/panels/CLK_drk.svg
+%%DATADIR%%/RebelTech/res/panels/Klasmata.svg
+%%DATADIR%%/RebelTech/res/panels/Klasmata_drk.svg
+%%DATADIR%%/RebelTech/res/panels/Logoi.svg
+%%DATADIR%%/RebelTech/res/panels/Logoi_drk.svg
+%%DATADIR%%/RebelTech/res/panels/Phoreo.svg
+%%DATADIR%%/RebelTech/res/panels/Phoreo_drk.svg
+%%DATADIR%%/RebelTech/res/panels/Stoicheia.svg
+%%DATADIR%%/RebelTech/res/panels/Stoicheia_drk.svg
+%%DATADIR%%/RebelTech/res/panels/Tonic.svg
+%%DATADIR%%/RebelTech/res/panels/Tonic_drk.svg
+%%DATADIR%%/Sapphire/res/elastika.svg
+%%DATADIR%%/Sapphire/res/moots.svg
+%%DATADIR%%/Sapphire/res/port.svg
+%%DATADIR%%/Sapphire/res/tubeunit.svg
+%%DATADIR%%/Sapphire/res/tubeunit_audio_path.svg
+%%DATADIR%%/Sapphire/res/tubeunit_labels.svg
+%%DATADIR%%/Sapphire/res/tubeunit_seal.svg
+%%DATADIR%%/Sapphire/res/tubeunit_vent.svg
 %%DATADIR%%/ValleyAudio/res/AmalgamPanelDark.svg
 %%DATADIR%%/ValleyAudio/res/AmalgamPanelLight.svg
 %%DATADIR%%/ValleyAudio/res/DSEG14Classic-Italic.ttf
@@ -3605,6 +3872,16 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/ZZC/res/switches/ZZC-Switch-3_2.svg
 %%DATADIR%%/ZZC/res/switches/ZZC-VBPSVOCT-Switch_0.svg
 %%DATADIR%%/ZZC/res/switches/ZZC-VBPSVOCT-Switch_1.svg
+%%DATADIR%%/ZamAudio/res/ZamComp.svg
+%%DATADIR%%/ZamAudio/res/components/ADSR-bg.svg
+%%DATADIR%%/ZamAudio/res/components/Scope-bg.svg
+%%DATADIR%%/ZamAudio/res/components/button-off.svg
+%%DATADIR%%/ZamAudio/res/components/button-on.svg
+%%DATADIR%%/ZamAudio/res/components/knob-marker-small.svg
+%%DATADIR%%/ZamAudio/res/components/knob-marker.svg
+%%DATADIR%%/ZamAudio/res/components/knob-small.svg
+%%DATADIR%%/ZamAudio/res/components/knob.svg
+%%DATADIR%%/ZamAudio/res/components/port.svg
 %%DATADIR%%/ZetaCarinaeModules/res/BrownianBridge.svg
 %%DATADIR%%/ZetaCarinaeModules/res/FireflyPlate.svg
 %%DATADIR%%/ZetaCarinaeModules/res/GuildensTurnPlate.svg
@@ -3613,6 +3890,18 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/ZetaCarinaeModules/res/RosenchancePlate.svg
 %%DATADIR%%/ZetaCarinaeModules/res/RosslerRustlerPlate.svg
 %%DATADIR%%/ZetaCarinaeModules/res/WarblerPlate.svg
+%%DATADIR%%/alefsbits/res/blank6hp.svg
+%%DATADIR%%/alefsbits/res/fibb.svg
+%%DATADIR%%/alefsbits/res/logic.svg
+%%DATADIR%%/alefsbits/res/math.svg
+%%DATADIR%%/alefsbits/res/mlt.svg
+%%DATADIR%%/alefsbits/res/noize.svg
+%%DATADIR%%/alefsbits/res/octsclr.svg
+%%DATADIR%%/alefsbits/res/polyrand.svg
+%%DATADIR%%/alefsbits/res/probablynot.svg
+%%DATADIR%%/alefsbits/res/shift.svg
+%%DATADIR%%/alefsbits/res/simplexandhold.svg
+%%DATADIR%%/alefsbits/res/steps.svg
 %%DATADIR%%/cf/playeroscs/noisepink.wav
 %%DATADIR%%/cf/playeroscs/noisewhite.wav
 %%DATADIR%%/cf/playeroscs/osc1.wav
@@ -3669,6 +3958,161 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/cf/res/trSEQ.svg
 %%DATADIR%%/cf/res/upButton.svg
 %%DATADIR%%/cf/res/upButtonDown.svg
+%%DATADIR%%/dBiz/res/Dark/Bench.svg
+%%DATADIR%%/dBiz/res/Dark/Bene.svg
+%%DATADIR%%/dBiz/res/Dark/BenePad.svg
+%%DATADIR%%/dBiz/res/Dark/BigSmorph.svg
+%%DATADIR%%/dBiz/res/Dark/Chord.svg
+%%DATADIR%%/dBiz/res/Dark/Contorno.svg
+%%DATADIR%%/dBiz/res/Dark/ContornoExpander.svg
+%%DATADIR%%/dBiz/res/Dark/ContornoMK2.svg
+%%DATADIR%%/dBiz/res/Dark/DAOSC.svg
+%%DATADIR%%/dBiz/res/Dark/DVCO.svg
+%%DATADIR%%/dBiz/res/Dark/Divider.svg
+%%DATADIR%%/dBiz/res/Dark/DrMix.svg
+%%DATADIR%%/dBiz/res/Dark/DrMixExt.svg
+%%DATADIR%%/dBiz/res/Dark/DualFilter.svg
+%%DATADIR%%/dBiz/res/Dark/DualMatrix.svg
+%%DATADIR%%/dBiz/res/Dark/FourSeq.svg
+%%DATADIR%%/dBiz/res/Dark/Multiple.svg
+%%DATADIR%%/dBiz/res/Dark/NavControl.svg
+%%DATADIR%%/dBiz/res/Dark/Order.svg
+%%DATADIR%%/dBiz/res/Dark/PerfMixer.svg
+%%DATADIR%%/dBiz/res/Dark/PerfMixer4.svg
+%%DATADIR%%/dBiz/res/Dark/QuePasa.svg
+%%DATADIR%%/dBiz/res/Dark/Remix.svg
+%%DATADIR%%/dBiz/res/Dark/Remix2.svg
+%%DATADIR%%/dBiz/res/Dark/SPan.svg
+%%DATADIR%%/dBiz/res/Dark/Smixer.svg
+%%DATADIR%%/dBiz/res/Dark/Smorph.svg
+%%DATADIR%%/dBiz/res/Dark/SuHa.svg
+%%DATADIR%%/dBiz/res/Dark/SuHaMK2.svg
+%%DATADIR%%/dBiz/res/Dark/TROSC.svg
+%%DATADIR%%/dBiz/res/Dark/TROSCMK2.svg
+%%DATADIR%%/dBiz/res/Dark/Transpose.svg
+%%DATADIR%%/dBiz/res/Dark/Util2.svg
+%%DATADIR%%/dBiz/res/Dark/Utility.svg
+%%DATADIR%%/dBiz/res/Dark/VCA4.svg
+%%DATADIR%%/dBiz/res/Dark/VCA530.svg
+%%DATADIR%%/dBiz/res/Dark/Verbo.svg
+%%DATADIR%%/dBiz/res/DejaVuSansMono.ttf
+%%DATADIR%%/dBiz/res/Light/Bench.svg
+%%DATADIR%%/dBiz/res/Light/Bene.svg
+%%DATADIR%%/dBiz/res/Light/BenePad.svg
+%%DATADIR%%/dBiz/res/Light/BigSmorph.svg
+%%DATADIR%%/dBiz/res/Light/Chord.svg
+%%DATADIR%%/dBiz/res/Light/Contorno.svg
+%%DATADIR%%/dBiz/res/Light/ContornoExpander.svg
+%%DATADIR%%/dBiz/res/Light/DAOSC.svg
+%%DATADIR%%/dBiz/res/Light/DVCO.svg
+%%DATADIR%%/dBiz/res/Light/Divider.svg
+%%DATADIR%%/dBiz/res/Light/DrMix.svg
+%%DATADIR%%/dBiz/res/Light/DrMixExt.svg
+%%DATADIR%%/dBiz/res/Light/DualFilter.svg
+%%DATADIR%%/dBiz/res/Light/DualMatrix.svg
+%%DATADIR%%/dBiz/res/Light/FourSeq.svg
+%%DATADIR%%/dBiz/res/Light/Multiple.svg
+%%DATADIR%%/dBiz/res/Light/NavControl.svg
+%%DATADIR%%/dBiz/res/Light/Order.svg
+%%DATADIR%%/dBiz/res/Light/PerfMixer.svg
+%%DATADIR%%/dBiz/res/Light/PerfMixer4.svg
+%%DATADIR%%/dBiz/res/Light/QuePasa.svg
+%%DATADIR%%/dBiz/res/Light/QuePasa.svg.2021_05_22_08_30_33.0.svg
+%%DATADIR%%/dBiz/res/Light/Remix.svg
+%%DATADIR%%/dBiz/res/Light/Remix2.svg
+%%DATADIR%%/dBiz/res/Light/SPan.svg
+%%DATADIR%%/dBiz/res/Light/Smixer.svg
+%%DATADIR%%/dBiz/res/Light/Smorph.svg
+%%DATADIR%%/dBiz/res/Light/SuHa.svg
+%%DATADIR%%/dBiz/res/Light/SuHaMK2.svg
+%%DATADIR%%/dBiz/res/Light/TROSC.svg
+%%DATADIR%%/dBiz/res/Light/TROSCMK2.svg
+%%DATADIR%%/dBiz/res/Light/Transpose.svg
+%%DATADIR%%/dBiz/res/Light/Util2.svg
+%%DATADIR%%/dBiz/res/Light/Utility.svg
+%%DATADIR%%/dBiz/res/Light/VCA4.svg
+%%DATADIR%%/dBiz/res/Light/VCA530.svg
+%%DATADIR%%/dBiz/res/Light/Verbo.svg
+%%DATADIR%%/dBiz/res/ShareTechMono-Regular.ttf
+%%DATADIR%%/dBiz/res/component/BLEDB_0.svg
+%%DATADIR%%/dBiz/res/component/BPush_0.svg
+%%DATADIR%%/dBiz/res/component/BPush_1.svg
+%%DATADIR%%/dBiz/res/component/CKSS_0.svg
+%%DATADIR%%/dBiz/res/component/CKSS_1.svg
+%%DATADIR%%/dBiz/res/component/DKnob-bg.svg
+%%DATADIR%%/dBiz/res/component/DKnob-cap.svg
+%%DATADIR%%/dBiz/res/component/DKnob.svg
+%%DATADIR%%/dBiz/res/component/Flat-cap.svg
+%%DATADIR%%/dBiz/res/component/FlatA-bg.svg
+%%DATADIR%%/dBiz/res/component/FlatA.svg
+%%DATADIR%%/dBiz/res/component/FlatG-bg.svg
+%%DATADIR%%/dBiz/res/component/FlatG.svg
+%%DATADIR%%/dBiz/res/component/FlatR-bg.svg
+%%DATADIR%%/dBiz/res/component/FlatR.svg
+%%DATADIR%%/dBiz/res/component/HRoundWhite-bg.svg
+%%DATADIR%%/dBiz/res/component/HRoundWhite-fg.svg
+%%DATADIR%%/dBiz/res/component/HRoundWhite.svg
+%%DATADIR%%/dBiz/res/component/LEDB_0.svg
+%%DATADIR%%/dBiz/res/component/LEDS_0.svg
+%%DATADIR%%/dBiz/res/component/LEDSlider.svg
+%%DATADIR%%/dBiz/res/component/LEDSliderBlueHandle.svg
+%%DATADIR%%/dBiz/res/component/LEDSliderGreenHandle.svg
+%%DATADIR%%/dBiz/res/component/LEDSliderHandle.svg
+%%DATADIR%%/dBiz/res/component/LEDSliderRedHandle.svg
+%%DATADIR%%/dBiz/res/component/LEDSliderWhiteHandle.svg
+%%DATADIR%%/dBiz/res/component/LEDSliderYellowHandle.svg
+%%DATADIR%%/dBiz/res/component/LRoundWhite-bg.svg
+%%DATADIR%%/dBiz/res/component/LRoundWhite.svg
+%%DATADIR%%/dBiz/res/component/MCKSSS_0.svg
+%%DATADIR%%/dBiz/res/component/MCKSSS_1.svg
+%%DATADIR%%/dBiz/res/component/MCKSSS_2.svg
+%%DATADIR%%/dBiz/res/component/MicroRound.svg
+%%DATADIR%%/dBiz/res/component/MicroRoundAzz-bg.svg
+%%DATADIR%%/dBiz/res/component/PJ301MA.svg
+%%DATADIR%%/dBiz/res/component/PJ301MB.svg
+%%DATADIR%%/dBiz/res/component/PJ301ML.svg
+%%DATADIR%%/dBiz/res/component/PJ301MO.svg
+%%DATADIR%%/dBiz/res/component/PJ301MR.svg
+%%DATADIR%%/dBiz/res/component/PJ301MVA.svg
+%%DATADIR%%/dBiz/res/component/PJ301MW.svg
+%%DATADIR%%/dBiz/res/component/PJ3410.svg
+%%DATADIR%%/dBiz/res/component/Round-bg.svg
+%%DATADIR%%/dBiz/res/component/Round.svg
+%%DATADIR%%/dBiz/res/component/RoundAzz-bg.svg
+%%DATADIR%%/dBiz/res/component/RoundAzz-cap.svg
+%%DATADIR%%/dBiz/res/component/RoundRed-bg.svg
+%%DATADIR%%/dBiz/res/component/RoundWhite-bg.svg
+%%DATADIR%%/dBiz/res/component/RoundWhite.svg
+%%DATADIR%%/dBiz/res/component/SDKnob-bg.svg
+%%DATADIR%%/dBiz/res/component/SDKnob-cap.svg
+%%DATADIR%%/dBiz/res/component/SDKnob.svg
+%%DATADIR%%/dBiz/res/component/SilverSwitch_0.svg
+%%DATADIR%%/dBiz/res/component/SilverSwitch_1.svg
+%%DATADIR%%/dBiz/res/component/SilverSwitch_2.svg
+%%DATADIR%%/dBiz/res/component/SlidePot.svg
+%%DATADIR%%/dBiz/res/component/SlidePotHandle.svg
+%%DATADIR%%/dBiz/res/component/SlidePotHandle2.svg
+%%DATADIR%%/dBiz/res/component/SlidePotL.svg
+%%DATADIR%%/dBiz/res/component/Small-bg.svg
+%%DATADIR%%/dBiz/res/component/SmallBla.svg
+%%DATADIR%%/dBiz/res/component/SmallBlu-cap.svg
+%%DATADIR%%/dBiz/res/component/SmallBlu.svg
+%%DATADIR%%/dBiz/res/component/Trim-bg.svg
+%%DATADIR%%/dBiz/res/component/Trim.svg
+%%DATADIR%%/dBiz/res/component/VerboDL.svg
+%%DATADIR%%/dBiz/res/component/VerboDS-bg.svg
+%%DATADIR%%/dBiz/res/component/VerboDS-cap.svg
+%%DATADIR%%/dBiz/res/component/VerboDS.svg
+%%DATADIR%%/dBiz/res/component/VerboL.svg
+%%DATADIR%%/dBiz/res/component/VerboR-bg.svg
+%%DATADIR%%/dBiz/res/component/VerboRS-cap.svg
+%%DATADIR%%/dBiz/res/component/VerboRS.svg
+%%DATADIR%%/dBiz/res/component/VerboS-bg.svg
+%%DATADIR%%/dBiz/res/component/VerboS-cap.svg
+%%DATADIR%%/dBiz/res/component/VerboS.svg
+%%DATADIR%%/dBiz/res/component/VerboXS-bg.svg
+%%DATADIR%%/dBiz/res/component/VerboXS-cap.svg
+%%DATADIR%%/dBiz/res/component/VerboXS.svg
 %%DATADIR%%/fonts/DSEG7ClassicMini-Bold.ttf
 %%DATADIR%%/fonts/DSEG7ClassicMini-BoldItalic.ttf
 %%DATADIR%%/fonts/DSEG7ClassicMini-Italic.ttf
@@ -3678,6 +4122,18 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/fonts/DejaVuSans.ttf
 %%DATADIR%%/fonts/Nunito-Bold.ttf
 %%DATADIR%%/fonts/ShareTechMono-Regular.ttf
+%%DATADIR%%/forsitan-modulare/res/alea.svg
+%%DATADIR%%/forsitan-modulare/res/buttons/die-negative.svg
+%%DATADIR%%/forsitan-modulare/res/buttons/die.svg
+%%DATADIR%%/forsitan-modulare/res/cumuli.svg
+%%DATADIR%%/forsitan-modulare/res/deinde.svg
+%%DATADIR%%/forsitan-modulare/res/interea.svg
+%%DATADIR%%/forsitan-modulare/res/palette.svg
+%%DATADIR%%/forsitan-modulare/res/pavo.svg
+%%DATADIR%%/h4n4-modules/res/MatrixButton_0.svg
+%%DATADIR%%/h4n4-modules/res/MatrixButton_1.svg
+%%DATADIR%%/h4n4-modules/res/XenQnt-fonts.svg
+%%DATADIR%%/h4n4-modules/res/XenQnt.svg
 %%DATADIR%%/ihtsyn/res/Davies1900hWhite20.svg
 %%DATADIR%%/ihtsyn/res/Davies1900hWhite20_bg.svg
 %%DATADIR%%/ihtsyn/res/HiVerb.svg
@@ -3757,6 +4213,9 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/mscHack/res/mschack_sliderBG_02.svg
 %%DATADIR%%/mscHack/res/mschack_sliderKNOB_01.svg
 %%DATADIR%%/mscHack/res/mschack_square_button.svg
+%%DATADIR%%/myth-modules/res/Mavka.svg
+%%DATADIR%%/myth-modules/res/Molphar.svg
+%%DATADIR%%/myth-modules/res/Template.svg
 %%DATADIR%%/nonlinearcircuits/res/Audiowide-Regular.ttf
 %%DATADIR%%/nonlinearcircuits/res/BOOLs.afdesign
 %%DATADIR%%/nonlinearcircuits/res/BOOLs.svg
@@ -3790,10 +4249,34 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/nonlinearcircuits/res/NLC - SEGUE.svg
 %%DATADIR%%/nonlinearcircuits/res/NLC - STATUES.afdesign
 %%DATADIR%%/nonlinearcircuits/res/NLC - STATUES.svg
+%%DATADIR%%/nonlinearcircuits/res/SlothApathy.svg
+%%DATADIR%%/nonlinearcircuits/res/SlothInertia.svg
+%%DATADIR%%/nonlinearcircuits/res/SlothTorpor.svg
+%%DATADIR%%/nonlinearcircuits/res/TripleSloth.svg
 %%DATADIR%%/nonlinearcircuits/res/squid-axon-original-panel.svg
 %%DATADIR%%/nonlinearcircuits/res/squid-axon-papernoise-panel.afdesign
 %%DATADIR%%/nonlinearcircuits/res/squid-axon-papernoise-panel.svg
 %%DATADIR%%/nonlinearcircuits/res/squid-axon-papernoise-panel2.svg
+%%DATADIR%%/patches/examples/DRMR_-_BassGrowl.vcv
+%%DATADIR%%/patches/examples/DRMR_-_Etherpad.vcv
+%%DATADIR%%/patches/examples/DRMR_-_Gabberswing.vcv
+%%DATADIR%%/patches/examples/DRMR_-_Interverb.vcv
+%%DATADIR%%/patches/examples/JTB_-_Waves.vcv
+%%DATADIR%%/patches/examples/SpotlightKid_-_Classic-Polysynth.vcv
+%%DATADIR%%/patches/examples/VT_-_Jupiter_Ascent.vcv
+%%DATADIR%%/patches/examples/falkTX_-_Divide-no-Conquer.vcv
+%%DATADIR%%/patches/examples/falkTX_-_Random-Progress-Pluck-Rev.vcv
+%%DATADIR%%/patches/examples/falkTX_-_Salomonis-MonoRegen.vcv
+%%DATADIR%%/patches/mini/falkTX_-_Moogy.vcv
+%%DATADIR%%/patches/mini/falkTX_-_Saw_For_One.vcv
+%%DATADIR%%/patches/templates/fx.vcv
+%%DATADIR%%/patches/templates/main.vcv
+%%DATADIR%%/patches/templates/mini.vcv
+%%DATADIR%%/patches/templates/native.vcv
+%%DATADIR%%/patches/templates/synth.vcv
+%%DATADIR%%/patches/touchosc/24-direct-fader-params.tosc
+%%DATADIR%%/patches/welcome-wasm-mini.vcv
+%%DATADIR%%/patches/welcome-wasm.vcv
 %%DATADIR%%/rackwindows/res/bitshiftgain_dark.svg
 %%DATADIR%%/rackwindows/res/capacitor_mono_dark.svg
 %%DATADIR%%/rackwindows/res/capacitor_st_dark.svg
@@ -3919,9 +4402,706 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/stocaudio/res/polydelay.svg
 %%DATADIR%%/stocaudio/res/polyturing.svg
 %%DATADIR%%/stocaudio/res/spread.svg
-%%DATADIR%%/template-fx.vcv
-%%DATADIR%%/template-synth.vcv
-%%DATADIR%%/template.vcv
+%%DATADIR%%/stoermelder-packone/presets/MidiCat/cc01-32.txt
+%%DATADIR%%/stoermelder-packone/presets/Strip/Demo.vcvss
+%%DATADIR%%/stoermelder-packone/res/Affix.svg
+%%DATADIR%%/stoermelder-packone/res/AffixMicro.svg
+%%DATADIR%%/stoermelder-packone/res/Arena.svg
+%%DATADIR%%/stoermelder-packone/res/AudioInterface64.svg
+%%DATADIR%%/stoermelder-packone/res/Bolt.svg
+%%DATADIR%%/stoermelder-packone/res/CVMap.svg
+%%DATADIR%%/stoermelder-packone/res/CVMapCtx.svg
+%%DATADIR%%/stoermelder-packone/res/CVMapMicro.svg
+%%DATADIR%%/stoermelder-packone/res/CVPam.svg
+%%DATADIR%%/stoermelder-packone/res/Dirt.svg
+%%DATADIR%%/stoermelder-packone/res/EightFace.svg
+%%DATADIR%%/stoermelder-packone/res/EightFaceMk2.svg
+%%DATADIR%%/stoermelder-packone/res/EightFaceMk2Ex.svg
+%%DATADIR%%/stoermelder-packone/res/EightFaceX2.svg
+%%DATADIR%%/stoermelder-packone/res/FourRounds.svg
+%%DATADIR%%/stoermelder-packone/res/Glue.svg
+%%DATADIR%%/stoermelder-packone/res/Goto.svg
+%%DATADIR%%/stoermelder-packone/res/Grip.svg
+%%DATADIR%%/stoermelder-packone/res/Hive.svg
+%%DATADIR%%/stoermelder-packone/res/Infix.svg
+%%DATADIR%%/stoermelder-packone/res/InfixMicro.svg
+%%DATADIR%%/stoermelder-packone/res/Intermix.svg
+%%DATADIR%%/stoermelder-packone/res/IntermixEnv.svg
+%%DATADIR%%/stoermelder-packone/res/IntermixFade.svg
+%%DATADIR%%/stoermelder-packone/res/IntermixGate.svg
+%%DATADIR%%/stoermelder-packone/res/Macro.svg
+%%DATADIR%%/stoermelder-packone/res/Maze.svg
+%%DATADIR%%/stoermelder-packone/res/Mb.svg
+%%DATADIR%%/stoermelder-packone/res/Me.svg
+%%DATADIR%%/stoermelder-packone/res/MidiCat.svg
+%%DATADIR%%/stoermelder-packone/res/MidiCatCtx.svg
+%%DATADIR%%/stoermelder-packone/res/MidiCatMem.svg
+%%DATADIR%%/stoermelder-packone/res/MidiKey.svg
+%%DATADIR%%/stoermelder-packone/res/MidiMon.svg
+%%DATADIR%%/stoermelder-packone/res/MidiPlug.svg
+%%DATADIR%%/stoermelder-packone/res/MidiStep.svg
+%%DATADIR%%/stoermelder-packone/res/Mirror.svg
+%%DATADIR%%/stoermelder-packone/res/Orbit.svg
+%%DATADIR%%/stoermelder-packone/res/Pile.svg
+%%DATADIR%%/stoermelder-packone/res/PilePoly.svg
+%%DATADIR%%/stoermelder-packone/res/Raw.svg
+%%DATADIR%%/stoermelder-packone/res/ReMove.svg
+%%DATADIR%%/stoermelder-packone/res/RecButton.svg
+%%DATADIR%%/stoermelder-packone/res/RotorA.svg
+%%DATADIR%%/stoermelder-packone/res/Sail.svg
+%%DATADIR%%/stoermelder-packone/res/Sipo.svg
+%%DATADIR%%/stoermelder-packone/res/Spin.svg
+%%DATADIR%%/stoermelder-packone/res/Strip.svg
+%%DATADIR%%/stoermelder-packone/res/StripBay.svg
+%%DATADIR%%/stoermelder-packone/res/StripPp.svg
+%%DATADIR%%/stoermelder-packone/res/Stroke.svg
+%%DATADIR%%/stoermelder-packone/res/Transit.svg
+%%DATADIR%%/stoermelder-packone/res/TransitEx.svg
+%%DATADIR%%/stoermelder-packone/res/X4.svg
+%%DATADIR%%/stoermelder-packone/res/components/FlowerKnob.svg
+%%DATADIR%%/stoermelder-packone/res/components/LargeKnob-fg.svg
+%%DATADIR%%/stoermelder-packone/res/components/LargeKnob.svg
+%%DATADIR%%/stoermelder-packone/res/components/MatrixButton.svg
+%%DATADIR%%/stoermelder-packone/res/components/MatrixButton1.svg
+%%DATADIR%%/stoermelder-packone/res/components/Port.svg
+%%DATADIR%%/stoermelder-packone/res/components/Screw.svg
+%%DATADIR%%/stoermelder-packone/res/components/SmallKnob-fg.svg
+%%DATADIR%%/stoermelder-packone/res/components/SmallKnob.svg
+%%DATADIR%%/stoermelder-packone/res/components/Trimpot-fg.svg
+%%DATADIR%%/stoermelder-packone/res/components/Trimpot.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Affix.svg
+%%DATADIR%%/stoermelder-packone/res/dark/AffixMicro.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Arena.svg
+%%DATADIR%%/stoermelder-packone/res/dark/AudioInterface64.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Bolt.svg
+%%DATADIR%%/stoermelder-packone/res/dark/CVMap.svg
+%%DATADIR%%/stoermelder-packone/res/dark/CVMapCtx.svg
+%%DATADIR%%/stoermelder-packone/res/dark/CVMapMicro.svg
+%%DATADIR%%/stoermelder-packone/res/dark/CVPam.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Dirt.svg
+%%DATADIR%%/stoermelder-packone/res/dark/EightFace.svg
+%%DATADIR%%/stoermelder-packone/res/dark/EightFaceMk2.svg
+%%DATADIR%%/stoermelder-packone/res/dark/EightFaceMk2Ex.svg
+%%DATADIR%%/stoermelder-packone/res/dark/EightFaceX2.svg
+%%DATADIR%%/stoermelder-packone/res/dark/FourRounds.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Glue.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Goto.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Grip.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Hive.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Infix.svg
+%%DATADIR%%/stoermelder-packone/res/dark/InfixMicro.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Intermix.svg
+%%DATADIR%%/stoermelder-packone/res/dark/IntermixEnv.svg
+%%DATADIR%%/stoermelder-packone/res/dark/IntermixFade.svg
+%%DATADIR%%/stoermelder-packone/res/dark/IntermixGate.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Macro.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Maze.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiCat.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiCatCtx.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiCatMem.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiKey.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiMon.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiPlug.svg
+%%DATADIR%%/stoermelder-packone/res/dark/MidiStep.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Mirror.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Orbit.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Pile.svg
+%%DATADIR%%/stoermelder-packone/res/dark/PilePoly.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Raw.svg
+%%DATADIR%%/stoermelder-packone/res/dark/ReMove.svg
+%%DATADIR%%/stoermelder-packone/res/dark/RotorA.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Sail.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Sipo.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Spin.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Strip.svg
+%%DATADIR%%/stoermelder-packone/res/dark/StripBay.svg
+%%DATADIR%%/stoermelder-packone/res/dark/StripPp.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Stroke.svg
+%%DATADIR%%/stoermelder-packone/res/dark/Transit.svg
+%%DATADIR%%/stoermelder-packone/res/dark/TransitEx.svg
+%%DATADIR%%/stoermelder-packone/res/dark/X4.svg
+%%DATADIR%%/stoermelder-packone/res/fonts/RedkostComic.otf
+%%DATADIR%%/surgext/build/surge-data/configuration.xml
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Bright Ambience.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Chamber.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Galactic.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Infinity.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/MatrixVerb.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Melt.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Nonlinear Space.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Pocket Verbs.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Star Child.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Ambience/Verbity.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Clipping/AD Clip.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Clipping/One Corner Clip.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Clipping/Slew 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Clipping/Slew 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Block Party.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Butter Comp.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Compresaturator.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Drum Slam.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Logical.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Point.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Pop.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Pressure.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Pye Wacket.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Surge.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Dynamics/Vari-Mu.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Air.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Cabs.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Capacitor.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/De-Bess.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Dub Center.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Dub Sub.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Hombre.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/MackEQ.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Pafnuty.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/Bit Glitter.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/Crunchy Groove Wear.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/DeRez.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/Deck Wrecka.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/Groove Wear.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/To Vinyl.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Noise/Dust Bunny.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Noise/Noise.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Noise/Tape Dust.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Noise/Voice Of The Starship.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Pitch/Glitch Shifter.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Apicolypse.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Bass Drive.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Buss Colors.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Cojones.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Density.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Drive.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Fire Amp.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Focus.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Fracture.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Hard Vacuum.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Loud.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Mackity.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Mojo.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/NC-17.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Power Sag.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Single-Ended Triode.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Spiral.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Saturation And More/Unbox.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Stereo/Triple Spread.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Tape/Chrome Oxide.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Tape/Iron Oxide.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Tape/To Tape.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/CHOW/Anomaly.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Ambient.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Analog Warmth.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Deep.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Faster.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Fat.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Fullness.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Like A Pad.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Reverb.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Short.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Soft.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Spread & Phase.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Supersaw.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Sweet.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Unison.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Combulator/Add Harshness (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Combulator/E Minor World.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Combulator/Little Sparkle (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Combulator/Nice Sand.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Combulator/Sparkle.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Conditioner/Limiter 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Conditioner/Limiter 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Conditioner/Peak Suppressor.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Conditioner/Sit Tight.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Analog Echo.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-16.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-32.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-4.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-64.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Basic 1-8.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Chorus Wider.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Chorus.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Cool Tabs.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Crazy Verb.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Dimension.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Dreamy.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Fat Delay.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Feet In The Air.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Follower.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Let's Play Together.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Medium Hall.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Ping-Pong 1-16.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Ping-Pong 1-4.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Ping-Pong 1-8.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Repeat.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Rhythmic 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Rhythmic 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Rhythmic 3.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Vintage Digital Smooth.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Wide 1-4.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Delay/Wide 1-8.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Bright 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Bright 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Crunchy.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Deep 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Deep 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Full Range.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Kind.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Low End.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Overdrive.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Round.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Subtle.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Warm 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Warm 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Warm 3.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Warm 4.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Distortion/Warm 5.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Air.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Bottom.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Bright.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Brilliance.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Clarity.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Crisp.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Dark.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Edge.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Kick EQ.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Mid Cut.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Muddy.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Presence.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Punch.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Sibilance.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Smiley Curve.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/EQ/Warm.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Ensemble/Glassy Highs.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Ensemble/Kind Person.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Ensemble/Monster Dirt.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Exciter/A Touch Of Sizzle.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Exciter/Aggressive.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Exciter/Master Shinichi.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Exciter/Punchy.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Exciter/Soft Exciter.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Exciter/Widely Excited.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Big Chorus.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Fast.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Fat One.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Fatter.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Slow Move.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Warm.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Flanger/Wide.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Freq Shift/Building Robot Monkeys.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Freq Shift/Chorusy.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Freq Shift/Falling Down.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Freq Shift/Future Will Be Like This.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Freq Shift/Pulsating.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Full Bass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Full Treble.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Guitar Cab Cassette.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Master.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Mids With 12k.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Rock.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Smiley Curve.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Graphic EQ/Techno.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Mid-Side Tool/M-S Decode (-6 dB).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Mid-Side Tool/M-S Decode.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Mid-Side Tool/M-S EQ.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Mid-Side Tool/M-S Encode.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Mid-Side Tool/Tight Bass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Neuron/Disruption.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Neuron/This Cassette.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Nimbus/Creepy Combo (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Nimbus/IDK About This (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Nimbus/Subliminal Fluff (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Aliens.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Decent.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Max Stereo.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Narrow And Sweet.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Soft Spread.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Stereo Phaser.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Stereo Wide.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Sweetspot.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Phaser/Talky.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Resonator/Bazz.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Resonator/Hammer.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Resonator/Hi-Res.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Resonator/Kriskros.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Resonator/Older Record.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Resonator/XCrush.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Cathedral 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Cathedral 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Concert Hall.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Hall 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Hall 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Hall 3.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Hall 4.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Large Hall.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Long 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Long 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Opera House.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Room.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Short Sustain Ambience.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Standard.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 1/Warm Hall.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Amazing Big Hall (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Ambience.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Anybody Canyon.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Back Room.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Blurred Echo.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Brick Chamber (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Cathedral 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Cathedral 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Cave (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Concert Hall (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Dark Plate (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Deep Ambience.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Deep And Long.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Deep Space.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Dense Hall (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Diffuse Delay.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Echo Plate (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Endless.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Epic Hall.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Fat Chamber (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Floor (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Gated Room (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Gated Room.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Ghostly Chamber.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Grain Delay.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Ice House (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Large Church (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Large Deep Hall (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Now That's Enough (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Piano Hall (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Reflect Church (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Repro Plate (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Retro (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Silver Plate (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Sky.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Small Hall (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Sun Plate B (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Warm Hall.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Waving.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Reverb 2/Wider Shot (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Ring Mod/Crusher.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Ring Mod/Poisonous.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Chorusy (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Distorted Doppler.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Fast.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Flutter.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Rotor Chorus.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Slow.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Turn The Rotor.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Rotary/Warm Rotation.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Tape/Analog.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Tape/Buried Message.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Tape/Fattening (Send).srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Tape/Hi-Fi.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Tape/Muffled Warmth 1.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Tape/Muffled Warmth 2.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Treemonster/Creepypasta.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Treemonster/In The Back.srgfx
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine Octaves HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine Octaves.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine To Sawtooth HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine To Sawtooth.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine To Square HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine To Square.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Sine.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Tri-Saw HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Tri-Saw.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Triangle HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Triangle.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Circle.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Cosine Inverse Power.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Cosine Octaves.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Cosine.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Emphasis.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Flangy.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Formants.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Impulse.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Multi Bandpass Sweep.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Noise.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/PM Comp.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/PM Freq.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/PM16x.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/PWM.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Phasey 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Phasey 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Primes.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Pulse Synced 25%.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Pulse Synced 50%.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Pulse Windowed.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Ripple.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw ATC.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw Asymmetric.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw CS-80.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw Detuned.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw Havoc.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw Primary.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Saw Sync.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sawtooth Reso.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sawtooth Window.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Several Formants.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine FB.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine FM 2x HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine FM 2x.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine FM 3x HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine FM 3x.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Half HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Half.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Inverse Power HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Inverse Power.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine One Harmonic.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine PD HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine PD.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Power HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Power.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Quantitized 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Quantitized 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Quantitized 3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Sync Windowed.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Two Harmonics.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Windowed FM.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Windowed HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Windowed Octaves.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Windowed Primes.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sine Windowed.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Square ATC.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Square Windowed HQ.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Square Windowed.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Sweepy.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Triangle Primary.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Triangle Sine Shape.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Oneshot/Blip 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Oneshot/Blip 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Oneshot/Blip 3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Oneshot/Pulse.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Bata.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Bells.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Bloop.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Computer 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Computer 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Computer 3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Drumbeat 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Drumbeat 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Laser.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Rim.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Scrape.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Sparkly 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Sparkly 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Sparkly 3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Sprinkles 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Sprinkles 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Rhythmic/Wool Bow.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Banjo 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Banjo 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Cello.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Choir Formant.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Cluster.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Digi Organ 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Digi Organ 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Glissy.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar Acoustic 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar Acoustic 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar Electric 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar Electric 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar High.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar Mid.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar Steel.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Guitar.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Harp 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Harp 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Harpsi.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Koto 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Koto 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Koto 3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Mallets 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Mallets 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Mod Perc.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Music Box 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Music Box 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Mystic.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/New Bell.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Piano 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Piano 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Piano Dark.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Piano Low.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Pizz 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Pizz 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal Ah 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal Ah 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal Choir 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal Choir 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal O Formant 1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal O Formant 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Vocal O.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Sampled/Wonky.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/WT fileformat.txt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/B3Waves.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/BELLTR.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/BELTREE2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Beat.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/CARDBORD.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/CELLIH1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/CELLIPG.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/CELO.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Chaosweep.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Chorus 2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/DIGDU.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/DRAIN.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/DXBASS.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Diff. MKs.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/ELECTRIC.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/FMBell WM.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/FMGlock.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/FMP.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/FMT Pulse.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/FORMsaw2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Fmt Saw 3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Hype    P.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/JSMITH.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Jamming.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/KlingKlan.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/MW E-Pian.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Male AhPG.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Ord. FM.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Organs.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/PrfctPWM.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/RACHEL.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/SLAPE2.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/STRHMX.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Saw Arp.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/SawOctave.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/SoftSync.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/SomeOrgan.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/StringHit.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/TS.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/TSITAR3.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/Tubular.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/VeryHi WM.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/ViceVersa.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/WATER4.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/WETFONE.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/microwave1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/microwave4.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/mw1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/sine swee.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/vs1.wt
+%%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/vs2.wt
+%%DATADIR%%/surgext/build/surge-data/windows.wt
+%%DATADIR%%/surgext/patches/Chorus Delay OSC LFO and ADSR.vcv
+%%DATADIR%%/surgext/patches/README.md
+%%DATADIR%%/surgext/patches/RotaryExample.vcv
+%%DATADIR%%/surgext/patches/SurgePulsingSquare.vcv
+%%DATADIR%%/surgext/presets/SurgeDelay/Chorus (using Delay).vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Init.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Ping-Pong 1-16.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Ping-Pong 1-4.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Ping-Pong 1-8.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Repeat.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Rhythmic 1.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Rhythmic 2.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Rhythmic 3.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Wide 1-4.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Wide 1-8.vcvm
+%%DATADIR%%/surgext/presets/SurgeDelay/Wide Chorus (using Delay).vcvm
+%%DATADIR%%/surgext/presets/SurgeEQ/Air.vcvm
+%%DATADIR%%/surgext/presets/SurgeEQ/Init.vcvm
+%%DATADIR%%/surgext/presets/SurgeEQ/Mid Cut.vcvm
+%%DATADIR%%/surgext/presets/SurgeEQ/Smiley Curve.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_Classic.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_FM2.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_FM3.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_Noise.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_Saw.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_Sine.vcvm
+%%DATADIR%%/surgext/presets/SurgeOSC/Init_Square.vcvm
+%%DATADIR%%/surgext/presets/SurgePhaser/Init.vcvm
+%%DATADIR%%/surgext/presets/SurgePhaser/Stereo Phaser.vcvm
+%%DATADIR%%/surgext/presets/SurgePhaser/Talky.vcvm
+%%DATADIR%%/surgext/presets/SurgeRotary/Distorted Doppler.vcvm
+%%DATADIR%%/surgext/presets/SurgeRotary/Subtle.vcvm
+%%DATADIR%%/surgext/presets/SurgeRotary/Thats Not What Leslie Wanted.vcvm
+%%DATADIR%%/surgext/presets/SurgeRotary/Warble.vcvm
+%%DATADIR%%/surgext/presets/SurgeRotary/Warm Rotation.vcvm
+%%DATADIR%%/surgext/res/SurgeLogoOnlyWhite.svg
+%%DATADIR%%/surgext/res/newSurgeLogo.svg
+%%DATADIR%%/surgext/res/xt/dark/components/fader_bg.svg
+%%DATADIR%%/surgext/res/xt/dark/components/fader_bg_25.svg
+%%DATADIR%%/surgext/res/xt/dark/components/fader_handle.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-12.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-14.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-16.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-9.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-pointer-12.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-pointer-14.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-pointer-16.svg
+%%DATADIR%%/surgext/res/xt/dark/components/knob-pointer-9.svg
+%%DATADIR%%/surgext/res/xt/dark/components/mod-button.svg
+%%DATADIR%%/surgext/res/xt/dark/components/port.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/fx/BlankNoDisplay.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/other/EGLFO.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/other/FourOuts.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/other/Matrix.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/other/Mixer.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/other/TotalBlank.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/other/blank6hp.svg
+%%DATADIR%%/surgext/res/xt/dark/panels/vco/BlankVCO.svg
+%%DATADIR%%/surgext/res/xt/fonts/quicksand/Quicksand-Bold.ttf
+%%DATADIR%%/surgext/res/xt/fonts/quicksand/Quicksand-Regular.ttf
+%%DATADIR%%/surgext/res/xt/glyphs/lt_0.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_1.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_2.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_3.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_4.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_5.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_6.svg
+%%DATADIR%%/surgext/res/xt/glyphs/lt_7.svg
+%%DATADIR%%/surgext/res/xt/light/String.svg
+%%DATADIR%%/surgext/res/xt/light/components/fader_bg.svg
+%%DATADIR%%/surgext/res/xt/light/components/fader_bg_25.svg
+%%DATADIR%%/surgext/res/xt/light/components/fader_handle.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-12.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-14.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-16.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-9.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-pointer-12.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-pointer-14.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-pointer-16.svg
+%%DATADIR%%/surgext/res/xt/light/components/knob-pointer-9.svg
+%%DATADIR%%/surgext/res/xt/light/components/mod-button.svg
+%%DATADIR%%/surgext/res/xt/light/components/port.svg
+%%DATADIR%%/surgext/res/xt/light/panels/fx/BlankNoDisplay.svg
+%%DATADIR%%/surgext/res/xt/light/panels/other/EGLFO.svg
+%%DATADIR%%/surgext/res/xt/light/panels/other/FourOuts.svg
+%%DATADIR%%/surgext/res/xt/light/panels/other/Matrix.svg
+%%DATADIR%%/surgext/res/xt/light/panels/other/Mixer.svg
+%%DATADIR%%/surgext/res/xt/light/panels/other/TotalBlank.svg
+%%DATADIR%%/surgext/res/xt/light/panels/other/blank6hp.svg
+%%DATADIR%%/surgext/res/xt/light/panels/vco/BlankVCO.svg
+%%DATADIR%%/surgext/res/xt/mid/components/fader_bg.svg
+%%DATADIR%%/surgext/res/xt/mid/components/fader_bg_25.svg
+%%DATADIR%%/surgext/res/xt/mid/components/fader_handle.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-12.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-14.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-16.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-9.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-pointer-12.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-pointer-14.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-pointer-16.svg
+%%DATADIR%%/surgext/res/xt/mid/components/knob-pointer-9.svg
+%%DATADIR%%/surgext/res/xt/mid/components/mod-button.svg
+%%DATADIR%%/surgext/res/xt/mid/components/port.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/fx/BlankNoDisplay.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/other/EGLFO.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/other/FourOuts.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/other/Matrix.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/other/Mixer.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/other/TotalBlank.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/other/blank6hp.svg
+%%DATADIR%%/surgext/res/xt/mid/panels/vco/BlankVCO.svg
 %%DATADIR%%/unless_modules/art/avoider.art
 %%DATADIR%%/unless_modules/art/pianoid.art
 %%DATADIR%%/unless_modules/art/svg/buttons/AG_Auto.svg
@@ -4001,6 +5181,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/voxglitch/res/grain_engine_mk2_expander_front_panel.svg
 %%DATADIR%%/voxglitch/res/grain_engine_mk2_front_panel_r3.svg
 %%DATADIR%%/voxglitch/res/grain_fx_front_panel.svg
+%%DATADIR%%/voxglitch/res/groove_box_expander_front_panel.svg
 %%DATADIR%%/voxglitch/res/groove_box_front_panel.svg
 %%DATADIR%%/voxglitch/res/hazumi_front_panel.svg
 %%DATADIR%%/voxglitch/res/looper_front_panel.svg

@@ -1,8 +1,8 @@
 - for now treat FreeBSD as Linux for simplicity
 
---- carla/source/modules/AppConfig.h.orig	2022-05-15 13:40:22 UTC
+--- carla/source/modules/AppConfig.h.orig	2023-10-24 08:52:54 UTC
 +++ carla/source/modules/AppConfig.h
-@@ -27,7 +27,7 @@
+@@ -33,7 +33,7 @@
  # define APPCONFIG_OS_WIN32
  #elif defined(__APPLE__)
  # define APPCONFIG_OS_MAC

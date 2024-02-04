@@ -1,19 +1,20 @@
 PORTNAME=	cardinal
-DISTVERSION=	22.05
-PORTREVISION=	2
+DISTVERSION=	23.10
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Plugin wrapper around VCV Rack
-WWW=		https://github.com/DISTRHO/Cardinal
+WWW=		https://cardinal.kx.studio/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/FuzzySearchDatabase.hpp:textproc/fuzzysearchdatabase \
-		bash:shells/bash
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		bash:shells/bash \
+		cmake:devel/cmake-core
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libdbus-1.so:devel/dbus \
 		libfftw3f.so:math/fftw3-float \
 		libjansson.so:devel/jansson \
 		liblo.so:audio/liblo \
@@ -23,15 +24,16 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libsndfile.so:audio/libsndfile \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		compiler:c++11-lang gl gmake libarchive localbase:ldflags pkgconfig python shebangfix tar:xz xorg
+USES=		compiler:c++11-lang gl gmake libarchive localbase:ldflags pkgconfig python sdl shebangfix tar:xz xorg
 USE_XORG=	x11 xcursor xext xrandr
 USE_GL=		gl
+USE_SDL=	sdl2
 
 SHEBANG_GLOB=	*.sh
 
 CXXFLAGS+=	-I${LOCALBASE}/include/pffft
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
-LDFLAGS+=	-lpffft
+LDFLAGS+=	-lpffft -lexecinfo
 
 MAKE_ENV=	LD_PRELOAD=/usr/lib/libpthread.so # workaround for https://github.com/DISTRHO/Cardinal/issues/128#issuecomment-1030817359
 MAKE_ARGS=	SYSDEPS=true
