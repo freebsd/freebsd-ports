@@ -1,5 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.21
+DISTVERSION=	1.21.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -38,8 +38,15 @@ EXTRACT_CMD=	gtar
 
 LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined symbol: pthread_create
 
-OPTIONS_DEFINE=		LTO
-OPTIONS_DEFAULT=	LTO
+OPTIONS_DEFINE=		CTL LTO
+OPTIONS_DEFAULT=	CTL LTO
+
+CTL_DESC=		Enable support for the ACES Color Transformation Language
+CTL_CMAKE_BOOL=		ENABLE_CTL
+CTL_LIB_DEPENDS=	libIlmCtl.so:graphics/ctl \
+			libImath.so:math/Imath \
+			libOpenEXR.so:graphics/openexr \
+			libpng16.so:graphics/png
 
 LTO_CMAKE_BOOL=		WITH_LTO
 
