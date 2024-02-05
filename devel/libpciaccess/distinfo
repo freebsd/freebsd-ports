@@ -1,7 +1,3 @@
-TIMESTAMP = 1679655835
-SHA256 (xorg/lib/libpciaccess-0.17.tar.xz) = 74283ba3c974913029e7a547496a29145b07ec51732bbb5b5c58d5025ad95b73
-SIZE (xorg/lib/libpciaccess-0.17.tar.xz) = 331768
-SHA256 (xorg/lib/7f7d12445c3c.patch) = 372a5615b3643b7d67b22f542033c9a2a5ba70e570eeda3cfdb2331c3927d431
-SIZE (xorg/lib/7f7d12445c3c.patch) = 1002
-SHA256 (xorg/lib/4ee437c98c2d.patch) = 10065f02a32c00b2e234cd89c973f4346cd633c1c812463eb02dc805b326cc39
-SIZE (xorg/lib/4ee437c98c2d.patch) = 7331
+TIMESTAMP = 1707114740
+SHA256 (xorg/lib/libpciaccess-0.18.tar.xz) = 5461b0257d495254346f52a9c329b44b346262663675d3fecdb204a7e7c262a9
+SIZE (xorg/lib/libpciaccess-0.18.tar.xz) = 64452
