@@ -4844,7 +4844,7 @@ pretty-flavors-package-names: .PHONY
 
 flavors-package-names: .PHONY
 .    if empty(FLAVORS)
-	@${ECHO_CMD} "${PKGNAMES}"
+	@${ECHO_CMD} "${PKGNAMES}" | ${XARGS} -n 1
 .    else
 .      for f in ${FLAVORS}
 	@cd ${.CURDIR} && ${SETENV} -i FLAVOR=${f} ${MAKE} -B -V PKGNAMES | ${XARGS} -n 1
