@@ -68,6 +68,7 @@ MAKE_ENV=	QTDIR="${PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}"
 NOPRECIOUSMAKEVARS=	# don't override ARCH in ffmpeg makefiles
 DESTDIRNAME=	INSTALL_ROOT
+CFLAGS_powerpc=	-Wno-error=int-conversion
 CPPFLAGS+=	${QTCPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS_aarch64=-Wl,-z,notext
