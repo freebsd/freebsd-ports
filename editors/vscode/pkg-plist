@@ -326,6 +326,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/latex/syntaxes/TeX.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/latex/syntaxes/cpp-grammar-bailout.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/latex/syntaxes/markdown-latex-combined.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/less/build/update-grammar.js
 %%DATADIR%%/resources/app/extensions/less/language-configuration.json
 %%DATADIR%%/resources/app/extensions/less/package.json
 %%DATADIR%%/resources/app/extensions/less/package.nls.json
@@ -483,7 +484,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/diagnosticTool.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/extension.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/hash.js
-%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/mappings.wasm
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/renameWorker.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/targets/node/terminateProcess.sh
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/basic-wat.tmLanguage.json
@@ -806,7 +806,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/vb/package.json
 %%DATADIR%%/resources/app/extensions/vb/package.nls.json
 %%DATADIR%%/resources/app/extensions/vb/snippets/vb.code-snippets
-%%DATADIR%%/resources/app/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json
+%%DATADIR%%/resources/app/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/xml/package.json
 %%DATADIR%%/resources/app/extensions/xml/package.nls.json
 %%DATADIR%%/resources/app/extensions/xml/syntaxes/xml.tmLanguage.json

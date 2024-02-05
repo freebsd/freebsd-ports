@@ -1,6 +1,6 @@
---- src/main.js.orig	2023-11-01 09:39:20 UTC
+--- src/main.js.orig	2024-01-31 22:36:21 UTC
 +++ src/main.js
-@@ -139,7 +139,7 @@ if (locale) {
+@@ -140,7 +140,7 @@ if (locale) {
  // Pseudo Language Language Pack is being used.
  // In that case, use `en` as the Electron locale.
  
@@ -9,7 +9,7 @@
  	const electronLocale = (!locale || locale === 'qps-ploc') ? 'en' : locale;
  	app.commandLine.appendSwitch('lang', electronLocale);
  }
-@@ -204,7 +204,7 @@ function configureCommandlineSwitchesSync(cliArgs) {
+@@ -205,7 +205,7 @@ function configureCommandlineSwitchesSync(cliArgs) {
  		'force-color-profile'
  	];
  
