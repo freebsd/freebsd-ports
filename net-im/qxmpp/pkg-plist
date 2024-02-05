@@ -133,8 +133,8 @@ include/QXmppQt%%QT_VER%%/QXmppVCardManager.h
 include/QXmppQt%%QT_VER%%/QXmppVersionIq.h
 include/QXmppQt%%QT_VER%%/QXmppVersionManager.h
 include/QXmppQt%%QT_VER%%/qxmpp_export.h
-lib/cmake/QXmpp/QXmppConfig.cmake
-lib/cmake/QXmpp/QXmppConfigVersion.cmake
+%%QT5_ONLY%%lib/cmake/QXmpp/QXmppConfig.cmake
+%%QT5_ONLY%%lib/cmake/QXmpp/QXmppConfigVersion.cmake
 lib/cmake/QXmppOmemoQt%%QT_VER%%/QXmppOmemo-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QXmppOmemoQt%%QT_VER%%/QXmppOmemo.cmake
 lib/cmake/QXmppOmemoQt%%QT_VER%%/QXmppOmemoQt%%QT_VER%%Config.cmake
