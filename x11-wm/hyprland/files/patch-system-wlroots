@@ -24,3 +24,15 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
      dependency('cairo'),
      dependency('libdrm'),
      dependency('egl'),
+--- hyprpm/src/core/PluginManager.cpp.orig	2024-02-05 01:59:02 UTC
++++ hyprpm/src/core/PluginManager.cpp
+@@ -285,9 +285,6 @@ eHeadersErrors CPluginManager::headersValid() {
+ eHeadersErrors CPluginManager::headersValid() {
+     const auto HLVER = getHyprlandVersion();
+ 
+-    if (!std::filesystem::exists(DataState::getHeadersPath() + "/share/pkgconfig/hyprland.pc"))
+-        return HEADERS_MISSING;
+-
+     // find headers commit
+     std::string cmd     = std::format("PKG_CONFIG_PATH=\"{}/share/pkgconfig\" pkg-config --cflags --keep-system-cflags hyprland", DataState::getHeadersPath());
+     auto        headers = execAndGet(cmd.c_str());
