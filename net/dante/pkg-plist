@@ -8,10 +8,6 @@ lib/libsocks.so
 lib/libsocks.so.0
 lib/libsocks.so.0.1.1
 sbin/sockd
-man/man1/socksify.1.gz
-man/man5/sockd.conf.5.gz
-man/man5/socks.conf.5.gz
-man/man8/sockd.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sockd-basic.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sockd-chaining.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks-simple-withoutnameserver.conf
@@ -26,3 +22,7 @@ man/man8/sockd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/rfc1928.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1929.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1961.txt
+share/man/man1/socksify.1.gz
+share/man/man5/sockd.conf.5.gz
+share/man/man5/socks.conf.5.gz
+share/man/man8/sockd.8.gz
