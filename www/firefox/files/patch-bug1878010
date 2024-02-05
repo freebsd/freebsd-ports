@@ -1,6 +1,10 @@
-commit 324c4811690dd288a7bbd1378d129dc5e9d6f16b
+commit fa2a8be440397b623eab7a414c5685932176ef03
+Author: Andreas Pehrson <apehrson@mozilla.com>
+Date:   Fri Feb 2 18:43:54 2024 +0000
 
-    video capture also is implented with WEBRTC_BSD (at least on FreeBSD)
+    Bug 1878010 - Fix webrtc::VideoCaptureFactory for BSD. r=grulja,gaston,webrtc-reviewers,mjf
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D200427
 
 diff --git third_party/libwebrtc/modules/video_capture/video_capture_factory.cc third_party/libwebrtc/modules/video_capture/video_capture_factory.cc
 index e085ac2df8a0..2790fbbe1cba 100644
