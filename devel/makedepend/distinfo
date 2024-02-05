@@ -1,3 +1,3 @@
-TIMESTAMP = 1553317967
-SHA256 (xorg/util/makedepend-1.0.6.tar.bz2) = d558a52e8017d984ee59596a9582c8d699a1962391b632bec3bb6804bf4d501c
-SIZE (xorg/util/makedepend-1.0.6.tar.bz2) = 147616
+TIMESTAMP = 1707115084
+SHA256 (xorg/util/makedepend-1.0.9.tar.xz) = 92d0deb659fff6d8ddbc1d27fc4ca8ceb2b6dbe15d73f0a04edc09f1c5782dd4
+SIZE (xorg/util/makedepend-1.0.9.tar.xz) = 145080

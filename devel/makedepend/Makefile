@@ -1,6 +1,5 @@
 PORTNAME=	makedepend
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.9
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -10,7 +9,7 @@ WWW=		https://www.x.org/archive/X11R7.5/doc/man/man1/makedepend.1.html
 
 LICENSE=	MIT
 
-USES=		xorg xorg-cat:util
+USES=		tar:xz xorg xorg-cat:util
 USE_XORG=	xorgproto
 
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
