@@ -19,4 +19,4 @@ NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/"black and white"
 
-.include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
+.include "${.CURDIR}/../kde-icons-nuovext2/Makefile.icons"
