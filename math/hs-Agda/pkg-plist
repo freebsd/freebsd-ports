@@ -23,6 +23,8 @@
 %%DATADIR%%/lib/prim/Agda/Builtin/Char/Properties.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Coinduction.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Coinduction.agdai
+%%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Equiv.agda
+%%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Equiv.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Glue.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Glue.agdai
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/HCompU.agda
