@@ -1,6 +1,6 @@
---- SConstruct.orig	2022-08-16 08:30:35 UTC
+--- SConstruct.orig	2024-02-02 13:19:31 UTC
 +++ SConstruct
-@@ -70,7 +66,7 @@ if env['mode'] not in ['debug', 'analyze']:
+@@ -66,7 +66,7 @@ if env['werror']:
      env.Append(CCFLAGS='-Werror')
  
  if env['mode'] not in ['debug', 'analyze']:
@@ -9,7 +9,7 @@
  
  if env['mode'] == 'debug':
      env.Append(CCFLAGS=['-O0'])
-@@ -88,16 +84,14 @@ for root, dirnames, filenames in os.walk('src'):
+@@ -84,15 +84,13 @@ for root, dirnames, filenames in os.walk('src'):
          if filename.endswith('.c') or filename.endswith('.cpp'):
              sources.append(os.path.join(root, filename))
  
@@ -20,10 +20,10 @@
  # Linux compilation support.
  if target_os == 'posix':
 +    env.Append(CPPDEFINES='HAVE_LIBPNG=1')
-     env.Append(LIBS=['GL', 'm', 'dl'])
+     env.Append(LIBS=['GL', 'm', 'dl', 'pthread'])
      # Note: add '--static' to link with all the libs needed by glfw3.
-     env.ParseConfig('pkg-config --libs glfw3')
-     env.ParseConfig('pkg-config --cflags --libs gtk+-3.0')
+-    env.ParseConfig('pkg-config --libs glfw3')
++    env.ParseConfig('pkg-config --cflags --libs glfw3')
 +    env.ParseConfig('pkg-config --libs libpng')
  
  # Windows compilation support.
