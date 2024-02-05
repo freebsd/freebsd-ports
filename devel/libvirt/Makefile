@@ -4,6 +4,9 @@ CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
 
+PATCH_SITES=	https://github.com/libvirt/libvirt/commit/
+PATCHFILES=	dcfe548cb0.patch:-p1
+
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
 WWW=		https://libvirt.org/
