@@ -435,10 +435,10 @@
 %%DATADIR%%/bin/frontend/build/assets/@mantine/hooks-2dd1664c.js
 %%DATADIR%%/bin/frontend/build/assets/@mantine/modals-06fc84bc.js
 %%DATADIR%%/bin/frontend/build/assets/@mantine/notifications-19fa8d62.js
-%%DATADIR%%/bin/frontend/build/assets/index-3a492253.js
+%%DATADIR%%/bin/frontend/build/assets/index-0e4afa5f.js
 %%DATADIR%%/bin/frontend/build/assets/index-5c5baf89.css
-%%DATADIR%%/bin/frontend/build/assets/index-c35e8b57.js
-%%DATADIR%%/bin/frontend/build/assets/index-ddc210ae.js
+%%DATADIR%%/bin/frontend/build/assets/index-a176b8d0.js
+%%DATADIR%%/bin/frontend/build/assets/index-c6ea1a1d.js
 %%DATADIR%%/bin/frontend/build/assets/roboto-all-300-normal-6d79427c.woff
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-300-normal-47aa3bfa.woff2
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-ext-300-normal-435e4b7f.woff2
@@ -487,6 +487,9 @@
 %%DATADIR%%/bin/libs/__pycache__/typing_extensions%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/__pycache__/whichcraft%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/__pycache__/whichcraft%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/_yaml/__init__.py
+%%DATADIR%%/bin/libs/_yaml/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/_yaml/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/alembic/__init__.py
 %%DATADIR%%/bin/libs/alembic/__main__.py
 %%DATADIR%%/bin/libs/alembic/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -885,6 +888,7 @@
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyBase.pyi
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyBoxcar.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyBulkSMS.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyBurstSMS.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyClickSend.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyD7Networks.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyDBus.py
@@ -912,7 +916,6 @@
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyFaast.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyFlock.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyForm.py
-%%DATADIR%%/bin/libs/apprise/plugins/NotifyGitter.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyGnome.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyGoogleChat.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyGotify.py
@@ -934,11 +937,13 @@
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyMastodon.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyMatrix.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyMatterMost.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyMattermost.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyMessageBird.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyMisskey.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyNextcloud.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyNextcloudTalk.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyNotica.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyNotifiarr.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyNotifico.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyNtfy.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyOffice365.py
@@ -950,10 +955,14 @@
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyPopcornNotify.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyProwl.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyPushBullet.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyPushDeer.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyPushMe.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyPushSafer.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyPushed.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyPushjet.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyPushover.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyPushy.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyRSyslog.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyReddit.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyRocketChat.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyRyver.py
@@ -979,6 +988,7 @@
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyVoipms.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyVonage.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyWebexTeams.py
+%%DATADIR%%/bin/libs/apprise/plugins/NotifyWhatsApp.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyWindows.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyXBMC.py
 %%DATADIR%%/bin/libs/apprise/plugins/NotifyXML.py
@@ -994,6 +1004,8 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyBoxcar%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyBulkSMS%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyBulkSMS%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyBurstSMS%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyBurstSMS%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyClickSend%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyClickSend%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyD7Networks%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1018,8 +1030,6 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyFlock%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyForm%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyForm%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyGitter%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyGitter%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyGnome%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyGnome%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyGoogleChat%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1062,6 +1072,8 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMatrix%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMatterMost%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMatterMost%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMattermost%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMattermost%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMessageBird%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMessageBird%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyMisskey%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1072,6 +1084,8 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNextcloudTalk%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNotica%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNotica%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNotifiarr%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNotifiarr%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNotifico%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNotifico%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyNtfy%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1094,6 +1108,10 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyProwl%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushBullet%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushBullet%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushDeer%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushDeer%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushMe%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushMe%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushSafer%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushSafer%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushed%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1102,6 +1120,10 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushjet%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushover%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushover%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushy%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyPushy%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyRSyslog%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyRSyslog%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyReddit%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyReddit%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyRocketChat%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1152,6 +1174,8 @@
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyVonage%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyWebexTeams%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyWebexTeams%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyWhatsApp%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyWhatsApp%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyWindows%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyWindows%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/apprise/plugins/__pycache__/NotifyXBMC%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -9776,8 +9800,8 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/_agent_list%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/addic7ed%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/addic7ed%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/argenteam%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/argenteam%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/argenteamdump%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/argenteamdump%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/assrt%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/assrt%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/betaseries%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -9876,7 +9900,7 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/zimuku%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/_agent_list.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/addic7ed.py
-%%DATADIR%%/bin/libs/subliminal_patch/providers/argenteam.py
+%%DATADIR%%/bin/libs/subliminal_patch/providers/argenteamdump.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/assrt.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/betaseries.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/bsplayer.py
@@ -12007,9 +12031,12 @@
 %%DATADIR%%/bin/migrations/env.py
 %%DATADIR%%/bin/migrations/script.py.mako
 %%DATADIR%%/bin/migrations/versions/195144da1f7e_.py
+%%DATADIR%%/bin/migrations/versions/30f37e2e15e1_.py
 %%DATADIR%%/bin/migrations/versions/95cd4cf40d7a_.py
 %%DATADIR%%/bin/migrations/versions/__pycache__/195144da1f7e_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/195144da1f7e_%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/migrations/versions/__pycache__/30f37e2e15e1_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/migrations/versions/__pycache__/30f37e2e15e1_%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/95cd4cf40d7a_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/95cd4cf40d7a_%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/cee6a710cb71_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
