@@ -67,7 +67,7 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_COMPONENTS+="rust-docs-${_PACKAGE_VERS}-${_RUST_TARGET} rust-docs-json-${_PACKAGE_VERS}-${_RUST_TARGET}" \
 			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
-GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb-cheri
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \

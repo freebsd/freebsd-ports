@@ -9,7 +9,7 @@ WWW=		https://github.com/pizzamig/bstack
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb-cheri
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pizzamig

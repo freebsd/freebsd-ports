@@ -9,7 +9,7 @@ COMMENT=	Automatically report kernel panics
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	pkesh:security/pkesh \
-		${LOCALBASE}/bin/gdb:devel/gdb
+		${LOCALBASE}/bin/gdb:devel/gdb-cheri
 
 NO_BUILD=	yes
 

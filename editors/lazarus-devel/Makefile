@@ -54,7 +54,7 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 
 .if ${PORT_OPTIONS:MGDB}
-RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:devel/gdb
+RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:devel/gdb-cheri
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gtk2"

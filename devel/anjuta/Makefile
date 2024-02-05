@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-
 		automake>=0:devel/automake \
 		autoconf>=0:devel/autoconf \
 		libtool>=2.4:devel/libtool \
-		gdb>=7.10:devel/gdb \
+		gdb>=7.10:devel/gdb-cheri \
 		gmake:devel/gmake \
 		yelp>=3.0.0:x11/yelp
 

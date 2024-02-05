@@ -10,7 +10,7 @@ WWW=		http://ropshell.com/peda/
 LICENSE=	CC-BY-NC-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	gdb>7.0:devel/gdb \
+RUN_DEPENDS=	gdb>7.0:devel/gdb-cheri \
 		nasm:devel/nasm \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}

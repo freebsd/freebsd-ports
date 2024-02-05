@@ -10,7 +10,7 @@ WWW=		https://gef.rtfd.io
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	gdb>7.7:devel/gdb
+RUN_DEPENDS=	gdb>7.7:devel/gdb-cheri
 
 USES=		python:run
 

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgmime-3.0.so:mail/gmime30 \
 		libsexp.so:devel/sfsexp \
 		libtalloc.so:devel/talloc \
 		libxapian.so:databases/xapian-core
-TEST_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb \
+TEST_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb-cheri \
 		bash:shells/bash \
 		dtach:misc/dtach \
 		emacs:editors/emacs@nox \

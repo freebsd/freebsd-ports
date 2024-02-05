@@ -335,9 +335,9 @@ PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
 DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
 DEVELOPER_CONFIGURE_ENV=	WAF_CMD_FORMAT=string
 DEVELOPER_BUILD_DEPENDS=	${SAMBA4_LMDB_DEPENDS} \
-				${GDB_CMD}:devel/gdb
+				${GDB_CMD}:devel/gdb-cheri
 DEVELOPER_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
-DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
+DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb-cheri
 DEVELOPER_VARS_OFF=		GDB_CMD=true
 ##############################################################################
 AD_DC_IMPLIES=			PYTHON3

@@ -318,9 +318,9 @@ DEVELOPER_IMPLIES=		NTVFS
 DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
 DEVELOPER_CONFIGURE_ENV=	WAF_CMD_FORMAT=string
 DEVELOPER_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
-DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb \
+DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb-cheri \
 				${SAMBA4_LMDB_DEPENDS}
-DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
+DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb-cheri
 DEVELOPER_VARS_OFF=		GDB_CMD=true
 # XXX: Mostly used in conjuction with the DEVELOPER option, don't enable it
 # if you don't know what you are doing
