@@ -4,6 +4,9 @@ PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	https://ncmpcpp.rybczak.net/stable/
 
+PATCH_SITES=	https://github.com/ncmpcpp/ncmpcpp/commit/
+PATCHFILES=	d7f487c648e05172aeb2c2d0899d2086160edaf1.patch:-p1
+
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Ncurses mpd client, clone of ncmpc with some new features
 WWW=		https://rybczak.net/ncmpcpp/
