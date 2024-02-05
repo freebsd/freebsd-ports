@@ -1,5 +1,5 @@
 PORTNAME=	poetry
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.5.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0.10.0<0.11:devel/py-build@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.13.0<0.14:www/py-cachecontrol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.13.0:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cleo>=2.0.0<3:devel/py-cleo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}crashtest>=0.4.1<0.5:devel/py-crashtest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dulwich>=0.21.2<0.22:devel/py-dulwich@${PY_FLAVOR} \
