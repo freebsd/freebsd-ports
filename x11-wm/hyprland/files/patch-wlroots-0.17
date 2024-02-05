@@ -3,10 +3,21 @@ use as system package with more than one consumer.
 
 https://github.com/hyprwm/hyprland/commit/2ebfd0c7456e
 https://github.com/hyprwm/hyprland/commit/d2c3b23ace74
+https://github.com/hyprwm/hyprland/commit/33444e1e5ef8
+https://github.com/hyprwm/hyprland/commit/7b3d03938888
 
---- src/Compositor.cpp.orig	2023-11-30 15:20:08 UTC
+--- src/Compositor.cpp.orig	2024-02-05 01:59:02 UTC
 +++ src/Compositor.cpp
-@@ -190,7 +190,7 @@ void CCompositor::initServer() {
+@@ -115,7 +115,7 @@ void CCompositor::initServer() {
+     else
+         wlr_log_init(WLR_ERROR, Debug::wlrLog);
+ 
+-    m_sWLRBackend = wlr_backend_autocreate(m_sWLEventLoop, &m_sWLRSession);
++    m_sWLRBackend = wlr_backend_autocreate(m_sWLDisplay, &m_sWLRSession);
+ 
+     if (!m_sWLRBackend) {
+         Debug::log(CRIT, "m_sWLRBackend was NULL! This usually means wlroots could not find a GPU or enountered some issues.");
+@@ -169,7 +169,7 @@ void CCompositor::initServer() {
  
      m_sWLRGammaCtrlMgr = wlr_gamma_control_manager_v1_create(m_sWLDisplay);
  
@@ -15,7 +26,16 @@ https://github.com/hyprwm/hyprland/commit/d2c3b23ace74
  
      m_sWLROutputPowerMgr = wlr_output_power_manager_v1_create(m_sWLDisplay);
  
-@@ -282,7 +282,7 @@ void CCompositor::initAllSignals() {
+@@ -239,7 +239,7 @@ void CCompositor::initServer() {
+ 
+     m_sWLRActivation = wlr_xdg_activation_v1_create(m_sWLDisplay);
+ 
+-    m_sWLRHeadlessBackend = wlr_headless_backend_create(m_sWLEventLoop);
++    m_sWLRHeadlessBackend = wlr_headless_backend_create(m_sWLDisplay);
+ 
+     m_sWLRSessionLockMgr = wlr_session_lock_manager_v1_create(m_sWLDisplay);
+ 
+@@ -261,7 +261,7 @@ void CCompositor::initAllSignals() {
  
  void CCompositor::initAllSignals() {
      addWLSignal(&m_sWLRBackend->events.new_output, &Events::listen_newOutput, m_sWLRBackend, "Backend");
@@ -24,6 +44,31 @@ https://github.com/hyprwm/hyprland/commit/d2c3b23ace74
      addWLSignal(&m_sWLRCursor->events.motion, &Events::listen_mouseMove, m_sWLRCursor, "WLRCursor");
      addWLSignal(&m_sWLRCursor->events.motion_absolute, &Events::listen_mouseMoveAbsolute, m_sWLRCursor, "WLRCursor");
      addWLSignal(&m_sWLRCursor->events.button, &Events::listen_mouseButton, m_sWLRCursor, "WLRCursor");
+--- src/Window.cpp.orig	2024-02-05 01:59:02 UTC
++++ src/Window.cpp
+@@ -513,7 +513,7 @@ void CWindow::onMap() {
+         if (ctrl->pWlrHint->surface != m_pWLSurface.wlr())
+             continue;
+ 
+-        m_bTearingHint = ctrl->pWlrHint->current;
++        m_bTearingHint = ctrl->pWlrHint->hint;
+         break;
+     }
+ }
+--- src/events/Misc.cpp.orig	2024-02-05 01:59:02 UTC
++++ src/events/Misc.cpp
+@@ -255,9 +255,9 @@ void Events::listener_newTearingHint(wl_listener* list
+             const auto PWINDOW = g_pCompositor->getWindowFromSurface(TEARINGHINT->pWlrHint->surface);
+ 
+             if (PWINDOW) {
+-                PWINDOW->m_bTearingHint = (bool)TEARINGHINT->pWlrHint->current;
++                PWINDOW->m_bTearingHint = TEARINGHINT->pWlrHint->hint;
+ 
+-                Debug::log(LOG, "Hint {:x} (window {}) set tearing hint to {}", (uintptr_t)TEARINGHINT->pWlrHint, PWINDOW, (uint32_t)TEARINGHINT->pWlrHint->current);
++                Debug::log(LOG, "Hint {:x} (window {}) set tearing hint to {}", (uintptr_t)TEARINGHINT->pWlrHint, PWINDOW, (uint32_t)TEARINGHINT->pWlrHint->hint);
+             }
+         },
+         NEWCTRL, "TearingController");
 --- src/events/Windows.cpp.orig	2023-11-30 15:20:08 UTC
 +++ src/events/Windows.cpp
 @@ -1171,10 +1171,12 @@ void Events::listener_newXDGToplevel(wl_listener* list
@@ -52,3 +97,35 @@ https://github.com/hyprwm/hyprland/commit/d2c3b23ace74
  #include <wlr/render/swapchain.h>
  #include <wlr/render/egl.h>
  
+--- src/managers/input/InputManager.cpp.orig	2024-02-05 01:59:02 UTC
++++ src/managers/input/InputManager.cpp
+@@ -699,8 +699,7 @@ void CInputManager::onMouseWheel(wlr_pointer_axis_even
+             return;
+     }
+ 
+-    wlr_seat_pointer_notify_axis(g_pCompositor->m_sSeat.seat, e->time_msec, e->orientation, factor * e->delta, std::round(factor * e->delta_discrete), e->source,
+-                                 WLR_AXIS_RELATIVE_DIRECTION_IDENTICAL);
++    wlr_seat_pointer_notify_axis(g_pCompositor->m_sSeat.seat, e->time_msec, e->orientation, factor * e->delta, std::round(factor * e->delta_discrete), e->source);
+ }
+ 
+ Vector2D CInputManager::getMouseCoordsInternal() {
+--- src/render/Renderer.cpp.orig	2024-02-05 01:59:02 UTC
++++ src/render/Renderer.cpp
+@@ -163,7 +163,7 @@ static void renderSurface(struct wlr_surface* surface,
+ 
+     if (!g_pHyprRenderer->m_bBlockSurfaceFeedback) {
+         wlr_surface_send_frame_done(surface, RDATA->when);
+-        wlr_presentation_surface_textured_on_output(surface, RDATA->pMonitor->output);
++        wlr_presentation_surface_textured_on_output(g_pCompositor->m_sWLRPresentation, surface, RDATA->pMonitor->output);
+     }
+ 
+     g_pHyprOpenGL->blend(true);
+@@ -923,7 +923,7 @@ bool CHyprRenderer::attemptDirectScanout(CMonitor* pMo
+     timespec now;
+     clock_gettime(CLOCK_MONOTONIC, &now);
+     wlr_surface_send_frame_done(PSURFACE, &now);
+-    wlr_presentation_surface_scanned_out_on_output(PSURFACE, pMonitor->output);
++    wlr_presentation_surface_scanned_out_on_output(g_pCompositor->m_sWLRPresentation, PSURFACE, pMonitor->output);
+ 
+     if (pMonitor->state.commit()) {
+         if (!m_pLastScanout) {
