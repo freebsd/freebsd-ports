@@ -1,0 +1,11 @@
+--- bww2mxml/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ bww2mxml/CMakeLists.txt
+@@ -47,7 +47,7 @@ if (NOT MINGW AND NOT APPLE AND NOT MSVC)
+    set_target_properties (
+          bww2mxml
+          PROPERTIES
+-            COMPILE_FLAGS "-x c++ -include ${PROJECT_BINARY_DIR}/all.h -g -Wall -Wextra -Winvalid-pch"
++            COMPILE_FLAGS "-x c++ -include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch"
+          )
+ 
+    target_link_libraries(bww2mxml
