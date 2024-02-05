@@ -1512,6 +1512,7 @@
     SUBDIR += linux-rl9-libunistring
     SUBDIR += linux-rl9-llvm
     SUBDIR += linux-rl9-nspr
+    SUBDIR += linux-rl9-strace
     SUBDIR += linux-rl9-systemd-libs
     SUBDIR += linux-sublime-merge
     SUBDIR += linux_libusb
