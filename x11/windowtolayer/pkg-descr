@@ -1,0 +1,5 @@
+This program transforms individual Wayland clients, which use the
+xdg-shell protocol to display windows, into clients that use the
+wlr-layer-shell protocol to render as a wallpaper. Note that
+wlr-layer-shell is only supported by some compositors (like KWin, and
+those based on wlroots.)

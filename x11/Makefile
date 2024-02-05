@@ -458,6 +458,7 @@
     SUBDIR += wev
     SUBDIR += wezterm
     SUBDIR += wf-shell
+    SUBDIR += windowtolayer
     SUBDIR += wl-clipboard
     SUBDIR += wl-mirror
     SUBDIR += wlogout
