@@ -354,6 +354,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLUniformsGroups.js
 %%WWWDIR%%/renderers/webgl/WebGLUtils.js
 %%WWWDIR%%/renderers/webxr/WebXRController.js
+%%WWWDIR%%/renderers/webxr/WebXRDepthSensing.js
 %%WWWDIR%%/renderers/webxr/WebXRManager.js
 %%WWWDIR%%/scenes/Fog.js
 %%WWWDIR%%/scenes/FogExp2.js
