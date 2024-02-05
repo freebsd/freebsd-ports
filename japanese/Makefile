@@ -28,6 +28,7 @@
     SUBDIR += cmigemo
     SUBDIR += cmigemo-dict
     SUBDIR += cp5022x-el
+    SUBDIR += cskk
     SUBDIR += csrd
     SUBDIR += ctags
     SUBDIR += dams

@@ -1,0 +1,12 @@
+include/cskk/libcskk.h
+lib/cskk/libcskk.a
+lib/cskk/libcskk.so
+lib/cskk/libcskk.so.3
+lib/cskk/libcskk.so.3.1.1
+libdata/pkgconfig/cskk.pc
+share/libcskk/README.rules
+share/libcskk/rule/ascii_form.toml
+share/libcskk/rule/kana_form.toml
+share/libcskk/rules/azik/rule.toml
+share/libcskk/rules/default/rule.toml
+share/libcskk/rules/metadata.toml
