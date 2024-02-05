@@ -1,6 +1,5 @@
 PORTNAME=	libXext
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -11,7 +10,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	x11 xau xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxext
