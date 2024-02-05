@@ -1,0 +1,485 @@
+https://bugzilla.samba.org/show_bug.cgi?id=15376
+
+--- source3/smbd/open.c	2023-04-19 12:18:56.254875400 +0200
++++ source3/smbd/open.c	2023-06-20 08:29:06.210298000 +0200
+@@ -1204,9 +1204,6 @@
+ 	int new_fd;
+ 	NTSTATUS status;
+ 
+-	if (!fsp->fsp_flags.have_proc_fds) {
+-		return NT_STATUS_MORE_PROCESSING_REQUIRED;
+-	}
+ 
+ 	old_fd = fsp_get_pathref_fd(fsp);
+ 	if (old_fd == -1) {
+@@ -1222,22 +1219,28 @@
+ 		return NT_STATUS_INVALID_HANDLE;
+ 	}
+ 
+-	p = sys_proc_fd_path(old_fd, buf, sizeof(buf));
+-	if (p == NULL) {
+-		return NT_STATUS_NO_MEMORY;
+-	}
++	
++	if (sys_open_real_fd_from_pathref_fd(old_fd, &new_fd, flags) != 0) {
++		if (!fsp->fsp_flags.have_proc_fds) {
++			return NT_STATUS_MORE_PROCESSING_REQUIRED;
++		}
+ 
+-	proc_fname = (struct smb_filename) {
+-		.base_name = discard_const_p(char, p),
+-	};
++		p = sys_proc_fd_path(old_fd, buf, sizeof(buf));
++		if (p == NULL) {
++			return NT_STATUS_NO_MEMORY;
++		}
+ 
+-	fsp->fsp_flags.is_pathref = false;
++		proc_fname = (struct smb_filename) {
++			.base_name = discard_const_p(char, p),
++		};
+ 
+-	new_fd = SMB_VFS_OPENAT(fsp->conn,
+-				fsp->conn->cwd_fsp,
+-				&proc_fname,
+-				fsp,
+-				&how);
++		new_fd = SMB_VFS_OPENAT(fsp->conn,
++					fsp->conn->cwd_fsp,
++					&proc_fname,
++					fsp,
++					&how);
++	}
++
+ 	if (new_fd == -1) {
+ 		status = map_nt_error_from_unix(errno);
+ 		fd_close(fsp);
+@@ -1250,6 +1260,8 @@
+ 	}
+ 
+ 	fsp_set_fd(fsp, new_fd);
++	fsp->fsp_flags.is_pathref = false;
++	
+ 	return NT_STATUS_OK;
+ }
+ 
+--- source3/lib/system.c	2023-01-18 16:32:24.174553200 +0100
++++ source3/lib/system.c	2023-06-19 23:35:30.132465000 +0200
+@@ -1022,6 +1022,8 @@
+ } proc_fd_patterns[] = {
+ 	/* Linux */
+ 	{ "/proc/self/fd/%d", "/proc/self/fd/0" },
++	/* FreeBSD */
++	{ "/compat/linux/dev/fd/%d", "/compat/linux/dev/fd/0" },
+ 	{ NULL, NULL },
+ };
+ 
+@@ -1077,4 +1079,27 @@
+ 	}
+ 
+ 	return buf;
++}
++
++
++/* Helper function that opens a usable fd for accessing data
++   (metadata & content) from a pathref fd */
++int sys_open_real_fd_from_pathref_fd(int fd,
++				     int *rfd,
++				     int flags) {
++	int tfd;
++
++#if defined(HAVE_OPENAT) && defined(O_EMPTY_PATH)
++	/* This works for FreeBSD 13+ atleast */
++	
++	tfd = openat(fd, "", O_EMPTY_PATH|flags);
++	if (tfd < 0) {
++		return errno;
++	}
++
++	*rfd = tfd;
++	return 0;
++#else
++	return ENOSYS;
++#endif
+ }
+--- source3/modules/vfs_default.c	2023-05-31 18:06:44.154299500 +0200
++++ source3/modules/vfs_default.c	2023-06-19 23:23:58.116903000 +0200
+@@ -2721,7 +2721,7 @@
+ 
+ static int vfswrap_fchmod(vfs_handle_struct *handle, files_struct *fsp, mode_t mode)
+ {
+-	int result;
++	int result, fd, real_fd;
+ 
+ 	START_PROFILE(syscall_fchmod);
+ 
+@@ -2731,8 +2731,9 @@
+ 		return result;
+ 	}
+ 
++	fd = fsp_get_pathref_fd(fsp);
++
+ 	if (fsp->fsp_flags.have_proc_fds) {
+-		int fd = fsp_get_pathref_fd(fsp);
+ 		const char *p = NULL;
+ 		char buf[PATH_MAX];
+ 
+@@ -2746,6 +2747,17 @@
+ 		return result;
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno;
++	  
++		result = fchmod(real_fd, mode);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		END_PROFILE(syscall_fchmod);
++		return result;
++	}
++
+ 	/*
+ 	 * This is no longer a handle based call.
+ 	 */
+@@ -2758,7 +2770,7 @@
+ static int vfswrap_fchown(vfs_handle_struct *handle, files_struct *fsp, uid_t uid, gid_t gid)
+ {
+ #ifdef HAVE_FCHOWN
+-	int result;
++	int result, fd, real_fd;
+ 
+ 	START_PROFILE(syscall_fchown);
+ 	if (!fsp->fsp_flags.is_pathref) {
+@@ -2767,8 +2779,9 @@
+ 		return result;
+ 	}
+ 
++	fd = fsp_get_pathref_fd(fsp);
++	
+ 	if (fsp->fsp_flags.have_proc_fds) {
+-		int fd = fsp_get_pathref_fd(fsp);
+ 		const char *p = NULL;
+ 		char buf[PATH_MAX];
+ 
+@@ -2782,6 +2795,17 @@
+ 		return result;
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno;
++	  
++		result = fchown(real_fd, uid, gid);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		END_PROFILE(syscall_fchown);
++		return result;
++	}
++
+ 	/*
+ 	 * This is no longer a handle based call.
+ 	 */
+@@ -2855,7 +2879,7 @@
+ 			   files_struct *fsp,
+ 			   struct smb_file_time *ft)
+ {
+-	int result = -1;
++	int result = -1, fd, real_fd;
+ 	struct timespec ts[2];
+ 	struct timespec *times = NULL;
+ 
+@@ -2900,8 +2924,9 @@
+ 		goto out;
+ 	}
+ 
++	fd = fsp_get_pathref_fd(fsp);
++	
+ 	if (fsp->fsp_flags.have_proc_fds) {
+-		int fd = fsp_get_pathref_fd(fsp);
+ 		const char *p = NULL;
+ 		char buf[PATH_MAX];
+ 
+@@ -2919,6 +2944,16 @@
+ 		goto out;
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno;
++	  
++		result = futimens(real_fd, times);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		goto out;
++	}
++
+ 	/*
+ 	 * The fd is a pathref (opened with O_PATH) and there isn't fd to
+ 	 * path translation mechanism. Fallback to path based call.
+@@ -3322,6 +3357,7 @@
+ {
+ #ifdef HAVE_FCHFLAGS
+ 	int fd = fsp_get_pathref_fd(fsp);
++	int real_fd;
+ 
+ 	SMB_ASSERT(!fsp_is_alternate_stream(fsp));
+ 
+@@ -3341,6 +3377,16 @@
+ 		return chflags(p, flags);
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++	  int saved_errno, result;
++	  
++		result = fchflags(real_fd, flags);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		return result;
++	}
++
+ 	/*
+ 	 * This is no longer a handle based call.
+ 	 */
+@@ -3569,6 +3615,7 @@
+ 				 size_t size)
+ {
+ 	int fd = fsp_get_pathref_fd(fsp);
++	int real_fd;
+ 
+ 	SMB_ASSERT(!fsp_is_alternate_stream(fsp));
+ 
+@@ -3588,6 +3635,16 @@
+ 		return getxattr(p, name, value, size);
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno, result;
++	  
++		result = fgetxattr(real_fd, name, value, size);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		return result;
++	}
++
+ 	/*
+ 	 * This is no longer a handle based call.
+ 	 */
+@@ -3895,6 +3952,7 @@
+ static ssize_t vfswrap_flistxattr(struct vfs_handle_struct *handle, struct files_struct *fsp, char *list, size_t size)
+ {
+ 	int fd = fsp_get_pathref_fd(fsp);
++	int real_fd;
+ 
+ 	SMB_ASSERT(!fsp_is_alternate_stream(fsp));
+ 
+@@ -3914,6 +3972,16 @@
+ 		return listxattr(p, list, size);
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno, result;
++	  
++		result = flistxattr(real_fd, list, size);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		return result;
++	}
++
+ 	/*
+ 	 * This is no longer a handle based call.
+ 	 */
+@@ -3923,6 +3991,7 @@
+ static int vfswrap_fremovexattr(struct vfs_handle_struct *handle, struct files_struct *fsp, const char *name)
+ {
+ 	int fd = fsp_get_pathref_fd(fsp);
++	int real_fd;
+ 
+ 	SMB_ASSERT(!fsp_is_alternate_stream(fsp));
+ 
+@@ -3942,6 +4011,16 @@
+ 		return removexattr(p, name);
+ 	}
+ 
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno, result;
++	  
++		result = fremovexattr(real_fd, name);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		return result;
++	}
++
+ 	/*
+ 	 * This is no longer a handle based call.
+ 	 */
+@@ -3951,6 +4030,7 @@
+ static int vfswrap_fsetxattr(struct vfs_handle_struct *handle, struct files_struct *fsp, const char *name, const void *value, size_t size, int flags)
+ {
+ 	int fd = fsp_get_pathref_fd(fsp);
++	int real_fd;
+ 
+ 	SMB_ASSERT(!fsp_is_alternate_stream(fsp));
+ 
+@@ -3968,6 +4048,16 @@
+ 		}
+ 
+ 		return setxattr(p, name, value, size, flags);
++	}
++
++	if (sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++		int saved_errno, result;
++	  
++		result = fsetxattr(real_fd, name, value, size, flags);
++		saved_errno = errno;
++		close(real_fd);
++		errno = saved_errno;
++		return result;
+ 	}
+ 
+ 	/*
+--- source3/modules/vfs_zfsacl.c	2023-01-18 16:32:24.210553400 +0100
++++ source3/modules/vfs_zfsacl.c	2023-06-20 08:51:53.077953000 +0200
+@@ -234,13 +234,39 @@
+ 
+ 	SMB_ASSERT(i == naces);
+ 
+-	/* store acl */
+-	fd = fsp_get_pathref_fd(fsp);
+-	if (fd == -1) {
+-		errno = EBADF;
+-		return false;
++	if (!fsp->fsp_flags.is_pathref) {
++		rv = facl(fsp_get_io_fd(fsp), ACE_SETACL, naces, acebuf);
++	} else {
++		const char *procfd_p = NULL;
++		char buf[PATH_MAX];
++
++		fd = fsp_get_pathref_fd(fsp);
++		if (fsp->fsp_flags.have_proc_fds && (procfd_p = sys_proc_fd_path(fd, buf, sizeof(buf)))) {
++			rv = acl(procfd_p, ACE_SETACL, naces, acebuf);
++		} else {
++			int real_fd;
++
++			fd = fsp_get_pathref_fd(fsp);
++		
++			/* First try this for versions of FreeBSD 13+ that allows facl() on O_PATH fd's */
++			rv = facl(fd, ACE_SETACL, naces, acebuf);
++		
++			if (rv < 0 && errno == EBADF &&
++			    sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++				/* Works on FreeBSD 13+ */
++				int saved_errno;
++
++				rv = facl(real_fd, ACE_SETACL, naces, acebuf);
++				saved_errno = errno;
++				close(real_fd);
++				errno = saved_errno;
++			} else {
++				/* Last ditch fallback */
++				rv = acl(fsp->fsp_name->base_name, ACE_SETACL, naces, acebuf);
++			}
++		}
+ 	}
+-	rv = facl(fd, ACE_SETACL, naces, acebuf);
++
+ 	if (rv != 0) {
+ 		if(errno == ENOSYS) {
+ 			DEBUG(9, ("acl(ACE_SETACL, %s): Operation is not "
+@@ -284,14 +310,39 @@
+ {
+ 	int naces, rv;
+ 	ace_t *acebuf = NULL;
+-	int fd;
++	int fd = -1;
++	const char *procfd_p = NULL;
++	char buf[PATH_MAX];
+ 
+-	fd = fsp_get_pathref_fd(fsp);
+-	if (fd == -1) {
+-		errno = EBADF;
+-		return -1;
++	if (!fsp->fsp_flags.is_pathref) {
++		naces = facl(fsp_get_io_fd(fsp), ACE_GETACLCNT, 0, NULL);
++	} else {
++	  	fd = fsp_get_pathref_fd(fsp);
++		
++		if (fsp->fsp_flags.have_proc_fds && (procfd_p = sys_proc_fd_path(fd, buf, sizeof(buf)))) {
++			/* If we have procfd support, try this first */
++			naces = acl(procfd_p, ACE_GETACLCNT, 0, NULL);
++		} else {
++			int real_fd;
++
++			/* First try this for versions of FreeBSD 13+ that allows facl() on O_PATH fd's */
++			naces = facl(fd, ACE_GETACLCNT, 0, NULL);
++			if (naces < 0 && errno == EBADF &&
++			    sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++				/* Works on FreeBSD 13+ */
++				int saved_errno;
++
++				naces = facl(real_fd, ACE_GETACLCNT, 0, NULL);
++				saved_errno = errno;
++				close(real_fd);
++				errno = saved_errno;
++			} else {
++				/* Last ditch fallback */
++				naces = acl(fsp->fsp_name->base_name, ACE_GETACLCNT, 0, NULL);
++			}
++		}
+ 	}
+-	naces = facl(fd, ACE_GETACLCNT, 0, NULL);
++
+ 	if (naces == -1) {
+ 		int dbg_level = 10;
+ 
+@@ -309,7 +360,32 @@
+ 		return -1;
+ 	}
+ 
+-	rv = facl(fd, ACE_GETACL, naces, acebuf);
++	if (!fsp->fsp_flags.is_pathref) {
++		rv = facl(fsp_get_io_fd(fsp), ACE_GETACL, naces, acebuf);
++	} else {
++		if (procfd_p) {
++			rv = acl(procfd_p, ACE_GETACL, naces, acebuf);
++		} else {
++			int real_fd;
++
++			/* First try this for versions of FreeBSD that allows facl() on O_PATH fd's */
++			rv = facl(fd, ACE_GETACL, naces, acebuf);
++			if (rv < 0 && errno == EBADF &&
++			    sys_open_real_fd_from_pathref_fd(fd, &real_fd, O_RDONLY|O_NONBLOCK) == 0) {
++				/* Works on FreeBSD 13+ */
++				int saved_errno;
++
++				rv = facl(real_fd, ACE_GETACL, naces, acebuf);
++				saved_errno = errno;
++				close(real_fd);
++				errno = saved_errno;
++			} else {
++				/* Last ditch fallback */
++				rv = acl(fsp->fsp_name->base_name, ACE_GETACL, naces, acebuf);
++			}
++		}
++	}
++
+ 	if (rv == -1) {
+ 		DBG_DEBUG("acl(ACE_GETACL, %s): %s ",
+ 			  fsp_str_dbg(fsp), strerror(errno));
+--- source3/include/proto.h	2023-05-31 18:06:44.142299400 +0200
++++ source3/include/proto.h	2023-06-19 23:23:58.115127000 +0200
+@@ -211,6 +211,10 @@
+ bool sys_have_proc_fds(void);
+ const char *sys_proc_fd_path(int fd, char *buf, size_t bufsize);
+ 
++int sys_open_real_fd_from_pathref_fd(int fd,
++				     int *mfd,
++				     int flags);
++
+ struct stat;
+ void init_stat_ex_from_stat (struct stat_ex *dst,
+ 			    const struct stat *src,

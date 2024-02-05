@@ -1,0 +1,111 @@
+From 29d0b3479f61f33356d6cc82099085b5c412f949 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:24:48 +0200
+Subject: [PATCH 08/28] Brute force work around usage of Linux-specific `%m`
+ flag in `sscanf()`.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ libcli/http/http.c                | 36 ++++++++++++++++++++++++++-----
+ source4/libcli/ldap/ldap_client.c | 12 +++++++++++
+ 2 files changed, 43 insertions(+), 5 deletions(-)
+
+diff --git a/libcli/http/http.c b/libcli/http/http.c
+index d20fc25f9e2..a28caca0045 100644
+--- a/libcli/http/http.c
++++ b/libcli/http/http.c
+@@ -142,7 +142,19 @@ static enum http_read_status http_parse_headers(struct http_read_response_state
+ 		return HTTP_ALL_DATA_READ;
+ 	}
+ 
++#ifdef FREEBSD
++	int s0, s1, s2, s3; s0 = s1 = s2 = s3 = 0;
++	n = sscanf(line, "%n%*[^:]%n: %n%*[^\r\n]%n\r\n", &s0, &s1, &s2, &s3);
++
++	if(n >= 0) {
++		key = calloc(sizeof(char), s1-s0+1);
++		value = calloc(sizeof(char), s3-s2+1);
++
++		n = sscanf(line, "%[^:]: %[^\r\n]\r\n", key, value);
++	}
++#else
+ 	n = sscanf(line, "%m[^:]: %m[^\r\n]\r\n", &key, &value);
++#endif
+ 	if (n != 2) {
+ 		DEBUG(0, ("%s: Error parsing header '%s'\n", __func__, line));
+ 		status = HTTP_DATA_CORRUPTED;
+@@ -168,7 +180,7 @@ error:
+ static bool http_parse_response_line(struct http_read_response_state *state)
+ {
+ 	bool	status = true;
+-	char	*protocol;
++	char	*protocol = NULL;
+ 	char	*msg = NULL;
+ 	char	major;
+ 	char	minor;
+@@ -188,12 +200,22 @@ static bool http_parse_response_line(struct http_read_response_state *state)
+ 		return false;
+ 	}
+ 
++#ifdef FREEBSD
++	int s0, s1, s2, s3; s0 = s1 = s2 = s3 = 0;
++	n = sscanf(line, "%n%*[^/]%n/%c.%c %d %n%*[^\r\n]%n\r\n",
++		   &s0, &s1, &major, &minor, &code, &s2, &s3);
++
++	if(n == 3) {
++		protocol = calloc(sizeof(char), s1-s0+1);
++		msg = calloc(sizeof(char), s3-s2+1);
++
++		n = sscanf(line, "%[^/]/%c.%c %d %[^\r\n]\r\n",
++			protocol, &major, &minor, &code, msg);
++	}
++#else
+ 	n = sscanf(line, "%m[^/]/%c.%c %d %m[^\r\n]\r\n",
+ 		   &protocol, &major, &minor, &code, &msg);
+-
+-	DEBUG(11, ("%s: Header parsed(%i): protocol->%s, major->%c, minor->%c, "
+-		   "code->%d, message->%s\n", __func__, n, protocol, major, minor,
+-		   code, msg));
++#endif
+ 
+ 	if (n != 5) {
+ 		DEBUG(0, ("%s: Error parsing header\n",	__func__));
+@@ -201,6 +223,10 @@ static bool http_parse_response_line(struct http_read_response_state *state)
+ 		goto error;
+ 	}
+ 
++	DEBUG(11, ("%s: Header parsed(%i): protocol->%s, major->%c, minor->%c, "
++		   "code->%d, message->%s\n", __func__, n, protocol, major, minor,
++		   code, msg));
++
+ 	if (major != '1') {
+ 		DEBUG(0, ("%s: Bad HTTP major number '%c'\n", __func__, major));
+ 		status = false;
+diff --git a/source4/libcli/ldap/ldap_client.c b/source4/libcli/ldap/ldap_client.c
+index 8614ccdfd54..2630d3c8859 100644
+--- a/source4/libcli/ldap/ldap_client.c
++++ b/source4/libcli/ldap/ldap_client.c
+@@ -402,8 +402,20 @@ static int ldap_parse_basic_url(
+ 		*pport = port;
+ 		return 0;
+ 	}
++#ifdef FREEBSD
++	int s0, s1; s0 = s1 = 0;
++	ret = sscanf(url, "%n%*[^:/]%n:%d", &s0, &s1, &port);
+ 
++	if(ret >= 0) {
++		host = calloc(sizeof(char), s1 - s0 + 1);
++		if (host == NULL) {
++			return ENOMEM;
++		}
++		ret = sscanf(url, "%[^:/]:%d", host, &port);
++	}
++#else
+ 	ret = sscanf(url, "%m[^:/]:%d", &host, &port);
++#endif
+ 	if (ret < 1) {
+ 		return EINVAL;
+ 	}
+-- 
+2.37.1
+

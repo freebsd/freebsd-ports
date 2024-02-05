@@ -1,0 +1,28 @@
+From 6c68907dcd9abd82cc95c842380a8e817b8f0e7f Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 02:54:28 +0200
+Subject: [PATCH 11/28] Use provided by port location of the XML catalog.
+
+Substitution: yes
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ buildtools/wafsamba/wafsamba.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/buildtools/wafsamba/wafsamba.py b/buildtools/wafsamba/wafsamba.py
+index 7885ee720be..c42a021bc01 100644
+--- a/buildtools/wafsamba/wafsamba.py
++++ b/buildtools/wafsamba/wafsamba.py
+@@ -1174,7 +1174,7 @@ def SAMBAMANPAGES(bld, manpages, extra_source=None):
+     bld.env.SAMBA_EXPAND_XSL = bld.srcnode.abspath() + '/docs-xml/xslt/expand-sambadoc.xsl'
+     bld.env.SAMBA_MAN_XSL = bld.srcnode.abspath() + '/docs-xml/xslt/man.xsl'
+     bld.env.SAMBA_CATALOG = bld.bldnode.abspath() + '/docs-xml/build/catalog.xml'
+-    bld.env.SAMBA_CATALOGS = os.getenv('XML_CATALOG_FILES', 'file:///etc/xml/catalog file:///usr/local/share/xml/catalog') + ' file://' + bld.env.SAMBA_CATALOG
++    bld.env.SAMBA_CATALOGS = os.getenv('XML_CATALOG_FILES', 'file:///etc/xml/catalog file://%%LOCALBASE%%/share/xml/catalog') + ' file://' + bld.env.SAMBA_CATALOG
+ 
+     for m in manpages.split():
+         source = [m + '.xml']
+-- 
+2.37.1
+
