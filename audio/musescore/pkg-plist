@@ -1,5 +1,20 @@
 bin/mscore
-bin/musescore
+share/applications/mscore.desktop
+share/applications/org.musescore.MuseScore.desktop
+share/icons/hicolor/128x128/apps/mscore.png
+share/icons/hicolor/16x16/apps/mscore.png
+share/icons/hicolor/24x24/apps/mscore.png
+share/icons/hicolor/32x32/apps/mscore.png
+share/icons/hicolor/48x48/apps/mscore.png
+share/icons/hicolor/512x512/apps/mscore.png
+share/icons/hicolor/512x512/mimetypes/application-x-musescore+xml.png
+share/icons/hicolor/512x512/mimetypes/application-x-musescore.png
+share/icons/hicolor/64x64/apps/mscore.png
+share/icons/hicolor/96x96/apps/mscore.png
+share/man/man1/mscore.1.gz
+share/man/man1/musescore.1.gz
+share/metainfo/org.musescore.MuseScore.appdata.xml
+share/mime/packages/musescore.xml
 %%DATADIR%%/autobotscripts/TC1.1_CreateSimpleScore.js
 %%DATADIR%%/autobotscripts/TC1.2_CreateSimpleScoreWithRandomInstruments.js
 %%DATADIR%%/autobotscripts/TC2_CreateSimpleScoreByTemplate.js
@@ -20,6 +35,7 @@ bin/musescore
 %%DATADIR%%/autobotscripts/steps/Score.js
 %%DATADIR%%/instruments/instruments.xml
 %%DATADIR%%/instruments/orders.xml
+%%DATADIR%%/instruments/string_tunings_presets.json
 %%DATADIR%%/locale/instruments_af.qm
 %%DATADIR%%/locale/instruments_ar.qm
 %%DATADIR%%/locale/instruments_ar_DZ.qm
@@ -36,6 +52,7 @@ bin/musescore
 %%DATADIR%%/locale/instruments_da.qm
 %%DATADIR%%/locale/instruments_de.qm
 %%DATADIR%%/locale/instruments_el.qm
+%%DATADIR%%/locale/instruments_en.qm
 %%DATADIR%%/locale/instruments_en_GB.qm
 %%DATADIR%%/locale/instruments_en_US.qm
 %%DATADIR%%/locale/instruments_eo.qm
@@ -66,6 +83,7 @@ bin/musescore
 %%DATADIR%%/locale/instruments_lv.qm
 %%DATADIR%%/locale/instruments_ml.qm
 %%DATADIR%%/locale/instruments_mn_MN.qm
+%%DATADIR%%/locale/instruments_mt.qm
 %%DATADIR%%/locale/instruments_nb.qm
 %%DATADIR%%/locale/instruments_nl.qm
 %%DATADIR%%/locale/instruments_nn.qm
@@ -105,6 +123,7 @@ bin/musescore
 %%DATADIR%%/locale/musescore_da.qm
 %%DATADIR%%/locale/musescore_de.qm
 %%DATADIR%%/locale/musescore_el.qm
+%%DATADIR%%/locale/musescore_en.qm
 %%DATADIR%%/locale/musescore_en_GB.qm
 %%DATADIR%%/locale/musescore_en_US.qm
 %%DATADIR%%/locale/musescore_eo.qm
@@ -135,6 +154,7 @@ bin/musescore
 %%DATADIR%%/locale/musescore_lv.qm
 %%DATADIR%%/locale/musescore_ml.qm
 %%DATADIR%%/locale/musescore_mn_MN.qm
+%%DATADIR%%/locale/musescore_mt.qm
 %%DATADIR%%/locale/musescore_nb.qm
 %%DATADIR%%/locale/musescore_nl.qm
 %%DATADIR%%/locale/musescore_nn.qm
