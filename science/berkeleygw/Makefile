@@ -12,6 +12,8 @@ WWW=		https://berkeleygw.org
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_powerpc64le=	compilation fails: Error: Unclassifiable statement at (1) (for this syntax in Common/typedefs.f90:578: SCALAR :: epshead !< head of dielectric matrix at q->0)
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS=	bash:shells/bash
