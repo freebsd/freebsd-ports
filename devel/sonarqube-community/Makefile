@@ -1,6 +1,6 @@
 PORTNAME=	sonarqube
-DISTVERSION=	10.3.0.82913
-PORTREVISION=	6
+DISTVERSION=	10.4.0.87286
+PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -30,7 +30,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash #\
 #		jna>0:devel/jna
 
-USES=		cpe shebangfix zip
+USES=		cpe shebangfix zip nodejs:lts,run
 CPE_VENDOR=	sonarsource
 USE_JAVA=	yes
 
