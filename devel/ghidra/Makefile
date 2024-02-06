@@ -21,6 +21,7 @@ WWW=		https://ghidra-sre.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+FORBIDDEN=	outdated and contains a remote code injection
 ONLY_FOR_ARCHS=	amd64
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
