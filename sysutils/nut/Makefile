@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
@@ -75,6 +75,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-python3=${PYTHON_CMD} \
 		--without-nut_monitor \
 		--with-ltdl --with-nut-scanner
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -pthread
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
