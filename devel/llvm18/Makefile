@@ -380,7 +380,8 @@ _BE_INCS_AArch64=	arm_bf16.h
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler TargetMCA Utils
-_BE_INCS_ARM=		arm_cde.h arm_fp16.h arm_mve.h arm_neon.h arm_sve.h
+_BE_INCS_ARM=		arm_cde.h arm_fp16.h arm_mve.h arm_neon.h arm_sme.h \
+			arm_sve.h arm_vector_types.h
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler
@@ -392,6 +393,8 @@ _BE_LIBS_Mips=		AsmParser Disassembler
 _BE_LIBS_BACKWARDS_Mips=Exegesis
 _BE_LIBS_PowerPC=	AsmParser Disassembler
 _BE_LIBS_BACKWARDS_PowerPC=Exegesis
+_BE_MODS_PowerPC=	__ppc_intrinsics.f18.mod __ppc_intrinsics.mod \
+			mma.f18.mod mma.mod
 _BE_INCS_RISCV=		riscv_vector.h
 _BE_LIBS_RISCV=		AsmParser Disassembler TargetMCA
 _BE_LIBS_Sparc=		AsmParser Disassembler
@@ -407,9 +410,17 @@ _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
 			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/} \
 			${_BE_LIBS_BACKWARDS_${BE_ARCH}:S/$/${BE_ARCH}/}
 _BE_INCS_${BE}+=	${_BE_INCS_${BE_ARCH}}
+_BE_MODS_${BE}+=	${_BE_MODS_${BE_ARCH}}
 .endfor
 .endfor
-BE_PATTERN=LLVM(${_BE_LIBS_STANDARD:O:S/$/.a/:ts|})|${_BE_INCS_STANDARD:ts|}
+BE_PATTERN=LLVM(${_BE_LIBS_STANDARD:O:S/$/.a/:ts|})|${_BE_INCS_STANDARD:ts|}|${_BE_MODS_STANDARD:ts|}
+
+.if ${PORT_OPTIONS:MFLANG}
+.for BE in FREEBSD NATIVE STANDARD
+BE_${BE}_PLIST_FILES+= \
+	${_BE_MODS_${BE}:S|^|${LLVM_DIR}/include/flang/|:N${LLVM_DIR}/include/flang/$}
+.endfor
+.endif
 
 .if ${ARCH} == "aarch64"
 COMPILER_RT_ARCHS=	aarch64
@@ -627,7 +638,7 @@ build-plist:
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
-	    if ($$0 ~ /(${FLANG_PATTERN})/) {printf "%%%%FLANG%%%%"} \
+	    if ($$0 ~ /(${FLANG_PATTERN})/ && $$0 !~ /${BE_PATTERN}$$/) {printf "%%%%FLANG%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(${MLIR_PATTERN})/) {printf "%%%%MLIR%%%%"} \

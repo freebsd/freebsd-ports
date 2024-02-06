@@ -1752,8 +1752,6 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__fortran_ieee_exceptions.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__fortran_type_info.f18.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__fortran_type_info.mod
-%%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__ppc_intrinsics.f18.mod
-%%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__ppc_intrinsics.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__ppc_types.f18.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/__ppc_types.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/ieee_arithmetic.f18.mod
@@ -1766,8 +1764,6 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/iso_c_binding.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/iso_fortran_env.f18.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/iso_fortran_env.mod
-%%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/mma.f18.mod
-%%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/mma.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/omp_lib.f18.mod
 %%FLANG%%llvm%%LLVM_SUFFIX%%/include/flang/omp_lib.mod
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/Args.h
@@ -5934,8 +5930,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_acle.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_cmse.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_neon_sve_bridge.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_sme.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_vector_types.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/armintr.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/avx2intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/avx512bf16intrin.h
