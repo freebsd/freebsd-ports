@@ -1,6 +1,6 @@
 PORTNAME=	fb303
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.01.29.00
+DISTVERSION=	2024.02.05.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
