@@ -16,9 +16,11 @@ lib/liblmsservice-cover.so
 lib/liblmssom.so
 lib/liblmssubsonic.so
 lib/liblmsutils.so
-%%DATADIR%%/approot/admin-database.xml
 %%DATADIR%%/approot/admin-initwizard.xml
+%%DATADIR%%/approot/admin-medialibraries.xml
+%%DATADIR%%/approot/admin-medialibrary.xml
 %%DATADIR%%/approot/admin-scannercontroller.xml
+%%DATADIR%%/approot/admin-scansettings.xml
 %%DATADIR%%/approot/admin-user.xml
 %%DATADIR%%/approot/admin-users.xml
 %%DATADIR%%/approot/artist.xml
