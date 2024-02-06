@@ -232,6 +232,7 @@ include/proxygen/lib/utils/NullTraceEventObserver.h
 include/proxygen/lib/utils/ParseURL.h
 include/proxygen/lib/utils/PerfectIndexMap.h
 include/proxygen/lib/utils/RendezvousHash.h
+include/proxygen/lib/utils/SafePathUtils.h
 include/proxygen/lib/utils/StateMachine.h
 include/proxygen/lib/utils/StreamCompressor.h
 include/proxygen/lib/utils/StreamDecompressor.h
