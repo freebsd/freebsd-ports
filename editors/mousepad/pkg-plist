@@ -7,7 +7,11 @@ share/applications/org.xfce.mousepad-settings.desktop
 share/applications/org.xfce.mousepad.desktop
 share/icons/hicolor/128x128/apps/org.xfce.mousepad.png
 share/icons/hicolor/16x16/apps/org.xfce.mousepad.png
+share/icons/hicolor/24x24/apps/org.xfce.mousepad.png
+share/icons/hicolor/32x32/apps/org.xfce.mousepad.png
 share/icons/hicolor/48x48/apps/org.xfce.mousepad.png
+share/icons/hicolor/64x64/apps/org.xfce.mousepad.png
+share/icons/hicolor/96x96/apps/org.xfce.mousepad.png
 share/icons/hicolor/scalable/apps/org.xfce.mousepad.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/mousepad.mo
