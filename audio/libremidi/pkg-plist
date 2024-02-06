@@ -108,3 +108,4 @@ lib/cmake/libremidi/libremidi-config.cmake
 lib/cmake/libremidi/libremidi-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libremidi/libremidi-targets.cmake
 lib/liblibremidi.so
+lib/liblibremidi.so.4.3.0
