@@ -1,6 +1,6 @@
-TIMESTAMP = 1695416610
-SHA256 (nextdns-nextdns-v1.40.1_GH0.tar.gz) = 5fec5ed5373d94dcaf8b17ddd78d05ccdfd0faa8b4695d9e926d8e71278ea08e
-SIZE (nextdns-nextdns-v1.40.1_GH0.tar.gz) = 198872
+TIMESTAMP = 1707164420
+SHA256 (nextdns-nextdns-v1.42.0_GH0.tar.gz) = 893692bea9015116d6ce610c94dccf744f3aa29aeb716a15cca17dd6e6b837c1
+SIZE (nextdns-nextdns-v1.42.0_GH0.tar.gz) = 200786
 SHA256 (cespare-xxhash-v1.1.0_GH0.tar.gz) = 9418be390574092f0ca989b9ae2f5450270ead8125a635a100850b28c8c9c495
 SIZE (cespare-xxhash-v1.1.0_GH0.tar.gz) = 8200
 SHA256 (denisbrodbeck-machineid-v1.0.1_GH0.tar.gz) = 0a01d2b131419cb2b9f7d910a2c90b824449bd91005b47efb235dc707665337a
