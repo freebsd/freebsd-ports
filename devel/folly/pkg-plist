@@ -409,6 +409,7 @@ include/folly/experimental/io/AsyncIoUringSocket.h
 include/folly/experimental/io/AsyncIoUringSocketFactory.h
 include/folly/experimental/io/Epoll.h
 include/folly/experimental/io/EpollBackend.h
+include/folly/experimental/io/EventBasePoller.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
