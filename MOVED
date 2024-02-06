@@ -2985,3 +2985,4 @@ www/lighttpd-mod_h264_streaming||2024-01-31|Has expired: Does not build with new
 audio/stmp||2024-02-01|Has expired: Broken for more than a year
 audio/baudline||2024-02-01|Has expired: upstream has gone to subscription model and no longer distributes this version. Try comms/Inspectrum or audio/xanalyser instead
 x11-themes/kde-icons-noia||2024-02-06|Has expired: Unfetchable and upstream WWW not found
+databases/pg_vector|databases/pgvector|2024-02-06|Renamed to match upstream

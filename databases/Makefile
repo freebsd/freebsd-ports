@@ -546,7 +546,6 @@
     SUBDIR += pg_similarity
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_tileserv
-    SUBDIR += pg_vector
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgagroal
@@ -572,6 +571,7 @@
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pguri
+    SUBDIR += pgvector
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php81-dba

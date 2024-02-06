@@ -1,12 +1,13 @@
-PORTNAME=	pg_vector
-DISTVERSION=	v0.6.0
+PORTNAME=	pgvector
+PORTVERSION=	0.6.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PostgreSQL extension for vector similarity search
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	PostgreSQL
 
 USES=		gmake pgsql:12+
 WANT_PGSQL=	server
@@ -15,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pgvector
 GH_PROJECT=	pgvector
 
+MAKE_ARGS=	OPTFLAGS=""
 MAKE_ENV=	USE_PGXS=1
 
 post-install:
