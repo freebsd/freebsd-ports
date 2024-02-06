@@ -1,7 +1,3 @@
-TIMESTAMP = 1697534558
-SHA256 (csv9.6.4.tar.gz) = f5827682fa259c47975ffe078785fb561e4a5c54f764331ef66c32132843685d
-SIZE (csv9.6.4.tar.gz) = 35679113
-SHA256 (chez-scheme-boot-ta6fb-9.6.4.tar.xz) = c6993e0cfe712c2f85ccb8578f510918e4c41ab1ac86b82679533c7c8fc6215f
-SIZE (chez-scheme-boot-ta6fb-9.6.4.tar.xz) = 2131520
-SHA256 (chez-scheme-boot-ti3fb-9.6.4.tar.xz) = 3496605c4b7fda6c8e6b9f7fcea8734ec1401cdc794cd857728542081d231b07
-SIZE (chez-scheme-boot-ti3fb-9.6.4.tar.xz) = 2078340
+TIMESTAMP = 1707241687
+SHA256 (csv10.0.0.tar.gz) = d37199012b5ed1985c4069d6a87ff18e5e1f5a2df27e402991faf45dc4f2232c
+SIZE (csv10.0.0.tar.gz) = 9109529
