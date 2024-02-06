@@ -1,7 +1,7 @@
-TIMESTAMP = 1703813592
-SHA256 (lite-xl-lite-xl-v2.1.2_GH0.tar.gz) = 0ad5acbdc7a08f771386283f40f967c87a1d002bc5232ca78af2aa4fdb7bf38b
-SIZE (lite-xl-lite-xl-v2.1.2_GH0.tar.gz) = 552492
-SHA256 (lite-xl-lite-xl-colors-315f123_GH0.tar.gz) = 5646c48f05787d2223d35160c833cc63d5c5628f77ae2fe4a53adc43a556d888
-SIZE (lite-xl-lite-xl-colors-315f123_GH0.tar.gz) = 23804
-SHA256 (lite-xl-lite-xl-plugins-433d368_GH0.tar.gz) = ca7e8358497d526ecf0b90a8a6bc92f63ae5d25c1da41a19831815ec67536272
-SIZE (lite-xl-lite-xl-plugins-433d368_GH0.tar.gz) = 210363
+TIMESTAMP = 1706485669
+SHA256 (lite-xl-lite-xl-v2.1.3_GH0.tar.gz) = a13c423588a5549e42fda7dfe9064bd3776b6202c170c7bb493d96a692360383
+SIZE (lite-xl-lite-xl-v2.1.3_GH0.tar.gz) = 552500
+SHA256 (lite-xl-lite-xl-colors-ad3b053_GH0.tar.gz) = 5d5ddf5185a17ee90220be0cb26ad05103b9a1a72304d248d625ec12c961c2db
+SIZE (lite-xl-lite-xl-colors-ad3b053_GH0.tar.gz) = 24706
+SHA256 (lite-xl-lite-xl-plugins-66a42c3_GH0.tar.gz) = 9f2976a6a3c4e802edbbfc293a6fe557cddf60cbed59c16770e32370c4c60b74
+SIZE (lite-xl-lite-xl-plugins-66a42c3_GH0.tar.gz) = 211026
