@@ -1356,6 +1356,7 @@
     SUBDIR += py-empy
     SUBDIR += py-enchant
     SUBDIR += py-enrich
+    SUBDIR += py-epy-reader
     SUBDIR += py-et_xmlfile
     SUBDIR += py-evtx2splunk
     SUBDIR += py-extract-msg
