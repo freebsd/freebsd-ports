@@ -71,7 +71,7 @@ include/cairo-dock/implementations/cairo-dock-progressbar.h
 lib/cairo-dock/libcd-Help.so
 lib/libgldi.so
 lib/libgldi.so.3
-lib/libgldi.so.3.4.1
+lib/libgldi.so.3.5.0
 libdata/pkgconfig/gldi.pc
 share/man/man1/cairo-dock.1.gz
 share/applications/cairo-dock-cairo.desktop
@@ -246,6 +246,7 @@ share/locale/bn/LC_MESSAGES/cairo-dock.mo
 share/locale/ca/LC_MESSAGES/cairo-dock.mo
 share/locale/cs/LC_MESSAGES/cairo-dock.mo
 share/locale/cy/LC_MESSAGES/cairo-dock.mo
+share/locale/da/LC_MESSAGES/cairo-dock.mo
 share/locale/de/LC_MESSAGES/cairo-dock.mo
 share/locale/el/LC_MESSAGES/cairo-dock.mo
 share/locale/en/LC_MESSAGES/cairo-dock.mo
