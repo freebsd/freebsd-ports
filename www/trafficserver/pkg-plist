@@ -123,6 +123,7 @@ libexec/trafficserver/access_control.so
 libexec/trafficserver/acme.so
 libexec/trafficserver/authproxy.so
 libexec/trafficserver/background_fetch.so
+libexec/trafficserver/block_errors.so
 libexec/trafficserver/cache_fill.so
 libexec/trafficserver/cache_promote.so
 libexec/trafficserver/cache_range_requests.so
