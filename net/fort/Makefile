@@ -1,5 +1,5 @@
 PORTNAME=	fort
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	net
 
 MAINTAINER=	toni@devboks.com
