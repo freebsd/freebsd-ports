@@ -1,0 +1,17 @@
+%%WWWDIR%%/default.css
+%%WWWDIR%%/dusk2dawn.css
+%%WWWDIR%%/%%PORTNAME%%.js
+%%WWWDIR%%/%%PORTNAME%%-common.php
+%%WWWDIR%%/%%PORTNAME%%-options.php
+%%WWWDIR%%/%%PORTNAME%%-report-data.php
+%%WWWDIR%%/%%PORTNAME%%-report-list.php
+%%WWWDIR%%/%%PORTNAME%%.php
+%%WWWDIR%%/html.png
+%%WWWDIR%%/highlight.js/highlight.pack.js
+%%WWWDIR%%/highlight.js/styles/default.css
+%%WWWDIR%%/highlight.js/styles/dusk2dawn.css
+%%WWWDIR%%/index.html
+%%WWWDIR%%/menu_icon_default.css.png
+%%WWWDIR%%/menu_icon_dusk2dawn.css.png
+%%WWWDIR%%/xml.png
+@sample %%ETCDIR%%/%%PORTNAME%%-config.php.sample
