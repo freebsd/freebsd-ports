@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:v0.12.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.16.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
@@ -36,10 +36,10 @@ GH_TUPLE=	\
 		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.7.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:v0.3.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.11.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.12.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.5.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.15.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.9.1:golang_tools/vendor/golang.org/x/tools \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -55,7 +55,6 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:v0.110.2:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:schema:v1.2.0:gorilla_schema/vendor/github.com/gorilla/schema \
-		graphql-go:graphql:v0.7.9:graphql_go_graphql/vendor/github.com/graphql-go/graphql \
 		grpc:grpc-go:v1.55.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -71,7 +70,6 @@ GH_TUPLE=	\
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		jtolio:crawlspace:3ec5cc6b36c5:jtolio_crawlspace/vendor/github.com/jtolio/crawlspace \
 		jtolio:crawlspace:57d90b78ce62:jtolio_crawlspace_tools \
-		jtolio:eventkit:4668f79ff72d:jtolio_eventkit/vendor/github.com/jtolio/eventkit \
 		jtolio:mito:d78ef06bb77b:jtolio_mito/vendor/github.com/jtolio/mito \
 		jtolio:noiseconn:88105e6c8ac6:jtolio_noiseconn/vendor/github.com/jtolio/noiseconn \
 		klauspost:compress:v1.15.10:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -95,7 +93,7 @@ GH_TUPLE=	\
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		quic-go:qtls-go1-20:v0.4.1:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
-		quic-go:quic-go:v0.40.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
+		quic-go:quic-go:v0.40.1:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		redis:go-redis:v9.0.3:redis_go_redis/vendor/github.com/redis/go-redis/v9 \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		rogpeppe:go-internal:v1.10.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
@@ -111,13 +109,14 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:1fa84867e323:storj_common/vendor/storj.io/common \
+		storj:common:23aba17361c7:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
+		storj:eventkit:968576eb7548:storj_eventkit/vendor/storj.io/eventkit \
 		storj:infectious:v0.0.2:storj_infectious/vendor/storj.io/infectious \
 		storj:monkit-jaeger:f15e6e8b7e8c:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:c4ba17033c6c:storj_picobuf/vendor/storj.io/picobuf \
-		storj:private:c439a594bc1d:storj_private/vendor/storj.io/private \
-		storj:uplink:44ad61188b55:storj_uplink/vendor/storj.io/uplink \
+		storj:private:c5d4aba552e2:storj_private/vendor/storj.io/private \
+		storj:uplink:87eb7c9e829a:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v75.8.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v75 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
