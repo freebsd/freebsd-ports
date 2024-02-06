@@ -10,6 +10,8 @@ WWW=		https://cardinal.kx.studio/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation breaks: use of overloaded operator '[]' is ambiguous, see https://github.com/DISTRHO/Cardinal/issues/613
+
 BUILD_DEPENDS=	${LOCALBASE}/include/FuzzySearchDatabase.hpp:textproc/fuzzysearchdatabase \
 		bash:shells/bash \
 		cmake:devel/cmake-core
