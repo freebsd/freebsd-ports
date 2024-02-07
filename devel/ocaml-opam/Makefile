@@ -14,6 +14,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	curl:ftp/curl \
 		gpatch:devel/patch \
+		gmake:devel/gmake \
 		${RUN_DEPENDS_${ARCH}}
 RUN_DEPENDS_armv6=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS_armv7=	${LOCALBASE}/bin/as:devel/binutils
