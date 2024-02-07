@@ -97,6 +97,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fonts/open-sans-v17-all-charsets-italic.woff2
 %%PORTDOCS%%%%DOCSDIR%%/html/fonts/open-sans-v17-all-charsets-regular.woff2
 %%PORTDOCS%%%%DOCSDIR%%/html/fonts/source-code-pro-v11-all-charsets-500.woff2
+%%PORTDOCS%%%%DOCSDIR%%/html/googled62299e9391332c4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/highlight.css
 %%PORTDOCS%%%%DOCSDIR%%/html/highlight.js
 %%PORTDOCS%%%%DOCSDIR%%/html/images/change-fork-name.png
@@ -160,6 +161,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/searcher.js
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.json
+%%PORTDOCS%%%%DOCSDIR%%/html/sitemap.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-dawn.js
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-tomorrow_night.js
 %%PORTDOCS%%%%DOCSDIR%%/html/tomorrow-night.css
