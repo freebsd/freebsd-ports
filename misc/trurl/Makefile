@@ -20,13 +20,13 @@ GH_ACCOUNT=	curl
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-lcurl" \
 		LDLIBS="-L${LOCALBASE}/lib" \
-		MANDIR="${PREFIX}/man/man1"
+		MANDIR="${PREFIX}/share/man/man1"
 
 ALL_TARGET=	${PORTNAME}
 TEST_TARGET=	test
 
 PLIST_FILES=	bin/trurl \
-		man/man1/trurl.1.gz
+		share/man/man1/trurl.1.gz
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trurl
