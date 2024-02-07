@@ -7,5 +7,5 @@ lib/avahi/service-types.db
 %%PYTHON_SITELIBDIR%%/avahi/__init__.py
 %%PYTHON_SITELIBDIR%%/avahi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/avahi/__init__.pyo
-man/man1/avahi-bookmarks.1.gz
 share/applications/avahi-discover.desktop
+share/man/man1/avahi-bookmarks.1.gz
