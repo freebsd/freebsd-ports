@@ -11,6 +11,7 @@ include/postgresql/server/plpy_subxactobject.h
 include/postgresql/server/plpy_typeio.h
 include/postgresql/server/plpy_util.h
 include/postgresql/server/plpython.h
+include/postgresql/server/plpython_system.h
 %%DOCSDIR%%/README-plpython
 %%PYTHON2%%lib/postgresql/plpython2.so
 %%PYTHON3%%lib/postgresql/plpython3.so
