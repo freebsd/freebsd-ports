@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2	# don't delete, reset to 0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-gtk
 

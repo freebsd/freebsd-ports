@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	2	# don't delete, reset to 0
 CATEGORIES=	net dns
 PKGNAMESUFFIX=	-sharp
 
