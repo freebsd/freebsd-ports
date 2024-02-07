@@ -802,6 +802,7 @@
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
+    SUBDIR += plantuml
     SUBDIR += plasma-kmod
     SUBDIR += plotutils
     SUBDIR += png
