@@ -1,5 +1,5 @@
 PORTNAME=	debug
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://rubygems.org/gems/debug
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-irb>=1.5.0:devel/rubygem-irb \
-		rubygem-reline>=0.3.1:devel/rubygem-reline
+RUN_DEPENDS=	rubygem-irb>=1.10<2:devel/rubygem-irb \
+		rubygem-reline>=0.3.8:devel/rubygem-reline
 
 USES=		gem
 
