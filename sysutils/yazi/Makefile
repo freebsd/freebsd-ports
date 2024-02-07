@@ -1,6 +1,6 @@
 PORTNAME=	yazi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,6 +13,9 @@ LICENSE_NAME_Unicode-DFS-2016=	Unicode License Agreement - Data Files and Softwa
 LICENSE_TEXT_Unicode-DFS-2016=	Terms of use at https://spdx.org/licenses/Unicode-DFS-2016.html
 LICENSE_PERMS_Unicode-DFS-2016=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+		gmake:devel/gmake \
+		gawk:lang/gawk
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
 USES=		cargo desktop-file-utils
