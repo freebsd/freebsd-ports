@@ -23,6 +23,9 @@ You should complete the following post-installation tasks:
 	5) Install mail/spamass-rules if you want some third-party
 	   spam-catching rulesets
 
+        6) Remove %%ETCDIR%%/sa-update-keys if this software is no
+           longer needed.
+
 SECURITY NOTE:
 By default, spamd runs as root (the AS_ROOT option). If you wish
 to change this, add the following to /etc/rc.conf:
