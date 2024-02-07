@@ -14,13 +14,14 @@ include/clamav.h
 include/libfreshclam.h
 lib/libclamav.so
 lib/libclamav.so.12
-lib/libclamav.so.12.0.1
+lib/libclamav.so.12.0.2
+lib/libclamav_rust.a
 %%UNRAR%%lib/libclamunrar.so
 %%UNRAR%%lib/libclamunrar.so.12
-%%UNRAR%%lib/libclamunrar.so.12.0.1
+%%UNRAR%%lib/libclamunrar.so.12.0.2
 %%UNRAR%%lib/libclamunrar_iface.so
 %%UNRAR%%lib/libclamunrar_iface.so.12
-%%UNRAR%%lib/libclamunrar_iface.so.12.0.1
+%%UNRAR%%lib/libclamunrar_iface.so.12.0.2
 lib/libfreshclam.so
 lib/libfreshclam.so.3
 lib/libfreshclam.so.3.0.1
