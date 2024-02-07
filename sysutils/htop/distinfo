@@ -1,5 +1,3 @@
-TIMESTAMP = 1676742794
-SHA256 (htop-dev-htop-3.2.2_GH0.tar.gz) = 3829c742a835a0426db41bb039d1b976420c21ec65e93b35cd9bfd2d57f44ac8
-SIZE (htop-dev-htop-3.2.2_GH0.tar.gz) = 369873
-SHA256 (fd62b7549533e9a0acc3fb6238f1462d380b8618.patch) = 1c1e5a524ab823a1febbbb68503b9ffd6934e24e3f72c1c79baa3a5aad16a8e4
-SIZE (fd62b7549533e9a0acc3fb6238f1462d380b8618.patch) = 884
+TIMESTAMP = 1707274617
+SHA256 (htop-dev-htop-3.3.0_GH0.tar.gz) = 1e5cc328eee2bd1acff89f860e3179ea24b85df3ac483433f92a29977b14b045
+SIZE (htop-dev-htop-3.3.0_GH0.tar.gz) = 406012
