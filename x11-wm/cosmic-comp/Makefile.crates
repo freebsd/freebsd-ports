@@ -193,7 +193,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		indexmap-2.1.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
-		input-0.8.3 \
+		input-0.9.0 \
 		input-sys-1.18.0 \
 		instant-0.1.12 \
 		intl-memoizer-0.5.1 \
@@ -432,7 +432,6 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		ttf-parser-0.20.0 \
 		type-map-0.4.0 \
 		typenum-1.17.0 \
-		udev-0.7.0 \
 		udev-0.8.0 \
 		unic-langid-0.9.4 \
 		unic-langid-impl-0.9.4 \
@@ -546,11 +545,11 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		zerocopy-derive-0.7.32 \
 		zune-inflate-0.2.54 \
 		glyphon@git+https://github.com/jackpot51/glyphon.git\#abb70c0fda8cf1a5dfc314c1c778103d7ba951e6 \
+		smithay@git+https://github.com/smithay/smithay?rev=3b3e07952e\#3b3e07952e471618fe8b590ba3223f4201cec10c \
 		taffy@git+https://github.com/DioxusLabs/taffy?rev=7781c70\#7781c70241f7f572130c13106f2a869a9cf80885 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=cdc652e0\#cdc652e0d4823b16a5bd9badd288e38512789dc5 \
-		smithay@git+https://github.com/smithay/smithay?rev=f1e7fc18a\#f1e7fc18a7f060f8ff1e647ca407df62f85467cf \
 		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#db1530c4ec14bcbb290f9c971d8a6197c90e189a \
 		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#e65fa5e2bb47e51656221657049bd3f88ae9dae5 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=v0.3-cosmic\#6f0371ccece51d124c6c5d37082189df0dc5f9ba \
