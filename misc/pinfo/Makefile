@@ -1,7 +1,7 @@
 PORTNAME=	pinfo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,12 +22,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	baszoetekouw
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-curses=${NCURSESBASE}
 
 INFO=		pinfo
 PLIST_FILES=	bin/pinfo \
 		etc/pinforc \
-		man/man1/pinfo.1.gz
+		share/man/man1/pinfo.1.gz
 
 OPTIONS_DEFINE=			NLS READLINE
 OPTIONS_DEFAULT=		READLINE
