@@ -1,5 +1,5 @@
 PORTNAME=	RT-Extension-MandatoryOnTransition
-DISTVERSION=	0.22
+DISTVERSION=	0.23
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 
@@ -20,9 +20,9 @@ rt50_PKGNAMEPREFIX=	p5-RT50-
 rt50_CONFLICTS_INSTALL=	rt44
 
 .if ${FLAVOR} == rt44
-RT_VER=		       44
+RT_VER=		44
 .elif ${FLAVOR} == rt50
-RT_VER=		       50
+RT_VER=		50
 .endif
 
 USES=		perl5
