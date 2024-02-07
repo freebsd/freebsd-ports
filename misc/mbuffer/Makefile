@@ -1,6 +1,5 @@
 PORTNAME=	mbuffer
-PORTVERSION=	20230301
-PORTREVISION=	1
+PORTVERSION=	20240107
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
@@ -16,6 +15,7 @@ TEST_DEPENDS=	gtar:archivers/gtar
 USES=		localbase ssl tar:tgz autoreconf gmake
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 # for --ignore-failed-read
 TEST_ARGS=	TAR=gtar
