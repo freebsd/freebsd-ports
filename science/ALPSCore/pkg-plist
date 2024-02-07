@@ -30,6 +30,7 @@ include/alps/alea/internal/format.hpp
 include/alps/alea/internal/galois.hpp
 include/alps/alea/internal/joined.hpp
 include/alps/alea/internal/outer.hpp
+include/alps/alea/internal/pooling.hpp
 include/alps/alea/internal/util.hpp
 include/alps/alea/mean.hpp
 include/alps/alea/mpi.hpp
@@ -37,12 +38,15 @@ include/alps/alea/plugin/stream_serializer.hpp
 include/alps/alea/propagation.hpp
 include/alps/alea/result.hpp
 include/alps/alea/serialize.hpp
+include/alps/alea/testing.hpp
 include/alps/alea/transform.hpp
 include/alps/alea/transformer.hpp
 include/alps/alea/util.hpp
+include/alps/alea/util/model.hpp
 include/alps/alea/util/serializer.hpp
 include/alps/alea/var_strategy.hpp
 include/alps/alea/variance.hpp
+include/alps/common/view.hpp
 include/alps/config.hpp
 include/alps/dictionary.hpp
 include/alps/gf/flagcheck.hpp
@@ -51,6 +55,14 @@ include/alps/gf/gf.hpp
 include/alps/gf/gf_base.hpp
 include/alps/gf/grid.hpp
 include/alps/gf/mesh.hpp
+include/alps/gf/mesh/chebyshev_mesh.hpp
+include/alps/gf/mesh/frequency_meshes.hpp
+include/alps/gf/mesh/index.hpp
+include/alps/gf/mesh/index_meshes.hpp
+include/alps/gf/mesh/legendre_mesh.hpp
+include/alps/gf/mesh/mesh_base.hpp
+include/alps/gf/mesh/numerical_mesh.hpp
+include/alps/gf/mesh/time_meshes.hpp
 include/alps/gf/mpi_bcast.hpp
 include/alps/gf/piecewise_polynomial.hpp
 include/alps/gf/tail.hpp
@@ -90,6 +102,7 @@ include/alps/numeric/rectangularize.hpp
 include/alps/numeric/scalar.hpp
 include/alps/numeric/set_negative_0.hpp
 include/alps/numeric/special_functions.hpp
+include/alps/numeric/tensors.hpp
 include/alps/numeric/tensors/data_storage.hpp
 include/alps/numeric/tensors/data_view.hpp
 include/alps/numeric/tensors/tensor_base.hpp
@@ -106,6 +119,9 @@ include/alps/params/iniparser_interface.hpp
 include/alps/params/mpi_variant.hpp
 include/alps/params/params_impl.hpp
 include/alps/params/serialize_variant.hpp
+include/alps/serialization/core.hpp
+include/alps/serialization/eigen.hpp
+include/alps/serialization/util.hpp
 include/alps/testing/fp_compare.hpp
 include/alps/testing/near.hpp
 include/alps/testing/unique_file.hpp
