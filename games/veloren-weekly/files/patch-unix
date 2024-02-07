@@ -11,14 +11,14 @@ Relax Linux checks for the code works on any non-Windows platform.
      let _ = signal_hook::flag::register(signal_hook::consts::SIGUSR1, Arc::clone(&sigusr1_signal));
  
      let (_guards, _guards2) = if basic {
---- voxygen/src/main.rs.orig	2024-01-31 15:30:47 UTC
+--- voxygen/src/main.rs.orig	2024-02-07 19:13:27 UTC
 +++ voxygen/src/main.rs
 @@ -51,7 +51,7 @@ fn main() {
              cli::Commands::ListWgpuBackends => {
                  #[cfg(target_os = "windows")]
-                 let backends = &["dx11", "dx12", "vulkan"];
+                 let backends = &["opengl", "dx12", "vulkan"];
 -                #[cfg(target_os = "linux")]
 +                #[cfg(not(any(target_os = "windows", target_os = "macos")))]
-                 let backends = &["vulkan"];
+                 let backends = &["opengl", "vulkan"];
                  #[cfg(target_os = "macos")]
                  let backends = &["metal"];
