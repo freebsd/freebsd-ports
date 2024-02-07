@@ -1,6 +1,6 @@
 PORTNAME=	delegate
 PORTVERSION=	9.9.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net www
 MASTER_SITES=	http://www.delegate.org/anonftp/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
