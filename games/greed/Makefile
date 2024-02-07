@@ -1,19 +1,19 @@
 PORTNAME=	greed
-PORTVERSION=	4.2
-PORTREVISION=	1
+DISTVERSION=	4.3
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Text puzzle game with the aim of clearing the game field
 WWW=		http://catb.org/~esr/greed/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
 SCOREFILE?=	/var/games/greed.hs
-CFLAGS+=	-DSCOREFILE=\"${SCOREFILE}\" -DNOTBSD -DRELEASE=\"${PORTVERSION}\"
+CFLAGS+=	-DSCOREFILE=\"${SCOREFILE}\" -DNOTBSD -DRELEASE=\"${DISTVERSION}\"
 LDFLAGS+=	-lncurses
 PLIST_SUB+=	SCOREFILE=${SCOREFILE}
 
