@@ -1,6 +1,6 @@
 --- configs/bhyve_arm64_defconfig.orig	2023-11-01 18:14:48 UTC
 +++ configs/bhyve_arm64_defconfig
-@@ -0,0 +1,1495 @@
+@@ -0,0 +1,1496 @@
 +#
 +# Automatically generated file; DO NOT EDIT.
 +# U-Boot 2023.07.02 Configuration
@@ -384,8 +384,8 @@
 +# Start-up hooks
 +#
 +# CONFIG_CYCLIC is not set
-+CONFIG_EVENT=y
-+CONFIG_EVENT_DYNAMIC=y
++# CONFIG_EVENT is not set
++# CONFIG_EVENT_DYNAMIC is not set
 +# CONFIG_EVENT_DEBUG is not set
 +# CONFIG_ARCH_MISC_INIT is not set
 +# CONFIG_BOARD_EARLY_INIT_F is not set
@@ -700,8 +700,8 @@
 +#
 +CONFIG_PARTITIONS=y
 +# CONFIG_MAC_PARTITION is not set
-+# CONFIG_DOS_PARTITION is not set
-+# CONFIG_ISO_PARTITION is not set
++CONFIG_DOS_PARTITION=y
++CONFIG_ISO_PARTITION=y
 +# CONFIG_AMIGA_PARTITION is not set
 +CONFIG_EFI_PARTITION=y
 +CONFIG_EFI_PARTITION_ENTRIES_NUMBERS=128
@@ -798,7 +798,7 @@
 +# CONFIG_DM_DEBUG is not set
 +# CONFIG_DM_STATS is not set
 +CONFIG_DM_DEVICE_REMOVE=y
-+CONFIG_DM_EVENT=y
++# CONFIG_DM_EVENT is not set
 +CONFIG_DM_STDIO=y
 +CONFIG_DM_SEQ_ALIAS=y
 +# CONFIG_DM_DMA is not set
@@ -1430,7 +1430,8 @@
 +#
 +# System tables
 +#
-+CONFIG_GENERATE_SMBIOS_TABLE=y
++CONFIG_SMBIOS=n
++# CONFIG_GENERATE_SMBIOS_TABLE is not set
 +# CONFIG_LIB_RATIONAL is not set
 +# CONFIG_SMBIOS_PARSER is not set
 +CONFIG_EFI_LOADER=y
