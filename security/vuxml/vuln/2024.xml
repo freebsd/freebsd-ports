@@ -1,3 +1,61 @@
+  <vuln vid="68ae70c5-c5e5-11ee-9768-08002784c58d">
+    <topic>clamav -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>1.2.2,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><lt>1.0.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ClamAV project reports:</p>
+	<blockquote cite="https://blog.clamav.net/2023/11/clamav-130-122-105-released.html">
+	  <dl>
+	    <dt>CVE-2024-20290</dt>
+	    <dd>
+	      A vulnerability in the OLE2 file format parser of ClamAV
+	      could allow an unauthenticated, remote attacker to cause
+	      a denial of service (DoS) condition on an affected
+	      device. This vulnerability is due to an incorrect check
+	      for end-of-string values during scanning, which may
+	      result in a heap buffer over-read. An attacker could
+	      exploit this vulnerability by submitting a crafted file
+	      containing OLE2 content to be scanned by ClamAV on an
+	      affected device. A successful exploit could allow the
+	      attacker to cause the ClamAV scanning process to
+	      terminate, resulting in a DoS condition on the affected
+	      software and consuming available system resources.
+	    </dd>
+	    <dt>CVE-2024-20328</dt>
+	    <dd>
+	      Fixed a possible command injection vulnerability in the
+	      &quot;VirusEvent&quot; feature of ClamAV's ClamD
+	      service. To fix this issue, we disabled the '%f' format
+	      string parameter.	 ClamD administrators may continue to
+	      use the `CLAM_VIRUSEVENT_FILENAME` environment variable,
+	      instead of '%f'. But you should do so only from within
+	      an executable, such as a Python script, and not directly
+	      in the clamd.conf &quot;VirusEvent&quot; command.
+	    </dd>
+	  </dl>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-20290</cvename>
+      <cvename>CVE-2024-20328</cvename>
+      <url>https://blog.clamav.net/2023/11/clamav-130-122-105-released.html</url>
+    </references>
+    <dates>
+      <discovery>2024-02-07</discovery>
+      <entry>2024-02-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e0f6215b-c59e-11ee-a6db-080027a5b8e9">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
