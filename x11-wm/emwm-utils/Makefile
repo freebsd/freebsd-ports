@@ -1,5 +1,5 @@
 PORTNAME=	emwm-utils
-DISTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://fastestcode.org/dl/
 DISTNAME=	emwm-utils-src-${DISTVERSION}
