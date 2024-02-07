@@ -1,33 +1,33 @@
---- Makefile.orig	2015-07-13 10:22:29 UTC
+--- Makefile.orig	2024-02-04 18:59:38 UTC
 +++ Makefile
-@@ -1,42 +1,37 @@
- NAME=cutmp3
- VERSION=3.0.1
--PREFIX=/usr
-+PREFIX?=/usr/local
+@@ -3,37 +3,34 @@ DATADIR=${PREFIX}/share
+ PREFIX?=/usr/local
  BINDIR=${PREFIX}/bin
  DATADIR=${PREFIX}/share
 -MANDIR=${PREFIX}/share/man/man1
--DOCDIR=${DATADIR}/doc/${NAME}-${VERSION}
-+MANDIR=${PREFIX}/man/man1
-+DOCDIR=${DATADIR}/doc/${NAME}
++MANDIR=${DATADIR}/man/man1
+ DOCDIR=${DATADIR}/doc/${NAME}-${VERSION}
+-CFLAGS?=-Wall -Wformat-security -Wunused-result
++CFLAGS+=-Wall -Wformat-security -Wunused-result
+ #CFLAGS+=-DDEBUG
  
  all:
--	@echo -e "\n\n*** You need readline-devel, ncurses-devel or similar to compile ${NAME} ***\n*** Maybe you want to try the binary on compile failures? ***\n\n"
--	gcc -O ${CFLAGS} -c mpglib.c
--	gcc -O ${CFLAGS} -c main.c
--	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+ 	@echo -e "\n\n*** You need readline-devel, ncurses-devel or similar to compile ${NAME} ***\n*** Maybe you want to try the binary on compile failures? ***\n\n"
+-	gcc -O2 ${CFLAGS} -c mpglib.c
+-	gcc -O2 ${CFLAGS} -c main.c
+-	gcc main.o mpglib.o -o ${NAME} -lm -lreadline
 +	${CC} ${CFLAGS} ${CPPFLAGS} -c mpglib.c
 +	${CC} ${CFLAGS} ${CPPFLAGS} -c main.c
-+	${CC} ${CFLAGS} main.o mpglib.o -o ${NAME} ${LDFLAGS} -lm -lreadline -lncurses
++	${CC} ${CFLAGS} main.o mpglib.o -o ${NAME} ${LDFLAGS} -lm -lreadline
+ #-lncurses
  
  i386:
--	gcc -Wall -O -c mpglib.c
--	gcc -Wall -O -c main.c
--	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
-+	cc -Wall -O -c mpglib.c
-+	cc -Wall -O -c main.c
-+	cc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+-	gcc -Wall -O2 -c mpglib.c
+-	gcc -Wall -O2 -c main.c
+-	gcc main.o mpglib.o -o ${NAME} -lm -lreadline
++	${CC} ${CFLAGS} -c mpglib.c
++	${CC} ${CFLAGS} -c main.c
++	${CC} main.o mpglib.o -o ${NAME} ${LDFLAGS} -lm -lreadline
  
  clean:
  	rm -f *.o
@@ -36,25 +36,23 @@
  install:
 -	install -d ${BINDIR}
 -	install ${NAME} ${BINDIR}
+-	strip ${BINDIR}/${NAME}
 +	install -d $(DESTDIR)${BINDIR}
 +	install ${NAME} $(DESTDIR)${BINDIR}
++	strip $(DESTDIR)${BINDIR}/${NAME}
  	if [ ! -z "${KDEDIR}" ]; then install -m 644 ${NAME}.desktop ${KDEDIR}/share/apps/konqueror/servicemenus; elif [ -d /usr/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /usr/share/apps/konqueror/servicemenus; elif [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde/share/apps/konqueror/servicemenus; elif [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
 -	install -d ${DOCDIR}/${NAME}
 -	install -m 644 README* USAGE ${DOCDIR}/${NAME}
 -	install -d ${MANDIR}
  	gzip ${NAME}.1
 -	install -m 644 ${NAME}.1.gz ${MANDIR}
--	gunzip ${NAME}.1.gz
 +	install -m 644 ${NAME}.1.gz $(DESTDIR)${MANDIR}
+ 	gunzip ${NAME}.1.gz
  
  uninstall:
- 	rm -f ${BINDIR}/${NAME}
+@@ -41,4 +38,4 @@ debug:
  	rm -f ${KDEDIR}/share/apps/konqueror/servicemenus/${NAME}.desktop
  
  debug:
--	gcc -g -Wall -O -c mpglib.c
--	gcc -g -Wall -O -c main.c
--	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
-+	cc -g -Wall -O -c mpglib.c
-+	cc -g -Wall -O -c main.c
-+	cc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+-	gcc ${CFLAGS} -DDEBUG -g mpglib.c main.c -o ${NAME} -lm -lreadline
++	${CC} ${CFLAGS} -DDEBUG -g mpglib.c main.c -o ${NAME} -lm -lreadline
