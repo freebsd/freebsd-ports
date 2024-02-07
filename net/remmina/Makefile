@@ -1,6 +1,5 @@
 PORTNAME=	remmina
-DISTVERSION=	1.4.33
-PORTREVISION=	1
+DISTVERSION=	1.4.34
 CATEGORIES=	net gnome
 
 PATCH_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -112,6 +111,7 @@ TERM_USE=		gnome=vte3
 TERM_CMAKE_BOOL=	WITH_VTE
 
 VNC_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgtk-vnc-2.0.so:net/gtk-vnc \
 			libvncserver.so:net/libvncserver
 VNC_USES=		jpeg
 VNC_CMAKE_BOOL=		WITH_LIBVNCSERVER
