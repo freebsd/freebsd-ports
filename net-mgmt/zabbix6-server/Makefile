@@ -1,6 +1,6 @@
 PORTNAME=	zabbix6
 DISTVERSION=	6.0.26
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -53,6 +53,7 @@ SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD}
 
 MAKE_ARGS+=		ARCH=freebsd
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--datadir=${ETCDIR} \
 			--enable-${ZABBIX_BUILD} \
 			--sysconfdir=${ETCDIR} \
