@@ -1,6 +1,6 @@
 PORTNAME=	tartarus
 PORTVERSION=	0.9.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wertarbyte.de/tartarus/ \
 		https://ftp.sk.FreeBSD.org/pub/FreeBSD/local/distfiles/
@@ -25,7 +25,8 @@ do-install:
 		charon.pipe orpheus tartarus ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} Tartarus ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 	cd ${WRKSRC}/man && ${INSTALL_MAN} charon.ftp.1 charon.local.1 \
-		charon.pipe.1 tartarus.1 ${STAGEDIR}${PREFIX}/man/man1
-	${LN} -sf charon.ftp.1 ${STAGEDIR}${PREFIX}/man/man1/charon.1
+		charon.pipe.1 tartarus.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL} -lrs ${STAGEDIR}${PREFIX}/share/man/man1/charon.ftp.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/charon.1
 
 .include <bsd.port.mk>
