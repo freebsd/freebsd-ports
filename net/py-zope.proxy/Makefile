@@ -16,4 +16,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:devel/py-zope.interf
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+
 .include <bsd.port.mk>
