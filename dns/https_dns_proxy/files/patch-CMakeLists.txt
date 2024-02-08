@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2023-12-26 21:36:07 UTC
++++ CMakeLists.txt
+@@ -67,6 +67,7 @@ endif()
+ 
+ find_path(LIBCARES_INCLUDE_DIR ares.h)
+ find_path(LIBEV_INCLUDE_DIR ev.h)
++cmake_path(GET LIBEV_INCLUDE_DIR PARENT_PATH LOCALBASE)
+ 
+ if(CUSTOM_LIBCURL_INSTALL_PATH)
+   message(STATUS "Using custom libcurl from: ${CUSTOM_LIBCURL_INSTALL_PATH}")
+@@ -108,7 +109,8 @@ set(TARGET_NAME "https_dns_proxy")
+ aux_source_directory(src SRC_LIST)
+ set(SRC_LIST ${SRC_LIST})
+ add_executable(${TARGET_NAME} ${SRC_LIST})
+-set(LIBS ${LIBS} cares curl ev resolv)
++set(LIBS ${LIBS} cares curl ev)
++target_link_directories(${TARGET_NAME} PRIVATE ${LOCALBASE}/lib)
+ target_link_libraries(${TARGET_NAME} ${LIBS})
+ set_property(TARGET ${TARGET_NAME} PROPERTY C_STANDARD 11)
+ 

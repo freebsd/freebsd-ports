@@ -80,6 +80,7 @@
     SUBDIR += hesiod
     SUBDIR += hetzner_ddns
     SUBDIR += hostdb
+    SUBDIR += https_dns_proxy
     SUBDIR += idnkit
     SUBDIR += idnkit2
     SUBDIR += inadyn
