@@ -1,3 +1,35 @@
+  <vuln vid="02e33cd1-c655-11ee-8613-08002784c58d">
+    <topic>curl -- OCSP verification bypass with TLS session reuse</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hiroki Kurosawa reports:</p>
+	<blockquote cite="https://curl.se/docs/CVE-2024-0853.html">
+	  <p>
+	    curl inadvertently kept the SSL session ID for connections
+	    in its cache even when the verify status (OCSP stapling)
+	    test failed. A subsequent transfer to the same hostname
+	    could then succeed if the session ID cache was still
+	    fresh, which then skipped the verify status check.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0853</cvename>
+      <url>https://curl.se/docs/CVE-2024-0853.html</url>
+    </references>
+    <dates>
+      <discovery>2024-01-31</discovery>
+      <entry>2024-02-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ecfb588-d2f4-11ee-ad82-dbdfaa8acfc2">
     <topic>gitea -- Fix XSS vulnerabilities</topic>
     <affects>
