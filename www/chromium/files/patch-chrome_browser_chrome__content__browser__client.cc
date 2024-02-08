@@ -1,4 +1,4 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2024-01-30 07:53:34 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2024-02-08 12:57:33 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
 @@ -459,7 +459,7 @@
  #include "storage/browser/file_system/external_mount_points.h"
@@ -109,7 +109,7 @@
        command_line);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) && !BUILDFLAG(IS_BSD)
    // Opt into a hardened stack canary mitigation if it hasn't already been
    // force-disabled.
    if (!browser_command_line.HasSwitch(switches::kChangeStackGuardOnFork)) {
@@ -149,7 +149,7 @@
    MaybeAddThrottle(browser_switcher::BrowserSwitcherNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -7183,7 +7185,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
+@@ -7187,7 +7189,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
  bool ChromeContentBrowserClient::ShouldRunOutOfProcessSystemDnsResolution() {
  // This enterprise policy is supported on Android, but the feature will not be
  // launched there.
