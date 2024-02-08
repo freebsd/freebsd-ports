@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.7.4
+PORTVERSION=	16.7.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -212,7 +212,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-peek-rails70>=1.1<2.0:devel/rubygem-peek-rails70 \
 	rubygem-snowplow-tracker>=0.8.0<1:devel/rubygem-snowplow-tracker \
 	rubygem-webrick>=1.8.1<1.9:www/rubygem-webrick \
-	rubygem-prometheus-client-mmap>=1.0.2<1.1:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=1.1.1<2:devel/rubygem-prometheus-client-mmap \
 	rubygem-warning>=1.3.0<1.4:devel/rubygem-warning \
 	rubygem-gitlab-dangerfiles>=4.6.0<4.7:devel/rubygem-gitlab-dangerfiles \
 	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
