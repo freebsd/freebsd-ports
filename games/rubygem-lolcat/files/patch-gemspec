@@ -1,11 +1,11 @@
---- lolcat.gemspec.orig	2023-08-03 16:39:32 UTC
+--- lolcat.gemspec.orig	2024-02-20 14:33:03 UTC
 +++ lolcat.gemspec
 @@ -21,7 +21,7 @@ Gem::Specification.new do |s|
  
-   s.add_development_dependency(%q<rake>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.1"])
--  s.add_runtime_dependency(%q<optimist>.freeze, ["~> 3.0.0"])
-+  s.add_runtime_dependency(%q<optimist>.freeze, ["~> 3.0"])
-   s.add_runtime_dependency(%q<manpages>.freeze, ["~> 0.6.1"])
+   s.add_development_dependency(%q<rake>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.1".freeze])
+-  s.add_runtime_dependency(%q<optimist>.freeze, ["~> 3.0.0".freeze])
++  s.add_runtime_dependency(%q<optimist>.freeze, ["~> 3.0".freeze])
+   s.add_runtime_dependency(%q<manpages>.freeze, ["~> 0.6.1".freeze])
  end
  

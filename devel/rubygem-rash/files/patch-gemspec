@@ -1,11 +1,11 @@
---- rash.gemspec.orig	2023-01-05 20:13:03 UTC
+--- rash.gemspec.orig	2024-02-20 13:56:38 UTC
 +++ rash.gemspec
 @@ -20,7 +20,7 @@ Gem::Specification.new do |s|
  
    s.specification_version = 3
  
--  s.add_runtime_dependency(%q<hashie>.freeze, ["~> 2.0.0"])
-+  s.add_runtime_dependency(%q<hashie>.freeze, [">= 2.0.0"])
-   s.add_development_dependency(%q<rake>.freeze, ["~> 0.9"])
-   s.add_development_dependency(%q<rdoc>.freeze, ["~> 3.9"])
-   s.add_development_dependency(%q<rspec>.freeze, ["~> 2.5"])
+-  s.add_runtime_dependency(%q<hashie>.freeze, ["~> 2.0.0".freeze])
++  s.add_runtime_dependency(%q<hashie>.freeze, [">= 2.0.0".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 0.9".freeze])
+   s.add_development_dependency(%q<rdoc>.freeze, ["~> 3.9".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 2.5".freeze])

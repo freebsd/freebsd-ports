@@ -1,11 +1,11 @@
---- bosh-gen.gemspec.orig	2023-01-06 04:12:46 UTC
+--- bosh-gen.gemspec.orig	2024-02-21 09:00:08 UTC
 +++ bosh-gen.gemspec
 @@ -22,7 +22,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<thor>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<progressbar>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<cyoi>.freeze, ["~> 0.10"])
--  s.add_runtime_dependency(%q<fog>.freeze, ["~> 1.11"])
-+  s.add_runtime_dependency(%q<fog>.freeze, [">= 1.11"])
-   s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<mime-types>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<readwritesettings>.freeze, ["~> 3.0"])
+   s.add_runtime_dependency(%q<thor>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<progressbar>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<cyoi>.freeze, ["~> 0.10".freeze])
+-  s.add_runtime_dependency(%q<fog>.freeze, ["~> 1.11".freeze])
++  s.add_runtime_dependency(%q<fog>.freeze, [">= 1.11".freeze])
+   s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<mime-types>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<readwritesettings>.freeze, ["~> 3.0".freeze])

@@ -1,11 +1,11 @@
---- sidetiq.gemspec.orig	2023-01-05 20:17:59 UTC
+--- sidetiq.gemspec.orig	2024-02-20 14:01:58 UTC
 +++ sidetiq.gemspec
 @@ -22,7 +22,7 @@ Gem::Specification.new do |s|
  
-   s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 4.1.0"])
-   s.add_runtime_dependency(%q<celluloid>.freeze, [">= 0.17.3"])
--  s.add_runtime_dependency(%q<ice_cube>.freeze, ["~> 0.14.0"])
-+  s.add_runtime_dependency(%q<ice_cube>.freeze, [">= 0.14.0"])
-   s.add_development_dependency(%q<rake>.freeze, [">= 0"])
-   s.add_development_dependency(%q<sinatra>.freeze, [">= 0"])
-   s.add_development_dependency(%q<mocha>.freeze, [">= 0"])
+   s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 4.1.0".freeze])
+   s.add_runtime_dependency(%q<celluloid>.freeze, [">= 0.17.3".freeze])
+-  s.add_runtime_dependency(%q<ice_cube>.freeze, ["~> 0.14.0".freeze])
++  s.add_runtime_dependency(%q<ice_cube>.freeze, [">= 0.14.0".freeze])
+   s.add_development_dependency(%q<rake>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<sinatra>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<mocha>.freeze, [">= 0".freeze])

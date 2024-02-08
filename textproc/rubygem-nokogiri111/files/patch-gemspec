@@ -1,4 +1,4 @@
---- nokogiri.gemspec.orig	2023-01-06 04:30:57 UTC
+--- nokogiri.gemspec.orig	2024-02-21 09:35:50 UTC
 +++ nokogiri.gemspec
 @@ -13,10 +13,9 @@ Gem::Specification.new do |s|
    s.date = "2021-06-02"
@@ -15,8 +15,8 @@
 @@ -27,7 +26,6 @@ Gem::Specification.new do |s|
    s.specification_version = 4
  
-   s.add_runtime_dependency(%q<racc>.freeze, ["~> 1.4"])
--  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.5.0"])
-   s.add_development_dependency(%q<bundler>.freeze, ["~> 2.2"])
-   s.add_development_dependency(%q<concourse>.freeze, ["~> 0.41"])
-   s.add_development_dependency(%q<hoe-markdown>.freeze, ["~> 1.4"])
+   s.add_runtime_dependency(%q<racc>.freeze, ["~> 1.4".freeze])
+-  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.5.0".freeze])
+   s.add_development_dependency(%q<bundler>.freeze, ["~> 2.2".freeze])
+   s.add_development_dependency(%q<concourse>.freeze, ["~> 0.41".freeze])
+   s.add_development_dependency(%q<hoe-markdown>.freeze, ["~> 1.4".freeze])

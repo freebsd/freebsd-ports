@@ -13,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 DEPRECATED=	Upstream has merged into textproc/rubygem-nokogiri
 EXPIRATION_DATE=	2025-03-31
+BROKEN=		Build fails with all supported Ruby versions
 
 RUN_DEPENDS=	rubygem-nokogiri>=1.8.4<2:textproc/rubygem-nokogiri
 
 USES=		gem gnome pkgconfig
 USE_GNOME=	libxml2
-BROKEN_RUBY32=	yes
 
 .include <bsd.port.mk>

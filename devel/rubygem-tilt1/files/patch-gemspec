@@ -1,4 +1,4 @@
---- tilt.gemspec.orig	2023-01-05 20:21:01 UTC
+--- tilt.gemspec.orig	2024-02-20 14:03:35 UTC
 +++ tilt.gemspec
 @@ -11,7 +11,6 @@ Gem::Specification.new do |s|
    s.date = "2013-05-08"
@@ -9,14 +9,14 @@
    s.homepage = "http://github.com/rtomayko/tilt/".freeze
    s.licenses = ["MIT".freeze]
 @@ -39,11 +38,9 @@ Gem::Specification.new do |s|
-   s.add_development_dependency(%q<nokogiri>.freeze, [">= 0"])
-   s.add_development_dependency(%q<radius>.freeze, [">= 0"])
-   s.add_development_dependency(%q<rdiscount>.freeze, [">= 0"])
--  s.add_development_dependency(%q<rdoc>.freeze, [">= 0"])
-   s.add_development_dependency(%q<redcarpet>.freeze, [">= 0"])
-   s.add_development_dependency(%q<sass>.freeze, [">= 0"])
-   s.add_development_dependency(%q<wikicloth>.freeze, [">= 0"])
-   s.add_development_dependency(%q<yajl-ruby>.freeze, [">= 0"])
--  s.add_development_dependency(%q<rdoc>.freeze, [">= 0"])
+   s.add_development_dependency(%q<nokogiri>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<radius>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rdiscount>.freeze, [">= 0".freeze])
+-  s.add_development_dependency(%q<rdoc>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<redcarpet>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<sass>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<wikicloth>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<yajl-ruby>.freeze, [">= 0".freeze])
+-  s.add_development_dependency(%q<rdoc>.freeze, [">= 0".freeze])
  end
  

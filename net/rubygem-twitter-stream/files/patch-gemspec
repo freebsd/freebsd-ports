@@ -1,13 +1,13 @@
---- twitter-stream.gemspec.orig	2023-01-06 00:04:46 UTC
+--- twitter-stream.gemspec.orig	2024-02-21 06:47:06 UTC
 +++ twitter-stream.gemspec
 @@ -22,8 +22,8 @@ Gem::Specification.new do |s|
    s.specification_version = 3
  
-   s.add_runtime_dependency(%q<eventmachine>.freeze, [">= 0.12.8"])
--  s.add_runtime_dependency(%q<simple_oauth>.freeze, ["~> 0.1.4"])
--  s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.5.1"])
-+  s.add_runtime_dependency(%q<simple_oauth>.freeze, [">= 0.1.4"])
-+  s.add_runtime_dependency(%q<http_parser.rb>.freeze, [">= 0.5.1"])
-   s.add_development_dependency(%q<rspec>.freeze, ["~> 2.5.0"])
+   s.add_runtime_dependency(%q<eventmachine>.freeze, [">= 0.12.8".freeze])
+-  s.add_runtime_dependency(%q<simple_oauth>.freeze, ["~> 0.1.4".freeze])
+-  s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.5.1".freeze])
++  s.add_runtime_dependency(%q<simple_oauth>.freeze, [">= 0.1.4".freeze])
++  s.add_runtime_dependency(%q<http_parser.rb>.freeze, [">= 0.5.1".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 2.5.0".freeze])
  end
  

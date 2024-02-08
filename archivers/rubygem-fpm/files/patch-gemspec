@@ -1,11 +1,11 @@
---- fpm.gemspec.orig	2023-01-05 18:08:41 UTC
+--- fpm.gemspec.orig	2024-02-14 05:48:41 UTC
 +++ fpm.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<cabin>.freeze, [">= 0.6.0"])
-   s.add_runtime_dependency(%q<backports>.freeze, [">= 2.6.2"])
-   s.add_runtime_dependency(%q<arr-pm>.freeze, ["~> 0.0.11"])
--  s.add_runtime_dependency(%q<clamp>.freeze, ["~> 1.0.0"])
-+  s.add_runtime_dependency(%q<clamp>.freeze, ["~> 1.0"])
-   s.add_runtime_dependency(%q<pleaserun>.freeze, ["~> 0.0.29"])
-   s.add_runtime_dependency(%q<stud>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<rexml>.freeze, [">= 0"])
+   s.add_runtime_dependency(%q<cabin>.freeze, [">= 0.6.0".freeze])
+   s.add_runtime_dependency(%q<backports>.freeze, [">= 2.6.2".freeze])
+   s.add_runtime_dependency(%q<arr-pm>.freeze, ["~> 0.0.11".freeze])
+-  s.add_runtime_dependency(%q<clamp>.freeze, ["~> 1.0.0".freeze])
++  s.add_runtime_dependency(%q<clamp>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<pleaserun>.freeze, ["~> 0.0.29".freeze])
+   s.add_runtime_dependency(%q<stud>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<rexml>.freeze, [">= 0".freeze])

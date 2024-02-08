@@ -1,11 +1,11 @@
---- platform-api.gemspec.orig	2023-01-06 04:59:18 UTC
+--- platform-api.gemspec.orig	2024-02-21 16:38:24 UTC
 +++ platform-api.gemspec
 @@ -28,7 +28,7 @@ Gem::Specification.new do |s|
-   s.add_development_dependency(%q<heroku_hatchet>.freeze, [">= 0"])
-   s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<heroics>.freeze, ["~> 0.1.1"])
--  s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0.0"])
-+  s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0"])
-   s.add_runtime_dependency(%q<rate_throttle_client>.freeze, ["~> 0.1.0"])
+   s.add_development_dependency(%q<heroku_hatchet>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<webmock>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<heroics>.freeze, ["~> 0.1.1".freeze])
+-  s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0.0".freeze])
++  s.add_runtime_dependency(%q<moneta>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<rate_throttle_client>.freeze, ["~> 0.1.0".freeze])
  end
  

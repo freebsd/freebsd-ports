@@ -1,10 +1,10 @@
---- gpgme.gemspec.orig	2023-01-22 05:30:28 UTC
+--- gpgme.gemspec.orig	2024-02-21 08:22:05 UTC
 +++ gpgme.gemspec
 @@ -21,7 +21,6 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.7"])
-   s.add_development_dependency(%q<mocha>.freeze, ["~> 0.9.12"])
-   s.add_development_dependency(%q<minitest>.freeze, ["~> 2.1.0"])
-   s.add_development_dependency(%q<yard>.freeze, ["~> 0.9.11"])
+-  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.7".freeze])
+   s.add_development_dependency(%q<mocha>.freeze, ["~> 0.9.12".freeze])
+   s.add_development_dependency(%q<minitest>.freeze, ["~> 2.1.0".freeze])
+   s.add_development_dependency(%q<yard>.freeze, ["~> 0.9.11".freeze])

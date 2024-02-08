@@ -1,11 +1,11 @@
---- vmail.gemspec.orig	2023-01-05 21:43:44 UTC
+--- vmail.gemspec.orig	2024-02-20 14:42:02 UTC
 +++ vmail.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
  
-   s.add_runtime_dependency(%q<mail>.freeze, ["~> 2.2", ">= 2.2.12"])
-   s.add_runtime_dependency(%q<highline>.freeze, ["~> 1.6", ">= 1.6.1"])
--  s.add_runtime_dependency(%q<sequel>.freeze, ["~> 3.24", ">= 3.24.1"])
-+  s.add_runtime_dependency(%q<sequel>.freeze, [">= 3.24.1"])
-   s.add_runtime_dependency(%q<sqlite3>.freeze, ["~> 1.3", ">= 1.3.3"])
-   s.add_runtime_dependency(%q<versionomy>.freeze, ["~> 0.4", ">= 0.4.4"])
+   s.add_runtime_dependency(%q<mail>.freeze, ["~> 2.2".freeze, ">= 2.2.12".freeze])
+   s.add_runtime_dependency(%q<highline>.freeze, ["~> 1.6".freeze, ">= 1.6.1".freeze])
+-  s.add_runtime_dependency(%q<sequel>.freeze, ["~> 3.24".freeze, ">= 3.24.1".freeze])
++  s.add_runtime_dependency(%q<sequel>.freeze, [">= 3.24.1".freeze])
+   s.add_runtime_dependency(%q<sqlite3>.freeze, ["~> 1.3".freeze, ">= 1.3.3".freeze])
+   s.add_runtime_dependency(%q<versionomy>.freeze, ["~> 0.4".freeze, ">= 0.4.4".freeze])
  end

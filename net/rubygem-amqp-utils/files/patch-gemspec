@@ -1,19 +1,19 @@
---- amqp-utils.gemspec.orig	2023-01-05 21:46:27 UTC
+--- amqp-utils.gemspec.orig	2024-02-21 06:28:44 UTC
 +++ amqp-utils.gemspec
 @@ -20,12 +20,12 @@ Gem::Specification.new do |s|
  
    s.specification_version = 3
  
--  s.add_runtime_dependency(%q<amqp>.freeze, ["~> 0.7.1"])
-+  s.add_runtime_dependency(%q<amqp>.freeze, [">= 0.7.1"])
-   s.add_runtime_dependency(%q<trollop>.freeze, ["~> 1.16.2"])
--  s.add_runtime_dependency(%q<facets>.freeze, ["~> 2.9"])
-+  s.add_runtime_dependency(%q<facets>.freeze, [">= 2.9"])
-   s.add_runtime_dependency(%q<clio>.freeze, ["~> 0.3.0"])
-   s.add_runtime_dependency(%q<json>.freeze, ["~> 1.5"])
--  s.add_runtime_dependency(%q<heredoc_unindent>.freeze, ["~> 1.1.2"])
--  s.add_runtime_dependency(%q<msgpack>.freeze, ["~> 0.4.5"])
-+  s.add_runtime_dependency(%q<heredoc_unindent>.freeze, [">= 1.1.2"])
-+  s.add_runtime_dependency(%q<msgpack>.freeze, [">= 0.4.5"])
+-  s.add_runtime_dependency(%q<amqp>.freeze, ["~> 0.7.1".freeze])
++  s.add_runtime_dependency(%q<amqp>.freeze, [">= 0.7.1".freeze])
+   s.add_runtime_dependency(%q<trollop>.freeze, ["~> 1.16.2".freeze])
+-  s.add_runtime_dependency(%q<facets>.freeze, ["~> 2.9".freeze])
++  s.add_runtime_dependency(%q<facets>.freeze, [">= 2.9".freeze])
+   s.add_runtime_dependency(%q<clio>.freeze, ["~> 0.3.0".freeze])
+   s.add_runtime_dependency(%q<json>.freeze, ["~> 1.5".freeze])
+-  s.add_runtime_dependency(%q<heredoc_unindent>.freeze, ["~> 1.1.2".freeze])
+-  s.add_runtime_dependency(%q<msgpack>.freeze, ["~> 0.4.5".freeze])
++  s.add_runtime_dependency(%q<heredoc_unindent>.freeze, [">= 1.1.2".freeze])
++  s.add_runtime_dependency(%q<msgpack>.freeze, [">= 0.4.5".freeze])
  end
  

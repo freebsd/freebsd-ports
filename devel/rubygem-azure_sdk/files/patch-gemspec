@@ -1,10 +1,10 @@
---- azure_sdk.gemspec.orig	2023-01-05 18:25:46 UTC
+--- azure_sdk.gemspec.orig	2024-02-14 06:31:45 UTC
 +++ azure_sdk.gemspec
 @@ -164,6 +164,6 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<azure_graph_rbac>.freeze, ["~> 0.17.2"])
-   s.add_runtime_dependency(%q<azure_key_vault>.freeze, ["~> 0.19.1"])
-   s.add_runtime_dependency(%q<azure_service_fabric>.freeze, ["~> 0.18.1"])
--  s.add_runtime_dependency(%q<azure-storage>.freeze, ["~> 0.14.0.preview"])
-+  s.add_runtime_dependency(%q<azure-storage>.freeze, ["~> 0.15.0.preview"])
+   s.add_runtime_dependency(%q<azure_graph_rbac>.freeze, ["~> 0.17.2".freeze])
+   s.add_runtime_dependency(%q<azure_key_vault>.freeze, ["~> 0.19.1".freeze])
+   s.add_runtime_dependency(%q<azure_service_fabric>.freeze, ["~> 0.18.1".freeze])
+-  s.add_runtime_dependency(%q<azure-storage>.freeze, ["~> 0.14.0.preview".freeze])
++  s.add_runtime_dependency(%q<azure-storage>.freeze, ["~> 0.15.0.preview".freeze])
  end
  

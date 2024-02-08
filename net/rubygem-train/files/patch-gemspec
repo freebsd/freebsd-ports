@@ -1,12 +1,12 @@
---- train.gemspec.orig	2023-01-05 23:58:34 UTC
+--- train.gemspec.orig	2024-02-21 06:42:04 UTC
 +++ train.gemspec
 @@ -30,7 +30,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<azure_mgmt_security>.freeze, ["~> 0.18"])
-   s.add_runtime_dependency(%q<azure_mgmt_storage>.freeze, ["~> 0.18"])
-   s.add_runtime_dependency(%q<docker-api>.freeze, [">= 1.26", "< 3.0"])
--  s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.23.9", "<= 0.52.0"])
--  s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.6.6", "<= 0.14.0"])
-+  s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.23.9"])
-+  s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.6.6"])
+   s.add_runtime_dependency(%q<azure_mgmt_security>.freeze, ["~> 0.18".freeze])
+   s.add_runtime_dependency(%q<azure_mgmt_storage>.freeze, ["~> 0.18".freeze])
+   s.add_runtime_dependency(%q<docker-api>.freeze, [">= 1.26".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.23.9".freeze, "<= 0.52.0".freeze])
+-  s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.6.6".freeze, "<= 0.14.0".freeze])
++  s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.23.9".freeze])
++  s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.6.6".freeze])
  end
  

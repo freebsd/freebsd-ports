@@ -1,11 +1,11 @@
---- octopress.gemspec.orig	2023-01-06 04:57:25 UTC
+--- octopress.gemspec.orig	2024-02-21 16:37:05 UTC
 +++ octopress.gemspec
 @@ -19,7 +19,7 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<mercenary>.freeze, ["~> 0.3.2"])
-+  s.add_runtime_dependency(%q<mercenary>.freeze, ["~> 0.3", ">= 0.3.2"])
-   s.add_runtime_dependency(%q<jekyll>.freeze, [">= 2.0"])
-   s.add_runtime_dependency(%q<titlecase>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<octopress-deploy>.freeze, [">= 0"])
+-  s.add_runtime_dependency(%q<mercenary>.freeze, ["~> 0.3.2".freeze])
++  s.add_runtime_dependency(%q<mercenary>.freeze, ["~> 0.3".freeze, ">= 0.3.2".freeze])
+   s.add_runtime_dependency(%q<jekyll>.freeze, [">= 2.0".freeze])
+   s.add_runtime_dependency(%q<titlecase>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<octopress-deploy>.freeze, [">= 0".freeze])

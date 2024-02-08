@@ -1,19 +1,19 @@
---- visage-app.gemspec.orig	2023-01-06 01:34:29 UTC
+--- visage-app.gemspec.orig	2024-02-21 08:19:36 UTC
 +++ visage-app.gemspec
 @@ -20,11 +20,11 @@ Gem::Specification.new do |s|
  
    s.specification_version = 3
  
--  s.add_runtime_dependency(%q<haml>.freeze, ["= 3.1.4"])
--  s.add_runtime_dependency(%q<tilt>.freeze, ["= 1.3.3"])
--  s.add_runtime_dependency(%q<sinatra>.freeze, ["= 1.3.2"])
--  s.add_runtime_dependency(%q<errand>.freeze, ["= 0.7.3"])
--  s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["= 1.1.0"])
-+  s.add_runtime_dependency(%q<haml>.freeze, [">= 3.1.4"])
-+  s.add_runtime_dependency(%q<tilt>.freeze, [">= 1.3.3"])
-+  s.add_runtime_dependency(%q<sinatra>.freeze, [">= 1.3.2"])
-+  s.add_runtime_dependency(%q<errand>.freeze, [">= 0.7.3"])
-+  s.add_runtime_dependency(%q<yajl-ruby>.freeze, [">= 1.1.0"])
-   s.add_development_dependency(%q<shotgun>.freeze, [">= 0"])
-   s.add_development_dependency(%q<rack-test>.freeze, [">= 0"])
-   s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
+-  s.add_runtime_dependency(%q<haml>.freeze, ["= 3.1.4".freeze])
+-  s.add_runtime_dependency(%q<tilt>.freeze, ["= 1.3.3".freeze])
+-  s.add_runtime_dependency(%q<sinatra>.freeze, ["= 1.3.2".freeze])
+-  s.add_runtime_dependency(%q<errand>.freeze, ["= 0.7.3".freeze])
+-  s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["= 1.1.0".freeze])
++  s.add_runtime_dependency(%q<haml>.freeze, [">= 3.1.4".freeze])
++  s.add_runtime_dependency(%q<tilt>.freeze, [">= 1.3.3".freeze])
++  s.add_runtime_dependency(%q<sinatra>.freeze, [">= 1.3.2".freeze])
++  s.add_runtime_dependency(%q<errand>.freeze, [">= 0.7.3".freeze])
++  s.add_runtime_dependency(%q<yajl-ruby>.freeze, [">= 1.1.0".freeze])
+   s.add_development_dependency(%q<shotgun>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rack-test>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, [">= 0".freeze])

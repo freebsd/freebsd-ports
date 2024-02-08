@@ -1,14 +1,14 @@
---- gitlab_git.gemspec.orig	2023-01-05 18:58:47 UTC
+--- gitlab_git.gemspec.orig	2024-02-20 08:07:45 UTC
 +++ gitlab_git.gemspec
 @@ -19,9 +19,9 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<github-linguist>.freeze, ["~> 4.7.0"])
-+  s.add_runtime_dependency(%q<github-linguist>.freeze, [">= 4.7.0"])
-   s.add_runtime_dependency(%q<activesupport>.freeze, ["~> 4.0"])
--  s.add_runtime_dependency(%q<rugged>.freeze, ["~> 0.24.0"])
-+  s.add_runtime_dependency(%q<rugged>.freeze, [">= 0.24.0"])
-   s.add_runtime_dependency(%q<charlock_holmes>.freeze, ["~> 0.7.3"])
-   s.add_development_dependency(%q<listen>.freeze, ["~> 3.0.6"])
+-  s.add_runtime_dependency(%q<github-linguist>.freeze, ["~> 4.7.0".freeze])
++  s.add_runtime_dependency(%q<github-linguist>.freeze, [">= 4.7.0".freeze])
+   s.add_runtime_dependency(%q<activesupport>.freeze, ["~> 4.0".freeze])
+-  s.add_runtime_dependency(%q<rugged>.freeze, ["~> 0.24.0".freeze])
++  s.add_runtime_dependency(%q<rugged>.freeze, [">= 0.24.0".freeze])
+   s.add_runtime_dependency(%q<charlock_holmes>.freeze, ["~> 0.7.3".freeze])
+   s.add_development_dependency(%q<listen>.freeze, ["~> 3.0.6".freeze])
  end
