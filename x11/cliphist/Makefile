@@ -1,7 +1,6 @@
 PORTNAME=	cliphist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	4
+DISTVERSION=	0.5.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,8 +14,9 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sentriz
 GH_TUPLE=	etcd-io:bbolt:v1.3.7:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
-		matryer:is:v1.4.0:matryer_is/vendor/github.com/matryer/is
+		golang:image:v0.11.0:golang_image/vendor/golang.org/x/image \
+		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
+		rogpeppe:go-internal:v1.10.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	FZF
