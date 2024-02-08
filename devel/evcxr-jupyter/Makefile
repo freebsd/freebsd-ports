@@ -303,6 +303,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}_jupyter
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/evcxr ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/evcxr_jupyter ${STAGEDIR}${PREFIX}/bin
