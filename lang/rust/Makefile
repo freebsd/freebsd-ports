@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.75.0
+PORTVERSION?=	1.76.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -68,8 +68,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2023-11-16
-RUST_BOOTSTRAP_VERSION?=	1.74.0
+BOOTSTRAPS_DATE?=		2023-12-28
+RUST_BOOTSTRAP_VERSION?=	1.75.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -121,21 +121,6 @@ _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 
 .if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
 _COMPONENTS+=	rust-docs-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-docs-json-${_PACKAGE_VERS}-wasm32-unknown-unknown
-.endif
-
-# If the kernel does not return sane kern.proc.pathname values
-# for hardlinks then disable hardlinks in the build to avoid
-# intermittent "can't find crate for `std`" build failures,
-# c.f. PR248184
-#
-# XXX: Avoiding OSVERSION since it is derived from userland but
-# the running kernel might still be newer with sane behavior
-# anyway...
-.if exists(${PATCHDIR}/no-hardlinks)
-_KERN_OSRELDATE!=	${SYSCTL} -n kern.osreldate 2>/dev/null || echo 0
-.  if ${_KERN_OSRELDATE} < 1300521
-EXTRA_PATCHES+=		${PATCHDIR}/no-hardlinks
-.  endif
 .endif
 
 .ifdef QEMU_EMULATING
