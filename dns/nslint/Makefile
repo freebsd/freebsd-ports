@@ -1,6 +1,5 @@
 PORTNAME=	nslint
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		LOCAL/ehaupt
@@ -9,6 +8,8 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perform consistency checks on DNS zone files
 WWW=		https://ee.lbl.gov/ftp.html
 
+LICENSE=	BSD4CLAUSE
+
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	${PORTNAME}
@@ -16,7 +17,8 @@ ALL_TARGET=	${PORTNAME}
 BOOTFILE?=	/etc/namedb/named.boot
 CONFFILE?=	/etc/namedb/named.conf
 
-PLIST_FILES=	bin/nslint share/man/man8/nslint.8.gz
+PLIST_FILES=	bin/nslint \
+		share/man/man8/nslint.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^\ \{4\}V_CCOPT/d' ${WRKSRC}/configure
