@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	17.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}${RCDIR}/
@@ -589,6 +589,7 @@ do-test:
 
 post-install-STATIC_LIBS-off:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/lib*.a
+	${RM} -r ${STAGEDIR}${LLVM_PREFIX}/lib/cmake
 
 build-plist:
 	@[ -d ${STAGEDIR} ] || (echo "Can't make plist before package is staged ${STAGEDIR}" && exit 1)
@@ -625,6 +626,7 @@ build-plist:
 	    | ${SORT} >> ${PLIST}.tmp
 	${AWK} '{ \
 	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a$$/ && $$0 !~ /(${BE_PATTERN})$$/) {printf "%%%%STATIC_LIBS%%%%"} \
+	    if ($$0 ~ /\/lib\/cmake\//) {printf "%%%%STATIC_LIBS%%%%"} \
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(${OPENMP_PATTERN}|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN}|${BE_PATTERN})/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
