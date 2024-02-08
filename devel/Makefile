@@ -1508,6 +1508,7 @@
     SUBDIR += linux-rl9-elfutils-libs
     SUBDIR += linux-rl9-libgfortran
     SUBDIR += linux-rl9-libpciaccess
+    SUBDIR += linux-rl9-libsigsegv
     SUBDIR += linux-rl9-libthai
     SUBDIR += linux-rl9-libunistring
     SUBDIR += linux-rl9-llvm

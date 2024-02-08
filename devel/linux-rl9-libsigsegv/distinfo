@@ -1,0 +1,7 @@
+TIMESTAMP = 1707310038
+SHA256 (rocky/l/libsigsegv-2.13-4.el9.aarch64.rpm) = 1935c944375f3bf40913bbda2cd87bbaf25a475be51c1662c24f54eb04da584b
+SIZE (rocky/l/libsigsegv-2.13-4.el9.aarch64.rpm) = 27124
+SHA256 (rocky/l/libsigsegv-2.13-4.el9.x86_64.rpm) = a80701bd3f67994493b1a14e043d9212032c86fd24374c309cf2b7006900f4da
+SIZE (rocky/l/libsigsegv-2.13-4.el9.x86_64.rpm) = 27135
+SHA256 (rocky/l/libsigsegv-2.13-4.el9.src.rpm) = 36dc113c8837b27c3c12b021e05786b69c2014519ed4c9f5354436cd80e8b1a4
+SIZE (rocky/l/libsigsegv-2.13-4.el9.src.rpm) = 471565
