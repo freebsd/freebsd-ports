@@ -1,1 +1,6 @@
-Enable git-like did-you-mean feature in click.
+Enable REPL plugin for Click.
+
+Python REPL, short for Read-Eval-Print Loop, is an interactive programming
+environment that allows users to execute Python code one line at a time.
+It evaluates input, executes computations, and prints results instantly,
+facilitating testing, debugging, and exploratory programming.
