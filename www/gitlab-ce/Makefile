@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.8.1
+PORTVERSION=	16.8.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -155,7 +155,6 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-sd_notify>=0.1.1<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord08>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord08 \
 	rubygem-acts-as-taggable-on>=10.0<11:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq71>=7.1.6<7.2:devel/rubygem-sidekiq71 \
 	rubygem-sidekiq-cron-rails70>=1.12.0<1.13:devel/rubygem-sidekiq-cron-rails70 \
 	rubygem-fugit18>=1.8.1<1.9:devel/rubygem-fugit18 \
 	rubygem-httparty>=0.21.0<0.22:www/rubygem-httparty \
