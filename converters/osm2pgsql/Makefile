@@ -11,7 +11,7 @@ WWW=		https://osm2pgsql.org/ \
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	needs a 64 bit architecture
 
 LIB_DEPENDS=	libproj.so:graphics/proj \
