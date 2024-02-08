@@ -25,12 +25,14 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.md
 %%PORTDOCS%%%%DOCSDIR%%/CHECKSRC.md
 %%PORTDOCS%%%%DOCSDIR%%/CIPHERS.md
+%%PORTDOCS%%%%DOCSDIR%%/CLIENT-WRITERS.md
 %%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
 %%PORTDOCS%%%%DOCSDIR%%/CODE_REVIEW.md
 %%PORTDOCS%%%%DOCSDIR%%/CODE_STYLE.md
 %%PORTDOCS%%%%DOCSDIR%%/CONNECTION-FILTERS.md
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTE.md
 %%PORTDOCS%%%%DOCSDIR%%/CURL-DISABLE.md
+%%PORTDOCS%%%%DOCSDIR%%/CURLDOWN.md
 %%PORTDOCS%%%%DOCSDIR%%/DEPRECATE.md
 %%PORTDOCS%%%%DOCSDIR%%/DYNBUF.md
 %%PORTDOCS%%%%DOCSDIR%%/EARLY-RELEASE.md
@@ -46,6 +48,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/HTTP3.md
 %%PORTDOCS%%%%DOCSDIR%%/HYPER.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-CMAKE.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS.md
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
@@ -67,16 +70,19 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/VERSIONS.md
 %%PORTDOCS%%%%DOCSDIR%%/VULN-DISCLOSURE-POLICY.md
 %%PORTDOCS%%%%DOCSDIR%%/WEBSOCKET.md
+%%PORTDOCS%%%%DOCSDIR%%/curl-config.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/ABI.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/mksymbolsmanpage.pl
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/symbols-in-versions
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/symbols.pl
+%%PORTDOCS%%%%DOCSDIR%%/mk-ca-bundle.md
 %%PORTDOCS%%%%DOCSDIR%%/options-in-versions
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/10-at-a-time.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.mk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/address-scope.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/altsvc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anyauthput.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacertinmem.c
@@ -152,6 +158,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-single.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-uv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multithread.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netrc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parseurl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/persistent.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3-authzid.c
@@ -171,6 +178,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postit2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progressfunc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/protofeats.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/range.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolve.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtsp-options.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendrecv.c
@@ -203,6 +211,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlstream.c
 share/man/man1/curl-config.1.gz
 share/man/man1/curl.1.gz
+share/man/man1/mk-ca-bundle.1.gz
 share/man/man3/CURLINFO_ACTIVESOCKET.3.gz
 share/man/man3/CURLINFO_APPCONNECT_TIME.3.gz
 share/man/man3/CURLINFO_APPCONNECT_TIME_T.3.gz
@@ -244,6 +253,7 @@ share/man/man3/CURLINFO_PROTOCOL.3.gz
 share/man/man3/CURLINFO_PROXYAUTH_AVAIL.3.gz
 share/man/man3/CURLINFO_PROXY_ERROR.3.gz
 share/man/man3/CURLINFO_PROXY_SSL_VERIFYRESULT.3.gz
+share/man/man3/CURLINFO_QUEUE_TIME_T.3.gz
 share/man/man3/CURLINFO_REDIRECT_COUNT.3.gz
 share/man/man3/CURLINFO_REDIRECT_TIME.3.gz
 share/man/man3/CURLINFO_REDIRECT_TIME_T.3.gz
@@ -511,6 +521,7 @@ share/man/man3/CURLOPT_SASL_IR.3.gz
 share/man/man3/CURLOPT_SEEKDATA.3.gz
 share/man/man3/CURLOPT_SEEKFUNCTION.3.gz
 share/man/man3/CURLOPT_SERVER_RESPONSE_TIMEOUT.3.gz
+share/man/man3/CURLOPT_SERVER_RESPONSE_TIMEOUT_MS.3.gz
 share/man/man3/CURLOPT_SERVICE_NAME.3.gz
 share/man/man3/CURLOPT_SHARE.3.gz
 share/man/man3/CURLOPT_SOCKOPTDATA.3.gz
