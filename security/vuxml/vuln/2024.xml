@@ -1,3 +1,38 @@
+  <vuln vid="19047673-c680-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>121.0.6167.160</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>121.0.6167.160</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[41494539] High CVE-2024-1284: Use after free in Mojo. Reported by Anonymous on 2024-01-25</li>
+	    <li>[41494860] High CVE-2024-1283: Heap buffer overflow in Skia. Reported by Jorge Buzeti (@r3tr074) on 2024-01-25</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1284</cvename>
+      <cvename>CVE-2024-1283</cvename>
+      <url>https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-02-06</discovery>
+      <entry>2024-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68ae70c5-c5e5-11ee-9768-08002784c58d">
     <topic>clamav -- Multiple vulnerabilities</topic>
     <affects>
