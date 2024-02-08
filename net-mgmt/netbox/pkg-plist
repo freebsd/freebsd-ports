@@ -115,6 +115,7 @@
 %%DATADIR%%/core/tests/__init__.py
 %%DATADIR%%/core/tests/test_api.py
 %%DATADIR%%/core/tests/test_filtersets.py
+%%DATADIR%%/core/tests/test_models.py
 %%DATADIR%%/core/tests/test_views.py
 %%DATADIR%%/core/urls.py
 %%DATADIR%%/core/views.py
@@ -602,6 +603,7 @@
 %%DATADIR%%/extras/migrations/0103_gfk_indexes.py
 %%DATADIR%%/extras/migrations/0104_stagedchange_remove_change_logging.py
 %%DATADIR%%/extras/migrations/0105_customfield_min_max_values.py
+%%DATADIR%%/extras/migrations/0106_bookmark_user_cascade_deletion.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models/__init__.py
 %%DATADIR%%/extras/models/change_logging.py
@@ -1293,10 +1295,14 @@
 %%DATADIR%%/translations/es/LC_MESSAGES/django.po
 %%DATADIR%%/translations/fr/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/fr/LC_MESSAGES/django.po
+%%DATADIR%%/translations/ja/LC_MESSAGES/django.mo
+%%DATADIR%%/translations/ja/LC_MESSAGES/django.po
 %%DATADIR%%/translations/pt/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/pt/LC_MESSAGES/django.po
 %%DATADIR%%/translations/ru/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/ru/LC_MESSAGES/django.po
+%%DATADIR%%/translations/tr/LC_MESSAGES/django.mo
+%%DATADIR%%/translations/tr/LC_MESSAGES/django.po
 %%DATADIR%%/users/__init__.py
 %%DATADIR%%/users/admin.py
 %%DATADIR%%/users/api/__init__.py
@@ -1522,6 +1528,7 @@
 %%DATADIR%%/vpn/migrations/0001_initial.py
 %%DATADIR%%/vpn/migrations/0002_move_l2vpn.py
 %%DATADIR%%/vpn/migrations/0003_ipaddress_multiple_tunnel_terminations.py
+%%DATADIR%%/vpn/migrations/0004_alter_ikepolicy_mode.py
 %%DATADIR%%/vpn/migrations/__init__.py
 %%DATADIR%%/vpn/models/__init__.py
 %%DATADIR%%/vpn/models/crypto.py

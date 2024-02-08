@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
+DISTVERSION=	3.7.2
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -25,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.9<4.3:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.1<5:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-debug-toolbar>=4.2.0<5:www/py-dj42-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-debug-toolbar>=4.3.0<5:www/py-dj42-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.5<24:www/py-dj42-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj42-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-mptt>=0.14.0<0.15:www/py-dj42-django-mptt@${PY_FLAVOR} \
@@ -37,15 +37,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.9<4.3:www/py-django42@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj42-django-taggit>=5.0.1<6:www/py-dj42-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-timezone-field>=6.1.0<7:www/py-dj42-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.14.0<3.15.0:www/py-dj42-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular>=0.27.0<1:www/py-dj42-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular-sidecar>=2024.1.1:www/py-dj42-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular>=0.27.1<1:www/py-dj42-drf-spectacular@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular-sidecar>=2024.2.1:www/py-dj42-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-graphene-django>=3.0.0<3.0.0_99:devel/py-dj42-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0<7:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.10<7:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.3<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.6:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.5.4<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.5.7<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.24.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python-legacy>0:textproc/py-mkdocstrings-python-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.10.1<1:net/py-netaddr@${PY_FLAVOR} \
