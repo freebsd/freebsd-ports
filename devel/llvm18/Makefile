@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	18.1.0rc1
+DISTVERSION=	18.1.0rc2
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -509,6 +509,10 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
+.if ${DISTVERSION:M*rc*}
+	${LN} -s libLLVM-${LLVM_MAJOR}rc.so \
+	    ${STAGEDIR}${LLVM_PREFIX}/lib/libLLVM-${LLVM_MAJOR}.so
+.endif
 
 post-install-DOCS-on:
 	${RM} -r ${STAGEDIR}${DOCSDIR}

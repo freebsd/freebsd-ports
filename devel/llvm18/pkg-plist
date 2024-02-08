@@ -6208,6 +6208,7 @@ llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/llvm-driver-template.cpp.in
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libHLFIRDialect.a
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libHLFIRTransforms.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVM-%%LLVM_RELEASE%%rc.so
+llvm%%LLVM_SUFFIX%%/lib/libLLVM-18.so
 llvm%%LLVM_SUFFIX%%/lib/libLLVM-18rc.so
 llvm%%LLVM_SUFFIX%%/lib/libLLVM.so
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMAggressiveInstCombine.a
