@@ -1,8 +1,12 @@
 PORTNAME=	wofi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+
+PATCH_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/rev/
+PATCHFILES+=	c9c57aa327ba.patch:-p1 # https://todo.sr.ht/~scoopta/wofi/211
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Launcher/menu program for wlroots-based compositors
