@@ -110,6 +110,7 @@ _linux_${linux_ARGS}_libogg=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_A
 _linux_${linux_ARGS}_libpciaccess=	linux-${linux_ARGS}-libpciaccess>0:devel/linux-${linux_ARGS}-libpciaccess
 _linux_rl9_libproxy=			linux-rl9-libproxy>0:net/linux-rl9-libproxy
 _linux_${linux_ARGS}_librsvg2=		linux-${linux_ARGS}-librsvg2>0:graphics/linux-${linux_ARGS}-librsvg2
+_linux_${linux_ARGS}_libsigc++20=	linux-${linux_ARGS}-libsigc++20>0:devel/linux-${linux_ARGS}-libsigc++20
 _linux_rl9_libsigsegv=			linux-${linux_ARGS}-libsigsegv>0:devel/linux-${linux_ARGS}-libsigsegv
 _linux_${linux_ARGS}_libsndfile=	linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
 _linux_c7_libssh2=			linux-c7-libssh2>0:security/linux-c7-libssh2
