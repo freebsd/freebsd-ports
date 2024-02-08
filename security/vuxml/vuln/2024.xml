@@ -1,3 +1,32 @@
+  <vuln vid="43768ff3-c683-11ee-97d0-001b217b3468">
+    <topic>Libgit2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libgit2</name>
+	<range><ge>1.7.0</ge><lt>1.7.2</lt></range>
+	<range><lt>1.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git community reports:</p>
+	<blockquote cite="https://github.com/libgit2/libgit2/releases/tag/v1.7.2">
+	  <p>A bug in git_revparse_single is fixed that could have caused the function to enter an infinite loop given well-crafted inputs, potentially causing a Denial of Service attack in the calling application</p>
+	  <p>A bug in git_revparse_single is fixed that could have caused the function to enter an infinite loop given well-crafted inputs, potentially causing a Denial of Service attack in the calling application</p>
+	  <p>A bug in the smart transport negotiation could have caused an out-of-bounds read when a remote server did not advertise capabilities</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24577</cvename>
+      <url>https://github.com/libgit2/libgit2/releases/tag/v1.7.2</url>
+    </references>
+    <dates>
+      <discovery>2024-02-06</discovery>
+      <entry>2024-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19047673-c680-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
