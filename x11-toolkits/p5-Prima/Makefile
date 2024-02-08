@@ -58,6 +58,8 @@ XFT_CONFIGURE_OFF=	WITH_XFT=0
 XFT_CONFIGURE_ON=	WITH_XFT=1
 XFT_USE=		XORG=xft
 
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Prima/Prima.so
 	@${REINPLACE_CMD} -e 's|${STAGEDIR}||' ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/Prima/Config.pm
