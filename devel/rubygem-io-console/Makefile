@@ -1,5 +1,5 @@
 PORTNAME=	io-console
-DISTVERSION=	0.6.0
+DISTVERSION=	0.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
