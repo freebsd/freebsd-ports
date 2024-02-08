@@ -1,3 +1,48 @@
+  <vuln vid="33ba2241-c68e-11ee-9ef3-001999f8d30b">
+    <topic>Composer -- Code execution and possible privilege escalation</topic>
+    <affects>
+      <package>
+	<name>php81-composer</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+      <package>
+	<name>php82-composer</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+      <package>
+	<name>php83-composer</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Copmposer reports:</p>
+	<blockquote cite="https://github.com/composer/composer/security/advisories/GHSA-7c6p-848j-wh5h">
+	  <p>Code execution and possible privilege escalation via
+	  compromised InstalledVersions.php or installed.php.</p>
+	  <p>Several files within the local working directory are
+	  included during the invocation of Composer and in the
+	  context of the executing user.</p>
+	  <p>As such, under certain conditions arbitrary code
+	  execution may lead to local privilege escalation, provide
+	  lateral user movement or malicious code execution when
+	  Composer is invoked within a directory with tampered
+	  files.</p>
+	  <p>All Composer CLI commands are affected, including
+	  composer.phar's self-update.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24821</cvename>
+      <url>https://github.com/composer/composer/security/advisories/GHSA-7c6p-848j-wh5h</url>
+    </references>
+    <dates>
+      <discovery>2024-02-08</discovery>
+      <entry>2024-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43768ff3-c683-11ee-97d0-001b217b3468">
     <topic>Libgit2 -- multiple vulnerabilities</topic>
     <affects>
