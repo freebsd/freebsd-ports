@@ -9,17 +9,6 @@
  DIST_SUBDIRS = $(SUBDIRS) tests packages scripts include docs
  pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = libcurl.pc
-@@ -1695,10 +1695,8 @@ dist-hook:
- 	done)
- 
- html:
--	cd docs && $(MAKE) html
- 
- pdf:
--	cd docs && $(MAKE) pdf
- 
- check: test examples check-docs
- 
 @@ -1785,13 +1783,11 @@ cygwinbin:
  # We extend the standard install with a custom hook:
  install-data-hook:
