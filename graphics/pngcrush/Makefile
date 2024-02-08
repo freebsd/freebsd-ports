@@ -14,6 +14,9 @@ LICENSE_NAME=	Pngcrush License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		Depends on undocumented feature to disable Adler32 checksums, consider graphics/oxipng or graphics/pngquant
+EXPIRATION_DATE=2024-02-29
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cpe localbase:ldflags tar:xz
