@@ -2,7 +2,7 @@ PORTNAME=	kterm
 PORTVERSION=	6.2.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	.fb6
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	japanese x11
 MASTER_SITES=	LOCAL/hrs:pcemu
 DISTFILES=	pcemu1.01alpha.tar.gz:pcemu
@@ -85,12 +85,10 @@ post-build:
 	${ICONV_CMD} -f iso-2022-jp -t utf-8 ${WRKSRC}/kterm.jman \
 	    | ${GZIP_CMD} > ${WRKSRC}/kterm.1.gz
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja.UTF-8/man1
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/kterm.1.gz \
-	    ${STAGEDIR}${PREFIX}/share/man/ja/man1
-	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/kterm.1.gz \
-	    ${STAGEDIR}${PREFIX}/share/man/man1/
+	    ${STAGEDIR}${PREFIX}/share/man/ja.UTF-8/man1
 pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 pre-install-VGAFONT-on:
