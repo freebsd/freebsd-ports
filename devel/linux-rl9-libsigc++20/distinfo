@@ -1,0 +1,7 @@
+TIMESTAMP = 1707309419
+SHA256 (rocky/l/libsigc++20-2.10.7-2.el9.aarch64.rpm) = 23df51556ad0ef4da4601e70d83c669624f0851d3582e72457fa80ab75573477
+SIZE (rocky/l/libsigc++20-2.10.7-2.el9.aarch64.rpm) = 38646
+SHA256 (rocky/l/libsigc++20-2.10.7-2.el9.x86_64.rpm) = 7c7327a10e3efd22b91835e0565427fbf1f60939224196aa1b4273ed5befe8eb
+SIZE (rocky/l/libsigc++20-2.10.7-2.el9.x86_64.rpm) = 39411
+SHA256 (rocky/l/libsigc++20-2.10.7-2.el9.src.rpm) = ac37c3d42426f0ba25315cf9bd55e669c7fa840ff785110f3eb7816b4417a952
+SIZE (rocky/l/libsigc++20-2.10.7-2.el9.src.rpm) = 4805164
