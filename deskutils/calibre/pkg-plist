@@ -836,6 +836,7 @@ lib/calibre/calibre/gui2/dialogs/metadata_bulk.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.py
 lib/calibre/calibre/gui2/dialogs/multisort.py
 lib/calibre/calibre/gui2/dialogs/opml.py
+lib/calibre/calibre/gui2/dialogs/palette.py
 lib/calibre/calibre/gui2/dialogs/password.py
 lib/calibre/calibre/gui2/dialogs/password_ui.py
 lib/calibre/calibre/gui2/dialogs/plugin_updater.py
