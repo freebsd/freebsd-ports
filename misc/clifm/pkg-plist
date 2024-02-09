@@ -1,5 +1,4 @@
 bin/clifm
-man/man1/clifm.1.gz
 share/applications/clifm.desktop
 share/bash-completion/completions/clifm
 %%DATADIR%%/actions.clifm
@@ -86,4 +85,5 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/tools/manpages_comp_gen.py
 share/fish/vendor_completions.d/clifm.fish
 share/icons/hicolor/scalable/apps/clifm.svg
+share/man/man1/clifm.1.gz
 share/zsh/site-functions/_clifm

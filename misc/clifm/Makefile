@@ -1,5 +1,5 @@
 PORTNAME=	clifm
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -16,15 +16,11 @@ USES=		desktop-file-utils gettext-runtime python:run \
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
 GH_PROJECT=	${PORTNAME}-colors:cfmc
-GH_TAGNAME=	175bc94:cfmc
+GH_TAGNAME=	v0.4.3:cfmc
 ALL_TARGET=	build
 MAKE_ENV=	LIBS_FreeBSD="-I${LOCALBASE}/include -L${LOCALBASE}/lib \
-		-lreadline -lintl -lmagic"
+		-lreadline -lintl -lmagic" MANDIR=${PREFIX}/share/man
 SHEBANG_FILES=	misc/tools/deroff.py misc/tools/manpages_comp_gen.py
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^set enable-bracketed-paste/s,on,off,' \
-		${WRKSRC}/misc/readline.clifm
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.clifm \
