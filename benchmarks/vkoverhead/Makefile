@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	fails to build due -Werror=int-conversion
 BROKEN_i386=	fails to build due -Werror=int-conversion
+BROKEN_powerpc=	fails to build due -Werror=int-conversion
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 RUN_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader
