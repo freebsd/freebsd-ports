@@ -9,7 +9,8 @@ WWW=		https://github.com/o2sh/onefetch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libgit2.so:devel/libgit2
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	git:devel/git
 
 USES=		cargo
