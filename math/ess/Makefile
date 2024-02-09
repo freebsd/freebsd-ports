@@ -1,8 +1,9 @@
 PORTNAME=	ess
-DISTVERSION=	24.01.0
+DISTVERSION=	24.01.1
 CATEGORIES=	math
-MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
+MASTER_SITES=	http://ess.r-project.org/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
+DISTNAME=	ESS-${DISTVERSION}
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -19,7 +20,7 @@ USE_PERL5=	build
 
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/ESS-${DISTVERSION}
+#WRKSRC=		${WRKDIR}/ESS-${DISTVERSION}
 
 INFO=		ess
 
@@ -60,8 +61,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/ess/
 	@${CP} ${WRKSRC}/lisp/*.el  ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/ess/
 	@${CP} ${WRKSRC}/lisp/*.elc ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/ess/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/ess/
 	${INSTALL_DATA} ${WRKSRC}/doc/info/ess.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/ess/
 	(cd ${WRKSRC}/etc && ${CP} ess-julia.jl ess-sas-sh-command \
 		${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/ess/)
 	${CP} -R ${WRKSRC}/etc/ESSR \
