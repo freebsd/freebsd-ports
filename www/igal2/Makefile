@@ -1,8 +1,7 @@
 PORTNAME=	igal2
-PORTVERSION=	2.2
-PORTREVISION=	4
+DISTVERSION=	3.1
 CATEGORIES=	www graphics
-MASTER_SITES=	http://igal.trexler.at/
+MASTER_SITES=	https://codeload.github.com/solbu/${PORTNAME}/tar.gz/v${DISTVERSION}?dummy=/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Simple CLI image gallery generator
@@ -13,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	igal-1.*
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 NO_ARCH=	yes
+SHEBANG_FILES=	${PORTNAME}
 
 OPTIONS_DEFINE=	EXIF
 EXIF_DESC=	Support EXIF data (-e option)
@@ -28,11 +28,12 @@ IMAGICK_X11_DESC=With X11 support
 
 EXIF_RUN_DEPENDS=	p5-Image-ExifTool>=7.0:graphics/p5-Image-ExifTool
 
-IMAGICK_X11_USES=		magick:6,run
-IMAGICK_NOX11_USES=		magick:6,run,nox11
+IMAGICK_X11_USES=		magick:7,run
+IMAGICK_NOX11_USES=		magick:7,run,nox11
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LIBDIR%%|${PREFIX}/lib/igal2|' ${WRKSRC}/igal2
+	${REINPLACE_CMD} -e 's|%%IGALDIR%%|${PREFIX}/share/igal2|' ${WRKSRC}/${PORTNAME}
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${PORTNAME} ${WRKSRC}/utilities/${PORTNAME}.sh ${WRKSRC}/${PORTNAME}.1
 
 post-install:
 	${LN} -sf igal2 ${STAGEDIR}${PREFIX}/bin/igal

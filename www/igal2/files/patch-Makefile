@@ -1,26 +1,23 @@
---- Makefile.orig	2008-11-16 21:00:00 UTC
+--- Makefile.orig	2021-11-18 00:25:55 UTC
 +++ Makefile
-@@ -1,11 +1,11 @@
- ############################################################################
- # if you change this, please also modify the value at the top of igal code
--DESTDIR=/usr/local
-+DESTDIR?=/usr/local
- ############################################################################
+@@ -1,5 +1,5 @@
+ NAME=igal2
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
+ DATADIR=$(PREFIX)/share
+ MANDIR=$(DATADIR)/man/man1
+@@ -24,13 +24,11 @@ old-clean:
+ install:
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	install -m 0755 $(NAME) $(DESTDIR)$(BINDIR)
+-	ln -si $(NAME) $(DESTDIR)$(BINDIR)/igal
+ 	install -m 0755 utilities/$(NAME).sh $(DESTDIR)$(BINDIR)
+ 	install -d $(DESTDIR)$(MANDIR)
+ 	install -m 0644 $(NAME).1 $(DESTDIR)$(MANDIR)
+ 	install -d $(DESTDIR)$(IGALDIR)
+ 	install -m 0644 README ChangeLog COPYING indextemplate2.html slidemovtemplate2.html slidetemplate2.html tile.png $(NAME).css directoryline2.html $(DESTDIR)$(IGALDIR)
+-	sed -i 's_/usr/local_$(PREFIX)_' $(DESTDIR)$(BINDIR)/$(NAME) $(DESTDIR)$(BINDIR)/$(NAME).sh $(DESTDIR)$(MANDIR)/$(NAME).1
  
--BINDIR=$(DESTDIR)/bin
--MANDIR=$(DESTDIR)/man/man1
--LIBDIR=$(DESTDIR)/lib/igal2
-+BINDIR=$(DESTDIR)$(PREFIX)/bin
-+MANDIR=$(DESTDIR)$(PREFIX)/man/man1
-+LIBDIR=$(DESTDIR)$(PREFIX)/lib/igal2
  
- OLDLIBDIR=$(DESTDIR)/lib/igal
  
-@@ -24,7 +24,6 @@ old-clean::
- install:: igal2
- 	install -d $(BINDIR)
- 	install -m 0755 igal2 $(BINDIR)
--	ln -si $(BINDIR)/igal2 $(BINDIR)/igal
- 	install -m 0755 utilities/igal2.sh $(BINDIR)
- 	install -d $(MANDIR)
- 	install -m 0644 igal2.1 $(MANDIR)
