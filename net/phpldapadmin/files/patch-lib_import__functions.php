@@ -1,6 +1,6 @@
---- lib/import_functions.php.orig	2023-04-01 13:46:16 UTC
+--- lib/import_functions.php.orig	2024-01-10 22:23:54 UTC
 +++ lib/import_functions.php
-@@ -255,7 +255,7 @@ class ImportLDIF extends Import {
+@@ -257,7 +257,7 @@ class ImportLDIF extends Import {
  		if (substr($value,0,1) == ':')
  			$value = base64_decode(trim(substr($value,1)));
  		else
@@ -9,7 +9,7 @@
  
  		return array($attr,$value);
  	}
-@@ -271,7 +271,7 @@ class ImportLDIF extends Import {
+@@ -273,7 +273,7 @@ class ImportLDIF extends Import {
  
  		if ($this->hasMoreEntries() && ! $this->eof()) {
  			# The first line is the DN one
@@ -18,7 +18,7 @@
  
  			# While we end on a blank line, fetch the attribute lines
  			$count = 0;
-@@ -282,11 +282,11 @@ class ImportLDIF extends Import {
+@@ -284,11 +284,11 @@ class ImportLDIF extends Import {
  				/* If the next line begin with a space, we append it to the current row
  				 * else we push it into the array (unwrap)*/
  				if ($this->isWrappedLine())
@@ -32,7 +32,7 @@
  				else
  					$endEntryFound = true;
  			}
-@@ -336,7 +336,7 @@ class ImportLDIF extends Import {
+@@ -338,7 +338,7 @@ class ImportLDIF extends Import {
  	 * @return boolean true if it's a comment line,false otherwise
  	 */
  	private function isCommentLine() {
@@ -41,7 +41,7 @@
  	}
  
  	/**
-@@ -354,7 +354,7 @@ class ImportLDIF extends Import {
+@@ -356,7 +356,7 @@ class ImportLDIF extends Import {
  	 * @return boolean if it is a blank line,false otherwise.
  	 */
  	private function isBlankLine() {
@@ -50,7 +50,7 @@
  	}
  
  	/**
-@@ -386,7 +386,7 @@ class ImportLDIF extends Import {
+@@ -388,7 +388,7 @@ class ImportLDIF extends Import {
  			$url = trim(substr($value,1));
  
  			if (preg_match('^file://',$url)) {
@@ -59,7 +59,7 @@
  
  				if ($fh = @fopen($filename,'rb')) {
  					if (! $return = @fread($fh,filesize($filename)))
-@@ -480,7 +480,7 @@ class ImportLDIF extends Import {
+@@ -482,7 +482,7 @@ class ImportLDIF extends Import {
  			# Fetch the attribute for the following line
  			$currentLine = array_shift($lines);
  
@@ -68,12 +68,3 @@
  				$processline = false;
  
  				# If there is a valid line
-@@ -541,7 +541,7 @@ class ImportLDIF extends Import {
- 						array_merge(array($currentLine),$lines));
- 
- 				$currentLine = array_shift($lines);
--				if (trim($currentLine))
-+				if (trim((string) $currentLine))
- 					$processline = true;
- 			}
- 
