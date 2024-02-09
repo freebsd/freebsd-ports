@@ -14,6 +14,7 @@ WWW=		https://github.com/ElementsProject/lightning
 LICENSE=	MIT
 
 BROKEN_i386=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
+BROKEN_powerpc=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
 
 BUILD_DEPENDS=	bash:shells/bash \
 		lowdown:textproc/lowdown \
