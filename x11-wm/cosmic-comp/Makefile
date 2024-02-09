@@ -31,6 +31,9 @@ post-patch:
 # XXX Strip double / to help "make cargo-crates"
 	@${REINPLACE_CMD} -e 's,\(smithay\)//,\1/,' \
 		${WRKSRC}/Cargo.lock
+# XXX Drop [patch.<url>] section to help "make cargo-configure"
+	@${REINPLACE_CMD} -e '/\[patch/,$$d' \
+		${WRKSRC}/Cargo.toml
 # Respect PREFIX for system-wide config
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/src/config/mod.rs
