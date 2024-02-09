@@ -22,6 +22,7 @@ LICENSE_PERMS_DOC=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_DOC=	giac_${DISTVERSION}${EXTRACT_SUFX}
 
 BROKEN_i386=	compilation fails: constant expression evaluates to 61171872541 which cannot be narrowed to type 'long' [-Wc++11-narrowing]
+BROKEN_powerpc=	compilation fails: constant expression evaluates to 61171872541 which cannot be narrowed to type 'long' [-Wc++11-narrowing]
 
 BUILD_DEPENDS=	bash:shells/bash \
 		hevea:textproc/hevea
