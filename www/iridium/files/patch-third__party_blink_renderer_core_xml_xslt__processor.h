@@ -4,7 +4,7 @@
  
    void reset();
  
-+#if (LIBXML_VERSION > 21106)
++#if (LIBXML_VERSION >= 21200)
 +  static void ParseErrorFunc(void* user_data, const xmlError*);
 +#else
    static void ParseErrorFunc(void* user_data, xmlError*);
