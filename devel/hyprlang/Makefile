@@ -1,7 +1,6 @@
 PORTNAME=	hyprlang
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +20,9 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	hyprwm
 PLIST_FILES=	include/${PORTNAME}.hpp \
 		lib/lib${PORTNAME}.so \
-		share/pkgconfig/${PORTNAME}.pc
+		lib/lib${PORTNAME}.so.${PORTVERSION:R:R} \
+		lib/lib${PORTNAME}.so.${PORTVERSION} \
+		libdata/pkgconfig/${PORTNAME}.pc
 
 # XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/include/c++/v1/__format/format_functions.h) && \
