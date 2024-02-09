@@ -10,7 +10,7 @@ WWW=		https://xnvme.io/
 
 LICENSE=	BSD3CLAUSE
 
-NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	use of types with platform-specific length
 
 USES=		meson
