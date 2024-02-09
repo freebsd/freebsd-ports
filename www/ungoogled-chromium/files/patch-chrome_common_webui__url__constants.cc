@@ -1,4 +1,4 @@
---- chrome/common/webui_url_constants.cc.orig	2024-02-03 15:42:55 UTC
+--- chrome/common/webui_url_constants.cc.orig	2024-02-09 10:34:36 UTC
 +++ chrome/common/webui_url_constants.cc
 @@ -508,18 +508,18 @@ const char kOsUIShortcutCustomizationAppURL[] = "os://
  const char kOsUIVersionURL[] = "os://version";
@@ -57,7 +57,7 @@
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -877,7 +877,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -876,7 +876,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif
