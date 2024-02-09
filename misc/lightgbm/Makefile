@@ -26,6 +26,10 @@ CMAKE_TESTING_TARGET=
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DUSE_OPENMP:BOOL=OFF
+.endif
+
 post-test:
 	@${WRKSRC}/testlightgbm
 
