@@ -1,4 +1,4 @@
---- chrome/common/pref_names.h.orig	2024-02-03 15:42:55 UTC
+--- chrome/common/pref_names.h.orig	2024-02-09 10:34:36 UTC
 +++ chrome/common/pref_names.h
 @@ -1330,7 +1330,7 @@ inline constexpr char kUseAshProxy[] = "lacros.proxy.u
  
@@ -27,7 +27,7 @@
  inline constexpr char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2439,14 +2439,14 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
+@@ -2441,14 +2441,14 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
  inline constexpr char kMediaCdmOriginData[] = "media.cdm.origin_data";
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -44,7 +44,7 @@
  // Records whether the user has seen an HTTP auth "negotiate" header.
  inline constexpr char kReceivedHttpAuthNegotiateHeader[] =
      "net.received_http_auth_negotiate_headers";
-@@ -2524,7 +2524,7 @@ inline constexpr char kAmbientAuthenticationInPrivateM
+@@ -2526,7 +2526,7 @@ inline constexpr char kAmbientAuthenticationInPrivateM
  inline constexpr char kBasicAuthOverHttpEnabled[] =
      "auth.basic_over_http_enabled";
  
@@ -53,7 +53,7 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  inline constexpr char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3563,7 +3563,7 @@ inline constexpr char kFileOrDirectoryPickerWithoutGes
+@@ -3565,7 +3565,7 @@ inline constexpr char kFileOrDirectoryPickerWithoutGes
  inline constexpr char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
@@ -62,7 +62,7 @@
  // Boolean that indicates if system notifications are allowed to be used in
  // place of Chrome notifications.
  inline constexpr char kAllowSystemNotifications[] =
-@@ -3612,7 +3612,7 @@ inline constexpr char kCACertificateManagementAllowed[
+@@ -3614,7 +3614,7 @@ inline constexpr char kCACertificateManagementAllowed[
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -71,7 +71,7 @@
  inline constexpr char kEnforceLocalAnchorConstraintsEnabled[] =
      "enforce_local_anchor_constraints_enabled";
  #endif
-@@ -3924,7 +3924,7 @@ inline constexpr char kThrottleNonVisibleCrossOriginIf
+@@ -3926,7 +3926,7 @@ inline constexpr char kThrottleNonVisibleCrossOriginIf
  inline constexpr char kNewBaseUrlInheritanceBehaviorAllowed[] =
      "new_base_url_inheritance_behavior_allowed";
  

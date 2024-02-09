@@ -1,4 +1,4 @@
---- chrome/app/generated_resources.grd.orig	2024-02-03 15:42:55 UTC
+--- chrome/app/generated_resources.grd.orig	2024-02-09 10:34:36 UTC
 +++ chrome/app/generated_resources.grd
 @@ -2,7 +2,7 @@
  
@@ -45,7 +45,7 @@
          <message name="IDS_DEPRECATED_APPS_MONITOR_RENDERER" desc="Dialog content that educates users that Chrome Apps will soon no longer launch.">
            Old versions of Chrome apps won't open on Linux devices after December 2022. You can check if there's a new version available.
          </message>
-@@ -10956,7 +10956,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -10965,7 +10965,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
        <message name="IDS_APP_MENU_BUTTON_UPDATE" desc="Short label next to app-menu button when an update is available.">
          Update
        </message>
@@ -54,7 +54,7 @@
          <message name="IDS_APP_MENU_BUTTON_UPDATE_ALT1" desc="Alternate short label next to app-menu button when an update is available.">
            Finish update
          </message>
-@@ -11303,7 +11303,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -11312,7 +11312,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
          Google Pay
        </message>
  
@@ -63,7 +63,7 @@
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -12301,7 +12301,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -12310,7 +12310,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
        </message>
  
        <!-- Device Trust Consent dialog -->
@@ -72,7 +72,7 @@
          <message name="IDS_DEVICE_SIGNALS_CONSENT_DIALOG_TITLE" desc="Title of the dialog shown when user consent is required to share device signals.">
            Share information about your device?
          </message>
-@@ -12709,7 +12709,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -12718,7 +12718,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  
@@ -81,7 +81,7 @@
          <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
            Minimize
          </message>
-@@ -14940,7 +14940,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -14949,7 +14949,7 @@ Please help our engineers fix this problem. Tell us wh
        Open Anyway
      </message>
  
