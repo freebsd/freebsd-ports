@@ -27,5 +27,9 @@ LTO_Include_MAINTAINER=	pkubaj@FreeBSD.org
    CXXFLAGS+=	${LTO_FLAGS}
    LDFLAGS+=	${LTO_FLAGS}
 .    endif
+.  else
+.    if defined(_INCLUDE_USES_CARGO_MK)
+   RUSTFLAGS+=	-C lto=no
+.    endif
 .  endif
 .endif
