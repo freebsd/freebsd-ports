@@ -12,6 +12,9 @@ WWW=		http://anjuta.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, upstream WWW owned by gambling site, use devel/gnome-builders
+EXPIRATION_DATE=2024-03-11
+
 BUILD_DEPENDS=	autogen:devel/autogen \
 		itstool:textproc/itstool
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
