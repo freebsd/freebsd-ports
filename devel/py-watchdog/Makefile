@@ -10,8 +10,8 @@ WWW=		https://github.com/gorakhargosh/watchdog
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
-		${PKGNAMEPREFIX}wheel>=0.42.0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.42.0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
