@@ -15,6 +15,12 @@ Addresses the following security issues:
 - CVE-2023-7024
 - CVE-2024-0224
 - Security bug 1511689
+- CVE-2024-0807
+- CVE-2024-0808
+- Security bug 1519980
+- CVE-2024-1077
+- CVE-2024-1060
+- CVE-2024-1283
 
 From 8ca846140881c9480b18bc9645b38fb9ea565ea3 Mon Sep 17 00:00:00 2001
 From: Ken Rockot <rockot@google.com>
@@ -1918,3 +1924,586 @@ index 2614f4be458..07bc4def106 100644
    Select *pWinSelect;  /* SELECT statement for any window functions */
  };
  
+From f1ef87d506845dd62bb0802e80092d53100222f4 Mon Sep 17 00:00:00 2001
+From: Hongchan Choi <hongchan@chromium.org>
+Date: Fri, 12 Jan 2024 22:57:22 +0000
+Subject: [PATCH] [Backport] CVE-2024-0807: Use after free in WebAudio
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5225523:
+Update rendering state of automatic pull nodes before graph rendering
+
+M114 merge issues:
+  third_party/blink/renderer/modules/webaudio/analyser_handler.cc:
+PullInputs/CheckNumberOfChannelsForInput not present in 114.
+
+In rare cases, the rendering fan out count of automatic pull node
+does not match the main thread fan out count after recreating
+a platform destination followed by disconnection.
+
+This CL forces the update of the rendering state of automatic
+pull nodes before graph rendering to make sure that fan out counts
+are synchronized before executing the audio processing function call.
+
+NOTE: This change makes 2 WPTs fail. The follow-up work is planned
+to address them once this patch is merged.
+
+Bug: 1505080
+Test: Locally confirmed that ASAN doesn't crash on all repro cases.
+Change-Id: I6768cd8bc64525ea9d56a19b9c58439e9cdab9a8
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5131958
+Commit-Queue: Hongchan Choi <hongchan@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1246718}
+(cherry picked from commit f4bffa09b46c21147431179e1e6dd2b27bc35fbc)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537374
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../renderer/modules/webaudio/analyser_node.cc      | 11 +++++++++--
+ .../renderer/modules/webaudio/audio_worklet_node.cc | 13 +++++++++----
+ .../modules/webaudio/audio_worklet_processor.cc     |  6 ++++++
+ .../modules/webaudio/deferred_task_handler.cc       | 10 ++++++++++
+ 4 files changed, 34 insertions(+), 6 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/webaudio/analyser_node.cc b/chromium/third_party/blink/renderer/modules/webaudio/analyser_node.cc
+index cb281f5b728f..9f515af5d9a9 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/analyser_node.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/analyser_node.cc
+@@ -51,9 +51,11 @@ AnalyserHandler::~AnalyserHandler() {
+ }
+ 
+ void AnalyserHandler::Process(uint32_t frames_to_process) {
+-  AudioBus* output_bus = Output(0).Bus();
++  DCHECK(Context()->IsAudioThread());
+ 
+-  if (!IsInitialized()) {
++  AudioBus* output_bus = Output(0).RenderingFanOutCount() > 0 ? Output(0).Bus() : nullptr;
++
++  if (!IsInitialized() && output_bus) {
+     output_bus->Zero();
+     return;
+   }
+@@ -65,6 +67,11 @@ void AnalyserHandler::Process(uint32_t frames_to_process) {
+   // Analyser reflects the current input.
+   analyser_.WriteInput(input_bus.get(), frames_to_process);
+ 
++  // Subsequent steps require `output_bus` to be valid.
++  if (!output_bus) {
++    return;
++  }
++
+   if (!Input(0).IsConnected()) {
+     // No inputs, so clear the output, and propagate the silence hint.
+     output_bus->Zero();
+diff --git a/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_node.cc b/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_node.cc
+index eccf002b6da6..5f18c4cd12d2 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_node.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_node.cc
+@@ -102,11 +102,16 @@ void AudioWorkletHandler::Process(uint32_t frames_to_process) {
+   // We also need to check if the global scope is valid before we request
+   // the rendering in the AudioWorkletGlobalScope.
+   if (processor_ && !processor_->hasErrorOccurred()) {
+-    // If the input is not connected, inform the processor with nullptr.
+-    for (unsigned i = 0; i < NumberOfInputs(); ++i)
++    // If the input or the output is not connected, inform the processor with
++    // nullptr.
++    for (unsigned i = 0; i < NumberOfInputs(); ++i) {
+       inputs_[i] = Input(i).IsConnected() ? Input(i).Bus() : nullptr;
+-    for (unsigned i = 0; i < NumberOfOutputs(); ++i)
+-      outputs_[i] = WrapRefCounted(Output(i).Bus());
++    }
++    for (unsigned i = 0; i < NumberOfOutputs(); ++i) {
++      outputs_[i] = Output(i).RenderingFanOutCount() > 0
++                        ? WrapRefCounted(Output(i).Bus())
++                        : nullptr;
++    }
+ 
+     for (const auto& param_name : param_value_map_.Keys()) {
+       auto* const param_handler = param_handler_map_.at(param_name);
+diff --git a/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_processor.cc b/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_processor.cc
+index e68b1c1b2f6b..84ab72b9774c 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_processor.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/audio_worklet_processor.cc
+@@ -343,6 +343,12 @@ void AudioWorkletProcessor::CopyArrayBuffersToPort(
+ 
+   for (uint32_t bus_index = 0; bus_index < audio_port.size(); ++bus_index) {
+     const scoped_refptr<AudioBus>& audio_bus = audio_port[bus_index];
++
++    // nullptr indicates the output bus is not connected. Do not proceed.
++    if (!audio_bus) {
++      break;
++    }
++
+     for (uint32_t channel_index = 0;
+          channel_index < audio_bus->NumberOfChannels(); ++channel_index) {
+       const v8::ArrayBuffer::Contents& contents =
+diff --git a/chromium/third_party/blink/renderer/modules/webaudio/deferred_task_handler.cc b/chromium/third_party/blink/renderer/modules/webaudio/deferred_task_handler.cc
+index 76aa9acccd30..88e4228caefa 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/deferred_task_handler.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/webaudio/deferred_task_handler.cc
+@@ -169,6 +169,16 @@ void DeferredTaskHandler::UpdateAutomaticPullNodes() {
+     if (try_locker.Locked()) {
+       CopyToVector(automatic_pull_handlers_,
+                    rendering_automatic_pull_handlers_);
++
++      // In rare cases, it is possible for automatic pull nodes' output bus
++      // to become stale. Make sure update their rendering output counts.
++      // crbug.com/1505080.
++      for (auto& handler : rendering_automatic_pull_handlers_) {
++        for (unsigned i = 0; i < handler->NumberOfOutputs(); ++i) {
++          handler->Output(i).UpdateRenderingState();
++        }
++      }
++
+       automatic_pull_handlers_need_updating_ = false;
+     }
+   }
+From 850527b41e56a8b48d99513eddcc75d4efe3c16d Mon Sep 17 00:00:00 2001
+From: Lyra Rebane <rebane2001@gmail.com>
+Date: Mon, 8 Jan 2024 13:39:46 +0000
+Subject: [PATCH] [Backport] CVE-2024-0808: Integer underflow in WebUI
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5177426:
+[M114-LTS] Verify resource order in data pack files
+
+This CL adds a resource order check when loading a data pack or calling DataPack::GetStringPiece to make sure the resources are ordered sequentially in memory.
+
+Bug: 1504936
+Change-Id: Ie3bf1d9dbac937407355935a859a5daa9ce84350
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5059113
+Commit-Queue: Peter Boström <pbos@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1238675}
+(cherry picked from commit c4b2e6246ad0e95eaf0727bb25a2e4969155e989)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537375
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/AUTHORS                              |  1 +
+ chromium/ui/base/resource/data_pack.cc        | 19 ++++++++++++++++++-
+ .../ui/base/resource/data_pack_literal.cc     | 12 ++++++++++++
+ chromium/ui/base/resource/data_pack_literal.h |  2 ++
+ 4 files changed, 33 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/AUTHORS b/chromium/AUTHORS
+index 92f53ac669a0..9d61a61e57b9 100644
+--- src/3rdparty/chromium/AUTHORS
++++ src/3rdparty/chromium/AUTHORS
+@@ -631,6 +631,7 @@ Luke Inman-Semerau <luke.semerau@gmail.com>
+ Luke Seunghoe Gu <gulukesh@gmail.com>
+ Luke Zarko <lukezarko@gmail.com>
+ Luoxi Pan <l.panpax@gmail.com>
++Lyra Rebane <rebane2001@gmail.com>
+ Maarten Lankhorst <m.b.lankhorst@gmail.com>
+ Magnus Danielsson <fuzzac@gmail.com>
+ Mahesh Kulkarni <mahesh.kk@samsung.com>
+diff --git a/chromium/ui/base/resource/data_pack.cc b/chromium/ui/base/resource/data_pack.cc
+index 09513e6aed24..4e522c9ad758 100644
+--- src/3rdparty/chromium/ui/base/resource/data_pack.cc
++++ src/3rdparty/chromium/ui/base/resource/data_pack.cc
+@@ -400,7 +400,16 @@ bool DataPack::LoadImpl(std::unique_ptr<DataPack::DataSource> data_source) {
+     }
+   }
+ 
+-  // 3) Verify the aliases are within the appropriate bounds.
++  // 3) Verify the entries are ordered correctly.
++  for (size_t i = 0; i < resource_count_; ++i) {
++    if (resource_table_[i].file_offset > resource_table_[i + 1].file_offset) {
++      LOG(ERROR) << "Data pack file corruption: "
++                 << "Entry #" << i + 1 << " before Entry #" << i << ".";
++      return false;
++    }
++  }
++
++  // 4) Verify the aliases are within the appropriate bounds.
+   for (size_t i = 0; i < alias_count_; ++i) {
+     if (alias_table_[i].entry_index >= resource_count_) {
+       LOG(ERROR) << "Data pack file corruption: "
+@@ -461,6 +470,14 @@ bool DataPack::GetStringPiece(uint16_t resource_id,
+                << "file modified?";
+     return false;
+   }
++  if (target->file_offset > next_entry->file_offset) {
++    size_t entry_index = target - resource_table_;
++    size_t next_index = next_entry - resource_table_;
++    LOG(ERROR) << "Entry #" << next_index << " in data pack is before Entry #"
++               << entry_index << ". This should have been caught when loading. "
++               << "Was the file modified?";
++    return false;
++  }
+ 
+   MaybePrintResourceId(resource_id);
+   size_t length = next_entry->file_offset - target->file_offset;
+diff --git a/chromium/ui/base/resource/data_pack_literal.cc b/chromium/ui/base/resource/data_pack_literal.cc
+index f6669ed82447..70e225b6e84e 100644
+--- src/3rdparty/chromium/ui/base/resource/data_pack_literal.cc
++++ src/3rdparty/chromium/ui/base/resource/data_pack_literal.cc
+@@ -91,6 +91,18 @@ const char kSampleCorruptPakContents[] = {
+ 
+ const size_t kSampleCorruptPakSize = sizeof(kSampleCorruptPakContents);
+ 
++const uint8_t kSampleMisorderedPakContents[] = {
++    0x05, 0x00, 0x00, 0x00,              // version
++    0x01, 0x00, 0x00, 0x00,              // encoding + padding
++    0x02, 0x00, 0x00, 0x00,              // num_resources, num_aliases
++    0x06, 0x00, 0x2a, 0x00, 0x00, 0x00,  // index entry 6 (wrong order)
++    0x04, 0x00, 0x1e, 0x00, 0x00, 0x00,  // index entry 4
++    0x00, 0x00, 0x36, 0x00, 0x00, 0x00,  // extra entry for the size of last
++    't',  'h',  'i',  's',  ' ',  'i',  's', ' ', 'i', 'd', ' ', '4',
++    't',  'h',  'i',  's',  ' ',  'i',  's', ' ', 'i', 'd', ' ', '6'};
++
++const size_t kSampleMisorderedPakSize = sizeof(kSampleMisorderedPakContents);
++
+ const char kSamplePakContents2x[] = {
+     0x04, 0x00, 0x00, 0x00,              // header(version
+     0x01, 0x00, 0x00, 0x00,              //        no. entries
+diff --git a/chromium/ui/base/resource/data_pack_literal.h b/chromium/ui/base/resource/data_pack_literal.h
+index 83a8dc04c141..a7fcf2bf85c7 100644
+--- src/3rdparty/chromium/ui/base/resource/data_pack_literal.h
++++ src/3rdparty/chromium/ui/base/resource/data_pack_literal.h
+@@ -19,6 +19,8 @@ extern const char kEmptyPakContents[];
+ extern const size_t kEmptyPakSize;
+ extern const char kSampleCorruptPakContents[];
+ extern const size_t kSampleCorruptPakSize;
++extern const uint8_t kSampleMisorderedPakContents[];
++extern const size_t kSampleMisorderedPakSize;
+ 
+ }  // namespace ui
+ 
+From 629a490cede4673cec29addd4629c432319a3b6f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Peter=20Bostr=C3=B6m?= <pbos@chromium.org>
+Date: Tue, 23 Jan 2024 01:06:06 +0000
+Subject: [PATCH] [Backport] Security bug 1519980
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5226127:
+Speculatively fix race in mojo ShutDownOnIOThread
+
+This acquires `write_lock_` before resetting handles used by WriteNoLock
+(which is called under the same lock in another thread). We also set
+`reject_writes_` to prevent future write attempts after shutdown. That
+seems strictly more correct.
+
+We also acquire `fds_to_close_lock_` before clearing the FDs.
+
+I was unable to repro locally as content_browsertests just times out
+in my local setup without reporting anything interesting. This seems
+strictly more correct though.
+
+Bug: 1519980
+Change-Id: I96279936ca908ecb98eddd381df20d61597cba43
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5226127
+Auto-Submit: Peter Boström <pbos@chromium.org>
+Reviewed-by: Ken Rockot <rockot@google.com>
+Commit-Queue: Ken Rockot <rockot@google.com>
+Commit-Queue: Peter Boström <pbos@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1250580}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537376
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/mojo/core/channel_posix.cc | 27 ++++++++++++++++-----------
+ 1 file changed, 16 insertions(+), 11 deletions(-)
+
+diff --git a/chromium/mojo/core/channel_posix.cc b/chromium/mojo/core/channel_posix.cc
+index d7d9d6cfee15..e17aa8d82a91 100644
+--- src/3rdparty/chromium/mojo/core/channel_posix.cc
++++ src/3rdparty/chromium/mojo/core/channel_posix.cc
+@@ -242,18 +242,23 @@ class ChannelPosix : public Channel,
+   void ShutDownOnIOThread() {
+     base::CurrentThread::Get()->RemoveDestructionObserver(this);
+ 
+-    read_watcher_.reset();
+-    write_watcher_.reset();
+-    if (leak_handle_) {
+-      ignore_result(socket_.release());
+-      server_.TakePlatformHandle().release();
+-    } else {
+-      socket_.reset();
+-      ignore_result(server_.TakePlatformHandle());
++    {
++      base::AutoLock lock(write_lock_);
++      reject_writes_ = true;
++      read_watcher_.reset();
++      write_watcher_.reset();
++      if (leak_handle_) {
++        std::ignore = socket_.release();
++        server_.TakePlatformHandle().release();
++      } else {
++        socket_.reset();
++        std::ignore = server_.TakePlatformHandle();
++      }
++ #if defined(OS_IOS)
++      base::AutoLock fd_lock(fds_to_close_lock_);
++      fds_to_close_.clear();
++ #endif
+     }
+-#if defined(OS_IOS)
+-    fds_to_close_.clear();
+-#endif
+ 
+     // May destroy the |this| if it was the last reference.
+     self_ = nullptr;
+From 024962f9456bbb5823a877441e92ca3af30279a6 Mon Sep 17 00:00:00 2001
+From: Tsuyoshi Horo <horo@chromium.org>
+Date: Tue, 9 Jan 2024 08:40:00 +0000
+Subject: [PATCH] [Backport] CVE-2024-1077: Use after free in Network
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5179746:
+Fix UAF in SourceStreamToDataPipe
+
+SourceStreamToDataPipe::ReadMore() is passing a callback with
+Unretained(this) to net::SourceStream::Read(). But this callback may be
+called even after the SourceStream is destructed. This is causing UAF
+issue (crbug.com/1511085).
+
+To solve this problem, this CL changes ReadMore() method to pass a
+callback with a weak ptr of this.
+
+Bug: 1511085
+Change-Id: Idd4e34ff300ff5db2de1de7b303841c7db3a964a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5179746
+Reviewed-by: Adam Rice <ricea@chromium.org>
+Commit-Queue: Tsuyoshi Horo <horo@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1244526}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537377
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../network/public/cpp/source_stream_to_data_pipe.cc        | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc b/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc
+index d6ade7b0ec52..615804ad8d29 100644
+--- src/3rdparty/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc
++++ src/3rdparty/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc
+@@ -53,9 +53,9 @@ void SourceStreamToDataPipe::ReadMore() {
+ 
+   scoped_refptr<net::IOBuffer> buffer(
+       new network::NetToMojoIOBuffer(pending_write_.get()));
+-  int result = source_->Read(
+-      buffer.get(), base::checked_cast<int>(num_bytes),
+-      base::BindOnce(&SourceStreamToDataPipe::DidRead, base::Unretained(this)));
++  int result = source_->Read(buffer.get(), base::checked_cast<int>(num_bytes),
++                             base::BindOnce(&SourceStreamToDataPipe::DidRead,
++                                            weak_factory_.GetWeakPtr()));
+ 
+   if (result != net::ERR_IO_PENDING)
+     DidRead(result);
+From 06e89516b94241e088f6d350bc3a113e726355cd Mon Sep 17 00:00:00 2001
+From: Jean-Philippe Gravel <jpgravel@chromium.org>
+Date: Wed, 17 Jan 2024 17:45:45 +0000
+Subject: [PATCH] [Backport] CVE-2024-1060: Use after free in Canvas
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5198419:
+Fix use-after-free in DrawTextInternal
+
+DrawTextInternal was calling GetOrCreatePaintCanvas multiple times,
+once at the start of the function, once inside of the
+BaseRenderingContext2DAutoRestoreSkCanvas helper class and once in the
+Draw call. GetOrCreatePaintCanvas destroys the canvas resource provider
+if the GPU context is lost. If this happens on the second call to
+GetOrCreatePaintCanvas, destroying the resource provider will
+invalidate the cc::PaintCanvas returned by the first call to
+GetOrCreatePaintCanvas.
+
+The GPU process can technically crash at any point during the renderer
+process execution (perhaps because of something another renderer
+process did). We therefore have to assume that any call to
+GetOrCreatePaintCanvas can invalidate previously returned
+cc::PaintCanvas.
+
+Change-Id: Ifa77735ab1b2b55b3d494f886b8566299937f6fe
+Fixed: 1511567
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5198419
+Reviewed-by: Fernando Serboncini <fserb@chromium.org>
+Commit-Queue: Jean-Philippe Gravel <jpgravel@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1248204}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537378
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../canvas2d/canvas_rendering_context_2d.cc   | 50 ++++++-------------
+ .../canvas2d/canvas_rendering_context_2d.h    |  2 -
+ 2 files changed, 16 insertions(+), 36 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc b/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc
+index ade14e0102ae..fe8c4cd277ce 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc
+@@ -86,35 +86,6 @@ static bool ContextLostRestoredEventsEnabled() {
+   return RuntimeEnabledFeatures::Canvas2dContextLostRestoredEnabled();
+ }
+ 
+-// Drawing methods need to use this instead of SkAutoCanvasRestore in case
+-// overdraw detection substitutes the recording canvas (to discard overdrawn
+-// draw calls).
+-class CanvasRenderingContext2DAutoRestoreSkCanvas {
+-  STACK_ALLOCATED();
+-
+- public:
+-  explicit CanvasRenderingContext2DAutoRestoreSkCanvas(
+-      CanvasRenderingContext2D* context)
+-      : context_(context), save_count_(0) {
+-    DCHECK(context_);
+-    cc::PaintCanvas* c = context_->GetOrCreatePaintCanvas();
+-    if (c) {
+-      save_count_ = c->getSaveCount();
+-    }
+-  }
+-
+-  ~CanvasRenderingContext2DAutoRestoreSkCanvas() {
+-    cc::PaintCanvas* c = context_->GetOrCreatePaintCanvas();
+-    if (c)
+-      c->restoreToCount(save_count_);
+-    context_->ValidateStateStack();
+-  }
+-
+- private:
+-  CanvasRenderingContext2D* context_;
+-  int save_count_;
+-};
+-
+ CanvasRenderingContext2D::CanvasRenderingContext2D(
+     HTMLCanvasElement* canvas,
+     const CanvasContextCreationAttributesCore& attrs)
+@@ -850,9 +821,11 @@ void CanvasRenderingContext2D::DrawTextInternal(
+   // to 0, for example), so update style before grabbing the PaintCanvas.
+   canvas()->GetDocument().UpdateStyleAndLayoutTreeForNode(canvas());
+ 
+-  cc::PaintCanvas* c = GetOrCreatePaintCanvas();
+-  if (!c)
++  // Abort if we don't have a paint canvas (e.g. the context was lost).
++  cc::PaintCanvas* paint_canvas = GetOrCreatePaintCanvas();
++  if (!paint_canvas) {
+     return;
++  }
+ 
+   if (!std::isfinite(x) || !std::isfinite(y))
+     return;
+@@ -920,14 +893,13 @@ void CanvasRenderingContext2D::DrawTextInternal(
+   if (paint_type == CanvasRenderingContext2DState::kStrokePaintType)
+     InflateStrokeRect(bounds);
+ 
+-  CanvasRenderingContext2DAutoRestoreSkCanvas state_restorer(this);
+   if (use_max_width) {
+-    c->save();
++    paint_canvas->save();
+     // We draw when fontWidth is 0 so compositing operations (eg, a "copy" op)
+     // still work. As the width of canvas is scaled, so text can be scaled to
+     // match the given maxwidth, update text location so it appears on desired
+     // place.
+-    c->scale(clampTo<float>(width / font_width), 1);
++    paint_canvas->scale(clampTo<float>(width / font_width), 1);
+     location.SetX(location.X() / clampTo<float>(width / font_width));
+   }
+ 
+@@ -942,6 +914,16 @@ void CanvasRenderingContext2D::DrawTextInternal(
+       [](const SkIRect& rect)  // overdraw test lambda
+       { return false; },
+       bounds, paint_type, CanvasRenderingContext2DState::kNoImage);
++
++  if (use_max_width) {
++    // Cannot use `paint_canvas` in case recording canvas was substituted or
++    // destroyed during draw call.
++    cc::PaintCanvas* c = GetPaintCanvas();
++    if (c) {
++      c->restore();
++    }
++  }
++  ValidateStateStack();
+ }
+ 
+ const Font& CanvasRenderingContext2D::AccessFont() {
+diff --git a/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h b/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h
+index ac10ae4389a8..b0d09f182a7d 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h
+@@ -236,8 +236,6 @@ class MODULES_EXPORT CanvasRenderingContext2D final
+   void WillOverwriteCanvas() override;
+ 
+  private:
+-  friend class CanvasRenderingContext2DAutoRestoreSkCanvas;
+-
+   void DispatchContextLostEvent(TimerBase*);
+   void DispatchContextRestoredEvent(TimerBase*);
+   void TryRestoreContextEvent(TimerBase*);
+From 6f0832285560ce72dfe1403a1c2d7a53f6bf7f55 Mon Sep 17 00:00:00 2001
+From: John Stiles <johnstiles@google.com>
+Date: Mon, 29 Jan 2024 23:50:14 +0000
+Subject: [PATCH] [Backport] CVE-2024-1283: Heap buffer overflow in Skia
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5241305:
+Fix a crash when a BMP image contains an unnecessary EOF code.
+
+Previously, this would try to perform color correction on a row
+one past the end of the image data.
+
+Bug: 1521893
+Change-Id: I425437005b9ef400138556705616095857d2cf0d
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5241305
+Auto-Submit: John Stiles <johnstiles@google.com>
+Commit-Queue: John Stiles <johnstiles@google.com>
+Reviewed-by: Peter Kasting <pkasting@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1253633}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/538168
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../image-decoders/bmp/bmp_image_reader.cc     | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc b/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc
+index 562223397030..662e66cab884 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc
+@@ -827,8 +827,11 @@ BMPImageReader::ProcessingResult BMPImageReader::ProcessRLEData() {
+     // the image.
+     const uint8_t count = ReadUint8(0);
+     const uint8_t code = ReadUint8(1);
+-    if ((count || (code != 1)) && PastEndOfImage(0))
++    const bool is_past_end_of_image = PastEndOfImage(0);
++    if ((count || (code != 1)) && is_past_end_of_image) {
+       return kFailure;
++    }
++
+ 
+     // Decode.
+     if (!count) {
+@@ -849,7 +852,9 @@ BMPImageReader::ProcessingResult BMPImageReader::ProcessRLEData() {
+               (is_top_down_ ? (coord_.Y() < (parent_->Size().Height() - 1))
+                             : (coord_.Y() > 0)))
+             buffer_->SetHasAlpha(true);
+-          ColorCorrectCurrentRow();
++          if (!is_past_end_of_image) {
++            ColorCorrectCurrentRow();
++          }
+           // There's no need to move |coord_| here to trigger the caller
+           // to call SetPixelsChanged().  If the only thing that's changed
+           // is the alpha state, that will be properly written into the
+@@ -1061,6 +1066,13 @@ void BMPImageReader::ColorCorrectCurrentRow() {
+   const ColorProfileTransform* const transform = parent_->ColorTransform();
+   if (!transform)
+     return;
++  int decoder_width = parent_->Size().Width();
++  // Enforce 0 ≤ current row < bitmap height.
++  CHECK_GE(coord_.Y(), 0);
++  CHECK_LT(coord_.Y(), buffer_->Bitmap().height());
++  // Enforce decoder width == bitmap width exactly. (The bitmap rowbytes might
++  // add a bit of padding, but we are only converting one row at a time.)
++  CHECK_EQ(decoder_width, buffer_->Bitmap().width());
+   ImageFrame::PixelData* const row = buffer_->GetAddr(0, coord_.Y());
+   const skcms_PixelFormat fmt = XformColorFormat();
+   const skcms_AlphaFormat alpha =
+@@ -1069,7 +1081,7 @@ void BMPImageReader::ColorCorrectCurrentRow() {
+           : skcms_AlphaFormat_Unpremul;
+   const bool success =
+       skcms_Transform(row, fmt, alpha, transform->SrcProfile(), row, fmt, alpha,
+-                      transform->DstProfile(), parent_->Size().Width());
++                      transform->DstProfile(), decoder_width);
+   DCHECK(success);
+   buffer_->SetPixelsChanged(true);
+ }
