@@ -47,7 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,'/',get_option('prefix')," \
 		-e "/output.*json/s/'[^']*/&.sample/" \
 		${WRKSRC}/src/meson.build
-# Let @sample handle default files under etc/
 	@${REINPLACE_CMD} -e "s,'/',get_option('prefix')," \
 		-e "/output.*css/s/'[^']*/&.sample/" \
 		${WRKSRC}/data/meson.build
