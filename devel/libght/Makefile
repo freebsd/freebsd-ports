@@ -11,6 +11,9 @@ WWW=		https://github.com/pramsey/libght
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Depends on expired devel/liblas
+EXPIRATION_DATE=2024-03-31
+
 LIB_DEPENDS=	libproj.so:graphics/proj \
 		liblas.so:devel/liblas \
 		libcunit.so:devel/cunit
