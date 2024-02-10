@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		compiler:c11 gnome localbase:ldflags meson pkgconfig \
+USES=		compiler:c11 gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
