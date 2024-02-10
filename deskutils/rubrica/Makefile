@@ -12,6 +12,9 @@ WWW=		https://www.nicolafragale.org/rubrica/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream WWW redirects to a different site not related to the application
+EXPIRATION_DATE=	2024-03-11
+
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
