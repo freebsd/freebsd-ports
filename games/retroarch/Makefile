@@ -1,101 +1,100 @@
 PORTNAME=	RetroArch
-DISTVERSION=	1.16.0.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.17.0
 CATEGORIES=	games emulators
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cross-platform entertainment system based on libretro API
 WWW=		https://github.com/libretro/RetroArch
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
-		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
+		vulkan-loader>0:graphics/vulkan-loader
+LIB_DEPENDS=	libass.so:multimedia/libass \
 		libdrm.so:graphics/libdrm \
-		libass.so:multimedia/libass \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfribidi.so:converters/fribidi \
-		libfontconfig.so:x11-fonts/fontconfig
+		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
 USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl
 CPE_VENDOR=	libretro
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
+
 SHEBANG_FILES=	libretro-common/glsym/glgen.py libretro-common/glsym/rglgen.py \
 		tools/cg2glsl.py tools/vulkan_loader_generator.py
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-threads --disable-discord \
-		--sysconfdir=${LOCALBASE}/etc
-CONFIGURE_ENV+=	MAN_DIR=${PREFIX}/share/man
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--disable-discord \
+			--enable-threads \
+			--sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ENV+=		MAN_DIR=${PREFIX}/share/man
+
 LDFLAGS_i386=	-Wl,-znotext
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	CACA FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL V4L FREETYPE UDEV QT X11 DOCS
-OPTIONS_DEFINE_amd64=	WAYLAND	# svgalib is x86 only
+OPTIONS_DEFINE=		ALSA CACA DOCS FFMPEG FREETYPE JACK OPENAL OPENGL OSS \
+			PULSEAUDIO QT SDL UDEV V4L X11
+OPTIONS_DEFINE_amd64=	WAYLAND # svgalib is x86 only
 OPTIONS_DEFINE_i386=	WAYLAND
-OPTIONS_DEFAULT=FFMPEG OSS SDL OPENGL OPENAL V4L FREETYPE UDEV QT X11
+OPTIONS_DEFAULT=	FFMPEG FREETYPE OPENAL OPENGL OSS QT SDL UDEV V4L X11
 OPTIONS_DEFAULT_amd64=	WAYLAND
 OPTIONS_DEFAULT_i386=	WAYLAND
+
 FFMPEG_DESC=	On-the-fly recording of gameplay with libavcodec
-WAYLAND_DESC=	Wayland display support
-UDEV_DESC=	udev device hotplug support
 QT_DESC=	Qt based desktop-style GUI
+UDEV_DESC=	udev device hotplug support
+WAYLAND_DESC=	Wayland display support
 
-CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
-CACA_CONFIGURE_ENABLE=	caca
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-FFMPEG_CONFIGURE_ENABLE=ffmpeg
-OSS_CONFIGURE_ENABLE=	oss
-JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_ENABLE=	jack
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulse
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CONFIGURE_ENABLE=	alsa
-SDL_USES=		sdl
-SDL_USE=		SDL=sdl2 image2
-SDL_CONFIGURE_ON=	--disable-sdl --enable-sdl2
-SDL_CONFIGURE_OFF=	--disable-sdl --disable-sdl2
-OPENGL_USES=		gl
-OPENGL_USE=		GL=gl,egl,gbm
-OPENGL_CONFIGURE_ENABLE=opengl
-OPENAL_USES=		openal:soft
-OPENAL_CONFIGURE_ENABLE=al
-V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
-V4L_CONFIGURE_ENABLE=	v4l2
-FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
+ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=		alsa
+CACA_LIB_DEPENDS=		libcaca.so:graphics/libcaca
+CACA_CONFIGURE_ENABLE=		caca
+FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
+FFMPEG_CONFIGURE_ENABLE=	ffmpeg
+FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
-WAYLAND_CATEGORIES=	wayland
-WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-			${LOCALBASE}/include/linux/kd.h:graphics/svgalib
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+JACK_LIB_DEPENDS=		libjack.so:audio/jack
+JACK_CONFIGURE_ENABLE=		jack
+OPENAL_USES=			openal:soft
+OPENAL_CONFIGURE_ENABLE=	al
+OPENGL_USES=			gl
+OPENGL_USE=			GL=egl,gbm,gl
+OPENGL_CONFIGURE_ENABLE=	opengl
+OSS_CONFIGURE_ENABLE=		oss
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+QT_USES=			qt:5
+QT_USE=				QT=concurrent,core,gui,network,widgets
+QT_CONFIGURE_ENABLE=		qt
+SDL_USES=			sdl
+SDL_USE=			image2 \
+				SDL=sdl2
+SDL_CONFIGURE_ON=		--disable-sdl \
+				--enable-sdl2
+SDL_CONFIGURE_OFF=		--disable-sdl \
+				--disable-sdl2
+UDEV_LIB_DEPENDS=		libepoll-shim.so:devel/libepoll-shim \
+				libudev.so:devel/libudev-devd
+UDEV_CONFIGURE_ENABLE=		udev
+UDEV_CFLAGS=			-I${LOCALBASE}/include/libepoll-shim
+UDEV_LDFLAGS=			-L${LOCALBASE}/lib -lepoll-shim
+V4L_BUILD_DEPENDS=		v4l_compat>0:multimedia/v4l_compat
+V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l
+V4L_CONFIGURE_ENABLE=		v4l2
+WAYLAND_CATEGORIES=		wayland
+WAYLAND_BUILD_DEPENDS=		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+				${LOCALBASE}/include/linux/kd.h:graphics/svgalib
+WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 WAYLAND_CONFIGURE_ENABLE=	wayland
-UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
-			libepoll-shim.so:devel/libepoll-shim
-UDEV_CFLAGS=		-I${LOCALBASE}/include/libepoll-shim
-UDEV_LDFLAGS=		-L${LOCALBASE}/lib -lepoll-shim
-UDEV_CONFIGURE_ENABLE=	udev
-QT_USES=		qt:5
-QT_USE=			QT=core,gui,widgets,concurrent,network
-QT_CONFIGURE_ENABLE=	qt
-X11_USES=		xorg
-X11_USE=		XORG=x11,xcb,xext,xinerama,xv,xxf86vm,xrandr
-X11_CONFIGURE_ENABLE=	x11
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/camera/drivers/video4linux2.c \
-		${WRKSRC}/libretro-common/libco/armeabi.c \
-		${WRKSRC}/memory/wii/mem2_manager.c
-	@${REINPLACE_CMD} -e 's|<asm/types.h>|<sys/types.h>|' \
-		${WRKSRC}/camera/drivers/video4linux2.c
+X11_USES=			xorg
+X11_USE=			XORG=x11,xcb,xext,xinerama,xrandr,xv,xxf86vm
+X11_CONFIGURE_ENABLE=		x11
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/retroarch
