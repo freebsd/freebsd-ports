@@ -1,6 +1,6 @@
 PORTNAME=	grass
 PORTVERSION=	7.8.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -85,12 +85,12 @@ PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 		VERSION="${PORTVERSION}" VERS="${PORTVERSION:C/([0-9]+).([0-9]+)(.*)/\1.\2/}" \
 		VER="${VER}" MAJVER="${PKGNAMESUFFIX}"
 
-OPTIONS_DEFINE=		LAS NETCDF NLS PDAL ZSTD
+OPTIONS_DEFINE=		NETCDF NLS PDAL ZSTD
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL ODBC PGSQL SQLITE
 #OPTIONS_SINGLE=		BLAS
 #OPTIONS_SINGLE_BLAS=	ATLAS NETLIB GOTOBLAS OPENBLAS
-OPTIONS_DEFAULT=	LAS NETCDF NLS PDAL PGSQL SQLITE ZSTD
+OPTIONS_DEFAULT=	NETCDF NLS PDAL PGSQL SQLITE ZSTD
 OPTIONS_SUB=		yes
 
 # BLAS/LAPACK: Only netlib compile the maxmimum number of modules
@@ -100,14 +100,8 @@ OPTIONS_SUB=		yes
 #NETLIB_USES=		blaslapack
 #GOTOBLAS_USES=		blaslapack:gotoblas
 #OPENBLAS_USES=		blaslapack:openblas
-LAS_DESC=		Enable LiDAR modules
 PDAL_DESC=		Enable points cloud data modules
 DB_DESC=		Database support
-LAS_CONFIGURE_ON=	--with-liblas=yes
-LAS_LIB_DEPENDS=	liblas.so:devel/liblas \
-			libboost_program_options.so:devel/boost-libs \
-			libboost_thread.so:devel/boost-libs \
-			libgeotiff.so:graphics/libgeotiff
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
