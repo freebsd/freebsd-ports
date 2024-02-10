@@ -1,12 +1,12 @@
 PORTNAME=	bglibs
 PORTVERSION=	2.04
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
-		http://untroubled.org/${PORTNAME}/
+MASTER_SITES=	https://untroubled.org/${PORTNAME}/archive/ \
+		https://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsdport@m.jl.ly
 COMMENT=	One stop library package by Bruce Guenter
 WWW=		https://untroubled.org/bglibs/
 
