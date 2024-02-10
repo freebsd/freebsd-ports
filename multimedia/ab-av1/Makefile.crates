@@ -1,7 +1,7 @@
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		anstream-0.6.11 \
-		anstyle-1.0.4 \
+		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
@@ -17,11 +17,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.5.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		clap-4.4.18 \
-		clap_builder-4.4.18 \
-		clap_complete-4.4.8 \
-		clap_derive-4.4.7 \
-		clap_lex-0.6.0 \
+		clap-4.5.0 \
+		clap_builder-4.5.0 \
+		clap_complete-4.5.0 \
+		clap_derive-4.5.0 \
+		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.8 \
 		constant_time_eq-0.3.0 \
@@ -49,21 +49,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.12 \
 		gimli-0.28.1 \
 		heck-0.4.1 \
-		hermit-abi-0.3.4 \
+		hermit-abi-0.3.5 \
 		humantime-2.1.0 \
 		indicatif-0.17.7 \
 		infer-0.15.0 \
 		instant-0.1.12 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libredox-0.0.1 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		memchr-2.7.1 \
-		miniz_oxide-0.7.1 \
+		miniz_oxide-0.7.2 \
 		mio-0.8.10 \
+		num-conv-0.1.0 \
 		num_cpus-1.16.0 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
@@ -74,32 +75,32 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-utils-0.1.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
-		proc-macro2-1.0.76 \
+		proc-macro2-1.0.78 \
 		quote-1.0.35 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.30 \
+		rustix-0.38.31 \
 		ryu-1.0.16 \
 		scopeguard-1.2.0 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		serde_json-1.0.113 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.1 \
 		slab-0.4.9 \
 		sled-0.34.7 \
 		smallvec-1.13.1 \
-		strsim-0.10.0 \
+		strsim-0.11.0 \
 		syn-2.0.48 \
 		terminal_size-0.3.0 \
 		thiserror-1.0.56 \
 		thiserror-impl-1.0.56 \
-		time-0.3.31 \
+		time-0.3.34 \
 		time-core-0.1.2 \
-		time-macros-0.2.16 \
-		tokio-1.35.1 \
+		time-macros-0.2.17 \
+		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-process-stream-0.4.0 \
 		tokio-stream-0.1.14 \
