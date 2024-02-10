@@ -1,6 +1,5 @@
 PORTNAME=	netperfmeter
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.6
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.uni-due.de/~be0001/netperfmeter/download/
 
