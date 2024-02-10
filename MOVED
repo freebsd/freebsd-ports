@@ -2986,3 +2986,4 @@ audio/stmp||2024-02-01|Has expired: Broken for more than a year
 audio/baudline||2024-02-01|Has expired: upstream has gone to subscription model and no longer distributes this version. Try comms/Inspectrum or audio/xanalyser instead
 x11-themes/kde-icons-noia||2024-02-06|Has expired: Unfetchable and upstream WWW not found
 databases/pg_vector|databases/pgvector|2024-02-06|Renamed to match upstream
+graphics/rayshade||2024-02-10|Has expired: Defunct upstream with last release in 1992

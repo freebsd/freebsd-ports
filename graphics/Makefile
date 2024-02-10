@@ -1021,7 +1021,6 @@
     SUBDIR += raster3d
     SUBDIR += rawstudio
     SUBDIR += rawtherapee
-    SUBDIR += rayshade
     SUBDIR += reactphysics3d
     SUBDIR += realesrgan-ncnn-vulkan
     SUBDIR += reallyslick
