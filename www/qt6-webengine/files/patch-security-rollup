@@ -30,6 +30,12 @@ Addresses the following security issues:
 - Security bug 1511389
 - CVE-2024-0810
 - Security bug 1407197
+- Security bug 1519980
+- CVE-2024-1060
+- CVE-2024-1077
+- CVE-2024-1059
+- CVE-2024-1283
+- CVE-2024-1284
 
 From 669506a53474e3d7637666d3c53f6101fb94d96f Mon Sep 17 00:00:00 2001
 From: Nidhi Jaju <nidhijaju@chromium.org>
@@ -4437,3 +4443,537 @@ index d8b3ad83bbb..3087f9c3e0b 100644
      }
    }
  
+From f2480155fcf5f753d60b818986d136fcd2309edc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Peter=20Bostr=C3=B6m?= <pbos@chromium.org>
+Date: Tue, 23 Jan 2024 01:06:06 +0000
+Subject: [PATCH] [Backport] Security bug 1519980
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5226127:
+Speculatively fix race in mojo ShutDownOnIOThread
+
+This acquires `write_lock_` before resetting handles used by WriteNoLock
+(which is called under the same lock in another thread). We also set
+`reject_writes_` to prevent future write attempts after shutdown. That
+seems strictly more correct.
+
+We also acquire `fds_to_close_lock_` before clearing the FDs.
+
+I was unable to repro locally as content_browsertests just times out
+in my local setup without reporting anything interesting. This seems
+strictly more correct though.
+
+Bug: 1519980
+Change-Id: I96279936ca908ecb98eddd381df20d61597cba43
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5226127
+Auto-Submit: Peter Boström <pbos@chromium.org>
+Reviewed-by: Ken Rockot <rockot@google.com>
+Commit-Queue: Ken Rockot <rockot@google.com>
+Commit-Queue: Peter Boström <pbos@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1250580}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537138
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/mojo/core/channel_posix.cc | 25 +++++++++++++++----------
+ 1 file changed, 15 insertions(+), 10 deletions(-)
+
+diff --git a/chromium/mojo/core/channel_posix.cc b/chromium/mojo/core/channel_posix.cc
+index f57c9b3cb5f..faf728fdd3d 100644
+--- src/3rdparty/chromium/mojo/core/channel_posix.cc
++++ src/3rdparty/chromium/mojo/core/channel_posix.cc
+@@ -264,18 +264,23 @@ void ChannelPosix::WaitForWriteOnIOThreadNoLock() {
+ void ChannelPosix::ShutDownOnIOThread() {
+   base::CurrentThread::Get()->RemoveDestructionObserver(this);
+ 
+-  read_watcher_.reset();
+-  write_watcher_.reset();
+-  if (leak_handle_) {
+-    std::ignore = socket_.release();
+-    server_.TakePlatformHandle().release();
+-  } else {
+-    socket_.reset();
+-    std::ignore = server_.TakePlatformHandle();
+-  }
++  {
++    base::AutoLock lock(write_lock_);
++    reject_writes_ = true;
++    read_watcher_.reset();
++    write_watcher_.reset();
++    if (leak_handle_) {
++      std::ignore = socket_.release();
++      server_.TakePlatformHandle().release();
++    } else {
++      socket_.reset();
++      std::ignore = server_.TakePlatformHandle();
++    }
+ #if BUILDFLAG(IS_IOS)
+-  fds_to_close_.clear();
++    base::AutoLock fd_lock(fds_to_close_lock_);
++    fds_to_close_.clear();
+ #endif
++  }
+ 
+   // May destroy the |this| if it was the last reference.
+   self_ = nullptr;
+From d9b4b11c104ec5112900dad72af8ff058c3f069b Mon Sep 17 00:00:00 2001
+From: Jean-Philippe Gravel <jpgravel@chromium.org>
+Date: Wed, 17 Jan 2024 17:45:45 +0000
+Subject: [PATCH] [Backport] CVE-2024-1060: Use after free in Canvas
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5198419:
+Fix use-after-free in DrawTextInternal
+
+DrawTextInternal was calling GetOrCreatePaintCanvas multiple times,
+once at the start of the function, once inside of the
+BaseRenderingContext2DAutoRestoreSkCanvas helper class and once in the
+Draw call. GetOrCreatePaintCanvas destroys the canvas resource provider
+if the GPU context is lost. If this happens on the second call to
+GetOrCreatePaintCanvas, destroying the resource provider will
+invalidate the cc::PaintCanvas returned by the first call to
+GetOrCreatePaintCanvas.
+
+The GPU process can technically crash at any point during the renderer
+process execution (perhaps because of something another renderer
+process did). We therefore have to assume that any call to
+GetOrCreatePaintCanvas can invalidate previously returned
+cc::PaintCanvas.
+
+Change-Id: Ifa77735ab1b2b55b3d494f886b8566299937f6fe
+Fixed: 1511567
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5198419
+Reviewed-by: Fernando Serboncini <fserb@chromium.org>
+Commit-Queue: Jean-Philippe Gravel <jpgravel@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1248204}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537140
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../canvas2d/canvas_rendering_context_2d.cc   | 50 ++++++-------------
+ .../canvas2d/canvas_rendering_context_2d.h    |  2 -
+ 2 files changed, 16 insertions(+), 36 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc b/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc
+index 01720502d6a..adab5144f93 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc
+@@ -102,35 +102,6 @@ static mojom::blink::ColorScheme GetColorSchemeFromCanvas(
+   return mojom::blink::ColorScheme::kLight;
+ }
+ 
+-// Drawing methods need to use this instead of SkAutoCanvasRestore in case
+-// overdraw detection substitutes the recording canvas (to discard overdrawn
+-// draw calls).
+-class CanvasRenderingContext2DAutoRestoreSkCanvas {
+-  STACK_ALLOCATED();
+-
+- public:
+-  explicit CanvasRenderingContext2DAutoRestoreSkCanvas(
+-      CanvasRenderingContext2D* context)
+-      : context_(context) {
+-    DCHECK(context_);
+-    cc::PaintCanvas* c = context_->GetOrCreatePaintCanvas();
+-    if (c) {
+-      save_count_ = c->getSaveCount();
+-    }
+-  }
+-
+-  ~CanvasRenderingContext2DAutoRestoreSkCanvas() {
+-    cc::PaintCanvas* c = context_->GetOrCreatePaintCanvas();
+-    if (c)
+-      c->restoreToCount(save_count_);
+-    context_->ValidateStateStack();
+-  }
+-
+- private:
+-  CanvasRenderingContext2D* context_;
+-  int save_count_ = 0;
+-};
+-
+ CanvasRenderingContext* CanvasRenderingContext2D::Factory::Create(
+     CanvasRenderingContextHost* host,
+     const CanvasContextCreationAttributesCore& attrs) {
+@@ -999,9 +970,11 @@ void CanvasRenderingContext2D::DrawTextInternal(
+   // to 0, for example), so update style before grabbing the PaintCanvas.
+   canvas()->GetDocument().UpdateStyleAndLayoutTreeForNode(canvas());
+ 
+-  cc::PaintCanvas* c = GetOrCreatePaintCanvas();
+-  if (!c)
++  // Abort if we don't have a paint canvas (e.g. the context was lost).
++  cc::PaintCanvas* paint_canvas = GetOrCreatePaintCanvas();
++  if (!paint_canvas) {
+     return;
++  }
+ 
+   if (!std::isfinite(x) || !std::isfinite(y))
+     return;
+@@ -1066,14 +1039,13 @@ void CanvasRenderingContext2D::DrawTextInternal(
+   if (paint_type == CanvasRenderingContext2DState::kStrokePaintType)
+     InflateStrokeRect(bounds);
+ 
+-  CanvasRenderingContext2DAutoRestoreSkCanvas state_restorer(this);
+   if (use_max_width) {
+-    c->save();
++    paint_canvas->save();
+     // We draw when fontWidth is 0 so compositing operations (eg, a "copy" op)
+     // still work. As the width of canvas is scaled, so text can be scaled to
+     // match the given maxwidth, update text location so it appears on desired
+     // place.
+-    c->scale(ClampTo<float>(width / font_width), 1);
++    paint_canvas->scale(ClampTo<float>(width / font_width), 1);
+     location.set_x(location.x() / ClampTo<float>(width / font_width));
+   }
+ 
+@@ -1093,6 +1065,16 @@ void CanvasRenderingContext2D::DrawTextInternal(
+       { return false; },
+       bounds, paint_type, CanvasRenderingContext2DState::kNoImage,
+       CanvasPerformanceMonitor::DrawType::kText);
++
++  if (use_max_width) {
++    // Cannot use `paint_canvas` in case recording canvas was substituted or
++    // destroyed during draw call.
++    cc::PaintCanvas* c = GetPaintCanvas();
++    if (c) {
++      c->restore();
++    }
++  }
++  ValidateStateStack();
+ }
+ 
+ const Font& CanvasRenderingContext2D::AccessFont() {
+diff --git a/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h b/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h
+index 508af63e75a..59566cb117c 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.h
+@@ -245,8 +245,6 @@ class MODULES_EXPORT CanvasRenderingContext2D final
+   void TryRestoreContextEvent(TimerBase*) override;
+ 
+  private:
+-  friend class CanvasRenderingContext2DAutoRestoreSkCanvas;
+-
+   void PruneLocalFontCache(size_t target_size);
+ 
+   void ScrollPathIntoViewInternal(const Path&);
+From 5f7b5772910e721f0cbdfd97925e84afa94aeec8 Mon Sep 17 00:00:00 2001
+From: Tsuyoshi Horo <horo@chromium.org>
+Date: Tue, 9 Jan 2024 08:40:00 +0000
+Subject: [PATCH] [Backport] CVE-2024-1077: Use after free in Network
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5179746:
+Fix UAF in SourceStreamToDataPipe
+
+SourceStreamToDataPipe::ReadMore() is passing a callback with
+Unretained(this) to net::SourceStream::Read(). But this callback may be
+called even after the SourceStream is destructed. This is causing UAF
+issue (crbug.com/1511085).
+
+To solve this problem, this CL changes ReadMore() method to pass a
+callback with a weak ptr of this.
+
+Bug: 1511085
+Change-Id: Idd4e34ff300ff5db2de1de7b303841c7db3a964a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5179746
+Reviewed-by: Adam Rice <ricea@chromium.org>
+Commit-Queue: Tsuyoshi Horo <horo@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1244526}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537141
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../network/public/cpp/source_stream_to_data_pipe.cc        | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc b/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc
+index bfd85b1a00b..07afd58a40f 100644
+--- src/3rdparty/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc
++++ src/3rdparty/chromium/services/network/public/cpp/source_stream_to_data_pipe.cc
+@@ -55,9 +55,9 @@ void SourceStreamToDataPipe::ReadMore() {
+ 
+   scoped_refptr<net::IOBuffer> buffer(
+       new network::NetToMojoIOBuffer(pending_write_.get()));
+-  int result = source_->Read(
+-      buffer.get(), base::checked_cast<int>(num_bytes),
+-      base::BindOnce(&SourceStreamToDataPipe::DidRead, base::Unretained(this)));
++  int result = source_->Read(buffer.get(), base::checked_cast<int>(num_bytes),
++                             base::BindOnce(&SourceStreamToDataPipe::DidRead,
++                                            weak_factory_.GetWeakPtr()));
+ 
+   if (result != net::ERR_IO_PENDING)
+     DidRead(result);
+From 9bcf4d966b8315c3801721222c937f6c4fbc00b2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20Br=C3=BCning?= <michael.bruning@qt.io>
+Date: Wed, 7 Feb 2024 12:07:44 +0100
+Subject: [PATCH] Fixup: [Backport] Security bug 1407197
+
+It was missing setting one of the debug locations in code that we
+may potentially compile.
+
+Change-Id: Ia47c270eb042d131621babaef3927b0745c36014
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537953
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ chromium/chrome/browser/devtools/devtools_window.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/chromium/chrome/browser/devtools/devtools_window.cc b/chromium/chrome/browser/devtools/devtools_window.cc
+index de1b8b019fc..94343b63153 100644
+--- src/3rdparty/chromium/chrome/browser/devtools/devtools_window.cc
++++ src/3rdparty/chromium/chrome/browser/devtools/devtools_window.cc
+@@ -1301,6 +1301,7 @@ void DevToolsWindow::AddNewContents(
+     bool* was_blocked) {
+   if (new_contents.get() == toolbox_web_contents_) {
+     owned_toolbox_web_contents_ = std::move(new_contents);
++    owned_toolbox_web_contents_->SetOwnerLocationForDebug(FROM_HERE);
+ 
+     toolbox_web_contents_->SetDelegate(new DevToolsToolboxDelegate(
+         toolbox_web_contents_, inspected_web_contents_));
+From beb4a95a8040535701840e84338998b711cf86ff Mon Sep 17 00:00:00 2001
+From: Guido Urdaneta <guidou@chromium.org>
+Date: Thu, 18 Jan 2024 16:47:18 +0000
+Subject: [PATCH] [Backport] CVE-2024-1059: Use after free in WebRTC
+
+Manual backport of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5210359:
+[RTCPeerConnection] Exit early from RTCPeerConnectionHandler
+
+For certain operations that require a live client
+(i.e., RTCPeerConnection, which is garbage collected),
+PeerConnectionHandler keeps a pointer to the client on the stack
+to prevent garbage collection.
+
+In some cases, the client may have already been garbage collected
+(the client is null). In that case, there is no point in doing the
+operation and it should exit early to avoid UAF/crashes.
+
+This CL adds early exit to the cases that do not already have it.
+
+Bug: 1514777
+Change-Id: I27e9541cfaa74d978799c03e2832a0980f9e5710
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5210359
+Reviewed-by: Tomas Gunnarsson <tommi@chromium.org>
+Commit-Queue: Guido Urdaneta <guidou@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1248826}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/537139
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../rtc_peer_connection_handler.cc               | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/modules/peerconnection/rtc_peer_connection_handler.cc b/chromium/third_party/blink/renderer/modules/peerconnection/rtc_peer_connection_handler.cc
+index 83853f003c7..fc2336dbb88 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/peerconnection/rtc_peer_connection_handler.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/peerconnection/rtc_peer_connection_handler.cc
+@@ -1058,15 +1058,19 @@ bool RTCPeerConnectionHandler::Initialize(
+     WebLocalFrame* frame,
+     ExceptionState& exception_state) {
+   DCHECK(task_runner_->RunsTasksInCurrentSequence());
+-  DCHECK(frame);
+   DCHECK(dependency_factory_);
+-  frame_ = frame;
+ 
+   CHECK(!initialize_called_);
+   initialize_called_ = true;
+ 
+   // Prevent garbage collection of client_ during processing.
+   auto* client_on_stack = client_;
++  if (!client_on_stack) {
++    return false;
++  }
++
++  DCHECK(frame);
++  frame_ = frame;
+   peer_connection_tracker_ = PeerConnectionTracker::From(*frame);
+ 
+   configuration_ = server_configuration;
+@@ -2268,10 +2272,13 @@ void RTCPeerConnectionHandler::OnIceCandidate(const String& sdp,
+                                               int sdp_mline_index,
+                                               int component,
+                                               int address_family) {
++  DCHECK(task_runner_->RunsTasksInCurrentSequence());
+   // In order to ensure that the RTCPeerConnection is not garbage collected
+   // from under the function, we keep a pointer to it on the stack.
+   auto* client_on_stack = client_;
+-  DCHECK(task_runner_->RunsTasksInCurrentSequence());
++  if (!client_on_stack) {
++    return;
++  }
+   TRACE_EVENT0("webrtc", "RTCPeerConnectionHandler::OnIceCandidateImpl");
+   // This line can cause garbage collection.
+   auto* platform_candidate = MakeGarbageCollected<RTCIceCandidatePlatform>(
+@@ -2281,7 +2288,8 @@ void RTCPeerConnectionHandler::OnIceCandidate(const String& sdp,
+         this, platform_candidate, PeerConnectionTracker::kSourceLocal, true);
+   }
+ 
+-  if (!is_closed_)
++  client_on_stack = client_;
++  if (!is_closed_ && client_on_stack)
+     client_on_stack->DidGenerateICECandidate(platform_candidate);
+ }
+ 
+From 149e8c185ff1ea7ee0a7037153311b026e142ac3 Mon Sep 17 00:00:00 2001
+From: John Stiles <johnstiles@google.com>
+Date: Mon, 29 Jan 2024 23:50:14 +0000
+Subject: [PATCH] [Backport] CVE-2024-1283: Heap buffer overflow in Skia
+
+Manual cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5241305:
+Fix a crash when a BMP image contains an unnecessary EOF code.
+
+Previously, this would try to perform color correction on a row
+one past the end of the image data.
+
+Bug: 1521893
+Change-Id: I425437005b9ef400138556705616095857d2cf0d
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5241305
+Auto-Submit: John Stiles <johnstiles@google.com>
+Commit-Queue: John Stiles <johnstiles@google.com>
+Reviewed-by: Peter Kasting <pkasting@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1253633}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/538110
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../image-decoders/bmp/bmp_image_reader.cc      | 17 ++++++++++++++---
+ 1 file changed, 14 insertions(+), 3 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc b/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc
+index 063e5385d7f6..b40c8aa5c1fe 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc
+@@ -827,8 +827,10 @@ BMPImageReader::ProcessingResult BMPImageReader::ProcessRLEData() {
+     // the image.
+     const uint8_t count = ReadUint8(0);
+     const uint8_t code = ReadUint8(1);
+-    if ((count || (code != 1)) && PastEndOfImage(0))
++    const bool is_past_end_of_image = PastEndOfImage(0);
++    if ((count || (code != 1)) && is_past_end_of_image) {
+       return kFailure;
++    }
+ 
+     // Decode.
+     if (!count) {
+@@ -849,7 +851,9 @@ BMPImageReader::ProcessingResult BMPImageReader::ProcessRLEData() {
+               (is_top_down_ ? (coord_.y() < (parent_->Size().height() - 1))
+                             : (coord_.y() > 0)))
+             buffer_->SetHasAlpha(true);
+-          ColorCorrectCurrentRow();
++          if (!is_past_end_of_image) {
++            ColorCorrectCurrentRow();
++          }
+           // There's no need to move |coord_| here to trigger the caller
+           // to call SetPixelsChanged().  If the only thing that's changed
+           // is the alpha state, that will be properly written into the
+@@ -1061,6 +1065,13 @@ void BMPImageReader::ColorCorrectCurrentRow() {
+   const ColorProfileTransform* const transform = parent_->ColorTransform();
+   if (!transform)
+     return;
++  int decoder_width = parent_->Size().width();
++  // Enforce 0 ≤ current row < bitmap height.
++  CHECK_GE(coord_.y(), 0);
++  CHECK_LT(coord_.y(), buffer_->Bitmap().height());
++  // Enforce decoder width == bitmap width exactly. (The bitmap rowbytes might
++  // add a bit of padding, but we are only converting one row at a time.)
++  CHECK_EQ(decoder_width, buffer_->Bitmap().width());
+   ImageFrame::PixelData* const row = buffer_->GetAddr(0, coord_.y());
+   const skcms_PixelFormat fmt = XformColorFormat();
+   const skcms_AlphaFormat alpha =
+@@ -1069,7 +1080,7 @@ void BMPImageReader::ColorCorrectCurrentRow() {
+           : skcms_AlphaFormat_Unpremul;
+   const bool success =
+       skcms_Transform(row, fmt, alpha, transform->SrcProfile(), row, fmt, alpha,
+-                      transform->DstProfile(), parent_->Size().width());
++                      transform->DstProfile(), decoder_width);
+   DCHECK(success);
+   buffer_->SetPixelsChanged(true);
+ }
+From 707f4e7c0110c33df3d36a1942ad1b0ea2cb997b Mon Sep 17 00:00:00 2001
+From: Ken Rockot <rockot@google.com>
+Date: Fri, 26 Jan 2024 21:53:06 +0000
+Subject: [PATCH] [Backport] CVE-2024-1284: Use after free in Mojo
+
+Cherry-pick of patch originally reviewed on
+https://chromium-review.googlesource.com/c/chromium/src/+/5240312:
+ipcz: Fix a few weak asserts
+
+DriverMemory cloning should not weakly assert success, as it can fail in
+real production scenarios. Now Clone() will return an invalid
+DriverMemory object if it fails to duplicate the internal handle.
+Existing callers of Clone() are already durable to an invalid output, so
+this change results in graceful failures instead of undefined behavior.
+
+This also replaces some weak asserts in DriverTransport creation with
+hardening asserts. We may want to fail more gracefully if these end
+up crashing a lot, but it seems unlikely.
+
+Fixed: 1521571
+Change-Id: Id764b33ead8bbba58e61b3270920c839479eaa4a
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/5240312
+Commit-Queue: Ken Rockot <rockot@google.com>
+Reviewed-by: Alex Gough <ajgo@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1252882}
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/538111
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+---
+ .../third_party/ipcz/src/ipcz/driver_memory.cc    | 15 +++++++++------
+ .../third_party/ipcz/src/ipcz/driver_transport.cc |  4 ++--
+ 2 files changed, 11 insertions(+), 8 deletions(-)
+
+diff --git a/chromium/third_party/ipcz/src/ipcz/driver_memory.cc b/chromium/third_party/ipcz/src/ipcz/driver_memory.cc
+index 612eca89d52..b92c04bf521 100644
+--- src/3rdparty/chromium/third_party/ipcz/src/ipcz/driver_memory.cc
++++ src/3rdparty/chromium/third_party/ipcz/src/ipcz/driver_memory.cc
+@@ -30,10 +30,11 @@ DriverMemory::DriverMemory(const IpczDriver& driver, size_t num_bytes)
+     : size_(num_bytes) {
+   ABSL_ASSERT(num_bytes > 0);
+   IpczDriverHandle handle;
+-  IpczResult result =
++  const IpczResult result =
+       driver.AllocateSharedMemory(num_bytes, IPCZ_NO_FLAGS, nullptr, &handle);
+-  ABSL_ASSERT(result == IPCZ_RESULT_OK);
+-  memory_ = DriverObject(driver, handle);
++  if (result == IPCZ_RESULT_OK) {
++    memory_ = DriverObject(driver, handle);
++  }
+ }
+ 
+ DriverMemory::DriverMemory(DriverMemory&& other) = default;
+@@ -43,12 +44,14 @@ DriverMemory& DriverMemory::operator=(DriverMemory&& other) = default;
+ DriverMemory::~DriverMemory() = default;
+ 
+ DriverMemory DriverMemory::Clone() {
+-  ABSL_ASSERT(is_valid());
++  ABSL_HARDENING_ASSERT(is_valid());
+ 
+   IpczDriverHandle handle;
+-  IpczResult result = memory_.driver()->DuplicateSharedMemory(
++  const IpczResult result = memory_.driver()->DuplicateSharedMemory(
+       memory_.handle(), 0, nullptr, &handle);
+-  ABSL_ASSERT(result == IPCZ_RESULT_OK);
++  if (result != IPCZ_RESULT_OK) {
++    return DriverMemory();
++  }
+ 
+   return DriverMemory(DriverObject(*memory_.driver(), handle));
+ }
+diff --git a/chromium/third_party/ipcz/src/ipcz/driver_transport.cc b/chromium/third_party/ipcz/src/ipcz/driver_transport.cc
+index a8cb7a1251f..2550c2891fd 100644
+--- src/3rdparty/chromium/third_party/ipcz/src/ipcz/driver_transport.cc
++++ src/3rdparty/chromium/third_party/ipcz/src/ipcz/driver_transport.cc
+@@ -68,14 +68,14 @@ DriverTransport::Pair DriverTransport::CreatePair(
+   IpczDriverHandle target_transport0 = IPCZ_INVALID_DRIVER_HANDLE;
+   IpczDriverHandle target_transport1 = IPCZ_INVALID_DRIVER_HANDLE;
+   if (transport0) {
+-    ABSL_ASSERT(transport1);
++    ABSL_HARDENING_ASSERT(transport1);
+     target_transport0 = transport0->driver_object().handle();
+     target_transport1 = transport1->driver_object().handle();
+   }
+   IpczResult result = driver.CreateTransports(
+       target_transport0, target_transport1, IPCZ_NO_FLAGS, nullptr,
+       &new_transport0, &new_transport1);
+-  ABSL_ASSERT(result == IPCZ_RESULT_OK);
++  ABSL_HARDENING_ASSERT(result == IPCZ_RESULT_OK);
+   auto first =
+       MakeRefCounted<DriverTransport>(DriverObject(driver, new_transport0));
+   auto second =
