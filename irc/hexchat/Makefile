@@ -1,8 +1,7 @@
 PORTNAME=	hexchat
-DISTVERSION=	2.16.1
-PORTREVISION=	5
+DISTVERSION=	2.16.2
 CATEGORIES=	irc gnome
-MASTER_SITES=	https://dl.hexchat.net/hexchat/
+MASTER_SITES=	https://github.com/hexchat/hexchat/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
