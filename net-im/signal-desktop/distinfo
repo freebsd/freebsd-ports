@@ -1,9 +1,9 @@
-TIMESTAMP = 1706897359
-SHA256 (signal-desktop-6.46.0-yarn-cache.tar.gz) = 013027b068f221560c7858aa0f900ab875e3d59c84fc9f71560f212b0c872b8d
-SIZE (signal-desktop-6.46.0-yarn-cache.tar.gz) = 521920344
+TIMESTAMP = 1707558920
+SHA256 (signal-desktop-6.47.0-yarn-cache.tar.gz) = 37778bd24b00cf8afc557674a8f8b0f2d450772b37b68991e33010ee4fa3d49d
+SIZE (signal-desktop-6.47.0-yarn-cache.tar.gz) = 521777888
 SHA256 (signal-desktop-6.37.0-npm-cache.tar.gz) = 40411861a3b913b26a4bb563faa72a4c07c8807b917e53f627c58fa3b3b695a8
 SIZE (signal-desktop-6.37.0-npm-cache.tar.gz) = 4471369
 SHA256 (sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b.tar.gz) = ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 SIZE (sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b.tar.gz) = 75708533
-SHA256 (signalapp-Signal-Desktop-v6.46.0_GH0.tar.gz) = 0961917d0c920246a01e77a8eba62bf7de3dde9ff83070e5ad6d4d9894a8ccb2
-SIZE (signalapp-Signal-Desktop-v6.46.0_GH0.tar.gz) = 42935266
+SHA256 (signalapp-Signal-Desktop-v6.47.0_GH0.tar.gz) = 87ce5fcee1535bfd526a48da3e845c2eca4423449855f91c548bc3d2245d632d
+SIZE (signalapp-Signal-Desktop-v6.47.0_GH0.tar.gz) = 42962051
