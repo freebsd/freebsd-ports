@@ -1,6 +1,6 @@
 PORTNAME=	mdbtools
 DISTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -22,6 +22,7 @@ CPE_VENDOR=	mdbtools_project
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-unixodbc=${LOCALBASE}
 
@@ -52,6 +53,11 @@ CC=		clang${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
 CXX=		clang++${LLVM_VER}
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e \
+		's|libdir = $${exec_prefix}/lib/odbc|libdir = $${exec_prefix}/lib|' \
+		${WRKSRC}/src/odbc/Makefile
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
