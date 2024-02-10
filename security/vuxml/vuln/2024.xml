@@ -156,6 +156,14 @@
        <name>ungoogled-chromium</name>
        <range><lt>121.0.6167.160</lt></range>
       </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5_5</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1_5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -287,6 +295,14 @@
        <name>ungoogled-chromium</name>
        <range><lt>121.0.6167.139</lt></range>
       </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5_5</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1_5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -404,6 +420,10 @@
   <vuln vid="bbcb1584-c068-11ee-bdd6-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.16.p5_5</lt></range>
+      </package>
       <package>
 	<name>qt6-webengine</name>
 	<range><lt>6.6.1_4</lt></range>
