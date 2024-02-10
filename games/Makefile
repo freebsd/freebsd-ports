@@ -11,6 +11,7 @@
     SUBDIR += 7kaa
     SUBDIR += 90secondportraits
     SUBDIR += Bugdom
+    SUBDIR += Bugdom2
     SUBDIR += CaribbeanStud
     SUBDIR += DDNet
     SUBDIR += Doom64EX
