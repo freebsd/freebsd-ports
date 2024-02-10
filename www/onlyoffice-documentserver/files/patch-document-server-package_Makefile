@@ -26,7 +26,7 @@
 +		DS_FILES := /var/db/$(DS_PREFIX)
 +		DS_EXAMLE := /usr/local/www/$(DS_PREFIX)-example
 +		DEV_NULL := /dev/null
-+		PKG_TARGET := node18-freebsd-x64
++		PKG_TARGET := node18
 +	endif
  	ifeq ($(UNAME_S),Darwin)
  		PLATFORM := mac
