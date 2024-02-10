@@ -100,7 +100,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.11 \
 		ghash-0.5.0 \
 		gimli-0.28.1 \
-		h2-0.3.22 \
+		h2-0.3.24 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \

@@ -1,6 +1,7 @@
 #!/bin/sh
 
-WEBRTC_REV=5993d
+WEBRTC_REV=6099a
+# XXX also change fetch opus
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
@@ -62,6 +63,10 @@ nasm_hash=$(grep 'nasm.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',#
 printf "NASM_REV=\t${nasm_hash}\n"
 printf "NASM_REV=\t${nasm_hash}\n" | portedit merge -i Makefile
 
+opus_hash=$(grep 'opus.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
+printf "OPUS_REV=\t${boringssl_hash}\n"
+printf "OPUS_REV=\t${boringssl_hash}\n" | portedit merge -i Makefile
+
 testing_hash=$(grep 'testing@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "TESTING_REV=\t${testing_hash}\n"
 printf "TESTING_REV=\t${testing_hash}\n" | portedit merge -i Makefile
@@ -69,8 +74,6 @@ printf "TESTING_REV=\t${testing_hash}\n" | portedit merge -i Makefile
 third_party_hash=$(grep 'third_party@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n"
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n" | portedit merge -i Makefile
-
-#exit
 
 mkdir dist_tmp
 echo "fetch -o dist_tmp/base-${base_hash}.tar.gz ${base_url}${base_hash}.tar.gz"
@@ -84,10 +87,11 @@ echo "fetch -o dist_tmp/libsrtp-${libsrtp_hash}.tar.gz ${libsrtp_url}${libsrtp_h
 echo "fetch -o dist_tmp/libvpx-${libvpx_hash}.tar.gz ${libvpx_url}${libvpx_hash}.tar.gz"
 echo "fetch -o dist_tmp/libyuv-${libyuv_hash}.tar.gz ${libyuv_url}${libyuv_hash}.tar.gz"
 echo "fetch -o dist_tmp/nasm-${nasm_hash}.tar.gz ${nasm_url}${nasm_hash}.tar.gz"
+echo "fetch -o dist_tmp/opus-${opus_hash}.tar.gz https://codeload.github.com/signalapp/opus/tar.gz/webrtc-6099?dummy=/"
 echo "fetch -o dist_tmp/testing-${testing_hash}.tar.gz ${testing_url}${testing_hash}.tar.gz"
 echo "fetch -o dist_tmp/third_party-${third_party_hash}.tar.gz ${third_party_url}${third_party_hash}.tar.gz"
 
-mkdir -p base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm testing third_party
+mkdir -p base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm opus testing third_party
 tar xf dist_tmp/base-${base_hash}.tar.gz -C base
 tar xf dist_tmp/boringssl-${boringssl_hash}.tar.gz -C boringssl
 tar xf dist_tmp/build-${build_hash}.tar.gz -C build
@@ -99,6 +103,7 @@ tar xf dist_tmp/libsrtp-${libsrtp_hash}.tar.gz -C libsrtp
 tar xf dist_tmp/libvpx-${libvpx_hash}.tar.gz -C libvpx
 tar xf dist_tmp/libyuv-${libyuv_hash}.tar.gz -C libyuv
 tar xf dist_tmp/nasm-${nasm_hash}.tar.gz -C nasm
+tar xf dist_tmp/opus-${opus_hash}.tar.gz -C opus --strip-components 1
 tar xf dist_tmp/testing-${testing_hash}.tar.gz -C testing
 tar xf dist_tmp/third_party-${third_party_hash}.tar.gz -C third_party
 
@@ -114,7 +119,8 @@ tar czf dist_good/libsrtp-${libsrtp_hash}.tar.gz libsrtp
 tar czf dist_good/libvpx-${libvpx_hash}.tar.gz libvpx
 tar czf dist_good/libyuv-${libyuv_hash}.tar.gz libyuv
 tar czf dist_good/nasm-${nasm_hash}.tar.gz nasm
+tar czf dist_good/opus-${opus_hash}.tar.gz opus
 tar czf dist_good/testing-${testing_hash}.tar.gz testing
 tar czf dist_good/third_party-${third_party_hash}.tar.gz third_party
 
-rm -rf base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm testing third_party
+rm -rf base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm opus testing third_party
