@@ -1,3 +1,5 @@
 %%SITE_ARCH%%/Tcl.pm
+%%SITE_ARCH%%/Tcl-hack.pod
 %%SITE_ARCH%%/auto/Tcl/Tcl.so
 %%PERL5_MAN3%%/Tcl.3.gz
+%%PERL5_MAN3%%/Tcl-hack.3.gz
