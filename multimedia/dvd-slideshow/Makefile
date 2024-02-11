@@ -1,16 +1,17 @@
 PORTNAME=	dvd-slideshow
-PORTVERSION=	0.8.4
-DISTVERSIONSUFFIX=	-1
-PORTREVISION=	12
+DISTVERSION=	0.8.6-1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}${DISTVERSIONSUFFIX} \
-		SF/${PORTNAME}/${PORTNAME}-themes/${THEMEVERSION}-1:themes
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
+		SF/${PORTNAME}/${PORTNAME}-themes/${THEMEVERSION}:themes
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-THEMEVERSION=	0.8.4
+THEMEVERSION=	0.8.4-1
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script to create slideshow-style DVD with some simple menus
-WWW=		http://dvd-slideshow.sourceforge.net/
+WWW=		https://dvd-slideshow.sourceforge.net/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	bash:shells/bash \
 		mpeg2enc:multimedia/mjpegtools \
@@ -28,31 +29,24 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS LAME THEMES TOOLAME VORBIS
+OPTIONS_SUB=	yes
+
 THEMES_DESC=	Install optional themes
 
 LAME_RUN_DEPENDS=	lame:audio/lame
-VORBIS_RUN_DEPENDS=	oggdec:audio/vorbis-tools
+THEMES_DISTFILES=	${PORTNAME}-themes-${THEMEVERSION}${EXTRACT_SUFX}:themes
 TOOLAME_RUN_DEPENDS=	toolame:audio/toolame
+VORBIS_RUN_DEPENDS=	oggdec:audio/vorbis-tools
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTHEMES}
-DISTFILES+=	${PORTNAME}-themes-${THEMEVERSION}-1${EXTRACT_SUFX}:themes
-WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${THEMEVERSION}-1
-PLIST_SUB+=	NOTHEMES=""
-.else
-PLIST_SUB+=	NOTHEMES="@comment "
-.endif
+WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${THEMEVERSION}
 
 post-patch:
 .for f in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!${PREFIX}/bin/bash|g ; \
 		s|/usr/share/fonts/|${LOCALBASE}/share/fonts/|g ; \
 		s|seq |seq2 |g' ${WRKSRC}/${f}
-.  if ${PORT_OPTIONS:MTHEMES}
 	@${REINPLACE_CMD} -e 's|/opt/dvd-slideshow/themes|${DATADIR}/themes|g' \
 		${WRKSRC}/${f}
-.  endif
 .endfor
 
 do-install:
@@ -67,10 +61,10 @@ do-install:
 .for d in changelog gallery1-to-slideshow dir2slideshow jigl2slideshow dvd-menu dvd-slideshow
 	${INSTALL_DATA} ${WRKSRC}/doc/${d}.html ${STAGEDIR}${DOCSDIR}
 .endfor
-.if ${PORT_OPTIONS:MTHEMES}
+
+do-install-THEMES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/themes
 	cd ${WRKSRC2} && ${FIND} . | ${CPIO} -dpmu -R ${BINOWN}:${BINGRP} \
 		--quiet ${STAGEDIR}${DATADIR}/themes
-.endif
 
 .include <bsd.port.mk>
