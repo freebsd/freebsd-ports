@@ -1,6 +1,5 @@
 bin/gmdb2
 include/gmdb.h
-man/man1/gmdb2.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -35,3 +34,4 @@ share/help/C/gmdb2/figures/gmdb2_sql_window.png
 share/help/C/gmdb2/figures/gmdb2_window.png
 share/help/C/gmdb2/index.docbook
 share/help/C/gmdb2/legal.xml
+share/man/man1/gmdb2.1.gz
