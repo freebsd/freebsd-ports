@@ -1,6 +1,5 @@
 PORTNAME=	libidn2
-PORTVERSION=	2.3.4
-PORTREVISION=	2
+DISTVERSION=	2.3.7
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
@@ -16,18 +15,20 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libunistring.so:devel/libunistring
 
 USES=		charsetfix iconv libtool localbase makeinfo pathfix
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 LDFLAGS+=	-Wl,--undefined-version
+
+INFO=		libidn2
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 CONFIGURE_ARGS=	--disable-nls \
 		--with-libunistring-prefix=${LOCALBASE} \
 		--enable-ld-version-script \
 		ac_cv_prog_RONN=${TRUE}
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
-USE_LDCONFIG=	yes
-
-INFO=		libidn2
 
 .include <bsd.port.mk>
