@@ -260,8 +260,8 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Helsinki.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Istanbul.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Kaliningrad.pm
-%%SITE_PERL%%/DateTime/TimeZone/Europe/Kyiv.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Kirov.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Kyiv.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Lisbon.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/London.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Madrid.pm
