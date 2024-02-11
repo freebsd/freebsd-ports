@@ -26,6 +26,7 @@ bin/controlchan
 bin/convdate
 bin/ctlinnd
 bin/cvtbatch
+bin/delayer
 bin/docheckgroups
 bin/expire
 bin/expireover
@@ -187,6 +188,7 @@ lib/libinnstorage.so.%%LIBSTORAGEVER_LONG%%
 @comment --------------------------------------------------------------
 @cwd
 share/man/man1/convdate.1.gz
+share/man/man1/delayer.1.gz
 share/man/man1/fastrm.1.gz
 share/man/man1/gencancel.1.gz
 share/man/man1/getlist.1.gz
