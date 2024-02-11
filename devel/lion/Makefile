@@ -10,6 +10,10 @@ WWW=		https://www.lundman.net/wiki/index.php/LiON
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream site is removed and library is no longer available
+EXPIRATION_DATE=2024-03-31
+
 # TODO
 # add support for SSL/TLS/OpenSSL
 USES=		gmake tar:tgz
