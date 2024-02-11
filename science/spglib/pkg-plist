@@ -8,11 +8,12 @@ lib/cmake/Spglib/SpglibConfigVersion.cmake
 %%FORTRAN%%lib/cmake/Spglib/SpglibTargets_fortran.cmake
 lib/cmake/Spglib/SpglibTargets_shared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Spglib/SpglibTargets_shared.cmake
+%%FORTRAN%%lib/cmake/Spglib/try_compile.f90
 %%FORTRAN%%lib/libspglib_f08.so
 %%FORTRAN%%lib/libspglib_f08.so.2
-%%FORTRAN%%lib/libspglib_f08.so.2.3.0
+%%FORTRAN%%lib/libspglib_f08.so.2.3.1
 lib/libsymspg.so
 lib/libsymspg.so.2
-lib/libsymspg.so.2.3.0
+lib/libsymspg.so.2.3.1
 libdata/pkgconfig/spglib.pc
 %%FORTRAN%%libdata/pkgconfig/spglib_f08.pc

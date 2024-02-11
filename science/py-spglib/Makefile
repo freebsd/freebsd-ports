@@ -1,16 +1,18 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for finding and handling crystal symmetries (python binding)
-WWW=		https://atztogo.github.io/spglib/
+WWW=		https://spglib.readthedocs.io/en/stable/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
+		${PYNUMPY}
 LIB_DEPENDS=	libsymspg.so:science/spglib
 RUN_DEPENDS=	${PYNUMPY}
 
@@ -22,8 +24,19 @@ CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 WRKSRC_SUBDIR=	python
 
+MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
+
+TEST_WRKSRC=	${WRKSRC}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-patch:
-	#@cd ${WRKSRC} && ${RLN} ../test .
-	@cd ${WRKSRC} && ${CP} -r ../test .
+	##@cd ${WRKSRC} && ${RLN} ../test .
+	#@cd ${WRKSRC} && ${CP} -r ../test .
+	# workaround for https://github.com/spglib/spglib/issues/429
+	@${REINPLACE_CMD} -i '' -e 's|^from ._version import|#&|' ${WRKSRC}/spglib/__init__.py
+	# patch in the correct symspg lib
+	@${REINPLACE_CMD} -i '' \
+		-e 's|, bundled_lib)|, "${LOCALBASE}/lib/libsymspg.so")|' \
+		${WRKSRC}/spglib/spglib.py
 
 .include <bsd.port.mk>
