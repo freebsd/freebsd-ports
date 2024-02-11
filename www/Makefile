@@ -2497,6 +2497,7 @@
     SUBDIR += xist
     SUBDIR += xoops
     SUBDIR += xsp
+    SUBDIR += xurls
     SUBDIR += yabb
     SUBDIR += yarn
     SUBDIR += yarn-node16
