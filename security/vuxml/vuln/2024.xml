@@ -1,3 +1,38 @@
+  <vuln vid="cbfc1591-c8c0-11ee-b45a-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php81</name>
+	<name>phpmyfaq-php82</name>
+	<name>phpmyfaq-php83</name>
+	<range><lt>3.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyFAQ team reports:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2024-02-05">
+	  <p>phpMyFAQ doesn't implement sufficient checks to avoid XSS when
+	    storing on attachments filenames. The 'sharing FAQ' functionality
+	    allows any unauthenticated actor to misuse the phpMyFAQ application
+	    to send arbitrary emails to a large range of targets. phpMyFAQ's
+	    user removal page allows an attacker to spoof another user's
+	    detail, and in turn make a compelling phishing case for removing
+	    another user's account.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-7m8g-fprr-47fx</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-9hhf-xmcw-r3xg</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-6648-6g96-mg35</url>
+    </references>
+    <dates>
+      <discovery>2024-02-05</discovery>
+      <entry>2024-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f161a5ad-c9bd-11ee-b7a7-353f1e043d9a">
     <topic>openexr -- Heap Overflow in Scanline Deep Data Parsing</topic>
     <affects>
