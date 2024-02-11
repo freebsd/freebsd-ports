@@ -1,5 +1,6 @@
 PORTNAME=	spectmorph
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/swesterfeld/spectmorph/releases/download/${DISTVERSION}/
 
@@ -29,6 +30,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/sminstbuilder.in
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lfftw3f_threads
 

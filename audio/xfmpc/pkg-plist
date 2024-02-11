@@ -1,5 +1,4 @@
 bin/xfmpc
-man/man1/xfmpc.1.gz
 share/applications/xfmpc.desktop
 %%NLS%%share/locale/am/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfmpc.mo
@@ -54,3 +53,4 @@ share/applications/xfmpc.desktop
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfmpc.mo
+share/man/man1/xfmpc.1.gz
