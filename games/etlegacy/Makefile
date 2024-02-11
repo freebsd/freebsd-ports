@@ -60,15 +60,45 @@ SUB_FILES=	pkg-message
 .if ${ARCH} == "i386"
 PLIST_SUB+=	I386="" \
 		AARCH64="@comment " \
-		AMD64="@comment "
+		AMD64="@comment " \
+		POWERPC="@comment " \
+		POWERPC64="@comment " \
+		ARMV7="@comment "
 .elif ${ARCH} == "amd64"
 PLIST_SUB+=	I386="@comment " \
 		AARCH64="@comment " \
-		AMD64=""
+		AMD64="" \
+		POWERPC="@comment " \
+		POWERPC64="@comment " \
+		ARMV7="@comment "
 .elif ${ARCH} == "aarch64"
 PLIST_SUB+=	I386="@comment " \
 		AARCH64="" \
-		AMD64="@comment "
+		AMD64="@comment " \
+		POWERPC="@comment " \
+		POWERPC64="@comment " \
+		ARMV7="@comment "
+.elif ${ARCH} == "powerpc"
+PLIST_SUB+=	I386="@comment " \
+		AARCH64="@comment " \
+		AMD64="@comment " \
+		POWERPC="" \
+		POWERPC64="@comment " \
+		ARMV7="@comment "
+.elif ${ARCH:Mpowerpc64*}
+PLIST_SUB+=	I386="@comment " \
+		AARCH64="@comment " \
+		AMD64="@comment " \
+		POWERPC="@comment " \
+		POWERPC64="" \
+		ARMV7="@comment "
+.elif ${ARCH} == "armv7"
+PLIST_SUB+=	I386="@comment " \
+		AARCH64="@comment " \
+		AMD64="@comment " \
+		POWERPC="@comment " \
+		POWERPC64="@comment " \
+		ARMV7=""
 .endif
 
 .if ! ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MDEDICATED}
