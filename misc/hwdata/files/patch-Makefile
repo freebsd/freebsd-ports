@@ -15,8 +15,3 @@
  
  commit:
  	git commit -vas ||:
-@@ -161,4 +157,3 @@ pnp.ids: pnp.ids.orig pnp.ids.patch
- 	else \
- 	    cat $?; \
- 	fi | sed 's/\s\+$$//' >$@
--
