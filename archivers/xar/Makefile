@@ -12,7 +12,8 @@ WWW=		https://mackyle.github.io/xar/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Upstream last release was in 2012 and seems dead
+DEPRECATED=	Last release was in 2012 and upstream is dead, consider archives/libarchive or archivers/7-zip
+EXPIRATION_DATE=2024-03-31
 
 USES=		cpe gmake gnome libtool ssl
 BROKEN_SSL=	openssl openssl31
