@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSION=	16.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \

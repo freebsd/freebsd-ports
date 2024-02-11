@@ -1,7 +1,6 @@
 PORTNAME=		carbon-relay-ng
 DISTVERSION=		0.10.0
-PORTREVISION=	14
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		a.andersson.thn@gmail.com

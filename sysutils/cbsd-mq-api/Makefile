@@ -1,6 +1,6 @@
 PORTNAME=	cbsd-mq-api
 PORTVERSION=	0.3
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
