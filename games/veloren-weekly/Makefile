@@ -1,5 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20240207
+PORTVERSION=	s20240211
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -14,7 +14,8 @@ BROKEN_aarch64=	https://github.com/rust-lang/libc/issues/3217
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	unsupported platform by https://github.com/wasmerio/wasmer
 
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd \
 		libshaderc_shared.so:graphics/shaderc
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_TAGNAME=	v0.15.0-1095-gac921c563 # git describe --match='v[0-9]*' weekly
+GL_TAGNAME=	v0.15.0-1141-gf159dd535 # git describe --match='v[0-9]*' weekly
 CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
