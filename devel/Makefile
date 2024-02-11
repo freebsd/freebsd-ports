@@ -5295,6 +5295,7 @@
     SUBDIR += py-pydantic-yaml
     SUBDIR += py-pydantic2
     SUBDIR += py-pydash
+    SUBDIR += py-pydbus
     SUBDIR += py-pydecor
     SUBDIR += py-pydenticon
     SUBDIR += py-pydevd
