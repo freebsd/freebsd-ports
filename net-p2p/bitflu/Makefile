@@ -10,6 +10,9 @@ WWW=		https://bitflu.workaround.ch/
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/Documentation/artistic-2_0.txt
 
+DEPRECATED=	No development in years and lack common functionality found in modern clients
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Danga-Socket>=0:devel/p5-Danga-Socket
 
