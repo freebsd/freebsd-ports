@@ -12,6 +12,9 @@ WWW=		http://csocks.altervista.org
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+DEPRECATED=	Last release in 2013 and no development since, consider net/microsocks or net/3proxy
+EXPIRATION_DATE=2024-03-31
+
 PLIST_FILES=	etc/csocks.conf.sample lib/libcsocks.so lib/libcsocks.so.1 \
 		bin/csocks share/man/man1/csocks.1.gz share/man/man5/csocks.conf.5.gz
 
