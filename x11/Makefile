@@ -428,6 +428,7 @@
     SUBDIR += terminal.app
     SUBDIR += terminator
     SUBDIR += terminology
+    SUBDIR += tessen
     SUBDIR += thingylaunch
     SUBDIR += tilda
     SUBDIR += tilix
