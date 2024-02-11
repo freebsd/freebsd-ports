@@ -907,6 +907,8 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Cat.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Ccr.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Cluster.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Connector.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/ConnectorSyncJob.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/DanglingIndices.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Enrich.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Eql.php
@@ -924,12 +926,14 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Ml.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Monitoring.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Nodes.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Profiling.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/QueryRuleset.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Rollup.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/SearchApplication.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/SearchableSnapshots.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Security.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Shutdown.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Simulate.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Slm.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Snapshot.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Sql.php
