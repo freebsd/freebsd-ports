@@ -10,6 +10,9 @@ WWW=		https://github.com/melanhit/akmos
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Last release in 2018, no active development for years and no users in tree
+EXPIRATION_DATE=2024-03-31
+
 BUILD_DEPENDS=	as:devel/binutils
 
 USES=		cmake compiler:c++11-lang
