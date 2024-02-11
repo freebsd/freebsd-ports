@@ -1,6 +1,5 @@
 PORTNAME=	Spreadsheet-ParseExcel
-PORTVERSION=	0.65
-PORTREVISION=	2
+PORTVERSION=	0.66
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -19,14 +18,13 @@ RUN_DEPENDS=	p5-Crypt-RC4>=0:security/p5-Crypt-RC4 \
 		p5-OLE-Storage_Lite>=0.19:devel/p5-OLE-Storage_Lite
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	sample/parse.pl \
-		sample/xls2csv.pl
 USE_PERL5=	configure
+SHEBANG_FILES=	sample/parse.pl sample/xls2csv.pl
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	EXAMPLES
-
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/Excel
