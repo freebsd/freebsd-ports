@@ -7,7 +7,7 @@
 +  }
 +  #[cfg(target_os = "freebsd")]
 +  {
-+    use sysinfo::{System, SystemExt};
++    use sysinfo::System;
 +    let mut sys = System::new_all();
 +
 +    // First we update all information of our `System` struct.

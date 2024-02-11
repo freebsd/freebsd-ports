@@ -1,5 +1,5 @@
---- ext/node/ops/os.rs.orig	2023-08-21 14:55:59 UTC
-+++ ext/node/ops/os.rs
+--- ext/node/ops/os/priority.rs.orig	2023-08-21 14:55:59 UTC
++++ ext/node/ops/os/priority.rs
 @@ -68,7 +68,7 @@ mod priority {
      set_errno(Errno(0));
      match (
