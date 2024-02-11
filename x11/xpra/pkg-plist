@@ -1658,7 +1658,6 @@ share/pixmaps/xpra.png
 %%DATADIR%%/bell.wav
 %%DATADIR%%/css/10_header_bar.css
 %%DATADIR%%/css/20_progress_bar.css
-%%DATADIR%%/cuda/README.md
 %%DATADIR%%/icons/audio.png
 %%DATADIR%%/icons/authentication.png
 %%DATADIR%%/icons/bandwidth_limit.png
