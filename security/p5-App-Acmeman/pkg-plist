@@ -8,6 +8,7 @@ bin/acmeman
 %%SITE_PERL%%/App/Acmeman/Config.pm
 %%SITE_PERL%%/App/Acmeman/Domain.pm
 %%SITE_PERL%%/App/Acmeman/Log.pm
+%%SITE_PERL%%/App/Acmeman/Source/Pound.pm
 %%SITE_PERL%%/App/Acmeman/Source.pm
 %%SITE_PERL%%/App/Acmeman/Source/Apache.pm
 %%SITE_PERL%%/App/Acmeman/Source/Default.pm

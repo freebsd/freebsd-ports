@@ -1,5 +1,5 @@
 PORTNAME=	App-Acmeman
-PORTVERSION=	3.05
+PORTVERSION=	3.09
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,13 +18,14 @@ RUN_DEPENDS=	p5-Apache-Config-Preproc>=1.04:www/p5-Apache-Config-Preproc \
 		p5-Crypt-OpenSSL-X509>=1.804:security/p5-Crypt-OpenSSL-X509 \
 		p5-DateTime-Format-Strptime>=1.42:devel/p5-DateTime-Format-Strptime \
 		p5-File-BackupCopy>=1.00:sysutils/p5-File-BackupCopy \
+		p5-libwww>=6.05:www/p5-libwww \
 		p5-LWP-Protocol-https>=6.04:www/p5-LWP-Protocol-https \
-		p5-Net-ACME2>=0.33:net/p5-Net-ACME2 \
-		p5-libwww>=6.05:www/p5-libwww
+		p5-Net-ACME2>=0.33:net/p5-Net-ACME2
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/acmeman\.conf,${PREFIX}&,' \
