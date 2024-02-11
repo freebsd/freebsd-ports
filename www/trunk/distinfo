@@ -1,4 +1,4 @@
-TIMESTAMP = 1706589845
+TIMESTAMP = 1707671170
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -839,5 +839,5 @@ SHA256 (rust/crates/zstd-safe-5.0.2+zstd.1.5.2.crate) = 1d2a5585e04f9eea4b2a3d1e
 SIZE (rust/crates/zstd-safe-5.0.2+zstd.1.5.2.crate) = 17273
 SHA256 (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 9e16efa8a874a0481a574084d34cc26fdb3b99627480f785888deb6386506656
 SIZE (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 728791
-SHA256 (thedodd-trunk-v0.18.7_GH0.tar.gz) = 6d8ef3e02fefc537b85c0ae8eeb533475c7f46e8a4247156ac6677fb09718b5b
-SIZE (thedodd-trunk-v0.18.7_GH0.tar.gz) = 425842
+SHA256 (thedodd-trunk-v0.18.8_GH0.tar.gz) = 20360c3de7ed6d9ae5c268e52b572091c983b9e1fd7d5c361e7b5e056f3da28b
+SIZE (thedodd-trunk-v0.18.8_GH0.tar.gz) = 425845
