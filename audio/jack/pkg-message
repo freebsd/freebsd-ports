@@ -3,11 +3,15 @@ The new JACK server comes with a DBUS control interface:
 $ jack_control help
 $ jack_control ds oss
 $ jack_control dp
+$ jack_control dps rate 48000
+$ jack_control dps wordlength 16
+$ jack_control dps capture /dev/dsp0
+$ jack_control dps playback /dev/dsp0
 $ jack_control eps realtime False
 $ jack_control start
 
-Only root can grant real-time priority to processes for now, using rtprio(1).
-Upcoming FreeBSD releases will have a MAC policy with a realtime user group.
+To use real-time priority for JACK server and clients, load the mac_priority(4)
+module and add the JACK user to the realtime group.
 
 Memory locking has to be allowed in /etc/login.conf or ~/.login_conf. Set the
 resource limit ":memorylocked=unlimited:" and don't forget to run
@@ -19,8 +23,7 @@ Note that only one JACK server can be run at a time. An /etc/rc.conf example:
 
 jackd_enable="YES"
 jackd_user="joe"
-jackd_rtprio="YES"
-jackd_args="-R -doss -r48000 -p1024 -n1 -w16 \
+jackd_args="--no-realtime -doss -r48000 -p1024 -w16 \
             --capture /dev/dsp0 --playback /dev/dsp0"
 
 Official JACK example clients and tools are available as jack-example-tools.
