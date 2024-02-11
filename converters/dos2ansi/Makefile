@@ -1,0 +1,53 @@
+PORTNAME=	dos2ansi
+DISTVERSION=	2.0
+CATEGORIES=	converters
+MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
+
+MAINTAINER=	zirias@FreeBSD.org
+COMMENT=	Converter for old MS-DOS/ANSI.SYS text files
+WWW=		https://github.com/Zirias/dos2ansi
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+FLAVORS=		x11 nox11
+FLAVOR?=		x11
+nox11_OPTIONS_EXCLUDE=	BITMAP SCALABLE
+nox11_PKGNAMESUFFIX=	-nox11
+x11_OPTIONS_SLAVE=	SHOWANSI
+x11_RUN_DEPENDS=	xterm:x11/xterm
+
+USES=			compiler:c11 gmake tar:xz
+MAKEFILE=		GNUmakefile
+ALL_TARGET=		strip
+CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-nox11
+
+OPTIONS_DEFINE=		DOCS HTML MANPAGES NCURSES SHOWANSI
+OPTIONS_DEFAULT=	MANPAGES NCURSES BITMAP SCALABLE
+OPTIONS_GROUP=		FONTS
+OPTIONS_GROUP_FONTS=	BITMAP SCALABLE
+OPTIONS_EXCLUDE=	${${FLAVOR}_OPTIONS_EXCLUDE}
+OPTIONS_SLAVE=		${${FLAVOR}_OPTIONS_SLAVE}
+OPTIONS_SUB=		yes
+BITMAP_DESC=		Add bitmap fonts from x11-fonts/ibmfonts
+HTML_DESC=		Build and install HTML manpages
+NCURSES_DESC=		Build with terminfo-based color output
+SCALABLE_DESC=		Add scalable fonts from x11-fonts/oldschool-pc-fonts
+SHOWANSI_DESC=		Install showansi script
+
+BITMAP_RUN_DEPENDS=	ibmfonts>0:x11-fonts/ibmfonts
+
+HTML_MAKE_ENV=		WITH_HTML=1
+
+MANPAGES_MAKE_ENV_OFF=	WITH_MAN=0
+
+NCURSES_USES=		ncurses
+NCURSES_MAKE_ENV=	INCLUDES=-I${NCURSESINC}
+NCURSES_MAKE_ENV_OFF=	WITH_CURSES=0
+NCURSES_LDFLAGS=	-Wl,--as-needed
+
+SCALABLE_RUN_DEPENDS=	oldschool-pc-fonts>0:x11-fonts/oldschool-pc-fonts
+
+SHOWANSI_MAKE_ENV_OFF=	WITH_SHOWANSI=0
+
+.include <bsd.port.mk>
