@@ -1,5 +1,4 @@
 bin/cryptominisat5
-bin/cryptominisat5_simple
 include/cryptominisat5/cryptominisat.h
 include/cryptominisat5/cryptominisat_c.h
 include/cryptominisat5/dimacsparser.h
