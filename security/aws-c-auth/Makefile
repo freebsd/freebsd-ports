@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-auth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.14
+DISTVERSION=	0.7.15
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
 		libs2n.so:security/s2n-tls
 
-USES=		cmake:testing compiler:c11 ssl
+USES=		cmake:testing ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
