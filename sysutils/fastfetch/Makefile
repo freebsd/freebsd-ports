@@ -9,6 +9,7 @@ WWW=		https://github.com/fastfetch-cli/fastfetch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libyyjson.so:devel/yyjson
 
 USES=		cmake:testing localbase:ldflags pkgconfig
