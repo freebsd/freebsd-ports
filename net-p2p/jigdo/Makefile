@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility used to retrieve large files over the Internet
 WWW=		http://atterer.org/jigdo/
 
+DEPRECATED=	Outdated version that's not longer supported upstream
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:ftp/wget
 
 USES=		gmake tar:bzip2
