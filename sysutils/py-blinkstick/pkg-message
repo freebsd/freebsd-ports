@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Blinkstick has been installed. You have to restart devd(8) with the command:
+
+# service devd restart
+
+Blinkstick also requires read/write access to devices, so the users
+must belong to the operator group. You can add them with the command:
+
+# pw group mod operator -m <user>
+
+EOM
+}
+]
