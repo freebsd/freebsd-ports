@@ -1,7 +1,6 @@
 PORTNAME=	gtkcord4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.18
-PORTREVISION=	1
+DISTVERSION=	0.0.19
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,14 +16,15 @@ USES=		gnome go:1.21,modules pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk40 libadwaita
 GH_ACCOUNT=	diamondburned
-GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab/weak \
+		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		danieljoos:wincred:v1.1.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		diamondburned:adaptive:fa139be203a8:diamondburned_adaptive/vendor/github.com/diamondburned/adaptive \
 		diamondburned:arikawa:dbc4ae8978dd:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
 		diamondburned:chatkit:e7ec2379e6a7:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
 		diamondburned:gotk4-adwaita:503b3cb0406c:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
-		diamondburned:gotk4:7966a062d938:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
+		diamondburned:gotk4:e5bfe6119990:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
 		diamondburned:gotkit:217be91d2538:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
 		diamondburned:ningen:e96f8ed832e6:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
