@@ -1770,7 +1770,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkIOIOSSModule.h
 include/paraview-%%VERMAJORMINOR%%/vtkIOImageModule.h
 include/paraview-%%VERMAJORMINOR%%/vtkIOImportModule.h
 include/paraview-%%VERMAJORMINOR%%/vtkIOInfovisModule.h
-include/paraview-%%VERMAJORMINOR%%/vtkIOLASModule.h
 include/paraview-%%VERMAJORMINOR%%/vtkIOLSDynaModule.h
 include/paraview-%%VERMAJORMINOR%%/vtkIOLegacyModule.h
 %%MPI%%include/paraview-%%VERMAJORMINOR%%/vtkIOMPIImageModule.h
@@ -2086,7 +2085,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkKdNode.h
 include/paraview-%%VERMAJORMINOR%%/vtkKdTree.h
 include/paraview-%%VERMAJORMINOR%%/vtkKdTreePointLocator.h
 include/paraview-%%VERMAJORMINOR%%/vtkKochanekSpline.h
-include/paraview-%%VERMAJORMINOR%%/vtkLASReader.h
 include/paraview-%%VERMAJORMINOR%%/vtkLICNoiseHelper.h
 include/paraview-%%VERMAJORMINOR%%/vtkLODProp3D.h
 include/paraview-%%VERMAJORMINOR%%/vtkLSDynaPart.h
@@ -6306,10 +6304,6 @@ lib/libvtkIOInfovis-pv%%VERMAJORMINOR%%.so
 lib/libvtkIOInfovis-pv%%VERMAJORMINOR%%.so.1
 lib/libvtkIOInfovis-pv%%VERMAJORMINOR%%.so.%%VERMAJORMINOR%%
 lib/libvtkIOInfovisCS.a
-lib/libvtkIOLAS-pv%%VERMAJORMINOR%%.so
-lib/libvtkIOLAS-pv%%VERMAJORMINOR%%.so.1
-lib/libvtkIOLAS-pv%%VERMAJORMINOR%%.so.%%VERMAJORMINOR%%
-lib/libvtkIOLASCS.a
 lib/libvtkIOLSDyna-pv%%VERMAJORMINOR%%.so
 lib/libvtkIOLSDyna-pv%%VERMAJORMINOR%%.so.1
 lib/libvtkIOLSDyna-pv%%VERMAJORMINOR%%.so.%%VERMAJORMINOR%%
@@ -7164,7 +7158,6 @@ lib/paraview-%%VERMAJORMINOR%%/plugins/paraview.plugins.xml
 %%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOImage.so
 %%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOImport.so
 %%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOInfovis.so
-%%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOLAS.so
 %%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOLSDyna.so
 %%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOLegacy.so
 %%MPI%%%%PYTHON_SITELIBDIR%%/vtkmodules/vtkIOMPIImage.so
@@ -7300,7 +7293,6 @@ lib/vtk/hierarchy/ParaView/vtkIOIOSS-hierarchy.txt
 lib/vtk/hierarchy/ParaView/vtkIOImage-hierarchy.txt
 lib/vtk/hierarchy/ParaView/vtkIOImport-hierarchy.txt
 lib/vtk/hierarchy/ParaView/vtkIOInfovis-hierarchy.txt
-lib/vtk/hierarchy/ParaView/vtkIOLAS-hierarchy.txt
 lib/vtk/hierarchy/ParaView/vtkIOLSDyna-hierarchy.txt
 lib/vtk/hierarchy/ParaView/vtkIOLegacy-hierarchy.txt
 %%MPI%%lib/vtk/hierarchy/ParaView/vtkIOMPIImage-hierarchy.txt
