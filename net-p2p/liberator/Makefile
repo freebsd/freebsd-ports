@@ -12,6 +12,9 @@ WWW=		https://sourceforge.net/projects/liberator/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned project with last release in 2003
+EXPIRATION_DATE=2024-03-31
+
 USES=		tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
