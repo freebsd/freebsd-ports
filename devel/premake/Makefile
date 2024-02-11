@@ -12,6 +12,9 @@ WWW=		http://premake.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Legacy unsupported version, consider devel/premake4 or devel/premake5
+EXPIRATION_DATE=2024-03-31
+
 WRKSRC=		${WRKDIR}/Premake-${PORTVERSION}
 
 USES=		dos2unix gmake zip
