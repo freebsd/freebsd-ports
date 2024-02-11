@@ -24,6 +24,7 @@ CMAKE_OFF=	ENABLE_BINDINGS_MONO \
 		ENABLE_GTKDOC
 
 USE_LDCONFIG=	yes
+LDFLAGS+=	-Wl,--undefined-version
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AyatanaIndicators
