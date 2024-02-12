@@ -1494,6 +1494,7 @@
     SUBDIR += py-dj42-django-allauth
     SUBDIR += py-dj42-django-auditlog
     SUBDIR += py-dj42-django-auth-ldap
+    SUBDIR += py-dj42-django-celery-results
     SUBDIR += py-dj42-django-compression-middleware
     SUBDIR += py-dj42-django-cors-headers
     SUBDIR += py-dj42-django-debug-toolbar
