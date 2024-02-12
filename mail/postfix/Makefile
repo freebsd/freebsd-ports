@@ -164,9 +164,6 @@ PKGNAMESUFFIX=	-base
 .endif
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
-PLIST_SUB+=	BMAN="share/"
-.else
-PLIST_SUB+=	BMAN=""
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
