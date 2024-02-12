@@ -1497,6 +1497,7 @@
     SUBDIR += py-dj42-django-graphiql-debug-toolbar
     SUBDIR += py-dj42-django-js-asset
     SUBDIR += py-dj42-django-mptt
+    SUBDIR += py-dj42-django-multiselectfield
     SUBDIR += py-dj42-django-prometheus
     SUBDIR += py-dj42-django-redis
     SUBDIR += py-dj42-django-rich

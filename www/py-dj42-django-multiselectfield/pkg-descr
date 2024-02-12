@@ -1,0 +1,3 @@
+A new model field and form field.  With this you can get a multiple select
+from a choices. Stores to the database as a CharField of comma-separated
+values.
