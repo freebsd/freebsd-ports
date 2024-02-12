@@ -1489,6 +1489,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-daphne
     SUBDIR += py-dj-database-url
+    SUBDIR += py-dj42-django-allauth
     SUBDIR += py-dj42-django-auth-ldap
     SUBDIR += py-dj42-django-cors-headers
     SUBDIR += py-dj42-django-debug-toolbar
