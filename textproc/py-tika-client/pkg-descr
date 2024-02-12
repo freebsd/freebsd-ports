@@ -1,0 +1,13 @@
+Tika Rest Client, simplified: No need to worry about XML or JSON responses,
+downloading a Tika jar file or Python 2. Support for Tika 2+ only.
+
+Full support for type hinting
+
+Nearly full test coverage run against an actual Tika server for multiple
+Python and PyPy versions
+
+Uses HTTP multipart/form-data to stream files to the server (instead of
+reading into memory)
+
+Optional compression for parsing from a file content already in a buffer (as
+opposed to a file)
