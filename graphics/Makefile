@@ -916,6 +916,7 @@
     SUBDIR += py-optimize-images
     SUBDIR += py-osmnet
     SUBDIR += py-pandana
+    SUBDIR += py-pdf2image
     SUBDIR += py-photocollage
     SUBDIR += py-piexif
     SUBDIR += py-pillow
