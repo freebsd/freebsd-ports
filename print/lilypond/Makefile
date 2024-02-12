@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejav
 		mftrace:print/mftrace
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
-		guile:2.2 magick:7,build perl5 pkgconfig python
+		magick:7,build perl5 pkgconfig python
 USE_CXXSTD=	c++14
 USE_GNOME=	pango
 USE_PERL5=	build
@@ -60,10 +60,17 @@ INFO=		lilypond-changes \
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	NLS URW
-OPTIONS_SUB=	yes
+OPTIONS_DEFAULT=	GUILE2
+OPTIONS_SINGLE=	GUILE
+OPTIONS_SINGLE_GUILE=	GUILE2 GUILE3
+OPTIONS_SUB=		yes
 
+GUILE2_DESC=	Use guile2
+GUILE3_DESC=	Use guile3
 URW_DESC=	Use bundled URW fonts
 
+GUILE2_USES=	guile:2.2
+GUILE3_USES=	guile:3.0
 NLS_USES=	gettext
 
 URW_BUILD_DEPENDS=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
