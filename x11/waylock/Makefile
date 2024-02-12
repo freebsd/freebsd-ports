@@ -1,6 +1,6 @@
 PORTNAME=	waylock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/ifreund/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
 		https://codeberg.org/ifreund/zig-wayland/archive/65475ba${EXTRACT_SUFX}?dummy=/:zig_wayland \
