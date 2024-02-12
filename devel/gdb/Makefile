@@ -101,14 +101,18 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 .if ${PORT_OPTIONS:MPYTHON} && \
     (exists(/usr/lib/libc++.so.1) || exists(/lib/libc++.so.1))
+.ifndef SLAVE_PORT
 USE_GITHUB=	nodefault
+.endif
 
-GH_ACCOUNT=	bsdjhb:libcxx
-GH_PROJECT=	libcxx-gdbpy:libcxx
-GH_TAGNAME=	03d0d9b:libcxx
+GH_ACCOUNT+=	bsdjhb:libcxx
+GH_PROJECT+=	libcxx-gdbpy:libcxx
+GH_TAGNAME+=	03d0d9b:libcxx
 
+.ifndef SLAVE_PORT
 # Workaround USE_GITHUB preventing the default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 .if exists(/usr/lib/libc++.so.1)
 LIBCXX_DIR=	/usr/lib
