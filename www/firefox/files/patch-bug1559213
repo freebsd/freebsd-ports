@@ -26,25 +26,6 @@ index 2fc8df57992e..63d18e50a961 100644
  
  if not CONFIG["MOZ_SYSTEM_PNG"]:
      external_dirs += ["media/libpng"]
-diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index 07d48e7f9748..e56e5e084518 100644
---- config/system-headers.mozbuild
-+++ config/system-headers.mozbuild
-@@ -1304,6 +1304,14 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
-         "proxy.h",
-     ]
- 
-+if CONFIG['MOZ_SYSTEM_AV1']:
-+    system_headers += [
-+        'aom/aom_decoder.h',
-+        'aom/aomdx.h',
-+        'aom/aom_image.h',
-+        'dav1d/dav1d.h',
-+    ]
-+
- if CONFIG["MOZ_SYSTEM_ICU"]:
-     system_headers += [
-         "unicode/calendar.h",
 diff --git dom/media/platforms/moz.build dom/media/platforms/moz.build
 index 5c6e25b3980b..ce99ebfb6d3f 100644
 --- dom/media/platforms/moz.build
