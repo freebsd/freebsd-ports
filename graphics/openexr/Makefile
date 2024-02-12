@@ -1,5 +1,5 @@
 PORTNAME?=	openexr
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
