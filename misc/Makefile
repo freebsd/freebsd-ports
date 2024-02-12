@@ -426,6 +426,7 @@
     SUBDIR += py-hist
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
+    SUBDIR += py-huggingface-hub
     SUBDIR += py-icoextract
     SUBDIR += py-instructor
     SUBDIR += py-ipyfastscape
