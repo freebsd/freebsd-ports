@@ -460,6 +460,7 @@
     SUBDIR += py-palettable
     SUBDIR += py-papermill
     SUBDIR += py-pexpect
+    SUBDIR += py-pkbar
     SUBDIR += py-placekey
     SUBDIR += py-polars
     SUBDIR += py-powerline-status
