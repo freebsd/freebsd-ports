@@ -3383,7 +3383,11 @@ run-cheri-gnulib-fixup:
 		if grep -q "typedef long int gl_intptr_t" $${f} ; then \
 			if ! grep -q "__INTPTR_WIDTH__ != (defined _WIN64 ? LLONG_WIDTH : LONG_WIDTH)" $${f} ; then \
 				echo "Updating $${f}" ; \
+				cp $${f} $${f}.bak ; \
 				cp "${TEMPLATES}/gnulib/stdint.in.h" $${f} ; \
+				if grep -q "@GNULIB_OVERRIDES_WINT_T@" $${f}.bak ; then \
+					${REINPLACE_CMD} -e 's|@GNULIBHEADERS_OVERRIDE_WINT_T@|@GNULIB_OVERRIDES_WINT_T@|g' $${f} ; \
+				fi \
 			fi \
 		fi \
 	done
