@@ -1,6 +1,5 @@
 PORTNAME=	lilypond
-DISTVERSION=	2.25.12
-PORTREVISION=	1
+DISTVERSION=	2.25.13
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -29,7 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejav
 		mftrace:print/mftrace
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
-		guile:2.2 magick:7,build perl5 pkgconfig python
+		magick:7,build perl5 pkgconfig python
 USE_CXXSTD=	c++17
 USE_GNOME=	cairo pango
 USE_PERL5=	build
@@ -38,7 +37,7 @@ GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=			ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 				FLEX=${FLEX} \
-				GUILE_FLAVOR=guile-2.2 \
+				GUILE_FLAVOR=${GUILE_CMD} \
 				HOME=${WRKDIR} \
 				YACC=${YACC}
 
@@ -61,11 +60,18 @@ INFO=		lilypond-changes \
 		music-glossary
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	NLS URW
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS URW
+OPTIONS_DEFAULT=	GUILE3
+OPTIONS_SINGLE=		GUILE
+OPTIONS_SINGLE_GUILE=	GUILE2 GUILE3
+OPTIONS_SUB=		yes
 
+GUILE2_DESC=	Use guile2
+GUILE3_DESC=	Use guile3
 URW_DESC=	Use bundled URW fonts
 
+GUILE2_USES=	guile:2.2
+GUILE3_USES=	guile:3.0
 NLS_USES=	gettext
 
 URW_BUILD_DEPENDS=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
