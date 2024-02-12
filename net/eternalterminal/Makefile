@@ -1,6 +1,7 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
 DISTVERSION=	6.2.8
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -27,7 +28,12 @@ CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/rc.d/etserver
 
-post-install:
+# Install manually to avoid extra files: https://github.com/MisterTea/EternalTerminal/issues/601
+do-install:
+.for exec in et etserver etterminal htm htmd
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${exec} \
+			${STAGEDIR}${PREFIX}/bin
+.endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/etserver
 	${INSTALL_DATA} ${WRKSRC}/etc/et.cfg \
 		${STAGEDIR}${PREFIX}/etc/etserver/et.cfg.sample

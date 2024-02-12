@@ -5,8 +5,3 @@ bin/htm
 bin/htmd
 @sample etc/etserver/et.cfg.sample
 etc/rc.d/etserver
-include/httplib.h
-lib/cmake/httplib/FindBrotli.cmake
-lib/cmake/httplib/httplibConfig.cmake
-lib/cmake/httplib/httplibConfigVersion.cmake
-lib/cmake/httplib/httplibTargets.cmake
