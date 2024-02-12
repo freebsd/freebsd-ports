@@ -11,6 +11,7 @@ include/aluminum/cuda/helper_kernels.hpp
 include/aluminum/cuda/streams.hpp
 include/aluminum/cuda/sync_memory.hpp
 include/aluminum/datatypes.hpp
+include/aluminum/debug_helpers.hpp
 include/aluminum/ht/allgather.hpp
 include/aluminum/ht/allgatherv.hpp
 include/aluminum/ht/allreduce.hpp
@@ -85,4 +86,4 @@ lib/cmake/aluminum/FindHWLOC.cmake
 lib/cmake/aluminum/FindNCCL.cmake
 lib/cmake/aluminum/FindRoctracer.cmake
 lib/libAl.so
-lib/libAl.so.1.4.1
+lib/libAl.so.1.4.2
