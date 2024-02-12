@@ -1,0 +1,11 @@
+Call all LLM APIs using the OpenAI format [Bedrock, Huggingface,
+VertexAI, TogetherAI, Azure, OpenAI, etc.]
+
+LiteLLM manages:
+- Translate inputs to provider's completion, embedding, and
+  image_generation endpoints
+- Consistent output, text responses will always be available at
+  ['choices'][0]['message']['content']
+- Retry/fallback logic across multiple deployments (e.g. Azure/OpenAI)
+  - Router
+- Track spend & set budgets per project OpenAI Proxy Server
