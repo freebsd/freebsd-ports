@@ -1,6 +1,6 @@
 PORTNAME=	SVN-Web
 PORTVERSION=	0.63
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,8 +30,12 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-RSS-Parser>=0:textproc/p5-XML-RSS-Parser \
 		p5-XML-RSS>=0:textproc/p5-XML-RSS \
-		p5-YAML>=0:textproc/p5-YAML \
-		p5-subversion>=0:devel/p5-subversion
+		p5-YAML>=0:textproc/p5-YAML
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
+.endif
 TEST_DEPENDS=	p5-Test-Benchmark>=0:devel/p5-Test-Benchmark \
 		p5-Test-HTML-Tidy>=0:devel/p5-Test-HTML-Tidy \
 		p5-Test-WWW-Mechanize>=0:devel/p5-Test-WWW-Mechanize

@@ -1,6 +1,6 @@
 PORTNAME=	porttree
 PORTVERSION=	1.1.r${SVN_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -31,7 +31,7 @@ do-test:
 	LC_ALL="en_US.UTF-8" ${WRKSRC}/tests/tests.sh
 
 # maintainer section:
-# require: devel/subversion
+# require: devel/subversion-lts or devel/subversion
 SVNROOT?=	https://svn.code.sf.net/p/porttree/code/trunk
 gen-dist:
 	${MKDIR} ${WRKDIR}

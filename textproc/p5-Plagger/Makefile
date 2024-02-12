@@ -1,6 +1,6 @@
 PORTNAME=	Plagger
 PORTVERSION=	0.7.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -151,8 +151,13 @@ COOKIESHARING_RUN_DEPENDS= \
 CUSFEEDMIXI_RUN_DEPENDS= \
 		p5-WWW-Mixi>=0:www/p5-WWW-Mixi
 
+.if ${WITH_SUBVERSION_VER:U} == LTS
+CUSTOMSVNLOG_RUN_DEPENDS= \
+		p5-subversion-lts>=0:devel/p5-subversion
+.else
 CUSTOMSVNLOG_RUN_DEPENDS= \
 		p5-subversion>=0:devel/p5-subversion
+.endif
 
 EMOTICON_RUN_DEPENDS= \
 		p5-Text-Emoticon>=0:textproc/p5-Text-Emoticon

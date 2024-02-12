@@ -1,5 +1,6 @@
 PORTNAME=	SVN-Access
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +13,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Tie-IxHash>=1.21:devel/p5-Tie-IxHash \
-		p5-subversion>=0:devel/p5-subversion
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion
+.endif
+RUN_DEPENDS+=	p5-Tie-IxHash>=1.21:devel/p5-Tie-IxHash
 
 USES=		perl5
 USE_PERL5=	configure

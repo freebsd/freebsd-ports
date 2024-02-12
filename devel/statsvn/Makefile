@@ -1,6 +1,6 @@
 PORTNAME=	statsvn
 PORTVERSION=	0.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -11,7 +11,11 @@ WWW=		https://www.statsvn.org/
 
 LICENSE=	LGPL21+
 
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	subversion-lts>0:devel/subversion-lts
+.else
 RUN_DEPENDS=	subversion>0:devel/subversion
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

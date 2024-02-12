@@ -1,5 +1,6 @@
 PORTNAME=	svn2git
 PORTVERSION=	1.0.18
+PORTREVISION=	1
 CATEGORIES=	devel kde
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,11 +10,19 @@ WWW=		http://gitorious.org/svn2git/svn2git
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libapr-1.so:devel/apr1 \
-		libsvn_client-1.so:devel/subversion
+LIB_DEPENDS=	libapr-1.so:devel/apr1
+.if ${WITH_SUBVERSION_VER:U} == LTS
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion-lts
+.else
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
+.endif
 RUN_DEPENDS=	git:devel/git \
-		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-		p5-subversion>=0:devel/p5-subversion
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
+.endif
 
 USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes

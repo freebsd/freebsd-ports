@@ -1,6 +1,6 @@
 PORTNAME=	SVN-Mirror
 PORTVERSION=	0.75
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,12 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-URI>=0:net/p5-URI \
-		p5-VCP-autrijus>=0:devel/p5-VCP-autrijus \
-		p5-subversion>=0:devel/p5-subversion
+		p5-VCP-autrijus>=0:devel/p5-VCP-autrijus
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
+.endif
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,6 +1,6 @@
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	shells security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-snapshots
 DISTNAME=	${PORTNAME}-20110526
@@ -46,10 +46,17 @@ RSYNC_RUN_DEPENDS=		rsync:net/rsync
 RSYNC_CONFIGURE_ENABLE=		rsync-compat
 SCP_CONFIGURE_ENABLE=		scp-compat
 SUBVERSION_CONFIGURE_ENABLE=	svn-compat
+.if ${WITH_SUBVERSION_VER:U} == LTS
+SUBVERSION_BUILD_DEPENDS=	svn:devel/subversion-lts
+SUBVERSION_RUN_DEPENDS=		svn:devel/subversion-lts
+SVNSERVE_BUILD_DEPENDS=		svn:devel/subversion-lts
+SVNSERVE_RUN_DEPENDS=		svn:devel/subversion-lts
+.else
 SUBVERSION_BUILD_DEPENDS=	svn:devel/subversion
 SUBVERSION_RUN_DEPENDS=		svn:devel/subversion
 SVNSERVE_BUILD_DEPENDS=		svn:devel/subversion
 SVNSERVE_RUN_DEPENDS=		svn:devel/subversion
+.endif
 SVNSERVE_CONFIGURE_ENABLE=	svnserv-compat
 UNISON_BUILD_DEPENDS=		unison:net/unison
 UNISON_RUN_DEPENDS=		unison:net/unison

@@ -1,6 +1,6 @@
 PORTNAME=	medusa
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/~jmk/tools/
 
@@ -22,7 +22,11 @@ CFLAGS+=	-fcommon
 OPTIONS_DEFINE=	DOCS PGSQL SUBVERSION
 OPTIONS_SUB=	yes
 
+.if ${WITH_SUBVERSION_VER:U} == LTS
+SUBVERSION_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion-lts
+.else
 SUBVERSION_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+.endif
 SUBVERSION_CFLAGS=	-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
 SUBVERSION_CONFIGURE_OFF=	--enable-module-svn=no
 

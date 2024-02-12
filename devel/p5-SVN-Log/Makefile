@@ -1,6 +1,6 @@
 PORTNAME=	SVN-Log
 PORTVERSION=	0.03
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
-		p5-Test-Simple>=0:devel/p5-Test-Simple
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion
+.endif
+RUN_DEPENDS+=	p5-Test-Simple>=0:devel/p5-Test-Simple
 
 NO_ARCH=	yes
 USES=		perl5

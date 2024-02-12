@@ -1,5 +1,6 @@
 PORTNAME=	pysvn
 PORTVERSION=	1.9.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
@@ -10,8 +11,12 @@ WWW=		http://pysvn.tigris.org/
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
-		libneon.so:www/neon \
+.if ${WITH_SUBVERSION_VER:U} == LTS
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion-lts
+.else
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+.endif
+LIB_DEPENDS+=	libneon.so:www/neon \
 		libexpat.so:textproc/expat2
 
 USES=		python

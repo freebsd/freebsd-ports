@@ -1,5 +1,6 @@
 PORTNAME=	qimageblitz
 PORTVERSION=	0.1.0.${SVN_REVISION} # a made-up version also used in some linux distros, otherwise we need to add PORTEPOCH
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +10,11 @@ WWW=		https://sourceforge.net/projects/qimageblitz/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+.if ${WITH_SUBVERSION_VER:U} == LTS
+FETCH_DEPENDS=	svn:devel/subversion-lts
+.else
 FETCH_DEPENDS=	svn:devel/subversion
+.endif
 
 USES=		cmake compiler:c++11-lang qt:5
 USE_LDCONFIG=	yes

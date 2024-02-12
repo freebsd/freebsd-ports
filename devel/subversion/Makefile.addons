@@ -1,30 +1,26 @@
-WITH_SUBVERSION_VER?=	114
+WITH_SUBVERSION_VER?=	latest
 
 PKGDIR=			${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes
 
-.if ${WITH_SUBVERSION_VER} == 114
-CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
-			${PORTNAME}-1.[^1][0-9].[0-9]* \
-			${PORTNAME}-1.1[0-1].[0-9]* \
-			${PORTNAME}-lts-1.[0-9][0-9].[0-9]*
-PORTREVISION=		${PORTREVISION_114:U0}
-PLIST_SUB+=		SVN114="" SVNLTS="@comment "
+.if ${WITH_SUBVERSION_VER} == latest
+CONFLICTS_BUILD+=	${PORTNAME}-lts-1.[0-9][0-9].[0-9]*
+PORTREVISION=		${PORTREVISION_LATEST:U0}
+PLIST_SUB+=		SVN="" SVNLTS="@comment "
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
 OPTIONS_NAME=		devel_subversion
 MASTERDIR=		${.CURDIR}/../../devel/subversion
 .include		"${MASTERDIR}/Makefile.common"
 .elif ${WITH_SUBVERSION_VER} == LTS
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}-lts
-CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
-			${PORTNAME}-1.[0-9][0-9].[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9][0-9].[0-9]*
 PORTREVISION=		${PORTREVISION_LTS:U0}
-PLIST_SUB+=		SVN114="@comment " SVNLTS=""
+PLIST_SUB+=		SVN="@comment " SVNLTS=""
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion-lts
 OPTIONS_NAME=		devel_subversion-lts
 MASTERDIR=		${.CURDIR}/../../devel/subversion-lts
 .include		"${MASTERDIR}/Makefile.common"
 .else
-BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only 114 (default) and LTS are supported
+BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only latest (default) and LTS are supported
 .endif

@@ -1,6 +1,6 @@
 PORTNAME=	mesos
 PORTVERSION=	1.11.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	sysutils
 MASTER_SITES=	APACHE/mesos/${PORTVERSION}:mesos
 PKGNAMEPREFIX=	apache-
@@ -33,9 +33,14 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libleveldb.so:databases/leveldb \
 		libprotobuf.so:devel/protobuf \
 		libsasl2.so:security/cyrus-sasl2 \
-		libsvn_delta-1.so:devel/subversion \
-		libsvn_subr-1.so:devel/subversion \
 		libzookeeper_mt.so:devel/libzookeeper
+.if ${WITH_SUBVERSION_VER:U} == LTS
+LIB_DEPENDS+=	libsvn_delta-1.so:devel/subversion-lts
+LIB_DEPENDS+=	libsvn_subr-1.so:devel/subversion-lts
+.else
+LIB_DEPENDS+=	libsvn_delta-1.so:devel/subversion
+LIB_DEPENDS+=	libsvn_subr-1.so:devel/subversion
+.endif
 
 USES=		cpe gmake libarchive libtool python:run shebangfix
 CPE_VENDOR=	apache

@@ -1,6 +1,6 @@
 PORTNAME=	yukon
 PORTVERSION=	2010011201
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/bms
 
@@ -29,7 +29,11 @@ PLIST_SUB+=	LIBGL_MAJOR="${LIBGL_MAJOR}" LIBX11_MAJOR="${LIBX11_MAJOR}"
 # To roll snapshot: as bms: make BOOTSTRAP=defined fetch
 #
 .if defined(BOOTSTRAP)
+.if ${WITH_SUBVERSION_VER:U} == LTS
+FETCH_DEPENDS+=	svn:devel/subversion-lts
+.else
 FETCH_DEPENDS+=	svn:devel/subversion
+.endif
 SVN_REV=	158		# svn tip at epoch 2009120801
 SVNROOT_URI=	https://devel.neopsis.com/svn/yukon
 

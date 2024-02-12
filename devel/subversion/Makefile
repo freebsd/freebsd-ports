@@ -1,4 +1,4 @@
-PORTREVISION=	5
+PORTREVISION=	6
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
