@@ -1,5 +1,6 @@
 PORTNAME=	otf2bdf
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sofia.nmsu.edu/~mleisher/Software/otf2bdf/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -19,8 +20,10 @@ USES=		autoreconf pkgconfig tar:tgz
 
 GNU_CONFIGURE=	yes
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 PLIST_FILES=	bin/otf2bdf \
-		man/man1/otf2bdf.1.gz
+		share/man/man1/otf2bdf.1.gz
 
 post-extract:
 		${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/mkinstalldirs ${WRKSRC}
