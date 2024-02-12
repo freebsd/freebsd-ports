@@ -1,6 +1,7 @@
 PORTNAME=	liblockfile
 PORTVERSION=	1.17
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yasu@FreeBSD.org
@@ -19,6 +20,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-mailgroup
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	Changelog README
 

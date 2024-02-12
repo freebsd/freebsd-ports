@@ -5,6 +5,6 @@ lib/liblockfile.a
 lib/liblockfile.so
 lib/liblockfile.so.1
 lib/liblockfile.so.1.0
-man/man1/dotlockfile.1.gz
-man/man3/lockfile_create.3.gz
-man/man3/maillock.3.gz
+share/man/man1/dotlockfile.1.gz
+share/man/man3/lockfile_create.3.gz
+share/man/man3/maillock.3.gz
