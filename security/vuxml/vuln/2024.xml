@@ -1,3 +1,35 @@
+  <vuln vid="f161a5ad-c9bd-11ee-b7a7-353f1e043d9a">
+    <topic>openexr -- Heap Overflow in Scanline Deep Data Parsing</topic>
+    <affects>
+      <package>
+	<name>openexr</name>
+	<range><lt>3.1.12</lt></range>
+	<range><ge>3.2.0</ge><lt>3.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Austin Hackers Anonymous report:</p>
+	<blockquote cite="https://takeonme.org/cves/CVE-2023-5841.html">
+	  <p>Due to a failure in validating the number of scanline samples of a OpenEXR file containing deep scanline data, Academy Software Foundation OpenEXR image parsing library version 3.2.1 and prior is susceptible to a heap-based buffer overflow vulnerability.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.2.2">
+	  <p>[...] it is in a routine that is predominantly used for development and
+	    testing. It is not likely to appear in production code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5841</cvename>
+      <url>https://takeonme.org/cves/CVE-2023-5841.html</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.2.2</url>
+    </references>
+    <dates>
+      <discovery>2023-10-26</discovery>
+      <entry>2024-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="388eefc0-c93f-11ee-92ce-4ccc6adda413">
     <topic>readstat -- Heap buffer overflow in readstat_convert</topic>
     <affects>
