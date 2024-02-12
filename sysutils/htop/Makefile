@@ -1,5 +1,6 @@
 PORTNAME=	htop
 DISTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -9,7 +10,7 @@ WWW=		https://htop.dev/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c11 cpe desktop-file-utils libtool localbase \
+USES=		autoreconf compiler:c11 cpe libtool localbase \
 		ncurses pkgconfig python:build shebangfix
 
 USE_GITHUB=	yes
