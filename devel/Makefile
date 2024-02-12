@@ -4833,6 +4833,7 @@
     SUBDIR += py-inifile
     SUBDIR += py-iniparse
     SUBDIR += py-inotify-simple
+    SUBDIR += py-inotifyrecursive
     SUBDIR += py-installer
     SUBDIR += py-intbitset
     SUBDIR += py-intelhex
