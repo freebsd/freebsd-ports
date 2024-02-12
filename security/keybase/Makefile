@@ -1,9 +1,9 @@
 PORTNAME=	keybase
-PORTVERSION=	6.2.3
-PORTREVISION=	2
+PORTVERSION=	6.2.4
 DISTVERSIONPREFIX=	v
-MASTER_SITES=	https://raw.githubusercontent.com/keybase/client/v${PORTVERSION}/go/:gomod
+PORTREVISION=	2
 CATEGORIES=	security
+MASTER_SITES=	https://raw.githubusercontent.com/keybase/client/v${PORTVERSION}/go/:gomod
 DISTFILES=	go.mod:gomod
 
 MAINTAINER=	sunpoet@FreeBSD.org
