@@ -1666,6 +1666,7 @@
     SUBDIR += py-flask-sockets
     SUBDIR += py-flask-uploads
     SUBDIR += py-flask-wtf
+    SUBDIR += py-flower
     SUBDIR += py-flup6
     SUBDIR += py-folium
     SUBDIR += py-forcediphttpsadapter
