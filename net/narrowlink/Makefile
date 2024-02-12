@@ -1,6 +1,5 @@
 PORTNAME=	narrowlink
-DISTVERSION=	0.2.2
-PORTREVISION=	1
+DISTVERSION=	0.2.3
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,9 +24,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anyhow-1.0.79 \
 		arrayvec-0.7.4 \
 		askama-0.12.1 \
-		askama_derive-0.12.4 \
+		askama_derive-0.12.5 \
 		askama_escape-0.10.3 \
-		askama_parser-0.2.0 \
+		askama_parser-0.2.1 \
 		asn1-rs-0.5.2 \
 		asn1-rs-derive-0.4.0 \
 		asn1-rs-impl-0.1.0 \
@@ -37,10 +36,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-trait-0.1.77 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
-		base64-0.21.5 \
-		bindgen-0.69.1 \
+		base64-0.21.7 \
+		bindgen-0.69.4 \
 		bitflags-1.3.2 \
-		bitflags-2.4.1 \
+		bitflags-2.4.2 \
 		block-buffer-0.10.4 \
 		bumpalo-3.14.0 \
 		byteorder-1.5.0 \
@@ -52,15 +51,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cfg-if-1.0.0 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
-		chrono-0.4.31 \
+		chrono-0.4.34 \
 		cipher-0.4.4 \
 		clang-sys-1.7.0 \
 		clap_lex-0.6.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
-		cpufeatures-0.2.11 \
-		crossbeam-channel-0.5.10 \
-		crossbeam-utils-0.8.18 \
+		cpufeatures-0.2.12 \
+		crossbeam-channel-0.5.11 \
+		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
 		daemonize-0.5.0 \
 		data-encoding-2.5.0 \
@@ -70,7 +69,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		displaydoc-0.2.4 \
-		either-1.9.0 \
+		either-1.10.0 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		etherparse-0.13.0 \
@@ -87,12 +86,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-timer-3.0.2 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
-		getrandom-0.2.11 \
+		getrandom-0.2.12 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
-		h2-0.3.22 \
+		h2-0.3.24 \
 		hashbrown-0.14.3 \
-		hermit-abi-0.3.3 \
+		hermit-abi-0.3.5 \
 		hmac-0.12.1 \
 		home-0.5.9 \
 		http-0.2.11 \
@@ -101,48 +100,50 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		httpdate-1.0.3 \
 		hyper-0.14.28 \
 		hyper-rustls-0.24.2 \
-		iana-time-zone-0.1.59 \
+		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
 		idna-0.5.0 \
 		if_chain-1.0.2 \
-		indexmap-2.1.0 \
+		indexmap-2.2.2 \
 		inout-0.1.3 \
-		instant-acme-0.4.1 \
+		instant-acme-0.4.3 \
 		ioctl-sys-0.8.0 \
 		ipnet-2.9.0 \
-		ipstack-0.0.2 \
+		ipstack-0.0.3 \
+		itertools-0.12.1 \
 		itoa-1.0.10 \
-		js-sys-0.3.66 \
+		js-sys-0.3.68 \
 		jsonwebtoken-9.2.0 \
-		keccak-0.1.4 \
+		keccak-0.1.5 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.151 \
+		libc-0.2.153 \
 		libloading-0.8.1 \
 		libredox-0.0.1 \
-		linux-raw-sys-0.4.12 \
+		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		memchr-2.7.1 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.1 \
+		miniz_oxide-0.7.2 \
 		mio-0.8.10 \
-		net-route-0.2.8 \
+		net-route-0.2.11 \
 		netlink-packet-core-0.7.0 \
 		netlink-packet-route-0.17.1 \
 		netlink-packet-utils-0.5.2 \
-		netlink-proto-0.11.2 \
+		netlink-proto-0.11.3 \
 		netlink-sys-0.8.5 \
 		nix-0.26.4 \
 		nom-7.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.4 \
-		num-integer-0.1.45 \
-		num-traits-0.2.17 \
+		num-conv-0.1.0 \
+		num-integer-0.1.46 \
+		num-traits-0.2.18 \
 		num_cpus-1.16.0 \
 		object-0.32.2 \
 		oid-registry-0.6.1 \
@@ -154,7 +155,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		paste-1.0.14 \
-		peeking_take_while-0.1.2 \
 		pem-3.0.3 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.13 \
@@ -165,7 +165,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		prettyplease-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.74 \
+		proc-macro2-1.0.78 \
 		proxy-stream-0.0.2 \
 		quinn-0.10.2 \
 		quinn-proto-0.10.6 \
@@ -177,8 +177,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rcgen-0.11.3 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-lite-0.1.5 \
 		regex-syntax-0.8.2 \
 		ring-0.16.20 \
@@ -188,10 +188,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
 		rusticata-macros-4.1.0 \
-		rustix-0.38.28 \
+		rustix-0.38.31 \
 		rustls-0.21.10 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
+		rustls-pki-types-1.2.0 \
 		rustls-webpki-0.101.7 \
 		ryu-1.0.16 \
 		schannel-0.1.23 \
@@ -199,34 +200,34 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sct-0.7.1 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
-		serde-1.0.194 \
-		serde_derive-1.0.194 \
-		serde_json-1.0.110 \
-		serde_yaml-0.9.30 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		serde_json-1.0.113 \
+		serde_yaml-0.9.31 \
 		sha1-0.10.6 \
 		sha3-0.10.8 \
 		sharded-slab-0.1.7 \
-		shlex-1.2.0 \
+		shlex-1.3.0 \
 		signal-hook-registry-1.4.1 \
 		slab-0.4.9 \
-		smallvec-1.11.2 \
+		smallvec-1.13.1 \
 		socket2-0.5.5 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.46 \
+		syn-2.0.48 \
 		synstructure-0.12.6 \
-		sysinfo-0.30.3 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
+		sysinfo-0.30.5 \
+		thiserror-1.0.57 \
+		thiserror-impl-1.0.57 \
 		thread_local-1.1.7 \
-		time-0.3.31 \
+		time-0.3.34 \
 		time-core-0.1.2 \
-		time-macros-0.2.16 \
+		time-macros-0.2.17 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.1 \
+		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.24.1 \
 		tokio-tungstenite-0.20.1 \
@@ -244,7 +245,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		typenum-1.17.0 \
 		udp-stream-0.0.9 \
 		unicase-2.7.0 \
-		unicode-bidi-0.3.14 \
+		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-xid-0.2.4 \
@@ -254,7 +255,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
 		utf-8-0.7.6 \
-		uuid-1.6.1 \
+		uuid-1.7.0 \
 		validator-0.16.1 \
 		validator_derive-0.16.0 \
 		validator_types-0.16.0 \
@@ -262,13 +263,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		version_check-0.9.4 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.89 \
-		wasm-bindgen-backend-0.2.89 \
-		wasm-bindgen-macro-0.2.89 \
-		wasm-bindgen-macro-support-0.2.89 \
-		wasm-bindgen-shared-0.2.89 \
-		web-sys-0.3.66 \
-		webpki-roots-0.25.3 \
+		wasm-bindgen-0.2.91 \
+		wasm-bindgen-backend-0.2.91 \
+		wasm-bindgen-macro-0.2.91 \
+		wasm-bindgen-macro-support-0.2.91 \
+		wasm-bindgen-shared-0.2.91 \
+		web-sys-0.3.68 \
+		webpki-roots-0.25.4 \
 		which-4.4.2 \
 		wildmatch-2.3.0 \
 		winapi-0.3.9 \
