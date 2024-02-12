@@ -1,5 +1,5 @@
 PORTNAME=	syncthingtray
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -21,8 +21,8 @@ USES=		cmake:insource compiler:c++11-lang desktop-file-utils iconv \
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
-		Martchus:cpp-utilities:v5.24.3:cpputilities/../c++utilities \
-		Martchus:qtutilities:v6.13.3:qtutilities/../qtutilities \
+		Martchus:cpp-utilities:v5.24.6:cpputilities/../c++utilities \
+		Martchus:qtutilities:v6.13.4:qtutilities/../qtutilities \
 		Martchus:qtforkawesome:3ec0824:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
 		Martchus:subdirs:c2b6d74:subdirs/../subdirs
