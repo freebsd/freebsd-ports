@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2.11
+DISTVERSION=	2024.2.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +46,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		calmio_filters-0.1.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.33 \
+		chrono-0.4.34 \
 		clap-4.5.0 \
 		clap_builder-4.5.0 \
 		clap_derive-4.5.0 \
@@ -302,7 +302,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
 		urlencoding-2.1.3 \
-		usage-lib-0.1.5-beta.2 \
+		usage-lib-0.1.8 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
