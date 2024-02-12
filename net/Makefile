@@ -1117,6 +1117,7 @@
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
     SUBDIR += py-python-heatclient
+    SUBDIR += py-python-ipware
     SUBDIR += py-python-keystoneclient
     SUBDIR += py-python-ldap
     SUBDIR += py-python-neutronclient
