@@ -1,0 +1,13 @@
+- backport a fix
+
+--- avogadro/qtplugins/templatetool/CMakeLists.txt.orig	2024-02-12 18:50:42 UTC
++++ avogadro/qtplugins/templatetool/CMakeLists.txt
+@@ -24,7 +24,7 @@ avogadro_plugin(TemplateTool
+ )
+ 
+ # Install the fragments
+-set(_molecules "${AvogadroLibs_SOURCE_DIR}/../fragments")
++set(_fragments "${AvogadroLibs_SOURCE_DIR}/../fragments")
+ 
+ # Look in parallel directory for the molecule fragment repository
+ if(NOT EXISTS "${_fragments}")

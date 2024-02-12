@@ -1,8 +1,8 @@
 - git is only needed when 'molecules' and 'crystals' aren't supplied by the caller
 
---- CMakeLists.txt.orig	2021-06-04 09:02:43 UTC
+--- CMakeLists.txt.orig	2024-02-10 14:49:49 UTC
 +++ CMakeLists.txt
-@@ -31,8 +31,8 @@ set(AvogadroLibs_VERSION_MINOR   "94")
+@@ -26,8 +26,8 @@ set(AvogadroLibs_VERSION
  set(AvogadroLibs_VERSION_PATCH   "0")
  set(AvogadroLibs_VERSION
    "${AvogadroLibs_VERSION_MAJOR}.${AvogadroLibs_VERSION_MINOR}.${AvogadroLibs_VERSION_PATCH}")

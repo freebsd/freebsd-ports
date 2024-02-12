@@ -1,9 +1,10 @@
---- CMakeLists.txt.orig	2022-07-21 15:20:28 UTC
+--- CMakeLists.txt.orig	2024-02-12 18:24:36 UTC
 +++ CMakeLists.txt
-@@ -1,3 +1,6 @@
-+cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
+@@ -1,5 +1,7 @@ cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
+ cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
+ 
++find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 +
-+find_package(AvogadroLibs REQUIRED)
- find_package(PythonInterp 3 REQUIRED)
- find_package(PythonLibs 3 REQUIRED)
- set(PYBIND11_PYTHON_VERSION "3" CACHE STRING "")
+ if (NOT TARGET Avogadro::Core)
+   find_package(AvogadroLibs REQUIRED)
+ endif()
