@@ -1618,6 +1618,7 @@
     SUBDIR += py-tiktoken
     SUBDIR += py-tinycss
     SUBDIR += py-tinycss2
+    SUBDIR += py-tokenizers
     SUBDIR += py-toml
     SUBDIR += py-tomli
     SUBDIR += py-tomli-w
