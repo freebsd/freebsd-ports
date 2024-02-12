@@ -1,4 +1,4 @@
---- src/sss_client/sss_nss.exports.orig	2023-06-05 03:42:12 UTC
+--- src/sss_client/sss_nss.exports.orig	2024-01-12 12:05:40 UTC
 +++ src/sss_client/sss_nss.exports
 @@ -3,6 +3,7 @@ EXPORTED {
  	# public functions
@@ -15,21 +15,21 @@
 +		_nss_sss_getgroupmembership;
  		_nss_sss_initgroups_dyn;
 +
-+		__nss_compat_getgrnam_r;
-+		__nss_compat_getgrgid_r;
-+		__nss_compat_getgrent_r;
-+		__nss_compat_setgrent;
-+		__nss_compat_endgrent;
++		#__nss_compat_getgrnam_r;
++		#__nss_compat_getgrgid_r;
++		#__nss_compat_getgrent_r;
++		#__nss_compat_setgrent;
++		#__nss_compat_endgrent;
 +
-+		__nss_compat_getpwnam_r;
-+		__nss_compat_getpwuid_r;
-+		__nss_compat_getpwent_r;
-+		__nss_compat_setpwent;
-+		__nss_compat_endpwent;
++		#__nss_compat_getpwnam_r;
++		#__nss_compat_getpwuid_r;
++		#__nss_compat_getpwent_r;
++		#__nss_compat_setpwent;
++		#__nss_compat_endpwent;
 +
-+		__nss_compat_gethostbyname;
-+		__nss_compat_gethostbyname2;
-+		__nss_compat_gethostbyaddr;
++		#__nss_compat_gethostbyname;
++		#__nss_compat_gethostbyname2;
++		#__nss_compat_gethostbyaddr;
  
  		#_nss_sss_getaliasbyname_r;
  		#_nss_sss_setaliasent;

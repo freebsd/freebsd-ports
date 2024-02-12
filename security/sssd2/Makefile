@@ -1,6 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
 
@@ -11,7 +11,6 @@ WWW=		https://sssd.io/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_15=	fails to compile: linker fails to resolve nss symbols
 CONFLICTS_INSTALL?=	sssd*
 
 BUILD_DEPENDS=	bash:shells/bash \
