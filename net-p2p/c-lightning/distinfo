@@ -1,6 +1,6 @@
-TIMESTAMP = 1701245384
-SHA256 (ElementsProject-lightning-v23.11_GH0.tar.gz) = 0a8204c60b5723a9e7ed92300eedf1153bc016eb24c638c027a08b417427ccfd
-SIZE (ElementsProject-lightning-v23.11_GH0.tar.gz) = 6766583
+TIMESTAMP = 1707727195
+SHA256 (ElementsProject-lightning-v23.11.2_GH0.tar.gz) = 0a37a8312415de505bc06d5dd04b313ce2157ef6612a26df88cd61d16618a736
+SIZE (ElementsProject-lightning-v23.11.2_GH0.tar.gz) = 6766561
 SHA256 (ElementsProject-libwally-core-bb4cd3ac802c7_GH0.tar.gz) = 730855832586831683363ed93517917b8b1a20b42440f4e119955deac2ef2454
 SIZE (ElementsProject-libwally-core-bb4cd3ac802c7_GH0.tar.gz) = 1009990
 SHA256 (ElementsProject-secp256k1-zkp-ff33018fe765d_GH0.tar.gz) = b9ab83539c89d280d5f34f08e5932430932182bee45481666d78ae1aac738909
