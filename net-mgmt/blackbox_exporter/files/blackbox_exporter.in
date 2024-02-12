@@ -19,6 +19,12 @@
 #               Default is "localhost:9115".
 # blackbox_exporter_config (string):        Set configuration file of blackbox_exporter
 #               Default is "%%PREFIX%%/etc/blackbox_exporter.yml".
+# blackbox_exporter_syslog_output_tag (str):      Set syslog tag.
+#               Default is "blackbox_exporter". See daemon(8).
+# blackbox_exporter_syslog_output_priority (str): Set syslog priority.
+#               Default is "notice". See daemon(8).
+# blackbox_exporter_syslog_output_facility (str): Set syslog facility.
+#               Default is "daemon". See daemon(8).
 
 . /etc/rc.subr
 
@@ -33,11 +39,17 @@ load_rc_config $name
 : ${blackbox_exporter_group:=prometheus}
 : ${blackbox_exporter_listen_address=localhost:9115}
 : ${blackbox_exporter_config="%%PREFIX%%/etc/blackbox_exporter.yml"}
+: ${blackbox_exporter_syslog_output_tag=${name}}
+: ${blackbox_exporter_syslog_output_priority=notice}
+: ${blackbox_exporter_syslog_output_facility=daemon}
 
 pidfile=/var/run/blackbox_exporter.pid
 command=/usr/sbin/daemon
 procname="%%PREFIX%%/bin/blackbox_exporter"
-command_args="-p ${pidfile} -t ${name} -T ${name} -S \
+command_args="-p ${pidfile} -t ${name} -S \
+    -T ${blackbox_exporter_syslog_output_tag} \
+    -s ${blackbox_exporter_syslog_output_priority} \
+    -l ${blackbox_exporter_syslog_output_facility} \
     /usr/bin/env ${procname} \
     --web.listen-address=${blackbox_exporter_listen_address} \
     --config.file=${blackbox_exporter_config} \
