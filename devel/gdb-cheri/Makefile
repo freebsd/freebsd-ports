@@ -19,7 +19,7 @@ DATADIR=	${PREFIX}/share/gdb
 
 # devel/readline defines rl_completer_word_break_characters as const char *.
 OPTIONS_DEFAULT=BUNDLED_READLINE
-OPTIONS_EXCLUDE=PYTHON PORT_READLINE
+OPTIONS_EXCLUDE=PORT_READLINE
 
 # Use {all,install}-gdb instead of the default all and install targets.
 # gold, ld, libstdcxx and gas cannot be built at the moment.
@@ -37,4 +37,5 @@ SLAVE_PORT=	${PORTNAME}
 GDBDIR=		${.CURDIR}/../gdb
 DESCR=		${GDBDIR}/pkg-descr
 PLIST=		${GDBDIR}/pkg-plist
+PLIST_SUB+=	PYDISASSEMBLER="@comment "
 .include "${GDBDIR}/Makefile"
