@@ -1490,6 +1490,7 @@
     SUBDIR += py-daphne
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj42-django-allauth
+    SUBDIR += py-dj42-django-auditlog
     SUBDIR += py-dj42-django-auth-ldap
     SUBDIR += py-dj42-django-compression-middleware
     SUBDIR += py-dj42-django-cors-headers

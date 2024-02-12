@@ -1,0 +1,4 @@
+Auditlog is a reusable app for Django that makes logging object changes a
+breeze. Auditlog tries to use as much as Python and Django's built in
+functionality to keep the list of dependencies as short as possible. Also,
+Auditlog aims to be fast and simple to use.
