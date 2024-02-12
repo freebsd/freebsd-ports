@@ -8,7 +8,7 @@ MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	System Security Services Daemon
 WWW=		https://pagure.io/SSSD/sssd
 
-DEPRECATED=	Not supported, switch to sssd-devel
+DEPRECATED=	Not supported, please use deve/sssd2
 EXPIRATION_DATE=	2024-12-31
 
 LICENSE=	GPLv3+
