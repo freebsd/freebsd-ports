@@ -1492,6 +1492,7 @@
     SUBDIR += py-dj42-django-auth-ldap
     SUBDIR += py-dj42-django-cors-headers
     SUBDIR += py-dj42-django-debug-toolbar
+    SUBDIR += py-dj42-django-extensions
     SUBDIR += py-dj42-django-filter
     SUBDIR += py-dj42-django-graphiql-debug-toolbar
     SUBDIR += py-dj42-django-js-asset
