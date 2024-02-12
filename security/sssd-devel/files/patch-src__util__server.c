@@ -1,4 +1,4 @@
---- src/util/server.c.orig	2023-05-05 08:11:07 UTC
+--- src/util/server.c.orig	2024-01-12 12:05:40 UTC
 +++ src/util/server.c
 @@ -30,17 +30,12 @@
  #include <fcntl.h>
@@ -34,7 +34,7 @@
  #endif
  
  }
-@@ -747,6 +745,8 @@ int server_setup(const char *name, bool is_responder,
+@@ -749,6 +747,8 @@ int server_setup(const char *name, bool is_responder,
          DEBUG(SSSDBG_FATAL_FAILURE, "Failed to determine "CONFDB_MONITOR_DUMPABLE"\n");
          return ret;
      }
@@ -43,7 +43,7 @@
      ret = prctl(PR_SET_DUMPABLE, dumpable ? 1 : 0);
      if (ret != 0) {
          DEBUG(SSSDBG_CRIT_FAILURE, "Failed to set PR_SET_DUMPABLE\n");
-@@ -754,6 +754,7 @@ int server_setup(const char *name, bool is_responder,
+@@ -756,6 +756,7 @@ int server_setup(const char *name, bool is_responder,
      } else if (!dumpable) {
          DEBUG(SSSDBG_IMPORTANT_INFO, "Core dumps are disabled!\n");
      }

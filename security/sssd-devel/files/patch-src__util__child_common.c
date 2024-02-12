@@ -1,4 +1,4 @@
---- src/util/child_common.c.orig	2023-05-05 08:11:07 UTC
+--- src/util/child_common.c.orig	2024-01-12 12:05:40 UTC
 +++ src/util/child_common.c
 @@ -28,7 +28,6 @@
  #include <tevent.h>
@@ -8,7 +8,7 @@
  
  #include "util/util.h"
  #include "util/find_uid.h"
-@@ -792,8 +791,8 @@ static errno_t prepare_child_argv(TALLOC_CTX *mem_ctx,
+@@ -806,8 +805,8 @@ static errno_t prepare_child_argv(TALLOC_CTX *mem_ctx,
              goto fail;
          }
  

@@ -1,6 +1,6 @@
---- src/util/util.c.orig	2023-05-05 08:11:07 UTC
+--- src/util/util.c.orig	2024-01-12 12:05:40 UTC
 +++ src/util/util.c
-@@ -763,6 +763,16 @@ errno_t sss_fd_nonblocking(int fd)
+@@ -786,6 +786,16 @@ errno_t sss_fd_nonblocking(int fd)
      return EOK;
  }
  

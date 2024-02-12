@@ -1,4 +1,4 @@
---- src/responder/kcm/kcmsrv_ccache_secdb.c.orig	2023-05-05 08:11:07 UTC
+--- src/responder/kcm/kcmsrv_ccache_secdb.c.orig	2024-01-12 12:05:40 UTC
 +++ src/responder/kcm/kcmsrv_ccache_secdb.c
 @@ -21,6 +21,9 @@
  
@@ -10,7 +10,7 @@
  #include <talloc.h>
  #include <stdio.h>
  
-@@ -877,8 +880,8 @@ static errno_t ccdb_secdb_get_cc_for_uuid(TALLOC_CTX *
+@@ -871,8 +874,8 @@ static errno_t ccdb_secdb_get_cc_for_uuid(TALLOC_CTX *
              continue;
          }
  

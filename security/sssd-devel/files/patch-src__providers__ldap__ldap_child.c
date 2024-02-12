@@ -1,4 +1,4 @@
---- src/providers/ldap/ldap_child.c.orig	2023-05-05 08:11:07 UTC
+--- src/providers/ldap/ldap_child.c.orig	2024-01-12 12:05:40 UTC
 +++ src/providers/ldap/ldap_child.c
 @@ -23,11 +23,11 @@
  */
@@ -13,7 +13,7 @@
  
  #include "util/util.h"
  #include "util/sss_krb5.h"
-@@ -337,7 +337,7 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_
+@@ -338,7 +338,7 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_
              full_princ = talloc_strdup(tmp_ctx, princ_str);
          }
      } else {
@@ -22,7 +22,7 @@
  
          ret = gethostname(hostname, sizeof(hostname));
          if (ret == -1) {
-@@ -346,7 +346,7 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_
+@@ -347,7 +347,7 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_
                                           errno, strerror(errno));
              goto done;
          }
@@ -31,7 +31,7 @@
  
          DEBUG(SSSDBG_TRACE_LIBS, "got hostname: [%s]\n", hostname);
  
-@@ -660,8 +660,6 @@ int main(int argc, const char *argv[])
+@@ -661,8 +661,6 @@ int main(int argc, const char *argv[])
      }
  
      poptFreeContext(pc);

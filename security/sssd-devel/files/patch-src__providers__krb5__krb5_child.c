@@ -1,4 +1,4 @@
---- src/providers/krb5/krb5_child.c.orig	2023-05-05 08:11:07 UTC
+--- src/providers/krb5/krb5_child.c.orig	2024-01-12 12:05:40 UTC
 +++ src/providers/krb5/krb5_child.c
 @@ -28,7 +28,6 @@
  #include <fcntl.h>
@@ -8,7 +8,7 @@
  
  #include <security/pam_modules.h>
  
-@@ -4070,8 +4069,6 @@ int main(int argc, const char *argv[])
+@@ -4090,8 +4089,6 @@ int main(int argc, const char *argv[])
      }
  
      poptFreeContext(pc);

@@ -1,4 +1,4 @@
---- Makefile.am.orig	2023-06-09 02:31:48 UTC
+--- Makefile.am.orig	2024-02-12 00:15:58 UTC
 +++ Makefile.am
 @@ -59,7 +59,7 @@ dbusservicedir = $(datadir)/dbus-1/system-services
  krb5snippetsdir = $(sssddatadir)/krb5-snippets
@@ -9,7 +9,7 @@
  runstatedir = @runstatedir@
  localedir = @localedir@
  nsslibdir = @nsslibdir@
-@@ -640,6 +640,7 @@ SSSD_LIBS = \
+@@ -642,6 +642,7 @@ SSSD_LIBS = \
  
  SSSD_LIBS = \
      $(TALLOC_LIBS) \
@@ -17,7 +17,7 @@
      $(TEVENT_LIBS) \
      $(POPT_LIBS) \
      $(LDB_LIBS) \
-@@ -711,6 +712,7 @@ dist_noinst_HEADERS = \
+@@ -713,6 +714,7 @@ dist_noinst_HEADERS = \
      src/util/sss_ssh.h \
      src/util/sss_ini.h \
      src/util/sss_format.h \
@@ -25,7 +25,7 @@
      src/util/sss_pam_data.h \
      src/util/refcount.h \
      src/util/file_watch.h \
-@@ -1512,6 +1514,7 @@ sssd_LDADD = \
+@@ -1514,6 +1516,7 @@ sssd_LDADD = \
      $(SSSD_LIBS) \
      $(INOTIFY_LIBS) \
      $(LIBNL_LIBS) \
@@ -33,7 +33,7 @@
      $(KEYUTILS_LIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -1540,6 +1543,7 @@ sssd_nss_LDADD = \
+@@ -1542,6 +1545,7 @@ sssd_nss_LDADD = \
      $(LIBADD_DL) \
      $(TDB_LIBS) \
      $(SSSD_LIBS) \
@@ -41,7 +41,7 @@
      libsss_idmap.la \
      libsss_cert.la \
      $(SYSTEMD_DAEMON_LIBS) \
-@@ -1570,6 +1574,7 @@ sssd_pam_LDADD = \
+@@ -1574,6 +1578,7 @@ sssd_pam_LDADD = \
      $(LIBADD_DL) \
      $(TDB_LIBS) \
      $(SSSD_LIBS) \
@@ -49,7 +49,7 @@
      $(SELINUX_LIBS) \
      $(PAM_LIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
-@@ -1589,8 +1594,10 @@ sssd_sudo_LDADD = \
+@@ -1593,8 +1598,10 @@ sssd_sudo_LDADD = \
      src/responder/sudo/sudosrv_dp.c \
      $(SSSD_RESPONDER_OBJ)
  sssd_sudo_LDADD = \
@@ -60,7 +60,7 @@
      $(SYSTEMD_DAEMON_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_iface.la \
-@@ -1606,6 +1613,7 @@ sssd_autofs_LDADD = \
+@@ -1610,6 +1617,7 @@ sssd_autofs_LDADD = \
  sssd_autofs_LDADD = \
      $(LIBADD_DL) \
      $(SSSD_LIBS) \
@@ -68,7 +68,7 @@
      $(SYSTEMD_DAEMON_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_iface.la \
-@@ -1626,6 +1634,7 @@ sssd_ssh_LDADD = \
+@@ -1630,6 +1638,7 @@ sssd_ssh_LDADD = \
  sssd_ssh_LDADD = \
      $(LIBADD_DL) \
      $(SSSD_LIBS) \
@@ -76,7 +76,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_cert.la \
-@@ -1649,6 +1658,7 @@ sssd_pac_LDADD = \
+@@ -1653,6 +1662,7 @@ sssd_pac_LDADD = \
      $(NDR_KRB5PAC_LIBS) \
      $(TDB_LIBS) \
      $(SSSD_LIBS) \
@@ -84,7 +84,7 @@
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_idmap.la \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -1727,6 +1737,7 @@ sssd_ifp_LDADD = \
+@@ -1731,6 +1741,7 @@ sssd_ifp_LDADD = \
  sssd_ifp_LDADD = \
      $(LIBADD_DL) \
      $(SSSD_LIBS) \
@@ -92,7 +92,7 @@
      $(SYSTEMD_DAEMON_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_cert.la \
-@@ -1789,6 +1800,7 @@ sssd_kcm_LDADD = \
+@@ -1794,6 +1805,7 @@ sssd_kcm_LDADD = \
      $(LIBADD_DL) \
      $(KRB5_LIBS) \
      $(SSSD_LIBS) \
@@ -100,7 +100,7 @@
      $(UUID_LIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -1839,6 +1851,7 @@ sssd_be_LDADD = \
+@@ -1844,6 +1856,7 @@ sssd_be_LDADD = \
  sssd_be_LDADD = \
      $(LIBADD_DL) \
      $(SSSD_LIBS) \
@@ -108,7 +108,7 @@
      $(CARES_LIBS) \
      $(PAM_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -1900,6 +1913,7 @@ sss_signal_LDADD = \
+@@ -1905,6 +1918,7 @@ sss_signal_LDADD = \
      src/tools/common/sss_process.c
      $(NULL)
  sss_signal_LDADD = \
@@ -116,7 +116,7 @@
      libsss_debug.la \
      $(NULL)
  
-@@ -1956,7 +1970,7 @@ sss_sudo_cli_CFLAGS = $(AM_CFLAGS)
+@@ -1961,7 +1975,7 @@ sss_sudo_cli_CFLAGS = $(AM_CFLAGS)
      src/sss_client/sudo/sss_sudo_response.c \
      src/sss_client/sudo_testcli/sudo_testcli.c
  sss_sudo_cli_CFLAGS = $(AM_CFLAGS)
@@ -125,7 +125,7 @@
  endif
  
  if BUILD_SSH
-@@ -2137,6 +2151,7 @@ sysdb_tests_LDADD = \
+@@ -2142,6 +2156,7 @@ sysdb_tests_LDADD = \
      $(CHECK_CFLAGS)
  sysdb_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -133,7 +133,7 @@
      $(CHECK_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2150,6 +2165,7 @@ sysdb_ssh_tests_LDADD = \
+@@ -2155,6 +2170,7 @@ sysdb_ssh_tests_LDADD = \
      $(CHECK_CFLAGS)
  sysdb_ssh_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -141,7 +141,7 @@
      $(CHECK_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2162,6 +2178,7 @@ strtonum_tests_LDADD = \
+@@ -2167,6 +2183,7 @@ strtonum_tests_LDADD = \
      $(CHECK_CFLAGS)
  strtonum_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -149,7 +149,7 @@
      $(CHECK_LIBS) \
      libsss_debug.la \
      libsss_test_common.la
-@@ -2186,6 +2203,7 @@ krb5_utils_tests_LDADD = \
+@@ -2191,6 +2208,7 @@ krb5_utils_tests_LDADD = \
      $(CHECK_CFLAGS)
  krb5_utils_tests_LDADD = \
      $(SSSD_LIBS)\
@@ -157,7 +157,7 @@
      $(CARES_LIBS) \
      $(KRB5_LIBS) \
      $(CHECK_LIBS) \
-@@ -2246,6 +2264,7 @@ resolv_tests_LDADD = \
+@@ -2251,6 +2269,7 @@ resolv_tests_LDADD = \
      -DBUILD_TXT
  resolv_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -165,7 +165,7 @@
      $(CHECK_LIBS) \
      $(CARES_LIBS) \
      libsss_debug.la \
-@@ -2259,6 +2278,7 @@ file_watch_tests_LDADD = \
+@@ -2264,6 +2283,7 @@ file_watch_tests_LDADD = \
      $(CHECK_CFLAGS)
  file_watch_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -173,7 +173,7 @@
      $(CHECK_LIBS) \
      $(INOTIFY_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -2272,6 +2292,7 @@ refcount_tests_LDADD = \
+@@ -2277,6 +2297,7 @@ refcount_tests_LDADD = \
      $(CHECK_CFLAGS)
  refcount_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -181,7 +181,7 @@
      $(CHECK_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2285,6 +2306,7 @@ fail_over_tests_LDADD = \
+@@ -2290,6 +2311,7 @@ fail_over_tests_LDADD = \
      $(CHECK_CFLAGS)
  fail_over_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -189,7 +189,7 @@
      $(CHECK_LIBS) \
      $(CARES_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -2316,6 +2338,7 @@ auth_tests_LDADD = \
+@@ -2321,6 +2343,7 @@ auth_tests_LDADD = \
      $(CHECK_CFLAGS)
  auth_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -197,7 +197,7 @@
      $(CHECK_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2365,6 +2388,7 @@ util_tests_LDADD = \
+@@ -2373,6 +2396,7 @@ util_tests_LDADD = \
      $(NULL)
  util_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -205,7 +205,7 @@
      $(CHECK_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
-@@ -2377,6 +2401,7 @@ safe_format_tests_LDADD = \
+@@ -2385,6 +2409,7 @@ safe_format_tests_LDADD = \
      $(CHECK_CFLAGS)
  safe_format_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -213,7 +213,7 @@
      $(CHECK_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2389,6 +2414,7 @@ debug_tests_LDADD = \
+@@ -2397,6 +2422,7 @@ debug_tests_LDADD = \
      $(CHECK_CFLAGS)
  debug_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -221,7 +221,7 @@
      $(CHECK_LIBS) \
      libsss_debug.la
  
-@@ -2412,6 +2438,7 @@ ipa_hbac_tests_LDADD = \
+@@ -2420,6 +2446,7 @@ ipa_hbac_tests_LDADD = \
      $(CHECK_CFLAGS)
  ipa_hbac_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -229,7 +229,7 @@
      $(CHECK_LIBS) \
      libsss_test_common.la \
      libipa_hbac.la
-@@ -2446,6 +2473,7 @@ responder_socket_access_tests_LDADD = \
+@@ -2454,6 +2481,7 @@ responder_socket_access_tests_LDADD = \
      $(LIBADD_DL) \
      $(CHECK_LIBS) \
      $(SSSD_LIBS) \
@@ -237,7 +237,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_test_common.la \
-@@ -2458,6 +2486,7 @@ stress_tests_LDADD = \
+@@ -2466,6 +2494,7 @@ stress_tests_LDADD = \
      src/tests/stress-tests.c
  stress_tests_LDADD = \
      $(SSSD_LIBS) \
@@ -245,7 +245,7 @@
      libsss_test_common.la
  
  krb5_child_test_SOURCES = \
-@@ -2482,6 +2511,7 @@ krb5_child_test_LDADD = \
+@@ -2490,6 +2519,7 @@ krb5_child_test_LDADD = \
      $(CHECK_CFLAGS)
  krb5_child_test_LDADD = \
      $(SSSD_LIBS) \
@@ -253,7 +253,7 @@
      $(CARES_LIBS) \
      $(KRB5_LIBS) \
      $(CHECK_LIBS) \
-@@ -2499,6 +2529,7 @@ test_ssh_client_LDADD = \
+@@ -2507,6 +2537,7 @@ test_ssh_client_LDADD = \
  test_ssh_client_LDADD = \
      $(SSSD_INTERNAL_LTLIBS) \
      $(SSSD_LIBS) \
@@ -261,7 +261,7 @@
      $(NULL)
  
  test_sbus_message_SOURCES = \
-@@ -2592,6 +2623,7 @@ nss_srv_tests_LDADD = \
+@@ -2602,6 +2633,7 @@ nss_srv_tests_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -269,7 +269,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_test_common.la \
-@@ -2641,6 +2673,7 @@ pam_srv_tests_LDADD = \
+@@ -2650,6 +2682,7 @@ pam_srv_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(PAM_LIBS) \
      $(SSSD_LIBS) \
@@ -277,7 +277,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      $(GSSAPI_KRB5_LIBS) \
-@@ -2681,6 +2714,7 @@ ssh_srv_tests_LDADD = \
+@@ -2693,6 +2726,7 @@ ssh_srv_tests_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -285,7 +285,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_test_common.la \
-@@ -2705,6 +2739,7 @@ responder_get_domains_tests_LDADD = \
+@@ -2717,6 +2751,7 @@ responder_get_domains_tests_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -293,7 +293,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_test_common.la \
-@@ -2768,6 +2803,7 @@ test_negcache_LDADD = \
+@@ -2780,6 +2815,7 @@ test_negcache_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -301,7 +301,7 @@
      $(SYSTEMD_DAEMON_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
-@@ -2794,6 +2830,7 @@ test_authtok_LDADD = \
+@@ -2806,6 +2842,7 @@ test_authtok_LDADD = \
      $(CMOCKA_LIBS) \
      $(DHASH_LIBS) \
      $(POPT_LIBS) \
@@ -309,7 +309,7 @@
      libsss_test_common.la \
      libsss_debug.la \
      $(NULL)
-@@ -2809,6 +2846,7 @@ test_prompt_config_LDADD = \
+@@ -2821,6 +2858,7 @@ test_prompt_config_LDADD = \
  test_prompt_config_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
@@ -317,7 +317,7 @@
      libsss_debug.la \
      $(TALLOC_LIBS) \
      $(NULL)
-@@ -2833,6 +2871,7 @@ deskprofile_utils_tests_LDADD = \
+@@ -2845,6 +2883,7 @@ deskprofile_utils_tests_LDADD = \
  deskprofile_utils_tests_CFLAGS = \
      $(AM_CFLAGS)
  deskprofile_utils_tests_LDADD = \
@@ -325,7 +325,7 @@
      $(CMOCKA_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2856,6 +2895,7 @@ dyndns_tests_LDADD = \
+@@ -2868,6 +2907,7 @@ dyndns_tests_LDADD = \
      $(CARES_LIBS) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -333,7 +333,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
  
-@@ -2866,6 +2906,7 @@ domain_resolution_order_tests_LDADD = \
+@@ -2878,6 +2918,7 @@ domain_resolution_order_tests_LDADD = \
  	$(AM_CFLAGS)
  domain_resolution_order_tests_LDADD = \
  	$(CMOCKA_LIBS) \
@@ -341,7 +341,7 @@
  	$(SSSD_INTERNAL_LTLIBS) \
  	libsss_test_common.la
  
-@@ -2876,6 +2917,7 @@ fqnames_tests_LDADD = \
+@@ -2888,6 +2929,7 @@ fqnames_tests_LDADD = \
  fqnames_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -349,7 +349,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
  
-@@ -2895,6 +2937,7 @@ nestedgroups_tests_LDADD = \
+@@ -2907,6 +2949,7 @@ nestedgroups_tests_LDADD = \
  nestedgroups_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(OPENLDAP_LIBS) \
@@ -357,7 +357,7 @@
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_idmap.la \
-@@ -2926,6 +2969,7 @@ test_ipa_idmap_LDADD = \
+@@ -2940,6 +2983,7 @@ test_ipa_idmap_LDADD = \
  test_ipa_idmap_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
@@ -365,7 +365,7 @@
      libsss_idmap.la \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
-@@ -2948,6 +2992,7 @@ test_utils_LDADD = \
+@@ -2962,6 +3006,7 @@ test_utils_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -373,7 +373,7 @@
      libsss_test_common.la
  
  test_search_bases_SOURCES = \
-@@ -2956,6 +3001,7 @@ test_search_bases_LDADD = \
+@@ -2970,6 +3015,7 @@ test_search_bases_LDADD = \
      $(CMOCKA_LIBS) \
      $(TALLOC_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -381,7 +381,7 @@
      libsss_ldap_common.la \
      libsss_test_common.la \
      libdlopen_test_providers.la \
-@@ -2970,6 +3016,7 @@ test_ldap_auth_LDADD = \
+@@ -2984,6 +3030,7 @@ test_ldap_auth_LDADD = \
  test_ldap_auth_LDADD = \
      $(CMOCKA_LIBS) \
      $(TALLOC_LIBS) \
@@ -389,7 +389,7 @@
      libsss_ldap_common.la \
      libsss_test_common.la \
      libdlopen_test_providers.la \
-@@ -2983,6 +3030,7 @@ test_ldap_id_cleanup_LDADD = \
+@@ -2997,6 +3044,7 @@ test_ldap_id_cleanup_LDADD = \
  test_ldap_id_cleanup_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
@@ -397,7 +397,7 @@
      $(TALLOC_LIBS) \
      $(TEVENT_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -3000,6 +3048,7 @@ test_sdap_access_LDADD = \
+@@ -3014,6 +3062,7 @@ test_sdap_access_LDADD = \
  test_sdap_access_LDADD = \
      $(CMOCKA_LIBS) \
      $(TALLOC_LIBS) \
@@ -405,7 +405,7 @@
      libsss_ldap_common.la \
      libsss_test_common.la \
      libdlopen_test_providers.la \
-@@ -3019,6 +3068,7 @@ test_sdap_certmap_LDADD = \
+@@ -3033,6 +3082,7 @@ test_sdap_certmap_LDADD = \
  test_sdap_certmap_LDADD = \
      $(CMOCKA_LIBS) \
      $(TALLOC_LIBS) \
@@ -413,7 +413,7 @@
      $(POPT_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
-@@ -3030,6 +3080,7 @@ ad_access_filter_tests_LDADD = \
+@@ -3044,6 +3094,7 @@ ad_access_filter_tests_LDADD = \
  ad_access_filter_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
@@ -421,7 +421,7 @@
      $(TALLOC_LIBS) \
      $(TEVENT_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
-@@ -3051,6 +3102,7 @@ ad_gpo_tests_LDADD = \
+@@ -3065,6 +3116,7 @@ ad_gpo_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(OPENLDAP_LIBS) \
      $(SSSD_LIBS) \
@@ -429,7 +429,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(NDR_NBT_LIBS) \
      libsss_ldap_common.la \
-@@ -3088,6 +3140,7 @@ ad_common_tests_LDADD = \
+@@ -3102,6 +3154,7 @@ ad_common_tests_LDADD = \
  ad_common_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -437,7 +437,7 @@
      $(KEYUTILS_LIBS) \
      $(NDR_NBT_LIBS) \
      $(NDR_KRB5PAC_LIBS) \
-@@ -3110,6 +3163,7 @@ dp_opt_tests_LDADD = \
+@@ -3124,6 +3177,7 @@ dp_opt_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(TALLOC_LIBS) \
      $(POPT_LIBS) \
@@ -445,7 +445,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la
  
-@@ -3142,6 +3196,7 @@ sdap_tests_LDADD = \
+@@ -3156,6 +3210,7 @@ sdap_tests_LDADD = \
      $(TALLOC_LIBS) \
      $(LDB_LIBS) \
      $(POPT_LIBS) \
@@ -453,7 +453,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(OPENLDAP_LIBS) \
      libsss_test_common.la \
-@@ -3160,6 +3215,7 @@ ifp_tests_LDADD = \
+@@ -3176,6 +3231,7 @@ ifp_tests_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -461,7 +461,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_test_common.la \
-@@ -3189,6 +3245,7 @@ sss_sifp_tests_LDADD = \
+@@ -3205,6 +3261,7 @@ sss_sifp_tests_LDADD = \
      $(TALLOC_LIBS) \
      $(DHASH_LIBS) \
      $(POPT_LIBS) \
@@ -469,7 +469,7 @@
      $(SSSD_INTERNAL_LTLIBS)
  endif # BUILD_LIBSIFP
  endif # BUILD_IFP
-@@ -3205,6 +3262,7 @@ test_sysdb_views_LDADD = \
+@@ -3221,6 +3278,7 @@ test_sysdb_views_LDADD = \
      $(LDB_LIBS) \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
@@ -477,7 +477,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3221,6 +3279,7 @@ test_sysdb_ts_cache_LDADD = \
+@@ -3237,6 +3295,7 @@ test_sysdb_ts_cache_LDADD = \
      $(LDB_LIBS) \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
@@ -485,7 +485,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3235,6 +3294,7 @@ test_sysdb_subdomains_LDADD = \
+@@ -3251,6 +3310,7 @@ test_sysdb_subdomains_LDADD = \
      $(CMOCKA_LIBS) \
      $(LDB_LIBS) \
      $(POPT_LIBS) \
@@ -493,7 +493,16 @@
      $(TALLOC_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
-@@ -3251,6 +3311,7 @@ test_sysdb_certmap_LDADD = \
+@@ -3267,6 +3327,8 @@ test_sysdb_certmap_LDADD = \
+     $(LDB_LIBS) \
+     $(POPT_LIBS) \
+     $(TALLOC_LIBS) \
++    $(LTLIBINTL) \
++    $(LTLIBINTL) \
+     $(SSSD_INTERNAL_LTLIBS) \
+     libsss_test_common.la \
+     $(NULL)
+@@ -3282,6 +3344,7 @@ test_sysdb_sudo_LDADD = \
      $(LDB_LIBS) \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
@@ -501,7 +510,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3266,6 +3327,7 @@ test_sysdb_sudo_LDADD = \
+@@ -3297,6 +3360,7 @@ test_sysdb_utils_LDADD = \
      $(LDB_LIBS) \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
@@ -509,23 +518,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3281,6 +3343,7 @@ test_sysdb_utils_LDADD = \
-     $(LDB_LIBS) \
-     $(POPT_LIBS) \
-     $(TALLOC_LIBS) \
-+    $(LTLIBINTL) \
-     $(SSSD_INTERNAL_LTLIBS) \
-     libsss_test_common.la \
-     $(NULL)
-@@ -3296,6 +3359,7 @@ test_sysdb_domain_resolution_order_LDADD = \
-     $(LDB_LIBS) \
-     $(POPT_LIBS) \
-     $(TALLOC_LIBS) \
-+    $(LTLIBINTL) \
-     $(SSSD_INTERNAL_LTLIBS) \
-     libsss_test_common.la \
-     $(NULL)
-@@ -3312,6 +3376,7 @@ test_be_ptask_LDADD = \
+@@ -3328,6 +3392,7 @@ test_be_ptask_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
@@ -533,23 +526,16 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3330,6 +3395,7 @@ test_copy_ccache_LDADD = \
+@@ -3346,6 +3411,8 @@ test_copy_ccache_LDADD = \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
      $(KRB5_LIBS) \
 +    $(LTLIBINTL) \
-     $(SSSD_INTERNAL_LTLIBS) \
-     libsss_test_common.la \
-     $(NULL)
-@@ -3349,6 +3415,7 @@ test_copy_keytab_LDADD = \
-     $(POPT_LIBS) \
-     $(TALLOC_LIBS) \
-     $(KRB5_LIBS) \
 +    $(LTLIBINTL) \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3384,6 +3451,7 @@ test_child_common_LDADD = \
+@@ -3400,6 +3467,7 @@ test_child_common_LDADD = \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
      $(DHASH_LIBS) \
@@ -557,7 +543,7 @@
      libsss_debug.la \
      libsss_test_common.la \
      $(NULL)
-@@ -3403,6 +3471,7 @@ responder_cache_req_tests_LDADD = \
+@@ -3419,6 +3487,7 @@ responder_cache_req_tests_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -565,7 +551,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(SYSTEMD_DAEMON_LIBS) \
      libsss_test_common.la \
-@@ -3425,6 +3494,7 @@ test_resolv_fake_LDADD = \
+@@ -3441,6 +3510,7 @@ test_resolv_fake_LDADD = \
  test_resolv_fake_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
@@ -573,7 +559,7 @@
      $(TALLOC_LIBS) \
      $(CARES_LIBS) \
      $(DHASH_LIBS) \
-@@ -3448,6 +3518,7 @@ test_fo_srv_LDADD = \
+@@ -3464,6 +3534,7 @@ test_fo_srv_LDADD = \
      $(TALLOC_LIBS) \
      $(CARES_LIBS) \
      $(DHASH_LIBS) \
@@ -581,7 +567,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      $(NULL)
-@@ -3469,6 +3540,7 @@ test_sdap_initgr_LDADD = \
+@@ -3485,6 +3556,7 @@ test_sdap_initgr_LDADD = \
      $(TEVENT_LIBS) \
      $(LDB_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -589,7 +575,7 @@
      libsss_ldap_common.la \
      libsss_test_common.la \
      libdlopen_test_providers.la \
-@@ -3488,6 +3560,7 @@ test_ad_subdom_LDADD = \
+@@ -3504,6 +3576,7 @@ test_ad_subdom_LDADD = \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -597,7 +583,7 @@
      libsss_ldap_common.la \
      libsss_ad_tests.la \
      libsss_idmap.la \
-@@ -3511,6 +3584,7 @@ test_ipa_subdom_util_LDADD = \
+@@ -3527,6 +3600,7 @@ test_ipa_subdom_util_LDADD = \
      $(TALLOC_LIBS) \
      $(LDB_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -605,7 +591,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3542,6 +3616,7 @@ test_ipa_subdom_server_LDADD = \
+@@ -3558,6 +3632,7 @@ test_ipa_subdom_server_LDADD = \
      $(KEYUTILS_LIBS) \
      $(KRB5_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -613,7 +599,7 @@
      libsss_ldap_common.la \
      libsss_ad_tests.la \
      libsss_test_common.la \
-@@ -3563,6 +3638,7 @@ test_tools_colondb_LDADD = \
+@@ -3579,6 +3654,7 @@ test_tools_colondb_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      $(POPT_LIBS) \
@@ -621,7 +607,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3579,6 +3655,7 @@ test_krb5_wait_queue_LDADD = \
+@@ -3595,6 +3671,7 @@ test_krb5_wait_queue_LDADD = \
      $(POPT_LIBS) \
      $(DHASH_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -629,7 +615,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3599,6 +3676,7 @@ test_cert_utils_LDADD = \
+@@ -3615,6 +3692,7 @@ test_cert_utils_LDADD = \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
      $(CRYPTO_LIBS) \
@@ -637,7 +623,7 @@
      libsss_debug.la \
      libsss_test_common.la \
      libsss_cert.la \
-@@ -3625,6 +3703,7 @@ test_data_provider_be_LDADD = \
+@@ -3641,6 +3719,7 @@ test_data_provider_be_LDADD = \
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      $(LIBADD_DL) \
@@ -645,7 +631,7 @@
      libsss_test_common.la \
      libdlopen_test_providers.la \
      libsss_iface.la \
-@@ -3654,6 +3733,7 @@ test_dp_request_LDADD = \
+@@ -3670,6 +3749,7 @@ test_dp_request_LDADD = \
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      $(LIBADD_DL) \
@@ -653,7 +639,7 @@
      libsss_test_common.la \
      $(NULL)
  if BUILD_SYSTEMTAP
-@@ -3680,6 +3760,7 @@ test_dp_builtin_LDADD = \
+@@ -3696,6 +3776,7 @@ test_dp_builtin_LDADD = \
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      $(LIBADD_DL) \
@@ -661,7 +647,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3694,6 +3775,7 @@ test_ipa_dn_LDADD = \
+@@ -3710,6 +3791,7 @@ test_ipa_dn_LDADD = \
      $(TEVENT_LIBS) \
      $(TALLOC_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -669,7 +655,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3707,6 +3789,7 @@ test_iobuf_LDADD = \
+@@ -3723,6 +3805,7 @@ test_iobuf_LDADD = \
  test_iobuf_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -677,7 +663,7 @@
      $(NULL)
  
  test_confdb_SOURCES = \
-@@ -3721,6 +3804,7 @@ test_confdb_LDADD = \
+@@ -3737,6 +3820,7 @@ test_confdb_LDADD = \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -685,7 +671,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3741,6 +3825,7 @@ simple_access_tests_LDADD = \
+@@ -3757,6 +3841,7 @@ simple_access_tests_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -693,7 +679,7 @@
      libsss_test_common.la \
      libdlopen_test_providers.la \
      libsss_iface.la \
-@@ -3758,6 +3843,7 @@ krb5_common_test_LDADD = \
+@@ -3774,6 +3859,7 @@ krb5_common_test_LDADD = \
      $(CMOCKA_LIBS) \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
@@ -701,7 +687,7 @@
      libsss_krb5_common.la \
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
-@@ -3778,6 +3864,7 @@ test_inotify_LDADD = \
+@@ -3794,6 +3880,7 @@ test_inotify_LDADD = \
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
      $(LIBADD_DL) \
@@ -709,7 +695,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3796,6 +3883,7 @@ sss_certmap_test_LDADD = \
+@@ -3812,6 +3899,7 @@ sss_certmap_test_LDADD = \
      $(TALLOC_LIBS) \
      $(SSS_CERT_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -717,7 +703,7 @@
      libsss_test_common.la \
      libsss_certmap.la \
      $(NULL)
-@@ -3816,6 +3904,7 @@ test_sssd_krb5_locator_plugin_LDADD = \
+@@ -3832,6 +3920,7 @@ test_sssd_krb5_locator_plugin_LDADD = \
      $(POPT_LIBS) \
      $(TALLOC_LIBS) \
      $(KRB5_LIBS) \
@@ -725,7 +711,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3866,6 +3955,7 @@ test_passkey_LDADD = \
+@@ -3883,6 +3972,7 @@ test_passkey_LDADD = \
  test_passkey_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -733,7 +719,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      $(LIBADD_DL) \
      $(PASSKEY_LIBS) \
-@@ -3893,6 +3983,7 @@ test_kcm_marshalling_LDADD = \
+@@ -3910,6 +4000,7 @@ test_kcm_marshalling_LDADD = \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
      $(SSSD_INTERNAL_LTLIBS) \
@@ -741,7 +727,7 @@
      libsss_test_common.la \
      $(NULL)
  
-@@ -3908,6 +3999,7 @@ test_kcm_queue_LDADD = \
+@@ -3925,6 +4016,7 @@ test_kcm_queue_LDADD = \
      $(LIBADD_DL) \
      $(CMOCKA_LIBS) \
      $(SSSD_LIBS) \
@@ -749,7 +735,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_test_common.la \
      libsss_iface.la \
-@@ -3925,6 +4017,7 @@ test_krb5_idp_plugin_LDADD = \
+@@ -3942,6 +4034,7 @@ test_krb5_idp_plugin_LDADD = \
  test_krb5_idp_plugin_LDADD = \
      $(CMOCKA_LIBS) \
      $(JANSSON_LIBS) \
@@ -757,7 +743,7 @@
      $(NULL)
  
  if BUILD_PASSKEY
-@@ -3939,6 +4032,7 @@ test_krb5_passkey_plugin_LDADD = \
+@@ -3956,6 +4049,7 @@ test_krb5_passkey_plugin_LDADD = \
  test_krb5_passkey_plugin_LDADD = \
      $(CMOCKA_LIBS) \
      $(JANSSON_LIBS) \
@@ -765,7 +751,7 @@
      $(NULL)
  endif # BUILD_PASSKEY
  
-@@ -3971,6 +4065,7 @@ test_kcm_renewals_LDADD = \
+@@ -3988,6 +4082,7 @@ test_kcm_renewals_LDADD = \
  	$(CMOCKA_LIBS) \
  	$(SSSD_LIBS) \
  	$(SSSD_INTERNAL_LTLIBS) \
@@ -773,7 +759,7 @@
  	libsss_test_common.la \
  	libsss_iface.la \
  	libsss_sbus.la \
-@@ -4012,6 +4107,7 @@ test_sssd_krb5_localauth_plugin_LDADD = \
+@@ -4029,6 +4124,7 @@ test_sssd_krb5_localauth_plugin_LDADD = \
  test_sssd_krb5_localauth_plugin_LDADD = \
      $(CMOCKA_LIBS) \
      $(KRB5_LIBS) \
@@ -781,7 +767,7 @@
      $(NULL)
  endif
  
-@@ -4068,6 +4164,7 @@ libnss_sss_la_SOURCES = \
+@@ -4085,6 +4181,7 @@ libnss_sss_la_SOURCES = \
  nsslib_LTLIBRARIES = libnss_sss.la
  libnss_sss_la_SOURCES = \
      src/sss_client/common.c \
@@ -789,7 +775,7 @@
      src/sss_client/nss_passwd.c \
      src/sss_client/nss_group.c \
      src/sss_client/nss_netgroup.c \
-@@ -4166,6 +4263,7 @@ libsss_sudo_la_LIBADD = \
+@@ -4183,6 +4280,7 @@ libsss_sudo_la_LIBADD = \
      src/sss_client/sudo/sss_sudo.h \
      src/sss_client/sudo/sss_sudo_private.h
  libsss_sudo_la_LIBADD = \
@@ -797,7 +783,7 @@
      $(CLIENT_LIBS)
  libsss_sudo_la_LDFLAGS = \
      -Wl,--version-script,$(srcdir)/src/sss_client/sss_sudo.exports \
-@@ -4297,6 +4395,7 @@ libsss_ldap_common_la_LIBADD = \
+@@ -4314,6 +4412,7 @@ libsss_ldap_common_la_LIBADD = \
      $(OPENLDAP_LIBS) \
      $(DHASH_LIBS) \
      $(KRB5_LIBS) \
@@ -805,7 +791,7 @@
      libsss_krb5_common.la \
      libsss_idmap.la \
      libsss_certmap.la \
-@@ -4696,6 +4795,7 @@ ldap_child_LDADD = \
+@@ -4718,6 +4817,7 @@ ldap_child_LDADD = \
      $(KRB5_CFLAGS)
  ldap_child_LDADD = \
      libsss_debug.la \
@@ -813,7 +799,7 @@
      $(TALLOC_LIBS) \
      $(POPT_LIBS) \
      $(DHASH_LIBS) \
-@@ -4742,6 +4842,7 @@ gpo_child_LDADD = \
+@@ -4764,6 +4864,7 @@ gpo_child_LDADD = \
      $(SMBCLIENT_CFLAGS)
  gpo_child_LDADD = \
      libsss_debug.la \
@@ -821,7 +807,7 @@
      $(TALLOC_LIBS) \
      $(POPT_LIBS) \
      $(DHASH_LIBS) \
-@@ -4758,6 +4859,7 @@ proxy_child_LDADD = \
+@@ -4780,6 +4881,7 @@ proxy_child_LDADD = \
  proxy_child_LDADD = \
      $(PAM_LIBS) \
      $(SSSD_LIBS) \
@@ -829,7 +815,7 @@
      $(SSSD_INTERNAL_LTLIBS) \
      libsss_iface.la \
      libsss_sbus.la \
-@@ -4785,6 +4887,7 @@ p11_child_LDADD = \
+@@ -4807,6 +4909,7 @@ p11_child_LDADD = \
  
  p11_child_LDADD = \
      libsss_debug.la \
@@ -837,7 +823,7 @@
      $(TALLOC_LIBS) \
      $(DHASH_LIBS) \
      $(POPT_LIBS) \
-@@ -4812,6 +4915,7 @@ passkey_child_LDADD = \
+@@ -4834,6 +4937,7 @@ passkey_child_LDADD = \
  passkey_child_LDADD = \
      libsss_crypt.la \
      libsss_debug.la \
@@ -845,7 +831,7 @@
      $(TALLOC_LIBS) \
      $(DHASH_LIBS) \
      $(POPT_LIBS) \
-@@ -4840,6 +4944,7 @@ oidc_child_LDADD = \
+@@ -4862,6 +4966,7 @@ oidc_child_LDADD = \
      $(NULL)
  oidc_child_LDADD = \
      libsss_debug.la \
@@ -853,7 +839,7 @@
      $(TALLOC_LIBS) \
      $(POPT_LIBS) \
      $(JANSSON_LIBS) \
-@@ -4858,6 +4963,7 @@ memberof_la_LIBADD = \
+@@ -4880,6 +4985,7 @@ memberof_la_LIBADD = \
      $(NULL)
  memberof_la_LIBADD = \
      libsss_debug.la \
@@ -861,7 +847,7 @@
      $(TALLOC_LIBS) \
      $(LDB_LIBS) \
      $(DHASH_LIBS) \
-@@ -4921,6 +5027,7 @@ sssd_krb5_idp_plugin_la_LIBADD = \
+@@ -4943,6 +5049,7 @@ sssd_krb5_idp_plugin_la_LIBADD = \
      $(KRB5_LIBS) \
      $(KRAD_LIBS) \
      $(JANSSON_LIBS) \

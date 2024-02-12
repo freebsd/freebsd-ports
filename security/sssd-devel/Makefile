@@ -1,5 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.4
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
 
@@ -10,13 +11,14 @@ WWW=		https://sssd.io/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_15=	fails to compile: linker fails to resolve nss symbols
 CONFLICTS_INSTALL?=	sssd*
 
 BUILD_DEPENDS=	bash:shells/bash \
 		docbook-xsl>=1:textproc/docbook-xsl \
 		krb5>=1.20:security/krb5 \
 		p11-kit:security/p11-kit \
-		samba-nsupdate:dns/samba-nsupdate \
+		nsupdate:dns/bind-tools \
 		xmlcatalog:textproc/libxml2 \
 		xmlcatmgr:textproc/xmlcatmgr \
 		xsltproc:textproc/libxslt
@@ -130,18 +132,21 @@ LIBS+=	-L${LOCALBASE}/lib \
 KRB5_HOME=	${LOCALBASE}
 KRB5_CONFIG=	${LOCALBASE}/bin/krb5-config
 KRB5_CFLAGS=	-I${LOCALBASE}/include
-KRB5_LIBS=	-L${LOCALBASE}/lib -lkrb5
+KRB5_LIBS=	-L${LOCALBAse}/lib -lkrb5 -lk5crypto -lcom_err
 
-LDFLAGS+=       -lgssapi
-LDFLAGS_SL+=    -lgssapi
+GSSAPI_KRB5_CFLAGS=	-I${LOCALBASE}/include
+GSSAPI_KRB5_LIBS=	-L${LOCALBASE}/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
 
-INCLUDES+=      -I${LOCALBASE}/include
-CONFIGURE_ENV+= INCLUDES="${INCLUDES}" \
+LDFLAGS+=	-lgssapi
+LDFLAGS_SL+=	-lgssapi
+
+INCLUDES+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		LDFLAGS_SL="${LDFLAGS_SL}"
-MAKE_ENV=       MAKELEVEL=0
+MAKE_ENV=	MAKELEVEL=0
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
-MAKE_ENV+=      LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
+MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
 BINARY_ALIAS=	python3=python${PYTHON_VER}
