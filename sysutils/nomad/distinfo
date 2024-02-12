@@ -1,7 +1,7 @@
-TIMESTAMP = 1706924072
-SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.7.3_GH0/go.mod) = db831a73215e9cefa50d0a1e54c054cbaef230cbf73a7ed8fdfc673f95ee12c0
-SIZE (go/sysutils_nomad/hashicorp-nomad-v1.7.3_GH0/go.mod) = 14437
-SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.7.3_GH0/api/go.mod) = 1e89d1976accf12efc831fcb492df8e539706a12d2c5c5a82c2e418dbe65ce77
-SIZE (go/sysutils_nomad/hashicorp-nomad-v1.7.3_GH0/api/go.mod) = 719
-SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.7.3_GH0/hashicorp-nomad-v1.7.3_GH0.tar.gz) = af52c8053effe9db509d66daf0ac081d6d929cd2a3d566c01544f9cc1dc3eb67
-SIZE (go/sysutils_nomad/hashicorp-nomad-v1.7.3_GH0/hashicorp-nomad-v1.7.3_GH0.tar.gz) = 25849814
+TIMESTAMP = 1707709432
+SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.7.4_GH0/go.mod) = ef36670958ec48b1de158d28b3710117b2e01a2d082155409c5a6e9942bc7987
+SIZE (go/sysutils_nomad/hashicorp-nomad-v1.7.4_GH0/go.mod) = 14553
+SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.7.4_GH0/api/go.mod) = 1e89d1976accf12efc831fcb492df8e539706a12d2c5c5a82c2e418dbe65ce77
+SIZE (go/sysutils_nomad/hashicorp-nomad-v1.7.4_GH0/api/go.mod) = 719
+SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.7.4_GH0/hashicorp-nomad-v1.7.4_GH0.tar.gz) = 881cf91fcef24a876422efcc31ed2a1b2d4830c6a7b534dbebbb3abb3a321960
+SIZE (go/sysutils_nomad/hashicorp-nomad-v1.7.4_GH0/hashicorp-nomad-v1.7.4_GH0.tar.gz) = 25852780
