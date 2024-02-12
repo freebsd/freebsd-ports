@@ -87,6 +87,7 @@ include/libremidi/detail/midi_in.hpp
 include/libremidi/detail/midi_out.hpp
 include/libremidi/detail/midi_stream_decoder.hpp
 include/libremidi/detail/observer.hpp
+include/libremidi/detail/ump_stream.hpp
 include/libremidi/error.hpp
 include/libremidi/input_configuration.hpp
 include/libremidi/libremidi.cpp
@@ -108,4 +109,4 @@ lib/cmake/libremidi/libremidi-config.cmake
 lib/cmake/libremidi/libremidi-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libremidi/libremidi-targets.cmake
 lib/liblibremidi.so
-lib/liblibremidi.so.4.3.0
+lib/liblibremidi.so.4.4.0
