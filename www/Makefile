@@ -1509,6 +1509,7 @@
     SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-dj42-drf-spectacular
     SUBDIR += py-dj42-drf-spectacular-sidecar
+    SUBDIR += py-dj42-drf-writable-nested
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth

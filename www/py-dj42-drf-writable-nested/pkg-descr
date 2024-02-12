@@ -1,0 +1,9 @@
+This is a writable nested model serializer for Django REST Framework which
+allows you to create/update your models with related nested data.
+
+The following relations are supported:
+
+- OneToOne (direct/reverse)
+- ForeignKey (direct/reverse)
+- ManyToMany (direct/reverse excluding m2m relations with through model)
+- GenericRelation (this is always only reverse)
