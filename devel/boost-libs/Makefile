@@ -1,11 +1,13 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	1
+PORTREVISION?=	0
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+
+BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
 
 BUILD_DEPENDS+=	bjam:devel/boost-jam
 
