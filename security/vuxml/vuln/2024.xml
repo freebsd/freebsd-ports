@@ -1,3 +1,77 @@
+  <vuln vid="21a854cc-cac1-11ee-b7a7-353f1e043d9a">
+    <topic>DNSSEC validators -- denial-of-service/CPU exhaustion from KeyTrap and NSEC3 vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bind916</name>
+	<range><lt>9.16.48</lt></range>
+      </package>
+      <package>
+	<name>bind918</name>
+	<range><lt>9.18.24</lt></range>
+      </package>
+      <package>
+	<name>bind9-devel</name>
+	<range><lt>9.19.21</lt></range>
+      </package>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.90</lt></range>
+      </package>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><lt>2.90</lt></range>
+      </package>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.0.2</lt></range>
+      </package>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.19.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Kelley reports:</p>
+	<blockquote cite="https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2024q1/017430.html">
+	  <p>If DNSSEC validation is enabled, then an attacker who can force a
+	    DNS server to validate a specially crafted signed domain can use a
+	    lot of CPU in the validator. This only affects dnsmasq installations
+	    with DNSSEC enabled.</p>
+	</blockquote>
+	<p>Stichting NLnet Labs reports:</p>
+	<blockquote cite="https://nlnetlabs.nl/news/2024/Feb/13/unbound-1.19.1-released/">
+	  <p>
+	    The KeyTrap [CVE-2023-50387] vulnerability works by using a
+	    combination of Keys (also colliding Keys), Signatures and number of
+	    RRSETs on a malicious zone. Answers from that zone can force a
+	    DNSSEC validator down a very CPU intensive and time costly
+	    validation path.
+	  </p>
+	  <p>
+	    The NSEC3 [CVE-2023-50868] vulnerability uses specially crafted responses on a
+	    malicious zone with multiple NSEC3 RRSETs to force a DNSSEC
+	    validator down a very CPU intensive and time costly NSEC3 hash
+	    calculation path.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-50387</cvename>
+      <cvename>CVE-2023-50868</cvename>
+      <url>https://kb.isc.org/docs/cve-2023-50387</url>
+      <url>https://kb.isc.org/docs/cve-2023-50868</url>
+      <url>https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2024q1/017430.html</url>
+      <url>https://blog.powerdns.com/2024/02/13/powerdns-recursor-4-8-6-4-9-3-5-0-2-released</url>
+      <url>https://nlnetlabs.nl/news/2024/Feb/13/unbound-1.19.1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-02-06</discovery>
+      <entry>2024-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cbfc1591-c8c0-11ee-b45a-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
