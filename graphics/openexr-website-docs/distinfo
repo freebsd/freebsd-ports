@@ -1,4 +1,4 @@
-TIMESTAMP = 1695853932
+TIMESTAMP = 1707806685
 SHA256 (openexr-website-docs/TestImages/README.rst) = 3cbb0a9ab20868940de1b9bf582bdc5ff4244cc585c682d6e40b9befb8fd593c
 SIZE (openexr-website-docs/TestImages/README.rst) = 2588
 SHA256 (openexr-website-docs/TestImages/AllHalfValues.exr) = eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4
@@ -213,5 +213,5 @@ SHA256 (openexr-website-docs/v2/LowResLeftView/Trunks.exr) = 6867502b6ce564e1d3a
 SIZE (openexr-website-docs/v2/LowResLeftView/Trunks.exr) = 587334
 SHA256 (openexr-website-docs/v2/LowResLeftView/composited.exr) = 47d75e07b69ae358cbb2cbbef084c11b3e83d401996b5a44817b8ee03747ae51
 SIZE (openexr-website-docs/v2/LowResLeftView/composited.exr) = 1401773
-SHA256 (openexr-website-docs/AcademySoftwareFoundation-openexr-3.2.1-v3.2.1_GH0.tar.gz) = 61e175aa2203399fb3c8c2288752fbea3c2637680d50b6e306ea5f8ffdd46a9b
-SIZE (openexr-website-docs/AcademySoftwareFoundation-openexr-3.2.1-v3.2.1_GH0.tar.gz) = 18824332
+SHA256 (openexr-website-docs/AcademySoftwareFoundation-openexr-3.2.2-v3.2.2_GH0.tar.gz) = 65de6459c245a4977ce4d7777e70b30d7ef48ec38e0cfb10205706ca50a8bf2e
+SIZE (openexr-website-docs/AcademySoftwareFoundation-openexr-3.2.2-v3.2.2_GH0.tar.gz) = 18825996
