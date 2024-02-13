@@ -1,5 +1,4 @@
-Index: app/core/gimptagcache.c
---- app/core/gimptagcache.c.orig
+--- app/core/gimptagcache.c.orig	2023-11-05 23:49:04 UTC
 +++ app/core/gimptagcache.c
 @@ -397,8 +397,8 @@ gimp_tag_cache_save (GimpTagCache *cache)
  

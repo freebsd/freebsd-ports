@@ -4706,6 +4706,8 @@ share/applications/gimp.desktop
 %%DATADIR%%/themes/Dark/ui/gimp-handle-v.png
 %%DATADIR%%/themes/Dark/ui/gimp-line-h.png
 %%DATADIR%%/themes/Dark/ui/gimp-line-v.png
+%%DATADIR%%/themes/Dark/ui/gimp-lock-button-active.png
+%%DATADIR%%/themes/Dark/ui/gimp-lock-button-prelight.png
 %%DATADIR%%/themes/Dark/ui/gimp-menu-line-h.png
 %%DATADIR%%/themes/Dark/ui/gimp-tooltip-bg.png
 %%DATADIR%%/themes/Dark/ui/list_header-pressed.png

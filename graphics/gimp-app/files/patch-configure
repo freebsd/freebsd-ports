@@ -1,8 +1,8 @@
---- configure.orig	2013-02-03 09:15:30.000000000 +0000
-+++ configure	2013-02-03 09:15:31.000000000 +0000
-@@ -23307,9 +23307,9 @@
- fi
- 
+--- configure.orig	2023-11-05 23:51:29 UTC
++++ configure
+@@ -34797,9 +34797,9 @@ esac
+     ;;
+ esac
  
 -gimpdatadir="$datadir/$PACKAGE/2.0"
 -gimpplugindir="$libdir/$PACKAGE/2.0"
