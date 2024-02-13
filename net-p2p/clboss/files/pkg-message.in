@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+To enable CLBOSS in lightningd add the following line to %%PREFIX%%/etc/lightningd-bitcoin.conf:
+
+important-plugin=%%PREFIX%%/bin/clboss
+
+See https://github.com/ZmnSCPxj/clboss#operating for more information.
+EOM
+}
+]

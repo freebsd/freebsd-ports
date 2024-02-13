@@ -1,0 +1,3 @@
+CLBOSS is an automated manager for Core Lightning forwarding nodes.
+CLBOSS is effectively a bunch of heuristics modules wired together to a
+regular clock to continuously monitor your node.
