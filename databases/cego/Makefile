@@ -1,6 +1,5 @@
 PORTNAME=	cego
-PORTVERSION=	2.48.40
-PORTREVISION=	1
+PORTVERSION=	2.48.41
 
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
