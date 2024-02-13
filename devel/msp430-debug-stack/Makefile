@@ -1,6 +1,6 @@
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.15.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	https://dr-download.ti.com/software-development/driver-or-library/MD-4vnqcP1Wk4/${PORTVERSION}/ \
 		LOCAL/lev:doc1 \

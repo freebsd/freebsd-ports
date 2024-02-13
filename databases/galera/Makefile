@@ -1,6 +1,6 @@
 PORTNAME=	galera
 PORTVERSION?=	25.3.37
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX?=	release_
 CATEGORIES=	databases
 
@@ -33,6 +33,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES=		compiler:c++11-lang python:build cmake ssl
 
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

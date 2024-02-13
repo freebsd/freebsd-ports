@@ -1,5 +1,6 @@
 PORTNAME=	stuntrally
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	miktex
 DISTVERSION=	23.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	https://miktex.org/download/ctan/systems/win32/miktex/source/ \
 	https://ctan.org/tex-archive/systems/win32/miktex/tm/packages/:bootstrap

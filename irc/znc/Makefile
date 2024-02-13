@@ -1,6 +1,6 @@
 PORTNAME=	znc
 PORTVERSION=	1.8.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
