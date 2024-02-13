@@ -1,5 +1,5 @@
 PORTNAME=	VVVVVV
-DISTVERSION=	2.4
+DISTVERSION=	2.4.1
 CATEGORIES=	games
 .if ${FLAVOR:U} == makeandplay
 # The data file may only be distributed if the MAKEANDPLAY define is set.
