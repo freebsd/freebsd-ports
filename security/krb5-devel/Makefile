@@ -2,8 +2,12 @@ PORTNAME=		krb5
 PORTVERSION=		1.22.${MIT_COMMIT_DATE}
 CATEGORIES=		security
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=		-${FLAVOR}-devel
+PKGNAME_X=		-${FLAVOR:S/default//}-devel
+.else
+PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
+PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
+
 HASH=			f5ad07bd3
 MIT_COMMIT_DATE=	2024.01.24
 
