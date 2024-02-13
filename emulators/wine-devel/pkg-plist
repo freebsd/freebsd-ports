@@ -585,6 +585,8 @@ include/wine/windows/inaddr.h
 include/wine/windows/indexsrv.h
 include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
+include/wine/windows/inputpaneinterop.h
+include/wine/windows/inputpaneinterop.idl
 include/wine/windows/inputscope.h
 include/wine/windows/inputscope.idl
 include/wine/windows/inseng.h
@@ -664,6 +666,7 @@ include/wine/windows/mfreadwrite.h
 include/wine/windows/mfreadwrite.idl
 include/wine/windows/mftransform.h
 include/wine/windows/mftransform.idl
+include/wine/windows/mgmtapi.h
 include/wine/windows/midles.h
 include/wine/windows/mimeinfo.h
 include/wine/windows/mimeinfo.idl
@@ -1798,6 +1801,7 @@ lib/wine/%%WINEARCH%%-unix/libwinecrt0.a
 lib/wine/%%WINEARCH%%-unix/libwined3d.a
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-unix/libwinevulkan.a
+lib/wine/%%WINEARCH%%-unix/libwing32.a
 lib/wine/%%WINEARCH%%-unix/libwinhttp.a
 lib/wine/%%WINEARCH%%-unix/libwininet.a
 lib/wine/%%WINEARCH%%-unix/libwinmm.a
