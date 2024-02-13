@@ -1,42 +1,38 @@
 PORTNAME=	quimup
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}
-DISTNAME=	Quimup_${PORTVERSION}_source
+MASTER_SITES=	SF/${PORTNAME}/Quimup%20${PORTVERSION:R}
+DISTNAME=	Quimup-${PORTVERSION}.source
 
 MAINTAINER=	cmangin@arobas.net
-COMMENT=	Qt5 client for MPD (the Music Player Daemon)
-WWW=		https://coonsden.com/?cat=4
+COMMENT=	Qt client for MPD (Music Player Daemon)
+WWW=		https://sourceforge.net/projects/quimup/
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
-		libtag.so:audio/taglib
+LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
-USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		core gui network widgets buildtools:build
-USE_GL=		gl
+USES=		compiler:c++17-lang gl pkgconfig qmake qt:6
+USE_GL=		opengl
+USE_QT=		base svg:run
 
-WRKSRC=		${WRKDIR}/Quimup_${PORTVERSION}_source
-
-CXXFLAGS+=	-std=c++11
-
-PLIST_FILES=	bin/quimup \
-		share/pixmaps/quimup.png
+CXXFLAGS+=	-std=c++17
 
 DESKTOP_ENTRIES="Quimup" "MPD client" "quimup" "quimup" \
 		"Audio;AudioVideo;Qt;" true
 
+WRKSRC=		${WRKDIR}/Quimup
+
+PLIST_FILES=	bin/quimup \
+		share/pixmaps/quimup.svg
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^#define get_time/d' ${WRKSRC}/src/qm_playlistview.h
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/qm_mpdcom.cpp
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/source/qm_mpdcom.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quimup ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/src/resources/mn_icon.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/quimup.png
+	${INSTALL_DATA} ${WRKSRC}/source/resources/qm_main_icon.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps/quimup.svg
 
 .include <bsd.port.mk>
