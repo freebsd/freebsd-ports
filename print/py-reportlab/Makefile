@@ -1,5 +1,5 @@
 PORTNAME=	reportlab
-PORTVERSION=	3.6.13
+PORTVERSION=	4.1.0
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://www.reportlab.com/ftp/
@@ -14,13 +14,12 @@ WWW=		https://www.reportlab.com/
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_PILLOW}
 
 USES=		cpe python
-USE_PYTHON=	autoplist distutils
-
-CONFLICTS=	py*-reportlab[^3]-[^3].* \
-		py*-reportlab-[^3].*
+USE_PYTHON=	autoplist pep517
 
 PFBFER_VERSION=	20180109
 PFBFER=		pfbfer-${PFBFER_VERSION}.zip
@@ -48,9 +47,6 @@ post-patch-DOCS-on:
 			  -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
 				${WRKSRC}/docs/${f}
 .endfor
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/reportlab/*/*.so
 
 post-install-DOCS-on:
 	@cd ${WRKSRC}/docs && ${PYTHON_CMD} genAll.py
