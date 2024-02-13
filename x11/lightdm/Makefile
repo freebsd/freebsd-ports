@@ -1,6 +1,6 @@
 PORTNAME=	lightdm
 PORTVERSION=	1.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/canonical/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	accountsservice>=0:sysutils/accountsservice \
 		ck-launch-session:sysutils/consolekit2
 
-USES=		autoreconf compiler:c++11-lang cpe gettext gmake gnome \
+USES=		autoreconf compiler:c++11-lang cpe gettext-tools gmake gnome \
 		libtool localbase pathfix pkgconfig tar:xz xorg
 CPE_VENDOR=	${PORTNAME}_project
 USE_CXXSTD=	c++11
@@ -42,13 +42,16 @@ SUB_FILES=		Xsession
 USERS=			lightdm
 GROUPS=			lightdm video
 
-OPTIONS_DEFINE=		DOCS QT5 VAPI
+OPTIONS_DEFINE=		DOCS NLS QT5 VAPI
 OPTIONS_DEFAULT=	VAPI
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools \
 			gtkdoc-check:textproc/gtk-doc
 DOCS_CONFIGURE_ON=	--enable-gtk-doc
+
+NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 QT5_USES=		qt:5
 QT5_USE=		QT=buildtools,core,dbus,gui
