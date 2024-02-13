@@ -288,7 +288,6 @@ include/folly/experimental/STTimerFDTimeoutManager.h
 include/folly/experimental/Select64.h
 include/folly/experimental/SingleWriterFixedHashMap.h
 include/folly/experimental/SingletonRelaxedCounter.h
-include/folly/experimental/StampedPtr.h
 include/folly/experimental/StringKeyedCommon.h
 include/folly/experimental/StringKeyedMap.h
 include/folly/experimental/StringKeyedSet.h
@@ -638,6 +637,17 @@ include/folly/io/async/test/Util.h
 include/folly/io/coro/ServerSocket.h
 include/folly/io/coro/Transport.h
 include/folly/io/coro/TransportCallbackBase.h
+include/folly/json/DynamicConverter.h
+include/folly/json/DynamicParser-inl.h
+include/folly/json/DynamicParser.h
+include/folly/json/JSONSchema.h
+include/folly/json/JsonMockUtil.h
+include/folly/json/JsonTestUtil.h
+include/folly/json/dynamic-inl.h
+include/folly/json/dynamic.h
+include/folly/json/json.h
+include/folly/json/json_patch.h
+include/folly/json/json_pointer.h
 include/folly/json.h
 include/folly/json_patch.h
 include/folly/json_pointer.h
@@ -868,7 +878,6 @@ include/folly/system/Shell.h
 include/folly/system/ThreadId.h
 include/folly/system/ThreadName.h
 include/folly/test/DeterministicSchedule.h
-include/folly/test/JsonTestUtil.h
 include/folly/test/TestUtils.h
 include/folly/tracing/AsyncStack-inl.h
 include/folly/tracing/AsyncStack.h
