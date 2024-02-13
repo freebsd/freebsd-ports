@@ -1,7 +1,6 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2023_09_3
-PORTREVISION=	1
+DISTVERSION=	2023_09_5
 CATEGORIES=	science
 MASTER_SITES=	https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
 DISTFILES=	Comic_Neue.zip:font
@@ -15,8 +14,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned int' to 'npy_intp', see https://github.com/rdkit/rdkit/issues/4934
-BROKEN_FreeBSD_14=	fails to compile as clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-BROKEN_FreeBSD_15=	fails to compile as clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
 
 BUILD_DEPENDS=	catch>0:devel/catch \
 		flex:textproc/flex \
@@ -36,6 +33,9 @@ CMAKE_OFF=	RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
 		RDK_OPTIMIZE_NATIVE \
 		RDK_BUILD_CPP_TESTS
 CMAKE_ARGS=	-DCATCH_DIR=${LOCALBASE}/include/catch2
+
+CFLAGS+=	-D_GNU_SOURCE
+CXXFLAGS+=	-D_GNU_SOURCE
 
 DATADIR=	${PREFIX}/share/RDKit
 DOCSDIR=	${PREFIX}/share/doc/RDKit
