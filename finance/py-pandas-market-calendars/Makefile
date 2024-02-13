@@ -1,6 +1,6 @@
 PORTNAME=	pandas-market-calendars
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.3
+DISTVERSION=	4.4.0
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
-# 4 tests fail, see https://github.com/rsheftel/pandas_market_calendars/issues/294
-# 167 errors in tests, see https://github.com/rsheftel/pandas_market_calendars/issues/308
+# 2 tests fail, see https://github.com/rsheftel/pandas_market_calendars/issues/328
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsheftel
