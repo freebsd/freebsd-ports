@@ -409,8 +409,8 @@ post-install:
 	${FIND} -s lib/libreoffice -type d -empty \
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
-	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in applications bash-completion icons metainfo mime
+	${FIND} -s bin lib -not -type d >> ${TMPPLIST}
+.for subdir in applications bash-completion icons man metainfo mime
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
