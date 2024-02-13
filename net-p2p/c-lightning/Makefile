@@ -13,9 +13,6 @@ WWW=		https://github.com/ElementsProject/lightning
 
 LICENSE=	MIT
 
-BROKEN_i386=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
-BROKEN_powerpc=	channeld/channeld.c:5153:8: error: format specifies type 'unsigned long' but the argument has type 'unsigned int' [-Werror,-Wformat]
-
 BUILD_DEPENDS=	bash:shells/bash \
 		lowdown:textproc/lowdown \
 		${PYTHON_PKGNAMEPREFIX}mako>=1.0.14:textproc/py-mako@${PY_FLAVOR} \
@@ -65,6 +62,9 @@ OPTIONS_DEFAULT=COMPATIBILITY SQLITE
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-rust
+
+# Print the compilation commands (verbose).
+MAKE_ARGS=	V=1
 
 USE_GITHUB=	yes
 .if defined(PKGNAMESUFFIX)
