@@ -4,8 +4,11 @@ PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=		-120
+PKGNAME_X=		-${FLAVOR:S/default//}-120
+.else
+PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
+PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -37,6 +40,8 @@ CPE_VENDOR=		mit
 CPE_VERSION=		5-${PORTVERSION}
 CPE_PRODUCT=		kerberos
 
+FLAVORS=		default ldap
+
 OPTIONS_DEFINE=		EXAMPLES NLS KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP LMDB
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
@@ -61,6 +66,10 @@ LIBEDIT_USES=		libedit
 LIBEDIT_CONFIGURE_WITH=	libedit
 LIBEDIT_BASE_CONFIGURE_WITH=	libedit
 LIBEDIT_BASE_DESC=	Use libedit in FreeBSD base
+
+.if ${FLAVOR:U} == ldap
+OPTIONS_DEFAULT+=	LDAP LMDB
+.endif
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
