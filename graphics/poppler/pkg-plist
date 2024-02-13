@@ -11,8 +11,6 @@ include/poppler/Catalog.h
 include/poppler/CertificateInfo.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
-include/poppler/FDPDFDocBuilder.h
-include/poppler/FILECacheLoader.h
 %%CURL%%include/poppler/CurlCachedFile.h
 %%CURL%%include/poppler/CurlPDFDocBuilder.h
 include/poppler/DateInfo.h
@@ -20,6 +18,8 @@ include/poppler/Decrypt.h
 include/poppler/Dict.h
 include/poppler/Error.h
 include/poppler/ErrorCodes.h
+include/poppler/FDPDFDocBuilder.h
+include/poppler/FILECacheLoader.h
 include/poppler/FileSpec.h
 include/poppler/FontEncodingTables.h
 include/poppler/FontInfo.h
