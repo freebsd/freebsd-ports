@@ -1,6 +1,5 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	2.2.0
-PORTREVISION=	3
+DISTVERSION=	24.01.95
 CATEGORIES=	editors kde
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -19,28 +18,33 @@ qt6_PKGNAMESUFFIX=	-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
-USES=		compiler:c++11-lang desktop-file-utils kde:5 pkgconfig qmake
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig
+USE_KDE=	configwidgets coreaddons doctools ecm:build sonnet widgetsaddons xmlgui
 
 .if ${FLAVOR} == qt5
-USES+=		qt:5
-USE_QT=		buildtools:build core gui linguisttools:build svg \
+USES+=		kde:5 qt:5
+USE_QT=		buildtools:build core gui linguisttools:build qmake:build \
 		webchannel webengine widgets
-RCCREGEXP=	\/lib\/qt5\/bin\/rcc
 .else
-USES+=		qt:6
-USE_QT=		5compat base svg tools webchannel webengine
-RCCREGEXP=	\/libexec\/qt6\/rcc
+CMAKE_ARGS=	-DBUILD_WITH_QT6=ON \
+		-DQT_MAJOR_VERSION=6
+USES+=		kde:6 qt:6
+USE_QT=		5compat base svg tools:build webchannel webengine
 .endif
 
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
 
-KDE_INVENT=	151268bcfdca57bba4944caa7172dde9549f0622 office
+KDE_INVENT=	54a54608e6de707f3fa2552c83e044bebea25477 office
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|^\(build/release/qrc_QtAwesomeFree.cpp:[^\\]*\)\\|\1|' \
-		-e '/3rdparty\/QtAwesome\/fonts\/Font/d' \
-		-e '/${RCCREGEXP} \\/d' \
-		${WRKSRC}/Makefile
+OPTIONS_DEFINE=		CMARK PANDOC
+OPTIONS_DEFAULT=	CMARK PANDOC
+
+CMARK_DESC=		Add runtime dependency on cmark parser
+PANDOC_DESC=		Add runtime dependency on pandoc parser
+
+CMARK_BUILD_DEPENDS=	cmark>0:textproc/cmark
+
+PANDOC_BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc
 
 .include <bsd.port.mk>
