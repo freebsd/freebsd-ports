@@ -444,6 +444,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/PdoSchema.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Utils.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Domain.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Domain/Autoconfig.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Domain/DefaultDomain.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Domain/DomainInterface.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Files.php
@@ -583,8 +584,10 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/magic.mime.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/mimetype.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/base.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/keysettings.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/pgp.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/pgpkeysettings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/procpipes.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/smime.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/csp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/request.php
@@ -620,8 +623,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/log.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/backup.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gnupg.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gpg.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gpgkeysettings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/keyservers.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/qrcode.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/repository.php
@@ -634,7 +635,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/xoauth2.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sensitivestring.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/shutdown.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/gpgsm.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/openssl.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/tar.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/zip.php
@@ -820,6 +820,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsCompose.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsContacts.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFilter.html
+%%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolder.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderClear.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderCreate.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderSystem.html
