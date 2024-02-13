@@ -280,6 +280,7 @@ include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-pre.h
+include/thrift/lib/cpp2/frozen/Fast64BitRemainderCalculator.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
@@ -440,6 +441,7 @@ include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/IResourcePoolAcceptor.h
 include/thrift/lib/cpp2/server/InterceptorData.h
 include/thrift/lib/cpp2/server/InternalPriorityRequestPile.h
+include/thrift/lib/cpp2/server/LegacyHeaderRoutingHandler.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
 include/thrift/lib/cpp2/server/MemoryTracker.h
