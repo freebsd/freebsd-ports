@@ -22,6 +22,9 @@ rcvar=lightningd_enable
 
 load_rc_config ${name}
 
+# If clnrest plugin is enabled it fails to load with OpenSSL 3.0: RuntimeError: OpenSSL 3.0's legacy provider failed to load. This is a fatal error by default, but cryptography supports running without legacy algorithms by setting the environment variable CRYPTOGRAPHY_OPENSSL_NO_LEGACY. If you did not expect this error, you have likely made a mistake with your OpenSSL configuration.
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+
 : ${lightningd_enable:="NO"}
 : ${lightningd_user:="%%U%%"}
 : ${lightningd_group:="%%G%%"}

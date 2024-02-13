@@ -83,6 +83,9 @@
     SUBDIR += py-transmission-rpc
     SUBDIR += py-tremc
     SUBDIR += py-vertex
+    SUBDIR += pyln-bolt7
+    SUBDIR += pyln-client
+    SUBDIR += pyln-proto
     SUBDIR += qbittorrent
     SUBDIR += radarr
     SUBDIR += readarr

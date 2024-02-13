@@ -2,6 +2,7 @@ PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
 PORTVERSION=	23.11.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
@@ -38,12 +39,58 @@ SHEBANG_FILES=	plugins/clnrest/clnrest.py \
 EXTRA_PATCHES_aarch64=	${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
 EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
-OPTIONS_DEFINE=		COMPATIBILITY DEBUG
+OPTIONS_DEFINE=		CLNRESTDEPS COMPATIBILITY DEBUG
 OPTIONS_MULTI=		STORAGE
 OPTIONS_MULTI_STORAGE=	POSTGRESQL SQLITE
 OPTIONS_RADIO=		TESTING
 OPTIONS_RADIO_TESTING=	ASAN VALGRIND
 
+CLNRESTDEPS_DESC=	Install and depend on packages required by the clnrest plugin
+# for d in `grep -E '^[^[:space:]]' work/lightning-23.11.2/plugins/clnrest/requirements.txt |cut -f 1 -d =` ; do echo "=== $d ===" ; portsearch -n "py.*$d" -o path ; done
+CLNRESTDEPS_RUN_DEPENDS=\
+	${PYTHON_PKGNAMEPREFIX}Flask-Cors>0:www/py-flask-cors@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}aniso8601>0:devel/py-aniso8601@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}asn1crypto>0:devel/py-asn1crypto@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}base58>0:security/py-base58@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}bidict>0:devel/py-bidict@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}blinker>0:devel/py-blinker@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}coincurve>0:security/py-coincurve@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}flask-restx>0:www/py-flask-restx@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}flask-socketio>0:www/py-flask-socketio@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}gevent-websocket>0:www/py-gevent-websocket@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}gevent>0:devel/py-gevent@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}greenlet>0:devel/py-greenlet@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}itsdangerous>0:security/py-itsdangerous@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}json5>0:devel/py-json5@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}jsonschema-specifications>0:devel/py-jsonschema-specifications@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pycparser>0:devel/py-pycparser@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pyln-bolt7>0:net-p2p/pyln-bolt7@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pyln-client>0:net-p2p/pyln-client@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pyln-proto>0:net-p2p/pyln-proto@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}python-engineio>0:devel/py-python-engineio@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}python-socketio>0:devel/py-python-socketio@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}referencing>0:devel/py-referencing@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}rpds-py>0:devel/py-rpds-py@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}zipp>0:devel/py-zipp@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}zope.event>0:devel/py-zope.event@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}
 COMPATIBILITY_CONFIGURE_ENABLE=	compat
 COMPATIBILITY_DESC=		Compatibility mode, good to disable to see if your software breaks
 DEBUG_CONFIGURE_ENABLE=		debugbuild
@@ -59,6 +106,12 @@ VALGRIND_CONFIGURE_ENABLE=	valgrind
 VALGRIND_DESC=			Run tests with Valgrind
 
 OPTIONS_DEFAULT=COMPATIBILITY SQLITE
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCLNRESTDEPS}
+USE_PYTHON+=	cryptography
+.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-rust
