@@ -2,8 +2,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.templates-43PMFBC7.js
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-CILPWI2Q.js
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-3ZLIM5JF.css
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-FM2CSD74.css
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-L4O5OK2K.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -47,6 +47,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Application.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/ArgumentError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/ArithmeticError.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/assets/kv-observer.png
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Atom.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/BadArityError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/BadBooleanError.html
@@ -87,8 +88,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Dict.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.templates-43PMFBC7.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-CILPWI2Q.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-3ZLIM5JF.css
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-FM2CSD74.css
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-L4O5OK2K.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -112,8 +113,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-797A4AF7.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-15580340.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-226E0859.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-32FDC47C.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/distributed-tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.html
@@ -146,7 +147,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/genservers.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/HashDict.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/HashSet.html
-%%PORTDOCS%%%%DOCSDIR%%/elixir/images/kv-observer.png
 %%PORTDOCS%%%%DOCSDIR%%/elixir/index.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Inspect.Algebra.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Inspect.Error.html
@@ -250,8 +250,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.templates-43PMFBC7.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-CILPWI2Q.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-3ZLIM5JF.css
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-FM2CSD74.css
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-L4O5OK2K.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -303,8 +303,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.templates-43PMFBC7.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-CILPWI2Q.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-3ZLIM5JF.css
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-FM2CSD74.css
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-L4O5OK2K.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -343,8 +343,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/logger/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.templates-43PMFBC7.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-CILPWI2Q.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-3ZLIM5JF.css
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-FM2CSD74.css
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-L4O5OK2K.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -382,8 +382,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.templates-43PMFBC7.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-CILPWI2Q.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-3ZLIM5JF.css
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-FM2CSD74.css
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-L4O5OK2K.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
