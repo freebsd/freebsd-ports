@@ -4,6 +4,8 @@ bin/configure-grub
 share/man/man1/System-Info.1.gz
 share/man/man1/System-Maintenance.1.gz
 share/man/man1/configure-grub.1.gz
+etc/profile.d/system-info.csh
+etc/profile.d/system-info.sh
 etc/system-info.d/01-example
 etc/system-maintenance.d/XX-example
 share/configure-grub/grub-defaults-nornet

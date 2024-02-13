@@ -1,11 +1,11 @@
 PORTNAME=	td-system-tools
-PORTVERSION=	1.2.0
+DISTVERSION=	1.5.6
 CATEGORIES=	net
-MASTER_SITES=	https://www.uni-due.de/~be0001/system-tools/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/system-tools/download/
 
-MAINTAINER=	dreibh@iem.uni-due.de
+MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	Printing basic system information and system maintenance
-WWW=		https://www.uni-due.de/~be0001/system-tools/
+WWW=		https://www.nntb.no/~dreibh/system-tools/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
