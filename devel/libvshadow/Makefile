@@ -1,5 +1,5 @@
 PORTNAME=	libvshadow
-PORTVERSION=	20221030
+PORTVERSION=	20231128
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvshadow/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
