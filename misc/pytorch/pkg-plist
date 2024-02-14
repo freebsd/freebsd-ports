@@ -233,6 +233,7 @@ include/ATen/cpu/vec/vec256/vsx/vec256_qint32_vsx.h
 include/ATen/cpu/vec/vec256/vsx/vec256_qint8_vsx.h
 include/ATen/cpu/vec/vec256/vsx/vec256_quint8_vsx.h
 include/ATen/cpu/vec/vec256/vsx/vsx_helpers.h
+include/ATen/cpu/vec/vec256/zarch/vec256_zarch.h
 include/ATen/cpu/vec/vec512/vec512.h
 include/ATen/cpu/vec/vec512/vec512_bfloat16.h
 include/ATen/cpu/vec/vec512/vec512_complex_double.h
@@ -242,6 +243,7 @@ include/ATen/cpu/vec/vec512/vec512_float.h
 include/ATen/cpu/vec/vec512/vec512_int.h
 include/ATen/cpu/vec/vec512/vec512_qint.h
 include/ATen/cpu/vec/vec_base.h
+include/ATen/cpu/vec/vec_half.h
 include/ATen/cpu/vml.h
 include/ATen/cuda/ATenCUDAGeneral.h
 include/ATen/cuda/ApplyGridUtils.cuh
@@ -250,6 +252,7 @@ include/ATen/cuda/Atomic.cuh
 include/ATen/cuda/CUDAApplyUtils.cuh
 include/ATen/cuda/CUDABlas.h
 include/ATen/cuda/CUDAContext.h
+include/ATen/cuda/CUDAContextLight.h
 include/ATen/cuda/CUDADataType.h
 include/ATen/cuda/CUDADevice.h
 include/ATen/cuda/CUDAEvent.h
@@ -267,6 +270,8 @@ include/ATen/cuda/EmptyTensor.h
 include/ATen/cuda/Exceptions.h
 include/ATen/cuda/NumericLimits.cuh
 include/ATen/cuda/PeerToPeerAccess.h
+include/ATen/cuda/PhiloxCudaState.h
+include/ATen/cuda/PhiloxUtils.cuh
 include/ATen/cuda/PinnedMemoryAllocator.h
 include/ATen/cuda/ScanUtils.cuh
 include/ATen/cuda/Sleep.h
@@ -297,6 +302,7 @@ include/ATen/cudnn/cudnn-wrapper.h
 include/ATen/detail/CUDAHooksInterface.h
 include/ATen/detail/FunctionTraits.h
 include/ATen/detail/HIPHooksInterface.h
+include/ATen/detail/IPUHooksInterface.h
 include/ATen/detail/MPSHooksInterface.h
 include/ATen/detail/MTIAHooksInterface.h
 include/ATen/detail/ORTHooksInterface.h
@@ -383,6 +389,7 @@ include/ATen/native/NonEmptyUtils.h
 include/ATen/native/NonSymbolicBC.h
 include/ATen/native/Normalization.h
 include/ATen/native/Padding.h
+include/ATen/native/PixelShuffle.h
 include/ATen/native/PointwiseOps.h
 include/ATen/native/Pool.h
 include/ATen/native/Pow.h
@@ -522,6 +529,7 @@ include/ATen/native/mps/MPSGraphVenturaOps.h
 include/ATen/native/mps/OperationUtils.h
 include/ATen/native/mps/TensorFactory.h
 include/ATen/native/mps/UnaryConstants.h
+include/ATen/native/mps/operations/BinaryKernel.h
 include/ATen/native/mps/operations/Indexing.h
 include/ATen/native/quantized/AffineQuantizer.h
 include/ATen/native/quantized/AffineQuantizerBase.h
@@ -738,6 +746,10 @@ include/ATen/ops/_convert_indices_from_csr_to_coo_meta.h
 include/ATen/ops/_convert_indices_from_csr_to_coo_meta_dispatch.h
 include/ATen/ops/_convert_indices_from_csr_to_coo_native.h
 include/ATen/ops/_convert_indices_from_csr_to_coo_ops.h
+include/ATen/ops/_convert_weight_to_int4pack.h
+include/ATen/ops/_convert_weight_to_int4pack_cuda_dispatch.h
+include/ATen/ops/_convert_weight_to_int4pack_native.h
+include/ATen/ops/_convert_weight_to_int4pack_ops.h
 include/ATen/ops/_convolution.h
 include/ATen/ops/_convolution_compositeexplicitautograd_dispatch.h
 include/ATen/ops/_convolution_compositeimplicitautograd_dispatch.h
@@ -777,6 +789,7 @@ include/ATen/ops/_ctc_loss_backward_ops.h
 include/ATen/ops/_ctc_loss_compositeexplicitautograd_dispatch.h
 include/ATen/ops/_ctc_loss_cpu_dispatch.h
 include/ATen/ops/_ctc_loss_cuda_dispatch.h
+include/ATen/ops/_ctc_loss_meta_dispatch.h
 include/ATen/ops/_ctc_loss_native.h
 include/ATen/ops/_ctc_loss_ops.h
 include/ATen/ops/_cudnn_ctc_loss.h
@@ -1470,6 +1483,10 @@ include/ATen/ops/_masked_softmax_cpu_dispatch.h
 include/ATen/ops/_masked_softmax_cuda_dispatch.h
 include/ATen/ops/_masked_softmax_native.h
 include/ATen/ops/_masked_softmax_ops.h
+include/ATen/ops/_mixed_dtypes_linear.h
+include/ATen/ops/_mixed_dtypes_linear_cuda_dispatch.h
+include/ATen/ops/_mixed_dtypes_linear_native.h
+include/ATen/ops/_mixed_dtypes_linear_ops.h
 include/ATen/ops/_mkldnn_reshape.h
 include/ATen/ops/_mkldnn_reshape_compositeexplicitautograd_dispatch.h
 include/ATen/ops/_mkldnn_reshape_native.h
@@ -2056,8 +2073,7 @@ include/ATen/ops/_unpack_dual_compositeimplicitautograd_dispatch.h
 include/ATen/ops/_unpack_dual_native.h
 include/ATen/ops/_unpack_dual_ops.h
 include/ATen/ops/_unsafe_index.h
-include/ATen/ops/_unsafe_index_cpu_dispatch.h
-include/ATen/ops/_unsafe_index_cuda_dispatch.h
+include/ATen/ops/_unsafe_index_compositeexplicitautograd_dispatch.h
 include/ATen/ops/_unsafe_index_native.h
 include/ATen/ops/_unsafe_index_ops.h
 include/ATen/ops/_unsafe_index_put.h
@@ -2202,6 +2218,10 @@ include/ATen/ops/_version.h
 include/ATen/ops/_version_compositeimplicitautograd_dispatch.h
 include/ATen/ops/_version_native.h
 include/ATen/ops/_version_ops.h
+include/ATen/ops/_weight_int4pack_mm.h
+include/ATen/ops/_weight_int4pack_mm_cuda_dispatch.h
+include/ATen/ops/_weight_int4pack_mm_native.h
+include/ATen/ops/_weight_int4pack_mm_ops.h
 include/ATen/ops/_weight_norm.h
 include/ATen/ops/_weight_norm_compositeimplicitautograd_dispatch.h
 include/ATen/ops/_weight_norm_differentiable_backward.h
@@ -2392,6 +2412,7 @@ include/ATen/ops/align_to_compositeimplicitautograd_dispatch.h
 include/ATen/ops/align_to_native.h
 include/ATen/ops/align_to_ops.h
 include/ATen/ops/all.h
+include/ATen/ops/all_compositeexplicitautograd_dispatch.h
 include/ATen/ops/all_compositeexplicitautogradnonfunctional_dispatch.h
 include/ATen/ops/all_compositeimplicitautograd_dispatch.h
 include/ATen/ops/all_cpu_dispatch.h
@@ -2442,6 +2463,7 @@ include/ATen/ops/angle_cuda_dispatch.h
 include/ATen/ops/angle_native.h
 include/ATen/ops/angle_ops.h
 include/ATen/ops/any.h
+include/ATen/ops/any_compositeexplicitautograd_dispatch.h
 include/ATen/ops/any_compositeexplicitautogradnonfunctional_dispatch.h
 include/ATen/ops/any_compositeimplicitautograd_dispatch.h
 include/ATen/ops/any_cpu_dispatch.h
@@ -2709,7 +2731,6 @@ include/ATen/ops/binomial_ops.h
 include/ATen/ops/bitwise_and.h
 include/ATen/ops/bitwise_and_compositeexplicitautograd_dispatch.h
 include/ATen/ops/bitwise_and_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/bitwise_and_compositeimplicitautograd_dispatch.h
 include/ATen/ops/bitwise_and_cpu_dispatch.h
 include/ATen/ops/bitwise_and_cuda_dispatch.h
 include/ATen/ops/bitwise_and_meta.h
@@ -2736,7 +2757,6 @@ include/ATen/ops/bitwise_not_ops.h
 include/ATen/ops/bitwise_or.h
 include/ATen/ops/bitwise_or_compositeexplicitautograd_dispatch.h
 include/ATen/ops/bitwise_or_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/bitwise_or_compositeimplicitautograd_dispatch.h
 include/ATen/ops/bitwise_or_cpu_dispatch.h
 include/ATen/ops/bitwise_or_cuda_dispatch.h
 include/ATen/ops/bitwise_or_meta.h
@@ -2755,7 +2775,6 @@ include/ATen/ops/bitwise_right_shift_ops.h
 include/ATen/ops/bitwise_xor.h
 include/ATen/ops/bitwise_xor_compositeexplicitautograd_dispatch.h
 include/ATen/ops/bitwise_xor_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/bitwise_xor_compositeimplicitautograd_dispatch.h
 include/ATen/ops/bitwise_xor_cpu_dispatch.h
 include/ATen/ops/bitwise_xor_cuda_dispatch.h
 include/ATen/ops/bitwise_xor_meta.h
@@ -3667,7 +3686,7 @@ include/ATen/ops/floor_compositeexplicitautogradnonfunctional_dispatch.h
 include/ATen/ops/floor_cpu_dispatch.h
 include/ATen/ops/floor_cuda_dispatch.h
 include/ATen/ops/floor_divide.h
-include/ATen/ops/floor_divide_compositeimplicitautograd_dispatch.h
+include/ATen/ops/floor_divide_compositeexplicitautograd_dispatch.h
 include/ATen/ops/floor_divide_cpu_dispatch.h
 include/ATen/ops/floor_divide_cuda_dispatch.h
 include/ATen/ops/floor_divide_meta_dispatch.h
@@ -4783,6 +4802,10 @@ include/ATen/ops/masked_fill_meta_dispatch.h
 include/ATen/ops/masked_fill_native.h
 include/ATen/ops/masked_fill_ops.h
 include/ATen/ops/masked_scatter.h
+include/ATen/ops/masked_scatter_backward.h
+include/ATen/ops/masked_scatter_backward_compositeexplicitautograd_dispatch.h
+include/ATen/ops/masked_scatter_backward_native.h
+include/ATen/ops/masked_scatter_backward_ops.h
 include/ATen/ops/masked_scatter_compositeexplicitautograd_dispatch.h
 include/ATen/ops/masked_scatter_cpu_dispatch.h
 include/ATen/ops/masked_scatter_cuda_dispatch.h
@@ -6315,7 +6338,6 @@ include/ATen/ops/special_bessel_y1_ops.h
 include/ATen/ops/special_chebyshev_polynomial_t.h
 include/ATen/ops/special_chebyshev_polynomial_t_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_t_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_chebyshev_polynomial_t_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_t_cpu_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_t_cuda_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_t_meta.h
@@ -6325,7 +6347,6 @@ include/ATen/ops/special_chebyshev_polynomial_t_ops.h
 include/ATen/ops/special_chebyshev_polynomial_u.h
 include/ATen/ops/special_chebyshev_polynomial_u_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_u_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_chebyshev_polynomial_u_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_u_cpu_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_u_cuda_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_u_meta.h
@@ -6335,7 +6356,6 @@ include/ATen/ops/special_chebyshev_polynomial_u_ops.h
 include/ATen/ops/special_chebyshev_polynomial_v.h
 include/ATen/ops/special_chebyshev_polynomial_v_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_v_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_chebyshev_polynomial_v_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_v_cpu_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_v_cuda_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_v_meta.h
@@ -6345,7 +6365,6 @@ include/ATen/ops/special_chebyshev_polynomial_v_ops.h
 include/ATen/ops/special_chebyshev_polynomial_w.h
 include/ATen/ops/special_chebyshev_polynomial_w_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_w_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_chebyshev_polynomial_w_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_w_cpu_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_w_cuda_dispatch.h
 include/ATen/ops/special_chebyshev_polynomial_w_meta.h
@@ -6411,7 +6430,6 @@ include/ATen/ops/special_gammaln_ops.h
 include/ATen/ops/special_hermite_polynomial_h.h
 include/ATen/ops/special_hermite_polynomial_h_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_hermite_polynomial_h_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_hermite_polynomial_h_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_hermite_polynomial_h_cpu_dispatch.h
 include/ATen/ops/special_hermite_polynomial_h_cuda_dispatch.h
 include/ATen/ops/special_hermite_polynomial_h_meta.h
@@ -6421,7 +6439,6 @@ include/ATen/ops/special_hermite_polynomial_h_ops.h
 include/ATen/ops/special_hermite_polynomial_he.h
 include/ATen/ops/special_hermite_polynomial_he_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_hermite_polynomial_he_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_hermite_polynomial_he_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_hermite_polynomial_he_cpu_dispatch.h
 include/ATen/ops/special_hermite_polynomial_he_cuda_dispatch.h
 include/ATen/ops/special_hermite_polynomial_he_meta.h
@@ -6459,7 +6476,6 @@ include/ATen/ops/special_i1e_ops.h
 include/ATen/ops/special_laguerre_polynomial_l.h
 include/ATen/ops/special_laguerre_polynomial_l_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_laguerre_polynomial_l_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_laguerre_polynomial_l_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_laguerre_polynomial_l_cpu_dispatch.h
 include/ATen/ops/special_laguerre_polynomial_l_cuda_dispatch.h
 include/ATen/ops/special_laguerre_polynomial_l_meta.h
@@ -6469,7 +6485,6 @@ include/ATen/ops/special_laguerre_polynomial_l_ops.h
 include/ATen/ops/special_legendre_polynomial_p.h
 include/ATen/ops/special_legendre_polynomial_p_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_legendre_polynomial_p_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_legendre_polynomial_p_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_legendre_polynomial_p_cpu_dispatch.h
 include/ATen/ops/special_legendre_polynomial_p_cuda_dispatch.h
 include/ATen/ops/special_legendre_polynomial_p_meta.h
@@ -6579,7 +6594,6 @@ include/ATen/ops/special_scaled_modified_bessel_k1_ops.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_t.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_t_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_t_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_shifted_chebyshev_polynomial_t_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_t_cpu_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_t_cuda_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_t_meta.h
@@ -6589,7 +6603,6 @@ include/ATen/ops/special_shifted_chebyshev_polynomial_t_ops.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_u.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_u_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_u_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_shifted_chebyshev_polynomial_u_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_u_cpu_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_u_cuda_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_u_meta.h
@@ -6599,7 +6612,6 @@ include/ATen/ops/special_shifted_chebyshev_polynomial_u_ops.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_v.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_v_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_v_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_shifted_chebyshev_polynomial_v_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_v_cpu_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_v_cuda_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_v_meta.h
@@ -6609,7 +6621,6 @@ include/ATen/ops/special_shifted_chebyshev_polynomial_v_ops.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_w.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_w_compositeexplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_w_compositeexplicitautogradnonfunctional_dispatch.h
-include/ATen/ops/special_shifted_chebyshev_polynomial_w_compositeimplicitautograd_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_w_cpu_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_w_cuda_dispatch.h
 include/ATen/ops/special_shifted_chebyshev_polynomial_w_meta.h
@@ -7004,7 +7015,6 @@ include/ATen/ops/type_as_ops.h
 include/ATen/ops/unbind.h
 include/ATen/ops/unbind_compositeexplicitautograd_dispatch.h
 include/ATen/ops/unbind_compositeimplicitautograd_dispatch.h
-include/ATen/ops/unbind_compositeimplicitautogradnestedtensor_dispatch.h
 include/ATen/ops/unbind_copy.h
 include/ATen/ops/unbind_copy_compositeexplicitautograd_dispatch.h
 include/ATen/ops/unbind_copy_compositeexplicitautogradnonfunctional_dispatch.h
@@ -7328,6 +7338,7 @@ include/c10/core/Backend.h
 include/c10/core/CPUAllocator.h
 include/c10/core/CompileTimeFunctionPointer.h
 include/c10/core/ConstantSymNodeImpl.h
+include/c10/core/Contiguity.h
 include/c10/core/CopyBytes.h
 include/c10/core/DefaultDtype.h
 include/c10/core/DefaultTensorOptions.h
@@ -7348,6 +7359,7 @@ include/c10/core/OptionalRef.h
 include/c10/core/PyHandleCache.h
 include/c10/core/QEngine.h
 include/c10/core/QScheme.h
+include/c10/core/RefcountedDeleter.h
 include/c10/core/SafePyObject.h
 include/c10/core/Scalar.h
 include/c10/core/ScalarType.h
@@ -7362,6 +7374,7 @@ include/c10/core/SymFloat.h
 include/c10/core/SymInt.h
 include/c10/core/SymIntArrayRef.h
 include/c10/core/SymNodeImpl.h
+include/c10/core/SymbolicShapeMeta.h
 include/c10/core/TensorImpl.h
 include/c10/core/TensorOptions.h
 include/c10/core/UndefinedTensorImpl.h
@@ -7382,10 +7395,11 @@ include/c10/core/impl/SizesAndStrides.h
 include/c10/core/impl/TorchDispatchModeTLS.h
 include/c10/core/impl/VirtualGuardImpl.h
 include/c10/core/impl/alloc_cpu.h
-include/c10/core/impl/cow/context.h
-include/c10/core/impl/cow/deleter.h
+include/c10/core/impl/cow/COW.h
+include/c10/core/impl/cow/COWDeleter.h
 include/c10/core/thread_pool.h
 include/c10/cuda/CUDAAlgorithm.h
+include/c10/cuda/CUDAAllocatorConfig.h
 include/c10/cuda/CUDACachingAllocator.h
 include/c10/cuda/CUDADeviceAssertion.h
 include/c10/cuda/CUDADeviceAssertionHost.h
@@ -7409,7 +7423,7 @@ include/c10/test/util/Macros.h
 include/c10/test/util/complex_math_test_common.h
 include/c10/test/util/complex_test_common.h
 include/c10/util/AlignOf.h
-include/c10/util/Array.h
+include/c10/util/ApproximateClock.h
 include/c10/util/ArrayRef.h
 include/c10/util/BFloat16-inl.h
 include/c10/util/BFloat16-math.h
@@ -7429,8 +7443,12 @@ include/c10/util/FbcodeMaps.h
 include/c10/util/Flags.h
 include/c10/util/Float8_e4m3fn-inl.h
 include/c10/util/Float8_e4m3fn.h
+include/c10/util/Float8_e4m3fnuz-inl.h
+include/c10/util/Float8_e4m3fnuz.h
 include/c10/util/Float8_e5m2-inl.h
 include/c10/util/Float8_e5m2.h
+include/c10/util/Float8_e5m2fnuz-inl.h
+include/c10/util/Float8_e5m2fnuz.h
 include/c10/util/FunctionRef.h
 include/c10/util/Half-inl.h
 include/c10/util/Half.h
@@ -7471,6 +7489,7 @@ include/c10/util/either.h
 include/c10/util/env.h
 include/c10/util/flat_hash_map.h
 include/c10/util/floating_point_utils.h
+include/c10/util/generic_math.h
 include/c10/util/hash.h
 include/c10/util/in_place.h
 include/c10/util/int128.h
@@ -7489,7 +7508,6 @@ include/c10/util/qint8.h
 include/c10/util/quint2x4.h
 include/c10/util/quint4x2.h
 include/c10/util/quint8.h
-include/c10/util/reverse_iterator.h
 include/c10/util/safe_numerics.h
 include/c10/util/signal_handler.h
 include/c10/util/sparse_bitset.h
@@ -7503,7 +7521,6 @@ include/c10/util/strong_type.h
 include/c10/util/tempfile.h
 include/c10/util/thread_name.h
 include/c10/util/typeid.h
-include/c10/util/variant.h
 include/c10/util/win32-headers.h
 include/caffe2/contrib/aten/aten_op.h
 include/caffe2/contrib/aten/aten_op_template.h
@@ -8447,6 +8464,7 @@ include/torch/csrc/autograd/functions/utils.h
 include/torch/csrc/autograd/generated/Functions.h
 include/torch/csrc/autograd/generated/VariableType.h
 include/torch/csrc/autograd/generated/python_functions.h
+include/torch/csrc/autograd/generated/python_return_types.h
 include/torch/csrc/autograd/generated/variable_factories.h
 include/torch/csrc/autograd/grad_mode.h
 include/torch/csrc/autograd/graph_task.h
@@ -8469,7 +8487,6 @@ include/torch/csrc/autograd/python_legacy_variable.h
 include/torch/csrc/autograd/python_linalg_functions.h
 include/torch/csrc/autograd/python_nested_functions.h
 include/torch/csrc/autograd/python_nn_functions.h
-include/torch/csrc/autograd/python_return_types.h
 include/torch/csrc/autograd/python_saved_variable_hooks.h
 include/torch/csrc/autograd/python_sparse_functions.h
 include/torch/csrc/autograd/python_special_functions.h
@@ -8520,7 +8537,9 @@ include/torch/csrc/distributed/autograd/rpc_messages/rref_backward_resp.h
 include/torch/csrc/distributed/autograd/utils.h
 include/torch/csrc/distributed/c10d/Backend.hpp
 include/torch/csrc/distributed/c10d/FileStore.hpp
+include/torch/csrc/distributed/c10d/Functional.hpp
 include/torch/csrc/distributed/c10d/GlooDeviceFactory.hpp
+include/torch/csrc/distributed/c10d/GroupRegistry.hpp
 include/torch/csrc/distributed/c10d/HashStore.hpp
 include/torch/csrc/distributed/c10d/NCCLUtils.hpp
 include/torch/csrc/distributed/c10d/ParamCommsUtils.hpp
@@ -8533,12 +8552,12 @@ include/torch/csrc/distributed/c10d/ProcessGroupRoundRobin.hpp
 include/torch/csrc/distributed/c10d/ProcessGroupUCC.hpp
 include/torch/csrc/distributed/c10d/ProcessGroupWrapper.hpp
 include/torch/csrc/distributed/c10d/PyProcessGroup.hpp
+include/torch/csrc/distributed/c10d/RankLocal.hpp
 include/torch/csrc/distributed/c10d/Store.hpp
 include/torch/csrc/distributed/c10d/TCPStore.hpp
 include/torch/csrc/distributed/c10d/TCPStoreBackend.hpp
 include/torch/csrc/distributed/c10d/TraceUtils.h
 include/torch/csrc/distributed/c10d/Types.hpp
-include/torch/csrc/distributed/c10d/UCCForNCCL.hpp
 include/torch/csrc/distributed/c10d/UCCTracing.hpp
 include/torch/csrc/distributed/c10d/UCCUtils.hpp
 include/torch/csrc/distributed/c10d/UnixSockUtils.hpp
@@ -8594,15 +8613,23 @@ include/torch/csrc/distributed/rpc/unpickled_python_call.h
 include/torch/csrc/distributed/rpc/unpickled_python_remote_call.h
 include/torch/csrc/distributed/rpc/utils.h
 include/torch/csrc/dynamo/compiled_autograd.h
+include/torch/csrc/dynamo/cpp_shim.h
 include/torch/csrc/dynamo/cpython_defs.h
 include/torch/csrc/dynamo/eval_frame.h
 include/torch/csrc/dynamo/guards.h
 include/torch/csrc/dynamo/init.h
 include/torch/csrc/dynamo/python_compiled_autograd.h
 include/torch/csrc/functorch/init.h
-include/torch/csrc/inductor/aot_inductor_interface.h
-include/torch/csrc/inductor/aot_inductor_model.h
-include/torch/csrc/inductor/aot_inductor_model_container.h
+include/torch/csrc/inductor/aoti_model_container_runner.h
+include/torch/csrc/inductor/aoti_model_container_runner_cuda.h
+include/torch/csrc/inductor/aoti_runtime/device_utils.h
+include/torch/csrc/inductor/aoti_runtime/interface.h
+include/torch/csrc/inductor/aoti_runtime/model.h
+include/torch/csrc/inductor/aoti_runtime/model_container.h
+include/torch/csrc/inductor/aoti_torch/c/shim.h
+include/torch/csrc/inductor/aoti_torch/proxy_executor.h
+include/torch/csrc/inductor/aoti_torch/tensor_converter.h
+include/torch/csrc/inductor/aoti_torch/utils.h
 include/torch/csrc/inductor/inductor_ops.h
 include/torch/csrc/itt_wrapper.h
 include/torch/csrc/jit/api/compilation_unit.h
@@ -8762,7 +8789,6 @@ include/torch/csrc/jit/passes/constant_pooling.h
 include/torch/csrc/jit/passes/constant_propagation.h
 include/torch/csrc/jit/passes/create_autodiff_subgraphs.h
 include/torch/csrc/jit/passes/create_functional_graphs.h
-include/torch/csrc/jit/passes/cuda_graph_fuser.h
 include/torch/csrc/jit/passes/dbr_quantization/remove_redundant_aliases.h
 include/torch/csrc/jit/passes/dead_code_elimination.h
 include/torch/csrc/jit/passes/decompose_ops.h
@@ -9052,7 +9078,6 @@ include/torch/csrc/lazy/ts_backend/dynamic_ir.h
 include/torch/csrc/lazy/ts_backend/ir_builder.h
 include/torch/csrc/lazy/ts_backend/ops/device_data.h
 include/torch/csrc/lazy/ts_backend/ops/generic.h
-include/torch/csrc/lazy/ts_backend/ops/random_ops.h
 include/torch/csrc/lazy/ts_backend/ops/to_copy.h
 include/torch/csrc/lazy/ts_backend/tensor_aten_ops.h
 include/torch/csrc/lazy/ts_backend/ts_autograd_functions.h
@@ -9105,7 +9130,6 @@ include/torch/csrc/python_headers.h
 include/torch/csrc/serialization.h
 include/torch/csrc/tensor/python_tensor.h
 include/torch/csrc/utils.h
-include/torch/csrc/utils/auto_gil.h
 include/torch/csrc/utils/byte_order.h
 include/torch/csrc/utils/cpp_stacktraces.h
 include/torch/csrc/utils/cuda_enabled.h
@@ -9113,13 +9137,13 @@ include/torch/csrc/utils/cuda_lazy_init.h
 include/torch/csrc/utils/disable_torch_function.h
 include/torch/csrc/utils/init.h
 include/torch/csrc/utils/invalid_arguments.h
-include/torch/csrc/utils/memory.h
 include/torch/csrc/utils/nested.h
 include/torch/csrc/utils/numpy_stub.h
 include/torch/csrc/utils/object_ptr.h
 include/torch/csrc/utils/out_types.h
 include/torch/csrc/utils/pybind.h
 include/torch/csrc/utils/pycfunction_helpers.h
+include/torch/csrc/utils/pyobject_preservation.h
 include/torch/csrc/utils/python_arg_parser.h
 include/torch/csrc/utils/python_compat.h
 include/torch/csrc/utils/python_dispatch.h
