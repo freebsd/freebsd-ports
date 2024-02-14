@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.23.9
+DISTVERSION=	1.23.14
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.31.0<3.0.0:www/py-requests@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist concurrent pep517
 
 REINPLACE_ARGS=	-i ''
 NO_ARCH=	yes
