@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-sdk
-DISTVERSION=	463.0.0
+DISTVERSION=	464.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -25,11 +25,7 @@ PLIST_FILES=	bin/bq \
 		bin/git-credential-gcloud.sh \
 		bin/gsutil
 
-OPTIONS_DEFINE=		BASH ZSH
-OPTIONS_DEFAULT=	BASH ZSH
-
-BASH_PLIST_FILES=	share/bash-completion/completions/gcloud
-ZSH_PLIST_FILES=	share/zsh/site-functions/_gcloud
+SUB_FILES=	pkg-message
 
 post-extract:
 	@${RM} -r \
@@ -56,15 +52,5 @@ do-install:
 post-install:
 	@(cd ${STAGEDIR}${PREFIX} && \
 		${FIND} -s google-cloud-sdk -type f -o -type l >> ${TMPPLIST})
-
-post-install-BASH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
-	${RLN} ${STAGEDIR}${PREFIX}/google-cloud-sdk/completion.bash.inc \
-		${STAGEDIR}${PREFIX}/share/bash-completion/completions/gcloud
-
-post-install-ZSH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${RLN} ${STAGEDIR}${PREFIX}/google-cloud-sdk/completion.zsh.inc \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_gcloud
 
 .include <bsd.port.mk>
