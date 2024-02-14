@@ -1,6 +1,5 @@
 PORTNAME=	gsequencer
-DISTVERSION=	5.4.3
-PORTREVISION=	1
+DISTVERSION=	6.5.2
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgraphene-1.0.so:graphics/graphene \
 		libharfbuzz.so:print/harfbuzz \
 		libinstpatch-1.0.so:audio/libinstpatch \
+		libjson-glib-1.0.so:devel/json-glib \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libsoup-3.0.so:devel/libsoup3 \
