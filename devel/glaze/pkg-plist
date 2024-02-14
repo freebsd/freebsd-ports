@@ -48,6 +48,7 @@ include/glaze/exceptions/binary_exceptions.hpp
 include/glaze/exceptions/csv_exceptions.hpp
 include/glaze/exceptions/json_exceptions.hpp
 include/glaze/ext/eigen.hpp
+include/glaze/ext/glaze_asio.hpp
 include/glaze/ext/jsonrpc.hpp
 include/glaze/file/file_ops.hpp
 include/glaze/file/file_watch.hpp
@@ -74,6 +75,7 @@ include/glaze/record/recorder.hpp
 include/glaze/reflection/get_name.hpp
 include/glaze/reflection/reflect.hpp
 include/glaze/reflection/to_tuple.hpp
+include/glaze/rpc/repe.hpp
 include/glaze/thread/threadpool.hpp
 include/glaze/tuplet/tuple.hpp
 include/glaze/util/any.hpp

@@ -1,6 +1,6 @@
 PORTNAME=	glaze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276265
 
+BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
 TEST_DEPENDS=	ut>0:devel/ut
 
-USES=		cmake:testing compiler:c++11-lang eigen:3
+USES=		cmake:testing compiler:c++11-lang eigen:3 localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stephenberry
