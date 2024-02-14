@@ -1,6 +1,5 @@
 PORTNAME=	libcreg
-DISTVERSION=	experimental-20221022
-PORTREVISION=	1
+DISTVERSION=	experimental-20231123
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libcreg/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
