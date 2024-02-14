@@ -1,5 +1,5 @@
 PORTNAME=	dfvfs
-PORTVERSION=	20221224
+PORTVERSION=	20231208
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -31,6 +31,7 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libsmraw>=a:devel/libsmraw \
 		libvhdi>=e:devel/libvhdi \
 		libvmdk>=e:devel/libvmdk \
+		libvsapm>=e:devel/libvsapm \
 		libvsgpt>=e:devel/libvsgpt \
 		libvshadow>=0:devel/libvshadow \
 		libvslvm>=e:devel/libvslvm \
@@ -53,7 +54,6 @@ NO_ARCH=	yes
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 post-patch:
-	${REINPLACE_CMD} "s,share/doc/dfvfs,${DOCSDIR_REL}," ${WRKSRC}/setup.py
-	${REINPLACE_CMD} "/pip/d" ${WRKSRC}/requirements.txt
+	${REINPLACE_CMD} "/cffi/d" ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
