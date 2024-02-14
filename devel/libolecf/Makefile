@@ -1,5 +1,5 @@
 PORTNAME=	libolecf
-DISTVERSION=	alpha-20221024
+DISTVERSION=	alpha-20231203
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libolecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
