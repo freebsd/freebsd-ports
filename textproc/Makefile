@@ -1364,6 +1364,7 @@
     SUBDIR += py-faust-cchardet
     SUBDIR += py-feedparser
     SUBDIR += py-fingerprints
+    SUBDIR += py-flor
     SUBDIR += py-fluent.syntax
     SUBDIR += py-ftfy
     SUBDIR += py-furo
