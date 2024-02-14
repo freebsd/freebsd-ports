@@ -1,5 +1,5 @@
 PORTNAME=	libsmdev
-DISTVERSION=	alpha-20221028
+DISTVERSION=	alpha-20231128
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libsmdev/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
