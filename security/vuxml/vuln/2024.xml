@@ -1,3 +1,32 @@
+  <vuln vid="4edbea45-cb0c-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>121.0.6167.184</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>121.0.6167.184</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 1 security fix.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2024-02-13</discovery>
+      <entry>2024-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21a854cc-cac1-11ee-b7a7-353f1e043d9a">
     <topic>DNSSEC validators -- denial-of-service/CPU exhaustion from KeyTrap and NSEC3 vulnerabilities</topic>
     <affects>
