@@ -135,6 +135,7 @@
     SUBDIR += hanazono-fonts-ttf
     SUBDIR += hermit
     SUBDIR += iansui
+    SUBDIR += ibmfonts
     SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
     SUBDIR += intel-one-mono

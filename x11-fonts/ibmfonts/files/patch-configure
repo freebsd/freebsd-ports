@@ -1,0 +1,45 @@
+--- configure.orig	2016-11-07 10:04:21 UTC
++++ configure
+@@ -6,22 +6,20 @@ OBJDIR=""
+ INSTALLDIR=""
+ MAKEVAR="gnu"
+ 
+-eval set -- "`getopt -o p:i:o:s:b --long prefix:,objdir:,srcdir:,installdir:,bsd-make -n "$0" -- "$@"`"
+-
+ while true ; do
+     case "$1" in
+-        -p|--prefix)
+-            PREFIX="$2"; shift 2 ;;
+-        -o|--objdir)
+-            OBJDIR="$2"; shift 2 ;;
+-        -s|--srcdir)
+-            SRCDIR="$2"; shift 2 ;;
+-        -b|--bsd-make)
++        --prefix=*)
++            PREFIX="${1#*=}"; shift ;;
++        --objdir=*)
++            OBJDIR="${1#*=}"; shift ;;
++        --srcdir=*)
++            SRCDIR="${1#*=}"; shift ;;
++        --bsd-make)
+             MAKEVAR="bsd"; shift ;;
+-        -i|--installdir)
+-            INSTALLDIR="$2"; shift 2 ;;
+-        --)
+-            shift; break ;;
++        --installdir=*)
++            INSTALLDIR="${1#*=}"; shift ;;
++        '')
++            break ;;
+         *)
+             exit 1 ;;
+     esac
+@@ -104,7 +102,7 @@ clean:
+ 
+ install: all
+ 	install -dm755 \$(DESTDIR)\$(installdir)
+-	install -D -m 644 -t \$(DESTDIR)\$(installdir) \$(COMPILED)
++	install -m644 \$(COMPILED) \$(DESTDIR)\$(installdir)
+ 
+ uninstall:
+ 	rm -f \$(INSTALLED)
