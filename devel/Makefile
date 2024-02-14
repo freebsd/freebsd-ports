@@ -4211,6 +4211,7 @@
     SUBDIR += py-about-time
     SUBDIR += py-absl
     SUBDIR += py-absl-py
+    SUBDIR += py-acstore
     SUBDIR += py-adb
     SUBDIR += py-addict
     SUBDIR += py-aenum
