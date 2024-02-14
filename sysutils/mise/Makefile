@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2.14
+DISTVERSION=	2024.2.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,7 +65,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
-		crc32fast-1.3.2 \
+		crc32fast-1.4.0 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hashbrown-0.14.3 \
 		heck-0.3.3 \
 		heck-0.4.1 \
-		hermit-abi-0.3.5 \
+		hermit-abi-0.3.6 \
 		home-0.5.9 \
 		http-0.2.11 \
 		http-body-0.4.6 \
@@ -134,7 +134,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
-		indexmap-2.2.2 \
+		indexmap-2.2.3 \
 		indicatif-0.17.8 \
 		indoc-2.0.4 \
 		insta-1.34.0 \
@@ -265,8 +265,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
+		thiserror-1.0.57 \
+		thiserror-impl-1.0.57 \
 		thread_local-1.1.7 \
 		time-0.3.34 \
 		time-core-0.1.2 \
@@ -279,7 +279,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-util-0.7.10 \
 		toml-0.8.10 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.4 \
+		toml_edit-0.22.5 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -302,7 +302,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
 		urlencoding-2.1.3 \
-		usage-lib-0.1.8 \
+		usage-lib-0.1.9 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
@@ -345,7 +345,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.39 \
+		winnow-0.6.0 \
 		winreg-0.50.0 \
 		xattr-1.3.1 \
 		xx-0.2.5 \
