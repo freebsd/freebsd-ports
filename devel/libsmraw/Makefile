@@ -1,5 +1,5 @@
 PORTNAME=	libsmraw
-DISTVERSION=	alpha-20221028
+DISTVERSION=	alpha-20231127
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libsmraw/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
