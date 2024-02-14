@@ -1,7 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
-PORTREVISION=	3
+DISTVERSION=	0.32.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -37,16 +36,6 @@ USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
 		go:1.21,modules magick pkgconfig python shebangfix ssl tar:xz \
 		terminfo xorg
 CPE_VENDOR=	kitty_project
-GH_TUPLE=	ALTree:bigfloat:38c8b72a9924:altree_bigfloat/vendor/github.com/ALTree/bigfloat \
-		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
-		golang:exp:54bba9f4231b:golang_exp/vendor/golang.org/x/exp \
-		golang:image:v0.3.0:golang_image/vendor/golang.org/x/image \
-		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
-		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
-		jamesruan:go-rfc1924:2767ca7c638f:jamesruan_go_rfc1924/vendor/github.com/jamesruan/go-rfc1924 \
-		seancfoley:bintree:v1.2.1:seancfoley_bintree/vendor/github.com/seancfoley/bintree \
-		seancfoley:ipaddress-go:v1.5.3:seancfoley_ipaddress_go/vendor/github.com/seancfoley/ipaddress-go
 
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
@@ -97,8 +86,11 @@ USES+=		ncurses
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -i.bak -e "s:'go':'${GO_CMD}':1" ${WRKSRC}/setup.py
-	${REINPLACE_CMD} -i.bak -e "s:%%DATADIR%%:${DATADIR}:1" \
+	${REINPLACE_CMD} -E \
+		-e "s:'go':'${GO_CMD}':1" \
+		-e "s:(dirs_exist_ok=True):\1, ignore=shutil.ignore_patterns('*.orig', '*.bak'):1" \
+		${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:1" \
 		${WRKSRC}/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish
 
 # For librsync, we need to set header and library path
@@ -122,11 +114,11 @@ do-install:
 	       	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/terminfo/kitty.terminfo \
 		${STAGEDIR}${PREFIX}/share/misc/
-	${INSTALL_MAN} ${BUILD_DIR}/share/man/man1/kitty.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${BUILD_DIR}/share/man/man5/kitty.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${STRIP_CMD} ${_STRIP_TARGETS:S|^|${STAGEDIR}${DATADIR}/|}
 
 do-install-DOCS-on:
+	${INSTALL_MAN} ${BUILD_DIR}/share/man/man1/kitty.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${BUILD_DIR}/share/man/man5/kitty.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	cd ${BUILD_DIR}/share/doc/kitty/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
