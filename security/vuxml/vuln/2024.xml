@@ -415,6 +415,10 @@
     <topic>Libgit2 -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>eza</name>
+	<range><lt>0.18.2</lt></range>
+      </package>
+      <package>
 	<name>libgit2</name>
 	<range><ge>1.7.0</ge><lt>1.7.2</lt></range>
 	<range><lt>1.6.5</lt></range>
@@ -437,6 +441,7 @@
     <dates>
       <discovery>2024-02-06</discovery>
       <entry>2024-02-08</entry>
+      <modified>2024-02-14</modified>
     </dates>
   </vuln>
 
