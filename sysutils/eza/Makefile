@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.18.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -51,7 +51,6 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		core-foundation-sys-0.8.4 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.16 \
@@ -66,7 +65,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		fastrand-2.0.0 \
 		filetime-0.2.22 \
 		form_urlencoded-1.0.1 \
-		git2-0.18.1 \
+		git2-0.18.2 \
 		glob-0.3.1 \
 		half-1.8.2 \
 		hashbrown-0.14.2 \
@@ -82,8 +81,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		itoa-1.0.9 \
 		jobserver-0.1.22 \
 		js-sys-0.3.64 \
-		libc-0.2.151 \
-		libgit2-sys-0.16.1+1.7.1 \
+		libc-0.2.152 \
+		libgit2-sys-0.16.2+1.7.2 \
 		libz-sys-1.1.2 \
 		line-wrap-0.1.1 \
 		linux-raw-sys-0.4.11 \
@@ -95,15 +94,14 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		natord-1.0.9 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.14 \
-		num_cpus-1.16.0 \
 		number_prefix-0.4.0 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		openssl-src-111.26.0+1.1.1u \
 		openssl-sys-0.9.61 \
 		os_pipe-1.1.4 \
-		palette-0.7.3 \
-		palette_derive-0.7.3 \
+		palette-0.7.4 \
+		palette_derive-0.7.4 \
 		partition-identity-0.3.0 \
 		percent-encoding-2.3.1 \
 		phf-0.11.2 \
@@ -122,8 +120,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		quote-1.0.33 \
 		rand-0.8.5 \
 		rand_core-0.6.4 \
-		rayon-1.7.0 \
-		rayon-core-1.11.0 \
+		rayon-1.8.1 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.3.5 \
 		regex-1.9.5 \
@@ -133,7 +131,6 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		ryu-1.0.15 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
-		scoped_threadpool-0.1.9 \
 		scopeguard-1.2.0 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
