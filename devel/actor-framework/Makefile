@@ -1,5 +1,5 @@
 PORTNAME=	actor-framework
-DISTVERSION=	0.19.2
+DISTVERSION=	0.19.6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
