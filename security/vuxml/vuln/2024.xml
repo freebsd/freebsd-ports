@@ -1,3 +1,69 @@
+  <vuln vid="46a29f83-cb47-11ee-b609-002590c1f29c">
+    <topic>FreeBSD -- jail(2) information leak</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.0</ge><lt>14.0_5</lt></range>
+	<range><ge>13.2</ge><lt>13.2_10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The jail(2) system call has not limited a visiblity of allocated
+	TTYs (the kern.ttys sysctl).  This gives rise to an information
+	leak about processes outside the current jail.</p>
+	<h1>Impact:</h1>
+	<p>Attacker can get information about TTYs allocated on the host
+	or in other jails.  Effectively, the information printed by "pstat
+	-t" may be leaked.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25941</cvename>
+      <freebsdsa>SA-24:02.tty</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-02-14</discovery>
+      <entry>2024-02-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c62285cb-cb46-11ee-b609-002590c1f29c">
+    <topic>FreeBSD -- bhyveload(8) host file access</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.0</ge><lt>14.0_5</lt></range>
+	<range><ge>13.2</ge><lt>13.2_10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>`bhyveload -h &lt;host-path&gt;` may be used to grant loader access
+	to the &lt;host-path&gt; directory tree on the host.  Affected versions
+	of bhyveload(8) do not make any attempt to restrict loader's access
+	to &lt;host-path&gt;, allowing the loader to read any file the host user
+	has access to.</p>
+	<h1>Impact:</h1>
+	<p>In the bhyveload(8) model, the host supplies a userboot.so to
+	boot with, but the loader scripts generally come from the guest
+	image.  A maliciously crafted script could be used to exfiltrate
+	sensitive data from the host accessible to the user running
+	bhyhveload(8), which is often the system root.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25940</cvename>
+      <freebsdsa>SA-24:01.bhyveload</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-02-14</discovery>
+      <entry>2024-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4edbea45-cb0c-11ee-86bb-a8a1599412c6">
     <topic>chromium -- security fix</topic>
     <affects>
