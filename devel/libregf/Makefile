@@ -1,5 +1,5 @@
 PORTNAME=	libregf
-DISTVERSION=	alpha-20221026
+DISTVERSION=	alpha-20231203
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libregf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
