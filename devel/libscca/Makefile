@@ -1,5 +1,5 @@
 PORTNAME=	libscca
-DISTVERSION=	alpha-20221027
+DISTVERSION=	alpha-20231203
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libscca/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
