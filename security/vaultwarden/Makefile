@@ -68,7 +68,6 @@ CARGO_INSTALL_ARGS+=	--config profile.release.strip=true
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}/data
 	# @${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	# @${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	# @${ECHO_CMD} "@mode 755" >> ${PLIST}
