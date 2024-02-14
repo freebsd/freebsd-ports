@@ -1,5 +1,5 @@
 PORTNAME=	plaso
-PORTVERSION=	20221229
+PORTVERSION=	20231224
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -12,7 +12,8 @@ WWW=		https://github.com/log2timeline/plaso/wiki
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	libesedb>=e:devel/libesedb \
+RUN_DEPENDS=	libcaes>=a:security/libcaes \
+		libesedb>=e:devel/libesedb \
 		libevt>=a:devel/libevt \
 		libevtx>=a:devel/libevtx \
 		libfwsi>=e:devel/libfwsi \
@@ -22,6 +23,7 @@ RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 		libregf>=a:devel/libregf \
 		libscca>=a:devel/libscca \
 		libsigscan>=e:devel/libsigscan \
+		${PYTHON_PKGNAMEPREFIX}acstore>=0:devel/py-acstore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}artifacts>=0:security/py-artifacts@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>=0:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
@@ -31,6 +33,7 @@ RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dtfabric>=0:devel/py-dtfabric@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flor>=0:textproc/py-flor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lz4>=0:archivers/py-lz4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opensearch-py>=0:textproc/py-opensearch-py@${PY_FLAVOR} \
@@ -48,7 +51,8 @@ RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zstd>=0:archivers/py-zstd@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fakeredis>=0:databases/py-fakeredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
@@ -67,10 +71,8 @@ post-patch:
 		${WRKSRC}/plaso/cli/helpers/artifact_definitions.py
 	${REINPLACE_CMD} "s|'share', 'plaso'|'share', '${PYTHON_PKGNAMEPREFIX}plaso'|" \
 		${WRKSRC}/plaso/cli/helpers/data_location.py
-	${REINPLACE_CMD} "s|share/doc/plaso|${DOCSDIR_REL}| ; s|share/plaso|${DATADIR_REL}|" \
+	${REINPLACE_CMD} "s|share/plaso|${DATADIR_REL}|" \
 		${WRKSRC}/setup.py
-	${REINPLACE_CMD} "/pip/d" ${WRKSRC}/requirements.txt
-	${MV} ${WRKSRC}/test_data/link_to_testdir ${WRKSRC}/test_data/testdir
-	${LN} -s testdir ${WRKSRC}/test_data/link_to_testdir
+	${REINPLACE_CMD} "/cffi/d" ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
