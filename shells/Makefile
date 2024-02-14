@@ -72,6 +72,7 @@
     SUBDIR += zsh-antigen
     SUBDIR += zsh-autosuggestions
     SUBDIR += zsh-completions
+    SUBDIR += zsh-fast-syntax-highlighting
     SUBDIR += zsh-navigation-tools
     SUBDIR += zsh-syntax-highlighting
 
