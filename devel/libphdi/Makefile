@@ -1,6 +1,6 @@
 PORTNAME=	libphdi
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20221025
+DISTVERSION=	experimental-20231129
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libphdi/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
