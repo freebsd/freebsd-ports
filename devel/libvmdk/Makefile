@@ -1,5 +1,5 @@
 PORTNAME=	libvmdk
-PORTVERSION=	20221124
+PORTVERSION=	20231123
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvmdk/releases/download/${PORTVERSION}/ \
