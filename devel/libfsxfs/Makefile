@@ -1,6 +1,6 @@
 PORTNAME=	libfsxfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20220829
+DISTVERSION=	experimental-20231124
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfsxfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
