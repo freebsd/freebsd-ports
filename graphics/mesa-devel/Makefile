@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.0-branchpoint-1355
-DISTVERSIONSUFFIX=	-g04d26ceb0a8
+DISTVERSION=	24.0-branchpoint-1666
+DISTVERSIONSUFFIX=	-g219be558076
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -72,12 +72,16 @@ ${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/hasvk/intel_&/:S/radv/amd/}
 GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Broadwater, Eaglelake, Ironlake, Sandybridge, Ivybridge, Haswell
 iris_DESC=		Broadwell and newer
+iris_IMPLIES=		OPENCL
 panfrost_DESC=		Midgard, Bifrost
 r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
 radeonsi_DESC=		Southern Islands and newer (implies LLVM)
 
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Skylake and newer
+anv_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
+anv_MESON_ENABLED=	intel-rt
+anv_IMPLIES=		OPENCL
 hasvk_DESC=		Ivy Bridge, Haswell, Broadwell
 radv_DESC=		Southern Islands and newer (implies LLVM)
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
