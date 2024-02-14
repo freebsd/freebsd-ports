@@ -2,6 +2,7 @@ PORTNAME=	sssd
 PORTVERSION=	2.9.4
 PORTREVISION=	3
 CATEGORIES=	security
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	System Security Services Daemon
