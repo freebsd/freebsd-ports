@@ -1,0 +1,19 @@
+FireREST is a python library to interface with Cisco Firepower Management Center
+REST API. The goal of FireREST is to provide a simple SDK to programmatically
+interact with FMC.
+
+Features
+
+* Authentication and automatic session refresh / re-authentication
+* Rate-limit detection and automatic backoff and retry behavior
+* Automatic squashing of paginated api payloads
+* Sanitization of api payloads for create and update operations (automatically
+  remove unsupported elements like links, metadata from payload)
+* Detailed logging of api requests and responses
+* API specific error handling using various custom exceptions for typical
+  errors (e.g. ResourceAlreadyExists, UnprocessAbleEntityError, ...)
+* Support for resource lookup by name instead of uuid for all CRUD operations
+
+Import api client
+
+  from fireREST import FMC
