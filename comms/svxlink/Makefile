@@ -1,6 +1,6 @@
 PORTNAME?=	svxlink
 PORTVERSION=	19.09.2
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -30,10 +30,10 @@ CMAKE_ARGS+=	-DLOCAL_STATE_DIR=/var \
 		-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DMAN_INSTALL_DIR:FILEPATH=${PREFIX}/share/man
 
+.if ${PORTNAME} == svxlink
 USERS=		svxlink
 GROUPS=		svxlink
 USE_RC_SUBR=	remotetrx svxlink svxreflector
-.if ${PORTNAME} == svxlink
 CMAKE_ARGS+=	-DUSE_QT:BOOL=NO
 .endif
 USE_LDCONFIG=	yes
@@ -112,6 +112,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTclVoiceMail.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTrx.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTrx.conf.sample
+	${INSTALL} -d   ${STAGEDIR}/var/spool/svxlink
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -123,5 +124,5 @@ post-install:
 	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/common.h
 	${RM}	${STAGEDIR}${PREFIX}/lib/libsvxmisc.a
 .endif
-	${INSTALL} -d   ${STAGEDIR}/var/spool/svxlink
+
 .include <bsd.port.mk>
