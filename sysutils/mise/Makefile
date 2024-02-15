@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2.15
+DISTVERSION=	2024.2.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -187,7 +187,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.29 \
+		pkg-config-0.3.30 \
 		platforms-3.3.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
@@ -345,7 +345,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.6.0 \
+		winnow-0.6.1 \
 		winreg-0.50.0 \
 		xattr-1.3.1 \
 		xx-0.2.5 \
