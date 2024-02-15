@@ -27,6 +27,7 @@ include/_hypre_blas.h
 include/_hypre_lapack.h
 include/_hypre_parcsr_ls.h
 include/_hypre_parcsr_mv.h
+include/_hypre_seq_block_mv.h
 include/_hypre_sstruct_ls.h
 include/_hypre_sstruct_mv.h
 include/_hypre_struct_ls.h
