@@ -168,6 +168,7 @@
     SUBDIR += bvm
     SUBDIR += byobu
     SUBDIR += calamares
+    SUBDIR += cardano-cli
     SUBDIR += catatonit
     SUBDIR += catfish
     SUBDIR += catsit

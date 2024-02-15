@@ -3,4 +3,4 @@ community of scientists, engineers, and thought leaders. Cardano is based on
 Ouroboros, an environmentally sustainable, verifiably secure consensus protocol
 with rigorous security guarantees.
 
-This package provides a daemon program to run the Cardano node.
+This package provides a CLI management tool for the Cardano daemon.
