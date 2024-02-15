@@ -584,6 +584,7 @@
     SUBDIR += team
     SUBDIR += tellico
     SUBDIR += tempcontrol
+    SUBDIR += tenere
     SUBDIR += termatrix
     SUBDIR += terminfo-db
     SUBDIR += teseq
