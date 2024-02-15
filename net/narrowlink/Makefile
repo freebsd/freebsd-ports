@@ -1,5 +1,5 @@
 PORTNAME=	narrowlink
-DISTVERSION=	0.2.3
+DISTVERSION=	0.2.4
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -91,7 +91,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		glob-0.3.1 \
 		h2-0.3.24 \
 		hashbrown-0.14.3 \
-		hermit-abi-0.3.5 \
+		hermit-abi-0.3.6 \
 		hmac-0.12.1 \
 		home-0.5.9 \
 		http-0.2.11 \
@@ -105,7 +105,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.4.0 \
 		idna-0.5.0 \
 		if_chain-1.0.2 \
-		indexmap-2.2.2 \
+		indexmap-2.2.3 \
 		inout-0.1.3 \
 		instant-acme-0.4.3 \
 		ioctl-sys-0.8.0 \
@@ -192,7 +192,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustls-0.21.10 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
-		rustls-pki-types-1.2.0 \
+		rustls-pki-types-1.3.0 \
 		rustls-webpki-0.101.7 \
 		ryu-1.0.16 \
 		schannel-0.1.23 \
