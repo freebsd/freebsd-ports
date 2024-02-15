@@ -1,3 +1,30 @@
+  <vuln vid="c97a4ecf-cc25-11ee-b0ee-0050569f0b83">
+    <topic>nginx-devel -- Multiple Vulnerabilities in HTTP/3</topic>
+    <affects>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.25.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx development team reports:</p>
+	<blockquote cite="http://nginx.org/en/security_advisories.html">
+	  <p>When using HTTP/3 a segmentation fault might occur in a
+	  worker process while processing a specially crafted QUIC session.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24989</cvename>
+      <cvename>CVE-2024-24990</cvename>
+    </references>
+    <dates>
+      <discovery>2024-02-14</discovery>
+      <entry>2024-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="46a29f83-cb47-11ee-b609-002590c1f29c">
     <topic>FreeBSD -- jail(2) information leak</topic>
     <affects>
