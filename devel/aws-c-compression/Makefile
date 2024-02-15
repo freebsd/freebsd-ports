@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-compression
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.17
+DISTVERSION=	0.2.18
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaws-c-common.so:devel/aws-c-common
 
-USES=		cmake:testing compiler:c11
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
