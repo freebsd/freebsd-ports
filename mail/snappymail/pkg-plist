@@ -89,6 +89,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/AttachmentCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Email.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/EmailCollection.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/ContentType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/DkimStatus.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/Header.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mime/Enumerations/MessagePriority.php
