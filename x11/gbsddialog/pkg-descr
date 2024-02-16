@@ -1,0 +1,14 @@
+gbsddialog is an implementation of bsddialog, a text-based user interface to be
+used in scripts and tools, such as in the official FreeBSD installer,
+bsdinstall(8).
+
+However, gbsddialog uses Gtk+ dialogs and widgets instead of console-based
+equivalents.
+
+The objective is to reproduce the same behaviour as the original tool,
+respecting the exact command-line parameters and output. gbsddialog can then be
+used as a drop-in replacement to bsddialog, effectively granting the possibility
+to install and configure FreeBSD entirely in graphical mode.
+
+In addition, an implementation of Xdialog is also provided, for use with
+bsdconfig(8) when invoked in graphical mode with -S or -X.
