@@ -7,8 +7,7 @@
 # make USE_PACKAGE_DEPENDS_ONLY=yes install clean
 
 PORTNAME=	obsidian
-PORTVERSION=	1.4.16
-PORTREVISION=	1
+PORTVERSION=	1.5.3
 CATEGORIES=	textproc
 # Icon is taken from the Nix build recipe
 # https://github.com/NixOS/nixpkgs/blob/de5448dab588ad41aef40f8c7c0c230981656698/pkgs/applications/misc/obsidian/default.nix#L31-L34
