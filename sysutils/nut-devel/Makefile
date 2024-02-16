@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 
 NUT_USER?=	nut
 NUT_GROUP?=	nut
-USERS=		${NUT_USER} 
+USERS=		${NUT_USER}
 GROUPS=		${NUT_GROUP} dialer
 STATEDIR?=	/var/db/nut
 PLIST_SUB+=	NUT_USER=${NUT_USER}
