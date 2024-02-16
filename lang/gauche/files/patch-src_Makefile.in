@@ -1,6 +1,27 @@
---- src/Makefile.in.orig	2018-12-20 17:50:35 UTC
+--- src/Makefile.in.orig	2024-01-25 23:46:19 UTC
 +++ src/Makefile.in
-@@ -267,7 +267,7 @@ test-extra$(EXEEXT) : $(LIBGAUCHE).$(SOEXT) $(test_ext
+@@ -77,16 +77,16 @@ GAUCHE_VERSION     = @GAUCHE_VERSION@
+ GAUCHE_ABI_VERSION = @GAUCHE_ABI_VERSION@
+ 
+ # Main definition of compilation commands
+-ATOMIC_OPS_CFLAGS = `${srcdir}/get-atomic-ops-flags.sh ${top_builddir} ${top_srcdir} --cflags`
+-ATOMIC_OPS_LIBS = `${srcdir}/get-atomic-ops-flags.sh ${top_builddir} ${top_srcdir} --libs`
++ATOMIC_OPS_CFLAGS = $(shell ${srcdir}/get-atomic-ops-flags.sh ${top_builddir} ${top_srcdir} --cflags)
++ATOMIC_OPS_LIBS = $(shell ${srcdir}/get-atomic-ops-flags.sh ${top_builddir} ${top_srcdir} --libs)
+ COMPILE   = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(OPTFLAGS)
+ MKINSTDIR = $(top_srcdir)/mkinstalldirs
+ CCLD      = $(LINK_HELPER) $(CC)
+-LINK      = TARGETLIB="`pwd`" $(CCLD) $(CFLAGS) $(RPATH_TMP) -L. $(LDFLAGS)
++LINK      = TARGETLIB="$(CURDIR)" $(CCLD) $(CFLAGS) $(RPATH_TMP) -L. $(LDFLAGS)
+ RELINK    = TARGETLIB="$(TARGETLIB)" $(CCLD) $(CFLAGS) $(RPATH_REAL) -L. $(LDFLAGS)
+ INSTALL      = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+-POSTBUILD   = TARGETLIB="`pwd`" DESTDIR= $(MAKEVERSLINK) $(LIBGAUCHE).$(SOEXT)
++POSTBUILD   = TARGETLIB="$(CURDIR)" DESTDIR= $(MAKEVERSLINK) $(LIBGAUCHE).$(SOEXT)
+ POSTINSTALL = TARGETLIB="$(TARGETLIB)" DESTDIR="$(DESTDIR)" $(MAKEVERSLINK) $(LIBGAUCHE).$(SOEXT) ; \
+ 	      TARGETLIB="$(LIB_INSTALL_DIR)" DESTDIR="$(DESTDIR)" $(MAKEVERSLINK) $(LIBGAUCHE).$(SOEXT)
+ PREUNINSTALL = TARGETLIB="$(TARGETLIB)" DESTDIR="$(DESTDIR)" $(MAKEVERSLINK) -d $(LIBGAUCHE).$(SOEXT); \
+@@ -285,7 +285,7 @@ test-extra$(EXEEXT) : $(LIBGAUCHE).$(SOEXT) $(test_ext
  # need to relink gosh-noconsole.exe (windows no-console version).
  relink :
  	$(RELINK) $(libgauche_LDFLAGS) $(LIBGAUCHE).$(SOEXT) $(libgauche_OBJECTS) $(libgc_pic_LIBRARY) $(ATOMIC_OPS_LIBS) $(LIBS)
@@ -9,7 +30,7 @@
  	$(RELINK) -o gauche-config$(EXEEXT) gauche-config.$(OBJEXT) $(LIBS)
  
  $(OBJECTS) : $(HEADERS)
-@@ -542,8 +542,10 @@ install-relink : install-aux
+@@ -597,8 +597,10 @@ install-relink : install-aux
  install-core : install-relink
  	$(INSTALL)        $(INSTALL_LIBS) "$(DESTDIR)$(LIB_INSTALL_DIR)"
  	$(INSTALL)        $(INSTALL_LIBS) "$(DESTDIR)$(ARCH_INSTALL_DIR)"

@@ -1,5 +1,5 @@
 PORTNAME=	gauche
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.14
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://github.com/shirok/Gauche/releases/download/release${PORTVERSION:S/./_/g}/
 DISTNAME=	Gauche-${PORTVERSION}
@@ -11,12 +11,14 @@ WWW=		https://practical-scheme.net/gauche/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	"list.c", line 827 (ScmExtendedPairDescriptor *Scm__GetExtendedPairDescriptor(ScmObj)): Assertion failed: (z->hiddenTag&0x7) == 0x7
 BROKEN_mips=	Fails to build: redefinition of GC_register_dynamic_libraries
 BROKEN_mips64=	Fails to build: redefinition of GC_register_dynamic_libraries
 BROKEN_riscv64=	Fails to build: ./include/private/gcconfig.h:709:5: The collector has not been ported to this machine/OS combination
 
 USES=		compiler:c11 cpe gmake iconv makeinfo tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-local=${LOCALBASE} ${ICONV_CONFIGURE_BASE:S/lib//}
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
@@ -32,44 +34,22 @@ TEST_ENV=	# must be empty, otherwise cf-check-lib test fails
 
 INFO=		gauche-refe gauche-refj
 
-OPTIONS_DEFINE=		GDBM THREADS SLIB MANPAGES
-OPTIONS_RADIO=		MULTIBYTE TLS
-OPTIONS_RADIO_MULTIBYTE=	EUCJP SJIS UTF8
-OPTIONS_RADIO_TLS=	AXTLS MBEDTLS
-OPTIONS_DEFAULT=	MBEDTLS THREADS UTF8 MANPAGES
+OPTIONS_DEFINE=		GDBM SLIB TLS
+OPTIONS_DEFAULT=	TLS
 OPTIONS_SUB=		yes
-NO_OPTIONS_SORT=	yes
 
-AXTLS_DESC=		Cameron Rich's axTLS implementation (bundled)
-AXTLS_CONFIGURE_ON=	--with-tls=axtls
-EUCJP_DESC=		EUC-JP encoding support
-EUCJP_CONFIGURE_ON=	--enable-multibyte=euc-jp
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-dbm=gdbm,ndbm
 GDBM_CONFIGURE_OFF=	--with-dbm=ndbm
-MBEDTLS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
-MBEDTLS_CONFIGURE_ON=	--with-tls=mbedtls --with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+TLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+TLS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+TLS_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+TLS_CONFIGURE_OFF=	--with-tls=no
 SLIB_DESC=		Create catalogue for SLIB port
 # Gauche's slib module to use Aubrey Jaffer's SLIB
 SLIB_BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib
 SLIB_CONFIGURE_ON=	--with-slib=${LOCALBASE}/share/slib
 SLIB_CONFIGURE_OFF=	--with-slib=${WRKDIR}
-SJIS_DESC=		Shift_JIS encoding support
-SJIS_CONFIGURE_ON=	--enable-multibyte=sjis
-THREADS_CONFIGURE_ON=	--enable-threads=pthreads
-THREADS_CONFIGURE_OFF=	--enable-threads=no
-UTF8_CONFIGURE_ON=	--enable-multibyte=utf-8
-
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MEUCJP} && !${PORT_OPTIONS:MSJIS} && !${PORT_OPTIONS:MUTF8}
-CONFIGURE_ARGS+=	--enable-multibyte=none
-.endif
-
-.if !${PORT_OPTIONS:MAXTLS} && !${PORT_OPTIONS:MMBEDTLS}
-CONFIGURE_ARGS+=	--with-tls=none
-.endif
 
 post-patch:
 # unbreak "make test" by using the same workaround as for OSX (darwin),
