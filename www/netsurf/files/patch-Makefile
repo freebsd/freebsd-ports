@@ -1,6 +1,6 @@
---- Makefile.orig	2020-05-24 20:55:29 UTC
+--- Makefile.orig	2023-12-28 00:26:04 UTC
 +++ Makefile
-@@ -484,16 +484,6 @@ ifneq ($(CC_MAJOR),2)
+@@ -105,16 +105,6 @@ endif
    COMMON_WARNFLAGS += -Wno-unused-parameter
  endif
  
@@ -17,42 +17,11 @@
  # deal with chaging warning flags for different platforms
  ifeq ($(HOST),OpenBSD)
    # OpenBSD headers are not compatible with redundant declaration warning
-@@ -547,7 +537,6 @@ ifeq ($(HOST),mint)
+@@ -168,7 +158,6 @@ endif
  else
      $(eval $(call pkg_config_find_and_add_enabled,CURL,libcurl,Curl))
  endif
 -$(eval $(call pkg_config_find_and_add_enabled,OPENSSL,openssl,OpenSSL))
  
  $(eval $(call pkg_config_find_and_add_enabled,UTF8PROC,libutf8proc,utf8))
- $(eval $(call pkg_config_find_and_add_enabled,WEBP,libwebp,WEBP))
-@@ -680,14 +669,21 @@ $$(MESSAGES_TARGET)/$(1)/Messages: resources/FatMessag
- 	$$(Q)$$(SPLIT_MESSAGES) -l $(1) -p $$(MESSAGES_FILTER) -f messages -o $$@ -z $$<
- 
- CLEAN_MESSAGES += $$(MESSAGES_TARGET)/$(1)/Messages
-+CLEAN_MESSAGES += $$(MESSAGES_TARGET)/$(1)options.gtk3.ui
- MESSAGES += $$(MESSAGES_TARGET)/$(1)/Messages
- 
- endef
- 
-+buildui: 
-+	@echo "BUILDUI: options ui for each language in resources/FatMessages"
-+	@$(PERL) utils/buildui.pl resources/FatMessages frontends/gtk/res/options.gtk3.ui $(MESSAGES_TARGET) options.gtk3.ui
-+
- # generate the message file rules
- $(eval $(foreach LANG,$(MESSAGES_LANGUAGES), \
- 	$(call split_messages,$(LANG))))
- 
-+MESSAGES += buildui
-+
- clean-messages:
- 	$(VQ)echo "   CLEAN: $(CLEAN_MESSAGES)"
- 	$(Q)$(RM) $(CLEAN_MESSAGES)
-@@ -710,7 +706,7 @@ OBJECTS := $(sort $(addprefix $(OBJROOT)/,$(subst /,_,
- # Include directory flags
- IFLAGS = $(addprefix -I,$(INCLUDE_DIRS))
- 
--$(EXETARGET): $(OBJECTS) $(RESOURCES) $(MESSAGES)
-+$(EXETARGET): $(OBJECTS) $(RESOURCES) $(MESSAGES) 
- 	$(VQ)echo "    LINK: $(EXETARGET)"
- ifneq ($(TARGET)$(SUBTARGET),riscos-elf)
- 	$(Q)$(CC) -o $(EXETARGET) $(OBJECTS) $(LDFLAGS)
+ $(eval $(call pkg_config_find_and_add_enabled,JPEGXL,libjxl,JPEGXL))
