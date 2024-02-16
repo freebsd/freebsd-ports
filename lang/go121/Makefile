@@ -12,9 +12,14 @@ PATCHFILES=
 
 COMMENT=	Go programming language
 
+BUILD_DEPENDS=
+
 MASTERDIR=	${.CURDIR}/../go-devel
 PATCHDIR=	${.CURDIR}/files
 WRKSRC=		${WRKDIR}/go
 DISTINFO_FILE=	${.CURDIR}/distinfo
+SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
+		src/net/http/cgi/testdata/test.cgi
+BASH=		${SH}
 
 .include "${MASTERDIR}/Makefile"
