@@ -1,3 +1,3 @@
-TIMESTAMP = 1643543609
-SHA256 (paho-mqtt-1.6.1.tar.gz) = 2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f
-SIZE (paho-mqtt-1.6.1.tar.gz) = 99373
+TIMESTAMP = 1707677388
+SHA256 (paho_mqtt-2.0.0.tar.gz) = 13b205f29251e4f2c66a6c923c31fc4fd780561e03b2d775cff8e4f2915cf947
+SIZE (paho_mqtt-2.0.0.tar.gz) = 147711
