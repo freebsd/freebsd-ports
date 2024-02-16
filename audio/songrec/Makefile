@@ -1,6 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.3.3
-PORTREVISION=	4
+DISTVERSION=	0.4.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libdbus-1.so:devel/dbus
+		libdbus-1.so:devel/dbus \
+		libpulse.so:audio/pulseaudio
 
 USES=		cargo gettext-runtime gnome ssl
 USE_GNOME=	gdkpixbuf2 glib20 gtk30
@@ -89,7 +89,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		futures-sink-0.3.17 \
 		futures-task-0.3.17 \
 		futures-util-0.3.17 \
-		gag-0.1.10 \
 		gdk-0.13.2 \
 		gdk-pixbuf-0.9.0 \
 		gdk-pixbuf-sys-0.10.0 \
@@ -138,6 +137,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		libc-0.2.108 \
 		libdbus-sys-0.2.2 \
 		libloading-0.7.2 \
+		libpulse-binding-2.26.0 \
+		libpulse-sys-1.19.2 \
 		locale_config-0.3.0 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
@@ -201,6 +202,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.32 \
+		pulsectl-rs-0.3.2 \
 		quote-1.0.10 \
 		rand-0.7.3 \
 		rand-0.8.4 \
