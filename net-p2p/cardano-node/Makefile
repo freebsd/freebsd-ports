@@ -10,6 +10,8 @@ WWW=		https://cardano.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	text-2.0.2 is broken on AArch64 when using GHC 8.10
+
 NOT_FOR_ARCHS=	i386
 
 BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
