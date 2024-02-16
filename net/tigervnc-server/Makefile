@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
-USES+=		autoreconf:build compiler:c11 gl jpeg libtool pkgconfig ssl shebangfix xorg
+USES+=		autoreconf:build compiler:c11 gl jpeg libtool perl5 pkgconfig ssl shebangfix xorg
 USE_LDCONFIG=	yes
 USE_GL+=	gl
 USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont2 \
