@@ -1,6 +1,6 @@
---- cmake/QtBuild.cmake.orig	2023-09-21 19:24:26 UTC
-+++ cmake/QtBuild.cmake
-@@ -203,7 +203,7 @@ function(qt_internal_set_up_global_paths)
+--- cmake/QtBuildPathsHelpers.cmake.orig	2024-02-08 16:01:05 UTC
++++ cmake/QtBuildPathsHelpers.cmake
+@@ -100,7 +100,7 @@ function(qt_internal_setup_build_and_install_paths)
      if(QT_CONFIG_INSTALL_DIR)
          string(APPEND QT_CONFIG_INSTALL_DIR "/")
      endif()

@@ -152,6 +152,7 @@ lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfig.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersion.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersionImpl.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDependencies.cmake
+lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDeploySupport.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreMacros.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake
