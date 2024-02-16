@@ -1,5 +1,5 @@
 PORTNAME=	volk
-DISTVERSION=	2.5.1
+DISTVERSION=	3.1.1
 CATEGORIES=	devel comms hamradio
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -12,10 +12,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR}
-LIB_DEPENDS=	liborc-0.4.so:devel/orc \
-		libcpu_features.so:devel/cpu_features
+LIB_DEPENDS=	libcpu_features.so:devel/cpu_features \
+		liborc-0.4.so:devel/orc
 
-USES=		cmake:testing compiler:c++17-lang python
+USES=		cmake:testing compiler:c++17-lang pathfix python
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault
