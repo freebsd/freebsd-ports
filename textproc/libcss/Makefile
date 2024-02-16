@@ -1,5 +1,5 @@
 PORTNAME=	libcss
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz
