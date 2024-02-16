@@ -18,7 +18,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libgpg-error.so:security/libgpg-error \
 		libre2.so:devel/re2
 
-USES=		autoreconf compiler:c++17-lang gnome iconv:wchar_t localbase \
+USES=		autoreconf compiler:c++17-lang gnome iconv:wchar_t \
 		pkgconfig python:build sqlite ssl
 USE_GITHUB=	yes
 
@@ -47,8 +47,5 @@ post-extract:
 
 pre-configure:
 	(cd ${WRKSRC} && ${PYTHON_CMD} etc/makefile_builder.py)
-
-post-configure:
-	${REINPLACE_CMD} -e 's|-isystem -pipe|-pipe -isystem|' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
