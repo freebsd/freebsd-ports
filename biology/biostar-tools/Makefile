@@ -1,6 +1,6 @@
 PORTNAME=	biostar-tools
 PORTVERSION=	1.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -71,8 +71,8 @@ USES=		metaport python
 
 .include <bsd.port.pre.mk>
 
-# Allow pkg build on non-amd64 systems until sra-tools supports them
-.if ${ARCH} == amd64
+# sra-tools is only supported on specific architectures
+.if ${ARCH} == amd64 || ${ARCH} == aarch64
 RUN_DEPENDS+=	sra-tools>0:biology/sra-tools
 .endif
 
