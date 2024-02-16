@@ -1694,3 +1694,29 @@
       <entry>2024-01-02</entry>
     </dates>
   </vuln>
+
+  <vuln vid="bd7592a1-cbfd-11ee-a42a-5404a6f3ca32">
+    <topic>gitea -- Prevent anonymous container access</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.21.5</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+    <p>
+      Even with RequireSignInView enabled, anonymous users can use docker pull
+      to fetch public images.
+    </p>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.com/release-of-1.21.5/</url>
+    </references>
+    <dates>
+      <discovery>2024-01-24</discovery>
+      <entry>2024-02-15</entry>
+    </dates>
+  </vuln>
