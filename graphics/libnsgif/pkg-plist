@@ -1,5 +1,5 @@
-include/libnsgif.h
+include/nsgif.h
 lib/libnsgif.so
-lib/libnsgif.so.0
+lib/libnsgif.so.1
 lib/libnsgif.so.%%VERSION%%
 libdata/pkgconfig/libnsgif.pc
