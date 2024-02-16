@@ -1,0 +1,7 @@
+bin/optench
+share/applications/org.optench.optench.desktop
+share/icons/hicolor/256x256/apps/org.optench.optench.png
+share/icons/hicolor/256x256/mimetypes/org.optench.optench-mimetype.png
+share/man/man1/optench.1.gz
+share/metainfo/org.optench.optench.appdata.xml
+share/mime/packages/org.optench.optench.xml

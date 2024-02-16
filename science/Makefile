@@ -224,6 +224,7 @@
     SUBDIR += opensim-core
     SUBDIR += opensph
     SUBDIR += opsin
+    SUBDIR += optench
     SUBDIR += orthanc
     SUBDIR += orthanc-dicomweb
     SUBDIR += orthanc-mysql
