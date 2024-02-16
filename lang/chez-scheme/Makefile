@@ -12,7 +12,7 @@ WWW=		https://cisco.github.io/ChezScheme
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv7
+ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv7 powerpc
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libossp-uuid.so:misc/ossp-uuid
@@ -52,6 +52,8 @@ CHEZ_ARCH=	ti3fb
 CHEZ_ARCH=	tarm64fb
 .elif (${ARCH} == "armv7")
 CHEZ_ARCH=	tarm32fb
+.elif (${ARCH} == "powerpc")
+CHEZ_ARCH=	tppc32fb
 .endif
 
 .if defined(NCURSES_RPATH)
