@@ -31,6 +31,6 @@ post-patch:
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/mnnpy/_utils.cpython-39.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/mnnpy/_utils.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.mk>
