@@ -19,6 +19,7 @@ include/dom/core/nodelist.h
 include/dom/core/pi.h
 include/dom/core/string.h
 include/dom/core/text.h
+include/dom/core/tokenlist.h
 include/dom/core/typeinfo.h
 include/dom/dom.h
 include/dom/events/custom_event.h
@@ -95,6 +96,7 @@ include/dom/html/html_text_area_element.h
 include/dom/html/html_title_element.h
 include/dom/html/html_ulist_element.h
 include/dom/inttypes.h
+include/dom/walk.h
 lib/libdom.so
 lib/libdom.so.0
 lib/libdom.so.%%VERSION%%

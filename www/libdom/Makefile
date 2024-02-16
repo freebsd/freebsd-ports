@@ -1,5 +1,5 @@
 PORTNAME=	libdom
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz
