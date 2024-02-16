@@ -1,6 +1,6 @@
 CATEGORIES=	databases
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../../lang/php82
 
