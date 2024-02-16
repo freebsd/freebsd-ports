@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-v
 DISTVERSION=	2022.12.26
 CATEGORIES=	emulators
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOSBox fork
 WWW=		https://dosbox-x.com/
 
