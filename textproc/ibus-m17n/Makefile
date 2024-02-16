@@ -1,5 +1,5 @@
 PORTNAME=	ibus-m17n
-DISTVERSION=	1.4.27
+DISTVERSION=	1.4.28
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,10 +19,13 @@ RUN_DEPENDS=	ibus-daemon:textproc/ibus
 PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$
 
 USES=		autoreconf gmake gnome libtool pkgconfig
-GNU_CONFIGURE=	yes
+USE_GNOME=	glib20 gtk20 gtk30 atk gdkpixbuf2 cairo pango intltool
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibus
-USE_GNOME=	glib20 gtk20 atk gdkpixbuf2 cairo pango intltool
+
+GNU_CONFIGURE=	yes
+
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.m17n.gschema.xml
 
 OPTIONS_DEFINE=	NLS
