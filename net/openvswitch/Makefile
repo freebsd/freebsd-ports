@@ -1,5 +1,5 @@
 PORTNAME=	openvswitch
-DISTVERSION=	2.17.3
+DISTVERSION=	2.17.9
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
