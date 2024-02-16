@@ -1,6 +1,6 @@
 bin/etr
-share/applications/etr.desktop
-share/metainfo/etr.appdata.xml
+share/applications/net.sourceforge.extremetuxracer.desktop
+share/metainfo/net.sourceforge.extremetuxracer.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/code
 %%PORTDOCS%%%%DOCSDIR%%/courses_events
