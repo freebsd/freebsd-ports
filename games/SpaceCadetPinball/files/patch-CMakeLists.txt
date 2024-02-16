@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-12-29 06:46:09 UTC
+--- CMakeLists.txt.orig	2023-10-16 06:14:43 UTC
 +++ CMakeLists.txt
-@@ -23,9 +23,10 @@ endif()
+@@ -32,9 +32,10 @@ find_package(SDL2 REQUIRED)
  set(SDL2_BUILDING_LIBRARY ON)
  
  find_package(SDL2 REQUIRED)
@@ -12,7 +12,7 @@
  get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
  foreach(dir ${dirs})
    message(STATUS "Include dir='${dir}'")
-@@ -199,7 +200,7 @@ if(${CMAKE_VERSION} VERSION_GREATER "3.16.0" OR ${CMAK
+@@ -215,7 +216,7 @@ endif()
              )
  endif()
  
@@ -21,14 +21,3 @@
  
  # On Windows, copy DLL to output
  if(WIN32)
-@@ -221,8 +222,8 @@ endif()
- if(UNIX AND NOT APPLE)
- 	include(GNUInstallDirs)
- 	install(TARGETS "${PROJECT_NAME}" RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
--	install(FILES "/Platform/Linux/${PROJECT_NAME}.desktop" DESTINATION "share/applications")
--	install(FILES "/Platform/Linux/${PROJECT_NAME}.metainfo.xml" DESTINATION "share/metainfo")
-+	install(FILES "Platform/Linux/${PROJECT_NAME}.desktop" DESTINATION "share/applications")
-+	install(FILES "Platform/Linux/${PROJECT_NAME}.metainfo.xml" DESTINATION "share/metainfo")
- 	foreach(S 16 32 48 128 192)
- 		install(FILES "${PROJECT_NAME}/Icon_${S}x${S}.png" DESTINATION
- 			"share/icons/hicolor/${S}x${S}/apps" RENAME "${PROJECT_NAME}.png")
