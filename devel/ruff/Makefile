@@ -1,6 +1,6 @@
 PORTNAME=	ruff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.12
+DISTVERSION=	0.2.1
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anes-0.1.6 \
 		annotate-snippets-0.6.1 \
 		annotate-snippets-0.9.2 \
-		anstream-0.6.4 \
+		anstream-0.6.11 \
 		anstyle-1.0.2 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
@@ -35,7 +35,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		argfile-0.1.6 \
 		arrayvec-0.7.4 \
 		ascii-canvas-3.0.0 \
-		assert_cmd-2.0.12 \
+		assert_cmd-2.0.13 \
 		autocfg-1.1.0 \
 		base64-0.21.3 \
 		bincode-1.3.3 \
@@ -50,12 +50,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chic-1.2.2 \
-		chrono-0.4.31 \
+		chrono-0.4.33 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.4.13 \
-		clap_builder-4.4.12 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
 		clap_complete-4.4.0 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.4.0 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
-		ignore-0.4.21 \
+		ignore-0.4.22 \
 		imara-diff-0.1.5 \
 		imperative-1.0.5 \
 		indexmap-2.1.0 \
@@ -136,13 +136,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		insta-cmd-0.4.0 \
 		instant-0.1.12 \
 		is-docker-0.2.0 \
-		is-macro-0.3.4 \
+		is-macro-0.3.5 \
 		is-terminal-0.4.9 \
 		is-wsl-0.4.0 \
 		itertools-0.10.5 \
-		itertools-0.12.0 \
+		itertools-0.12.1 \
 		itoa-1.0.9 \
-		js-sys-0.3.66 \
+		js-sys-0.3.67 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lalrpop-0.20.0 \
@@ -161,7 +161,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		log-0.4.20 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		memoffset-0.9.0 \
 		mimalloc-0.1.39 \
 		minimal-lexical-0.2.1 \
@@ -211,16 +211,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.76 \
-		pyproject-toml-0.8.1 \
+		proc-macro2-1.0.78 \
+		pyproject-toml-0.8.2 \
 		quick-junit-0.3.5 \
 		quick-xml-0.31.0 \
 		quote-1.0.35 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.8.0 \
-		rayon-core-1.12.0 \
+		rayon-1.8.1 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_syscall-0.4.1 \
@@ -234,12 +234,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-syntax-0.8.2 \
 		result-like-0.5.0 \
 		result-like-derive-0.5.0 \
-		ring-0.16.20 \
+		ring-0.17.7 \
 		rust-stemmers-1.2.0 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.28 \
-		rustls-0.21.7 \
-		rustls-webpki-0.101.4 \
+		rustls-0.21.10 \
+		rustls-webpki-0.101.7 \
 		rustversion-1.0.14 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
@@ -247,25 +247,25 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		schemars_derive-0.8.16 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		sct-0.7.0 \
+		sct-0.7.1 \
 		seahash-4.1.0 \
-		semver-1.0.20 \
-		serde-1.0.195 \
+		semver-1.0.21 \
+		serde-1.0.196 \
 		serde-wasm-bindgen-0.6.3 \
-		serde_derive-1.0.195 \
+		serde_derive-1.0.196 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.109 \
+		serde_json-1.0.113 \
 		serde_spanned-0.6.5 \
 		serde_test-1.0.176 \
-		serde_with-3.4.0 \
-		serde_with_macros-3.4.0 \
+		serde_with-3.6.0 \
+		serde_with_macros-3.6.0 \
 		sharded-slab-0.1.4 \
 		shellexpand-3.1.0 \
-		shlex-1.2.0 \
-		similar-2.3.0 \
+		shlex-1.3.0 \
+		similar-2.4.0 \
 		siphasher-0.3.11 \
-		smallvec-1.11.2 \
-		spin-0.5.2 \
+		smallvec-1.13.1 \
+		spin-0.9.8 \
 		static_assertions-1.1.0 \
 		string_cache-0.8.7 \
 		strip-ansi-escapes-0.2.0 \
@@ -277,6 +277,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tempfile-3.9.0 \
 		term-0.7.0 \
 		termcolor-1.2.0 \
+		terminal_size-0.3.0 \
 		terminfo-0.8.0 \
 		termtree-0.4.1 \
 		test-case-3.3.1 \
@@ -293,9 +294,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.8 \
+		toml-0.8.9 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.21.0 \
+		toml_edit-0.21.1 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
@@ -315,7 +316,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-xid-0.2.4 \
 		unicode_names2-1.2.1 \
 		unicode_names2_generator-1.2.1 \
-		untrusted-0.7.1 \
+		untrusted-0.9.0 \
 		ureq-2.9.1 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
@@ -329,18 +330,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.89 \
-		wasm-bindgen-backend-0.2.89 \
-		wasm-bindgen-futures-0.4.39 \
-		wasm-bindgen-macro-0.2.89 \
-		wasm-bindgen-macro-support-0.2.89 \
-		wasm-bindgen-shared-0.2.89 \
-		wasm-bindgen-test-0.3.39 \
-		wasm-bindgen-test-macro-0.3.39 \
+		wasm-bindgen-0.2.90 \
+		wasm-bindgen-backend-0.2.90 \
+		wasm-bindgen-futures-0.4.40 \
+		wasm-bindgen-macro-0.2.90 \
+		wasm-bindgen-macro-support-0.2.90 \
+		wasm-bindgen-shared-0.2.90 \
+		wasm-bindgen-test-0.3.40 \
+		wasm-bindgen-test-macro-0.3.40 \
 		web-sys-0.3.64 \
-		webpki-roots-0.25.2 \
+		webpki-roots-0.25.3 \
 		which-4.4.0 \
-		wild-2.2.0 \
+		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
@@ -380,14 +381,24 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zerocopy-0.7.30 \
 		zerocopy-derive-0.7.30
 
-CARGO_BUILD_ARGS=	--package=file://${WRKSRC}/crates/ruff_cli
+#CARGO_BUILD_ARGS=	--package=file://${WRKSRC}/crates/ruff_cli
 CARGO_INSTALL_PATH=	crates/ruff_cli
 
-PLIST_FILES=	bin/${PORTNAME}
+PROGS=		ruff \
+		ruff_dev \
+		ruff_python_formatter \
+		ruff_shrinking
+
+PLIST_FILES=	${PROGS:S/^/bin\//}
 
 PORTSCOUT=	limit:^.*0\.0\.2[56789].* # don't report before 0.0.25x+
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ruff
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+.for p in ${PROGS}
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/*/release/${p} \
+		${STAGEDIR}${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>
