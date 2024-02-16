@@ -1,6 +1,6 @@
 PORTNAME=	wasabi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -448,8 +448,8 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		zvariant-3.15.0 \
 		zvariant_derive-3.15.0 \
 		zvariant_utils-1.0.1 \
+		xsynth-core,xsynth-realtime,xsynth-soundfonts@git+https://github.com/arduano/xsynth.git?rev=e300f1d\#e300f1d859023da07f15462712bdc81a89693429 \
 		ico@git+https://github.com/StratusFearMe21/rust-ico?branch=patch-1\#aa5924babb52ee5559cdb3a376d0c060a478c9f1 \
-		xsynth-core,xsynth-realtime,xsynth-soundfonts@git+https://github.com/arduano/xsynth.git?rev=71a86e0\#71a86e0074427e4dd58487215530f2af3388e01b \
 		midi-toolkit-rs,midi-toolkit-rs-derive@git+https://github.com/arduano/midi-toolkit-rs.git?rev=a54f198\#a54f19890e47c90a246001b9f8b2519f3604eb58 \
 		gen-iter@git+https://github.com/arduano/gen-iter.git?rev=64e28bc\#64e28bc74b406030ff9bb3a3726a770a8fb4f78b \
 		kdmapi@git+https://github.com/arduano/kdmapi.git?rev=4116b00\#4116b0095c48e0cbcbb003f2ee453cf0c6e8bc4f
