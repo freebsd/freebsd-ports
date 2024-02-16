@@ -1,0 +1,2 @@
+uv is an extremely fast Python package installer and resolver, written in Rust.
+It is designed as a drop-in replacement for `pip` and `pip-compile`.
