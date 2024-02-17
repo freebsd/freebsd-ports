@@ -9,7 +9,11 @@ WWW=		https://app.assembla.com/spaces/vordog/wiki
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=	implicit declaration of function 'EVENTHANDLER_REGISTER' is invalid in C99
+DEPRECATED=	BROKEN for more than 4 months
+EXPIRATION_DATE=	2024-04-04
 ONLY_FOR_ARCHS=	i386
+
 USES=		kmod
 PLIST_FILES=	${KMODDIR}/${PORTNAME}.ko
 
