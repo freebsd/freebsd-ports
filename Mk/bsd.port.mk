@@ -1013,7 +1013,7 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
-_LIST_OF_WITH_FEATURES=	bind_now debug debuginfo lto pie relro sanitize ssp
+_LIST_OF_WITH_FEATURES=	bind_now debug debuginfo lto pie relro sanitize ssp testing
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
@@ -5490,7 +5490,7 @@ _INSTALL_SEQ=	100:install-message \
 				300:create-manifest
 _INSTALL_SUSEQ=	400:fake-pkg 500:security-check
 
-_PACKAGE_DEP=	stage
+_PACKAGE_DEP=	stage ${_TESTING_PACKAGE_DEP}
 _PACKAGE_SEQ=	100:package-message 300:pre-package 450:pre-package-script \
 				500:do-package 850:post-package-script \
 				${_OPTIONS_package} ${_USES_package}
