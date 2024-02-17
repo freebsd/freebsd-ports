@@ -1,6 +1,5 @@
 PORTNAME=	pycharm-ce
-PORTVERSION=	2023.3.2
-PORTREVISION=	1
+PORTVERSION=	2023.3.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -18,18 +17,18 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		python:run shebangfix
+USES=		desktop-file-utils python:run shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle.py \
-		plugins/python-ce/helpers/pycodestyle-2.10.0.py \
+SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle-2.10.0.py \
+		plugins/python-ce/helpers/pycodestyle.py \
 		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
 NO_BUILD=	yes
 
 .include "${.CURDIR}/../../java/intellij/common.mk"
 
-SUB_FILES+=	pkg-message pycharm ${PORTNAME}.desktop
+SUB_FILES+=	${PORTNAME}.desktop pkg-message pycharm
 SUB_LIST+=	IDEA_HOME=${IDEA_HOME}
 
 # Remove non-native binaries

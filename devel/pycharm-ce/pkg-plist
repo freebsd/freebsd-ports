@@ -20,7 +20,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PC-233.13135.95
+%%DATADIR%%/lib/build-marker-PC-233.13763.11
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -58,6 +58,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/license/third-party-libraries.json
 %%DATADIR%%/license/yourkit-license-redist.txt
 %%DATADIR%%/modules/module-descriptors.jar
+%%DATADIR%%/plugins/ae-database/lib/ae-database.jar
 %%DATADIR%%/plugins/color-scheme-github/lib/color-scheme-github.jar
 %%DATADIR%%/plugins/color-scheme-monokai/lib/color-scheme-monokai.jar
 %%DATADIR%%/plugins/color-scheme-twilight/lib/color-scheme-twilight.jar
@@ -110,8 +111,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-customization/lib/pycharm-community-customization.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-50da183f06c8-d3b881c8e49f.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-50da183f06c8-d3b881c8e49f.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-5a2391486177-d3b881c8e49f.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-5a2391486177-d3b881c8e49f.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
@@ -941,13 +942,11 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydev_runfiles/pydev_runfiles_pytest2.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydev_runfiles/pydev_runfiles_unittest.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydev_runfiles/pydev_runfiles_xml_rpc.py
-%%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_asyncio_util/__init__.py
-%%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_asyncio_util/pydevd_asyncio_utils.py
-%%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_asyncio_util/pydevd_nest_asyncio.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevconsole_code_for_ironpython.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_additional_thread_info.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_additional_thread_info_regular.py
+%%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_asyncio_provider.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_breakpointhook.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_bytecode_utils.py
@@ -1023,6 +1022,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_vm_type.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_xml.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/tables/__init__.py
+%%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/tables/pydevd_numpy.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/tables/pydevd_pandas.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/tables/pydevd_polars.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_frame_eval/__init__.py
