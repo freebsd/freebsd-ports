@@ -2987,4 +2987,6 @@ x11-themes/kde-icons-noia||2024-02-06|Has expired: Unfetchable and upstream WWW 
 databases/pg_vector|databases/pgvector|2024-02-06|Renamed to match upstream
 graphics/rayshade||2024-02-10|Has expired: Defunct upstream with last release in 1992
 graphics/urt||2024-02-11|Has expired: Defunct upstream
-security/sssd-devel|security/sssd2|2024-11-01|Port is stable
+security/sssd-devel|security/sssd2|2024-02-12|Port is stable
+audio/taglib-extras||2024-02-17|Incompatible with taglib 2.x and unmaintained upstream since 2015
+security/py-pysha3||2024-02-17|Merged into python standard library since version 3.6
