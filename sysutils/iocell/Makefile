@@ -1,14 +1,7 @@
 PORTNAME=	iocell
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-# https://github.com/bartekrutkowski/iocell/pull/37
-# https://github.com/bartekrutkowski/iocell/pull/40
-PATCHFILES+=	37.patch:-p1 \
-		40.patch:-p1
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Feature rich Jail containers manager (iocage fork)
