@@ -1,4 +1,4 @@
-This is an Ada compiler, from GCC-12.
+This is an Ada compiler, from GCC-13.
 
 Since Ada support must be built by an Ada-capable compiler, only platforms for
 which a bootstrap compiler is available can build it.
