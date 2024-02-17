@@ -181,7 +181,7 @@
 %%WWWDIR%%/configuration.php
 %%WWWDIR%%/contrib/docker-test.sh
 %%WWWDIR%%/contrib/linux-agent-installer/Icinga2Agent.bash
-%%WWWDIR%%/contrib/systemd/icinga-director.service
+%%WWWDIR%%/contrib/systemd/%%DIRECTOR_GROUP%%-director.service
 %%WWWDIR%%/contrib/windows-agent-installer/Icinga2Agent.psm1
 %%WWWDIR%%/doc/01-Introduction.md
 %%WWWDIR%%/doc/02-Installation.md
@@ -497,6 +497,8 @@
 %%WWWDIR%%/library/Director/Import/PurgeStrategy/PurgeStrategy.php
 %%WWWDIR%%/library/Director/Import/Sync.php
 %%WWWDIR%%/library/Director/Import/SyncUtils.php
+%%WWWDIR%%/library/Director/Integration/BackendInterface.php
+%%WWWDIR%%/library/Director/Integration/Icingadb/IcingadbBackend.php
 %%WWWDIR%%/library/Director/Integration/MonitoringModule/Monitoring.php
 %%WWWDIR%%/library/Director/Job/ConfigJob.php
 %%WWWDIR%%/library/Director/Job/HousekeepingJob.php
@@ -617,6 +619,9 @@
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierXlsNumericIp.php
 %%WWWDIR%%/library/Director/ProvidedHook/CubeLinks.php
 %%WWWDIR%%/library/Director/ProvidedHook/IcingaDbCubeLinks.php
+%%WWWDIR%%/library/Director/ProvidedHook/Icingadb/HostActions.php
+%%WWWDIR%%/library/Director/ProvidedHook/Icingadb/IcingadbSupport.php
+%%WWWDIR%%/library/Director/ProvidedHook/Icingadb/ServiceActions.php
 %%WWWDIR%%/library/Director/ProvidedHook/Monitoring/HostActions.php
 %%WWWDIR%%/library/Director/ProvidedHook/Monitoring/ServiceActions.php
 %%WWWDIR%%/library/Director/Repository/IcingaTemplateRepository.php
@@ -737,6 +742,7 @@
 %%WWWDIR%%/library/Director/Web/Table/ImportrunTable.php
 %%WWWDIR%%/library/Director/Web/Table/ImportsourceHookTable.php
 %%WWWDIR%%/library/Director/Web/Table/ImportsourceTable.php
+%%WWWDIR%%/library/Director/Web/Table/IntlZfQueryBasedTable.php
 %%WWWDIR%%/library/Director/Web/Table/JobTable.php
 %%WWWDIR%%/library/Director/Web/Table/NotificationTemplateUsageTable.php
 %%WWWDIR%%/library/Director/Web/Table/ObjectSetTable.php
@@ -751,7 +757,6 @@
 %%WWWDIR%%/library/Director/Web/Table/ObjectsTableZone.php
 %%WWWDIR%%/library/Director/Web/Table/PropertymodifierTable.php
 %%WWWDIR%%/library/Director/Web/Table/QuickTable.php
-%%WWWDIR%%/library/Director/Web/Table/ReadOnlyFormAvpTable.php
 %%WWWDIR%%/library/Director/Web/Table/ServiceTemplateUsageTable.php
 %%WWWDIR%%/library/Director/Web/Table/SyncRunTable.php
 %%WWWDIR%%/library/Director/Web/Table/SyncpropertyTable.php
@@ -1100,7 +1105,6 @@
 %%WWWDIR%%/schema/pgsql.sql
 %%WWWDIR%%/test/bootstrap.php
 %%WWWDIR%%/test/config/authentication.ini
-%%WWWDIR%%/test/config/config.ini
 %%WWWDIR%%/test/config/resources.ini
 %%WWWDIR%%/test/php/library/Director/Application/DependencyTest.php
 %%WWWDIR%%/test/php/library/Director/Application/FiltersWorkAsExpectedTest.php
@@ -1108,6 +1112,7 @@
 %%WWWDIR%%/test/php/library/Director/CustomVariable/CustomVariablesTest.php
 %%WWWDIR%%/test/php/library/Director/Data/AssignFilterHelperTest.php
 %%WWWDIR%%/test/php/library/Director/Data/RecursiveUtf8ValidatorTest.php
+%%WWWDIR%%/test/php/library/Director/Form/IcingaObjectFieldFormTest.php
 %%WWWDIR%%/test/php/library/Director/IcingaConfig/AssignRendererTest.php
 %%WWWDIR%%/test/php/library/Director/IcingaConfig/ExtensibleSetTest.php
 %%WWWDIR%%/test/php/library/Director/IcingaConfig/IcingaConfigHelperTest.php
@@ -1151,4 +1156,4 @@
 %%WWWDIR%%/test/php/library/Director/Resolver/TemplateTreeTest.php
 %%WWWDIR%%/test/php/library/Director/Restriction/MatchingFilterTest.php
 %%WWWDIR%%/test/phpunit-compat.php
-@dir(%%DIRECTOR_USER%%,DIRECTOR_GROUP%%,0775) /var/run/icinga-director
+@dir /var/run/%%DIRECTOR_GROUP%%-director
