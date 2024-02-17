@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-doc
-PORTVERSION=	20240117
+PORTVERSION=	20240216
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/doceng
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	docproj-fonts-cjk>0:textproc/docproj-fonts-cjk
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|enableGitInfo = true|#enableGitInfo = true|' \
-		${WRKSRC}/config/_default/config.toml
+		${WRKSRC}/config/_default/hugo.toml
 
 do-build-HTML-on:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DOC_LANG="${HTML_DOC_LANG}" \
