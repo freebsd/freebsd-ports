@@ -1,4 +1,4 @@
-TIMESTAMP = 1704302503
+TIMESTAMP = 1708123354
 SHA256 (rust/crates/actix-codec-0.5.0.crate) = 57a7559404a7f3573127aab53c08ce37a6c6a315c374a31070f3c91cd1b4a7fe
 SIZE (rust/crates/actix-codec-0.5.0.crate) = 14046
 SHA256 (rust/crates/actix-cors-0.6.5.crate) = 0346d8c1f762b41b458ed3145eea914966bb9ad20b9be0d6d463b20d45586370
@@ -1149,5 +1149,5 @@ SHA256 (qdrant-tonic-060ab88c87955adc59d46a44b4e3b72cb4cc1522_GH0.tar.gz) = 5905
 SIZE (qdrant-tonic-060ab88c87955adc59d46a44b4e3b72cb4cc1522_GH0.tar.gz) = 37445849
 SHA256 (qdrant-quantization-939fdb627a8edcf92fd71e3c79017156690850e9_GH0.tar.gz) = 30f039511820cddd9d769a85b3a28fd8083db8013161c7a9109784a399ac7c95
 SIZE (qdrant-quantization-939fdb627a8edcf92fd71e3c79017156690850e9_GH0.tar.gz) = 59857
-SHA256 (qdrant-qdrant-v1.7.3_GH0.tar.gz) = af975a514a32b9eee8c7702ce4ffec0e3904b5e1c953f2fa2889e2b05c5c88fc
-SIZE (qdrant-qdrant-v1.7.3_GH0.tar.gz) = 1759305
+SHA256 (qdrant-qdrant-v1.7.4_GH0.tar.gz) = f1289492ae7ead9ad07af39e1f36d5555ae7cde9f03ca77ad63c0ffb9e98ae83
+SIZE (qdrant-qdrant-v1.7.4_GH0.tar.gz) = 1762118
