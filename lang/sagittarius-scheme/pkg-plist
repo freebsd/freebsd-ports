@@ -416,6 +416,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/math/modulus-check-digit.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/math/mt-random.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/naming/context.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/http.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/http-client.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/http-client/connection-manager.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/http-client/connection.scm
@@ -516,6 +517,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/constants.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/transport.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/timestamps.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/constant.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/port.scm
@@ -555,7 +557,9 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/syntax.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/type.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/unit.scm
-%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-set/boundary.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-sets/emojis.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-sets/grapheme.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-sets/word.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/combinators.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/conditions.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/control.scm
@@ -653,6 +657,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/security/keystore/jceks/keystore.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/security/keystore/jks.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/security/keystore/pkcs12.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/security/password.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/security/password/checker.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/security/password/generator.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/security/password/policy.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/security/signature.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/shorten.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/slib/alist.scm
@@ -975,7 +983,19 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/patch.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/pointer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/api.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/array.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/core.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/format.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/logics.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/object.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/primitives.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/ref.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators/vocabularies.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/version.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/vocabularies.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/validator.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown/convert.scm
@@ -1027,6 +1047,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/toml/parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/tree.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/unicode.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/unicode/grapheme.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/converter.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/events.scm

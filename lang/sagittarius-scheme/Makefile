@@ -1,5 +1,5 @@
 PORTNAME=	sagittarius
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish
