@@ -11,6 +11,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cpm emulator
 
+DEPRECATED=	BROKEN on all versions since last year
+EXPIRATION_DATE=	2024-03-18
+BROKEN=	incorrect register `%esi' used with `w' suffix
 ONLY_FOR_ARCHS=	i386
 
 USES=		compiler
