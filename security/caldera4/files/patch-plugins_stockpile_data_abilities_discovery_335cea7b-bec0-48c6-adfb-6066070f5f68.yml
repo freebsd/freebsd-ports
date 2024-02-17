@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/335cea7b-bec0-48c6-adfb-6066070f5f68.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/335cea7b-bec0-48c6-adfb-6066070f5f68.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           ps
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           ps

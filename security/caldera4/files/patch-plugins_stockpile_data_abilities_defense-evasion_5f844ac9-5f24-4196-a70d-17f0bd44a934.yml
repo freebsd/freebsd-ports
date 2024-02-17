@@ -1,0 +1,15 @@
+--- plugins/stockpile/data/abilities/defense-evasion/5f844ac9-5f24-4196-a70d-17f0bd44a934.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/defense-evasion/5f844ac9-5f24-4196-a70d-17f0bd44a934.yml
+@@ -25,9 +25,9 @@
+           path="$(pwd)/#{exe_name}";
+           num_processes=$(for id in $(pgrep -f #{exe_name}); do lsof -p $id 2> /dev/null | grep "$path"; done | wc -l);
+           if [ "$num_processes" -le 1 ]; then /bin/rm -f "$path"; fi;
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           path="$(pwd)/#{exe_name}";
+           num_processes=$(for id in $(pgrep -f #{exe_name}); do lsof -p $id 2> /dev/null | grep "$path"; done | wc -l);
+-          if [ "$num_processes" -le 1 ]; then /bin/rm -f "$path"; fi;
+\ No newline at end of file
++          if [ "$num_processes" -le 1 ]; then /bin/rm -f "$path"; fi;

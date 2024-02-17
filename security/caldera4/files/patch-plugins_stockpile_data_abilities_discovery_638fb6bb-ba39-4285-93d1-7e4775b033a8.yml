@@ -1,0 +1,13 @@
+--- plugins/stockpile/data/abilities/discovery/638fb6bb-ba39-4285-93d1-7e4775b033a8.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/638fb6bb-ba39-4285-93d1-7e4775b033a8.yml
+@@ -15,6 +15,10 @@
+       sh:
+         command: |
+           netstat -anto
++    freebsd:
++      sh:
++        command: |
++          netstat -aSp tcp
+     windows:
+       psh:
+         command: |

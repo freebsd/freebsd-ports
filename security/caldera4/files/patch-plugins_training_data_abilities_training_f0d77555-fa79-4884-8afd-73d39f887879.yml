@@ -1,0 +1,15 @@
+--- plugins/training/data/abilities/training/f0d77555-fa79-4884-8afd-73d39f887879.yml.orig	2022-08-08 23:35:27 UTC
++++ plugins/training/data/abilities/training/f0d77555-fa79-4884-8afd-73d39f887879.yml
+@@ -7,9 +7,9 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           mv ./phish_email.txt /var/mail/victim
+         payloads:
+-          - phish_email.txt
+\ No newline at end of file
++          - phish_email.txt

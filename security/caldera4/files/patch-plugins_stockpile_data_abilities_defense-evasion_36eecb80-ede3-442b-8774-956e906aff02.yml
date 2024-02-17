@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/defense-evasion/36eecb80-ede3-442b-8774-956e906aff02.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/defense-evasion/36eecb80-ede3-442b-8774-956e906aff02.yml
+@@ -11,7 +11,7 @@
+     darwin:
+       sh:
+         command: sleep 60
+-    linux:
++    freebsd,linux:
+       sh:
+         command: sleep 60
+     windows:

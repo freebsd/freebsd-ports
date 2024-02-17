@@ -1,0 +1,11 @@
+--- plugins/access/data/abilities/technical-information-gathering/567eaaba-94cc-4a27-83f8-768e5638f4e1.yml.orig	2021-10-01 14:07:40 UTC
++++ plugins/access/data/abilities/technical-information-gathering/567eaaba-94cc-4a27-83f8-768e5638f4e1.yml
+@@ -7,7 +7,7 @@
+     name: Conduct active scanning
+     attack_id: T1254
+   platforms:
+-    darwin,linux:
++    darwin,freebsd,linux:
+       sh:
+         command: |
+           ./scanner.sh #{target.ip}

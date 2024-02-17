@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/response/32e563bb-ba06-4bcc-b817-fc2c434c0b66.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/response/32e563bb-ba06-4bcc-b817-fc2c434c0b66.yml
+@@ -7,7 +7,7 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           crontab -u #{host.user.name} -l > temp_crontab;
+@@ -35,4 +35,4 @@
+           edge: has_new_cronjob
+           target: host.new.cronjob
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: host.new.cronjob
+\ No newline at end of file
++        - source: host.new.cronjob

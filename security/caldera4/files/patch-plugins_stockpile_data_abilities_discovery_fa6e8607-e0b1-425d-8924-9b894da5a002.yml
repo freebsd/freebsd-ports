@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/fa6e8607-e0b1-425d-8924-9b894da5a002.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/fa6e8607-e0b1-425d-8924-9b894da5a002.yml
+@@ -15,7 +15,7 @@
+         parsers:
+           plugins.stockpile.app.parsers.basic:
+             - source: host.current.time
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           date -u +"%Y-%m-%dT%H:%M:%SZ"

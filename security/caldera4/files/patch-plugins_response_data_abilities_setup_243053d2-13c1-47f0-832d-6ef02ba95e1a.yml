@@ -1,0 +1,11 @@
+--- plugins/response/data/abilities/setup/243053d2-13c1-47f0-832d-6ef02ba95e1a.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/setup/243053d2-13c1-47f0-832d-6ef02ba95e1a.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           mkdir -p /tmp/sensitive_file_backups;

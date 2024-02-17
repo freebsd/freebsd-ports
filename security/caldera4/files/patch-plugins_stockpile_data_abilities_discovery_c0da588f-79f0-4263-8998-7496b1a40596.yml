@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/c0da588f-79f0-4263-8998-7496b1a40596.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/c0da588f-79f0-4263-8998-7496b1a40596.yml
+@@ -15,7 +15,7 @@
+           plugins.stockpile.app.parsers.basic:
+             - source: host.user.name
+             - source: domain.user.name
+-    linux:
++    freebsd,linux:
+       sh:
+         command: whoami
+         parsers:

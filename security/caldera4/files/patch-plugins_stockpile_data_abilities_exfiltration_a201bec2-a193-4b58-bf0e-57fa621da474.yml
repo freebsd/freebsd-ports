@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/exfiltration/a201bec2-a193-4b58-bf0e-57fa621da474.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/a201bec2-a193-4b58-bf0e-57fa621da474.yml
+@@ -7,7 +7,7 @@
+     attack_id: T1567.001
+     name: Exfiltration to Code Repository
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           GHUser="#{github.user.name}";
+@@ -62,4 +62,4 @@
+           };
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: host.dir.staged
+\ No newline at end of file
++        - source: host.dir.staged

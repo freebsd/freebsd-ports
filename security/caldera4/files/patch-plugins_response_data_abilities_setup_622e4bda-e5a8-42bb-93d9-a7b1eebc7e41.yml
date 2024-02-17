@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/setup/622e4bda-e5a8-42bb-93d9-a7b1eebc7e41.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/setup/622e4bda-e5a8-42bb-93d9-a7b1eebc7e41.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           mkdir -p /tmp/sensitive_file_backups;
+@@ -104,4 +104,4 @@
+               then rm -f $file;
+             fi;
+           done;
+-          rm -rf /tmp/sensitive_file_backups;
+\ No newline at end of file
++          rm -rf /tmp/sensitive_file_backups;

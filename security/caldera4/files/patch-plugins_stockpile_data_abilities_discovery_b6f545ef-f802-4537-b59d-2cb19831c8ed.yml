@@ -1,0 +1,13 @@
+--- plugins/stockpile/data/abilities/discovery/b6f545ef-f802-4537-b59d-2cb19831c8ed.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/b6f545ef-f802-4537-b59d-2cb19831c8ed.yml
+@@ -8,7 +8,7 @@
+     attack_id: T1016
+     name: System Network Configuration Discovery
+   platforms:
+-    darwin:
++    darwin,freebsd:
+       sh:
+         command: |
+-          ifconfig | grep broadcast
+\ No newline at end of file
++          ifconfig | grep broadcast

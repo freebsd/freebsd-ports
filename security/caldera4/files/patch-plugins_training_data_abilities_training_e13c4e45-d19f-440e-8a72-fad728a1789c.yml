@@ -1,0 +1,13 @@
+--- plugins/training/data/abilities/training/e13c4e45-d19f-440e-8a72-fad728a1789c.yml.orig	2022-08-08 23:35:27 UTC
++++ plugins/training/data/abilities/training/e13c4e45-d19f-440e-8a72-fad728a1789c.yml
+@@ -7,7 +7,7 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+-          rm -f /var/mail/victim
+\ No newline at end of file
++          rm -f /var/mail/victim

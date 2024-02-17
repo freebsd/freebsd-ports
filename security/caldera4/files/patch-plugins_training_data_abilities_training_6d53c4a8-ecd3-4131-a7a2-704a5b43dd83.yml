@@ -1,0 +1,17 @@
+--- plugins/training/data/abilities/training/6d53c4a8-ecd3-4131-a7a2-704a5b43dd83.yml.orig	2022-08-08 23:35:27 UTC
++++ plugins/training/data/abilities/training/6d53c4a8-ecd3-4131-a7a2-704a5b43dd83.yml
+@@ -7,11 +7,11 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           nc -nlv 7011 &
+     darwin:
+       sh:
+         command: |
+-          nc -nlv 7011 &
+\ No newline at end of file
++          nc -nlv 7011 &

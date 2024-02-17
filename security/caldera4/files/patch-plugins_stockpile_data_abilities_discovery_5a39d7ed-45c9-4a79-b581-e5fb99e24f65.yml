@@ -1,0 +1,12 @@
+--- plugins/stockpile/data/abilities/discovery/5a39d7ed-45c9-4a79-b581-e5fb99e24f65.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/5a39d7ed-45c9-4a79-b581-e5fb99e24f65.yml
+@@ -42,6 +42,6 @@
+     darwin:
+       sh:
+         command: ps aux
+-    linux:
++    freebsd,linux:
+       sh:
+-        command: ps aux
+\ No newline at end of file
++        command: ps aux

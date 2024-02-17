@@ -1,0 +1,75 @@
+[
+{ type: install
+  message: <<EOM
+Caldera 4 port was installed
+
+1) Take on mind it is a modifying version of Caldera for include FreeBSD as 
+   supported OS and you could found some issues. Problem reports are welcome.
+
+2) Add the following lines to /etc/rc.conf
+
+  # sysrc caldera_enable="YES"
+
+  or enable it from service command
+
+  # service caldera enable
+
+3) Before of start Caldera you must run some scripts for generate/update payload
+   files
+
+   # su -m caldera -c 'cd %%WWWDIR%%/plugins/manx && \
+     setenv GOCACHE /tmp/caldera/.cache; setenv GOMODCACHE /tmp/caldera/.vendor; \
+     sh update-shells.sh'
+   # su -m caldera -c 'cd %%WWWDIR%%/plugins/sandcat && \
+     setenv GOCACHE /tmp/caldera/.cache; setenv GOMODCACHE /tmp/caldera/.vendor; \
+     sh update-agents.sh'
+
+4) Do not forget modify configuration files before of run Caldera. For default
+   it runs in insecure mode (http). Caldera configuration files are located at
+
+   %%WWWDIR%%/conf
+
+5) You can change default user passwords modifying default.yml file into
+   %%WWWDIR%%/conf folder. By default Caldera uses admin/admin,
+   blue/admin or red/admin like user/password.
+
+   # sed -i "" -e "s|admin: admin|admin: `openssl rand -base64 14`|g" default.yml
+   # sed -i "" -e "s|blue: admin|blue: `openssl rand -base64 14`|g" default.yml
+   # sed -i "" -e "s|red: admin|red: `openssl rand -base64 14`|g" default.yml
+
+6) If you want run it in secure mode (https) take a look in ssl plugin section:
+
+   https://caldera.readthedocs.io/en/latest/Plugin-library.html#ssl
+
+7) Start Caldera service
+
+   # service caldera start
+
+8) When Caldera is starting, atomic plugin will use git to download files from
+   the following link:
+
+   https://github.com/redcanaryco/atomic-red-team
+
+   Currently, the project does not include FreeBSD like a supported platform.
+   For this reason, Atomic plugin was patched for download atomic-red-team
+   files from the following repository until my pull request will be merge into
+   redcanaryco/atomic-red-team:
+
+   https://github.com/alonsobsd/atomic-red-team
+
+   Those files are necessary for generate yml files used by Caldera abilities
+
+9) Caldera web listens on port 8888 by default
+
+   http://your_caldera_server_ip:8888
+
+10) Log file is located at /var/log/caldera.log
+
+11) For more configure information you can look at the following link:
+
+   https://caldera.readthedocs.io/en/latest/
+
+12) Enjoy it
+EOM
+}
+]

@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/setup/34bc0116-13b6-4dd5-b681-9554c2a1fa95.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/setup/34bc0116-13b6-4dd5-b681-9554c2a1fa95.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           mkdir -p /tmp/sensitive_file_backups;
+@@ -67,4 +67,4 @@
+           Remove-Item -Recurse -Force C:\Users\Public\sensitive_file_backups;
+   requirements:
+     - plugins.response.app.requirements.source_fact:
+-      - source: file.sensitive.path
+\ No newline at end of file
++      - source: file.sensitive.path

@@ -1,0 +1,15 @@
+--- plugins/stockpile/data/abilities/defense-evasion/43b3754c-def4-4699-a673-1d85648fda6a.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/defense-evasion/43b3754c-def4-4699-a673-1d85648fda6a.yml
+@@ -16,6 +16,10 @@
+       sh:
+         command: |
+           > $HOME/.bash_history && unset HISTFILE
++    freebsd:
++      sh:
++        command: |
++          > $HOME/.history && set history = 0
+     windows:
+       psh:
+-        command: Clear-History;Clear
+\ No newline at end of file
++        command: Clear-History;Clear

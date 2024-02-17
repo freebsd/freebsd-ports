@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/c1cd6388-3ced-48c7-a511-0434c6ba8f48.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/c1cd6388-3ced-48c7-a511-0434c6ba8f48.yml
+@@ -15,7 +15,7 @@
+         parsers:
+           plugins.stockpile.app.parsers.basic:
+             - source: host.user.name
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           cut -d: -f1 /etc/passwd | grep -v '_' | grep -v '#'

@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/setup/2ed3c315-2022-499e-a844-1bbd119d0abe.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/setup/2ed3c315-2022-499e-a844-1bbd119d0abe.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           output="";
+@@ -87,4 +87,4 @@
+           }
+   requirements:
+     - plugins.response.app.requirements.source_fact:
+-        - source: directory.sensitive.path
+\ No newline at end of file
++        - source: directory.sensitive.path

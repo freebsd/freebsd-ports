@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/6c91884e-11ec-422f-a6ed-e76774b0daac.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/6c91884e-11ec-422f-a6ed-e76774b0daac.yml
+@@ -14,7 +14,7 @@
+           - source: host.print.file
+             edge: has_size
+             target: host.print.size
+-    linux:
++    freebsd,linux:
+       sh:
+         command: lpq -a
+         parsers:

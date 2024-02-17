@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/impact/55f9600a-756f-496b-b27f-682052dc429c.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/impact/55f9600a-756f-496b-b27f-682052dc429c.yml
+@@ -7,7 +7,7 @@
+         command: ./mission.go -duration 60 -extension .caldera -dir '/'
+         payloads:
+         - mission.go
+-    linux:
++    freebsd,linux:
+       sh:
+         command: ./mission.go -duration 60 -extension .caldera -dir '/'
+         payloads:
