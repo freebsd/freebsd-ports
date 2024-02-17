@@ -10,6 +10,9 @@ WWW=		https://tuxnes.sourceforge.net/
 
 LICENSE=	GPLv2
 
+BROKEN=		linker command failed with exit code 1
+DEPRECATED=	BROKEN for more than 4 months
+EXPIRATION_DATE=	2024-04-04
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
 
