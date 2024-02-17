@@ -9,6 +9,8 @@ WWW=		https://github.com/portnov/ghcprofview-hs
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=	error: incompatible pointer to integer conversion assigning to 'ffi_arg' (aka 'unsigned long') from 'HsPtr' (aka 'void *')
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
