@@ -1,7 +1,0 @@
-sha3 wrapper (keccak) for Python. The package is a wrapper around the
-optimized reference implementation from http://keccak.noekeon.org/ . Only
-the optimizations for 32 and 64bit platforms are used. The optimized SSE and
-ARM assembly variants are ignored for now.
-
-The module is a standalone version of the SHA-3 implemention of Python 3.4
-(currently under development).
