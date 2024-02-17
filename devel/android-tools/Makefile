@@ -1,6 +1,6 @@
 PORTNAME=	android-tools
 PORTVERSION=	31.0.3p2.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -31,9 +31,10 @@ SHEBANG_FILES=	vendor/mkbootimg/repack_bootimg.py \
 		vendor/mkbootimg/mkbootimg.py \
 		vendor/mkbootimg/unpack_bootimg.py
 
-LDFLAGS+=	-labsl_status
 MAKE_ENV+=	GOFLAGS=-mod=vendor \
 		GOPATH=${WRKSRC}/vendor/boringssl/vendor \
 		GOPROXY=off
+
+LDFLAGS+=	-labsl_status
 
 .include <bsd.port.mk>
