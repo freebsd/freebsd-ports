@@ -170,4 +170,4 @@ lib/X11/xephem/help/png/valid-html401.png
 lib/X11/xephem/help/png/wcssolver.png
 lib/X11/xephem/help/xephem.html
 lib/X11/xephem/lo/lodb.xml
-man/man1/xephem.1.gz
+share/man/man1/xephem.1.gz
