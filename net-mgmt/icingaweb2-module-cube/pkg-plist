@@ -47,5 +47,7 @@
 %%WWWDIR%%/library/Cube/Web/Controller.php
 %%WWWDIR%%/library/Cube/Web/IdoController.php
 %%WWWDIR%%/module.info
+%%WWWDIR%%/phpstan-baseline.neon
+%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/public/css/module.less
 %%WWWDIR%%/run.php
