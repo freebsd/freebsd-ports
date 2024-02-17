@@ -1,0 +1,7 @@
+TIMESTAMP = 1708213204
+SHA256 (hyprwm-hypridle-v0.1.0_GH0.tar.gz) = 142cceacd91bf7f0bf6ae0e4e298f7375a5c6d38216756062e415dbf93f3b317
+SIZE (hyprwm-hypridle-v0.1.0_GH0.tar.gz) = 11696
+SHA256 (56f334cbe867.patch) = 17179dc3f1896f46a991e3fd8a77df2b6ef6dbd2f23e06eedd2b7a73c163494a
+SIZE (56f334cbe867.patch) = 682
+SHA256 (ea8588fefbe5.patch) = e85782d0036814a303c9dfb8e0a84eef832479a2903c7e505750ae0cdb9c727f
+SIZE (ea8588fefbe5.patch) = 1167

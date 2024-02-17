@@ -1,0 +1,6 @@
+Hyprland's idle daemon. Requires logind or consolekit2 session.
+
+Features:
+ - based on the ext-idle-notify-v1 wayland protocol
+ - support for dbus' loginctl commands (lock / unlock / before-sleep)
+ - support for dbus' inhibit (used by e.g. firefox / steam)
