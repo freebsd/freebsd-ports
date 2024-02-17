@@ -1,5 +1,6 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	x11
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
@@ -47,7 +48,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		sessreg:x11/sessreg
 
 USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
-		shebangfix tcl:86 xorg
+		shebangfix tcl:86 xorg llvm:16
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/tcl/docbook.tcl
@@ -66,7 +67,8 @@ MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	MALLOC_CONF=junk:false
 SUB_FILES=	pkg-message
-CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types
+CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types \
+		-Wno-implicit-function-declaration
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
 pre-configure:
