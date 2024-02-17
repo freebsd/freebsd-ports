@@ -11,6 +11,8 @@ WWW=		https://github.com/dlang-community/DCD
 
 LICENSE=	BSL
 
+BROKEN=		none of the overloads of `fatalHandler` are callable using a `shared` object
+
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		rdmd:lang/dlang-tools \
