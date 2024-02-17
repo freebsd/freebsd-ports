@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Caldera port was installed
+Caldera 5 port was installed
 
 1) Take on mind it is a modifying version of Caldera for include FreeBSD as 
    supported OS and you could found some issues. Problem reports are welcome.
@@ -17,8 +17,12 @@ Caldera port was installed
 3) Before of start Caldera you must run some scripts for generate/update payload
    files
 
-   # su -m caldera -c 'cd %%WWWDIR%%/plugins/manx && sh update-shells.sh'
-   # su -m caldera -c 'cd %%WWWDIR%%/plugins/sandcat && sh update-agents.sh'
+   # su -m caldera -c 'cd %%WWWDIR%%/plugins/manx && \
+     setenv GOCACHE /tmp/caldera/.cache; setenv GOMODCACHE /tmp/caldera/.vendor; \
+     sh update-shells.sh'
+   # su -m caldera -c 'cd %%WWWDIR%%/plugins/sandcat && \
+     setenv GOCACHE /tmp/caldera/.cache; setenv GOMODCACHE /tmp/caldera/.vendor; \
+     sh update-agents.sh'
 
 4) Do not forget modify configuration files before of run Caldera. For default
    it runs in insecure mode (http). Caldera configuration files are located at
@@ -29,13 +33,17 @@ Caldera port was installed
    %%WWWDIR%%/conf folder. By default Caldera uses admin/admin,
    blue/admin or red/admin like user/password.
 
-   # sed -i "" -e "s|admin: admin|admin: `openssl rand -base64 14`|g" default.yml
-   # sed -i "" -e "s|blue: admin|blue: `openssl rand -base64 14`|g" default.yml
-   # sed -i "" -e "s|red: admin|red: `openssl rand -base64 14`|g" default.yml
+   # sed -i "" -e "s|admin: admin|admin: `openssl rand -base64 32`|g" default.yml
+   # sed -i "" -e "s|blue: admin|blue: `openssl rand -base64 32`|g" default.yml
+   # sed -i "" -e "s|red: admin|red: `openssl rand -base64 32`|g" default.yml
 
 6) If you want run it in secure mode (https) take a look in ssl plugin section:
 
    https://caldera.readthedocs.io/en/latest/Plugin-library.html#ssl
+
+   You will need add an empty caldera_flags to /etc/rc.conf for enable it
+
+   # sysrc caldera_flags=
 
 7) Start Caldera service
 
@@ -55,9 +63,24 @@ Caldera port was installed
 
    Those files are necessary for generate yml files used by Caldera abilities
 
-9) Caldera web listens on port 8888 by default
+9) Caldera web listens on port localhost:8888 by default
 
-   http://your_caldera_server_ip:8888
+   http://localhost:8888
+
+   If you want to MITRE Caldera works wth non-localhost settings, you can do the
+   following:
+
+   # sed -i "" -e 's|http://localhost|http://ip_or_hostname_here|g' %%WWWDIR%%/plugins/magma/dist/index*.js
+
+   If you are using ssl plugin:
+
+   # sed -i "" -e 's|http://localhost:8888|https://ip_or_hostname_here:8443|g' %%WWWDIR%%/plugins/magma/dist/assets/index*.js
+
+   Take on mind port number must be changed depending of your settings
+
+   I prefer change the ip/hostname:port of this way because it is more quick
+   instead of re-build plugins/magma each time we define/change VITE_CALDERA_URL
+   into .env file. Also it drop dependency of node_modules files and nodejs app.
 
 10) Log file is located at /var/log/caldera.log
 

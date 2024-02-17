@@ -1,40 +1,75 @@
---- plugins/human/templates/human.html.orig	2022-09-06 17:33:12 UTC
-+++ plugins/human/templates/human.html
-@@ -60,6 +60,7 @@
-                                 <select id="base-platform">
-                                     <option disabled="disabled" selected="">Select target OS</option>
-                                     <option value="darwin">MacOS</option>
-+                                    <option value="freebsd">FreeBSD</option>
-                                     <option value="linux">Linux</option>
-                                     <option value="windows-psh">Windows (PowerShell)</option>
-                                 </select>
-@@ -257,6 +258,11 @@
-                     ' && virtualenv -p python3 \''+humanName+'\' && \''+humanName+'/bin/pip\' install -r \''+humanName+'/requirements.txt\' && \''+humanName+'/bin/python\' \''+humanName+'/human.py\' --clustersize '+taskCount+' ' +
-                     '--taskinterval '+taskInterval+' --taskgroupinterval '+taskClusterInterval+' --extra '+extra;
-                 break;
+--- plugins/human/templates/human.html	2024-02-16 15:54:12.707381000 -0500
++++ plugins/human/templates/human.html	2024-02-16 16:00:05.903013000 -0500
+@@ -106,6 +106,7 @@
+                   <select x-model="selectedPlatform" id="base-platform">
+                     <option value="" disabled>Select target OS</option>
+                     <option value="darwin">MacOS</option>
++                    <option value="freebsd">FreeBSD</option>
+                     <option value="linux">Linux</option>
+                     <option value="windows-psh">Windows (PowerShell)</option>
+                   </select>
+@@ -349,7 +350,8 @@
+         if (
+           this.selectedPlatform != "linux" &&
+           this.selectedPlatform != "windows-psh" &&
+-          this.selectedPlatform != "darwin"
++          this.selectedPlatform != "darwin" &&
++          this.selectedPlatform != "freebsd"
+         ) {
+           toast("Please select a platform", false);
+           return;
+@@ -435,8 +437,42 @@
+               this.humans[this.selectedHuman].task_cluster_interval +
+               " --extra " +
+               extra;
+-
+             break;
++          case "freebsd":
++            this.commandBlock =
++              "curl -sk -o '" +
++              this.humans[this.selectedHuman].name +
++              ".tar.gz' -X POST -H 'file:" +
++              this.humans[this.selectedHuman].name +
++              ".tar.gz' " +
++              this.serverIp +
++              "/file/download 2>&1 && mkdir '" +
++              this.humans[this.selectedHuman].name +
++              "' && tar -C '" +
++              this.humans[this.selectedHuman].name +
++              "' -zxvf '" +
++              this.humans[this.selectedHuman].name +
++              ".tar.gz' " +
++              " && virtualenv -p python3.9 '" +
++              this.humans[this.selectedHuman].name +
++              "' && '" +
++              this.humans[this.selectedHuman].name +
++              "/bin/pip' install -r '" +
++              this.humans[this.selectedHuman].name +
++              "/requirements.txt' && '" +
++              this.humans[this.selectedHuman].name +
++              "/bin/python' '" +
++              this.humans[this.selectedHuman].name +
++              "/human.py' --clustersize " +
++              this.humans[this.selectedHuman].tasks_per_cluster +
++              " " +
++              "--taskinterval " +
++              this.humans[this.selectedHuman].task_interval +
++              " --taskgroupinterval " +
++              this.humans[this.selectedHuman].task_cluster_interval +
++              " --extra " +
++              extra;
++            break;
+           case "linux":
+             this.commandBlock =
+               "curl -sk -o '" +
+@@ -514,6 +550,10 @@
+         extra.forEach((command) => {
+           switch (platform) {
+             case "darwin":
++              command = command.replace(/\\/g, "\\\\");
++              command = command.replace(/"/g, '\\"');
++              break;
 +            case "freebsd":
-+                baseHuman = 'curl -sk -o \''+humanName+'.tar.gz\' -X POST -H \'file:'+humanName+'.tar.gz\' '+http+'/file/download 2>&1 && mkdir \''+humanName+'\' && tar -C \''+humanName+'\' -zxvf \''+humanName+'.tar.gz\' ' +
-+                    ' && virtualenv -p python3.9 \''+humanName+'\' && \''+humanName+'/bin/pip\' install -r \''+humanName+'/requirements.txt\' && \''+humanName+'/bin/python\' \''+humanName+'/human.py\' --clustersize '+taskCount+' ' +
-+                    '--taskinterval '+taskInterval+' --taskgroupinterval '+taskClusterInterval+' --extra '+extra;
-+                break;               
-             case "linux":
-                 baseHuman = 'curl -sk -o \''+humanName+'.tar.gz\' -X POST -H \'file:'+humanName+'.tar.gz\' '+http+'/file/download 2>&1 && mkdir \''+humanName+'\' && tar -C \''+humanName+'\' -zxvf \''+humanName+'.tar.gz\' ' +
-                     ' && virtualenv -p python3 \''+humanName+'\' && \''+humanName+'/bin/pip\' install -r \''+humanName+'/requirements.txt\' && \''+humanName+'/bin/python\' \''+humanName+'/human.py\' --clustersize '+taskCount+' ' +
-@@ -293,6 +299,10 @@
-         $.each(extra, function(i, command) {
-             switch (platform) {
-                 case "darwin":
-+                    command = command.replace(/\\/g, '\\\\');
-+                    command = command.replace(/"/g, '\\\"');
-+                    break;
-+                case "freebsd":
-                     command = command.replace(/\\/g, '\\\\');
-                     command = command.replace(/"/g, '\\\"');
-                     break;
-@@ -317,4 +327,4 @@
-         return provided_value || default_value;
-     }
- 
--</script>
-\ No newline at end of file
-+</script>
+               command = command.replace(/\\/g, "\\\\");
+               command = command.replace(/"/g, '\\"');
+               break;

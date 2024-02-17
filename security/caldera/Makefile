@@ -1,11 +1,12 @@
 PORTNAME=	caldera
-DISTVERSION=	4.2.0
-PORTREVISION=	4
+DISTVERSION=	5.0.0
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Automated Adversary Emulation Platform
 WWW=		https://github.com/mitre/caldera
+
+CONFLICTS=	caldera4
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,6 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asyncssh>0:security/py-asyncssh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aioftp>0:ftp/py-aioftp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyautogui>0:x11/py-pyautogui@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}selenium>0:www/py-selenium@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webdriver_manager>0:www/py-webdriver_manager@${PY_FLAVOR} \
@@ -49,27 +51,27 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitre
 GH_PROJECT=	${PORTNAME}
-GH_TUPLE=	mitre:access:0e67776:access/plugins/access \
-		mitre:atomic:9e2c958:atomic/plugins/atomic \
-		mitre:builder:f2ce67c:builder/plugins/builder \
-		mitre:compass:fb88e02:compass/plugins/compass \
-		mitre:debrief:e4d4f9e:debrief/plugins/debrief \
-		mitre:emu:02a0f3e:emu/plugins/emu \
-		mitre:fieldmanual:c286e77:fieldmanual/plugins/fieldmanual \
-		mitre:gameboard:3d98c32:gameboard/plugins/gameboard \
-		mitre:human:4368dea:human/plugins/human \
-		mitre:manx:e7205ea:manx/plugins/manx \
-		mitre:response:889213a:response/plugins/response \
-		mitre:sandcat:7c326bd:sandcat/plugins/sandcat \
-		mitre:ssl:ac5bfcb:ssl/plugins/ssl \
-		mitre:stockpile:960f9ad:stockpile/plugins/stockpile \
-		mitre:training:b058b67:training/plugins/training
+GH_TUPLE=	mitre:access:775181b:access/plugins/access \
+		mitre:atomic:4f489bb:atomic/plugins/atomic \
+		mitre:builder:de24b68:builder/plugins/builder \
+		mitre:compass:85e2ebf:compass/plugins/compass \
+		mitre:debrief:eba44d5:debrief/plugins/debrief \
+		mitre:emu:7215768:emu/plugins/emu \
+		mitre:fieldmanual:cb53f2b:fieldmanual/plugins/fieldmanual \
+		mitre:gameboard:dacb6ce:gameboard/plugins/gameboard \
+		mitre:human:0e344ea:human/plugins/human \
+		mitre:magma:99f0056:magma/plugins/magma \
+		mitre:manx:a7e83a6:manx/plugins/manx \
+		mitre:response:8ea6ab5:response/plugins/response \
+		mitre:sandcat:b408f3f:sandcat/plugins/sandcat \
+		mitre:ssl:1ae8431:ssl/plugins/ssl \
+		mitre:stockpile:fe0c5b7:stockpile/plugins/stockpile \
+		mitre:training:37f998f:training/plugins/training
 
-USES=		dos2unix go:run python
+USES=		dos2unix go:run nodejs:18,build python
 USE_PYTHON=	cryptography
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 DOS2UNIX_REGEX= .*\.([yml])
 CALDERA_USER=	caldera
@@ -77,6 +79,7 @@ CALDERA_GROUP=	caldera
 USERS=		${CALDERA_USER}
 GROUPS=		${CALDERA_GROUP}
 
+PLIST=		${WRKDIR}/pkg-plist
 USE_RC_SUBR=	${PORTNAME:S/-/_/}
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
@@ -85,16 +88,69 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 OPTIONS_DEFINE=	HAPROXY
 OPTIONS_DEFAULT=HAPROXY
 HAPROXY_DESC=	Support for HTTPS
-HAPROXY_RUN_DEPENDS=haproxy20>0:net/haproxy20
+HAPROXY_RUN_DEPENDS=haproxy24>0:net/haproxy24
+
+NPM_BIN=	${LOCALBASE}/bin/npm
+
+# to rebuild the deps archive:
+#   1. set DEV_UPDATE_MODE=yes
+#   2. make makesum build
+#   3. upload the *-cache archive
+#   4. set DEV_UPDATE_MODE=no
+#   5. make clean makesum
+
+DEV_UPDATE_MODE=	no
+DEPS_CACHE_DIR=		${WRKSRC}/plugins/magma
+
+.if (${DEV_UPDATE_MODE} == "yes")
+NPM_ARGS=	install
+post-build:
+	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX} node_modules
+	@${ECHO} "(!!!) Please upload the cache archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}"
+.else
+MASTER_SITES+=	LOCAL/acm/caldera/:npm_cache
+DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
+NPM_ARGS=	run build
 
 post-extract:
+	@${MV} ${WRKDIR}/node_modules ${WRKSRC}/plugins/magma/
 	${RM} -R ${WRKSRC}/.github
 	cd ${WRKSRC} && ${RM} .coveragerc .dockerignore .eslintrc.js .flake8 \
 		.git* .pre* .stylelintrc.json Dockerfile
+.endif
 
 post-patch:
 	cd ${WRKSRC} && \
 		${FIND} . -type f -name "*.orig" -exec ${RM} "{}" \;
+	${REINPLACE_CMD} -i "" -e 's|4.2.0|${PORTVERSION}|g' ${WRKSRC}/app/version.py
+
+do-build:
+	@cd ${WRKSRC}/plugins/magma && \
+		${NPM_BIN} ${NPM_ARGS}
+
+post-build:
+	${RM} -r ${WRKSRC}/plugins/magma/node_modules
+
+pre-install:
+	@${RM} -f ${PLIST}
+
+	@${ECHO_CMD} "@mode 640" > ${PLIST}
+	@${ECHO_CMD} "@owner caldera" >> ${PLIST}
+	@${ECHO_CMD} "@group caldera" >> ${PLIST}
+
+	@cd ${WRKSRC} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%WWWDIR%%/|' >> ${PLIST}
+
+	@${ECHO_CMD} "@mode 750" >> ${PLIST}
+	@${ECHO_CMD} "@owner caldera" >> ${PLIST}
+	@${ECHO_CMD} "@group caldera" >> ${PLIST}
+
+	@cd ${WRKSRC} && \
+		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dir %%WWWDIR%%/|' >> ${PLIST}
+
+	@${ECHO_CMD} "@mode" >> ${PLIST}
+	@${ECHO_CMD} "@owner" >> ${PLIST}
+	@${ECHO_CMD} "@group" >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}
