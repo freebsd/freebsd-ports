@@ -10,6 +10,8 @@ WWW=		https://www.getlektor.com/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=	depends on package: py39-Flask>=0 - not found
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ExifRead>=0:graphics/py-exifread@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR} \
