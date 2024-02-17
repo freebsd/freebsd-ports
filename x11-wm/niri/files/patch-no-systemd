@@ -10,9 +10,9 @@ Avoid various systemd dependencies
 +Exec=niri
  Type=Application
  DesktopNames=niri
---- src/main.rs.orig	2023-11-26 12:51:13 UTC
+--- src/main.rs.orig	2024-02-17 03:47:06 UTC
 +++ src/main.rs
-@@ -65,7 +65,7 @@ fn main() {
+@@ -37,7 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
          REMOVE_ENV_RUST_LIB_BACKTRACE.store(true, Ordering::Relaxed);
      }
  
@@ -21,7 +21,7 @@ Avoid various systemd dependencies
  
      let directives = env::var("RUST_LOG").unwrap_or_else(|_| "niri=debug".to_owned());
      let env_filter = EnvFilter::builder().parse_lossy(directives);
-@@ -74,20 +74,6 @@ fn main() {
+@@ -46,20 +46,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
          .with_env_filter(env_filter)
          .init();
  
@@ -42,9 +42,9 @@ Avoid various systemd dependencies
      let cli = Cli::parse();
  
      let _client = tracy_client::Client::start();
-@@ -128,6 +114,11 @@ fn main() {
-         socket_name.to_string_lossy()
-     );
+@@ -175,6 +161,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
+         info!("IPC listening on: {}", ipc.socket_path.to_string_lossy());
+     }
  
 +    // Advise xdg-desktop-portal which *-portals.conf to load
 +    env::set_var("XDG_CURRENT_DESKTOP", "niri");
@@ -54,18 +54,23 @@ Avoid various systemd dependencies
      if is_systemd_service {
          // We're starting as a systemd service. Export our variables.
          import_env_to_systemd();
-@@ -180,9 +169,8 @@ fn import_env_to_systemd() {
+@@ -235,14 +226,13 @@ fn import_env_to_systemd() {
+ }
+ 
+ fn import_env_to_systemd() {
+-    let variables = ["WAYLAND_DISPLAY", niri_ipc::SOCKET_PATH_ENV].join(" ");
++    let variables = ["WAYLAND_DISPLAY", "XDG_CURRENT_DESKTOP", niri_ipc::SOCKET_PATH_ENV].join(" ");
+ 
      let rv = Command::new("/bin/sh")
          .args([
              "-c",
--            "systemctl --user import-environment WAYLAND_DISPLAY && \
--             hash dbus-update-activation-environment 2>/dev/null && \
--             dbus-update-activation-environment WAYLAND_DISPLAY",
-+            "hash dbus-update-activation-environment 2>/dev/null && \
-+             dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
+             &format!(
+-                "systemctl --user import-environment {variables} && \
+-                 hash dbus-update-activation-environment 2>/dev/null && \
++                "hash dbus-update-activation-environment 2>/dev/null && \
+                  dbus-update-activation-environment {variables}"
+             ),
          ])
-         .spawn();
-     // Wait for the import process to complete, otherwise services will start too fast without
 --- src/niri.rs.orig	2023-11-26 12:51:13 UTC
 +++ src/niri.rs
 @@ -743,9 +743,9 @@ impl Niri {
