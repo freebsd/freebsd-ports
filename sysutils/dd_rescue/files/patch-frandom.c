@@ -1,4 +1,4 @@
---- frandom.c.orig	2016-12-28 21:17:50 UTC
+--- frandom.c.orig	2023-02-23 21:51:27 UTC
 +++ frandom.c
 @@ -16,7 +16,7 @@
  #include <stdlib.h>
@@ -7,5 +7,5 @@
 -#include <asm/errno.h>
 +#include <sys/errno.h>
  #include <unistd.h>
+ //#include <assert.h>
  
- #ifdef HAVE_CONFIG_H
