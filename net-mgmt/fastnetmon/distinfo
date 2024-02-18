@@ -1,3 +1,5 @@
-TIMESTAMP = 1686746794
-SHA256 (pavel-odintsov-fastnetmon-v1.2.5_GH0.tar.gz) = d92a1f16e60b6ab6f5c5e023a215570e9352ce9d0c9a9d7209416f8cd0227ae6
-SIZE (pavel-odintsov-fastnetmon-v1.2.5_GH0.tar.gz) = 1383370
+TIMESTAMP = 1706176431
+SHA256 (pavel-odintsov-fastnetmon-v1.2.6_GH0.tar.gz) = b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf
+SIZE (pavel-odintsov-fastnetmon-v1.2.6_GH0.tar.gz) = 1421719
+SHA256 (fad8757b8986226024d549a6dfb40abbab01643e.patch) = 22e739071959c4e2b88cca4ad8278c07be998505c152952d6f18b69227cc8844
+SIZE (fad8757b8986226024d549a6dfb40abbab01643e.patch) = 2694

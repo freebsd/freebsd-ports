@@ -24,7 +24,7 @@ load_rc_config "$name"
 : ${fastnetmon_user:=fastnetmon}
 
 command=%%PREFIX%%/bin/fastnetmon
-command_args="--daemonize --configuration_file ${fastnetmon_conf} ${fastnetmon_flags}"
+command_args="--daemonize --configuration_file ${fastnetmon_conf} --pid_logic ${fastnetmon_flags}"
 pidfile=/var/run/fastnetmon/$name.pid
 
 run_rc_command "$1"
