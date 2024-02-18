@@ -1,6 +1,6 @@
 PORTNAME=	resvg-c-api
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.38.0
+DISTVERSION=	0.40.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,11 +34,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.28 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.3 \
-		fontdb-0.16.0 \
+		fontdb-0.16.1 \
 		gif-0.12.0 \
 		imagesize-0.12.0 \
 		jpeg-decoder-0.3.1 \
 		kurbo-0.9.5 \
+		kurbo-0.10.4 \
 		libc-0.2.152 \
 		log-0.4.20 \
 		memmap2-0.9.3 \
@@ -56,9 +57,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		slotmap-1.0.7 \
 		smallvec-1.13.1 \
 		strict-num-0.1.1 \
-		svgtypes-0.13.0 \
-		tiny-skia-0.11.3 \
-		tiny-skia-path-0.11.3 \
+		svgtypes-0.14.0 \
+		tiny-skia-0.11.4 \
+		tiny-skia-path-0.11.4 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		ttf-parser-0.20.0 \
