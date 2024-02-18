@@ -1,5 +1,6 @@
 PORTNAME=	argtable3
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -9,14 +10,14 @@ WWW=		https://www.argtable.org
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash>0:shells/bash
-
-USES=		cmake compiler:c++11-lang shebangfix
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	argtable
 GH_TAGNAME=	f319bb66252c6d32a0657c774534ba409567aa62
 
-SHEBANG_FILES=	${WRKSRC}/tools/build
+CMAKE_OFF=	ARGTABLE3_ENABLE_TESTS \
+		ARGTABLE3_ENABLE_EXAMPLES
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 post-patch:
 	${REINPLACE_CMD} '66d' ${WRKSRC}/tools/build
