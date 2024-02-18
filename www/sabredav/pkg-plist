@@ -1,5 +1,4 @@
-%%WWWDIR%%/.github/workflows/ci.yml
-@comment %%WWWDIR%%/LICENSE
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/bin/build.php
 %%WWWDIR%%/bin/googlecode_upload.py
@@ -53,9 +52,6 @@
 %%WWWDIR%%/lib/CalDAV/Schedule/SchedulingObject.php
 %%WWWDIR%%/lib/CalDAV/SharedCalendar.php
 %%WWWDIR%%/lib/CalDAV/SharingPlugin.php
-%%WWWDIR%%/lib/CalDAV/Subscriptions/ISubscription.php
-%%WWWDIR%%/lib/CalDAV/Subscriptions/Plugin.php
-%%WWWDIR%%/lib/CalDAV/Subscriptions/Subscription.php
 %%WWWDIR%%/lib/CalDAV/Xml/Filter/CalendarData.php
 %%WWWDIR%%/lib/CalDAV/Xml/Filter/CompFilter.php
 %%WWWDIR%%/lib/CalDAV/Xml/Filter/ParamFilter.php
@@ -77,6 +73,9 @@
 %%WWWDIR%%/lib/CalDAV/Xml/Request/InviteReply.php
 %%WWWDIR%%/lib/CalDAV/Xml/Request/MkCalendar.php
 %%WWWDIR%%/lib/CalDAV/Xml/Request/Share.php
+%%WWWDIR%%/lib/CalDAV/Subscriptions/ISubscription.php
+%%WWWDIR%%/lib/CalDAV/Subscriptions/Plugin.php
+%%WWWDIR%%/lib/CalDAV/Subscriptions/Subscription.php
 %%WWWDIR%%/lib/CardDAV/AddressBook.php
 %%WWWDIR%%/lib/CardDAV/AddressBookHome.php
 %%WWWDIR%%/lib/CardDAV/AddressBookRoot.php
@@ -144,10 +143,10 @@
 %%WWWDIR%%/lib/DAV/Exception/NotImplemented.php
 %%WWWDIR%%/lib/DAV/Exception/PaymentRequired.php
 %%WWWDIR%%/lib/DAV/Exception/PreconditionFailed.php
+%%WWWDIR%%/lib/DAV/Exception/TooManyMatches.php
 %%WWWDIR%%/lib/DAV/Exception/ReportNotSupported.php
 %%WWWDIR%%/lib/DAV/Exception/RequestedRangeNotSatisfiable.php
 %%WWWDIR%%/lib/DAV/Exception/ServiceUnavailable.php
-%%WWWDIR%%/lib/DAV/Exception/TooManyMatches.php
 %%WWWDIR%%/lib/DAV/Exception/UnsupportedMediaType.php
 %%WWWDIR%%/lib/DAV/FS/Directory.php
 %%WWWDIR%%/lib/DAV/FS/File.php
@@ -162,6 +161,7 @@
 %%WWWDIR%%/lib/DAV/IMoveTarget.php
 %%WWWDIR%%/lib/DAV/IMultiGet.php
 %%WWWDIR%%/lib/DAV/INode.php
+%%WWWDIR%%/lib/DAV/INodeByPath.php
 %%WWWDIR%%/lib/DAV/IProperties.php
 %%WWWDIR%%/lib/DAV/IQuota.php
 %%WWWDIR%%/lib/DAV/Locks/Backend/AbstractBackend.php
