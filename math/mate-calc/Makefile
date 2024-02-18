@@ -24,4 +24,6 @@ GNU_CONFIGURE=	yes
 
 GLIB_SCHEMAS=	org.mate.calc.gschema.xml
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
