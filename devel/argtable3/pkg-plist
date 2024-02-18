@@ -1,0 +1,5 @@
+include/argtable3.h
+lib/cmake/argtable3/Argtable3Config-release.cmake
+lib/cmake/argtable3/Argtable3Config.cmake
+lib/cmake/argtable3/Argtable3ConfigVersion.cmake
+lib/libargtable3_static.a

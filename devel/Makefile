@@ -210,6 +210,7 @@
     SUBDIR += argparse
     SUBDIR += args
     SUBDIR += argtable
+    SUBDIR += argtable3
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-none-eabi-gcc
     SUBDIR += arm-none-eabi-newlib
