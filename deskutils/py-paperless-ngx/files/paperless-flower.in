@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: paperless-flower
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable the paperless
+# celery flower process:
+#
+# paperless_flower_enable (bool):	Set to "NO" by default.
+#					Set it to "YES" to enable
+#					paperless_flower
+# paperless_flower_log_facility(str):	Set to "daemon" by default.
+#					Flower logging syslog facility.
+# paperless_flower_log_priority(str):	Set to "notice" by default.
+#					Flower logging syslog priority.
+# paperless_flower_log_tag(str):	Set to "paperless-flower" by default.
+#					Flower logging syslog tag.
+
+. /etc/rc.subr
+
+name="paperless_flower"
+rcvar="${name}_enable"
+
+# Set defaults
+paperless_flower_enable=${paperless_flower_enable:-"NO"}
+paperless_flower_daemon_user=${paperless_flower_user:-"paperless"}
+paperless_flower_log_facility=${paperless_flower_log_facility:-"daemon"}
+paperless_flower_log_priority=${paperless_flower_log_priority:-"notice"}
+paperless_flower_log_tag=${paperless_flower_log_tag:-"paperless-flower"}
+
+paperless_flower_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
+  PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+pidfile="/var/run/paperless/flower.pid"
+procname="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-cS -u ${paperless_flower_daemon_user} \
+	-p ${pidfile} \
+	-t paperless-flower \
+	-l ${paperless_flower_log_facility} \
+	-s ${paperless_flower_log_priority} \
+	-T ${paperless_flower_log_tag} \
+	%%PREFIX%%/bin/celery \
+	--app paperless flower --url-prefix=flower --loglevel INFO"
+
+load_rc_config ${name}
+run_rc_command "$1"

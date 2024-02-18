@@ -1,0 +1,42 @@
+--- paperless.conf.example.orig	2024-02-10 19:45:46 UTC
++++ paperless.conf.example
+@@ -17,10 +17,10 @@
+ 
+ # Paths and folders
+ 
+-#PAPERLESS_CONSUMPTION_DIR=../consume
+-#PAPERLESS_DATA_DIR=../data
++PAPERLESS_CONSUMPTION_DIR=/var/db/paperless/consume/input
++PAPERLESS_DATA_DIR=/var/db/paperless/data
+ #PAPERLESS_TRASH_DIR=
+-#PAPERLESS_MEDIA_ROOT=../media
++PAPERLESS_MEDIA_ROOT=/var/db/paperless/media
+ #PAPERLESS_STATICDIR=../static
+ #PAPERLESS_FILENAME_FORMAT=
+ #PAPERLESS_FILENAME_FORMAT_REMOVE_NONE=
+@@ -40,6 +40,7 @@
+ 
+ # OCR settings
+ 
++# example: deu+eng
+ #PAPERLESS_OCR_LANGUAGE=eng
+ #PAPERLESS_OCR_MODE=skip
+ #PAPERLESS_OCR_SKIP_ARCHIVE_FILE=never
+@@ -56,6 +57,7 @@
+ 
+ # Software tweaks
+ 
++PAPERLESS_CONSUMER_INOTIFY_DELAY=3
+ #PAPERLESS_TASK_WORKERS=1
+ #PAPERLESS_THREADS_PER_WORKER=1
+ #PAPERLESS_TIME_ZONE=UTC
+@@ -92,3 +94,9 @@
+ 
+ #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
+ #PAPERLESS_GS_BINARY=/usr/bin/gs
++
++# NLTK settings
++NLTK_DIR=/var/db/paperless/nltk_data
++#NLTK_ENABLED=yes
++# below defaults to OCR_LANGUAGE
++#NLTK_LANGUAGE=
