@@ -1,6 +1,5 @@
 PORTNAME=	universal-ctags
-PORTVERSION=	p6.1.20240121.0
-PORTREVISION=	1
+PORTVERSION=	p6.1.20240211.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -14,9 +13,9 @@ USES=		autoreconf gmake pkgconfig python:test
 USE_GITHUB=	yes
 GH_PROJECT=	ctags
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--program-prefix=u
+CONFIGURE_ARGS=			--program-prefix=u
 
 TEST_TARGET=	check
 

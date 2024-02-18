@@ -33,4 +33,5 @@ bin/ureadtags
 %%MANPAGES%%share/man/man7/uctags-lang-tcl.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-terraform.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-verilog.7.gz
+%%MANPAGES%%share/man/man7/uctags-lang-vim.7.gz
 %%MANPAGES%%share/man/man7/uctags-optlib.7.gz
