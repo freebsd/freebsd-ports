@@ -11,6 +11,9 @@ WWW=		https://www.parrotcode.org/
 
 LICENSE=	ART20
 
+DEPRECATED=	Development stopped in 2017
+EXPIRATION_DATE=	2024-12-31
+
 BROKEN_FreeBSD_14=	Fails to package
 BROKEN_FreeBSD_15=	Fails to package
 
