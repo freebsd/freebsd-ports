@@ -11,6 +11,9 @@ WWW=		http://kerneis.github.com/cil/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained upstream due to lack of time
+EXPIRATION_DATE=2024-03-31
+
 CONFLICTS=	ccured
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
