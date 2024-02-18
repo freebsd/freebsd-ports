@@ -1,6 +1,5 @@
-PORTNAME=	Flask-WTF
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTNAME=	flask_wtf
+DISTVERSION=	1.2.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,22 +12,22 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		${PY_SETUPTOOLS}
-
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wtforms>0:textproc/py-wtforms@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itsdangerous>0:security/py-itsdangerous@${PY_FLAVOR}
-
-# Tests were rewritten for pytest, needs update
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-babel>0:devel/py-flask-babel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+OPTIONS_DEFINE=		EMAIL
+OPTIONS_DEFAULT=	EMAIL
+
+EMAIL_DESC=		Form email validation
+EMAIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}email-validator>=0:mail/py-email-validator@${PY_FLAVOR}
 
 .include <bsd.port.mk>
