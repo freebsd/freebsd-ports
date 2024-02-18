@@ -24,6 +24,8 @@ CACA_CONFIGURE_OFF=	--disable-caca
 CDIO_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=	--disable-libcdio
 
+DEBUG_CONFIGURE_ON=	--enable-debug=3
+
 DV_LIB_DEPENDS=		libdv.so:multimedia/libdv
 DV_CONFIGURE_ENABLE=	libdv
 
