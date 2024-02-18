@@ -7,6 +7,7 @@ include/hwy/contrib/algo/transform-inl.h
 include/hwy/contrib/dot/dot-inl.h
 include/hwy/contrib/image/image.h
 include/hwy/contrib/math/math-inl.h
+include/hwy/contrib/matvec/matvec-inl.h
 include/hwy/contrib/sort/order.h
 include/hwy/contrib/sort/shared-inl.h
 include/hwy/contrib/sort/sorting_networks-inl.h
@@ -14,6 +15,8 @@ include/hwy/contrib/sort/traits-inl.h
 include/hwy/contrib/sort/traits128-inl.h
 include/hwy/contrib/sort/vqsort-inl.h
 include/hwy/contrib/sort/vqsort.h
+include/hwy/contrib/thread_pool/futex.h
+include/hwy/contrib/thread_pool/thread_pool.h
 include/hwy/contrib/unroller/unroller-inl.h
 include/hwy/detect_compiler_arch.h
 include/hwy/detect_targets.h
@@ -38,6 +41,7 @@ include/hwy/ops/x86_512-inl.h
 include/hwy/per_target.h
 include/hwy/print-inl.h
 include/hwy/print.h
+include/hwy/profiler.h
 include/hwy/robust_statistics.h
 include/hwy/targets.h
 include/hwy/tests/hwy_gtest.h
@@ -50,13 +54,13 @@ lib/cmake/hwy/hwy-config-version.cmake
 lib/cmake/hwy/hwy-config.cmake
 lib/libhwy.so
 lib/libhwy.so.1
-lib/libhwy.so.1.0.7
+lib/libhwy.so.1.1.0
 lib/libhwy_contrib.so
 lib/libhwy_contrib.so.1
-lib/libhwy_contrib.so.1.0.7
+lib/libhwy_contrib.so.1.1.0
 lib/libhwy_test.so
 lib/libhwy_test.so.1
-lib/libhwy_test.so.1.0.7
+lib/libhwy_test.so.1.1.0
 libdata/pkgconfig/libhwy-contrib.pc
 libdata/pkgconfig/libhwy-test.pc
 libdata/pkgconfig/libhwy.pc
