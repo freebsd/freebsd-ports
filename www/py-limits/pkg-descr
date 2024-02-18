@@ -1,0 +1,5 @@
+Rate limiting using various strategies and storage backends
+such as redis & memcached. Different strategies are supported:
+	- Fixed Window
+	- Fixed Window (Elastic)
+	- Moving Window
