@@ -75,7 +75,7 @@ TEXTURES_DISTFILES=	textures-1K.zip:gfx
 WEBENGINE_USE=		QT=declarative,webchannel,webengine
 WEBENGINE_CMAKE_OFF=	-DENABLE_QTWEBENGINE:BOOL=OFF
 
-XLSX_LIB_DEPENDS=	libQXlsx.so:devel/qxlsx
+XLSX_LIB_DEPENDS=	libQXlsxQt5.so:devel/qxlsx@qt5
 XLSX_CMAKE_OFF=		-DENABLE_XLSX:BOOL=OFF
 
 .include <bsd.port.options.mk>
