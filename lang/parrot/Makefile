@@ -11,6 +11,9 @@ WWW=		https://www.parrotcode.org/
 
 LICENSE=	ART20
 
+BROKEN_FreeBSD_14=	Fails to package
+BROKEN_FreeBSD_15=	Fails to package
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		pcre-config:devel/pcre
