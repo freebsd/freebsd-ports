@@ -1,5 +1,6 @@
 PORTNAME=	musicpd
 PORTVERSION=	0.23.15
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -242,8 +243,8 @@ do-install:
 
 do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.conf.5 \
-		${STAGEDIR}${PREFIX}/man/man5
+		${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>

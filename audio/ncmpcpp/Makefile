@@ -1,6 +1,6 @@
 PORTNAME=	ncmpcpp
 DISTVERSION=	0.9.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	https://ncmpcpp.rybczak.net/stable/
 
@@ -23,10 +23,11 @@ USES=		compiler:c++14-lang gnome iconv libtool localbase ncurses \
 		pkgconfig readline tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ncursesw_CFLAGS="-L${NCURSESLIB}" ncursesw_LIBS="-lncursesw"
 
 PLIST_FILES=	bin/ncmpcpp \
-		man/man1/ncmpcpp.1.gz
+		share/man/man1/ncmpcpp.1.gz
 PORTDOCS=	AUTHORS CHANGELOG.md COPYING bindings config
 
 OPTIONS_DEFINE=	CLOCK DOCS OUTPUTS TAGLIB VISUALIZER

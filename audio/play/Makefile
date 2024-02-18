@@ -1,6 +1,6 @@
 PORTNAME=	play
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	PORTS_JP
 
@@ -14,13 +14,13 @@ EXPIRATION_DATE=	2024-02-19
 
 USES=		uidfix
 
-MAKE_ARGS=	CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/man/ja/man" BINDIR="${PREFIX}/bin"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/share/man/ja/man" BINDIR="${PREFIX}/bin"
 # XXX PIE static libraries are not supported by base system /usr/share/mk
 MAKE_ARGS+=	WITHOUT_PIE=true
 
 CONFLICTS=	sox
 
-PLIST_FILES=	bin/play man/ja/man1/play.1.gz
+PLIST_FILES=	bin/play share/man/ja/man1/play.1.gz
 
 .include <bsd.port.pre.mk>
 

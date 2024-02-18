@@ -1,5 +1,6 @@
 PORTNAME=	pm3umpdl
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio deskutils
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mpc:audio/musicpc
 
 USES=		perl5
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -30,6 +31,6 @@ do-install:
 	${INSTALL_DATA} -v ${WRKSRC}/${DISTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
 bin/musicpd
 @sample etc/musicpd.conf.sample
-%%MANPAGES%%man/man1/musicpd.1.gz
-%%MANPAGES%%man/man5/musicpd.conf.5.gz
+%%MANPAGES%%share/man/man1/musicpd.1.gz
+%%MANPAGES%%share/man/man5/musicpd.conf.5.gz

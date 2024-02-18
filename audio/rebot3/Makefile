@@ -1,5 +1,6 @@
 PORTNAME=	rebot3
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.headmqa.com/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -16,7 +17,7 @@ RUN_DEPENDS=	p5-CDDB>=0:audio/p5-CDDB \
 USES=		perl5
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 # Yes, we know it's perl, but we don't want to type '.pl' the whole time.
@@ -29,6 +30,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.pl.1 \
-		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

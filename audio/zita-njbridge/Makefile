@@ -1,6 +1,6 @@
 PORTNAME=	zita-njbridge
 DISTVERSION=	0.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -19,13 +19,13 @@ USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	source
 
-MAKE_ARGS=	MANDIR=${PREFIX}/man/man1
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man1
 
 PLIST_FILES=	bin/zita-j2n \
 		bin/zita-n2j \
-		man/man1/zita-j2n.1.gz \
-		man/man1/zita-n2j.1.gz \
-		man/man1/zita-njbridge.1.gz
+		share/man/man1/zita-j2n.1.gz \
+		share/man/man1/zita-n2j.1.gz \
+		share/man/man1/zita-njbridge.1.gz
 
 post-install:
 	@${STRIP_CMD} \

@@ -1,6 +1,7 @@
 PORTNAME=	flac123
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -19,13 +20,14 @@ USES=		autoreconf cpe
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README.remote
 
 PLIST_FILES=	bin/flac123 \
-		man/man1/flac123.1.gz
+		share/man/man1/flac123.1.gz
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
