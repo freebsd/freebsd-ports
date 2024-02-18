@@ -186,6 +186,7 @@
     SUBDIR += flexget
     SUBDIR += flickcurl
     SUBDIR += foreign-cdm
+    SUBDIR += forgejo
     SUBDIR += formication
     SUBDIR += foswiki
     SUBDIR += free-sa-devel

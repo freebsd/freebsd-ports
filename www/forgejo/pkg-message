@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Before starting forgejo you must create the main configuration file.
+
+    cp /usr/local/etc/forgejo/conf/app.ini.sample /usr/local/etc/forgejo/conf/app.ini
+    ${EDITOR} /usr/local/etc/forgejo/conf/app.ini
+
+You need to replace every occurence of CHANGE_ME in the file with sensitive
+values. Please refer to the official documentation for details.
+EOM
+}
+]

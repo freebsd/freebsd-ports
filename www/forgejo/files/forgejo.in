@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: forgejo
+# REQUIRE: NETWORKING SYSLOG
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable forgejo:
+#
+#forgejo_enable="YES"
+
+. /etc/rc.subr
+
+name="forgejo"
+rcvar="forgejo_enable"
+
+load_rc_config $name
+
+: ${forgejo_user:="%%GITUSER%%"}
+: ${forgejo_enable:="NO"}
+: ${forgejo_facility:="daemon"}
+: ${forgejo_priority:="debug"}
+: ${forgejo_shared:="%%PREFIX%%/share/${name}"}
+: ${forgejo_custom:="%%PREFIX%%/etc/${name}"}
+
+command="%%PREFIX%%/sbin/${name} web"
+procname="%%PREFIX%%/sbin/${name}"
+githome="$(eval echo ~${forgejo_user})"
+
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+forgejo_start() {
+	for d in /var/db/forgejo /var/log/forgejo; do
+		if [ ! -e "$d" ]; then
+			mkdir "$d"
+			chown ${forgejo_user} "$d"
+		fi
+	done
+	/usr/sbin/daemon %%DAEMONARGS%% \
+		-u ${forgejo_user} -p ${pidfile} \
+		/usr/bin/env -i \
+		"GITEA_WORK_DIR=${forgejo_shared}" \
+		"GITEA_CUSTOM=${forgejo_custom}" \
+		"HOME=${githome}" \
+		"PATH=%%PREFIX%%/bin:${PATH}" \
+		"USER=${forgejo_user}" \
+		$command
+}
+
+run_rc_command "$1"
