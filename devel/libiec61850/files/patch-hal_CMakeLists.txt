@@ -1,0 +1,11 @@
+--- hal/CMakeLists.txt.orig	2024-02-18 21:09:38 UTC
++++ hal/CMakeLists.txt
+@@ -149,7 +149,7 @@ endif(WITH_MBEDTLS)
+ 
+ add_library (hal STATIC ${libhal_SRCS})
+ 
+-add_library (hal-shared STATIC ${libhal_SRCS})
++add_library (hal-shared SHARED ${libhal_SRCS})
+ 
+ target_compile_definitions(hal-shared PRIVATE EXPORT_FUNCTIONS_FOR_DLL)
+ 

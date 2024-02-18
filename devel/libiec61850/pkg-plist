@@ -27,9 +27,9 @@ include/libiec61850/mms_value.h
 include/libiec61850/sv_publisher.h
 include/libiec61850/sv_subscriber.h
 include/libiec61850/tls_config.h
-lib/libhal-shared.a
+lib/libhal-shared.so
 lib/libhal.a
 lib/libiec61850.a
 lib/libiec61850.so
 lib/libiec61850.so.1.5.3
-share/pkgconfig/libiec61850.pc
+libdata/pkgconfig/libiec61850.pc
