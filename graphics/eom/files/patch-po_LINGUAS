@@ -1,0 +1,17 @@
+--- po/LINGUAS.orig	2024-02-11 07:41:11 UTC
++++ po/LINGUAS
+@@ -67,14 +67,12 @@ it
+ ig
+ is
+ it
+-ja
+ jv
+ ka
+ kab
+ kk
+ km
+ kn
+-ko
+ ks
+ ku
+ ku_IQ
