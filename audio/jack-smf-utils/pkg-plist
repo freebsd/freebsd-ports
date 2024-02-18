@@ -1,5 +1,5 @@
 bin/smfsh
 bin/jack-smf-player
 bin/jack-smf-recorder
-man/man1/jack-smf-player.1.gz
-man/man1/jack-smf-recorder.1.gz
+share/man/man1/jack-smf-player.1.gz
+share/man/man1/jack-smf-recorder.1.gz

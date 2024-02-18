@@ -1,6 +1,6 @@
 PORTNAME=	siren
 PORTVERSION=	0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 
@@ -65,7 +65,8 @@ OPTIONS_SUB=	yes
 CONFIGURE_ARGS=	alsa=no \
 		ao=no \
 		sun=no \
-		portaudio=no
+		portaudio=no \
+		mandir=${PREFIX}/share/man
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lcurses|${NCURSESLIBS}|' ${WRKSRC}/configure

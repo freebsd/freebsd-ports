@@ -1,6 +1,6 @@
 PORTNAME=	liboggz
 PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/liboggz/ \
 		https://ftp.osuosl.org/pub/xiph/releases/liboggz/
@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--program-transform-name="" --with-ogg=${LOCALBASE}
 CONFIGURE_ENV=	DOCBOOKTOMAN=false HAVE_DOCBOOK2HTML=false HAVE_DOXYGEN=false HAVE_DOXYGEN=false
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig

@@ -1,5 +1,4 @@
 bin/lingot
-man/man1/lingot.1.gz
 share/applications/org.nongnu.lingot.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -17,4 +16,5 @@ share/icons/hicolor/scalable/apps/org.nongnu.lingot.svg
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lingot.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lingot.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lingot.mo
+share/man/man1/lingot.1.gz
 share/metainfo/org.nongnu.lingot.appdata.xml

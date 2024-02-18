@@ -1,5 +1,6 @@
 PORTNAME=	juke
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.moll.no/oyvind/distfiles/
 
@@ -8,6 +9,7 @@ COMMENT=	Simple (n)curses based juke box program
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SUB_FILES=	pkg-message
 

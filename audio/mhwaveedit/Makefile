@@ -1,6 +1,6 @@
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.4.24
-PORTREVISION=	6
+PORTREVISION=	7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -17,6 +17,8 @@ GH_ACCOUNT=	magnush
 USES=		autoreconf gnome localbase pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 CONFIGURE_ARGS=	--without-alsalib \
 		--without-arts \
 		--without-esound \

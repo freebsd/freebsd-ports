@@ -517,8 +517,6 @@ libdata/pkgconfig/libags.pc
 libdata/pkgconfig/libags_audio.pc
 libdata/pkgconfig/libags_gui.pc
 libdata/pkgconfig/libgsequencer.pc
-man/man1/gsequencer.1.gz
-man/man1/midi2xml.1.gz
 share/applications/gsequencer.desktop
 %%DATADIR%%/icons/ags.png
 %%DATADIR%%/icons/ags.xpm
@@ -535,6 +533,8 @@ share/locale/de/LC_MESSAGES/gsequencer.mo
 share/locale/fr/LC_MESSAGES/gsequencer.mo
 share/locale/it/LC_MESSAGES/gsequencer.mo
 share/locale/pl/LC_MESSAGES/gsequencer.mo
+share/man/man1/gsequencer.1.gz
+share/man/man1/midi2xml.1.gz
 share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 share/mime/packages/gsequencer.xml
 share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_file.dtd

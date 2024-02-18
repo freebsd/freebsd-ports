@@ -1,6 +1,6 @@
 PORTNAME=	pragha
 PORTVERSION=	1.3.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/pragha-music-player/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome gstreamer \
 		libtool pkgconfig sqlite tar:bz2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	glib20 gtk30 intltool intlhack
 USE_GSTREAMER=	faad flac libav mpg123 ogg speex
 USE_LDCONFIG=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	libsmf
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ USES=		gnome libtool pathfix pkgconfig readline
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFLICTS_INSTALL=	jack-smf-utils # bin/smfsh
 

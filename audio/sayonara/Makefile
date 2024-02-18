@@ -1,6 +1,6 @@
 PORTNAME=	sayonara
 DISTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -29,7 +29,6 @@ SHEBANG_FILES=	src/DBus/sayonara-ctl src/DBus/sayonara-query
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e '/man1/s,share/,,' \
 		-e '/DESTINATION/s,share/metainfo,share/appdata,' \
 		${WRKSRC}/resources/CMakeLists.txt
 

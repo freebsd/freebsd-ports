@@ -1,6 +1,6 @@
 PORTNAME=	spek
 DISTVERSION=	0.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,6 +18,7 @@ USE_GNOME=	intltool
 USE_WX=		3.2+
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

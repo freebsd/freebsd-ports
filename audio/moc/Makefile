@@ -1,6 +1,6 @@
 PORTNAME=	moc
 PORTVERSION=	2.5.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 
@@ -16,6 +16,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 USES=		bdb gmake libtool ncurses pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}

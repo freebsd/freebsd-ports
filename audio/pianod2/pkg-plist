@@ -1,9 +1,9 @@
 bin/piano
 bin/pianod
 bin/runmix
-man/man1/piano.1.gz
-man/man1/pianod.1.gz
-man/man1/runmix.1.gz
+share/man/man1/piano.1.gz
+share/man/man1/pianod.1.gz
+share/man/man1/runmix.1.gz
 share/pianod/html/client.css
 share/pianod/html/client.lib.js
 share/pianod/html/console.css

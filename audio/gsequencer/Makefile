@@ -1,5 +1,6 @@
 PORTNAME=	gsequencer
 DISTVERSION=	6.5.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -36,6 +37,7 @@ USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-alsa --enable-oss --disable-introspection --disable-rt
 
 CPPFLAGS+=	-DAGS_LICENSE_FILENAME=\\\"${LOCALBASE}/share/licenses/${PKGNAME}/${LICENSE}\\\" \

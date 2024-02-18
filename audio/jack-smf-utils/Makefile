@@ -1,6 +1,6 @@
 PORTNAME=	jack-smf-utils
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -16,6 +16,8 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 
 USES=		gnome pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 USE_GNOME=	glib20
 
 CONFLICTS_INSTALL=	libsmf # bin/smfsh

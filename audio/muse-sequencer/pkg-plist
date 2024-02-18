@@ -56,11 +56,11 @@ lib/muse-%%VER%%/synthi/deicsonze.so
 lib/muse-%%VER%%/synthi/organ.so
 lib/muse-%%VER%%/synthi/simpledrums.so
 lib/muse-%%VER%%/synthi/vam.so
-man/man1/grepmidi.1.gz
-man/man1/muse4.1.gz
 share/applications/io.github.muse_sequencer.Muse.desktop
 share/icons/hicolor/128x128/apps/muse.png
 share/icons/hicolor/64x64/apps/muse.png
+share/man/man1/grepmidi.1.gz
+share/man/man1/muse4.1.gz
 share/metainfo/io.github.muse_sequencer.Muse.appdata.xml
 share/mime/packages/muse.xml
 %%DATADIR%%/demos/rasen.med

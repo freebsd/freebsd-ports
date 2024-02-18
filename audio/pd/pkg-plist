@@ -102,9 +102,9 @@ lib/pd/tcl/scrollbox.tcl
 lib/pd/tcl/scrollboxwindow.tcl
 lib/pd/tcl/wheredoesthisgo.tcl
 libdata/pkgconfig/pd.pc
-man/man1/pd.1.gz
-man/man1/pdreceive.1.gz
-man/man1/pdsend.1.gz
+share/man/man1/pd.1.gz
+share/man/man1/pdreceive.1.gz
+share/man/man1/pdsend.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/1.introduction.txt
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/fig1.1.png
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/fig1.2.jpg

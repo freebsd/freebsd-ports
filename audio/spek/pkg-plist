@@ -1,5 +1,4 @@
 bin/spek
-man/man1/spek.1.gz
 share/applications/spek.desktop
 share/icons/hicolor/16x16/apps/spek.png
 share/icons/hicolor/22x22/apps/spek.png
@@ -40,3 +39,4 @@ share/icons/hicolor/scalable/apps/spek.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/spek.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/spek.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/spek.mo
+share/man/man1/spek.1.gz

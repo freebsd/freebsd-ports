@@ -1,8 +1,8 @@
 bin/timidity
-man/ja/man1/timidity.1.gz
-man/ja/man5/timidity.cfg.5.gz
-man/man1/timidity.1.gz
-man/man5/timidity.cfg.5.gz
+share/man/ja/man1/timidity.1.gz
+share/man/ja/man5/timidity.cfg.5.gz
+share/man/man1/timidity.1.gz
+share/man/man5/timidity.cfg.5.gz
 %%PORTDOCS%%share/doc/ja/timidity++/README.alsaseq
 %%PORTDOCS%%share/doc/ja/timidity++/README.dl
 %%PORTDOCS%%share/doc/ja/timidity++/README.m2m

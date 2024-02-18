@@ -15,7 +15,6 @@ lib/sweep/libfade.so
 lib/sweep/libladspameta.so
 lib/sweep/libnormalise.so
 lib/sweep/libreverse.so
-man/man1/sweep.1.gz
 share/applications/sweep.desktop
 share/locale/de/LC_MESSAGES/sweep.mo
 share/locale/el/LC_MESSAGES/sweep.mo
@@ -27,5 +26,6 @@ share/locale/it/LC_MESSAGES/sweep.mo
 share/locale/ja/LC_MESSAGES/sweep.mo
 share/locale/pl/LC_MESSAGES/sweep.mo
 share/locale/ru/LC_MESSAGES/sweep.mo
+share/man/man1/sweep.1.gz
 share/pixmaps/sweep.svg
 %%DATADIR%%/sweep_splash.png

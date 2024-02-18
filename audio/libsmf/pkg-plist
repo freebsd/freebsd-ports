@@ -5,4 +5,4 @@ lib/libsmf.so
 lib/libsmf.so.0
 lib/libsmf.so.0.0.0
 libdata/pkgconfig/smf.pc
-man/man1/smfsh.1.gz
+share/man/man1/smfsh.1.gz

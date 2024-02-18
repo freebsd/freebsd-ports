@@ -1,5 +1,6 @@
 PORTNAME=	wildmidi
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	audio
 
@@ -56,7 +57,7 @@ post-patch:
 		-e 's@/etc/@${DATADIR}/@' ${WRKSRC}/docs/man/man1/wildmidi.1 \
 		${WRKSRC}/docs/man/man5/wildmidi.cfg.5 \
 		${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e '/INSTALL/s@share/man@man@' \
+	${REINPLACE_CMD} \
 		-e '/pkgconfig/s/$${WILDMIDILIB_INSTALLDIR}/libdata/' \
 		${WRKSRC}/src/CMakeLists.txt
 

@@ -1,5 +1,6 @@
 PORTNAME=	timidity++
 PORTVERSION=	2.15.0
+PORTREVISION=	1
 CATEGORIES+=	audio
 MASTER_SITES=	SF/timidity/TiMidity%2B%2B/TiMidity%2B%2B-${PORTVERSION}
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -19,6 +20,7 @@ RUN_DEPENDS=	eawpats>0:audio/eawpats
 
 USES=		gmake localbase tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	SHLD="${CC} -shared"
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libarc
@@ -65,12 +67,14 @@ pre-patch:
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIMID_LIBDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/timidity
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man5
 
 post-install::
 	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_MAN} timidity.1 \
-		${STAGEDIR}${PREFIX}/man/ja/man1)
+		${STAGEDIR}${PREFIX}/share/man/ja/man1)
 	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_MAN} timidity.cfg.5 \
-		${STAGEDIR}${PREFIX}/man/ja/man5)
+		${STAGEDIR}${PREFIX}/share/man/ja/man5)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/C && ${INSTALL_DATA} ${DOCFILES} \
 		${STAGEDIR}${DOCSDIR})

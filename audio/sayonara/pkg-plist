@@ -1,9 +1,6 @@
 bin/sayonara
 bin/sayonara-ctl
 bin/sayonara-query
-man/man1/sayonara-ctl.1.gz
-man/man1/sayonara-query.1.gz
-man/man1/sayonara.1.gz
 share/appdata/sayonara.appdata.xml
 share/applications/com.sayonara-player.Sayonara.desktop
 share/icons/hicolor/128x128/apps/sayonara.png
@@ -18,6 +15,9 @@ share/icons/hicolor/48x48/apps/sayonara.png
 share/icons/hicolor/64x64/apps/sayonara.png
 share/icons/hicolor/72x72/apps/sayonara.png
 share/icons/hicolor/96x96/apps/sayonara.png
+share/man/man1/sayonara-ctl.1.gz
+share/man/man1/sayonara-query.1.gz
+share/man/man1/sayonara.1.gz
 %%DATADIR%%/translations/icons/ar_SA.png
 %%DATADIR%%/translations/icons/cs_CZ.png
 %%DATADIR%%/translations/icons/de_DE.png

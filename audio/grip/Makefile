@@ -1,6 +1,6 @@
 PORTNAME=	grip
 DISTVERSION=	4.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/grip/${DISTVERSION}
 
@@ -22,6 +22,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	ice sm x11 xext
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-werror
 
 CONFLICTS_INSTALL=	py*-grip # bin/grip

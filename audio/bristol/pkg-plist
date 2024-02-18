@@ -30,8 +30,8 @@ lib/libC11.so.0.0.610
 lib/libC11.so.0
 lib/libC11.so
 lib/libC11.a
-man/man1/brighton.1.gz
-man/man1/bristol.1.gz
-man/man1/bristoljackstats.1.gz
-man/man1/startBristol.1.gz
+share/man/man1/brighton.1.gz
+share/man/man1/bristol.1.gz
+share/man/man1/bristoljackstats.1.gz
+share/man/man1/startBristol.1.gz
 @dir %%DATADIR%%/memory/granular

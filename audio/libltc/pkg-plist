@@ -4,4 +4,4 @@ lib/libltc.so
 lib/libltc.so.11
 lib/libltc.so.11.2.0
 libdata/pkgconfig/ltc.pc
-man/man3/ltc.h.3.gz
+share/man/man3/ltc.h.3.gz

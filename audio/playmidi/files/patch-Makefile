@@ -161,7 +161,7 @@
  
  install.man:
 -	 cp playmidi.1 /usr/man/man1/
-+	 ${BSD_INSTALL_MAN} playmidi.1 ${DESTDIR}${PREFIX}/man/man1/
++	 ${BSD_INSTALL_MAN} playmidi.1 ${DESTDIR}${PREFIX}/share/man/man1/
  
  clean:
  	rm -f *.o playmidi splaymidi xplaymidi a.out toy seq2mid beat

@@ -1,5 +1,4 @@
 bin/easytag
-man/man1/easytag.1.gz
 share/applications/easytag.desktop
 share/icons/hicolor/128x128/apps/easytag.png
 share/icons/hicolor/16x16/apps/easytag.png
@@ -46,3 +45,4 @@ share/icons/hicolor/symbolic/apps/easytag-symbolic.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/easytag.mo
+share/man/man1/easytag.1.gz

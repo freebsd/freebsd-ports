@@ -1,6 +1,6 @@
 PORTNAME=	mp3lint
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio perl5
 MASTER_SITES=	https://erislabs.net/ianb/projects/mp3lint/ \
 		LOCAL/sunpoet
@@ -23,6 +23,8 @@ MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^INSTALLSYSCONFDIR/ s|/etc|${PREFIX}&|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/^INSTALLSYSCONFDIR/ s|/etc|${PREFIX}&|' \
+		-e '/^INSTALLSITEMAN5DIR/ s|/man|/share&|' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

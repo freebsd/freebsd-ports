@@ -1,6 +1,5 @@
 bin/soundtracker
 bin/soundtracker_convert_config
-man/man1/soundtracker.1.gz
 share/appdata/soundtracker.appdata.xml
 share/applications/soundtracker.desktop
 share/locale/da/LC_MESSAGES/soundtracker.mo
@@ -22,6 +21,7 @@ share/locale/sl/LC_MESSAGES/soundtracker.mo
 share/locale/sv/LC_MESSAGES/soundtracker.mo
 share/locale/tr/LC_MESSAGES/soundtracker.mo
 share/locale/vi/LC_MESSAGES/soundtracker.mo
+share/man/man1/soundtracker.1.gz
 share/pixmaps/soundtracker-icon.png
 %%DATADIR%%/cheat-sheet.C.txt
 %%DATADIR%%/cheat-sheet.ru.txt

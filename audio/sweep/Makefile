@@ -1,6 +1,6 @@
 PORTNAME=	sweep
 PORTVERSION=	0.9.3
-PORTREVISION=	15
+PORTREVISION=	16
 PORTEPOCH=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
@@ -23,6 +23,7 @@ LIB_DEPENDS=	libmad.so:audio/libmad \
 USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	gtk20
 
 CPPFLAGS+=	-I${LOCALBASE}/include

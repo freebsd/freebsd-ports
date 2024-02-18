@@ -1,8 +1,8 @@
 bin/gtick
-man/man1/gtick.1.gz
+share/appdata/gtick.appdata.xml
 share/applications/gtick.desktop
 share/icons/hicolor/64x64/apps/gtick.xpm
-share/appdata/gtick.appdata.xml
+share/man/man1/gtick.1.gz
 share/pixmaps/gtick_32x32.xpm
 %%NLS%%share/locale/af/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gtick.mo
