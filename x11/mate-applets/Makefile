@@ -47,6 +47,8 @@ GLIB_SCHEMAS=	org.mate.drivemount.gschema.xml \
 		org.mate.panel.applet.timer.gschema.xml \
 		org.mate.stickynotes.gschema.xml
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
