@@ -1,1 +1,4 @@
-DOSBox-X is a cross-platform DOS emulator based on the DOSBox project.
+DOSBox-X is an open-source cross-platform DOS emulator for running DOS
+applications and games based on the DOSBox project.
+DOS-based Windows such as Windows 3.x and Windows 9x are officially supported.
+Compared to DOSBox, DOSBox-X is much more flexible and provides more features.
