@@ -1,5 +1,5 @@
 PORTNAME=	wildfly
-PORTVERSION=	28.0.1
+DISTVERSION=	29.0.1
 CATEGORIES=	java www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
