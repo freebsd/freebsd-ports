@@ -1,7 +1,7 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
+USE_RC_SUBR=	sslocal-rust \
+		ssserver-rust
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shadowsocks
@@ -411,13 +413,13 @@ OPENSSLLIB=	/usr/lib
 
 EXECUTABLES=	sslocal ssmanager ssserver ssservice ssurl
 
-.for e in ${EXECUTABLES}
-PLIST_FILES+=	bin/${e}
-.endfor
-
 post-install:
+	# strip binaries
 .for e in ${EXECUTABLES}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${e}
 .endfor
+	# install config file
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/config.json ${STAGEDIR}${ETCDIR}/config.json.sample
 
 .include <bsd.port.mk>

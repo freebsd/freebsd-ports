@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: sslocal_rust
+# REQUIRE: NETWORKING SERVERS
+#
+# Add the following lines to /etc/rc.conf to run sslocal:
+# sslocal_rust_enable (bool):	Set it to "YES" to enable sslocal.
+#				Default is "NO".
+# sslocal_rust_args (string):	Set it to the desired arguments to run sslocal.
+#				Default is "-c %%ETCDIR%%/config.json".
+#
+
+. /etc/rc.subr
+
+name="sslocal_rust"
+rcvar=sslocal_rust_enable
+
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+
+: ${sslocal_rust_enable="NO"}
+: ${sslocal_rust_args="-c %%ETCDIR%%/config.json"}
+
+procname=%%PREFIX%%/bin/sslocal
+command="/usr/sbin/daemon"
+command_args="-f -S \
+	-p ${pidfile} \
+	-o ${logfile} \
+	-t ${name}_sslocal \
+	%%PREFIX%%/bin/sslocal $sslocal_rust_args"
+
+load_rc_config $name
+run_rc_command "$1"
