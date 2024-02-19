@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.GPL.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librustc_demangle.a:devel/rustc-demangle
 LIB_DEPENDS=	libdw.so:devel/elfutils \
-		libQCustomPlot-qt5.so:graphics/qcustomplot \
+		libQCustomPlot-qt5.so:graphics/qcustomplot@qt5 \
 		libkddockwidgets.so:x11-toolkits/kddockwidgets \
 		libzstd.so:archivers/zstd
 

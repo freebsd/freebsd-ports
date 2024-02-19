@@ -1,8 +1,9 @@
 PORTNAME=	qcustomplot
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.qcustomplot.com/release/${PORTVERSION}/
-PKGNAMESUFFIX=	${SUFFIX}
+PKGNAMESUFFIX=	-${FLAVOR}
 DISTNAME=	QCustomPlot
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
@@ -13,30 +14,25 @@ WWW=		https://www.qcustomplot.com
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-USES=		compiler:c++11-lang pkgconfig qt:5
-USE_QT=		core gui widgets printsupport buildtools:build
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt5
+
+USES=		cmake compiler:c++11-lang qt:${FLAVOR:S/qt//}
+USE_QT=		${_USE_QT_${FLAVOR}}
 USE_LDCONFIG=	yes
+_USE_QT_qt5=	core gui printsupport widgets buildtools:build qmake:build
+_USE_QT_qt6=	base tools:build
+
+CMAKE_ARGS=	-DUSE_QT_VERSION=${FLAVOR:S/qt//}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SUFFIX=		-qt5
+PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
-PLIST_FILES=	include/qcustomplot.h \
-		lib/libQCustomPlot${SUFFIX}.so
+${FLAVOR}_PLIST=	${.CURDIR}/pkg-plist.${FLAVOR}
 
-do-build:
-	@cd ${WRKSRC} && \
-		${MOC} qcustomplot.h > qcustomplot_moc.cpp && \
-		${CXX} ${CXXFLAGS} -shared -fPIC \
-			-I${PREFIX}/include \
-			`pkg-config --cflags --libs Qt5Core Qt5Gui Qt5Widgets Qt5PrintSupport` \
-			qcustomplot.cpp \
-			qcustomplot_moc.cpp \
-			-o ${WRKSRC}/libQCustomPlot${SUFFIX}.so \
-			-Wl,-soname,libQCustomPlot${SUFFIX}.so
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/qcustomplot.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libQCustomPlot${SUFFIX}.so ${STAGEDIR}${PREFIX}/lib
+post-patch:
+	${CP} ${FILESDIR}/CMakeLists.txt ${FILESDIR}/Config.cmake.in \
+		${WRKSRC}
 
 .include <bsd.port.mk>

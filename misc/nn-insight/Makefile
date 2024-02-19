@@ -18,7 +18,7 @@ BUILD_DEPENDS=	avir>0:graphics/avir \
 		png++>0:graphics/png++
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libpng.so:graphics/png \
-		libQCustomPlot-qt5.so:graphics/qcustomplot \
+		libQCustomPlot-qt5.so:graphics/qcustomplot@qt5 \
 		libtcmalloc.so:devel/google-perftools
 
 USES=		compiler:c++17-lang cmake pkgconfig qt:5

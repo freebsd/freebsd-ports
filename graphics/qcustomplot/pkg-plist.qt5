@@ -1,0 +1,7 @@
+include/qcustomplot.h
+lib/cmake/QCustomPlot-qt5/QCustomPlot-qt5Config.cmake
+lib/cmake/QCustomPlot-qt5/QCustomPlot-qt5Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QCustomPlot-qt5/QCustomPlot-qt5Targets.cmake
+lib/libQCustomPlot-qt5.so
+lib/libQCustomPlot-qt5.so.2
+lib/libQCustomPlot-qt5.so.%%SHLIB_VER%%
