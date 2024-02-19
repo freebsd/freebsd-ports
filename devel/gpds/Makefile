@@ -1,5 +1,6 @@
 PORTNAME=	gpds
 DISTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbo@FreeBSD.org
@@ -10,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BUILD_DEPENDS=	tinyxml2>10:textproc/tinyxml2
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 RUN_DEPENDS=	tinyxml2>10:textproc/tinyxml2
 
 USES=		cmake compiler:c++20-lang
