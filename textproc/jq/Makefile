@@ -1,6 +1,5 @@
 PORTNAME=	jq
-DISTVERSION=	1.7
-PORTREVISION=	3
+DISTVERSION=	1.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/jqlang/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
