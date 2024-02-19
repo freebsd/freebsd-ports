@@ -7,7 +7,7 @@
 # Add the following line to /etc/rc.conf to enable munged:
 # munged_enable (bool): Set to "NO" by default.
 #                       Set it to "YES" to enable munged.
-# munged_keyfile (str): Set to "/usr/local/etc/munge/munge.key" by default.
+# munged_keyfile (str): Set to "%%PREFIX%%/etc/munge/munge.key" by default.
 #                       Custom munge key.
 # munged_pidfile (str): Set to "/var/run/munged.pid" by default.
 #                       Custom PID file path and name.
@@ -31,10 +31,23 @@ command_args="--key-file=${munged_keyfile}"
 
 munged_stop()
 {
-	if [ -f "${pidfile}" ]; then
-		kill `cat ${pidfile}`
+    if checkyesno $rcvar; then
+	echo "Stopping $name."
+	pids="$(pgrep -d ' ' $name)"
+	if [ -n "$pids" ]; then
+	    echo "Waiting for PIDs: $pids"
+	    for signal in TERM INT QUIT KILL
+	    do
+		kill -s $signal $pids
+		sleep 1
+		pids=$(pgrep -d ' ' $name)
+		if [ -z "$pids" ]; then
+		    break
+		fi
+	    done
 	fi
-
+	rm -f $pidfile
+    fi
 }
 
 run_rc_command "$1"
