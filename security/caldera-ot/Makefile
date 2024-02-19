@@ -1,6 +1,6 @@
 PORTNAME=	caldera-ot
 DISTVERSION=	4.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -14,13 +14,18 @@ BUILD_DEPENDS=	bacnet-stack>0:devel/bacnet-stack \
 		cmake:devel/cmake-core \
 		nuitka3:devel/nuitka \
 		argtable3>0:devel/argtable3 \
-		libiec61850>0:devel/libiec61850
+		libiec61850>0:devel/libiec61850 \
+		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymodbus>0:comms/py-pymodbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pnio-dcp>0:devel/py-pnio-dcp@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymodbus>0:comms/py-pymodbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pnio-dcp>0:devel/py-pnio-dcp@${PY_FLAVOR} \
-		caldera4>0:security/caldera4
+		caldera4>=4.2.0:security/caldera4
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitre
