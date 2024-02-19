@@ -1649,6 +1649,7 @@
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += newtonsoft-json
+    SUBDIR += nextest
     SUBDIR += nextpnr
     SUBDIR += nexus2-oss
     SUBDIR += nimble
