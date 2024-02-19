@@ -15,9 +15,9 @@
 #				standalone start -c %%ETCDIR%%/standalone.toml"
 #				for the 'standalone' mode.
 # greptimedb(_profile)?_user (user):	Set user to run greptimedb.
-#				Default is "nobody".
+#				Default is "%%USER%%".
 # greptimedb(_profile)?_group (group):	Set group to run greptimedb.
-#				Default is "nobody".
+#				Default is "%%GROUP%%".
 # greptimedb(_profile)?_post_start (str):   Set extra commands that should be executed after greptimedb was successfully
 #                               started here.
 #                               Default is empty "".
@@ -42,8 +42,8 @@ if [ -n "$2" ]; then # profile is provided
 	if [ -n "${greptimedb_profiles}" ]; then
 		pidfile="${_piddir}/greptimedb.${profile}.pid"
 		eval greptimedb_enable="\${greptimedb_${profile}_enable:-${greptimedb_enable}}"
-                eval greptimedb_user="\${greptimedb_${profile}_user:-${greptimedb_user}}"
-                eval greptimedb_group="\${greptimedb_${profile}_group:-${greptimedb_group}}"
+		eval greptimedb_user="\${greptimedb_${profile}_user:-${greptimedb_user}}"
+		eval greptimedb_group="\${greptimedb_${profile}_group:-${greptimedb_group}}"
 		eval greptimedb_args="\${greptimedb_${profile}_args:-${greptimedb_args}}"
 		eval greptimedb_post_start="\${greptimedb_${profile}_post_start:-${greptimedb_post_start}}"
 	else
@@ -65,10 +65,11 @@ else # profile is not provided
 				else
 					_var=greptimedb_"${profile}"_enable
 				fi
-				warn "Bad value" \
-				    "'${_enable:-${greptimedb_enable}}'" \
-				    "for ${_var}. " \
-				    "Profile ${profile} skipped."
+				warn \
+					"Bad value" \
+					"'${_enable:-${greptimedb_enable}}'" \
+					"for ${_var}. " \
+					"Profile ${profile} skipped."
 				continue
 				;;
 			esac
@@ -85,9 +86,9 @@ fi
 
 greptimedb_poststart()
 {
-    if [ -n "$greptimedb_post_start" ]; then
-        eval $greptimedb_post_start
-    fi
+	if [ -n "$greptimedb_post_start" ]; then
+		eval $greptimedb_post_start
+	fi
 }
 
 greptimedb_poststop()
