@@ -2,6 +2,7 @@ PORTNAME=	greptimedb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0-nightly-20240115-102
 DISTVERSIONSUFFIX=	-g29f11d7b7e
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	gmake:devel/gmake \
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo
+USE_RC_SUBR=	greptimedb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GreptimeTeam
@@ -950,20 +952,34 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode_names2@git+https://github.com/youknowone/unicode_names2.git?rev=4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde\#4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde \
 		opentelemetry,opentelemetry-proto,opentelemetry_sdk@git+https://github.com/waynexia/opentelemetry-rust.git?rev=33841b38dda79b15f2024952be5f32533325ca02\#33841b38dda79b15f2024952be5f32533325ca02
 
+USER=		nobody
+GROUP=		nobody
+
+SUB_LIST+=	USER=${USER} GROUP=${GROUP}
+PLIST_SUB+=	USER=${USER} GROUP=${GROUP}
+
 PROGS=		greptime \
 		nyc-taxi \
 		sqlness-runner
 
-PLIST_FILES=	${PROGS:S/^/bin\//}
-
-BINARY_ALIAS=	git=false
-
 do-install:
-	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 .for p in ${PROGS}
 	${INSTALL_PROGRAM} \
 		${WRKDIR}/target/*/release/${p} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
+	# config files
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+.for name in datanode frontend metasrv standalone
+	${INSTALL_DATA} ${WRKSRC}/config/${name}.example.toml ${STAGEDIR}${ETCDIR}/${name}.toml.sample
+.endfor
+	${REINPLACE_CMD} -i '' -e 's|data_home = "/tmp/greptimedb/"|data_home = "/var/db/greptimedb/"|' ${STAGEDIR}${ETCDIR}/*.toml.sample
+	# RC script
+	${INSTALL_DATA} ${WRKDIR}/greptimedb ${STAGEDIR}/${PREFIX}/etc/rc.d
+	# create dirs
+	${MKDIR} \
+		${STAGEDIR}/var/db/greptimedb \
+		${STAGEDIR}/var/log/greptimedb
 
 .include <bsd.port.mk>
