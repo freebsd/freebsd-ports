@@ -1,6 +1,6 @@
 PORTNAME=	taglookup
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kamaz.org.uk/taglookup/
 
@@ -18,6 +18,6 @@ USES=		compiler:c++11-lang pkgconfig tar:tgz
 USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/taglookup \
-		man/man1/taglookup.1.gz
+		share/man/man1/taglookup.1.gz
 
 .include <bsd.port.mk>

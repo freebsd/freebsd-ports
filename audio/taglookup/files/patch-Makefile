@@ -20,7 +20,7 @@
  install: $(EXE)
 -	$(INSTALL) -c -o root -g wheel -m 644 taglookup.1 $(PREFIX)/man/man1/taglookup.1
 -	$(INSTALL) -c -o root -g wheel -m 755 $(EXE) $(PREFIX)/bin/taglookup
-+	$(BSD_INSTALL_MAN) taglookup.1 $(DESTDIR)$(PREFIX)/man/man1/taglookup.1
++	$(BSD_INSTALL_MAN) taglookup.1 $(DESTDIR)$(PREFIX)/share/man/man1/taglookup.1
 +	$(BSD_INSTALL_PROGRAM) $(EXE) $(DESTDIR)$(PREFIX)/bin/taglookup
  
  $(EXE): $(OBJ)

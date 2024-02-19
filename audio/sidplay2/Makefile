@@ -1,6 +1,6 @@
 PORTNAME=	sidplay2
 PORTVERSION=	2.0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sidplay-${PORTVERSION}
 DISTNAME=	sidplay-${PORTVERSION}
@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		pkgconfig
 USE_CXXSTD=	c++98
 
-PLIST_FILES=	bin/sidplay2 man/man1/sidplay2.1.gz
+PLIST_FILES=	bin/sidplay2 share/man/man1/sidplay2.1.gz
 
 .include <bsd.port.mk>
