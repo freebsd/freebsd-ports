@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	hashicorp-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
-WWW=		https://serfdom.io/
+WWW=		https://www.serf.io/
 
 LICENSE=	MPL20
 
