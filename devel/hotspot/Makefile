@@ -1,7 +1,7 @@
 PORTNAME=	hotspot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.GPL.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librustc_demangle.a:devel/rustc-demangle
 LIB_DEPENDS=	libdw.so:devel/elfutils \
-		libQCustomPlot-qt5.so:graphics/qcustomplot-qt5 \
+		libQCustomPlot-qt5.so:graphics/qcustomplot \
 		libkddockwidgets.so:x11-toolkits/kddockwidgets \
 		libzstd.so:archivers/zstd
 

@@ -2990,3 +2990,4 @@ graphics/urt||2024-02-11|Has expired: Defunct upstream
 security/sssd-devel|security/sssd2|2024-02-12|Port is stable
 audio/taglib-extras||2024-02-17|Incompatible with taglib 2.x and unmaintained upstream since 2015
 security/py-pysha3||2024-02-17|Merged into python standard library since version 3.6
+graphics/qcustomplot-qt5|graphics/qcustomplot|2024-02-19|Renamed to support flavors

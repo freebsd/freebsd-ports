@@ -990,7 +990,7 @@
     SUBDIR += py-zbar-py
     SUBDIR += pywal
     SUBDIR += qcomicbook
-    SUBDIR += qcustomplot-qt5
+    SUBDIR += qcustomplot
     SUBDIR += qgis
     SUBDIR += qgis-ltr
     SUBDIR += qiv
