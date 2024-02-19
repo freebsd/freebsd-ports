@@ -6,9 +6,9 @@ Caldera OT plugins port was installed
 1) Take on mind it is a modifying version of Caldera-OT for include FreeBSD as 
    supported OS and you could found some issues. Problem reports are welcome.
 
-2) Do not forget modify configuration file (default.yml or localy.yml) before of
-   run Caldera to enable bacnet, dnp3 and modbus plugins. Caldera configuration
-   files are located at:
+2) Do not forget modify configuration file (default.yml or local.yml) before of
+   run Caldera to enable bacnet, dnp3, modbus, iec61850 and profinet plugins.
+   Caldera configuration files are located at:
 
    %%WWWDIR%%/conf
 

@@ -7,9 +7,9 @@
 +    freebsd:
 +      sh:
 +        command:
-+          './modbus_cli-freebsd #{modbus.all.deviceip} --port #{modbus.all.deviceport} fuzz_r #{modbus.fuzzreg.start} #{modbus.fuzzreg.end} #{modbus.fuzzreg.count} --min #{modbus.fuzzreg.min} --max #{modbus.fuzzreg.max} --wait #{modbus.fuzzreg.wait}'
++          './modbus_cli_freebsd #{modbus.all.deviceip} --port #{modbus.all.deviceport} fuzz_r #{modbus.fuzzreg.start} #{modbus.fuzzreg.end} #{modbus.fuzzreg.count} --min #{modbus.fuzzreg.min} --max #{modbus.fuzzreg.max} --wait #{modbus.fuzzreg.wait}'
 +        payloads:
-+        - modbus_cli-freebsd
++        - modbus_cli_freebsd
      linux:
        sh:
          command:

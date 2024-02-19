@@ -1,0 +1,30 @@
+--- iec61850/data/abilities/collection/6ac44da4-f546-3e33-be1a-829b173b660f.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/6ac44da4-f546-3e33-be1a-829b173b660f.yml
+@@ -55,6 +55,20 @@
+             - source: iec61850.node.name
+               edge: has_object
+               target: iec61850.object.name
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get data_objects #{iec61850.node.name} #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
++        parsers:
++          plugins.iec61850.app.parsers.data_model:
++            - source: iec61850.device.name
++              edge: has_node
++              target: iec61850.node.name
++            - source: iec61850.node.name
++              edge: has_object
++              target: iec61850.object.name
+   repeatable: true
+   plugin: iec61850
+   additional_info:
+@@ -64,4 +78,4 @@
+         description: Name of a logical node
+       iec61850.server.ip:
+         default: null
+-        description: IP address of the server
+\ No newline at end of file
++        description: IP address of the server

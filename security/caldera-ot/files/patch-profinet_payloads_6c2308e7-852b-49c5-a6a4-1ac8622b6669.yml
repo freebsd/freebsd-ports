@@ -1,0 +1,14 @@
+--- profinet/payloads/6c2308e7-852b-49c5-a6a4-1ac8622b6669.yml.orig	2024-02-18 23:07:32 UTC
++++ profinet/payloads/6c2308e7-852b-49c5-a6a4-1ac8622b6669.yml
+@@ -6,6 +6,9 @@ standard_payloads:
+   dcp_utility:
+     description: DCP Utility (Linux)
+     id: be472e7e-bdb8-4ccc-9481-c15ef5cbd363
++  dcp_utility_freebsd:
++    description: DCP Utility (FreeBSD)
++    id: 8ee3cbc7-ceb2-11ee-a38f-8851fb56e3b2
+   dcp_utility.exe:
+     description: DCP Utility (Windows)
+-    id: 77ec6492-4670-4508-af56-af660028c3ae
+\ No newline at end of file
++    id: 77ec6492-4670-4508-af56-af660028c3ae

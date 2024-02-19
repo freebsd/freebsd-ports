@@ -1,0 +1,35 @@
+--- iec61850/src/app/CMakeLists.txt	2024-02-18 01:01:15.171907000 -0500
++++ iec61850/src/app/CMakeLists.txt	2024-02-18 01:24:45.179116000 -0500
+@@ -5,15 +5,16 @@
+                "${CMAKE_CURRENT_BINARY_DIR}/version.h")
+ 
+ # fetch argtable3
+-if(NOT BUILD_LOCAL)
++if(NOT BUILD_LOCAL AND NOT BUILD_SYSTEM)
+   include(FetchContent)
+   FetchContent_Declare(
+     argtable3
+     GIT_REPOSITORY https://github.com/argtable/argtable3.git
+     GIT_TAG "v3.2.2.f25c624")
+   FetchContent_MakeAvailable(argtable3)
+-endif(NOT BUILD_LOCAL)
++endif(NOT BUILD_LOCAL AND NOT BUILD_SYSTEM)
+ 
++if(NOT BUILD_SYSTEM)
+ add_dependencies(iec61850_actions argtable3)
+ get_target_property(argtable3_INCLUDE_DIR argtable3 INCLUDE_DIRECTORIES)
+ 
+@@ -21,6 +22,13 @@
+ target_include_directories(
+   iec61850_actions PRIVATE ${argtable3_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}
+                            ${CMAKE_CURRENT_BINARY_DIR})
++else()
++target_link_libraries(iec61850_actions PRIVATE iec61850_client ${LOCALBASE}/lib/libargtable3_static.a)
++target_include_directories(
++  iec61850_actions PRIVATE ${LOCALBASE}/include ${CMAKE_CURRENT_SOURCE_DIR}
++                           ${CMAKE_CURRENT_BINARY_DIR})
++endif(NOT BUILD_SYSTEM)
++
+ target_compile_features(iec61850_actions PRIVATE c_std_11)
+ 
+ if(APPLE)

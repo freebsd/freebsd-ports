@@ -1,0 +1,18 @@
+--- iec61850/data/abilities/collection/fb81314b-0308-3761-b764-e523645e8df6.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/fb81314b-0308-3761-b764-e523645e8df6.yml
+@@ -38,6 +38,15 @@
+         parsers:
+           plugins.iec61850.app.parsers.data_model:
+             - source: iec61850.device.name
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get logical_devices #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
++        parsers:
++          plugins.iec61850.app.parsers.data_model:
++            - source: iec61850.device.name
+   repeatable: true
+   plugin: iec61850
+   additional_info:

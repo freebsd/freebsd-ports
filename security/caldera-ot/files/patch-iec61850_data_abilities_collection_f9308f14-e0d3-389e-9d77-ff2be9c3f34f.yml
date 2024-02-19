@@ -1,0 +1,20 @@
+--- iec61850/data/abilities/collection/f9308f14-e0d3-389e-9d77-ff2be9c3f34f.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/f9308f14-e0d3-389e-9d77-ff2be9c3f34f.yml
+@@ -46,6 +46,17 @@
+             - source: iec61850.device.name
+               edge: has_node
+               target: iec61850.node.name
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get logical_nodes #{iec61850.device.name} #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
++        parsers:
++          plugins.iec61850.app.parsers.data_model:
++            - source: iec61850.device.name
++              edge: has_node
++              target: iec61850.node.name
+   repeatable: true
+   plugin: iec61850
+   additional_info:

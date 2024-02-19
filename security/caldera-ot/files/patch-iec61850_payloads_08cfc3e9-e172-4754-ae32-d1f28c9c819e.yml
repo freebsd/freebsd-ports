@@ -1,0 +1,14 @@
+--- iec61850/payloads/08cfc3e9-e172-4754-ae32-d1f28c9c819e.yml.orig	2024-02-18 18:31:59 UTC
++++ iec61850/payloads/08cfc3e9-e172-4754-ae32-d1f28c9c819e.yml
+@@ -9,6 +9,9 @@ standard_payloads:
+   iec61850_actions:
+     description: IEC 61850 Plugin Actions (Linux) - command line interface for a set of IEC 61850 services
+     id: 04a2cdd7-39df-4b11-8bea-2838e0744993
++  iec61850_actions_freebsd:
++    description: IEC 61850 Plugin Actions (FreeBSD) - command line interface for a set of IEC 61850 services
++    id: 1a3306b8-ce8c-11ee-a38f-8851fb56e3b2
+   iec61850_actions_darwin:
+     description: IEC 61850 Plugin Actions (Darwin) - command line interface for a set of IEC 61850 services
+-    id: c81479f7-7a77-4925-9dc7-1a791f999cf8 
+\ No newline at end of file
++    id: c81479f7-7a77-4925-9dc7-1a791f999cf8 

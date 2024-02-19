@@ -255,6 +255,65 @@
 %%WWWDIR%%/plugins/dnp3/src/utils/update_bins.sh
 %%WWWDIR%%/plugins/dnp3/static/.gitkeep
 %%WWWDIR%%/plugins/dnp3/templates/dnp3.html
+%%WWWDIR%%/plugins/iec61850/.gitignore
+%%WWWDIR%%/plugins/iec61850/LICENSE
+%%WWWDIR%%/plugins/iec61850/NOTICE.md
+%%WWWDIR%%/plugins/iec61850/README.md
+%%WWWDIR%%/plugins/iec61850/app/iec61850_api.py
+%%WWWDIR%%/plugins/iec61850/app/iec61850_gui.py
+%%WWWDIR%%/plugins/iec61850/app/parsers/data_model.py
+%%WWWDIR%%/plugins/iec61850/app/parsers/data_set.py
+%%WWWDIR%%/plugins/iec61850/app/parsers/lcb.py
+%%WWWDIR%%/plugins/iec61850/app/parsers/value.py
+%%WWWDIR%%/plugins/iec61850/app/parsers/write.py
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/04ccfa36-f576-379f-a268-6283de403ad8.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/15758d41-4237-34eb-adb2-d5698e3ea4ff.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/1b7dcec1-0b12-3df4-b323-6c1b33356981.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/30419718-6f7c-3eab-8b06-ed6cea7858c7.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/4c1138da-50b9-3744-99ea-1310690f2743.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/6ac44da4-f546-3e33-be1a-829b173b660f.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/9f7757da-1da9-3b35-90f3-fdab578be198.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/a0718ea1-9f55-3e24-b81a-c03f15eb89c2.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/bbb3e7dc-3103-3ae9-9a77-6eb789cb3a07.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/f9308f14-e0d3-389e-9d77-ff2be9c3f34f.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/collection/fb81314b-0308-3761-b764-e523645e8df6.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/impair-process-control/6c0f9e77-eedf-4c25-a009-d8905f155af4.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/impair-process-control/dc65f8d1-9478-381c-8f25-2ef5edaea332.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/impair-process-control/dd9c8deb-be48-3ad0-b5f5-bf4976cb1d1e.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/inhibit-response-function/2b2e5724-42bc-3efc-b0e5-613a6f5bc996.yml
+%%WWWDIR%%/plugins/iec61850/data/abilities/inhibit-response-function/41fd3989-b5bd-3892-9210-9bc053c355a5.yml
+%%WWWDIR%%/plugins/iec61850/data/sources/48db3ad5-c003-40af-aaee-54f2377da2e5.yml
+%%WWWDIR%%/plugins/iec61850/docs/assets/heatmap.png
+%%WWWDIR%%/plugins/iec61850/docs/assets/iec61850_blockdiagram.png
+%%WWWDIR%%/plugins/iec61850/docs/iec61850.md
+%%WWWDIR%%/plugins/iec61850/hook.py
+%%WWWDIR%%/plugins/iec61850/payloads/08cfc3e9-e172-4754-ae32-d1f28c9c819e.yml
+%%WWWDIR%%/plugins/iec61850/payloads/iec61850_actions
+%%WWWDIR%%/plugins/iec61850/payloads/iec61850_actions.exe
+%%WWWDIR%%/plugins/iec61850/payloads/iec61850_actions_darwin
+%%WWWDIR%%/plugins/iec61850/payloads/iec61850_actions_freebsd
+%%WWWDIR%%/plugins/iec61850/src/CMakeLists.txt
+%%WWWDIR%%/plugins/iec61850/src/README.md
+%%WWWDIR%%/plugins/iec61850/src/app/CMakeLists.txt
+%%WWWDIR%%/plugins/iec61850/src/app/app.c
+%%WWWDIR%%/plugins/iec61850/src/app/cli.c
+%%WWWDIR%%/plugins/iec61850/src/app/iec61850_actions/app.h
+%%WWWDIR%%/plugins/iec61850/src/app/version.h.in
+%%WWWDIR%%/plugins/iec61850/src/lib/CMakeLists.txt
+%%WWWDIR%%/plugins/iec61850/src/lib/client_connection.c
+%%WWWDIR%%/plugins/iec61850/src/lib/client_control_actions.c
+%%WWWDIR%%/plugins/iec61850/src/lib/client_delete_actions.c
+%%WWWDIR%%/plugins/iec61850/src/lib/client_get_actions.c
+%%WWWDIR%%/plugins/iec61850/src/lib/client_set_actions.c
+%%WWWDIR%%/plugins/iec61850/src/lib/iec61850_client/client.h
+%%WWWDIR%%/plugins/iec61850/src/lib/iec61850_client/utils.h
+%%WWWDIR%%/plugins/iec61850/src/lib/test/utils_test.cc
+%%WWWDIR%%/plugins/iec61850/src/lib/utils.c
+%%WWWDIR%%/plugins/iec61850/src/lib/version.h.in
+%%WWWDIR%%/plugins/iec61850/src/test/test_integration.py
+%%WWWDIR%%/plugins/iec61850/src/third_party/README.md
+%%WWWDIR%%/plugins/iec61850/static/.gitkeep
+%%WWWDIR%%/plugins/iec61850/templates/iec61850.html
 %%WWWDIR%%/plugins/modbus/.gitignore
 %%WWWDIR%%/plugins/modbus/LICENSE
 %%WWWDIR%%/plugins/modbus/NOTICE.md
@@ -281,11 +340,11 @@
 %%WWWDIR%%/plugins/modbus/hook.py
 %%WWWDIR%%/plugins/modbus/payloads/58aaab96-7191-4978-acec-a3b1deb03332.yml
 %%WWWDIR%%/plugins/modbus/payloads/modbus_cli
+%%WWWDIR%%/plugins/modbus/payloads/modbus_cli_freebsd
 %%WWWDIR%%/plugins/modbus/payloads/modbus_cli.exe
 %%WWWDIR%%/plugins/modbus/src/README.md
 %%WWWDIR%%/plugins/modbus/src/bin/.gitkeep
 %%WWWDIR%%/plugins/modbus/src/bin/modbus_cli
-%%WWWDIR%%/plugins/modbus/payloads/modbus_cli-freebsd
 %%WWWDIR%%/plugins/modbus/src/bin/modbus_cli.exe
 %%WWWDIR%%/plugins/modbus/src/src/.gitkeep
 %%WWWDIR%%/plugins/modbus/src/src/Pipfile
@@ -305,6 +364,34 @@
 %%WWWDIR%%/plugins/modbus/src/utils/win64/upx.exe
 %%WWWDIR%%/plugins/modbus/static/.gitkeep
 %%WWWDIR%%/plugins/modbus/templates/modbus.html
+%%WWWDIR%%/plugins/profinet/.gitignore
+%%WWWDIR%%/plugins/profinet/LICENSE
+%%WWWDIR%%/plugins/profinet/NOTICE.md
+%%WWWDIR%%/plugins/profinet/README.md
+%%WWWDIR%%/plugins/profinet/app/profinet_api.py
+%%WWWDIR%%/plugins/profinet/app/profinet_gui.py
+%%WWWDIR%%/plugins/profinet/app/profinet_svc.py
+%%WWWDIR%%/plugins/profinet/data/abilities/discovery/35e384c3-2c27-4cf6-8155-70b2cf4b6cef.yml
+%%WWWDIR%%/plugins/profinet/data/abilities/discovery/36284e7a-012f-4d9d-b803-0d435e06bbf6.yml
+%%WWWDIR%%/plugins/profinet/data/abilities/discovery/bb7e8e63-690f-4b29-9a2e-36fc3e0aa152.yml
+%%WWWDIR%%/plugins/profinet/data/abilities/discovery/df68ded9-4fa1-4d6c-a7d3-558c3ddd808a.yml
+%%WWWDIR%%/plugins/profinet/data/abilities/impair-process-control/132898e3-c2cc-4af4-954f-06ac99566a8f.yml
+%%WWWDIR%%/plugins/profinet/data/abilities/impair-process-control/23b5c9f5-3a52-4b01-81bd-6f3fa570d57e.yml
+%%WWWDIR%%/plugins/profinet/data/abilities/impair-process-control/b885e6f4-18c2-455b-9695-6eec76d545ca.yml
+%%WWWDIR%%/plugins/profinet/data/sources/76d3f1c5-61c1-4df6-9829-6390e7f661ee.yml
+%%WWWDIR%%/plugins/profinet/docs/assets/profinet_diagram.jpg
+%%WWWDIR%%/plugins/profinet/docs/profinet.md
+%%WWWDIR%%/plugins/profinet/hook.py
+%%WWWDIR%%/plugins/profinet/payloads/6c2308e7-852b-49c5-a6a4-1ac8622b6669.yml
+%%WWWDIR%%/plugins/profinet/payloads/dcp_utility
+%%WWWDIR%%/plugins/profinet/payloads/dcp_utility_freebsd
+%%WWWDIR%%/plugins/profinet/payloads/dcp_utility.exe
+%%WWWDIR%%/plugins/profinet/src/LICENSE.md
+%%WWWDIR%%/plugins/profinet/src/README.md
+%%WWWDIR%%/plugins/profinet/src/dcp_utility.py
+%%WWWDIR%%/plugins/profinet/src/pnio_dcp.py
+%%WWWDIR%%/plugins/profinet/static/.gitkeep
+%%WWWDIR%%/plugins/profinet/templates/profinet.html
 @mode 750
 @owner caldera
 @group caldera
@@ -316,6 +403,10 @@
 @dir %%WWWDIR%%/plugins/dnp3/payloads
 @dir %%WWWDIR%%/plugins/modbus/data
 @dir %%WWWDIR%%/plugins/modbus/payloads
+@dir %%WWWDIR%%/plugins/iec61850/data
+@dir %%WWWDIR%%/plugins/iec61850/payloads
+@dir %%WWWDIR%%/plugins/profinet/data
+@dir %%WWWDIR%%/plugins/profinet/payloads
 @mode
 @owner
 @group

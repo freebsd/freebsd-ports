@@ -7,9 +7,9 @@
 +    freebsd:
 +      sh:
 +        command:
-+          './modbus_cli-freebsd #{modbus.all.deviceip} --port #{modbus.all.deviceport} write_c #{modbus.write_c.start} #{modbus.write_c.value}'
++          './modbus_cli_freebsd #{modbus.all.deviceip} --port #{modbus.all.deviceport} write_c #{modbus.write_c.start} #{modbus.write_c.value}'
 +        payloads:
-+        - modbus_cli-freebsd
++        - modbus_cli_freebsd
      linux:
        sh:
          command:

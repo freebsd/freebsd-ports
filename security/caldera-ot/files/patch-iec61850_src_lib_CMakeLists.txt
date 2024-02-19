@@ -1,0 +1,34 @@
+--- iec61850/src/lib/CMakeLists.txt	2024-02-18 01:24:59.343348000 -0500
++++ iec61850/src/lib/CMakeLists.txt	2024-02-18 01:28:38.333758000 -0500
+@@ -14,15 +14,16 @@
+                "${CMAKE_CURRENT_BINARY_DIR}/version.h")
+ 
+ # fetch libiec61850
+-if(NOT BUILD_LOCAL)
++if(NOT BUILD_LOCAL AND NOT BUILD_SYSTEM)
+   include(FetchContent)
+   FetchContent_Declare(
+     libiec61850
+     GIT_REPOSITORY https://github.com/mz-automation/libiec61850.git
+     GIT_TAG "v1.5.1")
+   FetchContent_MakeAvailable(libiec61850)
+-endif(NOT BUILD_LOCAL)
++endif(NOT BUILD_LOCAL AND NOT BUILD_SYSTEM)
+ 
++if(NOT BUILD_SYSTEM)
+ add_dependencies(iec61850_client iec61850)
+ get_target_property(libiec61850_INCLUDE_DIR iec61850 INCLUDE_DIRECTORIES)
+ 
+@@ -30,6 +31,12 @@
+ target_include_directories(
+   iec61850_client PUBLIC ${libiec61850_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}
+                          ${CMAKE_CURRENT_BINARY_DIR})
++else()
++target_link_libraries(iec61850_client PUBLIC ${LOCALBASE}/lib/libiec61850.a ${LOCALBASE}/lib/libhal.a pthread)
++target_include_directories(
++  iec61850_client PUBLIC ${LOCALBASE}/include/libiec61850 ${CMAKE_CURRENT_SOURCE_DIR}
++                         ${CMAKE_CURRENT_BINARY_DIR})
++endif(NOT BUILD_SYSTEM)
+ 
+ if(MINGW)
+   target_link_libraries(iec61850_client PUBLIC ws2_32 iphlpapi)

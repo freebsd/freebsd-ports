@@ -1,4 +1,4 @@
-TIMESTAMP = 1698267655
+TIMESTAMP = 1708238060
 SHA256 (mitre-caldera-ot-4.2.0-6c6b971d96de121da33f27aa6f80806835346b23_GH0.tar.gz) = a4568765b1a373870ae00b781aa251ac94af089b46a3239bf743b0430405844e
 SIZE (mitre-caldera-ot-4.2.0-6c6b971d96de121da33f27aa6f80806835346b23_GH0.tar.gz) = 5887
 SHA256 (mitre-bacnet-745432c_GH0.tar.gz) = 60763dc1f3670124f3ec0caf11dd2a3c71def7689c6e90af66864e9924853ad7
@@ -7,3 +7,7 @@ SHA256 (mitre-dnp3-01e3748_GH0.tar.gz) = 5324a9910b22dd101ef52b2b48334f67d4e9d1f
 SIZE (mitre-dnp3-01e3748_GH0.tar.gz) = 97589582
 SHA256 (mitre-modbus-e47e259_GH0.tar.gz) = 2094210dbf96c0f60d7d5146e4ec7855e19b4bc23b47d51b906aa5961222c14d
 SIZE (mitre-modbus-e47e259_GH0.tar.gz) = 38272647
+SHA256 (mitre-iec61850-a72e2c1_GH0.tar.gz) = a75623efb6bdb686ba63615a5861b1e5de8704fe4ba5339bacb54b1e162918be
+SIZE (mitre-iec61850-a72e2c1_GH0.tar.gz) = 1140484
+SHA256 (mitre-profinet-7e62daa_GH0.tar.gz) = a7e747ac604dae44d2c5a64e35b9220af0ff42d8b043c818e25e5f3f0f9a34f9
+SIZE (mitre-profinet-7e62daa_GH0.tar.gz) = 24278633

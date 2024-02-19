@@ -1,0 +1,16 @@
+--- profinet/data/abilities/discovery/36284e7a-012f-4d9d-b803-0d435e06bbf6.yml.orig	2024-02-18 23:08:41 UTC
++++ profinet/data/abilities/discovery/36284e7a-012f-4d9d-b803-0d435e06bbf6.yml
+@@ -20,6 +20,13 @@
+           ./dcp_utility get_ip #{dcp.target.mac}
+         payloads:
+         - dcp_utility
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./dcp_utility_freebsd get_ip #{dcp.target.mac}
++        payloads:
++        - dcp_utility_freebsd
+     windows:
+       psh, cmd:
+         timeout: 360

@@ -1,0 +1,21 @@
+--- iec61850/data/abilities/collection/15758d41-4237-34eb-adb2-d5698e3ea4ff.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/15758d41-4237-34eb-adb2-d5698e3ea4ff.yml
+@@ -27,10 +27,16 @@
+         payloads:
+         - iec61850_actions
+         timeout: 360
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get reports #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
+   repeatable: true
+   plugin: iec61850
+   additional_info:
+     facts:
+       iec61850.server.ip:
+         default: null
+-        description: IP address of the server
+\ No newline at end of file
++        description: IP address of the server

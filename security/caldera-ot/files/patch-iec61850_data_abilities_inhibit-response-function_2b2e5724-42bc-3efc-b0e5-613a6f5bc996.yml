@@ -1,0 +1,22 @@
+--- iec61850/data/abilities/inhibit-response-function/2b2e5724-42bc-3efc-b0e5-613a6f5bc996.yml.orig	2024-02-18 18:43:18 UTC
++++ iec61850/data/abilities/inhibit-response-function/2b2e5724-42bc-3efc-b0e5-613a6f5bc996.yml
+@@ -29,6 +29,12 @@
+         payloads:
+         - iec61850_actions
+         timeout: 360
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd delete file #{iec61850.file.name} #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
+   repeatable: true
+   plugin: iec61850
+   additional_info:
+@@ -38,4 +44,4 @@
+         description: Name of a file
+       iec61850.server.ip:
+         default: null
+-        description: IP address of the server
+\ No newline at end of file
++        description: IP address of the server

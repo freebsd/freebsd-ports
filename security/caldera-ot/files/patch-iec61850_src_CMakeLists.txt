@@ -1,0 +1,10 @@
+--- iec61850/src/CMakeLists.txt	2024-02-18 01:00:33.415323000 -0500
++++ iec61850/src/CMakeLists.txt	2024-02-18 01:01:07.721231000 -0500
+@@ -40,6 +40,7 @@
+ # add build options
+ option(BUILD_TESTS "Build tests" OFF)
+ option(BUILD_LOCAL "Build using local copies of dependencies" OFF)
++option(BUILD_SYSTEM "Build using system dependencies" OFF)
+ 
+ # add subdirectories with respective CMakeLists.txt files
+ if(BUILD_LOCAL)
