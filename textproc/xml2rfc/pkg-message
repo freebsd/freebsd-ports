@@ -1,8 +1,8 @@
 [
 { type: install
   message: <<EOM
-	Have a look at http://xml.resource.org/ for how to get and
-	update bibliographic summaries of each RFC and Internet-Draft.
+	See https://authors.ietf.org/en/references-in-rfcxml for advice
+	on using the reference library at https://bib.ietf.org/
 EOM
 }
 ]
