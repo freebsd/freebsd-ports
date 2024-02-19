@@ -4,7 +4,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Define a base URI and then generate variations on it
 WWW=		https://metacpan.org/release/URI-Based
 

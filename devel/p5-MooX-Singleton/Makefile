@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Turn your Moo class into singleton
 WWW=		https://metacpan.org/pod/MooX::Singleton
 

@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Munge your "has" (works with Moo, Moose and Mouse)
 WWW=		https://metacpan.org/pod/MooseX::MungeHas
 

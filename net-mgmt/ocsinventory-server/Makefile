@@ -2,7 +2,7 @@ PORTNAME=	ocsinventory-server
 PORTVERSION=	2.12.1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Open Computer and Software Inventory Next Generation
 WWW=		https://www.ocsinventory-ng.org/
 

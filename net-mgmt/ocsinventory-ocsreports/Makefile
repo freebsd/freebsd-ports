@@ -4,7 +4,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Webconsole for OCS Inventory NG
 WWW=		http://www.ocsinventory-ng.org/en/
 
