@@ -1,6 +1,7 @@
 PORTNAME=	bandwhich
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.22.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	petteri.valkonen@iki.fi

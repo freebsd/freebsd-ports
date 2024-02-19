@@ -1,6 +1,7 @@
 PORTNAME=	ncgopher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	beastieboy@beastieboy.net
