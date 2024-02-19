@@ -365,6 +365,7 @@
     SUBDIR += tcl85
     SUBDIR += tcl86
     SUBDIR += tcl87
+    SUBDIR += tcl9
     SUBDIR += tclX
     SUBDIR += tolua
     SUBDIR += tolua++
