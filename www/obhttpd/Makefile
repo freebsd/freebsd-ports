@@ -1,6 +1,5 @@
 PORTNAME=	obhttpd
-DISTVERSION=	7.3.20230714
-PORTREVISION=	1
+DISTVERSION=	7.4.20231129
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -36,7 +35,7 @@ CFLAGS+=	-Wall -fcommon \
 USERS=		www
 GROUPS=		www
 
-SSL=		3.5.4
+SSL=		3.8.2
 LIBEVENT=	7.3.20230714
 LIBIMSG=	7.3.20230714
 
@@ -56,7 +55,6 @@ post-patch:
 
 pre-configure:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libressl-${SSL}.tar.gz ${EXTRACT_AFTER_ARGS})
-	@(${PATCH} -d ${WRKDIR}/libressl-${SSL} < ${PATCHDIR}/extra-patch-libressl_tls_tls.c)
 	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ac_cv_header_endian_h=no ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libimsg} && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libevent} && ${SETENV} ${MAKE_ENV} ${MAKE})
