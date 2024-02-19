@@ -34,7 +34,7 @@ pre-fetch:
 	    (cd ${LIBSTUDXML_NAME}-${LIBSTUDXML_REV} && git reset -q --hard ${LIBSTUDXML_REV} && ${RM} -r .git) && \
 	    ${FIND} ${LIBSTUDXML_NAME}-${LIBSTUDXML_REV} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 	    ${FIND} ${LIBSTUDXML_NAME}-${LIBSTUDXML_REV} -print0 | LC_ALL=C ${SORT} -z | \
-	        ${TAR} czf ${LIBSTUDXML_NAME}-${LIBSTUDXML_REV}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
+	        ${TAR} czf ${LIBSTUDXML_NAME}-${LIBSTUDXML_REV}${EXTRACT_SUFX} --format=ustar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
 	    ${RM} -r ${LIBSTUDXML_NAME}-${LIBSTUDXML_REV}; \
 	fi
 

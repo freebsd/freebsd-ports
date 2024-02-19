@@ -67,10 +67,10 @@ _npm-regenerate:
 	${FIND} ${WRKDIR}/.npm ${WRKSRC}/node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \;
 	(cd ${WRKDIR} && \
 		${FIND} .npm/_cacache -print0 | LC_ALL=C ${SORT} -z | \
-		${TAR} czf ${WRKDIR}/${_NPM_DISTFILE_cache} --format=bsdtar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T -)
+		${TAR} czf ${WRKDIR}/${_NPM_DISTFILE_cache} --format=ustar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T -)
 	(cd ${WRKDIR} && \
 		${FIND} ${WRKSRC:T}/node_modules -print0 | LC_ALL=C ${SORT} -z | \
-		${TAR} czf ${WRKDIR}/${_NPM_DISTFILE_modules} --format=bsdtar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T -)
+		${TAR} czf ${WRKDIR}/${_NPM_DISTFILE_modules} --format=ustar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T -)
 	scp ${WRKDIR}/${_NPM_DISTFILE_cache} ${WRKDIR}/${_NPM_DISTFILE_modules} 0mp@freefall.freebsd.org:public_distfiles/
 	cp ${WRKDIR}/${_NPM_DISTFILE_cache} ${WRKDIR}/${_NPM_DISTFILE_modules} ${DISTDIR}/
 
