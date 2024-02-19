@@ -11,6 +11,9 @@ WWW=		https://github.com/dchest/pyblake2
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Reached it's End Of Life. Integrated into Python Standard Library
+EXPIRATION_DATE=2024-03-03
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
