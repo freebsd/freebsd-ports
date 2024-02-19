@@ -5220,6 +5220,7 @@
     SUBDIR += py-pluginbase
     SUBDIR += py-plux
     SUBDIR += py-ply
+    SUBDIR += py-pnio-dcp
     SUBDIR += py-pockets
     SUBDIR += py-podcastparser
     SUBDIR += py-poetry
