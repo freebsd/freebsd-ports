@@ -697,6 +697,7 @@ include/agrum/tools/graphs/PDAG.h
 include/agrum/tools/graphs/PDAG_inl.h
 include/agrum/tools/graphs/algorithms/DAGCycleDetector.h
 include/agrum/tools/graphs/algorithms/DAGCycleDetector_inl.h
+include/agrum/tools/graphs/algorithms/MeekRules.h
 include/agrum/tools/graphs/algorithms/binaryJoinTreeConverter.h
 include/agrum/tools/graphs/algorithms/binaryJoinTreeConverterDefault.h
 include/agrum/tools/graphs/algorithms/simplicialSet.h
@@ -925,7 +926,6 @@ lib/cmake/aGrUM/agrum-targets.cmake
 lib/libagrum.so
 lib/libagrum.so.1
 lib/libagrum.so.%%VERSION%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%-py%%PYTHON_VER_MAJ%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/__init__.py
