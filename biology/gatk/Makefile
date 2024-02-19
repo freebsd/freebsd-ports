@@ -67,7 +67,7 @@ do-fetch:
 		) && \
 		${FIND} ${PORTNAME}-${DISTVERSION} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 		${FIND} ${PORTNAME}-${DISTVERSION} -print0 | LC_ALL=C ${SORT} -z | \
-		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
+		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --format=ustar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
 		${RM} -r ${PORTNAME}-${DISTVERSION}; \
 	fi
 .endif

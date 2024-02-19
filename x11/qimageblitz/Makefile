@@ -27,7 +27,7 @@ do-fetch:
 	    (cd ${PORTNAME}-${DISTVERSIONFULL} && ${RM} -r .svn) && \
 	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -print0 | LC_ALL=C ${SORT} -z | \
-	        ${TAR} czf ${PORTNAME}-${DISTVERSIONFULL}${EXTRACT_SUFX} --format=bsdtar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T - && \
+	        ${TAR} czf ${PORTNAME}-${DISTVERSIONFULL}${EXTRACT_SUFX} --format=ustar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T - && \
 	    ${RM} -r ${PORTNAME}-${DISTVERSIONFULL}; \
 	fi
 
