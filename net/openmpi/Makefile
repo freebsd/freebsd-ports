@@ -1,5 +1,5 @@
 PORTNAME=	openmpi
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 
@@ -20,9 +20,11 @@ LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 
 # :keepla because port uses lt_dlopen
 USES=		compiler:c11 fortran gmake libtool:keepla localbase perl5 \
-		pkgconfig shebangfix tar:bzip2
+		pkgconfig python:build shebangfix tar:bzip2
 
 CONFLICTS_INSTALL=	openmpi4-4*
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 USE_PERL5=	build
 
@@ -81,7 +83,6 @@ DEBUG_INSTALL_TARGET_OFF=	install-strip
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}	\
 			${PYTHON_PKGNAMEPREFIX}recommonmark>0:textproc/py-recommonmark@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
-DOCS_USES=		python:build
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
