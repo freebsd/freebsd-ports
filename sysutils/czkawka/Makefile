@@ -1,6 +1,5 @@
 PORTNAME=	czkawka
-DISTVERSION=	6.1.0
-PORTREVISION=	4
+DISTVERSION=	7.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +8,7 @@ WWW=		https://github.com/qarmin/czkawka
 
 LICENSE=	CC-BY-4.0 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC}/${PORTNAME}_core/LICENSE
 
 USES=		cargo gnome
 USE_GITHUB=	yes
