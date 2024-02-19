@@ -1,5 +1,5 @@
 PORTNAME=	tomcat
-PORTVERSION=	8.5.98
+PORTVERSION=	8.5.99
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	85
@@ -10,6 +10,10 @@ COMMENT=	Open-source Java web server by Apache, 8.5.x branch
 WWW=		https://tomcat.apache.org/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Upstream EOL reaches on 2024-03-31, some time after 2024-06-30 distfiles will be archived.\
+		Migrate to www/tomcat9
+EXPIRATION_DATE=	2024-07-31
 
 RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 
