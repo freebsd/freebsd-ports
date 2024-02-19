@@ -24,7 +24,7 @@ _QT_MK_INCLUDED=	qt.mk
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.12
 QT6_VERSION?=		6.6.2
-PYSIDE6_VERSION?=	6.6.1
+PYSIDE6_VERSION?=	6.6.2
 
 # We accept the Qt version to be passed by either or all of the three mk files.
 .  if empty(qt_ARGS) && empty(qmake_ARGS) && empty(qt-dist_ARGS)
