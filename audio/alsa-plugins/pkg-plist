@@ -1,65 +1,65 @@
-%%FFMPEG%%@@ffmpeg@@etc/alsa/conf.d/10-rate-lav.conf
-%%SAMPLERATE%%@@samplerate@@etc/alsa/conf.d/10-samplerate.conf
-%%SPEEX%%@@speex@@etc/alsa/conf.d/10-speexrate.conf
-%%JACK%%@@jack@@etc/alsa/conf.d/50-jack.conf
-%%FFMPEG%%@@ffmpeg@@etc/alsa/conf.d/60-a52-encoder.conf
+%%FFMPEG%%etc/alsa/conf.d/10-rate-lav.conf
+%%SAMPLERATE%%etc/alsa/conf.d/10-samplerate.conf
+%%SPEEX%%etc/alsa/conf.d/10-speexrate.conf
+%%JACK%%etc/alsa/conf.d/50-jack.conf
+%%FFMPEG%%etc/alsa/conf.d/60-a52-encoder.conf
 @comment etc/alsa/conf.d/50-arcam-av-ctl.conf
 etc/alsa/conf.d/50-oss.conf
-%%PULSEAUDIO%%@@pulseaudio@@etc/alsa/conf.d/50-pulseaudio.conf
-%%SPEEX%%@@speex@@etc/alsa/conf.d/60-speex.conf
+%%PULSEAUDIO%%etc/alsa/conf.d/50-pulseaudio.conf
+%%SPEEX%%etc/alsa/conf.d/60-speex.conf
 @comment etc/alsa/conf.d/60-upmix.conf
 @comment etc/alsa/conf.d/60-vdownmix.conf
 @comment etc/alsa/conf.d/98-usb-stream.conf
 @comment etc/alsa/conf.d/99-pulseaudio-default.conf.example
-%%PULSEAUDIO%%@@pulseaudio@@lib/alsa-lib/libasound_module_conf_pulse.la
-%%PULSEAUDIO%%@@pulseaudio@@lib/alsa-lib/libasound_module_conf_pulse.so
+%%PULSEAUDIO%%lib/alsa-lib/libasound_module_conf_pulse.la
+%%PULSEAUDIO%%lib/alsa-lib/libasound_module_conf_pulse.so
 lib/alsa-lib/libasound_module_ctl_arcam_av.la
 lib/alsa-lib/libasound_module_ctl_arcam_av.so
 lib/alsa-lib/libasound_module_ctl_oss.la
 lib/alsa-lib/libasound_module_ctl_oss.so
-%%PULSEAUDIO%%@@pulseaudio@@lib/alsa-lib/libasound_module_ctl_pulse.la
-%%PULSEAUDIO%%@@pulseaudio@@lib/alsa-lib/libasound_module_ctl_pulse.so
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_pcm_a52.la
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_pcm_a52.so
-%%JACK%%@@jack@@lib/alsa-lib/libasound_module_pcm_jack.la
-%%JACK%%@@jack@@lib/alsa-lib/libasound_module_pcm_jack.so
+%%PULSEAUDIO%%lib/alsa-lib/libasound_module_ctl_pulse.la
+%%PULSEAUDIO%%lib/alsa-lib/libasound_module_ctl_pulse.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_pcm_a52.la
+%%FFMPEG%%lib/alsa-lib/libasound_module_pcm_a52.so
+%%JACK%%lib/alsa-lib/libasound_module_pcm_jack.la
+%%JACK%%lib/alsa-lib/libasound_module_pcm_jack.so
 lib/alsa-lib/libasound_module_pcm_oss.la
 lib/alsa-lib/libasound_module_pcm_oss.so
-%%PULSEAUDIO%%@@pulseaudio@@lib/alsa-lib/libasound_module_pcm_pulse.la
-%%PULSEAUDIO%%@@pulseaudio@@lib/alsa-lib/libasound_module_pcm_pulse.so
-%%SPEEX%%@@speex@@lib/alsa-lib/libasound_module_pcm_speex.la
-%%SPEEX%%@@speex@@lib/alsa-lib/libasound_module_pcm_speex.so
+%%PULSEAUDIO%%lib/alsa-lib/libasound_module_pcm_pulse.la
+%%PULSEAUDIO%%lib/alsa-lib/libasound_module_pcm_pulse.so
+%%SPEEX%%lib/alsa-lib/libasound_module_pcm_speex.la
+%%SPEEX%%lib/alsa-lib/libasound_module_pcm_speex.so
 lib/alsa-lib/libasound_module_pcm_upmix.la
 lib/alsa-lib/libasound_module_pcm_upmix.so
 lib/alsa-lib/libasound_module_pcm_usb_stream.la
 lib/alsa-lib/libasound_module_pcm_usb_stream.so
 lib/alsa-lib/libasound_module_pcm_vdownmix.la
 lib/alsa-lib/libasound_module_pcm_vdownmix.so
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_rate_lavrate.la
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_rate_lavrate.so
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_rate_lavrate_fast.so
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_rate_lavrate_faster.so
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_rate_lavrate_high.so
-%%FFMPEG%%@@ffmpeg@@lib/alsa-lib/libasound_module_rate_lavrate_higher.so
-%%SAMPLERATE%%@@samplerate@@lib/alsa-lib/libasound_module_rate_samplerate.la
-%%SAMPLERATE%%@@samplerate@@lib/alsa-lib/libasound_module_rate_samplerate.so
-%%SAMPLERATE%%@@samplerate@@lib/alsa-lib/libasound_module_rate_samplerate_best.so
-%%SAMPLERATE%%@@samplerate@@lib/alsa-lib/libasound_module_rate_samplerate_linear.so
-%%SAMPLERATE%%@@samplerate@@lib/alsa-lib/libasound_module_rate_samplerate_medium.so
-%%SAMPLERATE%%@@samplerate@@lib/alsa-lib/libasound_module_rate_samplerate_order.so
-%%SPEEX%%@@speex@@lib/alsa-lib/libasound_module_rate_speexrate.la
-%%SPEEX%%@@speex@@lib/alsa-lib/libasound_module_rate_speexrate.so
-%%SPEEX%%@@speex@@lib/alsa-lib/libasound_module_rate_speexrate_best.so
-%%SPEEX%%@@speex@@lib/alsa-lib/libasound_module_rate_speexrate_medium.so
-%%FFMPEG%%@@ffmpeg@@share/alsa/alsa.conf.d/10-rate-lav.conf
-%%SAMPLERATE%%@@samplerate@@share/alsa/alsa.conf.d/10-samplerate.conf
-%%SPEEX%%@@speex@@share/alsa/alsa.conf.d/10-speexrate.conf
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate.la
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_fast.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_faster.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_high.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_higher.so
+%%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate.la
+%%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate.so
+%%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate_best.so
+%%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate_linear.so
+%%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate_medium.so
+%%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate_order.so
+%%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate.la
+%%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate.so
+%%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_best.so
+%%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_medium.so
+%%FFMPEG%%share/alsa/alsa.conf.d/10-rate-lav.conf
+%%SAMPLERATE%%share/alsa/alsa.conf.d/10-samplerate.conf
+%%SPEEX%%share/alsa/alsa.conf.d/10-speexrate.conf
 @comment share/alsa/alsa.conf.d/50-arcam-av-ctl.conf
-%%JACK%%@@jack@@share/alsa/alsa.conf.d/50-jack.conf
+%%JACK%%share/alsa/alsa.conf.d/50-jack.conf
 share/alsa/alsa.conf.d/50-oss.conf
-%%PULSEAUDIO%%@@pulseaudio@@share/alsa/alsa.conf.d/50-pulseaudio.conf
-%%FFMPEG%%@@ffmpeg@@share/alsa/alsa.conf.d/60-a52-encoder.conf
-%%SPEEX%%@@speex@@share/alsa/alsa.conf.d/60-speex.conf
+%%PULSEAUDIO%%share/alsa/alsa.conf.d/50-pulseaudio.conf
+%%FFMPEG%%share/alsa/alsa.conf.d/60-a52-encoder.conf
+%%SPEEX%%share/alsa/alsa.conf.d/60-speex.conf
 @comment share/alsa/alsa.conf.d/60-upmix.conf
 @comment share/alsa/alsa.conf.d/60-vdownmix.conf
 @comment share/alsa/alsa.conf.d/98-usb-stream.conf
