@@ -1,11 +1,13 @@
---- Makefile.orig	2023-06-17 10:52:17 UTC
+--- Makefile.orig	2024-02-20 07:14:00 UTC
 +++ Makefile
-@@ -1,7 +1,6 @@
+@@ -24,10 +24,6 @@ OBJS = trurl.o
+ 
  TARGET = trurl
  OBJS = trurl.o
--LDLIBS = $$(curl-config --libs)
--CFLAGS += $$(curl-config --cflags) -W -Wall -Wshadow -Werror -pedantic -g -std=gnu99
-+CFLAGS+=-W -Wall -Wshadow -Werror -pedantic -g
- MANUAL = trurl.1
- 
- PREFIX ?= /usr/local
+-ifndef TRURL_IGNORE_CURL_CONFIG
+-LDLIBS += $$(curl-config --libs)
+-CFLAGS += $$(curl-config --cflags)
+-endif
+ CFLAGS += -W -Wall -Wshadow -Werror -pedantic
+ CFLAGS += -Wconversion -Wmissing-prototypes -Wwrite-strings -Wsign-compare -Wno-sign-conversion
+ ifndef NDEBUG
