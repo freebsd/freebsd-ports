@@ -1,5 +1,5 @@
 PORTNAME=	far2l
-PORTVERSION=	2.5.3
+PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc
 
@@ -52,8 +52,6 @@ post-patch:
 			${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,^if (fmt_FOUND,& AND FALSE,' \
 		${WRKSRC}/colorer/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,bxg7,&l, ; s/zoo/tbz2,*.zst,*.&/' \
-		${WRKSRC}/far2l/src/hilight.cpp
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
 

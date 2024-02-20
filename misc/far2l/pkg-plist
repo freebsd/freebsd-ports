@@ -74,6 +74,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/calc/plug/units/time.csr
 %%DATADIR%%/Plugins/calc/plug/units/volume.csr
 %%DATADIR%%/Plugins/calc/plug/user-examples.csr
+%%DATADIR%%/Plugins/colorer/base/CHANGELOG.md
 %%DATADIR%%/Plugins/colorer/base/catalog.xml
 %%DATADIR%%/Plugins/colorer/base/hrc/auto/empty.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/asm.hrc
@@ -148,6 +149,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gen/xhtml-frameset.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gen/xhtml-strict.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gen/xhtml-trans.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/graphql.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gsp.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/haml.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/html-css.hrc
@@ -413,7 +415,6 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrd/catalog-console.xml
 %%DATADIR%%/Plugins/colorer/base/hrd/catalog-rgb.xml
 %%DATADIR%%/Plugins/colorer/base/hrd/catalog-text.xml
-%%DATADIR%%/Plugins/colorer/base/hrd/catalog-user.xml
 %%DATADIR%%/Plugins/colorer/base/hrd/console/black.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/blue.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/contrib/black_ay.hrd
@@ -437,6 +438,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrd/css/blue.css
 %%DATADIR%%/Plugins/colorer/base/hrd/css/contrib/bred3.css
 %%DATADIR%%/Plugins/colorer/base/hrd/css/contrib/fmx.css
+%%DATADIR%%/Plugins/colorer/base/hrd/css/contrib/navy-mirror.css
 %%DATADIR%%/Plugins/colorer/base/hrd/css/contrib/visual-rgb.css
 %%DATADIR%%/Plugins/colorer/base/hrd/css/eclipse.css
 %%DATADIR%%/Plugins/colorer/base/hrd/css/grayscale.css
@@ -450,6 +452,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/blue.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/bred3.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/fmx.hrd
+%%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/navy-mirror.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/contrib/visual-rgb.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/default.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/eclipse.hrd
