@@ -68,6 +68,6 @@ lib/libxmlsec1.so.%%DISTVERSION%%
 %%NSS%%libdata/pkgconfig/xmlsec1-nss.pc
 %%OPENSSL%%libdata/pkgconfig/xmlsec1-openssl.pc
 libdata/pkgconfig/xmlsec1.pc
-man/man1/xmlsec1-config.1.gz
-man/man1/xmlsec1.1.gz
+share/man/man1/xmlsec1-config.1.gz
+share/man/man1/xmlsec1.1.gz
 share/aclocal/xmlsec1.m4
