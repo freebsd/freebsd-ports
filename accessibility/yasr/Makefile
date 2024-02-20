@@ -1,6 +1,6 @@
 PORTNAME=	yasr
 PORTVERSION=	0.6.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	accessibility
 MASTER_SITES=	SF
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO \
 		README-br README-de README-es README-fr README-ru
 SUB_FILES=	pkg-message
@@ -23,7 +24,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 PLIST_FILES=	bin/yasr \
-		man/man1/yasr.1.gz \
+		share/man/man1/yasr.1.gz \
 		%%DATADIR%%/yasr.conf \
 		%%NLS%%share/locale/es/LC_MESSAGES/yasr.mo \
 		%%NLS%%share/locale/fr/LC_MESSAGES/yasr.mo
