@@ -262,7 +262,6 @@ include/folly/experimental/BitVectorCoding.h
 include/folly/experimental/Bits.h
 include/folly/experimental/Cleanup.h
 include/folly/experimental/CodingDetail.h
-include/folly/experimental/Coinflip.h
 include/folly/experimental/DynamicParser-inl.h
 include/folly/experimental/DynamicParser.h
 include/folly/experimental/EliasFanoCoding.h
