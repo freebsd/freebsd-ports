@@ -816,6 +816,7 @@
     SUBDIR += gfold
     SUBDIR += gh
     SUBDIR += ghidra
+    SUBDIR += ghidra-cheri
     SUBDIR += ghostie
     SUBDIR += ghq
     SUBDIR += ghub
