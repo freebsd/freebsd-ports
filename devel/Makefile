@@ -6980,6 +6980,7 @@
     SUBDIR += rubygem-google-apis-sqladmin_v1beta4
     SUBDIR += rubygem-google-apis-sqladmin_v1beta4_041
     SUBDIR += rubygem-google-apis-storage_v1
+    SUBDIR += rubygem-google-cloud-common
     SUBDIR += rubygem-google-gax
     SUBDIR += rubygem-google-iam-credentials
     SUBDIR += rubygem-google-iam-credentials-v1
