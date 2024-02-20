@@ -3,5 +3,7 @@ bin/unison
 %%X11%%share/applications/unison.desktop
 %%X11%%bin/unison-text
 %%X11%%share/pixmaps/unison.png
+share/man/man1/unison.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/unison-manual.pdf

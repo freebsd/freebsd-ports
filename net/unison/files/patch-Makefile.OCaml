@@ -1,23 +1,21 @@
---- Makefile.OCaml.orig	2023-04-24 16:49:02 UTC
+--- Makefile.OCaml.orig	2024-02-18 15:03:04 UTC
 +++ Makefile.OCaml
-@@ -248,7 +248,7 @@ OCAMLOBJS+=main.cmo
- 
- # OCaml libraries for the bytecode version
- # File extensions will be substituted for the native code version
--OCAMLLIBS+=unix.cma str.cma
-+OCAMLLIBS+=unix.cma str.cma bigarray.cma
- INCLFLAGS+=-I +unix -I +str
- 
- COBJS+=osxsupport$(OBJ_EXT) pty$(OBJ_EXT) bytearray_stubs$(OBJ_EXT) hash_compat$(OBJ_EXT) props_xattr$(OBJ_EXT) props_acl$(OBJ_EXT)
-@@ -309,6 +309,11 @@ ifeq ($(OSARCH),Linux)
- ### Filesystem monitoring
- 
- ifeq ($(OSARCH),Linux)
-+-include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
-+INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
-+endif
-+
-+ifeq ($(OSARCH),FreeBSD)
- -include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
- INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
+@@ -336,15 +336,9 @@ ifneq ($(findstring $(OSARCH),FreeBSD OpenBSD NetBSD D
+ ifneq ($(findstring $(OSARCH),FreeBSD OpenBSD NetBSD DragonFly),)
+   LIBINOTIFY_LIB:=-cclib '$(shell pkg-config --libs libinotify 2> /dev/null || printf ' -linotify')'
+   LIBINOTIFY_INC:=-ccopt '$(shell pkg-config --cflags libinotify 2> /dev/null)'
+-  FOUND_LIBINOTIFY := $(shell { printf '' > inotifytest__.ml ;\
+-    $(CAMLC) $(CAMLCFLAGS) $(CAMLLDFLAGS) $(LIBINOTIFY_LIB) \
+-      -o inotifytest__ inotifytest__.ml > /dev/null 2>&1 && printf true ; } ;\
+-    rm -f inotifytest__.ml inotifytest__.cm[oix] inotifytest__.o inotifytest__ > /dev/null 2>&1)
+-  ifeq ($(FOUND_LIBINOTIFY), true)
+-    FSMDIR = fsmonitor/inotify
+-    $(NAME_FSM)$(EXEC_EXT): CAMLCFLAGS += $(LIBINOTIFY_INC)
+-    $(NAME_FSM)$(EXEC_EXT): CLIBS += $(LIBINOTIFY_LIB)
+-  endif
++  FSMDIR = fsmonitor/inotify
++  $(NAME_FSM)$(EXEC_EXT): CAMLCFLAGS += $(LIBINOTIFY_INC)
++  $(NAME_FSM)$(EXEC_EXT): CLIBS += $(LIBINOTIFY_LIB)
  endif
+ 
+ ifeq ($(OSARCH),SunOS)
