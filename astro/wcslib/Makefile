@@ -1,5 +1,6 @@
 PORTNAME=	wcslib
 PORTVERSION=	8.2.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
@@ -12,6 +13,7 @@ LICENSE=	GPLv3
 USES=		tar:bzip2 gmake fortran
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	 --docdir=${DOCSDIR}
 
 MAKEFILE=	GNUmakefile
