@@ -1,5 +1,6 @@
 PORTNAME=	zutils
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/zutils
 
@@ -11,8 +12,9 @@ LICENSE=	GPLv2
 
 USES=		cpe tar:lz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-CONFLICTS_INSTALL=	gzip # bin/zcat bin/zcmp bin/zdiff bin/zgrep man/man1/ztest.1.gz
+CONFLICTS_INSTALL=	gzip # bin/zcat bin/zcmp bin/zdiff bin/zgrep share/man/man1/ztest.1.gz
 
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	nongnu
