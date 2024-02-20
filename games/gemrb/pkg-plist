@@ -1,8 +1,7 @@
 bin/extend2da.py
 bin/gemrb
-%%ETCDIR%%/GemRB.cfg
 %%ETCDIR%%/GemRB.cfg.noinstall.sample
-%%ETCDIR%%/GemRB.cfg.sample
+@sample %%ETCDIR%%/GemRB.cfg.sample
 lib/gemrb/libgemrb_core.so
 lib/gemrb/libgemrb_core.so.%%PORTVERSION%%
 lib/gemrb/plugins/2DAImporter.so
@@ -31,20 +30,21 @@ lib/gemrb/plugins/MUSImporter.so
 lib/gemrb/plugins/MVEPlayer.so
 lib/gemrb/plugins/NullSound.so
 lib/gemrb/plugins/NullSource.so
-lib/gemrb/plugins/OGGReader.so
-lib/gemrb/plugins/OpenALAudio.so
+%%VORBIS%%lib/gemrb/plugins/OGGReader.so
+%%OPENAL%%lib/gemrb/plugins/OpenALAudio.so
 lib/gemrb/plugins/PLTImporter.so
-lib/gemrb/plugins/PNGImporter.so
+%%PNG%%lib/gemrb/plugins/PNGImporter.so
 lib/gemrb/plugins/PROImporter.so
 lib/gemrb/plugins/PSTOpcodes.so
 lib/gemrb/plugins/PVRZImporter.so
 lib/gemrb/plugins/SAVImporter.so
+%%SDLMIXER%%lib/gemrb/plugins/SDLAudio.so
 lib/gemrb/plugins/SDLVideo.so
 lib/gemrb/plugins/SPLImporter.so
 lib/gemrb/plugins/STOImporter.so
 lib/gemrb/plugins/TISImporter.so
 lib/gemrb/plugins/TLKImporter.so
-lib/gemrb/plugins/TTFImporter.so
+%%FREETYPE%%lib/gemrb/plugins/TTFImporter.so
 lib/gemrb/plugins/WAVReader.so
 lib/gemrb/plugins/WEDImporter.so
 lib/gemrb/plugins/WMPImporter.so
@@ -336,9 +336,9 @@ share/applications/gemrb.desktop
 %%DATADIR%%/demo/gem-demo.ini
 %%DATADIR%%/demo/keymap.ini
 %%DATADIR%%/demo/music/mx0100.mus
-%%DATADIR%%/demo/music/mx0100/mx0100a.ogg
+%%DEMO%%%%DATADIR%%/demo/music/mx0100/mx0100a.ogg
 %%DATADIR%%/demo/music/theme.mus
-%%DATADIR%%/demo/music/theme/themea.ogg
+%%DEMO%%%%DATADIR%%/demo/music/theme/themea.ogg
 %%DATADIR%%/demo/override/AMB_D18.ogg
 %%DATADIR%%/demo/override/AR0100.WED
 %%DATADIR%%/demo/override/AR0100HT.BMP
