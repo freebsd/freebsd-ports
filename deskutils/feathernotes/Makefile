@@ -1,7 +1,8 @@
-PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.1.1
-DISTVERSIONPREFIX=	V
+PORTNAME=	feathernotes
+PORTVERSION=	1.2.0
 CATEGORIES=	deskutils
+MASTER_SITES=	https://github.com/tsujan/FeatherNotes/releases/download/V${PORTVERSION}/
+DISTNAME=	FeatherNotes-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight Qt-based notes manager
@@ -9,14 +10,9 @@ WWW=		https://github.com/tsujan/FeatherNotes
 
 LICENSE=	GPLv3+
 
-USES=		cmake desktop-file-utils qt:5 shared-mime-info xorg
-USE_QT=		buildtools:build linguisttools:build qmake:build dbus \
-		core gui network printsupport svg widgets x11extras xml
+USES=		cmake desktop-file-utils qt:6 shared-mime-info tar:xz xorg
+USE_QT=		base svg translations
 USE_XORG=	ice sm x11 xext
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	tsujan
-GH_PROJECT=	FeatherNotes
 
 OPTIONS_DEFINE=	HUNSPELL
 OPTIONS_DEFAULT=	HUNSPELL
