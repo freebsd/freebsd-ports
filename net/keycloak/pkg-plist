@@ -399,14 +399,16 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/lib/quarkus-run.jar
 %%JAVASHAREDIR%%/keycloak/providers/README.md
 %%JAVASHAREDIR%%/keycloak/themes/README.md
-@owner www
-@group www
+@owner %%USER%%
+@group %%GROUP%%
+@mode 640
 %%JAVASHAREDIR%%/keycloak/lib/quarkus/generated-bytecode.jar
 %%JAVASHAREDIR%%/keycloak/lib/quarkus/quarkus-application.dat
 %%JAVASHAREDIR%%/keycloak/lib/quarkus/transformed-bytecode.jar
 @sample %%JAVASHAREDIR%%/keycloak/conf/cache-ispn.xml.sample
 @sample %%JAVASHAREDIR%%/keycloak/conf/keycloak.conf.sample
 @sample %%JAVASHAREDIR%%/keycloak/lib/quarkus/build-system.properties.sample
+@mode 750
 @dir %%JAVASHAREDIR%%/keycloak/lib/quarkus
 @dir %%JAVASHAREDIR%%/keycloak/data
 @dir /var/log/keycloak

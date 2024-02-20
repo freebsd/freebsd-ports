@@ -277,7 +277,7 @@ galene:*:328:328::0:0:Galene Visioconference server:/nonexistent:/usr/sbin/nolog
 certspotter:*:329:329::0:0:Cert Spotter user:/nonexistent:/usr/sbin/nologin
 orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
 svxlink:*:331:331::0:0:svxlink server:/nonexistent:/usr/sbin/nologin
-# free: 332
+keycloak:*:332:332::0:0:keycloak server:/nonexistent:/usr/sbin/nologin
 honeytrap:*:333:333::0:0:HoneyTrap Daemon:/nonexistent:/usr/sbin/nologin
 # free: 334
 # free: 335
