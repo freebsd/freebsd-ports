@@ -1,7 +1,7 @@
 PORTNAME=	WinFF
 PORTVERSION=	1.6.3
 CATEGORIES=	multimedia
-#MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/
+MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 DISTNAME=	${_PORTNAME}-${PORTVERSION}
 
