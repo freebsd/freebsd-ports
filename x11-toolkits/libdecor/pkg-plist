@@ -1,10 +1,10 @@
-%%EXAMPLES%%@@examples@@bin/libdecor-c++-demo
-%%EXAMPLES%%@@examples@@bin/libdecor-demo
-%%EXAMPLES%%@@examples@@bin/libdecor-egl
+%%EXAMPLES%%bin/libdecor-c++-demo
+%%EXAMPLES%%bin/libdecor-demo
+%%EXAMPLES%%bin/libdecor-egl
 include/libdecor-0/libdecor.h
 lib/libdecor-0.so
 lib/libdecor-0.so.0
 lib/libdecor-0.so.0.200.2
-%%CAIRO%%@@cairo@@lib/libdecor/plugins-1/libdecor-cairo.so
-%%GTK3%%@@gtk3@@lib/libdecor/plugins-1/libdecor-gtk.so
+%%CAIRO%%lib/libdecor/plugins-1/libdecor-cairo.so
+%%GTK3%%lib/libdecor/plugins-1/libdecor-gtk.so
 libdata/pkgconfig/libdecor-0.pc
