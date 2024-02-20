@@ -17,6 +17,7 @@ CPE_VENDOR=	libexpat_project
 CPE_PRODUCT=	libexpat
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -34,8 +35,5 @@ STATIC_CONFIGURE_ENABLE=	static
 TEST_USES=	shebangfix
 SHEBANG_FILES=	test-driver-wrapper.sh tests/udiffer.py tests/xmltest.sh
 TEST_CONFIGURE_WITH=	tests
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/xmlwf.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
