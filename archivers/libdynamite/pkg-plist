@@ -5,4 +5,4 @@ lib/libdynamite.so
 lib/libdynamite.so.0
 lib/libdynamite.so.0.0.0
 libdata/pkgconfig/libdynamite.pc
-man/man1/dynamite.1.gz
+share/man/man1/dynamite.1.gz
