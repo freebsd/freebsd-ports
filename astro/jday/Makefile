@@ -1,6 +1,6 @@
 PORTNAME=	jday
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -10,6 +10,7 @@ WWW=		https://jday.sourceforge.net/
 
 USES=		pathfix libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -19,6 +20,6 @@ PLIST_FILES=	bin/dbd bin/j2d bin/jday \
 		include/jday.h lib/libjday.a \
 		lib/libjday.so lib/libjday.so.2 \
 		lib/libjday.so.2.0.4 libdata/pkgconfig/jday.pc \
-		man/man1/jday.1.gz
+		share/man/man1/jday.1.gz
 
 .include <bsd.port.mk>
