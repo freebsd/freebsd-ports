@@ -1,0 +1,5 @@
+TIMESTAMP = 1708442445
+SHA256 (amshafer-nvidia-driver-535.146.02-nvidia-drm-61-kmod-535.146.02_GH0.tar.gz) = 3dff8909f1c51ef086cc9f88574083292c51d18f13bb3708abd0f76b703807b2
+SIZE (amshafer-nvidia-driver-535.146.02-nvidia-drm-61-kmod-535.146.02_GH0.tar.gz) = 185685669
+SHA256 (freebsd-drm-kmod-drm_v6.1.69_GH0.tar.gz) = 2327b60eb403f07c9782894cff70de04920cb14a70efc565d68d4b5ad12bc5cb
+SIZE (freebsd-drm-kmod-drm_v6.1.69_GH0.tar.gz) = 37088102
