@@ -1,5 +1,5 @@
 bin/lzop
-man/man1/lzop.1.gz
+share/man/man1/lzop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
