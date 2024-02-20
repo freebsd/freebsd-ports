@@ -1,5 +1,6 @@
 PORTNAME=	caldera
 DISTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -11,6 +12,7 @@ CONFLICTS=	caldera4
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILDS_DEPENDS=	npm-node18>0:www/npm-node18
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp-jinja2>0:www/py-aiohttp-jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp-session>0:www/py-aiohttp-session@${PY_FLAVOR} \
