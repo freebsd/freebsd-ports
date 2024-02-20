@@ -36,7 +36,6 @@ share/pixmaps/winff.png
 %%DATADIR%%/languages/winff.nb.po
 %%DATADIR%%/languages/winff.nl.po
 %%DATADIR%%/languages/winff.pl.po
-%%DATADIR%%/languages/winff.po
 %%DATADIR%%/languages/winff.pot
 %%DATADIR%%/languages/winff.pt_BR.po
 %%DATADIR%%/languages/winff.pt.po
