@@ -1,6 +1,6 @@
 PORTNAME=	sentencepiece
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.99
+DISTVERSION=	0.2.0
 CATEGORIES=	textproc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
