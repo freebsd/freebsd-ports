@@ -20,10 +20,10 @@ lib/libcaja-extension.so
 lib/libcaja-extension.so.1
 lib/libcaja-extension.so.1.4.0
 libdata/pkgconfig/libcaja-extension.pc
-man/man1/caja-autorun-software.1.gz
-man/man1/caja-connect-server.1.gz
-man/man1/caja-file-management-properties.1.gz
-man/man1/caja.1.gz
+share/man/man1/caja-autorun-software.1.gz
+share/man/man1/caja-connect-server.1.gz
+share/man/man1/caja-file-management-properties.1.gz
+share/man/man1/caja.1.gz
 share/applications/caja-autorun-software.desktop
 share/applications/caja-browser.desktop
 share/applications/caja-computer.desktop

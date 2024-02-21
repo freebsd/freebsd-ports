@@ -1,6 +1,6 @@
 PORTNAME=	caja
 PORTVERSION=	1.26.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -29,6 +29,7 @@ USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 gnomeprefix intltool introspection:build libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-packagekit
 INSTALL_TARGET=	install-strip
 
