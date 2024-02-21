@@ -1,6 +1,6 @@
 PORTNAME=	plotutils
 PORTVERSION=	2.6
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
 
 TEST_TARGET=	check
