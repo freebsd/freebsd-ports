@@ -1,12 +1,13 @@
 PORTNAME=	marshmallow-sqlalchemy
-PORTVERSION=	0.29.0
+PORTVERSION=	0.30.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SQLAlchemy integration with the marshmallow serialization library
-WWW=		https://github.com/marshmallow-code/marshmallow-sqlalchemy
+WWW=		https://marshmallow-sqlalchemy.readthedocs.io/en/latest/ \
+		https://github.com/marshmallow-code/marshmallow-sqlalchemy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
