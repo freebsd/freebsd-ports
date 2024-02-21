@@ -1,0 +1,4 @@
+This module exports a Self type constraint which constrains values
+to be blessed objects in the same class as the package it was
+imported into, or blessed objects which consume the role it was
+imported into. It should do the right thing with inheritance.
