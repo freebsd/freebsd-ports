@@ -26,6 +26,10 @@ PLIST_FILES=	bin/${PORTNAME}_cli \
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
 
+post-patch:
+# XXX Skip the new GUI until runtime is tested
+	@${REINPLACE_CMD} '/krokiet/d' ${WRKSRC}/Cargo.toml
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/*.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
