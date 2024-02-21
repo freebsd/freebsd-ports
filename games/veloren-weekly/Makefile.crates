@@ -799,11 +799,11 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.9+zstd.1.5.5 \
 		keyboard-keynames@git+https://gitlab.com/Imbris/keyboard-keynames.git?tag=veloren-winit-0.28\#fca4bbdfa51bf054b155a455935b3792975c989d \
+		naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/Imberflur/wgpu.git?tag=0.18-with-fixes-for-veloren-v1\#df527ef82e2eba827eda9278caa583506a06aa87 \
 		shred,shred-derive@git+https://github.com/amethyst/shred.git?rev=5d52c6fc390dd04c12158633e77591f6523d1f85\#5d52c6fc390dd04c12158633e77591f6523d1f85 \
 		egui_wgpu_backend@git+https://github.com/hasenbanck/egui_wgpu_backend.git?rev=34691d4e9149deb9cd0bb8cbb5a56bffebf47588\#34691d4e9149deb9cd0bb8cbb5a56bffebf47588 \
 		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=abb1a705827984e11706d7bb97fb7a459e1e6533\#abb1a705827984e11706d7bb97fb7a459e1e6533 \
 		fluent,fluent-bundle,fluent-syntax,intl-memoizer@git+https://github.com/juliancoffee/fluent-rs.git?branch=patched\#929cf9512de121cce9b4cbf1cb860cd3294a1cd9 \
 		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#59fddc617696e68d28a75c2137a08c2572efb986 \
 		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced?tag=veloren-winit-0.28\#47243c257c8b8dd6c506b060804cb00b618aa0aa \
-		naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/IsseW/wgpu?rev=5ea160164\#5ea16016402bb83b4ccd7ac8e6d4b0a2f85da6a0 \
 		portpicker@git+https://github.com/xMAC94x/portpicker-rs?rev=df6b37872f3586ac3b21d08b56c8ec7cd92fb172\#df6b37872f3586ac3b21d08b56c8ec7cd92fb172
