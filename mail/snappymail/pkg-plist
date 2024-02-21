@@ -403,6 +403,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Pgp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Raw.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Response.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/SMime.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Themes.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/User.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/UserAuth.php
@@ -584,6 +585,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dns.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/magic.mime.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/mimetype.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/temporary.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/base.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/pgp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/pgpkeysettings.php
@@ -636,7 +638,11 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/xoauth2.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sensitivestring.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/shutdown.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/certificate.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/openssl.cnf
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/openssl.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/snappymail.crt
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime/snappymail.key
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/tar.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/zip.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/tar.php
