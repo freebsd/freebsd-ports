@@ -83,15 +83,19 @@ include/log4cxx/helpers/threadutility.h
 include/log4cxx/helpers/timezone.h
 include/log4cxx/helpers/transcoder.h
 include/log4cxx/helpers/transform.h
+include/log4cxx/helpers/widelife.h
 include/log4cxx/helpers/writer.h
 include/log4cxx/helpers/xml.h
+include/log4cxx/hexdump.h
 include/log4cxx/hierarchy.h
 include/log4cxx/htmllayout.h
 include/log4cxx/jsonlayout.h
 include/log4cxx/layout.h
 include/log4cxx/level.h
+include/log4cxx/levelchange.h
 include/log4cxx/log4cxx.h
 include/log4cxx/logger.h
+include/log4cxx/loggerinstance.h
 include/log4cxx/logmanager.h
 include/log4cxx/logstring.h
 include/log4cxx/mdc.h
@@ -138,6 +142,7 @@ include/log4cxx/private/appenderskeleton_priv.h
 include/log4cxx/private/aprdatagramsocket.h
 include/log4cxx/private/aprserversocket.h
 include/log4cxx/private/aprsocket.h
+include/log4cxx/private/atexitregistry.h
 include/log4cxx/private/boost-std-configuration.h
 include/log4cxx/private/datagramsocket_priv.h
 include/log4cxx/private/fileappender_priv.h
@@ -195,5 +200,5 @@ lib/cmake/log4cxx/log4cxxConfig.cmake
 lib/cmake/log4cxx/log4cxxConfigVersion.cmake
 lib/liblog4cxx.so
 lib/liblog4cxx.so.15
-lib/liblog4cxx.so.15.1.0
+lib/liblog4cxx.so.15.2.0
 libdata/pkgconfig/liblog4cxx.pc
