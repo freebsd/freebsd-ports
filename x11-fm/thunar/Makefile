@@ -1,5 +1,6 @@
 PORTNAME=	thunar
 DISTVERSION=	4.18.10
+PORTREVISION=	1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -27,6 +28,7 @@ USE_XORG=	ice sm x11
 CPE_VENDOR=	xfce
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-gudev \
 		--enable-gio-unix
 INSTALL_TARGET=	install-strip
