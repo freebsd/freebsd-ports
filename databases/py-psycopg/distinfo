@@ -1,3 +1,3 @@
-TIMESTAMP = 1703227850
-SHA256 (psycopg-3.1.16.tar.gz) = a34d922fd7df3134595e71c3428ba6f1bd5f4968db74857fe95de12db2d6b763
-SIZE (psycopg-3.1.16.tar.gz) = 145826
+TIMESTAMP = 1708449100
+SHA256 (psycopg-3.1.18.tar.gz) = 31144d3fb4c17d78094d9e579826f047d4af1da6a10427d91dfcfb6ecdf6f12b
+SIZE (psycopg-3.1.18.tar.gz) = 145973
