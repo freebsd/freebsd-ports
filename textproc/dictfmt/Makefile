@@ -17,6 +17,7 @@ USES=		gmake libtool:build localbase
 
 ALL_TARGET=	dictfmt
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install.dictfmt
 
 .include <bsd.port.mk>

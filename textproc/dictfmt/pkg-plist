@@ -2,7 +2,7 @@ bin/dictfmt
 bin/dictfmt_index2suffix
 bin/dictfmt_index2word
 bin/dictunformat
-man/man1/dictfmt.1.gz
-man/man1/dictfmt_index2suffix.1.gz
-man/man1/dictfmt_index2word.1.gz
-man/man1/dictunformat.1.gz
+share/man/man1/dictfmt.1.gz
+share/man/man1/dictfmt_index2suffix.1.gz
+share/man/man1/dictfmt_index2word.1.gz
+share/man/man1/dictunformat.1.gz
