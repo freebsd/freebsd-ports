@@ -1,0 +1,21 @@
+--- apps/wolfssh/wolfssh.c.orig	2023-12-23 00:40:00 UTC
++++ apps/wolfssh/wolfssh.c
+@@ -45,6 +45,7 @@
+ #endif
+ 
+ #include <sys/param.h>
++#include <sys/signal.h>
+ #include <libgen.h>
+ 
+ #ifdef WOLFSSH_SHELL
+--- examples/client/client.c.orig	2023-12-23 00:40:00 UTC
++++ examples/client/client.c
+@@ -44,6 +44,8 @@
+     #include <termios.h>
+ #endif
+ 
++#include <sys/signal.h>
++
+ #ifdef WOLFSSH_SHELL
+     #ifdef HAVE_PTY_H
+         #include <pty.h>
