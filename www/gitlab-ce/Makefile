@@ -1,6 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.8.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -37,7 +38,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-pop>=0:mail/rubygem-net-pop \
 	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
 	rubygem-rails70>=7.0.8<7.1:www/rubygem-rails70 \
-	rubygem-bootsnap>=1.17.1<1.18:devel/rubygem-bootsnap \
+	rubygem-bootsnap117>=1.17.0<1.18:devel/rubygem-bootsnap117 \
 	rubygem-openssl>=3.0<4:security/rubygem-openssl \
 	rubygem-ipaddr>=1.2.5<1.3:net/rubygem-ipaddr \
 	rubygem-responders-rails70>=3.0<4.0:www/rubygem-responders-rails70 \
@@ -110,8 +111,8 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-fog-aliyun>=0.4<1.0:net/rubygem-fog-aliyun \
 	rubygem-gitlab-fog-azure-rm>=1.8.0<1.9:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-apis-storage_v1>=0.29<1:devel/rubygem-google-apis-storage_v1 \
-	rubygem-google-cloud-storage>=1.45.0<1.46:net/rubygem-google-cloud-storage \
-	rubygem-google-apis-core>=0.11.2<0.12:devel/rubygem-google-apis-core \
+	rubygem-google-cloud-storage145>=1.45.0<1.46:net/rubygem-google-cloud-storage145 \
+	rubygem-google-apis-core011>=0.11.2<0.12:devel/rubygem-google-apis-core011 \
 	rubygem-google-apis-compute_v1_057>=0.57.0<0.58:devel/rubygem-google-apis-compute_v1_057 \
 	rubygem-google-apis-container_v1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1 \
 	rubygem-google-apis-container_v1beta1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1beta1 \
