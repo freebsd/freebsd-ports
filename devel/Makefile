@@ -5256,6 +5256,7 @@
     SUBDIR += py-pre-commit-hooks
     SUBDIR += py-prefixed
     SUBDIR += py-preshed
+    SUBDIR += py-preshed3
     SUBDIR += py-pretend
     SUBDIR += py-prettyprinter
     SUBDIR += py-prettytable
