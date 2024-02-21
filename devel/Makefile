@@ -3756,8 +3756,8 @@
     SUBDIR += p5-Type-Tiny-XS
     SUBDIR += p5-Types-Core
     SUBDIR += p5-Types-Path-Tiny
-    SUBDIR += p5-Types-Serialiser
     SUBDIR += p5-Types-Self
+    SUBDIR += p5-Types-Serialiser
     SUBDIR += p5-Types-URI
     SUBDIR += p5-Types-UUID
     SUBDIR += p5-UDCode
