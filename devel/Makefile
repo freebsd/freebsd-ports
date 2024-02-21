@@ -4135,6 +4135,7 @@
     SUBDIR += php83-sysvshm
     SUBDIR += php83-tokenizer
     SUBDIR += phpunit10
+    SUBDIR += phpunit11
     SUBDIR += phpunit8
     SUBDIR += phpunit9
     SUBDIR += physfs
