@@ -1,6 +1,5 @@
 PORTNAME=	OrePAN2
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OALDERS
@@ -18,6 +17,7 @@ RUN_DEPENDS=	p5-Archive-Extract>=0.72:archivers/p5-Archive-Extract \
 		p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite \
 		p5-IO-File-AtomicChange>=0:devel/p5-IO-File-AtomicChange \
 		p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
+		p5-libwww>=0:www/p5-libwww \
 		p5-List-Compare>=0:misc/p5-List-Compare \
 		p5-MetaCPAN-Client>=2.000000:devel/p5-MetaCPAN-Client \
 		p5-Moo>=1.007000:devel/p5-Moo \
@@ -29,12 +29,15 @@ RUN_DEPENDS=	p5-Archive-Extract>=0.72:archivers/p5-Archive-Extract \
 		p5-Ref-Util>=0:devel/p5-Ref-Util \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
-		p5-Types-URI>=0:devel/p5-Types-URI \
-		p5-libwww>=0:www/p5-libwww
-TEST_DEPENDS=	p5-File-Touch>=0:devel/p5-File-Touch \
+		p5-Types-URI>=0:devel/p5-Types-URI
+TEST_DEPENDS=	p5-File-pushd>0:devel/p5-File-pushd \
+		p5-File-Touch>=0:devel/p5-File-Touch \
 		p5-File-Which>=0:sysutils/p5-File-Which \
+		p5-namespace-clean>0:devel/p5-namespace-clean \
 		p5-Path-Class>=0:devel/p5-Path-Class \
-		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet
+		p5-Role-Hooks>0:devel/p5-Role-Hooks \
+		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet \
+		p5-Types-Self>0:devel/p5-Types-Self
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
