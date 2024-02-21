@@ -240,6 +240,7 @@
     SUBDIR += vte
     SUBDIR += vte3
     SUBDIR += wlroots
+    SUBDIR += wlroots-devel
     SUBDIR += wlroots015
     SUBDIR += wlroots016
     SUBDIR += wmapp
