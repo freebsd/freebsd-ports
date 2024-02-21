@@ -12,7 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Math-BigInt>=1.999840:math/p5-Math-BigInt
+RUN_DEPENDS=	p5-Math-BigInt>=2.003001:math/p5-Math-BigInt
 
 USES=		perl5
 USE_PERL5=	configure
