@@ -1052,6 +1052,7 @@
     SUBDIR += py-err-backend-discord
     SUBDIR += py-err-backend-mattermost
     SUBDIR += py-errbot
+    SUBDIR += py-errbot-backend-slackv3
     SUBDIR += py-eventlet
     SUBDIR += py-gdown
     SUBDIR += py-geopy

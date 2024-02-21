@@ -1,0 +1,3 @@
+The err-backend-slackv3 backend lets you connect to the Slack messaging service
+using the Real-time Messaging Protocol, Events Request-URL or Events Socket
+mode.
