@@ -1050,6 +1050,7 @@
     SUBDIR += py-ec2-cli-tools
     SUBDIR += py-ephemeral-port-reserve
     SUBDIR += py-err-backend-discord
+    SUBDIR += py-err-backend-mattermost
     SUBDIR += py-errbot
     SUBDIR += py-eventlet
     SUBDIR += py-gdown
