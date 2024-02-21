@@ -1,7 +1,7 @@
 PORTNAME=	nghttp2
-DISTVERSION=	1.59.0
+PORTVERSION=	1.59.0
 CATEGORIES=	www net
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,22 +12,12 @@ WWW=		https://nghttp2.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe pathfix pkgconfig tar:xz
-USE_LDCONFIG=	yes
+USES=		compiler:c++14-lang cpe libtool pathfix pkgconfig tar:xz
 
-CMAKE_OFF=	ENABLE_DOC \
-		ENABLE_FAILMALLOC \
-		ENABLE_HTTP3
-CMAKE_ON=	ENABLE_LIB_ONLY \
-		ENABLE_STATIC_LIB \
-		CMAKE_DISABLE_FIND_PACKAGE_Jansson \
-		CMAKE_DISABLE_FIND_PACKAGE_Jemalloc \
-		CMAKE_DISABLE_FIND_PACKAGE_Libcares \
-		CMAKE_DISABLE_FIND_PACKAGE_Libev \
-		CMAKE_DISABLE_FIND_PACKAGE_Libevent \
-		CMAKE_DISABLE_FIND_PACKAGE_Libnghttp3 \
-		CMAKE_DISABLE_FIND_PACKAGE_Libngtcp2 \
-		CMAKE_DISABLE_FIND_PACKAGE_Libngtcp2_crypto_openssl \
-		CMAKE_DISABLE_FIND_PACKAGE_LibXml2
+CONFIGURE_ARGS=	--enable-lib-only
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
