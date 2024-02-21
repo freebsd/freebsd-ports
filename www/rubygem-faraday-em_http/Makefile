@@ -1,5 +1,5 @@
 PORTNAME=	faraday-em_http
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,9 @@ WWW=		https://github.com/lostisland/faraday-em_http
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+RUN_DEPENDS=	rubygem-em-http-request>=1.1:www/rubygem-em-http-request \
+		rubygem-faraday>=2.0<3:www/rubygem-faraday
 
 USES=		gem
 
