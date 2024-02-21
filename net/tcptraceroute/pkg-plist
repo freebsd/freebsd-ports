@@ -1,5 +1,4 @@
 @(root,wheel,4555) bin/tcptraceroute
-man/man1/tcptraceroute.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -8,3 +7,4 @@ man/man1/tcptraceroute.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples.txt
 %%PORTDOCS%%%%DOCSDIR%%/tcptraceroute.1.html
 %%PORTDOCS%%%%DOCSDIR%%/tcptraceroute.lsm
+share/man/man1/tcptraceroute.1.gz
