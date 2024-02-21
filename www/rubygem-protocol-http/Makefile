@@ -1,5 +1,5 @@
 PORTNAME=	protocol-http
-PORTVERSION=	0.25.0
+PORTVERSION=	0.26.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Provides abstractions to handle HTTP protocols
 WWW=		https://github.com/socketry/protocol-http
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 USES=		gem
 
