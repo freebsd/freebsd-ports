@@ -1,0 +1,5 @@
+This library implements the code generator used by legacy REST clients for
+Google APIs. It automatically generates client gems given discovery documents.
+Google-managed clients for publicly-available APIs are maintained using this
+tool, and users may also use it to generate clients for private or early-access
+APIs.
