@@ -1,6 +1,6 @@
 bin/iperf
-man/man1/iperf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/dast.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ui_license.html
+share/man/man1/iperf.1.gz
