@@ -18,7 +18,6 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 USES=		cmake cpe
 
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	CHANGES LICENSE
