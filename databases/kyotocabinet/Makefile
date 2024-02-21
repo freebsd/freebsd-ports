@@ -17,6 +17,7 @@ USES=		compiler:c++11-lang gmake
 
 CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
 REINPLACE_ARGS=	-i ''
