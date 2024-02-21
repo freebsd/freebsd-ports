@@ -24,7 +24,7 @@ GH_ACCOUNT=	boschmitt
 
 .include <bsd.port.options.mk>
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
-USE_GCC=	yes
+USE_GCC=	12
 .endif
 
 .include <bsd.port.mk>
