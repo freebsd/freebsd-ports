@@ -1,7 +1,8 @@
 PORTNAME=	numexpr
-PORTVERSION=	2.8.8
+PORTVERSION=	2.9.0
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/pydata/numexpr/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
