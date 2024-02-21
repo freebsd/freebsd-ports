@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2023-01-31 16:07:22 UTC
+--- pyproject.toml.orig	2023-09-11 21:34:49 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [project]
 -name = "Flask-SQLAlchemy"
 +name = "flask-sqlalchemy"
+ version = "3.1.1"
  description = "Add SQLAlchemy support to your Flask application."
  readme = "README.rst"
- authors = [
