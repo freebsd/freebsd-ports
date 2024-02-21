@@ -1,6 +1,6 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -54,6 +54,7 @@ USES=		charsetfix compiler:c++14-lang desktop-file-utils fortran gl \
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_QT=		core gui help network opengl printsupport sql widgets xml \
 		buildtools:build linguist:build qmake:build
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender

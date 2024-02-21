@@ -796,10 +796,10 @@ libdata/pkgconfig/octave.pc
 libdata/pkgconfig/octinterp.pc
 %%QT5%%libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-gui
 %%QT5%%libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-svgconvert
-%%PORTDOCS%%man/man1/mkoctfile.1.gz
-%%PORTDOCS%%man/man1/octave-cli.1.gz
-%%PORTDOCS%%man/man1/octave-config.1.gz
-%%PORTDOCS%%man/man1/octave.1.gz
+%%PORTDOCS%%share/man/man1/mkoctfile.1.gz
+%%PORTDOCS%%share/man/man1/octave-cli.1.gz
+%%PORTDOCS%%share/man/man1/octave-config.1.gz
+%%PORTDOCS%%share/man/man1/octave.1.gz
 share/applications/org.octave.Octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/octave.ps
