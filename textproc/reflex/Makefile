@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:tgz
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-			--mandir=${PREFIX}/share/man
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	bigcheck
 
 .include <bsd.port.mk>
