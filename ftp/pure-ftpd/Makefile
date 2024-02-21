@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-language=${LANGUAGE} --with-paranoidmsg --with-puredb \
 		--with-quotas --with-ratios
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_RC_SUBR=	pure-ftpd
 
 SUB_FILES=	pkg-message
