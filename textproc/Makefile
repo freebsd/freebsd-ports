@@ -1560,6 +1560,7 @@
     SUBDIR += py-spacy
     SUBDIR += py-spacy-legacy
     SUBDIR += py-spacy-llm
+    SUBDIR += py-spacy-loggers
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-argparse
