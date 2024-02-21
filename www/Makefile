@@ -1984,6 +1984,7 @@
     SUBDIR += rubygem-eventmachine_httpserver
     SUBDIR += rubygem-faraday
     SUBDIR += rubygem-faraday-em_http
+    SUBDIR += rubygem-faraday-em_http1
     SUBDIR += rubygem-faraday-em_synchrony
     SUBDIR += rubygem-faraday-follow_redirects
     SUBDIR += rubygem-faraday-http-cache
