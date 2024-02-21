@@ -19,8 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/fasm
 PORTDOCS=	fasm.txt readme.txt whatsnew.txt
 
-# bin/fasm
-CONFLICTS_INSTALL=	fasm-fpga SASM
+CONFLICTS_INSTALL=	fasm-fpga SASM # bin/fasm
 
 OPTIONS_DEFINE=	DOCS
 
