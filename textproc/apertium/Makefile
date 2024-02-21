@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
-		utf8cpp3>0:devel/utf8cpp3
+		utf8cpp>=4.0.0:devel/utf8cpp
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		liblttoolbox.so:textproc/lttoolbox \
 		libpcre.so:devel/pcre
