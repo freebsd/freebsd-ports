@@ -25,14 +25,14 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--with-libguile=yes --with-libxml2=yes
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 INFO=		autogen
 
-# bin/columns
-CONFLICTS_INSTALL=	columns
+CONFLICTS_INSTALL=	columns # bin/columns
 
 SHEBANG_FILES=	autoopts/tpl/*.pl
 
