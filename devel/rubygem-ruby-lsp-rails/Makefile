@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp-rails
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-actionpack71>=6.0:www/rubygem-actionpack71 \
 		rubygem-activerecord71>=6.0:databases/rubygem-activerecord71 \
 		rubygem-railties71>=6.0:www/rubygem-railties71 \
-		rubygem-ruby-lsp>=0.13.0<0.14.0:devel/rubygem-ruby-lsp \
+		rubygem-ruby-lsp>=0.14.0<0.15.0:devel/rubygem-ruby-lsp \
 		rubygem-sorbet-runtime>=0.5.9897:devel/rubygem-sorbet-runtime
 
 USES=		gem
