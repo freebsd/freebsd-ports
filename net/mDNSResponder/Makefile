@@ -30,8 +30,7 @@ EXTRA_MAN1=	dns-sd.1
 EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
 EXTRA_SBIN=	dnsextd
 
-# lib/libdns_sd.so.1 sbin/mdnsd
-CONFLICTS_INSTALL?=	avahi-libdns openmdns
+CONFLICTS_INSTALL?=	avahi-libdns openmdns # lib/libdns_sd.so.1 sbin/mdnsd
 
 OPTIONS_DEFINE=	IPV6
 
