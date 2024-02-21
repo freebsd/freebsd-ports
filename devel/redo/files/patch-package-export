@@ -1,0 +1,21 @@
+--- package/export.orig	2019-04-05 17:23:23 UTC
++++ package/export
+@@ -10,14 +10,14 @@ group="`id -gn`"
+ user="`id -un`"
+ group="`id -gn`"
+ 
+-mkdir -p "${root}"bin/ "${root}"man/man1
++mkdir -p "${root}"bin/ "${root}"share/man/man1
+ commands="redo"
+ aliases="redo-ifcreate redo-ifchange cubehash"
+ for i in ${commands} ${aliases}
+ do
+-	rm -f "${root}"man/man1/"$i.1"{new}
+-	install -m 0644 -o "${user}" -g "${group}" -- manual/"$i.1" "${root}"man/man1/"$i.1"{new}
+-	mv -f -- "${root}"man/man1/"$i.1"{new} "${root}"man/man1/"$i.1"
++	rm -f "${root}"share/man/man1/"$i.1"{new}
++	install -m 0644 -o "${user}" -g "${group}" -- manual/"$i.1" "${root}"share/man/man1/"$i.1"{new}
++	mv -f -- "${root}"share/man/man1/"$i.1"{new} "${root}"share/man/man1/"$i.1"
+ done
+ for i in ${commands}
+ do
