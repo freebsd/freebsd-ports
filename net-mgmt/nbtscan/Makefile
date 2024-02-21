@@ -12,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/nbtscan \
-		man/man1/nbtscan.1.gz
+		share/man/man1/nbtscan.1.gz
 PORTDOCS=	README.md
 
 GH_ACCOUNT=	resurrecting-open-source-projects
