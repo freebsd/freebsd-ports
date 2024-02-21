@@ -13,6 +13,7 @@ LICENSE_COMB=	dual
 USES=		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/uhd/
