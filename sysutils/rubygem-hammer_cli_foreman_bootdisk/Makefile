@@ -1,5 +1,5 @@
 PORTNAME=	hammer_cli_foreman_bootdisk
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
