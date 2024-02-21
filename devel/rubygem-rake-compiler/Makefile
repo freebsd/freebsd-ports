@@ -1,5 +1,5 @@
 PORTNAME=	rake-compiler
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
