@@ -4501,6 +4501,7 @@
     SUBDIR += py-clikit
     SUBDIR += py-clint
     SUBDIR += py-clldutils
+    SUBDIR += py-cloudpathlib
     SUBDIR += py-cloudpickle
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
