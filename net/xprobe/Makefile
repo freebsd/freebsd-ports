@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFIGURE_ENV=	INSTALL=${INSTALL}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DBROKEN_BSD||' ${WRKSRC}/libs-external/USI++/src/configure
 
 .include <bsd.port.mk>
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
