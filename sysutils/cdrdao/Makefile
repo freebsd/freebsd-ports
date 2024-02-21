@@ -1,5 +1,6 @@
 PORTNAME=	cdrdao
 DISTVERSION=	1_2_5
+PORTREVISION=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/rel_${DISTVERSION}/ \
 		SF/${PORTNAME}/rel_${DISTVERSION}
@@ -16,6 +17,7 @@ USES=		alias autoreconf compiler:c++11-lang gmake iconv localbase tar:bzip2
 USE_CXXSTD=	c++11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-gcdmaster=no \
 		--without-pcctsbin \
 		--without-pcctsinc \
