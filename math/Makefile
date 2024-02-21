@@ -907,6 +907,7 @@
     SUBDIR += py-benford_py
     SUBDIR += py-bitmath
     SUBDIR += py-bitvector
+    SUBDIR += py-blis
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
     SUBDIR += py-chaospy
