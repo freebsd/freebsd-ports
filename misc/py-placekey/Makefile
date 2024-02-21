@@ -1,13 +1,13 @@
 PORTNAME=	placekey
-PORTVERSION=	0.0.12
-PORTREVISION=	1
+PORTVERSION=	0.0.13
 CATEGORIES=	misc geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities for working with Placekeys
-WWW=		https://github.com/Placekey/placekey-py
+WWW=		https://placekey.github.io/placekey-py/ \
+		https://github.com/Placekey/placekey-py
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
