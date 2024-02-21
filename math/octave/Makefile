@@ -54,7 +54,6 @@ USES=		charsetfix compiler:c++14-lang desktop-file-utils fortran gl \
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_QT=		core gui help network opengl printsupport sql widgets xml \
 		buildtools:build linguist:build qmake:build
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
@@ -75,7 +74,8 @@ CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
 		QCOLLECTIONGENERATOR_QTVER=${QCOLLECTIONGENERATOR} \
 		QHELPGENERATOR_QTVER=${QHELPGENERATOR} \
 		RCC_QTVER=${RCC} \
-		UIC_QTVER=${UIC}
+		UIC_QTVER=${UIC} \
+		man1dir=${PREFIX}/share/man/man1
 
 CONFIGURE_ARGS=	--disable-jit \
 		--disable-openmp \
