@@ -2992,3 +2992,4 @@ audio/taglib-extras||2024-02-17|Incompatible with taglib 2.x and unmaintained up
 security/py-pysha3||2024-02-17|Merged into python standard library since version 3.6
 graphics/qcustomplot-qt5|graphics/qcustomplot|2024-02-19|Renamed to support flavors
 audio/play||2024-02-20|Has expired: Upstream vaporized and last release was in 2000
+graphics/fotoxx|graphics/fotocx|2024-02-21|Project was renamed upstream
