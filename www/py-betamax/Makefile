@@ -1,12 +1,13 @@
 PORTNAME=	betamax
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	VCR imitation for python-requests
-WWW=		https://github.com/betamaxpy/betamax
+WWW=		https://betamax.readthedocs.io/en/latest/ \
+		https://github.com/betamaxpy/betamax
 
 LICENSE=	APACHE20
 
