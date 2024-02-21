@@ -20,6 +20,8 @@ include/cbor/serialization.h
 include/cbor/streaming.h
 include/cbor/strings.h
 include/cbor/tags.h
+lib/cmake/libcbor/libcborConfig.cmake
+lib/cmake/libcbor/libcborConfigVersion.cmake
 lib/libcbor.so
 lib/libcbor.so.0
 lib/libcbor.so.%%PORTVERSION%%
