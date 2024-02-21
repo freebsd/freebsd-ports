@@ -13,8 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Math-BigInt>=1.999840:math/p5-Math-BigInt
-TEST_DEPENDS=	p5-Math-BigRat>=0.2616:math/p5-Math-BigRat
+RUN_DEPENDS=	p5-Math-BigInt>=2.000000:math/p5-Math-BigInt
 
 USES=		perl5
 USE_PERL5=	configure
