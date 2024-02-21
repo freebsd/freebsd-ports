@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Net/SAML2.pm
+%%SITE_PERL%%/Net/SAML2/AttributeConsumingService.pm
 %%SITE_PERL%%/Net/SAML2/Binding/POST.pm
 %%SITE_PERL%%/Net/SAML2/Binding/Redirect.pm
 %%SITE_PERL%%/Net/SAML2/Binding/SOAP.pm
@@ -9,6 +10,7 @@
 %%SITE_PERL%%/Net/SAML2/Protocol/AuthnRequest.pm
 %%SITE_PERL%%/Net/SAML2/Protocol/LogoutRequest.pm
 %%SITE_PERL%%/Net/SAML2/Protocol/LogoutResponse.pm
+%%SITE_PERL%%/Net/SAML2/RequestedAttribute.pm
 %%SITE_PERL%%/Net/SAML2/Role/ProtocolMessage.pm
 %%SITE_PERL%%/Net/SAML2/Role/VerifyXML.pm
 %%SITE_PERL%%/Net/SAML2/SP.pm
@@ -17,6 +19,7 @@
 %%SITE_PERL%%/Net/SAML2/XML/Sig.pm
 %%SITE_PERL%%/Net/SAML2/XML/Util.pm
 %%PERL5_MAN3%%/Net::SAML2.3.gz
+%%PERL5_MAN3%%/Net::SAML2::AttributeConsumingService.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Binding::POST.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Binding::Redirect.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Binding::SOAP.3.gz
@@ -27,6 +30,7 @@
 %%PERL5_MAN3%%/Net::SAML2::Protocol::AuthnRequest.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Protocol::LogoutRequest.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Protocol::LogoutResponse.3.gz
+%%PERL5_MAN3%%/Net::SAML2::RequestedAttribute.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Role::ProtocolMessage.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Role::VerifyXML.3.gz
 %%PERL5_MAN3%%/Net::SAML2::SP.3.gz
