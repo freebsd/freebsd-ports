@@ -1,6 +1,6 @@
 PORTNAME=	mkvtoolnix
 PORTVERSION=	82.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -35,6 +35,7 @@ USE_GL=		${_USE_GL_${FLAVOR}}
 USE_QT=		${_USE_QT_${FLAVOR}}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-docbook-xsl-root=${PREFIX}/share/xsl/docbook \
 		${_CONFIGURE_ARGS_${FLAVOR}}
