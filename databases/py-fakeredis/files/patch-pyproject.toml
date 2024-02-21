@@ -1,18 +1,11 @@
---- pyproject.toml.orig	2023-09-25 21:51:17 UTC
+--- pyproject.toml.orig	2024-02-15 14:54:18 UTC
 +++ pyproject.toml
-@@ -46,7 +46,7 @@ python = "^3.7"
+@@ -46,7 +46,7 @@ lupa = { version = ">=1.14,<3.0", optional = true }
  redis = ">=4"
  sortedcontainers = "^2"
  lupa = { version = ">=1.14,<3.0", optional = true }
 -jsonpath-ng = { version = "^1.6", optional = true }
 +jsonpath-ng = { version = "^1.5", optional = true }
- pybloom-live = { version = "^4.0", optional = true }
+ pyprobables = { version = "^0.6", optional = true }
  
  [tool.poetry.extras]
-@@ -104,4 +104,4 @@ exclude = [
-     '.venv',
-     '.github',
-     '__pycache__',
--]
-\ No newline at end of file
-+]

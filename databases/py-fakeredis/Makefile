@@ -1,5 +1,5 @@
 PORTNAME=	fakeredis
-PORTVERSION=	2.20.1
+PORTVERSION=	2.21.1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,10 +27,12 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	JSON LUA
-LUA_DESC=	Lua support
+OPTIONS_DEFINE=	JSON LUA PROBABILISTIC
+LUA_DESC=		Lua support
+PROBABILISTIC_DESC=	Probabilistic data structure support
 
 JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5<2:devel/py-jsonpath-ng@${PY_FLAVOR}
 LUA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lupa>=1.14<3.0:lang/py-lupa@${PY_FLAVOR}
+PROBABILISTIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyprobables>=0.6<1:math/py-pyprobables@${PY_FLAVOR}
 
 .include <bsd.port.mk>
