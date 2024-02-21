@@ -1,3 +1,3 @@
-TIMESTAMP = 1700759806
-SHA256 (oslo.messaging-14.5.0.tar.gz) = 9a6e887e7ec38344983bacd2620a509e2c0bd7ca5eeeb733f348e87e29783ae1
-SIZE (oslo.messaging-14.5.0.tar.gz) = 278920
+TIMESTAMP = 1708449246
+SHA256 (oslo.messaging-14.6.0.tar.gz) = 723512748d6240e814346fefcc225d1d2b4f4b4ae311bb056d4474364eb3bba8
+SIZE (oslo.messaging-14.6.0.tar.gz) = 279558
