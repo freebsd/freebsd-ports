@@ -7,7 +7,8 @@ DISTNAME=	Flask-Script-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Scripting support for Flask
-WWW=		https://flask-script.readthedocs.io/
+WWW=		https://flask-script.readthedocs.io/en/latest/ \
+		https://github.com/smurfix/flask-script
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
