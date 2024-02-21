@@ -1,6 +1,6 @@
---- fs.c.orig
+--- fs.c.orig	2021-02-09 17:35:52 UTC
 +++ fs.c
-@@ -63,6 +63,8 @@
+@@ -63,6 +63,8 @@ char	com_basedir[MAX_OSPATH];	// c:/quake
  char	com_homedir[MAX_PATH];		// something really long C:/Documents and Settings/qqshka
  char	userdirfile[MAX_OSPATH] = {0};
  char	com_userdir[MAX_OSPATH] = {0};
@@ -9,7 +9,7 @@
  int		userdir_type = -1;
  
  searchpath_t	*fs_searchpaths = NULL;
-@@ -616,6 +618,12 @@
+@@ -616,6 +618,12 @@ void FS_SetGamedir (char *dir, qbool force)
  	// Flush all data, so it will be forced to reload.
  	Cache_Flush ();
  
@@ -22,7 +22,7 @@
  	snprintf(com_gamedir, sizeof(com_gamedir), "%s/%s", com_basedir, dir);
  
  	FS_AddGameDirectory(com_gamedir, FS_LOAD_FILE_ALL);
-@@ -699,6 +707,8 @@
+@@ -699,6 +707,8 @@ void FS_InitFilesystemEx( qbool guess_cwd ) {
  #elif defined(__linux__)
  		if (!Sys_fullpath(com_basedir, "/proc/self/exe", sizeof(com_basedir)))
  			Sys_Error("FS_InitFilesystemEx: Sys_fullpath failed");
@@ -31,7 +31,7 @@
  #else
  		com_basedir[0] = 0; // FIXME: MAC / FreeBSD
  #endif
-@@ -717,12 +727,11 @@
+@@ -717,12 +727,11 @@ void FS_InitFilesystemEx( qbool guess_cwd ) {
  		strlcpy (com_basedir, COM_Argv(i + 1), sizeof(com_basedir));
  	}
   	else { // made com_basedir equa to cwd
@@ -48,7 +48,7 @@
  	}
  
  	for (i = 0; i < (int) strlen(com_basedir); i++)
-@@ -767,6 +776,14 @@
+@@ -767,6 +776,14 @@ void FS_InitFilesystemEx( qbool guess_cwd ) {
  	}
  
  	// start up with id1 by default

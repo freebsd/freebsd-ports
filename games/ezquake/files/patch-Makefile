@@ -1,6 +1,6 @@
---- Makefile.orig
+--- Makefile.orig	2021-02-09 17:35:52 UTC
 +++ Makefile
-@@ -89,6 +89,7 @@
+@@ -89,6 +89,7 @@ SDL2_CFLAGS ?= $(shell sdl2-config --cflags)
  SDL2_LIBS ?= $(shell sdl2-config --libs)
  
  CFLAGS_c += $(BUILD_DEFS) $(VER_DEFS) $(PATH_DEFS) $(SDL2_CFLAGS) -DNDEBUG -DJSS_CAM -DUSE_PR2 -DWITH_NQPROGS -DUSE_SDL2 -DWITH_ZIP
@@ -8,7 +8,7 @@
  LIBS_c += $(SDL2_LIBS)
  
  # built-in requirements
-@@ -379,7 +380,7 @@
+@@ -379,7 +380,7 @@ endif
  ifdef CONFIG_WINDOWS
      TARG_c := ezquake.exe
  else

@@ -1,6 +1,6 @@
---- host.c.orig
+--- host.c.orig	2021-02-09 17:35:52 UTC
 +++ host.c
-@@ -333,16 +333,30 @@
+@@ -333,16 +333,30 @@ void SYSINFO_Init(void)
  	SYSINFO_processor_description = cpu_model;
  
  	gettimeofday(&old_tp, NULL);
@@ -31,7 +31,7 @@
  
  	if (gl_renderer  &&  gl_renderer[0]) {
  		if (SYSINFO_3D_description != NULL) {
-@@ -351,7 +365,7 @@
+@@ -351,7 +365,7 @@ void SYSINFO_Init(void)
  		SYSINFO_3D_description = Q_strdup(gl_renderer);
  	}
  
