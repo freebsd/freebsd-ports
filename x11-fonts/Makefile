@@ -243,6 +243,7 @@
     SUBDIR += py-fontfeatures
     SUBDIR += py-fontmake
     SUBDIR += py-gflanguages
+    SUBDIR += py-gfsubsets
     SUBDIR += py-glyphsLib
     SUBDIR += py-opentype-sanitizer
     SUBDIR += py-opentypespec
