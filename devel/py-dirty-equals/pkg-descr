@@ -1,0 +1,7 @@
+dirty-equals is a python library that (mis)uses the __eq__ method to make python
+code (generally unit tests) more declarative and therefore easier to read and
+write.
+
+dirty-equals can be used in whatever context you like, but it comes into its own
+when writing unit tests for applications where you're commonly checking the
+response to API calls and the contents of a database.

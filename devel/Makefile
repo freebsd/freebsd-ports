@@ -4614,6 +4614,7 @@
     SUBDIR += py-diff-cover
     SUBDIR += py-dill
     SUBDIR += py-dirspec
+    SUBDIR += py-dirty-equals
     SUBDIR += py-diskcache
     SUBDIR += py-distlib
     SUBDIR += py-distributed
