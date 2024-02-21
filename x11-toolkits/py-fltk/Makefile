@@ -1,5 +1,5 @@
 PORTNAME=	fltk
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/pyFltk-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,20 +15,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
-CFLAGS+=	-DFL_LIBRARY
 USES=		python shebangfix xorg
 USE_PYTHON=	autoplist distutils
-PYDISTUTILS_CONFIGUREARGS=	swig
-SHEBANG_FILES=	fltk/test/tree.py \
-		fltk/test/tree_demo.py \
-		fltk/test/fltk_threads.py
 USE_XORG=	x11
+
+CFLAGS+=	-DFL_LIBRARY
+PYDISTUTILS_CONFIGUREARGS=	swig
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
-WRKSRC=		${WRKDIR}/pyFltk-${PORTVERSION}
+
+SHEBANG_FILES=	fltk/test/tree.py \
+		fltk/test/tree_demo.py \
+		fltk/test/fltk_threads.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
