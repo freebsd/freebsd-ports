@@ -17,6 +17,7 @@ USES=		autoreconf libtool pkgconfig ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	test
 
 USE_GITHUB=	yes
