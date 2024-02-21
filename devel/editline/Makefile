@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		libtool ncurses pathfix
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
