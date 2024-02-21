@@ -1,5 +1,5 @@
 PORTNAME=	cyclonedx-python-lib
-PORTVERSION=	6.1.0
+PORTVERSION=	6.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/CycloneDX/cyclonedx-python-lib/releases/download/v${PORTVERSION}/
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}license-expression>=30<31:textproc/py-license-expression@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.11:textproc/py-packageurl-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-serializable>=0.16<1:devel/py-py-serializable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.11<2:textproc/py-packageurl-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-serializable>=0.16<2:devel/py-py-serializable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.4.0<3:devel/py-sortedcontainers@${PY_FLAVOR}
 
 USES=		python
@@ -31,7 +31,7 @@ XML_VALIDATION_DESC=	XML validation
 
 JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR}
 VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
-XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}lxml>=4<6:devel/py-lxml@${PY_FLAVOR}
+XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4<6:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
