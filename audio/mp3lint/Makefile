@@ -22,9 +22,4 @@ USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^INSTALLSYSCONFDIR/ s|/etc|${PREFIX}&|' \
-		-e '/^INSTALLSITEMAN5DIR/ s|/man|/share&|' \
-		${WRKSRC}/Makefile.PL
-
 .include <bsd.port.mk>
