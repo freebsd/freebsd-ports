@@ -17,6 +17,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 USES=		libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
