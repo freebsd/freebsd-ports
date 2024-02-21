@@ -1,5 +1,5 @@
-bin/fotoxx
-share/applications/fotoxx.desktop
+bin/fotocx
+share/applications/fotocx.desktop
 %%DATADIR%%/data/KB_shortcuts_E
 %%DATADIR%%/data/README
 %%DATADIR%%/data/colorwheel.jpg
@@ -77,14 +77,13 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/data/patterns/wet-turquoise.jpg
 %%DATADIR%%/data/patterns/wood.jpg
 %%DATADIR%%/data/plugins
-%%DATADIR%%/data/popup_text
 %%DATADIR%%/data/raw_loader_commands
 %%DATADIR%%/data/slideshow-tone.oga
 %%DATADIR%%/data/tags_defined
 %%DATADIR%%/data/userguide
 %%DATADIR%%/data/widgets.css
 %%DATADIR%%/data/worldcities.txt
-%%DATADIR%%/icons/fotoxx.png
+%%DATADIR%%/icons/fotocx.png
 %%DATADIR%%/images/HDF-paint.png
 %%DATADIR%%/images/HDF.png
 %%DATADIR%%/images/HDR-adjust.png
@@ -164,8 +163,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/denoise.jpg
 %%DATADIR%%/images/devmenu.png
 %%DATADIR%%/images/dither1.png
-%%DATADIR%%/images/dither2.png
-%%DATADIR%%/images/dither3.jpg
+%%DATADIR%%/images/dither2.jpg
 %%DATADIR%%/images/draw-box.png
 %%DATADIR%%/images/draw-line.png
 %%DATADIR%%/images/draw-oval.png
@@ -198,8 +196,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/flatten2.png
 %%DATADIR%%/images/folder-tree.png
 %%DATADIR%%/images/folder.png
-%%DATADIR%%/images/fotoxx-views.jpg
-%%DATADIR%%/images/fotoxx.png
+%%DATADIR%%/images/fotocx-views.jpg
+%%DATADIR%%/images/fotocx.png
 %%DATADIR%%/images/gallery-screen.png
 %%DATADIR%%/images/gallery-sort.png
 %%DATADIR%%/images/gallery-view.jpg
@@ -324,7 +322,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/stack-split.png
 %%DATADIR%%/images/stack-split2.png
 %%DATADIR%%/images/stack-versions.png
-%%DATADIR%%/images/stretch.png
 %%DATADIR%%/images/texture.png
 %%DATADIR%%/images/texture2.png
 %%DATADIR%%/images/tiles2a.png
@@ -369,8 +366,9 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/vignette3.png
 %%DATADIR%%/images/warning.png
 %%DATADIR%%/images/warp.png
+%%DATADIR%%/images/warp_radial.png
 %%DATADIR%%/images/warps4.jpg
 %%DATADIR%%/images/whiteball.png
 %%DATADIR%%/images/zoom.png
-share/man/man1/fotoxx.1.gz
-share/metainfo/kornelix.fotoxx.metainfo.xml
+share/man/man1/fotocx.1.gz
+share/metainfo/kornelix.fotocx.metainfo.xml

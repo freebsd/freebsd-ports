@@ -1,13 +1,12 @@
-PORTNAME=	fotoxx
-PORTVERSION=	23.82
-PORTREVISION=	1
+PORTNAME=	fotocx
+PORTVERSION=	24.11
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Image editing and collection management program
-WWW=		https://kornelix.net/fotoxx/fotoxx.html
+WWW=		https://kornelix.net/fotocx/fotocx.html
 
 LICENSE=	GPLv3+
 
@@ -22,7 +21,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 USES=		desktop-file-utils gmake gnome jpeg pkgconfig
 USE_GNOME=	cairo glib20 gdkpixbuf2 gtk30
-ALL_TARGET=	fotoxx
+ALL_TARGET=	${PORTNAME}
 CXXFLAGS+=	-Wno-register -Wno-writable-strings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -31,11 +30,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/#include/s,wait\.h,sys/&,' ${WRKSRC}/fotoxx.h
-
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fotoxx
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
