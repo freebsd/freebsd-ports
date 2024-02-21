@@ -1,7 +1,7 @@
 PORTNAME=	ngtcp2
-DISTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,13 +12,12 @@ WWW=		https://nghttp2.org/ngtcp2/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++14-lang pathfix tar:xz
-USE_LDCONFIG=	yes
+USES=		compiler:c++14-lang libtool pathfix pkgconfig tar:xz
 
-# Always disabled due to lack of QUIC support which is in 3.2
-CMAKE_OFF=	ENABLE_OPENSSL
-CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_CUnit \
-		CMAKE_DISABLE_FIND_PACKAGE_Libev \
-		CMAKE_DISABLE_FIND_PACKAGE_Libnghttp3
+CONFIGURE_ARGS=	--enable-lib-only --with-jemalloc
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
