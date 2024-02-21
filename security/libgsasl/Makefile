@@ -18,6 +18,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 USES=		charsetfix libtool pathfix pkgconfig ssl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
