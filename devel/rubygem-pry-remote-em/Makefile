@@ -1,5 +1,6 @@
 PORTNAME=	pry-remote-em
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/gruis/pry-remote-em
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-eventmachine>=1<2:devel/rubygem-eventmachine \
-		rubygem-highline>=2.0<3:devel/rubygem-highline \
+		rubygem-highline2>=2.0<3:devel/rubygem-highline2 \
 		rubygem-msgpack>=1<2:devel/rubygem-msgpack \
 		rubygem-pry>=0.11<1:devel/rubygem-pry \
 		rubygem-ruby-termios>=1.0<2:comms/rubygem-ruby-termios
