@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		ncurses
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/ncdu \
-		man/man1/ncdu.1.gz
+		share/man/man1/ncdu.1.gz
 
 # ncdu 1.* (LTS) is written in C.
 # ncdu 2.* (stable) is written in Zig which only works with specific version.
