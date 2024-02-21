@@ -6,9 +6,6 @@ lib/libaria2.so
 lib/libaria2.so.0
 lib/libaria2.so.0.0.0
 libdata/pkgconfig/libaria2.pc
-man/man1/aria2c.1.gz
-man/pt/man1/aria2c.1.gz
-man/ru/man1/aria2c.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/aria2.mo
@@ -51,3 +48,6 @@ man/ru/man1/aria2c.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/aria2.mo
+share/man/man1/aria2c.1.gz
+share/man/pt/man1/aria2c.1.gz
+share/man/ru/man1/aria2c.1.gz
