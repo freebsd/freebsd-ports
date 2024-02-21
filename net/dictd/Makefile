@@ -16,6 +16,7 @@ USES=		bison gmake libtool:build localbase
 
 ALL_TARGET=	dictd dictzip
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install.dictd install.dictzip
 
 SUB_FILES=	dictd.conf pkg-message
