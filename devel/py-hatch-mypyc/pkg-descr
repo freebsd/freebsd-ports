@@ -1,0 +1,2 @@
+hatch-mypyc provides a build hook plugin for Hatch that compiles code with
+Mypyc.
