@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2024-01-10 10:09:23 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=61", "setuptools_scm>=6"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -53,7 +53,7 @@ include = ["sparse", "sparse.*"]
+ include = ["sparse", "sparse.*"]
+ 
+ [tool.setuptools_scm]
+-version_file = "sparse/_version.py"
++write_to = "sparse/_version.py"
+ 
+ [tool.ruff]
+ select = ["F", "E", "W", "I", "B", "UP", "YTT", "BLE", "C4", "T10", "ISC", "ICN", "PIE", "PYI", "RSE", "RET", "SIM", "PGH", "FLY", "NPY", "PERF"]
