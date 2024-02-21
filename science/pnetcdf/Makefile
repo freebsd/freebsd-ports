@@ -15,6 +15,7 @@ USE_PERL5=	build
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--with-mpi=${MPI_HOME} ac_cv_fc_compiler_nag=no
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	hdf-4.*
