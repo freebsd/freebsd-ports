@@ -11,6 +11,8 @@ WWW=		https://github.com/pythops/tenere
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_cpu_speed'
+
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
 USES=		cargo
