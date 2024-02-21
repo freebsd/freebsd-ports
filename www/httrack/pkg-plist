@@ -64,10 +64,6 @@ lib/libhttrack.a
 lib/libhttrack.so
 lib/libhttrack.so.2
 lib/libhttrack.so.2.0.49
-man/man1/htsserver.1.gz
-man/man1/httrack.1.gz
-man/man1/proxytrack.1.gz
-man/man1/webhttrack.1.gz
 share/applications/WebHTTrack-Websites.desktop
 share/applications/WebHTTrack.desktop
 %%PORTDOCS%%%%DOCSDIR%%/abuse.html
@@ -240,6 +236,10 @@ share/applications/WebHTTrack.desktop
 %%ICONS%%share/icons/hicolor/16x16/apps/httrack.png
 %%ICONS%%share/icons/hicolor/32x32/apps/httrack.png
 %%ICONS%%share/icons/hicolor/48x48/apps/httrack.png
+share/man/man1/htsserver.1.gz
+share/man/man1/httrack.1.gz
+share/man/man1/proxytrack.1.gz
+share/man/man1/webhttrack.1.gz
 share/pixmaps/httrack16x16.xpm
 share/pixmaps/httrack32x32.xpm
 share/pixmaps/httrack48x48.xpm
