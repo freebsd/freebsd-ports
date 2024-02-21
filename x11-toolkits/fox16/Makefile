@@ -1,6 +1,6 @@
 PORTNAME=	fox
 PORTVERSION=	1.6.57
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -20,6 +20,7 @@ USES=		compiler:features gl jpeg libtool localbase:ldflags pathfix xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xext xfixes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
 
