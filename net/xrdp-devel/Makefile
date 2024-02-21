@@ -1,17 +1,17 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.80.b20230928
-PORTREVISION=	1
+DISTVERSION=	0.9.90.b20240221
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR?=	${PORTNAME}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	7e305f9.patch:-p1 e34efac.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server (development version)
-WWW=		http://www.xrdp.org/
+WWW=		https://www.xrdp.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,8 +31,8 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	89ceaf0
-GH_TUPLE=	neutrinolabs:librfxcodec:25f6128:librfxcodec/librfxcodec \
+GH_TAGNAME=	c3cb855
+GH_TUPLE=	neutrinolabs:librfxcodec:ab9b65c:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 
