@@ -1,6 +1,6 @@
 PORTNAME=	xar
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/downloads/mackyle/xar/ \
 		GENTOO
@@ -23,6 +23,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_lib_crypto_OpenSSL_add_all_ciphers=yes
 
 post-install:
