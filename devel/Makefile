@@ -4520,6 +4520,7 @@
     SUBDIR += py-comm
     SUBDIR += py-commandlines
     SUBDIR += py-conditional
+    SUBDIR += py-confection
     SUBDIR += py-configargparse
     SUBDIR += py-configobj
     SUBDIR += py-configparser
