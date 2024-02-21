@@ -12,11 +12,12 @@ WWW=		https://ovirt.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_RUBY32=	yes
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	rubygem-json>=1<3:devel/rubygem-json
 
 USES=		gem gnome
 USE_GNOME=	libxml2
-BROKEN_RUBY32=	yes
 
 .include <bsd.port.mk>
