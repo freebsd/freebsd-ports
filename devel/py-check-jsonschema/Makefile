@@ -1,5 +1,5 @@
 PORTNAME=	check-jsonschema
-PORTVERSION=	0.27.3
+PORTVERSION=	0.28.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/check-jsonschema/releases/download/${PORTVERSION}/
@@ -26,6 +26,10 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.4.0:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 1100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=2.0:textproc/py-tomli@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
