@@ -1,7 +1,7 @@
 PORTNAME=	cdo
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/28882/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/29019/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,6 +24,7 @@ PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
 
 USES=		compiler:c++17-lang gmake libtool localbase pathfix python:build
 
+CFLAGS+=	-DPTHREAD_MUTEXATTR
 CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
 		--disable-fortran \
@@ -40,7 +41,6 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
-CFLAGS+=	-DPTHREAD_MUTEXATTR
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
