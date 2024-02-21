@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2023-02-21 17:47:24 UTC
+--- pyproject.toml.orig	2024-02-06 17:08:00 UTC
 +++ pyproject.toml
-@@ -33,7 +33,7 @@ packages = [
- [tool.poetry.dependencies]
- python = ">=3.7,<4.0"
- wagtail = ">=4.1"
--airtable-python-wrapper = "~0.13.0"
-+airtable-python-wrapper = ">=0.13.0"
- djangorestframework = ">=3.11.0"
- django = ">=3.2"
+@@ -33,7 +33,7 @@ dependencies = [
+ dependencies = [
+     "Wagtail>=5.2",
+     "Django>=4.2",
+-    "airtable-python-wrapper>=0.13.0,<0.14",
++    "airtable-python-wrapper>=0.13.0",
+     "djangorestframework>=3.11.0"
+ ]
  
