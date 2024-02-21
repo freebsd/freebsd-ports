@@ -1,3 +1,3 @@
-TIMESTAMP = 1695143481
-SHA256 (rubygem/google-cloud-spanner-admin-database-v1-0.15.0.gem) = a8c6f9e7e605e053e23d6545b1a2868bc3c891e82074e80a0009a23b2ae50168
-SIZE (rubygem/google-cloud-spanner-admin-database-v1-0.15.0.gem) = 97792
+TIMESTAMP = 1708450536
+SHA256 (rubygem/google-cloud-spanner-admin-database-v1-0.17.1.gem) = be377c38fff39de6a3a0736bb15048ebc998a4087f56cd7d382e783edb7fdb96
+SIZE (rubygem/google-cloud-spanner-admin-database-v1-0.17.1.gem) = 100352
