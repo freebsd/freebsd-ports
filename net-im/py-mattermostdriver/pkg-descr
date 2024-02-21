@@ -1,0 +1,5 @@
+mattermostdriver is the Python Mattermost Driver for API v4.
+
+You interact with this module mainly by using the Driver class. If you want to
+access information about the logged in user, like the user id, you can access
+them by using Driver.client.userid.

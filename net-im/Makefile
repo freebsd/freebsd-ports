@@ -111,6 +111,7 @@
     SUBDIR += purple-slack
     SUBDIR += py-fbmq
     SUBDIR += py-matrix-synapse
+    SUBDIR += py-mattermostdriver
     SUBDIR += py-nbxmpp
     SUBDIR += py-punjab
     SUBDIR += py-python-telegram-bot
