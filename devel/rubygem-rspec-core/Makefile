@@ -1,5 +1,5 @@
 PORTNAME=	rspec-core
-PORTVERSION=	3.12.2
+PORTVERSION=	3.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/rspec/rspec-core
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rspec-support>=${PORTVERSION:R}.0<3.13:devel/rubygem-rspec-support
+RUN_DEPENDS=	rubygem-rspec-support>=${PORTVERSION:R}.0<3.14:devel/rubygem-rspec-support
 
 USES=		gem
 
