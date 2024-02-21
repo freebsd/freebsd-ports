@@ -11,7 +11,7 @@ WWW=		https://github.com/tartley/colorama
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0.25.1:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
