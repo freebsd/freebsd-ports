@@ -1,0 +1,6 @@
+Thinc is a lightweight deep learning library that offers an elegant,
+type-checked, functional-programming API for composing models, with support for
+layers defined in other frameworks such as PyTorch, TensorFlow and MXNet. You
+can use Thinc as an interface layer, a standalone toolkit or a flexible way to
+develop new models. Previous versions of Thinc have been running quietly in
+production in thousands of companies, via both spaCy and Prodigy.
