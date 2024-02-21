@@ -1,15 +1,5 @@
 bin/bprintf
 @sample etc/buildflags.conf.sample
-man/man1/bprintf.1.gz
-man/man1/buildflags.awk.1.gz
-man/man1/buildflags.conf.1.gz
-man/man1/buildflags.mk.1.gz
-man/man1/pkg_libchk.1.gz
-man/man1/pkg_validate.1.gz
-man/man8/distviper.8.gz
-man/man8/loaderupdate.8.gz
-man/man8/makeplist.8.gz
-man/man8/pkg_trim.8.gz
 sbin/distviper
 sbin/loaderupdate
 sbin/makeplist
@@ -52,3 +42,13 @@ sbin/pkg_validate
 %%PORTDOCS%%%%DOCSDIR%%/ref/bsda_obj.md
 %%PORTDOCS%%%%DOCSDIR%%/ref/lst.md
 %%PORTDOCS%%%%DOCSDIR%%/ref/type.md
+share/man/man1/bprintf.1.gz
+share/man/man1/buildflags.awk.1.gz
+share/man/man1/buildflags.conf.1.gz
+share/man/man1/buildflags.mk.1.gz
+share/man/man1/pkg_libchk.1.gz
+share/man/man1/pkg_validate.1.gz
+share/man/man8/distviper.8.gz
+share/man/man8/loaderupdate.8.gz
+share/man/man8/makeplist.8.gz
+share/man/man8/pkg_trim.8.gz
