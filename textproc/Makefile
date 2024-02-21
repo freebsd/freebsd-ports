@@ -1558,6 +1558,7 @@
     SUBDIR += py-smartypants
     SUBDIR += py-snowballstemmer
     SUBDIR += py-spacy
+    SUBDIR += py-spacy-legacy
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-argparse
