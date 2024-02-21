@@ -14,8 +14,7 @@ USES=		tar:xz
 
 PLIST_FILES=	bin/timelimit share/man/man1/timelimit.1.gz
 
-# bin/timelimit
-CONFLICTS_INSTALL=	netpipes
+CONFLICTS_INSTALL=	netpipes # bin/timelimit
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/timelimit ${STAGEDIR}${PREFIX}/bin/
