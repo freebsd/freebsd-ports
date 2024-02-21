@@ -1,6 +1,6 @@
 PORTNAME=	libimobiledevice
 PORTVERSION=	1.3.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	comms
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -15,6 +15,7 @@ SLAVE_PORT?=	no
 
 USES+=		cpe libtool localbase:ldflags pathfix pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=openssl_CFLAGS="-I${OPENSSLINC}" \
 		openssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 INSTALL_TARGET=	install-strip
