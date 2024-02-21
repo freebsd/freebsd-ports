@@ -1,6 +1,6 @@
 PORTNAME=	rmap
 PORTVERSION=	1.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	astro geography
 MASTER_SITES=	http://rmap.sourceforge.net/
 
@@ -15,11 +15,12 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/rmap man/man1/rmap.1.gz %%DATADIR%%/earth.rez \
+PLIST_FILES=	bin/rmap share/man/man1/rmap.1.gz %%DATADIR%%/earth.rez \
 		%%DATADIR%%/rmap.colors
 
 .include <bsd.port.mk>
