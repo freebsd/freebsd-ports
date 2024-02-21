@@ -1,0 +1,6 @@
+langcodes knows what languages are. It knows the standardized codes that refer
+to them, such as en for English, es for Spanish and hi for Hindi.
+
+These are IETF language tags. You may know them by their old name, ISO 639
+language codes. IETF has done some important things for backward compatibility
+and supporting language variations that you won't find in the ISO standard.
