@@ -15,11 +15,12 @@ LIB_DEPENDS=	libmaa.so:devel/libmaa
 
 USES=		bison gmake libtool:build localbase
 
-CONFLICTS_INSTALL=	irstlm # bin/dict
-
 ALL_TARGET=	dict
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install.dict
+
+CONFLICTS_INSTALL=	irstlm # bin/dict
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/dict.conf ${STAGEDIR}${PREFIX}/etc/dict.conf.sample
