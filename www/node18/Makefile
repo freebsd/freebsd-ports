@@ -1,7 +1,7 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	18
@@ -30,7 +30,6 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 
 USES=		compiler:c++11-lib gmake localbase pkgconfig python:build shebangfix tar:xz
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-brotli \
 		--shared-cares \
