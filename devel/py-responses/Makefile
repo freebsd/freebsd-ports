@@ -1,5 +1,5 @@
 PORTNAME=	responses
-PORTVERSION=	0.24.1
+PORTVERSION=	0.25.0
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI \
 		https://github.com/getsentry/responses/releases/download/${PORTVERSION}/
