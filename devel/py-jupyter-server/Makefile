@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
