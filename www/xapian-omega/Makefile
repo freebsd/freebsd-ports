@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		ac_cv_func_snprintf=snprintf
 CONFIGURE_ENV=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 

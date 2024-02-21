@@ -4,9 +4,6 @@ bin/mbox2omega
 bin/omindex
 bin/omindex-list
 bin/scriptindex
-man/man1/omindex-list.1.gz
-man/man1/omindex.1.gz
-man/man1/scriptindex.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -30,6 +27,9 @@ man/man1/scriptindex.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/query
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/topterms
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/xml
+share/man/man1/omindex-list.1.gz
+share/man/man1/omindex.1.gz
+share/man/man1/scriptindex.1.gz
 %%DATADIR%%/omega/htdig2omega.script
 %%DATADIR%%/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/mhtml2html
