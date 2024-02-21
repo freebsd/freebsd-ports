@@ -22,8 +22,7 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/lolcat \
 		share/man/man6/lolcat.6.gz
 
-# bin/lolcat
-CONFLICTS_INSTALL=	lolcat
+CONFLICTS_INSTALL=	lolcat # bin/lolcat
 
 post-build:
 	@${REINPLACE_CMD} -e 's|man/lolcat.6|&.gz|' ${WRKSRC}/${GEMSPEC}
