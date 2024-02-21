@@ -1,5 +1,5 @@
 PORTNAME=	sinatra
-PORTVERSION=	3.1.0
+PORTVERSION=	4.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mustermann>=3.0<4:devel/rubygem-mustermann \
-		rubygem-rack22>=2.2.4,3<3,3:www/rubygem-rack22 \
+		rubygem-rack>=3.0.0,3<4,3:www/rubygem-rack \
 		rubygem-rack-protection>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-rack-protection \
+		rubygem-rack-session>=2.0.0<3:www/rubygem-rack-session \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
 USES=		cpe gem
