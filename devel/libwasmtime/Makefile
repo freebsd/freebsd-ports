@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	17.0.1
+PORTVERSION=	18.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -50,7 +49,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.4.1 \
 		block-buffer-0.10.2 \
 		bstr-1.6.0 \
-		bumpalo-3.12.0 \
+		bumpalo-3.14.0 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
 		bytesize-1.3.0 \
@@ -60,7 +59,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cap-primitives-2.0.1 \
 		cap-rand-2.0.1 \
 		cap-std-2.0.1 \
-		cap-tempfile-2.0.1 \
 		cap-time-ext-2.0.1 \
 		capstone-0.9.0 \
 		capstone-sys-0.13.0 \
@@ -128,7 +126,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.9 \
 		gimli-0.28.0 \
 		glob-0.3.0 \
-		h2-0.4.0 \
+		h2-0.4.2 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
@@ -308,18 +306,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
 		wasm-encoder-0.38.1 \
-		wasm-metadata-0.10.14 \
-		wasm-mutate-0.2.42 \
-		wasm-smith-0.13.1 \
-		wasmi-0.20.0 \
-		wasmi_arena-0.1.0 \
-		wasmi_core-0.5.0 \
+		wasm-encoder-0.41.0 \
+		wasm-metadata-0.10.17 \
+		wasm-mutate-0.2.46 \
+		wasm-smith-0.15.1 \
+		wasmi-0.31.1 \
+		wasmi_arena-0.4.1 \
+		wasmi_core-0.13.0 \
 		wasmparser-0.118.1 \
-		wasmparser-nostd-0.91.0 \
-		wasmprinter-0.2.75 \
+		wasmparser-0.121.0 \
+		wasmparser-nostd-0.100.1 \
+		wasmprinter-0.2.78 \
 		wast-35.0.2 \
-		wast-69.0.1 \
-		wat-1.0.82 \
+		wast-70.0.2 \
+		wat-1.0.85 \
 		web-sys-0.3.57 \
 		webpki-roots-0.25.2 \
 		which-4.2.5 \
@@ -352,8 +352,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wit-bindgen-rust-0.15.0 \
 		wit-bindgen-rust-macro-0.15.0 \
 		wit-component-0.18.2 \
-		wit-component-0.19.0 \
-		wit-parser-0.13.0 \
+		wit-component-0.20.1 \
+		wit-parser-0.13.1 \
 		zstd-0.11.1+zstd.1.5.2 \
 		zstd-safe-5.0.1+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2
