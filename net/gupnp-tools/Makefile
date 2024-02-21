@@ -24,9 +24,8 @@ LIB_DEPENDS=	libgssdp-1.6.so:net/gssdp \
 USES=		gettext-tools gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 libxml2
 
-USE_LDCONFIG=	yes
-
 CFLAGS+=	-Wno-error=deprecated-declarations
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	AV_TOOLS
 OPTIONS_DEFAULT=AV_TOOLS
