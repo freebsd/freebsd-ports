@@ -21,8 +21,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-# bin/dbfdump
-CONFLICTS_INSTALL=	p5-DBD-XBase
+CONFLICTS_INSTALL=	p5-DBD-XBase # bin/dbfdump
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/shptest ${STAGEDIR}${PREFIX}/bin/
