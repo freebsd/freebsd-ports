@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2023-09-06 22:31:16 UTC
++++ pyproject.toml
+@@ -36,7 +36,6 @@ dependencies = [
+   "pyproject_hooks",
+   # not actually a runtime dependency, only supplied as there is not "recommended dependency" support
+   'colorama; os_name == "nt"',
+-  'importlib-metadata >= 4.6; python_version < "3.10"',  # Not required for 3.8+, but fixes a stdlib bug
+   'tomli >= 1.1.0; python_version < "3.11"',
+ ]
+ 
