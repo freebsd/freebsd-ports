@@ -1,11 +1,12 @@
 PORTNAME=	roda
-PORTVERSION=	3.75.0
+PORTVERSION=	3.77.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Routing tree web toolkit
-WWW=		https://roda.jeremyevans.net/
+WWW=		https://roda.jeremyevans.net/ \
+		https://github.com/jeremyevans/roda
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
