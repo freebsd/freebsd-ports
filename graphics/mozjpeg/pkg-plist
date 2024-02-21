@@ -23,11 +23,6 @@ lib/libturbojpeg.so.0
 lib/libturbojpeg.so.0.2.0
 libdata/pkgconfig/libjpeg.pc
 libdata/pkgconfig/libturbojpeg.pc
-man/man1/cjpeg.1.gz
-man/man1/djpeg.1.gz
-man/man1/jpegtran.1.gz
-man/man1/rdjpgcom.1.gz
-man/man1/wrjpgcom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.ijg
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -133,3 +128,8 @@ man/man1/wrjpgcom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tjexample.c
 %%PORTDOCS%%%%DOCSDIR%%/usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/wizard.txt
+share/man/man1/cjpeg.1.gz
+share/man/man1/djpeg.1.gz
+share/man/man1/jpegtran.1.gz
+share/man/man1/rdjpgcom.1.gz
+share/man/man1/wrjpgcom.1.gz
