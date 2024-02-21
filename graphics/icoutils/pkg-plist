@@ -2,7 +2,7 @@
 %%EXTRESSO%%bin/genresscript
 bin/icotool
 bin/wrestool
-%%EXTRESSO%%man/man1/extresso.1.gz
-%%EXTRESSO%%man/man1/genresscript.1.gz
-man/man1/icotool.1.gz
-man/man1/wrestool.1.gz
+%%EXTRESSO%%share/man/man1/extresso.1.gz
+%%EXTRESSO%%share/man/man1/genresscript.1.gz
+share/man/man1/icotool.1.gz
+share/man/man1/wrestool.1.gz
