@@ -1,6 +1,6 @@
 PORTNAME=	xmoontool
 PORTVERSION=	3.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	astro
 MASTER_SITES=	http://www.senax.net/xmoontool/
 
@@ -11,7 +11,7 @@ WWW=		http://www.senax.net/xmoontool/xmoontool.html
 USES=		motif xorg
 USE_XORG=	x11 xt
 
-PLIST_FILES=	bin/xmoontool man/man1/xmoontool.1.gz
+PLIST_FILES=	bin/xmoontool share/man/man1/xmoontool.1.gz
 PORTDOCS=	NOTES
 
 OPTIONS_DEFINE=	DOCS LIBNOVA
@@ -23,7 +23,7 @@ LIBNOVA_LIB_DEPENDS=	libnova.so:astro/libnova
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmoontool ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xmoontool.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xmoontool.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
