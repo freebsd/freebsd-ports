@@ -1,5 +1,5 @@
 PORTNAME=	tinycdb
-PORTVERSION=	0.80
+PORTVERSION=	0.81
 CATEGORIES=	databases
 MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
 
@@ -13,7 +13,11 @@ USES=		gmake
 
 ALL_TARGET=	static sharedlib
 INSTALL_TARGET=	install install-sharedlib
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}"
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		mandir=${PREFIX}/share/man \
+		pkgconfdir=${PREFIX}/libdata/pkgconfig \
+		prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	libcdb # lib/libcdb.a
