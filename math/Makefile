@@ -1035,6 +1035,7 @@
     SUBDIR += py-pynndescent
     SUBDIR += py-pyodeint
     SUBDIR += py-pyodesys
+    SUBDIR += py-pyprobables
     SUBDIR += py-pyreadr
     SUBDIR += py-pyrr
     SUBDIR += py-pysmt
