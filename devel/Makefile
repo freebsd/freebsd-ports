@@ -5849,6 +5849,7 @@
     SUBDIR += py-watchgod
     SUBDIR += py-watermark
     SUBDIR += py-wcwidth
+    SUBDIR += py-weasel
     SUBDIR += py-weblib
     SUBDIR += py-websockets
     SUBDIR += py-websockify
