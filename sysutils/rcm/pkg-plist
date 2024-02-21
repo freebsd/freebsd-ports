@@ -2,10 +2,10 @@ bin/lsrc
 bin/mkrc
 bin/rcdn
 bin/rcup
-man/man1/lsrc.1.gz
-man/man1/mkrc.1.gz
-man/man1/rcdn.1.gz
-man/man1/rcup.1.gz
-man/man5/rcrc.5.gz
-man/man7/rcm.7.gz
+share/man/man1/lsrc.1.gz
+share/man/man1/mkrc.1.gz
+share/man/man1/rcdn.1.gz
+share/man/man1/rcup.1.gz
+share/man/man5/rcrc.5.gz
+share/man/man7/rcm.7.gz
 %%DATADIR%%/rcm.sh
