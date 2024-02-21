@@ -14,8 +14,8 @@ lib/libpst.so
 lib/libpst.so.4
 lib/libpst.so.4.1.18
 libdata/pkgconfig/libpst.pc
-man/man1/lspst.1.gz
-man/man1/pst2dii.1.gz
-man/man1/pst2ldif.1.gz
-man/man1/readpst.1.gz
-man/man5/outlook.pst.5.gz
+share/man/man1/lspst.1.gz
+share/man/man1/pst2dii.1.gz
+share/man/man1/pst2ldif.1.gz
+share/man/man1/readpst.1.gz
+share/man/man5/outlook.pst.5.gz
