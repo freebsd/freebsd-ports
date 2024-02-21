@@ -1,5 +1,5 @@
 PORTNAME=	sshkit
-PORTVERSION=	1.21.6
+PORTVERSION=	1.22.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,9 @@ WWW=		https://github.com/capistrano/sshkit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-net-scp>=1.1.2:security/rubygem-net-scp \
+RUN_DEPENDS=	rubygem-mutex_m>=0:devel/rubygem-mutex_m \
+		rubygem-net-scp>=1.1.2:security/rubygem-net-scp \
+		rubygem-net-sftp>=2.1.2:security/rubygem-net-sftp \
 		rubygem-net-ssh>=2.8.0,2:security/rubygem-net-ssh
 
 USES=		gem
