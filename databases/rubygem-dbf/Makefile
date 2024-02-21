@@ -1,5 +1,5 @@
 PORTNAME=	dbf
-PORTVERSION=	4.2.4
+PORTVERSION=	4.3.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 
-CONFLICTS_INSTALL=	dbf
+RUN_DEPENDS=	rubygem-csv>=0:devel/rubygem-csv
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/dbf
+
+CONFLICTS_INSTALL=	dbf # bin/dbf
 
 .include <bsd.port.mk>
