@@ -1,5 +1,5 @@
 bin/viking
-man/man1/viking.1.gz
+share/man/man1/viking.1.gz
 share/applications/viking.desktop
 %%PORTDOCS%%share/help/C/viking/attribution.xml
 %%PORTDOCS%%share/help/C/viking/commandline.xml
