@@ -19,8 +19,7 @@ RUN_DEPENDS=	p5-Data-Dumper>=0:devel/p5-Data-Dumper \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 TEST_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
 		p5-Guard>=0:devel/p5-Guard \
-		p5-Math-BigInt>=1.999837:math/p5-Math-BigInt \
-		p5-Math-BigRat>=0.2624:math/p5-Math-BigRat \
+		p5-Math-BigInt>=2.000000:math/p5-Math-BigInt \
 		p5-Test2-Suite>=0:devel/p5-Test2-Suite \
 		p5-autovivification>=0:devel/p5-autovivification \
 		p5-bignum>=0:math/p5-bignum \
@@ -29,5 +28,7 @@ TEST_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
