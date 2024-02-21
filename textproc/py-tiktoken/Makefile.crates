@@ -3,36 +3,36 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bstr-1.8.0 \
+		bstr-1.9.0 \
 		cfg-if-1.0.0 \
 		fancy-regex-0.11.0 \
 		heck-0.4.1 \
 		indoc-2.0.4 \
-		libc-0.2.150 \
+		libc-0.2.153 \
 		lock_api-0.4.11 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		memoffset-0.9.0 \
 		once_cell-1.19.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
-		proc-macro2-1.0.70 \
-		pyo3-0.20.0 \
-		pyo3-build-config-0.20.0 \
-		pyo3-ffi-0.20.0 \
-		pyo3-macros-0.20.0 \
-		pyo3-macros-backend-0.20.0 \
-		quote-1.0.33 \
+		proc-macro2-1.0.78 \
+		pyo3-0.20.2 \
+		pyo3-build-config-0.20.2 \
+		pyo3-ffi-0.20.2 \
+		pyo3-macros-0.20.2 \
+		pyo3-macros-backend-0.20.2 \
+		quote-1.0.35 \
 		redox_syscall-0.4.1 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
 		rustc-hash-1.1.0 \
 		scopeguard-1.2.0 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		smallvec-1.11.2 \
-		syn-2.0.39 \
-		target-lexicon-0.12.12 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		smallvec-1.13.1 \
+		syn-2.0.49 \
+		target-lexicon-0.12.13 \
 		unicode-ident-1.0.12 \
 		unindent-0.2.3 \
 		windows-targets-0.48.5 \
