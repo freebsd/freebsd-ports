@@ -1,12 +1,13 @@
 PORTNAME=	black
-PORTVERSION=	23.12.1
+PORTVERSION=	24.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Uncompromising code formatter
-WWW=		https://github.com/psf/black
+WWW=		https://black.readthedocs.io/en/stable/ \
+		https://github.com/psf/black
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
