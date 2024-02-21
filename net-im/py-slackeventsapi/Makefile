@@ -1,0 +1,22 @@
+PORTNAME=	slackeventsapi
+PORTVERSION=	3.0.1
+CATEGORIES=	net-im python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python Slack Events API adapter for Flask
+WWW=		https://github.com/slackapi/python-slack-events-api
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=2:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyee>=8:devel/py-pyee@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
