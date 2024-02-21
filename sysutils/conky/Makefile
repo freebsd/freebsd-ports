@@ -1,12 +1,14 @@
 PORTNAME=	conky
-PORTVERSION=	1.19.6
-PORTREVISION=	1
+PORTVERSION=	1.19.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT?=	Advanced, highly configurable system monitor for X11
 WWW=		https://github.com/brndnmtthws/conky
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libinotify.so:devel/libinotify
@@ -91,7 +93,7 @@ MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FL
 			pandoc:textproc/hs-pandoc
 MANPAGES_USES=		python:build
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS
-MANPAGES_PLIST_FILES=	man/man1/conky.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/conky.1.gz
 
 METAR_IMPLIES=		CURL
 METAR_CMAKE_BOOL=	BUILD_WEATHER_METAR
@@ -122,7 +124,7 @@ WAYLAND_CMAKE_BOOL=	BUILD_WAYLAND
 WAYLAND_LDFLAGS=	-Wl,--as-needed # pangoft2 deps: glib20, freetype2, harfbuzz
 
 X11_USES=	xorg
-X11_USE=	XORG=x11,xdamage,xext,xfixes
+X11_USE=	XORG=x11,xdamage,xext,xfixes,xi
 X11_CMAKE_BOOL=	BUILD_X11 OWN_WINDOW
 
 XFT_IMPLIES=	X11
