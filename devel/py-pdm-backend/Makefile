@@ -1,5 +1,5 @@
 PORTNAME=	pdm-backend
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	pdm_backend-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build backend used by PDM that supports latest packaging standards
-WWW=		https://github.com/pdm-project/pdm-backend
+WWW=		https://backend.pdm-project.org/ \
+		https://github.com/pdm-project/pdm-backend
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
