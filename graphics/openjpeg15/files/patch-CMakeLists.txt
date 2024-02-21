@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2014-03-28 08:20:25 UTC
 +++ CMakeLists.txt
-@@ -54,7 +54,7 @@ if(NOT OPENJPEG_SOVERSION)
+@@ -54,7 +54,7 @@ SET(OPENJPEG_LIBRARY_PROPERTIES
  endif(NOT OPENJPEG_SOVERSION)
  SET(OPENJPEG_LIBRARY_PROPERTIES
    VERSION   "${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}.${OPENJPEG_VERSION_BUILD}"
@@ -9,12 +9,7 @@
  )
  
  # --------------------------------------------------------------------------
-@@ -129,11 +129,11 @@ IF(NOT OPENJPEG_INSTALL_INCLUDE_DIR)
- ENDIF(NOT OPENJPEG_INSTALL_INCLUDE_DIR)
- 
- IF(NOT OPENJPEG_INSTALL_MAN_DIR)
--  SET(OPENJPEG_INSTALL_MAN_DIR "share/man/")
-+  SET(OPENJPEG_INSTALL_MAN_DIR "man/")
+@@ -133,7 +133,7 @@ IF(NOT OPENJPEG_INSTALL_DOC_DIR)
  ENDIF(NOT OPENJPEG_INSTALL_MAN_DIR)
  
  IF(NOT OPENJPEG_INSTALL_DOC_DIR)
@@ -36,7 +31,7 @@
  ENDIF(UNIX)
  
  #-----------------------------------------------------------------------------
-@@ -288,6 +288,7 @@ ENDIF(BUILD_TESTING)
+@@ -288,6 +288,7 @@ INSTALL(EXPORT OpenJPEGTargets DESTINATION ${OPENJPEG_
  #-----------------------------------------------------------------------------
  # install all targets referenced as OPENJPEGTargets
  INSTALL(EXPORT OpenJPEGTargets DESTINATION ${OPENJPEG_INSTALL_PACKAGE_DIR})
