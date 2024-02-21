@@ -1,10 +1,10 @@
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -41,7 +41,7 @@ socks = [
+@@ -41,7 +41,7 @@ trio = [
      "socksio==1.*",
  ]
  trio = [
--    "trio>=0.22.0,<0.23.0",
+-    "trio>=0.22.0,<0.24.0",
 +    "trio>=0.22.0",
  ]
  asyncio = [
