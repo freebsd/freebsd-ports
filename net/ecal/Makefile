@@ -1,7 +1,7 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,7 @@ CMAKE_ARGS=	-DGIT_REVISION_MAJOR=${DISTVERSION:R:R} \
 		-Dqwt_LIBRARY=${LOCALBASE}/lib/qt5/libqwt6.so
 
 CXXFLAGS+=	-pthread # see https://github.com/eclipse-ecal/ecal/issues/933
-LDFLAGS+=	-labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_spinlock_wait
+LDFLAGS+=	-labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_spinlock_wait -ltinyxml2
 USE_CXXSTD=	c++17
 
 PLIST_SUB=	VERSION=${DISTVERSION}

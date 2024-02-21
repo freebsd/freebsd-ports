@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2022-12-23 09:10:20 UTC
+--- CMakeLists.txt.orig	2023-10-27 08:38:06 UTC
 +++ CMakeLists.txt
-@@ -231,7 +231,7 @@ endif()
+@@ -182,7 +182,7 @@ endif()
+ set(possible_subprojects
+   Protobuf
+   spdlog
+-  tinyxml2
++  #tinyxml2
+   fineftp
+   termcolor
+   recycle
+@@ -234,7 +234,7 @@ endif()
  
  find_package(CMakeFunctions REQUIRED)
  
