@@ -1,6 +1,7 @@
 include/s2/_fp_contract_off.h
 include/s2/base/casts.h
 include/s2/base/commandlineflags.h
+include/s2/base/commandlineflags_declare.h
 include/s2/base/integral_types.h
 include/s2/base/log_severity.h
 include/s2/base/logging.h
@@ -40,6 +41,9 @@ include/s2/s2cap.h
 include/s2/s2cell.h
 include/s2/s2cell_id.h
 include/s2/s2cell_index.h
+include/s2/s2cell_iterator.h
+include/s2/s2cell_iterator_join.h
+include/s2/s2cell_range_iterator.h
 include/s2/s2cell_union.h
 include/s2/s2centroids.h
 include/s2/s2closest_cell_query.h
@@ -48,6 +52,7 @@ include/s2/s2closest_edge_query.h
 include/s2/s2closest_edge_query_base.h
 include/s2/s2closest_point_query.h
 include/s2/s2closest_point_query_base.h
+include/s2/s2coder.h
 include/s2/s2contains_point_query.h
 include/s2/s2contains_vertex_query.h
 include/s2/s2convex_hull_query.h
@@ -66,6 +71,7 @@ include/s2/s2edge_tessellator.h
 include/s2/s2edge_vector_shape.h
 include/s2/s2error.h
 include/s2/s2furthest_edge_query.h
+include/s2/s2hausdorff_distance_query.h
 include/s2/s2latlng.h
 include/s2/s2latlng_rect.h
 include/s2/s2latlng_rect_bounder.h
@@ -106,6 +112,7 @@ include/s2/s2shape_index.h
 include/s2/s2shape_index_buffered_region.h
 include/s2/s2shape_index_region.h
 include/s2/s2shape_measures.h
+include/s2/s2shape_nesting_query.h
 include/s2/s2shapeutil_build_polygon_boundaries.h
 include/s2/s2shapeutil_coding.h
 include/s2/s2shapeutil_contains_brute_force.h
@@ -113,7 +120,6 @@ include/s2/s2shapeutil_conversion.h
 include/s2/s2shapeutil_count_edges.h
 include/s2/s2shapeutil_edge_iterator.h
 include/s2/s2shapeutil_get_reference_point.h
-include/s2/s2shapeutil_range_iterator.h
 include/s2/s2shapeutil_shape_edge.h
 include/s2/s2shapeutil_shape_edge_id.h
 include/s2/s2shapeutil_testing.h
@@ -124,7 +130,9 @@ include/s2/s2wedge_relations.h
 include/s2/s2winding_operation.h
 include/s2/s2wrapped_shape.h
 include/s2/sequence_lexicon.h
+include/s2/testing/gtest_prod.h
 include/s2/thread_testing.h
+include/s2/util/bitmap/bitmap.h
 include/s2/util/bits/bits.h
 include/s2/util/coding/coder.h
 include/s2/util/coding/varint.h
@@ -147,3 +155,6 @@ lib/libs2.so.0
 lib/libs2.so.%%PORTVERSION%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/point_index.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/term_index.cc
+%%DATADIR%%/s2Config.cmake
+%%DATADIR%%/s2Targets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/s2Targets.cmake
