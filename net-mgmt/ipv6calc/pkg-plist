@@ -2,10 +2,6 @@ bin/ipv6calc
 bin/ipv6loganon
 bin/ipv6logconv
 bin/ipv6logstats
-man/man8/ipv6calc.8.gz
-man/man8/ipv6loganon.8.gz
-man/man8/ipv6logconv.8.gz
-man/man8/ipv6logstats.8.gz
 %%DATADIR%%/tools/DBIP-update.sh
 %%DATADIR%%/tools/GeoIP-update.sh
 %%DATADIR%%/tools/IP2Location-update.sh
@@ -15,3 +11,7 @@ man/man8/ipv6logstats.8.gz
 %%DATADIR%%/tools/ipv6calc-db-update.sh
 %%DATADIR%%/tools/ipv6calc-registries-check-run-create.sh
 %%DATADIR%%/tools/ipv6calc-update-registries.sh
+share/man/man8/ipv6calc.8.gz
+share/man/man8/ipv6loganon.8.gz
+share/man/man8/ipv6logconv.8.gz
+share/man/man8/ipv6logstats.8.gz

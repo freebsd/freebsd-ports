@@ -17,6 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		gmake perl5 shebangfix ssl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SHEBANG_FILES=	tools/*
 
