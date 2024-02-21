@@ -1,7 +1,8 @@
 PORTNAME=	jupyter-collaboration
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/jupyterlab/jupyter-collaboration/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jupyter_collaboration-${PORTVERSION}
 
