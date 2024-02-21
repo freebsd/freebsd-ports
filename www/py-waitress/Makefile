@@ -1,18 +1,18 @@
 PORTNAME=	waitress
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python WSGI server
-WWW=		https://github.com/Pylons/waitress
+WWW=		https://docs.pylonsproject.org/projects/waitress/en/latest/ \
+		https://github.com/Pylons/waitress
 
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=41:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe python
