@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	18.1.0rc2
+DISTVERSION=	18.1.0rc3
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -154,6 +154,7 @@ CLANG_USE=		PERL5=build
 COMPILER_RT_DESC=	Sanitizer libraries
 COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS}
+COMPILER_RT_CONFLICTS_BUILD=${ARCH}-binutils
 DOCS_BUILD_DEPENDS= \
 	${PYTHON_PKGNAMEPREFIX}myst-parser>0:textproc/py-myst-parser@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR} \
