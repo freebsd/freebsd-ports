@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-01-30 11:43:56 UTC
++++ pyproject.toml
+@@ -47,7 +47,7 @@ requests = "^2"
+ pytz = "*"
+ "repoze.who" = {optional = true, version = "*"}
+ requests = "^2"
+-xmlschema = "^2"
++xmlschema = ">=2"
+ "zope.interface" = {optional = true, version = "*"}
+ 
+ [tool.poetry.extras]
