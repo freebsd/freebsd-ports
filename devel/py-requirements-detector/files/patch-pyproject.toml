@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-05-20 04:52:03 UTC
++++ pyproject.toml
+@@ -29,7 +29,7 @@ detect-requirements = 'requirements_detector.run:run'
+ 
+ [tool.poetry.dependencies]
+ python = ">=3.7,<4.0"
+-astroid = "^2.0"
++astroid = ">=2.0"
+ packaging = ">=21.3"
+ toml = "^0.10.2"
+ semver = "^3.0.0"
