@@ -1,5 +1,6 @@
 PORTNAME=	infernal
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://eddylab.org/infernal/
 
@@ -19,6 +20,7 @@ SHEBANG_FILES=	easel/devkit/*
 SHEBANG_GLOB=	*.pl *.py
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_ARGS=	V=1
 
 TEST_TARGET=	check
