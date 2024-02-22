@@ -8,8 +8,8 @@ lib/libcw.so
 lib/libcw.so.%%MAJOR_LIB_VER%%
 lib/libcw.so.%%MAJOR_LIB_VER%%.%%MINOR_LIB_VER%%
 libdata/pkgconfig/libcw.pc
-man/man1/cw.1.gz
-man/man1/cwgen.1.gz
-man/man1/cwcp.1.gz
-man/man3/libcw.3.gz
-man/man7/cw.7.gz
+share/man/man1/cw.1.gz
+share/man/man1/cwgen.1.gz
+share/man/man1/cwcp.1.gz
+share/man/man3/libcw.3.gz
+share/man/man7/cw.7.gz
