@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -112,7 +112,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-fog-azure-rm>=1.8.0<1.9:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-apis-storage_v1>=0.29<1:devel/rubygem-google-apis-storage_v1 \
 	rubygem-google-cloud-storage145>=1.45.0<1.46:net/rubygem-google-cloud-storage145 \
-	rubygem-google-apis-core011>=0.11.2<0.12:devel/rubygem-google-apis-core011 \
+	rubygem-google-apis-core>=0.11.2<2:devel/rubygem-google-apis-core \
 	rubygem-google-apis-compute_v1_057>=0.57.0<0.58:devel/rubygem-google-apis-compute_v1_057 \
 	rubygem-google-apis-container_v1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1 \
 	rubygem-google-apis-container_v1beta1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1beta1 \

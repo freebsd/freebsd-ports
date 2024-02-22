@@ -29,6 +29,15 @@
  gem 'omniauth-salesforce', '~> 1.0.5', path: 'vendor/gems/omniauth-salesforce' # See gem README.md # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'omniauth-atlassian-oauth2', '~> 0.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'rack-oauth2', '~> 1.21.3' # rubocop:todo Gemfile/MissingFeatureCategory
+@@ -185,7 +185,7 @@ gem 'gitlab-fog-azure-rm', '~> 1.8.0', require: 'fog/a
+ gem 'google-apis-storage_v1', '~> 0.29' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-cloud-storage', '~> 1.45.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ # We need >= 0.11.1 because that's when match_glob support is added to list_objects
+-gem 'google-apis-core', '~> 0.11.0', '>= 0.11.1' # rubocop:todo Gemfile/MissingFeatureCategory
++gem 'google-apis-core', '~> 0.11', '>= 0.11.1' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-compute_v1', '~> 0.57.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-container_v1', '~> 0.43.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-container_v1beta1', '~> 0.43.0' # rubocop:todo Gemfile/MissingFeatureCategory
 @@ -203,9 +203,9 @@ gem 'seed-fu', '~> 2.3.7' # rubocop:todo Gemfile/Missi
  gem 'elasticsearch-model', '~> 7.2' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation' # rubocop:todo Gemfile/MissingFeatureCategory
