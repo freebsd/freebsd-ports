@@ -31,8 +31,8 @@
 +	install -c -s -m 755 btoa $(DESTDIR)/bin/btoa
 +	rm -f $(DESTDIR)/bin/atob
 +	ln $(DESTDIR)/bin/btoa $(DESTDIR)/bin/atob
-+	-@mkdir -p $(DESTDIR)/man/man1
-+	install -c -m 644 btoa.1 $(DESTDIR)/man/man1/btoa.1
++	-@mkdir -p $(DESTDIR)/share/man/man1
++	install -c -m 644 btoa.1 $(DESTDIR)/share/man/man1/btoa.1
 +	strip $(DESTDIR)/bin/btoa
 +
 +clean:
