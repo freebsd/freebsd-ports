@@ -1,5 +1,6 @@
 PORTNAME=	omniauth
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-hashie>=3.4.6:devel/rubygem-hashie \
 		rubygem-rack>=2.2.3,3:www/rubygem-rack \
-		rubygem-rack-protection>=0:www/rubygem-rack-protection
+		rubygem-rack-protection3>=0:www/rubygem-rack-protection3
 
 USES=		cpe gem
 
