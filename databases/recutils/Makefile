@@ -1,5 +1,6 @@
 PORTNAME=	recutils
 DISTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -14,6 +15,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 USES=		charsetfix cpe libtool makeinfo pkgconfig readline
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
