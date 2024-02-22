@@ -1,5 +1,6 @@
 PORTNAME=	fldigi
 DISTVERSION=	4.2.04
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME} \
 		http://www.w1hkj.com/files/fldigi/
@@ -28,6 +29,7 @@ USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ENV=	EXTRA_LIBS="-lexecinfo" \
 		FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
