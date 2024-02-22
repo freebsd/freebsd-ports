@@ -1499,6 +1499,7 @@
     SUBDIR += py-dj42-django-celery-results
     SUBDIR += py-dj42-django-compression-middleware
     SUBDIR += py-dj42-django-cors-headers
+    SUBDIR += py-dj42-django-crispy-forms
     SUBDIR += py-dj42-django-debug-toolbar
     SUBDIR += py-dj42-django-extensions
     SUBDIR += py-dj42-django-filter
