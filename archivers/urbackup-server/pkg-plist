@@ -2,7 +2,7 @@ bin/urbackupsrv
 @(,,6555) bin/urbackup_mount_helper
 @(,,6555) bin/urbackup_snapshot_helper
 @mode 0444
-man/man1/urbackupsrv.1.gz
+share/man/man1/urbackupsrv.1.gz
 @mode 0644
 @sample etc/urbackup/urbackupsrv.conf.sample
 etc/newsyslog.conf.d/urbackupsrv.conf

@@ -1,6 +1,6 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -47,6 +47,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/urbackupsrv.conf-newsyslog \
 		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/urbackupsrv.conf
 
-	${INSTALL_MAN} ${WRKSRC}/docs/urbackupsrv.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/urbackupsrv.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
