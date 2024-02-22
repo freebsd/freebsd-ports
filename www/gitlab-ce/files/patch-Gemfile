@@ -1,4 +1,4 @@
---- Gemfile.orig	2024-02-07 07:58:11 UTC
+--- Gemfile.orig	2024-02-20 20:25:18 UTC
 +++ Gemfile
 @@ -58,7 +58,7 @@ gem 'neighbor', '~> 0.2.3' # rubocop:todo Gemfile/Miss
  
@@ -40,6 +40,15 @@
 +gem 'aws-sdk-s3', '~> 1.142' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'faraday_middleware-aws-sigv4', '~>0.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'typhoeus', '~> 1.4.0' # Used with Elasticsearch to support http keep-alive connections # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+@@ -241,7 +241,7 @@ gem 'rack', '~> 2.2.8' # rubocop:todo Gemfile/MissingF
+ gem 'rack-timeout', '~> 0.6.3', require: 'rack/timeout/base' # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+ group :puma do
+-  gem 'puma', '= 6.4.0', require: false, feature_category: :shared
++  gem 'puma', '~> 6.4.0', require: false, feature_category: :shared
+   gem 'sd_notify', '~> 0.1.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
+ end
  
 @@ -252,7 +252,7 @@ gem 'state_machines-activerecord', '~> 0.8.0' # ruboco
  gem 'acts-as-taggable-on', '~> 10.0' # rubocop:todo Gemfile/MissingFeatureCategory
