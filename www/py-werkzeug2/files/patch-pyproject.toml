@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-02-22 20:44:10 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "Werkzeug"
++name = "werkzeug"
+ description = "The comprehensive WSGI web application library."
+ readme = "README.rst"
+ license = {file = "LICENSE.rst"}
