@@ -45,7 +45,9 @@ command_args="--database=${odoo_database} --data-dir=${odoo_datadir} --logfile=/
 odoo_start_precmd() {
 	odoo_datadir_check
 	touch ${pidfile}
+	touch /var/log/${name}.log
 	${chown_cmd} -R ${odoo_user}:${odoo_user} ${pidfile}
+	${chown_cmd} -R ${odoo_user}:${odoo_user} /var/log/${name}.log
 }
 
 odoo_start()
