@@ -1,5 +1,5 @@
 bin/twpsk
-man/man1/twpsk.1.gz
+share/man/man1/twpsk.1.gz
 share/X11/app-defaults/Twpsk
 share/applications/twpsk.desktop
 share/pixmaps/twpsk.png
