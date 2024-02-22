@@ -1,5 +1,6 @@
 PORTNAME=	qrq
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/qrq/
 
