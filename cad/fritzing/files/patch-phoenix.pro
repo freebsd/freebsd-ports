@@ -1,4 +1,4 @@
---- phoenix.pro.orig	2016-01-31 22:20:45 UTC
+--- phoenix.pro.orig	2024-02-22 13:06:37 UTC
 +++ phoenix.pro
 @@ -31,7 +31,7 @@
  # QTPLUGIN  += qjpeg qsqlite
@@ -9,7 +9,7 @@
  win32 {
  # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
  # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
-@@ -92,7 +92,7 @@ macx {
+@@ -92,7 +92,7 @@ unix {
  unix {
      !macx { # unix is defined on mac
          HARDWARE_PLATFORM = $$system(uname -m)
@@ -27,12 +27,8 @@
          }
          BINDIR = $$PREFIX/bin
          DATADIR = $$PREFIX/share
-@@ -114,11 +114,11 @@ unix {
-         desktop.path = $$DATADIR/applications
-         desktop.files += fritzing.desktop
- 
--        manpage.path = $$DATADIR/man/man1
-+        manpage.path = /usr/local/man/man1
+@@ -117,8 +117,8 @@ unix {
+         manpage.path = $$DATADIR/man/man1
          manpage.files += Fritzing.1
  
 -        icon.path = $$DATADIR/icons
