@@ -13,5 +13,5 @@ lib/libsmdev.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pysmdev.a
 %%PYTHON_SITELIBDIR%%/pysmdev.so
 libdata/pkgconfig/libsmdev.pc
-man/man1/smdevinfo.1.gz
-man/man3/libsmdev.3.gz
+share/man/man1/smdevinfo.1.gz
+share/man/man3/libsmdev.3.gz
