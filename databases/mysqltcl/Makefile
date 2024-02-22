@@ -1,6 +1,6 @@
 PORTNAME=	mysqltcl
 PORTVERSION=	3.052
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
@@ -13,9 +13,10 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/${PORTNAME}-${PORTVERSION}/libmysqltcl${PORTVERSION}.so \
 		lib/${PORTNAME}-${PORTVERSION}/pkgIndex.tcl \
-		man/mann/mysqltcl.n.gz
+		share/man/mann/mysqltcl.n.gz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-mysql-include=${LOCALBASE}/include/mysql \
