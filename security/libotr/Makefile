@@ -1,5 +1,6 @@
 PORTNAME=	libotr
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	security net-im net
 MASTER_SITES=	https://otr.cypherpunks.ca/ \
 		http://www.c-s.li/ports/
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 CONFLICTS=	libotr3
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		libtool pathfix cpe
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
