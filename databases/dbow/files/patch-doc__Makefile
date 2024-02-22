@@ -5,6 +5,6 @@
  
  install:
 -	install -C -m 444 dbow.1 $(PREFIX)/man/man1
-+	install -C -m 444 dbow.1 $(DESTDIR)$(PREFIX)/man/man1
++	install -C -m 444 dbow.1 $(DESTDIR)$(PREFIX)/share/man/man1
  
  clean:
