@@ -1,6 +1,6 @@
 PORTNAME=	lmbench
 PORTVERSION=	3.0.a9
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/development/${PORTNAME}-3.0-a9 http://thegaul.org/src/
@@ -45,9 +45,9 @@ do-install:
 	${CP} ${FILESDIR}/Makefile ${STAGEDIR}${PREFIX}/lib/lmbench
 	tar --exclude \*.orig -C ${WRKSRC} -cf - bin scripts results | \
 	  tar -C ${STAGEDIR}${PREFIX}/lib/lmbench -xf -
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	${ECHO_CMD}  ${STAGEDIR}${PREFIX}/lib/lmbench/bin/*/[^l]* \
 		${STAGEDIR}${PREFIX}/lib/lmbench/bin/*/l[iao]* \
 		${STAGEDIR}${PREFIX}/lib/lmbench/bin/*/lmdd \
