@@ -1,5 +1,6 @@
 PORTNAME=	beansdb
 PORTVERSION=	0.7.1.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -15,7 +16,8 @@ GH_ACCOUNT=	douban
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/beansdb man/man1/beansdb.1.gz
+PLIST_FILES=	bin/beansdb share/man/man1/beansdb.1.gz
 
 .include <bsd.port.mk>
