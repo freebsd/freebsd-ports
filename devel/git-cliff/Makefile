@@ -1,6 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -215,10 +215,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		same-file-1.0.6 \
 		sct-0.7.1 \
 		secrecy-0.8.0 \
-		semver-1.0.21 \
+		semver-1.0.22 \
 		serde-1.0.196 \
 		serde_derive-1.0.196 \
-		serde_json-1.0.113 \
+		serde_json-1.0.114 \
 		serde_regex-1.1.0 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
