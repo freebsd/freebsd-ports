@@ -8,6 +8,7 @@
 %%DATADIR%%/lib/Creator/GPXCreator.php
 %%DATADIR%%/lib/Creator/HTMLCreator.php
 %%DATADIR%%/lib/Creator/JSCreator.php
+%%DATADIR%%/lib/Creator/JSONCreator.php
 %%DATADIR%%/lib/Creator/KMLCreator.php
 %%DATADIR%%/lib/Creator/MBOXCreator.php
 %%DATADIR%%/lib/Creator/OPMLCreator.php
@@ -25,6 +26,7 @@
 %%DATADIR%%/lib/constants.php
 %%DATADIR%%/phpunit.xml.dist
 %%DATADIR%%/test/Creator/AtomCreator10Test.php
+%%DATADIR%%/test/Creator/JSONCreatorTest.php
 %%DATADIR%%/test/Creator/RSSCreator10Test.php
 %%DATADIR%%/test/UniversalFeedCreatorTest.php
 %%DATADIR%%/test/__files/rss091.xml
