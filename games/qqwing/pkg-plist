@@ -4,4 +4,4 @@ lib/libqqwing.so
 lib/libqqwing.so.2
 lib/libqqwing.so.2.1.0
 libdata/pkgconfig/qqwing.pc
-man/man1/qqwing.1.gz
+share/man/man1/qqwing.1.gz
