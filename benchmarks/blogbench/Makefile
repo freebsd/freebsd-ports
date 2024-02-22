@@ -1,6 +1,6 @@
 PORTNAME=	blogbench
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/blogbench/
@@ -12,8 +12,9 @@ WWW=		https://github.com/jedisct1/Blogbench
 USES=		tar:bzip2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/blogbench man/man8/blogbench.8.gz
+PLIST_FILES=	bin/blogbench share/man/man8/blogbench.8.gz
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
