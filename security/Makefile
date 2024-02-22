@@ -1354,6 +1354,7 @@
     SUBDIR += vouch-proxy
     SUBDIR += vpnc
     SUBDIR += vuls
+    SUBDIR += vulsrepo
     SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += wapiti

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Congratulations, you have installed %%PORTNAME%%!
+
+Vulsrepo uses the reports saved by security/vuls to present packages' CVEs.
+Follow the install directions for security/vuls to set it up to create reports.
+Install vulsrepo in the same environment where you run the `vuls server'.  Once
+you have reports to present, edit %%PREFIX%%/etc/%%PORTNAME%%-config.toml to
+your liking and start the service:
+
+sysrc %%PORTNAME%%_enable="YES"
+service %%PORTNAME%% start
+
+EOM
+}
+]
