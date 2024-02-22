@@ -1,5 +1,6 @@
 PORTNAME=	biosfont
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	rene@FreeBSD.org
@@ -18,6 +19,6 @@ WRKSRC_SUBDIR=	biosfont
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/biosfont.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/biosfont.4 ${STAGEDIR}${PREFIX}/man/man4
+	${INSTALL_MAN} ${WRKSRC}/biosfont.4 ${STAGEDIR}${PREFIX}/share/man/man4
 
 .include <bsd.port.mk>
