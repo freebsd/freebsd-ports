@@ -24,10 +24,10 @@
 %%EXAMPLESDIR%%/test.pl
 %%EXAMPLESDIR%%/tossing
 %%QCC%%bin/qcc
-%%QCC%%man/man8/qcc.8.gz
+%%QCC%%share/man/man8/qcc.8.gz
 bin/qctl
-man/man8/qctl.8.gz
-man/man8/qico.8.gz
+share/man/man8/qctl.8.gz
+share/man/man8/qico.8.gz
 sbin/qico
 @dir /var/log/fido
 @dir %%QBASEDIR%%
