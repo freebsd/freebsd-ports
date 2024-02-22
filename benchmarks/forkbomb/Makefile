@@ -1,6 +1,6 @@
 PORTNAME=	forkbomb
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	SUNSITE/system/benchmark \
 		http://home.tiscali.cz:8080/~cz210552/distfiles/
@@ -12,6 +12,9 @@ WWW=		http://home.tiscali.cz/~cz210552/forkbomb.html
 LICENSE=	PD
 
 PLIST_FILES=	sbin/forkbomb \
-		man/man8/forkbomb.8.gz
+		share/man/man8/forkbomb.8.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man8|share/man/man8|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
