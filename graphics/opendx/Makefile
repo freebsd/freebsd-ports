@@ -1,6 +1,6 @@
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	37
+PORTREVISION=	38
 CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	ARCH=freebsd
 
