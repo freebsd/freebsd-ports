@@ -11,7 +11,7 @@ bin/kEsetroot
 lib/libEterm-0.9.6.so
 lib/libEterm.a
 lib/libEterm.so
-man/man1/Eterm.1.gz
+share/man/man1/Eterm.1.gz
 share/Eterm/gdb.scr
 share/Eterm/pix/bar_horizontal_1.png
 share/Eterm/pix/bar_horizontal_2.png

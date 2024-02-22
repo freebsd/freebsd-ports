@@ -1,6 +1,6 @@
 PORTNAME=	eterm
 PORTVERSION=	0.9.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Eterm-${PORTVERSION}
 DISTNAME=	Eterm-${PORTVERSION}
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libast.so:devel/libast \
 		libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
