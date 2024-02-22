@@ -25,7 +25,7 @@ bin/fastavalidcds
 bin/fasta2esd
 bin/fastaannotatecdna
 bin/esd2esi
-man/man1/exonerate-server.1.gz
-man/man1/fastautils.1.gz
-man/man1/exonerate.1.gz
-man/man1/ipcress.1.gz
+share/man/man1/exonerate-server.1.gz
+share/man/man1/fastautils.1.gz
+share/man/man1/exonerate.1.gz
+share/man/man1/ipcress.1.gz
