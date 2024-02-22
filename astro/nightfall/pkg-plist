@@ -1,5 +1,5 @@
 bin/nightfall
-man/man1/nightfall.1.gz
+share/man/man1/nightfall.1.gz
 share/applications/nightfall.desktop
 share/locale/de/LC_MESSAGES/nightfall.mo
 share/locale/it/LC_MESSAGES/nightfall.mo
