@@ -1,5 +1,6 @@
 PORTNAME=	libcaes
 DISTVERSION=	alpha-20231120
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/libyal/libcaes/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -12,6 +13,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python --with-openssl=no
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 USES=		libtool pathfix pkgconfig python

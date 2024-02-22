@@ -11,4 +11,4 @@ lib/libcaes.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pycaes.a
 %%PYTHON_SITELIBDIR%%/pycaes.so
 libdata/pkgconfig/libcaes.pc
-man/man3/libcaes.3.gz
+share/man/man3/libcaes.3.gz
