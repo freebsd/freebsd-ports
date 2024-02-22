@@ -1,6 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	5.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	50
@@ -38,7 +38,8 @@ RUN_DEPENDS=	rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
 		rubygem-net-ldap>=0.17.0:net/rubygem-net-ldap \
 		rubygem-rotp>=5.0.0:devel/rubygem-rotp \
 		rubygem-rqrcode>0:www/rubygem-rqrcode \
-		rubygem-erb>0:devel/rubygem-erb
+		rubygem-erb>0:devel/rubygem-erb \
+		rubygem-mini_portile2>=2.8.2<2.9:devel/rubygem-mini_portile2
 
 # Per https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264638#c9
 # to be removed if https://www.redmine.org/issues/37394 is fixed
