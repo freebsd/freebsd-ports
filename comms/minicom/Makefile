@@ -1,5 +1,6 @@
 PORTNAME=	minicom
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	jailbird@fdf.net
@@ -14,6 +15,7 @@ RUN_DEPENDS=	lrz:comms/lrzsz
 USES=		cpe iconv localbase ncurses
 CPE_VENDOR=	minicom_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-dfl-baud=57600 \
 		--enable-dfl-port=/dev/cuau0 \
 		--enable-lock-dir=/var/spool/lock \
