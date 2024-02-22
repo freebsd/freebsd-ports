@@ -9,7 +9,7 @@
 +prefix = ${STAGEDIR}${PREFIX}
 +LIBDIR = $(prefix)/libexec/mafft
 +BINDIR = $(prefix)/bin
-+MANDIR = $(prefix)/man/man1
++MANDIR = $(prefix)/share/man/man1
  
  #MNO_CYGWIN = -mno-cygwin
  

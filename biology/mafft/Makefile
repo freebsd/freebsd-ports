@@ -1,5 +1,6 @@
 PORTNAME=	mafft
 PORTVERSION=	7.267
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://mafft.cbrc.jp/alignment/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-without-extensions-src
