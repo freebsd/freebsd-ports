@@ -20,9 +20,9 @@ share/locale/pt_BR/LC_MESSAGES/foxtrotgps.mo
 share/locale/ru/LC_MESSAGES/foxtrotgps.mo
 share/locale/sk/LC_MESSAGES/foxtrotgps.mo
 share/locale/sr/LC_MESSAGES/foxtrotgps.mo
-man/man1/convert2gpx.1.gz
-man/man1/convert2osm.1.gz
-man/man1/foxtrotgps.1.gz
+share/man/man1/convert2gpx.1.gz
+share/man/man1/convert2osm.1.gz
+share/man/man1/foxtrotgps.1.gz
 share/applications/foxtrotgps.desktop
 %%DOCSDIR%%/cc-by-sa.png
 %%DOCSDIR%%/cc-by-sa_small.png
