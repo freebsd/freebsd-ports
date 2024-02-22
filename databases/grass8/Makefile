@@ -106,7 +106,7 @@ NLS_USES=		gettext
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_WITH=	odbc
 PDAL_CONFIGURE_ON=	--with-pdal=${LOCALBASE}/bin/pdal-config
-PDAL_LIB_DEPENDS=	libpdal_base.so:math/pdal
+PDAL_LIB_DEPENDS=	libpdalcpp.so:math/pdal
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgres
 

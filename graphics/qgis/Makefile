@@ -1,6 +1,6 @@
 PORTNAME=	qgis
 DISTVERSION=	3.34.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -43,7 +43,7 @@ LIB_DEPENDS=	libdraco.so:archivers/draco \
 		libmdal.so:math/mdal \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
-		libpdal_base.so:math/pdal \
+		libpdalcpp.so:math/pdal \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
 		libqjson-qt5.so:devel/qjson \

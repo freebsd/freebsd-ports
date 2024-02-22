@@ -1,13 +1,12 @@
 PORTNAME=	pdal
-DISTVERSION=	2.5.4
-PORTREVISION=	1
+DISTVERSION=	2.6.3
 CATEGORIES=	math databases graphics
 MASTER_SITES=	https://github.com/PDAL/PDAL/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library for translating and manipulating point cloud data
-WWW=		https://www.pdal.io/
+WWW=		https://www.pdal.io
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -15,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
+		libproj.so:graphics/proj \
 		libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libgeotiff.so:graphics/libgeotiff \
@@ -70,9 +70,7 @@ PGPOINTCLOUD_USES=	pgsql
 
 CXXFLAGS_powerpc64=	-mvsx
 
-post-install-BASH-on:
+pre-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
-	${INSTALL_DATA} ${WRKSRC}/scripts/bash-completion/pdal \
-		${STAGEDIR}${PREFIX}/share/bash-completion/completions
 
 .include <bsd.port.mk>
