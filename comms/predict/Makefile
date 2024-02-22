@@ -1,5 +1,6 @@
 PORTNAME=	predict
 PORTVERSION=	2.2.7
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	https://www.qsl.net/kd2bd/ \
 		LOCAL/db

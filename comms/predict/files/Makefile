@@ -25,6 +25,6 @@ install:
 	strip ${STAGEDIR}${PREFIX}/bin/vocalizer
 
 install.man:
-	install -m 0644  docs/man/predict.1 ${STAGEDIR}${PREFIX}/man/man1
+	install -m 0644  docs/man/predict.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .PHONY:	clean build
