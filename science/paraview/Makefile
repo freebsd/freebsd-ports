@@ -1,6 +1,6 @@
 PORTNAME=	paraview
 DISTVERSION=	${PARAVIEW_VER}.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -38,7 +38,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libgeos.so:graphics/geos \
 		libhpdf.so:print/libharu \
 		libproj.so:graphics/proj \
-		libpdal_base.so:math/pdal \
+		libpdalcpp.so:math/pdal \
 		libdrm.so:graphics/libdrm \
 		libcgns.so:science/cgnslib \
 		liblz4.so:archivers/liblz4 \
