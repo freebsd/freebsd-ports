@@ -5,7 +5,7 @@ lib/librecode.a
 lib/librecode.so
 lib/librecode.so.3
 lib/librecode.so.3.0.6
-man/man1/recode.1.gz
+share/man/man1/recode.1.gz
 share/locale/da/LC_MESSAGES/recode.mo
 share/locale/de/LC_MESSAGES/recode.mo
 share/locale/el/LC_MESSAGES/recode.mo
