@@ -1,5 +1,5 @@
 bin/xdx
-man/man1/xdx.1.gz
+share/man/man1/xdx.1.gz
 share/applications/Xdx.desktop
 share/locale/de/LC_MESSAGES/xdx.mo
 share/locale/en@boldquot/LC_MESSAGES/xdx.mo
