@@ -1,6 +1,6 @@
 PORTNAME=	fuse-utils
 DISTVERSION=	1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -20,6 +20,7 @@ USES=		gettext gnome iconv jpeg pkgconfig
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
 		--with-local-prefix=${LOCALBASE}
 
