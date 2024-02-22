@@ -1,5 +1,6 @@
 PORTNAME=	libpinyin
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -14,6 +15,7 @@ USES=		bdb compiler:c++11-lang gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include \

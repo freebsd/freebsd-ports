@@ -9,7 +9,7 @@ lib/libpinyin.so
 lib/libpinyin.so.%%ABIVER%%
 lib/libpinyin.so.%%ABIVER%%.0.0
 libdata/pkgconfig/libpinyin.pc
-man/man1/libpinyin.1.gz
+share/man/man1/libpinyin.1.gz
 %%DATADIR%%/data/addon_phrase_index.bin
 %%DATADIR%%/data/addon_pinyin_index.bin
 %%DATADIR%%/data/art.bin
