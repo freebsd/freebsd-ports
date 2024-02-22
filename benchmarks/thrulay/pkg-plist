@@ -6,5 +6,5 @@ lib/libthrulay.a
 lib/libthrulay.so
 lib/libthrulay.so.0
 lib/libthrulay.so.0.0.0
-man/man1/thrulay.1.gz
-man/man8/thrulayd.8.gz
+share/man/man1/thrulay.1.gz
+share/man/man8/thrulayd.8.gz
