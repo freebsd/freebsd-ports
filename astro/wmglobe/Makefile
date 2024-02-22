@@ -1,6 +1,6 @@
 PORTNAME=	wmglobe
 PORTVERSION=	1.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	astro windowmaker geography
 MASTER_SITES=	https://www.dockapps.net/download/
 
@@ -19,6 +19,6 @@ USE_XORG=	x11 xext xpm
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 PLIST_FILES=	bin/wmglobe \
-		man/man1/wmglobe.1.gz
+		share/man/man1/wmglobe.1.gz
 
 .include <bsd.port.mk>
