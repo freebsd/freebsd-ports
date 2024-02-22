@@ -1,6 +1,6 @@
 PORTNAME=	ebook2cw
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 		LOCAL/db
@@ -25,7 +25,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ebook2cw ${STAGEDIR}${PREFIX}/bin/ebook2cw
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ebook2cw
-	${INSTALL_DATA} ${WRKSRC}/ebook2cw.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/ebook2cw.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ebook2cw.conf isomap.txt utf8map.txt
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}/$f
