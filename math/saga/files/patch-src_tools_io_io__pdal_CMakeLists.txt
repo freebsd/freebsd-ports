@@ -1,0 +1,17 @@
+--- src/tools/io/io_pdal/CMakeLists.txt.orig	2024-02-22 20:37:05 UTC
++++ src/tools/io/io_pdal/CMakeLists.txt
+@@ -9,11 +9,10 @@ if(WITH_TOOLS_PDAL)
+ 		endif()
+ 		find_path   (PDAL_INCLUDE_DIR  NAMES pdal/pdal.hpp          PATHS "${LIB4SAGA}/include")
+ 		find_library(PDAL_LIBRARY_CPP  NAMES pdalcpp libpdalcpp     PATHS "${LIB4SAGA}/lib")
+-		find_library(PDAL_LIBRARY_UTIL NAMES pdal_util libpdal_util PATHS "${LIB4SAGA}/lib")
+-		mark_as_advanced(PDAL_INCLUDE_DIR PDAL_LIBRARY_CPP PDAL_LIBRARY_UTIL)
++		mark_as_advanced(PDAL_INCLUDE_DIR PDAL_LIBRARY_CPP)
+ 		include(FindPackageHandleStandardArgs)
+-		FIND_PACKAGE_HANDLE_STANDARD_ARGS(PDAL REQUIRED_VARS PDAL_LIBRARY_UTIL PDAL_LIBRARY_CPP PDAL_INCLUDE_DIR)
+-		set(PDAL_LIBRARIES ${PDAL_LIBRARY_CPP} ${PDAL_LIBRARY_UTIL} ws2_32)
++		FIND_PACKAGE_HANDLE_STANDARD_ARGS(PDAL REQUIRED_VARS PDAL_LIBRARY_CPP PDAL_INCLUDE_DIR)
++		set(PDAL_LIBRARIES ${PDAL_LIBRARY_CPP} ws2_32)
+ 	endif()
+ 	if(NOT PDAL_FOUND)
+ 		find_package(PDAL QUIET)	# link PDAL library
