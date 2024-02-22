@@ -1,6 +1,6 @@
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,12 +16,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=1.1.0:devel/py-dateparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=2.4.0:www/py-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-crispy-forms>=1.7.2:www/py-django-crispy-forms@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-extensions>=2.1.6:www/py-django-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-filter>=2.0.0:www/py-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangoql>=0.17.0:www/py-djangoql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.9.0:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=2.4.0:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-crispy-forms>=1.7.2:www/py-dj42-django-crispy-forms@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-extensions>=2.1.6:www/py-dj42-django-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=2.0.0:www/py-dj42-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-djangoql>=0.17.0:www/py-dj42-djangoql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.9.0:www/py-dj42-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fuzzywuzzy>=0.15.1:devel/py-fuzzywuzzy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.9:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdftotext>=2.1.1:textproc/py-pdftotext@${PY_FLAVOR} \
@@ -43,6 +43,8 @@ USE_RC_SUBR=	paperless-consumer
 
 SHEBANG_FILES=	${WRKSRC}/src/manage.py
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*paperless-ngx
+
 SUB_FILES=	README nginx.conf paperless.7 pkg-message sshd_config uwsgi.ini
 SUB_LIST=	PKGBASE=${PKGBASE} PYTHON_CMD=${PYTHON_CMD} \
 		PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR} \
@@ -57,7 +59,7 @@ GROUPS=		paperless
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_SINGLE=		IMAGICK
 OPTIONS_SINGLE_IMAGICK=	IMAGICK6_NOX11 IMAGICK6_X11 IMAGICK7_NOX11 IMAGICK7_X11
-OPTIONS_DEFAULT=	IMAGICK6_X11
+OPTIONS_DEFAULT=	IMAGICK7_X11
 
 IMAGICK_DESC=		${IMAGEMAGICK_DESC}
 IMAGICK6_NOX11_DESC=	ImageMagick6 without X11 support
