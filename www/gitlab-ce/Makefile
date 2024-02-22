@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -195,7 +195,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 	rubygem-tanuki_emoji>=0.9<1:graphics/rubygem-tanuki_emoji \
 	rubygem-gon-rails70>=6.4.0<6.5:www/rubygem-gon-rails70 \
-	rubygem-request_store>=1.5.1<2.0:devel/rubygem-request_store \
+	rubygem-request_store15>=1.5.1<1.6:devel/rubygem-request_store15 \
 	rubygem-base32>=0.3.0<0.4.0:converters/rubygem-base32 \
 	rubygem-gitlab-license>=2.3<3:devel/rubygem-gitlab-license \
 	rubygem-rack-attack>=6.7.0<6.8:www/rubygem-rack-attack \
