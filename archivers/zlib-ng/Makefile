@@ -8,7 +8,7 @@ WWW=		https://github.com/zlib-ng/zlib-ng
 
 LICENSE=	ZLIB
 
-USES=		cmake compiler:c11
+USES=		cmake:${TESTING} compiler:c11
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
@@ -16,8 +16,10 @@ OPTIONS_DEFINE=	SIMD TEST
 
 SIMD_CMAKE_BOOL=	WITH_OPTIM
 TEST_BUILD_DEPENDS=	googletest>=0:devel/googletest
+TEST_VARS=		TESTING=testing
 TEST_CMAKE_BOOL=	ZLIB_ENABLE_TESTS ZLIBNG_ENABLE_TESTS
-TEST_BROKEN=		error: use of undeclared identifier 'isascii'
+# error: use of undeclared identifier 'isascii'
+TEST_CFLAGS=		-D__XSI_VISIBLE
 
 PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
