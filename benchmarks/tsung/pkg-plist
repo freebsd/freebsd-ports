@@ -282,9 +282,9 @@ lib/tsung/tsung_recorder-%%PORTVERSION%%/src/ts_proxy_recorder.erl
 lib/tsung/tsung_recorder-%%PORTVERSION%%/src/ts_proxy_webdav.erl
 lib/tsung/tsung_recorder-%%PORTVERSION%%/src/ts_recorder_sup.erl
 lib/tsung/tsung_recorder-%%PORTVERSION%%/src/tsung_recorder.erl
-man/man1/tsplot.1.gz
-man/man1/tsung-recorder.1.gz
-man/man1/tsung.1.gz
+share/man/man1/tsplot.1.gz
+share/man/man1/tsung-recorder.1.gz
+share/man/man1/tsung.1.gz
 %%DATADIR%%/templates/footer.thtml
 %%DATADIR%%/templates/graph.thtml
 %%DATADIR%%/templates/graph_dy.thtml
