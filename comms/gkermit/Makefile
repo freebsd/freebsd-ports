@@ -1,5 +1,6 @@
 PORTNAME=	gkermit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.kermitproject.org/kermit/archives/
 DISTNAME=	gku100
@@ -17,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gkermit ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gkermit.nr ${STAGEDIR}${PREFIX}/man/man1/gkermit.1
+	${INSTALL_MAN} ${WRKSRC}/gkermit.nr ${STAGEDIR}${PREFIX}/share/man/man1/gkermit.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
