@@ -1,5 +1,6 @@
 PORTNAME=	uudeview
 PORTVERSION=	0.5.20
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
@@ -15,13 +16,14 @@ USES=		cpe
 LIB_DEPENDS=	libuu.so:converters/uulib
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-tcl
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	HISTORY porting.notes
-PLIST_FILES=	bin/uudeview bin/uuenview man/man1/uudeview.1.gz \
-		man/man1/uuenview.1.gz
+PLIST_FILES=	bin/uudeview bin/uuenview share/man/man1/uudeview.1.gz \
+		share/man/man1/uuenview.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
