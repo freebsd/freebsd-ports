@@ -1,6 +1,6 @@
 PORTNAME=	grass
 PORTVERSION=	7.8.7
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -113,7 +113,7 @@ NLS_USES=		gettext
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_WITH=	odbc
 PDAL_CONFIGURE_ON=	--with-pdal=${LOCALBASE}/bin/pdal-config
-PDAL_LIB_DEPENDS=	libpdal_base.so:math/pdal
+PDAL_LIB_DEPENDS=	libpdalcpp.so:math/pdal
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgres
 SQLITE_USES=		sqlite
