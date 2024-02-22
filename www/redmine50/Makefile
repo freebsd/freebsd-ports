@@ -1,6 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	5.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	50
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
 		rubygem-globalid-rails61>0:databases/rubygem-globalid-rails61 \
 		rubygem-rails61>=6.1:www/rubygem-rails61 \
 		rubygem-rouge3>=3.28.0:textproc/rubygem-rouge3 \
-		rubygem-request_store>=1.5.0:devel/rubygem-request_store \
+		rubygem-request_store15>=1.5.0:devel/rubygem-request_store15 \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
 		rubygem-actionpack-xml_parser-rails61>=0:textproc/rubygem-actionpack-xml_parser-rails61 \
 		rubygem-roadie-rails-rails61>=3.0.0:mail/rubygem-roadie-rails-rails61 \
