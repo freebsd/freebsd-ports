@@ -1,7 +1,7 @@
 PORTNAME=	glfw
-DISTVERSION=	3.3.9
+DISTVERSION=	3.3.10
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
@@ -28,7 +28,8 @@ OPTIONS_SINGLE=			PLATFORM
 OPTIONS_SINGLE_PLATFORM=	WAYLAND X11
 PLATFORM_DESC=			Window creation platform
 
-WAYLAND_BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon \
+WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+			libxkbcommon>0:x11/libxkbcommon \
 			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libwayland-egl.so:graphics/wayland
