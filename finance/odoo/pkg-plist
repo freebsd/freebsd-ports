@@ -23554,7 +23554,7 @@ bin/odoo
 %%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/home/pi/odoo/addons/point_of_sale/__manifest__.py
 %%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/home/pi/odoo/addons/point_of_sale/__pycache__/__manifest__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/home/pi/odoo/addons/point_of_sale/__pycache__/__manifest__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/usr/local/%%PYTHON_LIBDIR%%/dist-packages/v4l2.py.iotpatch
+%%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/usr/local/lib/python3.9/dist-packages/v4l2.py.iotpatch
 %%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/usr/share/eftdvs/eftdvs.cfg
 %%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/usr/share/firefox-esr/browser/defaults/preferences/all-posbox.js
 %%PYTHON_SITELIBDIR%%/odoo/addons/point_of_sale/tools/posbox/overwrite_after_init/var/www/iot.jpg
