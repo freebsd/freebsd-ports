@@ -1,3 +1,45 @@
+  <vuln vid="03bf5157-d145-11ee-acee-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.9.0</ge><lt>16.9.1</lt></range>
+	<range><ge>16.8.0</ge><lt>16.8.3</lt></range>
+	<range><ge>11.3.0</ge><lt>16.7.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/02/21/security-release-gitlab-16-9-1-released/">
+	  <p>Stored-XSS in user's profile page</p>
+	  <p>User with "admin_group_members" permission can invite other groups to gain owner access</p>
+	  <p>ReDoS issue in the Codeowners reference extractor</p>
+	  <p>LDAP user can reset password using secondary email and login using direct authentication</p>
+	  <p>Bypassing group ip restriction settings to access environment details of projects through Environments/Operations Dashboard</p>
+	  <p>Users with the Guest role can change Custom dashboard projects settings for projects in the victim group</p>
+	  <p>Group member with sub-maintainer role can change title of shared private deploy keys</p>
+	  <p>Bypassing approvals of CODEOWNERS</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1451</cvename>
+      <cvename>CVE-2023-6477</cvename>
+      <cvename>CVE-2023-6736</cvename>
+      <cvename>CVE-2024-1525</cvename>
+      <cvename>CVE-2023-4895</cvename>
+      <cvename>CVE-2024-0861</cvename>
+      <cvename>CVE-2023-3509</cvename>
+      <cvename>CVE-2024-0410</cvename>
+      <url>https://about.gitlab.com/releases/2024/02/21/security-release-gitlab-16-9-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-02-21</discovery>
+      <entry>2024-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e15ba624-cca8-11ee-84ca-b42e991fc52e">
     <topic>powerdns-recursor -- Multiple Vulnerabilities</topic>
     <affects>
