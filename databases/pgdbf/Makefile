@@ -1,5 +1,6 @@
 PORTNAME=	pgdbf
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -11,9 +12,10 @@ LICENSE=	GPLv3
 
 USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/pgdbf \
 		%%DOCSDIR%%/README \
-		man/man1/pgdbf.1.gz
+		share/man/man1/pgdbf.1.gz
 
 .include <bsd.port.mk>
