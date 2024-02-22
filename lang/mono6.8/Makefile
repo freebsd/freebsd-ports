@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	6.8.0.123
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	6.8
@@ -31,6 +31,7 @@ USES=	autoreconf:2.69 bison compiler:c11 cpe gmake iconv libtool localbase \
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	mono/mini/genmdesc.py \
