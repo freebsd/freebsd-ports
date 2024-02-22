@@ -1,6 +1,6 @@
 PORTNAME=	engrampa
 PORTVERSION=	1.26.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -25,6 +25,7 @@ USE_MATE=	caja
 USE_GNOME=	cairo gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-packagekit
 INSTALL_TARGET=	install-strip
 
