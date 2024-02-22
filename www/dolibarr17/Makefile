@@ -1,5 +1,5 @@
 PORTNAME=	dolibarr17
-DISTVERSION=	17.0.3
+DISTVERSION=	17.0.4
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
@@ -28,6 +28,7 @@ post-extract:
 	${RM} -R ${WRKSRC}/.github
 	${RM} ${WRKSRC}/.gitmessage
 	${RM} ${WRKSRC}/.stickler.yml
+	${RM} ${WRKSRC}/.pre-commit-config.yaml
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}
