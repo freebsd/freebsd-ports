@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.8.2
+PORTVERSION=	16.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
