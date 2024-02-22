@@ -1,5 +1,6 @@
 PORTNAME=	cless
 PORTVERSION=	290
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
@@ -10,6 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 CPP=		#
 
