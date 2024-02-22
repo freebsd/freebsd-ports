@@ -1,5 +1,5 @@
 bin/xnec2c
-man/man1/xnec2c.1.gz
+share/man/man1/xnec2c.1.gz
 share/applications/xnec2c.desktop
 %%DOCSDIR%%/NEC2-bug.txt
 %%DOCSDIR%%/NearFieldCalcs.txt
