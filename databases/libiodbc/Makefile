@@ -1,6 +1,7 @@
 PORTNAME=	libiodbc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.52.16
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,6 +15,7 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.LGPL
 
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-iodbc-inidir=${ETCDIR} \
 		--includedir=${LOCALBASE}/include/libiodbc \
 		--disable-libodbc
