@@ -1,5 +1,6 @@
 PORTNAME=	hc
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 DISTFILES=	hc-30.tar.gz hc-supp.tab
@@ -23,6 +24,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/g2b ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/hc.tab ${STAGEDIR}${PREFIX}/share/chinese
 	${INSTALL_DATA} ${DISTDIR}/hc-supp.tab ${STAGEDIR}${PREFIX}/share/chinese
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
