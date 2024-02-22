@@ -1,5 +1,6 @@
 PORTNAME=	iozone
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/others/
 EXTRACT_SUFX=	.shar.gz
@@ -12,7 +13,7 @@ WWW=		https://www.iozone.org/
 CONFLICTS_INSTALL=	iozone
 
 PLIST_FILES=	bin/iozone \
-		man/man1/iozone.1.gz
+		share/man/man1/iozone.1.gz
 
 EXTRACT_CMD=	( ${GZCAT} | ${AWK} '{if (/^\#!/) x++} {if(x) print $$0'}| ${SH} )
 EXTRACT_BEFORE_ARGS=	<
