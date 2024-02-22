@@ -1,6 +1,6 @@
 PORTNAME=	namazu
 PORTVERSION=	${NAMAZU_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
@@ -14,6 +14,7 @@ RUN_DEPENDS=	p5-File-MMagic>=0:devel/p5-File-MMagic
 
 USES=		cpe gettext iconv libtool perl5
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \
 		--localstatedir=/var \
