@@ -3,7 +3,7 @@ share/locale/de/LC_MESSAGES/grig.mo
 share/locale/it/LC_MESSAGES/grig.mo
 share/locale/fr/LC_MESSAGES/grig.mo
 share/locale/tr/LC_MESSAGES/grig.mo
-man/man1/grig.1.gz
+share/man/man1/grig.1.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
