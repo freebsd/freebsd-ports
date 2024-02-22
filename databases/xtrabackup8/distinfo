@@ -1,5 +1,0 @@
-TIMESTAMP = 1677255149
-SHA256 (percona-xtrabackup-8.0.31-24.tar.gz) = 0031a91501a98e09b8d3955d580552ae05ac28696143369ba461aa1fa04c5140
-SIZE (percona-xtrabackup-8.0.31-24.tar.gz) = 336261760
-SHA256 (boost_1_77_0.tar.gz) = 5347464af5b14ac54bb945dc68f1dd7c56f0dad7262816b956138fc53bcc0131
-SIZE (boost_1_77_0.tar.gz) = 130620992

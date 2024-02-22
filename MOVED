@@ -2992,3 +2992,4 @@ security/py-pysha3||2024-02-17|Merged into python standard library since version
 graphics/qcustomplot-qt5|graphics/qcustomplot|2024-02-19|Renamed to support flavors
 audio/play||2024-02-20|Has expired: Upstream vaporized and last release was in 2000
 graphics/fotoxx|graphics/fotocx|2024-02-21|Project was renamed upstream
+databases/xtrabackup8|databases/xtrabackup80|2024-02-22|Rename port to avoid confusion

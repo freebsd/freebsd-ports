@@ -1,11 +1,9 @@
-PORTNAME=	xtrabackup
-PORTVERSION=	8.0.31
-DISTVERSIONSUFFIX=	-24
-PORTREVISION=	3
+PORTNAME=	xtrabackup80
+PORTVERSION=	8.0.35
+DISTVERSIONSUFFIX=	-30
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/percona/percona-xtrabackup/archive/:percona \
+MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-8.0/Percona-XtraBackup-8.0.35-30/source/tarball/:percona \
 		SF/boost/boost/${BOOST_VERSION}:boost
-PKGNAMESUFFIX=	8
 DISTFILES=	${PPORTNAME}-${DVERSION}${EXTRACT_SUFX}:percona \
 		boost_${BOOST_VERSION_UNDER}${EXTRACT_SUFX}:boost
 
@@ -18,14 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	protobuf>=3.0:devel/protobuf \
 		rapidjson>=1.1.0:devel/rapidjson \
-		libevent>=2.1:devel/libevent \
-		ncurses>=6.3:devel/ncurses
+		libevent>=2.1:devel/libevent
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libev.so:devel/libev \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libicudata.so:devel/icu \
-		libncurses.so.6:devel/ncurses \
 		libprotobuf-lite.so:devel/protobuf \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
@@ -41,7 +37,7 @@ CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release \
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system
 .endfor
 
-CONFLICTS_INSTALL=	${PORTNAME}
+CONFLICTS_INSTALL=	${PORTNAME:C/.$//}*
 
 # Bundle last supported Boost release
 BOOST_VERSION=	1.77.0
@@ -54,8 +50,8 @@ CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
 DVERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
-PPORTNAME=	percona-${PORTNAME}
-WRKSRC=		${WRKDIR}/${PPORTNAME}-${PPORTNAME}-${DVERSION}
+PPORTNAME=	percona-xtrabackup
+WRKSRC=		${WRKDIR}/${PPORTNAME}-${DVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -69,9 +65,12 @@ CXXFLAGS+=	-malign-double
 KEEP_EXTRA=	lz4 robin-hood-hashing zlib
 
 post-patch:
+.for d in storage/innobase/xtrabackup/src sql/protobuf
+	${REINPLACE_CMD} 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/${d}/CMakeLists.txt
+.endfor
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
-		${WRKSRC}/../boost_1_77_0/boost/container_hash/hash.hpp
+		${WRKSRC}/../boost_${BOOST_VERSION_UNDER}/boost/container_hash/hash.hpp
 .endif
 
 pre-configure:
@@ -84,7 +83,7 @@ pre-configure:
 .endfor
 
 post-stage:
-	@${RM} -r ${STAGEDIR}${PREFIX}/docs
+	@${RM} -r ${STAGEDIR}${PREFIX}/docs ${STAGEDIR}${PREFIX}/man
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/plugin/debug
 
 .include <bsd.port.post.mk>

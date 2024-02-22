@@ -1,15 +1,15 @@
---- storage/innobase/log/log0recv.cc.orig	2023-01-30 20:34:34.000000000 +0700
-+++ storage/innobase/log/log0recv.cc	2023-03-10 12:08:29.586971000 +0700
-@@ -3789,7 +3789,7 @@ static bool recv_scan_log_recs(log_t &log,
+--- storage/innobase/log/log0recv.cc.orig	2023-11-24 13:33:10.000000000 +0300
++++ storage/innobase/log/log0recv.cc	2024-02-16 15:16:49.528584000 +0300
+@@ -3702,7 +3702,7 @@
  #else  /* !UNIV_HOTBACKUP */
  bool meb_scan_log_recs(
  #endif /* !UNIV_HOTBACKUP */
 -                               size_t *max_memory, const byte *buf, size_t len,
 +                               size_t max_memory, const byte *buf, size_t len,
                                 lsn_t start_lsn, lsn_t *read_upto_lsn,
-                                dberr_t &err, lsn_t to_lsn) {
+                                lsn_t to_lsn) {
    const byte *log_block = buf;
-@@ -4066,7 +4066,7 @@ bool meb_scan_log_recs(
+@@ -3975,7 +3975,7 @@
      recv_parse_log_recs();
  
  #ifndef UNIV_HOTBACKUP
@@ -18,12 +18,12 @@
        recv_apply_hashed_log_recs(log, false);
      }
  #endif /* !UNIV_HOTBACKUP */
-@@ -4254,7 +4254,7 @@ static dberr_t recv_recovery_begin(log_t &log, const l
- 
-     dberr_t err;
+@@ -4161,7 +4161,7 @@
+       break;
+     }
  
 -    finished = recv_scan_log_recs(log, &max_mem, log.buf, end_lsn - start_lsn,
 +    finished = recv_scan_log_recs(log, max_mem, log.buf, end_lsn - start_lsn,
-                                   start_lsn, &log.m_scanned_lsn, err, to_lsn);
+                                   start_lsn, &log.m_scanned_lsn, to_lsn);
  
-     if (err != DB_SUCCESS) {
+     start_lsn = end_lsn;

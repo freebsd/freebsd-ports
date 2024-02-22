@@ -1066,7 +1066,7 @@
     SUBDIR += xls2txt
     SUBDIR += xrootd
     SUBDIR += xtrabackup
-    SUBDIR += xtrabackup8
+    SUBDIR += xtrabackup80
     SUBDIR += zodb
 
 .include <bsd.port.subdir.mk>

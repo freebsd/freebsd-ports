@@ -1,0 +1,28 @@
+--- storage/innobase/xtrabackup/src/CMakeLists.txt.orig	2023-11-24 13:33:10.000000000 +0300
++++ storage/innobase/xtrabackup/src/CMakeLists.txt	2024-02-16 15:38:03.294091000 +0300
+@@ -20,8 +20,9 @@
+ 
+ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
+ 
++INCLUDE_DIRECTORIES(%%PREFIX%%/include)
++
+ FIND_GCRYPT()
+-FIND_PROCPS()
+ 
+ CHECK_TYPE_SIZE("unsigned long" SIZEOF_UNSIGNED_LONG)
+ 
+@@ -134,14 +135,6 @@
+   ext::icu
+   crc
+   )
+-
+-IF(NOT APPLE)
+-  IF(PROCPS_VERSION EQUAL 4)
+-    TARGET_LINK_LIBRARIES(xtrabackup proc2)
+-  ELSE()
+-    TARGET_LINK_LIBRARIES(xtrabackup procps)
+-  ENDIF()
+-ENDIF()
+ 
+  # We depend on protobuf because of the mysqlx plugin and replication.
+  IF(UNIX_INSTALL_RPATH_ORIGIN_PRIV_LIBDIR)
