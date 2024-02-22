@@ -1,6 +1,6 @@
 PORTNAME=	bitchx
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		cpe gmake ncurses
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
