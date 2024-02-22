@@ -1,6 +1,6 @@
 PORTNAME=	avrdude
 PORTVERSION=	6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH/avrdude
 PKGNAMEPREFIX=	arduino-
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libftdi1.so:devel/libftdi1
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		libtool localbase readline
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -26,7 +27,7 @@ CONFIGURE_ARGS+=	--disable-shared --disable-static
 
 PLIST_FILES=	bin/arduino-avrdude \
 		etc/arduino-avrdude.conf \
-		man/man1/arduino-avrdude.1.gz
+		share/man/man1/arduino-avrdude.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lusb-1.0|-lusb|g' ${WRKSRC}/configure
