@@ -1,5 +1,6 @@
 PORTNAME=	pgbouncer
 PORTVERSION=	1.21.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -53,8 +54,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbouncer ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 	${INSTALL_DATA} ${WRKSRC}/etc/pgbouncer.ini \
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/userlist.txt \
