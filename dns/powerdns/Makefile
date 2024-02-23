@@ -1,6 +1,6 @@
 PORTNAME=	powerdns
 DISTVERSION=	4.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -23,7 +23,8 @@ USES=		autoreconf compiler:c++11-lib cpe gmake libtool \
 USE_RC_SUBR=	pdns
 USE_SUBMAKE=	YES
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static \
 		--docdir="${PREFIX}/share/doc/powerdns" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
