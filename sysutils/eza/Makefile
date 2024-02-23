@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.3
+DISTVERSION=	0.18.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -39,7 +39,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		cast-0.3.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.33 \
+		chrono-0.4.34 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
@@ -81,7 +81,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		itoa-1.0.9 \
 		jobserver-0.1.22 \
 		js-sys-0.3.64 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libz-sys-1.1.2 \
 		line-wrap-0.1.1 \
@@ -139,8 +139,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		shlex-1.3.0 \
 		similar-2.2.1 \
 		siphasher-0.3.11 \
-		snapbox-0.4.16 \
-		snapbox-macros-0.3.7 \
+		snapbox-0.5.5 \
+		snapbox-macros-0.3.8 \
 		syn-2.0.29 \
 		tempfile-3.8.0 \
 		terminal_size-0.3.0 \
@@ -154,8 +154,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.21.0 \
-		trycmd-0.14.20 \
+		toml_edit-0.22.6 \
+		trycmd-0.15.0 \
 		unicode-bidi-0.3.5 \
 		unicode-ident-1.0.11 \
 		unicode-normalization-0.1.17 \
@@ -196,7 +196,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.15 \
+		winnow-0.6.2 \
 		zoneinfo_compiled-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME} \
