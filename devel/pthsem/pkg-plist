@@ -5,6 +5,6 @@ lib/libpthsem.so
 lib/libpthsem.so.20
 lib/libpthsem.so.20.0.28
 libdata/pkgconfig/pthsem.pc
-man/man1/pthsem-config.1.gz
-man/man3/pthsem.3.gz
+share/man/man1/pthsem-config.1.gz
+share/man/man3/pthsem.3.gz
 share/aclocal/pthsem.m4
