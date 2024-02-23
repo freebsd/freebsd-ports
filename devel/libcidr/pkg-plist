@@ -2,7 +2,7 @@ bin/cidrcalc
 include/libcidr.h
 lib/libcidr.so
 lib/libcidr.so.0
-man/man3/libcidr.3.gz
+share/man/man3/libcidr.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/codelibrary-html.css
 %%PORTDOCS%%%%DOCSDIR%%/libcidr-big.html
 %%PORTDOCS%%%%DOCSDIR%%/libcidr.dvi
