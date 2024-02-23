@@ -1,5 +1,6 @@
 PORTNAME=	diffutils
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -13,6 +14,7 @@ LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 
 USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g
 TEST_TARGET=	check
 CPE_VENDOR=	gnu
