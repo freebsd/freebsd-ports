@@ -1,5 +1,6 @@
 PORTNAME=	mate-common
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	devel mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,5 +16,6 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gmake pkgconfig:both tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>
