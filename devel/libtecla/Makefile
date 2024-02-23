@@ -1,5 +1,6 @@
 PORTNAME=	libtecla
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
@@ -13,6 +14,7 @@ USE_LDCONFIG=	yes
 USE_SUBMAKE=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	default
@@ -42,19 +44,19 @@ do-install:
 .endfor
 	for n in ${WRKSRC}/man/prog/*.in; do \
 		d=$${n##*/}; \
-		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man1/$${d%.in}.1; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/share/man/man1/$${d%.in}.1; \
 	done
 	for n in ${WRKSRC}/man/libr/*.in ${WRKSRC}/man/func/*.in; do \
 		d=$${n##*/}; \
-		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man3/$${d%.in}.3; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/share/man/man3/$${d%.in}.3; \
 	done
 	for n in ${WRKSRC}/man/file/*.in; do \
 		d=$${n##*/}; \
-		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man5/$${d%.in}.5; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/share/man/man5/$${d%.in}.5; \
 	done
 	for n in ${WRKSRC}/man/misc/*.in; do \
 		d=$${n##*/}; \
-		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man7/$${d%.in}.7; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/share/man/man7/$${d%.in}.7; \
 	done
 
 .include <bsd.port.post.mk>
