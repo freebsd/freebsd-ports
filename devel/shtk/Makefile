@@ -1,35 +1,28 @@
 PORTNAME=	shtk
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
-		LOCAL/jmmv
+MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	jmmv@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Application toolkit for POSIX-compliant shell scripts
 WWW=		https://github.com/jmmv/shtk/
 
 LICENSE=	BSD3CLAUSE
 
+USES=	pathfix
+
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS TEST
 OPTIONS_DEFAULT=TEST
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+DOCS_VARS_OFF=	MAKE_FLAGS+=doc_DATA=
 
-MAKE_FLAGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
-.if empty(PORT_OPTIONS:MDOCS)
-MAKE_FLAGS+=	doc_DATA=
-.endif
-.if empty(PORT_OPTIONS:MTEST)
-PLIST_SUB+=	TEST="@comment "
-.else
-PLIST_SUB+=	TEST=
-.endif
-
-post-install:
-.if empty(PORT_OPTIONS:MTEST)
+post-install-TEST-off:
 	@${RM} -r ${STAGEDIR}${PREFIX}/tests
-.endif
 
 .include <bsd.port.mk>
