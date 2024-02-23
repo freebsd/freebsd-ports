@@ -1,5 +1,6 @@
 PORTNAME=	git-extras
 DISTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	igor.ostapenko@pm.me
@@ -11,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
 		git:devel/git
+
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man/man1
 
 USES=		gmake
 
