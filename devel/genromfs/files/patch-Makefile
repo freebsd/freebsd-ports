@@ -18,7 +18,7 @@
 -mandir = $(prefix)/man
 +PREFIX ?= /usr
 +bindir = /bin
-+mandir = /man
++mandir = /share/man
  
  genromfs: genromfs.o
  	$(CC) $(LDFLAGS) genromfs.o -o genromfs
