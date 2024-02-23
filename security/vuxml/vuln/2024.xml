@@ -1,3 +1,29 @@
+  <vuln vid="255bf44c-d298-11ee-9c27-40b034429ecf">
+    <topic>dns/c-ares -- malformatted file causes application crash</topic>
+    <affects>
+      <package>
+	<name>c-ares</name>
+	<range><lt>1.27.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>c-ares project reports:</p>
+	<blockquote cite="https://c-ares.org/changelog.html">
+	  <p>Reading malformatted /etc/resolv.conf, /etc/nsswitch.conf or the HOSTALIASES file could result in a crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25629</cvename>
+      <url>https://github.com/c-ares/c-ares/security/advisories/GHSA-mg26-v6qh-x48q</url>
+    </references>
+    <dates>
+      <discovery>2024-02-23</discovery>
+      <entry>2024-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="979dc373-d27d-11ee-8b84-b42e991fc52e">
     <topic>suricata -- multiple vulnerabilities</topic>
     <affects>
