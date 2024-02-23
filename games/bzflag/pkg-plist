@@ -34,10 +34,10 @@ lib/bzflag/teamflagreset.so
 lib/bzflag/thiefControl.so
 lib/bzflag/timedctf.so
 lib/bzflag/wwzones.so
-man/man5/bzw.5.gz
-man/man6/bzadmin.6.gz
-man/man6/bzflag.6.gz
-man/man6/bzfs.6.gz
+share/man/man5/bzw.5.gz
+share/man/man6/bzadmin.6.gz
+share/man/man6/bzflag.6.gz
+share/man/man6/bzfs.6.gz
 %%DATADIR%%/automatic_icon.png
 %%DATADIR%%/blend_flash.png
 %%DATADIR%%/blue_basetop.png
