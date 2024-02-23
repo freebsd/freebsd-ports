@@ -4763,6 +4763,8 @@ bin/grafana-server
 %%DATADIR%%/public/emails/reset_password.txt
 %%DATADIR%%/public/emails/signup_started.html
 %%DATADIR%%/public/emails/signup_started.txt
+%%DATADIR%%/public/emails/verify_email_update.html
+%%DATADIR%%/public/emails/verify_email_update.txt
 %%DATADIR%%/public/emails/welcome_on_signup.html
 %%DATADIR%%/public/emails/welcome_on_signup.txt
 %%DATADIR%%/public/fonts/FontAwesome.otf
