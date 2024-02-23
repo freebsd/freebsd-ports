@@ -33,4 +33,3 @@
 %%LIBDIR%%/compat/pam_ssh.so
 %%LIBDIR%%/compat/pam_tacplus.so
 %%LIBDIR%%/compat/pam_unix.so
-@comment Hardcode lib32 since we should not remove lib.
