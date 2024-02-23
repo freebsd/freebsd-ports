@@ -1,5 +1,6 @@
 PORTNAME=	cvsutils
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvsutils/releases/
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 SHEBANG_FILES=	cvs*.pl
 NO_ARCH=	yes
 
