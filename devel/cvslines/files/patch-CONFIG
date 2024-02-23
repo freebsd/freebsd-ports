@@ -17,7 +17,7 @@
  #  (Absolute path)
  #
 -if (! defined($MANDIR)) { $MAN1DIR = "/usr/local/man/man1"; } # cfg
-+if (! defined($MANDIR)) { $MAN1DIR = "$ENV{'PREFIX'}/man/man1"; } # cfg
++if (! defined($MANDIR)) { $MAN1DIR = "$ENV{'PREFIX'}/share/man/man1"; } # cfg
  
  ######################################################################
  #
