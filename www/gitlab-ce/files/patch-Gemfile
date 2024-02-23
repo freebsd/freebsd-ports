@@ -1,4 +1,4 @@
---- Gemfile.orig	2024-02-07 07:58:11 UTC
+--- Gemfile.orig	2024-02-20 18:26:32 UTC
 +++ Gemfile
 @@ -58,7 +58,7 @@ gem 'neighbor', '~> 0.2.3' # rubocop:todo Gemfile/Miss
  
@@ -29,19 +29,46 @@
  gem 'omniauth-salesforce', '~> 1.0.5', path: 'vendor/gems/omniauth-salesforce' # See gem README.md # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'omniauth-atlassian-oauth2', '~> 0.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'rack-oauth2', '~> 1.21.3' # rubocop:todo Gemfile/MissingFeatureCategory
-@@ -203,9 +203,9 @@ gem 'seed-fu', '~> 2.3.7' # rubocop:todo Gemfile/Missi
+@@ -185,7 +185,7 @@ gem 'gitlab-fog-azure-rm', '~> 1.8.0', require: 'fog/a
+ gem 'google-apis-storage_v1', '~> 0.29' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-cloud-storage', '~> 1.45.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ # We need >= 0.11.1 because that's when match_glob support is added to list_objects
+-gem 'google-apis-core', '~> 0.11.0', '>= 0.11.1' # rubocop:todo Gemfile/MissingFeatureCategory
++gem 'google-apis-core', '~> 0.11', '>= 0.11.1' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-compute_v1', '~> 0.57.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-container_v1', '~> 0.43.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-container_v1beta1', '~> 0.43.0' # rubocop:todo Gemfile/MissingFeatureCategory
+@@ -196,7 +196,7 @@ gem 'google-apis-serviceusage_v1', '~> 0.28.0' # ruboc
+ gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-apis-androidpublisher_v3', '~> 0.34.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+-gem 'googleauth', '~> 1.8.1', feature_category: :shared
++gem 'googleauth', '~> 1.8', feature_category: :shared
+ gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
+ gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
+ 
+@@ -207,9 +207,9 @@ gem 'seed-fu', '~> 2.3.7' # rubocop:todo Gemfile/Missi
  gem 'elasticsearch-model', '~> 7.2' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'elasticsearch-api',   '7.13.3' # rubocop:todo Gemfile/MissingFeatureCategory
--gem 'aws-sdk-core', '~> 3.190.2' # rubocop:todo Gemfile/MissingFeatureCategory
-+gem 'aws-sdk-core', '~> 3.190' # rubocop:todo Gemfile/MissingFeatureCategory
+-gem 'aws-sdk-core', '~> 3.191.1' # rubocop:todo Gemfile/MissingFeatureCategory
++gem 'aws-sdk-core', '~> 3.191' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'aws-sdk-cloudformation', '~> 1' # rubocop:todo Gemfile/MissingFeatureCategory
--gem 'aws-sdk-s3', '~> 1.142.0' # rubocop:todo Gemfile/MissingFeatureCategory
-+gem 'aws-sdk-s3', '~> 1.142' # rubocop:todo Gemfile/MissingFeatureCategory
+-gem 'aws-sdk-s3', '~> 1.143.0' # rubocop:todo Gemfile/MissingFeatureCategory
++gem 'aws-sdk-s3', '~> 1.143' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'faraday_middleware-aws-sigv4', '~>0.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'typhoeus', '~> 1.4.0' # Used with Elasticsearch to support http keep-alive connections # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -252,7 +252,7 @@ gem 'state_machines-activerecord', '~> 0.8.0' # ruboco
+@@ -245,7 +245,7 @@ gem 'rack', '~> 2.2.8' # rubocop:todo Gemfile/MissingF
+ gem 'rack-timeout', '~> 0.6.3', require: 'rack/timeout/base' # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+ group :puma do
+-  gem 'puma', '= 6.4.0', require: false, feature_category: :shared
++  gem 'puma', '~> 6.4.0', require: false, feature_category: :shared
+   gem 'sd_notify', '~> 0.1.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
+ end
+ 
+@@ -256,7 +256,7 @@ gem 'state_machines-activerecord', '~> 0.8.0' # ruboco
  gem 'acts-as-taggable-on', '~> 10.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Background jobs
@@ -50,12 +77,12 @@
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :shared
  gem 'gitlab-sidekiq-fetcher', path: 'vendor/gems/sidekiq-reliable-fetch', require: 'sidekiq-reliable-fetch' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -392,134 +392,15 @@ gem 'prometheus-client-mmap', '~> 1.1', '>= 1.1.1', re
+@@ -397,93 +397,10 @@ gem 'prometheus-client-mmap', '~> 1.1', '>= 1.1.1', re
  
  gem 'warning', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
 -group :development do
--  gem 'lefthook', '~> 1.5.5', require: false, feature_category: :tooling
+-  gem 'lefthook', '~> 1.5.6', require: false, feature_category: :tooling
 -  gem 'rubocop', feature_category: :tooling
 -  gem 'solargraph', '~> 0.47.2', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
@@ -69,7 +96,7 @@
 -
 -  gem 'listen', '~> 3.7' # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'ruby-lsp', "~> 0.13.2", require: false, feature_category: :tooling
+-  gem 'ruby-lsp', "~> 0.13.3", require: false, feature_category: :tooling
 -
 -  gem 'ruby-lsp-rails', "~> 0.2.8", feature_category: :tooling
 -
@@ -144,14 +171,10 @@
  # Gems required in omnibus-gitlab pipeline
  group :development, :test, :omnibus do
    gem 'license_finder', '~> 7.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
+@@ -495,36 +412,6 @@ group :development, :test, :monorepo do
+   gem 'gitlab-rspec_flaky', path: 'gems/gitlab-rspec_flaky', feature_category: :tooling
  end
  
--# Gems required in various pipelines
--group :development, :test, :monorepo do
--  gem 'gitlab-rspec', path: 'gems/gitlab-rspec' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'gitlab-rspec_flaky', path: 'gems/gitlab-rspec_flaky', feature_category: :tooling
--end
--
 -group :test do
 -  gem 'fuubar', '~> 2.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'rspec-retry', '~> 0.6.2', feature_category: :tooling
@@ -160,15 +183,15 @@
 -  gem 'rspec-parameterized', '~> 1.0', require: false, feature_category: :tooling
 -  gem 'os', '~> 1.1', feature_category: :tooling
 -
--  gem 'capybara', '~> 3.39', '>= 3.39.2' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'capybara', '~> 3.40' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'capybara-screenshot', '~> 1.0.26' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'selenium-webdriver', '~> 4.16' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'selenium-webdriver', '~> 4.17' # rubocop:todo Gemfile/MissingFeatureCategory
 -
 -  gem 'graphlyte', '~> 1.0.0' # rubocop:todo Gemfile/MissingFeatureCategory
 -
 -  gem 'shoulda-matchers', '~> 5.1.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'email_spec', '~> 2.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'webmock', '~> 3.19.1' # rubocop:todo Gemfile/MissingFeatureCategory
+-  gem 'webmock', '~> 3.20.0' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'rails-controller-testing' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'concurrent-ruby', '~> 1.1' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'test-prof', '~> 1.3.1' # rubocop:todo Gemfile/MissingFeatureCategory
@@ -179,28 +202,28 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'gitlab_quality-test_tooling', '~> 1.11.0', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 1.14.2', require: false, feature_category: :tooling
 -end
 -
- gem 'octokit', '~> 6.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'octokit', '~> 8.0', feature_category: :importers
  
  gem 'gitlab-mail_room', '~> 0.0.24', require: 'mail_room', feature_category: :shared
-@@ -552,12 +433,12 @@ gem 'ssh_data', '~> 1.3' # rubocop:todo Gemfile/Missin
+@@ -557,12 +444,12 @@ gem 'ssh_data', '~> 1.3' # rubocop:todo Gemfile/Missin
  gem 'spamcheck', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Gitaly GRPC protocol definitions
--gem 'gitaly', '~> 16.7.0-rc1', feature_category: :gitaly
-+gem 'gitaly', '~> 16.7', feature_category: :gitaly
+-gem 'gitaly', '~> 16.9.0-rc3', feature_category: :gitaly
++gem 'gitaly', '~> 16.9', feature_category: :gitaly
  
  # KAS GRPC protocol definitions
- gem 'kas-grpc', '~> 0.3.0', feature_category: :deployment_management
+ gem 'kas-grpc', '~> 0.4.0', feature_category: :deployment_management
  
--gem 'grpc', '~> 1.58.0' # rubocop:todo Gemfile/MissingFeatureCategory
-+gem 'grpc', '~> 1.58' # rubocop:todo Gemfile/MissingFeatureCategory
+-gem 'grpc', '~> 1.60.0' # rubocop:todo Gemfile/MissingFeatureCategory
++gem 'grpc', '~> 1.60' # rubocop:todo Gemfile/MissingFeatureCategory
  
- gem 'google-protobuf', '~> 3.25', '>= 3.25.2' # rubocop:todo Gemfile/MissingFeatureCategory
+ gem 'google-protobuf', '~> 3.25', '>= 3.25.1' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -578,7 +459,7 @@ gem 'grape_logging', '~> 1.8', feature_category: :api
+@@ -583,7 +470,7 @@ gem 'grape_logging', '~> 1.8', feature_category: :api
  gem 'gitlab-net-dns', '~> 0.9.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Countries list
@@ -209,7 +232,7 @@
  
  gem 'retriable', '~> 3.1.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -644,6 +525,7 @@ gem 'app_store_connect' # rubocop:todo Gemfile/Missing
+@@ -649,6 +536,7 @@ gem 'app_store_connect' # rubocop:todo Gemfile/Missing
  gem 'telesignenterprise', '~> 2.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # BufferedIO patch
@@ -217,7 +240,7 @@
  # Updating this version will require updating scripts/allowed_warnings.txt
  gem 'net-protocol', '~> 0.1.3' # rubocop:todo Gemfile/MissingFeatureCategory
  # Lock this until we make DNS rebinding work with the updated net-http:
-@@ -651,5 +533,11 @@ gem 'net-protocol', '~> 0.1.3' # rubocop:todo Gemfile/
+@@ -656,5 +544,11 @@ gem 'net-protocol', '~> 0.1.3' # rubocop:todo Gemfile/
  gem 'net-http', '= 0.1.1' # rubocop:todo Gemfile/MissingFeatureCategory
  
  gem 'duo_api', '~> 1.3' # rubocop:todo Gemfile/MissingFeatureCategory
@@ -228,4 +251,4 @@
 +gem 'psych', '~> 3.1'
 +
  
- gem 'gitlab-sdk', feature_category: :application_instrumentation
+ gem 'gitlab-sdk', '~> 0.3.0', feature_category: :application_instrumentation

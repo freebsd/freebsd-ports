@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.8.3
+PORTVERSION=	16.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -24,8 +24,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # mail/rubygem-net-pop is required as ruby 3.1 removed it
 MY_DEPENDS=	git>=2.41.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=4.6.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-agent>=16.8.0:net/gitlab-agent \
+	gitlab-elasticsearch-indexer>=4.7.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-agent>=16.9.2:net/gitlab-agent \
 	gitlab-pages>=${PORTVERSION}:www/gitlab-pages \
 	gitlab-shell>=14.33.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
@@ -37,7 +37,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-pop>=0:mail/rubygem-net-pop \
 	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
 	rubygem-rails70>=7.0.8<7.1:www/rubygem-rails70 \
-	rubygem-bootsnap>=1.17.1<1.18:devel/rubygem-bootsnap \
+	rubygem-bootsnap>=1.18.3<1.19:devel/rubygem-bootsnap \
 	rubygem-openssl>=3.0<4:security/rubygem-openssl \
 	rubygem-ipaddr>=1.2.5<1.3:net/rubygem-ipaddr \
 	rubygem-responders-rails70>=3.0<4.0:www/rubygem-responders-rails70 \
@@ -92,11 +92,11 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-grape-swagger-entity>=0.5.1<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.0<2.1:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
-	rubygem-graphql>=2.0.27<2.1:devel/rubygem-graphql \
+	rubygem-graphql>=2.2.5<2.3:devel/rubygem-graphql \
 	rubygem-graphql-docs>=4.0.0<4.1.0:devel/rubygem-graphql-docs \
 	rubygem-graphiql-rails>=1.8.0<1.9:devel/rubygem-graphiql-rails \
 	rubygem-apollo_upload_server>=2.1.5<2.2:net/rubygem-apollo_upload_server \
-	rubygem-graphlient>=0.5.0<0.6:devel/rubygem-graphlient \
+	rubygem-graphlient>=0.6.0<0.7:devel/rubygem-graphlient \
 	rubygem-ffaker>=2.10<3:devel/rubygem-ffaker \
 	rubygem-hashie>=5.0.0<5.1:devel/rubygem-hashie \
 	rubygem-kaminari-rails70>=1.2.2<1.3:www/rubygem-kaminari-rails70 \
@@ -121,13 +121,16 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-google-apis-serviceusage_v1>=0.28.0<0.29:devel/rubygem-google-apis-serviceusage_v1 \
 	rubygem-google-apis-sqladmin_v1beta4_041>=0.41.0<0.42:devel/rubygem-google-apis-sqladmin_v1beta4_041 \
 	rubygem-google-apis-androidpublisher_v3034>=0.34.0<0.35:devel/rubygem-google-apis-androidpublisher_v3034 \
+	rubygem-googleauth>=1.8.1<2:security/rubygem-googleauth \
+	rubygem-google-cloud-artifact_registry-v1>=0.11.0<0.12:textproc/rubygem-google-cloud-artifact_registry-v1 \
+	rubygem-google-cloud-compute-v1>=2.6.0<2.7:net/rubygem-google-cloud-compute-v1 \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
-	rubygem-aws-sdk-core>=3.190<4:devel/rubygem-aws-sdk-core \
+	rubygem-aws-sdk-core>=3.191.1<4:devel/rubygem-aws-sdk-core \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
-	rubygem-aws-sdk-s3>=1.142.0<2:devel/rubygem-aws-sdk-s3 \
+	rubygem-aws-sdk-s3>=1.143.0<2:devel/rubygem-aws-sdk-s3 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
@@ -146,7 +149,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-rouge>=4.2.0<4.3:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.16<2:textproc/rubygem-nokogiri \
-	rubygem-gitlab-glfm-markdown>=0.0.11<0.1:textproc/rubygem-gitlab-glfm-markdown \
+	rubygem-gitlab-glfm-markdown>=0.0.12<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.4<4:textproc/rubygem-diffy \
 	rubygem-rack22>=2.2.8,3<2.3,3:www/rubygem-rack22 \
@@ -161,8 +164,8 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-httparty>=0.21.0<0.22:www/rubygem-httparty \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
-	rubygem-re2>=2.6.0<2.6.1:devel/rubygem-re2 \
-	rubygem-semver_dialects>=1.5<2:devel/rubygem-semver_dialects \
+	rubygem-re2>=2.7.0<2.8:devel/rubygem-re2 \
+	rubygem-semver_dialects>=1.6.1<1.7:devel/rubygem-semver_dialects \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
@@ -196,15 +199,15 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gon-rails70>=6.4.0<6.5:www/rubygem-gon-rails70 \
 	rubygem-request_store>=1.5.1<2.0:devel/rubygem-request_store \
 	rubygem-base32>=0.3.0<0.4.0:converters/rubygem-base32 \
-	rubygem-gitlab-license>=2.3<3:devel/rubygem-gitlab-license \
+	rubygem-gitlab-license>=2.4<3:devel/rubygem-gitlab-license \
 	rubygem-rack-attack>=6.7.0<6.8:www/rubygem-rack-attack \
 	rubygem-sentry-raven>=3.1<4.0:devel/rubygem-sentry-raven \
 	rubygem-sentry-ruby>=5.10.0<5.11:devel/rubygem-sentry-ruby \
 	rubygem-sentry-rails>=5.10.0<5.11:devel/rubygem-sentry-rails \
 	rubygem-sentry-sidekiq>=5.10.0<5.11:devel/rubygem-sentry-sidekiq \
-	rubygem-pg_query>=4.2.3<4.3:databases/rubygem-pg_query \
+	rubygem-pg_query>=5.1.0<5.2:databases/rubygem-pg_query \
 	rubygem-premailer-rails110-rails70>=1.10.3<1.11:mail/rubygem-premailer-rails110-rails70 \
-	rubygem-gitlab-labkit>=0.35.0<0.36:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=0.35.1<0.36:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.16.0:devel/rubygem-thrift \
 	rubygem-rails-i18n-rails70>=7.0<8:devel/rubygem-rails-i18n-rails70 \
 	rubygem-gettext_i18n_rails111>=1.11.0<1.12.0:devel/rubygem-gettext_i18n_rails111 \
@@ -218,7 +221,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-dangerfiles>=4.6.0<4.7:devel/rubygem-gitlab-dangerfiles \
 	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
 	rubygem-rspec>=3.0<4:devel/rubygem-rspec \
-	rubygem-octokit6>=6.0<7:net/rubygem-octokit6 \
+	rubygem-octokit>=8.0<9:net/rubygem-octokit \
 	rubygem-gitlab-mail_room>=0.0.24<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
@@ -233,10 +236,10 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
 	rubygem-ssh_data>=1.3<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=1.3.0<1.4:net/rubygem-spamcheck \
-	rubygem-gitaly>=16.7.0.rc1<16.9.0:net/rubygem-gitaly \
-	rubygem-kas-grpc>=0.3.0,1<0.4.0,1:net/rubygem-kas-grpc \
-	rubygem-grpc>=1.58.0<2:net/rubygem-grpc \
-	rubygem-google-protobuf>=3.25.2<4:devel/rubygem-google-protobuf \
+	rubygem-gitaly>=16.9.0.rc3<16.10.0:net/rubygem-gitaly \
+	rubygem-kas-grpc>=0.4.0,1<0.5.0,1:net/rubygem-kas-grpc \
+	rubygem-grpc>=1.60.0<2:net/rubygem-grpc \
+	rubygem-google-protobuf>=3.25.1<4:devel/rubygem-google-protobuf \
 	rubygem-toml-rb>=2.2.0<3:www/rubygem-toml-rb \
 	rubygem-flipper026>=0.26.2<0.27:devel/rubygem-flipper026 \
 	rubygem-flipper-active_record-rails70>=0.26.2<0.27:databases/rubygem-flipper-active_record-rails70 \
@@ -266,14 +269,14 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-parser>=3.2.2.4:devel/rubygem-parser \
 	rubygem-cvss-suite>=3.0.1<3.1:security/rubygem-cvss-suite \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
-	rubygem-devfile>=0.0.24.p.a1<0.0.25:net/rubygem-devfile \
+	rubygem-devfile>=0.0.25.p.a1<0.0.25:net/rubygem-devfile \
 	rubygem-CFPropertyList>=3.0.0<3.1:devel/rubygem-CFPropertyList \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
 	rubygem-net-protocol01>=0.1.3<0.2:net/rubygem-net-protocol01 \
 	rubygem-net-http011>=0.1.1<0.1.2:www/rubygem-net-http011 \
 	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
-	rubygem-gitlab-sdk>0:devel/rubygem-gitlab-sdk \
+	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
 	rubygem-parallel>=1.22<2:sysutils/rubygem-parallel
 
@@ -314,6 +317,7 @@ SHEBANG_FILES=	scripts/build_qa_image \
 		scripts/db_tasks \
 		scripts/rails-update-bisect \
 		scripts/generate-e2e-pipeline \
+		scripts/frontend/compare_css_compilers.sh \
 		scripts/frontend/execute-on-staged-files.sh \
 		scripts/frontend/start_storybook.sh \
 		scripts/partitioning/generate-fk \
