@@ -1,5 +1,6 @@
 PORTNAME=	binutils
 PORTVERSION=	2.39
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	arm-elf-
@@ -15,6 +16,7 @@ USES=		cpe gettext gmake localbase tar:xz
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
 		--disable-nls
 
