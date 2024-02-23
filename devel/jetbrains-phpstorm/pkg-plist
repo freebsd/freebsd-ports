@@ -1,5 +1,5 @@
 bin/phpstorm
-man/man1/phpstorm.1.gz
+share/man/man1/phpstorm.1.gz
 share/applications/phpstorm.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
