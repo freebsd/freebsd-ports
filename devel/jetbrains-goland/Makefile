@@ -1,6 +1,6 @@
 PORTNAME=	goland
-DISTVERSION=	2023.3.3
-CATEGORIES=	devel java
+PORTVERSION=	2023.3.4
+CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -56,8 +56,7 @@ do-install:
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
-		${WRKSRC}/plugins/cwm-plugin-projector \
-		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
+		${WRKSRC}/plugins/gateway-plugin \
 		${WRKSRC}/plugins/go-plugin/lib/dlv \
 		${WRKSRC}/plugins/remote-dev-server
 	${MKDIR} ${STAGEDIR}${DATADIR}

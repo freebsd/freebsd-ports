@@ -22,7 +22,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-233.14015.113
+%%DATADIR%%/lib/build-marker-GO-233.14475.38
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -87,10 +87,6 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/emojipicker/lib/emojipicker.jar
 %%DATADIR%%/plugins/featuresTrainer/lib/featuresTrainer.jar
 %%DATADIR%%/plugins/fileWatcher/lib/fileWatcher.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/gateway-plugin.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/gateway-standalone/gateway.core.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/gateway-standalone/gateway.jar
-%%DATADIR%%/plugins/gateway-plugin/resources/gateway.vmoptions
 %%DATADIR%%/plugins/gateway-terminal/lib/gateway-terminal.jar
 %%DATADIR%%/plugins/go-ide/lib/go-ide.jar
 %%DATADIR%%/plugins/go-plugin/lib/go-plugin.jar
@@ -99,8 +95,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-e58f7cfedaf7-155fe4b6e3a0.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-e58f7cfedaf7-155fe4b6e3a0.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-2946fb9b3188-155fe4b6e3a0.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-2946fb9b3188-155fe4b6e3a0.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
