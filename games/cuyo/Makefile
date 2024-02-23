@@ -1,5 +1,6 @@
 PORTNAME=	cuyo
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
@@ -17,6 +18,7 @@ USE_SDL=	mixer image
 USE_XORG=	x11 xau xdmcp
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 # Do not use older versions
 PORTSCOUT=	limit:[0-9]\.[0-9]\.

@@ -1,6 +1,6 @@
 bin/cuyo
-man/man6/cual.6.gz
-man/man6/cuyo.6.gz
+share/man/man6/cual.6.gz
+share/man/man6/cuyo.6.gz
 share/applications/cuyo.desktop
 %%DATADIR%%/3d.ld
 %%DATADIR%%/aehnlich.ld
