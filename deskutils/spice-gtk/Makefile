@@ -1,6 +1,6 @@
 PORTNAME=	spice-gtk
 PORTVERSION=	0.37
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -31,6 +31,7 @@ CONFIGURE_ENV+=		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" \
 			OPENSSL_LIBS="${SPICE_SSL_LIBS}"
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 # we can't use pathfix with USES=autoreconf

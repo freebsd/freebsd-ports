@@ -41,7 +41,7 @@ lib/libspice-client-gtk-3.0.so.5
 lib/libspice-client-gtk-3.0.so.5.0.0
 libdata/pkgconfig/spice-client-glib-2.0.pc
 libdata/pkgconfig/spice-client-gtk-3.0.pc
-man/man1/spice-client.1.gz
+share/man/man1/spice-client.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/SpiceAudio.html
 %%PORTDOCS%%%%DOCSDIR%%/SpiceChannel.html
 %%PORTDOCS%%%%DOCSDIR%%/SpiceCursorChannel.html
