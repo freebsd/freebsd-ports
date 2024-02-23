@@ -24,7 +24,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 FETCH_DEPENDS=	yarn${NODEJS_SUFFIX}>0:www/yarn${NODEJS_SUFFIX}
 EXTRACT_DEPENDS=yarn${NODEJS_SUFFIX}>0:www/yarn${NODEJS_SUFFIX}
-PATCH_DEPENDS=	git:devel/git
+PATCH_DEPENDS=	git:devel/git \
+		jq:textproc/jq
 BUILD_DEPENDS=	gperf:devel/gperf \
 		yasm:devel/yasm \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \

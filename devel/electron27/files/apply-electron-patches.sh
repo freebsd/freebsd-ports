@@ -12,7 +12,7 @@ PATCH_CONF=${WRKSRC}/electron/patches/config.json
 
 ${GIT_CMD} status "${WRKSRC}" > /dev/null 2>&1 && IS_GIT_REPO=1
 
-PATCHD_REPOD_PAIRS=$(sed -e '1d; $d; /^$/d; s/[",]//g; s/:  */:/' "${PATCH_CONF}")
+PATCHD_REPOD_PAIRS=$(jq -r '.[] | .patch_dir + ":" + .repo' "${PATCH_CONF}")
 for prp in ${PATCHD_REPOD_PAIRS}; do
     pd=$(echo "${prp}" | awk -F: '{print $1}' | sed -e 's/src/./')
     rd=$(echo "${prp}" | awk -F: '{print $2}' | sed -e 's/src/./')
