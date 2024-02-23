@@ -1,5 +1,6 @@
 PORTNAME=	defendguin
 DISTVERSION=	0.0.13
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://tuxpaint.org/ftp/unix/x/defendguin/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -29,7 +30,7 @@ DESKTOP_ENTRIES=	"Defendguin" \
 			""
 
 PLIST_FILES=	bin/defendguin \
-		man/man6/defendguin.6.gz \
+		share/man/man6/defendguin.6.gz \
 		share/pixmaps/defendguin.png
 PORTDATA=	images music sounds
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt
