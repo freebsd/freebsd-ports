@@ -1,6 +1,6 @@
 PORTNAME=	anjuta
 PORTVERSION=	3.34.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -47,6 +47,7 @@ gjs_CMD=	${LOCALBASE}/bin/gjs
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gtksourceview3 intlhack libgda5 libwnck3
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
 		--disable-packagekit \
 		--disable-neon \

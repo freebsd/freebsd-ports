@@ -210,8 +210,8 @@ lib/libanjuta-3.so
 lib/libanjuta-3.so.0
 lib/libanjuta-3.so.0.0.0
 libdata/pkgconfig/libanjuta-3.0.pc
-man/man1/anjuta-launcher.1.gz
-man/man1/anjuta.1.gz
+share/man/man1/anjuta-launcher.1.gz
+share/man/man1/anjuta.1.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/anjuta_project.template
 %%DATADIR%%/build/automake-c.filters
