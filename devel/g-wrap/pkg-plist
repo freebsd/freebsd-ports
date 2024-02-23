@@ -22,7 +22,7 @@ lib/libgwrap-guile-runtime.so
 lib/libgwrap-guile-runtime.so.2
 lib/libgwrap-guile-runtime.so.2.0.0
 libdata/pkgconfig/g-wrap-2.0-guile.pc
-man/man1/g-wrap-config.1.gz
+share/man/man1/g-wrap-config.1.gz
 share/aclocal/g-wrap.m4
 %%GUILE_GLOBAL_SITE%%/g-wrap.scm
 %%GUILE_GLOBAL_SITE%%/g-wrap/c-codegen.scm
