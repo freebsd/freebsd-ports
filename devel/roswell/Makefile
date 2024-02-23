@@ -1,6 +1,7 @@
 PORTNAME=	roswell
 DISTVERSIONPREFIX=	v
 DISTVERSION=	22.12.14.113
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -16,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/automake:devel/automake \
 USES=		autoreconf localbase uidfix
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 pre-configure:
 	(cd ${WRKSRC}/ && ${SH} bootstrap)
