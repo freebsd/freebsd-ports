@@ -4,5 +4,5 @@ lib/libxds.a
 lib/libxds.so
 lib/libxds.so.9
 lib/libxds.so.9.0.23
-man/man1/xds-config.1.gz
-man/man3/xds.3.gz
+share/man/man1/xds-config.1.gz
+share/man/man3/xds.3.gz
