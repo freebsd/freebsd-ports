@@ -31,7 +31,6 @@ CXXFLAGS+=	-fexperimental-library
 USES+=		llvm:min=16,build,export
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-CMAKE_BIN=	${LOCALBASE}/bin/cmake
 
 # XXX Move into separate port and standardize via USES
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
