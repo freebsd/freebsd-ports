@@ -1,0 +1,21 @@
+"su" has "auth sufficient pam_self.so" but a screen locker is
+supposed to ask for password regardless.
+
+pam_unix(8) requires root priveleges to access master.passwd(5),
+so try authenticating via setuid helper first.
+
+--- pam/hyprlock.orig	1970-01-01 00:00:00 UTC
++++ pam/hyprlock
+@@ -0,0 +1 @@
++auth include unix-selfauth
+--- src/core/Password.cpp.orig	2024-02-23 21:29:08 UTC
++++ src/core/Password.cpp
+@@ -30,7 +30,7 @@ std::shared_ptr<CPassword::SVerificationResult> CPassw
+         const pam_conv localConv = {conv, NULL};
+         pam_handle_t*  handle    = NULL;
+ 
+-        int            ret = pam_start("su", getlogin(), &localConv, &handle);
++        int            ret = pam_start("hyprlock", getlogin(), &localConv, &handle);
+ 
+         if (ret != PAM_SUCCESS) {
+             result->success    = false;
