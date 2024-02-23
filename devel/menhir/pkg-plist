@@ -1,5 +1,5 @@
 bin/menhir
-man/man1/menhir.1.gz
+share/man/man1/menhir.1.gz
 %%DATADIR%%/standard.mly
 %%OCAML_SITELIBDIR%%/menhirSdk/META
 %%OCAML_SITELIBDIR%%/menhirSdk/menhirSdk.cmi

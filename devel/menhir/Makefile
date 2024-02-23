@@ -1,6 +1,6 @@
 PORTNAME=	menhir
 PORTVERSION=	20170712
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
@@ -30,8 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|share/man|man| ; \
-		 s|doc/menhir|doc/ocaml/menhir| ; \
+		's|doc/menhir|doc/ocaml/menhir| ; \
 		 s| \($$(bindir)\)| $${DESTDIR}\1| ; \
 		 s| \($$(libdir)\)| $${DESTDIR}\1| ; \
 		 s| \($$(docdir)\)| $${DESTDIR}\1| ; \
