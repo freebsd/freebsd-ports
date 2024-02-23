@@ -9,8 +9,8 @@ lib/libpoke.so
 lib/libpoke.so.0
 lib/libpoke.so.0.0.0
 libdata/pkgconfig/poke.pc
-man/man1/poke.1.gz
-man/man1/poked.1.gz
+share/man/man1/poke.1.gz
+share/man/man1/poked.1.gz
 share/aclocal/poke.m4
 share/emacs/site-lisp/poke-map-mode.el
 share/emacs/site-lisp/poke-ras-mode.el

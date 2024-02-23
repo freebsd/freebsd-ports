@@ -1,5 +1,6 @@
 PORTNAME=	poke
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -19,6 +20,7 @@ USES=		gmake libtool pkgconfig readline
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--disable-gui
 INSTALL_TARGET=	install-strip
