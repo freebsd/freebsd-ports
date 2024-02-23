@@ -1,5 +1,6 @@
 PORTNAME=	nsd
 DISTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -23,6 +24,7 @@ NSDLSDIR=	/var
 NSDRUNDIR=	/var/run/nsd
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
 		--with-configdir=${ETCDIR} \
 		--with-libevent=${LOCALBASE} \
