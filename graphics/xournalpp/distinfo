@@ -1,3 +1,5 @@
-TIMESTAMP = 1697346808
+TIMESTAMP = 1708720261
 SHA256 (xournalpp-xournalpp-v1.2.2_GH0.tar.gz) = b873ea4e2beadc3061fab87faef31c374ae7876c88dbda5565c491945cf7290f
 SIZE (xournalpp-xournalpp-v1.2.2_GH0.tar.gz) = 16705580
+SHA256 (26889c0e901ba4271b355e1893a6af7c4a2c2afa.patch) = 0b03b64ffdee49b9dcc2923c25a6080c0304527c5d4002bab1b06a293e36ccaa
+SIZE (26889c0e901ba4271b355e1893a6af7c4a2c2afa.patch) = 2432

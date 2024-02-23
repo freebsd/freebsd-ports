@@ -1,5 +1,12 @@
 bin/xournalpp
 bin/xournalpp-thumbnailer
+share/applications/com.github.xournalpp.xournalpp.desktop
+share/icons/hicolor/scalable/apps/com.github.xournalpp.xournalpp.svg
+share/icons/hicolor/scalable/mimetypes/application-x-xojpp.svg
+share/icons/hicolor/scalable/mimetypes/application-x-xopp.svg
+share/icons/hicolor/scalable/mimetypes/application-x-xopt.svg
+share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xopp.svg
+share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xopt.svg
 share/locale/af_ZA/LC_MESSAGES/xournalpp.mo
 share/locale/ar/LC_MESSAGES/xournalpp.mo
 share/locale/bn_BD/LC_MESSAGES/xournalpp.mo
@@ -40,6 +47,9 @@ share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 share/man/man1/xournalpp-thumbnailer.1.gz
 share/man/man1/xournalpp.1.gz
+share/metainfo/com.github.xournalpp.xournalpp.appdata.xml
+share/mime/packages/com.github.xournalpp.xournalpp.xml
+share/thumbnailers/com.github.xournalpp.xournalpp.thumbnailer
 %%DATADIR%%/plugins/ColorCycle/main.lua
 %%DATADIR%%/plugins/ColorCycle/plugin.ini
 %%DATADIR%%/plugins/Example/main.lua
