@@ -1,6 +1,6 @@
 PORTNAME=	pluma
 PORTVERSION=	1.26.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -27,6 +27,7 @@ USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 gtksourceview4 \
 		gvfs intltool introspection libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	\
