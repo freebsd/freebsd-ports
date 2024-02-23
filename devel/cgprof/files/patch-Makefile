@@ -7,9 +7,9 @@
 -	mkdir -p $(prefix)/bin $(prefix)/man/man1
 -	cp -p cgprof $(prefix)/bin/
 -	cp -p cgprof.1 $(prefix)/man/man1/cgprof.1
-+	mkdir -p $(DESTDIR)$(prefix)/bin $(DESTDIR)$(prefix)/man/man1
++	mkdir -p $(DESTDIR)$(prefix)/bin $(DESTDIR)$(prefix)/share/man/man1
 +	cp -p cgprof $(DESTDIR)$(prefix)/bin/
-+	cp -p cgprof.1 $(DESTDIR)$(prefix)/man/man1/cgprof.1
++	cp -p cgprof.1 $(DESTDIR)$(prefix)/share/man/man1/cgprof.1
  
  cgprof.1: cgprof.txt
  	txt2man -p cgprof.txt > cgprof.1

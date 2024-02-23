@@ -1,6 +1,6 @@
 PORTNAME=	cgprof
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://mvertes.free.fr/download/
 
@@ -14,6 +14,6 @@ RUN_DEPENDS=	gawk:lang/gawk \
 NO_BUILD=	yes
 MAKE_ENV=	prefix=${PREFIX}
 
-PLIST_FILES=	bin/cgprof man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/cgprof share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
