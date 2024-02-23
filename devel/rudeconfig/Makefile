@@ -1,6 +1,6 @@
 PORTNAME=	rudeconfig
 PORTVERSION=	5.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rudeserver.com/config/download/
 
@@ -14,6 +14,7 @@ DOS2UNIX_GLOB=	*
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 pre-install:
 	${CHMOD} 744 ${WRKSRC}/install-sh
