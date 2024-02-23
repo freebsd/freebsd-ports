@@ -144,6 +144,7 @@
 %%DATADIR%%/Antarctica/Palmer
 %%DATADIR%%/Antarctica/Rothera
 %%DATADIR%%/Antarctica/Troll
+%%DATADIR%%/Antarctica/Vostok
 %%DATADIR%%/Asia/Almaty
 %%DATADIR%%/Asia/Amman
 %%DATADIR%%/Asia/Anadyr
@@ -440,7 +441,6 @@
 %%BACKWARD%%%%DATADIR%%/Antarctica/McMurdo
 %%BACKWARD%%%%DATADIR%%/Antarctica/South_Pole
 %%BACKWARD%%%%DATADIR%%/Antarctica/Syowa
-%%BACKWARD%%%%DATADIR%%/Antarctica/Vostok
 %%BACKWARD%%%%DATADIR%%/Arctic/Longyearbyen
 %%BACKWARD%%%%DATADIR%%/Asia/Aden
 %%BACKWARD%%%%DATADIR%%/Asia/Ashkhabad
