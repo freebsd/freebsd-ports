@@ -4,5 +4,5 @@ lib/libval.a
 lib/libval.so
 lib/libval.so.9
 lib/libval.so.9.0.24
-man/man1/val-config.1.gz
-man/man3/val.3.gz
+share/man/man1/val-config.1.gz
+share/man/man3/val.3.gz
