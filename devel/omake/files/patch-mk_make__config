@@ -1,0 +1,13 @@
+Manual patch for MANDIR, configure lacks -mandir option
+
+--- mk/make_config.orig	2024-02-23 18:54:11 UTC
++++ mk/make_config
+@@ -35,7 +35,7 @@ MakeConfig(CONFIG_FILE) =
+         include $(PRECONFIG_FILE)
+         BINDIR = $(PREFIX)/bin
+         LIBDIR = $(PREFIX)/lib
+-        MANDIR = $(PREFIX)/man
++        MANDIR = $(PREFIX)/share/man
+         export
+ 
+     #
