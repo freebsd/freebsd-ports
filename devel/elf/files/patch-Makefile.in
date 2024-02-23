@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-06-07 13:38:33.334423095 +0800
-+++ Makefile.in	2014-06-07 13:39:03.004421673 +0800
-@@ -1,9 +1,9 @@
+--- Makefile.in.orig	2003-09-20 14:23:28 UTC
++++ Makefile.in
+@@ -1,9 +1,9 @@ all:		./src/Makefile
  all:		./src/Makefile
 -		cd ./src; make; cd ../
 +		cd ./src; ${MAKE}

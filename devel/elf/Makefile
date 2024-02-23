@@ -1,6 +1,6 @@
 PORTNAME=	elf
 PORTVERSION=	0.5.4p1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	PACKETSTORM/linux/reverse-engineering
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libedit readline
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/elf man/man1/elf.1.gz
+PLIST_FILES=	bin/elf share/man/man1/elf.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/src/Makefile.in
