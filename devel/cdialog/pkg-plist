@@ -8,8 +8,8 @@ lib/libcdialog.a
 lib/libcdialog.so
 lib/libcdialog.so.15
 lib/libcdialog.so.15.0.0
-man/man1/cdialog.1.gz
-man/man3/cdialog.3.gz
+share/man/man1/cdialog.1.gz
+share/man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildlist2
