@@ -1017,6 +1017,7 @@
     SUBDIR += jetbrains-phpstorm
     SUBDIR += jetbrains-pty4j
     SUBDIR += jetbrains-restarter
+    SUBDIR += jetbrains-rustrover
     SUBDIR += jetbrains-sqlite
     SUBDIR += jetbrains-webstorm
     SUBDIR += jgoodies-looks
