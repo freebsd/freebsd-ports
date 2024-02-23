@@ -1,5 +1,6 @@
 PORTNAME=	teapot
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.syntax-k.de/projekte/${PORTNAME}/ \
 		http://www.syntax-k.de/projekte/${PORTNAME}/:docs
@@ -20,10 +21,6 @@ USES=		cmake ncurses
 WRKSRC_DOCS=	${WRKDIR}/${DISTNAME:C/^./T/}-Linux/share/doc/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
