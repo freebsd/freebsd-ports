@@ -1,5 +1,6 @@
 PORTNAME=	tcl-mmap
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -11,9 +12,11 @@ LICENSE=	GPLv3
 
 USES+=		tcl:tea
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 PLIST_FILES=	lib/${TCL_PKG}/pkgIndex.tcl \
 		lib/${TCL_PKG}/lib${TCL_PKG}.so \
-		man/mann/${PORTNAME}.n.gz
+		share/man/mann/${PORTNAME}.n.gz
 TEST_TARGET=	do-test
 
 do-test:
