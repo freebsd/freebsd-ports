@@ -1,7 +1,7 @@
 PORTNAME=	libxs
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,7 @@ WWW=		https://github.com/crossroads-io/libxs
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf pathfix pkgconfig libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	crossroads-io
