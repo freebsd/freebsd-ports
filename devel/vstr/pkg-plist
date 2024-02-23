@@ -11,5 +11,5 @@ lib/libvstr-1.0.so.0.13.2
 lib/libvstr.a
 lib/libvstr.so
 libdata/pkgconfig/vstr.pc
-man/man3/vstr.3.gz
-man/man3/vstr_const.3.gz
+share/man/man3/vstr.3.gz
+share/man/man3/vstr_const.3.gz

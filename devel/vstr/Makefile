@@ -1,6 +1,6 @@
 PORTNAME=	vstr
 PORTVERSION=	1.0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.and.org/vstr/${PORTVERSION}/ \
 		http://www.and.org/vstr/latest/ \
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip install-man
