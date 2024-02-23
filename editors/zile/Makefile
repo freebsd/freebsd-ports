@@ -1,5 +1,6 @@
 PORTNAME=	zile
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -20,12 +21,13 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-included-regex
 
 LDFLAGS+=	-lgnuregex
 
 PLIST_FILES= bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}.1.gz \
 		%%DOCSDIR%%/AUTHORS \
 		%%DOCSDIR%%/dotzile.sample \
 		%%DOCSDIR%%/FAQ \
