@@ -1,6 +1,6 @@
 PORTNAME=	libruin
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	guile-lib-${GUILE_FLAVOR}>0:devel/guile-lib@${GUILE_FLAVOR}
 RUN_DEPENDS=	guile-lib-${GUILE_FLAVOR}>0:devel/guile-lib@${GUILE_FLAVOR}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USES=		gnome guile:2.2,alias libtool ncurses pkgconfig
 USE_GNOME=	glib20
