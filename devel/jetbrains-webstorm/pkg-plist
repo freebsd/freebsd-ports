@@ -1,5 +1,5 @@
 bin/webstorm
-man/man1/webstorm.1.gz
+share/man/man1/webstorm.1.gz
 share/applications/webstorm.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
