@@ -1,6 +1,6 @@
 PORTNAME=	chocolate-doom
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.chocolate-doom.org/downloads/${PORTVERSION}/
 
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		gmake pkgconfig python:build sdl
 USE_SDL=	mixer2 net2 sdl2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS.md NOT-BUGS.md PHILOSOPHY.md \
