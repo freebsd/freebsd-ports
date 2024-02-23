@@ -17,6 +17,9 @@ LICENSE_NAME=	HTML Tidy License
 LICENSE_FILE=	${WRKSRC}/htmldoc/license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	no more dev at SF, replaced by www/tidy-html5
+EXPIRATION_DATE=	2024-03-23
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		cpe tar:bzip2
