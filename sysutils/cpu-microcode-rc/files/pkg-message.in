@@ -22,6 +22,9 @@ the CPU microcode on a FreeBSD system.
 
    The microcode update will be loaded when the system is rebooted.
 
+   AMD systems running FreeBSD prior to 2024-02-22 snapshot
+   34467bd76 only support late loading.
+
 
 2. Late loading.
    This method, which does use the RC script included here, is enabled by
