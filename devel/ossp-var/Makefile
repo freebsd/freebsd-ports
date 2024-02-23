@@ -1,6 +1,6 @@
 PORTNAME=	var
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	OSSP/lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
@@ -11,6 +11,7 @@ WWW=		http://www.ossp.org/pkg/lib/var/
 
 USES=		libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 check:	build
