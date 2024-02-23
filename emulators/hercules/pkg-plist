@@ -72,10 +72,10 @@ lib/libhercu.la
 lib/libhercu.so
 lib/libsoftfloat.la
 lib/libsoftfloat.so
-man/man1/cckddiag.1.gz
-man/man1/dasdseq.1.gz
-man/man1/hercules.1.gz
-man/man4/cckd.4.gz
+share/man/man1/cckddiag.1.gz
+share/man/man1/dasdseq.1.gz
+share/man/man1/hercules.1.gz
+share/man/man4/cckd.4.gz
 %%PORTDOCS%%%%DOCSDIR%%/cckddasd.html
 %%PORTDOCS%%%%DOCSDIR%%/fishgui.html
 %%PORTDOCS%%%%DOCSDIR%%/hercconf.html
