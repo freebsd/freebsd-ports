@@ -1,6 +1,6 @@
 PORTNAME=	rrdman
 PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	SF/rrfw/${PORTNAME}/${PORTVERSION}
 
@@ -12,7 +12,8 @@ BUILD_DEPENDS=	rrdtool:databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	YES
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		perl5
-PLIST_FILES=	bin/rrd_hwreapply man/man1/rrd_hwreapply.1.gz
+PLIST_FILES=	bin/rrd_hwreapply share/man/man1/rrd_hwreapply.1.gz
 
 .include <bsd.port.mk>
