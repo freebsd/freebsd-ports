@@ -1,5 +1,6 @@
 PORTNAME=		zkt
 DISTVERSION=		1.1.6
+PORTREVISION=	1
 CATEGORIES=		dns
 MASTER_SITES=		http://www.hznet.de/dns/zkt/
 
@@ -26,10 +27,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zkt-ls ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/zkt-signer ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/zkt-soaserial ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/man/dnssec-zkt.8 ${STAGEDIR}${PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/man/zkt-conf.8 ${STAGEDIR}${PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/man/zkt-keyman.8 ${STAGEDIR}${PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/man/zkt-ls.8 ${STAGEDIR}${PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/man/zkt-signer.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/dnssec-zkt.8 ${STAGEDIR}${PREFIX}/share/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/zkt-conf.8 ${STAGEDIR}${PREFIX}/share/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/zkt-keyman.8 ${STAGEDIR}${PREFIX}/share/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/zkt-ls.8 ${STAGEDIR}${PREFIX}/share/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/zkt-signer.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>
