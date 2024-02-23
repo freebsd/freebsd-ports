@@ -1,5 +1,6 @@
 PORTNAME=	microcode
 PORTVERSION=	20231019
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/
 PKGNAMEPREFIX=	cpu-
@@ -24,6 +25,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/microcode_update:sysutils/cpu-microcode-rc
 
 DATADIR=	${PREFIX}/share/cpucontrol
+FWDIR=		/boot/firmware
+
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
@@ -31,12 +34,18 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	${DISTFILES:S/^/${DATADIR}\//g:C/\?.*//}
+PLIST_FILES=	${DISTFILES:S/^/${DATADIR}\//g:C/\?.*//} \
+		${FWDIR}/amd-ucode.bin
 
 _REV=		06afd7f939c5b245b2af9e0fee13026f2aaf77fa
 
+post-extract:
+	${CAT} ${WRKSRC}/microcode_amd* > ${WRKSRC}/amd-ucode.bin
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${FWDIR}
+	${INSTALL_DATA} ${WRKSRC}/amd-ucode.bin ${STAGEDIR}${FWDIR}/
 .for f in ${DISTFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f:C/\?.*//}
 .endfor
