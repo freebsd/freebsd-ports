@@ -14,7 +14,7 @@ bin/mozo
 %%PYTHON_SITELIBDIR%%/Mozo/__pycache__/util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/Mozo/config.py
 %%PYTHON_SITELIBDIR%%/Mozo/util.py
-man/man1/mozo.1.gz
+share/man/man1/mozo.1.gz
 share/applications/mozo.desktop
 share/icons/hicolor/16x16/apps/mozo.png
 share/icons/hicolor/22x22/apps/mozo.png

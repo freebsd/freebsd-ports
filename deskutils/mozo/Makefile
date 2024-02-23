@@ -1,6 +1,6 @@
 PORTNAME=	mozo
 PORTVERSION=	1.26.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,6 +19,7 @@ USES=		gettext-tools gmake gnome localbase mate pathfix pkgconfig \
 USE_GNOME=	gtk30 intltool pygobject3
 USE_MATE=	menus
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 
 PORTSCOUT=	limitw:1,even
