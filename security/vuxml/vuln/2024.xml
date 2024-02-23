@@ -1,3 +1,35 @@
+  <vuln vid="80ad6d6c-b398-457f-b88f-bf6be0bbad44">
+    <topic>electron27 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.3">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-1283.</li>
+	    <li>Security: backported fix for CVE-2024-1284.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1283</cvename>
+      <url>https://github.com/advisories/GHSA-7mgj-p9v3-3vxr</url>
+      <cvename>CVE-2024-1284</cvename>
+      <url>https://github.com/advisories/GHSA-pf89-rhhw-xmhp</url>
+    </references>
+    <dates>
+      <discovery>2024-02-21</discovery>
+      <entry>2024-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03bf5157-d145-11ee-acee-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
