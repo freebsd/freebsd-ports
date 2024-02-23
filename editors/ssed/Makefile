@@ -1,6 +1,6 @@
 PORTNAME=	sed
 PORTVERSION=	3.62
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://sed.sourceforge.net/grabbag/ssed/
 PKGNAMEPREFIX=	s
@@ -10,6 +10,7 @@ COMMENT=	Heavily enhanced version of sed(1)
 WWW=		https://sed.sourceforge.net/grabbag/ssed/
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=s
 
 OPTIONS_DEFINE=	NLS
