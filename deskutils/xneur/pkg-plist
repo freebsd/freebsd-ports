@@ -17,8 +17,8 @@ lib/xneur/xneur/libxntest.so.0
 lib/xneur/xneur/libxntest.so.0.0.0
 libdata/pkgconfig/xnconfig.pc
 libdata/pkgconfig/xneur.pc
-man/man1/xneur.1.gz
-man/man5/xneurrc.5.gz
+share/man/man1/xneur.1.gz
+share/man/man5/xneurrc.5.gz
 share/icons/hicolor/16x16/apps/xneur.png
 share/icons/hicolor/22x22/apps/xneur.png
 share/icons/hicolor/24x24/apps/xneur.png
