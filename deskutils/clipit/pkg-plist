@@ -1,6 +1,6 @@
 bin/clipit
 etc/xdg/autostart/clipit-startup.desktop
-man/man1/clipit.1.gz
+share/man/man1/clipit.1.gz
 share/applications/clipit.desktop
 share/icons/hicolor/scalable/apps/clipit-trayicon.svg
 share/icons/hicolor/scalable/apps/clipit-trayicon-offline.svg
