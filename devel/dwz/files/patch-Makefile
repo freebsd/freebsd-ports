@@ -23,7 +23,7 @@
  datarootdir = $(prefix)/share
 -mandir = $(datarootdir)/man
 -OBJECTS = dwz.o hashtab.o sha1.o dwarfnames.o
-+mandir = $(prefix)/man
++mandir = $(prefix)/share/man
 +OBJECTS = dwz.o hashtab.o sha1.o dwarfnames.o obstack.o
  dwz: $(OBJECTS)
 -	$(CC) $(LDFLAGS) -o $@ $^ -lelf
