@@ -1,5 +1,6 @@
 PORTNAME=	wordgrinder
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	vmagerya@gmail.com
@@ -17,7 +18,7 @@ USES=		gmake lua:52 ncurses
 
 PLIST_FILES=	bin/wordgrinder \
 		share/doc/wordgrinder/README.wg \
-		man/man1/wordgrinder.1.gz
+		share/man/man1/wordgrinder.1.gz
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -38,7 +39,6 @@ post-patch:
 		-e 's|$$(hide)lua|$$(hide)${LUA_CMD}|' \
 		-e '/PREFIX = /d' \
 		-e '/install /s|$$(PRE|$$(DESTDIR)$$(PRE|' \
-		-e '/install /s|share/man/man1|man/man1|' \
 		-e '/NCURSES_CFLAGS :=/s|=.*|=|' \
 		-e '/NCURSES_LIB :=/s|=.*|= -lncursesw|' \
 		-e '/X11_CFLAGS :=/s|=.*|= $$(shell pkg-config --cflags x11 xft)|' \
