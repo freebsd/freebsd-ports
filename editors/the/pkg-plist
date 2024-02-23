@@ -1,7 +1,7 @@
 %%NCURSES%%bin/nthe
 bin/the
 %%XCURSES%%bin/xthe
-man/man1/the.1.gz
+share/man/man1/the.1.gz
 %%DATADIR%%/THE_Help.txt
 %%DATADIR%%/abf.tld
 %%DATADIR%%/append.the
