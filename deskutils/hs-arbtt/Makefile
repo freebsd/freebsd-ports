@@ -1,5 +1,6 @@
 PORTNAME=		arbtt
 PORTVERSION=		0.12.0.1
+PORTREVISION=	1
 CATEGORIES=		deskutils haskell
 
 MAINTAINER=		mail@dbalan.in
@@ -99,7 +100,7 @@ post-install:
 post-install-MANPAGES-on:
 	cd ${WRKSRC}/doc && ${MAKE} man
 .for l in arbtt-stats arbtt-recover arbtt-import arbtt-dump arbtt-capture
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/${l}.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/${l}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 .include <bsd.port.mk>
