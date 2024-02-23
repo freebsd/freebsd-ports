@@ -1,6 +1,6 @@
 PORTNAME=	generate
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.druid.net/darcy/
 
@@ -11,11 +11,11 @@ WWW=		https://www.druid.net/darcy/readme-generate.html
 USES=		gmake tar:tgz
 
 MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \
-		MANDIR=${STAGEDIR}${PREFIX}/man
+		MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 CONFLICTS_INSTALL=	julius php*-pear-Text_Highlighter
 
-PLIST_FILES=	bin/generate bin/rgenerate man/man1/generate.1.gz
+PLIST_FILES=	bin/generate bin/rgenerate share/man/man1/generate.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS *=,CFLAGS +=,' \
