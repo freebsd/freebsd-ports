@@ -1,5 +1,6 @@
 PORTNAME=	squid
 DISTVERSION=	6.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v6/ \
 		http://www1.il.squid-cache.org/Versions/v6/ \
@@ -27,6 +28,7 @@ CONFLICTS=	squid-devel
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_RC_SUBR=	squid
 
 USERS=		squid
