@@ -1,5 +1,5 @@
 bin/crimson
-man/man6/crimson.6.gz
+share/man/man6/crimson.6.gz
 share/pixmaps/crimson.png
 %%DATADIR%%/cf.dat
 %%DATADIR%%/default.tiles
