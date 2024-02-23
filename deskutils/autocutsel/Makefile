@@ -1,5 +1,6 @@
 PORTNAME=	autocutsel
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	john@jnielsen.net
@@ -18,13 +19,13 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/autocutsel \
 		bin/cutsel \
-		man/man1/autocutsel.1.gz \
-		man/man1/cutsel.1.gz
+		share/man/man1/autocutsel.1.gz \
+		share/man/man1/cutsel.1.gz
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-I\.|-I/usr/local/include|g' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
