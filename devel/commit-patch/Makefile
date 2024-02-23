@@ -1,5 +1,6 @@
 PORTNAME=	commit-patch
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lapo@lapo.it
@@ -22,14 +23,13 @@ GH_ACCOUNT=	caldwell
 NO_ARCH=	yes
 PLIST_FILES=	bin/commit-partial bin/commit-patch \
 		share/emacs/site-lisp/commit-patch-buffer.el \
-		man/man1/commit-partial.1.gz man/man1/commit-patch.1.gz
+		share/man/man1/commit-partial.1.gz share/man/man1/commit-patch.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-		${REINPLACE_CMD} -e 's/share[/]man/man/' \
-			-e 's/PREFIX=/PREFIX?=/' \
+		${REINPLACE_CMD} -e 's/PREFIX=/PREFIX?=/' \
 			-e 's/$$(PREFIX)/$$(DESTDIR)$$(PREFIX)/' \
 			${WRKSRC}/Makefile
 
