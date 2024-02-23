@@ -1,7 +1,7 @@
 bin/pavuk
 bin/pavuk.sh
 bin/tperf.sh
-man/man1/pavuk.1.gz
+share/man/man1/pavuk.1.gz
 etc/pavuk_authinfo.sample
 etc/pavukrc.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

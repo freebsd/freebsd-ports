@@ -1,6 +1,6 @@
 PORTNAME=	pavuk
 PORTVERSION=	0.9.35
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp www
 MASTER_SITES=	SF
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
 		--disable-debug --disable-gnome --disable-js \
 		--enable-utf-8 --enable-threads
