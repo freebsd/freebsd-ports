@@ -1,5 +1,6 @@
 PORTNAME=	z80asm
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://savannah.c3sl.ufpr.br/${PORTNAME}/
 
@@ -15,7 +16,7 @@ OPTIONS_DEFINE=	EXAMPLES
 USES=		gmake
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/z80asm.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/z80asm.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/z80asm ${STAGEDIR}${PREFIX}/bin
 
 do-install-EXAMPLES-on:

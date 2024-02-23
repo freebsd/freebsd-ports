@@ -1,5 +1,5 @@
 bin/z80asm
-man/man1/z80asm.1.gz
+share/man/man1/z80asm.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msx-bios.asm
