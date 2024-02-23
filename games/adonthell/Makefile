@@ -1,6 +1,6 @@
 PORTNAME=	adonthell
 PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
@@ -21,6 +21,7 @@ USE_CXXSTD=	c++14
 USE_SDL=	mixer2 ttf2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-py-debug \
 		--disable-pyc \
 		--with-py-libs="$$(${PYTHON_CMD}-config --ldflags --embed)" \
@@ -28,7 +29,7 @@ CONFIGURE_ARGS=	--disable-py-debug \
 
 PLIST_DIRS=	${DATADIR}/games
 PLIST_FILES=	bin/adonthell \
-		man/man6/adonthell.6.gz \
+		share/man/man6/adonthell.6.gz \
 		${DATADIR}/modules/adonthell.py \
 		${DATADIR}/modules/dialogue.py
 
