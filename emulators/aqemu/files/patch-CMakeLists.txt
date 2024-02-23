@@ -9,17 +9,3 @@
  		
  		SET( ${_sources} ${${_sources}} ${_out} )
  	ENDFOREACH( curFile )
-@@ -327,11 +327,11 @@ IF( INSTALL_MAN )
- 						WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} )
- 		
- 		# Install MAN
--		INSTALL( FILES ${CMAKE_SOURCE_DIR}/${aqemu_man_page}.${COMPRESSOR_SUFFIX} DESTINATION share/man/man1 )
-+		INSTALL( FILES ${CMAKE_SOURCE_DIR}/${aqemu_man_page}.${COMPRESSOR_SUFFIX} DESTINATION man/man1 )
- 	ELSE( COMPRESSOR_SUFFIX )
- 		MESSAGE( STATUS "MAN_PAGE_COMPRESSOR flag not set. Available values: gzip, bzip2, lzma" )
- 		MESSAGE( STATUS "Will be installed not compressed MAN pages" )
- 		
--		INSTALL( FILES ${CMAKE_SOURCE_DIR}/${aqemu_man_page} DESTINATION share/man/man1 )
-+		INSTALL( FILES ${CMAKE_SOURCE_DIR}/${aqemu_man_page} DESTINATION man/man1 )
- 	ENDIF( COMPRESSOR_SUFFIX )
- ENDIF( INSTALL_MAN )
