@@ -1,5 +1,5 @@
 bin/fmirror
-man/man1/fmirror.1.gz
+share/man/man1/fmirror.1.gz
 %%PORTDOCS%%share/doc/fmirror/ChangeLog
 %%PORTDOCS%%share/doc/fmirror/README
 %%PORTDOCS%%share/doc/fmirror/generic.conf
