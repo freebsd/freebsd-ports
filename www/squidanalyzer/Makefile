@@ -1,5 +1,6 @@
 PORTNAME=	squidanalyzer
 PORTVERSION=	6.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www perl5
 
@@ -22,7 +23,7 @@ CONFIGURE_ENV=	DESTDIR=${STAGEDIR} \
 		CONFDIR=${PREFIX}/etc/squidreport \
 		HTMLDIR=${PREFIX}/www/squidreport \
 		BASEURL=/squidreport \
-		MANDIR=${PREFIX}/man/man3 \
+		MANDIR=${PREFIX}/share/man/man3 \
 		DOCDIR=${PREFIX}/share/doc/squidanalyzer \
 		INSTALLDIRS=site
 ETCDIR=		${PREFIX}/etc/squidreport
