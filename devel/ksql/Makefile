@@ -1,5 +1,6 @@
 PORTNAME=	ksql
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	devel databases
 MASTER_SITES=	http://kristaps.bsd.lv/ksql/snapshots/
 
@@ -12,7 +13,7 @@ LICENSE=	ISCL
 USES=		localbase:ldflags sqlite
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	PREFIX="${PREFIX}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	PREFIX="${PREFIX}" LDFLAGS="${LDFLAGS}" MANDIR="${PREFIX}/share/man"
 
 do-test:
 	@cd ${WRKSRC} && ./test
