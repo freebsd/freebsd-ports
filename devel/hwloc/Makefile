@@ -1,6 +1,6 @@
 PORTNAME=	hwloc
 PORTVERSION=	1.11.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION:R}/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
@@ -21,6 +21,7 @@ USES=		iconv libtool gnome pathfix pkgconfig tar:bzip2
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static \
 		--disable-opencl \
 		--disable-cuda \
