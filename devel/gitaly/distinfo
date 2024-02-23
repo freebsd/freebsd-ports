@@ -1,5 +1,5 @@
-TIMESTAMP = 1708581108
-SHA256 (go/devel_gitaly/gitaly-v16.8.3/go.mod) = 114e8afe5f7e9000677d449a0d55972d9845f8c237cfc3eb98d673cf886006a7
-SIZE (go/devel_gitaly/gitaly-v16.8.3/go.mod) = 10585
-SHA256 (go/devel_gitaly/gitaly-v16.8.3/gitaly-v16.8.3.tar.bz2) = 91a5d01d82834914d41cd5048530e0f3d9bc850a4fa35e01ee67820310d08179
-SIZE (go/devel_gitaly/gitaly-v16.8.3/gitaly-v16.8.3.tar.bz2) = 2554439
+TIMESTAMP = 1708413587
+SHA256 (go/devel_gitaly/gitaly-v16.9.0/go.mod) = 08c1274c3bbbb20f6d826fb985593bb724c0760257ecc1028e7e33a7e2517c42
+SIZE (go/devel_gitaly/gitaly-v16.9.0/go.mod) = 10659
+SHA256 (go/devel_gitaly/gitaly-v16.9.0/gitaly-v16.9.0.tar.bz2) = 5bf2255280fdcb2fa744171acd4eea4323022f477db915954e0999a31de8eb12
+SIZE (go/devel_gitaly/gitaly-v16.9.0/gitaly-v16.9.0.tar.bz2) = 2570690
