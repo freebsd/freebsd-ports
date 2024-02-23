@@ -414,10 +414,10 @@ libdata/pkgconfig/codeblocks.pc
 libdata/pkgconfig/wxsmith-contrib.pc
 libdata/pkgconfig/wxsmith.pc
 libdata/pkgconfig/wxsmithaui.pc
-man/man1/cb_console_runner.1.gz
-man/man1/cb_share_config.1.gz
-man/man1/codeblocks.1.gz
-man/man1/codesnippets.1.gz
+share/man/man1/cb_console_runner.1.gz
+share/man/man1/cb_share_config.1.gz
+share/man/man1/codeblocks.1.gz
+share/man/man1/codesnippets.1.gz
 share/appdata/codeblocks-contrib.metainfo.xml
 share/appdata/codeblocks.appdata.xml
 share/applications/codeblocks.desktop
