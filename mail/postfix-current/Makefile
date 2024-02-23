@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.9-20240121
+DISTVERSION=	3.9-20240218
 PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
@@ -23,39 +23,52 @@ LICENSE_NAME_IPL10=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS_IPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FLAVORS=			default ldap mysql pgsql sasl sqlite
+FLAVORS=			default ldap mongo mysql pgsql sasl sqlite
 default_CONFLICTS_INSTALL=	postfix-current-base-ldap postfix-current-base-sasl \
 				postfix-current-ldap postfix-current-sasl \
+				postfix-current-mongo postfix-current-base-mongo \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sqlite postfix-current-base-sqlite
 ldap_PKGNAMESUFFIX=		-current-ldap
 ldap_CONFLICTS_INSTALL=		postfix-current postfix-current-base \
 				postfix-current-base-sasl postfix-current-sasl \
+				postfix-current-mongo postfix-current-base-mongo \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
+				postfix-current-sqlite postfix-current-base-sqlite
+mongo_PKGNAMESUFFIX=		-current-mongo
+mongo_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
+				postfix-current-ldap postfix-current-base-ldap \
+				postfix-current-mysql postfix-current-base-mysql \
+				postfix-current-pgsql postfix-current-base-pgsql \
+				postfix-current-sasl postfix-current-base-sasl \
 				postfix-current-sqlite postfix-current-base-sqlite
 mysql_PKGNAMESUFFIX=		-current-mysql
 mysql_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-ldap postfix-current-base-ldap \
+				postfix-current-mongo postfix-current-base-mongo \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sasl postfix-current-base-sasl \
 				postfix-current-sqlite postfix-current-base-sqlite
 pgsql_PKGNAMESUFFIX=		-current-pgsql
 pgsql_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-ldap postfix-current-base-ldap \
+				postfix-current-mongo postfix-current-base-mongo \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-sasl postfix-current-base-sasl \
 				postfix-current-sqlite postfix-current-base-sqlite
 sasl_PKGNAMESUFFIX=		-current-sasl
 sasl_CONFLICTS_INSTALL=		postfix-current postfix-current-base \
 				postfix-current-base-ldap postfix-current-ldap \
+				postfix-current-mongo postfix-current-base-mongo \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sqlite postfix-current-base-sqlite
 sqlite_PKGNAMESUFFIX=		-current-sqlite
 sqlite_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-ldap postfix-current-base-ldap \
+				postfix-current-mongo postfix-current-base-mongo \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sasl postfix-current-base-sasl
@@ -79,8 +92,8 @@ CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
 USERS=		postfix
 GROUPS=		mail maildrop postfix
 
-OPTIONS_DEFINE=		BDB BLACKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MYSQL \
-			NIS PCRE2 PGSQL SASL SQLITE TEST TLS
+OPTIONS_DEFINE=		BDB BLACKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MONGO \
+			MYSQL NIS PCRE2 PGSQL SASL SQLITE TEST TLS
 OPTIONS_DEFAULT?=	BLACKLISTD EAI PCRE2 TLS
 OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
@@ -113,6 +126,8 @@ CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
 LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+MONGO_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
+				libmongoc-1.0.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql
 PCRE2_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
 PGSQL_USES=			pgsql
@@ -259,6 +274,13 @@ POSTFIX_AUXLIBS+=	-lblacklist
 . else
 IGNORE=		blacklistd is only supported on FreeBSD
 . endif
+.endif
+
+.if ${PORT_OPTIONS:MMONGO}
+DYN_EXT+=		mongodb
+POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/libmongoc-1.0 \
+			-I${LOCALBASE}/include/libbson-1.0
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc-1.0 -lbson-1.0"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}

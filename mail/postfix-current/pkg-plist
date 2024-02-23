@@ -28,6 +28,7 @@ lib/postfix/libpostfix-util.so
 %%CDB%%lib/postfix/postfix-cdb.so
 %%LDAP%%lib/postfix/postfix-ldap.so
 %%LMDB%%lib/postfix/postfix-lmdb.so
+%%MONGO%%lib/postfix/postfix-mongodb.so
 %%MYSQL%%lib/postfix/postfix-mysql.so
 %%PCRE2%%lib/postfix/postfix-pcre.so
 %%PGSQL%%lib/postfix/postfix-pgsql.so
@@ -41,6 +42,7 @@ libexec/postfix/dynamicmaps.cf
 %%CDB%%libexec/postfix/dynamicmaps.cf.d/cdb.cf
 %%LDAP%%libexec/postfix/dynamicmaps.cf.d/ldap.cf
 %%LMDB%%libexec/postfix/dynamicmaps.cf.d/lmdb.cf
+%%MONGO%%libexec/postfix/dynamicmaps.cf.d/mongodb.cf
 %%MYSQL%%libexec/postfix/dynamicmaps.cf.d/mysql.cf
 %%PCRE2%%libexec/postfix/dynamicmaps.cf.d/pcre.cf
 %%PGSQL%%libexec/postfix/dynamicmaps.cf.d/pgsql.cf
@@ -62,6 +64,7 @@ libexec/postfix/postfix-files
 %%CDB%%libexec/postfix/postfix-files.d/cdb-files
 %%LDAP%%libexec/postfix/postfix-files.d/ldap-files
 %%LMDB%%libexec/postfix/postfix-files.d/lmdb-files
+%%MONGO%%libexec/postfix/postfix-files.d/mongodb-files
 %%MYSQL%%libexec/postfix/postfix-files.d/mysql-files
 %%PCRE2%%libexec/postfix/postfix-files.d/pcre-files
 %%PGSQL%%libexec/postfix/postfix-files.d/pgsql-files
@@ -119,6 +122,7 @@ share/man/man5/ldap_table.5.gz
 share/man/man5/lmdb_table.5.gz
 share/man/man5/master.5.gz
 share/man/man5/memcache_table.5.gz
+share/man/man5/mongodb_table.5.gz
 share/man/man5/mysql_table.5.gz
 share/man/man5/nisplus_table.5.gz
 share/man/man5/pcre_table.5.gz
