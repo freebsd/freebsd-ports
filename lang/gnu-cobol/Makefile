@@ -1,5 +1,6 @@
 PORTNAME=	gnucobol
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GNU/gnucobol
 
@@ -17,6 +18,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 USES=		bdb gmake libtool ncurses tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	MATH_LIBS=-lm
+
 TEST_TARGET=	check
 TEST_ENV=	TESTSUITEFLAGS=--jobs=${MAKE_JOBS_NUMBER}
 
