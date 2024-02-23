@@ -1,6 +1,6 @@
 PORTNAME=	webstorm
-DISTVERSION=	2023.3.3
-CATEGORIES=	devel java
+PORTVERSION=	2023.3.4
+CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	WebStorm-${PORTVERSION}
@@ -35,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/WebStorm-233.14015.89
+WRKSRC=		${WRKDIR}/WebStorm-233.14475.40
 
 do-install:
 # Linux/Windows/OS X only so remove them
@@ -50,8 +50,7 @@ do-install:
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
-		${WRKSRC}/plugins/cwm-plugin-projector \
-		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
+		${WRKSRC}/plugins/gateway-plugin \
 		${WRKSRC}/plugins/remote-dev-server \
 		${WRKSRC}/plugins/webp/lib/libwebp
 	${MKDIR} ${STAGEDIR}${DATADIR}
