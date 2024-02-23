@@ -1,6 +1,6 @@
 PORTNAME=	tiemu3
 PORTVERSION=	3.03
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gtktiemu/tiemu-linux/TIEmu%20${DISTVERSION}
 DISTNAME=	tiemu-${DISTVERSION}
@@ -24,6 +24,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2
 USE_SDL=	sdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-gdb --without-kde
 
 LDFLAGS+=	-Wl,-E
