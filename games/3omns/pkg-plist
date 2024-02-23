@@ -1,5 +1,5 @@
 bin/3omns
-man/man6/3omns.6.gz
+share/man/man6/3omns.6.gz
 %%DATADIR%%/base/bot.lua
 %%DATADIR%%/base/core.lua
 %%DATADIR%%/base/entities/bomn.lua
