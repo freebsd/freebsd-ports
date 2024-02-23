@@ -1,34 +1,35 @@
 PORTNAME=	xvt
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.6
 CATEGORIES+=	x11
-MASTER_SITES=	https://BSDforge.com/projects/source/x11/xvt/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Xterm replacement, supporting color, transparency, and more, with less
-WWW=		https://BSDforge.com/projects/x11/xvt/
+WWW=		https://codeberg.org/BSDforge/xvt/
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-DEPRECATED=	Deprecated in favour of various forks, consider using x11/rxvt-unicode
-EXPIRATION_DATE=2024-02-29
-
-PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
-
-USES=		libtool perl5 tar:xz xorg
+USES=		libtool perl5 xorg
 USE_LDCONFIG=	yes
 USE_PERL5=	build patch
 USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 
-DESKTOP_ENTRIES=	"xvt" "xvt terminal emulator" \
+PORTDOCS=	README.xvt xvt.1.html xvtRef.html xvtRef.txt
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+DESKTOP_ENTRIES=	"xvt" \
+			"xvt terminal emulator" \
 			"${PREFIX}/share/pixmaps/xvt.png" \
-			"xvt" "GNOME;X-XFCE;X-Xfce-Toplevel;System;Utility;TerminalEmulator;" \
+			"xvt" \
+			"GNOME;X-XFCE;X-Xfce-Toplevel;System;Utility;TerminalEmulator;" \
 			false
 
-OPTIONS_DEFINE=	256_COLOR BIG5 EUCJ GB GREEK KR LINESPACE MENUBAR NEXT XVT \
-		SJIS SMART TRANSPARENCY XIM XTERM DOCS XGETDEFAULT
+OPTIONS_DEFINE=	256_COLOR BIG5 DOCS EUCJ GB GREEK KR LINESPACE MENUBAR NEXT \
+		SJIS SMART TRANSPARENCY XGETDEFAULT XIM XTERM XVT
+OPTIONS_DEFAULT=	256_COLOR DOCS GB LINESPACE MENUBAR NEXT SMART \
+			TRANSPARENCY XIM XTERM XVT
 
 256_COLOR_DESC=		Build with 256-color support
 BIG5_DESC=		Build with BIG5 support
@@ -47,47 +48,52 @@ XIM_DESC=		Build with XIM support
 XTERM_DESC=		Build with Xterm scrollbar
 XGETDEFAULT_DESC=	Build with resources checking via XGetDefault
 
-OPTIONS_DEFAULT=256_COLOR GB LINESPACE MENUBAR NEXT XVT SMART TRANSPARENCY \
-		XIM XTERM DOCS
-
-CONFIGURE_ARGS=	--enable-utmp --enable-lastlog \
-		--with-xpm --enable-xpm-background --enable-shared \
-		--enable-mousewheel --disable-languages \
-		--disable-wtmp
+CONFIGURE_ARGS=	--disable-wtmp \
+		--enable-lastlog \
+		--enable-mousewheel \
+		--enable-shared \
+		--enable-utmp \
+		--enable-xpm-background \
+		--with-xpm
 LIBS+=		-lutil
 
 # enable 256 color
-256_COLOR_CONFIGURE_ON=	--enable-256-color
+256_COLOR_CONFIGURE_ENABLE=		--enable-256-color
 # enable big5 support
-BIG5_CONFIGURE_ON=	--with-encoding=big5 --enable-languages
+BIG5_CONFIGURE_ENABLE=		--enable-languages \
+				--with-encoding=big5
 # enable euc japanese support
-EUCJ_CONFIGURE_ON=	--with-encoding=eucj --enable-languages
+EUCJ_CONFIGURE_ENABLE=		--enable-languages \
+				--with-encoding=eucj
 # enable gb support
-GB_CONFIGURE_ON=	--with-encoding=gb --enable-languages
+GB_CONFIGURE_ENABLE=		--enable-languages \
+				--with-encoding=gb
 # enable greek keyboard support
-GREEK_CONFIGURE_ON=	--enable-greek
+GREEK_CONFIGURE_ENABLE=		--enable-greek
 # enable euc korean support
-KR_CONFIGURE_ON=	--with-encoding=kr --enable-languages
+KR_CONFIGURE_ENABLE=		--enable-languages \
+				--with-encoding=kr
 # enable line-spacing
-LINESPACE_CONFIGURE_ON=	--enable-linespace
+LINESPACE_CONFIGURE_ENABLE=		--enable-linespace
 # enable menubar
-MENUBAR_CONFIGURE_ON=	--enable-menubar
+MENUBAR_CONFIGURE_ON=		--enable-menubar
 # enable NeXT style scrollbar
-NEXT_CONFIGURE_ON=	--enable-next-scroll
+NEXT_CONFIGURE_ENABLE=		--enable-next-scroll
 # enable xvt style scrollbar
-XVT_CONFIGURE_ON=	--enable-xvt-scroll
+XVT_CONFIGURE_ENABLE=		--enable-xvt-scroll
 # enable shift jis support
-SJIS_CONFIGURE_ON=	--with-encoding=sjis --enable-languages
+SJIS_CONFIGURE_ENABLE=		--enable-languages \
+				--with-encoding=sjis
 # enable smart resize
-SMART_CONFIGURE_ON=	--enable-smart-resize
+SMART_CONFIGURE_ENABLE=		--enable-smart-resize
 # enable transparency support
-TRANSPARENCY_CONFIGURE_ON=	--enable-transparency
+TRANSPARENCY_CONFIGURE_ENABLE=	--enable-transparency
 # XIM (X Input Method) protocol support
-XIM_CONFIGURE_ON=	--enable-xim
+XIM_CONFIGURE_ENABLE=		--enable-xim
 # enable Xterm style scrollbar
-XTERM_CONFIGURE_ON=	--enable-xterm-scroll
+XTERM_CONFIGURE_ENABLE=		--enable-xterm-scroll
 # make resources checking via XGetDefault
-XGETDEFAULT_CONFIGURE_ON=	--enable-xgetdefault
+XGETDEFAULT_CONFIGURE_ENABLE=	--enable-xgetdefault
 
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \

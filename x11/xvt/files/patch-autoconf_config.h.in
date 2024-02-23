@@ -1,5 +1,5 @@
---- autoconf/config.h.in.orig	2014-12-09 14:01:13.000000000 -0800
-+++ autoconf/config.h.in	2014-12-09 14:01:19.000000000 -0800
+--- autoconf/config.h.in.orig	2024-02-21 00:18:50 UTC
++++ autoconf/config.h.in
 @@ -313,13 +313,13 @@
  #undef XVT_UTMPX_FILE
  

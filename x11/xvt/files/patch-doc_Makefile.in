@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2014-12-09 14:08:52.000000000 -0800
-+++ doc/Makefile.in	2014-12-09 14:08:56.000000000 -0800
-@@ -40,9 +40,6 @@
+--- doc/Makefile.in.orig	2024-02-21 00:18:50 UTC
++++ doc/Makefile.in
+@@ -40,9 +40,6 @@ all:	xvt.1
  
  all:	xvt.1
  
