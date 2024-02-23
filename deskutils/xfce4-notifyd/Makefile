@@ -5,6 +5,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -25,6 +26,7 @@ USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-systemd
 INSTALL_TARGET=	install-strip
 
