@@ -1,6 +1,6 @@
 PORTNAME=	idutils
 PORTVERSION=	4.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -16,9 +16,10 @@ USES=		charsetfix tar:xz uniquefiles
 # Also see patch-src_defid and patch-lisp_idutils.el
 UNIQUE_PREFIX=	g
 UNIQUE_PREFIX_FILES=	bin/gid \
-			man/man1/gid.1
+			share/man/man1/gid.1
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	EMACS='no'
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
