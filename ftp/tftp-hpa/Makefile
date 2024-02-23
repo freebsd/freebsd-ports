@@ -1,6 +1,6 @@
 PORTNAME=	tftp-hpa
 PORTVERSION=	5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	KERNEL_ORG/software/network/tftp/tftp-hpa
 
@@ -11,6 +11,7 @@ LICENSE=	BSD4CLAUSE
 
 USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_RC_SUBR=	tftpd
 
 OPTIONS_DEFINE=	DOCS
@@ -19,9 +20,9 @@ DESTDIRNAME=	INSTALLROOT
 
 PLIST_FILES=	bin/tftp \
 		libexec/in.tftpd \
-		man/man1/tftp.1.gz \
-		man/man8/in.tftpd.8.gz \
-		man/man8/tftpd.8.gz
+		share/man/man1/tftp.1.gz \
+		share/man/man8/in.tftpd.8.gz \
+		share/man/man8/tftpd.8.gz
 PORTDOCS=	CHANGES \
 		README \
 		README.security
