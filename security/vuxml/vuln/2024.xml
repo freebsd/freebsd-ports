@@ -1,3 +1,62 @@
+  <vuln vid="6a851dc0-cfd2-11ee-ac09-6c3be5272acd">
+    <topic>Grafana -- Email verification is not required after email change</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>9.5.16</lt></range>
+	<range><ge>10.0.0</ge><lt>10.0.11</lt></range>
+	<range><ge>10.1.0</ge><lt>10.1.7</lt></range>
+	<range><ge>10.2.0</ge><lt>10.2.4</lt></range>
+	<range><ge>10.3.0</ge><lt>10.3.3</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.5.16</lt></range>
+      </package>
+      <package>
+	<name>grafana10</name>
+	<range><lt>10.0.11</lt></range>
+	<range><ge>10.1.0</ge><lt>10.1.7</lt></range>
+	<range><ge>10.2.0</ge><lt>10.2.4</lt></range>
+	<range><ge>10.3.0</ge><lt>10.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2024/02/14/grafana-security-release-medium-severity-security-fix-for-cve-2023-6152/">
+	  <p>The vulnerability impacts instances where
+	  <a href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/grafana/">
+	  Grafana basic authentication</a> is enabled.</p>
+	  <p>Grafana has a
+	  <a href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#verify_email_enabled">
+	  verify_email_enabled</a> configuration option. When this option is enabled,
+	  users are required to confirm their email addresses before the sign-up process
+	  is complete. However, the email is only checked at the time of the sign-up.
+	  No further verification is carried out if a user’s email address is updated
+	  after the initial sign-up. Moreover, Grafana allows using an email address
+	  as the user’s login name, and no verification is ever carried out for this email
+	  address.</p>
+	  <p>This means that even if the
+	  <a href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#verify_email_enabled">
+	  verify_email_enabled</a> configuration option is enabled, users can use
+	  unverified email addresses to log into Grafana if the email address
+	  has been changed after the sign up, or if an email address is set as the login
+	  name.</p>
+	  <p>The CVSS score for this vulnerability is [5.4 Medium] (CVSS).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6152</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2023-6152/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-10</discovery>
+      <entry>2024-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="255bf44c-d298-11ee-9c27-40b034429ecf">
     <topic>dns/c-ares -- malformatted file causes application crash</topic>
     <affects>
