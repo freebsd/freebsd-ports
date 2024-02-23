@@ -4,7 +4,7 @@ lib/libpcre++.a
 lib/libpcre++.so
 lib/libpcre++.so.0
 lib/libpcre++.so.0.0.0
-man/man3/Pcre.3.gz
+share/man/man3/Pcre.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

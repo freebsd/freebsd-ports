@@ -1,6 +1,6 @@
 PORTNAME=	pcre++
 PORTVERSION=	0.9.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/pcre++/
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	$$(${PCRE_CONFIG} --cflags)
