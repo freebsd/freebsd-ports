@@ -1,3 +1,33 @@
+  <vuln vid="979dc373-d27d-11ee-8b84-b42e991fc52e">
+    <topic>suricata -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>suricata</name>
+	<range><lt>7.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Suricata team reports:</p>
+	<blockquote cite="https://suricata.io/2024/02/08/suricata-7-0-3-and-6-0-16-released/">
+	  <p>Multiple vulnerabilities fixed in the last release of suricata.</p>
+	</blockquote>
+	<p>No details have been disclosed yet</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-23839</cvename>
+      <cvename>CVE-2024-23836</cvename>
+      <cvename>CVE-2024-23835</cvename>
+      <cvename>CVE-2024-24568</cvename>
+      <cvename>CVE-2024-23837</cvename>
+    </references>
+    <dates>
+      <discovery>2024-01-22</discovery>
+      <entry>2024-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80ad6d6c-b398-457f-b88f-bf6be0bbad44">
     <topic>electron27 -- multiple vulnerabilities</topic>
     <affects>
