@@ -1,6 +1,6 @@
 PORTNAME=	hot-babe
 PORTVERSION=	0.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/ \
 		LOCAL/novel
@@ -24,7 +24,7 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
