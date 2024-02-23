@@ -1,5 +1,5 @@
 bin/rubymine
-man/man1/rubymine.1.gz
+share/man/man1/rubymine.1.gz
 share/applications/rubymine.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/RMlogo.svg
