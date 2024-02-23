@@ -1,17 +1,18 @@
 PORTNAME=	spellutils
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Programs used to isolate some parts or texts before spell-checking
-WWW=		https://www.sourcefiles.org/Utilities/Text_Utilities/spellutils-0.7.tar.bz2.shtml
+WWW=		https://web.archive.org/web/20081225045803/http://home.worldonline.dk/byrial/spellutils/
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
 USES=		gettext tar:bzip2
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl
 
