@@ -1,5 +1,6 @@
 PORTNAME=	hv_kvp_cmd
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	pavelivolkov@gmail.com
@@ -15,8 +16,8 @@ IGNORE=	requires system source tree in the ${SRC_BASE}
 USE_GITHUB=	yes
 GH_ACCOUNT=	pol73
 
-MAKE_ARGS+=	LOCAL=${STAGEDIR}${PREFIX}
+MAKE_ARGS+=	LOCAL=${STAGEDIR}${PREFIX} MANDIR=share/man
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
