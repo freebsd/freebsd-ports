@@ -1,5 +1,5 @@
 bin/clion
-man/man1/clion.1.gz
+share/man/man1/clion.1.gz
 share/applications/clion.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
