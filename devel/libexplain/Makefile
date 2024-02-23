@@ -1,6 +1,6 @@
 PORTNAME=	libexplain
 PORTVERSION=	1.3.${PATCHLEVEL}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -22,6 +22,7 @@ USES=		bison gettext ghostscript:build gmake groff iconv libtool:build localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_header_linux_kd_h=no
 
 OPTIONS_DEFINE=	DOCS
