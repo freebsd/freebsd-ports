@@ -6,7 +6,7 @@
  BINDIR = ${PREFIX}/bin/
 -MANDIR = ${PREFIX}/share/man/man1
 -LIBDIR = ${PREFIX}/lib/
-+MANDIR = ${PREFIX}/man/man1
++MANDIR = ${PREFIX}/share/man/man1
 +DATDIR = ${PREFIX}/share
 +DOCDIR = ${PREFIX}/share/doc/mspdebug
  
