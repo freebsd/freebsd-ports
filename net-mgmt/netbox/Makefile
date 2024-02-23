@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.2
+DISTVERSION=	3.7.3
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj42-django-tables2
 # - www/py-dj42-djangorestframework
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.9<4.3:www/py-django42@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.10<4.3:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.1<5:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-debug-toolbar>=4.3.0<5:www/py-dj42-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.5<24:www/py-dj42-django-filter@${PY_FLAVOR} \
@@ -44,19 +44,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.9<4.3:www/py-django42@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0<7:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.10<7:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.3<4:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.6:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.5.7<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.4.4<3.6:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.5.10<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.24.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python-legacy>0:textproc/py-mkdocstrings-python-legacy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}netaddr>=0.10.1<1:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=10.1.0:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psycopg>=3.1.16<4:databases/py-psycopg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netaddr>=0.10.1<2:net/py-netaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=10.2.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg>=3.1.18<4:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.31.0<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-app-django>=5.4.0<6:www/py-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.5.1<5:security/py-social-auth-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.5.0<4:textproc/py-tablib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tzdata>=2023.4:devel/py-tzdata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tzdata>=2024.1:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=6.0.1<7:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=21.2.0<22:www/py-gunicorn@${PY_FLAVOR}
 

@@ -604,6 +604,7 @@
 %%DATADIR%%/extras/migrations/0104_stagedchange_remove_change_logging.py
 %%DATADIR%%/extras/migrations/0105_customfield_min_max_values.py
 %%DATADIR%%/extras/migrations/0106_bookmark_user_cascade_deletion.py
+%%DATADIR%%/extras/migrations/0107_cachedvalue_extras_cachedvalue_object.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models/__init__.py
 %%DATADIR%%/extras/models/change_logging.py
