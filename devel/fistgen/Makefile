@@ -1,5 +1,6 @@
 PORTNAME=	fistgen
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.filesystems.org/pub/fistgen/
 
@@ -8,6 +9,7 @@ COMMENT=	Language for describing stackable filesystems
 WWW=		https://www.filesystems.org/
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	pkg-message
@@ -16,7 +18,7 @@ PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	sbin/fistgen \
-		man/man8/fistgen.8.gz
+		share/man/man8/fistgen.8.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
