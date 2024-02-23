@@ -1,6 +1,6 @@
 PORTNAME=	dangen
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,6 +13,7 @@ LICENSE=	GPLv2 ART20
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake sdl
 USE_SDL=	sdl image
 DESKTOP_ENTRIES="dangen" \
@@ -23,7 +24,7 @@ DESKTOP_ENTRIES="dangen" \
 		false
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz
+		share/man/man6/${PORTNAME}.6.gz
 PORTDOCS=	*
 PORTDATA=	*
 
