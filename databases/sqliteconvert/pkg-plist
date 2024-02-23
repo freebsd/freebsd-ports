@@ -1,7 +1,7 @@
 bin/sqlite2dot
 bin/sqlite2html
 bin/sqliteconvert
-man/man1/sqlite2dot.1.gz
-man/man1/sqlite2html.1.gz
-man/man1/sqliteconvert.1.gz
+share/man/man1/sqlite2dot.1.gz
+share/man/man1/sqlite2html.1.gz
+share/man/man1/sqliteconvert.1.gz
 %%DATADIR%%/schema.xml
