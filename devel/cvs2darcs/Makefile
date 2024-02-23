@@ -1,6 +1,6 @@
 PORTNAME=	cvs2darcs
 PORTVERSION=	0.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 
@@ -17,9 +17,10 @@ BUILD_DEPENDS=	cvs:devel/cvs \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvs2darcs share/cvs2darcs/cvs_convert.pl \
-		share/cvs2darcs/branch_detect.pl man/man1/${PORTNAME}.1.gz
+		share/cvs2darcs/branch_detect.pl share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
