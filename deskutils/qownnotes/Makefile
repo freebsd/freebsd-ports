@@ -1,5 +1,5 @@
 PORTNAME=	qownnotes
-PORTVERSION=	24.1.5
+PORTVERSION=	24.2.5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/pbek/QOwnNotes/releases/download/v${PORTVERSION}/
 
