@@ -22,7 +22,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PS-233.14015.96
+%%DATADIR%%/lib/build-marker-PS-233.14475.35
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -111,10 +111,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/editorconfig/lib/editorconfig.jar
 %%DATADIR%%/plugins/emojipicker/lib/emojipicker.jar
 %%DATADIR%%/plugins/fileWatcher/lib/fileWatcher.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/gateway-plugin.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/gateway-standalone/gateway.core.jar
-%%DATADIR%%/plugins/gateway-plugin/lib/gateway-standalone/gateway.jar
-%%DATADIR%%/plugins/gateway-plugin/resources/gateway.vmoptions
 %%DATADIR%%/plugins/gateway-terminal/lib/gateway-terminal.jar
 %%DATADIR%%/plugins/gherkin/lib/gherkin.jar
 %%DATADIR%%/plugins/gnuGetText/lib/gnuGetText.jar
