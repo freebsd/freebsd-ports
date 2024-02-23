@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-dev-tools
 PORTVERSION=	4.18.1
+PORTREVISION=	1
 CATEGORIES=	devel xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -22,6 +23,7 @@ SHEBANG_FILES=	helpers/xfce-build helpers/xfce-do-release \
 		helpers/xfce-get-translations
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTSCOUT=	limitw:1,even
 
