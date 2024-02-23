@@ -1,5 +1,6 @@
 PORTNAME=	ical
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	deskutils tk
 MASTER_SITES=	https://launchpad.net/ical-tcl/+download/ \
 		http://opal.com/jr/ical/
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		autoreconf:build gmake tk xorg
 USE_XORG=	x11 xext xft xrender xscrnsaver
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-tkconfig=${TK_LIBDIR} \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-tclsh=${TCLSH}
