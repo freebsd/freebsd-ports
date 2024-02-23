@@ -1,5 +1,5 @@
 bin/gnome-latex
-man/man1/gnome-latex.1.gz
+share/man/man1/gnome-latex.1.gz
 share/applications/org.gnome.gnome-latex.desktop
 share/dbus-1/services/org.gnome.gnome-latex.service
 %%DATADIR%%/build_tools.xml
