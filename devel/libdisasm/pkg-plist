@@ -4,8 +4,8 @@ lib/libdisasm.a
 lib/libdisasm.so
 lib/libdisasm.so.0
 lib/libdisasm.so.0.0.0
-man/man1/x86dis.1.gz
-man/man3/x86_disasm.3.gz
-man/man3/x86_format_insn.3.gz
-man/man3/x86_init.3.gz
-man/man7/libdisasm.7.gz
+share/man/man1/x86dis.1.gz
+share/man/man3/x86_disasm.3.gz
+share/man/man3/x86_format_insn.3.gz
+share/man/man3/x86_init.3.gz
+share/man/man7/libdisasm.7.gz
