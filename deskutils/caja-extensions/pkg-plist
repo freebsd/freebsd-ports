@@ -12,7 +12,7 @@ lib/caja/extensions-2.0/libcaja-share.so
 lib/caja/extensions-2.0/libcaja-wallpaper.so
 lib/caja/extensions-2.0/libcaja-xattr-tags.so
 libdata/pkgconfig/caja-sendto.pc
-man/man1/caja-sendto.1.gz
+share/man/man1/caja-sendto.1.gz
 %%DATADIR%%/share-dialog.ui
 share/caja/extensions/libcaja-image-converter.caja-extension
 share/caja/extensions/libcaja-open-terminal.caja-extension

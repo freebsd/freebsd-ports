@@ -1,6 +1,6 @@
 PORTNAME=	caja-extensions
 PORTVERSION=	1.26.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -25,6 +25,7 @@ USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS= --enable-gksu=no
 INSTALL_TARGET=	install-strip
 
