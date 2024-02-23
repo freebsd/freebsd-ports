@@ -2,9 +2,9 @@ PORTNAME=	cfengine
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-CFENGINE_HASH=		8f1bb17ac
-LIBNTECH_HASH=		8b72e12
-CFENGINE_COMMIT_DATE=	2024.02.05
+CFENGINE_HASH=		2bd7f9320
+LIBNTECH_HASH=		9ab7f1e
+CFENGINE_COMMIT_DATE=	2024.02.20
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
@@ -30,7 +30,9 @@ USES=		autoreconf:build cpe gmake gnome libtool localbase shebangfix \
 		ssl
 USE_GNOME=	libxml2
 SHEBANG_FILES=	examples/remake_outputs.pl
-CFLAGS+=	-Wno-return-type -fcommon
+CFLAGS+=	-Wno-return-type -fcommon \
+		-Wno-int-conversion \
+		-Wno-implicit-function-declaration
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 MAKE_ENV=	EXPLICIT_VERSION=${PORTVERSION}-${HASH}
