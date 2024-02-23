@@ -1,6 +1,6 @@
 PORTNAME=	opam
 DISTVERSION=	2.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
@@ -26,6 +26,7 @@ USE_BINUTILS=	yes
 .endif
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-checks
 
 MAKE_JOBS_UNSAFE=	yes
