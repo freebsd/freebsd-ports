@@ -1,6 +1,6 @@
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent
 
 USES=		libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 MAKE_JOBS_UNSAFE=	yes
