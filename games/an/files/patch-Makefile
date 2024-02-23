@@ -7,7 +7,7 @@
 -INSTALLDIR := $(DESTDIR)/usr/games
 -MANDIR := $(DESTDIR)/usr/share/man/man6
 +INSTALLDIR := $(DESTDIR)$(PREFIX)/bin
-+MANDIR := $(DESTDIR)$(PREFIX)/man/man6
++MANDIR := $(DESTDIR)$(PREFIX)/share/man/man6
  
 -CC:=gcc
 +CC?=gcc
