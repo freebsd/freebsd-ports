@@ -15,4 +15,4 @@ share/xtr/keijis98.xtr
 share/xtr/mode.xtr
 share/xtr/pcpr.xtr
 share/xtr/prev.xtr
-man/man1/xtr.1.gz
+share/man/man1/xtr.1.gz
