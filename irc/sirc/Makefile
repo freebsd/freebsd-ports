@@ -1,6 +1,6 @@
 PORTNAME=	sirc
 PORTVERSION=	2.211
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME} \
 		http://www.iagora.com/~espel/sirc/ \
@@ -55,8 +55,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dsirc ${SIRCLIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/ssfe ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/sirc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ssfe.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/sirc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ssfe.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/sirc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/socks.pl ${SIRCLIBDIR}
 
 do-install-SIRC_SCRIPTS-on:
