@@ -135,8 +135,8 @@ lib/libferitestream.a
 lib/libferitestream.so
 lib/libferitestream.so.1
 lib/libferitestream.so.1.0.0
-man/man1/builder.1.gz
-man/man1/ferite.1.gz
+share/man/man1/builder.1.gz
+share/man/man1/ferite.1.gz
 share/aclocal/ferite.m4
 %%PORTDOCS%%%%DATADIR%%/doc/annotate-code.fe
 %%PORTDOCS%%%%DATADIR%%/doc/deannotate-code.fe
