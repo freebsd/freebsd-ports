@@ -27,10 +27,10 @@ include/stdps.h
 include/ufilep.h
 include/utypes.h
 include/xiplib.h
-man/man1/bmptopnm-O2.1.gz
-man/man1/breduce.1.gz
-man/man1/lpsmooth.1.gz
-man/man1/makecr.1.gz
-man/man1/makepr.1.gz
-man/man1/prlst2ps.1.gz
-man/man4/d4file.4.gz
+share/man/man1/bmptopnm-O2.1.gz
+share/man/man1/breduce.1.gz
+share/man/man1/lpsmooth.1.gz
+share/man/man1/makecr.1.gz
+share/man/man1/makepr.1.gz
+share/man/man1/prlst2ps.1.gz
+share/man/man4/d4file.4.gz
