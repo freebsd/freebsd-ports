@@ -1,7 +1,7 @@
 PORTNAME=	tlf
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,6 +23,7 @@ USES=		autoreconf gnome ncurses pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -largp" \
 		CPPFLAGS=-I${LOCALBASE}/include
 
