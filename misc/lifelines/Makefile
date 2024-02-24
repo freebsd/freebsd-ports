@@ -1,6 +1,6 @@
 PORTNAME=	lifelines
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/MarcNo/lifelines/releases/download/${PORTVERSION}/
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 USES=		autoreconf bison gmake iconv ncurses
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	YACC="bison -y"
 
 CONFLICTS_INSTALL=	atheme-services # bin/dbverify
