@@ -52,7 +52,7 @@
  
 +install: jgraph
 +	${BSD_INSTALL_PROGRAM} jgraph ${DESTDIR}${PREFIX}/bin
-+	${BSD_INSTALL_MAN} jgraph.1 ${DESTDIR}${PREFIX}/man/man1
++	${BSD_INSTALL_MAN} jgraph.1 ${DESTDIR}${PREFIX}/share/man/man1
 +	-mkdir -p -m 755 ${DESTDIR}${DATADIR}
 +	${BSD_INSTALL_DATA} $(EXAMPLE_SRC) ${DESTDIR}${DATADIR}
 +

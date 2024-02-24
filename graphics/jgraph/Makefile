@@ -1,6 +1,6 @@
 PORTNAME=	jgraph
 PORTVERSION=	8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://web.eecs.utk.edu/~plank/plank/jgraph/
 DISTFILES=	${PORTNAME}.shar.Z
