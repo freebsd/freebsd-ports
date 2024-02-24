@@ -1,5 +1,6 @@
 PORTNAME=	bitmap2pp
 DISTVERSION=	4.35.3
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -21,10 +22,10 @@ CONFIGURE_ENV=	ac_cv_header_db_h=no
 
 ALL_TARGET=		${PORTNAME}
 CONFLICTS_INSTALL=	dktools[0-9]*
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
