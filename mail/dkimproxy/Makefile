@@ -1,6 +1,6 @@
 PORTNAME=	dkimproxy
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -20,6 +20,7 @@ USES=		gmake perl5 shebangfix
 
 USE_RC_SUBR=	dkimproxy_in dkimproxy_out
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 SHEBANG_FILES=	scripts/*
 
