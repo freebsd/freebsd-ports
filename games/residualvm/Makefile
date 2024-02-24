@@ -1,6 +1,6 @@
 PORTNAME=	residualvm
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	yerenkow@gmail.com
@@ -42,6 +42,6 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|{datarootdir}/man|{prefix}/man|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|{datarootdir}/man|{prefix}/share/man|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
