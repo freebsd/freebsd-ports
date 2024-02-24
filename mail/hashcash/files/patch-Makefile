@@ -8,7 +8,7 @@
 -MAN_INSTALL_PATH = /usr/share/man/man1
 -DOC_INSTALL_PATH = /usr/share/doc/hashcash-$(HC_VERS)
 +INSTALL_PATH = ${STAGEDIR}${PREFIX}/bin
-+MAN_INSTALL_PATH = ${STAGEDIR}${PREFIX}/man/man1
++MAN_INSTALL_PATH = ${STAGEDIR}${PREFIX}/share/man/man1
 +DOC_INSTALL_PATH = ${STAGEDIR}${PREFIX}/share/doc/hashcash
  MAKEDEPEND = makedepend
  MSLIB = mslib 
