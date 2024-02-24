@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/accessibility_main_handler.cc.orig	2024-01-30 07:53:34 UTC
+--- chrome/browser/ui/webui/settings/accessibility_main_handler.cc.orig	2024-02-23 21:04:38 UTC
 +++ chrome/browser/ui/webui/settings/accessibility_main_handler.cc
 @@ -19,7 +19,7 @@
  #include "content/public/browser/web_contents.h"
@@ -9,7 +9,16 @@
  #include "ui/accessibility/accessibility_features.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
-@@ -49,7 +49,7 @@ void AccessibilityMainHandler::OnJavascriptAllowed() {
+@@ -39,7 +39,7 @@ void AccessibilityMainHandler::RegisterMessages() {
+       base::BindRepeating(
+           &AccessibilityMainHandler::HandleCheckAccessibilityImageLabels,
+           base::Unretained(this)));
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   web_ui()->RegisterMessageCallback(
+       "getScreenAiInstallState",
+       base::BindRepeating(
+@@ -56,7 +56,7 @@ void AccessibilityMainHandler::OnJavascriptAllowed() {
            base::Unretained(this)));
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -18,7 +27,7 @@
    if (features::IsPdfOcrEnabled()) {
      CHECK(!component_ready_observer_.IsObserving());
      component_ready_observer_.Observe(
-@@ -63,14 +63,14 @@ void AccessibilityMainHandler::OnJavascriptDisallowed(
+@@ -70,14 +70,14 @@ void AccessibilityMainHandler::OnJavascriptDisallowed(
    accessibility_subscription_ = {};
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  

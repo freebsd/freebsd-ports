@@ -1,6 +1,6 @@
---- base/threading/platform_thread_posix.cc.orig	2023-09-13 12:11:42 UTC
+--- base/threading/platform_thread_posix.cc.orig	2024-02-23 21:04:38 UTC
 +++ base/threading/platform_thread_posix.cc
-@@ -76,12 +76,12 @@ void* ThreadFunc(void* params) {
+@@ -78,12 +78,12 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
@@ -15,7 +15,7 @@
  #if BUILDFLAG(IS_APPLE)
      PlatformThread::SetCurrentThreadRealtimePeriodValue(
          delegate->GetRealtimePeriod());
-@@ -353,7 +353,7 @@ void PlatformThreadBase::Detach(PlatformThreadHandle t
+@@ -357,7 +357,7 @@ void PlatformThreadBase::Detach(PlatformThreadHandle t
  
  // static
  bool PlatformThreadBase::CanChangeThreadType(ThreadType from, ThreadType to) {
@@ -24,7 +24,7 @@
    return false;
  #else
    if (from >= to) {
-@@ -374,6 +374,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
+@@ -378,6 +378,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
                                MessagePumpType pump_type_hint) {
  #if BUILDFLAG(IS_NACL)
    NOTIMPLEMENTED();
@@ -34,7 +34,7 @@
  #else
    if (internal::SetCurrentThreadTypeForPlatform(thread_type, pump_type_hint))
      return;
-@@ -396,7 +399,7 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
+@@ -400,7 +403,7 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
  
  // static
  ThreadPriorityForTest PlatformThreadBase::GetCurrentThreadPriorityForTest() {

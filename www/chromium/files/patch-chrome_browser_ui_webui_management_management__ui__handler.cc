@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2023-10-11 18:22:24 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2024-02-23 21:04:38 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
-@@ -94,7 +94,7 @@
+@@ -95,7 +95,7 @@
  #include "components/policy/core/common/cloud/user_cloud_policy_manager.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/user_permission_service_factory.h"
  #include "components/device_signals/core/browser/user_permission_service.h"  // nogncheck
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -190,12 +190,12 @@ enum class ReportingType {
+@@ -191,12 +191,12 @@ enum class ReportingType {
    kLegacyTech,
  };
  
@@ -24,7 +24,7 @@
  const char kManagementDeviceSignalsDisclosure[] =
      "managementDeviceSignalsDisclosure";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -773,7 +773,7 @@ void ManagementUIHandler::AddReportingInfo(base::Value
+@@ -830,7 +830,7 @@ void ManagementUIHandler::AddReportingInfo(base::Value
               GetReportingTypeValue(report_definition.reporting_type));
      report_sources->Append(std::move(data));
    }
@@ -33,7 +33,7 @@
    // Insert the device signals consent disclosure at the end of browser
    // reporting section.
    auto* user_permission_service = GetUserPermissionService();
-@@ -1061,7 +1061,7 @@ base::Value::Dict ManagementUIHandler::GetThreatProtec
+@@ -1118,7 +1118,7 @@ base::Value::Dict ManagementUIHandler::GetThreatProtec
                                    kManagementOnPageVisitedVisibleData, &info);
    }
  
@@ -42,7 +42,7 @@
    if (capture_policy::IsGetAllScreensMediaAllowedForAnySite(profile)) {
      AddThreatProtectionPermission(kManagementScreenCaptureEvent,
                                    kManagementScreenCaptureData, &info);
-@@ -1145,7 +1145,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
+@@ -1202,7 +1202,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
        ->policy_service();
  }
  

@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2024-01-30 07:53:34 UTC
+--- chrome/common/chrome_paths.cc.orig	2024-02-23 21:04:38 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -30,7 +30,7 @@
  #include "base/apple/foundation_util.h"
@@ -27,7 +27,7 @@
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -220,7 +220,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -225,7 +225,7 @@ bool PathProvider(int key, base::FilePath* result) {
        }
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
@@ -36,7 +36,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur)) {
          return false;
        }
-@@ -523,7 +523,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -539,7 +539,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        }
        break;
@@ -45,7 +45,7 @@
      case chrome::DIR_POLICY_FILES: {
        cur = base::FilePath(policy::kPolicyPath);
        break;
-@@ -534,7 +534,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -550,7 +550,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -54,7 +54,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur)) {
          return false;
-@@ -543,7 +543,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -559,7 +559,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -63,7 +63,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -591,7 +591,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -607,7 +607,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
  
  #if BUILDFLAG(ENABLE_EXTENSIONS) && \
@@ -72,7 +72,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -605,6 +605,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -621,6 +621,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(
            FILE_PATH_LITERAL("/etc/opt/chrome/native-messaging-hosts"));

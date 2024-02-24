@@ -1,4 +1,4 @@
---- base/process/process_metrics_openbsd.cc.orig	2023-09-13 12:11:42 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2024-02-23 21:04:38 UTC
 +++ base/process/process_metrics_openbsd.cc
 @@ -6,14 +6,23 @@
  
@@ -24,7 +24,7 @@
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
      ProcessHandle process) {
-@@ -24,49 +33,23 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+@@ -24,52 +33,26 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
@@ -82,9 +82,17 @@
 -
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-   int pagesize;
-@@ -84,6 +67,133 @@ size_t GetSystemCommitCharge() {
-   pagesize = getpagesize();
+-  int pagesize;
++  size_t pagesize;
+   struct vmtotal vmtotal;
+   unsigned long mem_total, mem_free, mem_inactive;
+   size_t len = sizeof(vmtotal);
+@@ -81,9 +64,136 @@ size_t GetSystemCommitCharge() {
+   mem_free = vmtotal.t_free;
+   mem_inactive = vmtotal.t_vm - vmtotal.t_avm;
+ 
+-  pagesize = getpagesize();
++  pagesize = checked_cast<size_t>(getpagesize());
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
 +}

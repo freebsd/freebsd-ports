@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2024-01-30 07:53:34 UTC
+--- content/utility/services.cc.orig	2024-02-23 21:04:38 UTC
 +++ content/utility/services.cc
 @@ -67,7 +67,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -22,12 +22,12 @@
  #include "ui/accessibility/accessibility_features.h"
  #endif  // BUILDFLAG(ENABLE_ACCESSIBILITY_SERVICE)
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
  #include "media/capture/capture_switches.h"
  #include "services/viz/public/cpp/gpu/gpu.h"
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-@@ -225,7 +225,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) ||
+@@ -226,7 +226,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -36,16 +36,16 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -307,7 +307,7 @@ auto RunVideoCapture(
+@@ -308,7 +308,7 @@ auto RunVideoCapture(
      mojo::PendingReceiver<video_capture::mojom::VideoCaptureService> receiver) {
    auto service = std::make_unique<UtilityThreadVideoCaptureServiceImpl>(
        std::move(receiver), base::SingleThreadTaskRunner::GetCurrentDefault());
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {
-     mojo::PendingRemote<viz::mojom::Gpu> remote_gpu;
-     content::UtilityThread::Get()->BindHostReceiver(
-@@ -346,7 +346,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+   {
+ #else
+@@ -352,7 +352,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -54,7 +54,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryProcessService(
      mojo::PendingReceiver<
-@@ -357,7 +357,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+@@ -363,7 +363,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -63,7 +63,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -380,7 +380,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
+@@ -386,7 +386,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
    // loop of type IO that can get notified when pipes have data.
    services.Add(RunNetworkService);
  
@@ -72,7 +72,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -428,7 +428,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -434,7 +434,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -81,7 +81,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (!base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -437,7 +437,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -443,7 +443,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  

@@ -1,6 +1,6 @@
---- extensions/browser/api/management/management_api.cc.orig	2023-12-10 06:10:27 UTC
+--- extensions/browser/api/management/management_api.cc.orig	2024-02-23 21:04:38 UTC
 +++ extensions/browser/api/management/management_api.cc
-@@ -278,7 +278,7 @@ bool PlatformSupportsApprovalFlowForExtensions() {
+@@ -279,7 +279,7 @@ bool PlatformSupportsApprovalFlowForExtensions() {
  #if BUILDFLAG(IS_CHROMEOS)
    // ChromeOS devices have this feature already shipped.
    return true;

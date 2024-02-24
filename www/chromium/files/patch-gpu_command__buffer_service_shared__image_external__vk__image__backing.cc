@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing.cc.orig	2024-01-30 07:53:34 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing.cc.orig	2024-02-23 21:04:38 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing.cc
-@@ -47,7 +47,7 @@
+@@ -49,7 +49,7 @@
  #include "ui/gl/gl_version_info.h"
  #include "ui/gl/scoped_binders.h"
  
@@ -9,10 +9,10 @@
  #include "gpu/command_buffer/service/shared_image/external_vk_image_dawn_representation.h"
  #if BUILDFLAG(DAWN_ENABLE_BACKEND_OPENGLES)
  #include "gpu/command_buffer/service/shared_image/dawn_gl_texture_representation.h"
-@@ -682,7 +682,7 @@ std::unique_ptr<DawnImageRepresentation> ExternalVkIma
-     const wgpu::Device& wgpuDevice,
+@@ -679,7 +679,7 @@ std::unique_ptr<DawnImageRepresentation> ExternalVkIma
      wgpu::BackendType backend_type,
-     std::vector<wgpu::TextureFormat> view_formats) {
+     std::vector<wgpu::TextureFormat> view_formats,
+     scoped_refptr<SharedContextState> context_state) {
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DAWN)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DAWN)
    auto wgpu_format = ToDawnFormat(format());

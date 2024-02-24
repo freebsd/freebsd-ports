@@ -1,6 +1,6 @@
---- third_party/leveldatabase/env_chromium.cc.orig	2024-01-30 07:53:34 UTC
+--- third_party/leveldatabase/env_chromium.cc.orig	2024-02-23 21:04:38 UTC
 +++ third_party/leveldatabase/env_chromium.cc
-@@ -325,7 +325,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
+@@ -326,7 +326,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
  
  Status ChromiumWritableFile::SyncParent() {
    TRACE_EVENT0("leveldb", "SyncParent");

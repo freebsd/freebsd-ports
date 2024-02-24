@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2023-08-17 07:33:31 UTC
+--- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2024-02-23 21:04:38 UTC
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -81,7 +81,7 @@ void FixWidgetStackOrder(views::Widget* widget, const 
+@@ -82,7 +82,7 @@ void FixWidgetStackOrder(views::Widget* widget, const 
      return;
    }
  
