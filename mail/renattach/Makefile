@@ -1,6 +1,6 @@
 PORTNAME=	renattach
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pc-tools.net/files/unix/
 
@@ -12,11 +12,12 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/renattach \
 		"@sample etc/renattach.conf.sample" \
-		man/man1/renattach.1.gz
+		share/man/man1/renattach.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
