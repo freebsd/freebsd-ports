@@ -1,5 +1,5 @@
 sbin/ldmud
-man/man1/ldmud.1.gz
+share/man/man1/ldmud.1.gz
 @owner mud
 @group mud
 %%LPMUD%%%%DATADIR%%/ACCESS.ALLOW
