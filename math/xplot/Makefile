@@ -1,6 +1,6 @@
 PORTNAME=	xplot
 PORTVERSION=	0.90.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics net
 MASTER_SITES=	http://www.xplot.org/xplot/
 
@@ -15,14 +15,15 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	README README.tcp_plots
 PLIST_FILES=	bin/tcpdump2xplot bin/tcpdump2xplot.pl bin/xplot \
-		man/man1/tcpdump2xplot.1.gz \
-		man/man1/xplot.1.gz
+		share/man/man1/tcpdump2xplot.1.gz \
+		share/man/man1/xplot.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/INSTALL/s|2xplot$$|2xplot.pl|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/INSTALL/s|2xplot$$|2xplot.pl|' \
+		-e 's|man/man1|share/man/man1|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${LN} -sf tcpdump2xplot.pl ${STAGEDIR}${PREFIX}/bin/tcpdump2xplot
