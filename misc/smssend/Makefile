@@ -1,5 +1,6 @@
 PORTNAME=	smssend
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://BSDforge.com/projects/source/misc/smssend/
 
@@ -16,5 +17,6 @@ LIB_DEPENDS=	libskyutils.so:misc/skyutils
 USES=		libtool shebangfix tar:txz
 SHEBANG_FILES=	bestsms.sh email2smssend
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>
