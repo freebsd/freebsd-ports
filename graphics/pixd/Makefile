@@ -1,7 +1,7 @@
 PORTNAME=	pixd
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	mail@dbalan.in
@@ -18,11 +18,11 @@ GH_ACCOUNT=	FireyFly
 ALL_TARGET=	pixd
 
 PLIST_FILES=	bin/pixd \
-		man/man1/pixd.1.gz
+		share/man/man1/pixd.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pixd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pixd.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pixd.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pixd
 
 .include <bsd.port.mk>
