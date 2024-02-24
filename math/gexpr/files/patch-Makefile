@@ -21,7 +21,7 @@
 -	cp -f gexpr /usr/local/bin;
 -	cp -f gexpr.1 /usr/local/man/man1
 +	install -s gexpr ${DESTDIR}/usr/local/bin;
-+	install gexpr.1 ${DESTDIR}/usr/local/man/man1
++	install gexpr.1 ${DESTDIR}/usr/local/share/man/man1
  	
  clean:
  	rm -f *.o core
