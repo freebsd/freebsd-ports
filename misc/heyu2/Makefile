@@ -1,6 +1,7 @@
 PORTNAME=	heyu2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.3
+PORTREVISION=	1
 CATEGORIES=	misc
 #DISTNAME=	heyu-${PORTVERSION}
 
@@ -72,16 +73,16 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/heyu ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/heyu.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/x10aux.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10config.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10cm17a.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10digimax.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10oregon.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10sched.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10scripts.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10rfxmeters.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10rfxsensors.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/heyu.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_DATA} ${WRKSRC}/x10aux.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10config.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10cm17a.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10digimax.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10oregon.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10sched.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10scripts.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10rfxmeters.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10rfxsensors.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${STAGEDIR}${EXAMPLESDIR}
 
