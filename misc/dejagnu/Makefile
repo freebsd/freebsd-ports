@@ -1,5 +1,6 @@
 PORTNAME=	dejagnu
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	misc tcl
 MASTER_SITES=	GNU
 
@@ -14,6 +15,7 @@ LIB_DEPENDS=	libexpect.so:lang/expect
 USES+=		gmake tcl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INFO=		${PORTNAME}
 
