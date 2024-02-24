@@ -1,6 +1,6 @@
 PORTNAME=	nullmailer
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -18,6 +18,7 @@ USE_CXXSTD=	gnu++98
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR}
 
 SUB_FILES=	pkg-install pkg-message

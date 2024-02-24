@@ -7,12 +7,12 @@ bin/nullmailer-inject
 bin/nullmailer-smtpd
 @(%%NULLMAIL_USER%%,,4555) sbin/nullmailer-queue
 sbin/nullmailer-send
-man/man1/nullmailer-dsn.1.gz
-man/man1/nullmailer-inject.1.gz
-man/man1/sendmail.1.gz
-man/man7/nullmailer.7.gz
-man/man8/nullmailer-queue.8.gz
-man/man8/nullmailer-send.8.gz
+share/man/man1/nullmailer-dsn.1.gz
+share/man/man1/nullmailer-inject.1.gz
+share/man/man1/sendmail.1.gz
+share/man/man7/nullmailer.7.gz
+share/man/man8/nullmailer-queue.8.gz
+share/man/man8/nullmailer-send.8.gz
 %%ETCDIR%%/me.sample
 %%ETCDIR%%/remotes.sample
 @dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/failed
