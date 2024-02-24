@@ -1,6 +1,6 @@
 PORTNAME=	xlennart
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Xylemon
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR}
 
 DESKTOP_ENTRIES="xLennart" \
@@ -24,7 +25,7 @@ DESKTOP_ENTRIES="xLennart" \
 		false
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz
+		share/man/man6/${PORTNAME}.6.gz
 PORTDATA=	*
 
 OPTIONS_DEFAULT=		GTK
