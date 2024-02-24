@@ -1,7 +1,7 @@
 PORTNAME=	icedtea-web
 PORTVERSION=	1.8.8
 DISTVERSIONPREFIX=	icedtea-web-
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	java www
 
 MAINTAINER=	java@FreeBSD.org
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	zip:archivers/zip \
 RUN_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake \
 		pkgconfig shebangfix xorg
 USE_JAVA=	yes
@@ -104,19 +105,11 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.desktop ${STAGEDIR}${DESKTOPDIR}
 .for lang in cs de en pl
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/${lang:Nen}/man1
 .for man in javaws policyeditor
-	${MV} ${STAGEDIR}${PREFIX}/man/${lang:Nen}/man1/${man}.1 \
+	${MV} ${STAGEDIR}${PREFIX}/share/man/${lang:Nen}/man1/${man}.1 \
 	    ${STAGEDIR}${PREFIX}/share/man/${lang:Nen}/man1/itweb-${man}.1
 .endfor
 .endfor
-.for lang in cs de pl
-	${MV} ${STAGEDIR}${PREFIX}/man/${lang}/man1/* \
-	    ${STAGEDIR}${PREFIX}/share/man/${lang}/man1/
-	${RM} -r ${STAGEDIR}${PREFIX}/man/${lang}
-.endfor
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/* \
-	    ${STAGEDIR}${PREFIX}/share/man/man1/
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Run \"make test\" to execute regression test."
 	@${ECHO_MSG}
