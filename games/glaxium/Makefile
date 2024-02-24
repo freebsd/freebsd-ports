@@ -1,6 +1,6 @@
 PORTNAME=	glaxium
 PORTVERSION=	0.5
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,6 +15,7 @@ USES=		dos2unix gl gmake sdl
 USE_SDL=	sdl mixer
 USE_GL=		glut
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 ALL_TARGET=	${PORTNAME}
 
 DOS2UNIX_FILES=	variables.cpp scene.cpp
