@@ -1,6 +1,6 @@
 PORTNAME=	lmarbles
 PORTVERSION=	1.0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME} \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake sdl
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var/games/${PORTNAME}
 
 PORTDOCS=	*

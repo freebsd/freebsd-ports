@@ -1,5 +1,5 @@
 @(,games,2755) bin/lmarbles
-man/man6/lmarbles.6.gz
+share/man/man6/lmarbles.6.gz
 share/applications/lmarbles.desktop
 %%DATADIR%%/gfx/board.bmp
 %%DATADIR%%/gfx/f_red.bmp
