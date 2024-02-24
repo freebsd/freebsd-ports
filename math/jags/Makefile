@@ -1,6 +1,6 @@
 PORTNAME=	mcmc-jags
 DISTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
 		SF/mcmc-jags/Examples/${S}.x/:2 \
@@ -20,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		bison compiler:features fortran gmake libtool localbase pathfix
 USE_GCC=	yes
 USE_LDCONFIG=	yes
