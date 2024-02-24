@@ -1,6 +1,5 @@
 PORTNAME=	pari
-DISTVERSION=	2.15.4
-PORTREVISION=	1
+DISTVERSION=	2.15.5
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
