@@ -1,6 +1,27 @@
---- Makefile.orig	2008-11-25 00:26:32.000000000 +0300
-+++ Makefile	2014-05-26 13:44:10.000000000 +0400
-@@ -49,36 +49,29 @@
+--- Makefile.orig	2008-11-24 21:26:32 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+-# This program was written by Alexander Siegel in September of 1989   
+-# at Cornell University.  It may may copied freely for private use or 
+-# public dispersion provided that this comment is not removed.  This  
+-# program, any portion of this program, or any derivative of this     
++# This program was written by Alexander Siegel in September of 1989
++# at Cornell University.  It may may copied freely for private use or
++# public dispersion provided that this comment is not removed.  This
++# program, any portion of this program, or any derivative of this
+ # program may not be sold or traded for financial gain.
+ 
+ # Name of game executable
+@@ -15,7 +15,7 @@ MANEXT = 6
+ #LIB = levs
+ # Directory where manual pages are kept
+ MANEXT = 6
+-MAN = ${PREFIX}/man/man${MANEXT}
++MAN = ${PREFIX}/share/man/man${MANEXT}
+ # Add vms.c and vms.o to these lists if the operating system is VMS
+ SRCS = golddig.c shared.c badguy.c movement.c scores.c moveall.c
+ OBJS = golddig.o shared.o badguy.o movement.o scores.o moveall.o
+@@ -49,36 +49,29 @@ BSD_INSTALL_GAME_DIR?= \
  #
  #
  BSD_INSTALL_GAME_DIR?= \
