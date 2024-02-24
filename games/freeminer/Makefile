@@ -1,6 +1,6 @@
 PORTNAME=	freeminer
 PORTVERSION=	0.4.10.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 USE_GITHUB=	yes
 
 USES=		compiler:c++11-lib cmake localbase:ldflags
-CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
-		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
+CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 		-DRUN_IN_PLACE=0
 LDFLAGS_i386=	-Wl,-znotext
 
