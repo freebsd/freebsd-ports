@@ -1,5 +1,6 @@
 PORTNAME=	ircii
 PORTVERSION=	20210314
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -10,6 +11,7 @@ WWW=		http://www.eterna.com.au/ircii/
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${STAGEDIR}/${PREFIX}/share
 CONFIGURE_ARGS=	--with-warnings
 DATADIR=	${PREFIX}/share/irc
 USES=		cpe iconv ncurses tar:bzip2
@@ -38,8 +40,7 @@ CPPFLAGS+=	-I${ICONV_PREFIX}/include
 LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$${DESTDIR}&/' \
-		-e '/^LDFLAGS =/s/$$/ ${STRIP} ${ICONV_LIB}/' \
+	@${REINPLACE_CMD} -e '/^LDFLAGS =/s/$$/ ${STRIP} ${ICONV_LIB}/' \
 		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|PREFIX/|${PREFIX}/|' ${WRKSRC}/doc/ircII.1
