@@ -31,4 +31,4 @@ lib/squeak/%%SQUEAK_LIB_DIR%%/squeakvm
 lib/squeak/SqueakV46.sources
 lib/squeak/Squeak%%IMAGE_FULL_VERSION%%.changes
 lib/squeak/Squeak%%IMAGE_FULL_VERSION%%.image
-man/man1/squeak.1.gz
+share/man/man1/squeak.1.gz
