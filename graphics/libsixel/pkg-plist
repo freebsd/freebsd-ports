@@ -16,8 +16,8 @@ lib/libsixel.so.1.0.6
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsixel/encoder.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsixel/encoder.pyo
 libdata/pkgconfig/libsixel.pc
-man/man1/img2sixel.1.gz
-man/man1/sixel2png.1.gz
-man/man5/sixel.5.gz
+share/man/man1/img2sixel.1.gz
+share/man/man1/sixel2png.1.gz
+share/man/man5/sixel.5.gz
 share/bash-completion/completions/img2sixel
 share/zsh/site-functions/_img2sixel
