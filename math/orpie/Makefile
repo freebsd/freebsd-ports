@@ -1,6 +1,6 @@
 PORTNAME=	orpie
 PORTVERSION=	1.5.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	math
 MASTER_SITES=	https://github.com/pelzlpj/orpie/releases/download/release-${PORTVERSION}/
 
@@ -20,11 +20,12 @@ USES=		gmake ncurses
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/orpie bin/orpie-curses-keys etc/orpierc \
-		man/man1/orpie.1.gz man/man1/orpie-curses-keys.1.gz \
-		man/man5/orpierc.5.gz
+		share/man/man1/orpie.1.gz share/man/man1/orpie-curses-keys.1.gz \
+		share/man/man5/orpierc.5.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
