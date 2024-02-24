@@ -1,7 +1,7 @@
 PORTNAME=	starfighter
 PORTVERSION=	2.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	alfix86@gmail.com
@@ -15,6 +15,7 @@ USES=		autoreconf gettext gnome iconv pkgconfig python:build sdl
 USE_SDL=	sdl2 image2 mixer2 ttf2
 USE_GNOME=	pango
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr-starfighter

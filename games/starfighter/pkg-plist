@@ -1,5 +1,5 @@
 bin/starfighter
-man/man6/starfighter.6.gz
+share/man/man6/starfighter.6.gz
 share/applications/starfighter.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSES
