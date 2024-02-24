@@ -5,7 +5,7 @@
  
  bindir ?= $(PREFIX)/bin
 -mandir ?= $(PREFIX)/share/man
-+mandir ?= $(PREFIX)/man
++mandir ?= $(PREFIX)/share/man
  libdir ?= $(PREFIX)/lib
  docdir ?= $(PREFIX)/share/doc
  includedir ?=  $(PREFIX)/include
