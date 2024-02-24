@@ -1,5 +1,5 @@
 bin/freedroid
-man/man6/freedroid.6.gz
+share/man/man6/freedroid.6.gz
 %%DATADIR%%/graphics/001.jpg
 %%DATADIR%%/graphics/001.png
 %%DATADIR%%/graphics/123.jpg
