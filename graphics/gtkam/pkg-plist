@@ -1,6 +1,6 @@
 bin/gtkam
 %%GIMP%%libexec/gimp/2.2/plug-ins/gtkam-gimp
-man/man1/gtkam.1.gz
+share/man/man1/gtkam.1.gz
 share/applications/gtkam.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
