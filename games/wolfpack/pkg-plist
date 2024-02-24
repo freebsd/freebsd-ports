@@ -7,13 +7,13 @@ lib/wolfpack/empsched
 lib/wolfpack/fairland
 lib/wolfpack/files
 lib/wolfpack/pconfig
-man/man6/emp_server.6.gz
-man/man6/empdump.6.gz
-man/man6/empire.6.gz
-man/man6/empsched.6.gz
-man/man6/fairland.6.gz
-man/man6/files.6.gz
-man/man6/pconfig.6.gz
+share/man/man6/emp_server.6.gz
+share/man/man6/empdump.6.gz
+share/man/man6/empire.6.gz
+share/man/man6/empsched.6.gz
+share/man/man6/fairland.6.gz
+share/man/man6/files.6.gz
+share/man/man6/pconfig.6.gz
 @owner wolfpack
 @group wolfpack
 @mode 644
