@@ -1,5 +1,5 @@
 bin/xldlas
-man/man1/xldlas.1.gz
+share/man/man1/xldlas.1.gz
 %%DATADIR%%/help/analysis.help
 %%DATADIR%%/help/data.help
 %%DATADIR%%/help/file.help

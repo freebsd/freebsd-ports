@@ -1,6 +1,6 @@
 PORTNAME=	xldlas
 PORTVERSION=	0.85
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	SUNSITE/apps/graphics/visualization
 EXTRACT_SUFX=	-source.tgz
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/xldlas
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xldlas ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xldlas.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xldlas.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -R ${WRKSRC}/help ${STAGEDIR}${DATADIR}
 
