@@ -1,5 +1,6 @@
 PORTNAME=	wanderer
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.e271.net/~marina/ \
 		http://www.steveshipway.org/software/wanderer/
@@ -20,6 +21,7 @@ post-patch:
 		 s|install -m 0755 -d|$${MKDIR}| ; \
 		 s|install -m 0644|$${BSD_INSTALL_DATA}| ; \
 		 s|install -m 2755|$${BSD_INSTALL_PROGRAM}| ; \
+		 s|man/man6|share/man/man6| ; \
 		 s|/usr/local|$${PREFIX}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 @(,games,2555) bin/wanderer
-man/man6/wanderer.6.gz
+share/man/man6/wanderer.6.gz
 %%DATADIR%%/screens/credits
 %%DATADIR%%/screens/screen.1
 %%DATADIR%%/screens/screen.10
