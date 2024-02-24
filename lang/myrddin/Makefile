@@ -1,6 +1,6 @@
 PORTNAME=	myrddin
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://myrlang.org/releases/
 

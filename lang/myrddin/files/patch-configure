@@ -1,0 +1,16 @@
+--- configure.orig	2024-02-24 15:54:53 UTC
++++ configure
+@@ -71,11 +71,11 @@ case $OS in
+         ;;
+     *FreeBSD*)
+         echo 'export SYS=freebsd' >> config.mk
+-        echo export INST_MAN=$prefix/man/man >> config.mk
++        echo export INST_MAN=$prefix/share/man/man >> config.mk
+         echo 'const Sys = "FreeBSD"' >> mbld/config.myr
+         echo 'const Linkcmd = ["ld", "--gc-sections"]' >> mbld/config.myr
+         echo 'const Dlflags : byte[:][:] = [][:]' >> mbld/config.myr
+-        echo "const Manpath = \"man/man\"" >> mbld/config.myr
++        echo "const Manpath = \"share/man/man\"" >> mbld/config.myr
+         ;;
+     *NetBSD*)
+         echo 'export SYS=netbsd' >> config.mk
