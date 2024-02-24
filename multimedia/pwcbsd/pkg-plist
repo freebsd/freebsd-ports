@@ -1,4 +1,4 @@
 %%PROGRAMS%%bin/pwcview
-%%PROGRAMS%%man/man1/pwcview.1.gz
-man/man4/pwc.4.gz
+%%PROGRAMS%%share/man/man1/pwcview.1.gz
+share/man/man4/pwc.4.gz
 /%%KMODDIR%%/pwc.ko
