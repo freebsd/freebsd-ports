@@ -1,6 +1,6 @@
 PORTNAME=	tileworld
 PORTVERSION=	1.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/tworld/
 DISTNAME=	tworld-${PORTVERSION}
@@ -10,7 +10,9 @@ COMMENT=	Emulation of the game "Chip's Challenge"
 WWW=		https://www.muppetlabs.com/~breadbox/software/tworld/
 
 USE_SDL=	sdl
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 USES=		gmake sdl
 ALL_TARGET=	tworld
 DATADIR=	share/tworld
