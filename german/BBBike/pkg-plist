@@ -1075,7 +1075,7 @@ BBBike/plugins/MultiMap.pm
 BBBike/smsbbbike
 bin/smsbbbike
 BBBike/tkbikepwr
-man/man1/bbbike.1.gz
+share/man/man1/bbbike.1.gz
 BBBike/lib/%%LOCAL_PERL_ARCH%%/BBBikeXS.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/Strassen/Inline.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/Strassen/Inline2.pm

@@ -1,6 +1,6 @@
 PORTNAME=	BBBike
 PORTVERSION=	3.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	german
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
@@ -80,7 +80,7 @@ do-build:
 
 do-install:
 	-${RM} -r ${MYDESTDIR}
-	${INSTALL_MAN} ${WRKSRC}/bbbike.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bbbike.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${FIND} ${WRKSRC} | ${XARGS} ${CHMOD} ugo+r
 	${FIND} ${WRKSRC} -perm -u=x | ${XARGS} ${CHMOD} go+x
 	${CP} -rp ${WRKSRC} ${MYDESTDIR}
