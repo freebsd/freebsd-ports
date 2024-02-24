@@ -1,6 +1,6 @@
 PORTNAME=	qmail-rblchk
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.morettoni.net/qmail/ \
 		LOCAL/ehaupt
@@ -29,7 +29,9 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/"cat/d; s|,02755|,0755|' ${WRKSRC}/hier.c
+	@${REINPLACE_CMD} -e '/"cat/d; s|,02755|,0755|' \
+		-e 's|\"man|\"share/man|g' \
+		${WRKSRC}/hier.c
 
 do-configure:
 	${PRINTF}   "${STAGEDIR}${PREFIX}\n\n.../bin.\n"	> ${WRKSRC}/conf-home
