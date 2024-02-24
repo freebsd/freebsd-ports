@@ -7,7 +7,7 @@
 -GAME	= nethack
 -MANDIR	= /usr/local/man/man6
 +GAME	= %%HACKNAME%%
-+MANDIR	= ${PREFIX}/man/man
++MANDIR	= ${PREFIX}/share/man/man
  MANEXT	= 6
  
  # manual installation for most BSD-style systems
