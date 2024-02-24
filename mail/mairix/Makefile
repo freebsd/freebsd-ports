@@ -1,5 +1,6 @@
 PORTNAME=	mairix
 DISTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,11 +14,11 @@ USES=		bison compiler:c11 gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vandry
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/share/man
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/mairix \
-		man/man1/mairix.1.gz \
-		man/man5/mairixrc.5.gz
+		share/man/man1/mairix.1.gz \
+		share/man/man5/mairixrc.5.gz
 
 OPTIONS_DEFINE=	GZIP BZIP2 EXAMPLES DOCS
 GZIP_DESC=	gzip compressed mbox support
