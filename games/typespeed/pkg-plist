@@ -1,7 +1,7 @@
 @(,games,2555) bin/typespeed
 bin/typespeed-hs-conv
 @sample etc/typespeedrc.sample
-man/man6/typespeed.6.gz
+share/man/man6/typespeed.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/de_DE/LC_MESSAGES/typespeed.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/typespeed.mo
