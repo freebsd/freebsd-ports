@@ -1,5 +1,6 @@
 PORTNAME=	unknown-horizons
 PORTVERSION=	2019.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
