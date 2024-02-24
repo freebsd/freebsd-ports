@@ -1,5 +1,6 @@
 PORTNAME=	mmh
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/mmh/files/
 
@@ -16,7 +17,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/mmh \
 				--sysconfdir=${ETCDIR} \
 				--bindir=${PREFIX}/bin \
-				--mandir=${PREFIX}/man \
+				--mandir=${PREFIX}/share/man \
 				--docdir=${DOCSDIR} \
 
 OPTIONS_SINGLE=	LOCKING
