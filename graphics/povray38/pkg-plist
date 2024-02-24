@@ -1,7 +1,7 @@
 bin/povray38
 @sample %%ETCDIR%%/povray.conf.sample %%ETCDIR%%/povray.conf
 @sample %%ETCDIR%%/povray.ini.sample %%ETCDIR%%/povray.ini
-man/man1/povray38.1.gz
+share/man/man1/povray38.1.gz
 %%PORTDOCS%%%%DOCSDIR%%3.8/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%3.8/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%3.8/NEWS
