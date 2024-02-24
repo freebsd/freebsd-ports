@@ -1,6 +1,6 @@
 PORTNAME=	mailagent
 PORTVERSION=	3.1.106
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=		-dres \
 			-Dutmp='/var/run/utmp' \
 			-Dorgname='${ORGFILE}' \
 			-Dprefix='${PREFIX}' \
-			-Dmansrc='${STAGEDIR}${PREFIX}/man/man1'
+			-Dmansrc='${STAGEDIR}${PREFIX}/share/man/man1'
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	PATH=`dirname ${PERL}`:${PATH} INSTALL_PREFIX=${STAGEDIR}
 INSTALL_TARGET=	install install.man

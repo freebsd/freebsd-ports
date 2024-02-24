@@ -30,10 +30,10 @@ lib/mailagent/help/remauth
 lib/mailagent/help/set
 lib/mailagent/help/setauth
 lib/mailagent/help/user
-man/man1/edusers.1.gz
-man/man1/mailagent.1.gz
-man/man1/mailhelp.1.gz
-man/man1/package.1.gz
+share/man/man1/edusers.1.gz
+share/man/man1/mailagent.1.gz
+share/man/man1/mailhelp.1.gz
+share/man/man1/package.1.gz
 @touch %%ORGFILE%%
 @rmempty %%ORGFILE%%
 %%EXAMPLESDIR%%/agent/README
