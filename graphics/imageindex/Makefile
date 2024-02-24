@@ -1,6 +1,6 @@
 PORTNAME=	imageindex
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 		http://www.reynoldsnet.org/imageindex/release/
@@ -17,12 +17,9 @@ USE_PERL5=	run
 MAKE_ARGS+=	PERLPATH=${PERL} PREFIX=${STAGEDIR}${PREFIX}
 
 PLIST_FILES=	bin/imageindex bin/autocaption \
-		man/man1/imageindex.1.gz
+		share/man/man1/imageindex.1.gz
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
