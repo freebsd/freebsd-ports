@@ -1,6 +1,6 @@
 PORTNAME=	ida
 PORTVERSION=	2.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -25,7 +25,7 @@ CONFLICTS_INSTALL=	exiftran
 
 PORTDOCS=	README TODO INSTALL
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida \
-		man/man1/exiftran.1.gz man/man1/ida.1.gz \
+		share/man/man1/exiftran.1.gz share/man/man1/ida.1.gz \
 		share/applications/ida.desktop
 
 OPTIONS_DEFINE=		DOCS GIF PCD PNG SANE TIFF WEBP

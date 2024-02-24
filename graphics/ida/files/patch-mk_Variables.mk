@@ -15,7 +15,7 @@
 +sbindir	=  $(DESTDIR)$(PREFIX)/sbin
 +libdir  =  $(DESTDIR)$(PREFIX)/$(LIB)
 +shrdir  =  $(DESTDIR)$(PREFIX)/share
-+mandir	=  $(DESTDIR)$(PREFIX)/man
++mandir	=  $(DESTDIR)$(PREFIX)/share/man
  locdir  =  $(shrdir)/locale
  appdir  =  $(shrdir)/applications
  
