@@ -1,6 +1,6 @@
 PORTNAME=	toilet
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 
@@ -11,6 +11,7 @@ WWW=		http://caca.zoy.org/wiki/toilet
 LIB_DEPENDS=	libcaca.so:graphics/libcaca
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-transform-name=""
 USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
