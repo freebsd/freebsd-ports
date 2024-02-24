@@ -1,7 +1,6 @@
 PORTNAME=	gramps
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.6
-PORTREVISION=	1
+DISTVERSION=	5.2.0
 CATEGORIES=	science gnome python
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -39,8 +38,5 @@ GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:textproc/gtkspell3
 PIL_RUN_DEPENDS=		${PY_PILLOW}
 RCS_RUN_DEPENDS=		rcsdiff:devel/rcs
 TTFFREEFONT_RUN_DEPENDS=	${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf
-
-post-install:
-	${ECHO_CMD} -n ${PREFIX}/share > ${STAGEDIR}${PYTHON_SITELIBDIR}/gramps/gen/utils/resource-path
 
 .include <bsd.port.mk>
