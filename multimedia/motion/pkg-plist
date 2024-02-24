@@ -1,5 +1,5 @@
 bin/motion
-man/man1/motion.1.gz
+share/man/man1/motion.1.gz
 %%ETCDIR%%/camera1-dist.conf
 %%ETCDIR%%/camera2-dist.conf
 %%ETCDIR%%/camera3-dist.conf

@@ -2,6 +2,7 @@
 PORTNAME=	motion
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 # Maintainer block
@@ -26,6 +27,7 @@ GH_ACCOUNT=	Motion-Project
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 # Standard bsd.port.mk variables
 SUB_FILES=	pkg-message
