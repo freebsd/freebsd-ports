@@ -1,6 +1,6 @@
 bin/nip2
 bin/run-nip2.sh
-man/man1/nip2.1.gz
+share/man/man1/nip2.1.gz
 share/appdata/nip2.appdata.xml
 share/applications/nip2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/figs/ir2.jpg
