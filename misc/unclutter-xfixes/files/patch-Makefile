@@ -10,7 +10,7 @@
 -MANDIR = $(PREFIX)/share/man/man1
 -LICENSEDIR = $(PREFIX)/share/licenses/$(TARGET)
 +BINDIR = /bin
-+MANDIR = /man/man1
++MANDIR = /share/man/man1
 +LICENSEDIR = /share/licenses/$(TARGET)
  
  CC = gcc
