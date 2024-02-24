@@ -6,12 +6,12 @@ bin/lurker-regenerate
 bin/lurker-search
 @sample etc/lurker/lurker.conf.sample
 @sample etc/lurker/apache.conf.sample
-man/man1/lurker-index.1.gz
-man/man1/lurker-list.1.gz
-man/man1/lurker-params.1.gz
-man/man1/lurker-prune.1.gz
-man/man1/lurker-regenerate.1.gz
-man/man1/lurker-search.1.gz
+share/man/man1/lurker-index.1.gz
+share/man/man1/lurker-list.1.gz
+share/man/man1/lurker-params.1.gz
+share/man/man1/lurker-prune.1.gz
+share/man/man1/lurker-regenerate.1.gz
+share/man/man1/lurker-search.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
