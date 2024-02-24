@@ -1,3 +1,4 @@
+bin/hackrf_biast
 bin/hackrf_clock
 bin/hackrf_cpldjtag
 bin/hackrf_debug
@@ -10,5 +11,5 @@ include/libhackrf/hackrf.h
 lib/libhackrf.a
 lib/libhackrf.so
 lib/libhackrf.so.0
-lib/libhackrf.so.0.6.0
+lib/libhackrf.so.0.9.0
 libdata/pkgconfig/libhackrf.pc
