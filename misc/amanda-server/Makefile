@@ -1,5 +1,6 @@
 PORTNAME=	amanda
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -22,6 +23,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--without-amlibexecdir \
 		--with-amandahosts --with-fqdn \
