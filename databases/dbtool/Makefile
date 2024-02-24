@@ -1,6 +1,6 @@
 PORTNAME=	dbtool
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
@@ -17,9 +17,10 @@ USES=		gmake localbase shebangfix
 SHEBANG_FILES=	samples/account-db/accdb
 bash_OLD_CMD=	/bin/sh
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/dbtool man/man1/dbtool.1.gz
+PLIST_FILES=	bin/dbtool share/man/man1/dbtool.1.gz
 
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_SINGLE=		BACKEND
