@@ -18,7 +18,7 @@
  install:
 -	cp trojka /usr/games
 +	${BSD_INSTALL_PROGRAM} trojka $(DESTDIR)$(PREFIX)/bin
-+	${BSD_INSTALL_MAN} trojka.6.out $(DESTDIR)$(PREFIX)/man/man6/trojka.6
++	${BSD_INSTALL_MAN} trojka.6.out $(DESTDIR)$(PREFIX)/share/man/man6/trojka.6
 +	mkdir -p $(DESTDIR)$(SCOREDIR)
 +	touch $(DESTDIR)$(SCOREFILE).sample
 +
