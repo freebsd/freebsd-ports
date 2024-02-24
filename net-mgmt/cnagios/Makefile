@@ -1,6 +1,6 @@
 PORTNAME=	cnagios
 PORTVERSION=	0.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danny@dannywarren.com
@@ -26,7 +26,7 @@ CONFLICTS_INSTALL=	cnagios-nagios* # bin/cnagios
 
 NAGIOSDIR?=	/var/spool/nagios
 ETCDIR=		${PREFIX}/etc/nagios
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 		--with-var-dir="${NAGIOSDIR}" \
 		--with-status-file="${NAGIOSDIR}/status.dat" \
