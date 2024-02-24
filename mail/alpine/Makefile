@@ -1,5 +1,6 @@
 PORTNAME?=	alpine
 DISTVERSION=	2.26
+PORTREVISION=	1
 CATEGORIES?=	mail news
 MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -15,6 +16,7 @@ USES+=			cpe ssl libtool ncurses gettext-runtime
 CPE_VENDOR=		alpine_project
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=	--with-debug-level=2 \
 			--enable-background-post \
