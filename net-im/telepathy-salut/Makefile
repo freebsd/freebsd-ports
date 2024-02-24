@@ -1,6 +1,6 @@
 PORTNAME=	telepathy-salut
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libavahi-glib.so:net/avahi-app \
 		libsoup-2.4.so:devel/libsoup
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake gnome libtool pathfix pkgconfig python:build sqlite ssl
 USE_GNOME=	glib20 libxslt:build
 CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
