@@ -1,6 +1,6 @@
 PORTNAME=	mess822
 PORTVERSION=	0.58
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
@@ -23,5 +23,6 @@ post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${STAGEDIR}${PREFIX} > ${WRKSRC}/conf-home
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man
 
 .include <bsd.port.mk>
