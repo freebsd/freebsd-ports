@@ -1,6 +1,6 @@
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}-data/${DATAVERSION}:data \
@@ -24,6 +24,7 @@ USES=		gettext gmake iconv localbase:ldflags sdl
 USE_SDL=	mixer sdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
 LDFLAGS+=	-lpthread -lsmpeg -lm
