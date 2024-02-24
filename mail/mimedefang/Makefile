@@ -1,5 +1,6 @@
 PORTNAME=	mimedefang
 PORTVERSION=	2.86
+PORTREVISION=	1
 
 CATEGORIES=	mail
 MASTER_SITES=	https://mimedefang.org/releases/
@@ -21,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		cpe perl5 shebangfix
 perl_OLD_CMD=	perl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-confsubdir=mimedefang \
 			--with-user=${MIMEDEFANG_USER} \

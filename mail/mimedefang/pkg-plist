@@ -6,16 +6,16 @@ bin/mimedefang.pl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
 etc/rc.d/mimedefang
-man/man1/mimedefang-util.1.gz
-man/man5/mimedefang-filter.5.gz
-man/man7/mimedefang-notify.7.gz
-man/man7/mimedefang-protocol.7.gz
-man/man8/md-mx-ctrl.8.gz
-man/man8/mimedefang-multiplexor.8.gz
-man/man8/mimedefang.8.gz
-man/man8/mimedefang.pl.8.gz
-man/man8/watch-mimedefang.8.gz
-man/man8/watch-multiple-mimedefangs.8.gz
+share/man/man1/mimedefang-util.1.gz
+share/man/man5/mimedefang-filter.5.gz
+share/man/man7/mimedefang-notify.7.gz
+share/man/man7/mimedefang-protocol.7.gz
+share/man/man8/md-mx-ctrl.8.gz
+share/man/man8/mimedefang-multiplexor.8.gz
+share/man/man8/mimedefang.8.gz
+share/man/man8/mimedefang.pl.8.gz
+share/man/man8/watch-mimedefang.8.gz
+share/man/man8/watch-multiple-mimedefangs.8.gz
 @sample %%ETCDIR%%/mimedefang-filter.sample
 @sample %%ETCDIR%%/mimedefang-ip-key.sample
 @sample %%ETCDIR%%/sa-mimedefang.cf.sample
