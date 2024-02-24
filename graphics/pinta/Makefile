@@ -1,6 +1,6 @@
 PORTNAME=	pinta
 PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/PintaProject/Pinta/releases/download/${PORTVERSION}/
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	mono-addins>0:devel/mono-addins
 USES=		desktop-file-utils gmake gnome mono pkgconfig gettext-tools:build
 USE_GNOME=	gtksharp20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
