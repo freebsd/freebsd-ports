@@ -2,7 +2,7 @@
 @group wheel
 bin/xboard
 bin/cmail
-man/man6/xboard.6.gz
+share/man/man6/xboard.6.gz
 share/applications/xboard-config.desktop
 share/applications/xboard-fen-viewer.desktop
 share/applications/xboard-pgn-viewer.desktop
