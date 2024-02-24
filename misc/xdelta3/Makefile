@@ -1,6 +1,6 @@
 PORTNAME=	xdelta
 PORTVERSION=	3.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES?=	misc devel
@@ -14,12 +14,13 @@ LICENSE=	GPLv2+
 
 USES=		autoreconf compiler:c++11-lang gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_GITHUB=	yes
 GH_ACCOUNT=	jmacd
 
 WRKSRC_SUBDIR=	xdelta3
 
-PLIST_FILES=	bin/xdelta3 man/man1/xdelta3.1.gz
+PLIST_FILES=	bin/xdelta3 share/man/man1/xdelta3.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
