@@ -4,6 +4,7 @@ include/remmina/plugin.h
 include/remmina/remmina_trace_calls.h
 include/remmina/types.h
 %%EXEC%%lib/remmina/plugins/remmina-plugin-exec.so
+%%GVNC%%lib/remmina/plugins/remmina-plugin-gvnc.so
 %%KWALLET%%lib/remmina/plugins/remmina-plugin-kwallet.so
 %%RDP%%lib/remmina/plugins/remmina-plugin-rdp.so
 %%SECRET%%lib/remmina/plugins/remmina-plugin-secret.so
@@ -63,8 +64,9 @@ share/icons/hicolor/scalable/emblems/org.remmina.Remmina-sftp-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-ssh-symbolic.svg
 share/mime/packages/org.remmina.Remmina-mime.xml
 %%EXEC%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-tool-symbolic.svg
-%%RDP%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-rdp-symbolic.svg
+%%GVNC%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-gvnc-symbolic.svg
 %%RDP%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-rdp-ssh-symbolic.svg
+%%RDP%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-rdp-symbolic.svg
 %%SPICE%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-spice-ssh-symbolic.svg
 %%SPICE%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-spice-symbolic.svg
 %%VNC%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-vnc-ssh-symbolic.svg
@@ -72,6 +74,7 @@ share/mime/packages/org.remmina.Remmina-mime.xml
 %%WWW%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-www-symbolic.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/be/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/ber/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/remmina.mo
