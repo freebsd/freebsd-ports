@@ -1,6 +1,6 @@
 PORTNAME=	miau
 PORTVERSION=	0.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
@@ -10,6 +10,7 @@ WWW=		https://miau.sourceforge.net/
 
 USES=		iconv tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INFO=		miau
 
