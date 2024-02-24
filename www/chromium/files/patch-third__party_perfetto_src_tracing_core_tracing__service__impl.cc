@@ -1,6 +1,6 @@
---- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2024-01-30 07:53:34 UTC
+--- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2024-02-23 21:04:38 UTC
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -3223,7 +3223,8 @@ bool TracingServiceImpl::SnapshotClocks(
+@@ -3244,7 +3244,8 @@ bool TracingServiceImpl::SnapshotClocks(
  
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
      !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \

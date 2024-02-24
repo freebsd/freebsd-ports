@@ -1,4 +1,4 @@
---- media/base/video_frame.h.orig	2023-10-11 18:22:24 UTC
+--- media/base/video_frame.h.orig	2024-02-23 21:04:38 UTC
 +++ media/base/video_frame.h
 @@ -44,7 +44,7 @@
  #include "base/apple/scoped_cftyperef.h"
@@ -33,9 +33,9 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Returns a vector containing the backing DmaBufs for this frame. The number
-   // of returned DmaBufs will be equal or less than the number of planes of
+   // The number of DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
+   // remaining planes. Should be > 0 for STORAGE_DMABUFS.
 @@ -811,7 +811,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GPU memory buffer, if this frame is STORAGE_GPU_MEMORY_BUFFER.
    std::unique_ptr<gfx::GpuMemoryBuffer> gpu_memory_buffer_;

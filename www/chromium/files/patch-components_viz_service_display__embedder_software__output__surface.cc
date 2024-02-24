@@ -1,4 +1,4 @@
---- components/viz/service/display_embedder/software_output_surface.cc.orig	2023-12-10 06:10:27 UTC
+--- components/viz/service/display_embedder/software_output_surface.cc.orig	2024-02-23 21:04:38 UTC
 +++ components/viz/service/display_embedder/software_output_surface.cc
 @@ -124,7 +124,7 @@ void SoftwareOutputSurface::SwapBuffersCallback(base::
        now.SnappedToNextTick(refresh_timebase_, refresh_interval_) - now;
@@ -9,7 +9,7 @@
    if (needs_swap_size_notifications_)
      client_->DidSwapWithSize(pixel_size);
  #endif
-@@ -151,7 +151,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
+@@ -153,7 +153,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,6 +1,6 @@
---- base/base_switches.cc.orig	2023-10-11 18:22:24 UTC
+--- base/base_switches.cc.orig	2024-02-23 21:04:38 UTC
 +++ base/base_switches.cc
-@@ -180,7 +180,7 @@ const char kPackageVersionName[] = "package-version-na
+@@ -172,7 +172,7 @@ const char kPackageVersionName[] = "package-version-na
  const char kPackageVersionCode[] = "package-version-code";
  #endif
  

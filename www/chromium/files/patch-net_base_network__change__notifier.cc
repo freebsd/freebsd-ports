@@ -1,9 +1,9 @@
---- net/base/network_change_notifier.cc.orig	2023-05-31 08:12:17 UTC
+--- net/base/network_change_notifier.cc.orig	2024-02-23 21:04:38 UTC
 +++ net/base/network_change_notifier.cc
 @@ -37,7 +37,7 @@
  #include "net/base/network_change_notifier_linux.h"
  #elif BUILDFLAG(IS_APPLE)
- #include "net/base/network_change_notifier_mac.h"
+ #include "net/base/network_change_notifier_apple.h"
 -#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  #include "net/base/network_change_notifier_passive.h"

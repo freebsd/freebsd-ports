@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2024-01-30 07:53:34 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2024-02-23 21:04:38 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -21,7 +21,7 @@ BASE_FEATURE(kUseClientConfigIPH,
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -583,7 +583,7 @@ constexpr base::FeatureParam<int> kDefaultBrowserEligi
+@@ -610,7 +610,7 @@ constexpr base::FeatureParam<int> kDefaultBrowserEligi
      /*default_value=*/365};
  #endif  // BUILDFLAG(IS_IOS)
  
@@ -18,7 +18,7 @@
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  BASE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature,
               "IPH_AutofillExternalAccountProfileSuggestion",
-@@ -709,7 +709,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+@@ -736,7 +736,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

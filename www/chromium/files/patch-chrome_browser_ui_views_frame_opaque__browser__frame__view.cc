@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2024-02-23 21:04:38 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -54,7 +54,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
@@ -18,16 +18,16 @@
    return FrameButtonStyle::kMdButton;
  #else
    return FrameButtonStyle::kImageButton;
-@@ -589,7 +589,7 @@ bool OpaqueBrowserFrameView::ShouldDrawRestoredFrameSh
+@@ -585,7 +585,7 @@ bool OpaqueBrowserFrameView::ShouldDrawRestoredFrameSh
    return false;
  }
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
- ui::WindowTiledEdges OpaqueBrowserFrameView::GetTiledEdges() const {
-   return frame()->tiled_edges();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ bool OpaqueBrowserFrameView::IsTiled() const {
+   return frame()->tiled();
  }
-@@ -787,7 +787,7 @@ gfx::Rect OpaqueBrowserFrameView::GetIconBounds() cons
+@@ -783,7 +783,7 @@ gfx::Rect OpaqueBrowserFrameView::GetIconBounds() cons
  }
  
  void OpaqueBrowserFrameView::WindowIconPressed() {

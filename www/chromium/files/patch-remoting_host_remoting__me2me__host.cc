@@ -1,4 +1,4 @@
---- remoting/host/remoting_me2me_host.cc.orig	2024-01-30 07:53:34 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2024-02-23 21:04:38 UTC
 +++ remoting/host/remoting_me2me_host.cc
 @@ -127,7 +127,7 @@
  #include "remoting/host/mac/permission_utils.h"
@@ -113,7 +113,7 @@
    context_->input_task_runner()->PostTask(
        FROM_HERE,
        base::BindOnce([]() { delete ui::X11EventSource::GetInstance(); }));
-@@ -1391,7 +1391,7 @@ bool HostProcess::OnUsernamePolicyUpdate(const base::V
+@@ -1394,7 +1394,7 @@ bool HostProcess::OnUsernamePolicyUpdate(const base::V
    // Returns false: never restart the host after this policy update.
    DCHECK(context_->network_task_runner()->BelongsToCurrentThread());
  
@@ -122,7 +122,7 @@
    std::optional<bool> host_username_match_required =
        policies.FindBool(policy::key::kRemoteAccessHostMatchUsername);
    if (!host_username_match_required.has_value()) {
-@@ -1800,7 +1800,7 @@ void HostProcess::StartHost() {
+@@ -1803,7 +1803,7 @@ void HostProcess::StartHost() {
    // won't be advertised if it's missing a registry key or something.
    desktop_environment_options_.set_enable_remote_open_url(true);
  
@@ -131,7 +131,7 @@
    desktop_environment_options_.set_enable_remote_webauthn(is_googler_);
  #endif
  
-@@ -1833,7 +1833,7 @@ void HostProcess::StartHost() {
+@@ -1836,7 +1836,7 @@ void HostProcess::StartHost() {
    host_status_logger_ = std::make_unique<HostStatusLogger>(
        host_->status_monitor(), log_to_server_.get());
  
@@ -140,7 +140,7 @@
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->HasSwitch(kEnableUtempter)) {
      host_utmp_logger_ =
-@@ -1865,7 +1865,7 @@ void HostProcess::StartHost() {
+@@ -1868,7 +1868,7 @@ void HostProcess::StartHost() {
  
    host_->Start(host_owner_);
  
@@ -149,7 +149,7 @@
    // For Windows, ChromotingHostServices connections are handled by the daemon
    // process, then the message pipe is forwarded to the network process.
    host_->StartChromotingHostServices();
-@@ -1998,7 +1998,7 @@ int HostProcessMain() {
+@@ -2001,7 +2001,7 @@ int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
  
@@ -158,7 +158,7 @@
  #if defined(REMOTING_USE_X11)
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
-@@ -2047,7 +2047,7 @@ int HostProcessMain() {
+@@ -2050,7 +2050,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  
