@@ -158,7 +158,7 @@ lib/pfe-forth/toolbelt.so
 lib/pfe-forth/zchar.a
 lib/pfe-forth/zchar.so
 libdata/pkgconfig/pfe.pc
-man/man1/pfe.1.gz
+share/man/man1/pfe.1.gz
 %%DATADIR%%/lib/arrays.4th
 %%DATADIR%%/lib/defer-is.4th
 %%DATADIR%%/lib/doermake.4th
