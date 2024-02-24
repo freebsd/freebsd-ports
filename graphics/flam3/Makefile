@@ -1,7 +1,7 @@
 PORTNAME=	flam3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1-5
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-g7fb50c8
 CATEGORIES=	graphics
 
@@ -19,6 +19,7 @@ USES=		gmake jpeg libtool localbase pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	scottdraves
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared --disable-static
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

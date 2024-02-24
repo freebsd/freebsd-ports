@@ -11,7 +11,7 @@ lib/libflam3.so.0
 lib/libflam3.so.0.0.0
 libdata/pkgconfig/flam3.pc
 share/flam3/flam3-palettes.xml
-man/man1/flam3-animate.1.gz
-man/man1/flam3-convert.1.gz
-man/man1/flam3-genome.1.gz
-man/man1/flam3-render.1.gz
+share/man/man1/flam3-animate.1.gz
+share/man/man1/flam3-convert.1.gz
+share/man/man1/flam3-genome.1.gz
+share/man/man1/flam3-render.1.gz
