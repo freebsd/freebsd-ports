@@ -6,34 +6,34 @@ lib/tdbc%%VERSION%%/libtdbcstub%%VERSION%%.a
 lib/tdbc%%VERSION%%/pkgIndex.tcl
 lib/tdbc%%VERSION%%/tdbc.tcl
 lib/tdbc%%VERSION%%/tdbcConfig.sh
-man/man3/Tdbc_Init.3.gz
-man/mann/tdbc.n.gz
-man/mann/tdbc_connection.n.gz
-man/mann/tdbc_mapSqlState.n.gz
-man/mann/tdbc_resultset.n.gz
-man/mann/tdbc_statement.n.gz
-man/mann/tdbc_tokenize.n.gz
+share/man/man3/Tdbc_Init.3.gz
+share/man/mann/tdbc.n.gz
+share/man/mann/tdbc_connection.n.gz
+share/man/mann/tdbc_mapSqlState.n.gz
+share/man/mann/tdbc_resultset.n.gz
+share/man/mann/tdbc_statement.n.gz
+share/man/mann/tdbc_tokenize.n.gz
 @comment MySQL
 %%MYSQL%%include/tdbc/fakemysql.h
 %%MYSQL%%include/tdbc/mysqlStubs.h
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/libtdbcmysql%%VERSION%%.so
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/tdbcmysql.tcl
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/pkgIndex.tcl
-%%MYSQL%%man/mann/tdbc_mysql.n.gz
+%%MYSQL%%share/man/mann/tdbc_mysql.n.gz
 @comment ODBC
 %%ODBC%%include/tdbc/fakesql.h
 %%ODBC%%include/tdbc/odbcStubs.h
 %%ODBC%%lib/tdbcodbc%%VERSION%%/libtdbcodbc%%VERSION%%.so
 %%ODBC%%lib/tdbcodbc%%VERSION%%/tdbcodbc.tcl
 %%ODBC%%lib/tdbcodbc%%VERSION%%/pkgIndex.tcl
-%%ODBC%%man/mann/tdbc_odbc.n.gz
+%%ODBC%%share/man/mann/tdbc_odbc.n.gz
 @comment PGSQL
 %%PGSQL%%include/tdbc/fakepq.h
 %%PGSQL%%include/tdbc/pqStubs.h
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/libtdbcpostgres%%VERSION%%.so
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/tdbcpostgres.tcl
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/pkgIndex.tcl
-%%PGSQL%%man/mann/tdbc_postgres.n.gz
+%%PGSQL%%share/man/mann/tdbc_postgres.n.gz
 @comment SQLITE
 %%SQLITE%%lib/tcl%%TCL_MAJ%%/%%TCL_VER%%/tdbc/sqlite3-%%VERSION%%.tm
-%%SQLITE%%man/mann/tdbc_sqlite3.n.gz
+%%SQLITE%%share/man/mann/tdbc_sqlite3.n.gz

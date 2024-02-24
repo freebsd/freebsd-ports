@@ -1,5 +1,6 @@
 PORTNAME=	tdbc
 DISTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/tcl/TDBC/${PORTVERSION}
 DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
@@ -22,7 +23,7 @@ OPTIONS_SUB=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
 CONFIGURE_ARGS+=--enable-threads \
-		--mandir=${PREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--includedir=${PREFIX}/include/tdbc
 PLIST_SUB+=	VERSION=${DISTVERSION} \
 		TCL_MAJ=${TCL_VER:R} \
