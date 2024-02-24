@@ -1,6 +1,6 @@
 PORTNAME=	dvi2tty
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	LOCAL/hrs
 PKGNAMESUFFIX=	-ascii
@@ -17,7 +17,7 @@ RUN_DEPENDS=	jless:japanese/less
 
 PLIST_FILES=	bin/jdvi2tty \
 		bin/jdisdvi \
-		man/man1/jdvi2tty.1.gz
+		share/man/man1/jdvi2tty.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/dvistuff.c
@@ -25,6 +25,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jdvi2tty ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/disdvi ${STAGEDIR}${PREFIX}/bin/jdisdvi
-	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${STAGEDIR}${PREFIX}/man/man1/jdvi2tty.1
+	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${STAGEDIR}${PREFIX}/share/man/man1/jdvi2tty.1
 
 .include <bsd.port.mk>
