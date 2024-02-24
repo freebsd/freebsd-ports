@@ -2,7 +2,7 @@ bin/4va
 bin/4vdmake
 bin/ctorus
 bin/cutctorus
-man/man1/4va.1.gz
+share/man/man1/4va.1.gz
 share/4va/16cell.4vd
 share/4va/24cell.4vd
 share/4va/5cell.4vd

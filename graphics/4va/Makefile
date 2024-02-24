@@ -1,6 +1,6 @@
 PORTNAME=	4va
 PORTVERSION=	1.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/hacks/X
 
@@ -24,6 +24,6 @@ do-install:
 .for file in ${4VA_DATA_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/share/4va
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/4va.man ${STAGEDIR}${PREFIX}/man/man1/4va.1
+	${INSTALL_MAN} ${WRKSRC}/4va.man ${STAGEDIR}${PREFIX}/share/man/man1/4va.1
 
 .include <bsd.port.mk>
