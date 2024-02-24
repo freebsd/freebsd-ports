@@ -1,6 +1,6 @@
 PORTNAME=	milter-manager
 DISTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ruby
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	milter-manager
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--with-libev \
 		--with-package-platform=freebsd
