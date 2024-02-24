@@ -1159,7 +1159,7 @@ lib/elixir/lib/mix/lib/mix/tasks/test.ex
 lib/elixir/lib/mix/lib/mix/tasks/will_recompile.ex
 lib/elixir/lib/mix/lib/mix/tasks/xref.ex
 lib/elixir/lib/mix/lib/mix/utils.ex
-man/man1/elixir.1.gz
-man/man1/elixirc.1.gz
-man/man1/iex.1.gz
-man/man1/mix.1.gz
+share/man/man1/elixir.1.gz
+share/man/man1/elixirc.1.gz
+share/man/man1/iex.1.gz
+share/man/man1/mix.1.gz
