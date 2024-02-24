@@ -1,6 +1,6 @@
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade/invaders
 
@@ -16,6 +16,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 USES=		gettext xorg
 USE_XORG=	x11 xmu xaw xt
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-scorefile=/var/games/xinvaders.scores
 
 CPPFLAGS+=	-I${LOCALBASE}/include
