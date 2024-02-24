@@ -12,13 +12,10 @@ LICENSE=	BSD0CLAUSE
 CFLAGS+=	-Wno-strict-prototypes
 
 PLIST_FILES=			bin/ttcp share/man/man1/ttcp.1.gz
-PORTDOCS_PLIST_FILES=	share/doc/ttcp/README share/doc/ttcp/CHANGES \
-			share/doc/ttcp/LICENSE
 PORTDOCS=		README CHANGES LICENSE
 OPTIONS_DEFINE=	DOCS
-# because the ports framework doesn't cope well with bare ${PORTNAME} ${WRKSRC}
-post-extract:
-	${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/ttcp ${WRKSRC}/ttcp.c
