@@ -1,6 +1,6 @@
 PORTNAME=	seejpeg
 PORTVERSION=	1.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 
@@ -15,6 +15,6 @@ ALL_TARGET=	seejpeg
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/seejpeg man/man1/seejpeg.1.gz
+PLIST_FILES=	bin/seejpeg share/man/man1/seejpeg.1.gz
 
 .include <bsd.port.mk>

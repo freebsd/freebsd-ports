@@ -7,7 +7,7 @@
 -BIN=	/usr/local/bin
 -MAN=	/usr/local/man/man1
 +BIN=	${LOCALBASE}/bin
-+MAN=	${LOCALBASE}/man/man1
++MAN=	${LOCALBASE}/share/man/man1
  
  # See the README for a description of these options.
  #OPTIONS= -DNO_32K_CASCADE -DTESTMODE=G640x480x32K -DBUG_WORKAROUND -DONLY_1_8_MODES
