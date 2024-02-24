@@ -1,6 +1,6 @@
 PORTNAME=	librsvg
 PORTVERSION=	2.40.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -40,6 +40,7 @@ USE_GNOME=	cairo gnomeprefix gdkpixbuf2 introspection:build \
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-Bsymbolic
 

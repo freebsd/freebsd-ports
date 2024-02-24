@@ -11,7 +11,7 @@ lib/librsvg-2.so
 lib/librsvg-2.so.2
 lib/librsvg-2.so.%%PORTVERSION%%
 libdata/pkgconfig/librsvg-2.0.pc
-man/man1/rsvg-convert.1.gz
+share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/rsvg-2.0/RsvgHandle.html
 %%PORTDOCS%%%%DOCSDIR%%/rsvg-2.0/annotation-glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/rsvg-2.0/api-index-full.html
