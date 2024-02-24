@@ -1,0 +1,25 @@
+--- ../nginx-video-thumbextractor-module-e81f850/config.orig	2024-02-22 08:49:55.972829000 -0500
++++ ../nginx-video-thumbextractor-module-e81f850/config	2024-02-22 08:50:05.036983000 -0500
+@@ -1,9 +1,14 @@
+ ngx_addon_name=ngx_http_video_thumbextractor_module
+-ngx_feature_libs="-lavformat -lavcodec -lavutil -lavfilter -lswscale -lswresample -lpostproc -ljpeg"
+-HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES $ngx_addon_name"
+-CORE_INCS="$CORE_INCS \
+-    $ngx_addon_dir/src \
+-    $ngx_addon_dir/include"
+-NGX_ADDON_SRCS="$NGX_ADDON_SRCS \
+-    ${ngx_addon_dir}/src/ngx_http_video_thumbextractor_module.c"
+-CORE_LIBS="$CORE_LIBS $ngx_feature_libs"
++ngx_module_libs="-lavformat -lavcodec -lavutil -lavfilter -lswscale -lswresample -lpostproc -ljpeg"
++ngx_module_incs="$ngx_addon_dir/include $ngx_addon_dir/src"
++
++if test -n "$ngx_module_link"; then
++    ngx_module_type=HTTP
++    ngx_module_name=$ngx_addon_name
++    ngx_module_srcs="${ngx_addon_dir}/src/ngx_http_video_thumbextractor_module.c"
++    . auto/module
++else
++    HTTP_MODULES="$HTTP_MODULES $ngx_addon_name"
++    NGX_ADDON_SRCS="$NGX_ADDON_SRCS \
++        ${ngx_addon_dir}/src/ngx_http_video_thumbextractor_module.c"
++fi
