@@ -31,4 +31,4 @@ bin/foobillard
 %%DATADIR%%/tabletex_fB_128x128.png
 %%DATADIR%%/tabletex_fB_256x256.png
 %%DATADIR%%/youregon.ttf
-man/man6/foobillard.6.gz
+share/man/man6/foobillard.6.gz
