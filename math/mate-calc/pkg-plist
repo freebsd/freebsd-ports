@@ -1,8 +1,8 @@
 bin/mate-calc
 bin/mate-calc-cmd
 bin/mate-calculator
-man/man1/mate-calc-cmd.1.gz
-man/man1/mate-calc.1.gz
+share/man/man1/mate-calc-cmd.1.gz
+share/man/man1/mate-calc.1.gz
 share/applications/mate-calc.desktop
 share/help/C/mate-calc/absolute.page
 share/help/C/mate-calc/base.page

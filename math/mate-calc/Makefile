@@ -1,6 +1,6 @@
 PORTNAME=	mate-calc
 PORTVERSION=	1.26.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -21,6 +21,7 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake gnome localbase pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 GLIB_SCHEMAS=	org.mate.calc.gschema.xml
 
