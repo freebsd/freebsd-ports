@@ -1,3 +1,42 @@
+  <vuln vid="2a470712-d351-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>122.0.6261.57</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>122.0.6261.57</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop_20.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[41495060] High CVE-2024-1669: Out of bounds memory access in Blink. Reported by Anonymous on 2024-01-26</li>
+	    <li>[41481374] High CVE-2024-1670: Use after free in Mojo. Reported by Cassidy Kim(@cassidy6564) on 2023-12-06</li>
+	    <li>[41487933] Medium CVE-2024-1671: Inappropriate implementation in Site Isolation. Reported by Harry Chen on 2024-01-03</li>
+	    <li>[41485789] Medium CVE-2024-1672: Inappropriate implementation in Content Security Policy. Reported by Georg Felber (TU Wien) &amp; Marco Squarcina (TU Wien) on 2023-12-19</li>
+	    <li>[41490491] Medium CVE-2024-1673: Use after free in Accessibility. Reported by Weipeng Jiang (@Krace) of VRI on 2024-01-11</li>
+	    <li>[40095183] Medium CVE-2024-1674: Inappropriate implementation in Navigation. Reported by David Erceg on 2019-05-27</li>
+	    <li>[41486208] Medium CVE-2024-1675: Insufficient policy enforcement in Download. Reported by Bartłomiej Wacko on 2023-12-21</li>
+	    <li>[40944847] Low CVE-2024-1676: Inappropriate implementation in Navigation. Reported by Khalil Zhani on 2023-11-21</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop_20.html</url>
+    </references>
+    <dates>
+      <discovery>2024-02-20</discovery>
+      <entry>2024-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a851dc0-cfd2-11ee-ac09-6c3be5272acd">
     <topic>Grafana -- Email verification is not required after email change</topic>
     <affects>
