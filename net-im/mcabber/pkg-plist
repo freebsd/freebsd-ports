@@ -34,5 +34,5 @@ lib/mcabber/libfifo.so
 lib/mcabber/liburlregex.so
 lib/mcabber/libxttitle.so
 libdata/pkgconfig/mcabber.pc
-man/man1/mcabber.1.gz
+share/man/man1/mcabber.1.gz
 share/applications/mcabber.desktop
