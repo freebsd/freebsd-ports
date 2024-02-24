@@ -1,5 +1,5 @@
 bin/xpilot-ng-server
-man/man6/xpilot-ng-server.6.gz
+share/man/man6/xpilot-ng-server.6.gz
 share/xpilot-ng/defaults.txt
 share/xpilot-ng/mapconvert.py
 share/xpilot-ng/maps/blood-music.xp2
