@@ -1,6 +1,6 @@
 PORTNAME=	bogom
 PORTVERSION=	1.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.usebox.net/jjm/bogom/ \
 		http://blackshell.usebox.net/bogom/
@@ -25,7 +25,7 @@ USE_RC_SUBR=	milter-bogom
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	sbin/bogom \
-		man/man8/bogom.8.gz \
+		share/man/man8/bogom.8.gz \
 		etc/bogom.conf-example
 
 PORTDOCS=	README CHANGELOG
@@ -42,7 +42,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bogom ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/bogom.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/bogom.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/bogom.conf-example ${STAGEDIR}${PREFIX}/etc/
 
 do-install-DOCS-on:
