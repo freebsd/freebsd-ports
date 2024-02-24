@@ -1,5 +1,6 @@
 PORTNAME=	herbstluftwm
 DISTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://herbstluftwm.org/tarballs/
 

@@ -13,9 +13,9 @@ share/zsh/site-functions/_herbstclient
 %%PORTDOCS%%%%DOCSDIR%%/html/herbstclient.html
 %%PORTDOCS%%%%DOCSDIR%%/html/herbstluftwm-tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/herbstluftwm.html
-%%PORTDOCS%%man/man1/herbstclient.1.gz
-%%PORTDOCS%%man/man1/herbstluftwm.1.gz
-%%PORTDOCS%%man/man7/herbstluftwm-tutorial.7.gz
+%%PORTDOCS%%share/man/man1/herbstclient.1.gz
+%%PORTDOCS%%share/man/man1/herbstluftwm.1.gz
+%%PORTDOCS%%share/man/man7/herbstluftwm-tutorial.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dmenu.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpbeautify.sh

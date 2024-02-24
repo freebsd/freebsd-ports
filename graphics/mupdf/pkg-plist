@@ -76,8 +76,8 @@ lib/libmupdf-third.so
 lib/libmupdf-third.so.%%SOVERSION%%
 lib/libmupdf.so
 lib/libmupdf.so.%%SOVERSION%%
-man/man1/mupdf.1.gz
-man/man1/mutool.1.gz
+share/man/man1/mupdf.1.gz
+share/man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
