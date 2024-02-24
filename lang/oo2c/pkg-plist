@@ -3,10 +3,10 @@ bin/oob
 bin/oobacktrace
 bin/ooef
 bin/oowhereis
-man/man1/oo2c.1.gz
-man/man1/oob.1.gz
-man/man1/ooef.1.gz
-man/man1/oowhereis.1.gz
+share/man/man1/oo2c.1.gz
+share/man/man1/oob.1.gz
+share/man/man1/ooef.1.gz
+share/man/man1/oowhereis.1.gz
 lib/liboo2c.a
 lib/liboo2c.so
 lib/liboo2c.so.3
