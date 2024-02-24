@@ -257,6 +257,6 @@ lib/prosody/util/xml.lua
 lib/prosody/util/xmppstream.lua
 lib/prosody/util/xpcall.lua
 lib/prosody/util/xtemplate.lua
-man/man1/prosodyctl.1.gz
+share/man/man1/prosodyctl.1.gz
 @dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/db/prosody
 @dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/run/prosody

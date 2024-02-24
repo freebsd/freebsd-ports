@@ -1,14 +1,5 @@
 --- GNUmakefile.orig	2022-03-08 12:34:39 UTC
 +++ GNUmakefile
-@@ -6,7 +6,7 @@ CONFIG = $(DESTDIR)$(SYSCONFDIR)
- MODULES = $(DESTDIR)$(LIBDIR)/prosody/modules
- SOURCE = $(DESTDIR)$(LIBDIR)/prosody
- DATA = $(DESTDIR)$(DATADIR)
--MAN = $(DESTDIR)$(PREFIX)/share/man
-+MAN = $(DESTDIR)$(PREFIX)/man
- 
- INSTALLEDSOURCE = $(LIBDIR)/prosody
- INSTALLEDCONFIG = $(SYSCONFDIR)
 @@ -35,7 +35,7 @@ install-etc: prosody.cfg.lua.install
  	$(MKDIR) $(CONFIG)
  	$(MKDIR) $(CONFIG)/certs
