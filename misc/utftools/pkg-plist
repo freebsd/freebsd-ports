@@ -2,7 +2,7 @@ bin/utf8-expand
 bin/utf8-fmt
 bin/utf8-unexpand
 bin/utf8-wc
-man/man1/utf8-expand.1.gz
-man/man1/utf8-fmt.1.gz
-man/man1/utf8-unexpand.1.gz
-man/man1/utf8-wc.1.gz
+share/man/man1/utf8-expand.1.gz
+share/man/man1/utf8-fmt.1.gz
+share/man/man1/utf8-unexpand.1.gz
+share/man/man1/utf8-wc.1.gz
