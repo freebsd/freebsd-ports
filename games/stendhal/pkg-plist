@@ -51,7 +51,7 @@ share/stendhal/lib/sha512crypt-license.txt
 share/stendhal/lib/websocket-license.txt
 @dir share/stendhal/log
 %%CLIENT%%bin/stendhal
-%%CLIENT%%man/man1/stendhal.1.gz
+%%CLIENT%%share/man/man1/stendhal.1.gz
 %%CLIENT%%share/applications/stendhal.desktop
 %%CLIENT%%share/pixmaps/stendhal.png
 %%CLIENT%%share/stendhal/stendhal-starter.jar
@@ -61,7 +61,7 @@ share/stendhal/lib/websocket-license.txt
 %%CLIENT%%share/stendhal/lib/stendhal-data.jar
 %%CLIENT%%share/stendhal/lib/jorbis.jar
 %%SERVER%%bin/stendhal-server
-%%SERVER%%man/man1/stendhal-server.1.gz
+%%SERVER%%share/man/man1/stendhal-server.1.gz
 %%SERVER%%share/stendhal/lib/groovy.jar
 %%SERVER%%share/stendhal/lib/guava.jar
 %%SERVER%%share/stendhal/lib/h2.jar
