@@ -1,6 +1,6 @@
 PORTNAME=	pvpgn
 PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.2.tar.gz
@@ -29,6 +29,7 @@ PLIST_SUB+=	RC_SUFX=${RC_SUFX}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pvpgn \
 		--localstatedir=${DATADIR} \
 		--with-libraries=${LOCALBASE}/lib
