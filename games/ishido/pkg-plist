@@ -3,7 +3,7 @@
 bin/ishido
 @group
 @mode
-man/man6/ishido.6.gz
+share/man/man6/ishido.6.gz
 @mode 664
 @group games
 share/misc/ishido_scores
