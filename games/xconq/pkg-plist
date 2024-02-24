@@ -3,7 +3,7 @@
 %%NOSDL%%bin/imfapp
 %%NOSDL%%bin/x2imf
 @(,games,2755) bin/xconq
-man/man6/xconq.6.gz
+share/man/man6/xconq.6.gz
 %%DATADIR%%/images/3rd-age.gif
 %%DATADIR%%/images/advances.gif
 %%DATADIR%%/images/advt12x13.gif
