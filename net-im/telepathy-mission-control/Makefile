@@ -1,6 +1,6 @@
 PORTNAME=	telepathy-mission-control
 PORTVERSION=	5.16.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
 USES=		gmake gnome libtool pathfix pkgconfig python:build
 USE_GNOME=	glib20 libxslt
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-upower
