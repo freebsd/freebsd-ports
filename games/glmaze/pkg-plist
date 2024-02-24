@@ -1,5 +1,5 @@
 bin/glmaze
-man/man6/glmaze.6.gz
+share/man/man6/glmaze.6.gz
 %%DATADIR%%/data/Font.bmp
 %%DATADIR%%/data/Star.bmp
 %%DATADIR%%/data/bar.bmp
