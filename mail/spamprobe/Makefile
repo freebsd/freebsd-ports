@@ -1,6 +1,6 @@
 PORTNAME=		spamprobe
 PORTVERSION=	1.4d
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=		mail
 MASTER_SITES=	SF
 
@@ -12,9 +12,10 @@ USES=	localbase:ldflags
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-default-8bit
 
-PLIST_FILES=	bin/spamprobe man/man1/spamprobe.1.gz
+PLIST_FILES=	bin/spamprobe share/man/man1/spamprobe.1.gz
 
 OPTIONS_DEFINE=	GIF JPEG PNG
 OPTIONS_DEFAULT=PBL GIF JPEG PNG
