@@ -1,6 +1,6 @@
 PORTNAME=	enblend
 PORTVERSION=	4.2
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
@@ -24,8 +24,9 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 USES=		compiler:features gmake jpeg localbase pkgconfig
 USE_CXXSTD=	c++14
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/enblend bin/enfuse man/man1/enblend.1.gz man/man1/enfuse.1.gz
+PLIST_FILES=	bin/enblend bin/enfuse share/man/man1/enblend.1.gz share/man/man1/enfuse.1.gz
 PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS
