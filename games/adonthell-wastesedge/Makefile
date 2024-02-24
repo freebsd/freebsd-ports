@@ -1,6 +1,6 @@
 PORTNAME=	wastesedge
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH/adonthell
 PKGNAMEPREFIX=	adonthell-
@@ -18,6 +18,7 @@ RUN_DEPENDS=	adonthell:games/adonthell
 
 USES=		gettext-tools
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-pyc \
 		--with-adonthell-binary=${LOCALBASE}/bin/adonthell
 
