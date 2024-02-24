@@ -1,6 +1,6 @@
 PORTNAME=	arts++
 PORTVERSION=	1.1.a13
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://distrib-coffee.ipsl.jussieu.fr/pub/linux/momonga/3/SOURCES/
@@ -14,6 +14,7 @@ LICENSE=	LGPL21
 USES=		gmake libtool
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
