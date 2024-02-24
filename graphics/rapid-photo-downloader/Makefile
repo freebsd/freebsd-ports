@@ -1,6 +1,6 @@
 PORTNAME=	rapid-photo-downloader
 DISTVERSION=	0.9.26
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/rapid/pyqt/${PORTVERSION}/+download/
 
@@ -50,9 +50,5 @@ PROGRESS_DESC=	shows a progress bar on the command line
 
 COLOUR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR}
 PROGRESS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyprind>=1.4.0:misc/py-pyprind@${PY_FLAVOR}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|'share/man/man1'|'man/man1'|' \
-		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
