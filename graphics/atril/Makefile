@@ -3,7 +3,7 @@
 
 PORTNAME=	atril
 PORTVERSION=	1.26.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -33,6 +33,7 @@ USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 intlhack libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static \
 		--disable-synctex
 CPPFLAGS+=	-I${LOCALBASE}/include
