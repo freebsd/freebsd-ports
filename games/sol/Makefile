@@ -1,5 +1,6 @@
 PORTNAME=	sol
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
@@ -27,7 +28,7 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sol ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sol.6 ${STAGEDIR}${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/sol.6 ${STAGEDIR}${PREFIX}/share/man/man6
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/sol
 	${INSTALL_DATA} ${WRKSRC}/sol.score ${STAGEDIR}${PREFIX}/share/sol
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/sol
