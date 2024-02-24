@@ -27,7 +27,7 @@ GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500008 || ( ${OSVERSION} >= 1400508 && ${OSVERSION} < 1500000 )
+.if ${OPSYS} == FreeBSD && !( ${OSVERSION} >= 1500008 || ( ${OSVERSION} >= 1400508 && ${OSVERSION} < 1500000 ))
 IGNORE=		not supported on older than 14-STABLE 1400508, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
