@@ -1,6 +1,6 @@
 PORTNAME=	mmake
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.tildeslash.com/mmake/dist/
 
@@ -13,9 +13,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/mmake man/man1/mmake.1.gz
+PLIST_FILES=	bin/mmake share/man/man1/mmake.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,(BIN|MAN)DIR),DESTDIR)$$(&,' \
