@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-sysroot
 DISTVERSION=	a2023-12-30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
 		LOCAL/rust:${FLAVOR}
@@ -65,6 +65,7 @@ _SYSROOT_EXCLUDE_armv7=			usr/lib/debug/*
 _SYSROOT_ARCH_amd64=			x86_64
 _SYSROOT_ARCH_i386=			i686
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
+_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd13.2
 _SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd13.2-gnueabihf
 _SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.2 # secure-plt
 _SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.2 # elfv2
