@@ -1,5 +1,6 @@
 PORTNAME=	vms-empire
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 
@@ -15,7 +16,7 @@ PORTDOCS=	AUTHORS BUGS HACKING NEWS README
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz \
+		share/man/man6/${PORTNAME}.6.gz \
 		share/appdata/${PORTNAME}.xml \
 		${DESKTOPDIR}/${PORTNAME}.desktop \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png
@@ -24,7 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|CFLAGS?|; \
 	s|/usr/bin|${PREFIX}/bin|; \
 	s|/usr/share/|${PREFIX}/share/|; \
-	s|/usr/local/share/man|${PREFIX}/man|' \
+	s|/usr/local/share/man|${PREFIX}/share/man|' \
 	${WRKSRC}/Makefile
 
 post-install:
