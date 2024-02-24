@@ -1,5 +1,5 @@
 bin/biboumi
-man/man1/biboumi.1.gz
+share/man/man1/biboumi.1.gz
 @sample %%ETCDIR%%/biboumi.cfg.sample %%ETCDIR%%/biboumi.cfg
 @dir(%%USER%%,%%GROUP%%) /var/db/biboumi
 @dir(%%USER%%,%%GROUP%%) /var/run/biboumi
