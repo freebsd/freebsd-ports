@@ -1,5 +1,5 @@
 bin/uqm
-man/man6/uqm.6.gz
+share/man/man6/uqm.6.gz
 @dir %%DATADIR%%/content
 @dir %%DATADIR%%/content/addons
 @dir %%DATADIR%%/content/packages
