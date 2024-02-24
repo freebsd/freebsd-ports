@@ -1,6 +1,6 @@
 PORTNAME=	tcl
 PORTVERSION=	8.5.19
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	TCLTK/tcl8_5 \
 		SF/tcl/Tcl/${PORTVERSION}
@@ -33,6 +33,7 @@ TEST_TARGET=	do-test
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tcl${TCL_VER}
