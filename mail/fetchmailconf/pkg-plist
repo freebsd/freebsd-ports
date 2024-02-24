@@ -1,5 +1,5 @@
 bin/fetchmailconf
-man/man1/fetchmailconf.1.gz
+share/man/man1/fetchmailconf.1.gz
 %%PYTHON_SITELIBDIR%%/fetchmailconf.py
 %%PYTHON_SITELIBDIR%%/fetchmailconf.pyc
 %%PYTHON_SITELIBDIR%%/fetchmailconf.pyo
