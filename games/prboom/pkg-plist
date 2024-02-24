@@ -1,8 +1,8 @@
 bin/prboom
 bin/prboom-game-server
-man/man5/boom.cfg.5.gz
-man/man6/prboom-game-server.6.gz
-man/man6/prboom.6.gz
+share/man/man5/boom.cfg.5.gz
+share/man/man6/prboom-game-server.6.gz
+share/man/man6/prboom.6.gz
 %%DATADIR%%/prboom.wad
 %%DOCSDIR%%-%%PORTVERSION%%/boom.txt
 %%DOCSDIR%%-%%PORTVERSION%%/MBF.txt
