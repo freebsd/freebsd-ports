@@ -1,5 +1,6 @@
 PORTNAME=	eom
 DISTVERSION=	1.27.1
+PORTREVISION=	1
 CATEGORIES=	graphics mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,6 +25,7 @@ USE_XORG=	x11
 USE_GNOME=	cairo glib20 gnomeprefix gtk30 intltool introspection \
 		librsvg2 libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-cms
 INSTALL_TARGET=	install-strip
 

@@ -30,7 +30,7 @@ lib/eom/plugins/reload.plugin
 lib/eom/plugins/statusbar-date.plugin
 lib/girepository-1.0/Eom-1.0.typelib
 libdata/pkgconfig/eom.pc
-man/man1/eom.1.gz
+share/man/man1/eom.1.gz
 share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/EomFileChooser.html
 %%PORTDOCS%%%%DOCSDIR%%/EomImageSaveInfo.html
