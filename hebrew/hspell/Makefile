@@ -1,5 +1,6 @@
 PORTNAME=	hspell
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	hebrew
 MASTER_SITES=	http://hspell.ivrix.org.il/
 
@@ -15,6 +16,7 @@ SHEBANG_FILES=	pmerge multispell
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--enable-fatverb \
 		--enable-shared
