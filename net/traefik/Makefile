@@ -1,6 +1,5 @@
 PORTNAME=	traefik
-PORTVERSION=	2.10.7
-PORTREVISION=	1
+PORTVERSION=	2.11.0
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		cpe go:1.21,modules tar:xz
+USES=		cpe go:1.22,modules tar:xz
 
 USE_RC_SUBR=	traefik
 
