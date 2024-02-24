@@ -25,7 +25,7 @@
 -	install -c nbfc /usr/bin/nbfc 
 -	install -c nbfc.1 /usr/man/man1/nbfc.1
 +	install -s -c nbfc ${STAGEDIR}${PREFIX}/bin/nbfc 
-+	install -c nbfc.1 ${STAGEDIR}${PREFIX}/man/man1/nbfc.1
++	install -c nbfc.1 ${STAGEDIR}${PREFIX}/share/man/man1/nbfc.1
  
  clean:
  	rm -f *.o
