@@ -7,11 +7,15 @@ include/rofi/mode.h
 include/rofi/rofi-icon-fetcher.h
 include/rofi/rofi-types.h
 libdata/pkgconfig/rofi.pc
-share/man/man5/rofi-dmenu.5.gz
-share/man/man5/rofi-keys.5.gz
+share/applications/rofi-theme-selector.desktop
+share/applications/rofi.desktop
+share/icons/hicolor/scalable/apps/rofi.svg
 share/man/man1/rofi-sensible-terminal.1.gz
 share/man/man1/rofi-theme-selector.1.gz
 share/man/man1/rofi.1.gz
+share/man/man5/rofi-debugging.5.gz
+share/man/man5/rofi-dmenu.5.gz
+share/man/man5/rofi-keys.5.gz
 share/man/man5/rofi-script.5.gz
 share/man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/Adapta-Nokto.rasi
@@ -21,7 +25,6 @@ share/man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/Indego.rasi
 %%DATADIR%%/themes/Monokai.rasi
 %%DATADIR%%/themes/Paper.rasi
-%%DATADIR%%/themes/Pop-Dark.rasi
 %%DATADIR%%/themes/android_notification.rasi
 %%DATADIR%%/themes/arthur.rasi
 %%DATADIR%%/themes/blue.rasi
@@ -42,6 +45,7 @@ share/man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/lb.rasi
 %%DATADIR%%/themes/paper-float.rasi
 %%DATADIR%%/themes/purple.rasi
+%%DATADIR%%/themes/sidebar-v2.rasi
 %%DATADIR%%/themes/sidebar.rasi
 %%DATADIR%%/themes/solarized.rasi
 %%DATADIR%%/themes/solarized_alternate.rasi
