@@ -2,7 +2,7 @@
 
 PORTNAME?=	libv4l
 PORTVERSION=	1.23.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 DISTVERSIONPREFIX=	v4l-utils-
 CATEGORIES=	multimedia
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS+= gsed>0:textproc/gsed \
 		v4l_compat>=${PORTVERSION}:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES+=		autoreconf gettext-tools gmake iconv jpeg libtool pathfix pkgconfig
