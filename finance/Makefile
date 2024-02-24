@@ -37,6 +37,7 @@
     SUBDIR += hs-hledger
     SUBDIR += hs-hledger-ui
     SUBDIR += hs-hledger-web
+    SUBDIR += hyperswitch
     SUBDIR += jgnash
     SUBDIR += kmymoney
     SUBDIR += kraft
