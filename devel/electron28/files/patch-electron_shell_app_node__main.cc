@@ -1,6 +1,6 @@
---- electron/shell/app/node_main.cc.orig	2024-01-31 15:12:32 UTC
+--- electron/shell/app/node_main.cc.orig	2024-02-21 08:43:43 UTC
 +++ electron/shell/app/node_main.cc
-@@ -47,7 +47,7 @@
+@@ -48,7 +48,7 @@
  #include "shell/common/mac/codesign_util.h"
  #endif
  
