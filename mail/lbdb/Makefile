@@ -1,5 +1,6 @@
 PORTNAME=	lbdb
 PORTVERSION=	0.42.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,6 +21,7 @@ GPG_DESC=	GNU Privacy Guard support
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-lbdb-dotlock \
 		--libdir=${PREFIX}/libexec/lbdb
 MAKE_ARGS=	install_prefix=${STAGEDIR}

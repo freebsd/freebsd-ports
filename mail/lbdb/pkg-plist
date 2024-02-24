@@ -29,8 +29,8 @@ libexec/lbdb/mutt_ldap_query
 libexec/lbdb/palm_lsaddr
 libexec/lbdb/qpto8bit
 libexec/lbdb/tac
-man/man1/lbdb-fetchaddr.1.gz
-man/man1/lbdb_dotlock.1.gz
-man/man1/lbdbq.1.gz
-man/man1/mutt_ldap_query.1.gz
-man/man1/nodelist2lbdb.1.gz
+share/man/man1/lbdb-fetchaddr.1.gz
+share/man/man1/lbdb_dotlock.1.gz
+share/man/man1/lbdbq.1.gz
+share/man/man1/mutt_ldap_query.1.gz
+share/man/man1/nodelist2lbdb.1.gz
