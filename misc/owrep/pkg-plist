@@ -1,4 +1,4 @@
 bin/owrep
 @sample etc/owrep.conf.sample
-man/man1/owrep.1.gz
-man/man5/owrep.conf.5.gz
+share/man/man1/owrep.1.gz
+share/man/man5/owrep.conf.5.gz
