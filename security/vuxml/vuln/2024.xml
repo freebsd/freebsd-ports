@@ -1,3 +1,30 @@
+  <vuln vid="5ecfb588-d2f4-11ee-ad82-dbdfaa8acfc2">
+    <topic>gitea -- Fix XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.21.6</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>The Wiki page did not sanitize author name</li>
+       <li>the reviewer name on a "dismiss review" comment is also affected</li>
+       <li>the migration page has some spots</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.com/release-of-1.21.6/</url>
+    </references>
+    <dates>
+      <discovery>2024-02-23</discovery>
+      <entry>2024-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a470712-d351-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
