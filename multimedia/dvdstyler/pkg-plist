@@ -1,5 +1,5 @@
 bin/dvdstyler
-man/man1/dvdstyler.1.gz
+share/man/man1/dvdstyler.1.gz
 share/applications/dvdstyler.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
