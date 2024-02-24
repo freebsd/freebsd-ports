@@ -50,5 +50,5 @@ lib/libdieharder.a
 lib/libdieharder.so
 lib/libdieharder.so.3
 lib/libdieharder.so.3.31.1
-man/man1/dieharder.1.gz
-man/man3/libdieharder.3.gz
+share/man/man1/dieharder.1.gz
+share/man/man3/libdieharder.3.gz
