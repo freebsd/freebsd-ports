@@ -1,5 +1,5 @@
 bin/aview
 bin/asciiview
 bin/aaflip
-man/man1/asciiview.1.gz
-man/man1/aview.1.gz
+share/man/man1/asciiview.1.gz
+share/man/man1/aview.1.gz
