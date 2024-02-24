@@ -2,10 +2,10 @@ bin/dink
 bin/dinkedit
 bin/freedink
 bin/freedinkedit
-man/man6/dink.6.gz
-man/man6/dinkedit.6.gz
-man/man6/freedink.6.gz
-man/man6/freedinkedit.6.gz
+share/man/man6/dink.6.gz
+share/man/man6/dinkedit.6.gz
+share/man/man6/freedink.6.gz
+share/man/man6/freedinkedit.6.gz
 share/applications/freedink.desktop
 share/applications/freedinkedit.desktop
 %%DATADIR%%/LiberationSans-Regular.ttf
