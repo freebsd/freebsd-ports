@@ -1,6 +1,6 @@
 PORTNAME=	ogmtools
 PORTVERSION=	1.5
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 
 USES=		autoreconf localbase:ldflags tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=	DVDREAD
 OPTIONS_DEFAULT=DVDREAD
