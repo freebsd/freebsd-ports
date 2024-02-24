@@ -1,29 +1,24 @@
 PORTNAME=	ttcp
-PORTVERSION=	1.12
-PORTREVISION=	3
+PORTVERSION=	1.13
 CATEGORIES=	benchmarks net
-MASTER_SITES=	https://BSDforge.com/projects/source/benchmarks/ttcp/
-DISTFILES=	ttcp.c ttcp.1 README
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	# none
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
-WWW=		https://ftp.arl.army.mil/~mike/ttcp.html
+WWW=		https://codeberg.org/BSDforge/ttcp/
 
-LICENSE=	PD
+LICENSE=	BSD0CLAUSE
 
-DEPRECATED=	Abandonware, no release in over 20 years. Consider using benchmarks/iperf3 or benchmarks/nttcp
-EXPIRATION_DATE=2024-02-29
+CFLAGS+=	-Wno-strict-prototypes
 
-NO_WRKSUBDIR=	yes
-
+PLIST_FILES=			bin/ttcp share/man/man1/ttcp.1.gz
+PORTDOCS_PLIST_FILES=	share/doc/ttcp/README share/doc/ttcp/CHANGES \
+			share/doc/ttcp/LICENSE
+PORTDOCS=		README CHANGES LICENSE
 OPTIONS_DEFINE=	DOCS
-
+# because the ports framework doesn't cope well with bare ${PORTNAME} ${WRKSRC}
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.1 ${WRKSRC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/README ${WRKSRC}
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/ttcp ${WRKSRC}/ttcp.c
@@ -34,6 +29,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
