@@ -1,5 +1,6 @@
 PORTNAME=	ask
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/a-s-k/${PORTNAME}-beta/${PORTVERSION}
 
@@ -31,7 +32,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/* ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/docs && ${INSTALL_MAN} askfilter.1 asksetup.1 \
-		asksenders.1 ${STAGEDIR}${PREFIX}/man/man1)
+		asksenders.1 ${STAGEDIR}${PREFIX}/share/man/man1)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.[!1]* ${STAGEDIR}${DOCSDIR}
 
