@@ -1,5 +1,6 @@
 PORTNAME=	eggdrop
 DISTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -31,7 +32,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/man1/eggdrop.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man1/eggdrop.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/eggdrop.conf.sample ${STAGEDIR}${PREFIX}/etc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .for f in assoc.so blowfish.so channels.so compress.so console.so ctcp.so \

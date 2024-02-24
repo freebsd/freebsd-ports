@@ -15,7 +15,7 @@ lib/eggdrop/server.so
 lib/eggdrop/share.so
 lib/eggdrop/transfer.so
 lib/eggdrop/uptime.so
-man/man1/eggdrop.1.gz
+share/man/man1/eggdrop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT
 %%PORTDOCS%%%%DOCSDIR%%/BANS
 %%PORTDOCS%%%%DOCSDIR%%/BOTNET
