@@ -1,5 +1,6 @@
 PORTNAME=	wmmoonclock
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
@@ -14,10 +15,10 @@ USE_XORG+=	x11 xext xpm
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/wmmoonclock man/man1/wmmoonclock.1.gz
+PLIST_FILES=	bin/wmmoonclock share/man/man1/wmmoonclock.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmmoonclock ${STAGEDIR}${PREFIX}/bin/wmmoonclock
-	${INSTALL_MAN} ${WRKSRC}/src/wmMoonClock.1 ${STAGEDIR}${PREFIX}/man/man1/wmmoonclock.1
+	${INSTALL_MAN} ${WRKSRC}/src/wmMoonClock.1 ${STAGEDIR}${PREFIX}/share/man/man1/wmmoonclock.1
 
 .include <bsd.port.mk>
