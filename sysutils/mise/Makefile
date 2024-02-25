@@ -1,7 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2.17
-PORTREVISION=	0
+DISTVERSION=	2024.2.18
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,7 +74,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ctor-0.2.6 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
-		demand-1.0.2 \
+		demand-1.1.0 \
 		der-0.7.8 \
 		deranged-0.3.11 \
 		diff-0.1.13 \
