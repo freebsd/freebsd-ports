@@ -1,6 +1,6 @@
 PORTNAME=	clsync
 DISTVERSION=	0.4~rc2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	dyokunev@ut.mephi.ru
@@ -63,7 +63,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clsync ${STAGEDIR}${PREFIX}/sbin/clsync
-	${INSTALL_DATA} ${WRKSRC}/man/man1/clsync.1 ${STAGEDIR}${PREFIX}/man/man1/clsync.1
+	${INSTALL_DATA} ${WRKSRC}/man/man1/clsync.1 ${STAGEDIR}${PREFIX}/share/man/man1/clsync.1
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/freebsd/usr/local/etc/clsync/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 
