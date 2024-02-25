@@ -1,8 +1,10 @@
 PORTNAME=	wayvnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	net wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	1c75fc18ab9c.patch:-p1 # https://github.com/any1/wayvnc/pull/295
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VNC server for wlroots-based compositors
@@ -10,8 +12,6 @@ WWW=		https://github.com/any1/wayvnc
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build after https://github.com/any1/neatvnc/commit/f503cbef257b
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libaml.so:devel/aml \
