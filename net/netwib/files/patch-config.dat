@@ -1,20 +1,28 @@
---- config.dat.orig	Sun Aug 15 21:04:46 2004
-+++ config.dat	Tue Aug 17 11:15:37 2004
-@@ -7,7 +7,7 @@
- 
- ##########################################################################
- ### directories where netwib will be installed
--NETWIBDEF_INSTPREFIX=/usr/local
-+NETWIBDEF_INSTPREFIX=%%PREFIX%%
+--- config.dat.orig	2010-02-14 17:18:16 UTC
++++ config.dat
+@@ -11,7 +11,7 @@ NETWIBDEF_INSTBIN=${NETWIBDEF_INSTPREFIX}/bin
  NETWIBDEF_INSTINCLUDE=${NETWIBDEF_INSTPREFIX}/include
  NETWIBDEF_INSTLIB=${NETWIBDEF_INSTPREFIX}/lib
  NETWIBDEF_INSTBIN=${NETWIBDEF_INSTPREFIX}/bin
-@@ -26,7 +26,7 @@
+-NETWIBDEF_INSTMAN=${NETWIBDEF_INSTPREFIX}/man
++NETWIBDEF_INSTMAN=${NETWIBDEF_INSTPREFIX}/share/man
+ NETWIBDEF_INSTMAN3=${NETWIBDEF_INSTMAN}/man3
+ 
+ ### installation destination directory
+@@ -19,14 +19,14 @@ NETWIBDEF_INSTDESTDIR=""
+ 
+ ##########################################################################
+ ### programs
+-NETWIBDEF_PROGCC=gcc
++NETWIBDEF_PROGCC=cc
+ NETWIBDEF_PROGAR=ar
+ NETWIBDEF_PROGRANLIB=ranlib
+ NETWIBDEF_PROGGREP=grep
  
  ##########################################################################
  ### compiler options
 -NETWIBDEF_PROGCC_OPT="-Wall -O2"
-+NETWIBDEF_PROGCC_OPT="%%CFLAGS%%"
++NETWIBDEF_PROGCC_OPT="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "
  NETWIBDEF_PROGCC_INC=""
  NETWIBDEF_PROGCC_LIB=""
  NETWIBDEF_PROGCC_OPTPIC=""
