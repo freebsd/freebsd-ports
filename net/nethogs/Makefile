@@ -1,7 +1,7 @@
 PORTNAME=	nethogs
 PORTVERSION=	0.8.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	anastasios@mageirias.com
@@ -21,7 +21,7 @@ USES=	compiler:c++11-lang gmake shebangfix
 SHEBANG_FILES=	determineVersion.sh
 bash_CMD=	/bin/sh
 
-PLIST_FILES=	man/man8/nethogs.8.gz \
+PLIST_FILES=	share/man/man8/nethogs.8.gz \
 		sbin/nethogs
 
 post-install:
