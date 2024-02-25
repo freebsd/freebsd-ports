@@ -1,5 +1,5 @@
 bin/dupd
-man/man1/dupd.1.gz
+share/man/man1/dupd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/design.md
 %%PORTDOCS%%%%DOCSDIR%%/examples.md
