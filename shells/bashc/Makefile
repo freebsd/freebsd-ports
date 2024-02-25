@@ -1,5 +1,6 @@
 PORTNAME=	bashc
 PORTVERSION=	5.1.8
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	obscenum999@gmail.com
@@ -11,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bison gmake iconv localbase makeinfo pathfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
