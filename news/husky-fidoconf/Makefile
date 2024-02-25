@@ -29,16 +29,16 @@ post-patch:
 		${BUILD_WRKSRC}/man/linkedto.1
 
 post-install:
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2aquaed.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2areasbbs.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2binkd.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2dir.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2fidogate.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2golded.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2msged.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2na.pl.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2squish.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2tornado.1
-	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fecfg2fconf.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2aquaed.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2areasbbs.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2binkd.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2dir.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2fidogate.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2golded.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2msged.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2na.pl.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2squish.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fconf2tornado.1
+	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/share/man/man1/fecfg2fconf.1
 
 .include "${MASTERDIR}/Makefile"

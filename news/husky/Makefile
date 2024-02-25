@@ -1,5 +1,6 @@
 PORTNAME?=	husky
 PORTVERSION=	1.9.20201211
+PORTREVISION=	1
 PORTEPOCH?=	0
 CATEGORIES?=	news mail
 MASTER_SITES=	http://download.huskyproject.org/sources/
