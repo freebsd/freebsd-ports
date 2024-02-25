@@ -1,5 +1,6 @@
 PORTNAME=	eclat
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		gmake localbase tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	check
 
 # Fix build with clang11
