@@ -1,4 +1,4 @@
---- Makefile.defs.orig	2022-06-22 11:35:15 UTC
+--- Makefile.defs.orig	2022-08-17 10:29:14 UTC
 +++ Makefile.defs
 @@ -57,15 +57,16 @@ export makefile_defs
  makefile_defs=1
@@ -20,3 +20,12 @@
  ifneq (,$(VERSION_BUILD))
  RELEASE=$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_SUBMINOR)-$(VERSION_BUILD)
  else
+@@ -361,7 +362,7 @@ ifeq ($(OS), freebsd)
+ else
+ ifeq ($(OS), freebsd)
+ 	doc_dir = share/doc/$(MAIN_NAME)/
+-	man_dir = man/
++	man_dir = share/man/
+ 	data_dir = share/$(MAIN_NAME)/
+ 	LOCALBASE ?= $(SYSBASE)/local
+ 	md5sum_cmd = md5

@@ -180,8 +180,8 @@ lib/opensips31/perl/OpenSIPS/VDB/ReqCond.pm
 lib/opensips31/perl/OpenSIPS/VDB/Result.pm
 lib/opensips31/perl/OpenSIPS/VDB/VTab.pm
 lib/opensips31/perl/OpenSIPS/VDB/Value.pm
-man/man5/opensips31.cfg.5.gz
-man/man8/opensips31.8.gz
+share/man/man5/opensips31.cfg.5.gz
+share/man/man8/opensips31.8.gz
 sbin/opensips31
 sbin/osipsconfig31
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
