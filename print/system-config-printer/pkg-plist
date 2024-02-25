@@ -31,8 +31,8 @@ etc/xdg/autostart/print-applet.desktop
 %%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/ppds.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/xmldriverprefs.py
-man/man1/system-config-printer-applet.1.gz
-man/man1/system-config-printer.1.gz
+share/man/man1/system-config-printer-applet.1.gz
+share/man/man1/system-config-printer.1.gz
 share/applications/system-config-printer.desktop
 share/dbus-1/interfaces/org.fedoraproject.Config.Printing.xml
 share/dbus-1/services/org.fedoraproject.Config.Printing.service
