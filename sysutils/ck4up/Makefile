@@ -1,6 +1,6 @@
 PORTNAME=	ck4up
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
@@ -18,15 +18,15 @@ NO_ARCH=	yes
 PORTEXAMPLES=	ck4up.conf
 
 PLIST_FILES=	bin/ck4up \
-		man/man1/ck4up.1.gz
+		share/man/man1/ck4up.1.gz
 
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g; s|man/man1|share/man/man1|g' \
 		${WRKSRC}/Makefile
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ck4up.conf ${STAGEDIR}${EXAMPLESDIR}
 
