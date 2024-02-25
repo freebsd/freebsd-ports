@@ -1,14 +1,5 @@
 --- Makefile.in.orig	2006-11-29 00:35:37.000000000 +1100
 +++ Makefile.in	2013-10-09 02:17:53.000000000 +1100
-@@ -25,7 +25,7 @@
- 
- bindir      = $(prefix)/bin
- datadir     = $(prefix)/share
--mandir      = $(datadir)/man
-+mandir      = $(prefix)/man
- 
- BINDIR_INSTALL = $(prefix)/bin
- MANDIR_INSTALL = $(mandir)/man8
 @@ -63,7 +63,7 @@
  	rm -f config.status config.cache config.log config.h Makefile 
  
