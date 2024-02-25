@@ -1,6 +1,6 @@
 PORTNAME=	pslib
 PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,6 +20,7 @@ USES=		gettext gmake gnome jpeg libtool localbase pathfix pkgconfig
 USE_GNOME=	intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LIBS+=		-lintl
 INSTALL_TARGET=	install-strip
 
