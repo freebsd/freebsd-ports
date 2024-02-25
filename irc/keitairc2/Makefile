@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC proxy for mobilephone that have a web interface
 WWW=		https://sourceforge.jp/projects/keitairc/
 
+DEPRECATED=	Abandonware and obsolete, last upstream release in 2010 and now phones have native clients 
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww \
