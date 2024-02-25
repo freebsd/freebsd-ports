@@ -1,5 +1,6 @@
 PORTNAME=	jailkit
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		python
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	PYTHONINTERPRETER=${PYTHON_CMD}
 PORTDOCS=	COPYRIGHT README.txt
 
