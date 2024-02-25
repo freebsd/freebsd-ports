@@ -1,6 +1,6 @@
 PORTNAME=	psdim
 PORTVERSION=	1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 
@@ -13,8 +13,8 @@ LICENSE=	GPLv2
 USES=		ghostscript
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/share/man
 
-PLIST_FILES=	bin/psdim man/man1/psdim.1.gz
+PLIST_FILES=	bin/psdim share/man/man1/psdim.1.gz
 
 .include <bsd.port.mk>
