@@ -1,6 +1,6 @@
 PORTNAME=	gutenfetch
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -10,11 +10,12 @@ COMMENT=	Fetch listings and books from Project Gutenberg
 LIB_DEPENDS=	libgutenfetch.so:devel/libgutenfetch
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake tar:bzip2
 
-PLIST_FILES=	bin/gutenfetch man/man1/gutenfetch.1.gz
+PLIST_FILES=	bin/gutenfetch share/man/man1/gutenfetch.1.gz
 SUB_FILES=	pkg-message
 
 post-install:
