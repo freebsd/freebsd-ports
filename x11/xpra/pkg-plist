@@ -1548,9 +1548,6 @@ libexec/xpra/gvfs-open
 libexec/xpra/xdg-open
 libexec/xpra/xpra_signal_listener
 libexec/xpra/xpra_udev_product_version
-man/man1/run_scaled.1.gz
-man/man1/xpra.1.gz
-man/man1/xpra_launcher.1.gz
 share/applications/xpra-gui.desktop
 share/applications/xpra-launcher.desktop
 share/applications/xpra-shadow.desktop
@@ -1647,6 +1644,9 @@ share/dbus-1/system.d/xpra.conf
 %%PORTDOCS%%%%DOCSDIR%%/images/upload.png
 %%PORTDOCS%%%%DOCSDIR%%/images/win32-shadow-tray-menu.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+share/man/man1/run_scaled.1.gz
+share/man/man1/xpra.1.gz
+share/man/man1/xpra_launcher.1.gz
 share/metainfo/xpra.appdata.xml
 share/mime/packages/application-x-xpraconfig.xml
 share/pixmaps/xpra-mdns.png
