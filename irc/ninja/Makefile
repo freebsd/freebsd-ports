@@ -7,6 +7,9 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another ircII based irc client
 
+DEPRECATED=	Abandonware, last release around 2002 and upstream is gone. Consider irc/ircII or irc/irssi
+EXPIRATION_DATE=2024-03-31
+
 USES=		ncurses
 
 GNU_CONFIGURE=	yes
