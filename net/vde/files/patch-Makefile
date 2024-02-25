@@ -17,7 +17,7 @@
 +PREFIX ?= /usr/local
 +BIN_DIR ?= $(DESTDIR)$(PREFIX)/bin
 +LIB_DIR ?= $(DESTDIR)$(PREFIX)/lib
-+MAN_DIR ?= $(DESTDIR)$(PREFIX)/man
++MAN_DIR ?= $(DESTDIR)$(PREFIX)/share/man
  
  ifneq ($(TUNTAP),)
  	OBJS += tuntap.o
