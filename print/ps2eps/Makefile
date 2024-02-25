@@ -1,6 +1,6 @@
 PORTNAME=	ps2eps
 PORTVERSION=	1.64
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://www.tm.uka.de/~bless/ \
 		http://www.ipv6.tm.uka.de/~bless/
@@ -23,8 +23,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbox ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/ps2eps ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/bbox.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/ps2eps.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/bbox.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/ps2eps.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
