@@ -1,5 +1,6 @@
 PORTNAME=	rux
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	SF/rux
 
@@ -11,8 +12,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/rux \
-		man/man1/rux.1.gz
+		share/man/man1/rux.1.gz
 
 .include <bsd.port.mk>
