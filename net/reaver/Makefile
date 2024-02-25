@@ -1,6 +1,7 @@
 PORTNAME=	reaver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -20,11 +21,11 @@ WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/reaver \
 		bin/wash \
-		man/man1/reaver.1.gz
+		share/man/man1/reaver.1.gz
 
 post-install:
 		@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/reaver bin/wash
 		@${RM} -r ${STAGEDIR}/var/lib
-		${INSTALL_MAN} ${WRKSRC}/../docs/reaver.1 ${STAGEDIR}${PREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/../docs/reaver.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
