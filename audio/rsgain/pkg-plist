@@ -1,5 +1,6 @@
 bin/rsgain
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/man/man1/rsgain.1.gz
 %%DATADIR%%/presets/default.ini
 %%DATADIR%%/presets/ebur128.ini
 %%DATADIR%%/presets/loudgain.ini
