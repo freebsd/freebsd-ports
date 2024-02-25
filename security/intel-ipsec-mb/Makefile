@@ -1,6 +1,7 @@
 PORTNAME=	intel-ipsec-mb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/intel/${PORTNAME}/commit/
@@ -22,14 +23,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DMAN_INSTALL_DIR:PATH=${PREFIX}/share/man/man7
+
 TEST_TARGET=	test
 
 PLIST_FILES=	include/intel-ipsec-mb.h \
 		lib/libIPSec_MB.so \
 		lib/libIPSec_MB.so.1 \
 		lib/libIPSec_MB.so.${DISTVERSION}.0 \
-		man/man7/libipsec-mb-dev.7.gz \
-		man/man7/libipsec-mb.7.gz
+		share/man/man7/libipsec-mb-dev.7.gz \
+		share/man/man7/libipsec-mb.7.gz
 
 OPTIONS_DEFINE=	AESNIEMU
 
