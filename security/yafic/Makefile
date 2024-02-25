@@ -1,6 +1,6 @@
 PORTNAME=	yafic
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -36,12 +36,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yafic-sign ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf yafic-sign ${STAGEDIR}${PREFIX}/bin/yafic-check
 .endif
-	${INSTALL_MAN} ${WRKSRC}/yafic.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/yafic.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .if ${PORT_OPTIONS:MCRYPTO}
-	${INSTALL_MAN} ${WRKSRC}/yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1
-	${LN} -sf yafic-sign.1 ${STAGEDIR}${PREFIX}/man/man1/yafic-check.1
+	${INSTALL_MAN} ${WRKSRC}/yafic-sign.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${LN} -sf yafic-sign.1 ${STAGEDIR}${PREFIX}/share/man/man1/yafic-check.1
 .endif
-	${INSTALL_MAN} ${WRKSRC}/yafic.conf.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/yafic.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/yafic
 	@${CP} ${FILESDIR}/yafic.conf.sample ${STAGEDIR}${EXAMPLESDIR}
 
