@@ -1,6 +1,6 @@
 PORTNAME=	gcin
 PORTVERSION=	2.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -33,7 +33,6 @@ ANTHY_CONFIGURE_OFF=	--use_anthy=N
 post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,##!/bin/bash,#!/bin/sh,; \
 		s,-ldl,,; \
-		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; \
 		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
 		/GCIN_DEBUG/ d' ${WRKSRC}/configure

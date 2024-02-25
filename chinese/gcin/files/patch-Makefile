@@ -1,6 +1,6 @@
 --- Makefile.orig	2020-05-15 23:04:33 UTC
 +++ Makefile
-@@ -4,8 +4,11 @@ include config.mak
+@@ -4,8 +4,11 @@ gcin_tsin_o = tsin.o tsin-util.o win0.o win1.o tsin-pa
  include suffixes-rule
  
  gcin_tsin_o = tsin.o tsin-util.o win0.o win1.o tsin-parse.o
@@ -26,7 +26,7 @@
  OBJS_TSLEARN=tslearn.o util.o gcin-conf.o pho-util.o tsin-util.o gcin-send.o pho-sym.o \
               table-update.o locale.o gcin-settings.o gcin-common.o gcin-icon.o pho-dbg.o  \
               pho2pinyin.o pinyin.o lang.o gtab-list.o gtab-init.o fullchar.o \
-@@ -102,8 +109,7 @@ PROGS_CV=kbmcv pin-juyin
+@@ -102,8 +109,7 @@ all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) 
  
  all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) gcin.spec gcin-fedora.spec
  	$(MAKE) -C data
@@ -36,18 +36,18 @@
  	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po; fi
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im; fi
  	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im; fi
-@@ -113,18 +119,18 @@ all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) 
+@@ -113,18 +119,18 @@ gcin:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
  #gcc_ld_run_path=-Wl,-rpath,$(gcin_ld_run_path)
  
  gcin:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
 -	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L/usr/X11R6/$(LIB)
-+	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L%%PREFIX%%/$(LIB)
++	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L/usr/local/$(LIB)
  	rm -f core.* vgcore.*
  	ln -sf $@ $@.test
  
  gcin-nocur:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
 -	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/X11R6/$(LIB)
-+	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L%%PREFIX%%/$(LIB)
++	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/local/$(LIB)
  	rm -f core.*
  
 -tslearn:        $(OBJS_TSLEARN)
@@ -59,7 +59,7 @@
  	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_TS_EDIT) -L./im-client -lgcin-im-client -lcurl $(LDFLAGS)
  
  ts-contribute:	ts-edit
-@@ -171,16 +177,16 @@ gtab-merge:  $(OBJS_gtab_merge)
+@@ -171,16 +177,16 @@ kbmcv:  $(OBJS_kbmcv)
  kbmcv:  $(OBJS_kbmcv)
  	$(CCLD) -o $@ $(OBJS_kbmcv) $(LDFLAGS)
  
@@ -124,7 +124,7 @@
  	$(MAKE) -C modules clean
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im clean; fi
  	$(MAKE) -C qt-im clean
-@@ -286,5 +287,3 @@ gcin.spec:	gcin.spec.in
+@@ -286,5 +287,3 @@ gcin-fedora.spec:	gcin-fedora.spec.in VERSION.gcin
  gcin-fedora.spec:	gcin-fedora.spec.in VERSION.gcin
  	rm -f $@
  	sed -e "s/__gcin_version__/$(GCIN_VERSION)/" < $< > $@
