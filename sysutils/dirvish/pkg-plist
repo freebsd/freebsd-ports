@@ -1,10 +1,10 @@
 etc/dirvish/default.conf.dist
 etc/dirvish/master.conf.dist
-man/man5/dirvish.conf.5.gz
-man/man8/dirvish-expire.8.gz
-man/man8/dirvish-locate.8.gz
-man/man8/dirvish-runall.8.gz
-man/man8/dirvish.8.gz
+share/man/man5/dirvish.conf.5.gz
+share/man/man8/dirvish-expire.8.gz
+share/man/man8/dirvish-locate.8.gz
+share/man/man8/dirvish-runall.8.gz
+share/man/man8/dirvish.8.gz
 sbin/dirvish
 sbin/dirvish-expire
 sbin/dirvish-locate
