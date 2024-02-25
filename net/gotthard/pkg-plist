@@ -1,3 +1,3 @@
 bin/gotthard
 @sample etc/gotthard.conf.sample
-man/man8/gotthard.8.gz
+share/man/man8/gotthard.8.gz
