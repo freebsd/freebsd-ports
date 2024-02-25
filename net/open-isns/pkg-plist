@@ -13,11 +13,11 @@
 %%DEV%%lib/libisns.a
 lib/libisns.so
 lib/libisns.so.0
-man/man5/isns_config.5.gz
-man/man8/isnsadm.8.gz
-man/man8/isnsd.8.gz
-man/man8/isnsdd.8.gz
-man/man8/isnssetup.8.gz
+share/man/man5/isns_config.5.gz
+share/man/man8/isnsadm.8.gz
+share/man/man8/isnsd.8.gz
+share/man/man8/isnsdd.8.gz
+share/man/man8/isnssetup.8.gz
 sbin/isnsadm
 sbin/isnsd
 sbin/isnsdd
