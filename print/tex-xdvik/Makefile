@@ -1,6 +1,6 @@
 PORTNAME=	xdvik
 PORTVERSION=	22.87.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -24,6 +24,7 @@ USE_XORG=	ice sm x11 xext xi xmu xpm xt
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/xdvik
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datarootdir=${LOCALBASE}/share \
 		--enable-shared \
 		--enable-xi2-scrolling \

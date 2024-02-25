@@ -1,6 +1,6 @@
 bin/xdvi
 bin/xdvi-motif
-man/man1/xdvi.1.gz
+share/man/man1/xdvi.1.gz
 share/applications/xdvi.desktop
 @sample %%TEXMFDISTDIR%%/xdvi/XDvi.sample
 @sample %%TEXMFDISTDIR%%/dvips/xdvi/config.xdvi.sample
