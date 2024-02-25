@@ -1,6 +1,6 @@
 PORTNAME=	clamfs
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -20,9 +20,10 @@ RUN_DEPENDS=	clamd:security/clamav
 USES=		autoreconf compiler:c++11-lib fuse:3 pkgconfig
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/clamfs \
-		man/man1/clamfs.1.gz
+		share/man/man1/clamfs.1.gz
 
 PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
