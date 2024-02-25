@@ -1,6 +1,6 @@
 PORTNAME=	openbsm
 DISTVERSION=	1.1-p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/
 DISTNAME=	openbsm-${DISTVERSION}
@@ -15,6 +15,7 @@ LICENSE_COMB=	multi
 CONFLICTS=	openbsm-devel-1.[0-9]*
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		libtool tar:tgz
 USE_LDCONFIG=	yes
 
