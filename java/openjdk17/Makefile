@@ -159,7 +159,6 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .if ${ARCH} == aarch64
 CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs=-XX:-UseCompressedClassPointers --disable-dtrace
 MAKE_ENV+=		JAVA_TOOL_OPTIONS="-XX:-UseCompressedClassPointers"
-EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_share_runtime_arguments.cpp
 .endif
 
 .if empty(ICONV_LIB)
