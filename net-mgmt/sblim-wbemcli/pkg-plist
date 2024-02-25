@@ -18,4 +18,4 @@ bin/wbemmi
 bin/wbemri
 bin/wbemrin
 bin/wbemsp
-man/man1/wbemcli.1.gz
+share/man/man1/wbemcli.1.gz

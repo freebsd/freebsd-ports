@@ -1,5 +1,6 @@
 PORTNAME=	sblim-wbemcli
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/sblim/${PORTNAME}/${PORTVERSION}
 
@@ -11,7 +12,8 @@ BUILD_DEPENDS=	libwww-config:www/libwww
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		tar:bzip2
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_ARGS=	RM="${RM}"
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
