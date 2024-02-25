@@ -1,5 +1,6 @@
 PORTNAME=	asterisk
 PORTVERSION=	18.21.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -34,6 +35,7 @@ SHEBANG_FILES=	agi/agi-test.agi \
 		contrib/scripts/ast_coredumper
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ilbc=internal \
 		--with-crypto=${OPENSSLBASE} \
