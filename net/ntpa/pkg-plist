@@ -18,7 +18,7 @@ libexec/ntpa/Ntp.Analyzer.Validate.Gui.exe
 libexec/ntpa/Ntp.Common.dll
 libexec/ntpa/Ntp.Data.dll
 libexec/ntpa/Ntp.Data.Provider.dll
-man/man1/ntpa.1.gz
+share/man/man1/ntpa.1.gz
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/DATABASE
 %%DOCSDIR%%/INSTALL

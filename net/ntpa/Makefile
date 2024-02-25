@@ -1,6 +1,6 @@
 PORTNAME=	ntpa
 PORTVERSION=	0.8.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://dist1.innolan.net/ \
 		http://dist2.innolan.net/
@@ -57,7 +57,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/small.conf ${STAGEDIR}${EXAMPLESDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ntpa/
 	${INSTALL_DATA} ${WRKSRC}/examples/ntpa.conf ${STAGEDIR}${PREFIX}/etc/ntpa/ntpa.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/docs/ntpa.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/ntpa.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DATABASE ${STAGEDIR}${DOCSDIR}
