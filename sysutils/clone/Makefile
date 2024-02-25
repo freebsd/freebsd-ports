@@ -1,6 +1,7 @@
 PORTNAME=	clone
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	cyclaero@gmail.com
@@ -14,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cyclaero
 
 PLIST_FILES=	bin/clone \
-		man/man1/clone.1.gz
+		share/man/man1/clone.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/clone
