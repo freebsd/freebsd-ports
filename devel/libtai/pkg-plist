@@ -11,15 +11,15 @@ include/libtai/uint64.h
 lib/%%LIBFILE%%.a
 lib/%%LIBFILE%%.so
 lib/%%LIBFILE%%.so.%%LIBVERSION%%
-man/man3/caldate.3.gz
-man/man3/caldate_mjd.3.gz
-man/man3/caltime.3.gz
-man/man3/caltime_tai.3.gz
-man/man3/leapsecs.3.gz
-man/man3/tai.3.gz
-man/man3/tai_now.3.gz
-man/man3/tai_pack.3.gz
-man/man3/taia.3.gz
-man/man3/taia_now.3.gz
-man/man3/taia_pack.3.gz
+share/man/man3/caldate.3.gz
+share/man/man3/caldate_mjd.3.gz
+share/man/man3/caltime.3.gz
+share/man/man3/caltime_tai.3.gz
+share/man/man3/leapsecs.3.gz
+share/man/man3/tai.3.gz
+share/man/man3/tai_now.3.gz
+share/man/man3/tai_pack.3.gz
+share/man/man3/taia.3.gz
+share/man/man3/taia_now.3.gz
+share/man/man3/taia_pack.3.gz
 @(,,0644) etc/leapsecs.dat

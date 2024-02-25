@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Oct 13 14:52:20 1998
-+++ Makefile	Fri Jun 16 20:30:27 2000
+--- Makefile.orig	Tue Oct 13 14:52:20 1998 UTC
++++ Makefile
 @@ -5,10 +5,11 @@
  default: it
  

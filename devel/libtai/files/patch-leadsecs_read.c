@@ -1,5 +1,5 @@
---- leapsecs_read.c.orig	Fri Jun 16 22:44:31 2000
-+++ leapsecs_read.c	Fri Jun 16 22:45:17 2000
+--- leapsecs_read.c.orig	Fri Jun 16 22:44:31 2000 UTC
++++ leapsecs_read.c
 @@ -18,7 +18,7 @@
    int i;
    struct tai u;
