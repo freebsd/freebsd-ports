@@ -6,9 +6,9 @@ lib/liblldpctl.so
 lib/liblldpctl.so.4
 lib/liblldpctl.so.4.9.1
 libdata/pkgconfig/lldpctl.pc
-man/man8/lldpcli.8.gz
-man/man8/lldpctl.8.gz
-man/man8/lldpd.8.gz
+share/man/man8/lldpcli.8.gz
+share/man/man8/lldpctl.8.gz
+share/man/man8/lldpd.8.gz
 sbin/lldpcli
 sbin/lldpctl
 sbin/lldpd

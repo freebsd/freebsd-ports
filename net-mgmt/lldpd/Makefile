@@ -1,5 +1,6 @@
 PORTNAME=	lldpd
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/
 
@@ -18,6 +19,7 @@ USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--enable-hardening \
 		--enable-privsep \
