@@ -1,6 +1,6 @@
 PORTNAME=	fcron
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fcron.free.fr/archives/ \
 		ftp://ftp.seul.org/pub/fcron/
@@ -50,7 +50,7 @@ do-install:
 	${INSTALL_DATA} -m 640 ${WRKSRC}/files/${f} ${STAGEDIR}${PREFIX}/etc/${f}.sample
 .endfor
 .for n in 1 5 8
-	${INSTALL_MAN} ${DOCSRC}/man/*.${n} ${STAGEDIR}${PREFIX}/man/man${n}
+	${INSTALL_MAN} ${DOCSRC}/man/*.${n} ${STAGEDIR}${PREFIX}/share/man/man${n}
 .endfor
 	${MKDIR} -m 770 ${STAGEDIR}/var/spool/fcron
 
