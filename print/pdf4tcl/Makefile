@@ -1,5 +1,6 @@
 PORTNAME=	pdf4tcl
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -20,7 +21,7 @@ PLIST_FILES=	lib/${PKGNAME}/glyph2uni.tcl \
 		lib/${PKGNAME}/pkgIndex.tcl \
 		lib/${PKGNAME}/pdf4tcl.tcl \
 		lib/${PKGNAME}/stdmetrics.tcl \
-		man/mann/pdf4tcl.n.gz
+		share/man/mann/pdf4tcl.n.gz
 
 .include <bsd.port.options.mk>
 
@@ -31,7 +32,7 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PKGNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \*.tcl ${STAGEDIR}${PREFIX}/lib/${PKGNAME}
-	${INSTALL_DATA} ${WRKSRC}/pdf4tcl.n ${STAGEDIR}${PREFIX}/man/mann
+	${INSTALL_DATA} ${WRKSRC}/pdf4tcl.n ${STAGEDIR}${PREFIX}/share/man/mann
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${STAGEDIR}${DOCSDIR}
