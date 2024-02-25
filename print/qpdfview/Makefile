@@ -1,6 +1,6 @@
 PORTNAME=	qpdfview
 DISTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
 DISTNAME=	${PORTNAME}-0.5
@@ -40,7 +40,7 @@ PS_QMAKE_OFF=	"CONFIG+=without_ps"
 .include <bsd.port.options.mk>
 
 pre-configure:
-	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g;s#${PREFIX}/share/man#${PREFIX}/man#g' \
+	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g' \
 		${WRKSRC}/${PORTNAME}.pri
 	cd ${WRKSRC} && ${LRELEASE} ${PORTNAME}.pro
 
