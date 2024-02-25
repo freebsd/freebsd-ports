@@ -1,5 +1,6 @@
 PORTNAME=	trn
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/ \
 		ftp://ftp.funet.fi/pub/unix/news/trn/
