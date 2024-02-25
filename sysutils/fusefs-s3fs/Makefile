@@ -1,6 +1,7 @@
 PORTNAME=	s3fs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.92
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -21,10 +22,11 @@ GH_ACCOUNT=	s3fs-fuse
 GH_PROJECT=	s3fs-fuse
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ENV+=	ac_cv_prog_GITCMD=no
 
-PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
+PLIST_FILES=	bin/s3fs share/man/man1/s3fs.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/libcrypto >= 0.9//' ${WRKSRC}/configure.ac
