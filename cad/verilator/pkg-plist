@@ -23,6 +23,11 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/examples/cmake_tracing_c/Makefile
 %%DATADIR%%/examples/cmake_tracing_sc/CMakeLists.txt
 %%DATADIR%%/examples/cmake_tracing_sc/Makefile
+%%DATADIR%%/examples/json_py/Makefile
+%%DATADIR%%/examples/json_py/sub.v
+%%DATADIR%%/examples/json_py/top.v
+%%DATADIR%%/examples/json_py/vl_file_copy
+%%DATADIR%%/examples/json_py/vl_hier_graph
 %%DATADIR%%/examples/make_hello_binary/Makefile
 %%DATADIR%%/examples/make_hello_binary/top.v
 %%DATADIR%%/examples/make_hello_c/Makefile
@@ -47,11 +52,6 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/examples/make_tracing_sc/sc_main.cpp
 %%DATADIR%%/examples/make_tracing_sc/sub.v
 %%DATADIR%%/examples/make_tracing_sc/top.v
-%%DATADIR%%/examples/xml_py/Makefile
-%%DATADIR%%/examples/xml_py/sub.v
-%%DATADIR%%/examples/xml_py/top.v
-%%DATADIR%%/examples/xml_py/vl_file_copy
-%%DATADIR%%/examples/xml_py/vl_hier_graph
 %%DATADIR%%/include/gtkwave/fastlz.c
 %%DATADIR%%/include/gtkwave/fastlz.h
 %%DATADIR%%/include/gtkwave/fst_config.h
