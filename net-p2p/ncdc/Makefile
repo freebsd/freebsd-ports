@@ -1,6 +1,6 @@
 PORTNAME=	ncdc
 PORTVERSION=	1.22.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://dev.yorhel.nl/download/
 
@@ -21,8 +21,9 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 USES=		compiler:c11 gmake gnome pkgconfig ncurses
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_FILES=	bin/ncdc \
-		man/man1/ncdc.1.gz
+		share/man/man1/ncdc.1.gz
 
 CONFIGURE_ENV=	NCURSES_CFLAGS="-L${NCURSESLIB}" NCURSES_LIBS="-lncursesw"
 CFLAGS+=	-I${LOCALBASE}/include
