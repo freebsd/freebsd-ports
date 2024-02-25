@@ -1,6 +1,6 @@
 PORTNAME=	echoping
 PORTVERSION=	6.0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,6 +17,7 @@ USES=		autoreconf cpe libtool pkgconfig ssl
 
 CPE_VENDOR=	echoping_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
 		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE} \
 		--enable-plugin="${PING_PLUGINS}"
