@@ -1,5 +1,5 @@
 bin/vinagre
-man/man1/vinagre.1.gz
+share/man/man1/vinagre.1.gz
 share/GConf/gsettings/org.gnome.Vinagre.convert
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
