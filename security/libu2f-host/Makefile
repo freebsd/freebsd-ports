@@ -1,7 +1,7 @@
 PORTNAME=	libu2f-host
 PORTVERSION=	1.1.10
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/devd/u2f.conf:security/u2f-devd
 USES=	autoreconf pkgconfig gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	-enable-gtk-doc
 INSTALL_TARGET=	install-strip
 

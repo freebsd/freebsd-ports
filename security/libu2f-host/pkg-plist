@@ -7,7 +7,7 @@ lib/libu2f-host.so
 lib/libu2f-host.so.0
 lib/libu2f-host.so.0.1.10
 libdata/pkgconfig/u2f-host.pc
-man/man1/u2f-host.1.gz
+share/man/man1/u2f-host.1.gz
 %%DOCS%%share/gtk-doc/html/u2f-host/home.png
 %%DOCS%%share/gtk-doc/html/u2f-host/index.html
 %%DOCS%%share/gtk-doc/html/u2f-host/intro.html
