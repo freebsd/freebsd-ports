@@ -17,6 +17,9 @@ LICENSE_NAME=	darkbot
 LICENSE_TEXT=	no commercial distribution
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+DEPRECATED=	Abandonware, last release in 2005 and no activity upstream since 2014
+EXPIRATION_DATE=2024-03-31
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README
