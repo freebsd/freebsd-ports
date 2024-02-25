@@ -1,5 +1,6 @@
 PORTNAME=	rtg
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/rtg/
 
@@ -19,6 +20,7 @@ USE_RC_SUBR=	rtgpoll
 
 SHEBANG_FILES=	etc/95.pl etc/report.pl etc/rtgtargmkr.pl.in
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 			--htmldir=${PREFIX}/www/data \
 			--with-mysql=${LOCALBASE} \
