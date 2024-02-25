@@ -2,6 +2,32 @@ PORTNAME=	ghidra-cheri
 PORTVERSION=	${GHIDRA_VERSION}.d${SNAPDATE}
 PORTREVISION=	0
 CATEGORIES=	devel security java
+MASTER_SITES=	SF/pydev/pydev/PyDev%206.3.1/:pydev \
+		SF/yajsw/yajsw/yajsw-stable-13.09/:yajsw \
+		https://archive.eclipse.org/tools/cdt/releases/8.6/:eclipse \
+		https://ftp.postgresql.org/pub/source/v15.3/:postgresql \
+		https://github.com/NationalSecurityAgency/ghidra-data/raw/Ghidra_11.1/:ghidra \
+		https://github.com/pxb1988/dex2jar/releases/download/v2.1/:dex2jar \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/:axml2printer
+DISTFILES=	AXMLPrinter2.jar:axml2printer \
+		FunctionID/vs2012_x64.fidb:ghidra \
+		FunctionID/vs2012_x86.fidb:ghidra \
+		FunctionID/vs2015_x64.fidb:ghidra \
+		FunctionID/vs2015_x86.fidb:ghidra \
+		FunctionID/vs2017_x64.fidb:ghidra \
+		FunctionID/vs2017_x86.fidb:ghidra \
+		FunctionID/vs2019_x64.fidb:ghidra \
+		FunctionID/vs2019_x86.fidb:ghidra \
+		FunctionID/vsOlder_x64.fidb:ghidra \
+		FunctionID/vsOlder_x86.fidb:ghidra \
+		PyDev%206.3.1.zip:pydev \
+		cdt-8.6.0.zip:eclipse \
+		dex2jar-2.1.zip:dex2jar \
+		lib/java-sarif-2.1-modified.jar:ghidra \
+		postgresql-15.3.tar.gz:postgresql \
+		yajsw-stable-13.09.zip:yajsw
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
@@ -52,9 +78,44 @@ GRADLE_HOME_BASE=	/tmp
 GRADLE_RUN=		${SETENV} ${MAKE_ENV} gradle --gradle-user-home \
 			${GRADLE_HOME_BASE}/gradle-${PORTNAME} --no-daemon
 
+# to rebuild the deps archive:
+#   1. set DEV_UPDATE_MODE=yes
+#   2. make makesum build
+#   3. upload the *-deps archive
+#   4. set DEV_UPDATE_MODE=no
+#   5. make clean makesum
+
+DEV_UPDATE_MODE?=	no
+
+.if (${DEV_UPDATE_MODE} == "no")
+MASTER_SITES+=	LOCAL_CHERIBSD/ghidra-cheri/:gradle
+DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:gradle
+EXTRACT_ONLY+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
+GRADLE_RUN+=	--offline
+.endif
+
 .include "${.CURDIR}/Makefile.snapshot"
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/dependencies/flatRepo
+	@${UNZIP_CMD} -j -d ${WRKSRC}/dependencies/flatRepo ${DISTDIR}/${DIST_SUBDIR}/dex2jar-2.1.zip "dex-tools-2.1/lib/dex-*.jar"
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/AXMLPrinter2.jar ${WRKSRC}/dependencies/flatRepo
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/lib/java-sarif-2.1-modified.jar ${WRKSRC}/dependencies/flatRepo
+	@${MKDIR} ${WRKSRC}/dependencies/GhidraServer
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/yajsw-stable-13.09.zip ${WRKSRC}/dependencies/GhidraServer
+	@${MKDIR} ${WRKSRC}/dependencies/BSim
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/postgresql-15.3.tar.gz ${WRKSRC}/dependencies/BSim
+	@${MKDIR} ${WRKSRC}/dependencies/GhidraDev
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/PyDev%206.3.1.zip ${WRKSRC}/dependencies/GhidraDev
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/cdt-8.6.0.zip ${WRKSRC}/dependencies/GhidraDev
+	${MKDIR} ${WRKSRC}/dependencies/fidb
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/FunctionID/*fidb ${WRKSRC}/dependencies/fidb
+	@${RM} -r ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
+.if (${DEV_UPDATE_MODE} == "no")
+	@${LN} -sf ${WRKDIR}/gradle-${PORTNAME} ${GRADLE_HOME_BASE}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|JAVA_HOME_PLACEHOLDER|${JAVA_HOME}|" \
@@ -62,8 +123,14 @@ post-patch:
 	@${ECHO_CMD} "org.gradle.java.home=${JAVA_HOME}" > ${WRKSRC}/gradle.properties
 
 do-build:
-	@cd ${WRKSRC} && ${GRADLE_RUN} -I gradle/support/fetchDependencies.gradle init
 	@cd ${WRKSRC} && ${GRADLE_RUN} buildGhidra
+
+.if (${DEV_UPDATE_MODE} == "yes")
+post-build:
+	cd ${GRADLE_HOME_BASE} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
+	@${ECHO} "(!!!) Please upload the Gradle deps archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
+	@${RM} -r ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
+.endif
 
 do-install:
 	@${UNZIP_CMD} -d ${STAGEDIR} ${WRKSRC}/build/dist/*.zip
