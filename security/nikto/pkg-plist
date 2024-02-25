@@ -1,6 +1,6 @@
 bin/nikto
 @sample etc/nikto.conf.sample
-man/man1/nikto.1.gz
+share/man/man1/nikto.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/nikto.dtd
