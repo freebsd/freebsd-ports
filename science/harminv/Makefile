@@ -1,6 +1,6 @@
 PORTNAME=	harminv
 PORTVERSION=	1.3.1
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 
@@ -10,6 +10,7 @@ WWW=		http://ab-initio.mit.edu/wiki/index.php/Harminv
 
 USES=		blaslapack fortran gmake libtool pathfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_GCC=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
