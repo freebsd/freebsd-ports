@@ -1,6 +1,6 @@
 PORTNAME=	xruskb
 PORTVERSION=	1.15.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/ \
 		http://lav.yar.ru/download/xruskb/
@@ -16,6 +16,7 @@ USES=		tar:bzip2 xorg
 USE_XORG=	x11 ice xt xmu xext sm
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
 PORTDOCS=	*
