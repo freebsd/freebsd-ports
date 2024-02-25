@@ -1,5 +1,6 @@
 PORTNAME=	backupuser
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.olivermahmoudi.com/files/
 
@@ -17,8 +18,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/backupuser \
 		bin/bu_check_files \
-		man/man1/backupuser.1.gz \
-		man/man1/bu_check_files.1.gz
+		share/man/man1/backupuser.1.gz \
+		share/man/man1/bu_check_files.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} '74,93d;101,103d' ${WRKSRC}/${PORTNAME}
@@ -33,7 +34,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bu_check_files ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/bu_check_files.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bu_check_files.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
