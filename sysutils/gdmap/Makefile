@@ -1,6 +1,6 @@
 PORTNAME=	gdmap
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF
 
@@ -16,6 +16,7 @@ USES=		gettext gmake gnome pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lm
