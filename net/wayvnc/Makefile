@@ -11,6 +11,8 @@ WWW=		https://github.com/any1/wayvnc
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build after https://github.com/any1/neatvnc/commit/f503cbef257b
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libaml.so:devel/aml \
 		libjansson.so:devel/jansson \
