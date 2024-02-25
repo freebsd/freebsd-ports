@@ -1651,7 +1651,7 @@ science/R-cran-AMORE||2022-09-12|Has expired: Upstream no longer maintained
 www/moodle310|www/moodle311|2022-09-12|Has expired: Upstream no longer maintained, upgrade to next LTS
 security/s2n|security/s2n-tls|2022-09-13|Renamed to match upstream naming
 audio/kid3-kf5|audio/kid3@kf5|2022-09-13|Merged into flavorized version
-audio/kid3-qt5|audio/kid3@qt5|2022-09-13|Merged into flavorized version
+audio/kid3-qt5|audio/kid3@qt6|2022-09-13|Merged into flavorized version
 audio/phaserotate-lv2|audio/x42-plugins-lv2|2022-09-13|phaserotate-lv2 LV2 plugin is included in the x42-plugins-lv2 plugin collection
 graphics/darktable40|graphics/darktable|2022-09-22|Obsolete. Use graphics/darktable, which is the same version
 java/bootstrap-openjdk6|java/bootstrap-openjdk8|2022-09-25|Was only used to bootstrap the now deleted java/openjdk7 port
@@ -2993,3 +2993,4 @@ graphics/qcustomplot-qt5|graphics/qcustomplot|2024-02-19|Renamed to support flav
 audio/play||2024-02-20|Has expired: Upstream vaporized and last release was in 2000
 graphics/fotoxx|graphics/fotocx|2024-02-21|Project was renamed upstream
 databases/xtrabackup8|databases/xtrabackup80|2024-02-22|Rename port to avoid confusion
+audio/kid3@qt5|audio/kid3@qt6|2024-02-25|The legacy qt5 flavor has been replaced by the qt6 flavor
