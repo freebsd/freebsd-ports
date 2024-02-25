@@ -1,6 +1,6 @@
 PORTNAME=	diablo
 PORTVERSION=	5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-REL
