@@ -1,11 +1,11 @@
 bin/csv2yapet
 bin/yapet
 bin/yapet2csv
-man/man1/csv2yapet.1.gz
-man/man1/yapet.1.gz
-man/man1/yapet2csv.1.gz
-man/man5/yapet_colors.5.gz
-man/man5/yapet_config.5.gz
+share/man/man1/csv2yapet.1.gz
+share/man/man1/yapet.1.gz
+share/man/man1/yapet2csv.1.gz
+share/man/man5/yapet_colors.5.gz
+share/man/man5/yapet_config.5.gz
 share/applications/yapet.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
