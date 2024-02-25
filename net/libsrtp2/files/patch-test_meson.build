@@ -1,0 +1,11 @@
+--- test/meson.build.orig	2024-02-24 08:29:39 UTC
++++ test/meson.build
+@@ -64,7 +64,7 @@ endif
+ endif
+ 
+ # rtp_decoder
+-pcap_dep = dependency('libpcap', required: get_option('pcap-tests'))
++pcap_dep = cc.find_library('pcap', required: get_option('pcap-tests'))
+ 
+ if pcap_dep.found()
+   executable('rtp_decoder',
