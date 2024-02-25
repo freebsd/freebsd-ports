@@ -10,6 +10,10 @@ WWW=		http://www.averse.piasta.pl/
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream is gone
+EXPIRATION_DATE=2024-03-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake tcl
