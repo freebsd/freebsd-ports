@@ -1,5 +1,6 @@
 PORTNAME=	yydecode
 PORTVERSION=	0.2.10
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -9,8 +10,9 @@ WWW=		http://yydecode.sf.net/
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/yydecode \
-		man/man1/yydecode.1.gz
+		share/man/man1/yydecode.1.gz
 
 .include <bsd.port.mk>
