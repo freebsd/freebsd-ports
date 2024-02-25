@@ -1,0 +1,20 @@
+--- src/Makefile.defs.orig	2024-02-25 08:14:20 UTC
++++ src/Makefile.defs
+@@ -107,7 +107,7 @@ SUBLEVEL = 3
+ VERSION = 5
+ PATCHLEVEL = 7
+ SUBLEVEL = 3
+-EXTRAVERSION = 
++EXTRAVERSION =
+ 
+ # memory manager switcher
+ # 0 - f_malloc (fast malloc)
+@@ -496,7 +496,7 @@ ifeq ($(OS), freebsd)
+ 
+ ifeq ($(OS), freebsd)
+ 	doc_dir = share/doc/$(MAIN_NAME)/
+-	man_dir = man/
++	man_dir = share/man/
+ 	data_dir = share/$(MAIN_NAME)/
+ 	LOCALBASE ?= /usr/local
+ endif

@@ -599,11 +599,11 @@ lib/kamailio/modules/xhttp_prom.so
 lib/kamailio/modules/xhttp_rpc.so
 lib/kamailio/modules/xlog.so
 lib/kamailio/modules/xprint.so
-man/man5/kamailio.cfg.5.gz
-man/man8/kamailio.8.gz
-man/man8/kamcmd.8.gz
-man/man8/kamctl.8.gz
-man/man8/kamdbctl.8.gz
+share/man/man5/kamailio.cfg.5.gz
+share/man/man8/kamailio.8.gz
+share/man/man8/kamcmd.8.gz
+share/man/man8/kamctl.8.gz
+share/man/man8/kamdbctl.8.gz
 sbin/kamailio
 sbin/kamcmd
 sbin/kamctl
