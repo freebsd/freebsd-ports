@@ -1,5 +1,6 @@
 PORTNAME=	cdargs
 PORTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skamphausen.de/downloads/cdargs/ \
 		http://fossies.org/unix/privat/ \
@@ -14,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/cdargs man/man1/cdargs.1.gz
+PLIST_FILES=	bin/cdargs share/man/man1/cdargs.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
