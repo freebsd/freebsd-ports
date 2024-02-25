@@ -1,6 +1,6 @@
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://atterer.org/sites/atterer/files/2009-08/${PORTNAME}/
 
@@ -17,6 +17,7 @@ USES=		gmake tar:bzip2
 USE_CXXSTD=	c++98
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
