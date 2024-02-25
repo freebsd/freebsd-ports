@@ -1,5 +1,6 @@
 PORTNAME=	ykclient
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubico-c-client/Releases/
 
@@ -15,6 +16,7 @@ BUILD_DEPENDS=	curl-config:ftp/curl \
 		help2man:misc/help2man
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
@@ -27,7 +29,7 @@ PLIST_FILES=	bin/ykclient \
 		lib/libykclient.so \
 		lib/libykclient.so.3 \
 		lib/libykclient.so.3.6.0 \
-		man/man1/ykclient.1.gz
+		share/man/man1/ykclient.1.gz
 
 OPTIONS_DEFINE=	STATIC
 
