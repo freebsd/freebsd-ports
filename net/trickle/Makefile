@@ -1,6 +1,6 @@
 PORTNAME=	trickle
 PORTVERSION=	1.07
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	https://monkey.org/~marius/trickle/
 
@@ -17,6 +17,7 @@ USES=		libtool localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--sysconfdir=${PREFIX}/etc
 
