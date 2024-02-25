@@ -1,6 +1,6 @@
 PORTNAME=	dhcdrop
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://www.netpatch.ru/projects/dhcdrop/
 
@@ -13,9 +13,10 @@ LICENSE=	GPLv2
 USES=		autoreconf libtool tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	sbin/dhcdrop man/man8/dhcdrop.8.gz \
-		man/ru/man8/dhcdrop.8.gz
+PLIST_FILES=	sbin/dhcdrop share/man/man8/dhcdrop.8.gz \
+		share/man/ru/man8/dhcdrop.8.gz
 
 OPTIONS_DEFINE=	STATIC
 STATIC_DESC=	Build a static version of dhcdrop
