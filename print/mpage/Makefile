@@ -4,6 +4,7 @@
 
 PORTNAME=	mpage
 DISTVERSION=	2.5.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 
@@ -21,7 +22,7 @@ PORTDOCS=	CHANGES Characters Copyright Encoding.format FAQ NEWS \
 PLIST_FILES=	bin/mpage ${DATADIR}/CP850.PC ${DATADIR}/ISO+STD+OTH \
 		${DATADIR}/ISO-8859.1 ${DATADIR}/ISO-8859.15 \
 		${DATADIR}/ISO-Latin.1 ${DATADIR}/ISO-Latin.2 \
-		man/man1/mpage.1.gz
+		share/man/man1/mpage.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

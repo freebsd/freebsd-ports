@@ -28,7 +28,7 @@
 -MANDIR=$(PREFIX)/man/man1
 +BINDIR=${DESTDIR}$(PREFIX)/bin
 +LIBDIR=${DESTDIR}$(PREFIX)/share
-+MANDIR=${DESTDIR}$(PREFIX)/man/man1
++MANDIR=${DESTDIR}$(PREFIX)/share/man/man1
  
  #
  # A default encoding is given in encoding.h. Setting ENCODING=1 will
