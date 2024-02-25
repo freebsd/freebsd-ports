@@ -14,8 +14,8 @@
 %%SAMHAIN%%@dir /var/lib/samhain
 %%SAMHAIN%%@sample etc/samhainrc.sample
 %%SAMHAIN%%etc/rc.d/samhain
-%%SAMHAIN%%man/man5/samhainrc.5.gz
-%%SAMHAIN%%man/man8/samhain.8.gz
+%%SAMHAIN%%share/man/man5/samhainrc.5.gz
+%%SAMHAIN%%share/man/man8/samhain.8.gz
 %%SAMHAIN%%sbin/samhain
 %%SETPWD%%sbin/samhain_setpwd
 %%YULE%%@dir /var/lib/yule
@@ -23,8 +23,8 @@
 %%YULE%%@sample etc/yulerc.sample
 %%YULE%%@postunexec echo "To delete the yule user permanently, use 'pw userdel yule'"
 %%YULE%%etc/rc.d/yule
-%%YULE%%man/man5/yulerc.5.gz
-%%YULE%%man/man8/yule.8.gz
+%%YULE%%share/man/man5/yulerc.5.gz
+%%YULE%%share/man/man8/yule.8.gz
 %%YULE%%sbin/yule
 %%YULE%%sbin/yule_setpwd
 %%YULE%%sbin/yuleadmin-gpg.pl
