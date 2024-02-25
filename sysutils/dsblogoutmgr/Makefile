@@ -1,6 +1,6 @@
 PORTNAME=	dsblogoutmgr
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -21,5 +21,8 @@ OPTIONS_DEFINE=	METALOCK
 METALOCK_DESC=	Use metalock for locking the screen
 
 METALOCK_RUN_DEPENDS=	metalock:x11/metalock
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man|share/man/man|' ${WRKSRC}/dsblogoutmgr.pro
 
 .include <bsd.port.mk>
