@@ -27,8 +27,8 @@
 +	install netleakd $(DESTDIR)$(PREFIX)/sbin
 +	install netleak.conf $(DESTDIR)$(PREFIX)/etc/netleak.conf.sample
 +	install netleakd.conf $(DESTDIR)$(PREFIX)/etc/netleakd.conf.sample
-+	install netleak.8 $(DESTDIR)$(PREFIX)/man/man8
-+	install netleakd.8 $(DESTDIR)$(PREFIX)/man/man8
++	install netleak.8 $(DESTDIR)$(PREFIX)/share/man/man8
++	install netleakd.8 $(DESTDIR)$(PREFIX)/share/man/man8
  
  uninstall:
  	rm -f $(PREFIX)/sbin/netleak
