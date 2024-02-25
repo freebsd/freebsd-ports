@@ -1,7 +1,7 @@
 PORTNAME=	krill
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -33,11 +33,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
 		${STAGEDIR}${PREFIX}/etc/krill/krill.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/krill.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/krillc.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/krillup.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
 		${STAGEDIR}${DOCSDIR}

@@ -3,8 +3,8 @@ bin/krillc
 bin/krillta
 bin/krillup
 @sample %%ETCDIR%%/krill.conf.sample
-man/man1/krill.1.gz
-man/man1/krillc.1.gz
-man/man1/krillup.1.gz
+share/man/man1/krill.1.gz
+share/man/man1/krillc.1.gz
+share/man/man1/krillup.1.gz
 %%DOCSDIR%%/krill.conf
 @dir(krill,krill,) /var/krill
