@@ -1,0 +1,15 @@
+Loco is "Rust on Rails".
+
+Loco is strongly inspired by Rails. If you know Rails and Rust, you'll feel at
+home. If you only know Rails and new to Rust, you'll find Loco refreshing.
+
+Loco doesn't assume that the user know Rails.
+
+In order to begin using Loco please type these commands:
+
+$ loco new
+> App name? [myapp]:
+> Saas app (with DB and user auth)
+  Stateless service (minimal, no db)
+Loco app generated successfully in:
+myapp

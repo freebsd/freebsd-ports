@@ -330,6 +330,7 @@
     SUBDIR += litmus
     SUBDIR += ljdeps
     SUBDIR += llhttp
+    SUBDIR += loco
     SUBDIR += logswan
     SUBDIR += logtools
     SUBDIR += ls-qpack
