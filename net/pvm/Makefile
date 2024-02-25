@@ -1,6 +1,6 @@
 PORTNAME=	pvm
 PORTVERSION=	3.4.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net parallel
 MASTER_SITES=	NL/pvm3 ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
 DISTNAME=	pvm${PORTVERSION}
@@ -75,7 +75,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/lib/FREEBSD/libgpvm3.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/conf/FREEBSD.def ${STAGEDIR}${PVM_ROOT}/conf
 	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${STAGEDIR}${PREFIX}/share/man/man3
 
 .include <bsd.port.mk>
