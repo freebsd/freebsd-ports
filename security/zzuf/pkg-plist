@@ -2,6 +2,6 @@ bin/zzcat
 bin/zzuf
 lib/zzuf/libzzuf.so
 lib/zzuf/libzzuf.a
-man/man1/zzcat.1.gz
-man/man1/zzuf.1.gz
-man/man3/libzzuf.3.gz
+share/man/man1/zzcat.1.gz
+share/man/man1/zzuf.1.gz
+share/man/man3/libzzuf.3.gz
