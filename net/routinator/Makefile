@@ -1,7 +1,7 @@
 PORTNAME=	routinator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${ROUTINATOR_UI_URL}/v${ROUTINATOR_UI_VERSION}/:0
 DISTFILES+=	routinator-ui-build.tar.gz:0
@@ -50,7 +50,7 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/routinator
 	${INSTALL_MAN} ${WRKSRC}/doc/routinator.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/routinator
 	${INSTALL_DATA} ${WRKSRC}/etc/routinator.conf.example \
 		${STAGEDIR}${PREFIX}/etc/routinator/routinator.conf.example
