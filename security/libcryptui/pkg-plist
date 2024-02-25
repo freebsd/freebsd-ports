@@ -11,7 +11,7 @@ lib/libcryptui.so
 lib/libcryptui.so.0
 lib/libcryptui.so.0.0.0
 libdata/pkgconfig/cryptui-0.0.pc
-man/man1/seahorse-daemon.1.gz
+share/man/man1/seahorse-daemon.1.gz
 share/GConf/gsettings/org.gnome.seahorse.recipients.convert
 share/cryptui/ui/seahorse-notify.xml
 share/cryptui/ui/seahorse-pgp-generate.xml
