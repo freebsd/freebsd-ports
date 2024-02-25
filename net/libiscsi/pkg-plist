@@ -11,7 +11,7 @@ lib/libiscsi.so
 lib/libiscsi.so.9
 lib/libiscsi.so.9.0.0
 libdata/pkgconfig/libiscsi.pc
-man/man1/iscsi-inq.1.gz
-man/man1/iscsi-ls.1.gz
-man/man1/iscsi-swp.1.gz
-man/man1/iscsi-test-cu.1.gz
+share/man/man1/iscsi-inq.1.gz
+share/man/man1/iscsi-ls.1.gz
+share/man/man1/iscsi-swp.1.gz
+share/man/man1/iscsi-test-cu.1.gz
