@@ -6,10 +6,10 @@ bin/fd-dict.tbl
 bin/fd-unicd.tbl
 etc/fd2rc.dist
 @sample etc/fd2rc.sample
-man/ja/man1/fd.1.gz
-man/ja/man1/fdsh.1.gz
-man/man1/fd.1.gz
-man/man1/fdsh.1.gz
+share/man/ja/man1/fd.1.gz
+share/man/ja/man1/fdsh.1.gz
+share/man/man1/fd.1.gz
+share/man/man1/fdsh.1.gz
 %%PORTDOCS%%share/doc/ja/fd/FAQ
 %%PORTDOCS%%share/doc/ja/fd/HISTORY
 %%PORTDOCS%%share/doc/ja/fd/LICENSES
