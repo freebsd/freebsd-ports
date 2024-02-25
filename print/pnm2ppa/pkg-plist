@@ -3,4 +3,4 @@ bin/calibrate_ppa
 bin/pnm2ppa
 bin/ppafilter
 @sample etc/pnm2ppa.conf.sample
-man/man1/pnm2ppa.1.gz
+share/man/man1/pnm2ppa.1.gz
