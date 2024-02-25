@@ -25,5 +25,5 @@ lib/libfacter.so
 lib/libfacter.so.%%PORTVERSION%%
 lib/ruby/gems/%%RUBY_VER%%/specifications/facter-%%PORTVERSION%%.gemspec
 lib/ruby/vendor_ruby/facter.rb
-man/man8/facter.8.gz
+share/man/man8/facter.8.gz
 %%FACTER_JAVA%%lib/ruby/vendor_ruby/facter.jar
