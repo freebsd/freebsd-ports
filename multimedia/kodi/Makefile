@@ -1,3 +1,4 @@
+PORTNAME=	kodi
 DISTVERSION=	20.4
 CATEGORIES=	multimedia java
 # do not forget to fix devel/kodi-platform when updating kodi
