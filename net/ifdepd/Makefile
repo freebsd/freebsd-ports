@@ -1,6 +1,6 @@
 PORTNAME=	ifdepd
 PORTVERSION=	20110412
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://alex.bmg.gv.at/programs/
 
@@ -10,10 +10,10 @@ COMMENT=	Interface Dependency daemon
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/ifdepd \
-		man/man8/ifdepd.8.gz
+		share/man/man8/ifdepd.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ifdepd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ifdepd.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ifdepd.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
