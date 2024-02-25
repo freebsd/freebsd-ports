@@ -1,7 +1,7 @@
 PORTNAME=	minc
 PORTVERSION=	2.2.00
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	1
 CATEGORIES=	science biology
 PKGNAMESUFFIX=	2
@@ -25,6 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf bison gmake libtool perl5 shebangfix
 SHEBANG_FILES=	progs/mincview/mincview
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
