@@ -10,6 +10,9 @@ WWW=		http://codeworker.free.fr/
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Abandonware, outdated version in ports and last release upstream in 2010
+EXPIRATION_DATE=2024-03-31
+
 WRKSRC=		${WRKDIR}/CodeWorker${PORTVERSION:S/./_/g}
 
 USES=		dos2unix gmake zip
