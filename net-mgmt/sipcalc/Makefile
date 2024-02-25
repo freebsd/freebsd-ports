@@ -1,5 +1,6 @@
 PORTNAME=	sipcalc
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
@@ -11,9 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	*
-PLIST_FILES=	bin/sipcalc man/man1/sipcalc.1.gz
+PLIST_FILES=	bin/sipcalc share/man/man1/sipcalc.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
