@@ -12,6 +12,10 @@ WWW=		http://www.infobot.org/
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, outdated version and last upstream release in 2008
+EXPIRATION_DATE=2024-03-31 
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME} scripts/*
 USE_PERL5=	run
