@@ -1,6 +1,6 @@
 PORTNAME=	qadsl
 PORTVERSION=	1.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/alive
 
@@ -15,13 +15,14 @@ USE_RC_SUBR=	qadsl
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-global-cfg=${PREFIX}/etc/qadsl.conf \
 		--with-pidfile=/var/run/qadsl.pid
 
 INFO=		qadsl
 PLIST_FILES=	sbin/qadsl etc/qadsl.conf.sample \
-		man/man5/qadsl.conf.5.gz \
-		man/man8/qadsl.8.gz
+		share/man/man5/qadsl.conf.5.gz \
+		share/man/man8/qadsl.8.gz
 
 post-extract:
 	@${CP} ${WRKSRC}/etc/qadsl.conf ${WRKSRC}/etc/qadsl.conf.sample
