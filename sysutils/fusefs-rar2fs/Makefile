@@ -1,7 +1,7 @@
 PORTNAME=	rar2fs
 DISTVERSION=	1.29.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -20,6 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hasse69
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static-unrar \
 		--with-fuse-lib=${LOCALBASE}/lib \
 		--with-fuse=${LOCALBASE}/include/fuse \
@@ -29,7 +30,7 @@ CONFIGURE_ENV=	LIBUNRAR_PKG=${LIBUNRAR_PKG}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/mkr2i \
-		man/man1/rar2fs.1.gz
+		share/man/man1/rar2fs.1.gz
 
 LIBUNRAR_PORT=	archivers/libunrar
 LIBUNRAR_PKG=	${LIBUNRAR_PORT:S|archivers/||}
