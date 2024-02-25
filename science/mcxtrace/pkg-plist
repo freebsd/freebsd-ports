@@ -28,5 +28,5 @@ mcxtrace/%%DISTVERSION%%/share/nxslib/sgio.c
 mcxtrace/%%DISTVERSION%%/share/nxslib/sgsi.c
 mcxtrace/%%DISTVERSION%%/share/read_table-lib.c
 mcxtrace/%%DISTVERSION%%/share/read_table-lib.h
-man/man1/mcxtrace.1.gz
-man/man1/mxformat.1.gz
+share/man/man1/mcxtrace.1.gz
+share/man/man1/mxformat.1.gz

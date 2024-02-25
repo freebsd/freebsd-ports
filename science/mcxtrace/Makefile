@@ -1,5 +1,6 @@
 PORTNAME=	mcxtrace
 DISTVERSION=	1.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	science
 MASTER_SITES=	http://download.mcxtrace.org/${PORTNAME}-${DISTVERSION}/unix/mcxtrace-${DISTVERSION}-src/
