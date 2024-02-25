@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.34.3
-PORTREVISION=	2
+DISTVERSION=	3.36.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -33,14 +32,17 @@ BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}six>=1.16.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.16:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libdraco.so:archivers/draco \
+LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
+		libdraco.so:archivers/draco \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
+		libfreexl.so:textproc/freexl \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libmdal.so:math/mdal \
+		libminizip.so:archivers/minizip \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
 		libpdalcpp.so:math/pdal \
@@ -50,6 +52,7 @@ LIB_DEPENDS=	libdraco.so:archivers/draco \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
+		librttopo.so:devel/librttopo \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
@@ -104,7 +107,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python qca qt:5 \
+		fortran gl gmake gnome iconv pgsql pyqt:5 python qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
@@ -131,10 +134,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT \
 		WITH_INTERNAL_LAZPERF WITH_POSTGRESQL
-CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
-
-# math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
-CXXFLAGS+=	-pthread
+CMAKE_OFF=	ENABLE_TESTS WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
@@ -149,7 +149,7 @@ OPTIONS_DEFINE=		SERVER
 OPTIONS_DEFAULT=	SERVER GRASS8
 OPTIONS_RADIO=		GRASS
 OPTIONS_RADIO_GRASS=	GRASS7 GRASS8
-#NO_OPTIONS_SORT=	yes
+NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
 GRASS_DESC=		Add GRASS GIS to processing tools
