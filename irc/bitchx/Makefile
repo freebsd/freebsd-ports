@@ -12,6 +12,9 @@ WWW=		http://www.bitchx.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Last stable release 2014, last upstream commit in 2019. There have been multiple concerns over security and it also lacks unicode support. Please consider using irc/irssi  
+EXPIRATION_DATE=2024-03-31
+
 USES=		cpe gmake ncurses
 
 GNU_CONFIGURE=	yes
