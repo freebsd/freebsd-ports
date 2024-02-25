@@ -26,7 +26,7 @@
 %%ETCDIR%%/web/strings-en.json
 %%ETCDIR%%/web/strings-fi.json
 @sample %%ETCDIR%%/aprsc.conf.sample
-man/man8/aprsc.8.gz
+share/man/man8/aprsc.8.gz
 sbin/aprsc
 sbin/aprsc_munin
 sbin/aprsc-prepare-chroot.sh
