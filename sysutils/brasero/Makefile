@@ -1,6 +1,6 @@
 PORTNAME=	brasero
 PORTVERSION=	3.12.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,6 +21,7 @@ USES=		desktop-file-utils gettext gmake gnome gstreamer libtool pathfix \
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intlhack \
 		introspection:build libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_XORG=	sm ice
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-inotify --enable-search=no --enable-playlist=no \

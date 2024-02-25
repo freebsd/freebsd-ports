@@ -67,7 +67,7 @@ lib/libbrasero-utils3.so.1.2.7
 %%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-brasero-extension.so
 libdata/pkgconfig/libbrasero-burn3.pc
 libdata/pkgconfig/libbrasero-media3.pc
-man/man1/brasero.1.gz
+share/man/man1/brasero.1.gz
 share/GConf/gsettings/brasero.convert
 %%NAUTILUS%%share/applications/brasero-nautilus.desktop
 share/applications/brasero.desktop
