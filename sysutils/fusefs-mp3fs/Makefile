@@ -1,6 +1,6 @@
 PORTNAME=	mp3fs
 PORTVERSION=	0.91
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTVERSION}/
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 
 USES=		compiler:c11 fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_FILES=	bin/mp3fs \
-		man/man1/mp3fs.1.gz
+		share/man/man1/mp3fs.1.gz
 
 .include <bsd.port.mk>
