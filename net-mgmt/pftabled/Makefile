@@ -1,6 +1,6 @@
 PORTNAME=	pftabled
 PORTVERSION=	1.09
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.wolfermann.org/
 
@@ -14,10 +14,11 @@ USES=		gmake shebangfix
 SHEBANG_FILES=	pftabled-client.pl \
 		pftabled-client.py
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_RC_SUBR=	pftabled
 
-PLIST_FILES=	bin/pftabled-client man/man1/pftabled.1.gz sbin/pftabled
+PLIST_FILES=	bin/pftabled-client share/man/man1/pftabled.1.gz sbin/pftabled
 
 OPTIONS_DEFINE=	PERLC PYTHONC
 OPTIONS_DEFAULT=PERLC PYTHONC
