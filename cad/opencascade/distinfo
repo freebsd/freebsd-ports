@@ -1,3 +1,5 @@
-TIMESTAMP = 1668069465
-SHA256 (opencascade-7.7.0.tgz) = 40e8e0e78b56dd407192b4cabf55dd0bdd1fa9c0a292d263b12f7e21733cb07e
-SIZE (opencascade-7.7.0.tgz) = 247268442
+TIMESTAMP = 1701808276
+SHA256 (documentation.tar.xz) = 3c5cdd70de9c82d9f0be4b9400d618494cfecd28f502d110111060c9aaaf50c7
+SIZE (documentation.tar.xz) = 48428333
+SHA256 (Open-Cascade-SAS-OCCT-V7_8_0_GH0.tar.gz) = 3c5cdd70de9c82d9f0be4b9400d618494cfecd28f502d110111060c9aaaf50c7
+SIZE (Open-Cascade-SAS-OCCT-V7_8_0_GH0.tar.gz) = 48428333

@@ -1,6 +1,6 @@
 - workaround for https://gitlab.kitware.com/vtk/vtk/-/issues/18683
 
---- src/IVtkDraw/IVtkDraw_Interactor.cxx.orig	2021-10-30 11:13:52 UTC
+--- src/IVtkDraw/IVtkDraw_Interactor.cxx.orig	2023-12-04 15:53:08 UTC
 +++ src/IVtkDraw/IVtkDraw_Interactor.cxx
 @@ -26,6 +26,12 @@
  #ifdef AllValues
@@ -13,5 +13,5 @@
 +#undef Success
 +#endif
  
- #include <vtkXRenderWindowInteractor.h>
- #include <vtkXOpenGLRenderWindow.h>
+ // Resolve name collisions with X11 headers
+ #ifdef Status

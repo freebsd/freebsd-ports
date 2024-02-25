@@ -1,4 +1,4 @@
---- adm/cmake/occt_macros.cmake.orig	2022-09-30 11:53:39 UTC
+--- adm/cmake/occt_macros.cmake.orig	2023-12-04 15:53:08 UTC
 +++ adm/cmake/occt_macros.cmake
 @@ -47,7 +47,7 @@ macro (OCCT_MAKE_OS_WITH_BITNESS)
    elseif(APPLE)
@@ -9,7 +9,7 @@
    endif()
  endmacro()
  
-@@ -336,7 +336,7 @@ macro (COLLECT_AND_INSTALL_OCCT_HEADER_FILES ROOT_TARG
+@@ -338,7 +338,7 @@ macro (COLLECT_AND_INSTALL_OCCT_HEADER_FILES ROOT_TARG
      configure_file ("${TEMPLATE_HEADER_PATH}" "${ROOT_TARGET_OCCT_DIR}/${OCCT_INSTALL_DIR_PREFIX}/${HEADER_FILE_NAME}" @ONLY)
    endforeach()
    
@@ -18,7 +18,7 @@
    
    string(TIMESTAMP CURRENT_TIME "%H:%M:%S")
    message (STATUS "Info: \(${CURRENT_TIME}\) Checking headers in inc folder...")
-@@ -590,12 +590,12 @@ macro (OCCT_UPDATE_TARGET_FILE)
+@@ -592,12 +592,12 @@ macro (OCCT_UPDATE_TARGET_FILE)
  
    install (CODE
    "string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWERCASE)
