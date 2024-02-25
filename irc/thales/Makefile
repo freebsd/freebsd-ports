@@ -11,6 +11,9 @@ WWW=		https://www.gnu.org/software/thales/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	End of life upstream
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	${LOCALBASE}/bin/ircd:irc/ircd-hybrid
 
 USES=		gmake mysql shebangfix
