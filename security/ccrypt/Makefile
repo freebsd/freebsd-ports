@@ -1,5 +1,6 @@
 PORTNAME=	ccrypt
 DISTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION}/ \
 		http://www.mathstat.dal.ca/~selinger/ccrypt/download/${DISTVERSION}/
@@ -20,6 +21,7 @@ NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

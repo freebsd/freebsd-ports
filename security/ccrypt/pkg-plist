@@ -3,11 +3,11 @@ bin/ccdecrypt
 bin/ccencrypt
 bin/ccguess
 bin/ccrypt
-man/man1/ccencrypt.1.gz
-man/man1/ccdecrypt.1.gz
-man/man1/ccat.1.gz
-man/man1/ccrypt.1.gz
-man/man1/ccguess.1.gz
+share/man/man1/ccencrypt.1.gz
+share/man/man1/ccdecrypt.1.gz
+share/man/man1/ccat.1.gz
+share/man/man1/ccrypt.1.gz
+share/man/man1/ccguess.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/ccrypt.mo
 %%NLS%%share/locale/et/LC_MESSAGES/ccrypt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ccrypt.mo
