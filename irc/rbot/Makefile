@@ -6,12 +6,15 @@ CATEGORIES=	irc ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
-WWW=		https://ruby-rbot.org/
+WWW=		https://github.com/ruby-rbot/rbot
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/GPLv2
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.rbot
+
+DEPRECATED=	Outdated, unmaintained in ports since 2016
+EXPIRATION_DATE=2024-03-31
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:databases/ruby-tokyocabinet \
 		rubygem-gettext>=0:devel/rubygem-gettext \
