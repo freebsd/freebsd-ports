@@ -71,6 +71,7 @@ bin/cdb-nbtool
 %%GUI%%%%DATADIR%%/manual/algorithms/lr_tensor.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/map_sympy.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/meld.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/nevaluate.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/product_rule.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/raise_free_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/reduce_delta.cnb
