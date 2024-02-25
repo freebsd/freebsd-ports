@@ -1,6 +1,6 @@
 PORTNAME=	dsbsu
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -17,5 +17,8 @@ USE_QT=		buildtools:build core gui linguisttools:build widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBSu
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man|share/man/man|' ${WRKSRC}/dsbsu.pro
 
 .include <bsd.port.mk>

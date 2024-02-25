@@ -4,6 +4,6 @@ bin/dsbsudo
 %%DATADIR%%/dsbsu_fr.qm
 libexec/dsbsu-helper
 libexec/dsbsudo-askpass
-man/man1/dsbsu.1.gz
-man/man1/dsbsudo.1.gz
+share/man/man1/dsbsu.1.gz
+share/man/man1/dsbsudo.1.gz
 share/applications/dsbsu.desktop
