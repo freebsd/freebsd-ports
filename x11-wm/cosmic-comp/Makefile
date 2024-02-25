@@ -27,6 +27,12 @@ CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/wayland-sessions/${PORTNAME:S/-comp//}.desktop \
 
+.if ${MACHINE_ARCH} == i386 || ${MACHINE_ARCH:Marmv?}
+# https://github.com/rust-lang/rust/issues/85598
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 # XXX Strip double / to help "make cargo-crates"
 	@${REINPLACE_CMD} -e 's,\(smithay\)//,\1/,' \
