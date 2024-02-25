@@ -1,4 +1,4 @@
-@exec echo "Be sure to edit %D/bin/Pnews to set the Distribution codes"
+@preexec echo "Be sure to edit %D/bin/Pnews to set the Distribution codes"
 bin/Pnews
 bin/Rnmail
 bin/inews
@@ -25,6 +25,6 @@ lib/trn/HelpFiles/config/environment
 lib/trn/HelpFiles/samples/index
 lib/trn/HelpFiles/samples/access
 lib/trn/HelpFiles/samples/trnrc
-man/man1/Pnews.1.gz
-man/man1/Rnmail.1.gz
-man/man1/trn.1.gz
+share/man/man1/Pnews.1.gz
+share/man/man1/Rnmail.1.gz
+share/man/man1/trn.1.gz
