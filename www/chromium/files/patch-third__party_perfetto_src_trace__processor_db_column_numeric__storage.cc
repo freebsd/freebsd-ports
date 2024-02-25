@@ -1,16 +1,14 @@
---- third_party/perfetto/src/trace_processor/db/column/numeric_storage.cc.orig	2024-02-23 21:04:38 UTC
+--- third_party/perfetto/src/trace_processor/db/column/numeric_storage.cc.orig	2024-02-25 20:08:06 UTC
 +++ third_party/perfetto/src/trace_processor/db/column/numeric_storage.cc
-@@ -494,8 +494,13 @@ BitVector NumericStorageBase::LinearSearchInternal(Fil
-   } else if (const auto* i32 = std::get_if<int32_t>(&val)) {
-     auto* start = static_cast<const int32_t*>(data_) + range.start;
-     TypedLinearSearch(*i32, start, op, builder);
+@@ -39,7 +39,11 @@ namespace trace_processor {
+ namespace column {
+ namespace {
+ 
 +#if (defined(__OpenBSD__) || defined(__FreeBSD__)) && defined(__i386__)
-+  } else if (const auto* db = std::get_if<long double>(&*val)) {
-+    auto* start = static_cast<const long double*>(data_) + range.start;
++using NumericValue = std::variant<uint32_t, int32_t, int64_t, double>;
 +#else
-   } else if (const auto* db = std::get_if<double>(&val)) {
-     auto* start = static_cast<const double*>(data_) + range.start;
+ using NumericValue = std::variant<uint32_t, int32_t, int64_t, double_t>;
 +#endif
-     TypedLinearSearch(*db, start, op, builder);
-   } else {
-     PERFETTO_DFATAL("Invalid");
+ 
+ // Using the fact that binary operators in std are operators() of classes, we
+ // can wrap those classes in variants and use them for std::visit in
