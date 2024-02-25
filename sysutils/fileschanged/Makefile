@@ -1,6 +1,6 @@
 PORTNAME=	fileschanged
 PORTVERSION=	0.6.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		fam gmake localbase
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
 
@@ -22,7 +23,7 @@ LIBS+=		-largp
 
 INFO=		fileschanged
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
-PLIST_FILES=	bin/fileschanged man/man1/fileschanged.1.gz
+PLIST_FILES=	bin/fileschanged share/man/man1/fileschanged.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
