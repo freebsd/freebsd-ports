@@ -1,5 +1,6 @@
 PORTNAME=	omping
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	fw@moov.de
@@ -13,9 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jfriesse
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man8/omping.8.gz
-
-post-patch:
-		@${REINPLACE_CMD} -e 's|/share/man|/man|g' ${WRKSRC}/Makefile
+		share/man/man8/omping.8.gz
 
 .include <bsd.port.mk>
