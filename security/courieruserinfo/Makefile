@@ -1,5 +1,6 @@
 PORTNAME=	courieruserinfo
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 
@@ -14,9 +15,10 @@ BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake localbase
 
-PLIST_FILES=	sbin/courieruserinfo man/man8/courieruserinfo.8.gz
+PLIST_FILES=	sbin/courieruserinfo share/man/man8/courieruserinfo.8.gz
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 
 OPTIONS_DEFINE=	DOCS
