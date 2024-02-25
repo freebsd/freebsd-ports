@@ -13,6 +13,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small (150k), fast, perl-based IRC client
 
+DEPRECATED=	Abandonware, upstream is gone and current version was released over 20 years ago. Consider irc/irssi , irc/epic5 or irc/ircII
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	p5-Perl4-CoreLibs>=0:devel/p5-Perl4-CoreLibs
 
 USES=		ncurses perl5
