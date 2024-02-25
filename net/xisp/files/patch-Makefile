@@ -94,7 +94,7 @@
 +SBINDIR    = /usr/sbin
 +VARRUN     = /var/run
 +USRLIBPPP  = $(PREFIX)/libexec
-+MANDIR     = $(PREFIX)/man/man1
++MANDIR     = $(PREFIX)/share/man/man1
 +ETCPPP     = ${PREFIX}/etc/ppp
 +OPTSDIR    = $(ETCPPP)
 +INSTPPPDIR = $(ETCPPP)
