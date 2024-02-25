@@ -1,6 +1,6 @@
 PORTNAME=	tcpillust
 PORTVERSION=	2.01
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net tcl tk
 MASTER_SITES=	https://cschubert.com/distfiles/ \
@@ -15,7 +15,7 @@ USE_XORG=	xt
 
 PORTDOCS=	tcpclient.log tcpserver.log
 PLIST_FILES=	bin/tcpillust \
-		man/man1/tcpillust.1.gz \
+		share/man/man1/tcpillust.1.gz \
 		share/tcpillust/tcpillust.tcl \
 		share/tcpillust/back.xbm \
 		share/tcpillust/forward.xbm \
@@ -39,7 +39,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/tcpillust.tcl ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/*.xbm ${STAGEDIR}${DATADIR}/
-	${INSTALL_MAN} ${WRKSRC}/tcpillust.man ${STAGEDIR}${PREFIX}/man/man1/tcpillust.1
+	${INSTALL_MAN} ${WRKSRC}/tcpillust.man ${STAGEDIR}${PREFIX}/share/man/man1/tcpillust.1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${DOCSDIR}
 
