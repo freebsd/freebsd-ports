@@ -10,6 +10,9 @@ WWW=		https://github.com/rescrv/busybee
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned upstream, last release 2015 and last commit 2017.
+EXPIRATION_DATE=2024-03-31
+
 ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libe.so:devel/libe \
