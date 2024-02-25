@@ -1,5 +1,6 @@
 PORTNAME=	archivemount
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.cybernoia.de/software/archivemount/
 
@@ -12,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse iconv libarchive pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/archivemount \
-		man/man1/archivemount.1.gz \
+		share/man/man1/archivemount.1.gz \
 		sbin/mount_archive
 
 SUB_FILES=	pkg-message
