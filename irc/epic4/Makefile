@@ -13,6 +13,9 @@ WWW=		http://www.epicsol.org/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Last release 2021, superseded by epic5. Consider migrating to irc/epic5 or irc/irssi 
+EXPIRATION_DATE=2024-03-31
+
 USES=		ncurses tar:xz
 
 CONFLICTS=	epic5-0.[0-2]*
