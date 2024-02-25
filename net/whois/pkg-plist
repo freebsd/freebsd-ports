@@ -1,8 +1,8 @@
 bin/mkpasswd
 bin/mwhois
-man/man1/mkpasswd.1.gz
-man/man1/mwhois.1.gz
-man/man5/mwhois.conf.5.gz
+share/man/man1/mkpasswd.1.gz
+share/man/man1/mwhois.1.gz
+share/man/man5/mwhois.conf.5.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mwhois.mo
