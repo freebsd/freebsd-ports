@@ -10,6 +10,9 @@ MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Freenet client that provides messenger and file services
 WWW=		https://jtcfrost.sourceforge.net/
 
+DEPRECATED=	Outdated version and unsupported upstream
+EXPIRATION_DATE=2024-03-31
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_RUN=	yes
