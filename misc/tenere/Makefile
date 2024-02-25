@@ -1,7 +1,7 @@
 PORTNAME=	tenere
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	compilation fails: cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_cpu_speed'
 
-LIB_DEPENDS=	libonig.so:devel/oniguruma
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libonig.so:devel/oniguruma
 
 USES=		cargo
 
