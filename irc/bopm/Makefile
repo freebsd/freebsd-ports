@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open proxy and DNSBL monitor designed for use with ircds
 WWW=		http://wiki.blitzed.org/BOPM
 
+DEPRECATED=	Upstream is dead and archived repo Jul 3 2023
+EXPIRATION_DATE=2024-03-31
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/log/bopm
 INSTALL_TARGET=	install-strip
