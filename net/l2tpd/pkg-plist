@@ -1,6 +1,6 @@
 bin/l2tpd
 %%ETCDIR%%/l2tp-secrets.sample
 %%ETCDIR%%/l2tpd.conf.sample
-man/man5/l2tp-secrets.5.gz
-man/man5/l2tpd.conf.5.gz
-man/man8/l2tpd.8.gz
+share/man/man5/l2tp-secrets.5.gz
+share/man/man5/l2tpd.conf.5.gz
+share/man/man8/l2tpd.8.gz
