@@ -1,4 +1,4 @@
 bin/asmctl
 @sample etc/devd/asmctl.conf.sample
-man/man1/asmctl.1.gz
+share/man/man1/asmctl.1.gz
 @dir /var/lib
