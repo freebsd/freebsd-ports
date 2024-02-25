@@ -1,6 +1,6 @@
 PORTNAME=	log4c
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -10,17 +10,19 @@ WWW=		https://log4c.sourceforge.net/
 
 LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	EXPAT
-OPTIONS_DEFAULT=EXPAT
-EXPAT_CONFIGURE_WITH=	expat
-EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
-
-USES=		libtool pathfix
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USES=				libtool pathfix
+USE_LDCONFIG=			yes
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=		EXPAT
+OPTIONS_DEFAULT=	EXPAT
+
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
+EXPAT_CONFIGURE_WITH=	expat
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblog4c.so
