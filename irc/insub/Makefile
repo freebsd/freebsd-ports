@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on IRC and the web
 WWW=		https://github.com/cjones/insub
 
+DEPRECATED=	Outdated version, unmaintained in ports since 2015
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	cowsay:games/cowsay \
 		figlet:misc/figlet
 
