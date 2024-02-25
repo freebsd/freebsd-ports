@@ -50,9 +50,9 @@ lib/libdico.so
 lib/libdico.so.2
 lib/libdico.so.2.0.0
 libexec/idxgcide
-man/man1/dico.1.gz
-man/man5/dicod.conf.5.gz
-man/man8/dicod.8.gz
+share/man/man1/dico.1.gz
+share/man/man5/dicod.conf.5.gz
+share/man/man8/dicod.8.gz
 sbin/dicod
 %%DATADIR%%/%%PORTVERSION%%/include/pp-setup
 %%NLS%%share/locale/da/LC_MESSAGES/dico.mo
