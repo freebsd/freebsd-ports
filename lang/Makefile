@@ -101,6 +101,7 @@
     SUBDIR += ghc
     SUBDIR += ghc810
     SUBDIR += ghc92
+    SUBDIR += ghc94
     SUBDIR += gir-to-d
     SUBDIR += gjs
     SUBDIR += gleam
