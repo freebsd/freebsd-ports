@@ -10,6 +10,9 @@ WWW=		https://libbt.sourceforge.net/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Last release in 2007 and no active development, lacks functionality found in modern implementations. Consider using net-p2p/libtorrent-rasterbar or net-p2p/libtorrent-rasterbar2
+EXPIRATION_DATE=2024-03-31
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid
 
