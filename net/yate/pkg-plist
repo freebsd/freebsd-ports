@@ -191,8 +191,8 @@ lib/yate/zlibcompress.yate
 lib/yate/g722webrtc.yate
 lib/yate/wiresniff.yate
 libdata/pkgconfig/yate.pc
-man/man8/yate.8.gz
-man/man8/yate-config.8.gz
+share/man/man8/yate.8.gz
+share/man/man8/yate-config.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/WebRTC-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/WebRTC-LICENSE_THIRD_PARTY
 %%PORTDOCS%%%%DOCSDIR%%/WebRTC-PATENTS
