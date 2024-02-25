@@ -11,6 +11,9 @@ WWW=		https://github.com/btpd/btpd/wiki
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Abandoned upstream, lacks support for common functionality such as Magnet links, DHT, PEX and HTTPS. Consider net-p2p/qbittorrent or net-p2p/transmission
+EXPIRATION_DATE=2024-03-31
+
 USES=		autoreconf ssl
 
 USE_GITHUB=	yes
