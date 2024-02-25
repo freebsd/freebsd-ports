@@ -1,6 +1,6 @@
 PORTNAME=	fragroute
 PORTVERSION=	1.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		PACKETSTORM/UNIX/security
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libevent.so:devel/libevent
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE} --with-pcap
 
