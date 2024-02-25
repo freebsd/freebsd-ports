@@ -1,5 +1,6 @@
 PORTNAME=	courierpassd
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/ \
 		LOCAL/ade
@@ -15,13 +16,14 @@ BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake localbase
 
 MINUID?=	100
 DELAY?=		3
 CONFIGURE_ARGS+=--with-minuid=${MINUID} --with-badpassdelay=${DELAY}
 
-PLIST_FILES=	sbin/courierpassd man/man8/courierpassd.8.gz
+PLIST_FILES=	sbin/courierpassd share/man/man8/courierpassd.8.gz
 PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL NEWS README
 
 OPTIONS_DEFINE=	DOCS
