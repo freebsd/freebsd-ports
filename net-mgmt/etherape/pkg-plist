@@ -1,5 +1,5 @@
 bin/etherape
-man/man1/etherape.1.gz
+share/man/man1/etherape.1.gz
 share/applications/etherape.desktop
 %%DATADIR%%/glade/etherape.ui
 %%DATADIR%%/glade/etherape.png
