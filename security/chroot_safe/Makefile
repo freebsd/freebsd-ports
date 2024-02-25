@@ -1,6 +1,6 @@
 PORTNAME=	chroot_safe
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security sysutils
 MASTER_SITES=	SF/chrootsafe/${PORTNAME}/${PORTVERSION}
 
@@ -12,8 +12,9 @@ LICENSE=	MIT
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	man/man1/chroot_safe.1.gz sbin/chroot_safe libexec/chroot_safe/chroot_safe.so
+PLIST_FILES=	share/man/man1/chroot_safe.1.gz sbin/chroot_safe libexec/chroot_safe/chroot_safe.so
 
 post-patch:
 	@${REINPLACE_CMD} -e  's|CXX=g++|CXX?=c++|' \
