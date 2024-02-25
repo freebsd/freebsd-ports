@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-11-10 20:45:57.000000000 +0000
-+++ CMakeLists.txt	2013-10-17 11:18:51.783970185 +0000
-@@ -21,6 +21,7 @@
+--- CMakeLists.txt.orig	2012-11-10 20:45:57 UTC
++++ CMakeLists.txt
+@@ -21,6 +21,7 @@ OPTION(ICONV_TRANSLITERATE "Enable transliteration in 
  
  OPTION(ICONV_DISCARD_ILSEQ "Discard illegal sequence and continue (iconv) [default: ON]"    ON)
  OPTION(ICONV_TRANSLITERATE "Enable transliteration in the conversion (iconv) [default: ON]" ON)
@@ -8,7 +8,7 @@
  
  # Build optimized code for following CPU (default i386)
  #SET(CPU_TUNE               "i686")
-@@ -660,6 +661,8 @@
+@@ -660,6 +661,8 @@ ENDIF (DIFF_EXECUTABLE)
      SET_TESTS_PROPERTIES(Calls_D PROPERTIES DEPENDS Calls_R)
  ENDIF (DIFF_EXECUTABLE)
  
@@ -17,7 +17,7 @@
  FIND_PROGRAM(RST2HTML_EXECUTABLE "rst2html" /usr/local/bin /usr/bin)
  IF (RST2HTML_EXECUTABLE)
      ADD_CUSTOM_COMMAND(
-@@ -669,6 +672,7 @@
+@@ -669,6 +672,7 @@ ENDIF (RST2HTML_EXECUTABLE)
          )
      ADD_CUSTOM_TARGET(doc ALL DEPENDS template_language.html)
  ENDIF (RST2HTML_EXECUTABLE)
@@ -25,7 +25,13 @@
  
  # Install Headers
  INSTALL(FILES include/CDT.hpp
-@@ -814,13 +818,15 @@
+@@ -809,18 +813,20 @@ INSTALL(FILES
+               man/ctpp2i.1
+               man/ctpp2json.1
+               man/ctpp2vm.1
+-        DESTINATION man/man1
++        DESTINATION share/man/man1
+         PERMISSIONS OWNER_READ OWNER_WRITE
                      GROUP_READ
                      WORLD_READ)
  

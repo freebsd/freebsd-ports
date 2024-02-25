@@ -69,8 +69,8 @@ lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
 lib/libctpp2.so.%%PORTVERSION%%
-man/man1/ctpp2c.1.gz
-man/man1/ctpp2vm.1.gz
-man/man1/ctpp2i.1.gz
-man/man1/ctpp2json.1.gz
-man/man1/ctpp2-config.1.gz
+share/man/man1/ctpp2c.1.gz
+share/man/man1/ctpp2vm.1.gz
+share/man/man1/ctpp2i.1.gz
+share/man/man1/ctpp2json.1.gz
+share/man/man1/ctpp2-config.1.gz
