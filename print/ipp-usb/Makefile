@@ -1,6 +1,6 @@
 PORTNAME=	ipp-usb
 DISTVERSION=	0.9.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 
 MAINTAINER=	chuanwei.foo@hotmail.com
@@ -31,7 +31,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/quirks/
 	${INSTALL_DATA} ${WRKSRC}/ipp-usb.conf \
 		${STAGEDIR}${ETCDIR}/ipp-usb.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/ipp-usb.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/ipp-usb.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	(cd ${WRKSRC}/ipp-usb-quirks/ && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/quirks/)
 
