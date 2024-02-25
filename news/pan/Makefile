@@ -1,6 +1,6 @@
 PORTNAME=	pan
 PORTVERSION=	0.145
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -25,6 +25,7 @@ USE_CXXSTD=	c++14
 USE_GNOME=	cairo gdkpixbuf2 intlhack
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 LDFLAGS+=	${ICONV_LIB}
 
