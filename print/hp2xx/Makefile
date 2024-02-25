@@ -1,6 +1,6 @@
 PORTNAME=	hp2xx
 PORTVERSION=	3.4.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print x11
 MASTER_SITES=	GNU
 
@@ -22,7 +22,7 @@ LDFLAGS+=	-lm -ltiff -lpng -lz
 
 WRKSRC_SUBDIR=	sources
 
-PLIST_FILES=	bin/hp2xx man/man1/hp2xx.1.gz
+PLIST_FILES=	bin/hp2xx share/man/man1/hp2xx.1.gz
 
 OPTIONS_DEFINE=		INFO X11
 OPTIONS_DEFAULT=	INFO X11
