@@ -125,7 +125,7 @@ make-npm-cache: extract
 		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}"
 
 pre-build:
-	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm install --force
+	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm install --force --legacy-peer-deps
 	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm run build
 	${RM} -r ${WRKSRC}/backend/app/cmd/web/
 	${MV} ${WRKSRC}/frontend/apps/remark42/public ${WRKSRC}/backend/app/cmd/web
