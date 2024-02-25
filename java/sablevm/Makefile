@@ -10,6 +10,9 @@ WWW=		http://www.sablevm.org/
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Abandonware, last release in 2007 and is no longer being developed
+EXPIRATION_DATE=2024-03-31
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libffi.so:devel/libffi \
 		libltdl.so:devel/libltdl
