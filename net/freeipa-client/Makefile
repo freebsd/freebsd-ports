@@ -1,5 +1,6 @@
 PORTNAME=	freeipa-client
 DISTVERSION=	4.11.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://releases.pagure.org/freeipa/
 DISTNAME=	freeipa-${DISTVERSION}
@@ -27,7 +28,8 @@ LIB_DEPENDS=	libcmocka.so:sysutils/cmocka \
 USES=		autoreconf gettext gmake gssapi:mit ldap libtool \
 		localbase:ldflags pkgconfig python
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-server \
 		--with-ipaplatform=freebsd \
