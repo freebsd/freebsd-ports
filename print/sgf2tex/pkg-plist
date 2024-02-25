@@ -1,7 +1,7 @@
 bin/sgf2tex
 bin/sgfsplit
-man/man1/sgf2tex.1.gz
-man/man1/sgfsplit.1.gz
+share/man/man1/sgf2tex.1.gz
+share/man/man1/sgfsplit.1.gz
 share/texmf/fonts/tfm/public/GOOE/gobl.tfm
 share/texmf/fonts/tfm/public/GOOE/goea.tfm
 share/texmf/fonts/tfm/public/GOOE/goeb.tfm
