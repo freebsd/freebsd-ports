@@ -1,5 +1,6 @@
 PORTNAME=	ctpl
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://download.tuxfamily.org/ctpl/releases/
 
@@ -11,6 +12,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_GNOME=	glib20
 USES=		gnome libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
