@@ -1,5 +1,5 @@
 bin/devilspie
-man/man1/devilspie.1.gz
+share/man/man1/devilspie.1.gz
 share/locale/ca/LC_MESSAGES/devilspie.mo
 share/locale/cs/LC_MESSAGES/devilspie.mo
 share/locale/da/LC_MESSAGES/devilspie.mo
