@@ -1,6 +1,6 @@
 PORTNAME=	sysgather
 DISTVERSION=	1.0pre10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/sysgather/
 
@@ -17,6 +17,7 @@ USES=		perl5 shebangfix uidfix
 SHEBANG_FILES=	sysgather.pl
 NO_ARCH=	yes
 
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
