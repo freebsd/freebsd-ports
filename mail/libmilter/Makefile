@@ -1,5 +1,5 @@
 PORTNAME=	libmilter
-PORTVERSION=	8.17.2
+PORTVERSION=	8.18.1
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
