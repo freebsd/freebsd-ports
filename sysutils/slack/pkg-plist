@@ -7,9 +7,9 @@ libexec/slack/slack-rolediff
 libexec/slack/slack-runscript
 libexec/slack/slack-stage
 libexec/slack/slack-sync
-man/man1/slack-diff.1.gz
-man/man5/slack.conf.5.gz
-man/man8/slack.8.gz
+share/man/man1/slack-diff.1.gz
+share/man/man5/slack.conf.5.gz
+share/man/man8/slack.8.gz
 sbin/slack
 @dir(,,0700) /var/lib/slack
 @dir /var/lib

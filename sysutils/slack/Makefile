@@ -1,6 +1,6 @@
 PORTNAME=	slack
 PORTVERSION=	0.15.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sundell.net/~alan/projects/slack/
 
@@ -16,7 +16,7 @@ NO_ARCH=	yes
 PORTDOCS=	ChangeLog COPYING CREDITS FAQ GPL README TODO \
 		fixfiles-and-dirs.txt slack-intro
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} \
-		libexecdir=${PREFIX}/libexec mandir=${PREFIX}/man \
+		libexecdir=${PREFIX}/libexec mandir=${PREFIX}/share/man \
 		localstatedir=/var
 OPTIONS_DEFINE=	DOCS
 
