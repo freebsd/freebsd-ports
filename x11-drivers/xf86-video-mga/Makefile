@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-mga
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	x11-drivers
 
@@ -10,5 +10,7 @@ WWW=		https://www.x.org/
 
 USES=		gl xorg-cat:driver
 USE_GL=		gl
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>
