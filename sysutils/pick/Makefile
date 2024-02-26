@@ -1,5 +1,6 @@
 PORTNAME=	pick
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/mptre/pick/releases/download/v${PORTVERSION}/
 
@@ -12,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ncurses
 HAS_CONFIGURE=	yes
-MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}"
+MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}" MANDIR="${PREFIX}/share/man"
 PLIST_FILES=	bin/pick \
-		man/man1/pick.1.gz
+		share/man/man1/pick.1.gz
 
 .include <bsd.port.mk>
