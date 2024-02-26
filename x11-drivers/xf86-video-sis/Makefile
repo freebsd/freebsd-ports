@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-sis
 PORTVERSION=	0.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,5 +11,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg-cat:driver
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>
