@@ -1,3 +1,3 @@
 bin/xvidtune
 share/X11/app-defaults/Xvidtune
-man/man1/xvidtune.1.gz
+share/man/man1/xvidtune.1.gz
