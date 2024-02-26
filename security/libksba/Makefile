@@ -1,5 +1,6 @@
 PORTNAME=	libksba
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -18,7 +19,8 @@ LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 USES=		cpe libtool perl5 tar:bzip2
 USE_PERL5=	build
 
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static \
+		--enable-ld-version-script
 CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
