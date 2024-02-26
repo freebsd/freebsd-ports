@@ -1,2 +1,2 @@
 lib/xorg/modules/input/elographics_drv.so
-man/man4/elographics.4x.gz
+share/man/man4/elographics.4x.gz
