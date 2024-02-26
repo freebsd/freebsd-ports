@@ -3,7 +3,7 @@ sbin/hammer2
 sbin/newfs_hammer2
 sbin/mount_hammer2
 sbin/fsck_hammer2
-man/man8/hammer2.8.gz
-man/man8/newfs_hammer2.8.gz
-man/man8/mount_hammer2.8.gz
-man/man8/fsck_hammer2.8.gz
+share/man/man8/hammer2.8.gz
+share/man/man8/newfs_hammer2.8.gz
+share/man/man8/mount_hammer2.8.gz
+share/man/man8/fsck_hammer2.8.gz
