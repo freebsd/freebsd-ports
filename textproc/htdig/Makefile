@@ -1,6 +1,6 @@
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.2.0b6
 DISTNAME=	htdig-3.2.0b6
@@ -13,6 +13,7 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf \
 		--with-common-dir=${PREFIX}/share/htdig/common \
