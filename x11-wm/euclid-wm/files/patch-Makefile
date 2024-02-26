@@ -5,7 +5,7 @@
 +PREFIX    = usr/local
  SHAREDIR  = ${PREFIX}/share
 -MANDIR    = ${SHAREDIR}/man
-+MANDIR    = ${PREFIX}/man
++MANDIR    = ${SHAREDIR}/man
  BINDIR    = ${PREFIX}/bin
  SVNREV 	  = 224 
  VER	  = 0.4.3
