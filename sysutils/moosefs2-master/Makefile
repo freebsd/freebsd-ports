@@ -1,5 +1,6 @@
 PORTNAME=		moosefs2
 PORTVERSION=		2.0.91
+PORTREVISION=	1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
@@ -13,6 +14,7 @@ LICENSE=		GPLv2
 
 USES=			python:build
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 WRKSRC=			${WRKDIR}/moosefs-${PORTVERSION}
 PLIST=			${.CURDIR}/pkg-plist
 DESCR=			${.CURDIR}/pkg-descr

@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-cgiserv
 
 COMMENT=	MooseFS CGI web server
