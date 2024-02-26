@@ -1,6 +1,6 @@
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
@@ -15,6 +15,7 @@ CONFLICTS=	hfs
 
 USES=		gmake			# passing -jX breaks BSD make(1)
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 ALL_TARGET=	all hfsck/hfsck
 
 PORTDOCS=	*
