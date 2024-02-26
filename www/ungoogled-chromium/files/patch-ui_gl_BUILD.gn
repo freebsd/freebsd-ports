@@ -1,4 +1,4 @@
---- ui/gl/BUILD.gn.orig	2024-02-03 15:42:55 UTC
+--- ui/gl/BUILD.gn.orig	2024-02-25 20:22:18 UTC
 +++ ui/gl/BUILD.gn
 @@ -154,8 +154,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
@@ -9,7 +9,7 @@
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -172,7 +170,6 @@ component("gl") {
+@@ -173,7 +171,6 @@ component("gl") {
    ]
    public_deps = [
      "//base",

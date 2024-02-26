@@ -1,11 +1,11 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2024-02-03 15:42:55 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2024-02-25 20:22:18 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -333,7 +333,7 @@ declare_args() {
-   # pkeys support is explicitly disabled in all Cronet builds, as some test
+@@ -335,7 +335,7 @@ declare_args() {
    # dependencies that use partition_allocator are compiled in AOSP against a
    # version of glibc that does not include pkeys syscall numbers.
--  enable_pkeys = is_linux && target_cpu == "x64" && !is_cronet_build
-+  enable_pkeys = (is_linux && !is_bsd) && target_cpu == "x64" && !is_cronet_build
+   enable_pkeys =
+-      (is_linux || is_chromeos) && target_cpu == "x64" && !is_cronet_build
++      !is_bsd && (is_linux || is_chromeos) && target_cpu == "x64" && !is_cronet_build
  }
- assert(!enable_pkeys || (is_linux && target_cpu == "x64"),
-        "Pkeys are only supported on x64 linux")
+ assert(!enable_pkeys || ((is_linux || is_chromeos) && target_cpu == "x64"),
+        "Pkeys are only supported on x64 linux and ChromeOS")

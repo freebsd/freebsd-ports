@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2024-02-03 15:42:55 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2024-02-25 20:22:18 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -490,18 +490,18 @@
+@@ -483,18 +483,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -22,7 +22,7 @@
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -533,7 +533,7 @@
+@@ -526,7 +526,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -31,7 +31,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -657,7 +657,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
+@@ -564,7 +564,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
  const char kPluginsShowDetails[] = "plugins.show_details";
  
  // Deprecated 02/2023.
@@ -40,16 +40,16 @@
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1017,7 +1017,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
-   // Deprecated 02/2023.
+@@ -969,7 +969,7 @@ const char kBorealisVmTokenHash[] = "borealis.vm_token
+ // key).
+ void RegisterLocalStatePrefsForMigration(PrefRegistrySimple* registry) {
+ // Deprecated 02/2023.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    registry->RegisterDictionaryPref(kWebAppsUrlHandlerInfo);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -2022,12 +2022,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1979,12 +1979,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -64,10 +64,10 @@
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
    enterprise_signin::RegisterProfilePrefs(registry);
  #endif
-@@ -2187,7 +2187,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -2114,7 +2114,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
+   // Please don't delete the preceding line. It is used by PRESUBMIT.py.
  
-   // Added 02/2023
+ // Added 02/2023.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    local_state->ClearPref(kWebAppsUrlHandlerInfo);

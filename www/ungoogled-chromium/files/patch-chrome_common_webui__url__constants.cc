@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2024-02-09 10:34:36 UTC
+--- chrome/common/webui_url_constants.cc.orig	2024-02-25 20:22:18 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -508,18 +508,18 @@ const char kOsUIShortcutCustomizationAppURL[] = "os://
+@@ -507,18 +507,18 @@ const char kOsUISystemURL[] = "os://system";
  const char kOsUIVersionURL[] = "os://version";
  #endif
  
@@ -22,7 +22,7 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -534,14 +534,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -533,14 +533,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -38,8 +38,8 @@
 +    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
- const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -560,7 +560,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+ const char kChromeUIIntroHost[] = "intro";
+@@ -559,7 +559,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -48,7 +48,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
-@@ -643,7 +643,7 @@ const char kCookiesSubPagePath[] = "/cookies";
+@@ -641,7 +641,7 @@ const char kCookiesSubPagePath[] = "/cookies";
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -57,7 +57,7 @@
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -876,7 +876,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -872,7 +872,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

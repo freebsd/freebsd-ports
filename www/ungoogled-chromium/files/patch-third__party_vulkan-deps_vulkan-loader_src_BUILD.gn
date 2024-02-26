@@ -1,4 +1,4 @@
---- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2023-07-21 09:49:17 UTC
+--- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2024-02-25 20:22:18 UTC
 +++ third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
 @@ -59,7 +59,7 @@ config("vulkan_internal_config") {
      defines += [
@@ -8,4 +8,4 @@
 +      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:/usr/local/share:/usr/share\"",
      ]
    }
-   if (!vulkan_loader_shared) {
+   if (is_apple && !vulkan_loader_shared) {

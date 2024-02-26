@@ -1,6 +1,6 @@
---- base/base_switches.h.orig	2023-10-13 13:20:35 UTC
+--- base/base_switches.h.orig	2024-02-25 20:22:18 UTC
 +++ base/base_switches.h
-@@ -62,7 +62,7 @@ extern const char kPackageVersionName[];
+@@ -60,7 +60,7 @@ extern const char kPackageVersionName[];
  extern const char kPackageVersionCode[];
  #endif
  

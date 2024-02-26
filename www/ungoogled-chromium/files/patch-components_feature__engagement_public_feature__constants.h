@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2024-02-03 15:42:55 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2024-02-25 20:22:18 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelRegionSearchFeature);
-@@ -243,7 +243,7 @@ extern const base::FeatureParam<int>
+@@ -252,7 +252,7 @@ extern const base::FeatureParam<int>
      kDefaultBrowserEligibilitySlidingWindowParam;
  #endif  // BUILDFLAG(IS_IOS)
  
@@ -18,7 +18,7 @@
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  BASE_DECLARE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature);
  BASE_DECLARE_FEATURE(kIPHAutofillVirtualCardCVCSuggestionFeature);
-@@ -291,7 +291,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
+@@ -300,7 +300,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
  BASE_DECLARE_FEATURE(kIPHScalableIphGamingFeature);
  #endif
  
