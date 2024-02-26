@@ -11,11 +11,9 @@ LICENSE=	GPLv3+
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
-		libcares.so:dns/c-ares \
 		libfmt.so:devel/libfmt \
 		libgrpc.so:devel/grpc \
 		libprotobuf.so:devel/protobuf \
-		libre2.so:devel/re2 \
 		libspdlog.so:devel/spdlog
 
 USES=		cmake compiler:c++17-lang pkgconfig
