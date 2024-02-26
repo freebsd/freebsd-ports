@@ -1,6 +1,7 @@
 PORTNAME=		nss_ndb
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.24
+PORTREVISION=	1
 CATEGORIES=		sysutils security
 
 MAINTAINER=		pen@lysator.liu.se
@@ -42,14 +43,15 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		ptrrkssn
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=		lib/nss_ndb.so.1 \
 			lib/nss_ndb.so.1.0.24 \
 			sbin/makendb sbin/nsstest \
-			man/man5/nss_ndb.conf.5.gz \
-			man/man8/makendb.8.gz \
-			man/man8/nsstest.8.gz \
-			man/man8/nss_ndb.8.gz \
+			share/man/man5/nss_ndb.conf.5.gz \
+			share/man/man8/makendb.8.gz \
+			share/man/man8/nsstest.8.gz \
+			share/man/man8/nss_ndb.8.gz \
 			share/examples/nss_ndb/ndbsync \
 			share/examples/nss_ndb/nss_ndb.conf \
 
