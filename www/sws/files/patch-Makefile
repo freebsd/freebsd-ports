@@ -1,9 +1,14 @@
 --- Makefile.orig	2015-02-15 23:56:31 UTC
 +++ Makefile
-@@ -16,6 +16,3 @@ install:
- 	cp sws.8.txt  ${DST}/man/man8/sws.8
+@@ -13,9 +13,6 @@ install:
+ 	chmod 775 ${DST}/sws/docs
+ 	chmod 644  ${DST}/etc/sws.cfg
+ 	cp sws.txt ${DST}/bin/sws
+-	cp sws.8.txt  ${DST}/man/man8/sws.8
++	cp sws.8.txt  ${DST}/share/man/man8/sws.8
  	chmod 755 ${DST}/bin/sws
- 	chmod 644 ${DST}/man/man8/sws.8
+-	chmod 644 ${DST}/man/man8/sws.8
 -	chown root:wheel  ${DST}/bin/sws ${DST}/man/man8/sws.8
 -	chown www:www  ${DST}/sws/docs 
 -	chown www:www  ${DST}/etc/sws.cfg
++	chmod 644 ${DST}/share/man/man8/sws.8
