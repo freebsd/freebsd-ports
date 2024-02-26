@@ -1,6 +1,6 @@
 PORTNAME=	zathura-cb
 DISTVERSION=	0.1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	zathura:graphics/zathura
 USES=		compiler:c11 desktop-file-utils gnome libarchive meson ninja \
 		pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
-USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/zathura/libcb.so \
 		share/appdata/org.pwmt.zathura-cb.metainfo.xml \

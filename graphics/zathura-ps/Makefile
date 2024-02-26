@@ -1,6 +1,6 @@
 PORTNAME=	zathura-ps
 DISTVERSION=	0.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig ssl
 USE_GNOME=	cairo glib20 gtk30
-USE_LDCONFIG=	${PREFIX}/lib/zathura
 
 PLIST_FILES=	lib/zathura/libps.so \
 		share/appdata/org.pwmt.zathura-ps.metainfo.xml \

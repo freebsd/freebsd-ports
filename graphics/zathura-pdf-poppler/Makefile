@@ -1,6 +1,6 @@
 PORTNAME=	zathura-pdf-poppler
 DISTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig
 USE_GNOME=	cairo glib20 gtk30
-USE_LDCONFIG=	${PREFIX}/lib/zathura
 
 CONFLICTS=	zathura-pdf-mupdf
 
