@@ -32,7 +32,7 @@
 +	mkdir -p $(DESTDIR)${PREFIX}/bin
 +	mkdir -p $(DESTDIR)${PREFIX}/man
 +	install -c -m 555 switch2 $(DESTDIR)${PREFIX}/bin
-+	install -c -m 444 switch.1 $(DESTDIR)${PREFIX}/man/man1/switch2.1
++	install -c -m 444 switch.1 $(DESTDIR)${PREFIX}/share/man/man1/switch2.1
  
  dist: clean
  	rm -rf /tmp/gtk-theme-switch-$(VERSION)
