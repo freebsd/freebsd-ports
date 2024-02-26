@@ -1,6 +1,6 @@
 PORTNAME=	mate-power-manager
 PORTVERSION=	1.26.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -32,6 +32,7 @@ USE_MATE=	panel
 USE_XORG=	x11 xext xorgproto xrandr xrender
 USE_GNOME=	cairo glib20 gtk30 intlhack
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	LIBS="-lexecinfo"
 CONFIGURE_ARGS=	--disable-docbook-docs \
 		--with-doc-dir=${PREFIX}/share/doc \
