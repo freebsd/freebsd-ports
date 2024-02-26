@@ -16,6 +16,7 @@ LIB_DEPENDS=    libjson-c.so:devel/json-c
 
 USES=           ncurses pkgconfig
 USE_LDCONFIG=   yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 INSTALL_TARGET= install-strip
 
