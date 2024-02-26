@@ -1,5 +1,6 @@
 PORTNAME=	yaws
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/dch
 
@@ -30,6 +31,7 @@ WWW_DESC=	Install sample applications
 APPDIR=		${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var
 CONFIGURE_ENV=	wwwdir=${WWWDIR} yawsdir=${APPDIR}
 INSTALL_TARGET=	install-strip
