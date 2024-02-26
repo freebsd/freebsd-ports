@@ -1,6 +1,6 @@
 PORTNAME=	nagstamon
-PORTVERSION=	3.12.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.14.0
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -19,7 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.2.1:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-gssapi>0:www/py-requests-gssapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-kerberos>0:security/py-requests-kerberos@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests-kerberos>0:security/py-requests-kerberos@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR}
 
 USES=		cpe pyqt:5 python
 CPE_VENDOR=	henri_wahl
