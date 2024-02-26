@@ -1,4 +1,4 @@
-man/man5/metalog.conf.5.gz
-man/man8/metalog.8.gz
+share/man/man5/metalog.conf.5.gz
+share/man/man8/metalog.8.gz
 sbin/metalog
 @sample etc/metalog.conf.sample
