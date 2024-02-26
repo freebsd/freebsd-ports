@@ -1,6 +1,6 @@
 PORTNAME=	linuxfdisk
 PORTVERSION=	2.11z
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v2.11/ \
 		http://ftp.be.debian.org/pub/linux/utils/util-linux/v2.11/ \
