@@ -1,6 +1,6 @@
 PORTNAME=	nitrogen
 DISTVERSION=	1.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/l3ib/nitrogen/releases/download/${DISTVERSION}/
 
@@ -24,6 +24,7 @@ USE_GNOME=	gtkmm24
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-inotify
 
 LIBS+=		-lX11
