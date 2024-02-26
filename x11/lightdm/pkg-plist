@@ -34,8 +34,8 @@ lib/liblightdm-gobject-1.so.0.0.0
 libdata/pkgconfig/liblightdm-gobject-1.pc
 %%QT5%%libdata/pkgconfig/liblightdm-qt5-3.pc
 libexec/lightdm-guest-session
-man/man1/dm-tool.1.gz
-man/man1/lightdm.1.gz
+share/man/man1/dm-tool.1.gz
+share/man/man1/lightdm.1.gz
 sbin/lightdm
 share/accountsservice/interfaces/org.freedesktop.DisplayManager.AccountsService.xml
 share/bash-completion/completions/dm-tool
