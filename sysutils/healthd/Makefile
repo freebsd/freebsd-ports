@@ -1,6 +1,6 @@
 PORTNAME=	healthd
 PORTVERSION=	0.7.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		LOCAL/ohauer
@@ -29,6 +29,7 @@ FULL_CONFIG_CONFIGURE_ENABLE=	full-config
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| @exec_prefix@| $$(DESTDIR)@exec_prefix@|' \
+		-e 's|man/man8|share/man/man8|' \
 		${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:

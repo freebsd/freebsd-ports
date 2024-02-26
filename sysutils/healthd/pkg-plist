@@ -1,7 +1,7 @@
 bin/healthdc
 @sample etc/healthd.conf.sample
-man/man8/healthd.8.gz
-man/man8/healthdc.8.gz
+share/man/man8/healthd.8.gz
+share/man/man8/healthdc.8.gz
 sbin/healthd
 %%PORTDOCS%%%%DOCSDIR%%/PROTOCOL
 %%PORTDOCS%%%%DOCSDIR%%/README
