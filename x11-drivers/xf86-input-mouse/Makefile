@@ -1,6 +1,6 @@
 PORTNAME=	xf86-input-mouse
 PORTVERSION=	1.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,5 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix xorg-cat:driver
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>
