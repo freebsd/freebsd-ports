@@ -1,6 +1,6 @@
 PORTNAME=	sablotron
 PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/sablotron/sablotron-${PORTVERSION}
 DISTNAME=	Sablot-${PORTVERSION}
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake iconv libtool localbase:ldflags
 USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
