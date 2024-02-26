@@ -1,5 +1,5 @@
 bin/lxinput
-man/man1/lxinput.1.gz
+share/man/man1/lxinput.1.gz
 share/applications/lxinput.desktop
 %%NLS%%share/locale/af/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxinput.mo
