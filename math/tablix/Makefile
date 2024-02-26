@@ -1,6 +1,6 @@
 PORTNAME=	tablix2
 PORTVERSION=	0.3.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math www
 MASTER_SITES=	http://www.tablix.org/releases/stable/ \
 		http://my.samba.org/
@@ -16,6 +16,7 @@ PVM_ROOT=	${LOCALBASE}/lib/pvm
 
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gettext gmake gnome libtool shebangfix
 SHEBANG_FILES=	${WRKSRC}/utils/tablix2_plot \
 		${WRKSRC}/utils/tablix2_benchmark \

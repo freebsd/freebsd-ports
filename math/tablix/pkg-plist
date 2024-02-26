@@ -39,11 +39,11 @@ lib/tablix2/timeblocks.so
 lib/tablix2/timeblocks_sameday.so
 lib/tablix2/timeplace.so
 lib/tablix2/walk.so
-man/man1/tablix2.1.gz
-man/man1/tablix2_benchmark.1.gz
-man/man1/tablix2_kernel.1.gz
-man/man1/tablix2_output.1.gz
-man/man1/tablix2_plot.1.gz
-man/man1/tablix2_test.1.gz
+share/man/man1/tablix2.1.gz
+share/man/man1/tablix2_benchmark.1.gz
+share/man/man1/tablix2_kernel.1.gz
+share/man/man1/tablix2_output.1.gz
+share/man/man1/tablix2_plot.1.gz
+share/man/man1/tablix2_test.1.gz
 share/locale/sl/LC_MESSAGES/tablix2.mo
 share/tablix2/modulesref.xml
