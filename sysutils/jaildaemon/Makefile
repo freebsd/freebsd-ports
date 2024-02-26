@@ -1,5 +1,6 @@
 PORTNAME=	jaildaemon
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/jaildaemon/
 
@@ -16,6 +17,9 @@ USES=		tar:bzip2
 
 PLIST_FILES=	bin/jaildaemon \
 		etc/rc.d/jaildaemon \
-		man/man1/jaildaemon.1.gz
+		share/man/man1/jaildaemon.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man|share/man/man|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
