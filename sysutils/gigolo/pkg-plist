@@ -1,5 +1,5 @@
 bin/gigolo
-man/man1/gigolo.1.gz
+share/man/man1/gigolo.1.gz
 share/applications/gigolo.desktop
 share/icons/hicolor/128x128/apps/org.xfce.gigolo.png
 share/icons/hicolor/16x16/apps/org.xfce.gigolo.png
