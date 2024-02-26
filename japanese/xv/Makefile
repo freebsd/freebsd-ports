@@ -4,6 +4,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 program that displays images of various formats with japanization
 
 BROKEN=		Fails to generate binaries
+DEPRECATED=	Fails to build
+EXPIRATION_DATE=2024-03-31
 
 MASTERDIR=	${.CURDIR}/../../graphics/xv
 PKGDIR=		${.CURDIR}
