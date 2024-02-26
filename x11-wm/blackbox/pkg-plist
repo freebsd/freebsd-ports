@@ -28,6 +28,6 @@ include/bt/XDG.hh
 %%DATADIR%%/styles/Purple
 %%DATADIR%%/styles/Red
 %%DATADIR%%/menu
-man/man1/blackbox.1.gz
-man/man1/bsetbg.1.gz
-man/man1/bsetroot.1.gz
+share/man/man1/blackbox.1.gz
+share/man/man1/bsetbg.1.gz
+share/man/man1/bsetroot.1.gz
