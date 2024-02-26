@@ -1,6 +1,6 @@
 PORTNAME=	bgpuma
 PORTVERSION=	20151209
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	pi@FreeBSD.org
@@ -17,8 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cmu-sei
 GH_TAGNAME=	a29b2a7
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_FILES=	bin/bgpuma man/man1/bgpuma.1.gz
+PLIST_FILES=	bin/bgpuma share/man/man1/bgpuma.1.gz
 
 .include <bsd.port.mk>
