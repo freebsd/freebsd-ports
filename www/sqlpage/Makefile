@@ -2,8 +2,7 @@
 
 PORTNAME=	sqlpage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.3
-PORTREVISION=	1
+DISTVERSION=	0.19.0
 CATEGORIES=	www databases
 MASTER_SITES=	https://cdn.jsdelivr.net/npm/:npm
 DISTFILES=	${NPM_DISTFILES}
@@ -27,12 +26,12 @@ GH_PROJECT=	SQLpage
 USERS=		sqlpage
 GROUPS=		sqlpage
 
-NPM_DISTFILES=	apexcharts@3.45.1/dist/apexcharts.min.js:npm \
+NPM_DISTFILES=	apexcharts@3.46.0/dist/apexcharts.min.js:npm \
 		@tabler/core@1.0.0-beta20/dist/css/tabler.min.css:npm \
 		@tabler/core@1.0.0-beta20/dist/css/tabler-vendors.min.css:npm \
 		@tabler/core@1.0.0-beta20/dist/js/tabler.min.js:npm \
 		list.js-fixed@2.3.4/dist/list.min.js:npm \
-		@tabler/icons@2.43.0/tabler-sprite.svg:npm
+		@tabler/icons@2.47.0/tabler-sprite.svg:npm
 
 post-extract:
 		cd ${DISTDIR}; ${PAX} -rw ${NPM_DISTFILES:C/\/.*//g} ${WRKSRC}
