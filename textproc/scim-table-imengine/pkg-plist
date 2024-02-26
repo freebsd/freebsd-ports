@@ -5,7 +5,7 @@ lib/scim-1.0/1.4.0/IMEngine/table.so
 lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.a
 lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.la
 lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so
-man/man1/scim-make-table.1.gz
+share/man/man1/scim-make-table.1.gz
 share/scim/icons/table.png
 share/locale/zh_CN/LC_MESSAGES/scim-tables.mo
 share/locale/zh_TW/LC_MESSAGES/scim-tables.mo
