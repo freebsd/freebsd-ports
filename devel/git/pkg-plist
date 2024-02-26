@@ -143,6 +143,7 @@ libexec/git-core/git-remote-fd
 %%CURL%%libexec/git-core/git-remote-https
 libexec/git-core/git-repack
 libexec/git-core/git-replace
+libexec/git-core/git-replay
 libexec/git-core/git-request-pull
 libexec/git-core/git-rerere
 libexec/git-core/git-reset
@@ -320,6 +321,7 @@ share/man/man1/git-remote-fd.1.gz
 share/man/man1/git-remote.1.gz
 share/man/man1/git-repack.1.gz
 share/man/man1/git-replace.1.gz
+share/man/man1/git-replay.1.gz
 share/man/man1/git-request-pull.1.gz
 share/man/man1/git-rerere.1.gz
 share/man/man1/git-reset.1.gz
@@ -828,6 +830,8 @@ share/man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.43.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.43.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.43.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.43.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.44.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
