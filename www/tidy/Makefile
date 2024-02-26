@@ -1,6 +1,6 @@
 PORTNAME=	tidy4
 PORTVERSION=	20000804
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00
@@ -14,7 +14,7 @@ LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
 USES=		tar:tgz
 ALL_TARGET=	tidy
-PLIST_FILES=	bin/tidy4 man/man1/tidy4.1.gz
+PLIST_FILES=	bin/tidy4 share/man/man1/tidy4.1.gz
 PORTDOCS=	Overview.html tidy.gif release-notes.html grid.gif
 
 OPTIONS_DEFINE=	DOCS
@@ -25,7 +25,7 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tidy ${STAGEDIR}${PREFIX}/bin/tidy4
 	${INSTALL_MAN} ${WRKSRC}/man_page.txt \
-		${STAGEDIR}${PREFIX}/man/man1/tidy4.1
+		${STAGEDIR}${PREFIX}/share/man/man1/tidy4.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
