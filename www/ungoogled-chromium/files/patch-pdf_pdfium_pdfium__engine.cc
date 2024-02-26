@@ -1,6 +1,6 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2023-08-18 10:26:52 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2024-02-25 20:22:18 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -83,7 +83,7 @@
+@@ -85,7 +85,7 @@
  #include "gin/public/cppgc.h"
  #endif
  

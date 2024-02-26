@@ -1,6 +1,6 @@
---- ipc/ipc_message_utils.cc.orig	2023-09-17 07:59:53 UTC
+--- ipc/ipc_message_utils.cc.orig	2024-02-25 20:22:18 UTC
 +++ ipc/ipc_message_utils.cc
-@@ -393,7 +393,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
+@@ -394,7 +394,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

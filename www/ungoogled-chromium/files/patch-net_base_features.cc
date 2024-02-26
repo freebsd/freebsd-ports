@@ -1,6 +1,6 @@
---- net/base/features.cc.orig	2024-02-03 15:42:55 UTC
+--- net/base/features.cc.orig	2024-02-25 20:22:18 UTC
 +++ net/base/features.cc
-@@ -477,7 +477,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
+@@ -502,7 +502,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
               "SpdyHeadersToHttpResponseUseBuilder",
               base::FEATURE_DISABLED_BY_DEFAULT);
  

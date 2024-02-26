@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2023-10-13 13:20:35 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2024-02-25 20:22:18 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
-@@ -93,7 +93,7 @@
+@@ -94,7 +94,7 @@
  #include "components/policy/core/common/cloud/user_cloud_policy_manager.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/user_permission_service_factory.h"
  #include "components/device_signals/core/browser/user_permission_service.h"  // nogncheck
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -189,12 +189,12 @@ enum class ReportingType {
+@@ -190,12 +190,12 @@ enum class ReportingType {
    kLegacyTech,
  };
  
@@ -24,7 +24,7 @@
  const char kManagementDeviceSignalsDisclosure[] =
      "managementDeviceSignalsDisclosure";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -772,7 +772,7 @@ void ManagementUIHandler::AddReportingInfo(base::Value
+@@ -829,7 +829,7 @@ void ManagementUIHandler::AddReportingInfo(base::Value
               GetReportingTypeValue(report_definition.reporting_type));
      report_sources->Append(std::move(data));
    }
@@ -33,7 +33,7 @@
    // Insert the device signals consent disclosure at the end of browser
    // reporting section.
    auto* user_permission_service = GetUserPermissionService();
-@@ -1054,7 +1054,7 @@ base::Value::Dict ManagementUIHandler::GetThreatProtec
+@@ -1111,7 +1111,7 @@ base::Value::Dict ManagementUIHandler::GetThreatProtec
                                    &info);
    }
  
@@ -42,7 +42,7 @@
    if (capture_policy::IsGetAllScreensMediaAllowedForAnySite(profile)) {
      AddThreatProtectionPermission(kManagementScreenCaptureEvent,
                                    kManagementScreenCaptureData, &info);
-@@ -1138,7 +1138,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
+@@ -1195,7 +1195,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
        ->policy_service();
  }
  

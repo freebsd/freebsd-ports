@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2024-02-03 15:42:55 UTC
+--- content/public/common/content_features.cc.orig	2024-02-25 20:22:18 UTC
 +++ content/public/common/content_features.cc
 @@ -40,7 +40,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
               "AudioServiceOutOfProcess",
@@ -18,7 +18,16 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1190,7 +1190,7 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -664,7 +664,7 @@ BASE_FEATURE(kOverscrollHistoryNavigation,
+ // Setting to control overscroll history navigation.
+ BASE_FEATURE(kOverscrollHistoryNavigationSetting,
+              "OverscrollHistoryNavigationSetting",
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -1208,7 +1208,7 @@ BASE_FEATURE(kWebAssemblyTiering,
  BASE_FEATURE(kWebAssemblyTrapHandler,
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -27,7 +36,7 @@
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1232,7 +1232,11 @@ BASE_FEATURE(kWebUICodeCache,
+@@ -1250,7 +1250,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

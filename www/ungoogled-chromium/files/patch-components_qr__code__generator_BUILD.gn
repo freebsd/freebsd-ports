@@ -1,6 +1,6 @@
---- components/qr_code_generator/BUILD.gn.orig	2024-02-03 15:42:55 UTC
+--- components/qr_code_generator/BUILD.gn.orig	2024-02-25 20:22:18 UTC
 +++ components/qr_code_generator/BUILD.gn
-@@ -39,20 +39,20 @@ source_set("qr_code_generator") {
+@@ -40,20 +40,20 @@ source_set("qr_code_generator") {
    ]
    deps = [
      ":qr_code_generator_features",

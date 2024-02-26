@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/chrome_views_delegate.h.orig	2023-02-11 09:11:04 UTC
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig	2024-02-25 20:22:18 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate.h
-@@ -54,11 +54,11 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+@@ -59,11 +59,11 @@ class ChromeViewsDelegate : public views::ViewsDelegat
                               base::OnceClosure callback) override;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
