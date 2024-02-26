@@ -1,6 +1,6 @@
 PORTNAME=	vnless
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.monash.edu.au/pub/vietnam/unix/
 DISTNAME=	${PORTNAME}
@@ -21,8 +21,8 @@ CFLAGS+=	-Wno-return-type
 
 PLIST_FILES=	bin/vnless \
 		bin/vnlesskey \
-		man/man1/vnless.1.gz \
-		man/man1/vnlesskey.1.gz \
+		share/man/man1/vnless.1.gz \
+		share/man/man1/vnlesskey.1.gz \
 		share/misc/vnless.help
 
 MAKE_JOBS_UNSAFE=	yes
