@@ -1,6 +1,5 @@
 @owner www
 @group www
-%%WWWDIR%%/.idea/php.xml
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/COPYRIGHT
 %%WWWDIR%%/ChangeLog
