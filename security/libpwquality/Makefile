@@ -1,6 +1,6 @@
 PORTNAME=	libpwquality
 DISTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libcrack.so:security/cracklib
 USES=		cpe gmake libtool localbase pathfix tar:bz2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	--enable-ld-version-script
 USE_LDCONFIG=	yes
 CPE_VENDOR=	libpwquality_project
 CONFIGURE_ARGS+=--disable-pam
