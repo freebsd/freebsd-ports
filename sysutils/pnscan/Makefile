@@ -1,6 +1,7 @@
 PORTNAME=		pnscan
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.14.1
+PORTREVISION=	1
 CATEGORIES=		sysutils security
 
 MAINTAINER=		pen@lysator.liu.se
@@ -14,9 +15,10 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		ptrrkssn
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=		install-strip
 
 PLIST_FILES=		bin/pnscan \
-			man/man1/pnscan.1.gz
+			share/man/man1/pnscan.1.gz
 
 .include <bsd.port.mk>
