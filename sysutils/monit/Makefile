@@ -1,5 +1,6 @@
 PORTNAME=	monit
 DISTVERSION=	5.33.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mmonit.com/monit/dist/
 
@@ -15,12 +16,13 @@ CPE_VENDOR=	m${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/monit \
 		etc/monitrc.sample \
-		man/man1/monit.1.gz
+		share/man/man1/monit.1.gz
 
 PORTDOCS=	CHANGES COPYING
 
