@@ -1,6 +1,6 @@
 PORTNAME=	wmctrl
 PORTVERSION=	1.07
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://sweb.cz/tripie/utils/wmctrl/dist/
 
@@ -12,9 +12,10 @@ LICENSE=	GPLv2
 
 USES=		gnome pkgconfig xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_XORG=	x11 xmu xext xt
 USE_GNOME=	glib20
 
-PLIST_FILES=	bin/wmctrl man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/wmctrl share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
