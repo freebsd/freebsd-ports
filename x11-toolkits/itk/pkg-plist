@@ -10,9 +10,9 @@ lib/itk%%MAJOR%%.%%MINOR%%/itk.tcl
 lib/itk%%MAJOR%%.%%MINOR%%/itkConfig.sh
 lib/itk%%MAJOR%%.%%MINOR%%/tclIndex
 lib/itk%%MAJOR%%.%%MINOR%%/pkgIndex.tcl
-man/mann/Archetype.n.gz
-man/mann/Toplevel.n.gz
-man/mann/Widget.n.gz
-man/mann/itk.n.gz
-man/mann/itkvars.n.gz
-man/mann/usual.n.gz
+share/man/mann/Archetype.n.gz
+share/man/mann/Toplevel.n.gz
+share/man/mann/Widget.n.gz
+share/man/mann/itk.n.gz
+share/man/mann/itkvars.n.gz
+share/man/mann/usual.n.gz

@@ -40,6 +40,6 @@ ${SCRIPTPATH} ${INCDIR}:
 beforeinstall: pkgIndex.tcl itkConfig.sh ${SCRIPTPATH} ${INCDIR}
 	${BSD_INSTALL_DATA} pkgIndex.tcl itkConfig.sh ${.CURDIR}/library/* ${SCRIPTPATH}
 	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
-	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${DESTDIR}${PREFIX}/man/mann/
+	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${DESTDIR}${PREFIX}/share/man/mann/
 
 .include <bsd.lib.mk>
