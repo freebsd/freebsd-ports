@@ -1,7 +1,7 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	24.2.0
-PORTREVISION=	1
+DISTVERSION=	24.2.1
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +19,8 @@ GH_ACCOUNT=	sourcefrog
 CARGO_CRATES=	aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.7 \
-		anstyle-1.0.4 \
+		anstream-0.6.11 \
+		anstyle-1.0.5 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
@@ -29,7 +29,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.1 \
+		bitflags-2.4.2 \
 		bstr-1.9.0 \
 		bumpalo-3.14.0 \
 		bytecount-0.6.7 \
@@ -37,11 +37,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		cargo-platform-0.1.6 \
 		cargo_metadata-0.18.1 \
 		cc-1.0.83 \
+		cfg-expr-0.15.6 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
-		clap-4.4.17 \
-		clap_builder-4.4.17 \
-		clap_complete-4.4.7 \
+		chrono-0.4.33 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
+		clap_complete-4.4.10 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		color-print-0.3.5 \
@@ -68,15 +69,16 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		float-cmp-0.9.0 \
 		fs2-0.4.3 \
 		globset-0.4.14 \
+		guppy-workspace-hack-0.1.0 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.3 \
+		hermit-abi-0.3.4 \
 		humantime-2.1.0 \
-		iana-time-zone-0.1.59 \
+		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		ignore-0.4.22 \
-		indexmap-2.1.0 \
+		indexmap-2.2.2 \
 		indoc-2.0.4 \
 		insta-1.34.0 \
 		io-lifetimes-1.0.11 \
@@ -84,20 +86,23 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		itoa-1.0.10 \
 		js-sys-0.3.67 \
 		lazy_static-1.4.0 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.12 \
+		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		memchr-2.7.1 \
 		minimal-lexical-0.2.1 \
 		mutants-0.0.3 \
+		nextest-metadata-0.10.0 \
+		nextest-workspace-hack-0.1.0 \
 		nix-0.27.1 \
 		nom-7.1.3 \
 		nom_locate-4.2.0 \
 		normalize-line-endings-0.3.0 \
 		nu-ansi-term-0.46.0 \
+		num-conv-0.1.0 \
 		num-traits-0.2.17 \
 		nutmeg-0.1.4 \
 		once_cell-1.19.0 \
@@ -112,32 +117,35 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		pretty_assertions-1.4.0 \
-		proc-macro2-1.0.76 \
+		proc-macro2-1.0.78 \
 		quote-1.0.35 \
 		redox_syscall-0.4.1 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
 		rustix-0.37.27 \
-		rustix-0.38.30 \
+		rustix-0.38.31 \
 		rustversion-1.0.14 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.21 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		serde_json-1.0.113 \
 		serde_spanned-0.6.5 \
 		sharded-slab-0.1.7 \
 		similar-2.4.0 \
-		smallvec-1.12.0 \
+		smallvec-1.13.1 \
+		smol_str-0.2.1 \
 		strsim-0.10.0 \
-		strum-0.25.0 \
-		strum_macros-0.25.3 \
+		strum-0.26.1 \
+		strum_macros-0.26.1 \
 		subprocess-0.2.9 \
 		syn-1.0.109 \
 		syn-2.0.48 \
+		target-lexicon-0.12.13 \
+		target-spec-3.1.0 \
 		tempfile-3.9.0 \
 		terminal_size-0.2.6 \
 		terminal_size-0.3.0 \
@@ -145,12 +153,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		thiserror-1.0.56 \
 		thiserror-impl-1.0.56 \
 		thread_local-1.1.7 \
-		time-0.3.31 \
+		time-0.3.34 \
 		time-core-0.1.2 \
-		time-macros-0.2.16 \
-		toml-0.8.8 \
+		time-macros-0.2.17 \
+		toml-0.8.9 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.21.0 \
+		toml_edit-0.21.1 \
 		tracing-0.1.40 \
 		tracing-appender-0.2.3 \
 		tracing-attributes-0.1.27 \
@@ -193,7 +201,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.34 \
+		winnow-0.5.37 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1
 
