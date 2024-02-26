@@ -1,7 +1,7 @@
 @dir man/man1
 @dir etc/X11/app-defaults
-man/man1/xmtoolbox.1.gz
-man/man1/xmsm.1.gz
+share/man/man1/xmtoolbox.1.gz
+share/man/man1/xmsm.1.gz
 etc/X11/app-defaults/XmSm
 etc/X11/app-defaults/XmToolbox
 etc/X11/toolboxrc
