@@ -1,5 +1,6 @@
 PORTNAME=	sympa
 DISTVERSION=	6.2.72
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr
@@ -59,6 +60,7 @@ GH_ACCOUNT=	sympa-community
 USE_RC_SUBR=	sympa
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/bin \
 			--datadir=${DATADIR} \
