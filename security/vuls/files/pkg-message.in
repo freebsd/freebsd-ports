@@ -3,10 +3,13 @@
   message: <<EOM
 Congratulations, you have installed %%PORTNAME%%!
 
- To use vuls, install vuls on all your machines and activate the daily
-(nightly) periodic script using
+To use vuls, install vuls on all your machines and activate the daily
+periodic script using
 
 sysrc -f /etc/periodic.conf daily_vuls_enable="YES"
+
+and perhaps also add some config parameters; check the information header of
+%%PREFIX%%/etc/periodic/daily/%%PORTNAME%%.
 
 Configure vuls by editing %%ETCDIR%%/config.toml.
 
@@ -20,7 +23,7 @@ service somewhere in your infrastructure. Set it up by enabling it and start it
 using service:
 
 sysrc %%PORTNAME%%_enable="YES"
-service %%PORTNAME% start
+service %%PORTNAME%% start
 
 Also consider installing security/vulsrepo to present the resports in a
 friendly human-readable web gui.
