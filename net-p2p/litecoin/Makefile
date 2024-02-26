@@ -1,7 +1,7 @@
 PORTNAME=	litecoin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	hsw@bitmark.com
@@ -18,6 +18,7 @@ USES=		autoreconf compiler:c++11-lib cpe gmake libtool localbase pkgconfig qt:5 
 
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SLAVE_PORT?=	no
 
@@ -79,7 +80,7 @@ CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcr
 		OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 MAKE_ENV+=	V=1
 
-PLIST_FILES?=	bin/litecoin-qt man/man1/litecoin-qt.1.gz \
+PLIST_FILES?=	bin/litecoin-qt share/man/man1/litecoin-qt.1.gz \
 		share/applications/litecoin-qt.desktop share/pixmaps/litecoin.png
 
 .include <bsd.port.options.mk>

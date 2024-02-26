@@ -1,5 +1,5 @@
 MASTERDIR=	${.CURDIR}/../litecoin
-PORTREVISION=	6
+PORTREVISION=	7
 PKGNAMESUFFIX=	-utils
 
 COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)
@@ -19,8 +19,8 @@ CONFIGURE_ARGS=	--without-daemon \
 		--disable-wallet
 
 PLIST_FILES=	bin/litecoin-cli bin/litecoin-tx \
-		man/man1/litecoin-cli.1.gz man/man1/litecoin-tx.1.gz \
+		share/man/man1/litecoin-cli.1.gz share/man/man1/litecoin-tx.1.gz \
 		bin/litecoin-wallet \
-		man/man1/litecoin-wallet.1.gz
+		share/man/man1/litecoin-wallet.1.gz
 
 .include "${MASTERDIR}/Makefile"
