@@ -1,6 +1,6 @@
 PORTNAME=	neon
 DISTVERSION=	0.32.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://notroj.github.io/neon/
 
@@ -15,6 +15,8 @@ USES=		cpe libtool localbase:ldflags pathfix pkgconfig
 CPE_VENDOR=	webdav
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	have_ld_version_script=yes
+LDFLAGS=	-Wl,--undefined-version
 CONFIGURE_ARGS=	--enable-shared --disable-static
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
