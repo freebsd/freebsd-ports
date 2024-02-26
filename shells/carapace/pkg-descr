@@ -1,0 +1,2 @@
+Carapace provides argument completion for multiple CLI commands, and
+works across multiple POSIX and non-POSIX shells.

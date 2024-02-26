@@ -11,6 +11,7 @@
     SUBDIR += bashc
     SUBDIR += bicon
     SUBDIR += bosh
+    SUBDIR += carapace
     SUBDIR += ch
     SUBDIR += dash
     SUBDIR += elvish
