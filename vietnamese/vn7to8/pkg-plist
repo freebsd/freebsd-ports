@@ -1,6 +1,6 @@
 bin/vn7to8
 bin/vn8to7
 bin/vn80to81
-man/man1/vn7to8.1.gz
-man/man1/vn8to7.1.gz
-man/man1/vn80to81.1.gz
+share/man/man1/vn7to8.1.gz
+share/man/man1/vn8to7.1.gz
+share/man/man1/vn80to81.1.gz
