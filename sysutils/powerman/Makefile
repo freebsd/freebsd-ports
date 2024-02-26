@@ -1,6 +1,6 @@
 PORTNAME=	powerman
 PORTVERSION=	2.3.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	https://github.com/chaos/powerman/releases/download/${PORTVERSION}/
 
@@ -20,6 +20,7 @@ USE_RC_SUBR=	powerman
 SHEBANG_FILES=	heartbeat/powerman
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-httppower --localstatedir=/var \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 
