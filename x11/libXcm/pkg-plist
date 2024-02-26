@@ -20,10 +20,10 @@ libdata/pkgconfig/xcm-ddc.pc
 libdata/pkgconfig/xcm-edid.pc
 libdata/pkgconfig/xcm-x11.pc
 libdata/pkgconfig/xcm.pc
-man/man3/Xcm.3.gz
-man/man3/XcmDDC.3.gz
-man/man3/XcmEdidParse.3.gz
-man/man3/XcmEvents.3.gz
-man/man3/XcolorProfile.3.gz
-man/man3/XcolorRegion.3.gz
-man/man3/libXcm.3.gz
+share/man/man3/Xcm.3.gz
+share/man/man3/XcmDDC.3.gz
+share/man/man3/XcmEdidParse.3.gz
+share/man/man3/XcmEvents.3.gz
+share/man/man3/XcolorProfile.3.gz
+share/man/man3/XcolorRegion.3.gz
+share/man/man3/libXcm.3.gz
