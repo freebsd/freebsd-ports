@@ -1,5 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	16.0.20240222
+PORTREVISION=	1
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -56,7 +57,6 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-file>0:www/py-requests-file@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug2>0:www/py-werkzeug2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}secure-cookie>0:www/py-secure-cookie@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=1.2.0:textproc/py-xlrd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlwt>=1.3.0:textproc/py-xlwt@${PY_FLAVOR} \
