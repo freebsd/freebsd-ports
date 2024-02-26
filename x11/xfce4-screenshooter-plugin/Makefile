@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.10.5
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
@@ -23,6 +24,7 @@ USE_XFCE=	libexo libmenu panel xfconf
 USE_XORG=	ice sm x11 xfixes xext
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS IMGUR
