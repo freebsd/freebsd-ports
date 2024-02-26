@@ -33,7 +33,7 @@ pre-install:
 	${RM} -r ${STAGEDIR}/wrkdirs
 
 post-install:
-.for l in lib/bear/libexec.so lib/bear/wrapper
+.for l in bin/bear lib/bear/libexec.so lib/bear/wrapper
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${l}
 .endfor
 
