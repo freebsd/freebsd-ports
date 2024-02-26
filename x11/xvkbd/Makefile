@@ -1,5 +1,6 @@
 PORTNAME=	xvkbd
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://t-sato.in.coocan.jp/xvkbd/
 
@@ -17,6 +18,7 @@ DESKTOP_ENTRIES="Xvkbd" "" "" "xvkbd" "Utility;" false
 OPTIONS_DEFINE=		DOCS
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 XAW3D_DESC=		Xaw3d widget library support
 XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XTEST_DESC=		XTEST extensions support
