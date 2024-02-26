@@ -1,6 +1,6 @@
 PORTNAME=	ipa_sdb
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF/ipa-system/modules/ipa_sdb
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:sysutils/ipa
 USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 NO_OPTIONS_SORT=	yes
