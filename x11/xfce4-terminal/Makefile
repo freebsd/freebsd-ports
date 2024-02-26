@@ -1,8 +1,12 @@
 PORTNAME=	xfce4-terminal
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
+
+PATCH_SITES=	https://gitlab.xfce.org/apps/xfce4-terminal/-/commit/
+PATCHFILES=		177fda86451cdeaaea8ed409e6d711b670699a97.patch:-p1
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
