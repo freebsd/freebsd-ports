@@ -10,9 +10,9 @@ libexec/mate-screensaver-gl-helper
 libexec/mate-screensaver/floaters
 libexec/mate-screensaver/popsquares
 libexec/mate-screensaver/slideshow
-man/man1/mate-screensaver-command.1.gz
-man/man1/mate-screensaver-preferences.1.gz
-man/man1/mate-screensaver.1.gz
+share/man/man1/mate-screensaver-command.1.gz
+share/man/man1/mate-screensaver-preferences.1.gz
+share/man/man1/mate-screensaver.1.gz
 share/applications/mate-screensaver-preferences.desktop
 share/applications/screensavers/cosmos-slideshow.desktop
 share/applications/screensavers/footlogo-floaters.desktop
