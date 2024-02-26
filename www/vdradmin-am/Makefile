@@ -1,5 +1,6 @@
 PORTNAME=	vdradmin-am
 PORTVERSION=	3.6.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 
@@ -39,7 +40,7 @@ MAKE_ENV+=	ETCDIR=${ETCDIR}
 MAKE_ENV+=	DOCDIR=${DOCSDIR}
 MAKE_ENV+=	BINDIR=${PREFIX}/bin
 MAKE_ENV+=	LOCDIR=${PREFIX}/share/locale
-MAKE_ENV+=	MANDIR=${PREFIX}/man
+MAKE_ENV+=	MANDIR=${PREFIX}/share/man
 MAKE_ENV+=	LOGDIR=/var/log/${PORTNAME}
 MAKE_ENV+=	CACHEDIR=/var/cache/${PORTNAME}
 MAKE_ENV+=	PIDFILE=/var/run/${PORTNAME}/vdradmind.pid
