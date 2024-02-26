@@ -1,6 +1,6 @@
 PORTNAME=	socket
 PORTVERSION=	1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://wolfram.schneider.org/src/ LOCAL/wosch
 
@@ -9,7 +9,9 @@ COMMENT=	Create TCP socket and connect to stdin/out
 
 LICENSE=	GPLv1
 
-PLIST_FILES=	bin/socket man/man1/socket.1.gz
+MAKE_ARGS=	INSTALLMANPATH=${STAGEDIR}${PREFIX}/share/man
+
+PLIST_FILES=	bin/socket share/man/man1/socket.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
