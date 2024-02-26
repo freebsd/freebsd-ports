@@ -1,5 +1,6 @@
 PORTNAME=	vbindiff
 DISTVERSION=	3.0_beta5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.cjmweb.net/vbindiff/
 
@@ -11,8 +12,9 @@ LICENSE=	GPLv2+
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/vbindiff \
-		man/man1/vbindiff.1.gz
+		share/man/man1/vbindiff.1.gz
 
 .include <bsd.port.mk>
