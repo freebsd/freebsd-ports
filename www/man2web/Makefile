@@ -1,6 +1,6 @@
 PORTNAME=	man2web
 PORTVERSION=	0.88
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/doc/GPL
 
 USES=		cpe
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--bindir="${PREFIX}/${CGIDIR}" \
 		--sysconfdir="${PREFIX}/etc" \
-		--with-manpath=/usr/share/man:${LOCALBASE}/man \
+		--with-manpath=/usr/share/man:${LOCALBASE}/share/man \
 		--with-distro=freebsd --enable-lynx
 
 CGIDIR=		www/cgi-bin
