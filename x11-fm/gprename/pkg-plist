@@ -1,5 +1,5 @@
 bin/gprename
-man/man1/gprename.1.gz
+share/man/man1/gprename.1.gz
 share/applications/gprename-nautilus-actions.xml
 share/applications/gprename.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
