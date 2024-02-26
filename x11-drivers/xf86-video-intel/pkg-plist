@@ -5,4 +5,4 @@
 %%XVMC%%lib/libIntelXvMC.so
 %%XVMC%%lib/libIntelXvMC.so.1.0.0
 lib/xorg/modules/drivers/intel_drv.so
-man/man4/intel.4x.gz
+share/man/man4/intel.4x.gz
