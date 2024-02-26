@@ -1,5 +1,6 @@
 PORTNAME=	mapdir
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.olivermahmoudi.com/files/
 
@@ -17,8 +18,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/mapdir \
 		bin/mapdircmp \
-		man/man1/mapdir.1.gz \
-		man/man1/mapdircmp.1.gz
+		share/man/man1/mapdir.1.gz \
+		share/man/man1/mapdircmp.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -37,7 +38,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}cmp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}cmp.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}cmp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
