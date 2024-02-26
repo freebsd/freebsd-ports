@@ -1,5 +1,5 @@
 bin/filepp
-man/man1/filepp.1.gz
+share/man/man1/filepp.1.gz
 %%DATADIR%%/modules/bigdef.pm
 %%DATADIR%%/modules/bigfunc.pm
 %%DATADIR%%/modules/blc.pm
