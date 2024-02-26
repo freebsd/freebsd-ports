@@ -1,6 +1,6 @@
 PORTNAME=	perl2html
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	SUNSITE/apps/www/converters
 
@@ -11,6 +11,7 @@ WWW=		http://user.cs.tu-berlin.de/~schintke/x2html/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
