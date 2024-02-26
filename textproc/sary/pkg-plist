@@ -22,8 +22,8 @@ lib/libsary.so
 lib/libsary.so.10
 lib/libsary.so.10.0.0
 libdata/pkgconfig/sary.pc
-man/man1/mksary.1.gz
-man/man1/sary.1.gz
+share/man/man1/mksary.1.gz
+share/man/man1/sary.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/en/libsary.html
 %%PORTDOCS%%%%DOCSDIR%%/en/suffix-array.html
 %%PORTDOCS%%%%DOCSDIR%%/images/figure1.png
