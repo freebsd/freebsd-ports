@@ -12,6 +12,10 @@ MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Objective Caml image processing library
 WWW=		http://pauillac.inria.fr/camlimages/
 
+BROKEN=		Unfetchable and fails to build
+DEPRECATED=	Upstream is gone and failing to build for months
+EXPIRATION_DATE=2024-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:lang/ocaml-autoconf
 BUILD_DEPENDS+=	omake:devel/omake
 
