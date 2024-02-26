@@ -1,7 +1,7 @@
 PORTNAME=	e2guardian
 PORTVERSION=	5.3.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	marcellocoutinho@gmail.com
@@ -20,6 +20,7 @@ USE_GITHUB=	yes
 USE_CXXSTD=	c++11
 USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-piddir=/var/run
 

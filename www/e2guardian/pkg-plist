@@ -241,7 +241,7 @@
 @sample %%ETCDIR%%/lists/urlredirectregexplist.sample
 @sample %%ETCDIR%%/lists/urlregexplist.sample
 @sample %%ETCDIR%%/lists/weightedphraselist.sample
-man/man8/e2guardian.8.gz
+share/man/man8/e2guardian.8.gz
 sbin/e2guardian
 %%PORTDOCS%%%%DOCSDIR%%/AuthPlugins
 %%PORTDOCS%%%%DOCSDIR%%/ContentScanners
