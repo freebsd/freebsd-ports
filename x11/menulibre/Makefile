@@ -1,5 +1,5 @@
 PORTNAME=	menulibre
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	x11
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,11 +28,4 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
-
-post-stage:
-	${RMDIR} ${STAGEDIR}${DATADIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
