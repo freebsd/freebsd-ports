@@ -1,6 +1,6 @@
 PORTNAME=	wmclockmon
 PORTVERSION=	0.8.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -19,6 +19,7 @@ USE_XORG=	xpm x11 xext
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|pkgconf gtk+-2.0|g'\
