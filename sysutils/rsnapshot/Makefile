@@ -1,6 +1,6 @@
 PORTNAME=	rsnapshot
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rsync:net/rsync \
 USES=		perl5
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README.md
