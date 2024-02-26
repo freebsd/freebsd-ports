@@ -1,5 +1,6 @@
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.24
+PORTREVISION=	1
 CATEGORIES=	www mail
 
 MAINTAINER=	kerndtr@kerndt.com
@@ -19,7 +20,7 @@ NO_ARCH=	yes
 
 INSTALL_ARGS=	-prefix ${STAGEDIR} -binpath ${STAGEDIR}${PREFIX}/bin \
 		-libpath ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} \
-		-manpath ${STAGEDIR}${PREFIX}/man \
+		-manpath ${STAGEDIR}${PREFIX}/share/man \
 		-batch
 
 OPTIONS_DEFINE=	DOCS
