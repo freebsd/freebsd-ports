@@ -1,6 +1,6 @@
 PORTNAME=	fluxbox
 PORTVERSION=	1.3.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -20,6 +20,7 @@ USES=		gmake pkgconfig xorg
 USE_CXXSTD=	c++11
 USE_XORG=	x11 xext xorgproto xft xpm xrandr
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=   ${PREFIX}/share
 
 PORTDATA=	*
 PORTDOCS=	*
