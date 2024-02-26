@@ -39,7 +39,7 @@ MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
-# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/150
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1,ConsoleKit,' \
 		${WRKSRC}/main.c
