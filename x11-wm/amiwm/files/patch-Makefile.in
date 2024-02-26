@@ -1,6 +1,15 @@
---- Makefile.in.orig	2010-07-20 00:07:34.000000000 +0800
-+++ Makefile.in	2014-07-02 09:42:52.170996007 +0800
-@@ -43,7 +43,7 @@ DISTFILES = README README.modules INSTAL
+--- Makefile.in.orig	2023-04-16 16:11:41 UTC
++++ Makefile.in
+@@ -14,7 +14,7 @@ libdir = $(exec_prefix)/lib
+ exec_prefix = @exec_prefix@
+ bindir = $(exec_prefix)/bin
+ libdir = $(exec_prefix)/lib
+-mandir = $(prefix)/man
++mandir = $(prefix)/share/man
+ INSTALL = @INSTALL@
+ LN_S = @LN_S@
+ RM = -rm -f
+@@ -44,7 +44,7 @@ PACKAGENAME = amiwm
  
  PACKAGENAME = amiwm
  
@@ -9,7 +18,7 @@
  
  all : lib_all
  	@$(MAKE) local_all
-@@ -88,32 +88,32 @@ kbdlexer.c : kbdlexer.l
+@@ -89,32 +89,32 @@ install : $(PROGS) $(MODULES) Xsession Xsession2 Xinit
  	$(LEX) -t $< > kbdlexer.c
  
  install : $(PROGS) $(MODULES) Xsession Xsession2 Xinitrc amiwm-init

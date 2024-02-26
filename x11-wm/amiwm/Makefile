@@ -1,5 +1,6 @@
 PORTNAME=	amiwm
 PORTVERSION=	0.22.pl2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 DISTNAME=	${PORTNAME}0.22pl2
