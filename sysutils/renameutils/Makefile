@@ -1,6 +1,6 @@
 PORTNAME=	renameutils
 PORTVERSION=	0.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SAVANNAH
 
@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	gls:sysutils/coreutils
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		readline charsetfix
 
 CONFLICTS_INSTALL=	imv # bin/imv
