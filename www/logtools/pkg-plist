@@ -4,8 +4,8 @@ bin/clfsplit
 bin/funnel
 bin/logprn
 @sample etc/clfdomainsplit.cfg.sample
-man/man1/clfdomainsplit.1.gz
-man/man1/clfmerge.1.gz
-man/man1/clfsplit.1.gz
-man/man1/funnel.1.gz
-man/man1/logprn.1.gz
+share/man/man1/clfdomainsplit.1.gz
+share/man/man1/clfmerge.1.gz
+share/man/man1/clfsplit.1.gz
+share/man/man1/funnel.1.gz
+share/man/man1/logprn.1.gz
