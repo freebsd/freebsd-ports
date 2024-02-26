@@ -1,5 +1,6 @@
 PORTNAME=	pound
 PORTVERSION=	4.11
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
@@ -15,6 +16,7 @@ TEST_DEPENDS=	p5-IO-FDPass>=0:devel/p5-IO-FDPass \
 USES=		cpe gmake ssl
 CPE_VENDOR=	apsis
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 USE_RC_SUBR=	${PORTNAME}
 TEST_TARGET=	check
