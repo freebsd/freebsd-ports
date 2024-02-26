@@ -16,7 +16,7 @@
 -BINDIR	= /local/bin
 -MANDIR	= /local/man
 +BINDIR	= ${PREFIX}/bin
-+MANDIR	= ${PREFIX}/man
++MANDIR	= ${PREFIX}/share/man
  
  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  #                         END OF  CUSTOMIZATION SECTION
