@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2023-12-16 17:03:52 UTC
++++ src/Makefile
+@@ -20,7 +20,7 @@ else
+ ifeq ($(OPERATING_SYSTEM), MACOSX)
+   LIBS_ALL = $(LIBS) -lm -lstdc++
+ else
+-  LIBS_ALL = $(LIBS) -lm -lstdc++fs
++  LIBS_ALL = $(LIBS) -lm -lstdc++
+ endif
+ ifeq ($(USE_UI_GTKMM), true)
+   OBJ_FILES_ALL += $(OBJ_FILES_GTKMM)

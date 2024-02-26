@@ -1,6 +1,5 @@
 PORTNAME=	freedoko
-PORTVERSION=	0.7.19
-PORTREVISION=	4
+DISTVERSION=	0.8.0
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -9,85 +8,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
 WWW=		https://free-doko.sourceforge.net/
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../doc/GPL
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
+BUILD_DEPENDS+=	a2x:textproc/asciidoc \
+		w3m:www/w3m \
+		rsync:net/rsync \
+		dos2unix:converters/unix2dos
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++14-lang gettext-runtime gettext-tools gmake gnome \
-		localbase pkgconfig zip:infozip
-
-USE_CXXSTD=	c++14
+USES=		gettext-runtime gettext-tools gmake gnome localbase \
+		pkgconfig zip:infozip openal:al,alut tex
 USE_GNOME=	gdkpixbuf2 gtkmm30
-MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
+USE_TEX=	pdftex:build dvipsk:build
 
-OPTIONS_DEFINE=		DOCS NETWORK OPENAL
-OPTIONS_DEFAULT=	NETWORK OPENAL
+ALL_TARGET=	compile documentation
+LDFLAGS_i386=	-Wl,-znotext
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
-NETWORK_DESC=		Network support
-NETWORK_LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
-NETWORK_MAKE_ENV=	USE_NETWORK=true
-
-OPENAL_USES=		openal:al,alut
-OPENAL_MAKE_ENV=	INCLUDE_SOUND_ALUT="$$(pkg-config --cflags freealut)" \
-			LIBS_SOUND_ALUT="$$(pkg-config --libs freealut)" \
-			USE_SOUND=true USE_SOUND_ALUT=true
-OPENAL_LDFLAGS=		${_OPENAL_LDFLAGS_${ARCH}}
-_OPENAL_LDFLAGS_i386=	-Wl,-znotext
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|@echo $$(CXX)|@true $$(CXX)|g ; \
-		 s|@$$(CXX)|$$(CXX)|g' \
-		${WRKSRC}/Makefile.rules
-	@${REINPLACE_CMD} -e \
-		'/\/X11\//d ; \
-		 s|/usr/local/|${LOCALBASE}/|g' \
-		${WRKSRC}/misc/preferences.cpp
-	@${REINPLACE_CMD} -e \
-		'/^Exec/s|=.*|=FreeDoko| ; \
-		 /^Path/d ; \
-		 /Categories/s|Application;|GTK;|' \
-		${WRKSRC}/../bin/FreeDoko.desktop
-
-do-configure:
-	@(cd ${WRKSRC} && ${SED} -e \
-		'/VALUE/s|#CPPFLAGS|CPPFLAGS| ; \
-		 s|\.\./data|$$(DATADIR)| ; \
-		 s|\.\./manual|$$(DOCSDIR)/manual|' \
-		< Makefile.local.template > Makefile.local)
-
-post-build:
-	@${FIND} ${WRKSRC}/../doc -empty -delete
-
-do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} FreeDoko \
-		${STAGEDIR}${PREFIX}/bin)
-	${LN} -sf FreeDoko ${STAGEDIR}${PREFIX}/bin/freedoko
-	(cd ${WRKSRC}/../bin && ${INSTALL_DATA} FreeDoko.desktop \
-		${STAGEDIR}${PREFIX}/share/applications)
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} icon.png logo.png \
-		${STAGEDIR}${DATADIR})
-.for i in backgrounds cardsets iconsets rules sounds
-	(cd ${WRKSRC}/../data && ${COPYTREE_SHARE} ${i} \
-		${STAGEDIR}${DATADIR} "! -name *Makefile*")
-.endfor
-	${RLN} ${STAGEDIR}${DATADIR}/icon.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/FreeDoko.png
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/../doc && ${INSTALL_DATA} Bugs Roadmap \
-		${STAGEDIR}${DOCSDIR})
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/de
-	(cd ${WRKSRC}/../doc/de && ${INSTALL_DATA} LiesMich.* \
-		${STAGEDIR}${DOCSDIR}/de)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/en
-	(cd ${WRKSRC}/../doc/en && ${INSTALL_DATA} README.* \
-		${STAGEDIR}${DOCSDIR}/en)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/manual
-	(cd ${WRKSRC}/../manual && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${DOCSDIR}/manual "! -name *Makefile*")
+post-install:
+	${RM} ${STAGEDIR}${DATADIR}/doc
+	${RLN} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
 
 .include <bsd.port.mk>
