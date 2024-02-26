@@ -1,5 +1,6 @@
 PORTNAME=	rename
 PORTVERSION=	1.99.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -10,14 +11,14 @@ WWW=		https://rename.sourceforge.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	bin/renamex man/man1/renamex.1.gz
+PLIST_FILES=	bin/renamex share/man/man1/renamex.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CC/s|\([[:blank:]]\)\(=\)|\1?\2| ; \
 		 /^PREFIX/s|\([[:blank:]]\)\(=\)|\1?\2| ; \
 		 s|/usr/local/bin|$$(PREFIX)/bin| ; \
-		 s|/usr/local/man|$$(PREFIX)/man| ; \
+		 s|/usr/local/man|$$(PREFIX)/share/man| ; \
 		 /^CFLAGS/s|\([[:blank:]]\)\(=\)|\1+\2| ; \
 		 s|-O[0-9]|| ; \
 		 s|$$^$$|$$(OBJS)| ; \
