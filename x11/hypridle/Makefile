@@ -26,7 +26,8 @@ LDFLAGS+=	-Wl,--as-needed # sdbus-cpp deps
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/150
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/151
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1,ConsoleKit,' \
 		-e 's,logind,consolekit2,' \
