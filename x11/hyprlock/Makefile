@@ -1,5 +1,6 @@
 PORTNAME=	hyprlock
-PORTVERSION=	s20240223
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +22,6 @@ USE_GITHUB=	yes
 USE_GL=		egl gbm
 USE_GNOME=	cairo pango
 GH_ACCOUNT=	hyprwm
-GH_TAGNAME=	8969351
 LDFLAGS+=	-Wl,--as-needed # pango deps
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME}
