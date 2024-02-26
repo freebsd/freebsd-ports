@@ -1,6 +1,6 @@
 PORTNAME=	xf86-input-wacom
 PORTVERSION=	0.39.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 MASTER_SITES=	https://github.com/linuxwacom/${PORTNAME}/releases/download/${DISTNAME}/
 
@@ -18,6 +18,7 @@ USE_XORG=	x11 xext xinerama xrandr
 LDFLAGS+=	-Wl,--as-needed # Xext
 USE_RC_SUBR=	wacom
 SUB_FILES=	pkg-message
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	UDEV_CFLAGS=" " UDEV_LIBS=" "
 CONFIGURE_ARGS=	--without-systemd-unit-dir \
 		--without-udev-rules-dir \
