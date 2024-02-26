@@ -669,6 +669,8 @@
             ..
             cat8
             ..
+            cat9
+            ..
             es              uname=root
 /set uname=root
                 man7
