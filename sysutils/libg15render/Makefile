@@ -1,5 +1,6 @@
 PORTNAME=	libg15render
 DISTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,6 +20,7 @@ GL_ACCOUNT=	menelkir
 GL_TAGNAME=	b7c1b217e95a1c473fa219c1940c8c9db0eb4628
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
