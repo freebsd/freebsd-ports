@@ -1,6 +1,6 @@
 PORTNAME=	xcm
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libXcm.so:x11/libXcm \
 USE_GITHUB=	yes
 GH_ACCOUNT=	oyranos-cms
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man
 USES=		pkgconfig xorg
 USE_XORG=	x11 xfixes xmu xt
 
@@ -24,9 +24,9 @@ USE_XORG=	x11 xfixes xmu xt
 #USE_XORG=	xcm
 
 PLIST_FILES=	bin/xcm bin/xcmedid bin/xcmevents bin/xcmhextobin \
-		man/man1/xcm.1.gz \
-		man/man1/xcmddc.1.gz man/man1/xcmedid.1.gz \
-		man/man1/xcmevents.1.gz man/man1/xcmhextobin.1.gz
+		share/man/man1/xcm.1.gz \
+		share/man/man1/xcmddc.1.gz share/man/man1/xcmedid.1.gz \
+		share/man/man1/xcmevents.1.gz share/man/man1/xcmhextobin.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
