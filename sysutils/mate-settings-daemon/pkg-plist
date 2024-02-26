@@ -43,9 +43,9 @@ libdata/pkgconfig/mate-settings-daemon.pc
 libexec/mate-settings-daemon
 libexec/msd-datetime-mechanism
 libexec/msd-locate-pointer
-man/man1/mate-settings-daemon.1.gz
-man/man1/msd-datetime-mechanism.1.gz
-man/man1/msd-locate-pointer.1.gz
+share/man/man1/mate-settings-daemon.1.gz
+share/man/man1/msd-datetime-mechanism.1.gz
+share/man/man1/msd-locate-pointer.1.gz
 share/dbus-1/services/org.mate.SettingsDaemon.service
 share/dbus-1/system-services/org.mate.SettingsDaemon.DateTimeMechanism.service
 share/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
