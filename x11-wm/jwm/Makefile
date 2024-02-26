@@ -1,6 +1,6 @@
 PORTNAME=	jwm
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/joewing/jwm/releases/download/v${PORTVERSION}/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		iconv localbase pkgconfig tar:xz xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=		CAIRO DEBUG FRIBIDI JPEG NLS PNG SVG XEXT XFT \
 			XINERAMA XMU XPM XRENDER
