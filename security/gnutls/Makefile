@@ -1,6 +1,6 @@
 PORTNAME=	gnutls
 PORTVERSION=	3.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -31,7 +31,9 @@ CONFIGURE_ARGS=	--disable-guile \
 		--without-brotli \
 		--without-zstd \
 		--without-tpm \
-		--without-tpm2
+		--without-tpm2 \
+		--enable-ld-version-script
+LDFLAGS=	-Wl,--undefined-version
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
