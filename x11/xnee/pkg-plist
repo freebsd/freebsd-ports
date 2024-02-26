@@ -1,8 +1,8 @@
 bin/cnee
 %%GNEE%%bin/gnee
-man/man1/cnee.1.gz
-%%GNEE%%man/man1/gnee.1.gz
-man/man1/xnee.1.gz
+share/man/man1/cnee.1.gz
+%%GNEE%%share/man/man1/gnee.1.gz
+share/man/man1/xnee.1.gz
 share/pixmaps/xnee.png
 share/pixmaps/xnee.xpm
 %%DATADIR%%/example1.xns

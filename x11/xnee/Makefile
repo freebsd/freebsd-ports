@@ -1,6 +1,6 @@
 PORTNAME=	xnee
 PORTVERSION=	3.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
@@ -11,6 +11,7 @@ WWW=		http://www.sandklef.com/xnee/
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake pathfix xorg
 USE_XORG=	x11 xtst
 
