@@ -669,5 +669,5 @@ bin/oroborus
 %%DATADIR%%/themes/windows/top-left-inactive.xpm
 %%DATADIR%%/themes/windows/top-right-active.xpm
 %%DATADIR%%/themes/windows/top-right-inactive.xpm
-man/man1/oroborus.1.gz
-man/man5/oroborusrc.5.gz
+share/man/man1/oroborus.1.gz
+share/man/man5/oroborusrc.5.gz
