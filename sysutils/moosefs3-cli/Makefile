@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-cli
 
 COMMENT=	MooseFS command line interface

@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-client
 
 COMMENT=	MooseFS client tools
