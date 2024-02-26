@@ -138,7 +138,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
-# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/150
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1,ConsoleKit,' \
 		${WRKSRC}/src/${PORTNAME}/main.cpp
