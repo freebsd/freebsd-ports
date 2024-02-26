@@ -1,6 +1,6 @@
 PORTNAME=	sendip
 PORTVERSION=	2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
