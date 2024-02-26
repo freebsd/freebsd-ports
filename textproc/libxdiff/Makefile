@@ -1,6 +1,6 @@
 PORTNAME=	libxdiff
 PORTVERSION=	0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xmailserver.org/
 
@@ -11,6 +11,7 @@ WWW=		http://www.xmailserver.org/xdiff-lib.html
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USES=		libtool
 USE_LDCONFIG=	yes
