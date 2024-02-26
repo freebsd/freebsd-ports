@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-screensaver
 PORTVERSION=	4.18.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -29,6 +29,7 @@ USE_XORG=	ice sm x11 xext xrandr xscrnsaver xxf86vm
 
 SHEBANG_FILES=	src/xfce4-screensaver-configure
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-console-kit=yes \
 		--with-systemd=no \
 		--enable-maintainer-mode

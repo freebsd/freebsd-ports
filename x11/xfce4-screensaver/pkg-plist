@@ -10,9 +10,9 @@ libexec/xfce4-screensaver-gl-helper
 libexec/xfce4-screensaver/floaters
 libexec/xfce4-screensaver/popsquares
 libexec/xfce4-screensaver/slideshow
-man/man1/xfce4-screensaver-command.1.gz
-man/man1/xfce4-screensaver-preferences.1.gz
-man/man1/xfce4-screensaver.1.gz
+share/man/man1/xfce4-screensaver-command.1.gz
+share/man/man1/xfce4-screensaver-preferences.1.gz
+share/man/man1/xfce4-screensaver.1.gz
 share/applications/screensavers/xfce-personal-slideshow.desktop
 share/applications/screensavers/xfce-popsquares.desktop
 share/applications/screensavers/xfce-floaters.desktop
