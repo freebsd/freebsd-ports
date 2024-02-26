@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/tdfx_drv.so
-man/man4/tdfx.4x.gz
+share/man/man4/tdfx.4x.gz
