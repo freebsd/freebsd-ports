@@ -1,7 +1,7 @@
 bin/evilvte
 bin/showvte
-man/man1/evilvte.1.gz
-man/man1/showvte.1.gz
+share/man/man1/evilvte.1.gz
+share/man/man1/showvte.1.gz
 share/applications/evilvte.desktop
 share/gnome-control-center/default-apps/evilvte.xml
 share/icons/hicolor/16x16/apps/evilvte.png
