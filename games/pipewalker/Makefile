@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the NetWalk game
-WWW=		https://pipewalker.sourceforge.net/
+WWW=		https://github.com/artemsen/pipewalker
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
