@@ -1,6 +1,7 @@
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-
 DISTVERSION=		2.0.9
+PORTREVISION=	1
 PORTEPOCH=		1
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Mellanox
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.options.mk>
 
