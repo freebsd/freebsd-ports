@@ -1,4 +1,4 @@
 bin/pwol
-man/man1/pwol.1.gz
-man/man5/pwol.conf.5.gz
+share/man/man1/pwol.1.gz
+share/man/man5/pwol.conf.5.gz
 @sample etc/pwol.conf.sample
