@@ -1,6 +1,6 @@
 PORTNAME=	links
 PORTVERSION=	2.29
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -19,12 +19,13 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
 		--without-gpm --without-fb --without-windows
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 USES=		cpe localbase:ldflags ssl tar:bz2
 
 CPE_VENDOR=	twibright
 
-PLIST_FILES=	bin/links man/man1/links.1.gz
+PLIST_FILES=	bin/links share/man/man1/links.1.gz
 
 OPTIONS_DEFINE=	BROTLI CIPHERSTRING DIRECTFB IPV6 SVG SVGALIB THREADS TRANS \
 		UTF8 X11
