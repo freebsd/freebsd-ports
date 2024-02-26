@@ -1,6 +1,6 @@
 PORTNAME=	rclock
 PORTVERSION=	2.7.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks
 MASTER_SITES=	SF/rxvt/rxvt-dev/${PORTVERSION}
 DISTNAME=	rxvt-${PORTVERSION}
@@ -13,9 +13,10 @@ LICENSE=	GPLv2+
 USES=		xorg
 USE_XORG=	x11 xau xdmcp ice xpm xv
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 ALL_TARGET=	clock
 
-PLIST_FILES=	bin/rclock man/man1/rclock.1.gz
+PLIST_FILES=	bin/rclock share/man/man1/rclock.1.gz
 
 CPPFLAGS+=	-DMAIL_SPOOL='\"/var/mail/\"'
 
