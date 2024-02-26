@@ -1,5 +1,6 @@
 PORTNAME=	lttng-ust
 PORTVERSION=	2.13.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
@@ -24,6 +25,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/lttng-gen-tp
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # XXX: build fails if cmake is detected, see PR 253327
 CONFIGURE_ENV=	ac_cv_prog_HAVE_CMAKE=no
 
