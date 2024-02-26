@@ -15,4 +15,4 @@
 +	install -d $(DESTDIR)${PREFIX}/man/man1/
 +	$(BSD_INSTALL_PROGRAM) mtxorbd $(DESTDIR)${PREFIX}/sbin/
 +	$(BSD_INSTALL_DATA) devices.conf $(DESTDIR)${PREFIX}/share/mtxorbd/
-+	$(BSD_INSTALL_MAN) mtxorbd.1 $(DESTDIR)${PREFIX}/man/man1/
++	$(BSD_INSTALL_MAN) mtxorbd.1 $(DESTDIR)${PREFIX}/share/man/man1/
