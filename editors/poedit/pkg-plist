@@ -1,5 +1,5 @@
 bin/poedit
-man/man1/poedit.1.gz
+share/man/man1/poedit.1.gz
 share/applications/net.poedit.Poedit.desktop
 share/applications/net.poedit.PoeditURI.desktop
 share/icons/hicolor/128x128/apps/net.poedit.Poedit.png
