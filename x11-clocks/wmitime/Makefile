@@ -1,5 +1,6 @@
 PORTNAME=	wmitime
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
@@ -16,7 +17,7 @@ USES=		gmake iconv localbase:ldflags xorg
 USE_XORG=	x11 xext xpm
 
 MAKE_ARGS=	CFLAGS="-O2 -Wall ${CFLAGS}" \
-		MANDIR="${PREFIX}/man/man1"
+		MANDIR="${PREFIX}/share/man/man1"
 ALL_TARGET=	wmitime
 
 WRKSRC=		${WRKDIR}/dockapps-26db447
