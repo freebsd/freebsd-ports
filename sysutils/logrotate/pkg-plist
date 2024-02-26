@@ -1,6 +1,6 @@
 sbin/logrotate
 @sample etc/logrotate.conf.sample
 %%EXAMPLESDIR%%/syslog.sample
-man/man5/logrotate.conf.5.gz
-man/man8/logrotate.8.gz
+share/man/man5/logrotate.conf.5.gz
+share/man/man8/logrotate.8.gz
 @dir %%ETCDIR%%.d
