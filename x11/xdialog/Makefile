@@ -1,6 +1,6 @@
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
@@ -19,6 +19,7 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2
 USES=		gnome localbase pkgconfig tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-gtk2
 
 OPTIONS_DEFINE=	DOCS NLS
