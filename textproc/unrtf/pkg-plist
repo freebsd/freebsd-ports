@@ -1,5 +1,5 @@
 bin/unrtf
-man/man1/unrtf.1.gz
+share/man/man1/unrtf.1.gz
 %%DATADIR%%/SYMBOL.charmap
 %%DATADIR%%/html.conf
 %%DATADIR%%/latex.conf

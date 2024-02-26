@@ -1,5 +1,6 @@
 PORTNAME=	unrtf
 PORTVERSION=	0.21.10
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf cpe gmake iconv localbase:ldflags
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 CPE_VENDOR=	unrtf_project
 TEST_TARGET=	check
