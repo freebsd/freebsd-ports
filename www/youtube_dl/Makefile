@@ -1,5 +1,6 @@
 PORTNAME=	youtube_dl
 PORTVERSION=	2023.03.14
+PORTREVISION=	1
 CATEGORIES=	www
 
 # Implicit approval to commit trivial version updates.
@@ -25,7 +26,7 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/youtube-dl \
 		etc/bash_completion.d/youtube-dl.sh \
-		man/man1/youtube-dl.1.gz \
+		share/man/man1/youtube-dl.1.gz \
 		share/fish/vendor_completions.d/youtube-dl.fish \
 		share/zsh/site-functions/_youtube-dl
 

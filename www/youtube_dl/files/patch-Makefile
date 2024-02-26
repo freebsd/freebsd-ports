@@ -1,6 +1,12 @@
 --- Makefile.orig	2023-03-14 16:23:20 UTC
 +++ Makefile
-@@ -12,7 +12,7 @@ SHAREDIR ?= $(PREFIX)/share
+@@ -7,12 +7,12 @@ BINDIR ?= $(PREFIX)/bin
+ 
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+-MANDIR ?= $(PREFIX)/man
++MANDIR ?= $(PREFIX)/share/man
+ SHAREDIR ?= $(PREFIX)/share
  PYTHON ?= /usr/bin/env python
  
  # set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
