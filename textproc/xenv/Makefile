@@ -1,5 +1,6 @@
 PORTNAME=	xenv
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.gnu.org.ua/release/xenv/
 
@@ -10,9 +11,10 @@ WWW=		https://gnu.org.ua/software/xenv/
 LICENSE=	GPLv3+
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	check
 
-PLIST_FILES=	bin/xenv man/man1/xenv.1.gz
+PLIST_FILES=	bin/xenv share/man/man1/xenv.1.gz
 PORTDOCS=	NEWS README
 INFO=		${PORTNAME}
 
