@@ -10,7 +10,7 @@ lib/libg15daemon_client.a
 lib/libg15daemon_client.so
 lib/libg15daemon_client.so.3
 lib/libg15daemon_client.so.3.0.0
-man/man1/g15daemon.1.gz
-man/man3/g15daemon_client_devel.3.gz
+share/man/man1/g15daemon.1.gz
+share/man/man3/g15daemon_client_devel.3.gz
 sbin/g15daemon
 %%DATADIR%%/splash/g15logo3.wbmp
