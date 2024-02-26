@@ -1,5 +1,5 @@
 bin/gnome-mplayer
-man/man1/gnome-mplayer.1.gz
+share/man/man1/gnome-mplayer.1.gz
 share/applications/gnome-mplayer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
