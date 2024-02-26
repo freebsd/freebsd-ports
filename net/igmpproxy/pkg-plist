@@ -1,4 +1,4 @@
 sbin/igmpproxy
 @sample etc/igmpproxy.conf.sample
-man/man5/igmpproxy.conf.5.gz
-man/man8/igmpproxy.8.gz
+share/man/man5/igmpproxy.conf.5.gz
+share/man/man8/igmpproxy.8.gz
