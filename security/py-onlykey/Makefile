@@ -1,6 +1,6 @@
 PORTNAME=	onlykey
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,7 @@ USE_PYTHON=	autoplist distutils
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	"@sample ${PREFIX}/etc/devd/onlykey.conf.sample" \
-		"${PREFIX}/man/man1/onlykey-cli.1.gz"
+		"${PREFIX}/share/man/man1/onlykey-cli.1.gz"
 
 NO_ARCH=	yes
 
@@ -36,6 +36,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
 	${INSTALL_DATA} ${FILESDIR}/onlykey.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/devd
-	${INSTALL_MAN} ${FILESDIR}/onlykey-cli.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/onlykey-cli.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
