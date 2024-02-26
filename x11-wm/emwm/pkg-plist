@@ -5,5 +5,5 @@
 bin/emwm
 etc/X11/system.emwmrc
 etc/X11/app-defaults/Emwm
-man/man1/emwm.1.gz
-man/man4/emwmrc.4.gz
+share/man/man1/emwm.1.gz
+share/man/man4/emwmrc.4.gz
