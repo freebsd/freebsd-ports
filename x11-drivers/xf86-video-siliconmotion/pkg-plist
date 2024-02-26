@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/siliconmotion_drv.so
-man/man4/siliconmotion.4x.gz
+share/man/man4/siliconmotion.4x.gz
