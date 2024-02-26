@@ -1,5 +1,5 @@
 bin/redshift
-man/man1/redshift.1.gz
+share/man/man1/redshift.1.gz
 %%GUI%%share/icons/hicolor/scalable/apps/redshift.svg
 %%GUI%%share/icons/hicolor/scalable/apps/redshift-status-off.svg
 %%GUI%%share/icons/hicolor/scalable/apps/redshift-status-on.svg

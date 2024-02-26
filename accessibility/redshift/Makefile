@@ -1,7 +1,7 @@
 PORTNAME=	redshift
 PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -24,6 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jonls
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	src/redshift-gtk/redshift-gtk.in
 
 CONFIGURE_ARGS+=	--disable-wingdi
