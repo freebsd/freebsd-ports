@@ -4,21 +4,21 @@ bin/demandoc
 bin/mandoc
 bin/soelim
 bin/whatis
-man/man1/apropos.1.gz
-man/man1/demandoc.1.gz
-@comment man/man1/man.1.gz
-man/man1/mandoc.1.gz
-man/man1/soelim.1.gz
-man/man1/whatis.1.gz
-man/man5/man.conf.5.gz
-man/man5/mandoc.db.5.gz
-man/man7/eqn.7.gz
-man/man7/man.7.gz
-man/man7/mandoc_char.7.gz
-man/man7/mdoc.7.gz
-@comment man/man7/roff.7.gz
-man/man7/tbl.7.gz
-man/man8/makewhatis.8.gz
+share/man/man1/apropos.1.gz
+share/man/man1/demandoc.1.gz
+@comment share/man/man1/man.1.gz
+share/man/man1/mandoc.1.gz
+share/man/man1/soelim.1.gz
+share/man/man1/whatis.1.gz
+share/man/man5/man.conf.5.gz
+share/man/man5/mandoc.db.5.gz
+share/man/man7/eqn.7.gz
+share/man/man7/man.7.gz
+share/man/man7/mandoc_char.7.gz
+share/man/man7/mdoc.7.gz
+@comment share/man/man7/roff.7.gz
+share/man/man7/tbl.7.gz
+share/man/man8/makewhatis.8.gz
 sbin/makewhatis
 %%WWWDIR%%/cgi-bin/man.cgi
 %%WWWDIR%%/htdocs/mandoc.css

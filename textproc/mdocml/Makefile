@@ -1,5 +1,6 @@
 PORTNAME=	mdocml
 PORTVERSION=	1.14.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		LOCAL/uqs
@@ -24,6 +25,7 @@ post-configure:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s/=/?=/' -e '/^PREFIX/s/=/?=/' \
 		-e 's/^INSTALL_PROGRAM.*/INSTALL_PROGRAM=${INSTALL_PROGRAM}/' \
 		-e 's|/var/www|${WWWDIR}|' \
+		-e 's|^MANDIR.*|MANDIR=${PREFIX}/share/man|' \
 		${WRKSRC}/Makefile.local
 	cp ${WRKSRC}/cgi.h.example ${WRKSRC}/cgi.h
 
