@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-terminal
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -24,6 +24,7 @@ USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-utempter
 INSTALL_TARGET=	install-strip
 
