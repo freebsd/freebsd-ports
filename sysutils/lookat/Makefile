@@ -1,5 +1,6 @@
 PORTNAME=	lookat
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.wagemakers.be/downloads/lookat/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
@@ -13,7 +14,7 @@ USES=		gmake ncurses
 
 PLIST_FILES=	bin/lookat \
 		"@sample etc/lookat.conf.sample" \
-		man/man1/lookat.1.gz
+		share/man/man1/lookat.1.gz
 PORTDOCS=	README
 PORTEXAMPLES=	blue_config.cfg
 
@@ -25,7 +26,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lookat ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lookat.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lookat.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/lookat.conf.default \
 		${STAGEDIR}${PREFIX}/etc/lookat.conf.sample
 
