@@ -1,4 +1,4 @@
 bin/splitwr
 bin/webresolve
-man/man1/webresolve.1.gz
-man/man1/splitwr.1.gz
+share/man/man1/webresolve.1.gz
+share/man/man1/splitwr.1.gz
