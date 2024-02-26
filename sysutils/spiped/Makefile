@@ -1,5 +1,6 @@
 PORTNAME=	spiped
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 
@@ -16,7 +17,7 @@ USES=		compiler:c11 tar:tgz ssl
 
 # Install into ${STAGEDIR}${PREFIX}
 MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin
-MAKE_ARGS+=	MAN1DIR=${STAGEDIR}${PREFIX}/man/man1
+MAKE_ARGS+=	MAN1DIR=${STAGEDIR}${PREFIX}/share/man/man1
 
 # add -I and -L directories for OpenSSL
 MAKE_ARGS+=	CFLAGS="-O2 -I${OPENSSLINC}"
@@ -25,8 +26,8 @@ MAKE_ARGS+=	LDADD_EXTRA="-L${OPENSSLLIB}"
 PORTDOCS=	BUILDING CHANGELOG COPYRIGHT README.md STYLE
 PLIST_FILES=	bin/spipe \
 		bin/spiped \
-		man/man1/spipe.1.gz \
-		man/man1/spiped.1.gz
+		share/man/man1/spipe.1.gz \
+		share/man/man1/spiped.1.gz
 
 USE_RC_SUBR=	spiped
 
