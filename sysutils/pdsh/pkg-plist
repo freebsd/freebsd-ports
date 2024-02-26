@@ -17,7 +17,7 @@ lib/pdsh/execcmd.so
 %%RSH%%lib/pdsh/xrcmd.a
 %%RSH%%lib/pdsh/xrcmd.la
 %%RSH%%lib/pdsh/xrcmd.so
-man/man1/dshbak.1.gz
-man/man1/pdcp.1.gz
-man/man1/pdsh.1.gz
-man/man1/rpdcp.1.gz
+share/man/man1/dshbak.1.gz
+share/man/man1/pdcp.1.gz
+share/man/man1/pdsh.1.gz
+share/man/man1/rpdcp.1.gz

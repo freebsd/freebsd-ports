@@ -1,7 +1,7 @@
 PORTNAME=	pdsh
 PORTVERSION=	2.34
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	i@levsha.me
@@ -11,6 +11,7 @@ WWW=		https://github.com/chaos/pdsh
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # :keepla because port uses lt_dlopen
 USES=		autoreconf gmake libtool:keepla perl5 shebangfix
 USE_GITHUB=	yes
