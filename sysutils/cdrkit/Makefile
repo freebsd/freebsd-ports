@@ -1,6 +1,6 @@
 PORTNAME=	cdrkit
 PORTVERSION=	1.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ponce.cc/slackware/sources/repo/ \
 		http://vault.101011010.xyz/distfiles/ \
@@ -20,13 +20,13 @@ SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
 # Fix build with clang11
 CFLAGS+=	-fcommon
 
+CMAKE_ARGS=	-DMANSUBDIR:PATH=share/man
+
 CONFLICTS?=	cdrtools
 
 PLIST_SUB?=	CDRKIT="" GENISOIMAGE="@comment "
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \
-	    ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|fexecve|librols_fexecve|g' \
 	    ${WRKSRC}/librols/fexec.c \
 	    ${WRKSRC}/include/schily.h
