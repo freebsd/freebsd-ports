@@ -1,6 +1,6 @@
 PORTNAME=	plank
 PORTVERSION=	0.11.89
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
@@ -21,6 +21,7 @@ USE_XORG=	x11 xfixes xi
 
 CFLAGS+=	-Wno-return-type
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 GLIB_SCHEMAS=	net.launchpad.plank.gschema.xml
 
 OPTIONS_SUB=	yes
