@@ -1,6 +1,6 @@
 bin/mate-terminal
 bin/mate-terminal.wrapper
-man/man1/mate-terminal.1.gz
+share/man/man1/mate-terminal.1.gz
 share/applications/mate-terminal.desktop
 share/help/C/mate-terminal/figures/mate-terminal-default.png
 share/help/C/mate-terminal/figures/mate-terminal-tabbed.png
