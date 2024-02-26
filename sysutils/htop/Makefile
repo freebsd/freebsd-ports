@@ -1,6 +1,6 @@
 PORTNAME=	htop
 DISTVERSION=	3.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -17,10 +17,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	htop-dev
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-unicode
 
 PLIST_FILES=	bin/htop \
-		man/man1/htop.1.gz \
+		share/man/man1/htop.1.gz \
 		share/applications/htop.desktop \
 		share/icons/hicolor/scalable/apps/htop.svg \
 		share/pixmaps/htop.png
