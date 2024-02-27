@@ -9,10 +9,13 @@ bin/xnvme-driver
 %%EXAMPLES%%bin/xnvme_hello
 %%EXAMPLES%%bin/xnvme_io_async
 %%EXAMPLES%%bin/xnvme_single_async
+%%EXAMPLES%%bin/xnvme_single_async_efd
 %%EXAMPLES%%bin/xnvme_single_sync
 %%TESTS%%bin/xnvme_tests_async_intf
 %%TESTS%%bin/xnvme_tests_buf
 %%TESTS%%bin/xnvme_tests_cli
+%%TESTS%%bin/xnvme_tests_copy
+%%TESTS%%bin/xnvme_tests_delay_identification
 %%TESTS%%bin/xnvme_tests_enum
 %%TESTS%%bin/xnvme_tests_ioworker
 %%TESTS%%bin/xnvme_tests_kvs
@@ -44,6 +47,7 @@ include/libxnvme_libconf.h
 include/libxnvme_mem.h
 include/libxnvme_nvm.h
 include/libxnvme_opts.h
+include/libxnvme_pi.h
 include/libxnvme_pp.h
 include/libxnvme_queue.h
 include/libxnvme_spec.h
@@ -55,6 +59,8 @@ include/libxnvme_ver.h
 include/libxnvme_znd.h
 lib/libxnvme.a
 lib/libxnvme.so
+lib/libxnvme.so.0
+lib/libxnvme.so.0.7.4
 libdata/pkgconfig/xnvme.pc
 %%TOOLS%%share/man/man1/kvs-delete.1.gz
 %%TOOLS%%share/man/man1/kvs-enum.1.gz
@@ -71,6 +77,7 @@ libdata/pkgconfig/xnvme.pc
 %%TOOLS%%share/man/man1/lblk-info.1.gz
 %%TOOLS%%share/man/man1/lblk-read.1.gz
 %%TOOLS%%share/man/man1/lblk-write-dir.1.gz
+%%TOOLS%%share/man/man1/lblk-write-read-pi.1.gz
 %%TOOLS%%share/man/man1/lblk-write-uncor.1.gz
 %%TOOLS%%share/man/man1/lblk-write-zeros.1.gz
 %%TOOLS%%share/man/man1/lblk-write.1.gz
@@ -130,6 +137,10 @@ libdata/pkgconfig/xnvme.pc
 %%TESTS%%share/man/man1/xnvme_tests_buf.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_cli-optional.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_cli.1.gz
+%%TESTS%%share/man/man1/xnvme_tests_copy-copy.1.gz
+%%TESTS%%share/man/man1/xnvme_tests_copy.1.gz
+%%TESTS%%share/man/man1/xnvme_tests_delay_identification-open.1.gz
+%%TESTS%%share/man/man1/xnvme_tests_delay_identification.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_enum-backend.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_enum-multi.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_enum-open.1.gz
@@ -140,7 +151,6 @@ libdata/pkgconfig/xnvme.pc
 %%TESTS%%share/man/man1/xnvme_tests_kvs-kvs_io.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_kvs.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_lblk-io.1.gz
-%%TESTS%%share/man/man1/xnvme_tests_lblk-scopy.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_lblk-write_uncorrectable.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_lblk-write_zeroes.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_lblk.1.gz
@@ -206,6 +216,8 @@ libdata/pkgconfig/xnvme.pc
 %%TESTS%%share/bash-completion/completions/xnvme_tests_async_intf-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_buf-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_cli-completions
+%%TESTS%%share/bash-completion/completions/xnvme_tests_copy-completions
+%%TESTS%%share/bash-completion/completions/xnvme_tests_delay_identification-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_enum-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_ioworker-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_kvs-completions

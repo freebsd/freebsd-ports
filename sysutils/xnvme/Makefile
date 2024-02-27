@@ -1,6 +1,5 @@
 PORTNAME=	xnvme
-DISTVERSION=	0.7.3
-PORTREVISION=	1
+DISTVERSION=	0.7.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/OpenMPDK/xNVMe/releases/download/v${DISTVERSION}/
 
@@ -17,6 +16,7 @@ USES=		meson
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dforce_completions=true \
+		-Dwith-isal=disabled \
 		-Dwith-libaio=disabled \
 		-Dwith-liburing=disabled \
 		-Dwith-libvfn=disabled \
