@@ -38,6 +38,7 @@ USE_LDCONFIG=		yes
 USE_PYTHON=		py3kplist
 USE_RC_SUBR=		${PORTNAME}
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-dependency-tracking \
 			--disable-fatal-warnings \
 			--disable-hardening \
