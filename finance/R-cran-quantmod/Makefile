@@ -1,9 +1,9 @@
 PORTNAME=	quantmod
-DISTVERSION=	0.4.25
+DISTVERSION=	0.4.26
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Quantitative Financial Modelling and Trading Framework for R
 WWW=		https://www.quantmod.com/
 
