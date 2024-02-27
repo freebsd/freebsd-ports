@@ -635,6 +635,7 @@
     SUBDIR += openslide
     SUBDIR += opensubdiv
     SUBDIR += openvkl
+    SUBDIR += openxr
     SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += osg
