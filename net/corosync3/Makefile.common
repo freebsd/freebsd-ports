@@ -18,6 +18,7 @@ USE_BINUTILS=		yes
 USE_LDCONFIG=		yes
 USE_RC_SUBR=		${PORTNAME} ${PORTNAME}-notifyd
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-secure-build
 LDFLAGS+=		-B${LOCALBASE}/bin
 INSTALL_TARGET=		install-strip
