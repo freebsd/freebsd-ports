@@ -5,7 +5,7 @@
 # Usage:        USES=ada:ARGS
 # Valid ARGS:   [<version>],[run]
 #
-# version	The chooseable versions are 6 (default) or 12
+# version	The chooseable versions are 6 (default), 12 or 13
 #
 # run		Add run depends
 #
@@ -14,7 +14,7 @@
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes
 
-_ADA_SUPPORTED=	6 12
+_ADA_SUPPORTED=	6 12 13
 
 _ada_version=	#
 .  for _ver in ${_ADA_SUPPORTED:O:u}
@@ -28,7 +28,7 @@ IGNORE=		Incorrect USES=ada:${ada_ARGS} - multiple versions defined
 .  endfor
 
 .  if empty(_ada_version)
-_ada_version=	6 # default, to be changed when gnat12 becomes self-supporting
+_ada_version=	12 # default
 .  endif
 
 .  if ${_ada_version} == 6
