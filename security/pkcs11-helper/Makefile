@@ -1,6 +1,6 @@
 PORTNAME=	pkcs11-helper
 PORTVERSION=	1.29.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-${PORTVERSION}/
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS=	--disable-crypto-engine-gnutls \
 		--disable-crypto-engine-polarssl \
 		--disable-crypto-engine-mbedtls \
 		--disable-crypto-engine-cryptoapi
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

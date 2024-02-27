@@ -14,4 +14,4 @@ lib/libpkcs11-helper.so.1
 lib/libpkcs11-helper.so.1.0.0
 libdata/pkgconfig/libpkcs11-helper-1.pc
 share/aclocal/pkcs11-helper-1.m4
-man/man8/pkcs11-helper-1.8.gz
+share/man/man8/pkcs11-helper-1.8.gz
