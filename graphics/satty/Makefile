@@ -1,6 +1,6 @@
 PORTNAME=	satty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	graphics wayland
 MASTER_SITES=	CRATESIO
 
@@ -12,7 +12,7 @@ LICENSE=	MPL20
 
 USES=		cargo desktop-file-utils gnome
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk40 libadwaita
+USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 GH_ACCOUNT=	gabm
 GH_PROJECT=	Satty
 PLIST_FILES=	bin/${PORTNAME} \
