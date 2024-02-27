@@ -1,5 +1,6 @@
 PORTNAME=	mg
 DISTVERSION=	20231016
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=   https://hydrus.org.uk/downloads/
@@ -11,7 +12,7 @@ WWW=		https://man.openbsd.org/mg
 LICENSE=	PD
 
 USES=		ncurses uidfix
-MAKE_ARGS+=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man \
+MAKE_ARGS+=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/share/man/man \
 		NCURSESLIB=${NCURSESLIB} NCURSESINC=${NCURSESINC}
 FLAVORS=	dynamic static
 FLAVOR?=	${FLAVORS:[1]}
@@ -22,7 +23,7 @@ MAKE_ARGS+= 	NO_SHARED=yes
 PLIST_FILES=	/rescue/mg
 .else
 PLIST_FILES=	bin/mg \
-		man/man1/mg.1.gz
+		share/man/man1/mg.1.gz
 PORTDOCS=	README tutorial
 OPTIONS_DEFINE=	DOCS
 .endif
