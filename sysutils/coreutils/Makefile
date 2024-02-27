@@ -24,6 +24,9 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # bugs.freebsd.org/160060
 CONFIGURE_ARGS=	--program-prefix=g	\
 		--program-transform-name=s/stat/nustat/
+.if ${ARCH} == i386
+CONFIGURE_ARGS+=	--disable-year2038
+.endif
 CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
 
 CONFLICTS_INSTALL=	gdu geneweb gexpr rubygem-god # bin/gdu bin/gexpr bin/god bin/gwc
