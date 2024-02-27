@@ -1,0 +1,21 @@
+PORTNAME=	spirv-cross
+DISTVERSION=	1.3.275.0
+CATEGORIES=	graphics
+
+MAINTAINER=	vvd@FreeBSD.org
+COMMENT=	Tool for parsing and converting SPIR-V to other shader languages
+WWW=		https://github.com/KhronosGroup/SPIRV-Cross
+
+LICENSE=	APACHE20
+
+USES=		cmake compiler:c++11-lib python:build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	KhronosGroup
+GH_PROJECT=	SPIRV-Cross
+GH_TAGNAME=	vulkan-sdk-${DISTVERSION}
+
+CMAKE_ON=	SPIRV_CROSS_SHARED
+CMAKE_OFF=	SPIRV_CROSS_ENABLE_TESTS
+
+.include <bsd.port.mk>
