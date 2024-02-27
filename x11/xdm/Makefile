@@ -1,6 +1,6 @@
 PORTNAME=	xdm
 PORTVERSION=	1.1.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=	--with-xdmconfigdir=${PREFIX}/etc/X11/xdm \
 			--with-xdmscriptdir=${PREFIX}/etc/X11/xdm \
 			--with-pixmapdir=${PREFIX}/share/pixmaps \
 			--with-authdir=/var/db/xdm
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config
