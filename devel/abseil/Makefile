@@ -15,7 +15,7 @@ GH_PROJECT=	${PORTNAME}-cpp
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DCMAKE_CXX_STANDARD=17 # force the same highest C++ standard because of ABI differences: see https://github.com/abseil/abseil-cpp/issues/819
 
-_GET_SOVER=	${GREP} SOVERSION ${WRKSRC}/CMake/AbseilHelpers.cmake \
+_GET_SOVER=	${GREP} SOVERSION ${WRKSRC}/CMake/AbseilHelpers.cmake 2>/dev/null \
 		| ${CUT} -d\" -f2
 PLIST_SUB+=	LIBSUFX=${_GET_SOVER:sh}
 
