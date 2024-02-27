@@ -1,5 +1,5 @@
 PORTNAME=	xca
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/xca/releases/download/RELEASE.${PORTVERSION}/
 
@@ -24,7 +24,8 @@ USE_LOCALE=	en_US.UTF-8
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT=		core gui help qmake sql widgets buildtools:build linguist:build
+USE_QT=		buildtools:build core gui help linguist:build qmake sql \
+		testlib:build widgets
 RCCREGEXP=	\/lib\/qt5\/bin\/rcc
 CMAKE_ARG=	-DQTFIXEDVERSION:STRING=qt5
 .else
