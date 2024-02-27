@@ -13,6 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL
 
+BROKEN=		fails to build with disman 0.600
+
 LIB_DEPENDS=	libdisman.so:x11/disman
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 

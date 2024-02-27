@@ -1,25 +1,24 @@
-CMake Error at /usr/local/lib/cmake/Qt5/Qt5Config.cmake:28 (find_package):
-  find_package for module Qt5Test called with REQUIRED, but
-  CMAKE_DISABLE_FIND_PACKAGE_Qt5Test is enabled.  A REQUIRED package cannot
-  be disabled.
-Call Stack (most recent call first):
-  CMakeLists.txt:27 (find_package)
+Drop unused dependencies (kf6-kwayland isn't packaged, anyway)
 
---- CMakeLists.txt.orig	2022-06-14 20:05:24 UTC
+--- CMakeLists.txt.orig	2024-02-27 13:20:11 UTC
 +++ CMakeLists.txt
-@@ -34,7 +34,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
-     Core
-     DBus
-     Gui
--    Test
-   OPTIONAL_COMPONENTS
-     X11Extras
+@@ -35,19 +35,6 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED
+     Test
  )
-@@ -72,6 +71,7 @@ if(BUILD_TESTING)
- add_subdirectory(ctl)
- add_subdirectory(backends)
- if(BUILD_TESTING)
-+  find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Test)
-   add_subdirectory(autotests)
-   add_subdirectory(tests)
- endif()
+ 
+-find_package(KF6 ${KF6_MIN_VERSION} COMPONENTS
+-  CoreAddons
+-  Wayland
+-)
+-set_package_properties(KF6CoreAddons PROPERTIES
+-  TYPE REQUIRED
+-  PURPOSE "For loading Wayland backend plugins"
+-)
+-set_package_properties(KF6Wayland PROPERTIES
+-  TYPE OPTIONAL
+-  PURPOSE "Required for KWin/KWayland backend"
+-)
+-
+ find_package(Wrapland ${PROJECT_VERSION} CONFIG)
+ set_package_properties(Wrapland PROPERTIES
+   TYPE OPTIONAL

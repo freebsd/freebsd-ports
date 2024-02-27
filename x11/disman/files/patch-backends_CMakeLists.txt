@@ -1,0 +1,21 @@
+Revert https://github.com/winft/disman/commit/78771e145b7f
+and    https://github.com/winft/disman/commit/18d0a3aa7940
+to support disabling build dependencies at configure (CMake) time.
+
+In file included from backends/wayland/waylandscreen.cpp:20:
+backends/wayland/waylandoutput.h:24:10: fatal error: 'Wrapland/Client/registry.h' file not found
+#include <Wrapland/Client/registry.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- backends/CMakeLists.txt.orig	2024-02-27 13:20:11 UTC
++++ backends/CMakeLists.txt
+@@ -37,5 +37,9 @@ add_subdirectory(qscreen)
+ ####################################################################################################
+ add_subdirectory(fake)
+ add_subdirectory(qscreen)
++if(Wrapland_FOUND)
+ add_subdirectory(wayland)
++endif()
++if(XCB_RANDR_FOUND)
+ add_subdirectory(xrandr)
++endif()
