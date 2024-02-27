@@ -181,9 +181,9 @@ etc/crm/profiles.yml
 %%PYTHON_SITELIBDIR%%/crmsh/utils.py
 %%PYTHON_SITELIBDIR%%/crmsh/watchdog.py
 %%PYTHON_SITELIBDIR%%/crmsh/xmlutil.py
-man/man8/crm.8.gz
-man/man8/crmsh_crm_report.8.gz
-man/man8/profiles.8.gz
+share/man/man8/crm.8.gz
+share/man/man8/crmsh_crm_report.8.gz
+share/man/man8/profiles.8.gz
 %%DATADIR%%/crm.8.adoc
 %%DATADIR%%/scripts/apache/main.yml
 %%DATADIR%%/scripts/check-uptime/fetch.py

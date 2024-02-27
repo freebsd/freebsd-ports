@@ -1,5 +1,6 @@
 PORTNAME=	crmsh
 DISTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	flo@FreeBSD.org
@@ -29,6 +30,7 @@ SHEBANG_FILES=	bin/crm scripts/*/*.py test/cib-tests.sh test/evaltest.sh \
 		test/update-expected-output.sh utils/crm_clean.py \
 		utils/crm_pkg.py utils/crm_rpmcheck.py
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/lib/ocf
 
 CONFLICTS_INSTALL=	crm114 # bin/crm
