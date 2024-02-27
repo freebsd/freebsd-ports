@@ -1,7 +1,6 @@
 PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	33.1
-PORTREVISION=	6
+DISTVERSION=	34.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 
@@ -164,7 +163,6 @@ post-patch:
 		${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
 		${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
 		${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
-.if !defined(SLAVEPORT)
 	# Header file from:
 	# https://git.linuxtv.org/media_tree.git/tree/include/uapi/linux/dvb
 	@${MKDIR} ${LINUXDVB}
@@ -219,19 +217,14 @@ post-patch:
 		-e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
 		-e 's|__user||g' \
 		${LINUXDVB}/frontend.h
-.endif
 
 pre-install:
-.if !defined(SLAVEPORT)
 	@${REINPLACE_CMD} -e '/^CPPFLAGS=/ s#$$# -I${LOCALBASE}/include#' \
 		${WRKSRC}/libs/libmythbase/mythconfig.mak
-.endif
 
 post-install:
-.if !defined(SLAVEPORT)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mythtv/database
 	${INSTALL_DATA} ${WRKSRC}/database/mc.sql ${STAGEDIR}${PREFIX}/share/mythtv/database
-.endif
 	@${FIND} ${STAGEDIR}${PREFIX}/bin -type f -exec ${SH} -c "${FILE} -i '{}' | \
 		${GREP} -q 'x-executable; charset=binary'" \; -print | ${XARGS} ${STRIP_CMD}
 	@${FIND} ${STAGEDIR}${PREFIX}/lib -type f -name lib\*.so.\* | ${XARGS} ${STRIP_CMD}

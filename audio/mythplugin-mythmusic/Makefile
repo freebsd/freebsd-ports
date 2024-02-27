@@ -1,7 +1,6 @@
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	33.1
-PORTREVISION=	1
+DISTVERSION=	34.0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libmyth-33.so:multimedia/mythtv
+		libmyth-34.so:multimedia/mythtv
 
 USES=		gmake qt:5 shebangfix
 USE_GITHUB=	yes
