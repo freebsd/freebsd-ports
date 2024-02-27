@@ -10,6 +10,8 @@ WWW=		https://github.com/winft/disman
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+BROKEN=		fails to build with wrapland 0.600
+
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
 USES=		cmake:testing kde:5 pathfix qt:5

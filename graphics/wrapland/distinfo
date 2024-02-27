@@ -1,3 +1,5 @@
-TIMESTAMP = 1676636801
-SHA256 (winft-wrapland-wrapland@0.527.0_GH0.tar.gz) = 415bc8a51ca74cfb7324d3aca8b6240535febe5dae8326f5296a448305a77953
-SIZE (winft-wrapland-wrapland@0.527.0_GH0.tar.gz) = 571883
+TIMESTAMP = 1709033936
+SHA256 (winft-wrapland-v0.600.0_GH0.tar.gz) = 2a07b69b6489c2c83f75c346a3aeecf28cc79a7f5040ace467022f554290287e
+SIZE (winft-wrapland-v0.600.0_GH0.tar.gz) = 562189
+SHA256 (d4d703bc4676.patch) = 5903679438ea0c792a8fba66258c79b9a7f353620279563fe56b565de4e75e70
+SIZE (d4d703bc4676.patch) = 1646

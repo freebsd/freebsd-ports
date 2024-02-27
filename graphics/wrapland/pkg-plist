@@ -24,9 +24,6 @@ include/Wrapland/Client/keystate.h
 include/Wrapland/Client/layer_shell_v1.h
 include/Wrapland/Client/linux_dmabuf_v1.h
 include/Wrapland/Client/output.h
-include/Wrapland/Client/output_configuration_v1.h
-include/Wrapland/Client/output_device_v1.h
-include/Wrapland/Client/output_management_v1.h
 include/Wrapland/Client/plasma_activation_feedback.h
 include/Wrapland/Client/plasmashell.h
 include/Wrapland/Client/plasmavirtualdesktop.h
@@ -41,6 +38,7 @@ include/Wrapland/Client/region.h
 include/Wrapland/Client/registry.h
 include/Wrapland/Client/relativepointer.h
 include/Wrapland/Client/seat.h
+include/Wrapland/Client/security_context_v1.h
 include/Wrapland/Client/server_decoration_palette.h
 include/Wrapland/Client/shadow.h
 include/Wrapland/Client/shell.h
@@ -82,7 +80,6 @@ include/Wrapland/Server/drag_pool.h
 include/Wrapland/Server/drm_lease_v1.h
 include/Wrapland/Server/fake_input.h
 include/Wrapland/Server/filtered_display.h
-include/Wrapland/Server/globals.h
 include/Wrapland/Server/idle_inhibit_v1.h
 include/Wrapland/Server/idle_notify_v1.h
 include/Wrapland/Server/input_method_v2.h
@@ -94,10 +91,7 @@ include/Wrapland/Server/keystate.h
 include/Wrapland/Server/layer_shell_v1.h
 include/Wrapland/Server/linux_dmabuf_v1.h
 include/Wrapland/Server/output.h
-include/Wrapland/Server/output_changeset_v1.h
-include/Wrapland/Server/output_configuration_v1.h
-include/Wrapland/Server/output_device_v1.h
-include/Wrapland/Server/output_management_v1.h
+include/Wrapland/Server/output_manager.h
 include/Wrapland/Server/plasma_activation_feedback.h
 include/Wrapland/Server/plasma_shell.h
 include/Wrapland/Server/plasma_virtual_desktop.h
@@ -111,6 +105,7 @@ include/Wrapland/Server/primary_selection.h
 include/Wrapland/Server/region.h
 include/Wrapland/Server/relative_pointer_v1.h
 include/Wrapland/Server/seat.h
+include/Wrapland/Server/security_context_v1.h
 include/Wrapland/Server/server_decoration_palette.h
 include/Wrapland/Server/shadow.h
 include/Wrapland/Server/slide.h
@@ -124,6 +119,9 @@ include/Wrapland/Server/touch_pool.h
 include/Wrapland/Server/viewporter.h
 include/Wrapland/Server/virtual_keyboard_v1.h
 include/Wrapland/Server/wl_output.h
+include/Wrapland/Server/wlr_output_configuration_head_v1.h
+include/Wrapland/Server/wlr_output_configuration_v1.h
+include/Wrapland/Server/wlr_output_manager_v1.h
 include/Wrapland/Server/wraplandserver_export.h
 include/Wrapland/Server/xdg_activation_v1.h
 include/Wrapland/Server/xdg_decoration.h
@@ -137,7 +135,6 @@ include/Wrapland/Server/xdg_shell_toplevel.h
 include/wrapland_version.h
 lib/cmake/Wrapland/WraplandConfig.cmake
 lib/cmake/Wrapland/WraplandConfigVersion.cmake
-%%DOXYGEN%%lib/cmake/Wrapland/WraplandQchTargets.cmake
 lib/cmake/Wrapland/WraplandTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Wrapland/WraplandTargets.cmake
 lib/libWraplandClient.so
@@ -146,7 +143,4 @@ lib/libWraplandClient.so.%%VERSION%%
 lib/libWraplandServer.so
 lib/libWraplandServer.so.0
 lib/libWraplandServer.so.%%VERSION%%
-lib/libexec/org-kde-kf5-wrapland-testserver
-%%DOXYGEN%%%%QT_DOCDIR%%/Wrapland.qch
-%%DOXYGEN%%%%QT_DOCDIR%%/Wrapland.tags
-share/qlogging-categories5/org_kde_wrapland.categories
+share/qlogging-categories6/org_kde_wrapland.categories
