@@ -1,5 +1,5 @@
 PORTNAME=	ladybird
-PORTVERSION=	g20240109
+PORTVERSION=	g20240226
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/unicode-org/cldr-json/releases/download/${CLDRVERSION}/:cldr \
 		https://www.unicode.org/Public/${UCDVERSION}/ucd/:ucd \
@@ -24,17 +24,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # see Userland/Libraries/LibWeb/Loader/ResourceLoader.h
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	other architectures not recognised by build system
-BROKEN_i386=	Userland/Libraries/LibJIT/GDBElf.cpp:29:24: bit cast source size does not equal destination size
 BROKEN_FreeBSD_15_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276703
 
-BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list
+BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list \
+		${LOCALBASE}/share/color/Adobe/CMYK/USWebCoatedSWOP.icc:graphics/icc-profiles-adobe-cs4
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf
 
 USES=		cmake:testing compiler:c++20-lang gl localbase:ldflags python:build qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	SerenityOS
 GH_PROJECT=	serenity
-GH_TAGNAME=	343d6b001fa94d9707d443f00d295fdfcc4f1511
+GH_TAGNAME=	a8a1d8746e28e743a7d86e6e660140fc28949e4f
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_QT=		base tools:build wayland multimedia
@@ -67,9 +67,10 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	HAVE_PULSEAUDIO
 
 post-extract:
-	${MKDIR} ${CONFIGURE_WRKSRC}/caches/PublicSuffix
+	${MKDIR} ${CONFIGURE_WRKSRC}/caches/PublicSuffix ${CONFIGURE_WRKSRC}/caches/AdobeICCProfiles
 	${LN} -s ${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
 	    ${CONFIGURE_WRKSRC}/caches/PublicSuffix/
+	${LN} -s ${LOCALBASE}/share/color/Adobe ${CONFIGURE_WRKSRC}/caches/AdobeICCProfiles/'Adobe ICC Profiles (end-user)'
 
 post-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/caches/CLDR ${CONFIGURE_WRKSRC}/caches/UCD
@@ -83,11 +84,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
 	${INSTALL_DATA} ${WRKSRC}/Ladybird/Icons/ladybird.png \
 	    ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/
-.for font in Mono Sans Serif
-. for shape in Bold BoldItalic Italic Regular
-	${LN} -shf ${LOCALBASE}/share/fonts/Liberation/Liberation${font}-${shape}.ttf \
-	    ${STAGEDIR}${PREFIX}/share/res/fonts/
-. endfor
-.endfor
 
 .include <bsd.port.mk>
