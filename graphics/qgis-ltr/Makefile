@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.28.15
-PORTREVISION=	2
+DISTVERSION=	3.34.4
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -34,13 +33,17 @@ BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}six>=1.16.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.16:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
+LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
+		libdraco.so:archivers/draco \
+		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
+		libfreexl.so:textproc/freexl \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libmdal.so:math/mdal \
+		libminizip.so:archivers/minizip \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
 		libpdalcpp.so:math/pdal \
@@ -50,6 +53,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
+		librttopo.so:devel/librttopo \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
@@ -69,6 +73,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.20.2:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.1:devel/py-jedi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}laspy>=2.5.1:misc/py-laspy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.4.3:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=4.0.3:devel/py-mock@${PY_FLAVOR} \
@@ -103,7 +108,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python qca qt:5 \
+		fortran gl gmake gnome iconv pgsql pyqt:5 python qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
@@ -111,8 +116,8 @@ USE_LDCONFIG=	yes
 USE_PYQT=	pyqt5 qscintilla2 pysip sip
 USE_QT=		3d buildtools:build core concurrent dbus declarative \
 		designer:build qdoc:build gamepad gui linguist:build location \
-		network printsupport qmake:build script serialport \
-		sql sql-pgsql sql-sqlite3 svg uitools:build \
+		multimedia network printsupport qmake:build script serialport \
+		sql sql-pgsql sql-sqlite3 svg testlib uitools:build \
 		webengine widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
@@ -120,7 +125,6 @@ SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 # Python_EXECUTABLE: Use the default version if multiple Pythons are available
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DHAVE_PGCONFIG=1 \
-		-DWITH_INTERNAL_MDAL:BOOL=false \
 		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
 		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
@@ -128,15 +132,17 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
-CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS WITH_COPC \
-		WITH_CUSTOM_WIDGETS WITH_EPT WITH_PDAL WITH_POSTGRESQL
-CMAKE_OFF=	ENABLE_TESTS WITH_QTWEBKIT WITH_QWTPOLAR
+CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
+		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT \
+		WITH_INTERNAL_LAZPERF WITH_POSTGRESQL
+CMAKE_OFF=	ENABLE_TESTS WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
 
 # math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
-CXXFLAGS+=	-pthread
+#CXXFLAGS+=	-pthread
+
 CONFLICTS_INSTALL=	qgis
 
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
+PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
@@ -147,7 +153,7 @@ OPTIONS_DEFINE=		SERVER
 OPTIONS_DEFAULT=	SERVER GRASS8
 OPTIONS_RADIO=		GRASS
 OPTIONS_RADIO_GRASS=	GRASS7 GRASS8
-#NO_OPTIONS_SORT=	yes
+NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
 GRASS_DESC=		Add GRASS GIS to processing tools
