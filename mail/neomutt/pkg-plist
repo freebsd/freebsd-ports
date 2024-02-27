@@ -79,6 +79,6 @@ libexec/neomutt/smime_keys
 %%DATADIR%%/logo/neomutt.svg
 %%DATADIR%%/mime.types
 %%DATADIR%%/oauth2/mutt_oauth2.py
-%%DATADIR%%/oauth2/mutt_oauth2.py.README
+%%DATADIR%%/oauth2/README.md
 %%DATADIR%%/vim-keys/README.md
 %%DATADIR%%/vim-keys/vim-keys.rc
