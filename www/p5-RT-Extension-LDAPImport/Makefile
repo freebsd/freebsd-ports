@@ -29,7 +29,7 @@ PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 post-patch:
 		@${REINPLACE_CMD} -e 's|LocalPath/man/man3|LocalPath/share/man/man3|g' ${WRKSRC}/inc/Module/Install/RTx.pm
 
-Note: You can install using an arbitrary $PREFIX but only if it
+# Note: You can install using an arbitrary $PREFIX but only if it
 # matches the $PREFIX used to install www/rt44.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
