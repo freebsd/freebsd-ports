@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.52.0
-PORTREVISION=	4
+DISTVERSION=	0.55.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,12 +17,14 @@ GH_ACCOUNT=	Wilfred
 PLIST_FILES=	bin/difft
 
 CARGO_CRATES=	ahash-0.7.6 \
-		aho-corasick-0.7.20 \
+		aho-corasick-1.0.5 \
 		assert_cmd-2.0.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
+		bitflags-2.4.1 \
 		bstr-0.2.17 \
+		bstr-1.6.0 \
 		bumpalo-3.11.1 \
 		bytecount-0.6.2 \
 		cc-1.0.83 \
@@ -36,34 +37,41 @@ CARGO_CRATES=	ahash-0.7.6 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
-		crossterm-0.26.1 \
-		crossterm_winapi-0.9.0 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
 		ctor-0.1.22 \
 		diff-0.1.12 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
-		env_logger-0.7.1 \
+		env_logger-0.10.0 \
+		errno-0.3.5 \
 		fixedbitset-0.4.1 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		getrandom-0.2.9 \
 		glob-0.3.1 \
+		globset-0.4.13 \
 		hashbrown-0.11.2 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.3.3 \
 		humansize-2.1.3 \
-		humantime-1.3.0 \
+		humantime-2.1.0 \
+		ignore-0.4.18 \
 		indexmap-1.7.0 \
+		io-lifetimes-1.0.11 \
+		is-terminal-0.4.7 \
 		itertools-0.10.3 \
 		itertools-0.11.0 \
 		itoa-1.0.9 \
 		lazy_static-1.4.0 \
-		libc-0.2.139 \
+		libc-0.2.149 \
 		libm-0.2.7 \
 		libmimalloc-sys-0.1.24 \
-		line-numbers-0.2.2 \
+		line-numbers-0.3.0 \
+		linux-raw-sys-0.3.8 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
@@ -86,18 +94,19 @@ CARGO_CRATES=	ahash-0.7.6 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
 		pretty_assertions-1.3.0 \
-		pretty_env_logger-0.4.0 \
+		pretty_env_logger-0.5.0 \
 		proc-macro2-1.0.66 \
-		quick-error-1.2.3 \
 		quote-1.0.32 \
 		radix-heap-0.4.2 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
-		regex-1.7.3 \
+		regex-1.9.4 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.29 \
+		regex-automata-0.3.7 \
+		regex-syntax-0.7.5 \
 		rustc-hash-1.1.0 \
+		rustix-0.37.27 \
 		rustversion-1.0.12 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
@@ -105,7 +114,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		serde-1.0.176 \
 		serde_derive-1.0.176 \
 		serde_json-1.0.104 \
-		signal-hook-0.3.14 \
+		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		smallvec-1.10.0 \
@@ -118,7 +127,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
 		textwrap-0.15.0 \
-		tree-sitter-0.20.9 \
+		thread_local-1.1.7 \
+		tree-sitter-0.20.10 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.0 \
 		unicode-width-0.1.9 \
@@ -132,13 +142,22 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
 		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.42.1 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.42.1 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.42.1 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.1 \
+		windows_x86_64_msvc-0.48.5 \
 		wu-diff-0.1.2 \
 		yansi-0.5.1 \
 		tree_magic_mini@git+https://github.com/Wilfred/tree_magic?branch=fix-panic-for-empty-strings\#13dd6dda15c7062bd8f7dd5bc9bb5b16ce9ee613
