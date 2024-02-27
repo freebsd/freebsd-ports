@@ -56,7 +56,6 @@
     SUBDIR += jwm
     SUBDIR += kickshaw
     SUBDIR += korgwm
-    SUBDIR += kwinft
     SUBDIR += labwc
     SUBDIR += leftwm
     SUBDIR += libcompizconfig
@@ -106,6 +105,7 @@
     SUBDIR += sway
     SUBDIR += sway-devel
     SUBDIR += swayfx
+    SUBDIR += theseus-ship
     SUBDIR += tinywm
     SUBDIR += transset
     SUBDIR += twm

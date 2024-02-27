@@ -29,6 +29,8 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 RUN_DEPENDS=	hwdata>0:misc/hwdata \
 		Xwayland:x11-servers/xwayland
 
+CONFLICTS_INSTALL=	theseus-ship # bin/kwin_wayland
+
 USES=		cmake gettext gl kde:6 pkgconfig python qt:6 shebangfix tar:xz \
 		xorg
 USE_GL=		egl gbm gl opengl

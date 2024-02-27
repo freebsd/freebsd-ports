@@ -32,10 +32,10 @@ Nested under X11 as X11 window manager:
 
 Replace KWin in Plasma Desktop:
 
-  $ pkg set -n plasma5-kwin:kwinft
-  $ pkg set -o x11-wm/plasma5-kwin:x11-wm/kwinft
-  $ pkg upgrade -f kwinft
-  $ pkg lock kwinft
+  $ pkg set -n plasma6-kwin:theseus-ship
+  $ pkg set -o x11-wm/plasma6-kwin:x11-wm/theseus-ship
+  $ pkg upgrade -f theseus-ship
+  $ pkg lock theseus-ship
 
 Improve Wayland responsiveness under high load:
 
