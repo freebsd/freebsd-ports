@@ -2,6 +2,7 @@
 
 PORTNAME=	bind
 DISTVERSION=	9.16.48
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
 PKGNAMESUFFIX=	916
@@ -11,9 +12,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 WWW=		https://www.isc.org/bind/
 
-# Uncomment when bind920 comes of age.
-# DEPRECATED=	End of life, please migrate to a newer version of BIND9
-# EXPIRATION_DATE=	2023-12-31
+DEPRECATED=	End of life, please migrate to a newer version of BIND9
+EXPIRATION_DATE=	2024-04-30
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
