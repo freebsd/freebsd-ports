@@ -1,5 +1,5 @@
-TIMESTAMP = 1702321606
-SHA256 (amshafer-nvidia-driver-535.146.02-nvidia-drm-510-kmod-535.146.02_GH0.tar.gz) = 0cf4454722ce3b866800273b5b47352ffef078384c2437b823435f42e53c0089
-SIZE (amshafer-nvidia-driver-535.146.02-nvidia-drm-510-kmod-535.146.02_GH0.tar.gz) = 185687473
+TIMESTAMP = 1708813467
+SHA256 (NVIDIA-FreeBSD-x86_64-550.54.14.tar.xz) = 934549ee2e6cf6bc098a0794ad5c84cfa8d55c79396d1d387c37eb91c49de340
+SIZE (NVIDIA-FreeBSD-x86_64-550.54.14.tar.xz) = 143184876
 SHA256 (freebsd-drm-kmod-drm_v5.10.163_7_GH0.tar.gz) = dbdff8ad8cad8152d1c286b058f1f5114b3672f1a936e13933ce52915b77eaaa
 SIZE (freebsd-drm-kmod-drm_v5.10.163_7_GH0.tar.gz) = 20095338
