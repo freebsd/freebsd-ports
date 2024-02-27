@@ -22,7 +22,7 @@ pkgIndex.tcl:
 
 DIR	= lib/tcl${TCL_VER}/gdtclft
 LIBDIR	= ${PREFIX}/${DIR}
-MANDIR	= ${PREFIX}/man/man
+MANDIR	= ${PREFIX}/share/man/man
 
 ${STAGEDIR}${LIBDIR}:
 	${MKDIR} $@

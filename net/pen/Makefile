@@ -1,5 +1,6 @@
 PORTNAME=	pen
 PORTVERSION=	0.34.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://siag.nu/pub/pen/
 
@@ -13,6 +14,7 @@ USES=		cpe ssl
 CPE_VENDOR=	${PORTNAME}_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_RC_SUBR=	pen
 CONFIGURE_ARGS=	--with-daemon --with-docdir=${DOCSDIR} --without-geoip \
 		--with-ssl=${OPENSSLBASE}
@@ -21,9 +23,9 @@ LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	penstats HOWTO AUTHORS README ChangeLog COPYING
 PLIST_FILES=	bin/mergelogs bin/pen bin/penctl bin/penlog \
-		bin/penlogd man/man1/mergelogs.1.gz \
-		man/man1/pen.1.gz man/man1/penctl.1.gz \
-		man/man1/penlog.1.gz man/man1/penlogd.1.gz
+		bin/penlogd share/man/man1/mergelogs.1.gz \
+		share/man/man1/pen.1.gz share/man/man1/penctl.1.gz \
+		share/man/man1/penlog.1.gz share/man/man1/penlogd.1.gz
 
 OPTIONS_DEFINE=	DEBUG DOCS KQUEUE
 OPTIONS_DEFAULT=KQUEUE

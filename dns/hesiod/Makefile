@@ -1,6 +1,6 @@
 PORTNAME=	hesiod
 PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	https://BSDforge.com/projects/source/dns/hesiod/
 
@@ -16,6 +16,7 @@ OPTIONS_DEFAULT=IDN
 USES=		cpe libtool pathfix
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

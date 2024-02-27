@@ -1,6 +1,6 @@
 PORTNAME=	clig
 PORTVERSION=	1.9.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel tcl
 MASTER_SITES=	https://BSDforge.com/projects/source/devel/clig/
 
@@ -26,10 +26,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${RM} ${WRKSRC}/example/.cvsignore
 	@${FIND} -d ${WRKSRC} -type d -and -name CVS -exec ${RM} -r {} \;
-	@${REINPLACE_CMD} -e 's|/usr/bin/tclsh|${TCLSH}|; \
-		s|/doc/|/share/doc/|; \
-		s|-$$(VERSION)||;' \
-			${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e "s|tclsh|${TCLSH}|" \
 		${WRKSRC}/man/fixman
 

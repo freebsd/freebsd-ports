@@ -1,6 +1,6 @@
 bin/hotkeys
 @sample etc/hotkeys.conf.sample
-man/man1/hotkeys.1.gz
+share/man/man1/hotkeys.1.gz
 %%DATADIR%%/splash.png
 %%DATADIR%%/acerwl.def
 %%DATADIR%%/btc9000.def

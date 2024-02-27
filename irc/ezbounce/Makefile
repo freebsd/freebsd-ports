@@ -1,6 +1,6 @@
 PORTNAME=	ezbounce
 PORTVERSION=	1.99.15
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	irc
 MASTER_SITES=	https://BSDforge.com/projects/source/irc/ezbounce/
 
@@ -8,8 +8,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Highly configurable IRC Proxy
 WWW=		https://sourceforge.net/projects/ezbounce/
 
-DEPRECATED=	Abandonware, last release in 2009 and dead upstream. Consider using irc/soju or irc/znc
-EXPIRATION_DATE=2024-02-29
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS
@@ -22,6 +22,7 @@ COMPRESS_CONFIGURE_WITH=boost
 COMPRESS_DESC=		Chat log compression (requires boost)
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		compiler:c++0x cpe gmake
 USE_GCC=	yes
 
@@ -39,7 +40,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/ezb.conf.default ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_MAN}	${WRKSRC}/docs/ezbounce.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN}	${WRKSRC}/docs/ezbounce.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
