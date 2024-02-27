@@ -1,5 +1,6 @@
 PORTNAME=	wpa_supplicant_gui
 DISTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/ \
 		LOCAL/yuri/net/wpa_supplicant_gui/:icons
@@ -28,7 +29,7 @@ PLIST_FILES=	sbin/wpa_gui \
 		share/applications/wpa_gui.desktop \
 		share/icons/hicolor/16x16/apps/wpa_gui.png \
 		share/icons/hicolor/scalable/apps/wpa_gui.svgz \
-		man/man8/wpa_gui.8.gz
+		share/man/man8/wpa_gui.8.gz
 WRKSRC_SUBDIR=	wpa_supplicant
 
 OPTIONS_DEFINE=	DEBUG NLS
@@ -69,7 +70,7 @@ do-install:
 		> ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/wpa_gui.svgz
 	# manpage
 	${GZIP_CMD} < ${WRKSRC}/doc/docbook/wpa_gui.8 \
-		> ${STAGEDIR}${PREFIX}/man/man8/wpa_gui.8.gz
+		> ${STAGEDIR}${PREFIX}/share/man/man8/wpa_gui.8.gz
 
 do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
