@@ -166,6 +166,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/bookman.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/bookmark.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/booktabs.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/boxedminipage.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/braket.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/breakurl.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/calc.sty.ltxml
@@ -182,6 +183,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/cite.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/citesort.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/cleveref.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/cmap.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/cmbright.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/color.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/colordvi.sty.ltxml
@@ -233,6 +235,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/eurosym.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/euscript.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/expl3.ltx.ltxml
+%%SITE_PERL%%/LaTeXML/Package/expl3.lua.ltxml
 %%SITE_PERL%%/LaTeXML/Package/expl3.pool.ltxml
 %%SITE_PERL%%/LaTeXML/Package/expl3.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/exscale.sty.ltxml
@@ -286,6 +289,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/ieeeconf.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifblk.fontmap.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifclk.fontmap.ltxml
+%%SITE_PERL%%/LaTeXML/Package/ifdraft.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifetex.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifgeo.fontmap.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifluatex.sty.ltxml
@@ -333,6 +337,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/ly1.fontmap.ltxml
 %%SITE_PERL%%/LaTeXML/Package/makecell.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/makeidx.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/marginnote.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/marvosym.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mathabx.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mathbbol.sty.ltxml
@@ -380,6 +385,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/pdfsync.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pdftexcmds.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgf.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/pgfcircutils.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfkeys.code.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfmath.code.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfmathcalc.code.tex.ltxml
@@ -457,6 +463,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/t2a.fontmap.ltxml
 %%SITE_PERL%%/LaTeXML/Package/t2b.fontmap.ltxml
 %%SITE_PERL%%/LaTeXML/Package/t2c.fontmap.ltxml
+%%SITE_PERL%%/LaTeXML/Package/t5enc.def.ltxml
 %%SITE_PERL%%/LaTeXML/Package/tablefootnote.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/tabularx.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/tabulary.sty.ltxml
@@ -470,6 +477,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/thmtools.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/threeparttable.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/tikz-3dplot.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/tikz-cd.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/tikz.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/tikzbricks.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/times.sty.ltxml
