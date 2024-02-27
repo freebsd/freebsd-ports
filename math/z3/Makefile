@@ -10,6 +10,8 @@ WWW=		https://github.com/Z3Prover/z3
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	unknown flag -msimd128
+
 USES=		compiler:c++11-lang python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
