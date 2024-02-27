@@ -6,11 +6,13 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/commands.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/contributing.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/daemon.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/design/architecture.svg
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/design.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/implementation.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/emacs.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/helix.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/inlayHints.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/inline-after.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/inline-before.png
