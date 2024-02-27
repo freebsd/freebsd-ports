@@ -1,12 +1,13 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.24
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	ba2202e.patch:-p1 84a747c.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
