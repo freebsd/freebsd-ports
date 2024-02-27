@@ -1,6 +1,6 @@
-TIMESTAMP = 1708629232
-SHA256 (ricardobranco777-xhash-v3.3.1_GH0.tar.gz) = 13a25ec167734c64a6d8d13b243714269b80f33ceb5e68f5203d7834447e500e
-SIZE (ricardobranco777-xhash-v3.3.1_GH0.tar.gz) = 14728
+TIMESTAMP = 1709054234
+SHA256 (ricardobranco777-xhash-v3.3.2_GH0.tar.gz) = 4a43ea5e6f36ab0c21ea89a080ff6134a7c0beabd4ed47d4f8f3ed562870e32a
+SIZE (ricardobranco777-xhash-v3.3.2_GH0.tar.gz) = 14889
 SHA256 (golang-crypto-v0.19.0_GH0.tar.gz) = 0e1d6c17f9c6f529d2d06e43030695ba135115ee401fda5316d6b30423087bb2
 SIZE (golang-crypto-v0.19.0_GH0.tar.gz) = 1810389
 SHA256 (golang-sys-v0.17.0_GH0.tar.gz) = ac396e3c66940e34fdd1d422a9628ab2a5118249118f2a36f65082d32e709e7a
