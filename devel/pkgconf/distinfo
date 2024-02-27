@@ -1,5 +1,3 @@
-TIMESTAMP = 1699449208
-SHA256 (pkgconf-2.0.3.tar.xz) = cabdf3c474529854f7ccce8573c5ac68ad34a7e621037535cbc3981f6b23836c
-SIZE (pkgconf-2.0.3.tar.xz) = 310796
-SHA256 (652aff97906d7eadca6fe727b16f6511d8dbfe05.patch) = 4a7d5dd2eff7b4c96833c0ba8f47f0bffb1ab77763989a68922e3a53bfa6ecf7
-SIZE (652aff97906d7eadca6fe727b16f6511d8dbfe05.patch) = 4958
+TIMESTAMP = 1709037591
+SHA256 (pkgconf-2.1.1.tar.xz) = 3a224f2accf091b77a5781316e27b9ee3ba82c083cc2e539e08940b68a44fec5
+SIZE (pkgconf-2.1.1.tar.xz) = 311956
