@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240228:
+  AFFECTS: users of www/redmine50
+  AUTHOR: bofh@FreeBSD.org
+
+  The default vesion of ruby has been switched from 3.1 to 3.2.
+
+  However www/redmine50 does not support ruby 3.2. Users should add the
+  following in their relevant make.conf file:
+
+  DEFAULT_VERSIONS+=ruby=3.1
+
+  Although redmin 5.1.X supports ruby 3.2 and later but so far there is
+  no redmine51 ports in the tree.
+
 20240222:
   AFFECTS: users of databases/xtrabackup8
   AUTHOR: eugen@FreeBSD.org
