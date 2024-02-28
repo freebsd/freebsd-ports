@@ -48,7 +48,7 @@ NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 OPIE_DESC=		Enable one-time passwords (no PAM support)
 PYTHON_DESC=		Enable python plugin support
 SSL_DESC=		Use OpenSSL TLS and SHA2 functions
-SSSD_DESC=		Enable SSSD backend support
+SSSD_DESC=		Enable SSSD backend support (deprecated)
 SSSD2_DESC=		Enable SSSD2 backend support
 
 AUDIT_CONFIGURE_WITH=	bsm-audit
