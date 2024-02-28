@@ -13,6 +13,10 @@ USES=		uidfix
 PLIST_FILES=	lib/${PORTNAME}.so \
 		share/man/man8/${PORTNAME}.8.gz
 
+.if exists(/usr/lib/pam_xdg.so)
+IGNORE=		module name conflict with a different implementation in base system
+.endif
+
 # makefile is too crufty, so roll our own
 MAKEFILE=	bsd.lib.mk
 MAKE_ARGS+=	SHLIB_NAME="${PORTNAME}.so" MAN="${PORTNAME}.8" \
