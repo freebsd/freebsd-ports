@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	24.1.0
+PORTVERSION=	24.2.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -127,7 +127,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1704642592
+_RELEASE_TIMESTAMP=	1709060050
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
@@ -227,6 +227,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/.env.example ${STAGEDIR}/${WWWDIR}
 	${ECHO_CMD} "@dir(www,www,0775) ${DBDIR}/storage" >> ${TMPPLIST}
 	${ECHO_CMD} "@dir(www,www,0775) ${DBDIR}" >> ${TMPPLIST}
+	${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/html/images/custommap/background" >> ${TMPPLIST}
 	${ECHO_CMD} "@dir(www,www,0775) /var/log/${PORTNAME}" >> ${TMPPLIST}
 	${ECHO_CMD} "@(root,www,0750) ${WWWDIR}/.env.example" >> ${TMPPLIST}
 

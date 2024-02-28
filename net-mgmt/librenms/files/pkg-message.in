@@ -92,7 +92,7 @@ It is also a good idea to validate your configuation after MySQL has been
 started:
 
 cd %%WWWDIR%%
-sudo ./validate.php
+echo ./validate.php | sudu su -fm www
 
 EOM
 }
@@ -100,7 +100,8 @@ EOM
   message: <<EOM
 Depending on the version, you may have to run the upgrade script.
 
-sudo %%PREFIX%%/bin/lnms migrate
+sudo su -fm www
+%%PREFIX%%/bin/lnms migrate
 
 NOTE: that script is particular about who runs it and ownership.
 Previously, it was suggested you avoid this via chown when using
