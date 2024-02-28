@@ -1,4 +1,4 @@
---- MACS3/fermi-lite/ksw.c.orig	2023-11-15 16:09:23 UTC
+--- MACS3/fermi-lite/ksw.c.orig	2024-02-24 15:09:33 UTC
 +++ MACS3/fermi-lite/ksw.c
 @@ -28,7 +28,7 @@
  

@@ -1,6 +1,6 @@
 PORTNAME=		MACS3
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.0.0
+DISTVERSION=		3.0.1
 CATEGORIES=		biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -42,7 +42,7 @@ post-stage:
 
 # FIXME: Some tests fail due to a py-threadpoolctl issue
 # https://github.com/joblib/threadpoolctl/pull/148
-do-test: deinstall install
+do-test: deinstall reinstall
 	@${RM} -rf ${WRKSRC}/temp
 	@cd ${WRKSRC}/test && ./cmdlinetest tag
 
