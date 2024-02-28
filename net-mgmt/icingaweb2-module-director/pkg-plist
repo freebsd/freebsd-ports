@@ -181,7 +181,7 @@
 %%WWWDIR%%/configuration.php
 %%WWWDIR%%/contrib/docker-test.sh
 %%WWWDIR%%/contrib/linux-agent-installer/Icinga2Agent.bash
-%%WWWDIR%%/contrib/systemd/%%DIRECTOR_GROUP%%-director.service
+%%WWWDIR%%/contrib/systemd/icinga-director.service
 %%WWWDIR%%/contrib/windows-agent-installer/Icinga2Agent.psm1
 %%WWWDIR%%/doc/01-Introduction.md
 %%WWWDIR%%/doc/02-Installation.md
@@ -1156,4 +1156,4 @@
 %%WWWDIR%%/test/php/library/Director/Resolver/TemplateTreeTest.php
 %%WWWDIR%%/test/php/library/Director/Restriction/MatchingFilterTest.php
 %%WWWDIR%%/test/phpunit-compat.php
-@dir /var/run/%%DIRECTOR_GROUP%%-director
+@dir(%%DIRECTOR_USER%%,DIRECTOR_GROUP%%,0775) /var/run/icinga-director
