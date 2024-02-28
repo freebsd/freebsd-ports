@@ -18,4 +18,6 @@ GH_TAGNAME=	vulkan-sdk-${DISTVERSION}
 CMAKE_ON=	SPIRV_CROSS_SHARED
 CMAKE_OFF=	SPIRV_CROSS_ENABLE_TESTS
 
+PORTSCOUT=	site:${WWW}/tags
+
 .include <bsd.port.mk>
