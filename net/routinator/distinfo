@@ -1,4 +1,4 @@
-TIMESTAMP = 1707312619
+TIMESTAMP = 1709146884
 SHA256 (routinator-ui-build.tar.gz) = 7079096b3fd986aa01b03cf3e743cf74d37b8441d312844c25e2b065deed8290
 SIZE (routinator-ui-build.tar.gz) = 756828
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
@@ -421,5 +421,5 @@ SHA256 (rust/crates/winreg-0.50.0.crate) = 524e57b2c537c0f9b1e69f1965311ec12182b
 SIZE (rust/crates/winreg-0.50.0.crate) = 29703
 SHA256 (rust/crates/xattr-1.3.1.crate) = 8da84f1a25939b27f6820d92aed108f83ff920fdf11a7b19366c27c4cda81d4f
 SIZE (rust/crates/xattr-1.3.1.crate) = 12580
-SHA256 (NLnetLabs-routinator-v0.13.1_GH0.tar.gz) = bf88bf03c749ba98a653a45313008d4f88cc9920395662d789be2d0529dd7870
-SIZE (NLnetLabs-routinator-v0.13.1_GH0.tar.gz) = 5455937
+SHA256 (NLnetLabs-routinator-v0.13.2_GH0.tar.gz) = 77c3b74b508caabf4c59387480cda18b222d817fd70328f8c73a8fb45a774108
+SIZE (NLnetLabs-routinator-v0.13.2_GH0.tar.gz) = 5456095
