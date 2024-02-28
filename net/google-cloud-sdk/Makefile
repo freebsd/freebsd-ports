@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-sdk
-DISTVERSION=	465.0.0
+DISTVERSION=	466.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -15,17 +15,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python
 
-WRKSRC=		${WRKDIR}/google-cloud-sdk
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/google-cloud-sdk
 
 PLIST_FILES=	bin/bq \
 		bin/docker-credential-gcloud \
 		bin/gcloud \
 		bin/git-credential-gcloud.sh \
 		bin/gsutil
-
-SUB_FILES=	pkg-message
 
 post-extract:
 	@${RM} -r \
