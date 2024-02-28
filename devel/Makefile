@@ -2784,6 +2784,7 @@
     SUBDIR += p5-Locale-XGettext
     SUBDIR += p5-Locale-gettext
     SUBDIR += p5-Locale-libintl
+    SUBDIR += p5-Lock-File
     SUBDIR += p5-LockFile-Simple
     SUBDIR += p5-Log-Accounting-SVK
     SUBDIR += p5-Log-Accounting-SVN
