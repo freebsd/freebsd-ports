@@ -1,8 +1,7 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	23.11.2
+PORTVERSION=	24.02
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
@@ -18,26 +17,21 @@ BUILD_DEPENDS=	bash:shells/bash \
 		lowdown:textproc/lowdown \
 		${PYTHON_PKGNAMEPREFIX}mako>=1.0.14:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mrkd>=0.2.0_1:devel/py-mrkd@${PY_FLAVOR}
-LIB_DEPENDS=	libgmp.so:math/gmp \
-		libsodium.so:security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 RUN_DEPENDS=	bitcoin-cli:net-p2p/bitcoin-utils
 
 USES=		autoreconf:build \
 		compiler:c11 \
 		cpe \
-		gettext \
+		gettext-tools:build \
 		gmake \
 		libtool \
-		python:build \
 		shebangfix
 CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 ALL_TARGET=	default
 SHEBANG_FILES=	plugins/clnrest/clnrest.py \
 		tools/reckless
-
-EXTRA_PATCHES_aarch64=	${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
-EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
 OPTIONS_DEFINE=		CLNRESTDEPS COMPATIBILITY DEBUG
 OPTIONS_MULTI=		STORAGE
@@ -46,7 +40,8 @@ OPTIONS_RADIO=		TESTING
 OPTIONS_RADIO_TESTING=	ASAN VALGRIND
 
 CLNRESTDEPS_DESC=	Install and depend on packages required by the clnrest plugin
-# for d in `grep -E '^[^[:space:]]' work/lightning-23.11.2/plugins/clnrest/requirements.txt |cut -f 1 -d =` ; do echo "=== $d ===" ; portsearch -n "py.*$d" -o path ; done
+# for d in $(grep -E '^[^[:space:]]' work/lightning-*/plugins/clnrest/requirements.txt |cut -f 1 -d =) ; do if [ -z "$(make -V CLNRESTDEPS_RUN_DEPENDS |grep -i "$(make -V PYTHON_PKGNAMEPREFIX)${d/-/.}>")" ] ; then echo "$d" ; fi ; done
+# ignore cryptography (handled separately via USE_PYTHON+=cryptography) and pkgutil-resolve-name (included in Python 3.9)
 CLNRESTDEPS_RUN_DEPENDS=\
 	${PYTHON_PKGNAMEPREFIX}Flask-Cors>0:www/py-flask-cors@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -110,7 +105,10 @@ OPTIONS_DEFAULT=COMPATIBILITY SQLITE
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLNRESTDEPS}
+USES+=		python:3.9+
 USE_PYTHON+=	cryptography
+.else
+USES+=		python:build
 .endif
 
 HAS_CONFIGURE=	yes
@@ -126,8 +124,8 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:bb4cd3ac802c7:ext1/external/libwally-core \
-		ElementsProject:secp256k1-zkp:ff33018fe765d:ext2/external/libwally-core/src/secp256k1 \
+		ElementsProject:libwally-core:ec348c884e93a:ext1/external/libwally-core \
+		ElementsProject:secp256k1-zkp:1e04d324476f9:ext2/external/libwally-core/src/secp256k1 \
 		ianlancetaylor:libbacktrace:2446c66076480ce:ext3/external/libbacktrace \
 		zserge:jsmn:18e9fe42cbfe21d65076f5c77ae2be3:ext4/external/jsmn \
 		valyala:gheap:67fc83bc953324f4759e52951921d:ext5/external/gheap
@@ -144,7 +142,7 @@ PLIST_SUB=	U="${USERS}" G="${GROUPS}"
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CPPFLAGS+=       -Wno-error=unused-but-set-variable
+CPPFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
 post-install:
@@ -171,6 +169,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/keysend
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/offers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/pay
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/recover
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/spenderp
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/sql
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/topology

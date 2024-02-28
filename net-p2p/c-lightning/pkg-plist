@@ -41,6 +41,7 @@ libexec/c-lightning/plugins/funder
 libexec/c-lightning/plugins/keysend
 libexec/c-lightning/plugins/offers
 libexec/c-lightning/plugins/pay
+libexec/c-lightning/plugins/recover
 libexec/c-lightning/plugins/spenderp
 libexec/c-lightning/plugins/sql
 libexec/c-lightning/plugins/topology
@@ -80,6 +81,7 @@ man/man7/lightning-delexpiredinvoice.7.gz
 man/man7/lightning-delforward.7.gz
 man/man7/lightning-delinvoice.7.gz
 man/man7/lightning-delpay.7.gz
+man/man7/lightning-deprecations.7.gz
 man/man7/lightning-disableinvoicerequest.7.gz
 man/man7/lightning-disableoffer.7.gz
 man/man7/lightning-disconnect.7.gz
