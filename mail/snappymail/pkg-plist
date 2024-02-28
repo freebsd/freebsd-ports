@@ -416,7 +416,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/Layout.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/PluginPropertyType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/SignMeType.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/TimeFormat.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Enumerations/UploadError.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Exceptions/ClientException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/KeyPathHelper.php
@@ -578,6 +577,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/lessphp/LICENSE
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/lessphp/README.md
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/lessphp/lessc.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/polyfill/php8.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/attachmentsaction.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/cookies.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/crypt.php
@@ -627,6 +627,8 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/backup.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gnupg.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/keyservers.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/pecl.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/pgpinterface.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/qrcode.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/repository.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl.php
@@ -836,6 +838,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsOpenPgpGenerate.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsOpenPgpImport.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsOpenPgpKey.html
+%%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsSMimeImport.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsSieveScript.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SettingsAccounts.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/SettingsContacts.html
@@ -862,7 +865,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/imapsync.php
 %%WWWDIR%%/snappymail/v/%%VER%%/include.php
 %%WWWDIR%%/snappymail/v/%%VER%%/index.php
-%%WWWDIR%%/snappymail/v/%%VER%%/php8.php
 %%WWWDIR%%/snappymail/v/%%VER%%/setup.php
 %%WWWDIR%%/snappymail/v/%%VER%%/static/android-icon.png
 %%WWWDIR%%/snappymail/v/%%VER%%/static/apache.htaccess
