@@ -1,30 +1,26 @@
-PORTNAME?=	lighttpd
-PORTVERSION=	1.4.73
-CATEGORIES?=	www
-MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
+PORTNAME=	lighttpd
+PORTVERSION=	1.4.74
+CATEGORIES=	www
+MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER=	pkubaj@FreeBSD.org
-COMMENT?=	Secure, fast, compliant, and flexible Web Server
-WWW?=		https://www.lighttpd.net/
+COMMENT=	Secure, fast, compliant, and flexible Web Server
+WWW=		https://www.lighttpd.net/
 
-.if !defined(_BUILDING_LIGHTTPD_MODULE)
+PATCH_SITES=	https://git.lighttpd.net/lighttpd/lighttpd1.4/commit/
+PATCHFILES=	106c4b147b7bc357d8764cddd0bf30fa9e8c0bf9.patch:-p1
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-.endif
 
-LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		compiler:c11 cmake localbase:ldflags pkgconfig tar:xz
-
-.if !defined(_BUILDING_LIGHTTPD_MODULE)
-USES+=	cpe
-.endif
+USES=		compiler:c11 cmake cpe localbase:ldflags pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
 
-.if !defined(_BUILDING_LIGHTTPD_MODULE)
 TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
@@ -116,15 +112,8 @@ CACHEDIR=	/var/cache/${PORTNAME}
 LOGDIR=		/var/log/${PORTNAME}
 HOMEDIR=	/var/run/${PORTNAME}
 RUNDIR=		/var/run
-PLIST_SUB+=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-PLIST_SUB+=	CACHEDIR="${CACHEDIR}" HOMEDIR="${HOMEDIR}" LOGDIR="${LOGDIR}"
-
-.endif # !defined(_BUILDING_LIGHTTPD_MODULE)
-
-.include <bsd.port.options.mk>
-
-.if !defined(_BUILDING_LIGHTTPD_MODULE)
-
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}" CACHEDIR="${CACHEDIR}" \
+		HOMEDIR="${HOMEDIR}" LOGDIR="${LOGDIR}"
 SUB_LIST=	REQUIRE="${REQUIRE}"
 
 post-patch:
@@ -169,7 +158,5 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-
-.endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
 .include <bsd.port.mk>
