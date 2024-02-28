@@ -1,15 +1,15 @@
---- configure.ac.orig	2022-08-31 15:52:22 UTC
+--- configure.ac.orig	2024-02-03 20:39:30 UTC
 +++ configure.ac
-@@ -27,12 +27,6 @@ AC_PROG_RANLIB
- AC_CHECK_TOOL(STRIP, strip, )
- AC_CHECK_TOOL(CONVERT, convert, )
+@@ -29,12 +29,6 @@ AC_CHECK_FUNCS(isatty)
+ AC_CHECK_HEADERS(stdbool.h)
+ AC_CHECK_FUNCS(isatty)
  
 -if test "$GCC" = "yes"
 -then
 -        WARNINGS="-Wall -Wdeclaration-after-statement -Wredundant-decls"
--        CFLAGS="-O$OPT_LEVEL -g $WARNINGS $orig_CFLAGS"
+-        CFLAGS="-O$OPT_LEVEL -g $WARNINGS $CFLAGS"
 -fi
 -
  dnl network libraries
  
- case "$target" in
+ SOCKET_LIBS=
