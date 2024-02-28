@@ -1,11 +1,7 @@
 PORTNAME=	hypridle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	56f334cbe867.patch:-p1 # https://github.com/hyprwm/hypridle/issues/7
-PATCHFILES+=	ea8588fefbe5.patch:-p1 # https://github.com/hyprwm/hypridle/pull/19
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland's idle daemon #'
