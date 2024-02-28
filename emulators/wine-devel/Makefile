@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	9.2
+DISTVERSION=	9.3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/9.x/
@@ -27,6 +27,7 @@ CPE_VENDOR=	winehq
 CONFLICTS_INSTALL=	wine
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--verbose \
 		--disable-kerberos \
 		--disable-tests \
