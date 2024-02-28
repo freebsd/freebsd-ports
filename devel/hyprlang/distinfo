@@ -1,5 +1,5 @@
-TIMESTAMP = 1708212860
-SHA256 (hyprwm-hyprlang-v0.4.0_GH0.tar.gz) = d50e66a46445fc322e3a0065ad1b86799d3c1e9d22d5a179f74b71e520aa82bb
-SIZE (hyprwm-hyprlang-v0.4.0_GH0.tar.gz) = 63245
+TIMESTAMP = 1709082138
+SHA256 (hyprwm-hyprlang-v0.4.1_GH0.tar.gz) = dd00b48fc31199c3f30f4ef6ec61f3bddcc092eff2628ee28cb238a4501521e8
+SIZE (hyprwm-hyprlang-v0.4.1_GH0.tar.gz) = 63616
 SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
