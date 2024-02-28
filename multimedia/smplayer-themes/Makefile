@@ -7,7 +7,7 @@ MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}/
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Themes for SMPlayer
-WWW=		http://smplayer.sourceforge.net/
+WWW=		https://www.smplayer.info/
 
 USES=		qt:5 tar:bzip2
 USE_QT=		buildtools:build
