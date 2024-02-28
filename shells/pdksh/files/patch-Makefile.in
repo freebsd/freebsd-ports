@@ -7,7 +7,7 @@
 -bindir = $(exec_prefix)/bin
 -mandir = $(prefix)/man/man$(manext)
 +bindir = $(DESTDIR)$(exec_prefix)/bin
-+mandir = $(DESTDIR)$(prefix)/man/man$(manext)
++mandir = $(DESTDIR)$(prefix)/share/man/man$(manext)
  manext = 1
  
  # Suffix for executables: nothing for unix, .exe for os/2.
