@@ -1,6 +1,7 @@
 PORTNAME=	binaryen
 DISTVERSIONPREFIX=	version_
 DISTVERSION=	117
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/WebAssembly/binaryen
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake cpe localbase:ldflags python:build
+USES=		cmake cpe python:build
 CPE_VENDOR=	webassembly
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
@@ -20,6 +21,7 @@ OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
 
 TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
+TEST_USES=		localbase:ldflags
 TEST_CMAKE_BOOL=	BUILD_TESTS
 
 do-test-TEST-on:
