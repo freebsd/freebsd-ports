@@ -1,6 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -54,8 +54,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libunistring.so:devel/libunistring \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi \
-		sudo>0:security/sudo
+RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 USES=	autoreconf cpe gettext gmake gssapi:bootstrap,flags,mit iconv ldap \
 	libtool localbase:ldflags pathfix pkgconfig python:3.9+ shebangfix ssl
