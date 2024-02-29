@@ -27,6 +27,7 @@ USES=		cpe iconv libtool pkgconfig ssl
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-docs \
 		--with-ssl=openssl \
