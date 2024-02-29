@@ -1,3 +1,38 @@
+  <vuln vid="31bb1b8d-d6dc-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>122.0.6261.94</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>122.0.6261.94</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop_27.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[324596281] High CVE-2024-1938: Type Confusion in V8. Reported by 5f46f4ee2e17957ba7b39897fb376be8 on 2024-02-11</li>
+	    <li>[323694592] High CVE-2024-1939: Type Confusion in V8. Reported by Bohan Liu (@P4nda20371774) of Tencent Security Xuanwu Lab on 2024-02-05</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1938</cvename>
+      <cvename>CVE-2024-1939</cvename>
+      <url>https://chromereleases.googleblog.com/2024/02/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2024-02-27</discovery>
+      <entry>2024-02-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3dada2d5-4e17-4e39-97dd-14fdbd4356fb">
     <topic>null -- Routinator terminates when RTR connection is reset too quickly after opening</topic>
     <affects>
@@ -10,7 +45,7 @@
        <body xmlns="http://www.w3.org/1999/xhtml">
        <p>sep@nlnetlabs.nl reports:</p>
        <blockquote cite="https://www.nlnetlabs.nl/downloads/routinator/CVE-2024-1622.txt">
-         <p>Due to a mistake in error checking, Routinator will terminate when
+       <p>Due to a mistake in error checking, Routinator will terminate when
        an incoming RTR connection is reset by the peer too quickly after
        opening.</p>
        </blockquote>
@@ -25,6 +60,7 @@
       <entry>2024-02-28</entry>
     </dates>
   </vuln>
+
   <vuln vid="02e33cd1-c655-11ee-8613-08002784c58d">
     <topic>curl -- OCSP verification bypass with TLS session reuse</topic>
     <affects>
