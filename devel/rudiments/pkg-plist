@@ -335,4 +335,4 @@ lib/librudiments.so
 lib/librudiments.so.8
 lib/librudiments.so.8.1.1
 libdata/pkgconfig/rudiments.pc
-man/man1/rudiments-config.1.gz
+share/man/man1/rudiments-config.1.gz

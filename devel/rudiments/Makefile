@@ -14,6 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		libedit libtool pathfix pkgconfig readline shebangfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=	doc/programming/insert.pl
 USE_LDCONFIG=	yes
