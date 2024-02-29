@@ -682,6 +682,10 @@
                 man7
                 ..
             ..
+            it
+                man7
+                ..
+            ..
             ja              uname=root
 /set uname=root
                 man1
