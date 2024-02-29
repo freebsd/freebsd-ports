@@ -1,9 +1,0 @@
-bin/gimmage
-%%DATADIR%%/pixmaps/1to1.png
-%%DATADIR%%/pixmaps/anticlockwise.png
-%%DATADIR%%/pixmaps/clockwise.png
-%%DATADIR%%/pixmaps/unreadable.png
-share/applications/gimmage.desktop
-share/locale/de/LC_MESSAGES/gimmage.mo
-share/locale/fr/LC_MESSAGES/gimmage.mo
-share/pixmaps/gimmage.png

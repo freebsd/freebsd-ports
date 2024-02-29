@@ -242,7 +242,6 @@
     SUBDIR += gifski
     SUBDIR += giftool
     SUBDIR += gimageview
-    SUBDIR += gimmage
     SUBDIR += gimp
     SUBDIR += gimp-app
     SUBDIR += gimp-beautify-plugin
