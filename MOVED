@@ -3003,3 +3003,4 @@ audio/pm3umpdl||2024-02-29|Has expired: Deprecated utility as this is supported 
 benchmarks/ramspeed||2024-02-29|Has expired: Upstream is dead and port is unfetchable
 comms/comserv||2024-02-29|Has expired: Abandonware, last release in 2002. Consider using comms/remserial
 comms/sms_client||2024-02-29|Has expired: Abandonware, dead upstream and relies on legacy hardware and or networks that are obsolete
+devel/codeville||2024-02-29|Has expired: Abandonware, dead upstream for at least 10 years. Consider using devel/git or devel/mercurial

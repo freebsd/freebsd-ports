@@ -433,7 +433,6 @@
     SUBDIR += codeblocks
     SUBDIR += codequery
     SUBDIR += codesearch-py
-    SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += collada-dom
     SUBDIR += color

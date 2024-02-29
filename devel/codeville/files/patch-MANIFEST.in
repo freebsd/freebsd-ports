@@ -1,8 +1,0 @@
---- MANIFEST.in.orig	2005-11-21 00:33:02 UTC
-+++ MANIFEST.in
-@@ -1,4 +1,4 @@
--recursive-include Codeville *.py *.pyd
-+recursive-include Codeville *.py
- include cdv cdvserver cdvpasswd cdv-agent cdvupgrade LICENSE.txt
- include cdvserver.conf.sample
- include src/winrand.c
