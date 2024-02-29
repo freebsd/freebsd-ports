@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-02-25 20:22:18 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-02-29 08:39:18 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -225,7 +225,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -45,7 +45,7 @@
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
    ChildThreadTypeSwitcher child_thread_type_switcher_;
-@@ -3369,7 +3369,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3378,7 +3378,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -54,7 +54,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3429,6 +3429,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3438,6 +3438,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
