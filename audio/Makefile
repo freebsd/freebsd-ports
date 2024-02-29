@@ -786,7 +786,6 @@
     SUBDIR += supercollider
     SUBDIR += surge-synthesizer-lv2
     SUBDIR += surge-synthesizer-xt-lv2
-    SUBDIR += sweep
     SUBDIR += swh-lv2
     SUBDIR += swhplugins
     SUBDIR += synthpod-lv2
