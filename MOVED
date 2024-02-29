@@ -3012,3 +3012,4 @@ finance/xtrader||2024-02-29|Has expired: Abandoned upstream
 graphics/acidwarp||2024-02-29|Has expired: Unmaintained by upstream use acidwarp-sdl instead
 graphics/gimmage||2024-02-29|Has expired: Last release in 2007, depends on legacy libraries such as GTK2. Consider using graphics/geeqie or graphics/imv
 misc/smssend||2024-02-29|Has expired: Depends on legacy websites / pages to send SMS
+multimedia/aegisub||2024-02-29|Has expired: BROKEN for nearly a year
