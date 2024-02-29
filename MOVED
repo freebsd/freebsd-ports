@@ -3019,3 +3019,4 @@ devel/ptypes||2024-02-29|Has expired: Abandoned upstream, doesn't fetch
 misc/skyutils||2024-02-29|Has expired: Library used for deprecated port misc/smssend
 net-mgmt/unifi7||2024-02-29|Has expired: EOLed upstream, switch to newer version
 net/aslookup||2024-02-29|Has expired: Lookup returns nothing
+net/dimes||2024-02-29|Has expired: The project vaporized in early 2005 and is no longer active
