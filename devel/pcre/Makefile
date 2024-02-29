@@ -12,6 +12,8 @@ WWW=		https://www.pcre.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	EOLed by upstream, use devel/pcre2 instead
+
 USES=			${USES_${ARCH}} cpe libtool pathfix tar:bzip2
 USES_powerpc=		compiler:c++11-lang
 USES_powerpc64=		compiler:c++11-lang
