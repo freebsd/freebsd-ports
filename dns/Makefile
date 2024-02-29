@@ -225,7 +225,6 @@
     SUBDIR += rubygem-zonefile
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge
-    SUBDIR += sheerdns
     SUBDIR += sleuth
     SUBDIR += subfinder
     SUBDIR += totd

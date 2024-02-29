@@ -3006,3 +3006,4 @@ comms/sms_client||2024-02-29|Has expired: Abandonware, dead upstream and relies 
 devel/codeville||2024-02-29|Has expired: Abandonware, dead upstream for at least 10 years. Consider using devel/git or devel/mercurial
 dns/dns_balance||2024-02-29|Has expired: Abandonware, last release in 2005. Consider using dns/dnsdist
 dns/dnscheckengine||2024-02-29|Has expired: Deprecated upstream in favour of Zonemaster Project
+dns/sheerdns||2024-02-29|Has expired: Abandonware, upstream dead and last update over 10 years ago

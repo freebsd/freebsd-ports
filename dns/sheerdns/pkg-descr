@@ -1,9 +1,0 @@
-sheerdns is a master DNS server whose zone records are stored on a
-one-record-per-file bases. Because of this, sheerdns is likely the
-simplest DNS to configure, use, update, and operate. It's especially
-efficient for networks with frequent updates -- serving DHCP, for example.
-Updates to the zones are immediate, and do not require restarting sheerdns.
-
-SheerDNS is a good candidate for creating and RBL for mail, or web sites,
-as well as for providing DNS on embedded systems. Or anything else that
-requires a fast DNS, with very low overhead.
