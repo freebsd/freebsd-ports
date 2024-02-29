@@ -3014,3 +3014,4 @@ graphics/gimmage||2024-02-29|Has expired: Last release in 2007, depends on legac
 misc/smssend||2024-02-29|Has expired: Depends on legacy websites / pages to send SMS
 multimedia/aegisub||2024-02-29|Has expired: BROKEN for nearly a year
 multimedia/camserv||2024-02-29|Has expired: Last upstream release was in 2002, reconsider using multimedia/ustreamer or multimedia/ffmpeg
+multimedia/flvstreamer||2024-02-29|Has expired: Last release 2010 and no active development since, consider using multimedia/ffmpeg
