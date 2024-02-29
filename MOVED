@@ -3028,3 +3028,4 @@ security/fcheck||2024-02-29|Has expired: Abandonware, upstream is gone and notes
 security/fl0p||2024-02-29|Has expired: Abandonware, last release in 2006 and no longer relevant
 security/libzrtpcppcore||2024-02-29|Has expired: Obscure protocol that never got any traction, superseded by SRTP
 security/pbc||2024-02-29|Has expired: Abandonware, last release in 2013 and no development since
+security/poly1305aes||2024-02-29|Has expired: Fails to build on Tier 1 and most other platforms

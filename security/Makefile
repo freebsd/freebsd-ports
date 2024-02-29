@@ -833,7 +833,6 @@
     SUBDIR += plasma6-ksshaskpass
     SUBDIR += plasma6-kwallet-pam
     SUBDIR += please
-    SUBDIR += poly1305aes
     SUBDIR += portacl-rc
     SUBDIR += proftpd-mod_clamav
     SUBDIR += proxycheck
