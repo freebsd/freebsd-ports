@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
 
-FLAVORS=		qt5 qt6
+FLAVORS=		qt6 qt5
 FLAVOR?=		qt6
 qt5_CONFLICTS_INSTALL=	cmake-gui-qt6
 qt6_CONFLICTS_INSTALL=	cmake-gui-qt5
