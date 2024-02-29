@@ -1,0 +1,4 @@
+This module is a subclass of HTTP::Tiny that performs exactly one additional
+function: before connecting, it passes the hostname to Net::DNS::Paranoid.
+If the hostname is rejected, then the request is aborted before a connect is
+even attempted.
