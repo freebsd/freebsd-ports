@@ -150,7 +150,6 @@
     SUBDIR += enchive
     SUBDIR += eschalot
     SUBDIR += expiretable
-    SUBDIR += f-prot
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
