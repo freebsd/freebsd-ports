@@ -1,6 +1,6 @@
 bin/port
-man/man1/port.1.gz
-man/man5/porttools.5.gz
+share/man/man1/port.1.gz
+share/man/man5/porttools.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
