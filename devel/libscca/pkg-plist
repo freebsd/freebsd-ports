@@ -13,5 +13,5 @@ lib/libscca.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyscca.a
 %%PYTHON_SITELIBDIR%%/pyscca.so
 libdata/pkgconfig/libscca.pc
-man/man1/sccainfo.1.gz
-man/man3/libscca.3.gz
+share/man/man1/sccainfo.1.gz
+share/man/man3/libscca.3.gz

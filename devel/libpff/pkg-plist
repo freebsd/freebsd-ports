@@ -15,6 +15,6 @@ lib/libpff.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pypff.a
 %%PYTHON_SITELIBDIR%%/pypff.so
 libdata/pkgconfig/libpff.pc
-man/man1/pffexport.1.gz
-man/man1/pffinfo.1.gz
-man/man3/libpff.3.gz
+share/man/man1/pffexport.1.gz
+share/man/man1/pffinfo.1.gz
+share/man/man3/libpff.3.gz

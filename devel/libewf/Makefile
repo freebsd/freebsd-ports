@@ -19,6 +19,7 @@ USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python --with-libsmdev=${LOCALBASE} \
 		--with-libsmraw=${LOCALBASE} \
 		--with-libuuid=${LOCALBASE} --with-openssl=no

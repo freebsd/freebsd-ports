@@ -13,5 +13,5 @@ lib/libvsapm.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyvsapm.a
 %%PYTHON_SITELIBDIR%%/pyvsapm.so
 libdata/pkgconfig/libvsapm.pc
-man/man1/vsapminfo.1.gz
-man/man3/libvsapm.3.gz
+share/man/man1/vsapminfo.1.gz
+share/man/man3/libvsapm.3.gz

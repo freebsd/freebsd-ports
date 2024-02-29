@@ -14,5 +14,5 @@ lib/libphdi.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyphdi.a
 %%PYTHON_SITELIBDIR%%/pyphdi.so
 libdata/pkgconfig/libphdi.pc
-man/man1/phdiinfo.1.gz
-man/man3/libphdi.3.gz
+share/man/man1/phdiinfo.1.gz
+share/man/man3/libphdi.3.gz

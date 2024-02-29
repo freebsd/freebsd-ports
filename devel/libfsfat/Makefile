@@ -13,6 +13,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python --with-openssl=no
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 USES=		fuse libtool pathfix pkgconfig python

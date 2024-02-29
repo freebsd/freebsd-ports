@@ -15,5 +15,5 @@ lib/libregf.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyregf.a
 %%PYTHON_SITELIBDIR%%/pyregf.so
 libdata/pkgconfig/libregf.pc
-man/man1/regfinfo.1.gz
-man/man3/libregf.3.gz
+share/man/man1/regfinfo.1.gz
+share/man/man3/libregf.3.gz
