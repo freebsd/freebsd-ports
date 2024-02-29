@@ -13,7 +13,7 @@ lib/c_icap/srv_url_check.a
 lib/c_icap/srv_url_check.so
 lib/c_icap/virus_scan.a
 lib/c_icap/virus_scan.so
-man/man8/c-icap-mods-sguardDB.8.gz
+share/man/man8/c-icap-mods-sguardDB.8.gz
 %%DATADIR%%/templates/srv_content_filtering/en/BLOCK
 %%DATADIR%%/templates/srv_url_check/en/DENY
 %%DATADIR%%/templates/virus_scan/en/VIR_MODE_HEAD
