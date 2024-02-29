@@ -1,5 +1,6 @@
 PORTNAME=	texi2mdoc
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/texi2mdoc/snapshots/
 
@@ -12,7 +13,7 @@ LICENSE=	ISCL
 USES=		tar:tgz
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 

@@ -1,0 +1,14 @@
+--- Makefile.orig	2024-02-29 11:01:17 UTC
++++ Makefile
+@@ -17,9 +17,9 @@ install: all
+ 
+ install: all
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+-	mkdir -p $(DESTDIR)$(PREFIX)/man/man1
++	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+ 	install -m 0755 texi2mdoc $(DESTDIR)$(PREFIX)/bin
+-	install -m 0444 texi2mdoc.1 $(DESTDIR)$(PREFIX)/man/man1
++	install -m 0444 texi2mdoc.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 
+ installwww: www
+ 	mkdir -p $(PREFIX)/snapshots
