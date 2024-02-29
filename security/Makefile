@@ -157,7 +157,6 @@
     SUBDIR += ffuf
     SUBDIR += fiked
     SUBDIR += fizz
-    SUBDIR += fl0p
     SUBDIR += flawfinder
     SUBDIR += fprint_demo
     SUBDIR += fprintd
