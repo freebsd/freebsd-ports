@@ -1,9 +1,0 @@
-ASLOOKUP is the tool which searches the sequence of the AS number specified
-with the parameter from IRR and indicates the first line of Description
-of the AS Object.
-
-Advantages:
-You can search many AS Numbers at once.
-You can use result of "show ip bgp" command with a CISCO router.
-You can search to ARIN, JPNIC and APNIC whois database.
-You can search AS Number from IP Addresses.
