@@ -1,9 +1,8 @@
 PORTNAME=	scamper
-PORTVERSION=	20230614c
-PORTREVISION=	1
+DISTVERSION=	20240229
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
-DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
+DISTNAME=	${PORTNAME}-cvs-${DISTVERSION}
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Tool for parallelised IPv4 and IPv6 measurement

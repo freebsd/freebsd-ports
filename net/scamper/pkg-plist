@@ -28,11 +28,11 @@ bin/sc_wartsfilter
 bin/sc_wartsfix
 lib/libscamperctrl.a
 lib/libscamperctrl.so.2
-lib/libscamperctrl.so.2.1.1
+lib/libscamperctrl.so.2.1.3
 lib/libscamperctrl.so
 lib/libscamperfile.a
-lib/libscamperfile.so.6
-lib/libscamperfile.so.6.1.0
+lib/libscamperfile.so.8
+lib/libscamperfile.so.8.0.1
 lib/libscamperfile.so
 share/man/man1/sc_ally.1.gz
 share/man/man1/sc_analysis_dump.1.gz
@@ -70,6 +70,7 @@ include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
 include/scamper_host.h
+include/scamper_http.h
 include/scamper_icmpext.h
 include/scamper_list.h
 include/scamper_neighbourdisc.h
@@ -79,3 +80,4 @@ include/scamper_sting.h
 include/scamper_tbit.h
 include/scamper_trace.h
 include/scamper_tracelb.h
+include/scamper_udpprobe.h
