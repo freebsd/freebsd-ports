@@ -1,4 +1,4 @@
---- crorden/dcm2niix_console/makefile.orig	2023-08-17 23:49:49 UTC
+--- crorden/dcm2niix_console/makefile.orig	2024-02-29 01:05:45 UTC
 +++ crorden/dcm2niix_console/makefile
 @@ -1,5 +1,5 @@
  # Regular use
@@ -7,16 +7,16 @@
  
  # Debugging
  #CFLAGS=-g
-@@ -35,7 +35,7 @@ ifneq ($(OS),Windows_NT)
- 		#CFLAGS= -O3
+@@ -34,7 +34,7 @@ ifneq ($(OS),Windows_NT)
+ 		#CFLAGS=-dead_strip -O3
  		# ponder -sectcreate later [rickr]
  		# CFLAGS=-O3 -sectcreate __TEXT __info_plist Info.plist
--		CFLAGS=-O3
-+		CXXFLAGS=-O3
+-		CFLAGS= -O3
++		CXXFLAGS= -O3
  		#Apple notarization requires a Info.plist
  		# For .app bundles, the Info.plist is a separate file, for executables it is appended as a section
  		#you can check that the Info.plist section has been inserted with either of these commands
-@@ -46,4 +46,4 @@ ifneq ($(OS),Windows_NT)
+@@ -45,4 +45,4 @@ all:
  	endif
  endif
  all:
