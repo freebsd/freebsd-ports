@@ -1,6 +1,0 @@
-This program generates images from mathematical functions, draws them on the
-SVGAlib screen, and cycles the palette.  The images are intended to have a
-hypnotic effect.
-
-After exiting the program, you must switch consoles before the display will be
-usable again.

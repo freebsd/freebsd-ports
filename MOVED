@@ -3009,3 +3009,4 @@ dns/dnscheckengine||2024-02-29|Has expired: Deprecated upstream in favour of Zon
 dns/sheerdns||2024-02-29|Has expired: Abandonware, upstream dead and last update over 10 years ago
 finance/cointop||2024-02-29|Has expired: Repo archived upstream Nov 18, 2023
 finance/xtrader||2024-02-29|Has expired: Abandoned upstream
+graphics/acidwarp||2024-02-29|Has expired: Unmaintained by upstream use acidwarp-sdl instead
