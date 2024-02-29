@@ -470,7 +470,6 @@
     SUBDIR += nginx-prometheus-exporter
     SUBDIR += nginx-ultimate-bad-bot-blocker
     SUBDIR += nginx-vts-exporter
-    SUBDIR += nibbleblog
     SUBDIR += nift
     SUBDIR += node
     SUBDIR += node16
