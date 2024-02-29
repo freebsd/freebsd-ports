@@ -476,7 +476,6 @@
     SUBDIR += mp3blaster
     SUBDIR += mp3burn
     SUBDIR += mp3check
-    SUBDIR += mp3ck
     SUBDIR += mp3gain
     SUBDIR += mp3guessenc
     SUBDIR += mp3lint
