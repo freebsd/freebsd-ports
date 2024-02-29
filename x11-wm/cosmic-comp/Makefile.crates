@@ -592,8 +592,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		zvariant_derive-3.15.0 \
 		zvariant_utils-1.0.1 \
 		glyphon@git+https://github.com/jackpot51/glyphon.git\#abb70c0fda8cf1a5dfc314c1c778103d7ba951e6 \
-		smithay@git+https://github.com/smithay/smithay?rev=7f9e6d5\#7f9e6d51e8a12fc992c305de03820a44811b8c18 \
 		taffy@git+https://github.com/DioxusLabs/taffy?rev=7781c70\#7781c70241f7f572130c13106f2a869a9cf80885 \
+		smithay@git+https://github.com/smithay/smithay?rev=c17297b\#c17297b68e8bc761ebddf6900926d78b19a5d8d1 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=cdc652e0\#cdc652e0d4823b16a5bd9badd288e38512789dc5 \
