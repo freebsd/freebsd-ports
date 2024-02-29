@@ -3892,7 +3892,6 @@
     SUBDIR += pcg-cpp
     SUBDIR += pcl
     SUBDIR += pcre
-    SUBDIR += pcre++
     SUBDIR += pcre2
     SUBDIR += pcsc-cyberjack
     SUBDIR += pcsc-lite
