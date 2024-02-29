@@ -215,7 +215,6 @@
     SUBDIR += gnome-metronome
     SUBDIR += gnome-music
     SUBDIR += gnome-podcasts
-    SUBDIR += gnormalize
     SUBDIR += gnuitar
     SUBDIR += gnupod
     SUBDIR += gnuspeechsa
