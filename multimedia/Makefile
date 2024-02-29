@@ -23,7 +23,6 @@
     SUBDIR += bitstream
     SUBDIR += blind
     SUBDIR += butt
-    SUBDIR += camserv
     SUBDIR += celluloid
     SUBDIR += cheese
     SUBDIR += chilitags
