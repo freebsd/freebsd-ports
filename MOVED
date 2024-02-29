@@ -3017,3 +3017,4 @@ multimedia/camserv||2024-02-29|Has expired: Last upstream release was in 2002, r
 multimedia/flvstreamer||2024-02-29|Has expired: Last release 2010 and no active development since, consider using multimedia/ffmpeg
 devel/ptypes||2024-02-29|Has expired: Abandoned upstream, doesn't fetch
 misc/skyutils||2024-02-29|Has expired: Library used for deprecated port misc/smssend
+net-mgmt/unifi7||2024-02-29|Has expired: EOLed upstream, switch to newer version
