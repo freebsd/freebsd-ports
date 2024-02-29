@@ -97,7 +97,6 @@
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
     SUBDIR += cgicc
-    SUBDIR += cgichk
     SUBDIR += cgiwrap
     SUBDIR += checkbot
     SUBDIR += chems
