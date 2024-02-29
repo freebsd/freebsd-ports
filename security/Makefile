@@ -328,7 +328,6 @@
     SUBDIR += libwhisker
     SUBDIR += libxcrypt
     SUBDIR += libyubikey
-    SUBDIR += libzrtpcppcore
     SUBDIR += lime
     SUBDIR += linux-bitwarden-cli
     SUBDIR += linux-c7-ca-certificates

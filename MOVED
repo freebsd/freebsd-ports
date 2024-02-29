@@ -3026,3 +3026,4 @@ security/f-prot||2024-02-29|Has expired: F-Prot Antivirus reached end-of-life on
 security/fakebo||2024-02-29|Has expired: Remote admin software that hasn't been relevant for last 15 years
 security/fcheck||2024-02-29|Has expired: Abandonware, upstream is gone and notes refers to Windows 98 as the newest OS
 security/fl0p||2024-02-29|Has expired: Abandonware, last release in 2006 and no longer relevant
+security/libzrtpcppcore||2024-02-29|Has expired: Obscure protocol that never got any traction, superseded by SRTP
