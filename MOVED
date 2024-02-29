@@ -3000,3 +3000,4 @@ audio/gnormalize||2024-02-29|Has expired: Last release in 2008, upstream is dead
 audio/mp3ck||2024-02-29|Has expired: Last release in 2005 and dead upstream, consider using multimedia/ffmpeg
 audio/mp3rename||2024-02-29|Has expired: Doesn't support ID3v2 tags properly
 audio/pm3umpdl||2024-02-29|Has expired: Deprecated utility as this is supported natively in musicpd
+benchmarks/ramspeed||2024-02-29|Has expired: Upstream is dead and port is unfetchable

@@ -82,7 +82,6 @@
     SUBDIR += py-throughpy
     SUBDIR += py-zopkio
     SUBDIR += raidtest
-    SUBDIR += ramspeed
     SUBDIR += randomio
     SUBDIR += rubygem-benchmark
     SUBDIR += rubygem-benchmark-ips
