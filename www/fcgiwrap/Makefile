@@ -1,6 +1,6 @@
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.1.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -18,11 +18,14 @@ GH_ACCOUNT=	gnosek
 
 USE_RC_SUBR=	fcgiwrap
 
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-GNU_CONFIGURE=	yes
 
-PLIST_FILES=	sbin/fcgiwrap man/man8/fcgiwrap.8.gz
+PLIST_FILES=	share/man/man8/fcgiwrap.8.gz \
+		sbin/fcgiwrap
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@prefix@@mandir@/@mandir@/'\
