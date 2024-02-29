@@ -1,6 +1,6 @@
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.5.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	dovecot>=2.3.9:mail/dovecot
 DOVECOTVERSION=	2.3
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--docdir=${DOCSDIR} \
 		--with-dovecot="${LOCALBASE}/lib/dovecot"
