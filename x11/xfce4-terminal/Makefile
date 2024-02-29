@@ -1,12 +1,8 @@
 PORTNAME=	xfce4-terminal
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
-
-PATCH_SITES=	https://gitlab.xfce.org/apps/xfce4-terminal/-/commit/
-PATCHFILES=		177fda86451cdeaaea8ed409e6d711b670699a97.patch:-p1
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
@@ -17,19 +13,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 xfce \
+		xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool vte3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--with-utempter
-INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=		--with-utempter
+INSTALL_TARGET=		install-strip
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
