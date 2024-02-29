@@ -1,7 +1,6 @@
 PORTNAME=	typeshare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
-PORTREVISION=	5
+DISTVERSION=	1.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,8 +63,8 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		num_cpus-1.13.1 \
 		once_cell-1.15.0 \
 		os_str_bytes-6.3.0 \
-		proc-macro2-1.0.44 \
-		quote-1.0.21 \
+		proc-macro2-1.0.60 \
+		quote-1.0.28 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		regex-1.6.0 \
@@ -73,24 +72,24 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.145 \
-		serde_derive-1.0.145 \
+		serde-1.0.164 \
+		serde_derive-1.0.164 \
 		serde_json-1.0.85 \
 		strsim-0.10.0 \
-		syn-1.0.100 \
+		syn-2.0.18 \
 		termcolor-1.1.3 \
 		textwrap-0.15.1 \
-		thiserror-1.0.35 \
-		thiserror-impl-1.0.35 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
 		thread_local-1.1.4 \
 		toml-0.5.9 \
 		unicode-ident-1.0.4 \
 		walkdir-2.3.2 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
