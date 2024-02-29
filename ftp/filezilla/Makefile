@@ -1,6 +1,6 @@
 PORTNAME=	filezilla
 PORTVERSION=	3.55.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	https://download.filezilla-project.org/client/
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -28,6 +28,7 @@ USES=		compiler:c++17-lang gmake gnome iconv:wchar_t libtool localbase \
 USE_GNOME=	cairo gtk30
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_WX=		3.0

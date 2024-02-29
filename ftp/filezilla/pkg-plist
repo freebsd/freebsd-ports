@@ -5,10 +5,10 @@ lib/libfzclient-commonui-private-3.55.1.so
 lib/libfzclient-commonui-private.so
 lib/libfzclient-private-3.55.1.so
 lib/libfzclient-private.so
-man/man1/filezilla.1.gz
-man/man1/fzputtygen.1.gz
-man/man1/fzsftp.1.gz
-man/man5/fzdefaults.xml.5.gz
+share/man/man1/filezilla.1.gz
+share/man/man1/fzputtygen.1.gz
+share/man/man1/fzsftp.1.gz
+share/man/man5/fzdefaults.xml.5.gz
 share/appdata/filezilla.appdata.xml
 share/applications/filezilla.desktop
 %%DATADIR%%/docs/fzdefaults.xml.example
