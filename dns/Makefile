@@ -27,7 +27,6 @@
     SUBDIR += dns2tcp
     SUBDIR += dnsblast
     SUBDIR += dnscap
-    SUBDIR += dnscheckengine
     SUBDIR += dnscontrol
     SUBDIR += dnscrypt-proxy2
     SUBDIR += dnscrypt-wrapper
