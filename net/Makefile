@@ -1442,7 +1442,6 @@
     SUBDIR += samba419
     SUBDIR += samplicator
     SUBDIR += savvycan
-    SUBDIR += sbd
     SUBDIR += sbm
     SUBDIR += scamper
     SUBDIR += scapy
