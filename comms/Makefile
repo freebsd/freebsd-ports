@@ -168,7 +168,6 @@
     SUBDIR += serialoverip
     SUBDIR += sigdigger
     SUBDIR += sigutils
-    SUBDIR += sms_client
     SUBDIR += smstools3
     SUBDIR += snap7
     SUBDIR += soapyairspy

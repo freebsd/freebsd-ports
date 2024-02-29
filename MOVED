@@ -3002,3 +3002,4 @@ audio/mp3rename||2024-02-29|Has expired: Doesn't support ID3v2 tags properly
 audio/pm3umpdl||2024-02-29|Has expired: Deprecated utility as this is supported natively in musicpd
 benchmarks/ramspeed||2024-02-29|Has expired: Upstream is dead and port is unfetchable
 comms/comserv||2024-02-29|Has expired: Abandonware, last release in 2002. Consider using comms/remserial
+comms/sms_client||2024-02-29|Has expired: Abandonware, dead upstream and relies on legacy hardware and or networks that are obsolete
