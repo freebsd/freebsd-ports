@@ -605,7 +605,6 @@
     SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += playumidi
-    SUBDIR += pm3umpdl
     SUBDIR += pms
     SUBDIR += pms-devel
     SUBDIR += pocketsphinx
