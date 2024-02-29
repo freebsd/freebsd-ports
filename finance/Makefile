@@ -150,6 +150,5 @@
     SUBDIR += tickrs
     SUBDIR += venice
     SUBDIR += weberp
-    SUBDIR += xtrader
 
 .include <bsd.port.subdir.mk>
