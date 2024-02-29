@@ -150,7 +150,6 @@
     SUBDIR += enchive
     SUBDIR += eschalot
     SUBDIR += expiretable
-    SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
     SUBDIR += farmhash
