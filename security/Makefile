@@ -153,7 +153,6 @@
     SUBDIR += fakeident
     SUBDIR += fakeroot
     SUBDIR += farmhash
-    SUBDIR += fcheck
     SUBDIR += fcrackzip
     SUBDIR += ffuf
     SUBDIR += fiked

@@ -3024,3 +3024,4 @@ net/nakenchat||2024-02-29|Has expired: Discontinued upstream and never left BETA
 net/sbd||2024-02-29|Has expired: Abandonware and unfetchable, consider using ncat in security/nmap
 security/f-prot||2024-02-29|Has expired: F-Prot Antivirus reached end-of-life on July 31, 2021
 security/fakebo||2024-02-29|Has expired: Remote admin software that hasn't been relevant for last 15 years
+security/fcheck||2024-02-29|Has expired: Abandonware, upstream is gone and notes refers to Windows 98 as the newest OS
