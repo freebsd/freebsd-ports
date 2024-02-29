@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 SHEBANG_FILES=	GetKp
 USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean all
+MAKE_ENV=	OPSYS=${OPSYS}
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/GetKp bin/wmSpaceWeather \

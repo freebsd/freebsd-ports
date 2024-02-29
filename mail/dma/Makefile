@@ -18,8 +18,7 @@ GH_ACCOUNT=	corecode
 GH_TAGNAME=	92937587bbfeab53653b841afe76af2fa6dad345
 USE_RC_SUBR=	dma_flushq
 
-MAKE_ENV=	__MAKE_CONF=/dev/null \
-		MANDIR=${PREFIX}/share/man/man \
+MAKE_ENV=	MANDIR=${PREFIX}/share/man/man \
 		MK_WERROR=no \
 		SRCCONF=/dev/null
 

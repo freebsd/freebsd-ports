@@ -18,7 +18,6 @@ USES=		iconv jpeg
 USE_RC_SUBR=	pfstatd
 
 MAKE_ARGS=	"LD_GD=gd"
-MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 PLIST_FILES=	bin/pfstat \
 		bin/pfstatd \

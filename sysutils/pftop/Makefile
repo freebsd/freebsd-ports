@@ -30,7 +30,6 @@ CFLAGS+=	-DHAVE_ALTQ=1
 .endif
 
 MAKE_ARGS+=	CSTD=gnu89
-MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 PLIST_FILES=	sbin/pftop \
 		share/man/man8/pftop.8.gz

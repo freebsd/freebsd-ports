@@ -14,14 +14,6 @@ LICENSE=	MIT
 USES=		cpe lua:core,53
 USE_LDCONFIG=	yes
 
-# Overriding __MAKE_CONF makes sure that we don't re-parse
-# /etc/make.conf during do-build, which would jeopardize the build
-# if, for instance, the user set CFLAGS=mumble
-# NOTE: /etc/make.conf is read BEFORE Makefile, so we already
-# have its settings when we get here.
-# See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
-MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
-
 # using the "bsd" target rather than "freebsd" saves patching out the
 # assumption of using base libedit in order to make it configurable. "bsd"
 # is "generic" plus the POSIX and DLOPEN options, plus -Wl,-E at link time;

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 USES=		tar:bz2
 USE_LDCONFIG=	yes
 
-MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV=	WITHOUT_PROFILE=yes SRCCONF=/dev/null
 
 WRKSRC_SUBDIR=	pdel
 

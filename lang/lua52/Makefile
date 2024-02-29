@@ -14,14 +14,6 @@ LICENSE=	MIT
 USES=		cpe libedit lua:core,52
 USE_LDCONFIG=	yes
 
-# Overriding __MAKE_CONF makes sure that we don't re-parse
-# /etc/make.conf during do-build, which would jeopardize the build
-# if, for instance, the user set CFLAGS=mumble
-# NOTE: /etc/make.conf is read BEFORE Makefile, so we already
-# have its settings when we get here.
-# See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
-MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
-
 # liblua.so requires libm, so make sure it has an explicit dependency
 # so that applications need not second-guess lua's dependencies.
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -21,7 +21,7 @@ MAKE_ARGS+=	MAN1DIR=${PREFIX}/share/man/man1
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
 # to avoid circular dependency
 NO_CCACHE=	yes
-MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV+=	SRCCONF=/dev/null
 
 .if !exists(/usr/lib/libdialog.so)
 BROKEN=		Requires libdialog in base

@@ -1633,7 +1633,8 @@ PKG_NOTE_flavor=	${FLAVOR}
 .    endif
 
 WRK_ENV+=		HOME=${WRKDIR} \
-				PWD="$${PWD}"
+				PWD="$${PWD}" \
+				__MAKE_CONF=${NONEXISTENT}
 .    for e in OSVERSION PATH TERM TMPDIR \
 				UNAME_b UNAME_i UNAME_K UNAME_m UNAME_n \
 				UNAME_p UNAME_r UNAME_s UNAME_U UNAME_v
