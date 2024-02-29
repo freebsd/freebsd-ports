@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-PORTVERSION=	13.0.2
+PORTVERSION=	13.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -9,8 +9,6 @@ WWW=		https://groonga.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libedit libtool localbase:ldflags pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
@@ -51,22 +49,9 @@ SUGGEST_CONFIGURE_OFF=	--disable-zeromq \
 			--without-message-pack
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|lib/$${PACKAGE}/db/db|db/$${PACKAGE}/db| ; \
-		 s|-lpthread|-pthread|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
-		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
-		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.23.3/auto/install
 # Avoid conflict with C++20 <version> by adding .txt suffix
 	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
 	@${REINPLACE_CMD} -Ei .c++20 '/test|cat/s/[[:<:]]version/&.txt/' \
 		${WRKSRC}/version-gen.sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd
-	@${MKDIR} ${STAGEDIR}/var/log/groonga/httpd
-	@${MKDIR} ${STAGEDIR}/var/run/groonga
 
 .include <bsd.port.mk>
