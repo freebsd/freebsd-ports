@@ -1414,7 +1414,6 @@
     SUBDIR += php83-opcache
     SUBDIR += php83-session
     SUBDIR += php83-tidy
-    SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpfpmtop
     SUBDIR += phpgroupware

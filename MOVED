@@ -3032,3 +3032,4 @@ security/poly1305aes||2024-02-29|Has expired: Fails to build on Tier 1 and most 
 www/cgichk||2024-02-29|Has expired: Deprecated utility that checks a list of URLs and lacks HTTPS support
 www/nibbleblog||2024-02-29|Has expired: Upstream WWW redirects to a different CMS software
 chinese/phpbb-tw||2024-02-29|Has expired: Last upstream was released in 2008 use chinese/phpbb3
+www/phpbb||2024-02-29|Has expired: Last upstream was released in 2008 use www/phpbb3
