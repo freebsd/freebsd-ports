@@ -2998,3 +2998,4 @@ devel/py-setuptools_scm|devel/py-setuptools-scm|2024-02-29|Package name changed
 audio/sweep||2024-02-29|Has expired: Abandonware, last release in 2008 and upstream is dead. Consider using audio/audacity
 audio/gnormalize||2024-02-29|Has expired: Last release in 2008, upstream is dead, depends on deprecated library GTK2 and uses legacy workarounds that can potentially cause lossy conversions. Consider using audio/rsgain and audio/cyanrip
 audio/mp3ck||2024-02-29|Has expired: Last release in 2005 and dead upstream, consider using multimedia/ffmpeg
+audio/mp3rename||2024-02-29|Has expired: Doesn't support ID3v2 tags properly
