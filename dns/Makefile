@@ -25,7 +25,6 @@
     SUBDIR += dns-ui
     SUBDIR += dns2blackhole
     SUBDIR += dns2tcp
-    SUBDIR += dns_balance
     SUBDIR += dnsblast
     SUBDIR += dnscap
     SUBDIR += dnscheckengine
