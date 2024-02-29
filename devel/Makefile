@@ -4189,7 +4189,6 @@
     SUBDIR += pthsem
     SUBDIR += ptl
     SUBDIR += ptlib
-    SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += purescript-language-server
     SUBDIR += pushmi
