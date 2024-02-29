@@ -753,7 +753,6 @@
     SUBDIR += paperkey
     SUBDIR += passh
     SUBDIR += passivedns
-    SUBDIR += pbc
     SUBDIR += pcsc-tools
     SUBDIR += pdfcrack
     SUBDIR += pear-Auth

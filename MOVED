@@ -3027,3 +3027,4 @@ security/fakebo||2024-02-29|Has expired: Remote admin software that hasn't been 
 security/fcheck||2024-02-29|Has expired: Abandonware, upstream is gone and notes refers to Windows 98 as the newest OS
 security/fl0p||2024-02-29|Has expired: Abandonware, last release in 2006 and no longer relevant
 security/libzrtpcppcore||2024-02-29|Has expired: Obscure protocol that never got any traction, superseded by SRTP
+security/pbc||2024-02-29|Has expired: Abandonware, last release in 2013 and no development since
