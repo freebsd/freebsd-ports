@@ -118,24 +118,24 @@ index 3334d07..91b6c0a 100644
 +    expireCachedPDF target (defaultExtension cfg)
 diff --git src/Network/Gitit/Config.hs src/Network/Gitit/Config.hs
 index d39d8cf..1bfbc47 100644
---- src/Network/Gitit/Config.hs
+--- src/Network/Gitit/Config.hs.orig	2001-09-09 01:46:40 UTC
 +++ src/Network/Gitit/Config.hs
-@@ -130,6 +130,7 @@ extractConfig cp = do
-       cfWikiTitle <- get cp "DEFAULT" "wiki-title"
-       cfFeedDays <- get cp "DEFAULT" "feed-days"
-       cfFeedRefreshTime <- get cp "DEFAULT" "feed-refresh-time"
-+      cfPDFExport <- get cp "DEFAULT" "pdf-export"
-       cfPandocUserData <- get cp "DEFAULT" "pandoc-user-data"
-       cfXssSanitize <- get cp "DEFAULT" "xss-sanitize"
-       cfRecentActivityDays <- get cp "DEFAULT" "recent-activity-days"
-@@ -231,6 +232,7 @@ extractConfig cp = do
-         , wikiTitle            = cfWikiTitle
-         , feedDays             = readNumber "feed-days" cfFeedDays
-         , feedRefreshTime      = readNumber "feed-refresh-time" cfFeedRefreshTime
-+        , pdfExport            = cfPDFExport
-         , pandocUserData       = if null cfPandocUserData
-                                     then Nothing
-                                     else Just cfPandocUserData
+@@ -176,6 +176,7 @@ extractConfig cfgmap = do
+   cfWikiTitle <- get "DEFAULT" "wiki-title"
+   cfFeedDays <- get "DEFAULT" "feed-days" >>= readNumber
+   cfFeedRefreshTime <- get "DEFAULT" "feed-refresh-time" >>= readNumber
++  cfPDFExport <- get "DEFAULT" "pdf-export" >>= readBool
+   cfPandocUserData <- get "DEFAULT" "pandoc-user-data"
+   cfXssSanitize <- get "DEFAULT" "xss-sanitize" >>= readBool
+   cfRecentActivityDays <- get "DEFAULT" "recent-activity-days" >>= readNumber
+@@ -279,6 +280,7 @@ extractConfig cfgmap = do
+     , wikiTitle            = cfWikiTitle
+     , feedDays             = cfFeedDays
+     , feedRefreshTime      = cfFeedRefreshTime
++    , pdfExport            = cfPDFExport
+     , pandocUserData       = if null cfPandocUserData
+                                 then Nothing
+                                 else Just cfPandocUserData
 diff --git src/Network/Gitit/ContentTransformer.hs src/Network/Gitit/ContentTransformer.hs
 index 12e450a..fa82604 100644
 --- src/Network/Gitit/ContentTransformer.hs
