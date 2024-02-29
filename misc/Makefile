@@ -566,7 +566,6 @@
     SUBDIR += slides
     SUBDIR += sloccount
     SUBDIR += sls
-    SUBDIR += smssend
     SUBDIR += snakemake
     SUBDIR += soapysdr
     SUBDIR += solarized
