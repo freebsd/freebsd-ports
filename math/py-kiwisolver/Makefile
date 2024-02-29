@@ -12,7 +12,7 @@ WWW=		https://github.com/nucleic/kiwi
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}cppy>=1.1.0:devel/py-cppy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 

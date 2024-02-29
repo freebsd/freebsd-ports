@@ -13,7 +13,7 @@ WWW=		https://github.com/LettError/ufoProcessor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defcon>=0.6.0:x11-fonts/py-defcon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fontMath>=0.4.9:x11-fonts/py-fontMath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fontparts>=0.8.2:print/py-fontparts@${PY_FLAVOR} \

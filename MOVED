@@ -2994,3 +2994,4 @@ audio/play||2024-02-20|Has expired: Upstream vaporized and last release was in 2
 graphics/fotoxx|graphics/fotocx|2024-02-21|Project was renamed upstream
 databases/xtrabackup8|databases/xtrabackup80|2024-02-22|Rename port to avoid confusion
 audio/kid3@qt5|audio/kid3@qt6|2024-02-25|The legacy qt5 flavor has been replaced by the qt6 flavor
+devel/py-setuptools_scm|devel/py-setuptools-scm|2024-02-29|Package name changed

@@ -12,7 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=19.3.1:devel/py-pip@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}setuptools_scm7>=7.0.0:devel/py-setuptools_scm7@${PY_FLAVOR} \
+	${PY_SETUPTOOLS} \
+	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=7.0.0:devel/py-setuptools-scm@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}wheel>=0.33.6:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansi2html>=1.8.0:textproc/py-ansi2html@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.2.1:sysutils/py-ansible-compat@${PY_FLAVOR} \

@@ -11,7 +11,7 @@ WWW=		https://github.com/yougov/yg.lockfile
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.15.0:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zclockfile>=0:devel/py-zclockfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}contextlib2>=0.5:devel/py-contextlib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jaraco.functools>=1.16:devel/py-jaraco.functools@${PY_FLAVOR} \

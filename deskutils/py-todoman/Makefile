@@ -11,7 +11,7 @@ WWW=		https://github.com/pimutils/todoman/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>0:devel/py-atomicwrites@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-log>=0.2.1:devel/py-click-log@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.1<9.0:devel/py-click@${PY_FLAVOR} \

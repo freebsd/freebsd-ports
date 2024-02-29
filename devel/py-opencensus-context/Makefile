@@ -10,7 +10,7 @@ WWW=		https://github.com/census-instrumentation/opencensus-python/tree/master/co
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}
 
 USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils

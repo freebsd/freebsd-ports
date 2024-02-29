@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 BROKEN_riscv64=		fails to compile: __threading_support:135:3: Unsupported architecture
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		git>0:devel/git
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 

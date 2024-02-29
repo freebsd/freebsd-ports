@@ -12,7 +12,7 @@ WWW=		https://github.com/alexmojaki/stack_data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.3:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4.3:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.1.0:devel/py-asttokens@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}executing>=1.2.0:devel/py-executing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pure-eval>=0:devel/py-pure-eval@${PY_FLAVOR}

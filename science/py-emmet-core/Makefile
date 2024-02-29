@@ -10,7 +10,7 @@ WWW=		https://github.com/materialsproject/emmet
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm7>0:devel/py-setuptools_scm7@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}monty>=2021.3:devel/py-monty@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybtex>=0.24:textproc/py-pybtex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>=1.10.2:devel/py-pydantic@${PY_FLAVOR} \
