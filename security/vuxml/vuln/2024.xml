@@ -1,3 +1,36 @@
+  <vuln vid="3567456a-6b17-41f7-ba7f-5cd3efb2b7c9">
+    <topic>electron{27,28} -- Use after free in Mojo</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.4</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.4">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-1670.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1670</cvename>
+      <url>https://github.com/advisories/GHSA-wjv4-j3hc-gxvv</url>
+    </references>
+    <dates>
+      <discovery>2024-02-28</discovery>
+      <entry>2024-02-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31bb1b8d-d6dc-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
