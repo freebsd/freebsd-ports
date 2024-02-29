@@ -494,7 +494,6 @@
     SUBDIR += mtr-nox11
     SUBDIR += multicat
     SUBDIR += mvfst
-    SUBDIR += nakenchat
     SUBDIR += nanomsg
     SUBDIR += narrowlink
     SUBDIR += nast

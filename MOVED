@@ -3020,3 +3020,4 @@ misc/skyutils||2024-02-29|Has expired: Library used for deprecated port misc/sms
 net-mgmt/unifi7||2024-02-29|Has expired: EOLed upstream, switch to newer version
 net/aslookup||2024-02-29|Has expired: Lookup returns nothing
 net/dimes||2024-02-29|Has expired: The project vaporized in early 2005 and is no longer active
+net/nakenchat||2024-02-29|Has expired: Discontinued upstream and never left BETA stage
