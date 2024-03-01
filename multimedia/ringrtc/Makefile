@@ -32,7 +32,7 @@ DISTFILES=	base-${BASE_REV}.tar.gz:base \
 		testing-${TESTING_REV}.tar.gz:testing \
 		opus-${OPUS_REV}.tar.gz:opus
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Middleware library for Signal-Desktop
 WWW=		https://github.com/signalapp/ringrtc
 
