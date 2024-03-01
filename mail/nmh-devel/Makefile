@@ -1,5 +1,6 @@
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
+PORTREVISION=	1
 MASTER_SITES=	#
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
@@ -22,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR}
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liblockfile.so:devel/liblockfile
 
