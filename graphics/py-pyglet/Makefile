@@ -1,5 +1,5 @@
 PORTNAME=	pyglet
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.12
 CATEGORIES=	graphics multimedia x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/pyglet/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		display:test gl python zip
+USES=		display:test gl python
 USE_GL=		gl glu
 USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
