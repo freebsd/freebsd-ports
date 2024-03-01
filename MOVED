@@ -3039,3 +3039,4 @@ sysutils/cfengine-masterfiles320||2024-03-03|Has expired: No longer supported by
 sysutils/cfengine320||2024-03-03|Has expired: No longer supported by upstream
 net-p2p/sonarr-devel|net-p2p/sonarr|2024-03-03|Has expired: Use net-p2p/sonarr instead
 security/py-pyblake2||2024-03-03|Has expired: Reached it's End Of Life. Integrated into Python Standard Library
+net-im/gtkcord4|net-im/dissent|2024-03-03|Project renamed

@@ -13,6 +13,7 @@
     SUBDIR += dendrite
     SUBDIR += dino
     SUBDIR += discordo
+    SUBDIR += dissent
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += farstream
@@ -25,7 +26,6 @@
     SUBDIR += gomuks
     SUBDIR += gotktrix
     SUBDIR += gotosocial
-    SUBDIR += gtkcord4
     SUBDIR += gurk-rs
     SUBDIR += icmpchat
     SUBDIR += icqlib
