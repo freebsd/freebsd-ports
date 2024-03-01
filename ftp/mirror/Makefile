@@ -1,6 +1,6 @@
 PORTNAME=	mirror
 PORTVERSION=	2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://cschubert.com/distfiles/ \
 		LOCAL/cy
