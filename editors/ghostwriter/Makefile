@@ -1,5 +1,5 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	24.01.95
+DISTVERSION=	24.02.0
 CATEGORIES=	editors kde
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -35,7 +35,7 @@ USE_QT=		5compat base svg tools:build webchannel webengine
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
 
-KDE_INVENT=	54a54608e6de707f3fa2552c83e044bebea25477 office
+KDE_INVENT=	549cb038d9f47852995c4cce29d995dfde49de2b office
 
 OPTIONS_DEFINE=		CMARK PANDOC
 OPTIONS_DEFAULT=	CMARK PANDOC
