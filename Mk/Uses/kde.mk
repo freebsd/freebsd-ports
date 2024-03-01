@@ -266,7 +266,7 @@ PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}" \
 # ==============================================================================
 
 _USE_KDE_BOTH=		akonadi libkcddb libkcompactdisc libkdcraw libkdegames \
-			libkeduvocdocument libkexiv2 libkipi libksane okular \
+			libkeduvocdocument libkipi libksane okular \
 			baloo-widgets kate marble
 
 # List of components of the KDE Frameworks distribution.
@@ -354,7 +354,8 @@ _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
 			${_USE_KDEPIM5_ALL} \
 			${_USE_KDE_BOTH} \
-			${_USE_PHONON_ALL}
+			${_USE_PHONON_ALL} \
+			libkexiv2
 # TODO: fix
 _USE_KDE6_ALL=		ecm colorscheme \
 			svg \
@@ -363,7 +364,8 @@ _USE_KDE6_ALL=		ecm colorscheme \
 			${_USE_FRAMEWORKS_ALL}  \
 			${_USE_PLASMA_ALL} \
 			plasma5support activities activities-stats kpipewire wayland globalacceld libplasma \
-			${_USE_PHONON_ALL}
+			${_USE_PHONON_ALL} \
+			libkexiv2
 
 # ====================== frameworks components =================================
 kde-activities_PORT5=		x11/kf${_KDE_VERSION}-kactivities
@@ -974,8 +976,12 @@ kde-libkdegames5_LIB=		libKF${_KDE_VERSION}KDEGames.so
 kde-libkeduvocdocument5_PORT=	misc/libkeduvocdocument
 kde-libkeduvocdocument5_LIB=	libKEduVocDocument.so
 
-kde-libkexiv25_PORT=		graphics/libkexiv2
-kde-libkexiv25_LIB=		libKF${_KDE_VERSION}KExiv2.so
+kde-libkexiv2_PORT5=		graphics/libkexiv2
+kde-libkexiv2_PORT6=		graphics/libkexiv2-devel
+kde-libkexiv2_PORT=		${kde-libkexiv2_PORT${_KDE_VERSION}}
+kde-libkexiv2_LIB5=		libKF${_KDE_VERSION}KExiv2.so
+kde-libkexiv2_LIB6=		libKExiv2Qt${_KDE_VERSION}.so
+kde-libkexiv2_LIB=		${kde-libkexiv2_LIB${_KDE_VERSION}}
 
 kde-libkipi5_PORT=		graphics/libkipi
 kde-libkipi5_LIB=		libKF${_KDE_VERSION}Kipi.so
