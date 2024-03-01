@@ -5,8 +5,8 @@ VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 # Rename while installing..
 for i in exmh
 do
-	echo "install -c $i.l ${PREFIX}/man/man1/$i.1"
-	install -c $i.l ${PREFIX}/man/man1/$i.1
+	echo "install -c $i.l ${PREFIX}/share/man/man1/$i.1"
+	install -c $i.l ${PREFIX}/share/man/man1/$i.1
 done
 
 BINS="exmh-async exmh-bg exmh-strip exmh ftp.expect inc.expect"
