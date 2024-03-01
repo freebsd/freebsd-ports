@@ -36,3 +36,12 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
      // find headers commit
      std::string cmd     = std::format("PKG_CONFIG_PATH=\"{}/share/pkgconfig\" pkg-config --cflags --keep-system-cflags hyprland", DataState::getHeadersPath());
      auto        headers = execAndGet(cmd.c_str());
+@@ -307,7 +304,7 @@ eHeadersErrors CPluginManager::headersValid() {
+         else
+             headers = "";
+ 
+-        if (PATH.ends_with("protocols") || PATH.ends_with("wlroots"))
++        if (PATH.ends_with("protocols") || PATH.contains("wlroots"))
+             continue;
+ 
+         verHeader = removeBeginEndSpacesTabs(PATH.substr(2)) + "/hyprland/src/version.h";
