@@ -1,6 +1,7 @@
 PORTNAME=	exfat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-utils
 
@@ -18,10 +19,11 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	relan
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 
 PLIST_FILES=	sbin/exfatlabel sbin/dumpexfat sbin/exfatfsck sbin/mkexfatfs \
 		sbin/fsck.exfat sbin/mkfs.exfat sbin/exfatattrib \
-		man/man8/exfatlabel.8.gz man/man8/mkexfatfs.8.gz man/man8/exfatfsck.8.gz \
-		man/man8/dumpexfat.8.gz man/man8/exfatattrib.8.gz
+		share/man/man8/exfatlabel.8.gz share/man/man8/mkexfatfs.8.gz share/man/man8/exfatfsck.8.gz \
+		share/man/man8/dumpexfat.8.gz share/man/man8/exfatattrib.8.gz
 
 .include <bsd.port.mk>
