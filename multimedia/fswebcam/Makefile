@@ -1,5 +1,6 @@
 PORTNAME=	fswebcam
 PORTVERSION=	20200725
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -17,8 +18,9 @@ USES=		localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	fsphil
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/fswebcam \
-		man/man1/fswebcam.1.gz
+		share/man/man1/fswebcam.1.gz
 
 .include <bsd.port.mk>
