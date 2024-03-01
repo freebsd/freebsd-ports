@@ -404,6 +404,7 @@
     SUBDIR += kf6-prison
     SUBDIR += kgeotag
     SUBDIR += kgraphviewer
+    SUBDIR += khronos-texture
     SUBDIR += kimageannotator
     SUBDIR += kimagemapeditor
     SUBDIR += kipi-plugins
