@@ -19,6 +19,7 @@
     SUBDIR += KnightCap
     SUBDIR += LibreMines
     SUBDIR += NBlood
+    SUBDIR += Nanosaur
     SUBDIR += OpenLara
     SUBDIR += OpenTomb
     SUBDIR += SRB2

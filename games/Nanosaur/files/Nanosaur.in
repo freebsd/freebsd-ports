@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+cd %%PREFIX%%/share/Nanosaur/
+exec %%PREFIX%%/share/Nanosaur/Nanosaur "$@"
