@@ -22,6 +22,7 @@ BETTER_COMPRESSION_EXTRA_PATCHES=	${PATCHDIR}/opt-compression.in
 USES=		autoreconf perl5
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
