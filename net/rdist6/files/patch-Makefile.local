@@ -1,5 +1,5 @@
---- Makefile.local.orig	1998-11-10 03:36:31 UTC
-+++ Makefile.local
+--- Makefile.local.orig	1998-11-09 19:36:31.000000000 -0800
++++ Makefile.local	2024-03-01 11:42:32.490584000 -0800
 @@ -14,7 +14,9 @@
  # BIN_DIR variable, you would uncomment the following line
  # or add your own line.
@@ -11,7 +11,7 @@
  
  #
  # Add any local definitions you want pass to the compiler to DEFS_LOCAL
-@@ -51,8 +53,8 @@ LIBS_LOCAL	=
+@@ -51,8 +53,8 @@
  #
  # Site specific Man Page configuration.
  #
@@ -19,8 +19,8 @@
 -#MAN_8_DIR	= /usr/local/man/man8
 -#MAN_OWNER	= bin
 -#MAN_GROUP	= bin
-+MAN_1_DIR	= ${STAGEDIR}$(PREFIX)/man/man1
-+MAN_8_DIR	= ${STAGEDIR}$(PREFIX)/man/man8
++MAN_1_DIR	= ${STAGEDIR}$(PREFIX)/share/man/man1
++MAN_8_DIR	= ${STAGEDIR}$(PREFIX)/share/man/man8
 +MAN_OWNER	= bin
 +MAN_GROUP	= bin
  #MAN_MODE	= 644
