@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
 CATEGORIES=	x11 wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	fa2a875e339a.patch:-p1 # https://github.com/hyprwm/hyprlock/pull/115
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland's GPU-accelerated screen locking utility #'
 WWW=		https://github.com/hyprwm/hyprlock
@@ -36,10 +39,6 @@ CXXFLAGS+=	-fexperimental-library
 LIB_DEPENDS+=	libdate-tz.so:devel/date
 USES+=		localbase:ldflags
 .endif
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/pam/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/etc/pam.d/${PORTNAME}
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
