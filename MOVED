@@ -2929,3 +2929,4 @@ math/p5-Math-BigRat|math/p5-Math-BigInt|2024-01-01|Subsumed into math/p5-Math-Bi
 www/trac-devel|www/trac|2024-01-02|Trac released stable version with py3 support, so removing -devel port
 sysutils/rtx|sysutils/mise|2024-01-03|Project renamed
 x11/hyprland-share-picker|x11/xdg-desktop-portal-hyprland|2024-01-05|Merged into main port
+net-im/gtkcord4|net-im/dissent|2024-03-03|Project renamed
