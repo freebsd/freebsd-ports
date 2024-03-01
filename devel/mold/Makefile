@@ -1,11 +1,7 @@
 PORTNAME=	mold
 DISTVERSIONPREFIX=  v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	devel
-
-# See https://github.com/rui314/mold/pull/1187
-PATCHFILES=	8c99dd0f2c165e36efd4fad762158ec13004b86a.patch:-p1
-PATCH_SITES=	https://github.com/rui314/mold/commit/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Modern Linker
