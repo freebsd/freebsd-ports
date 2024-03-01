@@ -1,6 +1,6 @@
 etc/fwlogwatch.config
 etc/rc.d/fwlogwatch.sh.sample
-man/man8/fwlogwatch.8.gz
+share/man/man8/fwlogwatch.8.gz
 sbin/fwlogwatch
 sbin/fwlw_notify
 sbin/fwlw_respond
