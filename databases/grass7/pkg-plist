@@ -4174,10 +4174,12 @@
 %%GRASS_INST_DIR%%/share/icons/hicolor/96x96/apps/grass.png
 %%GRASS_INST_DIR%%/share/icons/hicolor/scalable/apps/grass.svg
 %%GRASS_INST_DIR%%/share/metainfo/org.osgeo.grass.appdata.xml
+%%GRASS_INST_DIR%%/tools/__pycache__/generate_last_commit_file%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/tools/__pycache__/ggroff.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/tools/__pycache__/ghtml.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/tools/g.echo
 %%GRASS_INST_DIR%%/tools/g.html2man.py
+%%GRASS_INST_DIR%%/tools/generate_last_commit_file.py
 %%GRASS_INST_DIR%%/tools/ggroff.py
 %%GRASS_INST_DIR%%/tools/ghtml.py
 %%GRASS_INST_DIR%%/tools/mkhtml.py
