@@ -13,7 +13,7 @@ USES=		tar:bzip2
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/44bsd-rdist \
-		man/man1/44bsd-rdist.1.gz
+		share/man/man1/44bsd-rdist.1.gz
 
 CFLAGS=		-Wno-deprecated-non-prototype \
 		-Wno-incompatible-library-redeclaration
@@ -23,7 +23,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdist ${STAGEDIR}${PREFIX}/bin/44bsd-rdist
-	${INSTALL_MAN} ${WRKSRC}/rdist.1 ${STAGEDIR}${PREFIX}/man/man1/44bsd-rdist.1
+	${INSTALL_MAN} ${WRKSRC}/rdist.1 ${STAGEDIR}${PREFIX}/share/man/man1/44bsd-rdist.1
 
 tarup:
 	-cd ${WRKSRC} ; ${RM} *
