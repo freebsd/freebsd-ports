@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/genv:sysutils/coreutils
 USES=		cmake desktop-file-utils gettext gl kde:6 pkgconfig qt:6 \
 		tar:xz xorg
 USE_GL=		gl opengl
-USE_KDE=	activities activities-stats archive attica5 auth baloo5 \
+USE_KDE=	activities activities-stats archive attica auth baloo5 \
 		bookmarks colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons doctools filemetadata globalaccel \
 		guiaddons holidays i18n iconthemes idletime itemmodels \

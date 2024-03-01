@@ -265,14 +265,14 @@ PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}" \
 			KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION}"
 # ==============================================================================
 
-_USE_KDE_BOTH=		akonadi attica libkcddb libkcompactdisc libkdcraw libkdegames \
+_USE_KDE_BOTH=		akonadi libkcddb libkcompactdisc libkdcraw libkdegames \
 			libkeduvocdocument libkexiv2 libkipi libksane okular \
 			baloo baloo-widgets kate marble
 
 # List of components of the KDE Frameworks distribution.
 # The *_TIER<n> variables are internal, primarily for checking
 # that our list of frameworks matches the structure offered upstream.
-_USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
+_USE_FRAMEWORKS_TIER1=	apidox archive attica breeze-icons codecs config \
 			coreaddons dbusaddons dnssd holidays i18n idletime itemmodels \
 			itemviews kirigami2 kquickcharts oxygen-icons5 plotting prison \
 			qqc2-desktop-style solid sonnet syntaxhighlighting \
@@ -387,8 +387,8 @@ kde-apidox_TYPE=		run
 kde-archive_PORT=		archivers/kf${_KDE_VERSION}-karchive
 kde-archive_LIB=		libKF${_KDE_VERSION}Archive.so
 
-kde-attica5_PORT=		x11-toolkits/kf${_KDE_VERSION}-attica
-kde-attica5_LIB=		libKF${_KDE_VERSION}Attica.so
+kde-attica_PORT=		x11-toolkits/kf${_KDE_VERSION}-attica
+kde-attica_LIB=			libKF${_KDE_VERSION}Attica.so
 
 kde-auth_PORT=			devel/kf${_KDE_VERSION}-kauth
 kde-auth_LIB=			libKF${_KDE_VERSION}AuthCore.so

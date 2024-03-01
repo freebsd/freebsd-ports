@@ -31,7 +31,7 @@ RUN_DEPENDS=	hwdata>0:misc/hwdata \
 USES=		cmake gettext gl kde:6 pkgconfig python qt:6 shebangfix tar:xz \
 		xorg
 USE_GL=		egl gbm gl opengl
-USE_KDE=	activities attica5 auth breeze colorscheme config \
+USE_KDE=	activities attica auth breeze colorscheme config \
 		configwidgets coreaddons crash dbusaddons decoration \
 		globalaccel globalacceld guiaddons i18n idletime kcmutils \
 		kdeclarative kpipewire kscreenlocker libplasma newstuff \

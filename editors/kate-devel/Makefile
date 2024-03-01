@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gl \
 		kde:6 pkgconfig qt:6 tar:xz xorg
-USE_KDE=	activities attica5 auth bookmarks codecs colorscheme \
+USE_KDE=	activities attica auth bookmarks codecs colorscheme \
 		completion config configwidgets coreaddons crash dbusaddons \
 		guiaddons i18n iconthemes itemmodels itemviews jobwidgets kio \
 		libplasma newstuff package parts service solid sonnet \

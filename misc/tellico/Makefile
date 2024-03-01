@@ -23,7 +23,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
 		kde:5 pkgconfig python:run qt:5 shared-mime-info shebangfix \
 		tar:xz xorg
 USE_GNOME=	libxml2 libxslt
-USE_KDE=	archive attica5 auth bookmarks codecs completion config \
+USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash filemetadata guiaddons \
 		i18n iconthemes itemmodels itemviews jobwidgets kio \
 		libkcddb libksane newstuff service solid sonnet \

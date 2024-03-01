@@ -18,7 +18,7 @@ LIB_DEPENDS=	libofx.so:finance/libofx \
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 \
 		kde:5 pkgconfig python qca qt:5 shared-mime-info \
 		shebangfix tar:xz xorg
-USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
+USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		config configwidgets coreaddons dbusaddons emoticons \
 		guiaddons i18n iconthemes init itemviews jobwidgets \
 		kio newstuff notifications notifyconfig package parts \

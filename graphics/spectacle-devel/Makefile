@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 USES=		cmake compiler:c++11-lang gettext gl kde:6 pkgconfig qt:6 tar:xz \
 		xorg
 USE_GL=		gl opengl
-USE_KDE=	attica5 auth codecs colorscheme completion config configwidgets coreaddons \
+USE_KDE=	attica auth codecs colorscheme completion config configwidgets coreaddons \
 		dbusaddons globalaccel guiaddons i18n jobwidgets kdeclarative \
 		kio kirigami2 layer-shell-qt newstuff notifications package purpose \
 		service solid wayland widgetsaddons windowsystem xmlgui \

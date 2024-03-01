@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang gettext gl kde:6 pkgconfig qt:6 \
 		tar:xz xorg
-USE_KDE=	attica5 bookmarks colorscheme completion config configwidgets \
+USE_KDE=	attica bookmarks colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons globalaccel guiaddons i18n \
 		iconthemes jobwidgets kio newstuff notifications notifyconfig \
 		parts pty service solid sonnet textwidgets widgetsaddons \
