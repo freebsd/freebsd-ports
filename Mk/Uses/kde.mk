@@ -267,7 +267,7 @@ PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}" \
 
 _USE_KDE_BOTH=		akonadi libkcddb libkcompactdisc libkdcraw libkdegames \
 			libkeduvocdocument libkexiv2 libkipi libksane okular \
-			baloo baloo-widgets kate marble
+			baloo-widgets kate marble
 
 # List of components of the KDE Frameworks distribution.
 # The *_TIER<n> variables are internal, primarily for checking
@@ -283,7 +283,7 @@ _USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
 			filemetadata kimageformats jobwidgets notifications \
 			package pty syndication unitconversion
 
-_USE_FRAMEWORKS_TIER3=	activities activities-stats baloo5 bookmarks configwidgets \
+_USE_FRAMEWORKS_TIER3=	activities activities-stats baloo bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
 			iconthemes init kcmutils kdav kdeclarative \
 			kded kdesu kio kpipewire newstuff notifyconfig parts \
@@ -393,8 +393,8 @@ kde-attica_LIB=			libKF${_KDE_VERSION}Attica.so
 kde-auth_PORT=			devel/kf${_KDE_VERSION}-kauth
 kde-auth_LIB=			libKF${_KDE_VERSION}AuthCore.so
 
-kde-baloo5_PORT=		sysutils/kf${_KDE_VERSION}-baloo
-kde-baloo5_LIB=			libKF${_KDE_VERSION}Baloo.so
+kde-baloo_PORT=			sysutils/kf${_KDE_VERSION}-baloo
+kde-baloo_LIB=			libKF${_KDE_VERSION}Baloo.so
 
 kde-bookmarks_PORT=		devel/kf${_KDE_VERSION}-kbookmarks
 kde-bookmarks_LIB=		libKF${_KDE_VERSION}Bookmarks.so

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl jpeg \
 		kde:6 pkgconfig qt:6 tar:xz xorg
-USE_KDE=	activities baloo5 bookmarks colorscheme completion config \
+USE_KDE=	activities baloo bookmarks colorscheme completion config \
 		configwidgets coreaddons filemetadata guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets kio notifications \
 		parts phonon purpose service solid wayland widgetsaddons windowsystem \
