@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-efence \
 		--disable-insure \
 		--libdir=${PREFIX}/libexec
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 LDFLAGS+=	-lthr
 
 # Fix build with clang11
