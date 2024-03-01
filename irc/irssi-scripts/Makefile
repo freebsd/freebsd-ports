@@ -1,11 +1,10 @@
 PORTNAME=	irssi-scripts
-PORTVERSION=	20220704
-PORTREVISION=	1
+PORTVERSION=	20231031
 CATEGORIES=	irc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	zachary.crownover@gmail.com
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Collection of useful scripts for the irssi IRC-client
 WWW=		https://scripts.irssi.org/
 
