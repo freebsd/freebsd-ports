@@ -1,5 +1,5 @@
 PORTNAME=	wlogout
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
