@@ -192,7 +192,14 @@ go-post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
-		${SETENVI} ${WRK_ENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
+		${SETENVI} ${WRK_ENV} \
+		${HTTP_PROXY:DHTTP_PROXY=${HTTP_PROXY:Q}} \
+		${http_proxy:Dhttp_proxy=${http_proxy:Q}} \
+		${HTTPS_PROXY:DHTTPS_PROXY=${HTTPS_PROXY:Q}} \
+		${https_proxy:Dhttps_proxy=${https_proxy:Q}} \
+		${NO_PROXY:DNO_PROXY=${NO_PROXY:Q}} \
+		${no_proxy:Dno_proxy=${no_proxy:Q}} \
+		${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 .  endif
 
 _USES_extract+=	800:go-post-extract
