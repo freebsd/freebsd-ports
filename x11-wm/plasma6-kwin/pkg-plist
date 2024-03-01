@@ -52,6 +52,7 @@ include/kwin/effect/offscreeneffect.h
 include/kwin/effect/offscreenquickview.h
 include/kwin/effect/quickeffect.h
 include/kwin/effect/timeline.h
+include/kwin/effect/xcb.h
 include/kwin/focuschain.h
 include/kwin/ftrace.h
 include/kwin/gestures.h
@@ -190,6 +191,11 @@ include/kwin/wayland/primaryselectiondevice_v1.h
 include/kwin/wayland/primaryselectiondevicemanager_v1.h
 include/kwin/wayland/primaryselectionoffer_v1.h
 include/kwin/wayland/primaryselectionsource_v1.h
+include/kwin/wayland/quirks.h
+include/kwin/wayland/qwayland-server-content-type-v1.h
+include/kwin/wayland/qwayland-server-frog-color-management-v1.h
+include/kwin/wayland/qwayland-server-presentation-time.h
+include/kwin/wayland/qwayland-server-xx-color-management-v2.h
 include/kwin/wayland/relativepointer_v1.h
 include/kwin/wayland/screencast_v1.h
 include/kwin/wayland/screenedge_v1.h
@@ -208,6 +214,10 @@ include/kwin/wayland/textinput_v2.h
 include/kwin/wayland/textinput_v3.h
 include/kwin/wayland/touch.h
 include/kwin/wayland/viewporter.h
+include/kwin/wayland/wayland-content-type-v1-server-protocol.h
+include/kwin/wayland/wayland-frog-color-management-v1-server-protocol.h
+include/kwin/wayland/wayland-presentation-time-server-protocol.h
+include/kwin/wayland/wayland-xx-color-management-v2-server-protocol.h
 include/kwin/wayland/xdgactivation_v1.h
 include/kwin/wayland/xdgdecoration_v1.h
 include/kwin/wayland/xdgforeign_v2.h
@@ -215,6 +225,7 @@ include/kwin/wayland/xdgoutput_v1.h
 include/kwin/wayland/xdgshell.h
 include/kwin/wayland/xwaylandkeyboardgrab_v1.h
 include/kwin/wayland/xwaylandshell_v1.h
+include/kwin/wayland/xx_colormanagement_v2.h
 include/kwin/wayland_server.h
 include/kwin/waylandshellintegration.h
 include/kwin/waylandwindow.h
@@ -231,14 +242,16 @@ lib/cmake/KWin/KWinConfigVersion.cmake
 lib/cmake/KWin/KWinTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KWin/KWinTargets.cmake
 lib/cmake/KWinDBusInterface/KWinDBusInterfaceConfig.cmake
+lib/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
+lib/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
 lib/kconf_update_bin/kwin5_update_default_rules
 lib/libexec/kwin-applywindowdecoration
 lib/libexec/kwin_killer_helper
-lib/libkcmkwincommon.so.%%KDE_PLASMA_VERSION%%
 lib/libkcmkwincommon.so.6
+lib/libkcmkwincommon.so.%%KDE_PLASMA_VERSION%%
 lib/libkwin.so
-lib/libkwin.so.%%KDE_PLASMA_VERSION%%
 lib/libkwin.so.6
+lib/libkwin.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kf6/packagestructure/kwin_aurorae.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/kwin_decoration.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/kwin_effect.so
@@ -317,11 +330,11 @@ share/config.kcfg/kwin.kcfg
 share/config.kcfg/kwindecorationsettings.kcfg
 share/config.kcfg/nightcolorsettings.kcfg
 share/config.kcfg/virtualdesktopssettings.kcfg
+share/dbus-1/interfaces/org.kde.KWin.NightLight.xml
 share/dbus-1/interfaces/org.kde.KWin.Plugins.xml
 share/dbus-1/interfaces/org.kde.KWin.TabletModeManager.xml
 share/dbus-1/interfaces/org.kde.KWin.VirtualDesktopManager.xml
 share/dbus-1/interfaces/org.kde.KWin.xml
-share/dbus-1/interfaces/org.kde.kwin.ColorCorrect.xml
 share/dbus-1/interfaces/org.kde.kwin.Compositing.xml
 share/dbus-1/interfaces/org.kde.kwin.Effects.xml
 share/dbus-1/interfaces/org.kde.kwin.InputDevice.xml
@@ -651,7 +664,6 @@ share/icons/hicolor/16x16/apps/kwin.png
 share/icons/hicolor/32x32/apps/kwin.png
 share/icons/hicolor/48x48/apps/kwin.png
 share/icons/hicolor/scalable/apps/kwin.svgz
-share/kconf_update/kwin-6.0-overview-activities-shortcuts.py
 share/kconf_update/kwin.upd
 share/knotifications6/kwin.notifyrc
 share/knsrcfiles/aurorae.knsrc
@@ -763,8 +775,8 @@ share/krunner/dbusplugins/kwin-runner-windows.desktop
 %%DATADIR%%/frames/plasma/frame_unstyled.qml
 %%DATADIR%%/kcm_kwintabbox/desktop.png
 %%DATADIR%%/kcm_kwintabbox/dolphin.png
+%%DATADIR%%/kcm_kwintabbox/falkon.png
 %%DATADIR%%/kcm_kwintabbox/kmail.png
-%%DATADIR%%/kcm_kwintabbox/konqueror.png
 %%DATADIR%%/kcm_kwintabbox/systemsettings.png
 %%DATADIR%%/onscreennotification/plasma/dummydata/osd.qml
 %%DATADIR%%/onscreennotification/plasma/main.qml
@@ -1134,6 +1146,7 @@ share/locale/hu/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/hu/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/hu/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/hu/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/hu/LC_MESSAGES/kcm_kwinxwayland.mo
 share/locale/hu/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/hu/LC_MESSAGES/kcmkwincommon.mo
 share/locale/hu/LC_MESSAGES/kcmkwincompositing.mo

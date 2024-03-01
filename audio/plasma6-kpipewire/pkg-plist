@@ -6,6 +6,7 @@ include/KPipeWire/PipeWireSourceItem
 include/KPipeWire/PipeWireSourceStream
 include/KPipeWire/dmabufhandler.h
 include/KPipeWire/kpipewire_export.h
+include/KPipeWire/kpipewire_version.h
 include/KPipeWire/kpipewiredmabuf_export.h
 include/KPipeWire/pipewirebaseencodedstream.h
 include/KPipeWire/pipewireencodedstream.h

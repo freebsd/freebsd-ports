@@ -132,10 +132,8 @@ share/qlogging-categories6/systemsettings.categories
 %%DATADIR%%/categories/settings-hardware-input.desktop
 %%DATADIR%%/categories/settings-hardware-keyboard.desktop
 %%DATADIR%%/categories/settings-hardware-multimedia.desktop
-%%DATADIR%%/categories/settings-hardware-powermanagement.desktop
 %%DATADIR%%/categories/settings-hardware-removable-storage.desktop
 %%DATADIR%%/categories/settings-hardware.desktop
-%%DATADIR%%/categories/settings-network-connectivity.desktop
 %%DATADIR%%/categories/settings-network-networksettings.desktop
 %%DATADIR%%/categories/settings-network.desktop
 %%DATADIR%%/categories/settings-personalization.desktop
@@ -143,10 +141,8 @@ share/qlogging-categories6/systemsettings.categories
 %%DATADIR%%/categories/settings-root-category.desktop
 %%DATADIR%%/categories/settings-security-privacy.desktop
 %%DATADIR%%/categories/settings-system-administration.desktop
-%%DATADIR%%/categories/settings-workspace-desktopbehavior.desktop
 %%DATADIR%%/categories/settings-workspace-search.desktop
 %%DATADIR%%/categories/settings-workspace-session.desktop
-%%DATADIR%%/categories/settings-workspace-shortcuts.desktop
 %%DATADIR%%/categories/settings-workspace-windowmanagement.desktop
 %%DATADIR%%/categories/settings-workspace.desktop
 share/zsh/site-functions/_systemsettings

@@ -39,7 +39,6 @@ lib/libexec/kf6/kauth/kcmdatetimehelper
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_recentFiles.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_solid_actions.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcmspellchecking.so
-%%QT_PLUGINDIR%%/plasma5support/dataengine/plasma_engine_touchpad.so
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/activityswitcherextensionplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/libactivityswitcherextensionplugin.so
@@ -88,6 +87,7 @@ share/applications/kcm_touchpad.desktop
 share/applications/kcm_touchscreen.desktop
 share/applications/kcm_workspace.desktop
 share/applications/kcmspellchecking.desktop
+share/applications/kde-mimeapps.list
 share/applications/org.kde.knetattach.desktop
 share/applications/org.kde.plasma.emojier.desktop
 share/config.kcfg/kactivitymanagerd_plugins_settings.kcfg
@@ -992,6 +992,7 @@ share/locale/bg/LC_MESSAGES/kcm_baloofile.mo
 share/locale/bg/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/bg/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bg/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/bg/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/bg/LC_MESSAGES/kcm_kded.mo
 share/locale/bg/LC_MESSAGES/kcm_keys.mo
 share/locale/bg/LC_MESSAGES/kcm_krunnersettings.mo
@@ -1612,6 +1613,7 @@ share/locale/fi/LC_MESSAGES/kcm_baloofile.mo
 share/locale/fi/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/fi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/fi/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/fi/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/fi/LC_MESSAGES/kcm_kded.mo
 share/locale/fi/LC_MESSAGES/kcm_keys.mo
 share/locale/fi/LC_MESSAGES/kcm_krunnersettings.mo
@@ -1738,6 +1740,7 @@ share/locale/gl/LC_MESSAGES/kcm_baloofile.mo
 share/locale/gl/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/gl/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/gl/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/gl/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/gl/LC_MESSAGES/kcm_kded.mo
 share/locale/gl/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/gl/LC_MESSAGES/kcm_landingpage.mo
@@ -2300,6 +2303,7 @@ share/locale/ko/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ko/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ko/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ko/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/ko/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ko/LC_MESSAGES/kcm_kded.mo
 share/locale/ko/LC_MESSAGES/kcm_keys.mo
 share/locale/ko/LC_MESSAGES/kcm_krunnersettings.mo
@@ -3749,7 +3753,6 @@ share/metainfo/org.kde.plasma.taskmanager.appdata.xml
 share/metainfo/org.kde.plasma.trash.appdata.xml
 share/metainfo/org.kde.plasma.windowlist.appdata.xml
 share/metainfo/org.kde.plasmashell.metainfo.xml
-share/plasma/desktoptheme/default/icons/touchpad.svg
 share/plasma/emoji/af.dict
 share/plasma/emoji/am.dict
 share/plasma/emoji/ar.dict
@@ -4057,9 +4060,6 @@ share/plasma/plasmoids/org.kde.plasma.windowlist/contents/ui/ConfigGeneral.qml
 share/plasma/plasmoids/org.kde.plasma.windowlist/contents/ui/MenuButton.qml
 share/plasma/plasmoids/org.kde.plasma.windowlist/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.windowlist/metadata.json
-share/plasma/plasmoids/touchpad/contents/ui/main.qml
-share/plasma/plasmoids/touchpad/metadata.json
-share/plasma/services/touchpad.operations
 share/plasma/shells/org.kde.plasma.desktop/contents/InteractiveConsole.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/ActivityItem.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/ActivityList.qml

@@ -5,16 +5,6 @@ include/ksysguard/faces/sensorfaces_export.h
 include/ksysguard/formatter/Formatter.h
 include/ksysguard/formatter/Unit.h
 include/ksysguard/formatter/formatter_export.h
-include/ksysguard/ksgrd/SensorAgent.h
-include/ksysguard/ksgrd/SensorClient.h
-include/ksysguard/ksgrd/SensorManager.h
-include/ksysguard/ksgrd/SensorShellAgent.h
-include/ksysguard/ksgrd/SensorSocketAgent.h
-include/ksysguard/ksgrd/ksgrd_export.h
-include/ksysguard/ksignalplotter.h
-include/ksysguard/ksignalplotter_export.h
-include/ksysguard/lsof.h
-include/ksysguard/lsofui_export.h
 include/ksysguard/processcore/formatter.h
 include/ksysguard/processcore/process.h
 include/ksysguard/processcore/process_attribute.h
@@ -25,11 +15,6 @@ include/ksysguard/processcore/process_data_provider.h
 include/ksysguard/processcore/processcore_export.h
 include/ksysguard/processcore/processes.h
 include/ksysguard/processcore/unit.h
-include/ksysguard/processui/KTextEditVT.h
-include/ksysguard/processui/ProcessFilter.h
-include/ksysguard/processui/ProcessModel.h
-include/ksysguard/processui/ksysguardprocesslist.h
-include/ksysguard/processui/processui_export.h
 include/ksysguard/sensors/Sensor.h
 include/ksysguard/sensors/SensorDataModel.h
 include/ksysguard/sensors/SensorInfo_p.h
@@ -66,24 +51,9 @@ lib/libKSysGuardSystemStats.so
 lib/libKSysGuardSystemStats.so.2
 lib/libKSysGuardSystemStats.so.%%KDE_PLASMA_VERSION%%
 lib/libexec/kf6/kauth/ksysguardprocesslist_helper
-lib/libksgrd.so
-lib/libksgrd.so.10
-lib/libksgrd.so.%%KDE_PLASMA_VERSION%%
-lib/libksignalplotter.so
-lib/libksignalplotter.so.10
-lib/libksignalplotter.so.%%KDE_PLASMA_VERSION%%
-lib/liblsofui.so
-lib/liblsofui.so.10
-lib/liblsofui.so.%%KDE_PLASMA_VERSION%%
 lib/libprocesscore.so
 lib/libprocesscore.so.10
 lib/libprocesscore.so.%%KDE_PLASMA_VERSION%%
-lib/libprocessui.so
-lib/libprocessui.so.10
-lib/libprocessui.so.%%KDE_PLASMA_VERSION%%
-%%QT_PLUGINDIR%%/designer/ksignalplotter5widgets.so
-%%QT_PLUGINDIR%%/designer/ksysguard5widgets.so
-%%QT_PLUGINDIR%%/designer/ksysguardlsof5widgets.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/ksysguard_sensorface.so
 %%QT_PLUGINDIR%%/ksysguard/process/ksysguard_plugin_nvidia.so
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/Choices.qml
@@ -103,7 +73,6 @@ share/dbus-1/system-services/org.kde.ksysguard.processlisthelper.service
 share/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 share/knsrcfiles/systemmonitor-faces.knsrc
 share/knsrcfiles/systemmonitor-presets.knsrc
-share/ksysguard/scripts/README
 share/ksysguard/sensorfaces/org.kde.ksysguard.barchart/contents/config/main.xml
 share/ksysguard/sensorfaces/org.kde.ksysguard.barchart/contents/faceproperties
 share/ksysguard/sensorfaces/org.kde.ksysguard.barchart/contents/ui/BarChart.qml
@@ -127,9 +96,11 @@ share/ksysguard/sensorfaces/org.kde.ksysguard.facegrid/contents/ui/FaceControl.q
 share/ksysguard/sensorfaces/org.kde.ksysguard.facegrid/contents/ui/FaceGrid.qml
 share/ksysguard/sensorfaces/org.kde.ksysguard.facegrid/contents/ui/FullRepresentation.qml
 share/ksysguard/sensorfaces/org.kde.ksysguard.facegrid/metadata.json
+share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/contents/config/main.xml
 share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/contents/faceproperties
 share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/contents/ui/Bar.qml
 share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/contents/ui/CompactRepresentation.qml
+share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/contents/ui/Config.qml
 share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/contents/ui/FullRepresentation.qml
 share/ksysguard/sensorfaces/org.kde.ksysguard.horizontalbars/metadata.json
 share/ksysguard/sensorfaces/org.kde.ksysguard.linechart/contents/config/main.xml
@@ -202,6 +173,7 @@ share/locale/bg/LC_MESSAGES/ksgrd.mo
 share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/bg/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -222,6 +194,7 @@ share/locale/ca/LC_MESSAGES/ksgrd.mo
 share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ca/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -235,6 +208,7 @@ share/locale/ca@valencia/LC_MESSAGES/ksgrd.mo
 share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ca@valencia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -270,6 +244,7 @@ share/locale/de/LC_MESSAGES/ksgrd.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -313,6 +288,7 @@ share/locale/es/LC_MESSAGES/ksgrd.mo
 share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/es/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -335,6 +311,7 @@ share/locale/eu/LC_MESSAGES/ksgrd.mo
 share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/eu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -363,6 +340,7 @@ share/locale/fr/LC_MESSAGES/ksgrd.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/fr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -383,6 +361,7 @@ share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
+share/locale/gl/LC_MESSAGES/ksysguard_sensors.mo
 share/locale/gl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/gl/LC_MESSAGES/processcore.mo
 share/locale/gl/LC_MESSAGES/processui.mo
@@ -409,6 +388,7 @@ share/locale/hu/LC_MESSAGES/ksgrd.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -422,6 +402,7 @@ share/locale/ia/LC_MESSAGES/ksgrd.mo
 share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ia/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -442,6 +423,7 @@ share/locale/it/LC_MESSAGES/ksgrd.mo
 share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/it/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -489,6 +471,7 @@ share/locale/ko/LC_MESSAGES/ksgrd.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -582,6 +565,7 @@ share/locale/pl/LC_MESSAGES/ksgrd.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -628,6 +612,7 @@ share/locale/ru/LC_MESSAGES/ksgrd.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -659,6 +644,7 @@ share/locale/sl/LC_MESSAGES/ksgrd.mo
 share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/sl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -713,6 +699,7 @@ share/locale/tr/LC_MESSAGES/ksgrd.mo
 share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/tr/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
@@ -766,6 +753,7 @@ share/locale/zh_TW/LC_MESSAGES/ksgrd.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo

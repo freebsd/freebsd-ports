@@ -42,7 +42,6 @@ USE_QT=		base declarative multimedia sensors tools wayland
 USE_XORG=	ice sm x11 xcb xext xi
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-SHEBANG_FILES=	kconf_update/kwin-6.0-overview-activities-shortcuts.py \
-		src/plugins/strip-effect-metadata.py
+SHEBANG_FILES=	src/plugins/strip-effect-metadata.py
 
 .include <bsd.port.mk>

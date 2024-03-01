@@ -100,8 +100,8 @@ KDE_PLASMA5_VERSION?=		5.27.10
 KDE_PLASMA5_BRANCH?=		stable
 
 # Next KDE Plasma desktop
-KDE_PLASMA6_VERSION?=		5.92.0
-KDE_PLASMA6_BRANCH?=		unstable
+KDE_PLASMA6_VERSION?=		6.0.0
+KDE_PLASMA6_BRANCH?=		stable
 
 # Current KDE frameworks.
 KDE_FRAMEWORKS5_VERSION?=	5.115.0
@@ -736,7 +736,9 @@ kde-libkscreen_PORT=		x11/plasma${_KDE_VERSION}-libkscreen
 kde-libkscreen_LIB=		libKF${_KDE_VERSION}Screen.so
 
 kde-libksysguard_PORT=		sysutils/plasma${_KDE_VERSION}-libksysguard
-kde-libksysguard_LIB=		libksgrd.so
+kde-libksysguard_LIB5=		libksgrd.so
+kde-libksysguard_LIB6=		libKSysGuardSystemStats.so
+kde-libksysguard_LIB=		${kde-libksysguard_LIB${_KDE_VERSION}}
 
 kde-milou_PORT=			deskutils/plasma${_KDE_VERSION}-milou
 kde-milou_PATH5=			${KDE_PREFIX}/lib/libmilou.so.5

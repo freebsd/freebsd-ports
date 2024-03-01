@@ -39,6 +39,7 @@ lib/libPlasmaSystemMonitorTable.so
 %%QT_QMLDIR%%/org/kde/ksysguard/table/qmldir
 share/applications/org.kde.plasma-systemmonitor.desktop
 share/config.kcfg/systemmonitor.kcfg
+share/kglobalaccel/org.kde.plasma-systemmonitor.desktop
 share/knsrcfiles/plasma-systemmonitor.knsrc
 share/ksysguard/sensorfaces/org.kde.ksysguard.applicationstable/contents/config/main.xml
 share/ksysguard/sensorfaces/org.kde.ksysguard.applicationstable/contents/faceproperties
