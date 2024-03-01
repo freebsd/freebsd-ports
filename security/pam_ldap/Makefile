@@ -1,6 +1,6 @@
 PORTNAME=	pam_ldap
 PORTVERSION=	186
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/${PAM_LDAP_CONF} \
 		--with-ldap-dir=${LOCALBASE} \
 		--with-ldap-lib=openldap \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 SHEBANG_FILES=	vers_string
 CPE_VENDOR=	padl
 
