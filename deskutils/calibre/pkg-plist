@@ -657,6 +657,7 @@ lib/calibre/calibre/gui2/__init__.py
 lib/calibre/calibre/gui2/actions/__init__.py
 lib/calibre/calibre/gui2/actions/add.py
 lib/calibre/calibre/gui2/actions/add_to_library.py
+lib/calibre/calibre/gui2/actions/all_actions.py
 lib/calibre/calibre/gui2/actions/annotate.py
 lib/calibre/calibre/gui2/actions/author_mapper.py
 lib/calibre/calibre/gui2/actions/auto_scroll.py
@@ -1010,6 +1011,7 @@ lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_in_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
+lib/calibre/calibre/gui2/store/stores/amazon_mx_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/archive_org_plugin.py
