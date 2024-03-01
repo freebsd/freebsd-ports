@@ -1,2 +1,2 @@
 lib/security/pam_krb5.so
-man/man5/pam_krb5.5.gz
+share/man/man5/pam_krb5.5.gz
