@@ -1,5 +1,5 @@
 PORTNAME=	flexiblas
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	math
 MASTER_SITES=	https://csc.mpi-magdeburg.mpg.de/mpcsc/software/flexiblas/
 
@@ -7,7 +7,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	BLAS and LAPACK wrapper library with runtime exchangable backends
 WWW=		https://www.mpi-magdeburg.mpg.de/projects/flexiblas
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 
 LIB_DEPENDS=	libblas.so:math/blas	\
 		libblis.so:math/blis	\
