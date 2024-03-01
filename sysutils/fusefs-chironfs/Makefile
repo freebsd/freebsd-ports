@@ -1,6 +1,6 @@
 PORTNAME=	chironfs
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/chironfs/
 PKGNAMEPREFIX=	fusefs-
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/doc/copyright
 
 USES=		fuse localbase:ldflags
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/chironfs bin/chirctl man/man8/chironfs.8.gz
+PLIST_FILES=	bin/chironfs bin/chirctl share/man/man8/chironfs.8.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

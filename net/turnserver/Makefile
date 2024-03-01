@@ -1,5 +1,6 @@
 PORTNAME=	turnserver
 PORTVERSION=	4.6.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
 		http://coturn.net/turnserver/extradocs/:xdocs
@@ -105,7 +106,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnutils_${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 	(cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MANPAGES} \
-		${STAGEDIR}${PREFIX}/man/man1)
+		${STAGEDIR}${PREFIX}/share/man/man1)
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/turndb && ${INSTALL_DATA} schema.sql schema.userdb.redis \
 		schema.stats.redis ${STAGEDIR}${DATADIR})

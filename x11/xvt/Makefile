@@ -1,6 +1,7 @@
 PORTNAME=	xvt
 PORTVERSION=	3.0.6
-CATEGORIES+=	x11
+PORTREVISION=	1
+CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -15,6 +16,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build patch
 USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	README.xvt xvt.1.html xvtRef.html xvtRef.txt
 WRKSRC=		${WRKDIR}/${PORTNAME}

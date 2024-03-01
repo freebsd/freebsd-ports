@@ -1,0 +1,37 @@
+--- Makefile.in.orig	2024-02-27 13:21:17 UTC
++++ ./Makefile.in
+@@ -9,7 +9,7 @@
+ 
+ # Current [incr Widgets] version;  used in various names.
+ 
+-ITCL_VERSION = @ITCL_VERSION@
++ITCL_VERSION = 3.3
+ IWIDGETS_VERSION = @VERSION@
+ 
+ #----------------------------------------------------------------
+@@ -48,7 +48,7 @@
+ BIN_INSTALL_DIR = $(INSTALL_ROOT)$(exec_prefix)/bin
+ 
+ # Top-level directory in which to install manual entries:
+-MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/man/mann
++MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/share/man/mann
+ 
+ # Directory containing Tcl source code (for library used during test):
+ TCL_SRC_DIR = @TCL_SRC_DIR@
+@@ -78,11 +78,11 @@
+ # modify any of this stuff by hand.
+ #----------------------------------------------------------------
+ 
+-INSTALL =		$(TCLSH_PROG) `$(CYGPATH) $(ITCL_SRC_DIR)/../config/installFile.tcl` -c
+-INSTALL_PROGRAM =	$(INSTALL)
+-INSTALL_DATA =		$(INSTALL) -m 644
+-INSTALL_SCRIPT =	$(INSTALL) -m 555
+-MKINSTALLDIRS =		$(ITCL_SRC_DIR)/../config/mkinstalldirs
++INSTALL=install -c
++INSTALL_PROGRAM=install  -s -m 555
++INSTALL_DATA=install  -m 0644
++INSTALL_SCRIPT=install  -m 555
++MKINSTALLDIRS=/bin/mkdir -p
+ RANLIB =		@RANLIB@
+ LN_S =			ln -s
+ TOP_DIR =		$(srcdir)

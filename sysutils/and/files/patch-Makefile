@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jul 12 21:00:47 2003
-+++ Makefile	Sun Jul 27 17:59:49 2003
+--- Makefile.orig	2024-02-27 11:19:04 UTC
++++ Makefile
 @@ -16,13 +16,13 @@
  # (and.init.debian for Debian GNU/Linux or and.init for others;
  # leave empty for BSD!)
@@ -27,7 +27,7 @@
 +INSTALL_ETC=${PREFIX}/etc
 +INSTALL_INITD=
 +INSTALL_SBIN=$(PREFIX)/sbin
-+INSTALL_MAN=$(PREFIX)/man
++INSTALL_MAN=$(PREFIX)/share/man
  
  # typical Debian or SuSE 7.x configuration
  #PREFIX=/usr

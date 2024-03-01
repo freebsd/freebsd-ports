@@ -1,5 +1,6 @@
 PORTNAME=	confctl
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -12,7 +13,8 @@ USES=		autoreconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	trasz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_FILES=	bin/confctl \
-		man/man1/confctl.1.gz
+		share/man/man1/confctl.1.gz
 
 .include <bsd.port.mk>

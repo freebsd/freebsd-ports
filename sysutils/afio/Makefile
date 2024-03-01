@@ -1,5 +1,6 @@
 PORTNAME=	afio
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.chello.nl/~k.holtman/
 
@@ -16,7 +17,7 @@ ALL_TARGET=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/afio man/man1/afio.1.gz
+PLIST_FILES=	bin/afio share/man/man1/afio.1.gz
 PORTDOCS=	HISTORY README SCRIPTS
 PORTEXAMPLES=	*
 
