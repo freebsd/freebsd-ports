@@ -1,0 +1,16 @@
+bin/ktx
+bin/ktx2check
+bin/ktx2ktx2
+bin/ktxinfo
+bin/ktxsc
+bin/toktx
+include/KHR/khr_df.h
+include/ktx.h
+include/ktxvulkan.h
+lib/cmake/ktx/KtxConfig.cmake
+lib/cmake/ktx/KtxConfigVersion.cmake
+lib/cmake/ktx/KtxTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ktx/KtxTargets.cmake
+lib/libktx.so
+lib/libktx.so.0
+lib/libktx.so.0.0.0
