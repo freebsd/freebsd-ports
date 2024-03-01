@@ -1,6 +1,6 @@
 PORTNAME=	44bsd-more
 PORTVERSION=	${RELDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/cy
 
@@ -32,7 +32,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/more.1 ${STAGEDIR}${PREFIX}/man/man1/44bsd-more.1
+	${INSTALL_MAN} ${WRKSRC}/more.1 ${STAGEDIR}${PREFIX}/share/man/man1/44bsd-more.1
 .for f in default.morerc less.morerc most.morerc
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
