@@ -1,6 +1,6 @@
 bin/ntopng
 bin/ntopng-geoip2update.sh
-man/man8/ntopng.8.gz
+share/man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/css/README.md
 %%DATADIR%%/httpdocs/css/select2.min.css
 %%DATADIR%%/httpdocs/dist/0a1b701f5563c2288281.ttf
