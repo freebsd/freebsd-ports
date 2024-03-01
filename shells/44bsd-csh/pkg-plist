@@ -1,2 +1,2 @@
 @shell bin/44bsd-csh
-man/man1/44bsd-csh.1.gz
+share/man/man1/44bsd-csh.1.gz
