@@ -1,6 +1,6 @@
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -22,10 +22,11 @@ USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-security
+CONFIGURE_ARGS=	--enable-security
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	smsd/action
 
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 PORTDOCS=	*
 
 CONFLICTS=	smstools sendsms
