@@ -1,6 +1,5 @@
 PORTNAME=	minetest
-PORTVERSION=	5.7.0
-PORTREVISION=	1
+PORTVERSION=	5.8.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,13 +13,14 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++14-lang cpe iconv:wchar_t sqlite
+USES=		cmake compiler:c++17-lang cpe iconv:wchar_t sqlite
 USE_GITHUB=	yes
 # check https://github.com/minetest/minetest/releases for applicable irrlichmt version
-GH_TUPLE=	minetest:irrlicht:1.9.0mt10:irrlicht/lib/irrlichtmt
+GH_TUPLE=	minetest:irrlicht:1.9.0mt13:irrlicht/lib/irrlichtmt
 
 CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP
+CMAKE_OFF=	BUILD_DOCUMENTATION
 
 TEST_ENV=	${MAKE_ENV} LC_ALL=C.UTF-8
 
