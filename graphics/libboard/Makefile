@@ -1,6 +1,5 @@
 PORTNAME=	libboard
-DISTVERSION=	0.9.4
-PORTREVISION=	10
+DISTVERSION=	0.9.6
 CATEGORIES=	graphics
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -20,6 +19,10 @@ CMAKE_ARGS=	-DMYPROJ_RAN_ONCE:BOOL=YES	\
 		-DEXECUTABLE_OUTPUT_PATH:PATH="${STAGEDIR}${EXAMPLESDIR}"
 USE_LDCONFIG=	yes
 
+.if !defined(WITH_DEBUG)
+LDFLAGS+=	-s
+.endif
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES DOCS
@@ -31,10 +34,9 @@ post-install:
 	${LN} -sf libboard.so.0 ${STAGEDIR}${PREFIX}/lib/libboard.so
 
 do-test:
-	(cd ${WRKDIR} && ${WRKSRC}/bin/arithmetic bec)
+	(cd ${STAGEDIR}${EXAMPLESDIR} && ./arithmetic bec)
 .for ex in 1 2 3
-	(cd ${WRKDIR} && ${WRKSRC}/bin/example${ex})
+	(cd ${STAGEDIR}${EXAMPLESDIR} && ./example${ex})
 .endfor
-	${LS} -l ${WRKDIR}/arithm* ${WRKDIR}/example*
 
 .include <bsd.port.mk>
