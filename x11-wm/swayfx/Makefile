@@ -29,7 +29,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 
 USES=		compiler:c11 gl gnome meson pkgconfig xorg
 USE_GITHUB=	yes
-USE_GL+=	egl glesv2
+USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WillPower3309
