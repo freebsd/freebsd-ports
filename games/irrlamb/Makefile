@@ -33,6 +33,8 @@ CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
 LDFLAGS_i386=	-Wl,-znotext
 
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_rotate_vector is an experimental extension
+
 PORTDOCS=	*
 PORTDATA=	*
 

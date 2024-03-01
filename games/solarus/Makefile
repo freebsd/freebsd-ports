@@ -29,6 +29,8 @@ USE_SDL=	sdl2 ttf2 image2
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_matrix_transform_2d is an experimental extension
+
 OPTIONS_DEFINE=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
 OPTIONS_DEFAULT_i386=	LUAJIT

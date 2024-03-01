@@ -40,6 +40,8 @@ CMAKE_OFF=	AQUARIA_INTERNAL_FREETYPE \
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (vorbis deps)
 LDFLAGS_i386=	-Wl,-z,notext -Wl,--no-check-dynamic-relocations
 
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_transform is an experimental extension
+
 DESKTOP_ENTRIES="${GH_PROJECT}" \
 		"" \
 		"${DATADIR}/${PORTNAME}.png" \

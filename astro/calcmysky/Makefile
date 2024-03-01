@@ -20,4 +20,6 @@ USE_QT=		buildtools:build qmake:build core gui opengl widgets
 
 CMAKE_ARGS=	-DQT_VERSION:STRING=5
 
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_transform is an experimental extension
+
 .include <bsd.port.mk>
