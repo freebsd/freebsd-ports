@@ -3,7 +3,7 @@ include/lxhotkey/lxhotkey.h
 lib/lxhotkey/gtk.so
 lib/lxhotkey/ob.so
 libdata/pkgconfig/lxhotkey.pc
-man/man1/lxhotkey.1.gz
+share/man/man1/lxhotkey.1.gz
 share/applications/lxhotkey-gtk.desktop
 share/locale/cs/LC_MESSAGES/lxhotkey.mo
 share/locale/fr/LC_MESSAGES/lxhotkey.mo
