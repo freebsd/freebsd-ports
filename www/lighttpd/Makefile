@@ -1,5 +1,6 @@
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.74
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -132,11 +133,6 @@ post-patch:
 		${WRKSRC}/doc/config/lighttpd.conf
 	@${REINPLACE_CMD} -e "s|/usr/bin/python|${LOCALBASE}/bin/python|" \
 		${WRKSRC}/doc/config/conf.d/cgi.conf
-	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
-	@${ECHO} "# IPv4 listening socket" >> \
-		${WRKSRC}/doc/config/lighttpd.conf
-	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> \
-		${WRKSRC}/doc/config/lighttpd.conf
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d ${STAGEDIR}${ETCDIR}/vhosts.d

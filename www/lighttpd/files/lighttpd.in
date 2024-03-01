@@ -77,7 +77,7 @@ lighttpd_checkconfig()
 lighttpd_gracefulstop()
 {
 	echo "Stopping ${name} gracefully."
-	sig_reload="INT"
+	sig_reload="SIGUSR1"
 	run_rc_command reload
 }
 
