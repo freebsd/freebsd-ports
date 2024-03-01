@@ -1,10 +1,6 @@
 PORTNAME=	labwc
-DISTVERSION=	0.7.0
-PORTREVISION=	2
+DISTVERSION=	0.7.1
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	774eb2170f11.patch:-p1 # https://github.com/labwc/labwc/pull/1429
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
@@ -25,6 +21,8 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
 PLIST_FILES=	bin/${PORTNAME} \
+		share/icons/hicolor/scalable/apps/${PORTNAME}-symbolic.svg \
+		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 		share/wayland-sessions/${PORTNAME}.desktop
 PORTEXAMPLES=	*
 
@@ -47,13 +45,18 @@ NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls
 NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/et/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/eu/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/fi/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/gl/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/hu/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/id/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/it/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ja/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ka/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/lt/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/nl/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/pa/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pl/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pt/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ru/LC_MESSAGES/${PORTNAME}.mo \
@@ -63,6 +66,7 @@ NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/zh_CN/LC_MESSAGES/${PORTNAME}.mo
 
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
+X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	xwayland
 
 post-patch:
