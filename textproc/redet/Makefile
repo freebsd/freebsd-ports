@@ -1,5 +1,6 @@
 PORTNAME=	redet
 PORTVERSION=	8.26
+PORTREVISION=	1
 CATEGORIES=	textproc tk
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/
 
@@ -15,7 +16,7 @@ USES=		tk:run tar:bzip2
 
 PORTDOCS=	AUTHORS COPYING CREDITS LICENSE NEWS README-General ChangeLog
 PLIST_FILES=	bin/redet \
-		man/man1/redet.1.gz
+		share/man/man1/redet.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,7 +25,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/redet.tcl ${STAGEDIR}${PREFIX}/bin/redet
-	${INSTALL_MAN} ${WRKSRC}/redet.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/redet.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
