@@ -1,14 +1,5 @@
 --- Makefile.orig	2022-10-09 00:42:32.000000000 -0400
 +++ Makefile	2023-06-12 14:53:55.459124000 -0400
-@@ -3,7 +3,7 @@ DESTDIR = /
- prefix = $(HOME)
- bindir = $(prefix)/libexec/git-core
- localedir = $(prefix)/share/locale
--mandir = $(prefix)/share/man
-+mandir = $(prefix)/man
- htmldir = $(prefix)/share/doc/git-doc
- pythondir = $(prefix)/lib64/python3.6/site-packages
- 
 @@ -24,7 +24,7 @@ fixup_locale:
  # html/git-filter-repo.html.  But let's support people installing from a git
  # clone too; for them, just cheat and snag a copy of the built docs that I
