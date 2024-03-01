@@ -1,6 +1,7 @@
 PORTNAME=	planarity
 PORTVERSION=	3.0.2.0
 DISTVERSIONPREFIX=	Version_
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -17,6 +18,8 @@ GH_PROJECT=	edge-addition-planarity-suite
 USES=		autoreconf libtool
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 do-test:
