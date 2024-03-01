@@ -16,8 +16,8 @@ lib/cmake/KF6Su/KF6SuConfigVersion.cmake
 lib/cmake/KF6Su/KF6SuTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Su/KF6SuTargets.cmake
 lib/libKF6Su.so
-lib/libKF6Su.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6Su.so.6
+lib/libKF6Su.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kf6/kdesu_stub
 lib/libexec/kf6/kdesud
 share/locale/ar/LC_MESSAGES/kdesud6.mo
@@ -50,6 +50,7 @@ share/locale/ja/LC_MESSAGES/kdesud6.mo
 share/locale/ka/LC_MESSAGES/kdesud6.mo
 share/locale/ko/LC_MESSAGES/kdesud6.mo
 share/locale/lt/LC_MESSAGES/kdesud6.mo
+share/locale/lv/LC_MESSAGES/kdesud6.mo
 share/locale/ml/LC_MESSAGES/kdesud6.mo
 share/locale/nb/LC_MESSAGES/kdesud6.mo
 share/locale/nds/LC_MESSAGES/kdesud6.mo
@@ -70,6 +71,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kdesud6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kdesud6.mo
 share/locale/sr@latin/LC_MESSAGES/kdesud6.mo
 share/locale/sv/LC_MESSAGES/kdesud6.mo
+share/locale/ta/LC_MESSAGES/kdesud6.mo
 share/locale/tg/LC_MESSAGES/kdesud6.mo
 share/locale/tr/LC_MESSAGES/kdesud6.mo
 share/locale/uk/LC_MESSAGES/kdesud6.mo

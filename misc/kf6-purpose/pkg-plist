@@ -16,12 +16,11 @@ lib/cmake/KF6Purpose/KF6PurposeConfigVersion.cmake
 lib/cmake/KF6Purpose/KF6PurposeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Purpose/KF6PurposeTargets.cmake
 lib/libKF6Purpose.so
-lib/libKF6Purpose.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6Purpose.so.6
+lib/libKF6Purpose.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PurposeWidgets.so
-lib/libKF6PurposeWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PurposeWidgets.so.6
-lib/libReviewboardHelpers.a
+lib/libKF6PurposeWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kf6/purposeprocess
 %%QT_PLUGINDIR%%/kf6/kfileitemaction/sharefileitemaction.so
 %%QT_PLUGINDIR%%/kf6/purpose/barcodeplugin.so

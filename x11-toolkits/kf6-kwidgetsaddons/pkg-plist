@@ -48,6 +48,7 @@ include/KF6/KWidgetsAddons/KPageView
 include/KF6/KWidgetsAddons/KPageWidget
 include/KF6/KWidgetsAddons/KPageWidgetItem
 include/KF6/KWidgetsAddons/KPageWidgetModel
+include/KF6/KWidgetsAddons/KPassword
 include/KF6/KWidgetsAddons/KPasswordDialog
 include/KF6/KWidgetsAddons/KPasswordLineEdit
 include/KF6/KWidgetsAddons/KPixmapRegionSelectorDialog
@@ -126,6 +127,7 @@ include/KF6/KWidgetsAddons/kpagemodel.h
 include/KF6/KWidgetsAddons/kpageview.h
 include/KF6/KWidgetsAddons/kpagewidget.h
 include/KF6/KWidgetsAddons/kpagewidgetmodel.h
+include/KF6/KWidgetsAddons/kpassword.h
 include/KF6/KWidgetsAddons/kpassworddialog.h
 include/KF6/KWidgetsAddons/kpasswordlineedit.h
 include/KF6/KWidgetsAddons/kpixmapregionselectordialog.h
@@ -166,8 +168,8 @@ lib/cmake/KF6WidgetsAddons/KF6WidgetsAddonsConfigVersion.cmake
 lib/cmake/KF6WidgetsAddons/KF6WidgetsAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6WidgetsAddons/KF6WidgetsAddonsTargets.cmake
 lib/libKF6WidgetsAddons.so
-lib/libKF6WidgetsAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6WidgetsAddons.so.6
+lib/libKF6WidgetsAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/designer/kwidgetsaddons6widgets.so
 share/locale/af/LC_MESSAGES/kwidgetsaddons6_qt.qm
 share/locale/ar/LC_MESSAGES/kwidgetsaddons6_qt.qm

@@ -24,14 +24,14 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformConfigVersion.cmake
 lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 lib/libKirigami.so
-lib/libKirigami.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigami.so.6
+lib/libKirigami.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiDelegates.so
-lib/libKirigamiDelegates.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiDelegates.so.6
+lib/libKirigamiDelegates.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiPlatform.so
-lib/libKirigamiPlatform.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiPlatform.so.6
+lib/libKirigamiPlatform.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami/AboutItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigami/AbstractApplicationHeader.qml
@@ -170,6 +170,7 @@ share/locale/ja/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ka/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ko/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/lt/LC_MESSAGES/libkirigami6_qt.qm
+share/locale/lv/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ml/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/nl/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/nn/LC_MESSAGES/libkirigami6_qt.qm

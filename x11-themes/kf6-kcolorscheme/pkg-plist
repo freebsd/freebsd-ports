@@ -13,8 +13,8 @@ lib/cmake/KF6ColorScheme/KF6ColorSchemeConfigVersion.cmake
 lib/cmake/KF6ColorScheme/KF6ColorSchemeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6ColorScheme/KF6ColorSchemeTargets.cmake
 lib/libKF6ColorScheme.so
-lib/libKF6ColorScheme.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6ColorScheme.so.6
+lib/libKF6ColorScheme.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/ar/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ast/LC_MESSAGES/kcolorscheme6.mo
 share/locale/bg/LC_MESSAGES/kcolorscheme6.mo
@@ -37,11 +37,14 @@ share/locale/it/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ja/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ka/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ko/LC_MESSAGES/kcolorscheme6.mo
+share/locale/lt/LC_MESSAGES/kcolorscheme6.mo
+share/locale/lv/LC_MESSAGES/kcolorscheme6.mo
 share/locale/nl/LC_MESSAGES/kcolorscheme6.mo
 share/locale/nn/LC_MESSAGES/kcolorscheme6.mo
 share/locale/pa/LC_MESSAGES/kcolorscheme6.mo
 share/locale/pl/LC_MESSAGES/kcolorscheme6.mo
 share/locale/pt_BR/LC_MESSAGES/kcolorscheme6.mo
+share/locale/ro/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ru/LC_MESSAGES/kcolorscheme6.mo
 share/locale/sa/LC_MESSAGES/kcolorscheme6.mo
 share/locale/sk/LC_MESSAGES/kcolorscheme6.mo

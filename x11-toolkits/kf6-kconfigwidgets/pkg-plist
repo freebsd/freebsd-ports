@@ -31,8 +31,8 @@ lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsConfigVersion.cmake
 lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsTargets.cmake
 lib/libKF6ConfigWidgets.so
-lib/libKF6ConfigWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6ConfigWidgets.so.6
+lib/libKF6ConfigWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/designer/kconfigwidgets6widgets.so
 share/locale/af/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/af/kf6_entry.desktop
@@ -215,6 +215,7 @@ share/locale/tg/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/tg/kf6_entry.desktop
 share/locale/th/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/th/kf6_entry.desktop
+share/locale/tok/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/tok/kf6_entry.desktop
 share/locale/tr/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/tr/kf6_entry.desktop

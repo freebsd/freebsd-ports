@@ -14,8 +14,8 @@ lib/cmake/KF6DBusAddons/KF6DBusAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6DBusAddons/KF6DBusAddonsTargets.cmake
 lib/cmake/KF6DBusAddons/KF6dbus.service.in
 lib/libKF6DBusAddons.so
-lib/libKF6DBusAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6DBusAddons.so.6
+lib/libKF6DBusAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/ar/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/ast/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/az/LC_MESSAGES/kdbusaddons6_qt.qm
@@ -46,6 +46,7 @@ share/locale/ja/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/ka/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/ko/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/lt/LC_MESSAGES/kdbusaddons6_qt.qm
+share/locale/lv/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/ml/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/nb/LC_MESSAGES/kdbusaddons6_qt.qm
 share/locale/nds/LC_MESSAGES/kdbusaddons6_qt.qm
