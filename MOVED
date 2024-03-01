@@ -3033,3 +3033,5 @@ www/nibbleblog||2024-02-29|Has expired: Upstream WWW redirects to a different CM
 chinese/phpbb-tw||2024-02-29|Has expired: Last upstream was released in 2008 use chinese/phpbb3
 www/phpbb||2024-02-29|Has expired: Last upstream was released in 2008 use www/phpbb3
 devel/pcre++||2024-02-29|Unused in the ports tree depends on pcre which is EOLed since 2021
+sysutils/polkit-qt|sysutils/polkit-qt-1|2024-03-01|Renamed to move upstreams name and flavorized
+sysutils/polkit-qt-1-devel|sysutils/polkit-qt-1|2024-03-01|Renamed to move upstreams name and flavorized

@@ -30,13 +30,13 @@ lib/cmake/PolkitQt%%QT_VER%%-1/PolkitQt%%QT_VER%%-1Targets-%%CMAKE_BUILD_TYPE%%.
 lib/cmake/PolkitQt%%QT_VER%%-1/PolkitQt%%QT_VER%%-1Targets.cmake
 lib/libpolkit-qt%%QT_VER%%-agent-1.so
 lib/libpolkit-qt%%QT_VER%%-agent-1.so.1
-lib/libpolkit-qt%%QT_VER%%-agent-1.so.1.175.0
+lib/libpolkit-qt%%QT_VER%%-agent-1.so.1.200.0
 lib/libpolkit-qt%%QT_VER%%-core-1.so
 lib/libpolkit-qt%%QT_VER%%-core-1.so.1
-lib/libpolkit-qt%%QT_VER%%-core-1.so.1.175.0
+lib/libpolkit-qt%%QT_VER%%-core-1.so.1.200.0
 lib/libpolkit-qt%%QT_VER%%-gui-1.so
 lib/libpolkit-qt%%QT_VER%%-gui-1.so.1
-lib/libpolkit-qt%%QT_VER%%-gui-1.so.1.175.0
+lib/libpolkit-qt%%QT_VER%%-gui-1.so.1.200.0
 libdata/pkgconfig/polkit-qt%%QT_VER%%-1.pc
 libdata/pkgconfig/polkit-qt%%QT_VER%%-agent-1.pc
 libdata/pkgconfig/polkit-qt%%QT_VER%%-core-1.pc

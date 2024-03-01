@@ -5,7 +5,7 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 abstraction to system policy and authentication features
 
-LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt-1@qt5
 
 USES=		cmake compiler:c++11-lib cpe kde:5 qt:5 tar:xz
 CPE_VENDOR=	kde

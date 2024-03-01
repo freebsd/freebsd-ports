@@ -9,7 +9,7 @@ WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libpolkit-qt5-agent-1.so:sysutils/polkit-qt \
+LIB_DEPENDS=	libpolkit-qt5-agent-1.so:sysutils/polkit-qt-1@qt5 \
 		libpolkit-agent-1.so:sysutils/polkit
 
 USES=	cmake compiler:c++14-lang gettext-runtime kde:5 qt:5 gnome \

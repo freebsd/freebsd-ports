@@ -8,7 +8,7 @@ WWW=		https://github.com/JonMagon/KDiskMark
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt-1@qt5
 RUN_DEPENDS=	fio:benchmarks/fio
 
 USE_GITHUB=	yes

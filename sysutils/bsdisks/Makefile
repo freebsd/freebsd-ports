@@ -8,7 +8,7 @@ WWW=		https://foss.heptapod.net/bsdutils/bsdisks
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt-1@qt5
 
 USES=		cmake compiler:c++11-lang qt:5
 
