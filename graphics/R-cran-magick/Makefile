@@ -1,5 +1,5 @@
 PORTNAME=	magick
-DISTVERSION=	2.8.2
+DISTVERSION=	2.8.3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -20,6 +20,6 @@ TEST_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-spelling>0:textproc/R-cran-spelling
 
-USES=		cran:auto-plist,compiles magick:run
+USES=		compiler:c++17-lang cran:auto-plist,compiles magick:run
 
 .include <bsd.port.mk>
