@@ -15,7 +15,8 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+		evdev-proto>0:devel/evdev-proto \
 		nlohmann-json>0:devel/nlohmann-json \
 		wf-config>=0.8.0<0.9.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
