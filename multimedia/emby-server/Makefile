@@ -1,10 +1,10 @@
 PORTNAME=	emby-server
-DISTVERSION?=	4.7.14.0
-PORTREVISION?=	11
+DISTVERSION?=	4.8.3.0
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
-DISTNAME=	emby-server-freebsd13_${DISTVERSION}_amd64
+DISTNAME=	emby-server-freebsd14_${DISTVERSION}_amd64
 DISTFILES=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
@@ -53,6 +53,7 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libzvbi.so:devel/libzvbi
 
 RUN_DEPENDS=	icu>0:devel/icu \
+		krb5>0:security/krb5 \
 		libexif>0:graphics/libexif \
 		libheif>0:graphics/libheif \
 		libimagequant>0:graphics/libimagequant \
@@ -60,9 +61,12 @@ RUN_DEPENDS=	icu>0:devel/icu \
 		libjxl>0:graphics/libjxl \
 		libunwind>0:devel/libunwind \
 		openjpeg>0:graphics/openjpeg \
-		orc>0:devel/orc
+		orc>0:devel/orc \
+		openexr>0:graphics/openexr \
+		pango>0:x11-toolkits/pango \
+		tiff>0:graphics/tiff
 
-USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
+USES=		compiler:c11 gmake iconv localbase:ldflags magick:6 pkgconfig sqlite ssl:run
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
