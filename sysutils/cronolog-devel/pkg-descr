@@ -1,6 +1,6 @@
 "cronolog" is a simple program that reads log messages from its input
 and writes them to a set of output files, the names of which are
-constructed using template and the current date and time.
+constructed using a template and the current date and time.
 
 "cronolog" is intended to be used in conjunction with a Web server, such
 as Apache to split the access log into daily or monthly logs. E.g.:
