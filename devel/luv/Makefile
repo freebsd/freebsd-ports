@@ -1,5 +1,5 @@
 PORTNAME=	luv
-DISTVERSION=	1.48.0-1
+DISTVERSION=	1.48.0-2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/luvit/${PORTNAME}/releases/download/${DISTVERSION}/
 
