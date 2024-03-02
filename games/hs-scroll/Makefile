@@ -9,6 +9,8 @@ WWW=		https://joeyh.name/code/scroll/
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
+
 USES=		cabal
 
 USE_CABAL=	IfElse-0.85 \
