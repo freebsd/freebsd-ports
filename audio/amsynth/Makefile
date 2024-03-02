@@ -1,6 +1,6 @@
 PORTNAME=	amsynth
 DISTVERSION=	1.11.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DISTVERSION}/
 
@@ -26,6 +26,7 @@ USES=		compiler:c++11-lang gettext-tools gmake gnome libtool localbase \
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 intltool pango
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=		MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
