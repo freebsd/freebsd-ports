@@ -57,6 +57,10 @@ CFLAGS+=	-no-integrated-as
 CONFIGURE_ARGS+=	--enable-altivec
 .endif
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=3
+.endif
+
 LDFLAGS_i386+=	-Wl,-z,notext
 
 # Win32 DLL codecs support on i386, mostly superseded by ffmpeg
