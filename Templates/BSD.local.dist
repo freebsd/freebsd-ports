@@ -692,6 +692,8 @@
 /set uname=root
                 man1
                 ..
+                man7
+                ..
             ..
             man1
             ..
