@@ -1,7 +1,7 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -28,7 +28,7 @@ GO_MODULE=		git.sr.ht/~emersion/soju
 CONTRIBS=		./contrib/znc-import ./contrib/migrate-db \
 			./contrib/migrate-logs
 MAKE_ENV+=		${GO_ENV} \
-			MANDIR=man \
+			MANDIR=share/man \
 			PREFIX=${PREFIX} \
 			RUNDIR=/var/run \
 			SYSCONFDIR=${ETCDIR}/..
@@ -40,8 +40,8 @@ PLIST_FILES=		${CONTRIBS:T:C/^/bin\/soju-/g} \
 			bin/sojuctl \
 			bin/sojudb
 DOCS_BUILD_DEPENDS=	scdoc:textproc/scdoc
-DOCS_PLIST_FILES=	man/man1/soju.1.gz \
-			man/man1/sojuctl.1.gz
+DOCS_PLIST_FILES=	share/man/man1/soju.1.gz \
+			share/man/man1/sojuctl.1.gz
 
 pre-patch:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
