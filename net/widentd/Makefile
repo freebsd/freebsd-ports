@@ -1,22 +1,30 @@
 PORTNAME=	widentd
-PORTVERSION=	1.04
-PORTREVISION=	1
+DISTVERSION=	1.05
 CATEGORIES=	net
-MASTER_SITES=	https://BSDforge.com/projects/source/net/widentd/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	RFC1413 auth/identd daemon providing a fixed fake reply
-WWW=		https://BSDforge.com/projects/net/widentd/
+WWW=		https://codeberg.org/BSDforge/widentd
 
 LICENSE=	BSD3CLAUSE
 
-DEPRECATED=	Abandonware, last release in 2004 and dead upstream. Consider using security/oidentd
-EXPIRATION_DATE=2024-02-29
+USES=		ncurses uidfix
 
-USES=		ncurses uidfix tar:xz
 USE_RC_SUBR=	widentd
-MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man" MK_WERROR=no
 
-PLIST_FILES=	sbin/widentd man/man8/widentd.8.gz
+OPTIONS_DEFINE=	DOCS
+
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/share/man/man"
+PLIST_FILES=	sbin/widentd share/man/man8/widentd.8.gz
+PORTDOCS=	LICENSE README README.md
+
+# else ports framework can't handle USE_RC_SUBR
+post-extract:
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
