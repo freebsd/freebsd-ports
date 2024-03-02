@@ -286,7 +286,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%share/man/fr/man5/dselect.cfg.5.gz
 %%NLS%%share/man/fr/man7/deb-version.7.gz
 %%NLS%%share/man/fr/man8/start-stop-daemon.8.gz
-%%NLS%%@dir man/fr/man8
+%%NLS%%@dir share/man/fr/man8
 %%NLS%%share/man/it/man1/dpkg-maintscript-helper.1.gz
 %%NLS%%share/man/it/man1/dpkg-split.1.gz
 %%NLS%%share/man/it/man1/update-alternatives.1.gz
@@ -294,13 +294,14 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%share/man/it/man5/deb-old.5.gz
 %%NLS%%share/man/it/man5/deb-override.5.gz
 %%NLS%%share/man/it/man5/deb-split.5.gz
-%%NLS%%@dir man/it/man8
+%%NLS%%@dir share/man/it/man8
 %%NLS%%share/man/ja/man1/dpkg-split.1.gz
 %%NLS%%share/man/ja/man1/update-alternatives.1.gz
 %%NLS%%share/man/ja/man5/deb-extra-override.5.gz
 %%NLS%%share/man/ja/man5/deb-old.5.gz
 %%NLS%%share/man/ja/man5/deb-override.5.gz
 %%NLS%%share/man/ja/man5/deb-split.5.gz
+%%NLS%%@dir share/man/ja/man8
 share/man/man1/dpkg-architecture.1.gz
 share/man/man1/dpkg-buildflags.1.gz
 share/man/man1/dpkg-buildpackage.1.gz
@@ -476,7 +477,7 @@ share/man/man8/start-stop-daemon.8.gz
 %%NLS%%share/man/sv/man5/deb-old.5.gz
 %%NLS%%share/man/sv/man5/deb-override.5.gz
 %%NLS%%share/man/sv/man5/deb-split.5.gz
-%%NLS%%@dir man/sv/man8
+%%NLS%%@dir share/man/sv/man8
 sbin/start-stop-daemon
 %%DATADIR%%/abitable
 %%DATADIR%%/architecture.mk
@@ -577,13 +578,13 @@ share/polkit-1/actions/org.dpkg.pkexec.update-alternatives.policy
 %%DPKGDIR%%/status.sample
 @dir %%ETCDIR%%/dpkg.cfg.d
 %%NLS%%@dir %%ETCDIR%%/dselect.cfg.d
-%%NLS%%@dir man/es/man7
-%%NLS%%@dir man/es/man8
-%%NLS%%@dir man/fr/man7
-%%NLS%%@dir man/it/man7
-%%NLS%%@dir man/pl/man7
-%%NLS%%@dir man/pl/man8
-%%NLS%%@dir man/sv/man7
+%%NLS%%@dir share/man/es/man7
+%%NLS%%@dir share/man/es/man8
+%%NLS%%@dir share/man/fr/man7
+%%NLS%%@dir share/man/it/man7
+%%NLS%%@dir share/man/pl/man7
+%%NLS%%@dir share/man/pl/man8
+%%NLS%%@dir share/man/sv/man7
 @dir %%DPKGDIR%%/alternatives
 @dir %%DPKGDIR%%/info
 @dir %%DPKGDIR%%/methods/disk
