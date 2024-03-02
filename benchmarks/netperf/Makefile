@@ -1,6 +1,6 @@
 PORTNAME=	netperf
 PORTVERSION=	2.7.1.p20210121
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 
 MAINTAINER=	marius@FreeBSD.org
@@ -25,6 +25,7 @@ SOCKETS_DESC=	Enable Unix Domain socket support
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-burst --enable-demo --enable-dirty --enable-intervals
 CFLAGS+=	-fcommon
 
