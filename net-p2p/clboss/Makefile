@@ -1,10 +1,13 @@
 PORTNAME=	clboss
-# To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.13
 DISTVERSIONPREFIX=	v
-# and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
-#PORTVERSION=	0
-#PKGNAMESUFFIX=	-git-0673c50e7
+# To build from an arbitrary git commit comment DISTVERSION
+DISTVERSION=	0.13
+# and uncomment the following two lines (use for example -gf8d8348c where f8d8348c is a commit hash)
+#DISTVERSION=	0
+#DISTVERSIONSUFFIX=	-g0673c50e7
+.if defined(DISTVERSIONSUFFIX)
+PKGNAMESUFFIX=	-devel
+.endif
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
@@ -30,12 +33,7 @@ CXXFLAGS=	-Wno-deprecated-declarations
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
-.if defined(PKGNAMESUFFIX)
-GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
-.else
-GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
-.endif
-GH_TUPLE=	ZmnSCPxj:clboss:${GIT_COMMIT}
+GH_ACCOUNT=	ZmnSCPxj
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/clboss
