@@ -7375,6 +7375,7 @@
     SUBDIR += rubygem-rubocop-capybara
     SUBDIR += rubygem-rubocop-factory_bot
     SUBDIR += rubygem-rubocop-performance
+    SUBDIR += rubygem-rubocop-rails
     SUBDIR += rubygem-rubocop-rake
     SUBDIR += rubygem-rubocop-rspec
     SUBDIR += rubygem-ruby-atmos-pure
