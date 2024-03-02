@@ -1,6 +1,7 @@
 PORTNAME=	deutex
 PORTVERSION=	5.2.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	archivers games
 
 MAINTAINER=	kai@FreeBSD.org
@@ -19,9 +20,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Doom-Utils
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/deutex \
-		man/man6/${PORTNAME}.6.gz
+		share/man/man6/${PORTNAME}.6.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS PNG
