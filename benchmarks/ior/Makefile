@@ -1,6 +1,6 @@
 PORTNAME=	ior
 DISTVERSION=	3.3.0-20230112
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,13 +16,14 @@ GH_ACCOUNT=	hpc
 GH_TAGNAME=	24d5d41
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/ior \
 		bin/md-workbench \
 		bin/mdtest \
-		man/man1/mdtest.1.gz
+		share/man/man1/mdtest.1.gz
 
 post-install: # see https://github.com/hpc/ior/issues/454
 	@${RM} \
