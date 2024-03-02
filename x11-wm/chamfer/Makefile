@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR} \
+		cmake:devel/cmake-core \
 		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
 		spirv-opt:graphics/spirv-tools \
 		vulkan-headers>0:graphics/vulkan-headers \
