@@ -1,5 +1,5 @@
 bin/leocad
-man/man1/leocad.1.gz
+share/man/man1/leocad.1.gz
 share/applications/leocad.desktop
 share/icons/hicolor/128x128/apps/leocad.png
 share/icons/hicolor/128x128/mimetypes/application-vnd.leocad.png
