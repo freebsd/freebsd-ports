@@ -1,5 +1,5 @@
 PORTNAME=	chirp
-DISTVERSION=	20240120
+DISTVERSION=	20240229
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 DIST_SUBDIR=	chirp
@@ -12,11 +12,11 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}versioningit>0:devel/py-versioningit@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}versioningit>0:devel/py-versioningit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yattag>0:devel/py-yattag@${PY_FLAVOR}
 
 USES=		desktop-file-utils gnome python shebangfix
@@ -26,15 +26,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kk7ds
 GH_TAGNAME=	2205c0f
 
-USE_GNOME=	gtk-update-icon-cache
-
 USE_PYTHON=	pep517 pytest
 
-USE_WX=	3.2
+USE_WX=		3.2
 WX_COMPS=	python:run
 
 PORTSCOUT=	ignore:1
 NO_ARCH=	yes
+
+PLIST_SUB+=	DISTVERSION="${DISTVERSION}"
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|version=0|version=${PORTVERSION}|' \
