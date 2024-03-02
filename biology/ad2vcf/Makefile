@@ -1,5 +1,6 @@
 PORTNAME=	ad2vcf
 DISTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,8 +15,9 @@ LIB_DEPENDS=	libbiolibc.so:biology/biolibc libxtend.so:devel/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share
 MAKE_ENV+=	VERSION=${PORTVERSION}
-PLIST_FILES=	bin/ad2vcf man/man1/ad2vcf.1.gz
+PLIST_FILES=	bin/ad2vcf share/man/man1/ad2vcf.1.gz
 
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
