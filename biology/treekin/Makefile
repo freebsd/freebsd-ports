@@ -1,6 +1,6 @@
 PORTNAME=	treekin
 DISTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/packages/source/
 DISTNAME=	Treekin-${DISTVERSION}
@@ -20,10 +20,11 @@ USES=		blaslapack:netlib compiler:c++11-lang fortran gmake \
 		localbase:ldflags
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 BINARY_ALIAS=	make=${GMAKE}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
