@@ -369,6 +369,8 @@ bin/chirpc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/uvb5%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/uvk5%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/uvk5%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/uvk5_egzumer%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/uvk5_egzumer%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/vgc%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/vgc%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/__pycache__/vx170%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -546,6 +548,7 @@ bin/chirpc
 %%PYTHON_SITELIBDIR%%/chirp/drivers/uv6r.py
 %%PYTHON_SITELIBDIR%%/chirp/drivers/uvb5.py
 %%PYTHON_SITELIBDIR%%/chirp/drivers/uvk5.py
+%%PYTHON_SITELIBDIR%%/chirp/drivers/uvk5_egzumer.py
 %%PYTHON_SITELIBDIR%%/chirp/drivers/vgc.py
 %%PYTHON_SITELIBDIR%%/chirp/drivers/vx170.py
 %%PYTHON_SITELIBDIR%%/chirp/drivers/vx2.py
@@ -581,6 +584,7 @@ bin/chirpc
 %%PYTHON_SITELIBDIR%%/chirp/platform.py
 %%PYTHON_SITELIBDIR%%/chirp/pyPEG.py
 %%PYTHON_SITELIBDIR%%/chirp/settings.py
+%%PYTHON_SITELIBDIR%%/chirp/%%DATADIR%%-logo.png
 %%PYTHON_SITELIBDIR%%/chirp/%%DATADIR%%.desktop
 %%PYTHON_SITELIBDIR%%/chirp/%%DATADIR%%.ico
 %%PYTHON_SITELIBDIR%%/chirp/%%DATADIR%%.png
@@ -610,6 +614,7 @@ bin/chirpc
 %%PYTHON_SITELIBDIR%%/chirp/stock_configs/DE Freenet Frequencies.csv
 %%PYTHON_SITELIBDIR%%/chirp/stock_configs/EU LPD and PMR Channels.csv
 %%PYTHON_SITELIBDIR%%/chirp/stock_configs/FR Marine VHF Channels.csv
+%%PYTHON_SITELIBDIR%%/chirp/stock_configs/GR Marine VHF Channels.csv
 %%PYTHON_SITELIBDIR%%/chirp/stock_configs/PL Calling Frequencies and Simplex.csv
 %%PYTHON_SITELIBDIR%%/chirp/stock_configs/SE Jaktradio 155MHz.csv
 %%PYTHON_SITELIBDIR%%/chirp/stock_configs/SE NO KDR444.csv
