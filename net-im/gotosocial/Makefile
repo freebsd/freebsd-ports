@@ -37,6 +37,8 @@ DBDIR=		/var/db/${PORTNAME}
 
 PLIST_SUB=	WWWDIR="${WWWDIR}"
 
+TESTING_UNSAFE=	FAIL    github.com/superseriousbusiness/gotosocial/internal/log
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in LICENSE README.md
