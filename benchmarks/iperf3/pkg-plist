@@ -4,5 +4,5 @@ include/iperf_api.h
 lib/libiperf.so
 lib/libiperf.so.0
 lib/libiperf.so.0.0.0
-man/man1/iperf3.1.gz
-man/man3/libiperf.3.gz
+share/man/man1/iperf3.1.gz
+share/man/man3/libiperf.3.gz
