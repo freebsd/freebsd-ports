@@ -9,6 +9,8 @@ WWW=		https://foss.heptapod.net/bsdutils/panopticum
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
+
 USES=		cabal
 
 USE_GITLAB=	yes
