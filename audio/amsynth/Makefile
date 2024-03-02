@@ -11,6 +11,8 @@ WWW=		https://amsynth.github.io/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		error: no matching function for call to 'lo_server_add_method'
+
 BUILD_DEPENDS=	dssi>0:audio/dssi
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
