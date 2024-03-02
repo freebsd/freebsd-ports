@@ -54,4 +54,4 @@ lib/libjellyfish-2.0.so
 lib/libjellyfish-2.0.so.2
 lib/libjellyfish-2.0.so.2.0.0
 libdata/pkgconfig/jellyfish-2.0.pc
-man/man1/jellyfish.1.gz
+share/man/man1/jellyfish.1.gz

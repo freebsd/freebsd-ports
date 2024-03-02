@@ -1,7 +1,7 @@
 PORTNAME=		Jellyfish
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.3.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		biology
 MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v2.3.0/	# Custom distfile reduces dependencies
 DISTNAME=		${PORTNAME:tl}-${DISTVERSION}
@@ -21,6 +21,7 @@ USES=		compiler:c++11-lib libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VER=${PORTVERSION}
