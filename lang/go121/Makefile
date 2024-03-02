@@ -21,5 +21,6 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
 		src/net/http/cgi/testdata/test.cgi
 BASH=		${SH}
+TESTING_UNSAFE=	MemorySanitizer: use-of-uninitialized-value (/tmp/TestMSAN747758340/msan8+0x11efcf) in msanGoLoop
 
 .include "${MASTERDIR}/Makefile"

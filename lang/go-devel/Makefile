@@ -124,6 +124,7 @@ do-install:
 
 do-test:
 	cd ${WRKSRC}/src && ${SETENV} \
+		${TEST_ENV} \
 		GOROOT=${WRKSRC} \
 		PATH=${WRKSRC}/bin:${PATH} \
 		GOOS=${OPSYS:tl} \
