@@ -10,7 +10,8 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
 		glm>0:math/glm
 LIB_DEPENDS=	libevdev.so:devel/libevdev
