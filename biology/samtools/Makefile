@@ -1,5 +1,6 @@
 PORTNAME=	samtools
 DISTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,6 +19,7 @@ USE_GITHUB=	yes
 
 USE_PERL5=	test
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	misc/*.pl misc/plot-bamstats test/test.pl
 
 TEST_TARGET=	test
