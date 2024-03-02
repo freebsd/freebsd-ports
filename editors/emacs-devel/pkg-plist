@@ -227,6 +227,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/commit.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/commit.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/conceal.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/conceal.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect-to-url.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect-to-url.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/connect.pbm
@@ -611,6 +613,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/redo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/refresh.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/refresh.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/reveal.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/reveal.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/right-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/right-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/right.svg
@@ -922,6 +926,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/test.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/texi.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/wisent.srt
+%%DATADIR%%/%%EMACS_VER%%/etc/syncdoc-type-hierarchy.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/adwaita-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/deeper-blue-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/dichromacy-theme.el
@@ -2969,6 +2974,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/telnet.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-adb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-adb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-androidsu.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-androidsu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-archive.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-archive.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-cache.el.gz
