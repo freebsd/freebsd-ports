@@ -1,5 +1,6 @@
 PORTNAME=	sct
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	accessibility
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -13,9 +14,10 @@ USES=		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	0mp
 USE_XORG=	x11 xrandr
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/sct \
-		man/man1/sct.1.gz
+		share/man/man1/sct.1.gz
 
 .include <bsd.port.mk>
