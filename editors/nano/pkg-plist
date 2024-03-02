@@ -1,8 +1,5 @@
 bin/nano
 bin/rnano
-man/man1/nano.1.gz
-man/man1/rnano.1.gz
-man/man5/nanorc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/nano.1.html
 %%PORTDOCS%%%%DOCSDIR%%/nano.html
@@ -47,6 +44,9 @@ man/man5/nanorc.5.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/nano.mo
+share/man/man1/nano.1.gz
+share/man/man1/rnano.1.gz
+share/man/man5/nanorc.5.gz
 %%DATADIR%%/asm.nanorc
 %%DATADIR%%/autoconf.nanorc
 %%DATADIR%%/awk.nanorc
