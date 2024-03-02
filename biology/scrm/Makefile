@@ -1,6 +1,7 @@
 PORTNAME=	scrm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +15,9 @@ USES=		autoreconf compiler:c++11-lang gmake
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/scrm \
-		man/man1/scrm.1.gz
+		share/man/man1/scrm.1.gz
 
 .include <bsd.port.mk>
