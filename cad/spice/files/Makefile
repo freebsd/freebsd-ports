@@ -35,7 +35,7 @@ SCRIPTFILES=	setplot spinit
 SHAREFILES=	mfbcap news
 
 MAN=	spice.1 nutmeg.1 sconvert.1 mfb.3 mfbcap.5
-MANDIR=	${PREFIX}/man/man
+MANDIR=	${PREFIX}/share/man/man
 
 .for P in ${PROGRAMS}
 install:: ${DESTDIR}${BINDIR}/$P
