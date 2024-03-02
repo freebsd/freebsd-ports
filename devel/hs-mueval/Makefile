@@ -8,6 +8,8 @@ WWW=		https://github.com/gwern/mueval
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
+
 USES=		cabal
 
 USE_CABAL=	QuickCheck-2.14.3 \
