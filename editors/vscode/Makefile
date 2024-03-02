@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.86.2
-PORTREVISION=	2
+DISTVERSION=	1.87.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
 DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
@@ -68,7 +67,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	903b1e9d8990623e3d7da1df3d33db3e42d80eda
+SOURCE_COMMIT_HASH=	019f4d1419fbc8219a181fab7892ebccf7ee29a2
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
