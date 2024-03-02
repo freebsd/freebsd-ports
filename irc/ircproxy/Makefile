@@ -1,5 +1,6 @@
 PORTNAME=	ircproxy
 DISTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -15,9 +16,6 @@ LIB_DEPENDS=	libcares.so:dns/c-ares
 USES=		autoreconf localbase:ldflags
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lcrypto
-
-SUB_FILES=	pkg-deinstall
-SUB_LIST=	IRC_USR=${USERS} IRC_GRP=${GROUPS}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
