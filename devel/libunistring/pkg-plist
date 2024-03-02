@@ -13,6 +13,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_20.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_21.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_22.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_23.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_3.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_4.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_5.html
@@ -21,6 +22,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_8.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_9.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_fot.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_toc.html
 include/unistring/inline.h
 include/unistring/stdbool.h
@@ -34,6 +36,7 @@ include/unitypes.h
 include/unistr.h
 include/uniconv.h
 include/unistdio.h
+include/unimetadata.h
 include/uniname.h
 include/unictype.h
 include/uniwidth.h
@@ -44,4 +47,4 @@ include/unicase.h
 include/unigbrk.h
 lib/libunistring.so
 lib/libunistring.so.5
-lib/libunistring.so.5.0.0
+lib/libunistring.so.5.1.0
