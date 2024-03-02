@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2023-11-24 10:05:57 UTC
++++ Makefile.in
+@@ -180,7 +180,6 @@ bindist:	Makefile
+ 		    $(INSTALL_EXE) src/jigdo-file "$$jdir"; \
+ 		    grep -v "^##" $(srcdir)/doc/README-bindist.txt \
+ 		        >"$$jdir/README"; \
+-		    $(INSTALL_DATA) $(srcdir)/doc/*.html "$$jdir"; \
+ 		    $(INSTALL_DATA) $(srcdir)/doc/*.1    "$$jdir"; \
+ 		    $(INSTALL_DATA) $(srcdir)/COPYING    "$$jdir"; \
+ 		    $(INSTALL_DATA) $(srcdir)/scripts/debian-mirrors.jigdo \
+@@ -207,7 +206,6 @@ windist:	Makefile all
+ 		    $(INSTALL_EXE) src/jigdo-file.exe "../$$jdir/jigdo-bin"; \
+ 		    grep -v "^##" $(srcdir)/doc/README-windist.txt \
+ 		        | todos  >"../$$jdir/README.txt"; \
+-		    $(INSTALL_DATA) $(srcdir)/doc/*.html "../$$jdir"; \
+ 		    $(INSTALL_DATA) $(srcdir)/scripts/debian-mirrors.jigdo \
+ 			"../$$jdir/jigdo-bin/mirrors.jigdo"; \
+ 		    $(INSTALL_EXE) $(srcdir)/win-binaries/* "../$$jdir/jigdo-bin"; \
