@@ -1,6 +1,6 @@
---- install-sh.orig	2016-01-01 16:41:58 UTC
+--- install-sh.orig	2022-07-03 10:17:29 UTC
 +++ install-sh
-@@ -47,16 +47,21 @@ then
+@@ -47,16 +47,21 @@ rm -rf $DESTDIR$INSTALL_PREFIX/share/phoronix-test-sui
  fi
  
  rm -rf $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
@@ -12,9 +12,8 @@
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/appdata/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/applications/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/
--mkdir -p $DESTDIR$INSTALL_PREFIX/share/man/man1/
 +fi
-+mkdir -p $DESTDIR$INSTALL_PREFIX/man/man1/
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/man/man1/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
 -mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/
@@ -25,13 +24,11 @@
  #mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
  #mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/init/
  
-@@ -69,15 +74,18 @@ cp -r * $DESTDIR$INSTALL_PREFIX/share/do
- cd ..
+@@ -70,15 +75,18 @@ cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX
  rm -rf $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/man-pages/
  
--cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/share/man/man1/
+ cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/share/man/man1/
 -cp pts-core/static/bash_completion $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/phoronix-test-suite
-+cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/man/man1/
 +if [ -n "$WITH_BASH_COMPLETIONS" ]
 +then
 +cp pts-core/static/bash_completion $DESTDIR$INSTALL_PREFIX/etc/bash_completion.d/phoronix-test-suite
@@ -42,14 +39,15 @@
  cp pts-core/static/phoronix-test-suite.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
  cp pts-core/static/phoronix-test-suite-launcher.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
  cp pts-core/static/phoronix-test-suite.appdata.xml $DESTDIR$INSTALL_PREFIX/share/appdata/
--
--mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
--cp deploy/*-systemd/*.service $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
 +fi
  
+-mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+-cp deploy/*-systemd/*.service $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+-
  # mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/init/
  # cp pts-core/static/upstart/*.conf $DESTDIR$INSTALL_PREFIX/../etc/init/
-@@ -92,12 +100,13 @@ rm -f $DESTDIR$INSTALL_PREFIX/share/phor
+ 
+@@ -93,12 +101,13 @@ rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suit
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/openbenchmarking.png
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/%phoronix-test-suite.png
  
@@ -64,7 +62,7 @@
  # XDG MIME OpenBenchmarking support
  if [ "X$DESTDIR" = "X" ] && which xdg-mime >/dev/null && which xdg-icon-resource >/dev/null
  then
-@@ -112,15 +121,14 @@ else
+@@ -113,15 +122,14 @@ fi
  	cp pts-core/static/images/openbenchmarking.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
  
  fi

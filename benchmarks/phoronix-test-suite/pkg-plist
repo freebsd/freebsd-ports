@@ -6,4 +6,4 @@ bin/phoronix-test-suite
 %%X11%%share/icons/hicolor/48x48/apps/phoronix-test-suite.png
 %%X11%%share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
 %%X11%%share/mime/packages/openbenchmarking-mime.xml
-man/man1/phoronix-test-suite.1.gz
+share/man/man1/phoronix-test-suite.1.gz
