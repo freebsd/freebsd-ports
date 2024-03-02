@@ -1,5 +1,5 @@
---- Makefile.linux.orig	2020-03-15 00:26:34 UTC
-+++ Makefile.linux
+--- Makefile.linux.orig	2024-03-02 10:17:18.143681000 -0500
++++ Makefile.linux	2024-03-02 10:23:51.199192000 -0500
 @@ -29,37 +29,41 @@
  .phony: default all openctm toolset documentation install clean
  
@@ -37,7 +37,7 @@
 +LIBDIR  = $(PREFIX)/lib/
 +INCDIR  = $(PREFIX)/include/
 +BINDIR  = $(PREFIX)/bin/
-+MAN1DIR = $(PREFIX)/man/man1/
++MAN1DIR = $(PREFIX)/share/man/man1/
  CP = cp
  MKDIR = mkdir -p
  
