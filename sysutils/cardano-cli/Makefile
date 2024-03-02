@@ -1,5 +1,6 @@
 PORTNAME=	cardano-cli
-PORTVERSION=	8.20.1.0
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	8.20.1.0
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -16,7 +17,6 @@ USES=		cabal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	IntersectMBO
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 USE_CABAL=	Diff-0.5_1 \
 		FailT-0.1.2.0 \

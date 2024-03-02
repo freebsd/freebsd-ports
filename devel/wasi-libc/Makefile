@@ -1,4 +1,5 @@
 PORTNAME=	wasi-libc
+DISTVERSIONPREFIX=	wasi-sdk-
 DISTVERSION=	21
 CATEGORIES=	devel
 
@@ -17,7 +18,6 @@ LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		gmake llvm:min=12
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
-GH_TAGNAME=	wasi-sdk-${DISTVERSION}${DISTVERSIONSUFFIX}
 GH_TUPLE=	WebAssembly:WASI:59cbe14:wasi/tools/wasi-headers/WASI
 NO_ARCH=	yes
 

@@ -999,5 +999,5 @@ SHA256 (cabal/yaml-0.11.11.2/revision/2.cabal) = 6f0a1859e0fb3068e50dbc7fe9bf9a2
 SIZE (cabal/yaml-0.11.11.2/revision/2.cabal) = 5178
 SHA256 (cabal/zlib-0.7.0.0/zlib-0.7.0.0.tar.gz) = 7e43c205e1e1ff5a4b033086ec8cce82ab658879e977c8ba02a6701946ff7a47
 SIZE (cabal/zlib-0.7.0.0/zlib-0.7.0.0.tar.gz) = 369149
-SHA256 (cabal/IntersectMBO-cardano-cli-8.20.1.0-cardano-cli-8.20.1.0_GH0.tar.gz) = f813c50f724832547df55b39fc370f340ecd0296c9ff5299688a0fdb73b6b39b
-SIZE (cabal/IntersectMBO-cardano-cli-8.20.1.0-cardano-cli-8.20.1.0_GH0.tar.gz) = 1129093
+SHA256 (cabal/IntersectMBO-cardano-cli-cardano-cli-8.20.1.0_GH0.tar.gz) = f813c50f724832547df55b39fc370f340ecd0296c9ff5299688a0fdb73b6b39b
+SIZE (cabal/IntersectMBO-cardano-cli-cardano-cli-8.20.1.0_GH0.tar.gz) = 1129093

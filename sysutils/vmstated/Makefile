@@ -12,7 +12,6 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	christian-moerz
 GH_PROJECT=	vmstated
-GH_TAGNAME=	${DISTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} "s@PREFIX@${PREFIX}@g" "${WRKSRC}/rc/vmstated"
