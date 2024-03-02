@@ -1,42 +1,39 @@
 PORTNAME=	ircproxy
-PORTVERSION=	1.3.6
-PORTREVISION=	3
+DISTVERSION=	1.3.8
 CATEGORIES=	irc
-MASTER_SITES=	https://BSDforge.com/projects/source/irc/ircproxy/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	IRC proxy/bouncer daemon
-WWW=		http://ircproxy.sourceforge.net/
+WWW=		https://codeberg.org/BSDforge/ircproxy
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Abandonware, last release in 2010 and dead upstream. Consider using irc/soju or irc/znc
-EXPIRATION_DATE=2024-02-29
-
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
-USES=		autoreconf tar:bzip2
+USES=		autoreconf localbase:ldflags
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
-CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lcrypto
+
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	IRC_USR=${USERS} IRC_GRP=${GROUPS}
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 USERS=		ircproxyd
 GROUPS=		ircproxyd
 
-SUB_LIST=	IRC_USR=${USERS} IRC_GRP=${GROUPS}
-SUB_FILES=	pkg-deinstall
-
 OPTIONS_DEFINE=	SSL IPV6 MEMDEBUG FDDEBUG
 OPTIONS_DEFAULT=	SSL MEMDEBUG FDDEBUG
-MEMDEBUG_DESC=	Enable memory debugging
 FDDEBUG_DESC=	Enable file descriptor debugging
+MEMDEBUG_DESC=	Enable memory debugging
 
-MEMDEBUG_CONFIGURE_ENABLE=	memdebug
 FDDEBUG_CONFIGURE_ENABLE=	fddebug
 IPV6_CONFIGURE_ENABLE=		ipv6
-SSL_CONFIGURE_ENABLE=		ssl
+MEMDEBUG_CONFIGURE_ENABLE=	memdebug
 SSL_USES=		ssl
+SSL_CONFIGURE_ENABLE=		ssl
 
 .include <bsd.port.pre.mk>
 
