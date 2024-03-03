@@ -1,6 +1,7 @@
 PORTNAME=	czmq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	4
 
@@ -23,6 +24,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	doc/mkman mkdoc model/chkopts.pl model/rename_class
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-drafts="yes" \
 		--with-docs="yes" \
 		--with-libzmq=${LOCALBASE} \
