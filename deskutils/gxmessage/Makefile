@@ -1,6 +1,6 @@
 PORTNAME=	gxmessage
 PORTVERSION=	3.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	GNU \
 		LOCAL/martymac
@@ -12,6 +12,7 @@ WWW=		http://homepages.ihug.co.nz/~trmusson/programs.html #gxmessage
 USE_GNOME=	gtk30 gnomeprefix intltool
 USES=		gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
