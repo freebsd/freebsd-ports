@@ -1,1 +1,9 @@
-Perl extension for managing list of values.
+Uniq is a Perl module designed for simple and effective list management,
+specifically targeting the elimination of duplicate values. It includes
+functions like uniq, which filters out duplicate entries from a list,
+dups for identifying any repeated values, and distinct to guarantee a
+list of only unique elements. This module is particularly useful for
+tasks that involve data cleaning or when you need to ensure the
+uniqueness of list items in your Perl scripts. Easy to integrate and
+use, Uniq helps maintain clean and efficient lists in any Perl project,
+making it a practical tool for developers and anyone working with data.
