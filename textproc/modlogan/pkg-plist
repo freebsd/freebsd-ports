@@ -94,7 +94,7 @@ lib/libmla_processor_telecom.a
 lib/libmla_processor_telecom.so
 lib/libmla_processor_web.a
 lib/libmla_processor_web.so
-man/man1/modlogan.1.gz
+share/man/man1/modlogan.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/glosar
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt

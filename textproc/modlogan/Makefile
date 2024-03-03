@@ -1,6 +1,6 @@
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 
@@ -11,6 +11,7 @@ WWW=		https://sourceforge.net/projects/modlogan/
 LIB_DEPENDS=	libadns.so:dns/adns \
 		libgd.so:graphics/gd \
 		libpcre.so:devel/pcre \
+		libpng16.so:graphics/png \
 		libexpat.so:textproc/expat2
 
 USES=		cpe gettext libtool
@@ -22,6 +23,7 @@ OPTIONS_DEFINE=	DOCS MYSQL
 # They serve as a reminder.
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include \
 		--program-transform-name=\'\'
 MYSQL_CONFIGURE_ON=	--with-mysql
