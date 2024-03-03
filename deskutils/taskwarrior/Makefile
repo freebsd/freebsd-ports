@@ -1,6 +1,7 @@
 PORTNAME=	taskwarrior
 PORTVERSION=	2.6.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -22,8 +23,8 @@ GH_TAGNAME=	8baf2db:libshared
 GH_SUBDIR=	src/libshared:libshared
 
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
-		-DTASK_MAN1DIR:STRING=man/man1 \
-		-DTASK_MAN5DIR:STRING=man/man5 \
+		-DTASK_MAN1DIR:STRING=share/man/man1 \
+		-DTASK_MAN5DIR:STRING=share/man/man5 \
 		-DCMAKE_BUILD_TYPE=release
 
 SHEBANG_FILES=	scripts/*/*.pl \
