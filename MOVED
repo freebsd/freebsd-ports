@@ -3037,3 +3037,4 @@ sysutils/polkit-qt|sysutils/polkit-qt-1|2024-03-01|Renamed to move upstreams nam
 sysutils/polkit-qt-1-devel|sysutils/polkit-qt-1|2024-03-01|Renamed to move upstreams name and flavorized
 sysutils/cfengine-masterfiles320||2024-03-03|Has expired: No longer supported by upstream
 sysutils/cfengine320||2024-03-03|Has expired: No longer supported by upstream
+net-p2p/sonarr-devel|net-p2p/sonarr|2024-03-03|Has expired: Use net-p2p/sonarr instead

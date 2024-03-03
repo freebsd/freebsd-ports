@@ -96,7 +96,6 @@
     SUBDIR += rtorrent
     SUBDIR += shx
     SUBDIR += sonarr
-    SUBDIR += sonarr-devel
     SUBDIR += tooth
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
