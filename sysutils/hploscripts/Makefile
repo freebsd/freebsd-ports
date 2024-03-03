@@ -4,8 +4,11 @@ PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	LOCAL/ehaupt
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HP Lights-Out management perl scripts
+
+DEPRECATED=	Abandonware, outdated version
+EXPIRATION_DATE=2024-06-03
 
 BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.19:security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
