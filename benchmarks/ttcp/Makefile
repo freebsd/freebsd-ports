@@ -1,7 +1,8 @@
 PORTNAME=	ttcp
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTVERSION=	1.13
 CATEGORIES=	benchmarks net
-MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
