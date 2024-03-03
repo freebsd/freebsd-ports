@@ -36,8 +36,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}.tar.bz2 \
 		imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}.tar.bz2
 
-BUILD_DEPENDS=	glm>0:math/glm \
-		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3
+BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libglfw.so:graphics/glfw \
 		libfreetype.so:print/freetype2 \
