@@ -1,6 +1,7 @@
 PORTNAME=	dfshow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1-beta
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	roberthawdon
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFLICTS_INSTALL=	ja-mh mmh nmh nmh-devel # man/man1/show.1.gz
 

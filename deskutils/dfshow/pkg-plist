@@ -1,8 +1,8 @@
 bin/sf
 bin/show
 etc/dfshow.conf
-man/man1/sf.1.gz
-man/man1/show.1.gz
+share/man/man1/sf.1.gz
+share/man/man1/show.1.gz
 %%DATADIR%%/default
 %%DATADIR%%/dos
 %%DATADIR%%/hot-dog-stand
