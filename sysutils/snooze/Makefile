@@ -1,6 +1,7 @@
 PORTNAME=	snooze
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	krion@FreeBSD.org
@@ -13,11 +14,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	leahneukirchen
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" \
-		MANDIR="${PREFIX}/man" \
+		MANDIR="${PREFIX}/share/man" \
 		PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/snooze \
-		man/man1/snooze.1.gz
+		share/man/man1/snooze.1.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
