@@ -1,6 +1,6 @@
 PORTNAME=	serviio
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	https://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -19,7 +19,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	8
+JAVA_VERSION=	21
 USES=		dos2unix
 DOS2UNIX_GLOB=	derby.properties
 

@@ -20,7 +20,7 @@ SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:%%ETCDIR%%"
 # Setup Serviio specific properties
 JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dorg.restlet.engine.loggerFacadeClass=org.restlet.ext.slf4j.Slf4jLoggerFacade -Dderby.system.home=/var/db/serviio -Dserviio.home=$HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg -Ddcraw.location=%%LOCALBASE%%/bin/dcraw"
 JAVA_OPTS="${JAVA_OPTS} -Djcs.auxiliary.DC.attributes.DiskPath=/var/db/serviio"
-JAVA_VERSION="1.8+"
+JAVA_VERSION="21+"
 
 # A kludge to get the -D... flags to Java, rather than to Serviio itself:
 for o in "$@"
