@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.4
+DISTVERSION=	0.18.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -100,8 +100,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		openssl-src-111.26.0+1.1.1u \
 		openssl-sys-0.9.61 \
 		os_pipe-1.1.4 \
-		palette-0.7.4 \
-		palette_derive-0.7.4 \
+		palette-0.7.5 \
+		palette_derive-0.7.5 \
 		partition-identity-0.3.0 \
 		percent-encoding-2.3.1 \
 		phf-0.11.2 \
