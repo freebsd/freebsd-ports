@@ -1,7 +1,7 @@
 PORTNAME=	SoapyRemote
 DISTVERSIONPREFIX=	soapy-remote-
 DISTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,6 @@ GH_ACCOUNT=	pothosware
 
 PLIST_FILES=	bin/SoapySDRServer \
 		lib/SoapySDR/modules0.8/libremoteSupport.so \
-		man/man1/SoapySDRServer.1.gz
+		share/man/man1/SoapySDRServer.1.gz
 
 .include <bsd.port.mk>
