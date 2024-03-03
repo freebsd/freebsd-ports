@@ -18,7 +18,7 @@
  #CFLAGS=-O -DSVR4
  #CFLAGS=-O -DSVR4 -DSVR42
  #CFLAGS=-O -DUSE_POLL
-@@ -151,7 +151,7 @@ CFLAGS=-O2 -Wall -pipe
+@@ -151,7 +151,7 @@ LDFLAGS=
  # For Linux, add "-lutil" if the linker complains about "updwtmp".
  #
  LDFLAGS=
@@ -37,7 +37,7 @@
  #INSTALL=install -c -o root -g wheel		# NeXT/BSD
  #INSTALL=/usr/ucb/install -c -o bin -g bin	# AIX, Solaris 2.x
  #INSTALL=installbsd -c -o bin -g bin		# OSF/1, AIX 4.1, 4.2
-@@ -223,7 +224,7 @@ FAX_SPOOL_OUT=$(FAX_SPOOL)/outgoing
+@@ -223,20 +224,20 @@ FAX_SPOOL_OUT=$(FAX_SPOOL)/outgoing
  # (it's possible to run faxrunq(d) as root, but the FAX_OUT_USER 
  #  MUST NOT BE root or any other privileged account).
  #
@@ -46,6 +46,23 @@
  #
  #
  # Where section 1 manual pages should be placed
+-MAN1DIR=$(prefix)/man/man1
++MAN1DIR=$(prefix)/share/man/man1
+ #
+ # Where section 4 manual pages (mgettydefs.4) should be placed
+-MAN4DIR=$(prefix)/man/man4
++MAN4DIR=$(prefix)/share/man/man4
+ #
+ # Section 5 man pages (faxqueue.5)
+-MAN5DIR=$(prefix)/man/man5
++MAN5DIR=$(prefix)/share/man/man5
+ #
+ # Section 8 man pages (sendfax.8)
+-MAN8DIR=$(prefix)/man/man8
++MAN8DIR=$(prefix)/share/man/man8
+ #
+ # Where the GNU Info-Files are located
+ #
 @@ -265,12 +266,12 @@ AWK=awk
  # and the "tkperl" frontends without PERL, so don't worry if you don't
  # have it.
@@ -73,7 +90,7 @@
  
  #
  # for mgetty, that's it. If you want to use the voice
-@@ -324,7 +325,7 @@ SFAXOBJ=sendfax.o logfile.o locks.o mode
+@@ -324,7 +325,7 @@ all:	bin-all doc-man-only
  
  all:	bin-all doc-man-only
  
@@ -183,7 +200,7 @@
  	fi
  
  #
-@@ -671,11 +652,11 @@ install.bin: mgetty sendfax newslock \
+@@ -671,11 +652,11 @@ install.doc:
  #
  install.doc:
  	cd doc ; $(MAKE) install INSTALL="$(INSTALL)" \
