@@ -11,6 +11,9 @@ WWW=		https://yt-dl.org/
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Many extractors are brokena and upstream can't keep up, consider using www/yt-dlp
+EXPIRATION_DATE=2024-03-31
+
 BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 
 USES=		gmake python
