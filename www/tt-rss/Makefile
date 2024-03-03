@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20231229
+PORTVERSION=	g20240221
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
@@ -16,7 +16,7 @@ USES=		gettext-tools php:cli,web shebangfix
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
-GL_TAGNAME=	a882eb13f7ab36f4bab26a290a8e5ab1c6f2fb34
+GL_TAGNAME=	81f31399929361d19fb3260a43aa35f9b6cf5105
 # phe json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring pcntl pdo \
 		phar posix session simplexml sockets tokenizer xml xmlwriter \
