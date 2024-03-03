@@ -1,5 +1,6 @@
 PORTNAME=	locarna
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://github.com/s-will/LocARNA/releases/download/v${DISTVERSION}/
 
@@ -27,6 +28,7 @@ SHEBANG_FILES=	src/Utils/locarna_mcc \
 		src/Tests/test_programs
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check # one test fails, see https://github.com/s-will/LocARNA/issues/81
