@@ -1,5 +1,5 @@
 bin/anyremote
-man/man1/anyremote.1.gz
+share/man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/AT-mode/all-in-one.cfg
 %%DATADIR%%/cfg-data/AT-mode/amarok.cfg
 %%DATADIR%%/cfg-data/AT-mode/amixer.cfg
