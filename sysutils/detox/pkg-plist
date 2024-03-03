@@ -5,7 +5,7 @@ bin/inline-detox
 @sample %%DATADIR%%/safe.tbl.sample
 @sample %%DATADIR%%/unicode.tbl.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-man/man1/detox.1.gz
-man/man1/inline-detox.1.gz
-man/man5/detox.tbl.5.gz
-man/man5/detoxrc.5.gz
+share/man/man1/detox.1.gz
+share/man/man1/inline-detox.1.gz
+share/man/man5/detox.tbl.5.gz
+share/man/man5/detoxrc.5.gz
