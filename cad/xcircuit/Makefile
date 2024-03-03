@@ -1,6 +1,6 @@
 PORTNAME=	xcircuit
 PORTVERSION=	3.10.30
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -21,6 +21,9 @@ OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	ice sm x11 xpm xscrnsaver xt
 USE_GNOME=	cairo
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 

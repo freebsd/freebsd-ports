@@ -1,6 +1,6 @@
 bin/xcircuit
 lib/X11/app-defaults/XCircuit
-man/man1/xcircuit.1.gz
+share/man/man1/xcircuit.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.xcircuitrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/FlareLED.ps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/USAflag.ps
