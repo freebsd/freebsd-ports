@@ -22,6 +22,7 @@
 @sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/nut
 %%USB%%etc/devd/nut-usb.conf
 bin/nut-scanner
+bin/nutconf
 bin/upsc
 bin/upscmd
 bin/upslog
@@ -210,6 +211,7 @@ lib/libnutscan.so.2.0.5
 %%MANPAGES%%share/man/man8/nut-driver-enumerator.8.gz
 %%MANPAGES%%share/man/man8/nut-recorder.8.gz
 %%MANPAGES%%share/man/man8/nut-scanner.8.gz
+%%MANPAGES%%share/man/man8/nutconf.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/nutdrv_atcl_usb.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/nutdrv_qx.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/nutdrv_siemens_sitop.8.gz
