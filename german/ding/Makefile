@@ -1,5 +1,6 @@
 PORTNAME=	ding
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 		LOCAL/ehaupt
@@ -35,6 +36,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${SWISSDICT} ${STAGEDIR}${PREFIX}/share/ding
 	${INSTALL_DATA} ${WRKSRC}/ding.png ${STAGEDIR}${PREFIX}/share/ding/ding.png
 	${INSTALL_DATA} ${WRKSRC}/ding.desktop.sed ${STAGEDIR}${PREFIX}/share/ding/ding.desktop
-	${INSTALL_MAN} ${WRKSRC}/ding.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ding.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
