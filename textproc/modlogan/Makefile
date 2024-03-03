@@ -14,6 +14,7 @@ LIB_DEPENDS=	libadns.so:dns/adns \
 		libpng16.so:graphics/png \
 		libexpat.so:textproc/expat2
 
+DEPRECATED=	dependency devel/pcre is EOL
 USES=		cpe gettext libtool
 
 OPTIONS_DEFINE=	DOCS MYSQL
