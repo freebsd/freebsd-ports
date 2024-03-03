@@ -1,5 +1,6 @@
 PORTNAME=	miniflux
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
@@ -67,7 +68,7 @@ PGSQL_SERVER_USES=	pgsql
 PGSQL_SERVER_VARS=	WANT_PGSQL+="server contrib"
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/miniflux.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/miniflux.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_DATA} ${FILESDIR}/miniflux.env.sample \
 		${STAGEDIR}${PREFIX}/etc
 
