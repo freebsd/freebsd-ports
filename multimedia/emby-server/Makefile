@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION?=	4.8.3.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -52,7 +52,8 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
 
-RUN_DEPENDS=	icu>0:devel/icu \
+RUN_DEPENDS=	dotnet>0:lang/dotnet \
+		icu>0:devel/icu \
 		krb5>0:security/krb5 \
 		libexif>0:graphics/libexif \
 		libheif>0:graphics/libheif \
@@ -60,9 +61,9 @@ RUN_DEPENDS=	icu>0:devel/icu \
 		libinotify>0:devel/libinotify \
 		libjxl>0:graphics/libjxl \
 		libunwind>0:devel/libunwind \
+		openexr>0:graphics/openexr \
 		openjpeg>0:graphics/openjpeg \
 		orc>0:devel/orc \
-		openexr>0:graphics/openexr \
 		pango>0:x11-toolkits/pango \
 		tiff>0:graphics/tiff
 
