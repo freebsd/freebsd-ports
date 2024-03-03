@@ -1,5 +1,5 @@
 PORTNAME=	logseq
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.7
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/logseq/logseq/releases/download/${PORTVERSION}/ \
 		LOCAL/arrowd/:node_modules
@@ -13,6 +13,8 @@ WWW=		https://logseq.com
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	git:devel/git
 
