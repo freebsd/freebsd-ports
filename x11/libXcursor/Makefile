@@ -1,6 +1,5 @@
 PORTNAME=	libXcursor
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	xrender x11 xfixes xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxcursor
