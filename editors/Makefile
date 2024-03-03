@@ -65,6 +65,7 @@
     SUBDIR += hnb
     SUBDIR += hte
     SUBDIR += imhex
+    SUBDIR += imhex-current
     SUBDIR += jed
     SUBDIR += jedit
     SUBDIR += joe

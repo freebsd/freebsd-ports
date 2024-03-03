@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-03-02 15:44:54 UTC
++++ CMakeLists.txt
+@@ -42,8 +42,6 @@ setDefaultBuiltTypeIfUnset()
+ 
+ # Make sure project is configured correctly
+ setDefaultBuiltTypeIfUnset()
+-detectBadClone()
+-verifyCompiler()
+ 
+ detectBundledPlugins()
+ 

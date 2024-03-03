@@ -1,0 +1,11 @@
+--- main/updater/CMakeLists.txt.orig	2024-02-25 20:54:48 UTC
++++ main/updater/CMakeLists.txt
+@@ -5,7 +5,7 @@ target_compile_definitions(updater PRIVATE IMHEX_PROJE
+ )
+ 
+ target_compile_definitions(updater PRIVATE IMHEX_PROJECT_NAME="${PROJECT_NAME}")
+-target_link_libraries(updater PRIVATE libimhex ${FMT_LIBRARIES})
++target_link_libraries(updater PRIVATE libimhex ${FMT_LIBRARIES} pthread)
+ add_dependencies(main updater)
+ 
+ if (APPLE)

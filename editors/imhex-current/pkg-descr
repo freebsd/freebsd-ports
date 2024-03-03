@@ -1,0 +1,14 @@
+ImHex is a hex editor for reverse engineers, programmers and people that value
+their eye sight when working at 3 AM.
+
+ImHex has many features including the following:
+- Byte patching
+- String and hex search
+- Colorful highlighting
+- Custom C++-like pattern language for parsing highlighting a file's content
+- Data inspector allowing interpretation of data as many different types
+  (little and big endian)
+- File hashing support
+- Disassembler supporting many different architectures
+- Bookmarks
+- Data Analyzer
