@@ -1,0 +1,11 @@
+--- make/modules/java.desktop/lib/Awt2dLibraries.gmk.orig	2021-09-18 15:30:22.109237000 -0700
++++ make/modules/java.desktop/lib/Awt2dLibraries.gmk	2021-09-18 15:31:02.024314000 -0700
+@@ -530,7 +530,7 @@
+     LDFLAGS_unix := -L$(INSTALL_LIBRARIES_HERE), \
+     LDFLAGS_aix := -Wl$(COMMA)-berok, \
+     LIBS := $(BUILD_LIBFONTMANAGER_FONTLIB), \
+-    LIBS_unix := -lawt -ljava -ljvm $(LIBM) $(LIBCXX), \
++    LIBS_unix := -lfontconfig -lawt -ljava -ljvm $(LIBM) $(LIBCXX), \
+     LIBS_macosx := -lawt_lwawt -framework CoreText -framework CoreFoundation -framework CoreGraphics, \
+     LIBS_windows := $(WIN_JAVA_LIB) advapi32.lib user32.lib gdi32.lib \
+         $(WIN_AWT_LIB), \
