@@ -1,8 +1,9 @@
 PORTNAME=	aom
-DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.1
 PORTREVISION=	1
 CATEGORIES=	multimedia
+MASTER_SITES=	https://storage.googleapis.com/${PORTNAME}-releases/
+DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AV1 reference encoder/decoder
@@ -16,10 +17,8 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		cmake compiler:c++11-lib perl5
-USE_GITHUB=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	jbeich # mirror
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	ENABLE_DOCS ENABLE_TESTS
 
