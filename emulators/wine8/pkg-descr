@@ -1,0 +1,15 @@
+Wine is a Microsoft Windows compatibility layer (or program loader)
+capable of running Windows applications on i386 and compatible CPUs.
+Windows programs running in Wine act as native programs would, running
+without the performance or memory usage penalties of an emulator, with
+a similar look and feel to other applications on your desktop.
+
+Many applications already work, more or less, including versions of
+Microsoft Office and many games.
+
+If you receive a message of "Did you reconfigure your kernel with
+"options USER_LDT"?" add the line
+    machdep.max_ldt_segment="2048"
+to /boot/loader.conf and reboot.
+
+Gerald Pfeifer <gerald@FreeBSD.org>
