@@ -1,6 +1,6 @@
 PORTNAME=	vit
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 
@@ -22,13 +22,13 @@ ALL_TARGET=	build
 
 PLIST_FILES=	bin/vit \
 		etc/vit-commands \
-		man/man1/vit.1.gz \
-		man/man5/vitrc.5.gz
+		share/man/man1/vit.1.gz \
+		share/man/man5/vitrc.5.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vit ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/commands ${STAGEDIR}${PREFIX}/etc/vit-commands
-	${INSTALL_MAN} ${WRKSRC}/vit.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/vitrc.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/vit.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/vitrc.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>
