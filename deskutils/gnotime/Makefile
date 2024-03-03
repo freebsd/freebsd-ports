@@ -1,5 +1,6 @@
 PORTNAME=	gnotime
 DISTVERSION=	g20231022
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	truckman@FreeBSD.org
@@ -28,6 +29,7 @@ GH_TAGNAME=	ee0ddbcb8945fc6b11a49b107b738e3c934357a1
 USE_XORG=	sm ice xscrnsaver x11
 USE_GNOME=	cairo gconf2 gdkpixbuf2 glib20 gtk30 libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 INSTALLS_OMF=	yes
 
