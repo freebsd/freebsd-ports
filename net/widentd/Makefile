@@ -1,7 +1,8 @@
 PORTNAME=	widentd
+DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.05
 CATEGORIES=	net
-MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	RFC1413 auth/identd daemon providing a fixed fake reply
