@@ -1,5 +1,5 @@
 PORTNAME=	pcsc-lite
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
