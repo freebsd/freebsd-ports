@@ -1,3 +1,3 @@
-TIMESTAMP = 1656486412
-SHA256 (xorg/app/xauth-1.1.1.tar.bz2) = 164ea0a29137b284a47b886ef2affcb0a74733bf3aad04f9b106b1a6c82ebd92
-SIZE (xorg/app/xauth-1.1.1.tar.bz2) = 167315
+TIMESTAMP = 1709537293
+SHA256 (xorg/app/xauth-1.1.3.tar.xz) = e7075498bae332f917f01d660f9b940c0752b2556a8da61ccb62a44d0ffe9d33
+SIZE (xorg/app/xauth-1.1.3.tar.xz) = 159500
