@@ -20,7 +20,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.5.0 \
 		cairo-rs-0.17.10 \
 		cairo-sys-rs-0.17.10 \
-		cc-1.0.88 \
+		cc-1.0.89 \
 		cfg-expr-0.15.7 \
 		cfg-if-1.0.0 \
 		chrono-0.4.34 \
@@ -82,13 +82,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gvdb-0.4.2 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
-		hermit-abi-0.3.8 \
+		hermit-abi-0.3.9 \
 		hex_color-3.0.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		image-0.24.9 \
 		imgref-1.10.1 \
-		indexmap-2.2.3 \
+		indexmap-2.2.5 \
 		itoa-1.0.10 \
 		js-sys-0.3.68 \
 		khronos_api-2.2.0 \
@@ -96,15 +96,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libadwaita-0.4.4 \
 		libadwaita-sys-0.4.4 \
 		libc-0.2.153 \
-		libloading-0.8.1 \
+		libloading-0.8.2 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		lru-0.12.3 \
 		memchr-2.7.1 \
 		memmap2-0.7.1 \
 		memoffset-0.9.0 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		nanorand-0.7.0 \
 		num-traits-0.2.18 \
 		num_cpus-1.16.0 \
@@ -158,7 +158,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		static_assertions-1.1.0 \
 		strsim-0.11.0 \
 		syn-1.0.109 \
-		syn-2.0.51 \
+		syn-2.0.52 \
 		system-deps-6.2.0 \
 		target-lexicon-0.12.14 \
 		thiserror-1.0.57 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		utf8parse-0.2.1 \
 		version-compare-0.1.1 \
 		version_check-0.9.4 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.91 \
 		wasm-bindgen-backend-0.2.91 \
@@ -200,23 +200,23 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.3 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.3 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.3 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.3 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.3 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.3 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.3 \
+		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.3 \
+		windows_x86_64_msvc-0.52.4 \
 		winnow-0.5.40 \
-		winnow-0.6.2 \
+		winnow-0.6.5 \
 		xdg-2.5.2 \
 		xml-rs-0.7.0 \
 		zvariant-3.15.2 \
