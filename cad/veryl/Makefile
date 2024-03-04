@@ -1,7 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,25 +22,25 @@ WRKSRC_SUBDIR=	crates/veryl
 CARGO_CRATES=	Inflector-0.11.4 \
 		addr2line-0.21.0 \
 		adler-1.0.2 \
-		ahash-0.8.7 \
+		ahash-0.8.10 \
 		aho-corasick-1.1.2 \
 		ammonia-3.3.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		anstream-0.6.11 \
-		anstyle-1.0.4 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.79 \
+		anyhow-1.0.80 \
 		arc-swap-1.6.0 \
 		arrayvec-0.7.4 \
-		assert_cmd-2.0.13 \
-		async-channel-2.1.1 \
+		assert_cmd-2.0.14 \
+		async-channel-2.2.0 \
 		async-trait-0.1.77 \
 		atoi-2.0.0 \
-		auto_impl-1.1.0 \
+		auto_impl-1.2.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		backtrace-ext-0.2.1 \
@@ -50,26 +49,26 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
 		block-buffer-0.10.4 \
-		bstr-1.9.0 \
+		bstr-1.9.1 \
 		btoi-0.4.3 \
-		bumpalo-3.14.0 \
-		bytemuck-1.14.0 \
+		bumpalo-3.15.3 \
+		bytemuck-1.14.3 \
 		byteorder-1.5.0 \
 		bytes-1.5.0 \
 		bytesize-1.3.0 \
 		cast-0.3.0 \
 		castaway-0.2.2 \
-		cc-1.0.83 \
+		cc-1.0.88 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
-		ciborium-0.2.1 \
-		ciborium-io-0.2.1 \
-		ciborium-ll-0.2.1 \
-		clap-4.4.18 \
-		clap_builder-4.4.18 \
-		clap_complete-4.4.8 \
-		clap_derive-4.4.7 \
-		clap_lex-0.6.0 \
+		chrono-0.4.34 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clap-4.5.1 \
+		clap_builder-4.5.1 \
+		clap_complete-4.5.1 \
+		clap_derive-4.5.0 \
+		clap_lex-0.7.0 \
 		clru-0.6.1 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
@@ -80,15 +79,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core-foundation-sys-0.8.6 \
 		cpp_demangle-0.4.3 \
 		cpufeatures-0.2.12 \
-		crc32fast-1.3.2 \
+		crc32fast-1.4.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.11 \
+		crossbeam-channel-0.5.12 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
 		crossbeam-utils-0.8.19 \
+		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		daggy-0.8.0 \
 		darling-0.14.4 \
@@ -99,8 +99,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		debugid-0.8.0 \
 		deranged-0.3.11 \
 		derive_builder-0.12.0 \
+		derive_builder-0.13.1 \
 		derive_builder_core-0.12.0 \
+		derive_builder_core-0.13.1 \
 		derive_builder_macro-0.12.0 \
+		derive_builder_macro-0.13.1 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
 		directories-5.0.1 \
@@ -109,16 +112,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
 		dunce-1.0.4 \
-		either-1.9.0 \
+		either-1.10.0 \
 		elasticlunr-rs-3.0.2 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.33 \
 		enum-as-inner-0.6.0 \
+		env_filter-0.1.0 \
 		env_logger-0.10.2 \
+		env_logger-0.11.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
-		event-listener-4.0.3 \
-		event-listener-strategy-0.4.0 \
+		event-listener-5.2.0 \
+		event-listener-strategy-0.5.0 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
 		fern-0.6.2 \
@@ -128,6 +133,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		flate2-1.0.28 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
+		fs4-0.8.0 \
 		fsevent-sys-4.1.0 \
 		function_name-0.3.0 \
 		function_name-proc-macro-0.3.0 \
@@ -184,17 +190,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		git-worktree-0.12.3 \
 		glob-0.3.1 \
 		globset-0.4.14 \
+		graph-cycles-0.1.0 \
 		h2-0.3.24 \
-		half-1.8.2 \
-		handlebars-4.5.0 \
-		handlebars-5.1.1 \
+		half-2.4.0 \
+		handlebars-5.1.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.3 \
 		headers-0.3.9 \
 		headers-core-0.2.0 \
 		heck-0.4.1 \
-		hermit-abi-0.3.4 \
+		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		home-0.5.9 \
 		hostname-0.3.1 \
@@ -203,18 +209,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
-		human_format-1.0.3 \
+		human_format-1.1.0 \
 		humantime-2.1.0 \
 		hyper-0.14.28 \
 		hyper-rustls-0.24.2 \
-		iana-time-zone-0.1.59 \
+		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.4.0 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
 		imara-diff-0.1.5 \
-		indexmap-2.1.0 \
+		indexmap-2.2.4 \
 		inferno-0.11.19 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -222,50 +228,51 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		io-close-0.3.7 \
 		ipconfig-0.3.2 \
 		ipnet-2.9.0 \
-		is-terminal-0.4.10 \
-		is_ci-1.1.1 \
+		is-terminal-0.4.12 \
+		is_ci-1.2.0 \
 		itertools-0.10.5 \
 		itoa-1.0.10 \
-		js-sys-0.3.67 \
+		js-sys-0.3.68 \
 		jwalk-0.8.1 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libredox-0.0.1 \
 		line-col-0.2.1 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		lru-cache-0.1.2 \
 		lsp-types-0.94.1 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
 		markup5ever-0.11.0 \
 		match_cfg-0.1.0 \
-		maybe-async-0.2.7 \
-		mdbook-0.4.36 \
+		maybe-async-0.2.10 \
+		mdbook-0.4.37 \
 		memchr-2.7.1 \
 		memmap2-0.5.10 \
-		memmap2-0.9.3 \
+		memmap2-0.9.4 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.1 \
+		miniz_oxide-0.7.2 \
 		mio-0.8.10 \
 		new_debug_unreachable-1.0.4 \
 		nix-0.26.4 \
 		nom-7.1.3 \
-		normpath-1.1.1 \
+		normpath-1.2.0 \
 		notify-6.1.1 \
 		notify-debouncer-mini-0.4.1 \
+		num-conv-0.1.0 \
 		num-format-0.4.4 \
-		num-traits-0.2.17 \
+		num-traits-0.2.18 \
 		num_cpus-1.16.0 \
-		num_threads-0.1.6 \
+		num_threads-0.1.7 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
@@ -276,23 +283,23 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		parking-2.2.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
-		parol-0.26.0 \
+		parol-0.26.1 \
 		parol-macros-0.2.0 \
 		parol_runtime-0.20.1 \
 		paste-1.0.14 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
-		pest-2.7.6 \
-		pest_derive-2.7.6 \
-		pest_generator-2.7.6 \
-		pest_meta-2.7.6 \
+		pest-2.7.7 \
+		pest_derive-2.7.7 \
+		pest_generator-2.7.7 \
+		pest_meta-2.7.7 \
 		petgraph-0.6.4 \
 		phf-0.10.1 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
 		phf_shared-0.10.0 \
-		pin-project-1.1.3 \
-		pin-project-internal-1.1.3 \
+		pin-project-1.1.4 \
+		pin-project-internal-1.1.4 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		plotters-0.3.5 \
@@ -305,11 +312,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.76 \
+		proc-macro2-1.0.78 \
 		prodash-23.1.2 \
-		pulldown-cmark-0.9.3 \
+		pulldown-cmark-0.10.0 \
+		pulldown-cmark-escape-0.10.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quick-xml-0.26.0 \
@@ -317,35 +323,34 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rand_regex-0.16.0 \
-		rayon-1.8.1 \
+		rand_regex-0.17.0 \
+		rayon-1.9.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
-		regex-syntax-0.7.5 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.23 \
+		reqwest-0.11.24 \
 		resolv-conf-0.7.0 \
 		rgb-0.8.37 \
-		ring-0.17.7 \
+		ring-0.17.8 \
 		ropey-1.6.1 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.30 \
+		rustix-0.38.31 \
 		rustls-0.21.10 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
 		rustversion-1.0.14 \
-		ryu-1.0.16 \
+		ryu-1.0.17 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
-		semver-1.0.21 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		semver-1.0.22 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.114 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.18 \
 		serde_spanned-0.6.5 \
@@ -353,7 +358,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sha1-0.10.6 \
 		sha1_smol-1.0.0 \
 		sha2-0.10.8 \
-		shlex-1.2.0 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.1 \
 		similar-2.4.0 \
@@ -361,8 +366,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		slab-0.4.9 \
 		smallvec-1.13.1 \
 		smawk-0.3.2 \
-		socket2-0.5.5 \
-		spdx-0.10.3 \
+		socket2-0.5.6 \
+		spdx-0.10.4 \
 		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
 		str_indices-0.4.3 \
@@ -371,33 +376,35 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		string_cache_codegen-0.5.2 \
 		strnum_bitwidth-0.1.2 \
 		strsim-0.10.0 \
+		strsim-0.11.0 \
 		supports-color-2.1.0 \
 		supports-hyperlinks-2.1.0 \
 		supports-unicode-2.1.0 \
 		symbolic-common-12.8.0 \
 		symbolic-demangle-12.8.0 \
 		syn-1.0.109 \
-		syn-2.0.48 \
+		syn-2.0.52 \
+		sync_wrapper-0.1.2 \
 		syntree-0.14.5 \
 		syntree_layout-0.2.0 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tempfile-3.9.0 \
+		tempfile-3.10.1 \
 		tendril-0.4.3 \
 		termcolor-1.4.1 \
 		terminal_size-0.1.17 \
 		terminal_size-0.3.0 \
 		termtree-0.4.1 \
 		textwrap-0.15.2 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
-		time-0.3.31 \
+		thiserror-1.0.57 \
+		thiserror-impl-1.0.57 \
+		time-0.3.34 \
 		time-core-0.1.2 \
-		time-macros-0.2.16 \
+		time-macros-0.2.17 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.1 \
+		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.24.1 \
 		tokio-stream-0.1.14 \
@@ -431,7 +438,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-bom-1.1.4 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
-		unicode-normalization-0.1.22 \
+		unicode-normalization-0.1.23 \
 		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
@@ -444,14 +451,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		want-0.3.1 \
 		warp-0.3.6 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.90 \
-		wasm-bindgen-backend-0.2.90 \
-		wasm-bindgen-futures-0.4.40 \
-		wasm-bindgen-macro-0.2.90 \
-		wasm-bindgen-macro-support-0.2.90 \
-		wasm-bindgen-shared-0.2.90 \
-		web-sys-0.3.67 \
-		webpki-roots-0.25.3 \
+		wasm-bindgen-0.2.91 \
+		wasm-bindgen-backend-0.2.91 \
+		wasm-bindgen-futures-0.4.41 \
+		wasm-bindgen-macro-0.2.91 \
+		wasm-bindgen-macro-support-0.2.91 \
+		wasm-bindgen-shared-0.2.91 \
+		web-sys-0.3.68 \
+		webpki-roots-0.25.4 \
 		widestring-1.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -462,29 +469,29 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.34 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.5.40 \
 		winreg-0.50.0 \
 		xml_writer-0.4.0 \
 		zerocopy-0.7.32 \
