@@ -1,5 +1,5 @@
 PORTNAME=	freetds
-PORTVERSION=	1.4.145
+PORTVERSION=	1.4.146
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -69,14 +69,10 @@ post-extract:
 	@cd ${WRKSRC}/src/pool && ${LN} -s pool.conf pool.conf.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libgnutls-config|pkg-config gnutls|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/pool.conf|/pool.conf.sample|g' \
 		${WRKSRC}/src/pool/Makefile.in
 	@${REINPLACE_CMD} -e 's|/freetds.conf|/freetds.conf.sample|g ; \
 		s|/locales.conf|/locales.conf.sample|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|$$ODBC_INC/isql.h|$$ODBC_INC/libiodbc/isql.h|g ; \
-		s|$$ODBC_INC/isqlext.h|$$ODBC_INC/libiodbc/isqlext.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ ${ICONV_LIB}|g' \
 		${WRKSRC}/src/tds/Makefile.in
 
