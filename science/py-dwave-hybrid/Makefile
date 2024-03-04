@@ -1,6 +1,5 @@
 PORTNAME=	dwave-hybrid
-DISTVERSION=	0.6.10
-PORTREVISION=	1
+DISTVERSION=	0.6.11
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,12 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>5:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dimod>=0.10.13:science/py-dimod@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-greedy>=0.3.0:science/py-dwave-greedy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-networkx>=0.8.10:science/py-dwave-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.10.6:science/py-dwave-cloud-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-greedy>=0.1.0:science/py-dwave-greedy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-networkx>=0.8.8:science/py-dwave-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-neal>=0.5.4:science/py-dwave-neal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-preprocessing>0:science/py-dwave-preprocessing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-system>=1.13.0:science/py-dwave-system@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-tabu>=0.5.0:science/py-dwave-tabu@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-tabu>=0.2.0:science/py-dwave-tabu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}minorminer>=0.2.7:math/py-minorminer@${PY_FLAVOR} \
