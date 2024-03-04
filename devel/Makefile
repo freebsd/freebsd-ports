@@ -5802,6 +5802,7 @@
     SUBDIR += py-unearth
     SUBDIR += py-unicodecsv
     SUBDIR += py-unicodedata2
+    SUBDIR += py-unidiff
     SUBDIR += py-unipath
     SUBDIR += py-unittest2
     SUBDIR += py-unittest2pytest
