@@ -1,6 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.4
+DISTVERSION=	2.1.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -129,7 +129,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		include-flate-0.2.0 \
 		include-flate-codegen-0.1.4 \
 		include-flate-codegen-exports-0.1.4 \
-		indexmap-2.2.3 \
+		indexmap-2.2.5 \
 		indicatif-0.17.8 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
@@ -150,7 +150,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.12 \
 		litrs-0.4.1 \
-		log-0.4.20 \
+		log-0.4.21 \
 		memchr-2.7.1 \
 		memmap2-0.5.10 \
 		miette-5.10.0 \
@@ -160,7 +160,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.10 \
-		next_version-0.2.13 \
+		next_version-0.2.14 \
 		nom-7.1.3 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
@@ -203,9 +203,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ring-0.17.7 \
 		rle-decode-fast-1.0.3 \
 		roff-0.2.1 \
-		rust-embed-8.2.0 \
-		rust-embed-impl-8.2.0 \
-		rust-embed-utils-8.2.0 \
+		rust-embed-8.3.0 \
+		rust-embed-impl-8.3.0 \
+		rust-embed-utils-8.3.0 \
 		rustc-demangle-0.1.23 \
 		rustix-0.38.30 \
 		rustls-0.21.10 \
