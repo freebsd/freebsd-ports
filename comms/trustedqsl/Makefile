@@ -1,6 +1,5 @@
 PORTNAME=	trustedqsl
-DISTVERSION=	2.6.3
-PORTREVISION=	1
+DISTVERSION=	2.6.5
 #PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.arrl.org/files/file/LoTW%20Instructions/ \
