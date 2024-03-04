@@ -20,7 +20,7 @@ USES=		gmake libtool localbase perl5 readline shebangfix
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	.
+SHEBANG_FILES=	. -not -name '*.ac' -not -name '*.am' -not -name '*.m4'
 
 GNU_CONFIGURE=	yes
 
