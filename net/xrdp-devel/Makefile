@@ -1,13 +1,12 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.90.b20240221
+DISTVERSION=	0.9.90.b20240304
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR?=	${PORTNAME}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	7e305f9.patch:-p1 e34efac.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server (development version)
@@ -31,7 +30,7 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	c3cb855
+GH_TAGNAME=	7700fcb
 GH_TUPLE=	neutrinolabs:librfxcodec:ab9b65c:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
@@ -83,7 +82,7 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s|0.9.80|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e "s|0.9.90|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
 
 post-install:
