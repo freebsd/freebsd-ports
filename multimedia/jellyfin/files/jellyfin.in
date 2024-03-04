@@ -41,6 +41,8 @@ command="/usr/sbin/daemon"
 
 start_precmd=${name}_precmd
 jellyfin_precmd() {
+    export PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
+
     if [ ! -d ${jellyfin_exec_dir} ]; then
         install -d -o ${jellyfin_user} -g ${jellyfin_group} ${jellyfin_exec_dir}
     fi
