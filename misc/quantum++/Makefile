@@ -1,6 +1,6 @@
 PORTNAME=	quantum++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0
+DISTVERSION=	5.1
 CATEGORIES=	misc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,13 +10,14 @@ WWW=		https://github.com/softwareQinc/qpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang eigen:3,build,run
+TEST_DEPENDS=	googletest>0:devel/googletest
+
+USES=		cmake:testing compiler:c++17-lang eigen:3,build,run localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	softwareQinc
 GH_PROJECT=	qpp
 
-CMAKE_TESTING_ON=	WITH_UNIT_TESTS
 CMAKE_TESTING_TARGET=	unit_tests
 
 NO_BUILD=	yes
