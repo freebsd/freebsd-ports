@@ -1,6 +1,5 @@
 PORTNAME=	snmp
-PORTVERSION=	5.9.1
-PORTREVISION=	5
+PORTVERSION=	5.9.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
@@ -37,15 +36,11 @@ NEWSYSLOG_DESC=		Automatically rotate snmpd.log via newsyslog
 NOLIBPKG_DESC=		Build without libpkg
 SCTP_DESC=		Build with SCTP MIB support
 
-MAKE_JOBS_UNSAFE=	yes
-
-PORTSCOUT=	skipv:5.7.2.1
-
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		cpe libtool perl5 ssl
 USE_RC_SUBR=	snmpd snmptrapd
 USE_LDCONFIG=	yes
-USES=		cpe libtool perl5 ssl
 CPE_PRODUCT=	net-snmp
 USE_PERL5=	build run
 USE_CSTD=	c99
@@ -147,7 +142,7 @@ CONFIGURE_ARGS+=--without-root-access
 .endif
 
 SHLIB_VERSION=	40
-SHLIB_VERSION2=	.1.0
+SHLIB_VERSION2=	.2.1
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION} SHLIB_VERSION2=${SHLIB_VERSION2}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
@@ -275,6 +270,10 @@ post-configure:
 		s!^.*#undef.*(HAVE_${hdr:tu:S/./_/g:S/\//_/g}).*$$!#define \1 1!g' \
 			${WRKSRC}/include/net-snmp/net-snmp-config.h
 .endfor
+	# Fix after:
+	# https://github.com/net-snmp/net-snmp/commit/923cb442bbef360de227fbca565710518b5ee8e5
+	@${REINPLACE_CMD} -e 's|snmpIPv6BaseDomain.h snmpIPBaseDomain.h|snmpIPv6BaseDomain.h|g' \
+		${WRKSRC}/snmplib/Makefile
 .if ${PORT_OPTIONS:MPYTHON}
 	@(cd ${WRKSRC}/python; \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg \

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2021-05-25 15:19:35.000000000 -0700
-+++ Makefile.in	2023-09-05 01:13:06.391986000 -0700
-@@ -21,7 +21,7 @@
+--- Makefile.in.orig	2023-08-15 20:32:01 UTC
++++ Makefile.in
+@@ -21,7 +21,7 @@ INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi
  	darwin.h dragonfly.h dynix.h \
  	freebsd2.h freebsd3.h freebsd4.h freebsd5.h freebsd6.h \
  	freebsd7.h freebsd8.h freebsd9.h freebsd10.h freebsd11.h \
@@ -9,7 +9,7 @@
  	generic.h \
  	hpux.h irix.h kfreebsd.h linux.h mingw32.h mingw32msvc.h mips.h \
  	netbsd.h nto-qnx6.h osf5.h \
-@@ -234,7 +234,7 @@
+@@ -234,7 +234,7 @@ pythoninstall:
          fi
  
  pythoninstall:
