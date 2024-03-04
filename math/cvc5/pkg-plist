@@ -1,4 +1,5 @@
 bin/cvc5
+include/cvc5/c/cvc5.h
 include/cvc5/cvc5.h
 include/cvc5/cvc5_export.h
 include/cvc5/cvc5_kind.h

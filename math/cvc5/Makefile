@@ -1,7 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -18,8 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
-LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
-		libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c
 
 USES=		cmake:testing ncurses compiler:c++17-lang \
 		localbase:ldflags pkgconfig python:build
@@ -91,5 +89,7 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
+
+# some tests are skipped without any explanation, see https://github.com/cvc5/cvc5/issues/10456
 
 .include <bsd.port.mk>
