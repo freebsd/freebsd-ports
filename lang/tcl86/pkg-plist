@@ -47,7 +47,7 @@ lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/platform-1.0.19.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl%%TCL_VER%%/tcltest-2.5.5.tm
+lib/tcl%%TCL_VER%%/tcltest-2.5.7.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
@@ -1188,6 +1188,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cayman
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Chicago
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Chihuahua
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Ciudad_Juarez
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Coral_Harbour
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cordoba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Costa_Rica
