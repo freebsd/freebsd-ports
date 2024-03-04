@@ -9,6 +9,15 @@
  
  VOICES=$(VOXES)
  VOICELIBS=$(VOICES:%=flite_%)
+@@ -85,7 +85,7 @@ endif
+ shared_libs: nothing
+ endif
+ 
+-.NOTPARALLEL: $(ALL)
++.NOTPARALLEL:
+ 
+ flite_lang_list: 
+ 	rm -f flite_lang_list.c
 @@ -133,15 +133,15 @@ install:
  
  install:
