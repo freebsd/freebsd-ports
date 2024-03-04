@@ -4,7 +4,7 @@ PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Middleware library to access a smart card using SCard API (PC/SC)
 WWW=		https://pcsclite.apdu.fr/
 
