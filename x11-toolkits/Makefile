@@ -88,6 +88,7 @@
     SUBDIR += libhandy
     SUBDIR += libhandy0
     SUBDIR += libshumate
+    SUBDIR += libspelling
     SUBDIR += libunique3
     SUBDIR += libwnck
     SUBDIR += libwnck3
