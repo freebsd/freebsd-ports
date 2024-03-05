@@ -1,5 +1,5 @@
 bin/bashdb
-man/man1/bashdb.1.gz
+share/man/man1/bashdb.1.gz
 %%DATADIR%%/bashdb-main.inc
 %%DATADIR%%/bashdb-part2.sh
 %%DATADIR%%/bashdb-trace
