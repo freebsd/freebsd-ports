@@ -10,6 +10,9 @@ COMMENT=		Multi-format graphics manipulation library
 LICENSE=		LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	SUNSITE is no longer maintained
+EXPIRATION_DATE=2024-04-05
+
 LIB_DEPENDS=		libtiff.so:graphics/tiff
 
 USES=			xorg

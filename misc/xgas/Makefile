@@ -10,6 +10,9 @@ COMMENT=	The animated simulation of an ideal gas
 
 LICENSE=	MIT
 
+DEPRECATED=	SUNSITE is no longer maintained
+EXPIRATION_DATE=2024-04-05
+
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
