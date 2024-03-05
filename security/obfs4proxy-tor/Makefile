@@ -1,6 +1,6 @@
 PORTNAME=	obfs4proxy
 DISTVERSION=	0.0.14
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-tor
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -40,12 +40,12 @@ GO_TARGET=	./obfs4proxy
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/obfs4proxy \
-		man/man1/obfs4proxy.1.gz
+		share/man/man1/obfs4proxy.1.gz
 
 post-patch:
 	${LN} -s ${WRKSRC} ${WRKSRC}/vendor/${GO_PKGNAME}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/obfs4proxy.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/obfs4proxy.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
