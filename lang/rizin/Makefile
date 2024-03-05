@@ -1,6 +1,6 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -43,8 +43,14 @@ GH_TUPLE=	rizinorg:rz-libdemangle:8b8f7f3:libdemangle/subprojects/libdemangle \
 		rizinorg:tree-sitter-c:81d96d8:tree_sitter_c/subprojects/tree-sitter-c \
 		BLAKE3-team:BLAKE3:3f396d2:blake3/subprojects/blake3
 
+TESTING_UNSAFE=	requires additional test input files
+
 post-extract:
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/blake3 ${WRKSRC}/subprojects
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/tree-sitter-c ${WRKSRC}/subprojects
+
+post-patch:
+	${REINPLACE_CMD} -e 's|<tree_sitter/parser.h>|"tree_sitter/parser.h"|' \
+		${WRKSRC}/subprojects/rizin-shell-parser/src/parser.c
 
 .include <bsd.port.mk>
