@@ -5,8 +5,8 @@ lib/libkvazaar.so
 lib/libkvazaar.so.7
 lib/libkvazaar.so.7.3.0
 libdata/pkgconfig/kvazaar.pc
-man/man1/kvazaar.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.EXT.greatest
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/man/man1/kvazaar.1.gz
