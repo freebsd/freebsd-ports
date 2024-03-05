@@ -6,7 +6,7 @@ lib/libtubo.so
 lib/libtubo.so.0
 lib/libtubo.so.0.1.0
 libdata/pkgconfig/tubo.pc
-man/man1/tuboexec.1.gz
+share/man/man1/tuboexec.1.gz
 share/gtk-doc/html/libtubo/ch01.html
 share/gtk-doc/html/libtubo/home.png
 share/gtk-doc/html/libtubo/index.html

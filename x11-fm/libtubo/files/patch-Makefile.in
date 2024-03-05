@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-09-25 13:41:18.147180046 +0000
-+++ Makefile.in	2014-09-25 13:42:04.545176862 +0000
+--- Makefile.in.orig	2014-09-25 13:41:18 UTC
++++ Makefile.in
 @@ -318,7 +318,7 @@
  top_srcdir = @top_srcdir@
  CLEANFILES = *~ *.bak core *.core *.o *.lo *.la 
