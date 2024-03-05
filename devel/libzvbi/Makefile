@@ -1,6 +1,6 @@
 PORTNAME=	libzvbi
 PORTVERSION=	0.2.35
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/zapping/zvbi/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
@@ -16,6 +16,7 @@ LIB_DEPENDS+=	libpng.so:graphics/png \
 
 USES=		iconv libtool localbase pathfix tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--without-doxygen
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
