@@ -1,6 +1,5 @@
 PORTNAME=	paraview
-DISTVERSION=	${PARAVIEW_VER}.2
-PORTREVISION=	7
+DISTVERSION=	${PARAVIEW_VER}.0
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -9,14 +8,13 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Powerful scientific data visualization application
 WWW=		https://www.paraview.org/
 
-LICENSE=	ParaView_License_1.2
-LICENSE_NAME=	ParaView_License
-LICENSE_FILE=	${WRKSRC}/License_v1.2.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+# See https://www.paraview.org/license/
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cli11>0:devel/cli11	\
 		utf8cpp>0:devel/utf8cpp	\
+		fast_float>0:math/fast_float \
 		nlohmann-json>0:devel/nlohmann-json	\
 		${LOCALBASE}/include/exprtk.hpp:math/exprtk	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
@@ -49,6 +47,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libpugixml.so:textproc/pugixml \
 		libavutil.so:multimedia/ffmpeg \
 		libcgraph.so:graphics/graphviz \
+		libxkbcommon.so:x11/libxkbcommon \
 		libtheora.so:multimedia/libtheora \
 		libgeotiff.so:graphics/libgeotiff \
 		libboost_thread.so:devel/boost-libs \
@@ -59,16 +58,18 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		alias cmake compiler:c11 eigen:3 fortran gl gnome jpeg localbase	\
-		pkgconfig python qt:5 shebangfix sqlite tar:xz xorg
+USES=		alias cmake compiler:c11 desktop-file-utils eigen:3 fortran gl gnome	\
+		jpeg localbase pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
 USE_GL=		gl glew glu glut
 USE_GNOME=	libxml2
-USE_QT=		buildtools:build core gui help network opengl qmake:build sql svg	\
-		webengine widgets x11extras xmlpatterns
+USE_QT=		5compat base svg tools webengine
+#buildtools:build core gui help network opengl qmake:build sql svg	\
+#		webengine widgets x11extras xmlpatterns
 USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xorgproto xrender	\
 		xxf86vm
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-I${WRKSRC}/Clients/ParaView/Documentation
 CMAKE_ARGS+=	-DPARAVIEW_BUILD_SHARED_LIBS=ON \
 		-DPARAVIEW_BUILD_WITH_EXTERNAL=ON \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
@@ -83,10 +84,13 @@ CMAKE_ARGS+=	-DPARAVIEW_BUILD_SHARED_LIBS=ON \
 		-DPARAVIEW_ENABLE_MOTIONFX:BOOL=ON \
 		-DPARAVIEW_ENABLE_XDMF2:BOOL=ON \
 		-DPARAVIEW_ENABLE_XDMF3:BOOL=ON \
+		-DPARAVIEW_USE_QT:BOOL=ON \
+		-DPARAVIEW_BUILD_DEVELOPER_DOCUMENTATION:BOOL=OFF \
+		-DPARAVIEW_ENABLE_EMBEDDED_DOCUMENTATION:BOOL=OFF \
 		-DVTK_MODULE_USE_EXTERNAL_VTK_fmt:BOOL=OFF \
 		-DVTK_MODULE_USE_EXTERNAL_VTK_ioss:BOOL=OFF \
-		-DVTK_MODULE_USE_EXTERNAL_VTK_pegtl=OFF \
-		-DVTK_MODULE_USE_EXTERNAL_ParaView_vtkcatalyst:BOOL=OFF \
+		-DVTK_MODULE_USE_EXTERNAL_VTK_pegtl:BOOL=OFF \
+		-DVTK_MODULE_USE_EXTERNAL_VTK_token:BOOL=OFF \
 		-DExternalData_OBJECT_STORES="${WRKDIR}/VTK/ExternalData/MD5" \
 		-DFREETYPE_INCLUDE_DIRS="${LOCALBASE}/include/freetype2"
 .if !defined(MAINTAINER_MODE)
@@ -100,16 +104,16 @@ SHEBANG_FILES=	VTK/Examples/SearchScript.sh	\
 		VTK/Utilities/Maintenance/*.sh	\
 		Clients/CommandLineExecutables/paraview-config.in
 
-OPTIONS_DEFINE=	DOCS EXAMPLES MPI OSMESA
+OPTIONS_DEFINE=	DOCS EXAMPLES MPICH OSMESA
 OPTIONS_SUB=	yes
 OSMESA_DESC=	Use Mesa for off-screen rendering
 
 # mpi4py and other programs must be compiled against the same MPI provider
-MPI_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
-MPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
-MPI_USES=		mpi # mpich is set by default, use mpi:openmpi if needed
-MPI_CMAKE_ON=		-DPARAVIEW_USE_MPI:BOOL=ON
-MPI_CMAKE_OFF=		-DPARAVIEW_USE_MPI:BOOL=OFF
+MPICH_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py-mpich@${PY_FLAVOR}
+MPICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py-mpich@${PY_FLAVOR}
+MPICH_USES=		mpi # mpich is set by default, use mpi:openmpi if needed
+MPICH_CMAKE_ON=		-DPARAVIEW_USE_MPI:BOOL=ON
+MPICH_CMAKE_OFF=		-DPARAVIEW_USE_MPI:BOOL=OFF
 
 OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 OSMESA_USES_OFF=	desktop-file-utils

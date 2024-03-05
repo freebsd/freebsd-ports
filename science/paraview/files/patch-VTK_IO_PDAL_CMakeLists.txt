@@ -1,6 +1,6 @@
---- VTK/IO/PDAL/CMakeLists.txt.orig	2024-02-22 20:32:51 UTC
+--- VTK/IO/PDAL/CMakeLists.txt.orig	2024-02-28 20:42:21 UTC
 +++ VTK/IO/PDAL/CMakeLists.txt
-@@ -3,14 +3,7 @@ set(classes
+@@ -5,14 +5,7 @@ set(classes
  set(classes
    vtkPDALReader)
  

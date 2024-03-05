@@ -1,0 +1,10 @@
+--- VTK/ThirdParty/fast_float/CMakeLists.txt.orig	2024-02-28 20:42:21 UTC
++++ VTK/ThirdParty/fast_float/CMakeLists.txt
+@@ -13,7 +13,6 @@ vtk_module_third_party(
+     STANDARD_INCLUDE_DIRS
+     HEADER_ONLY
+   EXTERNAL
+-    VERSION "3.9.0"
+     PACKAGE FastFloat
+     TARGETS FastFloat::fast_float
+     STANDARD_INCLUDE_DIRS

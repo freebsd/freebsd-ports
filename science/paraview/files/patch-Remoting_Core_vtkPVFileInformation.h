@@ -1,6 +1,6 @@
---- Remoting/Core/vtkPVFileInformation.h.orig	2022-03-11 22:19:30 UTC
+--- Remoting/Core/vtkPVFileInformation.h.orig	2024-02-28 20:42:21 UTC
 +++ Remoting/Core/vtkPVFileInformation.h
-@@ -31,6 +31,7 @@
+@@ -19,6 +19,7 @@
  #include "vtkRemotingCoreModule.h" //needed for exports
  
  #include <string> // Needed for std::string

@@ -1,6 +1,6 @@
---- Qt/Core/pqServerConfiguration.cxx.orig	2022-11-14 01:44:43 UTC
+--- Qt/Core/pqServerConfiguration.cxx.orig	2024-02-28 20:42:21 UTC
 +++ Qt/Core/pqServerConfiguration.cxx
-@@ -229,7 +229,7 @@ QString pqServerConfiguration::termCommand()
+@@ -202,7 +202,7 @@ QString pqServerConfiguration::termCommand()
  //-----------------------------------------------------------------------------
  QString pqServerConfiguration::termCommand()
  {
