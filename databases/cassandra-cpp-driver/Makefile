@@ -1,5 +1,5 @@
 PORTNAME=	cassandra-cpp-driver
-PORTVERSION=	2.17.0
+PORTVERSION=	2.17.1
 PORTREVISION=	0
 CATEGORIES=	databases
 
