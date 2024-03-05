@@ -1,6 +1,6 @@
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/ \
 		LOCAL/bf/dillo/ \
