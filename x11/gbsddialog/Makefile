@@ -1,5 +1,5 @@
 PORTNAME=	gbsddialog
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	x11
 MASTER_SITES=	${WWW}/releases/download/${PORTNAME}_${DISTVERSION:S/./-/g}/
 
