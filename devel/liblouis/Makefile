@@ -1,5 +1,6 @@
 PORTNAME=	liblouis
 PORTVERSION=	3.28.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,6 +16,7 @@ USES=		autoreconf cpe gmake libtool pathfix shebangfix
 SHEBANG_FILES=	tools/lou_maketable.d/substrings.pl
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
