@@ -1,6 +1,6 @@
 PORTNAME=	trousers
 PORTVERSION=	0.3.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -22,6 +22,7 @@ USE_LDCONFIG=	YES
 USE_RC_SUBR=	tcsd
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	YES
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
 		--with-tssuser=${USERS} \
