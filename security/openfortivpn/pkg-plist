@@ -1,4 +1,4 @@
 bin/openfortivpn
-man/man1/openfortivpn.1.gz
+share/man/man1/openfortivpn.1.gz
 @dir %%ETCDIR%%
 @sample %%DATADIR%%/config.template %%ETCDIR%%/config
