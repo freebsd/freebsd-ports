@@ -1,10 +1,19 @@
---- Makefile.orig	2019-11-12 10:38:03 UTC
+--- Makefile.orig	2021-08-31 18:54:03 UTC
 +++ Makefile
 @@ -1,6 +1,6 @@
- VERSION=1.2.0
+ VERSION = 1.2.3
  
 -CFLAGS += -O2 -Wall -Wextra -Wshadow -rdynamic -D_GNU_SOURCE\
 +CFLAGS += -Wall -Wextra -Wshadow -D_GNU_SOURCE\
  	-D_FILE_OFFSET_BITS=64 -DVERSION=\"$(VERSION)\"\
  	`pkg-config --cflags-only-I gumbo libcurl fuse uuid expat`
  LDFLAGS += `pkg-config --libs-only-L gumbo libcurl fuse uuid expat`
+@@ -44,7 +44,7 @@ ifeq ($(OS),FreeBSD)
+ 		$(DESTDIR)$(prefix)/bin/httpdirfs
+ 	gzip -f -k doc/man/httpdirfs.1
+ 	install -m 644 doc/man/httpdirfs.1.gz \
+-		$(DESTDIR)$(prefix)/man/man1/httpdirfs.1.gz
++		$(DESTDIR)$(prefix)/share/man/man1/httpdirfs.1.gz
+ endif
+ ifeq ($(OS),Darwin)
+ 	install -d $(DESTDIR)$(prefix)/bin

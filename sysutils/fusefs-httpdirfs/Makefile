@@ -1,5 +1,6 @@
 PORTNAME=	httpdirfs
 DISTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -25,7 +26,7 @@ GH_ACCOUNT=	fangfufu
 MAKE_ENV=	prefix=${PREFIX}
 
 PLIST_FILES=	bin/httpdirfs \
-		man/man1/httpdirfs.1.gz
+		share/man/man1/httpdirfs.1.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
