@@ -89,9 +89,11 @@ include/quic/congestion_control/StaticCwndCongestionController.h
 include/quic/congestion_control/ThrottlingSignalProvider.h
 include/quic/congestion_control/TokenlessPacer.h
 include/quic/congestion_control/third_party/windowed_filter.h
+include/quic/dsr/BaseXskContainer.h
 include/quic/dsr/DSRPacketizationRequestSender.h
+include/quic/dsr/HashingXskContainer.h
+include/quic/dsr/ThreadLocalXskContainer.h
 include/quic/dsr/Types.h
-include/quic/dsr/XskContainer.h
 include/quic/dsr/XskSender.h
 include/quic/dsr/backend/DSRPacketizer.h
 include/quic/dsr/frontend/PacketBuilder.h
