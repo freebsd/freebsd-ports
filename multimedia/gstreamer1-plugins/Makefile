@@ -1,7 +1,7 @@
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # plug-in port instead, like ${category}/gstreamer1-plugin-${PLUGIN}.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		https://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
@@ -58,7 +58,7 @@ IGNORE=		DIST not specified
 .endif
 
 VERSION=	1.0
-SOVERSION=	0.2205.0
+SOVERSION=	0.2210.0
 PLIST_SUB+=	VERSION="${VERSION}" \
 		SOVERSION="${SOVERSION}"
 
