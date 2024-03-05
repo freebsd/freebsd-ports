@@ -12,7 +12,7 @@ WWW=		https://github.com/radsz/jacop
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USE_JAVA=	yes
 

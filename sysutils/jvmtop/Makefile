@@ -12,7 +12,7 @@ WWW=		https://github.com/patric-r/jvmtop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 USE_JAVA=	yes

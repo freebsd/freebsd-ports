@@ -10,7 +10,7 @@ WWW=		https://github.com/locationtech/jts
 LICENSE=	EPL
 #LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	locationtech

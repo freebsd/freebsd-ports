@@ -12,7 +12,7 @@ WWW=		https://bitbucket.org/dan2097/opsin/src/default/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USE_JAVA=	yes
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=29730, tid=0x000000000002d236 guarantee(val < (1U << nbits)) failed: Field too big for insn

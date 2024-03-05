@@ -80,8 +80,8 @@ JAVA_DESC=	Enable Java bindings
 
 JAVA_CONFIGURE_ENABLE=	java
 JAVA_USE=		java=yes
-JAVA_BUILD_DEPENDS=	mvn:devel/maven
-JAVA_FETCH_DEPENDS=	mvn:devel/maven
+JAVA_BUILD_DEPENDS=	maven>0:devel/maven
+JAVA_FETCH_DEPENDS=	maven>0:devel/maven
 JAVA_CONFIGURE_ENV=	PROTOBUF_JAR="${MAVEN_REPO}/com/google/protobuf/protobuf-java/${PROTOBUF_VERSION}/protobuf-java-${PROTOBUF_VERSION}.jar"
 JAVA_MAKE_ENV=		MAVEN_OPTS="${MAVEN_OPTS}"
 JAVA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_java_mesos.pom.in
