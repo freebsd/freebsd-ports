@@ -1,6 +1,6 @@
 sbin/dnsmasq
 @sample etc/dnsmasq.conf.sample
-man/man8/dnsmasq.8.gz
+share/man/man8/dnsmasq.8.gz
 %%DATADIR%%/trust-anchors.conf
 %%EXAMPLESDIR%%/dnslist/dhcp.css
 %%EXAMPLESDIR%%/dnslist/dnslist.pl
