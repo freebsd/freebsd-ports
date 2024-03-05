@@ -1,5 +1,6 @@
 PORTNAME=	pam-modules
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/pam-modules/
 
@@ -14,6 +15,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fshadow
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INFO=		pam-modules
 
