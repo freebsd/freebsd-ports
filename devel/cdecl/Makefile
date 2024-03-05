@@ -1,6 +1,7 @@
 PORTNAME=	cdecl
 PORTVERSION=	16.2.1
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ler@FreeBSD.org
@@ -16,10 +17,10 @@ USES=		autoreconf bison ncurses readline
 CONFLICTS=	cutils
 
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	paul-j-lucas
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/cdecl bin/c++decl man/man1/cdecl.1.gz man/man1/c++decl.1.gz
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+PLIST_FILES=	bin/cdecl bin/c++decl share/man/man1/cdecl.1.gz share/man/man1/c++decl.1.gz
 
 .include <bsd.port.mk>
