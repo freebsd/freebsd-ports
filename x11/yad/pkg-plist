@@ -1,9 +1,7 @@
 bin/yad
 bin/yad-settings
 %%TOOLS%%bin/yad-tools
-%%TOOLS%%man/man1/yad-tools.1.gz
 %%ICONBROWSER%%bin/yad-icon-browser
-man/man1/yad.1.gz
 share/applications/yad-settings.desktop
 share/aclocal/yad.m4
 %%ICONBROWSER%%share/applications/yad-icon-browser.desktop
@@ -22,3 +20,5 @@ share/icons/hicolor/96x96/apps/yad.png
 %%NLS%%share/locale/sk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/yad.mo
+%%TOOLS%%share/man/man1/yad-tools.1.gz
+share/man/man1/yad.1.gz
