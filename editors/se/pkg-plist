@@ -1,7 +1,7 @@
 bin/scriptse
 bin/se
-man/man1/scriptse.1.gz
-man/man1/se.1.gz
+share/man/man1/scriptse.1.gz
+share/man/man1/se.1.gz
 %%DATADIR%%/help/a
 %%DATADIR%%/help/abt
 %%DATADIR%%/help/ah
