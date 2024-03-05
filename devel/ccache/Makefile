@@ -1,6 +1,6 @@
 PORTNAME=	ccache
 PORTVERSION=	3.7.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
@@ -68,7 +68,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${STAGEDIR}${PREFIX}/bin
 	# Memcached uses the 3.5 dev branch which requires asciidoc to generate
 	# ccache.1.
-	${INSTALL_MAN} ${WRKSRC}/doc/ccache.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ccache.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CCLINKDIR}/world
 	${INSTALL_SCRIPT} ${WRKDIR}/world-ccache \
 		${STAGEDIR}${PREFIX}/${CCLINKDIR}/world/ccache
