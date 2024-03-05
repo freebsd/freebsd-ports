@@ -1,6 +1,6 @@
 PORTNAME=	dialog4ports
 PORTVERSION=	0.1.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://files.etoilebsd.net/dialog4ports/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -28,7 +28,7 @@ BROKEN=		Requires libdialog in base
 DEPRECATED=	Consider using ports-mgmt/portconfig which is a dropin replacement
 
 .if !defined(D4P_SLAVE)
-PLIST_FILES=	bin/dialog4ports man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/dialog4ports share/man/man1/${PORTNAME}.1.gz
 .endif
 
 .include <bsd.port.pre.mk>
