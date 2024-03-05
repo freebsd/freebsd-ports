@@ -1,5 +1,6 @@
 PORTNAME=	yudit
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		SUNSITE/apps/editors/X
@@ -11,11 +12,13 @@ WWW=		https://www.yudit.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
+USES=		gmake xorg
+
 CONFLICTS=	netatalk
 
-USES=		gmake xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDATA=	*
