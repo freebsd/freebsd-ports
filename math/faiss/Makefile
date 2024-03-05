@@ -1,8 +1,10 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.4
-PORTREVISION=	2
+DISTVERSION=	1.8.0
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	70c5de13cd9e2ce94181fe67d9a70eb371ecd554.patch:-p1 # fix GTest linkage
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for efficient similarity search & clustering of dense vectors

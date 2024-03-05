@@ -3,6 +3,7 @@
 %%PYTHON_SITELIBDIR%%/faiss/array_conversions.py
 %%PYTHON_SITELIBDIR%%/faiss/class_wrappers.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/faiss/contrib/big_batch_search.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/client_server.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/clustering.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/datasets.py

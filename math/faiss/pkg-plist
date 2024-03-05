@@ -21,6 +21,7 @@ include/faiss/IndexIVFAdditiveQuantizer.h
 include/faiss/IndexIVFAdditiveQuantizerFastScan.h
 include/faiss/IndexIVFFastScan.h
 include/faiss/IndexIVFFlat.h
+include/faiss/IndexIVFIndependentQuantizer.h
 include/faiss/IndexIVFPQ.h
 include/faiss/IndexIVFPQFastScan.h
 include/faiss/IndexIVFPQR.h
@@ -45,6 +46,7 @@ include/faiss/VectorTransform.h
 include/faiss/clone_index.h
 include/faiss/impl/AdditiveQuantizer.h
 include/faiss/impl/AuxIndexStructures.h
+include/faiss/impl/CodePacker.h
 include/faiss/impl/DistanceComputer.h
 include/faiss/impl/FaissAssert.h
 include/faiss/impl/FaissException.h
@@ -73,6 +75,7 @@ include/faiss/impl/kmeans1d.h
 include/faiss/impl/lattice_Zn.h
 include/faiss/impl/platform_macros.h
 include/faiss/impl/pq4_fast_scan.h
+include/faiss/impl/residual_quantizer_encode_steps.h
 include/faiss/impl/simd_result_handlers.h
 include/faiss/index_factory.h
 include/faiss/index_io.h
@@ -95,6 +98,7 @@ include/faiss/utils/distances_fused/distances_fused.h
 include/faiss/utils/distances_fused/simdlib_based.h
 include/faiss/utils/extra_distances-inl.h
 include/faiss/utils/extra_distances.h
+include/faiss/utils/fp16-arm.h
 include/faiss/utils/fp16-fp16c.h
 include/faiss/utils/fp16-inl.h
 include/faiss/utils/fp16.h
@@ -107,12 +111,14 @@ include/faiss/utils/hamming_distance/hamdis-inl.h
 include/faiss/utils/hamming_distance/neon-inl.h
 include/faiss/utils/ordered_key_value.h
 include/faiss/utils/partitioning.h
+include/faiss/utils/prefetch.h
 include/faiss/utils/quantize_lut.h
 include/faiss/utils/random.h
 include/faiss/utils/simdlib.h
 include/faiss/utils/simdlib_avx2.h
 include/faiss/utils/simdlib_emulated.h
 include/faiss/utils/simdlib_neon.h
+include/faiss/utils/sorting.h
 include/faiss/utils/transpose/transpose-avx2-inl.h
 include/faiss/utils/utils.h
 lib/libfaiss.so
