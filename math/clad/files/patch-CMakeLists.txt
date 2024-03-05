@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2024-02-11 18:10:50 UTC
+--- CMakeLists.txt.orig	2024-02-29 15:28:44 UTC
 +++ CMakeLists.txt
-@@ -313,10 +313,14 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
-   # Filter some unsupported flags by clang.
+@@ -309,10 +309,14 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
    string(REPLACE "-fno-lifetime-dse" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   string(REPLACE "-Wno-class-memaccess" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
  
 +  if (FREEBSD_BUILD_TESTS)
    add_subdirectory(unittests)

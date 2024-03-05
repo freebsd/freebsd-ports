@@ -35,7 +35,3 @@ include/clad/tools/ClangBackendPlugin.h
 include/clad/tools/ClangPlugin.h
 include/clad/tools/DerivedFnInfo.h
 lib/clad.so
-lib/libcladDifferentiator.so
-lib/libcladDifferentiator.so.15
-lib/libcladPlugin.so
-lib/libcladPlugin.so.15
