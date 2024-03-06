@@ -1,6 +1,15 @@
 --- cpp/config/Make.rules.orig	2019-08-12 19:54:18 UTC
 +++ cpp/config/Make.rules
-@@ -201,11 +201,11 @@ ifeq ($(DEFAULT_MUTEX_PROTOCOL), PrioInherit)
+@@ -190,7 +190,7 @@ ifndef usr_dir_install
+ install_libdir	  	:= $(prefix)/$(libsubdir)$(cpp11suffix)
+ 
+ ifndef usr_dir_install
+-install_mandir		:= $(prefix)/man/man1
++install_mandir		:= $(prefix)/share/man/man1
+ install_configdir 	:= $(prefix)/config
+ else
+ install_configdir 	:= $(prefix)/share/Ice-$(VERSION)
+@@ -201,11 +201,11 @@ endif
      ICEUTIL_FLAGS     	= -DICE_PRIO_INHERIT
  endif
  
