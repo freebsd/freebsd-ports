@@ -1,6 +1,6 @@
 PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libukcprog/ \
 		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/libukcprog/ \
@@ -17,6 +17,7 @@ LICENSE_TEXT=	License (see source) does not permit selling for profit
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
