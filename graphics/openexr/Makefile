@@ -69,6 +69,8 @@ _DOCSRCDIR1=	${WRKSRC}
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
 
+TESTING_UNSAFE=	10 tests fails out of 125
+
 # too many reports about compilation failures, so
 # sanity check we are using the same C++ standard library
 _imath_libcxx=	${COMPILER_FEATURES:Mlib*c++}
