@@ -1,5 +1,6 @@
 PORTNAME=	yt-dlp # www/py-yt-dlp is for extending yt-dlp, www/yt-dlp is an application for the end user
 DISTVERSION=	2023.12.30
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,14 +31,11 @@ SHEBANG_GLOB=	*.py
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=			FFMPEG RTMPDUMP SECRETSTORAGE
-OPTIONS_DEFAULT=		FFMPEG RTMPDUMP
+OPTIONS_DEFINE=			FFMPEG SECRETSTORAGE
+OPTIONS_DEFAULT=		FFMPEG
 OPTIONS_SUB=			yes
 
 FFMPEG_RUN_DEPENDS=		ffprobe:multimedia/ffmpeg
-
-RTMPDUMP_DESC=			Use rtmpdump to download rtmp video streams
-RTMPDUMP_RUN_DEPENDS=		rtmpdump:multimedia/rtmpdump
 
 SECRETSTORAGE_DESC=		Build with ${PYTHON_PKGNAMEPREFIX}SecretStorage for secretstorage option
 SECRETSTORAGE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SecretStorage>0:security/py-SecretStorage@${PY_FLAVOR}
