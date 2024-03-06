@@ -50,6 +50,8 @@ X11_MESON_ENABLED=	xft
 X11_USES=	xorg
 X11_USE=	XORG=x11,xft,xrender
 
+TESTING_UNSAFE=	2 out of 24 tests fail
+
 pre-configure:
 # .if !exists() evaluates too early before cairo has a chance to be installed
 	@if ! pkg-config --exists cairo-gobject; then \
