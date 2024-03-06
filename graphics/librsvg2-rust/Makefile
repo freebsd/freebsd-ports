@@ -47,6 +47,8 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 
+TESTING_UNSAFE=	ld: error: undefined symbol: pthread_condattr_init
+
 post-patch:
 # Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} 's/test "x$$cross_compiling" = "xyes"/true/' \
