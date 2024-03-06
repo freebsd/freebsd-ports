@@ -1,6 +1,7 @@
 PORTNAME=	nomad-pot-driver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
