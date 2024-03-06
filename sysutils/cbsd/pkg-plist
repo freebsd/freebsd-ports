@@ -247,7 +247,7 @@ cbsd/etc/defaults/vm-linux-AlmaLinux-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-Alpine-extended-3.conf
 cbsd/etc/defaults/vm-linux-Alpine-standart-3.conf
 cbsd/etc/defaults/vm-linux-Android-x86.conf
-cbsd/etc/defaults/vm-linux-ArchLinux-x86-2023.conf
+cbsd/etc/defaults/vm-linux-ArchLinux-x86-2024.conf
 cbsd/etc/defaults/vm-linux-BlackBox-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-8-x86_64.conf
@@ -302,6 +302,7 @@ cbsd/etc/defaults/vm-linux-cloud-Rocky-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-firestarter-debian-11.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-27.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntudesktop-amd64-22.04.conf
+cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-22.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-23.04.conf
 cbsd/etc/defaults/vm-linux-fedora-server-39-x86_64.conf
@@ -311,6 +312,7 @@ cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-23.conf
 cbsd/etc/defaults/vm-linux-opensuse-leap-15-x86.conf
 cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-23.conf
+cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-20.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-22.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-23.conf
 cbsd/etc/defaults/vm-linux-vyos-1.5.conf
