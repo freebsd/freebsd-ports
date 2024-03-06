@@ -1,5 +1,6 @@
 PORTNAME=	the_silver_searcher
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -17,6 +18,7 @@ GH_ACCOUNT=	ggreer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LZMA_LIBS=-llzma
 CONFIGURE_ARGS+=LZMA_CFLAGS=-I/usr/include
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-L/usr/lib -llzma
 USES=		autoreconf pkgconfig
 TEST_TARGET=	test
