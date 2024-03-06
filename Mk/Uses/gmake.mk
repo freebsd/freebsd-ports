@@ -13,7 +13,7 @@ IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake takes no arguments
 .  endif
 
 BUILD_DEPENDS+=		gmake>=4.4.1:devel/gmake
-CONFIGURE_ENV+=		MAKE=gmake
-MAKE_CMD=		gmake
+CONFIGURE_ENV+=		MAKE=${GMAKE}
+MAKE_CMD=		${GMAKE}
 
 .endif

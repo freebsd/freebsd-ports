@@ -38,11 +38,6 @@ BASH_SHARED_RUN_DEPENDS=bash:shells/bash
 BASH_STATIC_RUN_DEPENDS=bash:shells/bash-static
 FREEBSD_RUN_DEPENDS=	bash-completion-freebsd>=0:shells/bash-completion-freebsd
 
-.include <bsd.port.pre.mk>
-
-# See PR 248829 for details
-MAKE_CMD=	${LOCALBASE}/bin/gmake
-
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/ssl/openssl.cnf|${PREFIX}& &|g' \
@@ -62,4 +57,4 @@ do-test:
 	-cd ${WRKSRC}/test && bash ${test}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

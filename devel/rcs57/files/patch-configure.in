@@ -1,0 +1,12 @@
+--- configure.in.orig	1995-06-16 06:19:24 UTC
++++ configure.in
+@@ -246,9 +246,6 @@ PATH=$ac_save_path
+ PATH=/usr/lib:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+ AC_PATH_PROGS(SENDMAIL, sendmail mail mailx)
+ PATH=$ac_save_path
+-case $SENDMAIL in
+-?*) SENDMAIL=\"$SENDMAIL\"
+-esac
+ 
+ # Use the GNU pic -n option if available; it avoids GNU extensions,
+ # which is need for proper operation to generate a portable man page.

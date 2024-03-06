@@ -50,7 +50,7 @@ NO_ARCH=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.typing-booster.gschema.xml
 
 TEST_TARGET=	check
-TEST_ENV=	MAKE_CMD=${LOCALBASE}/bin/gmake LC_ALL=en_US.UTF-8	\
+TEST_ENV=	${MAKE_ENV} \
 		IBUS_TYPING_BOOSTER_DEBUG_LEVEL=1
 
 OPTIONS_DEFINE=	HUNSPELL

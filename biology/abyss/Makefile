@@ -29,7 +29,7 @@ GH_ACCOUNT=	bcgsc
 SHEBANG_FILES=	bin/${PORTNAME}-* DataBase/abyss-db-txt
 SHEBANG_LANG=	make
 make_OLD_CMD=	/usr/bin/make
-make_CMD=	${PREFIX}/bin/gmake
+make_CMD=	${GMAKE}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-sparsehash # configure fails to find std::hash, reported to the ML: https://groups.google.com/forum/#!topic/trans-abyss/SZDBKR5bKxs
