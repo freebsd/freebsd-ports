@@ -1,5 +1,6 @@
 PORTNAME=		resolv_wrapper
 PORTVERSION=		1.1.5
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
@@ -11,8 +12,6 @@ LICENSE=		GPLv3
 
 USES=			cmake
 USE_LDCONFIG=		yes
-
-CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
 
 OPTIONS_DEFINE=		TEST
 OPTIONS_DEFAULT=	TEST
@@ -27,6 +26,6 @@ PLIST_FILES=		libdata/pkgconfig/resolv_wrapper.pc \
 			lib/libresolv_wrapper.so.0.0.5 \
 			lib/libresolv_wrapper.so.0 \
 			lib/libresolv_wrapper.so \
-			man/man1/resolv_wrapper.1.gz
+			share/man/man1/resolv_wrapper.1.gz
 
 .include <bsd.port.mk>
