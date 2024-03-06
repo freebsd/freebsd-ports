@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20240227
+PORTVERSION=	s20240301
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -49,7 +49,7 @@ qt6_OPTIONS_EXCLUDE=	QT5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-mirror
-GH_TAGNAME=	dc94882c90
+GH_TAGNAME=	15e6e48bef
 GH_TUPLE=	yuzu-mirror:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		yuzu-mirror:sirit:ab75463:sirit/externals/sirit \
 		GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:v3.0.1-114-g2f382df:VulkanMemoryAllocator/externals/VulkanMemoryAllocator \
