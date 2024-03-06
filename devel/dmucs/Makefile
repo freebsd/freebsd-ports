@@ -8,6 +8,9 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Distributed Multi-User Compilation System (for use with distcc)
 WWW=		https://dmucs.sourceforge.net/
 
+DEPRECATED=	Unmaintained, upstream last release was in 2006
+EXPIRATION_DATE=2024-04-06
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
