@@ -1,5 +1,6 @@
 PORTNAME=	ftpcopy
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
