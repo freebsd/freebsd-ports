@@ -1,3 +1,79 @@
+  <vuln vid="b1b039ec-dbfc-11ee-9165-901b0e9408dc">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go122</name>
+	<range><lt>1.22.1</lt></range>
+      </package>
+      <package>
+	<name>go121</name>
+	<range><lt>1.21.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports reports:</p>
+	<blockquote cite="https://go.dev/issue/65390">
+	  <p>crypto/x509: Verify panics on certificates with an
+	  unknown public key algorithm</p>
+	  <p>Verifying a certificate chain which contains a
+	  certificate with an unknown public key algorithm will
+	  cause Certificate.Verify to panic.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/65383">
+	  <p>net/http: memory exhaustion in Request.ParseMultipartForm</p>
+	  <p>When parsing a multipart form (either explicitly with
+	  Request.ParseMultipartForm or implicitly with Request.FormValue,
+	  Request.PostFormValue, or Request.FormFile), limits on the total
+	  size of the parsed form were not applied to the memory consumed
+	  while reading a single form line. This permitted a maliciously
+	  crafted input containing very long lines to cause allocation of
+	  arbitrarily large amounts of memory, potentially leading to memory
+	  exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/65065">
+	  <p>net/http, net/http/cookiejar: incorrect forwarding
+	  of sensitive headers and cookies on HTTP redirect</p>
+	  <p>When following an HTTP redirect to a domain which
+	  is not a subdomain match or exact match of the initial
+	  domain, an http.Client does not forward sensitive headers
+	  such as "Authorization" or "Cookie". For example, a
+	  redirect from foo.com to www.foo.com will forward the
+	  Authorization header, but a redirect to bar.com will not.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/65697">
+	  <p>html/template: errors returned from MarshalJSON methods
+	  may break template escaping</p>
+	  <p>If errors returned from MarshalJSON methods contain user
+	  controlled data, they may be used to break the contextual
+	  auto-escaping behavior of the html/template package, allowing
+	  for subsequent actions to inject unexpected content into
+	  templates.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/65083">
+	  <p>net/mail: comments in display names are incorrectly handled</p>
+	  <p>The ParseAddressList function incorrectly handles comments
+	  (text within parentheses) within display names. Since this is a
+	  misalignment with conforming address parsers, it can result in
+	  different trust decisions being made by programs using different
+	  parsers.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45289</cvename>
+      <cvename>CVE-2023-45290</cvename>
+      <cvename>CVE-2024-24783</cvename>
+      <cvename>CVE-2024-24784</cvename>
+      <cvename>CVE-2024-24785</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ</url>
+    </references>
+    <dates>
+      <discovery>2024-03-05</discovery>
+      <entry>2024-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd3401a1-b6df-4577-917a-2c22fee99d34">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
