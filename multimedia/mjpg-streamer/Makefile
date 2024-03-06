@@ -8,6 +8,9 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HTTP video streaming daemon
 WWW=		https://github.com/jacksonliam/mjpg-streamer
 
+DEPRECATED=	Unmaintained for a long time and does not work
+EXPIRATION_DATE=2024-04-06
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
