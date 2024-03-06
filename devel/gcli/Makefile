@@ -1,5 +1,6 @@
 PORTNAME=	gcli
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 USES=		libtool pathfix pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 
 post-install:
