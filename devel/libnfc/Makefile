@@ -1,5 +1,6 @@
 PORTNAME=	libnfc
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/nfc-tools/libnfc/releases/download/libnfc-${PORTVERSION}/
 
@@ -23,10 +24,11 @@ PN532_UART_DESC=PN532 UART driver
 PN53X_USB_DESC=	PN53X USB driver
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake libtool pathfix pkgconfig readline tar:bzip2
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
-CFLAGS+= 	-D__BSD_VISIBLE
+CFLAGS+=	-D__BSD_VISIBLE
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
