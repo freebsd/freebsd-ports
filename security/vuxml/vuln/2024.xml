@@ -1,3 +1,40 @@
+  <vuln vid="fd3401a1-b6df-4577-917a-2c22fee99d34">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>122.0.6261.111</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>122.0.6261.111</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/03/stable-channel-update-for-desktop.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[325893559] High CVE-2024-2173: Out of bounds memory access in V8. Reported by 5fceb6172bbf7e2c5a948183b53565b9 on 2024-02-19</li>
+	    <li>[325866363] High CVE-2024-2174: Inappropriate implementation in V8. Reported by 5f46f4ee2e17957ba7b39897fb376be8 on 2024-02-19</li>
+	    <li>[325936438] High CVE-2024-2176: Use after free in FedCM. Reported by Anonymous on 2024-02-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2173</cvename>
+      <cvename>CVE-2024-2174</cvename>
+      <cvename>CVE-2024-2176</cvename>
+      <url>https://chromereleases.googleblog.com/2024/03/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-03-05</discovery>
+      <entry>2024-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ef3398e-da21-11ee-b23a-080027a5b8e9">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
