@@ -372,7 +372,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		minifb-0.24.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		mumble-link-0.2.0 \
 		nanorand-0.7.0 \
 		native-dialog-0.6.4 \
