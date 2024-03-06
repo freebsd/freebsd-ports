@@ -3,7 +3,7 @@ lib/libvc.a
 lib/libvc.so
 lib/libvc.so.0
 lib/libvc.so.0.0.0
-man/man3/vc.3.gz
+share/man/man3/vc.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
