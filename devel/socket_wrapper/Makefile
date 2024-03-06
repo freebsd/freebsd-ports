@@ -1,5 +1,6 @@
 PORTNAME=		socket_wrapper
 PORTVERSION=		1.1.9
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
@@ -20,7 +21,6 @@ CFLAGS_powerpc64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_powerpc64le=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_powerpcspe=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_riscv64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
-CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
 
 OPTIONS_DEFINE=		TEST
 OPTIONS_DEFAULT=	TEST
@@ -35,7 +35,7 @@ PLIST_FILES=		libdata/pkgconfig/socket_wrapper.pc \
 			lib/libsocket_wrapper.so.0.1.9 \
 			lib/libsocket_wrapper.so.0 \
 			lib/libsocket_wrapper.so \
-			man/man1/socket_wrapper.1.gz
+			share/man/man1/socket_wrapper.1.gz
 
 post-configure:
 			${REINPLACE_CMD} -Ee '/HAVE_FALLTHROUGH_ATTRIBUTE/d' \
