@@ -1,7 +1,7 @@
 PORTNAME=	kcov
 DISTVERSIONPREFIX=	v
 DISTVERSION=	37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -24,7 +24,7 @@ USES=		cmake shebangfix python:build gettext-runtime
 
 # Remove -DPORTVERSION (and associated patch) when basing the port on an
 # official release
-CMAKE_ARGS=	-DKCOV_INSTALL_MANDIR=${PREFIX}/man -DPORTVERSION=${PORTVERSION}
+CMAKE_ARGS=	-DPORTVERSION=${PORTVERSION}
 
 SHEBANG_GLOB=	*.py
 
@@ -32,7 +32,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	SimonKagstrom
 
 PLIST_FILES=	bin/kcov \
-		man/man1/kcov.1.gz
+		share/man/man1/kcov.1.gz
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	COPYING.externals \
