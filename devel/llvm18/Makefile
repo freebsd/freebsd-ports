@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	18.1.0rc4
+DISTVERSION=	18.1.0
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -83,6 +83,7 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_LIBXML2=OFF
 CMAKE_ARGS+=	-DLLVM_ENABLE_LIBEDIT=OFF
 # LLVM likes to pick up ${LOCALBASE}/lib/libtinfo.so.*
 CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF
+CMAKE_ARGS+=	-DLLVM_VERSION_SUFFIX=
 
 # Disable assertions.  They should be disabled by cmake, but USES=cmake
 # overrides -DCMAKE_*_FLAGS_RELEASE.
@@ -510,10 +511,6 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
-.if ${DISTVERSION:M*rc*}
-	${LN} -s libLLVM-${LLVM_MAJOR}rc.so \
-	    ${STAGEDIR}${LLVM_PREFIX}/lib/libLLVM-${LLVM_MAJOR}.so
-.endif
 
 post-install-DOCS-on:
 	${RM} -r ${STAGEDIR}${DOCSDIR}
