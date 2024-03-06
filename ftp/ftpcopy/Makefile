@@ -30,7 +30,7 @@ pre-build:
 do-install:
 	cd ${WRKSRC}/compile && \
 		${INSTALL_PROGRAM} ftpcopy ftpls ${STAGEDIR}${PREFIX}/bin && \
-		${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/man/man1 && \
+		${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/share/man/man1 && \
 		${INSTALL_SCRIPT} ftpcp ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	cd ${WRKSRC}/compile && \
