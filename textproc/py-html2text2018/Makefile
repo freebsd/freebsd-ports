@@ -13,6 +13,9 @@ WWW=		https://github.com/Alir3z4/html2text/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Old version without consumers left, use updated textproc/py-html2text instead
+EXPIRATION_DATE=	2024-03-31
+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR}
 
 USES=		python
