@@ -20,9 +20,10 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Martchus
 
+MAKE_ENV+=	QT_QPA_PLATFORM=offscreen # otherwise tests fail because they can't connect to display
+
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ARGS=	-DEXCLUDE_TESTS_FROM_ALL=OFF
-
-# 3 tests fail, see https://github.com/Martchus/qtutilities/issues/10
+CMAKE_TESTING_TARGET=	check
 
 .include <bsd.port.mk>
