@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.31 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-16163-gef8afa7873
+DISTVERSION=	0.0.31-16170 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gd39361705a
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,7 +33,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		KhronosGroup:SPIRV-Tools:v2023.5.rc1:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:13.1.1:glslang/3rdparty/glslang/glslang \
 		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
-		miniupnp:miniupnp:miniupnpd_2_3_4:miniupnp/3rdparty/miniupnp/miniupnp \
+		miniupnp:miniupnp:miniupnpd_2_3_5:miniupnp/3rdparty/miniupnp/miniupnp \
 		wolfSSL:wolfssl:v5.6.6-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
 USES=		cmake elfctl gl iconv:wchar_t llvm:min=16,lib localbase:ldflags \
