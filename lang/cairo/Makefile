@@ -1,7 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.4
-PORTREVISION=	1
+DISTVERSION=	2.6.0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -155,6 +154,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		log-0.4.20 \
 		lru-0.7.8 \
 		lsp-types-0.94.1 \
+		matchers-0.1.0 \
 		matrixmultiply-0.2.4 \
 		memchr-2.7.1 \
 		mimalloc-0.1.39 \
@@ -217,7 +217,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		regex-1.10.2 \
+		regex-automata-0.1.10 \
 		regex-automata-0.4.3 \
+		regex-syntax-0.6.29 \
 		regex-syntax-0.7.5 \
 		regex-syntax-0.8.2 \
 		relative-path-1.9.2 \
@@ -246,6 +248,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_spanned-0.6.5 \
 		sha2-0.10.8 \
 		sha3-0.10.8 \
+		sharded-slab-0.1.7 \
 		signal-hook-registry-1.4.1 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
@@ -275,6 +278,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.56 \
 		thiserror-impl-no-std-2.0.2 \
 		thiserror-no-std-2.0.2 \
+		thread_local-1.1.7 \
 		time-0.3.31 \
 		time-core-0.1.2 \
 		time-macros-0.2.16 \
@@ -296,6 +300,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
+		tracing-log-0.2.0 \
+		tracing-subscriber-0.3.18 \
 		typenum-1.17.0 \
 		unescaper-0.1.3 \
 		unicode-bidi-0.3.14 \
@@ -306,6 +312,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-xid-0.2.4 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
+		valuable-0.1.0 \
 		version_check-0.9.4 \
 		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
