@@ -2,6 +2,7 @@
 %%PERL5_MAN3%%/File::RandomAccess.3.gz
 %%PERL5_MAN3%%/Image::ExifTool.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::7Z.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::AAC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AES.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AFCP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AIFF.3.gz
@@ -47,6 +48,7 @@
 %%PERL5_MAN3%%/Image::ExifTool::GIMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GPS.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GeoTiff.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Geolocation.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geotag.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GoPro.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::H264.3.gz
@@ -199,6 +201,7 @@
 %%SITE_PERL%%/Image/ExifTool.pm
 %%SITE_PERL%%/Image/ExifTool.pod
 %%SITE_PERL%%/Image/ExifTool/7Z.pm
+%%SITE_PERL%%/Image/ExifTool/AAC.pm
 %%SITE_PERL%%/Image/ExifTool/AES.pm
 %%SITE_PERL%%/Image/ExifTool/AFCP.pm
 %%SITE_PERL%%/Image/ExifTool/AIFF.pm
@@ -277,6 +280,8 @@
 %%SITE_PERL%%/Image/ExifTool/GIMP.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
+%%SITE_PERL%%/Image/ExifTool/Geolocation.dat
+%%SITE_PERL%%/Image/ExifTool/Geolocation.pm
 %%SITE_PERL%%/Image/ExifTool/Geotag.pm
 %%SITE_PERL%%/Image/ExifTool/GoPro.pm
 %%SITE_PERL%%/Image/ExifTool/H264.pm
