@@ -1,6 +1,6 @@
 PORTNAME=	openssh
 DISTVERSION=	9.6p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -20,6 +20,7 @@ CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel
 USES=			alias autoreconf compiler:c11 cpe localbase ncurses \
 			pkgconfig ssl
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--without-zlib-version-check \
 			--with-ssl-engine \
