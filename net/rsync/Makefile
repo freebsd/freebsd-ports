@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
-USES=		cpe python shebangfix ssl autoreconf
+USES=		autoreconf:build cpe python shebangfix ssl
 PYTHON_NO_DEPENDS=	yes
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
@@ -93,6 +93,9 @@ post-patch:
 					  -e 's:/etc/letsencrypt:${PREFIX}/etc/letsencrypt:g' \
 					  ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync
+
+pre-configure:
+	@(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_CMD} -f prepare-source.mak)
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

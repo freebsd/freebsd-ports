@@ -58,4 +58,4 @@ share/man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/m4sugar/m4sh.m4f
 %%DATADIR%%/m4sugar/m4sugar.m4
 %%DATADIR%%/m4sugar/m4sugar.m4f
-%%DATADIR%%/m4sugar/version.m4
+%%DATADIR%%/version.m4

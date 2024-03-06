@@ -38,7 +38,7 @@ post-extract:
 	${INSTALL_DATA} ${WRKSRC}/mu4e/obsolete/org-mu4e.el \
 	    ${WRKSRC}/mu4e/org-mu4e.el
 
-pre-build:
+post-configure:
 	${REINPLACE_CMD} -e '/.el.elc/,/^$$/d' ${BUILD_WRKSRC}/Makefile && \
 	    ${ECHO_CMD} '.include "${FILESDIR}/byte-compile.mk"' \
 	    >> ${BUILD_WRKSRC}/Makefile
