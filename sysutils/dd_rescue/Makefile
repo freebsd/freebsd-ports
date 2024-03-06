@@ -1,5 +1,6 @@
 PORTNAME=	dd_rescue
 PORTVERSION=	1.99.13
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/ \
 		http://fossies.org/unix/privat/
