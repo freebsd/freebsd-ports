@@ -7,6 +7,9 @@ MASTER_SITES=	http://bre.klaki.net/programs/tircproxy/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IRC proxy server
 
+DEPRECATED=	Unmaintained, dead upstream, vaporized from the net
+EXPIRATION_DATE=2024-04-06
+
 GNU_CONFIGURE=	YES
 
 WRKSRC=		${WRKDIR}/tircproxy-0.4
