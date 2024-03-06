@@ -1,6 +1,6 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -48,9 +48,5 @@ TESTING_UNSAFE=	requires additional test input files
 post-extract:
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/blake3 ${WRKSRC}/subprojects
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/tree-sitter-c ${WRKSRC}/subprojects
-
-post-patch:
-	${REINPLACE_CMD} -e 's|<tree_sitter/parser.h>|"tree_sitter/parser.h"|' \
-		${WRKSRC}/subprojects/rizin-shell-parser/src/parser.c
 
 .include <bsd.port.mk>
