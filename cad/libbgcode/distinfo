@@ -1,0 +1,5 @@
+TIMESTAMP = 1709747111
+SHA256 (prusa3d-libbgcode-0.2.0-6f43cb004ef3d3bda37dde49f6235e24d2717629_GH0.tar.gz) = 315349d55fcee2eaf41ca7ba6a4b8e0e442c74b04f6074d6e108c169fa36e908
+SIZE (prusa3d-libbgcode-0.2.0-6f43cb004ef3d3bda37dde49f6235e24d2717629_GH0.tar.gz) = 455740
+SHA256 (atomicobject-heatshrink-v0.4.1_GH0.tar.gz) = 7529a1c8ac501191ad470b166773364e66d9926aad632690c72c63a1dea7e9a6
+SIZE (atomicobject-heatshrink-v0.4.1_GH0.tar.gz) = 36945
