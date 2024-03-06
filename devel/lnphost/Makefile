@@ -1,5 +1,6 @@
 PORTNAME=	lnphost
 PORTVERSION=	1.0a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ CFLAGS+=	-DHAVE_STRING_H
 PLIST_FILES=	bin/lnpdump \
 		lib/lnphost.a \
 		include/lnphost.h \
-		man/man1/lnpdump.1.gz
+		share/man/man1/lnpdump.1.gz
 
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 

@@ -1,6 +1,6 @@
 --- Makefile.orig	2005-03-18 16:20:31 UTC
 +++ Makefile
-@@ -8,16 +8,20 @@ else
+@@ -8,16 +8,20 @@ PROGRAMS=$(patsubst %.c,%$(EXT),$(wildcard *.c))
  endif
  
  PROGRAMS=$(patsubst %.c,%$(EXT),$(wildcard *.c))
@@ -10,12 +10,12 @@
  
 -all: $(PROGRAMS)
 +BINDIR=${PREFIX}/bin
-+MANDIR=${PREFIX}/man/man1
++MANDIR=${PREFIX}/share/man/man1
 +LIBDIR=${PREFIX}/lib
 +INCDIR=${PREFIX}/include
-+
-+all: $(PROGRAMS) $(LIBS)
  
++all: $(PROGRAMS) $(LIBS)
++
  clean:
 -	make -C Docs clean
 -	rm -f *~ */*~
