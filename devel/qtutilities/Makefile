@@ -1,6 +1,6 @@
 PORTNAME=	qtutilities
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.13.4
+DISTVERSION=	6.13.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,5 +22,7 @@ GH_ACCOUNT=	Martchus
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ARGS=	-DEXCLUDE_TESTS_FROM_ALL=OFF
+
+# 3 tests fail, see https://github.com/Martchus/qtutilities/issues/10
 
 .include <bsd.port.mk>
