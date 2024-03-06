@@ -1,0 +1,11 @@
+--- modules/Makefile.in.orig	2021-07-15 11:55:11 UTC
++++ modules/Makefile.in
+@@ -1137,7 +1137,7 @@ uninstall-am: uninstall-pkglibLTLIBRARIES
+ .PRECIOUS: Makefile
+ 
+ 
+-.NOTPARALLEL: libscilab-cli.la libscilab.la
++.NOTPARALLEL:
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
