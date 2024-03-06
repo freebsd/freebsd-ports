@@ -4,8 +4,8 @@
  ruby '>= 2.5.0', '< 3.2.0'
  gem 'bundler', '>= 1.12.0'
  
--gem 'rails', '6.1.7.6'
-+gem 'rails', '>=6.1.6'
+-gem 'rails', '6.1.7.7'
++gem 'rails', '>=6.1.7'
  gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::Version.new('2.6.0')
 -gem 'rouge', '~> 3.28.0'
 +gem 'rouge', '>= 3.28.0'
@@ -15,7 +15,7 @@
  gem 'roadie-rails', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 2.2.0' : '~> 3.0.0')
  gem 'marcel'
 -gem "mail", "~> 2.7.1"
-+gem "mail", ">= 2.7"
++gem "mail", ">= 2.7.1"
  gem 'csv', '~> 3.2.0'
  gem 'nokogiri', (if Gem.ruby_version < Gem::Version.new('2.6.0')
                     '~> 1.12.5'
@@ -24,7 +24,7 @@
 +                   '>= 1.13.9'
                   else
 -                   '~> 1.15.2'
-+                   '~> 1.15'
++                   '>= 1.15'
                   end)
  gem "rexml", require: false if Gem.ruby_version >= Gem::Version.new('3.0')
 -gem 'i18n', '~> 1.10.0'

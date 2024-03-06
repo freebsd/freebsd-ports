@@ -1634,7 +1634,7 @@
 %%WWWDIR%%/public/javascripts/i18n/datepicker-vi.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-CN.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-TW.js
-%%WWWDIR%%/public/javascripts/jquery-3.6.1-ui-1.13.2-ujs-6.1.7.js
+%%WWWDIR%%/public/javascripts/jquery-3.6.1-ui-1.13.2-ujs-6.1.7.6.js
 %%WWWDIR%%/public/javascripts/jstoolbar/common_mark.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
