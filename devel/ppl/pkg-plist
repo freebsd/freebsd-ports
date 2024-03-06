@@ -12,11 +12,11 @@ lib/libppl_c.a
 lib/libppl_c.so
 lib/libppl_c.so.4
 lib/libppl_c.so.4.0.0
-man/man1/ppl-config.1.gz
-man/man1/ppl_lcdd.1.gz
-man/man1/ppl_lpsol.1.gz
-man/man1/ppl_pips.1.gz
-man/man3/libppl.3.gz
-man/man3/libppl_c.3.gz
 share/aclocal/ppl.m4
 share/aclocal/ppl_c.m4
+share/man/man1/ppl-config.1.gz
+share/man/man1/ppl_lcdd.1.gz
+share/man/man1/ppl_lpsol.1.gz
+share/man/man1/ppl_pips.1.gz
+share/man/man3/libppl.3.gz
+share/man/man3/libppl_c.3.gz
