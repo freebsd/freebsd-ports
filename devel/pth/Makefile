@@ -1,6 +1,6 @@
 PORTNAME=	pth
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 PKGNAMESUFFIX?=	# empty
@@ -12,6 +12,7 @@ WWW=		https://www.gnu.org/software/pth/
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-optimize \
 		--enable-batch \
 		--includedir="${PREFIX}/include/pth" \
