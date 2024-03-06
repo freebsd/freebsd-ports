@@ -1,8 +1,7 @@
 PORTNAME=	bip
-DISTVERSION=	0.9.0-rc4
-PORTREVISION=	1
+DISTVERSION=	0.9.1
 CATEGORIES=	irc
-MASTER_SITES=	https://projects.duckcorp.org/attachments/download/97/
+MASTER_SITES=	https://projects.duckcorp.org/attachments/download/102/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
