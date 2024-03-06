@@ -1,5 +1,6 @@
 PORTNAME=	picolisp
 PORTVERSION=	23.12
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://software-lab.de/
 DISTNAME=	picoLisp-${PORTVERSION}
@@ -39,7 +40,7 @@ do-install:
 	${LN} -s ../lib/picolisp/bin/picolisp ${STAGEDIR}${PREFIX}/bin/
 	${LN} -s ../lib/picolisp/bin/pil ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
-	${LN} -s ../../lib/picolisp/man/man1/picolisp.1.gz ${STAGEDIR}/${PREFIX}/man/man1
-	${LN} -s ../../lib/picolisp/man/man1/pil.1.gz ${STAGEDIR}/${PREFIX}/man/man1
+	${LN} -s ../../lib/picolisp/man/man1/picolisp.1.gz ${STAGEDIR}/${PREFIX}/share/man/man1
+	${LN} -s ../../lib/picolisp/man/man1/pil.1.gz ${STAGEDIR}/${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

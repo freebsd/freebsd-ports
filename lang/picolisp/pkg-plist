@@ -163,5 +163,5 @@ lib/picolisp/misc/bigtest
 lib/picolisp/misc/stress.l
 lib/picolisp/pil
 lib/picolisp/vip
-man/man1/picolisp.1.gz
-man/man1/pil.1.gz
+share/man/man1/picolisp.1.gz
+share/man/man1/pil.1.gz
