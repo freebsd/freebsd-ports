@@ -1,7 +1,6 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
-DISTVERSION=	13-4-1
-PORTREVISION=	8
+DISTVERSION=	15-1-0
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,6 +51,7 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
 CMAKE_ARGS+=	-DTrilinos_ENABLE_ALL_PACKAGES:BOOL=ON
 CMAKE_ARGS+=	-DTrilinos_ENABLE_ALL_OPTIONAL_PACKAGES:BOOL=ON
 CMAKE_ARGS+=	-DTrilinos_ENABLE_SEACAS:BOOL=OFF # because of pumagon, etc failure (need to retest)
+CMAKE_ARGS+=	-DTrilinos_ENABLE_PyTrilinos:BOOL=OFF # workaround for https://github.com/trilinos/Trilinos/issues/12184
 
 # parallelism-related
 CMAKE_ARGS+=	-DTrilinos_ENABLE_OpenMP:BOOL=OFF

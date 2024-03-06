@@ -1,7 +1,7 @@
 PORTNAME=	xyce
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	7.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ TEST_DEPENDS=	git:devel/git \
 
 USES=		autoreconf bison gmake fortran libtool localbase perl5 python:test # GNU tools should be used for 7.5 and on until the cmake build is declared stable
 USE_CXXSTD=	c++14 # otherwise configure fails because of c++14 features like std::conditional_t
+USE_CXXSTD=	c++17 # workaround for https://github.com/Xyce/Xyce/issues/97, which occurred when Trilinos was updated to 15.1.0
 USE_LDCONFIG=	yes
 USE_PERL5=	test
 
