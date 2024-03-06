@@ -21,6 +21,8 @@ X11_USES=		xorg
 X11_USE=		XORG=x11,xext,xorgproto
 X11_MESON_ENABLED=	x11 glx
 
+TESTING_UNSAFE=	requires X11 running
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc || ${ARCH} == riscv64
