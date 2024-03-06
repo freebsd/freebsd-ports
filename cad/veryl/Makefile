@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ WRKSRC_SUBDIR=	crates/veryl
 CARGO_CRATES=	Inflector-0.11.4 \
 		addr2line-0.21.0 \
 		adler-1.0.2 \
-		ahash-0.8.10 \
+		ahash-0.8.11 \
 		aho-corasick-1.1.2 \
 		ammonia-3.3.0 \
 		android-tzdata-0.1.1 \
@@ -34,7 +34,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
 		anyhow-1.0.80 \
-		arc-swap-1.6.0 \
+		arc-swap-1.7.0 \
 		arrayvec-0.7.4 \
 		assert_cmd-2.0.14 \
 		async-channel-2.2.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bytesize-1.3.0 \
 		cast-0.3.0 \
 		castaway-0.2.2 \
-		cc-1.0.88 \
+		cc-1.0.89 \
 		cfg-if-1.0.0 \
 		chrono-0.4.34 \
 		ciborium-0.2.2 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-as-inner-0.6.0 \
 		env_filter-0.1.0 \
 		env_logger-0.10.2 \
-		env_logger-0.11.2 \
+		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		event-listener-5.2.0 \
@@ -205,7 +205,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		home-0.5.9 \
 		hostname-0.3.1 \
 		html5ever-0.26.0 \
-		http-0.2.11 \
+		http-0.2.12 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
@@ -220,7 +220,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
 		imara-diff-0.1.5 \
-		indexmap-2.2.4 \
+		indexmap-2.2.5 \
 		inferno-0.11.19 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -232,7 +232,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is_ci-1.2.0 \
 		itertools-0.10.5 \
 		itoa-1.0.10 \
-		js-sys-0.3.68 \
+		js-sys-0.3.69 \
 		jwalk-0.8.1 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
@@ -261,7 +261,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		new_debug_unreachable-1.0.4 \
 		nix-0.26.4 \
 		nom-7.1.3 \
@@ -289,17 +289,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		paste-1.0.14 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
-		pest-2.7.7 \
-		pest_derive-2.7.7 \
-		pest_generator-2.7.7 \
-		pest_meta-2.7.7 \
+		pest-2.7.8 \
+		pest_derive-2.7.8 \
+		pest_generator-2.7.8 \
+		pest_meta-2.7.8 \
 		petgraph-0.6.4 \
 		phf-0.10.1 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
 		phf_shared-0.10.0 \
-		pin-project-1.1.4 \
-		pin-project-internal-1.1.4 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		plotters-0.3.5 \
@@ -329,7 +329,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		regex-1.10.3 \
-		regex-automata-0.4.5 \
+		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
 		reqwest-0.11.24 \
 		resolv-conf-0.7.0 \
@@ -447,17 +447,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		uuid-1.7.0 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
 		warp-0.3.6 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.91 \
-		wasm-bindgen-backend-0.2.91 \
-		wasm-bindgen-futures-0.4.41 \
-		wasm-bindgen-macro-0.2.91 \
-		wasm-bindgen-macro-support-0.2.91 \
-		wasm-bindgen-shared-0.2.91 \
-		web-sys-0.3.68 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-futures-0.4.42 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		widestring-1.0.2 \
 		winapi-0.3.9 \
