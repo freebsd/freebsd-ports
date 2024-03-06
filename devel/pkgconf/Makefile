@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/p
 
 OPTIONS_DEFINE=	DOCS
 
+TESTING_UNSAFE=	tests/Kyuafile:5: Non-existent test program 'tests/basic'
+
 post-install:
 	${LN} -sf pkgconf ${STAGEDIR}${PREFIX}/bin/pkg-config
 
