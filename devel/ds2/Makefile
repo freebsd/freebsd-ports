@@ -9,6 +9,9 @@ WWW=		https://github.com/facebook/ds2
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream deprecated and archived
+EXPIRATION_DATE=	2024-04-06
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 GH_TAGNAME=	52c45f3
