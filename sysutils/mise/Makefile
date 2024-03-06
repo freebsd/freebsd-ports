@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2.19
+DISTVERSION=	2024.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +33,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
@@ -71,7 +72,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
-		ctor-0.2.6 \
+		ctor-0.2.7 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
 		demand-1.1.0 \
@@ -138,10 +139,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
-		indexmap-2.2.3 \
+		indexmap-2.2.5 \
 		indicatif-0.17.8 \
 		indoc-2.0.4 \
-		insta-1.35.1 \
+		insta-1.36.1 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
 		itertools-0.12.1 \
@@ -155,14 +156,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libz-sys-1.1.15 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
-		log-0.4.20 \
+		log-0.4.21 \
 		memchr-2.7.1 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		native-tls-0.2.11 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
@@ -209,7 +210,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.8.1 \
+		rayon-1.9.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		regex-1.10.3 \
@@ -269,7 +270,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled-0.15.0 \
 		tabled_derive-0.7.0 \
 		tar-0.4.40 \
-		tempfile-3.10.0 \
+		tempfile-3.10.1 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
@@ -323,7 +324,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.91 \
