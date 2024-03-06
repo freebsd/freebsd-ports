@@ -1,5 +1,7 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20240227
+PORTREVISION=	1
+
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -13,12 +15,18 @@ MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
 WWW=		https://yuzu-emu.org/
 
-LICENSE=	APACHE20 BSD3CLAUSE GPLv3+ ISCL MIT UNLICENSE
-LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/sirit/LICENSE.txt
-LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE.txt
-LICENSE_FILE_ISCL=	${WRKSRC}/externals/cubeb/LICENSE
-LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
+#LICENSE=	APACHE20 BSD3CLAUSE GPLv3+ ISCL MIT UNLICENSE
+#LICENSE_COMB=	multi
+#LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/sirit/LICENSE.txt
+#LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE.txt
+#LICENSE_FILE_ISCL=	${WRKSRC}/externals/cubeb/LICENSE
+#LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
+
+LICENSE=	yuzu
+LICENSE_NAME=	yuzu license
+LICENSE_TEXT=	No redistribution
+
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and dynarmic backend
