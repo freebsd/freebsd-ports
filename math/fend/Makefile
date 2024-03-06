@@ -1,6 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
 		bumpalo-3.15.3 \
-		cc-1.0.86 \
+		cc-1.0.89 \
 		cfg-if-1.0.0 \
 		clipboard-win-5.2.0 \
 		core-foundation-0.9.4 \
@@ -28,7 +28,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		endian-type-0.1.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
-		error-code-3.0.0 \
+		error-code-3.2.0 \
 		fastrand-2.0.1 \
 		fd-lock-4.0.2 \
 		foreign-types-0.3.2 \
@@ -38,13 +38,13 @@ CARGO_CRATES=	base64-0.21.7 \
 		hashbrown-0.14.3 \
 		home-0.5.9 \
 		idna-0.5.0 \
-		indexmap-2.2.3 \
+		indexmap-2.2.5 \
 		instant-0.1.12 \
-		js-sys-0.3.68 \
+		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
 		linux-raw-sys-0.4.13 \
-		log-0.4.20 \
+		log-0.4.21 \
 		memchr-2.7.1 \
 		native-tls-0.2.11 \
 		nibble_vec-0.1.0 \
@@ -66,7 +66,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		ring-0.17.8 \
 		rustix-0.38.31 \
 		rustls-0.22.2 \
-		rustls-pki-types-1.3.0 \
+		rustls-pki-types-1.3.1 \
 		rustls-webpki-0.102.2 \
 		rustyline-13.0.0 \
 		schannel-0.1.23 \
@@ -78,8 +78,8 @@ CARGO_CRATES=	base64-0.21.7 \
 		smallvec-1.13.1 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
-		syn-2.0.50 \
-		tempfile-3.10.0 \
+		syn-2.0.52 \
+		tempfile-3.10.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.10 \
@@ -96,26 +96,26 @@ CARGO_CRATES=	base64-0.21.7 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.91 \
-		wasm-bindgen-backend-0.2.91 \
-		wasm-bindgen-macro-0.2.91 \
-		wasm-bindgen-macro-support-0.2.91 \
-		wasm-bindgen-shared-0.2.91 \
-		web-sys-0.3.68 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		web-sys-0.3.69 \
 		webpki-roots-0.26.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.52.3 \
-		windows_aarch64_gnullvm-0.52.3 \
-		windows_aarch64_msvc-0.52.3 \
-		windows_i686_gnu-0.52.3 \
-		windows_i686_msvc-0.52.3 \
-		windows_x86_64_gnu-0.52.3 \
-		windows_x86_64_gnullvm-0.52.3 \
-		windows_x86_64_msvc-0.52.3 \
-		winnow-0.6.2 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.6.5 \
 		zeroize-1.7.0
 
 OPENSSLINC=	/usr/include
