@@ -71,7 +71,7 @@
 +
 +wsdd_start()
 +{
-+	echo -n "Starting ${name}."
++	echo "Starting ${name}."
 +	/usr/sbin/daemon -u _wsdd -S -p ${pidfile} ${command} ${wsdd_opts}
 +}
 +
