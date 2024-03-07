@@ -1,3 +1,36 @@
+  <vuln vid="e74da31b-276a-4a22-9772-17dd42b97559">
+    <topic>electron{27,28} -- vulnerability in libxml2</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.5</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.5">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-25062.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25062</cvename>
+      <url>https://github.com/advisories/GHSA-x77r-6xxm-wjmx</url>
+    </references>
+    <dates>
+      <discovery>2024-03-06</discovery>
+      <entry>2024-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2caae55-dc38-11ee-96dc-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
