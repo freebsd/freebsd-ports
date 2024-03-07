@@ -1,6 +1,5 @@
 bin/le
 @comment lib/charset.alias
-man/man1/le.1.gz
 @comment share/applications/le.desktop
 @comment share/icons/hicolor/48x48/apps/le-icon.png
 %%DATADIR%%/colors-black
@@ -56,3 +55,4 @@ man/man1/le.1.gz
 %%DATADIR%%/syntax.d/texinfo
 %%DATADIR%%/syntax.d/txt2tags
 %%DATADIR%%/syntax.d/verilog
+share/man/man1/le.1.gz
