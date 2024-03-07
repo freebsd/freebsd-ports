@@ -1,3 +1,6 @@
+%%ACCOUNTS%%%%QT_PLUGINDIR%%/attica_kde.so
+%%ACCOUNTS%%share/accounts/providers/kde/opendesktop.provider
+%%ACCOUNTS%%share/accounts/services/kde/opendesktop-rating.service
 bin/kaccess
 bin/kapplymousetheme
 bin/kcm-touchpad-list-devices
@@ -11,7 +14,6 @@ lib/libexec/kauth/kcmdatetimehelper
 %%IBUS%%lib/libexec/kimpanel-ibus-panel
 %%IBUS%%lib/libexec/kimpanel-ibus-panel-launcher
 %%SCIM%%lib/libexec/kimpanel-scim-panel
-%%ACCOUNTS%%%%QT_PLUGINDIR%%/attica_kde.so
 %%QT_PLUGINDIR%%/kf5/kded/device_automounter.so
 %%QT_PLUGINDIR%%/kf5/kded/kded_touchpad.so
 %%QT_PLUGINDIR%%/kf5/kded/keyboard.so
@@ -64,8 +66,6 @@ lib/libexec/kauth/kcmdatetimehelper
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/desktop/qmldir
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/libfolderplugin.so
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/qmldir
-%%ACCOUNTS%%share/accounts/providers/kde/opendesktop.provider
-%%ACCOUNTS%%share/accounts/services/kde/opendesktop-rating.service
 share/applications/kcm_access.desktop
 share/applications/kcm_activities.desktop
 share/applications/kcm_baloofile.desktop
@@ -326,6 +326,8 @@ share/doc/HTML/et/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-actions/index.docbook
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.docbook
+share/doc/HTML/fr/kcontrol/kded/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kded/index.docbook
 share/doc/HTML/id/kcontrol/baloo/index.cache.bz2
 share/doc/HTML/id/kcontrol/baloo/index.docbook
 share/doc/HTML/id/kcontrol/clock/index.cache.bz2
@@ -1894,11 +1896,13 @@ share/locale/hu/LC_MESSAGES/kcm_keys.mo
 share/locale/hu/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/hu/LC_MESSAGES/kcm_landingpage.mo
 share/locale/hu/LC_MESSAGES/kcm_plasmasearch.mo
+share/locale/hu/LC_MESSAGES/kcm_recentFiles.mo
 share/locale/hu/LC_MESSAGES/kcm_smserver.mo
 share/locale/hu/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hu/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_tablet.mo
 share/locale/hu/LC_MESSAGES/kcm_touchpad.mo
+share/locale/hu/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_workspace.mo
 share/locale/hu/LC_MESSAGES/kcmkclock.mo
 share/locale/hu/LC_MESSAGES/kcmkeyboard.mo
