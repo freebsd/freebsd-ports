@@ -3,14 +3,13 @@ bin/lftpget
 @sample etc/lftp.conf.sample
 lib/liblftp-jobs.a
 lib/liblftp-tasks.a
+share/applications/lftp.desktop
+share/icons/hicolor/48x48/apps/lftp-icon.png
 %%DATADIR%%/convert-mozilla-cookies
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
 %%DATADIR%%/verify-file
 %%DATADIR%%/xdg-move
-man/man1/lftp.1.gz
-man/man1/lftpget.1.gz
-man/man5/lftp.conf.5.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lftp.mo
@@ -25,5 +24,6 @@ man/man5/lftp.conf.5.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
-share/applications/lftp.desktop
-share/icons/hicolor/48x48/apps/lftp-icon.png
+share/man/man1/lftp.1.gz
+share/man/man1/lftpget.1.gz
+share/man/man5/lftp.conf.5.gz
