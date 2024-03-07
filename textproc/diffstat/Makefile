@@ -2,7 +2,7 @@ PORTNAME=	diffstat
 PORTVERSION=	1.66
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/ \
-		ftp://ftp.invisible-island.net/${PORTNAME}/
+		https://invisible-mirror.net/archives/${PORTNAME}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
