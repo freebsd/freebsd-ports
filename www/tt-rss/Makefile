@@ -1,8 +1,9 @@
 PORTNAME=	tt-rss
 PORTVERSION=	g20240221
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	www
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
@@ -12,7 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 
-USES=		gettext-tools php:cli,web shebangfix
+USES=		gettext-tools php:cli,web,flavors shebangfix
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
