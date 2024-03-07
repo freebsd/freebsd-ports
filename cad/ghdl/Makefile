@@ -1,7 +1,6 @@
 PORTNAME=	ghdl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	2
+DISTVERSION=	4.0.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +42,7 @@ SYNTH_DESC=		Enable Synthesis Features in ghdl
 SYNTH_CONFIGURE_ON=	--enable-synth
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-3_0_0.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-4_0_0.so
 
 post-install-MCODE-on:
 	@${STRIP_CMD} \
