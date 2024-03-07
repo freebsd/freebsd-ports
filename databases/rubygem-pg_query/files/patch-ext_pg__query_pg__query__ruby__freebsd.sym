@@ -1,0 +1,5 @@
+--- ext/pg_query/pg_query_ruby_freebsd.sym.orig	2024-03-07 07:21:50 UTC
++++ ext/pg_query/pg_query_ruby_freebsd.sym
+@@ -1,2 +1 @@
+-_Init_pg_query
+ Init_pg_query
