@@ -29,24 +29,6 @@ lib/gdnsd/plugin_static.so
 lib/gdnsd/plugin_tcp_connect.so
 lib/gdnsd/plugin_weighted.so
 libexec/gdnsd/gdnsd_extmon_helper
-man/man1/gdnsd_geoip_test.1.gz
-man/man3/gdnsd-plugin-api.3.gz
-man/man5/gdnsd.config.5.gz
-man/man5/gdnsd.djbdns.5.gz
-man/man5/gdnsd.zonefile.5.gz
-man/man8/gdnsd-plugin-extfile.8.gz
-man/man8/gdnsd-plugin-extmon.8.gz
-man/man8/gdnsd-plugin-geoip.8.gz
-man/man8/gdnsd-plugin-http_status.8.gz
-man/man8/gdnsd-plugin-metafo.8.gz
-man/man8/gdnsd-plugin-multifo.8.gz
-man/man8/gdnsd-plugin-null.8.gz
-man/man8/gdnsd-plugin-reflect.8.gz
-man/man8/gdnsd-plugin-simplefo.8.gz
-man/man8/gdnsd-plugin-static.8.gz
-man/man8/gdnsd-plugin-tcp_connect.8.gz
-man/man8/gdnsd-plugin-weighted.8.gz
-man/man8/gdnsd.8.gz
 sbin/gdnsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -54,6 +36,24 @@ sbin/gdnsd
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.txt
+share/man/man1/gdnsd_geoip_test.1.gz
+share/man/man3/gdnsd-plugin-api.3.gz
+share/man/man5/gdnsd.config.5.gz
+share/man/man5/gdnsd.djbdns.5.gz
+share/man/man5/gdnsd.zonefile.5.gz
+share/man/man8/gdnsd-plugin-extfile.8.gz
+share/man/man8/gdnsd-plugin-extmon.8.gz
+share/man/man8/gdnsd-plugin-geoip.8.gz
+share/man/man8/gdnsd-plugin-http_status.8.gz
+share/man/man8/gdnsd-plugin-metafo.8.gz
+share/man/man8/gdnsd-plugin-multifo.8.gz
+share/man/man8/gdnsd-plugin-null.8.gz
+share/man/man8/gdnsd-plugin-reflect.8.gz
+share/man/man8/gdnsd-plugin-simplefo.8.gz
+share/man/man8/gdnsd-plugin-static.8.gz
+share/man/man8/gdnsd-plugin-tcp_connect.8.gz
+share/man/man8/gdnsd-plugin-weighted.8.gz
+share/man/man8/gdnsd.8.gz
 @dir %%ETCDIR%%/djbdns
 @dir %%ETCDIR%%/geoip
 @dir %%ETCDIR%%/zones

@@ -1,5 +1,6 @@
 PORTNAME=	gdnsd
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		ZI \
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	ragel>0:devel/ragel
 FETCH_ARGS=	-Fpr
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_LDCONFIG=	yes
 USES=		cpe pkgconfig libtool tar:xz perl5 gmake
