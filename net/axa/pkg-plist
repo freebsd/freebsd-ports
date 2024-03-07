@@ -29,10 +29,10 @@ lib/libaxa.so
 lib/libaxa.so.3
 lib/libaxa.so.3.0.1
 libdata/pkgconfig/libaxa.pc
-man/man1/radtool.1.gz
-man/man1/radtunnel.1.gz
-man/man1/sratool.1.gz
-man/man1/sratunnel.1.gz
-man/man8/axa_link_certs.8.gz
-man/man8/axa_make_cert.8.gz
-man/man8/axa_server_cert.8.gz
+share/man/man1/radtool.1.gz
+share/man/man1/radtunnel.1.gz
+share/man/man1/sratool.1.gz
+share/man/man1/sratunnel.1.gz
+share/man/man8/axa_link_certs.8.gz
+share/man/man8/axa_make_cert.8.gz
+share/man/man8/axa_server_cert.8.gz
