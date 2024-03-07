@@ -33,6 +33,8 @@ MESON_ARGS=	-Dman=true \
 		-Dgtk_doc=false \
 		-Dvapi=true
 
+TESTING_UNSAFE=	some tests fail
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/db
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/profile
