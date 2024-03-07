@@ -1,6 +1,6 @@
 PORTNAME=	wrapsrv
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	docbook2mdoc:textproc/docbook2mdoc
 
-PLIST_FILES=	bin/wrapsrv man/man1/wrapsrv.1.gz
+PLIST_FILES=	bin/wrapsrv share/man/man1/wrapsrv.1.gz
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wrapsrv
