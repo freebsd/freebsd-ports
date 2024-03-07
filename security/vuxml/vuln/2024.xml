@@ -1,3 +1,33 @@
+  <vuln vid="b2caae55-dc38-11ee-96dc-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.9.0</ge><lt>16.9.2</lt></range>
+	<range><ge>16.8.0</ge><lt>16.8.4</lt></range>
+	<range><ge>11.3.0</ge><lt>16.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/03/06/security-release-gitlab-16-9-2-released/">
+	  <p>Bypassing CODEOWNERS approval allowing to steal protected variables</p>
+	  <p>Guest with manage group access tokens can rotate and see group access token with owner permissions</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0199</cvename>
+      <cvename>CVE-2024-1299</cvename>
+      <url>https://about.gitlab.com/releases/2024/03/06/security-release-gitlab-16-9-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-03-06</discovery>
+      <entry>2024-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b1b039ec-dbfc-11ee-9165-901b0e9408dc">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
