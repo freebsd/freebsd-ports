@@ -1,8 +1,6 @@
 PORTNAME=	greptimedb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0-nightly-20240115-102
-DISTVERSIONSUFFIX=	-g29f11d7b7e
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -273,6 +271,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		frunk_proc_macro_helpers-0.1.2 \
 		frunk_proc_macros-0.1.2 \
 		fs2-0.4.3 \
+		fsevent-sys-4.1.0 \
 		fst-0.4.7 \
 		funty-2.0.0 \
 		futures-0.3.30 \
@@ -342,6 +341,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		indicatif-0.17.7 \
 		indoc-1.0.9 \
 		inferno-0.11.19 \
+		inotify-0.9.6 \
+		inotify-sys-0.1.5 \
 		instant-0.1.12 \
 		integer-encoding-3.0.4 \
 		integer-encoding-4.0.0 \
@@ -363,6 +364,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		jsonwebtoken-9.2.0 \
 		keccak-0.1.4 \
 		keyed_priority_queue-0.4.2 \
+		kqueue-1.0.8 \
+		kqueue-sys-1.0.4 \
 		lalrpop-0.19.12 \
 		lalrpop-util-0.19.12 \
 		lattices-0.5.0 \
@@ -375,7 +378,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
 		libc-0.2.151 \
-		libgit2-sys-0.16.1+1.7.1 \
+		libgit2-sys-0.16.2+1.7.2 \
 		libloading-0.7.4 \
 		libm-0.2.8 \
 		libredox-0.0.1 \
@@ -416,7 +419,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		mockall-0.11.4 \
 		mockall_derive-0.11.4 \
 		moka-0.12.1 \
@@ -424,8 +427,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		multimap-0.8.3 \
 		mur3-0.1.0 \
 		mysql-common-derive-0.30.2 \
+		mysql-common-derive-0.31.0 \
 		mysql_async-0.33.0 \
 		mysql_common-0.31.0 \
+		mysql_common-0.32.0 \
 		nalgebra-0.29.0 \
 		nalgebra-macros-0.1.0 \
 		ndk-context-0.1.1 \
@@ -436,6 +441,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nix-0.26.4 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
+		notify-6.1.1 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.46.0 \
 		num-0.4.1 \
@@ -454,11 +460,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		number_prefix-0.4.0 \
 		objc-0.2.7 \
 		object-0.32.2 \
+		object-pool-0.5.4 \
 		object_store-0.7.1 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		opendal-0.44.2 \
 		openmetrics-parser-0.4.4 \
+		opensrv-mysql-0.7.0 \
 		openssl-probe-0.1.5 \
 		opentelemetry-0.21.0 \
 		opentelemetry-otlp-0.14.0 \
@@ -485,6 +493,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		parquet-47.0.0 \
 		parse-zoneinfo-0.3.0 \
 		paste-1.0.14 \
+		path-slash-0.2.1 \
 		pathdiff-0.2.1 \
 		peeking_take_while-0.1.2 \
 		pem-3.0.3 \
@@ -530,6 +539,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		prettyplease-0.2.15 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-crate-2.0.0 \
+		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.71 \
@@ -940,14 +950,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zstd-safe-6.0.6 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5 \
-		meter-core,meter-macros@git+https://github.com/GreptimeTeam/greptime-meter.git?rev=abbd357c1e193cd270ea65ee7652334a150b628f\#abbd357c1e193cd270ea65ee7652334a150b628f \
 		greptime-proto@git+https://github.com/GreptimeTeam/greptime-proto.git?rev=96f1f0404f421ee560a4310c73c5071e49168168\#96f1f0404f421ee560a4310c73c5071e49168168 \
-		axum-test-helper@git+https://github.com/sunng87/axum-test-helper.git?branch=patch-1\#5aa7843ce2250144ea1b7f589f274c00cf1af4ab \
+		meter-core,meter-macros@git+https://github.com/GreptimeTeam/greptime-meter.git?rev=80b72716dcde47ec4161478416a5c6c21343364d\#80b72716dcde47ec4161478416a5c6c21343364d \
 		sqlparser,sqlparser_derive@git+https://github.com/GreptimeTeam/sqlparser-rs.git?rev=6a93567ae38d42be5c8d08b13c8ff4dde26502ef\#6a93567ae38d42be5c8d08b13c8ff4dde26502ef \
 		datafusion,datafusion-common,datafusion-execution,datafusion-expr,datafusion-optimizer,datafusion-physical-expr,datafusion-physical-plan,datafusion-sql,datafusion-substrait@git+https://github.com/apache/arrow-datafusion.git?rev=26e43acac3a96cec8dd4c8365f22dfb1a84306e9\#26e43acac3a96cec8dd4c8365f22dfb1a84306e9 \
 		influxdb_line_protocol@git+https://github.com/evenyag/influxdb_iox?branch=feat/line-protocol\#10ef0d0b02705ac7518717390939fa3a9bcfcacc \
 		rustpython-doc@git+https://github.com/RustPython/__doc__?branch=main\#8b62ce5d796d68a091969c9fa5406276cb483f79 \
-		opensrv-mysql@git+https://github.com/MichaelScofield/opensrv.git?rev=1676c1d\#1676c1d166cf33e7745e1b5db54b3fe2b7defec9 \
 		rustpython-ast,rustpython-codegen,rustpython-common,rustpython-compiler,rustpython-compiler-core,rustpython-derive,rustpython-derive-impl,rustpython-parser,rustpython-pylib,rustpython-stdlib,rustpython-vm@git+https://github.com/discord9/RustPython?rev=9ed5137412\#9ed51374125b5f1a9e5cee5dd7e27023b8591f1e \
 		unicode_names2@git+https://github.com/youknowone/unicode_names2.git?rev=4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde\#4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde \
 		opentelemetry,opentelemetry-proto,opentelemetry_sdk@git+https://github.com/waynexia/opentelemetry-rust.git?rev=33841b38dda79b15f2024952be5f32533325ca02\#33841b38dda79b15f2024952be5f32533325ca02
