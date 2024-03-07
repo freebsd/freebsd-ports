@@ -1,4 +1,4 @@
---- jfaudiolib/Makefile.shared.orig	2021-12-25 07:53:32 UTC
+--- jfaudiolib/Makefile.shared.orig	2024-01-26 10:45:42 UTC
 +++ jfaudiolib/Makefile.shared
 @@ -7,8 +7,12 @@ JFAUDIOLIB_LDFLAGS=
  JFAUDIOLIB=libjfaudiolib.a
@@ -13,5 +13,5 @@
 +PKGCONFIG!=which pkg-config || which false
 +endif
  
- machine=$(strip $(shell $(CC) -dumpmachine))
- 
+ TARGETMACHINE?=$(strip $(shell $(CC) -dumpmachine))
+ export TARGETMACHINE
