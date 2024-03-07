@@ -80,6 +80,8 @@ X11_USES=	xorg
 X11_USE=	XORG=x11,xcomposite,xcursor,xdamage,xext,xfixes,xi,xinerama,xrandr,xrender
 X11_MESON_TRUE=	x11_backend
 
+TESTING_UNSAFE=	ld: error: unable to find library -lintl
+
 pre-build:
 	@${RM} -r ${WRKSRC}/docs/gtk.info*
 
