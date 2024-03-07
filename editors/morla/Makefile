@@ -1,6 +1,6 @@
 PORTNAME=	morla
 PORTVERSION=	0.16.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -31,6 +31,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20 libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-gconf=none --with-gtkhtml=none
 
 DESKTOP_ENTRIES="morla" \
