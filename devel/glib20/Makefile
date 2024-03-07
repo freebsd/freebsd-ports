@@ -1,5 +1,5 @@
 PORTNAME=	glib
-DISTVERSION=	2.78.4
+DISTVERSION=	2.80.0
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -11,8 +11,10 @@ WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libpcre2-8.so:devel/pcre2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
@@ -25,6 +27,7 @@ USE_PYTHON=	py3kplist
 MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
 		-Dinstalled_tests=false \
+		-Dintrospection=disabled \
 		-Dlibmount=disabled \
 		-Dlocalstatedir=/var \
 		-Druntime_dir=/var/run \
@@ -36,7 +39,7 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.7800.4
+_LIBVERSION=	0.8000.0
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
 OPTIONS_DEFINE=		DEBUG GTKDOC FAM_ALTBACKEND MANPAGES NLS TEST
@@ -45,14 +48,12 @@ OPTIONS_SUB=		yes
 
 GTKDOC_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 GTKDOC_IMPLIES=		TEST
-GTKDOC_MESON_TRUE=	gtk_doc
+GTKDOC_MESON_TRUE=	documentation
 
 FAM_ALTBACKEND_DESC=	Alternate file monitor backend
 
-MANPAGES_BUILD_DEPENDS=	docbook-xml>4.1.2:textproc/docbook-xml \
-			docbook-xsl>0:textproc/docbook-xsl
-MANPAGES_USE=		GNOME=libxslt:build
-MANPAGES_MESON_TRUE=	man
+MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
+MANPAGES_MESON_ENABLED=	man-pages
 
 TEST_BUILD_DEPENDS=	dbus-daemon:devel/dbus
 TEST_MESON_TRUE=	tests
