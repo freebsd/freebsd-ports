@@ -1,6 +1,6 @@
 PORTNAME=	koka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.4
+DISTVERSION=	3.1.1
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ USE_CABAL=	Diff-0.5_1 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.2_2 \
 		aeson-2.2.1.0_1 \
-		alex-3.5.0.0 \
+		alex-3.5.1.0 \
 		assoc-1.1_1 \
 		async-2.2.5 \
 		attoparsec-0.14.4_5 \
@@ -36,6 +36,7 @@ USE_CABAL=	Diff-0.5_1 \
 		bifunctors-5.6.1_2 \
 		boring-0.2.1_1 \
 		call-stack-0.4.0 \
+		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.3 \
 		co-log-core-0.3.2.1 \
 		comonad-5.0.8_2 \
@@ -52,9 +53,10 @@ USE_CABAL=	Diff-0.5_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_1 \
 		entropy-0.4.1.10_1 \
-		file-embed-0.0.15.0 \
+		file-embed-0.0.16.0 \
 		foldable1-classes-compat-0.1_4 \
 		free-5.2_3 \
+		generic-arbitrary-1.0.1 \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
 		generically-0.1.1_2 \
@@ -70,8 +72,8 @@ USE_CABAL=	Diff-0.5_1 \
 		kan-extensions-5.2.5_2 \
 		lens-5.2.3_2 \
 		lens-aeson-1.2.3_2 \
-		lsp-2.3.0.0_1 \
-		lsp-types-2.1.0.0 \
+		lsp-2.4.0.0 \
+		lsp-types-2.1.1.0 \
 		mod-0.2.0.1 \
 		network-3.1.4.0_1 \
 		network-bsd-2.8.1.0_5 \
@@ -79,18 +81,20 @@ USE_CABAL=	Diff-0.5_1 \
 		network-simple-0.4.5 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
+		old-time-1.1.0.4 \
 		parallel-3.2.2.0_7 \
 		prettyprinter-1.7.1 \
 		primitive-0.9.0.0 \
 		profunctors-5.6.2_3 \
-		random-1.2.1.1_1 \
+		quickcheck-instances-0.3.30_1 \
+		random-1.2.1.2 \
 		reflection-2.1.7_1 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.2_4 \
 		regex-pcre-builtin-0.95.2.3.8.44_6 \
 		regex-tdfa-1.3.2.2_2 \
 		row-types-1.0.1.2_1 \
-		safe-0.3.21 \
+		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.7.0_7 \
 		semialign-1.3_1 \

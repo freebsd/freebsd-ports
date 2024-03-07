@@ -372,6 +372,7 @@ libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/sslice.js
 libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/string.c
 libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/string.h
 libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/string.js
+libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/types-cctx.c
 libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/types-cctx.h
 libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/types-cctx.js
 libexec/cabal/share/koka/%%VER%%/lib/std/core/inline/types.js
