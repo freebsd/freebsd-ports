@@ -1,5 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20240301
+PORTREVISION=	1
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -144,6 +145,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1,ConsoleKit,' \
 		${WRKSRC}/src/${PORTNAME}/main.cpp
+.ifdef DEPRECATED
+	@${GREP} -Flr 'yuzu-emu' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,${WWW:S,/$,,},https://web.archive.org/web/20240304190805/&,g' \
+		-e 's,https://api.yuzu-emu.org,,g' \
+		-e 's,https://profile.yuzu-emu.org/,,g' \
+		-e 's,\(https://github.com\)/\(yuzu-emu\),\1/${GH_ACCOUNT},g'
+.endif
 
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
