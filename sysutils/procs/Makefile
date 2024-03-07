@@ -1,8 +1,6 @@
 PORTNAME=	procs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.4-47
-DISTVERSIONSUFFIX=	-g17321db
-PORTREVISION=	1
+DISTVERSION=	0.14.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +30,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.79 \
+		anyhow-1.0.80 \
 		arrayvec-0.7.4 \
 		async-channel-1.9.0 \
 		async-channel-2.1.1 \
@@ -59,10 +57,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		blocking-1.5.1 \
 		borsh-1.3.0 \
 		borsh-derive-1.3.0 \
-		bsd-kvm-0.1.4 \
+		bsd-kvm-0.1.5 \
 		bsd-kvm-sys-0.2.0 \
 		bumpalo-3.14.0 \
-		byte-unit-5.1.3 \
+		byte-unit-5.1.4 \
 		bytecheck-0.6.11 \
 		bytecheck_derive-0.6.11 \
 		byteorder-1.5.0 \
@@ -71,7 +69,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		chrono-0.4.31 \
+		chrono-0.4.35 \
 		clang-sys-1.7.0 \
 		clap-4.4.14 \
 		clap_builder-4.4.14 \
@@ -85,14 +83,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.11 \
 		crossbeam-utils-0.8.19 \
-		crossterm-0.19.0 \
 		crossterm-0.27.0 \
-		crossterm_winapi-0.7.0 \
 		crossterm_winapi-0.9.1 \
 		directories-5.0.1 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
-		dockworker-0.3.0 \
+		dockworker-0.5.0 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
@@ -148,7 +144,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libloading-0.8.1 \
 		libproc-0.14.2 \
 		libredox-0.0.1 \
@@ -161,14 +157,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
 		minus-5.5.3 \
-		mio-0.7.14 \
-		mio-0.8.10 \
-		miow-0.3.7 \
+		mio-0.8.11 \
 		named_pipe-0.4.1 \
 		nix-0.26.4 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		nom-7.1.3 \
-		ntapi-0.3.7 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		object-0.32.2 \
@@ -176,9 +169,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		option-ext-0.2.0 \
 		pager-0.16.1 \
 		parking-2.2.0 \
-		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.9 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-2.3.1 \
@@ -204,11 +195,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.2.16 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.4 \
 		regex-syntax-0.8.2 \
 		rend-0.4.1 \
 		rkyv-0.7.43 \
@@ -217,16 +207,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.27 \
-		rustix-0.38.28 \
+		rustix-0.38.30 \
 		ryu-1.0.16 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
 		serde_json-1.0.111 \
 		serde_spanned-0.6.5 \
-		shlex-1.2.0 \
-		signal-hook-0.1.17 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
@@ -241,21 +230,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn_derive-0.1.8 \
 		tap-1.0.1 \
 		tar-0.4.40 \
-		termbg-0.4.4 \
+		termbg-0.5.0 \
 		termios-0.3.3 \
 		textwrap-0.16.0 \
 		thiserror-1.0.56 \
 		thiserror-impl-1.0.56 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.1 \
+		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-stream-0.1.14 \
 		tokio-util-0.7.10 \
-		toml-0.8.8 \
+		toml-0.8.10 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.20.7 \
-		toml_edit-0.21.0 \
+		toml_edit-0.22.4 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -282,7 +271,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-shared-0.2.89 \
 		web-sys-0.3.66 \
 		which-4.4.2 \
-		which-5.0.0 \
+		which-6.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
