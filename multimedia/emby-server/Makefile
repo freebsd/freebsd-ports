@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION?=	4.8.3.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -82,6 +82,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-sndio \
 		--disable-v4l2-m2m \
 		--disable-vdpau \
+		--disable-vulkan \
 		--disable-xlib \
 		--enable-chromaprint \
 		--enable-fontconfig \
