@@ -8,6 +8,9 @@ MASTER_SITES=	GENTOO \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 
+DEPRECATED=	No upstream updates since 1995.  Switch to misc/mbuffer
+EXPIRATION_DATE=2024-03-31
+
 USES=		tar:tgz
 PLIST_FILES=	bin/buffer \
 		share/man/man1/buffer.1.gz
