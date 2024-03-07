@@ -1,6 +1,6 @@
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf:2.69 cpe gettext-tools libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --datadir=${PREFIX}/lib \
 		--disable-bonjour --disable-static
 INSTALL_TARGET=	install-strip
