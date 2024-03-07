@@ -16,6 +16,15 @@ error[E0658]: cannot cast `dyn ai::Action<S, R>` to `dyn std::any::Any`, trait u
     = help: add `#![feature(trait_upcasting)]` to the crate attributes to enable
     = note: required when coercing `&(dyn ai::Action<S, R> + 'static)` into `&(dyn std::any::Any + 'static)`
 
+error[E0658]: use of unstable library feature 'result_option_inspect'
+   --> server/src/sys/terrain.rs:573:34
+    |
+573 | ...                   .inspect_err(|data| {
+    |                        ^^^^^^^^^^^
+    |
+    = note: see issue #91345 <https://github.com/rust-lang/rust/issues/91345> for more information
+    = help: add `#![feature(result_option_inspect)]` to the crate attributes to enable
+
 --- rtsim/src/lib.rs.orig	2024-02-07 19:13:27 UTC
 +++ rtsim/src/lib.rs
 @@ -2,6 +2,7 @@
@@ -26,3 +35,13 @@ error[E0658]: cannot cast `dyn ai::Action<S, R>` to `dyn std::any::Any`, trait u
      control_flow_enum,
      let_chains,
      binary_heap_drain_sorted,
+--- server/src/lib.rs.orig	2024-03-06 20:35:41 UTC
++++ server/src/lib.rs
+@@ -10,6 +10,7 @@
+     let_chains,
+     never_type,
+     option_zip,
++    result_option_inspect,
+     unwrap_infallible,
+     const_type_name
+ )]
