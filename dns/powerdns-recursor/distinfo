@@ -1,6 +1,6 @@
-TIMESTAMP = 1707840036
-SHA256 (pdns-recursor-5.0.2.tar.bz2) = a90e8b61fdc181b596144c35920118ca71c3b95f46658cce7e8222750de45ca9
-SIZE (pdns-recursor-5.0.2.tar.bz2) = 1688010
+TIMESTAMP = 1709817341
+SHA256 (pdns-recursor-5.0.3.tar.bz2) = 01d170a2850eb2aca501d6838a3444136589980d5cb2c2b53392b76459e38c07
+SIZE (pdns-recursor-5.0.3.tar.bz2) = 1682741
 SHA256 (rust/crates/cc-1.0.84.crate) = 0f8e7c90afad890484a21653d08b6e209ae34770fb5ee298f9c699fcc1e5c856
 SIZE (rust/crates/cc-1.0.84.crate) = 74922
 SHA256 (rust/crates/codespan-reporting-0.11.1.crate) = 3538270d33cc669650c4b093848450d380def10c331d38c768e34cac80576e6e
