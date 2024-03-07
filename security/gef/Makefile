@@ -1,3 +1,6 @@
+.ifndef SLAVE_PORT
+IGNORE= is replaced by security/gef-meta on CheriBSD
+
 PORTNAME=	gef
 DISTVERSION=	2022.01
 PORTREVISION=	1
@@ -6,6 +9,7 @@ CATEGORIES=	security python
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	GDB Enhanced Features for exploit devs & reversers
 WWW=		https://gef.rtfd.io
+.endif
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,8 +18,10 @@ RUN_DEPENDS=	gdb-cheri>7.7:devel/gdb-cheri
 
 USES=		python:run
 
+.ifndef SLAVE_PORT
 USE_GITHUB=	yes
 GH_ACCOUNT=	hugsy
+.endif
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -34,7 +40,9 @@ OPTIONALDEPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone@${
 				${PYTHON_PKGNAMEPREFIX}ropper>0:security/py-ropper@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}unicorn>0:emulators/py-unicorn@${PY_FLAVOR}
 
+.ifndef SLAVE_PORT
 _UTILITY_NAME=	gef.py
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|%%PYTHON%%|${PYTHON_CMD:T}|g' ${WRKSRC}/${_UTILITY_NAME}

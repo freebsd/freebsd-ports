@@ -169,6 +169,8 @@
     SUBDIR += fwlogwatch
     SUBDIR += gcr
     SUBDIR += gef
+    SUBDIR += gef-cheri
+    SUBDIR += gef-meta
     SUBDIR += git-credential-gopass
     SUBDIR += git-credential-oauth
     SUBDIR += git-crypt
