@@ -1,5 +1,4 @@
 bin/leafpad
-man/man1/leafpad.1.gz
 share/applications/leafpad.desktop
 share/icons/hicolor/16x16/apps/leafpad.png
 share/icons/hicolor/22x22/apps/leafpad.png
@@ -51,5 +50,6 @@ share/locale/uk/LC_MESSAGES/leafpad.mo
 share/locale/vi/LC_MESSAGES/leafpad.mo
 share/locale/zh_CN/LC_MESSAGES/leafpad.mo
 share/locale/zh_TW/LC_MESSAGES/leafpad.mo
+share/man/man1/leafpad.1.gz
 share/pixmaps/leafpad.png
 share/pixmaps/leafpad.xpm
