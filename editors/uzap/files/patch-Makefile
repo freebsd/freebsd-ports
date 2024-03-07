@@ -6,7 +6,7 @@
 -MANDIR = /usr/man/manl
 -MSECT = l
 +BINDIR = ${PREFIX}/bin/
-+MANDIR = ${PREFIX}/man/man1
++MANDIR = ${PREFIX}/share/man/man1
 +MSECT = 1
 +
 +all: uzap

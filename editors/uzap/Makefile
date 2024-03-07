@@ -1,5 +1,6 @@
 PORTNAME=	uzap
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	LOCAL/joerg
 DISTNAME=	${PORTNAME}
@@ -19,7 +20,7 @@ USES=		ncurses
 
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/uzap man/man1/uzap.1.gz
+PLIST_FILES=	bin/uzap share/man/man1/uzap.1.gz
 
 .include <bsd.port.options.mk>
 
