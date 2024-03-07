@@ -1,6 +1,6 @@
 PORTNAME=	bpatch
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	LOCAL/joerg
 DISTNAME=	${PORTNAME}
@@ -20,6 +20,6 @@ CONFLICTS_INSTALL=	bdelta
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/bpatch \
-		man/man1/bpatch.1.gz
+		share/man/man1/bpatch.1.gz
 
 .include <bsd.port.mk>
