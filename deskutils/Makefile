@@ -244,6 +244,7 @@
     SUBDIR += qownnotes
     SUBDIR += qtfeedback
     SUBDIR += recoll
+    SUBDIR += rednotebook
     SUBDIR += remind
     SUBDIR += rolo
     SUBDIR += rubrica
