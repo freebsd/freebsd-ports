@@ -1,6 +1,5 @@
 PORTNAME=	uv
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.1.15
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,20 +30,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		anstream-0.6.11 \
+		anstream-0.6.13 \
 		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.79 \
+		anyhow-1.0.80 \
 		arc-swap-1.6.0 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.4 \
-		assert_cmd-2.0.13 \
+		assert_cmd-2.0.14 \
 		assert_fs-1.1.1 \
+		async-channel-2.2.0 \
 		async-compression-0.4.6 \
 		async-trait-0.1.77 \
-		async_http_range_reader-0.5.0 \
+		async_http_range_reader-0.7.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		backtrace-ext-0.2.1 \
@@ -65,7 +65,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		byteorder-1.5.0 \
 		bytes-1.5.0 \
 		cachedir-0.3.1 \
-		camino-1.1.6 \
 		cargo-util-0.2.9 \
 		cast-0.3.0 \
 		cc-1.0.83 \
@@ -77,11 +76,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ciborium-ll-0.2.2 \
 		clap-4.5.0 \
 		clap_builder-4.5.0 \
+		clap_complete-4.5.1 \
+		clap_complete_command-0.5.1 \
+		clap_complete_fig-4.5.0 \
+		clap_complete_nushell-0.1.11 \
 		clap_derive-4.5.0 \
 		clap_lex-0.7.0 \
 		cmake-0.1.50 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.0 \
+		concurrent-queue-2.4.0 \
 		configparser-3.0.4 \
 		console-0.15.8 \
 		core-foundation-0.9.4 \
@@ -114,6 +118,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
+		event-listener-5.2.0 \
+		event-listener-strategy-0.5.0 \
 		fastrand-2.0.1 \
 		fdeflate-0.3.4 \
 		filetime-0.2.23 \
@@ -156,7 +162,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hmac-0.12.1 \
 		home-0.5.9 \
 		html-escape-0.2.13 \
-		http-0.2.11 \
+		http-0.2.12 \
 		http-body-0.4.6 \
 		http-content-range-0.1.2 \
 		httparse-1.8.0 \
@@ -172,7 +178,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-2.2.3 \
 		indicatif-0.17.8 \
 		indoc-2.0.4 \
-		insta-1.34.0 \
+		insta-1.36.1 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
@@ -198,7 +204,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		mailparse-0.14.1 \
 		matchers-0.1.0 \
 		memchr-2.7.1 \
@@ -234,11 +240,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		owo-colors-4.0.0 \
 		parking-2.2.0 \
 		parking_lot-0.11.2 \
-		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.9 \
 		paste-1.0.14 \
-		pep440_rs-0.3.12 \
+		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
 		petgraph-0.6.4 \
 		pico-args-0.5.0 \
@@ -262,13 +267,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro2-1.0.78 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
-		pyo3-0.20.2 \
-		pyo3-build-config-0.20.2 \
-		pyo3-ffi-0.20.2 \
+		pyo3-0.20.3 \
+		pyo3-build-config-0.20.3 \
+		pyo3-ffi-0.20.3 \
 		pyo3-log-0.9.0 \
-		pyo3-macros-0.20.2 \
-		pyo3-macros-backend-0.20.2 \
-		pyproject-toml-0.8.1 \
+		pyo3-macros-0.20.3 \
+		pyo3-macros-backend-0.20.3 \
+		pyproject-toml-0.10.0 \
 		quick-xml-0.31.0 \
 		quote-1.0.35 \
 		quoted_printable-0.5.0 \
@@ -308,20 +313,24 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.31 \
 		rustls-0.21.10 \
+		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
 		rustybuzz-0.7.0 \
 		ryu-1.0.16 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
+		schannel-0.1.23 \
 		scopeguard-1.2.0 \
 		scroll-0.12.0 \
 		scroll_derive-0.12.0 \
 		sct-0.7.1 \
 		seahash-4.1.0 \
-		serde-1.0.196 \
-		serde_derive-1.0.196 \
-		serde_json-1.0.113 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.114 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
@@ -356,8 +365,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		system-configuration-sys-0.5.0 \
 		tagu-0.1.6 \
 		tap-1.0.1 \
-		tar-0.4.40 \
-		target-lexicon-0.12.13 \
+		target-lexicon-0.12.14 \
 		task-local-extensions-0.1.4 \
 		tempfile-3.10.0 \
 		terminal_size-0.3.0 \
@@ -366,7 +374,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
 		testing_logger-0.1.1 \
-		textwrap-0.16.0 \
+		textwrap-0.16.1 \
 		thiserror-1.0.57 \
 		thiserror-impl-1.0.57 \
 		thread_local-1.1.7 \
@@ -417,6 +425,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unscanny-0.1.0 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
+		urlencoding-2.1.3 \
 		usvg-0.29.0 \
 		usvg-text-layout-0.29.0 \
 		utf8-width-0.1.7 \
@@ -441,7 +450,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-streams-0.4.0 \
 		wasm-timer-0.2.5 \
 		web-sys-0.3.68 \
-		webpki-roots-0.25.4 \
 		weezl-0.1.8 \
 		which-6.0.0 \
 		winapi-0.3.9 \
@@ -475,7 +483,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xmlparser-0.13.6 \
 		yaml-rust-0.4.5 \
 		zip-0.6.6 \
-		pubgrub@git+https://github.com/zanieb/pubgrub?rev=9b6d89cb8a0c7902815c8b2ae99106ba322ffb14\#9b6d89cb8a0c7902815c8b2ae99106ba322ffb14 \
+		pubgrub@git+https://github.com/zanieb/pubgrub?rev=aab132a3d4d444dd8dd41d8c4e605abd69dacfe1\#aab132a3d4d444dd8dd41d8c4e605abd69dacfe1 \
 		async_zip@git+https://github.com/charliermarsh/rs-async-zip?rev=d76801da0943de985254fc6255c0e476b57c5836\#d76801da0943de985254fc6255c0e476b57c5836
 
 OPENSSLINC=	/usr/include
