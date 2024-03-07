@@ -1,13 +1,13 @@
 PORTNAME=	hyprlang
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library to parse hypr config files
 WWW=		https://hyprland.org/hyprlang
 
-LICENSE=	GPLv3+
+LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++11-lib
