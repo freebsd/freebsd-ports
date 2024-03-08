@@ -1,6 +1,7 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.36.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +27,7 @@ USE_GNOME=	cairo gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_TUPLE=	World/Phosh:gmobile:v0.0.4-7-gd5ed9ed:gmobile/subprojects/gmobile
+GL_TUPLE=	World/Phosh:gmobile:v0.0.6:gmobile/subprojects/gmobile
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man5/${PORTNAME}.ini.5.gz \
@@ -40,5 +41,11 @@ OPTIONS_DEFAULT=MANPAGES
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_TRUE=	man
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
+
+.ifdef GL_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
 
 .include <bsd.port.mk>
