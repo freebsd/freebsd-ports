@@ -1,6 +1,6 @@
 PORTNAME=	aichat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,17 +25,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		ansi_colours-1.2.2 \
-		anstream-0.6.12 \
+		anstream-0.6.13 \
 		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
 		anyhow-1.0.80 \
-		arboard-3.3.1 \
+		arboard-3.3.2 \
 		async-trait-0.1.77 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		bincode-1.3.3 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
@@ -49,11 +50,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytemuck-1.14.3 \
 		byteorder-1.5.0 \
 		bytes-1.5.0 \
-		cc-1.0.87 \
+		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		chrono-0.4.34 \
-		clap-4.5.1 \
-		clap_builder-4.5.1 \
+		cfg_aliases-0.1.1 \
+		chrono-0.4.35 \
+		clap-4.5.2 \
+		clap_builder-4.5.2 \
 		clap_derive-4.5.0 \
 		clap_lex-0.7.0 \
 		clipboard-win-5.2.0 \
@@ -63,7 +65,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.0 \
 		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.11 \
+		crossbeam-channel-0.5.12 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
@@ -73,18 +75,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.6 \
 		deranged-0.3.11 \
-		derive-new-0.5.9 \
+		derive-new-0.6.0 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		dlib-0.5.2 \
 		downcast-rs-1.2.0 \
-		dyn-clone-1.0.16 \
+		dyn-clone-1.0.17 \
 		either-1.10.0 \
 		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
-		error-code-3.1.0 \
+		error-code-3.2.0 \
 		eventsource-stream-0.2.3 \
 		fancy-regex-0.13.0 \
 		fastrand-2.0.1 \
@@ -111,8 +113,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		h2-0.3.24 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
-		hermit-abi-0.3.8 \
-		http-0.2.11 \
+		hermit-abi-0.3.9 \
+		http-0.2.12 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
@@ -121,31 +123,30 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		indexmap-2.2.3 \
+		indexmap-2.2.5 \
 		inquire-0.7.0 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
 		itertools-0.12.1 \
 		itoa-1.0.10 \
-		js-sys-0.3.68 \
+		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
-		libloading-0.8.1 \
+		libloading-0.8.3 \
 		libredox-0.0.1 \
 		line-wrap-0.1.1 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		malloc_buf-0.0.6 \
 		memchr-2.7.1 \
-		memoffset-0.7.1 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		newline-converter-0.3.0 \
-		nix-0.26.4 \
+		nix-0.28.0 \
 		nom-7.1.3 \
 		nu-ansi-term-0.50.0 \
 		num-conv-0.1.0 \
@@ -175,8 +176,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quote-1.0.35 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		reedline-0.29.0 \
-		regex-automata-0.4.5 \
+		reedline-0.30.0 \
+		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
 		reqwest-0.11.24 \
 		reqwest-eventsource-0.5.0 \
@@ -209,7 +210,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		simplelog-0.12.1 \
+		simplelog-0.12.2 \
 		slab-0.4.9 \
 		smallvec-1.13.1 \
 		smawk-0.3.2 \
@@ -219,14 +220,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.11.0 \
 		strum-0.25.0 \
 		strum_macros-0.25.3 \
-		syn-1.0.109 \
-		syn-2.0.50 \
+		syn-2.0.52 \
 		sync_wrapper-0.1.2 \
 		syntect-5.2.0 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tempfile-3.10.0 \
-		termcolor-1.1.3 \
+		tempfile-3.10.1 \
+		termcolor-1.4.1 \
 		textwrap-0.16.1 \
 		thiserror-1.0.57 \
 		thiserror-impl-1.0.57 \
@@ -261,15 +261,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		version_check-0.9.4 \
 		vte-0.11.1 \
 		vte_generate_state_changes-0.1.1 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.91 \
-		wasm-bindgen-backend-0.2.91 \
-		wasm-bindgen-futures-0.4.41 \
-		wasm-bindgen-macro-0.2.91 \
-		wasm-bindgen-macro-support-0.2.91 \
-		wasm-bindgen-shared-0.2.91 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-futures-0.4.42 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
 		wasm-streams-0.4.0 \
 		wayland-backend-0.3.3 \
 		wayland-client-0.31.2 \
@@ -277,7 +277,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wayland-protocols-wlr-0.2.0 \
 		wayland-scanner-0.31.1 \
 		wayland-sys-0.31.1 \
-		web-sys-0.3.68 \
+		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -287,23 +287,23 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.3 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.3 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.3 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.3 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.3 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.3 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.3 \
+		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.3 \
+		windows_x86_64_msvc-0.52.4 \
 		winreg-0.50.0 \
-		wl-clipboard-rs-0.8.0 \
+		wl-clipboard-rs-0.8.1 \
 		x11rb-0.13.0 \
 		x11rb-protocol-0.13.0
 
