@@ -1,6 +1,6 @@
 PORTNAME?=	openexr
 PORTVERSION=	3.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
 MASTER_SITES=	https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/v1.0/:testimages \
@@ -69,8 +69,6 @@ _DOCSRCDIR1=	${WRKSRC}
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
 
-TESTING_UNSAFE=	10 tests fails out of 125
-
 # too many reports about compilation failures, so
 # sanity check we are using the same C++ standard library
 _imath_libcxx=	${COMPILER_FEATURES:Mlib*c++}
@@ -80,8 +78,8 @@ _imath_libcxx=	${COMPILER_FEATURES:Mlib*c++}
 # so we do not benefit from our checksumming and the distdir caching.
 post-extract:
 	${MKDIR} ${CONFIGURE_WRKSRC}/src/test/bin
-.for i in ${DISTFILES:M*.exr}
-	${PRINTF} %s ${i} | ( cd ${DISTDIR}/${DIST_SUBDIR} && ${CPIO} -dumpl ${CONFIGURE_WRKSRC}/src/test/bin/ 2>/dev/null )
+.for i in ${DISTFILES:M*.exr?testimages}
+	${PRINTF} %s ${i:S/:testimages//} | ( cd ${DISTDIR}/${DIST_SUBDIR} && ${CPIO} -dumpl ${CONFIGURE_WRKSRC}/src/test/bin/ 2>/dev/null )
 .endfor
 
 pre-configure:
