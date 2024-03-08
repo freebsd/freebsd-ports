@@ -1,6 +1,6 @@
 PORTNAME=	hyprlang
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	hyprwm
 PLIST_FILES=	include/${PORTNAME}.hpp \
 		lib/lib${PORTNAME}.so \
-		lib/lib${PORTNAME}.so.1 \
+		lib/lib${PORTNAME}.so.2 \
 		lib/lib${PORTNAME}.so.${PORTVERSION} \
 		libdata/pkgconfig/${PORTNAME}.pc
 
