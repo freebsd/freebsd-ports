@@ -1,7 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.2.2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -317,7 +316,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		nanoid-0.4.0 \
 		nanorand-0.7.0 \
 		native-tls-0.2.11 \
@@ -447,10 +446,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		roaring-0.10.2 \
 		robust-1.1.0 \
 		rocksdb-0.21.0 \
-		rquickjs-0.4.3 \
-		rquickjs-core-0.4.3 \
-		rquickjs-macro-0.4.3 \
-		rquickjs-sys-0.4.3 \
+		rquickjs-0.5.1 \
+		rquickjs-core-0.5.1 \
+		rquickjs-macro-0.5.1 \
+		rquickjs-sys-0.5.1 \
 		rsa-0.9.6 \
 		rstar-0.11.0 \
 		rust-stemmers-1.2.0 \
