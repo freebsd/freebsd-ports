@@ -55,6 +55,7 @@ include/pika/config/forward.hpp
 include/pika/config/manual_profiling.hpp
 include/pika/config/modules_enabled.hpp
 include/pika/config/move.hpp
+include/pika/config/static_call_operator.hpp
 include/pika/config/threads_stack.hpp
 include/pika/config/version.hpp
 include/pika/config/warnings_prefix.hpp
@@ -541,10 +542,12 @@ lib/cmake/pika/tests/cxx17_std_aligned_alloc.cpp
 lib/cmake/pika/tests/cxx20_no_unique_address_attribute.cpp
 lib/cmake/pika/tests/cxx20_std_disable_sized_sentinel_for.cpp
 lib/cmake/pika/tests/cxx20_trivial_virtual_destructor.cpp
+lib/cmake/pika/tests/cxx23_static_call_operator.cpp
+lib/cmake/pika/tests/cxx23_static_call_operator.cu
+lib/cmake/pika/tests/cxx23_static_call_operator.hip
 lib/cmake/pika/tests/cxx_lambda_capture_decltype.cpp
 lib/cmake/pika/tests/mm_prefetch.cpp
-lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.21.0
+lib/libpika.so.0.23.0
