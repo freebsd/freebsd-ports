@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.279
+DISTVERSION=	1.3.280
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		alias cmake compiler:c++11-lib pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-350-gb73e168:headers/SPIRV-Headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-351-g8b246ff:headers/SPIRV-Headers
 CMAKE_OFF=	BUILD_TESTS
 
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
