@@ -1,7 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.19
-PORTREVISION=	1
+DISTVERSION=	0.6.20
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,27 +18,27 @@ GH_ACCOUNT=	Decodetalkers
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.2 \
-		anstream-0.6.7 \
-		anstyle-1.0.4 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.79 \
+		anyhow-1.0.80 \
 		async-trait-0.1.77 \
-		auto_impl-1.1.0 \
+		auto_impl-1.2.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		bitflags-1.3.2 \
 		bytes-1.5.0 \
-		cc-1.0.83 \
+		cc-1.0.89 \
 		cfg-if-1.0.0 \
-		clap-4.4.16 \
-		clap_builder-4.4.16 \
-		clap_lex-0.6.0 \
+		clap-4.5.1 \
+		clap_builder-4.5.1 \
+		clap_lex-0.7.0 \
 		cli-table-0.4.7 \
 		cli-table-derive-0.4.5 \
 		colorchoice-1.0.0 \
-		const-random-0.1.17 \
+		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
 		crunchy-0.2.2 \
 		csv-1.3.0 \
@@ -59,20 +58,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
 		hashbrown-0.14.3 \
-		hermit-abi-0.3.3 \
+		hermit-abi-0.3.9 \
 		httparse-1.8.0 \
 		idna-0.5.0 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		lsp-types-0.94.1 \
 		memchr-2.7.1 \
-		miniz_oxide-0.7.1 \
-		mio-0.8.10 \
+		miniz_oxide-0.7.2 \
+		mio-0.8.11 \
 		nu-ansi-term-0.46.0 \
-		nu-ansi-term-0.49.0 \
+		nu-ansi-term-0.50.0 \
 		num_cpus-1.16.0 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
@@ -81,40 +80,38 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		percent-encoding-2.3.1 \
-		pin-project-1.1.3 \
-		pin-project-internal-1.1.3 \
+		pin-project-1.1.4 \
+		pin-project-internal-1.1.4 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.76 \
+		proc-macro2-1.0.78 \
 		quote-1.0.35 \
 		redox_syscall-0.4.1 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
 		rust-ini-0.20.0 \
 		rustc-demangle-0.1.23 \
-		ryu-1.0.16 \
+		ryu-1.0.17 \
 		scopeguard-1.2.0 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.114 \
 		serde_repr-0.1.18 \
 		sharded-slab-0.1.7 \
 		signal-hook-registry-1.4.1 \
 		slab-0.4.9 \
-		smallvec-1.11.2 \
-		socket2-0.5.5 \
-		strsim-0.10.0 \
+		smallvec-1.13.1 \
+		socket2-0.5.6 \
+		strsim-0.11.0 \
 		syn-1.0.109 \
-		syn-2.0.48 \
+		syn-2.0.52 \
 		termcolor-1.4.1 \
-		thread_local-1.1.7 \
+		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.1 \
+		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-util-0.7.10 \
 		tower-0.4.13 \
@@ -127,16 +124,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tree-sitter-0.20.10 \
-		tree-sitter-cmake-0.4.1 \
-		unicode-bidi-0.3.14 \
+		tree-sitter-0.21.0 \
+		tree-sitter-cmake-0.4.2 \
+		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.22 \
+		unicode-normalization-0.1.23 \
 		unicode-width-0.1.11 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
-		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -145,21 +141,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0
+		windows_x86_64_msvc-0.52.4
 
 PLIST_FILES=	bin/${PORTNAME}
 
