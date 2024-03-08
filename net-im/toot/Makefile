@@ -3,7 +3,7 @@ DISTVERSION=	0.41.1
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lexi.freebsd@le-fay.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Interact with the Mastodon social network from the command line
 WWW=		https://github.com/ihabunek/toot
 

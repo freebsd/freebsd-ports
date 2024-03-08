@@ -4,7 +4,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lexi.freebsd@le-fay.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Python module to talk to Google Chromecast
 WWW=		https://pypi.org/project/PyChromecast/
 

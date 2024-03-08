@@ -4,7 +4,7 @@ DISTVERSION=		2.10.6
 CATEGORIES=		multimedia
 PKGNAMESUFFIX=		-${FLAVOR}
 
-MAINTAINER=	lexi.freebsd@le-fay.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Desktop utility to manage metadata and artwork for Kodi and Jellyfin
 WWW=		https://www.mediaelch.de/mediaelch/
 

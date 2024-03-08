@@ -4,7 +4,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lexi.freebsd@le-fay.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	YouTube Chromecast api
 WWW=		https://pypi.org/project/casttube/
 

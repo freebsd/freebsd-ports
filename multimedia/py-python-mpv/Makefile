@@ -4,7 +4,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lexi.freebsd@le-fay.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Python interface to the mpv media player
 WWW=		https://pypi.org/project/python-mpv/
 
