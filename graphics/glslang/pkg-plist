@@ -14,17 +14,10 @@ include/glslang/SPIRV/SPVRemapper.h
 include/glslang/SPIRV/disassemble.h
 include/glslang/SPIRV/spirv.hpp
 include/glslang/build_info.h
-lib/cmake/OSDependentTargets.cmake
-lib/cmake/SPIRVTargets.cmake
-lib/cmake/SPVRemapperTargets.cmake
-lib/cmake/glslang-default-resource-limitsTargets.cmake
-lib/cmake/glslang-standaloneTargets.cmake
 lib/cmake/glslang/glslang-config-version.cmake
 lib/cmake/glslang/glslang-config.cmake
 lib/cmake/glslang/glslang-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/glslang/glslang-targets.cmake
-lib/cmake/glslangTargets.cmake
-lib/cmake/spirv-remapTargets.cmake
 lib/libGenericCodeGen.a
 lib/libMachineIndependent.a
 lib/libOSDependent.a
