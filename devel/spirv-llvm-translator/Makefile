@@ -45,9 +45,10 @@ _PLIST_FILES=	bin/llvm-spirv \
 		include/LLVMSPIRVLib/LLVMSPIRVLib.h \
 		include/LLVMSPIRVLib/LLVMSPIRVOpts.h \
 		lib/libLLVMSPIRVLib.so \
-		lib/libLLVMSPIRVLib.so.${DISTVERSION:R:R} \
+		lib/libLLVMSPIRVLib.so.${SOVERSION} \
 		libdata/pkgconfig/LLVMSPIRVLib.pc
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
+SOVERSION=	${${FLAVOR:S/llvm//}<18:?${DISTVERSION:R:R}:${DISTVERSION:R}}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s/lib/&data/' \
