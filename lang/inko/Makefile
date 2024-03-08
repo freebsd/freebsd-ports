@@ -1,7 +1,6 @@
 PORTNAME=	inko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.2
-PORTREVISION=	2
+DISTVERSION=	0.14.0
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,48 +26,49 @@ MAKE_ENV=	LLVM_SYS_150_PREFIX=${LLVM_PREFIX} \
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.2 \
+		arrayref-0.3.7 \
+		arrayvec-0.7.4 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
+		base64-0.21.7 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
-		blake2-0.10.6 \
-		block-buffer-0.10.4 \
+		blake3-1.5.0 \
 		bstr-0.2.17 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		concurrent-queue-2.3.0 \
-		console-0.15.7 \
-		crossbeam-queue-0.3.8 \
-		crossbeam-utils-0.8.16 \
-		crypto-common-0.1.6 \
-		digest-0.10.7 \
+		concurrent-queue-2.4.0 \
+		console-0.15.8 \
+		constant_time_eq-0.3.0 \
+		crc32fast-1.3.2 \
+		crossbeam-queue-0.3.11 \
+		crossbeam-utils-0.8.19 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
-		errno-0.3.7 \
+		errno-0.3.8 \
+		filetime-0.2.23 \
+		flate2-1.0.28 \
 		fnv-1.0.7 \
-		generic-array-0.14.7 \
+		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
-		getrandom-0.2.11 \
-		gimli-0.28.0 \
-		inkwell-0.1.1 \
-		inkwell_internals-0.7.0 \
+		getrandom-0.2.12 \
+		gimli-0.28.1 \
+		idna-0.5.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
-		linux-raw-sys-0.4.11 \
-		llvm-sys-150.1.2 \
-		lock_api-0.4.11 \
+		libc-0.2.152 \
+		linux-raw-sys-0.4.12 \
+		llvm-sys-150.1.3 \
 		log-0.4.20 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		miniz_oxide-0.7.1 \
-		object-0.32.1 \
-		once_cell-1.18.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.13 \
 		polling-2.8.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.69 \
-		quote-1.0.33 \
+		proc-macro2-1.0.76 \
+		quote-1.0.35 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -77,40 +77,52 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
+		ring-0.17.7 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.24 \
-		scopeguard-1.2.0 \
-		semver-1.0.20 \
-		similar-2.3.0 \
+		rustix-0.38.28 \
+		rustls-0.21.10 \
+		rustls-webpki-0.101.7 \
+		sct-0.7.1 \
+		semver-1.0.21 \
+		similar-2.4.0 \
 		similar-asserts-1.5.0 \
-		smallvec-1.11.2 \
 		socket2-0.5.5 \
-		subtle-2.5.0 \
-		syn-1.0.109 \
-		typenum-1.17.0 \
+		spin-0.9.8 \
+		syn-2.0.48 \
+		tar-0.4.40 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		unicode-bidi-0.3.14 \
 		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.11 \
-		version_check-0.9.4 \
+		untrusted-0.9.0 \
+		ureq-2.9.1 \
+		url-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		windows-sys-0.45.0 \
+		webpki-roots-0.25.3 \
 		windows-sys-0.48.0 \
-		windows-targets-0.42.2 \
+		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows_aarch64_gnullvm-0.42.2 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_i686_gnu-0.42.2 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_msvc-0.42.2 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.48.5 \
-		windows_x86_64_gnu-0.42.2 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.5
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		inkwell,inkwell_internals@git+https://github.com/TheDan64/inkwell.git?rev=c18e3e8\#c18e3e8f2bb408c3ec323dd80d08b3a24e7c5152
 
 do-install:
 	# executable
