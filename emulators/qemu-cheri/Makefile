@@ -8,6 +8,8 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	QEMU emulator with CHERI CPU support
 WWW=		https://github.com/CTSRD-CHERI/qemu
 
+DATADIR=	${PREFIX}/share/qemu-cheri
+
 # XXX: disabling gnutls doesn't work so depend on it to avoid breakage.
 BUILD_DEPENDS=	bash:shells/bash \
 		meson>=0.57.1_1:devel/meson
@@ -54,14 +56,14 @@ CONFIGURE_ARGS+= \
 		--disable-sdl \
 		--disable-vte \
 		--disable-xen \
+		--prefix=${PREFIX} \
+		--with-suffix=qemu-cheri \
+		--firmwarepath=${DATADIR} \
 		--meson=${LOCALBASE}/bin/meson \
 		--smbd=${LOCALBASE}/sbin/smbd \
 		--extra-cflags="-g ${EXTRA_CFLAGS}" \
 		--localstatedir=/var
 EXTRA_CFLAGS=	-DCHERI_UNALIGNED
-
-PLIST_FILES=	bin/qemu-system-morello \
-		bin/qemu-system-riscv64cheri
 
 .include <bsd.port.options.mk>
 
@@ -70,8 +72,6 @@ CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/build/qemu-system-morello \
-	    ${WRKSRC}/build/qemu-system-riscv64cheri \
-	    ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .include <bsd.port.mk>
