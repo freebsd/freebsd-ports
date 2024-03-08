@@ -1,3 +1,5 @@
+IGNORE=		is replaced by emulators/qemu-meta on CheriBSD
+
 PORTNAME=	qemu
 PORTVERSION=	8.0.3
 PORTREVISION=	1
