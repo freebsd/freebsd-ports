@@ -359,6 +359,7 @@
     SUBDIR += p5-Mail-CheckUser
     SUBDIR += p5-Mail-DKIM
     SUBDIR += p5-Mail-DMARC
+    SUBDIR += p5-Mail-DataFeed-Abusix
     SUBDIR += p5-Mail-DeliveryStatus-BounceParser
     SUBDIR += p5-Mail-DomainKeys
     SUBDIR += p5-Mail-Ezmlm
