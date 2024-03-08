@@ -23,10 +23,10 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_TUPLE=	CTSRD-CHERI:qemu:${QEMU_COMMIT} \
 		qemu:dtc:85e5d83:qemu_dtc/dtc \
-		qemu:libslirp:487f4bf4:qemu_libslirp/slirp \
+		qemu:libslirp:8f43a99:qemu_libslirp/slirp \
 		qemu:berkeley-softfloat-3:b64af41:qemu_berkeley_softfloat_3/tests/fp/berkeley-softfloat-3 \
-		qemu:berkeley-testfloat-3:ca9fa2b:qemu_berkeley_testfloat_3/tests/fp/berkeley-testfloat-3 \
-		qemu:keycodemapdb:6b3d716:qemu_keycodemapdb/ui/keycodemapdb \
+		qemu:berkeley-testfloat-3:5a59dce:qemu_berkeley_testfloat_3/tests/fp/berkeley-testfloat-3 \
+		qemu:keycodemapdb:6119e6e:qemu_keycodemapdb/ui/keycodemapdb \
 
 HAS_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
@@ -44,7 +44,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS+= \
 		--target-list=riscv64cheri-softmmu,morello-softmmu \
 		--disable-curl \
-		--disable-git-update \
+		--with-git-submodules=ignore \
 		--disable-gtk \
 		--disable-linux-user \
 		--disable-linux-aio \
