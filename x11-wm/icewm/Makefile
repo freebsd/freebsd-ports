@@ -1,11 +1,7 @@
 PORTNAME=	icewm
-PORTVERSION=	3.4.5
-PORTREVISION=	2
+PORTVERSION=	3.4.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/bbidulock/icewm/commit/
-PATCHFILES=	d84954333363811ef81f5cdd0c5c3051738ba372.patch:-p1
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Window manager designed for speed and usability
@@ -70,7 +66,7 @@ post-patch-LIBRSVG2-off:
 		${LOCALBASE}/include/nanosvgrast.h ${WRKSRC}/src
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ChangeLog NEWS README TODO doc/*.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
