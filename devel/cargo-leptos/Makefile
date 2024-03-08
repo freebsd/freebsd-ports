@@ -1,6 +1,6 @@
 PORTNAME=	cargo-leptos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.15
+DISTVERSION=	0.2.16
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
 		ahash-0.7.8 \
-		ahash-0.8.10 \
+		ahash-0.8.11 \
 		aho-corasick-1.1.2 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
@@ -47,7 +47,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		brotli-3.4.0 \
 		brotli-decompressor-2.5.1 \
 		browserslist-rs-0.15.0 \
-		bumpalo-3.15.3 \
+		bumpalo-3.15.4 \
 		bytecheck-0.6.12 \
 		bytecheck_derive-0.6.12 \
 		byteorder-1.5.0 \
@@ -55,12 +55,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		camino-1.1.6 \
 		cargo-platform-0.1.7 \
 		cargo_metadata-0.18.1 \
-		cc-1.0.88 \
+		cc-1.0.90 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.34 \
-		clap-4.5.1 \
-		clap_builder-4.5.1 \
+		chrono-0.4.35 \
+		clap-4.5.2 \
+		clap_builder-4.5.2 \
 		clap_derive-4.5.0 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
@@ -136,8 +136,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.4.1 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
-		http-0.2.11 \
-		http-1.0.0 \
+		http-0.2.12 \
+		http-1.1.0 \
 		http-body-0.4.6 \
 		http-body-1.0.0 \
 		http-body-util-0.1.0 \
@@ -156,14 +156,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-2.2.5 \
 		inotify-0.7.1 \
 		inotify-sys-0.1.5 \
-		insta-1.35.1 \
+		insta-1.36.1 \
 		iovec-0.1.4 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
 		itoa-1.0.10 \
-		js-sys-0.3.68 \
+		js-sys-0.3.69 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
@@ -186,7 +186,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.6.23 \
-		mio-0.8.10 \
+		mio-0.8.11 \
 		mio-extras-2.0.6 \
 		miow-0.2.2 \
 		net2-0.2.39 \
@@ -215,8 +215,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		phf_macros-0.11.2 \
 		phf_shared-0.10.0 \
 		phf_shared-0.11.2 \
-		pin-project-1.1.4 \
-		pin-project-internal-1.1.4 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		ppv-lite86-0.2.17 \
@@ -237,7 +237,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		regex-1.10.3 \
-		regex-automata-0.4.5 \
+		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
 		rend-0.4.2 \
 		reqwest-0.11.24 \
@@ -317,26 +317,26 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		uuid-1.7.0 \
 		version_check-0.9.4 \
 		vlq-0.5.1 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		walrus-0.20.3 \
 		walrus-macro-0.19.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.91 \
-		wasm-bindgen-backend-0.2.91 \
-		wasm-bindgen-cli-support-0.2.91 \
-		wasm-bindgen-externref-xform-0.2.91 \
-		wasm-bindgen-futures-0.4.41 \
-		wasm-bindgen-macro-0.2.91 \
-		wasm-bindgen-macro-support-0.2.91 \
-		wasm-bindgen-multi-value-xform-0.2.91 \
-		wasm-bindgen-shared-0.2.91 \
-		wasm-bindgen-threads-xform-0.2.91 \
-		wasm-bindgen-wasm-conventions-0.2.91 \
-		wasm-bindgen-wasm-interpreter-0.2.91 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-cli-support-0.2.92 \
+		wasm-bindgen-externref-xform-0.2.92 \
+		wasm-bindgen-futures-0.4.42 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-multi-value-xform-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		wasm-bindgen-threads-xform-0.2.92 \
+		wasm-bindgen-wasm-conventions-0.2.92 \
+		wasm-bindgen-wasm-interpreter-0.2.92 \
 		wasm-encoder-0.29.0 \
 		wasmparser-0.80.2 \
-		web-sys-0.3.68 \
+		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		which-5.0.0 \
 		winapi-0.2.8 \
@@ -369,7 +369,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wyz-0.5.1 \
 		xattr-1.3.1 \
 		yaml-rust-0.4.5 \
-		yansi-1.0.0-rc.1 \
+		yansi-1.0.0 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
 		zip-0.6.6
