@@ -13,12 +13,11 @@ DATADIR=	${PREFIX}/share/qemu-cheri
 # XXX: disabling gnutls doesn't work so depend on it to avoid breakage.
 BUILD_DEPENDS=	bash:shells/bash \
 		meson>=0.57.1_1:devel/meson
-LIB_DEPENDS=	libcapstone.so:devel/capstone \
-		libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libgnutls.so:security/gnutls \
-		libnettle.so:security/nettle
-RUN_DEPENDS=	qemu-system-i386:emulators/qemu
+		libnettle.so:security/nettle \
+		libzstd.so:archivers/zstd
 
 LICENSE=	GPLv2
 
@@ -45,13 +44,17 @@ OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS+= \
 		--target-list=riscv64cheri-softmmu,morello-softmmu \
+		--enable-slirp=git \
+		--disable-capstone \
 		--disable-curl \
 		--with-git-submodules=ignore \
 		--disable-gtk \
+		--disable-bsd-user \
 		--disable-linux-user \
 		--disable-linux-aio \
 		--disable-kvm \
 		--disable-opengl \
+		--disable-vnc-jpeg \
 		--disable-vnc-png \
 		--disable-sdl \
 		--disable-vte \
