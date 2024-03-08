@@ -1,6 +1,6 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -9,7 +9,7 @@ COMMENT=	Solver for large scale sparse linear programming (LP) problems
 WWW=		https://github.com/ERGO-Code/HiGHS
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake:testing compiler:c++11-lang pkgconfig
 
