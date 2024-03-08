@@ -267,6 +267,7 @@
     SUBDIR += p5-NetApp
     SUBDIR += p5-POE-Component-SNMP
     SUBDIR += p5-Prometheus-Tiny
+    SUBDIR += p5-Prometheus-Tiny-Shared
     SUBDIR += p5-RDR-Collector
     SUBDIR += p5-SNMP-Info
     SUBDIR += p5-SNMP-MIB-Compiler

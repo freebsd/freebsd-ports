@@ -1,0 +1,3 @@
+Prometheus::Tiny::Shared is a wrapper around Prometheus::Tiny that instead
+of storing metrics data in a hashtable, stores them in a shared datastore.
+This lets you keep a single set of metrics in a multithreaded app.
