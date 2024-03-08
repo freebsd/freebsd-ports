@@ -79,7 +79,9 @@ _imath_libcxx=	${COMPILER_FEATURES:Mlib*c++}
 post-extract:
 	${MKDIR} ${CONFIGURE_WRKSRC}/src/test/bin
 .for i in ${DISTFILES:M*.exr?testimages}
-	${PRINTF} %s ${i:S/:testimages//} | ( cd ${DISTDIR}/${DIST_SUBDIR} && ${CPIO} -dumpl ${CONFIGURE_WRKSRC}/src/test/bin/ 2>/dev/null )
+	d="$$(dirname "${CONFIGURE_WRKSRC}/src/test/bin/${i:S/:testimages//}")" \
+	  && ${MKDIR} "$$d" \
+	  && ${CP} ${DISTDIR}/${DIST_SUBDIR}/${i:S/:testimages//} "$$d"
 .endfor
 
 pre-configure:
