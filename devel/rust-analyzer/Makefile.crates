@@ -1,6 +1,6 @@
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
-		always-assert-0.1.3 \
+		always-assert-0.2.0 \
 		anyhow-1.0.75 \
 		arbitrary-1.3.2 \
 		arrayvec-0.7.4 \
@@ -14,10 +14,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cargo_metadata-0.18.1 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.95.0 \
-		chalk-ir-0.95.0 \
-		chalk-recursive-0.95.0 \
-		chalk-solve-0.95.0 \
+		chalk-derive-0.96.0 \
+		chalk-ir-0.96.0 \
+		chalk-recursive-0.96.0 \
+		chalk-solve-0.96.0 \
 		command-group-2.1.0 \
 		countme-3.0.1 \
 		cov-mark-2.0.0-pre.1 \
@@ -34,6 +34,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		drop_bomb-0.1.5 \
 		either-1.9.0 \
 		ena-0.14.2 \
+		env_logger-0.10.2 \
 		equivalent-1.0.0 \
 		expect-test-1.4.1 \
 		filetime-0.2.22 \
@@ -42,6 +43,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		form_urlencoded-1.2.0 \
 		fsevent-sys-4.1.0 \
 		fst-0.4.7 \
+		getrandom-0.2.12 \
 		gimli-0.27.3 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
@@ -62,11 +64,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		libloading-0.8.0 \
 		libmimalloc-sys-0.1.33 \
 		line-index-0.1.1 \
+		linked-hash-map-0.5.6 \
 		lock_api-0.4.10 \
 		log-0.4.19 \
-		lsp-server-0.7.4 \
-		lsp-types-0.94.0 \
-		memchr-2.6.4 \
+		lsp-server-0.7.6 \
+		lsp-types-0.95.0 \
+		memchr-2.7.1 \
 		memmap2-0.5.10 \
 		memoffset-0.9.0 \
 		mimalloc-0.1.37 \
@@ -92,29 +95,35 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		perf-event-open-sys-1.0.1 \
 		petgraph-0.6.4 \
 		pin-project-lite-0.2.9 \
+		ppv-lite86-0.2.17 \
 		proc-macro2-1.0.69 \
 		protobuf-3.2.0 \
 		protobuf-support-3.2.0 \
 		pulldown-cmark-0.9.3 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.28 \
-		ra-ap-rustc_abi-0.21.0 \
-		ra-ap-rustc_index-0.21.0 \
-		ra-ap-rustc_index_macros-0.21.0 \
-		ra-ap-rustc_lexer-0.21.0 \
-		ra-ap-rustc_parse_format-0.21.0 \
+		ra-ap-rustc_abi-0.35.0 \
+		ra-ap-rustc_index-0.35.0 \
+		ra-ap-rustc_index-0.40.0 \
+		ra-ap-rustc_index_macros-0.35.0 \
+		ra-ap-rustc_index_macros-0.40.0 \
+		ra-ap-rustc_lexer-0.35.0 \
+		ra-ap-rustc_parse_format-0.35.0 \
+		ra-ap-rustc_pattern_analysis-0.40.0 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
 		rayon-1.8.0 \
 		rayon-core-1.12.0 \
 		redox_syscall-0.3.5 \
 		redox_syscall-0.4.1 \
 		rowan-0.15.15 \
-		rust-analyzer-salsa-0.17.0-pre.4 \
-		rust-analyzer-salsa-macros-0.17.0-pre.4 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
+		rustc_apfloat-0.2.0+llvm-462a31f5a5ab \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
-		scip-0.3.1 \
+		scip-0.3.3 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
 		semver-1.0.17 \
@@ -123,12 +132,15 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		serde_json-1.0.108 \
 		serde_repr-0.1.12 \
 		sharded-slab-0.1.4 \
-		smallvec-1.10.0 \
-		smol_str-0.2.0 \
+		smallvec-1.12.0 \
+		smol_str-0.2.1 \
 		snap-1.1.0 \
+		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		syn-2.0.39 \
 		synstructure-0.13.0 \
+		test-log-0.2.14 \
+		test-log-macros-0.2.14 \
 		text-size-1.1.1 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
@@ -146,7 +158,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		tracing-tree-0.3.0 \
-		triomphe-0.1.10 \
+		triomphe-0.1.11 \
 		typed-arena-2.0.2 \
 		ungrammar-1.16.1 \
 		unicase-2.6.0 \
