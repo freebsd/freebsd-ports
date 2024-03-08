@@ -1,14 +1,15 @@
 PORTNAME=	typstfmt
-DISTVERSION=	0.2.7
-PORTREVISION=	2
+DISTVERSION=	0.2.9
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Basic formatter for the Typst language
 WWW=		https://github.com/astrale-sharp/typstfmt
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE=	APACHE20 MIT
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_COMB=	dual
 
 USES=		cargo
 
@@ -17,59 +18,59 @@ GH_ACCOUNT=	astrale-sharp
 
 CARGO_CRATES=	aho-corasick-1.1.2 \
 		bitflags-1.3.2 \
-		bitflags-2.4.1 \
+		bitflags-2.4.2 \
 		bstr-0.2.17 \
-		bstr-1.8.0 \
+		bstr-1.9.1 \
 		cfg-if-1.0.0 \
 		comemo-0.3.1 \
 		comemo-macros-0.3.1 \
 		confy-0.5.1 \
-		console-0.15.7 \
+		console-0.15.8 \
 		directories-4.0.1 \
 		dirs-sys-0.3.7 \
-		ecow-0.1.2 \
-		either-1.9.0 \
+		ecow-0.2.0 \
+		either-1.10.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		getrandom-0.2.11 \
+		getrandom-0.2.12 \
 		globmatch-0.2.5 \
 		globset-0.4.14 \
 		hashbrown-0.14.3 \
-		indexmap-2.1.0 \
-		insta-1.34.0 \
+		indexmap-2.2.3 \
+		insta-1.35.1 \
 		itertools-0.10.5 \
 		lazy_static-1.4.0 \
 		lexopt-0.3.0 \
-		libc-0.2.150 \
+		libc-0.2.153 \
 		libredox-0.0.1 \
 		linked-hash-map-0.5.6 \
 		log-0.4.20 \
-		memchr-2.6.4 \
+		memchr-2.7.1 \
 		nu-ansi-term-0.46.0 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		overload-0.1.1 \
 		pin-project-lite-0.2.13 \
-		proc-macro2-1.0.70 \
-		quote-1.0.33 \
+		proc-macro2-1.0.78 \
+		quote-1.0.35 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.2 \
+		regex-1.10.3 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.3 \
+		regex-automata-0.4.5 \
 		regex-syntax-0.8.2 \
 		same-file-1.0.6 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		serde_spanned-0.6.4 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_spanned-0.6.5 \
 		sharded-slab-0.1.7 \
-		similar-2.3.0 \
+		similar-2.4.0 \
 		similar-asserts-1.5.0 \
 		siphasher-1.0.0 \
-		smallvec-1.11.2 \
-		syn-2.0.39 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
-		thread_local-1.1.7 \
+		smallvec-1.13.1 \
+		syn-2.0.52 \
+		thiserror-1.0.57 \
+		thiserror-impl-1.0.57 \
+		thread_local-1.1.8 \
 		toml-0.5.11 \
 		toml-0.7.8 \
 		toml_datetime-0.6.5 \
@@ -81,7 +82,9 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		tracing-subscriber-0.3.18 \
 		unicode-ident-1.0.12 \
 		unicode-math-class-0.1.0 \
-		unicode-segmentation-1.10.1 \
+		unicode-script-0.5.6 \
+		unicode-segmentation-1.11.0 \
+		unicode-width-0.1.11 \
 		unscanny-0.1.0 \
 		valuable-0.1.0 \
 		walkdir-2.4.0 \
@@ -90,18 +93,18 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.45.0 \
-		windows-targets-0.42.2 \
-		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_msvc-0.42.2 \
-		windows_i686_gnu-0.42.2 \
-		windows_i686_msvc-0.42.2 \
-		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_msvc-0.42.2 \
-		winnow-0.5.25 \
+		windows-sys-0.52.0 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.5.40 \
 		yaml-rust-0.4.5 \
-		typst-syntax@git+https://github.com/typst/typst.git?tag=v0.7.0\#da8367e189b02918a8fe1a98fd3059fd11a82cd9
+		typst-syntax@git+https://github.com/typst/typst.git?tag=v0.10.0\#70ca0d257bb4ba927f63260e20443f244e0bb58c
 
 PLIST_FILES=	bin/${PORTNAME}
 
