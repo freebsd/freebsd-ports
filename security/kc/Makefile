@@ -1,5 +1,5 @@
 PORTNAME=		kc
-PORTVERSION=		2.5.1
+PORTVERSION=		2.5.3
 CATEGORIES=		security
 
 MAINTAINER=		leva@ecentrum.hu
