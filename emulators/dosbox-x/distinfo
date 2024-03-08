@@ -1,5 +1,3 @@
-TIMESTAMP = 1708108946
-SHA256 (joncampbell123-dosbox-x-dosbox-x-v2023.10.06_GH0.tar.gz) = 65f756e29f9c9b898fdbd22b0cb9b3b24c6e3becb5dcda588aa20a3fde9539a5
-SIZE (joncampbell123-dosbox-x-dosbox-x-v2023.10.06_GH0.tar.gz) = 119420489
-SHA256 (48c13acd1f3048891252cb92087cb6b20c29dc16.patch) = 38896e53c3b594dd31ac0aa9d347acb90ebc6fe199bd84ff7a8acb2913e538b1
-SIZE (48c13acd1f3048891252cb92087cb6b20c29dc16.patch) = 1574
+TIMESTAMP = 1709891614
+SHA256 (joncampbell123-dosbox-x-dosbox-x-v2024.03.01_GH0.tar.gz) = 2a89d3196ddc15361f6dc7e6ab142bfe95945d93d527cfd6bacca1f7a401a513
+SIZE (joncampbell123-dosbox-x-dosbox-x-v2024.03.01_GH0.tar.gz) = 119593920
