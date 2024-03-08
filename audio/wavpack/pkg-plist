@@ -7,6 +7,8 @@ lib/cmake/WavPack/wavpack-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/WavPack/wavpack-config-version.cmake
 lib/cmake/WavPack/wavpack-config.cmake
 lib/libwavpack.so
+lib/libwavpack.so.1
+lib/libwavpack.so.1.2.6
 libdata/pkgconfig/wavpack.pc
 share/man/man1/wavpack.1.gz
 share/man/man1/wvgain.1.gz
