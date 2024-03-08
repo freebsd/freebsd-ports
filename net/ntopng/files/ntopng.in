@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: ntopng
-# REQUIRE: LOGIN netif mysql
+# REQUIRE: LOGIN netif mysql redis
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable ntopng:
