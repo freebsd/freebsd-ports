@@ -1,7 +1,6 @@
 PORTNAME=	vim
-PORTVERSION=	9.1.0015
+PORTVERSION=	9.1.0158
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -19,6 +18,7 @@ USE_GITHUB=	yes
 
 # Vim will try to link against libcanberra if it's installed
 CONFIGURE_ARGS=	--disable-canberra \
+		--disable-libsodium \
 		--enable-cscope \
 		--enable-gui=${GUI} \
 		--enable-multibyte \
