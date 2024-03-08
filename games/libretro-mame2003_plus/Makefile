@@ -2,7 +2,7 @@ PORTNAME=	libretro-mame2003_plus
 DISTVERSION=	0.20231023
 CATEGORIES=	games
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Updated MAME 0.78 for libretro with added game support
 WWW=		https://github.com/libretro/mame2003-plus-libretro
 
