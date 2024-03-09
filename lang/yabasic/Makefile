@@ -1,5 +1,6 @@
 PORTNAME=	yabasic
 PORTVERSION=	2.90.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 
@@ -17,13 +18,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	marcIhm
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_XORG=	ice sm x11
 TEST_TARGET=	check
 
 WRKSRC_SUBDIR=	unix/lang
 
 PORTDOCS=	ChangeLog README
-PLIST_FILES=	bin/yabasic man/man1/yabasic.1.gz
+PLIST_FILES=	bin/yabasic share/man/man1/yabasic.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
