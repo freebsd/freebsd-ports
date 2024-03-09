@@ -1,3 +1,3 @@
-TIMESTAMP = 1708449424
-SHA256 (python-heatclient-3.4.0.tar.gz) = 8207e10c95b6aa7d28e168b971d3ec129a076fd9a265baf805af2680b912b6f2
-SIZE (python-heatclient-3.4.0.tar.gz) = 178743
+TIMESTAMP = 1709390694
+SHA256 (python-heatclient-3.5.0.tar.gz) = 075178d07607145f759a4c70c9247f92a0af9702cbb4182ac14bf0d9bc8e73d8
+SIZE (python-heatclient-3.5.0.tar.gz) = 178691
