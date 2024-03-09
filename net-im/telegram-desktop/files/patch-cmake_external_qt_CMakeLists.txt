@@ -1,4 +1,4 @@
---- cmake/external/qt/CMakeLists.txt.orig	2023-09-13 17:06:28 UTC
+--- cmake/external/qt/CMakeLists.txt.orig	2024-03-08 11:07:18 UTC
 +++ cmake/external/qt/CMakeLists.txt
 @@ -16,6 +16,8 @@ if (DESKTOP_APP_USE_PACKAGED)
          Qt::CorePrivate
@@ -29,7 +29,7 @@
      ${qt_loc}/include/QtWidgets/${qt_version}/QtWidgets
  )
  
-@@ -92,6 +97,12 @@ set(common_qt_libs
+@@ -97,6 +102,12 @@ set(common_qt_libs
      lib/${qt_lib_prefix}Qt${QT_VERSION_MAJOR}Gui
      lib/${qt_lib_prefix}Qt${QT_VERSION_MAJOR}Core
  )
