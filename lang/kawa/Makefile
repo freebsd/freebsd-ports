@@ -1,5 +1,6 @@
 PORTNAME=	kawa
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme java
 MASTER_SITES=	GNU
 
@@ -12,6 +13,7 @@ LICENSE=	MIT
 USES=		gmake groff readline
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION}
 CONFIGURE_ENV=	JAVA="${JAVA}" JAVAC="${JAVAC}"
@@ -26,7 +28,7 @@ MAKE_JOBS_UNSAFE=yes
 INFO=		kawa
 PLIST_FILES=	bin/kawa bin/qexo \
 		share/kawa/bin/kawa share/kawa/lib/kawa.jar \
-		man/man1/kawa.1.gz man/man1/qexo.1.gz \
+		share/man/man1/kawa.1.gz share/man/man1/qexo.1.gz \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/life-grid.log$$/s,>&,>,' \
