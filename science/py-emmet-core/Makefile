@@ -21,4 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}monty>=2021.3:devel/py-monty@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
