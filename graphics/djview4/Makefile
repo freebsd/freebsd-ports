@@ -1,6 +1,6 @@
 PORTNAME=	djview
 PORTVERSION=	4.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
@@ -25,6 +25,7 @@ USE_QT=		core gui network opengl printsupport widgets \
 USE_XORG=	sm ice xext xt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	LRELEASE="${LRELEASE}" LUPDATE="${LUPDATE}"
 
 INSTALL_TARGET=	install-strip
