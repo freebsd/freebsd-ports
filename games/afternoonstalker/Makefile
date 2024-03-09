@@ -1,5 +1,6 @@
 PORTNAME=	afternoonstalker
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
 		LOCAL/martymac
@@ -17,6 +18,7 @@ USE_CXXSTD=	gnu++98
 USE_SDL=	image mixer sdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	AUTHORS COPYING NEWS README THANKS
 

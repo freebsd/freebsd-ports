@@ -1,7 +1,4 @@
 bin/afternoonstalker
-man/man6/afternoonstalker.6.gz
-share/applications/afternoonstalker.desktop
-share/pixmaps/afternoonstalker.png
 %%DATADIR%%/maze0.set
 %%DATADIR%%/maze1.set
 %%DATADIR%%/maze2.set
@@ -14,3 +11,6 @@ share/pixmaps/afternoonstalker.png
 %%DATADIR%%/sounds/robot-hit.wav
 %%DATADIR%%/sounds/shooting-blanks.wav
 %%DATADIR%%/sounds/spider-killed.wav
+share/applications/afternoonstalker.desktop
+share/man/man6/afternoonstalker.6.gz
+share/pixmaps/afternoonstalker.png
