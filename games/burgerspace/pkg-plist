@@ -1,9 +1,6 @@
 bin/burgerspace
 bin/burgerspace-server
-man/man6/burgerspace-server.6.gz
-man/man6/burgerspace.6.gz
 share/applications/burgerspace.desktop
-share/pixmaps/burgerspace.png
 %%DATADIR%%/sounds/chef-gets-treat.wav
 %%DATADIR%%/sounds/chef-shoots-blanks.wav
 %%DATADIR%%/sounds/chef-throws-pepper.wav
@@ -18,3 +15,6 @@ share/pixmaps/burgerspace.png
 %%DATADIR%%/sounds/new-game-starts.wav
 %%DATADIR%%/sounds/treat-appears.wav
 %%DATADIR%%/sounds/treat-disappears.wav
+share/man/man6/burgerspace-server.6.gz
+share/man/man6/burgerspace.6.gz
+share/pixmaps/burgerspace.png
