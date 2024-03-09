@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-datastore-v1
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
