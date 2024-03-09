@@ -1,6 +1,5 @@
 PORTNAME=	caja-extensions
-PORTVERSION=	1.26.0
-PORTREVISION=	7
+PORTVERSION=	1.28.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 PORTSCOUT=	limitw:1,even
 
 USES=		autoreconf compiler:c11 gettext gmake gnome libtool \
-		localbase mate pathfix pkgconfig tar:xz
+		localbase mate pathfix pkgconfig tar:xz gstreamer
 USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_LDCONFIG=	yes
