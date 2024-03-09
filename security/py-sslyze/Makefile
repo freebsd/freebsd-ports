@@ -11,6 +11,9 @@ WWW=		https://github.com/nabla-c0d3/sslyze
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	It does not support OpenSSL 3.0+
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nassl>=5.1<6:security/py-nassl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>=1.10<2.4,1:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=23,1<24,1:security/py-openssl@${PY_FLAVOR} \
