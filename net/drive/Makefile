@@ -1,7 +1,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,24 +20,28 @@ PLIST_FILES=	bin/drive
 
 GH_ACCOUNT=	odeke-em
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus/vendor/go.opencensus.io \
-		cheggaaa:pb:v3.0.8:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
-		golang:crypto:0559593:golang_crypto/vendor/golang.org/x/crypto \
+		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus/vendor/go.opencensus.io \
+		cheggaaa:pb:v3.1.5:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
+		felixge:httpsnoop:v1.0.4:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
+		go-logr:logr:v1.4.1:go_logr_logr/vendor/github.com/go-logr/logr \
+		go-logr:stdr:v1.2.2:go_logr_stdr/vendor/github.com/go-logr/stdr \
+		golang:crypto:v0.20.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:41bb18b:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:c90051b:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:2104d58:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:b4bca84:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:590a5ac:google_go_genproto/vendor/google.golang.org/genproto \
-		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
-		googleapis:enterprise-certificate-proxy:v0.1.0:googleapis_enterprise_certificate_proxy/vendor/github.com/googleapis/enterprise-certificate-proxy \
-		googleapis:google-api-go-client:v0.86.0:google_googleapigoclient/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.103.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
-		googleapis:gax-go:v2.4.0:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
-		grpc:grpc-go:v1.47.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		mattn:go-isatty:v0.0.14:mattn_goisatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.13:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
+		golang:net:v0.21.0:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:v0.17.0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:v0.17.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:df926f6:google_go_genproto/vendor/google.golang.org/genproto \
+		google:s2a-go:v0.1.7:google_s2a_go/vendor/github.com/google/s2a-go \
+		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
+		googleapis:enterprise-certificate-proxy:v0.3.2:googleapis_enterprise_certificate_proxy/vendor/github.com/googleapis/enterprise-certificate-proxy \
+		googleapis:google-api-go-client:v0.167.0:google_googleapigoclient/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.112.1:googleapis_googlecloudgo/vendor/cloud.google.com/go \
+		googleapis:gax-go:v2.12.2:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
+		grpc:grpc-go:v1.62.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		mattn:go-isatty:v0.0.20:mattn_goisatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.15:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
 		mxk:go-flowrate:cca7078:mxk_goflowrate/vendor/github.com/mxk/go-flowrate \
 		odeke-em:cache:baf8e43:odekeem_cache/vendor/github.com/odeke-em/cache \
 		odeke-em:cli-spinner:610063b:odekeem_clispinner/vendor/github.com/odeke-em/cli-spinner \
@@ -52,8 +56,10 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		odeke-em:pretty-words:9d37a7f:odekeem_prettywords/vendor/github.com/odeke-em/pretty-words \
 		odeke-em:semalim:9c88bf5:odekeem_semalim/vendor/github.com/odeke-em/semalim \
 		odeke-em:statos:292960a:odekeem_statos/vendor/github.com/odeke-em/statos \
-		protocolbuffers:protobuf-go:v1.28.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		open-telemetry:opentelemetry-go:v1.24.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-go-contrib:v1.24.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib \
+		protocolbuffers:protobuf-go:v1.32.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		rivo:uniseg:v0.4.7:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		skratchdot:open-golang:eef8423:skratchdot_opengolang/vendor/github.com/skratchdot/open-golang
 USE_GITHUB=	yes
 
