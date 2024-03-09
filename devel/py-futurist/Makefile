@@ -1,12 +1,13 @@
 PORTNAME=	futurist
-PORTVERSION=	2.4.1
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Useful additions to futures, from the future
-WWW=		https://docs.openstack.org/futurist/latest/
+WWW=		https://docs.openstack.org/futurist/latest/ \
+		https://github.com/openstack/futurist
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
