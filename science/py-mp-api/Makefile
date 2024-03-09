@@ -27,6 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.1:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 .include <bsd.port.mk>
