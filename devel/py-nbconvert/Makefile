@@ -1,7 +1,8 @@
 PORTNAME=	nbconvert
-PORTVERSION=	7.16.0
+PORTVERSION=	7.16.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/jupyter/nbconvert/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
