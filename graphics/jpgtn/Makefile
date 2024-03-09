@@ -1,6 +1,6 @@
 PORTNAME=	jpgtn
 PORTVERSION=	2.06
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF SUNSITE/apps/graphics/misc
 
@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		jpeg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
 PLIST_FILES=	bin/jpgtn \
-		man/man1/jpgtn.1.gz
+		share/man/man1/jpgtn.1.gz
 
 WITH_MAXSIZE?=	2048
 WITH_MINSIZE?=	1
