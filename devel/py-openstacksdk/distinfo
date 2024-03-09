@@ -1,3 +1,3 @@
-TIMESTAMP = 1708449230
-SHA256 (openstacksdk-2.1.0.tar.gz) = 76c9b740a2cd625fcc6e9241614eef2a0934cb72354a5c587168f8fadef2e674
-SIZE (openstacksdk-2.1.0.tar.gz) = 1208013
+TIMESTAMP = 1709390564
+SHA256 (openstacksdk-3.0.0.tar.gz) = b0c7f9a025d5da92ad4c762941e6acc4cb53930a07ff739a9aebcc5e5a724ae6
+SIZE (openstacksdk-3.0.0.tar.gz) = 1214285
