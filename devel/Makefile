@@ -5431,6 +5431,7 @@
     SUBDIR += py-pytest-isort
     SUBDIR += py-pytest-jupyter
     SUBDIR += py-pytest-lazy-fixture
+    SUBDIR += py-pytest-lazy-fixtures
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-markdown
     SUBDIR += py-pytest-metadata

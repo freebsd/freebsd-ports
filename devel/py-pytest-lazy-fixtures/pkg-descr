@@ -1,0 +1,7 @@
+pytest-lazy-fixtures allows you to use fixtures in @pytest.mark.parametrize.
+
+This project was inspired by pytest-lazy-fixture. Improvements that have been
+made in this project:
+- You can use fixtures in any data structures
+- You can access the attributes of fixtures
+- You can use functions in fixtures
