@@ -1,4 +1,6 @@
 .ifndef SLAVE_PORT
+IGNORE=		is replaced by devel/gdb-meta on CheriBSD
+
 PORTNAME=	gdb
 DISTVERSION=	13.1
 PORTREVISION=	3
