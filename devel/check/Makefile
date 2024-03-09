@@ -11,7 +11,7 @@ WWW=		https://libcheck.github.io/check/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES=		libtool makeinfo pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 
 CONFIGURE_ENV=	ac_cv_path_AWK_PATH=${AWK}
 GNU_CONFIGURE=	yes
