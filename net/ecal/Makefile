@@ -28,7 +28,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml-cpp.so:devel/yaml-cpp
 		# binaries aren't linked with libfineftp-server.so, see https://github.com/continental/ecal/issues/381; same with libcurl.so
 
-USES=		cmake compiler:c++17-lang desktop-file-utils localbase:ldflags qt:5 shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_QT=		core gui widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
