@@ -1,3 +1,3 @@
-TIMESTAMP = 1708449116
-SHA256 (aiobotocore-2.11.2.tar.gz) = 6dd7352248e3523019c5a54a395d2b1c31080697fc80a9ad2672de4eec8c7abd
-SIZE (aiobotocore-2.11.2.tar.gz) = 103067
+TIMESTAMP = 1709390506
+SHA256 (aiobotocore-2.12.0.tar.gz) = bc841cef234afcb781f2d600680c9e49d01b9a2e8169790a32579bb0df51777f
+SIZE (aiobotocore-2.12.0.tar.gz) = 103037
