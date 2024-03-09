@@ -20,6 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geomdl>0:graphics/py-geomdl@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	concurrent distutils autoplist pytest
 
+NO_ARCH=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozman
 
