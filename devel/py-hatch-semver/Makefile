@@ -1,7 +1,8 @@
 PORTNAME=	hatch-semver
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/fleetingbytes/hatch-semver/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	hatch_semver-${PORTVERSION}
 
