@@ -1,4 +1,4 @@
 @(,games,2555) bin/kobodl
-man/man6/kobodl.6.gz
 share/applications/kobodeluxe.desktop
+share/man/man6/kobodl.6.gz
 share/pixmaps/kobo-icon.xpm
