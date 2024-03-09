@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2020.6.20:security/py-certifi@${PY_
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.9:net/py-urllib3@${PY_FLAVOR}
 
-USES=		pytest python
+USES=		python
 
 # Project is currently not publishing to pypi sdist.  pypi/naming status:
 # https://github.com/OfflineIMAP/offlineimap3/issues/111
@@ -34,7 +34,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OfflineIMAP
 GH_TAGNAME=	253f97a3e947
 
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 CONFLICTS_INSTALL=	mail/py-offlineimap
 
