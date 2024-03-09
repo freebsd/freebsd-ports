@@ -1,7 +1,6 @@
 PORTNAME=	dissent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.20
-PORTREVISION=	1
+DISTVERSION=	0.0.21
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -57,12 +56,8 @@ CGO_LDFLAGS+=	-Wl,--as-needed # gtk4 deps
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/so.libdb.dissent.desktop \
 		share/dbus-1/services/so.libdb.dissent.service \
-		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+		share/icons/hicolor/scalable/apps/so.libdb.dissent.svg \
 		share/metainfo/so.libdb.dissent.metainfo.xml
-
-post-extract:
-# Prune after https://github.com/diamondburned/dissent/commit/86b3ea579df1
-	${RM} ${WRKSRC}/nix/xyz.diamondb.dissent.desktop
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/bin,${PREFIX}/bin,' ${WRKSRC}/nix/*.service
@@ -70,7 +65,7 @@ post-patch:
 post-install:
 # Install extras similar to Nix flake
 .for f in nix/*.desktop nix/*.service *.metainfo.xml \
-		internal/icons/hicolor/scalable/apps/so.libdb.Dissent.svg
+		internal/icons/hicolor/scalable/apps/so.libdb.dissent.svg
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
 	${INSTALL_DATA} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}
