@@ -4,5 +4,3 @@ from a set of natural language dictionary databases. While RFC 2229 is a
 finished document, we plan to clarify and enhance the protocol definition as we
 gain more experience with large dictionary database servers. By default, the
 DICT protocol uses TCP port 2628.
-
-See also: https://sourceforge.net/projects/dict/
