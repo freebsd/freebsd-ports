@@ -906,9 +906,9 @@ lib/gambit-c/termite/utils@gambit409004@C/utils.o1
 lib/gambit-c/termite/utils@gambit409004@js/utils.js
 lib/gambit-c/termite/utils@gambit409004@js/utils.o1
 lib/gambit-c/termite/uuid.scm
-man/man1/gsi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gambit.html
 %%PORTDOCS%%%%DOCSDIR%%/gambit.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gambit.tsv
 %%PORTDOCS%%%%DOCSDIR%%/gambit.txt
 share/emacs/site-lisp/gambit.el
+share/man/man1/gsi.1.gz
