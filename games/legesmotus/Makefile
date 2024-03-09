@@ -1,6 +1,6 @@
 PORTNAME=	legesmotus
 PORTVERSION=	0.4.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ USES=		compiler:c++11-lib gmake
 USE_CXXSTD=	c++11  # strtoll, atoll
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
-		--mandir="${PREFIX}/man" \
+		--mandir="${PREFIX}/share/man" \
 		--datadir="${DATADIR}"
 MAKE_ENV=	XDIR=${LOCALBASE}
 
