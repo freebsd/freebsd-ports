@@ -29,4 +29,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
