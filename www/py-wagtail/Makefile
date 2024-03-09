@@ -1,5 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	5.2.3
+PORTVERSION=	6.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,16 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.13:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=3.2<5.1:www/py-django32@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-filter>=23.3<24:www/py-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=6.1<7.0:www/py-django-modelcluster@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-permissionedforms>=0.1<1.0:www/py-django-permissionedforms@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-taggit>=2.0<5.0:www/py-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1<5.0:www/py-django-treebeard@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5:www/py-draftjs-exporter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django42>=4.2<6.0:www/py-django42@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.3<24:www/py-dj42-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-modelcluster>=6.2.1<7.0:www/py-dj42-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-permissionedforms>=0.1<1.0:www/py-dj42-django-permissionedforms@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-taggit>=4.0<5.1:www/py-dj42-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-treebeard>=4.5.1<5.0:www/py-dj42-django-treebeard@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.11.1<4.0:www/py-dj42-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5<6.0:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<2:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}l18n>=2018.5:devel/py-l18n@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}laces>=0.1<0.2:www/py-laces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0.10<4.0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0<11.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \
