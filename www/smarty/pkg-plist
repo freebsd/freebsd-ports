@@ -22,6 +22,7 @@
 %%DATADIR%%/plugins/modifier.debug_print_var.php
 %%DATADIR%%/plugins/modifier.escape.php
 %%DATADIR%%/plugins/modifier.explode.php
+%%DATADIR%%/plugins/modifier.implode.php
 %%DATADIR%%/plugins/modifier.mb_wordwrap.php
 %%DATADIR%%/plugins/modifier.number_format.php
 %%DATADIR%%/plugins/modifier.regex_replace.php
@@ -37,6 +38,7 @@
 %%DATADIR%%/plugins/modifiercompiler.escape.php
 %%DATADIR%%/plugins/modifiercompiler.from_charset.php
 %%DATADIR%%/plugins/modifiercompiler.indent.php
+%%DATADIR%%/plugins/modifiercompiler.json_encode.php
 %%DATADIR%%/plugins/modifiercompiler.lower.php
 %%DATADIR%%/plugins/modifiercompiler.nl2br.php
 %%DATADIR%%/plugins/modifiercompiler.noprint.php
@@ -46,6 +48,7 @@
 %%DATADIR%%/plugins/modifiercompiler.strip.php
 %%DATADIR%%/plugins/modifiercompiler.strip_tags.php
 %%DATADIR%%/plugins/modifiercompiler.strlen.php
+%%DATADIR%%/plugins/modifiercompiler.substr.php
 %%DATADIR%%/plugins/modifiercompiler.to_charset.php
 %%DATADIR%%/plugins/modifiercompiler.unescape.php
 %%DATADIR%%/plugins/modifiercompiler.upper.php
