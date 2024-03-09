@@ -1,6 +1,6 @@
 PORTNAME=	mscgen
 PORTVERSION=	0.20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mcternan.me.uk/mscgen/software/ \
 		http://romain.blogreen.org/distfiles/
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		jpeg
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
