@@ -1,5 +1,5 @@
 PORTNAME=	Flickr-API
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-HTTP-Message>=1.56:www/p5-HTTP-Message \
 		p5-libwww>=0:www/p5-libwww
 TEST_DEPENDS=	p5-Test-Script>=0:devel/p5-Test-Script
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
