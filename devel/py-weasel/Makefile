@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpathlib>=0.7.0:devel/py-cloudpathlib@${
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.7.4<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.13.0<3.0.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}smart-open>=5.2.1<7.0.0:net/py-smart-open@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}smart-open>=5.2.1:net/py-smart-open@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}srsly>=2.4.3<3.0.0:devel/py-srsly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.3.0<0.10.0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wasabi>=0.9.1<1.2.0:textproc/py-wasabi@${PY_FLAVOR}
