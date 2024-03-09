@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.6<2.1.0:devel/py-catalogue@${
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.7.4<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.13.0<3.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}smart-open>=5.2.1<7.0.0:net/py-smart-open@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}smart-open>=5.2.1:net/py-smart-open@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spacy-legacy>=3.0.11<3.1.0:textproc/py-spacy-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spacy-loggers>=1.0.0<2.0.0:textproc/py-spacy-loggers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}srsly>=2.4.3<3.0.0:devel/py-srsly@${PY_FLAVOR} \
