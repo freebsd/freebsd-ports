@@ -1,5 +1,5 @@
 PORTNAME=	tooz
-PORTVERSION=	5.0.0
+PORTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,5 +27,14 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	CONSUL POSTGRESQL REDIS
+CONSUL_DESC=	Consul.io support
+POSTGRESQL_DESC=PostgreSQL database support
+REDIS_DESC=	Redis support
+
+CONSUL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-consul2>=0.0.16:sysutils/py-python-consul2@${PY_FLAVOR}
+POSTGRESQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5:databases/py-psycopg2@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=4.0.0:databases/py-redis@${PY_FLAVOR}
 
 .include <bsd.port.mk>
