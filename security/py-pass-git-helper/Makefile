@@ -20,4 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	languitar
 USE_PYTHON=	autoplist concurrent distutils pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
