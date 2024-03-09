@@ -1754,6 +1754,7 @@
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
     SUBDIR += py-kiss-headers
+    SUBDIR += py-laces
     SUBDIR += py-lektor
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass
