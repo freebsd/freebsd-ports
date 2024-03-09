@@ -1,5 +1,6 @@
 PORTNAME=	freeciv
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://files.freeciv.org/stable/
@@ -24,6 +25,7 @@ SHEBANG_FILES=	bootstrap/*.sh data/flags/convert* scripts/mapimg2anim \
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--disable-static \
 		--enable-aimodules \
