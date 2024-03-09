@@ -1,7 +1,6 @@
 PORTNAME=	jujutsu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.15.1
 CATEGORIES=	devel
 
 MAINTAINER=	se@FreeBSD.org
@@ -11,12 +10,15 @@ WWW=		https://github.com/martinvonz/jj/README.md
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libssh2.so:security/libssh2 \
+		libzstd.so:archivers/zstd
 
 USES=		cargo localbase ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinvonz
 GH_PROJECT=	jj
+
+PLIST_FILES=	bin/jj
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/jj \
