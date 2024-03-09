@@ -1,6 +1,6 @@
 bin/enigma
-man/man6/enigma.6.gz
 share/appdata/enigma.appdata.xml
 share/applications/enigma.desktop
 share/icons/hicolor/48x48/apps/enigma.png
+share/man/man6/enigma.6.gz
 share/pixmaps/enigma.png
