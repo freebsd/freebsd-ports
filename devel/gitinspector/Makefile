@@ -22,7 +22,4 @@ NO_ARCH=	yes
 GH_ACCOUNT=	ejwa
 USE_GITHUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/data_files/d' ${WRKSRC}/setup.py
-
 .include <bsd.port.mk>
