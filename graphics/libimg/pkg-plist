@@ -7,26 +7,6 @@
 %%EXAMPLES%%%%EXAMPLESDIR%%/msgs/fr.msg
 %%EXAMPLES%%%%EXAMPLESDIR%%/msgs/ja.msg
 %%EXAMPLES%%%%EXAMPLESDIR%%/msgs/nl.msg
-man/mann/img-bmp.n.gz
-man/mann/img-dted.n.gz
-man/mann/img-gif.n.gz
-man/mann/img-flir.n.gz
-man/mann/img-ico.n.gz
-man/mann/img-jpeg.n.gz
-man/mann/img-pcx.n.gz
-man/mann/img-pixmap.n.gz
-man/mann/img-png.n.gz
-man/mann/img-ppm.n.gz
-man/mann/img-ps.n.gz
-man/mann/img-raw.n.gz
-man/mann/img-sgi.n.gz
-man/mann/img-sun.n.gz
-man/mann/img-tga.n.gz
-man/mann/img-tiff.n.gz
-man/mann/img-window.n.gz
-man/mann/img-xbm.n.gz
-man/mann/img-xpm.n.gz
-man/mann/img.n.gz
 lib/Img/libtkimg%%PORTVERSION%%.so
 lib/Img/libtkimgbmp%%PORTVERSION%%.so
 lib/Img/libtkimgdted%%PORTVERSION%%.so
@@ -50,6 +30,26 @@ lib/Img/libtkimgwindow%%PORTVERSION%%.so
 lib/Img/libtkimgxpm%%PORTVERSION%%.so
 lib/Img/pkgIndex.tcl
 lib/Img/tkimgConfig.sh
+share/man/mann/img-bmp.n.gz
+share/man/mann/img-dted.n.gz
+share/man/mann/img-gif.n.gz
+share/man/mann/img-flir.n.gz
+share/man/mann/img-ico.n.gz
+share/man/mann/img-jpeg.n.gz
+share/man/mann/img-pcx.n.gz
+share/man/mann/img-pixmap.n.gz
+share/man/mann/img-png.n.gz
+share/man/mann/img-ppm.n.gz
+share/man/mann/img-ps.n.gz
+share/man/mann/img-raw.n.gz
+share/man/mann/img-sgi.n.gz
+share/man/mann/img-sun.n.gz
+share/man/mann/img-tga.n.gz
+share/man/mann/img-tiff.n.gz
+share/man/mann/img-window.n.gz
+share/man/mann/img-xbm.n.gz
+share/man/mann/img-xpm.n.gz
+share/man/mann/img.n.gz
 @comment include/tkimg.h
 @comment include/tkimgDecls.h
 @comment lib/tkimgConfig.sh
