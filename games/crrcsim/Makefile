@@ -1,6 +1,6 @@
 PORTNAME=	crrcsim
 PORTVERSION=	0.9.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games education
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gettext gl gmake jpeg localbase sdl xorg
 USE_SDL=	sdl
 USE_GL=		gl glu
