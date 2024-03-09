@@ -26,7 +26,14 @@
      'jellyfish>=0.7',
      'jsonschema>=3.2.0',
      'keyring>=17.0.0',
-@@ -232,18 +231,18 @@ install_requires = [
+@@ -226,24 +225,24 @@ install_requires = [
+     'pickleshare>=0.4',
+     'psutil>=5.3',
+     'pygments>=2.0',
+-    'pylint>=2.5.0,<3.1',
++    'pylint>=2.5.0',
+     'pylint-venv>=3.0.2',
+     'python-lsp-black>=1.2.0,<3.0.0',
      'pyls-spyder>=0.4.0',
      'pyqt5>=5.10,<5.16',
      'pyqtwebengine>=5.10,<5.16',

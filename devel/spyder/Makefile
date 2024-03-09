@@ -1,6 +1,7 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.5.0
+PORTREVISION=	1
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +30,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pickleshare>=0.4:databases/py-pickleshare@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.3:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
-		pylint${PYTHON_PKGNAMESUFFIX}>=2.5.0:devel/pylint@${PY_FLAVOR} \
+		pylint${PYTHON_PKGNAMESUFFIX}>=3.1.0:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylint-venv>=3.0.2:devel/py-pylint-venv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lsp-black>=1.2.0:textproc/py-python-lsp-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyls-spyder>=0.4.0:textproc/py-pyls-spyder@${PY_FLAVOR} \
@@ -44,7 +45,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}QtPy>=2.1.0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rtree>=0.9.7:devel/py-rtree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0.6.6:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spyder-kernels>=2.5.0:devel/py-spyder-kernels@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spyder-kernels>=2.5.1:devel/py-spyder-kernels@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textdistance>=4.2.0:textproc/py-textdistance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}three-merge>=0.1.1:textproc/py-three-merge@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchdog>=0.10.3:devel/py-watchdog@${PY_FLAVOR}
