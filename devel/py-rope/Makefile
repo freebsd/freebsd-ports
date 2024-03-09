@@ -23,8 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytoolconfig>=0:devel/py-pytoolconfig@${PY_F
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-timeout>=0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytoolconfig>=0:devel/py-pytoolconfig@${PY_FLAVOR}
 
-USES=		cpe python pytest
-USE_PYTHON=	autoplist pep517
+USES=		cpe python
+USE_PYTHON=	autoplist pep517 pytest
 
 CPE_VENDOR=	rope_project
 
