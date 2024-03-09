@@ -1,5 +1,5 @@
 PORTNAME=	launchy
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/copiousfreetime/launchy
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=2.7<3:www/rubygem-addressable
+RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable
 
 USES=		gem
 
