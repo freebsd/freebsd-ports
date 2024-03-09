@@ -4605,6 +4605,7 @@
     SUBDIR += py-deepmerge
     SUBDIR += py-defusedxml
     SUBDIR += py-demjson
+    SUBDIR += py-dep-logic
     SUBDIR += py-deprecat
     SUBDIR += py-deprecated
     SUBDIR += py-deprecation
