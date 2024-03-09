@@ -1,6 +1,6 @@
 PORTNAME=		intel-backlight
 DISTVERSION=		20200418
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics
 
 MAINTAINER=		jmd@FreeBSD.org
@@ -25,6 +25,7 @@ PORTEXAMPLES=		asmc_backlight.sh \
 			isl_backlight.sh \
 			acpi-video-intel-backlight.conf
 
+MAKE_ARGS=		MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=		install-strip
 
 OPTIONS_SUB=		yes
