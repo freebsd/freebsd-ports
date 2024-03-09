@@ -1,7 +1,7 @@
 PORTNAME=	dmtx-utils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -18,8 +18,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dmtx
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 PLIST_FILES=	bin/dmtxread bin/dmtxwrite bin/dmtxquery \
-		man/man1/dmtxread.1.gz man/man1/dmtxwrite.1.gz \
-		man/man1/dmtxquery.1.gz
+		share/man/man1/dmtxread.1.gz share/man/man1/dmtxwrite.1.gz \
+		share/man/man1/dmtxquery.1.gz
 
 .include <bsd.port.mk>
