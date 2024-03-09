@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-core
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	011
@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
 		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime \
 		rubygem-representable>=3.0<4:textproc/rubygem-representable \
 		rubygem-retriable>=2.0<4.0:devel/rubygem-retriable \
-		rubygem-rexml>=0:textproc/rubygem-rexml \
-		rubygem-webrick>=0:www/rubygem-webrick
+		rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		gem
 
