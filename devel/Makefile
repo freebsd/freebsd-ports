@@ -5089,6 +5089,7 @@
     SUBDIR += py-num2words
     SUBDIR += py-numba
     SUBDIR += py-objgraph
+    SUBDIR += py-objprint
     SUBDIR += py-objsize
     SUBDIR += py-oci
     SUBDIR += py-odfpy
