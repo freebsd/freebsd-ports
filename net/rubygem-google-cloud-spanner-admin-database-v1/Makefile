@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-spanner-admin-database-v1
-PORTVERSION=	0.17.1
+PORTVERSION=	0.18.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
