@@ -183,6 +183,7 @@ cbsd/etc/defaults/node.conf
 cbsd/etc/defaults/pf.conf.tpl
 cbsd/etc/defaults/pkgbrowser.conf
 cbsd/etc/defaults/portsup.conf
+cbsd/etc/defaults/qexec.conf
 cbsd/etc/defaults/qemu-default-default.conf
 cbsd/etc/defaults/qlogin.conf
 cbsd/etc/defaults/qls.conf
@@ -543,6 +544,7 @@ cbsd/qemuctl/qcreate
 cbsd/qemuctl/qdestroy
 cbsd/qemuctl/qemu-dsk-tui
 cbsd/qemuctl/qemu-nic-tui
+cbsd/qemuctl/qexec
 cbsd/qemuctl/qget
 cbsd/qemuctl/qlogin
 cbsd/qemuctl/qls
@@ -985,6 +987,7 @@ cbsd/sudoexec/jstart
 cbsd/sudoexec/jstop
 cbsd/sudoexec/junregister
 cbsd/sudoexec/mkdatadir
+cbsd/sudoexec/qexec
 cbsd/sudoexec/qcreate
 cbsd/sudoexec/qdestroy
 cbsd/sudoexec/qremove
