@@ -1,4 +1,4 @@
---- Makefile.orig	2022-07-03 06:07:22 UTC
+--- Makefile.orig	2016-11-03 06:33:31 UTC
 +++ Makefile
 @@ -1,6 +1,6 @@
  .SUFFIXES: .3 .3.html
@@ -8,7 +8,7 @@
  #If you're on Mac OSX without XQuarts, you'll need /usr/X11 instead of /opt/X11!
  CPPFLAGS	= `pkg-config --cflags --silence-errors cairo || echo '-I/opt/X11/include/cairo'`
  VERSION		= 0.1.15
-@@ -165,13 +165,13 @@ MANS		= man/kdata_array_alloc.3 \
+@@ -165,15 +165,15 @@ MANS		= man/kdata_array_alloc.3 \
  		  man/kplot_get_plotcfg.3 \
  	 	  man/kplotcfg_defaults.3
  
@@ -22,7 +22,10 @@
 -	install -m 0444 libkplot.a $(DESTDIR)$(PREFIX)/lib
 +	install -m 0444 libkplot.so $(DESTDIR)$(PREFIX)/lib
  	install -m 0444 kplot.h $(DESTDIR)$(PREFIX)/include
- 	install -m 0444 $(MANS) $(DESTDIR)$(PREFIX)/man/man3
+-	install -m 0444 $(MANS) $(DESTDIR)$(PREFIX)/man/man3
++	install -m 0444 $(MANS) $(DESTDIR)$(PREFIX)/share/man/man3
+ 
+ www: $(HTMLS) $(PNGS) kplot.tgz kplot.tgz.sha512
  
 @@ -186,50 +186,50 @@ installwww: www
  	install -m 0444 kplot.tgz $(PREFIX)/snapshots
@@ -91,7 +94,7 @@
  	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
  
  example0.png: example0
-@@ -274,8 +274,8 @@ example12.png: example12
+@@ -274,8 +274,8 @@ example13.png: example13
  example13.png: example13
  	./example13
  
@@ -102,7 +105,7 @@
  
  $(OBJS): kplot.h compat.h extern.h
  
-@@ -305,7 +305,7 @@ kplot.tgz:
+@@ -305,7 +305,7 @@ clean:
  	rm -rf .dist
  
  clean:
