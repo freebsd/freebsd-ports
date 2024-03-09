@@ -58,10 +58,6 @@ libdata/pkgconfig/smuxi-common.pc
 libdata/pkgconfig/smuxi-engine-irc.pc
 libdata/pkgconfig/smuxi-engine.pc
 libdata/pkgconfig/smuxi-frontend.pc
-man/man1/smuxi-frontend-gnome.1.gz
-man/man1/smuxi-frontend-stfl.1.gz
-man/man1/smuxi-message-buffer.1.gz
-man/man1/smuxi-server.1.gz
 share/appdata/smuxi-frontend-gnome.appdata.xml
 share/applications/smuxi-frontend-gnome.desktop
 share/icons/hicolor/128x128/apps/smuxi-frontend-gnome.png
@@ -452,3 +448,7 @@ share/locale/zh_CN/LC_MESSAGES/smuxi-frontend-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/smuxi-frontend.mo
 share/locale/zh_CN/LC_MESSAGES/smuxi-message-buffer.mo
 share/locale/zh_CN/LC_MESSAGES/smuxi-server.mo
+share/man/man1/smuxi-frontend-gnome.1.gz
+share/man/man1/smuxi-frontend-stfl.1.gz
+share/man/man1/smuxi-message-buffer.1.gz
+share/man/man1/smuxi-server.1.gz
