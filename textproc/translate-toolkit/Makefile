@@ -1,5 +1,6 @@
 PORTNAME=	translate-toolkit
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -22,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		gettext python shebangfix
-USE_PYTHON=	autoplist distutils noflavors
+USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
 
