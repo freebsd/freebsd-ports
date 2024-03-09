@@ -1,6 +1,6 @@
 PORTNAME=	nettoe
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		SF
@@ -13,8 +13,9 @@ LICENSE=	GPLv2
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/nettoe man/man6/nettoe.6.gz
+PLIST_FILES=	bin/nettoe share/man/man6/nettoe.6.gz
 
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
 
