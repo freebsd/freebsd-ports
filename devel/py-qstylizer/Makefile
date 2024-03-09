@@ -24,13 +24,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR}
 
-USES=		pyqt:5 pytest python
+USES=		pyqt:5 python
 # PyPi only has the wheel version
 USE_GITHUB=	yes
 GH_ACCOUNT=	blambright
 
 USE_PYQT=	pyqt5
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest
 
 MAKE_ENV=	PBR_VERSION=${PORTVERSION}
 
