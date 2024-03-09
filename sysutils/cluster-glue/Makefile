@@ -1,6 +1,6 @@
 PORTNAME=	cluster-glue
 PORTVERSION=	1.0.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hg.linux-ha.org/glue/archive/
 DISTNAME=	0a7add1d9996
@@ -32,6 +32,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	ha_logd
 WRKSRC=		${WRKDIR}/Reusable-Cluster-Components-glue--${DISTNAME}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--with-initdir=${PREFIX}/etc/rc.d \
 		--with-ocf-root=${PREFIX}/etc/ocf \
