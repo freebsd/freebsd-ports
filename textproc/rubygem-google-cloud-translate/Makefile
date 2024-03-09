@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-translate
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
