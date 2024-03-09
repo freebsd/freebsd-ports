@@ -12,6 +12,7 @@ bin/gsasl
 %%NLS%%share/locale/hu/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gsasl.mo

@@ -1,11 +1,11 @@
---- Makefile.in.orig	2022-06-20 15:57:22 UTC
+--- Makefile.in.orig	2024-01-02 17:12:11 UTC
 +++ Makefile.in
-@@ -1855,7 +1855,7 @@ top_builddir = @top_builddir@
+@@ -2116,7 +2116,7 @@ ACLOCAL_AMFLAGS = -I m4 -I lib/m4
  top_srcdir = @top_srcdir@
- DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --with-gssapi-impl=no
+ AM_DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --with-gssapi-impl=no
  ACLOCAL_AMFLAGS = -I m4 -I lib/m4
--SUBDIRS = lib po gl src examples tests doc gltests
-+SUBDIRS = po gl src examples tests doc gltests # lib
+-SUBDIRS = lib po gl src examples tests doc
++SUBDIRS = po gl src examples tests doc # lib
  
  # git-version-gen
- EXTRA_DIST = cfg.mk maint.mk build-aux/git2cl m4/gnulib-cache.m4 \
+ EXTRA_DIST = cfg.mk maint.mk CONTRIBUTING.md build-aux/git2cl \
