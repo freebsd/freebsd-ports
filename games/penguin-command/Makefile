@@ -1,6 +1,6 @@
 PORTNAME=	penguin-command
 PORTVERSION=	1.6.11
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -13,10 +13,11 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		jpeg sdl
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/penguin-command.6.gz \
-		man/man6/penguin-command.ja.6.gz
+		share/man/man6/penguin-command.6.gz \
+		share/man/man6/penguin-command.ja.6.gz
 PORTDATA=	*
 
 DESKTOP_ENTRIES="Penguin Command" \
