@@ -1,6 +1,6 @@
 PORTNAME=	pcc
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
 		http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
@@ -10,25 +10,26 @@ MAINTAINER=	joel@FreeBSD.org
 COMMENT=	Portable C Compiler
 WWW=		http://pcc.ludd.ltu.se/
 
-LICENSE=	BSDCOMPATIBLE BSD2CLAUSE BSD3CLAUSE
+LICENSE=	BSD2CLAUSE BSD3CLAUSE BSDCOMPATIBLE
 LICENSE_COMB=	multi
 LICENSE_NAME_BSDCOMPATIBLE=	BSD-style compatible licenses
-LICENSE_TEXT_BSDCOMPATIBLE=	The license: BSDCOMPATIBLE (${LICENSE_NAME_BSDCOMPATIBLE}),\
-	please read from the web: http://pcc.ludd.ltu.se/licenses/
+LICENSE_TEXT_BSDCOMPATIBLE=	The license: BSDCOMPATIBLE (${LICENSE_NAME_BSDCOMPATIBLE}), \
+				please read from the web: http://pcc.ludd.ltu.se/licenses/
 LICENSE_PERMS_BSDCOMPATIBLE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-RUN_DEPENDS=	pcc-libs>=${PORTVERSION}:devel/pcc-libs
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+RUN_DEPENDS=	pcc-libs>=${PORTVERSION}:devel/pcc-libs
+
 USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	YACC=${YACC}
 
 PLIST_FILES=	bin/pcc bin/pcpp \
 		libexec/ccom libexec/cxxcom libexec/cpp \
-		man/man1/ccom.1.gz man/man1/cpp.1.gz \
-		man/man1/pcc.1.gz
+		share/man/man1/ccom.1.gz share/man/man1/cpp.1.gz \
+		share/man/man1/pcc.1.gz
 
 MAKE_JOBS_UNSAFE=	yes
 
