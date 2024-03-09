@@ -3,12 +3,12 @@ bin/opj_decompress
 bin/opj_dump
 include/openjpeg-%%VER%%/openjpeg.h
 include/openjpeg-%%VER%%/opj_config.h
-include/openjpeg-%%VER%%/opj_stdint.h
+lib/cmake/openjpeg-%%VER%%/OpenJPEGConfig.cmake
+lib/cmake/openjpeg-%%VER%%/OpenJPEGConfigVersion.cmake
+lib/cmake/openjpeg-%%VER%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/openjpeg-%%VER%%/OpenJPEGTargets.cmake
 lib/libopenjp2.a
 lib/libopenjp2.so
 lib/libopenjp2.so.%%PORTVERSION%%
 lib/libopenjp2.so.7
-lib/openjpeg-%%VER%%/OpenJPEGConfig.cmake
-lib/openjpeg-%%VER%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/openjpeg-%%VER%%/OpenJPEGTargets.cmake
 libdata/pkgconfig/libopenjp2.pc
