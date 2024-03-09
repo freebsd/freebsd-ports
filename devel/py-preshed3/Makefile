@@ -20,7 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2<2.1.0:devel/py-cymem@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0<1.1.0:devel/py-murmurhash@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython pep517
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
+
+TEST_WRKSRC=	${STAGEDIR}${PYTHON_SITELIBDIR}
 
 PORTSCOUT=	limit^3\.
 
