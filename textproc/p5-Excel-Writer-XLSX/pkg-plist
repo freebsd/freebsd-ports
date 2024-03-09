@@ -22,6 +22,10 @@ bin/extract_vba
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Metadata.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Packager.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Relationships.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/RichValue.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/RichValueRel.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/RichValueStructure.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/RichValueTypes.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/SharedStrings.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Styles.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Table.pm
@@ -56,6 +60,10 @@ bin/extract_vba
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Metadata.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Packager.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Relationships.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::RichValue.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::RichValueRel.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::RichValueStructure.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::RichValueTypes.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Package::SharedStrings.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Styles.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Table.3.gz
