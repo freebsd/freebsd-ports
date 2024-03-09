@@ -24,8 +24,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-PyYAML>=6.0.12.12:devel/py-types-PyYAML@${PY_FLAVOR}
 
-USES=		pytest python
-USE_PYTHON=	autoplist concurrent pep517
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
