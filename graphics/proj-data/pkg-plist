@@ -77,6 +77,8 @@
 %%DATADIR%%/ch_swisstopo_chgeo2004_ETRS89_LHN95.tif
 %%DATADIR%%/ch_swisstopo_chgeo2004_ETRS89_LN02.tif
 %%DATADIR%%/copyright_and_licenses.csv
+%%DATADIR%%/cz_cuzk_CR-2005.tif
+%%DATADIR%%/cz_cuzk_README.txt
 %%DATADIR%%/de_adv_BETA2007.tif
 %%DATADIR%%/de_adv_README.txt
 %%DATADIR%%/de_bkg_README.txt
@@ -97,11 +99,13 @@
 %%DATADIR%%/dk_sdfe_FO_fk89.pol
 %%DATADIR%%/dk_sdfe_README.txt
 %%DATADIR%%/dk_sdfe_dnn.tif
-%%DATADIR%%/dk_sdfe_dvr90.tif
 %%DATADIR%%/dk_sdfe_fvr09.tif
 %%DATADIR%%/dk_sdfe_gvr2000.tif
 %%DATADIR%%/dk_sdfe_gvr2016.tif
 %%DATADIR%%/dk_sdfi_README.txt
+%%DATADIR%%/dk_sdfi_dvr90_2002.tif
+%%DATADIR%%/dk_sdfi_dvr90_2013.tif
+%%DATADIR%%/dk_sdfi_dvr90_2023.tif
 %%DATADIR%%/dk_sdfi_gs_2022.tif
 %%DATADIR%%/dk_sdfi_gsb_2022.tif
 %%DATADIR%%/dk_sdfi_kk_2022.tif
@@ -124,6 +128,7 @@
 %%DATADIR%%/fi_nls_ykj_etrs35fin.json
 %%DATADIR%%/fr_ign_CGVD2013RGSPM06.tif
 %%DATADIR%%/fr_ign_RAC09.tif
+%%DATADIR%%/fr_ign_RAC23.tif
 %%DATADIR%%/fr_ign_RAF09.tif
 %%DATADIR%%/fr_ign_RAF18.tif
 %%DATADIR%%/fr_ign_RAF18b.tif
@@ -194,6 +199,7 @@
 %%DATADIR%%/nl_nsgi_rdcorr2018.tif
 %%DATADIR%%/nl_nsgi_rdtrans2018.tif
 %%DATADIR%%/no_kv_CD_above_Ell_ETRS89_v2021a.tif
+%%DATADIR%%/no_kv_CD_above_Ell_ETRS89_v2023b.tif
 %%DATADIR%%/no_kv_ETRS89NO_NGO48_TIN.json
 %%DATADIR%%/no_kv_HREF2018B_NN2000_EUREF89.tif
 %%DATADIR%%/no_kv_NKGETRF14_EPSG7922_2000.tif
@@ -265,6 +271,7 @@
 %%DATADIR%%/pl_gugik_geoid2021-PL-EVRF2007-NH.tif
 %%DATADIR%%/pt_dgt_D73_ETRS89_geo.tif
 %%DATADIR%%/pt_dgt_DLx_ETRS89_geo.tif
+%%DATADIR%%/pt_dgt_GeodPT08.tif
 %%DATADIR%%/pt_dgt_README.txt
 %%DATADIR%%/se_lantmateriet_README.txt
 %%DATADIR%%/se_lantmateriet_SWEN17_RH2000.tif
