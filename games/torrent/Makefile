@@ -1,6 +1,6 @@
 PORTNAME=	torrent
 PORTVERSION=	0.8.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/torrent/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -10,13 +10,14 @@ COMMENT=	Score points without letting the tiles touch the top of the board
 WWW=		http://www.shiftygames.com/torrent/torrent.html
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake sdl
 USE_SDL=	sdl mixer image ttf
 
 CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
-PLIST_FILES=	bin/${PORTNAME} man/man6/torrent.6.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man6/torrent.6.gz
 PORTDATA=	*
 
 post-extract:
