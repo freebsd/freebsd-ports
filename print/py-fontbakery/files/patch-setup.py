@@ -9,15 +9,6 @@
          # We cannot use v4 because our protobuf files have been compiled with v3.
          # (see https://github.com/fonttools/fontbakery/issues/2200)
      ]
-@@ -116,7 +116,7 @@ setup(
- 
- setup(
-     name="fontbakery",
--    use_scm_version={"write_to": "Lib/fontbakery/_version.py"},
-+    use_scm_version={"fallback_version": "%%PORTVERSION%%", "write_to": "Lib/fontbakery/_version.py"},
-     url="https://github.com/fonttools/fontbakery/",
-     description="A font quality assurance tool for everyone",
-     long_description=readme,
 @@ -179,7 +179,7 @@ setup(
          # ---
          # core dependencies
