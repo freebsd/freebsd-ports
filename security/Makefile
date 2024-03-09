@@ -1328,6 +1328,7 @@
     SUBDIR += transcrypt
     SUBDIR += trezord
     SUBDIR += tripwire
+    SUBDIR += trivy
     SUBDIR += trousers
     SUBDIR += trufflehog
     SUBDIR += tthsum
