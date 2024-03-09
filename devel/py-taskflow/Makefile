@@ -1,5 +1,5 @@
 PORTNAME=	taskflow
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,7 +43,7 @@ DATABASE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=0.8.10:databases/py-alembi
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.0.10:databases/py-sqlalchemy13@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy-utils>=0.30.11:databases/py-sqlalchemy-utils@${PY_FLAVOR}
 EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.18.2:net/py-eventlet@${PY_FLAVOR}
-REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=3.0.0:databases/py-redis@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=4.0.0:databases/py-redis@${PY_FLAVOR}
 WORKERS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kombu>=4.3.0:net/py-kombu@${PY_FLAVOR}
 
 .include <bsd.port.mk>
