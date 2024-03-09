@@ -1,5 +1,5 @@
 PORTNAME=	public_suffix_list
-PORTVERSION=	20240130
+PORTVERSION=	20240301
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,7 +21,7 @@ PORTDATA=	public_suffix_list.dat \
 USE_GITHUB=	yes
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
-GH_TAGNAME=	efa378c
+GH_TAGNAME=	d8a01c0
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
