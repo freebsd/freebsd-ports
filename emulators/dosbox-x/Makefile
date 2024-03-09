@@ -1,9 +1,10 @@
 PORTNAME=	dosbox-x
 DISTVERSIONPREFIX=	${PORTNAME}-v
 DISTVERSION=	2024.03.01
+PORTREVISION=	1
 CATEGORIES=	emulators
 
-MAINTAINER=	eduardoFreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	DOSBox fork
 WWW=		https://dosbox-x.com/
 
