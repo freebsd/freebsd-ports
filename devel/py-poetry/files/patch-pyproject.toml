@@ -1,19 +1,11 @@
---- pyproject.toml.orig	2023-11-16 19:08:40 UTC
+--- pyproject.toml.orig	2024-02-26 16:12:32 UTC
 +++ pyproject.toml
-@@ -35,14 +35,14 @@ build = "^1.0.3"
- poetry-core = "1.8.1"
- poetry-plugin-export = "^1.6.0"
- build = "^1.0.3"
--cachecontrol = { version = "^0.13.0", extras = ["filecache"] }
-+cachecontrol = { version = "^0.14.0", extras = ["filecache"] }
- cleo = "^2.1.0"
- crashtest = "^0.4.1"
- dulwich = "^0.21.2"
+@@ -41,7 +41,7 @@ installer = "^0.7.0"
  fastjsonschema = "^2.18.0"
  importlib-metadata = { version = ">=4.4", python = "<3.10" }
  installer = "^0.7.0"
 -keyring = "^24.0.0"
 +keyring = ">=23.9.0,<25"
  # packaging uses calver, so version is unclamped
- packaging = ">=20.5"
+ packaging = ">=23.1"
  pexpect = "^4.7.0"
