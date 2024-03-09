@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}netCDF4>0:science/py-netCDF4@${PY_FLAVOR}
 
-USES=		pytest python
-USE_PYTHON=	pep517
+USES=		python
+USE_PYTHON=	pep517 pytest
 PLIST_SUB=	VER=${PORTVERSION}
 
 NO_ARCH=	yes
