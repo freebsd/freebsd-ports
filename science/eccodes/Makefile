@@ -1,6 +1,5 @@
 PORTNAME=	eccodes
-PORTVERSION=	2.30.0
-PORTREVISION=	2
+PORTVERSION=	2.34.1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
@@ -8,7 +7,8 @@ MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB and FM-94 BUFR messages
-WWW=		https://confluence.ecmwf.int/display/ECC
+WWW=		https://confluence.ecmwf.int/display/ECC \
+		https://github.com/ecmwf/eccodes
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	ecCodes only supports 64 bit platforms
