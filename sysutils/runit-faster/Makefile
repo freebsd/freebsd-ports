@@ -1,5 +1,6 @@
 PORTNAME=	runit
 DISTVERSION=	2.1.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/attachments/0f74bee0-05ce-40b4-9cdf-0f9f5a37f90b?dummy=/
 PKGNAMESUFFIX=	-faster
@@ -36,6 +37,9 @@ ROOT_DESC=	Install bootstrap files into /etc/runit and /sbin
 
 ROOT_VARS_OFF=	RUNITDIR=${ETCDIR} SBINDIR=${PREFIX}/sbin
 ROOT_VARS=	RUNITDIR=/etc/runit SBINDIR=/sbin
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man|share/man/man|' ${WRKSRC}/Makefile
 
 post-install:
 # Micromanaging pkg-plist is no fun here...  Generate it on the fly

@@ -48,18 +48,18 @@ bin/svmod
 @dir %%RUNITDIR%%/runsvdir
 @dir %%RUNITDIR%%/runsvdir/default
 %%RUNITDIR%%/stopit
-man/man7/runit-faster.7.gz
-man/man8/chpst.8.gz
-man/man8/runit-init.8.gz
-man/man8/runit.8.gz
-man/man8/runsv.8.gz
-man/man8/runsvchdir.8.gz
-man/man8/runsvdir.8.gz
-man/man8/sv.8.gz
-man/man8/svclone.8.gz
-man/man8/svmod.8.gz
-man/man8/svlogd.8.gz
-man/man8/utmpset.8.gz
+share/man/man7/runit-faster.7.gz
+share/man/man8/chpst.8.gz
+share/man/man8/runit-init.8.gz
+share/man/man8/runit.8.gz
+share/man/man8/runsv.8.gz
+share/man/man8/runsvchdir.8.gz
+share/man/man8/runsvdir.8.gz
+share/man/man8/sv.8.gz
+share/man/man8/svclone.8.gz
+share/man/man8/svmod.8.gz
+share/man/man8/svlogd.8.gz
+share/man/man8/utmpset.8.gz
 sbin/chpst
 %%ROOT%%/sbin/runit
 %%NO_ROOT%%sbin/runit
