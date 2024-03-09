@@ -1,5 +1,5 @@
 PORTNAME=	glance-store
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,8 +44,7 @@ CINDER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}os-brick>=6.3.0:devel/py-os-brick@${P
 			${PYTHON_PKGNAMEPREFIX}oslo.rootwrap>=5.8.0:devel/py-oslo.rootwrap@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-cinderclient>=4.1.0:net/py-python-cinderclient@${PY_FLAVOR}
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.9.199:www/py-boto3@${PY_FLAVOR}
-SWIFT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0.9.1:www/py-httplib2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR}
+SWIFT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR}
 VMWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oslo.privsep>=1.23.0:devel/py-oslo.privsep@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}oslo.vmware>=3.6.0:devel/py-oslo.vmware@${PY_FLAVOR}
 
