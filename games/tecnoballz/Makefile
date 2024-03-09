@@ -1,6 +1,6 @@
 PORTNAME=	tecnoballz
 PORTVERSION=	0.93.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libmikmod.so:audio/libmikmod \
 USES=		autoreconf compiler:c++11-lang gmake sdl tar:tgz
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDATA=	*
 
