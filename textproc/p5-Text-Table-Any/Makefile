@@ -1,5 +1,5 @@
 PORTNAME=	Text-Table-Any
-PORTVERSION=	0.115
+PORTVERSION=	0.117
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,10 +10,10 @@ WWW=		https://metacpan.org/release/Text-Table-Any
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Text-Table-Sprintf>=0.006:textproc/p5-Text-Table-Sprintf
+RUN_DEPENDS=	p5-Text-Table-Sprintf>=0.007:textproc/p5-Text-Table-Sprintf
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
@@ -34,7 +34,7 @@ RECOMMENDED_BUILD_DEPENDS=	p5-Term-Table>=0:devel/p5-Term-Table \
 				p5-Text-Table>=0:textproc/p5-Text-Table \
 				p5-Text-Table-ASV>=0:textproc/p5-Text-Table-ASV \
 				p5-Text-Table-CSV>=0.022:textproc/p5-Text-Table-CSV \
-				p5-Text-Table-HTML>=0:textproc/p5-Text-Table-HTML \
+				p5-Text-Table-HTML>=0.008:textproc/p5-Text-Table-HTML \
 				p5-Text-Table-HTML-DataTables>=0.011:textproc/p5-Text-Table-HTML-DataTables \
 				p5-Text-Table-LTSV>=0:textproc/p5-Text-Table-LTSV \
 				p5-Text-Table-Manifold>=0:textproc/p5-Text-Table-Manifold \
