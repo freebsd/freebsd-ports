@@ -96,3 +96,4 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/upload/api.lua
 %%LUA_MODSHAREDIR%%/luarocks/upload/multipart.lua
 %%LUA_MODSHAREDIR%%/luarocks/util.lua
+%%LUA_MODSHAREDIR%%/luarocks/vendor/dkjson.lua
