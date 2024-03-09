@@ -19,9 +19,9 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libxmlsec1-openssl.so:security/xmlsec1
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		gnome pkgconfig pytest python
+USES=		gnome pkgconfig python
 USE_GNOME=	libxml2 libxslt
-USE_PYTHON=	autoplist distutils flavors
+USE_PYTHON=	autoplist distutils flavors pytest
 
 INSTALL_TARGET=	install-strip
 
