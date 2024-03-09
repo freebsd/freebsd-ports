@@ -212,7 +212,7 @@ pre-configure:
 # If we are using bootstrap compiler, configure and install it into ${BOOT_DIR}
 .if empty(PORT_OPTIONS:MBOOT)
 	cd ${BOOT_DIR} && ${CONFIGURE_CMD} ${CONFIGURE_ENV} --prefix=${BOOT_INSTALL_DIR}
-	cd ${BOOT_DIR} && ${MAKE_CMD} PACKAGES='' install
+	cd ${BOOT_DIR} && ${SETENVI} ${WRK_ENV} ${GMAKE} PACKAGES='' install
 .endif
 .ifdef USE_HADRIAN
 # Compile Hadrian
@@ -273,7 +273,7 @@ create-bootstrap:
 		&& ${ECHO_CMD} "BIN_DIST_NAME=ghc-${GHC_VERSION}-boot" >> mk/build.mk \
 		&& ${ECHO_CMD} "BIN_DIST_TAR=ghc-${GHC_VERSION}-boot.tar" >> mk/build.mk \
 		&& ${ECHO_CMD} "HADDOCK_DOCS=NO" >> mk/build.mk \
-		&& ${GMAKE} binary-dist TAR_COMP=xz \
+		&& ${SETENVI} ${WRK_ENV} ${GMAKE} binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-boot-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
 .else
 	cd ${WRKSRC} \
@@ -292,7 +292,7 @@ create-bootstrap:
 create-stack-bindist:
 .ifndef USE_HADRIAN
 	cd ${WRKSRC} \
-		&& ${GMAKE} binary-dist TAR_COMP=xz \
+		&& ${SETENVI} ${WRK_ENV} ${GMAKE} binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/
 .else
 	cd ${WRKSRC} \
@@ -337,7 +337,7 @@ check-hadrian-bootstrap:
 	${FALSE}
 .endif
 # Install bootstrap GHC
-	${MAKE} -C ${.CURDIR} pre-configure
+	${MAKE_CMD} -C ${.CURDIR} pre-configure
 # Compile Hadrian
 	cd ${WRKSRC}/hadrian/bootstrap && \
 		./bootstrap.py -w ${BOOT_GHC} -s /tmp/hadrian-${GHC_VERSION}-boot.tar.gz
