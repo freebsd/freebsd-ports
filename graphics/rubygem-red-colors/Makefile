@@ -1,5 +1,5 @@
 PORTNAME=	red-colors
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/red-data-tools/red-colors
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-matrix>=0:math/rubygem-matrix
+RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json \
+		rubygem-matrix>=0:math/rubygem-matrix
 
 USES=		gem
 
