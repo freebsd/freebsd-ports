@@ -1,5 +1,6 @@
 PORTNAME=	powermanga
 PORTVERSION=	0.93.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 		https://mirror.amdmi3.ru/distfiles/
@@ -17,6 +18,7 @@ USES=		autoreconf localbase sdl tar:tgz xorg
 USE_XORG=	xext xxf86dga
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	*
 PORTDATA=	*

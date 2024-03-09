@@ -1,7 +1,7 @@
 @(,games,2555) bin/powermanga
-man/man6/powermanga.6.gz
-man/fr/man6/powermanga.6.gz
 share/applications/powermanga.desktop
+share/man/fr/man6/powermanga.6.gz
+share/man/man6/powermanga.6.gz
 share/pixmaps/powermanga.xpm
 @sample(,games,664) /var/games/powermanga/powermanga.hi.sample
 @sample(,games,664) /var/games/powermanga/powermanga.hi-easy.sample
