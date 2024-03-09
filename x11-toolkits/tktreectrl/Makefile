@@ -16,6 +16,7 @@ USES=		tk:tea xorg
 USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
 USE_XORG=	x11
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TCL_PKG=	treectrl${PORTVERSION}
 
 .include <bsd.port.mk>
