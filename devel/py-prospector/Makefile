@@ -1,6 +1,6 @@
 PORTNAME=	prospector
 PORTVERSION=	1.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,5 +35,19 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	BANDIT MYPY PYRIGHT PYROMA VULTURE
+OPTIONS_DEFAULT=BANDIT MYPY PYRIGHT PYROMA VULTURE
+BANDIT_DESC=	Optional tools via bandit
+MYPY_DESC=	Optional tools via mypy
+PYRIGHT_DESC=	Optional tools via pyright
+PYROMA_DESC=	Optional tools via pyroma
+VULTURE_DESC=	Optional tools via vulture
+
+BANDIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bandit>=1.5.1:devel/py-bandit@${PY_FLAVOR}
+MYPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy>=0.600:devel/py-mypy@${PY_FLAVOR}
+PYRIGHT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyright>=1.1.3:devel/py-pyright@${PY_FLAVOR}
+PYROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyroma>=2.4:devel/py-pyroma@${PY_FLAVOR}
+VULTURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vulture>=1.5:devel/py-vulture@${PY_FLAVOR}
 
 .include <bsd.port.mk>
