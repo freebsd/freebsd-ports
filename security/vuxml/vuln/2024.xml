@@ -1,3 +1,40 @@
+  <vuln vid="c2ad8700-de25-11ee-9190-84a93843eb75">
+    <topic>Unbound -- Denial-of-Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><gt>1.18.0</gt><lt>1.19.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLNet Labs reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/downloads/unbound/CVE-2024-1931.txt">
+	  <p>Unbound 1.18.0 introduced a feature that removes EDE records from
+	    responses with size higher than the client's advertised buffer size.
+	    Before removing all the EDE records however, it would try to see if
+	    trimming the extra text fields on those records would result in an
+	    acceptable size while still retaining the EDE codes. Due to an
+	    unchecked condition, the code that trims the text of the EDE records
+	    could loop indefinitely. This happens when Unbound would reply with
+	    attached EDE information on a positive reply and the client's buffer
+	    size is smaller than the needed space to include EDE records.
+
+	    The vulnerability can only be triggered when the 'ede: yes' option
+	    is used; non default configuration.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1931</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/unbound/CVE-2024-1931.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-03-07</discovery>
+      <entry>2024-03-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e74da31b-276a-4a22-9772-17dd42b97559">
     <topic>electron{27,28} -- vulnerability in libxml2</topic>
     <affects>
