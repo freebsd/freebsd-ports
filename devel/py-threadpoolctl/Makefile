@@ -18,4 +18,10 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302509
+IGNORE=		does not run on FreeBSD 13.2 or earlier due to handling of dynamically loaded libc
+.endif
+
 .include <bsd.port.mk>
