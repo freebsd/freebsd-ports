@@ -1,7 +1,5 @@
 bin/cosmosmash
-man/man6/cosmosmash.6.gz
 share/applications/cosmosmash.desktop
-share/pixmaps/cosmosmash.png
 %%DATADIR%%/sounds/rock-hit-0.wav
 %%DATADIR%%/sounds/rock-hit-1.wav
 %%DATADIR%%/sounds/player-hit.wav
@@ -9,3 +7,5 @@ share/pixmaps/cosmosmash.png
 %%DATADIR%%/sounds/saucer-shooting.wav
 %%DATADIR%%/sounds/hyperspace.wav
 %%DATADIR%%/sounds/level-finished.wav
+share/man/man6/cosmosmash.6.gz
+share/pixmaps/cosmosmash.png
