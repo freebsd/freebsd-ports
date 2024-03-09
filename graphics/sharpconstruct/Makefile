@@ -1,6 +1,6 @@
 PORTNAME=	sharpconstruct
 PORTVERSION=	0.11
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 
@@ -20,13 +20,14 @@ ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 USES=		compiler:c++11-lang gl tar:bzip2 gmake pkgconfig
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GL=		gl glu
 
 CXXFLAGS_i386=	-msse
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 PORTDATA=	*
 
 .include <bsd.port.options.mk>
