@@ -1,12 +1,12 @@
 PORTNAME=	build
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEP517 package builder
-WWW=		https://pypa-build.readthedocs.io/en/stable/ \
+WWW=		https://build.pypa.io/en/stable/ \
 		https://github.com/pypa/build
 
 LICENSE=	MIT
@@ -25,7 +25,7 @@ PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.8:devel/py-flit-core@${
 
 .include <bsd.port.pre.mk>
 
-#.if ${PYTHON_REL} < 31000
+#.if ${PYTHON_REL} < 31200
 #RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
 #.endif
 
