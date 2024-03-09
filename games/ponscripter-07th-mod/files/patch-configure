@@ -1,6 +1,6 @@
---- configure.orig	2020-03-31 11:10:53 UTC
+--- configure.orig	2023-09-29 02:38:19 UTC
 +++ configure
-@@ -60,7 +60,7 @@ LOCAL_SAVEDIR=false
+@@ -61,7 +61,7 @@ SMPEG_CONFIG=smpeg2-config
  
  SDL_CONFIG=sdl2-config
  SMPEG_CONFIG=smpeg2-config
@@ -9,7 +9,7 @@
  EXTLIB=./extlib
  SRC=src
  MAKEFILE=$SRC/Makefile
-@@ -637,7 +637,7 @@ then
+@@ -624,7 +624,7 @@ then
  	_EOF
      INTERNAL_SDL_MIXER=true
      $CXX `$SDL_CONFIG --cflags` test.cc `$SDL_CONFIG --libs` -lSDL2_mixer -o mtest >/dev/null 2>&1
@@ -18,7 +18,7 @@
      case $? in
      0) echo "yes"; INTERNAL_SDL_MIXER=false ;;
      1) echo "no MP3" ;; 2) echo "no Ogg" ;; 3) echo "no Ogg or MP3" ;;
-@@ -725,7 +725,7 @@ then
+@@ -712,7 +712,7 @@ else
      FREETYPE_CONFIG=$EXTLIB/bin/freetype-config
  else
      $echo_n "Checking for system Freetype... ${nobr}"
@@ -27,7 +27,7 @@
      if [ -z "$VER" ]; then
  	FREETYPE_CONFIG=freetype2-config
  	VER=`($FREETYPE_CONFIG --ftversion) 2>/dev/null`
-@@ -780,7 +780,7 @@ fi
+@@ -770,7 +770,7 @@ if $WITH_LIBNOTIFY; then
  
  if $WITH_LIBNOTIFY; then
    $echo_n "Checking for system libnotify... ${nobr}"
@@ -36,7 +36,7 @@
      echo "yes"
      WITH_LIBNOTIFY=true
    else
-@@ -865,9 +865,8 @@ NOTIFYLIBS=
+@@ -855,9 +855,8 @@ then
  GTKLIBS=
  if $WITH_LIBNOTIFY
  then
@@ -48,3 +48,12 @@
    OURDEFS="$OURDEFS -DLIBNOTIFY"
  fi
  
+@@ -1194,7 +1193,7 @@ install: install-bin
+ 	util/install-sh -c $STRIPFLAG $SRC/\$(TARGET) \$(PREFIX)/bin/\$(TARGET)
+ 
+ install: install-bin
+-	util/install-man install \$(PREFIX) doc/*.[0-9]
++	util/install-man install \$(PREFIX)/share doc/*.[0-9]
+ 
+ uninstall:
+ 	\$(RM) \$(PREFIX)/bin/\$(TARGET)
