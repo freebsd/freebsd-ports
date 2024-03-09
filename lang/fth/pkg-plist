@@ -8,8 +8,6 @@ include/fth/fth.h
 include/fth/mp.h
 lib/fth/dbm.so
 lib/libfth.so
-man/man1/fth.1.gz
-man/man3/libfth.3.gz
 share/aclocal/fth.m4
 %%DATADIR%%/fth-lib/assert.fs
 %%DATADIR%%/fth-lib/compat.fs
@@ -43,3 +41,5 @@ share/aclocal/fth.m4
 %%DATADIR%%/site-fth/snd-xm.fs
 %%DATADIR%%/site-fth/spectr.fs
 %%DATADIR%%/site-fth/xm-enved.fs
+share/man/man1/fth.1.gz
+share/man/man3/libfth.3.gz
