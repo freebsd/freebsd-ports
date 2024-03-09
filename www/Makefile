@@ -1511,6 +1511,7 @@
     SUBDIR += py-dj42-django-mptt
     SUBDIR += py-dj42-django-multiselectfield
     SUBDIR += py-dj42-django-otp
+    SUBDIR += py-dj42-django-permissionedforms
     SUBDIR += py-dj42-django-prometheus
     SUBDIR += py-dj42-django-redis
     SUBDIR += py-dj42-django-rich
