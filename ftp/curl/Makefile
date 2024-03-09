@@ -5,7 +5,8 @@ MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
 
 PATCH_SITES=	https://github.com/curl/curl/commit/
-PATCHFILES=	e75a48d2c32d92b0321fbb09c25885a706077201.patch:-p1
+PATCHFILES=	e75a48d2c32d92b0321fbb09c25885a706077201.patch:-p1 \
+		89733e2dd26b51c16b2c9f090881127dbba58ce8.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool and library for transferring data with URLs
@@ -15,7 +16,7 @@ WWW=		https://curl.se/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool localbase pathfix perl5 shebangfix tar:xz
+USES=		autoreconf cpe libtool localbase pathfix perl5 shebangfix tar:xz
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-werror \
@@ -28,10 +29,10 @@ CONFIGURE_ARGS=	--disable-werror \
 		--enable-netrc \
 		--enable-openssl-auto-load-config \
 		--enable-progress-meter \
-		--with-fish-functions-dir=${LOCALBASE}/share/fish/completions \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
 		--without-ca-bundle \
-		--without-ca-path
+		--without-ca-path \
+		--without-fish-functions-dir
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
@@ -63,6 +64,7 @@ HTTP2_DESC=	HTTP/2 support (requires HTTP)
 HTTP2_IMPLIES=	HTTP
 IMAP_DESC=	IMAP/IMAPS support
 LDAPS_IMPLIES=	LDAP
+LDAPS_DESC=	LDAP protocol over SSL support (requires GNUTLS/OPENSSL/WOLFSSL)
 LIBSSH_DESC=	SCP/SFTP support via libssh (requires OPENSSL)
 LIBSSH_IMPLIES=	OPENSSL
 LIBSSH2_DESC=	SCP/SFTP support via libssh2 (requires OPENSSL)
@@ -160,7 +162,7 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 .endif
 
 .if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MWOLFSSL}
-IGNORE=		only supports LDAPS with SSL
+IGNORE=		only supports LDAPS with GNUTLS/OPENSSL/WOLFSSL enabled
 .endif
 
 post-install:
