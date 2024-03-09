@@ -1,6 +1,9 @@
 PORTNAME=	httrack
-PORTVERSION=	3.49.4
+PORTVERSION=	3.49.5
 CATEGORIES=	www
+
+PATCH_SITES=	https://github.com/xroche/httrack/commit/
+PATCHFILES=	ce2d2ce810cb1bbaf1c587a3947c31adb47d5244.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
