@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.7:devel/py-dill@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.8:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mpi4py>=1.3:net/py-mpi4py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mystic>=0.4.2:devel/py-mystic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.0,1:math/py-numpy@${PY_FLAVOR} \
