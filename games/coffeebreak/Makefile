@@ -1,5 +1,6 @@
 PORTNAME=	coffeebreak
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -15,6 +16,9 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/coffeebreak \
-		man/man6/coffeebreak.6.gz
+		share/man/man6/coffeebreak.6.gz
+
+post-patch:
+	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
