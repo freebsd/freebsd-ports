@@ -17,10 +17,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
-USES=		python pytest
-USE_PYTHON=	autoplist concurrent distutils
-PYTEST_ARGS=	test.py
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+TEST_ARGS=	test.py
 
 .include <bsd.port.mk>
