@@ -40,9 +40,12 @@ PLIST_SUB+=	COREDUMP=""
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
 PLIST_FILES=	include/unwind.h
+.endif
 
 post-install:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
 	${INSTALL_DATA} ${FILESDIR}/unwind.h ${STAGEDIR}${PREFIX}/include
 .endif
+	cd ${STAGEDIR}${PREFIX}/ && ${FIND} libexec/libunwind -type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>
