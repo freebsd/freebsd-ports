@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 		libint2-psi4>0:science/libint2-psi4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		blaslapack:openblas cmake compiler:c++17-lang eigen:3 fortran localbase:ldflags pytest python
+USES=		blaslapack:openblas cmake compiler:c++17-lang eigen:3 fortran localbase:ldflags python
 USE_GITHUB=	yes
 
 CMAKE_ARGS=	-DLibxc_DIR=${LOCALBASE} \
