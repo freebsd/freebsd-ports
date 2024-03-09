@@ -1,8 +1,8 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20240129
+DISTVERSION=	20240308
+DISTVERSIONSUFFIX=	.source
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/schismtracker/schismtracker/releases/download/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.source
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module tracker editor/player resembling impulse tracker
@@ -17,7 +17,8 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-NO_WRKSUBDIR=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/schismtracker \
 		share/man/man1/schismtracker.1.gz \
