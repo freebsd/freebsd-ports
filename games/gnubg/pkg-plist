@@ -3,11 +3,6 @@ bin/gnubg
 bin/makebearoff
 bin/makehyper
 bin/makeweights
-man/man6/bearoffdump.6.gz
-man/man6/gnubg.6.gz
-man/man6/makebearoff.6.gz
-man/man6/makehyper.6.gz
-man/man6/makeweights.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/allabout.html
 %%PORTDOCS%%%%DOCSDIR%%/allabout.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gnubg.html
@@ -236,3 +231,8 @@ share/locale/ja/LC_MESSAGES/gnubg.mo
 share/locale/ro/LC_MESSAGES/gnubg.mo
 share/locale/ru/LC_MESSAGES/gnubg.mo
 share/locale/tr/LC_MESSAGES/gnubg.mo
+share/man/man6/bearoffdump.6.gz
+share/man/man6/gnubg.6.gz
+share/man/man6/makebearoff.6.gz
+share/man/man6/makehyper.6.gz
+share/man/man6/makeweights.6.gz
