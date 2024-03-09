@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # Upstream bug https://github.com/nabla-c0d3/nassl/issues/110
 BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 libcrypt.so
+DEPRECATED=	It does not support OpenSSL 3.0+
+EXPIRATION_DATE=2024-03-31
 
 USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
