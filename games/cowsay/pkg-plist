@@ -1,7 +1,5 @@
 bin/cowsay
 bin/cowthink
-man/man1/cowsay.1.gz
-man/man1/cowthink.1.gz
 share/cows/DragonAndCow.pm
 share/cows/Example.pm
 share/cows/Frogs.pm
@@ -60,3 +58,5 @@ share/cows/udder.cow
 share/cows/vader-koala.cow
 share/cows/vader.cow
 share/cows/www.cow
+share/man/man1/cowsay.1.gz
+share/man/man1/cowthink.1.gz
