@@ -1,6 +1,7 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2024.03.04.00
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,6 +44,7 @@ CMAKE_OFF=	FREEBSD_BUILD_EXAMPLES FREEBSD_FOLLY_USE_SYMBOLIZER # enabling symbol
 #CMAKE_OFF+=	FOLLY_USE_JEMALLOC # Build fails with FOLLY_USE_JEMALLOC=OFF, see https://github.com/facebook/folly/issues/1893
 
 CXXFLAGS+=	-fPIC
+CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 CXXFLAGS_powerpc64=	-DFOLLY_QUOTIENT_MULTI_SET_SUPPORTED=0
 
 do-test: # tests fail to compile, see https://github.com/facebook/folly/issues/2032

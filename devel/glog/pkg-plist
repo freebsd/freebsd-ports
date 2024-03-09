@@ -1,9 +1,11 @@
 include/glog/export.h
+include/glog/flags.h
 include/glog/log_severity.h
 include/glog/logging.h
 include/glog/platform.h
 include/glog/raw_logging.h
 include/glog/stl_logging.h
+include/glog/types.h
 include/glog/vlog_is_on.h
 lib/cmake/glog/glog-config-version.cmake
 lib/cmake/glog/glog-config.cmake
@@ -11,7 +13,7 @@ lib/cmake/glog/glog-modules.cmake
 lib/cmake/glog/glog-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/glog/glog-targets.cmake
 lib/libglog.so
-lib/libglog.so.1
 lib/libglog.so.%%PORTVERSION%%
+lib/libglog.so.2
 libdata/pkgconfig/libglog.pc
 %%DATADIR%%/cmake/FindUnwind.cmake
