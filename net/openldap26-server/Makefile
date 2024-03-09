@@ -390,6 +390,11 @@ post-patch:
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+.if !${PORT_OPTIONS:MDEBUG}
+	@${REINPLACE_CMD} -E \
+		-e '/ldap_dump_(connection|requests_and_responses);/d' \
+		${WRKSRC}/libraries/libldap/ldap.map
+.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf)
