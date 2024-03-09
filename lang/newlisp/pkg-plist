@@ -1,8 +1,6 @@
 bin/newlisp
 bin/newlisp-10.7.5
 bin/newlispdoc
-man/man1/newlisp.1.gz
-man/man1/newlispdoc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ANDROID.txt
 %%PORTDOCS%%%%DOCSDIR%%/Android.html
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -49,6 +47,8 @@ man/man1/newlispdoc.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/upload.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32demo.lsp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlrpc.cgi
+share/man/man1/newlisp.1.gz
+share/man/man1/newlispdoc.1.gz
 %%DATADIR%%/modules/canvas.lsp
 %%DATADIR%%/modules/cgi.lsp
 %%DATADIR%%/modules/crypto.lsp
