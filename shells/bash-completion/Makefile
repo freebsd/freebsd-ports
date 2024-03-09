@@ -1,6 +1,5 @@
 PORTNAME=	bash-completion
-PORTVERSION=	2.11
-PORTREVISION=	2
+PORTVERSION=	2.12.0
 PORTEPOCH=	2
 CATEGORIES=	shells
 
@@ -32,7 +31,7 @@ GH_TUPLE=	0mp:bash-completion-freebsd:1.2.0:freebsd/freebsd
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-OPTIONS_DEFINE=	CMAKE_MODULES DOCS
+OPTIONS_DEFINE=	CMAKE_MODULES
 OPTIONS_SINGLE=	BASH
 OPTIONS_SINGLE_BASH=	BASH_SHARED BASH_STATIC
 OPTIONS_DEFAULT=BASH_SHARED CMAKE_MODULES
@@ -63,10 +62,6 @@ post-configure:
 post-install:
 	cd ${WRKSRC}/freebsd/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 	${RM} ${STAGEDIR}${DATADIR}/completions/makepkg
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README.md doc/bash_completion.txt doc/bashrc doc/inputrc ${STAGEDIR}${DOCSDIR}/
 
 do-test:
 .for test in runCompletion runInstall runUnit
