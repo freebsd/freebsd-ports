@@ -1,5 +1,6 @@
 PORTNAME=	trivy
 DISTVERSION=	0.49.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -21,6 +22,14 @@ GO_BUILDFLAGS= -ldflags=" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/*.tpl ${STAGEDIR}${DATADIR}/
+	${FIND} -s ${STAGEDIR}${DATADIR} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' | \
+		${SED} -E -e '/sample$$/ s#^#@sample #; \
+		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
+	cat ${TMPPLIST}
 	
 
 .include <bsd.port.mk>
