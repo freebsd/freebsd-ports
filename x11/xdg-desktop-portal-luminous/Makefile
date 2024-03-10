@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	slurp:x11/slurp
+RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
+		slurp:x11/slurp
 
 USES=		cargo llvm meson pkgconfig
 USE_GITHUB=	yes
