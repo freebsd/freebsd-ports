@@ -1,5 +1,6 @@
 PORTNAME=	afew
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,7 @@ OPTIONS_DEFAULT=	MANPAGES
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-MANPAGES_PLIST_FILES=	man/man1/afew.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/afew.1.gz
 
 PORTDOCS=	*
 
@@ -34,7 +35,7 @@ post-build-MANPAGES-on:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build_sphinx -b man
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/build/sphinx/man/afew.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/build/sphinx/man/afew.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-build-DOCS-on:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build_sphinx -b html
