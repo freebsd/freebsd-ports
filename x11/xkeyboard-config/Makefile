@@ -11,6 +11,8 @@ WWW=		https://freedesktop.org/wiki/Software/XKeyboardConfig/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	gawk:lang/gawk
+
 USES=		meson gnome localbase pathfix perl5 python:build \
 		shebangfix tar:xz
 
