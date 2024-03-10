@@ -1,4 +1,4 @@
-TIMESTAMP = 1709894203
+TIMESTAMP = 1710084517
 SHA256 (rust/crates/anyhow-1.0.69.crate) = 224afbd727c3d6e4b90103ece64b8d1b67fbb1973b1046c2281eed3f3803f800
 SIZE (rust/crates/anyhow-1.0.69.crate) = 43576
 SHA256 (rust/crates/async-io-1.12.0.crate) = 8c374dda1ed3e7d8f0d9ba58715f924862c63eae6849c92d3a18e7fbde9e2794
@@ -247,7 +247,7 @@ SHA256 (rust/crates/zvariant-2.10.0.crate) = a68c7b55f2074489b7e8e07d2d0a6ee6b4f
 SIZE (rust/crates/zvariant-2.10.0.crate) = 64374
 SHA256 (rust/crates/zvariant_derive-2.10.0.crate) = e4ca5e22593eb4212382d60d26350065bf2a02c34b85bc850474a74b589a3de9
 SIZE (rust/crates/zvariant_derive-2.10.0.crate) = 8746
-SHA256 (squeekboard-v1.23.0.tar.bz2) = 81690f4af866b80cc5f1e06f93fddbd7bcf170f1c97d95c431a4c1bb357e1ad8
-SIZE (squeekboard-v1.23.0.tar.bz2) = 186899
+SHA256 (squeekboard-v1.24.0.tar.bz2) = 60c319e8b285b5eba6aa035b0898f747f032607b88bb450f1bcb2c36cdd240a1
+SIZE (squeekboard-v1.24.0.tar.bz2) = 195601
 SHA256 (db00c0b4eb73.patch) = b35dc517880a779b5581b8726a0af3bf903c4348f9f4c9420e74bdefda21b479
 SIZE (db00c0b4eb73.patch) = 1630
