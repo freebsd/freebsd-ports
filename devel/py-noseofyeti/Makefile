@@ -1,6 +1,6 @@
 PORTNAME=	noseofyeti
 DISTVERSIONPREFIX=release-
-DISTVERSION=	2.4.6
+DISTVERSION=	2.4.8
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +18,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent pep517
+
+NO_ARCH=	yes
 
 GH_ACCOUNT=	delfick
 GH_PROJECT=	nose-of-yeti
