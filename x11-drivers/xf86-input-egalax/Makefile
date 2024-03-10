@@ -1,6 +1,6 @@
 PORTNAME=	xf86-input-egalax
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	glebius@FreeBSD.org
@@ -13,5 +13,7 @@ GH_TAGNAME=	7f1e4ac
 LICENSE=	BSD2CLAUSE
 
 USES=		autoreconf xorg-cat:driver
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share/man
 
 .include <bsd.port.mk>
