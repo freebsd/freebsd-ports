@@ -17,5 +17,6 @@ USES=		compiler:c++11-lib cmake:testing gnome pathfix pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo librsvg2
 GH_ACCOUNT=	hyprwm
+PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
 .include <bsd.port.mk>

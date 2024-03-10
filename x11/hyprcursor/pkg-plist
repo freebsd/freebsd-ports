@@ -5,5 +5,5 @@ include/hyprcursor/hyprcursor.hpp
 include/hyprcursor/shared.h
 lib/libhyprcursor.so
 lib/libhyprcursor.so.0
-lib/libhyprcursor.so.0.1.2
+lib/libhyprcursor.so.%%VERSION%%
 libdata/pkgconfig/hyprcursor.pc
