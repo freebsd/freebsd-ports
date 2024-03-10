@@ -1,7 +1,7 @@
 PORTNAME=	automx
 PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 
 MAINTAINER=	crees@FreeBSD.org
@@ -42,7 +42,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/conf/automx.conf \
 		${STAGEDIR}${PREFIX}/etc/automx.conf.sample
 .for s in 1 5
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man$s/* ${STAGEDIR}${PREFIX}/man/man$s/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man$s/* ${STAGEDIR}${PREFIX}/share/man/man$s/
 .endfor
 
 do-install-DOCS-on:

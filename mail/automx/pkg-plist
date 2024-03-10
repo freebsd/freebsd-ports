@@ -1,11 +1,11 @@
 bin/automx-test
 @sample etc/automx.conf.sample
-man/man1/automx-test.1.gz
-man/man5/automx.conf.5.gz
-man/man5/automx_ldap.5.gz
-man/man5/automx_sql.5.gz
-man/man5/automx_script.5.gz
 %%PYTHON_SITELIBDIR%%/automx/__init__.py
 %%PYTHON_SITELIBDIR%%/automx/config.py
 %%PYTHON_SITELIBDIR%%/automx/ordereddict.py
 %%PYTHON_SITELIBDIR%%/automx/view.py
+share/man/man1/automx-test.1.gz
+share/man/man5/automx.conf.5.gz
+share/man/man5/automx_ldap.5.gz
+share/man/man5/automx_sql.5.gz
+share/man/man5/automx_script.5.gz
