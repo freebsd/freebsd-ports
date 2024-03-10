@@ -16,6 +16,8 @@ LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
 
+MAKE_ARGS+=	MAN1DIR=${PREFIX}/share/man/man1
+
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
 # to avoid circular dependency
 NO_CCACHE=	yes

@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
+
 PLIST_FILES=	etc/pam.d/unix-selfauth \
 		libexec/unix-selfauth-helper \
 		share/man/man8/unix-selfauth-helper.8.gz

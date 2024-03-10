@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-07-08 14:49:08 UTC
 +++ Makefile
-@@ -5,10 +5,15 @@ RM?=		rm
+@@ -5,7 +5,12 @@ RM?=		rm
  MAN=		${PROG}.1.gz
  PROG=		dialog4ports
  CFLAGS+=	-Wall -pedantic
@@ -13,8 +13,4 @@
 +LDADD+=		-lm
  PREFIX?=	/usr/local
  BINDIR=		${PREFIX}/bin
--MAN1DIR=	${PREFIX}/man/man1
-+MAN1DIR=	${PREFIX}/share/man/man1
- BSD_INSTALL_PROGRAM?=	install -m 0555
- BSD_INSTALL_DATA?=	install -m 0444
- 
+ MAN1DIR=	${PREFIX}/man/man1

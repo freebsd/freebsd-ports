@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		ncurses uidfix
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	LDFLAGS="${LDFLAGS} -lncurses"
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS} -lncurses" MANDIR=${PREFIX}/share/man/man
 
 ONLY_FOR_ARCHS=	i386 amd64
 
