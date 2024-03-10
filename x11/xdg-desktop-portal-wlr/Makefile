@@ -16,7 +16,8 @@ LIB_DEPENDS=	libbasu.so:devel/basu \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
-RUN_DEPENDS=	grim:x11/grim \
+RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
+		grim:x11/grim \
 		slurp:x11/slurp
 
 USES=		compiler:c11 gl meson pkgconfig
