@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhyprlang.so:devel/hyprlang
+RUN_DEPENDS=	xcur2png:x11/xcur2png
 
 USES=		compiler:c++11-lib cmake:testing gnome pathfix pkgconfig
 USE_GITHUB=	yes
