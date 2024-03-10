@@ -16,7 +16,7 @@
  CFLAGS=-Wall $(OPTIMIZE) $(DEBUG)
  LIBS=-lm
  CC=gcc
-@@ -37,9 +37,8 @@ mls_text.o: mls_text.c mls_text.h mls_lang.h Makefile
+@@ -37,9 +37,8 @@ install: mls
  	$(CC) $(CFLAGS) -c mls_text.c -o mls_text.o
  
  install: mls
@@ -24,7 +24,7 @@
 -	install -m 644 -g root -o root mls.1 $(DESTDIR)/man/man1
 -	gzip -9f $(DESTDIR)/man/man1/mls.1
 +	$(BSD_INSTALL_PROGRAM) mls $(DESTDIR)$(PREFIX)/bin
-+	$(BSD_INSTALL_MAN) mls.1 $(DESTDIR)$(PREFIX)/man/man1
++	$(BSD_INSTALL_MAN) mls.1 $(DESTDIR)$(PREFIX)/share/man/man1
  	@echo "**************************************************************"
  	@echo "*** To use HTML feature or PHP wrapper, copy contents of   ***"
  	@echo "*** 'html' subdirectory to location accessible by your     ***"
