@@ -170,6 +170,7 @@
     SUBDIR += gcr
     SUBDIR += gef
     SUBDIR += gef-cheri
+    SUBDIR += gef-cheri-plugins
     SUBDIR += gef-meta
     SUBDIR += git-credential-gopass
     SUBDIR += git-credential-oauth

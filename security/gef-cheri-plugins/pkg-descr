@@ -1,0 +1,5 @@
+Extra commands that can be loaded to a GEF version with Arm Morello support.
+
+Some of the additions are:
+- Jemalloc heap manager
+- Snmalloc heap manager
