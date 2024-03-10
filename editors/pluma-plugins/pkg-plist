@@ -16,8 +16,11 @@ lib/pluma/plugins/codecomment.py
 lib/pluma/plugins/gpdefs.py
 lib/pluma/plugins/libbookmarks.la
 lib/pluma/plugins/libbookmarks.so
+lib/pluma/plugins/libquickhighlight.la
+lib/pluma/plugins/libquickhighlight.so
 lib/pluma/plugins/libwordcompletion.la
 lib/pluma/plugins/libwordcompletion.so
+lib/pluma/plugins/quickhighlight.plugin
 lib/pluma/plugins/smartspaces.plugin
 lib/pluma/plugins/smartspaces.py
 lib/pluma/plugins/sourcecodebrowser.plugin
@@ -1483,6 +1486,7 @@ share/locale/zh_TW/LC_MESSAGES/pluma-plugins.mo
 share/locale/zu/LC_MESSAGES/pluma-plugins.mo
 share/metainfo/pluma-bookmarks.metainfo.xml
 share/metainfo/pluma-codecomment.metainfo.xml
+share/metainfo/pluma-quickhighlight.metainfo.xml
 share/metainfo/pluma-synctex.metainfo.xml
 share/metainfo/pluma-terminal.metainfo.xml
 share/pluma/plugins/sourcecodebrowser/icons/missing-image.png
