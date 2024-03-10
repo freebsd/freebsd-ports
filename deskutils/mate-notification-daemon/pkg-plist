@@ -1,11 +1,11 @@
 bin/mate-notification-properties
+etc/xdg/autostart/mate-notification-daemon.desktop
 lib/mate-notification-daemon/engines/libcoco.so
 lib/mate-notification-daemon/engines/libnodoka.so
 lib/mate-notification-daemon/engines/libslider.so
 lib/mate-notification-daemon/engines/libstandard.so
 libexec/mate-notification-applet
 libexec/mate-notification-daemon
-share/man/man1/mate-notification-properties.1.gz
 share/applications/mate-notification-properties.desktop
 share/dbus-1/services/org.freedesktop.mate.Notifications.service
 share/dbus-1/services/org.mate.panel.applet.MateNotificationAppletFactory.service
@@ -122,4 +122,5 @@ share/locale/yo/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-notification-daemon.mo
+share/man/man1/mate-notification-properties.1.gz
 share/mate-panel/applets/org.mate.applets.MateNotificationApplet.mate-panel-applet
