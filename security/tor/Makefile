@@ -70,7 +70,7 @@ BUILD_DEPENDS+=	asciidoc:textproc/asciidoc
 CONFIGURE_ARGS+=	--disable-asciidoc
 .endif
 
-.if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
+.if !defined(USE_GCC) && \
 empty(PORT_OPTIONS:MSTATIC_TOR)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .else
