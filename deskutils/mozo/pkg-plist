@@ -14,7 +14,6 @@ bin/mozo
 %%PYTHON_SITELIBDIR%%/Mozo/__pycache__/util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/Mozo/config.py
 %%PYTHON_SITELIBDIR%%/Mozo/util.py
-share/man/man1/mozo.1.gz
 share/applications/mozo.desktop
 share/icons/hicolor/16x16/apps/mozo.png
 share/icons/hicolor/22x22/apps/mozo.png
@@ -48,7 +47,6 @@ share/icons/hicolor/48x48/apps/mozo.png
 %%NLS%%share/locale/en_AU/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/mozo.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/es_AR/LC_MESSAGES/mozo.mo
@@ -116,6 +114,7 @@ share/icons/hicolor/48x48/apps/mozo.png
 %%NLS%%share/locale/ms/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/my/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/nah/LC_MESSAGES/mozo.mo
+%%NLS%%share/locale/nan/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/mozo.mo
@@ -162,4 +161,5 @@ share/icons/hicolor/48x48/apps/mozo.png
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mozo.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/mozo.mo
+share/man/man1/mozo.1.gz
 %%DATADIR%%/mozo.ui
