@@ -1,16 +1,13 @@
---- GNUmakefile.orig	2021-01-14 15:45:22 UTC
+--- GNUmakefile.orig	2021-12-12 16:39:30 UTC
 +++ GNUmakefile
-@@ -15,9 +15,8 @@ LDLIBS=-liconv
+@@ -15,7 +15,6 @@ DESTDIR=
  endif
  
  DESTDIR=
 -PREFIX=/usr/local
  BINDIR=$(PREFIX)/bin
--MANDIR=$(PREFIX)/share/man
-+MANDIR=$(PREFIX)/man
+ MANDIR=$(PREFIX)/share/man
  
- ALL = maddr magrep mdate mdeliver mdirs mexport mflag mflow mgenmid mhdr minc mlist mmime mpick mscan msed mseq mshow msort mthread
- SCRIPT = mcolor mcom mless mmkdir mquote museragent
 @@ -57,14 +56,15 @@ install: FRC all
  		$(DESTDIR)$(MANDIR)/man1 \
  		$(DESTDIR)$(MANDIR)/man5 \
