@@ -1,6 +1,5 @@
 PORTNAME=	skk-tools
-PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTVERSION=	1.3.4
 PORTEPOCH=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/
@@ -15,6 +14,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/skk
+
+WRKSRC=		${WRKDIR}/skktools-${DISTNAME:S/./_/g}
 
 PORTDOCS=	README.skktools
 PLIST_FILES=	bin/skkdic-count bin/skkdic-expr bin/skkdic-sort
