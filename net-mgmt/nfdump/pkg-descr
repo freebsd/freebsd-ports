@@ -1,4 +1,5 @@
-NFDUMP tools support netflow v5, v7 and v9 capturing and processing.
+NFDUMP tools support: NetFlow v5, v7, v9, sFlow and IPFIX capturing and
+processing.
 
 nfcapd - netflow capture daemon.
 Reads the netflow data from the network and stores the data into files.

@@ -1,11 +1,10 @@
 PORTNAME=	nfdump
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.7.4
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	pi@FreeBSD.org
-COMMENT=	Command-line tools to collect and process NetFlow data
+COMMENT=	Command-line tools to collect and process NetFlow, sFlow and IPFIX data
 WWW=		https://github.com/phaag/nfdump
 
 LICENSE=	BSD3CLAUSE
