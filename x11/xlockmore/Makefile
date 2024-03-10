@@ -1,6 +1,5 @@
 PORTNAME=	xlockmore
-PORTVERSION=	5.74
-PORTREVISION=	1
+PORTVERSION=	5.75
 CATEGORIES=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		SF/bsdsrc/${.CURDIR:T}
