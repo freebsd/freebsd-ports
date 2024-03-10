@@ -1,6 +1,6 @@
 PORTNAME=	yacreader
 DISTVERSION=	9.14.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,21 +10,21 @@ WWW=		https://www.yacreader.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 
-USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:5
+USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:6
 USE_GITHUB=	yes
+USE_QT=		5compat base declarative multimedia svg tools:build
+
+.if ${FLAVOR:U} == qt5
+PKGNAMESUFFIX=	-${FLAVOR}
+USES:=		${USES:S/qt:6/qt:5/}
 USE_QT=		qmake:build buildtools:build core concurrent:build declarative \
 		gui linguisttools:build multimedia network quickcontrols2 \
 		sql sql-sqlite3:run svg testlib:build widgets
-
-.if ${FLAVOR:U} == qt6
-PKGNAMESUFFIX=	-${FLAVOR}
-USES:=		${USES:S/qt:5/qt:6/}
-USE_QT=		5compat base declarative multimedia svg tools:build
 CONFLICTS_INSTALL=	${PORTNAME}
 .else
-CONFLICTS_INSTALL=	${PORTNAME}-qt6
+CONFLICTS_INSTALL=	${PORTNAME}-qt5
 .endif
 
 OPTIONS_DEFINE=	ARCHIVE OPENGL POPPLER
