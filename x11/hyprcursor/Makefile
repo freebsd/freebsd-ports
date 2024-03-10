@@ -19,4 +19,9 @@ USE_GNOME=	cairo librsvg2
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
+post-patch:
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/lib${PORTNAME}/${PORTNAME}.cpp
+
 .include <bsd.port.mk>
