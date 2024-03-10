@@ -1,7 +1,6 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1
-PORTREVISION=	1
+DISTVERSION=	1.11.0
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -88,6 +87,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		heck-0.4.1 \
 		hermit-abi-0.3.4 \
 		home-0.5.9 \
+		html-escape-0.2.13 \
 		http-1.0.0 \
 		iana-time-zone-0.1.59 \
 		iana-time-zone-haiku-0.1.2 \
@@ -189,6 +189,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
+		utf8-width-0.1.7 \
 		utf8parse-0.2.1 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
