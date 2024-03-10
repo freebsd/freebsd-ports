@@ -1,10 +1,10 @@
 PKGNAMESUFFIX=	-table-passwd
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	passwd(5) table support for OpenSMTPD
 
 PLIST_FILES=	libexec/opensmtpd/table-passwd \
-		man/man5/table-passwd.5.gz
+		share/man/man5/table-passwd.5.gz
 
 CONFIGURE_ARGS+=	--with-table-passwd
 
