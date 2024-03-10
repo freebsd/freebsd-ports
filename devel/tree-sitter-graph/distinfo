@@ -1,4 +1,4 @@
-TIMESTAMP = 1709785593
+TIMESTAMP = 1710051220
 SHA256 (rust/crates/ahash-0.4.8.crate) = 0453232ace82dee0dd0b4c87a59bd90f7b53b314f3e0f61fe2ee7c8a16482289
 SIZE (rust/crates/ahash-0.4.8.crate) = 51510
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
@@ -147,5 +147,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.48.5.crate) = 0b7b52767868a23d5bab7
 SIZE (rust/crates/windows_x86_64_gnullvm-0.48.5.crate) = 418486
 SHA256 (rust/crates/windows_x86_64_msvc-0.48.5.crate) = ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538
 SIZE (rust/crates/windows_x86_64_msvc-0.48.5.crate) = 798412
-SHA256 (tree-sitter-tree-sitter-graph-v0.11.1_GH0.tar.gz) = 0cbb7026057b7bba9db1acd75fb9a5446a9b3ebec09934a76e8934b98b2a4737
-SIZE (tree-sitter-tree-sitter-graph-v0.11.1_GH0.tar.gz) = 73305
+SHA256 (tree-sitter-tree-sitter-graph-v0.11.2_GH0.tar.gz) = ff3d477a8314a687dfb9bc6e7bd611406ba82b3f27e56c4f80765298cc2c5dcd
+SIZE (tree-sitter-tree-sitter-graph-v0.11.2_GH0.tar.gz) = 74385
