@@ -94,7 +94,7 @@ lib32/libnvidia-gpucomp.so.1
 lib32/libnvidia-tls.so
 lib32/libnvidia-tls.so.1
 lib32/vdpau/libvdpau_nvidia.so.1
-man/man1/nvidia-smi.1.gz
+share/man/man1/nvidia-smi.1.gz
 @comment share/egl/egl_external_platform.d/10_nvidia_wayland.json
 share/egl/egl_external_platform.d/15_nvidia_gbm.json
 share/glvnd/egl_vendor.d/10_nvidia.json
