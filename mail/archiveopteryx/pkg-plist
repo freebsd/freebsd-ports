@@ -9,16 +9,16 @@ libdata/aox/fts.pg
 libdata/aox/schema.pg
 libexec/aox/contrib/rrdglue
 libexec/aox/installer
-man/man5/aoxsuper.conf.5.gz
-man/man5/archiveopteryx.conf.5.gz
-man/man8/aox.8.gz
-man/man8/aoxdeliver.8.gz
-man/man8/aoximport.8.gz
-man/man8/archiveopteryx.8.gz
-man/man8/installer.8.gz
-man/man8/logd.8.gz
-man/man8/recorder.8.gz
 sbin/archiveopteryx
 sbin/logd
 sbin/recorder
+share/man/man5/aoxsuper.conf.5.gz
+share/man/man5/archiveopteryx.conf.5.gz
+share/man/man8/aox.8.gz
+share/man/man8/aoxdeliver.8.gz
+share/man/man8/aoximport.8.gz
+share/man/man8/archiveopteryx.8.gz
+share/man/man8/installer.8.gz
+share/man/man8/logd.8.gz
+share/man/man8/recorder.8.gz
 @dir %%ETCDIR%%
