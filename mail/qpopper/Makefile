@@ -1,6 +1,6 @@
 PORTNAME=	qpopper
 PORTVERSION=	4.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://core.ring.gr.jp/archives/net/mail/qpopper/ \
 		http://ftp.osuosl.org/.1/blfs/7.7/q/ \
@@ -153,11 +153,11 @@ post-patch:
 do-install:
 .if ${PORT_OPTIONS:MAPOP}
 	${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${STAGEDIR}${PREFIX}/bin/qpopauth
-	${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${STAGEDIR}${PREFIX}/man/man8/qpopauth.8
+	${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${STAGEDIR}${PREFIX}/share/man/man8/qpopauth.8
 	${LN} -sf qpopauth ${STAGEDIR}${PREFIX}/bin/qapopauth
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/popper/popper ${STAGEDIR}${PREFIX}/libexec/qpopper
-	${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${STAGEDIR}${PREFIX}/man/man8/qpopper.8
+	${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${STAGEDIR}${PREFIX}/share/man/man8/qpopper.8
 .if ${PORT_OPTIONS:MPOPPASSD}
 	${INSTALL_PROGRAM} ${WRKSRC}/password/poppassd ${STAGEDIR}${PREFIX}/libexec/qpoppassd
 .endif
