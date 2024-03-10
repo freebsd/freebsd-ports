@@ -1,6 +1,6 @@
 PORTNAME=	anubis
 PORTVERSION=	4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -24,6 +24,7 @@ SHEBANG_FILES=	contrib/msg2smtp.pl
 USE_RC_SUBR=	anubis
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-gnutls \
 		--with-gsasl
 
