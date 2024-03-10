@@ -10,6 +10,9 @@ WWW=		https://www.sof.ch/dan/qscheme/index-e.html
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained and there are more modern alternatives
+EXPIRATION_DATE=2024-04-10
+
 LIB_DEPENDS=	libavcall.so:devel/libffcall \
 		libgmp.so:math/gmp \
 		libpcre.so:devel/pcre
