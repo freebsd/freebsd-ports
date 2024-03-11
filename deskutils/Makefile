@@ -210,6 +210,7 @@
     SUBDIR += pim-data-exporter
     SUBDIR += pim-sieve-editor
     SUBDIR += pinot
+    SUBDIR += pipecolor
     SUBDIR += plan
     SUBDIR += plans
     SUBDIR += plasma5-milou

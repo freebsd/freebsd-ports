@@ -1,0 +1,129 @@
+PORTNAME=	pipecolor
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.4
+CATEGORIES=	deskutils
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Terminal filter to colorize output
+WWW=		https://github.com/dalance/pipecolor
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dalance
+
+CARGO_CRATES=	aho-corasick-1.0.1 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.71 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bytecount-0.6.3 \
+		camino-1.1.4 \
+		cargo-platform-0.1.2 \
+		cargo_metadata-0.14.2 \
+		cc-1.0.79 \
+		cfg-if-1.0.0 \
+		clap-2.34.0 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		error-chain-0.12.4 \
+		fastrand-1.9.0 \
+		getrandom-0.2.9 \
+		glob-0.3.1 \
+		hashbrown-0.12.3 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.1 \
+		indexmap-1.9.3 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.10 \
+		itoa-1.0.6 \
+		lazy_static-1.4.0 \
+		libc-0.2.144 \
+		linux-raw-sys-0.3.7 \
+		memchr-2.5.0 \
+		memoffset-0.7.1 \
+		nix-0.26.2 \
+		numtoa-0.1.0 \
+		option-ext-0.2.0 \
+		pin-utils-0.1.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.57 \
+		proc-reader-0.5.1 \
+		pulldown-cmark-0.9.2 \
+		quote-1.0.27 \
+		redox_syscall-0.2.16 \
+		redox_syscall-0.3.5 \
+		redox_termios-0.1.2 \
+		redox_users-0.4.3 \
+		regex-1.8.1 \
+		regex-syntax-0.7.1 \
+		rustix-0.37.19 \
+		ryu-1.0.13 \
+		same-file-1.0.6 \
+		semver-1.0.17 \
+		serde-1.0.163 \
+		serde_derive-1.0.163 \
+		serde_json-1.0.96 \
+		serde_spanned-0.6.1 \
+		skeptic-0.13.7 \
+		static_assertions-1.1.0 \
+		strsim-0.8.0 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.109 \
+		syn-2.0.16 \
+		tempfile-3.5.0 \
+		termion-2.0.1 \
+		textwrap-0.11.0 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		timeout-readwrite-0.3.3 \
+		toml-0.7.3 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.8 \
+		unicase-2.6.0 \
+		unicode-ident-1.0.8 \
+		unicode-segmentation-1.10.1 \
+		unicode-width-0.1.10 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
+		winnow-0.4.6
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

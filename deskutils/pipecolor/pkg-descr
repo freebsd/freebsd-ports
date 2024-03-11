@@ -1,0 +1,6 @@
+pipecolor is a terminal filter to colorize output.
+You can customize the colorize rule based on regular expressions.
+
+pipecolor receives input through the pipe, and colorizes the output.
+
+The colorize rule file is ~/.pipecolor.toml.
