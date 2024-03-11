@@ -1,8 +1,8 @@
---- Makefile.orig	2023-12-21 05:27:41 UTC
+--- Makefile.orig	2024-03-10 21:00:36 UTC
 +++ Makefile
-@@ -90,6 +90,13 @@ yt-dlp: yt_dlp/*.py yt_dlp/*/*.py
- 	rm yt-dlp.zip
- 	chmod a+x yt-dlp
+@@ -114,6 +114,13 @@ supportedsites:
+ supportedsites:
+ 	$(PYTHON) devscripts/make_supportedsites.py supportedsites.md
  
 +freebsd-install-all-files:
 +	mkdir -p $(PYTHON_SITELIBDIR)
@@ -11,6 +11,6 @@
 +	  cp -pPR $$d/*.py $(PYTHON_SITELIBDIR)/$$d/ ;\
 +	done
 +
- README.md: yt_dlp/*.py yt_dlp/*/*.py devscripts/make_readme.py
- 	COLUMNS=80 $(PYTHON) yt_dlp/__main__.py --ignore-config --help | $(PYTHON) devscripts/make_readme.py
+ README.txt: README.md
+ 	pandoc -f $(MARKDOWN) -t plain README.md -o README.txt
  
