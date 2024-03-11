@@ -8,6 +8,9 @@ MAINTAINER=	theron.tarigo@gmail.com
 COMMENT=	NVIDIA secondary GPU configuration - Optimus Technology support
 WWW=		https://github.com/therontarigo/freebsd-gpu-headless
 
+DEPRECATED=	Not maintained and obsoleted by glvnd and nvidia-drm-kmod
+EXPIRATION_DATE=2024-04-11
+
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	nvidia-xconfig:x11/nvidia-xconfig \
