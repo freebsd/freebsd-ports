@@ -1,6 +1,6 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-DISTVERSION=	3.37.0
+DISTVERSION=	3.37.2
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -24,8 +24,9 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libfltk.so:x11-toolkits/fltk \
 		libcpptest.so:devel/cpptest
 
-USES=		cmake:noninja localbase\
+USES=		cmake:noninja localbase \
 		gl gnome jpeg xorg
+
 .if !exists(/usr/include/omp.h)
 CXXFLAGS+=	-fpermissive
 USES+=		compiler:gcc-c++11-lib
@@ -35,6 +36,7 @@ USES+=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	${GH_PROJECT}
 GH_PROJECT=	OpenVSP
+BINARY_ALIAS=	fltk::fluid=fluid
 
 USE_GL=		gl glew glu
 USE_GNOME=	libxml2
@@ -46,7 +48,8 @@ CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CODEELI:BOOLEAN=no \
 		-DVSP_USE_SYSTEM_EIGEN:BOOLEAN=no \
 		-DVSP_USE_SYSTEM_LIBXML2:BOOLEAN=yes \
-		-DVSP_USE_SYSTEM_FLTK:boolean=yes \
+		-DVSP_USE_SYSTEM_FLTK:boolean=no \
+		-DCMAKE_PREFIX_PATH=/usr/local \
 		-DVSP_USE_SYSTEM_CMINPACK:boolean=no \
 		-DVSP_USE_SYSTEM_GLM:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_GLEW:BOOLEAN=yes
@@ -56,6 +59,10 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenVSP-${DISTVERSION}-FreeBSD
 
 CXXFLAGS_powerpc64=	-mvsx
+
+post-patch:
+	@${REINPLACE_CMD} 's/fltk::gl/fltk_gl/' ${WRKSRC}/src/CMakeLists.txt \
+		${WRKSRC}/src/vsp_aero/Viewer/CMakeLists.txt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
