@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	xcur2png:x11/xcur2png
 
 USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
