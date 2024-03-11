@@ -18,6 +18,9 @@ LICENSE_NAME_INTEL=	Intel
 LICENSE_TEXT_INTEL=	Intel forbids any redistribution.
 LICENSE_PERMS_INTEL=	auto-accept
 
+DEPRECATED=	This version is EOL since a long time, i386 only, and the current clang based Intel oneAPI DPC++/C++ seems to work.
+EXPIRATION_DATE=2024-07-01
+
 EXTRACT_DEPENDS=	rpm2cpio.pl:archivers/rpm2cpio
 
 USES=		linux
