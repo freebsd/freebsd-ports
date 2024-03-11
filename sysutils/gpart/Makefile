@@ -1,6 +1,6 @@
 PORTNAME=	gpart
 PORTVERSION=	0.1h
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SUNSITE/system/filesystems \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
-PLIST_FILES=	sbin/gpart man/man8/gpart.8.gz
+PLIST_FILES=	sbin/gpart share/man/man8/gpart.8.gz
 CFLAGS+=	-std=c99
 
 OPTIONS_DEFINE=	STATIC

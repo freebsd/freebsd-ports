@@ -1,6 +1,6 @@
---- inst.defs.orig	2000-12-14 01:45:49.000000000 +0300
-+++ inst.defs	2013-10-17 00:03:33.617772686 +0400
-@@ -1,8 +1,8 @@
+--- inst.defs.orig	2000-12-13 22:45:49 UTC
++++ inst.defs
+@@ -1,9 +1,9 @@
  #
  # installation directories for gpart
  #
@@ -9,5 +9,7 @@
 +prefix=$(DESTDIR)$(PREFIX)
 +bindir=$(prefix)/sbin
  libdir=$(prefix)/lib
- mandir=$(prefix)/man
+-mandir=$(prefix)/man
++mandir=$(prefix)/share/man
  manext=8
+ sharedir=$(prefix)/share

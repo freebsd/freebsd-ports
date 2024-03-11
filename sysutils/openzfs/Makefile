@@ -1,6 +1,7 @@
 PORTNAME=	openzfs
 PORTVERSION=	2023113000
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
@@ -24,6 +25,7 @@ SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
 		cmd/arc_summary
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	MAKE=gmake --prefix=${PREFIX} --with-config="user"
 
 OPTIONS_DEFINE=	DEBUG PYTHON TESTS

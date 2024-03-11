@@ -1,6 +1,7 @@
 PORTNAME=	fwup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -23,13 +24,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fhunleth
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SHEBANG_FILES=	img2fwup scripts/*.sh
 
 PLIST_FILES=	bin/fwup \
 		bin/img2fwup \
-		man/man1/fwup.1.gz \
-		share/bash-completion/completions/fwup
+		share/bash-completion/completions/fwup \
+		share/man/man1/fwup.1.gz
 
 PORTDOCS=	README.md
 
