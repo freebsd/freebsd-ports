@@ -1,10 +1,10 @@
 # Allow building against system-wide graphite2/harfbuzz.
 
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index 07d48e7f9748..a35804b443e5 100644
+index 0c06f581b33b..10f125be25ab 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1304,6 +1304,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
+@@ -1307,6 +1307,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
          "proxy.h",
      ]
  
@@ -25,10 +25,10 @@ index 07d48e7f9748..a35804b443e5 100644
      system_headers += [
          "unicode/calendar.h",
 diff --git dom/base/moz.build dom/base/moz.build
-index 26fe7e716da8..9015fc360402 100644
+index 14c9f9dd96fb..bd1c8f241e9b 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -608,6 +608,9 @@ FINAL_LIBRARY = "xul"
+@@ -606,6 +606,9 @@ FINAL_LIBRARY = "xul"
  if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
      CXXFLAGS += CONFIG["MOZ_GTK3_CFLAGS"]
  
@@ -65,36 +65,6 @@ index 000000000000..24e8d7a03274
 +AllowCompilerWarnings()
 +
 +FINAL_LIBRARY = 'gkmedias'
-diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
-index b91d9c161cc7..a97e6eb20322 100755
---- gfx/graphite2/moz-gr-update.sh
-+++ gfx/graphite2/moz-gr-update.sh
-@@ -1,6 +1,7 @@
- #!/bin/bash
- 
- # Script used to update the Graphite2 library in the mozilla source tree
-+# and bump version for --with-system-graphite2
- 
- # This script lives in gfx/graphite2, along with the library source,
- # but must be run from the top level of the mozilla-central tree.
-@@ -37,12 +38,16 @@ echo "See" $0 "for update procedure." >> gfx/graphite2/README.mozilla
- #find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
- #find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
- 
-+# chase version for --with-system-graphite2
-+perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$RELEASE/ and tr/./,/ \
-+  if /GR2_VERSION_REQUIRE/" old-configure.in
-+
- # summarize what's been touched
- echo Updated to $RELEASE.
- echo Here is what changed in the gfx/graphite2 directory:
- echo
- 
--hg stat gfx/graphite2
-+hg stat old-configure.in gfx/graphite2
- 
- echo
- echo If gfx/graphite2/src/files.mk has changed, please make corresponding
 diff --git gfx/harfbuzz/README-mozilla.fbsd gfx/harfbuzz/README-mozilla.fbsd
 new file mode 100644
 index 000000000000..2a10eb1e2b42
@@ -162,10 +132,10 @@ index 83aa2957a938..0859316a1f09 100644
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
-index 97f02d59f51a..04c75cc7234d 100644
+index fd1fcf236d81..958d3f699ffd 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -290,7 +290,13 @@ if CONFIG["MOZ_WAYLAND"]:
+@@ -293,7 +293,13 @@ if CONFIG["MOZ_WAYLAND"]:
  
  LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
@@ -195,10 +165,10 @@ index 2bbd00415cae..f66bd37695d4 100644
  
  GeneratedFile(
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
-index 784a1631fba9..574e739e22a0 100644
+index c926d14707d1..35a3f33e2885 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -102,6 +102,9 @@ GeneratedFile(
+@@ -112,6 +112,9 @@ GeneratedFile(
      "etld_data.inc", script="prepare_tlds.py", inputs=["effective_tld_names.dat"]
  )
  
@@ -209,10 +179,10 @@ index 784a1631fba9..574e739e22a0 100644
  LOCAL_INCLUDES += [
      "/netwerk/base",
 diff --git old-configure.in old-configure.in
-index 86424df3f879..09c0bd470172 100644
+index 2ca88a20a4b3..88bc9b873eff 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -1141,6 +1141,27 @@ fi
+@@ -1067,6 +1067,27 @@ fi
  AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
  AC_SUBST(MOZ_MACBUNDLE_ID)
  
@@ -241,10 +211,10 @@ index 86424df3f879..09c0bd470172 100644
  dnl = Child Process Name for IPC
  dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
-index da1d8c47f83e..e5fa5d5c45a1 100644
+index 76746f308011..f6844f4c400b 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -295,6 +295,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
+@@ -292,6 +292,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
  if CONFIG["MOZ_SYSTEM_WEBP"]:
      OS_LIBS += CONFIG["MOZ_WEBP_LIBS"]
  
@@ -258,12 +228,12 @@ index da1d8c47f83e..e5fa5d5c45a1 100644
      OS_LIBS += CONFIG["MOZ_LIBEVENT_LIBS"]
  
 diff --git toolkit/moz.configure toolkit/moz.configure
-index f93a5d64fec8..6cd072f7aaeb 100644
+index a060a59f728f..f0778d1ae2d6 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -1279,6 +1279,25 @@ def geckodriver_default(enable_tests, target, cross_compile, hazard, asan, autom
-         return False
-     return True
+@@ -1218,6 +1218,26 @@ def enable_cairo_ft(target, tree_freetype, freetype2_info):
+ set_config("MOZ_ENABLE_CAIRO_FT", True, when=enable_cairo_ft)
+ set_config("CAIRO_FT_CFLAGS", ft2_info.cflags, when=enable_cairo_ft)
  
 +# Graphite2
 +# ==============================================================
@@ -284,6 +254,7 @@ index f93a5d64fec8..6cd072f7aaeb 100644
 +                                    when="--with-system-harfbuzz")
 +
 +set_config("MOZ_SYSTEM_HARFBUZZ", depends_if(system_harfbuzz)(lambda _: True))
++
  
- option(
-     "--enable-geckodriver",
+ # WebDriver (HTTP / BiDi)
+ # ==============================================================
