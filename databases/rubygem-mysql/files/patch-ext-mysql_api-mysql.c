@@ -1,4 +1,4 @@
---- ext/mysql_api/mysql.c.orig	2024-01-21 14:38:01 UTC
+--- ext/mysql_api/mysql.c.orig	2024-03-11 10:13:55 UTC
 +++ ext/mysql_api/mysql.c
 @@ -170,7 +170,7 @@ static void mysql_raise(MYSQL* m)
      VALUE e = rb_exc_new2(eMysql, mysql_error(m));
@@ -161,6 +161,15 @@
      return flag;
  }
  
+@@ -1029,7 +1043,7 @@ static VALUE fetch_row(VALUE obj)
+ 	return Qnil;
+     ary = rb_ary_new2(n);
+     for (i=0; i<n; i++)
+-	rb_ary_store(ary, i, row[i]? rb_tainted_str_new(row[i], lengths[i]): Qnil);
++	rb_ary_store(ary, i, row[i]? rb_str_new(row[i], lengths[i]): Qnil);
+     return ary;
+ }
+ 
 @@ -1053,7 +1067,7 @@ static VALUE fetch_hash2(VALUE obj, VALUE with_table)
          if (colname == Qnil) {
              colname = rb_ary_new2(n);
@@ -170,6 +179,24 @@
                  rb_obj_freeze(s);
                  rb_ary_store(colname, i, s);
              }
+@@ -1066,7 +1080,7 @@ static VALUE fetch_hash2(VALUE obj, VALUE with_table)
+             colname = rb_ary_new2(n);
+             for (i=0; i<n; i++) {
+                 int len = strlen(fields[i].table)+strlen(fields[i].name)+1;
+-                VALUE s = rb_tainted_str_new(NULL, len);
++                VALUE s = rb_str_new(NULL, len);
+                 snprintf(RSTRING_PTR(s), len+1, "%s.%s", fields[i].table, fields[i].name);
+                 rb_obj_freeze(s);
+                 rb_ary_store(colname, i, s);
+@@ -1076,7 +1090,7 @@ static VALUE fetch_hash2(VALUE obj, VALUE with_table)
+         }
+     }
+     for (i=0; i<n; i++) {
+-        rb_hash_aset(hash, rb_ary_entry(colname, i), row[i]? rb_tainted_str_new(row[i], lengths[i]): Qnil);
++        rb_hash_aset(hash, rb_ary_entry(colname, i), row[i]? rb_str_new(row[i], lengths[i]): Qnil);
+     }
+     return hash;
+ }
 @@ -1257,7 +1271,7 @@ static void mysql_stmt_raise(MYSQL_STMT* s)
  {
      VALUE e = rb_exc_new2(eMysql, mysql_stmt_error(s));
@@ -188,6 +215,15 @@
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_LONGLONG;
  	else if (argv[i] == rb_cFloat)
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_DOUBLE;
+@@ -1573,7 +1587,7 @@ static VALUE stmt_fetch(VALUE obj)
+             case MYSQL_TYPE_NEWDECIMAL:
+             case MYSQL_TYPE_BIT:
+ #endif
+-                v = rb_tainted_str_new(s->result.bind[i].buffer, s->result.length[i]);
++                v = rb_str_new(s->result.bind[i].buffer, s->result.length[i]);
+                 break;
+             default:
+                 rb_raise(rb_eTypeError, "unknown buffer_type: %d", s->result.bind[i].buffer_type);
 @@ -1762,7 +1776,7 @@ static VALUE stmt_send_long_data(VALUE obj, VALUE col,
  static VALUE stmt_sqlstate(VALUE obj)
  {
