@@ -27,7 +27,7 @@ SLAVEPORT?=	no
 
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome libarchive \
 		libtool mate pathfix pkgconfig tar:xz xorg
-USE_MATE=	icontheme
+USE_MATE=	icontheme desktop:build
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 intlhack libxml2
 USE_LDCONFIG=	yes
