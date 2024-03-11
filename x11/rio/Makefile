@@ -1,7 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.34
-PORTREVISION=	3
+DISTVERSION=	0.0.35
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -256,7 +255,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		proc-macro2-1.0.69 \
 		profiling-1.0.11 \
 		qoi-0.4.1 \
-		quick-xml-0.30.0 \
+		quick-xml-0.31.0 \
 		quote-1.0.33 \
 		rand-0.4.6 \
 		rand-0.8.5 \
@@ -347,14 +346,14 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		wasm-bindgen-shared-0.2.87 \
 		wasm-bindgen-test-0.3.37 \
 		wasm-bindgen-test-macro-0.3.37 \
-		wayland-backend-0.3.2 \
-		wayland-client-0.31.1 \
+		wayland-backend-0.3.3 \
+		wayland-client-0.31.2 \
 		wayland-csd-frame-0.3.0 \
-		wayland-cursor-0.31.0 \
+		wayland-cursor-0.31.1 \
 		wayland-protocols-0.31.0 \
 		wayland-protocols-plasma-0.2.0 \
 		wayland-protocols-wlr-0.2.0 \
-		wayland-scanner-0.31.0 \
+		wayland-scanner-0.31.1 \
 		wayland-sys-0.31.1 \
 		web-sys-0.3.64 \
 		web-time-0.2.3 \
@@ -391,7 +390,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		winit-0.29.9 \
+		winit-0.29.11 \
 		winnow-0.5.17 \
 		wio-0.2.2 \
 		x11-clipboard-0.8.1 \
@@ -402,7 +401,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		x11rb-protocol-0.13.0 \
 		xcursor-0.3.4 \
 		xi-unicode-0.3.0 \
-		xkbcommon-dl-0.4.1 \
+		xkbcommon-dl-0.4.2 \
 		xkeysym-0.2.0 \
 		xml-rs-0.8.19 \
 		xmlparser-0.13.6 \
