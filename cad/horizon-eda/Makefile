@@ -1,7 +1,7 @@
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libharfbuzz.so:print/harfbuzz \
 		libpng16.so:graphics/png \
 		libpodofo09.so:graphics/podofo09 \
-		libTKSTEP.so:cad/opencascade \
+		libTKDESTEP.so:cad/opencascade \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libzip.so:archivers/libzip \
 		libzmq.so:net/libzmq4
@@ -39,7 +39,7 @@ MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 # Patch sources to force using include files installed by graphics/podofo09
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e '/^#include/s|podofo/podofo.h|podofo09/podofo.h|' \
 		${WRKSRC}/src/export_pdf/export_pdf.cpp \
 		${WRKSRC}/src/export_pdf/export_pdf_board.cpp \
