@@ -1,5 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	123.0.1
+DISTVERSION=	124.0
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
@@ -11,7 +11,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.97:security/nss \
+		nss>=3.98:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=8.3.0:print/harfbuzz \
