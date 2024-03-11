@@ -1,6 +1,6 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.90.b20240221
+DISTVERSION=	0.10.0
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
 #PORTREVISION=	0
 CATEGORIES=	x11-drivers
