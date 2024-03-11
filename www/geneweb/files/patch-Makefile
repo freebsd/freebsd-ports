@@ -7,7 +7,7 @@
 -LANGDIR=$(PREFIX)/share/geneweb
 -MANDIR=$(PREFIX)/man/man1
 +LANGDIR=$(STAGEDIR)$(PREFIX)/share/geneweb
-+MANDIR=$(STAGEDIR)$(PREFIX)/man/man1
++MANDIR=$(STAGEDIR)$(PREFIX)/share/man/man1
  DESTDIR=distribution
  MANPAGES=ged2gwb.1 gwb2ged.1 gwc.1 gwc2.1 gwu.1 gwd.1 consang.1 gwsetup.1
  

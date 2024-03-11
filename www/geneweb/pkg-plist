@@ -7,14 +7,6 @@ bin/gwc1
 bin/gwc2
 bin/gwd
 bin/gwu
-man/man1/consang.1.gz
-man/man1/ged2gwb.1.gz
-man/man1/gwb2ged.1.gz
-man/man1/gwc.1.gz
-man/man1/gwc2.1.gz
-man/man1/gwd.1.gz
-man/man1/gwsetup.1.gz
-man/man1/gwu.1.gz
 %%DATADIR%%/a.gwf
 %%DATADIR%%/distribution/CHANGES.txt
 %%DATADIR%%/distribution/LICENSE.txt
@@ -691,4 +683,12 @@ man/man1/gwu.1.gz
 %%DATADIR%%/lang/start.txt
 %%DATADIR%%/lang/start_utf8.txt
 %%DATADIR%%/lang/version.txt
+share/man/man1/consang.1.gz
+share/man/man1/ged2gwb.1.gz
+share/man/man1/gwb2ged.1.gz
+share/man/man1/gwc.1.gz
+share/man/man1/gwc2.1.gz
+share/man/man1/gwd.1.gz
+share/man/man1/gwsetup.1.gz
+share/man/man1/gwu.1.gz
 @dir %%DATADIR%%/distribution/gw/old
