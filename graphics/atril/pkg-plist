@@ -76,9 +76,6 @@ lib/libatrilview.so.%%GTK3_VERSION%%
 libdata/pkgconfig/atril-document-1.5.0.pc
 libdata/pkgconfig/atril-view-1.5.0.pc
 %%DBUS%%libexec/atrild
-share/man/man1/atril-previewer.1.gz
-share/man/man1/atril-thumbnailer.1.gz
-share/man/man1/atril.1.gz
 share/applications/atril.desktop
 %%DATADIR%%/hand-open.png
 %%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-left.png
@@ -6042,5 +6039,8 @@ share/locale/zh_CN/LC_MESSAGES/atril.mo
 share/locale/zh_HK/LC_MESSAGES/atril.mo
 share/locale/zh_TW/LC_MESSAGES/atril.mo
 share/locale/zu/LC_MESSAGES/atril.mo
+share/man/man1/atril-previewer.1.gz
+share/man/man1/atril-thumbnailer.1.gz
+share/man/man1/atril.1.gz
 share/metainfo/atril.appdata.xml
 share/thumbnailers/atril.thumbnailer
