@@ -1,0 +1,93 @@
+#!/bin/sh
+
+# PROVIDE: authentication_milter
+# REQUIRE: NETWORKING
+# BEFORE:  mail
+# KEYWORD: shutdown
+#
+# Define these authentication_milter* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/authentication_milter
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# Add the following lines to /etc/rc.conf to enable authentication_milter:
+#
+# authentication_milter_enable="YES"
+# authentication_milter_flags="<set as needed>"
+# authentication_milter_prefix="%%ETCDIR%%"
+# authentication_milter_foreground_enable="<default 'NO'>"
+#
+
+. /etc/rc.subr
+
+name="authentication_milter"
+rcvar="authentication_milter_enable"
+procname="${name}:parent"
+
+load_rc_config $name
+
+: ${authentication_milter_enable:=NO}
+: ${authentication_milter_prefix:=%%ETCDIR%%}
+: ${authentication_milter_foreground_enable:=NO}
+
+pidfile="%%RUNDIR%%/${name}.pid"
+command="%%PREFIX%%/bin/authentication_milter"
+command_args="--pidfile ${pidfile} --prefix ${authentication_milter_prefix} ${command_args}"
+
+start_precmd="authentication_milter_precmd_start"
+stop_precmd="authentication_milter_precmd"
+
+authentication_milter_precmd_start () {
+	var1=
+	var2=
+
+	case "${authentication_milter_flags}" in
+	-c*|*-c*|--control*|*--control*)
+		var1="control"
+		;;
+	-d*|*-d*|--daemon*|*--daemon*)
+		var1="daemon"
+		;;
+	--pidfile*|*--pidfile*)
+		var2="pidfile"
+		;;
+	--prefix*|*--prefix*)
+		var2="prefix"
+		;;
+	-h*|*-h*|--help*|*--help*)
+		var1="help"
+		;;
+	esac
+	case ${var1} in
+	"")	;;
+	*)
+		err 1 "Invalid option --${var1} found in ${name}_flags"
+	;;
+	esac
+	case ${var2} in
+	"")	;;
+	*)
+		err 1 "Invalid option --${var2} found in ${name}_flags." \
+		    "Use \$${name}_${var2} in /etc/rc.conf instead."
+	;;
+	esac
+
+	piddir=$(dirname "$pidfile")
+	install -d %%VARLIBDIRBASE%%
+	install -d -m 0755 -o "%%DEFAULT_USER%%" -g "%%DEFAULT_GROUP%%" "$piddir"
+	install -d -m 0750 -o "%%DEFAULT_USER%%" -g "%%DEFAULT_GROUP%%" \
+	    %%RUNDIR%% %%CACHEDIR%% %%SPOOLDIR%% %%VARLIBDIR%%
+
+	authentication_milter_precmd
+	if ! checkyesno authentication_milter_foreground_enable; then
+		command_args="-d ${command_args}"
+	fi
+}
+
+authentication_milter_precmd () {
+	command_args="-c ${rc_arg} ${command_args}"
+}
+
+run_rc_command "$1"
