@@ -810,6 +810,7 @@
     SUBDIR += gh
     SUBDIR += ghidra
     SUBDIR += ghidra-cheri
+    SUBDIR += ghidra-meta
     SUBDIR += ghostie
     SUBDIR += ghq
     SUBDIR += ghub

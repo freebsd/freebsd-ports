@@ -1,3 +1,5 @@
+IGNORE=		is replaced by devel/ghidra-meta on CheriBSD
+
 PORTNAME=	ghidra
 DISTVERSIONPREFIX=	Ghidra_
 DISTVERSION=	9.1
