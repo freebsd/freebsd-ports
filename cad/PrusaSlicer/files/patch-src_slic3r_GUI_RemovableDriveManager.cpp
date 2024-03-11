@@ -1,6 +1,6 @@
---- src/slic3r/GUI/RemovableDriveManager.cpp.orig	2023-07-25 12:47:49 UTC
+--- src/slic3r/GUI/RemovableDriveManager.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/RemovableDriveManager.cpp
-@@ -738,7 +738,7 @@ namespace search_for_drives_internal 
+@@ -744,7 +744,7 @@ namespace search_for_drives_internal 
  		//confirms if the file is removable drive and adds it to vector
  
  		if (

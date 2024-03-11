@@ -1,6 +1,6 @@
---- src/slic3r/GUI/Mouse3DController.cpp.orig	2023-07-25 12:02:33 UTC
+--- src/slic3r/GUI/Mouse3DController.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/Mouse3DController.cpp
-@@ -885,7 +885,7 @@ bool Mouse3DController::connect_device()
+@@ -890,7 +890,7 @@ bool Mouse3DController::connect_device()
  
      for (const DetectedDevices::value_type& device : detected_devices) {
          if (device.second.size() == 1) {
@@ -9,7 +9,7 @@
              hid_device* test_device = hid_open(device.first.first, device.first.second, nullptr);
              if (test_device == nullptr) {
                  BOOST_LOG_TRIVIAL(error) << "3DConnexion device cannot be opened: " << device.second.front().path <<
-@@ -910,7 +910,7 @@ bool Mouse3DController::connect_device()
+@@ -915,7 +915,7 @@ bool Mouse3DController::connect_device()
                  std::cout << "Test device: " << std::hex << device.first.first << std::dec << "/" << std::hex << device.first.second << std::dec << " \"" << data.path << "\"";
  #endif // ENABLE_3DCONNEXION_DEVICES_DEBUG_OUTPUT
  

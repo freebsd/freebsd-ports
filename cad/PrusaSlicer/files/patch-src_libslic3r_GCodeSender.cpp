@@ -1,6 +1,6 @@
---- src/libslic3r/GCodeSender.cpp.orig	2023-07-24 22:05:38 UTC
+--- src/libslic3r/GCodeSender.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/libslic3r/GCodeSender.cpp
-@@ -8,7 +8,7 @@
+@@ -14,7 +14,7 @@
  #include <boost/date_time/posix_time/posix_time.hpp>
  #include <boost/lexical_cast.hpp>
  
@@ -9,7 +9,7 @@
  #include <termios.h>
  #endif
  #ifdef __APPLE__
-@@ -146,7 +146,7 @@ GCodeSender::set_baud_rate(unsigned int baud_rate)
+@@ -152,7 +152,7 @@ GCodeSender::set_baud_rate(unsigned int baud_rate)
          if (ioctl(handle, TCSETS2, &ios))
              printf("Error in TCSETS2: %s\n", strerror(errno));
  		

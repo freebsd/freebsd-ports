@@ -1,11 +1,11 @@
 bin/prusa-gcodeviewer
 bin/prusa-slicer
 lib/OCCTWrapper.so
-share/applications/PrusaGcodeviewer.desktop
 share/applications/PrusaSlicer.desktop
-share/icons/hicolor/128x128/apps/PrusaSlicer-gcodeviewer.png
-share/icons/hicolor/128x128/apps/PrusaSlicer.png
-share/icons/hicolor/192x192/apps/PrusaSlicer-gcodeviewer.png
-share/icons/hicolor/192x192/apps/PrusaSlicer.png
-share/icons/hicolor/32x32/apps/PrusaSlicer-gcodeviewer.png
+share/applications/PrusaGcodeviewer.desktop
 share/icons/hicolor/32x32/apps/PrusaSlicer.png
+share/icons/hicolor/32x32/apps/PrusaSlicer-gcodeviewer.png
+share/icons/hicolor/128x128/apps/PrusaSlicer.png
+share/icons/hicolor/128x128/apps/PrusaSlicer-gcodeviewer.png
+share/icons/hicolor/192x192/apps/PrusaSlicer.png
+share/icons/hicolor/192x192/apps/PrusaSlicer-gcodeviewer.png

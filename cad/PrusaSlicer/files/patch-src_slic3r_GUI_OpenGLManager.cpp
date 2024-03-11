@@ -1,6 +1,6 @@
---- src/slic3r/GUI/OpenGLManager.cpp.orig	2023-07-21 19:13:54 UTC
+--- src/slic3r/GUI/OpenGLManager.cpp.orig	2024-02-29 13:03:32 UTC
 +++ src/slic3r/GUI/OpenGLManager.cpp
-@@ -336,7 +336,7 @@ bool OpenGLManager::init_gl()
+@@ -344,7 +344,7 @@ bool OpenGLManager::init_gl()
          glewExperimental = true;
  #endif // ENABLE_GL_CORE_PROFILE || ENABLE_OPENGL_ES
          GLenum err = glewInit();

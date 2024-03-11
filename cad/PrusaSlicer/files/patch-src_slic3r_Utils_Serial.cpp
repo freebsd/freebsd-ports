@@ -1,6 +1,6 @@
---- src/slic3r/Utils/Serial.cpp.orig	2023-07-25 13:13:16 UTC
+--- src/slic3r/Utils/Serial.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/Utils/Serial.cpp
-@@ -49,7 +49,7 @@
+@@ -53,7 +53,7 @@
  	#include <sys/select.h>
  #endif
  
@@ -9,7 +9,7 @@
  	#include <termios.h>
  #elif defined __linux__
  	#include <fcntl.h>
-@@ -342,7 +342,7 @@ void Serial::set_baud_rate(unsigned baud_rate)
+@@ -346,7 +346,7 @@ void Serial::set_baud_rate(unsigned baud_rate)
  		ios.c_cc[VTIME] = 1;
  		handle_errno(::ioctl(handle, TCSETS2, &ios));
  

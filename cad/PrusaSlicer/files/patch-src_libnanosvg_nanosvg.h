@@ -1,4 +1,4 @@
---- src/libnanosvg/nanosvg.h.orig	2024-03-17 16:57:39 UTC
+--- src/libnanosvg/nanosvg.h.orig	2024-01-12 13:12:38 UTC
 +++ src/libnanosvg/nanosvg.h
 @@ -0,0 +1,3106 @@
 +/*

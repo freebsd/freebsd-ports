@@ -1,6 +1,6 @@
---- src/slic3r/GUI/GUI_Preview.hpp.orig	2023-07-25 11:01:59 UTC
+--- src/slic3r/GUI/GUI_Preview.hpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/GUI_Preview.hpp
-@@ -85,7 +85,7 @@ class Preview : public wxPanel
+@@ -89,7 +89,7 @@ class Preview : public wxPanel
      BackgroundSlicingProcess* m_process;
      GCodeProcessorResult* m_gcode_result;
  

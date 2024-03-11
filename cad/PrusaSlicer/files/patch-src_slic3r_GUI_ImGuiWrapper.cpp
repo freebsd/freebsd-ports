@@ -1,6 +1,6 @@
---- src/slic3r/GUI/ImGuiWrapper.cpp.orig	2023-07-25 16:14:00 UTC
+--- src/slic3r/GUI/ImGuiWrapper.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/ImGuiWrapper.cpp
-@@ -35,8 +35,8 @@
+@@ -40,8 +40,8 @@
  #include "GUI_App.hpp"
  
  #include "../Utils/MacDarkMode.hpp"

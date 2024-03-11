@@ -1,6 +1,6 @@
---- src/slic3r/GUI/ConfigWizard.hpp.orig	2023-07-25 09:21:21 UTC
+--- src/slic3r/GUI/ConfigWizard.hpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/ConfigWizard.hpp
-@@ -22,7 +22,7 @@ namespace DownloaderUtils {
+@@ -31,7 +31,7 @@ namespace DownloaderUtils {
          wxWindow*   m_parent{ nullptr };
          wxTextCtrl* m_input_path{ nullptr };
          bool        downloader_checked{ false };
@@ -9,7 +9,7 @@
          bool        perform_registration_linux{ false };
  #endif // __linux__
  
-@@ -41,7 +41,7 @@ namespace DownloaderUtils {
+@@ -50,7 +50,7 @@ namespace DownloaderUtils {
  
          bool on_finish();
          bool perform_register(const std::string& path_override = {});

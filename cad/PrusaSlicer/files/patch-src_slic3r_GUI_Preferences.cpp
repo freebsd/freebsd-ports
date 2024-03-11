@@ -1,6 +1,6 @@
---- src/slic3r/GUI/Preferences.cpp.orig	2023-07-25 12:35:52 UTC
+--- src/slic3r/GUI/Preferences.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/Preferences.cpp
-@@ -18,7 +18,7 @@
+@@ -28,7 +28,7 @@
  #ifdef WIN32
  #include <wx/msw/registry.h>
  #endif // WIN32
@@ -9,7 +9,7 @@
  #include "DesktopIntegrationDialog.hpp"
  #endif //__linux__
  
-@@ -688,7 +688,7 @@ void PreferencesDialog::accept(wxEvent&)
+@@ -758,7 +758,7 @@ void PreferencesDialog::accept(wxEvent&)
  			downloader->allow(it->second == "1");
  		if (!downloader->on_finish())
  			return;

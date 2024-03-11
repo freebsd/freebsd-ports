@@ -1,6 +1,9 @@
---- src/slic3r/GUI/DesktopIntegrationDialog.cpp.orig	2023-07-25 09:24:17 UTC
+--- src/slic3r/GUI/DesktopIntegrationDialog.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/DesktopIntegrationDialog.cpp
-@@ -1,4 +1,4 @@
+@@ -3,7 +3,7 @@
+ ///|/
+ ///|/ PrusaSlicer is released under the terms of the AGPLv3 or higher
+ ///|/
 -#ifdef __linux__
 +#if defined(__linux__) || defined(__FreeBSD__)
  #include "DesktopIntegrationDialog.hpp"
