@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.25.0
+DISTVERSION=	1.25.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +33,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		camino-1.1.6 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
 		clap-2.34.0 \
 		colorchoice-1.0.0 \
 		constant_time_eq-0.3.0 \
@@ -42,7 +43,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
-		ctrlc-3.4.2 \
+		ctrlc-3.4.4 \
 		derivative-2.2.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -75,7 +76,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		log-0.4.21 \
 		memchr-2.7.1 \
 		memmap2-0.7.1 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		num_cpus-1.16.0 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
@@ -108,8 +109,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		strum-0.26.1 \
-		strum_macros-0.26.1 \
+		strum-0.26.2 \
+		strum_macros-0.26.2 \
 		syn-1.0.109 \
 		syn-2.0.52 \
 		target-2.0.0 \
