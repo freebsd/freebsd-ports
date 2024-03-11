@@ -4,7 +4,7 @@ DISTVERSION=	23.12
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Qt 5 clone of Media Player Classic based on libmpv
+COMMENT=	Media Player Classic Qute Theater
 WWW=		https://github.com/mpc-qt/mpc-qt
 
 LICENSE=	GPLv2
