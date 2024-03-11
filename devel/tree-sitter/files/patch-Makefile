@@ -1,0 +1,13 @@
+0.22.1 tries to install api.h before creating the destination.
+Hopefully this can be removed soon...
+
+--- Makefile.orig	2024-03-11 02:52:53 UTC
++++ Makefile
+@@ -67,6 +67,7 @@ install: all
+ 	$(RM) $(OBJ) tree-sitter.pc libtree-sitter.a libtree-sitter.$(SOEXT)
+ 
+ install: all
++	mkdir -p '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter
+ 	install -Dm644 lib/include/tree_sitter/api.h '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter/api.h
+ 	install -Dm644 tree-sitter.pc '$(DESTDIR)$(PCLIBDIR)'/tree-sitter.pc
+ 	install -Dm644 libtree-sitter.a '$(DESTDIR)$(LIBDIR)'/libtree-sitter.a
