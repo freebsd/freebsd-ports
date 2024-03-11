@@ -24,6 +24,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and dynarmic backend
 
+# XXX Need Ryujinx or a Yuzu fork that regularly improves game compatibility
 DEPRECATED=	Project discontinued
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
