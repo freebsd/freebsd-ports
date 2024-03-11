@@ -10,6 +10,7 @@
 %%EXAMPLES%%bin/export-lora
 %%EXAMPLES%%bin/finetune
 %%EXAMPLES%%bin/gguf
+%%EXAMPLES%%bin/gritlm
 %%EXAMPLES%%bin/imatrix
 %%EXAMPLES%%bin/infill
 %%EXAMPLES%%bin/llama-bench
