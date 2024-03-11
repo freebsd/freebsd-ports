@@ -1,5 +1,6 @@
 PORTNAME=	yosys-ghdl-plugin
 PORTVERSION=	g20230930
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	nsonack@outlook.com
@@ -12,7 +13,7 @@ BUILD_DEPENDS=	ghdl>0:cad/ghdl \
 		yosys>0:cad/yosys
 RUN_DEPENDS=	yosys>0:cad/yosys
 LIB_DEPENDS=	libffi.so:devel/libffi \
-		libghdl-3_0_0.so:cad/ghdl \
+		libghdl-4_0_0.so:cad/ghdl \
 		libtcmalloc.so:devel/google-perftools
 
 USES=		gmake readline tcl
