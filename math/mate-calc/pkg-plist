@@ -1,8 +1,6 @@
 bin/mate-calc
 bin/mate-calc-cmd
 bin/mate-calculator
-share/man/man1/mate-calc-cmd.1.gz
-share/man/man1/mate-calc.1.gz
 share/applications/mate-calc.desktop
 share/help/C/mate-calc/absolute.page
 share/help/C/mate-calc/base.page
@@ -3299,4 +3297,6 @@ share/locale/zh_CN/LC_MESSAGES/mate-calc.mo
 share/locale/zh_HK/LC_MESSAGES/mate-calc.mo
 share/locale/zh_TW/LC_MESSAGES/mate-calc.mo
 share/locale/zu/LC_MESSAGES/mate-calc.mo
+share/man/man1/mate-calc-cmd.1.gz
+share/man/man1/mate-calc.1.gz
 share/metainfo/mate-calc.appdata.xml
