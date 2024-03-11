@@ -1,7 +1,6 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.5.0
-PORTREVISION=	1
+DISTVERSION=	5.5.1
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,6 +59,14 @@ GH_ACCOUNT=	spyder-ide
 NO_ARCH=	yes
 
 DOCSDIR=	${PYTHON_SITELIBDIR}/spyder
+
+post-patch:
+	${REINPLACE_CMD} \
+		-E 's|,<[0-9.=]+||' \
+		${WRKSRC}/setup.py \
+		${WRKSRC}/binder/environment.yml \
+		${WRKSRC}/requirements/main.yml \
+		${WRKSRC}/spyder/dependencies.py
 
 post-extract: # remove bundled dependencies
 	@${RM} -r ${WRKSRC}/external-deps/*
