@@ -1,6 +1,6 @@
 PORTNAME=	ledit
 PORTVERSION=	2.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cristal.inria.fr/%SUBDIR%/ \
 		http://pauillac.inria.fr/%SUBDIR%/
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 do-configure:
 	${REINPLACE_CMD} -e '/^BINDIR=/s|/usr/local|${STAGEDIR}${PREFIX}|' \
 			-e '/^LIBDIR=/s|/usr/local|${STAGEDIR}${PREFIX}|' \
-			-e '/^MANDIR=/s|/usr/local|${STAGEDIR}${PREFIX}|' \
+			-e '/^MANDIR=/s|/usr/local|${STAGEDIR}${PREFIX}/share|' \
 			${WRKSRC}/Makefile
 
 post-install:
