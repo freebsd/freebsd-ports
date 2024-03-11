@@ -16,6 +16,8 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-architecture-light.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-architecture.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-dark-theme-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-lambda-service.svg
+%%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-lambda-tutorial.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-overview-dark.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-overview-light.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-ui.png
@@ -49,13 +51,14 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/get-started/quickstart.md
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/trace-analytics-with-grafana.md
+%%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/tutorial-aws-lambda-simple.md
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/tutorial-hdfs-logs-distributed-search-aws-s3.md
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/tutorial-hdfs-logs.md
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/tutorial-jaeger.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/add-full-text-search-to-your-olap-db.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/aws-setup.md
-%%PORTDOCS%%%%DOCSDIR%%/guides/cluster-with-docker-compose.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/e2e-serverless-aws-lambda.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/schemaless.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/storage-setup/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/storage-setup/aws-s3.md
@@ -86,6 +89,7 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/operating/aws-costs.md
 %%PORTDOCS%%%%DOCSDIR%%/operating/data-directory.md
 %%PORTDOCS%%%%DOCSDIR%%/operating/monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/operating/upgrades.md
 %%PORTDOCS%%%%DOCSDIR%%/overview/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/overview/architecture.md
 %%PORTDOCS%%%%DOCSDIR%%/overview/concepts/_category_.yaml
