@@ -1,6 +1,5 @@
 PORTNAME=	yt-dlp
-DISTVERSION=	2023.12.30
-PORTREVISION=	3
+DISTVERSION=	2024.03.10
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -28,7 +27,8 @@ USES=		gmake python shebangfix
 
 SHEBANG_GLOB=	devscripts/*.py
 
-MAKE_ARGS=	PYTHON=${PYTHON_CMD}
+MAKE_ARGS=	PYTHON=${PYTHON_CMD} \
+		MANDIR=${PREFIX}/share/man
 
 NO_ARCH=	yes
 
