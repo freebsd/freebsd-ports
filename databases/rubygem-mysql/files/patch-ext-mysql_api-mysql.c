@@ -1,4 +1,4 @@
---- ext/mysql_api/mysql.c.orig	2024-03-11 10:13:55 UTC
+--- ext/mysql_api/mysql.c.orig	2024-03-11 10:33:12 UTC
 +++ ext/mysql_api/mysql.c
 @@ -170,7 +170,7 @@ static void mysql_raise(MYSQL* m)
      VALUE e = rb_exc_new2(eMysql, mysql_error(m));
@@ -241,11 +241,16 @@
      int i;
      int dots = 0;
      const char *lib = mysql_get_client_info();
-@@ -1898,6 +1913,7 @@ void Init_mysql_api(void)
+@@ -1898,9 +1913,12 @@ void Init_mysql_api(void)
              return;
          }
      }
 +#endif
  
      cMysql = rb_define_class("Mysql", rb_cObject);
++    rb_undef_alloc_func(cMysql);
      cMysqlRes = rb_define_class_under(cMysql, "Result", rb_cObject);
++    rb_undef_alloc_func(cMysqlRes);
+     cMysqlField = rb_define_class_under(cMysql, "Field", rb_cObject);
+ #if MYSQL_VERSION_ID >= 40102
+     cMysqlStmt = rb_define_class_under(cMysql, "Stmt", rb_cObject);
