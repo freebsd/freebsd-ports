@@ -1,2 +1,3 @@
-SHA256 (ocaml-images/v4.0.1.tar.gz) = b40237c1505487049799a7af296eb3996b3fa08eab94415546f46d61355747c4
-SIZE (ocaml-images/v4.0.1.tar.gz) = 2190274
+TIMESTAMP = 1706851240
+SHA256 (camlimages-5.0.4.tar.bz2) = 1c9a68bdc3d348c9f859d490dadf384926213e47a584159832f7fc4a20242865
+SIZE (camlimages-5.0.4.tar.bz2) = 788111

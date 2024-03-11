@@ -1,6 +1,6 @@
 PORTNAME=	dbm
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/728/
 PKGNAMEPREFIX=	ocaml-

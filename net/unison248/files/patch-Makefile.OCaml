@@ -1,6 +1,6 @@
---- Makefile.OCaml.orig	2017-03-23 16:39:49 UTC
+--- Makefile.OCaml.orig	2017-12-18 12:23:54 UTC
 +++ Makefile.OCaml
-@@ -32,7 +32,11 @@ ifeq ($(shell uname),OpenBSD)
+@@ -32,7 +32,11 @@ ifeq ($(shell uname),NetBSD)
  else
  ifeq ($(shell uname),NetBSD)
    OSARCH=NetBSD
@@ -12,7 +12,16 @@
  ifeq ($(shell uname),Linux)
    OSARCH=Linux
  endif
-@@ -311,6 +315,10 @@ ifeq ($(OSARCH),Linux)
+@@ -240,7 +244,7 @@ OCAMLLIBS+=unix.cma str.cma bigarray.cma
+ # File extensions will be substituted for the native code version
+ OCAMLLIBS+=unix.cma str.cma bigarray.cma
+ 
+-COBJS+=osxsupport$(OBJ_EXT) pty$(OBJ_EXT) bytearray_stubs$(OBJ_EXT)
++COBJS+=osxsupport$(OBJ_EXT) pty$(OBJ_EXT) bytearray_stubs$(OBJ_EXT) hash_compat$(OBJ_EXT)
+ 
+ ########################################################################
+ ### User Interface setup
+@@ -311,6 +315,10 @@ endif
  -include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
  endif
  

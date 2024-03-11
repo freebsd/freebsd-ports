@@ -1,0 +1,11 @@
+--- setup/Makefile.orig	2024-02-11 19:47:03 UTC
++++ setup/Makefile
+@@ -64,7 +64,7 @@ setup.opt: $(OBJS:.cmo=.cmx)
+ 	$(OCAMLC) -custom $(STATIC) unix.cma $(LIBUNIX) $(OBJS) -o setup.out
+ 
+ setup.opt: $(OBJS:.cmo=.cmx)
+-	$(OCAMLOPT) $(STATIC) unix.cmxa $(LIBUNIX) $(OBJS:.cmo=.cmx) -o setup.opt
++	$(OCAMLOPT) -linkpkg $(OBJS:.cmo=.cmx) -o setup.opt
+ 
+ depend:
+ 	TOP=.. ../tools/camlp5_depend.sh $(OCAMLI) *.ml* > .depend

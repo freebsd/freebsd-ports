@@ -1,2 +1,3 @@
-SHA256 (ocaml-ocaml-re-ocaml-re-1.4.1_GH0.tar.gz) = 262554309d645f4126a2a2e21e3a798d250293264fda34d6271243cc6c16e576
-SIZE (ocaml-ocaml-re-ocaml-re-1.4.1_GH0.tar.gz) = 99877
+TIMESTAMP = 1706844132
+SHA256 (ocaml-ocaml-re-1.11.0_GH0.tar.gz) = e32660b6068b78a8588ca065a6a2b01ae7339584d8261356beac0e26dbc5f854
+SIZE (ocaml-ocaml-re-1.11.0_GH0.tar.gz) = 93319

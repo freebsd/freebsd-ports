@@ -1,0 +1,12 @@
+--- configure.orig	2024-03-01 00:17:41 UTC
++++ configure
+@@ -457,9 +457,7 @@ if [ -d "${ocaml_sitelib}" ] && [ ${ocaml_major} -lt 5
+         echo "Installation has: $findlib_installed_meta"
+     else
+         previous_config=''
+-        check_before_install=1
+         echo "Querying installation: META list not found"
+-        echo "make install will double-check installed META files"
+     fi
+ else
+     previous_config=''

@@ -424,6 +424,9 @@ bin/dune
 %%OCAML_SITELIBDIR%%/dune-site/private/dune_site_private.ml
 %%OCAML_SITELIBDIR%%/dune-site/private/dune_site_private.mli
 %%OCAML_SITELIBDIR%%/dune/META
+%%OCAML_SITELIBDIR%%/dune/dlldune_filesystem_stubs_stubs.so
+%%OCAML_SITELIBDIR%%/dune/dllstdune_stubs.so
+%%OCAML_SITELIBDIR%%/dune/dllxdg_stubs.so
 %%OCAML_SITELIBDIR%%/dune/dune-package
 %%OCAML_SITELIBDIR%%/dune/opam
 %%OCAML_SITELIBDIR%%/dyn/META
@@ -933,9 +936,6 @@ bin/dune
 %%OCAML_SITELIBDIR%%/stdune/user_message.mli
 %%OCAML_SITELIBDIR%%/stdune/user_warning.ml
 %%OCAML_SITELIBDIR%%/stdune/user_warning.mli
-%%OCAML_SITELIBDIR%%/stublibs/dlldune_filesystem_stubs_stubs.so
-%%OCAML_SITELIBDIR%%/stublibs/dllstdune_stubs.so
-%%OCAML_SITELIBDIR%%/stublibs/dllxdg_stubs.so
 %%OCAML_SITELIBDIR%%/xdg/META
 %%OCAML_SITELIBDIR%%/xdg/dune-package
 %%OCAML_SITELIBDIR%%/xdg/libxdg_stubs.a

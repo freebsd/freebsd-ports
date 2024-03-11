@@ -1,10 +1,9 @@
 PORTNAME=	coq
-PORTVERSION=	8.6
-PORTREVISION=	20
+PORTVERSION=	8.19
 PORTEPOCH=	3
 CATEGORIES=	math
-MASTER_SITES=	http://coq.inria.fr/distrib/V${PORTVERSION}/files/ \
-		ftp://ftp.stack.nl/pub/users/johans/coq/
+DISTVERSIONPREFIX=	V
+DISTVERSIONSUFFIX=	.0
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -14,29 +13,34 @@ WWW=		https://coq.inria.fr/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=	fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
-BROKEN_armv7=	fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
-
-BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
-		ocamlfind:devel/ocaml-findlib \
-		${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
+BUILD_DEPENDS=	${SA_DIR}/num/META:math/ocaml-num \
+		${SA_DIR}/zarith/META:math/ocaml-zarith \
+		bash:shells/bash \
+		camlp5:devel/ocaml-camlp5
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/stublibs/dllnums.so:math/ocaml-num
+		libfreetype.so:print/freetype2 \
+		libgmp.so:math/gmp \
+		libharfbuzz.so:print/harfbuzz
+RUN_DEPENDS=	${SA_DIR}/num/META:math/ocaml-num \
+		${SA_DIR}/zarith/META:math/ocaml-zarith
 
-USES=		emacs gettext-runtime gmake gnome
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtksourceview2 pango
+USES=		emacs gettext-runtime gmake gnome ocaml:dune python:env shebangfix tex
+SHEBANG_FILES=	tools/*.py
+USE_GITHUB=	yes
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3
 USE_LDCONFIG=	${PREFIX}/lib/coq
 USE_OCAML=	yes
+USE_OCAML_CAMLP4=	yes
+USE_OCAML_LDCONFIG=	yes
+OCAML_LDLIBS=		${OCAML_SITELIBDIR}/coq-core
+OCAML_PACKAGES=		coq-core coq-stdlib coq
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix ${PREFIX} \
-		-mandir ${PREFIX}/man \
-		-emacslib ${PREFIX}/share/emacs/site-lisp/coq \
-		-usecamlp5 \
-		-byteonly
-MAKE_ENV=	VERBOSE=1 USERFLAGS=-unsafe-string
-ALL_TARGET=	world
+		-mandir ${PREFIX}/share/man \
+		-docdir ${OCAML_DOCSDIR} \
+		-bytecode-compiler yes \
+		-native-compiler yes
 
 CONFLICTS_INSTALL=	coq coq-emacs_* # bin/coq-tex bin/coq_makefile bin/coqc bin/coqchk bin/coqdep bin/coqdoc bin/coqide bin/coqmktop bin/coqtop bin/coqtop.byte bin/coqwc bin/coqworkmgr bin/gallina
 
@@ -44,28 +48,39 @@ OPTIONS_DEFINE=		DOCS IDE
 OPTIONS_DEFAULT=	IDE
 OPTIONS_SUB=		yes
 IDE_DESC=		Include desktop environment (coqide)
-IDE_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
-IDE_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
-IDE_CONFIGURE_OFF=	-coqide no
-DOCS_USES=		tex
-DOCS_USE=		TEX=latex:build,dvipsk:build
-DOCS_BUILD_DEPENDS=	hevea:textproc/hevea
-DOCS_CONFIGURE_OFF=	-with-doc no
+IDE_BUILD_DEPENDS=	${SA_DIR}/lablgtk3/META:x11-toolkits/ocaml-lablgtk3
+IDE_RUN_DEPENDS=	${SA_DIR}/lablgtk3/META:x11-toolkits/ocaml-lablgtk3
+IDE_VARS=		ocaml_packages+=coqide-server ocaml_packages+=coqide
+# IDE_CONFIGURE_OFF=	-coqide no
+# XXX needs fixing
+# DOCS_USES=		tex python:env
+# DOCS_USE=		TEX=latex:build,dvipsk:build
+# DOCS_BUILD_DEPENDS=	hevea:textproc/hevea \
+# 			sphinx-build:textproc/py-sphinx \
+# 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
+# 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bibtex>0:textproc/py-sphinxcontrib-bibtex@${PY_FLAVOR}
+# DOCS_VARS=		ocaml_packages+=coq-doc
+#DOCS_CONFIGURE_OFF=	-with-doc no
 
-STRIP_FILES=		lib/coq/dllcoqrun.so
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
-# Workaround bsd.ocaml.mk to fix packaging
-add-plist-post:
-	@${DO_NADA}
+pre-build:
+	@${MAKE_CMD} -C ${WRKSRC} dunestrap
 
-post-patch:
-	@${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' \
-		${WRKSRC}/Makefile.doc
-# Allow passing USERFLAGS down to inner make(1) via environment
-	@${REINPLACE_CMD} -e '/User compilation flag/,+1d' \
-		${WRKSRC}/configure.ml
+# XXX to keep dune-install happy, until DOCS build gets fixed
+post-build:
+	@${TOUCH} ${WRKSRC}/${DUNE_BUILD_DIR}/default/coq-doc.install
 
 post-install:
-	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} ${STRIP_FILES}
+	@(cd ${STAGEDIR}${PREFIX} ; \
+		${FIND} ${OCAML_SITELIBDIR} -type f '(' -name '*.cmxs' -o -name '*_stubs.so' ')' ; \
+		${FIND} bin -type f -not -name '*.byte' ; \
+	) | while read f; \
+		do \
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/$$f ; \
+		done
+
+post-install-IDE-on:
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/xdg/coq
 
 .include <bsd.port.mk>

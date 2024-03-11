@@ -1,0 +1,3 @@
+Standard library meant to be used in place of the OCaml standard
+library. Input-output and OS dependent facilities are not provided by
+this library.

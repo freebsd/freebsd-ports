@@ -28,7 +28,9 @@ SUB_FILES+=	pkg-message
 USE_RC_SUBR=	gwd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,52,& -unsafe-string,' \
+	@${REINPLACE_CMD} \
+		-e 's,^OCAMLC=.*,OCAMLC=ocamlfind ocamlc -package camlp5.streams -package camlp5.gramlib -package unix -package str -w -3 -warn-error +a-52 -unsafe-string,' \
+		-e 's,^OCAMLOPT=.*,OCAMLOPT=ocamlfind ocamlopt -package camlp5.streams -package camlp5.gramlib -package unix -package str -w -3 -warn-error +a-52 -unsafe-string,' \
 		${WRKSRC}/tools/Makefile.inc.unix
 
 post-install:

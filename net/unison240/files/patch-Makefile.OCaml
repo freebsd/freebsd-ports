@@ -1,6 +1,6 @@
 --- Makefile.OCaml.orig	2014-12-30 02:21:28 UTC
 +++ Makefile.OCaml
-@@ -72,7 +72,7 @@ OCAMLLIBDIR=$(shell ocamlc -v | tail -1 | sed -e 's/.*
+@@ -72,7 +72,7 @@ LABLGTKLIB=$(OCAMLLIBDIR)/lablgtk
  # This should be set to an appropriate value automatically, depending
  # on whether the lablgtk library is available
  LABLGTKLIB=$(OCAMLLIBDIR)/lablgtk
@@ -9,7 +9,7 @@
  ##BCP [3/2007]: Removed temporarily, since the OSX UI is not working well 
  ## at the moment and we don't want to confuse people by building it by default
  ifeq ($(OSARCH),osx)
-@@ -91,7 +91,7 @@ buildexecutable::
+@@ -91,7 +91,7 @@ INCLFLAGS=-I lwt -I ubase -I system
  ### Default parameters
  
  INCLFLAGS=-I lwt -I ubase -I system
@@ -18,7 +18,16 @@
  CAMLFLAGS+=-I system/$(SYSTEM) -I lwt/$(SYSTEM)
  
  ifeq ($(OSARCH),win32)
-@@ -292,7 +292,7 @@ endif
+@@ -233,7 +233,7 @@ OCAMLLIBS+=unix.cma str.cma bigarray.cma
+ # File extensions will be substituted for the native code version
+ OCAMLLIBS+=unix.cma str.cma bigarray.cma
+ 
+-COBJS+=osxsupport$(OBJ_EXT) pty$(OBJ_EXT) bytearray_stubs$(OBJ_EXT)
++COBJS+=osxsupport$(OBJ_EXT) pty$(OBJ_EXT) bytearray_stubs$(OBJ_EXT) hash_compat$(OBJ_EXT)
+ 
+ ########################################################################
+ ### User Interface setup
+@@ -292,7 +292,7 @@ ifeq ($(UISTYLE), gtk2)
  
  # Gtk2 GUI
  ifeq ($(UISTYLE), gtk2)

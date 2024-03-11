@@ -2,9 +2,17 @@ src/utils/lib/CryptoPP.h:3941:26: error: ISO C++11 does not allow access declara
         BufferedTransformation::Get;
                                 ^
 
---- src/utils/lib/CryptoPP.h.orig	2014-03-10 16:33:21 UTC
+--- src/utils/lib/CryptoPP.h.orig	2020-07-06 02:50:39 UTC
 +++ src/utils/lib/CryptoPP.h
-@@ -3938,15 +3938,15 @@ class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Sink : public Bu
+@@ -86,6 +86,7 @@
+ #define CRYPTOPP_H
+ 
+ #include <inttypes.h>
++#define CAML_NAME_SPACE
+ #include <caml/config.h>
+ #include <stdio.h>
+ 
+@@ -3938,15 +3939,15 @@ class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Sink : public Bu
  {
  protected:
  	// make these functions protected to help prevent unintentional calls to them

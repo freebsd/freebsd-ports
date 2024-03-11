@@ -1,6 +1,6 @@
 PORTNAME=	camomile
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -10,7 +10,9 @@ WWW=		https://camomile.sourceforge.net/
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	dune:devel/ocaml-dune
+BUILD_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams \
+		dune:devel/ocaml-dune
+RUN_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -24,6 +26,8 @@ DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md
 
 OPTIONS_DEFINE=	DOCS
+
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^INSTALL_ARGS/ \

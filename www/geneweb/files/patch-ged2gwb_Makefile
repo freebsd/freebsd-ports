@@ -1,0 +1,18 @@
+--- ged2gwb/Makefile.orig	2024-02-11 19:42:58 UTC
++++ ged2gwb/Makefile
+@@ -26,13 +26,13 @@ ged2gwb.opt: $(OBJS:.cmo=.cmx)
+ 	$(OCAMLC) -custom $(STATIC) $(OCAMLD) unix.cma str.cma $(LIBUNIX) -I $(CAMLP5D) gramlib.cma $(OBJS) -o ged2gwb.out
+ 
+ ged2gwb.opt: $(OBJS:.cmo=.cmx)
+-	$(OCAMLOPT) $(STATIC) unix.cmxa str.cmxa $(LIBUNIX) -I $(CAMLP5D) gramlib.cmxa $(OBJS:.cmo=.cmx) -o ged2gwb.opt
++	$(OCAMLOPT) -linkpkg $(OBJS:.cmo=.cmx) -o ged2gwb.opt
+ 
+ ged2gwb2.out: $(OBJS2)
+ 	$(OCAMLC) -custom $(STATIC) $(OCAMLD) unix.cma str.cma $(LIBUNIX) -I $(CAMLP5D) gramlib.cma $(OBJS2) -o ged2gwb2.out
+ 
+ ged2gwb2.opt: $(OBJS2:.cmo=.cmx)
+-	$(OCAMLOPT) $(STATIC) unix.cmxa str.cmxa $(LIBUNIX) -I $(CAMLP5D) gramlib.cmxa $(OBJS2:.cmo=.cmx) -o ged2gwb2.opt
++	$(OCAMLOPT) -linkpkg $(OBJS2:.cmo=.cmx) -o ged2gwb2.opt
+ 
+ depend:
+ 	TOP=.. ../tools/camlp5_depend.sh $(OCAMLI) *.ml* > .depend

@@ -1,66 +1,23 @@
---- configure.orig	2019-08-05 17:32:44 UTC
+--- configure.orig	2022-12-20 12:26:44 UTC
 +++ configure
-@@ -9857,7 +9857,7 @@ fi
- 
-     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
-     freebsd* | dragonfly*)
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $LDFLAGS $libobjs $deplibs $compiler_flags'
-       hardcode_libdir_flag_spec='-R$libdir'
-       hardcode_direct=yes
-       hardcode_shlibpath_var=no
-@@ -13342,7 +13342,7 @@ esac ;; #(
-   *-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
-     |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*) :
-     sharedlib_cflags="-fPIC"
--      mksharedlib="$CC -shared"
-+      mksharedlib="$CC -shared $LDFLAGS"
-       oc_ldflags="$oc_ldflags -Wl,-E"
-       rpath="-Wl,-rpath,"
-       mksharedlibrpath="-Wl,-rpath,"
-@@ -13385,6 +13385,8 @@ fi ;; #(
+@@ -14169,10 +14169,14 @@ if test x"$supports_shared_libraries" = 'xtrue'; then 
      natdynlink=true ;; #(
-   powerpc*-*-linux*) :
+   x86_64-*-dragonfly*) :
      natdynlink=true ;; #(
-+  powerpc*-*-freebsd*) :
-+    natdynlink=true ;; #(
-   i686-*-kfreebsd*) :
+-  i[3456]86-*-freebsd*) :
++  aarch64-*-freebsd*) :
      natdynlink=true ;; #(
-   x86_64-*-kfreebsd*) :
-@@ -13395,6 +13397,8 @@ fi ;; #(
-     natdynlink=true ;; #(
-   x86_64-*-freebsd*) :
-     natdynlink=true ;; #(
+-  x86_64-*-freebsd*) :
 +  amd64-*-freebsd*) :
+     natdynlink=true ;; #(
++  armv7-*-freebsd*) :
++    natdynlink=true ;; #(
++  i[3456]86-*-freebsd*) :
 +    natdynlink=true ;; #(
    i[3456]86-*-openbsd*) :
      natdynlink=true ;; #(
    x86_64-*-openbsd*) :
-@@ -13415,6 +13419,8 @@ fi ;; #(
-     natdynlink=true ;; #(
-   aarch64-*-linux*) :
-     natdynlink=true ;; #(
-+  aarch64-*-freebsd*) :
-+    natdynlink=true ;; #(
-   *) :
-      ;;
- esac
-@@ -13488,6 +13494,14 @@ fi; system=elf ;; #(
- else
-   model=ppc
- fi; system=elf ;; #(
-+  powerpc64le*-*-freebsd*) :
-+    arch=power; model=ppc64le; system=freebsd;; #(
-+  powerpc*-*-freebsd*) :
-+    arch=power; if $arch64; then :
-+  model=ppc64
-+else
-+  model=ppc
-+fi; system=freebsd ;; #(
-   powerpc-*-netbsd*) :
-     arch=power; model=ppc; system=netbsd ;; #(
-   powerpc-*-openbsd*) :
-@@ -13510,6 +13524,8 @@ fi; system=elf ;; #(
+@@ -14338,6 +14342,8 @@ fi; system=elf ;; #(
      arch=arm; model=armv6; system=linux_eabi ;; #(
    armv6*-*-freebsd*) :
      arch=arm; model=armv6; system=freebsd ;; #(
@@ -69,48 +26,12 @@
    earmv6*-*-netbsd*) :
      arch=arm; model=armv6; system=netbsd ;; #(
    earmv7*-*-netbsd*) :
-@@ -13534,6 +13550,8 @@ fi; system=elf ;; #(
+@@ -14362,7 +14368,7 @@ fi; system=elf ;; #(
      arch=amd64; system=dragonfly ;; #(
-   x86_64-*-freebsd*) :
-     arch=amd64; system=freebsd ;; #(
+   x86_64-*-solaris*) :
+     arch=amd64; system=solaris ;; #(
+-  x86_64-*-freebsd*) :
 +  amd64-*-freebsd*) :
-+    arch=amd64; system=freebsd ;; #(
+     arch=amd64; system=freebsd ;; #(
    x86_64-*-netbsd*) :
      arch=amd64; system=netbsd ;; #(
-   x86_64-*-openbsd*) :
-@@ -13544,6 +13562,8 @@ fi; system=elf ;; #(
-     arch=amd64; system=mingw64 ;; #(
-   aarch64-*-linux*) :
-     arch=arm64; system=linux ;; #(
-+  aarch64-*-freebsd*) :
-+    arch=arm64; system=freebsd ;; #(
-   x86_64-*-cygwin*) :
-     arch=amd64; system=cygwin
-  ;; #(
-@@ -13714,6 +13734,8 @@ case "$arch,$system" in #(
-     profiling=true ;; #(
-   amd64,openbsd) :
-     profiling=true ;; #(
-+  amd64,dragonfly) :
-+    profiling=true ;; #(
-   amd64,freebsd) :
-     profiling=true ;; #(
-   amd64,netbsd) :
-@@ -13722,11 +13744,17 @@ case "$arch,$system" in #(
-     profiling=true ;; #(
-   amd64,gnu) :
-     profiling=true ;; #(
-+  arm64,freebsd) :
-+    profiling=true ;; #(
-+  arm,freebsd) :
-+    profiling=true ;; #(
-   arm,linux*) :
-     profiling=true ;; #(
-   power,elf) :
-     profiling=true ;; #(
-   power,bsd*) :
-+    profiling=true ;; #(
-+  power,freebsd) :
-     profiling=true ;; #(
-   power,netbsd) :
-     profiling=true ;; #(

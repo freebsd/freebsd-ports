@@ -1,0 +1,2 @@
+Logging library for OCaml. The optional module Logs_cli, Logs_fmt and Logs_lwt
+are included. The Logs_browser module for js_of_ocaml is not.

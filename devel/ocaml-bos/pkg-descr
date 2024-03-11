@@ -1,0 +1,4 @@
+Basic OS interaction library for OCaml that works on POSIX and Windows
+systems. It contains support for: building and executing command,
+parsing command lines arguments, filesystem operations, environment
+variables and some UNIX system calls.

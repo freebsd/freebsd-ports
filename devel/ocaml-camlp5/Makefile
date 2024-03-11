@@ -1,21 +1,30 @@
 PORTNAME=	camlp5
-PORTVERSION=	7.14
-PORTREVISION=	2
+PORTVERSION=	8.02.01
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
-WWW=		http://camlp5.gforge.inria.fr/
+WWW=		https://camlp5.github.io
 
 LICENSE=	INRIA
 LICENSE_NAME=	INRIA permissive license with copyright notice requirements
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		perl5 tar:tgz
+BUILD_DEPENDS=	${SA_DIR}/bos/META:devel/ocaml-bos \
+		${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams \
+		${SA_DIR}/fmt/META:devel/ocaml-fmt \
+		${SA_DIR}/pcre2/META:devel/ocaml-pcre2 \
+		${SA_DIR}/re/META:devel/ocaml-re \
+		${SA_DIR}/rresult/META:devel/ocaml-rresult
+RUN_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams \
+		${SA_DIR}/pcre2/META:devel/ocaml-pcre2 \
+		${SA_DIR}/re/META:devel/ocaml-re \
+		${SA_DIR}/rresult/META:devel/ocaml-rresult
+
+USES=		gmake perl5 tar:tgz
 USE_GITHUB=	yes
-GH_TAGNAME=	rel${PORTVERSION:S/.//}
 USE_OCAML=	yes
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
@@ -36,6 +45,8 @@ PORTDOCS=	CHANGES DEVEL ICHANGES MODE README.md UPGRADING
 
 STRICT_CONFIGURE_ON=	--strict
 TRANSITIONAL_CONFIGURE_ON=	--transitional
+
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/META \

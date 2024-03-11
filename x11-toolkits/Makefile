@@ -105,6 +105,7 @@
     SUBDIR += neXtaw
     SUBDIR += ntk
     SUBDIR += nuklear
+    SUBDIR += ocaml-graphics
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-lablgtk3
     SUBDIR += ocaml-labltk

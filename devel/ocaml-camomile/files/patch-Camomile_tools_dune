@@ -1,0 +1,10 @@
+--- Camomile/tools/dune.orig	2024-02-11 22:37:19 UTC
++++ Camomile/tools/dune
+@@ -21,6 +21,6 @@
+ 
+ (executable
+  (name camomilelocaledef)
+- (libraries toolslib camomile.library)
++ (libraries toolslib camomile.library camlp-streams)
+  (flags -I Camomile :standard)
+  (modules camomilelocaledef camomilelocaledef_lexer))

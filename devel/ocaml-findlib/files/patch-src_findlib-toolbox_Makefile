@@ -1,0 +1,11 @@
+--- src/findlib-toolbox/Makefile.orig	2024-03-01 00:20:34 UTC
++++ src/findlib-toolbox/Makefile
+@@ -9,7 +9,7 @@ make_wizard$(EXEC_SUFFIX): make_wizard.ml
+ 	true
+ 
+ make_wizard$(EXEC_SUFFIX): make_wizard.ml
+-	ocamlc -o make_wizard$(EXEC_SUFFIX) -I +unix -I +labltk -I ../findlib \
++	ocamlc -o make_wizard$(EXEC_SUFFIX) -I +unix -I +site-lib/labltk -I ../findlib \
+ 		unix.cma str.cma labltk.cma findlib.cma make_wizard.ml
+ 
+ install:
