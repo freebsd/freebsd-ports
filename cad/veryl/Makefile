@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,8 +64,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.1 \
-		clap_builder-4.5.1 \
+		clap-4.5.2 \
+		clap_builder-4.5.2 \
 		clap_complete-4.5.1 \
 		clap_derive-4.5.0 \
 		clap_lex-0.7.0 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-as-inner-0.6.0 \
 		env_filter-0.1.0 \
 		env_logger-0.10.2 \
-		env_logger-0.11.3 \
+		env_logger-0.11.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		event-listener-5.2.0 \
@@ -298,8 +298,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
 		phf_shared-0.10.0 \
-		pin-project-1.1.5 \
-		pin-project-internal-1.1.5 \
+		pin-project-1.1.4 \
+		pin-project-internal-1.1.4 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		plotters-0.3.5 \
