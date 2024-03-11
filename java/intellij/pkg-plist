@@ -1,5 +1,4 @@
 bin/idea
-man/man1/idea.1.gz
 share/applications/idea.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/LICENSE.txt
@@ -2272,6 +2271,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
 %%DATADIR%%/redist/annotations-java8.jar
+share/man/man1/idea.1.gz
 @dir %%DATADIR%%/plugins/webp/lib/libwebp/linux
 @dir %%DATADIR%%/plugins/webp/lib/libwebp/mac
 @dir %%DATADIR%%/plugins/webp/lib/libwebp/win
