@@ -1,5 +1,5 @@
 PORTNAME=	rye
-DISTVERSION=	0.25.0
+DISTVERSION=	0.29.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -61,8 +61,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.3.2 \
-		crossbeam-deque-0.8.5 \
-		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
 		ctrlc-3.4.2 \
@@ -188,8 +186,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.5.1 \
 		rand_core-0.6.4 \
 		rand_hc-0.2.0 \
-		rayon-1.8.1 \
-		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		regex-1.10.3 \
 		regex-automata-0.4.5 \
@@ -280,7 +276,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.90 \
 		wasm-bindgen-shared-0.2.90 \
 		webpki-roots-0.25.4 \
-		whattheshell-1.1.0 \
 		which-6.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
