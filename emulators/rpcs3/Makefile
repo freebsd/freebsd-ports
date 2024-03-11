@@ -94,7 +94,7 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
-# XXX Drop after FreeBSD 13.2 EOL around 2024-05-01
+# XXX Drop after FreeBSD 13.2 EOL around 2024-07-01
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h)
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
 CC=		clang${LLVM_VERSION}

@@ -53,7 +53,7 @@ USE_QT=		qmake:build buildtools:build core gui wayland:run widgets
 CXXFLAGS+=	-fexperimental-library
 .endif
 
-# XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
+# XXX Drop after FreeBSD 13.2 EOL around 2024-07-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
 USES+=		llvm:min=16,build,export
