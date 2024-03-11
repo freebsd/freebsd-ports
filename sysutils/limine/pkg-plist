@@ -13,4 +13,4 @@ share/limine/limine-bios-cd.bin
 share/limine/limine-bios-pxe.bin
 share/limine/limine-bios.sys
 share/limine/limine-uefi-cd.bin
-man/man1/limine.1.gz
+share/man/man1/limine.1.gz
