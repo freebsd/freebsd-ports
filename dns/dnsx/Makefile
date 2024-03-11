@@ -1,7 +1,6 @@
 PORTNAME=	dnsx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.6
-PORTREVISION=	2
+DISTVERSION=	1.2.1
 CATEGORIES=	dns
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/projectdiscovery/dnsx
 
 LICENSE=	MIT
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 GO_MODULE=	github.com/projectdiscovery/dnsx
 GO_TARGET=	./cmd/${PORTNAME}
