@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
+ONLY_FOR_ARCHS=	amd64
+
 USES=		gmake llvm:17,lib pkgconfig readline ssl tar:tgz
 
 WRKSRC=		${WRKDIR}/pil21/src
