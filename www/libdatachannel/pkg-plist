@@ -33,4 +33,4 @@ lib/cmake/LibDataChannel/LibDataChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets.cmake
 lib/libdatachannel.so
 lib/libdatachannel.so.0.20
-lib/libdatachannel.so.0.20.1
+lib/libdatachannel.so.0.20.2
