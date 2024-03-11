@@ -1,10 +1,9 @@
 PORTNAME=	wget
-DISTVERSION=	1.21.4
-PORTREVISION=	1
+DISTVERSION=	1.24.5
 CATEGORIES=	ftp www
 MASTER_SITES=	GNU
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 WWW=		https://www.gnu.org/s/wget/
 
