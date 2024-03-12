@@ -6,7 +6,7 @@ include/google/malloc_extension.h
 include/google/malloc_extension_c.h
 include/google/malloc_hook.h
 include/google/malloc_hook_c.h
-include/google/profiler.h
+%%PROFILER%%include/google/profiler.h
 include/google/stacktrace.h
 include/google/tcmalloc.h
 include/gperftools/heap-checker.h
@@ -43,7 +43,7 @@ lib/libtcmalloc_minimal_debug.a
 lib/libtcmalloc_minimal_debug.so
 lib/libtcmalloc_minimal_debug.so.4
 lib/libtcmalloc_minimal_debug.so.4.5.16
-libdata/pkgconfig/libprofiler.pc
+%%PROFILER%%libdata/pkgconfig/libprofiler.pc
 libdata/pkgconfig/libtcmalloc.pc
 libdata/pkgconfig/libtcmalloc_debug.pc
 libdata/pkgconfig/libtcmalloc_minimal.pc
