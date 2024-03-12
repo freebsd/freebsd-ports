@@ -1,5 +1,5 @@
 PORTNAME=	gtk
-PORTVERSION=	4.12.5
+PORTVERSION=	4.14.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -32,12 +32,12 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
 		librsvg2:run
-MESON_ARGS=	-Dbuild-testsuite=false -Dmedia-ffmpeg=disabled
+MESON_ARGS=	-Dbuild-testsuite=false
 LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LIBVERSION=	1.1200.5
+LIBVERSION=	1.1400.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
