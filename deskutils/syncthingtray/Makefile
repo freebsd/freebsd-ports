@@ -1,10 +1,9 @@
 PORTNAME=	syncthingtray
-PORTVERSION=	1.4.13
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	dsh@bamus.cz
 COMMENT=	Qt 5-based Syncthing tray application
 WWW=		https://github.com/Martchus/syncthingtray
 
@@ -22,11 +21,11 @@ USES=		cmake:insource compiler:c++11-lang desktop-file-utils iconv \
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
-		Martchus:cpp-utilities:v5.24.6:cpputilities/../c++utilities \
-		Martchus:qtutilities:v6.13.4:qtutilities/../qtutilities \
-		Martchus:qtforkawesome:3ec0824:qtforkawesome/../qtforkawesome \
+		Martchus:cpp-utilities:v5.24.7:cpputilities/../c++utilities \
+		Martchus:qtutilities:v6.13.5:qtutilities/../qtutilities \
+		Martchus:qtforkawesome:v0.2.0:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		Martchus:subdirs:c2b6d74:subdirs/../subdirs
+		Martchus:subdirs:0ad32a0:subdirs/../subdirs
 
 USE_KDE=	plasma-framework
 USE_PERL5=	build
