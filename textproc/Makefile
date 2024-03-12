@@ -1468,6 +1468,7 @@
     SUBDIR += py-pager
     SUBDIR += py-paginate
     SUBDIR += py-pallets-sphinx-themes
+    SUBDIR += py-pandoc-plantuml-filter
     SUBDIR += py-pandocfilters
     SUBDIR += py-paragrep
     SUBDIR += py-parse
