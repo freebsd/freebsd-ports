@@ -248,7 +248,6 @@
     SUBDIR += rednotebook
     SUBDIR += remind
     SUBDIR += rolo
-    SUBDIR += rubrica
     SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
