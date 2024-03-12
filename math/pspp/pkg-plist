@@ -8,11 +8,6 @@ lib/pspp/libpspp-core.a
 lib/pspp/libpspp-core.so
 lib/pspp/libpspp.a
 lib/pspp/libpspp.so
-man/man1/pspp-convert.1.gz
-man/man1/pspp-dump-sav.1.gz
-man/man1/pspp-output.1.gz
-man/man1/pspp.1.gz
-man/man1/psppire.1.gz
 %%GUI%%share/applications/org.gnu.pspp.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pspp.xml
 %%GUI%%share/icons/hicolor/16x16/apps/org.gnu.pspp.png
@@ -149,6 +144,11 @@ share/info/pspp-figures/ctables1.png
 %%NLS%%share/locale/tr/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pspp.mo
+share/man/man1/pspp-convert.1.gz
+share/man/man1/pspp-dump-sav.1.gz
+share/man/man1/pspp-output.1.gz
+share/man/man1/pspp.1.gz
+share/man/man1/psppire.1.gz
 %%GUI%%share/metainfo/org.gnu.pspp.metainfo.xml
 %%GUI%%share/mime/packages/org.gnu.pspp.xml
 %%GUI%%%%DATADIR%%/aggregate.ui
