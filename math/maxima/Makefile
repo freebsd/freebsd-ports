@@ -1,6 +1,6 @@
 PORTNAME=	maxima
 PORTVERSION=	5.47.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -135,6 +135,6 @@ post-install-EXAMPLES-on:
 
 post-install-MANPAGES-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/man/man1 && \
-	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/man/man1/maxima.1.gz
+	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/maxima.1.gz
 
 .include <bsd.port.mk>

@@ -4,7 +4,6 @@ bin/rmaxima
 %%SAGE%%lib/ecl/maxima.fas
 lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%BINNAME%%
 libexec/maxima/%%PORTVERSION%%/mgnuplot
-%%MANPAGES%%man/man1/maxima.1.gz
 share/applications/net.sourceforge.maxima.xmaxima.desktop
 share/bash-completion/completions/maxima
 share/bash-completion/completions/rmaxima
@@ -25,6 +24,7 @@ share/emacs/site-lisp/setup-imaxima-imath.el
 share/emacs/site-lisp/smart-complete.el
 share/emacs/site-lisp/sshell.el
 share/info/maxima-index.lisp
+%%MANPAGES%%share/man/man1/maxima.1.gz
 share/metainfo/net.sourceforge.maxima.xmaxima.appdata.xml
 share/mime/packages/x-mac.xml
 share/mime/packages/x-maxima-out.xml
