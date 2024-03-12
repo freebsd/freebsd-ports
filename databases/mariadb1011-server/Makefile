@@ -1,6 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.11.6
-PORTREVISION?=	1
+PORTVERSION=	10.11.7
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -109,6 +108,10 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${PREFIX} \
 		-DINSTALL_SYSCONF2DIR="${ETCDIR}/conf.d" \
 		-DINSTALL_UNIX_ADDRDIR="${MARIADB_RUNDIR}/${MARIADB_SOCK}" \
 		-DWITH_PCRE=system \
+		-DPCRE_LIBRARY_DIRS=${PREFIX}/lib \
+		-DWITH_LIBFMT=system \
+		-DLIBFMT_INCLUDE_DIR=${PREFIX}/include \
+		-DHAVE_SYSTEM_LIBFMT=yes \
 		-DWITH_SSL="${OPENSSLBASE}" \
 		-DGRN_WITH_LZ4=ON -DWITH_INNODB_LZ4=ON -DWITH_ROCKSDB_LZ4=ON \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libcurses.so" \
@@ -171,7 +174,7 @@ ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
 AWS_KEY_MGMT_CMAKE_ON=	-DPLUGIN_AWS_KEY_MANAGEMENT=ON
 INNOBASE_VARS_OFF=	disabled_plugins+=INNOBASE
-COLUMNSTORE_BROKEN=	ColumnStore engine build failure "fatal error: 'sys/prctl.h' file not found"
+#COLUMNSTORE_BROKEN=	ColumnStore engine build failure "fatal error: 'sys/prctl.h' file not found"
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
@@ -238,10 +241,6 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} 's|\(CHECK_LIBRARY_EXISTS.*\) "" HAVE_|\1 ${LOCALBASE}/lib HAVE_|' \
-		${WRKSRC}/cmake/pcre.cmake 
-				
 post-configure:
 	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
 		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
