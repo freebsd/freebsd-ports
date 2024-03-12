@@ -165,7 +165,6 @@
     SUBDIR += ammonite
     SUBDIR += amqp-cpp
     SUBDIR += android-tools
-    SUBDIR += anjuta
     SUBDIR += antlr
     SUBDIR += antlr3
     SUBDIR += antlr4
