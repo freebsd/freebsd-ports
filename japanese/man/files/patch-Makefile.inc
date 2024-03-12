@@ -1,6 +1,15 @@
---- Makefile.inc.orig	Mon Apr  8 19:21:24 2002
-+++ Makefile.inc	Mon Apr  8 19:22:12 2002
-@@ -10,8 +10,8 @@
+--- Makefile.inc.orig	2001-01-15 09:41:22 UTC
++++ Makefile.inc
+@@ -3,15 +3,15 @@ BINDIR=			${PREFIX}/bin
+ # pick up a user's own version of some utility and hose ourselves.
+ #
+ BINDIR=			${PREFIX}/bin
+-MANDIR=			${PREFIX}/man/ja/man
+-EMANDIR=		${PREFIX}/man/man
++MANDIR=			${PREFIX}/share/man/ja/man
++EMANDIR=		${PREFIX}/share/man/man
+ libdir=			${PREFIX}/etc
+ libexecdir=		${PREFIX}/libexec
  bindir=			${BINDIR}
  pager=			jless -s
  manpath_config_file=	/etc/manpath.config

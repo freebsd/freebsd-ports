@@ -1,6 +1,6 @@
 PORTNAME=	man
 PORTVERSION=	1.1j
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		PORTS_JP
