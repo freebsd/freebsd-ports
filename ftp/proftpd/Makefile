@@ -2,7 +2,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -52,6 +52,7 @@ PORTDOCS=	*
 MAKE_JOBS_UNSAFE=	yes
 USES+=		gmake libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
 USES+=		cpe ssl
@@ -239,7 +240,7 @@ post-install:
 	@${CP} -RP ${WRKSRC}/doc/howto ${STAGEDIR}${DOCSDIR}/html/howto
 . endif
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${STAGEDIR}${PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
 .include <bsd.port.post.mk>
