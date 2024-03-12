@@ -1,6 +1,6 @@
-TIMESTAMP = 1701268946
-SHA256 (jech-galene-0.8-galene-0.8_GH0.tar.gz) = 9970e3407a773511f6b74da789a9ea4bdb24fd6b09b0067c7476506ac1543c91
-SIZE (jech-galene-0.8-galene-0.8_GH0.tar.gz) = 743021
+TIMESTAMP = 1710232405
+SHA256 (jech-galene-0.8.1-galene-0.8_GH0.tar.gz) = 9970e3407a773511f6b74da789a9ea4bdb24fd6b09b0067c7476506ac1543c91
+SIZE (jech-galene-0.8.1-galene-0.8_GH0.tar.gz) = 743021
 SHA256 (at-wat-ebml-go-v0.17.0_GH0.tar.gz) = ebdaa605a117ba86e45a405103435d164d40079dff6f0c3f28d08f4e76ad6c0f
 SIZE (at-wat-ebml-go-v0.17.0_GH0.tar.gz) = 69862
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
