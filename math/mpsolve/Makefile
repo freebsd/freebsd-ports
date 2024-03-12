@@ -1,6 +1,6 @@
 PORTNAME=	mpsolve
 DISTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://numpi.dm.unipi.it/_media/software/mpsolve/
 
@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_CXXSTD=	c++14 # fix compilation failure on 14: error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
 
 INSTALL_TARGET=	install-strip
