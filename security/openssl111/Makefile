@@ -1,5 +1,6 @@
 PORTNAME=	openssl
 PORTVERSION=	1.1.1w
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -131,7 +132,6 @@ PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|^MANDIR=.*$$|MANDIR=$$(INSTALLTOP)/man|' \
 		-e 's| install_html_docs$$||' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/Configurations/unix-Makefile.tmpl
@@ -158,7 +158,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
 
 post-install-MAN3-on:
-	( cd ${STAGEDIR}/${PREFIX} ; ${FIND} man/man3 man/man7 -not -type d ) | \
+	( cd ${STAGEDIR}/${PREFIX} ; ${FIND} share/man/man3 share/man/man7 -not -type d ) | \
 		${SED} 's/$$/.gz/' >>${TMPPLIST}
 
 .include <bsd.port.post.mk>
