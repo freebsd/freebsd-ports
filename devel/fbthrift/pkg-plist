@@ -397,8 +397,6 @@ include/thrift/lib/cpp2/reflection/folly_dynamic.h
 include/thrift/lib/cpp2/reflection/gmock_matching.h
 include/thrift/lib/cpp2/reflection/helpers.h
 include/thrift/lib/cpp2/reflection/indenter.h
-include/thrift/lib/cpp2/reflection/internal/debug-inl-post.h
-include/thrift/lib/cpp2/reflection/internal/debug-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/folly_dynamic-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/folly_dynamic-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/helpers-inl-pre.h
@@ -492,6 +490,7 @@ include/thrift/lib/cpp2/test/util/FakeClock.h
 include/thrift/lib/cpp2/test/util/TestInterface.h
 include/thrift/lib/cpp2/test/util/TestServerFactory.h
 include/thrift/lib/cpp2/test/util/TestThriftServerFactory.h
+include/thrift/lib/cpp2/test/util/TrackingTProcessorEventHandler.h
 include/thrift/lib/cpp2/transport/core/ClientConnectionIf.h
 include/thrift/lib/cpp2/transport/core/EnvelopeUtil.h
 include/thrift/lib/cpp2/transport/core/ManagedConnectionIf.h
@@ -764,6 +763,19 @@ include/thrift/lib/thrift/gen-cpp2/reflection_types_fwd.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visitation.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_clients.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_constants.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_data.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_for_each_field.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_handlers.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_metadata.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_types.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_types.tcc
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_types_fwd.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_visit_by_thrift_field_metadata.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_visit_union.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_visitation.h
 include/thrift/lib/thrift/gen-cpp2/standard_clients.h
 include/thrift/lib/thrift/gen-cpp2/standard_constants.h
 include/thrift/lib/thrift/gen-cpp2/standard_data.h
@@ -819,6 +831,8 @@ lib/libmustache.so
 lib/libmustache.so.1.0.0
 lib/librpcmetadata.so
 lib/librpcmetadata.so.1.0.0
+lib/libserverdbginfo.so
+lib/libserverdbginfo.so.1.0.0
 lib/libthrift-core.so
 lib/libthrift-core.so.1.0.0
 lib/libthriftannotation.so
