@@ -1,8 +1,7 @@
 PORTNAME=	opus
 DISTVERSION=	1.5.1
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
-		https://github.com/xiph/opus/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://downloads.xiph.org/releases/opus/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
