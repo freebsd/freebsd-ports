@@ -66,5 +66,5 @@ lib/libqhull_r.so.7.3.2
 lib/libqhullcpp.a
 lib/libqhullstatic.a
 lib/libqhullstatic_r.a
-man/man1/qhull.1.gz
-man/man1/rbox.1.gz
+share/man/man1/qhull.1.gz
+share/man/man1/rbox.1.gz
