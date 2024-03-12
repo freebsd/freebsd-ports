@@ -229,7 +229,7 @@ include/mesquite_version.h
 lib/libmesquite.so
 lib/libmesquite.so.0
 lib/libmesquite.so.0.0.0
-man/man1/msqquality.1.gz
-man/man1/msqshape.1.gz
-man/man1/vtkrandom.1.gz
-man/man1/vtkxform.1.gz
+share/man/man1/msqquality.1.gz
+share/man/man1/msqshape.1.gz
+share/man/man1/vtkrandom.1.gz
+share/man/man1/vtkxform.1.gz
