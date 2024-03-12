@@ -1,3 +1,65 @@
+  <vuln vid="b6dd9d93-e09b-11ee-92fc-1c697a616631">
+    <topic>Intel CPUs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cpu-microcode-intel</name>
+	<range><lt>20240312</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Intel reports:</p>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00972.html">
+	  <p>2024.1 IPU - Intel Processor Bus Lock Advisory</p>
+
+	  <p>A potential security vulnerability in the bus lock regulator
+	  mechanism for some Intel Processors may allow denial of service. Intel
+	  is releasing firmware updates to mitigate this potential
+	  vulnerability.</p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00982.html">
+	  <p>2024.1 IPU - Intel Processor Return Predictions Advisory</p>
+
+	  <p>A potential security vulnerability in some Intel Processors may
+	  allow information disclosure.</p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00898.html">
+	  <p>2024.1 IPU - Intel Atom Processor Advisory</p>
+
+	  <p>A potential security vulnerability in some Intel Atom Processors
+	  may allow information disclosure.</p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00960.html">
+	  <p>2024.1 IPU - Intel Xeon Processor Advisory</p>
+
+	  <p>A potential security vulnerability in some 3rd and 4th Generation
+	  Intel Xeon Processors when using Intel Software Guard Extensions (SGX)
+	  or Intel Trust Domain Extensions (TDX) may allow escalation of
+	  privilege.</p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01045.html">
+	  <p>2024.1 IPU OOB - Intel Xeon D Processor Advisory</p>
+
+	  <p>A potential security vulnerability in some Intel Xeon D Processors
+	  with Intel Software Guard Extensions (SGX) may allow information
+	  disclosure.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39368</cvename>
+      <cvename>CVE-2023-38575</cvename>
+      <cvename>CVE-2023-28746</cvename>
+      <cvename>CVE-2023-22655</cvename>
+      <cvename>CVE-2023-43490</cvename>
+      <url>https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases/tag/microcode-20240312</url>
+    </references>
+    <dates>
+      <discovery>2023-03-12</discovery>
+      <entry>2024-03-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2ad8700-de25-11ee-9190-84a93843eb75">
     <topic>Unbound -- Denial-of-Service vulnerability</topic>
     <affects>
