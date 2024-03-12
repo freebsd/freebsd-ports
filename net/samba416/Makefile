@@ -103,6 +103,10 @@ USE_LDCONFIG=			${SAMBA4_LIBDIR}
 WAF_CMD=			buildtools/bin/waf
 CONFIGURE_LOG=			bin/config.log
 
+FLAVORS=			default externalldb
+FLAVOR?=			${FLAVORS:[1]}
+externalldb_PKGNAMESUFFIX=		-externalldb
+
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
 SHEBANG_FILES=			${PATCH_WRKSRC}/source4/scripting/bin/* ${PATCH_WRKSRC}/selftest/*
@@ -197,7 +201,11 @@ SAMBA4_BUNDLED_CMOCKA?=		no
 SAMBA4_BUNDLED_TALLOC?=		no
 SAMBA4_BUNDLED_TEVENT?=		no
 SAMBA4_BUNDLED_TDB?=		no
+.if ${FLAVOR:U} != externalldb
 SAMBA4_BUNDLED_LDB?=		yes
+.else
+SAMBA4_BUNDLED_LDB?=		no
+.endif
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
