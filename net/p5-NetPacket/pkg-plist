@@ -2,8 +2,10 @@
 %%SITE_PERL%%/NetPacket/ARP.pm
 %%SITE_PERL%%/NetPacket/Ethernet.pm
 %%SITE_PERL%%/NetPacket/ICMP.pm
+%%SITE_PERL%%/NetPacket/ICMPv6.pm
 %%SITE_PERL%%/NetPacket/IGMP.pm
 %%SITE_PERL%%/NetPacket/IP.pm
+%%SITE_PERL%%/NetPacket/IPv6.pm
 %%SITE_PERL%%/NetPacket/IPX.pm
 %%SITE_PERL%%/NetPacket/TCP.pm
 %%SITE_PERL%%/NetPacket/UDP.pm
@@ -12,8 +14,10 @@
 %%PERL5_MAN3%%/NetPacket::ARP.3.gz
 %%PERL5_MAN3%%/NetPacket::Ethernet.3.gz
 %%PERL5_MAN3%%/NetPacket::ICMP.3.gz
+%%PERL5_MAN3%%/NetPacket::ICMPv6.3.gz
 %%PERL5_MAN3%%/NetPacket::IGMP.3.gz
 %%PERL5_MAN3%%/NetPacket::IP.3.gz
+%%PERL5_MAN3%%/NetPacket::IPv6.3.gz
 %%PERL5_MAN3%%/NetPacket::IPX.3.gz
 %%PERL5_MAN3%%/NetPacket::TCP.3.gz
 %%PERL5_MAN3%%/NetPacket::UDP.3.gz
