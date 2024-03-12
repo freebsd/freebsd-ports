@@ -287,11 +287,6 @@ include/folly/experimental/STTimerFDTimeoutManager.h
 include/folly/experimental/Select64.h
 include/folly/experimental/SingleWriterFixedHashMap.h
 include/folly/experimental/SingletonRelaxedCounter.h
-include/folly/experimental/StringKeyedCommon.h
-include/folly/experimental/StringKeyedMap.h
-include/folly/experimental/StringKeyedSet.h
-include/folly/experimental/StringKeyedUnorderedMap.h
-include/folly/experimental/StringKeyedUnorderedSet.h
 include/folly/experimental/TLRefCount.h
 include/folly/experimental/TestUtil.h
 include/folly/experimental/ThreadedRepeatingFunctionRunner.h
