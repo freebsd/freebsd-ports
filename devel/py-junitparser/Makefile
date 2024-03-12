@@ -1,5 +1,5 @@
 PORTNAME=	junitparser
-DISTVERSION=	3.1.1
+DISTVERSION=	3.1.2
 CATEGORIES=	devel net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 concurrent autoplist
+USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
 
