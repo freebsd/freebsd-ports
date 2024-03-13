@@ -862,7 +862,7 @@
 : ${gl_cv_func_btowc_eof=yes}
 : ${gl_cv_func_btowc_nul=yes}
 : ${gl_cv_func_fcntl_f_dupfd_cloexec=yes}
-: ${gl_cv_func_fnmatch_posix=yes}
+: ${gl_cv_func_fnmatch_posix=no}
 : ${gl_cv_func_fopen_slash=yes}
 : ${gl_cv_func_frexp_no_libm=yes}
 : ${gl_cv_func_fseeko=yes}
