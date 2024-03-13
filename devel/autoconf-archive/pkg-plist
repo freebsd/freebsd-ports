@@ -59,6 +59,7 @@
 %%MACRODIR%%/ax_c_float_words_bigendian.m4
 %%MACRODIR%%/ax_c_long_long.m4
 %%MACRODIR%%/ax_c_referenceable_passed_va_list.m4
+%%MACRODIR%%/ax_c_restrict.m4
 %%MACRODIR%%/ax_c_var_func.m4
 %%MACRODIR%%/ax_cache_size.m4
 %%MACRODIR%%/ax_caolan_check_package.m4
