@@ -1210,6 +1210,7 @@
     SUBDIR += rdist6
     SUBDIR += read_bbrlog
     SUBDIR += realtek-re-kmod
+    SUBDIR += realtek-re-kmod198
     SUBDIR += reaver
     SUBDIR += recvnet
     SUBDIR += redir
