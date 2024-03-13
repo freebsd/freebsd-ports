@@ -1,6 +1,6 @@
 PORTNAME=	xdtm
 PORTVERSION=	2.5.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/applications
 
@@ -9,6 +9,9 @@ COMMENT=	Graphical shell for the X Window System
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright
+
+DEPRECATED=	Unmaintained, last upstream release was in 2000 or earlier
+EXPIRATION_DATE=2024-04-13
 
 USES=		imake xorg
 USE_XORG=	xaw
