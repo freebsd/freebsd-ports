@@ -1,6 +1,6 @@
 PORTNAME=	Glade
 PORTVERSION=	1.007
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TSCH
@@ -13,6 +13,9 @@ COMMENT=	Gtk2-Perl bindings to libglade2
 WWW=		https://gtk2-perl.sourceforge.net/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=	2024-04-13
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 		p5-Cairo>=0:graphics/p5-Cairo \
