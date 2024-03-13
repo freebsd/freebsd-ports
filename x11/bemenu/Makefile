@@ -1,5 +1,5 @@
 PORTNAME=	bemenu
-DISTVERSION=	0.6.19
+DISTVERSION=	0.6.20
 CATEGORIES=	x11
 
 MAINTAINER=	uzsolt@FreeBSD.org
@@ -34,8 +34,7 @@ NCURSES_ALL_TARGET=	curses
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>0:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-			libwayland-client.so:graphics/wayland \
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 WAYLAND_USES=		gnome pkgconfig
 WAYLAND_USE=		GNOME=cairo,glib20,pango
