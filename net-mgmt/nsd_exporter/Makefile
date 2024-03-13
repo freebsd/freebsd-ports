@@ -1,6 +1,6 @@
 PORTNAME=	nsd_exporter
-PORTVERSION=	0.1.0
-PORTREVISION=	19
+PORTVERSION=	0.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zi@FreeBSD.org
@@ -13,15 +13,18 @@ USES=		go
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	optix2000
-GH_TUPLE=	prometheus:client_golang:v0.8.0:client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:5c3871d:client_model/vendor/github.com/prometheus/client_model \
-		prometheus:procfs:ae68e2d:procfs/vendor/github.com/prometheus/procfs \
-		prometheus:common:7600349:common/vendor/github.com/prometheus/common \
-		beorn7:perks:3a771d9:perks/vendor/github.com/beorn7/perks \
-		golang:protobuf:70b3af3:protobuf/vendor/github.com/golang/protobuf \
-		matttproud:golang_protobuf_extensions:c12348c:golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		optix2000:go-nsdctl:ce14b32:go_nsdctl/vendor/github.com/optix2000/go-nsdctl \
-		go-yaml:yaml:7f97868:go_yaml/vendor/gopkg.in/yaml.v2
+GH_TUPLE=	\
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:e047566fdf82:golang_sys/vendor/golang.org/x/sys \
+		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
+		optix2000:go-nsdctl:v1.0.0:optix2000_go_nsdctl/vendor/github.com/optix2000/go-nsdctl \
+		prometheus:client_golang:v1.4.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.9.1:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.0.8:prometheus_procfs/vendor/github.com/prometheus/procfs
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
@@ -30,7 +33,7 @@ PLIST_FILES=	bin/nsd_exporter
 USE_RC_SUBR=	nsd_exporter
 
 post-patch:
-	${REINPLACE_CMD} -e 's|"/etc|"${LOCALBASE}/etc|g' ${WRKSRC_go_nsdctl}/nsdctl.go
+	${REINPLACE_CMD} -e 's|"/etc|"${LOCALBASE}/etc|g' ${WRKSRC_optix2000_go_nsdctl}/nsdctl.go
 	${REINPLACE_CMD} -e 's|"/etc|"${LOCALBASE}/etc|g' ${WRKSRC}/nsd_exporter.go
 
 .include <bsd.port.mk>
