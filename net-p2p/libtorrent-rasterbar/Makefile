@@ -1,5 +1,5 @@
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.18 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
+DISTVERSION=	1.2.19 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
 PORTEPOCH=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/

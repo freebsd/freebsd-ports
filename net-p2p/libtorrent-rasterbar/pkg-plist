@@ -25,16 +25,16 @@ include/libtorrent/aux_/disable_warnings_push.hpp
 include/libtorrent/aux_/disk_job_fence.hpp
 include/libtorrent/aux_/escape_string.hpp
 include/libtorrent/aux_/export.hpp
-include/libtorrent/aux_/file_progress.hpp
 include/libtorrent/aux_/ffs.hpp
+include/libtorrent/aux_/file_progress.hpp
 include/libtorrent/aux_/generate_peer_id.hpp
 include/libtorrent/aux_/has_block.hpp
 include/libtorrent/aux_/instantiate_connection.hpp
 include/libtorrent/aux_/io.hpp
 include/libtorrent/aux_/ip_notifier.hpp
+include/libtorrent/aux_/keepalive.hpp
 include/libtorrent/aux_/listen_socket_handle.hpp
 include/libtorrent/aux_/lsd.hpp
-include/libtorrent/aux_/keepalive.hpp
 include/libtorrent/aux_/merkle.hpp
 include/libtorrent/aux_/noexcept_movable.hpp
 include/libtorrent/aux_/numeric_cast.hpp
@@ -159,6 +159,7 @@ include/libtorrent/kademlia/types.hpp
 include/libtorrent/lazy_entry.hpp
 include/libtorrent/link.hpp
 include/libtorrent/linked_list.hpp
+include/libtorrent/load_torrent.hpp
 include/libtorrent/lsd.hpp
 include/libtorrent/magnet_uri.hpp
 include/libtorrent/natpmp.hpp
@@ -170,7 +171,6 @@ include/libtorrent/packet_pool.hpp
 include/libtorrent/parse_url.hpp
 include/libtorrent/part_file.hpp
 include/libtorrent/pe_crypto.hpp
-include/libtorrent/pex_flags.hpp
 include/libtorrent/peer.hpp
 include/libtorrent/peer_class.hpp
 include/libtorrent/peer_class_set.hpp
@@ -183,6 +183,7 @@ include/libtorrent/peer_info.hpp
 include/libtorrent/peer_list.hpp
 include/libtorrent/peer_request.hpp
 include/libtorrent/performance_counters.hpp
+include/libtorrent/pex_flags.hpp
 include/libtorrent/piece_block.hpp
 include/libtorrent/piece_block_progress.hpp
 include/libtorrent/piece_picker.hpp
@@ -252,6 +253,6 @@ lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.%%SO_VER%%
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
-lib/libtorrent-rasterbar.so.10.0.0
+lib/libtorrent-rasterbar.so.%%SHLIB_VER%%.0.0
 libdata/pkgconfig/libtorrent-rasterbar.pc
 share/cmake/Modules/FindLibtorrentRasterbar.cmake
