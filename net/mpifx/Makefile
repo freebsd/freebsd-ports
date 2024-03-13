@@ -1,6 +1,5 @@
 PORTNAME=	mpifx
-DISTVERSION=	1.4-8
-DISTVERSIONSUFFIX=	-gab77b43
+DISTVERSION=	1.5
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,9 +10,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
-LIB_DEPENDS=	libmpi.so:net/mpich
 
-USES=		cmake:testing fortran python:build
+USES=		cmake:testing fortran mpi:mpich python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dftbplus
