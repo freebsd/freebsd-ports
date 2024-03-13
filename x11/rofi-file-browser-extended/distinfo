@@ -1,3 +1,7 @@
-TIMESTAMP = 1669926301
+TIMESTAMP = 1710338595
 SHA256 (marvinkreis-rofi-file-browser-extended-1.3.1_GH0.tar.gz) = 9e010e671533dd747e6e7ae4ed290b6e2829e758ca073381fa8a8fe53e004660
 SIZE (marvinkreis-rofi-file-browser-extended-1.3.1_GH0.tar.gz) = 27169
+SHA256 (6f62a2d0784a6937d35ac8f6df2e22c23bbfc8f4.patch) = b7bc88eb8c810cbcc8c5a818870b7e9f435ca608f29c16306204cbb4ee3b75b5
+SIZE (6f62a2d0784a6937d35ac8f6df2e22c23bbfc8f4.patch) = 1426
+SHA256 (4d402e599e209a072492cc8c0e35a5e039e7bfd6.patch) = 6ad8680393b22ee363a7e1e0dacc72f02917133ea24a7ddcb34e9ee3700cb662
+SIZE (4d402e599e209a072492cc8c0e35a5e039e7bfd6.patch) = 1226
