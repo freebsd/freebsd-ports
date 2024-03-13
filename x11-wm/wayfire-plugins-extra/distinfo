@@ -7,3 +7,5 @@ SHA256 (focus-request-bc41d54.tar.bz2) = da114547ed0b3ccca593d44e4a01f6d86a45ff2
 SIZE (focus-request-bc41d54.tar.bz2) = 1740
 SHA256 (windecor-f609ac0.tar.bz2) = 2b10209bb6e787af69b6115291330c37dfc8f1c39fb9f91a650cf3ad1c586c10
 SIZE (windecor-f609ac0.tar.bz2) = 32244
+SHA256 (cc4d177de89f.patch) = c05b79384ea18f51f7d7157b4c2fcc8fa687c1ef98255c6a779a70de07e1430c
+SIZE (cc4d177de89f.patch) = 6410

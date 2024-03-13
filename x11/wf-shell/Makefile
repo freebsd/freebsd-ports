@@ -47,5 +47,4 @@ post-patch:
 		${WRKSRC}/src/dock/toplevel-icon.cpp \
 		${WRKSRC}/src/panel/widgets/window-list/toplevel.cpp
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>
