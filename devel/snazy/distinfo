@@ -1,4 +1,4 @@
-TIMESTAMP = 1706077836
+TIMESTAMP = 1710359069
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
 SIZE (rust/crates/aho-corasick-1.1.2.crate) = 183136
 SHA256 (rust/crates/android-tzdata-0.1.1.crate) = e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0
@@ -147,5 +147,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.0.crate) = dff9641d1cd4be8d1a070daf
 SIZE (rust/crates/windows_x86_64_msvc-0.52.0.crate) = 821600
 SHA256 (rust/crates/yansi-0.5.1.crate) = 09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec
 SIZE (rust/crates/yansi-0.5.1.crate) = 16525
-SHA256 (chmouel-snazy-0.52.11_GH0.tar.gz) = 9fc6609eb9b7d7b2110c4ad0f4701248bb5c122e782c9477aa0ae3300e664ab1
-SIZE (chmouel-snazy-0.52.11_GH0.tar.gz) = 8554898
+SHA256 (chmouel-snazy-0.52.17_GH0.tar.gz) = 1e8afb67ea3dd8e69169605c53f07a6d3294b7a977308db186e0cd419addee18
+SIZE (chmouel-snazy-0.52.17_GH0.tar.gz) = 8556018
