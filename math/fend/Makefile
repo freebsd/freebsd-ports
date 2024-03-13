@@ -1,6 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,13 +18,14 @@ GH_ACCOUNT=	printfn
 CARGO_CRATES=	base64-0.21.7 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
-		bumpalo-3.15.3 \
-		cc-1.0.89 \
+		bumpalo-3.15.4 \
+		cc-1.0.90 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
 		clipboard-win-5.2.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
-		ctrlc-3.4.2 \
+		ctrlc-3.4.4 \
 		endian-type-0.1.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
@@ -48,7 +49,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		memchr-2.7.1 \
 		native-tls-0.2.11 \
 		nibble_vec-0.1.0 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		once_cell-1.19.0 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
@@ -57,7 +58,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.30 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.79 \
 		quote-1.0.35 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
@@ -68,7 +69,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		rustls-0.22.2 \
 		rustls-pki-types-1.3.1 \
 		rustls-webpki-0.102.2 \
-		rustyline-13.0.0 \
+		rustyline-14.0.0 \
 		schannel-0.1.23 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
@@ -82,9 +83,9 @@ CARGO_CRATES=	base64-0.21.7 \
 		tempfile-3.10.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.10 \
+		toml-0.8.11 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.6 \
+		toml_edit-0.22.7 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
@@ -103,9 +104,6 @@ CARGO_CRATES=	base64-0.21.7 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
 		webpki-roots-0.26.1 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.52.4 \
