@@ -1,4 +1,4 @@
-TIMESTAMP = 1705254930
+TIMESTAMP = 1710312280
 SHA256 (rust/crates/aho-corasick-1.0.5.crate) = 0c378d78423fdad8089616f827526ee33c19f2fddbd5de1629152c9593ba4783
 SIZE (rust/crates/aho-corasick-1.0.5.crate) = 172064
 SHA256 (rust/crates/anyhow-1.0.75.crate) = a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6
@@ -17,5 +17,5 @@ SHA256 (rust/crates/xflags-0.3.1.crate) = c4554b580522d0ca238369c16b8f6ce34524d6
 SIZE (rust/crates/xflags-0.3.1.crate) = 6642
 SHA256 (rust/crates/xflags-macros-0.3.1.crate) = f58e7b3ca8977093aae6b87b6a7730216fc4c53a6530bab5c43a783cd810c1a8
 SIZE (rust/crates/xflags-macros-0.3.1.crate) = 12229
-SHA256 (drawpile-Drawpile-2.2.0_GH0.tar.gz) = 41122fef2d590f621226570aa62cc7bae8bd0b1cf758c3f001f37cc8c9199683
-SIZE (drawpile-Drawpile-2.2.0_GH0.tar.gz) = 5288561
+SHA256 (drawpile-Drawpile-2.2.1_GH0.tar.gz) = 7b158e26f346da767e29abf3a347344a11a05ef6308236100b437518aaa2a07f
+SIZE (drawpile-Drawpile-2.2.1_GH0.tar.gz) = 5383320
