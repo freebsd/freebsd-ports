@@ -21,13 +21,13 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 PORTDOCS=	COPYRIGHT TRANSLATORS
-PORTEXAMPLES=	alias-link.sh alias-upgrade aliases templates
+PORTEXAMPLES=	alias-link.sh aliases templates
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_DEFAULT=	DOCS EXAMPLES
 
 # On updating the port, set this variable to the date requested
-SLP_DATE=	20231227
+SLP_DATE=	20240307
 SLP_LANGS=	af ar az bg ca cs da de el en es es-mx et fa fi fr he hu hy id \
 		it ja ka ko lt lv ms nl oc pl pt pt-br ro ru sk sl sr-cyrl \
 		sr-latn sv th tr uk uz vi zh-hans zh-hant
