@@ -1,5 +1,5 @@
-TIMESTAMP = 1706261353
-SHA256 (go/www_mattermost-server/mattermost-mattermost-v8.1.8_GH0/go.mod) = 7a0722fea80920c8a319a6dc7098fc8a7e4b0c0d3cb9d86d8d41ce1de840f87a
-SIZE (go/www_mattermost-server/mattermost-mattermost-v8.1.8_GH0/go.mod) = 12046
-SHA256 (go/www_mattermost-server/mattermost-mattermost-v8.1.8_GH0/mattermost-mattermost-v8.1.8_GH0.tar.gz) = b3d37a64817faca162bb1ac7b6c6ba5f170860c16d799087f3780a42819c7630
-SIZE (go/www_mattermost-server/mattermost-mattermost-v8.1.8_GH0/mattermost-mattermost-v8.1.8_GH0.tar.gz) = 148732412
+TIMESTAMP = 1710327683
+SHA256 (go/www_mattermost-server/mattermost-mattermost-v8.1.11_GH0/go.mod) = aa69c86e3d864085f07f7d2c2d3aa7c06ed825a076462878c6e8cac294d10542
+SIZE (go/www_mattermost-server/mattermost-mattermost-v8.1.11_GH0/go.mod) = 12089
+SHA256 (go/www_mattermost-server/mattermost-mattermost-v8.1.11_GH0/mattermost-mattermost-v8.1.11_GH0.tar.gz) = 17f329839085c11afd857bac763dc006523791f19753b1bd4db829dd7b36e56d
+SIZE (go/www_mattermost-server/mattermost-mattermost-v8.1.11_GH0/mattermost-mattermost-v8.1.11_GH0.tar.gz) = 148727055
