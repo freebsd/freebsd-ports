@@ -39,7 +39,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/Archive/Zip/StringMember.pm
 %%SLIMDIR%%/CPAN/Archive/Zip/Tree.pm
 %%SLIMDIR%%/CPAN/Archive/Zip/ZipFileMember.pm
-%%SLIMDIR%%/CPAN/Async/Util.pm
+%%SLIMDIR%%/lib/Async/Util.pm
 %%SLIMDIR%%/CPAN/Bundle/LWP.pm
 %%SLIMDIR%%/CPAN/Cache/BaseCache.pm
 %%SLIMDIR%%/CPAN/Cache/Cache.pm
@@ -206,15 +206,21 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/File/Spec/Win32.pm
 %%SLIMDIR%%/CPAN/File/Temp.pm
 %%SLIMDIR%%/CPAN/File/Which.pm
+%%SLIMDIR%%/CPAN/HTML/AsSubs.pm
+%%SLIMDIR%%/CPAN/HTML/Element.pm
+%%SLIMDIR%%/CPAN/HTML/Element/traverse.pm
 %%SLIMDIR%%/CPAN/HTML/Entities.pm
 %%SLIMDIR%%/CPAN/HTML/Filter.pm
 %%SLIMDIR%%/CPAN/HTML/Form.pm
 %%SLIMDIR%%/CPAN/HTML/Formatter.pm
 %%SLIMDIR%%/CPAN/HTML/HeadParser.pm
 %%SLIMDIR%%/CPAN/HTML/LinkExtor.pm
+%%SLIMDIR%%/CPAN/HTML/Parse.pm
 %%SLIMDIR%%/CPAN/HTML/Parser.pm
 %%SLIMDIR%%/CPAN/HTML/PullParser.pm
+%%SLIMDIR%%/CPAN/HTML/Tagset.pm
 %%SLIMDIR%%/CPAN/HTML/TokeParser.pm
+%%SLIMDIR%%/CPAN/HTML/Tree.pm
 %%SLIMDIR%%/CPAN/HTML/TreeBuilder.pm
 %%SLIMDIR%%/CPAN/HTTP/Config.pm
 %%SLIMDIR%%/CPAN/HTTP/Cookies.pm
@@ -1797,6 +1803,8 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/SQL/SQLite/schema_20_up.sql
 %%SLIMDIR%%/SQL/SQLite/schema_21_down.sql
 %%SLIMDIR%%/SQL/SQLite/schema_21_up.sql
+%%SLIMDIR%%/SQL/SQLite/schema_22_down.sql
+%%SLIMDIR%%/SQL/SQLite/schema_22_up.sql
 %%SLIMDIR%%/SQL/SQLite/schema_2_down.sql
 %%SLIMDIR%%/SQL/SQLite/schema_2_up.sql
 %%SLIMDIR%%/SQL/SQLite/schema_3_down.sql
@@ -1841,6 +1849,8 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/SQL/mysql/schema_20_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_21_down.sql
 %%SLIMDIR%%/SQL/mysql/schema_21_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_22_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_22_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_2_down.sql
 %%SLIMDIR%%/SQL/mysql/schema_2_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_3_down.sql
@@ -1859,7 +1869,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/SQL/mysql/schema_9_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_clear.sql
 %%SLIMDIR%%/SQL/mysql/schema_optimize.sql
-%%SLIMDIR%%/SQL/slimservice/slimservice-sqlite.sql
 %%SLIMDIR%%/Slim/Buttons/Alarm.pm
 %%SLIMDIR%%/Slim/Buttons/Block.pm
 %%SLIMDIR%%/Slim/Buttons/Common.pm
@@ -1944,6 +1953,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Menu/AlbumInfo.pm
 %%SLIMDIR%%/Slim/Menu/ArtistInfo.pm
 %%SLIMDIR%%/Slim/Menu/Base.pm
+%%SLIMDIR%%/Slim/Menu/BrowseLibrary/Releases.pm
 %%SLIMDIR%%/Slim/Menu/BrowseLibrary.pm
 %%SLIMDIR%%/Slim/Menu/FolderInfo.pm
 %%SLIMDIR%%/Slim/Menu/GenreInfo.pm
@@ -1956,6 +1966,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Music/Import.pm
 %%SLIMDIR%%/Slim/Music/Info.pm
 %%SLIMDIR%%/Slim/Music/PlaylistFolderScan.pm
+%%SLIMDIR%%/Slim/Music/ReleaseTypes.pm
 %%SLIMDIR%%/Slim/Music/TitleFormatter.pm
 %%SLIMDIR%%/Slim/Music/VirtualLibraries.pm
 %%SLIMDIR%%/Slim/Networking/Async.pm
@@ -1971,7 +1982,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Networking/Discovery/Players.pm
 %%SLIMDIR%%/Slim/Networking/Discovery/Server.pm
 %%SLIMDIR%%/Slim/Networking/IO/Select.pm
-%%SLIMDIR%%/Slim/Networking/Repositories.pm
 %%SLIMDIR%%/Slim/Networking/Select.pm
 %%SLIMDIR%%/Slim/Networking/SimpleAsyncHTTP.pm
 %%SLIMDIR%%/Slim/Networking/SimpleHTTP/Base.pm
@@ -1984,6 +1994,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Players.pm
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/PrefSync.pm
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Sync.pm
+%%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Time.pm
 %%SLIMDIR%%/Slim/Networking/UDP.pm
 %%SLIMDIR%%/Slim/Player/Boom.pm
 %%SLIMDIR%%/Slim/Player/CapabilitiesHelper.pm
@@ -2026,6 +2037,12 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/AppGallery/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/AppGallery/install.xml
 %%SLIMDIR%%/Slim/Plugin/AppGallery/strings.txt
+%%SLIMDIR%%/Slim/Plugin/AudioAddict/API.pm
+%%SLIMDIR%%/Slim/Plugin/AudioAddict/HTML/EN/plugins/AudioAddict/settings.html
+%%SLIMDIR%%/Slim/Plugin/AudioAddict/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/AudioAddict/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/AudioAddict/install.xml
+%%SLIMDIR%%/Slim/Plugin/AudioAddict/strings.txt
 %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins/AudioScrobbler/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins/AudioScrobbler/settings/player.html
 %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/PlayerSettings.pm
@@ -2045,6 +2062,10 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/Classical/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/Classical/install.xml
 %%SLIMDIR%%/Slim/Plugin/Classical/strings.txt
+%%SLIMDIR%%/Slim/Plugin/ClassicalRadio/HTML/EN/plugins/ClassicalRadio/html/icon.png
+%%SLIMDIR%%/Slim/Plugin/ClassicalRadio/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/ClassicalRadio/install.xml
+%%SLIMDIR%%/Slim/Plugin/ClassicalRadio/strings.txt
 %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN/plugins/DateTime/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/DateTime/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/DateTime/Settings.pm
@@ -2059,6 +2080,10 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/Deezer/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/Deezer/install.xml
 %%SLIMDIR%%/Slim/Plugin/Deezer/strings.txt
+%%SLIMDIR%%/Slim/Plugin/DIfm/HTML/EN/plugins/DIfm/html/icon.png
+%%SLIMDIR%%/Slim/Plugin/DIfm/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/DIfm/install.xml
+%%SLIMDIR%%/Slim/Plugin/DIfm/strings.txt
 %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/html/images/icon_40x40_m.png
 %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/list.html
@@ -2141,6 +2166,10 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/InternetRadio/TuneIn/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/InternetRadio/install.xml
 %%SLIMDIR%%/Slim/Plugin/InternetRadio/strings.txt
+%%SLIMDIR%%/Slim/Plugin/JazzRadio/HTML/EN/plugins/JazzRadio/html/icon.png
+%%SLIMDIR%%/Slim/Plugin/JazzRadio/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/JazzRadio/install.xml
+%%SLIMDIR%%/Slim/Plugin/JazzRadio/strings.txt
 %%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML/EN/plugins/JiveExtras/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/JiveExtras/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/JiveExtras/Settings.pm
@@ -2250,6 +2279,14 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/PreventStandby/Win32.pm
 %%SLIMDIR%%/Slim/Plugin/PreventStandby/install.xml
 %%SLIMDIR%%/Slim/Plugin/PreventStandby/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RadioTunes/HTML/EN/plugins/RadioTunes/html/icon.png
+%%SLIMDIR%%/Slim/Plugin/RadioTunes/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RadioTunes/install.xml
+%%SLIMDIR%%/Slim/Plugin/RadioTunes/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RockRadio/HTML/EN/plugins/RockRadio/html/icon.png
+%%SLIMDIR%%/Slim/Plugin/RockRadio/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RockRadio/install.xml
+%%SLIMDIR%%/Slim/Plugin/RockRadio/strings.txt
 %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/RS232/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/RS232/Settings.pm
@@ -2359,6 +2396,12 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/UPnP/t/MediaServer.t
 %%SLIMDIR%%/Slim/Plugin/UPnP/t/UPnP.t
 %%SLIMDIR%%/Slim/Plugin/UPnP/t/lib/GENA.pm
+%%SLIMDIR%%/Slim/Plugin/ViewTags/Common.pm
+%%SLIMDIR%%/Slim/Plugin/ViewTags/HTML/EN/plugins/ViewTags/settings.html
+%%SLIMDIR%%/Slim/Plugin/ViewTags/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/ViewTags/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/ViewTags/install.xml
+%%SLIMDIR%%/Slim/Plugin/ViewTags/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Visualizer/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Visualizer/install.xml
 %%SLIMDIR%%/Slim/Plugin/Visualizer/strings.txt
@@ -2370,6 +2413,10 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/WiMP/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/WiMP/install.xml
 %%SLIMDIR%%/Slim/Plugin/WiMP/strings.txt
+%%SLIMDIR%%/Slim/Plugin/ZenRadio/HTML/EN/plugins/ZenRadio/html/icon.png
+%%SLIMDIR%%/Slim/Plugin/ZenRadio/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/ZenRadio/install.xml
+%%SLIMDIR%%/Slim/Plugin/ZenRadio/strings.txt
 %%SLIMDIR%%/Slim/Plugin/iTunes/Common.pm
 %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins/iTunes/settings/itunes.html
 %%SLIMDIR%%/Slim/Plugin/iTunes/Importer.pm
@@ -2452,6 +2499,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Utils/OS/Synology.pm
 %%SLIMDIR%%/Slim/Utils/OS/Unix.pm
 %%SLIMDIR%%/Slim/Utils/OS/Win32.pm
+%%SLIMDIR%%/Slim/Utils/OS/Win64.pm
 %%SLIMDIR%%/Slim/Utils/OSDetect.pm
 %%SLIMDIR%%/Slim/Utils/PerfMon.pm
 %%SLIMDIR%%/Slim/Utils/PerlRunTime.pm
@@ -2590,8 +2638,8 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/lib/Template/Provider.pm
 %%SLIMDIR%%/lib/Tie/IxHash.pm
 %%SLIMDIR%%/modules.conf
-%%SLIMDIR%%/scanner.pl
-%%SLIMDIR%%/slimserver.pl
+@(,,755) %%SLIMDIR%%/scanner.pl
+@(,,755) %%SLIMDIR%%/slimserver.pl
 %%SLIMDIR%%/strings.txt
 %%SLIMDIR%%/t/00_smoketest.sh
 @sample %%SLIMDIR%%/types.conf.sample %%SLIMDIR%%/types.conf
@@ -2607,3 +2655,4 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Tree/DAG_Node
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/YAML/LibYAML
 @dir %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/common/sense
+@dir(%%SLIMUSER%%,%%SLIMGROUP%%) %%SLIMDBDIR%%

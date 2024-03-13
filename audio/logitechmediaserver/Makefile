@@ -1,7 +1,6 @@
 
 PORTNAME=	logitechmediaserver
-DISTVERSION=	8.3.1
-PORTREVISION=	1
+DISTVERSION=	8.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -24,8 +23,8 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:026019b \
-		Logitech:slimserver-vendor:947eb3a:vendor
+GH_TUPLE=	Logitech:slimserver:e225575 \
+		Logitech:slimserver-vendor:5bb7355:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
@@ -39,7 +38,17 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		slimserver.pl \
 		${WRKSRC_vendor}/CPAN/hints/darwin.pl
 
-EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
+SUB_FILES=	Custom.pm \
+		custom-convert.conf \
+		logitechmediaserver.conf
+SUB_LIST=	PERL=${PERL} \
+		PORTNAME=${PORTNAME} \
+		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
+		SLIMDIR=${SLIMDIR} \
+		SLIMDBDIR=${SLIMDBDIR} \
+		SLIMUSER=${SLIMUSER} \
+		SLIMGROUP=${SLIMGROUP} \
+		CONFFILES="${CONFFILES}"
 
 SUB_FILES=	Custom.pm \
 		custom-convert.conf \
@@ -52,25 +61,15 @@ SUB_LIST=	PERL=${PERL} \
 		SLIMUSER=${SLIMUSER} \
 		SLIMGROUP=${SLIMGROUP} \
 		CONFFILES="${CONFFILES}"
+
+USERS=		${SLIMUSER}
+GROUPS=		${SLIMGROUP}
 
 PLIST_SUB=	SLIMDIR=${SLIMDIR} \
 		SLIMDBDIR=${SLIMDBDIR} \
 		OPSYS=${OPSYS:tl} \
 		ARCH=${ARCH} \
 		ARCHNAME=${ARCHNAME}
-
-EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
-SUB_FILES=	Custom.pm \
-		custom-convert.conf \
-		logitechmediaserver.conf
-SUB_LIST=	PERL=${PERL} \
-		PORTNAME=${PORTNAME} \
-		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
-		SLIMDIR=${SLIMDIR} \
-		SLIMDBDIR=${SLIMDBDIR} \
-		SLIMUSER=${SLIMUSER} \
-		SLIMGROUP=${SLIMGROUP} \
-		CONFFILES="${CONFFILES}"
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
@@ -83,9 +82,6 @@ FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
 SOX_RUN_DEPENDS=	sox:audio/sox
 TEST_VARS_OFF=		CONTRIB_FLAGS=-t
-
-USERS=		${SLIMUSER}
-GROUPS=		${SLIMGROUP}
 
 DOCFILES=	Changelog*.html License*.txt
 CONFFILES=	convert.conf types.conf
@@ -117,8 +113,6 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR})
-	chmod +x ${STAGEDIR}${PREFIX}/${SLIMDIR}/scanner.pl \
-	    ${STAGEDIR}${PREFIX}/${SLIMDIR}/slimserver.pl
 	(cd ${WRKSRC_vendor}/CPAN/build && \
 		${COPYTREE_SHARE} arch ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN)
 	(cd ${WRKSRC_vendor}/CPAN/build/${PERL_VER}/lib/perl5 && \
@@ -143,6 +137,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${WRKDIR}/logitechmediaserver.conf \
 	    ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
+	@${MKDIR} ${STAGEDIR}${SLIMDBDIR}
 	@${LN} -s ${SLIMDBDIR}/cache ${STAGEDIR}${PREFIX}/${SLIMDIR}/Cache
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
