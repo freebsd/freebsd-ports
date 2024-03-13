@@ -1,8 +1,9 @@
 PORTNAME=	zlib-ng
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.3
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	zlib_ng-${PORTVERSION}
 
 MAINTAINER=	osidorkin@gmail.com
 COMMENT=	Python bindings for the zlib-ng library
