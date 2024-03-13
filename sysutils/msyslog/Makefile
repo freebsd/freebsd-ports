@@ -1,34 +1,38 @@
 PORTNAME=	msyslog
-PORTVERSION=	1.08g
-PORTREVISION=	3
+DISTVERSION=	1.08g
+PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.X/${PORTVERSION} \
-		http://www1.corest.com/download/msyslog/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.X/${DISTVERSION}
+DISTNAME=	${PORTNAME}-v${DISTVERSION}-src
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Flexible and easy to integrate syslog daemon
-WWW=		http://oss.coresecurity.com/projects/msyslog.html
+WWW=		https://sourceforge.net/projects/msyslog/
 
 LICENSE=	BSD4CLAUSE MIT
 LICENSE_COMB=	dual
 
+DEPRECATED=	Unmaintained and last upstream release in 2003
+EXPIRATION_DATE=2024-04-13
+
+USES=		gmake
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	msyslogd
+
+GNU_CONFIGURE=	yes
+
+PORTSCOUT=	skipv:1.09a,1.09b,1.09c,1.09d
+SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+
 OPTIONS_DEFINE=	MYSQL PGSQL EXAMPLES
 OPTIONS_SUB=	yes
+
 MYSQL_USES=	mysql
 MYSQL_CONFIGURE_OFF=	--without-mysql
 PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_OFF=	--without-pgsql
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-
-GNU_CONFIGURE=	yes
-USES=		gmake
-USE_RC_SUBR=	msyslogd
-SUB_FILES=	pkg-message
-USE_LDCONFIG=	yes
-
-PORTSCOUT=	skipv:1.09a,1.09b,1.09c,1.09d
 
 post-patch:
 	@${FIND} ${WRKSRC}/src/modules -name "*.c" | \
@@ -46,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@mandir@|${STAGEDIR}${PREFIX}/man|g' \
 		${WRKSRC}/src/man/GNUmakefile.in
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
