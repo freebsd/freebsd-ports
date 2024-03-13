@@ -101,6 +101,8 @@ bin/yosys-witness
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/capi/cxxrtl_capi_vcd.h
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/cxxrtl.h
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/cxxrtl_vcd.h
+%%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/cxxrtl_replay.h
+%%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/cxxrtl_time.h
 %%DATADIR%%/include/backends/rtlil/rtlil_backend.h
 %%DATADIR%%/include/frontends/ast/ast.h
 %%DATADIR%%/include/frontends/ast/ast_binding.h
@@ -127,6 +129,7 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/register.h
 %%DATADIR%%/include/kernel/rtlil.h
 %%DATADIR%%/include/kernel/satgen.h
+%%DATADIR%%/include/kernel/scopeinfo.h
 %%DATADIR%%/include/kernel/sigtools.h
 %%DATADIR%%/include/kernel/timinginfo.h
 %%DATADIR%%/include/kernel/utils.h
