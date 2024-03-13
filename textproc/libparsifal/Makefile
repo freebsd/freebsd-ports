@@ -1,6 +1,6 @@
 PORTNAME=	libparsifal
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
@@ -12,6 +12,9 @@ LICENSE=	PARSIFAL
 LICENSE_NAME=	Parsifal license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Upsrteam no longer available including WWW and distfile
+EXPIRATION_DATE=2024-04-13
 
 USES=		iconv libtool
 USE_LDCONFIG=	yes
