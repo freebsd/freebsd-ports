@@ -1,5 +1,5 @@
 PORTNAME=	uhi
-DISTVERSION=	0.3.3
+DISTVERSION=	0.4.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.0:misc/py-boost-histogram@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # tests fail fail to run: KeyError: <WorkerController gw0>, see https://github.com/scikit-hep/uhi/issues/125
 
 NO_ARCH=	yes
 
