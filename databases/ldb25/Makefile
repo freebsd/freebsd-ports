@@ -22,7 +22,7 @@ TEST_DEPENDS=	${LDB_DEPENDS} \
 		cmocka>=1.1.3:sysutils/cmocka
 RUN_DEPENDS=	${LDB_DEPENDS}
 
-USES=		compiler ldap pkgconfig waf
+USES=		compiler ldap localbase:ldflags pkgconfig waf
 
 CONFLICTS_INSTALL=	ldb[0-9][0-9] # include/ldb.h
 
@@ -78,9 +78,6 @@ PLIST_FILES=	${LDB_BINS} \
 		include/ldb_version.h
 
 .include <bsd.port.pre.mk>
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Some symbols in ldb's linker version scripts are not defined, but since the
 # scripts are generated dynamically, suppress errors with lld >= 17 due to these

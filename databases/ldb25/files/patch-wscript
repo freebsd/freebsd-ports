@@ -5,7 +5,7 @@
          if not 'PACKAGE_VERSION' in bld.env:
              bld.env.PACKAGE_VERSION = VERSION
 -        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
-+        bld.env.PKGCONFIGDIR = '/usr/local/libdata/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
          private_library = False
      else:
          private_library = True
