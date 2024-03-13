@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,6 +59,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		assert-json-diff-2.0.2 \
 		assert_fs-1.1.1 \
 		async-channel-1.9.0 \
+		async-channel-2.1.1 \
 		async-compression-0.4.6 \
 		async-executor-1.8.0 \
 		async-lock-2.8.0 \
@@ -144,9 +145,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		critical-section-1.1.2 \
+		crossbeam-0.8.4 \
 		crossbeam-channel-0.5.11 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.11 \
 		crossbeam-utils-0.8.19 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
@@ -221,7 +224,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		generic-array-0.14.7 \
 		geo-0.26.0 \
 		geo-0.27.0 \
-		geo-types-0.7.12 \
+		geo-0.28.0 \
+		geo-types-0.7.13 \
 		geographiclib-rs-0.2.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.12 \
@@ -233,11 +237,13 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		h2-0.4.2 \
 		half-2.3.1 \
 		hash32-0.2.1 \
+		hash32-0.3.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
 		headers-0.3.9 \
 		headers-core-0.2.0 \
 		heapless-0.7.17 \
+		heapless-0.8.0 \
 		heck-0.4.1 \
 		hermit-abi-0.3.5 \
 		hex-0.4.3 \
@@ -302,6 +308,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		local-waker-0.1.4 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
+		lru-0.12.2 \
 		lz4-sys-1.9.4 \
 		matchers-0.1.0 \
 		matchit-0.7.3 \
@@ -317,6 +324,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
+		multimap-0.8.3 \
 		nanoid-0.4.0 \
 		nanorand-0.7.0 \
 		native-tls-0.2.11 \
@@ -396,7 +404,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		proc-macro2-1.0.78 \
 		prometheus-0.13.3 \
 		prost-0.11.9 \
+		prost-0.12.3 \
+		prost-build-0.12.1 \
 		prost-derive-0.11.9 \
+		prost-derive-0.12.3 \
+		prost-types-0.12.1 \
 		psl-types-2.0.11 \
 		psm-0.1.21 \
 		ptr_meta-0.1.4 \
@@ -452,6 +464,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rquickjs-sys-0.5.1 \
 		rsa-0.9.6 \
 		rstar-0.11.0 \
+		rstar-0.12.0 \
 		rust-stemmers-1.2.0 \
 		rust_decimal-1.34.2 \
 		rustc-demangle-0.1.23 \
@@ -522,7 +535,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		surrealdb-derive-0.12.0 \
 		surrealdb-jsonwebtoken-8.3.0-surreal.1 \
 		surrealdb-tikv-client-0.2.0-surreal.2 \
-		surrealml-core-0.0.7 \
+		surrealkv-0.1.3 \
 		surrealml-core-0.0.8 \
 		symbolic-common-12.8.0 \
 		symbolic-demangle-12.8.0 \
@@ -602,6 +615,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		utf8parse-0.2.1 \
 		uuid-1.7.0 \
 		valuable-0.1.0 \
+		vart-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vswhom-0.1.0 \
