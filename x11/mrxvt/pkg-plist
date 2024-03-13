@@ -1,5 +1,18 @@
-@(,,4511) bin/mrxvt
+bin/mrxvt
+etc/mrxvt/default.menu.sample
+etc/mrxvt/mrxvtrc.sample
+etc/mrxvt/submenus.menu.sample
 share/man/man1/mrxvt.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.greek
+%%PORTDOCS%%%%DOCSDIR%%/README.menu
+%%PORTDOCS%%%%DOCSDIR%%/README.xvt
+%%PORTDOCS%%%%DOCSDIR%%/behind_mrxvt.txt
+%%PORTDOCS%%%%DOCSDIR%%/hack-mrxvt.txt
+%%PORTDOCS%%%%DOCSDIR%%/mrxvt_seq.txt
+%%PORTDOCS%%%%DOCSDIR%%/rxvtRef.txt
+%%PORTDOCS%%%%DOCSDIR%%/xterm-ctlseqs.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mrxvtset.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/settitle.c
 share/pixmaps/mrxvt-csh.png
 share/pixmaps/mrxvt-csh.xpm
 share/pixmaps/mrxvt-root.png

@@ -3042,3 +3042,4 @@ security/py-pyblake2||2024-03-03|Has expired: Reached it's End Of Life. Integrat
 net-im/gtkcord4|net-im/dissent|2024-03-03|Project renamed
 devel/anjuta|devel/gnome-builder|2024-03-12|Has expired: Unmaintained, upstream WWW owned by gambling site, use devel/gnome-builder
 deskutils/rubrica||2024-03-12|Has expired: Upstream WWW redirects to a different site not related to the application
+x11/mrxvt-devel|x11/mrxvt|2024-03-12|Merge most recent version into main port
