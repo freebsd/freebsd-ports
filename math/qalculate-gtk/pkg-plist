@@ -58,6 +58,7 @@ share/icons/hicolor/scalable/apps/qalculate.svg
 %%NLS%%share/locale/es/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/qalculate-gtk.mo

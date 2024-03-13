@@ -1,6 +1,5 @@
 PORTNAME=	qalculate-gtk
-PORTVERSION=	4.9.0
-PORTREVISION=	2
+PORTVERSION=	5.0.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
