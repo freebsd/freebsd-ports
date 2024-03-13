@@ -646,6 +646,7 @@ bin/rPkgsInstall.R
 bin/read_matlab_files.py
 bin/realtime_receiver.py
 bin/rmz
+bin/roi_stats_warnings.py
 bin/rotcom
 bin/rtfeedme
 bin/serial_helper
@@ -869,6 +870,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_qt_gui.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_rand_timing.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_realtime.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_roi_stats.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_ss_review.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_subjects.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_surf_clustsim.py
