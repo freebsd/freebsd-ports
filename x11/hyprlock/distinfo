@@ -1,7 +1,7 @@
-TIMESTAMP = 1708907599
-SHA256 (hyprwm-hyprlock-v0.1.0_GH0.tar.gz) = 5d0e6547ac073c78e95d4f086a258e1e5713168827c38ccb2466f2c4d96bd1df
-SIZE (hyprwm-hyprlock-v0.1.0_GH0.tar.gz) = 49582
+TIMESTAMP = 1710343595
+SHA256 (hyprwm-hyprlock-v0.2.0_GH0.tar.gz) = 3d56220ac03016163e196bc2c08e5b16e83583fa9446ad52e32ddbb56c293994
+SIZE (hyprwm-hyprlock-v0.2.0_GH0.tar.gz) = 56798
 SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
-SHA256 (fa2a875e339a.patch) = 51dea8716b4b2b0371b0380e904f9fd0d7b0a35d5527dbe52c0fb86831ea0871
-SIZE (fa2a875e339a.patch) = 1973
+SHA256 (e040c56ad294.patch) = f5d3ceee74733563306c6e3621ba773efe65d2015297bbedfa88e952e8171fb5
+SIZE (e040c56ad294.patch) = 1720
