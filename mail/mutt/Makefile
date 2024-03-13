@@ -1,6 +1,5 @@
 PORTNAME=	mutt
-DISTVERSION=	2.2.12
-PORTREVISION=	1
+DISTVERSION=	2.2.13
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/
@@ -20,17 +19,17 @@ USE_PERL5=	build
 
 SHEBANG_FILES=	contrib/smime_keys_test.pl doc/gen-map-doc smime_keys.pl
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-fcntl \
-		--enable-compressed \
-		--enable-external-dotlock \
-		--enable-imap \
-		--enable-pop \
-		--enable-sidebar \
-		--sysconfdir=${PREFIX}/etc \
-		--with-docdir=${DOCSDIR} \
-		--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS=			--disable-fcntl \
+				--enable-compressed \
+				--enable-external-dotlock \
+				--enable-imap \
+				--enable-pop \
+				--enable-sidebar \
+				--sysconfdir=${PREFIX}/etc \
+				--with-docdir=${DOCSDIR} \
+				--with-ssl=${OPENSSLBASE}
 
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
