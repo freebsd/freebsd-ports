@@ -1,0 +1,4 @@
+gitu is a terminal user interface for Git.
+
+Gitu aims to implement many of the core features of Magit over time.
+It should be familiar to any previous Magit users.

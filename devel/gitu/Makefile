@@ -1,0 +1,207 @@
+PORTNAME=	gitu
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.2
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	TUI Git client inspired by Magit
+WWW=		https://github.com/altsem/gitu
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	altsem
+
+CARGO_CRATES=	ahash-0.8.11 \
+		aho-corasick-1.1.2 \
+		allocator-api2-0.2.16 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anes-0.1.6 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		atomic-0.6.0 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.2 \
+		bstr-0.2.17 \
+		bumpalo-3.15.4 \
+		bytemuck-1.14.3 \
+		cassowary-0.3.0 \
+		cast-0.3.0 \
+		castaway-0.2.2 \
+		cc-1.0.90 \
+		cfg-if-1.0.0 \
+		chrono-0.4.35 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clap-4.5.2 \
+		clap_builder-4.5.2 \
+		clap_derive-4.5.0 \
+		clap_lex-0.7.0 \
+		colorchoice-1.0.0 \
+		compact_str-0.7.1 \
+		console-0.15.8 \
+		core-foundation-sys-0.8.6 \
+		criterion-0.5.1 \
+		criterion-plot-0.5.0 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.19 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
+		crunchy-0.2.2 \
+		diff-0.1.13 \
+		directories-5.0.1 \
+		dirs-sys-0.4.1 \
+		either-1.10.0 \
+		encode_unicode-0.3.6 \
+		equivalent-1.0.1 \
+		figment-0.10.14 \
+		form_urlencoded-1.2.1 \
+		getrandom-0.2.12 \
+		git2-0.18.2 \
+		half-2.4.0 \
+		hashbrown-0.14.3 \
+		heck-0.4.1 \
+		hermit-abi-0.3.9 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
+		idna-0.5.0 \
+		indexmap-2.2.5 \
+		indoc-2.0.4 \
+		insta-1.36.1 \
+		is-terminal-0.4.12 \
+		itertools-0.10.5 \
+		itertools-0.12.1 \
+		itoa-1.0.10 \
+		jobserver-0.1.28 \
+		js-sys-0.3.69 \
+		lazy_static-1.4.0 \
+		libc-0.2.153 \
+		libgit2-sys-0.16.2+1.7.2 \
+		libredox-0.0.1 \
+		libz-sys-1.1.15 \
+		linked-hash-map-0.5.6 \
+		lock_api-0.4.11 \
+		log-0.4.21 \
+		lru-0.12.3 \
+		memchr-2.7.1 \
+		mio-0.8.11 \
+		num-traits-0.2.18 \
+		once_cell-1.19.0 \
+		oorandom-11.1.3 \
+		option-ext-0.2.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		paste-1.0.14 \
+		percent-encoding-2.3.1 \
+		pkg-config-0.3.30 \
+		plotters-0.3.5 \
+		plotters-backend-0.3.5 \
+		plotters-svg-0.3.5 \
+		pretty_assertions-1.4.0 \
+		proc-macro2-1.0.78 \
+		quote-1.0.35 \
+		ratatui-0.26.1 \
+		rayon-1.9.0 \
+		rayon-core-1.12.1 \
+		redox_syscall-0.1.57 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		regex-1.10.3 \
+		regex-automata-0.1.10 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.8.2 \
+		rustversion-1.0.14 \
+		ryu-1.0.17 \
+		same-file-1.0.6 \
+		scopeguard-1.2.0 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.114 \
+		serde_spanned-0.6.5 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.1 \
+		similar-2.4.0 \
+		simple-logging-2.0.2 \
+		smallvec-1.13.1 \
+		stability-0.1.1 \
+		static_assertions-1.1.0 \
+		strsim-0.11.0 \
+		strum-0.26.1 \
+		strum_macros-0.26.1 \
+		syn-1.0.109 \
+		syn-2.0.52 \
+		temp-dir-0.1.12 \
+		thiserror-1.0.57 \
+		thiserror-impl-1.0.57 \
+		thread-id-3.3.0 \
+		tinytemplate-1.2.1 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		toml-0.8.10 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.22.6 \
+		tui-prompts-0.3.5 \
+		uncased-0.9.10 \
+		unicode-bidi-0.3.15 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.23 \
+		unicode-segmentation-1.11.0 \
+		unicode-width-0.1.11 \
+		url-2.5.0 \
+		utf8parse-0.2.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		walkdir-2.5.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		web-sys-0.3.69 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.6.5 \
+		yaml-rust-0.4.5 \
+		yansi-0.5.1 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

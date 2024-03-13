@@ -827,6 +827,7 @@
     SUBDIR += gitqlient
     SUBDIR += gittrac
     SUBDIR += gitty
+    SUBDIR += gitu
     SUBDIR += gitui
     SUBDIR += glab
     SUBDIR += glade
