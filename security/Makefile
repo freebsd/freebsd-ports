@@ -797,6 +797,7 @@
     SUBDIR += pecl-pkcs11
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
+    SUBDIR += pecl-xxtea
     SUBDIR += peda
     SUBDIR += pev
     SUBDIR += pgpdump
