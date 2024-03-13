@@ -1,0 +1,4 @@
+XXTEA is a fast and secure encryption algorithm. This is a XXTEA
+extension for PHP. It is different from the original XXTEA encryption
+algorithm. It encrypts and decrypts string instead of uint32 array,
+and the key is also string.
