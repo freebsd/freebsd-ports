@@ -1,7 +1,7 @@
 bin/minimap2
 bin/minimap2-lite
 bin/sdust
-share/man/man1/minimap2.1.gz
+man/man1/minimap2.1.gz
 %%DATADIR%%/test/MT-human.fa
 %%DATADIR%%/test/MT-orang.fa
 %%DATADIR%%/test/q-inv.fa
