@@ -3060,3 +3060,5 @@ security/rubygem-metasploit-aggregator||2024-03-24|Has expired: No longer used, 
 net-p2p/tooth||2024-03-24|Has expired: Project has been renamed to Tuba. Consider porting to the new project. See https://github.com/GeopJr/Tuba
 www/tidy-devel|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
 www/tidy-lib|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
+math/qalculate-qt@qt5|math/qalculate-qt|2024-03-13|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored math/qalculate-qt port based on Qt 6.x instead
+math/qalculate-qt@qt6|math/qalculate-qt|2024-03-13|Flavorization has been removed. Continue to enjoy math/qalculate-qt based on Qt 6.x as usual
