@@ -1,12 +1,12 @@
 PORTNAME=	tomcat-native
-DISTVERSION=	1.2.38
+DISTVERSION=	1.3.0
 CATEGORIES=	www java
 MASTER_SITES=	https://archive.apache.org/dist/tomcat/tomcat-connectors/native/${PORTVERSION}/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Tomcat native library
-WWW=		https://tomcat.apache.org/native-1.2-doc/
+WWW=		https://tomcat.apache.org/native-${PORTVERSION:R}-doc/
 
 LICENSE=	APACHE20
 
