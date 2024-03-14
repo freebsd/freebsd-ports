@@ -1,6 +1,6 @@
 --- lib/pkcs11h-openssl.c.orig	2022-04-07 17:01:01 UTC
 +++ lib/pkcs11h-openssl.c
-@@ -235,9 +235,13 @@ DSA_meth_set1_name (DSA_METHOD *meth, const char *name
+@@ -235,9 +235,13 @@ DSA_meth_free (DSA_METHOD *meth)
  static int
  DSA_meth_set1_name (DSA_METHOD *meth, const char *name)
  {
@@ -14,6 +14,15 @@
  }
  #endif
  
+@@ -330,7 +334,7 @@ static struct {
+ #endif
+ } __openssl_methods;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100001L
++#if OPENSSL_VERSION_NUMBER < 0x10100001L || defined(LIBRESSL_VERSION_NUMBER)
+ static
+ int
+ __pkcs11h_openssl_ex_data_dup (
 @@ -341,12 +345,22 @@ __pkcs11h_openssl_ex_data_dup (
  	long argl,
  	void *argp
