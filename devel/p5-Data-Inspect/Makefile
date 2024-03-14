@@ -8,7 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another pretty-printer for perl objects
 WWW=		https://metacpan.org/release/Data-Inspect
 
-LICENSE=	NONE
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
