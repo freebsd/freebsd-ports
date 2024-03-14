@@ -1,7 +1,6 @@
 PORTNAME=	gnustep-back
 DISTVERSIONPREFIX=	back-
-DISTVERSION=	0_28_0
-PORTREVISION=	3
+DISTVERSION=	0_30_0
 CATEGORIES=	x11-toolkits gnustep
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,13 +28,7 @@ GH_ACCOUNT=	gnustep
 GH_PROJECT=	libs-back
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tiff-library=${LOCALBASE}/lib \
-		--with-tiff-include=${LOCALBASE}/include \
-		--with-jpeg-library=${LOCALBASE}/lib \
-		--with-jpeg-include=${LOCALBASE}/include \
-		--with-gif-library=${LOCALBASE}/lib \
-		--with-gif-include=${LOCALBASE}/include \
-		--enable-graphics=cairo \
+CONFIGURE_ARGS=	--enable-graphics=cairo \
 		--disable-glitz
 
 # LLD 7 creates a library that does not work with FreeBSD (or OpenBSD) rtld -

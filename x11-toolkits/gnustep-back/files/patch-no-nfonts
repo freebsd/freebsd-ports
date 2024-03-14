@@ -1,0 +1,13 @@
+--- GNUmakefile
++++ GNUmakefile
+@@ -49,10 +49,6 @@ include ./Version
+ #
+ SUBPROJECTS = Source Tools
+ 
+-ifneq ($(fonts), no)
+-SUBPROJECTS += Fonts
+-endif
+-
+ -include GNUmakefile.preamble
+ 
+ include $(GNUSTEP_MAKEFILES)/aggregate.make
