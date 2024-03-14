@@ -1,0 +1,16 @@
+--- Source/DocMakefile
++++ Source/DocMakefile
+@@ -72,13 +72,8 @@ NSCell.h \
+ NSCIImageRep.h \
+ NSClickGestureRecognizer.h \
+ NSClipView.h \
+-NSCollectionViewCompositionalLayout.h \
+-NSCollectionViewFlowLayout.h \
+-NSCollectionViewGridLayout.h \
+ NSCollectionView.h \
+ NSCollectionViewItem.h \
+-NSCollectionViewLayout.h \
+-NSCollectionViewTransitionLayout.h \
+ NSColor.h \
+ NSColorList.h \
+ NSColorPanel.h \

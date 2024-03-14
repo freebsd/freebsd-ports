@@ -1,7 +1,6 @@
 PORTNAME=	gnustep-gui
 DISTVERSIONPREFIX=	gui-
-DISTVERSION=	0_28_0
-PORTREVISION=	8
+DISTVERSION=	0_30_0
 CATEGORIES=	x11-toolkits gnustep
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,13 +10,13 @@ WWW=		http://www.gnustep.org/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS+=	libtiff.so:graphics/tiff
-LIB_DEPENDS+=	libpng.so:graphics/png
-LIB_DEPENDS+=	libgif.so:graphics/giflib
-LIB_DEPENDS+=	libicui18n.so:devel/icu
-LIB_DEPENDS+=	libsndfile.so:audio/libsndfile
-LIB_DEPENDS+=	libao.so:audio/libao
-LIB_DEPENDS+=	libflite.so:audio/flite
+LIB_DEPENDS+=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libgif.so:graphics/giflib \
+		libicui18n.so:devel/icu \
+		libsndfile.so:audio/libsndfile \
+		libao.so:audio/libao \
+		libflite.so:audio/flite
 
 USES=		gnustep jpeg pkgconfig xorg
 USE_GNUSTEP=	base build
@@ -28,13 +27,13 @@ GH_ACCOUNT=	gnustep
 GH_PROJECT=	libs-gui
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-x
-CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib \
+			--with-tiff-include=${LOCALBASE}/include \
+			--with-jpeg-library=${LOCALBASE}/lib \
+			--with-jpeg-include=${LOCALBASE}/include \
+			--with-x \
+			--with-x-include=${LOCALBASE}/include \
+			--with-x-include=${LOCALBASE}/lib
 
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 
@@ -55,7 +54,6 @@ ASPELL_CONFIGURE_ENABLE=	aspell
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 post-patch:
-	${REINPLACE_CMD} -e "s|libpng/png.h|png.h|" ${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
 
 pre-configure:
