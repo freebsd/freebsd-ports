@@ -30,7 +30,7 @@ include/va/va_fei.h
 include/va/va_prot.h
 include/va/va_str.h
 include/va/va_tpi.h
-include/va/va_trace.h
+%%X11%%include/va/va_trace.h
 include/va/va_version.h
 include/va/va_vpp.h
 %%WAYLAND%%include/va/va_wayland.h
