@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-aiplatform
-DISTVERSION=	1.39.0
+DISTVERSION=	1.43.0
 CATEGORIES=	www # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ WWW=		https://github.com/googleapis/python-aiplatform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.32.0:www/py-google-api-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.34.1:www/py-google-api-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-auth>=2.14.1:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=1.32.0:www/py-google-cloud-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-bigquery>=1.15.0:www/py-google-cloud-bigquery@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-resource-manager>=1.3.3:www/py-google-cloud-resource-manager@${PY_FLAVOR} \
