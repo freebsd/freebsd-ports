@@ -1,6 +1,6 @@
 PORTNAME=	google-compute-engine-oslogin
 DISTVERSION=	20191018.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,7 +30,7 @@ MAKE_ARGS=	CPPFLAGS="-Iinclude -I${LOCALBASE}/include/json-c -I${LOCALBASE}/incl
 		PREFIX=${PREFIX} \
 		LIBDIR=${PREFIX}/lib \
 		PAMDIR=${PREFIX}/lib \
-		MANDIR=${PREFIX}/man
+		MANDIR=${PREFIX}/share/man
 
 post-install:
 	${LN} -sf libnss_oslogin-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_oslogin.so.1
