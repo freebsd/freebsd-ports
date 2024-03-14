@@ -1,4 +1,4 @@
 bin/xjumpx
-man/man1/xjumpx.1.gz
 lib/X11/app-defaults/XJumpX
 @dir(,,777) lib/X11/xjumpx
+share/man/man1/xjumpx.1.gz
