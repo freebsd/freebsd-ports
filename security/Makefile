@@ -147,6 +147,7 @@
     SUBDIR += duo
     SUBDIR += duo_openvpn
     SUBDIR += easy-rsa
+    SUBDIR += enc
     SUBDIR += enchive
     SUBDIR += eschalot
     SUBDIR += expiretable
