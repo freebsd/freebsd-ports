@@ -39,6 +39,7 @@ include/obs/media-io/video-frame.h
 include/obs/media-io/video-io.h
 include/obs/media-io/video-scaler.h
 include/obs/obs-audio-controls.h
+include/obs/obs-av1.h
 include/obs/obs-avc.h
 include/obs/obs-config.h
 include/obs/obs-data.h
@@ -63,12 +64,10 @@ include/obs/obs-properties.h
 include/obs/obs-scene.h
 include/obs/obs-service.h
 include/obs/obs-source.h
-include/obs/obs-ui.h
 include/obs/obs.h
 include/obs/obs.hpp
 include/obs/obsconfig.h
 include/obs/obsversion.h
-include/obs/util/AlignedNew.hpp
 include/obs/util/array-serializer.h
 include/obs/util/base.h
 include/obs/util/bitstream.h
@@ -81,6 +80,7 @@ include/obs/util/config-file.h
 include/obs/util/crc32.h
 include/obs/util/curl/curl-helper.h
 include/obs/util/darray.h
+include/obs/util/deque.h
 include/obs/util/dstr.h
 include/obs/util/dstr.hpp
 include/obs/util/file-serializer.h
@@ -219,6 +219,7 @@ share/obs/obs-plugins/frontend-tools/locale/is-IS.ini
 share/obs/obs-plugins/frontend-tools/locale/it-IT.ini
 share/obs/obs-plugins/frontend-tools/locale/ja-JP.ini
 share/obs/obs-plugins/frontend-tools/locale/ka-GE.ini
+share/obs/obs-plugins/frontend-tools/locale/kaa.ini
 share/obs/obs-plugins/frontend-tools/locale/kab-KAB.ini
 share/obs/obs-plugins/frontend-tools/locale/kmr-TR.ini
 share/obs/obs-plugins/frontend-tools/locale/ko-KR.ini
@@ -247,6 +248,7 @@ share/obs/obs-plugins/frontend-tools/locale/ta-IN.ini
 share/obs/obs-plugins/frontend-tools/locale/th-TH.ini
 share/obs/obs-plugins/frontend-tools/locale/tl-PH.ini
 share/obs/obs-plugins/frontend-tools/locale/tr-TR.ini
+share/obs/obs-plugins/frontend-tools/locale/ug-CN.ini
 share/obs/obs-plugins/frontend-tools/locale/uk-UA.ini
 share/obs/obs-plugins/frontend-tools/locale/vi-VN.ini
 share/obs/obs-plugins/frontend-tools/locale/zh-CN.ini
@@ -292,6 +294,7 @@ share/obs/obs-plugins/image-source/locale/id-ID.ini
 share/obs/obs-plugins/image-source/locale/it-IT.ini
 share/obs/obs-plugins/image-source/locale/ja-JP.ini
 share/obs/obs-plugins/image-source/locale/ka-GE.ini
+share/obs/obs-plugins/image-source/locale/kaa.ini
 share/obs/obs-plugins/image-source/locale/kab-KAB.ini
 share/obs/obs-plugins/image-source/locale/kmr-TR.ini
 share/obs/obs-plugins/image-source/locale/ko-KR.ini
@@ -319,6 +322,7 @@ share/obs/obs-plugins/image-source/locale/ta-IN.ini
 share/obs/obs-plugins/image-source/locale/th-TH.ini
 share/obs/obs-plugins/image-source/locale/tl-PH.ini
 share/obs/obs-plugins/image-source/locale/tr-TR.ini
+share/obs/obs-plugins/image-source/locale/ug-CN.ini
 share/obs/obs-plugins/image-source/locale/uk-UA.ini
 share/obs/obs-plugins/image-source/locale/ur-PK.ini
 share/obs/obs-plugins/image-source/locale/vi-VN.ini
@@ -356,6 +360,7 @@ share/obs/obs-plugins/linux-capture/locale/id-ID.ini
 share/obs/obs-plugins/linux-capture/locale/it-IT.ini
 share/obs/obs-plugins/linux-capture/locale/ja-JP.ini
 share/obs/obs-plugins/linux-capture/locale/ka-GE.ini
+share/obs/obs-plugins/linux-capture/locale/kaa.ini
 share/obs/obs-plugins/linux-capture/locale/kab-KAB.ini
 share/obs/obs-plugins/linux-capture/locale/kmr-TR.ini
 share/obs/obs-plugins/linux-capture/locale/ko-KR.ini
@@ -379,6 +384,7 @@ share/obs/obs-plugins/linux-capture/locale/szl-PL.ini
 share/obs/obs-plugins/linux-capture/locale/ta-IN.ini
 share/obs/obs-plugins/linux-capture/locale/tl-PH.ini
 share/obs/obs-plugins/linux-capture/locale/tr-TR.ini
+share/obs/obs-plugins/linux-capture/locale/ug-CN.ini
 share/obs/obs-plugins/linux-capture/locale/uk-UA.ini
 share/obs/obs-plugins/linux-capture/locale/vi-VN.ini
 share/obs/obs-plugins/linux-capture/locale/zh-CN.ini
@@ -415,6 +421,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/it-IT.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ja-JP.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ka-GE.ini
+%%JACK%%share/obs/obs-plugins/linux-jack/locale/kaa.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/kab-KAB.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/kmr-TR.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ko-KR.ini
@@ -435,6 +442,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/sv-SE.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/szl-PL.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/tr-TR.ini
+%%JACK%%share/obs/obs-plugins/linux-jack/locale/ug-CN.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/uk-UA.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ur-PK.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/vi-VN.ini
@@ -468,6 +476,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/it-IT.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ja-JP.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ka-GE.ini
+%%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/kaa.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/kmr-TR.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ko-KR.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ms-MY.ini
@@ -484,6 +493,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/sv-SE.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ta-IN.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/tr-TR.ini
+%%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ug-CN.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/uk-UA.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/vi-VN.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/zh-CN.ini
@@ -521,6 +531,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/it-IT.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/ja-JP.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/ka-GE.ini
+%%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/kaa.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/kab-KAB.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/kmr-TR.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/ko-KR.ini
@@ -544,6 +555,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/ta-IN.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/th-TH.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/tr-TR.ini
+%%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/ug-CN.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/uk-UA.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/ur-PK.ini
 %%PULSEAUDIO%%share/obs/obs-plugins/linux-pulseaudio/locale/vi-VN.ini
@@ -581,6 +593,7 @@ share/obs/obs-plugins/linux-v4l2/locale/id-ID.ini
 share/obs/obs-plugins/linux-v4l2/locale/it-IT.ini
 share/obs/obs-plugins/linux-v4l2/locale/ja-JP.ini
 share/obs/obs-plugins/linux-v4l2/locale/ka-GE.ini
+share/obs/obs-plugins/linux-v4l2/locale/kaa.ini
 share/obs/obs-plugins/linux-v4l2/locale/kab-KAB.ini
 share/obs/obs-plugins/linux-v4l2/locale/kmr-TR.ini
 share/obs/obs-plugins/linux-v4l2/locale/ko-KR.ini
@@ -604,6 +617,7 @@ share/obs/obs-plugins/linux-v4l2/locale/szl-PL.ini
 share/obs/obs-plugins/linux-v4l2/locale/ta-IN.ini
 share/obs/obs-plugins/linux-v4l2/locale/tl-PH.ini
 share/obs/obs-plugins/linux-v4l2/locale/tr-TR.ini
+share/obs/obs-plugins/linux-v4l2/locale/ug-CN.ini
 share/obs/obs-plugins/linux-v4l2/locale/uk-UA.ini
 share/obs/obs-plugins/linux-v4l2/locale/ur-PK.ini
 share/obs/obs-plugins/linux-v4l2/locale/vi-VN.ini
@@ -612,6 +626,7 @@ share/obs/obs-plugins/linux-v4l2/locale/zh-TW.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/af-ZA.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ar-SA.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ba-RU.ini
+share/obs/obs-plugins/obs-ffmpeg/locale/be-BY.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/bg-BG.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/bn-BD.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ca-ES.ini
@@ -640,6 +655,7 @@ share/obs/obs-plugins/obs-ffmpeg/locale/is-IS.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/it-IT.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ja-JP.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ka-GE.ini
+share/obs/obs-plugins/obs-ffmpeg/locale/kaa.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/kab-KAB.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ko-KR.ini
@@ -664,6 +680,7 @@ share/obs/obs-plugins/obs-ffmpeg/locale/ta-IN.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/th-TH.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/tl-PH.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/tr-TR.ini
+share/obs/obs-plugins/obs-ffmpeg/locale/ug-CN.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/uk-UA.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/ur-PK.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/vi-VN.ini
@@ -723,6 +740,7 @@ share/obs/obs-plugins/obs-filters/locale/id-ID.ini
 share/obs/obs-plugins/obs-filters/locale/it-IT.ini
 share/obs/obs-plugins/obs-filters/locale/ja-JP.ini
 share/obs/obs-plugins/obs-filters/locale/ka-GE.ini
+share/obs/obs-plugins/obs-filters/locale/kaa.ini
 share/obs/obs-plugins/obs-filters/locale/kab-KAB.ini
 share/obs/obs-plugins/obs-filters/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-filters/locale/ko-KR.ini
@@ -746,6 +764,7 @@ share/obs/obs-plugins/obs-filters/locale/ta-IN.ini
 share/obs/obs-plugins/obs-filters/locale/th-TH.ini
 share/obs/obs-plugins/obs-filters/locale/tl-PH.ini
 share/obs/obs-plugins/obs-filters/locale/tr-TR.ini
+share/obs/obs-plugins/obs-filters/locale/ug-CN.ini
 share/obs/obs-plugins/obs-filters/locale/uk-UA.ini
 share/obs/obs-plugins/obs-filters/locale/vi-VN.ini
 share/obs/obs-plugins/obs-filters/locale/zh-CN.ini
@@ -759,6 +778,7 @@ share/obs/obs-plugins/obs-filters/sharpness.effect
 share/obs/obs-plugins/obs-outputs/locale/af-ZA.ini
 share/obs/obs-plugins/obs-outputs/locale/ar-SA.ini
 share/obs/obs-plugins/obs-outputs/locale/ba-RU.ini
+share/obs/obs-plugins/obs-outputs/locale/be-BY.ini
 share/obs/obs-plugins/obs-outputs/locale/bg-BG.ini
 share/obs/obs-plugins/obs-outputs/locale/bn-BD.ini
 share/obs/obs-plugins/obs-outputs/locale/ca-ES.ini
@@ -787,6 +807,7 @@ share/obs/obs-plugins/obs-outputs/locale/is-IS.ini
 share/obs/obs-plugins/obs-outputs/locale/it-IT.ini
 share/obs/obs-plugins/obs-outputs/locale/ja-JP.ini
 share/obs/obs-plugins/obs-outputs/locale/ka-GE.ini
+share/obs/obs-plugins/obs-outputs/locale/kaa.ini
 share/obs/obs-plugins/obs-outputs/locale/kab-KAB.ini
 share/obs/obs-plugins/obs-outputs/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-outputs/locale/ko-KR.ini
@@ -811,6 +832,7 @@ share/obs/obs-plugins/obs-outputs/locale/ta-IN.ini
 share/obs/obs-plugins/obs-outputs/locale/th-TH.ini
 share/obs/obs-plugins/obs-outputs/locale/tl-PH.ini
 share/obs/obs-plugins/obs-outputs/locale/tr-TR.ini
+share/obs/obs-plugins/obs-outputs/locale/ug-CN.ini
 share/obs/obs-plugins/obs-outputs/locale/uk-UA.ini
 share/obs/obs-plugins/obs-outputs/locale/ur-PK.ini
 share/obs/obs-plugins/obs-outputs/locale/vi-VN.ini
@@ -821,6 +843,7 @@ share/obs/obs-plugins/obs-transitions/fade_transition.effect
 share/obs/obs-plugins/obs-transitions/locale/af-ZA.ini
 share/obs/obs-plugins/obs-transitions/locale/ar-SA.ini
 share/obs/obs-plugins/obs-transitions/locale/ba-RU.ini
+share/obs/obs-plugins/obs-transitions/locale/be-BY.ini
 share/obs/obs-plugins/obs-transitions/locale/bg-BG.ini
 share/obs/obs-plugins/obs-transitions/locale/bn-BD.ini
 share/obs/obs-plugins/obs-transitions/locale/ca-ES.ini
@@ -849,6 +872,7 @@ share/obs/obs-plugins/obs-transitions/locale/id-ID.ini
 share/obs/obs-plugins/obs-transitions/locale/it-IT.ini
 share/obs/obs-plugins/obs-transitions/locale/ja-JP.ini
 share/obs/obs-plugins/obs-transitions/locale/ka-GE.ini
+share/obs/obs-plugins/obs-transitions/locale/kaa.ini
 share/obs/obs-plugins/obs-transitions/locale/kab-KAB.ini
 share/obs/obs-plugins/obs-transitions/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-transitions/locale/ko-KR.ini
@@ -870,6 +894,7 @@ share/obs/obs-plugins/obs-transitions/locale/szl-PL.ini
 share/obs/obs-plugins/obs-transitions/locale/ta-IN.ini
 share/obs/obs-plugins/obs-transitions/locale/tl-PH.ini
 share/obs/obs-plugins/obs-transitions/locale/tr-TR.ini
+share/obs/obs-plugins/obs-transitions/locale/ug-CN.ini
 share/obs/obs-plugins/obs-transitions/locale/uk-UA.ini
 share/obs/obs-plugins/obs-transitions/locale/vi-VN.ini
 share/obs/obs-plugins/obs-transitions/locale/zh-CN.ini
@@ -914,9 +939,11 @@ share/obs/obs-plugins/obs-transitions/slide_transition.effect
 share/obs/obs-plugins/obs-transitions/stinger_matte_transition.effect
 share/obs/obs-plugins/obs-transitions/swipe_transition.effect
 share/obs/obs-plugins/obs-webrtc/locale/af-ZA.ini
+share/obs/obs-plugins/obs-webrtc/locale/be-BY.ini
 share/obs/obs-plugins/obs-webrtc/locale/bg-BG.ini
 share/obs/obs-plugins/obs-webrtc/locale/ca-ES.ini
 share/obs/obs-plugins/obs-webrtc/locale/cs-CZ.ini
+share/obs/obs-plugins/obs-webrtc/locale/da-DK.ini
 share/obs/obs-plugins/obs-webrtc/locale/de-DE.ini
 share/obs/obs-plugins/obs-webrtc/locale/el-GR.ini
 share/obs/obs-plugins/obs-webrtc/locale/en-GB.ini
@@ -935,6 +962,7 @@ share/obs/obs-plugins/obs-webrtc/locale/id-ID.ini
 share/obs/obs-plugins/obs-webrtc/locale/it-IT.ini
 share/obs/obs-plugins/obs-webrtc/locale/ja-JP.ini
 share/obs/obs-plugins/obs-webrtc/locale/ka-GE.ini
+share/obs/obs-plugins/obs-webrtc/locale/kaa.ini
 share/obs/obs-plugins/obs-webrtc/locale/ko-KR.ini
 share/obs/obs-plugins/obs-webrtc/locale/ms-MY.ini
 share/obs/obs-plugins/obs-webrtc/locale/nb-NO.ini
@@ -948,23 +976,32 @@ share/obs/obs-plugins/obs-webrtc/locale/sk-SK.ini
 share/obs/obs-plugins/obs-webrtc/locale/sl-SI.ini
 share/obs/obs-plugins/obs-webrtc/locale/sv-SE.ini
 share/obs/obs-plugins/obs-webrtc/locale/tr-TR.ini
+share/obs/obs-plugins/obs-webrtc/locale/ug-CN.ini
 share/obs/obs-plugins/obs-webrtc/locale/uk-UA.ini
 share/obs/obs-plugins/obs-webrtc/locale/vi-VN.ini
 share/obs/obs-plugins/obs-webrtc/locale/zh-CN.ini
 share/obs/obs-plugins/obs-webrtc/locale/zh-TW.ini
+share/obs/obs-plugins/obs-websocket/locale/af-ZA.ini
 share/obs/obs-plugins/obs-websocket/locale/ar-SA.ini
+share/obs/obs-plugins/obs-websocket/locale/be-BY.ini
 share/obs/obs-plugins/obs-websocket/locale/ca-ES.ini
 share/obs/obs-plugins/obs-websocket/locale/cs-CZ.ini
 share/obs/obs-plugins/obs-websocket/locale/da-DK.ini
 share/obs/obs-plugins/obs-websocket/locale/de-DE.ini
+share/obs/obs-plugins/obs-websocket/locale/el-GR.ini
+share/obs/obs-plugins/obs-websocket/locale/en-GB.ini
 share/obs/obs-plugins/obs-websocket/locale/en-US.ini
 share/obs/obs-plugins/obs-websocket/locale/es-ES.ini
 share/obs/obs-plugins/obs-websocket/locale/et-EE.ini
+share/obs/obs-plugins/obs-websocket/locale/eu-ES.ini
 share/obs/obs-plugins/obs-websocket/locale/fa-IR.ini
 share/obs/obs-plugins/obs-websocket/locale/fi-FI.ini
+share/obs/obs-plugins/obs-websocket/locale/fil-PH.ini
 share/obs/obs-plugins/obs-websocket/locale/fr-FR.ini
+share/obs/obs-plugins/obs-websocket/locale/gl-ES.ini
 share/obs/obs-plugins/obs-websocket/locale/he-IL.ini
 share/obs/obs-plugins/obs-websocket/locale/hi-IN.ini
+share/obs/obs-plugins/obs-websocket/locale/hr-HR.ini
 share/obs/obs-plugins/obs-websocket/locale/hu-HU.ini
 share/obs/obs-plugins/obs-websocket/locale/hy-AM.ini
 share/obs/obs-plugins/obs-websocket/locale/id-ID.ini
@@ -974,6 +1011,7 @@ share/obs/obs-plugins/obs-websocket/locale/ka-GE.ini
 share/obs/obs-plugins/obs-websocket/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-websocket/locale/ko-KR.ini
 share/obs/obs-plugins/obs-websocket/locale/ms-MY.ini
+share/obs/obs-plugins/obs-websocket/locale/nb-NO.ini
 share/obs/obs-plugins/obs-websocket/locale/nl-NL.ini
 share/obs/obs-plugins/obs-websocket/locale/pl-PL.ini
 share/obs/obs-plugins/obs-websocket/locale/pt-BR.ini
@@ -985,7 +1023,9 @@ share/obs/obs-plugins/obs-websocket/locale/sk-SK.ini
 share/obs/obs-plugins/obs-websocket/locale/sl-SI.ini
 share/obs/obs-plugins/obs-websocket/locale/sv-SE.ini
 share/obs/obs-plugins/obs-websocket/locale/tr-TR.ini
+share/obs/obs-plugins/obs-websocket/locale/ug-CN.ini
 share/obs/obs-plugins/obs-websocket/locale/uk-UA.ini
+share/obs/obs-plugins/obs-websocket/locale/vi-VN.ini
 share/obs/obs-plugins/obs-websocket/locale/zh-CN.ini
 share/obs/obs-plugins/obs-websocket/locale/zh-TW.ini
 share/obs/obs-plugins/obs-x264/locale/af-ZA.ini
@@ -1020,6 +1060,7 @@ share/obs/obs-plugins/obs-x264/locale/id-ID.ini
 share/obs/obs-plugins/obs-x264/locale/it-IT.ini
 share/obs/obs-plugins/obs-x264/locale/ja-JP.ini
 share/obs/obs-plugins/obs-x264/locale/ka-GE.ini
+share/obs/obs-plugins/obs-x264/locale/kaa.ini
 share/obs/obs-plugins/obs-x264/locale/kab-KAB.ini
 share/obs/obs-plugins/obs-x264/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-x264/locale/ko-KR.ini
@@ -1046,6 +1087,7 @@ share/obs/obs-plugins/obs-x264/locale/ta-IN.ini
 share/obs/obs-plugins/obs-x264/locale/th-TH.ini
 share/obs/obs-plugins/obs-x264/locale/tl-PH.ini
 share/obs/obs-plugins/obs-x264/locale/tr-TR.ini
+share/obs/obs-plugins/obs-x264/locale/ug-CN.ini
 share/obs/obs-plugins/obs-x264/locale/uk-UA.ini
 share/obs/obs-plugins/obs-x264/locale/ur-PK.ini
 share/obs/obs-plugins/obs-x264/locale/vi-VN.ini
@@ -1080,6 +1122,7 @@ share/obs/obs-plugins/oss-audio/locale/id-ID.ini
 share/obs/obs-plugins/oss-audio/locale/it-IT.ini
 share/obs/obs-plugins/oss-audio/locale/ja-JP.ini
 share/obs/obs-plugins/oss-audio/locale/ka-GE.ini
+share/obs/obs-plugins/oss-audio/locale/kaa.ini
 share/obs/obs-plugins/oss-audio/locale/kab-KAB.ini
 share/obs/obs-plugins/oss-audio/locale/kmr-TR.ini
 share/obs/obs-plugins/oss-audio/locale/ko-KR.ini
@@ -1098,6 +1141,7 @@ share/obs/obs-plugins/oss-audio/locale/sl-SI.ini
 share/obs/obs-plugins/oss-audio/locale/sv-SE.ini
 share/obs/obs-plugins/oss-audio/locale/ta-IN.ini
 share/obs/obs-plugins/oss-audio/locale/tr-TR.ini
+share/obs/obs-plugins/oss-audio/locale/ug-CN.ini
 share/obs/obs-plugins/oss-audio/locale/uk-UA.ini
 share/obs/obs-plugins/oss-audio/locale/ur-PK.ini
 share/obs/obs-plugins/oss-audio/locale/vi-VN.ini
@@ -1135,6 +1179,7 @@ share/obs/obs-plugins/rtmp-services/locale/id-ID.ini
 share/obs/obs-plugins/rtmp-services/locale/it-IT.ini
 share/obs/obs-plugins/rtmp-services/locale/ja-JP.ini
 share/obs/obs-plugins/rtmp-services/locale/ka-GE.ini
+share/obs/obs-plugins/rtmp-services/locale/kaa.ini
 share/obs/obs-plugins/rtmp-services/locale/kab-KAB.ini
 share/obs/obs-plugins/rtmp-services/locale/kmr-TR.ini
 share/obs/obs-plugins/rtmp-services/locale/ko-KR.ini
@@ -1159,6 +1204,7 @@ share/obs/obs-plugins/rtmp-services/locale/ta-IN.ini
 share/obs/obs-plugins/rtmp-services/locale/th-TH.ini
 share/obs/obs-plugins/rtmp-services/locale/tl-PH.ini
 share/obs/obs-plugins/rtmp-services/locale/tr-TR.ini
+share/obs/obs-plugins/rtmp-services/locale/ug-CN.ini
 share/obs/obs-plugins/rtmp-services/locale/uk-UA.ini
 share/obs/obs-plugins/rtmp-services/locale/ur-PK.ini
 share/obs/obs-plugins/rtmp-services/locale/vi-VN.ini
@@ -1196,6 +1242,7 @@ share/obs/obs-plugins/rtmp-services/services.json
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/it-IT.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/ja-JP.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/ka-GE.ini
+%%SNDIO%%share/obs/obs-plugins/sndio/locale/kaa.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/kab-KAB.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/kmr-TR.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/ko-KR.ini
@@ -1215,6 +1262,7 @@ share/obs/obs-plugins/rtmp-services/services.json
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/szl-PL.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/th-TH.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/tr-TR.ini
+%%SNDIO%%share/obs/obs-plugins/sndio/locale/ug-CN.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/uk-UA.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/vi-VN.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/zh-CN.ini
@@ -1251,6 +1299,7 @@ share/obs/obs-plugins/text-freetype2/locale/id-ID.ini
 share/obs/obs-plugins/text-freetype2/locale/it-IT.ini
 share/obs/obs-plugins/text-freetype2/locale/ja-JP.ini
 share/obs/obs-plugins/text-freetype2/locale/ka-GE.ini
+share/obs/obs-plugins/text-freetype2/locale/kaa.ini
 share/obs/obs-plugins/text-freetype2/locale/kab-KAB.ini
 share/obs/obs-plugins/text-freetype2/locale/kmr-TR.ini
 share/obs/obs-plugins/text-freetype2/locale/ko-KR.ini
@@ -1275,6 +1324,7 @@ share/obs/obs-plugins/text-freetype2/locale/ta-IN.ini
 share/obs/obs-plugins/text-freetype2/locale/th-TH.ini
 share/obs/obs-plugins/text-freetype2/locale/tl-PH.ini
 share/obs/obs-plugins/text-freetype2/locale/tr-TR.ini
+share/obs/obs-plugins/text-freetype2/locale/ug-CN.ini
 share/obs/obs-plugins/text-freetype2/locale/uk-UA.ini
 share/obs/obs-plugins/text-freetype2/locale/vi-VN.ini
 share/obs/obs-plugins/text-freetype2/locale/zh-CN.ini
@@ -1311,6 +1361,7 @@ share/obs/obs-plugins/text-freetype2/text_default.effect
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/it-IT.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/ja-JP.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/ka-GE.ini
+%%VLC%%share/obs/obs-plugins/vlc-video/locale/kaa.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/kab-KAB.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/kmr-TR.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/ko-KR.ini
@@ -1335,6 +1386,7 @@ share/obs/obs-plugins/text-freetype2/text_default.effect
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/ta-IN.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/tl-PH.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/tr-TR.ini
+%%VLC%%share/obs/obs-plugins/vlc-video/locale/ug-CN.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/uk-UA.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/vi-VN.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/zh-CN.ini
@@ -1380,6 +1432,7 @@ share/obs/obs-studio/locale/is-IS.ini
 share/obs/obs-studio/locale/it-IT.ini
 share/obs/obs-studio/locale/ja-JP.ini
 share/obs/obs-studio/locale/ka-GE.ini
+share/obs/obs-studio/locale/kaa.ini
 share/obs/obs-studio/locale/kab-KAB.ini
 share/obs/obs-studio/locale/kmr-TR.ini
 share/obs/obs-studio/locale/ko-KR.ini
@@ -1411,6 +1464,7 @@ share/obs/obs-studio/locale/te-IN.ini
 share/obs/obs-studio/locale/th-TH.ini
 share/obs/obs-studio/locale/tl-PH.ini
 share/obs/obs-studio/locale/tr-TR.ini
+share/obs/obs-studio/locale/ug-CN.ini
 share/obs/obs-studio/locale/uk-UA.ini
 share/obs/obs-studio/locale/ur-PK.ini
 share/obs/obs-studio/locale/vi-VN.ini
