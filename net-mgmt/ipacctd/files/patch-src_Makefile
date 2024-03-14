@@ -1,0 +1,10 @@
+--- src/Makefile.orig	2024-03-14 12:52:32 UTC
++++ src/Makefile
+@@ -8,6 +8,6 @@ MAN=		ipacctd.8
+ CFLAGS+=	-g
+ 
+ MAN=		ipacctd.8
+-MANDIR=		${PREFIX}/man/man
++MANDIR=		${PREFIX}/share/man/man
+ 
+ .include <bsd.prog.mk>
