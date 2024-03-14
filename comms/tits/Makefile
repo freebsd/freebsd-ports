@@ -1,5 +1,6 @@
 PORTNAME=	tits
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
@@ -11,7 +12,7 @@ LICENSE=	BSD4CLAUSE
 USES=		uidfix
 USE_RC_SUBR=	tits
 
-MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
+MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/share/man/man
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/tits.8
