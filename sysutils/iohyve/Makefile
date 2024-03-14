@@ -1,5 +1,6 @@
 PORTNAME=	iohyve
 PORTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,6 +16,8 @@ GH_ACCOUNT=	pr1ntf
 NO_ARCH=	yes
 
 post-patch:
-	${REINPLACE_CMD} 's%\$$(PREFIX)%${STAGEDIR}/$$(PREFIX)%g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		's%\$$(PREFIX)%${STAGEDIR}/$$(PREFIX)%g ; \
+		 s%/man/man%/share/man/man%' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
