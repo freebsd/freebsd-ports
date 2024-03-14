@@ -1,7 +1,6 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.1
-PORTREVISION=	2
+DISTVERSION=	1.18.2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,13 +26,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.11 \
+		anstream-0.6.12 \
 		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
 		anyhow-1.0.79 \
-		arc-swap-1.6.0 \
+		arc-swap-1.7.0 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.4 \
 		async-trait-0.1.77 \
@@ -41,6 +40,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-0.3.69 \
 		base16ct-0.2.0 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		base64ct-1.6.0 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -59,6 +59,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		ccm-0.5.0 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		chrono-0.4.34 \
@@ -96,7 +97,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		encoding_rs-0.8.33 \
 		enum-as-inner-0.6.0 \
 		env_filter-0.1.0 \
-		env_logger-0.11.2 \
+		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		etherparse-0.14.2 \
@@ -146,7 +147,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		hyper-0.14.28 \
-		hyper-1.1.0 \
+		hyper-1.2.0 \
 		hyper-rustls-0.24.2 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.60 \
@@ -177,7 +178,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		log-mdc-0.1.0 \
 		log4rs-1.3.0 \
 		lru-cache-0.1.2 \
@@ -192,7 +193,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.10 \
 		native-tls-0.2.11 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		notify-6.1.1 \
 		nu-ansi-term-0.46.0 \
 		num-conv-0.1.0 \
@@ -219,8 +220,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_derive-2.7.7 \
 		pest_generator-2.7.7 \
 		pest_meta-2.7.7 \
-		pin-project-1.1.4 \
-		pin-project-internal-1.1.4 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
@@ -249,10 +250,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.5 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.24 \
+		reqwest-0.11.26 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
-		ring-0.17.7 \
+		ring-0.17.8 \
 		ring-compat-0.8.0 \
 		rpassword-7.3.1 \
 		rpmalloc-0.2.2 \
@@ -282,7 +283,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.196 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.196 \
-		serde_json-1.0.113 \
+		serde_json-1.0.114 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.31 \
 		sha1-0.10.6 \
@@ -296,9 +297,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sm4-0.5.1 \
 		smallvec-1.13.1 \
 		smoltcp-0.11.0 \
-		snmalloc-rs-0.3.4 \
-		snmalloc-sys-0.3.4 \
-		socket2-0.5.5 \
+		snmalloc-rs-0.3.5 \
+		snmalloc-sys-0.3.5 \
+		socket2-0.5.6 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		spki-0.7.3 \
