@@ -1,6 +1,6 @@
 PORTNAME=	tdl
 PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
 
@@ -17,7 +17,8 @@ USES=		readline
 
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=--prefix=${PREFIX} --readline-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${PREFIX}/share/man \
+		--readline-dir=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-R\$$/-Wl,-rpath,$$/' ${WRKSRC}/configure
