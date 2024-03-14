@@ -69,10 +69,7 @@ LIBSDIR=	${WRKSRC}/bin/libs/native/freebsd/*/org/lwjgl
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-_ARCH_DIR=		x64
-.elif ${ARCH} == i386
-_ARCH_DIR=		x86
+.if ${ARCH} == i386
 MAKE_ENV+=	ANT_OPTS=-Xmx2G
 .endif
 
