@@ -43,7 +43,7 @@
 %%ALLOP%%libexec/openldap/allop.so
 %%ALLOP%%libexec/openldap/allop.so.0
 %%ALLOP%%libexec/openldap/allop.so.0.0.0
-%%ALLOP%%man/man5/slapo-allop.5.gz
+%%ALLOP%%share/man/man5/slapo-allop.5.gz
 %%ARGON2%%libexec/openldap/argon2-%%OPENLDAP_MAJOR%%.so.0
 %%ARGON2%%libexec/openldap/argon2-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%ARGON2%%libexec/openldap/argon2.la
@@ -68,7 +68,7 @@
 %%CLOAK%%libexec/openldap/cloak.so
 %%CLOAK%%libexec/openldap/cloak.so.0
 %%CLOAK%%libexec/openldap/cloak.so.0.0.0
-%%CLOAK%%man/man5/slapo-cloak.5.gz
+%%CLOAK%%share/man/man5/slapo-cloak.5.gz
 %%COLLECT%%libexec/openldap/collect-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%COLLECT%%libexec/openldap/collect-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%COLLECT%%libexec/openldap/collect.la
@@ -105,7 +105,7 @@
 %%EMPTYDS%%libexec/openldap/emptyds.so
 %%EMPTYDS%%libexec/openldap/emptyds.so.0
 %%EMPTYDS%%libexec/openldap/emptyds.so.0.0.0
-%%EMPTYDS%%man/man5/slapo-emptyds.5.gz
+%%EMPTYDS%%share/man/man5/slapo-emptyds.5.gz
 %%HOMEDIR%%libexec/openldap/homedir-%%OPENLDAP_MAJOR%%.so.0
 %%HOMEDIR%%libexec/openldap/homedir-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%HOMEDIR%%libexec/openldap/homedir.la
@@ -114,12 +114,12 @@
 %%LASTBIND%%libexec/openldap/lastbind.so
 %%LASTBIND%%libexec/openldap/lastbind.so.0
 %%LASTBIND%%libexec/openldap/lastbind.so.0.0.0
-%%LASTBIND%%man/man5/slapo-lastbind.5.gz
+%%LASTBIND%%share/man/man5/slapo-lastbind.5.gz
 %%LASTMOD%%libexec/openldap/lastmod.la
 %%LASTMOD%%libexec/openldap/lastmod.so
 %%LASTMOD%%libexec/openldap/lastmod.so.0
 %%LASTMOD%%libexec/openldap/lastmod.so.0.0.0
-%%LASTMOD%%man/man5/slapo-lastmod.5.gz
+%%LASTMOD%%share/man/man5/slapo-lastmod.5.gz
 %%LLOADD%%libexec/%%PORTNAME%%/lloadd-%%OPENLDAP_MAJOR%%.so.0
 %%LLOADD%%libexec/%%PORTNAME%%/lloadd-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%LLOADD%%libexec/%%PORTNAME%%/lloadd.la
@@ -132,7 +132,7 @@
 %%NOPS%%libexec/openldap/nops.so
 %%NOPS%%libexec/openldap/nops.so.0
 %%NOPS%%libexec/openldap/nops.so.0.0.0
-%%NOPS%%man/man5/slapo-nops.5.gz
+%%NOPS%%share/man/man5/slapo-nops.5.gz
 %%OTP%%libexec/openldap/otp-%%OPENLDAP_MAJOR%%.so.0
 %%OTP%%libexec/openldap/otp-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%OTP%%libexec/openldap/otp.la
@@ -145,7 +145,7 @@
 %%PBKDF2%%libexec/openldap/pw-pbkdf2.so
 %%PBKDF2%%libexec/openldap/pw-pbkdf2.so.0
 %%PBKDF2%%libexec/openldap/pw-pbkdf2.so.0.0.0
-%%PBKDF2%%man/man5/slapd-pw-pbkdf2.5.gz
+%%PBKDF2%%share/man/man5/slapd-pw-pbkdf2.5.gz
 %%PERL%%libexec/openldap/back_perl-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%PERL%%libexec/openldap/back_perl-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%PERL%%libexec/openldap/back_perl.la
@@ -182,7 +182,7 @@
 %%SHA2%%libexec/openldap/pw-sha2.so
 %%SHA2%%libexec/openldap/pw-sha2.so.0
 %%SHA2%%libexec/openldap/pw-sha2.so.0.0.0
-%%SHA2%%man/man5/slapd-pw-sha2.5.gz
+%%SHA2%%share/man/man5/slapd-pw-sha2.5.gz
 %%SLAPI%%lib/libslapi-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%SLAPI%%lib/libslapi-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%SLAPI%%lib/libslapi.a
@@ -192,7 +192,7 @@
 %%SMBPWD%%libexec/openldap/smbk5pwd.so
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0.0.0
-%%SMBPWD%%man/man5/slapo-smbk5pwd.5.gz
+%%SMBPWD%%share/man/man5/slapo-smbk5pwd.5.gz
 %%SOCK%%libexec/openldap/back_sock-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%SOCK%%libexec/openldap/back_sock-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%SOCK%%libexec/openldap/back_sock.la
