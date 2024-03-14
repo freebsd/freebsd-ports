@@ -265,6 +265,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/lib/apfloat-1.10.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/lib/archunit-1.2.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/lib/freeplane-archunit-extension-0.0.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/lib/gson-2.10.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/lib/jgrapht-core-1.5.2.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.codeexplorer/lib/jheaps-0.14.jar
