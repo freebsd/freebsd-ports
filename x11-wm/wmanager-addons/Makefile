@@ -1,5 +1,6 @@
 PORTNAME=	wmanager-addons
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://devel.ringlet.net/x11/wmanager-addons/
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		perl5 uidfix
 USE_PERL5=	run
 NO_ARCH=	yes
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man/man"
 
 OPTIONS_DEFINE=	DOCS
 
