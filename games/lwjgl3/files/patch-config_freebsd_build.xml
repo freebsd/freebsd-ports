@@ -1,0 +1,23 @@
+--- config/freebsd/build.xml.orig	2023-12-18 14:22:59 UTC
++++ config/freebsd/build.xml
+@@ -159,16 +159,18 @@
+                     <include name="${module.lwjgl}/jawt/src/generated/c/*.c" if:true="${binding.jawt}"/>
+                 </fileset>
+             </source>
+-            <beforeLink>
++            <beforeLink unless:true="${use.libffi.so}">
+                 <parallel threadsPerProcessor="2" failonany="true" unless:set="lib-dependencies-uptodate">
+                     <update-dependency module="core" artifact="core/libffi.a"/>
+                 </parallel>
+             </beforeLink>
+             <link>
+-                <fileset dir="${lib.native}/org/lwjgl">
++                <fileset dir="${lib.native}/org/lwjgl" unless:true="${use.libffi.so}">
+                     <include name="libffi.a"/>
+                 </fileset>
+                 <arg value="-ldl"/>
++                <arg value="-lffi" if:true="${use.libffi.so}"/>
++                <arg value="-L${libffi.path}" if:set="libffi.path"/>
+             </link>
+         </build>
+ 

@@ -602,6 +602,7 @@
     SUBDIR += lugaru
     SUBDIR += luola
     SUBDIR += lwjgl
+    SUBDIR += lwjgl3
     SUBDIR += macopix
     SUBDIR += madbomber
     SUBDIR += maelstrom
