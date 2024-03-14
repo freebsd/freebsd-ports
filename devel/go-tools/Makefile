@@ -1,6 +1,6 @@
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.19.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
@@ -55,8 +55,6 @@ OPTIONS_DEFINE=	RARE
 RARE_DESC=	install rarely used tools
 RARE_VARS=	GO_TARGET+=" \
 		./cmd/auth/authtest \
-		./cmd/benchcmp \
-		./cmd/getgo \
-		./cmd/getgo/server"
+		./cmd/benchcmp
 
 .include <bsd.port.mk>
