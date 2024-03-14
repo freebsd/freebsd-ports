@@ -1,7 +1,7 @@
 bin/xtexsh
 etc/xtexshrc
-man/man1/xtexsh.1.gz
 share/applications/xtexsh.desktop
 share/icons/locolor/16x16/apps/xtexsh.png
 share/icons/locolor/32x32/apps/xtexsh.png
+share/man/man1/xtexsh.1.gz
 share/pixmaps/xtexsh.png

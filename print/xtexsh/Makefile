@@ -1,6 +1,6 @@
 PORTNAME=	xtexsh
 DISTVERSION=	1.4-2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://www.mat.univie.ac.at/~gerald/ftp/xtexsh/
 
@@ -29,7 +29,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xtexsh ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xtexsh.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xtexsh.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/xtexshrc ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.desktop ${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/locolor/16x16/apps
