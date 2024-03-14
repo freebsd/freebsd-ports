@@ -1,5 +1,5 @@
---- cargo-crates/ring-0.17.6/src/cpu/arm.rs.orig	1973-11-29 21:33:09 UTC
-+++ cargo-crates/ring-0.17.6/src/cpu/arm.rs
+--- cargo-crates/ring-0.17.7/src/cpu/arm.rs.orig	1973-11-29 21:33:09 UTC
++++ cargo-crates/ring-0.17.7/src/cpu/arm.rs
 @@ -26,29 +26,59 @@
  // detection.
  
@@ -61,7 +61,7 @@
      // We assume NEON is available on AARCH64 because it is a required
      // feature.
      #[cfg(target_arch = "aarch64")]
-@@ -67,11 +97,26 @@ fn detect_features() -> u32 {
+@@ -67,12 +97,27 @@ fn detect_features() -> u32 {
          #[cfg(target_arch = "arm")]
          const OFFSET: c_ulong = 0;
  
@@ -74,7 +74,7 @@
              const AT_HWCAP2: c_ulong = 26;
              unsafe { getauxval(AT_HWCAP2) }
          };
-+
+ 
 +        #[cfg(target_os = "freebsd")]
 +        {
 +            const AT_HWCAP2: c_int = 26;
@@ -86,6 +86,23 @@
 +                );
 +            };
 +        }
- 
++
          const HWCAP_AES: c_ulong = 1 << 0 + OFFSET;
          const HWCAP_PMULL: c_ulong = 1 << 1 + OFFSET;
+         const HWCAP_SHA2: c_ulong = 1 << 3 + OFFSET;
+@@ -156,6 +201,7 @@ fn detect_features() -> u32 {
+ #[cfg(all(
+     any(target_arch = "aarch64", target_arch = "arm"),
+     not(any(
++        target_os = "freebsd",
+         target_os = "android",
+         target_os = "fuchsia",
+         all(target_os = "linux", not(target_env = "uclibc")),
+@@ -216,6 +262,7 @@ impl Feature {
+ 
+         #[cfg(all(
+             any(
++                target_os = "freebsd",
+                 target_os = "android",
+                 target_os = "fuchsia",
+                 all(target_os = "linux", not(target_env = "uclibc")),
