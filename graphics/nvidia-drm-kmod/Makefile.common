@@ -6,6 +6,7 @@ WWW=		https://www.nvidia.com/object/unix.html
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${NVIDIA_DISTVERSION}:nvidia \
 				https://codeload.github.com/freebsd/drm-kmod/tar.gz/${DRM_KMOD_GH_TAGNAME}?dummy=/:drm
 DISTVERSION?=   ${NVIDIA_DISTVERSION}
+PORTREVISION=	1
 DISTFILES=		NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}${EXTRACT_SUFX}:nvidia \
 				freebsd-drm-kmod-${DRM_KMOD_GH_TAGNAME}_GH0.tar.gz:drm
 
