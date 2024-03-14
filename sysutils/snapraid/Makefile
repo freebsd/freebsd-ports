@@ -1,5 +1,6 @@
 PORTNAME=	snapraid
 DISTVERSION=	12.3
+PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	https://github.com/amadvance/snapraid/releases/download/v${DISTVERSION}/
 
@@ -11,10 +12,11 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/snapraid \
-		man/man1/snapraid.1.gz \
+		share/man/man1/snapraid.1.gz \
 		etc/snapraid.conf.sample
 
 post-install:
