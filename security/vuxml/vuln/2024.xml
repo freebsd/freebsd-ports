@@ -1,3 +1,36 @@
+  <vuln vid="49dd9362-4473-48ae-8fac-e1b69db2dedf">
+    <topic>electron{27,28} -- Out of bounds memory access in V8</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.6</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.6">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-2173.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2173</cvename>
+      <url>https://github.com/advisories/GHSA-6hhg-hj7x-7qv8</url>
+    </references>
+    <dates>
+      <discovery>2024-03-13</discovery>
+      <entry>2024-03-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6dd9d93-e09b-11ee-92fc-1c697a616631">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
