@@ -1,7 +1,7 @@
 {
-  "name": "@bitwarden/exporter",
+  "name": "@bitwarden/vault-export-core",
   "version": "0.0.0",
-  "description": "Home for all Bitwarden exporters.",
+  "description": "Home for all Bitwarden vault exporters.",
   "keywords": [
     "bitwarden"
   ],
@@ -18,6 +18,6 @@
     "build:watch": "npm run clean && tsc -watch"
   },
   "dependencies": {
-    "@bitwarden/common": "file:../common"
+    "@bitwarden/common": "file:../../../../common"
   }
 }
