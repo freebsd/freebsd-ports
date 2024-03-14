@@ -90,7 +90,6 @@ libexec/bsdconfig/include/network_device.hlp
 libexec/bsdconfig/include/options.hlp
 libexec/bsdconfig/include/tcp.hlp
 libexec/bsdconfig/include/usage.hlp
-man/man8/bsdconfig.8.gz
 sbin/bsdconfig
 %%DATADIR%%/common.subr
 %%DATADIR%%/device.subr
@@ -139,3 +138,4 @@ sbin/bsdconfig
 %%DATADIR%%/usermgmt/group_input.subr
 %%DATADIR%%/usermgmt/user_input.subr
 %%DATADIR%%/variable.subr
+share/man/man8/bsdconfig.8.gz
