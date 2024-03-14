@@ -1,6 +1,6 @@
 PORTNAME=	libpdel
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel net www
 MASTER_SITES=	SF/libpdel/libpdel-combined/${PORTVERSION}/
 
