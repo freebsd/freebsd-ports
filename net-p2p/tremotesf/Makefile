@@ -4,7 +4,6 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	vsasjason@gmail.com
 COMMENT=	Remote GUI for transmission-daemon
-WWW=		https://github.com/equeim/tremotesf2
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
