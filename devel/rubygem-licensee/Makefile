@@ -1,5 +1,5 @@
 PORTNAME=	licensee
-PORTVERSION=	9.16.1
+PORTVERSION=	9.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/benbalter/licensee
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-dotenv2>=2.0<3:misc/rubygem-dotenv2 \
-		rubygem-octokit6>=4.20<9:net/rubygem-octokit6 \
+RUN_DEPENDS=	rubygem-dotenv2>=2.0<4:misc/rubygem-dotenv2 \
+		rubygem-octokit>=4.20<9:net/rubygem-octokit \
 		rubygem-reverse_markdown>=1.0<3:textproc/rubygem-reverse_markdown \
 		rubygem-rugged>=0.24<2.0:devel/rubygem-rugged \
 		rubygem-thor>=0.19<2.0:devel/rubygem-thor
