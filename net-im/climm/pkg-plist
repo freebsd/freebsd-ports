@@ -1,7 +1,4 @@
 bin/climm
-man/man1/climm.1.gz
-man/man5/climmrc.5.gz
-man/man7/climmcmds.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.i18n
 %%PORTDOCS%%%%DOCSDIR%%/README.logformat
 %%PORTDOCS%%%%DOCSDIR%%/icq091.txt
@@ -35,3 +32,6 @@ man/man7/climmcmds.7.gz
 %%DATADIR%%/uk.i18n
 %%DATADIR%%/yu.i18n
 %%DATADIR%%/zh_CN.i18n
+share/man/man1/climm.1.gz
+share/man/man5/climmrc.5.gz
+share/man/man7/climmcmds.7.gz

@@ -1,6 +1,6 @@
 PORTNAME=	climm
 PORTVERSION=	0.7.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -77,9 +77,12 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/climm.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/climmrc.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/climmcmds.7 ${STAGEDIR}${PREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/doc/climm.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/climmrc.5 \
+		${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/climmcmds.7 \
+		${STAGEDIR}${PREFIX}/share/man/man7
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in i18n logformat png txt xpm
 	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${STAGEDIR}${DOCSDIR}
