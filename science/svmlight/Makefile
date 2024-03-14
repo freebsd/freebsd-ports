@@ -1,6 +1,6 @@
 PORTNAME=	svmlight
 PORTVERSION=	6.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://osmot.cs.cornell.edu/svm_light/v${PORTVERSION}/
 DISTNAME=	svm_light
@@ -13,6 +13,9 @@ LICENSE=	SVM-Light
 LICENSE_NAME=	SVM-Light license
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	# none
+
+DEPRECATED=	Unmaintained, last upstream release in 2008 and there are more modern alternatives
+EXPIRATION_DATE=2024-04-14
 
 USES=		gmake
 USE_LDCONFIG=	yes
