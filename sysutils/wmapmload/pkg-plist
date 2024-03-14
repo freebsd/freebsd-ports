@@ -3,4 +3,4 @@
 bin/wmapmload
 @mode
 @owner
-man/man1/wmapmload.1.gz
+share/man/man1/wmapmload.1.gz
