@@ -27,13 +27,8 @@ include/sqfs/xattr_writer.h
 lib/libsquashfs.a
 lib/libsquashfs.so
 lib/libsquashfs.so.1
-lib/libsquashfs.so.1.4.0
+lib/libsquashfs.so.1.4.1
 libdata/pkgconfig/libsquashfs1.pc
-%%TOOLS%%share/man/man1/gensquashfs.1.gz
-%%TOOLS%%share/man/man1/rdsquashfs.1.gz
-%%TOOLS%%share/man/man1/sqfs2tar.1.gz
-%%TOOLS%%share/man/man1/sqfsdiff.1.gz
-%%TOOLS%%share/man/man1/tar2sqfs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/architecture.md
@@ -42,3 +37,8 @@ libdata/pkgconfig/libsquashfs1.pc
 %%PORTDOCS%%%%DOCSDIR%%/format.adoc
 %%PORTDOCS%%%%DOCSDIR%%/mainpage.dox
 %%PORTDOCS%%%%DOCSDIR%%/parallelism.txt
+%%TOOLS%%share/man/man1/gensquashfs.1.gz
+%%TOOLS%%share/man/man1/rdsquashfs.1.gz
+%%TOOLS%%share/man/man1/sqfs2tar.1.gz
+%%TOOLS%%share/man/man1/sqfsdiff.1.gz
+%%TOOLS%%share/man/man1/tar2sqfs.1.gz

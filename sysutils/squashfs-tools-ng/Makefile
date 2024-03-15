@@ -1,6 +1,5 @@
 PORTNAME=	squashfs-tools-ng
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://infraroot.at/pub/squashfs/
 
