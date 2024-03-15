@@ -11,6 +11,9 @@ WWW=		https://github.com/IBBoard/cawbird
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	No longer developed due to Twitter changes
+EXPIRATION_DATE=	2024-03-31
+
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		liboauth.so:net/liboauth \
 		librest-0.7.so:devel/librest \
