@@ -1,13 +1,9 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.3.0
+DISTVERSION=	3.4.0
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	37792c0a37c811c0b100bf7aa0693283ca5aaa78.patch:-p1 # Fix a undeclared variable issue with NEON builds
-								   # https://github.com/FreeRDP/FreeRDP/pull/9950
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol

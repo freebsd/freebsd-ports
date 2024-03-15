@@ -51,6 +51,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/client/drdynvc.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/encomsp.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/file.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/geometry.h
+include/freerdp%%MAJORVERSION%%/freerdp/client/location.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/printer.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/rail.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/rdpei.h
