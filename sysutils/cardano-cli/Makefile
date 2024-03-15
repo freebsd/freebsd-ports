@@ -13,10 +13,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	i386
 
-USES=		cabal
+LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
+		libblst.so:security/blst
+
+USES=		autoreconf:build cabal gmake libtool pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	IntersectMBO
+
+GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium
+
+LIBSODIUM_HASH=	dbb48cce5429cb6585c9034f002568964f1ce567
+
+LIBS_PREFIX=	${WRKDIR}/libs_install
 
 USE_CABAL=	Diff-0.5_1 \
 		FailT-0.1.2.0 \
@@ -63,7 +72,7 @@ USE_CABAL=	Diff-0.5_1 \
 		bimap-0.5.0 \
 		bin-0.1.3_1 \
 		binary-orphans-1.0.4.1_3 \
-		bitvec-1.1.5.0 \
+		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
 		boring-0.2.1_1 \
 		brick-2.3.1 \
@@ -169,7 +178,6 @@ USE_CABAL=	Diff-0.5_1 \
 		fin-0.3_2 \
 		fingertree-0.1.5.0 \
 		flat-0.6 \
-		foldable1-classes-compat-0.1_4 \
 		foldl-1.4.15_1 \
 		formatting-7.2.0 \
 		foundation-0.0.30 \
@@ -189,7 +197,7 @@ USE_CABAL=	Diff-0.5_1 \
 		hashable-1.4.3.0_1 \
 		haskell-lexer-1.1.1 \
 		heapwords-0.1.0.2:chap \
-		hedgehog-1.4_3 \
+		hedgehog-1.4_4 \
 		hedgehog-extras-0.6.0.2 \
 		hedgehog-quickcheck-0.1.1_6 \
 		hourglass-0.2.12 \
@@ -297,7 +305,7 @@ USE_CABAL=	Diff-0.5_1 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.7.0_7 \
-		selective-0.6_1 \
+		selective-0.5 \
 		semialign-1.3_1 \
 		semigroupoids-6.0.0.1_1 \
 		semigroups-0.20 \
@@ -395,5 +403,15 @@ USE_CABAL=	Diff-0.5_1 \
 
 CABAL_PROJECT=		append
 CABAL_REPOSITORIES=	chap
+
+WITH_LTO=	yes
+
+pre-build:
+	@${MKDIR} ${PKGCONFIG_LINKDIR}
+
+	cd ${WRKSRC_sodium} && ./autogen.sh
+	cd ${WRKSRC_sodium} && ./configure --prefix=${LIBS_PREFIX} --with-pthreads --disable-shared
+	cd ${WRKSRC_sodium} && ${GMAKE} -j${MAKE_JOBS_NUMBER} && ${GMAKE} ${INSTALL_TARGET}
+	${MV} ${LIBS_PREFIX}/lib/pkgconfig/libsodium.pc ${PKGCONFIG_LINKDIR}
 
 .include <bsd.port.mk>
