@@ -104,6 +104,7 @@ CMAKE_BIN=	${LOCALBASE}/bin/cmake
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
 # Don't link against new libc++ as it's not necessary
+CXXFLAGS+=	-D_LIBCPP_HAS_NO_VERBOSE_ABORT_IN_LIBRARY
 #LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
 
 pre-configure:	bundled-libcxx
