@@ -1,6 +1,6 @@
---- ./Makefile.orig	2010-05-27 14:58:59.000000000 -0400
-+++ ./Makefile	2014-08-05 06:40:07.000000000 -0400
-@@ -7,7 +7,7 @@
+--- Makefile.orig	2010-05-27 18:58:59 UTC
++++ Makefile
+@@ -7,7 +7,7 @@ OS=LINUX
  
  # 2. edit dest dir prefix if you want....
  
@@ -9,7 +9,16 @@
  
  # 3. for programmers only: debugging in 64 bit Linux
  DEBUG=false
-@@ -43,7 +43,7 @@
+@@ -21,7 +21,7 @@ MANSEC='1'
+ 
+ BINDIR='$(PREFIX)/bin'
+ MANSEC='1'
+-MANDIR='$(PREFIX)/man/man$(MANSEC)'
++MANDIR='$(PREFIX)/share/man/man$(MANSEC)'
+ 
+ ASOURCES=e3.asm e3.h
+ AFLAGS = -w+orphan-labels -f elf
+@@ -43,7 +43,7 @@ else
  	chmod +x e3
  else
  	echo $(ASVER)
@@ -18,7 +27,7 @@
  	ld -s -o e3 e3.o
  	strip --remove-section .comment e3
  endif
-@@ -71,14 +71,14 @@
+@@ -71,14 +71,14 @@ install:	e3
  # -------------------------------------------------
  
  install:	e3
