@@ -1,5 +1,5 @@
 PORTNAME=	gh-md-toc
-DISTVERSION=	0.8.0
+DISTVERSION=	0.10.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	DtxdF@disroot.org
@@ -9,7 +9,8 @@ WWW=		https://github.com/ekalinin/github-markdown-toc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	curl>0:ftp/curl
+RUN_DEPENDS=	curl>0:ftp/curl \
+		jq>0:textproc/jq
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekalinin
@@ -21,7 +22,7 @@ PLIST_FILES=	bin/gh-md-toc
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gh-md-toc ${STAGEDIR}${PREFIX}/bin
