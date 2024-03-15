@@ -1,5 +1,5 @@
 diff --git external/libucl/uthash/uthash.h external/libucl/uthash/uthash.h
-index 9ed8bea4..4384ef6b 100644
+index 9ed8bea4d..4384ef6b1 100644
 --- external/libucl/uthash/uthash.h
 +++ external/libucl/uthash/uthash.h
 @@ -227,17 +227,17 @@ do {
@@ -24,7 +24,7 @@ index 9ed8bea4..4384ef6b 100644
                      _hd_hh_del->prev;                                            \
          }                                                                        \
 diff --git external/picosat/picosat.c external/picosat/picosat.c
-index a007afc9..88f9c099 100644
+index a007afc9b..88f9c099d 100644
 --- external/picosat/picosat.c
 +++ external/picosat/picosat.c
 @@ -145,7 +145,7 @@ IN THE SOFTWARE.
@@ -50,7 +50,7 @@ index a007afc9..88f9c099 100644
  #define AVERAGE(a,b) ((b) ? (((double)a) / (double)(b)) : 0.0)
  #define PERCENT(a,b) (100.0 * AVERAGE(a,b))
 diff --git external/sqlite/sqlite3.c external/sqlite/sqlite3.c
-index dd3b5c57..ba06efaa 100644
+index dd3b5c575..ba06efaae 100644
 --- external/sqlite/sqlite3.c
 +++ external/sqlite/sqlite3.c
 @@ -458,7 +458,7 @@ extern "C" {
@@ -589,8 +589,21 @@ index dd3b5c57..ba06efaa 100644
  }
  
  /*
+diff --git libpkg/Makefile.autosetup libpkg/Makefile.autosetup
+index d82eb9980..0d8df868d 100644
+--- libpkg/Makefile.autosetup
++++ libpkg/Makefile.autosetup
+@@ -125,7 +125,7 @@ LOCAL_LDFLAGS+=	-L$(top_builddir)/external/libmachista -lmachista_pic \
+ SRCS+=		pkg_macho.c
+ @else
+ SRCS+=		pkg_elf.c
+-LOCAL_LDFLAGS+=	-Wl,--version-script=$(top_srcdir)/libpkg/libpkg.ver \
++LOCAL_LDFLAGS+=	-Wl,--version-script=$(top_srcdir)/libpkg/libpkg.ver,--undefined-version \
+ @endif
+ 
+ @if libelf-internal
 diff --git libpkg/pkg.h.in libpkg/pkg.h.in
-index bb810323..49685e8d 100644
+index bb8103231..49685e8d9 100644
 --- libpkg/pkg.h.in
 +++ libpkg/pkg.h.in
 @@ -64,9 +64,14 @@ extern "C" {
@@ -612,7 +625,7 @@ index bb810323..49685e8d 100644
  
  /* Not supported under DragonFly */
 diff --git libpkg/pkg_config.c libpkg/pkg_config.c
-index a2d40d8f..78759284 100644
+index a2d40d8f9..787592847 100644
 --- libpkg/pkg_config.c
 +++ libpkg/pkg_config.c
 @@ -100,13 +100,13 @@ static struct config_entry c[] = {
@@ -641,7 +654,7 @@ index a2d40d8f..78759284 100644
  	},
  	{
 diff --git libpkg/pkg_elf.c libpkg/pkg_elf.c
-index 05512c36..5a69eb62 100644
+index 05512c369..5a69eb620 100644
 --- libpkg/pkg_elf.c
 +++ libpkg/pkg_elf.c
 @@ -183,6 +183,8 @@ shlib_valid_abi(const char *fpath, GElf_Ehdr *hdr, const char *abi)
@@ -827,7 +840,7 @@ index 05512c36..5a69eb62 100644
  #endif
  	case EM_PPC:
 diff --git libpkg/private/elf_tables.h libpkg/private/elf_tables.h
-index e69d43e2..5bc5dbd4 100644
+index e69d43e28..5bc5dbd4f 100644
 --- libpkg/private/elf_tables.h
 +++ libpkg/private/elf_tables.h
 @@ -98,6 +98,8 @@ static struct arch_trans machine_arch_translation[] = {
@@ -848,7 +861,7 @@ index e69d43e2..5bc5dbd4 100644
  
  	{ NULL, NULL }
 diff --git libpkg/private/pkg.h libpkg/private/pkg.h
-index 50b82ac8..e199b741 100644
+index 50b82ac8a..e199b7417 100644
 --- libpkg/private/pkg.h
 +++ libpkg/private/pkg.h
 @@ -34,6 +34,7 @@
