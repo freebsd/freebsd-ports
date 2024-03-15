@@ -13,22 +13,22 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe php:web,flavors shebangfix
-USE_PHP=	ctype dom fileinfo filter intl session simplexml \
-		tokenizer xml zip
+USE_PHP=	ctype dom fileinfo filter intl session simplexml tokenizer xml \
+		zip
 
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
-SHEBANG_GLOB=	*.sh *.php
+SHEBANG_GLOB=	*.php *.sh
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 SUB_FILES=	pkg-message
 SUB_LIST+=	PREFIX=${PREFIX} \
-		TYPO3WWW=${TYPO3WWW} \
-		TYPO3DIR=${TYPO3DIR}
+		TYPO3DIR=${TYPO3DIR} \
+		TYPO3WWW=${TYPO3WWW}
 
 PORT_V_MAJOR=	11
 PORT_V_MINOR=	5
-PORT_V_PATCH=	34
+PORT_V_PATCH=	35
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
@@ -37,14 +37,14 @@ TYPO3DIR=	${PORTNAME}-${PORT_V_MAJOR}
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 
-OPTIONS_DEFINE=	CURL GD GMP IMAGICK MBSTRING MYSQL POSTGRES SQLITE ZLIB
-OPTIONS_DEFAULT=MYSQL
-GD_DESC=	GDlib/freetype support
-IMAGICK_DESC=	${IMAGEMAGICK_DESC}
-MBSTRING_DESC=	${MULTIBYTE_DESC}
-MYSQL_DESC=	Use MySQL as DBMS
-POSTGRES_DESC=	Use PostgreSQL as DBMS
-SQLITE_DESC=	Use SQLite as DBMS
+OPTIONS_DEFINE=		CURL GD GMP IMAGICK MBSTRING MYSQL POSTGRES SQLITE ZLIB
+OPTIONS_DEFAULT=	MYSQL
+GD_DESC=		GDlib/freetype support
+IMAGICK_DESC=		${IMAGEMAGICK_DESC}
+MBSTRING_DESC=		${MULTIBYTE_DESC}
+MYSQL_DESC=		Use MySQL as DBMS
+POSTGRES_DESC=		Use PostgreSQL as DBMS
+SQLITE_DESC=		Use SQLite as DBMS
 
 CURL_USE=	PHP=curl
 GD_USE=		PHP=gd
@@ -66,11 +66,11 @@ USES+=		magick:7,run,nox11
 .endif
 
 do-install:
-	# workaround fix for:
-	# "Checking for items in STAGEDIR missing from pkg-plist"
-	# "Error: Orphaned: @dir %%WWWDIR%%_src-10.4.16/vendor/symfony/string/Resources/bin"
+# workaround fix for:
+# "Checking for items in STAGEDIR missing from pkg-plist"
+# "Error: Orphaned: @dir %%WWWDIR%%_src-10.4.16/vendor/symfony/string/Resources/bin"
 	${RMDIR} ${WRKSRC}/vendor/symfony/string/Resources/bin
-	# remove source empty directory
+# remove source empty directory
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}
 	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/
 	${LN} -fs ../${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/typo3_src
