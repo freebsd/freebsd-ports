@@ -1,9 +1,10 @@
 PORTNAME=	snort
-DISTVERSION=	3.1.81.0
+DISTVERSION=	3.1.82.0
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
 
+# implicit-approval+ dvl@
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 WWW=		https://www.snort.org/
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libdaq.so:net/libdaq \
 
 USES=		cmake compiler:c++14-lang cpe iconv localbase luajit pathfix pkgconfig \
 		shebangfix ssl
+PATHFIX_CMAKELISTSTXT=	create_pkg_config.cmake
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	snort3
 GH_PROJECT=	snort3
 
@@ -50,7 +51,7 @@ TSC_DESC=		Use timestamp counter register clock (x86 only)
 ADDRESSSANITIZER_CMAKE_BOOL=	ENABLE_ADDRESS_SANITIZER
 DEBUG_CMAKE_BOOL=		ENABLE_COREFILES ENABLE_GDB
 DOCS_CMAKE_BOOL=		MAKE_HTML_DOC MAKE_PDF_DOC MAKE_TEXT_DOC
-FLATBUFFERS_LIB_DEPENDS=	flatc:devel/flatbuffers205 # until https://github.com/snort3/snort3/issues/250 is fixed
+FLATBUFFERS_LIB_DEPENDS=	libflatbuffers.so:devel/flatbuffers
 HYPERSCAN_LIB_DEPENDS=		libhs.so:devel/hyperscan
 HYPERSCAN_PLIST_SUB=		HYPERSCAN=""
 HYPERSCAN_PLIST_SUB_OFF=	HYPERSCAN="@comment "
@@ -61,9 +62,5 @@ PIE_CMAKE_BOOL=			ENABLE_PIE
 STATICDAQ_CMAKE_BOOL=		ENABLE_STATIC_DAQ
 THREADSANITIZER_CMAKE_BOOL=	ENABLE_THREAD_SANITIZER
 TSC_CMAKE_BOOL=			ENABLE_TSC_CLOCK
-
-post-patch:
-	${REINPLACE_CMD} -e 's|_LIBDIR}/pkgconfig|_PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/cmake/create_pkg_config.cmake
 
 .include <bsd.port.mk>
