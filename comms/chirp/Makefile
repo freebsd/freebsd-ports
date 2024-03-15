@@ -1,12 +1,12 @@
 PORTNAME=	chirp
-DISTVERSION=	20240302
+DISTVERSION=	20240311
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 DIST_SUBDIR=	chirp
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Free, open-source tool for programming your amateur radio
-WWW=		https://chirp.danplanet.com/projects/chirp
+WWW=		https://chirpmyradio.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,9 +24,9 @@ SHEBANG_GLOB=	*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kk7ds
-GH_TAGNAME=	5cd1388
+GH_TAGNAME=	091f707b
 
-USE_PYTHON=	pep517 pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 USE_WX=		3.2
 WX_COMPS=	python:run
@@ -36,21 +36,24 @@ NO_ARCH=	yes
 
 PLIST_SUB+=	DISTVERSION="${DISTVERSION}"
 
-pre-build:
-	@${REINPLACE_CMD} -e 's|version=0|version=${PORTVERSION}|' \
-		${WRKSRC}/setup.py
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+post-patch:
+	@${ECHO} "Version: ${PORTVERSION}" > ${WRKSRC}/PKG-INFO
 
 post-install:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/share && \
 		${INSTALL_DATA} ${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps && \
 		${INSTALL_DATA} ${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/share/locale
+post-install-NLS-on:
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/share/locale
 	@cd ${WRKSRC}/chirp && \
-		${COPYTREE_SHARE}  locale ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/
-	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/locale/Makefile
-	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/locale/check_parameters.py
-	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/locale/README.md
+		${COPYTREE_SHARE}  locale ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/share
+	@${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/share/locale/Makefile
+	@${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/share/locale/check_parameters.py
+	@${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/share/locale/README.md
 
 .include <bsd.port.pre.mk>
 
