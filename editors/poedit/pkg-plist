@@ -1,5 +1,4 @@
 bin/poedit
-share/man/man1/poedit.1.gz
 share/applications/net.poedit.Poedit.desktop
 share/applications/net.poedit.PoeditURI.desktop
 share/icons/hicolor/128x128/apps/net.poedit.Poedit.png
@@ -69,12 +68,17 @@ share/locale/uz/LC_MESSAGES/poedit.mo
 share/locale/vi/LC_MESSAGES/poedit.mo
 share/locale/zh_CN/LC_MESSAGES/poedit.mo
 share/locale/zh_TW/LC_MESSAGES/poedit.mo
+share/man/man1/poedit.1.gz
 share/metainfo/net.poedit.Poedit.appdata.xml
-%%DATADIR%%/icons/CrowdinLogoTemplate.png
+%%DATADIR%%/icons/AccountCrowdin.png
+%%DATADIR%%/icons/AccountLocalazy.png
+%%DATADIR%%/icons/CrowdinLogo.png
+%%DATADIR%%/icons/CrowdinLogoDark.png
 %%DATADIR%%/icons/DownvoteTemplate.png
 %%DATADIR%%/icons/ExtractorsGNUgettext.png
 %%DATADIR%%/icons/ItemBookmarkTemplate.png
 %%DATADIR%%/icons/ItemCommentTemplate.png
+%%DATADIR%%/icons/LocalazyLogo.png
 %%DATADIR%%/icons/StatusError.png
 %%DATADIR%%/icons/StatusErrorBlack.png
 %%DATADIR%%/icons/StatusWarning.png
