@@ -1,15 +1,11 @@
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.74
-PORTREVISION=	1
+PORTVERSION=	1.4.75
 CATEGORIES=	www
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Secure, fast, compliant, and flexible Web Server
 WWW=		https://www.lighttpd.net/
-
-PATCH_SITES=	https://git.lighttpd.net/lighttpd/lighttpd1.4/commit/
-PATCHFILES=	106c4b147b7bc357d8764cddd0bf30fa9e8c0bf9.patch:-p1
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
