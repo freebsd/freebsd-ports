@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.8.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.80 \
+		anyhow-1.0.81 \
 		arc-swap-1.7.0 \
 		arrayvec-0.7.4 \
 		assert_cmd-2.0.14 \
@@ -51,16 +51,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
 		btoi-0.4.3 \
-		bumpalo-3.15.3 \
-		bytemuck-1.14.3 \
+		bumpalo-3.15.4 \
+		bytemuck-1.15.0 \
 		byteorder-1.5.0 \
 		bytes-1.5.0 \
 		bytesize-1.3.0 \
 		cast-0.3.0 \
 		castaway-0.2.2 \
-		cc-1.0.89 \
+		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		chrono-0.4.34 \
+		chrono-0.4.35 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-as-inner-0.6.0 \
 		env_filter-0.1.0 \
 		env_logger-0.10.2 \
-		env_logger-0.11.2 \
+		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		event-listener-5.2.0 \
@@ -133,7 +133,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		flate2-1.0.28 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
-		fs4-0.8.0 \
+		fs4-0.8.1 \
 		fsevent-sys-4.1.0 \
 		function_name-0.3.0 \
 		function_name-proc-macro-0.3.0 \
@@ -298,8 +298,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
 		phf_shared-0.10.0 \
-		pin-project-1.1.4 \
-		pin-project-internal-1.1.4 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		plotters-0.3.5 \
@@ -312,7 +312,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.79 \
 		prodash-23.1.2 \
 		pulldown-cmark-0.10.0 \
 		pulldown-cmark-escape-0.10.0 \
@@ -331,7 +331,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-1.10.3 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.24 \
+		reqwest-0.11.26 \
 		resolv-conf-0.7.0 \
 		rgb-0.8.37 \
 		ring-0.17.8 \
@@ -396,8 +396,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		terminal_size-0.3.0 \
 		termtree-0.4.1 \
 		textwrap-0.15.2 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
 		time-0.3.34 \
 		time-core-0.1.2 \
 		time-macros-0.2.17 \
@@ -407,7 +407,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.24.1 \
-		tokio-stream-0.1.14 \
+		tokio-stream-0.1.15 \
 		tokio-tungstenite-0.20.1 \
 		tokio-util-0.7.10 \
 		toml-0.5.11 \
