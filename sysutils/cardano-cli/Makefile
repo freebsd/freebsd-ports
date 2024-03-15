@@ -5,7 +5,7 @@ CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
 MAINTAINER=	arrowd@FreeBSD.org
-COMMENT=	Command lane management tool for Cardano node
+COMMENT=	Command line management tool for Cardano node
 WWW=		https://cardano.org/
 
 LICENSE=	APACHE20
