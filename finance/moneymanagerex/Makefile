@@ -1,7 +1,7 @@
 PORTNAME=	mmex
 PORTVERSION=	1.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	finance
 MASTER_SITES=	https://github.com/vslavik/bakefile/releases/download/v0.2.9/:bakefile
 DISTFILES=	bakefile-0.2.9${EXTRACT_SUFX}:bakefile
@@ -53,7 +53,6 @@ post-patch:
 		 s|-I$$(srcdir)/lib/lua/src || ; \
 		 s|$$(LIBPREFIX)lua$$(LIBEXT) || ; \
 		 s|-llua || ; \
-		 s|$$(datadir)/man|$$(prefix)/man| ; \
 		 s|-ldl$$||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/^AC_INIT/s|1.2.3|${PORTVERSION}| ; \
