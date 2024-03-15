@@ -1,6 +1,6 @@
 PORTNAME=	xataxx
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
@@ -9,6 +9,9 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Strategy game of position and movement for X Window System
 
 LICENSE=	NONE
+
+DEPRECATED=	No available WWW
+EXPIRATION_DATE=2024-03-15
 
 USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
