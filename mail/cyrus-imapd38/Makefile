@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.8.1
-PORTREVISION=	4
+PORTVERSION=	3.8.2
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
@@ -23,7 +23,6 @@ CYRUS_IMAPD_VER=	38
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
 		libjansson.so:devel/jansson \
-		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libical.so:devel/libical
 
@@ -55,8 +54,8 @@ CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 
 OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV CLD2 HTTP IDLED LDAP MURDER \
-			MYSQL NNTP PGSQL REPLICATION SQLITE SQUAT SRS XAPIAN \
-			DOCS
+			MYSQL NNTP PCRE2 PGSQL REPLICATION SQLITE SQUAT SRS \
+			XAPIAN DOCS
 OPTIONS_DEFAULT=	AUTOCREATE IDLED READLINE_GNU SQLITE SQUAT SRS
 .if ${FLAVOR:U} == http
 OPTIONS_DEFAULT+=	HTTP
@@ -102,6 +101,11 @@ MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 NNTP_DESC=		Enable NNTP support
 NNTP_CONFIGURE_ENABLE=	nntp
+PCRE2_DESC=		Use PCRE2 rather than PCRE
+PCRE2_LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
+PCRE2_LIB_DEPENDS_OFF=	libpcre.so:devel/pcre
+PCRE2_CONFIGURE_ON=	--disable-pcre
+PCRE2_CONFIGURE_OFF=	--disable-pcre2
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-pgsql
@@ -156,16 +160,20 @@ CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
 MAN_MAN1=	httptest imtest installsieve lmtptest mupdatetest nntptest \
-		pop3test sieveshell sivtest smtptest
+		pop3test sieveshell sivtest smtptest synctest
 MAN_MAN3=	imclient
 MAN_MAN5=	cyrus.conf imapd.conf krb.equiv
 
 CYRUS_MAN8=	arbitron backupd chk_cyrus ctl_backups ctl_conversationsdb \
-		ctl_cyrusdb ctl_deliver ctl_mboxlist cvt_cyrusdb cyr_backup \
-		cyr_buildinfo cyr_dbtool cyr_deny cyr_df cyr_expire cyr_info \
-		cyr_synclog cyr_virusscan deliver fud idled imapd ipurge lmtpd \
-		master mbexamine mbpath mbtool notifyd pop3d quota reconstruct \
-		restore smmapd timsieved tls_prune unexpunge
+		ctl_cyrusdb ctl_deliver ctl_mboxlist cvt_cyrusdb \
+		cvt_xlist_specialuse cyr_backup cyr_buildinfo cyr_dbtool \
+		cyr_deny cyr_df cyr_expire cyr_info cyr_ls cyr_synclog \
+		cyr_userseen cyr_virusscan cyradm cyrdump deliver fud idled \
+		imapd ipurge lmtpd lmtpproxyd master mbexamine mbpath mbtool \
+		notifyd pop3d pop3proxyd promstatsd proxyd ptdump ptexpire \
+		ptloader quota reconstruct relocate_by_id restore sievec \
+		sieved smmapd timsieved tls_prune unexpunge
+
 CYRUS_PERL_MAN1=cyradm
 CYRUS_PERL_MAN3=Cyrus::Annotator::Daemon Cyrus::Annotator::Message \
 		Cyrus::IMAP Cyrus::IMAP::Admin Cyrus::IMAP::Shell \
@@ -184,9 +192,13 @@ CONFIGURE_ARGS+=--disable-gssapi
 
 .if ${PORT_OPTIONS:MHTTP}
 CYRUS_MAN8+=	ctl_zoneinfo httpd
+MAN_MAN1+=	dav_reconstruct
 .endif
 .if ${PORT_OPTIONS:MNNTP}
 CYRUS_MAN8+=	fetchnews nntpd
+.endif
+.if ${PORT_OPTIONS:MMURDER}
+CYRUS_MAN8+=	mupdate
 .endif
 .if ${PORT_OPTIONS:MREPLICATION}
 CYRUS_MAN8+=	sync_client sync_reset sync_server
