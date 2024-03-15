@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 USES=		budgie gettext gnome meson pkgconfig tar:xz vala:build
 USE_BUDGIE=	raven:run
 USE_GNOME=	glib20 gtk30 gdkpixbuf2 intltool
+MESON_ARGS=	-Dwerror=false
 
 GLIB_SCHEMAS=	org.buddiesofbudgie.budgie-desktop-view.gschema.xml
 
