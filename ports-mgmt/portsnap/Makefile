@@ -11,7 +11,7 @@ WWW=		http://www.daemonology.net/portsnap/
 LICENSE=	BSD2CLAUSE
 
 DEPRECATED=	portsnap infrastructure will be removed after the EOL of 13.x
-EXPIRQATION_DATE=2026-01-31
+EXPIRATION_DATE=2026-01-31
 
 SUB_FILES=		pkg-message
 
