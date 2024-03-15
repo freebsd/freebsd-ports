@@ -1,29 +1,3 @@
-  <vuln vid="6ef4043e-2912-4d79-ba1c-cfb8da63764d">
-    <topic>unbound--Denial of service when trimming EDE text on positive replies</topic>
-    <affects>
-      <package>
-	<name>unbound</name>
-	<range><lt></lt></range>
-      </package>
-    </affects>
-    <description>
-	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
-	<blockquote cite="INSERT URL HERE">
-	  <p>.</p>
-	</blockquote>
-	</body>
-    </description>
-    <references>
-      <cvename>CVE-2024-1931</cvename>
-      <url>https://www.nlnetlabs.nl/downloads/unbound/CVE-2024-1931.txt</url>
-    </references>
-    <dates>
-      <discovery>2024-03-07</discovery>
-      <entry>2024-03-14</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="49dd9362-4473-48ae-8fac-e1b69db2dedf">
     <topic>electron{27,28} -- Out of bounds memory access in V8</topic>
     <affects>
