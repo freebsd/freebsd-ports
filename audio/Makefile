@@ -348,6 +348,7 @@
     SUBDIR += libconvolve
     SUBDIR += libcoverart
     SUBDIR += libdiscid
+    SUBDIR += libdjinterop
     SUBDIR += libdssialsacompat
     SUBDIR += libebur128
     SUBDIR += libechonest

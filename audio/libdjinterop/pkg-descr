@@ -1,0 +1,6 @@
+libdjinterop is a C++ library that allows access to database formats
+used to store information about DJ record libraries.
+
+This library currently supports:
+
+    Engine Library, as used on "Prime"-series DJ equipment.
