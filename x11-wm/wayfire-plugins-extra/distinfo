@@ -1,11 +1,9 @@
-TIMESTAMP = 1696671377
-SHA256 (WayfireWM-wayfire-plugins-extra-v0.8.0_GH0.tar.gz) = 6871f19c79dc9d9c965229f958da79eebbc7ff54ebc8ba0b97c514aaaf36cd3b
-SIZE (WayfireWM-wayfire-plugins-extra-v0.8.0_GH0.tar.gz) = 45089
+TIMESTAMP = 1710492057
+SHA256 (WayfireWM-wayfire-plugins-extra-v0.8.1_GH0.tar.gz) = 22931376eebb93092828e2fb192facf097de4dc99c8766732f7cabc4e5175feb
+SIZE (WayfireWM-wayfire-plugins-extra-v0.8.1_GH0.tar.gz) = 51843
 SHA256 (timgott-wayfire-shadows-de32395_GH0.tar.gz) = 2d6f0c4fc8524d2b4a926955d3f6856c090d08d37b8908979039e6e1291779c8
 SIZE (timgott-wayfire-shadows-de32395_GH0.tar.gz) = 11260
 SHA256 (focus-request-bc41d54.tar.bz2) = da114547ed0b3ccca593d44e4a01f6d86a45ff284e15610e8e465696e9446da9
 SIZE (focus-request-bc41d54.tar.bz2) = 1740
 SHA256 (windecor-f609ac0.tar.bz2) = 2b10209bb6e787af69b6115291330c37dfc8f1c39fb9f91a650cf3ad1c586c10
 SIZE (windecor-f609ac0.tar.bz2) = 32244
-SHA256 (cc4d177de89f.patch) = c05b79384ea18f51f7d7157b4c2fcc8fa687c1ef98255c6a779a70de07e1430c
-SIZE (cc4d177de89f.patch) = 6410
