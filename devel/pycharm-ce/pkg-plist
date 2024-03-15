@@ -20,7 +20,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PC-233.13763.11
+%%DATADIR%%/lib/build-marker-PC-233.14475.56
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -111,8 +111,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-customization/lib/pycharm-community-customization.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-5a2391486177-d3b881c8e49f.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-5a2391486177-d3b881c8e49f.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-d68999036c7f-d3b881c8e49f.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-d68999036c7f-d3b881c8e49f.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
@@ -1352,6 +1352,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/raise
 %%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/return
 %%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/try
+%%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/type
 %%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/while
 %%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/with
 %%DATADIR%%/plugins/python-ce/helpers/tools/python_keywords/yield
