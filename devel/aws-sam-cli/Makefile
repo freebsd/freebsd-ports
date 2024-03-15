@@ -13,7 +13,8 @@ WWW=		https://github.com/aws/aws-sam-cli \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-lambda-builders>0:devel/py-aws-lambda-builders@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aws-lambda-builders>0:devel/py-aws-lambda-builders@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aws-sam-translator>0:devel/py-aws-sam-translator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cfn-lint>0:devel/py-cfn-lint@${PY_FLAVOR} \
