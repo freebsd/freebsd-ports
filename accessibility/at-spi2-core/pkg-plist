@@ -74,7 +74,7 @@ lib/girepository-1.0/Atk-1.0.typelib
 %%NO_ATKONLY%%lib/gtk-2.0/modules/libatk-bridge.so
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
-lib/libatk-1.0.so.0.25010.1
+lib/libatk-1.0.so.0.25011.1
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so.0
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so.0.0.0
@@ -139,6 +139,7 @@ share/locale/is/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
 share/locale/ja/LC_MESSAGES/at-spi2-core.mo
 share/locale/ka/LC_MESSAGES/at-spi2-core.mo
+share/locale/kab/LC_MESSAGES/at-spi2-core.mo
 share/locale/kk/LC_MESSAGES/at-spi2-core.mo
 share/locale/km/LC_MESSAGES/at-spi2-core.mo
 share/locale/kn/LC_MESSAGES/at-spi2-core.mo
