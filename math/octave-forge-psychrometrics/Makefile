@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-psychrometrics
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 DISTVERSION=	1.0.0
 CATEGORIES=	math
 

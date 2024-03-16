@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-statistics
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 DISTVERSION=	1.6.5
 CATEGORIES=	math
 

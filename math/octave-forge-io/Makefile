@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-io
 PORTVERSION=	2.6.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases

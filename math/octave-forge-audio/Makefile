@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-audio
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 DISTVERSION=	2.0.8
 CATEGORIES=	math
 

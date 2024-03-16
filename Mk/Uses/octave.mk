@@ -22,7 +22,7 @@ IGNORE=	Incorrect 'USES+= octave:${octave_ARGS}' usage: argument [${arg}] is not
 .    endif
 .  endfor
 
-OCTAVE_VERSION=	8.4.0
+OCTAVE_VERSION=	9.1.0
 
 .  if empty(octave_ARGS:Menv)
 BUILD_DEPENDS+=	octave:math/octave

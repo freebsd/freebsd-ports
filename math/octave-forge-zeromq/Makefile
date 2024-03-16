@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-zeromq
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 DISTVERSION=	1.5.6
 CATEGORIES=	math
 

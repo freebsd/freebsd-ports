@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-coder
 DISTVERSIONPREFIX=	coder-
+PORTREVISION=	1
 DISTVERSION=	1.8.4
 CATEGORIES=	math
 
@@ -9,6 +10,8 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
+
+BROKEN=		does not build with octave version >= 9.1.0
 
 USES=		octave
 USE_GITHUB=	yes

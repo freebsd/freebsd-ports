@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-ncarray
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}

@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-rtree
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
