@@ -12,7 +12,8 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring
-TEST_DEPENDS=	automake:devel/automake
+TEST_DEPENDS=	automake:devel/automake \
+		runtest:misc/dejagnu
 
 USES=		cpe gmake iconv libtool localbase readline tar:xz
 CPE_VENDOR=	gnu
