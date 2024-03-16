@@ -1,6 +1,6 @@
 PORTNAME=	procmap
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 DISTFILES=	#empty
 
@@ -11,13 +11,13 @@ USES=		uidfix
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 		MAN8=procmap.8 \
-		MANDIR=${PREFIX}/man/man \
+		MANDIR=${PREFIX}/share/man/man \
 		PROG=procmap
 
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/procmap \
-		man/man8/${PORTNAME}.8.gz
+		share/man/man8/${PORTNAME}.8.gz
 
 procmap_files:=	procmap.c procmap.8
 
