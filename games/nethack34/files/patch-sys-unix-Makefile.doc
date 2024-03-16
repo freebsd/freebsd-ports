@@ -5,7 +5,7 @@
  
  GAME	= nethack
 -MANDIR	= /usr/man/man6
-+MANDIR	= ${PREFIX}/man/man
++MANDIR	= ${PREFIX}/share/man/man
  MANEXT	= 6
  
  # manual installation for most BSD-style systems
