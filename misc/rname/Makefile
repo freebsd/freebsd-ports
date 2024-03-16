@@ -1,5 +1,6 @@
 PORTNAME=	rname
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://devel.ringlet.net/files/sys/rname/
 
@@ -12,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_WRKSUBDIR=	yes
 USES=		gmake tar:xz uidfix
-MAKE_ENV=	BINGRP=wheel MANDIR=${PREFIX}/man \
+MAKE_ENV=	BINGRP=wheel \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-PLIST_FILES=	bin/rname man/man1/rname.1.gz
+PLIST_FILES=	bin/rname share/man/man1/rname.1.gz
 
 .include <bsd.port.mk>
