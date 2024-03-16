@@ -1,5 +1,6 @@
 PORTNAME=	dhcperf
 PORTVERSION=	1.0.1.0
+PORTREVISION=	1
 CATEGORIES=	net benchmarks
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1-freebsd-5.4-i386
@@ -18,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1/
 
 PLIST_FILES=	bin/dhcperf \
 		share/doc/dhcperf/dcsevaltutorial.pdf \
-		share/doc/dhcperf/dhcperf.pdf man/man1/dhcperf.1.gz
+		share/doc/dhcperf/dhcperf.pdf share/man/man1/dhcperf.1.gz
 
 post-extract:
 	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/${PORTNAME}-${PORTVERSION}_1.tgz
@@ -27,7 +28,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/nom/bin/dhcperf \
 		${STAGEDIR}${PREFIX}/bin/dhcperf
 	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/man/man1/dhcperf.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/dhcperf
 	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dcsevaltutorial.pdf \
 		 ${STAGEDIR}${PREFIX}/share/doc/dhcperf/dcsevaltutorial.pdf
