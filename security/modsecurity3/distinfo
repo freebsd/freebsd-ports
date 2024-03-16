@@ -1,3 +1,3 @@
-TIMESTAMP = 1664793643
-SHA256 (modsecurity-v3.0.8.tar.gz) = e241c89b3cd7e58a863d0d0d6b9b8ba4d33ffb0f51171044c258c62e3e7956c7
-SIZE (modsecurity-v3.0.8.tar.gz) = 3336288
+TIMESTAMP = 1710594070
+SHA256 (modsecurity-v3.0.12.tar.gz) = a36118401641feef376bb469bf468abf94b7948844976a188a6fccb53390b11f
+SIZE (modsecurity-v3.0.12.tar.gz) = 3504045
