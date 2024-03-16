@@ -1,3 +1,46 @@
+  <vuln vid="1ad3d264-e36b-11ee-9c27-40b034429ecf">
+    <topic>typo3-{11,12} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3-11</name>
+	<range><lt>11.5.35</lt></range>
+      </package>
+      <package>
+	<name>typo3-12</name>
+	<range><lt>12.4.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Typo3 developers reports:</p>
+	<blockquote cite="https://typo3.org/article/typo3-1301-12411-and-11535-security-releases-published">
+	  <p>All versions are security releases and contain important security fixes - read the corresponding security advisories here:</p>
+	<ul>
+	  <li>Path Traversal in TYPO3 File Abstraction Layer Storages CVE-2023-30451</li>
+	  <li>Code Execution in TYPO3 Install Tool CVE-2024-22188</li>
+	  <li>Information Disclosure of Hashed Passwords in TYPO3 Backend Forms CVE-2024-25118</li>
+	  <li>Information Disclosure of Encryption Key in TYPO3 Install Tool CVE-2024-25119</li>
+	  <li>Improper Access Control of Resources Referenced by t3:// URI Scheme CVE-2024-25120</li>
+	  <li>Improper Access Control Persisting File Abstraction Layer Entities via Data Handler CVE-2024-25121</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-30451</cvename>
+      <cvename>CVE-2024-22188</cvename>
+      <cvename>CVE-2024-25118</cvename>
+      <cvename>CVE-2024-25119</cvename>
+      <cvename>CVE-2024-25120</cvename>
+      <cvename>CVE-2024-25121</cvename>
+      <url>https://typo3.org/article/typo3-1301-12411-and-11535-security-releases-published</url>
+    </references>
+    <dates>
+      <discovery>2024-02-13</discovery>
+      <entry>2024-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49dd9362-4473-48ae-8fac-e1b69db2dedf">
     <topic>electron{27,28} -- Out of bounds memory access in V8</topic>
     <affects>
