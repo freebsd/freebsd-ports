@@ -25,6 +25,8 @@ WRKSRC_SUBDIR=	Modules
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 
+TESTING_UNSAFE=	ModuleNotFoundError: No module named '_sqlite3'
+
 .include <bsd.port.pre.mk>
 
 post-extract:

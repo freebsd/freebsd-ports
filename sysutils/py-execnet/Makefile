@@ -19,4 +19,6 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
+TESTING_UNSAFE=	ModuleNotFoundError: No module named 'execnet'
+
 .include <bsd.port.mk>

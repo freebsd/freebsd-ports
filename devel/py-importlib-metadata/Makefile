@@ -22,4 +22,6 @@ USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
+TESTING_UNSAFE=	ModuleNotFoundError: No module named 'pyfakefs'
+
 .include <bsd.port.mk>

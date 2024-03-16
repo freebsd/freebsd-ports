@@ -51,6 +51,8 @@ OPTIONS_DEFINE_powerpc64=	VSX
 VSX_CFLAGS=	-DUSE_PPC_CRYPTO
 VSX_DESC=	Use VSX optimized routines (POWER8 or newer)
 
+TESTING_UNSAFE=	Fatal DOMSUF env. variable is not defined
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDEBUG}

@@ -24,5 +24,6 @@ MESON_ARGS=	-Ddocs=disabled \
 		--mandir=${PREFIX}/share/man
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	VERSION=${PORTVERSION}
+TESTING_UNSAFE=	https://gitlab.com/lv2/lilv/-/issues/12
 
 .include <bsd.port.mk>
