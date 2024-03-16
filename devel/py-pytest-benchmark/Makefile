@@ -27,4 +27,6 @@ ELASTICSEARCH_DESC=	Elasticsearch support
 
 ELASTICSEARCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=0:textproc/py-elasticsearch@${PY_FLAVOR}
 
+TESTING_UNSAFE=	ModuleNotFoundError: No module named 'freezegun'
+
 .include <bsd.port.mk>
