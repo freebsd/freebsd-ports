@@ -1,6 +1,6 @@
 PORTNAME=	cvs
 PORTVERSION=	1.20120905
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/eadler
 
@@ -39,6 +39,7 @@ DESTDIRNAME=	NADA
 MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 # XXX static PIE libraries not yet supported by the base system
 MAKE_ARGS+=	WITHOUT_PIE=true
+MAKE_ARGS+=	MANDIR=/share/man/man
 
 .include <bsd.port.options.mk>
 
