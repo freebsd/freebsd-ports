@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240316:
+  AFFECTS: users of net/rabbitmq
+  AUTHOR: dch@FreeBSD.org
+
+  In preparation for upgrading to future RabbitMQ releases, users *must*
+  enable all feature flags before upgrading stepwise to v3.12.13, to be
+  able to migrate later to v3.13.0 when it is released in 2024Q2.
+
+  See https://www.rabbitmq.com/docs/upgrade for details.
+
 20240228:
   AFFECTS: users of www/redmine50
   AUTHOR: bofh@FreeBSD.org
