@@ -19,6 +19,8 @@ USES=		cabal
 
 USE_LOCALE=	en_US.UTF-8
 
+PLIST_SUB=	AGDA_VER=${PORTVERSION}
+
 USE_CABAL=	OneTuple-0.4.1.1_1 \
 		QuickCheck-2.14.3 \
 		STMonadTrans-0.4.8 \
