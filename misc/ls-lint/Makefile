@@ -1,7 +1,6 @@
 PORTNAME=	ls-lint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
-PORTREVISION=	2
+DISTVERSION=	2.2.3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://ls-lint.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/loeffel-io/ls-lint/v2
 GO_TARGET=	./cmd/ls_lint
