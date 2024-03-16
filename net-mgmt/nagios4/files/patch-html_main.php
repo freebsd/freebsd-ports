@@ -1,9 +1,13 @@
---- html/main.php.orig	2024-02-17 09:09:32.460023000 +0100
-+++ html/main.php	2024-02-17 09:12:55.192427000 +0100
-@@ -146,33 +146,6 @@ $this_year = '2023';
- 	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
- 	<div class="version">Version <?php echo $this_version; ?></div>
- 	<div class="releasedate">November 14, 2023</div>
+--- html/main.php.orig	2024-03-16 10:46:27.911029000 +0100
++++ html/main.php	2024-03-16 10:48:12.929841000 +0100
+@@ -142,38 +142,6 @@ $this_year = '2024';
+ </div>
+ 
+ 
+-<div id="currentversioninfo">
+-	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
+-	<div class="version">Version <?php echo $this_version; ?></div>
+-	<div class="releasedate">February 28, 2024</div>
 -	<div class="checkforupdates"><a href="https://www.nagios.org/checkforupdates/?version=<?php echo $this_version; ?>&amp;product=nagioscore" target="_blank">Check for updates</a></div>
 -</div>
 -
@@ -31,6 +35,7 @@
 -?>
 -</div>
 -
- 
+-
  <div id='splashrow0'>
  	<div id="splashbox0" class="splashbox-media"><!-- info banner feed -->
+ 		<div id="splashbox0-contents"></div>
