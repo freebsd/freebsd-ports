@@ -6,10 +6,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Dependently typed functional programming language and proof assistant
 WWW=		https://wiki.portal.chalmers.se/agda/
 
-LICENSE=	UNKNOWN
-LICENSE_NAME=	custom
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BROKEN_i386=	compiler goes out of memory
 
