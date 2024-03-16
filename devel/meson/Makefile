@@ -24,7 +24,7 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV:NCC=*:NCXX=*}
 
 # Hide from regular build to avoid accidental dependency on symlinks
-.if make(test)
+.if make(test) || ("${WITH_TESTING}" == yes && make(package))
 # helper_create_binary_wrapper, test_python_module, test cases/*.py
 BINARY_ALIAS+=	python3=${PYTHON_CMD:T} python=${PYTHON_CMD:T}
 do-test: create-binary-alias # force if run late
