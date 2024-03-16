@@ -1,6 +1,6 @@
 PORTNAME=	julia
 DISTVERSION=	1.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -39,10 +39,12 @@ BUILD_DEPENDS_amd64=	ittapi>0:devel/ittapi
 BUILD_DEPENDS_i386=	ittapi>0:devel/ittapi
 
 # Do not set USES=fortran to avoid extra-linkage
-USES=		gmake cpe python perl5 blaslapack:openblas
+USES=		blaslapack:openblas cpe elfctl gmake perl5 python
 _GCC_VER=	${GCC_DEFAULT:S/.//}
 
 CPE_VENDOR=	julialang
+
+ELF_FEATURES=	+wxneeded:usr/bin/julia
 
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
@@ -120,6 +122,8 @@ pre-configure:
 	) || ( \
 		echo "USE_BLAS64=0" >> ${WRKSRC}/Make.user \
 	)
+	echo 'LLVM_PATCH_VERSIONFIXES= $(FILESDIR)/llvm-patch-backport-version-fixes' \
+		>> ${WRKSRC}/Make.user
 
 pre-install:
 	${CP} ${WRKSRC}/deps/srccache/cacert-2022-10-11.pem ${WRKSRC}/usr/share/julia/cert.pem

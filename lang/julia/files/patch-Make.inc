@@ -1,4 +1,4 @@
---- Make.inc.orig	2023-08-24 16:20:21 UTC
+--- Make.inc.orig	2023-11-14 16:57:00 UTC
 +++ Make.inc
 @@ -268,7 +268,7 @@ docdir := $(datarootdir)/doc/julia
  libexecdir := $(prefix)/libexec
@@ -52,7 +52,16 @@
  ifneq ($(CC_BASE)$(CXX_BASE),$(shell echo $(CC) | cut -d' ' -f1)$(shell echo $(CXX) | cut -d' ' -f1))
      $(error Forgot override directive on CC or CXX in Make.user? Cowardly refusing to build)
  endif
-@@ -1295,14 +1268,8 @@ JLDFLAGS += -Wl,-Bdynamic
+@@ -1278,7 +1251,7 @@ JLDFLAGS += -Wl,-Bdynamic
+ JCPPFLAGS += -DJULIA_HAS_IFUNC_SUPPORT=1
+ endif
+ JLDFLAGS += -Wl,-Bdynamic
+-OSLIBS += -Wl,--version-script=$(JULIAHOME)/src/julia.expmap
++OSLIBS = -Wl,--version-script=$(JULIAHOME)/src/julia.expmap
+ ifneq ($(SANITIZE),1)
+ JLDFLAGS += -Wl,-no-undefined
+ endif
+@@ -1295,16 +1268,12 @@ JLDFLAGS += -Wl,-Bdynamic
  
  ifeq ($(OS), FreeBSD)
  JLDFLAGS += -Wl,-Bdynamic
@@ -65,10 +74,16 @@
 -# See #21788
 -OSLIBS += -lgcc_s
 -
- OSLIBS += -Wl,--export-dynamic -Wl,--version-script=$(JULIAHOME)/src/julia.expmap \
- 	$(NO_WHOLE_ARCHIVE)
+-OSLIBS += -Wl,--export-dynamic -Wl,--version-script=$(JULIAHOME)/src/julia.expmap \
+-	$(NO_WHOLE_ARCHIVE)
++JLIBVERFLAGS = -Wl,--version-script=$(JULIAHOME)/src/julialib.expmap
++JCGVERFLAGS = -Wl,--version-script=$(JULIAHOME)/src/juliacg.expmap
++JEXEVERFLAGS = -Wl,--version-script=$(JULIAHOME)/src/flisp/juliaexe.expmap
++OSLIBS += -Wl,--export-dynamic $(NO_WHOLE_ARCHIVE)
  endif
-@@ -1511,30 +1478,6 @@ LIBJULIACODEGEN_DEBUG_INSTALL_DEPLIB := $(call dep_lib
+ 
+ ifeq ($(OS), Darwin)
+@@ -1511,30 +1480,6 @@ LIBJULIACODEGEN_DEBUG_INSTALL_DEPLIB := $(call dep_lib
  LIBJULIACODEGEN_DEBUG_BUILD_DEPLIB := $(call dep_lib_path,$(build_libdir),$(build_shlibdir)/libjulia-codegen-debug.$(JL_MAJOR_SHLIB_EXT))
  LIBJULIACODEGEN_DEBUG_INSTALL_DEPLIB := $(call dep_lib_path,$(libdir),$(private_shlibdir)/libjulia-codegen-debug.$(JL_MAJOR_SHLIB_EXT))
  
@@ -99,7 +114,7 @@
  # USE_SYSTEM_CSL causes it to get symlinked into build_private_shlibdir
  ifeq ($(USE_SYSTEM_CSL),1)
  LIBGCC_BUILD_DEPLIB := $(call dep_lib_path,$(build_libdir),$(build_private_shlibdir)/$(LIBGCC_NAME))
-@@ -1567,7 +1510,6 @@ LIBM_INSTALL_DEPLIB := $(call dep_lib_path,$(libdir),$
+@@ -1567,7 +1512,6 @@ LIBM_INSTALL_DEPLIB := $(call dep_lib_path,$(libdir),$
  LIBM_INSTALL_DEPLIB := $(call dep_lib_path,$(libdir),$(private_shlibdir)/$(LIBMNAME).$(SHLIB_EXT))
  
  # We list:
@@ -107,7 +122,7 @@
  #  * libopenlibm, because Windows has an untrustworthy libm, and we want to use ours more than theirs
  #  * libstdc++, because while performing `libstdc++` probing we need to
  #    know the path to the bundled `libstdc++` library.
-@@ -1589,7 +1531,6 @@ LOADER_BUILD_DEP_LIBS = $(call build_deplibs, \
+@@ -1589,7 +1533,6 @@ LOADER_BUILD_DEP_LIBS = $(call build_deplibs, \
  endef
  
  LOADER_BUILD_DEP_LIBS = $(call build_deplibs, \
@@ -115,7 +130,7 @@
      $(LIBM_BUILD_DEPLIB) \
      @$(LIBSTDCXX_BUILD_DEPLIB) \
      @$(LIBJULIAINTERNAL_BUILD_DEPLIB) \
-@@ -1597,7 +1538,6 @@ LOADER_DEBUG_BUILD_DEP_LIBS = $(call build_deplibs, \
+@@ -1597,7 +1540,6 @@ LOADER_DEBUG_BUILD_DEP_LIBS = $(call build_deplibs, \
  )
  
  LOADER_DEBUG_BUILD_DEP_LIBS = $(call build_deplibs, \
@@ -123,7 +138,7 @@
     $(LIBM_BUILD_DEPLIB) \
     @$(LIBSTDCXX_BUILD_DEPLIB) \
     @$(LIBJULIAINTERNAL_DEBUG_BUILD_DEPLIB) \
-@@ -1605,14 +1545,12 @@ LOADER_INSTALL_DEP_LIBS = $(call build_deplibs, \
+@@ -1605,14 +1547,12 @@ LOADER_INSTALL_DEP_LIBS = $(call build_deplibs, \
  )
  
  LOADER_INSTALL_DEP_LIBS = $(call build_deplibs, \
