@@ -1,7 +1,6 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
-DISTVERSION=	6.7.0
-PORTREVISION=	3
+DISTVERSION=	7.3.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,23 +15,46 @@ BROKEN_armv7=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file 
 
 BUILD_DEPENDS=	fox-xml>0:textproc/fox-xml \
 		bash:shells/bash
-LIB_DEPENDS=	libmpich.so:net/mpich \
-		libblas.so:math/blas \
-		liblapack.so:math/lapack
+LIB_DEPENDS=	libblas.so:math/blas \
+		libfftw3.so:math/fftw3 \
+		liblapack.so:math/lapack \
+		libopenblas.so:math/openblas
 
-USES=		fortran gmake python shebangfix
-SHEBANG_FILES=	configure
+USES=		cmake fortran python shebangfix
 GNU_CONFIGURE=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	QEF
 GH_PROJECT=	q-e
+GH_TUPLE=	anharmonic:d3q:87685245bc5bc14f226fc18e5126305501b368e8:anharmonic_d3q/external/d3q \
+                pietrodelugas:fox:3453648e6837658b747b895bb7bef4b1ed2eac40:pietrodelugas_fox/external/fox \
+                Reference-LAPACK:lapack:12d825396fcef1e0a1b27be9f119f9e554621e55:Reference_LAPACK_lapack/external/lapack \
+                libmbd:libmbd:82005cbb65bdf5d32ca021848eec8f19da956a77:libmbd_libmbd/external/mbd \
+                QMCPACK:pw2qmcpack:f72ab25fa4ea755c1b4b230ae8074b47d5509c70:QMCPACK_pw2qmcpack/external/pw2qmcpack \
+                dceresoli:qe-gipaw:75b01b694c9ba4df55d294cacc27cf28591b2161:dceresoli_qe_gipaw/external/qe-gipaw \
+                wannier-developers:wannier90:1d6b187374a2d50b509e5e79e2cab01a79ff7ce1:wannier_developers_wannier90/external/wannier90
+USE_GITLAB=	nodefault
+GL_TUPLE=	max-centre/components:devicexlib:a6b89ef:devxlib/external/devxlib
+		
 
-MAKE_ARGS=	TOPDIR=${WRKSRC}
-BINARY_ALIAS=	make=gmake cpp=/usr/local/bin/cpp${GCC_DEFAULT}
-FFLAGS+=	-x f95-cpp-input
-LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so -lm
+SHEBANG_FILES=	configure
+SHEBANG_GLOB=	*.sh *.py
 
-MAKE_JOBS_UNSAFE=	yes # https://github.com/QEF/q-e/issues/9
+#MAKE_ARGS=	TOPDIR=${WRKSRC}
+#BINARY_ALIAS=	make=gmake cpp=/usr/local/bin/cpp${GCC_DEFAULT}
+FFLAGS+=	${MPI_CFLAGS}
+LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so -lm \
+		${MPI_LIBS}
+
+BINARY_ALIAS=	git=false wget=false curl=false
+
+OPTIONS_SINGLE=		MPI
+OPTIONS_SINGLE_MPI=	MPICH OPENMPI
+OPTIONS_DEFAULT=	OPENMPI
+
+MPICH_USES=		mpi:mpich
+
+OPENMPI_USES=		mpi:openmpi
 
 .include <bsd.port.pre.mk>
 
@@ -41,19 +63,16 @@ FFLAGS+=	-fallow-argument-mismatch # workaround for https://github.com/QEF/q-e/i
 .  endif
 
 post-extract:
-	@${RM} ${WRKSRC}/archive/lapack-3.6.1.tgz
+	@${RM} \
+		${WRKSRC}/archive/lapack-3.6.1.tgz \
+		${WRKSRC}/PP/src/bgw2pw.f90.orig
 	@cd ${WRKSRC} && ${MKDIR} FoX && ${LN} -s ${LOCALBASE}/include FoX/finclude
-
-pre-build:
-	@${REINPLACE_CMD} -i '' -e ' \
-		s|$$(CPP) $$(CPPFLAGS)|$$(CPP) -P -traditional $$(CPPFLAGS)| ; \
-		s|LD *=.*|LD=${CC}| ; \
-		s|LAPACK_LIBS *=.*|LAPACK_LIBS=-L${LOCALBASE}/lib -llapack| ; \
-		s|BLAS_LIBS *=.*|BLAS_LIBS=-L${LOCALBASE}/lib -lblas|' \
-		${WRKSRC}/make.inc
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.x
+
+do-test:
+	cd ${WRKSRC}/test-suite && ${GMAKE} run-tests
 
 run-examples: build
 .for c in PP PW PWCOND PHonon

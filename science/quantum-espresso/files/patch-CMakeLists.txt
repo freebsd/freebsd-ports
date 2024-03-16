@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2024-03-16 03:53:23 UTC
++++ CMakeLists.txt
+@@ -395,14 +395,14 @@ endif(QE_ENABLE_MPI)
+ ###########################################################
+ # Git
+ ###########################################################
+-find_package(Git 2.13 REQUIRED)
+-if(EXISTS ${qe_SOURCE_DIR}/.git)
+-  message(STATUS "Source files are cloned from a git repository.")
+-  set(IS_GIT_PROJECT 1)
+-  include(GitInfo)
+-else()
+-  message(STATUS "Source files are not cloned from a git repository.")
+-endif()
++#find_package(Git 2.13 REQUIRED)
++#if(EXISTS ${qe_SOURCE_DIR}/.git)
++#  message(STATUS "Source files are cloned from a git repository.")
++#  set(IS_GIT_PROJECT 1)
++#  include(GitInfo)
++#else()
++#  message(STATUS "Source files are not cloned from a git repository.")
++#endif()
+ 
+ ###########################################################
+ # Lapack
