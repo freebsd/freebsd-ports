@@ -1,3 +1,3 @@
-TIMESTAMP = 1710601108
-SHA256 (gnome/at-spi2-core-2.50.2.tar.xz) = 5b81b1461a62dd8fbed1a276fa9ef5b7112f9ae5ff86e1e32ad9644b654ff78c
-SIZE (gnome/at-spi2-core-2.50.2.tar.xz) = 569124
+TIMESTAMP = 1710600203
+SHA256 (gnome/at-spi2-core-2.52.0.tar.xz) = 0ac3fc8320c8d01fa147c272ba7fa03806389c6b03d3c406d0823e30e35ff5ab
+SIZE (gnome/at-spi2-core-2.52.0.tar.xz) = 574684

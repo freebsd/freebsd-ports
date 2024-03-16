@@ -1,5 +1,5 @@
 PORTNAME=	at-spi2-core
-PORTVERSION=	2.50.2
+PORTVERSION=	2.52.0
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
