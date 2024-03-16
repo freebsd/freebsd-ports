@@ -1,5 +1,5 @@
 PORTNAME=	Agda
-PORTVERSION=	2.6.4.1
+PORTVERSION=	2.6.4.3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,9 +11,9 @@ LICENSE_NAME=	custom
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-BROKEN_i386=	Compiler goes out of memory
+BROKEN_i386=	compiler goes out of memory
 
-BUILD_DEPENDS=	emacs:editors/emacs
+BUILD_DEPENDS=	emacs:editors/emacs@nox
 
 USES=		cabal
 
@@ -24,16 +24,16 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		STMonadTrans-0.4.8 \
 		StateVar-1.2.2 \
 		aeson-2.2.1.0_1 \
-		alex-3.5.0.0 \
-		ansi-terminal-1.0.2 \
-		ansi-terminal-types-0.11.5_1 \
+		alex-3.5.1.0 \
+		ansi-terminal-1.1 \
+		ansi-terminal-types-1.1 \
 		assoc-1.1_1 \
 		async-2.2.5 \
 		base-compat-0.13.1 \
 		base-orphans-0.9.1 \
 		bifunctors-5.6.1_2 \
 		blaze-builder-0.4.2.3 \
-		blaze-html-0.9.1.2_4 \
+		blaze-html-0.9.2.0 \
 		blaze-markup-0.8.3.0_1 \
 		boxes-0.1.5 \
 		case-insensitive-1.2.1.0 \
@@ -46,11 +46,11 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		dlist-1.0_1 \
 		edit-distance-0.2.2.1_1 \
 		equivalence-0.4.1 \
-		foldable1-classes-compat-0.1_4 \
 		generically-0.1.1_2 \
 		gitrev-1.3.1 \
 		happy-1.20.1.1 \
 		hashable-1.4.3.0_1 \
+		hsc2hs-0.68.10_1 \
 		indexed-traversable-0.1.3 \
 		indexed-traversable-instances-0.1.1.2_2 \
 		integer-conversion-0.1.0.1_1 \
@@ -61,7 +61,7 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		parallel-3.2.2.0_7 \
 		peano-0.1.0.2 \
 		primitive-0.9.0.0 \
-		random-1.2.1.1_1 \
+		random-1.2.1.2 \
 		regex-base-0.94.0.2_4 \
 		regex-tdfa-1.3.2.2_2 \
 		scientific-0.3.7.0_7 \
@@ -87,8 +87,7 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		vector-hashtables-0.1.1.4 \
 		vector-stream-0.1.0.1 \
 		witherable-0.4.2_4 \
-		zlib-0.6.3.0_4
-
+		zlib-0.7.0.0
 
 CABAL_EXECUTABLES=	agda-mode agda
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
@@ -97,7 +96,7 @@ agda-mode_DATADIR_VARS=	Agda
 
 post-install:
 	${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda-mode compile
-	find ${WRKSRC}/src/data/lib/prim/Agda -name '*.agda' -exec ${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda {} \;
+	${FIND} ${WRKSRC}/src/data/lib/prim/Agda -name '*.agda' -exec ${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda {} \;
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/prim/Agda
 	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} lib ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} emacs-mode ${STAGEDIR}${DATADIR}
