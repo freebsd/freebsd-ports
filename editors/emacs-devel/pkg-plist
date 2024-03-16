@@ -926,7 +926,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/test.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/texi.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/wisent.srt
-%%DATADIR%%/%%EMACS_VER%%/etc/syncdoc-type-hierarchy.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/adwaita-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/deeper-blue-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/dichromacy-theme.el
@@ -979,6 +978,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.zh
 %%DATADIR%%/%%EMACS_VER%%/etc/w32-feature.el
 %%DATADIR%%/%%EMACS_VER%%/etc/yow.lines
+%%DATADIR%%/info/elisp_type_hierarchy.jpg
+%%DATADIR%%/info/elisp_type_hierarchy.txt
 %%DATADIR%%/%%EMACS_VER%%/lisp/COPYING
 %%DATADIR%%/%%EMACS_VER%%/lisp/README
 %%DATADIR%%/%%EMACS_VER%%/lisp/abbrev.el.gz
@@ -2157,8 +2158,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gssapi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gssapi.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/legacy-gnus-agent.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/legacy-gnus-agent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/mail-source.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/mail-source.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/message.el.gz
