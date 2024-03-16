@@ -1,7 +1,7 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	9.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/ElmerCSC/${PORTNAME}/commit/
@@ -97,10 +97,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,"metis.*/metis\.h",<metis.h>,' \
 		${WRKSRC}/elmergrid/src/egparallel.c
 
-post-patch-OCC-on:
-	@${REINPLACE_CMD} -e "s|\$${VERSION}|`${PKG_QUERY} '%v' opencascade`|" \
+pre-configure-OCC-on:
+	${REINPLACE_CMD} -e "s|\$${VERSION}|`${PKG_QUERY} '%v' opencascade`|" \
 		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
-	@${REINPLACE_CMD} -e 's|$${INCLUDE}|${LOCALBASE}/include/OpenCASCADE|' \
+	${REINPLACE_CMD} -e 's|$${INCLUDE}|${LOCALBASE}/include/OpenCASCADE|' \
 		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
 
 post-configure:
