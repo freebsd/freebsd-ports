@@ -1,6 +1,5 @@
 PORTNAME=	quantum-espresso-pseudopotentials
-DISTVERSION=	g20180406
-PORTREVISION=	3
+DISTVERSION=	g20220916
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,17 +9,19 @@ WWW=		https://www.quantum-espresso.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
-BUILD_DEPENDS=	quantum-espresso>0:science/quantum-espresso \
+BUILD_DEPENDS=	${LOCALBASE}/bin/ld1.x:science/quantum-espresso \
 		bash:shells/bash
-RUN_DEPENDS=	quantum-espresso>0:science/quantum-espresso
+#RUN_DEPENDS=	quantum-espresso>0:science/quantum-espresso
 
 USES=		shebangfix
+
 SHEBANG_GLOB=	*.job make_*
 SHEBANG_FILES=	QE_path clean clean_all
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalcorso
 GH_PROJECT=	pslibrary
-GH_TAGNAME=	9dd5cf7
+GH_TAGNAME=	835dd6477c90fa9d59524914de50901d4be73e36
 
 NO_ARCH=	yes
 
