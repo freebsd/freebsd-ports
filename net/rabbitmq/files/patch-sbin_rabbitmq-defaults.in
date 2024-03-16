@@ -1,13 +1,13 @@
---- deps/rabbit/scripts/rabbitmq-defaults.orig	2021-06-24 16:41:31 UTC
-+++ deps/rabbit/scripts/rabbitmq-defaults
-@@ -6,7 +6,13 @@
- ## Copyright (c) 2007-2021 VMware, Inc. or its affiliates.  All rights reserved.
+--- sbin/rabbitmq-defaults.orig	2024-02-17 11:42:49 UTC
++++ sbin/rabbitmq-defaults
+@@ -7,7 +7,13 @@
+ ##
  
  ### next line potentially updated in package install steps
--SYS_PREFIX=
+-SYS_PREFIX=${RABBITMQ_HOME}
 +SYS_PREFIX=LOCALBASE
 +# https://www.rabbitmq.com/relocate.html#unix
-+export PATH=LOCALBASE/lib/ERLANG_LIB/bin:$PATH
++export PATH=LOCALBASE/lib/_ERLANG_LIB/bin:$PATH
 +export RABBITMQ_MNESIA_BASE=/var/db/rabbitmq/mnesia
 +export RABBITMQ_LOG_BASE=/var/log/rabbitmq
 +# ensure VM and Elixir scripts are running under the same locale
