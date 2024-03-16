@@ -1060,7 +1060,6 @@
     SUBDIR += wyrmgus
     SUBDIR += wyrmsun
     SUBDIR += xasteroids
-    SUBDIR += xataxx
     SUBDIR += xbat
     SUBDIR += xbill
     SUBDIR += xbl
