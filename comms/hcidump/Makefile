@@ -1,5 +1,6 @@
 PORTNAME=	hcidump
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	comms sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
@@ -16,6 +17,6 @@ INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 CFLAGS+=	-DL2CAP_SOCKET_CHECKED=yes -fPIE
 
-PLIST_FILES=	bin/hcidump man/man1/hcidump.1.gz
+PLIST_FILES=	bin/hcidump share/man/man1/hcidump.1.gz
 
 .include <bsd.port.mk>
