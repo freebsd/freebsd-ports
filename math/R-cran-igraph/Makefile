@@ -1,5 +1,5 @@
 PORTNAME=	igraph
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,8 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/igraph/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libglpk.so:math/glpk \
-		libgmp.so:math/gmp
+LIB_DEPENDS=	libglpk.so:math/glpk
 RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-cpp11>=0.4.7:devel/R-cran-cpp11 \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
