@@ -85,6 +85,7 @@
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.chunkedhtml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.commonmark
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.context
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.djot
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.docbook4
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.docbook5
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.dokuwiki
