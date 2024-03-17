@@ -188,9 +188,6 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/utilwin32locale.py
 %%PYTHON_SITELIBDIR%%/gpodder/vimeo.py
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.py
-man/man1/gpo.1.gz
-man/man1/gpodder-migrate2tres.1.gz
-%%GTK3%%man/man1/gpodder.1.gz
 %%GTK3%%share/applications/gpodder-url-handler.desktop
 %%GTK3%%share/applications/gpodder.desktop
 %%GTK3%%share/dbus-1/services/org.gpodder.service
@@ -286,4 +283,7 @@ share/locale/sv/LC_MESSAGES/gpodder.mo
 share/locale/tr/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo
 share/locale/zh_CN/LC_MESSAGES/gpodder.mo
+share/man/man1/gpo.1.gz
+share/man/man1/gpodder-migrate2tres.1.gz
+%%GTK3%%share/man/man1/gpodder.1.gz
 %%GTK3%%share/metainfo/org.gpodder.gpodder.appdata.xml
