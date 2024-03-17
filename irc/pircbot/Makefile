@@ -11,6 +11,9 @@ WWW=		http://www.jibble.org/pircbot.php
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandoned upstream, last release in 2009 and superseded by pircbotx (fork)
+EXPIRATION_DATE=2024-03-31
+
 USES=		zip
 NO_BUILD=	yes
 NO_ARCH=	yes
