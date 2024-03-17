@@ -17,11 +17,9 @@ Date:   Fri Mar 24 21:59:39 2023 +0100
     Credits to Pero Orsolic for reporting the first cases of this in the
     PDF export in https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270273 .
 
-diff --git eeschema/eeschema_jobs_handler.cpp eeschema/eeschema_jobs_handler.cpp
-index 61462793ee..ce312d5100 100644
---- eeschema/eeschema_jobs_handler.cpp
+--- eeschema/eeschema_jobs_handler.cpp.orig	2023-04-13 20:27:39 UTC
 +++ eeschema/eeschema_jobs_handler.cpp
-@@ -111,7 +111,7 @@ REPORTER& EESCHEMA_JOBS_HANDLER::Report( const wxString& aText, SEVERITY aSeveri
+@@ -111,7 +111,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPdf( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobExportPdf( JOB* aJob )
  {
@@ -30,7 +28,7 @@ index 61462793ee..ce312d5100 100644
  
      if( !aPdfJob )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -147,7 +147,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPdf( JOB* aJob )
+@@ -147,7 +147,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportSvg( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobExportSvg( JOB* aJob )
  {
@@ -39,7 +37,7 @@ index 61462793ee..ce312d5100 100644
  
      if( !aSvgJob )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -183,7 +183,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportSvg( JOB* aJob )
+@@ -183,7 +183,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob
  
  int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob )
  {
@@ -48,7 +46,7 @@ index 61462793ee..ce312d5100 100644
  
      if( !aNetJob )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -281,7 +281,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob )
+@@ -281,7 +281,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPythonBom( JOB* aJ
  
  int EESCHEMA_JOBS_HANDLER::JobExportPythonBom( JOB* aJob )
  {
@@ -57,7 +55,7 @@ index 61462793ee..ce312d5100 100644
  
      SCHEMATIC* sch = EESCHEMA_HELPERS::LoadSchematic( aNetJob->m_filename, SCH_IO_MGR::SCH_KICAD );
  
-@@ -447,7 +447,7 @@ int EESCHEMA_JOBS_HANDLER::doSymExportSvg( JOB_SYM_EXPORT_SVG*         aSvgJob,
+@@ -447,7 +447,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
  
  int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob )
  {
@@ -66,7 +64,7 @@ index 61462793ee..ce312d5100 100644
  
      wxFileName fn( svgJob->m_libraryPath );
      fn.MakeAbsolute();
-@@ -510,7 +510,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob )
+@@ -510,7 +510,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  {
@@ -75,11 +73,9 @@ index 61462793ee..ce312d5100 100644
  
      wxFileName fn( upgradeJob->m_libraryPath );
      fn.MakeAbsolute();
-diff --git pcbnew/pcbnew_jobs_handler.cpp pcbnew/pcbnew_jobs_handler.cpp
-index be0f806dea..e045f864de 100644
---- pcbnew/pcbnew_jobs_handler.cpp
+--- pcbnew/pcbnew_jobs_handler.cpp.orig	2023-04-13 20:27:39 UTC
 +++ pcbnew/pcbnew_jobs_handler.cpp
-@@ -76,7 +76,7 @@ PCBNEW_JOBS_HANDLER::PCBNEW_JOBS_HANDLER()
+@@ -76,7 +76,7 @@ int PCBNEW_JOBS_HANDLER::JobExportStep( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportStep( JOB* aJob )
  {
@@ -88,7 +84,7 @@ index be0f806dea..e045f864de 100644
  
      if( aStepJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -119,7 +119,7 @@ int PCBNEW_JOBS_HANDLER::JobExportStep( JOB* aJob )
+@@ -119,7 +119,7 @@ int PCBNEW_JOBS_HANDLER::JobExportSvg( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportSvg( JOB* aJob )
  {
@@ -97,7 +93,7 @@ index be0f806dea..e045f864de 100644
  
      if( aSvgJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -152,7 +152,7 @@ int PCBNEW_JOBS_HANDLER::JobExportSvg( JOB* aJob )
+@@ -152,7 +152,7 @@ int PCBNEW_JOBS_HANDLER::JobExportDxf( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportDxf( JOB* aJob )
  {
@@ -106,7 +102,7 @@ index be0f806dea..e045f864de 100644
  
      if( aDxfJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -207,7 +207,7 @@ int PCBNEW_JOBS_HANDLER::JobExportDxf( JOB* aJob )
+@@ -207,7 +207,7 @@ int PCBNEW_JOBS_HANDLER::JobExportPdf( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportPdf( JOB* aJob )
  {
@@ -115,7 +111,7 @@ index be0f806dea..e045f864de 100644
  
      if( aPdfJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -257,7 +257,7 @@ int PCBNEW_JOBS_HANDLER::JobExportPdf( JOB* aJob )
+@@ -257,7 +257,7 @@ int PCBNEW_JOBS_HANDLER::JobExportGerbers( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportGerbers( JOB* aJob )
  {
@@ -124,7 +120,7 @@ index be0f806dea..e045f864de 100644
  
      if( aGerberJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -368,7 +368,7 @@ void PCBNEW_JOBS_HANDLER::populateGerberPlotOptionsFromJob( PCB_PLOT_PARAMS&
+@@ -368,7 +368,7 @@ int PCBNEW_JOBS_HANDLER::JobExportGerber( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportGerber( JOB* aJob )
  {
@@ -133,7 +129,7 @@ index be0f806dea..e045f864de 100644
  
      if( aGerberJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -414,7 +414,7 @@ static DRILL_PRECISION precisionListForMetric( 3, 3 );
+@@ -414,7 +414,7 @@ int PCBNEW_JOBS_HANDLER::JobExportDrill( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportDrill( JOB* aJob )
  {
@@ -142,7 +138,7 @@ index be0f806dea..e045f864de 100644
  
      if( aDrillJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -522,7 +522,7 @@ int PCBNEW_JOBS_HANDLER::JobExportDrill( JOB* aJob )
+@@ -522,7 +522,7 @@ int PCBNEW_JOBS_HANDLER::JobExportPos( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportPos( JOB* aJob )
  {
@@ -151,7 +147,7 @@ index be0f806dea..e045f864de 100644
  
      if( aPosJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -597,7 +597,7 @@ extern FOOTPRINT* try_load_footprint( const wxFileName& aFileName, IO_MGR::PCB_F
+@@ -597,7 +597,7 @@ int PCBNEW_JOBS_HANDLER::JobExportFpUpgrade( JOB* aJob
  
  int PCBNEW_JOBS_HANDLER::JobExportFpUpgrade( JOB* aJob )
  {
@@ -160,7 +156,7 @@ index be0f806dea..e045f864de 100644
  
      if( upgradeJob == nullptr )
          return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -668,7 +668,7 @@ int PCBNEW_JOBS_HANDLER::JobExportFpUpgrade( JOB* aJob )
+@@ -668,7 +668,7 @@ int PCBNEW_JOBS_HANDLER::JobExportFpSvg( JOB* aJob )
  
  int PCBNEW_JOBS_HANDLER::JobExportFpSvg( JOB* aJob )
  {
