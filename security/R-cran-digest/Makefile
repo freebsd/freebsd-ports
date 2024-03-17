@@ -1,5 +1,5 @@
 PORTNAME=	digest
-DISTVERSION=	0.6.34
+DISTVERSION=	0.6.35
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/digest/
 
 LICENSE=	GPLv2+
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++17-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
