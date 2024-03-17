@@ -1,10 +1,6 @@
 PORTNAME=	ddskk
-DISTVERSION=	16.2
-PORTREVISION=	16
+DISTVERSION=	17.1.20230702
 CATEGORIES=	japanese elisp
-MASTER_SITES=	ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
-		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/ \
-		http://openlab.ring.gr.jp/skk/maintrunk/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,9 +8,13 @@ COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 WWW=		http://openlab.ring.gr.jp/skk/
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/READMEs/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		emacs
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	skk-dev
+GH_TAGNAME=	8c47f46
 
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" \
 		SKK_LISPDIR="${STAGEDIR}${PREFIX}/${SKK_LISPDIR}" \
@@ -35,26 +35,15 @@ post-patch:
 		'/skk-tut-file/s|@TUT@|${PREFIX}/share/skk/SKK.tut|' \
 		${WRKSRC}/skk-setup.el.in
 
-pre-build:
-.for i in skk-lookup.el skk-jisx0213.el
-	@${MV} ${WRKSRC}/${i} ${WRKDIR}
-.endfor
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SKK_LISPDIR}
-.for i in skk-lookup.el skk-jisx0213.el
-	${INSTALL_DATA} ${WRKDIR}/${i} ${STAGEDIR}${PREFIX}/${SKK_LISPDIR}
-.endfor
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS.ja CODENAME.ja Contributors Development.ja.org FAQ.ja NEWS.ja
+.for i in AUTHORS.ja CODENAME.ja Contributors Development.ja.org FAQ.ja NEWS.ja history.md
 	${INSTALL_DATA} ${WRKSRC}/READMEs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in Emacs.ad dot.emacs dot.skk
+.for i in dot.emacs dot.skk
 	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 

@@ -1,0 +1,16 @@
+--- SKK-MK.orig	2024-03-17 07:41:31 UTC
++++ SKK-MK
+@@ -229,11 +229,13 @@ This version of SKK requires MULE features"))
+		skk-inline
+		skk-isearch
+		skk-jisx0201
++		skk-jisx0213
+		skk-jisyo-edit-mode
+		skk-kakasi
+		skk-kcode
+		skk-leim
+		skk-look
++		skk-lookup
+		skk-macs
+		skk-num
+                skk-search-web
