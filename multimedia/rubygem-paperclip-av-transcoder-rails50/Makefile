@@ -11,6 +11,9 @@ WWW=		https://github.com/ruby-av/paperclip-av-transcoder/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on deprecated port devel/rubygem-paperclip-rails50
+EXPIRATION_DATE=2024-04-30
+
 RUN_DEPENDS=	rubygem-av>=0.9.0:multimedia/rubygem-av \
 		rubygem-paperclip-rails50>=2.5.2:devel/rubygem-paperclip-rails50
 
