@@ -3,10 +3,6 @@ bin/vifm-convert-dircolors
 bin/vifm-pause
 bin/vifm-screen-split
 %%ETCDIR%%/colors/Default-256.vifm
-man/man1/vifm-convert-dircolors.1.gz
-man/man1/vifm-pause.1.gz
-man/man1/vifm-screen-split.1.gz
-man/man1/vifm.1.gz
 share/applications/vifm.desktop
 share/bash-completion/completions/vifm
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -22,6 +18,10 @@ share/bash-completion/completions/vifm
 share/fish/vendor_completions.d/vifm.fish
 share/icons/hicolor/128x128/apps/vifm.png
 share/icons/hicolor/scalable/apps/vifm.svg
+share/man/man1/vifm-convert-dircolors.1.gz
+share/man/man1/vifm-pause.1.gz
+share/man/man1/vifm-screen-split.1.gz
+share/man/man1/vifm.1.gz
 share/pixmaps/vifm.png
 %%DATADIR%%/colors/Default-256.vifm
 %%DATADIR%%/colors/astrell-root.vifm
