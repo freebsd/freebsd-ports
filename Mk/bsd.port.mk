@@ -1994,6 +1994,8 @@ ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .      endif
 .    endif
 
+.include "${PORTSDIR}/Mk/bsd.sponsor.mk"
+
 .    if defined(USE_LOCALE)
 WRK_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
 .    endif
