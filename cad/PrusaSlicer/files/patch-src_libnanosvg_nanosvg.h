@@ -1,5 +1,5 @@
---- src/libnanosvg/nanosvg.h.orig	1970-01-01 01:00:00.000000000 +0100
-+++ src/libnanosvg/nanosvg.h	2022-12-22 00:42:08.000000000 +0100
+--- src/libnanosvg/nanosvg.h.orig	2024-03-17 16:57:39 UTC
++++ src/libnanosvg/nanosvg.h
 @@ -0,0 +1,3106 @@
 +/*
 + * Copyright (c) 2013-14 Mikko Mononen memon@inside.org

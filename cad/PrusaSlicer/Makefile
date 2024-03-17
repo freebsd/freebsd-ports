@@ -1,7 +1,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
 DISTVERSION=	2.6.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -11,8 +11,6 @@ WWW=		https://www.prusa3d.com/prusaslicer/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build, error: no member named 'prior' in namespace 'boost'
 
 BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal \
@@ -31,7 +29,7 @@ LIB_DEPENDS=	libtbb.so:devel/onetbb \
 		libmpfr.so:math/mpfr \
 		libdbus-1.so:devel/dbus \
 		libpng.so:graphics/png \
-		libTKXDESTEP.so:cad/opencascade \
+		libTKXSDRAWSTEP.so:cad/opencascade \
 		libtiff.so:graphics/tiff \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
