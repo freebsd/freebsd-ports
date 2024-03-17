@@ -24,4 +24,4 @@ bin/freetalk
 %%DOCSDIR%%/examples/daemon.ft
 %%DOCSDIR%%/examples/hello-world.ft
 %%DOCSDIR%%/examples/mimic.ft
-man/man1/freetalk.1.gz
+share/man/man1/freetalk.1.gz
