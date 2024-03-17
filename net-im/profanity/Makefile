@@ -1,5 +1,6 @@
 PORTNAME=	profanity
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://profanity-im.github.io/tarballs/
 
@@ -45,6 +46,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/man/man1 "-name *\.1"
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/man/man1 "-name *\.1"
 
 .include <bsd.port.mk>
