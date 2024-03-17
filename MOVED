@@ -3044,3 +3044,4 @@ devel/anjuta|devel/gnome-builder|2024-03-12|Has expired: Unmaintained, upstream 
 deskutils/rubrica||2024-03-12|Has expired: Upstream WWW redirects to a different site not related to the application
 x11/mrxvt-devel|x11/mrxvt|2024-03-12|Merge most recent version into main port
 games/xataxx||2024-03-16|Has expired: No available WWW
+editors/kak-lsp|editors/kakoune-lsp|2024-03-17|Project was renamed upstream

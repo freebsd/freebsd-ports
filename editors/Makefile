@@ -71,8 +71,8 @@
     SUBDIR += joe
     SUBDIR += jucipp
     SUBDIR += jupp
-    SUBDIR += kak-lsp
     SUBDIR += kakoune
+    SUBDIR += kakoune-lsp
     SUBDIR += kate
     SUBDIR += kate-devel
     SUBDIR += kibi

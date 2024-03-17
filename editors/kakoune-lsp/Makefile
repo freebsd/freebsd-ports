@@ -1,21 +1,20 @@
-PORTNAME=	kak-lsp
+PORTNAME=	kakoune-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	15.0.1
-PORTREVISION=	2
+DISTVERSION=	16.0.0
 CATEGORIES=	editors
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Kakoune Language Server Protocol Client
-WWW=		https://github.com/ul/kak-lsp
+WWW=		https://github.com/kakoune-lsp/kakoune-lsp
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-RUN_DEPENDS=	kakoune>=2018.10.27:editors/kakoune
+RUN_DEPENDS=	kakoune>=2022.10.31:editors/kakoune
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	ul
+GH_ACCOUNT=	kakoune-lsp
 
 SUB_FILES=	pkg-message
 
