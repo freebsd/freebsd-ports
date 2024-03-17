@@ -1,10 +1,10 @@
 PORTNAME=	trustedqsl
 DISTVERSION=	2.7.2
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.arrl.org/files/file/LoTW%20Instructions/ \
 		LOCAL/shurd
-DISTNAME=	tqsl-${PORTVERSION}
+DISTNAME=	tqsl-${DISTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
@@ -16,29 +16,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libexpat.so:textproc/expat2 \
-		liblmdb.so:databases/lmdb
+		libexpat.so:textproc/expat2
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-USES=		bdb:5+ cmake compiler:c++11-lib pkgconfig ssl
-CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
+USES=		cmake compiler:c++11-lib pkgconfig ssl sqlite
 USE_WX=		3.2
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	GEN_CRQ LOAD_CERT STATION_LOC CONVERTER
-GEN_CRQ_DESC=	Build gen_crq
-LOAD_CERT_DESC=	Build load_cert
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
+
+OPTIONS_DEFINE=		GEN_CRQ LOAD_CERT STATION_LOC CONVERTER
+OPTIONS_SUB=		yes
+
+GEN_CRQ_DESC=		Build gen_crq
+LOAD_CERT_DESC=		Build load_cert
 STATION_LOC_DESC=	Build station_loc
-CONVERTER_DESC=	Build converter
+CONVERTER_DESC=		Build converter
 
 GEN_CRQ_CMAKE_ON=	-DBUILD_GENCRQ=ON
 LOAD_CERT_CMAKE_ON=	-DBUILD_LOADCERT=ON
 STATION_LOC_CMAKE_ON=	-DBUILD_STATIONLOC=ON
 CONVERTER_CMAKE_ON=	-DBUILD_CONVERTER=ON
-
-OPTIONS_SUB=	yes
 
 post-install-GEN_CRQ-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gen_crq ${STAGEDIR}${PREFIX}/bin
