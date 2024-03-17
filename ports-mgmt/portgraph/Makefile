@@ -1,5 +1,5 @@
 PORTNAME=	portgraph
-PORTVERSION=	0.0.1
+PORTVERSION=	0.1.0
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	PYPI
 
@@ -17,7 +17,7 @@ NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|/usr/ports|${PORTSDIR}| ; s|ports-mgmt/py-portgraph|ports-mgmt/portgraph|' \
+		-e 's|/usr/ports|${PORTSDIR}|' \
 		${WRKSRC}/portgraph/portgraph.py
 
 .include <bsd.port.mk>
