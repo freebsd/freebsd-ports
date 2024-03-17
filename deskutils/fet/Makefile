@@ -1,6 +1,5 @@
 PORTNAME=	fet
-DISTVERSION=	6.15.0
-PORTREVISION=	1
+DISTVERSION=	6.18.1
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
@@ -18,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 FLAVORS=	qt6 qt5
 FLAVOR?=	qt6
 
-USES=		compiler:c++14-lang gl qmake qt:${FLAVOR:S/qt//} tar:bzip2
+USES=		compiler:c++17-lang gl qmake qt:${FLAVOR:S/qt//} tar:bzip2
 USE_GL=		gl
 _USE_QT5=	core gui network printsupport widgets buildtools:build
 _USE_QT6=	base
