@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 PORTVERSION=	2.12
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zeograd.com/download/ \
 		http://www.sourcefiles.org/Emulators/Videogames/
@@ -11,6 +11,9 @@ WWW=		https://www.zeograd.com/
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
+
+DEPRECATED=	Unmaintained, last release in 2005 and uses deprecated gtk2 library
+EXPIRATION_DATE=2024-04-17
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
