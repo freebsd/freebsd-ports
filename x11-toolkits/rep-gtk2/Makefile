@@ -13,6 +13,9 @@ WWW=		https://sawfish.tuxfamily.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated gtk2 library
+EXPIRATION_DATE=	2024-12-31
+
 LIB_DEPENDS=	librep.so:lang/librep \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
