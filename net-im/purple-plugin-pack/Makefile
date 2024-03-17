@@ -11,6 +11,9 @@ WWW=		https://keep.imfreedom.org/pidgin/purple-plugin-pack
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPECATED=Uses deprecated gtk2 libraries
+EXPIRATION_DATE=2024-12-31
+
 BUILD_DEPENDS=	pidgin>0:net-im/pidgin
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libgtkspell.so:textproc/gtkspell \
