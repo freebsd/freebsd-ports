@@ -1,3 +1,36 @@
+  <vuln vid="0a48e552-e470-11ee-99b3-589cfc0f81b0">
+    <topic>amavisd-new -- multipart boundary confusion</topic>
+    <affects>
+      <package>
+	<name>amavisd-new</name>
+	<range><lt>2.12.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Amavis project reports:</p>
+	<blockquote cite="https://gitlab.com/amavis/amavis/-/raw/v2.12.3/README_FILES/README.CVE-2024-28054">
+	  <p>Emails which consist of multiple parts (`Content-Type: multipart/*`)
+	  incorporate boundary information stating at which point one part ends and the
+	  next part begins.</p>
+	  <p>A boundary is announced by an Content-Type header's `boundary` parameter. To
+	  our current knowledge, RFC2046 and RFC2045 do not explicitly specify how a
+	  parser should handle multiple boundary parameters that contain conflicting
+	  values. As a result, there is no canonical choice which of the values should or
+	  should not be used for mime part decomposition.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-28054</cvename>
+      <url>https://gitlab.com/amavis/amavis/-/raw/v2.12.3/README_FILES/README.CVE-2024-28054</url>
+    </references>
+    <dates>
+      <discovery>2024-03-14</discovery>
+      <entry>2024-03-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ad3d264-e36b-11ee-9c27-40b034429ecf">
     <topic>typo3-{11,12} -- multiple vulnerabilities</topic>
     <affects>
