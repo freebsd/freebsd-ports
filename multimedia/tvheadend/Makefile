@@ -1,7 +1,7 @@
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -23,6 +23,7 @@ USES=		compiler:c++11-lang gettext gmake pkgconfig python shebangfix ssl
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	${PORTNAME}
 

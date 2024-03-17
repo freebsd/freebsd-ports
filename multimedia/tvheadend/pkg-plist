@@ -1,5 +1,5 @@
 bin/tvheadend
-man/man1/tvheadend.1.gz
+share/man/man1/tvheadend.1.gz
 %%DATADIR%%/data/conf/descrambler
 %%DATADIR%%/data/conf/epggrab/opentv/dict/skyeng
 %%DATADIR%%/data/conf/epggrab/opentv/dict/skyit
