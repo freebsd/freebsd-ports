@@ -26,7 +26,9 @@ WRKSRC_SUBDIR=	src
 CMAKE_ON=	HYBRID_HEADLESS
 CMAKE_OFF=	STATIC_LIBUVC
 CMAKE_ARGS=	-DDISTR_TAG:STRING="portbld" \
-		-DENGINE_BUILDTAG:STRING="${DISTVERSIONFULL}"
+		-DENGINE_BUILDTAG:STRING="${DISTVERSIONFULL}" \
+		-DMAN_DEST=share/man/man1 \
+		-DAPIMAN_DEST=share/man/man3
 LDFLAGS+=	-Wl,--as-needed # bzip2, ffmpeg, librt, libutil, lzma, zlib
 LDFLAGS_i386=	-Wl,-z,notext
 

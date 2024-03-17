@@ -1,7 +1,5 @@
 bin/asy
 bin/xasy
-man/man1/asy.1.gz
-man/man1/xasy.1x.gz
 %%DATADIR%%/CAD.asy
 %%DATADIR%%/GUI/CustMatTransform.py
 %%DATADIR%%/GUI/DebugFlags.py
@@ -274,6 +272,8 @@ share/info/asymptote/triangulate.png
 share/info/asymptote/unitcircle3.png
 share/info/asymptote/vectorfield.png
 share/info/asymptote/westnile.png
+share/man/man1/asy.1.gz
+share/man/man1/xasy.1x.gz
 %%TEXMFLOCALDIR%%/tex/context/third/asymptote/colo-asy.tex
 %%TEXMFLOCALDIR%%/tex/latex/asymptote/asycolors.sty
 %%TEXMFLOCALDIR%%/tex/latex/asymptote/asymptote.sty

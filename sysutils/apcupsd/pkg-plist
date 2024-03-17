@@ -24,8 +24,8 @@ sbin/smtp
 %%GAPCMON%%share/pixmaps/onbatt.png
 %%GAPCMON%%share/pixmaps/online.png
 %%GAPCMON%%share/pixmaps/unplugged.png
-man/man5/apcupsd.conf.5.gz
-man/man8/apcaccess.8.gz
-man/man8/apccontrol.8.gz
-man/man8/apctest.8.gz
-man/man8/apcupsd.8.gz
+share/man/man5/apcupsd.conf.5.gz
+share/man/man8/apcaccess.8.gz
+share/man/man8/apccontrol.8.gz
+share/man/man8/apctest.8.gz
+share/man/man8/apcupsd.8.gz
