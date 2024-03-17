@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.7.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,6 +49,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		colorchoice-1.0.0 \
 		compact_str-0.7.1 \
 		console-0.15.8 \
+		convert_case-0.4.0 \
 		core-foundation-sys-0.8.6 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
@@ -58,6 +59,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
+		derive_more-0.99.17 \
 		diff-0.1.13 \
 		directories-5.0.1 \
 		dirs-sys-0.4.1 \
@@ -67,6 +69,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		figment-0.10.14 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.12 \
+		git-version-0.3.9 \
+		git-version-macro-0.3.9 \
 		git2-0.18.2 \
 		half-2.4.0 \
 		hashbrown-0.14.3 \
@@ -120,10 +124,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
+		rustc_version-0.4.0 \
 		rustversion-1.0.14 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
+		semver-1.0.22 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
 		serde_json-1.0.114 \
@@ -137,7 +143,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		stability-0.1.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.0 \
-		strum-0.26.1 \
+		strum-0.26.2 \
 		strum_macros-0.26.1 \
 		syn-1.0.109 \
 		syn-2.0.52 \
