@@ -5,6 +5,7 @@ bin/lms-recommendation
 etc/pam.d/lms
 lib/liblmsauth.so
 lib/liblmsav.so
+lib/liblmscore.so
 lib/liblmsdatabase.so
 lib/liblmsfeedback.so
 lib/liblmsimage.so
@@ -15,12 +16,12 @@ lib/liblmsscrobbling.so
 lib/liblmsservice-cover.so
 lib/liblmssom.so
 lib/liblmssubsonic.so
-lib/liblmsutils.so
 %%DATADIR%%/approot/admin-initwizard.xml
 %%DATADIR%%/approot/admin-medialibraries.xml
 %%DATADIR%%/approot/admin-medialibrary.xml
 %%DATADIR%%/approot/admin-scannercontroller.xml
 %%DATADIR%%/approot/admin-scansettings.xml
+%%DATADIR%%/approot/admin-tracing.xml
 %%DATADIR%%/approot/admin-user.xml
 %%DATADIR%%/approot/admin-users.xml
 %%DATADIR%%/approot/artist.xml
