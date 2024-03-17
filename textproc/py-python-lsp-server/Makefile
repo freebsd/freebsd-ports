@@ -1,5 +1,5 @@
 PORTNAME=	python-lsp-server
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,9 +47,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
 		${PYNUMPY}
 
-# make test: 4 failed, 185 passed, 8 skipped, 13 warnings
-# test/plugins/test_pylint_lint.py:49: IndexError
-# test/plugins/test_pylint_lint.py:99,126,137: AssertionError
+# make test: 4 failed, 187 passed, 8 skipped, 14 warnings
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
