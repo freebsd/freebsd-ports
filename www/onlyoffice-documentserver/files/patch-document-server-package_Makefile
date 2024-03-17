@@ -1,5 +1,5 @@
---- document-server-package/Makefile.orig	2023-02-13 11:11:48.689223000 +0100
-+++ document-server-package/Makefile	2023-02-13 11:27:26.937335000 +0100
+--- document-server-package/Makefile.orig	2024-02-12 13:46:57.000000000 +0100
++++ document-server-package/Makefile	2024-03-01 10:49:36.212407000 +0100
 @@ -23,6 +23,7 @@ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
  PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
  PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
@@ -44,7 +44,7 @@
  	ifneq ($(filter %86,$(UNAME_M)),)
  		ARCHITECTURE := 32
  	endif
-@@ -319,7 +342,7 @@ documentserver:
+@@ -320,7 +343,7 @@ documentserver:
  		
  documentserver:
  	mkdir -p $(DOCUMENTSERVER_FILES)
@@ -53,7 +53,7 @@
  
  	mkdir -p $(DOCUMENTSERVER_CONFIG)
  	mkdir -p $(DOCUMENTSERVER_CONFIG)/log4js
-@@ -328,25 +351,25 @@ documentserver:
+@@ -329,25 +352,25 @@ documentserver:
  	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
  
  	# rename product specific folders
@@ -86,14 +86,14 @@
  	rm -fr $(3RD_PARTY_LICENSE_FILES)
  
  ifeq ($(PLATFORM),win)
-@@ -356,34 +379,34 @@ endif
+@@ -357,34 +380,34 @@ endif
  endif
  
  	[ -f $(LICENSE_FILE) ] \
 -		&& cp -f -t $(DOCUMENTSERVER) $(LICENSE_FILE) \
 -		|| cp -f -t $(DOCUMENTSERVER) LICENSE.txt
 +		&& cp -f $(LICENSE_FILE) $(DOCUMENTSERVER) \
-+		|| cp -f LICENSE.txt $(DOCUMENTSERVER)
++		|| cp -f LICENSE.txt $(DOCUMENTSERVER) 
  
  	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
  	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
@@ -127,11 +127,11 @@
  	cd $(DOCUMENTSERVER)/npm && \
  		npm install && \
 -		pkg ./node_modules/json $(PKG_TARGET:%=-t %) -o json
-+		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/server/node_modules/.bin/pkg" ./node_modules/json $(PKG_TARGET:%=-t %) -o json
++		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/yao-pkg/node_modules/.bin/pkg" ./node_modules/json $(PKG_TARGET:%=-t %) -o json
  
  ifeq ($(PLATFORM),win)		
  	cd $(DOCUMENTSERVER)/npm && \
-@@ -397,7 +420,7 @@ documentserver-example:
+@@ -398,7 +421,7 @@ documentserver-example:
  
  documentserver-example:
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE)
@@ -140,7 +140,7 @@
  	
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
  
-@@ -406,7 +429,7 @@ documentserver-example:
+@@ -407,7 +430,7 @@ documentserver-example:
  	# Prevent for modification original config
  	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
  
@@ -149,7 +149,7 @@
  
  	/usr/bin/find $(DOCUMENTSERVER_EXAMPLE)/welcome -depth -type f -exec sed -i "s_{{year}}_$(shell date +"%Y")_g" {} \;
  
-@@ -499,6 +522,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
+@@ -500,6 +523,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
  
  %.exe:
  	cd $(@D) && $(ISCC) $(ISCC_PARAMS) common.iss

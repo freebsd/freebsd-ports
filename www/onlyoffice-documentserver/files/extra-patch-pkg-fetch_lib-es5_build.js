@@ -1,5 +1,5 @@
---- server/node_modules/@yao-pkg/pkg-fetch/lib-es5/build.js.orig	2024-01-25 21:40:25.773587000 +0100
-+++ server/node_modules/@yao-pkg/pkg-fetch/lib-es5/build.js	2024-01-25 21:41:12.907517000 +0100
+--- yao-pkg/node_modules/@yao-pkg/pkg-fetch/lib-es5/build.js.orig	2024-01-25 21:40:25.773587000 +0100
++++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/lib-es5/build.js	2024-01-25 21:41:12.907517000 +0100
 @@ -99,12 +99,6 @@ function getConfigureArgs(major, targetPlatform) {
      if (targetPlatform === 'linuxstatic') {
          args.push('--fully-static');

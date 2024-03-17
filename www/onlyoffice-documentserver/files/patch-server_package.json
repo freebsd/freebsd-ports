@@ -1,5 +1,5 @@
---- server/package.json.orig	2022-04-18 16:34:03 UTC
-+++ server/package.json
+--- server/package.json.orig	2024-01-30 12:30:03.000000000 +0100
++++ server/package.json	2024-03-01 10:57:21.937036000 +0100
 @@ -9,7 +9,7 @@
          "expand": true,
          "src": [
@@ -17,17 +17,31 @@
            "create": [
              "./build/server"
            ]
-@@ -57,10 +58,12 @@
-     "grunt": "1.5.3",
+@@ -54,9 +55,11 @@
+     "./build/server/Metrics"
+   ],
+   "dependencies": {
+-    "grunt": "1.5.3",
++    
++    "grunt": "^1.6.1",
      "grunt-banner": "0.6.0",
      "grunt-check-dependencies": "1.0.0",
 +    "grunt-cli": "^1.4.3",
      "grunt-contrib-clean": "2.0.0",
      "grunt-contrib-copy": "1.0.0",
      "grunt-mkdir": "1.1.0",
--    "grunt-stripcomments": "0.7.2"
-+    "grunt-stripcomments": "0.7.2",
-+    "pkg": "^5.5.1"
-   },
-   "devDependencies": {
-     "@jest/globals": "29.5.0",
+@@ -74,10 +77,10 @@
+     "unit tests": "cd ./DocService && jest unit --config=../tests/jest.config.js",
+     "integration tests": "cd ./DocService && jest integration --config=../tests/jest.config.js",
+     "tests": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js",
+-    "install:Common": "npm ci --prefix ./Common",
+-    "install:DocService": "npm ci --prefix ./DocService",
+-    "install:FileConverter": "npm ci --prefix ./FileConverter",
+-    "install:Metrics": "npm ci --prefix ./Metrics",
++    "install:Common": "npm install --prefix ./Common",
++    "install:DocService": "npm install --prefix ./DocService",
++    "install:FileConverter": "npm install --prefix ./FileConverter",
++    "install:Metrics": "npm install --prefix ./Metrics",
+     "build": "run-p install:*"
+   }
+ }

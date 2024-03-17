@@ -2,8 +2,8 @@ https://github.com/yao-pkg/pkg-fetch/blob/main/patches/node.v18.18.2.cpp.patch
 + local FreeBSD patches
 
 
---- server/node_modules/@yao-pkg/pkg-fetch/patches/node.v18.18.2.cpp.patch   2021-12-30 20:04:18.203959000 +0100
-+++ server/node_modules/@yao-pkg/pkg-fetch/patches/node.v18.18.2.cpp.patch
+--- yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v18.18.2.cpp.patch   2021-12-30 20:04:18.203959000 +0100
++++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v18.18.2.cpp.patch
 @@ -11,6 +11,15 @@ +              'lto': ' -flto=4 -ffat-lto-objects ', #
               }, {
                 'lto': ' -flto ', # Clang

@@ -1,5 +1,5 @@
---- build_tools/scripts/core_common/modules/v8.py.orig	2022-04-29 20:25:52 UTC
-+++ build_tools/scripts/core_common/modules/v8.py
+--- build_tools/scripts/core_common/modules/v8.py.orig	2024-02-07 10:44:24.000000000 +0100
++++ build_tools/scripts/core_common/modules/v8.py	2024-03-01 10:40:07.626578000 +0100
 @@ -9,6 +9,7 @@ def clean():
  import v8_89
  
@@ -17,34 +17,23 @@
    if (config.check_option("platform", "linux_64") or config.check_option("platform", "linux_32") or config.check_option("platform", "linux_arm64")):
      return True
    if config.check_option("platform", "mac_64"):
-@@ -93,23 +96,23 @@ def make():
+@@ -86,24 +89,9 @@ def make():
      base.set_env("DEPOT_TOOLS_WIN_TOOLCHAIN", "0")
      base.set_env("GYP_MSVS_VERSION", "2015")
  
 -  base.common_check_version("v8", "1", clean)
-+#  base.common_check_version("v8", "1", clean)
- 
+-
    if not base.is_dir("v8/out.gn"):
      clean()
  
 -  if not base.is_dir("depot_tools"):
 -    base.cmd("git", ["clone", "https://chromium.googlesource.com/chromium/tools/depot_tools.git"])
+-    v8_89.change_bootstrap()
 -    if ("windows" == base.host_platform()):
 -      # hack for 32 bit system!!!
 -      if base.is_file("depot_tools/cipd.ps1"):
 -        base.replaceInFile("depot_tools/cipd.ps1", "windows-386", "windows-amd64")
-+#  if not base.is_dir("depot_tools"):
-+#    base.cmd("git", ["clone", "https://chromium.googlesource.com/chromium/tools/depot_tools.git"])
-+#    if ("windows" == base.host_platform()):
-+#      # hack for 32 bit system!!!
-+#      if base.is_file("depot_tools/cipd.ps1"):
-+#        base.replaceInFile("depot_tools/cipd.ps1", "windows-386", "windows-amd64")
-+#
-+#  os.environ["PATH"] = base_dir + "/depot_tools" + os.pathsep + os.environ["PATH"]
-+#
-+#  if not base.is_dir("v8/out.gn"):
-+#    base.cmd("gclient")
- 
+-
 -  os.environ["PATH"] = base_dir + "/depot_tools" + os.pathsep + os.environ["PATH"]
 -
 -  if not base.is_dir("v8/out.gn"):
@@ -53,7 +42,7 @@
    # --------------------------------------------------------------------------
    # fetch
    if not base.is_dir("v8"):
-@@ -127,8 +130,8 @@ def make():
+@@ -121,8 +109,8 @@ def make():
        base.delete_dir_with_access_error("v8/buildtools/win")
        base.cmd("git", ["config", "--system", "core.longpaths", "true"])
        base.cmd("gclient", ["sync", "--force"], True)
@@ -64,7 +53,7 @@
  
      # normal version !!!
      #base.cmd("gclient", ["sync"], True)
-@@ -140,7 +143,7 @@ def make():
+@@ -134,7 +122,7 @@ def make():
        if base.is_dir("v8/third_party/binutils/Linux_ia32/Release"):
          base.delete_dir("v8/third_party/binutils/Linux_ia32/Release")
  
@@ -73,7 +62,7 @@
  
        if base.is_dir("v8/third_party/binutils/Linux_x64/Release/bin"):
          for file in os.listdir("v8/third_party/binutils/Linux_x64/Release/bin"):
-@@ -173,6 +176,10 @@ def make():
+@@ -167,6 +155,10 @@ def make():
  
    base_args64 = "target_cpu=\\\"x64\\\" v8_target_cpu=\\\"x64\\\" v8_static_library=true is_component_build=false v8_use_snapshot=false"
    base_args32 = "target_cpu=\\\"x86\\\" v8_target_cpu=\\\"x86\\\" v8_static_library=true is_component_build=false v8_use_snapshot=false"

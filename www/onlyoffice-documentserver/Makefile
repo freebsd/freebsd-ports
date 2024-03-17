@@ -1,6 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.5.1.23
+DISTVERSION=	8.0.1.31
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -192,9 +192,13 @@ do-build:
 
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt
-	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@5.11.1
 	@cd ${WRKSRC}/sdkjs  ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/sdkjs  ; ${SETENV} ${MAKE_ENV} npm install grunt
+
+	@${MKDIR} ${WRKSRC}/yao-pkg
+	@${CP} ${FILESDIR}/package* ${WRKSRC}/yao-pkg
+	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@5.11.1
+
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_patches_node.v${NODE_VERSION_PKGFETCH}.cpp.patch || ${TRUE}
 
