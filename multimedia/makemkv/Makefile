@@ -1,5 +1,6 @@
 PORTNAME=	makemkv
 DISTVERSION=	1.17.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
@@ -110,7 +111,7 @@ pre-install:
 
 post-install:
 		${INSTALL_MAN} ${FILESDIR}/makemkvcon.1 \
-			${STAGEDIR}${PREFIX}/man/man1
+			${STAGEDIR}${PREFIX}/share/man/man1
 		cd ${WRKSRC_bin}; \
 		${MKDIR} tmp; \
 		${ECHO_CMD} accepted > tmp/eula_accepted; \

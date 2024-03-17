@@ -5,11 +5,11 @@ bin/sdftool
 lib/makemkv/libdriveio.so.0
 lib/makemkv/libmakemkv.so.1
 lib/makemkv/libmmbd.so.0
-man/man1/makemkvcon.1.gz
 sbin/update-makemkv-drives
 share/MakeMKV/appdata.tar
 share/MakeMKV/blues.jar
 share/MakeMKV/blues.policy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/update-makemkv-key.sh
+share/man/man1/makemkvcon.1.gz
 @postexec update-makemkv-drives
 @preunexec rm -fr %%LINUXBASE%%/etc/makemkv
