@@ -6,9 +6,6 @@ share/man/man1/fig2dev.1.gz
 share/man/man1/fig2ps2tex.1.gz
 share/man/man1/pic2tpic.1.gz
 share/man/man1/transfig.1.gz
-%%DATADIR%%/i18n/cs_CZ.ps
-%%DATADIR%%/i18n/hr_HR.ps
-%%DATADIR%%/i18n/hu_HU.ps
 %%DATADIR%%/i18n/ja.ps
 %%DATADIR%%/i18n/ja_JP.EUC.ps
 %%DATADIR%%/i18n/ja_JP.eucJP.ps
@@ -20,10 +17,3 @@ share/man/man1/transfig.1.gz
 %%DATADIR%%/i18n/ko_KR.eucKR.ps
 %%DATADIR%%/i18n/ko_KR.ps
 %%DATADIR%%/i18n/korean.ps
-%%DATADIR%%/i18n/pl_PL.ps
-%%DATADIR%%/i18n/ro_RO.ps
-%%DATADIR%%/i18n/ru_RU.CP1251.ps
-%%DATADIR%%/i18n/ru_RU.KOI8-R.ps
-%%DATADIR%%/i18n/sk_SK.ps
-%%DATADIR%%/i18n/sl_SI.ps
-%%DATADIR%%/i18n/uk_UA.KOI8-U.ps
