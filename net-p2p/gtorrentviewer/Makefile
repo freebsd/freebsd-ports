@@ -1,6 +1,6 @@
 PORTNAME=	gtorrentviewer
 PORTVERSION=	0.2b
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/GTorrentViewer/${PORTVERSION}
 DISTNAME=	GTorrentViewer-${PORTVERSION}
@@ -12,10 +12,14 @@ WWW=		https://gtorrentviewer.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, last release in 2004 and uses deprecated gtk2
+EXPIRATION_DATE=2024-04-17
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GNOME=	gtk20 intlhack
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \
