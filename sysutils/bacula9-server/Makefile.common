@@ -10,7 +10,7 @@ do-install:
 # Install config files and preserve existing ones
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${STAGEDIR}${PREFIX}/etc/bacula/bat.conf.sample
-	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${STAGEDIR}${PREFIX}/sbin
 .endif
 .if ${PKGNAMEPREFIX} == "nagios-check_"
