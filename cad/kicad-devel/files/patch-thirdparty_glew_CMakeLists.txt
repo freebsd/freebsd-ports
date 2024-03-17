@@ -1,10 +1,10 @@
---- thirdparty/glew/CMakeLists.txt.orig	2022-05-07 15:44:23 +0200
+--- thirdparty/glew/CMakeLists.txt.orig	2023-06-22 13:35:48 UTC
 +++ thirdparty/glew/CMakeLists.txt
-@@ -5,6 +5,7 @@
+@@ -5,6 +5,7 @@ target_include_directories( glew PRIVATE "${CMAKE_CURR
  # The actual include directories will be added to the global include paths as
  # system headers
  target_include_directories( glew PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include" )
 +target_include_directories( glew SYSTEM PRIVATE "${CMAKE_INSTALL_PREFIX}/include" )
  
  # Definitions for compiling GLEW staticly for EGL (extracted from the main GLEW CMakeLists.txt file)
- add_definitions( -DGLEW_STATIC )
+ add_compile_definitions( GLEW_STATIC )

@@ -1,6 +1,6 @@
---- thirdparty/nanodbc/CMakeLists.txt.orig	2022-09-14 12:06:32 UTC
+--- thirdparty/nanodbc/CMakeLists.txt.orig	2023-06-22 13:35:48 UTC
 +++ thirdparty/nanodbc/CMakeLists.txt
-@@ -165,16 +165,11 @@ elseif(MINGW)
+@@ -155,16 +155,11 @@ endif()
  endif()
  
  ########################################
@@ -21,10 +21,3 @@
  
  ########################################
  ## library target
-@@ -202,4 +197,4 @@ endif()
- if(NANODBC_ENABLE_UNICODE)
-   add_compile_definitions(NANODBC_ENABLE_UNICODE)
-   target_compile_definitions(nanodbc PUBLIC NANODBC_ENABLE_UNICODE)
--endif()
-\ No newline at end of file
-+endif()
