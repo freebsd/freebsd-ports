@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.5
+DISTVERSION=	0.18.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -22,6 +22,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
+		ansi-width-0.1.0 \
 		ansi_colours-1.2.2 \
 		ansiterm-0.12.2 \
 		anstream-0.6.11 \
@@ -87,7 +88,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		line-wrap-0.1.1 \
 		linux-raw-sys-0.4.11 \
 		locale-0.2.2 \
-		log-0.4.20 \
+		log-0.4.21 \
 		matches-0.1.8 \
 		memchr-2.6.3 \
 		memoffset-0.9.0 \
@@ -103,6 +104,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		palette-0.7.5 \
 		palette_derive-0.7.5 \
 		partition-identity-0.3.0 \
+		path-clean-1.0.1 \
 		percent-encoding-2.3.1 \
 		phf-0.11.2 \
 		phf_generator-0.11.2 \
@@ -120,7 +122,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		quote-1.0.33 \
 		rand-0.8.5 \
 		rand_core-0.6.4 \
-		rayon-1.8.1 \
+		rayon-1.9.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.3.5 \
@@ -162,7 +164,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		unicode-width-0.1.11 \
 		url-2.2.1 \
 		utf8parse-0.2.1 \
-		uutils_term_grid-0.3.0 \
+		uutils_term_grid-0.6.0 \
 		uzers-0.11.3 \
 		vcpkg-0.2.12 \
 		wait-timeout-0.2.0 \
