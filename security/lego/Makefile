@@ -1,7 +1,6 @@
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.15.0
-PORTREVISION=	1
+DISTVERSION=	4.16.1
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		go:modules
+USES=		go:1.21,modules
 GO_MODULE=	github.com/go-acme/lego/v4
 GO_TARGET=	./cmd/lego
 GO_BUILDFLAGS=	-ldflags '-X "main.version=${DISTVERSION}"'
