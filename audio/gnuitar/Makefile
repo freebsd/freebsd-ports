@@ -1,15 +1,18 @@
 PORTNAME=	gnuitar
 PORTVERSION=	0.3.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time guitar processor
-WWW=		http://www.gnuitar.com
+WWW=		https://sourceforge.net/projects/gnuitar/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Unmaintained, last upstream release in 2005
+EXPIRATION_DATE=2024-04-17
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
