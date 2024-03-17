@@ -483,7 +483,6 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += npm-node16
     SUBDIR += npm-node18
     SUBDIR += npm-node20
     SUBDIR += npm-node21
