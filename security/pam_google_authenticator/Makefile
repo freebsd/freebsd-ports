@@ -1,5 +1,6 @@
 PORTNAME=	pam_google_authenticator
 PORTVERSION=	1.09
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

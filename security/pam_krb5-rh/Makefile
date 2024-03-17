@@ -1,5 +1,6 @@
 PORTNAME=	pam_krb5
 DISTVERSION=	2.4.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/ \
 		ZI
@@ -16,6 +17,7 @@ CONFLICTS=	pam_krb5-4.*
 
 USES=		iconv libtool ssl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-afs --without-keyutils --without-krb4
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
