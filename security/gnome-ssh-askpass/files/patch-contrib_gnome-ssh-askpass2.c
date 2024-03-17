@@ -1,6 +1,6 @@
---- contrib/gnome-ssh-askpass2.c.orig  Tue Sep 19 09:58:45 2006
-+++ contrib/gnome-ssh-askpass2.c       Tue Sep 19 10:03:27 2006
-@@ -88,12 +88,13 @@
+--- contrib/gnome-ssh-askpass2.c.orig	2009-11-18 06:51:59 UTC
++++ contrib/gnome-ssh-askpass2.c
+@@ -88,12 +88,13 @@ passphrase_dialog(char *message)
  {
  	const char *failed;
  	char *passphrase, *local;
@@ -15,7 +15,7 @@
  	grab_tries = 0;
  
  	dialog = gtk_message_dialog_new(NULL, 0,
-@@ -135,17 +136,21 @@
+@@ -138,17 +139,21 @@ passphrase_dialog(char *message)
  			}
  		}
  	}
@@ -46,7 +46,7 @@
  	if (grab_server) {
  		gdk_x11_grab_server();
  	}
-@@ -157,7 +162,8 @@
+@@ -160,7 +165,8 @@ passphrase_dialog(char *message)
  		XUngrabServer(GDK_DISPLAY());
  	if (grab_pointer)
  		gdk_pointer_ungrab(GDK_CURRENT_TIME);

@@ -1,6 +1,5 @@
 PORTNAME=	gnome-ssh-askpass
-PORTVERSION=	6.6p1
-PORTREVISION=	1
+PORTVERSION=	6.7p1
 CATEGORIES=	security gnome
 MASTER_SITES=	OPENBSD/OpenSSH/portable/
 DISTNAME=	openssh-${PORTVERSION}
@@ -11,7 +10,8 @@ COMMENT=	Graphical SSH askpass utility for Gnome2
 #LICENSE=      BSD2,BSD3,MIT,public domain,BSD-Style,BEER-WARE,"any purpose with notice intact",ISC-Style
 #LICENSE_FILE= ${WRKSRC}/LICENCE
 
-PORTSCOUT=	limit:^6\.6 # Will update when FreeBSD version off SSH goes to 5.9p1
+DEPRECATED=	Uses deprecated gtk2 library
+EXPIRATION_DATE=	2024-12-31
 
 WRKSRC=		${WRKDIR}/openssh-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/contrib
