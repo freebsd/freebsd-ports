@@ -3047,3 +3047,4 @@ games/xataxx||2024-03-16|Has expired: No available WWW
 editors/kak-lsp|editors/kakoune-lsp|2024-03-17|Project was renamed upstream
 www/npm-node16||2024-03-17|Has expired: Depends on deprecated node16
 www/yarn-node16||2024-03-17|Has expired: Depends on deprecated node16
+www/node16||2024-03-17|Has expired: Upstream EOL reaches on 2023-09-11
