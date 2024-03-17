@@ -1,6 +1,6 @@
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	AFTERSTEP/stable
 DISTNAME=	AfterStep-${PORTVERSION}
@@ -23,6 +23,7 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 SHEBANG_FILES=	tools/ascommand.pl \
 		tools/importasmenu
 MAKE_JOBS_UNSAFE=	yes
