@@ -1,5 +1,5 @@
 PORTNAME=	mysqldump-secure
-PORTVERSION=	0.16.3
+PORTVERSION=	0.16.5
 CATEGORIES=	databases
 
 MAINTAINER=	jsmith@resonatingmedia.com
