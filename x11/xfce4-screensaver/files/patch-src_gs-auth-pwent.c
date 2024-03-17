@@ -1,19 +1,13 @@
 --- src/gs-auth-pwent.c.orig	2023-03-20 15:38:27 UTC
 +++ src/gs-auth-pwent.c
-@@ -37,10 +37,12 @@
- # include <unistd.h>
+@@ -38,7 +38,9 @@
  #endif
  
--#ifdef HAVE_LIBCRYPT
+ #ifdef HAVE_LIBCRYPT
 -# include <crypt.h>
--#else
--# define crypt(a, b) NULL
-+#if !defined(__FreeBSD__)
-+# ifdef HAVE_LIBCRYPT
++# ifndef __FreeBSD__
 +#  include <crypt.h>
-+# else
-+#  define crypt(a, b) NULL
 +# endif
+ #else
+ # define crypt(a, b) NULL
  #endif
- 
- #ifdef __bsdi__
