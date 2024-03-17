@@ -1,6 +1,5 @@
 PORTNAME=	bitmap2pp
-DISTVERSION=	4.35.3
-PORTREVISION=	1
+DISTVERSION=	4.36.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -12,7 +11,8 @@ WWW=		https://sourceforge.net/p/dktools/wiki/bitmap2pp/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng16.so:graphics/png libtiff.so:graphics/tiff
+LIB_DEPENDS=	libpng16.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USES=		jpeg localbase:ldflags
 GNU_CONFIGURE=	yes
@@ -22,7 +22,8 @@ CONFIGURE_ENV=	ac_cv_header_db_h=no
 
 ALL_TARGET=		${PORTNAME}
 CONFLICTS_INSTALL=	dktools[0-9]*
-PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
+PLIST_FILES=		bin/${PORTNAME} \
+			share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
