@@ -3049,3 +3049,4 @@ www/npm-node16||2024-03-17|Has expired: Depends on deprecated node16
 www/yarn-node16||2024-03-17|Has expired: Depends on deprecated node16
 www/node16||2024-03-17|Has expired: Upstream EOL reaches on 2023-09-11
 graphics/pngcrush||2024-03-17|Has expired
+net-im/telegram-purple||2024-03-17|Has expired: No longer works, migrate to net-im/tdlib-purple

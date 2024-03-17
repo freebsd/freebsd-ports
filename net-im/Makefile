@@ -147,7 +147,6 @@
     SUBDIR += tdlib-purple
     SUBDIR += telegram-cli
     SUBDIR += telegram-desktop
-    SUBDIR += telegram-purple
     SUBDIR += telegramqml
     SUBDIR += teleirc
     SUBDIR += telepathy-accounts-signon
