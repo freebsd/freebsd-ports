@@ -2,6 +2,7 @@ PORTNAME=	binbloom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0-12
 DISTVERSIONSUFFIX=	-g95cfaac
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +18,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	quarkslab
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/binbloom \
-		man/man1/binbloom.1.gz
+		share/man/man1/binbloom.1.gz
 
 .include <bsd.port.mk>
