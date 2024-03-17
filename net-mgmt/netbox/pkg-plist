@@ -1507,7 +1507,6 @@
 %%DATADIR%%/virtualization/urls.py
 %%DATADIR%%/virtualization/views.py
 %%DATADIR%%/vpn/__init__.py
-%%DATADIR%%/vpn/admin.py
 %%DATADIR%%/vpn/api/__init__.py
 %%DATADIR%%/vpn/api/nested_serializers.py
 %%DATADIR%%/vpn/api/serializers.py
