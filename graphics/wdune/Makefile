@@ -10,6 +10,9 @@ WWW=		https://wdune.ourproject.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	upstream no longer maintained
+EXPIRATION_DATE=2024-06-30
+
 BUILD_DEPENDS=	cgal>0:math/cgal
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
