@@ -3,10 +3,6 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 program that displays images of various formats with japanization
 
-BROKEN=		Fails to generate binaries
-DEPRECATED=	Fails to build
-EXPIRATION_DATE=2024-03-31
-
 MASTERDIR=	${.CURDIR}/../../graphics/xv
 PKGDIR=		${.CURDIR}
 
@@ -18,9 +14,7 @@ PLIST_FILES=	bin/ja-xv
 
 OPTIONS_EXCLUDE=	DOCS
 
-PORTREVISION=	2
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xv ${STAGEDIR}${PREFIX}/bin/ja-xv
+	${INSTALL_PROGRAM} ${WRKDIR}/.build/src/xv ${STAGEDIR}${PREFIX}/bin/ja-xv
 
 .include "${MASTERDIR}/Makefile"
