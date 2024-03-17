@@ -26,7 +26,7 @@ you update your ports collection, before attempting any port upgrades.
 
   DEFAULT_VERSIONS+=ruby=3.1
 
-  Although redmin 5.1.X supports ruby 3.2 and later but so far there is
+  Although redmine 5.1.X supports ruby 3.2 and later but so far there is
   no redmine51 ports in the tree.
 
 20240222:
