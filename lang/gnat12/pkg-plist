@@ -6113,6 +6113,7 @@ gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/optinfo-emit-json.h
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/optinfo.h
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/options.h
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/opts-diagnostic.h
+gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/opts-jobserver.h
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/opts.h
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/ordered-hash-map.h
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/plugin/include/output.h
@@ -6397,9 +6398,11 @@ gnat12/share/gcc-%%VER%%/python/libstdcxx/v6/xmethods.py
 %%NLS%%gnat12/share/locale/id/LC_MESSAGES/gcc.mo
 %%NLS%%gnat12/share/locale/ja/LC_MESSAGES/cpplib.mo
 %%NLS%%gnat12/share/locale/ja/LC_MESSAGES/gcc.mo
+%%NLS%%gnat12/share/locale/ka/LC_MESSAGES/cpplib.mo
 %%NLS%%gnat12/share/locale/nl/LC_MESSAGES/cpplib.mo
 %%NLS%%gnat12/share/locale/nl/LC_MESSAGES/gcc.mo
 %%NLS%%gnat12/share/locale/pt_BR/LC_MESSAGES/cpplib.mo
+%%NLS%%gnat12/share/locale/ro/LC_MESSAGES/cpplib.mo
 %%NLS%%gnat12/share/locale/ru/LC_MESSAGES/cpplib.mo
 %%NLS%%gnat12/share/locale/ru/LC_MESSAGES/gcc.mo
 %%NLS%%gnat12/share/locale/sr/LC_MESSAGES/cpplib.mo

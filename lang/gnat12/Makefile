@@ -1,8 +1,7 @@
 PORTNAME=	gnat12
-DISTVERSION=	12.2.0
-PORTREVISION=	7
+DISTVERSION=	12.3.0
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GCC}:gcc \
+MASTER_SITES=	http://gcc.gnu.org/pub/gcc/releases/gcc-${DISTVERSION}/:gcc \
 		LOCAL/thierry:gnat
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 DISTFILES=	gcc-${DISTVERSION}.tar.xz:gcc
@@ -14,11 +13,13 @@ WWW=		https://www.adacore.com/community
 LICENSE=	GPLv2 GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	gcc${_GCC_VER}>0:lang/gcc${_GCC_VER}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libisl.so:devel/isl \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
-RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils
+RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils \
+		gcc${_GCC_VER}>0:lang/gcc${_GCC_VER}
 
 USES=		bison gmake iconv libtool localbase tar:xz
 USE_BINUTILS=	yes
@@ -105,7 +106,7 @@ _PLATFORM=		${OPSYS:tl}${OSREL}
 _PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 _PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
 _PREV_ASSET_OSREL?=	${OSREL:R}
-_PREV_ASSET_VER?=	${DISTVERSION}
+_PREV_ASSET_VER?=	12.2.0
 _PREV_ASSET_REV?=	_6
 _REV_FILE=		${WRKSRC}/gcc/REVISION
 _TARGLIB=		${_PKG_PREFIX}/lib ${_PKG_PREFIX}/lib/gcc${_GCC_VER}
