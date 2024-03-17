@@ -2527,7 +2527,6 @@
     SUBDIR += xurls
     SUBDIR += yabb
     SUBDIR += yarn
-    SUBDIR += yarn-node16
     SUBDIR += yarn-node18
     SUBDIR += yarn-node20
     SUBDIR += yarn-node21
