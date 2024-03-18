@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-03-16 09:37:48 UTC
++++ meson.build
+@@ -92,7 +92,7 @@ i3lock_srcs = [
+   'xcb.c',
+ ]
+ 
+-ev_dep = cc.find_library('ev')
++ev_dep = dependency('libev', method: 'pkg-config')
+ 
+ thread_dep = dependency('threads')
+ 
