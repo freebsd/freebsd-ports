@@ -1,0 +1,170 @@
+--- CMakeLists.txt.orig	2022-12-20 15:30:55 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-# Gmsh - Copyright (C) 1997-2022 C. Geuzaine, J.-F. Remacle
++# Gmsh - Copyright (C) 1997-2023 C. Geuzaine, J.-F. Remacle
+ #
+ # See the LICENSE.txt file in the Gmsh root directory for license information.
+ # Please report all issues on https://gitlab.onelab.info/gmsh/gmsh/issues.
+@@ -107,8 +107,8 @@ set(GMSH_MAJOR_VERSION 4)
+ opt(ZIPPER "Enable Zip file compression/decompression" OFF)
+ 
+ set(GMSH_MAJOR_VERSION 4)
+-set(GMSH_MINOR_VERSION 11)
+-set(GMSH_PATCH_VERSION 1)
++set(GMSH_MINOR_VERSION 12)
++set(GMSH_PATCH_VERSION 0)
+ if(NOT GMSH_EXTRA_VERSION)
+   set(GMSH_EXTRA_VERSION "")
+ endif()
+@@ -343,13 +343,19 @@ if(ENABLE_OPENMP)
+         "${CMAKE_CXX_FLAGS} -Xpreprocessor -fopenmp -I/opt/local/include/libomp")
+     list(APPEND EXTERNAL_LIBRARIES "-L/opt/local/lib/libomp -lomp")
+   elseif(APPLE AND EXISTS "/usr/local/lib/libomp.dylib")
+-    # official Apple compiler with homebrew's libomp
++    # official Apple compiler with homebrew's libomp on Intel
+     set_config_option(HAVE_OPENMP "OpenMP[Homebrew]")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Xpreprocessor -fopenmp")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Xpreprocessor -fopenmp")
++    list(APPEND EXTERNAL_LIBRARIES "-L/usr/local/lib -lomp")
++  elseif(APPLE AND EXISTS "/opt/homebrew/opt/libomp")
++    # official Apple compiler with homebrew's libomp on M processors
++    set_config_option(HAVE_OPENMP "OpenMP[Homebrew]")
+     set(CMAKE_C_FLAGS
+-        "${CMAKE_C_FLAGS} -Xpreprocessor -fopenmp")
++        "${CMAKE_C_FLAGS} -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include")
+     set(CMAKE_CXX_FLAGS
+-        "${CMAKE_CXX_FLAGS} -Xpreprocessor -fopenmp")
+-    list(APPEND EXTERNAL_LIBRARIES "-L/usr/local/lib -lomp")
++        "${CMAKE_CXX_FLAGS} -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include")
++    list(APPEND EXTERNAL_LIBRARIES "-L/opt/homebrew/opt/libomp/lib -lomp")
+   elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" AND EXISTS "/usr/local/lib64/libgomp.a")
+     # custom static openmp for official linux builds
+     set_config_option(HAVE_OPENMP "OpenMP[static]")
+@@ -1101,9 +1107,9 @@ if(HAVE_SOLVER)
+           string(REPLACE " " ";" PETSC_PACKAGES_INCLUDES ${PETSC_PACKAGES_INCLUDES})
+           foreach(VAR ${PETSC_PACKAGES_INCLUDES})
+             # seem to include unexisting directories (/usr/include/lib64)
+-	    # check to avoid warnings
+-	    if(EXISTS ${VAR})
+-	      list(APPEND EXTERNAL_INCLUDES ${VAR})
++            # check to avoid warnings
++            if(EXISTS ${VAR})
++              list(APPEND EXTERNAL_INCLUDES ${VAR})
+             endif()
+           endforeach()
+         endif()
+@@ -1119,10 +1125,10 @@ if(HAVE_SOLVER)
+       endif()
+       if(PETSC_LIBS)
+         set_config_option(HAVE_PETSC "PETSc")
+-	if(NOT HAVE_BLAS)
++        if(NOT HAVE_BLAS)
+           set_config_option(HAVE_BLAS "Blas[petsc]")
+         endif()
+-	if(NOT HAVE_LAPACK)
++        if(NOT HAVE_LAPACK)
+           set_config_option(HAVE_LAPACK "Lapack[petsc]")
+         endif()
+       endif()
+@@ -1264,21 +1270,34 @@ if(ENABLE_OCC)
+       message(STATUS "Found OpenCASCADE version ${OCC_VERSION} in ${OCC_INC}")
+     endif()
+   endif()
+-  if(OCC_VERSION AND OCC_VERSION STRLESS ${OCC_MINIMAL_VERSION})
++  if(OCC_VERSION AND OCC_VERSION VERSION_LESS ${OCC_MINIMAL_VERSION})
+     message(WARNING "Gmsh requires OpenCASCADE >= ${OCC_MINIMAL_VERSION}. "
+         "Use CMAKE_PREFIX_PATH or the CASROOT environment variable "
+         "to explicitly specify the installation path of OpenCASCADE")
+   elseif(OCC_INC)
+-    set(OCC_LIBS_REQUIRED
+-	# subset of DataExchange
+-      	TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase TKIGES TKXSBase
+-      	# ModelingAlgorithms
+-      	TKOffset TKFeat TKFillet TKBool TKMesh TKHLR TKBO TKPrim TKShHealing
+-      	TKTopAlgo TKGeomAlgo
+-      	# ModelingData
+-      	TKBRep TKGeomBase TKG3d TKG2d
+-      	# FoundationClasses
+-      	TKMath TKernel)
++    if(OCC_VERSION AND OCC_VERSION VERSION_GREATER_EQUAL "7.8.0")
++      set(OCC_LIBS_REQUIRED
++          # subset of DataExchange
++          TKDESTEP TKDEIGES TKXSBase
++          # ModelingAlgorithms
++          TKOffset TKFeat TKFillet TKBool TKMesh TKHLR TKBO TKPrim TKShHealing
++          TKTopAlgo TKGeomAlgo
++          # ModelingData
++          TKBRep TKGeomBase TKG3d TKG2d
++          # FoundationClasses
++          TKMath TKernel)
++    else()
++      set(OCC_LIBS_REQUIRED
++          # subset of DataExchange
++          TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase TKIGES TKXSBase
++          # ModelingAlgorithms
++          TKOffset TKFeat TKFillet TKBool TKMesh TKHLR TKBO TKPrim TKShHealing
++          TKTopAlgo TKGeomAlgo
++          # ModelingData
++          TKBRep TKGeomBase TKG3d TKG2d
++          # FoundationClasses
++          TKMath TKernel)
++    endif()
+     if(ENABLE_OCC_TBB)
+       list(APPEND OCC_LIBS_REQUIRED tbb tbbmalloc)
+     endif()
+@@ -1310,8 +1329,13 @@ if(ENABLE_OCC)
+   if(ENABLE_OCC_CAF)
+     find_package(Freetype)
+     if(FREETYPE_FOUND)
+-      set(OCC_CAF_LIBS_REQUIRED
+-          TKXDESTEP TKXDEIGES TKXCAF TKLCAF TKVCAF TKCAF TKV3d TKService TKCDF)
++      if(OCC_VERSION AND OCC_VERSION VERSION_GREATER_EQUAL "7.8.0")
++        set(OCC_CAF_LIBS_REQUIRED
++            TKXCAF TKLCAF TKVCAF TKCAF TKV3d TKService TKCDF)
++      else()
++        set(OCC_CAF_LIBS_REQUIRED
++            TKXDESTEP TKXDEIGES TKXCAF TKLCAF TKVCAF TKCAF TKV3d TKService TKCDF)
++      endif()
+       list(LENGTH OCC_CAF_LIBS_REQUIRED NUM_OCC_CAF_LIBS_REQUIRED)
+       set(OCC_CAF_LIBS)
+       foreach(OCC ${OCC_CAF_LIBS_REQUIRED})
+@@ -1493,6 +1517,10 @@ if(WALL AND NOT MSVC)
+     # FIXME: remove this when GCC behaves more intelligently
+     set(WF "${WF} -Wno-attributes")
+   endif()
++  check_cxx_compiler_flag("-Wno-unused-but-set-variable" WUNUSED)
++  if(WUNUSED)
++    set(WF "${WF} -Wno-unused-but-set-variable")
++  endif()
+   if(WIN32 OR NOT HAVE_64BIT_SIZE_T)
+     # FIXME: remove printf family warnings on 32 bit systems and windows
+     check_cxx_compiler_flag("-Wno-format" WFORMAT)
+@@ -1768,8 +1796,10 @@ elseif(APPLE)
+ elseif(MSVC)
+   set_target_properties(gmsh PROPERTIES LINK_FLAGS "/STACK:16777216 /SAFESEH:NO")
+ elseif(APPLE)
+-  # this remove ld warnings with PETSc+MUMPS on recent macOS versions
+-  # set_target_properties(gmsh PROPERTIES LINK_FLAGS "-Wl,-no_compact_unwind")
++  # this remove ld warnings with PETSc+MUMPS on recent macOS versions; but
++  # breaks exception handling
++  # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-no_compact_unwind")
++  # set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-no_compact_unwind")
+ endif()
+ 
+ # android target
+@@ -2203,9 +2233,6 @@ if(ENABLE_TESTS AND NOT DISABLE_GMSH_TESTS)
+           set(FLAGS "${FLAGS} -mconsole")
+         endif()
+         set_target_properties(${TEST} PROPERTIES LINK_FLAGS "${FLAGS}")
+-      elseif(APPLE)
+-        # this remove ld warnings with PETSc+MUMPS on recent macOS versions
+-        # set_target_properties(${TEST} PROPERTIES LINK_FLAGS "-Wl,-no_compact_unwind")
+       endif()
+       add_test(${TEST} ${TEST} -nopopup)
+     endforeach()
+@@ -2245,3 +2272,4 @@ mark_as_advanced(ANN_INC ANN_LIB CAIRO_LIB CAIRO_INC C
+                  PETSC_LIBS SLEPC_INC SLEPC_INC2 SLEPC_LIB
+                  BISON FLEX MAKEINFO TEXI2PDF FLTK_CONFIG_SCRIPT
+                  GMSH_EXTERNAL_INCLUDE_DIRS GMSH_EXTERNAL_LIBRARIES)
++
