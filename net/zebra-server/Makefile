@@ -1,6 +1,6 @@
 PORTNAME=	zebra-server
 PORTVERSION=	2.0.55
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libyaz.so:net/yaz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-iconv=${ICONV_PREFIX} --with-expat=${LOCALBASE}
