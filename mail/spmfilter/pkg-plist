@@ -26,7 +26,7 @@ lib/spmfilter/libsmtpd.so.0.6
 lib/spmfilter/libsmtpd.so.%%LIB_VERSION%%
 libdata/pkgconfig/spmfilter.pc
 sbin/spmfilter
-man/man1/spmfilter.1.gz
-man/man5/spmfilter.conf.5.gz
+share/man/man1/spmfilter.1.gz
+share/man/man5/spmfilter.conf.5.gz
 @sample etc/spmfilter.conf.sample
 @dir(%%SMFUSER%%,%%SMFGROUP%%,755) %%SMFDIR%%

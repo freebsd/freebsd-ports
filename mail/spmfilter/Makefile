@@ -1,6 +1,6 @@
 PORTNAME=	spmfilter
 PORTVERSION=	0.6.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/files/
 
@@ -78,8 +78,6 @@ CMAKE_ARGS+=	-DWITHOUT_ZDB=TRUE
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' \
-		${WRKSRC}/cmake/Modules/SMFMacros.cmake
 	@${REINPLACE_CMD} -E -e 's|(HAVE_DB4 )db|\1${BDB_LIB_NAME}|' \
 		${WRKSRC}/cmake/Modules/FindDB4.cmake
 	@${REINPLACE_CMD} -E -e 's|\$$\{CMAKE_INSTALL_LIBDIR\}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
