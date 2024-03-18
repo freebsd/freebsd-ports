@@ -1,5 +1,6 @@
 PORTNAME=	wifibox-alpine
 PORTVERSION=	20230926
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -430,6 +431,7 @@ post-install:
 
 WRKSRC=		${WRKSRC_scripts}
 MAKE_ARGS+=	VERSION=${PORTVERSION} \
+		MANDIR="${STAGEDIR}${PREFIX}/share/man" \
 		MINIROOTFS=${_DISTDIR}/${_MINIROOTFS} \
 		PACKAGES="${_APK_FILES}" \
 		BOOT_SERVICES="${_BOOT_SERVICES}" \

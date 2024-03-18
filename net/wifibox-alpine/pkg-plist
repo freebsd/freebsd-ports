@@ -11,7 +11,7 @@
 %%XX_MDNS%%@sample(,,640) etc/wifibox/appliance/mdnsd-services.conf.sample
 %%XX_FORWARDING%%@sample(,,640) etc/wifibox/appliance/forwarding.conf.sample
 etc/wifibox/app_config
-man/man5/wifibox-alpine.5.gz
+share/man/man5/wifibox-alpine.5.gz
 share/wifibox/disk.img
 share/wifibox/grub.cfg
 share/wifibox/vmlinuz
