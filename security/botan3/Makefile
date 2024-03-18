@@ -1,5 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	3.2.0
+DISTVERSION=	3.3.0
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	${_BOTANMAJOR}
@@ -37,7 +37,7 @@ LDFLAGS+=		-pthread
 
 DOCSDIR=	${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 
-_SOABIVER=	2
+_SOABIVER=	3
 _BOTANMAJOR=	${DISTVERSION:S/./ /g:[1]}
 _SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
 _SHLIBVERPATCH=	${DISTVERSION:S/./ /g:[3]}
@@ -82,9 +82,9 @@ PLIST_SUB+=	HAS_PROCESSOR_RNG=""
 PLIST_SUB+=	HAS_PROCESSOR_RNG="@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ) || ${OSVERSION} < 1300000 )
-USES+=	llvm:max=15,min=14
-.endif
+#.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ) || ${OSVERSION} < 1300000 )
+#USES+=	llvm:max=15,min=14
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^optimization_flags .*|optimization_flags "${CXXFLAGS}"|' \
