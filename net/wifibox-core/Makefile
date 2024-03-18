@@ -1,5 +1,6 @@
 PORTNAME=	wifibox-core
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -42,7 +43,8 @@ GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox
 
 NO_BUILD=	yes
-MAKE_ARGS+=	GUEST_ROOT=${LOCALBASE}/share/wifibox \
+MAKE_ARGS+=	MANDIR=${STAGEDIR}${PREFIX}/share/man \
+		GUEST_ROOT=${LOCALBASE}/share/wifibox \
 		GUEST_MAN=${LOCALBASE}/man/man5/wifibox-alpine.5.gz \
 		VERSION=${PORTVERSION} \
 		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl}
