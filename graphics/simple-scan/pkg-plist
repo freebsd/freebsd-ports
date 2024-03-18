@@ -9,6 +9,7 @@ share/help/C/simple-scan/email.page
 share/help/C/simple-scan/figures/icon.svg
 share/help/C/simple-scan/figures/preferences.png
 share/help/C/simple-scan/figures/scan_toolbar.png
+share/help/C/simple-scan/figures/scanner_selection.png
 share/help/C/simple-scan/index.page
 share/help/C/simple-scan/legal.xml
 share/help/C/simple-scan/print.page
@@ -26,6 +27,7 @@ share/help/ar/simple-scan/email.page
 share/help/ar/simple-scan/figures/icon.svg
 share/help/ar/simple-scan/figures/preferences.png
 share/help/ar/simple-scan/figures/scan_toolbar.png
+share/help/ar/simple-scan/figures/scanner_selection.png
 share/help/ar/simple-scan/index.page
 share/help/ar/simple-scan/legal.xml
 share/help/ar/simple-scan/print.page
@@ -43,6 +45,7 @@ share/help/bg/simple-scan/email.page
 share/help/bg/simple-scan/figures/icon.svg
 share/help/bg/simple-scan/figures/preferences.png
 share/help/bg/simple-scan/figures/scan_toolbar.png
+share/help/bg/simple-scan/figures/scanner_selection.png
 share/help/bg/simple-scan/index.page
 share/help/bg/simple-scan/legal.xml
 share/help/bg/simple-scan/print.page
@@ -60,6 +63,7 @@ share/help/ca/simple-scan/email.page
 share/help/ca/simple-scan/figures/icon.svg
 share/help/ca/simple-scan/figures/preferences.png
 share/help/ca/simple-scan/figures/scan_toolbar.png
+share/help/ca/simple-scan/figures/scanner_selection.png
 share/help/ca/simple-scan/index.page
 share/help/ca/simple-scan/legal.xml
 share/help/ca/simple-scan/print.page
@@ -77,6 +81,7 @@ share/help/cs/simple-scan/email.page
 share/help/cs/simple-scan/figures/icon.svg
 share/help/cs/simple-scan/figures/preferences.png
 share/help/cs/simple-scan/figures/scan_toolbar.png
+share/help/cs/simple-scan/figures/scanner_selection.png
 share/help/cs/simple-scan/index.page
 share/help/cs/simple-scan/legal.xml
 share/help/cs/simple-scan/print.page
@@ -94,6 +99,7 @@ share/help/da/simple-scan/email.page
 share/help/da/simple-scan/figures/icon.svg
 share/help/da/simple-scan/figures/preferences.png
 share/help/da/simple-scan/figures/scan_toolbar.png
+share/help/da/simple-scan/figures/scanner_selection.png
 share/help/da/simple-scan/index.page
 share/help/da/simple-scan/legal.xml
 share/help/da/simple-scan/print.page
@@ -111,6 +117,7 @@ share/help/de/simple-scan/email.page
 share/help/de/simple-scan/figures/icon.svg
 share/help/de/simple-scan/figures/preferences.png
 share/help/de/simple-scan/figures/scan_toolbar.png
+share/help/de/simple-scan/figures/scanner_selection.png
 share/help/de/simple-scan/index.page
 share/help/de/simple-scan/legal.xml
 share/help/de/simple-scan/print.page
@@ -128,6 +135,7 @@ share/help/el/simple-scan/email.page
 share/help/el/simple-scan/figures/icon.svg
 share/help/el/simple-scan/figures/preferences.png
 share/help/el/simple-scan/figures/scan_toolbar.png
+share/help/el/simple-scan/figures/scanner_selection.png
 share/help/el/simple-scan/index.page
 share/help/el/simple-scan/legal.xml
 share/help/el/simple-scan/print.page
@@ -145,6 +153,7 @@ share/help/en_GB/simple-scan/email.page
 share/help/en_GB/simple-scan/figures/icon.svg
 share/help/en_GB/simple-scan/figures/preferences.png
 share/help/en_GB/simple-scan/figures/scan_toolbar.png
+share/help/en_GB/simple-scan/figures/scanner_selection.png
 share/help/en_GB/simple-scan/index.page
 share/help/en_GB/simple-scan/legal.xml
 share/help/en_GB/simple-scan/print.page
@@ -162,6 +171,7 @@ share/help/es/simple-scan/email.page
 share/help/es/simple-scan/figures/icon.svg
 share/help/es/simple-scan/figures/preferences.png
 share/help/es/simple-scan/figures/scan_toolbar.png
+share/help/es/simple-scan/figures/scanner_selection.png
 share/help/es/simple-scan/index.page
 share/help/es/simple-scan/legal.xml
 share/help/es/simple-scan/print.page
@@ -179,6 +189,7 @@ share/help/eu/simple-scan/email.page
 share/help/eu/simple-scan/figures/icon.svg
 share/help/eu/simple-scan/figures/preferences.png
 share/help/eu/simple-scan/figures/scan_toolbar.png
+share/help/eu/simple-scan/figures/scanner_selection.png
 share/help/eu/simple-scan/index.page
 share/help/eu/simple-scan/legal.xml
 share/help/eu/simple-scan/print.page
@@ -196,6 +207,7 @@ share/help/fi/simple-scan/email.page
 share/help/fi/simple-scan/figures/icon.svg
 share/help/fi/simple-scan/figures/preferences.png
 share/help/fi/simple-scan/figures/scan_toolbar.png
+share/help/fi/simple-scan/figures/scanner_selection.png
 share/help/fi/simple-scan/index.page
 share/help/fi/simple-scan/legal.xml
 share/help/fi/simple-scan/print.page
@@ -213,6 +225,7 @@ share/help/fr/simple-scan/email.page
 share/help/fr/simple-scan/figures/icon.svg
 share/help/fr/simple-scan/figures/preferences.png
 share/help/fr/simple-scan/figures/scan_toolbar.png
+share/help/fr/simple-scan/figures/scanner_selection.png
 share/help/fr/simple-scan/index.page
 share/help/fr/simple-scan/legal.xml
 share/help/fr/simple-scan/print.page
@@ -230,6 +243,7 @@ share/help/gl/simple-scan/email.page
 share/help/gl/simple-scan/figures/icon.svg
 share/help/gl/simple-scan/figures/preferences.png
 share/help/gl/simple-scan/figures/scan_toolbar.png
+share/help/gl/simple-scan/figures/scanner_selection.png
 share/help/gl/simple-scan/index.page
 share/help/gl/simple-scan/legal.xml
 share/help/gl/simple-scan/print.page
@@ -247,6 +261,7 @@ share/help/hr/simple-scan/email.page
 share/help/hr/simple-scan/figures/icon.svg
 share/help/hr/simple-scan/figures/preferences.png
 share/help/hr/simple-scan/figures/scan_toolbar.png
+share/help/hr/simple-scan/figures/scanner_selection.png
 share/help/hr/simple-scan/index.page
 share/help/hr/simple-scan/legal.xml
 share/help/hr/simple-scan/print.page
@@ -264,6 +279,7 @@ share/help/hu/simple-scan/email.page
 share/help/hu/simple-scan/figures/icon.svg
 share/help/hu/simple-scan/figures/preferences.png
 share/help/hu/simple-scan/figures/scan_toolbar.png
+share/help/hu/simple-scan/figures/scanner_selection.png
 share/help/hu/simple-scan/index.page
 share/help/hu/simple-scan/legal.xml
 share/help/hu/simple-scan/print.page
@@ -281,6 +297,7 @@ share/help/ia/simple-scan/email.page
 share/help/ia/simple-scan/figures/icon.svg
 share/help/ia/simple-scan/figures/preferences.png
 share/help/ia/simple-scan/figures/scan_toolbar.png
+share/help/ia/simple-scan/figures/scanner_selection.png
 share/help/ia/simple-scan/index.page
 share/help/ia/simple-scan/legal.xml
 share/help/ia/simple-scan/print.page
@@ -298,6 +315,7 @@ share/help/id/simple-scan/email.page
 share/help/id/simple-scan/figures/icon.svg
 share/help/id/simple-scan/figures/preferences.png
 share/help/id/simple-scan/figures/scan_toolbar.png
+share/help/id/simple-scan/figures/scanner_selection.png
 share/help/id/simple-scan/index.page
 share/help/id/simple-scan/legal.xml
 share/help/id/simple-scan/print.page
@@ -315,6 +333,7 @@ share/help/it/simple-scan/email.page
 share/help/it/simple-scan/figures/icon.svg
 share/help/it/simple-scan/figures/preferences.png
 share/help/it/simple-scan/figures/scan_toolbar.png
+share/help/it/simple-scan/figures/scanner_selection.png
 share/help/it/simple-scan/index.page
 share/help/it/simple-scan/legal.xml
 share/help/it/simple-scan/print.page
@@ -332,6 +351,7 @@ share/help/ja/simple-scan/email.page
 share/help/ja/simple-scan/figures/icon.svg
 share/help/ja/simple-scan/figures/preferences.png
 share/help/ja/simple-scan/figures/scan_toolbar.png
+share/help/ja/simple-scan/figures/scanner_selection.png
 share/help/ja/simple-scan/index.page
 share/help/ja/simple-scan/legal.xml
 share/help/ja/simple-scan/print.page
@@ -349,6 +369,7 @@ share/help/ku/simple-scan/email.page
 share/help/ku/simple-scan/figures/icon.svg
 share/help/ku/simple-scan/figures/preferences.png
 share/help/ku/simple-scan/figures/scan_toolbar.png
+share/help/ku/simple-scan/figures/scanner_selection.png
 share/help/ku/simple-scan/index.page
 share/help/ku/simple-scan/legal.xml
 share/help/ku/simple-scan/print.page
@@ -366,6 +387,7 @@ share/help/nb/simple-scan/email.page
 share/help/nb/simple-scan/figures/icon.svg
 share/help/nb/simple-scan/figures/preferences.png
 share/help/nb/simple-scan/figures/scan_toolbar.png
+share/help/nb/simple-scan/figures/scanner_selection.png
 share/help/nb/simple-scan/index.page
 share/help/nb/simple-scan/legal.xml
 share/help/nb/simple-scan/print.page
@@ -383,6 +405,7 @@ share/help/nl/simple-scan/email.page
 share/help/nl/simple-scan/figures/icon.svg
 share/help/nl/simple-scan/figures/preferences.png
 share/help/nl/simple-scan/figures/scan_toolbar.png
+share/help/nl/simple-scan/figures/scanner_selection.png
 share/help/nl/simple-scan/index.page
 share/help/nl/simple-scan/legal.xml
 share/help/nl/simple-scan/print.page
@@ -400,6 +423,7 @@ share/help/pl/simple-scan/email.page
 share/help/pl/simple-scan/figures/icon.svg
 share/help/pl/simple-scan/figures/preferences.png
 share/help/pl/simple-scan/figures/scan_toolbar.png
+share/help/pl/simple-scan/figures/scanner_selection.png
 share/help/pl/simple-scan/index.page
 share/help/pl/simple-scan/legal.xml
 share/help/pl/simple-scan/print.page
@@ -417,6 +441,7 @@ share/help/pt_BR/simple-scan/email.page
 share/help/pt_BR/simple-scan/figures/icon.svg
 share/help/pt_BR/simple-scan/figures/preferences.png
 share/help/pt_BR/simple-scan/figures/scan_toolbar.png
+share/help/pt_BR/simple-scan/figures/scanner_selection.png
 share/help/pt_BR/simple-scan/index.page
 share/help/pt_BR/simple-scan/legal.xml
 share/help/pt_BR/simple-scan/print.page
@@ -434,6 +459,7 @@ share/help/ro/simple-scan/email.page
 share/help/ro/simple-scan/figures/icon.svg
 share/help/ro/simple-scan/figures/preferences.png
 share/help/ro/simple-scan/figures/scan_toolbar.png
+share/help/ro/simple-scan/figures/scanner_selection.png
 share/help/ro/simple-scan/index.page
 share/help/ro/simple-scan/legal.xml
 share/help/ro/simple-scan/print.page
@@ -451,6 +477,7 @@ share/help/ru/simple-scan/email.page
 share/help/ru/simple-scan/figures/icon.svg
 share/help/ru/simple-scan/figures/preferences.png
 share/help/ru/simple-scan/figures/scan_toolbar.png
+share/help/ru/simple-scan/figures/scanner_selection.png
 share/help/ru/simple-scan/index.page
 share/help/ru/simple-scan/legal.xml
 share/help/ru/simple-scan/print.page
@@ -468,6 +495,7 @@ share/help/sk/simple-scan/email.page
 share/help/sk/simple-scan/figures/icon.svg
 share/help/sk/simple-scan/figures/preferences.png
 share/help/sk/simple-scan/figures/scan_toolbar.png
+share/help/sk/simple-scan/figures/scanner_selection.png
 share/help/sk/simple-scan/index.page
 share/help/sk/simple-scan/legal.xml
 share/help/sk/simple-scan/print.page
@@ -485,6 +513,7 @@ share/help/sl/simple-scan/email.page
 share/help/sl/simple-scan/figures/icon.svg
 share/help/sl/simple-scan/figures/preferences.png
 share/help/sl/simple-scan/figures/scan_toolbar.png
+share/help/sl/simple-scan/figures/scanner_selection.png
 share/help/sl/simple-scan/index.page
 share/help/sl/simple-scan/legal.xml
 share/help/sl/simple-scan/print.page
@@ -502,6 +531,7 @@ share/help/sr/simple-scan/email.page
 share/help/sr/simple-scan/figures/icon.svg
 share/help/sr/simple-scan/figures/preferences.png
 share/help/sr/simple-scan/figures/scan_toolbar.png
+share/help/sr/simple-scan/figures/scanner_selection.png
 share/help/sr/simple-scan/index.page
 share/help/sr/simple-scan/legal.xml
 share/help/sr/simple-scan/print.page
@@ -519,6 +549,7 @@ share/help/sv/simple-scan/email.page
 share/help/sv/simple-scan/figures/icon.svg
 share/help/sv/simple-scan/figures/preferences.png
 share/help/sv/simple-scan/figures/scan_toolbar.png
+share/help/sv/simple-scan/figures/scanner_selection.png
 share/help/sv/simple-scan/index.page
 share/help/sv/simple-scan/legal.xml
 share/help/sv/simple-scan/print.page
@@ -536,6 +567,7 @@ share/help/tr/simple-scan/email.page
 share/help/tr/simple-scan/figures/icon.svg
 share/help/tr/simple-scan/figures/preferences.png
 share/help/tr/simple-scan/figures/scan_toolbar.png
+share/help/tr/simple-scan/figures/scanner_selection.png
 share/help/tr/simple-scan/index.page
 share/help/tr/simple-scan/legal.xml
 share/help/tr/simple-scan/print.page
@@ -553,6 +585,7 @@ share/help/uk/simple-scan/email.page
 share/help/uk/simple-scan/figures/icon.svg
 share/help/uk/simple-scan/figures/preferences.png
 share/help/uk/simple-scan/figures/scan_toolbar.png
+share/help/uk/simple-scan/figures/scanner_selection.png
 share/help/uk/simple-scan/index.page
 share/help/uk/simple-scan/legal.xml
 share/help/uk/simple-scan/print.page
@@ -570,6 +603,7 @@ share/help/zh_TW/simple-scan/email.page
 share/help/zh_TW/simple-scan/figures/icon.svg
 share/help/zh_TW/simple-scan/figures/preferences.png
 share/help/zh_TW/simple-scan/figures/scan_toolbar.png
+share/help/zh_TW/simple-scan/figures/scanner_selection.png
 share/help/zh_TW/simple-scan/index.page
 share/help/zh_TW/simple-scan/legal.xml
 share/help/zh_TW/simple-scan/print.page
@@ -617,6 +651,7 @@ share/locale/is/LC_MESSAGES/simple-scan.mo
 share/locale/it/LC_MESSAGES/simple-scan.mo
 share/locale/ja/LC_MESSAGES/simple-scan.mo
 share/locale/ka/LC_MESSAGES/simple-scan.mo
+share/locale/kab/LC_MESSAGES/simple-scan.mo
 share/locale/kk/LC_MESSAGES/simple-scan.mo
 share/locale/km/LC_MESSAGES/simple-scan.mo
 share/locale/ko/LC_MESSAGES/simple-scan.mo
@@ -660,4 +695,4 @@ share/locale/vi/LC_MESSAGES/simple-scan.mo
 share/locale/zh_CN/LC_MESSAGES/simple-scan.mo
 share/locale/zh_HK/LC_MESSAGES/simple-scan.mo
 share/locale/zh_TW/LC_MESSAGES/simple-scan.mo
-share/metainfo/simple-scan.appdata.xml
+share/metainfo/org.gnome.SimpleScan.appdata.xml
