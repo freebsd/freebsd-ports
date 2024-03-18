@@ -1,5 +1,5 @@
 bin/scratch
-man/man1/scratch.1.gz
+share/man/man1/scratch.1.gz
 %%DATADIR%%/Help/en/ScratchGettingStartedv14.pdf
 %%DATADIR%%/Help/en/ScratchReferenceGuide14.pdf
 %%DATADIR%%/Help/en/addList.gif

@@ -1,5 +1,6 @@
 PORTNAME=	scratch
 PORTVERSION=	1.4.0.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://download.scratch.mit.edu/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -47,7 +48,7 @@ do-install:
 .endfor
 	@cd ${WRKSRC}/src/icons && ${COPYTREE_SHARE} . ${STAGEDIR}${SC_DIR}/icons
 	${INSTALL_SCRIPT} ${WRKSRC}/src/scratch ${STAGEDIR}${PREFIX}/bin/scratch
-	${INSTALL_MAN} ${WRKSRC}/src/man/scratch.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/man/scratch.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/src/scratch.desktop ${STAGEDIR}${PREFIX}/share/applications/scratch.desktop
 
 .include <bsd.port.mk>
