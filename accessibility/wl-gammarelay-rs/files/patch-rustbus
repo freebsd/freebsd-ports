@@ -1,0 +1,39 @@
+https://github.com/MaxVerevkin/wl-gammarelay-rs/issues/21
+https://github.com/KillingSpark/rustbus/pull/119
+
+--- ../rustbus-20af8f2a4296196779e1044c0c08d4e5f784fc61/rustbus/src/auth.rs.orig	2024-03-05 15:13:03 UTC
++++ ../rustbus-20af8f2a4296196779e1044c0c08d4e5f784fc61/rustbus/src/auth.rs
+@@ -1,7 +1,9 @@
+ //! Deals with authentication to the other side. You probably do not need this.
+ 
++use nix::sys::socket::{self, sendmsg};
+ use nix::unistd::getuid;
+-use std::io::{Read, Write};
++use std::io::{IoSlice, Read, Write};
++use std::os::fd::AsRawFd;
+ use std::os::unix::net::UnixStream;
+ 
+ fn write_message(msg: &str, stream: &mut UnixStream) -> std::io::Result<()> {
+@@ -79,8 +81,21 @@ pub fn do_auth(stream: &mut UnixStream) -> std::io::Re
+ }
+ 
+ pub fn do_auth(stream: &mut UnixStream) -> std::io::Result<AuthResult> {
++    // The D-Bus daemon expects an SCM_CREDS first message on FreeBSD and Dragonfly
++    #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
++    let cmsgs = [socket::ControlMessage::ScmCreds];
++    #[cfg(not(any(target_os = "freebsd", target_os = "dragonfly")))]
++    let cmsgs = [];
++
+     // send a null byte as the first thing
+-    stream.write_all(&[0])?;
++    sendmsg::<()>(
++        stream.as_raw_fd(),
++        &[IoSlice::new(&[0])],
++        &cmsgs,
++        socket::MsgFlags::empty(),
++        None,
++    )?;
++
+     write_message(&format!("AUTH EXTERNAL {}", get_uid_as_hex()), stream)?;
+ 
+     let mut read_buf = Vec::new();
