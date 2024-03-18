@@ -1,5 +1,6 @@
 PORTNAME=	firedns
 PORTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	dns devel
 MASTER_SITES=	https://BSDforge.com/projects/source/dns/firedns/ \
 		http://www.firestuff.org/projects/ \
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	MANDIR="${PREFIX}/share/man"
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
