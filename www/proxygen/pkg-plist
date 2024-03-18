@@ -188,6 +188,8 @@ include/proxygen/lib/http/structuredheaders/StructuredHeadersEncoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersUtilities.h
 include/proxygen/lib/http/observer/HTTPSessionObserverContainer.h
 include/proxygen/lib/http/observer/HTTPSessionObserverInterface.h
+include/proxygen/lib/http/observer/HTTPTransactionObserverContainer.h
+include/proxygen/lib/http/observer/HTTPTransactionObserverInterface.h
 include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/pools/generators/FileServerListGenerator.h
 include/proxygen/lib/pools/generators/MemberGroupConfig.h
