@@ -1,6 +1,6 @@
 --- Makefile.orig	1996-07-27 18:05:03 UTC
 +++ Makefile
-@@ -10,15 +10,15 @@ PROGS= xtrojka
+@@ -10,15 +10,15 @@ VERSION=123
  #					xtrojka version (do not change!)
  VERSION=123
  #					where to put the binary
@@ -8,7 +8,7 @@
 +TARGET_DIR=${PREFIX}/bin
  #					where to put the manpage
 -MANDIR=/usr/local/man/man6
-+MANDIR=${PREFIX}/man/man6
++MANDIR=${PREFIX}/share/man/man6
  #					the location of the highscorefile
 -HSFILE=/fill_in_your_scorefile
 +HSFILE=${PREFIX}/share/xtrojka/xtrojka.scores
@@ -29,22 +29,26 @@
  #					doesn't work too well on all systems
  #LCK=-DLOCKING
  #					add debug info
-@@ -75,7 +75,13 @@ XPMLIB=-lXpm
+@@ -75,11 +75,17 @@ XPMLIB=-lXpm
  #
  # Linux
  #
 -SYS=-DLINUX
 +#SYS=-DLINUX
-+
-+#
-+# FreeBSD
-+#
-+XDIR=-I${LOCALBASE}/include
-+LIBS=-lm
  
  #
++# FreeBSD
  #
-@@ -105,11 +111,14 @@ tar:
++XDIR=-I${LOCALBASE}/include
++LIBS=-lm
++
+ #
++#
++#
+ CFLAGS= $(XDIR) $(DBG) $(XPM) $(SYS) $(OPT) $(HSF) $(LCK) $(LIBPATH) 
+ 
+ ###########################################################################
+@@ -105,11 +111,14 @@ install:
  	rm -rf xtrojka$(VERSION);
  
  install:
