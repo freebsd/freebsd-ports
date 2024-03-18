@@ -3052,3 +3052,4 @@ graphics/pngcrush||2024-03-17|Has expired
 net-im/telegram-purple||2024-03-17|Has expired: No longer works, migrate to net-im/tdlib-purple
 multimedia/gstreamer1-plugins-rtmp||2024-03-17|Support for legacy library librtmp has been removed in tree
 lang/swi-pl|lang/swipl|2024-03-17|Port renamed on request
+devel/rubygem-with_advisory_lock|devel/rubygem-with_advisory_lock61|2024-03-18|Port renamed to follow naming convention

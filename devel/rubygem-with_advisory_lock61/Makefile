@@ -2,6 +2,7 @@ PORTNAME=	with_advisory_lock
 PORTVERSION=	5.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	61
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Advisory locking for ActiveRecord
