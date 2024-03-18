@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils \
 		gcc${_GCC_VER}>0:lang/gcc${_GCC_VER}
 
-USES=		bison gmake iconv libtool localbase tar:xz
+USES=		bison gettext-runtime gmake iconv libtool localbase tar:xz
 USE_BINUTILS=	yes
 USE_LDCONFIG=	${_TARGLIB}
 
@@ -88,7 +88,6 @@ GCC6AUX_VARS=			_GCC6AUX_PATH=${LOCALBASE}/gcc6-aux/bin
 .if exists(/usr/lib32/libc.so)
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .endif
-NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ON=		--enable-nls
 NLS_CONFIGURE_OFF=		--disable-nls
 PREVASSET_DISTFILES+=		${_PREV_ASSET_FILE}.tar.xz:gnat

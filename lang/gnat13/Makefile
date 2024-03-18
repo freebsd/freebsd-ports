@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils
 
-USES=		bison gmake iconv libtool localbase tar:xz
+USES=		bison gettext-runtime gmake iconv libtool localbase tar:xz
 USE_BINUTILS=	yes
 USE_LDCONFIG=	${_TARGLIB}
 
@@ -86,7 +86,6 @@ GNAT12_VARS=			_GNAT12_PATH=${LOCALBASE}/gnat12/bin
 .if exists(/usr/lib32/libc.so)
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .endif
-NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ON=		--enable-nls
 NLS_CONFIGURE_OFF=		--disable-nls
 PREVASSET_DISTFILES+=		${_PREV_ASSET_FILE}.tar.xz:gnat
