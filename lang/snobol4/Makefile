@@ -1,6 +1,6 @@
 PORTNAME=	snobol4
 PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.regressive.org/snobol/
 
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		readline ssl
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--mandir=${PREFIX}/share/man
 
 MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	build_all
