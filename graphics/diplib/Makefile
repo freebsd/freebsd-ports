@@ -1,5 +1,5 @@
 PORTNAME=	diplib
-DISTVERSION=	3.4.1
+DISTVERSION=	3.4.2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ BROKEN_aarch64=	runaway builds, see https://bugs.freebsd.org/bugzilla/show_bug.c
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-USES=		cmake:testing gl
+USES=		cmake:testing compiler:c++14-lang gl
 USE_GL=		gl glut
 USE_LDCONFIG=	yes
 
