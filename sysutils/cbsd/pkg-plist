@@ -392,6 +392,7 @@ cbsd/man/cbsd-jls.8
 cbsd/man/cbsd.8
 cbsd/misc/cbsd_dot
 cbsd/misc/cbsd_fwatch
+cbsd/misc/cbsd_md5
 cbsd/misc/cbsdlogtail
 cbsd/misc/cbsdtee
 cbsd/misc/chk_arp_byip

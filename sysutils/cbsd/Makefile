@@ -1,5 +1,6 @@
 PORTNAME=	cbsd
 DISTVERSION=	14.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -57,6 +58,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/cbsdsh/cbsd \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/misc/src/sipcalc/sipcalc \
+		${STAGEDIR}${PREFIX}/cbsd/misc
+	${INSTALL_PROGRAM} ${WRKSRC}/misc/src/cbsd_md5/cbsd_md5 \
 		${STAGEDIR}${PREFIX}/cbsd/misc
 	${RM} -r ${STAGEDIR}${PREFIX}/cbsd/bin/cbsdsh \
 		${STAGEDIR}${PREFIX}/cbsd/bin/src \
