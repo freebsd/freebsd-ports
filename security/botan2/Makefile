@@ -1,6 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	2.19.3
-PORTREVISION=	6
+DISTVERSION=	2.19.4
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -17,7 +16,7 @@ BROKEN_armv6=	include/arm_neon.h:28:2: error: "NEON support not enabled"
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
-USES=		compiler:c++11-lang cpe gmake shebangfix tar:xz
+USES=		compiler:c++17-lang cpe gmake shebangfix tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
