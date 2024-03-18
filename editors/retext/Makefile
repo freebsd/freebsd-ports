@@ -1,9 +1,7 @@
-PORTNAME=	retext
-DISTVERSION=	8.0.1
-PORTREVISION=	1
+PORTNAME=	ReText
+DISTVERSION=	8.0.2
 CATEGORIES=	editors
 MASTER_SITES=	PYPI
-DISTNAME=	ReText-${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Markdown editor
@@ -12,6 +10,8 @@ WWW=		https://github.com/retext-project/retext
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.0:textproc/py-markdown@${PY_FLAVOR} \
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymdown-extensions>0:textproc/py-pymdown-extensions@${PY_FLAVOR}
 
 USES=		desktop-file-utils pyqt:6 python:3.9+
-USE_PYTHON=	autoplist distutils noflavors pytest
 USE_PYQT=	pyqt6:run sip:run
+USE_PYTHON=	autoplist noflavors pep517 pytest
 
 NO_ARCH=	yes
 
