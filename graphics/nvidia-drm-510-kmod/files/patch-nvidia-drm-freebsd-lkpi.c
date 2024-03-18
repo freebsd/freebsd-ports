@@ -44,11 +44,3 @@
          nv_lkpi_pci_devs[i] = pdev;
  
          gpu_info.gpu_id = nv->gpu_id;
-@@ -148,7 +171,6 @@ MODULE_DEPEND(nvidia_drm, linuxkpi, 1, 1, 1);
- LKPI_DRIVER_MODULE(nvidia_drm, nv_drm_init, nv_drm_exit);
- LKPI_PNP_INFO(pci, nvidia_drm, nv_module_device_table);
- MODULE_DEPEND(nvidia_drm, linuxkpi, 1, 1, 1);
--MODULE_DEPEND(nvidia_drm, linuxkpi_gplv2, 1, 1, 1);
- MODULE_DEPEND(nvidia_drm, drmn, 2, 2, 2);
- MODULE_DEPEND(nvidia_drm, dmabuf, 1, 1, 1);
- MODULE_DEPEND(nvidia_drm, nvidia, 1, 1, 1);

@@ -1,6 +1,8 @@
 PORTNAME=	nvidia-drm-61-kmod
+PORTREVISION=	1
 CATEGORIES=	graphics
 
+BUILD_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-61-kmod
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-61-kmod
 CONFLICTS_INSTALL=	nvidia-drm-510-kmod nvidia-drm-515-kmod
 
