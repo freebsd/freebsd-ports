@@ -1,5 +1,6 @@
 PORTNAME=	xgalaga
 PORTVERSION=	2.1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -18,7 +19,7 @@ HAS_CONFIGURE=	yes
 
 # xgalaga has a very strange usage of these variables...
 CONFIGURE_ARGS=	--prefix=${LOCALBASE}/lib/X11/xgalaga \
-		--mandir=${LOCALBASE}/man \
+		--mandir=${LOCALBASE}/share/man \
 		--exec_prefix=${LOCALBASE}/bin
 
 OPTIONS_DEFINE=	SOUND
