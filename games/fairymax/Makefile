@@ -1,6 +1,6 @@
 PORTNAME=	fairymax
 PORTVERSION=	5.0b.20160316.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://freeheimdall.spdns.org/files/
 # http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=${COMMIT_HASH};sf=tgz
@@ -22,7 +22,7 @@ USES=		gmake perl5
 USE_PERL5=	build
 MAKE_ARGS+=	prefix= \
 		bindir=${PREFIX}/bin \
-		mandir=${PREFIX}/man \
+		mandir=${PREFIX}/share/man \
 		datadir= \
 		plugindir=${PREFIX}/share/games/plugins \
 		fairydir=${DATADIR} \

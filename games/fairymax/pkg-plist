@@ -1,7 +1,6 @@
 bin/fairymax
 bin/maxqi
 bin/shamax
-man/man6/fairymax.6.gz
 %%DATADIR%%/fmax.ini
 %%DATADIR%%/qmax.ini
 %%DATADIR%%/makruk.hash
@@ -11,3 +10,4 @@ share/games/plugins/logos/shamax.png
 share/games/plugins/xboard/fairymax.eng
 share/games/plugins/xboard/maxqi.eng
 share/games/plugins/xboard/shamax.eng
+share/man/man6/fairymax.6.gz
