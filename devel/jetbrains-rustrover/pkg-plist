@@ -1,5 +1,4 @@
 bin/rustrover
-man/man1/rustrover.1.gz
 share/applications/rustrover.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
@@ -903,3 +902,4 @@ share/applications/rustrover.desktop
 %%DATADIR%%/product-info.json
 @dir %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb
 @dir %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb
+share/man/man1/rustrover.1.gz
