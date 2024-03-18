@@ -32,7 +32,7 @@ COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 # Depend on mako from PYTHON_SITELIBDIR to allow to use a pre-installed hybrid
 # ABI version.
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/mako:textproc/py-mako@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 .if ${COMPONENT} != clover
 .if ${PORT_OPTIONS:MPLATFORM_X11}

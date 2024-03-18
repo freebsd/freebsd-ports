@@ -26,6 +26,6 @@ CMAKE_ON=	WITH_ICON_GENERATION
 CMAKE_BUILD_TYPE=Release
 # Depend on lxml from PYTHON_SITELIBDIR to allow to use a pre-installed hybrid
 # ABI version.
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/lxml:devel/py-lxml@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/lxml/__init__.py:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
