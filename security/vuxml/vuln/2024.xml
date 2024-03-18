@@ -1,3 +1,33 @@
+  <vuln vid="05b7180b-e571-11ee-a1c0-0050569f0b83">
+    <topic>www/varnish7 -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Varnish Development Team reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00014.html#vsv00014">
+	<p>A denial of service attack can be performed on Varnish Cacher servers
+	   that have the HTTP/2 protocol turned on. An attacker can let the
+	   servers HTTP/2 connection control flow window run out of credits
+	   indefinitely and prevent progress in the processing of streams,
+	   retaining the associated resources.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43622</cvename>
+      <url>https://varnish-cache.org/security/VSV00014.html#vsv00014</url>
+    </references>
+    <dates>
+      <discovery>2019-04-19</discovery>
+      <entry>2024-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a48e552-e470-11ee-99b3-589cfc0f81b0">
     <topic>amavisd-new -- multipart boundary confusion</topic>
     <affects>
