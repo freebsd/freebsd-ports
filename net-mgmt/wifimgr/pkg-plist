@@ -1,6 +1,6 @@
 bin/wifimgr
 @(,,4511) libexec/wifimgrsu
-man/man8/wifimgr.8.gz
+share/man/man8/wifimgr.8.gz
 %%DATADIR%%/icons/disabled.png
 %%DATADIR%%/icons/eye.png
 %%DATADIR%%/icons/freebsd-surf.png
