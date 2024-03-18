@@ -62,6 +62,7 @@ EOM
 }
 { type: upgrade
   minimum_version: "4.3.0"
+  maximum_version: "4.7.0"
   message: <<EOM
 This version needs a mandatory schema change for gmysql, godbc (mssql),
 gpsql, and gsqlite3 backends.

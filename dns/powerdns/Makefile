@@ -1,6 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	4.8.4
-PORTREVISION=	2
+DISTVERSION=	4.9.0
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -21,7 +20,7 @@ USES=		autoreconf compiler:c++11-lib cpe gmake libtool \
 		localbase:ldflags pathfix pkgconfig ssl tar:bzip2
 
 USE_RC_SUBR=	pdns
-USE_SUBMAKE=	YES
+USE_SUBMAKE=	yes
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
