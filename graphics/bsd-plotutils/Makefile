@@ -1,6 +1,6 @@
 PORTNAME=	bsd-plotutils
 DISTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	toranktto@gmail.com
@@ -15,6 +15,8 @@ GH_ACCOUNT=	Toranktto
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	plotutils
+
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man/man"
 
 OPTIONS_DEFINE=	FORTRAN
 OPTIONS_SUB=	yes
