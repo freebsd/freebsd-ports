@@ -1,5 +1,5 @@
 PORTNAME=	pandora_server
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
@@ -95,13 +95,6 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/ipmi-sensors:sysutils/freeipmi
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|g' \
-		-e 's|%%PANDORA_ETCDIR%%|${PANDORA_ETCDIR}|g' \
-		-e 's|%%PANDORA_LOGDIR%%|${PANDORA_LOGDIR}|g' \
-		-e 's|%%PANDORA_SPOOLDIR%%|${PANDORA_SPOOLDIR}|g' \
-		${WRKSRC}/pandora_server_installer
 	@${REINPLACE_CMD} -i "" \
 		-e 's,/usr/bin/perl,${PERL},g' \
 		`${GREP} -rl /usr/bin/perl ${WRKSRC} | ${GREP} -v pandora_server_installer`

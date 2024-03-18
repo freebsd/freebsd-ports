@@ -25,8 +25,8 @@
 %%SITE_PERL%%/PandoraFMS/Traceroute.pm
 %%SITE_PERL%%/PandoraFMS/Traceroute/PurePerl.pm
 %%SITE_PERL%%/PandoraFMS/WMIServer.pm
-man/man1/pandora_server.1.gz
-man/man1/tentacle_server.1.gz
+share/man/man1/pandora_server.1.gz
+share/man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/alert_multicast.pl
 %%DATADIR%%/util/change_remoteconfig.pl
 %%DATADIR%%/util/compaq_chassis_trap_manager.pl
