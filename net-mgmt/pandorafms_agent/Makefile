@@ -1,4 +1,5 @@
 PORTNAME=	pandora_agent
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
