@@ -1,5 +1,5 @@
 bin/munger
-man/man1/munger.1.gz
+share/man/man1/munger.1.gz
 %%DATADIR%%/cal.munger
 %%DATADIR%%/cat.munger
 %%DATADIR%%/echo.munger
