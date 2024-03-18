@@ -1,6 +1,7 @@
 PORTNAME=	bemenu
-DISTVERSION=	0.6.20
+DISTVERSION=	0.6.21
 CATEGORIES=	x11
+MASTER_SITES=	https://github.com/Cloudef/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Dynamic menu library and client program inspired by dmenu
@@ -15,8 +16,6 @@ BUILD_DEPENDS=	scdoc:textproc/scdoc
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gmake
-USE_GITHUB=	yes
-GH_ACCOUNT=	Cloudef
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	clients
