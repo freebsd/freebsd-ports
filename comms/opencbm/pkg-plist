@@ -33,21 +33,6 @@ lib/opencbm/plugin/libopencbm-xum1541.a
 lib/opencbm/plugin/libopencbm-xum1541.so
 lib/opencbm/plugin/libopencbm-xum1541.so.0
 lib/opencbm/plugin/libopencbm-xum1541.so.%%OCBM_VERSION%%
-man/man1/cbmcopy.1.gz
-man/man1/cbmctrl.1.gz
-man/man1/cbmformat.1.gz
-man/man1/cbmforng.1.gz
-man/man1/cbmlinetester.1.gz
-man/man1/cbmread.1.gz
-man/man1/cbmrpm41.1.gz
-man/man1/cbmwrite.1.gz
-man/man1/d64copy.1.gz
-man/man1/d82copy.1.gz
-man/man1/frm_analyzer.1.gz
-man/man1/imgcopy.1.gz
-man/man1/samplelibtransf.1.gz
-man/man1/testlines.1.gz
-man/man1/xum1541cfg.1.gz
 sbin/opencbm_plugin_helper_tools
 %%PORTDOCS%%%%DOCSDIR%%/html/opencbm-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/opencbm-10.html
@@ -100,5 +85,20 @@ sbin/opencbm_plugin_helper_tools
 %%PORTDOCS%%%%DOCSDIR%%/misc/serial.txt
 %%PORTDOCS%%%%DOCSDIR%%/opencbm.pdf
 %%PORTDOCS%%%%DOCSDIR%%/opencbm.txt
+share/man/man1/cbmcopy.1.gz
+share/man/man1/cbmctrl.1.gz
+share/man/man1/cbmformat.1.gz
+share/man/man1/cbmforng.1.gz
+share/man/man1/cbmlinetester.1.gz
+share/man/man1/cbmread.1.gz
+share/man/man1/cbmrpm41.1.gz
+share/man/man1/cbmwrite.1.gz
+share/man/man1/d64copy.1.gz
+share/man/man1/d82copy.1.gz
+share/man/man1/frm_analyzer.1.gz
+share/man/man1/imgcopy.1.gz
+share/man/man1/samplelibtransf.1.gz
+share/man/man1/testlines.1.gz
+share/man/man1/xum1541cfg.1.gz
 @postexec opencbm_plugin_helper_tools rebuild
 @preunexec rm -f %%LOCALBASE%%/etc/opencbm.conf
