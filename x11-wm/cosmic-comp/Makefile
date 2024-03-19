@@ -1,5 +1,5 @@
 PORTNAME=	cosmic-comp
-PORTVERSION=	s20240311
+PORTVERSION=	s20240320
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		cargo gl
 USE_GITHUB=	yes
 USE_GL=		gbm
 GH_ACCOUNT=	pop-os
-GH_TAGNAME=	c685440
+GH_TAGNAME=	a1c8b3a
 GH_TUPLE=	pop-os:iced:0.4.2-1768-g6115280d:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
