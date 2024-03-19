@@ -1,6 +1,7 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.25.1
+PORTRETISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -27,6 +28,7 @@ USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 GH_ACCOUNT=	neutrinolabs
 GH_TUPLE=	neutrinolabs:librfxcodec:c537401a:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:b44f2fa:libpainter/libpainter

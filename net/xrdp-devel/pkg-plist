@@ -96,17 +96,17 @@ etc/rc.d/xrdp-sesman
 @sample %%ETCDIR%%/reconnectwm.sh.sample
 @sample %%ETCDIR%%/xrdp.ini.sample
 @sample %%ETCDIR%%/xrdp_keyboard.ini.sample
-man/man1/xrdp-dis.1.gz
-man/man5/sesman.ini.5.gz
-man/man8/xrdp.8.gz
-man/man5/xrdp.ini.5.gz
-man/man8/xrdp-chansrv.8.gz
-man/man8/xrdp-dumpfv1.8.gz
-man/man8/xrdp-genkeymap.8.gz
-man/man8/xrdp-keygen.8.gz
-man/man8/xrdp-sesadmin.8.gz
-man/man8/xrdp-sesman.8.gz
-man/man8/xrdp-sesrun.8.gz
+share/man/man1/xrdp-dis.1.gz
+share/man/man5/sesman.ini.5.gz
+share/man/man8/xrdp.8.gz
+share/man/man5/xrdp.ini.5.gz
+share/man/man8/xrdp-chansrv.8.gz
+share/man/man8/xrdp-dumpfv1.8.gz
+share/man/man8/xrdp-genkeymap.8.gz
+share/man/man8/xrdp-keygen.8.gz
+share/man/man8/xrdp-sesadmin.8.gz
+share/man/man8/xrdp-sesman.8.gz
+share/man/man8/xrdp-sesrun.8.gz
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman
