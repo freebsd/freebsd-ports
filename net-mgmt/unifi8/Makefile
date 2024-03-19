@@ -1,5 +1,5 @@
 PORTNAME=	unifi8
-PORTVERSION=	8.0.28
+PORTVERSION=	8.1.113
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -59,7 +59,7 @@ OPTIONS_DEFAULT+=	EXTERNALDB
 EXTERNALDB_DESC=	Use external MongoDB server
 EXTERNALDB_VARS=	PKGMESSAGE+=${WRKSRC}/pkg-message.extdb \
 			SUB_FILES+=pkg-message.extdb
-EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb44>0:databases/mongodb44
+EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb50>0:databases/mongodb50
 
 _DIR_LIST=	conf data logs run work
 _JAX_DISTNAME=	javax.activation-api

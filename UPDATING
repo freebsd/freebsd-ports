@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240318:
+  AFFECTS: users of net-mgmt/unifi8
+  AUTHOR: otis@FreeBSD.org
+
+  The default MongoDB version dependency has been switched from 4.4 to 5.0.
+
+  Although MongoDB 4.4 -> MongoDB 5.0 datafiles in-place upgrade seem to
+  work, users are strongly recommended to take full backup of unifi
+  database prior to upgrade and start with clean installation afterwards.
+
+  See updating entry 20230310 for details.
+
 20240316:
   AFFECTS: users of net/rabbitmq
   AUTHOR: dch@FreeBSD.org

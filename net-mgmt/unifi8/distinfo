@@ -1,5 +1,5 @@
-TIMESTAMP = 1706607215
-SHA256 (unifi8-8.0.28/unifi_sysvinit_all.deb) = 440dd1fe2477bbf57ea94dac41336d690858388f2d090c3c4ef3163d4962b6bc
-SIZE (unifi8-8.0.28/unifi_sysvinit_all.deb) = 137632076
-SHA256 (unifi8-8.0.28/javax.activation-api-1.2.0.jar) = 43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393
-SIZE (unifi8-8.0.28/javax.activation-api-1.2.0.jar) = 56674
+TIMESTAMP = 1710796780
+SHA256 (unifi8-8.1.113/unifi_sysvinit_all.deb) = d649e6fa5f0c49bed72aad9621b7a1027cfb96844f8e09dcf91f7cce958a1001
+SIZE (unifi8-8.1.113/unifi_sysvinit_all.deb) = 150740136
+SHA256 (unifi8-8.1.113/javax.activation-api-1.2.0.jar) = 43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393
+SIZE (unifi8-8.1.113/javax.activation-api-1.2.0.jar) = 56674
