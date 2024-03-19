@@ -12,6 +12,10 @@ WWW=		http://code.google.com/p/get-flash-videos/
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchabled and doesn't run, "Type of arg 1 to keys must be hash or array (not hash element)"
+DEPRECATED=	Abandonware, consider using www/yt-dlp
+EXPIRATION_DATE=2024-03-31
+
 RUN_DEPENDS=	\
 		p5-Crypt-Blowfish_PP>=0:security/p5-Crypt-Blowfish_PP \
 		p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
