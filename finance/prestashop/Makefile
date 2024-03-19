@@ -1,7 +1,7 @@
 PORTNAME=	prestashop
-PORTVERSION=	8.1.3
+PORTVERSION=	8.1.5
 CATEGORIES=	finance www
-MASTER_SITES=	https://github.com/PrestaShop/PrestaShop/releases/download/8.1.3/
+MASTER_SITES=	https://github.com/PrestaShop/PrestaShop/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
