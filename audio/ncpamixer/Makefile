@@ -1,6 +1,5 @@
 PORTNAME=	ncpamixer
-DISTVERSION=	1.3.3.5
-PORTREVISION=	1
+DISTVERSION=	1.3.7
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +15,8 @@ USES=		cmake compiler:c++17-lang ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fulhax
+
+CMAKE_OFF=	BUILD_MANPAGES
 
 WRKSRC_SUBDIR=	src
 
