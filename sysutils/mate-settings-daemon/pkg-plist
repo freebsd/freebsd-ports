@@ -5,7 +5,6 @@ etc/xrdb/General.ad
 etc/xrdb/Motif.ad
 etc/xrdb/Tk.ad
 etc/xrdb/Xaw.ad
-include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
 lib/mate-settings-daemon/a11y-keyboard.mate-settings-plugin
 lib/mate-settings-daemon/a11y-settings.mate-settings-plugin
@@ -43,9 +42,6 @@ libdata/pkgconfig/mate-settings-daemon.pc
 libexec/mate-settings-daemon
 libexec/msd-datetime-mechanism
 libexec/msd-locate-pointer
-share/man/man1/mate-settings-daemon.1.gz
-share/man/man1/msd-datetime-mechanism.1.gz
-share/man/man1/msd-locate-pointer.1.gz
 share/dbus-1/services/org.mate.SettingsDaemon.service
 share/dbus-1/system-services/org.mate.SettingsDaemon.DateTimeMechanism.service
 share/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
@@ -175,6 +171,9 @@ share/locale/zh_CN/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/mate-settings-daemon.mo
+share/man/man1/mate-settings-daemon.1.gz
+share/man/man1/msd-datetime-mechanism.1.gz
+share/man/man1/msd-locate-pointer.1.gz
 share/mate-control-center/keybindings/50-accessibility.xml
 %%DATADIR%%/acme.ui
 %%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-off.png
