@@ -3,7 +3,7 @@ sbin/bhyvectl
 sbin/bhyveload
 lib/lib9p.so.%%9P_SHLIB_MAJOR%%
 lib/libvmmapi.so.%%VMMAPI_SHLIB_MAJOR%%
-man/man8/bhyve.8.gz
-man/man8/bhyvectl.8.gz
-man/man8/bhyveload.8.gz
+share/man/man8/bhyve.8.gz
+share/man/man8/bhyvectl.8.gz
+share/man/man8/bhyveload.8.gz
 /%%KMODDIR%%/vmm.ko

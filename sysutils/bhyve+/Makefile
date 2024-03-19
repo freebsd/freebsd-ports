@@ -1,5 +1,6 @@
 PORTNAME=	bhyve+
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -106,7 +107,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/lib/libvmmapi/libvmmapi.so.${LIBVMMAPI_VERSION} ${STAGEDIR}${PREFIX}/lib
 .for _bin in bhyve bhyveload bhyvectl
 	${INSTALL_PROGRAM} ${WRKSRC}/usr.sbin/${_bin}/${_bin} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/usr.sbin/${_bin}/${_bin}.8.gz ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/usr.sbin/${_bin}/${_bin}.8.gz ${STAGEDIR}${PREFIX}/share/man/man8
 .endfor
 	${INSTALL_KLD} ${WRKSRC}/sys/modules/vmm/vmm.ko ${STAGEDIR}${KMODDIR}
 
