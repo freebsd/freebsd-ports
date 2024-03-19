@@ -54,9 +54,9 @@ lib/portsreinstall/upgrade/libmessage.sh
 lib/portsreinstall/upgrade/liboptions.sh
 lib/portsreinstall/upgrade/libusage.sh
 libexec/portsreinstall/order_dependencies.awk
-man/man8/portsreinstall-chroot-mount.8.gz
-man/man8/portsreinstall-chroot.8.gz
-man/man8/portsreinstall-upgrade.8.gz
-man/man8/portsreinstall.8.gz
+share/man/man8/portsreinstall-chroot-mount.8.gz
+share/man/man8/portsreinstall-chroot.8.gz
+share/man/man8/portsreinstall-upgrade.8.gz
+share/man/man8/portsreinstall.8.gz
 %%DATADIR%%/bin/portsreinstall-chroot-mount
 %%DATADIR%%/bin/portsreinstall-upgrade
