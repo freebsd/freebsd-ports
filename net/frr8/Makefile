@@ -1,5 +1,6 @@
 PORTNAME=	frr
 PORTVERSION=	8.5.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
@@ -48,6 +49,7 @@ BINARY_ALIAS=	python=${PYTHON_VERSION}
 CONFLICTS=	frr9 openbgpd openospfd quagga zebra
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 .endif
