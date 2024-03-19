@@ -11,6 +11,8 @@ WWW=		http://yate.null.ro
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
