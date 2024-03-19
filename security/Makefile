@@ -51,6 +51,7 @@
     SUBDIR += bearssl
     SUBDIR += beecrypt
     SUBDIR += beid
+    SUBDIR += beidconnect
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk

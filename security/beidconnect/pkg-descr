@@ -1,0 +1,10 @@
+BeIDConnect is a browser extension to sign documents with a Belgian eID
+card.
+
+Only belgium.be and fgov.be websites can make use of the BeIDConnect
+extension to create an electronic signature.  These websites are
+operated by institutions of the Belgian federal government.
+
+This package only contains the backend that connects with your card
+reader.  The extension itself has to be installed through your web
+browser.
