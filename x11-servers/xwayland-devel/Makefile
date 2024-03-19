@@ -1,7 +1,7 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-805
-DISTVERSIONSUFFIX=	-g005912d82
+DISTVERSION=	21.0.99.1-841
+DISTVERSIONSUFFIX=	-g052909ab9
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -64,7 +64,7 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
-OPTIONS_DEFINE=	CSD EI NVIDIA
+OPTIONS_DEFINE=	CSD EI
 OPTIONS_DEFAULT=CSD EI
 
 CSD_DESC=		Client-side decorations via libdecor
@@ -74,9 +74,5 @@ CSD_MESON_TRUE=		libdecor
 EI_DESC=		Emulated input via libei
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_MESON_OFF=		-Dxwayland_ei=false
-
-NVIDIA_DESC=		EGLStream support for glamor on Xwayland
-NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
-NVIDIA_MESON_TRUE=	xwayland_eglstream
 
 .include <bsd.port.mk>
