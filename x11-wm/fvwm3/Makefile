@@ -36,7 +36,10 @@ GO_DESC=		Build and install modules written in Go
 FRIBIDI_LIB_DEPENDS=		libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	bidi
 
-GO_USES=		go:no_targets
+_GO_MAXVERSION=		1.21
+_GO_VERSIONARG=		${${GO_DEFAULT:S/-devel//:S/.//} > \
+			${_GO_MAXVERSION:S/.//}:?${_GO_MAXVERSION},:}
+GO_USES=		go:${_GO_VERSIONARG}no_targets
 GO_CONFIGURE_ENABLE=	golang
 
 FVWM_ICONS=		fvwm_icons-20070101
