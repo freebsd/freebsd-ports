@@ -1,6 +1,6 @@
---- src/rdist.c.orig	1998-11-10 04:13:50 UTC
-+++ src/rdist.c
-@@ -62,8 +62,8 @@ static char copyright[] =
+--- src/rdist.c.orig	1998-11-09 20:13:50.000000000 -0800
++++ src/rdist.c	2024-03-19 09:08:42.194504000 -0700
+@@ -62,8 +62,8 @@
  char   	       *distfile = NULL;		/* Name of distfile to use */
  int     	maxchildren = MAXCHILDREN;	/* Max no of concurrent PIDs */
  int		nflag = 0;			/* Say without doing */
@@ -11,7 +11,16 @@
  FILE   	       *fin = NULL;			/* Input file pointer */
  struct group   *gr = NULL;			/* Static area for getgrent */
  char		localmsglist[] = "stdout=all:notify=all:syslog=nerror,ferror";
-@@ -107,12 +107,13 @@ main(argc, argv, envp)
+@@ -72,6 +72,8 @@
+ FILE   	       *opendist();
+ char	       *path_rdistd = _PATH_RDISTD;
+ char	       *path_remsh = _PATH_REMSH;
++char	       *path_remsh_env;
++#define		RDIST_RSH_ENV	"RDIST_RSH"
+ 
+ /*
+  * Add a hostname to the host list
+@@ -107,12 +109,13 @@
  	register char *cp;
  	int cmdargs = 0;
  	int c;
@@ -26,7 +35,25 @@
  
  	if (cp = msgparseopts(localmsglist, TRUE)) {
  		error("Bad builtin log option (%s): %s.", 
-@@ -176,10 +177,20 @@ main(argc, argv, envp)
+@@ -155,6 +158,17 @@
+ 		fatalerr("This version of rdist should not be installed setuid.");
+ #endif	/* DIRECT_RCMD */
+ 
++	path_remsh_env = getenv(RDIST_RSH_ENV);
++	if (path_remsh_env) {
++		if (cp = searchpath(path_remsh_env))
++			path_remsh = strdup(cp);
++		else {
++			error("Environment incorrect: No component of path \"%s\" exists.",
++			      path_remsh_env);
++			exit(1);
++		}
++	}
++
+ 	while ((c = getopt(argc, argv, optchars)) != -1)
+ 		switch (c) {
+ 		case 'l':
+@@ -176,10 +190,20 @@
  				error("\"%s\" is not a number.", optarg);
  				usage();
  			}
