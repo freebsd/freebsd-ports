@@ -1,5 +1,6 @@
 PORTNAME=	obhttpd
 DISTVERSION=	7.4.20231129
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -22,7 +23,7 @@ GH_TAGNAME=	${LIBIMSG}:libimsg \
 
 USE_RC_SUBR=	obhttpd
 
-MAKE_ARGS+=	MANDIR=${PREFIX}/man/man
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
 
 # XXX Static libraries with PIE are currently unsupported.
 MAKE_ARGS+=	WITHOUT_PIE=true
