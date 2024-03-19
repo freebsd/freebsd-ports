@@ -1,5 +1,5 @@
 bin/mons
 lib/libshlist/liblist.sh
-man/man1/mons.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/img/raw-body.png
+share/man/man1/mons.1.gz
