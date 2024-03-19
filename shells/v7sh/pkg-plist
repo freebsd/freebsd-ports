@@ -1,2 +1,2 @@
 @shell bin/v7sh
-man/man1/v7sh.1.gz
+share/man/man1/v7sh.1.gz
