@@ -1,5 +1,6 @@
 PORTNAME=	cvsync
 PORTVERSION=	0.25.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
