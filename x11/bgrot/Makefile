@@ -1,5 +1,6 @@
 PORTNAME=	bgrot
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
 		http://distfiles.over-yonder.net/bgrot/
@@ -15,6 +16,7 @@ RUN_DEPENDS=	xv:graphics/xv
 USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl
 
-MAKE_ARGS=	IPREFIX=${STAGEDIR}${PREFIX}
+MAKE_ARGS=	IPREFIX=${STAGEDIR}${PREFIX} \
+		IMANDIR=${STAGEDIR}${PREFIX}/share/man
 
 .include <bsd.port.mk>
