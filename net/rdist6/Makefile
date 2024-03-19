@@ -1,6 +1,6 @@
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	https://fossies.org/linux/misc/old/ \
 		http://www.magnicomp.com/download/rdist/
@@ -11,8 +11,11 @@ WWW=		https://www.magnicomp.com/
 
 MAKE_JOBS_UNSAFE=	yes
 
-# To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
-RDIST_NAME?=	rdist6
+# Years ago base FreeBSD maintained /usr/bin/rdist, but since then it was
+# removed. Users who wish to continue to use the rdist6 name can set
+# RDIST_NAME=rdist6 in their make.conf. Otherwise we install binary named
+# rdist.
+RDIST_NAME?=	rdist
 
 INSTALL_TARGET=	install install.man
 MAKE_ENV=	BUILD_OPT="${CFLAGS}" BUILD_CLIENT=${RDIST_NAME} \
