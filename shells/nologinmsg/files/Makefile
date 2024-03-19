@@ -1,7 +1,7 @@
 PROG=	nologinmsg
 SRCS=	nologinmsg.c
 BINDIR=	${PREFIX}/bin
-MANDIR=	${PREFIX}/man/man
+MANDIR=	${PREFIX}/share/man/man
 MAN8=	nologinmsg.8
 
 CFLAGS+=	-g
