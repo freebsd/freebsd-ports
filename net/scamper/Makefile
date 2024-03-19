@@ -11,11 +11,15 @@ WWW=		https://www.caida.org/tools/measurement/scamper/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool ssl
+USES+=		gmake libtool ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
+
+SLAVE_PORT?=	no
+
+.if ${SLAVE_PORT} == no
 
 OPTIONS_DEFINE=	HOIHO UPTIME
 OPTIONS_SUB=	yes
@@ -30,5 +34,7 @@ HOIHO_CONFIGURE_WITH=	pcre2
 
 UPTIME_USES=		localbase:ldflags sqlite:3
 UPTIME_CONFIGURE_ENABLE=	sc_uptime
+
+.endif # ${SLAVE_PORT} == no
 
 .include <bsd.port.mk>
