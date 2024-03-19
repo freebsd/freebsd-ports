@@ -22,6 +22,15 @@
  
  # Package search path.
  TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
+@@ -151,7 +153,7 @@ INSTALL_STRIP_PROGRAM	= strip
+ # distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM	= strip
+-INSTALL_STRIP_LIBRARY	= strip -x
++INSTALL_STRIP_LIBRARY	= strip --strip-unneeded
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+ INSTALL_PROGRAM		= ${INSTALL}
 @@ -714,9 +716,9 @@ SRCS = $(GENERIC_SRCS) $(UNIX_SRCS) $(NOTIFY_SRCS) \
  # Start of rules
  #--------------------------------------------------------------------------
