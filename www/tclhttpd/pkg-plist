@@ -1,7 +1,6 @@
 bin/httpd.tcl
 bin/httpdthread.tcl
 etc/tclhttpd.rc.default
-man/man1/tclhttpd.1.gz
 @owner nobody
 lib/tclhttpd%%PORTVERSION%%/%%SHLIB_NAME%%
 lib/tclhttpd%%PORTVERSION%%/admin.tcl
@@ -50,6 +49,7 @@ lib/tclhttpd%%PORTVERSION%%/version.tcl
 lib/tclhttpd%%PORTVERSION%%/mime.types
 @dir lib/tclhttpd%%PORTVERSION%%
 @owner root
+share/man/man1/tclhttpd.1.gz
 share/tclhttpd%%PORTVERSION%%/.tml
 share/tclhttpd%%PORTVERSION%%/access/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/README.txt
