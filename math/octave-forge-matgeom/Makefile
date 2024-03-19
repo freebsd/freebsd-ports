@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-matgeom
-PORTVERSION=	1.2.3
-PORTREVISION=	6
+PORTVERSION=	1.2.4
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
