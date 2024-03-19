@@ -1,27 +1,22 @@
 PORTNAME=	Kvantum
-DISTVERSIONPREFIX=	V
-DISTVERSION=	1.0.10
+DISTVERSION=	1.1.0
 CATEGORIES=	x11-themes
-PKGNAMESUFFIX=	-qt5
+MASTER_SITES=	https://github.com/tsujan/${PORTNAME}/releases/download/V${DISTVERSION}/
+PKGNAMESUFFIX=	-qt6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	SVG-based theme engine for Qt, KDE and LXQt
 WWW=		https://github.com/tsujan/Kvantum
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gl kde:5 qmake qt:5 xorg
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	tsujan
-
-USE_GL=		gl
-USE_LDCONFIG=	yes
+USES=		cmake gl kde:6 qt:6 tar:xz xorg
+USE_GL=		opengl
 USE_KDE=	windowsystem
-USE_QT=		core gui svg widgets x11extras \
-		buildtools:build linguisttools:build
-USE_XORG=	x11 xext
+USE_LDCONFIG=	yes
+USE_QT=		base svg
+USE_XORG=	ice sm x11 xext
 
 WRKSRC_SUBDIR=	${PORTNAME}
 
