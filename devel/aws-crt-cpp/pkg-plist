@@ -13,6 +13,7 @@ include/aws/crt/StringView.h
 include/aws/crt/Types.h
 include/aws/crt/UUID.h
 include/aws/crt/Utility.h
+include/aws/crt/Variant.h
 include/aws/crt/auth/Credentials.h
 include/aws/crt/auth/Signing.h
 include/aws/crt/auth/Sigv4Signing.h
