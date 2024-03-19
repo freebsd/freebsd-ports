@@ -1,6 +1,7 @@
 PORTNAME=	opendircolors
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	me@cameronkatri.com
@@ -13,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	CRKatri
+
+MAKE_ENV=	BINDIR="${PREFIX}/bin" \
+		MANDIR="${PREFIX}/share/man/man"
 
 CONFLICTS_INSTALL=	gnuls # bin/dircolors
 
