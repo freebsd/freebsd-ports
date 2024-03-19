@@ -5,4 +5,4 @@ lib/libakmos.a
 lib/libakmos.so
 lib/libakmos.so.7
 lib/libakmos.so.0.7
-man/man1/akmos.1.gz
+share/man/man1/akmos.1.gz
