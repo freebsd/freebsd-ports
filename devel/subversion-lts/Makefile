@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	lev@FreeBSD.org
@@ -45,6 +45,7 @@ SVNFSTYPE?=	fsfs
 SVNGROUP?=	svn
 SVNUSER?=	svn
 
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--without-swig-perl \
 			--without-swig-python \
 			--without-swig-ruby \
