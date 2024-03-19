@@ -1,0 +1,14 @@
+--- Makefile.orig	2024-03-19 15:44:53 UTC
++++ Makefile
+@@ -161,9 +161,9 @@ install_man:
+ .endfor
+ 
+ install_man:
+-	install -d ${DESTDIR}${PREFIX}/man/man1
++	install -d ${DESTDIR}${PREFIX}/share/man/man1
+ .for man_file in ${MAN_FILES}
+-	install -m 0644 man/${man_file}.gz ${DESTDIR}${PREFIX}/man/man1
++	install -m 0644 man/${man_file}.gz ${DESTDIR}${PREFIX}/share/man/man1
+ .endfor
+ 
+ install_profile:

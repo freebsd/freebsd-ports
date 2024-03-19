@@ -1,6 +1,6 @@
 bin/reggae
 @sample %%ETCDIR%%.conf.sample
-man/man1/reggae.1.gz
+share/man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/jail-freebsd-reggae.conf
 %%DATADIR%%/cbsd-profile/skel/etc/crontab
 %%DATADIR%%/cbsd-profile/skel/etc/group
