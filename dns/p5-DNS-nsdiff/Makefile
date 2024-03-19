@@ -1,6 +1,5 @@
 PORTNAME=	DNS-nsdiff
-PORTVERSION=	1.82
-PORTREVISION=	1
+PORTVERSION=	1.84
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -9,7 +8,8 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Create an "nsupdate" script from DNS zone file differences
 WWW=		https://dotat.at/prog/nsdiff/
 
-LICENSE=	CC0-1.0
+LICENSE=	BSD0CLAUSE MIT
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	nsupdate:dns/bind-tools
 
