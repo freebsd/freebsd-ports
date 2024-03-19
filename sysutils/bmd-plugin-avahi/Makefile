@@ -1,5 +1,6 @@
 PORTNAME=	bmd-plugin-avahi
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
