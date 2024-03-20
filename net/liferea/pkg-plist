@@ -24,8 +24,6 @@ lib/liferea/plugins/trayicon.plugin
 lib/liferea/plugins/trayicon.py
 lib/liferea/web-extension/liblifereawebextension.a
 lib/liferea/web-extension/liblifereawebextension.so
-man/man1/liferea.1.gz
-man/it/man1/liferea.1.gz
 share/applications/net.sourceforge.liferea.desktop
 share/dbus-1/services/net.sourceforge.liferea.service
 share/GConf/gsettings/liferea.convert
@@ -211,4 +209,6 @@ share/locale/uk/LC_MESSAGES/liferea.mo
 share/locale/vi/LC_MESSAGES/liferea.mo
 share/locale/zh_CN/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
+share/man/it/man1/liferea.1.gz
+share/man/man1/liferea.1.gz
 share/metainfo/net.sourceforge.liferea.appdata.xml
