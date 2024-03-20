@@ -2,7 +2,6 @@
 @postexec d=/var/spool/newsstar/lib ; test -d "$d" || install -d -onews -gnews -m0750 "$d"
 @postexec d="%D/%%ETCDIR%%" ; test -d "$d" || install -d -o0 -g0 -m0755 "$d"
 bin/newsstar
-man/man1/newsstar.1.gz
 libexec/newsstar/newsstar.bin
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -31,6 +30,7 @@ libexec/newsstar/newsstar.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.ignore.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.score.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsrc.sample
+share/man/man1/newsstar.1.gz
 @dir(news,news,750) /var/spool/newsstar/incoming
 @dir(news,news,750) /var/spool/newsstar/lib
 @dir /var/spool/newsstar
