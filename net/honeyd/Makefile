@@ -1,6 +1,6 @@
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	http://www.honeyd.org/uploads/ \
 		http://www.citi.umich.edu/u/provos/honeyd/
@@ -22,6 +22,7 @@ USES=		libedit libtool shebangfix
 SHEBANG_FILES=	scripts/*.pl scripts/snmp/*.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE}
 
