@@ -19,7 +19,7 @@ Relax Linux checks for the code works on any non-Windows platform.
      if !settings.shutdown_signals.is_empty() {
          tracing::warn!(
              "Server configuration contains shutdown signals, but your platform does not support \
---- server-cli/src/settings.rs.orig	2024-02-14 21:58:23 UTC
+--- server-cli/src/settings.rs.orig	2024-03-20 22:12:47 UTC
 +++ server-cli/src/settings.rs
 @@ -15,7 +15,7 @@ impl ShutdownSignal {
  }
@@ -30,10 +30,10 @@ Relax Linux checks for the code works on any non-Windows platform.
      pub fn to_signal(self) -> core::ffi::c_int {
          match self {
              Self::SIGUSR1 => signal_hook::consts::SIGUSR1,
-@@ -44,7 +44,7 @@ impl Default for Settings {
-             update_shutdown_message: "The server is restarting for an update".to_owned(),
+@@ -48,7 +48,7 @@ impl Default for Settings {
              web_address: SocketAddr::from((Ipv4Addr::LOCALHOST, 14005)),
              web_chat_secret: None,
+             ui_api_secret: None,
 -            shutdown_signals: if cfg!(any(target_os = "linux", target_os = "macos")) {
 +            shutdown_signals: if cfg!(not(target_os = "windows")) {
                  vec![ShutdownSignal::SIGUSR1]
