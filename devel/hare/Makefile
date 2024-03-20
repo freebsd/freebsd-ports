@@ -1,5 +1,6 @@
 PORTNAME=	hare
 PORTVERSION=	g20230719
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
 PKGNAMESUFFIX=	-lang
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	harec:lang/harec \
 		scdoc:textproc/scdoc
 RUN_DEPENDS=	harec:lang/harec
 
-MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/} PREFIX=${PREFIX}
+MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/} HARECACHE=${WRKDIR}/.cache/hare PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 

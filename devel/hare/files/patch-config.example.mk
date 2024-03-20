@@ -1,5 +1,5 @@
---- config.example.mk.orig	2023-07-19 01:21:32.000000000 +0200
-+++ config.example.mk	2023-07-19 13:07:52.729248178 +0200
+--- config.example.mk.orig	2023-07-18 23:21:32 UTC
++++ config.example.mk
 @@ -1,21 +1,23 @@
  ## Install configuration
  
@@ -9,7 +9,7 @@
 -SRCDIR = $(PREFIX)/src
 +#PREFIX =	%%LOCALBASE%%
 +BINDIR = 	$(PREFIX)/bin
-+MANDIR =	$(PREFIX)/man
++MANDIR =	$(PREFIX)/share/man
 +DATADIR =	$(PREFIX)/share/hare
 +SRCDIR =	$(DATADIR)/src
  
