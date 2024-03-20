@@ -1,3 +1,3 @@
 sbin/smcroute
 @sample etc/smcroute.conf.sample
-man/man8/smcroute.8.gz
+share/man/man8/smcroute.8.gz
