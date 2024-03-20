@@ -1,6 +1,7 @@
 PORTNAME=	seafile-client
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.0.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -35,6 +36,7 @@ CONFLICTS=	seafile-server
 SHEBANG_FILES=	*.sh scripts/*.sh app/seaf-cli integration-tests/*.sh
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 CPPFLAGS+=	-I${LOCALBASE}/include/evhtp
 
