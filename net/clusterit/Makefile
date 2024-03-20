@@ -1,5 +1,6 @@
 PORTNAME=	clusterit
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	net devel parallel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -10,6 +11,7 @@ WWW=		https://www.garbled.net/clusterit.html
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFLICTS_INSTALL=	barrier heirloom-sh pdsh schilyutils # bin/barrier bin/dshbak bin/jsh
 
