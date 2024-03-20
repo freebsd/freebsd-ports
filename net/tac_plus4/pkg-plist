@@ -5,9 +5,9 @@ lib/libtacacs.a
 lib/libtacacs.so
 lib/libtacacs.so.1
 lib/libtacacs.so.1.0.0
-man/man5/tac_plus.conf.5.gz
-man/man8/tac_plus.8.gz
-man/man8/tac_pwd.8.gz
 sbin/tac_plus
 %%PORTDOCS%%%%DOCSDIR%%/tac_convert
 %%PORTDOCS%%%%DOCSDIR%%/users_guide
+share/man/man5/tac_plus.conf.5.gz
+share/man/man8/tac_plus.8.gz
+share/man/man8/tac_pwd.8.gz
