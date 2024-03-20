@@ -29,7 +29,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/numba/tests
 
 post-patch:
-	@${SED} -i.bak 's#1\.25#1\.26#g' ${WRKSRC}/setup.py
+	@${SED} -i.bak 's#1\.25#1\.27#g' ${WRKSRC}/setup.py
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
