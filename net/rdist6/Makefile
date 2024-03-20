@@ -9,6 +9,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network file distribution/synchronisation utility
 WWW=		https://www.magnicomp.com/
 
+LICENSE=	BSD4CLAUSE
+
 MAKE_JOBS_UNSAFE=	yes
 
 # Years ago base FreeBSD maintained /usr/bin/rdist, but since then it was
