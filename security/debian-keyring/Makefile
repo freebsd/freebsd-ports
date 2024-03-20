@@ -1,5 +1,5 @@
 PORTNAME=	debian-keyring
-PORTVERSION=	2023.12.24
+PORTVERSION=	2024.02.28
 CATEGORIES=	security
 MASTER_SITES=	https://salsa.debian.org/${PORTNAME}/keyring/-/archive/${PORTVERSION}/
 DISTNAME=	keyring_${PORTVERSION}
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/keyring-${PORTVERSION}-582acae4bb0cdf90967b0b492deb3ccf9f8b5ec2
+COMMIT_HASH=	14725d14e2d29d48c459c196f0013a0f61d0a45f
+WRKSRC=		${WRKDIR}/keyring-${PORTVERSION}-${COMMIT_HASH}
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} all
