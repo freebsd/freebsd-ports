@@ -99,6 +99,7 @@ share/applications/bluefish.desktop
 %%DATADIR%%/jsbeautifier/unpackers/urlencode.py
 %%DATADIR%%/jsbeautify
 %%DATADIR%%/jsmin.py
+%%DATADIR%%/json_prettyprint.py
 %%DATADIR%%/lorem-ipsum-generator
 %%DATADIR%%/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 %%DATADIR%%/plugins/zencoding/__init__.py
