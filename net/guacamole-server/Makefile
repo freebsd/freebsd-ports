@@ -1,5 +1,6 @@
 PORTNAME=	guacamole-server
 DISTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	APACHE/guacamole/${DISTVERSION}/source/
 
@@ -27,6 +28,7 @@ USE_RC_SUBR=	guacd
 SHEBANG_FILES=	${WRKSRC}/src/protocols/rdp/keymaps/generate.pl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-guacd-conf=${ETCDIR}/guacd.conf
 INSTALL_TARGET=	install-strip
 CFLAGS+=	-Wno-error=newline-eof
