@@ -1,0 +1,16 @@
+This is version 6.1 of Rdist from USC.  It is based on rdist from
+4.3BSD (classic).  It includes all fixes for all bugs known to the
+CSRG Berkeley folks.  It has been running at USC and numerous other
+sites for some time now on a wide variety of platforms.
+
+This version of rdist is not directly compatible with rdist
+distributed with 4.3BSD and subsequent vendor releases, but does
+indirectly provide full backward compatibility.
+
+This version of rdist does not need to be setuid "root" at all.  Rdist
+now uses the rsh(1c) [remote command] program to make connections to
+remote hosts, instead of making the connection directly.  This
+eliminates the need to be run as "root".  Many thanks to Chris
+Siebenmann <cks@utcc.utoronto.ca> and John DiMarco
+<jdd@cdf.toronto.edu> who came up with an rsh version of rcmd() that
+makes this possible.

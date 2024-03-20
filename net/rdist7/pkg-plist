@@ -1,0 +1,11 @@
+@owner root
+@group bin
+@mode 555
+bin/rdist
+bin/rdistd
+@mode 644
+@owner root
+@group bin
+share/man/man1/rdist.1.gz
+share/man/man8/rdistd.8.gz
+

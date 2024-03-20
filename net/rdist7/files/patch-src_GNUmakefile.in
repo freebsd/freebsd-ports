@@ -1,0 +1,14 @@
+--- src/GNUmakefile.in.orig	2001-10-22 13:33:21.000000000 -0700
++++ src/GNUmakefile.in	2024-03-19 19:28:08.171296000 -0700
+@@ -99,9 +99,9 @@
+ install.files:
+ 	@$(MKDIRHIER) $(BIN_DIR)
+ 	@$(MKDIRHIER) $(BIN_SDIR)
+-	$(INSTALL) -o $(BIN_OWNER) -g $(BIN_GROUP) -m ${RDIST_MODE} \
++	$(INSTALL) -m ${RDIST_MODE} \
+ 		$(CLIENT_BIN) $(BIN_DIR)/$(CLIENT)
+-	$(INSTALL) -o ${BIN_OWNER} -g $(BIN_GROUP) -m ${RDISTD_MODE} \
++	$(INSTALL) -m ${RDISTD_MODE} \
+ 		$(SERVER_BIN) $(SBIN_DIR)/$(SERVER)
+ 
+ #
