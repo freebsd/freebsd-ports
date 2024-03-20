@@ -1,5 +1,6 @@
 PORTNAME=	rtptools
 DISTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	net mbone
 
 MAINTAINER=	se@FreeBSD.org
@@ -11,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GITHUB=	yes
 GH_ACCOUNT=	irtlab
 
@@ -18,7 +20,7 @@ PORTSCOUT=	limit:^\d.*
 
 .for f in multidump multiplay rtpdump rtpplay rtpsend rtptrans
 PLIST_FILES+=	bin/${f}
-PLIST_FILES+=	man/man1/${f}.1.gz
+PLIST_FILES+=	share/man/man1/${f}.1.gz
 .endfor
 
 OPTIONS_DEFINE=	DOCS
