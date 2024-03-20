@@ -1,6 +1,6 @@
 PORTNAME=	yazproxy
 PORTVERSION=	1.3.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
 
@@ -12,6 +12,7 @@ LIB_DEPENDS=	libyazpp.so:net/yaz++
 
 USES=		libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=--enable-shared --with-yazpp=${LOCALBASE}/bin
 USE_LDCONFIG=	yes
 
