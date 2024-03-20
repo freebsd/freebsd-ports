@@ -2,6 +2,7 @@ PORTNAME=	rdist
 PORTVERSION=	7.0.0.a10
 CATEGORIES=	net
 MASTER_SITES=	http://www.magnicomp.com/download/rdist/
+PKGNAMESUFFIX=	7
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/-alpha/}
 
 MAINTAINER=	cy@FreeBSD.org
