@@ -1,5 +1,6 @@
 PORTNAME=	fvwm3
 DISTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${DISTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
@@ -21,6 +22,7 @@ CPE_PRODUCT=	fvwm
 USE_XORG=	ice sm x11 xext xft xrandr xrender xt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD}
 
 CONFLICTS_INSTALL=	fvwm
