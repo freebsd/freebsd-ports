@@ -1,6 +1,4 @@
 sbin/portfwd
-man/man5/portfwd.cfg.5.gz
-man/man8/portfwd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -25,3 +23,5 @@ man/man8/portfwd.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/x.cfg
+share/man/man5/portfwd.cfg.5.gz
+share/man/man8/portfwd.8.gz
