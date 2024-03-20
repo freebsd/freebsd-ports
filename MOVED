@@ -3054,3 +3054,4 @@ multimedia/gstreamer1-plugins-rtmp||2024-03-17|Support for legacy library librtm
 lang/swi-pl|lang/swipl|2024-03-17|Port renamed on request
 devel/rubygem-with_advisory_lock|devel/rubygem-with_advisory_lock61|2024-03-18|Port renamed to follow naming convention
 emulators/cpmemu||2024-03-19|Has expired: BROKEN on all versions since last year
+devel/grpc142||2024-03-20|Has expired: Please use devel/grpc instead
