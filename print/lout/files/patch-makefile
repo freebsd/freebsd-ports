@@ -1,4 +1,4 @@
---- makefile.orig	2021-12-21 18:09:56 UTC
+--- makefile.orig	2022-11-01 21:15:55 UTC
 +++ makefile
 @@ -275,15 +275,15 @@ TRACING =
  #TRACING = -g -fno-omit-frame-pointer -fsanitize=address -fsanitize-recover
@@ -15,7 +15,7 @@
  LOUTLIBDIR	= $(LIBDIR)/lib
  LOUTDOCDIR	= $(LIBDIR)/doc
 -MANDIR	= $(LIBDIR)/man
-+MANDIR	= $(PREFIX)/man/man1
++MANDIR	= $(PREFIX)/share/man/man1
  
  LIBFONT = font
  LIBMAPS = maps
