@@ -1,6 +1,6 @@
 PORTNAME=	octomap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.8
+DISTVERSION=	1.10.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OctoMap
 
-# Viewer is broken: https://github.com/OctoMap/octomap/issues/224, and libQGLViewer detection is broken: https://github.com/OctoMap/octomap/issues/225
-#CMAKE_ON=	OCTOVIS_QT5
+# libQGLViewer detection is broken: https://github.com/OctoMap/octomap/issues/225
+CMAKE_ON=	OCTOVIS_QT5
 CMAKE_ARGS=	-DQGLVIEWER_BASE_DIR:PATH=${LOCALBASE}/include/QGLViewer #-DQGLViewer_LIBRARY_DIR_OTHER:PATH=${LOCALBASE}/lib
 
 .include <bsd.port.mk>
