@@ -1,5 +1,5 @@
 PORTNAME=	gnome-ssh-askpass
-PORTVERSION=	6.8p1
+PORTVERSION=	6.9p1
 CATEGORIES=	security gnome
 MASTER_SITES=	OPENBSD/OpenSSH/portable/
 DISTNAME=	openssh-${PORTVERSION}
@@ -12,6 +12,8 @@ COMMENT=	Graphical SSH askpass utility for Gnome2
 
 DEPRECATED=	Uses deprecated gtk2 library
 EXPIRATION_DATE=	2024-12-31
+
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 WRKSRC=		${WRKDIR}/openssh-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/contrib
