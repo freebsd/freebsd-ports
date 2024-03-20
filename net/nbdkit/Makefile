@@ -1,6 +1,6 @@
 PORTNAME=	nbdkit
 PORTVERSION=	1.20.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 # XXX Although nbdkit uses github for its homepage, the release tarballs served
 # by github haven't been through autoconf.  So we must download the sources
@@ -22,6 +22,7 @@ USES=		compiler:c11 cpe gmake libtool pkgconfig
 CPE_VENDOR=	nbdkit_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
