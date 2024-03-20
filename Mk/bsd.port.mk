@@ -1302,8 +1302,17 @@ ${var}=			${${PKGORIGIN:S/\//_/}_VARS:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
 
-UID_FILES?=	${PORTSDIR}/UIDs
-GID_FILES?=	${PORTSDIR}/GIDs
+# add support for overlaying UIDs and GIDs, dont include them if they dont exist
+.if exists(${OVERLAYS}/UIDs)
+UID_FILES?=    ${OVERLAYS}/UIDs ${PORTSDIR}/UIDs
+.else
+UID_FILES?=    ${PORTSDIR}/UIDs
+.endif
+.if exists(${OVERLAYS}/GIDs)
+GID_FILES?=    ${OVERLAYS}/GIDs ${PORTSDIR}/GIDs
+.else
+GID_FILES?=    ${PORTSDIR}/GIDs
+.endif 
 UID_OFFSET?=	0
 GID_OFFSET?=	0
 
