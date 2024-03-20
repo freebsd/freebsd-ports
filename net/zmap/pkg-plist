@@ -1,10 +1,10 @@
 %%ETCDIR%%/blocklist.conf
 %%ETCDIR%%/zmap.conf
-man/man1/zblocklist.1.gz
-man/man1/ziterate.1.gz
-man/man1/zmap.1.gz
-man/man1/ztee.1.gz
 sbin/zblocklist
 sbin/ziterate
 sbin/zmap
 sbin/ztee
+share/man/man1/zblocklist.1.gz
+share/man/man1/ziterate.1.gz
+share/man/man1/zmap.1.gz
+share/man/man1/ztee.1.gz
