@@ -43,7 +43,6 @@ etc/bash_completion.d/icinga2
 %%PGSQL%%lib/icinga2/libpgsql_shim.so.2.14.2
 lib/icinga2/sbin/icinga2
 libexec/nagios/check_nscp_api
-man/man8/icinga2.8.gz
 sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
@@ -178,6 +177,7 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib.d/vmware.conf
 %%DATADIR%%/include/plugins-contrib.d/web.conf
 %%DATADIR%%/include/windows-plugins
+share/man/man8/icinga2.8.gz
 share/vim/vimfiles/ftdetect/icinga2.vim
 share/vim/vimfiles/syntax/icinga2.vim
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) %%ETCDIR%%
