@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	vvd@FreeBSD.org
-COMMENT=	Open-source Java web server by Apache, 10.1.x branch
+COMMENT=	Open-source Java web server by Apache, 11.0.x branch
 WWW=		https://tomcat.apache.org/
 
 LICENSE=	APACHE20
