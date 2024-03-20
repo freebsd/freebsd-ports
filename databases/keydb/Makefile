@@ -10,6 +10,9 @@ WWW=		https://docs.keydb.dev/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	build failure
+
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		liblz4.so:archivers/liblz4 \
 		libsnappy.so:archivers/snappy \
