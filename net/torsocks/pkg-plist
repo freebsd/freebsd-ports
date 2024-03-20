@@ -4,6 +4,6 @@ lib/torsocks/libtorsocks.a
 lib/torsocks/libtorsocks.so
 lib/torsocks/libtorsocks.so.0
 lib/torsocks/libtorsocks.so.0.0.0
-man/man1/torsocks.1.gz
-man/man5/torsocks.conf.5.gz
-man/man8/torsocks.8.gz
+share/man/man1/torsocks.1.gz
+share/man/man5/torsocks.conf.5.gz
+share/man/man8/torsocks.8.gz
