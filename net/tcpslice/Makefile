@@ -1,5 +1,6 @@
 PORTNAME=	tcpslice
 DISTVERSION=	1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.tcpdump.org/release/
@@ -15,8 +16,9 @@ USES=		cpe
 CPE_VENDOR=	tcpdump
 
 PLIST_FILES=	bin/tcpslice \
-		man/man1/tcpslice.1.gz
+		share/man/man1/tcpslice.1.gz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
