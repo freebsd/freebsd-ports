@@ -1,0 +1,11 @@
+--- cargo-crates/relm4-icons-0.8.2/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/relm4-icons-0.8.2/build.rs
+@@ -52,7 +52,7 @@ fn main() {
+     let mut manifest_dir = Path::new(&out_dir).canonicalize().unwrap();
+     eprintln!("Canonical manifest dir: {manifest_dir:?}");
+ 
+-    let (config, config_dir) = if cfg!(docsrs) {
++    let (config, config_dir) = if cfg!(docsrs) || env::var("SOURCE_DIR").is_ok() {
+         if let Ok(source_dir) = env::var("SOURCE_DIR") {
+             (Config::load(&source_dir).unwrap_or_default(), source_dir)
+         } else {
