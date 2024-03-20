@@ -1,4 +1,4 @@
---- setup.py.orig	2022-02-12 16:13:59 UTC
+--- setup.py.orig	2022-08-04 19:07:49 UTC
 +++ setup.py
 @@ -427,8 +427,8 @@ class VMMDistribution(setuptools.dist.Distribution):
      ]
@@ -11,7 +11,7 @@
          setuptools.dist.Distribution.__init__(self, *args, **kwargs)
  
  
-@@ -500,11 +500,9 @@ setuptools.setup(
+@@ -500,8 +500,6 @@ setuptools.setup(
          "build/virt-xml"]),
  
      data_files=[
@@ -19,12 +19,8 @@
 -         ["data/org.virt-manager.virt-manager.gschema.xml"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  
--        ("share/man/man1", [
-+        ("man/man1", [
-             "man/virt-manager.1",
-             "man/virt-install.1",
-             "man/virt-clone.1",
-@@ -535,7 +533,6 @@ setuptools.setup(
+         ("share/man/man1", [
+@@ -538,7 +536,6 @@ setuptools.setup(
          'build_i18n': my_build_i18n,
  
          'install': my_install,
