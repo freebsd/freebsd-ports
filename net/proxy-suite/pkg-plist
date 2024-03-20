@@ -1,4 +1,4 @@
 sbin/ftp-proxy
 etc/proxy-suite/ftp-proxy.conf.sample
-man/man5/ftp-proxy.conf.5.gz
-man/man8/ftp-proxy.8.gz
+share/man/man5/ftp-proxy.conf.5.gz
+share/man/man8/ftp-proxy.8.gz
