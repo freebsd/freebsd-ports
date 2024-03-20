@@ -1,9 +1,9 @@
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
-man/man1/lyx.1.gz
-man/man1/lyxclient.1.gz
-man/man1/tex2lyx.1.gz
+share/man/man1/lyx.1.gz
+share/man/man1/lyxclient.1.gz
+share/man/man1/tex2lyx.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lyx.mo

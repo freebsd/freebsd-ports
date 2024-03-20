@@ -1,5 +1,6 @@
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -25,6 +26,7 @@ USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake iconv \
 USE_QT=		core concurrent gui svg widgets x11extras buildtools:build qmake:build
 USE_XORG=	xcb
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \
 		--enable-qt5 \
