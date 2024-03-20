@@ -9,6 +9,9 @@ WWW=		http://mirror.facebook.com/facebook/flvtool++/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=    Abandonware, consider using multimedia/flvmeta
+EXPIRATION_DATE=2024-04-20
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USE_GITHUB=	yes
