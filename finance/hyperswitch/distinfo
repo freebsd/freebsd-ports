@@ -1,4 +1,4 @@
-TIMESTAMP = 1708587915
+TIMESTAMP = 1710940726
 SHA256 (rust/crates/actix-codec-0.5.1.crate) = 617a8268e3537fe1d8c9ead925fca49ef6400927ee7bc26750e90ecee14ce4b8
 SIZE (rust/crates/actix-codec-0.5.1.crate) = 14337
 SHA256 (rust/crates/actix-cors-0.6.4.crate) = b340e9cfa5b08690aae90fb61beb44e9b06f44fe3d0f93781aaa58cfba86245e
@@ -213,6 +213,8 @@ SHA256 (rust/crates/cargo_metadata-0.14.2.crate) = 4acbb09d9ee8e23699b9634375c72
 SIZE (rust/crates/cargo_metadata-0.14.2.crate) = 17469
 SHA256 (rust/crates/cargo_metadata-0.15.4.crate) = eee4243f1f26fc7a42710e7439c149e2b10b05472f88090acce52632f231a73a
 SIZE (rust/crates/cargo_metadata-0.15.4.crate) = 19993
+SHA256 (rust/crates/cargo_metadata-0.18.1.crate) = 2d886547e41f740c616ae73108f6eb70afe6d940c7bc697cb30f13daec073037
+SIZE (rust/crates/cargo_metadata-0.18.1.crate) = 24535
 SHA256 (rust/crates/cast-0.3.0.crate) = 37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5
 SIZE (rust/crates/cast-0.3.0.crate) = 11452
 SHA256 (rust/crates/cc-1.0.83.crate) = f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0
