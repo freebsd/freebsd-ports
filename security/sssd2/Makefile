@@ -1,6 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -61,6 +61,7 @@ USES=	autoreconf cpe gettext gmake gssapi:bootstrap,flags,mit iconv ldap \
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
