@@ -579,6 +579,7 @@
     SUBDIR += paman
     SUBDIR += pamixer
     SUBDIR += paprefs
+    SUBDIR += pasystray
     SUBDIR += patchage
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
