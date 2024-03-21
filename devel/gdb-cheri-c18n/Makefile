@@ -6,8 +6,6 @@ COMMENT?=	GNU Project Debugger with support for the Arm Morello architecture and
 VER=		-cheri-c18n
 
 OPTIONS_EXCLUDE=GDB_LINK KGDB
-# Exclude PYTHON not to conflict with gdb-cheri on libcxx-gdbpy.
-OPTIONS_EXCLUDE+=PYTHON
 
 DATADIR?=	${PREFIX}/share/gdb-cheri-c18n
 
