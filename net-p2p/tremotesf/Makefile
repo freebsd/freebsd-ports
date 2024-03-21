@@ -1,6 +1,5 @@
 PORTNAME=	tremotesf
-DISTVERSION=	2.6.0
-PORTREVISION=	1
+DISTVERSION=	2.6.1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	vsasjason@gmail.com
@@ -13,7 +12,7 @@ BUILD_DEPENDS=	cxxopts>0:devel/cxxopts
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libpsl.so:dns/libpsl
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
@@ -26,11 +25,11 @@ USES=		cmake:testing desktop-file-utils gettext-tools pkgconfig xorg
 USES+=		kde:5 qt:5
 USE_QT=		core dbus gui network widgets buildtools:build concurrent:build \
 		linguisttools:build qmake:build testlib:build
+CMAKE_OFF=	TREMOTESF_QT6
 .else
 USES+=		gl kde:6 qt:6
 USE_GL=		opengl
 USE_QT=		base
-CMAKE_ON=	TREMOTESF_QT6
 .endif
 
 USE_GITHUB=	yes
@@ -41,5 +40,7 @@ GH_TAGNAME=	v0.14.3:httplib
 
 USE_KDE=	widgetsaddons windowsystem
 USE_XORG=	x11
+
+CMAKE_ARGS+=	-DTREMOTESF_WITH_HTTPLIB=bundled
 
 .include <bsd.port.mk>
