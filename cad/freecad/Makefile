@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.21.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -18,7 +18,9 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
 		swig:devel/swig
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libyaml-cpp.so:devel/yaml-cpp \
 		libfreetype.so:print/freetype2 \
+		libtbb.so:devel/onetbb \
 		${PY_BOOST} \
 		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
@@ -29,6 +31,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreeimage.so:graphics/freeimage \
+		libavutil.so:multimedia/ffmpeg4 \
 		libmed.so:french/med \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5
@@ -36,10 +41,11 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
+USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
+GH_TAGNAME=	8abd09398a010337c3b294e687e0666b60bceacf # PR #11909 Add support for OCCT 7.8.0
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative designer gui \
@@ -105,7 +111,7 @@ CMAKE_ARGS+=	-DBUILD_WEB:BOOL=OFF
 PLIST_SUB=	WEBENGINE="@comment "
 .endif
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
 		${WRKSRC}/src/Tools/SubWCRev.py
 # Install XDG icons and files to the standard path

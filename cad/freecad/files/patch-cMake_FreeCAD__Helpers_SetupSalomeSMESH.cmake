@@ -1,6 +1,6 @@
---- cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake.orig	2022-06-14 23:16:43 +0200
+--- cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake.orig	2024-01-10 01:47:25 UTC
 +++ cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake
-@@ -26,7 +26,7 @@
+@@ -26,7 +26,7 @@ macro(SetupSalomeSMESH)
  
          # check which modules are available
          if(UNIX OR WIN32)

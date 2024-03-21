@@ -6,11 +6,8 @@ FreeCAD/Ext/PySide/QtUiTools.py
 FreeCAD/Ext/PySide/QtWebEngineWidgets.py
 FreeCAD/Ext/PySide/QtWidgets.py
 FreeCAD/Ext/PySide/__init__.py
-FreeCAD/Ext/freecad/UiTools.py
-FreeCAD/Ext/freecad/__init__.py
 FreeCAD/Ext/freecad/gui/RemoteDebugger.py
 FreeCAD/Ext/freecad/gui/RemoteDebugger.ui
-FreeCAD/Ext/freecad/project_utility.py
 FreeCAD/Ext/lazy_loader/__init__.py
 FreeCAD/Ext/lazy_loader/lazy_loader.py
 FreeCAD/Mod/AddonManager/ALLOWED_PYTHON_PACKAGES.txt
@@ -24,6 +21,7 @@ FreeCAD/Mod/AddonManager/AddonManagerTest/__init__.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/app/__init__.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/app/mocks.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/app/test_addon.py
+FreeCAD/Mod/AddonManager/AddonManagerTest/app/test_cache.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/app/test_dependency_installer.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/app/test_freecad_interface.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/app/test_git.py
@@ -61,12 +59,12 @@ FreeCAD/Mod/AddonManager/AddonManagerTest/data/workbench_only.xml
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/__init__.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/gui_mocks.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/test_gui.py
-FreeCAD/Mod/AddonManager/AddonManagerTest/test_information.md
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/test_installer_gui.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/test_uninstaller_gui.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/test_update_all_gui.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/test_workers_startup.py
 FreeCAD/Mod/AddonManager/AddonManagerTest/gui/test_workers_utility.py
+FreeCAD/Mod/AddonManager/AddonManagerTest/test_information.md
 FreeCAD/Mod/AddonManager/AddonManager_rc.py
 FreeCAD/Mod/AddonManager/Init.py
 FreeCAD/Mod/AddonManager/InitGui.py
@@ -75,6 +73,7 @@ FreeCAD/Mod/AddonManager/PythonDependencyUpdateDialog.ui
 FreeCAD/Mod/AddonManager/TestAddonManagerApp.py
 FreeCAD/Mod/AddonManager/TestAddonManagerGui.py
 FreeCAD/Mod/AddonManager/add_toolbar_button_dialog.ui
+FreeCAD/Mod/AddonManager/addonmanager_cache.py
 FreeCAD/Mod/AddonManager/addonmanager_connection_checker.py
 FreeCAD/Mod/AddonManager/addonmanager_dependency_installer.py
 FreeCAD/Mod/AddonManager/addonmanager_devmode.py
@@ -158,6 +157,7 @@ FreeCAD/Mod/Arch/ArchRoof.py
 FreeCAD/Mod/Arch/ArchSchedule.py
 FreeCAD/Mod/Arch/ArchSectionPlane.py
 FreeCAD/Mod/Arch/ArchSite.py
+FreeCAD/Mod/Arch/ArchSketchObject.py
 FreeCAD/Mod/Arch/ArchSpace.py
 FreeCAD/Mod/Arch/ArchStairs.py
 FreeCAD/Mod/Arch/ArchStructure.py
@@ -268,6 +268,7 @@ FreeCAD/Mod/Draft/draftguitools/gui_grid.py
 FreeCAD/Mod/Draft/draftguitools/gui_groups.py
 FreeCAD/Mod/Draft/draftguitools/gui_hatch.py
 FreeCAD/Mod/Draft/draftguitools/gui_heal.py
+FreeCAD/Mod/Draft/draftguitools/gui_hyperlink.py
 FreeCAD/Mod/Draft/draftguitools/gui_join.py
 FreeCAD/Mod/Draft/draftguitools/gui_labels.py
 FreeCAD/Mod/Draft/draftguitools/gui_layers.py
@@ -398,6 +399,7 @@ FreeCAD/Mod/Draft/draftutils/gui_utils.py
 FreeCAD/Mod/Draft/draftutils/init_draft_statusbar.py
 FreeCAD/Mod/Draft/draftutils/init_tools.py
 FreeCAD/Mod/Draft/draftutils/messages.py
+FreeCAD/Mod/Draft/draftutils/params.py
 FreeCAD/Mod/Draft/draftutils/todo.py
 FreeCAD/Mod/Draft/draftutils/translate.py
 FreeCAD/Mod/Draft/draftutils/units.py
@@ -884,6 +886,11 @@ FreeCAD/Mod/Fem/femviewprovider/view_mesh_region.py
 FreeCAD/Mod/Fem/femviewprovider/view_mesh_result.py
 FreeCAD/Mod/Fem/femviewprovider/view_result_mechanical.py
 FreeCAD/Mod/Fem/femviewprovider/view_solver_ccxtools.py
+FreeCAD/Mod/Help/Help.py
+FreeCAD/Mod/Help/Help_rc.py
+FreeCAD/Mod/Help/InitGui.py
+FreeCAD/Mod/Help/default.css
+FreeCAD/Mod/Help/dlgPreferencesHelp.ui
 FreeCAD/Mod/Idf/Idf.py
 FreeCAD/Mod/Idf/Idflibs/0603_SMD.stp
 FreeCAD/Mod/Idf/Idflibs/0805_SMD.stp
@@ -927,14 +934,18 @@ FreeCAD/Mod/Inspection/Init.py
 FreeCAD/Mod/Inspection/InitGui.py
 FreeCAD/Mod/Material/Init.py
 FreeCAD/Mod/Material/InitGui.py
-FreeCAD/Mod/Material/Material.py
 FreeCAD/Mod/Material/MaterialEditor.py
 FreeCAD/Mod/Material/Material_rc.py
 FreeCAD/Mod/Material/Resources/icons/preview-rendered.svg
 FreeCAD/Mod/Material/Resources/icons/preview-vector.svg
 FreeCAD/Mod/Material/Templatematerial.yml
+FreeCAD/Mod/Material/TestMaterialsApp.py
 FreeCAD/Mod/Material/importFCMat.py
 FreeCAD/Mod/Material/materials-editor.ui
+FreeCAD/Mod/Material/materialtests/TestMaterials.py
+FreeCAD/Mod/Material/materialtests/TestModels.py
+FreeCAD/Mod/Material/materialtests/__init__.py
+FreeCAD/Mod/Material/materialtools/MaterialModels.py
 FreeCAD/Mod/Material/materialtools/__init__.py
 FreeCAD/Mod/Material/materialtools/cardutils.py
 FreeCAD/Mod/Measure/Init.py
@@ -1013,6 +1024,7 @@ FreeCAD/Mod/Part/PartEnums.py
 FreeCAD/Mod/Part/TestPartApp.py
 FreeCAD/Mod/Part/TestPartGui.py
 FreeCAD/Mod/Part/parttests/ColorPerFaceTest.py
+FreeCAD/Mod/Part/parttests/Geom2d_tests.py
 FreeCAD/Mod/Part/parttests/TopoShapeListTest.py
 FreeCAD/Mod/Part/parttests/__init__.py
 FreeCAD/Mod/Part/parttests/part_test_objects.py
@@ -1028,6 +1040,7 @@ FreeCAD/Mod/PartDesign/PartDesignTests/TestChamfer.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestDatum.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestDraft.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestFillet.py
+FreeCAD/Mod/PartDesign/PartDesignTests/TestHelix.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestHole.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestInvoluteGear.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestLinearPattern.py
@@ -1138,6 +1151,10 @@ FreeCAD/Mod/Path/Path/Main/Gui/JobCmd.py
 FreeCAD/Mod/Path/Path/Main/Gui/JobDlg.py
 FreeCAD/Mod/Path/Path/Main/Gui/PreferencesJob.py
 FreeCAD/Mod/Path/Path/Main/Gui/Sanity.py
+FreeCAD/Mod/Path/Path/Main/Gui/Sanity_Bulb.svg
+FreeCAD/Mod/Path/Path/Main/Gui/Sanity_Caution.svg
+FreeCAD/Mod/Path/Path/Main/Gui/Sanity_Note.svg
+FreeCAD/Mod/Path/Path/Main/Gui/Sanity_Warning.svg
 FreeCAD/Mod/Path/Path/Main/Gui/Simulator.py
 FreeCAD/Mod/Path/Path/Main/Gui/__init__.py
 FreeCAD/Mod/Path/Path/Main/Job.py
@@ -1235,6 +1252,7 @@ FreeCAD/Mod/Path/Path/Post/scripts/rrf_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/slic3r_pre.py
 FreeCAD/Mod/Path/Path/Post/scripts/smoothie_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/uccnc_post.py
+FreeCAD/Mod/Path/Path/Post/scripts/wedm_post.py
 FreeCAD/Mod/Path/Path/Preferences.py
 FreeCAD/Mod/Path/Path/Tool/Bit.py
 FreeCAD/Mod/Path/Path/Tool/Controller.py
@@ -1298,6 +1316,8 @@ FreeCAD/Mod/Path/PathTests/TestRefactoredGrblPost.py
 FreeCAD/Mod/Path/PathTests/TestRefactoredLinuxCNCPost.py
 FreeCAD/Mod/Path/PathTests/TestRefactoredMach3Mach4Post.py
 FreeCAD/Mod/Path/PathTests/TestRefactoredTestPost.py
+FreeCAD/Mod/Path/PathTests/TestRefactoredTestPostGCodes.py
+FreeCAD/Mod/Path/PathTests/TestRefactoredTestPostMCodes.py
 FreeCAD/Mod/Path/PathTests/Tools/Bit/test-path-tool-bit-bit-00.fctb
 FreeCAD/Mod/Path/PathTests/Tools/Library/test-path-tool-bit-library-00.fctl
 FreeCAD/Mod/Path/PathTests/Tools/Shape/test-path-tool-bit-shape-00.fcstd
@@ -1412,14 +1432,20 @@ FreeCAD/Mod/TechDraw/TDTest/TestSymbol.svg
 FreeCAD/Mod/TechDraw/TDTest/TestTemplate.svg
 FreeCAD/Mod/TechDraw/TDTest/__init__.py
 FreeCAD/Mod/TechDraw/TechDrawTools/CommandAxoLengthDimension.py
+FreeCAD/Mod/TechDraw/TechDrawTools/CommandFillTemplateFields.py
 FreeCAD/Mod/TechDraw/TechDrawTools/CommandHoleShaftFit.py
 FreeCAD/Mod/TechDraw/TechDrawTools/CommandMoveView.py
+FreeCAD/Mod/TechDraw/TechDrawTools/CommandPositionSectionView.py
 FreeCAD/Mod/TechDraw/TechDrawTools/CommandShareView.py
+FreeCAD/Mod/TechDraw/TechDrawTools/CommandVertexCreations.py
 FreeCAD/Mod/TechDraw/TechDrawTools/Gui/DlgPageChooser.ui
+FreeCAD/Mod/TechDraw/TechDrawTools/Gui/TaskAddOffsetVertex.ui
 FreeCAD/Mod/TechDraw/TechDrawTools/Gui/TaskHoleShaftFit.ui
 FreeCAD/Mod/TechDraw/TechDrawTools/Gui/TaskMoveView.ui
 FreeCAD/Mod/TechDraw/TechDrawTools/TDToolsMovers.py
 FreeCAD/Mod/TechDraw/TechDrawTools/TDToolsUtil.py
+FreeCAD/Mod/TechDraw/TechDrawTools/TaskAddOffsetVertex.py
+FreeCAD/Mod/TechDraw/TechDrawTools/TaskFillTemplateFields.py
 FreeCAD/Mod/TechDraw/TechDrawTools/TaskHoleShaftFit.py
 FreeCAD/Mod/TechDraw/TechDrawTools/TaskMoveView.py
 FreeCAD/Mod/TechDraw/TechDrawTools/TaskShareView.py
@@ -1432,6 +1458,7 @@ FreeCAD/Mod/Test/Init.py
 FreeCAD/Mod/Test/InitGui.py
 FreeCAD/Mod/Test/Menu.py
 FreeCAD/Mod/Test/Metadata.py
+FreeCAD/Mod/Test/StringHasher.py
 FreeCAD/Mod/Test/TestApp.py
 FreeCAD/Mod/Test/TestData/bad_root_node.xml
 FreeCAD/Mod/Test/TestData/bad_version.xml
@@ -1507,6 +1534,8 @@ FreeCAD/lib/Import.so
 FreeCAD/lib/ImportGui.so
 FreeCAD/lib/Inspection.so
 FreeCAD/lib/InspectionGui.so
+FreeCAD/lib/MatGui.so
+FreeCAD/lib/Material.so
 FreeCAD/lib/Measure.so
 FreeCAD/lib/Mesh.so
 FreeCAD/lib/MeshGui.so
@@ -1543,14 +1572,6 @@ FreeCAD/lib/cmake/GTest/GTestConfig.cmake
 FreeCAD/lib/cmake/GTest/GTestConfigVersion.cmake
 FreeCAD/lib/cmake/GTest/GTestTargets-%%CMAKE_BUILD_TYPE%%.cmake
 FreeCAD/lib/cmake/GTest/GTestTargets.cmake
-FreeCAD/lib/libgmock.a
-FreeCAD/lib/libgmock_main.a
-FreeCAD/lib/libgtest.a
-FreeCAD/lib/libgtest_main.a
-FreeCAD/lib/pkgconfig/gmock.pc
-FreeCAD/lib/pkgconfig/gmock_main.pc
-FreeCAD/lib/pkgconfig/gtest.pc
-FreeCAD/lib/pkgconfig/gtest_main.pc
 FreeCAD/lib/flatmesh.so
 FreeCAD/lib/libDriver.so
 FreeCAD/lib/libDriverDAT.so
@@ -1566,6 +1587,14 @@ FreeCAD/lib/libSMESH.so
 FreeCAD/lib/libSMESHDS.so
 FreeCAD/lib/libStdMeshers.so
 FreeCAD/lib/libarea-native.so
+FreeCAD/lib/libgmock.a
+FreeCAD/lib/libgmock_main.a
+FreeCAD/lib/libgtest.a
+FreeCAD/lib/libgtest_main.a
+FreeCAD/lib/pkgconfig/gmock.pc
+FreeCAD/lib/pkgconfig/gmock_main.pc
+FreeCAD/lib/pkgconfig/gtest.pc
+FreeCAD/lib/pkgconfig/gtest_main.pc
 FreeCAD/share/3Dconnexion/3DConnexion.xml
 FreeCAD/share/Gui/PreferencePackTemplates/Arch_Colors.cfg
 FreeCAD/share/Gui/PreferencePackTemplates/Console_Colors.cfg
@@ -1581,32 +1610,23 @@ FreeCAD/share/Gui/PreferencePackTemplates/Start_Colors.cfg
 FreeCAD/share/Gui/PreferencePackTemplates/TechDraw_Colors.cfg
 FreeCAD/share/Gui/PreferencePackTemplates/View.cfg
 FreeCAD/share/Gui/PreferencePackTemplates/Window_Colors.cfg
-FreeCAD/share/Gui/PreferencePacks/Classic theme/Classic theme.cfg
-FreeCAD/share/Gui/PreferencePacks/Dark theme/Dark theme.cfg
-FreeCAD/share/Gui/PreferencePacks/Light theme/Light theme.cfg
+FreeCAD/share/Gui/PreferencePacks/Classic/Classic.cfg
+FreeCAD/share/Gui/PreferencePacks/Dark behave/Dark behave.cfg
+FreeCAD/share/Gui/PreferencePacks/Dark contrast/Dark contrast.cfg
+FreeCAD/share/Gui/PreferencePacks/Dark modern/Dark modern.cfg
+FreeCAD/share/Gui/PreferencePacks/Dark/Dark.cfg
+FreeCAD/share/Gui/PreferencePacks/Darker/Darker.cfg
+FreeCAD/share/Gui/PreferencePacks/Light modern/Light modern.cfg
+FreeCAD/share/Gui/PreferencePacks/Light/Light.cfg
+FreeCAD/share/Gui/PreferencePacks/ProDark/ProDark.cfg
 FreeCAD/share/Gui/PreferencePacks/package.xml
 FreeCAD/share/Gui/Stylesheets/Behave-dark.qss
-FreeCAD/share/Gui/Stylesheets/Dark-blue.qss
 FreeCAD/share/Gui/Stylesheets/Dark-contrast.qss
-FreeCAD/share/Gui/Stylesheets/Dark-green.qss
-FreeCAD/share/Gui/Stylesheets/Dark-modern-blue.qss
-FreeCAD/share/Gui/Stylesheets/Dark-modern-green.qss
-FreeCAD/share/Gui/Stylesheets/Dark-modern-orange.qss
-FreeCAD/share/Gui/Stylesheets/Dark-modern-pink.qss
-FreeCAD/share/Gui/Stylesheets/Dark-orange.qss
-FreeCAD/share/Gui/Stylesheets/Dark-pink.qss
-FreeCAD/share/Gui/Stylesheets/Darker-blue.qss
-FreeCAD/share/Gui/Stylesheets/Darker-green.qss
-FreeCAD/share/Gui/Stylesheets/Darker-orange.qss
-FreeCAD/share/Gui/Stylesheets/Darker-pink.qss
-FreeCAD/share/Gui/Stylesheets/Light-blue.qss
-FreeCAD/share/Gui/Stylesheets/Light-green.qss
-FreeCAD/share/Gui/Stylesheets/Light-modern-blue.qss
-FreeCAD/share/Gui/Stylesheets/Light-modern-green.qss
-FreeCAD/share/Gui/Stylesheets/Light-modern-orange.qss
-FreeCAD/share/Gui/Stylesheets/Light-modern-pink.qss
-FreeCAD/share/Gui/Stylesheets/Light-orange.qss
-FreeCAD/share/Gui/Stylesheets/Light-pink.qss
+FreeCAD/share/Gui/Stylesheets/Dark-modern.qss
+FreeCAD/share/Gui/Stylesheets/Dark.qss
+FreeCAD/share/Gui/Stylesheets/Darker.qss
+FreeCAD/share/Gui/Stylesheets/Light-modern.qss
+FreeCAD/share/Gui/Stylesheets/Light.qss
 FreeCAD/share/Gui/Stylesheets/ProDark.qss
 FreeCAD/share/Gui/Stylesheets/images_dark-light/Hmovetoolbar_dark.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/Hmovetoolbar_light.svg
@@ -1696,6 +1716,36 @@ FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_disabled_dark.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_disabled_light.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_light.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_lighter.svg
+FreeCAD/share/Gui/Stylesheets/overlay/Dark-Modern_overlay.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Dark-Outline.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Dark.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Dark_overlay.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Darker_overlay.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Light-Modern_overlay.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Light-Outline.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Light.qss
+FreeCAD/share/Gui/Stylesheets/overlay/Light_overlay.qss
+FreeCAD/share/Gui/Stylesheets/overlay/autohide.svg
+FreeCAD/share/Gui/Stylesheets/overlay/close.svg
+FreeCAD/share/Gui/Stylesheets/overlay/close_light.svg
+FreeCAD/share/Gui/Stylesheets/overlay/close_lighter.svg
+FreeCAD/share/Gui/Stylesheets/overlay/close_red.svg
+FreeCAD/share/Gui/Stylesheets/overlay/edithide.svg
+FreeCAD/share/Gui/Stylesheets/overlay/editshow.svg
+FreeCAD/share/Gui/Stylesheets/overlay/float.svg
+FreeCAD/share/Gui/Stylesheets/overlay/float_light.svg
+FreeCAD/share/Gui/Stylesheets/overlay/float_lighter.svg
+FreeCAD/share/Gui/Stylesheets/overlay/mode.svg
+FreeCAD/share/Gui/Stylesheets/overlay/mode_light.svg
+FreeCAD/share/Gui/Stylesheets/overlay/mode_lighter.svg
+FreeCAD/share/Gui/Stylesheets/overlay/overlay.svg
+FreeCAD/share/Gui/Stylesheets/overlay/overlay_light.svg
+FreeCAD/share/Gui/Stylesheets/overlay/overlay_lighter.svg
+FreeCAD/share/Gui/Stylesheets/overlay/taskshow.svg
+FreeCAD/share/Gui/Stylesheets/overlay/taskshow_light.svg
+FreeCAD/share/Gui/Stylesheets/overlay/transparent.svg
+FreeCAD/share/Gui/Stylesheets/overlay/transparent_light.svg
+FreeCAD/share/Gui/Stylesheets/overlay/transparent_lighter.svg
 FreeCAD/share/Mod/Arch/Presets/ifc_contexts_IFC2X3.json
 FreeCAD/share/Mod/Arch/Presets/ifc_contexts_IFC4.json
 FreeCAD/share/Mod/Arch/Presets/ifc_products_IFC2X3.json
@@ -1725,132 +1775,230 @@ FreeCAD/share/Mod/Import/DxfPlate/tables20.rub
 FreeCAD/share/Mod/Import/DxfPlate/tables212.rub
 FreeCAD/share/Mod/Import/DxfPlate/tables214.rub
 FreeCAD/share/Mod/Inspection/Resources/icons/InspectionWorkbench.svg
-FreeCAD/share/Mod/Material/FluidMaterial/Air.FCMat
-FreeCAD/share/Mod/Material/FluidMaterial/Argon.FCMat
-FreeCAD/share/Mod/Material/FluidMaterial/Carbon_dioxide.FCMat
-FreeCAD/share/Mod/Material/FluidMaterial/Nitrogen.FCMat
-FreeCAD/share/Mod/Material/FluidMaterial/None.FCMat
-FreeCAD/share/Mod/Material/FluidMaterial/Water.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/ABS-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Acrylic-Glass-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/AlMg3F24.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/AlMgSi1F31.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/AlZn4-5Mg1F35.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Aluminum-6061-T6.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Aluminum-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/CalculiX-Steel.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Concrete-EN-C35_45.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Concrete-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Copper-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Glass-E-GlassFibre.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Glass-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Glass-S2-GlassFibre.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Graphite.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Invar-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Iron-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/None.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/PA6-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/PET-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/PLA-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/PP-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/PTFE-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/PVC-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Reinforcement-FIB-B500.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-15CrNi6.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-17CrNiMo6.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-1C22.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-1C35.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-1C45.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-1C60.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-20NiCrMo2.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-28Mn6.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-2C10.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-30CrNiMo8.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-34CrNiMo6.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-36CrNiMo4.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-36NiCrMo16.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-3C15.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-3C22.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-3C35.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-3V45.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C10.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C15.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C22E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C25E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C30E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C40E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C50E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C55E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-C60E.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-E295-GC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-E295.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-E335-GC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-E335.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-E360-GC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-E360.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJL-100.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJL-150.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJL-200.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJL-250.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJL-300.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJL-350.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMB-350-10.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMB-550-4.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMB-650-2.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMW-350-4.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMW-360-12.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMW-400-5.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJMW-450-7.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJS-400-15.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJS-500-7.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJS-600-3.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJS-700-2.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-EN-GJS-800-1.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G16Mn5.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G200.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G20Mn5.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G230.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G260.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G300.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-G30Mn5.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-Generic.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S185.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S235JO.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S235JR.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S235JRG1.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S260NC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S275JO.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S275JR.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S275N.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S335JO.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S335JR.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S335N.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S340MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S355J2G3.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S380MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S420MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S420N.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S460MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S460N.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S500MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S550MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-S690MC.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-St-37-2K.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-St-E-255.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-St-E-315.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-St-E-380.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-St-E-460.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-St-E-500.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X2CrNiMoN17-13-3.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X2CrNiN24-4.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X39CrMo17-1.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X3CrNiMo13-14.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X5CrNi18-10.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X5CrNiMo17-12-2.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Steel-X6CrNiTi18-10.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/TEMPLATE.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Ti-6Al-4V.FCMat
-FreeCAD/share/Mod/Material/StandardMaterial/Wood-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Aluminum.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Brass.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Bronze.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Chrome.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Copper.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Default.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Emerald.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Gold.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Jade.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Metalized.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Neon GNC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Neon PHC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Obsidian.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Pewter.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Plaster.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Plastic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Ruby.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Satin.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Shiny Plastic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Silver.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Steel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Stone.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Air.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Argon.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Carbon Dioxide.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Nitrogen.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Fluid/None.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Water.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diagonal4.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diagonal5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diamond.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diamond2.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diamond4.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Horizontal5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Square.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Vertical5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/aluminum.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/brick01.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/concrete.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/cross.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/cuprous.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/diagonal1.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/diagonal2.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/earth.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/general_steel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/glass.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/hatch45L.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/hatch45R.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/hbone.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/line.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/plastic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/plus.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/simple.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/solid.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/square.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/steel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/titanium.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/wood.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/woodgrain.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Patterns/Pattern Files/zinc.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Aggregate/Concrete-EN-C35_45.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Aggregate/Concrete-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Aggregate/Reinforcement-FIB-B500.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Carbon/Graphite.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Glass/Glass-E-GlassFibre.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Glass/Glass-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Glass/Glass-S2-GlassFibre.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Alloys/Invar-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Aluminum/AlMg3F24.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Aluminum/AlMgSi1F31.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Aluminum/AlZn4-5Mg1F35.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Aluminum/Aluminum-6061-T6.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Aluminum/Aluminum-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Copper/Copper-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Iron/Iron-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/CalculiX-Steel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-15CrNi6.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-17CrNiMo6.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-1C22.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-1C35.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-1C45.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-1C60.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-20NiCrMo2.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-28Mn6.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-2C10.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-30CrNiMo8.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-34CrNiMo6.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-36CrNiMo4.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-36NiCrMo16.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-3C15.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-3C22.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-3C35.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-3V45.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C10.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C15.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C22E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C25E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C30E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C40E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C50E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C55E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-C60E.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-E295-GC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-E295.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-E335-GC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-E335.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-E360-GC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-E360.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJL-100.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJL-150.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJL-200.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJL-250.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJL-300.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJL-350.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMB-350-10.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMB-550-4.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMB-650-2.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMW-350-4.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMW-360-12.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMW-400-5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJMW-450-7.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJS-400-15.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJS-500-7.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJS-600-3.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJS-700-2.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-EN-GJS-800-1.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G16Mn5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G200.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G20Mn5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G230.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G260.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G300.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-G30Mn5.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S185.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S235JO.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S235JR.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S235JRG1.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S260NC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S275JO.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S275JR.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S275N.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S335JO.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S335JR.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S335N.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S340MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S355J2G3.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S380MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S420MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S420N.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S460MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S460N.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S500MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S550MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-S690MC.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-St-37-2K.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-St-E-255.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-St-E-315.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-St-E-380.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-St-E-460.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-St-E-500.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X2CrNiMoN17-13-3.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X2CrNiN24-4.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X39CrMo17-1.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X3CrNiMo13-14.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X5CrNi18-10.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X5CrNiMo17-12-2.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Steel/Steel-X6CrNiTi18-10.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Metal/Titanium/Ti-6Al-4V.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/ABS-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/Acrylic-Glass-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/PA6-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/PET-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/PLA-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/PP-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/PTFE-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Thermoplast/PVC-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Standard/Wood/Wood-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Test/Test Material.FCMat
+FreeCAD/share/Mod/Material/Resources/Models/Architectural/Architectural.yml
+FreeCAD/share/Mod/Material/Resources/Models/Architectural/ArchitecturalRendering.yml
+FreeCAD/share/Mod/Material/Resources/Models/Costs/Costs.yml
+FreeCAD/share/Mod/Material/Resources/Models/Electromagnetic/Electromagnetic.yml
+FreeCAD/share/Mod/Material/Resources/Models/Fluid/Fluid.yml
+FreeCAD/share/Mod/Material/Resources/Models/Legacy/Father.yml
+FreeCAD/share/Mod/Material/Resources/Models/Legacy/MaterialStandard.yml
+FreeCAD/share/Mod/Material/Resources/Models/Mechanical/Density.yml
+FreeCAD/share/Mod/Material/Resources/Models/Mechanical/IsotropicLinearElastic.yml
+FreeCAD/share/Mod/Material/Resources/Models/Mechanical/LinearElastic.yml
+FreeCAD/share/Mod/Material/Resources/Models/Mechanical/OgdenYld2004p18.yml
+FreeCAD/share/Mod/Material/Resources/Models/Mechanical/OrthotropicLinearElastic.yml
+FreeCAD/share/Mod/Material/Resources/Models/Patterns/PAT.yml
+FreeCAD/share/Mod/Material/Resources/Models/Patterns/Pattern File.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderAppleseed.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderCarpaint.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderCycles.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderDiffuse.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderDisney.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderEmission.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderGlass.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderLuxcore.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderLuxrender.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderMixed.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderOspray.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderPbrt.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderPovray.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderSubstancePBR.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderTexture.yml
+FreeCAD/share/Mod/Material/Resources/Models/Render Workbench/RenderWB.yml
+FreeCAD/share/Mod/Material/Resources/Models/Rendering/AdvancedRendering.yml
+FreeCAD/share/Mod/Material/Resources/Models/Rendering/BasicRendering.yml
+FreeCAD/share/Mod/Material/Resources/Models/Rendering/TextureRendering.yml
+FreeCAD/share/Mod/Material/Resources/Models/Rendering/VectorRendering.yml
+FreeCAD/share/Mod/Material/Resources/Models/Test/Test Model.yml
+FreeCAD/share/Mod/Material/Resources/Models/Thermal/Thermal.yml
+FreeCAD/share/Mod/Material/Resources/icons/MaterialWorkbench.svg
+FreeCAD/share/Mod/Material/Resources/icons/Materials_Edit.svg
+FreeCAD/share/Mod/Material/Resources/icons/list.svg
+FreeCAD/share/Mod/Material/Resources/icons/multiline.svg
+FreeCAD/share/Mod/Material/Resources/icons/preferences-material.svg
+FreeCAD/share/Mod/Material/Resources/icons/preview-rendered.svg
+FreeCAD/share/Mod/Material/Resources/icons/preview-vector.svg
+FreeCAD/share/Mod/Material/Resources/icons/table.svg
+FreeCAD/share/Mod/Material/Resources/images/default_image.png
 FreeCAD/share/Mod/Mesh/Resources/icons/MeshWorkbench.svg
 FreeCAD/share/Mod/OpenSCAD/Resources/icons/OpenSCADWorkbench.svg
 FreeCAD/share/Mod/Part/Resources/icons/PartWorkbench.svg
@@ -1894,13 +2042,30 @@ FreeCAD/share/Mod/Spreadsheet/Resources/icons/SpreadsheetWorkbench.svg
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/StartPage.js
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/developerhub.png
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/freecad.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/icon_activity.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/icon_blog.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/icon_documents.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/icon_help.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/icon_settings.png
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/installed.png
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/manual.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_2d_draft.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_architecture.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_csg_part.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_empty_file.png
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_file_thumbnail.svg
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_open_file.png
+%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/new_parametric_part.png
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/poweruserhub.png
-%%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/settings.png
 %%WEBENGINE%%FreeCAD/share/Mod/Start/StartPage/images/userhub.png
 FreeCAD/share/Mod/Surface/Resources/icons/Surface_Workbench.svg
+FreeCAD/share/Mod/TechDraw/CSVdata/FillTemplateFields.csv
+FreeCAD/share/Mod/TechDraw/LineGroup/ANSI.Y14.2M.1992.ElementDef.csv
+FreeCAD/share/Mod/TechDraw/LineGroup/ANSI.Y14.2M.1992.LineDef.csv
+FreeCAD/share/Mod/TechDraw/LineGroup/ASME.Y14.2.2008.ElementDef.csv
+FreeCAD/share/Mod/TechDraw/LineGroup/ASME.Y14.2.2008.LineDef.csv
+FreeCAD/share/Mod/TechDraw/LineGroup/ISO.128.20.1996.ElementDef.csv
+FreeCAD/share/Mod/TechDraw/LineGroup/ISO.128.20.1996.LineDef.csv
 FreeCAD/share/Mod/TechDraw/LineGroup/LineGroup.csv
 FreeCAD/share/Mod/TechDraw/PAT/FCPAT.pat
 FreeCAD/share/Mod/TechDraw/Patterns/aluminium.svg
@@ -2074,11 +2239,11 @@ FreeCAD/share/Mod/TechDraw/Templates/ANSIA_Landscape.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIA_Landscape_blank.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIA_Portrait.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIA_Portrait_blank.svg
+FreeCAD/share/Mod/TechDraw/Templates/ANSIB.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIB_Landscape.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIB_Landscape_blank.svg
-FreeCAD/share/Mod/TechDraw/Templates/ANSIB_Portrait_blank.svg
-FreeCAD/share/Mod/TechDraw/Templates/ANSIB.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIB_Portrait.svg
+FreeCAD/share/Mod/TechDraw/Templates/ANSIB_Portrait_blank.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIC_Landscape.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSIC_Portrait.svg
 FreeCAD/share/Mod/TechDraw/Templates/ANSID_Landscape.svg
@@ -2106,6 +2271,12 @@ FreeCAD/share/Mod/TechDraw/Templates/Arch_E3_Landscape.svg
 FreeCAD/share/Mod/TechDraw/Templates/Arch_E3_Portrait.svg
 FreeCAD/share/Mod/TechDraw/Templates/Arch_E_Landscape.svg
 FreeCAD/share/Mod/TechDraw/Templates/Arch_E_Portrait.svg
+FreeCAD/share/Mod/TechDraw/Templates/DE/A0_Landscape_ISO7200_DE.svg
+FreeCAD/share/Mod/TechDraw/Templates/DE/A1_Landscape_ISO7200_DE.svg
+FreeCAD/share/Mod/TechDraw/Templates/DE/A2_Landscape_ISO7200_DE.svg
+FreeCAD/share/Mod/TechDraw/Templates/DE/A3_Landscape_ISO7200_DE.svg
+FreeCAD/share/Mod/TechDraw/Templates/DE/A4_Landscape_ISO7200_DE.svg
+FreeCAD/share/Mod/TechDraw/Templates/DE/A4_Portrait_ISO7200_DE.svg
 FreeCAD/share/Mod/TechDraw/Templates/HowToExample.svg
 FreeCAD/share/Mod/TechDraw/Templates/RU_GOST/Leading/Landscape_A0.svg
 FreeCAD/share/Mod/TechDraw/Templates/RU_GOST/Leading/Landscape_A1.svg
@@ -2159,19 +2330,24 @@ FreeCAD/share/examples/draft_test_objects.FCStd
 bin/FreeCAD
 bin/FreeCADCmd
 bin/freecad-thumbnailer
-share/applications/org.freecadweb.FreeCAD.desktop
-share/icons/hicolor/16x16/apps/freecad.png
-share/icons/hicolor/32x32/apps/freecad.png
-share/icons/hicolor/48x48/apps/freecad.png
-share/icons/hicolor/64x64/apps/freecad.png
-share/icons/hicolor/scalable/apps/freecad.svg
-share/icons/hicolor/scalable/apps/org.freecadweb.FreeCAD.svg
+%%PYTHON_SITELIBDIR%%/freecad/UiTools.py
+%%PYTHON_SITELIBDIR%%/freecad/__init__.py
+%%PYTHON_SITELIBDIR%%/freecad/part.py
+%%PYTHON_SITELIBDIR%%/freecad/partdesign.py
+%%PYTHON_SITELIBDIR%%/freecad/project_utility.py
+%%PYTHON_SITELIBDIR%%/freecad/sketcher.py
+%%PYTHON_SITELIBDIR%%/freecad/utils.py
+%%QT_PLUGINDIR%%/designer/libFreeCAD_widgets.so
+share/applications/org.freecad.FreeCAD.desktop
+share/icons/hicolor/16x16/apps/org.freecad.FreeCAD.png
+share/icons/hicolor/32x32/apps/org.freecad.FreeCAD.png
+share/icons/hicolor/48x48/apps/org.freecad.FreeCAD.png
+share/icons/hicolor/64x64/apps/org.freecad.FreeCAD.png
+share/icons/hicolor/scalable/apps/org.freecad.FreeCAD.svg
 share/icons/hicolor/scalable/mimetypes/application-x-extension-fcstd.svg
-share/metainfo/org.freecadweb.FreeCAD.appdata.xml
-share/mime/packages/org.freecadweb.FreeCAD.xml
+share/metainfo/org.freecad.FreeCAD.metainfo.xml
+share/mime/packages/org.freecad.FreeCAD.xml
 share/pixmaps/freecad.xpm
 share/thumbnailers/FreeCAD.thumbnailer
-%%QT_PLUGINDIR%%/designer/libFreeCAD_widgets.so
 @dir FreeCAD
 @dir FreeCAD/share
-@dir FreeCAD/share/Mod/Material/StandardMaterial/Tools
