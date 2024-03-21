@@ -29,7 +29,7 @@ TEST_TARGET=	check
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
-CONFIGURE_ARGS=	--program-suffix=${DISTVERSION:S/.//g} \
+CONFIGURE_ARGS+=	--program-suffix=${DISTVERSION:S/.//g} \
 		--enable-targets=all --enable-64-bit-bfd \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
@@ -37,14 +37,18 @@ CONFIGURE_ARGS=	--program-suffix=${DISTVERSION:S/.//g} \
 CONFIGURE_OUTSOURCE=	yes
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
-EXCLUDE=	dejagnu expect sim texinfo intl
+EXCLUDE=	dejagnu expect texinfo intl
+.if !defined(SLAVE_PORT) || ${SLAVE_PORT} != gdb-cheri-c18n
+# GDB 14.1 requires the sim subdirectory, even if we use --disable-sim.
+EXCLUDE+=	sim
+.endif
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 .ifndef SLAVE_PORT
 EXTRA_PATCHES=	${FILESDIR}/commit-a980a7d24b9
 EXTRA_PATCHES+=	${FILESDIR}/commit-ae61525fcf4
 .endif
 
-VER=		${DISTVERSION:S/.//g}
+VER?=		${DISTVERSION:S/.//g}
 PLIST_SUB+=	VER=${VER}
 .ifndef SLAVE_PORT
 PLIST_SUB+=	PYDISASSEMBLER=""

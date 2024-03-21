@@ -1,6 +1,6 @@
-PORTNAME=	gdb-cheri
-PORTVERSION=	${GDB_RELEASE}.d${SNAPDATE}
-PORTREVISION=	0
+PORTNAME?=	gdb-cheri
+PORTVERSION?=	${GDB_RELEASE}.d${SNAPDATE}
+PORTREVISION?=	0
 CATEGORIES=	devel
 
 USE_GITHUB=	yes
@@ -9,17 +9,17 @@ GH_PROJECT=	gdb
 GH_TAGNAME=	${GDB_COMMIT}
 
 MAINTAINER=	konrad.witaszczyk@cl.cam.ac.uk
-COMMENT=	GNU Project Debugger with support for the Arm Morello architecture
+COMMENT?=	GNU Project Debugger with support for the Arm Morello architecture
 WWW=		https://github.com/CTSRD-CHERI/gdb
 
 NOT_FOR_ABIS=	purecap
 NOT_FOR_ABIS_REASON_purecap=is not adapted for CheriABI yet
 
-DATADIR=	${PREFIX}/share/gdb
+DATADIR?=	${PREFIX}/share/gdb
 
 # devel/readline defines rl_completer_word_break_characters as const char *.
-OPTIONS_DEFAULT=BUNDLED_READLINE
-OPTIONS_EXCLUDE=PORT_READLINE
+OPTIONS_DEFAULT+=BUNDLED_READLINE
+OPTIONS_EXCLUDE+=PORT_READLINE
 
 # Use {all,install}-gdb instead of the default all and install targets.
 # gold, ld, libstdcxx and gas cannot be built at the moment.
@@ -33,7 +33,7 @@ KGDB1_SRC=	${WRKSRC}/gdb/doc/kgdb.1
 
 .include "${.CURDIR}/Makefile.snapshot"
 
-SLAVE_PORT=	${PORTNAME}
+SLAVE_PORT?=	${PORTNAME}
 GDBDIR=		${.CURDIR}/../gdb
 DESCR=		${GDBDIR}/pkg-descr
 PLIST=		${GDBDIR}/pkg-plist

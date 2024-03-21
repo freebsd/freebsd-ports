@@ -743,6 +743,7 @@
     SUBDIR += gconfmm26
     SUBDIR += gdb
     SUBDIR += gdb-cheri
+    SUBDIR += gdb-cheri-c18n
     SUBDIR += gdb-meta
     SUBDIR += gdcm
     SUBDIR += gdmd
