@@ -1,7 +1,7 @@
 PORTNAME=	libxcrypt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	besser82
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
 
 CFLAGS+=	-Wno-gnu-statement-expression
