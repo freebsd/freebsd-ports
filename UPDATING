@@ -180,7 +180,44 @@ you update your ports collection, before attempting any port upgrades.
 
   The default Perl version has been switched to Perl 5.36.  If you are using
   binary packages to upgrade your system, you do not have anything to do, pkg
-  upgrade will do the right thing.
+  upgrade will do the right thing. For the other people, assuming you are
+  migrating from 5.34 to 5.36, do:
+
+  First, add to /etc/make.conf:
+
+  DEFAULT_VERSIONS+=  perl5=5.36
+
+  Portupgrade users:
+	portupgrade -o lang/perl5.36 -f lang/perl5.34
+
+	  You can now remove the DEFAULT_VERSIONS line added earlier
+	  from /etc/make.conf
+
+	  Then you will need to rebuild everything that uses libperl.so, you
+	  can do so with:
+
+	portupgrade -f `pkg shlib -qR libperl.so.5.34`
+
+	  If, for some reason, this command fails at one point, it is safe to
+	  run it again, it will not rebuild what it already rebuilt, as the
+	  ports that have been rebuilt no longer depend on libperl.so.5.34 but
+	  on libperl.so.5.36.
+
+  Portmaster users:
+	portmaster -o lang/perl5.36 lang/perl5.34
+
+	  You can now remove the DEFAULT_VERSIONS line added earlier
+	  from /etc/make.conf
+
+	  Then you will need to rebuild everything that uses libperl.so, you
+	  can do so with:
+
+	portmaster -f `pkg shlib -qR libperl.so.5.34`
+
+	  If, for some reason, this command fails at one point, it is safe to
+	  run it again, it will not rebuild what it already rebuilt, as the
+	  ports that have been rebuilt no longer depend on libperl.so.5.34 but
+	  on libperl.so.5.36.
 
 20231014:
   AFFECTS: users of security/openssl and security/openssl30
