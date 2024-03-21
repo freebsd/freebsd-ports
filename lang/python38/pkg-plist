@@ -2168,7 +2168,6 @@ lib/libpython%%PYTHON_VER%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_LIBDIR%%/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
 %%PYTHON_LIBDIR%%/ensurepip/_bundled/pip-23.0.1-py3-none-any.whl
 %%PYTHON_LIBDIR%%/ensurepip/_bundled/setuptools-56.0.0-py3-none-any.whl
 %%PYTHON_LIBDIR%%/ensurepip/_uninstall.py
