@@ -1,3 +1,31 @@
+  <vuln vid="7a7129ef-e790-11ee-a1c0-0050569f0b83">
+    <topic>security/shibboleth-idp -- CAS service SSRF</topic>
+    <affects>
+      <package>
+	<name>shibboleth-idp</name>
+	<range><ge>4.3.0</ge><lt>4.3.2</lt></range>
+	<range><ge>5.0.0</ge><lt>5.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Shibboleth Developers report:</p>
+	<blockquote cite="https://shibboleth.net/community/advisories/secadv_20240320.txt">
+	  <p>The Identity Provider's CAS support relies on a function in the
+	     Spring Framework to parse CAS service URLs and append the ticket
+	     parameter.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://shibboleth.net/community/advisories/secadv_20240320.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-03-20</discovery>
+      <entry>2024-03-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8448963-e6f5-11ee-a784-dca632daf43b">
     <topic>databases/mongodb* -- Improper Certificate Validation</topic>
     <affects>
