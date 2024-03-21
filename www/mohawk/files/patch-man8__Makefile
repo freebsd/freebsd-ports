@@ -1,8 +1,0 @@
---- man8/Makefile.orig	2021-09-25 06:45:21 UTC
-+++ man8/Makefile
-@@ -1,4 +1,5 @@
- MAN= mhtpasswd.8 mohawk.8
-+SHAREDIR=	${PREFIX}
- NO_OBJ=
- 
- .include <bsd.prog.mk>

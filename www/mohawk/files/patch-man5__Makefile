@@ -1,8 +1,0 @@
---- man5/Makefile.orig	2021-09-25 06:45:21 UTC
-+++ man5/Makefile
-@@ -1,4 +1,5 @@
- MAN= mohawk.conf.5
-+SHAREDIR=	${PREFIX}
- NO_OBJ=
- 
- .include <bsd.prog.mk>
