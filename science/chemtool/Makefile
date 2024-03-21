@@ -1,6 +1,6 @@
 PORTNAME=	chemtool
 DISTVERSION=	1.6.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	fig2dev:print/fig2dev
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
