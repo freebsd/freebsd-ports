@@ -1,4 +1,5 @@
 bin/ncrack
+share/man/man1/ncrack.1.gz
 share/ncrack/ncrack-services
 share/ncrack/common.usr
 share/ncrack/default.pwd
@@ -8,4 +9,3 @@ share/ncrack/minimal.usr
 share/ncrack/myspace.pwd
 share/ncrack/phpbb.pwd
 share/ncrack/top50000.pwd
-man/man1/ncrack.1.gz
