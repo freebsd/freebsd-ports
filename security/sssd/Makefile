@@ -1,6 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	1.16.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
@@ -40,6 +40,7 @@ FLAVOR?=	${FLAVORS:[1]}
 smb_PKGNAMESUFFIX=	-smb
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	ac_cv_prog_PO4A=no \
 		--without-selinux --without-semanage \
 		--without-libnl --without-nfsv4-idmapd-plugin \
@@ -127,7 +128,7 @@ post-install:
 
 # clean unused man dirs
 .for i in es/man1 nl/man1 nl/man5 pt/man1 pt/man5 sv/man1
-	@${RMDIR} ${STAGEDIR}${PREFIX}/man/${i}
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/man/${i}
 .endfor
 
 .include <bsd.port.mk>
