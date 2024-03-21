@@ -1,5 +1,5 @@
---- Makefile.orig	2002-07-03 13:22:08.000000000 +0800
-+++ Makefile	2014-06-27 00:45:38.945108983 +0800
+--- Makefile.orig	2002-07-03 05:22:08 UTC
++++ Makefile
 @@ -1,8 +1,8 @@
  
 -CFLAGS = -Wall -O
@@ -12,14 +12,14 @@
  
  all: flasher man
  
-@@ -16,8 +16,8 @@ man: flasher.1.gz
+@@ -16,8 +16,8 @@ install: flasher man
  
  install: flasher man
  	strip flasher
 -	install flasher $(DESTDIR)/sbin/flasher
 -	install flasher.1.gz $(DESTDIR)/man/man1
 +	install flasher $(DESTDIR)${PREFIX}/sbin/flasher
-+	install flasher.1.gz $(DESTDIR)${PREFIX}/man/man1
++	install flasher.1.gz $(DESTDIR)${PREFIX}/share/man/man1
  	
  clean:
  	rm -f *.o flasher flasher.1.gz

@@ -1,6 +1,6 @@
---- Makefile.orig	2014-02-12 18:24:13 UTC
+--- Makefile.orig	2018-05-11 21:42:28 UTC
 +++ Makefile
-@@ -3,8 +3,5 @@
+@@ -3,8 +3,5 @@ install:
  all:	# Do nothing - this is a python script that needs no build
  
  install:
@@ -10,4 +10,4 @@
 -	install -c -o root -g wheel -m 644 ./tdir-license.txt ${PREFIX}/share/doc/tdir
 -
 +	${BSD_INSTALL_SCRIPT} ./tdir ${DESTDIR}${PREFIX}/bin
-+	${BSD_INSTALL_MAN}  ./tdir.1.gz ${DESTDIR}${PREFIX}/man/man1
++	${BSD_INSTALL_MAN}  ./tdir.1.gz ${DESTDIR}${PREFIX}/share/man/man1

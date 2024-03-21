@@ -1,6 +1,6 @@
---- Makefile.orig	2019-09-19 13:32:10 UTC
+--- Makefile.orig	2019-09-20 12:27:34 UTC
 +++ Makefile
-@@ -14,10 +14,10 @@ battmond: battmond.c
+@@ -14,10 +14,10 @@ install: battmond
  	${CC} ${CFLAGS} battmond.c -o battmond -lutil
  
  install: battmond
@@ -10,8 +10,8 @@
 -	gzip -9f ${PREFIX}/man/man1/battmond.1
 +	$(INSTALL) -s battmond $(DESTDIR)${PREFIX}/sbin/battmond
 +	$(INSTALL) battmond.sh $(DESTDIR)${PREFIX}/etc/rc.d/battmond
-+	$(INSTALL) -c battmond.1 $(DESTDIR)${PREFIX}/man/man1/battmond.1
-+	gzip -9f $(DESTDIR)${PREFIX}/man/man1/battmond.1
++	$(INSTALL) -c battmond.1 $(DESTDIR)${PREFIX}/share/man/man1/battmond.1
++	gzip -9f $(DESTDIR)${PREFIX}/share/man/man1/battmond.1
  
  clean:
  	rm -f battmond

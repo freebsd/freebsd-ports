@@ -1,6 +1,15 @@
---- Makefile.orig	2014-06-27 11:30:05.064430590 +0800
-+++ Makefile	2014-06-27 11:30:18.895417404 +0800
-@@ -40,8 +40,8 @@ clean:
+--- Makefile.orig	2004-03-24 03:20:43 UTC
++++ Makefile
+@@ -14,7 +14,7 @@ MAN_SFX=1
+ PKG=jkill
+ 
+ MAN_SFX=1
+-MAN_DIR=man/man1
++MAN_DIR=share/man/man1
+ 
+ TARGETS=${PKG} ${PKG}.${MAN_SFX}.gz
+ 
+@@ -40,8 +40,8 @@ install: all
  	${RM} -rf ${TARGETS}
  
  install: all

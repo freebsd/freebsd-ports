@@ -1,5 +1,6 @@
 PORTNAME=	jps
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ext.by/jps/
 
@@ -13,7 +14,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFLICTS_INSTALL=	openjdk*
 
 USES=		perl5 shebangfix
-PLIST_FILES=	bin/jps man/man1/jps.1.gz
+PLIST_FILES=	bin/jps share/man/man1/jps.1.gz
 SHEBANG_FILES=	jps.pl
 
 .include <bsd.port.mk>

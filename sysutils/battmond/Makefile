@@ -1,6 +1,6 @@
 PORTNAME=	battmond
 DISTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	ntarmos@gmail.com
@@ -15,6 +15,6 @@ GH_TAGNAME=	0.4
 
 PLIST_FILES=	sbin/battmond \
 		etc/rc.d/battmond \
-		man/man1/battmond.1.gz
+		share/man/man1/battmond.1.gz
 
 .include <bsd.port.mk>

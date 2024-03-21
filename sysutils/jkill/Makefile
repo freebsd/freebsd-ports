@@ -1,5 +1,6 @@
 PORTNAME=	jkill
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ext.by/jkill/
 PKGNAMEPREFIX=
@@ -12,6 +13,6 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	jkill.pl
 
-PLIST_FILES=	bin/jkill man/man1/jkill.1.gz
+PLIST_FILES=	bin/jkill share/man/man1/jkill.1.gz
 
 .include <bsd.port.mk>
