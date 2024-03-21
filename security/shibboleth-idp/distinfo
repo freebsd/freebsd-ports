@@ -1,6 +1,6 @@
-TIMESTAMP = 1680190828
-SHA256 (shibboleth-identity-provider-4.3.1.tar.gz) = 04d08d324a5a5f016ca69b96dbab58abbb5b3e0045455cc15cf0d33ffd6742d5
-SIZE (shibboleth-identity-provider-4.3.1.tar.gz) = 60230264
+TIMESTAMP = 1711031606
+SHA256 (shibboleth-identity-provider-4.3.2.tar.gz) = 92892312f558250c50a1501e064720bf68dbc39822a2e65d046b39a919ec4e05
+SIZE (shibboleth-identity-provider-4.3.2.tar.gz) = 60931114
 SHA256 (logback-classic-1.4.0.jar) = 9ce4cfee4834195753b5be5016ded641e8456d9e82995821838dc662e866e212
 SIZE (logback-classic-1.4.0.jar) = 262118
 SHA256 (logback-core-1.4.0.jar) = 14e09a7896bee6ef2e005b48fc5560fe2299a57a826bc4c1f1c6d43002f0512c
