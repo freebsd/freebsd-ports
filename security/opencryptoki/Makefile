@@ -1,6 +1,7 @@
 PORTNAME=	opencryptoki
 PORTVERSION=	3.19.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -19,6 +20,7 @@ USES=		alias autoreconf bison gmake ldap libtool localbase ssl tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 CONFIGURE_ARGS=	--enable-swtok \
 		--enable-tpmtok \
