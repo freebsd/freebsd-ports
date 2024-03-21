@@ -89,9 +89,9 @@ man/man1/gdb%%VER%%.1.gz
 %%DATADIR%%/syscalls/s390x-linux.xml
 %%DATADIR%%/syscalls/sparc-linux.xml
 %%DATADIR%%/syscalls/sparc64-linux.xml
-%%LIBCXX%%share/libcxx-gdbpy/libcxx/__init__.py
-%%LIBCXX%%share/libcxx-gdbpy/libcxx/__init__.pyc
-%%LIBCXX%%share/libcxx-gdbpy/libcxx/printers.py
-%%LIBCXX%%share/libcxx-gdbpy/libcxx/printers.pyc
-%%LIBCXX%%share/libcxx-gdbpy/libcxx/xmethods.py
-%%LIBCXX%%share/libcxx-gdbpy/libcxx/xmethods.pyc
+%%LIBCXX%%share/libcxx-gdbpy%%VER%%/libcxx/__init__.py
+%%LIBCXX%%share/libcxx-gdbpy%%VER%%/libcxx/__init__.pyc
+%%LIBCXX%%share/libcxx-gdbpy%%VER%%/libcxx/printers.py
+%%LIBCXX%%share/libcxx-gdbpy%%VER%%/libcxx/printers.pyc
+%%LIBCXX%%share/libcxx-gdbpy%%VER%%/libcxx/xmethods.py
+%%LIBCXX%%share/libcxx-gdbpy%%VER%%/libcxx/xmethods.pyc

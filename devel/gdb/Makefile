@@ -135,6 +135,8 @@ PLIST_SUB+=	LIBCXX=""
 PLIST_SUB+=	LIBCXX="@comment "
 .endif
 
+PYTHONDIR=	${PREFIX}/share/libcxx-gdbpy${VER}
+
 .if ! ${PORT_OPTIONS:MBUNDLED_ZLIB}
 EXCLUDE+=	zlib
 .endif
@@ -187,18 +189,20 @@ do-install-PYTHON-on:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
 	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
-	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python && \
+	@(cd ${STAGEDIR}${DATADIR}/python && \
 		${PYTHON_CMD} -m compileall .)
 . for f in gdb gdb/command gdb/function gdb/printer
-	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python/${f} ; ${CHMOD} 644 *.py* )
+	@(cd ${STAGEDIR}${DATADIR}/python/${f} ; ${CHMOD} 644 *.py* )
 . endfor
 .if exists(/usr/lib/libc++.so.1) || exists(/lib/libc++.so.1)
 	@(cd ${WRKSRC_libcxx} ; \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} \
+		    PYTHONDIR="${PYTHONDIR}" \
+		    AUTO_LOAD_DIR="${DATADIR}/auto-load" \
 		    LIBCXX_DIR="${LIBCXX_DIR}" install )
-	@(cd ${STAGEDIR}${PREFIX}/share/gdb/auto-load/${LIBCXX_DIR} && \
+	@(cd ${STAGEDIR}${DATADIR}/auto-load/${LIBCXX_DIR} && \
 		${PYTHON_CMD} -m compileall .)
-	@(cd ${STAGEDIR}${PREFIX}/share/libcxx-gdbpy/libcxx && \
+	@(cd ${STAGEDIR}${PREFIX}/share/libcxx-gdbpy${VER}/libcxx && \
 		${PYTHON_CMD} -m compileall .)
 .endif
 
