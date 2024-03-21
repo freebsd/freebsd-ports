@@ -1,5 +1,6 @@
 PORTNAME=	paragrep
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,9 @@ USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	bmc
 
+NO_ARCH=	yes
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|'man'|'man/man1'|g" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s|'man'|'share/man/man1'|g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
