@@ -1,5 +1,6 @@
 PORTNAME=	pam_mkhomedir
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 
@@ -11,7 +12,9 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	lib/pam_mkhomedir.so \
 		lib/pam_mkhomedir.so.2 \
-		man/man8/pam_mkhomedir.8.gz
+		share/man/man8/pam_mkhomedir.8.gz
+
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man/man"
 
 .if defined(WITH_PROFILE)
 PLIST_FILES+=	lib/libpam_mkhomedir_p.a

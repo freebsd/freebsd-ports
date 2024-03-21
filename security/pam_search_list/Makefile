@@ -1,6 +1,6 @@
 PORTNAME=	pam_search_list
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME:S/_/-/g}
 DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}
@@ -11,10 +11,12 @@ WWW=		https://sourceforge.net/projects/pam-search-list/
 
 USES=		tar:xz uidfix
 
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man/man"
+
 PLIST_FILES=	lib/libpam_search_list.a \
 		lib/pam_search_list.so \
 		lib/pam_search_list.so.0 \
-		man/man8/pam_search_list.8.gz
+		share/man/man8/pam_search_list.8.gz
 
 OPTIONS_DEFINE=	PROFILE
 

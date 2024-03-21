@@ -1,5 +1,6 @@
 PORTNAME=	rndpassw
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com
@@ -15,6 +16,6 @@ GH_ACCOUNT=	melanhit
 USES=		cmake
 
 PLIST_FILES=	bin/rndpassw \
-		man/man1/rndpassw.1.gz
+		share/man/man1/rndpassw.1.gz
 
 .include <bsd.port.mk>

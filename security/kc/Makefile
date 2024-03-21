@@ -1,5 +1,6 @@
 PORTNAME=		kc
 PORTVERSION=		2.5.3
+PORTREVISION=		1
 CATEGORIES=		security
 
 MAINTAINER=		leva@ecentrum.hu
@@ -33,8 +34,10 @@ USES+=			pkgconfig ncurses ssl uidfix
 USE_GITHUB=		yes
 GH_ACCOUNT=		levaidaniel
 
-PLIST_FILES=		bin/kc man/man1/kc.1.gz share/doc/kc/Changelog.md
+PLIST_FILES=		bin/kc share/doc/kc/Changelog.md share/man/man1/kc.1.gz
 
+MAKE_ARGS=		BINDIR="${PREFIX}/bin" \
+			MANDIR="${PREFIX}/share/man/man"
 MAKE_ENV+=		BUNDLED_BCRYPT=y
 
 post-patch:
