@@ -70,6 +70,7 @@ ICONV_USES=	iconv
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 THREADS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-threads
 THREADS_USES=		autoreconf
+TEST_USES=		autoreconf
 
 .include <bsd.port.options.mk>
 
