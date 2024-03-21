@@ -1,5 +1,5 @@
 PORTNAME=	duplicity
-DISTVERSION=	2.2.2
+DISTVERSION=	2.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -11,7 +11,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \

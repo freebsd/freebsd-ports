@@ -1,6 +1,6 @@
---- setup.py.orig	2023-12-25 18:14:22 UTC
+--- setup.py.orig	2024-03-20 20:49:22 UTC
 +++ setup.py
-@@ -105,27 +105,6 @@ def get_data_files():
+@@ -111,28 +111,6 @@ def get_data_files():
      if os.environ.get("READTHEDOCS") == "True":
          return data_files
  
@@ -14,8 +14,8 @@
 -            os.mkdir(os.path.join("po", lang))
 -        except os.error:
 -            pass
--        assert not os.system(f"cp po/{lang}.po po/{lang}"), lang
--        assert not os.system(f"msgfmt po/{lang}.po -o po/{lang}/duplicity.mo"), lang
+-        subprocess.run(f"cp po/{lang}.po po/{lang}", shell=True, check=True)
+-        subprocess.run(f"msgfmt po/{lang}.po -o po/{lang}/duplicity.mo", shell=True, check=True)
 -
 -    for root, dirs, files in os.walk("po"):
 -        for file in files:
@@ -25,6 +25,7 @@
 -                data_files.append((f"share/locale/{lang}/LC_MESSAGES", [f"po/{lang}/duplicity.mo"]))
 -
 -    return data_files
+-
  
- 
- def VersionedCopy(source, dest):
+ def cleanup():
+     if os.path.exists("po/LINGUAS"):
