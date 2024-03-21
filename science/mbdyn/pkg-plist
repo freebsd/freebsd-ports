@@ -32,8 +32,6 @@ lib/libmbc.a
 lib/libmbc.so
 lib/libmbc.so.0
 lib/libmbc.so.0.0.0
-man/man1/femgen.1.gz
-man/man1/mbdyn.1.gz
 share/Aster/cms.py
 share/awk/abs2rel.awk
 share/awk/mbdyn2easyanim.awk
@@ -42,6 +40,8 @@ share/awk/mbdyn_mov2ref.awk
 share/awk/mbdyn_ref2log.awk
 share/awk/periodize.awk
 share/c81/naca0012.c81
+share/man/man1/femgen.1.gz
+share/man/man1/mbdyn.1.gz
 share/octave/gradnorm.m
 share/octave/mbdyn_derivative.m
 share/octave/pod.m

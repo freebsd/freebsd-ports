@@ -1,6 +1,6 @@
 PORTNAME=	mbdyn
 DISTVERSION=	1.7.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
@@ -25,6 +25,7 @@ USE_CXXSTD=	c++14 # fix build breakage with clang16 due to use of deprecated fea
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix='' --enable-multithread --with-mpi=no \
 		--with-ginac=no
 
