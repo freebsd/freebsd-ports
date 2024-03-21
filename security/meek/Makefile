@@ -1,7 +1,7 @@
 PORTNAME=	meek
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.37.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	security net
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -31,8 +31,8 @@ GH_TUPLE=	torbsd:goptlib:v1.2.0:torbsd_goptlib/vendor/git.torproject.org/pluggab
 
 PLIST_FILES=	bin/meek-client \
 		bin/meek-server \
-		man/man1/meek-client.1.gz \
-		man/man1/meek-server.1.gz
+		share/man/man1/meek-client.1.gz \
+		share/man/man1/meek-server.1.gz
 
 SUB_FILES=	pkg-message
 
@@ -45,7 +45,7 @@ do-test:
 .endfor
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/meek-server.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/meek-client.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/meek-server.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/meek-client.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
