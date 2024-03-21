@@ -1,5 +1,5 @@
---- Makefile.orig	2023-11-14 21:36:52.000000000 +0000
-+++ Makefile	2023-11-20 13:57:16.349229000 +0000
+--- Makefile.orig	2024-01-21 13:41:31 UTC
++++ Makefile
 @@ -1,12 +1,7 @@
  # set gcc as default if CC is not set
  
@@ -14,12 +14,7 @@
  # Detect OS
  OS := $(shell uname)
  ARCH := $(shell uname -m)
-@@ -26,11 +21,11 @@
- 
- SRCS      = sslscan.c
- BINDIR    = $(PREFIX)/bin
--MANDIR    = $(PREFIX)/share/man
-+MANDIR    = $(PREFIX)/man
+@@ -30,7 +25,7 @@ WARNINGS  = -Wall -Wformat=2 -Wformat-security -Wno-de
  MAN1DIR   = $(MANDIR)/man1
  
  WARNINGS  = -Wall -Wformat=2 -Wformat-security -Wno-deprecated-declarations
@@ -28,7 +23,7 @@
  
  # for dynamic linking
  LIBS      = -lssl -lcrypto
-@@ -58,38 +53,12 @@
+@@ -58,38 +53,12 @@ CFLAGS += -std=gnu11
  CFLAGS += -std=gnu11
  
  # for static linking
@@ -68,7 +63,7 @@
  .PHONY: all sslscan clean install uninstall static opensslpull
  
  all: sslscan
-@@ -116,6 +85,9 @@
+@@ -116,6 +85,9 @@ ifeq ($(OS), Darwin)
  	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -d $(DESTDIR)$(MAN1DIR)/;
  	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
@@ -78,7 +73,7 @@
  else
  	install -D sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -D sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
-@@ -128,11 +100,7 @@
+@@ -128,11 +100,7 @@ opensslpull:
  .openssl.is.fresh: opensslpull
  	true
  opensslpull:
@@ -91,7 +86,7 @@
  
  # Need to build OpenSSL differently on OSX
  ifeq ($(OS), Darwin)
-@@ -146,16 +114,15 @@
+@@ -146,16 +114,15 @@ openssl/Makefile: .openssl.is.fresh
  # Any other *NIX platform
  else
  openssl/Makefile: .openssl.is.fresh

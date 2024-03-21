@@ -1,5 +1,6 @@
 PORTNAME=	sslscan
 DISTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.openssl.org/source/:openssl \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/:openssl
