@@ -1,5 +1,4 @@
 PORTNAME=	star
-PORTREVISION=	1
 CATEGORIES=	archivers
 
 COMMENT=	Unique standard tape archiver with many enhancements

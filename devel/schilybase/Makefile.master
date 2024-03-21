@@ -1,4 +1,4 @@
-DISTVERSION=	2023-09-28
+DISTVERSION=	2024-03-21
 MASTER_SITES=	http://fuz.su/pub/schilytools/ \
 		https://schilytools.pkgsrc.pub/pub/schilytools/ \
 		https://mirrors.dotsrc.org/schilytools/ \

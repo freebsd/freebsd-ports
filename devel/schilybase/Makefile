@@ -1,5 +1,4 @@
 PORTNAME=	schilybase
-PORTREVISION=	2
 CATEGORIES=	devel
 
 COMMENT=	Support files and libraries for the schilytools
