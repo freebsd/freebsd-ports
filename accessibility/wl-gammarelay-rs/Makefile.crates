@@ -34,5 +34,5 @@ CARGO_CRATES=	anstyle-1.0.6 \
 		wayrs-protocols-0.13.2 \
 		wayrs-scanner-0.13.2 \
 		winnow-0.5.40 \
-		rustbus-service,rustbus-service-macros@git+https://github.com/MaxVerevkin/rustbus-service?rev=7401913\#7401913977ccf665748b1f4dee033921e1c86afd \
-		rustbus,rustbus_derive@git+https://github.com/KillingSpark/rustbus?rev=20af8f2\#20af8f2a4296196779e1044c0c08d4e5f784fc61
+		rustbus-service,rustbus-service-macros@git+https://github.com/MaxVerevkin/rustbus-service?rev=1bd3aef\#1bd3aef5fe2a646685c8e640c0f67a645eeaf41d \
+		rustbus,rustbus_derive@git+https://github.com/KillingSpark/rustbus?rev=5875f1f\#5875f1fefc054ed4e2d91641f59a55b9eaee5be9
