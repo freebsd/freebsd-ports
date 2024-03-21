@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.3.6
+DISTVERSION=	2024.3.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	jdx
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		aho-corasick-1.1.2 \
+		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		ansi-str-0.8.0 \
@@ -36,7 +36,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		base64-0.22.0 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
 		built-0.7.1 \
@@ -100,7 +100,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		eyre-0.6.12 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
-		fiat-crypto-0.2.6 \
+		fiat-crypto-0.2.7 \
 		filetime-0.2.23 \
 		fixedbitset-0.4.2 \
 		flate2-1.0.28 \
@@ -120,7 +120,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.12 \
 		gimli-0.28.1 \
-		git2-0.18.2 \
+		git2-0.18.3 \
 		globset-0.4.14 \
 		globwalk-0.8.1 \
 		globwalk-0.9.1 \
@@ -223,14 +223,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-1.10.3 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
-		reqwest-0.11.26 \
+		reqwest-0.11.27 \
 		ring-0.17.8 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.31 \
+		rustix-0.38.32 \
 		rustls-0.21.10 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
@@ -297,9 +297,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
-		toml-0.8.11 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.7 \
+		toml_edit-0.22.9 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -327,7 +327,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		versions-6.1.0 \
+		versions-6.2.0 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
