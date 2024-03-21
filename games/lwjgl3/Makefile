@@ -1,5 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	3.3.4.20231218
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
@@ -65,6 +66,8 @@ MAKE_ARGS=	-Dbuild.offline=true \
 		-Dlocal.kotlin=${LOCALBASE}/share/kotlin
 MAKE_ENV+=	JAVA8_HOME=${LOCALBASE}/openjdk8
 
+PLIST_SUB+=	MAJORVERSION=${PKGNAMESUFFIX}
+
 LIBSDIR=	${WRKSRC}/bin/libs/native/freebsd/*/org/lwjgl
 
 .include <bsd.port.pre.mk>
@@ -112,13 +115,13 @@ post-patch:
 
 do-install:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${ANT} release ${MAKE_ARGS}
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 .for x in ${WRKSRC}/bin/RELEASE/lwjgl*/*.jar
-	${INSTALL_DATA} ${WRKSRC}${x} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}${x} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}/
 .endfor
 .for x in ${LIBSDIR}/liblwjgl.so ${LIBSDIR}/*/liblwjgl*.so
-	${INSTALL_LIB} ${WRKSRC}${x} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
+	${INSTALL_LIB} ${WRKSRC}${x} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}/
 .endfor
 
 .include <bsd.port.post.mk>
