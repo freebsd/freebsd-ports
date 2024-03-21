@@ -98,6 +98,7 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-cleaner \
 		clang-include-fixer \
+		clang-installapi \
 		clang-move \
 		clang-pseudo \
 		clang-query \
@@ -147,6 +148,7 @@ MLIR_COMMANDS=	\
 		mlir-query \
 		mlir-reduce \
 		mlir-tblgen \
+		mlir-transform-opt \
 		mlir-translate \
 		tblgen-lsp-server \
 		tblgen-to-irdl
