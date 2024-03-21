@@ -5,11 +5,12 @@ bin/blueprint-compiler
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/completions_utils.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/decompiler.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/errors.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/formatter.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/gir.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/interactive_port.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/__init__.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/adw_breakpoint.py
-%%PYTHON_SITELIBDIR%%/blueprintcompiler/language/adw_message_dialog.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/language/adw_response_dialog.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/attributes.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/binding.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/common.py
@@ -32,6 +33,7 @@ bin/blueprint-compiler
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/gtkbuilder_template.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/imports.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/response_id.py
+%%PYTHON_SITELIBDIR%%/blueprintcompiler/language/translation_domain.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/types.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/ui.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/values.py
