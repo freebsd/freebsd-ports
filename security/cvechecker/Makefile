@@ -1,7 +1,7 @@
 PORTNAME=	cvechecker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -23,6 +23,7 @@ USES=		autoreconf pkgconfig shebangfix
 SHEBANG_FILES=	scripts/cverules scripts/cvegenversdat
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var/db
 
 bash_OLD_CMD+=	/bin/sh
