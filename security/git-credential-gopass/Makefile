@@ -10,6 +10,10 @@ WWW=		https://github.com/gopasspw/git-credential-gopass
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# port fails to fetch even though makesum works without any checksum
+# changes, this is currently under investigation
+BROKEN=		does not fetch
+
 USES=		go:1.22,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
