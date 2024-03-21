@@ -1,5 +1,5 @@
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20231232
+PORTVERSION=	20240317
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 USES=		gl localbase:ldflags pkgconfig scons sdl tar:xz
 USE_GL=		gl glu
 USE_GITHUB=	yes
-GH_TAGNAME=	4efe4c9
+GH_TAGNAME=	b5ca993
 USE_SDL=	image2 mixer2 sdl2
 
 MAKE_ARGS=	ignore_unknown_variables=1 sdl2=1
@@ -35,8 +35,7 @@ MAKE_ARGS+=	lto=1
 .endif
 
 .if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
-CXXFLAGS+=	-Wno-error=missing-field-initializers -Wno-error=maybe-uninitialized
-USES+=		compiler:c++11-lib
+CXXFLAGS+=	-Wno-error=missing-field-initializers
 USE_GCC=	12
 .endif
 
