@@ -1,14 +1,16 @@
---- Makefile	2009-04-09 08:42:50.000000000 -0400
-+++ /tmp/Makefile	2011-05-26 19:30:35.000000000 -0400
-@@ -1,4 +1,6 @@
--CFLAGS = -O2 -Wall # -D NOBEEP
+--- Makefile.orig	2014-08-11 12:46:47 UTC
++++ Makefile
+@@ -1,6 +1,8 @@ CFLAGS = -O2 -Wall -Wextra -std=c89 -pedantic -D_POSIX
+ CFLAGS = -O2 -Wall -Wextra -std=c89 -pedantic -D_POSIX_C_SOURCE=200112 # -D NOBEEP
+-LIBS = -lgcrypt
 +CFLAGS = -L$(LOCALBASE)/lib -I$(LOCALBASE)/include -O2 -DNOBEEP -DNOMEMLOCK -lgcrypt
-+
-+all: default
  
++all: default
++
  default: binaries # doc
  
-@@ -8,15 +10,15 @@
+ binaries: seccure-key seccure-encrypt seccure-decrypt seccure-sign \
+@@ -9,15 +11,15 @@ install: default
  doc: seccure.1 seccure.1.html
  
  install: default
@@ -29,7 +31,7 @@
 +	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-signcrypt
 +	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-veridec
 +	ln -f $(DESTDIR)$(PREFIX)/bin/seccure-key $(DESTDIR)$(PREFIX)/bin/seccure-dh
-+	install -m0644 seccure.1 $(DESTDIR)$(PREFIX)/man/man1
++	install -m0644 seccure.1 $(DESTDIR)$(PREFIX)/share/man/man1
  
  clean:
  	rm -f *.o *~ seccure-key seccure-encrypt seccure-decrypt seccure-sign \
