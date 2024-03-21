@@ -2,12 +2,12 @@ bin/pcsc_scan
 bin/ATR_analysis
 bin/gscriptor
 bin/scriptor
-man/man1/ATR_analysis.1p.gz
-man/man1/gscriptor.1p.gz
-man/man1/pcsc_scan.1.gz
-man/man1/scriptor.1p.gz
 share/applications/gscriptor.desktop
 share/locale/fr/LC_MESSAGES/pcsc-tools.mo
 share/locale/ru/LC_MESSAGES/pcsc-tools.mo
+share/man/man1/ATR_analysis.1p.gz
+share/man/man1/gscriptor.1p.gz
+share/man/man1/pcsc_scan.1.gz
+share/man/man1/scriptor.1p.gz
 share/pcsc/smartcard_list.txt
 share/pcsc/gscriptor.png
