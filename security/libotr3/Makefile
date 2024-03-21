@@ -1,6 +1,6 @@
 PORTNAME=	libotr
 PORTVERSION=	3.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		https://otr.cypherpunks.ca/
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 CONFLICTS=	libotr
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		cpe libtool pathfix
 USE_LDCONFIG=	yes
 CPE_VENDOR=	cypherpunks
