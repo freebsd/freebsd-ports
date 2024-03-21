@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSIONPREFIX=	opernssl-
+DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.1.5
 DISTVERSIONSUFFIX=	-quic1
 CATEGORIES=	security devel
@@ -12,7 +12,7 @@ WWW=		https://www.github.com/quictls/openssl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[12]
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3* openssl-quictls
 
 BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
 

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 #EXPIRATION_DATE=	2026-09-07
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl111 openssl3[12] openssl-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl111 openssl3* openssl*-quictls
 
 USES=		cpe perl5
 USE_PERL5=	build
