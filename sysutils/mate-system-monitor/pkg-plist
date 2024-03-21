@@ -1,7 +1,6 @@
 bin/mate-system-monitor
 libexec/mate-system-monitor/msm-kill
 libexec/mate-system-monitor/msm-renice
-share/man/man1/mate-system-monitor.1.gz
 share/applications/mate-system-monitor.desktop
 share/help/C/mate-system-monitor/figures/addColumn.png
 share/help/C/mate-system-monitor/figures/changePriority.png
@@ -1770,6 +1769,7 @@ share/locale/zh_CN/LC_MESSAGES/mate-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/mate-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/mate-system-monitor.mo
 share/locale/zu/LC_MESSAGES/mate-system-monitor.mo
+share/man/man1/mate-system-monitor.1.gz
 share/metainfo/mate-system-monitor.appdata.xml
 share/pixmaps/mate-system-monitor/download.svg
 share/pixmaps/mate-system-monitor/side.png
