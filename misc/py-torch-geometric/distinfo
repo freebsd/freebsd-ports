@@ -1,3 +1,3 @@
-TIMESTAMP = 1710793811
-SHA256 (torch_geometric-2.5.1.tar.gz) = ed01119f9af58f7d02d53b8380f9538b04e43912c351395d1241076b45698832
-SIZE (torch_geometric-2.5.1.tar.gz) = 740838
+TIMESTAMP = 1711008257
+SHA256 (torch_geometric-2.5.2.tar.gz) = 92059e98cf0334f264606c013df838d4411f461c3871e6b64723b5c40f6dec59
+SIZE (torch_geometric-2.5.2.tar.gz) = 740864
