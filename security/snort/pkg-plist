@@ -173,7 +173,7 @@ lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so.0.0.0
 libdata/pkgconfig/snort.pc
 libdata/pkgconfig/snort_output.pc
 libdata/pkgconfig/snort_preproc.pc
-man/man8/snort.8.gz
+share/man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
