@@ -5,4 +5,4 @@ lib/libfuzzy.a
 lib/libfuzzy.so
 lib/libfuzzy.so.2
 lib/libfuzzy.so.2.1.0
-man/man1/ssdeep.1.gz
+share/man/man1/ssdeep.1.gz

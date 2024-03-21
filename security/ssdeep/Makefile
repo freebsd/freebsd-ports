@@ -1,5 +1,6 @@
 PORTNAME=	ssdeep
 PORTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/ssdeep-project/ssdeep/releases/download/release-${PORTVERSION}/
 
@@ -11,6 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
