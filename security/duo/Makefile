@@ -1,5 +1,6 @@
 PORTNAME=	duo
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		ZI
@@ -15,6 +16,7 @@ CONFIGURE_ARGS=	--with-pam=${PREFIX}/lib/security --sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR} --includedir=${PREFIX}/include/${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		libtool pathfix ssl
 USE_LDCONFIG=	yes
 
