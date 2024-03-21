@@ -1,5 +1,6 @@
 PORTNAME=	knocker
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	SF
 
@@ -13,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/knocker \
-		man/man1/knocker.1.gz
+		share/man/man1/knocker.1.gz
 
 .include <bsd.port.mk>
