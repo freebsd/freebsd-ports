@@ -29,11 +29,8 @@ lib/cmake/SpFFT/SpFFTTargets.cmake
 lib/cmake/SpFFT/modules/FindARMPL.cmake
 lib/cmake/SpFFT/modules/FindFFTW.cmake
 lib/cmake/SpFFT/modules/FindFFTWF.cmake
-lib/cmake/SpFFT/modules/FindHIP.cmake
-lib/cmake/SpFFT/modules/FindHIP/run_hipcc.cmake
-lib/cmake/SpFFT/modules/FindHIP/run_make2cmake.cmake
 lib/cmake/SpFFT/modules/FindMKLSequential.cmake
 lib/libspfft.so
 lib/libspfft.so.1
-lib/libspfft.so.1.0.6
+lib/libspfft.so.1.1.0
 libdata/pkgconfig/SpFFT.pc
