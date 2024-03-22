@@ -3,8 +3,8 @@
 bin/monitorix
 @dir %%WWWDIR%%/usage
 %%CGIDIR%%/monitorix.cgi
-man/man5/monitorix.conf.5.gz
-man/man8/monitorix.8.gz
+share/man/man5/monitorix.conf.5.gz
+share/man/man8/monitorix.8.gz
 @rmtry %B/monitorix.conf.path
 %%WWWDIR%%/reports/ca.html.sample
 %%WWWDIR%%/reports/de.html.sample

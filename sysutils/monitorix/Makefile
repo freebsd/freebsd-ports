@@ -1,5 +1,6 @@
 PORTNAME=	monitorix
 PORTVERSION=	3.14.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
@@ -97,7 +98,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi \
 		${STAGEDIR}${PREFIX}/${CGIDIR}/
 .for s in 5 8
-	${INSTALL_MAN} ${WRKSRC}/man/man$s/* ${STAGEDIR}${PREFIX}/man/man$s/
+	${INSTALL_MAN} ${WRKSRC}/man/man$s/* ${STAGEDIR}${PREFIX}/share/man/man$s/
 .endfor
 	${MKDIR} ${STAGEDIR}${WWWDIR}/reports
 .for l in ${REPORT_LANG}
