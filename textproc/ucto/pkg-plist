@@ -6,7 +6,7 @@ lib/libucto.so
 lib/libucto.so.6
 lib/libucto.so.6.0.0
 libdata/pkgconfig/ucto.pc
-man/man1/ucto.1.gz
+share/man/man1/ucto.1.gz
 %%DATADIR%%/textcat.cfg
 %%DATADIR%%/textcat_alt.cfg
 %%DATADIR%%/textcat_normal.cfg

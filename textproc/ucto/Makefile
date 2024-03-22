@@ -1,6 +1,6 @@
 PORTNAME=	ucto
 DISTVERSION=	0.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -24,6 +24,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip
