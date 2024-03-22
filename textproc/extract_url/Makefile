@@ -1,6 +1,7 @@
 PORTNAME=	extract_url
 PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -20,13 +21,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	m3m0ryh0l3
 GH_PROJECT=	extracturl
 
-MAKE_ARGS=	all prefix=${PREFIX} man_prefix=${PREFIX}
+MAKE_ARGS=	all prefix=${PREFIX} man_prefix=${PREFIX}/share
 SUB_FILES=	pkg-message
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/extract_url \
 		share/extract_url/extract_urlview.sample \
-		man/man1/extract_url.1.gz
+		share/man/man1/extract_url.1.gz
 PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=		DOCS URI_FIND
