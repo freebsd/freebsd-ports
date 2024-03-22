@@ -1,5 +1,6 @@
 PORTNAME=	ibus-table
 DISTVERSION=	1.17.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +24,7 @@ GH_ACCOUNT=	kaio
 SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.table.gschema.xml
 
