@@ -1,6 +1,6 @@
 PORTNAME=	runit
 PORTVERSION=	2.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -58,7 +58,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/* ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/* ${STAGEDIR}${PREFIX}/share/man/man8/
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/getty-ttyv4
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${STAGEDIR}${ETCDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/getty-ttyv4/* \

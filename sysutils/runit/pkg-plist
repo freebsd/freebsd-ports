@@ -5,15 +5,6 @@
 @sample %%ETCDIR%%/getty-ttyv4/run.sample
 @sample %%ETCDIR%%/getty-ttyv4/finish.sample
 @sample %%ETCDIR%%/getty-ttyv4/whichtty.sample
-man/man8/chpst.8.gz
-man/man8/runit-init.8.gz
-man/man8/runit.8.gz
-man/man8/runsv.8.gz
-man/man8/runsvchdir.8.gz
-man/man8/runsvdir.8.gz
-man/man8/sv.8.gz
-man/man8/svlogd.8.gz
-man/man8/utmpset.8.gz
 sbin/chpst
 sbin/runit
 sbin/runit-init
@@ -23,3 +14,12 @@ sbin/runsvdir
 sbin/sv
 sbin/svlogd
 sbin/utmpset
+share/man/man8/chpst.8.gz
+share/man/man8/runit-init.8.gz
+share/man/man8/runit.8.gz
+share/man/man8/runsv.8.gz
+share/man/man8/runsvchdir.8.gz
+share/man/man8/runsvdir.8.gz
+share/man/man8/sv.8.gz
+share/man/man8/svlogd.8.gz
+share/man/man8/utmpset.8.gz
