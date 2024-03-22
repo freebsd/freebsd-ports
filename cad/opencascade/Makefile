@@ -1,7 +1,9 @@
 PORTNAME=	opencascade
 DISTVERSIONPREFIX=	V
 DISTVERSION=	7_8_0
+PORTREVISION=	1
 CATEGORIES=	cad science
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
