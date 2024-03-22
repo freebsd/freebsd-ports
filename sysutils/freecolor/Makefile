@@ -1,5 +1,6 @@
 PORTNAME=	freecolor
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 
@@ -13,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_ENV+=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 USES=		pkgconfig
 
-PLIST_FILES=	bin/freecolor man/man1/freecolor.1.gz
+PLIST_FILES=	bin/freecolor share/man/man1/freecolor.1.gz
 
 .include <bsd.port.mk>
