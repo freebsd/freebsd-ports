@@ -1,6 +1,6 @@
---- base/native_library_unittest.cc.orig	2024-01-30 07:53:34 UTC
+--- base/native_library_unittest.cc.orig	2024-03-22 08:19:40 UTC
 +++ base/native_library_unittest.cc
-@@ -135,7 +135,7 @@ TEST(NativeLibraryTest, LoadLibrary) {
+@@ -133,7 +133,7 @@ TEST(NativeLibraryTest, LoadLibrary) {
  // versions with respect to symbol resolution scope.
  // TSan and MSan error out on RTLD_DEEPBIND, https://crbug.com/705255
  #if !BUILDFLAG(IS_ANDROID) && !defined(THREAD_SANITIZER) && \

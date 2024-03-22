@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manager.cc.orig	2024-02-23 21:04:38 UTC
+--- components/password_manager/core/browser/password_manager.cc.orig	2024-03-22 08:19:40 UTC
 +++ components/password_manager/core/browser/password_manager.cc
-@@ -363,7 +363,7 @@ void PasswordManager::RegisterProfilePrefs(
+@@ -361,7 +361,7 @@ void PasswordManager::RegisterProfilePrefs(
    registry->RegisterListPref(prefs::kPasswordManagerPromoCardsList);
  #endif  // BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_IOS)
    registry->RegisterBooleanPref(prefs::kPasswordSharingEnabled, true);

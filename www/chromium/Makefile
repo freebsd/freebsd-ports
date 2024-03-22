@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	122.0.6261.111
+PORTVERSION=	123.0.6312.58
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gperf:devel/gperf \
 		flock:sysutils/flock \
 		node:www/node \
+		rustc:lang/rust \
 		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -101,7 +102,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_log_error_not_reached=true \
 		enable_nacl=false \
 		enable_remoting=false \
-		enable_rust=false \
 		enable_widevine=true \
 		fatal_linker_warnings=false \
 		icu_use_data_file=false \
@@ -268,6 +268,13 @@ LDFLAGS_i386=	-Wl,-znotext
 # build would fail without C_INCLUDE_PATH/CPLUS_INCLUDE_PATH env var set.
 MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
+
+# rust
+RUSTC_VERSION!=	rustc -V 2>/dev/null || true
+MAKE_ENV+=	RUSTC_BOOTSTRAP=1
+GN_ARGS+=	enable_rust=true \
+		rust_sysroot_absolute="${LOCALBASE}" \
+		rustc_version="${RUSTC_VERSION}"
 
 pre-everything::
 	@${ECHO_MSG}

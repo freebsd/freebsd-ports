@@ -1,6 +1,6 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2024-03-22 08:19:40 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  #include "chrome/common/chrome_switches.h"
  #include "content/public/common/content_switches.h"
  
@@ -9,7 +9,7 @@
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -86,7 +86,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
+@@ -87,7 +87,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
        command_line->AppendSwitchPath(switches::kUserDataDir, GetUserDataDir());
      }
  

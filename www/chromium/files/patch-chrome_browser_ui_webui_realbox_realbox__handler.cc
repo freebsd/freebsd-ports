@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/realbox/realbox_handler.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/ui/webui/realbox/realbox_handler.cc.orig	2024-03-22 08:19:40 UTC
 +++ chrome/browser/ui/webui/realbox/realbox_handler.cc
 @@ -148,7 +148,7 @@ const char* kMacShareIconResourceName =
  #elif BUILDFLAG(IS_WIN)
@@ -18,7 +18,7 @@
    kLinuxShareIconResourceName =
        "//resources/cr_components/omnibox/icons/share_cr23.svg";
  #else
-@@ -835,7 +835,7 @@ std::string RealboxHandler::PedalVectorIconToResourceN
+@@ -837,7 +837,7 @@ std::string RealboxHandler::PedalVectorIconToResourceN
        icon.name == omnibox::kShareWinChromeRefreshIcon.name) {
      return kWinShareIconResourceName;
    }

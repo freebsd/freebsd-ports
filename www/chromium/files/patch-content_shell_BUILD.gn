@@ -1,6 +1,6 @@
---- content/shell/BUILD.gn.orig	2024-01-30 07:53:34 UTC
+--- content/shell/BUILD.gn.orig	2024-03-22 08:19:40 UTC
 +++ content/shell/BUILD.gn
-@@ -1030,7 +1030,7 @@ group("content_shell_crash_test") {
+@@ -1027,7 +1027,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

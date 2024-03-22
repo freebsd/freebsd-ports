@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2024-02-23 21:04:38 UTC
+--- media/base/video_frame.cc.orig	2024-03-22 08:19:40 UTC
 +++ media/base/video_frame.cc
 @@ -80,7 +80,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -18,7 +18,7 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -306,7 +306,7 @@ static absl::optional<VideoFrameLayout> GetDefaultLayo
+@@ -306,7 +306,7 @@ static std::optional<VideoFrameLayout> GetDefaultLayou
    return VideoFrameLayout::CreateWithPlanes(format, coded_size, planes);
  }
  

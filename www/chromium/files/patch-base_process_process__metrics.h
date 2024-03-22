@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2023-12-10 06:10:27 UTC
+--- base/process/process_metrics.h.orig	2024-03-22 08:19:40 UTC
 +++ base/process/process_metrics.h
 @@ -37,7 +37,7 @@
  #endif
@@ -109,7 +109,7 @@
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
-@@ -588,7 +586,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -594,7 +592,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

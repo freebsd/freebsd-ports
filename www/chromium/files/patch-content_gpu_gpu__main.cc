@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2024-01-30 07:53:34 UTC
+--- content/gpu/gpu_main.cc.orig	2024-03-22 08:19:40 UTC
 +++ content/gpu/gpu_main.cc
 @@ -91,7 +91,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -330,7 +330,8 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -328,7 +328,8 @@ int GpuMain(MainFunctionParams parameters) {
    // before it.
    InitializeSkia();
  
@@ -46,7 +46,7 @@
    // Thread type delegate of the process should be registered before
    // first thread type change in ChildProcess constructor.
    // It also needs to be registered before the process has multiple threads,
-@@ -438,7 +439,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -436,7 +437,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -55,7 +55,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -478,7 +479,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -476,7 +477,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

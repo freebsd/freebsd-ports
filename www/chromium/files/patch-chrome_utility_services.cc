@@ -1,6 +1,6 @@
---- chrome/utility/services.cc.orig	2024-01-30 07:53:34 UTC
+--- chrome/utility/services.cc.orig	2024-03-22 08:19:40 UTC
 +++ chrome/utility/services.cc
-@@ -57,7 +57,7 @@
+@@ -55,7 +55,7 @@
  #include "chrome/services/system_signals/mac/mac_system_signals_service.h"
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +9,7 @@
  #include "chrome/services/system_signals/linux/linux_system_signals_service.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -83,7 +83,7 @@
+@@ -81,7 +81,7 @@
  #include "chrome/services/file_util/file_util_service.h"  // nogncheck
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/services/file_util/document_analysis_service.h"  // nogncheck
  #endif
  
-@@ -219,7 +219,7 @@ auto RunMacNotificationService(
+@@ -212,7 +212,7 @@ auto RunMacNotificationService(
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -27,7 +27,7 @@
  auto RunSystemSignalsService(
      mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
          receiver) {
-@@ -279,7 +279,7 @@ auto RunCupsIppParser(
+@@ -272,7 +272,7 @@ auto RunCupsIppParser(
  }
  #endif
  
@@ -36,7 +36,7 @@
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -467,7 +467,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -465,7 +465,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@
    services.Add(RunSystemSignalsService);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -483,7 +483,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -481,7 +481,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  

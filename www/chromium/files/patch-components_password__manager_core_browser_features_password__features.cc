@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2024-02-23 21:04:38 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2024-03-22 08:19:40 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
 @@ -24,7 +24,7 @@ BASE_FEATURE(kButterOnDesktopFollowup,
  
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -104,7 +104,7 @@ BASE_FEATURE(kPasswordManagerLogToTerminal,
+@@ -99,7 +99,7 @@ BASE_FEATURE(kPasswordManagerLogToTerminal,
               "PasswordManagerLogToTerminal",
               base::FEATURE_DISABLED_BY_DEFAULT);
  

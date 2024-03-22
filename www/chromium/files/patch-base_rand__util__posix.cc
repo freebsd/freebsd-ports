@@ -1,4 +1,4 @@
---- base/rand_util_posix.cc.orig	2024-02-23 21:04:38 UTC
+--- base/rand_util_posix.cc.orig	2024-03-22 08:19:40 UTC
 +++ base/rand_util_posix.cc
 @@ -23,7 +23,7 @@
  #include "base/time/time.h"
@@ -49,7 +49,7 @@
  
  }  // namespace
 @@ -239,9 +245,11 @@ void RandBytes(void* output, size_t output_length) {
-   RandBytes(make_span(reinterpret_cast<uint8_t*>(output), output_length));
+   RandBytes(make_span(static_cast<uint8_t*>(output), output_length));
  }
  
 +#if !BUILDFLAG(IS_BSD)

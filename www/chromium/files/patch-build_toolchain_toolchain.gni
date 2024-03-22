@@ -1,6 +1,6 @@
---- build/toolchain/toolchain.gni.orig	2023-11-03 10:09:45 UTC
+--- build/toolchain/toolchain.gni.orig	2024-03-22 08:19:40 UTC
 +++ build/toolchain/toolchain.gni
-@@ -72,7 +72,7 @@ if (host_os == "mac") {
+@@ -68,7 +68,7 @@ if (host_os == "mac") {
    host_shlib_extension = ".dylib"
  } else if (host_os == "win") {
    host_shlib_extension = ".dll"
