@@ -1,4 +1,4 @@
---- Makefile.simde.orig	2021-11-18 22:11:48 UTC
+--- Makefile.simde.orig	2024-03-12 17:20:07 UTC
 +++ Makefile.simde
 @@ -1,13 +1,26 @@
 -CFLAGS=		-g -Wall -O2 -Wc++-compat #-Wextra
@@ -21,7 +21,7 @@
  LIBS=		-lm -lz -lpthread
  
 +PREFIX?=	/usr/local
-+MAN1DIR?=	${PREFIX}/man/man1
++MAN1DIR?=	${PREFIX}/share/man/man1
 +DATADIR?=	${PREFIX}/share/minimap2
  
 +MKDIR?=		mkdir
@@ -32,7 +32,7 @@
  ifneq ($(arm_neon),) # if arm_neon is defined
  ifeq ($(aarch64),)   #if aarch64 is not defined
  	CFLAGS+=-D_FILE_OFFSET_BITS=64 -mfpu=neon -fsigned-char
-@@ -26,7 +39,7 @@ ifneq ($(tsan),)
+@@ -26,7 +39,7 @@ endif
  	LIBS+=-fsanitize=thread
  endif
  
