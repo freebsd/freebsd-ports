@@ -1,6 +1,12 @@
---- doc/Makefile.orig	2021-03-26 23:12:34 UTC
+--- doc/Makefile.orig	2017-05-15 07:49:44 UTC
 +++ doc/Makefile
-@@ -16,7 +16,7 @@ index.html: $(INPUTS) $(HALIBUT)
+@@ -1,4 +1,4 @@
+-mandir=$(prefix)/man
++mandir=$(prefix)/share/man
+ man1dir=$(mandir)/man1
+ 
+ CHAPTERS := $(SITE) blurb intro running input output licence manpage index
+@@ -16,7 +16,7 @@ halibut.1: manpage.but
  halibut.1: manpage.but
  	$(HALIBUT) --man=halibut.1 manpage.but
  

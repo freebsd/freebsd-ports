@@ -1,5 +1,6 @@
 PORTNAME=	halibut
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-${DISTVERSION}/
 
@@ -15,6 +16,6 @@ USES=		gmake perl5
 CFLAGS+=	-fcommon # ld: error: duplicate symbol: all_fonts
 
 PLIST_FILES=	bin/halibut \
-		man/man1/halibut.1.gz
+		share/man/man1/halibut.1.gz
 
 .include <bsd.port.mk>
