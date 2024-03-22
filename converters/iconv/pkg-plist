@@ -13,10 +13,10 @@ libexec/iconv/iso-10646-ucs-2.so
 libexec/iconv/iso-10646-ucs-4.so
 libexec/iconv/ucs-2-internal.so
 libexec/iconv/utf-16.so
-man/man1/biconv.1.gz
-man/man3/biconv.3.gz
-man/man3/biconv_close.3.gz
-man/man3/biconv_open.3.gz
+share/man/man1/biconv.1.gz
+share/man/man3/biconv.3.gz
+share/man/man3/biconv_close.3.gz
+share/man/man3/biconv_open.3.gz
 %%DATADIR%%/big5.cct
 %%DATADIR%%/charset.aliases
 %%DATADIR%%/cns11643-plane1.cct
