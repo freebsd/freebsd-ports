@@ -11,10 +11,13 @@ share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/staging/ext-session-lock/ext-session-lock-v1.xml
 %%DATADIR%%/staging/ext-transient-seat/ext-transient-seat-v1.xml
 %%DATADIR%%/staging/fractional-scale/fractional-scale-v1.xml
+%%DATADIR%%/staging/linux-drm-syncobj/linux-drm-syncobj-v1.xml
 %%DATADIR%%/staging/security-context/security-context-v1.xml
 %%DATADIR%%/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
 %%DATADIR%%/staging/tearing-control/tearing-control-v1.xml
 %%DATADIR%%/staging/xdg-activation/xdg-activation-v1.xml
+%%DATADIR%%/staging/xdg-dialog/xdg-dialog-v1.xml
+%%DATADIR%%/staging/xdg-toplevel-drag/xdg-toplevel-drag-v1.xml
 %%DATADIR%%/staging/xwayland-shell/xwayland-shell-v1.xml
 %%DATADIR%%/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
 %%DATADIR%%/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml
