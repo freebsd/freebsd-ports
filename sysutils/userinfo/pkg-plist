@@ -2,4 +2,4 @@ bin/ui
 lib/userinfo/login.so
 lib/userinfo/mail.so
 lib/userinfo/passwd.so
-man/man1/ui.1.gz
+share/man/man1/ui.1.gz
