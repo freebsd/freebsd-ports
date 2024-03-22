@@ -1,0 +1,3 @@
+timm is a library containing SOTA computer vision models, layers, utilities,
+optimizers, schedulers, data-loaders, augmentations, and training/evaluation
+scripts.
