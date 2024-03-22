@@ -1,5 +1,6 @@
 PORTNAME=	cmogstored
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://yhbt.net/cmogstored/files/
 
@@ -16,9 +17,10 @@ BROKEN_mips64=		failst to compile: fdmap.c:89: undefined reference to `__sync_ad
 USES=		compiler:c11
 
 PLIST_FILES=	sbin/cmogstored \
-		man/man1/cmogstored.1.gz
+		share/man/man1/cmogstored.1.gz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin
 USE_RC_SUBR=	cmogstored
 TEST_TARGET=	check
