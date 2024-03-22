@@ -2,4 +2,4 @@
 bin/npmount
 @mode
 @sample %%ETCDIR%%.conf.sample
-man/man1/npmount.1.gz
+share/man/man1/npmount.1.gz
