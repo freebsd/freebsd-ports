@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2017-12-20 09:59:37 UTC
 +++ CMakeLists.txt
-@@ -167,13 +167,7 @@ if(ENABLE_TESTS AND NOT THROW_INSTEAD_OF_ABORT)
+@@ -167,13 +167,7 @@ endif()
    message(STATUS "THROW_INSTEAD_OF_ABORT: ${THROW_INSTEAD_OF_ABORT}")
  endif()
  
@@ -15,20 +15,18 @@
  
  if(ENABLE_DEBIAN_PATHS)
    if (NOT CMAKE_INSTALL_PREFIX STREQUAL "/")
-@@ -193,9 +187,9 @@ else()
+@@ -193,8 +187,8 @@ else()
    set(SBIN_SUBDIR  "sbin")
    set(LIB_SUBDIR   "lib${LIBSUFFIX}")
    set(ETC_SUBDIR   "etc/mfs")
 -  set(RUN_SUBDIR   "var/run/mfs")
 -  set(DATA_SUBDIR  "var/lib/mfs")
--  set(MAN_SUBDIR   "share/man")
 +  set(RUN_SUBDIR   "/var/run/mfs")
 +  set(DATA_SUBDIR  "/var/mfs")
-+  set(MAN_SUBDIR   "man")
+   set(MAN_SUBDIR   "share/man")
    set(CGI_SUBDIR   "share/mfscgi")
    set(INCL_SUBDIR  "include/lizardfs")
- endif()
-@@ -205,8 +199,6 @@ set(BIN_PATH   ${INSTALL_PREFIX_NO_SLASH}/${BIN_SUBDIR
+@@ -205,8 +199,6 @@ set(ETC_PATH   ${INSTALL_PREFIX_NO_SLASH}/${ETC_SUBDIR
  set(SBIN_PATH  ${INSTALL_PREFIX_NO_SLASH}/${SBIN_SUBDIR})
  set(LIB_PATH   ${INSTALL_PREFIX_NO_SLASH}/${LIB_SUBDIR})
  set(ETC_PATH   ${INSTALL_PREFIX_NO_SLASH}/${ETC_SUBDIR})
