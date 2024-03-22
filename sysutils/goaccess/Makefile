@@ -1,5 +1,6 @@
 PORTNAME=	goaccess
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://tar.goaccess.io/
 
@@ -15,6 +16,7 @@ USE_RC_SUBR=	goaccess
 
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-utf8
 
 CFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
