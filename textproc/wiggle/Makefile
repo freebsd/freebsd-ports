@@ -1,5 +1,6 @@
 PORTNAME=	wiggle
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://neil.brown.name/wiggle/
 
@@ -23,6 +24,6 @@ pre-patch:
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/wiggle ${STAGEDIR}${PREFIX}/bin/
-		${INSTALL_MAN} ${WRKSRC}/wiggle.1 ${STAGEDIR}${PREFIX}/man/man1/
+		${INSTALL_MAN} ${WRKSRC}/wiggle.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
