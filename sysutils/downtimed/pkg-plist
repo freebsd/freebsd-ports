@@ -1,7 +1,7 @@
 bin/downtime
 bin/downtimes
-man/man1/downtime.1.gz
-man/man1/downtimes.1.gz
-man/man8/downtimed.8.gz
 sbin/downtimed
+share/man/man1/downtime.1.gz
+share/man/man1/downtimes.1.gz
+share/man/man8/downtimed.8.gz
 @dir /var/db/downtimed
