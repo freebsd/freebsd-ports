@@ -13,6 +13,8 @@ LLVM_COMMANDS=	\
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
+		llvm-cxxdump \
+		llvm-cxxfilt \
 		llvm-cxxmap \
 		llvm-debuginfod \
 		llvm-debuginfod-find \
