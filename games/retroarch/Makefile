@@ -4,7 +4,7 @@ DISTVERSION=	1.18.0
 PORTREVISION=	1
 CATEGORIES=	games emulators
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform entertainment system based on libretro API
 WWW=		https://github.com/libretro/RetroArch
 
