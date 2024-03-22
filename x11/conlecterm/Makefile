@@ -1,7 +1,6 @@
 PORTNAME=	conlecterm
-PORTVERSION=	1.4.3.1
+PORTVERSION=	1.5.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	hsw@bitmark.com
@@ -11,10 +10,11 @@ WWW=		https://github.com/hxw/conlecterm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	urxvt:x11/rxvt-unicode
 
 USES=		cabal xorg gnome pkgconfig
-USE_GNOME=	gtk30 cairo glib20
+USE_GNOME=	gtk30 cairo glib20 gdkpixbuf2
 USE_XORG=	xext x11 xscrnsaver xinerama xrandr
 
 OPTIONS_DEFINE=	EXAMPLES
@@ -30,10 +30,10 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		StateVar-1.2.2 \
 		X11-1.10.3 \
 		aeson-2.2.1.0_1 \
-		alex-3.5.0.0 \
+		alex-3.5.1.0 \
 		assoc-1.1_1 \
 		base-orphans-0.9.1 \
-		bifunctors-5.6.1_2 \
+		bifunctors-5.6.1_3 \
 		cairo-0.13.10.0_2 \
 		comonad-5.0.8_2 \
 		contravariant-1.5.5 \
@@ -41,7 +41,6 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		data-fix-0.3.2_5 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_1 \
-		foldable1-classes-compat-0.1_4 \
 		generically-0.1.1_2 \
 		gio-0.13.10.0_1 \
 		glib-0.13.10.0_2 \
@@ -56,17 +55,17 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		integer-logarithms-1.0.3.1_5 \
 		network-uri-2.6.4.2_1 \
 		pango-0.13.10.0_2 \
-		primitive-0.9.0.0 \
-		random-1.2.1.1_1 \
+		primitive-0.9.0.0_1 \
+		random-1.2.1.2 \
 		scientific-0.3.7.0_7 \
 		semialign-1.3_1 \
 		semigroupoids-6.0.0.1_1 \
 		splitmix-0.1.0.5 \
 		strict-0.5_1 \
-		tagged-0.8.8 \
+		tagged-0.8.8_1 \
 		text-iso8601-0.1_1 \
 		text-short-0.1.5_3 \
-		th-abstraction-0.6.0.0_1 \
+		th-abstraction-0.6.0.0_2 \
 		th-compat-0.1.4_4 \
 		these-1.2_1 \
 		time-compat-1.9.6.1_6 \
@@ -74,8 +73,8 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		unordered-containers-0.2.20_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5.1 \
-		vector-0.13.1.0 \
-		vector-stream-0.1.0.1 \
+		vector-0.13.1.0_1 \
+		vector-stream-0.1.0.1_1 \
 		witherable-0.4.2_4
 
 PLIST_FILES+=	share/applications/conlecterm.desktop
