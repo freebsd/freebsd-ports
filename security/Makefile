@@ -1073,6 +1073,7 @@
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
     SUBDIR += rage-encryption
+    SUBDIR += ratify
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += rcracki_mt
