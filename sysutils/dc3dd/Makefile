@@ -1,5 +1,6 @@
 PORTNAME=	dc3dd
 PORTVERSION=	7.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -15,6 +16,7 @@ BROKEN_armv7=		fails to compile: bit-field 'verify_error_if_negative_size__' has
 
 USES=		gettext iconv gmake zip
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
