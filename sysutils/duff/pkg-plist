@@ -1,7 +1,7 @@
 bin/duff
-man/man1/duff.1.gz
 share/duff/join-duplicates.sh
 %%NLS%%share/locale/en/LC_MESSAGES/duff.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/duff.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/duff.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/duff.mo
+share/man/man1/duff.1.gz
