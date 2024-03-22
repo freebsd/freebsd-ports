@@ -1,5 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.19
+DISTVERSION=	1.0.20
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,10 +22,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.81 \
 		autocfg-1.1.0 \
-		backtrace-0.3.69 \
+		backtrace-0.3.70 \
 		base64-0.21.7 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.15.4 \
 		bytes-1.5.0 \
@@ -49,15 +49,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		gimli-0.28.1 \
-		h2-0.3.24 \
+		h2-0.4.3 \
 		hashbrown-0.14.3 \
+		hermit-abi-0.3.9 \
 		home-0.5.9 \
-		http-0.2.12 \
-		http-body-0.4.6 \
+		http-1.1.0 \
+		http-body-1.0.0 \
+		http-body-util-0.1.1 \
 		httparse-1.8.0 \
-		httpdate-1.0.3 \
-		hyper-0.14.28 \
-		hyper-tls-0.5.0 \
+		hyper-1.2.0 \
+		hyper-tls-0.6.0 \
+		hyper-util-0.1.3 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
@@ -76,6 +78,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		native-tls-0.2.11 \
 		normpath-1.2.0 \
 		num-traits-0.2.18 \
+		num_cpus-1.16.0 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
 		opener-0.6.1 \
@@ -84,15 +87,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.101 \
 		percent-encoding-2.3.1 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
 		proc-macro2-1.0.79 \
 		quote-1.0.35 \
 		regex-automata-0.4.6 \
-		reqwest-0.11.26 \
+		reqwest-0.12.0 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.31 \
+		rustix-0.38.32 \
 		rustls-pemfile-1.0.4 \
 		ryu-1.0.17 \
 		schannel-0.1.23 \
@@ -102,10 +107,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_derive-1.0.197 \
 		serde_json-1.0.114 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.32 \
+		serde_yaml-0.9.33 \
 		slab-0.4.9 \
+		smallvec-1.13.2 \
 		socket2-0.5.6 \
-		syn-2.0.52 \
+		syn-2.0.53 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -117,6 +123,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-1.36.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.10 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -124,7 +132,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
-		unsafe-libyaml-0.2.10 \
+		unsafe-libyaml-0.2.11 \
 		url-2.5.0 \
 		vcpkg-0.2.15 \
 		want-0.3.1 \
