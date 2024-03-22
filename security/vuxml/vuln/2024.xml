@@ -1,3 +1,48 @@
+  <vuln vid="80815c47-e84f-11ee-8e76-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>123.0.6312.58</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>123.0.6312.58</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/03/stable-channel-update-for-desktop_19.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[327740539] High CVE-2024-2625: Object lifecycle issue in V8. Reported by Ganjiang Zhou(@refrain_areu) of ChaMd5-H1 team on 2024-03-01</li>
+	    <li>[40945098] Medium CVE-2024-2626: Out of bounds read in Swiftshader. Reported by Cassidy Kim(@cassidy6564) on 2023-11-22</li>
+	    <li>[41493290] Medium CVE-2024-2627: Use after free in Canvas. Reported by Anonymous on 2024-01-21</li>
+	    <li>[41487774] Medium CVE-2024-2628: Inappropriate implementation in Downloads. Reported by Ath3r1s on 2024-01-03</li>
+	    <li>[41487721] Medium CVE-2024-2629: Incorrect security UI in iOS. Reported by Muneaki Nishimura (nishimunea) on 2024-01-02</li>
+	    <li>[41481877] Medium CVE-2024-2630: Inappropriate implementation in iOS. Reported by James Lee (@Windowsrcer) on 2023-12-07</li>
+	    <li>[41495878] Low CVE-2024-2631: Inappropriate implementation in iOS. Reported by Ramit Gangwar on 2024-01-29</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2625</cvename>
+      <cvename>CVE-2024-2626</cvename>
+      <cvename>CVE-2024-2627</cvename>
+      <cvename>CVE-2024-2628</cvename>
+      <cvename>CVE-2024-2629</cvename>
+      <cvename>CVE-2024-2630</cvename>
+      <cvename>CVE-2024-2631</cvename>
+      <url>https://chromereleases.googleblog.com/2024/03/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2024-03-19</discovery>
+      <entry>2024-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a7129ef-e790-11ee-a1c0-0050569f0b83">
     <topic>security/shibboleth-idp -- CAS service SSRF</topic>
     <affects>
