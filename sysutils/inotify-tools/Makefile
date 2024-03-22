@@ -1,5 +1,6 @@
 PORTNAME=	inotify-tools
 DISTVERSION=	4.23.9.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +20,7 @@ USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.t *.sh
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-doxygen
 
 INSTALL_TARGET=	install-strip
