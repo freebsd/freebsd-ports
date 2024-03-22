@@ -1,6 +1,7 @@
 PORTNAME=	bulk_extractor
 PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -33,11 +34,12 @@ GH_TAG_DFXML_SCHEMA=	f2a702e
 GH_TAG_UTFCPP=	2ad9957
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-exiv2=true
 
 TEST_TARGET=	check
 
-PLIST_FILES=	bin/bulk_extractor man/man1/bulk_extractor.1.gz
+PLIST_FILES=	bin/bulk_extractor share/man/man1/bulk_extractor.1.gz
 
 post-extract:
 	${CP} -R ${WRKSRC_be20_api}/* ${WRKSRC}/src/be20_api/
