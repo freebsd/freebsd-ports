@@ -189,7 +189,6 @@ SSP_UNSAFE=	yes
 LDFLAGS+=	-latomic
 USES+=		compiler:gcc-c++11-lib
 .else
-CXXFLAGS+=	-malign-double
 USES+=		compiler:c++17-lang
 .endif
 
