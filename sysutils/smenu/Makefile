@@ -1,6 +1,7 @@
 PORTNAME=	smenu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -16,8 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	p-gen
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/smenu \
-		man/man1/smenu.1.gz
+		share/man/man1/smenu.1.gz
 
 .include <bsd.port.mk>
