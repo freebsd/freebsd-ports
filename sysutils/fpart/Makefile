@@ -1,5 +1,6 @@
 PORTNAME=	fpart
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/
@@ -11,9 +12,10 @@ WWW=		https://contribs.martymac.org
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-embfts
 
-PLIST_FILES=	bin/fpart man/man1/fpart.1.gz
+PLIST_FILES=	bin/fpart share/man/man1/fpart.1.gz
 PORTDOCS=	Changelog.md README.md TODO
 
 OPTIONS_DEFINE=	FPSYNC DOCS
@@ -21,7 +23,7 @@ OPTIONS_DEFAULT=	FPSYNC
 FPSYNC_DESC=	Install fpsync tool
 FPSYNC_RUN_DEPENDS=	rsync:net/rsync \
 			sudo:security/sudo
-FPSYNC_PLIST_FILES=	bin/fpsync man/man1/fpsync.1.gz
+FPSYNC_PLIST_FILES=	bin/fpsync share/man/man1/fpsync.1.gz
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
