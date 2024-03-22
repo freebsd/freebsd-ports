@@ -1,6 +1,5 @@
 PORTNAME=	pam_xdg
-DISTVERSION=	0.8.2
-PORTREVISION=	1
+DISTVERSION=	0.8.3
 CATEGORIES=	sysutils wayland
 MASTER_SITES=	https://ftp.sdaoden.eu/
 
