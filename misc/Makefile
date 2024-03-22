@@ -450,6 +450,7 @@
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
     SUBDIR += py-openai
+    SUBDIR += py-openai-whisper
     SUBDIR += py-openpaperwork-core
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
