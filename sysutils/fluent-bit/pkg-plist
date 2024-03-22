@@ -51,6 +51,7 @@ include/fluent-bit/flb_help.h
 include/fluent-bit/flb_hmac.h
 include/fluent-bit/flb_http_client.h
 include/fluent-bit/flb_http_client_debug.h
+include/fluent-bit/flb_http_common.h
 include/fluent-bit/flb_http_server.h
 include/fluent-bit/flb_info.h
 include/fluent-bit/flb_input.h
@@ -86,6 +87,8 @@ include/fluent-bit/flb_metrics.h
 include/fluent-bit/flb_metrics_exporter.h
 include/fluent-bit/flb_motd.h
 include/fluent-bit/flb_mp.h
+include/fluent-bit/flb_mp_chunk.h
+include/fluent-bit/flb_msgpack_append_message.h
 include/fluent-bit/flb_net_dns.h
 include/fluent-bit/flb_network.h
 include/fluent-bit/flb_oauth2.h
