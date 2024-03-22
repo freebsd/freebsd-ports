@@ -11,10 +11,10 @@ Date:   Thu Jun 13 11:53:00 2019 -0700
  4 files changed, 34 insertions(+), 3 deletions(-)
 
 diff --git config/external/moz.build config/external/moz.build
-index a0877c9d717e..5caa2036e0ec 100644
+index 2fc8df57992e..63d18e50a961 100644
 --- config/external/moz.build
 +++ config/external/moz.build
-@@ -45,8 +45,9 @@ if not CONFIG["MOZ_SYSTEM_LIBVPX"]:
+@@ -40,8 +40,9 @@ if not CONFIG["MOZ_SYSTEM_LIBVPX"]:
      external_dirs += ["media/libvpx"]
  
  if CONFIG["MOZ_AV1"]:
@@ -26,30 +26,11 @@ index a0877c9d717e..5caa2036e0ec 100644
  
  if not CONFIG["MOZ_SYSTEM_PNG"]:
      external_dirs += ["media/libpng"]
-diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index d9489c8f15e4..4d2f15e18c1c 100644
---- config/system-headers.mozbuild
-+++ config/system-headers.mozbuild
-@@ -1291,6 +1291,14 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
-         'proxy.h',
-     ]
- 
-+if CONFIG['MOZ_SYSTEM_AV1']:
-+    system_headers += [
-+        'aom/aom_decoder.h',
-+        'aom/aomdx.h',
-+        'aom/aom_image.h',
-+        'dav1d/dav1d.h',
-+    ]
-+
- if CONFIG['MOZ_SYSTEM_LIBVPX']:
-     system_headers += [
-         'vpx_mem/vpx_mem.h',
 diff --git dom/media/platforms/moz.build dom/media/platforms/moz.build
-index c71f22a22eee..efbd523b1225 100644
+index 5c6e25b3980b..ce99ebfb6d3f 100644
 --- dom/media/platforms/moz.build
 +++ dom/media/platforms/moz.build
-@@ -80,6 +80,11 @@ if CONFIG["MOZ_AV1"]:
+@@ -81,6 +81,11 @@ if CONFIG["MOZ_AV1"]:
          "agnostic/AOMDecoder.cpp",
          "agnostic/DAV1DDecoder.cpp",
      ]
@@ -62,10 +43,10 @@ index c71f22a22eee..efbd523b1225 100644
  if CONFIG["MOZ_OMX"]:
      EXPORTS += [
 diff --git media/ffvpx/libavcodec/moz.build media/ffvpx/libavcodec/moz.build
-index 5675c28234a1..56344e5e4c98 100644
+index 761fc8cf4cd9..793a5b8697a8 100644
 --- media/ffvpx/libavcodec/moz.build
 +++ media/ffvpx/libavcodec/moz.build
-@@ -109,10 +109,14 @@ if not CONFIG['MOZ_FFVPX_AUDIOONLY']:
+@@ -120,10 +120,14 @@ if not CONFIG['MOZ_FFVPX_AUDIOONLY']:
          'vp9recon.c',
          'vpx_rac.c',
      ]
@@ -85,10 +66,10 @@ index 5675c28234a1..56344e5e4c98 100644
          LOCAL_INCLUDES += ['/media/mozva']
          SOURCES += [
 diff --git toolkit/moz.configure toolkit/moz.configure
-index 2e56fa46ce59..23e30935c4bc 100644
+index f93a5d64fec8..814357f4e979 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -745,7 +745,23 @@ def av1(value):
+@@ -744,7 +744,23 @@ def av1(value):
          return True
  
  
@@ -113,7 +94,7 @@ index 2e56fa46ce59..23e30935c4bc 100644
  def dav1d_asm(target):
      if target.cpu in ("aarch64", "x86", "x86_64"):
          return True
-@@ -761,6 +777,7 @@ set_config("MOZ_DAV1D_ASM", dav1d_asm)
+@@ -760,6 +776,7 @@ set_config("MOZ_DAV1D_ASM", dav1d_asm)
  set_define("MOZ_DAV1D_ASM", dav1d_asm)
  set_config("MOZ_AV1", av1)
  set_define("MOZ_AV1", av1)
