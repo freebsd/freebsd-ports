@@ -1,6 +1,7 @@
 PORTNAME=	iocell
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	robak@FreeBSD.org
@@ -28,6 +29,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/iocell ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/iocell ${STAGEDIR}${PREFIX}/sbin
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/iocell)
-	${INSTALL_MAN} ${WRKSRC}/iocell.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/iocell.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
