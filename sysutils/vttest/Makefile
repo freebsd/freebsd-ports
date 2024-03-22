@@ -1,5 +1,6 @@
 PORTNAME=	vttest
 PORTVERSION=	2023.12.30
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/${PORTNAME}/
@@ -15,10 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:tgz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 MAKEFILE=	makefile
 
 PLIST_FILES=	bin/vttest \
-		man/man1/vttest.1.gz
+		share/man/man1/vttest.1.gz
 
 .include <bsd.port.mk>
