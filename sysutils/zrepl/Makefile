@@ -1,7 +1,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	sphinx-multiversion:textproc/py-sphinx-multiversion-zrepl@${PY_FLAVOR}
 MANPAGES_USES=		gmake python:build
-MANPAGES_PLIST_FILES=	man/man1/zrepl.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/zrepl.1.gz
 
 pre-patch:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
@@ -56,6 +56,6 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/dist/grafana/grafana-prometheus-zrepl.json ${STAGEDIR}${EXAMPLESDIR}
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/zrepl.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/zrepl.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
