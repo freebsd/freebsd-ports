@@ -46,9 +46,9 @@ lib/ltfs/libtape-cam.so
 lib/ltfs/libtape-file.so
 lib/ltfs/libtape-itdtimg.so
 libdata/pkgconfig/ltfs.pc
-man/man1/ltfs_ordered_copy.1.gz
-man/man8/ltfs-sde.8.gz
-man/man8/ltfsck.8.gz
-man/man8/mkltfs.8.gz
+share/man/man1/ltfs_ordered_copy.1.gz
+share/man/man8/ltfs-sde.8.gz
+share/man/man8/ltfsck.8.gz
+share/man/man8/mkltfs.8.gz
 %%SNMP%%share/snmp/LTFS-MIB.txt
 %%SNMP%%share/snmp/LtfsSnmpTrapDef.txt
