@@ -1,6 +1,6 @@
---- chrome/browser/accessibility/pdf_ocr_controller.cc.orig	2024-02-03 15:42:55 UTC
+--- chrome/browser/accessibility/pdf_ocr_controller.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/browser/accessibility/pdf_ocr_controller.cc
-@@ -86,7 +86,7 @@ void AnnounceToScreenReader(const int message_id) {
+@@ -111,7 +111,7 @@ void AnnounceToScreenReader(const int message_id) {
  // TODO(crbug.com/1442928): Sending announcements results in a failure in
  // `AuraLinuxAccessibilityInProcessBrowserTest::IndexInParentWithModal` and
  // flaky fail when running Chrome.

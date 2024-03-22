@@ -1,6 +1,6 @@
---- services/on_device_model/on_device_model_service.h.orig	2024-02-03 15:42:55 UTC
+--- services/on_device_model/on_device_model_service.h.orig	2024-03-22 14:16:19 UTC
 +++ services/on_device_model/on_device_model_service.h
-@@ -18,6 +18,10 @@
+@@ -20,6 +20,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif
  
@@ -11,7 +11,7 @@
  namespace on_device_model {
  
  class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelService
-@@ -27,7 +31,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
+@@ -29,7 +33,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
    // These are defined separately in pre_sandbox_init.cc for explicit security
    // review coverage.
    [[nodiscard]] static bool PreSandboxInit();

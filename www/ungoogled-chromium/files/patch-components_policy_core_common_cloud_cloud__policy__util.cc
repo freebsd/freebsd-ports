@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2023-11-04 07:08:51 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2024-03-22 14:16:19 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -20,7 +20,7 @@
  #endif
@@ -26,7 +26,7 @@
  #include <algorithm>
  #include <utility>
  
-@@ -86,7 +91,7 @@ namespace em = enterprise_management;
+@@ -88,7 +93,7 @@ namespace em = enterprise_management;
  
  std::string GetMachineName() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \
@@ -35,7 +35,7 @@
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -143,7 +148,7 @@ std::string GetMachineName() {
+@@ -145,7 +150,7 @@ std::string GetMachineName() {
  
  std::string GetOSVersion() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \
@@ -44,7 +44,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif BUILDFLAG(IS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -166,7 +171,7 @@ std::string GetOSArchitecture() {
+@@ -168,7 +173,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

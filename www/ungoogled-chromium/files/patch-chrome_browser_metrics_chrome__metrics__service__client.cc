@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2024-02-25 20:22:18 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -191,7 +191,7 @@
+@@ -193,7 +193,7 @@
  #include "chrome/notification_helper/notification_helper_constants.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/metrics/motherboard_metrics_provider.h"
  #endif
  
-@@ -208,7 +208,7 @@
+@@ -210,7 +210,7 @@
  #include "chrome/browser/metrics/power/power_metrics_provider_mac.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/metrics/bluetooth_metrics_provider.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -581,7 +581,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
+@@ -586,7 +586,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
    metrics::structured::StructuredMetricsService::RegisterPrefs(registry);
  
  #if !BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -767,7 +767,7 @@ void ChromeMetricsServiceClient::Initialize() {
+@@ -773,7 +773,7 @@ void ChromeMetricsServiceClient::Initialize() {
      RegisterUKMProviders();
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -36,7 +36,7 @@
    metrics::structured::Recorder::GetInstance()->SetUiTaskRunner(
        base::SequencedTaskRunner::GetCurrentDefault());
  #endif
-@@ -814,7 +814,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -820,7 +820,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::CPUMetricsProvider>());
  
@@ -45,7 +45,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -899,7 +899,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -905,7 +905,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
@@ -54,7 +54,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) ||
-@@ -1009,7 +1009,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -1015,7 +1015,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -63,7 +63,7 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX)
-@@ -1174,7 +1174,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1180,7 +1180,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -72,7 +72,7 @@
    // Begin initializing the structured metrics system. Initialization must wait
    // until a profile is added, because it reads keys stored within the user's
    // cryptohome. We only initialize for profiles that are valid candidates
-@@ -1205,7 +1205,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1211,7 +1211,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
@@ -81,7 +81,7 @@
    // This creates the DesktopProfileSessionDurationsServices if it didn't exist
    // already.
    metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(
-@@ -1548,7 +1548,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
+@@ -1554,7 +1554,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
    recorder =
        std::make_unique<metrics::structured::AshStructuredMetricsRecorder>(
            cros_system_profile_provider_.get());

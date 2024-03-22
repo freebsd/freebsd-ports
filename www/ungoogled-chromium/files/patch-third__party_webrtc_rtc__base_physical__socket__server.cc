@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2023-12-23 12:33:28 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2024-03-22 14:16:19 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.cc
 @@ -53,7 +53,7 @@
  #include "rtc_base/time_utils.h"
@@ -54,7 +54,7 @@
                 // Suppress SIGPIPE. See above for explanation.
                 MSG_NOSIGNAL,
  #else
-@@ -641,7 +641,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -666,7 +666,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;

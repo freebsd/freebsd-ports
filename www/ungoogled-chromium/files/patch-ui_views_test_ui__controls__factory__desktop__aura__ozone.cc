@@ -1,6 +1,6 @@
---- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig	2023-12-23 12:33:28 UTC
+--- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig	2024-03-22 14:16:19 UTC
 +++ ui/views/test/ui_controls_factory_desktop_aura_ozone.cc
-@@ -284,7 +284,7 @@ bool SendTouchEventsNotifyWhenDone(int action,
+@@ -296,7 +296,7 @@ void UpdateDisplaySync(const std::string& display_spec
  }
  #endif
  

@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig	2024-02-25 20:22:18 UTC
+--- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.cc
 @@ -21,7 +21,7 @@
  #include "content/public/browser/browser_thread.h"
@@ -15,10 +15,10 @@
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
+   } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT &&
+              !base::FeatureList::IsEnabled(kMaldocaSkipCheck)) {
      StartExtractDocumentFeatures();
- #endif
-@@ -324,7 +324,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -326,7 +326,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // BUILDFLAG(IS_MAC)
  
