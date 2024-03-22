@@ -1,5 +1,4 @@
 bin/cqrlog
-man/man1/cqrlog.1.gz
 share/appdata/cqrlog.appdata.xml
 share/applications/cqrlog.desktop
 %%DATADIR%%/changelog.html
@@ -463,6 +462,7 @@ share/icons/cqrlog/256x256/cqrlog.png
 share/icons/cqrlog/32x32/cqrlog.png
 share/icons/cqrlog/48x48/cqrlog.png
 share/icons/cqrlog/64x64/cqrlog.png
+share/man/man1/cqrlog.1.gz
 share/pixmaps/cqrlog/128x128/cqrlog.png
 share/pixmaps/cqrlog/256x256/cqrlog.png
 share/pixmaps/cqrlog/32x32/cqrlog.png
