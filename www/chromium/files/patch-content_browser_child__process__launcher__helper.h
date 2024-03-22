@@ -1,6 +1,6 @@
---- content/browser/child_process_launcher_helper.h.orig	2024-02-23 21:04:38 UTC
+--- content/browser/child_process_launcher_helper.h.orig	2024-03-22 08:19:40 UTC
 +++ content/browser/child_process_launcher_helper.h
-@@ -269,7 +269,7 @@ class ChildProcessLauncherHelper
+@@ -271,7 +271,7 @@ class ChildProcessLauncherHelper
    std::unique_ptr<SandboxedProcessLauncherDelegate> delegate_;
    base::WeakPtr<ChildProcessLauncher> child_process_launcher_;
  

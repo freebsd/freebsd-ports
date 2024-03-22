@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2024-02-23 21:04:38 UTC
+--- v8/BUILD.gn.orig	2024-03-22 08:19:40 UTC
 +++ v8/BUILD.gn
-@@ -1447,6 +1447,14 @@ config("toolchain") {
+@@ -1450,6 +1450,14 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -15,7 +15,7 @@
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -2411,6 +2419,12 @@ template("run_mksnapshot") {
+@@ -2423,6 +2431,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -28,7 +28,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -6361,7 +6375,7 @@ v8_component("v8_libbase") {
+@@ -6392,7 +6406,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -37,7 +37,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6372,6 +6386,18 @@ v8_component("v8_libbase") {
+@@ -6403,6 +6417,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

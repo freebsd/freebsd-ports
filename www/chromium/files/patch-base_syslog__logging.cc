@@ -1,6 +1,6 @@
---- base/syslog_logging.cc.orig	2022-02-28 16:54:41 UTC
+--- base/syslog_logging.cc.orig	2024-03-22 08:19:40 UTC
 +++ base/syslog_logging.cc
-@@ -15,7 +15,7 @@
+@@ -17,7 +17,7 @@
  #include "base/strings/string_util.h"
  #include "base/win/scoped_handle.h"
  #include "base/win/win_util.h"
@@ -9,7 +9,7 @@
  // <syslog.h> defines LOG_INFO, LOG_WARNING macros that could conflict with
  // base::LOG_INFO, base::LOG_WARNING.
  #include <syslog.h>
-@@ -147,7 +147,7 @@ EventLogMessage::~EventLogMessage() {
+@@ -149,7 +149,7 @@ EventLogMessage::~EventLogMessage() {
  
    if (user_sid != nullptr)
      ::LocalFree(user_sid);

@@ -1,4 +1,4 @@
---- ui/gfx/font_util.cc.orig	2022-02-28 16:54:41 UTC
+--- ui/gfx/font_util.cc.orig	2024-03-22 08:19:40 UTC
 +++ ui/gfx/font_util.cc
 @@ -6,7 +6,7 @@
  
@@ -15,6 +15,6 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Ensures the config is created on this thread.
-   FcConfig* config = GetGlobalFontConfig();
-   DCHECK(config);
+   // Early initialize FontConfig.
+   InitializeGlobalFontConfigAsync();
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

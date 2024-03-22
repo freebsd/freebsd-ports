@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2024-03-22 08:19:40 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
 @@ -128,13 +128,13 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
@@ -25,7 +25,7 @@
  #include "chrome/browser/companion/visual_query/visual_query_suggestions_service_factory.h"
  #include "chrome/browser/ui/web_applications/sub_apps_service_impl.h"
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
-@@ -829,7 +829,7 @@ void BindScreen2xMainContentExtractor(
+@@ -831,7 +831,7 @@ void BindScreen2xMainContentExtractor(
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -34,7 +34,7 @@
  void BindVisualSuggestionsModelProvider(
      content::RenderFrameHost* frame_host,
      mojo::PendingReceiver<
-@@ -1025,7 +1025,7 @@ void PopulateChromeFrameBinders(
+@@ -1027,7 +1027,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -43,7 +43,7 @@
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -1033,7 +1033,7 @@ void PopulateChromeFrameBinders(
+@@ -1035,7 +1035,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -52,7 +52,7 @@
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
        !render_frame_host->GetParentOrOuterDocument()) {
      // The service binder will reject non-primary main frames, but we still need
-@@ -1120,7 +1120,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1122,7 +1122,7 @@ void PopulateChromeWebUIFrameBinders(
        commerce::CommerceInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -61,7 +61,7 @@
    RegisterWebUIControllerInterfaceBinder<
        connectors_internals::mojom::PageHandler,
        enterprise_connectors::ConnectorsInternalsUI>(map);
-@@ -1132,7 +1132,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1134,7 +1134,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -70,7 +70,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1676,7 +1676,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1687,7 +1687,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

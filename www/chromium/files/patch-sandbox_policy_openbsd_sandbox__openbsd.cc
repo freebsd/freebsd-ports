@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2023-04-28 17:01:32 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2024-03-22 08:19:40 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,420 @@
+@@ -0,0 +1,424 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -63,7 +63,8 @@
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
 +
-+#include "ui/gfx/font_util.h"
++#include <fontconfig/fontconfig.h>
++#include "ui/gfx/linux/fontconfig_util.h"
 +
 +#define MAXTOKENS	3
 +
@@ -146,8 +147,11 @@
 +      break;
 +    }
 +    case sandbox::mojom::Sandbox::kRenderer:
-+      gfx::InitializeFonts();
++    {
++      FcConfig* config = gfx::GetGlobalFontConfig();
++      DCHECK(config);
 +      break;
++    }
 +    default:
 +      break;
 +  }

@@ -1,4 +1,4 @@
---- tools/gn/build/gen.py.orig	2024-01-30 07:53:34 UTC
+--- tools/gn/build/gen.py.orig	2024-03-22 08:19:40 UTC
 +++ tools/gn/build/gen.py
 @@ -94,6 +94,12 @@ class Platform(object):
    def is_solaris(self):
@@ -13,7 +13,7 @@
    def is_posix(self):
      return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd', 'haiku', 'solaris', 'msys', 'netbsd', 'serenity']
  
-@@ -288,7 +294,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -293,7 +299,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'linux': 'build_linux.ninja.template',
        'freebsd': 'build_linux.ninja.template',
        'aix': 'build_aix.ninja.template',
@@ -22,7 +22,7 @@
        'haiku': 'build_haiku.ninja.template',
        'solaris': 'build_linux.ninja.template',
        'netbsd': 'build_linux.ninja.template',
-@@ -514,6 +520,9 @@ def WriteGNNinja(path, platform, host, options, args_l
+@@ -525,6 +531,9 @@ def WriteGNNinja(path, platform, host, options, args_l
  
      if platform.is_posix() and not platform.is_haiku():
        ldflags.append('-pthread')

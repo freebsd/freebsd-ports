@@ -1,4 +1,4 @@
---- ui/gfx/gpu_memory_buffer.h.orig	2023-04-05 11:05:06 UTC
+--- ui/gfx/gpu_memory_buffer.h.orig	2024-03-22 08:19:40 UTC
 +++ ui/gfx/gpu_memory_buffer.h
 @@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/rect.h"
@@ -9,7 +9,7 @@
  #include "ui/gfx/native_pixmap_handle.h"
  #elif BUILDFLAG(IS_APPLE)
  #include "ui/gfx/mac/io_surface.h"
-@@ -75,7 +75,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
+@@ -76,7 +76,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
    base::UnsafeSharedMemoryRegion region;
    uint32_t offset = 0;
    uint32_t stride = 0;

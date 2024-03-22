@@ -1,6 +1,15 @@
---- net/base/features.cc.orig	2024-02-23 21:04:38 UTC
+--- net/base/features.cc.orig	2024-03-22 08:19:40 UTC
 +++ net/base/features.cc
-@@ -500,7 +500,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
+@@ -26,7 +26,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
+ BASE_FEATURE(kAsyncDns,
+              "AsyncDns",
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || \
+-    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -510,7 +510,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
               "SpdyHeadersToHttpResponseUseBuilder",
               base::FEATURE_DISABLED_BY_DEFAULT);
  

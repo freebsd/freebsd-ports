@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2024-03-22 08:19:40 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc
-@@ -58,7 +58,7 @@
+@@ -59,7 +59,7 @@
  #include "ui/aura/window.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_paint_utils_linux.h"
  #include "chrome/browser/ui/views/frame/desktop_browser_frame_aura_linux.h"
  #endif
-@@ -90,7 +90,7 @@ constexpr int kContentSettingIconSize = 16;
+@@ -86,7 +86,7 @@ constexpr int kContentSettingIconSize = 16;
  // The height of the controls bar at the top of the window.
  constexpr int kTopControlsHeight = 34;
  
@@ -18,7 +18,7 @@
  // Frame border when window shadow is not drawn.
  constexpr int kFrameBorderThickness = 4;
  #endif
-@@ -185,7 +185,7 @@ class WindowEventObserver : public ui::EventObserver {
+@@ -181,7 +181,7 @@ class WindowEventObserver : public ui::EventObserver {
  
      gfx::Rect input_bounds = pip_browser_frame_view_->GetLocalBounds();
  
@@ -27,7 +27,7 @@
      // Calculate input bounds for Linux. This is needed because the input bounds
      // is not necessary the same as the local bounds on Linux.
      if (pip_browser_frame_view_->ShouldDrawFrameShadow()) {
-@@ -575,7 +575,7 @@ PictureInPictureBrowserFrameView::PictureInPictureBrow
+@@ -571,7 +571,7 @@ PictureInPictureBrowserFrameView::PictureInPictureBrow
          AddChildView(std::move(auto_pip_setting_overlay));
    }
  
@@ -36,7 +36,7 @@
    frame_background_ = std::make_unique<views::FrameBackground>();
  #endif
  
-@@ -751,7 +751,7 @@ void PictureInPictureBrowserFrameView::OnThemeChanged(
+@@ -774,7 +774,7 @@ void PictureInPictureBrowserFrameView::OnThemeChanged(
    for (ContentSettingImageView* view : content_setting_views_)
      view->SetIconColor(color_provider->GetColor(kColorPipWindowForeground));
  
@@ -45,7 +45,7 @@
    // On Linux the top bar background will be drawn in OnPaint().
    top_bar_container_view_->SetBackground(views::CreateSolidBackground(
        color_provider->GetColor(kColorPipWindowTopBarBackground)));
-@@ -830,7 +830,7 @@ void PictureInPictureBrowserFrameView::RemovedFromWidg
+@@ -853,7 +853,7 @@ void PictureInPictureBrowserFrameView::RemovedFromWidg
    BrowserNonClientFrameView::RemovedFromWidget();
  }
  
@@ -54,7 +54,7 @@
  gfx::Insets PictureInPictureBrowserFrameView::MirroredFrameBorderInsets()
      const {
    auto border = FrameBorderInsets();
-@@ -1084,7 +1084,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
+@@ -1107,7 +1107,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
  // views::View implementations:
  
  void PictureInPictureBrowserFrameView::OnPaint(gfx::Canvas* canvas) {
@@ -63,7 +63,7 @@
    // Draw the PiP window frame borders and shadows, including the top bar
    // background.
    if (window_frame_provider_) {
-@@ -1208,7 +1208,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
+@@ -1231,7 +1231,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::FrameBorderInsets() const {
@@ -72,16 +72,16 @@
    if (window_frame_provider_) {
      const auto insets = window_frame_provider_->GetFrameThicknessDip();
      const bool tiled = frame()->tiled();
-@@ -1226,7 +1226,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
+@@ -1249,7 +1249,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::ResizeBorderInsets() const {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return FrameBorderInsets();
- #elif BUILDFLAG(IS_CHROMEOS_ASH)
-   return gfx::Insets(chromeos::kResizeInsideBoundsSize);
-@@ -1247,7 +1247,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
+ #elif !BUILDFLAG(IS_CHROMEOS_ASH)
+   return gfx::Insets(kResizeBorder);
+@@ -1270,7 +1270,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
                     top_height + border_thickness.bottom());
  }
  

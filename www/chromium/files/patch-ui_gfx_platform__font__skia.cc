@@ -1,4 +1,4 @@
---- ui/gfx/platform_font_skia.cc.orig	2024-01-30 07:53:34 UTC
+--- ui/gfx/platform_font_skia.cc.orig	2024-03-22 08:19:40 UTC
 +++ ui/gfx/platform_font_skia.cc
 @@ -30,7 +30,7 @@
  #include "ui/gfx/system_fonts_win.h"
@@ -17,4 +17,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // On Linux, LinuxUi is used to query the native toolkit (e.g.
    // GTK) for the default UI font.
-   if (const auto* linux_ui = ui::LinuxUi::instance()) {
+   if (auto* linux_ui = ui::LinuxUi::instance()) {
