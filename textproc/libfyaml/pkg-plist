@@ -11,10 +11,10 @@ lib/libfyaml.so
 lib/libfyaml.so.0
 lib/libfyaml.so.0.0.0
 libdata/pkgconfig/libfyaml.pc
-man/man1/fy-compose.1.gz
-man/man1/fy-dump.1.gz
-man/man1/fy-filter.1.gz
-man/man1/fy-join.1.gz
-man/man1/fy-testsuite.1.gz
-man/man1/fy-tool.1.gz
-man/man1/fy-ypath.1.gz
+share/man/man1/fy-compose.1.gz
+share/man/man1/fy-dump.1.gz
+share/man/man1/fy-filter.1.gz
+share/man/man1/fy-join.1.gz
+share/man/man1/fy-testsuite.1.gz
+share/man/man1/fy-tool.1.gz
+share/man/man1/fy-ypath.1.gz
