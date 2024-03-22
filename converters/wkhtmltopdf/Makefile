@@ -1,6 +1,6 @@
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
@@ -68,9 +68,6 @@ post-patch:
 		${PATCH_WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${PATCH_WRKSRC}/mkspecs/common/g++-base.conf
-	${REINPLACE_CMD} -e "s|share/man|man|g" \
-		${WRKSRC}/src/image/image.pro \
-		${WRKSRC}/src/pdf/pdf.pro
 	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/image/image.pro
 	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/pdf/pdf.pro
 	${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
