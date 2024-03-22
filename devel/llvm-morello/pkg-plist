@@ -12,6 +12,8 @@ bin/llvm-cfi-verify%%COMMAND_SUFFIX%%
 bin/llvm-config%%COMMAND_SUFFIX%%
 bin/llvm-cov%%COMMAND_SUFFIX%%
 bin/llvm-cvtres%%COMMAND_SUFFIX%%
+bin/llvm-cxxdump%%COMMAND_SUFFIX%%
+bin/llvm-cxxfilt%%COMMAND_SUFFIX%%
 bin/llvm-cxxmap%%COMMAND_SUFFIX%%
 bin/llvm-debuginfod-find%%COMMAND_SUFFIX%%
 bin/llvm-diff%%COMMAND_SUFFIX%%
