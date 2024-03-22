@@ -491,6 +491,7 @@ share/locale/pt_BR/LC_MESSAGES/kioclient.mo
 share/locale/pt_BR/LC_MESSAGES/kmimetypefinder.mo
 share/locale/pt_BR/LC_MESSAGES/kstart.mo
 share/locale/pt_BR/LC_MESSAGES/plasma-open-settings.mo
+share/locale/ro/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/ro/LC_MESSAGES/kcm_filetypes.mo
 share/locale/ro/LC_MESSAGES/kdesu.mo
 share/locale/ro/LC_MESSAGES/kioclient.mo
@@ -567,11 +568,14 @@ share/locale/sv/LC_MESSAGES/kioclient.mo
 share/locale/sv/LC_MESSAGES/kmimetypefinder.mo
 share/locale/sv/LC_MESSAGES/kstart.mo
 share/locale/sv/LC_MESSAGES/plasma-open-settings.mo
+share/locale/ta/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/ta/LC_MESSAGES/kcm_filetypes.mo
+share/locale/ta/LC_MESSAGES/kde-inhibit.mo
 share/locale/ta/LC_MESSAGES/kdesu.mo
 share/locale/ta/LC_MESSAGES/kioclient.mo
 share/locale/ta/LC_MESSAGES/kmimetypefinder.mo
 share/locale/ta/LC_MESSAGES/kstart.mo
+share/locale/ta/LC_MESSAGES/plasma-open-settings.mo
 share/locale/te/LC_MESSAGES/kcm_filetypes.mo
 share/locale/te/LC_MESSAGES/kdesu.mo
 share/locale/te/LC_MESSAGES/kioclient.mo

@@ -150,6 +150,7 @@ include/kwin/virtualdesktopsdbustypes.h
 include/kwin/virtualkeyboard_dbus.h
 include/kwin/wayland/appmenu.h
 include/kwin/wayland/blur.h
+include/kwin/wayland/clientconnection.h
 include/kwin/wayland/compositor.h
 include/kwin/wayland/contenttype_v1.h
 include/kwin/wayland/contrast.h
@@ -243,6 +244,7 @@ lib/cmake/KWin/KWinTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KWin/KWinTargets.cmake
 lib/cmake/KWinDBusInterface/KWinDBusInterfaceConfig.cmake
 lib/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
+lib/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default
 lib/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
 lib/kconf_update_bin/kwin5_update_default_rules
 lib/libexec/kwin-applywindowdecoration
@@ -1581,6 +1583,7 @@ share/locale/ta/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/ta/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/ta/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/ta/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/ta/LC_MESSAGES/kcm_kwinxwayland.mo
 share/locale/ta/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/ta/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ta/LC_MESSAGES/kcmkwincompositing.mo

@@ -5,8 +5,8 @@ lib/libexec/kf6/kauth/discretegpuhelper
 lib/libexec/org_kde_powerdevil
 lib/libexec/power_profile_osd_service
 lib/libpowerdevilconfigcommonprivate.so
-lib/libpowerdevilconfigcommonprivate.so.%%KDE_PLASMA_VERSION%%
 lib/libpowerdevilconfigcommonprivate.so.6
+lib/libpowerdevilconfigcommonprivate.so.%%KDE_PLASMA_VERSION%%
 lib/libpowerdevilcore.so
 lib/libpowerdevilcore.so.2
 lib/libpowerdevilcore.so.%%KDE_PLASMA_VERSION%%
@@ -95,6 +95,7 @@ share/locale/bs/LC_MESSAGES/powerdevil.mo
 share/locale/ca/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ca/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ca/LC_MESSAGES/powerdevil.mo
+share/locale/ca/LC_MESSAGES/powerdevil_osd.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/powerdevil.mo
@@ -119,6 +120,7 @@ share/locale/eo/LC_MESSAGES/powerdevil.mo
 share/locale/es/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/es/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/es/LC_MESSAGES/powerdevil.mo
+share/locale/es/LC_MESSAGES/powerdevil_osd.mo
 share/locale/et/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/et/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/et/LC_MESSAGES/powerdevil.mo
@@ -149,9 +151,11 @@ share/locale/hsb/LC_MESSAGES/powerdevil.mo
 share/locale/hu/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/hu/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/hu/LC_MESSAGES/powerdevil.mo
+share/locale/hu/LC_MESSAGES/powerdevil_osd.mo
 share/locale/ia/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ia/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ia/LC_MESSAGES/powerdevil.mo
+share/locale/ia/LC_MESSAGES/powerdevil_osd.mo
 share/locale/id/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/id/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/id/LC_MESSAGES/powerdevil.mo
@@ -255,6 +259,7 @@ share/locale/th/LC_MESSAGES/powerdevil.mo
 share/locale/tr/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/tr/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/tr/LC_MESSAGES/powerdevil.mo
+share/locale/tr/LC_MESSAGES/powerdevil_osd.mo
 share/locale/ug/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ug/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ug/LC_MESSAGES/powerdevil.mo

@@ -91,4 +91,3 @@ lib/cmake/QQC2BreezeStyle/QQC2BreezeStyleConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/breeze/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/breeze/libBreezeStyle.so
 %%QT_QMLDIR%%/org/kde/breeze/qmldir
-%%QT_QMLDIR%%/org/kde/kirigami/styles/org.kde.breeze/AbstractApplicationHeader.qml

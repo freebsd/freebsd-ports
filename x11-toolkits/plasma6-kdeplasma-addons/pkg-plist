@@ -1365,6 +1365,9 @@ share/locale/pt_BR/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/ro/LC_MESSAGES/kwin_effect_cube.mo
+share/locale/ro/LC_MESSAGES/plasma_addons_engine_dict.mo
+share/locale/ro/LC_MESSAGES/plasma_addons_profiles_utility.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
@@ -1382,6 +1385,7 @@ share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.quicklaunch.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.timer.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.userswitcher.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.weather.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.webbrowser.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ro/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ro/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
@@ -1621,6 +1625,7 @@ share/locale/sv/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/sv/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/ta/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.konsoleprofiles.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.mediaframe.mo
@@ -1635,6 +1640,7 @@ share/locale/ta/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ta/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/ta/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ta/LC_MESSAGES/plasma_runner_datetime.mo
+share/locale/ta/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/ta/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/ta/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
