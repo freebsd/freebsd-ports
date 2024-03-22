@@ -1,5 +1,6 @@
 PORTNAME=	monitor-core
 PORTVERSION=	3.7.2
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -25,6 +26,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	gmond
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
 		--disable-python
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
@@ -90,13 +92,6 @@ post-build:
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/gmond.conf \
 		${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
-	${INSTALL_MAN} \
-		${WRKSRC}/mans/gmetric.1 \
-		${WRKSRC}/mans/gmond.1 \
-		${WRKSRC}/mans/gstat.1 \
-		${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
-		${STAGEDIR}${PREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
 	@${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
 
@@ -105,7 +100,5 @@ post-install-GMETAD-on:
 		${STAGEDIR}${PREFIX}/sbin/gmetasnap
 	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
 		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 \
-		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

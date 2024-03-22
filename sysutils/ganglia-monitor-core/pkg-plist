@@ -23,14 +23,14 @@ lib/libganglia.so.0
 lib/libganglia.so.0.0.0
 lib/libganglia.a
 lib/libganglia.so
-%%GMETAD%%man/man1/gmetad.1.gz
-%%GMETAD%%man/man1/gmetad.py.1.gz
-man/man1/gmetric.1.gz
-man/man1/gmond.1.gz
-man/man1/gstat.1.gz
-man/man5/gmond.conf.5.gz
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
+%%GMETAD%%share/man/man1/gmetad.1.gz
+%%GMETAD%%share/man/man1/gmetad.py.1.gz
+share/man/man1/gmetric.1.gz
+share/man/man1/gmond.1.gz
+share/man/man1/gstat.1.gz
+share/man/man5/gmond.conf.5.gz
 @dir(ganglia,ganglia,) /var/db/ganglia/rrds
 @dir(ganglia,ganglia,) /var/db/ganglia
