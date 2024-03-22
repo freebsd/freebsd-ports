@@ -500,6 +500,7 @@
     SUBDIR += py-tflite-support
     SUBDIR += py-thermocouples_reference
     SUBDIR += py-timm
+    SUBDIR += py-timm-vis
     SUBDIR += py-toil
     SUBDIR += py-torch-geometric
     SUBDIR += py-torchmetrics
