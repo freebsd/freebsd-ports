@@ -30,7 +30,6 @@ share/locale/pt_BR/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/ru/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/sk/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/sl/LC_MESSAGES/ghostwriter_qt.qm
-share/locale/sv/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/tr/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/uk/LC_MESSAGES/ghostwriter_qt.qm
 share/locale/zh_CN/LC_MESSAGES/ghostwriter_qt.qm
@@ -41,6 +40,5 @@ share/man/it/man1/ghostwriter.1.gz
 share/man/man1/ghostwriter.1.gz
 share/man/nl/man1/ghostwriter.1.gz
 share/man/ru/man1/ghostwriter.1.gz
-share/man/sv/man1/ghostwriter.1.gz
 share/man/uk/man1/ghostwriter.1.gz
 share/metainfo/org.kde.ghostwriter.metainfo.xml
