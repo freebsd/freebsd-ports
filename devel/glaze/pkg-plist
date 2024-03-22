@@ -2,7 +2,6 @@ include/glaze/api/api.hpp
 include/glaze/api/hash.hpp
 include/glaze/api/impl.hpp
 include/glaze/api/lib.hpp
-include/glaze/api/name.hpp
 include/glaze/api/std/array.hpp
 include/glaze/api/std/deque.hpp
 include/glaze/api/std/functional.hpp
@@ -82,6 +81,7 @@ include/glaze/thread/threadpool.hpp
 include/glaze/tuplet/tuple.hpp
 include/glaze/util/any.hpp
 include/glaze/util/bit_array.hpp
+include/glaze/util/comment.hpp
 include/glaze/util/dtoa.hpp
 include/glaze/util/dump.hpp
 include/glaze/util/expected.hpp
@@ -95,10 +95,10 @@ include/glaze/util/poly.hpp
 include/glaze/util/progress_bar.hpp
 include/glaze/util/stoui64.hpp
 include/glaze/util/string_literal.hpp
-include/glaze/util/string_view.hpp
 include/glaze/util/strod.hpp
 include/glaze/util/tuple.hpp
 include/glaze/util/type_traits.hpp
+include/glaze/util/utility.hpp
 include/glaze/util/validate.hpp
 include/glaze/util/variant.hpp
 %%DATADIR%%/glazeConfig.cmake
