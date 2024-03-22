@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2024-02-25 20:22:18 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2024-03-22 14:16:19 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -84,7 +84,7 @@
  #include "base/win/win_util.h"
@@ -18,7 +18,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -744,7 +744,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -748,7 +748,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -27,7 +27,7 @@
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
    if (!handled && linux_ui &&
-@@ -927,7 +927,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -931,7 +931,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -1969,7 +1969,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -1984,7 +1984,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2465,14 +2465,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2488,14 +2488,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

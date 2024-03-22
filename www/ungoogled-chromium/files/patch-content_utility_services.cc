@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2024-02-25 20:22:18 UTC
+--- content/utility/services.cc.orig	2024-03-22 14:16:19 UTC
 +++ content/utility/services.cc
 @@ -67,7 +67,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -36,8 +36,8 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -308,7 +308,7 @@ auto RunVideoCapture(
-     mojo::PendingReceiver<video_capture::mojom::VideoCaptureService> receiver) {
+@@ -312,7 +312,7 @@ auto RunVideoCapture(
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
    auto service = std::make_unique<UtilityThreadVideoCaptureServiceImpl>(
        std::move(receiver), base::SingleThreadTaskRunner::GetCurrentDefault());
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
@@ -45,7 +45,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    {
  #else
-@@ -352,7 +352,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+@@ -356,7 +356,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -54,7 +54,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryProcessService(
      mojo::PendingReceiver<
-@@ -363,7 +363,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+@@ -367,7 +367,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -63,7 +63,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -386,7 +386,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
+@@ -390,7 +390,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
    // loop of type IO that can get notified when pipes have data.
    services.Add(RunNetworkService);
  
@@ -72,7 +72,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -434,7 +434,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -438,7 +438,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -81,7 +81,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (!base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -443,7 +443,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -447,7 +447,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  

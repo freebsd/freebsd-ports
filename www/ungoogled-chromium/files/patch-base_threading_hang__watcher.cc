@@ -1,6 +1,6 @@
---- base/threading/hang_watcher.cc.orig	2023-10-13 13:20:35 UTC
+--- base/threading/hang_watcher.cc.orig	2024-03-22 14:16:19 UTC
 +++ base/threading/hang_watcher.cc
-@@ -331,7 +331,7 @@ void HangWatcher::InitializeOnMainThread(ProcessType p
+@@ -332,7 +332,7 @@ void HangWatcher::InitializeOnMainThread(ProcessType p
  
    bool enable_hang_watcher = base::FeatureList::IsEnabled(kEnableHangWatcher);
  

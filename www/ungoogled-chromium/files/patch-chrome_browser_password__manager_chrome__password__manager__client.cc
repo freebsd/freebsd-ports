@@ -1,6 +1,6 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2024-02-25 20:22:18 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
-@@ -674,7 +674,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
+@@ -670,7 +670,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
  }
  
  void ChromePasswordManagerClient::NotifyKeychainError() {

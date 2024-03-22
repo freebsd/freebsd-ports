@@ -1,6 +1,15 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2024-02-25 20:22:18 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2024-03-22 14:16:19 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -1963,7 +1963,7 @@
+@@ -309,7 +309,7 @@
+       name: "AppTitle",
+       status: "experimental",
+       origin_trial_feature_name: "AppTitle",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "WebAppEnableAppTitle",
+     },
+     {
+@@ -1927,7 +1927,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
        origin_trial_feature_name: "FullscreenPopupWindows",
@@ -9,7 +18,7 @@
      },
      {
        name: "GamepadButtonAxisEvents",
-@@ -2881,7 +2881,7 @@
+@@ -2804,7 +2804,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
@@ -18,7 +27,16 @@
        status: "stable",
      },
      {
-@@ -3899,7 +3899,7 @@
+@@ -2996,7 +2996,7 @@
+     {
+       name: "PrivateNetworkAccessPermissionPrompt",
+       origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       public: true,
+       base_feature: "none",
+@@ -3824,7 +3824,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -27,7 +45,16 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4110,12 +4110,12 @@
+@@ -3983,7 +3983,7 @@
+     {
+       name: "WebAppScopeExtensions",
+       origin_trial_feature_name: "WebAppScopeExtensions",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       base_feature: "none",
+     },
+@@ -4022,7 +4022,7 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",
@@ -35,10 +62,4 @@
 +      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
      },
      {
-       name: "WebAppWindowControlsOverlay",
-       origin_trial_feature_name: "WebAppWindowControlsOverlay",
--      origin_trial_os: ["win", "mac", "linux", "chromeos"],
-+      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
-       status: "stable",
-       base_feature: "none",
-     },
+       // WebAssembly JS Promise Integration,

@@ -1,5 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	122.0.6261.111
+PORTVERSION=	123.0.6312.58
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gperf:devel/gperf \
 		flock:sysutils/flock \
 		node:www/node \
+		rustc:lang/rust \
 		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -135,7 +136,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		enable_reading_list=false \
 		enable_remoting=false \
 		enable_reporting=false \
-		enable_rust=false \
 		enable_service_discovery=false \
 		exclude_unwind_tables=true \
 		google_api_key="" \
@@ -284,6 +284,13 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/chromium-${DISTVERSION}
+
+# rust
+RUSTC_VERSION!= rustc -V 2>/dev/null || true
+MAKE_ENV+=	RUSTC_BOOTSTRAP=1
+GN_ARGS+=	enable_rust=true \
+		rust_sysroot_absolute="${LOCALBASE}" \
+		rustc_version="${RUSTC_VERSION}"
 
 pre-everything::
 	@${ECHO_MSG}

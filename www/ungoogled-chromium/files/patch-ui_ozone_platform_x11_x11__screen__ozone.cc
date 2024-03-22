@@ -1,4 +1,4 @@
---- ui/ozone/platform/x11/x11_screen_ozone.cc.orig	2023-11-04 07:08:51 UTC
+--- ui/ozone/platform/x11/x11_screen_ozone.cc.orig	2024-03-22 14:16:19 UTC
 +++ ui/ozone/platform/x11/x11_screen_ozone.cc
 @@ -22,7 +22,7 @@
  #include "ui/ozone/platform/x11/x11_window.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -77,7 +77,7 @@ X11ScreenOzone::X11ScreenOzone()
+@@ -97,7 +97,7 @@ X11ScreenOzone::X11ScreenOzone()
        window_manager_(X11WindowManager::GetInstance()),
        x11_display_manager_(std::make_unique<XDisplayManager>(this)) {
    DCHECK(window_manager_);
@@ -18,3 +18,12 @@
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      display_scale_factor_observer_.Observe(linux_ui);
    }
+@@ -260,7 +260,7 @@ void X11ScreenOzone::OnEvent(const x11::Event& xev) {
+   x11_display_manager_->OnEvent(xev);
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void X11ScreenOzone::OnDeviceScaleFactorChanged() {
+   x11_display_manager_->DispatchDelayedDisplayListUpdate();
+ }
