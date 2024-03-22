@@ -6,6 +6,6 @@ bin/znapzendztatz
 %%SITE_PERL%%/ZnapZend/Time.pm
 %%SITE_PERL%%/ZnapZend/ZFS.pm
 %%SITE_PERL%%/inheritLevels.pm
-man/man1/znapzend.1.gz
-man/man1/znapzendzetup.1.gz
-man/man1/znapzendztatz.1.gz
+share/man/man1/znapzend.1.gz
+share/man/man1/znapzendzetup.1.gz
+share/man/man1/znapzendztatz.1.gz
