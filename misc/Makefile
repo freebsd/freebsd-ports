@@ -509,6 +509,7 @@
     SUBDIR += py-vaderSentiment
     SUBDIR += py-wandb
     SUBDIR += py-wurlitzer
+    SUBDIR += py-xformers
     SUBDIR += py-xgboost
     SUBDIR += pyobd
     SUBDIR += pytorch

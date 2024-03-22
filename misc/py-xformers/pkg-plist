@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/xformers/__pycache__/version%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xformers/__pycache__/version%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xformers/cpp_lib.json
+%%PYTHON_SITELIBDIR%%/xformers/version.py
