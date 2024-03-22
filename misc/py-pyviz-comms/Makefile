@@ -1,5 +1,5 @@
 PORTNAME=	pyviz-comms
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-nodejs-version>=0:devel/py-hatch-nod
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}param>0:devel/py-param@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 6 tests fail
 
 NO_ARCH=	yes
 
