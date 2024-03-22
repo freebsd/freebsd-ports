@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-09-19 20:26:02.967705000 +0000
-+++ CMakeLists.txt	2023-09-19 20:26:07.529933000 +0000
-@@ -25,7 +25,7 @@
+--- CMakeLists.txt.orig	2021-02-08 12:16:37 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ include(build/functions.cmake) # library of CMake func
  include(build/functions.cmake) # library of CMake functions ("fn__" namespace)
  
  # Print Qt version or fail the build if Qt (qmake) is not in PATH.
@@ -9,7 +9,7 @@
  
  # Libraries linked via full path no longer produce linker search paths.
  cmake_policy(SET CMP0003 NEW)
-@@ -108,7 +108,7 @@
+@@ -108,7 +108,7 @@ add_definitions(-DMUSESCORE_REVISION="${MUSESCORE_REVI
  add_definitions(-DMUSESCORE_REVISION="${MUSESCORE_REVISION}")
  
  # Setup version number and general build settings
@@ -18,7 +18,7 @@
  # Possible MUSESCORE_BUILD_CONFIG values:
  # - dev     - for development/nightly builds
  # - testing - for testing versions (alpha, beta, RC)
-@@ -157,7 +157,7 @@
+@@ -157,7 +157,7 @@ option(BUILD_LAME    "Enable MP3 export"              
  option(USE_SYSTEM_FREETYPE "Use system FreeType"          OFF) # requires freetype >= 2.5.2, does not work on win
  option(USE_SYSTEM_POPPLER  "Use system Poppler for OMR"   OFF)
  option(BUILD_LAME    "Enable MP3 export"                  ON)  # Requires libmp3lame, call CMake with -DBUILD_LAME="OFF" to disable
@@ -27,7 +27,7 @@
  
  # licence incompatibility, must never be distributed
  set(OCR OFF)
-@@ -629,6 +629,38 @@
+@@ -629,6 +629,38 @@ else(APPLE)
        set_target_properties(oggdll PROPERTIES IMPORTED_IMPLIB ${OGG_LIBRARY})
     else (MINGW OR MSVC)
        set(SNDFILE_LIB sndfile)
@@ -66,25 +66,7 @@
     endif (MINGW OR MSVC)
     set(OGG_LIB ogg)
  
-@@ -733,7 +765,7 @@
-             )
-     endif (GZIP_EXECUTABLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-     # Install man pages in either compressed or uncompressed form
--    install( FILES ${MAN_BUILD} DESTINATION share/man/man1 COMPONENT doc)
-+    install( FILES ${MAN_BUILD} DESTINATION man/man1 COMPONENT doc)
-     # Create symlink alias for man pages so `man musescore` = `man mscore`
-     find_program( LN_EXECUTABLE ln DOC "A tool for creating symbolic link aliases (optional)." )
-     if (LN_EXECUTABLE)
-@@ -744,7 +776,7 @@
-             COMMAND ${LN_EXECUTABLE} -sf "${MAN_FULL_NAME}" "${MAN_FULL_ALIAS}"
-             COMMAND echo 'Symlink alias: ${MAN_FULL_ALIAS} -> ${MAN_FULL_NAME}'
-             )
--        install( FILES ${PROJECT_BINARY_DIR}/${MAN_FULL_ALIAS} DESTINATION share/man/man1 COMPONENT doc)
-+        install( FILES ${PROJECT_BINARY_DIR}/${MAN_FULL_ALIAS} DESTINATION man/man1 COMPONENT doc)
-      else (LN_EXECUTABLE)
-          message(STATUS "'ln' not found (it is optional). No symlink aliases will be created.")
-      endif (LN_EXECUTABLE)
-@@ -771,8 +803,8 @@
+@@ -771,8 +803,8 @@ if (NOT MSVC)
  # MSVC does not require these targets, as all.h is not copied and the
  #   PCH generation is done per-project
  if (NOT MSVC)

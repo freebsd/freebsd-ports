@@ -1,7 +1,5 @@
 bin/mscore3
 bin/musescore3
-man/man1/mscore3.1.gz
-man/man1/musescore3.1.gz
 share/applications/mscore3.desktop
 share/icons/hicolor/128x128/apps/mscore3.png
 share/icons/hicolor/16x16/apps/mscore3.png
@@ -20,6 +18,8 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.recordare.musicxml+xml.sv
 share/icons/hicolor/scalable/mimetypes/application-vnd.recordare.musicxml.svg
 share/icons/hicolor/scalable/mimetypes/application-x-musescore+xml.svg
 share/icons/hicolor/scalable/mimetypes/application-x-musescore.svg
+share/man/man1/mscore3.1.gz
+share/man/man1/musescore3.1.gz
 share/metainfo/org.musescore.MuseScore.appdata.xml
 share/mime/packages/musescore.xml
 %%DATADIR%%/demos/Brassed_Up.mscx

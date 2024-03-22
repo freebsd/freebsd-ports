@@ -1,6 +1,7 @@
 PORTNAME=	${GH_PROJECT:tl}3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -65,9 +66,9 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mscore ${STAGEDIR}${PREFIX}/bin/mscore3
 	${RM} ${STAGEDIR}${PREFIX}/bin/musescore
 	${LN} -s mscore3 ${STAGEDIR}${PREFIX}/bin/musescore3
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/mscore.1.gz ${STAGEDIR}${PREFIX}/man/man1/mscore3.1.gz
-	${RM} ${STAGEDIR}${PREFIX}/man/man1/musescore.1.gz
-	${LN} -s mscore3.1.gz ${STAGEDIR}${PREFIX}/man/man1/musescore3.1.gz
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/mscore.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/mscore3.1.gz
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man1/musescore.1.gz
+	${LN} -s mscore3.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/musescore3.1.gz
 	${RM} ${STAGEDIR}${DATADIR}/sound/MuseScore_General.sf3
 	${INSTALL_DATA} ${DISTDIR}/MuseScore_General.sf3 ${STAGEDIR}${DATADIR}/sound/
 	${FIND} ${STAGEDIR}${PREFIX} -name mscore.png -execdir ${MV} mscore.png mscore3.png \;
