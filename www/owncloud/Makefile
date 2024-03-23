@@ -17,7 +17,7 @@ USE_PHP=	bz2 ctype curl dom fileinfo filter gd iconv intl mbstring pdo posix ses
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/owncloud
 
 OWNCLOUD_USER?=	${WWWOWN}
 OWNCLOUD_GROUP?=${WWWGRP}
