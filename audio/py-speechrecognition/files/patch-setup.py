@@ -26,7 +26,8 @@
 -
 -
  setup(
-     name="SpeechRecognition",
+-    name="SpeechRecognition",
++    name="speechrecognition",
      version=speech_recognition.__version__,
      packages=["speech_recognition"],
      include_package_data=True,
