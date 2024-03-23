@@ -205,6 +205,7 @@
     SUBDIR += noto-sans-ethiopic
     SUBDIR += noto-sans-extra
     SUBDIR += noto-sans-georgian
+    SUBDIR += noto-sans-hebrew
     SUBDIR += noto-sans-hk
     SUBDIR += noto-sans-jp
     SUBDIR += noto-sans-kr
