@@ -623,6 +623,7 @@
     SUBDIR += elixir-hex
     SUBDIR += elixir-make
     SUBDIR += elm-format
+    SUBDIR += emacs-lsp-booster
     SUBDIR += embb
     SUBDIR += emscripten
     SUBDIR += entt
