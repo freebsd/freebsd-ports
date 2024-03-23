@@ -7,7 +7,6 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/admin/cmd/refresh_cache.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/cmd/remove.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/index.lua
-%%LUA_MODSHAREDIR%%/luarocks/argparse.lua
 %%LUA_MODSHAREDIR%%/luarocks/build.lua
 %%LUA_MODSHAREDIR%%/luarocks/build/builtin.lua
 %%LUA_MODSHAREDIR%%/luarocks/build/cmake.lua
@@ -35,6 +34,7 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/cmd/upload.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/which.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/write_rockspec.lua
+%%LUA_MODSHAREDIR%%/luarocks/config.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/cfg.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/dir.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/manif.lua
@@ -96,4 +96,5 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/upload/api.lua
 %%LUA_MODSHAREDIR%%/luarocks/upload/multipart.lua
 %%LUA_MODSHAREDIR%%/luarocks/util.lua
+%%LUA_MODSHAREDIR%%/luarocks/vendor/argparse.lua
 %%LUA_MODSHAREDIR%%/luarocks/vendor/dkjson.lua
