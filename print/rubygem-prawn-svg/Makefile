@@ -1,5 +1,5 @@
 PORTNAME=	prawn-svg
-PORTVERSION=	0.34.0
+PORTVERSION=	0.34.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ WWW=		https://github.com/mogest/prawn-svg
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-base64>=0.1<1:converters/rubygem-base64 \
-		rubygem-css_parser>=1.6<2:textproc/rubygem-css_parser \
+RUN_DEPENDS=	rubygem-css_parser>=1.6<2:textproc/rubygem-css_parser \
 		rubygem-matrix>=0.4.2<0.5:math/rubygem-matrix \
 		rubygem-prawn>=0.11.1<3:print/rubygem-prawn \
 		rubygem-rexml>=3.2<4:textproc/rubygem-rexml
