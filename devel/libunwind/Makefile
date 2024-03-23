@@ -2,7 +2,7 @@ PORTNAME=	libunwind
 PORTVERSION=	20240221	# This is the release date on https://github.com/libunwind/libunwind/releases
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
-DISTNAME=	${PORTNAME}-${LIBUNWIND_VERSION}
+DISTNAME=	libunwind-${LIBUNWIND_VERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
