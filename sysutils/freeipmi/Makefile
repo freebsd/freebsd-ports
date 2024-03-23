@@ -34,7 +34,7 @@ USE_LDCONFIG=	yes
 INFO=		freeipmi-faq
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR}
 
-CACHE_DIR?=	/var/db/${PORTNAME}
+CACHE_DIR?=	/var/db/freeipmi
 
 SHEBANG_FILES=	contrib/ganglia/ganglia_ipmi_sensors.pl \
 		contrib/nagios/nagios_ipmi_sensors.pl \
