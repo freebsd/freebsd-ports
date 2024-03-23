@@ -1,5 +1,5 @@
 PORTNAME=	liblxqt
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	LXQT
 
@@ -11,10 +11,10 @@ LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt-1@qt5
 
-USES=	cmake compiler:c++14-lang gettext gnome kde:5 lxqt \
+USES=	cmake compiler:c++14-lang gnome kde:5 lxqt \
 	pkgconfig qt:5 tar:xz xorg
 USE_GNOME=	glib20
-USE_QT=		buildtools:build qmake:build dbus core gui linguisttools \
+USE_QT=		buildtools:build qmake:build dbus core gui \
 		svg widgets x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools qtxdg

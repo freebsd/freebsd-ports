@@ -1,5 +1,5 @@
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT
 
@@ -12,8 +12,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 		libfm-qt.so:x11/libfm-qt \
 		libexif.so:graphics/libexif
+RUN_DEPENDS=    lxqt-menu-data>=1.4.1:x11/lxqt-menu-data
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gnome\
+
+USES=		cmake compiler:c++17-lang gnome \
 		gettext-runtime localbase:ldflags lxqt perl5 pkgconfig kde:5 qt:5 \
 		tar:xz xorg
 USE_PERL5=	build

@@ -1,5 +1,5 @@
 PORTNAME=	lxqt-powermanagement
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 

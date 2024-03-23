@@ -18,6 +18,7 @@ share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/translations/screengrab_el.qm
 %%DATADIR%%/translations/screengrab_es.qm
 %%DATADIR%%/translations/screengrab_et.qm
+%%DATADIR%%/translations/screengrab_fi.qm
 %%DATADIR%%/translations/screengrab_fr.qm
 %%DATADIR%%/translations/screengrab_gl.qm
 %%DATADIR%%/translations/screengrab_he.qm

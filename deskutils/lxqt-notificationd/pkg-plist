@@ -15,6 +15,7 @@ share/applications/lxqt-config-notificationd.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_et.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-notificationd/lxqt-config-notificationd_he.qm
@@ -51,6 +52,7 @@ share/applications/lxqt-config-notificationd.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_et.qm
+%%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_he.qm

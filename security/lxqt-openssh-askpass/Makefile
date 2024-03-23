@@ -1,5 +1,5 @@
 PORTNAME=	lxqt-openssh-askpass
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	security
 MASTER_SITES=	LXQT
 
