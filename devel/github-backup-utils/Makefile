@@ -25,7 +25,7 @@ SUB_FILES=	pkg-message
 SHEBANG_FILES=	bin/* share/github-backup-utils/*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/github-backup-utils/backup.config|${PREFIX}/etc/github.backup.config|g' ${WRKSRC}/share/github-backup-utils/ghe-backup-config
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/share/github-backup-utils/ghe-backup-config
 
 do-install:
 	cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin
