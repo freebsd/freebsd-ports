@@ -1,6 +1,6 @@
 PORTNAME=	google-fonts
 DISTVERSION=	0.0.0.20210120
-PORTREVISION=	4
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -18,17 +18,15 @@ RUN_DEPENDS=	Andika>0:x11-fonts/andika \
 		b612>0:x11-fonts/b612 \
 		comfortaa-ttf>0:x11-fonts/comfortaa-ttf \
 		comic-neue>0:x11-fonts/comic-neue \
-		courier-prime>0:x11-fonts/courier-prime \
+		courier-prime>.:x11-fonts/courier-prime \
 		croscorefonts>0:x11-fonts/croscorefonts-fonts-ttf \
 		exo>0:x11-fonts/exo \
 		fira>0:x11-fonts/fira \
 		firacode>0:x11-fonts/firacode \
 		jetbrains-mono>0:x11-fonts/jetbrains-mono \
-		lato>0:x11-fonts/lato \
+		lato>.:x11-fonts/lato \
 		montserrat>0:x11-fonts/montserrat \
-		noto-sans>0:x11-fonts/noto-sans \
-		noto-sans-mono>0:x11-fonts/noto-sans-mono \
-		noto-serif>0:x11-fonts/noto-serif \
+		noto-basic>0:x11-fonts/noto-basic \
 		open-sans>0:x11-fonts/open-sans \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		source-code-pro-ttf>0:x11-fonts/source-code-pro-ttf \

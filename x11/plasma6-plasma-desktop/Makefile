@@ -1,6 +1,5 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Desktop
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxkbfile.so:x11/libxkbfile
-RUN_DEPENDS=	noto-color-emoji>0:x11-fonts/noto-color-emoji \
+RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji \
 		xdg-user-dir:devel/xdg-user-dirs \
 		xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \

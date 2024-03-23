@@ -1,6 +1,6 @@
 PORTNAME=	chromium
 PORTVERSION=	123.0.6312.58
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -68,9 +68,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libxshmfence.so:x11/libxshmfence
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		noto-sans>0:x11-fonts/noto-sans \
-		noto-sans-mono>0:x11-fonts/noto-sans-mono \
-		noto-serif>0:x11-fonts/noto-serif
+		noto-basic>0:x11-fonts/noto-basic
 
 USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake gnome \
 		iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
