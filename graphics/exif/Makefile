@@ -6,7 +6,8 @@ MASTER_SITES=	https://github.com/libexif/exif/releases/download/exif-${PORTVERSI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line utility to read and manipulate EXIF data
-WWW=		https://libexif.github.io/
+WWW=		https://libexif.github.io/ \
+		https://github.com/libexif/exif
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 USES=		cpe gmake localbase pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPE_VENDOR=	curtis_galloway
 
