@@ -1,5 +1,6 @@
 PORTNAME=	fox
 PORTVERSION=	1.7.84
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -22,6 +23,7 @@ USE_XORG=	ice sm x11 xcursor xext xfixes xft xi xrandr xrender
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-freetype-include="`pkg-config freetype2 --cflags | sed -e 's|^-I||'`" \
 		--with-freetype-library="`pkg-config freetype2 --libs | sed -e 's|^-L||'`" \
 		--with-opengl=yes \
