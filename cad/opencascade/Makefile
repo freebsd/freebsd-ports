@@ -133,7 +133,6 @@ VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl	\
 			libfreeimageplus.so:graphics/freeimage
 VIS_USE=		GL=glesv2,opengl
 
-DOCS_DISTFILES=		documentation.tar.xz
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_USES=		tex
 DOXYGEN_USE=		TEX=latex:build
