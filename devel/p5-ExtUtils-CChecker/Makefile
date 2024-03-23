@@ -1,5 +1,5 @@
 PORTNAME=	ExtUtils-CChecker
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,9 +10,9 @@ WWW=		https://metacpan.org/release/ExtUtils-CChecker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	modbuild
