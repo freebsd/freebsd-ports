@@ -889,6 +889,7 @@ include/wine/windows/rstinf.idl
 include/wine/windows/rstloc.idl
 include/wine/windows/rstnot.idl
 include/wine/windows/rstupd.idl
+include/wine/windows/rtlsupportapi.h
 include/wine/windows/rtutils.h
 include/wine/windows/rtworkq.h
 include/wine/windows/rtworkq.idl
