@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_dynflow
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
