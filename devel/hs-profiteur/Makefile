@@ -1,5 +1,6 @@
 PORTNAME=	profiteur
 PORTVERSION=	0.4.7.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -7,6 +8,8 @@ COMMENT=	Treemap visualiser for GHC .prof files
 WWW=		https://github.com/jaspervdj/profiteur
 
 LICENSE=	BSD3CLAUSE
+
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 
 USES=		cabal
 
@@ -19,9 +22,10 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		base-compat-0.13.1 \
 		base-compat-batteries-0.13.1 \
 		base-orphans-0.9.1 \
-		bifunctors-5.6.1_2 \
+		bifunctors-5.6.2 \
 		comonad-5.0.8_2 \
 		contravariant-1.5.5 \
+		data-array-byte-0.1.0.1_3 \
 		data-fix-0.3.2_5 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_1 \
@@ -34,13 +38,13 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		integer-logarithms-1.0.3.1_5 \
 		js-jquery-3.3.1 \
 		primitive-0.8.0.0_1 \
-		random-1.2.1.1_1 \
+		random-1.2.1.2 \
 		scientific-0.3.7.0_7 \
 		semialign-1.3_1 \
 		semigroupoids-6.0.0.1_1 \
 		splitmix-0.1.0.5 \
 		strict-0.5_1 \
-		tagged-0.8.8 \
+		tagged-0.8.8_1 \
 		text-short-0.1.5_3 \
 		th-abstraction-0.5.0.0 \
 		these-1.2_1 \
@@ -48,8 +52,8 @@ USE_CABAL=	OneTuple-0.4.1.1_1 \
 		transformers-compat-0.7.2 \
 		unordered-containers-0.2.20_1 \
 		uuid-types-1.0.5.1 \
-		vector-0.13.1.0 \
-		vector-stream-0.1.0.1 \
+		vector-0.13.1.0_1 \
+		vector-stream-0.1.0.1_1 \
 		witherable-0.4.2_4
 
 
