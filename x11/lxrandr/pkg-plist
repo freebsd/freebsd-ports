@@ -1,5 +1,4 @@
 bin/lxrandr
-man/man1/lxrandr.1.gz
 share/applications/lxrandr.desktop
 share/locale/af/LC_MESSAGES/lxrandr.mo
 share/locale/ar/LC_MESSAGES/lxrandr.mo
@@ -62,3 +61,4 @@ share/locale/ur_PK/LC_MESSAGES/lxrandr.mo
 share/locale/vi/LC_MESSAGES/lxrandr.mo
 share/locale/zh_CN/LC_MESSAGES/lxrandr.mo
 share/locale/zh_TW/LC_MESSAGES/lxrandr.mo
+share/man/man1/lxrandr.1.gz
