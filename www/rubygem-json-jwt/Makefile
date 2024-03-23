@@ -1,5 +1,5 @@
 PORTNAME=	json-jwt
-PORTVERSION=	1.16.5
+PORTVERSION=	1.16.6
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
