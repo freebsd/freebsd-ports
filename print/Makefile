@@ -219,6 +219,7 @@
     SUBDIR += rubygem-prawn-svg
     SUBDIR += rubygem-prawn-table
     SUBDIR += rubygem-prawn-templates
+    SUBDIR += rubygem-prawn24
     SUBDIR += rubygem-prawn_shapes
     SUBDIR += rubygem-rbpdf
     SUBDIR += rubygem-rbpdf-font
