@@ -1,4 +1,8 @@
---- _scandir.c.orig	2024-02-16 23:29:35 UTC
+Obtained from:	https://github.com/benhoyt/scandir/commit/4b5354de65413b9c5c6672f5f30c532bfda4d40a
+		https://github.com/benhoyt/scandir/commit/3396aa4155ffde8600a0e9ca50d5872569169b5d
+		https://github.com/benhoyt/scandir/commit/7ee0915f68d05dd187bea94ca1869bbeb1ea1d70
+
+--- _scandir.c.orig	2018-08-02 16:17:16 UTC
 +++ _scandir.c
 @@ -94,7 +94,7 @@ comment):
  
