@@ -26,6 +26,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/Tool/Show.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Sizes.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Stack.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Strtab.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Summary.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Symbols.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Tools.pm
@@ -91,6 +92,7 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Tool::Show.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Sizes.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Stack.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Strtab.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Summary.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Symbols.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UI.3.gz
