@@ -1,11 +1,15 @@
---- main/updater/CMakeLists.txt.orig	2024-02-25 20:54:48 UTC
+--- main/updater/CMakeLists.txt.orig	2024-03-23 09:15:12 UTC
 +++ main/updater/CMakeLists.txt
-@@ -5,7 +5,7 @@ target_compile_definitions(updater PRIVATE IMHEX_PROJE
+@@ -5,7 +5,11 @@ target_compile_definitions(updater PRIVATE IMHEX_PROJE
  )
  
  target_compile_definitions(updater PRIVATE IMHEX_PROJECT_NAME="${PROJECT_NAME}")
 -target_link_libraries(updater PRIVATE libimhex ${FMT_LIBRARIES})
-+target_link_libraries(updater PRIVATE libimhex ${FMT_LIBRARIES} pthread)
++if (BSD AND BSD STREQUAL "FreeBSD")
++    target_link_libraries(updater PRIVATE libimhex ${FMT_LIBRARIES} pthread)
++else ()
++    target_link_libraries(updater PRIVATE libimhex ${FMT_LIBRARIES})
++endif ()
  add_dependencies(main updater)
  
  if (APPLE)

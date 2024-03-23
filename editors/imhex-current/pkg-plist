@@ -1,7 +1,7 @@
 bin/imhex
 bin/imhex-updater
 lib/libimhex.so
-lib/libimhex.so.1.33.1
+lib/libimhex.so.1.33.2
 share/applications/imhex.desktop
 %%DATADIR%%/constants/crc16.json
 %%DATADIR%%/constants/crc32.json
@@ -91,6 +91,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/nodes/xor.hexnode
 %%DATADIR%%/patterns/3ds.hexpat
 %%DATADIR%%/patterns/7z.hexpat
+%%DATADIR%%/patterns/adts.hexpat
 %%DATADIR%%/patterns/afe2.hexpat
 %%DATADIR%%/patterns/ar.hexpat
 %%DATADIR%%/patterns/aria2.hexpat
@@ -100,6 +101,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/bastion/save.hexpat
 %%DATADIR%%/patterns/bastion/util.hexpat
 %%DATADIR%%/patterns/bencode.hexpat
+%%DATADIR%%/patterns/bgcode.hexpat
 %%DATADIR%%/patterns/bmp.hexpat
 %%DATADIR%%/patterns/bplist.hexpat
 %%DATADIR%%/patterns/bson.hexpat
@@ -176,6 +178,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/nbt.hexpat
 %%DATADIR%%/patterns/ne.hexpat
 %%DATADIR%%/patterns/nes.hexpat
+%%DATADIR%%/patterns/notepadwindowstate.hexpat
 %%DATADIR%%/patterns/nro.hexpat
 %%DATADIR%%/patterns/ntag.hexpat
 %%DATADIR%%/patterns/ogg.hexpat
@@ -193,6 +196,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/qbcl.hexpat
 %%DATADIR%%/patterns/qoi.hexpat
 %%DATADIR%%/patterns/ras.hexpat
+%%DATADIR%%/patterns/refs.hexpat
 %%DATADIR%%/patterns/selinux.hexpat
 %%DATADIR%%/patterns/selinuxpp.hexpat
 %%DATADIR%%/patterns/shp.hexpat
