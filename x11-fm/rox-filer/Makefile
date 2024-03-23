@@ -1,6 +1,6 @@
 PORTNAME=	rox-filer
 PORTVERSION=	2.11
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 
@@ -50,7 +50,7 @@ do-install:
 	   style.css subclasses ${STAGEDIR}${PREFIX}/apps/ROX-Filer
 	cd ${WRKSRC} && ${CP} -r Choices ${STAGEDIR}${PREFIX}/share/
 	${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${STAGEDIR}${PREFIX}/bin/rox
-	${INSTALL_MAN} ${WRKSRC}/rox.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/rox.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/rox.xml ${STAGEDIR}${PREFIX}/share/mime/packages
 
