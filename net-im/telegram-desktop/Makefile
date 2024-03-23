@@ -13,8 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	does not build, webrtc related
-BROKEN_SSL=	openssl openssl31
-BROKEN_SSL_REASON=	undefined symbol: ERR_load_BIO_strings
+#BROKEN_SSL=	openssl openssl31
+#BROKEN_SSL_REASON=	undefined symbol: ERR_load_BIO_strings
 NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only little endian is supported
 
