@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-10-04 09:21:14 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+     "Cython >=0.29.31,<1",
+-    "oldest-supported-numpy",
++    "numpy",
+     "pkgconfig",
+     "setuptools >=61",
+ ]
