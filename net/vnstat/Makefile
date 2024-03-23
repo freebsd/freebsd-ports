@@ -16,7 +16,7 @@ USES=		localbase sqlite
 
 CONFIGURE_ARGS=	--disable-extra-paths
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-exec install-man
 USE_RC_SUBR=	vnstat
 
@@ -36,11 +36,11 @@ GUI_DESC=	Build with graphics/gd dependency
 GUI_CONFIGURE_OFF=	--disable-image-output
 GUI_LIB_DEPENDS=	libgd.so:graphics/gd
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/cfg/vnstat.conf ${STAGEDIR}${PREFIX}/etc/vnstat.conf.sample
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/cfg/vnstat.conf ${STAGEDIR}${PREFIX}/etc/vnstat.conf.sample
 
 .include <bsd.port.mk>
