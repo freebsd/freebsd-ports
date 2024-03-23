@@ -12,7 +12,7 @@ WWW=		https://github.com/JetBrains/intellij-community/tree/master/native/restart
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE.txt
 
-ONLY_FOR_ARCHS=	amd64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 USES=		cargo
 
