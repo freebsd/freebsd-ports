@@ -1,6 +1,6 @@
 PORTNAME=	htdigest
 PORTVERSION=	2.4.56
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://archive.apache.org/dist/httpd/
 DISTNAME=	httpd-${PORTVERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libaprutil-1.so:devel/apr1 \
 
 USES=		iconv
 
-PLIST_FILES=	bin/apache-${PORTNAME} man/man1/apache-${PORTNAME}.1.gz
+PLIST_FILES=	bin/apache-${PORTNAME} share/man/man1/apache-${PORTNAME}.1.gz
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/support/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/apache-htdigest
 	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/man/man1/apache-htdigest.1
+		${STAGEDIR}${PREFIX}/share/man/man1/apache-htdigest.1
 
 .include <bsd.port.mk>
