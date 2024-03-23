@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.62.0
+PORTVERSION=	1.62.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -19,11 +19,11 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2
 
-USES=		cmake compiler:c++17-lang cpe localbase:ldflags pathfix pkgconfig ssl
+USES=		cmake compiler:c++17-lang cpe localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_TUPLE=	census-instrumentation:opencensus-proto:v0.4.1:census_instrumentation_opencensus_proto/third_party/opencensus-proto/src \
-		cncf:xds:0fa0005:cncf_xds/third_party/xds
+		cncf:xds:91a88dc:cncf_xds/third_party/xds
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
