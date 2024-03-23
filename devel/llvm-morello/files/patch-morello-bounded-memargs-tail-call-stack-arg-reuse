@@ -1,0 +1,124 @@
+From 6c253f43b9383c605206d18f11ae0c6a3b4653d0 Mon Sep 17 00:00:00 2001
+From: Jessica Clarke <jrtc27@jrtc27.com>
+Date: Fri, 22 Mar 2024 23:54:04 +0000
+Subject: [PATCH 1/2] [Morello] Add a test showing a broken bounded memarg tail
+ call
+
+Storing directly to the caller's stack is not allowed for this ABI
+variant, as it is intended to support CheriBSD's library-based
+compartmentalisation implementation where each compartment has its own
+stack, so if the function is called from another compartment its stack
+pointer will point to the wrong place (including the top of its own
+stack if the compartment has not been reentered).
+---
+ .../AArch64/morello-bounded-memargs.ll        | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll
+index 5f568b6d9c72..eff3f17fd912 100644
+--- llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll
++++ llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll
+@@ -230,3 +230,25 @@ define i32 @f(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6, i32 %7, i3
+ }
+ 
+ declare void @llvm.va_end.p200i8(i8 addrspace(200)*) addrspace(200)
++
++declare void @tail_callee(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6, i32 %7, i32 %8)
++
++;; Check that we don't try to store directly to the caller's stack in order to
++;; perform a tail call to a compatible function with in-memory arguments.
++;; TODO: Broken
++define void @tail_call(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6, i32 %7, i32 %8) {
++; CHECK-LABEL: tail_call:
++; CHECK:       .Lfunc_begin5:
++; CHECK-NEXT:    .cfi_startproc
++; CHECK-NEXT:  // %bb.0: // %entry
++; CHECK-NEXT:    ldr w8, [c9]
++; CHECK-NEXT:    add w8, w8, #1
++; CHECK-NEXT:    str w8, [csp]
++; CHECK-NEXT:    mov c8, csp
++; CHECK-NEXT:    scbnds c9, c8, #4 // =4
++; CHECK-NEXT:    b tail_callee
++entry:
++  %9 = add nsw i32 %8, 1
++  tail call void @tail_callee(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6, i32 %7, i32 %9)
++  ret void
++}
+-- 
+GitLab
+
+
+From 43105276d6d26e5a687a96ed84e20ad3d8b2fb89 Mon Sep 17 00:00:00 2001
+From: Jessica Clarke <jrtc27@jrtc27.com>
+Date: Sat, 23 Mar 2024 00:19:52 +0000
+Subject: [PATCH 2/2] [Morello] Disable tail call stack arg area reuse for
+ bounded memargs
+
+Storing directly to the caller's stack is not allowed for this ABI
+variant, as it is intended to support CheriBSD's library-based
+compartmentalisation implementation where each compartment has its own
+stack, so if the function is called from another compartment its stack
+pointer will point to the wrong place (including the top of its own
+stack if the compartment has not been reentered).
+
+Note that this does break [[clang::musttail]] for legitimate uses, but
+these are very rare, and the RISC-V backend doesn't implement this at
+all upstream so Morello with bounded memargs is no worse off than plain
+RISC-V is.
+---
+ llvm/lib/Target/AArch64/AArch64ISelLowering.cpp    |  5 ++++-
+ .../CodeGen/AArch64/morello-bounded-memargs.ll     | 14 ++++++++++----
+ 2 files changed, 14 insertions(+), 5 deletions(-)
+
+diff --git llvm/lib/Target/AArch64/AArch64ISelLowering.cpp llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
+index d4cb23df34a0..a3624717f456 100644
+--- llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
++++ llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
+@@ -6628,7 +6628,10 @@ bool AArch64TargetLowering::isEligibleForTailCallOptimization(
+ 
+   // If the stack arguments for this call do not fit into our own save area then
+   // the call cannot be made tail.
+-  if (CCInfo.getNextStackOffset() > FuncInfo->getBytesInStackArgArea())
++  // TODO: Support using the caller's stack save area via C9 for bounded memargs.
++  if ((Subtarget->hasMorelloBoundedMemArgsCallee() &&
++       CCInfo.getNextStackOffset() > 0) ||
++      CCInfo.getNextStackOffset() > FuncInfo->getBytesInStackArgArea())
+     return false;
+ 
+   if (Subtarget->hasMorelloBoundedMemArgsCaller()) {
+diff --git llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll
+index eff3f17fd912..f2a6f8cf1ff7 100644
+--- llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll
++++ llvm/test/CodeGen/AArch64/morello-bounded-memargs.ll
+@@ -235,18 +235,24 @@ declare void @tail_callee(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6
+ 
+ ;; Check that we don't try to store directly to the caller's stack in order to
+ ;; perform a tail call to a compatible function with in-memory arguments.
+-;; TODO: Broken
++;; TODO: We should still be able to optimise this by storing via C9
+ define void @tail_call(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6, i32 %7, i32 %8) {
+ ; CHECK-LABEL: tail_call:
+ ; CHECK:       .Lfunc_begin5:
+ ; CHECK-NEXT:    .cfi_startproc
+ ; CHECK-NEXT:  // %bb.0: // %entry
++; CHECK-NEXT:    sub csp, csp, #32
++; CHECK-NEXT:    str c30, [csp, #16] // 16-byte Folded Spill
++; CHECK-NEXT:    .cfi_def_cfa_offset 32
++; CHECK-NEXT:    .cfi_offset c30, -16
+ ; CHECK-NEXT:    ldr w8, [c9]
++; CHECK-NEXT:    scbnds c9, csp, #4 // =4
+ ; CHECK-NEXT:    add w8, w8, #1
+ ; CHECK-NEXT:    str w8, [csp]
+-; CHECK-NEXT:    mov c8, csp
+-; CHECK-NEXT:    scbnds c9, c8, #4 // =4
+-; CHECK-NEXT:    b tail_callee
++; CHECK-NEXT:    bl tail_callee
++; CHECK-NEXT:    ldr c30, [csp, #16] // 16-byte Folded Reload
++; CHECK-NEXT:    add csp, csp, #32
++; CHECK-NEXT:    ret c30
+ entry:
+   %9 = add nsw i32 %8, 1
+   tail call void @tail_callee(i32 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, i32 %6, i32 %7, i32 %9)
+-- 
+GitLab
+
