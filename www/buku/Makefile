@@ -1,6 +1,7 @@
 PORTNAME=	buku
 PORTVERSION=	4.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www python
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,6 +11,8 @@ WWW=		https://github.com/jarun/buku
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.1:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=1.0.1:www/py-html5lib@${PY_FLAVOR} \
@@ -17,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.1:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.23,1:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cryptography distutils noflavors
+USE_PYTHON=	autoplist cryptography noflavors pep517
 
 NO_ARCH=	yes
 
@@ -29,9 +32,9 @@ GH_ACCOUNT=	jarun
 OPTIONS_MULTI=	COMPLETION
 OPTIONS_MULTI_COMPLETION=	BASH FISH ZSH
 OPTIONS_DEFAULT=BASH FISH ZSH
-BASH_DESC=		Install bash completion
-FISH_DESC=		Install fish completion
-ZSH_DESC=		Install zsh completion
+BASH_DESC=	Install bash completion
+FISH_DESC=	Install fish completion
+ZSH_DESC=	Install zsh completion
 
 BASH_PLIST_FILES=	etc/bash_completion.d/buku-completion.bash
 FISH_PLIST_FILES=	share/fish/completions/buku.fish
