@@ -224,6 +224,7 @@ include/fxt/comb/composition-nz-smooth.h
 include/fxt/comb/composition-nz-sorts.h
 include/fxt/comb/composition-nz-sorts2-pp.h
 include/fxt/comb/composition-nz-sorts2.h
+include/fxt/comb/composition-nz-subdiagonal.h
 include/fxt/comb/composition-nz-subset-lex.h
 include/fxt/comb/composition-nz-superdiagonal.h
 include/fxt/comb/composition-nz-upstep.h
@@ -461,6 +462,7 @@ include/fxt/comb/subset-sl-gray.h
 include/fxt/comb/test-gray.h
 include/fxt/comb/tree-lev-seq-aux.h
 include/fxt/comb/tree-lev-seq.h
+include/fxt/comb/weak-ascent-rgs.h
 include/fxt/comb/weakly-unimodal-map-lex.h
 include/fxt/comb/wfl-hilbert.h
 include/fxt/comb/word-stats.h
@@ -1029,6 +1031,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-sorts2-pp-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-stats-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-stats-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-subdiagonal-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-subdiagonal-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-subset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-subset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-subset-lex-rec-demo.cc
@@ -1483,6 +1487,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/tree-lev-seq-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/tree-lev-seq-stats-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/tree-lev-seq-stats-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/weak-ascent-rgs-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/weak-ascent-rgs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/weakly-unimodal-map-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/weakly-unimodal-map-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/wfl-hilbert-demo.cc
@@ -1788,6 +1794,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A309807-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A368948-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A368948-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A369376-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A369376-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bracelets-demo.cc
