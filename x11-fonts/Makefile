@@ -222,6 +222,7 @@
     SUBDIR += noto-sans-symbols-extra
     SUBDIR += noto-sans-symbols2
     SUBDIR += noto-sans-tc
+    SUBDIR += noto-sans-telugu
     SUBDIR += noto-sc
     SUBDIR += noto-serif-hk
     SUBDIR += noto-serif-jp
