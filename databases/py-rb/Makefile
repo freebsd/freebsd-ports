@@ -1,5 +1,6 @@
 PORTNAME=	rb
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,14 +10,16 @@ WWW=		https://github.com/getsentry/rb
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis2>=2.6:databases/py-redis2@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-GH_ACCOUNT=	getsentry
 USE_GITHUB=	yes
+GH_ACCOUNT=	getsentry
 
 .include <bsd.port.mk>
