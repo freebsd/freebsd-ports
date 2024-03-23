@@ -41,7 +41,7 @@ include/guacamole/socket.h
 include/guacamole/stream-types.h
 include/guacamole/stream.h
 include/guacamole/string.h
-include/guacamole/terminal/terminal.h
+%%TERMINAL%%include/guacamole/terminal/terminal.h
 include/guacamole/timestamp-types.h
 include/guacamole/timestamp.h
 include/guacamole/unicode.h
@@ -73,10 +73,10 @@ lib/libguac.a
 lib/libguac.so
 lib/libguac.so.23
 lib/libguac.so.23.0.0
-lib/libguac-terminal.a
-lib/libguac-terminal.so
-lib/libguac-terminal.so.0
-lib/libguac-terminal.so.0.1.0
+%%TERMINAL%%lib/libguac-terminal.a
+%%TERMINAL%%lib/libguac-terminal.so
+%%TERMINAL%%lib/libguac-terminal.so.0
+%%TERMINAL%%lib/libguac-terminal.so.0.1.0
 %%GUACENC%%share/man/man1/guacenc.1.gz
 %%GUACLOG%%share/man/man1/guaclog.1.gz
 share/man/man5/guacd.conf.5.gz

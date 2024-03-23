@@ -67,19 +67,16 @@ GUACENC_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 GUACENC_CFLAGS=		-Wno-error=deprecated
 GUACLOG_CONFIGURE_ENABLE=	guaclog
 KUBERNETES_CONFIGURE_ENABLE=	kubernetes
-KUBERNETES_CONFIGURE_WITH=	pango terminal
 KUBERNETES_LIB_DEPENDS=		libwebsockets.so:net/libwebsockets \
 				libharfbuzz.so:print/harfbuzz
-KUBERNETES_USE=			GNOME=pango
 NLS_USES=		gettext-runtime
 PULSEAUDIO_CONFIGURE_WITH=	pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 RDP_CONFIGURE_WITH=	rdp
 RDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp
-SSH_CONFIGURE_WITH=	pango ssh terminal
+SSH_CONFIGURE_WITH=	ssh
 SSH_IMPLIES=		SSL
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
-SSH_USE=		GNOME=pango
 SSL_CONFIGURE_WITH=	ssl
 SSL_USES=		ssl
 VNC_CONFIGURE_WITH=	vnc
@@ -90,7 +87,16 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKUBERNETES}${PORT_OPTIONS:MSSH}
+CONFIGURE_ARGS+=	--with-pango --with-terminal
+PLIST_SUB+=		TERMINAL=""
+USE_GNOME+=		pango
+.else
+CONFIGURE_ARGS+=	--without-pango --without-terminal
+PLIST_SUB+=		TERMINAL="@comment "
+.endif
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=       -Wno-error=strict-prototypes \
@@ -108,4 +114,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${GUACAMOLE_HOME}
 	${INSTALL_DATA} ${FILESDIR}/guacd.conf.sample ${STAGEDIR}${ETCDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
