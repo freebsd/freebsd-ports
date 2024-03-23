@@ -1,8 +1,9 @@
 PORTNAME=	SNMP-Info
-PORTVERSION=	3.97
+PORTVERSION=	3.97.0001
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	SNMP-Info-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for gathering information from network devices
