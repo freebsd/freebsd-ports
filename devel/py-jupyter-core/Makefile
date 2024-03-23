@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-core
-PORTVERSION=	5.7.1
+PORTVERSION=	5.7.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/jupyter_core/releases/download/v${PORTVERSION}/
