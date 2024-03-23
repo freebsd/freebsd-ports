@@ -204,6 +204,7 @@
     SUBDIR += rubygem-color-tools
     SUBDIR += rubygem-color_diff
     SUBDIR += rubygem-pdf-core
+    SUBDIR += rubygem-pdf-core09
     SUBDIR += rubygem-pdf-reader
     SUBDIR += rubygem-pdf-writer
     SUBDIR += rubygem-prawn
