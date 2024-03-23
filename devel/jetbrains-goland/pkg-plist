@@ -1,5 +1,4 @@
 bin/goland
-share/man/man1/goland.1.gz
 share/applications/goland.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
@@ -22,7 +21,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-233.14475.38
+%%DATADIR%%/lib/build-marker-GO-233.15026.17
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -790,3 +789,4 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/xml-refactoring/lib/xml-refactoring.jar
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
+share/man/man1/goland.1.gz
