@@ -1,6 +1,5 @@
 PORTNAME=	mDNSResponder
-PORTVERSION=	1790.80.10	# Reset PORTREVISION on slave port (dns/mDNSResponder_nss) after update
-PORTREVISION?=	1
+PORTVERSION=	2200.80.16
 CATEGORIES?=	net dns
 MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
 
