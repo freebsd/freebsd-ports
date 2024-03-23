@@ -13,7 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=3.8:devel/py-pytest@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=0:textproc/py-elasticsearch@${PY_FLAVOR} \
+TEST_DEPENDS=	git:devel/git \
+		hg:devel/mercurial \
+		${PYTHON_PKGNAMEPREFIX}aspectlib>=0:devel/py-aspectlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}elasticsearch>=0:textproc/py-elasticsearch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0,1:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python
@@ -22,11 +26,11 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
-OPTIONS_DEFINE=	ELASTICSEARCH
+OPTIONS_DEFINE=	ASPECT ELASTICSEARCH
+ASPECT_DESC=	Aspect support
 ELASTICSEARCH_DESC=	Elasticsearch support
 
+ASPECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aspectlib>=0:devel/py-aspectlib@${PY_FLAVOR}
 ELASTICSEARCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=0:textproc/py-elasticsearch@${PY_FLAVOR}
-
-TESTING_UNSAFE=	ModuleNotFoundError: No module named 'freezegun'
 
 .include <bsd.port.mk>
