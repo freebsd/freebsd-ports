@@ -227,6 +227,7 @@
     SUBDIR += noto-sans-thai
     SUBDIR += noto-sc
     SUBDIR += noto-serif-basic
+    SUBDIR += noto-serif-bengali
     SUBDIR += noto-serif-hk
     SUBDIR += noto-serif-jp
     SUBDIR += noto-serif-kr
