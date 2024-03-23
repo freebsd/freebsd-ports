@@ -59,7 +59,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 do-install-HTMLDOCS-on:
-	${INSTALL_DATA} ${WRKSRC}/doc/_build/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${STAGEDIR}${DOCSDIR}
 
 .else # slave is defined
 LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
