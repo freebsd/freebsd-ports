@@ -4,7 +4,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
+DISTNAME=	Coro-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Coroutine process abstraction for perl
