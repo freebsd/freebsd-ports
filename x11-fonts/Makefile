@@ -245,6 +245,7 @@
     SUBDIR += noto-serif-sinhala
     SUBDIR += noto-serif-tamil
     SUBDIR += noto-serif-tc
+    SUBDIR += noto-serif-telugu
     SUBDIR += noto-tc
     SUBDIR += nucleus
     SUBDIR += office-code-pro
