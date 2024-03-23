@@ -1,5 +1,6 @@
 PORTNAME=	zfec
 PORTVERSION=	1.5.7.4
+PORTREVISION=	1
 CATEGORIES=	converters python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +16,11 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_TGGPL=	${WRKSRC}/COPYING.TGPPL.rst
 LICENSE_PERMS_TGGPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
