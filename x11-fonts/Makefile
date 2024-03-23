@@ -240,6 +240,7 @@
     SUBDIR += noto-serif-khmer
     SUBDIR += noto-serif-kr
     SUBDIR += noto-serif-lao
+    SUBDIR += noto-serif-myanmar
     SUBDIR += noto-serif-sc
     SUBDIR += noto-serif-tc
     SUBDIR += noto-tc
