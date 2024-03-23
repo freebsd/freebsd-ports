@@ -1,8 +1,7 @@
 PORTNAME=	lfm
 PORTVERSION=	3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://inigo.katxi.org/devel/lfm/ \
-		LOCAL/sunpoet
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Last File Manager, a powerful file manager for the UNIX console
