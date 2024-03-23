@@ -201,6 +201,7 @@
     SUBDIR += noto-sans-bengali
     SUBDIR += noto-sans-cham
     SUBDIR += noto-sans-cherokee
+    SUBDIR += noto-sans-devanagari
     SUBDIR += noto-sans-hk
     SUBDIR += noto-sans-jp
     SUBDIR += noto-sans-kr
