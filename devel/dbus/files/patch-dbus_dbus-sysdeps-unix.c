@@ -8,7 +8,14 @@
  #include <sys/types.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -62,6 +63,9 @@
+@@ -59,9 +60,16 @@
+ #include <grp.h>
+ #include <arpa/inet.h>
+ 
++#ifdef __FreeBSD__
++#include <sys/ucred.h>
++#endif
++
  #ifdef HAVE_ERRNO_H
  #include <errno.h>
  #endif
@@ -18,7 +25,7 @@
  #ifdef HAVE_SYSLOG_H
  #include <syslog.h>
  #endif
-@@ -80,6 +84,9 @@
+@@ -80,6 +88,9 @@
  #ifdef HAVE_SYS_RANDOM_H
  #include <sys/random.h>
  #endif
@@ -28,7 +35,7 @@
  
  #ifdef HAVE_ADT
  #include <bsm/adt.h>
-@@ -137,6 +144,21 @@
+@@ -137,6 +148,21 @@
  
  #endif /* Solaris */
  
@@ -50,7 +57,33 @@
  /**
   * Ensure that the standard file descriptors stdin, stdout and stderr
   * are open, by opening /dev/null if necessary.
-@@ -4791,7 +4813,24 @@ _dbus_close_all (void)
+@@ -2325,6 +2351,25 @@ _dbus_read_credentials_socket  (DBusSocket       clien
+         pid_read = cr.unp_pid;
+         uid_read = cr.unp_euid;
+       }
++#elif defined(LOCAL_PEERCRED)
++    struct xucred cr;
++    socklen_t cr_len = sizeof (cr);
++
++    if (getsockopt (client_fd.fd, 0, LOCAL_PEERCRED, &cr, &cr_len) != 0)
++      {
++        _dbus_verbose ("Failed to getsockopt(LOCAL_PEERCRED): %s\n",
++                       _dbus_strerror (errno));
++      }
++    else if (cr_len != sizeof (cr))
++      {
++        _dbus_verbose ("Failed to getsockopt(LOCAL_PEERCRED), returned %d bytes, expected %d\n",
++                       cr_len, (int) sizeof (cr));
++      }
++    else
++      {
++        pid_read = cr.cr_pid;
++        uid_read = cr.cr_uid;
++      }
+ #elif defined(HAVE_CMSGCRED)
+     /* We only check for HAVE_CMSGCRED, but we're really assuming that the
+      * presence of that struct implies SCM_CREDS. Supported by at least
+@@ -4791,7 +4836,24 @@ _dbus_close_all (void)
  void
  _dbus_close_all (void)
  {
@@ -75,7 +108,7 @@
  }
  
  /**
-@@ -4801,6 +4840,11 @@ _dbus_fd_set_all_close_on_exec (void)
+@@ -4801,6 +4863,11 @@ _dbus_fd_set_all_close_on_exec (void)
  void
  _dbus_fd_set_all_close_on_exec (void)
  {
