@@ -1,7 +1,6 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.5
-PORTREVISION=	1
+DISTVERSION=	2.6.6
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +32,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.68 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
@@ -153,14 +153,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		libwebp-sys2-0.1.9 \
 		linux-raw-sys-0.4.12 \
 		lock_api-0.4.10 \
-		log-0.4.20 \
+		log-0.4.21 \
 		lru-0.12.0 \
 		malloc_buf-0.0.6 \
 		memchr-2.7.1 \
 		memoffset-0.9.0 \
 		mime-0.3.17 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.9 \
+		mio-0.8.11 \
 		nanorand-0.7.0 \
 		native-tls-0.2.11 \
 		ndk-context-0.1.1 \
@@ -245,7 +245,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		tempfile-3.10.0 \
+		tempfile-3.10.1 \
 		textwrap-0.16.0 \
 		thiserror-1.0.44 \
 		thiserror-impl-1.0.44 \
