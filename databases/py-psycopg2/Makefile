@@ -1,5 +1,6 @@
 PORTNAME=	psycopg2
 PORTVERSION=	2.9.9
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +13,11 @@ WWW=		https://www.psycopg.org/ \
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.LESSER
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		pgsql python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
