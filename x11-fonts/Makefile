@@ -214,6 +214,7 @@
     SUBDIR += noto-sans-mono
     SUBDIR += noto-sans-mono-basic
     SUBDIR += noto-sans-mono-extra
+    SUBDIR += noto-sans-myanmar
     SUBDIR += noto-sans-sc
     SUBDIR += noto-sans-tc
     SUBDIR += noto-sc
