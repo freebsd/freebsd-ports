@@ -3,7 +3,7 @@
 
 PORTNAME=	lsof
 DISTVERSION=	4.99.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -20,6 +20,11 @@ USES=		compiler cpe shebangfix
 CPE_VENDOR=	lsof_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsof-org
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	003c8463fd6b8cf2d25a4b10a874825f8f4b471b.patch \
+		5233d10ec63ba674c250bdc4308c3a22a04f6d20.patch
+PATCH_DIST_STRIP=	-p1
 
 SHEBANG_FILES=	scripts/*.pl
 
