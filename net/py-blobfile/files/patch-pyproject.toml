@@ -1,14 +1,9 @@
---- pyproject.toml.orig	2023-04-21 05:36:25 UTC
+--- pyproject.toml.orig	2023-10-12 00:15:23 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@
+@@ -1,5 +1,5 @@
  [build-system]
- requires = [
--    "setuptools == 42.0.0",
--    "wheel == 0.33.6",
--    "astor == 0.8.0",
--]
-\ No newline at end of file
-+    "setuptools >= 42.0.0",
-+    "wheel >= 0.33.6",
-+    "astor >= 0.8.0",
-+]
+-requires = ["setuptools>=64.0"]
++requires = ["setuptools>=61.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.black]
