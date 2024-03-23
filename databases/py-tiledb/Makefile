@@ -11,9 +11,6 @@ WWW=		https://github.com/TileDB-Inc/TileDB-Py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	is currently 64-bit only
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0<3.0:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.23.2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
