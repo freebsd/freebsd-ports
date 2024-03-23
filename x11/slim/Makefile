@@ -1,6 +1,6 @@
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
