@@ -220,6 +220,7 @@
     SUBDIR += noto-sans-symbols
     SUBDIR += noto-sans-symbols-basic
     SUBDIR += noto-sans-symbols-extra
+    SUBDIR += noto-sans-symbols2
     SUBDIR += noto-sans-tc
     SUBDIR += noto-sc
     SUBDIR += noto-serif-hk
