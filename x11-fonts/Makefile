@@ -203,6 +203,7 @@
     SUBDIR += noto-sans-cherokee
     SUBDIR += noto-sans-devanagari
     SUBDIR += noto-sans-ethiopic
+    SUBDIR += noto-sans-extra
     SUBDIR += noto-sans-hk
     SUBDIR += noto-sans-jp
     SUBDIR += noto-sans-kr
