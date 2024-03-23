@@ -1,7 +1,6 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.0
-PORTREVISION=	1
+DISTVERSION=	1.38.0
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -32,10 +31,7 @@ MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
-TARGET_ORDER_OVERRIDE=	750:cargo-configure
-CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 MESON_ARGS=	-Dstrict=false
-MESON_ARGS+=	-Dnewer=true # XXX Cargo.lock
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
 		bin/${PORTNAME}-test-layout \
@@ -75,18 +71,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/zh_CN/LC_MESSAGES/${PORTNAME}.mo \
 		${NULL}
 
-post-extract:
-.if ${MESON_ARGS:M-Dnewer=true}
-	@${CP} -p ${WRKSRC}/Cargo.lock.newer ${WRKSRC}/Cargo.lock
-.endif
-
 post-patch:
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -e '/^cargo/s/"$$@"/--verbose --verbose &/' \
 		${WRKSRC}/cargo.sh
-
-post-configure:
-# Provide preprocessed Cargo.toml for USES=cargo
-	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC} Cargo.toml
 
 .include <bsd.port.mk>

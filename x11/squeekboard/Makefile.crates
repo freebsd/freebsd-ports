@@ -1,123 +1,139 @@
-CARGO_CRATES=	anyhow-1.0.69 \
-		async-io-1.12.0 \
-		async-lock-2.6.0 \
-		atk-0.14.0 \
-		atk-sys-0.14.0 \
+CARGO_CRATES=	anstyle-1.0.6 \
+		async-io-1.13.0 \
+		async-lock-2.8.0 \
+		atk-0.18.0 \
+		atk-sys-0.18.0 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		byteorder-1.4.3 \
-		cairo-rs-0.14.9 \
-		cairo-sys-rs-0.14.9 \
-		cc-1.0.79 \
-		cfg-expr-0.8.1 \
+		bitflags-2.5.0 \
+		byteorder-1.5.0 \
+		cairo-rs-0.18.5 \
+		cairo-sys-rs-0.18.2 \
+		cc-1.0.90 \
+		cfg-expr-0.15.7 \
 		cfg-if-1.0.0 \
-		clap-4.1.6 \
-		clap_lex-0.3.1 \
-		concurrent-queue-2.1.0 \
-		crossbeam-utils-0.8.14 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
+		clap_lex-0.6.0 \
+		concurrent-queue-2.4.0 \
+		crossbeam-utils-0.8.19 \
 		derivative-2.2.0 \
-		either-1.8.1 \
 		enumflags2-0.6.4 \
 		enumflags2_derive-0.6.4 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
 		event-listener-2.5.3 \
 		fastrand-1.9.0 \
-		field-offset-0.3.4 \
-		futures-0.3.26 \
-		futures-channel-0.3.26 \
-		futures-core-0.3.26 \
-		futures-executor-0.3.26 \
-		futures-io-0.3.26 \
-		futures-lite-1.12.0 \
-		futures-macro-0.3.26 \
-		futures-sink-0.3.26 \
-		futures-task-0.3.26 \
-		futures-util-0.3.26 \
-		gdk-0.14.3 \
-		gdk-pixbuf-0.14.0 \
-		gdk-pixbuf-sys-0.14.0 \
-		gdk-sys-0.14.0 \
-		gio-0.14.8 \
-		gio-sys-0.14.0 \
-		glib-0.14.8 \
-		glib-macros-0.14.1 \
-		glib-sys-0.14.0 \
-		gobject-sys-0.14.0 \
-		gtk-0.14.3 \
-		gtk-sys-0.14.0 \
-		gtk3-macros-0.14.0 \
-		hashbrown-0.12.3 \
-		heck-0.3.3 \
-		indexmap-1.9.2 \
+		field-offset-0.3.6 \
+		futures-0.3.30 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
+		futures-io-0.3.30 \
+		futures-lite-1.13.0 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
+		gdk-0.18.0 \
+		gdk-pixbuf-0.18.5 \
+		gdk-pixbuf-sys-0.18.0 \
+		gdk-sys-0.18.0 \
+		gio-0.18.4 \
+		gio-sys-0.18.1 \
+		glib-0.18.5 \
+		glib-macros-0.18.5 \
+		glib-sys-0.18.1 \
+		gobject-sys-0.18.0 \
+		gtk-0.18.1 \
+		gtk-sys-0.18.0 \
+		gtk3-macros-0.18.0 \
+		hashbrown-0.14.3 \
+		heck-0.4.1 \
+		heck-0.5.0 \
+		hermit-abi-0.3.9 \
+		indexmap-2.2.6 \
 		instant-0.1.12 \
-		itertools-0.10.5 \
-		libc-0.2.139 \
-		linked-hash-map-0.5.6 \
-		log-0.4.17 \
+		io-lifetimes-1.0.11 \
+		itoa-1.0.10 \
+		libc-0.2.153 \
+		linux-raw-sys-0.3.8 \
+		log-0.4.21 \
 		maplit-1.0.2 \
-		memchr-2.5.0 \
-		memmap-0.7.0 \
+		memchr-2.7.1 \
+		memmap2-0.7.1 \
 		memoffset-0.6.5 \
+		memoffset-0.9.0 \
 		nb-connect-1.2.0 \
 		nix-0.22.3 \
-		nom8-0.2.0 \
-		once_cell-1.17.1 \
-		os_str_bytes-6.4.1 \
-		pango-0.14.8 \
-		pango-sys-0.14.0 \
-		parking-2.0.0 \
-		pest-2.5.5 \
-		pin-project-lite-0.2.9 \
+		once_cell-1.19.0 \
+		pango-0.18.3 \
+		pango-sys-0.18.0 \
+		parking-2.2.0 \
+		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.26 \
-		polling-2.5.2 \
+		pkg-config-0.3.30 \
+		polling-2.8.0 \
 		proc-macro-crate-0.1.5 \
-		proc-macro-crate-1.3.0 \
+		proc-macro-crate-1.3.1 \
+		proc-macro-crate-2.0.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.51 \
-		quote-1.0.23 \
-		rustc_version-0.3.3 \
-		ryu-1.0.12 \
+		proc-macro2-1.0.79 \
+		quote-1.0.35 \
+		rustc_version-0.4.0 \
+		rustix-0.37.27 \
+		ryu-1.0.17 \
 		scoped-tls-1.0.1 \
-		semver-0.11.0 \
-		semver-parser-0.10.2 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_repr-0.1.10 \
-		serde_yaml-0.8.26 \
-		slab-0.4.7 \
-		smallvec-1.10.0 \
-		socket2-0.4.7 \
+		semver-1.0.22 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_repr-0.1.18 \
+		serde_spanned-0.6.5 \
+		serde_yaml-0.9.33 \
+		slab-0.4.9 \
+		smallvec-1.13.2 \
+		socket2-0.4.10 \
 		static_assertions-1.1.0 \
-		strum-0.21.0 \
-		strum_macros-0.21.1 \
-		syn-1.0.107 \
-		system-deps-3.2.0 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
+		syn-1.0.109 \
+		syn-2.0.53 \
+		system-deps-6.2.2 \
+		target-lexicon-0.12.14 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
 		toml-0.5.11 \
-		toml_datetime-0.5.1 \
-		toml_edit-0.18.1 \
-		ucd-trie-0.1.5 \
-		unicode-ident-1.0.6 \
-		unicode-segmentation-1.10.1 \
-		version-compare-0.0.11 \
+		toml-0.8.2 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.19.15 \
+		toml_edit-0.20.2 \
+		unicode-ident-1.0.12 \
+		unsafe-libyaml-0.2.11 \
+		version-compare-0.2.0 \
 		version_check-0.9.4 \
-		waker-fn-1.1.0 \
-		wepoll-ffi-0.1.2 \
+		waker-fn-1.1.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
-		xkbcommon-0.4.1 \
-		yaml-rust-0.4.5 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.5.40 \
+		xkbcommon-0.5.1 \
 		zbus-1.9.3 \
 		zbus_macros-1.9.3 \
 		zvariant-2.10.0 \
