@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rails
-PORTVERSION=	2.23.1
+PORTVERSION=	2.24.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activesupport61>=4.2.0:devel/rubygem-activesupport61 \
 		rubygem-rack>=1.1:www/rubygem-rack \
 		rubygem-rubocop>=1.33.0:devel/rubygem-rubocop \
-		rubygem-rubocop-ast>=1.30.0:devel/rubygem-rubocop-ast
+		rubygem-rubocop-ast>=1.31.1:devel/rubygem-rubocop-ast
 
 USES=		cpe gem
 
