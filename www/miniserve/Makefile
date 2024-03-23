@@ -12,6 +12,9 @@ LICENSE=	APACHE20 BSD3CLAUSE CC0-1.0 ISCL MIT MPL20 UNLICENSE
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	the ring crate requires SSE2 instruction on intel cpu
+
 BUILD_DEPENDS=	zstd>0:archivers/zstd
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
