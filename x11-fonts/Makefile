@@ -242,6 +242,7 @@
     SUBDIR += noto-serif-lao
     SUBDIR += noto-serif-myanmar
     SUBDIR += noto-serif-sc
+    SUBDIR += noto-serif-sinhala
     SUBDIR += noto-serif-tc
     SUBDIR += noto-tc
     SUBDIR += nucleus
