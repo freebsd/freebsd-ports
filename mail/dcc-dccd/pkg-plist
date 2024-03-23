@@ -30,7 +30,6 @@ libexec/dcc-stats-update
 %%IFD_MILT%%libexec/dns-helper
 libexec/fetchblack
 libexec/fetchids
-libexec/fetch-testmsg-whitelist
 libexec/fix-map
 libexec/hackmc
 libexec/list-clients
