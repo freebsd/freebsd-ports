@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,9 +42,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.2 \
+		clap-4.5.3 \
 		clap_builder-4.5.2 \
-		clap_derive-4.5.0 \
+		clap_derive-4.5.3 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		compact_str-0.7.1 \
@@ -67,7 +66,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		either-1.10.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		figment-0.10.14 \
+		figment-0.10.15 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.12 \
 		git-version-0.3.9 \
@@ -76,6 +75,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		half-2.4.0 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
@@ -155,10 +155,10 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.10 \
+		toml-0.8.11 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.6 \
-		tui-prompts-0.3.5 \
+		toml_edit-0.22.7 \
+		tui-prompts-0.3.8 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
