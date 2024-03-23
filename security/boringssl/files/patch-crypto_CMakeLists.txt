@@ -1,6 +1,6 @@
---- crypto/CMakeLists.txt.orig	2024-02-28 18:04:35 UTC
+--- crypto/CMakeLists.txt.orig	2024-03-23 00:06:50 UTC
 +++ crypto/CMakeLists.txt
-@@ -358,3 +358,5 @@ endif()
+@@ -375,3 +375,5 @@ endif()
  if(USE_CUSTOM_LIBCXX)
    target_link_libraries(crypto libcxx)
  endif()
