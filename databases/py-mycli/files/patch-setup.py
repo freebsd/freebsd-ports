@@ -5,7 +5,7 @@
      # Temporary to suppress paramiko Blowfish warning which breaks CI.
      # Pinning cryptography should not be needed after paramiko 2.11.0.
 -    'cryptography == 36.0.2',
-+    'cryptography >= 1.0.0',
++    'cryptography >= 36.0.2',
      # 'Pygments>=1.6,<=2.11.1',
      'Pygments>=1.6',
      'prompt_toolkit>=3.0.6,<4.0.0',

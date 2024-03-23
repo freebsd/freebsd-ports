@@ -1,5 +1,6 @@
 PORTNAME=	mycli
 PORTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,8 @@ WWW=		https://www.mycli.net/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=2.2.1:devel/py-cli-helpers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.5:devel/py-configobj@${PY_FLAVOR} \
@@ -24,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=2.2.1:devel/py-cli-helpers@${PY
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0<0.5.0:databases/py-sqlparse@${PY_FLAVOR}
 
 USES=		mysql python
-USE_PYTHON=	autoplist concurrent cryptography distutils
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
