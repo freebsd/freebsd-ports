@@ -1,6 +1,6 @@
 PORTNAME=	tor-browser
 DISTVERSION=	13.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		https://build-sources.tbb.torproject.org/:source1 \
