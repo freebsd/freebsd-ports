@@ -80,7 +80,7 @@ export JAVA_HOME=${%%PORTNAME%%_java_home}
 
 %%PORTNAME%%_build()
 {
-    su -m keycloak -c "%%JAVASHAREDIR%%/%%PORTNAME%%/bin/kc.sh build"
+    su -m ${%%PORTNAME%%_user} -c "%%JAVASHAREDIR%%/%%PORTNAME%%/bin/kc.sh build"
 }
 
 extra_commands="build"

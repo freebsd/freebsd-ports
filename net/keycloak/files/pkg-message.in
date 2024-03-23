@@ -48,11 +48,18 @@ Keycloak was installed
 
    https://ip_or_hostname:8443
 
-9) For more information about keycloak configuration, visit:
+9) Also, you can create admin user by using KEYCLOAK_ADMIN and
+   KEYCLOAK_ADMIN_PASSWORD environment variables when keycloak is started first
+   time on production mode:
+
+   # cd %%PREFIX%%/etc/rc.d
+   # KEYCLOAK_ADMIN=admin_user KEYCLOAK_ADMIN_PASSWORD=pass_user sh keycloak start
+
+10) For more information about keycloak configuration, visit:
 
    https://www.keycloak.org/documentation
 
-10) Enjoy it
+11) Enjoy it
 EOM
 }
 ]
