@@ -1,5 +1,6 @@
 PORTNAME=	lynx
 PORTVERSION=	2.9.0d12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://ftp.invisible-island.net/lynx/tarballs/
@@ -24,6 +25,7 @@ SHEBANG_FILES=	samples/mailto-form.pl
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libdir="${PREFIX}/etc" \
 		--with-bzlib --with-zlib \
 		--with-mime-libdir=${PREFIX}/etc \

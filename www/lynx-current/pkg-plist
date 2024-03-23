@@ -1,5 +1,4 @@
 bin/lynx
-man/man1/lynx.1.gz
 @sample etc/lynx.cfg.sample
 @sample etc/lynx.lss.sample
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -142,3 +141,4 @@ share/lynx_help/keystrokes/xterm_help.html.gz
 share/lynx_help/lynx-dev.html.gz
 share/lynx_help/lynx_help_main.html.gz
 share/lynx_help/lynx_url_support.html.gz
+share/man/man1/lynx.1.gz
