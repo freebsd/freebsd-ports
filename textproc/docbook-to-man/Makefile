@@ -3,7 +3,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.oasis-open.org/docbook/tools/dtm/
-DISTNAME=	${PORTNAME}
+DISTNAME=	docbook-to-man
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
