@@ -1,6 +1,6 @@
 PORTNAME=	wmCalClock
 PORTVERSION=	1.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://jmpacquet.free.fr/wmcalclock/
 
@@ -15,7 +15,7 @@ USES=		xorg
 USE_XORG=	x11 xext xpm
 MAKE_ENV=	OPSYS=${OPSYS}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
-PLIST_FILES=	bin/wmCalClock man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/wmCalClock share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	BUGS CHANGES HINTS INSTALL README TODO
 
 OPTIONS_DEFINE=	DOCS

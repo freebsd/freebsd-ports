@@ -30,12 +30,12 @@
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -31,6 +30,6 @@ clean:
+@@ -31,6 +30,6 @@ install:: wmCalClock
  	rm -f wmCalClock
  
  install:: wmCalClock
 -	install -c -s -m 0755 wmCalClock $(DESTDIR)/bin
 -	install -c -m 0644 wmCalClock.1 $(DESTDIR)/man/man1 
 +	${BSD_INSTALL_PROGRAM} wmCalClock $(DESTDIR)$(PREFIX)/bin
-+	${BSD_INSTALL_MAN} wmCalClock.1 $(DESTDIR)$(PREFIX)/man/man1 
++	${BSD_INSTALL_MAN} wmCalClock.1 $(DESTDIR)$(PREFIX)/share/man/man1
  
