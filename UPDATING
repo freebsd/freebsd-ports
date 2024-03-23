@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240326:
+  AFFECTS: users of net/bird2
+  AUTHOR: olivier@FreeBSD.org
+
+  The net/bird2 default flavor has ben switched to netlink on FreeBSD >= 14.0
+  There is not change for FreeBSD < 14.0 (default flavor is still rtsock)
+
 20240319:
   AFFECTS: users of net/rdist6
   AUTHOR: cy@FreeBSD.org

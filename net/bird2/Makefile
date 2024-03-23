@@ -1,5 +1,5 @@
 PORTNAME=	bird
-DISTVERSION=	2.14
+DISTVERSION=	2.15.1
 CATEGORIES=	net
 MASTER_SITES=	https://bird.network.cz/download/
 PKGNAMESUFFIX=	2
@@ -10,8 +10,8 @@ WWW=		https://bird.network.cz/
 
 LICENSE=	GPLv2
 
-FLAVORS=	base netlink
-netlink_PKGNAMESUFFIX=	2-netlink
+FLAVORS=	netlink rtsock
+rtsock_PKGNAMESUFFIX=	2-rtsock
 
 USES=		bison cpe gmake ncurses readline
 
@@ -62,8 +62,18 @@ RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 
 .include <bsd.port.options.mk>
 
-.if ${FLAVOR:U} == netlink
+.if ${FLAVOR:U} != rtsock
 CONFIGURE_ARGS+=--with-sysconfig=bsd-netlink
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+FLAVORS=	rtsock netlink
+netlink_PKGNAMESUFFIX=	2-netlink
+rtsock_PKGNAMESUFFIX=	2
+.endif
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} < 1303502 || ( ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400510 ) || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017 ))
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-netlink-route
 .endif
 
 .include <bsd.port.mk>
