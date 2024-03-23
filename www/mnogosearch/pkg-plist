@@ -81,6 +81,6 @@ lib/libmnogocharset.so
 lib/libmnogosearch-3.4.so
 lib/libmnogosearch.a
 lib/libmnogosearch.so
-man/man1/indexer.1.gz
-man/man5/indexer.conf.5.gz
+share/man/man1/indexer.1.gz
+share/man/man5/indexer.conf.5.gz
 @dir /var/mnogosearch
