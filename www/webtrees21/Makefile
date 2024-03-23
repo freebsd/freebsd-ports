@@ -1,5 +1,5 @@
 PORTNAME=	webtrees
-PORTVERSION=	2.1.18
+PORTVERSION=	2.1.19
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	21
@@ -24,6 +24,11 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	VERSION_SUFFIX=${PKGNAMESUFFIX}
 
+DOCSDIR=	${PREFIX}/share/doc/webtrees21
+PORTDOCS=	CONTRIBUTING.md LICENSE.md README.md SECURITY.md
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	-${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_BIN} . ${STAGEDIR}${WWWDIR} "! -name *\.md"
@@ -32,5 +37,9 @@ do-install:
 	@${ECHO_CMD} \
 		'@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
 		>> ${TMPPLIST}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/${PORTNAME} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
