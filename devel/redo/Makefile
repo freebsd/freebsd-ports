@@ -30,7 +30,7 @@ do-configure:
 	@${ECHO_CMD} '${LDFLAGS}' > ${WRKSRC}/build/ldflags
 
 do-build:
-	@cd ${WRKSRC} && ${SETENVI} ${MAKE_ENV} ./package/make
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ./package/make
 
 do-install:
 	cd ${WRKSRC} && ./package/makeinstall

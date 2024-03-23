@@ -77,7 +77,7 @@ YAML_VARS=		MANPAGES+="po2yaml yaml2po"
 post-build:
 	@${MKDIR} ${WRKSRC}/manpages
 .for manpage in ${MANPAGES}
-	cd ${WRKSRC}/build/lib/translate/convert && ${SETENVI} PYTHONPATH=${WRKSRC}/build/lib ${PYTHON_CMD} ${manpage}.py --man > ${WRKSRC}/manpages/${manpage}.1
+	cd ${WRKSRC}/build/lib/translate/convert && ${SETENVI} ${WRK_ENV} PYTHONPATH=${WRKSRC}/build/lib ${PYTHON_CMD} ${manpage}.py --man > ${WRKSRC}/manpages/${manpage}.1
 .endfor
 
 post-install:

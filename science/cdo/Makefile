@@ -70,6 +70,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libcdi/src/cdi.inc ${STAGEDIR}${PREFIX}/include/cdi.inc
 
 test-NETCDF-on:
-	@cd ${WRKSRC}/ && ${SETENVI} CDO_PATH=src/cdo src/cdotest
+	@cd ${WRKSRC}/ && ${SETENVI} ${WRK_ENV} CDO_PATH=src/cdo src/cdotest
 
 .include <bsd.port.mk>
