@@ -6537,6 +6537,7 @@
     SUBDIR += rubygem-aws-sdk-swf
     SUBDIR += rubygem-aws-sdk-synthetics
     SUBDIR += rubygem-aws-sdk-textract
+    SUBDIR += rubygem-aws-sdk-timestreaminfluxdb
     SUBDIR += rubygem-aws-sdk-timestreamquery
     SUBDIR += rubygem-aws-sdk-timestreamwrite
     SUBDIR += rubygem-aws-sdk-tnb
