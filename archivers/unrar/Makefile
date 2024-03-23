@@ -25,7 +25,7 @@ PLIST_FILES=	bin/unrar
 
 SLAVEDIRS=	archivers/unrar-iconv
 
-CONFLICTS_INSTALL=	unrar unrar-iconv
+CONFLICTS_INSTALL=	unrar-iconv
 
 CPE_VENDOR=	rarlab
 
