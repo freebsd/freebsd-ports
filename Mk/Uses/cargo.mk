@@ -139,8 +139,11 @@ CARGO_ENV+= \
 CARGO_ENV+=	RUST_BACKTRACE=1
 .  endif
 
+.  if !defined(_WITHOUT_LTO) && (!defined(WITHOUT_LTO_PORTS) || ${WITHOUT_LTO_PORTS:N${PKGORIGIN}})
 _CARGO_MSG=	"===>   Additional optimization to port applied"
-WITH_LTO=	yes
+_WITH_LTO=	yes
+.undef _WITHOUT_LTO
+.  endif
 
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
 .  if ${ARCH} == amd64 || ${ARCH} == i386
