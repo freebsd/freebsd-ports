@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 
+BROKEN_FreeBSD_14_aarch64=	https://gitlab.haskell.org/ghc/ghc/-/issues/24580
+
 BUILD_DEPENDS=		${LOCALBASE}/lib/libgmp.so:math/gmp
 
 USES=			autoreconf compiler:c11 gmake \
