@@ -234,6 +234,7 @@
     SUBDIR += noto-serif-ethiopic
     SUBDIR += noto-serif-extra
     SUBDIR += noto-serif-georgian
+    SUBDIR += noto-serif-hebrew
     SUBDIR += noto-serif-hk
     SUBDIR += noto-serif-jp
     SUBDIR += noto-serif-kr
