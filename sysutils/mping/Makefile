@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-fraubsd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ping multiple hosts
-WWW=		https://fraubsd.org/mping/
+WWW=		https://github.com/FrauBSD/mping
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

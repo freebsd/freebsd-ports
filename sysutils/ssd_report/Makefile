@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	SSD health report
-WWW=		https://fraubsd.org/ssd_report/
+WWW=		https://github.com/FrauBSD/ssd_report
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
