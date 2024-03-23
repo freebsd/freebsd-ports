@@ -19,7 +19,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-RR-233.14015.147
+%%DATADIR%%/lib/build-marker-RR-233.14475.74
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -108,14 +108,15 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/grid-core-impl/lib/jdbc-console-types.jar
 %%DATADIR%%/plugins/grid-impl/lib/grid.jar
 %%DATADIR%%/plugins/html-tools/lib/html-tools.jar
+%%DATADIR%%/plugins/intellij-rust/caches/crates-local-index.zip
 %%DATADIR%%/plugins/intellij-rust/lib/JavaEWAH-1.1.13.jar
 %%DATADIR%%/plugins/intellij-rust/lib/antlr4-runtime-4.13.0.jar
 %%DATADIR%%/plugins/intellij-rust/lib/completion-ranking-rust-0.4.1.jar
 %%DATADIR%%/plugins/intellij-rust/lib/intelliLang.jar
-%%DATADIR%%/plugins/intellij-rust/lib/intellij-rust-233.24015.147.jar
+%%DATADIR%%/plugins/intellij-rust/lib/intellij-rust-233.24475.74.jar
 %%DATADIR%%/plugins/intellij-rust/lib/jackson-dataformat-toml-2.14.2.jar
 %%DATADIR%%/plugins/intellij-rust/lib/org.eclipse.jgit-6.5.0.202303070854-r.jar
-%%DATADIR%%/plugins/intellij-rust/lib/searchableOptions-233.24015.147.jar
+%%DATADIR%%/plugins/intellij-rust/lib/searchableOptions-233.24475.74.jar
 %%DATADIR%%/plugins/intellij-rust/lib/semver-jvm-1.4.2.jar
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb_lookup.py
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb_providers.py
@@ -900,6 +901,6 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/xpath/lib/xpath.jar
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
+share/man/man1/rustrover.1.gz
 @dir %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb
 @dir %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb
-share/man/man1/rustrover.1.gz
