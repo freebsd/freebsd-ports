@@ -1,3 +1,3 @@
-TIMESTAMP = 1684104458
-SHA256 (pytest_isort-3.1.0.tar.gz) = 067801dc5e54a474330d074d521c815948ff6d5cf0ed3b9d057b78216851186c
-SIZE (pytest_isort-3.1.0.tar.gz) = 6287
+TIMESTAMP = 1710712476
+SHA256 (pytest_isort-4.0.0.tar.gz) = 00e99642e282b00b849cf9b49d9102a02ab8c4ec549ace57d7868b723713aaa9
+SIZE (pytest_isort-4.0.0.tar.gz) = 5597
