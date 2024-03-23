@@ -22,6 +22,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/Solr
 
 .include <bsd.port.mk>
