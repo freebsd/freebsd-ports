@@ -208,6 +208,7 @@
     SUBDIR += noto-sans-hebrew
     SUBDIR += noto-sans-hk
     SUBDIR += noto-sans-jp
+    SUBDIR += noto-sans-khmer
     SUBDIR += noto-sans-kr
     SUBDIR += noto-sans-sc
     SUBDIR += noto-sans-tc
