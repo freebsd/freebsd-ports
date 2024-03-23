@@ -2,10 +2,8 @@ PKGNAMESUFFIX=	-nox11
 
 MASTERDIR=	${.CURDIR}/../mtr
 
-CONFLICTS_INSTALL=	mtr
+PORTSCOUT=	ignore:1
 
 OPTIONS_EXCLUDE=	X11
-
-PORTSCOUT=	ignore:1
 
 .include "${MASTERDIR}/Makefile"

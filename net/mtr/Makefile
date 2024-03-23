@@ -6,7 +6,8 @@ CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single network diagnostic tool
-WWW=		https://www.bitwizard.nl/mtr/
+WWW=		https://www.bitwizard.nl/mtr/ \
+		https://github.com/traviscross/mtr
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,13 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf ncurses pkgconfig
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-lncurses
 
-GH_ACCOUNT=	traviscross
 USE_GITHUB=	yes
+GH_ACCOUNT=	traviscross
 
-CONFLICTS_INSTALL?=	mtr-nox11
+CONFLICTS_INSTALL=	mtr mtr-nox11
 
 OPTIONS_DEFINE=	IPV6 JSON X11
 OPTIONS_DEFAULT=JSON X11
