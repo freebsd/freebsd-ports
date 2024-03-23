@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-03-11 18:42:51 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "Flask-Migrate"
++name = "flask-migrate"
+ version = "4.0.7"
+ authors = [
+     { name = "Miguel Grinberg", email = "miguel.grinberg@gmail.com" },
