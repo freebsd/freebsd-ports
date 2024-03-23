@@ -9,5 +9,3 @@ Why NAnt?
 ---------
 Because Ant was too Java-specific.
 Because Ant needed the Java runtime. NAnt only needs the .NET or Mono runtime.
-
-See also: http://nant.sourceforge.net/
