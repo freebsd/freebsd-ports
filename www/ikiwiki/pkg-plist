@@ -140,13 +140,6 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
-man/man1/ikiwiki-calendar.1.gz
-man/man1/ikiwiki-comment.1.gz
-man/man1/ikiwiki-makerepo.1.gz
-man/man1/ikiwiki-transition.1.gz
-man/man1/ikiwiki-update-wikilist.1.gz
-man/man1/ikiwiki.1.gz
-man/man8/ikiwiki-mass-rebuild.8.gz
 sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/attachment/ikiwiki/images/pbar-ani.gif
 %%DATADIR%%/attachment/ikiwiki/images/ui-bg_flat_0_aaaaaa_40x100.png
@@ -798,3 +791,10 @@ share/locale/pl/LC_MESSAGES/ikiwiki.mo
 share/locale/sv/LC_MESSAGES/ikiwiki.mo
 share/locale/tr/LC_MESSAGES/ikiwiki.mo
 share/locale/vi/LC_MESSAGES/ikiwiki.mo
+share/man/man1/ikiwiki-calendar.1.gz
+share/man/man1/ikiwiki-comment.1.gz
+share/man/man1/ikiwiki-makerepo.1.gz
+share/man/man1/ikiwiki-transition.1.gz
+share/man/man1/ikiwiki-update-wikilist.1.gz
+share/man/man1/ikiwiki.1.gz
+share/man/man8/ikiwiki-mass-rebuild.8.gz

@@ -1,5 +1,6 @@
 PORTNAME=	ikiwiki
 DISTVERSION=	3.20200202.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
@@ -74,8 +75,7 @@ post-patch:
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
 		${WRKSRC}/doc/ikiwiki-update-wikilist.mdwn
 	@${REINPLACE_CMD} -i '' \
-		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|; \
-		    s|share/ikiwiki/examples|${EXAMPLESDIR_REL}|; \
+		-e 's|share/ikiwiki/examples|${EXAMPLESDIR_REL}|; \
 		    s|\./pm_filter|$$(PERL) &|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -i '' \
