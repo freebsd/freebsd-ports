@@ -1,5 +1,5 @@
 PORTNAME=	dask
-PORTVERSION=	2024.2.1
+PORTVERSION=	2024.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=62.6:devel/py-setuptools@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.5.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>=2021.09.0:devel/py-fsspec@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.13.0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}partd>=1.2.0:databases/py-partd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1:devel/py-yaml@${PY_FLAVOR} \
@@ -43,8 +42,15 @@ DATAFRAME_IMPLIES=	ARRAY
 DIAGNOSTICS_DESC=	Profile and inspect parallel codes
 
 ARRAY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21,1:math/py-numpy@${PY_FLAVOR} \
-DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.3,1:math/py-pandas@${PY_FLAVOR}
+DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask-expr>=1.0<1.1:devel/py-dask-expr@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=1.3,1:math/py-pandas@${PY_FLAVOR}
 DIAGNOSTICS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}bokeh>=2.4.2<3:www/py-bokeh@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.3:devel/py-Jinja2@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.13.0:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
