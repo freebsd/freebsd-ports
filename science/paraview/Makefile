@@ -11,6 +11,8 @@ WWW=		https://www.paraview.org/
 # See https://www.paraview.org/license/
 LICENSE=	BSD3CLAUSE
 
+BROKEN_i386=	no matching member function for call to 'getArrayType'
+
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cli11>0:devel/cli11	\
 		utf8cpp>0:devel/utf8cpp	\
