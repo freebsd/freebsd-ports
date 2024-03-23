@@ -231,6 +231,7 @@
     SUBDIR += noto-serif-bengali
     SUBDIR += noto-serif-devanagari
     SUBDIR += noto-serif-display
+    SUBDIR += noto-serif-ethiopic
     SUBDIR += noto-serif-hk
     SUBDIR += noto-serif-jp
     SUBDIR += noto-serif-kr
