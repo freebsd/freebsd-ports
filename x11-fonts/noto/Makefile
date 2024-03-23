@@ -4,7 +4,10 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (meta port)
-WWW=		https://fonts.google.com/noto
+WWW=		https://fonts.google.com/noto \
+		https://notofonts.github.io/ \
+		https://github.com/notofonts/notofonts.github.io \
+		https://github.com/notofonts/noto-cjk
 
 USES=		metaport
 
