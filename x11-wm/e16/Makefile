@@ -1,6 +1,6 @@
 PORTNAME=	e16
 PORTVERSION=	1.0.29
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
@@ -61,6 +61,7 @@ SHEBANG_FILES=	scripts/e_gen_menu
 CFLAGS+=	-Wno-unused-parameter -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=--disable-dependency-tracking  --disable-rpath \
 		--enable-mans SHELL=/bin/sh
 
