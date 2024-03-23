@@ -1,6 +1,6 @@
 PORTNAME=	type1inst
 PORTVERSION=	0.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	SUNSITE/X11/xutils
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ USES=		perl5 shebangfix
 NO_BUILD=	yes
 PORTDOCS=	README
 
-PLIST_FILES=	bin/t1embed bin/type1inst man/man1/type1inst.1.gz
+PLIST_FILES=	bin/t1embed bin/type1inst share/man/man1/type1inst.1.gz
 SHEBANG_FILES=	type1inst t1embed
 
 OPTIONS_DEFINE=	DOCS X11
@@ -24,7 +24,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} type1inst t1embed \
 		${STAGEDIR}${PREFIX}/bin)
 	${INSTALL_MAN} ${WRKSRC}/type1inst.man \
-		${STAGEDIR}${PREFIX}/man/man1/type1inst.1
+		${STAGEDIR}${PREFIX}/share/man/man1/type1inst.1
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
