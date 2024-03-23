@@ -1,6 +1,6 @@
 PORTNAME=	wdm
 PORTVERSION=	1.28
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/wdm/:wdm GENTOO:wdm \
 		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
@@ -26,6 +26,7 @@ OPTIONS_SUB=	yes
 USES=		gettext localbase tar:bzip2 xorg
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	DEF_SERVER="${DEF_SERVER}" XRDB_PATH="${XRDB_PATH}"
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-runlockdir=/var/run \
