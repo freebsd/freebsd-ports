@@ -532,4 +532,3 @@ libdata/pkgconfig/arrow.pc
 %%PARQUET%%libdata/pkgconfig/parquet.pc
 %%DATADIR%%/gdb/gdb_arrow.py
 share/gdb/auto-load/usr/local/lib/libarrow.so.1300.0.0-gdb.py
-lib/cmake/ArrowTesting/FindGTestAlt.cmake
