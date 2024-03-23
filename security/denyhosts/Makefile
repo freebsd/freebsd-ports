@@ -1,5 +1,6 @@
 PORTNAME=	denyhosts
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MASTER_SITES=	https://github.com/denyhosts/denyhosts/releases/download/v${PORTVERSION:R}/
@@ -12,11 +13,12 @@ WWW=		https://github.com/denyhosts/denyhosts
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 USE_RC_SUBR=	denyhosts
