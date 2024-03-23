@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.2
+DISTVERSION=	4.7.3
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=  -dashboard
@@ -28,9 +28,6 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PORTNAME}${PKGNAMESUFFIX}-plugins-${DISTVERSION}-${OPENSEARCH_VERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 	${CP} ${_DISTDIR}/opensearch_dashboards.yml ${WRKDIR}
-
-post-extract:
-	${RM} ${WRKSRC}/common/constants.ts.orig
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/opensearch-dashboards/plugins/wazuh

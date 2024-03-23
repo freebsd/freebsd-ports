@@ -1,9 +1,9 @@
 PORTNAME=	wazuh
-PORTVERSION=	4.7.2
+PORTVERSION=	4.7.3
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/:config_samples \
 		https://packages.wazuh.com/4.x/filebeat/:wazuh_module \
-		https://raw.githubusercontent.com/wazuh/wazuh/v4.7.0/extensions/elasticsearch/7.x/:indexer_template
+		https://raw.githubusercontent.com/wazuh/wazuh/v4.7.3/extensions/elasticsearch/7.x/:indexer_template
 PKGNAMESUFFIX=	-server
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
