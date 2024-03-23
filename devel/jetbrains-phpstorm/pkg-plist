@@ -1,5 +1,4 @@
 bin/phpstorm
-share/man/man1/phpstorm.1.gz
 share/applications/phpstorm.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
@@ -22,7 +21,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PS-233.14475.35
+%%DATADIR%%/lib/build-marker-PS-233.15026.12
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -930,3 +929,4 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/xpath/lib/xpath.jar
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
+share/man/man1/phpstorm.1.gz
