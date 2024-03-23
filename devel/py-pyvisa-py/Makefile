@@ -1,5 +1,5 @@
 PORTNAME=	pyvisa-py
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pyvisa/pyvisa-py/releases/download/${PORTVERSION}/
@@ -13,7 +13,7 @@ WWW=		https://github.com/pyvisa/pyvisa-py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4.3:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa>=1.13.0:devel/py-pyvisa@${PY_FLAVOR} \
