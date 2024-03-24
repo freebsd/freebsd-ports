@@ -1,9 +1,6 @@
 bin/lumina-config
 bin/lumina-search
 bin/lumina-xconfig
-man/man1/lumina-config.1.gz
-man/man1/lumina-search.1.gz
-man/man1/lumina-xconfig.1.gz
 share/applications/lumina-config.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-xconfig.desktop
@@ -208,3 +205,6 @@ share/applications/lumina-xconfig.desktop
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_zh_HK.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_zh_TW.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_zu.qm
+share/man/man1/lumina-config.1.gz
+share/man/man1/lumina-search.1.gz
+share/man/man1/lumina-xconfig.1.gz
