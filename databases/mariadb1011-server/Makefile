@@ -10,7 +10,6 @@ MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://ftp.ubuntu-tw.org/mirror/${SITESDIR}/ \
 		https://mirror.kku.ac.th/${SITESDIR}/ \
 		https://espejito.fder.edu.uy/${SITESDIR}/ \
-		https://mirror1.cl.netactuate.com/${SITESDIR}/ \
 		https://ftp.osuosl.org/pub/${SITESDIR}/ \
 		https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/
 PKGNAMESUFFIX?=	1011-server
