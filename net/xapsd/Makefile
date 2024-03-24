@@ -1,5 +1,6 @@
 PORTNAME=	xapsd
 DISTVERSION=	g20231019
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	PopularMoment@protonmail.com
@@ -8,6 +9,9 @@ WWW=		https://github.com/freswa/dovecot-xaps-daemon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Requires deprecated lang/go19
+EXPIRATION_DATE=	2024-04-24
 
 # must use 1.19 due to https://github.com/freswa/dovecot-xaps-daemon/issues/24
 USES=		go:1.19,modules
