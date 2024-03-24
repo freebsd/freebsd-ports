@@ -1,6 +1,6 @@
 PORTNAME=	msyslog
 DISTVERSION=	1.08g
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.X/${DISTVERSION}
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src
@@ -47,7 +47,7 @@ post-patch:
 		${WRKSRC}/src/modules/Makefile.in \
 		${WRKSRC}/src/peo/Makefile.in \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|@mandir@|${STAGEDIR}${PREFIX}/man|g' \
+	@${REINPLACE_CMD} -e 's|@mandir@|${STAGEDIR}${PREFIX}/share/man|g' \
 		${WRKSRC}/src/man/GNUmakefile.in
 
 post-install-EXAMPLES-on:
