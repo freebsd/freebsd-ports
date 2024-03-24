@@ -1,5 +1,6 @@
 PORTNAME=	phorge
 PORTVERSION=	20240324
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	phorgeit
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -14,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git \
 		phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=20240304:devel/phorgeit-arcanist-lib@${PHP_FLAVOR}
 
-USES=		cpe php:cli,flavors shebangfix
-CPE_VENDOR=	phacility
-
+USES=		php:cli,flavors shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
 GH_TAGNAME=	d42b3eb0
