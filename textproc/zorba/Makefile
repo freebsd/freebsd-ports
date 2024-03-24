@@ -1,6 +1,6 @@
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	39
+PORTREVISION=	40
 CATEGORIES=	textproc java
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libicudata.so:devel/icu \
 		libcurl.so:ftp/curl \
-		libtidy.so:www/tidy-lib \
+		libtidy5.so:www/tidy-html5 \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	fop:textproc/fop
 
