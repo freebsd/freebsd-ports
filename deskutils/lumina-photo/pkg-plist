@@ -1,5 +1,4 @@
 bin/lumina-photo
-man/man1/lumina-photo.1.gz
 share/applications/lumina-photo.desktop
 %%NLS%%share/lumina-desktop/i18n/l-photo_af.qm
 %%NLS%%share/lumina-desktop/i18n/l-photo_ar.qm
@@ -64,3 +63,4 @@ share/applications/lumina-photo.desktop
 %%NLS%%share/lumina-desktop/i18n/l-photo_zh_HK.qm
 %%NLS%%share/lumina-desktop/i18n/l-photo_zh_TW.qm
 %%NLS%%share/lumina-desktop/i18n/l-photo_zu.qm
+share/man/man1/lumina-photo.1.gz
