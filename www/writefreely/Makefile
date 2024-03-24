@@ -12,7 +12,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_CC-BY-NC-SA-4.0=	writefreely-documentation-v0.13.1_GH0.tar.gz
 
-USES=		go:modules
+USES=		go:1.20,modules
 USE_GITHUB=	nodefault
 USE_RC_SUBR=	writefreely
 GO_MODULE=	github.com/writefreely/writefreely
