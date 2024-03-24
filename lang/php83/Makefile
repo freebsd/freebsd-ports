@@ -564,7 +564,7 @@ CONFIGURE_ARGS+=	--enable-sysvshm
 .if ${PHP_MODNAME} == "tidy"
 CONFIGURE_ARGS+=	--with-tidy=${LOCALBASE}
 
-LIB_DEPENDS+=	libtidy.so:www/tidy-lib
+LIB_DEPENDS+=	libtidy5.so:www/tidy-html5
 .endif
 
 .if ${PHP_MODNAME} == "tokenizer"
