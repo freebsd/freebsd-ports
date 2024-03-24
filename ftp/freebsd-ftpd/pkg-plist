@@ -1,3 +1,3 @@
 libexec/ftpd
-man/man5/ftpchroot.5.gz
-man/man8/ftpd.8.gz
+share/man/man5/ftpchroot.5.gz
+share/man/man8/ftpd.8.gz
