@@ -2,6 +2,7 @@ PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
 PORTVERSION=	24.02
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
@@ -115,7 +116,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-rust
 
 # Print the compilation commands (verbose).
-MAKE_ARGS=	V=1
+MAKE_ARGS=	V=1 mandir=${PREFIX}/share/man
 
 USE_GITHUB=	yes
 .if defined(PKGNAMESUFFIX)
