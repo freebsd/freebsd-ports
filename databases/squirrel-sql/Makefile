@@ -1,12 +1,12 @@
 PORTNAME=	squirrel-sql
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	squirrelsql-${PORTVERSION}-optional
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Universal SQL Client
-WWW=		http://www.squirrelsql.org/index.php?page=screenshots
+WWW=		http://www.squirrelsql.org/
 
 LICENSE=	GPLv2
 
