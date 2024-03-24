@@ -11,57 +11,43 @@ WWW=		https://www.phorge.it
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=20240304:devel/phorgeit-arcanist-lib@${PHP_FLAVOR} \
-		git:devel/git
-
-CONFLICTS=	phabricator-php??
+RUN_DEPENDS=	git:devel/git \
+		phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=20240304:devel/phorgeit-arcanist-lib@${PHP_FLAVOR}
 
 USES=		cpe php:cli,flavors shebangfix
 CPE_VENDOR=	phacility
 
-SHEBANG_FILES=	resources/timezones/*.php \
-		scripts/*.php \
-		scripts/almanac/*.php \
-		scripts/cache/*.php \
-		scripts/celerity/*.php \
-		scripts/daemon/*.php \
-		scripts/daemon/exec/exec_daemon.php \
-		scripts/diviner/*.php \
-		scripts/drydock/*.php \
-		scripts/fact/*.php \
-		scripts/files/*.php \
-		scripts/lipsum/*.php \
-		scripts/mail/*.php \
-		scripts/repository/*.php \
-		scripts/search/*.php \
-		scripts/setup/*.php \
-		scripts/ssh/*.php \
-		scripts/sql/*.php \
-		scripts/ssh/*.php \
-		scripts/symbols/*.php \
-		scripts/util/*.php \
+USE_GITHUB=	yes
+GH_ACCOUNT=	phorgeit
+GH_TAGNAME=	d42b3eb0
+USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli pcntl posix \
+		zip
+USE_RC_SUBR=	phd
+
+SHEBANG_FILES=	resources/timezones/*.php scripts/*.php scripts/almanac/*.php \
+		scripts/cache/*.php scripts/celerity/*.php scripts/daemon/*.php \
+		scripts/daemon/exec/exec_daemon.php scripts/diviner/*.php \
+		scripts/drydock/*.php scripts/fact/*.php scripts/files/*.php \
+		scripts/lipsum/*.php scripts/mail/*.php \
+		scripts/repository/*.php scripts/search/*.php \
+		scripts/setup/*.php scripts/sql/*.php scripts/ssh/*.php \
+		scripts/symbols/*.php scripts/util/*.php \
 		support/aphlict/server/*.php
+CONFLICTS=	phabricator-php??
 
-USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli \
-		pcntl posix zip
+NO_ARCH=	yes
+NO_BUILD=	yes
+PORTSCOUT=	ignore:1
+SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	GD OPCACHE
-OPTIONS_DEFAULT=GD OPCACHE
-OPCACHE_DESC?=	Use OPcache to improve performance
+OPTIONS_DEFINE=		GD OPCACHE
+OPTIONS_DEFAULT=	GD OPCACHE
+OPCACHE_DESC?=		Use OPcache to improve performance
 
 GD_USE=		PHP=gd
 
 OPCACHE_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
 OPCACHE_USE=		PHP=opcache
-
-USE_GITHUB=	yes
-NO_BUILD=	yes
-NO_ARCH=	yes
-USE_RC_SUBR=	phd
-SUB_FILES=	pkg-message
-PORTSCOUT=	ignore:1
-GH_ACCOUNT=	phorgeit
-GH_TAGNAME=	d42b3eb
 
 PHP_DESTDIR=	lib/php/phorge
 
