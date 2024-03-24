@@ -21,7 +21,7 @@ lib/udev/90-alsa-restore.rules
 %%MANPAGES%%share/man/fr/man8/alsaconf.8.gz
 %%MANPAGES%%share/man/man1/aconnect.1.gz
 %%MANPAGES%%share/man/man1/alsa-info.sh.1.gz
-%%MANPAGES%%share/%%BAT%%man/man1/alsabat.1.gz
+%%MANPAGES%%%%BAT%%share/man/man1/alsabat.1.gz
 %%MANPAGES%%share/man/man1/alsactl.1.gz
 %%MANPAGES%%share/man/man1/alsaloop.1.gz
 %%MANPAGES%%share/man/man1/alsamixer.1.gz
