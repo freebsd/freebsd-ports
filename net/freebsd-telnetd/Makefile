@@ -1,6 +1,7 @@
 PORTNAME=	freebsd-telnetd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.0.5
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	cy@FreeBSD.org
@@ -18,7 +19,7 @@ USES=		uidfix
 MAKE_ARGS+=		BINOWN=${BINOWN} BINMODE=${BINMODE}
 MAKE_ENV+=		MAKESYSPATH=/usr/src/share/mk \
 			BINDIR=${PREFIX}/libexec \
-			MANDIR=${PREFIX}/man/man \
+			MANDIR=${PREFIX}/share/man/man \
 			TELNETDIR=${WRKSRC}/contrib/telnet \
 			MK_WERROR=no
 
