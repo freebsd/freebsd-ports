@@ -1,14 +1,16 @@
 --- cargo-crates/gmp-mpfr-sys-1.5.0/build.rs.orig	2006-07-24 01:21:28 UTC
 +++ cargo-crates/gmp-mpfr-sys-1.5.0/build.rs
-@@ -42,7 +42,7 @@ const MPFR_DIR: &str = "mpfr-4.2.0-c";
+@@ -40,8 +40,8 @@ const MPC_DIR: &str = "mpc-1.3.1-c";
+ const GMP_DIR: &str = "gmp-6.2.1-c";
+ const MPFR_DIR: &str = "mpfr-4.2.0-c";
  const MPC_DIR: &str = "mpc-1.3.1-c";
- const GMP_VER: (i32, i32, i32) = (6, 2, 1);
- const MPFR_VER: (i32, i32, i32) = (4, 2, 0);
--const MPC_VER: (i32, i32, i32) = (1, 3, 1);
-+const MPC_VER: (i32, i32, i32) = (1, 2, 1);
+-const GMP_VER: (i32, i32, i32) = (6, 2, 1);
+-const MPFR_VER: (i32, i32, i32) = (4, 2, 0);
++const GMP_VER: (i32, i32, i32) = (6, 3, 0);
++const MPFR_VER: (i32, i32, i32) = (4, 2, 1);
+ const MPC_VER: (i32, i32, i32) = (1, 3, 1);
  
  #[derive(Clone, Copy, PartialEq)]
- enum Target {
 @@ -194,7 +194,7 @@ fn check_system_libs(env: &Environment) {
  
      let mut cmd = Command::new(&env.c_compiler);

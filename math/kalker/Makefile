@@ -1,7 +1,6 @@
 PORTNAME=	kalker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.4
-PORTREVISION=	6
+DISTVERSION=	2.1.0
 CATEGORIES=	math
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -12,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libmpc.so:math/mpc
+		libmpc.so:math/mpc \
+		libmpfr.so:math/mpfr
 
 USES=		cargo
 USE_GITHUB=	yes
