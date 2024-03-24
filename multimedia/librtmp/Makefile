@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Depends on legacy functionality of OpenSSL and superseded by multimedia/ffmpeg
-EXPIRATION_DATE=2023-04-30
+EXPIRATION_DATE=2024-04-30
 
 USES=		pkgconfig ssl
 USE_LDCONFIG=	yes

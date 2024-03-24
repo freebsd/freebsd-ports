@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Depends on deprecated library librtmp, consider migrating to multimedia/ffmpeg
-EXPIRATION_DATE=2023-04-30
+EXPIRATION_DATE=2024-04-30
 
 LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 
