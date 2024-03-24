@@ -8,10 +8,6 @@ bin/start-lumina-desktop
 etc/luminaDesktop.conf.dist
 %%QT_PLUGINDIR%%/platformthemes/liblthemeengine.so
 %%QT_PLUGINDIR%%/styles/liblthemeengine-style.so
-man/man1/lumina-desktop.1.gz
-man/man1/lumina-info.1.gz
-man/man1/lumina-open.1.gz
-man/man8/start-lumina-desktop.8.gz
 @(root,wheel,4555) sbin/lumina-checkpass
 share/applications/lthemeengine.desktop
 share/applications/lumina-info.desktop
@@ -1938,4 +1934,8 @@ share/lumina-desktop/themes/DarkGlass.qss.template
 share/lumina-desktop/themes/Glass.qss.template
 share/lumina-desktop/themes/Lumina-default.qss.template
 share/lumina-desktop/themes/None.qss.template
+share/man/man1/lumina-desktop.1.gz
+share/man/man1/lumina-info.1.gz
+share/man/man1/lumina-open.1.gz
+share/man/man8/start-lumina-desktop.8.gz
 share/xsessions/Lumina-DE.desktop
