@@ -8,40 +8,35 @@ MAINTAINER=	grembo@FreeBSD.org
 COMMENT?=	Libraries for the command line interface for Phorge.it
 WWW?=		https://we.phorge.it/book/arcanist/
 
-SLAVEPORT?=	lib
-
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PHP_DESTDIR=	lib/php/arcanist
 USES=		php:cli,flavors python:env shebangfix
-SHEBANG_FILES=	bin/arc \
-		bin/phage \
-		scripts/*.php \
-		scripts/hgdaemon/*.php \
-		src/parser/*.php \
-		support/arcanoid/arcanoid.py \
-		support/lib/*.php \
-		support/unit/*.php \
-		support/xhpast/*.php \
+USE_GITHUB=	yes
+GH_ACCOUNT=	phorgeit
+GH_TAGNAME=	174bf094
+USE_PHP=	curl dom simplexml zlib
+
+PHP_DESTDIR=	lib/php/arcanist
+SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \
+		src/parser/*.php support/arcanoid/arcanoid.py support/lib/*.php \
+		support/unit/*.php support/xhpast/*.php \
 		support/xhpast/bin/*.php
 
-USE_PHP=	curl dom simplexml zlib
-USE_GITHUB=	yes
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 PORTSCOUT=	ignore:1
-GH_ACCOUNT=	phorgeit
-GH_TAGNAME=	174bf094ef9fe
+SLAVEPORT?=	lib
+
 PLIST=		${.CURDIR}/pkg-plist
 
 .if ${SLAVEPORT} == lib
 SLAVE_PKGNAMESUFFIX=	-${SLAVEPORT}
 
-OPTIONS_DEFINE=	ENCODINGS
-OPTIONS_DEFAULT=ENCODINGS
-ENCODINGS_DESC=	Support for encodings other than utf-8
-ENCODINGS_USE=	PHP=mbstring
+OPTIONS_DEFINE=		ENCODINGS
+OPTIONS_DEFAULT=	ENCODINGS
+ENCODINGS_DESC=		Support for encodings other than utf-8
+ENCODINGS_USE=		PHP=mbstring
 
 .else # link only
 
