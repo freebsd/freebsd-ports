@@ -11,6 +11,9 @@ MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	C++ implementation of an OpenID decentralized identity system
 WWW=		https://kin.klever.net/libopkele/
 
+DEPRECATED=	Depends on deprecated www/tidy-lib
+EXPIRATION_DATE=2024-04-24
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
