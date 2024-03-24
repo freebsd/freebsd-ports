@@ -1,6 +1,7 @@
 PORTNAME=	ipv6toolkit
 PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.si6networks.com/tools/ipv6toolkit/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 USES=		shebangfix uidfix
 SHEBANG_FILES=	tools/blackhole6 tools/script6
-MAKE_ENV=	DATADIR=${DATADIR} WRKSRC=${WRKSRC}
+MAKE_ENV=	DATADIR=${DATADIR} WRKSRC=${WRKSRC} MANDIR=${PREFIX}/share/man/man
 SUB_FILES=	BSDMakefile Makefile Makefile.lib
 MAKEFILE=	BSDMakefile
 PORTDOCS=	README.TXT CHANGES.TXT CREDITS.TXT
