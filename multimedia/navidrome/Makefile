@@ -1,7 +1,7 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.50.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache

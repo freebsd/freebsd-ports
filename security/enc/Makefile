@@ -1,5 +1,6 @@
 PORTNAME=	enc
 DISTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	DtxdF@disroot.org

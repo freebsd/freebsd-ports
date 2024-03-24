@@ -1,7 +1,7 @@
 PORTNAME=	ipfs-go-fs-repo-migrations
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/ipfs/fs-repo-migrations/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
