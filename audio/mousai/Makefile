@@ -10,8 +10,7 @@ WWW=		https://github.com/SeaDve/Mousai
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
-		libsoup-3.0.so:devel/libsoup3 \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libgraphene-1.0.so:graphics/graphene
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig
