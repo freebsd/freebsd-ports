@@ -162,7 +162,7 @@ share/icons/hicolor/128x128/apps/com.obsproject.Studio.png
 share/icons/hicolor/256x256/apps/com.obsproject.Studio.png
 share/icons/hicolor/512x512/apps/com.obsproject.Studio.png
 share/icons/hicolor/scalable/apps/com.obsproject.Studio.svg
-share/metainfo/com.obsproject.Studio.appdata.xml
+share/metainfo/com.obsproject.Studio.metainfo.xml
 share/obs/libobs/area.effect
 share/obs/libobs/bicubic_scale.effect
 share/obs/libobs/bilinear_lowres_scale.effect
