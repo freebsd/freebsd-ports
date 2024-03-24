@@ -18,6 +18,9 @@
 %%EXAMPLES%%bin/llava-cli
 %%EXAMPLES%%bin/lookahead
 %%EXAMPLES%%bin/lookup
+%%EXAMPLES%%bin/lookup-create
+%%EXAMPLES%%bin/lookup-merge
+%%EXAMPLES%%bin/lookup-stats
 %%EXAMPLES%%bin/main
 %%EXAMPLES%%bin/parallel
 %%EXAMPLES%%bin/passkey
