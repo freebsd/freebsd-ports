@@ -1,7 +1,7 @@
 bin/cvpasswd
 bin/cvsup
-man/man1/cvpasswd.1.gz
-man/man1/cvsup.1.gz
-man/man8/cvsupd.8.gz
 sbin/cvsupd
 share/cvsup/License
+share/man/man1/cvpasswd.1.gz
+share/man/man1/cvsup.1.gz
+share/man/man8/cvsupd.8.gz
