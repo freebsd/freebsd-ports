@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		requires unsupported go1.18
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2024-04-24
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
