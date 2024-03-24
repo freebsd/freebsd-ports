@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to replay saved packet capture files
 WWW=		https://github.com/appneta/tcpreplay
 
