@@ -1,10 +1,9 @@
 PORTNAME=	icu
 DISTVERSION=	74_2
-PORTREVISION?=	0 # keep for icu-lx
+PORTREVISION?=	1 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
-MASTER_SITES=	https://github.com/unicode-org/${PORTNAME}/releases/download/release-${DISTVERSION:S/rc/-&/:S/_/-/g}/ \
-		SF/${PORTNAME}/${PORTNAME:tu}4C/${PORTVERSION}
+MASTER_SITES=	https://github.com/unicode-org/${PORTNAME}/releases/download/release-${DISTVERSION:S/rc/-&/:S/_/-/g}/
 DISTNAME=	icu4c-${DISTVERSION}-src
 
 MAINTAINER=	office@FreeBSD.org
@@ -35,12 +34,6 @@ WRKSRC=		${WRKDIR}/icu/source
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION:C/r.?/1/}
-
-post-extract:
-# XXX Symlink broken by https://github.com/unicode-org/icu/commit/312bae866003
-	@if [ ! -e ${LICENSE_FILE} ]; then \
-		${ECHO_CMD} "http://www.unicode.org/copyright.html" >${LICENSE_FILE}; \
-	fi
 
 .ifndef PKGNAMESUFFIX
 post-install:
