@@ -75,9 +75,9 @@ GUILE_DEFAULT?=		2.2
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 8, 11, 17, 18, 19, 20, 21
 JAVA_DEFAULT?=		8
-# Possible values: 3.0.0, 3.1.0
+# Possible values: 3.2.0, 3.1.0
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=	3.0.0
+LAZARUS_DEFAULT?=	3.2.0
 .  else
 LAZARUS_DEFAULT?=	3.1.0
 .  endif
