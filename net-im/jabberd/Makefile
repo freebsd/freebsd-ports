@@ -12,7 +12,7 @@ WWW=		https://jabberd2.org/
 LICENSE=	GPLv2
 
 DEPRECATED=	No longer developed as of 2019, consider using net-im/ejabberd
-EXPIRATION_DATE=2023-04-30
+EXPIRATION_DATE=2024-04-30
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgsasl.so:security/libgsasl \
