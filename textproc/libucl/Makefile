@@ -1,12 +1,8 @@
 PORTNAME=	libucl
-DISTVERSION=	0.9.0
-PORTREVISION=	2
+DISTVERSION=	0.9.1
 CATEGORIES=	textproc devel
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	da7aacb3d46fbc206ec6f2431f503eed843a3039.patch:-p1 \
-		708f5e21e3d85f56cdcbcbc418d8725f53bf390b.patch:-p1
-
+# implicit-approval+: bapt dvl
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Universal configuration library parser
 WWW=		https://github.com/vstakhov/libucl
