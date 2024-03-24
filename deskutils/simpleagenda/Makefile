@@ -5,11 +5,13 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple calendar and agenda application
 WWW=		http://wiki.gnustep.org/index.php/SimpleAgenda.app
 
 LICENSE=	GPLv2
+
+BROKEN=		Fails to build with unknown type name 'APPKIT_EXPORT_CLASS'
 
 LIB_DEPENDS+=	libical.so:devel/libical \
 		libuuid.so:misc/e2fsprogs-libuuid
