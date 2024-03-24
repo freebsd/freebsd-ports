@@ -1,5 +1,5 @@
 PORTNAME=	gnome-ssh-askpass
-PORTVERSION=	6.9p1
+PORTVERSION=	7.0p1
 CATEGORIES=	security gnome
 MASTER_SITES=	OPENBSD/OpenSSH/portable/
 DISTNAME=	openssh-${PORTVERSION}
