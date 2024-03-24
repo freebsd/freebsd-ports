@@ -196,6 +196,9 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/wsaapi.h
 %%DATADIR%%/plugin/wsddapi.c
 %%DATADIR%%/plugin/wsddapi.h
+%%DATADIR%%/plugin/wsdl2h-httpda.o
+%%DATADIR%%/plugin/wsdl2h-smdevp.o
+%%DATADIR%%/plugin/wsdl2h-threads.o
 %%DATADIR%%/plugin/wsrmapi.c
 %%DATADIR%%/plugin/wsrmapi.h
 %%DATADIR%%/plugin/wsse2api.c
