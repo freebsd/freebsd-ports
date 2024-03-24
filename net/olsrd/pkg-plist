@@ -11,5 +11,5 @@ lib/olsrd_pgraph.so.1.1
 lib/olsrd_secure.so.0.6
 lib/olsrd_txtinfo.so.1.1
 lib/olsrd_watchdog.so.0.1
-man/man5/olsrd.conf.5.gz
-man/man8/olsrd.8.gz
+share/man/man5/olsrd.conf.5.gz
+share/man/man8/olsrd.8.gz
