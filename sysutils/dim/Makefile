@@ -12,7 +12,7 @@ WWW=		https://glyphobet.net/dim/dim.html
 LICENSE=	GPLv2+
 
 DEPRECATED=	Abandonware, upstream stopped development in 2005
-EXPIRATION_DATE=2023-04-30
+EXPIRATION_DATE=2024-04-30
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
