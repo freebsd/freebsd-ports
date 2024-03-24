@@ -6,11 +6,6 @@ bin/mate-wm
 libexec/mate-session-check-accelerated
 libexec/mate-session-check-accelerated-gl-helper
 libexec/mate-session-check-accelerated-gles-helper
-share/man/man1/mate-session-inhibit.1.gz
-share/man/man1/mate-session-properties.1.gz
-share/man/man1/mate-session-save.1.gz
-share/man/man1/mate-session.1.gz
-share/man/man1/mate-wm.1.gz
 share/applications/mate-session-properties.desktop
 share/applications/mate-wm.desktop
 share/icons/hicolor/16x16/apps/mate-session-properties.png
@@ -156,6 +151,11 @@ share/locale/zh_CN/LC_MESSAGES/mate-session-manager.mo
 share/locale/zh_HK/LC_MESSAGES/mate-session-manager.mo
 share/locale/zh_TW/LC_MESSAGES/mate-session-manager.mo
 share/locale/zu/LC_MESSAGES/mate-session-manager.mo
+share/man/man1/mate-session-inhibit.1.gz
+share/man/man1/mate-session-properties.1.gz
+share/man/man1/mate-session-save.1.gz
+share/man/man1/mate-session.1.gz
+share/man/man1/mate-wm.1.gz
 %%DATADIR%%/gsm-inhibit-dialog.ui
 %%DATADIR%%/hardware-compatibility
 %%DATADIR%%/session-properties.ui

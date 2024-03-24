@@ -1,7 +1,7 @@
 bin/mate-screensaver
 bin/mate-screensaver-command
 bin/mate-screensaver-preferences
-etc/pam.d/mate-screensaver
+%%PAM%%etc/pam.d/mate-screensaver
 etc/xdg/autostart/mate-screensaver.desktop
 etc/xdg/menus/mate-screensavers.menu
 libdata/pkgconfig/mate-screensaver.pc
