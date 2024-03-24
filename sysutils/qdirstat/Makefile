@@ -1,5 +1,6 @@
 PORTNAME=	qdirstat
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -21,10 +22,6 @@ GH_ACCOUNT=	shundhammer
 SHEBANG_FILES=	scripts/qdirstat-cache-writer
 
 QMAKE_ARGS+=	INSTALL_PREFIX=${PREFIX}
-
-pre-configure:
-	${REINPLACE_CMD} -e 's,/share,,g' \
-		${WRKSRC}/man/man.pro
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qdirstat
