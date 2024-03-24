@@ -684,13 +684,6 @@ MASTER_SITE_MATE+= \
 
 .if !defined(IGNORE_MASTER_SITE_MOZDEV)
 MASTER_SITE_MOZDEV+= \
-	http://ftp.scarlet.be/pub/mozdev/%SUBDIR%/ \
-	http://ftp.rz.tu-bs.de/pub/mirror/downloads.mozdev.org/%SUBDIR%/ \
-	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
-	http://mozdev.oregonstate.edu/%SUBDIR%/ \
-	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
-	http://www.devlib.org/mozdev/%SUBDIR%/ \
-	ftp://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
 	http://mirrors.ibiblio.org/mozdev.org/%SUBDIR%/
 .endif
 
