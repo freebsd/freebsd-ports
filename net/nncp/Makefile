@@ -11,7 +11,7 @@ WWW=		http://www.nncpgo.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:modules,no_targets tar:xz
+USES=		go:1.20,modules,no_targets tar:xz
 
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 
