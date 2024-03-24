@@ -1,6 +1,6 @@
 PORTNAME=	mod_tidy
 PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://mod-tidy.sourceforge.net/src/
 DIST_SUBDIR=	apache2
@@ -8,6 +8,9 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Validates the HTML output of your apache2 web server
 WWW=		https://mod-tidy.sourceforge.net/
+
+DEPRECATED=	Depends on deprecated www/tidy-lib
+EXPIRATION_DATE=2024-04-24
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
