@@ -4113,7 +4113,7 @@
     SUBDIR += perlconsole
     SUBDIR += phabricator
     SUBDIR += phasar
-    SUBDIR += php-Psr_Log
+    SUBDIR += phorgeit-arcanist-lib
     SUBDIR += php-composer
     SUBDIR += php-geshi
     SUBDIR += php-ice37
