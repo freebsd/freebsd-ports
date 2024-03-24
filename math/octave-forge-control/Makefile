@@ -20,10 +20,6 @@ OCTAVE_SRC=	${GH_PROJECT}-control-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 
-#post-patch:
-	#${MV} ${WRKSRC}/TG04BX.f ${WRKSRC_slicot}/src
-
-post-patch:
-	${REINPLACE_CMD} -e '/SC_SMOD.*\:\=/s+\.\./slicot\-reference+${WRKSRC_slicot}'+ ${WRKSRC}/Makefile
+MAKE_ARGS+=	SC_SMOD=${WRKSRC_slicot}
 
 .include <bsd.port.mk>
