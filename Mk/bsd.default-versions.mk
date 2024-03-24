@@ -79,7 +79,7 @@ JAVA_DEFAULT?=		8
 .  if !defined(WANT_LAZARUS_DEVEL)
 LAZARUS_DEFAULT?=	3.2.0
 .  else
-LAZARUS_DEFAULT?=	3.1.0
+LAZARUS_DEFAULT?=	3.3.1
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
