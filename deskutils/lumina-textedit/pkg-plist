@@ -1,6 +1,5 @@
 bin/lte
 bin/lumina-textedit
-man/man1/lumina-textedit.1.gz
 share/applications/lumina-textedit.desktop
 %%NLS%%share/lumina-desktop/i18n/l-te_af.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_ar.qm
@@ -79,3 +78,4 @@ share/lumina-desktop/syntax_rules/rst.syntax
 share/lumina-desktop/syntax_rules/sh.syntax
 share/lumina-desktop/syntax_rules/txt.syntax
 share/lumina-desktop/syntax_rules/xml.syntax
+share/man/man1/lumina-textedit.1.gz
