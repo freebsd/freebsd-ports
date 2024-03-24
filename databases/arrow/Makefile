@@ -1,6 +1,5 @@
 PORTNAME=	arrow
-DISTVERSION=	13.0.0
-PORTREVISION=	6
+DISTVERSION=	15.0.2
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -32,15 +31,7 @@ CMAKE_OFF=	ARROW_BUILD_STATIC ARROW_WITH_BACKTRACE ARROW_BUILD_TESTS ARROW_BUILD
 OPTIONS_GROUP=			COMPRESSION COMPONENTS # components are listed in cpp/cmake_modules/DefineOptions.cmake
 OPTIONS_GROUP_COMPRESSION=	BROTLI BZ2 LZ4 SNAPPY ZLIB ZSTD
 OPTIONS_GROUP_COMPONENTS=	ACERO COMPUTE CSV DATASET FILESYSTEM FLIGHT GANDIVA HDFS IPC JSON MIMALLOC PARQUET ORC S3 SKYHOOK SUBSTRAIT BUILD_UTILITIES TENSORFLOW TESTING
-OPTIONS_DEFINE=			UTF8PROC
-OPTIONS_DEFAULT=		UTF8PROC
 OPTIONS_SUB=			yes
-
-## Miscellaneous options
-
-UTF8PROC_DESC=			Build with support for Unicode properties using the utf8proc library
-UTF8PROC_CMAKE_BOOL=		ARROW_WITH_UTF8PROC
-UTF8PROC_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc
 
 ## DESCs
 
@@ -75,7 +66,9 @@ ACERO_IMPLIES=			COMPUTE IPC
 
 COMPUTE_DESC=			Arrow Compute Modules
 COMPUTE_CMAKE_BOOL=		ARROW_COMPUTE
-COMPUTE_LIB_DEPENDS=		libre2.so:devel/re2
+COMPUTE_CMAKE_ON=		-DARROW_WITH_UTF8PROC=ON
+COMPUTE_LIB_DEPENDS=		libre2.so:devel/re2 \
+				libutf8proc.so:textproc/utf8proc
 
 CSV_DESC=			Arrow CSV Parser Module
 CSV_CMAKE_BOOL=			ARROW_CSV
@@ -96,17 +89,17 @@ FLIGHT_LIB_DEPENDS=		libgflags.so:devel/gflags \
 				libcares.so:dns/c-ares \
 				libgrpc.so:devel/grpc \
 				libre2.so:devel/re2
-FLIGHT_IMPLIES=			IPC
+FLIGHT_IMPLIES=			IPC COMPUTE # see https://github.com/apache/arrow/issues/40766
 FLIGHT_BROKEN=			configure breaks: Could not find a package configuration file provided by "re2"
 
 GANDIVA_DESC=			Gandiva libraries
-GANDIVA_USES=			ssl
+GANDIVA_USES=			llvm:17,lib ssl
 GANDIVA_CMAKE_BOOL=		ARROW_GANDIVA
-GANDIVA_BUILD_DEPENDS=		${LOCALBASE}/bin/clang12:devel/llvm12 # explicitly requires llvm-12
+GANDIVA_CMAKE_ON=		-DARROW_WITH_UTF8PROC=ON
 GANDIVA_LIB_DEPENDS=		libgrpc.so:devel/grpc \
 				libprotobuf.so:devel/protobuf \
-				libre2.so:devel/re2
-GANDIVA_IMPLIES=		UTF8PROC
+				libre2.so:devel/re2 \
+				libutf8proc.so:textproc/utf8proc
 
 HDFS_DESC=			Arrow HDFS bridge
 HDFS_CMAKE_BOOL=		ARROW_HDFS
@@ -200,6 +193,9 @@ PLIST_FILES+=	lib/cmake/Arrow/Findre2Alt.cmake
 .if ${PORT_OPTIONS:MIPC} && ${PORT_OPTIONS:MBUILD_UTILITIES}
 PLIST_FILES+=	bin/arrow-file-to-stream \
 		bin/arrow-stream-to-file
+.endif
+.if ${PORT_OPTIONS:MGANDIVA} || ${PORT_OPTIONS:MCOMPUTE}
+PLIST_FILES+=	lib/cmake/Arrow/Findutf8proc.cmake
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON} == "PYTHON" && ${PORT_OPTIONS:MFLIGHT} == "FLIGHT"
