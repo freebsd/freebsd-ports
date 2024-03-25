@@ -1,12 +1,11 @@
 PORTNAME=	tor-browser
-DISTVERSION=	13.0.1
-PORTREVISION=	7
+DISTVERSION=	13.0.12
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		https://build-sources.tbb.torproject.org/:source1 \
 		LOCAL/jsm:source2
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}
-DISTNAME=	src-firefox-tor-browser-115.4.0esr-13.0-1-build2
+DISTNAME=	src-firefox-tor-browser-115.9.0esr-13.0-1-build3
 DISTFILES=	${DISTNAME}.tar.xz \
 		manual_112141.zip:source1 \
 		firefox-tor-browser-13.0.1-build2-firefox-1l0n-out.tar:source2
@@ -15,14 +14,14 @@ COMMENT=	Tor Browser for FreeBSD
 WWW=		https://www.torproject.org/
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.79.1:security/nss \
-		icu>=71.1,1:devel/icu \
+		nss>=3.94:security/nss \
+		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=4.1.0:print/harfbuzz \
+		harfbuzz>=8.2.2:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.37:graphics/png \
+		png>=1.6.39:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.11.0:multimedia/libvpx \
+		libvpx>=1.13.1:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
