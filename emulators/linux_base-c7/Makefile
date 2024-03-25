@@ -1,6 +1,6 @@
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -16,7 +16,7 @@ BIN_DISTNAMES=	bash-4.2.46-35.el7_9 \
 		bzip2-1.0.6-13.el7 \
 		centos-release-7-9.2009.1.el7.centos \
 		coreutils-8.22-24.el7_9.2 \
-		diffutils-3.3-5.el7 \
+		diffutils-3.3-6.el7_9 \
 		e2fsprogs-1.42.9-19.el7 \
 		filesystem-3.2-25.el7 \
 		findutils-4.5.11-6.el7 \
@@ -55,15 +55,15 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libstdc++-4.8.5-44.el7 \
 		libuuid-2.23.2-65.el7_9.1 \
 		ncurses-libs-5.9-14.20130511.el7_4 \
-		nss-softokn-freebl-3.79.0-4.el7_9 \
-		openssl-libs-1.0.2k-25.el7_9 \
+		nss-softokn-freebl-3.90.0-6.el7_9 \
+		openssl-libs-1.0.2k-26.el7_9 \
 		pcre-8.32-17.el7 \
 		popt-1.13-16.el7 \
 		readline-6.2-11.el7 \
 		slang-2.2.4-11.el7 \
 		util-linux-2.23.2-65.el7_9.1 \
 		xz-libs-5.2.2-2.el7_9 \
-		zlib-1.2.7-20.el7_9
+		zlib-1.2.7-21.el7_9
 
 LIB_DISTNAMES_aarch64=	redhat-lsb-core-4.1-27.el7.1
 
@@ -85,7 +85,7 @@ SRC_DISTFILES=	acl-2.2.51-15.el7${SRC_SUFX}:SOURCE \
 		compat-db-4.7.25-28.el7${SRC_SUFX}:SOURCE \
 		compat-gcc-32-3.2.3-72.el7${SRC_SUFX}:SOURCE \
 		coreutils-8.22-24.el7_9.2${SRC_SUFX}:SOURCE \
-		diffutils-3.3-5.el7${SRC_SUFX}:SOURCE \
+		diffutils-3.3-6.el7_9${SRC_SUFX}:SOURCE \
 		e2fsprogs-1.42.9-19.el7${SRC_SUFX}:SOURCE \
 		filesystem-3.2-25.el7${SRC_SUFX}:SOURCE \
 		findutils-4.5.11-6.el7${SRC_SUFX}:SOURCE \
@@ -107,8 +107,8 @@ SRC_DISTFILES=	acl-2.2.51-15.el7${SRC_SUFX}:SOURCE \
 		libselinux-2.5-15.el7${SRC_SUFX}:SOURCE \
 		libsepol-2.5-10.el7${SRC_SUFX}:SOURCE \
 		ncurses-5.9-14.20130511.el7_4${SRC_SUFX}:SOURCE \
-		nss-softokn-3.79.0-4.el7_9${SRC_SUFX}:SOURCE \
-		openssl-1.0.2k-25.el7_9${SRC_SUFX}:SOURCE \
+		nss-softokn-3.90.0-6.el7_9${SRC_SUFX}:SOURCE \
+		openssl-1.0.2k-26.el7_9${SRC_SUFX}:SOURCE \
 		pcre-8.32-17.el7${SRC_SUFX}:SOURCE \
 		popt-1.13-16.el7${SRC_SUFX}:SOURCE \
 		readline-6.2-11.el7${SRC_SUFX}:SOURCE \
@@ -121,7 +121,7 @@ SRC_DISTFILES=	acl-2.2.51-15.el7${SRC_SUFX}:SOURCE \
 		util-linux-2.23.2-65.el7_9.1${SRC_SUFX}:SOURCE \
 		which-2.20-7.el7${SRC_SUFX}:SOURCE \
 		xz-5.2.2-2.el7_9${SRC_SUFX}:SOURCE \
-		zlib-1.2.7-20.el7_9${SRC_SUFX}:SOURCE
+		zlib-1.2.7-21.el7_9${SRC_SUFX}:SOURCE
 
 PLIST_SUB=	LINUXBASE=${LINUXBASE} SYSCTLMIB=${SYSCTLMIB}
 

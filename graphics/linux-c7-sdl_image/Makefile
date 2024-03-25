@@ -16,7 +16,7 @@ USES=		cpe linux:c7
 CPE_VENDOR=	libsdl
 USE_LDCONFIG=	yes
 USE_LINUX=	jpeg png sdl12 tiff
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 
 CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

@@ -13,7 +13,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	userspace-rcu
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}

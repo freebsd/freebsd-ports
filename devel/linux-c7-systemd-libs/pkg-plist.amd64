@@ -12,6 +12,7 @@ usr/lib/libsystemd.so.0
 usr/lib/libsystemd.so.0.6.0
 usr/lib/libudev.so.1
 usr/lib/libudev.so.1.6.2
+@comment usr/lib/security/pam_systemd.so
 usr/lib64/libnss_myhostname.so.2
 usr/lib64/libnss_mymachines.so.2
 usr/lib64/libsystemd-daemon.so.0
@@ -26,3 +27,4 @@ usr/lib64/libsystemd.so.0
 usr/lib64/libsystemd.so.0.6.0
 usr/lib64/libudev.so.1
 usr/lib64/libudev.so.1.6.2
+@comment usr/lib64/security/pam_systemd.so

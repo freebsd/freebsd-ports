@@ -1,6 +1,6 @@
 PORTNAME=	xorg-libs
 PORTVERSION=	7.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -14,7 +14,7 @@ USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	libICE-1.0.9-9.el7 \
 		libSM-1.2.2-2.el7 \
-		libX11-1.6.7-4.el7_9 \
+		libX11-1.6.7-5.el7_9 \
 		libXScrnSaver-1.2.2-6.1.el7 \
 		libXau-1.0.8-2.1.el7 \
 		libXaw-1.0.13-4.el7 \
@@ -32,7 +32,7 @@ LIB_DISTNAMES=	libICE-1.0.9-9.el7 \
 		libXinerama-1.1.3-2.1.el7 \
 		libXmu-1.1.2-2.el7 \
 		libXp-1.0.2-2.1.el7 \
-		libXpm-3.5.12-1.el7 \
+		libXpm-3.5.12-2.el7_9 \
 		libXrandr-1.5.1-2.el7 \
 		libXrender-0.9.10-1.el7 \
 		libXres-1.2.0-1.el7 \
@@ -68,7 +68,7 @@ SRC_DISTFILES=	libICE-1.0.9-9.el7${SRC_SUFX}:SOURCE \
 		libXinerama-1.1.3-2.1.el7${SRC_SUFX}:SOURCE \
 		libXmu-1.1.2-2.el7${SRC_SUFX}:SOURCE \
 		libXp-1.0.2-2.1.el7${SRC_SUFX}:SOURCE \
-		libXpm-3.5.12-1.el7${SRC_SUFX}:SOURCE \
+		libXpm-3.5.12-2.el7_9${SRC_SUFX}:SOURCE \
 		libXrandr-1.5.1-2.el7${SRC_SUFX}:SOURCE \
 		libXrender-0.9.10-1.el7${SRC_SUFX}:SOURCE \
 		libXres-1.2.0-1.el7${SRC_SUFX}:SOURCE \

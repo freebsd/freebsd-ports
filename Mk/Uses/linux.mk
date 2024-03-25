@@ -34,7 +34,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  else
-IGNORE=			Invalid Linux distribution: ${linux_ARGS}
+ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
 
 .  ifndef ONLY_FOR_ARCHS
@@ -212,20 +212,12 @@ DISTFILES_aarch64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
 .    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mamd64)) \
  && empty(NOT_FOR_ARCHS:Mamd64)
-.      if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mi386)) \
- && empty(NOT_FOR_ARCHS:Mi386)
 DISTFILES_amd64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
-			${LIB_DISTNAMES_amd64:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
+			${LIB_DISTNAMES_i386:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 			${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${LIB_DISTNAMES_amd64:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${SHARE_DISTNAMES:S/$/${EXTRACT_SUFX_noarch}/}
-.      else
-DISTFILES_amd64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}/} \
-			${LIB_DISTNAMES_amd64:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
-			${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}/} \
-			${SHARE_DISTNAMES:S/$/${EXTRACT_SUFX_noarch}/}
-.      endif
 .    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mi386)) \
  && empty(NOT_FOR_ARCHS:Mi386)

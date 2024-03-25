@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 
 DESCR=		${.CURDIR}/../liburcu/pkg-descr
 

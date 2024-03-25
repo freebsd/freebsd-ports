@@ -1568,7 +1568,7 @@ EXTRACT_SUFX?=			.tar.gz
 .    if defined(USE_LINUX_PREFIX)
 PREFIX=					${LINUXBASE}
 DATADIR?=				${PREFIX}/usr/share/${PORTNAME}
-DOCSDIR?=				${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+DOCSDIR?=				${PREFIX}/usr/share/doc/${PORTNAME}-${DISTVERSION}
 NO_LICENSES_INSTALL=	yes
 NO_MTREE=				yes
 .    endif

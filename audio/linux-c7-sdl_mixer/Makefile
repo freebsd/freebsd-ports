@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	sdl12
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 
 CONFLICTS=	linux-c6-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
