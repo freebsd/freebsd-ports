@@ -12,4 +12,4 @@ lib/cmake/VFC/vfc-targets.cmake
 lib/cmake/VFC/vfc_lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/VFC/vfc_lib-targets.cmake
 lib/libvfc.so
-lib/libvfc.so.2.1.3
+lib/libvfc.so.2.1.4
