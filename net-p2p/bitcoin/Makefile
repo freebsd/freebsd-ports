@@ -93,7 +93,7 @@ CONFIGURE_ARGS?=	--without-libs \
 CONFIGURE_ENV=	OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 MAKE_ENV+=	V=1
 
-PLIST_FILES?=	bin/bitcoin-qt man/man1/bitcoin-qt.1.gz \
+PLIST_FILES?=	bin/bitcoin-qt share/man/man1/bitcoin-qt.1.gz \
 		share/applications/bitcoin-qt.desktop share/pixmaps/bitcoin128.png
 
 .include <bsd.port.pre.mk>
