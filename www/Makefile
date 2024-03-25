@@ -2375,9 +2375,7 @@
     SUBDIR += thumbnail_index
     SUBDIR += thundercache
     SUBDIR += tidy
-    SUBDIR += tidy-devel
     SUBDIR += tidy-html5
-    SUBDIR += tidy-lib
     SUBDIR += tikiwiki
     SUBDIR += tinymce
     SUBDIR += tinyproxy

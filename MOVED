@@ -3058,3 +3058,5 @@ devel/grpc142||2024-03-20|Has expired: Please use devel/grpc instead
 www/h2o-devel|www/h2o|2024-03-23|Upstream no longer supports releases, this port is folded into www/h2o instead
 security/rubygem-metasploit-aggregator||2024-03-24|Has expired: No longer used, no longer maintained upstream
 net-p2p/tooth||2024-03-24|Has expired: Project has been renamed to Tuba. Consider porting to the new project. See https://github.com/GeopJr/Tuba
+www/tidy-devel|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
+www/tidy-lib|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
