@@ -1,5 +1,5 @@
 PORTNAME=	timescaledb
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
