@@ -76,6 +76,7 @@ do-install:
 	@${REINPLACE_CMD} \
 		's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/src/workflow/ArcanistAnoidWorkflow.php
+	${RM} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/resources/ssl/default.pem
 	${RLN} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/support/shell/hooks/bash-completion.sh \
 		 ${STAGEDIR}${PREFIX}/share/bash-completion/completions/arc
 	${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/bin/arc shell-complete --generate
