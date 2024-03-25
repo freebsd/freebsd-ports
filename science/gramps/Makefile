@@ -1,6 +1,6 @@
 PORTNAME=	gramps
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.2.0
+DISTVERSION=	5.2.1
 CATEGORIES=	science gnome python
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
 		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}berkeleydb>0:databases/py-berkeleydb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py-pyicu@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		xdg-open:devel/xdg-utils
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gnome python shared-mime-info
 USE_GITHUB=	yes
