@@ -16,7 +16,7 @@ CONFIGURE_ARGS=	--without-daemon \
 		--disable-wallet
 
 PLIST_FILES=	bin/bitcoin-cli bin/bitcoin-tx bin/bitcoin-util \
-		man/man1/bitcoin-cli.1.gz man/man1/bitcoin-tx.1.gz \
-		man/man1/bitcoin-util.1.gz
+		share/man/man1/bitcoin-cli.1.gz share/man/man1/bitcoin-tx.1.gz \
+		share/man/man1/bitcoin-util.1.gz
 
 .include "${MASTERDIR}/Makefile"

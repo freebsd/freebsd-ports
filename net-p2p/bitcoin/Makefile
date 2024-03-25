@@ -1,6 +1,6 @@
 PORTNAME=	bitcoin
 PORTVERSION=	26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 USES=		autoreconf compiler:c++11-lib cpe gmake libtool pkgconfig qt:5 shebangfix
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SLAVE_PORT?=	no
 
