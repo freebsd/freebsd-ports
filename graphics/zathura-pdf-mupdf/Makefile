@@ -1,6 +1,6 @@
 PORTNAME=	zathura-pdf-mupdf
 DISTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@FreeBSD.org
