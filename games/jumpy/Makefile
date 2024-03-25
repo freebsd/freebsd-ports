@@ -1,7 +1,6 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
-PORTREVISION=	1
+DISTVERSION=	0.11.2
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,6 +26,8 @@ PORTDATA=	*
 .if ${MACHINE_ARCH} == i386
 # https://github.com/rust-lang/rust/issues/85598
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+# https://github.com/briansmith/ring/issues/1793#issuecomment-1793243725
+RUSTFLAGS+=	-C target-feature=+sse2
 .endif
 
 post-patch:
