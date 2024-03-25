@@ -11,3 +11,4 @@ DISTNAME=	gettext-${PORTVERSION}
 MAINTAINER?=	tijl@FreeBSD.org
 
 DISTINFO_FILE=	${.CURDIR}/../gettext/distinfo
+LTO_UNSAFE=	yes
