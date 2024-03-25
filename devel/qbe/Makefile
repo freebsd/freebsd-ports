@@ -1,7 +1,7 @@
 PORTNAME=	qbe
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	https://c9x.me/git/qbe.git/snapshot/
+MASTER_SITES=	https://c9x.me/git/qbe.git/release//
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Embeddable compiler backend for C type languages
@@ -10,7 +10,7 @@ WWW=		https://c9x.me/compile/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		gmake tar:xz
 
 TEST_TARGET=	check
 
