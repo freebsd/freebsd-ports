@@ -4,7 +4,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
 WWW=		https://luakit.github.io
 

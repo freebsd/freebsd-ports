@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	GHL
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules
 WWW=		https://github.com/shirkdog/pulledpork/
 

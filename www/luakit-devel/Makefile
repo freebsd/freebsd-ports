@@ -6,7 +6,7 @@ PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
 WWW=		https://luakit.github.io
 
