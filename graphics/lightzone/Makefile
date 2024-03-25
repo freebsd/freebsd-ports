@@ -1,7 +1,7 @@
 PORTNAME=	lightzone
 DISTVERSION=	4.1.8-3
 DISTVERSIONSUFFIX=	-g36e87773
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 BUILD_DEPENDS=	jhindexer:java/javahelp \
 		git:devel/git \
 		rsync:net/rsync \
-		tidy:www/tidy-lib \
+		tidy5:www/tidy-html5 \
 		autoconf:devel/autoconf
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff
