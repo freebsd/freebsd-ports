@@ -150,14 +150,14 @@ PORTDOCS=	*
 SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
 
 do-build:
-	cd ${WRKSRC}/include && gmake
-	cd ${WRKSRC}/common && gmake
+	cd ${WRKSRC}/include && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
+	cd ${WRKSRC}/common && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
 #.if ${PORT_OPTIONS:MBDB1} || ${PORT_OPTIONS:MBDB} || ${PORT_OPTIONS:MGDBM}
-	cd ${WRKSRC}/sasldb && gmake
+	cd ${WRKSRC}/sasldb && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
 #.endif
-	cd ${WRKSRC}/saslauthd && gmake
-	cd ${WRKSRC}/saslauthd && gmake saslcache
-	cd ${WRKSRC}/saslauthd && gmake testsaslauthd
+	cd ${WRKSRC}/saslauthd && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
+	cd ${WRKSRC}/saslauthd && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD} saslcache
+	cd ${WRKSRC}/saslauthd && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD} testsaslauthd
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/saslcache \
@@ -190,10 +190,10 @@ post-patch:
 		${WRKSRC}/configure
 
 do-build:
-	cd ${WRKSRC}/include && gmake
-	cd ${WRKSRC}/common && gmake
-	cd ${WRKSRC}/lib && gmake libobj.la
-	cd ${WRKSRC}/plugins && gmake
+	cd ${WRKSRC}/include && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
+	cd ${WRKSRC}/common && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
+	cd ${WRKSRC}/lib && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD} libobj.la
+	cd ${WRKSRC}/plugins && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD}
 
 .endif
 
