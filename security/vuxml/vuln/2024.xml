@@ -315,6 +315,66 @@
     </dates>
   </vuln>
 
+  <vuln vid="6d31ef38-df85-11ee-abf1-6c3be5272acd">
+    <topic>Grafana -- Data source permission escalation</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.5.0</ge><lt>9.5.17</lt></range>
+	<range><ge>10.0.0</ge><lt>10.0.12</lt></range>
+	<range><ge>10.1.0</ge><lt>10.1.8</lt></range>
+	<range><ge>10.2.0</ge><lt>10.2.5</lt></range>
+	<range><ge>10.3.0</ge><lt>10.3.4</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.5.17</lt></range>
+      </package>
+      <package>
+	<name>grafana10</name>
+	<range><lt>10.0.12</lt></range>
+	<range><ge>10.1.0</ge><lt>10.1.8</lt></range>
+	<range><ge>10.2.0</ge><lt>10.2.5</lt></range>
+	<range><ge>10.3.0</ge><lt>10.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2024/03/07/grafana-security-release-medium-severity-security-fix-for-cve-2024-1442/">
+	  <p>The vulnerability impacts Grafana Cloud and Grafana Enterprise instances,
+	  and it is exploitable if a user who should not be able to access all data
+	  sources is granted permissions to create a data source.</p>
+	  <p>By default, only organization Administrators are allowed to create a data
+	  source and have full access to all data sources. All other users need to be
+	  explicitly granted permission to create a data source, which then means they
+	  could exploit this vulnerability.</p>
+	  <p>When a user creates a data source via the
+	  <a href="https://grafana.com/docs/grafana/latest/developers/http_api/data_source/#create-a-data-source">API</a>,
+	  they can specify data source UID. If the UID is set to an asterisk (*),
+	  the user gains permissions to query, update, and delete all data sources
+	  in the organization. The exploit, however, does not stretch across
+	  organizations — to exploit the vulnerability in several organizations, a user
+	  would need permissions to create data sources in each organization.</p>
+	  <p>The vulnerability comes from a lack of UID validation. When evaluating
+	  permissions, we interpret an asterisk (*) as a wild card for all resources.
+	  Therefore, we should treat it as a reserved value, and not allow the creation
+	  of a resource with the UID set to an asterisk.</p>
+	  <p>The CVSS score for this vulnerability is
+	  <a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:L&amp;version=3.1">6 Medium</a>.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1442</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2024-1442/</url>
+    </references>
+    <dates>
+      <discovery>2024-02-12</discovery>
+      <entry>2024-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2ad8700-de25-11ee-9190-84a93843eb75">
     <topic>Unbound -- Denial-of-Service vulnerability</topic>
     <affects>
