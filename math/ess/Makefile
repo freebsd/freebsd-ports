@@ -1,5 +1,6 @@
 PORTNAME=	ess
 DISTVERSION=	24.01.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
