@@ -1,6 +1,6 @@
 PORTNAME=	dsniff
 DISTVERSION=	2.4b1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	http://www.monkey.org/~dugsong/${PORTNAME}/beta/ \
 		LOCAL/sbz
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_14=	fails to compile : conflicting types for 'pcap_init'
+BROKEN_FreeBSD_15=	fails to compile : conflicting types for 'pcap_init'
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
 LIB_DEPENDS=	libnet.so:net/libnet
@@ -21,6 +22,7 @@ USES=		gettext gnome pkgconfig
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}
 DESTDIRNAME=	install_prefix
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/..$//}
