@@ -1,5 +1,5 @@
 PORTNAME=	steam-utils
-DISTVERSION=	20231009
+DISTVERSION=	20240323
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
@@ -35,8 +35,8 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 post-install:
-.for executable in steam steam-install lsu-register-proton lsu-wine-env
-	${LN} -s ../steam-utils/bin/${executable} ${STAGEDIR}${PREFIX}/bin/${executable}
-.endfor
+	${LN} -s ../steam-utils/bin/steam         ${STAGEDIR}${PREFIX}/bin/steam
+	${LN} -s ../steam-utils/bin/lsu-bootstrap ${STAGEDIR}${PREFIX}/bin/steam-install # deprecated since 2024-03-23
+	${LN} -s ../steam-utils/bin/lsu-wine-env  ${STAGEDIR}${PREFIX}/bin/lsu-wine-env
 
 .include <bsd.port.mk>
