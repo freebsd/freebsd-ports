@@ -1,6 +1,5 @@
 PORTNAME=	tcpreplay
-DISTVERSION=	4.4.3
-PORTREVISION=	1
+DISTVERSION=	4.4.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -26,9 +25,6 @@ CONFIGURE_ARGS=	--disable-libopts-install \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
 TEST_TARGET=	test
-
-# https://github.com/appneta/tcpreplay/issues/809
-PORTSCOUT=	skipv:4.4.4
 
 OPTIONS_DEFAULT=	LIBPCAP_BASE
 OPTIONS_SINGLE=		LIBPCAP
