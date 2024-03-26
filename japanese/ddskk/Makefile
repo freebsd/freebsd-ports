@@ -1,6 +1,6 @@
 PORTNAME=	ddskk
-DISTVERSION=	16.2
-PORTREVISION=	16
+DISTVERSION=	17.1.20230702
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
 		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/ \

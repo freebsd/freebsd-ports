@@ -1,6 +1,6 @@
 PORTNAME=	paredit-mode.el
 PORTVERSION=	24
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://mumble.net/~campbell/emacs/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
