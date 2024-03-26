@@ -1,6 +1,5 @@
 PORTNAME=	nexfontsel
-PORTVERSION=	3.0.1
-PORTREVISION=	5
+DISTVERSION=	3.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/ \
 		LOCAL/pav
