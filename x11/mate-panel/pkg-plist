@@ -14,9 +14,6 @@ libexec/clock-applet
 libexec/fish-applet
 libexec/notification-area-applet
 libexec/wnck-applet
-share/man/man1/mate-desktop-item-edit.1.gz
-share/man/man1/mate-panel-test-applets.1.gz
-share/man/man1/mate-panel.1.gz
 share/applications/mate-panel.desktop
 share/dbus-1/services/org.mate.panel.applet.ClockAppletFactory.service
 share/dbus-1/services/org.mate.panel.applet.FishAppletFactory.service
@@ -507,6 +504,9 @@ share/help/ky/mate-clock/legal.xml
 share/help/ky/mate-fish/figures/fish_applet.png
 share/help/ky/mate-fish/index.docbook
 share/help/ky/mate-fish/legal.xml
+share/help/la/mate-clock/figures/clock_applet.png
+share/help/la/mate-clock/index.docbook
+share/help/la/mate-clock/legal.xml
 share/help/la/mate-fish/figures/fish_applet.png
 share/help/la/mate-fish/index.docbook
 share/help/la/mate-fish/legal.xml
@@ -579,6 +579,9 @@ share/help/ms/mate-fish/legal.xml
 share/help/my/mate-fish/figures/fish_applet.png
 share/help/my/mate-fish/index.docbook
 share/help/my/mate-fish/legal.xml
+share/help/nan/mate-fish/figures/fish_applet.png
+share/help/nan/mate-fish/index.docbook
+share/help/nan/mate-fish/legal.xml
 share/help/nb/mate-clock/figures/clock_applet.png
 share/help/nb/mate-clock/index.docbook
 share/help/nb/mate-clock/legal.xml
@@ -958,7 +961,6 @@ share/locale/el/LC_MESSAGES/mate-panel.mo
 share/locale/en_AU/LC_MESSAGES/mate-panel.mo
 share/locale/en_CA/LC_MESSAGES/mate-panel.mo
 share/locale/en_GB/LC_MESSAGES/mate-panel.mo
-share/locale/en_US/LC_MESSAGES/mate-panel.mo
 share/locale/eo/LC_MESSAGES/mate-panel.mo
 share/locale/es/LC_MESSAGES/mate-panel.mo
 share/locale/es_AR/LC_MESSAGES/mate-panel.mo
@@ -1024,6 +1026,7 @@ share/locale/ml/LC_MESSAGES/mate-panel.mo
 share/locale/mn/LC_MESSAGES/mate-panel.mo
 share/locale/mr/LC_MESSAGES/mate-panel.mo
 share/locale/ms/LC_MESSAGES/mate-panel.mo
+share/locale/nan/LC_MESSAGES/mate-panel.mo
 share/locale/nb/LC_MESSAGES/mate-panel.mo
 share/locale/nds/LC_MESSAGES/mate-panel.mo
 share/locale/ne/LC_MESSAGES/mate-panel.mo
@@ -1068,6 +1071,9 @@ share/locale/zh_CN/LC_MESSAGES/mate-panel.mo
 share/locale/zh_HK/LC_MESSAGES/mate-panel.mo
 share/locale/zh_TW/LC_MESSAGES/mate-panel.mo
 share/locale/zu/LC_MESSAGES/mate-panel.mo
+share/man/man1/mate-desktop-item-edit.1.gz
+share/man/man1/mate-panel-test-applets.1.gz
+share/man/man1/mate-panel.1.gz
 %%DATADIR%%/applets/org.mate.panel.ClockApplet.mate-panel-applet
 %%DATADIR%%/applets/org.mate.panel.FishApplet.mate-panel-applet
 %%DATADIR%%/applets/org.mate.panel.NotificationAreaApplet.mate-panel-applet
