@@ -1,6 +1,6 @@
 PORTNAME=	seed7
-DISTVERSION=	05_20230913
-PORTREVISION=	1
+DISTVERSION=	05_20240322
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USES=		mysql:client ncurses pgsql sqlite tar:tgz xorg
+USES=		display:build mysql:client ncurses pgsql sqlite tar:tgz xorg
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

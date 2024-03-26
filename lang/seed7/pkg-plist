@@ -6,6 +6,7 @@ lib/seed7/bin/s7_data.a
 lib/seed7/bin/s7_draw.a
 lib/seed7/bin/seed7_05.a
 lib/seed7/lib/aes.s7i
+lib/seed7/lib/aes_gcm.s7i
 lib/seed7/lib/ar.s7i
 lib/seed7/lib/arc4.s7i
 lib/seed7/lib/archive_base.s7i
@@ -181,6 +182,7 @@ lib/seed7/lib/process.s7i
 lib/seed7/lib/progs.s7i
 lib/seed7/lib/propertyfile.s7i
 lib/seed7/lib/rational.s7i
+lib/seed7/lib/readjson.s7i
 lib/seed7/lib/ref_list.s7i
 lib/seed7/lib/reference.s7i
 lib/seed7/lib/reverse.s7i
