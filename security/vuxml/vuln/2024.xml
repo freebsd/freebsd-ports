@@ -1,3 +1,40 @@
+  <vuln vid="8b3be705-eba7-11ee-99b3-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php81</name>
+	<name>phpmyfaq-php82</name>
+	<name>phpmyfaq-php83</name>
+	<range><lt>3.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyFAQ team reports:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2024-03-25">
+	  <p>The phpMyFAQ Team has learned of multiple security issues that'd
+	    been discovered in phpMyFAQ 3.2.5 and earlier. phpMyFAQ contains
+	    cross-site scripting (XSS), SQL injection and bypass
+	    vulnerabilities.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-mmh6-5cpf-2c72</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-hm8r-95g3-5hj9</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-48vw-jpf8-hwqh</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-2grw-mc9r-822r</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-6p68-36m6-392r</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-pwh2-fpfr-x5gf</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-q7g6-xfh2-vhpx</url>
+      <url>https://github.com/thorsten/phpMyFAQ/security/advisories/GHSA-qgxx-4xv5-6hcw</url>
+    </references>
+    <dates>
+      <discovery>2024-03-25</discovery>
+      <entry>2024-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f661184a-eb90-11ee-92fc-1c697a616631">
     <topic>emacs -- multiple vulnerabilities</topic>
     <affects>
