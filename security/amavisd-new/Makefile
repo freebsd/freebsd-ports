@@ -1,6 +1,6 @@
 PORTNAME=	amavisd-new
 DISTVERSION=	2.12.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -237,9 +237,9 @@ do-install:
 .for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
+	${INSTALL_DATA} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${STAGEDIR}${PREFIX}/sbin/amavisd-requeue
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/var
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/tmp
