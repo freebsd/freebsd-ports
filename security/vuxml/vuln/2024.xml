@@ -1,3 +1,41 @@
+  <vuln vid="f661184a-eb90-11ee-92fc-1c697a616631">
+    <topic>emacs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>emacs</name>
+       <name>emacs-canna</name>
+       <name>emacs-nox</name>
+       <range><lt>29.3,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GNU Emacs developers report:</p>
+	<blockquote cite="https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-29.3">
+	  <p>Emacs 29.3 is an emergency bugfix release intended to fix several security vulnerabilities.</p>
+	<ul>
+	  <li>Arbitrary Lisp code is no longer evaluated as part of turning on Org mode.  This is for security reasons, to avoid evaluating malicious Lisp code.</li>
+	  <li>New buffer-local variable 'untrusted-content'.  When this is non-nil, Lisp programs should treat buffer contents with extra caution.</li>
+	  <li>Gnus now treats inline MIME contents as untrusted.  To get back previous insecure behavior, 'untrusted-content' should be reset to nil in the buffer.</li>
+	  <li>LaTeX preview is now by default disabled for email attachments.  To get back previous insecure behavior, set the variable 'org--latex-preview-when-risky' to a non-nil value.</li>
+	  <li>Org mode now considers contents of remote files to be untrusted.  Remote files are recognized by calling 'file-remote-p'.</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-30202</cvename>
+      <cvename>CVE-2024-30203</cvename>
+      <cvename>CVE-2024-30204</cvename>
+      <cvename>CVE-2024-30205</cvename>
+      <url>https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-29.3</url>
+    </references>
+    <dates>
+      <discovery>2024-03-24</discovery>
+      <entry>2024-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80815c47-e84f-11ee-8e76-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
