@@ -1,5 +1,5 @@
 PORTNAME=	clifm
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -16,7 +16,7 @@ USES=		desktop-file-utils gettext-runtime python:run \
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
 GH_PROJECT=	${PORTNAME}-colors:cfmc
-GH_TAGNAME=	v0.4.3:cfmc
+GH_TAGNAME=	0413430:cfmc
 ALL_TARGET=	build
 MAKE_ENV=	LIBS_FreeBSD="-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-lreadline -lintl -lmagic" MANDIR=${PREFIX}/share/man
