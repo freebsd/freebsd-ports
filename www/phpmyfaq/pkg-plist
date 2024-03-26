@@ -2143,6 +2143,7 @@
 %%WWWDIR%%/src/libs/symfony/mailer/Exception/RuntimeException.php
 %%WWWDIR%%/src/libs/symfony/mailer/Exception/TransportException.php
 %%WWWDIR%%/src/libs/symfony/mailer/Exception/TransportExceptionInterface.php
+%%WWWDIR%%/src/libs/symfony/mailer/Exception/UnexpectedResponseException.php
 %%WWWDIR%%/src/libs/symfony/mailer/Exception/UnsupportedSchemeException.php
 %%WWWDIR%%/src/libs/symfony/mailer/Header/MetadataHeader.php
 %%WWWDIR%%/src/libs/symfony/mailer/Header/TagHeader.php
@@ -2325,6 +2326,7 @@
 %%WWWDIR%%/src/libs/symfony/polyfill-php83/Resources/stubs/DateObjectError.php
 %%WWWDIR%%/src/libs/symfony/polyfill-php83/Resources/stubs/DateRangeError.php
 %%WWWDIR%%/src/libs/symfony/polyfill-php83/Resources/stubs/Override.php
+%%WWWDIR%%/src/libs/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php
 %%WWWDIR%%/src/libs/symfony/polyfill-php83/bootstrap.php
 %%WWWDIR%%/src/libs/symfony/polyfill-php83/bootstrap81.php
 %%WWWDIR%%/src/libs/symfony/polyfill-php83/composer.json
