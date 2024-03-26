@@ -1,3 +1,4 @@
+bin/ams2psf
 bin/bbc2psf
 bin/cpi2psf
 bin/cpicomp
@@ -7,6 +8,7 @@ bin/fnts2fon
 bin/fon2fnts
 bin/mda2psf
 bin/page2cp2
+bin/psf2ams
 bin/psf2bbc
 bin/psf2bdf
 bin/psf2bsd
@@ -35,6 +37,7 @@ include/psfutils.h
 lib/libpsf.so
 lib/libpsf.so.0
 lib/libpsf.so.0.1.1
+share/man/man1/ams2psf.1.gz
 share/man/man1/cpi2psf.1.gz
 share/man/man1/cpicomp.1.gz
 share/man/man1/cpidcomp.1.gz
@@ -42,6 +45,7 @@ share/man/man1/fnt2psf.1.gz
 share/man/man1/fnts2fon.1.gz
 share/man/man1/fon2fnts.1.gz
 share/man/man1/mda2psf.1.gz
+share/man/man1/psf2ams.1.gz
 share/man/man1/psf2bdf.1.gz
 share/man/man1/psf2bsd.1.gz
 share/man/man1/psf2fnt.1.gz

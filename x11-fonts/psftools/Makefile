@@ -1,6 +1,5 @@
 PORTNAME=	psftools
-PORTVERSION=	1.0.13
-PORTREVISION=	1
+DISTVERSION=	1.0.14
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.seasip.info/Unix/PSF/
 
