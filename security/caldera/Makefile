@@ -1,6 +1,6 @@
 PORTNAME=	caldera
 DISTVERSION=	5.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -111,11 +111,14 @@ post-build:
 	@${ECHO} "(!!!) Please upload the cache archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}"
 .else
 MASTER_SITES+=	LOCAL/acm/caldera/:npm_cache
-DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
+DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache \
+		${PORTNAME}-freebsd-logos.tar.gz:npm_cache
 NPM_ARGS=	run build
 
 post-extract:
 	@${MV} ${WRKDIR}/node_modules ${WRKSRC}/plugins/magma/
+	@${MV} ${WRKDIR}/freebsd.red.svg ${WRKSRC}/plugins/magma/src/assets/img/graph/freebsd-icon-privileged.svg
+	@${MV} ${WRKDIR}/freebsd.black.svg ${WRKSRC}/plugins/magma/src/assets/img/graph/freebsd-icon.svg
 	${RM} -R ${WRKSRC}/.github
 	cd ${WRKSRC} && ${RM} .coveragerc .dockerignore .eslintrc.js .flake8 \
 		.git* .pre* .stylelintrc.json Dockerfile

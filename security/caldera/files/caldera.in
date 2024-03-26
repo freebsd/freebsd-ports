@@ -66,8 +66,13 @@ caldera_stop()
 {
 	if [ -f ${pidfile} ]
 	then
-		kill `cat ${pidfile}`
+		kill -TERM `cat ${pidfile}`
 		rm ${pidfile}
+
+		pid_child=$(pgrep -U ${caldera_user})
+		if [ ! -z "${pid_child}" ]; then
+			kill -TERM ${pid_child}
+		fi
 		echo "Stopping ${name}"
 	else
 		echo "${name} not running? (check ${pidfile})."
