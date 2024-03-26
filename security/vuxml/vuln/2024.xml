@@ -330,13 +330,6 @@
 	<name>grafana9</name>
 	<range><lt>9.5.17</lt></range>
       </package>
-      <package>
-	<name>grafana10</name>
-	<range><lt>10.0.12</lt></range>
-	<range><ge>10.1.0</ge><lt>10.1.8</lt></range>
-	<range><ge>10.2.0</ge><lt>10.2.5</lt></range>
-	<range><ge>10.3.0</ge><lt>10.3.4</lt></range>
-      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -372,6 +365,7 @@
     <dates>
       <discovery>2024-02-12</discovery>
       <entry>2024-03-11</entry>
+      <modified>2024-03-26</modified>
     </dates>
   </vuln>
 
