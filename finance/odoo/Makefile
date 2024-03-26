@@ -71,7 +71,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR}
 
-USES=		cpe ldap python:3.10 pgsql shebangfix
+USES=		cpe ldap python pgsql shebangfix
 USE_PYTHON=	distutils
 
 SHEBANG_LANG=	python
