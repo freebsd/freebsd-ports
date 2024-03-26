@@ -1,8 +1,7 @@
 PORTNAME=	qcad
-PORTVERSION=	3.28.1.0
+PORTVERSION=	3.29.5.0
 DISTVERSIONPREFIX=	v
 #PORTREVISION=	1
-PORTREVISION=	3
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -23,15 +22,15 @@ BUILD_DEPENDS=	bash:shells/bash	\
 USES=		compiler:c++11-lang gl gmake qmake qt:5
 USE_CXXSTD=	c++14
 #FLAVORS=	qt5 qt6
-#FLAVOR?=	qt5
-#qt5_PKGNAMESUFFIX=	-qt5
+#FLAVOR?=	qt6
+qt5_PKGNAMESUFFIX=	-qt5
 #qt6_PKGNAMESUFFIX=	-qt6
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 _USE_QT5=	buildtools qmake:build \
 		concurrent designer gui help imageformats network opengl script \
 		scripttools sql svg uitools xml xmlpatterns
-#_USE_QT6=	base tools
+#_USE_QT6=	base tools script
 #USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 USE_QT=		${_USE_QT5}
 USE_GL=		glu
