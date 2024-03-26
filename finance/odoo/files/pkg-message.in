@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Odoo 16 ERP was installed
+Odoo 17 ERP was installed
 
 1) The configuration file can be located at:
 
@@ -37,7 +37,7 @@ Odoo 16 ERP was installed
 7) If you want securizing Odoo access from web browser (https), you can use a 
    web server like proxy. Look at following documentation:
 
-   https://www.odoo.com/documentation/16.0/administration/install/deploy.html#https
+   https://www.odoo.com/documentation/17.0/administration/on_premise/deploy.html
 
 EOM
 }
