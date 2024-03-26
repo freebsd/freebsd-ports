@@ -39,5 +39,6 @@ share/pixmaps/tkremind.png
 %%DATADIR%%/lang/pl.rem
 %%DATADIR%%/lang/pt.rem
 %%DATADIR%%/lang/ro.rem
+%%DATADIR%%/moonphases.rem
 %%DATADIR%%/seasons.rem
 %%DATADIR%%/site/README
