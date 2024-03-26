@@ -42,7 +42,7 @@ CONFLICTS_INSTALL=	${PORTNAME}
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
 # Fixes error "Instruction does not dominate all uses!"
-LTO_UNSAFE=	yes
+WITHOUT_LTO=	yes # XXX bug 277333
 
 # https://gitlab.com/veloren/veloren/issues/264
 CARGO_ENV+=		RUSTC_BOOTSTRAP=1

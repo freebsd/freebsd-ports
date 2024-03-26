@@ -17,7 +17,7 @@ GH_ACCOUNT=	latex-lsp
 
 # Fixes: error: the linked panic runtime `panic_unwind` is not compiled with
 # this crate's panic strategy `abort`
-LTO_UNSAFE=	yes
+WITHOUT_LTO=	yes # XXX bug 277333
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz

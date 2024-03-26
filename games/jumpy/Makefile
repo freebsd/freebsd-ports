@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	fishfolk
-LTO_UNSAFE=	yes # bevy_dylib fails with -C panic=abort
+WITHOUT_LTO=	yes # XXX bug 277333 # bevy_dylib
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
