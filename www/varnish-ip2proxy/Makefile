@@ -1,6 +1,6 @@
 PORTNAME=	ip2proxy
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -18,6 +18,7 @@ USES=		autoreconf:build libtool pkgconfig python:build varnish:7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
 DOCSDIR=	${PREFIX}/share/doc/vmod-dynamic
