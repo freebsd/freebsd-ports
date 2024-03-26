@@ -31,7 +31,6 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
-GL_TUPLE=	xorg/proto:xorgproto:xorgproto-2024.1:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
@@ -70,11 +69,5 @@ CSD_MESON_TRUE=		libdecor
 EI_DESC=		Emulated input via libei
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_MESON_OFF=		-Dxwayland_ei=false
-
-.ifdef GL_TUPLE
-post-configure:
-	@${REINPLACE_CMD} 's/meson install/& \
-		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
-.endif
 
 .include <bsd.port.mk>
