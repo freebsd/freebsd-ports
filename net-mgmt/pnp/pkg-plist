@@ -271,10 +271,10 @@ libexec/check_pnp_rrds.pl
 libexec/process_perfdata.pl
 libexec/rrd_convert.pl
 libexec/rrd_modify.pl
-man/man8/npcd.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lighttpd.pnp4nagios.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.pnp4nagios.conf
+share/man/man8/npcd.8.gz
 %%WWWDIR%%/application/config/config.php
 %%WWWDIR%%/application/config/locale.php
 %%WWWDIR%%/application/config/routes.php

@@ -1,6 +1,6 @@
 PORTNAME=	pnp
 PORTVERSION=	0.6.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/pnp4nagios/PNP-0.6
 DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -92,12 +92,12 @@ post-patch:
   "${WRKSRC}/sample-config/${f}.in"
 .endfor
 	@${LN} -fs ../en_US/dwnld.html ${WRKSRC}/share/pnp/documents/de_DE/dwnld.html
+	${REINPLACE_CMD} -e 's|$${prefix}/man|$${prefix}/share/man|' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${SAMPLE_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/sample-config/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/npcd.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
