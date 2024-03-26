@@ -1,6 +1,6 @@
 PORTNAME=	lilypond
 DISTVERSION=	2.24.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
@@ -24,7 +24,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu \
-		mftrace:print/mftrace
+		mftrace:print/mftrace \
+		urw-base35-fonts>0:x11-fonts/urw-base35-fonts
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
 		magick:7,build perl5 pkgconfig python
@@ -59,7 +60,7 @@ INFO=		lilypond-changes \
 		music-glossary
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	NLS URW
+OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=	GUILE2
 OPTIONS_SINGLE=	GUILE
 OPTIONS_SINGLE_GUILE=	GUILE2 GUILE3
@@ -67,15 +68,10 @@ OPTIONS_SUB=		yes
 
 GUILE2_DESC=	Use guile2
 GUILE3_DESC=	Use guile3
-URW_DESC=	Use bundled URW fonts
 
 GUILE2_USES=	guile:2.2
 GUILE3_USES=	guile:3.0
 NLS_USES=	gettext
-
-URW_BUILD_DEPENDS=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
-URW_RUN_DEPENDS_OFF=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
-URW_CONFIGURE_WITH=	urwotf-dir=${LOCALBASE}/share/fonts/urw-base35-fonts
 
 post-patch:
 	@${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
