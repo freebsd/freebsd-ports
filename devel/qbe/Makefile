@@ -1,7 +1,7 @@
 PORTNAME=	qbe
 PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	https://c9x.me/git/qbe.git/release//
+MASTER_SITES=	https://c9x.me/compile/release/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Embeddable compiler backend for C type languages
