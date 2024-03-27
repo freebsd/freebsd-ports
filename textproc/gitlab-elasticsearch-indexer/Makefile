@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	4.7.0
-PORTREVISION=	1
+PORTVERSION=	4.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu
 #RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
-USES=		gmake go:modules,no_targets,1.21 pkgconfig
+USES=		gmake go:modules,no_targets,1.22 pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org

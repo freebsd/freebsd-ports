@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.33.0
-PORTREVISION=	1
+PORTVERSION=	14.34.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 # https://gitlab.com/gitlab-org/gitlab-shell/-/merge_requests/720
 #BUILD_DEPENDS=	heimdal>=0:security/heimdal
 
-USES=		gmake go:modules,no_targets pkgconfig
+USES=		gmake go:modules,no_targets,1.22 pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
