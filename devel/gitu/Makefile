@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +71,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		getrandom-0.2.12 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
-		git2-0.18.2 \
+		git2-0.18.3 \
 		half-2.4.0 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
@@ -148,16 +148,16 @@ CARGO_CRATES=	ahash-0.8.11 \
 		strum_macros-0.26.1 \
 		syn-1.0.109 \
 		syn-2.0.52 \
-		temp-dir-0.1.12 \
+		temp-dir-0.1.13 \
 		thiserror-1.0.57 \
 		thiserror-impl-1.0.57 \
 		thread-id-3.3.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.11 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.7 \
+		toml_edit-0.22.9 \
 		tui-prompts-0.3.8 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
