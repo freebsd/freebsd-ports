@@ -1,10 +1,9 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
-PORTREVISION=	2
+DISTVERSION=	1.7.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
-		https://drive.google.com/uc?export=download&confirm=yes&id=1LsYNZqw_ep1VJf3p49NZd9UTYaRq-V4p&dummy=/:lindera_unidic \
+		https://download.johtani.info/:lindera_unidic \
 		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic \
 		https://milli-benchmarks.fra1.digitaloceanspaces.com/datasets/:benchmark
 DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets \
@@ -41,7 +40,7 @@ USES=		cargo pkgconfig
 USE_GITHUB=	yes
 
 #GH_TUPLE=		meilisearch:lmdb:6a01c0a:lmdb/../lmdb-rs-501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8/lmdb-sys/lmdb
-DASHBOARD_VERSION=	0.2.12
+DASHBOARD_VERSION=	0.2.13
 MINIDASHBOARDFILE=	meilisearch-mini-dashboard-build-${DASHBOARD_VERSION}.zip
 CARGO_INSTALL_PATH=	meilisearch
 CARGO_ENV=		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
@@ -55,10 +54,9 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%MINIDASHBOARDFILE%%,${DISTDIR}/${MINIDASHBOARDFILE},'  \
-		-e 's,%%GH_TAGNAME%%,${GH_TAGNAME},g' \
 		${WRKSRC}/meilisearch/build.rs
 	${REINPLACE_CMD} -e 's,%%DISTDIR%%,${DISTDIR},'  \
-		${CARGO_VENDOR_DIR}/lindera-unidic-0.27.1/build.rs
+		${CARGO_VENDOR_DIR}/lindera-unidic-0.27.2/build.rs
 	${GREP} -F -R -l %%WRKDIR%% ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's,%%WRKDIR%%,${WRKDIR},'
 
