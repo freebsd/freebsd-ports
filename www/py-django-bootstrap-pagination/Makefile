@@ -11,6 +11,9 @@ WWW=		https://pypi.org/project/django-bootstrap-pagination/
 
 LICENSE=	MIT
 
+DEPRECATED=	not compatible with Django 4.2, upstream no longer maintained.
+EXPIRATION_DATE=2024-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=1.7.0:www/py-django32@${PY_FLAVOR}
 
 USES=		python
