@@ -1,14 +1,12 @@
 PORTNAME=	mesa
-DISTVERSION=	24.0-branchpoint-3544
-DISTVERSIONSUFFIX=	-g60231e6d6f7
-PORTREVISION=	1
+DISTVERSION=	24.0-branchpoint-3778
+DISTVERSIONSUFFIX=	-gb5877e05019
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/mesa3d/${GL_PROJECT}/commit/:github
 PATCHFILES+=	700efacda59c.patch:-p1:github
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	72f7e51d22b3.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/6881
 PATCHFILES+=	2930dcbb3329.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
 
 MAINTAINER=	jbeich@FreeBSD.org
