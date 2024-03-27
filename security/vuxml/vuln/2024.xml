@@ -1,3 +1,42 @@
+  <vuln vid="814af1be-ec63-11ee-8e76-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>123.0.6312.86</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>123.0.6312.86</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/03/stable-channel-update-for-desktop_26.html">
+	 <p>This update includes 7 security fixes:</p>
+	 <ul>
+	    <li>[327807820] Critical CVE-2024-2883: Use after free in ANGLE. Reported by Cassidy Kim(@cassidy6564) on 2024-03-03</li>
+	    <li>[328958020] High CVE-2024-2885: Use after free in Dawn. Reported by wgslfuzz on 2024-03-11</li>
+	    <li>[330575496] High CVE-2024-2886: Use after free in WebCodecs. Reported by Seunghyun Lee (@0x10n) of KAIST Hacking Lab, via Pwn2Own 2024 on 2024-03-21</li>
+	    <li>[330588502] High CVE-2024-2887: Type Confusion in WebAssembly. Reported by Manfred Paul, via Pwn2Own 2024 on 2024-03-21</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2883</cvename>
+      <cvename>CVE-2024-2885</cvename>
+      <cvename>CVE-2024-2886</cvename>
+      <cvename>CVE-2024-2887</cvename>
+      <url>https://chromereleases.googleblog.com/2024/03/stable-channel-update-for-desktop_26.html</url>
+    </references>
+    <dates>
+      <discovery>2024-03-26</discovery>
+      <entry>2024-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b3be705-eba7-11ee-99b3-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
