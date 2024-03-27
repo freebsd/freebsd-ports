@@ -1,7 +1,6 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
-PORTREVISION=	1
+DISTVERSION=	1.0.5
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -24,15 +23,15 @@ GH_ACCOUNT=	bgkillas
 CARGO_CRATES=	autocfg-1.1.0 \
 		az-1.2.1 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		byteorder-1.5.0 \
 		cfg-if-1.0.0 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		errno-0.3.8 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		gmp-mpfr-sys-1.6.2 \
-		gnuplot-0.0.42 \
+		gnuplot-0.0.43 \
 		libc-0.2.153 \
 		libm-0.2.8 \
 		linux-raw-sys-0.4.13 \
@@ -43,12 +42,12 @@ CARGO_CRATES=	autocfg-1.1.0 \
 		parking_lot_core-0.9.9 \
 		redox_syscall-0.4.1 \
 		rug-1.24.0 \
-		rustix-0.38.31 \
+		rustix-0.38.32 \
 		scopeguard-1.2.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		tempfile-3.10.1 \
 		term_size-0.3.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
