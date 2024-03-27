@@ -1,5 +1,6 @@
 PORTNAME=	cfs
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
@@ -26,8 +27,8 @@ do-install:
 	    ${INSTALL_PROGRAM} ccat cfsd cname ${STAGEDIR}${PREFIX}/sbin; \
 	    ${INSTALL_PROGRAM} cattach cdetach cmkdir cpasswd ${STAGEDIR}${PREFIX}/bin; \
 	    ${INSTALL_SCRIPT} cfssh ${STAGEDIR}${PREFIX}/bin/cfssh; \
-	    ${INSTALL_MAN} cattach.1 cdetach.1 cmkdir.1 cpasswd.1 cfssh.1 ${STAGEDIR}${PREFIX}/man/man1; \
-	    ${INSTALL_MAN} ccat.8 cfsd.8 cname.8 ${STAGEDIR}${PREFIX}/man/man8; \
+	    ${INSTALL_MAN} cattach.1 cdetach.1 cmkdir.1 cpasswd.1 cfssh.1 ${STAGEDIR}${PREFIX}/share/man/man1; \
+	    ${INSTALL_MAN} ccat.8 cfsd.8 cname.8 ${STAGEDIR}${PREFIX}/share/man/man8; \
 	    ${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cfs; \
 	    ${INSTALL_DATA} README.install notes.ms ${STAGEDIR}${PREFIX}/share/doc/cfs
 	${INSTALL} -d -m 0 ${STAGEDIR}${CFSD_BOOTSTRAP}
