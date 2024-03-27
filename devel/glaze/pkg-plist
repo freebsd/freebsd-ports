@@ -23,6 +23,7 @@ include/glaze/api/tuplet.hpp
 include/glaze/api/type_support.hpp
 include/glaze/api/xxh64.hpp
 include/glaze/binary.hpp
+include/glaze/binary/beve_to_json.hpp
 include/glaze/binary/header.hpp
 include/glaze/binary/ptr.hpp
 include/glaze/binary/read.hpp
@@ -30,9 +31,9 @@ include/glaze/binary/skip.hpp
 include/glaze/binary/write.hpp
 include/glaze/compare/approx.hpp
 include/glaze/compare/compare.hpp
+include/glaze/concepts/container_concepts.hpp
 include/glaze/core/common.hpp
 include/glaze/core/context.hpp
-include/glaze/core/format.hpp
 include/glaze/core/macros.hpp
 include/glaze/core/meta.hpp
 include/glaze/core/opts.hpp
