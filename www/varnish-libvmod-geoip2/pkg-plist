@@ -1,3 +1,3 @@
 lib/varnish/vmods/libvmod_geoip2.so
-man/man3/vmod_geoip2.3.gz
+share/man/man3/vmod_geoip2.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
