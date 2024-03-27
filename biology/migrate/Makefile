@@ -1,30 +1,32 @@
 PORTNAME=	migrate
-PORTVERSION=	3.6.11
-PORTREVISION=	1
+DISTVERSION=	5.0.5
 CATEGORIES=	biology
-MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
+MASTER_SITES=	https://peterbeerli.com/migrate-html5/download_version4/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Program to estimate population sizes and migration rates
 WWW=		https://popgen.sc.fsu.edu/Migrate/Migrate-n.html
 
-BROKEN_armv6=		fails to build: make[2]: cannot open makefile
-BROKEN_armv7=		fails to build: make[2]: cannot open makefile
-BROKEN_mips=		fails to build: make[2]: cannot open makefile
-BROKEN_riscv64=		fails to build: make[2]: cannot open makefile
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/../README
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-EXTRACT_AFTER_ARGS=--exclude zlib
+# Waiting on build reports, 2024-03-27
+#BROKEN_armv6=	fails to build: make[2]: cannot open makefile
+#BROKEN_armv7=	fails to build: make[2]: cannot open makefile
+#BROKEN_mips=	fails to build: make[2]: cannot open makefile
+#BROKEN_riscv64=	fails to build: make[2]: cannot open makefile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"
-MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu \
-		-DPRETTY -lstdc++"
+MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY -lstdc++"
 
 CONFLICTS_INSTALL=	py*-sqlalchemy-migrate # bin/migrate
 
-PORTDOCS=	HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
+EXTRACT_AFTER_ARGS=	--exclude zlib
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
+PORTDOCS=	${PORTNAME}.html HISTORY README README_PARALLEL_GENERAL
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES THREAD
@@ -33,7 +35,7 @@ THREAD_ALL_TARGET=	thread
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/PRETTY$$/d' ${WRKSRC}/definitions.h
+	@${REINPLACE_CMD} -e '/PRETTY$$/d' ${WRKSRC}/src/definitions.h
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/haru/makefile.gcc
 
 do-install:
