@@ -9,6 +9,8 @@ WWW=		https://github.com/WebAssembly/wabt
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15_amd64=	clang-17 fails to build wabt: undefined symbol: __elf_aux_vector, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=277983
+
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing localbase:ldflags python ssl
