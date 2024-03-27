@@ -1,5 +1,5 @@
 PORTNAME=	discordrb-webhooks
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
