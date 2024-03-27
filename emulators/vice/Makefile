@@ -1,6 +1,6 @@
 PORTNAME=	vice
 PORTVERSION=	3.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libavcodec.so:multimedia/ffmpeg \
 		libFLAC.so:audio/flac \
 		libpci.so:devel/libpci \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -77,6 +76,8 @@ ALSA_CONFIGURE_OFF=		--without-alsa
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+FFMPEG_LIB_DEPENDS=		libavcodec.so.58:multimedia/ffmpeg4
+FFMPEG_CONFIGURE_ENV=		PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
 #ETHERNET_LIB_DEPENDS=		libpcap.so:net/libpcap # conflict with base
 ETHERNET_BUILD_DEPENDS=		${LOCALBASE}/include/pcap.h:net/libpcap
 ETHERNET_RUN_DEPENDS=		${LOCALBASE}/include/pcap.h:net/libpcap
