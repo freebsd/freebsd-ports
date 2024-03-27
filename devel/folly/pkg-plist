@@ -410,6 +410,7 @@ include/folly/experimental/io/IoUringBase.h
 include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
+include/folly/experimental/io/IoUringProvidedBufferRing.h
 include/folly/experimental/io/Liburing.h
 include/folly/experimental/io/MuxIOThreadPoolExecutor.h
 include/folly/experimental/io/SimpleAsyncIO.h
@@ -791,7 +792,6 @@ include/folly/ssl/PasswordCollector.h
 include/folly/ssl/SSLSession.h
 include/folly/ssl/SSLSessionManager.h
 include/folly/ssl/detail/OpenSSLSession.h
-include/folly/ssl/detail/OpenSSLThreading.h
 include/folly/stats/BucketedTimeSeries-inl.h
 include/folly/stats/BucketedTimeSeries.h
 include/folly/stats/DigestBuilder-inl.h
