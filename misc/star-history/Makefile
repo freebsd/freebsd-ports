@@ -1,6 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.20
-PORTREVISION=	1
+DISTVERSION=	1.0.21
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,23 +21,24 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.81 \
-		autocfg-1.1.0 \
-		backtrace-0.3.70 \
+		autocfg-1.2.0 \
+		backtrace-0.3.71 \
 		base64-0.21.7 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.15.4 \
-		bytes-1.5.0 \
+		bytes-1.6.0 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
 		chrono-0.4.35 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
+		dbus-0.9.7 \
 		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -64,12 +64,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		indexmap-2.2.5 \
+		indexmap-2.2.6 \
 		ipnet-2.9.0 \
 		itoa-1.0.10 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
+		libdbus-sys-0.2.5 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
 		memchr-2.7.1 \
@@ -82,7 +83,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_cpus-1.16.0 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
-		opener-0.6.1 \
+		opener-0.7.0 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -96,7 +97,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro2-1.0.79 \
 		quote-1.0.35 \
 		regex-automata-0.4.6 \
-		reqwest-0.12.0 \
+		reqwest-0.12.2 \
 		rustc-demangle-0.1.23 \
 		rustix-0.38.32 \
 		rustls-pemfile-1.0.4 \
@@ -108,11 +109,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_derive-1.0.197 \
 		serde_json-1.0.114 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.33 \
+		serde_yaml-0.9.34+deprecated \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		socket2-0.5.6 \
-		syn-2.0.53 \
+		syn-2.0.55 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
