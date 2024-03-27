@@ -1,5 +1,5 @@
 PORTNAME=		sope
-PORTVERSION=		5.9.1
+PORTVERSION=		5.10.0
 CATEGORIES=		devel gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -52,6 +52,7 @@ CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/sope-core/NGStreams/configure
+	@${REINPLACE_CMD} -e 's|LDAP_OPT_ON|1|g' ${WRKSRC}/sope-ldap/NGLdap/NGLdapConnection.m
 .for f in config.guess config.sub
 	@${CP} ${TEMPLATES}/$f ${WRKSRC}/sope-core/NGStreams/
 .endfor
