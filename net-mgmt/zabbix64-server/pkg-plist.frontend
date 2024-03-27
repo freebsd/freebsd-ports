@@ -776,7 +776,6 @@
 %%WWWDIR%%/include/classes/helpers/CAuthenticationHelper.php
 %%WWWDIR%%/include/classes/helpers/CBrandHelper.php
 %%WWWDIR%%/include/classes/helpers/CConditionHelper.php
-%%WWWDIR%%/include/classes/helpers/CConfigGeneralHelper.php
 %%WWWDIR%%/include/classes/helpers/CCookieHelper.php
 %%WWWDIR%%/include/classes/helpers/CCorrelationHelper.php
 %%WWWDIR%%/include/classes/helpers/CCsrfTokenHelper.php
@@ -1561,6 +1560,7 @@
 %%WWWDIR%%/widgets/graph/includes/WidgetForm.php
 %%WWWDIR%%/widgets/graph/manifest.json
 %%WWWDIR%%/widgets/graph/views/widget.edit.php
+%%WWWDIR%%/widgets/graph/views/widget.edit.js.php
 %%WWWDIR%%/widgets/graph/views/widget.view.php
 %%WWWDIR%%/widgets/graphprototype/Widget.php
 %%WWWDIR%%/widgets/graphprototype/actions/WidgetView.php
@@ -1568,6 +1568,7 @@
 %%WWWDIR%%/widgets/graphprototype/includes/WidgetForm.php
 %%WWWDIR%%/widgets/graphprototype/manifest.json
 %%WWWDIR%%/widgets/graphprototype/views/widget.edit.php
+%%WWWDIR%%/widgets/graphprototype/views/widget.edit.js.php
 %%WWWDIR%%/widgets/hostavail/Widget.php
 %%WWWDIR%%/widgets/hostavail/actions/WidgetView.php
 %%WWWDIR%%/widgets/hostavail/assets/js/class.widget.js
