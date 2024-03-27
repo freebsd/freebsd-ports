@@ -23,7 +23,7 @@ MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY -ls
 
 CONFLICTS_INSTALL=	py*-sqlalchemy-migrate # bin/migrate
 
-EXTRACT_AFTER_ARGS=	--exclude zlib
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude zlib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PORTDOCS=	${PORTNAME}.html HISTORY README README_PARALLEL_GENERAL
