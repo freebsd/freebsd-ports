@@ -59,6 +59,5 @@ lib/cmake/dmlc/dmlc-config.cmake
 lib/libdgl.so
 lib/libdmlc.so
 lib/libtensorpipe.so
-lib/libtensorpipe_uv.a
 share/cmake/Tensorpipe/TensorpipeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Tensorpipe/TensorpipeTargets.cmake
