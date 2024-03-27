@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-runner
-DISTVERSION=	16.9.1
+DISTVERSION=	16.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		ca_root_nss>=0:security/ca_root_nss \
 		git:devel/git
 
-USES=		go:modules,1.21
+USES=		go:modules,1.22
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
@@ -35,7 +35,7 @@ GO_BUILDFLAGS= -ldflags=" \
 		-s -w"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-GITBRANCH=	16-9-stable
+GITBRANCH=	16-10-stable
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
