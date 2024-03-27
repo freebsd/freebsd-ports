@@ -1,4 +1,4 @@
 @(dnetc,dnetc,) distributed.net/dnetc
 @sample(dnetc,dnetc,) distributed.net/dnetc.ini.sample
-man/man1/dnetc.1.gz
+share/man/man1/dnetc.1.gz
 @dir(dnetc,dnetc,0775) distributed.net
