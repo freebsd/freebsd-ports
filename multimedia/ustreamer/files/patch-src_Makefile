@@ -1,11 +1,15 @@
---- src/Makefile.orig	2024-03-07 07:20:35 UTC
+--- src/Makefile.orig	2024-03-26 18:23:16 UTC
 +++ src/Makefile
-@@ -14,7 +14,7 @@ _LDFLAGS = $(LDFLAGS)
+@@ -13,9 +13,9 @@ _CFLAGS = -MD -c -std=c17 -Wall -Wextra -D_GNU_SOURCE 
+ 
  _CFLAGS = -MD -c -std=c17 -Wall -Wextra -D_GNU_SOURCE $(CFLAGS)
- _LDFLAGS = $(LDFLAGS)
  
--_COMMON_LIBS = -lm -ljpeg -pthread -lrt -latomic
-+_COMMON_LIBS = -lm -ljpeg -pthread -lrt
+-_USTR_LDFLAGS = $(LDFLAGS) -lm -ljpeg -pthread -lrt -latomic -levent -levent_pthreads
+-_DUMP_LDFLAGS = $(LDFLAGS) -lm -ljpeg -pthread -lrt -latomic
+-_V4P_LDFLAGS = $(LDFLAGS) -lm -ljpeg -pthread -lrt -latomic
++_USTR_LDFLAGS = $(LDFLAGS) -lm -ljpeg -pthread -lrt -levent -levent_pthreads
++_DUMP_LDFLAGS = $(LDFLAGS) -lm -ljpeg -pthread -lrt
++_V4P_LDFLAGS = $(LDFLAGS) -lm -ljpeg -pthread -lrt
  
- _USTR_LIBS = $(_COMMON_LIBS) -levent -levent_pthreads
  _USTR_SRCS = $(shell ls \
+ 	libs/*.c \
