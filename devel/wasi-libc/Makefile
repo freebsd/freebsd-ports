@@ -1,6 +1,7 @@
 PORTNAME=	wasi-libc
 DISTVERSIONPREFIX=	wasi-sdk-
 DISTVERSION=	21
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vishwin@FreeBSD.org
@@ -26,9 +27,6 @@ ALL_TARGET=	finish
 # NOTE: matches the https://github.com/WebAssembly/wasi-sdk
 WASI_SYSROOT=	${PREFIX}/share/wasi-sysroot
 
-# NOTE: our llvm ports don't ship stdarg/stddef clang headers, so they're in FILESDIR
-#       and we install them to the sysroot
-
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${WASI_SYSROOT} \
 		EXTRA_CFLAGS="-O2 -DNDEBUG -isystem ${FILESDIR}" \
 		AR=${LOCALBASE}/bin/llvm-ar${LLVM_VERSION} \
@@ -40,7 +38,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install: finish|install:|' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/stdarg.h ${STAGEDIR}${WASI_SYSROOT}/include/
-	${INSTALL_DATA} ${FILESDIR}/stddef.h ${STAGEDIR}${WASI_SYSROOT}/include/
+# NOTE: our llvm ports don't ship stdarg/stddef clang headers, so
+#       they are copied from clang/lib/Headers into FILESDIR and we install
+#       them to the sysroot
+	${INSTALL_DATA} ${FILESDIR}/*stdarg*.h ${STAGEDIR}${WASI_SYSROOT}/include/
+	${INSTALL_DATA} ${FILESDIR}/*stddef*.h ${STAGEDIR}${WASI_SYSROOT}/include/
 
 .include <bsd.port.mk>
