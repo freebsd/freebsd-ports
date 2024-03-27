@@ -47,5 +47,5 @@ lib/xcdroast-0.98/sound/test.wav
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
-man/man1/xcdroast.1.gz
+share/man/man1/xcdroast.1.gz
 @unexec if pw groupshow -n xcdwrite 2>/dev/null 1>&2; then pw groupdel -n xcdwrite; fi
