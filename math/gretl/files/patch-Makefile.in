@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2024-03-27 08:35:51 UTC
++++ Makefile.in
+@@ -95,7 +95,7 @@ install-man:
+ 	$(MAKE) -C $(DOCDIR) install
+ 
+ install-man:
+-	$(tooldir)/install_man $(tooldir) $(DESTDIR)$(prefix) $(topsrc)/gretl.1
++	$(tooldir)/install_man $(tooldir) $(DESTDIR)$(prefix)/share $(topsrc)/gretl.1
+ 
+ tags:
+ 	etags $(topsrc)/lib/src/*.[ch] $(topsrc)/cli/*.[ch] \

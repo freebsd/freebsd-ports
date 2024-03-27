@@ -144,7 +144,6 @@ lib/libgretl-1.0.so
 lib/libgretl-1.0.so.46
 lib/libgretl-1.0.so.46.0.0
 libdata/pkgconfig/gretl.pc
-man/man1/gretl.1.gz
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
 %%GUI%%share/metainfo/gretl.appdata.xml
@@ -682,4 +681,5 @@ man/man1/gretl.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gretl.mo
+share/man/man1/gretl.1.gz
 %%GUI%%share/mime/packages/gretl.xml
