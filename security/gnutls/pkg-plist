@@ -6,7 +6,6 @@ bin/gnutls-serv
 bin/ocsptool
 %%P11KIT%%bin/p11tool
 bin/psktool
-bin/srptool
 include/gnutls/abstract.h
 include/gnutls/compat.h
 include/gnutls/crypto.h
@@ -31,7 +30,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.34.4
+lib/libgnutls.so.30.38.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -45,7 +44,6 @@ share/man/man1/gnutls-serv.1.gz
 share/man/man1/ocsptool.1.gz
 share/man/man1/p11tool.1.gz
 share/man/man1/psktool.1.gz
-share/man/man1/srptool.1.gz
 share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/dane_cert_type_name.3.gz
 %%MAN3%%share/man/man3/dane_cert_usage_name.3.gz
@@ -581,6 +579,8 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_privkey_decrypt_data.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_decrypt_data2.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_deinit.3.gz
+%%MAN3%%share/man/man3/gnutls_privkey_derive_secret.3.gz
+%%MAN3%%share/man/man3/gnutls_privkey_export_dh_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_export_dsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_export_dsa_raw2.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_export_ecc_raw.3.gz
@@ -597,6 +597,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_privkey_get_seed.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_get_spki.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_get_type.3.gz
+%%MAN3%%share/man/man3/gnutls_privkey_import_dh_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_import_dsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_import_ecc_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_privkey_import_ext.3.gz
@@ -633,6 +634,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_psk_allocate_client_credentials.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_allocate_server_credentials.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_client_get_hint.3.gz
+%%MAN3%%share/man/man3/gnutls_psk_format_imported_identity.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_free_client_credentials.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_free_server_credentials.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_server_get_username.3.gz
@@ -641,10 +643,12 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_client_credentials2.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_client_credentials_function.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_client_credentials_function2.3.gz
+%%MAN3%%share/man/man3/gnutls_psk_set_client_credentials_function3.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_params_function.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_server_credentials_file.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_server_credentials_function.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_server_credentials_function2.3.gz
+%%MAN3%%share/man/man3/gnutls_psk_set_server_credentials_function3.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_server_credentials_hint.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_server_dh_params.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_set_server_known_dh_params.3.gz
@@ -653,6 +657,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_encrypt_data.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export2.3.gz
+%%MAN3%%share/man/man3/gnutls_pubkey_export_dh_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_dsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_dsa_raw2.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_export_ecc_raw.3.gz
@@ -668,6 +673,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_get_preferred_hash_algorithm.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_get_spki.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import.3.gz
+%%MAN3%%share/man/man3/gnutls_pubkey_import_dh_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_dsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_ecc_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_pubkey_import_ecc_x962.3.gz
@@ -1179,6 +1185,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_x509_privkey_get_spki.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_privkey_import.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_privkey_import2.3.gz
+%%MAN3%%share/man/man3/gnutls_x509_privkey_import_dh_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_privkey_import_dsa_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_privkey_import_ecc_raw.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_privkey_import_gost_raw.3.gz
@@ -1200,8 +1207,10 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_x509_rdn_get_by_oid.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_rdn_get_oid.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_spki_deinit.3.gz
+%%MAN3%%share/man/man3/gnutls_x509_spki_get_rsa_oaep_params.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_spki_get_rsa_pss_params.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_spki_init.3.gz
+%%MAN3%%share/man/man3/gnutls_x509_spki_set_rsa_oaep_params.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_spki_set_rsa_pss_params.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_tlsfeatures_add.3.gz
 %%MAN3%%share/man/man3/gnutls_x509_tlsfeatures_check_crt.3.gz
