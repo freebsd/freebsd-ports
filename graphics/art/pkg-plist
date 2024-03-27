@@ -42,6 +42,7 @@ share/ART/dcpprofiles/Canon PowerShot G7 X.dcp
 share/ART/dcpprofiles/Canon PowerShot S110.dcp
 share/ART/dcpprofiles/Canon PowerShot S120.dcp
 share/ART/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
+share/ART/dcpprofiles/FUJIFILM GFX 100.dcp
 share/ART/dcpprofiles/FUJIFILM GFX 50R.dcp
 share/ART/dcpprofiles/FUJIFILM X-A5.dcp
 share/ART/dcpprofiles/FUJIFILM X-A7.dcp
@@ -93,6 +94,9 @@ share/ART/dcpprofiles/NIKON Z 50.dcp
 share/ART/dcpprofiles/NIKON Z 6.dcp
 share/ART/dcpprofiles/NIKON Z 6_2.dcp
 share/ART/dcpprofiles/NIKON Z 7.dcp
+share/ART/dcpprofiles/NIKON Z 8.dcp
+share/ART/dcpprofiles/NIKON Z 9.dcp
+share/ART/dcpprofiles/NIKON Z F.dcp
 share/ART/dcpprofiles/Nikon D200.dcp
 share/ART/dcpprofiles/Nikon D3000.dcp
 share/ART/dcpprofiles/Nikon D3100.dcp
@@ -204,6 +208,7 @@ share/ART/iccprofiles/output/RTv4_Medium.icc
 share/ART/iccprofiles/output/RTv4_Rec2020.icc
 share/ART/iccprofiles/output/RTv4_Rec2100_PQ.icc
 share/ART/iccprofiles/output/RTv4_sRGB.icc
+share/ART/images/ART-logo-1024.png
 share/ART/images/ART-logo-128.png
 share/ART/images/ART-logo-16.png
 share/ART/images/ART-logo-24.png
