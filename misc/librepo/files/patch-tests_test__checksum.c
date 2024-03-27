@@ -1,4 +1,4 @@
---- tests/test_checksum.c.orig	2020-09-20 19:02:27 UTC
+--- tests/test_checksum.c.orig	2024-03-26 13:28:08 UTC
 +++ tests/test_checksum.c
 @@ -6,7 +6,7 @@
  #include <string.h>
