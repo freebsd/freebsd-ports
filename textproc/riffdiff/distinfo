@@ -1,4 +1,4 @@
-TIMESTAMP = 1710652883
+TIMESTAMP = 1711418750
 SHA256 (rust/crates/addr2line-0.14.0.crate) = 7c0929d69e78dd9bf5408269919fcbcaeb2e35e5d43e5815517cdc6a8e11a423
 SIZE (rust/crates/addr2line-0.14.0.crate) = 30065
 SHA256 (rust/crates/adler-0.2.3.crate) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
@@ -159,5 +159,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 447660ad36a13288b1db4d42
 SIZE (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 664606
 SHA256 (rust/crates/windows_x86_64_msvc-0.48.5.crate) = ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538
 SIZE (rust/crates/windows_x86_64_msvc-0.48.5.crate) = 798412
-SHA256 (walles-riff-3.0.1_GH0.tar.gz) = a6a8e77b82aa6462aaef2bf43c45eb8381582f3e107b77d65ef8541a459ad68e
-SIZE (walles-riff-3.0.1_GH0.tar.gz) = 1057647
+SHA256 (walles-riff-3.1.0_GH0.tar.gz) = 71814d6f5bbe1e039c89333bec2131c1b56f4000796fcdab3026ff6820ce59a3
+SIZE (walles-riff-3.1.0_GH0.tar.gz) = 1057687
