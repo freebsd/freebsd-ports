@@ -27,6 +27,7 @@
 %%EXAMPLES%%bin/perplexity
 %%EXAMPLES%%bin/quantize
 %%EXAMPLES%%bin/quantize-stats
+%%EXAMPLES%%bin/retrieval
 %%EXAMPLES%%bin/save-load-state
 %%EXAMPLES%%bin/server
 %%EXAMPLES%%bin/simple
