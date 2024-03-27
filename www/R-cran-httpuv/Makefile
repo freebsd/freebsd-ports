@@ -1,11 +1,7 @@
 PORTNAME=	httpuv
-DISTVERSION=	1.6.14
-PORTREVISION=	1
+DISTVERSION=	1.6.15
 CATEGORIES=	www
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-
-PATCH_SITES=	https://github.com/rstudio/httpuv/pull/396/commits/
-PATCHFILES=	fe516bc16655e338bce8078c35d618732ab3e40a.patch:-p1
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	HTTP and WebSocket server library for R
@@ -23,7 +19,6 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-testthat>0:devel/R-cran-testthat
-# 1 test failing: https://github.com/rstudio/httpuv/issues/393
 
 USES=		cran:auto-plist,compiles pkgconfig
 
