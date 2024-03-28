@@ -1,7 +1,6 @@
 PORTNAME=	freeorion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	5
+DISTVERSION=	0.5.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,8 +9,6 @@ WWW=		https://www.freeorion.org/
 
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
-
-BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		${PY_BOOST}
