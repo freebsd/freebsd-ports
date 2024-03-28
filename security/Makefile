@@ -394,6 +394,7 @@
     SUBDIR += nist-kat
     SUBDIR += nitrokey-app
     SUBDIR += nmap
+    SUBDIR += nmap-devel
     SUBDIR += nss
     SUBDIR += nss_compat_ossl
     SUBDIR += nuclei
