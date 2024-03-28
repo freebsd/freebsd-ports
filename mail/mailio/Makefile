@@ -19,6 +19,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	karastojko
 
 CMAKE_OFF=	MAILIO_BUILD_TESTS MAILIO_BUILD_EXAMPLES MAILIO_BUILD_DOCUMENTATION
-CMAKE_TESTING_ON=	MAILIO_BUILD_TESTS # tests fail to link, see https://github.com/karastojko/mailio/issues/159
+CMAKE_ON=	MAILIO_DYN_LINK_TESTS # workaround for https://github.com/karastojko/mailio/issues/159
+CMAKE_TESTING_ON=	MAILIO_BUILD_TESTS # tests fail, see https://github.com/karastojko/mailio/issues/160
+CMAKE_TESTING_TARGET=	all
+
+post-test:
+	@cd ${WRKSRC}/test && ${BUILD_WRKSRC}/test/test_message
 
 .include <bsd.port.mk>
