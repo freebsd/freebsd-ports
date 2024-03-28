@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	16.9.2
-PORTREVISION=	1
+PORTVERSION=	16.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 BUILD_DEPENDS=	git>=2.42.0:devel/git
 RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
-USES=		gmake go:modules,no_targets
+USES=		gmake go:modules,no_targets,1.22
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse

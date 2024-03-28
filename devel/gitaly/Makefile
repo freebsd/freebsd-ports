@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.9.2
+DISTVERSION=	16.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash>0:shells/bash \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		cpe gmake go:modules,no_targets,1.21 iconv pkgconfig ssl
+USES=		cpe gmake go:modules,no_targets,1.22 iconv pkgconfig ssl
 
 CPE_VENDOR=	gitlab
 
