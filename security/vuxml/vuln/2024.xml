@@ -1,3 +1,33 @@
+  <vuln vid="d2992bc2-ed18-11ee-96dc-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.10.0</ge><lt>16.10.1</lt></range>
+	<range><ge>16.9.0</ge><lt>16.9.3</lt></range>
+	<range><lt>16.8.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/03/27/security-release-gitlab-16-10-1-released/">
+	  <p>Stored-XSS injected in Wiki page via Banzai pipeline</p>
+	  <p>DOS using crafted emojis</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6371</cvename>
+      <cvename>CVE-2024-2818</cvename>
+      <url>https://about.gitlab.com/releases/2024/03/27/security-release-gitlab-16-10-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-03-27</discovery>
+      <entry>2024-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="814af1be-ec63-11ee-8e76-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
