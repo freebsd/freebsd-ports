@@ -1473,6 +1473,7 @@
     SUBDIR += triton
     SUBDIR += trueos-libqt5
     SUBDIR += ts
+    SUBDIR += tt
     SUBDIR += tty-clock
     SUBDIR += ttyd
     SUBDIR += ttyload
