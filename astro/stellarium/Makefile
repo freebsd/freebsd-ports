@@ -1,5 +1,5 @@
 PORTNAME=	stellarium
-PORTVERSION=	23.4
+PORTVERSION=	24.1
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -11,6 +11,7 @@ WWW=		https://stellarium.org/
 
 LICENSE=	GPLv2+
 
+BUILD_DEPENDS=	${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libnlopt.so:math/nlopt@minimal
 
