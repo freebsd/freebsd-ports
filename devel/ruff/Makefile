@@ -11,6 +11,8 @@ WWW=		https://github.com/charliermarsh/ruff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: evaluation of constant value failed, see https://github.com/briansmith/ring/issues/2006
+
 BUILD_DEPENDS=	gmake:devel/gmake
 
 USES=		cargo
