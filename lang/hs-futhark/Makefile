@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.13
+DISTVERSION=	0.25.15
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,9 +19,9 @@ USE_CABAL=	Diff-0.5_1 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.2_2 \
 		aeson-2.2.1.0_1 \
-		alex-3.5.0.0 \
-		ansi-terminal-1.0.2 \
-		ansi-terminal-types-0.11.5_1 \
+		alex-3.5.1.0 \
+		ansi-terminal-1.1 \
+		ansi-terminal-types-1.1 \
 		assoc-1.1_1 \
 		async-2.2.5 \
 		attoparsec-0.14.4_5 \
@@ -29,10 +29,10 @@ USE_CABAL=	Diff-0.5_1 \
 		base-compat-batteries-0.13.1 \
 		base-orphans-0.9.1 \
 		base16-bytestring-1.0.2.0_1 \
-		bifunctors-5.6.1_2 \
-		bitvec-1.1.5.0 \
+		bifunctors-5.6.2 \
+		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
-		blaze-html-0.9.1.2_4 \
+		blaze-html-0.9.2.0 \
 		blaze-markup-0.8.3.0_1 \
 		bmp-1.2.6.3_2 \
 		boring-0.2.1_1 \
@@ -64,14 +64,14 @@ USE_CABAL=	Diff-0.5_1 \
 		fail-4.9.0.0 \
 		fgl-5.8.2.0 \
 		fgl-visualize-0.1.0.1 \
-		file-embed-0.0.15.0 \
+		file-embed-0.0.16.0 \
 		fmlist-0.9.4 \
-		foldable1-classes-compat-0.1_4 \
-		free-5.2_3 \
+		free-5.2_4 \
 		futhark-data-1.1.0.1 \
-		futhark-manifest-1.3.0.0 \
+		futhark-manifest-1.4.0.0 \
 		futhark-server-1.2.2.1 \
-		generic-deriving-1.14.5_1 \
+		generic-arbitrary-1.0.1 \
+		generic-deriving-1.14.5_3 \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
 		generically-0.1.1_2 \
@@ -81,19 +81,19 @@ USE_CABAL=	Diff-0.5_1 \
 		hashable-1.4.3.0_1 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.13 \
-		hsc2hs-0.68.10_1 \
+		hsc2hs-0.68.10_2 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.3 \
 		indexed-traversable-instances-0.1.1.2_2 \
 		integer-conversion-0.1.0.1_1 \
 		integer-logarithms-1.0.3.1_5 \
-		invariant-0.6.2_1 \
+		invariant-0.6.3 \
 		kan-extensions-5.2.5_2 \
 		language-c-quote-0.13.0.1_1 \
-		lens-5.2.3_2 \
+		lens-5.2.3_3 \
 		lens-aeson-1.2.3_2 \
-		lsp-2.3.0.0_1 \
-		lsp-types-2.1.0.0 \
+		lsp-2.4.0.0 \
+		lsp-types-2.1.1.0 \
 		mainland-pretty-0.7.1_3 \
 		math-functions-0.3.4.3 \
 		megaparsec-9.6.1 \
@@ -103,21 +103,23 @@ USE_CABAL=	Diff-0.5_1 \
 		network-info-0.2.1 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
+		old-time-1.1.0.4 \
 		parallel-3.2.2.0_7 \
 		parser-combinators-1.3.0_1 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.0.0 \
+		primitive-0.9.0.0_1 \
 		process-extras-0.7.4 \
 		profunctors-5.6.2_3 \
-		random-1.2.1.1_1 \
+		quickcheck-instances-0.3.30_1 \
+		random-1.2.1.2 \
 		reflection-2.1.7_1 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.2_4 \
 		regex-pcre-builtin-0.95.2.3.8.44_6 \
 		regex-tdfa-1.3.2.2_2 \
 		row-types-1.0.1.2_1 \
-		safe-0.3.21 \
+		safe-0.3.21_1 \
 		scientific-0.3.7.0_7 \
 		semialign-1.3_1 \
 		semigroupoids-6.0.0.1_1 \
@@ -130,16 +132,16 @@ USE_CABAL=	Diff-0.5_1 \
 		statistics-0.16.2.1 \
 		strict-0.5_1 \
 		syb-0.7.2.4 \
-		tagged-0.8.8 \
+		tagged-0.8.8_1 \
 		temporary-1.3 \
 		terminal-size-0.3.4 \
 		text-iso8601-0.1_1 \
 		text-rope-0.2 \
 		text-short-0.1.5_3 \
-		th-abstraction-0.6.0.0_1 \
-		th-compat-0.1.4_4 \
-		th-expand-syns-0.4.11.0_2 \
-		th-lift-0.8.4 \
+		th-abstraction-0.6.0.0_2 \
+		th-compat-0.1.5 \
+		th-expand-syns-0.4.11.0_3 \
+		th-lift-0.8.4_2 \
 		th-orphans-0.13.14_2 \
 		th-reify-many-0.1.10 \
 		these-1.2_1 \
@@ -153,15 +155,15 @@ USE_CABAL=	Diff-0.5_1 \
 		utf8-string-1.0.2 \
 		uuid-1.3.15_3 \
 		uuid-types-1.0.5.1 \
-		vector-0.13.1.0 \
+		vector-0.13.1.0_1 \
 		vector-algorithms-0.9.0.1_3 \
 		vector-binary-instances-0.2.5.2_5 \
-		vector-stream-0.1.0.1 \
+		vector-stream-0.1.0.1_1 \
 		vector-th-unbox-0.2.2_5 \
-		versions-6.0.5 \
+		versions-6.0.6 \
 		void-0.7.3 \
 		witherable-0.4.2_4 \
-		zlib-0.6.3.0_4
+		zlib-0.7.0.0_1
 
 CABAL_PROJECT=	remove
 
