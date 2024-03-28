@@ -7,41 +7,46 @@ MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	Port scanning utility for large networks
 WWW=		https://nmap.org/
 
-USE_GITHUB=	yes
-GH_TAGNAME=	036714cde
-NMAP_COMMIT_DATE=	20240327
-
-MAKE_JOBS_UNSAFE=	yes
-
 # nmap-6.47 => svn.nmap.org/nmap-releases/nmap-6.47 (r33605)
 # https://nmap.org/book/man-legal.html
 # Install the nmap modified license because of
 # http://insecure.org/news/download-com-fiasco.html
 LICENSE=	NPSL
 LICENSE_NAME=	Nmap Public Source License
-LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 
 .if !defined(MASTERDIR)
 
 LIB_DEPENDS=	libpcre2-16.so:devel/pcre2
 
 USES=		tar:bzip2 gmake cpe libtool
+USE_GITHUB=	yes
+GH_TAGNAME=	036714cde
+NMAP_COMMIT_DATE=	20240327
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=--without-localdirs \
+		--without-zenmap \
+		--without-ndiff \
+		--with-libpcre=${LOCALBASE} \
+		--with-liblua=included \
+		--without-nmap-update
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS NLS PCAP SSH2 SSL
 OPTIONS_DEFAULT=NLS SSH2 SSL
+OPTIONS_SUB=	yes
 
 PCAP_DESC=		Build with libpcap from nmap
 SSH2_DESC=		SSH2 protocol support
 
 NLS_CONFIGURE_ENABLE=	nls
 PCAP_CONFIGURE_ON=	--with-libpcap=included
+SSH2_IMPLIES=		SSL
 SSH2_CONFIGURE_ON=	--with-libssh2=included
 SSH2_CONFIGURE_OFF=	--without-libssh2
-SSH2_IMPLIES=		SSL
 SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_CONFIGURE_OFF=	--without-openssl
@@ -50,13 +55,6 @@ SSL_VARS=		STRIP_FILES+=ncat
 
 DOCS=	CHANGELOG HACKING
 STRIP_FILES+=	nmap nping
-
-CONFIGURE_ARGS+=--without-localdirs \
-		--without-zenmap \
-		--without-ndiff \
-		--with-libpcre=${LOCALBASE} \
-		--with-liblua=included \
-		--without-nmap-update
 
 .include <bsd.port.options.mk>
 
