@@ -7,6 +7,6 @@ lib/cmake/SDL2_image/SDL2_imageConfig.cmake
 lib/cmake/SDL2_image/SDL2_imageConfigVersion.cmake
 lib/libSDL2_image-2.0.so
 lib/libSDL2_image-2.0.so.0
-lib/libSDL2_image-2.0.so.0.600.3
+lib/libSDL2_image-2.0.so.0.800.2
 lib/libSDL2_image.so
 libdata/pkgconfig/SDL2_image.pc
