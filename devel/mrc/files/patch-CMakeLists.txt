@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2024-02-01 14:44:29 UTC
 +++ CMakeLists.txt
+@@ -61,7 +61,7 @@ endif()
+ 	message(STATUS "Using COFF spec: ${COFF_SPEC}")
+ endif()
+ 
+-find_package(libmcfp 1.2.4 QUIET)
++find_package(libmcfp REQUIRED) # workaround for https://github.com/mhekkel/mrc/issues/15
+ 
+ if(NOT libmcfp_FOUND)
+ 	include(FetchContent)
 @@ -117,7 +117,7 @@ endif()
  	add_test(NAME unit-test COMMAND $<TARGET_FILE:mrc-unit-test> WORKING_DIRECTORY .)
  endif()
