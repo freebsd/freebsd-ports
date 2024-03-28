@@ -98,6 +98,10 @@
     SUBDIR += bacula13-client-static
     SUBDIR += bacula13-docs
     SUBDIR += bacula13-server
+    SUBDIR += bacula15-client
+    SUBDIR += bacula15-client-static
+    SUBDIR += bacula15-docs
+    SUBDIR += bacula15-server
     SUBDIR += bacula9-client
     SUBDIR += bacula9-client-static
     SUBDIR += bacula9-docs

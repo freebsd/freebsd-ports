@@ -1,0 +1,13 @@
+.include <bsd.port.pre.mk>
+
+post-build:
+.if ${PKGNAMEPREFIX} == "nagios-check_"
+	${MAKE_CMD} -C ${WRKSRC}/examples/nagios/check_bacula
+.endif
+
+do-install:
+.if ${PKGNAMEPREFIX} == "nagios-check_"
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/nagios/check_bacula/check_bacula \
+	${STAGEDIR}${PREFIX}/libexec/nagios
+.endif
