@@ -5,8 +5,8 @@ PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	squat@squat.no
-COMMENT=	UPnP IGD implementation which uses pf
-WWW=		http://miniupnp.free.fr/
+COMMENT=	UPnP IGD & PCP/NAT-PMP implementation which uses pf
+WWW=		https://miniupnp.tuxfamily.org/
 
 LICENSE=	BSD3CLAUSE
 
