@@ -1,3 +1,4 @@
+man/man1/desktop-installer.1.gz
 sbin/battery-shutdown.sh
 sbin/desktop-installer
 %%DATADIR%%/CDE/cde.desktop
@@ -24,4 +25,3 @@ sbin/desktop-installer
 %%DATADIR%%/XFCE4/xinitrc
 %%DATADIR%%/Xdefaults-xterm
 %%DATADIR%%/battery-shutdown.cron
-share/man/man1/desktop-installer.1.gz
