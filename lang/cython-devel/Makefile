@@ -11,6 +11,9 @@ WWW=		https://cython.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	use devel/cython3
+EXPIRATION_DATE=2024-04-11
+
 USES=		compiler:c11 python
 USE_PYTHON=	allflavors autoplist concurrent distutils
 USE_GITHUB=	yes
