@@ -8,23 +8,16 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 PATCH_SITES+=	${MASTER_SITES}
 PATCHFILES+=	${PORTNAME}${PORTVERSION}_fflush.patch
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	takefu@airport.fm
 COMMENT=	MB monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 WWW=		http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/download.html
 
 LICENSE=	BSD2CLAUSE
 
-DEPRECATED=	These hardwares are no longer available and the port is no longer relevant
-EXPIRATION_DATE=	2024-04-13
-
-ONLY_FOR_ARCHS=	i386 amd64
-
+ONLY_FOR_ARCHS=	amd64 i386
 GNU_CONFIGURE=	yes
-
 PORTSCOUT=	skipv:205conf
-
 PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
-
 OPTIONS_DEFINE=	ASUS SMB DOCS
 OPTIONS_DEFAULT=SMB CLI
 OPTIONS_MULTI=	INTERFACE
@@ -39,9 +32,9 @@ CLI_PLIST_FILES=	"@mode 4555"\
 			bin/mbmon \
 			@mode\
 			share/man/man1/mbmon.1.gz
-CLI_VARS=		USE_RC_SUBR=mbmon
+CLI_VARS=	USE_RC_SUBR=mbmon
 X11_USES=	xorg
-X11_USE=	XORG=x11,xt
+X11_USE=	XORG=x11,xt,ice,sm
 X11_MAKE_ARGS_OFF=	PROGRAM="mbmon"
 X11_PLIST_FILES=	"@mode 4555"\
 			bin/xmbmon \
