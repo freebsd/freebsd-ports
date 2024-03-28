@@ -240,7 +240,7 @@ lib/tcl%%TCL_VER%%/readfile.tcl
 lib/tcl%%TCL_VER%%/safe.tcl
 lib/tcl%%TCL_VER%%/tclAppInit.c
 lib/tcl%%TCL_VER%%/tclConfig.sh
-lib/tcl%%TCL_VER%%/tclDTrace.d
+%%DTRACE%%lib/tcl%%TCL_VER%%/tclDTrace.d
 lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tm.tcl
