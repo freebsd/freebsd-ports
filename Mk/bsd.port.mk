@@ -2012,8 +2012,7 @@ ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .    endif
 
 .    if defined(USE_LOCALE)
-CONFIGURE_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
-MAKE_ENV+=		LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
+WRK_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
 .    endif
 
 # Macro for doing in-place file editing using regexps.  REINPLACE_ARGS may only
