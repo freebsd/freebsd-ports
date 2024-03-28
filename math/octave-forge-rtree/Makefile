@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-rtree
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -18,15 +18,13 @@ LIB_DEPENDS+=	libjansson.so:devel/jansson
 USE_GITLAB=	yes
 GL_ACCOUNT=	jjg
 GL_PROJECT=	librtree-octave
-GL_COMMIT=	6456b2ebb38528ea6861019b4b85699796ba91fa
 
 CFLAGS+=	-I${PREFIX}/include -L${PREFIX}/lib
 
-OCTAVE_SRC=	${GL_PROJECT}-${GL_COMMIT}
+OCTAVE_SRC=	${GL_PROJECT}-${GL_COMMIT}${DISTVERSIONPREFIX}${DISTVERSION}
 WRKSRC=		${WRKDIR}/${OCTAVE_SRC}
 
-post-patch:
-	${REINPLACE_CMD} s/^tar/gtar/ ${WRKSRC}/src/pkg/bin/pkg-build
+BINARY_ALIAS=	tar=gtar
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" ./configure
