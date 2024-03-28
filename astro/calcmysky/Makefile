@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 
@@ -19,7 +19,5 @@ GH_PROJECT=	CalcMySky
 USE_QT=		buildtools:build qmake:build core gui opengl widgets
 
 CMAKE_ARGS=	-DQT_VERSION:STRING=5
-
-CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_transform is an experimental extension
 
 .include <bsd.port.mk>
