@@ -12,6 +12,7 @@ WWW=		https://github.com/gperftools/gperftools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	link fails: ld: error: undefined symbol: brk, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278009
 BROKEN_armv7=	error: use of undeclared identifier '_URC_NO_REASON', see https://github.com/gperftools/gperftools/issues/1360
 BROKEN_riscv64=	error: Cannot calculate stack trace: will need to write for your environment, see https://github.com/gperftools/gperftools/issues/1359
 
