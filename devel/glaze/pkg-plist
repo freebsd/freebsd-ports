@@ -57,6 +57,7 @@ include/glaze/file/hostname_include.hpp
 include/glaze/file/raw_or_file.hpp
 include/glaze/glaze.hpp
 include/glaze/glaze_exceptions.hpp
+include/glaze/hardware/volatile_array.hpp
 include/glaze/json.hpp
 include/glaze/json/custom.hpp
 include/glaze/json/invoke.hpp
