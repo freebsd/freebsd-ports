@@ -1,7 +1,6 @@
 PORTNAME=	usql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.12
-PORTREVISION=	5
+DISTVERSION=	0.18.0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/xo/usql
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/xo/usql
 
