@@ -20,7 +20,7 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 
 LIB_DEPENDS=	libpcre2-16.so:devel/pcre2
 
-USES=		tar:bzip2 gmake cpe libtool
+USES=		gmake cpe libtool
 USE_GITHUB=	yes
 GH_TAGNAME=	036714cde
 NMAP_COMMIT_DATE=	20240327
