@@ -1,5 +1,6 @@
 PORTNAME=	tcllib
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=	https://core.tcl.tk/tcllib/uv/
 
@@ -37,7 +38,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 .if ${PORT_OPTIONS:MMANPAGES} && !(defined(ALL_TARGET) && !empty(ALL_TARGET:Mcritcl))
 ALL_TARGET+=	nroff-doc
-INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
+INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/share/man/mann
 .else
 INSTALL_ARGS+=	-no-nroff
 .endif
