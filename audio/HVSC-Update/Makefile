@@ -1,27 +1,25 @@
 PORTNAME=	HVSC-Update
-PORTVERSION=	2.8.7
+DISTVERSION=	2.8.8
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://www.hvsc.c64.org/download/files/tools/
-DISTNAME=	${PORTNAME:S/-/_/}_Tool_source_${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update program for the HVSC C= 64 SID tune collection
-WWW=		https://www.hvsc.c64.org/
+WWW=		https://github.com/laustbn/hvsc-update-tool
 
-BUILD_DEPENDS=	makedepend:devel/makedepend
+USES=		cmake compiler:c++17-lang
 
-GNU_CONFIGURE=	yes
-USES=		gmake
-USE_CXXSTD=	c++98
-WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
+USE_GITHUB=	yes
+GH_ACCOUNT=	laustbn
+GH_PROJECT=	hvsc-update-tool
+GH_TAGNAME=	ff21266
 
 PORTDOCS=	HVS_file_format.txt HVSC_Update.txt SID_file_format.txt
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/hvsc_update_tool
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/hvsc_update_tool ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
