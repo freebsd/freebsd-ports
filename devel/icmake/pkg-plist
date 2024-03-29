@@ -8,11 +8,11 @@ lib/icmake/icm-exec
 lib/icmake/icm-pp
 lib/icmake/icmbuild
 lib/icmake/icmun
-man/man1/icmake.1.gz
-man/man1/icmbuild.1.gz
-man/man1/icmstart.1.gz
-man/man7/icmconf.7.gz
-man/man7/icmstart.rc.7.gz
+share/man/man1/icmake.1.gz
+share/man/man1/icmbuild.1.gz
+share/man/man1/icmstart.1.gz
+share/man/man7/icmconf.7.gz
+share/man/man7/icmstart.rc.7.gz
 %%DATADIR%%/frame
 %%DATADIR%%/icmconf
 %%DATADIR%%/main.cc
