@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.17.1
-PORTREVISION=	3
+DISTVERSION=	1.18.2
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -20,16 +19,19 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 USES=		cargo ssl
 
 CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.8.11 \
 		aho-corasick-1.1.2 \
+		allocator-api2-0.2.16 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.5 \
+		anstream-0.6.7 \
 		anstyle-1.0.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
 		anyhow-1.0.77 \
 		arc-swap-1.6.0 \
+		arraydeque-0.5.1 \
 		arrayvec-0.7.4 \
 		async-broadcast-0.5.1 \
 		async-channel-2.1.1 \
@@ -54,18 +56,18 @@ CARGO_CRATES=	adler-1.0.2 \
 		block-buffer-0.10.4 \
 		blocking-1.5.1 \
 		bstr-1.9.0 \
-		btoi-0.4.3 \
 		bumpalo-3.14.0 \
 		byteorder-1.5.0 \
 		bytesize-1.3.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
-		clap-4.4.12 \
-		clap_builder-4.4.12 \
-		clap_complete-4.4.5 \
-		clap_derive-4.4.7 \
-		clap_lex-0.6.0 \
+		cfg_aliases-0.1.1 \
+		chrono-0.4.37 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_complete-4.5.1 \
+		clap_derive-4.5.4 \
+		clap_lex-0.7.0 \
 		clru-0.6.1 \
 		cmake-0.1.50 \
 		colorchoice-1.0.0 \
@@ -92,14 +94,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		digest-0.9.0 \
 		digest-0.10.7 \
 		dirs-4.0.0 \
+		dirs-5.0.1 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
+		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
 		dlv-list-0.5.2 \
 		downcast-0.11.0 \
 		dunce-1.0.4 \
 		dyn-clone-1.0.16 \
 		either-1.9.0 \
+		encoding_rs-0.8.33 \
 		enumflags2-0.7.8 \
 		enumflags2_derive-0.7.8 \
 		equivalent-1.0.1 \
@@ -129,44 +134,45 @@ CARGO_CRATES=	adler-1.0.2 \
 		generic-array-0.14.7 \
 		gethostname-0.4.3 \
 		getrandom-0.2.11 \
-		gix-0.57.1 \
-		gix-actor-0.29.1 \
-		gix-bitmap-0.2.10 \
-		gix-chunk-0.4.7 \
-		gix-commitgraph-0.23.1 \
-		gix-config-0.33.1 \
-		gix-config-value-0.14.3 \
-		gix-date-0.8.3 \
-		gix-diff-0.39.1 \
-		gix-discover-0.28.1 \
-		gix-features-0.37.1 \
-		gix-fs-0.9.1 \
-		gix-glob-0.15.1 \
-		gix-hash-0.14.1 \
-		gix-hashtable-0.5.1 \
-		gix-index-0.28.1 \
-		gix-lock-12.0.1 \
-		gix-macros-0.1.3 \
-		gix-object-0.40.1 \
-		gix-odb-0.56.1 \
-		gix-pack-0.46.1 \
-		gix-path-0.10.3 \
-		gix-quote-0.4.10 \
-		gix-ref-0.40.1 \
-		gix-refspec-0.21.1 \
-		gix-revision-0.25.1 \
-		gix-revwalk-0.11.1 \
-		gix-sec-0.10.3 \
-		gix-tempfile-12.0.1 \
-		gix-trace-0.1.6 \
-		gix-traverse-0.36.1 \
-		gix-url-0.26.1 \
-		gix-utils-0.1.8 \
-		gix-validate-0.8.3 \
+		gix-0.61.0 \
+		gix-actor-0.31.1 \
+		gix-bitmap-0.2.11 \
+		gix-chunk-0.4.8 \
+		gix-commitgraph-0.24.2 \
+		gix-config-0.36.0 \
+		gix-config-value-0.14.6 \
+		gix-date-0.8.5 \
+		gix-diff-0.42.0 \
+		gix-discover-0.31.0 \
+		gix-features-0.38.1 \
+		gix-fs-0.10.1 \
+		gix-glob-0.16.2 \
+		gix-hash-0.14.2 \
+		gix-hashtable-0.5.2 \
+		gix-index-0.31.1 \
+		gix-lock-13.0.0 \
+		gix-macros-0.1.4 \
+		gix-object-0.42.1 \
+		gix-odb-0.59.0 \
+		gix-pack-0.49.0 \
+		gix-path-0.10.7 \
+		gix-quote-0.4.12 \
+		gix-ref-0.43.0 \
+		gix-refspec-0.23.0 \
+		gix-revision-0.27.0 \
+		gix-revwalk-0.13.0 \
+		gix-sec-0.10.6 \
+		gix-tempfile-13.0.0 \
+		gix-trace-0.1.8 \
+		gix-traverse-0.38.0 \
+		gix-url-0.27.2 \
+		gix-utils-0.1.11 \
+		gix-validate-0.8.4 \
 		guess_host_triple-0.1.3 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
-		heck-0.4.1 \
+		hashlink-0.8.4 \
+		heck-0.5.0 \
 		hermit-abi-0.3.3 \
 		hex-0.4.3 \
 		home-0.5.9 \
@@ -174,7 +180,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		indexmap-1.9.3 \
-		indexmap-2.1.0 \
+		indexmap-2.2.6 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
 		is-docker-0.2.0 \
@@ -187,15 +193,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		jwalk-0.8.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.151 \
+		libc-0.2.153 \
 		libredox-0.0.1 \
-		libz-ng-sys-1.1.12 \
-		libz-sys-1.1.12 \
-		linked-hash-map-0.5.6 \
+		libz-ng-sys-1.1.14 \
+		libz-sys-1.1.14 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.12 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		mac-notification-sys-0.6.1 \
 		mach2-0.4.2 \
 		malloc_buf-0.0.6 \
@@ -209,11 +214,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		mockall-0.12.1 \
 		mockall_derive-0.12.1 \
 		nix-0.26.4 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		nom-5.1.3 \
 		nom-7.1.3 \
 		notify-rust-4.10.0 \
-		nu-ansi-term-0.49.0 \
+		nu-ansi-term-0.50.0 \
 		num-derive-0.3.3 \
 		num-traits-0.2.17 \
 		num_threads-0.1.6 \
@@ -222,11 +227,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		objc_id-0.1.1 \
 		once_cell-1.19.0 \
 		opaque-debug-0.3.0 \
-		open-5.0.1 \
+		open-5.1.2 \
+		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
 		ordered-multimap-0.7.1 \
 		ordered-stream-0.2.0 \
-		os_info-3.7.0 \
+		os_info-3.8.2 \
 		parking-2.2.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
@@ -234,10 +240,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		pathdiff-0.2.1 \
 		pathsearch-0.2.0 \
 		percent-encoding-2.3.1 \
-		pest-2.7.5 \
-		pest_derive-2.7.5 \
-		pest_generator-2.7.5 \
-		pest_meta-2.7.5 \
+		pest-2.7.8 \
+		pest_derive-2.7.8 \
+		pest_generator-2.7.8 \
+		pest_meta-2.7.8 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
@@ -254,8 +260,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		proc-macro-crate-1.3.1 \
-		proc-macro2-1.0.74 \
-		process_control-4.0.3 \
+		proc-macro2-1.0.79 \
+		process_control-4.1.0 \
 		prodash-28.0.0 \
 		quick-xml-0.30.0 \
 		quick-xml-0.31.0 \
@@ -263,28 +269,28 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.8.0 \
-		rayon-core-1.12.0 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.4 \
+		regex-automata-0.4.4 \
 		regex-syntax-0.8.2 \
-		rust-ini-0.20.0 \
+		rust-ini-0.21.0 \
 		rustix-0.37.27 \
-		rustix-0.38.28 \
+		rustix-0.38.31 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
 		schemars-0.8.16 \
 		schemars_derive-0.8.16 \
 		scopeguard-1.2.0 \
 		semver-0.11.0 \
-		semver-1.0.20 \
+		semver-1.0.22 \
 		semver-parser-0.10.2 \
-		serde-1.0.194 \
-		serde_derive-1.0.194 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.109 \
+		serde_json-1.0.115 \
 		serde_repr-0.1.17 \
 		serde_spanned-0.6.5 \
 		sha1-0.10.6 \
@@ -292,7 +298,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		sha1_smol-1.0.0 \
 		sha2-0.9.9 \
 		sha2-0.10.8 \
-		shadow-rs-0.26.0 \
+		shadow-rs-0.27.1 \
 		shared_library-0.1.9 \
 		shell-words-1.1.0 \
 		signal-hook-0.1.17 \
@@ -304,12 +310,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		socket2-0.4.10 \
 		starship-battery-0.8.2 \
 		static_assertions-1.1.0 \
-		strsim-0.10.0 \
+		strsim-0.11.0 \
 		syn-1.0.109 \
-		syn-2.0.46 \
+		syn-2.0.53 \
 		systemstat-0.2.3 \
 		tauri-winrt-notification-0.1.3 \
-		tempfile-3.9.0 \
+		tempfile-3.10.1 \
 		terminal_size-0.3.0 \
 		terminfo-0.7.5 \
 		termios-0.3.3 \
@@ -324,13 +330,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.5.11 \
-		toml-0.8.8 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.19.15 \
-		toml_edit-0.21.0 \
+		toml_edit-0.22.9 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
+		trim-in-place-0.1.7 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		uds_windows-1.1.0 \
@@ -340,7 +347,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-bom-2.0.3 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
-		unicode-segmentation-1.10.1 \
+		unicode-segmentation-1.11.0 \
 		unicode-width-0.1.11 \
 		unicode-xid-0.2.4 \
 		uom-0.35.0 \
@@ -349,7 +356,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		versions-6.0.0 \
+		versions-6.2.0 \
 		vtparse-0.6.2 \
 		waker-fn-1.1.1 \
 		walkdir-2.4.0 \
@@ -359,41 +366,45 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasm-bindgen-macro-0.2.89 \
 		wasm-bindgen-macro-support-0.2.89 \
 		wasm-bindgen-shared-0.2.89 \
-		which-5.0.0 \
+		which-6.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.48.0 \
 		windows-0.51.1 \
-		windows-0.52.0 \
+		windows-0.54.0 \
 		windows-core-0.51.1 \
-		windows-core-0.52.0 \
+		windows-core-0.54.0 \
+		windows-result-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.3 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.3 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.3 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.3 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.3 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.3 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.3 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.31 \
+		windows_x86_64_msvc-0.52.3 \
+		winnow-0.5.40 \
+		winnow-0.6.5 \
 		winres-0.1.12 \
+		winsafe-0.0.19 \
 		xdg-home-1.0.0 \
-		yaml-rust-0.4.5 \
+		yaml-rust2-0.8.0 \
 		zbus-3.14.1 \
 		zbus_macros-3.14.1 \
 		zbus_names-2.6.0 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32 \
 		zvariant-3.15.0 \
 		zvariant_derive-3.15.0 \
 		zvariant_utils-1.0.1
