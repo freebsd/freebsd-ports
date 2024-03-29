@@ -31,6 +31,7 @@
     SUBDIR += emu64
     SUBDIR += emulationstation
     SUBDIR += fceux
+    SUBDIR += flexemu
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fs-uae
