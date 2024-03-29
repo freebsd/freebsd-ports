@@ -1,5 +1,6 @@
 PORTNAME=	nstat
 DISTVERSION=	g20230601
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 
@@ -19,11 +20,11 @@ GH_ACCOUNT=	gallatin
 GH_TAGNAME=	8d9a10a
 
 PLIST_FILES=	bin/nstat \
-		man/man1/nstat.1.gz
+		share/man/man1/nstat.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nstat ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nstat.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nstat.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
