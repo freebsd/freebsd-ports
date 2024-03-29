@@ -855,7 +855,7 @@ artifactory:*:905:905::0:0:artifactory user:/nonexistent:/usr/sbin/nologin
 opentsdb:*:906:906::0:0:OpenTSDB Daemon:/var/empty:/usr/sbin/nologin
 influxd:*:907:907::0:0:InfluxDB Daemon:/var/empty:/usr/sbin/nologin
 riemann:*:908:908::0:0:Riemann User:/var/empty:/usr/sbin/nologin
-proxy65:*:909:909::0:0:Proxy65 Daemon:/nonexistent:/usr/sbin/nologin
+proxysql:*:909:909::0:0:ProxySQL Daemon:/nonexistent:/usr/sbin/nologin
 bacula:*:910:910::0:0:Bacula Daemon:/var/db/bacula:/usr/sbin/nologin
 iserv:*:911:911::0:0:Iserv Daemon:/nonexistent:/usr/sbin/nologin
 _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
