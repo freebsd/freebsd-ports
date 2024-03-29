@@ -1,5 +1,6 @@
 PORTNAME=	venom
 PORTVERSION=	1.2.0
+PORTREVISION= 	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,6 +15,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/ovh/venom
 GO_TARGET=	./cmd/venom
+GO_BUILDFLAGS=	-ldflags "-X github.com/ovh/venom.Version=v${PORTVERSION}"
 
 PLIST_FILES=	bin/venom
 
