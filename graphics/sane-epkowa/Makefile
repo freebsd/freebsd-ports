@@ -38,7 +38,7 @@
 
 PORTNAME=	epkowa
 PORTVERSION=	2.11.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://cschubert.com/distfiles/ \
 		LOCAL/cy
@@ -98,7 +98,7 @@ do-build:
 .endif
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/sane-epkowa.5.gz ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/sane-epkowa.5.gz ${STAGEDIR}${PREFIX}/share/man/man5
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/sane ${STAGEDIR}${PREFIX}/etc/sane.d
 	${INSTALL_LIB} ${WRKSRC}/backend/.libs/libsane-epkowa.so.1 \
 		${STAGEDIR}${PREFIX}/lib/sane/
