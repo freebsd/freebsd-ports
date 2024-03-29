@@ -12,7 +12,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		camino-1.1.6 \
 		cargo-platform-0.1.7 \
 		cargo_metadata-0.18.1 \
-		cc-1.0.89 \
+		cc-1.0.90 \
 		cfg-if-1.0.0 \
 		chalk-derive-0.96.0 \
 		chalk-ir-0.96.0 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		la-arena-0.3.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
-		libloading-0.8.2 \
+		libloading-0.8.3 \
 		libmimalloc-sys-0.1.35 \
 		line-index-0.1.1 \
 		linked-hash-map-0.5.6 \
@@ -69,6 +69,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		log-0.4.21 \
 		lsp-server-0.7.6 \
 		lsp-types-0.95.0 \
+		lz4_flex-0.11.2 \
 		memchr-2.7.1 \
 		memmap2-0.5.10 \
 		memoffset-0.9.0 \
@@ -103,12 +104,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pulldown-cmark-0.9.6 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.35 \
-		ra-ap-rustc_abi-0.42.0 \
-		ra-ap-rustc_index-0.42.0 \
-		ra-ap-rustc_index_macros-0.42.0 \
-		ra-ap-rustc_lexer-0.42.0 \
-		ra-ap-rustc_parse_format-0.42.0 \
-		ra-ap-rustc_pattern_analysis-0.42.0 \
+		ra-ap-rustc_abi-0.44.0 \
+		ra-ap-rustc_index-0.44.0 \
+		ra-ap-rustc_index_macros-0.44.0 \
+		ra-ap-rustc_lexer-0.44.0 \
+		ra-ap-rustc_parse_format-0.44.0 \
+		ra-ap-rustc_pattern_analysis-0.44.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
