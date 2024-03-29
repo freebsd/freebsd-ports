@@ -1,6 +1,8 @@
 TIMESTAMP = 1708127632
 SHA256 (caldera-cache-5.0.0.tar.gz) = c0f160ec5431b0096a9ce8e2adde062de97be96e66e9e8756b4646e4d8c2a9a9
 SIZE (caldera-cache-5.0.0.tar.gz) = 41756498
+SHA256 (caldera-freebsd-logos.tar.gz) = 66ad2558c34ef06875cfb479a34ca5053b25bad2c36ce06d532d6857b9dda4a2
+SIZE (caldera-freebsd-logos.tar.gz) = 2516
 SHA256 (mitre-caldera-5.0.0_GH0.tar.gz) = a4e122f6862ea3cb7e856889a4a2b68ce297f74189fd845b0a51c02e1fa8c716
 SIZE (mitre-caldera-5.0.0_GH0.tar.gz) = 3820616
 SHA256 (mitre-access-775181b_GH0.tar.gz) = 2ae6e4cbd9e6c143cc76b65c0be3dd332228ab59161422291050eb6f4c4b1d17
