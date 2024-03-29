@@ -8,7 +8,7 @@
 -INSTX		=install -m 0755 -s
 -INSTD		=install -m 0644
 +BINDIR=	${PREFIX}/bin
-+MANDIR=	${PREFIX}/man/man
++MANDIR=	${PREFIX}/share/man/man
  
 -DEST=		
 +CFLAGS+= -DHAVE_PARAM_H -DHAVE_WAIT_H
