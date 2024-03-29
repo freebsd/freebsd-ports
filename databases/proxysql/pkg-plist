@@ -1,0 +1,10 @@
+etc/syslog.d/proxysql.conf
+sbin/proxysql
+@dir(,proxysql,0750) %%ETCDIR%%
+@sample(,proxysql,0640) %%ETCDIR%%/proxysql.cfg.sample
+@sample %%LOCALBASE%%/etc/newsyslog.conf.d/proxysql.conf.sample
+@dir(proxysql,proxysql,0750) /var/db/proxysql
+@dir(proxysql,proxysql,0750) /var/run/proxysql
+@dir(proxysql,proxysql,0750) /var/log/proxysql
+@postexec test -f /var/log/proxysql.log || touch /var/log/proxysql.log
+@postexec chmod 600 /var/log/proxysql.log

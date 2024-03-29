@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+In order for logging to function, you must restart syslogd:
+
+# service syslogd restart
+EOM
+}
+]

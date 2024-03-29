@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: proxysql
+# REQUIRE: LOGIN mysql
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# proxysql_enable (bool):          Set to NO by default.
+#               Set it to YES to enable proxysql.
+# proxysql_user (string):          Set user that proxysql will run under
+#               Default is "proxysql".
+# proxysql_group (string):         Set group that proxysql will run under
+#               Default is "proxysql".
+# proxysql_config (string):        Set path to config file
+#               Default is "%%ETCDIR%%/proxysql.cfg".
+# proxysql_args (string):          Set extra arguments to pass to proxysql
+#               Default is "".
+
+. /etc/rc.subr
+
+name=proxysql
+rcvar=proxysql_enable
+
+load_rc_config $name
+
+: ${proxysql_enable:="NO"}
+: ${proxysql_user:="proxysql"}
+: ${proxysql_group:="proxysql"}
+: ${proxysql_config:="%%ETCDIR%%/proxysql.cfg"}
+: ${proxysql_socket:="/var/run/proxysql/proxysql.sock"}
+: ${proxysql_datadir:="/var/db/proxysql"}
+: ${proxysql_args:=""}
+: ${proxysql_restart_delay:="10"}
+
+
+pidfile="/var/run/proxysql/proxysql.pid"
+command="/usr/sbin/daemon"
+proxysql_command="%%PREFIX%%/sbin/proxysql"
+command_args="-rP ${pidfile} -S -R ${proxysql_restart_delay} \
+    -T ${name} ${proxysql_command} \
+    -f -c ${proxysql_config} -S ${proxysql_socket} \
+    -D ${proxysql_datadir} \
+    --no-version-check ${proxysql_args}"
+required_files="${proxysql_config}"
+extra_commands="reload initialize"
+reload_cmd=proxysql_reload
+initialize_cmd=proxysql_initialize
+
+proxysql_initialize()
+{
+    su -m ${proxysql_user} -c "${proxysql_command} --initial"
+}
+
+proxysql_reload()
+{
+    su -m ${proxysql_user} -c "${proxysql_command} --reload"
+}
+
+load_rc_config $name
+run_rc_command "$1"

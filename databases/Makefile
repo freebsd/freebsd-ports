@@ -696,6 +696,7 @@
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
     SUBDIR += prometheus-postgresql-adapter
+    SUBDIR += proxysql
     SUBDIR += pspg
     SUBDIR += puppetdb-terminus7
     SUBDIR += puppetdb-terminus8
