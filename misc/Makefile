@@ -1,6 +1,7 @@
     COMMENT = Miscellaneous utilities
 
     SUBDIR += R-cran-mime
+    SUBDIR += R-cran-optimx
     SUBDIR += R-cran-xfun
     SUBDIR += aclgen
     SUBDIR += actiona

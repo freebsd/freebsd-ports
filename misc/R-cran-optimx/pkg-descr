@@ -1,0 +1,4 @@
+Provides a replacement and extension of the optim() function to call to
+several function minimization codes in R in a single statement. These
+methods handle smooth, possibly box constrained functions of several or
+many parameters.
