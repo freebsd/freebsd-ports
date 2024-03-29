@@ -54,9 +54,6 @@ post-patch:
 		 s|-pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/src/Makefile.in
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${STAGEDIR}${DOCSDIR}
