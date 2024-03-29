@@ -1,13 +1,13 @@
 bin/xray
-%%ETCDIR%%/00_log.json
-%%ETCDIR%%/01_api.json
-%%ETCDIR%%/02_dns.json
-%%ETCDIR%%/03_routing.json
-%%ETCDIR%%/04_policy.json
-%%ETCDIR%%/05_inbounds.json
-%%ETCDIR%%/06_outbounds.json
-%%ETCDIR%%/07_transport.json
-%%ETCDIR%%/08_stats.json
-%%ETCDIR%%/09_reverse.json
+@sample %%ETCDIR%%/00_log.json.sample
+@sample %%ETCDIR%%/01_api.json.sample
+@sample %%ETCDIR%%/02_dns.json.sample
+@sample %%ETCDIR%%/03_routing.json.sample
+@sample %%ETCDIR%%/04_policy.json.sample
+@sample %%ETCDIR%%/05_inbounds.json.sample
+@sample %%ETCDIR%%/06_outbounds.json.sample
+@sample %%ETCDIR%%/07_transport.json.sample
+@sample %%ETCDIR%%/08_stats.json.sample
+@sample %%ETCDIR%%/09_reverse.json.sample
 %%DATADIR%%/geoip.dat
 %%DATADIR%%/geosite.dat

@@ -1,10 +1,10 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.7
-PORTREVISION=	2
+DISTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202401250041/:geoip \
-		https://github.com/v2fly/domain-list-community/releases/download/20240123112230/:geosite
+MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202403070031/:geoip \
+		https://github.com/v2fly/domain-list-community/releases/download/20240301033006/:geosite
 DISTFILES=	geoip.dat:geoip \
 		dlc.dat:geosite
 EXTRACT_ONLY=	v${DISTVERSION}.zip \
@@ -17,7 +17,7 @@ WWW=		https://github.com/XTLS/Xray-core
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.21
+USES=		go:modules,1.22
 
 USE_RC_SUBR=	xray
 SUB_FILES=	pkg-message
@@ -41,6 +41,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/geoip.dat ${STAGEDIR}${DATADIR}/geoip.dat
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dlc.dat ${STAGEDIR}${DATADIR}/geosite.dat
-	${INSTALL_DATA} ${FILESDIR}/*.json ${STAGEDIR}${ETCDIR}/
+	${INSTALL_DATA} ${FILESDIR}/*.json.sample ${STAGEDIR}${ETCDIR}/
 
 .include <bsd.port.mk>
