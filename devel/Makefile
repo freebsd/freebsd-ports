@@ -845,6 +845,7 @@
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
+    SUBDIR += gmake43
     SUBDIR += gn
     SUBDIR += gnome-builder
     SUBDIR += gnome-common
