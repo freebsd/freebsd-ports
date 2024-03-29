@@ -175,6 +175,45 @@
     </dates>
   </vuln>
 
+  <vuln vid="34f98d06-eb56-11ee-8007-6805ca2fa271">
+    <topic>quiche -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>quiche</name>
+       <range><lt>0.20.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Quiche Releases reports:</p>
+	<blockquote cite="https://github.com/cloudflare/quiche/releases/tag/0.20.1">
+	 <p>This release includes 2 security fixes:</p>
+	 <ul>
+	  <li>
+		CVE-2024-1410: Unbounded storage of information related to
+		connection ID retirement, in quiche. Reported by Marten
+		Seeman (@marten-seeman)
+	  </li>
+	  <li>
+		CVE-2024-1765: Unlimited resource allocation by QUIC
+		CRYPTO frames flooding in quiche. Reported by Marten
+		Seeman (@marten-seeman)
+	  </li>
+	 </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1410</cvename>
+      <cvename>CVE-2024-1765</cvename>
+      <url>https://github.com/cloudflare/quiche/releases/tag/0.20.1</url>
+    </references>
+    <dates>
+      <discovery>2024-03-12</discovery>
+      <entry>2024-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80815c47-e84f-11ee-8e76-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
