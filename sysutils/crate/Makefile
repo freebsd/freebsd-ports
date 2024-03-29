@@ -1,6 +1,6 @@
 PORTNAME=	crate
 DISTVERSION=	0.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils emulators
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man5/${PORTNAME}.5.gz
+		share/man/man5/${PORTNAME}.5.gz
 
 OPTIONS_DEFINE=			EXAMPLES
 

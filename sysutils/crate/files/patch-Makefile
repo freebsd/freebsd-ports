@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-08-11 07:07:44 UTC
++++ Makefile
+@@ -16,7 +16,7 @@ install: crate
+ 
+ install: crate
+ 	install -s -m 04755 crate $(DESTDIR)$(PREFIX)/bin
+-	gzip -9 < crate.5 > $(DESTDIR)$(PREFIX)/man/man5/crate.5.gz
++	gzip -9 < crate.5 > $(DESTDIR)$(PREFIX)/share/man/man5/crate.5.gz
+ 
+ install-local: crate.x
+ 
