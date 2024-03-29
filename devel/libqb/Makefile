@@ -1,5 +1,6 @@
 PORTNAME=		libqb
 DISTVERSION=		2.0.6
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		https://github.com/ClusterLabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -20,6 +21,7 @@ PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
 USES=			cpe gmake gnome libtool pkgconfig python tar:xz
 CPE_VENDOR=		clusterlabs
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=       ${PREFIX}/share
 USE_GNOME=		libxml2
 USE_LDCONFIG=		yes
 
