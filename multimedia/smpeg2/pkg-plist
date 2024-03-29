@@ -15,5 +15,5 @@ lib/libsmpeg2-2.0.so.0
 lib/libsmpeg2-2.0.so.0.0.0
 lib/libsmpeg2.a
 lib/libsmpeg2.so
-%%PLAYMPEG%%man/man1/plaympeg.1.gz
+%%PLAYMPEG%%share/man/man1/plaympeg.1.gz
 share/aclocal/smpeg2.m4
