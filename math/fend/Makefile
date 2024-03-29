@@ -1,7 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.5
-PORTREVISION=	1
+DISTVERSION=	1.4.6
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +17,12 @@ GH_ACCOUNT=	printfn
 
 CARGO_CRATES=	base64-0.21.7 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		bumpalo-3.15.4 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		clipboard-win-5.2.0 \
+		clipboard-win-5.3.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		ctrlc-3.4.4 \
@@ -31,7 +30,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		error-code-3.2.0 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		fd-lock-4.0.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -40,14 +39,14 @@ CARGO_CRATES=	base64-0.21.7 \
 		hashbrown-0.14.3 \
 		home-0.5.9 \
 		idna-0.5.0 \
-		indexmap-2.2.5 \
+		indexmap-2.2.6 \
 		instant-0.1.12 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		native-tls-0.2.11 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
@@ -66,9 +65,9 @@ CARGO_CRATES=	base64-0.21.7 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		ring-0.17.8 \
-		rustix-0.38.31 \
-		rustls-0.22.2 \
-		rustls-pki-types-1.3.1 \
+		rustix-0.38.32 \
+		rustls-0.22.3 \
+		rustls-pki-types-1.4.1 \
 		rustls-webpki-0.102.2 \
 		rustyline-14.0.0 \
 		schannel-0.1.23 \
@@ -77,16 +76,16 @@ CARGO_CRATES=	base64-0.21.7 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
 		serde_spanned-0.6.5 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
-		syn-2.0.52 \
+		syn-2.0.55 \
 		tempfile-3.10.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.11 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.7 \
+		toml_edit-0.22.9 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
