@@ -37,8 +37,6 @@ lib/libklfbackend.so.4
 lib/libklfbackend_auto.a
 lib/libklftools.so
 lib/libklftools.so.4
-man/man1/klatexformula.1.gz
-man/man1/klatexformula_cmdl.1.gz
 share/applications/klatexformula.desktop
 %%DATADIR%%/userscripts/customtemplate.klfuserscript/customtemplate.py
 %%DATADIR%%/userscripts/customtemplate.klfuserscript/customtemplate_input.ui
@@ -62,6 +60,8 @@ share/applications/klatexformula.desktop
 %%DATADIR%%/userscripts/svg-dvisvgm.klfuserscript/export-profiles.xml
 %%DATADIR%%/userscripts/svg-dvisvgm.klfuserscript/scriptinfo.xml
 %%DATADIR%%/userscripts/svg-dvisvgm.klfuserscript/svg-dvisvgm.py
+share/man/man1/klatexformula.1.gz
+share/man/man1/klatexformula_cmdl.1.gz
 share/mime/packages/klatexformula-mime.xml
 share/pixmaps/klatexformula-128.png
 share/pixmaps/klatexformula-16.png
