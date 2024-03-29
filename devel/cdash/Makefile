@@ -1,16 +1,19 @@
 PORTNAME=	cdash
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cdash.org/wp-content/uploads/2014/11/
 DISTNAME=	CDash-2-2-3
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based software testing server
 WWW=		https://www.cdash.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
+
+DEPRECATED=	Very outdated version that's unsupported upstream
+EXPIRATION_DATE=2024-04-30
 
 USES=		cmake dos2unix php zip
 DOS2UNIX_GLOB=	*.php *.xml *.xsl *.txt
