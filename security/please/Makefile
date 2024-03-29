@@ -1,5 +1,6 @@
 PORTNAME=	please
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 
 PLIST_FILES=	"@(,,4555) bin/please" "@sample etc/pam.d/please.sample" \
-		man/man1/please.1.gz
+		share/man/man1/please.1.gz
 
 post-install:
 	${CP} ${WRKSRC}/pam.d/please.BSD \
