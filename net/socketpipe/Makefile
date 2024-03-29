@@ -1,5 +1,6 @@
 PORTNAME=	socketpipe
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.spinellis.gr/sw/unix/socketpipe/ \
 		http://www.dmst.aueb.gr/dds/sw/unix/socketpipe/
@@ -9,6 +10,6 @@ COMMENT=	Zero overhead remote process plumbing
 WWW=		https://www.spinellis.gr/sw/unix/socketpipe/
 
 PLIST_FILES=	bin/socketpipe \
-		man/man1/socketpipe.1.gz
+		share/man/man1/socketpipe.1.gz
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 -	$(INSTALL) -s $(NAME) $(PREFIX)/bin
 -	gzip -c $(NAME).1 >$(PREFIX)/man/man1/$(NAME).1.gz
 +	$(INSTALL) -s $(NAME) $(DESTDIR)$(PREFIX)/bin
-+	gzip -c $(NAME).1 > $(DESTDIR)$(PREFIX)/man/man1/$(NAME).1.gz
++	gzip -c $(NAME).1 > $(DESTDIR)$(PREFIX)/share/man/man1/$(NAME).1.gz
  
  socketpipe.exe: socketpipe-win.c
  	cl -o socketpipe.exe -W3 -Ox socketpipe-win.c mswsock.lib Ws2_32.lib Kernel32.lib
