@@ -49,6 +49,9 @@ command_args="-S -c \
 start_precmd=step_ca_startprecmd
 start_postcmd=step_ca_postcmd
 
+extra_commands="configure"
+configure_cmd="step_ca_configure"
+
 step_ca_startprecmd()
 {
         if [ ! -e ${pidfile} ]; then
@@ -57,11 +60,43 @@ step_ca_startprecmd()
 
 	if [ ! -e ${step_ca_steppath} ]; then
 		echo "No configured Step CA found."
+		echo "Please run service step-ca configure"
+		exit 1
+	else
+		export STEPPATH=${step_ca_steppath}
+	fi
+
+	if [ ! -e ${step_ca_password} ]; then
+		echo "Step CA Password file for auto-start not found"
+		echo "Please run service step-ca configure"
+		exit 1
+	fi
+
+	if [ -e ${step_ca_steppath}/config/ca.json ]; then
+		configured_port=$(sed -n -e '/"address"/ s/.*:\(.*\)".*/\1/p' ${step_ca_steppath}/config/ca.json)
+		if [ ${configured_port} -lt 1024 ]; then
+			echo "Privileged Port (${configured_port}) configured: cannot run as ${step_ca_user}"
+			exit 1
+		fi
+	fi
+}
+
+step_ca_postcmd() {
+	sleep 2
+	run_rc_command status
+}
+
+step_ca_configure() {
+	if [ ! -e ${step_ca_steppath} ]; then
+		echo "No configured Step CA found."
 		echo "Creating new one...."
+		install -m 600 -o ${step_ca_user} -g ${step_ca_group} /dev/null ${step_ca_steppath}
 		export STEPPATH=${step_ca_steppath}
 		%%PREFIX%%/bin/step ca init --ssh
-		chown -R ${step_ca_user}:${step_ca_group} ${step_ca_steppath}
+		chown -R ${step_ca_user}:${step_ca_group} ${step_ca_stepdir}
 	else
+		echo "Configured Step CA found at ${step_ca_steppath}."
+		echo "Please remove the directory and its contents manually if you really want to reconfigure."
 		export STEPPATH=${step_ca_steppath}
 	fi
 
@@ -72,6 +107,9 @@ step_ca_startprecmd()
 		echo "Please enter the Step CA Password:"
 		stty -echo; read passwd; stty echo; echo
 		echo $passwd > ${step_ca_password}
+	else
+		echo "Configured Step CA password file found at ${step_ca_password}."
+		echo "Please remove the file manually if you really want to reconfigure."
 	fi
 
 	if [ -e ${step_ca_steppath}/config/ca.json ]; then
@@ -80,11 +118,6 @@ step_ca_startprecmd()
 			echo "Privileged Port (${configured_port}) configured: cannot run as ${step_ca_user}"
 		fi
 	fi
-}
-
-step_ca_postcmd() {
-	sleep 2
-	run_rc_command status
 }
 
 run_rc_command "$1"
