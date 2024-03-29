@@ -1,5 +1,5 @@
 PORTNAME=	gnome-ssh-askpass
-PORTVERSION=	7.0p1
+PORTVERSION=	7.1p1
 CATEGORIES=	security gnome
 MASTER_SITES=	OPENBSD/OpenSSH/portable/
 DISTNAME=	openssh-${PORTVERSION}
@@ -21,7 +21,7 @@ ALL_TARGET=	gnome-ssh-askpass2
 
 PLIST_FILES=	bin/gnome-ssh-askpass2
 USES=		gnome pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gtk20
 
 CFLAGS+=	-lpthread
 
