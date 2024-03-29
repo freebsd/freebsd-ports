@@ -10,6 +10,9 @@ WWW=		http://www.sablevm.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Only user in tree is java/sablevm which is deprecated
+EXPIRATION_DATE=2024-03-31
+
 BROKEN_aarch64=		Fails to configure: Endianess not declared
 BROKEN_riscv64=		Fails to configure: Endianess not declared
 
