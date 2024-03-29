@@ -1,6 +1,6 @@
 PORTNAME=	aspostit
 PORTVERSION=	1.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils
 MASTER_SITES=	AFTERSTEP/apps/aspostit
 
@@ -8,6 +8,9 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	AfterStep dockable version of XPostIt
 
 LICENSE=	GPLv2+
+
+DEPRECATED=	Unmaintained, last upstream release in 2001
+EXPIRATION_DATE=2024-04-29
 
 USES=		gmake jpeg xorg
 USE_XORG=	xpm xaw xext x11
