@@ -1,7 +1,7 @@
 PORTNAME=	mailest
 PORTVERSION=	0.9.24
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	mail
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -24,6 +24,7 @@ USES=		emacs:run fakeroot iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	yasuoka
 
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 MAKE_ENV=	USE_BSDMAKE=true WITH_INSTALL_AS_USER=true
 
 # XXX Static libraries with PIE are currently unsupported

@@ -3,9 +3,9 @@ sbin/mailestctl
 sbin/mew-mailest
 sbin/smew-mailest
 sbin/mailestd
-man/man1/cmew-mailest.1.gz
-man/man1/mailestctl.1.gz
-man/man1/mew-mailest.1.gz
-man/man1/smew-mailest.1.gz
-man/man5/mailestd.conf.5.gz
-man/man8/mailestd.8.gz
+share/man/man1/cmew-mailest.1.gz
+share/man/man1/mailestctl.1.gz
+share/man/man1/mew-mailest.1.gz
+share/man/man1/smew-mailest.1.gz
+share/man/man5/mailestd.conf.5.gz
+share/man/man8/mailestd.8.gz
