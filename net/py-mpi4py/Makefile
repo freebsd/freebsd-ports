@@ -1,6 +1,6 @@
 PORTNAME=	mpi4py
 DISTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,8 +47,8 @@ do-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/${PORTNAME}.1
 
 do-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${ECHO} man/man1/mpi4py.1.gz >> ${TMPPLIST}
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	@${ECHO} share/man/man1/mpi4py.1.gz >> ${TMPPLIST}
 
 post-install:
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR}/mpi4py && ${STRIP_CMD} dl*.so MPI*.so lib-pmpi/libvt-hyb*.so lib-pmpi/libvt*.so lib-pmpi/libvt-mpi*.so lib-pmpi/libmpe*.so
