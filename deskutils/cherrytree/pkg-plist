@@ -315,6 +315,7 @@ share/applications/cherrytree.desktop
 %%DATADIR%%/icons/Breeze_Light_icons/ct_zoom-out.svg
 %%DATADIR%%/icons/ct_home.svg
 %%DATADIR%%/language-specs/AutoHoykey.lang
+%%DATADIR%%/language-specs/abap.lang
 %%DATADIR%%/language-specs/clisp.lang
 %%DATADIR%%/language-specs/dart.lang
 %%DATADIR%%/language-specs/elixir.lang
@@ -328,6 +329,8 @@ share/applications/cherrytree.desktop
 %%DATADIR%%/styles/classic.xml
 %%DATADIR%%/styles/cobalt-darkened.xml
 %%DATADIR%%/styles/cobalt.xml
+%%DATADIR%%/styles/gruvbox-dark.xml
+%%DATADIR%%/styles/gruvbox-light.xml
 %%DATADIR%%/styles/kate.xml
 %%DATADIR%%/styles/oblivion.xml
 %%DATADIR%%/styles/solarized-dark.xml
