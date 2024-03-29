@@ -1,0 +1,8 @@
+Venom allows you to handle integration tests the same way you code your
+application. With Venom, testcases will be managed as code: the readability of
+the tests means that the tests are part of the code reviews. Thanks to that,
+write and execute testsuites become easier for developers and teams.
+
+Concretely, you have to write testsuite in a YAML file. Venom run executors
+(scripts, HTTP Request, web, IMAP, etc.) and apply assertions. It can also
+generate xUnit result files

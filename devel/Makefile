@@ -7932,6 +7932,7 @@
     SUBDIR += vc
     SUBDIR += vc-intrinsics
     SUBDIR += vcglib
+    SUBDIR += venom
     SUBDIR += vera++
     SUBDIR += vexcl
     SUBDIR += viewvc-devel
