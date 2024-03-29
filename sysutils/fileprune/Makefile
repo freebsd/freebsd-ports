@@ -1,5 +1,6 @@
 PORTNAME=	fileprune
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dds@FreeBSD.org
@@ -14,10 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dspinellis
 GH_TAGNAME=	2dd22fc
 
-PLIST_FILES=	bin/fileprune man/man1/fileprune.1.gz
+PLIST_FILES=	bin/fileprune share/man/man1/fileprune.1.gz
 MAKE_ARGS=	CFLAGS="${CFLAGS}" PREFIX="${STAGEDIR}${PREFIX}"
-
-post-extract:
-	${REINPLACE_CMD} -e 's,/share,,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
