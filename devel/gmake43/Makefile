@@ -5,10 +5,7 @@ MASTER_SITES=	GNU/make
 DISTNAME=	make-${PORTVERSION}
 PKGNAMESUFFIX=	43
 
-# note: before committing to this port, contact portmgr to arrange for an
-# experimental ports run.  Untested commits may be backed out at portmgr's
-# discretion.
-MAINTAINER=	tijl@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 WWW=		https://www.gnu.org/software/make/
 
