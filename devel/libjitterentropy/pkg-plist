@@ -3,4 +3,4 @@ include/jitterentropy.h
 lib/libjitterentropy.so
 lib/libjitterentropy.so.%%PORTVERSION_MAJOR%%
 lib/libjitterentropy.so.%%PORTVERSION%%
-man/man3/jitterentropy.3.gz
+share/man/man3/jitterentropy.3.gz
