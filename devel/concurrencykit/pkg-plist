@@ -7,6 +7,7 @@ include/ck_bytelock.h
 include/ck_cc.h
 include/ck_cohort.h
 include/ck_elide.h
+include/ck_ec.h
 include/ck_epoch.h
 include/ck_fifo.h
 include/ck_hp_fifo.h
@@ -47,6 +48,10 @@ include/gcc/ppc/ck_f_pr.h
 include/gcc/ppc/ck_pr.h
 include/gcc/ppc64/ck_f_pr.h
 include/gcc/ppc64/ck_pr.h
+include/gcc/riscv64/ck_f_pr.h
+include/gcc/riscv64/ck_pr.h
+include/gcc/s390x/ck_f_pr.h
+include/gcc/s390x/ck_pr.h
 include/gcc/sparcv9/ck_f_pr.h
 include/gcc/sparcv9/ck_pr.h
 include/gcc/x86_64/ck_f_pr.h
@@ -64,7 +69,7 @@ include/spinlock/mcs.h
 include/spinlock/ticket.h
 lib/libck.a
 lib/libck.so
-lib/libck.so.%%VERSION%%
+lib/libck.so.%%DISTVERSION%%
 lib/libck.so.0
 libdata/pkgconfig/ck.pc
 share/man/man3/ck_array_buffer.3.gz
