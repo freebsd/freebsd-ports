@@ -1,6 +1,6 @@
 PORTNAME=	pybugz
 DISTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	glebius
-GH_TAGNAME=	a583724
+GH_TAGNAME=	c45eb4b
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
