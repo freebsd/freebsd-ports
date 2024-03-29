@@ -5,7 +5,7 @@ NO_MANCOMPRESS=
 
 PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
-MANDIR?=	${PREFIX}/man/man
+MANDIR?=	${PREFIX}/share/man/man
 BINDIR?=	${PREFIX}/sbin
 
 .if !empty(PORTDOCS)

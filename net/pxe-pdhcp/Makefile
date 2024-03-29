@@ -1,5 +1,6 @@
 PORTNAME=	pxe-pdhcp
 PORTVERSION=	0.0.2007
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/
 
@@ -14,7 +15,7 @@ WRKSRC=		${WRKDIR}/frsyuki-${PORTNAME}-a201b88
 USES=		uidfix
 SUB_FILES=	Makefile
 MAKE_ENV=	PORTDOCS=${PORT_OPTIONS:MDOCS}
-PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
+PLIST_FILES=	sbin/${PORTNAME} share/man/man8/${PORTNAME}.8.gz
 
 PORTDOCS=	README.md
 
