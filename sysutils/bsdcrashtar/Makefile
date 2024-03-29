@@ -1,6 +1,6 @@
 PORTNAME=	bsdcrashtar
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -14,9 +14,10 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	trociny
 
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 MAKE_ENV+=	NO_OBJ=yes
 
 PLIST_FILES=	sbin/bsdcrashtar \
-		man/man8/bsdcrashtar.8.gz
+		share/man/man8/bsdcrashtar.8.gz
 
 .include <bsd.port.mk>
