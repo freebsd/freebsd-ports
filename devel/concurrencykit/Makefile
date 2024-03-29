@@ -1,5 +1,6 @@
 PORTNAME=	concurrencykit
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
@@ -30,7 +31,7 @@ USES=		pkgconfig
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man
 
 TEST_TARGET=	check
 
