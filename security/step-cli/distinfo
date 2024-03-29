@@ -1,5 +1,5 @@
-TIMESTAMP = 1701461300
-SHA256 (go/security_step-cli/step-cli-v0.25.1/v0.25.1.mod) = ac6dfb64e76022a0770810cf901345573a4fc024b878ff3270350ad435026b28
-SIZE (go/security_step-cli/step-cli-v0.25.1/v0.25.1.mod) = 6726
-SHA256 (go/security_step-cli/step-cli-v0.25.1/v0.25.1.zip) = 5a52ad9435e69b4a266a9ca32cf62e6bb8a00499284768c8e421028778733e49
-SIZE (go/security_step-cli/step-cli-v0.25.1/v0.25.1.zip) = 1806442
+TIMESTAMP = 1711735189
+SHA256 (go/security_step-cli/step-cli-v0.26.0/v0.26.0.mod) = e2d963bd37767001a7160baa8195f9538ba0fbcdee562e7bf2620a97bfe13f08
+SIZE (go/security_step-cli/step-cli-v0.26.0/v0.26.0.mod) = 7411
+SHA256 (go/security_step-cli/step-cli-v0.26.0/v0.26.0.zip) = 564d91cfa1d598b9b2ce76b7b895c47d3db59a562244efdd8bda741905f6540b
+SIZE (go/security_step-cli/step-cli-v0.26.0/v0.26.0.zip) = 1811932
