@@ -1,5 +1,6 @@
 PORTNAME=	wine
 DISTVERSION=	8.0.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.0/
 PKGNAMESUFFIX=	8
@@ -26,6 +27,7 @@ CPE_VENDOR=	winehq
 CONFLICTS_INSTALL=	wine-devel
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=--verbose \
 		--disable-kerberos \
 		--disable-tests \
