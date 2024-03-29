@@ -1,6 +1,6 @@
 PORTNAME=	libphk
 PORTVERSION=	0.3.20080902
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://phk.freebsd.dk/phkrel/
 DISTNAME=	Libphk.${PORTVERSION:C/0.3.//}
@@ -18,6 +18,8 @@ LICENSE_TEXT=	"THE BEER-WARE LICENSE" (Revision 42): \
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		uidfix tar:tgz
+
+MAKE_FLAGS+=	MANDIR=${PREFIX}/share/man/man
 
 # XXX static PIE libraries not yet supported by the base system
 MAKE_FLAGS+=	WITHOUT_PIE=true
