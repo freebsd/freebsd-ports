@@ -1,7 +1,7 @@
 PORTNAME=	mbedtls
-DISTVERSIONPREFIX=${PORTNAME}-
-DISTVERSION=	2.28.7
+DISTVERSION=	2.28.8
 CATEGORIES=	security devel
+MASTER_SITES=	https://github.com/Mbed-TLS/mbedtls/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SSL/TLS and cryptography library
@@ -11,12 +11,9 @@ LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing python:build,test shebangfix
+USES=		cmake:testing python:build,test shebangfix tar:bz2
 SHEBANG_FILES=	scripts/*.py tests/scripts/*.py
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	Mbed-TLS
 
 PORTSCOUT=	limit:^${DISTVERSION:R:S/./\./g}\.
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
@@ -36,6 +33,7 @@ pre-configure:
 	@${WRKSRC}/scripts/config.py -f ${WRKSRC}/include/mbedtls/config.h set MBEDTLS_THREADING_PTHREAD
 
 post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/include/everest
 	@cd ${STAGEDIR}${PREFIX}/bin && for f in *; do \
 		${MV} "$$f" "mbedtls_$$f"; \
 	done
