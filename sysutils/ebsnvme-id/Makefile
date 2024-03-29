@@ -1,5 +1,6 @@
 PORTNAME=	ebsnvme-id
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
@@ -14,10 +15,12 @@ GH_ACCOUNT=	cperciva
 
 USES=		uidfix
 
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
+
 PLIST_FILES=	etc/rc.d/dev_aws_disk		\
 		etc/devd/dev-aws-disk.conf	\
 		sbin/ebsnvme-id			\
-		man/man8/ebsnvme-id.8.gz
+		share/man/man8/ebsnvme-id.8.gz
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
