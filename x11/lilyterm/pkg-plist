@@ -1,6 +1,5 @@
 bin/lilyterm
 @sample etc/xdg/lilyterm.conf.sample
-man/man1/lilyterm.1.gz
 share/applications/lilyterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -18,5 +17,6 @@ share/applications/lilyterm.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/lilyterm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lilyterm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lilyterm.mo
+share/man/man1/lilyterm.1.gz
 share/pixmaps/lilyterm.png
 share/pixmaps/lilyterm.xpm
