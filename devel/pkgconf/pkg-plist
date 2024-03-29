@@ -8,8 +8,8 @@ include/pkgconf/libpkgconf/libpkgconf.h
 include/pkgconf/libpkgconf/stdinc.h
 lib/libpkgconf.a
 lib/libpkgconf.so
-lib/libpkgconf.so.4
-lib/libpkgconf.so.4.0.0
+lib/libpkgconf.so.5
+lib/libpkgconf.so.5.0.0
 libdata/pkgconfig/libpkgconf.pc
 share/man/man1/pkgconf.1.gz
 share/man/man5/pc.5.gz
