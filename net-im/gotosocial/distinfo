@@ -1,5 +1,5 @@
-TIMESTAMP = 1711121393
-SHA256 (gotosocial_0.13.3_web-assets.tar.gz) = c42d40726fc22475d36e557c13adef641fabfe4b411fb132b4bef1e1e586928f
-SIZE (gotosocial_0.13.3_web-assets.tar.gz) = 1375558
-SHA256 (superseriousbusiness-gotosocial-v0.13.3_GH0.tar.gz) = 4134dae3ae284f74835338e997aeafc6da3496a6376c674057cf8920e868b5dc
-SIZE (superseriousbusiness-gotosocial-v0.13.3_GH0.tar.gz) = 63444587
+TIMESTAMP = 1711719327
+SHA256 (gotosocial_0.14.1_web-assets.tar.gz) = 70d3b42ee4f3831dc200ffaa8d3059f4582ce23ac7df2a59444a4a2a2a4e2430
+SIZE (gotosocial_0.14.1_web-assets.tar.gz) = 1417726
+SHA256 (superseriousbusiness-gotosocial-v0.14.1_GH0.tar.gz) = 430ae26031282ffc0db58d39f88d32f14fce44ef32188a2a853222693a638bae
+SIZE (superseriousbusiness-gotosocial-v0.14.1_GH0.tar.gz) = 64603596
