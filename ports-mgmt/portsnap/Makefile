@@ -1,6 +1,6 @@
 PORTNAME=	portsnap
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
@@ -18,8 +18,8 @@ SUB_FILES=		pkg-message
 PLIST_FILES=	"@sample etc/portsnap.conf.sample" \
 				libexec/make_index \
 				sbin/portsnap \
-				man/man5/portsnap.conf.5.gz \
-				man/man8/portsnap.8.gz
+				share/man/man5/portsnap.conf.5.gz \
+				share/man/man8/portsnap.8.gz
 
 .include <bsd.port.pre.mk>
 
@@ -36,8 +36,8 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portsnap ${STAGEDIR}/${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/make_index ${STAGEDIR}/${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/portsnap.conf.5 ${STAGEDIR}/${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/portsnap.8 ${STAGEDIR}/${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/portsnap.conf.5 ${STAGEDIR}/${PREFIX}/share/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/portsnap.8 ${STAGEDIR}/${PREFIX}/share/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/portsnap.conf		\
 		${STAGEDIR}/${PREFIX}/etc/portsnap.conf.sample
 
