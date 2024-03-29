@@ -1,5 +1,5 @@
-TIMESTAMP = 1699222057
-SHA256 (go/databases_timescaledb-tune/timescaledb-tune-v0.15.0/v0.15.0.mod) = bebb2c461ea9e89748067473975e588bb31ee4fd69308d7c597a3e0f3a4f24db
-SIZE (go/databases_timescaledb-tune/timescaledb-tune-v0.15.0/v0.15.0.mod) = 307
-SHA256 (go/databases_timescaledb-tune/timescaledb-tune-v0.15.0/v0.15.0.zip) = 47f1b1653d6d803a76c12c7b27fbf8923c55149c490bb3b4d373d87c85ccad2a
-SIZE (go/databases_timescaledb-tune/timescaledb-tune-v0.15.0/v0.15.0.zip) = 86361
+TIMESTAMP = 1711690762
+SHA256 (go/databases_timescaledb-tune/timescaledb-tune-v0.16.0/v0.16.0.mod) = bebb2c461ea9e89748067473975e588bb31ee4fd69308d7c597a3e0f3a4f24db
+SIZE (go/databases_timescaledb-tune/timescaledb-tune-v0.16.0/v0.16.0.mod) = 307
+SHA256 (go/databases_timescaledb-tune/timescaledb-tune-v0.16.0/v0.16.0.zip) = bfea7d96773fb1abf95de9ce85e2ec36100666723986848c5c1becc67466d785
+SIZE (go/databases_timescaledb-tune/timescaledb-tune-v0.16.0/v0.16.0.zip) = 86363
