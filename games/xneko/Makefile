@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic cat-and-mouse
 
 NO_WRKSUBDIR=	yes
