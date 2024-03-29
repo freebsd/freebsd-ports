@@ -1,6 +1,6 @@
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.2.20211105
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,6 +25,7 @@ USES=		autoreconf:build bison:alias gettext-tools \
 		gmake gnome iconv localbase pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SUB_FILES=	README.FreeBSD
 
