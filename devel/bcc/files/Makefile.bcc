@@ -13,6 +13,6 @@ SRCS		= bcc.c
 PROG		= bcc
 
 BINDIR		= ${LOCALPREFIX}/bin
-MANDIR		= ${LOCALPREFIX}/man/man
+MANDIR		= ${LOCALPREFIX}/share/man/man
 
 .include <bsd.prog.mk>

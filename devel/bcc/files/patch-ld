@@ -26,7 +26,7 @@
 -typeconv.o: typeconv.c const.h config.h type.h globvar.h
 -writebin.o: writebin.c const.h config.h obj.h type.h globvar.h
 +BINDIR		=${LOCALPREFIX}/bin
-+MANDIR		=${LOCALPREFIX}/man/man
++MANDIR		=${LOCALPREFIX}/share/man/man
 +
 +beforeinstall:
 +	-mkdir -p ${DESTDIR}${BINDIR}
