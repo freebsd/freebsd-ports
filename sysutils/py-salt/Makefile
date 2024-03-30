@@ -1,6 +1,6 @@
 PORTNAME=	salt
 PORTVERSION=	3006.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -103,6 +103,7 @@ post-patch:
 		-e 's|/srv/pillar|${ETCDIR}/pillar|' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|yumpkg5|pkgng|' ${WRKSRC}/conf/minion
+	@${REINPLACE_CMD} -e 's|"/usr/bin/python3"|"${PYTHON_CMD}"|' ${WRKSRC}/salt/auth/pam.py
 
 do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
