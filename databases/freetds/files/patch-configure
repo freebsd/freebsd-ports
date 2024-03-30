@@ -1,0 +1,38 @@
+--- configure.orig	2023-12-04 09:01:11 UTC
++++ configure
+@@ -19020,20 +19020,7 @@ fi
+   printf "%s\n" "#define HAVE_SQL_H 1" >>confdefs.h
+ 
+ fi
+-ac_fn_c_check_header_compile "$LINENO" "odbcss.h" "ac_cv_header_odbcss_h" "#ifdef HAVE_WINDOWS_H
+-# include <windows.h>
+-#endif
+-#ifdef HAVE_SQL_H
+-# include <sql.h>
+-#endif
+ 
+-"
+-if test "x$ac_cv_header_odbcss_h" = xyes
+-then :
+-  printf "%s\n" "#define HAVE_ODBCSS_H 1" >>confdefs.h
+-
+-fi
+-
+  if test "$ac_cv_header_odbcss_h" = "yes"; then
+   HAVE_ODBCSS_H_TRUE=
+   HAVE_ODBCSS_H_FALSE='#'
+@@ -21342,7 +21329,7 @@ elif test "x$with_iodbc" != "x" -a "x$with_iodbc" != "
+ 		with_iodbc="$PWD/$with_iodbc"
+ 	fi
+ 	CPPFLAGS="$CPPFLAGS -DIODBC"
+-	ODBC_INC="$with_iodbc/include"
++	ODBC_INC="$with_iodbc/include/libiodbc"
+ 	test -r "$ODBC_INC/isql.h" || as_fn_error $? "isql.h not found" "$LINENO" 5
+ 	test -r "$ODBC_INC/isqlext.h" || as_fn_error $? "isqlext.h not found" "$LINENO" 5
+ 	ODBC_INC="-I$ODBC_INC"
+@@ -26046,5 +26033,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

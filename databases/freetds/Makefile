@@ -1,7 +1,6 @@
 PORTNAME=	freetds
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
 		ftp://ftp.freetds.org/pub/freetds/stable/
@@ -18,7 +17,8 @@ USES=		cpe gettext gmake iconv libtool:keepla localbase:ldflags \
 		pkgconfig readline tar:bzip2
 USE_LDCONFIG=	yes
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-msdblib \
 		--enable-sybase-compat \
 		--sysconfdir=${ETCDIR} \
