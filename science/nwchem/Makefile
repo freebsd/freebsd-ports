@@ -30,13 +30,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		fortran gettext-runtime perl5 pkgconfig # gmake is temporarily removed, see https://savannah.gnu.org/bugs/?65533
+USES=		fortran gettext-runtime gmake perl5 pkgconfig
 USE_PERL5=	build
-
-# use gmake-4.3, see https://savannah.gnu.org/bugs/?65533
-BUILD_DEPENDS+=	gmake43>0:devel/gmake43
-CONFIGURE_ENV+=	MAKE=gmake
-MAKE_CMD=	gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
