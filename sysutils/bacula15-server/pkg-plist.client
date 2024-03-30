@@ -7,9 +7,9 @@ lib/libbaccfg.so
 lib/libbacfind-%%LIB_VERSION%%.so
 lib/libbacfind.so
 lib/bpipe-fd.so
-man/man8/bacula.8.gz
-man/man8/bacula-fd.8.gz
-man/man8/bconsole.8.gz
+share/man/man8/bacula.8.gz
+share/man/man8/bacula-fd.8.gz
+share/man/man8/bconsole.8.gz
 sbin/bacula-fd
 sbin/bbconsjson
 sbin/bfdjson
