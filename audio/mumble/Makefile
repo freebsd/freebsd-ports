@@ -1,12 +1,7 @@
 PORTNAME=	mumble
-DISTVERSION=	1.5.517
-PORTREVISION=	5
+DISTVERSION=	1.5.613
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/commit/
-PATCHFILES=	952dfaf4983097d7b9c9b5d9f5b01ffeb6d3463d.patch:-p1 # Fix detection of unbundled GSL
-PATCHFILES+=	589bfbfd634925b47b3a812745bc5a423b7f4285.patch:-p1 # Install 32-bit lib on FreeBSD
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
@@ -32,22 +27,22 @@ USES=		cmake compiler:c++17-lang cpe desktop-file-utils \
 		pkgconfig python:build qt:5 ssl xorg
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
-USE_QT=		buildtools:build concurrent core gui l10n linguist:build network \
+USE_QT=		buildtools:build concurrent core dbus gui l10n linguist:build network \
 		qmake:build sql sql-sqlite3:run svg widgets xml
 USE_XORG=	x11 xext xi
 
 CMAKE_ON=	client oss overlay plugins translations xinput2
 CMAKE_OFF=	bundled-gsl bundled-json bundle-qt-translations bundled-speex \
 		crash-report g15 server tracy update
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 
 CONFIGURE_ENV=	MUMBLE_PYTHON=${PYTHON_CMD}
 CXXFLAGS+=	-Wno-deprecated-declarations
 
 PLIST_SUB=	MUMBLE_VERSION="${DISTVERSION:R}"
 
-OPTIONS_DEFINE=		ALSA AVAHI DBUS JACK LTO PIPEWIRE PORTAUDIO PULSEAUDIO RNNOISE
+OPTIONS_DEFINE=		ALSA AVAHI JACK LTO PIPEWIRE PORTAUDIO PULSEAUDIO RNNOISE
 OPTIONS_DEFINE_amd64=	OVERLAY_32BIT
-OPTIONS_DEFAULT=	DBUS
 OPTIONS_DEFAULT_amd64=	OVERLAY_32BIT
 OPTIONS_RADIO=		SPEECH
 OPTIONS_RADIO_SPEECH=	QTSPEECH SPEECHD
@@ -63,9 +58,6 @@ ALSA_CMAKE_BOOL=	alsa
 
 AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
 AVAHI_CMAKE_BOOL=	zeroconf
-
-DBUS_USE=		QT=dbus
-DBUS_CMAKE_BOOL=	dbus
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_BOOL=	jackaudio
