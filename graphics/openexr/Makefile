@@ -1,11 +1,13 @@
 PORTNAME?=	openexr
-PORTVERSION=	3.2.2
-PORTREVISION?=	1
+PORTVERSION=	3.2.4
+PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
 MASTER_SITES=	https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/v1.0/:testimages \
+		https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
 		LOCAL/mandree/openexr/:DEFAULT \
 		LOCAL/mandree/openexr/:testimages
+DISTFILES=	${EXTRACT_ONLY}:DEFAULT
 DISTFILES+=	Beachball/multipart.0001.exr:testimages
 DISTFILES+=	Beachball/singlepart.0001.exr:testimages
 DISTFILES+=	Chromaticities/Rec709_YC.exr:testimages
@@ -22,9 +24,10 @@ DISTFILES+=	TestImages/GammaChart.exr:testimages
 DISTFILES+=	TestImages/GrayRampsHorizontal.exr:testimages
 DISTFILES+=	v2/LeftView/Balls.exr:testimages
 DISTFILES+=	v2/Stereo/Trunks.exr:testimages
+NO_WRKSUBDIR=	yes
 .endif
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTFILES:M*${EXTRACT_SUFX}}
+EXTRACT_ONLY=	openexr-v${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -39,8 +42,8 @@ LIB_DEPENDS?=	libImath-3_1.so.29:math/Imath \
 
 USES?=		cmake compiler:c++14-lang cpe pathfix pkgconfig
 
-USE_GITHUB=	yes
-GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
+#USE_GITHUB=	yes
+#GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 
 USE_LDCONFIG=	yes
 

@@ -1,4 +1,6 @@
-TIMESTAMP = 1707752683
+TIMESTAMP = 1711799214
+SHA256 (openexr/openexr-v3.2.4.tar.gz) = 0ad76308342bf8c08e55f5e53d685c4fc79f8a4e25924e6ab1d19d4f7e178d14
+SIZE (openexr/openexr-v3.2.4.tar.gz) = 18851022
 SHA256 (openexr/Beachball/multipart.0001.exr) = 0cd032069fbaa14a2766861fef9893ea66a6494ff64650725d3b26a500df774b
 SIZE (openexr/Beachball/multipart.0001.exr) = 2894260
 SHA256 (openexr/Beachball/singlepart.0001.exr) = 29719942ed3c095a8f8f111fc139fc4c28f446007f5bfce00177cae585b1a87a
@@ -31,5 +33,3 @@ SHA256 (openexr/v2/LeftView/Balls.exr) = 86503ff1b0a07372058127896d3858facf625e0
 SIZE (openexr/v2/LeftView/Balls.exr) = 5065464
 SHA256 (openexr/v2/Stereo/Trunks.exr) = 8a2f04e8d5b8ef1a5fd48198cf2059f1dd01129e4cccd7a4c96caf8c472676f7
 SIZE (openexr/v2/Stereo/Trunks.exr) = 3858752
-SHA256 (openexr/AcademySoftwareFoundation-openexr-3.2.2-v3.2.2_GH0.tar.gz) = 65de6459c245a4977ce4d7777e70b30d7ef48ec38e0cfb10205706ca50a8bf2e
-SIZE (openexr/AcademySoftwareFoundation-openexr-3.2.2-v3.2.2_GH0.tar.gz) = 18825996
