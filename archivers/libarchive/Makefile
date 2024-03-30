@@ -1,13 +1,14 @@
 PORTNAME=	libarchive
 DISTVERSION=	3.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libarchive.org/downloads/
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	3bd918d92f8c34ba12de9c6604d96f9e262a59fc.patch:-p1
+PATCHFILES=	3bd918d92f8c34ba12de9c6604d96f9e262a59fc.patch:-p1 \
+		6110e9c82d8ba830c3440f36b990483ceaaea52c.patch:-p1
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
