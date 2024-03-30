@@ -818,6 +818,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qtversion.h
 %%QT_INCDIR%%/QtCore/qtversionchecks.h
 %%QT_INCDIR%%/QtCore/qtypeinfo.h
+%%QT_INCDIR%%/QtCore/qtyperevision.h
 %%QT_INCDIR%%/QtCore/qtypes.h
 %%QT_INCDIR%%/QtCore/qurl.h
 %%QT_INCDIR%%/QtCore/qurlquery.h
@@ -2935,6 +2936,7 @@ lib/cmake/Qt6Sql/Qt6SqlConfig.cmake
 lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake
 lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake
 lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake
+lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake
 lib/cmake/Qt6Sql/Qt6SqlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sql/Qt6SqlTargets.cmake
 lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake
@@ -2952,6 +2954,7 @@ lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake
+lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake

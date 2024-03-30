@@ -6,7 +6,6 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-pointer-gestures-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-key-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-text-input-method-unstable-v1.h
-%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-toplevel-drag-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-qt-windowmanager.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-server-buffer-extension.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-surface-extension.h
@@ -20,6 +19,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-wp-primary-selection-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-output-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-shell.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-toplevel-drag-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandbuffer_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandclientbufferintegration_p.h
@@ -80,7 +80,6 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-pointer-gestures-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-key-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-text-input-method-unstable-v1-client-protocol.h
-%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-toplevel-drag-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-qt-windowmanager-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-server-buffer-extension-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-surface-extension-client-protocol.h
@@ -94,6 +93,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-wp-primary-selection-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-output-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-toplevel-drag-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtension
 %%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtensionTemplate
 %%QT_INCDIR%%/QtWaylandClient/QtWaylandClient

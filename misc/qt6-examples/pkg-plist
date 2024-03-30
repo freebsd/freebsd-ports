@@ -1026,7 +1026,6 @@
 %%QT_EXAMPLEDIR%%/demos/coffee/ApplicationFlowForm.ui.qml
 %%QT_EXAMPLEDIR%%/demos/coffee/CMakeLists.txt
 %%QT_EXAMPLEDIR%%/demos/coffee/ChoosingCoffee.qml
-%%QT_EXAMPLEDIR%%/demos/coffee/Coffee.qrc
 %%QT_EXAMPLEDIR%%/demos/coffee/CoffeeCard.qml
 %%QT_EXAMPLEDIR%%/demos/coffee/Colors.qml
 %%QT_EXAMPLEDIR%%/demos/coffee/Cup.qml
@@ -1040,6 +1039,7 @@
 %%QT_EXAMPLEDIR%%/demos/coffee/Ready.qml
 %%QT_EXAMPLEDIR%%/demos/coffee/Settings.qml
 %%QT_EXAMPLEDIR%%/demos/coffee/coffee.pro
+%%QT_EXAMPLEDIR%%/demos/coffee/coffeemachine.qrc
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_emptycup.png
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_modify.png
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_overview.png

@@ -1,0 +1,58 @@
+Add security patches to this file.
+
+Addresses the following security issues:
+
+- CVE-2023-7104
+
+From b8c9622b71d032a48412e342cff91fc0f3f5e3d9 Mon Sep 17 00:00:00 2001
+From: Michal Klocek <michal.klocek@qt.io>
+Date: Tue, 19 Mar 2024 21:20:24 +0100
+Subject: [PATCH] CVE-2023-7104
+
+Fix a buffer overread in the sessions extension
+that could occur when processing a corrupt changeset.
+
+Backported from:
+https://sqlite.org/src/info/0e4e7a05c4204b47
+
+Change-Id: I670960f13234971f48e8837a3935495a0d69a026
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/549500
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+(cherry picked from commit 147f7790602ab5d43bfe19f759074258ca7e975b)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/550068
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ .../sqlite/src/amalgamation/sqlite3.c          | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/chromium/third_party/sqlite/src/amalgamation/sqlite3.c b/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
+index b353aa88348..a0feb5d200c 100644
+--- src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
++++ src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
+@@ -218682,15 +218682,19 @@ static int sessionReadRecord(
+         }
+       }
+       if( eType==SQLITE_INTEGER || eType==SQLITE_FLOAT ){
+-        sqlite3_int64 v = sessionGetI64(aVal);
+-        if( eType==SQLITE_INTEGER ){
+-          sqlite3VdbeMemSetInt64(apOut[i], v);
++        if( (pIn->nData-pIn->iNext)<8 ){
++          rc = SQLITE_CORRUPT_BKPT;
+         }else{
+-          double d;
+-          memcpy(&d, &v, 8);
+-          sqlite3VdbeMemSetDouble(apOut[i], d);
++          sqlite3_int64 v = sessionGetI64(aVal);
++          if( eType==SQLITE_INTEGER ){
++            sqlite3VdbeMemSetInt64(apOut[i], v);
++          }else{
++            double d;
++            memcpy(&d, &v, 8);
++            sqlite3VdbeMemSetDouble(apOut[i], d);
++          }
++          pIn->iNext += 8;
+         }
+-        pIn->iNext += 8;
+       }
+     }
+   }
