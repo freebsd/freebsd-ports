@@ -1,4 +1,4 @@
---- src/paperless/settings.py.orig	2024-02-10 19:45:46 UTC
+--- src/paperless/settings.py.orig	2024-03-18 03:45:09 UTC
 +++ src/paperless/settings.py
 @@ -24,8 +24,6 @@ if configuration_path and os.path.exists(configuration
      load_dotenv(configuration_path)
@@ -18,7 +18,7 @@
  
  TRASH_DIR = os.getenv("PAPERLESS_TRASH_DIR")
  
-@@ -1002,7 +1000,7 @@ FILENAME_FORMAT_REMOVE_NONE = __get_boolean(
+@@ -1031,7 +1029,7 @@ FILENAME_FORMAT_REMOVE_NONE = __get_boolean(
  
  THUMBNAIL_FONT_NAME = os.getenv(
      "PAPERLESS_THUMBNAIL_FONT_NAME",

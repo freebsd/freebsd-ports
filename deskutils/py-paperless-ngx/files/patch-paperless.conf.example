@@ -1,6 +1,6 @@
---- paperless.conf.example.orig	2024-02-10 19:45:46 UTC
+--- paperless.conf.example.orig	2024-03-18 03:45:09 UTC
 +++ paperless.conf.example
-@@ -17,10 +17,10 @@
+@@ -17,11 +17,16 @@
  
  # Paths and folders
  
@@ -10,11 +10,18 @@
 +PAPERLESS_DATA_DIR=/var/db/paperless/data
  #PAPERLESS_TRASH_DIR=
 -#PAPERLESS_MEDIA_ROOT=../media
+-#PAPERLESS_STATICDIR=../static
 +PAPERLESS_MEDIA_ROOT=/var/db/paperless/media
- #PAPERLESS_STATICDIR=../static
++
++# Paperless should run behind a proxy that servers static files
++# (see `man 7 paperless`)
++# For experimental deployments, set PAPERLESS_STATICDIR
++# to `%%WWWDIR%%/static`
++PAPERLESS_STATICDIR=/var/empty
  #PAPERLESS_FILENAME_FORMAT=
  #PAPERLESS_FILENAME_FORMAT_REMOVE_NONE=
-@@ -40,6 +40,7 @@
+ 
+@@ -40,6 +45,7 @@
  
  # OCR settings
  
@@ -22,7 +29,7 @@
  #PAPERLESS_OCR_LANGUAGE=eng
  #PAPERLESS_OCR_MODE=skip
  #PAPERLESS_OCR_SKIP_ARCHIVE_FILE=never
-@@ -56,6 +57,7 @@
+@@ -56,6 +62,7 @@
  
  # Software tweaks
  
@@ -30,7 +37,7 @@
  #PAPERLESS_TASK_WORKERS=1
  #PAPERLESS_THREADS_PER_WORKER=1
  #PAPERLESS_TIME_ZONE=UTC
-@@ -92,3 +94,9 @@
+@@ -92,3 +99,9 @@
  
  #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
  #PAPERLESS_GS_BINARY=/usr/bin/gs

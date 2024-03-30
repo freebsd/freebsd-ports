@@ -221,6 +221,15 @@ at /flower.
 .Pp
 .Em \&It is important to properly secure a public facing web server.
 .Em Doing this properly is up to the administrator.
+.Sh SETUP WITHOUT A WEB SERVER
+Even though
+.Em not
+recommended, it is also possible to configure paperless to serve static
+artifacts directly.
+To do so, set
+.Va PAPERLESS_STATICDIR=%%WWWDIR%%/static
+in
+.Pa %%PREFIX%%/etc/paperless.conf .
 .Sh SFTP SETUP
 Setting up
 .Em sftp

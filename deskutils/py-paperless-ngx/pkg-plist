@@ -202,6 +202,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1042_consumptiontemplate_assign_custom_fields_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1043_alter_savedviewfilterrule_rule_type.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1044_workflow_workflowaction_workflowtrigger_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1045_alter_customfieldinstance_value_monetary.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1046_workflowaction_remove_all_correspondents_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
@@ -341,6 +343,10 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1043_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1044_workflow_workflowaction_workflowtrigger_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1044_workflow_workflowaction_workflowtrigger_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1046_workflowaction_remove_all_correspondents_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1046_workflowaction_remove_all_correspondents_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/models.py
@@ -365,15 +371,19 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/signals/__pycache__/handlers%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/signals/__pycache__/handlers%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/signals/handlers.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/static/accounts.css
 %%PYTHON_SITELIBDIR%%/paperless/documents/static/bootstrap.min.css
-%%PYTHON_SITELIBDIR%%/paperless/documents/static/signin.css
 %%PYTHON_SITELIBDIR%%/paperless/documents/tasks.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/email/base_message.txt
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/login.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/password_reset.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/password_reset_done.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/password_reset_from_key.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/password_reset_from_key_done.html
+%%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/signup.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/index.html
+%%PYTHON_SITELIBDIR%%/paperless/documents/templates/paperless-ngx/base.html
+%%PYTHON_SITELIBDIR%%/paperless/documents/templates/paperless-ngx/snippets/svg_logo.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/socialaccount/authentication_error.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/socialaccount/login.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/socialaccount/signup.html
@@ -437,6 +447,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_profile.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_remote_version.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_search.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_status.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_tasks.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_uisettings.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_workflows.py
@@ -582,11 +593,14 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless/middleware.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0001_initial.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0002_applicationconfiguration_app_logo_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0003_alter_applicationconfiguration_max_image_pixels.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0002_applicationconfiguration_app_logo_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0002_applicationconfiguration_app_logo_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0003_alter_applicationconfiguration_max_image_pixels%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0003_alter_applicationconfiguration_max_image_pixels%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/models.py
@@ -849,6 +863,9 @@ share/man/man7/paperless-ngx.7.gz
 %%DATADIR%%/logo/web/svg/Color logo with background.svg
 %%DATADIR%%/logo/web/svg/White logo - no background.svg
 %%DATADIR%%/logo/web/svg/square.svg
+%%WWWDIR%%/static/accounts.css
+%%WWWDIR%%/static/accounts.css.br
+%%WWWDIR%%/static/accounts.css.gz
 %%WWWDIR%%/static/admin/css/autocomplete.css
 %%WWWDIR%%/static/admin/css/autocomplete.css.br
 %%WWWDIR%%/static/admin/css/autocomplete.css.gz
@@ -2842,9 +2859,6 @@ share/man/man7/paperless-ngx.7.gz
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js.br
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js.gz
-%%WWWDIR%%/static/signin.css
-%%WWWDIR%%/static/signin.css.br
-%%WWWDIR%%/static/signin.css.gz
 @dir(paperless,paperless) %%WWWDIR%%/static
 @dir(paperless,paperless,0700) /var/db/paperless/consume/input
 @dir(root,paperless,0750) /var/db/paperless/consume
