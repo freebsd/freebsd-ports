@@ -1,5 +1,6 @@
 PORTNAME=	git-annex
 PORTVERSION=	10.20231227
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,12 +13,10 @@ BROKEN_aarch64=	compiler crashes
 
 BUILD_DEPENDS=	rsync:net/rsync \
 		git:devel/git \
-		gsha256sum:sysutils/coreutils \
 		ghc-9.4.8:lang/ghc94
 
 RUN_DEPENDS=	rsync:net/rsync \
-		git:devel/git \
-		gsha256sum:sysutils/coreutils
+		git:devel/git
 
 USES=		cabal perl5
 
