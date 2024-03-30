@@ -8,10 +8,7 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Version of JDK's `jar' command written entirely in C
 WWW=		https://fastjar.sourceforge.net/
 
-LICENSE=	GPLv2
-
-DEPRECATED=	Abandonware, last release in 2006 and is no longer being developed
-EXPIRATION_DATE=2024-03-31
+LICENSE=	GPLv2+
 
 USES=		gmake makeinfo perl5 tar:bzip2
 USE_PERL5=	build
