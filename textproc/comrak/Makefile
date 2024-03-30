@@ -1,6 +1,5 @@
 PORTNAME=	comrak
-DISTVERSION=	0.21.0
-PORTREVISION=	2
+DISTVERSION=	0.22.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,8 +44,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-sys-0.3.7 \
 		emojis-0.5.2 \
 		entities-1.0.1 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
+		errno-0.3.8 \
 		fancy-regex-0.7.1 \
 		fastrand-1.8.0 \
 		flate2-1.0.25 \
@@ -100,7 +98,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		redox_users-0.4.3 \
 		regex-1.7.0 \
 		regex-syntax-0.6.28 \
-		rustix-0.36.6 \
+		rustix-0.36.17 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.12 \
 		safemem-0.3.3 \
@@ -136,13 +134,24 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.52.4 \
 		xdg-2.4.1 \
 		xml-rs-0.8.14 \
 		yaml-rust-0.4.5
