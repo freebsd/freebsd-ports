@@ -296,7 +296,6 @@ include/freeradius/vqp.h
 %%UNBOUND%%%%LIBDIR%%/rlm_unbound.a
 %%UNBOUND%%%%LIBDIR%%/rlm_unbound.la
 %%UNBOUND%%%%LIBDIR%%/rlm_unbound.so
-%%UNBOUND%%man/man5/rlm_unbound.5.gz
 %%LIBDIR%%/rlm_test.a
 %%LIBDIR%%/rlm_test.la
 %%LIBDIR%%/rlm_test.so
