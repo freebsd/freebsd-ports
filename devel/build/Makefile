@@ -3,15 +3,12 @@ PORTVERSION=	0.3.10
 CATEGORIES=	devel
 MASTER_SITES=	https://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Massively-parallel build system implemented on top of GNU make
 WWW=		https://www.codesynthesis.com/projects/build/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Last release in 2014 and no upstream activity since
-EXPIRATION_DATE=2024-03-31
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash

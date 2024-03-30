@@ -4,14 +4,11 @@ PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	IRC bot written in C for UNIX, Windows, and AmigaOS
 WWW=		https://dancer.sourceforge.net/
 
-DEPRECATED=	Abandonware, last release in 2001 and no longer developed
-EXPIRATION_DATE=2024-03-31
-
-PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CSPECIAL="${CFLAGS}" LDFLAGS="${LDFLAGS}"
