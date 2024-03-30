@@ -5,21 +5,17 @@ PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Feature-rich scriptable IRC client
 WWW=		http://www.bitchx.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-DEPRECATED=	Last stable release 2014, last upstream commit in 2019. There have been multiple concerns over security and it also lacks unicode support. Please consider using irc/irssi  
-EXPIRATION_DATE=2024-03-31
-
 USES=		cpe gmake ncurses
-
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
+CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
@@ -47,18 +43,14 @@ PLUGINS_CONFIGURE_WITH=	plugins="${PLUGIN_LIST:C/\$$/,/g}"
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	ssl="${OPENSSLBASE}"
 
-PLUGIN_LIST=	abot acro arcfour autocycle blowfish cavlink cdrom encrypt \
+PLUGIN_LIST=	abot acro autocycle blowfish cavlink cdrom encrypt \
 		europa fserv hint nap nicklist pkga possum qbx qmail wavplay
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|SSLeay|ERR_get_error|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|impress_me,|(int (*)(void *, char *))&|' \
+		${WRKSRC}/dll/fserv/fserv.c
 
 post-patch-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

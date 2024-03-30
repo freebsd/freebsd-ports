@@ -9,7 +9,7 @@ share/man/man1/BitchX.1.gz
 @dir %%DATADIR%%/plugins
 %%PLUGINS%%%%DATADIR%%/plugins/BitchX.hints
 %%PLUGINS%%%%DATADIR%%/plugins/acro.so
-%%PLUGINS%%%%DATADIR%%/plugins/arcfour.so
+@comment %%PLUGINS%%%%DATADIR%%/plugins/arcfour.so
 %%PLUGINS%%%%DATADIR%%/plugins/autobot.so
 %%PLUGINS%%%%DATADIR%%/plugins/autocycle.so
 %%PLUGINS%%%%DATADIR%%/plugins/blowfish.so
