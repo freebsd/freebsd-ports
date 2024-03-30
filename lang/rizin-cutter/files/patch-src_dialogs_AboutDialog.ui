@@ -1,0 +1,22 @@
+--- src/dialogs/AboutDialog.ui.orig	2024-03-28 18:01:11 UTC
++++ src/dialogs/AboutDialog.ui
+@@ -53,6 +53,9 @@
+        <property name="text">
+         <string>Check for updates on start</string>
+        </property>
++       <property name="disabled">
++        <bool>true</bool>
++       </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+@@ -65,6 +68,9 @@
+        </property>
+        <property name="text">
+         <string>Check for updates</string>
++       </property>
++       <property name="disabled">
++        <bool>true</bool>
+        </property>
+       </widget>
+      </item>
