@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-PORTVERSION=	3.1.12.2
+PORTVERSION=	3.1.12.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -9,11 +9,6 @@ WWW=		https://pandoc.org/
 LICENSE=	GPLv2+
 
 USES=		cabal
-
-OPTIONS_DEFINE=		EMBED_DATA
-
-EMBED_DATA_DESC=	Embed data files in binary for relocatable executable
-EMBED_DATA_CABAL_FLAGS=	embed_data_files
 
 USE_CABAL=	Glob-0.10.2_3 \
 		JuicyPixels-3.3.8_1 \
@@ -40,7 +35,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.1_2 \
+		bifunctors-5.6.2 \
 		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0 \
@@ -76,7 +71,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		data-fix-0.3.2_5 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		djot-0.1.1.2 \
+		djot-0.1.1.3 \
 		dlist-1.0_1 \
 		doclayout-0.4.0.1 \
 		doctemplates-0.11 \
@@ -90,7 +85,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hashable-1.4.3.0_1 \
 		haskell-lexer-1.1.1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.10_1 \
+		hsc2hs-0.68.10_2 \
 		hslua-2.3.1 \
 		hslua-aeson-2.3.1 \
 		hslua-classes-2.3.1 \
@@ -108,7 +103,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hslua-packaging-2.3.1 \
 		hslua-repl-0.1.2 \
 		hslua-typing-0.1.1 \
-		http-client-0.7.16 \
+		http-client-0.7.17 \
 		http-client-tls-0.3.6.3 \
 		http-types-0.12.4 \
 		indexed-traversable-0.1.3 \
@@ -131,14 +126,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		ordered-containers-0.2.3 \
-		pandoc-3.1.12.2 \
+		pandoc-3.1.12.3 \
 		pandoc-lua-engine-0.2.1.3 \
 		pandoc-lua-marshal-0.2.5 \
 		pandoc-types-1.23.1_1 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
-		primitive-0.9.0.0 \
+		primitive-0.9.0.0_1 \
 		random-1.2.1.2 \
 		regex-base-0.94.0.2_4 \
 		regex-tdfa-1.3.2.2_2 \
@@ -160,21 +155,21 @@ USE_CABAL=	Glob-0.10.2_3 \
 		streaming-commons-0.2.2.6_1 \
 		strict-0.5_1 \
 		syb-0.7.2.4 \
-		tagged-0.8.8 \
+		tagged-0.8.8_1 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
 		texmath-0.12.8.7 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1_1 \
 		text-short-0.1.5_3 \
-		th-abstraction-0.6.0.0_1 \
-		th-compat-0.1.4_4 \
-		th-lift-0.8.4 \
+		th-abstraction-0.6.0.0_2 \
+		th-compat-0.1.5 \
+		th-lift-0.8.4_2 \
 		th-lift-instances-0.1.20 \
 		these-1.2_1 \
 		time-compat-1.9.6.1_6 \
-		tls-2.0.1_1 \
-		toml-parser-2.0.0.0 \
+		tls-2.0.1_2 \
+		toml-parser-2.0.0.0_1 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.11.1 \
 		typst-0.5.0.2 \
@@ -188,9 +183,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		unordered-containers-0.2.20_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5.1 \
-		vector-0.13.1.0 \
+		vector-0.13.1.0_1 \
 		vector-algorithms-0.9.0.1_3 \
-		vector-stream-0.1.0.1 \
+		vector-stream-0.1.0.1_1 \
 		witherable-0.4.2_4 \
 		xml-1.3.14_2 \
 		xml-conduit-1.9.1.3 \
@@ -198,13 +193,16 @@ USE_CABAL=	Glob-0.10.2_3 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.1 \
 		zlib-0.6.3.0_4
-
 CABAL_FLAGS=	lua
-
-HACKAGE_DISTNAME=	pandoc-cli-${PORTVERSION}
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
+OPTIONS_DEFINE=		EMBED_DATA
 OPTIONS_SUB=	yes
+
+EMBED_DATA_DESC=	Embed data files in binary for relocatable executable
+EMBED_DATA_CABAL_FLAGS=	embed_data_files
+
+HACKAGE_DISTNAME=	pandoc-cli-${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
