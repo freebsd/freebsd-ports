@@ -1,7 +1,7 @@
 bin/mumble-server
-etc/mumble/MumbleServer.ice
+@group mumble-server
 @sample etc/mumble/mumble-server.ini.sample
-share/dbus-1/system.d/mumble-server.conf
+@group wheel
 share/man/man1/mumble-server.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY.md

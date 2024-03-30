@@ -1,5 +1,5 @@
 PORTNAME=	mumble-server
-DISTVERSION=	1.5.517
+DISTVERSION=	1.5.613
 CATEGORIES=	audio net
 MASTER_SITES=	https://github.com/${PORTNAME:S/-server//}-voip/${PORTNAME:S/-server//}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME:S/-server//}-${DISTVERSION}
@@ -17,28 +17,24 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 
 USES=		cmake compiler:c++17-lang pkgconfig python:build qt:5 ssl
 USE_CXXSTD=	c++17
-USE_QT=		buildtools:build core network qmake:build sql xml
+USE_QT=		buildtools:build core dbus network qmake:build sql xml
 
 CMAKE_ON=	server
 CMAKE_OFF=	client
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 
 CXXFLAGS+=	-Wno-deprecated-declarations
 
 USE_RC_SUBR=	mumble_server
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-EXTRA_PATCHES+=	${.CURDIR}/../mumble/files/patch-protobuf
-
-OPTIONS_DEFINE=		AVAHI DBUS DOCS ICE LTO
+OPTIONS_DEFINE=		AVAHI DOCS ICE LTO
 OPTIONS_DEFAULT=	AVAHI LTO MYSQL SQLITE
 OPTIONS_MULTI=		SQL
 OPTIONS_MULTI_SQL=	MYSQL PGSQL SQLITE
 
 AVAHI_CMAKE_BOOL=	zeroconf
 AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
-
-DBUS_USE=		QT=dbus
-DBUS_CMAKE_BOOL=	dbus
 
 ICE_DESC=		Ice Support
 ICE_CMAKE_BOOL=		ice
@@ -63,12 +59,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/mumble/mumble-server.ini
 	${MV}   ${STAGEDIR}${PREFIX}/etc/mumble/mumble-server.ini \
 		${STAGEDIR}${PREFIX}/etc/mumble/mumble-server.ini.sample
-.for f in bin/mumble-server-user-wrapper share/man/man1/mumble-server-user-wrapper.1 \
-	etc/sysconfig.d/mumble-server.conf etc/systemd/system/mumble-server.service
+.for f in bin/mumble-server-user-wrapper share/man/man1/mumble-server-user-wrapper.1
 	${RM} ${STAGEDIR}${PREFIX}/${f}
-.endfor
-.for d in etc/sysconfig.d etc/systemd/system etc/systemd
-	${RMDIR} ${STAGEDIR}${PREFIX}/${d}
 .endfor
 
 do-install-DOCS-on:
