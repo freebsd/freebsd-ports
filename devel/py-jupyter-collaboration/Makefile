@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-collaboration
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyter-collaboration/releases/download/v${PORTVERSION}/
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.5:devel/py-hatch-
 		${PYTHON_PKGNAMEPREFIX}hatch-nodejs-version>=0:devel/py-hatch-nodejs-version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.4.0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.7.0:devel/py-jupyter-events@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.10.0:devel/py-jupyter-events@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.0.0<3.0.0:devel/py-jupyter-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-fileid>=0.7.0<1:devel/py-jupyter-server-fileid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-ydoc>=2.0.0<3.0.0:devel/py-jupyter-ydoc@${PY_FLAVOR} \
