@@ -1,3 +1,3 @@
-TIMESTAMP = 1684104304
-SHA256 (zstd-1.5.5.tar.zst) = ce264bca60eb2f0e99e4508cffd0d4d19dd362e84244d7fc941e79fa69ccf673
-SIZE (zstd-1.5.5.tar.zst) = 1817544
+TIMESTAMP = 1711540146
+SHA256 (zstd-1.5.6.tar.zst) = 4aa8dd1c1115c0fd6b6b66c35c7f6ce7bd58cc1dfd3e4f175b45b39e84b14352
+SIZE (zstd-1.5.6.tar.zst) = 1845516

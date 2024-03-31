@@ -1,6 +1,5 @@
 bin/unzstd
 bin/zstd
-bin/zstd-frugal
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless

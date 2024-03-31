@@ -18,7 +18,7 @@ list(APPEND _cmake_import_check_files_for_zstd::libzstd_shared "${_IMPORT_PREFIX
 # Import target "zstd::libzstd_static" for configuration "%%BUILD_TYPE_MIXED%%"
 set_property(TARGET zstd::libzstd_static APPEND PROPERTY IMPORTED_CONFIGURATIONS %%BUILD_TYPE_CAPS%%)
 set_target_properties(zstd::libzstd_static PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_%%BUILD_TYPE_CAPS%% "C"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_%%BUILD_TYPE_CAPS%% "ASM;C"
   IMPORTED_LOCATION_%%BUILD_TYPE_CAPS%% "${_IMPORT_PREFIX}/lib/libzstd.a"
   )
 
