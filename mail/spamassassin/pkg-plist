@@ -17,6 +17,7 @@ bin/spamd
 @sample %%ETCDIR%%/v342.pre.sample
 @sample %%ETCDIR%%/v343.pre.sample
 @sample %%ETCDIR%%/v400.pre.sample
+@sample %%ETCDIR%%/v401.pre.sample
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
@@ -121,6 +122,11 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/WLBLEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/WelcomeListSubject.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PluginHandler.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Pyzor.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Pyzor/Client.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Pyzor/Digest.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Pyzor/Digest/Pieces.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Pyzor/Digest/StripHtml.pm
 %%SITE_PERL%%/Mail/SpamAssassin/RegistryBoundaries.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Reporter.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SQLBasedAddrList.pm
@@ -218,6 +224,11 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::VBounce.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WelcomeListSubject.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::PluginHandler.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Pyzor.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Pyzor::Client.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Pyzor::Digest.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Pyzor::Digest::Pieces.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Pyzor::Digest::StripHtml.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::RegistryBoundaries.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::SQLBasedAddrList.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::SubProcBackChannel.3.gz
