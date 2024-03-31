@@ -3078,3 +3078,4 @@ devel/rubygem-sidekiq-cron18|devel/rubygem-sidekiq-cron|2024-03-31|Remove obsole
 devel/rubygem-sidekiq6|devel/rubygem-sidekiq|2024-03-31|Remove obsoleted port. Use devel/rubygem-sidekiq instead
 net/rubygem-google-cloud-storage144|net/rubygem-google-cloud-storage|2024-03-31|Remove obsoleted port. Use net/rubygem-google-cloud-storage instead
 security/rubygem-net-sftp2|security/rubygem-net-sftp|2024-03-31|Remove obsoleted port. Use security/rubygem-net-sftp instead
+textproc/rubygem-cucumber-gherkin26|textproc/rubygem-cucumber-gherkin|2024-03-31|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
