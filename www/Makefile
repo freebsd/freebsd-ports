@@ -2334,6 +2334,7 @@
     SUBDIR += smarty
     SUBDIR += smarty2
     SUBDIR += smarty3
+    SUBDIR += smarty4
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += so
