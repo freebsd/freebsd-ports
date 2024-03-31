@@ -138,7 +138,7 @@ PYCRYPTOGRAPHY_DEFAULT?=	legacy
 PYTHON_DEFAULT?=	3.9
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
-# Possible values: 3.0, 3.1, 3.2, 3.3
+# Possible values: 3.1, 3.2, 3.3
 RUBY_DEFAULT?=		3.2
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
