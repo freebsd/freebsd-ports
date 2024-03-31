@@ -3063,3 +3063,4 @@ net-p2p/tooth||2024-03-24|Has expired: Project has been renamed to Tuba. Conside
 www/tidy-devel|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
 www/tidy-lib|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
 lang/ruby30||2024-03-31|Has expired: Please migrate to newer versions. Ruby 3.0 will reach its EoL on March 30, 2024
+devel/py-pybind11210|devel/py-pybind11|2024-03-31|Remove obsoleted port. Use devel/py-pybind11 instead
