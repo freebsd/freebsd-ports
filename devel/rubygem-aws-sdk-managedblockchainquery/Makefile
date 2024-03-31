@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-managedblockchainquery
-PORTVERSION=	1.8.0
+PORTVERSION=	1.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
