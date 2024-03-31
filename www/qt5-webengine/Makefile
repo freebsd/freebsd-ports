@@ -19,7 +19,6 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	5
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -28,7 +27,8 @@ COMMENT=	Qt 5 library to render web content
 
 BUILD_DEPENDS=	bison:devel/bison \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libdouble-conversion.so:devel/double-conversion \
