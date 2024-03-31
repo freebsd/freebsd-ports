@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2024-03-17 13:17:26 UTC
++++ pyproject.toml
+@@ -1,11 +1,11 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools>=68",
++  "setuptools>=61",
+ ]
+ 
+ [project]
+-name = "DBUtils"
++name = "dbutils"
+ version = "3.1.0"
+ description = "Database connections for multi-threaded environments."
+ license = {text = "MIT License"}
