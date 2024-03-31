@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.3.9
+DISTVERSION=	2024.3.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.14 \
 		async-compression-0.4.6 \
-		autocfg-1.1.0 \
+		autocfg-1.2.0 \
 		backtrace-0.3.71 \
 		base64-0.21.7 \
 		base64-0.22.0 \
@@ -48,11 +48,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		calmio_filters-0.1.0 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		chrono-0.4.35 \
+		chrono-0.4.37 \
 		ci_info-0.14.14 \
-		clap-4.5.3 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_derive-4.5.3 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		clap_mangen-0.2.20 \
 		color-eyre-0.6.3 \
@@ -149,11 +149,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
-		insta-1.36.1 \
+		insta-1.38.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
 		itertools-0.12.1 \
-		itoa-1.0.10 \
+		itoa-1.0.11 \
 		jobserver-0.1.28 \
 		js-sys-0.3.69 \
 		kdl-4.6.0 \
@@ -164,7 +164,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
 		mime-0.3.17 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.101 \
+		openssl-sys-0.9.102 \
 		os_pipe-1.1.5 \
 		owo-colors-3.5.0 \
 		papergrid-0.11.0 \
@@ -197,11 +197,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_generator-2.7.8 \
 		pest_meta-2.7.8 \
 		petgraph-0.6.4 \
-		pin-project-lite-0.2.13 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.30 \
-		platforms-3.3.0 \
+		platforms-3.4.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
@@ -222,7 +222,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.4.1 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.3 \
 		reqwest-0.11.27 \
 		ring-0.17.8 \
 		rmp-0.8.12 \
@@ -240,14 +240,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		sct-0.7.1 \
-		security-framework-2.9.2 \
-		security-framework-sys-2.9.1 \
+		security-framework-2.10.0 \
+		security-framework-sys-2.10.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.22 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde_json-1.0.115 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -258,7 +258,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.1 \
 		signature-2.2.0 \
-		similar-2.4.0 \
+		similar-2.5.0 \
 		simplelog-0.12.2 \
 		slab-0.4.9 \
 		socket2-0.5.6 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.55 \
+		syn-2.0.57 \
 		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
@@ -293,7 +293,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-macros-0.2.17 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.36.0 \
+		tokio-1.37.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
@@ -371,7 +371,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
 		xx-0.2.5 \
-		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
 		zip-0.6.6 \
