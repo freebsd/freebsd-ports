@@ -77,9 +77,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/installer_uninstaller_utils.rb
 %%RUBY_SITELIBDIR%%/rubygems/local_remote_options.rb
 %%RUBY_SITELIBDIR%%/rubygems/name_tuple.rb
-%%RUBY_SITELIBDIR%%/rubygems/net/http.rb
 %%RUBY_SITELIBDIR%%/rubygems/openssl.rb
-%%RUBY_SITELIBDIR%%/rubygems/optparse.rb
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/digest_io.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/file_source.rb
@@ -164,8 +162,6 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
-%%RUBY_SITELIBDIR%%/rubygems/timeout.rb
-%%RUBY_SITELIBDIR%%/rubygems/tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
 %%RUBY_SITELIBDIR%%/rubygems/unknown_command_spell_checker.rb
 %%RUBY_SITELIBDIR%%/rubygems/update_suggestion.rb
@@ -245,6 +241,10 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendor/uri/lib/uri/ws.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/uri/lib/uri/wss.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_molinillo.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendored_net_http.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendored_optparse.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendored_timeout.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendored_tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
 %%RUBY_SITELIBDIR%%/rubygems/yaml_serializer.rb
