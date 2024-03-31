@@ -69,6 +69,7 @@
 %%DATADIR%%/Definitions/acgrip.yml
 %%DATADIR%%/Definitions/acidlounge.yml
 %%DATADIR%%/Definitions/acrossthetasman.yml
+%%DATADIR%%/Definitions/adbt.yml
 %%DATADIR%%/Definitions/aftershock.yml
 %%DATADIR%%/Definitions/agsvpt.yml
 %%DATADIR%%/Definitions/aidoruonline.yml
@@ -154,6 +155,7 @@
 %%DATADIR%%/Definitions/crt2fa.yml
 %%DATADIR%%/Definitions/dajiao.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
+%%DATADIR%%/Definitions/dariustracker.yml
 %%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/deildu.yml
