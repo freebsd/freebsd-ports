@@ -1,5 +1,5 @@
 PORTNAME=	cucumber
-PORTVERSION=	9.1.2
+PORTVERSION=	9.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,17 +11,17 @@ WWW=		https://cucumber.io/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-builder>=3.2.4<4:devel/rubygem-builder \
-		rubygem-cucumber-ci-environment>=9.2.0:devel/rubygem-cucumber-ci-environment \
-		rubygem-cucumber-core12>=12.0<13:devel/rubygem-cucumber-core12 \
+RUN_DEPENDS=	rubygem-builder>=3.2<4:devel/rubygem-builder \
+		rubygem-cucumber-ci-environment>=9<11:devel/rubygem-cucumber-ci-environment \
+		rubygem-cucumber-core>=13<14:devel/rubygem-cucumber-core \
 		rubygem-cucumber-cucumber-expressions>=17.0<18:devel/rubygem-cucumber-cucumber-expressions \
-		rubygem-cucumber-gherkin26>=24<27:textproc/rubygem-cucumber-gherkin26 \
+		rubygem-cucumber-gherkin27>=24<28:textproc/rubygem-cucumber-gherkin27 \
 		rubygem-cucumber-html-formatter>=20.3<22:textproc/rubygem-cucumber-html-formatter \
 		rubygem-cucumber-messages>=19<25:devel/rubygem-cucumber-messages \
 		rubygem-diff-lcs>=1.5<2:textproc/rubygem-diff-lcs \
-		rubygem-mini_mime>=1.1.5<2:mail/rubygem-mini_mime \
-		rubygem-multi_test>=1.1.0<2:devel/rubygem-multi_test \
-		rubygem-sys-uname>=1.2.3<2:sysutils/rubygem-sys-uname
+		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
+		rubygem-multi_test>=1.1<2:devel/rubygem-multi_test \
+		rubygem-sys-uname>=1.2<2:sysutils/rubygem-sys-uname
 
 USES=		gem
 
