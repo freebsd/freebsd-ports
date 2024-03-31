@@ -1,4 +1,6 @@
 Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112a98ef14602bf99a221
+		https://github.com/fichtner/php-radius/commit/8a756ae7a411b7f7fdbcb44102736b09d0d1cec5
+		https://github.com/fichtner/php-radius/commit/a82b0b9e3c45241f9a9e67dabbe21face8ad6282
 
 --- pecl-compat/src/zend_resource.h.orig	2016-02-15 15:11:50 UTC
 +++ pecl-compat/src/zend_resource.h
@@ -53,7 +55,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  {
  	ZVAL_RES(zv, zend_register_resource(ptr, rsrc_type));
  }
-@@ -111,7 +111,7 @@ static void compat_zend_register_resource(zval *zv, vo
+@@ -111,7 +111,7 @@ typedef zend_rsrc_list_entry zend_resource;
  /* Used for destructors. */
  typedef zend_rsrc_list_entry zend_resource;
  
@@ -100,7 +102,173 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  	if (!radh) { \
  		RETURN_FALSE; \
  	}
-@@ -165,7 +165,7 @@ PHP_FUNCTION(radius_auth_open)
+@@ -65,6 +65,102 @@ ZEND_DECLARE_MODULE_GLOBALS(radius)
+ ZEND_DECLARE_MODULE_GLOBALS(radius)
+ */
+ 
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_auth_open, 0, 0, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_acct_open arginfo_radius_auth_open
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_close, 0, 0, 1)
++	ZEND_ARG_INFO(0, "radius_handle")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_strerror arginfo_radius_close
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_config, 0, 0, 2)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "file")
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_add_server, 0, 0, 6)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "hostname")
++	ZEND_ARG_INFO(0, "port")
++	ZEND_ARG_INFO(0, "secret")
++	ZEND_ARG_INFO(0, "timeout")
++	ZEND_ARG_INFO(0, "max_tries")
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_create_request, 0, 0, 2)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "type")
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_put_string, 0, 0, 3)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "type")
++	ZEND_ARG_INFO(0, "value")
++	ZEND_ARG_INFO(0, "options")
++	ZEND_ARG_INFO(0, "tag")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_put_int	arginfo_radius_put_string
++#define arginfo_radius_put_attr	arginfo_radius_put_string
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_put_addr, 0, 0, 3)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "type")
++	ZEND_ARG_INFO(0, "addr")
++	ZEND_ARG_INFO(0, "options")
++	ZEND_ARG_INFO(0, "tag")
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_put_vendor_string, 0, 0, 4)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "vendor")
++	ZEND_ARG_INFO(0, "type")
++	ZEND_ARG_INFO(0, "value")
++	ZEND_ARG_INFO(0, "options")
++	ZEND_ARG_INFO(0, "tag")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_put_vendor_int	arginfo_radius_put_vendor_string
++#define arginfo_radius_put_vendor_attr	arginfo_radius_put_vendor_string
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_put_vendor_addr, 0, 0, 4)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "vendor")
++	ZEND_ARG_INFO(0, "type")
++	ZEND_ARG_INFO(0, "addr")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_send_request	arginfo_radius_close
++#define arginfo_radius_get_attr		arginfo_radius_close
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_get_tagged_attr_data, 0, 0, 1)
++	ZEND_ARG_INFO(0, "data")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_get_tagged_attr_tag	arginfo_radius_get_tagged_attr_data
++#define arginfo_radius_get_vendor_attr		arginfo_radius_get_tagged_attr_data
++#define arginfo_radius_cvt_addr			arginfo_radius_get_tagged_attr_data
++#define arginfo_radius_cvt_int			arginfo_radius_get_tagged_attr_data
++#define arginfo_radius_cvt_string		arginfo_radius_get_tagged_attr_data
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_salt_encrypt_attr, 0, 0, 2)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "data")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_request_authenticator	arginfo_radius_close
++#define arginfo_radius_server_secret		arginfo_radius_close
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_radius_demangle, 0, 0, 2)
++	ZEND_ARG_INFO(0, "radius_handle")
++	ZEND_ARG_INFO(0, "mangled")
++ZEND_END_ARG_INFO()
++
++#define arginfo_radius_demangle_mppe_key arginfo_radius_demangle
++
+ /* True global resources - no need for thread safety here */
+ static int le_radius;
+ 
+@@ -73,34 +169,34 @@ zend_function_entry radius_functions[] = {
+  * Every user visible function must have an entry in radius_functions[].
+  */
+ zend_function_entry radius_functions[] = {
+-	PHP_FE(radius_auth_open,    NULL)
+-	PHP_FE(radius_acct_open,    NULL)
+-	PHP_FE(radius_close,        NULL)
+-	PHP_FE(radius_strerror,     NULL)
+-	PHP_FE(radius_config,       NULL)
+-	PHP_FE(radius_add_server,	NULL)
+-	PHP_FE(radius_create_request,	NULL)
+-	PHP_FE(radius_put_string,	NULL)
+-	PHP_FE(radius_put_int,	NULL)
+-	PHP_FE(radius_put_attr,	NULL)
+-	PHP_FE(radius_put_addr,	NULL)
+-	PHP_FE(radius_put_vendor_string,	NULL)
+-	PHP_FE(radius_put_vendor_int,	NULL)
+-	PHP_FE(radius_put_vendor_attr,	NULL)
+-	PHP_FE(radius_put_vendor_addr,	NULL)
+-	PHP_FE(radius_send_request,	NULL)
+-	PHP_FE(radius_get_attr,	NULL)
+-	PHP_FE(radius_get_tagged_attr_data, NULL)
+-	PHP_FE(radius_get_tagged_attr_tag, NULL)
+-	PHP_FE(radius_get_vendor_attr,	NULL)
+-	PHP_FE(radius_cvt_addr,	NULL)
+-	PHP_FE(radius_cvt_int,	NULL)
+-	PHP_FE(radius_cvt_string,	NULL)
+-	PHP_FE(radius_salt_encrypt_attr,	NULL)
+-	PHP_FE(radius_request_authenticator,	NULL)
+-	PHP_FE(radius_server_secret,	NULL)
+-	PHP_FE(radius_demangle,	NULL)    
+-	PHP_FE(radius_demangle_mppe_key,	NULL)    
++	PHP_FE(radius_auth_open,		arginfo_radius_auth_open)
++	PHP_FE(radius_acct_open,		arginfo_radius_acct_open)
++	PHP_FE(radius_close,			arginfo_radius_close)
++	PHP_FE(radius_strerror,			arginfo_radius_strerror)
++	PHP_FE(radius_config,			arginfo_radius_config)
++	PHP_FE(radius_add_server,		arginfo_radius_add_server)
++	PHP_FE(radius_create_request,		arginfo_radius_create_request)
++	PHP_FE(radius_put_string,		arginfo_radius_put_string)
++	PHP_FE(radius_put_int,			arginfo_radius_put_int)
++	PHP_FE(radius_put_attr,			arginfo_radius_put_attr)
++	PHP_FE(radius_put_addr,			arginfo_radius_put_addr)
++	PHP_FE(radius_put_vendor_string,	arginfo_radius_put_vendor_string)
++	PHP_FE(radius_put_vendor_int,		arginfo_radius_put_vendor_int)
++	PHP_FE(radius_put_vendor_attr,		arginfo_radius_put_vendor_attr)
++	PHP_FE(radius_put_vendor_addr,		arginfo_radius_put_vendor_addr)
++	PHP_FE(radius_send_request,		arginfo_radius_send_request)
++	PHP_FE(radius_get_attr,			arginfo_radius_get_attr)
++	PHP_FE(radius_get_tagged_attr_data,	arginfo_radius_get_tagged_attr_data)
++	PHP_FE(radius_get_tagged_attr_tag,	arginfo_radius_get_tagged_attr_tag)
++	PHP_FE(radius_get_vendor_attr,		arginfo_radius_get_vendor_attr)
++	PHP_FE(radius_cvt_addr,			arginfo_radius_cvt_addr)
++	PHP_FE(radius_cvt_int,			arginfo_radius_cvt_int)
++	PHP_FE(radius_cvt_string,		arginfo_radius_cvt_string)
++	PHP_FE(radius_salt_encrypt_attr,	arginfo_radius_salt_encrypt_attr)
++	PHP_FE(radius_request_authenticator,	arginfo_radius_request_authenticator)
++	PHP_FE(radius_server_secret,		arginfo_radius_server_secret)
++	PHP_FE(radius_demangle,			arginfo_radius_demangle)
++	PHP_FE(radius_demangle_mppe_key,	arginfo_radius_demangle_mppe_key)
+ 	{NULL, NULL, NULL}	/* Must be the last line in radius_functions[] */
+ };
+ /* }}} */
+@@ -165,7 +261,7 @@ PHP_FUNCTION(radius_auth_open)
  	struct rad_handle *radh = rad_auth_open();
  
  	if (radh != NULL) {
@@ -109,7 +277,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  	} else {
  		RETURN_FALSE;
  	}
-@@ -178,7 +178,7 @@ PHP_FUNCTION(radius_acct_open)
+@@ -178,7 +274,7 @@ PHP_FUNCTION(radius_acct_open)
  	struct rad_handle *radh = rad_acct_open();
  
  	if (radh != NULL) {
@@ -118,7 +286,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  	} else {
  		RETURN_FALSE;
  	}
-@@ -191,13 +191,13 @@ PHP_FUNCTION(radius_close)
+@@ -191,13 +287,13 @@ PHP_FUNCTION(radius_close)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -134,7 +302,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  	RETURN_TRUE;
  }
  /* }}} */
-@@ -209,7 +209,7 @@ PHP_FUNCTION(radius_strerror)
+@@ -209,7 +305,7 @@ PHP_FUNCTION(radius_strerror)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -143,7 +311,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -227,7 +227,7 @@ PHP_FUNCTION(radius_config)
+@@ -227,7 +323,7 @@ PHP_FUNCTION(radius_config)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -152,7 +320,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -250,7 +250,7 @@ PHP_FUNCTION(radius_add_server)
+@@ -250,7 +346,7 @@ PHP_FUNCTION(radius_add_server)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -161,7 +329,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		&hostname, &hostname_len,
  		&port,
  		&secret, &secret_len,
-@@ -275,7 +275,7 @@ PHP_FUNCTION(radius_create_request)
+@@ -275,7 +371,7 @@ PHP_FUNCTION(radius_create_request)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -170,7 +338,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -299,7 +299,7 @@ PHP_FUNCTION(radius_put_string)
+@@ -299,7 +395,7 @@ PHP_FUNCTION(radius_put_string)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -179,7 +347,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -324,7 +324,7 @@ PHP_FUNCTION(radius_put_int)
+@@ -324,7 +420,7 @@ PHP_FUNCTION(radius_put_int)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -188,7 +356,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -351,7 +351,7 @@ PHP_FUNCTION(radius_put_attr)
+@@ -351,7 +447,7 @@ PHP_FUNCTION(radius_put_attr)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -197,7 +365,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -380,7 +380,7 @@ PHP_FUNCTION(radius_put_addr)
+@@ -380,7 +476,7 @@ PHP_FUNCTION(radius_put_addr)
  	zval *z_radh;
  	struct in_addr intern_addr;
  
@@ -206,7 +374,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -412,7 +412,7 @@ PHP_FUNCTION(radius_put_vendor_string)
+@@ -412,7 +508,7 @@ PHP_FUNCTION(radius_put_vendor_string)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -215,7 +383,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -437,7 +437,7 @@ PHP_FUNCTION(radius_put_vendor_int)
+@@ -437,7 +533,7 @@ PHP_FUNCTION(radius_put_vendor_int)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -224,7 +392,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -464,7 +464,7 @@ PHP_FUNCTION(radius_put_vendor_attr)
+@@ -464,7 +560,7 @@ PHP_FUNCTION(radius_put_vendor_attr)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -233,7 +401,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		&data, &len, &options, &tag) == FAILURE) {
  		return;
  	}
-@@ -492,7 +492,7 @@ PHP_FUNCTION(radius_put_vendor_addr)
+@@ -492,7 +588,7 @@ PHP_FUNCTION(radius_put_vendor_addr)
  	zval *z_radh;
  	struct in_addr intern_addr;
  
@@ -242,7 +410,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		&type, &addr, &addrlen, &options, &tag) == FAILURE) {
  		return;
  	}
-@@ -521,7 +521,7 @@ PHP_FUNCTION(radius_send_request)
+@@ -521,7 +617,7 @@ PHP_FUNCTION(radius_send_request)
  	zval *z_radh;
  	int res;
  
@@ -251,7 +419,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -546,7 +546,7 @@ PHP_FUNCTION(radius_get_attr)
+@@ -546,7 +642,7 @@ PHP_FUNCTION(radius_get_attr)
  	size_t len;
  	zval *z_radh;
  
@@ -260,7 +428,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -574,7 +574,7 @@ PHP_FUNCTION(radius_get_tagged_attr_data)
+@@ -574,7 +670,7 @@ PHP_FUNCTION(radius_get_tagged_attr_data)
  	const char *attr;
  	COMPAT_ARG_SIZE_T len;
  
@@ -269,7 +437,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -595,7 +595,7 @@ PHP_FUNCTION(radius_get_tagged_attr_tag)
+@@ -595,7 +691,7 @@ PHP_FUNCTION(radius_get_tagged_attr_tag)
  	const char *attr;
  	COMPAT_ARG_SIZE_T len;
  
@@ -278,7 +446,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -617,7 +617,7 @@ PHP_FUNCTION(radius_get_vendor_attr)
+@@ -617,7 +713,7 @@ PHP_FUNCTION(radius_get_vendor_attr)
  	unsigned char type;
  	size_t data_len;
  
@@ -287,7 +455,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -642,7 +642,7 @@ PHP_FUNCTION(radius_cvt_addr)
+@@ -642,7 +738,7 @@ PHP_FUNCTION(radius_cvt_addr)
  	COMPAT_ARG_SIZE_T len;
  	struct in_addr addr;
  
@@ -296,7 +464,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -659,7 +659,7 @@ PHP_FUNCTION(radius_cvt_int)
+@@ -659,7 +755,7 @@ PHP_FUNCTION(radius_cvt_int)
  	COMPAT_ARG_SIZE_T len;
  	int val;
  
@@ -305,7 +473,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -676,7 +676,7 @@ PHP_FUNCTION(radius_cvt_string)
+@@ -676,7 +772,7 @@ PHP_FUNCTION(radius_cvt_string)
  	char *val;
  	COMPAT_ARG_SIZE_T len;
  
@@ -314,7 +482,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		== FAILURE) {
  		return;
  	}
-@@ -698,7 +698,7 @@ PHP_FUNCTION(radius_salt_encrypt_attr)
+@@ -698,7 +794,7 @@ PHP_FUNCTION(radius_salt_encrypt_attr)
  	struct rad_salted_value salted;
  	zval *z_radh;
  
@@ -323,7 +491,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -724,7 +724,7 @@ PHP_FUNCTION(radius_request_authenticator)
+@@ -724,7 +820,7 @@ PHP_FUNCTION(radius_request_authenticator)
  	char buf[LEN_AUTH];
  	zval *z_radh;
  
@@ -332,7 +500,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -746,7 +746,7 @@ PHP_FUNCTION(radius_server_secret)
+@@ -746,7 +842,7 @@ PHP_FUNCTION(radius_server_secret)
  	struct rad_handle *radh;
  	zval *z_radh;
  
@@ -341,7 +509,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -771,7 +771,7 @@ PHP_FUNCTION(radius_demangle)
+@@ -771,7 +867,7 @@ PHP_FUNCTION(radius_demangle)
  	COMPAT_ARG_SIZE_T len;
  	int res;
  
@@ -350,7 +518,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -802,7 +802,7 @@ PHP_FUNCTION(radius_demangle_mppe_key)
+@@ -802,7 +898,7 @@ PHP_FUNCTION(radius_demangle_mppe_key)
  	COMPAT_ARG_SIZE_T len;
  	int res;
  
@@ -359,7 +527,7 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		return;
  	}
  
-@@ -844,7 +844,7 @@ int _init_options(struct rad_attr_options *out, int op
+@@ -844,7 +940,7 @@ int _init_options(struct rad_attr_options *out, int op
  /* }}} */
  
  /* {{{ _radius_close() */
@@ -370,6 +538,18 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  	rad_close(radh);
 --- radlib.c.orig	2016-02-15 15:11:50 UTC
 +++ radlib.c
+@@ -497,9 +497,9 @@ rad_continue_send_request(struct rad_handle *h, int se
+ 
+ 	if (selected) {
+ 		struct sockaddr_in from;
+-		int fromlen;
++		socklen_t fromlen;
+ 
+-		fromlen = sizeof from;
++		fromlen = sizeof(from);
+ 		h->resp_len = recvfrom(h->fd, h->response,
+ 		    MSGSIZE, MSG_WAITALL, (struct sockaddr *)&from, &fromlen);
+ 		if (h->resp_len == -1) {
 @@ -581,8 +581,7 @@ rad_create_request(struct rad_handle *h, int code)
  	/* Create a random authenticator */
  	for (i = 0;  i < LEN_AUTH;  i += 2) {
@@ -394,7 +574,39 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  		h->errmsg[0] = '\0';
  		memset(h->request, 0, sizeof h->request);
  		h->req_len = 0;
-@@ -1242,7 +1240,6 @@ int rad_salt_value(struct rad_handle *h, const char *i
+@@ -1035,7 +1033,7 @@ rad_put_vendor_attr(struct rad_handle *h, int vendor, 
+ 	/* OK, allocate and start building the attribute. */
+ 	attr = emalloc(va_len);
+ 	if (attr == NULL) {
+-		generr(h, "malloc failure (%d bytes)", va_len);
++		generr(h, "malloc failure (%zu bytes)", va_len);
+ 		goto end;
+ 	}
+ 
+@@ -1218,12 +1216,12 @@ rad_demangle_mppe_key(struct rad_handle *h, const void
+ 	*/
+ 	*len = *P;
+ 	if (*len > mlen - 1) {
+-		generr(h, "Mangled data seems to be garbage %d %d", *len, mlen-1);        
++		generr(h, "Mangled data seems to be garbage %zu %lu", *len, mlen-1);
+ 		return -1;
+ 	}
+ 
+ 	if (*len > MPPE_KEY_LEN) {
+-		generr(h, "Key to long (%d) for me max. %d", *len, MPPE_KEY_LEN);        
++		generr(h, "Key to long (%zu) for me max. %d", *len, MPPE_KEY_LEN);
+ 		return -1;
+ 	}
+ 
+@@ -1235,14 +1233,13 @@ int rad_salt_value(struct rad_handle *h, const char *i
+ {
+ 	char authenticator[16];
+ 	size_t i;
+-	char intermediate[16];
++	unsigned char intermediate[16];
+ 	const char *in_pos;
+ 	MD5_CTX md5;
+ 	char *out_pos;
  	php_uint32 random;
  	size_t salted_len;
  	const char *secret;
@@ -402,6 +614,15 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  
  	if (len == 0) {
  		out->len = 0;
+@@ -1276,7 +1273,7 @@ int rad_salt_value(struct rad_handle *h, const char *i
+ 	memset(out->data, 0, out->len);
+ 
+ 	/* Grab the request authenticator. */
+-	if (rad_request_authenticator(h, authenticator, sizeof authenticator) != sizeof authenticator) {
++	if (rad_request_authenticator(h, authenticator, sizeof(authenticator)) != sizeof(authenticator)) {
+ 		generr(h, "Cannot obtain the RADIUS request authenticator");
+ 		goto err;
+ 	}
 @@ -1289,7 +1286,7 @@ int rad_salt_value(struct rad_handle *h, const char *i
  	}
  
@@ -411,3 +632,12 @@ Obtained from:	https://github.com/Jan-E/php-radius/commit/d2d10e1781dbae70c39112
  
  	/* The RFC requires that the high bit of the salt be 1. Otherwise,
  	 * let's set up the header. */
+@@ -1301,7 +1298,7 @@ int rad_salt_value(struct rad_handle *h, const char *i
+ 	 * calls b1 first. */
+ 	MD5Init(&md5);
+ 	MD5Update(&md5, secret, strlen(secret));
+-	MD5Update(&md5, authenticator, sizeof authenticator);
++	MD5Update(&md5, authenticator, sizeof(authenticator));
+ 	MD5Update(&md5, out->data, 2);
+ 	MD5Final(intermediate, &md5);
+ 
