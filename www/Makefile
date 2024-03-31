@@ -2015,7 +2015,6 @@
     SUBDIR += rubygem-faraday-retry1
     SUBDIR += rubygem-faraday0
     SUBDIR += rubygem-faraday1
-    SUBDIR += rubygem-faraday14
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-faraday_middleware0
     SUBDIR += rubygem-faye

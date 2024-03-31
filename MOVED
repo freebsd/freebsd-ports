@@ -3080,3 +3080,4 @@ net/rubygem-google-cloud-storage144|net/rubygem-google-cloud-storage|2024-03-31|
 security/rubygem-net-sftp2|security/rubygem-net-sftp|2024-03-31|Remove obsoleted port. Use security/rubygem-net-sftp instead
 textproc/rubygem-cucumber-gherkin26|textproc/rubygem-cucumber-gherkin|2024-03-31|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 textproc/rubygem-loofah221|textproc/rubygem-loofah|2024-03-31|Remove obsoleted port. Use textproc/rubygem-loofah instead
+www/rubygem-faraday14|www/rubygem-faraday|2024-03-31|Remove obsoleted port. Use www/rubygem-faraday instead
