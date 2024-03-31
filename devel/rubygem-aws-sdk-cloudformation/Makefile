@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cloudformation
-PORTVERSION=	1.101.0
+PORTVERSION=	1.103.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
