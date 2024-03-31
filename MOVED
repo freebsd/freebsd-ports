@@ -3071,3 +3071,4 @@ security/py-pysaml24|security/py-pysaml2|2024-03-31|Remove obsoleted port. Use s
 textproc/py-atoml|textproc/py-tomlkit|2024-03-31|Remove obsoleted port. This project has been merged back to tomlkit and is no longer maintained. Use textproc/py-tomlkit>=0.8.0 instead
 databases/rubygem-redis-namespace19|databases/rubygem-redis-namespace|2024-03-31|Remove obsoleted port. Use databases/rubygem-redis-namespace instead
 devel/rubygem-cucumber-core12|devel/rubygem-cucumber-core|2024-03-31|Remove obsoleted port. Use devel/rubygem-cucumber-core instead
+devel/rubygem-cucumber-tag-expressions5|devel/rubygem-cucumber-tag-expressions|2024-03-31|Remove obsoleted port. Use devel/rubygem-cucumber-tag-expressions instead
