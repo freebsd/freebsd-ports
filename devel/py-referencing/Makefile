@@ -1,5 +1,5 @@
 PORTNAME=	referencing
-PORTVERSION=	0.33.0
+PORTVERSION=	0.34.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/referencing/releases/download/v${PORTVERSION}/
