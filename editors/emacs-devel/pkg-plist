@@ -3685,6 +3685,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/opascal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/pascal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/pascal.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/peg.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/peg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/perl-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/perl-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/prog-mode.el.gz
