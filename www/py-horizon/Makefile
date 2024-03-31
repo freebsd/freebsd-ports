@@ -86,7 +86,7 @@ GROUPS=		horizon
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
-CONFLICTS_INSTALL=	py??-horizon
+CONFLICTS_INSTALL=	py[0-9]*-horizon
 
 CPE_VENDOR=	openstack
 
