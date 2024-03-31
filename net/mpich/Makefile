@@ -1,6 +1,6 @@
 PORTNAME=	mpich
 PORTVERSION=	4.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -65,6 +65,7 @@ L0_CONFIGURE_OFF=	--without-ze
 
 CONFIGURE_ARGS=	--enable-fast=""	\
 		--with-libfabric=${LOCALBASE} \
+		--with-libfabric-include=${WRKDIR}/include \
 		pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		MPICHLIB_CFLAGS="${CFLAGS}" \
 		CFLAGS="-I${LOCALBASE}/include/json-c ${CFLAGS_F2018}" \
@@ -115,5 +116,9 @@ post-extract:
 
 post-patch:
 	${RM} -r ${WRKSRC}/www
+# To avoid pollution from ${LOCALBASE}/include, set up the build to look in
+# ${WRKDIR} for libfabric include/rdma/ header files (see --with-libfabric
+# configure args).
+	${MKDIR} ${WRKDIR}/include && ${LN} -s ${LOCALBASE}/include/rdma ${WRKDIR}/include/
 
 .include <bsd.port.post.mk>
