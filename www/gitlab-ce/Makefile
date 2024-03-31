@@ -1,6 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.9.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -165,7 +166,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
 	rubygem-re2>=2.7.0<2.8:devel/rubygem-re2 \
-	rubygem-semver_dialects>=1.6.1<1.7:devel/rubygem-semver_dialects \
+	rubygem-semver_dialects1>=1.6.1<1.7:devel/rubygem-semver_dialects1 \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
