@@ -1,7 +1,0 @@
-ATOML is a 1.0.0rc1-compliant TOML library.
-
-It includes a parser that preserves all comments, indentations, whitespace and
-internal element ordering, and makes them accessible and editable via an
-intuitive API.
-
-You can also create new TOML documents from scratch using the provided helpers.
