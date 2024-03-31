@@ -1,5 +1,5 @@
 PORTNAME=	python-ulid
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,10 @@ USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	PYDANTIC
+PYDANTIC_DESC=	Pydantic support
+
+PYDANTIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0:devel/py-pydantic2@${PY_FLAVOR}
 
 .include <bsd.port.mk>
