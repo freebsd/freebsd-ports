@@ -1,6 +1,5 @@
 PORTNAME=	fvwm3
-DISTVERSION=	1.0.9
-PORTREVISION=	2
+DISTVERSION=	1.1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${DISTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
@@ -37,7 +36,7 @@ GO_DESC=		Build and install modules written in Go
 FRIBIDI_LIB_DEPENDS=		libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	bidi
 
-_GO_MAXVERSION=		1.21
+_GO_MAXVERSION=		1.23
 _GO_VERSIONARG=		${${GO_DEFAULT:S/-devel//:S/.//} > \
 			${_GO_MAXVERSION:S/.//}:?${_GO_MAXVERSION},:}
 GO_USES=		go:${_GO_VERSIONARG}no_targets
