@@ -1,12 +1,13 @@
 PORTNAME=	nbformat
-PORTVERSION=	5.10.2
+PORTVERSION=	5.10.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Jupyter Notebook format
-WWW=		https://jupyter.org/
+WWW=		https://nbformat.readthedocs.io/en/latest/ \
+		https://github.com/jupyter/nbformat
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
