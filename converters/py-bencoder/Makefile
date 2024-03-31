@@ -8,7 +8,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple bencode decoder/encoder library in pure Python
 WWW=		https://github.com/utdemir/bencoder
 
-LICENSE=	GPLv1
+LICENSE=	CC0-1.0
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
