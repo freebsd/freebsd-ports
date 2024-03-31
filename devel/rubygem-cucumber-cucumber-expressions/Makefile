@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-cucumber-expressions
-PORTVERSION=	17.0.2
+PORTVERSION=	17.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
