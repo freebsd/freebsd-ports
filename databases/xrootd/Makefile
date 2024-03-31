@@ -1,6 +1,6 @@
 PORTNAME=	xrootd
 DISTVERSION=	4.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://xrootd.org/download/v${DISTVERSION}/
 
@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR:STRING=${PREFIX}/lib \
 		-DCMAKE_INSTALL_BINDIR:STRING=${PREFIX}/bin \
 		-DCMAKE_INSTALL_INCLUDEDIR:STRING=${PREFIX}/include \
-		-DCMAKE_INSTALL_MANDIR:STRING=${PREFIX}/man \
 		-DCMAKE_INSTALL_DATADIR:STRING=${DATADIR}
 
 CXXFLAGS+=	-Ddirent64=dirent
@@ -46,5 +45,6 @@ BROKEN=	fails to build with openssl 3 and later
 
 post-patch:
 	@${REINPLACE_CMD} 's|  dl|  $${CMAKE_DL_LIBS}| ; s|-ldl|$${CMAKE_DL_LIBS}|' ${WRKSRC}/src/*.cmake ${WRKSRC}/src/*/CMakeLists.txt
+	@${REINPLACE_CMD} 's|CMAKE_INSTALL_MANDIR "man"|CMAKE_INSTALL_MANDIR "share/man"|' ${WRKSRC}/cmake/XRootDOSDefs.cmake
 
 .include <bsd.port.post.mk>
