@@ -3065,3 +3065,4 @@ www/tidy-lib|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced 
 lang/ruby30||2024-03-31|Has expired: Please migrate to newer versions. Ruby 3.0 will reach its EoL on March 30, 2024
 devel/py-pybind11210|devel/py-pybind11|2024-03-31|Remove obsoleted port. Use devel/py-pybind11 instead
 devel/py-y-py|devel/py-pycrdt|2024-03-31|Remove obsoleted port. Use devel/py-pycrdt instead
+devel/py-ypy-websocket|devel/py-pycrdt-websocket|2024-03-31|Remove obsoleted port. Use devel/py-pycrdt-websocket instead

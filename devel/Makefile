@@ -5948,7 +5948,6 @@
     SUBDIR += py-yaspin
     SUBDIR += py-yattag
     SUBDIR += py-yg.lockfile
-    SUBDIR += py-ypy-websocket
     SUBDIR += py-yunomi
     SUBDIR += py-zarr
     SUBDIR += py-zc.lockfile
