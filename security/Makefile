@@ -1004,7 +1004,6 @@
     SUBDIR += py-pyotp
     SUBDIR += py-pyotp2289
     SUBDIR += py-pysaml2
-    SUBDIR += py-pysaml24
     SUBDIR += py-pysaml26
     SUBDIR += py-pyscard
     SUBDIR += py-pysodium
