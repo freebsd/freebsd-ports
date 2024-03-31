@@ -1,5 +1,5 @@
 PORTNAME=	arrow
-PORTVERSION=	13.0.0
+PORTVERSION=	15.0.2
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/arrow/arrow-${PORTVERSION}/
 PKGNAMESUFFIX=	-glib
@@ -21,5 +21,7 @@ USE_GNOME=	introspection
 
 MESON_ARGS=	--default-library=both -Darrow_cpp_build_dir='' -Darrow_cpp_build_type='release' -Dgtk_doc=false
 WRKSRC_SUBDIR=	c_glib
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION:R:R}00.${PORTVERSION:E}.0
 
 .include <bsd.port.mk>
