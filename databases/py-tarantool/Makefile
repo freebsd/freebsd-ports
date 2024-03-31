@@ -9,7 +9,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client library for Tarantool Database
 WWW=		https://github.com/tarantool/tarantool-python
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.4.2:devel/py-setuptools-scm@${PY_FLAVOR} \
