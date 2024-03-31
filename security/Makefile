@@ -299,6 +299,7 @@
     SUBDIR += libkleo
     SUBDIR += libkpass
     SUBDIR += libksba
+    SUBDIR += libmacaroons
     SUBDIR += libmcrypt
     SUBDIR += libnitrokey
     SUBDIR += libntlm

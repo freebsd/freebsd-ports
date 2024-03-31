@@ -1,0 +1,14 @@
+- configure failure workaround patch
+- source: from https://github.com/rescrv/libmacaroons/issues/62#issuecomment-994251296
+
+--- configure.ac.orig	2024-03-31 19:39:38 UTC
++++ configure.ac
+@@ -29,7 +29,7 @@ AC_MSG_CHECKING([pkg-config m4 macros])
+ 
+ dnl Testing presence of pkg-config
+ AC_MSG_CHECKING([pkg-config m4 macros])
+-if test m4_ifdef([PKG_CHECK_MODULES], [yes], [no]) == yes; then
++if test m4_ifdef([PKG_CHECK_MODULES], [yes], [no]) == no; then
+ 	AC_MSG_RESULT([yes]);
+ else
+ 	AC_MSG_RESULT([no]);
