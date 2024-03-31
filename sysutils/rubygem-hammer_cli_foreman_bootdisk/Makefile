@@ -1,5 +1,5 @@
 PORTNAME=	hammer_cli_foreman_bootdisk
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/theforeman/hammer_cli_foreman_bootdisk
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-hammer_cli_foreman>=0.1.2:sysutils/rubygem-hammer_cli_foreman
+RUN_DEPENDS=	rubygem-hammer_cli_foreman>=3.10<4:sysutils/rubygem-hammer_cli_foreman
 
 USES=		gem
 
