@@ -1,3 +1,3 @@
-TIMESTAMP = 1710712444
-SHA256 (jupyter_events-0.9.1.tar.gz) = a52e86f59eb317ee71ff2d7500c94b963b8a24f0b7a1517e2e653e24258e15c7
-SIZE (jupyter_events-0.9.1.tar.gz) = 61082
+TIMESTAMP = 1711466146
+SHA256 (jupyter_events-0.10.0.tar.gz) = 670b8229d3cc882ec782144ed22e0d29e1c2d639263f92ca8383e66682845e22
+SIZE (jupyter_events-0.10.0.tar.gz) = 61516
