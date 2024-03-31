@@ -5708,6 +5708,7 @@
     SUBDIR += py-stone
     SUBDIR += py-stopit
     SUBDIR += py-strategies
+    SUBDIR += py-strawberry-graphql
     SUBDIR += py-streamparse
     SUBDIR += py-strenum
     SUBDIR += py-strict-rfc3339
