@@ -7416,6 +7416,7 @@
     SUBDIR += rubygem-rubocop-rails
     SUBDIR += rubygem-rubocop-rake
     SUBDIR += rubygem-rubocop-rspec
+    SUBDIR += rubygem-rubocop-rspec_rails
     SUBDIR += rubygem-ruby-atmos-pure
     SUBDIR += rubygem-ruby-bugzilla
     SUBDIR += rubygem-ruby-enum
