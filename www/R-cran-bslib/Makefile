@@ -1,5 +1,5 @@
 PORTNAME=	bslib
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	R-cran-base64enc>0:converters/R-cran-base64enc \
 		R-cran-cachem>0:databases/R-cran-cachem \
-		R-cran-htmltools>=0.5.7:textproc/R-cran-htmltools \
+		R-cran-fastmap>=1.1.1:databases/R-cran-fastmap \
+		R-cran-htmltools>=0.5.8:textproc/R-cran-htmltools \
 		R-cran-jquerylib>=0.1.3:www/R-cran-jquerylib \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
