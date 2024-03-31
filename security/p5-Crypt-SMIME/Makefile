@@ -8,7 +8,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	S/MIME message signing, verification, encryption and decryption
 WWW=		https://metacpan.org/release/Crypt-SMIME
 
-LICENSE=	ART10
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0:devel/p5-ExtUtils-CChecker \
 		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
