@@ -1,3 +1,3 @@
-TIMESTAMP = 1708449310
-SHA256 (pydantic_yaml-1.2.1.tar.gz) = cd6c70e04e08545501d3b67e04ab3cd164360b07a851efbf9fb9bc11e88cc206
-SIZE (pydantic_yaml-1.2.1.tar.gz) = 20494
+TIMESTAMP = 1711860527
+SHA256 (pydantic_yaml-1.3.0.tar.gz) = 5671c9ef1731570aa2644432ae1e2dd34c406bd4a0a393df622f6b897a88df83
+SIZE (pydantic_yaml-1.3.0.tar.gz) = 21257
