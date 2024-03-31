@@ -1,5 +1,5 @@
 PORTNAME=	awkward-cpp
-PORTVERSION=	30
+PORTVERSION=	31
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 # scikit-build-core[pyproject]
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathspec>=0.10.1:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>=0.5:devel/py-pyproject-metadata@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18.0,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18.0,1<2.0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang localbase python
 USE_PYTHON=	autoplist concurrent pep517
