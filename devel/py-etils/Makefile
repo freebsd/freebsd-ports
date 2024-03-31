@@ -1,5 +1,5 @@
 PORTNAME=	etils
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.8<4:devel/py-flit-core@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
@@ -63,8 +63,8 @@ ETQDM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVO
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 31000
-IGNORE=		requires Python 3.10+
+.if ${PYTHON_REL} < 31100
+IGNORE=		requires Python 3.11+
 .endif
 
 .include <bsd.port.post.mk>
