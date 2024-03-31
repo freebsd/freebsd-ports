@@ -3043,6 +3043,8 @@ net-im/gtkcord4|net-im/dissent|2024-03-03|Project renamed
 devel/anjuta|devel/gnome-builder|2024-03-12|Has expired: Unmaintained, upstream WWW owned by gambling site, use devel/gnome-builder
 deskutils/rubrica||2024-03-12|Has expired: Upstream WWW redirects to a different site not related to the application
 x11/mrxvt-devel|x11/mrxvt|2024-03-12|Merge most recent version into main port
+math/qalculate-qt@qt5|math/qalculate-qt|2024-03-13|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored math/qalculate-qt port based on Qt 6.x instead
+math/qalculate-qt@qt6|math/qalculate-qt|2024-03-13|Flavorization has been removed. Continue to enjoy math/qalculate-qt based on Qt 6.x as usual
 games/xataxx||2024-03-16|Has expired: No available WWW
 editors/kak-lsp|editors/kakoune-lsp|2024-03-17|Project was renamed upstream
 www/npm-node16||2024-03-17|Has expired: Depends on deprecated node16
@@ -3060,5 +3062,4 @@ security/rubygem-metasploit-aggregator||2024-03-24|Has expired: No longer used, 
 net-p2p/tooth||2024-03-24|Has expired: Project has been renamed to Tuba. Consider porting to the new project. See https://github.com/GeopJr/Tuba
 www/tidy-devel|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
 www/tidy-lib|www/tidy-html5|2024-03-25|Has expired: no more dev at SF, replaced by www/tidy-html5
-math/qalculate-qt@qt5|math/qalculate-qt|2024-03-13|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored math/qalculate-qt port based on Qt 6.x instead
-math/qalculate-qt@qt6|math/qalculate-qt|2024-03-13|Flavorization has been removed. Continue to enjoy math/qalculate-qt based on Qt 6.x as usual
+lang/ruby30||2024-03-31|Has expired: Please migrate to newer versions. Ruby 3.0 will reach its EoL on March 30, 2024
