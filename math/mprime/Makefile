@@ -1,9 +1,7 @@
 PORTNAME=	mprime
-PORTVERSION=	30.7b9
-PORTREVISION=	1
+PORTVERSION=	30.19b13
 CATEGORIES=	math benchmarks net
-MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/ \
-		ftp://mersenne.org/gimps/
+MASTER_SITES=	https://www.mersenne.org/download/software/v${PORTVERSION:R}/${PORTVERSION:R}.19/
 DISTNAME=	p95v${PORTVERSION:R}${PORTVERSION:E}.source
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -23,6 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl					\
 		libgmp.so:math/gmp
 
 USES=		localbase zip
+PKGMESSAGE=	${WRKSRC}/pkg-message
 
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -31,7 +30,7 @@ MAKEFILE=	makebsd
 ALL_TARGET=	mprime
 LLD_UNSAFE=	yes
 
-SUB_FILES=	wrapper.sh
+SUB_FILES=	pkg-message wrapper.sh
 
 PLIST_FILES+=	bin/mprime bin/mprime-real
 
@@ -45,6 +44,12 @@ WRKSRC_SUBDIR=	linux
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|CC = .*||g" \
+		-e "s|CXX = .*||g" \
+		-e "s|CFLAGS = |CFLAGS += |g" \
+		-e "s|CXXFLAGS = |CXXFLAGS += |g" \
+		${PATCH_WRKSRC}/gwnum/makebsd64 \
+		${PATCH_WRKSRC}/gwnum/makemsys \
 		${PATCH_WRKSRC}/linux64/makebsd \
 		${PATCH_WRKSRC}/linux/makebsd
 
