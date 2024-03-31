@@ -42,6 +42,7 @@ bin/ghe-restore
 %%DATADIR%%/ghe-restore-mssql
 %%DATADIR%%/ghe-restore-mysql
 %%DATADIR%%/ghe-restore-mysql-binary
+%%DATADIR%%/ghe-restore-mysql-legacy
 %%DATADIR%%/ghe-restore-mysql-logical
 %%DATADIR%%/ghe-restore-pages
 %%DATADIR%%/ghe-restore-redis
