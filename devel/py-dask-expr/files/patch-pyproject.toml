@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-03-12 10:46:29 UTC
+--- pyproject.toml.orig	2024-03-22 14:56:22 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,11 +7,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -26,7 +26,6 @@ dependencies = [
+@@ -26,7 +26,7 @@ dependencies = [
  readme = "README.md"
  requires-python = ">=3.9"
  dependencies = [
--    "dask == 2024.3.0",
+-    "dask == 2024.3.1",
++    "dask >= 2024.3.1",
      "pyarrow>=7.0.0",
      "pandas >= 2",
  ]
