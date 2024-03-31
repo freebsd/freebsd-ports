@@ -1,5 +1,5 @@
 PORTNAME=	migrate
-DISTVERSION=	5.0.5
+DISTVERSION=	5.0.6
 CATEGORIES=	biology
 MASTER_SITES=	https://peterbeerli.com/migrate-html5/download_version4/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -32,6 +32,10 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=		DOCS EXAMPLES THREAD
 THREAD_DESC=		Build with THREAD support
 THREAD_ALL_TARGET=	thread
+
+# Upstream tarball contains objects and binaries that need to be clean
+post-extract:
+	cd ${WRKSRC} && ${RM} -f *.o haru/*.o migrate-n migrate-n-mpi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g' ${WRKSRC}/configure
