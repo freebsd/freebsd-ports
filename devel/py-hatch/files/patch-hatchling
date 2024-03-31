@@ -1,0 +1,24 @@
+Obtained from:	https://github.com/pypa/hatch/commit/5271279ae85a45ef42ce91bba3b226133ed92e71
+
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -39,7 +39,7 @@ dependencies = [
+ ]
+ dependencies = [
+   "click>=8.0.6",
+-  "hatchling<1.22",
++  "hatchling",
+   "httpx>=0.22.0",
+   "hyperlink>=21.0.0",
+   "keyring>=23.5.0",
+--- src/hatch/cli/build/__init__.py.orig	2020-02-02 00:00:00 UTC
++++ src/hatch/cli/build/__init__.py
+@@ -57,7 +57,7 @@ def build(app: Application, location, targets, hooks_o
+     from hatch.config.constants import AppEnvVars
+     from hatch.utils.fs import Path
+     from hatch.utils.structures import EnvVars
+-    from hatchling.builders.constants import BuildEnvVars
++    from hatchling.builders.constants import EDITABLES_REQUIREMENT, BuildEnvVars
+     from hatchling.builders.plugin.interface import BuilderInterface
+ 
+     path = str(Path(location).resolve()) if location else None
