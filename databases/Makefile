@@ -994,7 +994,6 @@
     SUBDIR += rubygem-redis-clustering50
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-redis-namespace110
-    SUBDIR += rubygem-redis-namespace19
     SUBDIR += rubygem-redis4
     SUBDIR += rubygem-redis50
     SUBDIR += rubygem-ruby-mysql
