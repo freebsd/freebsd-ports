@@ -3073,3 +3073,4 @@ databases/rubygem-redis-namespace19|databases/rubygem-redis-namespace|2024-03-31
 devel/rubygem-cucumber-core12|devel/rubygem-cucumber-core|2024-03-31|Remove obsoleted port. Use devel/rubygem-cucumber-core instead
 devel/rubygem-cucumber-tag-expressions5|devel/rubygem-cucumber-tag-expressions|2024-03-31|Remove obsoleted port. Use devel/rubygem-cucumber-tag-expressions instead
 devel/rubygem-grape-swagger16|devel/rubygem-grape-swagger|2024-03-31|Remove obsoleted port. Use devel/rubygem-grape-swagger instead
+devel/rubygem-grape17|devel/rubygem-grape|2024-03-31|Remove obsoleted port. Use devel/rubygem-grape instead
