@@ -1,0 +1,2 @@
+This package provides a Django field that set/get the "TextChoices" and
+"IntegerChoices" enumerations.
