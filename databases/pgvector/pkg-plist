@@ -26,5 +26,7 @@ share/postgresql/extension/vector--0.4.3--0.4.4.sql
 share/postgresql/extension/vector--0.4.4--0.5.0.sql
 share/postgresql/extension/vector--0.5.0--0.5.1.sql
 share/postgresql/extension/vector--0.5.1--0.6.0.sql
-share/postgresql/extension/vector--0.6.0.sql
+share/postgresql/extension/vector--0.6.0--0.6.1.sql
+share/postgresql/extension/vector--0.6.1--0.6.2.sql
+share/postgresql/extension/vector--0.6.2.sql
 share/postgresql/extension/vector.control
