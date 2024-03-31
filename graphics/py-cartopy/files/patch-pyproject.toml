@@ -5,9 +5,8 @@
      "setuptools >= 40.6.0",
      "Cython >= 0.29.24",
 -    "oldest-supported-numpy",
--    "setuptools_scm >= 7.0.0",
 +    "numpy",
-+    "setuptools_scm >= 6.0.0",
+     "setuptools_scm >= 7.0.0",
  ]
  build-backend = "setuptools.build_meta"
  
