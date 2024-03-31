@@ -1,5 +1,5 @@
 PORTNAME=	libzen
-DISTVERSION=	0.4.41.20240118
+PORTVERSION=	0.4.41.20240118
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
@@ -20,7 +20,7 @@ USES=		compiler:c++11-lang dos2unix libtool pathfix tar:xz
 CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-UPSTREAM_BUNDLE_VERSION=	24.01.1
+UPSTREAM_BUNDLE_VERSION=	24.03
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
