@@ -1,8 +1,10 @@
---- requirements/base.txt.orig	2023-11-26 11:34:24 UTC
+--- requirements/base.txt.orig	2024-03-31 16:19:43 UTC
 +++ requirements/base.txt
-@@ -8,5 +8,3 @@ looseversion
- psutil>=5.0.0
- packaging>=21.3
- looseversion
--# We need contextvars for salt-ssh
+@@ -15,7 +15,6 @@ aiohttp>=3.9.0
+ 
+ # We need contextvars for salt-ssh.
+ # Even on python versions which ships with contextvars in the standard library!
 -contextvars
+ 
+ setproctitle>=1.2.3
+ timelib>=0.2.5
