@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240330:
+  AFFECTS: users of mail/spamassassin
+  AUTHOR: cy@FreeBSD.org
+
+  sa-update must be run following update and prior to restaring sa-spamd
+  else it will fail to start due to a syntax error.
+
 20240326:
   AFFECTS: users of net/bird2
   AUTHOR: olivier@FreeBSD.org
