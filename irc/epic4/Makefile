@@ -2,7 +2,7 @@ PORTNAME=	epic4
 PORTVERSION=	2.10.10
 PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	https://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
+MASTER_SITES=	https://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-help-20050315.tar.bz2
 
