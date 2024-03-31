@@ -5198,6 +5198,7 @@
     SUBDIR += py-pathvalidate
     SUBDIR += py-paver
     SUBDIR += py-pbr
+    SUBDIR += py-pbs-installer
     SUBDIR += py-pcodedmp
     SUBDIR += py-pdm
     SUBDIR += py-pdm-autoexport
