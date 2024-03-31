@@ -27,4 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.9.0:devel/py-lxml@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
