@@ -1,6 +1,5 @@
 PORTNAME=	Date-Holidays-DK
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,5 +14,7 @@ RUN_DEPENDS=	p5-Date-Simple>=0:devel/p5-Date-Simple \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
