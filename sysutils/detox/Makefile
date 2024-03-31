@@ -1,6 +1,5 @@
 PORTNAME=	detox
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/dharple/detox
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gmake tar:bzip2
+USES=		autoreconf gmake pkgconfig tar:bzip2
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

@@ -1,10 +1,16 @@
 bin/detox
 bin/inline-detox
-@sample etc/detoxrc.sample
-@sample %%DATADIR%%/iso8859_1.tbl.sample
-@sample %%DATADIR%%/safe.tbl.sample
-@sample %%DATADIR%%/unicode.tbl.sample
+etc/detoxrc
+%%DATADIR%%/cp1252.tbl
+%%DATADIR%%/iso8859_1.tbl
+%%DATADIR%%/safe.tbl
+%%DATADIR%%/unicode.tbl
+%%DATADIR%%/unidecode.tbl
+%%PORTDOCS%%%%DOCSDIR%%/BUILD.md
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/THANKS.md
 share/man/man1/detox.1.gz
 share/man/man1/inline-detox.1.gz
 share/man/man5/detox.tbl.5.gz
