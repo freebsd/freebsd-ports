@@ -1,3 +1,39 @@
+  <vuln vid="d58726ff-ef5e-11ee-8d8e-080027a5b8e9">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki139</name>
+	<range><lt>1.39.7</lt></range>
+      </package>
+      <package>
+	<name>mediawiki140</name>
+	<range><lt>1.40.3</lt></range>
+      </package>
+      <package>
+	<name>mediawiki141</name>
+	<range><lt>1.41.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/V3WXEPXV2DU6WTVEKK4XHW4QXD5OFKD7/">
+	  <p>(T355538, CVE-2024-PENDING) SECURITY: XSS in edit summary parser.</p>
+	  <p>(T357760, CVE-2024-PENDING) SECURITY: Denial of service vector via GET
+	    request to Special:MovePage on pages with thousands of subpages.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-PENDING</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/V3WXEPXV2DU6WTVEKK4XHW4QXD5OFKD7/</url>
+    </references>
+    <dates>
+      <discovery>2024-03-15</discovery>
+      <entry>2024-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bdcd041e-5811-4da3-9243-573a9890fdb1">
     <topic>electron{27,28} -- Object lifecycle issue in V8</topic>
     <affects>
