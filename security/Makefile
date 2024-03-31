@@ -1139,7 +1139,6 @@
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-scp1
     SUBDIR += rubygem-net-sftp
-    SUBDIR += rubygem-net-sftp2
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-net-ssh-krb
