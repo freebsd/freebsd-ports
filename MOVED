@@ -3081,3 +3081,4 @@ security/rubygem-net-sftp2|security/rubygem-net-sftp|2024-03-31|Remove obsoleted
 textproc/rubygem-cucumber-gherkin26|textproc/rubygem-cucumber-gherkin|2024-03-31|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 textproc/rubygem-loofah221|textproc/rubygem-loofah|2024-03-31|Remove obsoleted port. Use textproc/rubygem-loofah instead
 www/rubygem-faraday14|www/rubygem-faraday|2024-03-31|Remove obsoleted port. Use www/rubygem-faraday instead
+devel/rubygem-request_store14|devel/rubygem-request_store|2024-03-31|Remove obsoleted port. Use devel/rubygem-request_store instead
