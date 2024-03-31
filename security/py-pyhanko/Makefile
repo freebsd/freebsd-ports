@@ -1,5 +1,5 @@
 PORTNAME=	pyhanko
-PORTVERSION=	0.23.1
+PORTVERSION=	0.23.2
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/MatthiasValvekens/pyHanko/releases/download/v${PORTVERSION}/
