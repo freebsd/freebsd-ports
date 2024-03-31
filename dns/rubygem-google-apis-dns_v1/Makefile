@@ -4,7 +4,7 @@ CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Simple REST client for version V1 of the Cloud DNS API
+COMMENT=	Simple REST client for Cloud DNS API V1
 WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/google-apis-dns_v1 \
 		https://github.com/googleapis/google-api-ruby-client
 
