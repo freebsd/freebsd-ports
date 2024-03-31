@@ -8,6 +8,7 @@ share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/ci.jsonc
 %%DATADIR%%/presets/examples/10.jsonc
 %%DATADIR%%/presets/examples/11.jsonc
+%%DATADIR%%/presets/examples/12.jsonc
 %%DATADIR%%/presets/examples/2.jsonc
 %%DATADIR%%/presets/examples/3.jsonc
 %%DATADIR%%/presets/examples/4.jsonc
