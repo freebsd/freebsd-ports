@@ -1,11 +1,12 @@
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Term::ANSIColor for Ruby
-WWW=		https://flori.github.io/term-ansicolor/
+WWW=		https://flori.github.io/term-ansicolor/ \
+		https://github.com/flori/term-ansicolor
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
