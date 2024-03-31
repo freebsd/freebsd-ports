@@ -1,5 +1,5 @@
 PORTNAME=	jasper
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jasper-software/jasper/releases/download/version-${PORTVERSION}/
 
