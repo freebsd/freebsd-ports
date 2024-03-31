@@ -18,7 +18,7 @@ BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libarrow.so:databases/arrow
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16.6,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16.6,1<2,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
