@@ -7449,6 +7449,7 @@
     SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-semver2
     SUBDIR += rubygem-semver_dialects
+    SUBDIR += rubygem-semver_dialects1
     SUBDIR += rubygem-semver_dialects12
     SUBDIR += rubygem-semverse
     SUBDIR += rubygem-sentry-rails
