@@ -1,6 +1,5 @@
 PORTNAME=	mpich
-PORTVERSION=	4.1.2
-PORTREVISION=	4
+DISTVERSION=	4.1.3
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
