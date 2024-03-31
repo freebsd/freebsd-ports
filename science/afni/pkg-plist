@@ -528,6 +528,7 @@ bin/afnisumagui_logo_905sq.png
 bin/aiv
 bin/align_epi_anat.py
 bin/ap_run_simple_rest.tcsh
+bin/ap_run_simple_rest_me.tcsh
 bin/apqc_logo_help.svg
 bin/apqc_logo_main.svg
 bin/apqc_make_html.py
