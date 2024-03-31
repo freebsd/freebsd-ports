@@ -11,10 +11,11 @@ WWW=		https://www.wolfssl.com/products/wolfssh/ \
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libwolfssl.so:security/wolfssl
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		libtool localbase
+USES=		libtool localbase shebangfix
 
-CONFIGURE_ARGS=	--disable-examples \
+CONFIGURE_ARGS=	--enable-examples \
 		--enable-fwd \
 		--enable-keygen \
 		--enable-scp \
@@ -26,5 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	scripts/get-put.test
 
 .include <bsd.port.mk>
