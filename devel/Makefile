@@ -7010,6 +7010,7 @@
     SUBDIR += rubygem-google-apis-androidpublisher_v3034
     SUBDIR += rubygem-google-apis-bigquery_v2
     SUBDIR += rubygem-google-apis-cloudbilling_v1
+    SUBDIR += rubygem-google-apis-cloudkms_v1
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v1
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v2
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v3
