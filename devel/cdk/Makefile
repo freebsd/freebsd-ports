@@ -2,7 +2,7 @@ PORTNAME=	cdk
 DISTVERSION=	5.0-20240331
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/\
+MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/${PORTNAME}/
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake ncurses tar:tgz
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS+=--with-ncurses
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS+=		--with-ncurses
 
 ALL_TARGET=	default cdkshlib
 INSTALL_TARGET=	install installCDKSHLibrary
