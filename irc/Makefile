@@ -68,7 +68,6 @@
     SUBDIR += p5-POE-Session-Irssi
     SUBDIR += p5-Parse-IRC
     SUBDIR += pear-Net_SmartIRC
-    SUBDIR += pircbot
     SUBDIR += pisg
     SUBDIR += polari
     SUBDIR += pounce
