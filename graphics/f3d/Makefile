@@ -1,30 +1,25 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
-WWW=		https://f3d-app.github.io/f3d/
+WWW=		https://f3d.app/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
-		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
 		libImath-3_1.so:math/Imath \
-		libjpeg.so:graphics/jpeg-turbo \
 		libnetcdf.so:science/netcdf \
-		libpng.so:graphics/png \
-		libtbbmalloc.so:devel/onetbb \
-		libtiff.so:graphics/tiff \
 		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
-USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl mpi	\
+USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl \
 		shared-mime-info tcl tk xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xt
