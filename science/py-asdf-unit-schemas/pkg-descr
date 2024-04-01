@@ -1,3 +1,0 @@
-asdf-unit-schemas provides ASDF schemas for validating unit tags. Users should
-not need to install this directly; instead, install an implementation package
-such as asdf-astropy, which includes asdf-unit-schemas as a dependency.

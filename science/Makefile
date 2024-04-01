@@ -297,7 +297,6 @@
     SUBDIR += py-asdf
     SUBDIR += py-asdf-standard
     SUBDIR += py-asdf-transform-schemas
-    SUBDIR += py-asdf-unit-schemas
     SUBDIR += py-ase
     SUBDIR += py-atomium
     SUBDIR += py-avogadrolibs
