@@ -381,7 +381,6 @@
     SUBDIR += chroma
     SUBDIR += chrpath
     SUBDIR += chruby
-    SUBDIR += cil
     SUBDIR += cirrus-cli
     SUBDIR += cityhash
     SUBDIR += cjose
