@@ -174,10 +174,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 
 .if empty(PORT_OPTIONS:MBOOT)
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
-.   if !defined(IGNORE_MISSING_HADRIAN) && defined(USE_HADRIAN)
-DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
-.   endif
 .endif # MBOOT
+
+.if !defined(IGNORE_MISSING_HADRIAN) && defined(USE_HADRIAN)
+DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
+.endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 # ghc-8.10.x on arm requires devel/llvm10
