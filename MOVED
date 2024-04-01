@@ -3129,3 +3129,4 @@ devel/libght||2024-04-01|Has expired: Depends on expired devel/liblas
 devel/liblas||2024-04-01|Has expired: Upstream no longer continuing
 www/get_flash_videos|www/yt-dlp|2024-04-01|Has expired: Abandonware, consider using www/yt-dlp
 irc/rbot||2024-04-01|Has expired: Outdated, unmaintained in ports since 2016
+editors/linux-sublime||2024-04-01|Has expired: This is the legacy version Use linux-sublime-text4
