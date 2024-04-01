@@ -14,7 +14,6 @@
     SUBDIR += cgiirc
     SUBDIR += ctrlproxy
     SUBDIR += dancer
-    SUBDIR += darkbot
     SUBDIR += dircproxy
     SUBDIR += dxirc
     SUBDIR += eggdrop
