@@ -97,7 +97,6 @@
     SUBDIR += cppzmq
     SUBDIR += croc
     SUBDIR += cryptcat
-    SUBDIR += csocks
     SUBDIR += csync2
     SUBDIR += ctrace
     SUBDIR += cvsup-static
