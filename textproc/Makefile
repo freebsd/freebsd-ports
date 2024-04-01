@@ -1380,7 +1380,6 @@
     SUBDIR += py-hjson
     SUBDIR += py-html2json
     SUBDIR += py-html2text
-    SUBDIR += py-html2text2018
     SUBDIR += py-htmlmin2
     SUBDIR += py-humanfriendly
     SUBDIR += py-hunspell
