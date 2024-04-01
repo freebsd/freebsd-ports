@@ -93,7 +93,6 @@
     SUBDIR += scrollz
     SUBDIR += sic
     SUBDIR += simpleirc
-    SUBDIR += sirc
     SUBDIR += smartirc4net
     SUBDIR += smuxi
     SUBDIR += soju
