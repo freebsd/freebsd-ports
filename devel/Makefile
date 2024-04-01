@@ -328,7 +328,6 @@
     SUBDIR += bullet
     SUBDIR += bunyan
     SUBDIR += busd
-    SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
     SUBDIR += c2mdoc

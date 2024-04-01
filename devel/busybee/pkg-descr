@@ -1,6 +1,0 @@
-BusyBee provides a messaging abstraction on top of TCP sockets.
-
-BusyBee is a refined version of the HyperDex event loop.  It exposes a
-"messaging" abstraction on top of TCP and automatically packs/unpacks messages
-on the wire.  At the core of BusyBee is a thread-safe event loop that enables
-multiple threads to send and receive messages concurrently.
