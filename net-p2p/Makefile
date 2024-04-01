@@ -32,7 +32,6 @@
     SUBDIR += eiskaltdcpp-gtk
     SUBDIR += eiskaltdcpp-lib
     SUBDIR += ethash
-    SUBDIR += frost
     SUBDIR += go-ethereum
     SUBDIR += go-prysm
     SUBDIR += gtk-gnutella
