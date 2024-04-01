@@ -7914,7 +7914,6 @@
     SUBDIR += unordered-dense
     SUBDIR += upnp
     SUBDIR += upp
-    SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ut
     SUBDIR += utf8cpp

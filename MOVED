@@ -3116,3 +3116,4 @@ irc/insub||2024-04-01|Has expired: Outdated version, unmaintained in ports since
 archivers/xar||2024-04-01|Has expired: Last release was in 2012 and upstream is dead, consider archivers/libarchive or archivers/7-zip
 editors/morla||2024-04-01|Has expired: Project is unmaintained and last upstream release was in 2011
 java/netcomponents||2024-04-01|Has expired: Last upstream release was in 2000 and upstream unmaintained consider using net/apache-commons-net
+devel/upslug||2024-04-01|Has expired: Utility for a NAS released in 2004 and discontinued in 2008
