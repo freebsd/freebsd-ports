@@ -296,7 +296,6 @@
     SUBDIR += php83-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
-    SUBDIR += phpweathermap
     SUBDIR += ping_exporter
     SUBDIR += pktstat
     SUBDIR += pmacct

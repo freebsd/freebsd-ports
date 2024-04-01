@@ -3083,3 +3083,4 @@ textproc/rubygem-loofah221|textproc/rubygem-loofah|2024-03-31|Remove obsoleted p
 www/rubygem-faraday14|www/rubygem-faraday|2024-03-31|Remove obsoleted port. Use www/rubygem-faraday instead
 devel/rubygem-request_store14|devel/rubygem-request_store|2024-03-31|Remove obsoleted port. Use devel/rubygem-request_store instead
 devel/llvm10||2024-04-01|Has expired: No longer supported by upstream
+net-mgmt/phpweathermap||2024-04-01|Has expired: WWW vaporized and has not been updated in last 14 years
