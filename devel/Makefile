@@ -4185,7 +4185,6 @@
     SUBDIR += poxml
     SUBDIR += ppl
     SUBDIR += pprof
-    SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += premake5
     SUBDIR += projectcenter
