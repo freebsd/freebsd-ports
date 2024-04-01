@@ -24,10 +24,10 @@ DISTFILES+=	TestImages/GammaChart.exr:testimages
 DISTFILES+=	TestImages/GrayRampsHorizontal.exr:testimages
 DISTFILES+=	v2/LeftView/Balls.exr:testimages
 DISTFILES+=	v2/Stereo/Trunks.exr:testimages
-NO_WRKSUBDIR=	yes
 .endif
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	openexr # hardcode - not using ${PORTNAME} - so we can share the distdir with openexr-website-docs, avoiding double download of ...
 EXTRACT_ONLY=	openexr-v${PORTVERSION}${EXTRACT_SUFX}
+NO_WRKSUBDIR=	yes
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format

@@ -1,10 +1,12 @@
 # PORTVERSION taken from MASTER port, graphics/openexr
 PORTNAME=	openexr-website-docs
 PORTREVISION=	0
-MASTER_SITES=	https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/main/:website \
+MASTER_SITES=	https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
+		https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/main/:website \
 		LOCAL/mandree/openexr/:DEFAULT \
-		LOCAL/mandree/openexr/:website \
+		LOCAL/mandree/openexr/:website
 
+DISTFILES=	${EXTRACT_ONLY}:DEFAULT # defined in ../openexr/Makefile
 # cat $(make -V WRKSRC)/website/test_images.txt  | grep -v ^$ | sed 's,^,DISTFILES+=\t,'
 DISTFILES+=	TestImages/README.rst:website
 DISTFILES+=	TestImages/AllHalfValues.exr:website
