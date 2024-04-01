@@ -1303,7 +1303,6 @@
     SUBDIR += rubygem-tmuxinator
     SUBDIR += rubygem-vagrant-bhyve
     SUBDIR += rubygem-vagrant-mutate
-    SUBDIR += rubygem-vagrant-vbguest
     SUBDIR += rubygem-vagrant_cloud
     SUBDIR += rubygem-vmstat
     SUBDIR += rubygem-win32-file
