@@ -12,7 +12,6 @@
     SUBDIR += bitmark-daemon
     SUBDIR += bitmark-recorder
     SUBDIR += btcheck
-    SUBDIR += btpd
     SUBDIR += c-lightning
     SUBDIR += cardano-db-sync
     SUBDIR += cardano-node
