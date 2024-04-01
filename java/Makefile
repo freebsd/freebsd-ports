@@ -98,8 +98,6 @@
     SUBDIR += openjfx14
     SUBDIR += phpeclipse
     SUBDIR += proguard
-    SUBDIR += sablevm
-    SUBDIR += sablevm-classpath
     SUBDIR += servingxml
     SUBDIR += sigar
     SUBDIR += springframework

@@ -3085,3 +3085,5 @@ devel/rubygem-request_store14|devel/rubygem-request_store|2024-03-31|Remove obso
 devel/llvm10||2024-04-01|Has expired: No longer supported by upstream
 net-mgmt/phpweathermap||2024-04-01|Has expired: WWW vaporized and has not been updated in last 14 years
 net/csocks||2024-04-01|Has expired: Last release in 2013 and no development since, consider net/microsocks or net/3proxy
+java/sablevm-classpath||2024-04-01|Has expired: Only user in tree is java/sablevm which is deprecated
+java/sablevm||2024-04-01|Has expired: Abandonware, last release in 2007 and is no longer being developed
