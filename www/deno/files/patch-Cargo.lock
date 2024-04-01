@@ -1,6 +1,6 @@
 --- Cargo.lock.orig	2024-02-11 11:08:12.265554000 +0100
 +++ Cargo.lock	2024-02-11 11:09:02.842074000 +0100
-@@ -1690,6 +1690,7 @@ dependencies = [
+@@ -1693,6 +1693,7 @@ dependencies = [
   "signature",
   "simd-json",
   "spki",
@@ -8,7 +8,7 @@
   "tokio",
   "typenum",
   "url",
-@@ -1803,6 +1804,7 @@ dependencies = [
+@@ -1807,6 +1808,7 @@ dependencies = [
   "serde",
   "signal-hook",
   "signal-hook-registry",
@@ -16,7 +16,7 @@
   "test_server",
   "tokio",
   "tokio-metrics",
-@@ -3744,9 +3746,9 @@ name = "libc"
+@@ -3764,9 +3766,9 @@ name = "libc"
  
  [[package]]
  name = "libc"
@@ -28,7 +28,7 @@
  
  [[package]]
  name = "libffi"
-@@ -6436,6 +6438,21 @@ dependencies = [
+@@ -6456,6 +6458,21 @@ dependencies = [
   "quote",
   "syn 1.0.109",
   "unicode-xid",
