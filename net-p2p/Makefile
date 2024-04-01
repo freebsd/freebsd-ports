@@ -41,7 +41,6 @@
     SUBDIR += jigdo
     SUBDIR += ktorrent
     SUBDIR += libbt
-    SUBDIR += liberator
     SUBDIR += libktorrent
     SUBDIR += libswift
     SUBDIR += libtorrent

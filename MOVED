@@ -3102,3 +3102,4 @@ irc/sirc||2024-04-01|Has expired: Abandonware, upstream is gone and current vers
 net-p2p/btpd||2024-04-01|Has expired: Abandoned upstream, lacks support for common functionality such as Magnet links, DHT, PEX and HTTPS. Consider net-p2p/qbittorrent or net-p2p/transmission
 net-im/cawbird||2024-04-01|Has expired: No longer developed due to Twitter changes
 irc/ninja||2024-04-01|Has expired: Abandonware, last release around 2002 and upstream is gone. Consider irc/ircII or irc/irssi
+net-p2p/liberator||2024-04-01|Has expired: Abandoned project with last release in 2003
