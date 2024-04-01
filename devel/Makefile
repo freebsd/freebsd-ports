@@ -5056,7 +5056,6 @@
     SUBDIR += py-more-itertools
     SUBDIR += py-moto
     SUBDIR += py-mox
-    SUBDIR += py-mox3
     SUBDIR += py-mrkd
     SUBDIR += py-msal
     SUBDIR += py-msal-extensions

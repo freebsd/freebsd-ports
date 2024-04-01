@@ -3121,3 +3121,4 @@ security/py-sslyze||2024-04-01|Has expired: It does not support OpenSSL 3.0+
 security/py-nassl||2024-04-01|Has expired: It does not support OpenSSL 3.0+
 devel/cil||2024-04-01|Has expired: Unmaintained upstream due to lack of time
 irc/infobot||2024-04-01|Has expired: Abandonware, outdated version and last upstream release in 2008
+devel/py-mox3||2024-04-01|Has expired: Upstream no longer active and repository has been archived. See also: https://lists.openstack.org/pipermail/openstack-discuss/2020-June/015518.html
