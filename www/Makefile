@@ -1914,6 +1914,7 @@
     SUBDIR += rearx
     SUBDIR += reddsaver
     SUBDIR += redmine50
+    SUBDIR += redmine51
     SUBDIR += rejik
     SUBDIR += remark42
     SUBDIR += reportmagic
