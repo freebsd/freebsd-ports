@@ -3115,3 +3115,4 @@ net/libzmq2||2024-04-01|Has expired: Last release was in 2012 switch to libzmq3
 irc/insub||2024-04-01|Has expired: Outdated version, unmaintained in ports since 2015
 archivers/xar||2024-04-01|Has expired: Last release was in 2012 and upstream is dead, consider archivers/libarchive or archivers/7-zip
 editors/morla||2024-04-01|Has expired: Project is unmaintained and last upstream release was in 2011
+java/netcomponents||2024-04-01|Has expired: Last upstream release was in 2000 and upstream unmaintained consider using net/apache-commons-net
