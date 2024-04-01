@@ -2,7 +2,6 @@
 
     SUBDIR += beebeep
     SUBDIR += biboumi
-    SUBDIR += cawbird
     SUBDIR += chatterino2
     SUBDIR += climm
     SUBDIR += coccinella

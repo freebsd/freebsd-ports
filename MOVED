@@ -3100,3 +3100,4 @@ misc/buffer|misc/mbuffer|2024-04-01|Has expired: No upstream updates since 1995.
 irc/thales||2024-04-01|Has expired: End of life upstream
 irc/sirc||2024-04-01|Has expired: Abandonware, upstream is gone and current version was released over 20 years ago. Consider irc/irssi , irc/epic5 or irc/ircII
 net-p2p/btpd||2024-04-01|Has expired: Abandoned upstream, lacks support for common functionality such as Magnet links, DHT, PEX and HTTPS. Consider net-p2p/qbittorrent or net-p2p/transmission
+net-im/cawbird||2024-04-01|Has expired: No longer developed due to Twitter changes
