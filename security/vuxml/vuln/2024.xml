@@ -1510,6 +1510,11 @@
 	<name>unbound</name>
 	<range><lt>1.19.1</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.0</ge><lt>14.0_6</lt></range>
+	<range><ge>13.2</ge><lt>13.2_11</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -1546,10 +1551,12 @@
       <url>https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2024q1/017430.html</url>
       <url>https://blog.powerdns.com/2024/02/13/powerdns-recursor-4-8-6-4-9-3-5-0-2-released</url>
       <url>https://nlnetlabs.nl/news/2024/Feb/13/unbound-1.19.1-released/</url>
+      <freebsdsa>SA-24:03.unbound</freebsdsa>
     </references>
     <dates>
       <discovery>2024-02-06</discovery>
       <entry>2024-02-13</entry>
+      <modified>2024-04-01</modified>
     </dates>
   </vuln>
 
