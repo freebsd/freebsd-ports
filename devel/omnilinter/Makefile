@@ -1,5 +1,5 @@
 PORTNAME=	omnilinter
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
-CARGO_CRATES=	aho-corasick-1.1.2 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
 		anes-0.1.6 \
 		anstream-0.6.13 \
 		anstyle-1.0.6 \
@@ -22,9 +22,9 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		anstyle-wincon-3.0.2 \
 		anyhow-1.0.81 \
 		assert_cmd-2.0.14 \
-		autocfg-1.1.0 \
+		autocfg-1.2.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
 		byteorder-1.5.0 \
@@ -55,7 +55,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		doc-comment-0.3.3 \
 		either-1.10.0 \
 		errno-0.3.8 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
 		getrandom-0.2.12 \
@@ -65,12 +65,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		hermit-abi-0.3.9 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
-		itoa-1.0.10 \
+		itoa-1.0.11 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
 		libredox-0.0.1 \
 		linux-raw-sys-0.4.13 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		num-traits-0.2.18 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
@@ -91,21 +91,21 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		redox_users-0.4.4 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.3 \
 		relative-path-1.9.2 \
 		rstest-0.18.2 \
 		rstest_macros-0.18.2 \
 		rustc_version-0.4.0 \
-		rustix-0.38.31 \
+		rustix-0.38.32 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		semver-1.0.22 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde_json-1.0.115 \
 		sha2-0.10.8 \
 		strsim-0.11.0 \
-		syn-2.0.52 \
+		syn-2.0.55 \
 		tempfile-3.10.1 \
 		termtree-0.4.1 \
 		thiserror-1.0.58 \
@@ -143,10 +143,13 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_msvc-0.52.4 \
 		yansi-0.5.1
 
-PLIST_FILES=	bin/omnilinter
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/omnilinter
+	@cd ${WRKSRC}/share && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
