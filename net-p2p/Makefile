@@ -39,7 +39,6 @@
     SUBDIR += jackett
     SUBDIR += jigdo
     SUBDIR += ktorrent
-    SUBDIR += libbt
     SUBDIR += libktorrent
     SUBDIR += libswift
     SUBDIR += libtorrent
