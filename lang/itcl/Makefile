@@ -1,6 +1,6 @@
 PORTNAME=	itcl
 PORTVERSION=	3.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang tcl
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/itcl%203.4.4
@@ -10,7 +10,7 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 WWW=		https://sourceforge.net/projects/incrtcl/
 
-USES+=		tcl:85,86,tea
+USES+=		tcl:86,tea
 
 USE_LDCONFIG=	${PREFIX}/lib/itcl${PORTVERSION:R}
 
