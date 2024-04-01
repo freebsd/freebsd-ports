@@ -3118,3 +3118,4 @@ editors/morla||2024-04-01|Has expired: Project is unmaintained and last upstream
 java/netcomponents||2024-04-01|Has expired: Last upstream release was in 2000 and upstream unmaintained consider using net/apache-commons-net
 devel/upslug||2024-04-01|Has expired: Utility for a NAS released in 2004 and discontinued in 2008
 security/py-sslyze||2024-04-01|Has expired: It does not support OpenSSL 3.0+
+security/py-nassl||2024-04-01|Has expired: It does not support OpenSSL 3.0+
