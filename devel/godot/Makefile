@@ -1,7 +1,7 @@
 PORTNAME=	godot
-DISTVERSION=	4.1.2
+DISTVERSION=	4.2.1
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -10,7 +10,7 @@ WWW=		https://godotengine.org/
 
 LICENSE=		MIT CC-BY-3.0
 LICENSE_COMB=		multi
-LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.md
+LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	yasm:devel/yasm
@@ -54,8 +54,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# 4.0 head at 29/3
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:05c8f822972f:DEMOS
+# 4.2 head at 21/3
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:98e9176b7310:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=	pulseaudio=True
