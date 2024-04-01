@@ -1,12 +1,11 @@
 PORTNAME=	cdk
-DISTVERSION=	5.0-20230201
-PORTREVISION=	1
+DISTVERSION=	5.0-20240331
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/\
 		https://invisible-mirror.net/archives/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 WWW=		https://invisible-island.net/cdk/
 
@@ -14,15 +13,17 @@ LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake ncurses tar:tgz
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-PORTDOCS=	README
-MAKE_JOBS_UNSAFE=	yes
-
 CONFIGURE_ARGS+=--with-ncurses
+
 ALL_TARGET=	default cdkshlib
 INSTALL_TARGET=	install installCDKSHLibrary
-USE_LDCONFIG=	yes
+
+PORTDOCS=	README
+PORTEXAMPLES=	cli demos examples
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -36,7 +37,7 @@ post-install:
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} "cli demos examples" \
+		${COPYTREE_SHARE} "${PORTEXAMPLES}" \
 		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
