@@ -7,7 +7,6 @@
     SUBDIR += bitcoin
     SUBDIR += bitcoin-daemon
     SUBDIR += bitcoin-utils
-    SUBDIR += bitflu
     SUBDIR += bitmark
     SUBDIR += bitmark-cli
     SUBDIR += bitmark-daemon
