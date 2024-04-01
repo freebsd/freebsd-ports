@@ -79,7 +79,6 @@
     SUBDIR += quassel-core
     SUBDIR += quirc
     SUBDIR += ratbox-respond
-    SUBDIR += rbot
     SUBDIR += riece
     SUBDIR += rubygem-cinch
     SUBDIR += rubygem-cogbot

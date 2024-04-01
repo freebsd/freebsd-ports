@@ -3128,3 +3128,4 @@ irc/evangeline||2024-04-01|Has expired: Abandonware, upstream is gone
 devel/libght||2024-04-01|Has expired: Depends on expired devel/liblas
 devel/liblas||2024-04-01|Has expired: Upstream no longer continuing
 www/get_flash_videos|www/yt-dlp|2024-04-01|Has expired: Abandonware, consider using www/yt-dlp
+irc/rbot||2024-04-01|Has expired: Outdated, unmaintained in ports since 2016
