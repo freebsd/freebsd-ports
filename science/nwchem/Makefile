@@ -1,7 +1,6 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.0
-PORTREVISION=	3
+DISTVERSION=	7.2.2
 DISTVERSIONSUFFIX=	-release
 CATEGORIES=	science
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
@@ -38,8 +37,8 @@ GH_ACCOUNT=	nwchemgit
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
-MAKE_ENV=	NWCHEM_TOP=${WRKSRC}/.. NWCHEM_MODULES=all NWCHEM_LONG_PATHS=Y NWCHEM_TARGET=LINUX${ARCH_64BIT} USE_INTERNALBLAS=Y EXTERNAL_GA_PATH=${LOCALBASE} \
-		BLAS_SIZE=4 USE_64TO32=y
+MAKE_ARGS=	NWCHEM_TOP=${WRKSRC}/.. NWCHEM_MODULES=all NWCHEM_LONG_PATHS=Y NWCHEM_TARGET=LINUX${ARCH_64BIT} USE_INTERNALBLAS=Y EXTERNAL_GA_PATH=${LOCALBASE} \
+		USE_64TO32=y
 
 SUB_FILES=	nwchemrc
 
@@ -52,10 +51,18 @@ PLIST_FILES=	bin/nwchem etc/nwchemrc
 
 LIBXC_VERSION=	6.1.0 # from src/libext/libxc/build_libxc.sh
 
-OPTIONS_DEFINE=		LIBXC PYTHON # more potential optional dependencies are listed in src/libext/GNUmakefile
-OPTIONS_DEFAULT=	LIBXC PYTHON MPICH # the default should be the same as for the MPI option in math/scalapack and devel/ga
-OPTIONS_RADIO=		MPI
-OPTIONS_RADIO_MPI=	NOMPI MPICH OPENMPI
+OPTIONS_DEFINE=			LIBXC PYTHON # more potential optional dependencies are listed in src/libext/GNUmakefile
+OPTIONS_DEFAULT=		LIBXC PYTHON BLAS_SIZE_4 MPICH # the MPI default should be the same as for the MPI option in math/scalapack and devel/ga
+OPTIONS_RADIO=			BLAS_SIZE MPI
+OPTIONS_RADIO_BLAS_SIZE=	BLAS_SIZE_4 BLAS_SIZE_8 # should be the same choice as in devel/ga and math/blas or math/openblasblas
+OPTIONS_RADIO_MPI=		NOMPI MPICH OPENMPI
+
+BLAS_SIZE_DESC=		BLAS_SIZE value to use during build (should be same as in devel/ga)
+BLAS_SIZE_4_DESC=	BLAS_SIZE=4
+BLAS_SIZE_4_MAKE_ARGS=	BLAS_SIZE=4
+BLAS_SIZE_8_BROKEN=	SEGVs on many examples, possibly due to the need to compile blas or openblas with the 8-byte-integers option
+BLAS_SIZE_8_DESC=	BLAS_SIZE=8
+BLAS_SIZE_8_MAKE_ARGS=	BLAS_SIZE=8
 
 NOMPI_DESC=		MPI isn't used
 NOMPI_BROKEN=		Fails to build without MPI
@@ -90,7 +97,10 @@ post-patch:
 
 pre-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} nwchem_config && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} nwchem_config
+
+pre-build-BLAS_SIZE_4-on:
+	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} 64_to_32
 
 do-install:
