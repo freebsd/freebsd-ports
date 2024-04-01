@@ -514,6 +514,7 @@
     SUBDIR += net6
     SUBDIR += netatalk3
     SUBDIR += netcat
+    SUBDIR += netdiscover
     SUBDIR += netembryo
     SUBDIR += nethogs
     SUBDIR += netmap
