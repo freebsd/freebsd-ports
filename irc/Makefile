@@ -99,7 +99,6 @@
     SUBDIR += soju
     SUBDIR += srain
     SUBDIR += srvx
-    SUBDIR += thales
     SUBDIR += tircproxy
     SUBDIR += undernet-ircu
     SUBDIR += unreal

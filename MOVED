@@ -3097,3 +3097,4 @@ net-p2p/bitflu||2024-04-01|Has expired: No development in years and lack common 
 devel/busybee||2024-04-01|Has expired: Abandoned upstream, last release 2015 and last commit 2017
 textproc/rubygem-zmq||2024-04-01|Has expired: Last releasee was in 2011 and depends on deprecated libzmq2
 misc/buffer|misc/mbuffer|2024-04-01|Has expired: No upstream updates since 1995.  Switch to misc/mbuffer
+irc/thales||2024-04-01|Has expired: End of life upstream
