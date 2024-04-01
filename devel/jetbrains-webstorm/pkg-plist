@@ -1,5 +1,4 @@
 bin/webstorm
-share/man/man1/webstorm.1.gz
 share/applications/webstorm.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/brokenPlugins.db
@@ -22,7 +21,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-WS-233.14475.40
+%%DATADIR%%/lib/build-marker-WS-233.15026.13
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -888,3 +887,4 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/xml-refactoring/lib/xml-refactoring.jar
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
+share/man/man1/webstorm.1.gz
