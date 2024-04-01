@@ -1554,7 +1554,6 @@
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
-    SUBDIR += uefi-edk2-bhyve-csm
     SUBDIR += ufetch
     SUBDIR += ufs_copy
     SUBDIR += uhidd

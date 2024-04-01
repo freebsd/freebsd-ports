@@ -3132,3 +3132,4 @@ irc/rbot||2024-04-01|Has expired: Outdated, unmaintained in ports since 2016
 editors/linux-sublime||2024-04-01|Has expired: This is the legacy version Use linux-sublime-text4
 irc/pircbot||2024-04-01|Has expired: Abandoned upstream, last release in 2009 and superseded by pircbotx (fork)
 security/akmos||2024-04-01|Has expired: Last release in 2018, no active development for years and no users in tree
+sysutils/uefi-edk2-bhyve-csm||2024-04-01|Has expired: Requires old edk2 version and gcc 4.8
