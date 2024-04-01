@@ -3092,3 +3092,4 @@ devel/premake||2024-04-01|Has expired: Legacy unsupported version, consider deve
 devel/lion||2024-04-01|Has expired: Upstream site is removed and library is no longer available
 irc/keitairc2||2024-04-01|Has expired: Abandonware and obsolete, last upstream release in 2010 and now phones have native clients
 irc/bopm||2024-04-01|Has expired: Upstream is dead and archived repo Jul 3 2023
+www/mediawiki135||2024-04-01|Has expired: Upstream reached EOL on 2023-12-21

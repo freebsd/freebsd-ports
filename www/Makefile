@@ -352,7 +352,6 @@
     SUBDIR += matomo
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
-    SUBDIR += mediawiki135
     SUBDIR += mediawiki139
     SUBDIR += mediawiki140
     SUBDIR += mediawiki141
