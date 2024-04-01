@@ -20,7 +20,6 @@
     SUBDIR += epic4
     SUBDIR += epic5
     SUBDIR += ergo
-    SUBDIR += evangeline
     SUBDIR += ezbounce
     SUBDIR += gruftistats
     SUBDIR += hexchat

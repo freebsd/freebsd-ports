@@ -3124,3 +3124,4 @@ irc/infobot||2024-04-01|Has expired: Abandonware, outdated version and last upst
 devel/py-mox3||2024-04-01|Has expired: Upstream no longer active and repository has been archived. See also: https://lists.openstack.org/pipermail/openstack-discuss/2020-June/015518.html
 net-p2p/py-vertex||2024-04-01|Has expired: Abandoned project since 7 years back
 textproc/py-html2text2018|textproc/py-html2text|2024-04-01|Has expired: Old version without consumers left, use updated textproc/py-html2text instead
+irc/evangeline||2024-04-01|Has expired: Abandonware, upstream is gone
