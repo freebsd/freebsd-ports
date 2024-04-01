@@ -46,7 +46,6 @@
     SUBDIR += irssi-scripts
     SUBDIR += irssi-xmpp
     SUBDIR += irssistats
-    SUBDIR += keitairc2
     SUBDIR += konversation
     SUBDIR += kvirc
     SUBDIR += libircclient
