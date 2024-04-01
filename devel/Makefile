@@ -1303,7 +1303,6 @@
     SUBDIR += libkiwix
     SUBDIR += libklel
     SUBDIR += liblangtag
-    SUBDIR += liblas
     SUBDIR += liblnk
     SUBDIR += liblockfile
     SUBDIR += liblogging
