@@ -3112,3 +3112,4 @@ net-p2p/libbt||2024-04-01|Has expired: Last release in 2007 and no active develo
 www/youtube_dl|www/yt-dlp|2024-04-01|Has expired: Many extractors are brokena and upstream can't keep up, consider using www/yt-dlp
 devel/codeworker||2024-04-01|Has expired: Abandonware, outdated version in ports and last release upstream in 2010
 net/libzmq2||2024-04-01|Has expired: Last release was in 2012 switch to libzmq3
+irc/insub||2024-04-01|Has expired: Outdated version, unmaintained in ports since 2015

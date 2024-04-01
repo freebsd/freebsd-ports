@@ -29,7 +29,6 @@
     SUBDIR += ii
     SUBDIR += infobot
     SUBDIR += inspircd
-    SUBDIR += insub
     SUBDIR += irc
     SUBDIR += irc2dc
     SUBDIR += ircII
