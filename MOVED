@@ -3095,3 +3095,4 @@ irc/bopm||2024-04-01|Has expired: Upstream is dead and archived repo Jul 3 2023
 www/mediawiki135||2024-04-01|Has expired: Upstream reached EOL on 2023-12-21
 net-p2p/bitflu||2024-04-01|Has expired: No development in years and lack common functionality found in modern clients
 devel/busybee||2024-04-01|Has expired: Abandoned upstream, last release 2015 and last commit 2017
+textproc/rubygem-zmq||2024-04-01|Has expired: Last releasee was in 2011 and depends on deprecated libzmq2
