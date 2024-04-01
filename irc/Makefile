@@ -51,7 +51,6 @@
     SUBDIR += miau
     SUBDIR += muh
     SUBDIR += ngircd
-    SUBDIR += ninja
     SUBDIR += onis
     SUBDIR += p5-AnyEvent-IRC
     SUBDIR += p5-Bot-BasicBot
