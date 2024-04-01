@@ -206,7 +206,6 @@
     SUBDIR += micro
     SUBDIR += mined
     SUBDIR += mle
-    SUBDIR += morla
     SUBDIR += mousepad
     SUBDIR += mp
     SUBDIR += nano
