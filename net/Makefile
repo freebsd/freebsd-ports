@@ -434,7 +434,6 @@
     SUBDIR += libyang
     SUBDIR += libyang2
     SUBDIR += libzapojit
-    SUBDIR += libzmq2
     SUBDIR += libzmq3
     SUBDIR += libzmq4
     SUBDIR += liferea
