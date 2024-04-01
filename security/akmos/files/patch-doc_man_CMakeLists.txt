@@ -1,9 +1,0 @@
---- doc/man/CMakeLists.txt.orig	2024-03-19 09:54:19 UTC
-+++ doc/man/CMakeLists.txt
-@@ -15,5 +15,5 @@ foreach(manpage ${man1_src})
- 
- foreach(manpage ${man1_src})
-     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${manpage}.gz
--            DESTINATION man/man1)
-+            DESTINATION share/man/man1)
- endforeach()

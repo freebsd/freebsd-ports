@@ -23,7 +23,6 @@
     SUBDIR += afterglow
     SUBDIR += age
     SUBDIR += aide
-    SUBDIR += akmos
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += apache-xml-security-c
