@@ -3087,3 +3087,4 @@ net-mgmt/phpweathermap||2024-04-01|Has expired: WWW vaporized and has not been u
 net/csocks||2024-04-01|Has expired: Last release in 2013 and no development since, consider net/microsocks or net/3proxy
 java/sablevm-classpath||2024-04-01|Has expired: Only user in tree is java/sablevm which is deprecated
 java/sablevm||2024-04-01|Has expired: Abandonware, last release in 2007 and is no longer being developed
+editors/asedit||2024-04-01|Has expired: Last upstream release was in 2003
