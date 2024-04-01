@@ -40,6 +40,7 @@ post-patch:
 		@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 		@${ECHO_CMD} "${CC} ${CFLAGS} ${STRIP}" > ${WRKSRC}/conf-ld
 		@${ECHO_CMD} "${LOCALBASE}" > ${WRKSRC}/conf-ucspi-tcp
+		@${REINPLACE_CMD} "s|extern int errno;|#include <errno.h>|" ${WRKSRC}/${DJBDNS_NAME}/error.h
 
 pre-build:
 		@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
