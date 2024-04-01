@@ -1501,7 +1501,6 @@
     SUBDIR += linux-ltp
     SUBDIR += linux-sublime-merge
     SUBDIR += linux_libusb
-    SUBDIR += lion
     SUBDIR += listserialc
     SUBDIR += liteide
     SUBDIR += llbuild
