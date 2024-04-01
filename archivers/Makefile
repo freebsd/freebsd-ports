@@ -83,7 +83,6 @@
     SUBDIR += lziprecover
     SUBDIR += lzlib
     SUBDIR += lzma
-    SUBDIR += lzmalib
     SUBDIR += lzo2
     SUBDIR += lzop
     SUBDIR += lzsa

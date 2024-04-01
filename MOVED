@@ -3107,3 +3107,4 @@ devel/electron26||2024-04-01|Has expired: EOLed upstream, switch to newer versio
 irc/darkbot||2024-04-01|Has expired: Abandonware, last release in 2005 and no activity upstream since 2014
 sysutils/rubygem-vagrant-vbguest||2024-04-01|Has expired: This project is archived and will not receive further updates or support
 net-p2p/frost||2024-04-01|Has expired: Outdated version and unsupported upstream
+archivers/lzmalib||2024-04-01|Has expired: Upstream hasn't been active for over 20 years and no users of this library in tree
