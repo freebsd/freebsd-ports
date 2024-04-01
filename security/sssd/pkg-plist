@@ -10,7 +10,6 @@ include/sss_nss_idmap.h
 include/sss_sifp.h
 include/sss_sifp_dbus.h
 include/wbclient_sssd.h
-%%SMB%%lib/krb5/plugins/authdata/sssd_pac_plugin.so
 lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
 lib/libipa_hbac.so
 lib/libipa_hbac.so.0
@@ -33,7 +32,7 @@ lib/nss_sss.so.1
 lib/nss_sss.so.2
 lib/nss_sss.so.2.0.0
 lib/pam_sss.so
-%%NO_SMB%%%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -42,15 +41,12 @@ lib/pam_sss.so
 %%PYTHON_SITELIBDIR%%/pysss.so
 %%PYTHON_SITELIBDIR%%/pysss_murmur.so
 %%PYTHON_SITELIBDIR%%/pysss_nss_idmap.so
-%%SMB%%lib/samba/idmap/winbind_idmap_sss.so
 lib/shared-modules/ldb/memberof.so
-%%SMB%%lib/sssd/libsss_ad.so
 lib/sssd/conf/sssd.conf
 lib/sssd/libsss_cert.so
 lib/sssd/libsss_child.so
 lib/sssd/libsss_crypt.so
 lib/sssd/libsss_debug.so
-%%SMB%%lib/sssd/libsss_ipa.so
 lib/sssd/libsss_krb5.so
 lib/sssd/libsss_krb5_common.so
 lib/sssd/libsss_ldap.so
@@ -69,7 +65,6 @@ libdata/pkgconfig/sss_idmap.pc
 libdata/pkgconfig/sss_nss_idmap.pc
 libdata/pkgconfig/sss_simpleifp.pc
 libdata/pkgconfig/wbclient_sssd.pc
-%%SMB%%libexec/sssd/gpo_child
 libexec/sssd/krb5_child
 libexec/sssd/ldap_child
 libexec/sssd/p11_child
@@ -78,7 +73,6 @@ libexec/sssd/sss_signal
 libexec/sssd/sssd_be
 libexec/sssd/sssd_ifp
 libexec/sssd/sssd_nss
-%%SMB%%libexec/sssd/sssd_pac
 libexec/sssd/sssd_pam
 libexec/sssd/sssd_ssh
 libexec/sssd/sssd_sudo
@@ -157,10 +151,8 @@ share/man/ja/man8/sssd.8.gz
 share/man/man1/sss_ssh_authorizedkeys.1.gz
 share/man/man1/sss_ssh_knownhostsproxy.1.gz
 share/man/man5/sss-certmap.5.gz
-%%SMB%%share/man/man5/sssd-ad.5.gz
 share/man/man5/sssd-files.5.gz
 share/man/man5/sssd-ifp.5.gz
-%%SMB%%share/man/man5/sssd-ipa.5.gz
 share/man/man5/sssd-krb5.5.gz
 share/man/man5/sssd-ldap.5.gz
 share/man/man5/sssd-session-recording.5.gz
