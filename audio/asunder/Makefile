@@ -1,6 +1,5 @@
 PORTNAME=	asunder
-PORTVERSION=	2.9.6
-PORTREVISION=	3
+PORTVERSION=	3.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
