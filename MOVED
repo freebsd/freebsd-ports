@@ -3110,3 +3110,4 @@ net-p2p/frost||2024-04-01|Has expired: Outdated version and unsupported upstream
 archivers/lzmalib||2024-04-01|Has expired: Upstream hasn't been active for over 20 years and no users of this library in tree
 net-p2p/libbt||2024-04-01|Has expired: Last release in 2007 and no active development, lacks functionality found in modern implementations. Consider using net-p2p/libtorrent-rasterbar or net-p2p/libtorrent-rasterbar2
 www/youtube_dl|www/yt-dlp|2024-04-01|Has expired: Many extractors are brokena and upstream can't keep up, consider using www/yt-dlp
+devel/codeworker||2024-04-01|Has expired: Abandonware, outdated version in ports and last release upstream in 2010
