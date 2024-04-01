@@ -1,6 +1,5 @@
 PORTNAME=	commit-patch
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel
 
 MAINTAINER=	lapo@lapo.it
@@ -27,6 +26,7 @@ PLIST_FILES=	bin/commit-partial bin/commit-patch \
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 		${REINPLACE_CMD} -e 's/PREFIX=/PREFIX?=/' \
