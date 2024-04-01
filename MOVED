@@ -3120,3 +3120,4 @@ devel/upslug||2024-04-01|Has expired: Utility for a NAS released in 2004 and dis
 security/py-sslyze||2024-04-01|Has expired: It does not support OpenSSL 3.0+
 security/py-nassl||2024-04-01|Has expired: It does not support OpenSSL 3.0+
 devel/cil||2024-04-01|Has expired: Unmaintained upstream due to lack of time
+irc/infobot||2024-04-01|Has expired: Abandonware, outdated version and last upstream release in 2008

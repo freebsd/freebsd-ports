@@ -27,7 +27,6 @@
     SUBDIR += hexchat-fish
     SUBDIR += icbirc
     SUBDIR += ii
-    SUBDIR += infobot
     SUBDIR += inspircd
     SUBDIR += irc
     SUBDIR += irc2dc
