@@ -29,7 +29,6 @@ load_rc_config $name
 : ${proxysql_user:="proxysql"}
 : ${proxysql_group:="proxysql"}
 : ${proxysql_config:="%%ETCDIR%%/proxysql.cfg"}
-: ${proxysql_socket:="/var/run/proxysql/proxysql.sock"}
 : ${proxysql_datadir:="/var/db/proxysql"}
 : ${proxysql_args:=""}
 : ${proxysql_restart_delay:="10"}
@@ -40,7 +39,7 @@ command="/usr/sbin/daemon"
 proxysql_command="%%PREFIX%%/sbin/proxysql"
 command_args="-rP ${pidfile} -S -R ${proxysql_restart_delay} \
     -T ${name} ${proxysql_command} \
-    -f -c ${proxysql_config} -S ${proxysql_socket} \
+    -f -c ${proxysql_config} \
     -D ${proxysql_datadir} \
     --no-version-check ${proxysql_args}"
 required_files="${proxysql_config}"

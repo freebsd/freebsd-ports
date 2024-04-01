@@ -1,5 +1,6 @@
 PORTNAME=	proxysql
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	zi@FreeBSD.org
@@ -22,17 +23,14 @@ RUN_DEPENDS=	libgcrypt>0:security/libgcrypt \
 		e2fsprogs-libuuid>0:misc/e2fsprogs-libuuid \
 		gnutls>0:security/gnutls
 
-USES=		compiler:gcc-c++11-lib gmake libtool perl5 python:build shebangfix
+USES=		compiler:c++11-lang gmake libtool perl5 python:build shebangfix
 USE_PERL5=	build
 USE_GCC=	yes
 MAKE_ENV=	GIT_VERSION=${PORTVERSION}
 USE_GITHUB=	yes
 ALL_TARGET=	build_deps default
 SHEBANG_FILES=	deps/libssl/verify-bio_st-match.sh
-MAKE_JOBS_UNSAFE=yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-fPIC
-CXXFLAGS+=	-fPIC
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 USE_RC_SUBR=	${PORTNAME}
 
@@ -58,6 +56,7 @@ post-patch:
 		-e 's,grep,${LOCALBASE}/bin/grep,g' \
 		-e 's,ln -fsT,ln -fs,' \
 		-e 's,PROXYSQLCLICKHOUSE=1 ,,g' \
+		-e 's,--enable-fastopen=false ,--enable-fastopen=false --enable-shared=no ,g' \
 		${WRKSRC}/Makefile ${WRKSRC}/deps/Makefile \
 		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
 
