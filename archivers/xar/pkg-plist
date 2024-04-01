@@ -1,6 +1,0 @@
-bin/xar
-include/xar/xar.h
-lib/libxar.a
-lib/libxar.so
-lib/libxar.so.1
-share/man/man1/xar.1.gz
