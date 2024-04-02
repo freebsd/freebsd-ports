@@ -6,9 +6,6 @@ lib/cmake/PortMidi/PortMidiConfigVersion.cmake
 lib/cmake/PortMidi/PortMidiTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PortMidi/PortMidiTargets.cmake
 lib/libportmidi.so
-lib/libportmidi.so.1
-lib/libportmidi.so.1.0.236
-lib/libporttime.so
-lib/libporttime.so.1
-lib/libporttime.so.1.0.236
+lib/libportmidi.so.2
+lib/libportmidi.so.2.0.3
 libdata/pkgconfig/portmidi.pc
