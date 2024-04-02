@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,13 +38,13 @@ CARGO_CRATES=	ahash-0.8.11 \
 		castaway-0.2.2 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		chrono-0.4.35 \
+		chrono-0.4.37 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.3 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_derive-4.5.3 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		compact_str-0.7.1 \
@@ -82,7 +82,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		idna-0.5.0 \
 		indexmap-2.2.5 \
 		indoc-2.0.4 \
-		insta-1.36.1 \
+		insta-1.38.0 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
@@ -138,7 +138,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		similar-2.4.0 \
+		similar-2.5.0 \
 		simple-logging-2.0.2 \
 		smallvec-1.13.1 \
 		stability-0.1.1 \
@@ -201,7 +201,6 @@ CARGO_CRATES=	ahash-0.8.11 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.4 \
 		winnow-0.6.5 \
-		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32
