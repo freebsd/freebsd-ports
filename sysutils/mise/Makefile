@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.3.11
+DISTVERSION=	2024.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-wincon-3.0.2 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.14 \
-		async-compression-0.4.6 \
+		async-compression-0.4.7 \
 		autocfg-1.2.0 \
 		backtrace-0.3.71 \
 		base64-0.21.7 \
@@ -77,7 +77,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
 		demand-1.1.0 \
-		der-0.7.8 \
+		der-0.7.9 \
 		deranged-0.3.11 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
