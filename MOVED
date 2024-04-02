@@ -3137,3 +3137,4 @@ net/samba413||2024-04-01|Has expired: Reached its EoL on March 21, 2022
 science/py-asdf-unit-schemas|science/py-asdf-standard|2024-04-01|Has expired: This package is decommissioned and no longer provides any ASDF schemas. The schemas provided by the package were duplicates of the schemas provided by asdf-standard. Use science/py-asdf-standard instead
 textproc/rubygem-autoprefixer-rails1025|textproc/rubygem-autoprefixer-rails|2024-04-02|Obsolete, please use textproc/rubygem-autoprefixer-rails instead
 www/rubygem-cssbundling-rails13-rails70|www/rubygem-cssbundling-rails-rails70|2024-04-02|Obsolete, please use www/rubygem-cssbundling-rails-rails70 instead
+databases/xtrabackup|databases/xtrabackup80|2024-04-02|Has expired: Percona XtraBackup 2.4 has reached EOL status
