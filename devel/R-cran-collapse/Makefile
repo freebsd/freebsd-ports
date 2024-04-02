@@ -1,5 +1,5 @@
 PORTNAME=	collapse
-DISTVERSION=	2.0.11
+DISTVERSION=	2.0.12
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +16,10 @@ RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-data.table>0:devel/R-cran-data.table \
 		R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-kit>0:devel/R-cran-kit \
+		R-cran-microbenchmark>0:devel/R-cran-microbenchmark \
+		R-cran-plm>0:finance/R-cran-plm \
 		R-cran-testthat>0:devel/R-cran-testthat
+# Tests: 'fixest' required (?) not ported yet
 
 USES=		cran:auto-plist,compiles
 
