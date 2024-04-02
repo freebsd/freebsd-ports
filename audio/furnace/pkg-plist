@@ -25,6 +25,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/docking.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/effect-list-window.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/effect-list.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/export.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/instruments-folder.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/instruments.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/interface1.png
@@ -69,6 +70,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/c140.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/c219.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/c64.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/dave.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/es5506.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/fds.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/fm-esfm.md
@@ -79,6 +81,8 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/fm-opz.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/ga20.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/game-boy.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/gbadma.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/gbaminmod.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/instrument-editor-top.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/instrument-wavetable.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/k007232.md
@@ -98,6 +102,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/msm6258.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/msm6295.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/n163.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/nds.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/nes.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/pce.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/pet.md
@@ -146,11 +151,13 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/c219.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/c64.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/dac.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/dave.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/es5506.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/esfm.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/fds.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ga20.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/game-boy.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/gba.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/genesis.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/k007232.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/k056320.md
@@ -161,6 +168,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/msm6295.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/n163.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/namco.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/nds.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/nes.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/opl.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/opll.md
@@ -247,6 +255,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/inputlatch.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/log-viewer.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/log-viewer.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/memory-composition.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer-mixer.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer-patchbay.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer.md
@@ -298,6 +307,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/arcade/ComicPartytrack20.fur
 %%DATADIR%%/demos/arcade/Destiny_Islands_Irem_M92.fur
 %%DATADIR%%/demos/arcade/Eternal_Forest_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/Grape_Jelly_Alpha5232.fur
 %%DATADIR%%/demos/arcade/Hexionology.fur
 %%DATADIR%%/demos/arcade/Ice_Wind_SegaPCM.fur
 %%DATADIR%%/demos/arcade/Mars_Bar_On_Mars_NamcoWSG.fur
@@ -315,6 +325,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/arcade/UT99_Run_TaitoArcade.fur
 %%DATADIR%%/demos/arcade/Utter_Determination_TaitoArcade.fur
 %%DATADIR%%/demos/arcade/WSG_Loop_Tune_NamcoWSG.fur
+%%DATADIR%%/demos/arcade/eek_qsound.fur
 %%DATADIR%%/demos/arcade/ice_cap_NamcoC30.fur
 %%DATADIR%%/demos/arcade/iji_tor_segaxboard.fur
 %%DATADIR%%/demos/arcade/last_day_of_summer_NamcoC15.fur
@@ -407,9 +418,9 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/genesis/Puyopuyo~n_DopplegangerArle-TsuuStyle.fur
 %%DATADIR%%/demos/genesis/Shovel_Knight_Title.fur
 %%DATADIR%%/demos/genesis/Solar_Man.fur
+%%DATADIR%%/demos/genesis/SparkmanMD.fur
 %%DATADIR%%/demos/genesis/Stereotactics_Rewritten.fur
-%%DATADIR%%/demos/genesis/Swaggin_Dragon.dmf
-%%DATADIR%%/demos/genesis/darkstar.dmf
+%%DATADIR%%/demos/genesis/darkstar.fur
 %%DATADIR%%/demos/genesis/inside_the_computer.fur
 %%DATADIR%%/demos/genesis/laidback.fur
 %%DATADIR%%/demos/genesis/last_chiptune.fur
@@ -417,6 +428,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/genesis/mm5_boss.fur
 %%DATADIR%%/demos/genesis/mummy_in_the_pyramid.fur
 %%DATADIR%%/demos/genesis/my_problem.fur
+%%DATADIR%%/demos/genesis/newer_song_lol.fur
 %%DATADIR%%/demos/genesis/the_serenity_of_lonliness.fur
 %%DATADIR%%/demos/genesis/yky.fur
 %%DATADIR%%/demos/lynx/LedStorm.fur
@@ -427,16 +439,20 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/misc/BlueBolt_VIC20.fur
 %%DATADIR%%/demos/misc/Dreamliner_FMTowns.fur
 %%DATADIR%%/demos/misc/FiveTwoThreeTwo_MSM5232.fur
+%%DATADIR%%/demos/misc/Galactic_Melody_PowerNoise.fur
 %%DATADIR%%/demos/misc/GreenIdeas_PET.fur
 %%DATADIR%%/demos/misc/Inner Machinations YM2610B.fur
 %%DATADIR%%/demos/misc/Miami_Ice_Sharp_X1.fur
+%%DATADIR%%/demos/misc/OHM_VRC6.fur
 %%DATADIR%%/demos/misc/Playground_2xT6W28.fur
 %%DATADIR%%/demos/misc/Someting_I_can_feel_MSM5232.fur
+%%DATADIR%%/demos/misc/StrobesPowerNoise.fur
 %%DATADIR%%/demos/misc/T_Six_T6W28.fur
 %%DATADIR%%/demos/misc/TerminalZone_SM8521.fur
 %%DATADIR%%/demos/misc/atari_breakbeat_TIA.fur
 %%DATADIR%%/demos/misc/beeper_torture.fur
 %%DATADIR%%/demos/misc/combat_vehicle_pokey.fur
+%%DATADIR%%/demos/misc/deepmist_dave.fur
 %%DATADIR%%/demos/misc/empty_PV-1000.fur
 %%DATADIR%%/demos/misc/fragments_turbosound.fur
 %%DATADIR%%/demos/misc/fursuits_for_the_suspiciously_rich_MSM5232.fur
@@ -444,6 +460,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/misc/lagrange_point_2023_opm.fur
 %%DATADIR%%/demos/misc/massive_x_opz.fur
 %%DATADIR%%/demos/misc/meaningful_connection_es5506.fur
+%%DATADIR%%/demos/misc/morepain_TIA.fur
 %%DATADIR%%/demos/misc/mushroomhill_SM8521.fur
 %%DATADIR%%/demos/misc/pseudogba_pwaa_godot.fur
 %%DATADIR%%/demos/misc/rf5wapianoroll.fur
@@ -453,6 +470,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/misc/the_erfngjt_TIA.fur
 %%DATADIR%%/demos/misc/the_king_of_crisp_opm.fur
 %%DATADIR%%/demos/misc/vortex_opm.fur
+%%DATADIR%%/demos/misc/walkontheroof_T6W28.fur
 %%DATADIR%%/demos/misc/waterworld_map_opm.fur
 %%DATADIR%%/demos/msx/21492413.fur
 %%DATADIR%%/demos/msx/Gyruss_Stage_2.fur
@@ -464,6 +482,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/msx/attack_the_barbarian.fur
 %%DATADIR%%/demos/msx/opll-fashioned_drums.fur
 %%DATADIR%%/demos/msx/ranburu_song.fur
+%%DATADIR%%/demos/multichip/1_bit_bros.fur
 %%DATADIR%%/demos/multichip/AgentX.fur
 %%DATADIR%%/demos/multichip/BONUS. Sonic 2 Boss.fur
 %%DATADIR%%/demos/multichip/Between_the_Circuits.fur
@@ -477,6 +496,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/multichip/Jet_Pack_Adventure_GBAesque.fur
 %%DATADIR%%/demos/multichip/MegaMari-Cirno.fur
 %%DATADIR%%/demos/multichip/MetalSlug_BaseCamp_SMS_TIA.fur
+%%DATADIR%%/demos/multichip/Namco_C30_C219_Loop.fur
 %%DATADIR%%/demos/multichip/OPL3_SegaPCM_Xeno_Crisis_-_Facility_Area_2.fur
 %%DATADIR%%/demos/multichip/PinBot-C30C140.fur
 %%DATADIR%%/demos/multichip/Sky Chaze Zone 32X.fur
@@ -561,10 +581,12 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/snes/segacd.fur
 %%DATADIR%%/demos/snes/tetristheme.fur
 %%DATADIR%%/demos/snes/very chill snes.fur
+%%DATADIR%%/demos/specs2/KeygenTypeBeat.fur
 %%DATADIR%%/demos/specs2/Tim_Follin.fur
 %%DATADIR%%/demos/specs2/atmosphere.fur
 %%DATADIR%%/demos/specs2/back_into_adventure.fur
 %%DATADIR%%/demos/specs2/object.fur
+%%DATADIR%%/demos/specs2/rastaline_dub.fur
 %%DATADIR%%/demos/specs2/spa.fur
 %%DATADIR%%/demos/specs2/thick bass test.fur
 %%DATADIR%%/demos/virtualboy/4_dimensionnal_goddess_of_existance.fur
@@ -635,6 +657,8 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/C64/Open_Hi-hat.fui
 %%DATADIR%%/instruments/C64/Side_Stick.fui
 %%DATADIR%%/instruments/C64/Snare.fui
+%%DATADIR%%/instruments/C64/string_c64.fui
+%%DATADIR%%/instruments/ESFM/Hi-Hat_ESFM.fui
 %%DATADIR%%/instruments/ESFM/Synth Bass.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_1chostinato.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_4opBassESFM.fui
@@ -1322,6 +1346,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/synth/[1OPHigh]Saw.dmp
 %%DATADIR%%/instruments/OPN/synth/[2OPHigh]Filtered Square.dmp
 %%DATADIR%%/instruments/OPN/synth/cool leaed.dmp
+%%DATADIR%%/instruments/OPN/synth/dodo.fui
 %%DATADIR%%/instruments/OPN/synth/fm_grinder.fui
 %%DATADIR%%/instruments/OPN/synth/fm_horror.fui
 %%DATADIR%%/instruments/OPN/synth/fm_noname2.fui
@@ -1332,6 +1357,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/synth/fm_noname7.fui
 %%DATADIR%%/instruments/OPN/synth/growl.fui
 %%DATADIR%%/instruments/OPN/synth/mystic cave lead.dmp
+%%DATADIR%%/instruments/OPN/synth/pateta.fui
 %%DATADIR%%/instruments/OPN/synth/sawtooth.dmp
 %%DATADIR%%/instruments/OPN/synth/snes-ish square.dmp
 %%DATADIR%%/instruments/OPN/synth/sonic spinball toxic caves thingy.dmp
@@ -1400,6 +1426,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/wind/bassoon_clarinet.fui
 %%DATADIR%%/instruments/OPN/wind/fm_pipeflute.fui
 %%DATADIR%%/instruments/OPN/wind/woodwind_00.fui
+%%DATADIR%%/instruments/OPZ/Fake SNES Bass_OPZ.fui
 %%DATADIR%%/instruments/OPZ/Fake_Famicom_Tri.fui
 %%DATADIR%%/instruments/OPZ/Heavy_synth_bass.fui
 %%DATADIR%%/instruments/OPZ/Synth Bass.fui

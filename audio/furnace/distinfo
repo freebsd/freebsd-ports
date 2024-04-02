@@ -1,10 +1,12 @@
-TIMESTAMP = 1706953061
-SHA256 (tildearrow-furnace-v0.6.1_GH0.tar.gz) = 4af60c47c3070a176e9edf03663a6319d219083b25f9b43234bd0acfdf62a6b0
-SIZE (tildearrow-furnace-v0.6.1_GH0.tar.gz) = 47617734
+TIMESTAMP = 1712040966
+SHA256 (tildearrow-furnace-v0.6.2_GH0.tar.gz) = e01df9ea9c5c625e7f3cbd59df34ab066be5b6d4e8675d445c62e4e1a5915476
+SIZE (tildearrow-furnace-v0.6.2_GH0.tar.gz) = 47943156
 SHA256 (libsdl-org-SDL-ffa78e6b_GH0.tar.gz) = 8fe46499dc6533bc472a633d8a2a0a0886160b3d158781f1e5782330cb4fcf0e
 SIZE (libsdl-org-SDL-ffa78e6b_GH0.tar.gz) = 8486775
 SHA256 (superctr-adpcm-ef7a2171_GH0.tar.gz) = 680e0d530586e8ad6a1a68f45cf8b065b6d67e5cbb3c1e6900af8d87a9301428
 SIZE (superctr-adpcm-ef7a2171_GH0.tar.gz) = 5492
+SHA256 (dbry-adpcm-xq-6220fed7_GH0.tar.gz) = 8b400d260b3290310f9b91ee4817d345589fbac046de8477f42813a9f4f9d9e4
+SIZE (dbry-adpcm-xq-6220fed7_GH0.tar.gz) = 12324
 SHA256 (fmtlib-fmt-e57ca2e3_GH0.tar.gz) = 9d058f94b71ed686cff96594b5dafb3a0f2e042dc9555cde92fe83ab28201ac7
 SIZE (fmtlib-fmt-e57ca2e3_GH0.tar.gz) = 849341
 SHA256 (libsndfile-libsndfile-ca200890_GH0.tar.gz) = e4511723c1fafd99425ed620d33d89c1dd875068a27c3f107b5d6be33d629507
