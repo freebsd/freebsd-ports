@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Somewhat prototypical facility for generating CLI interfaces
 WWW=		http://phk.freebsd.dk/phkrel/
 
+DEPRECATED=	Depends on deprecated port devel/libphk
+EXPIRATION_DATE=2024-04-30
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:devel/libphk
 
 USES=		uidfix
