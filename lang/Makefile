@@ -360,6 +360,7 @@
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
+    SUBDIR += starlark-rust
     SUBDIR += swipl
     SUBDIR += tauthon
     SUBDIR += tcbasic
