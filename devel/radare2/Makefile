@@ -1,7 +1,5 @@
 PORTNAME=	radare2
-DISTVERSION=	5.8.8
-PORTREVISION=	1
-PORTEVISION=	1
+DISTVERSION=	5.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -22,9 +20,9 @@ PATHFIX_MAKEFILEIN=	Makefile
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg
 GH_PROJECT=	vector35-arch-arm64:arm64 vector35-arch-armv7:armv7
-GH_TAGNAME=	55d73c6:arm64 f270a6c:armv7
 GH_SUBDIR=	libr/arch/p/arm/v35/arch-arm64:arm64 \
 		libr/arch/p/arm/v35/arch-armv7:armv7
+GH_TAGNAME=	55d73c6:arm64 f270a6c:armv7
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -34,7 +32,8 @@ MAKE_ENV+=	HOST_CC=${CC}
 
 CFLAGS+=	-I${PREFIX}/include/capstone
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
+			MAJOR_VERSION="${PORTVERSION:R}"
 
 OPTIONS_DEFINE=	DOCS
 
