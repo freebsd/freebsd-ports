@@ -42,12 +42,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		async-stream-0.3.5 \
 		async-stream-impl-0.3.5 \
 		async-task-4.7.0 \
-		async-trait-0.1.78 \
+		async-trait-0.1.79 \
 		async-web-client-0.2.7 \
 		async-ws-0.3.4 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
-		autocfg-1.1.0 \
+		autocfg-1.2.0 \
 		awc-3.4.0 \
 		backtrace-0.3.71 \
 		base64-0.13.1 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		bytestring-1.3.1 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		chrono-0.4.35 \
+		chrono-0.4.37 \
 		colorchoice-1.0.0 \
 		concurrent-queue-2.4.0 \
 		config-0.14.0 \
@@ -115,9 +115,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		event-listener-4.0.3 \
 		event-listener-5.2.0 \
 		event-listener-strategy-0.4.0 \
-		event-listener-strategy-0.5.0 \
+		event-listener-strategy-0.5.1 \
 		fastrand-1.9.0 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		finl_unicode-1.2.0 \
 		flate2-1.0.28 \
 		flume-0.11.0 \
@@ -143,7 +143,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		gloo-net-0.2.6 \
 		gloo-utils-0.1.7 \
 		h2-0.3.25 \
-		handlebars-5.1.0 \
+		handlebars-5.1.2 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.3 \
 		hashlink-0.8.4 \
@@ -170,7 +170,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
 		itertools-0.12.1 \
-		itoa-1.0.10 \
+		itoa-1.0.11 \
 		jobserver-0.1.28 \
 		js-sys-0.3.69 \
 		json5-0.4.1 \
@@ -183,7 +183,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		libflate-2.0.0 \
 		libflate_lz77-2.0.0 \
 		libm-0.2.8 \
-		libredox-0.0.1 \
+		libredox-0.1.3 \
 		libsqlite3-sys-0.28.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
@@ -194,7 +194,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		log-0.4.21 \
 		markdown-1.0.0-alpha.16 \
 		md-5-0.10.6 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
@@ -229,7 +229,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		pest_meta-2.7.8 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
-		pin-project-lite-0.2.13 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		piper-0.2.1 \
 		pkcs1-0.7.5 \
@@ -245,10 +245,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rand_core-0.6.4 \
 		rcgen-0.10.0 \
 		redox_syscall-0.4.1 \
-		redox_users-0.4.4 \
+		redox_users-0.4.5 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.3 \
 		ring-0.16.20 \
 		ring-0.17.8 \
 		rle-decode-fast-1.0.3 \
@@ -272,7 +272,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		semver-1.0.22 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde_json-1.0.115 \
 		serde_plain-1.0.2 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
@@ -300,7 +300,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		strum_macros-0.24.3 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.53 \
+		syn-2.0.57 \
 		synstructure-0.12.6 \
 		tempfile-3.10.1 \
 		thiserror-1.0.58 \
@@ -311,7 +311,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.36.0 \
+		tokio-1.37.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.23.4 \
 		tokio-rustls-0.24.1 \
@@ -389,6 +389,6 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
 		zeroize-1.7.0 \
-		zstd-0.13.0 \
-		zstd-safe-7.0.0 \
-		zstd-sys-2.0.9+zstd.1.5.5
+		zstd-0.13.1 \
+		zstd-safe-7.1.0 \
+		zstd-sys-2.0.10+zstd.1.5.6
