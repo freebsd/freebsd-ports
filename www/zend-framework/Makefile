@@ -1,6 +1,6 @@
 PORTNAME=	ZendFramework
-PORTVERSION=	2.4.13
-PORTREVISION=	0
+DISTVERSION=	2.4.13
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -11,6 +11,9 @@ WWW=		https://framework.zend.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Deprecated by upstream, and moved to Laminas Project
+EXPIRATION_DATE=2024-06-30
 
 USES=		gettext php:web,flavors tar:tgz
 
