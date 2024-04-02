@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O (older version)
 WWW=		https://www.iozone.org/
 
+DEPRECATED=	Abandoned and obsolete version, superseded by benchmarks/iozone (3.x). Consider also migrating to benchmarks/fio 
+EXPIRATION_DATE=2024-04-30
+
 CONFLICTS_INSTALL=	iozone
 
 PLIST_FILES=	bin/iozone \
