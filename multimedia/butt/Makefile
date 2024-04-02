@@ -1,5 +1,5 @@
 PORTNAME=	butt
-PORTVERSION=	0.1.40
+PORTVERSION=	0.1.41
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	https://danielnoethen.de/butt/release/${PORTVERSION}/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopus.so:audio/opus \
 		libpng.so:graphics/png \
 		libportaudio.so:audio/portaudio \
+		libportmidi.so:audio/portmidi \
 		libsamplerate.so:audio/libsamplerate \
 		libvorbis.so:audio/libvorbis
 
@@ -30,6 +31,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I/usr/local/include
 LDFLAGS+=	-L/usr/local/lib -lintl
 PLIST_FILES=	bin/butt \
+		share/locale/ar/LC_MESSAGES/butt.mo \
 		share/locale/de/LC_MESSAGES/butt.mo \
 		share/locale/es/LC_MESSAGES/butt.mo \
 		share/locale/fr/LC_MESSAGES/butt.mo \

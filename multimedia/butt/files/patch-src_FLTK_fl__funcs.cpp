@@ -5,6 +5,7 @@
  #include <time.h>
  #include <sys/stat.h>
 +#include <sys/syslimits.h>
+ #include <pthread.h>
  
  #ifndef WIN32
  #include <sys/wait.h>
