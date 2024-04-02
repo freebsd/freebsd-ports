@@ -11,6 +11,9 @@ WWW=		https://www.gnu.org/software/gnu-arch/
 
 LICENSE=	GPLv2+
 
+DEPRECATED=     Deprecated and obsolete revision control system, consider migrating to devel/git or devel/mercurial 
+EXPIRATION_DATE=2024-04-30
+
 BUILD_DEPENDS=	gpatch:devel/patch \
 		gdiff:textproc/diffutils \
 		gtar:archivers/gtar
