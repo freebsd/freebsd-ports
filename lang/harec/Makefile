@@ -1,9 +1,9 @@
 PORTNAME=	harec
-PORTVERSION=	g20230719
+PORTVERSION=	0.24.0
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
-DISTNAME=	f16e9792
-DIST_SUBDIR=	hare
+DISTNAME=	${PORTVERSION}
+DIST_SUBDIR=	harec
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Hare compiler written in C11
@@ -21,20 +21,28 @@ RUN_DEPENDS=	as:devel/binutils \
 
 USES=		compiler:c11
 
+MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/} \
+		DESTDIR=${STAGEDIR} \
+		PREFIX=${PREFIX}
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
+
+PLIST_FILES=	bin/harec
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-		${MKDIR} ${WRKSRC}/build
-		cd ${WRKSRC}/build && CFLAGS="${CFLAGS}" ../configure --prefix=${PREFIX} && make
+		cd ${WRKSRC} && ${CP} configs/freebsd.mk config.mk
+		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/build/harec ${STAGEDIR}${PREFIX}/bin
+		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} install
+		${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/*
 		${MKDIR} ${STAGEDIR}${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${STAGEDIR}${DOCSDIR}
 
 do-test:
-		cd ${WRKSRC}/build && make check
+		cd ${WRKSRC} && make ${MAKE_ARGS} check
 
 .include <bsd.port.mk>
