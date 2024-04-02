@@ -482,7 +482,7 @@ dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/usr/sbin/nologin
 redis:*:535:535::0:0:Redis Daemon:/nonexistent:/usr/sbin/nologin
 keydb:*:536:536::0:0:KeyDB Daemon:/nonexistent:/usr/sbin/nologin
-# free: 537
+valkey:*:537:537::0:0:Valkey Daemon:/nonexistent:/usr/sbin/nologin
 # free: 538
 # free: 539
 # free: 540

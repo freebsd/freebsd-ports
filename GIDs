@@ -477,7 +477,7 @@ dkimproxy:*:525:
 pgbouncer:*:534:
 redis:*:535:
 keydb:*:536:
-# free: 537
+valkey:*:537:
 # free: 538
 # free: 539
 # free: 540

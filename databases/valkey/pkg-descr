@@ -1,0 +1,4 @@
+Valkey is a high-performance data structure server that primarily
+serves key/value workloads. It supports a wide range of native
+structures and an extensible plugin system for adding new data
+structures and access patterns.

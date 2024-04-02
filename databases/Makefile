@@ -1061,6 +1061,7 @@
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += usql
+    SUBDIR += valkey
     SUBDIR += vfront
     SUBDIR += virtualpg
     SUBDIR += vsqlite
