@@ -3,7 +3,6 @@ bin/pkmon
 %%ETCDIR%%/PackageKit.conf
 %%ETCDIR%%/Vendor.conf
 etc/cron.daily/packagekit-background.cron
-etc/dbus-1/system.d/org.freedesktop.PackageKit.conf
 etc/sysconfig/packagekit-background
 include/PackageKit/packagekit-glib2/packagekit.h
 include/PackageKit/packagekit-glib2/pk-bitfield.h
@@ -49,6 +48,7 @@ lib/libpackagekit-glib2.so
 lib/libpackagekit-glib2.so.18
 lib/libpackagekit-glib2.so.18.1.3
 lib/packagekit-backend/libpk_backend_dummy.so
+lib/packagekit-backend/libpk_backend_freebsd.so
 lib/packagekit-backend/libpk_backend_test_fail.so
 lib/packagekit-backend/libpk_backend_test_nop.so
 lib/packagekit-backend/libpk_backend_test_spawn.so
@@ -68,6 +68,7 @@ libexec/packagekitd
 %%DATADIR%%/pk-upgrade-distro.sh
 share/dbus-1/interfaces/org.freedesktop.PackageKit.Transaction.xml
 share/dbus-1/interfaces/org.freedesktop.PackageKit.xml
+share/dbus-1/system.d/org.freedesktop.PackageKit.conf
 share/dbus-1/system-services/org.freedesktop.PackageKit.service
 share/gir-1.0/PackageKitGlib-1.0.gir
 share/locale/ar/LC_MESSAGES/PackageKit.mo
@@ -142,6 +143,7 @@ share/locale/zh_HK/LC_MESSAGES/PackageKit.mo
 share/locale/zh_TW/LC_MESSAGES/PackageKit.mo
 share/man/man1/pkcon.1.gz
 share/man/man1/pkmon.1.gz
+share/metainfo/org.freedesktop.packagekit.metainfo.xml
 share/polkit-1/actions/org.freedesktop.packagekit.policy
 share/polkit-1/rules.d/org.freedesktop.packagekit.rules
 share/vala/vapi/packagekit-glib2.deps
