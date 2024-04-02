@@ -664,7 +664,6 @@ include/folly/lang/Extern.h
 include/folly/lang/Hint-inl.h
 include/folly/lang/Hint.h
 include/folly/lang/Keep.h
-include/folly/lang/Launder.h
 include/folly/lang/New.h
 include/folly/lang/Ordering.h
 include/folly/lang/Pretty.h
@@ -781,10 +780,9 @@ include/folly/python/import.h
 include/folly/python/iobuf.h
 include/folly/small_vector.h
 include/folly/sorted_vector_types.h
-include/folly/ssl/Init.h
 include/folly/ssl/OpenSSLCertUtils.h
 include/folly/ssl/OpenSSLHash.h
-include/folly/ssl/OpenSSLLockTypes.h
+include/folly/ssl/OpenSSLKeyUtils.h
 include/folly/ssl/OpenSSLPtrTypes.h
 include/folly/ssl/OpenSSLTicketHandler.h
 include/folly/ssl/OpenSSLVersionFinder.h
