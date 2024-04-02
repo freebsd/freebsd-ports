@@ -461,6 +461,7 @@ libdata/pkgconfig/dart.pc
 %%DATADIR%%/cmake/DARTFindfmt.cmake
 %%DATADIR%%/cmake/DARTFindlz4.cmake
 %%DATADIR%%/cmake/DARTFindoctomap.cmake
+%%DATADIR%%/cmake/DARTFindspdlog.cmake
 %%DATADIR%%/cmake/DARTFindtinyxml2.cmake
 %%DATADIR%%/cmake/DARTFindurdfdom.cmake
 %%DATADIR%%/cmake/FindIPOPT.cmake
