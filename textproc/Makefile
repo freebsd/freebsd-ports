@@ -1734,7 +1734,6 @@
     SUBDIR += rubygem-asciidoctor-plantuml
     SUBDIR += rubygem-asciidoctor-plantuml00
     SUBDIR += rubygem-autoprefixer-rails
-    SUBDIR += rubygem-autoprefixer-rails1025
     SUBDIR += rubygem-babel-source
     SUBDIR += rubygem-babel-transpiler
     SUBDIR += rubygem-babosa
