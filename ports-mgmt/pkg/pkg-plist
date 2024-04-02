@@ -14,6 +14,7 @@ lib/libpkg.so.4
 libdata/pkgconfig/pkg.pc
 share/man/man3/pkg_create.3.gz
 share/man/man3/pkg_printf.3.gz
+share/man/man3/pkg_repo_create.3.gz
 share/man/man3/pkg_repos.3.gz
 share/man/man5/pkg-repository.5.gz
 share/man/man5/pkg-keywords.5.gz
@@ -34,6 +35,7 @@ share/man/man8/pkg-delete.8.gz
 share/man/man8/pkg-fetch.8.gz
 share/man/man8/pkg-info.8.gz
 share/man/man8/pkg-install.8.gz
+share/man/man8/pkg-key.8.gz
 share/man/man8/pkg-lock.8.gz
 share/man/man8/pkg-query.8.gz
 share/man/man8/pkg-register.8.gz
