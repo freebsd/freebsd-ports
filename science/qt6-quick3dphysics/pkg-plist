@@ -11,6 +11,7 @@
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qdebugdrawhelper_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qdynamicrigidbody_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qheightfieldshape_p.h
+%%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qmeshshape_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qphysicscommands_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qphysicsmaterial_p.h
 %%QT_INCDIR%%/QtQuick3DPhysics/%%FULLVER%%/QtQuick3DPhysics/private/qphysicsmeshutils_p_p.h
