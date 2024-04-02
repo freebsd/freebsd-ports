@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.0.1
-PORTREVISION=	12
+DISTVERSION=	11.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,10 +39,6 @@ TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 			libOpenEXR.so:graphics/openexr
 TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
-
-xpost-patch: # extra fix for OneTBB
-	@cd ${WRKSRC}/openvdb/openvdb && \
-		${MKDIR} thread
 
 # DOCS is broken: https://github.com/AcademySoftwareFoundation/openvdb/issues/899
 #DOCS_CMAKE_BOOL=	OPENVDB_BUILD_DOCS

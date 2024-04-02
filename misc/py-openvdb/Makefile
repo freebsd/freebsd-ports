@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.0.1
-PORTREVISION=	2
+DISTVERSION=	11.0.0
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,16 +11,16 @@ WWW=		https://www.openvdb.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	${PY_BOOST} \
-		libboost_iostreams.so:devel/boost-libs \
+BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
+		${PYNUMPY}
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libopenvdb.so:misc/openvdb \
 		libtbb.so:devel/onetbb
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
 USE_LDCONFIG=	yes
-USE_PYTHON=	flavors
+USE_PYTHON=	flavors pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
@@ -32,7 +31,14 @@ CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 
 WRKSRC_SUBDIR=	openvdb/openvdb/python
 
-PLIST_FILES=	include/openvdb/python/pyopenvdb.h \
-		${PYTHON_SITELIBDIR}/pyopenvdb.so
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+PLIST_FILES=	${PYTHON_SITELIBDIR}/pyopenvdb${PYTHON_EXT_SUFFIX}.so
+
+do-test: # run an example, since the supplied test appears to be only for Windows
+	@cd ${WRKSRC} && \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py && \
+		[ -f ${WRKSRC}/mygrids.vdb ] && \
+		${ECHO} "Test has succeeded."
 
 .include <bsd.port.mk>
