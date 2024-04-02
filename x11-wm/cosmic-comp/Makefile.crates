@@ -56,6 +56,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		byteorder-1.5.0 \
 		bytes-1.5.0 \
 		calloop-0.12.4 \
+		calloop-0.13.0 \
 		calloop-wayland-source-0.2.0 \
 		cc-1.0.83 \
 		cesu8-1.1.0 \
@@ -244,7 +245,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		kurbo-0.9.5 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libloading-0.7.4 \
 		libloading-0.8.1 \
 		libm-0.2.8 \
@@ -394,7 +395,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.27 \
-		rustix-0.38.30 \
+		rustix-0.38.32 \
 		rustversion-1.0.14 \
 		rustybuzz-0.12.1 \
 		ryu-1.0.16 \
@@ -589,13 +590,13 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		clipboard_macos,clipboard_wayland,clipboard_x11,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-mime-types\#f65a6c303bbbd6c7bf88f9bc34421ec06d893bea \
 		taffy@git+https://github.com/DioxusLabs/taffy?rev=7781c70\#7781c70241f7f572130c13106f2a869a9cf80885 \
 		d3d12,naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/gfx-rs/wgpu?rev=20fda69\#20fda698341efbdc870b8027d6d49f5bf3f36109 \
-		smithay@git+https://github.com/smithay/smithay?rev=c17297b\#c17297b68e8bc761ebddf6900926d78b19a5d8d1 \
+		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_style,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#cc439b2ceaf41226ab86416ae0ad3651c9a6e10a \
 		glyphon@git+https://github.com/pop-os/glyphon.git?tag=v0.5.0\#1b0646ff8f74da92d3be704dfc2257d7f4d7eed8 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
 		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=cdc652e0\#cdc652e0d4823b16a5bd9badd288e38512789dc5 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-mime-types\#cc0101c1f9ccc937a413bd3af3c0f6217f27e935 \
-		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_style,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#d02a4fefff319a3bd20936f9be30c4913bf49bab \
-		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#e65fa5e2bb47e51656221657049bd3f88ae9dae5 \
-		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#b08676909f882f553ab574601b35b58276a52458
+		smithay@git+https://github.com/smithay/smithay?rev=f133e418\#f133e418a25b1dfa4520000e08d3c6f548f4f58a \
+		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#ff5501d9a36e51c50d908413caf7632d8f7533b7 \
+		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#1cc4a1393d0f8be4d444666e260fdb811b400f49
