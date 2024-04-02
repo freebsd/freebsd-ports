@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.56.1
-PORTREVISION=	1
+DISTVERSION=	0.57.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,145 +16,152 @@ GH_ACCOUNT=	Wilfred
 
 PLIST_FILES=	bin/difft
 
-CARGO_CRATES=	ahash-0.8.9 \
-		aho-corasick-1.1.2 \
+CARGO_CRATES=	ahash-0.8.11 \
+		aho-corasick-1.1.3 \
 		allocator-api2-0.2.16 \
 		assert_cmd-2.0.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		bstr-0.2.17 \
-		bstr-1.6.0 \
+		bstr-1.9.1 \
 		bumpalo-3.14.0 \
-		bytecount-0.6.2 \
-		cc-1.0.83 \
+		cc-1.0.90 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
-		const_format-0.2.23 \
-		const_format_proc_macros-0.2.22 \
-		crossbeam-channel-0.5.8 \
-		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.8 \
-		crossbeam-utils-0.8.8 \
+		const_format-0.2.32 \
+		const_format_proc_macros-0.2.32 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.19 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
-		ctor-0.1.22 \
-		diff-0.1.12 \
+		diff-0.1.13 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
-		either-1.6.1 \
-		env_logger-0.10.0 \
-		errno-0.3.5 \
-		fixedbitset-0.4.1 \
+		either-1.10.0 \
+		env_logger-0.10.2 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		fixedbitset-0.4.2 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		glob-0.3.1 \
-		globset-0.4.13 \
-		hashbrown-0.11.2 \
+		globset-0.4.14 \
+		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.3 \
+		hermit-abi-0.3.9 \
+		home-0.5.5 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		ignore-0.4.18 \
-		indexmap-1.7.0 \
+		indexmap-1.9.3 \
+		indexmap-2.2.6 \
 		io-lifetimes-1.0.11 \
-		is-terminal-0.4.7 \
-		itertools-0.10.3 \
+		is-terminal-0.4.12 \
+		itertools-0.10.5 \
 		itertools-0.11.0 \
-		itoa-1.0.9 \
+		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.149 \
-		libm-0.2.7 \
+		libc-0.2.153 \
+		libm-0.2.8 \
 		libmimalloc-sys-0.1.24 \
 		line-numbers-0.3.0 \
 		linux-raw-sys-0.3.8 \
 		lock_api-0.4.11 \
-		log-0.4.17 \
+		log-0.4.21 \
 		memchr-2.7.1 \
-		memoffset-0.6.5 \
 		mimalloc-0.1.28 \
 		minimal-lexical-0.2.1 \
-		mio-0.8.10 \
-		nom-7.1.1 \
+		mio-0.8.11 \
+		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-traits-0.2.15 \
-		num_cpus-1.13.1 \
+		num-traits-0.2.18 \
 		once_cell-1.19.0 \
-		os_str_bytes-6.0.1 \
-		output_vt100-0.1.3 \
+		os_str_bytes-6.6.1 \
 		owo-colors-3.5.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
-		petgraph-0.6.1 \
+		petgraph-0.6.4 \
 		predicates-2.1.1 \
-		predicates-core-1.0.3 \
-		predicates-tree-1.0.5 \
-		pretty_assertions-1.3.0 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		pretty_assertions-1.4.0 \
 		pretty_env_logger-0.5.0 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.79 \
 		quote-1.0.35 \
 		radix-heap-0.4.2 \
-		rayon-1.7.0 \
-		rayon-core-1.11.0 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		regex-1.9.6 \
 		regex-automata-0.1.10 \
 		regex-automata-0.3.9 \
+		regex-automata-0.4.6 \
 		regex-syntax-0.7.5 \
+		regex-syntax-0.8.2 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.27 \
-		rustversion-1.0.12 \
-		ryu-1.0.15 \
+		rustversion-1.0.14 \
+		ryu-1.0.17 \
 		same-file-1.0.6 \
-		scopeguard-1.1.0 \
-		serde-1.0.176 \
-		serde_derive-1.0.176 \
-		serde_json-1.0.104 \
+		scopeguard-1.2.0 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.114 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		strsim-0.10.0 \
 		strum-0.25.0 \
-		strum_macros-0.25.1 \
-		syn-1.0.95 \
-		syn-2.0.49 \
-		termcolor-1.1.3 \
+		strum_macros-0.25.3 \
+		syn-2.0.55 \
+		termcolor-1.4.1 \
 		terminal_size-0.2.6 \
-		termtree-0.2.4 \
+		termtree-0.4.1 \
 		textwrap-0.16.1 \
-		thread_local-1.1.7 \
+		thread_local-1.1.8 \
 		tree-sitter-0.20.10 \
+		tree_magic_mini-3.1.4 \
 		typed-arena-2.0.2 \
-		unicode-ident-1.0.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.3 \
+		unicode-ident-1.0.12 \
+		unicode-width-0.1.11 \
+		unicode-xid-0.2.4 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
-		walkdir-2.3.3 \
+		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.4 \
 		wu-diff-0.1.2 \
 		yansi-0.5.1 \
 		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32 \
-		tree_magic_mini@git+https://github.com/Wilfred/tree_magic?branch=fix-panic-for-empty-strings\#13dd6dda15c7062bd8f7dd5bc9bb5b16ce9ee613
+		zerocopy-derive-0.7.32
 
 PORTSCOUT=	ignore:1
 
