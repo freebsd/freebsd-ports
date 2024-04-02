@@ -1,5 +1,3 @@
-TIMESTAMP = 1709320848
-SHA256 (libvirt-10.1.0.tar.xz) = 36d9077e2b0ef6b0c6df3b42e42a67411b6ce3b1564b427b55e65019dde60eed
-SIZE (libvirt-10.1.0.tar.xz) = 9444244
-SHA256 (dcfe548cb0.patch) = 9211f318e0508a7b390c656c036240b168591d3aebf5d485a6ac10b18301797a
-SIZE (dcfe548cb0.patch) = 4967
+TIMESTAMP = 1712083691
+SHA256 (libvirt-10.2.0.tar.xz) = 215772bc5dc4a672e67ffa9de3774f05ed4b7ed282dbe296ec5c9fec01dd7ae3
+SIZE (libvirt-10.2.0.tar.xz) = 9466588
