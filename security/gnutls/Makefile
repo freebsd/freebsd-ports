@@ -1,7 +1,8 @@
 PORTNAME=	gnutls
-PORTVERSION=	3.8.4
+DISTVERSION=	3.8.4
+PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
+MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:R}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -19,47 +20,52 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		compiler:c11 cpe gmake iconv libtool localbase makeinfo \
 		pkgconfig tar:xz
-USE_LDCONFIG=	yes
-
 CPE_VENDOR=	gnu
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-guile \
+USE_LDCONFIG=	yes
+
+INFO=		gnutls
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+LDFLAGS=	-Wl,--undefined-version
+MAKE_ENV=	MAKEINFOFLAGS=--no-split
+
+CONFIGURE_ARGS=	--disable-rpath \
 		--with-system-priority-file=${PREFIX}/etc/gnutls/config \
 		--with-default-trust-store-dir=/etc/ssl/certs \
 		--without-brotli \
+		--without-included-libtasn1 \
 		--without-zstd \
 		--without-tpm \
 		--without-tpm2 \
 		--enable-ld-version-script
-LDFLAGS=	-Wl,--undefined-version
-MAKE_ENV=	MAKEINFOFLAGS=--no-split
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
 
-OPTIONS_DEFINE=		DANE EXAMPLES IDN MAN3 NLS P11KIT
-OPTIONS_DEFAULT=	IDN MAN3 P11KIT
+OPTIONS_DEFINE=		DANE EXAMPLES IDN KTLS MAN3 NLS P11KIT
+OPTIONS_DEFAULT=	IDN KTLS MAN3 P11KIT
 OPTIONS_SUB=		yes
 
 DANE_DESC=		Certificate verification via DNSSEC
+KTLS_DESC=		Enable support for in-kernel TLS
+MAN3_DESC=		Install API manpages (section 3)
+P11KIT_DESC=		PKCS\#11 and p11-kit support
+
 DANE_LIB_DEPENDS=	libunbound.so:dns/unbound
 DANE_CONFIGURE_ENABLE=	libdane
 
-IDN_CONFIGURE_WITH=	idn
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_CONFIGURE_WITH=	idn
 
-MAN3_DESC=		Install API manpages (section 3)
+KTLS_CONFIGURE_ENABLE=	ktls
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_CONFIGURE_OFF=	ac_cv_lib_intl_gettext=no
 NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF= 	ac_cv_lib_intl_gettext=no
 
-P11KIT_DESC=		PKCS\#11 and p11-kit support
+P11KIT_LIB_DEPENDS=	libp11-kit.so:security/p11-kit
 P11KIT_CONFIGURE_WITH=	p11-kit
 P11KIT_CONFIGURE_ON=	--with-default-trust-store-pkcs11="pkcs11:model=p11-kit-trust;manufacturer=PKCS%2311%20Kit"
-P11KIT_LIB_DEPENDS=	libp11-kit.so:security/p11-kit
-
-INFO=		gnutls gnutls-guile
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info*
