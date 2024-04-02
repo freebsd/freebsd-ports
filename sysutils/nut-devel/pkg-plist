@@ -108,6 +108,7 @@ lib/libnutscan.so.2.0.5
 %%SERIAL%%libexec/nut/safenet
 %%SERIAL%%libexec/nut/skel
 %%SNMP%%libexec/nut/snmp-ups
+%%SERIAL%%libexec/nut/sms_ser
 %%SERIAL%%libexec/nut/solis
 %%SERIAL%%libexec/nut/tripplite
 %%USB%%libexec/nut/tripplite_usb
@@ -218,6 +219,7 @@ lib/libnutscan.so.2.0.5
 %%MANPAGES%%share/man/man8/nutupsdrv.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/riello_ser.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/riello_usb.8.gz
+%%MANPAGES%%%%SERIAL%%share/man/man8/sms_ser.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/apc_modbus.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/adelsystem_cbi.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/generic_modbus.8.gz
