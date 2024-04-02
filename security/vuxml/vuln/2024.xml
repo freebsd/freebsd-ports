@@ -1,3 +1,35 @@
+  <vuln vid="2e3bea0c-f110-11ee-bc57-00e081b7aa2d">
+    <topic>jenkins -- HTTP/2 denial of service vulnerability in bundled Jetty</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.444</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.440.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-03-20/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3379 / CVE-2024-22201</h5>
+	  <p>HTTP/2 denial of service vulnerability in bundled Jetty</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-22201</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-03-20/</url>
+    </references>
+    <dates>
+      <discovery>2024-03-20</discovery>
+      <entry>2024-04-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d58726ff-ef5e-11ee-8d8e-080027a5b8e9">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
