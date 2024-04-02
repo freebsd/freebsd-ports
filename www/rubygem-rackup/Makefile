@@ -3,7 +3,7 @@ DISTVERSION=	2.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	General server command for Rack applications
 WWW=		https://github.com/rack/rackup
 

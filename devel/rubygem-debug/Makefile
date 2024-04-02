@@ -3,7 +3,7 @@ DISTVERSION=	1.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Debugging functionality for Ruby
 WWW=		https://rubygems.org/gems/debug
 

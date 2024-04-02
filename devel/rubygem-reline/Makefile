@@ -3,7 +3,7 @@ DISTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Alternative GNU Readline or Editline implementation by pure Ruby
 WWW=		https://rubygems.org/gems/reline
 

@@ -3,7 +3,7 @@ DISTVERSION=	0.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Add console capabilities to IO instances
 WWW=		https://github.com/ruby/io-console
 
