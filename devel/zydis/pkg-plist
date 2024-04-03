@@ -33,5 +33,5 @@ lib/cmake/zydis/zydis-config.cmake
 lib/cmake/zydis/zydis-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zydis/zydis-targets.cmake
 lib/libZydis.so
-lib/libZydis.so.4.0
-lib/libZydis.so.4.0.0.0
+lib/libZydis.so.4.1
+lib/libZydis.so.4.1.0.0
