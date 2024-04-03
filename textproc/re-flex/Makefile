@@ -1,5 +1,5 @@
 PORTNAME=	re-flex
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	textproc
@@ -34,5 +34,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lex.vim ${STAGEDIR}${DATADIR}/lex.vim
 	${INSTALL_MAN} ${WRKSRC}/doc/man/reflex.1 ${STAGEDIR}/${PREFIX}/share/man/man1/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/reflex.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>
