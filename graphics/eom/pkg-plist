@@ -30,7 +30,6 @@ lib/eom/plugins/reload.plugin
 lib/eom/plugins/statusbar-date.plugin
 lib/girepository-1.0/Eom-1.0.typelib
 libdata/pkgconfig/eom.pc
-share/man/man1/eom.1.gz
 share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/EomFileChooser.html
 %%PORTDOCS%%%%DOCSDIR%%/EomImageSaveInfo.html
@@ -631,6 +630,7 @@ share/locale/ml/LC_MESSAGES/eom.mo
 share/locale/mn/LC_MESSAGES/eom.mo
 share/locale/mr/LC_MESSAGES/eom.mo
 share/locale/ms/LC_MESSAGES/eom.mo
+share/locale/nan/LC_MESSAGES/eom.mo
 share/locale/nb/LC_MESSAGES/eom.mo
 share/locale/nds/LC_MESSAGES/eom.mo
 share/locale/ne/LC_MESSAGES/eom.mo
@@ -677,4 +677,5 @@ share/locale/zh_CN/LC_MESSAGES/eom.mo
 share/locale/zh_HK/LC_MESSAGES/eom.mo
 share/locale/zh_TW/LC_MESSAGES/eom.mo
 share/locale/zu/LC_MESSAGES/eom.mo
+share/man/man1/eom.1.gz
 share/metainfo/eom.appdata.xml
