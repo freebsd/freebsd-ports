@@ -1,5 +1,5 @@
 PORTNAME=	freenit
-DISTVERSION=	0.2.31
+DISTVERSION=	0.3.1
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,7 @@ WWW=		https://github.com/freenit-framework/backend
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		py39-pydantic-1.10.14,1 conflicts with py39-pydantic2-2.5.3 (installs files into the same place)
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}email-validator>=0:mail/py-email-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
@@ -23,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-factoryboy>=0:devel/py-pytest-factoryboy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 USE_RC_SUBR=	freenit
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
