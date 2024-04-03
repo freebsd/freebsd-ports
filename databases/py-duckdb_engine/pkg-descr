@@ -1,0 +1,6 @@
+duckdb_engine
+
+Basic SQLAlchemy driver for DuckDB
+
+Once you've installed this package, you should be able to just use it,
+as SQLAlchemy does a python path search

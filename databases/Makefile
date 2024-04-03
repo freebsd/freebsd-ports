@@ -768,6 +768,7 @@
     SUBDIR += py-dbt-snowflake
     SUBDIR += py-dbutils
     SUBDIR += py-duckdb
+    SUBDIR += py-duckdb_engine
     SUBDIR += py-fakeredis
     SUBDIR += py-fastapi-users-db-ormar
     SUBDIR += py-fastparquet
