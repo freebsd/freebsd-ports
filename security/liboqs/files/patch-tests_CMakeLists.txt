@@ -1,11 +1,11 @@
---- tests/CMakeLists.txt.orig	2021-12-16 18:34:53 UTC
+--- tests/CMakeLists.txt.orig	2024-03-23 12:34:28 UTC
 +++ tests/CMakeLists.txt
-@@ -115,7 +115,7 @@ add_definitions(-DOQS_COMPILE_OPTIONS="[${OQS_COMPILE_
- # for DLL builds.
+@@ -140,7 +140,7 @@ add_custom_target(
  add_custom_target(
      run_tests
--    COMMAND ${CMAKE_COMMAND} -E env OQS_BUILD_DIR=${CMAKE_BINARY_DIR} ${PYTHON3_EXEC} -m pytest --verbose --numprocesses=auto --ignore=scripts/copy_from_upstream/repos
-+    COMMAND ${CMAKE_COMMAND} -E env OQS_BUILD_DIR=${CMAKE_BINARY_DIR} ${PYTHON3_EXEC} -m pytest --verbose --ignore=scripts/copy_from_upstream/repos
+     # skip long KAT tests
+-    COMMAND ${CMAKE_COMMAND} -E env OQS_BUILD_DIR=${CMAKE_BINARY_DIR} ${PYTHON3_EXEC} -m pytest --verbose --numprocesses=auto --ignore=scripts/copy_from_upstream/repos --ignore=tests/test_kat_all.py
++    COMMAND ${CMAKE_COMMAND} -E env OQS_BUILD_DIR=${CMAKE_BINARY_DIR} ${PYTHON3_EXEC} -m pytest --verbose --ignore=scripts/copy_from_upstream/repos --ignore=tests/test_kat_all.py
      WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-     DEPENDS oqs example_kem kat_kem test_kem example_sig kat_sig test_sig test_sig_mem test_kem_mem ${UNIX_TESTS}
+     DEPENDS oqs dump_alg_info ${KEM_TESTS} ${SIG_TESTS} ${UNIX_TESTS}
      USES_TERMINAL)
