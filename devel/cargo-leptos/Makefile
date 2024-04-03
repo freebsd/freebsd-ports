@@ -1,7 +1,6 @@
 PORTNAME=	cargo-leptos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.16
-PORTREVISION=	1
+DISTVERSION=	0.2.17
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler32-1.2.0 \
 		ahash-0.7.8 \
 		ahash-0.8.11 \
-		aho-corasick-1.1.2 \
+		aho-corasick-1.1.3 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		android-tzdata-0.1.1 \
@@ -32,37 +31,37 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.80 \
-		async-trait-0.1.77 \
-		autocfg-1.1.0 \
-		axum-0.7.4 \
+		anyhow-1.0.81 \
+		async-trait-0.1.79 \
+		autocfg-1.2.0 \
+		axum-0.7.5 \
 		axum-core-0.4.3 \
-		backtrace-0.3.69 \
+		backtrace-0.3.71 \
 		base64-0.21.7 \
 		base64-simd-0.7.0 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
-		brotli-3.4.0 \
+		brotli-3.5.0 \
 		brotli-decompressor-2.5.1 \
 		browserslist-rs-0.15.0 \
 		bumpalo-3.15.4 \
 		bytecheck-0.6.12 \
 		bytecheck_derive-0.6.12 \
 		byteorder-1.5.0 \
-		bytes-1.5.0 \
+		bytes-1.6.0 \
 		camino-1.1.6 \
-		cargo-platform-0.1.7 \
+		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
 		cc-1.0.90 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.35 \
-		clap-4.5.2 \
+		chrono-0.4.37 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_derive-4.5.0 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.8 \
@@ -105,7 +104,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		fallible-iterator-0.2.0 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		filetime-0.2.23 \
 		flate2-1.0.28 \
 		flexi_logger-0.27.4 \
@@ -128,20 +127,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gimli-0.26.2 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
-		h2-0.3.24 \
-		h2-0.4.2 \
+		h2-0.3.25 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.3 \
 		heck-0.3.3 \
-		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		http-0.2.12 \
 		http-1.1.0 \
 		http-body-0.4.6 \
 		http-body-1.0.0 \
-		http-body-util-0.1.0 \
+		http-body-util-0.1.1 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		hyper-0.14.28 \
@@ -154,27 +152,27 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
 		indexmap-1.9.3 \
-		indexmap-2.2.5 \
+		indexmap-2.2.6 \
 		inotify-0.7.1 \
 		inotify-sys-0.1.5 \
-		insta-1.36.1 \
+		insta-1.38.0 \
 		iovec-0.1.4 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
-		itoa-1.0.10 \
+		itoa-1.0.11 \
 		js-sys-0.3.69 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
-		leptos_hot_reload-0.5.7 \
+		leptos_hot_reload-0.6.10 \
 		libc-0.2.153 \
 		libflate-2.0.0 \
 		libflate_lz77-2.0.0 \
-		libredox-0.0.1 \
-		lightningcss-1.0.0-alpha.54 \
+		libredox-0.1.3 \
+		lightningcss-1.0.0-alpha.55 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
@@ -182,7 +180,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		matches-0.1.10 \
 		matchit-0.7.3 \
 		md-5-0.10.6 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
@@ -191,7 +189,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mio-extras-2.0.6 \
 		miow-0.2.2 \
 		net2-0.2.39 \
-		new_debug_unreachable-1.0.4 \
+		new_debug_unreachable-1.0.6 \
 		nom-7.1.3 \
 		notify-4.0.17 \
 		nu-ansi-term-0.49.0 \
@@ -218,13 +216,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		phf_shared-0.11.2 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
-		pin-project-lite-0.2.13 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.79 \
 		proc-macro2-diagnostics-0.10.1 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
@@ -233,15 +231,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.9.0 \
+		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		redox_users-0.4.4 \
-		regex-1.10.3 \
+		redox_users-0.4.5 \
+		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.3 \
 		rend-0.4.2 \
-		reqwest-0.11.24 \
+		reqwest-0.11.27 \
 		ring-0.17.8 \
 		rkyv-0.7.44 \
 		rkyv_derive-0.7.44 \
@@ -249,7 +247,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rstml-0.11.2 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.31 \
+		rustix-0.38.32 \
 		rustls-0.21.10 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
@@ -262,17 +260,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.22 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
-		serde_path_to_error-0.1.15 \
+		serde_json-1.0.115 \
+		serde_path_to_error-0.1.16 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
 		signal-hook-registry-1.4.1 \
 		simd-abstraction-0.7.1 \
 		simdutf8-0.1.4 \
-		similar-2.4.0 \
+		similar-2.5.0 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		socket2-0.5.6 \
 		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
@@ -281,20 +279,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.10.0 \
 		strsim-0.11.0 \
 		syn-1.0.109 \
-		syn-2.0.52 \
+		syn-2.0.57 \
 		syn_derive-0.1.8 \
 		sync_wrapper-0.1.2 \
+		sync_wrapper-1.0.0 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tap-1.0.1 \
 		tar-0.4.40 \
-		temp-dir-0.1.12 \
+		temp-dir-0.1.13 \
 		tempfile-3.10.1 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.36.0 \
+		tokio-1.37.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.24.1 \
 		tokio-tungstenite-0.21.0 \
@@ -315,7 +314,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		url-2.5.0 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.1 \
-		uuid-1.7.0 \
+		uuid-1.8.0 \
 		version_check-0.9.4 \
 		vlq-0.5.1 \
 		walkdir-2.5.0 \
@@ -369,8 +368,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ws2_32-sys-0.2.1 \
 		wyz-0.5.1 \
 		xattr-1.3.1 \
-		yaml-rust-0.4.5 \
-		yansi-1.0.0 \
+		yansi-1.0.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
 		zip-0.6.6
