@@ -49,6 +49,12 @@ SQLITE_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/sqlite_scanner/src/include # work
 TPCE_DESC=			Enable building of the TPC-E tool
 TPCE_CMAKE_BOOL=		BUILD_TPCE
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+BROKEN=	requires IUTF8 in /usr/include/sys/_termios.h that was added only in FreeBSD 14
+.endif
+
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
 
