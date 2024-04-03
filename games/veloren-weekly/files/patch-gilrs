@@ -23,9 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2024-03-20 22:12:47 UTC
+--- Cargo.lock.orig	2024-04-03 20:23:33 UTC
 +++ Cargo.lock
-@@ -2515,9 +2515,9 @@ dependencies = [
+@@ -2484,9 +2484,9 @@ name = "gilrs"
  
  [[package]]
  name = "gilrs"
@@ -37,7 +37,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2529,24 +2529,23 @@ dependencies = [
+@@ -2498,24 +2498,23 @@ name = "gilrs-core"
  
  [[package]]
  name = "gilrs-core"
@@ -66,11 +66,10 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  
  [[package]]
-@@ -3181,17 +3180,6 @@ dependencies = [
-  "libc",
+@@ -3151,17 +3150,6 @@ dependencies = [
  ]
  
--[[package]]
+ [[package]]
 -name = "inotify"
 -version = "0.10.2"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -81,10 +80,11 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 - "libc",
 -]
 -
- [[package]]
+-[[package]]
  name = "inotify-sys"
  version = "0.1.5"
-@@ -3243,9 +3231,9 @@ dependencies = [
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -3212,9 +3200,9 @@ name = "io-kit-sys"
  
  [[package]]
  name = "io-kit-sys"
@@ -96,12 +96,10 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -4054,6 +4042,17 @@ dependencies = [
-  "memoffset 0.6.5",
- ]
+@@ -3971,6 +3959,17 @@ name = "nix"
  
-+[[package]]
-+name = "nix"
+ [[package]]
+ name = "nix"
 +version = "0.26.4"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
 +checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
@@ -111,10 +109,12 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 + "libc",
 +]
 +
- [[package]]
- name = "nix"
++[[package]]
++name = "nix"
  version = "0.28.0"
-@@ -4102,7 +4101,7 @@ dependencies = [
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4"
+@@ -4017,7 +4016,7 @@ dependencies = [
   "crossbeam-channel",
   "filetime",
   "fsevent-sys",
@@ -123,7 +123,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "kqueue",
   "libc",
   "log",
-@@ -6739,7 +6738,7 @@ version = "1.6.3"
+@@ -6618,7 +6617,7 @@ dependencies = [
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
  dependencies = [
@@ -132,49 +132,6 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "rand 0.8.5",
   "static_assertions",
  ]
-@@ -8409,16 +8408,6 @@ dependencies = [
-  "windows-targets 0.48.5",
- ]
- 
--[[package]]
--name = "windows"
--version = "0.54.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "9252e5725dbed82865af151df558e754e4a3c2c30818359eb17465f1346a1b49"
--dependencies = [
-- "windows-core 0.54.0",
-- "windows-targets 0.52.4",
--]
--
- [[package]]
- name = "windows-core"
- version = "0.51.1"
-@@ -8437,25 +8426,6 @@ dependencies = [
-  "windows-targets 0.52.4",
- ]
- 
--[[package]]
--name = "windows-core"
--version = "0.54.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "12661b9c89351d684a50a8a643ce5f608e20243b9fb84687800163429f161d65"
--dependencies = [
-- "windows-result",
-- "windows-targets 0.52.4",
--]
--
--[[package]]
--name = "windows-result"
--version = "0.1.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "cd19df78e5168dfb0aedc343d1d1b8d422ab2db6756d2dc3fef75035402a3f64"
--dependencies = [
-- "windows-targets 0.52.4",
--]
--
- [[package]]
- name = "windows-sys"
- version = "0.45.0"
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;

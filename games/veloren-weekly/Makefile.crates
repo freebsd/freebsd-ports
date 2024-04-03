@@ -8,7 +8,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.16 \
-		alsa-0.6.0 \
+		alsa-0.9.0 \
 		alsa-sys-0.3.1 \
 		ambient-authority-0.0.2 \
 		android-activity-0.4.3 \
@@ -116,9 +116,9 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		core-foundation-sys-0.8.6 \
 		core-graphics-0.22.3 \
 		core-graphics-types-0.1.3 \
-		coreaudio-rs-0.10.0 \
+		coreaudio-rs-0.11.3 \
 		coreaudio-sys-0.2.15 \
-		cpal-0.13.5 \
+		cpal-0.15.3 \
 		cpp_demangle-0.3.5 \
 		cpufeatures-0.2.12 \
 		cranelift-bforest-0.104.2 \
@@ -154,12 +154,10 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		culpa-macros-1.0.2 \
 		d3d12-0.7.0 \
 		daggy-0.5.0 \
-		darling-0.13.4 \
 		darling-0.20.8 \
-		darling_core-0.13.4 \
 		darling_core-0.20.8 \
-		darling_macro-0.13.4 \
 		darling_macro-0.20.8 \
+		dasp_sample-0.11.0 \
 		data-encoding-2.5.0 \
 		debugid-0.8.0 \
 		deflate-1.0.0 \
@@ -313,7 +311,6 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		itoa-1.0.10 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
-		jni-0.19.0 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.28 \
@@ -374,15 +371,12 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		mumble-link-0.2.0 \
 		nanorand-0.7.0 \
 		native-dialog-0.6.4 \
-		ndk-0.6.0 \
 		ndk-0.7.0 \
+		ndk-0.8.0 \
 		ndk-context-0.1.1 \
-		ndk-glue-0.6.2 \
-		ndk-macro-0.3.0 \
-		ndk-sys-0.3.0 \
 		ndk-sys-0.4.1+23.1.7779620 \
+		ndk-sys-0.5.0+25.2.9519653 \
 		nibble_vec-0.1.0 \
-		nix-0.23.2 \
 		nix-0.24.3 \
 		nix-0.25.1 \
 		nix-0.26.4 \
@@ -401,7 +395,6 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		num-complex-0.2.4 \
 		num-complex-0.4.5 \
 		num-conv-0.1.0 \
-		num-derive-0.3.3 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
 		num-iter-0.1.44 \
@@ -411,8 +404,10 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		num_cpus-1.16.0 \
 		num_enum-0.5.11 \
 		num_enum-0.6.1 \
+		num_enum-0.7.2 \
 		num_enum_derive-0.5.11 \
 		num_enum_derive-0.6.1 \
+		num_enum_derive-0.7.2 \
 		number_prefix-0.4.0 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
@@ -422,8 +417,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		objc_exception-0.1.2 \
 		objc_id-0.1.1 \
 		object-0.32.2 \
-		oboe-0.4.6 \
-		oboe-sys-0.4.5 \
+		oboe-0.6.1 \
+		oboe-sys-0.6.1 \
 		ogg-0.8.0 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
@@ -437,9 +432,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		owned_ttf_parser-0.20.0 \
 		packed_simd-0.3.9 \
 		parking-2.2.0 \
-		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.9 \
 		parse-zoneinfo-0.3.0 \
 		paste-1.0.14 \
@@ -499,7 +492,6 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		rayon-1.9.0 \
 		rayon-core-1.12.1 \
 		rcgen-0.12.1 \
-		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
@@ -518,7 +510,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		ring-0.17.8 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
-		rodio-0.15.0 \
+		rodio-0.17.3 \
 		ron-0.8.1 \
 		roots-0.0.8 \
 		roxmltree-0.14.1 \
@@ -596,10 +588,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
 		stb_truetype-0.3.1 \
-		stdweb-0.1.3 \
 		str-buf-1.0.6 \
 		strict-num-0.1.1 \
-		strsim-0.10.0 \
 		strsim-0.11.0 \
 		strum-0.24.1 \
 		strum-0.26.2 \
@@ -745,8 +735,11 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		window_clipboard-0.3.0 \
 		windows-0.48.0 \
 		windows-0.51.1 \
+		windows-0.54.0 \
 		windows-core-0.51.1 \
 		windows-core-0.52.0 \
+		windows-core-0.54.0 \
+		windows-result-0.1.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
