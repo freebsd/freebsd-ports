@@ -1,7 +1,7 @@
 PORTNAME=	suitecrm
-PORTVERSION=	7.14.0
+PORTVERSION=	7.14.3
 CATEGORIES=	www
-MASTER_SITES=	https://suitecrm.com/download/141/suite84/562969/
+MASTER_SITES=	https://suitecrm.com/download/141/suite714/563700/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source Customer Relationship Management (CRM) software solution
@@ -10,8 +10,7 @@ WWW=		http://www.suitercrm.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		php zip
-# php json/pcre/spl extension is required but it's statically linked in default php
+USES=		php
 USE_PHP=	curl ctype dom filter gd imap mysqli pdo posix \
 		session tokenizer xml mbstring zip zlib
 NO_BUILD=	yes
