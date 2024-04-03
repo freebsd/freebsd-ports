@@ -4,7 +4,6 @@ bin/redis-check-rdb
 bin/redis-cli
 bin/redis-sentinel
 bin/redis-server
-%%TRIB%%bin/redis-trib.rb
 @sample etc/redis.conf.sample
 @sample(%%REDIS_USER%%,%%REDIS_GROUP%%,) etc/sentinel.conf.sample
 @dir(%%REDIS_USER%%,%%REDIS_GROUP%%,) %%REDIS_DBDIR%%
