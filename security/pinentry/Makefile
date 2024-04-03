@@ -1,8 +1,11 @@
 PORTNAME=	pinentry
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
+
+PATCH_SITES=	https://github.com/gpg/pinentry/commit/
+PATCHFILES+=	844360c9c99d2f11dc4236c0ab6bdb9b56758898.patch:-p1
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Collection of simple PIN or passphrase entry dialogs
@@ -20,7 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/pinentry
 
 OPTIONS_SINGLE=	FRONTEND
-OPTIONS_SINGLE_FRONTEND=	EFL FLTK GNOME GTK2 NCURSES QT5 TTY
+OPTIONS_SINGLE_FRONTEND=	EFL FLTK GNOME GTK2 NCURSES QT5 QT6 TTY
 OPTIONS_DEFAULT=	NCURSES
 
 FRONTEND_DESC=	Default frontend
@@ -35,7 +38,14 @@ NCURSES_RUN_DEPENDS=	${PINENTRY_NCURSES}:security/pinentry-curses
 
 EFL_DESC=	EFL frontend
 PINENTRY_EFL=	pinentry-efl
-EFL_RUN_DEPENDS=	${PINENTRY_EFL}:security/pinentry-efl
+# Due to a dependency loop that exists between security/pinentry-efl,
+# devel/elf, graphics/poppler, security/gpgme-cpp, security/gpgme,
+# security/gnupg and security/pinentry, the user must install
+# pinentry-efl manually. See pkg-message.dep-loop for more details.
+#EFL_RUN_DEPENDS=	${PINENTRY_EFL}:security/pinentry-efl
+EFL_SUB_FILES=	pkg-message.dep-loop
+EFL_SUB_LIST=	PKGNAME="pinentry-efl"
+EFL_VARS=	PKGMESSAGE+=${WRKDIR}/pkg-message.dep-loop
 
 FLTK_DESC=	FLTK frontend
 PINENTRY_FLTK=	pinentry-fltk
@@ -49,13 +59,19 @@ QT5_DESC=	Qt 5 frontend
 PINENTRY_QT5=	pinentry-qt5
 QT5_RUN_DEPENDS=	${PINENTRY_QT5}:security/pinentry-qt5
 
+QT6_DESC=	Qt 6 frontend
+PINENTRY_QT6=	pinentry-qt
+QT6_RUN_DEPENDS=	${PINENTRY_QT6}:security/pinentry-qt6
+
 GNOME_DESC=	GNOME frontend
 PINENTRY_GNOME=	pinentry-gnome3
 # Due to a dependency loop that exists between security/pinentry-gnome,
 # security/gcr, security/gnupg and security/pinentry, the user must install
-# pinentry-gnome manually. See pkg-message.gnome for more details.
+# pinentry-gnome manually. See pkg-message.dep-loop for more details.
 #GNOME_RUN_DEPENDS=	${PINENTRY_GNOME}:security/pinentry-gnome
-GNOME_VARS=		PKGMESSAGE+=${.CURDIR}/pkg-message.gnome
+GNOME_SUB_FILES=pkg-message.dep-loop
+GNOME_SUB_LIST=	PKGNAME="pinentry-gnome"
+GNOME_VARS=	PKGMESSAGE+=${WRKDIR}/pkg-message.dep-loop
 
 .include <bsd.port.options.mk>
 
@@ -96,13 +112,26 @@ CONFIGURE_ARGS+=--disable-pinentry-gnome3
 .endif
 
 .if ${PINENTRY_GUI} == "qt5"
-USES+=		compiler:c++11-lib qt:5
-USE_QT=		core gui widgets buildtools:build
-PLIST_FILES=	bin/pinentry-qt5
-CONFIGURE_ARGS+=--enable-pinentry-qt5 \
-		--program-suffix=5
+USES+=		compiler:c++11-lang kde:5 qt:5 xorg
+USE_KDE=	wayland
+USE_QT=		core gui widgets x11extras buildtools:build
+USE_XORG=	x11
+PLIST_FILES=	bin/pinentry-qt5 \
+		share/applications/org.gnupg.pinentry-qt5.desktop
+CONFIGURE_ARGS+=--enable-pinentry-qt5
 .else
-CONFIGURE_ARGS+=--disable-pinentry-qt --disable-pinentry-qt5
+CONFIGURE_ARGS+=--disable-pinentry-qt5
+.endif
+
+.if ${PINENTRY_GUI} == "qt6"
+USES+=		compiler:c++17-lang kde:6 qt:6
+USE_KDE=	guiaddons windowsystem
+USE_QT=		base
+PLIST_FILES=	bin/pinentry-qt \
+		share/applications/org.gnupg.pinentry-qt.desktop
+CONFIGURE_ARGS+=--enable-pinentry-qt
+.else
+CONFIGURE_ARGS+=--disable-pinentry-qt
 .endif
 
 .if ${PINENTRY_GUI} == "gtk2"
