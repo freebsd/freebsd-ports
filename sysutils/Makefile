@@ -1347,6 +1347,7 @@
     SUBDIR += schedutils
     SUBDIR += schilyutils
     SUBDIR += screen
+    SUBDIR += screen-devel
     SUBDIR += screenfetch
     SUBDIR += screenie
     SUBDIR += scterc
