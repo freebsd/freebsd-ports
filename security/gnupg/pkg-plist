@@ -123,5 +123,5 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 @postexec [ -e %D/bin/gpg ] || ln -sf gpg2 %D/bin/gpg
 @postunexec [ -e %D/bin/gpg ] || rm -f %D/bin/gpg
-@postexec [ -e %D/man/man1/gpg.1.gz ] || ln -sf gpg2.1.gz %D/man/man1/gpg.1.gz
-@postunexec [ -e %D/man/man1/gpg.1.gz ] || rm -f %D/man/man1/gpg.1.gz
+@postexec [ -e %D/share/man/man1/gpg.1.gz ] || ln -sf gpg2.1.gz %D/share/man/man1/gpg.1.gz
+@postunexec [ -e %D/share/man/man1/gpg.1.gz ] || rm -f %D/share/man/man1/gpg.1.gz
