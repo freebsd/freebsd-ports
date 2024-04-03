@@ -32,7 +32,7 @@ OPTIONS_DEFAULT+=	ALSA # ALSA support requires libalsa, sys/eventfd.h, sys/timer
 ALSA_CMAKE_OFF=		-DLIBREMIDI_NO_ALSA=ON
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 .else
-CMAKE_ON=		LIBREMIDI_NO_ALSA
+CMAKE_ON+=		LIBREMIDI_NO_ALSA
 .endif
 
 JACK_CMAKE_OFF=		-DLIBREMIDI_NO_JACK=ON
