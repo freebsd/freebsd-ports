@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
 CATEGORIES=	databases
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ca28b1954bbbb66d4d78221e3dd5f47e0b54dcca.patch:-p1 # check for IUTF8 flag defined before setting it: https://github.com/duckdb/duckdb/pull/11488
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-process SQL OLAP database management system
 WWW=		https://duckdb.org/
@@ -48,12 +51,6 @@ SQLITE_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/sqlite_scanner/src/include # work
 
 TPCE_DESC=			Enable building of the TPC-E tool
 TPCE_CMAKE_BOOL=		BUILD_TPCE
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-BROKEN=	requires IUTF8 in /usr/include/sys/_termios.h that was added only in FreeBSD 14
-.endif
 
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
