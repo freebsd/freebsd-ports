@@ -1,7 +1,7 @@
 PORTNAME=	qcad
 PORTVERSION=	3.29.5.0
 DISTVERSIONPREFIX=	v
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -14,6 +14,8 @@ COMMENT=	Professional CAD system
 WWW=		https://www.ribbonsoft.com/qcad.html
 
 LICENSE=	GPLv3
+
+BROKEN_i386=    doesn't buld on pkg builder
 
 BUILD_DEPENDS=	bash:shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs
