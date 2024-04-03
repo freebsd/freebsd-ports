@@ -15,6 +15,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 WWW=		https://www.gnu.org/software/screen/
 
+CONFLICTS=	screen-devel*
+
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC MULTIUSER \
