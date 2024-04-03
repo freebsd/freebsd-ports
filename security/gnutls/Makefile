@@ -1,6 +1,5 @@
 PORTNAME=	gnutls
-DISTVERSION=	3.8.4
-PORTREVISION=	2
+DISTVERSION=	3.8.5
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:R}
 
@@ -42,7 +41,7 @@ CONFIGURE_ARGS=	--disable-rpath \
 		--without-tpm2 \
 		--enable-ld-version-script
 
-OPTIONS_DEFINE=		DANE EXAMPLES IDN KTLS MAN3 NLS P11KIT
+OPTIONS_DEFINE=		DANE EXAMPLES IDN KTLS MAN3 NLS P11KIT SRP
 OPTIONS_DEFAULT=	IDN KTLS MAN3 P11KIT
 OPTIONS_SUB=		yes
 
@@ -50,6 +49,7 @@ DANE_DESC=		Certificate verification via DNSSEC
 KTLS_DESC=		Enable support for in-kernel TLS
 MAN3_DESC=		Install API manpages (section 3)
 P11KIT_DESC=		PKCS\#11 and p11-kit support
+SRP_DESC=		Secure Remote Password support
 
 DANE_LIB_DEPENDS=	libunbound.so:dns/unbound
 DANE_CONFIGURE_ENABLE=	libdane
@@ -66,6 +66,8 @@ NLS_CONFIGURE_OFF= 	ac_cv_lib_intl_gettext=no
 P11KIT_LIB_DEPENDS=	libp11-kit.so:security/p11-kit
 P11KIT_CONFIGURE_WITH=	p11-kit
 P11KIT_CONFIGURE_ON=	--with-default-trust-store-pkcs11="pkcs11:model=p11-kit-trust;manufacturer=PKCS%2311%20Kit"
+
+SRP_CONFIGURE_ENABLE=	srp-authentication
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info*
@@ -96,9 +98,6 @@ post-patch:
 		${WRKSRC}/doc/invoke-p11tool.texi \
 		${WRKSRC}/doc/manpages/p11tool.1 \
 		${WRKSRC}/src/p11tool-options.c
-# Bug 260078
-	@${REINPLACE_CMD} 's/-Wa,-march=all//' \
-		${WRKSRC}/lib/accelerated/aarch64/Makefile.in
 # Prevent regeneration.  The order is important.
 	@${TOUCH} ${WRKSRC}/doc/enums.texi \
 		${WRKSRC}/doc/invoke-gnutls-cli.texi \
