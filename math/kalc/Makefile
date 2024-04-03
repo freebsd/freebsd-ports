@@ -1,6 +1,6 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.0
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -20,7 +20,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	bgkillas
 
-CARGO_CRATES=	autocfg-1.1.0 \
+CARGO_CRATES=	autocfg-1.2.0 \
 		az-1.2.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
@@ -41,7 +41,7 @@ CARGO_CRATES=	autocfg-1.1.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		redox_syscall-0.4.1 \
-		rug-1.24.0 \
+		rug-1.24.1 \
 		rustix-0.38.32 \
 		scopeguard-1.2.0 \
 		signal-hook-0.3.17 \
