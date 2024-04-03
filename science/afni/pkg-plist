@@ -590,6 +590,7 @@ bin/get_afni_model_PRF
 bin/get_afni_model_PRF_6
 bin/get_afni_model_PRF_6_BAD
 bin/gifti_tool
+bin/gtkyd_check
 bin/help_format
 bin/im2niml
 bin/images_equal
