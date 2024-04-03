@@ -1,6 +1,6 @@
 PORTNAME=	vaultwarden
 DISTVERSION=	1.30.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/dani-garcia/vaultwarden
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_i386=    doesn't buld on pkg builder
 
 LIB_DEPENDS+=	libcapnp.so:devel/capnproto \
 		libgmp.so:math/gmp \
