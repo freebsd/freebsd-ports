@@ -1,6 +1,6 @@
 PORTNAME=	einops
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.7.0
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # some test files are missing in the PYPI tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nbconvert>0:devel/py-nbconvert@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 1 test fails because of some pytorch issues, see https://github.com/arogozhnikov/einops/issues/269
+USE_PYTHON=	pep517 autoplist pytest # 5 tests fail because of some pytorch issues, see https://github.com/arogozhnikov/einops/issues/313
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arogozhnikov
