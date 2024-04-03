@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	18.0.3
+PORTVERSION=	19.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,6 +18,8 @@ CPE_VENDOR=	bytecodealliance
 
 USE_LDCONFIG=	yes
 
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 GH_PROJECT=	wasmtime
@@ -27,7 +28,7 @@ CARGO_BUILD_ARGS=	-p wasmtime-c-api
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		ahash-0.8.2 \
+		ahash-0.8.7 \
 		aho-corasick-1.0.2 \
 		ambient-authority-0.0.2 \
 		android_system_properties-0.1.5 \
@@ -55,16 +56,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.4.0 \
 		bytesize-1.3.0 \
 		camino-1.1.4 \
-		cap-fs-ext-2.0.1 \
-		cap-net-ext-2.0.1 \
-		cap-primitives-2.0.1 \
-		cap-rand-2.0.1 \
-		cap-std-2.0.1 \
-		cap-time-ext-2.0.1 \
-		capstone-0.9.0 \
-		capstone-sys-0.13.0 \
+		cap-fs-ext-3.0.0 \
+		cap-net-ext-3.0.0 \
+		cap-primitives-3.0.0 \
+		cap-rand-3.0.0 \
+		cap-std-3.0.0 \
+		cap-time-ext-3.0.0 \
+		capstone-0.12.0 \
+		capstone-sys-0.16.0 \
 		cargo-platform-0.1.2 \
-		cargo_metadata-0.15.3 \
+		cargo_metadata-0.18.1 \
 		cast-0.3.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
@@ -79,7 +80,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		colorchoice-1.0.0 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.6 \
-		cpp_demangle-0.3.5 \
+		cpp_demangle-0.4.3 \
 		cpufeatures-0.2.7 \
 		crc32fast-1.3.2 \
 		criterion-0.5.1 \
@@ -95,6 +96,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		directories-next-2.0.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
+		dlmalloc-0.2.4 \
 		downcast-rs-1.2.0 \
 		egg-0.6.0 \
 		either-1.6.1 \
@@ -151,10 +153,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indicatif-0.13.0 \
 		instant-0.1.12 \
 		io-extras-0.18.1 \
-		io-lifetimes-2.0.2 \
+		io-lifetimes-2.0.3 \
 		ipnet-2.5.0 \
 		is-terminal-0.4.10 \
-		itertools-0.10.3 \
+		itertools-0.10.5 \
+		itertools-0.12.1 \
 		itoa-1.0.1 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
@@ -162,7 +165,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		js-sys-0.3.57 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
-		libc-0.2.151 \
+		libc-0.2.153 \
 		libfuzzer-sys-0.4.5 \
 		libloading-0.8.1 \
 		libm-0.2.7 \
@@ -196,6 +199,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
+		pkg-config-0.3.29 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
@@ -226,7 +230,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ring-0.16.20 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
-		rustix-0.38.28 \
+		rustix-0.38.31 \
 		rustls-0.21.6 \
 		rustls-webpki-0.101.4 \
 		rusty-fork-0.3.0 \
@@ -238,6 +242,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
 		serde_json-1.0.107 \
+		serde_spanned-0.6.5 \
 		sha2-0.10.2 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.0 \
@@ -259,8 +264,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		symbolic_expressions-5.0.3 \
 		syn-1.0.92 \
 		syn-2.0.32 \
-		system-interface-0.26.1 \
-		target-lexicon-0.12.12 \
+		system-interface-0.27.1 \
+		target-lexicon-0.12.13 \
 		tempfile-3.8.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
@@ -275,7 +280,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-macros-2.1.0 \
 		tokio-rustls-0.24.0 \
 		tokio-util-0.7.4 \
-		toml-0.5.9 \
+		toml-0.8.10 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.22.4 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.26 \
 		tracing-core-0.1.31 \
@@ -306,21 +313,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-encoder-0.38.1 \
-		wasm-encoder-0.41.0 \
-		wasm-metadata-0.10.17 \
-		wasm-mutate-0.2.46 \
-		wasm-smith-0.15.1 \
+		wasm-encoder-0.201.0 \
+		wasm-metadata-0.201.0 \
+		wasm-mutate-0.201.0 \
+		wasm-smith-0.201.0 \
 		wasmi-0.31.1 \
 		wasmi_arena-0.4.1 \
 		wasmi_core-0.13.0 \
-		wasmparser-0.118.1 \
-		wasmparser-0.121.0 \
+		wasmparser-0.201.0 \
 		wasmparser-nostd-0.100.1 \
-		wasmprinter-0.2.78 \
+		wasmprinter-0.201.0 \
 		wast-35.0.2 \
-		wast-70.0.2 \
-		wat-1.0.85 \
+		wast-201.0.0 \
+		wat-1.201.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.25.2 \
 		which-4.2.5 \
@@ -328,41 +333,45 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.52.0 \
+		windows-core-0.51.1 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.0 \
+		windows-targets-0.48.5 \
 		windows-targets-0.52.0 \
-		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.0 \
-		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.0 \
-		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.0 \
-		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.0 \
-		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.0 \
-		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.0 \
-		windows_x86_64_msvc-0.48.0 \
+		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
+		winnow-0.5.39 \
 		winx-0.36.3 \
-		wit-bindgen-0.15.0 \
-		wit-bindgen-core-0.15.0 \
-		wit-bindgen-rust-0.15.0 \
-		wit-bindgen-rust-macro-0.15.0 \
-		wit-component-0.18.2 \
-		wit-component-0.20.1 \
-		wit-parser-0.13.1 \
-		zstd-0.11.1+zstd.1.5.2 \
-		zstd-safe-5.0.1+zstd.1.5.2 \
-		zstd-sys-2.0.1+zstd.1.5.2
+		wit-bindgen-0.20.0 \
+		wit-bindgen-core-0.20.0 \
+		wit-bindgen-rust-0.20.0 \
+		wit-bindgen-rust-macro-0.20.0 \
+		wit-component-0.201.0 \
+		wit-parser-0.201.0 \
+		witx-0.9.1 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32 \
+		zstd-0.13.0 \
+		zstd-safe-7.0.0 \
+		zstd-sys-2.0.9+zstd.1.5.5
 
 GH_TUPLE=	WebAssembly:wasm-c-api:c9d3128:wasm_c_api/crates/c-api/wasm-c-api \
-		WebAssembly:WASI:0ba0c5e:WASI/crates/wasi-common/WASI \
 		WebAssembly:wasi-nn:e2310b8:wasi_nn/crates/wasi-nn/spec \
-		WebAssembly:testsuite:7ef86dd:testsuite/tests/spec_testsuite \
+		WebAssembly:testsuite:5a1a590:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
@@ -381,6 +390,7 @@ PLIST_FILES=	include/doc-wasm.h \
 		include/wasmtime/linker.h \
 		include/wasmtime/memory.h \
 		include/wasmtime/module.h \
+		include/wasmtime/profiling.h \
 		include/wasmtime/store.h \
 		include/wasmtime/table.h \
 		include/wasmtime/trap.h \
