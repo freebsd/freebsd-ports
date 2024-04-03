@@ -1,14 +1,14 @@
 PORTNAME=	discover
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 package management tools
 WWW=		https://www.kde.org/plasma-desktop
 
-# TODO: update packagekit-qt5
-#LIB_DEPENDS=	libpackagekit-qt.so:ports-mgmt/packagekit-qt5
-LIB_DEPENDS=	libAppStreamQt5.so:devel/appstream-qt@qt5
+LIB_DEPENDS=	libAppStreamQt5.so:devel/appstream-qt@qt5 \
+		libpackagekitqt5.so:ports-mgmt/packagekit-qt@qt5
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 tar:xz xorg
