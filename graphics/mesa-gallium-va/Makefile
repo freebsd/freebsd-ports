@@ -1,6 +1,6 @@
 PORTNAME=	mesa-gallium-va
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VAAPI drivers
@@ -26,7 +26,7 @@ X11_USE=		xorg=xorgproto,x11,xcb,xdamage,xext,xfixes,xshmfence,xxf86vm,xrandr
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc" \
+MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc,av1dec,av1enc,vp9dec" \
 		-Dgallium-drivers="radeonsi,r600" \
 		-Dvulkan-drivers="" \
 		-Dandroid-libbacktrace=disabled \
