@@ -1,5 +1,5 @@
 PORTNAME=	mfmod_ldap
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -17,8 +17,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 INFO=		${PORTNAME}
-PORTDOCS=	NEWS README
 PLIST_FILES=	lib/mailfromd/mfmod_ldap.so share/mailfromd/ldap.mfl
+PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
