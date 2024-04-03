@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.10.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	16.10.1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -23,12 +23,12 @@ USES=		cpe gmake go:modules,no_targets,1.22 iconv pkgconfig ssl
 
 CPE_VENDOR=	gitlab
 
+USE_GITLAB=	yes
+GL_ACCOUNT=	gitlab-org
+
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
 MAKE_ENV+=	${GO_ENV}
-
-USE_GITLAB=	yes
-GL_ACCOUNT=	gitlab-org
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy

@@ -14,15 +14,15 @@ BUILD_DEPENDS=	git>=2.42.0:devel/git
 RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
 USES=		gmake go:modules,no_targets,1.22
+USE_GITLAB=	yes
+GL_ACCOUNT=	gitlab-org
+GL_PROJECT=	gitlab-foss
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse
 # found in work/gitlab-foss*/workhorse/go.mod
 #GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
 
-USE_GITLAB=	yes
-GL_ACCOUNT=	gitlab-org
-GL_PROJECT=	gitlab-foss
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
@@ -42,11 +42,11 @@ go-post-fetch:
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 # ---------------------------
 
+PLIST_DIRS=	${WWWDIR}
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \
 		bin/gitlab-zip-metadata
-PLIST_DIRS=	${WWWDIR}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}

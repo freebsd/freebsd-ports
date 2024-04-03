@@ -286,32 +286,12 @@ BUILD_DEPENDS=	gem:devel/ruby-gems \
 
 RUN_DEPENDS=	${MY_DEPENDS}
 
-CONFLICTS_INSTALL=	gitolite \
-			gitolite2 \
-			gogs \
-			gitea \
-			gitosis
-
 USES=		go:modules nodejs:env ruby shebangfix
 
-USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
-
-USERS=	git
-GROUPS=	git
-
-NO_BUILD=	yes
-
-NO_ARCH=	yes
-
-OPTIONS_DEFINE=			KERBEROS
-OPTIONS_DEFAULT=		KERBEROS
-
-KERBEROS_BUILD_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5
-KERBEROS_RUN_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5
-KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
+USE_RC_SUBR=	gitlab
 
 SHEBANG_FILES=	scripts/build_qa_image \
 		scripts/build_gdk_image \
@@ -325,6 +305,25 @@ SHEBANG_FILES=	scripts/build_qa_image \
 		.lefthook/pre-push/merge_conflicts \
 		qa/gdk/entrypoint \
 		qa/bin/test
+
+CONFLICTS_INSTALL=	gitolite \
+			gitolite2 \
+			gogs \
+			gitea \
+			gitosis
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+USERS=	git
+GROUPS=	git
+
+OPTIONS_DEFINE=			KERBEROS
+OPTIONS_DEFAULT=		KERBEROS
+
+KERBEROS_BUILD_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5
+KERBEROS_RUN_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5
+KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config/gitlab.yml.example \
