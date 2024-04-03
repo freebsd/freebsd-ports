@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docb
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpolkit-gobject-1.so:sysutils/polkit \
-		libpkg.so:ports-mgmt/pkg
+		libpkg.so:${PKG_ORIGIN}
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2
 
 USES=		cpe gettext gnome meson pkgconfig \
