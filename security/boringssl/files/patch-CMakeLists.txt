@@ -1,10 +1,11 @@
---- CMakeLists.txt.orig	2024-03-23 14:15:05 UTC
+--- CMakeLists.txt.orig	2024-04-01 22:15:28 UTC
 +++ CMakeLists.txt
-@@ -522,6 +522,7 @@ add_library(ssl ${SSL_SOURCES})
- install_if_enabled(TARGETS ssl EXPORT OpenSSLTargets ${INSTALL_DESTINATION_DEFAULT})
+@@ -610,6 +610,8 @@ add_library(ssl ${SSL_SOURCES})
+ # here.
  set_property(TARGET ssl PROPERTY EXPORT_NAME SSL)
  target_link_libraries(ssl crypto)
 +SET_TARGET_PROPERTIES(ssl PROPERTIES SOVERSION 1)
++SET_TARGET_PROPERTIES(crypto PROPERTIES SOVERSION 1)
  
  add_library(decrepit ${DECREPIT_SOURCES})
  target_link_libraries(decrepit crypto ssl)
