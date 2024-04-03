@@ -1,9 +1,9 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.9
+DISTVERSION=	0.4.10
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.6/:sequence \
-		https://github.com/OpenRCT2/objects/releases/download/v1.4.0/:object \
+		https://github.com/OpenRCT2/objects/releases/download/v1.4.3/:object \
 		https://github.com/OpenRCT2/OpenMusic/releases/download/v1.5/:openmsx \
 		https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.5/:opensfx
 DISTFILES=	title-sequences.zip:sequence \
@@ -44,7 +44,6 @@ USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CXXFLAGS+=	-Wno-error=deprecated-pragma
 
 OPTIONS_DEFINE=	DOCS
 
