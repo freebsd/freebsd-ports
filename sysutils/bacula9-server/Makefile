@@ -10,6 +10,9 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 WWW=		https://www.bacula.org/
 
+DEPRECATED=	Unsupported. Please migrate to bacula15-server
+EXPIRATION_DATE=	2024-09-30
+
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

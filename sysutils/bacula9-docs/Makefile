@@ -12,6 +12,9 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula document set
 WWW=		https://www.bacula.org/
 
+DEPRECATED=	Unsupported. Please migrate to bacula15-server
+EXPIRATION_DATE=	2024-09-30
+
 USES=		tar:bz2
 NO_BUILD=	yes
 NO_ARCH=	yes
