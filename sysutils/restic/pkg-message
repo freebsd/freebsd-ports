@@ -2,17 +2,15 @@
 { type: install
   message: <<EOM
 In order to mount locally a remote archive or an entire repository as a FUSE
-filesystem, it is required to load fusefs module:
+filesystem, it is required to load fusefs(5) module:
 
 # kldload fusefs
 
-To load the module at boot time, add
+To load the module at boot time, add fusefs(5) module
 
-fusefs_load="YES"
+to /etc/rc.conf by running:
 
-to /boot/loader.conf by running:
-
-sysrc fusefs_load="YES"
+# sysrc kld_list+=fusefs
 
 Also, if you plan to mount restic repositories as non root user, you need to run
 
@@ -22,7 +20,7 @@ and add the line
 
 vfs.usermount=1
 
-to /etc/sysctl.conf to ensure the setting is loaded at boot time.
+to /etc/sysctl.conf to ensure the setting is applied at boot time.
 EOM
 }
 ]
