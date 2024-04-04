@@ -1,6 +1,6 @@
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -11,41 +11,35 @@ WWW=		https://duncanthrax.net/exilog/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
+		p5-CGI>0:www/p5-CGI
+
 USES=		perl5 shebangfix
 SHEBANG_GLOB=	*.pl
 
-RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
-
-# Default sql backend
-WITH_SQL_BACKEND?=	mysql
-
-.if (${WITH_SQL_BACKEND} == "mysql")
-WITH_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-SERVER=		mysql
-.elif (${WITH_SQL_BACKEND} == "postgresql")
-WITH_POSTGRESQL=	yes
-RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
-SERVER=		postgresql
-.else
-BROKEN=	you should specify sql backend using WITH_SQL_BACKEND
-.endif
-SUB_LIST+=	SERVER=${SERVER}
 .ifndef WITHOUT_WWWDIR
 EXILOGDIR?=	${PREFIX}/www/exilog
 .else
 EXILOGDIR?=	${PREFIX}/exilog
 .endif
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=			DOCS AGENT
+OPTIONS_MULTI=			SQLBACKEND
+OPTIONS_MULTI_SQLBACKEND=	MYSQL PGSQL
+OPTIONS_DEFAULT=		AGENT DOCS MYSQL
+OPTIONS_SUB=			YES
+AGENT_DESC=			Include exilog agent
 
-.include <bsd.port.pre.mk>
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+MYSQL_USES=		mysql
 
-.if defined(WITHOUT_AGENT)
-PLIST_SUB+=	AGENT="@comment "
-.else
-USE_RC_SUBR=	exilog
-PLIST_SUB+=	AGENT=""
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PGSQL_USES=		pgsql
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAGENT}
+USE_RC_SUBR=	${PORTNAME}
 .endif
 
 NO_BUILD=	yes
@@ -65,22 +59,22 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,$$RealBin/exilog.conf,${PREFIX}/etc/exilog.conf,' ${WRKSRC}/exilog_config.pm
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_agent.pl
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_cleanup.pl
+	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_cgi.pl
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EXILOGDIR} ${STAGEDIR}${EXILOGDIR}/icons
 	${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${STAGEDIR}${EXILOGDIR}
 	${CP} ${WRKSRC}/icons/* ${STAGEDIR}${EXILOGDIR}/icons
-.if !defined(WITHOUT_AGENT)
+.if ${PORT_OPTIONS:MAGENT}
 	${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${STAGEDIR}${PREFIX}/sbin
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/exilog_cleanup.pl ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/exilog_cgi.pl ${STAGEDIR}${EXILOGDIR}
 	${CP} ${WRKSRC}/exilog.conf-example ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
-	${CHMOD} 0600 ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
 	${CP} ${FILESDIR}/htaccess ${STAGEDIR}${EXILOGDIR}/.htaccess
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
