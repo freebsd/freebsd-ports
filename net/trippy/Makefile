@@ -1,5 +1,6 @@
 PORTNAME=	trippy
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,16 +14,30 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	fujiapple852
 
-OPTIONS_DEFINE=		SUID
-OPTIONS_DEFAULT=	SUID
-SUID_DESC=		Use suid to allow execution as non root
+PORTSCOUT=	skipv:1.0.0
 
+OPTIONS_DEFINE=		MANPAGES SUID
+OPTIONS_DEFAULT=	MANPAGES SUID
+OPTIONS_SUB=		yes
+
+MANPAGES_DESC=	Build and install auto-generated manpages
+SUID_DESC=	Use suid to allow execution as non root
+
+MANPAGES_BUILD_DEPENDS=	help2man:misc/help2man
+MANPAGES_PLIST_FILES=	share/man/man1/trip.1.gz
 SUID_PLIST_FILES=	"@(,,4110) bin/trip"
 SUID_PLIST_FILES_OFF=	"@(,,0100) bin/trip"
 
-PORTSCOUT=	skipv:1.0.0
+post-build-MANPAGES-on:
+	help2man -s 1 -Nn "${COMMENT}" \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/trip \
+		-o ${WRKSRC}/trip.1
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip
+
+post-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/trip.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
