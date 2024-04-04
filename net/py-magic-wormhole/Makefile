@@ -1,6 +1,5 @@
 PORTNAME=	magic-wormhole
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.14.0
 CATEGORIES=	net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,5 +28,27 @@ USES=		python
 USE_PYTHON=	autoplist cryptography distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	BASH FISH ZSH
+OPTIONS_DEFAULT=	BASH FISH ZSH
+
+BASH_PLIST_FILES=	share/bash-completion/completions/wormhole
+FISH_PLIST_FILES=	share/fish/completions/wormhole.fish
+ZSH_PLIST_FILES=        share/zsh/site-functions/_wormhole
+
+post-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
+	${INSTALL_SCRIPT} ${WRKSRC}/wormhole_complete.bash \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/wormhole
+
+post-install-FISH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKSRC}/wormhole_complete.fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/wormhole.fish
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/wormhole_complete.zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_wormhole
 
 .include <bsd.port.mk>
