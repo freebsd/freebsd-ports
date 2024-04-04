@@ -13,6 +13,9 @@ WWW=		https://www.bacula.org/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unsupported. Please migrate to bacula15-server
+EXPIRATION_DATE=	2024-09-30
+
 USES+=		cpe libtool readline shebangfix ssl
 SHEBANG_FILES=	src/cats/make_catalog_backup.pl.in scripts/baculabackupreport.in
 

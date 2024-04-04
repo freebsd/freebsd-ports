@@ -6,6 +6,9 @@ PKGNAMESUFFIX=	11
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Nagios plugin for Bacula
 
+DEPRECATED=	Unsupported. Please migrate to bacula15-server
+EXPIRATION_DATE=	2024-09-30
+
 LIB_DEPENDS+=	libbac.so:sysutils/bacula11-client
 
 PLIST=		${.CURDIR}/pkg-plist
