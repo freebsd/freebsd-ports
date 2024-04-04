@@ -9,6 +9,9 @@ WWW=		https://github.com/kimono-koans/httm
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Fails to build: non-binding let on a synchronization lock
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kimono-koans
