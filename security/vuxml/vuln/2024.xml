@@ -17,7 +17,7 @@
       </package>
       <package>
 	<name>xwayland-devel</name>
-	<range><gt>21.0.99.1.672</gt><lt>21.0.99.1.841_1</lt></range>
+	<range><ge>21.0.99.1.672</ge><lt>21.0.99.1.841_1</lt></range>
 	<range><lt>21.0.99.1.671_1</lt></range>
       </package>
     </affects>
