@@ -3143,3 +3143,4 @@ devel/gearmand||2024-04-04|Has expired: Broken and unmaintained in ports
 devel/p5-Gearman-XS||2024-04-04|Depends on removed devel/gearmand and last updated in 2012
 emulators/tuxnes||2024-04-04|Has expired: BROKEN for more than 4 months
 sysutils/vordog||2024-04-04|Has expired: BROKEN for more than 4 months
+science/py-qiskit-terra||2024-04-04|Removed: the upstream gutted the old project and re-imported some other repo; it should be re-ported as a totally new project

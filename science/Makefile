@@ -416,7 +416,6 @@
     SUBDIR += py-qiskit-ibmq-provider
     SUBDIR += py-qiskit-nature
     SUBDIR += py-qiskit-optimization
-    SUBDIR += py-qiskit-terra
     SUBDIR += py-qspin
     SUBDIR += py-quantities
     SUBDIR += py-rmf
