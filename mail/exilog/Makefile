@@ -51,8 +51,6 @@ PLIST_SUB+=	AGENT=""
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SHEBANG_FILES=	exilog_agent.pl exilog_cgi.pl exilog_cleanup.pl
-
 PLIST_SUB+=	EXILOGDIR="${EXILOGDIR:S,^${PREFIX}/,,}"
 
 PORTDOC_FILES=	doc/Changelog \
