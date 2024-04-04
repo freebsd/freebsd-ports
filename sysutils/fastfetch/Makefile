@@ -1,5 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.8.10
+DISTVERSION=	2.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libyyjson.so:devel/yyjson
+RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes
