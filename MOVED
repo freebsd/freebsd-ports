@@ -3142,3 +3142,4 @@ net/rubygem-octokit6|net/rubygem-octokit|2024-04-03|Obsolete, please use net/rub
 devel/gearmand||2024-04-04|Has expired: Broken and unmaintained in ports
 devel/p5-Gearman-XS||2024-04-04|Depends on removed devel/gearmand and last updated in 2012
 emulators/tuxnes||2024-04-04|Has expired: BROKEN for more than 4 months
+sysutils/vordog||2024-04-04|Has expired: BROKEN for more than 4 months
