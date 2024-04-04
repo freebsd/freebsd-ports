@@ -1,4 +1,4 @@
---- thirdparty/glew/CMakeLists.txt.orig	2023-06-22 13:35:48 UTC
+--- thirdparty/glew/CMakeLists.txt.orig	2024-03-23 15:52:10 UTC
 +++ thirdparty/glew/CMakeLists.txt
 @@ -5,6 +5,7 @@ target_include_directories( glew PRIVATE "${CMAKE_CURR
  # The actual include directories will be added to the global include paths as

@@ -19,6 +19,7 @@
 %%DATADIR%%/symbols/Buffer.kicad_sym
 %%DATADIR%%/symbols/CPLD_Altera.kicad_sym
 %%DATADIR%%/symbols/CPLD_Microchip.kicad_sym
+%%DATADIR%%/symbols/CPLD_Renesas.kicad_sym
 %%DATADIR%%/symbols/CPLD_Xilinx.kicad_sym
 %%DATADIR%%/symbols/CPU.kicad_sym
 %%DATADIR%%/symbols/CPU_NXP_6800.kicad_sym
@@ -130,6 +131,7 @@
 %%DATADIR%%/symbols/MCU_ST_STM32F7.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32G0.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32G4.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32H5.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32H7.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32L0.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32L1.kicad_sym
@@ -138,6 +140,7 @@
 %%DATADIR%%/symbols/MCU_ST_STM32MP1.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32U5.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32WB.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32WBA.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32WL.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM8.kicad_sym
 %%DATADIR%%/symbols/MCU_SiFive.kicad_sym
@@ -145,6 +148,8 @@
 %%DATADIR%%/symbols/MCU_Texas.kicad_sym
 %%DATADIR%%/symbols/MCU_Texas_MSP430.kicad_sym
 %%DATADIR%%/symbols/MCU_Texas_SimpleLink.kicad_sym
+%%DATADIR%%/symbols/MCU_WCH_CH32V0.kicad_sym
+%%DATADIR%%/symbols/MCU_WCH_CH32V3.kicad_sym
 %%DATADIR%%/symbols/Mechanical.kicad_sym
 %%DATADIR%%/symbols/Memory_EEPROM.kicad_sym
 %%DATADIR%%/symbols/Memory_EPROM.kicad_sym
@@ -208,6 +213,7 @@
 %%DATADIR%%/symbols/Transistor_Array.kicad_sym
 %%DATADIR%%/symbols/Transistor_BJT.kicad_sym
 %%DATADIR%%/symbols/Transistor_FET.kicad_sym
+%%DATADIR%%/symbols/Transistor_FET_Other.kicad_sym
 %%DATADIR%%/symbols/Transistor_IGBT.kicad_sym
 %%DATADIR%%/symbols/Transistor_Power_Module.kicad_sym
 %%DATADIR%%/symbols/Triac_Thyristor.kicad_sym

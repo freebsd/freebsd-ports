@@ -1,11 +1,8 @@
---- thirdparty/nanodbc/CMakeLists.txt.orig	2023-06-22 13:35:48 UTC
+--- thirdparty/nanodbc/CMakeLists.txt.orig	2024-03-23 15:48:41 UTC
 +++ thirdparty/nanodbc/CMakeLists.txt
-@@ -155,16 +155,11 @@ endif()
- endif()
- 
+@@ -157,14 +157,15 @@ endif()
  ########################################
--## Mac OS X specifics for targets
-+## FreeBSD specifics for targets
+ ## Mac OS X specifics for targets
  ########################################
 -if(APPLE)
 -  set(CMAKE_MACOSX_RPATH ON)
@@ -15,8 +12,14 @@
 -  # These are harmless and can be safely ignored.
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument")
 -endif()
-+# Clang complains of unused `-I/path/` arguments.
-+# These are harmless and can be safely ignored.
++#if(APPLE)
++#  set(CMAKE_MACOSX_RPATH ON)
++#  message(STATUS "Use rpaths on Mac OS X - ${CMAKE_MACOSX_RPATH}")
++#
++#  # AppleClang complains of unused `-I/path/` arguments.
++#  # These are harmless and can be safely ignored.
++#  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument")
++#endif()
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument")
  
  ########################################
