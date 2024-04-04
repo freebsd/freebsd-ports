@@ -138,7 +138,6 @@
     SUBDIR += tme
     SUBDIR += tnylpo
     SUBDIR += tpm-emulator
-    SUBDIR += tuxnes
     SUBDIR += uae
     SUBDIR += ucon64
     SUBDIR += uconvert
