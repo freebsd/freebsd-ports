@@ -14,7 +14,7 @@ PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	96798fc19674.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
 PATCHFILES+=	3e77295f888c.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
 PATCHFILES+=	6c684d035c06.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
-PATCHFILES+=	01941a831811.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
+PATCHFILES+=	01941a831811.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1464
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)
