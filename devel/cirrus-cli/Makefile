@@ -1,5 +1,5 @@
 PORTNAME=	cirrus-cli
-DISTVERSION=	0.114.0
+DISTVERSION=	0.114.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/cirruslabs/cirrus-cli
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules
+USES=		go:1.22,modules
 
 USE_RC_SUBR=	${PORTNAME}
 
