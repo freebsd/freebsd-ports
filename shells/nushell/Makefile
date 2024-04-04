@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.91.0
-PORTREVISION=	1
+DISTVERSION=	0.92.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		arboard-3.3.0 \
+		arboard-3.3.2 \
 		argminmax-0.6.1 \
 		array-init-cursor-0.2.0 \
 		arrayvec-0.5.2 \
@@ -51,6 +50,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-ext-0.2.1 \
 		base64-0.13.1 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		bincode-1.3.3 \
 		bindgen-0.68.1 \
 		bit-set-0.5.3 \
@@ -85,7 +85,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cfg_aliases-0.1.1 \
 		chardetng-0.1.17 \
 		charset-0.1.3 \
-		chrono-0.4.34 \
+		chrono-0.4.35 \
 		chrono-humanize-0.2.3 \
 		chrono-tz-0.8.5 \
 		chrono-tz-build-0.2.1 \
@@ -94,10 +94,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap-4.4.18 \
 		clap_builder-4.4.18 \
 		clap_lex-0.6.0 \
-		clipboard-win-4.5.0 \
+		clipboard-win-5.2.0 \
 		codepage-0.1.1 \
 		colorchoice-1.0.0 \
-		comfy-table-7.1.0 \
 		compact_str-0.7.1 \
 		condtype-1.3.0 \
 		console-0.15.8 \
@@ -124,10 +123,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cssparser-macros-0.6.1 \
 		csv-1.3.0 \
 		csv-core-0.1.11 \
-		ctrlc-3.4.2 \
+		ctrlc-3.4.4 \
 		dashmap-5.5.3 \
 		deranged-0.3.11 \
-		derive-new-0.5.9 \
+		derive-new-0.6.0 \
 		derive_more-0.99.17 \
 		dialoguer-0.11.0 \
 		diff-0.1.13 \
@@ -156,14 +155,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		equivalent-1.0.1 \
 		erased-serde-0.4.2 \
 		errno-0.3.8 \
-		error-code-2.3.1 \
+		error-code-3.2.0 \
 		ethnum-1.5.0 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.13.0 \
 		fast-float-0.2.0 \
 		fastrand-2.0.1 \
-		fd-lock-3.0.13 \
+		fd-lock-4.0.2 \
 		file-id-0.2.1 \
 		filesize-0.2.0 \
 		filetime-0.2.23 \
@@ -187,12 +186,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-macro-0.3.30 \
 		futures-sink-0.3.30 \
 		futures-task-0.3.30 \
-		futures-timer-3.0.2 \
 		futures-util-0.3.30 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
-		gethostname-0.3.0 \
+		gethostname-0.4.3 \
 		getrandom-0.2.12 \
 		gimli-0.28.1 \
 		git2-0.18.1 \
@@ -200,7 +198,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		glob-0.3.1 \
 		h2-0.3.24 \
 		halfbrown-0.2.4 \
-		hamcrest2-0.3.0 \
 		hash32-0.3.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
@@ -208,6 +205,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hashlink-0.9.0 \
 		heapless-0.8.0 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.4 \
 		hex-0.4.3 \
 		home-0.5.9 \
@@ -218,9 +216,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		httpdate-1.0.3 \
 		human-date-parser-0.1.1 \
 		hyper-0.14.28 \
-		iana-time-zone-0.1.59 \
+		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
-		ical-0.10.0 \
+		ical-0.11.0 \
 		idna-0.5.0 \
 		indexmap-2.2.2 \
 		indicatif-0.17.7 \
@@ -251,7 +249,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libflate-1.4.0 \
 		libflate_lz77-1.2.0 \
 		libgit2-sys-0.16.2+1.7.2 \
@@ -266,7 +264,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		lru-0.12.1 \
 		lscolors-0.17.0 \
 		lsp-server-0.7.6 \
@@ -280,38 +278,32 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		md-5-0.10.6 \
 		memchr-2.7.1 \
 		memmap2-0.7.1 \
-		memoffset-0.7.1 \
-		miette-7.1.0 \
-		miette-derive-7.1.0 \
+		miette-7.2.0 \
+		miette-derive-7.2.0 \
 		mimalloc-0.1.39 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.11 \
-		mockito-1.3.0 \
+		mockito-1.4.0 \
 		multiversion-0.7.3 \
 		multiversion-macros-0.7.3 \
 		native-tls-0.2.11 \
 		new_debug_unreachable-1.0.4 \
-		nix-0.26.4 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		nom-7.1.3 \
 		notify-6.1.1 \
 		notify-debouncer-full-0.3.1 \
 		now-0.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.0 \
-		num-0.2.1 \
 		num-0.4.1 \
-		num-bigint-0.2.6 \
 		num-bigint-0.4.4 \
-		num-complex-0.2.4 \
 		num-complex-0.4.4 \
 		num-format-0.4.4 \
 		num-integer-0.1.45 \
 		num-iter-0.1.43 \
-		num-rational-0.2.4 \
 		num-rational-0.4.1 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
@@ -323,7 +315,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		object-0.32.2 \
 		omnipath-0.1.6 \
 		once_cell-1.19.0 \
-		open-5.0.1 \
+		open-5.1.1 \
 		openssl-0.10.63 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -361,6 +353,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.29 \
 		planus-0.3.1 \
+		platform-info-2.0.2 \
 		polars-0.37.0 \
 		polars-arrow-0.37.0 \
 		polars-arrow-format-0.1.0 \
@@ -412,11 +405,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.6.4 \
 		rand_distr-0.4.3 \
 		ratatui-0.26.0 \
-		rayon-1.8.1 \
+		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		reedline-0.30.0 \
+		reedline-0.31.0 \
 		ref-cast-1.0.22 \
 		ref-cast-impl-1.0.22 \
 		regex-1.10.3 \
@@ -451,7 +444,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		schannel-0.1.23 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		scraper-0.18.1 \
+		scraper-0.19.0 \
 		seahash-4.1.0 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
@@ -460,7 +453,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		seq-macro-0.3.5 \
 		serde-1.0.196 \
 		serde_derive-1.0.196 \
-		serde_json-1.0.112 \
+		serde_json-1.0.114 \
 		serde_repr-0.1.18 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
@@ -487,12 +480,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		snap-1.1.1 \
 		socket2-0.5.5 \
 		sqlparser-0.39.0 \
-		sqlparser-0.43.1 \
 		stability-0.1.1 \
 		stable_deref_trait-1.2.0 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
-		str-buf-1.0.6 \
 		str_indices-0.4.3 \
 		streaming-decompression-0.1.2 \
 		streaming-iterator-0.1.9 \
@@ -501,7 +492,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		string_cache_codegen-0.5.2 \
 		strip-ansi-escapes-0.2.0 \
 		strsim-0.10.0 \
-		strum-0.25.0 \
 		strum-0.26.1 \
 		strum_macros-0.25.3 \
 		strum_macros-0.26.1 \
@@ -518,7 +508,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled-0.14.0 \
 		tap-1.0.1 \
 		target-features-0.1.5 \
-		tempfile-3.10.0 \
+		tempfile-3.10.1 \
 		tendril-0.4.3 \
 		termcolor-1.1.3 \
 		terminal_size-0.3.0 \
@@ -568,15 +558,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		utf-8-0.7.6 \
 		utf8-width-0.1.7 \
 		utf8parse-0.2.1 \
-		uu_cp-0.0.23 \
-		uu_mkdir-0.0.23 \
-		uu_mktemp-0.0.23 \
-		uu_mv-0.0.23 \
-		uu_whoami-0.0.23 \
-		uucore-0.0.24 \
+		uu_cp-0.0.25 \
+		uu_mkdir-0.0.25 \
+		uu_mktemp-0.0.25 \
+		uu_mv-0.0.25 \
+		uu_uname-0.0.25 \
+		uu_whoami-0.0.25 \
+		uucore-0.0.25 \
 		uucore_procs-0.0.24 \
 		uuhelp_parser-0.0.24 \
-		uuid-1.7.0 \
+		uuid-1.8.0 \
 		v_htmlescape-0.15.8 \
 		value-trait-0.8.1 \
 		vcpkg-0.2.15 \
@@ -585,7 +576,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		vte-0.11.1 \
 		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.90 \
@@ -605,44 +596,46 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
-		winapi-wsapoll-0.1.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.44.0 \
 		windows-0.52.0 \
+		windows-0.54.0 \
 		windows-core-0.52.0 \
+		windows-core-0.54.0 \
+		windows-result-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
+		windows_x86_64_msvc-0.52.4 \
 		winnow-0.5.35 \
 		winreg-0.52.0 \
 		winresource-0.1.17 \
-		wl-clipboard-rs-0.8.0 \
+		wl-clipboard-rs-0.8.1 \
 		wyz-0.5.1 \
-		x11rb-0.12.0 \
-		x11rb-protocol-0.12.0 \
+		x11rb-0.13.0 \
+		x11rb-protocol-0.13.0 \
 		xattr-1.3.1 \
 		xxhash-rust-0.8.8 \
 		yansi-0.5.1 \
