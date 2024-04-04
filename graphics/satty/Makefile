@@ -1,7 +1,6 @@
 PORTNAME=	satty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.3
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	graphics wayland
 MASTER_SITES=	CRATESIO
 
@@ -10,6 +9,8 @@ COMMENT=	Modern screenshot annotation
 WWW=		https://github.com/gabm/Satty
 
 LICENSE=	MPL20
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cargo desktop-file-utils gnome
 USE_GITHUB=	yes
