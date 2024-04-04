@@ -1,0 +1,12 @@
+bin/atl-config
+bin/atom_server
+bin/attr_dump
+include/atl.h
+lib/cmake/atl/atl-config-version.cmake
+lib/cmake/atl/atl-config.cmake
+lib/cmake/atl/atl-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/atl/atl-targets.cmake
+lib/libatl.so
+lib/libatl.so.2
+lib/libatl.so.2.2.1
+libdata/pkgconfig/atl.pc

@@ -227,6 +227,7 @@
     SUBDIR += asyncplusplus
     SUBDIR += atf
     SUBDIR += athens
+    SUBDIR += atl
     SUBDIR += atlantis
     SUBDIR += autobook
     SUBDIR += autoconf
