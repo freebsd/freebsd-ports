@@ -13,11 +13,12 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		dirs-sys-next-0.1.2 \
 		fs2-0.4.3 \
 		getrandom-0.2.8 \
-		gmp-mpfr-sys-1.5.0 \
+		gmp-mpfr-sys-1.6.2 \
 		hermit-abi-0.1.19 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
 		libc-0.2.139 \
+		libm-0.2.8 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		nix-0.19.1 \
@@ -28,7 +29,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		redox_users-0.4.3 \
 		regex-1.7.1 \
 		regex-syntax-0.6.28 \
-		rug-1.19.0 \
+		rug-1.24.0 \
 		rustyline-7.1.0 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
@@ -57,12 +58,13 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
+		windows-sys-0.52.0 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.52.4 \
 		winres-0.1.12
