@@ -1,6 +1,6 @@
 PORTNAME=	bacula
 DISTVERSION=	15.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${DISTVERSION}
 PKGNAMEPREFIX?=	#
@@ -19,7 +19,7 @@ SHEBANG_FILES=	scripts/get_malware_abuse.ch scripts/key-manager.py.in \
 		scripts/md5tobase64.py src/cats/make_catalog_backup.pl.in
 #scripts/baculabackupreport.in
 
-CONFLICTS?=	bacula-server bacula13-server bacula11-server bacula9-server
+CONFLICTS?=	bacula13-server bacula11-server bacula9-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 

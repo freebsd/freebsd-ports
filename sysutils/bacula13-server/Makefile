@@ -1,6 +1,6 @@
 PORTNAME=	bacula
 DISTVERSION=	13.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES+=		cpe libtool readline shebangfix ssl
 SHEBANG_FILES=	src/cats/make_catalog_backup.pl.in scripts/baculabackupreport
 
-CONFLICTS?=	bacula11-server bacula9-server bacula-server
+CONFLICTS?=	bacula15-server bacula11-server bacula9-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
