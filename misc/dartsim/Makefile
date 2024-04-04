@@ -1,7 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.13.0
-PORTREVISION=	6
+DISTVERSION=	6.13.2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
 
-USES=		cmake compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
+USES=		cmake:testing compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
 		pkgconfig python xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
@@ -46,10 +45,14 @@ GH_PROJECT=	dart
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
 CMAKE_ON=	BUILD_SHARED_LIBS # DART_VERBOSE
-CMAKE_ARGS=	-DODE_DIR=${LOCALBASE}
+CMAKE_ARGS=	-DODE_DIR=${LOCALBASE} \
+		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
+CMAKE_TESTING_TARGET=	tests # only builds test
 
 DATADIR=	share/dart
 DOCSDIR=	${PREFIX}/share/doc/dart
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -60,5 +63,9 @@ PORTDOCS=	*
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
+
+post-test: # run tests: 8 tests fail, see https://github.com/dartsim/dart/issues/1797
+	@cd ${BUILD_WRKSRC} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
