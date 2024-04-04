@@ -15,6 +15,11 @@
 	<name>xwayland</name>
 	<range><lt>23.2.5</lt></range>
       </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><gt>21.0.99.1.672</gt><lt>21.0.99.1.841_1</lt></range>
+	<range><lt>21.0.99.1.671_1</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
