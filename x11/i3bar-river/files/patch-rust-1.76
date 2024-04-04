@@ -1,0 +1,60 @@
+Revert https://github.com/MaxVerevkin/i3bar-river/commit/d1ba22747e9e
+until lang/rust >= 1.77 update.
+
+error[E0658]: `c".."` literals are experimental
+  --> src/bar.rs:61:13
+   |
+61 |             c"i3bar-river".into(),
+   |             ^^^^^^^^^^^^^^
+   |
+   = note: see issue #105723 <https://github.com/rust-lang/rust/issues/105723> for more information
+
+error[E0658]: `c".."` literals are experimental
+   --> src/wm_info_provider/river.rs:118:33
+    |
+118 |             PointerBtn::Left => c"set-focused-tags",
+    |                                 ^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #105723 <https://github.com/rust-lang/rust/issues/105723> for more information
+
+error[E0658]: `c".."` literals are experimental
+   --> src/wm_info_provider/river.rs:119:34
+    |
+119 |             PointerBtn::Right => c"toggle-focused-tags",
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #105723 <https://github.com/rust-lang/rust/issues/105723> for more information
+
+--- src/bar.rs.orig	2024-03-30 19:50:32 UTC
++++ src/bar.rs
+@@ -58,7 +58,7 @@ impl Bar {
+             surface,
+             Some(output.wl),
+             zwlr_layer_shell_v1::Layer::Top,
+-            c"i3bar-river".into(),
++            wayrs_client::cstr!("i3bar-river").into(),
+             layer_surface_cb,
+         );
+ 
+--- src/wm_info_provider/river.rs.orig	2024-03-30 19:50:32 UTC
++++ src/wm_info_provider/river.rs
+@@ -2,7 +2,7 @@ use wayrs_client::proxy::Proxy;
+ 
+ use wayrs_client::global::*;
+ use wayrs_client::proxy::Proxy;
+-use wayrs_client::EventCtx;
++use wayrs_client::{cstr, EventCtx};
+ 
+ use super::*;
+ 
+@@ -115,8 +115,8 @@ impl WmInfoProvider for RiverInfoProvider {
+         btn: PointerBtn,
+     ) {
+         let cmd = match btn {
+-            PointerBtn::Left => c"set-focused-tags",
+-            PointerBtn::Right => c"toggle-focused-tags",
++            PointerBtn::Left => cstr!("set-focused-tags"),
++            PointerBtn::Right => cstr!("toggle-focused-tags"),
+             _ => return,
+         };
+         self.control.add_argument(conn, cmd.to_owned());
