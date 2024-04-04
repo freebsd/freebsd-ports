@@ -761,7 +761,6 @@
     SUBDIR += geany-plugins
     SUBDIR += geany-plugins-l10n
     SUBDIR += geany-themes
-    SUBDIR += gearmand
     SUBDIR += generate
     SUBDIR += gengetopt
     SUBDIR += genht

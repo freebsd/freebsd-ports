@@ -3139,3 +3139,4 @@ textproc/rubygem-autoprefixer-rails1025|textproc/rubygem-autoprefixer-rails|2024
 www/rubygem-cssbundling-rails13-rails70|www/rubygem-cssbundling-rails-rails70|2024-04-02|Obsolete, please use www/rubygem-cssbundling-rails-rails70 instead
 databases/xtrabackup|databases/xtrabackup80|2024-04-02|Has expired: Percona XtraBackup 2.4 has reached EOL status
 net/rubygem-octokit6|net/rubygem-octokit|2024-04-03|Obsolete, please use net/rubygem-octokit instead
+devel/gearmand||2024-04-04|Has expired: Broken and unmaintained in ports
