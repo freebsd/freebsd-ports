@@ -1,5 +1,5 @@
-TIMESTAMP = 1690881147
-SHA256 (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v0.11.0/v0.11.0.mod) = 1a96351c3bac86de99638b4a56a52f04553d99066b7855349d56062e0b695751
-SIZE (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v0.11.0/v0.11.0.mod) = 647
-SHA256 (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v0.11.0/v0.11.0.zip) = 1939985f4b17c40ff09a422eae460dc1538f4ba46a6222c2b1de588dc530f16f
-SIZE (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v0.11.0/v0.11.0.zip) = 792588
+TIMESTAMP = 1711972476
+SHA256 (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v1.1.0/v1.1.0.mod) = ffe0417f1ba8e4dbd9469f19442bdca97573600931231ca12e75d513293f27ae
+SIZE (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v1.1.0/v1.1.0.mod) = 1388
+SHA256 (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v1.1.0/v1.1.0.zip) = e01c2e158ce83944cf7981c915c259911eb6370591fbbeedcd97a6fabaa7a4d5
+SIZE (go/www_nginx-prometheus-exporter/nginx-prometheus-exporter-v1.1.0/v1.1.0.zip) = 796618
