@@ -1,12 +1,12 @@
 PORTNAME=	epic5
 PORTVERSION=	2.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
+MASTER_SITES=	https://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 
 MAINTAINER=	epic@dsllsn.net
 COMMENT=	Enhanced Programmable IRC-II Client
-WWW=		http://www.epicsol.org/
+WWW=		https://www.epicsol.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -17,19 +17,18 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 COMMITID=	2078
 PLIST_SUB+=	COMMITID=${COMMITID}
-CFLAGS:=	${CFLAGS:C/-O2/-O/g}
 
-OPTIONS_DEFINE=	DOCS PERL PYTHON RUBY
+OPTIONS_DEFINE=		DOCS PERL PYTHON RUBY
 OPTIONS_DEFAULT=	PYTHON
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
 
-PERL_USES=	perl5
+PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl
-PYTHON_USES=	python gettext-runtime
+PYTHON_USES=		python gettext-runtime
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}-config
 PYTHON_CONFIGURE_OFF=	--without-python
-RUBY_USES=	ruby
+RUBY_USES=		ruby
 RUBY_CONFIGURE_WITH=	ruby
 
 post-patch:
