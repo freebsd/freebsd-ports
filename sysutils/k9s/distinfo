@@ -1,5 +1,5 @@
-TIMESTAMP = 1708326507
-SHA256 (go/sysutils_k9s/k9s-v0.31.9/v0.31.9.mod) = bd143080d80f0ff3d0601074561c9763c4bfe605d99309b78d3e256c5070ebf2
-SIZE (go/sysutils_k9s/k9s-v0.31.9/v0.31.9.mod) = 16937
-SHA256 (go/sysutils_k9s/k9s-v0.31.9/v0.31.9.zip) = 11a6cd5865908dbbb5d8e5dcf6d45a9ff60521f6c57ee8e6bf43390a4accb2b9
-SIZE (go/sysutils_k9s/k9s-v0.31.9/v0.31.9.zip) = 7339905
+TIMESTAMP = 1711005361
+SHA256 (go/sysutils_k9s/k9s-v0.32.4/v0.32.4.mod) = ce3b5ffbd30e969001ed70957e9abd6fb2378d111319a2f1e36de71cda9b58f1
+SIZE (go/sysutils_k9s/k9s-v0.32.4/v0.32.4.mod) = 16925
+SHA256 (go/sysutils_k9s/k9s-v0.32.4/v0.32.4.zip) = ce85fba6e59b5ed46db0a1d6c637f52e728c2ebec80a307dd1864bf36e92c04a
+SIZE (go/sysutils_k9s/k9s-v0.32.4/v0.32.4.zip) = 7362481
