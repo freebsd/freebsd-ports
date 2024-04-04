@@ -7,7 +7,7 @@
 -
 +#if defined(__FreeBSD__)
 +    maxfd = 0;
-+    for (i = 0; except_fds[i] >= 0; i++)
++    for (int i = 0; except_fds[i] >= 0; i++)
 +        if (except_fds[i] > maxfd)
 +            maxfd = except_fds[i];
 +    maxfd++;
