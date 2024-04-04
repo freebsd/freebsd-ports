@@ -1,6 +1,6 @@
---- /usr/local/www/exilog/exilog_sql.pm	Tue Feb 21 16:23:56 2006
-+++ exilog_sql.pm	Wed Aug 24 09:22:29 2005
-@@ -208,7 +208,7 @@
+--- exilog_sql.pm.orig	2005-08-24 14:22:29 UTC
++++ exilog_sql.pm
+@@ -208,7 +208,7 @@ sub _pgsql_sql_queue_add {
  sub _pgsql_sql_optimize {
    my $where = shift || "nothing";
  
