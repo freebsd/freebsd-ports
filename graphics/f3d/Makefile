@@ -1,6 +1,6 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,12 +16,14 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
 		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
 		libImath-3_1.so:math/Imath \
+		libinotify.so:devel/libinotify \
 		libnetcdf.so:science/netcdf \
+		libtbb.so:devel/onetbb \
 		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl \
 		shared-mime-info tcl tk xorg
-USE_GL=		gl glu
+USE_GL=		gl
 USE_XORG=	ice sm x11 xt
 USE_LDCONFIG=	yes
 
@@ -30,6 +32,8 @@ GH_ACCOUNT=	f3d-app
 
 CMAKE_OFF=	F3D_STRICT_BUILD # disable -Werror
 CMAKE_OFF+=	F3D_LINUX_APPLICATION_LINK_FILESYSTEM
+
+LDFLAGS+=	-linotify
 
 # dependency descroptions are in https://f3d.app/doc/dev/BUILD.html
 OPTIONS_GROUP=			MODULES PLUGINS
