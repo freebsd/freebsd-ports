@@ -1,5 +1,5 @@
 PORTNAME=	remind
-DISTVERSION=	04.03.04
+DISTVERSION=	04.03.06
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--disable-perl-build-artifacts
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INSTALL_TARGET=	${WITH_DEBUG:Dinstall:Uinstall-stripped}
+TEST_TARGET=	test
 
 # disable LTO on riscv64
 EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.in

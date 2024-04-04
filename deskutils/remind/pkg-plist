@@ -22,6 +22,7 @@ share/pixmaps/tkremind.png
 %%DATADIR%%/holidays/gr.rem
 %%DATADIR%%/holidays/ie.rem
 %%DATADIR%%/holidays/jewish.rem
+%%DATADIR%%/holidays/pt.rem
 %%DATADIR%%/holidays/us.rem
 %%DATADIR%%/lang/auto.rem
 %%DATADIR%%/lang/ca.rem
