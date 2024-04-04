@@ -1,5 +1,5 @@
 PORTNAME=	pass-secrets
-PORTVERSION=	s20231103
+PORTVERSION=	s20240404
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	pass:sysutils/password-store
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	nullobsi
-GH_TAGNAME=	0423a84
+GH_TAGNAME=	e313297
 PLIST_FILES=	bin/${PORTNAME} \
 		share/dbus-1/services/si.nullob.pass-secrets.service
 
