@@ -1,7 +1,6 @@
 PORTNAME=	wsdd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	0.8
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,13 +26,13 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man8/${PORTNAME}.8.gz
 
 post-patch:
-	${REINPLACE_CMD} 's|PYTHON|${PYTHON_CMD}|' ${WRKSRC}/etc/rc.d/${PORTNAME}
+	${REINPLACE_CMD} 's|PYTHON|${PYTHON_CMD}|' ${WRKSRC}/etc/rc.d/${PORTNAME}.freebsd
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME}.py \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/${PORTNAME} \
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/${PORTNAME}.freebsd \
 		${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 \
 		${STAGEDIR}${PREFIX}/share/man/man8/
