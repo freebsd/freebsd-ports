@@ -1,0 +1,116 @@
+diff --git src/runtime/defs_freebsd.go src/runtime/defs_freebsd.go
+index d86ae9133a..1a133b4402 100644
+--- src/runtime/defs_freebsd.go
++++ src/runtime/defs_freebsd.go
+@@ -34,6 +34,10 @@ package runtime
+ #include <sys/cpuset.h>
+ #include <sys/param.h>
+ #include <sys/vdso.h>
++
++#ifndef _MC_CAP_VALID
++#define _MC_CAP_VALID 0
++#endif
+ */
+ import "C"
+ 
+@@ -142,6 +146,9 @@ const (
+ 	EV_EOF       = C.EV_EOF
+ 	EVFILT_READ  = C.EVFILT_READ
+ 	EVFILT_WRITE = C.EVFILT_WRITE
++
++	// This is specific to the CheriBSD freebsd64 compat layer
++	MC_CAP_VALID = C._MC_CAP_VALID
+ )
+ 
+ type Rtprio C.struct_rtprio
+diff --git src/runtime/defs_freebsd_arm64.go src/runtime/defs_freebsd_arm64.go
+index 1d6723621a..d3e7940320 100644
+--- src/runtime/defs_freebsd_arm64.go
++++ src/runtime/defs_freebsd_arm64.go
+@@ -110,6 +110,9 @@ const (
+ 	_EV_EOF       = 0x8000
+ 	_EVFILT_READ  = -0x1
+ 	_EVFILT_WRITE = -0x2
++
++	// This is specific to the CheriBSD freebsd64 compat layer
++        _MC_CAP_VALID      = 0x80000000
+ )
+ 
+ type rtprio struct {
+diff --git src/runtime/signal_arm64.go src/runtime/signal_arm64.go
+index c8b87817b4..1af2d6d675 100644
+--- src/runtime/signal_arm64.go
++++ src/runtime/signal_arm64.go
+@@ -65,6 +65,7 @@ func (c *sigctxt) preparePanic(sig uint32, gp *g) {
+ 	// functions are correctly handled. This smashes
+ 	// the stack frame but we're not going back there
+ 	// anyway.
++	c.prepare_mcontext()
+ 	sp := c.sp() - sys.StackAlign // needs only sizeof uint64, but must align the stack
+ 	c.set_sp(sp)
+ 	*(*uint64)(unsafe.Pointer(uintptr(sp))) = c.lr()
+@@ -86,6 +87,7 @@ func (c *sigctxt) pushCall(targetPC, resumePC uintptr) {
+ 	// push the call. The function being pushed is responsible
+ 	// for restoring the LR and setting the SP back.
+ 	// This extra space is known to gentraceback.
++	c.prepare_mcontext()
+ 	sp := c.sp() - 16 // SP needs 16-byte alignment
+ 	c.set_sp(sp)
+ 	*(*uint64)(unsafe.Pointer(uintptr(sp))) = c.lr()
+diff --git src/runtime/signal_darwin_arm64.go src/runtime/signal_darwin_arm64.go
+index 690ffe4ae2..9ca3a63463 100644
+--- src/runtime/signal_darwin_arm64.go
++++ src/runtime/signal_darwin_arm64.go
+@@ -88,3 +88,5 @@ func (c *sigctxt) fixsigcode(sig uint32) {
+ 		}
+ 	}
+ }
++
++func (c *sigctxt) prepare_mcontext() {}
+diff --git src/runtime/signal_freebsd_arm64.go src/runtime/signal_freebsd_arm64.go
+index 159e965a7d..2739d06a99 100644
+--- src/runtime/signal_freebsd_arm64.go
++++ src/runtime/signal_freebsd_arm64.go
+@@ -64,3 +64,12 @@ func (c *sigctxt) set_r28(x uint64) { c.regs().mc_gpregs.gp_x[28] = x }
+ 
+ func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
+ func (c *sigctxt) set_sigaddr(x uint64) { c.info.si_addr = x }
++
++func (c *sigctxt) prepare_mcontext() {
++	// Clear the _MC_CAP_VALID flag so that mcontext updates the registers
++	// upon sigreturn. Any capabilities will be invalidated on freebsd64,
++	// but this is fine, we are not an hybrid program.
++	// This is not done in libpthread because it does not directly modify
++	// registers in the context.
++	c.regs().mc_flags &= (int32)(^uint32(_MC_CAP_VALID))
++}
+diff --git src/runtime/signal_linux_amd64.go src/runtime/signal_linux_amd64.go
+index 573b118397..eb66c55495 100644
+--- src/runtime/signal_linux_amd64.go
++++ src/runtime/signal_linux_amd64.go
+@@ -54,3 +54,5 @@ func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
+ func (c *sigctxt) set_sigaddr(x uint64) {
+ 	*(*uintptr)(add(unsafe.Pointer(c.info), 2*goarch.PtrSize)) = uintptr(x)
+ }
++
++func (c *sigctxt) prepare_mcontext() {}
+diff --git src/runtime/signal_netbsd_arm64.go src/runtime/signal_netbsd_arm64.go
+index 8dfdfeadd5..75a218cb12 100644
+--- src/runtime/signal_netbsd_arm64.go
++++ src/runtime/signal_netbsd_arm64.go
+@@ -71,3 +71,5 @@ func (c *sigctxt) set_sigcode(x uint64) { c.info._code = int32(x) }
+ func (c *sigctxt) set_sigaddr(x uint64) {
+ 	c.info._reason = uintptr(x)
+ }
++
++func (c *sigctxt) prepare_mcontext() {}
+diff --git src/runtime/signal_openbsd_arm64.go src/runtime/signal_openbsd_arm64.go
+index 3747b4f91b..8746f93d09 100644
+--- src/runtime/signal_openbsd_arm64.go
++++ src/runtime/signal_openbsd_arm64.go
+@@ -73,3 +73,5 @@ func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
+ func (c *sigctxt) set_sigaddr(x uint64) {
+ 	*(*uint64)(add(unsafe.Pointer(c.info), 16)) = x
+ }
++
++func (c *sigctxt) prepare_mcontext() {}

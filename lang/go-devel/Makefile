@@ -75,6 +75,9 @@ GOARCH_riscv64=	riscv64
 GOARM_armv6=	6
 GOARM_armv7=	7
 
+# The bootstrap Go will not work on CheriBSD compat/freebsd64 otherwise
+MAKE_ENV+=	GODEBUG="asyncpreemptoff=1"
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == riscv64 && ${OSREL:R} < 13
@@ -97,7 +100,7 @@ pre-build:
 .endif
 
 do-build:
-	cd ${WRKSRC}/src ; ${SETENV} \
+	cd ${WRKSRC}/src ; ${SETENV} ${MAKE_ENV} \
 		XDG_CACHE_HOME=${WRKDIR} \
 		GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-bootstrap \
 		GOROOT=${WRKSRC} \
