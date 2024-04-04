@@ -5,7 +5,7 @@ MASTER_SITES=	https://suitecrm.com/download/141/suite714/563700/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source Customer Relationship Management (CRM) software solution
-WWW=		http://www.suitercrm.com/
+WWW=		https://suitercrm.com/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
