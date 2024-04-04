@@ -1,3 +1,40 @@
+  <vuln vid="4a026b6c-f2b8-11ee-8e76-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>123.0.6312.105</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>123.0.6312.105</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[329130358] High CVE-2024-3156: Inappropriate implementation in V8. Reported by Zhenghang Xiao (@Kipreyyy) on 2024-03-12</li>
+	    <li>[329965696] High CVE-2024-3158: Use after free in Bookmarks. Reported by undoingfish on 2024-03-17</li>
+	    <li>[330760873] High CVE-2024-3159: Out of bounds memory access in V8. Reported by Edouard Bochin (@le_douds) and Tao Yan (@Ga1ois) of Palo Alto Networks, via Pwn2Own 2024 on 2024-03-22</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3156</cvename>
+      <cvename>CVE-2024-3158</cvename>
+      <cvename>CVE-2024-3159</cvename>
+      <url>https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-02</discovery>
+      <entry>2024-04-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57561cfc-f24b-11ee-9730-001fc69cd6dc">
     <topic>xorg server -- Multiple vulnerabilities</topic>
     <affects>
