@@ -1,6 +1,6 @@
 PORTNAME=	gdstk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.49
+DISTVERSION=	0.9.50
 CATEGORIES=	cad
 #MASTER_SITES=	PYPI # build fails from PYPI: https://github.com/heitzmann/gdspy/issues/236
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYNUMPY}
 LIB_DEPENDS=	libqhull_r.so:math/qhull
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++11-lang python
 USE_PYTHON=	pep517 autoplist pytest # tests fail to run, see https://github.com/heitzmann/gdspy/issues/237
