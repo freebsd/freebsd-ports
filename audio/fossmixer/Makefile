@@ -1,6 +1,6 @@
 PORTNAME=	fossmixer
 PORTVERSION=	0.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/detroit
 DISTNAME=	detroit-0.2.3
@@ -11,8 +11,7 @@ WWW=		https://detroit.sourceforge.net/app_fossmixer.html
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/noto/NotoSans-Italic.ttf:x11-fonts/noto-basic \
-		${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf:x11-fonts/noto-basic
+RUN_DEPENDS=	noto-basic>0:x11-fonts/noto-basic
 LIB_DEPENDS=	libao.so:audio/libao \
 		libportaudio.so:audio/portaudio \
 		libpulse-simple.so:audio/pulseaudio \
