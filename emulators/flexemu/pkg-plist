@@ -5,11 +5,8 @@ bin/flexemu
 bin/flexplorer
 bin/fromflex
 bin/mdcrtool
-bin/rcvflex
-bin/send2flx
-bin/testdaa
 bin/toflex
-%%ETCDIR%%.conf
+etc/flexemu.conf
 share/applications/flexemu-flexplorer.desktop
 share/applications/flexemu.desktop
 %%DATADIR%%/6809diag.pdf
