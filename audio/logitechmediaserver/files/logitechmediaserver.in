@@ -27,7 +27,7 @@ prefsdir=${statedir}/prefs
 playlistdir=${statedir}/playlists
 u=%%SLIMUSER%%
 g=%%SLIMGROUP%%
-command_args="--daemon --pidfile=${pidfile} --user=${u} --group=${g} --nomysqueezebox"
+command_args="--daemon --pidfile=${pidfile} --user=${u} --group=${g}"
 %%PORTNAME%%_user=${u}
 %%PORTNAME%%_group=${g}
 

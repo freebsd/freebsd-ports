@@ -1,6 +1,5 @@
-
 PORTNAME=	logitechmediaserver
-DISTVERSION=	8.4.0
+DISTVERSION=	8.5.0
 CATEGORIES=	audio
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -23,8 +22,8 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:e225575 \
-		Logitech:slimserver-vendor:5bb7355:vendor
+GH_TUPLE=	LMS-Community:slimserver:8762186a4 \
+		LMS-Community:slimserver-vendor:5bb7355:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
@@ -37,18 +36,6 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		scanner.pl \
 		slimserver.pl \
 		${WRKSRC_vendor}/CPAN/hints/darwin.pl
-
-SUB_FILES=	Custom.pm \
-		custom-convert.conf \
-		logitechmediaserver.conf
-SUB_LIST=	PERL=${PERL} \
-		PORTNAME=${PORTNAME} \
-		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
-		SLIMDIR=${SLIMDIR} \
-		SLIMDBDIR=${SLIMDBDIR} \
-		SLIMUSER=${SLIMUSER} \
-		SLIMGROUP=${SLIMGROUP} \
-		CONFFILES="${CONFFILES}"
 
 SUB_FILES=	Custom.pm \
 		custom-convert.conf \
@@ -85,12 +72,6 @@ TEST_VARS_OFF=		CONTRIB_FLAGS=-t
 
 DOCFILES=	Changelog*.html License*.txt
 CONFFILES=	convert.conf types.conf
-
-PLIST_SUB=	SLIMDIR=${SLIMDIR} \
-		SLIMDBDIR=${SLIMDBDIR} \
-		OPSYS=${OPSYS:tl} \
-		ARCH=${ARCH} \
-		ARCHNAME=${ARCHNAME}
 
 SLIMDIR?=	share/logitechmediaserver
 SLIMDBDIR?=	/var/db/logitechmediaserver
