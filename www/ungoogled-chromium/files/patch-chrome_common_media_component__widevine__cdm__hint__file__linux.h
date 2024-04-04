@@ -1,6 +1,6 @@
---- chrome/common/media/component_widevine_cdm_hint_file_linux.h.orig	2024-03-22 14:16:19 UTC
+--- chrome/common/media/component_widevine_cdm_hint_file_linux.h.orig	2024-04-04 19:16:34 UTC
 +++ chrome/common/media/component_widevine_cdm_hint_file_linux.h
-@@ -17,7 +17,7 @@
+@@ -15,7 +15,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
