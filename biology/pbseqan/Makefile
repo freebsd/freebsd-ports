@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Upstream merged into SeqAn project: Use biology/seqan
+EXPIRATION_DATE=	2024-05-05
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
