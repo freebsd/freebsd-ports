@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform centralized encrypted messaging service
 WWW=		https://signal.org/
 
-BROKEN=		expired version of signal
-
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
