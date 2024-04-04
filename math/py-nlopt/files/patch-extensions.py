@@ -1,6 +1,6 @@
---- extensions.py.orig	2022-06-19 20:42:31 UTC
+--- extensions.py.orig	2024-04-03 02:23:20 UTC
 +++ extensions.py
-@@ -25,7 +25,7 @@ class NLOptBuild(build_ext):
+@@ -26,7 +26,7 @@ class NLOptBuild(build_ext):
          except OSError:
              raise RuntimeError("CMake must be installed")
  
