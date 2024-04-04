@@ -1,6 +1,6 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.9
+DISTVERSION=	2.0.10
 CATEGORIES=	net-p2p
 #MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2
@@ -25,8 +25,8 @@ SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	arvidn
 GH_PROJECT=	libtorrent
-GH_TUPLE=	arvidn:try_signal:751a7e5:try_signal/deps/try_signal \
-		arvidn:libsimulator:64fb5b4:libsimulator/simulation/libsimulator \
+GH_TUPLE=	arvidn:try_signal:105cce5:try_signal/deps/try_signal \
+		arvidn:libsimulator:66ac6cc:libsimulator/simulation/libsimulator \
 		paullouisageneau:boost-asio-gnutls:a57d4d3:asio/deps/asio-gnutls
 
 USE_CXXSTD=	c++17 # prevent boost-related SEGV, see bug#264278
