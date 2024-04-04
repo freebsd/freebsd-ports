@@ -1,3 +1,72 @@
+  <vuln vid="57561cfc-f24b-11ee-9730-001fc69cd6dc">
+    <topic>xorg server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.12,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nextserver</name>
+	<range><lt>21.1.12,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>23.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2024-April/003497.html">
+	  <ul>
+	    <li>
+	      CVE-2024-31080: Heap buffer overread/data leakage in
+	      ProcXIGetSelectedEvents
+
+	      <p>The ProcXIGetSelectedEvents() function uses the byte-swapped
+	      length of the return data for the amount of data to return to
+	      the client, if the client has a different endianness than
+	      the X server.</p>
+	    </li>
+	    <li>CVE-2024-31081: Heap buffer overread/data leakage in
+	    ProcXIPassiveGrabDevice
+
+	    <p>The ProcXIPassiveGrabDevice() function uses the byte-swapped
+	    length of the return data for the amount of data to return to
+	    the client, if the client has a different endianness than
+	    the X server.</p>
+	    </li>
+
+	    <li>CVE-2024-31083: User-after-free in ProcRenderAddGlyphs
+
+	    <p>The ProcRenderAddGlyphs() function calls the AllocateGlyph()
+	    function to store new glyphs sent by the client to the X server.
+	    AllocateGlyph() would return a new glyph with refcount=0 and
+	    a re-used glyph would end up not changing the refcount at all.
+	    The resulting glyph_new array would thus have multiple entries
+	    pointing to the same non-refcounted glyphs.
+
+	    ProcRenderAddGlyphs() may free a glyph, resulting in a
+	    use-after-free when the same glyph pointer is then later used.</p>
+	    </li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31080</cvename>
+      <cvename>CVE-2024-31081</cvename>
+      <cvename>CVE-2024-31083</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2024-April/003497.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-03</discovery>
+      <entry>2024-04-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e3bea0c-f110-11ee-bc57-00e081b7aa2d">
     <topic>jenkins -- HTTP/2 denial of service vulnerability in bundled Jetty</topic>
     <affects>
