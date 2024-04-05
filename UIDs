@@ -279,7 +279,7 @@ orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
 svxlink:*:331:331::0:0:svxlink server:/nonexistent:/usr/sbin/nologin
 keycloak:*:332:332::0:0:keycloak server:/nonexistent:/usr/sbin/nologin
 honeytrap:*:333:333::0:0:HoneyTrap Daemon:/nonexistent:/usr/sbin/nologin
-# free: 334
+percona:*:334:334::0:0:Percona Daemons:/nonexistent:/usr/sbin/nologin
 # free: 335
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
 daapd:*:337:337::0:0:daapd User:/nonexistent:/usr/sbin/nologin

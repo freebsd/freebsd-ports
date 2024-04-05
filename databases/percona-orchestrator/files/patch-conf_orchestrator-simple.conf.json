@@ -1,0 +1,24 @@
+--- conf/orchestrator-simple.conf.json.orig	2024-04-05 14:26:48 UTC
++++ conf/orchestrator-simple.conf.json
+@@ -2,9 +2,9 @@
+   "#": "-----",
+   "#": "this is a comment. See further comment hints below.",
+   "#": "-----",
+-  "Debug": true,
+-  "EnableSyslog": false,
+-  "ListenAddress": ":3000",
++  "Debug": false,
++  "EnableSyslog": true,
++  "ListenAddress": "127.0.0.1:3000",
+   "MySQLTopologyUser": "orc_client_user",
+   "MySQLTopologyPassword": "orc_client_password",
+   "MySQLTopologyCredentialsConfigFile": "",
+@@ -58,7 +58,7 @@
+   "#": "-----",
+   "#": "security, access control:",
+   "#": "-----",
+-  "ReadOnly": false,
++  "ReadOnly": true,
+   "AuthenticationMethod": "",
+   "HTTPAuthUser": "",
+   "HTTPAuthPassword": "",

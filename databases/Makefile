@@ -532,6 +532,7 @@
     SUBDIR += pecl-mongodb
     SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
+    SUBDIR += percona-orchestrator
     SUBDIR += percona-toolkit
     SUBDIR += pg-gvm
     SUBDIR += pg.el
