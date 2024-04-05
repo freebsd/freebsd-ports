@@ -14,6 +14,8 @@ LICENSE_NAME=	tuc
 LICENSE_TEXT=	Author does not allow CD-ROM distribution
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		unfetchable 6 times in 2 weeks - Host does not resolve  
+
 PLIST_FILES=	bin/tuc \
 		share/man/man1/tuc.1.gz
 
