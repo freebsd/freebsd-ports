@@ -18,7 +18,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake compiler:c++20-lang cpe libarchive pkgconfig
+USES=		cmake cpe libarchive pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	epoupon
@@ -41,6 +41,13 @@ STB_CMAKE_BOOL=			FREEBSD_USE_STB
 MAGICK_DESC=			Use GraphicsMagick++ as image library
 MAGICK_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
 MAGICK_CMAKE_BOOL=		FREEBSD_USE_MAGICK
+
+.include <bsd.port.options.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+USES+=		llvm:17 # fix the build failure on 13: error: object of type 'const lms::core::LiteralString' cannot be compared because its 'operator<=>' is implicitly deleted
+.else
+USES+=		compiler:c++20-lang
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc/lms.conf"|"${PREFIX}/etc/lms.conf"|' \
