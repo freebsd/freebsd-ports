@@ -1,0 +1,1035 @@
+From 28f6fc01c379282b647758c68ab59074dc4533df Mon Sep 17 00:00:00 2001
+From: Graham Leggett <minfrin@apache.org>
+Date: Sat, 18 Nov 2023 11:34:12 +0000
+Subject: [PATCH] Backport to v2.4.
+
+  *) mod_ssl: Improve compatibility with OpenSSL 3, fix build warnings about
+     deprecated ENGINE_ API, honor OPENSSL_API_COMPAT setting while defaulting
+     to compatibitily with version 1.1.1 (including ENGINEs / SSLCryptoDevice).
+     mod_ssl: Disable the OpenSSL ENGINE API when OPENSSL_NO_ENGINE is set.
+     Allow for "SSLCryptoDevice builtin" if the ENGINE API is not available,
+     notably with OpenSSL >= 3.  PR 68080.
+     trunk patch: http://svn.apache.org/r1908537
+                  http://svn.apache.org/r1908539
+                  http://svn.apache.org/r1908542
+                  http://svn.apache.org/r1913616
+                  http://svn.apache.org/r1913815
+                  http://svn.apache.org/r1913816
+                  http://svn.apache.org/r1908542
+                  http://svn.apache.org/r1913832
+     2.4.x patch: https://patch-diff.githubusercontent.com/raw/apache/httpd/pull/381.diff
+                  (https://github.com/apache/httpd/pull/381)
+     +1: ylavic, jorton, minfrin
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x@1913912 13f79535-47bb-0310-9956-ffa450edef68
+---
+ .github/workflows/linux.yml      |   2 +-
+ CHANGES                          |   9 ++
+ STATUS                           |  17 ----
+ modules/md/md_crypt.c            |  47 +++++++---
+ modules/ssl/mod_ssl.c            |   5 +-
+ modules/ssl/mod_ssl_openssl.h    |   9 +-
+ modules/ssl/ssl_engine_config.c  |   9 +-
+ modules/ssl/ssl_engine_init.c    | 155 ++++++++++++++++++-------------
+ modules/ssl/ssl_engine_io.c      |  51 +++++++---
+ modules/ssl/ssl_engine_kernel.c  |  10 +-
+ modules/ssl/ssl_engine_pphrase.c |   7 +-
+ modules/ssl/ssl_private.h        |  63 +++++++++----
+ modules/ssl/ssl_util.c           |   2 +-
+ modules/ssl/ssl_util_ssl.c       |  35 +++++--
+ modules/ssl/ssl_util_stapling.c  |   2 +-
+ support/ab.c                     |  48 ++++++++--
+ 16 files changed, 307 insertions(+), 164 deletions(-)
+
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 17261b48fa5..4617d14f04a 100644
+--- .github/workflows/linux.yml.orig
++++ .github/workflows/linux.yml
+@@ -67,7 +67,7 @@ jobs:
+           # -------------------------------------------------------------------------
+           - name: GCC 10 maintainer-mode w/-Werror, install + VPATH
+             config: --enable-mods-shared=reallyall --enable-maintainer-mode
+-            notest-cflags: -Werror -O2 -Wno-deprecated-declarations
++            notest-cflags: -Werror -O2
+             env: |
+               CC=gcc-10
+               TEST_VPATH=1
+diff --git a/STATUS b/STATUS
+index 9eb1c50015a..5f67c9f6f64 100644
+--- STATUS.orig
++++ STATUS
+@@ -153,23 +153,6 @@ RELEASE SHOWSTOPPERS:
+ PATCHES ACCEPTED TO BACKPORT FROM TRUNK:
+   [ start all new proposals below, under PATCHES PROPOSED. ]
+ 
+-  *) mod_ssl: Improve compatibility with OpenSSL 3, fix build warnings about
+-     deprecated ENGINE_ API, honor OPENSSL_API_COMPAT setting while defaulting
+-     to compatibitily with version 1.1.1 (including ENGINEs / SSLCryptoDevice).
+-     mod_ssl: Disable the OpenSSL ENGINE API when OPENSSL_NO_ENGINE is set.
+-     Allow for "SSLCryptoDevice builtin" if the ENGINE API is not available,
+-     notably with OpenSSL >= 3.  PR 68080.
+-     trunk patch: http://svn.apache.org/r1908537
+-                  http://svn.apache.org/r1908539
+-                  http://svn.apache.org/r1908542
+-                  http://svn.apache.org/r1913616
+-                  http://svn.apache.org/r1913815
+-                  http://svn.apache.org/r1913816
+-                  http://svn.apache.org/r1908542
+-                  http://svn.apache.org/r1913832
+-     2.4.x patch: https://patch-diff.githubusercontent.com/raw/apache/httpd/pull/381.diff
+-                  (https://github.com/apache/httpd/pull/381)
+-     +1: ylavic, jorton, minfrin
+ 
+ 
+ PATCHES PROPOSED TO BACKPORT FROM TRUNK:
+diff --git a/modules/md/md_crypt.c b/modules/md/md_crypt.c
+index f2b0cd54879..4b2af89a040 100644
+--- modules/md/md_crypt.c.orig
++++ modules/md/md_crypt.c
+@@ -32,6 +32,9 @@
+ #include <openssl/rand.h>
+ #include <openssl/rsa.h>
+ #include <openssl/x509v3.h>
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++#include <openssl/core_names.h>
++#endif
+ 
+ #include "md.h"
+ #include "md_crypt.h"
+@@ -988,26 +991,42 @@ static const char *bn64(const BIGNUM *b, apr_pool_t *p)
+ 
+ const char *md_pkey_get_rsa_e64(md_pkey_t *pkey, apr_pool_t *p)
+ {
+-    const BIGNUM *e;
+-    RSA *rsa = EVP_PKEY_get1_RSA(pkey->pkey);
+-    
+-    if (!rsa) {
+-        return NULL;
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
++    const RSA *rsa = EVP_PKEY_get0_RSA(pkey->pkey);
++    if (rsa) {
++        const BIGNUM *e;
++        RSA_get0_key(rsa, NULL, &e, NULL);
++        return bn64(e, p);
+     }
+-    RSA_get0_key(rsa, NULL, &e, NULL);
+-    return bn64(e, p);
++#else
++    BIGNUM *e = NULL;
++    if (EVP_PKEY_get_bn_param(pkey->pkey, OSSL_PKEY_PARAM_RSA_E, &e)) {
++        const char *e64 = bn64(e, p);
++        BN_free(e);
++        return e64;
++    }
++#endif
++    return NULL;
+ }
+ 
+ const char *md_pkey_get_rsa_n64(md_pkey_t *pkey, apr_pool_t *p)
+ {
+-    const BIGNUM *n;
+-    RSA *rsa = EVP_PKEY_get1_RSA(pkey->pkey);
+-    
+-    if (!rsa) {
+-        return NULL;
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
++    const RSA *rsa = EVP_PKEY_get0_RSA(pkey->pkey);
++    if (rsa) {
++        const BIGNUM *n;
++        RSA_get0_key(rsa, &n, NULL, NULL);
++        return bn64(n, p);
+     }
+-    RSA_get0_key(rsa, &n, NULL, NULL);
+-    return bn64(n, p);
++#else
++    BIGNUM *n = NULL;
++    if (EVP_PKEY_get_bn_param(pkey->pkey, OSSL_PKEY_PARAM_RSA_N, &n)) {
++        const char *n64 = bn64(n, p);
++        BN_free(n);
++        return n64;
++    }
++#endif
++    return NULL;
+ }
+ 
+ apr_status_t md_crypt_sign64(const char **psign64, md_pkey_t *pkey, apr_pool_t *p, 
+diff --git a/modules/ssl/mod_ssl.c b/modules/ssl/mod_ssl.c
+index 5b8c4d5326b..fb66d1825e6 100644
+--- modules/ssl/mod_ssl.c.orig
++++ modules/ssl/mod_ssl.c
+@@ -25,8 +25,7 @@
+  */
+ 
+ #include "ssl_private.h"
+-#include "mod_ssl.h"
+-#include "mod_ssl_openssl.h"
++
+ #include "util_md5.h"
+ #include "util_mutex.h"
+ #include "ap_provider.h"
+@@ -75,11 +74,9 @@ static const command_rec ssl_config_cmds[] = {
+     SSL_CMD_SRV(SessionCache, TAKE1,
+                 "SSL Session Cache storage "
+                 "('none', 'nonenotnull', 'dbm:/path/to/file')")
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
+     SSL_CMD_SRV(CryptoDevice, TAKE1,
+                 "SSL external Crypto Device usage "
+                 "('builtin', '...')")
+-#endif
+     SSL_CMD_SRV(RandomSeed, TAKE23,
+                 "SSL Pseudo Random Number Generator (PRNG) seeding source "
+                 "('startup|connect builtin|file:/path|exec:/path [bytes]')")
+diff --git a/modules/ssl/mod_ssl_openssl.h b/modules/ssl/mod_ssl_openssl.h
+index d4f684f3080..e251bd9b77a 100644
+--- modules/ssl/mod_ssl_openssl.h.orig
++++ modules/ssl/mod_ssl_openssl.h
+@@ -30,14 +30,17 @@
+ 
+ /* OpenSSL headers */
+ 
+-#ifndef SSL_PRIVATE_H
+ #include <openssl/opensslv.h>
+-#if (OPENSSL_VERSION_NUMBER >= 0x10001000)
++#if OPENSSL_VERSION_NUMBER >= 0x30000000
++#include <openssl/macros.h> /* for OPENSSL_API_LEVEL */
++#endif
++#if OPENSSL_VERSION_NUMBER >= 0x10001000
+ /* must be defined before including ssl.h */
+ #define OPENSSL_NO_SSL_INTERN
+ #endif
+ #include <openssl/ssl.h>
+-#endif
++#include <openssl/evp.h>
++#include <openssl/x509.h>
+ 
+ /**
+  * init_server hook -- allow SSL_CTX-specific initialization to be performed by
+diff --git a/modules/ssl/ssl_engine_config.c b/modules/ssl/ssl_engine_config.c
+index de18b8fb25f..406402d777c 100644
+--- modules/ssl/ssl_engine_config.c.orig
++++ modules/ssl/ssl_engine_config.c
+@@ -27,6 +27,7 @@
+                                            damned if you don't.''
+                                                -- Unknown        */
+ #include "ssl_private.h"
++
+ #include "util_mutex.h"
+ #include "ap_provider.h"
+ 
+@@ -592,14 +593,15 @@ const char *ssl_cmd_SSLPassPhraseDialog(cmd_parms *cmd,
+     return NULL;
+ }
+ 
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
+ const char *ssl_cmd_SSLCryptoDevice(cmd_parms *cmd,
+                                     void *dcfg,
+                                     const char *arg)
+ {
+     SSLModConfigRec *mc = myModConfig(cmd->server);
+     const char *err;
++#if MODSSL_HAVE_ENGINE_API
+     ENGINE *e;
++#endif
+ 
+     if ((err = ap_check_cmd_context(cmd, GLOBAL_ONLY))) {
+         return err;
+@@ -608,13 +610,16 @@ const char *ssl_cmd_SSLCryptoDevice(cmd_parms *cmd,
+     if (strcEQ(arg, "builtin")) {
+         mc->szCryptoDevice = NULL;
+     }
++#if MODSSL_HAVE_ENGINE_API
+     else if ((e = ENGINE_by_id(arg))) {
+         mc->szCryptoDevice = arg;
+         ENGINE_free(e);
+     }
++#endif
+     else {
+         err = "SSLCryptoDevice: Invalid argument; must be one of: "
+               "'builtin' (none)";
++#if MODSSL_HAVE_ENGINE_API
+         e = ENGINE_get_first();
+         while (e) {
+             err = apr_pstrcat(cmd->pool, err, ", '", ENGINE_get_id(e),
+@@ -623,12 +628,12 @@ const char *ssl_cmd_SSLCryptoDevice(cmd_parms *cmd,
+              * on the 'old' e, per the docs in engine.h. */
+             e = ENGINE_get_next(e);
+         }
++#endif
+         return err;
+     }
+ 
+     return NULL;
+ }
+-#endif
+ 
+ const char *ssl_cmd_SSLRandomSeed(cmd_parms *cmd,
+                                   void *dcfg,
+diff --git a/modules/ssl/ssl_engine_init.c b/modules/ssl/ssl_engine_init.c
+index dc51a680f07..bbac34dba8b 100644
+--- modules/ssl/ssl_engine_init.c.orig
++++ modules/ssl/ssl_engine_init.c
+@@ -27,8 +27,7 @@
+                                   see Recursive.''
+                                         -- Unknown   */
+ #include "ssl_private.h"
+-#include "mod_ssl.h"
+-#include "mod_ssl_openssl.h"
++
+ #include "mpm_common.h"
+ #include "mod_md.h"
+ 
+@@ -218,6 +217,16 @@ static apr_status_t modssl_fips_cleanup(void *data)
+ }
+ #endif
+ 
++static APR_INLINE unsigned long modssl_runtime_lib_version(void)
++{
++#if MODSSL_USE_OPENSSL_PRE_1_1_API
++    return SSLeay();
++#else
++    return OpenSSL_version_num();
++#endif
++}
++
++
+ /*
+  *  Per-module initialization
+  */
+@@ -225,18 +234,22 @@ apr_status_t ssl_init_Module(apr_pool_t *p, apr_pool_t *plog,
+                              apr_pool_t *ptemp,
+                              server_rec *base_server)
+ {
++    unsigned long runtime_lib_version = modssl_runtime_lib_version();
+     SSLModConfigRec *mc = myModConfig(base_server);
+     SSLSrvConfigRec *sc;
+     server_rec *s;
+     apr_status_t rv;
+     apr_array_header_t *pphrases;
+ 
+-    if (SSLeay() < MODSSL_LIBRARY_VERSION) {
++    AP_DEBUG_ASSERT(mc);
++
++    if (runtime_lib_version < MODSSL_LIBRARY_VERSION) {
+         ap_log_error(APLOG_MARK, APLOG_WARNING, 0, base_server, APLOGNO(01882)
+                      "Init: this version of mod_ssl was compiled against "
+-                     "a newer library (%s, version currently loaded is %s)"
++                     "a newer library (%s (%s), version currently loaded is 0x%lX)"
+                      " - may result in undefined or erroneous behavior",
+-                     MODSSL_LIBRARY_TEXT, MODSSL_LIBRARY_DYNTEXT);
++                    MODSSL_LIBRARY_TEXT, MODSSL_LIBRARY_DYNTEXT,
++                    runtime_lib_version);
+     }
+ 
+     /* We initialize mc->pid per-process in the child init,
+@@ -313,11 +326,9 @@ apr_status_t ssl_init_Module(apr_pool_t *p, apr_pool_t *plog,
+     /*
+      * SSL external crypto device ("engine") support
+      */
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
+     if ((rv = ssl_init_Engine(base_server, p)) != APR_SUCCESS) {
+         return rv;
+     }
+-#endif
+ 
+     ap_log_error(APLOG_MARK, APLOG_INFO, 0, base_server, APLOGNO(01883)
+                  "Init: Initialized %s library", MODSSL_LIBRARY_NAME);
+@@ -473,9 +484,9 @@ apr_status_t ssl_init_Module(apr_pool_t *p, apr_pool_t *plog,
+  * Support for external a Crypto Device ("engine"), usually
+  * a hardware accelerator card for crypto operations.
+  */
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
+ apr_status_t ssl_init_Engine(server_rec *s, apr_pool_t *p)
+ {
++#if MODSSL_HAVE_ENGINE_API
+     SSLModConfigRec *mc = myModConfig(s);
+     ENGINE *e;
+ 
+@@ -507,10 +518,9 @@ apr_status_t ssl_init_Engine(server_rec *s, apr_pool_t *p)
+ 
+         ENGINE_free(e);
+     }
+-
++#endif
+     return APR_SUCCESS;
+ }
+-#endif
+ 
+ #ifdef HAVE_TLSEXT
+ static apr_status_t ssl_init_ctx_tls_extensions(server_rec *s,
+@@ -1310,15 +1320,6 @@ static int ssl_no_passwd_prompt_cb(char *buf, int size, int rwflag,
+    return 0;
+ }
+ 
+-static APR_INLINE int modssl_DH_bits(DH *dh)
+-{
+-#if OPENSSL_VERSION_NUMBER < 0x30000000L
+-    return DH_bits(dh);
+-#else
+-    return BN_num_bits(DH_get0_p(dh));
+-#endif
+-}
+-
+ /* SSL_CTX_use_PrivateKey_file() can fail either because the private
+  * key was encrypted, or due to a mismatch between an already-loaded
+  * cert and the key - a common misconfiguration - from calling
+@@ -1344,15 +1345,10 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+     SSLModConfigRec *mc = myModConfig(s);
+     const char *vhost_id = mctx->sc->vhost_id, *key_id, *certfile, *keyfile;
+     int i;
+-    X509 *cert;
+-    DH *dh;
++    EVP_PKEY *pkey;
+ #ifdef HAVE_ECC
+-    EC_GROUP *ecparams = NULL;
+-    int nid;
+-    EC_KEY *eckey = NULL;
+-#endif
+-#ifndef HAVE_SSL_CONF_CMD
+-    SSL *ssl;
++    EC_GROUP *ecgroup = NULL;
++    int curve_nid = 0;
+ #endif
+ 
+     /* no OpenSSL default prompts for any of the SSL_CTX_use_* calls, please */
+@@ -1363,7 +1359,7 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+                 (certfile = APR_ARRAY_IDX(mctx->pks->cert_files, i,
+                                           const char *));
+          i++) {
+-        EVP_PKEY *pkey;
++        X509 *cert = NULL;
+         const char *engine_certfile = NULL;
+ 
+         key_id = apr_psprintf(ptemp, "%s:%d", vhost_id, i);
+@@ -1406,8 +1402,6 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+         if (modssl_is_engine_id(keyfile)) {
+             apr_status_t rv;
+ 
+-            cert = NULL;
+-            
+             if ((rv = modssl_load_engine_keypair(s, ptemp, vhost_id,
+                                                  engine_certfile, keyfile,
+                                                  &cert, &pkey))) {
+@@ -1478,22 +1472,21 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+          * assume that if SSL_CONF is available, it's OpenSSL 1.0.2 or later,
+          * and SSL_CTX_get0_certificate is implemented.)
+          */
+-        if (!(cert = SSL_CTX_get0_certificate(mctx->ssl_ctx))) {
++        cert = SSL_CTX_get0_certificate(mctx->ssl_ctx);
+ #else
+-        ssl = SSL_new(mctx->ssl_ctx);
+-        if (ssl) {
+-            /* Workaround bug in SSL_get_certificate in OpenSSL 0.9.8y */
+-            SSL_set_connect_state(ssl);
+-            cert = SSL_get_certificate(ssl);
++        {
++            SSL *ssl = SSL_new(mctx->ssl_ctx);
++            if (ssl) {
++                /* Workaround bug in SSL_get_certificate in OpenSSL 0.9.8y */
++                SSL_set_connect_state(ssl);
++                cert = SSL_get_certificate(ssl);
++                SSL_free(ssl);
++            }
+         }
+-        if (!ssl || !cert) {
+ #endif
++        if (!cert) {
+             ap_log_error(APLOG_MARK, APLOG_ERR, 0, s, APLOGNO(02566)
+                          "Unable to retrieve certificate %s", key_id);
+-#ifndef HAVE_SSL_CONF_CMD
+-            if (ssl)
+-                SSL_free(ssl);
+-#endif
+             return APR_EGENERAL;
+         }
+ 
+@@ -1515,10 +1508,6 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+         }
+ #endif
+ 
+-#ifndef HAVE_SSL_CONF_CMD
+-        SSL_free(ssl);
+-#endif
+-
+         ap_log_error(APLOG_MARK, APLOG_INFO, 0, s, APLOGNO(02568)
+                      "Certificate and private key %s configured from %s and %s",
+                      key_id, certfile, keyfile);
+@@ -1528,15 +1517,33 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+      * Try to read DH parameters from the (first) SSLCertificateFile
+      */
+     certfile = APR_ARRAY_IDX(mctx->pks->cert_files, 0, const char *);
+-    if (certfile && !modssl_is_engine_id(certfile)
+-        && (dh = ssl_dh_GetParamFromFile(certfile))) {
+-        /* ### This should be replaced with SSL_CTX_set0_tmp_dh_pkey()
+-         * for OpenSSL 3.0+. */
+-        SSL_CTX_set_tmp_dh(mctx->ssl_ctx, dh);
+-        ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, s, APLOGNO(02540)
+-                     "Custom DH parameters (%d bits) for %s loaded from %s",
+-                     modssl_DH_bits(dh), vhost_id, certfile);
+-        DH_free(dh);
++    if (certfile && !modssl_is_engine_id(certfile)) {
++        int done = 0, num_bits = 0;
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
++        DH *dh = modssl_dh_from_file(certfile);
++        if (dh) {
++            num_bits = DH_bits(dh);
++            SSL_CTX_set_tmp_dh(mctx->ssl_ctx, dh);
++            DH_free(dh);
++            done = 1;
++        }
++#else
++        pkey = modssl_dh_pkey_from_file(certfile);
++        if (pkey) {
++            num_bits = EVP_PKEY_get_bits(pkey);
++            if (!SSL_CTX_set0_tmp_dh_pkey(mctx->ssl_ctx, pkey)) {
++                EVP_PKEY_free(pkey);
++            }
++            else {
++                done = 1;
++            }
++        }
++#endif
++        if (done) {
++            ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, s, APLOGNO(02540)
++                         "Custom DH parameters (%d bits) for %s loaded from %s",
++                         num_bits, vhost_id, certfile);
++        }
+     }
+ #if !MODSSL_USE_OPENSSL_PRE_1_1_API
+     else {
+@@ -1551,13 +1558,27 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+      * Similarly, try to read the ECDH curve name from SSLCertificateFile...
+      */
+     if (certfile && !modssl_is_engine_id(certfile)
+-        && (ecparams = ssl_ec_GetParamFromFile(certfile))
+-        && (nid = EC_GROUP_get_curve_name(ecparams)) 
+-        && (eckey = EC_KEY_new_by_curve_name(nid))) {
+-        SSL_CTX_set_tmp_ecdh(mctx->ssl_ctx, eckey);
+-        ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, s, APLOGNO(02541)
+-                     "ECDH curve %s for %s specified in %s",
+-                     OBJ_nid2sn(nid), vhost_id, certfile);
++        && (ecgroup = modssl_ec_group_from_file(certfile))
++        && (curve_nid = EC_GROUP_get_curve_name(ecgroup))) {
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
++        EC_KEY *eckey = EC_KEY_new_by_curve_name(curve_nid);
++        if (eckey) {
++            SSL_CTX_set_tmp_ecdh(mctx->ssl_ctx, eckey);
++            EC_KEY_free(eckey);
++        }
++        else {
++            curve_nid = 0;
++        }
++#else
++        if (!SSL_CTX_set1_curves(mctx->ssl_ctx, &curve_nid, 1)) {
++            curve_nid = 0;
++        }
++#endif
++        if (curve_nid) {
++            ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, s, APLOGNO(02541)
++                         "ECDH curve %s for %s specified in %s",
++                         OBJ_nid2sn(curve_nid), vhost_id, certfile);
++        }
+     }
+     /*
+      * ...otherwise, enable auto curve selection (OpenSSL 1.0.2)
+@@ -1565,18 +1586,20 @@ static apr_status_t ssl_init_server_certs(server_rec *s,
+      * ECDH is always enabled in 1.1.0 unless excluded from SSLCipherList
+      */
+ #if MODSSL_USE_OPENSSL_PRE_1_1_API
+-    else {
++    if (!curve_nid) {
+ #if defined(SSL_CTX_set_ecdh_auto)
+         SSL_CTX_set_ecdh_auto(mctx->ssl_ctx, 1);
+ #else
+-        eckey = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);
+-        SSL_CTX_set_tmp_ecdh(mctx->ssl_ctx, eckey);
++        EC_KEY *eckey = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);
++        if (eckey) {
++            SSL_CTX_set_tmp_ecdh(mctx->ssl_ctx, eckey);
++            EC_KEY_free(eckey);
++        }
+ #endif
+     }
+ #endif
+     /* OpenSSL assures us that _free() is NULL-safe */
+-    EC_KEY_free(eckey);
+-    EC_GROUP_free(ecparams);
++    EC_GROUP_free(ecgroup);
+ #endif
+ 
+     return APR_SUCCESS;
+diff --git a/modules/ssl/ssl_engine_io.c b/modules/ssl/ssl_engine_io.c
+index f14fc9b0aae..b91f784f842 100644
+--- modules/ssl/ssl_engine_io.c.orig
++++ modules/ssl/ssl_engine_io.c
+@@ -28,8 +28,7 @@
+                                   core keeps dumping.''
+                                             -- Unknown    */
+ #include "ssl_private.h"
+-#include "mod_ssl.h"
+-#include "mod_ssl_openssl.h"
++
+ #include "apr_date.h"
+ 
+ APR_IMPLEMENT_OPTIONAL_HOOK_RUN_ALL(ssl, SSL, int, proxy_post_handshake,
+@@ -2283,14 +2282,7 @@ void ssl_io_filter_init(conn_rec *c, request_rec *r, SSL *ssl)
+                               ssl_io_filter_cleanup, apr_pool_cleanup_null);
+ 
+     if (APLOG_CS_IS_LEVEL(c, mySrvFromConn(c), APLOG_TRACE4)) {
+-        BIO *rbio = SSL_get_rbio(ssl),
+-            *wbio = SSL_get_wbio(ssl);
+-        BIO_set_callback(rbio, ssl_io_data_cb);
+-        BIO_set_callback_arg(rbio, (void *)ssl);
+-        if (wbio && wbio != rbio) {
+-            BIO_set_callback(wbio, ssl_io_data_cb);
+-            BIO_set_callback_arg(wbio, (void *)ssl);
+-        }
++        modssl_set_io_callbacks(ssl);
+     }
+ 
+     return;
+@@ -2374,13 +2366,22 @@ static void ssl_io_data_dump(conn_rec *c, server_rec *s,
+             "+-------------------------------------------------------------------------+");
+ }
+ 
+-long ssl_io_data_cb(BIO *bio, int cmd,
+-                    const char *argp,
+-                    int argi, long argl, long rc)
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++static long modssl_io_cb(BIO *bio, int cmd, const char *argp,
++                         size_t len, int argi, long argl, int rc,
++                         size_t *processed)
++#else
++static long modssl_io_cb(BIO *bio, int cmd, const char *argp,
++                         int argi, long argl, long rc)
++#endif
+ {
+     SSL *ssl;
+     conn_rec *c;
+     server_rec *s;
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++    (void)len;
++    (void)processed;
++#endif
+ 
+     if ((ssl = (SSL *)BIO_get_callback_arg(bio)) == NULL)
+         return rc;
+@@ -2402,7 +2403,7 @@ long ssl_io_data_cb(BIO *bio, int cmd,
+                     "%s: %s %ld/%d bytes %s BIO#%pp [mem: %pp] %s",
+                     MODSSL_LIBRARY_NAME,
+                     (cmd == (BIO_CB_WRITE|BIO_CB_RETURN) ? "write" : "read"),
+-                    rc, argi, (cmd == (BIO_CB_WRITE|BIO_CB_RETURN) ? "to" : "from"),
++                    (long)rc, argi, (cmd == (BIO_CB_WRITE|BIO_CB_RETURN) ? "to" : "from"),
+                     bio, argp, dump);
+             if (*dump != '\0' && argp != NULL)
+                 ssl_io_data_dump(c, s, argp, rc);
+@@ -2417,3 +2418,25 @@ long ssl_io_data_cb(BIO *bio, int cmd,
+     }
+     return rc;
+ }
++
++static APR_INLINE void set_bio_callback(BIO *bio, void *arg)
++{
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++    BIO_set_callback_ex(bio, modssl_io_cb);
++#else
++    BIO_set_callback(bio, modssl_io_cb);
++#endif
++    BIO_set_callback_arg(bio, arg);
++}
++
++void modssl_set_io_callbacks(SSL *ssl)
++{
++    BIO *rbio = SSL_get_rbio(ssl),
++        *wbio = SSL_get_wbio(ssl);
++    if (rbio) {
++        set_bio_callback(rbio, ssl);
++    }
++    if (wbio && wbio != rbio) {
++        set_bio_callback(wbio, ssl);
++    }
++}
+diff --git a/modules/ssl/ssl_engine_kernel.c b/modules/ssl/ssl_engine_kernel.c
+index 591f6ae29c1..fe0496f90b5 100644
+--- modules/ssl/ssl_engine_kernel.c.orig
++++ modules/ssl/ssl_engine_kernel.c
+@@ -2581,6 +2581,7 @@ static int ssl_find_vhost(void *servername, conn_rec *c, server_rec *s)
+             sc->server->pks->service_unavailable : 0; 
+         
+         ap_update_child_status_from_server(c->sbh, SERVER_BUSY_READ, c, s);
++
+         /*
+          * There is one special filter callback, which is set
+          * very early depending on the base_server's log level.
+@@ -2589,14 +2590,7 @@ static int ssl_find_vhost(void *servername, conn_rec *c, server_rec *s)
+          * we need to set that callback here.
+          */
+         if (APLOGtrace4(s)) {
+-            BIO *rbio = SSL_get_rbio(ssl),
+-                *wbio = SSL_get_wbio(ssl);
+-            BIO_set_callback(rbio, ssl_io_data_cb);
+-            BIO_set_callback_arg(rbio, (void *)ssl);
+-            if (wbio && wbio != rbio) {
+-                BIO_set_callback(wbio, ssl_io_data_cb);
+-                BIO_set_callback_arg(wbio, (void *)ssl);
+-            }
++            modssl_set_io_callbacks(ssl);
+         }
+ 
+         return 1;
+diff --git a/modules/ssl/ssl_engine_pphrase.c b/modules/ssl/ssl_engine_pphrase.c
+index d1859f79c6e..699019fca17 100644
+--- modules/ssl/ssl_engine_pphrase.c.orig
++++ modules/ssl/ssl_engine_pphrase.c
+@@ -30,6 +30,8 @@
+                                            -- Clifford Stoll     */
+ #include "ssl_private.h"
+ 
++#include <openssl/ui.h>
++
+ typedef struct {
+     server_rec         *s;
+     apr_pool_t         *p;
+@@ -606,8 +608,7 @@ int ssl_pphrase_Handle_CB(char *buf, int bufsize, int verify, void *srv)
+     return (len);
+ }
+ 
+-
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
++#if MODSSL_HAVE_ENGINE_API
+ 
+ /* OpenSSL UI implementation for passphrase entry; largely duplicated
+  * from ssl_pphrase_Handle_CB but adjusted for UI API. TODO: Might be
+@@ -831,7 +832,7 @@ apr_status_t modssl_load_engine_keypair(server_rec *s, apr_pool_t *p,
+                                         const char *certid, const char *keyid,
+                                         X509 **pubkey, EVP_PKEY **privkey)
+ {
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
++#if MODSSL_HAVE_ENGINE_API
+     const char *c, *scheme;
+     ENGINE *e;
+     UI_METHOD *ui_method = get_passphrase_ui(p);
+diff --git a/modules/ssl/ssl_private.h b/modules/ssl/ssl_private.h
+index cd8df07ca20..63cb7197ad4 100644
+--- modules/ssl/ssl_private.h.orig
++++ modules/ssl/ssl_private.h
+@@ -83,16 +83,13 @@
+ 
+ #include "ap_expr.h"
+ 
+-/* OpenSSL headers */
+-#include <openssl/opensslv.h>
+-#if (OPENSSL_VERSION_NUMBER >= 0x10001000)
+-/* must be defined before including ssl.h */
+-#define OPENSSL_NO_SSL_INTERN
+-#endif
+-#if OPENSSL_VERSION_NUMBER >= 0x30000000
+-#include <openssl/core_names.h>
++/* keep first for compat API */
++#ifndef OPENSSL_API_COMPAT
++#define OPENSSL_API_COMPAT 0x10101000 /* for ENGINE_ API */
+ #endif
+-#include <openssl/ssl.h>
++#include "mod_ssl_openssl.h"
++
++/* OpenSSL headers */
+ #include <openssl/err.h>
+ #include <openssl/x509.h>
+ #include <openssl/pem.h>
+@@ -102,12 +99,23 @@
+ #include <openssl/x509v3.h>
+ #include <openssl/x509_vfy.h>
+ #include <openssl/ocsp.h>
++#include <openssl/dh.h>
++#if OPENSSL_VERSION_NUMBER >= 0x30000000
++#include <openssl/core_names.h>
++#endif
+ 
+ /* Avoid tripping over an engine build installed globally and detected
+  * when the user points at an explicit non-engine flavor of OpenSSL
+  */
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
++#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT) \
++    && (OPENSSL_VERSION_NUMBER < 0x30000000 \
++        || (defined(OPENSSL_API_LEVEL) && OPENSSL_API_LEVEL < 30000)) \
++    && !defined(OPENSSL_NO_ENGINE)
+ #include <openssl/engine.h>
++#define MODSSL_HAVE_ENGINE_API 1
++#endif
++#ifndef MODSSL_HAVE_ENGINE_API
++#define MODSSL_HAVE_ENGINE_API 0
+ #endif
+ 
+ #if (OPENSSL_VERSION_NUMBER < 0x0090801f)
+@@ -142,10 +150,18 @@
+  * include most changes from OpenSSL >= 1.1 (new functions, macros, 
+  * deprecations, ...), so we have to work around this...
+  */
+-#define MODSSL_USE_OPENSSL_PRE_1_1_API (LIBRESSL_VERSION_NUMBER < 0x2070000f)
++#if LIBRESSL_VERSION_NUMBER < 0x2070000f
++#define MODSSL_USE_OPENSSL_PRE_1_1_API 1
++#else
++#define MODSSL_USE_OPENSSL_PRE_1_1_API 0
++#endif
+ #else /* defined(LIBRESSL_VERSION_NUMBER) */
+-#define MODSSL_USE_OPENSSL_PRE_1_1_API (OPENSSL_VERSION_NUMBER < 0x10100000L)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#define MODSSL_USE_OPENSSL_PRE_1_1_API 1
++#else
++#define MODSSL_USE_OPENSSL_PRE_1_1_API 0
+ #endif
++#endif /* defined(LIBRESSL_VERSION_NUMBER) */
+ 
+ #if defined(OPENSSL_FIPS) || OPENSSL_VERSION_NUMBER >= 0x30000000L
+ #define HAVE_FIPS
+@@ -211,7 +227,10 @@
+ #endif
+ 
+ /* Secure Remote Password */
+-#if !defined(OPENSSL_NO_SRP) && defined(SSL_CTRL_SET_TLS_EXT_SRP_USERNAME_CB)
++#if !defined(OPENSSL_NO_SRP) \
++    && (OPENSSL_VERSION_NUMBER < 0x30000000L \
++        || (defined(OPENSSL_API_LEVEL) && OPENSSL_API_LEVEL < 30000)) \
++    && defined(SSL_CTRL_SET_TLS_EXT_SRP_USERNAME_CB)
+ #define HAVE_SRP
+ #include <openssl/srp.h>
+ #endif
+@@ -254,6 +273,14 @@ void free_bio_methods(void);
+ #endif
+ #endif
+ 
++/* those may be deprecated */
++#ifndef X509_get_notBefore
++#define X509_get_notBefore  X509_getm_notBefore
++#endif
++#ifndef X509_get_notAfter
++#define X509_get_notAfter   X509_getm_notAfter
++#endif
++
+ #if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ #define HAVE_OPENSSL_KEYLOG
+ #endif
+@@ -1019,7 +1046,7 @@ void         modssl_callback_keylog(const SSL *ssl, const char *line);
+ /**  I/O  */
+ void         ssl_io_filter_init(conn_rec *, request_rec *r, SSL *);
+ void         ssl_io_filter_register(apr_pool_t *);
+-long         ssl_io_data_cb(BIO *, int, const char *, int, long, long);
++void         modssl_set_io_callbacks(SSL *ssl);
+ 
+ /* ssl_io_buffer_fill fills the setaside buffering of the HTTP request
+  * to allow an SSL renegotiation to take place. */
+@@ -1057,9 +1084,13 @@ apr_status_t modssl_load_engine_keypair(server_rec *s, apr_pool_t *p,
+                                         X509 **pubkey, EVP_PKEY **privkey);
+ 
+ /**  Diffie-Hellman Parameter Support  */
+-DH           *ssl_dh_GetParamFromFile(const char *);
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
++DH           *modssl_dh_from_file(const char *);
++#else
++EVP_PKEY     *modssl_dh_pkey_from_file(const char *);
++#endif
+ #ifdef HAVE_ECC
+-EC_GROUP     *ssl_ec_GetParamFromFile(const char *);
++EC_GROUP     *modssl_ec_group_from_file(const char *);
+ #endif
+ 
+ /* Store the EVP_PKEY key (serialized into DER) in the hash table with
+diff --git a/modules/ssl/ssl_util.c b/modules/ssl/ssl_util.c
+index c88929518b4..227af4b3c46 100644
+--- modules/ssl/ssl_util.c.orig
++++ modules/ssl/ssl_util.c
+@@ -476,7 +476,7 @@ void ssl_util_thread_id_setup(apr_pool_t *p)
+ 
+ int modssl_is_engine_id(const char *name)
+ {
+-#if defined(HAVE_OPENSSL_ENGINE_H) && defined(HAVE_ENGINE_INIT)
++#if MODSSL_USE_ENGINE_API
+     /* ### Can handle any other special ENGINE key names here? */
+     return strncmp(name, "pkcs11:", 7) == 0;
+ #else
+diff --git a/modules/ssl/ssl_util_ssl.c b/modules/ssl/ssl_util_ssl.c
+index 38079a9eaa8..44930b70e97 100644
+--- modules/ssl/ssl_util_ssl.c.orig
++++ modules/ssl/ssl_util_ssl.c
+@@ -464,29 +464,52 @@ BOOL modssl_X509_match_name(apr_pool_t *p, X509 *x509, const char *name,
+ **  _________________________________________________________________
+ */
+ 
+-DH *ssl_dh_GetParamFromFile(const char *file)
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
++DH *modssl_dh_from_file(const char *file)
+ {
+-    DH *dh = NULL;
++    DH *dh;
+     BIO *bio;
+ 
+     if ((bio = BIO_new_file(file, "r")) == NULL)
+         return NULL;
+     dh = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
+     BIO_free(bio);
+-    return (dh);
++
++    return dh;
++}
++#else
++EVP_PKEY *modssl_dh_pkey_from_file(const char *file)
++{
++    EVP_PKEY *pkey;
++    BIO *bio;
++
++    if ((bio = BIO_new_file(file, "r")) == NULL)
++        return NULL;
++    pkey = PEM_read_bio_Parameters(bio, NULL);
++    BIO_free(bio);
++
++    return pkey;
+ }
++#endif
+ 
+ #ifdef HAVE_ECC
+-EC_GROUP *ssl_ec_GetParamFromFile(const char *file)
++EC_GROUP *modssl_ec_group_from_file(const char *file)
+ {
+-    EC_GROUP *group = NULL;
++    EC_GROUP *group;
+     BIO *bio;
+ 
+     if ((bio = BIO_new_file(file, "r")) == NULL)
+         return NULL;
++#if OPENSSL_VERSION_NUMBER < 0x30000000L
+     group = PEM_read_bio_ECPKParameters(bio, NULL, NULL, NULL);
++#else
++    group = PEM_ASN1_read_bio((void *)d2i_ECPKParameters,
++                              PEM_STRING_ECPARAMETERS, bio,
++                              NULL, NULL, NULL);
++#endif
+     BIO_free(bio);
+-    return (group);
++
++    return group;
+ }
+ #endif
+ 
+diff --git a/modules/ssl/ssl_util_stapling.c b/modules/ssl/ssl_util_stapling.c
+index a2ed99b5270..563de556c6a 100644
+--- modules/ssl/ssl_util_stapling.c.orig
++++ modules/ssl/ssl_util_stapling.c
+@@ -29,9 +29,9 @@
+                                             -- Alexei Sayle          */
+ 
+ #include "ssl_private.h"
++
+ #include "ap_mpm.h"
+ #include "apr_thread_mutex.h"
+-#include "mod_ssl_openssl.h"
+ 
+ APR_IMPLEMENT_OPTIONAL_HOOK_RUN_ALL(ssl, SSL, int, init_stapling_status,
+                                     (server_rec *s, apr_pool_t *p, 
+diff --git a/support/ab.c b/support/ab.c
+index 3a3ffbfb610..6709cd1db6c 100644
+--- support/ab.c.orig
++++ support/ab.c
+@@ -166,13 +166,18 @@
+ 
+ #if defined(HAVE_OPENSSL)
+ 
+-#include <openssl/rsa.h>
++#include <openssl/evp.h>
+ #include <openssl/crypto.h>
+ #include <openssl/x509.h>
+ #include <openssl/pem.h>
+ #include <openssl/err.h>
+ #include <openssl/ssl.h>
+ #include <openssl/rand.h>
++#include <openssl/opensslv.h>
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++#include <openssl/core_names.h>
++#endif
++
+ #define USE_SSL
+ 
+ #define SK_NUM(x) sk_X509_num(x)
+@@ -555,22 +560,33 @@ static void set_conn_state(struct connection *c, connect_state_e new_state)
+  *
+  */
+ #ifdef USE_SSL
+-static long ssl_print_cb(BIO *bio,int cmd,const char *argp,int argi,long argl,long ret)
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++static long ssl_print_cb(BIO *bio, int cmd, const char *argp,
++                         size_t len, int argi, long argl, int ret,
++                         size_t *processed)
++#else
++static long ssl_print_cb(BIO *bio, int cmd, const char *argp,
++                         int argi, long argl, long ret)
++#endif
+ {
+     BIO *out;
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++    (void)len;
++    (void)processed;
++#endif
+ 
+     out=(BIO *)BIO_get_callback_arg(bio);
+     if (out == NULL) return(ret);
+ 
+     if (cmd == (BIO_CB_READ|BIO_CB_RETURN)) {
+         BIO_printf(out,"read from %p [%p] (%d bytes => %ld (0x%lX))\n",
+-                   bio, argp, argi, ret, ret);
++                   bio, argp, argi, (long)ret, (long)ret);
+         BIO_dump(out,(char *)argp,(int)ret);
+         return(ret);
+     }
+     else if (cmd == (BIO_CB_WRITE|BIO_CB_RETURN)) {
+         BIO_printf(out,"write to %p [%p] (%d bytes => %ld (0x%lX))\n",
+-                   bio, argp, argi, ret, ret);
++                   bio, argp, argi, (long)ret, (long)ret);
+         BIO_dump(out,(char *)argp,(int)ret);
+     }
+     return ret;
+@@ -765,17 +781,29 @@ static void ssl_proceed_handshake(struct connection *c)
+                         break;
+ #ifndef OPENSSL_NO_EC
+                     case EVP_PKEY_EC: {
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++                        size_t len;
++                        char cname[80];
++                        if (!EVP_PKEY_get_utf8_string_param(key, OSSL_PKEY_PARAM_GROUP_NAME,
++                                                            cname, sizeof(cname), &len)) {
++                            cname[0] = '?';
++                            len = 1;
++                        }
++                        cname[len] = '\0';
++#else
+                         const char *cname = NULL;
+                         EC_KEY *ec = EVP_PKEY_get1_EC_KEY(key);
+                         int nid = EC_GROUP_get_curve_name(EC_KEY_get0_group(ec));
+                         EC_KEY_free(ec);
+                         cname = EC_curve_nid2nist(nid);
+-                        if (!cname)
++                        if (!cname) {
+                             cname = OBJ_nid2sn(nid);
+-
++                            if (!cname)
++                                cname = "?";
++                        }
++#endif
+                         apr_snprintf(ssl_tmp_key, 128, "ECDH %s %d bits",
+-                                     cname,
+-                                     EVP_PKEY_bits(key));
++                                     cname, EVP_PKEY_bits(key));
+                         break;
+                         }
+ #endif
+@@ -1428,7 +1456,11 @@ static void start_connect(struct connection * c)
+         SSL_set_bio(c->ssl, bio, bio);
+         SSL_set_connect_state(c->ssl);
+         if (verbosity >= 4) {
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
++            BIO_set_callback_ex(bio, ssl_print_cb);
++#else
+             BIO_set_callback(bio, ssl_print_cb);
++#endif
+             BIO_set_callback_arg(bio, (void *)bio_err);
+         }
+ #ifdef HAVE_TLSEXT
