@@ -43,11 +43,11 @@ command_args="-rP ${pidfile} -S -R ${proxysql_restart_delay} \
     -D ${proxysql_datadir} \
     --no-version-check ${proxysql_args}"
 required_files="${proxysql_config}"
-extra_commands="reload initialize"
+extra_commands="reload initial"
 reload_cmd=proxysql_reload
-initialize_cmd=proxysql_initialize
+initial_cmd=proxysql_initial
 
-proxysql_initialize()
+proxysql_initial()
 {
     su -m ${proxysql_user} -c "${proxysql_command} --initial"
 }
