@@ -1,5 +1,5 @@
 PORTNAME=	textual
-PORTVERSION=	0.54.0
+PORTVERSION=	0.55.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ OPTIONS_DEFINE=	SYNTAX
 SYNTAX_DESC=	Syntax support
 
 SYNTAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tree-sitter>=0.20.1<0.21:devel/py-tree-sitter@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}tree-sitter-languages>=1.7.0:devel/py-tree-sitter-languages@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}tree-sitter-languages>=1.10.2<1.10.2_99:devel/py-tree-sitter-languages@${PY_FLAVOR}
 
 .include <bsd.port.mk>
