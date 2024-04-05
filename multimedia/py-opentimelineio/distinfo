@@ -1,11 +1,7 @@
-TIMESTAMP = 1664335137
-SHA256 (PixarAnimationStudios-OpenTimelineIO-v0.15_GH0.tar.gz) = 66814703f088749578ac69902526468b4aec185bdbbced8e1a1bbb4609144961
-SIZE (PixarAnimationStudios-OpenTimelineIO-v0.15_GH0.tar.gz) = 4781447
-SHA256 (martinmoene-optional-lite-5e4b7760aac85ea73a5b9b91c726fc36cbd4149b_GH0.tar.gz) = e191c7b8d448c7a9c19a8a548ff8d87dc7cf8f17f9c6634ea9402743d9f9499e
-SIZE (martinmoene-optional-lite-5e4b7760aac85ea73a5b9b91c726fc36cbd4149b_GH0.tar.gz) = 52456
+TIMESTAMP = 1712300399
+SHA256 (PixarAnimationStudios-OpenTimelineIO-v0.16.0_GH0.tar.gz) = 8cb9467db25bc34c7ee2db89ea90b7bab88ade999e8e2858b825dfbaa8db0f62
+SIZE (PixarAnimationStudios-OpenTimelineIO-v0.16.0_GH0.tar.gz) = 4750923
 SHA256 (pybind-pybind11-e7e2c79f3f520f78ffc39fcb34f7919003102733_GH0.tar.gz) = 87de6f079bed8e74e1a5baa8dbc03c8f12367ab9bb4f32a98ee15a15255accdb
 SIZE (pybind-pybind11-e7e2c79f3f520f78ffc39fcb34f7919003102733_GH0.tar.gz) = 693012
 SHA256 (Tencent-rapidjson-06d58b9e848c650114556a23294d0b6440078c61_GH0.tar.gz) = 30d28bbe0bfff9d8dc5d3cf62799b6ee550499cc1520e44bdece81e002480d19
 SIZE (Tencent-rapidjson-06d58b9e848c650114556a23294d0b6440078c61_GH0.tar.gz) = 1107982
-SHA256 (thelink2012-any-bfc77f2e4be6e9a093dd645ef3f1aa30620c9205_GH0.tar.gz) = 04547fce8e86b33ecd784a67a2153368bb63d0e8e4549c42c63074db9b19f3a9
-SIZE (thelink2012-any-bfc77f2e4be6e9a093dd645ef3f1aa30620c9205_GH0.tar.gz) = 9130
