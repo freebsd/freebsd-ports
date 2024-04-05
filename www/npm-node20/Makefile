@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${NODEJS_SUFFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
 WWW=		https://www.npmjs.com/package/npm \
+		https://docs.npmjs.com/cli/v10 \
 		https://github.com/npm/cli
 
 LICENSE=	ART20
