@@ -33,6 +33,7 @@
     SUBDIR += R-cran-clisymbols
     SUBDIR += R-cran-clock
     SUBDIR += R-cran-collapse
+    SUBDIR += R-cran-conflicted
     SUBDIR += R-cran-covr
     SUBDIR += R-cran-cpp11
     SUBDIR += R-cran-crayon
