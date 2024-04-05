@@ -615,6 +615,7 @@
     SUBDIR += octave-forge-octave-pool
     SUBDIR += octave-forge-octclip
     SUBDIR += octave-forge-octproj
+    SUBDIR += octave-forge-odbc
     SUBDIR += octave-forge-odebvp
     SUBDIR += octave-forge-onsas
     SUBDIR += octave-forge-optics
