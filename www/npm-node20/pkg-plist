@@ -9,6 +9,7 @@ lib/node_modules/npm/README.md
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
 @(,,755) lib/node_modules/npm/bin/npm
 @(,,755) lib/node_modules/npm/bin/npm-cli.js
+@(,,755) lib/node_modules/npm/bin/npm-prefix.js
 lib/node_modules/npm/bin/npm.cmd
 lib/node_modules/npm/bin/npm.ps1
 @(,,755) lib/node_modules/npm/bin/npx
@@ -287,7 +288,6 @@ lib/node_modules/npm/lib/utils/queryable.js
 lib/node_modules/npm/lib/utils/read-user-info.js
 lib/node_modules/npm/lib/utils/reify-finish.js
 lib/node_modules/npm/lib/utils/reify-output.js
-lib/node_modules/npm/lib/utils/replace-info.js
 lib/node_modules/npm/lib/utils/sbom-cyclonedx.js
 lib/node_modules/npm/lib/utils/sbom-spdx.js
 lib/node_modules/npm/lib/utils/tar.js
@@ -586,6 +586,9 @@ lib/node_modules/npm/node_modules/@npmcli/promise-spawn/package.json
 lib/node_modules/npm/node_modules/@npmcli/query/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/query/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/query/package.json
+lib/node_modules/npm/node_modules/@npmcli/redact/LICENSE
+lib/node_modules/npm/node_modules/@npmcli/redact/lib/index.js
+lib/node_modules/npm/node_modules/@npmcli/redact/package.json
 lib/node_modules/npm/node_modules/@npmcli/run-script/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/run-script/lib/is-server-package.js
 lib/node_modules/npm/node_modules/@npmcli/run-script/lib/make-spawn-args.js
@@ -750,6 +753,7 @@ lib/node_modules/npm/node_modules/@tufjs/models/package.json
 lib/node_modules/npm/node_modules/abbrev/LICENSE
 lib/node_modules/npm/node_modules/abbrev/lib/index.js
 lib/node_modules/npm/node_modules/abbrev/package.json
+lib/node_modules/npm/node_modules/agent-base/LICENSE
 lib/node_modules/npm/node_modules/agent-base/dist/helpers.js
 lib/node_modules/npm/node_modules/agent-base/dist/index.js
 lib/node_modules/npm/node_modules/agent-base/package.json
@@ -1330,20 +1334,20 @@ lib/node_modules/npm/node_modules/make-fetch-happen/lib/pipeline.js
 lib/node_modules/npm/node_modules/make-fetch-happen/lib/remote.js
 lib/node_modules/npm/node_modules/make-fetch-happen/package.json
 lib/node_modules/npm/node_modules/minimatch/LICENSE
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/assert-valid-pattern.js
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/ast.js
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/brace-expressions.js
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/escape.js
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/index.js
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/package.json
-lib/node_modules/npm/node_modules/minimatch/dist/cjs/unescape.js
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/assert-valid-pattern.js
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/ast.js
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/brace-expressions.js
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/escape.js
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/index.js
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/package.json
-lib/node_modules/npm/node_modules/minimatch/dist/mjs/unescape.js
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/assert-valid-pattern.js
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/ast.js
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/brace-expressions.js
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/escape.js
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/index.js
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/package.json
+lib/node_modules/npm/node_modules/minimatch/dist/commonjs/unescape.js
+lib/node_modules/npm/node_modules/minimatch/dist/esm/assert-valid-pattern.js
+lib/node_modules/npm/node_modules/minimatch/dist/esm/ast.js
+lib/node_modules/npm/node_modules/minimatch/dist/esm/brace-expressions.js
+lib/node_modules/npm/node_modules/minimatch/dist/esm/escape.js
+lib/node_modules/npm/node_modules/minimatch/dist/esm/index.js
+lib/node_modules/npm/node_modules/minimatch/dist/esm/package.json
+lib/node_modules/npm/node_modules/minimatch/dist/esm/unescape.js
 lib/node_modules/npm/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/minipass/LICENSE
 lib/node_modules/npm/node_modules/minipass/dist/commonjs/index.js
@@ -1421,6 +1425,7 @@ lib/node_modules/npm/node_modules/negotiator/lib/encoding.js
 lib/node_modules/npm/node_modules/negotiator/lib/language.js
 lib/node_modules/npm/node_modules/negotiator/lib/mediaType.js
 lib/node_modules/npm/node_modules/negotiator/package.json
+lib/node_modules/npm/node_modules/node-gyp/.release-please-manifest.json
 lib/node_modules/npm/node_modules/node-gyp/CHANGELOG.md
 lib/node_modules/npm/node_modules/node-gyp/CONTRIBUTING.md
 lib/node_modules/npm/node_modules/node-gyp/LICENSE
@@ -1429,7 +1434,6 @@ lib/node_modules/npm/node_modules/node-gyp/SECURITY.md
 lib/node_modules/npm/node_modules/node-gyp/addon.gypi
 @(,,755) lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
 lib/node_modules/npm/node_modules/node-gyp/gyp/LICENSE
-lib/node_modules/npm/node_modules/node-gyp/gyp/README.md
 lib/node_modules/npm/node_modules/node-gyp/gyp/data/win/large-pdb-shim.cc
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp.bat
@@ -1596,6 +1600,7 @@ lib/node_modules/npm/node_modules/node-gyp/lib/remove.js
 lib/node_modules/npm/node_modules/node-gyp/lib/util.js
 lib/node_modules/npm/node_modules/node-gyp/macOS_Catalina_acid_test.sh
 lib/node_modules/npm/node_modules/node-gyp/package.json
+lib/node_modules/npm/node_modules/node-gyp/release-please-config.json
 lib/node_modules/npm/node_modules/node-gyp/src/win_delay_load_hook.cc
 lib/node_modules/npm/node_modules/nopt/LICENSE
 lib/node_modules/npm/node_modules/nopt/README.md
@@ -1647,7 +1652,6 @@ lib/node_modules/npm/node_modules/npm-profile/package.json
 lib/node_modules/npm/node_modules/npm-registry-fetch/LICENSE.md
 lib/node_modules/npm/node_modules/npm-registry-fetch/lib/auth.js
 lib/node_modules/npm/node_modules/npm-registry-fetch/lib/check-response.js
-lib/node_modules/npm/node_modules/npm-registry-fetch/lib/clean-url.js
 lib/node_modules/npm/node_modules/npm-registry-fetch/lib/default-opts.js
 lib/node_modules/npm/node_modules/npm-registry-fetch/lib/errors.js
 lib/node_modules/npm/node_modules/npm-registry-fetch/lib/index.js
@@ -1685,10 +1689,10 @@ lib/node_modules/npm/node_modules/path-key/index.js
 lib/node_modules/npm/node_modules/path-key/license
 lib/node_modules/npm/node_modules/path-key/package.json
 lib/node_modules/npm/node_modules/path-scurry/LICENSE.md
-lib/node_modules/npm/node_modules/path-scurry/dist/cjs/index.js
-lib/node_modules/npm/node_modules/path-scurry/dist/cjs/package.json
-lib/node_modules/npm/node_modules/path-scurry/dist/mjs/index.js
-lib/node_modules/npm/node_modules/path-scurry/dist/mjs/package.json
+lib/node_modules/npm/node_modules/path-scurry/dist/commonjs/index.js
+lib/node_modules/npm/node_modules/path-scurry/dist/commonjs/package.json
+lib/node_modules/npm/node_modules/path-scurry/dist/esm/index.js
+lib/node_modules/npm/node_modules/path-scurry/dist/esm/package.json
 lib/node_modules/npm/node_modules/path-scurry/package.json
 lib/node_modules/npm/node_modules/postcss-selector-parser/API.md
 lib/node_modules/npm/node_modules/postcss-selector-parser/LICENSE-MIT
@@ -1768,7 +1772,10 @@ lib/node_modules/npm/node_modules/qrcode-terminal/vendor/QRCode/QRRSBlock.js
 lib/node_modules/npm/node_modules/qrcode-terminal/vendor/QRCode/QRUtil.js
 lib/node_modules/npm/node_modules/qrcode-terminal/vendor/QRCode/index.js
 lib/node_modules/npm/node_modules/read/LICENSE
-lib/node_modules/npm/node_modules/read/lib/read.js
+lib/node_modules/npm/node_modules/read/dist/commonjs/package.json
+lib/node_modules/npm/node_modules/read/dist/commonjs/read.js
+lib/node_modules/npm/node_modules/read/dist/esm/package.json
+lib/node_modules/npm/node_modules/read/dist/esm/read.js
 lib/node_modules/npm/node_modules/read/package.json
 lib/node_modules/npm/node_modules/read-cmd-shim/LICENSE
 lib/node_modules/npm/node_modules/read-cmd-shim/lib/index.js
