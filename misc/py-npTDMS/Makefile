@@ -1,5 +1,5 @@
 PORTNAME=	npTDMS
-DISTVERSION=	1.7.1
+DISTVERSION=	1.9.0
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 4 tests fail, see https://github.com/adamreeve/npTDMS/issues/329
 
 NO_ARCH=	yes
 
