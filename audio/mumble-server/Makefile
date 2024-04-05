@@ -28,6 +28,8 @@ CXXFLAGS+=	-Wno-deprecated-declarations
 USE_RC_SUBR=	mumble_server
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
+EXTRA_PATCHES+=	${.CURDIR}/../mumble/files/patch-src_MumbleProtocol.cpp
+
 OPTIONS_DEFINE=		AVAHI DOCS ICE LTO
 OPTIONS_DEFAULT=	AVAHI LTO MYSQL SQLITE
 OPTIONS_MULTI=		SQL
