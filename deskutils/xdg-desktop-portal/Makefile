@@ -1,6 +1,5 @@
 PORTNAME=	xdg-desktop-portal
-PORTVERSION=	1.18.2
-PORTREVISION=	1
+PORTVERSION=	1.18.3
 CATEGORIES=	deskutils wayland
 
 MAINTAINER=	arrowd@FreeBSD.org
