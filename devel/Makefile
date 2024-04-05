@@ -85,6 +85,7 @@
     SUBDIR += R-cran-microbenchmark
     SUBDIR += R-cran-mlbench
     SUBDIR += R-cran-mockery
+    SUBDIR += R-cran-mockr
     SUBDIR += R-cran-msm
     SUBDIR += R-cran-multicool
     SUBDIR += R-cran-optparse
