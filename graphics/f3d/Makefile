@@ -22,7 +22,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
 		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl \
-		shared-mime-info tcl tk xorg
+		localbase:ldflags shared-mime-info tcl tk xorg
 USE_GL=		gl
 USE_XORG=	ice sm x11 xt
 USE_LDCONFIG=	yes
