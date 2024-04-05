@@ -3,7 +3,9 @@ share/applications/lbreakouthd.desktop
 share/icons/hicolor/256x256/apps/lbreakouthd.png
 share/icons/hicolor/48x48/apps/lbreakouthd.png
 %%NLS%%share/locale/de/LC_MESSAGES/lbreakouthd.mo
+%%NLS%%share/locale/es/LC_MESSAGES/lbreakouthd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lbreakouthd.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/lbreakouthd.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lbreakouthd.mo
 @sample(,games,664) /var/games/lbreakouthd/lbreakouthd.hscr.sample
 @dir(,games,775) /var/games/lbreakouthd
