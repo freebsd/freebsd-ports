@@ -5825,6 +5825,7 @@
     SUBDIR += py-u-msgpack-python
     SUBDIR += py-ua_parser
     SUBDIR += py-ubelt
+    SUBDIR += py-ufmt
     SUBDIR += py-uhid-freebsd
     SUBDIR += py-ujson
     SUBDIR += py-undefined

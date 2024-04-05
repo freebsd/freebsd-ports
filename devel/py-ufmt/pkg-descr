@@ -1,0 +1,11 @@
+ufmt is a safe, atomic code formatter for Python built on top of black and
+usort:
+- Black makes code review faster by producing the smallest diffs possible.
+  Blackened code looks the same regardless of the project you're reading.
+- usort is a safe, minimal import sorter. Its primary goal is to make no
+  "dangerous" changes to code, and to make no changes on code style.
+
+ufmt formats files in-memory, first with usort and then with black, before
+writing any changes back to disk. This enables a combined, atomic step in CI/CD
+workflows for checking or formatting files, without any chance of conflict or
+intermediate changes between the import sorter and the code formatter.
