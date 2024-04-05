@@ -1,6 +1,6 @@
 PORTNAME=	qutip-qip
 DISTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}qutip>=4.6:devel/py-qutip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} # optional dependency required for tests
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qiskit>0:science/py-qiskit@${PY_FLAVOR} # optional
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyqir>0:misc/py-pyqir@${PY_FLAVOR} # optional
 
 USES=		python
