@@ -1,6 +1,6 @@
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${TCL_VERSION} \
 		TCLTK/tcl8_7
@@ -94,8 +94,9 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e '/^INSTALL_PACKAGE_TARGETS/d' \
 		-e '/^CONFIG_INSTALL_DIR/s|= .*$$|= $${SCRIPT_INSTALL_DIR}|' \
-		-e 's|$$(LIB_INSTALL_DIR)/pkgconfig|${STAGEDIR}$(PREFIX)/libdata/pkgconfig|g' \
+		-e 's|$$(LIB_INSTALL_DIR)/pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|pkgconfig/tcl.pc|pkgconfig/tcl${SHORT_TCL_VER}.pc|' \
+		-e 's|strip -x|strip --strip-unneeded|' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} \
 		-e '/Target=/s|.$$Section$$Suffix|$$Suffix.$$Section|' \
