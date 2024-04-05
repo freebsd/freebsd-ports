@@ -1,0 +1,53 @@
+--- CMakeLists.txt.orig	2024-03-19 16:53:32 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+ 
+ # ---------------------------------------
+ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /bigobj")
+   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /ZI /bigobj")
+@@ -47,16 +46,20 @@ endif()
+ # ============================================
+ 
+ # nlohmann is a library header for json
+-add_library(nlohmann INTERFACE IMPORTED)
+-target_include_directories(nlohmann SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/nlohmann/single_include")
++#add_library(nlohmann INTERFACE IMPORTED)
++#target_include_directories(nlohmann SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/nlohmann/single_include")
++find_package(nlohmann_json REQUIRED)
++add_library(nlohmann ALIAS nlohmann_json::nlohmann_json)
+ 
+ # spiritless_po is a library header for gettext po translation
+ add_library(spiritless_po INTERFACE IMPORTED)
+ target_include_directories(spiritless_po SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/spiritless_po/include")
+ 
+ # doctest is a library header for test framework
+-add_library(doctest INTERFACE IMPORTED)
+-target_include_directories(doctest SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/doctest/doctest")
++#add_library(doctest INTERFACE IMPORTED)
++#target_include_directories(doctest SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/doctest/doctest")
++find_package(doctest REQUIRED)
++add_library(doctest ALIAS doctest::doctest)
+ 
+ # SDL_flic
+ add_library(SDL_flic src/3rd/SDL_flic/SDL_flic.c src/3rd/SDL_flic/SDL_flic.h)
+@@ -83,17 +86,6 @@ if(CRASH_RPT_INCLUDE_DIR)
+   target_compile_definitions(maxr_lib PUBLIC USE_CRASH_RPT)
+   target_include_directories(maxr_lib PUBLIC ${CRASH_RPT_INCLUDE_DIR})
+   target_link_libraries(maxr_lib PUBLIC ${CRASH_RPT_LIB})
+-endif()
+-## Add GIT Revision
+-include(GetGitRevisionDescription)
+-git_describe(GIT_DESC --always)
+-
+-if (GIT_DESC)
+-  message(STATUS "Setting cpp define GIT_DESC to ${GIT_DESC}")
+-  configure_file("${CMAKE_CURRENT_SOURCE_DIR}/src/autoversion.h.in" "${CMAKE_CURRENT_BINARY_DIR}/autoversion.h")
+-  target_include_directories(maxr_lib PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+-else()
+-  message("Could not automativally set the maxr GIT_DESC from git. Set cmake variable GIT_EXECUTABLE to use this feature.")
+ endif()
+ 
+ # maxr dedicated server
