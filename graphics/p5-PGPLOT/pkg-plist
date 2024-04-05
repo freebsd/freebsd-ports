@@ -1,4 +1,14 @@
-%%PERL5_MAN3%%/PGPLOT.3.gz
+%%SITE_ARCH%%/PDL/Demos/PGPLOT.pm
+%%SITE_ARCH%%/PDL/Demos/PGPLOT_OO.pm
+%%SITE_ARCH%%/PDL/Graphics/PGPLOT.pm
+%%SITE_ARCH%%/PDL/Graphics/PGPLOT/Window.pm
+%%SITE_ARCH%%/PDL/Graphics/PGPLOTOptions.pm
 %%SITE_ARCH%%/PGPLOT.pm
 %%SITE_ARCH%%/auto/PGPLOT/PGPLOT.so
+%%PERL5_MAN3%%/PDL::Graphics::Demo.3.gz
+%%PERL5_MAN3%%/PDL::Graphics::PGPLOT.3.gz
+%%PERL5_MAN3%%/PDL::Graphics::PGPLOT::Demo.3.gz
+%%PERL5_MAN3%%/PDL::Graphics::PGPLOT::Window.3.gz
+%%PERL5_MAN3%%/PDL::Graphics::PGPLOTOptions.3.gz
+%%PERL5_MAN3%%/PGPLOT.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.img
