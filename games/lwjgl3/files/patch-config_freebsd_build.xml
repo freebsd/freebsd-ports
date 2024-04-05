@@ -21,3 +21,12 @@
              </link>
          </build>
  
+@@ -410,7 +412,7 @@
+         </build>
+ 
+         <!-- zstd -->
+-        <build module="zstd" simple="true" if:true="${binding.zstd}">
++        <build module="zstd" simple="true" flags="-Wno-deprecated-declarations" if:true="${binding.zstd}">
+             <beforeCompile>
+                 <compile flags="-DZSTD_MULTITHREAD">
+                     <arg value="-I${module.lwjgl.rel}/xxhash/src/main/c"/>
