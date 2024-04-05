@@ -1823,7 +1823,6 @@ lib/wine/%%WINEARCH%%-unix/libwmcodecdspuuid.a
 lib/wine/%%WINEARCH%%-unix/libwmvcore.a
 lib/wine/%%WINEARCH%%-unix/libwnaspi32.a
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/libwow32.a
-%%WINE64%%lib/wine/%%WINEARCH%%-unix/libwow64.a
 lib/wine/%%WINEARCH%%-unix/libws2_32.a
 lib/wine/%%WINEARCH%%-unix/libwsdapi.a
 lib/wine/%%WINEARCH%%-unix/libwsnmp32.a
@@ -2280,9 +2279,6 @@ lib/wine/%%WINEARCH%%-unix/wnaspi32.dll.so
 lib/wine/%%WINEARCH%%-unix/wofutil.dll.so
 lib/wine/%%WINEARCH%%-unix/wordpad.exe.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/wow32.dll.so
-%%WINE64%%lib/wine/%%WINEARCH%%-unix/wow64.dll.so
-%%WINE64%%lib/wine/%%WINEARCH%%-unix/wow64cpu.dll.so
-%%WINE64%%lib/wine/%%WINEARCH%%-unix/wow64win.dll.so
 lib/wine/%%WINEARCH%%-unix/wpc.dll.so
 lib/wine/%%WINEARCH%%-unix/write.exe.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.dll.so
@@ -3063,9 +3059,6 @@ lib/wine/%%WINEARCH%%-windows/wnaspi32.dll
 lib/wine/%%WINEARCH%%-windows/wofutil.dll
 lib/wine/%%WINEARCH%%-windows/wordpad.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wow32.dll
-%%WINE64%%lib/wine/%%WINEARCH%%-windows/wow64.dll
-%%WINE64%%lib/wine/%%WINEARCH%%-windows/wow64cpu.dll
-%%WINE64%%lib/wine/%%WINEARCH%%-windows/wow64win.dll
 lib/wine/%%WINEARCH%%-windows/wpc.dll
 lib/wine/%%WINEARCH%%-windows/write.exe
 lib/wine/%%WINEARCH%%-windows/ws2_32.dll
