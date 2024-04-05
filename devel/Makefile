@@ -5772,6 +5772,7 @@
     SUBDIR += py-toposort
     SUBDIR += py-tox
     SUBDIR += py-traceback2
+    SUBDIR += py-trailrunner
     SUBDIR += py-traitlets
     SUBDIR += py-traits
     SUBDIR += py-traittypes
