@@ -5702,6 +5702,7 @@
     SUBDIR += py-statgrab
     SUBDIR += py-statsd
     SUBDIR += py-stdlib-list
+    SUBDIR += py-stdlibs
     SUBDIR += py-stdnum
     SUBDIR += py-stevedore
     SUBDIR += py-stone
