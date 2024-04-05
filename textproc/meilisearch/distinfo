@@ -1,4 +1,4 @@
-TIMESTAMP = 1711539806
+TIMESTAMP = 1712356278
 SHA256 (meilisearch-mini-dashboard-build-0.2.13.zip) = 541134a4f83e6311758245929ce97e38c39c9c2d95bb259db31496b0833b1183
 SIZE (meilisearch-mini-dashboard-build-0.2.13.zip) = 1213802
 SHA256 (mecab-ipadic-2.7.0-20070801.tar.gz) = b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523
@@ -1163,5 +1163,5 @@ SHA256 (huggingface-candle-f4fcf6090045ac44122fd5f0a7e46db6e3e16528_GH0.tar.gz) 
 SIZE (huggingface-candle-f4fcf6090045ac44122fd5f0a7e46db6e3e16528_GH0.tar.gz) = 1910875
 SHA256 (huggingface-candle-5270224f407502b82fe90bc2622894ce3871b002_GH0.tar.gz) = ae732114bc3d02fd9cb0821db55832b5620acefb6f4460f55f74a18fbb3446a6
 SIZE (huggingface-candle-5270224f407502b82fe90bc2622894ce3871b002_GH0.tar.gz) = 2031529
-SHA256 (meilisearch-meilisearch-v1.7.3_GH0.tar.gz) = 5db542f605cee31c5bec9be1ddb82c4dcfc4456b312ff1c20013389b2edb57c7
-SIZE (meilisearch-meilisearch-v1.7.3_GH0.tar.gz) = 14895164
+SHA256 (meilisearch-meilisearch-v1.7.4_GH0.tar.gz) = bc1be12f4f1b050ab5ae7beaf2c3b656529165ecd2095d33c71bde61b781f933
+SIZE (meilisearch-meilisearch-v1.7.4_GH0.tar.gz) = 14895307
