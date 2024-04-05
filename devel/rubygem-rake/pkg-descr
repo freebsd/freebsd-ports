@@ -2,7 +2,6 @@ Rake is a Ruby make-like utility using standard Ruby syntax for the
 build specification file.
 
 It has the following features:
-
 - Rakefiles (rake's version of Makefiles) are completely defined in standard
   Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about
   (is that a tab or a space?)
