@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		libwnck3>0:x11-toolkits/libwnck3
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
-		pkgconfig python:3.7+ shebangfix
+		pkgconfig python shebangfix
 USE_GNOME=	cairo dconf glib20 gtk30 pygobject3 vte3
 USE_PYTHON=	distutils noflavors
 
