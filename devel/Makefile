@@ -70,6 +70,7 @@
     SUBDIR += R-cran-gtools
     SUBDIR += R-cran-hardhat
     SUBDIR += R-cran-hms
+    SUBDIR += R-cran-ids
     SUBDIR += R-cran-ini
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
