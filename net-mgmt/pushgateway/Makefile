@@ -1,7 +1,6 @@
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
-PORTREVISION=	2
+DISTVERSION=	1.8.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/prometheus/pushgateway
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:modules
+USES=		gmake go:1.21,modules
 GO_MODULE=	github.com/prometheus/pushgateway
 
 USE_RC_SUBR=	pushgateway
