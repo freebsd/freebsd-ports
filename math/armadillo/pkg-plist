@@ -564,6 +564,8 @@ include/armadillo_bits/spop_repmat_bones.hpp
 include/armadillo_bits/spop_repmat_meat.hpp
 include/armadillo_bits/spop_reverse_bones.hpp
 include/armadillo_bits/spop_reverse_meat.hpp
+include/armadillo_bits/spop_shift_bones.hpp
+include/armadillo_bits/spop_shift_meat.hpp
 include/armadillo_bits/spop_strans_bones.hpp
 include/armadillo_bits/spop_strans_meat.hpp
 include/armadillo_bits/spop_sum_bones.hpp
@@ -622,7 +624,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.12
-lib/libarmadillo.so.12.6.7
+lib/libarmadillo.so.%%PORTVERSION%%
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
