@@ -12,7 +12,7 @@ In file included from 3rdparty/SoundTouch/soundtouch/include/SoundTouch.h:68:
 #define assert(e)       ((e) ? (void)0 : __assert(__func__, __FILE__, \
                           ^
 
---- 3rdparty/SoundTouch/soundtouch/include/STTypes.h.orig	2022-01-22 12:50:46 UTC
+--- 3rdparty/SoundTouch/soundtouch/include/STTypes.h.orig	2024-04-04 20:36:27 UTC
 +++ 3rdparty/SoundTouch/soundtouch/include/STTypes.h
 @@ -125,7 +125,7 @@ namespace soundtouch
  #ifdef ST_NO_EXCEPTION_HANDLING
