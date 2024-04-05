@@ -1,3 +1,36 @@
+  <vuln vid="8e6f684b-f333-11ee-a573-84a93843eb75">
+    <topic>Apache httpd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.59</lt></range>
+      </package>
+      <package>
+	<name>mod_http2</name>
+	<range><lt>2.0.27</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.59">
+	  <p>HTTP/2 DoS by memory exhaustion on endless continuation frames</p>
+	  <p>HTTP Response Splitting in multiple modules</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-27316</cvename>
+      <cvename>CVE-2024-24795</cvename>
+      <cvename>CVE-2024-38709</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.59</url>
+    </references>
+    <dates>
+      <discovery>2024-04-04</discovery>
+      <entry>2024-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2431c4e-622c-4d92-996d-d8b5258ae8c9">
     <topic>electron{27,28} -- multiple vulnerabilities</topic>
     <affects>
