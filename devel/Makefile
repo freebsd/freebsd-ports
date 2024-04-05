@@ -5468,6 +5468,7 @@
     SUBDIR += py-pytest-regressions
     SUBDIR += py-pytest-regtest
     SUBDIR += py-pytest-relaxed
+    SUBDIR += py-pytest-remotedata
     SUBDIR += py-pytest-rerunfailures
     SUBDIR += py-pytest-runner
     SUBDIR += py-pytest-services
