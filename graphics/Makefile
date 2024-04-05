@@ -12,6 +12,7 @@
     SUBDIR += R-cran-GDD
     SUBDIR += R-cran-RColorBrewer
     SUBDIR += R-cran-colorspace
+    SUBDIR += R-cran-cowplot
     SUBDIR += R-cran-diagram
     SUBDIR += R-cran-dichromat
     SUBDIR += R-cran-dygraphs
