@@ -6,6 +6,7 @@
     SUBDIR += R-cran-RSQLite
     SUBDIR += R-cran-cachem
     SUBDIR += R-cran-dbplyr
+    SUBDIR += R-cran-dtplyr
     SUBDIR += R-cran-fastmap
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
