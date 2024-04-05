@@ -1,6 +1,7 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.2.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-release
 CATEGORIES=	science
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
@@ -34,6 +35,7 @@ USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
+GH_TAGNAME=	a83175e # hotfix/release-7-2-0 branch fixing extremely long compilation time with gmake-4.4.1
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
