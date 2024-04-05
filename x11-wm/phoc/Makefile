@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.0
+DISTVERSION=	0.38.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,8 +30,8 @@ GL_TUPLE=	World/Phosh:gmobile:v0.0.6:gmobile/subprojects/gmobile
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man5/${PORTNAME}.ini.5.gz \
-		share/applications/sm.puri.Phoc.desktop \
-		share/icons/hicolor/symbolic/apps/sm.puri.Phoc.svg
+		share/applications/mobi.phosh.Phoc.desktop \
+		share/icons/hicolor/symbolic/apps/mobi.phosh.Phoc.svg
 GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
 
 OPTIONS_DEFINE=	MANPAGES
