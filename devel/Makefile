@@ -558,6 +558,7 @@
     SUBDIR += dfuife-curses
     SUBDIR += dia2code
     SUBDIR += dia2code+
+    SUBDIR += dill
     SUBDIR += ding-libs
     SUBDIR += dispy
     SUBDIR += distcc
