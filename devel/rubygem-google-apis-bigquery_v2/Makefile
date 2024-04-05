@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-bigquery_v2
-PORTVERSION=	0.66.0
+PORTVERSION=	0.67.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
