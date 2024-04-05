@@ -4639,6 +4639,7 @@
     SUBDIR += py-dodgy
     SUBDIR += py-dogpile.cache
     SUBDIR += py-doit
+    SUBDIR += py-domdf-python-tools
     SUBDIR += py-donut-shellcode
     SUBDIR += py-dotted
     SUBDIR += py-dotty-dict
