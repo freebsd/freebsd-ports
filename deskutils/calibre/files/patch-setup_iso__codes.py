@@ -1,16 +1,16 @@
---- setup/iso_codes.py.orig	2023-07-14 01:29:18 UTC
+--- setup/iso_codes.py.orig	2024-04-05 02:37:00 UTC
 +++ setup/iso_codes.py
-@@ -1,42 +1,24 @@
+@@ -1,43 +1,24 @@
  #!/usr/bin/env python
  # License: GPLv3 Copyright: 2023, Kovid Goyal <kovid at kovidgoyal.net>
  
 -import fnmatch
 +import glob
  import os
--import shutil, time
+ import shutil
+-import time
 -import zipfile
 -from io import BytesIO
-+import shutil
  
 -from setup import download_securely
  

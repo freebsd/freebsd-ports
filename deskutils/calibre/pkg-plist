@@ -811,7 +811,6 @@ lib/calibre/calibre/gui2/dialogs/choose_plugin_toolbars.py
 lib/calibre/calibre/gui2/dialogs/comments_dialog.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location.py
-lib/calibre/calibre/gui2/dialogs/confirm_delete_location_ui.py
 lib/calibre/calibre/gui2/dialogs/confirm_merge.py
 lib/calibre/calibre/gui2/dialogs/conversion_error.py
 lib/calibre/calibre/gui2/dialogs/conversion_error_ui.py
