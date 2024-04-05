@@ -1,5 +1,5 @@
 PORTNAME=	PDL
-PORTVERSION=	2.085
+PORTVERSION=	2.086
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \
 		p5-File-Map>=0.57:devel/p5-File-Map \
 		p5-Inline>=0.83:devel/p5-Inline \
 		p5-Inline-C>=0.62:devel/p5-Inline-C \
+		p5-PGPLOT>=2.29:graphics/p5-PGPLOT \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
 		p5-Term-ReadKey>=2.34:devel/p5-Term-ReadKey
@@ -34,10 +35,10 @@ USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=	yes
 
-PORTSCOUT=	limit:^[0-9]\.[0-9][0-9]+[0-9\.]*$$
+PORTSCOUT=	limit:^[0-9\.]*$$
 
-OPTIONS_DEFINE=	F77 FFTW GD GSL HDF OPENGL PGPLOT PLPLOT PROJ READLINE SINK
-OPTIONS_DEFAULT=F77 FFTW PGPLOT
+OPTIONS_DEFINE=	F77 FFTW GD GSL HDF OPENGL PLPLOT PROJ READLINE SINK
+OPTIONS_DEFAULT=F77 FFTW
 # graphics/p5-OpenGL require manual building
 .if empty(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	OPENGL
@@ -48,7 +49,6 @@ GD_DESC=	Enable PDL::IO::GD
 GSL_DESC=	Enable PDL::GSL interface
 HDF_DESC=	Enable PDL::IO::HDF interface
 OPENGL_DESC=	Enable PDL::Graphics::TriD and OpenGL
-PGPLOT_DESC=	Enable PDL::Graphics::PGPLOT
 PLPLOT_DESC=	Enable PDL::Graphics::PLplot
 PROJ_DESC=	Enable PDL::GIS::Proj interface
 READLINE_DESC=	Use GNU readline
@@ -64,7 +64,6 @@ OPENGL_BUILD_DEPENDS=	p5-OpenGL>=0.70:graphics/p5-OpenGL
 OPENGL_RUN_DEPENDS=	p5-OpenGL>=0.70:graphics/p5-OpenGL
 OPENGL_USE=		gl=glu
 OPENGL_USES=		gl
-PGPLOT_BUILD_DEPENDS=	p5-PGPLOT>=0:graphics/p5-PGPLOT
 PLPLOT_LIB_DEPENDS=	libplplotd.so:math/plplot
 PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 READLINE_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu
@@ -89,7 +88,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/FFT/FFT.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Fit/Gaussian/Gaussian.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Graphics/IIS/IIS.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Graphics/PGPLOT/Window/Window.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Browser/Browser.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Misc/Misc.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Pnm/Pnm.so
