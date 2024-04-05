@@ -1,7 +1,7 @@
 PORTNAME=	groonga
-PORTVERSION=	13.0.4
+DISTVERSION=	13.0.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://packages.groonga.org/source/groonga/
+MASTER_SITES=	https://packages.groonga.org/source/groonga/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine and column store
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--disable-benchmark \
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		MECAB RUBY SUGGEST
-OPTIONS_DEFAULT=	MECAB RUBY SUGGEST
+OPTIONS_DEFAULT=	MECAB RUBY
 OPTIONS_SUB=		yes
 
 MECAB_DESC=	Morphological analysis support via MeCab
@@ -38,6 +38,7 @@ MECAB_CONFIGURE_OFF=	--without-mecab
 RUBY_RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
 RUBY_USES=		ruby
 RUBY_CONFIGURE_ON=	--enable-mruby
+SUGGEST_BROKEN=		"Does not build with libzmq4"
 SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack-c \
 			libzmq.so:net/libzmq4
