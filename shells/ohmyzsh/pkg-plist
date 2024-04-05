@@ -6,6 +6,7 @@
 %%DATADIR%%/custom/example.zsh
 %%DATADIR%%/custom/plugins/example/example.plugin.zsh
 %%DATADIR%%/custom/themes/example.zsh-theme
+%%DATADIR%%/lib/async_prompt.zsh
 %%DATADIR%%/lib/bzr.zsh
 %%DATADIR%%/lib/cli.zsh
 %%DATADIR%%/lib/clipboard.zsh
@@ -76,6 +77,7 @@
 %%DATADIR%%/plugins/battery/battery.plugin.zsh
 %%DATADIR%%/plugins/bazel/README.md
 %%DATADIR%%/plugins/bazel/_bazel
+%%DATADIR%%/plugins/bazel/bazel.plugin.zsh
 %%DATADIR%%/plugins/bbedit/README.md
 %%DATADIR%%/plugins/bbedit/bbedit.plugin.zsh
 %%DATADIR%%/plugins/bedtools/README.md
@@ -224,6 +226,8 @@
 %%DATADIR%%/plugins/extract/README.md
 %%DATADIR%%/plugins/extract/_extract
 %%DATADIR%%/plugins/extract/extract.plugin.zsh
+%%DATADIR%%/plugins/eza/README.md
+%%DATADIR%%/plugins/eza/eza.plugin.zsh
 %%DATADIR%%/plugins/fabric/README.md
 %%DATADIR%%/plugins/fabric/_fab
 %%DATADIR%%/plugins/fabric/fabric.plugin.zsh
@@ -304,7 +308,6 @@
 %%DATADIR%%/plugins/gitfast/git-completion.bash
 %%DATADIR%%/plugins/gitfast/git-prompt.sh
 %%DATADIR%%/plugins/gitfast/gitfast.plugin.zsh
-%%DATADIR%%/plugins/gitfast/update
 %%DATADIR%%/plugins/github/README.md
 %%DATADIR%%/plugins/github/_hub
 %%DATADIR%%/plugins/github/github.plugin.zsh
@@ -324,6 +327,7 @@
 %%DATADIR%%/plugins/golang/templates/search.txt
 %%DATADIR%%/plugins/gpg-agent/README.md
 %%DATADIR%%/plugins/gpg-agent/gpg-agent.plugin.zsh
+%%DATADIR%%/plugins/gradle/LICENSE
 %%DATADIR%%/plugins/gradle/README.md
 %%DATADIR%%/plugins/gradle/_gradle
 %%DATADIR%%/plugins/gradle/gradle.plugin.zsh
@@ -505,7 +509,6 @@
 %%DATADIR%%/plugins/npm/README.md
 %%DATADIR%%/plugins/npm/npm.plugin.zsh
 %%DATADIR%%/plugins/nvm/README.md
-%%DATADIR%%/plugins/nvm/_nvm
 %%DATADIR%%/plugins/nvm/nvm.plugin.zsh
 %%DATADIR%%/plugins/oc/README.md
 %%DATADIR%%/plugins/oc/oc.plugin.zsh
@@ -661,10 +664,13 @@
 %%DATADIR%%/plugins/sprunge/sprunge.plugin.zsh
 %%DATADIR%%/plugins/ssh-agent/README.md
 %%DATADIR%%/plugins/ssh-agent/ssh-agent.plugin.zsh
+%%DATADIR%%/plugins/ssh/ssh.plugin.zsh
 %%DATADIR%%/plugins/stack/README.md
 %%DATADIR%%/plugins/stack/stack.plugin.zsh
 %%DATADIR%%/plugins/starship/README.md
 %%DATADIR%%/plugins/starship/starship.plugin.zsh
+%%DATADIR%%/plugins/stripe/README.md
+%%DATADIR%%/plugins/stripe/stripe.plugin.zsh
 %%DATADIR%%/plugins/sublime-merge/README.md
 %%DATADIR%%/plugins/sublime-merge/sublime-merge.plugin.zsh
 %%DATADIR%%/plugins/sublime/README.md
