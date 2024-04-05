@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-01-03 18:51:44 UTC
+--- pyproject.toml.orig	2024-04-01 15:41:58 UTC
 +++ pyproject.toml
 @@ -17,10 +17,7 @@ dependencies = [
  # pip dependencies of the project
@@ -12,13 +12,11 @@
  ]
  
  [project.urls]
-@@ -49,10 +46,8 @@ requires = [
+@@ -49,8 +46,8 @@ requires = [
  [build-system]
  requires = [
-     # Build with oldest supported numpy for each Python version.
--    "numpy~=1.21.2; python_version<'3.11'",
--    "numpy~=1.23.3; python_version>='3.11' and python_version<'3.12'",
--    "numpy~=1.26.0; python_version>='3.12'",
+     # TODO(phawkins): update this to 2.0.0 after its release.
+-    "numpy==2.0.0rc1",
 -    "setuptools~=68.1.0",
 +    "numpy>=1.23.3",
 +    "setuptools",
