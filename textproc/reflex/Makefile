@@ -2,7 +2,8 @@ PORTNAME=	reflex
 PORTVERSION=	20230523
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	https://invisible-mirror.net/archives/reflex/ \
+MASTER_SITES=	https://invisible-island.net/archives/reflex/ \
+		https://invisible-mirror.net/archives/reflex/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
