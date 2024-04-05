@@ -1,6 +1,7 @@
     COMMENT = Desktop publishing
 
     SUBDIR += R-cran-knitr
+    SUBDIR += R-cran-textshaping
     SUBDIR += R-cran-tinytex
     SUBDIR += a2pdf
     SUBDIR += a2ps
