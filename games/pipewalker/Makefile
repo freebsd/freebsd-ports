@@ -1,36 +1,25 @@
 PORTNAME=	pipewalker
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the NetWalk game
 WWW=		https://github.com/artemsen/pipewalker
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png
+USES=		meson sdl pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	artemsen
+MESON_ARGS=	-Dversion=${DISTVERSION}
+USE_SDL=	sdl2 image2
 
-USES=		desktop-file-utils gl localbase sdl
-GNU_CONFIGURE=	yes
-USE_SDL=	sdl
-USE_GL=		gl glu
-
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.xpm
-PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS
-
 post-patch:
-	@${CHMOD} a+x ${WRKSRC}/install-sh
-	@${REINPLACE_CMD} -e 's|(datadir)/games|(datadir)|' \
-		${WRKSRC}/data/Makefile.in ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am/ s|install-pkgmenudataDATA||' \
-		${WRKSRC}/extra/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/share/games/pipewalker|${DATADIR}|' \
+		${WRKSRC}/extra/pipewalker.6
 
 .include <bsd.port.mk>
