@@ -1,4 +1,4 @@
-TIMESTAMP = 1712004442
+TIMESTAMP = 1712343713
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/anes-0.1.6.crate) = 4b46cbb362ab8752921c97e041f5e366ee6297bd428a31275b9fcf1e380f7299
@@ -257,5 +257,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.4.crate) = 32b752e52a2da0ddfbdbcc6f
 SIZE (rust/crates/windows_x86_64_msvc-0.52.4.crate) = 828019
 SHA256 (rust/crates/yansi-0.5.1.crate) = 09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec
 SIZE (rust/crates/yansi-0.5.1.crate) = 16525
-SHA256 (AMDmi3-omnilinter-0.6.0_GH0.tar.gz) = 42be4f11cc71bcda77cf0b4e4371999e158f3044bbf1c1b5ed8c978dcc58828f
-SIZE (AMDmi3-omnilinter-0.6.0_GH0.tar.gz) = 50418
+SHA256 (AMDmi3-omnilinter-0.7.0_GH0.tar.gz) = 139059c253b00831618b431cf33c4acbed2295314f6dc4a03be3a6f68616379e
+SIZE (AMDmi3-omnilinter-0.7.0_GH0.tar.gz) = 51887
