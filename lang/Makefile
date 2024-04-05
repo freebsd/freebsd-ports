@@ -125,6 +125,7 @@
     SUBDIR += go122
     SUBDIR += gomacro
     SUBDIR += gprolog
+    SUBDIR += gptscript
     SUBDIR += gravity
     SUBDIR += groovy
     SUBDIR += gscheme
