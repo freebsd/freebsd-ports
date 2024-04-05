@@ -5059,6 +5059,7 @@
     SUBDIR += py-msal
     SUBDIR += py-msal-extensions
     SUBDIR += py-msgpack
+    SUBDIR += py-msgspec
     SUBDIR += py-mulpyplexer
     SUBDIR += py-multi_key_dict
     SUBDIR += py-multipart
