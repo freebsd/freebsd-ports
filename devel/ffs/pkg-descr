@@ -1,0 +1,5 @@
+FFS is a middleware library for data communication, including representation,
+processing and marshaling that preserves the performance of traditional
+approaches while relaxing the requirement of a priori knowledge and providing
+complex run-time flexibility. FFS provides for highly efficient binary data
+communication, etc.

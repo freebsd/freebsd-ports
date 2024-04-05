@@ -657,6 +657,7 @@
     SUBDIR += fc++
     SUBDIR += fccf
     SUBDIR += fcppt
+    SUBDIR += ffs
     SUBDIR += fhist
     SUBDIR += fifechan
     SUBDIR += fire-hpp
