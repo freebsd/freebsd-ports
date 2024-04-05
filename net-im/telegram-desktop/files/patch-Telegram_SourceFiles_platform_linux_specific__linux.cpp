@@ -1,10 +1,11 @@
---- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig	2024-03-08 21:33:12 UTC
+--- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig	2024-04-05 17:15:54 UTC
 +++ Telegram/SourceFiles/platform/linux/specific_linux.cpp
-@@ -55,6 +55,7 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
- namespace {
+@@ -510,7 +510,7 @@ QString SingleInstanceLocalServerName(const QString &h
  
- using namespace gi::repository;
-+namespace GObject = gi::repository::GObject;
- namespace Gio = gi::repository::Gio;
- using namespace Platform;
- using Platform::internal::WaylandIntegration;
+ #if QT_VERSION < QT_VERSION_CHECK(6, 5, 0)
+ std::optional<bool> IsDarkMode() {
+-	const auto result = base::Platform::XDP::ReadSetting(
++	auto result = base::Platform::XDP::ReadSetting(
+ 		"org.freedesktop.appearance",
+ 		"color-scheme");
+ 
