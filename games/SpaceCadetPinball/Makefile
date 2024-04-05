@@ -8,6 +8,7 @@ COMMENT=	Decompilation of 3D Pinball for Windows
 WWW=		https://github.com/k4zmu2a/SpaceCadetPinball
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake sdl xorg
 
