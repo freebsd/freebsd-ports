@@ -4,9 +4,9 @@ DISTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christos@FreeBSD.org
 COMMENT=	Virtual OSS multi device mixer application
-WWW=		https://github.com/hselasky/virtual_oss
+WWW=		https://github.com/freebsd/virtual_oss
 
 LICENSE=	BSD2CLAUSE
 
@@ -16,7 +16,7 @@ USES=		uidfix
 USE_RC_SUBR=	virtual_oss
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hselasky
+GH_ACCOUNT=	freebsd
 
 SUB_LIST+=	LIBSAMPLERATE="${LOCALBASE}/lib/libsamplerate.so:"
 
