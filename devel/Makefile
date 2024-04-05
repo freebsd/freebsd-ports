@@ -65,6 +65,7 @@
     SUBDIR += R-cran-glue
     SUBDIR += R-cran-gmodels
     SUBDIR += R-cran-googledrive
+    SUBDIR += R-cran-googlesheets4
     SUBDIR += R-cran-gsubfn
     SUBDIR += R-cran-gtools
     SUBDIR += R-cran-hardhat
