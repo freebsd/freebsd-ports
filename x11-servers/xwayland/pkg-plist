@@ -2,4 +2,5 @@ bin/Xwayland
 @comment lib/xorg/protocol.txt
 libdata/pkgconfig/xwayland.pc
 @comment share/man/man1/Xserver.1.gz
+share/applications/org.freedesktop.Xwayland.desktop
 share/man/man1/Xwayland.1.gz
