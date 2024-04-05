@@ -1,6 +1,6 @@
 PORTNAME=	g2o
 DISTVERSION=	20230806
-PORTREVISION=	9
+PORTREVISION=	10
 DISTVERSIONSUFFIX=	_git
 CATEGORIES=	math
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libcholmod.so:math/suitesparse-cholmod \
 		libcolamd.so:math/suitesparse-colamd \
 		libcxsparse.so:math/suitesparse-cxsparse \
-		libQGLViewer-qt5.so:graphics/libQGLViewer \
+		libQGLViewer.so:graphics/libQGLViewer \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
 		libsuitesparseconfig.so:math/suitesparse-config
