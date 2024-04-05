@@ -15,7 +15,7 @@ LIB_DEPENDS=	libxtend.so:devel/libxtend libbiolibc.so:biology/biolibc
 RUN_DEPENDS=	bedtools:biology/bedtools \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		localbase python:3.7+ shebangfix
+USES=		localbase python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
