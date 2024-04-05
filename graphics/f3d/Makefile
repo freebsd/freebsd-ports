@@ -1,6 +1,7 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
-		libImath-3_1.so:math/Imath \
 		libinotify.so:devel/libinotify \
 		libnetcdf.so:science/netcdf \
 		libtbb.so:devel/onetbb \
@@ -46,7 +46,8 @@ MODULES_DESC=			Build modules:
 
 ALEMBIC_DESC=			Alembic plugin (for ABC files)
 ALEMBIC_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ALEMBIC
-ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
+ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic \
+				libImath-3_1.so:math/Imath
 
 ASSIMP_DESC=			Assimp plugin (for FBX, OFF, DAE and DXF files)
 ASSIMP_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ASSIMP
@@ -66,8 +67,7 @@ EXTERNAL_RENDERING_BROKEN=	Requires VTK::RenderingExternal enabled in VTK
 OCCT_DESC=			OpenCASCADE plugin (for STEP and IGES files)
 OCCT_USES=			localbase:ldflags
 OCCT_CMAKE_BOOL=		F3D_PLUGIN_BUILD_OCCT
-OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade \
-				libdraco.so:archivers/draco
+OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade
 OCCT_CMAKE_ON=			-DOpenCASCADE_DIR=${LOCALBASE}/lib/cmake
 
 RAYTRACING_DESC=		Raytracing module

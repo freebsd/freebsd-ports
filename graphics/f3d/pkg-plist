@@ -45,11 +45,11 @@ lib/libf3d.so
 lib/libf3d.so.2
 lib/libf3d.so.2.4
 lib/libvtkext.so
-lib/libvtkextAlembic.a
-lib/libvtkextAssimp.a
-lib/libvtkextDraco.a
+%%ALEMBIC%%lib/libvtkextAlembic.a
+%%ASSIMP%%lib/libvtkextAssimp.a
+%%DRACO%%lib/libvtkextDraco.a
 lib/libvtkextNative.a
-lib/libvtkextOCCT.a
+%%OCCT%%lib/libvtkextOCCT.a
 lib/libvtkextPrivate.a
 lib/vtk/hierarchy/f3d_vtkext/vtkext-hierarchy.txt
 %%ALEMBIC%%share/applications/f3d-plugin-alembic.desktop
