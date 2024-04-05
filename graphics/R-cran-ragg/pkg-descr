@@ -1,0 +1,5 @@
+Anti-Grain Geometry (AGG) is a high-quality and high-performance 2D drawing
+library.
+
+The 'ragg' package provides a set of graphic devices based on AGG to use as
+alternative to the raster devices provided through the 'grDevices' package.
