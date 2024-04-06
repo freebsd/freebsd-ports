@@ -5,7 +5,7 @@ CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open compressed files transparently
 WWW=		https://pypi.org/project/xopen/
 
