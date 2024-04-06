@@ -228,12 +228,6 @@ CFLAGS+=	-Wno-incompatible-function-pointer-types
 PLIST_SUB+=	WSREP="@comment "
 .endif
 
-#.if ${ARCH} == i386
-#USE_GCC=	9
-#CFLAGS+=	-DHAVE_GCC_C11_ATOMICS -latomic -DUSE_NEW_READLINE_INTERFACE
-#CXXFLAGS+=	-fpermissive
-#.endif
-
 post-patch:
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
