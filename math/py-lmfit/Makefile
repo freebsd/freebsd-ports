@@ -1,5 +1,5 @@
 PORTNAME=	lmfit
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.0
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,11 +23,12 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flaky>0:devel/py-flaky@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numdifftools>0:math/py-numdifftools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 4 tests fail because of the DISPLAY variable:  _tkinter.TclError: no display name and no $DISPLAY environment variable
 
 NO_ARCH=	yes
 
