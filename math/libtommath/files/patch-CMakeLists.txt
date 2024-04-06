@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2024-03-27 13:30:15 UTC
 +++ CMakeLists.txt
-@@ -29,11 +29,6 @@ include(sources.cmake)
+@@ -29,25 +29,6 @@ include(sources.cmake)
  include(sources.cmake)
  
  #-----------------------------------------------------------------------------
@@ -9,10 +9,24 @@
 -option(BUILD_SHARED_LIBS "Build shared library and only the shared library if \"ON\", default is static" OFF)
 -
 -#-----------------------------------------------------------------------------
- # Add support for ccache if desired
+-# Add support for ccache if desired
+-#-----------------------------------------------------------------------------
+-find_program(CCACHE ccache)
+-
+-if(CCACHE)
+-    option(ENABLE_CCACHE "Enable ccache." ON)
+-endif()
+-
+-# use ccache if installed
+-if(CCACHE AND ENABLE_CCACHE)
+-    set(CMAKE_C_COMPILER_LAUNCHER ${CCACHE})
+-endif()
+-
+-#-----------------------------------------------------------------------------
+ # Compose CFLAGS
  #-----------------------------------------------------------------------------
- find_program(CCACHE ccache)
-@@ -68,10 +63,10 @@ else()
+ 
+@@ -68,17 +49,17 @@ else()
      set(LTM_C_FLAGS -Wall -Wsign-compare -Wextra -Wshadow
                      -Wdeclaration-after-statement -Wbad-function-cast -Wcast-align
                      -Wstrict-prototypes -Wpointer-arith -Wsystem-headers)
@@ -27,7 +41,15 @@
  endif()
  
  # What compiler do we have and what are their...uhm... peculiarities
-@@ -103,6 +98,7 @@ add_library(${PROJECT_NAME}
+ if(CMAKE_C_COMPILER_ID MATCHES "(C|c?)lang")
+     list(APPEND LTM_C_FLAGS -Wno-typedef-redefinition -Wno-tautological-compare -Wno-builtin-requires-header)
+     # Clang requires at least '-O1' for dead code elimination
+-    set(CMAKE_C_FLAGS_DEBUG "-O1 ${CMAKE_C_FLAGS_DEBUG}")
++#    set(CMAKE_C_FLAGS_DEBUG "-O1 ${CMAKE_C_FLAGS_DEBUG}")
+ endif()
+ if(CMAKE_C_COMPILER MATCHES "mingw")
+     list(APPEND LTM_C_FLAGS -Wno-shadow -Wno-expansion-to-defined -Wno-declaration-after-statement -Wno-bad-function-cast)
+@@ -103,6 +84,7 @@ add_library(${PROJECT_NAME}
  # library target
  #-----------------------------------------------------------------------------
  add_library(${PROJECT_NAME}
@@ -35,7 +57,7 @@
      ${SOURCES}
      ${HEADERS}
  )
-@@ -125,12 +121,23 @@ endif()
+@@ -125,12 +107,23 @@ endif()
      list(APPEND PUBLIC_HEADERS tommath_c89.h)
  endif()
  
@@ -59,7 +81,7 @@
  
  option(COMPILE_LTO "Build with LTO enabled")
  if(COMPILE_LTO)
-@@ -159,7 +166,7 @@ set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
+@@ -159,7 +152,7 @@ set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
  set(PROJECT_CONFIG_FILE "${PROJECT_NAME}-config.cmake")
  set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
  
@@ -68,7 +90,7 @@
      EXPORT ${TARGETS_EXPORT_NAME}
      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT Libraries
-@@ -168,20 +175,18 @@ install(TARGETS ${PROJECT_NAME}
+@@ -168,20 +161,18 @@ install(TARGETS ${PROJECT_NAME}
  )
  
  # Install libtommath.pc for pkg-config if we build a shared library
@@ -99,7 +121,7 @@
  
  # generate package version file
  write_basic_package_version_file(
-@@ -262,18 +267,11 @@ endif()
+@@ -262,18 +253,11 @@ endif()
      list(APPEND CPACK_GENERATOR FREEBSD)
  endif()
  
@@ -120,7 +142,7 @@
  set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
  set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "LibTomMath")
  set(CPACK_PACKAGE_VENDOR "libtom projects")
-@@ -287,15 +285,7 @@ set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+@@ -287,15 +271,7 @@ set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
  set(CPACK_DEBIAN_DEBUGINFO_PACKAGE ON)
  set(CPACK_DEBIAN_PACKAGE_RELEASE ${PACKAGE_RELEASE_VERSION})
  set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
