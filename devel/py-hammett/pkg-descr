@@ -1,0 +1,4 @@
+Hammett is a fast python test runner that aims to be compatible with the parts
+of pytest most people use (unless that conflicts with the goal of being fast).
+It also adds some features that can dramatically improve your testing experience
+if you adapt more fully to hammett.
