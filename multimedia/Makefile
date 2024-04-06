@@ -217,7 +217,6 @@
     SUBDIR += minisatip
     SUBDIR += minitube
     SUBDIR += mjpegtools
-    SUBDIR += mjpg-streamer
     SUBDIR += mkclean
     SUBDIR += mkvalidator
     SUBDIR += mkvtoolnix
