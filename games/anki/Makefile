@@ -1,6 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	23.12.1
-PORTREVISION=	4
+DISTVERSION=	24.04
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -45,8 +44,8 @@ USES=		cargo desktop-file-utils ninja nodejs:build pyqt:6 python:3.9+ \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:fb301cc:ftlrslib \
-		ankitects:anki-desktop-ftl:8c2191a:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:c74c15b:ftlrslib \
+		ankitects:anki-desktop-ftl:06ad12d:ftlextra
 
 USE_PYQT=	pyqt6 sip:build webengine
 
@@ -59,16 +58,12 @@ CARGO_INSTALL=	no
 
 CARGO_TARGET_DIR=	${WRKSRC}/out/rust
 
-# Custom variables introduced to the runner build system via patches
-MAKE_ENV+=	NO_BUNDLE=1 \
-		NO_VENV=1 \
-		OFFLINE_BUILD=1 \
-		OFFLINE_YARNCACHE=${_MY_YARNCACHE}
-# Variables already known and used by the "runner" build system
+# Variables used by the "runner" build system
 MAKE_ENV+=	NODE_BINARY=${LOCALBASE}/bin/node \
+		OFFLINE_BUILD=1 \
 		PROTOC_BINARY=${LOCALBASE}/bin/protoc \
-		PYTHON_BINARY=${PYTHON_CMD} \
 		YARN_BINARY=${LOCALBASE}/bin/yarn \
+		YARN_CACHE_FOLDER=${_MY_YARNCACHE} \
 		out=${WRKSRC}/out
 # If RELEASE is unset the "runner" build system omits the
 # "--release" flag for cargo(1).
@@ -89,7 +84,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH= 1a1d4d54
+_MY_BUILDHASH= 429bc9e1
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug

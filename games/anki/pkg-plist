@@ -191,8 +191,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/forms/dconf_qt6.py
 %%DATADIR%%/_aqt/forms/debug_qt5.py
 %%DATADIR%%/_aqt/forms/debug_qt6.py
-%%DATADIR%%/_aqt/forms/editaddon_qt5.py
-%%DATADIR%%/_aqt/forms/editaddon_qt6.py
 %%DATADIR%%/_aqt/forms/editcurrent_qt5.py
 %%DATADIR%%/_aqt/forms/editcurrent_qt6.py
 %%DATADIR%%/_aqt/forms/edithtml_qt5.py
@@ -409,7 +407,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/forms/customstudy.py
 %%DATADIR%%/aqt/forms/dconf.py
 %%DATADIR%%/aqt/forms/debug.py
-%%DATADIR%%/aqt/forms/editaddon.py
 %%DATADIR%%/aqt/forms/editcurrent.py
 %%DATADIR%%/aqt/forms/edithtml.py
 %%DATADIR%%/aqt/forms/emptycards.py
@@ -444,6 +441,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/import_export/importing.py
 %%DATADIR%%/aqt/importing.py
 %%DATADIR%%/aqt/legacy.py
+%%DATADIR%%/aqt/log.py
 %%DATADIR%%/aqt/main.py
 %%DATADIR%%/aqt/mediacheck.py
 %%DATADIR%%/aqt/mediasrv.py
