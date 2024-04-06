@@ -493,6 +493,7 @@ bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
 bin/adjunct_apqc_tsnr_general
+bin/adjunct_atlas_points_to_labeltable
 bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
 bin/adjunct_combine_str.py
@@ -582,6 +583,7 @@ bin/fim2
 bin/find_variance_lines.tcsh
 bin/float_scan
 bin/from3d
+bin/gen_cluster_table
 bin/gen_epi_review.py
 bin/gen_group_command.py
 bin/gen_ss_review_scripts.py
