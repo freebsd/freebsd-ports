@@ -1,5 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.3
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
@@ -31,6 +31,7 @@ USE_RC_SUBR=	dnsdist
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+		--enable-dns-over-http3 \
 		--enable-dns-over-https \
 		--enable-dns-over-quic \
 		--enable-dns-over-tls \
@@ -38,9 +39,9 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--sysconfdir=${ETCDIR} \
 		--with-libsodium \
 		--with-re2
-LDFLAGS+=	-Wl,--as-needed
 
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-Wl,--as-needed
 
 USERS=		_dnsdist
 GROUPS=		_dnsdist
