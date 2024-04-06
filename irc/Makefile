@@ -91,7 +91,6 @@
     SUBDIR += soju
     SUBDIR += srain
     SUBDIR += srvx
-    SUBDIR += tircproxy
     SUBDIR += undernet-ircu
     SUBDIR += unreal
     SUBDIR += weechat
