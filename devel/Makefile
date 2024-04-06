@@ -580,7 +580,6 @@
     SUBDIR += dparser
     SUBDIR += dra
     SUBDIR += dragon
-    SUBDIR += ds2
     SUBDIR += dsymbol
     SUBDIR += dtool
     SUBDIR += dub
