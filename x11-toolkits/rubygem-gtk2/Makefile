@@ -12,8 +12,6 @@ WWW=		https://ruby-gnome.github.io/ \
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BROKEN_RUBY32=	yes
-
 RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
 		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
