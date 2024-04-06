@@ -651,7 +651,6 @@
     SUBDIR += xfce4-appfinder
     SUBDIR += xfce4-weather-plugin
     SUBDIR += xfce4-wm-themes
-    SUBDIR += xgas
     SUBDIR += xgboost
     SUBDIR += xiphos
     SUBDIR += xless
