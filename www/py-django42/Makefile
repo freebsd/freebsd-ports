@@ -1,5 +1,6 @@
 PORTNAME=	django
 PORTVERSION=	4.2.11
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
@@ -15,12 +16,14 @@ WWW=		https://www.djangoproject.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.6.0:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.1:databases/py-sqlparse@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tblib>0:devel/py-tblib@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
