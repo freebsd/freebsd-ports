@@ -4,7 +4,7 @@ CATEGORIES=	biology java
 MASTER_SITES=	http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/
 DISTNAME=	Trimmomatic-${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible read trimming tool for Illumina NGS data
 WWW=		http://www.usadellab.org/cms/?page=trimmomatic
 
