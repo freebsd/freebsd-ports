@@ -1,5 +1,5 @@
-TIMESTAMP = 1710072125
-SHA256 (go/net_gobgp/gobgp-v3.24.0/v3.24.0.mod) = 809e45f8afe5bc1d4acf5d6a5efbc22ff399a87884c87d2e5bda9bedc8650882
-SIZE (go/net_gobgp/gobgp-v3.24.0/v3.24.0.mod) = 2242
-SHA256 (go/net_gobgp/gobgp-v3.24.0/v3.24.0.zip) = 0ad4a543407a587d2b2ae13653f66310dba8ae37dce17a75931a72fb4eba43ca
-SIZE (go/net_gobgp/gobgp-v3.24.0/v3.24.0.zip) = 1298298
+TIMESTAMP = 1712392244
+SHA256 (go/net_gobgp/gobgp-v3.25.0/v3.25.0.mod) = 2fb735b0bc30417fa719f877eed3d5bf439b98907163dc56a14b9ab2651d23b7
+SIZE (go/net_gobgp/gobgp-v3.25.0/v3.25.0.mod) = 2242
+SHA256 (go/net_gobgp/gobgp-v3.25.0/v3.25.0.zip) = 5b6dfc5c9e83e228f84936fd5a99e715211ec7ef5dc1c747fb064541a8b33e10
+SIZE (go/net_gobgp/gobgp-v3.25.0/v3.25.0.zip) = 1299304
