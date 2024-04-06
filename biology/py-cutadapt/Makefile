@@ -4,7 +4,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trim adapters from high-throughput sequencing reads
 WWW=		https://github.com/marcelm/cutadapt/
 
