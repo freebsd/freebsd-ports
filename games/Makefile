@@ -934,7 +934,6 @@
     SUBDIR += species
     SUBDIR += spellcast
     SUBDIR += spicetrade
-    SUBDIR += spider
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
