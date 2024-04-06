@@ -12,6 +12,21 @@
  # Add support for ccache if desired
  #-----------------------------------------------------------------------------
  find_program(CCACHE ccache)
+@@ -68,10 +63,10 @@ else()
+     set(LTM_C_FLAGS -Wall -Wsign-compare -Wextra -Wshadow
+                     -Wdeclaration-after-statement -Wbad-function-cast -Wcast-align
+                     -Wstrict-prototypes -Wpointer-arith -Wsystem-headers)
+-    set(CMAKE_C_FLAGS_DEBUG "-g3")
+-    set(CMAKE_C_FLAGS_RELEASE "-O3 -funroll-loops -fomit-frame-pointer")
+-    set(CMAKE_C_FLAGS_RELWITHDEBINFO "-g3 -O2")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "-Os")
++#    set(CMAKE_C_FLAGS_DEBUG "-g3")
++#    set(CMAKE_C_FLAGS_RELEASE "-O3 -funroll-loops -fomit-frame-pointer")
++#    set(CMAKE_C_FLAGS_RELWITHDEBINFO "-g3 -O2")
++#    set(CMAKE_C_FLAGS_MINSIZEREL "-Os")
+ endif()
+ 
+ # What compiler do we have and what are their...uhm... peculiarities
 @@ -103,6 +98,7 @@ add_library(${PROJECT_NAME}
  # library target
  #-----------------------------------------------------------------------------
