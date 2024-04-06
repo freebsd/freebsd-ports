@@ -10,9 +10,15 @@ share/man/man1/verilator.1.gz
 share/man/man1/verilator_coverage.1.gz
 share/man/man1/verilator_gantt.1.gz
 share/man/man1/verilator_profcfunc.1.gz
+%%DATADIR%%/bin/verilator
+%%DATADIR%%/bin/verilator_bin
+%%INSTALL_DBG_EXECUTABLES%%%%DATADIR%%/bin/verilator_bin_dbg
 %%DATADIR%%/bin/verilator_ccache_report
-%%DATADIR%%/bin/verilator_difftree
+%%DATADIR%%/bin/verilator_coverage
+%%INSTALL_DBG_EXECUTABLES%%%%DATADIR%%/bin/verilator_coverage_bin_dbg
+%%DATADIR%%/bin/verilator_gantt
 %%DATADIR%%/bin/verilator_includer
+%%DATADIR%%/bin/verilator_profcfunc
 %%DATADIR%%/examples/cmake_hello_c/CMakeLists.txt
 %%DATADIR%%/examples/cmake_hello_c/Makefile
 %%DATADIR%%/examples/cmake_hello_sc/CMakeLists.txt
@@ -103,6 +109,7 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_vpi.cpp
 %%DATADIR%%/include/verilated_vpi.h
 %%DATADIR%%/include/verilatedos.h
+%%DATADIR%%/include/verilatedos_c.h
 %%DATADIR%%/include/vltstd/sv_vpi_user.h
 %%DATADIR%%/include/vltstd/svdpi.h
 %%DATADIR%%/include/vltstd/vpi_user.h

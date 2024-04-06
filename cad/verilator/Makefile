@@ -1,6 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.022
+DISTVERSION=	5.024
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -63,11 +63,19 @@ pre-configure:
 	cd ${WRKSRC} && \
 		autoconf
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/bin/verilator_bin
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_bin
+
+post-install-INSTALL_DBG_EXECUTABLES-on:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_bin_dbg \
+		${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_coverage_bin_dbg
 
 post-install-INSTALL_DBG_EXECUTABLES-off:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/verilator_bin
-	@${RM} ${STAGEDIR}${PREFIX}/bin/verilator_bin_dbg ${STAGEDIR}${PREFIX}/bin/verilator_coverage_bin_dbg
+	@${RM} \
+		${STAGEDIR}${PREFIX}/bin/verilator_bin_dbg \
+		${STAGEDIR}${PREFIX}/bin/verilator_coverage_bin_dbg \
+		${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_bin_dbg \
+		${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_coverage_bin_dbg
 
 .include <bsd.port.mk>
