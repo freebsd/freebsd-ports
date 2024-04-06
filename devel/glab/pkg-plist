@@ -12,6 +12,8 @@
 %%MANPAGES%%share/man/man1/glab-changelog.1.gz
 %%MANPAGES%%share/man/man1/glab-check-update.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-artifact.1.gz
+%%MANPAGES%%share/man/man1/glab-ci-config-compile.1.gz
+%%MANPAGES%%share/man/man1/glab-ci-config.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-get.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-lint.1.gz
@@ -20,6 +22,7 @@
 %%MANPAGES%%share/man/man1/glab-ci-run.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-status.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-trace.1.gz
+%%MANPAGES%%share/man/man1/glab-ci-trigger.1.gz
 %%MANPAGES%%share/man/man1/glab-ci-view.1.gz
 %%MANPAGES%%share/man/man1/glab-ci.1.gz
 %%MANPAGES%%share/man/man1/glab-cluster-agent-get-token.1.gz
