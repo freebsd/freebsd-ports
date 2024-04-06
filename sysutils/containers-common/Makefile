@@ -47,7 +47,7 @@ do-install:
 #${INSTALL_DATA} ${WRKSRC}/pkg/config/containers.conf-freebsd ${STAGEDIR}${PREFIX}/etc/containers/containers.conf.sample
 	${INSTALL_DATA} ${STORAGESRC}/storage.conf-freebsd ${STAGEDIR}${PREFIX}/etc/containers/storage.conf.sample
 	${INSTALL_DATA} ${IMAGESRC}/registries.conf ${STAGEDIR}${PREFIX}/etc/containers/registries.conf.sample
-	${GMAKE} -C ${WRKSRC}/docs DESTDIR=${STAGEDIR} install
+	${GMAKE} -C ${WRKSRC}/docs DESTDIR=${STAGEDIR} PREFIX=${PREFIX} install
 	${GMAKE} -C ${IMAGESRC} PREFIX=${STAGEDIR}${PREFIX} install-docs
 	${GMAKE} -C ${STORAGESRC}/docs GOMD2MAN=${LOCALBASE}/bin/go-md2man containers-storage.conf.5
 	${INSTALL_MAN} ${STORAGESRC}/docs/containers-storage.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
