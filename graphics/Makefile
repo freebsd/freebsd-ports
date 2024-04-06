@@ -483,7 +483,6 @@
     SUBDIR += libksane
     SUBDIR += libliftoff
     SUBDIR += liblqr-1
-    SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
     SUBDIR += libmypaint
