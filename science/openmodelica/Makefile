@@ -1,6 +1,6 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.2
+DISTVERSION=	1.22.3
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		${LOCALBASE}/include/readline/readline.h:devel/readline
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
+		libicuuc.so:devel/icu \
 		libosg.so:graphics/osg \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash \
@@ -33,7 +34,7 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		cmake compiler:c++14-lang iconv fortran gettext-runtime gl \
 		gnome blaslapack localbase:ldflags qt:5 readline pkgconfig \
 		python:build shebangfix
-USE_QT=		concurrent core declarative gui network opengl \
+USE_QT=		concurrent core declarative gui location network opengl \
 		printsupport svg webchannel webengine widgets xml xmlpatterns \
 		buildtools:build qmake:build
 USE_GL=		gl opengl
@@ -48,11 +49,11 @@ GH_PROJECT=	OpenModelica
 SHEBANG_GLOB=	*.sh *.in *.ac
 
 GH_TUPLE=	\
-		OpenModelica:OMOptim:55102095970c73a4176820538d19aaf408515da9:OpenModelica_OMOptim/OMOptim \
-		OpenModelica:OMSimulator:634b0193a3eb14e75622a8e720bf0fb6dab77487:OpenModelica_OMSimulator/OMSimulator \
-		OpenModelica:OMSimulator-3rdParty:b4c3aa4a16a5920e88096780498cc4af157f3c05:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
-		OpenModelica:OMCompiler-3rdParty:d19136844b49720ae3a8957f0fb1e137c7055b43:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
-		OpenModelica:OMSens:8216eaefbb4ea2ff0c7a17a3487dcc2a8a17667d:OpenModelica_OMSens/OMSens \
+		OpenModelica:OMOptim:e4fb998:OpenModelica_OMOptim/OMOptim \
+		OpenModelica:OMSimulator:1eb92ef:OpenModelica_OMSimulator/OMSimulator \
+		OpenModelica:OMSimulator-3rdParty:ca418d7:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
+		OpenModelica:OMCompiler-3rdParty:b826af1:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
+		OpenModelica:OMSens:0d804d5:OpenModelica_OMSens/OMSens \
 		OpenModelica:OMSens_Qt:ff2ade18e7058f611ddfd575ccbd24f388615d3f:OpenModelica_OMSens_Qt/OMSens_Qt \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMOptim/common \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMSens_Qt/common
