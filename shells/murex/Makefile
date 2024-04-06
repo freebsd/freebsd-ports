@@ -1,7 +1,6 @@
 PORTNAME=	murex
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.2210
-PORTREVISION=	3
+DISTVERSION=	6.0.1000
 CATEGORIES=	shells
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -24,10 +23,10 @@ GH_TUPLE=	Knetic:govaluate:v3.0.0:knetic_govaluate/vendor/github.com/Knetic/gova
 		eliukblau:pixterm:v1.3.1:eliukblau_pixterm/vendor/github.com/eliukblau/pixterm \
 		fsnotify:fsnotify:v1.6.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:image:v0.5.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:86c51ed26bb4:golang_mod/vendor/golang.org/x/mod \
+		golang:image:v0.10.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.8.0:golang_mod/vendor/golang.org/x/mod \
 		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
-		golang:tools:v0.1.12:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.6.0:golang_tools/vendor/golang.org/x/tools \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
