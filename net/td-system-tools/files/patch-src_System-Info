@@ -1,8 +1,0 @@
---- src/System-Info.orig	2024-04-01 21:09:56 UTC
-+++ src/System-Info
-@@ -374,4 +374,4 @@ print-network-addresses 2>&1 | (
-    wait
-    cat
- ) | \
--( buffer -s 16k || cat)
-+( mbuffer -s 16k || cat)
