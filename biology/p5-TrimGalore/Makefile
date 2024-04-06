@@ -3,7 +3,7 @@ DISTVERSION=	0.6.5
 CATEGORIES=	biology perl5 python
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 WWW=		https://github.com/FelixKrueger/TrimGalore
 
