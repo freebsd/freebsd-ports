@@ -1,6 +1,5 @@
 PORTNAME=	dolphin-emu
-PORTVERSION=	5.0.19870
-PORTREVISION=	4
+PORTVERSION=	5.0.21264
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -33,6 +32,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libzstd.so:archivers/zstd \
 		libminizip-ng.so:archivers/minizip-ng \
 		liblzo2.so:archivers/lzo2 \
+		liblz4.so:archivers/liblz4 \
 		libspng.so:graphics/libspng \
 		libspeexdsp.so:audio/speexdsp \
 		libpulse.so:audio/pulseaudio \
@@ -54,7 +54,7 @@ ELF_FEATURES=	+noaslr:Binaries/dolphin-emu*
 # for latest beta version and associated commit
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
-GH_TAGNAME=	8c2a1c1
+GH_TAGNAME=	1efda86
 .include "${.CURDIR}/Makefile.tuples"
 
 USE_GL=		egl gl

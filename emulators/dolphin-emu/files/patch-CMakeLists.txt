@@ -11,26 +11,9 @@ See: https://github.com/zlib-ng/zlib-ng/blob/develop/PORTING.md#zlib-ng-native-m
 
 minizip is found using the name 'minizip-ng' with pkgconf
 
-3) Fix xxhash detection
-
-Add missing call to dolphin_find_optional_system_library_pkgconfig() to
-detect libxxhash
-
---- CMakeLists.txt.orig	2023-07-23 02:24:09 UTC
+--- CMakeLists.txt.orig	2024-04-03 19:20:37 UTC
 +++ CMakeLists.txt
-@@ -663,10 +663,7 @@ dolphin_find_optional_system_library(pugixml Externals
- 
- dolphin_find_optional_system_library_pkgconfig(ENET libenet>=1.3.8 enet::enet Externals/enet)
- 
--if(NOT XXHASH_FOUND)
--  message(STATUS "Using static xxhash from Externals")
--  add_subdirectory(Externals/xxhash)
--endif()
-+dolphin_find_optional_system_library_pkgconfig(XXHASH libxxhash xxhash:xxhash Externals/xxhash)
- 
- dolphin_find_optional_system_library(BZip2 Externals/bzip2)
- 
-@@ -676,9 +673,9 @@ dolphin_make_imported_target_if_missing(LibLZMA::LibLZ
+@@ -672,9 +672,9 @@ dolphin_find_optional_system_library_pkgconfig(ZSTD li
  
  dolphin_find_optional_system_library_pkgconfig(ZSTD libzstd>=1.4.0 zstd::zstd Externals/zstd)
  
