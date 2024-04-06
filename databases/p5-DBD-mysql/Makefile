@@ -24,7 +24,7 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=		${_CONFIGURE_ARGS_${CHOSEN_COMPILER_TYPE}}
 _CONFIGURE_ARGS_gcc=	--libs="-L${PREFIX}/lib/gcc${GCC_DEFAULT} `mysql_config --libs | ${SED} 's/-pthread //'`"
 
-CONFLICTS_INSTALL=	p5-DBD-mysql[45][0-9]
+CONFLICTS_INSTALL=	p5-DBD-mysql4
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/mysql/mysql.so
