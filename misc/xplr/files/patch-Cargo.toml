@@ -1,9 +1,9 @@
---- Cargo.toml.orig	2024-01-20 20:26:47 UTC
+--- Cargo.toml.orig	2024-04-06 21:00:14 UTC
 +++ Cargo.toml
-@@ -73,7 +73,7 @@ version = "0.9.2"
+@@ -73,7 +73,7 @@ version = "0.9.6"
  
  [dependencies.mlua]
- version = "0.9.2"
+ version = "0.9.6"
 -features = ['luajit', 'vendored', 'serialize', 'send']
 +features = ['luajit', 'serialize', 'send']
  
