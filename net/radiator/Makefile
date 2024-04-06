@@ -1,5 +1,6 @@
 PORTNAME=	Radiator
 PORTVERSION=	4.24
+PORTREVISION=	1
 CATEGORIES=	net
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MASTER_SITES=	# fetch manually
@@ -18,6 +19,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 OPTIONS_DEFINE=	MYSQL
 MYSQL_DESC=	MySQL support
+MYSQL_USES=	mysql
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
@@ -36,7 +38,7 @@ IGNORE=		will not be automatically fetched due to licensing\
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
 .endif
 
 pre-configure:

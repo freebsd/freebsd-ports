@@ -1,5 +1,6 @@
 PORTNAME=	rt
 DISTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	50
@@ -84,6 +85,7 @@ SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:www/spawn-fcgi \
 				${FASTCGI_DEPS}
 
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
+MYSQL_USES=			mysql
 MYSQL_VARS=			DB_TYPE=mysql DB_DBA_USER=root
 
 PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}

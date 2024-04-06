@@ -1,5 +1,5 @@
 PORTNAME=	pandora_server
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
@@ -20,7 +20,7 @@ PANDORA_DEPS=	p5-DBI>=0:databases/p5-DBI \
 		p5-JSON>=0:converters/p5-JSON
 BUILD_DEPENDS=	${PANDORA_DEPS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
-		p5-DBD-mysql>=4:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		wmic:net-mgmt/wmi-client \
 		nmap:security/nmap \
 		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
@@ -34,7 +34,7 @@ XPROBE_DESC=	Install xprobe
 PGSQL_DESC=	Use PostgreSQL backend (experimental)
 EXTRAS_DESC=	Extra dependencies for util scripts
 
-USES=		perl5 shebangfix
+USES=		mysql perl5 shebangfix
 SHEBANG_FILES=	FreeBSD/pandora_server \
 		bin/pandora_server \
 		util/integrity_check \

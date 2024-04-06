@@ -1,7 +1,7 @@
 PORTNAME=	netdot
 PORTVERSION=	1.0.7
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	nick@foobar.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2 \
 		p5-Apache-AuthCookie>=0:www/p5-Apache-AuthCookie \
 		p5-Apache2-SiteControl>=1.0:www/p5-Apache2-SiteControl \
 		p5-URI>=0:net/p5-URI \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-SQL-Translator>=0.07:databases/p5-SQL-Translator \
 		p5-Class-DBI>=3.0.17:databases/p5-Class-DBI \
 		p5-Class-DBI-AbstractSearch>=0:databases/p5-Class-DBI-AbstractSearch \

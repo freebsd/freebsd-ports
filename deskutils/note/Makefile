@@ -1,5 +1,6 @@
 PORTNAME=	note
 DISTVERSION=	1.3.26
+PORTREVISION=	1
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/note/
 
@@ -19,8 +20,9 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=		EXAMPLES MYSQL PWSAFE3
 OPTIONS_DEFAULT=	BLOWFISH DES IDEA MYSQL PWSAFE3
 
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>0:databases/p5-DBD-mysql \
+MYSQL_RUN_DEPENDS=	${DBD_MYSQL} \
 			p5-DBI>0:databases/p5-DBI
+MYSQL_USES=		mysql
 
 PWSAFE3_DESC=		Password Safe v3 backend
 PWSAFE3_RUN_DEPENDS=	p5-Crypt-PWSafe3>0:security/p5-Crypt-PWSafe3

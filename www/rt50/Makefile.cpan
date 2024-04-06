@@ -280,7 +280,7 @@ MODPERL2_DEPS=	p5-libapreq2>0:www/p5-libapreq2 \
 ### --- MYSQL ---
 ### DBD::mysql 2.1018
 
-MYSQL_DEPS=	p5-DBD-mysql>=2.1018:databases/p5-DBD-mysql
+MYSQL_DEPS=	${DBD_MYSQL}
 
 ### --- PGSQL ---
 ### DBD::Pg 1.43

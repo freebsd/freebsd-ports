@@ -1,6 +1,6 @@
 PORTNAME=	amavisd-new
 DISTVERSION=	2.12.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -112,7 +112,8 @@ RUN_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
+USES+=		mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

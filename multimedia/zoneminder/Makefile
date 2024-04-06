@@ -1,6 +1,6 @@
 PORTNAME=	zoneminder
 DISTVERSION=	1.36.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -10,7 +10,7 @@ WWW=		https://www.zoneminder.com/
 LICENSE=	GPLv2
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Test-LWP-UserAgent>=0:www/p5-Test-LWP-UserAgent \
 		p5-Sys-Mmap>=0:devel/p5-Sys-Mmap \

@@ -33,7 +33,8 @@
 
      o If AUTH_SQL option is set, please, don't forget to install one of
        following perl modules depending on database you like:
-         databases/p5-DBD-mysql
+         databases/p5-DBD-mysql (MySQL)
+         databases/p5-DBD-mysql4 (MariaDB)
          databases/p5-DBD-Pg
          databases/p5-DBD-SQLite
 

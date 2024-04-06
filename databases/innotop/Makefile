@@ -1,5 +1,6 @@
 PORTNAME=	innotop
 PORTVERSION=	1.13.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/innotop/innotop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+BUILD_DEPENDS=	${DBD_MYSQL} \
 		p5-DBI>=1.46:databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey \
 		p5-Time-HiRes>0:devel/p5-Time-HiRes \

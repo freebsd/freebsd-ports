@@ -19,6 +19,9 @@
 # MYSQL_VER
 #		Detected MySQL version.
 #
+# DBD_MYSQL
+#		Set compatible p5-DBD-mysql version
+#
 # MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_MYSQL_MK)
@@ -141,5 +144,11 @@ LIB_DEPENDS+=	${_MYSQL_SHLIB}.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
 .  else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 .  endif # Check for correct libs
+
+.  if ${MYSQL_FLAVOUR} == mariadb
+DBD_MYSQL=	p5-DBD-mysql4>=0:databases/p5-DBD-mysql4
+.  else
+DBD_MYSQL=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+.  endif
 
 .endif

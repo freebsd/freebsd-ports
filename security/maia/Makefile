@@ -1,6 +1,6 @@
 PORTNAME=	maia
 DISTVERSION=	1.0.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security
 
 MAINTAINER=	ek@purplehat.org
@@ -133,12 +133,12 @@ PLIST_SUB+=	WEBHOST="@comment "
 
 .if ${PORT_OPTIONS:MMYSQL} && ${PORT_OPTIONS:MLOCAL}
 USES+=		mysql:server,client
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MLOCAL}
 USES+=	mysql:client
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} && ${PORT_OPTIONS:MWEBHOST}

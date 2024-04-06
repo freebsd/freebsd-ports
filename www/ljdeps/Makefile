@@ -1,6 +1,6 @@
 PORTNAME=	ljdeps
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,11 +20,11 @@ RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-GD-Graph>=0:graphics/p5-GD-Graph \
 		p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil \
 		p5-Data-ShowTable>=0:devel/p5-Data-ShowTable \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-Proc-ProcessTable>=0:devel/p5-Proc-ProcessTable \
 		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
 		p5-Unicode-MapUTF8>=0:converters/p5-Unicode-MapUTF8
 
-USES=		metaport perl5
+USES=		metaport mysql perl5
 
 .include <bsd.port.mk>

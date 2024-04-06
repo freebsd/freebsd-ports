@@ -1,5 +1,6 @@
 PORTNAME=	ocsinventory-server
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-med.fr
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-XML-Simple>=2.12:textproc/p5-XML-Simple \
 		p5-DBI>=1.40:databases/p5-DBI \
-		p5-DBD-mysql>=2.9004:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-Apache-DBI>=0.93:www/p5-Apache-DBI \
 		p5-Net-IP>=1.21:net-mgmt/p5-Net-IP \
 		p5-SOAP-Lite>=0.66:net/p5-SOAP-Lite \

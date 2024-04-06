@@ -1,5 +1,6 @@
 PORTNAME=	percona-toolkit
 DISTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/source/tarball/
 
@@ -11,12 +12,12 @@ LICENSE=	ARTPERL10 GPLv2
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	bash:shells/bash \
-		p5-DBD-mysql>=3:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-DBI>=1.46:databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey \
 		pidof:sysutils/pidof
 
-USES=		perl5 shebangfix
+USES=		mysql perl5 shebangfix
 USE_PERL5=	configure
 
 SHEBANG_FILES=	bin/pt-*

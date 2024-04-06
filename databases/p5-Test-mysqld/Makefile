@@ -1,5 +1,6 @@
 PORTNAME=	Test-mysqld
 PORTVERSION=	1.0013
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor-Lite>=0:devel/p5-Class-Accessor-Lite \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive
 TEST_DEPENDS=	p5-Test-SharedFork>=0:devel/p5-Test-SharedFork
 
-USES=		perl5
+USES=		mysql perl5
 USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes

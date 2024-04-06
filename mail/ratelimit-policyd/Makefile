@@ -1,5 +1,6 @@
 PORTNAME=	ratelimit-policyd
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	000.fbsd@quip.cz
@@ -8,13 +9,13 @@ WWW=		https://github.com/MirLach/ratelimit-policyd
 
 LICENSE=	NONE
 
-USES+=		perl5 shebangfix
+USES+=		mysql perl5 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MirLach
 #GH_TAGNAME=	65154a2
 
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
 
 SHEBANG_FILES=	ratelimit-policyd.pl
 
