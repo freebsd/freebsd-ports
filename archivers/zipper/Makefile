@@ -5,7 +5,7 @@ CATEGORIES=	archivers gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Zipper-${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for inspecting the contents of a compressed archive
 WWW=		http://gap.nongnu.org/zipper/
 
