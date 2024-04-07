@@ -1,5 +1,5 @@
 PORTNAME=	rapidfuzz
-DISTVERSION=	3.7.0
+DISTVERSION=	3.8.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/rapidfuzz/RapidFuzz/issues/372
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
