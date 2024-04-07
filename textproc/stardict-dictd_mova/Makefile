@@ -9,6 +9,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
 WWW=		https://stardict.sourceforge.net/
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		tar:bzip2
