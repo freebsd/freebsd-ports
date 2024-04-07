@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -160,7 +160,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.22.9 \
-		tui-prompts-0.3.8 \
+		tui-prompts-0.3.10 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
