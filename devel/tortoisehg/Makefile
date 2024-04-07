@@ -1,5 +1,5 @@
 PORTNAME=	tortoisehg
-DISTVERSION=	6.5.1
+DISTVERSION=	6.6.3
 CATEGORIES=	devel
 MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
