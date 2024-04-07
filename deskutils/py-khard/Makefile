@@ -1,6 +1,5 @@
 PORTNAME=	khard
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.19.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,14 +17,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=0.1.7:devel/py-atomicwrites@${
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0.04.21:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vdirsyncer>=0:deskutils/py-vdirsyncer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.9.5:deskutils/py-vobject@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-autoapi>0:textproc/py-sphinx-autoapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx-autodoc-typehints>0:textproc/py-sphinx-autodoc-typehints@${PY_FLAVOR} \
-		${RUN_DEPENDS}
+		${PYTHON_PKGNAMEPREFIX}sphinx-autodoc-typehints>0:textproc/py-sphinx-autodoc-typehints@${PY_FLAVOR}
 
 USES=		python gmake
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 PLIST_FILES=	share/zsh/site-functions/_khard \
@@ -43,7 +43,7 @@ post-patch:
 		-e 's|sphinx-apidoc|${LOCALBASE}/bin/sphinx-apidoc-${PYTHON_VER}|g' \
 		${WRKSRC}/doc/Makefile
 
-do-build:
+pre-build:
 	(cd ${WRKSRC}/doc && ${MAKE_CMD} man)
 
 post-install:
