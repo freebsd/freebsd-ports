@@ -1,6 +1,5 @@
 PORTNAME=	zathura
-DISTVERSION=	0.5.2
-PORTREVISION=	3
+DISTVERSION=	0.5.4
 CATEGORIES=	graphics print
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -11,19 +10,21 @@ WWW=		https://pwmt.org/projects/zathura/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.2,1:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
-LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libgirara-gtk3.so:x11-toolkits/girara \
-		libsynctex.so:devel/tex-synctex
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libgirara-gtk3.so:x11-toolkits/girara
 
 USES=		compiler:c11 desktop-file-utils gettext-tools:build gnome meson \
 		ninja pkgconfig python
-USE_GNOME=	gdkpixbuf2 glib20 gtk30
-MESON_ARGS=	-Dseccomp=disabled -Dtests=disabled
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+MESON_ARGS=	-Dseccomp=disabled -Dtests=disabled -Dmanpages=disabled
 
-OPTIONS_DEFINE=		SQLITE SYNCTEX
-OPTIONS_DEFAULT=	SQLITE SYNCTEX
+OPTIONS_DEFINE=		MANPAGES SQLITE SYNCTEX
+OPTIONS_DEFAULT=	MANPAGES SQLITE SYNCTEX
+OPTIONS_SUB=		yes
+
+MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.2,1:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
+MANPAGES_MESON_ENABLED=	manpages
 
 SQLITE_USES=		sqlite
 SQLITE_MESON_ENABLED=	sqlite
