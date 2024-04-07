@@ -1,5 +1,5 @@
 PORTNAME=	webargs
-DISTVERSION=	8.3.0
+DISTVERSION=	8.4.0
 CATEGORIES=	www devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/marshmallow-code/webargs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>2.15.2:devel/py-marshmallow@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>2.15.2:devel/py-marshmallow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}falcon>=2.0:www/py-falcon@${PY_FLAVOR} \
@@ -25,15 +26,12 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes # tests not packaged with PyPI sdist
 GH_ACCOUNT=	marshmallow-code
 USE_PYTHON=	autoplist concurrent distutils pytest
+TEST_ARGS=	--ignore-glob='*test_bottleparser*' \
+		--ignore-glob='*test_aiohttpparser*' \
+		--ignore-glob='*test_tornadoparser*'
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts= \
-		--ignore-glob='*test_bottleparser*' \
-		--ignore-glob='*test_aiohttpparser*' \
-		--ignore-glob="*test_tornadoparser*"
 
 .include <bsd.port.mk>
