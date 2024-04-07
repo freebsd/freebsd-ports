@@ -14,6 +14,9 @@ WWW=		https://www.firestuff.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
+DEPRECATED=	Abandonware, upstream is gone and last release in 2004 and it also depends on unfetchable misc/firestring. Consider dns/c-ares
+EXPIRATION_DATE=2024-04-30
+
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring
 
 USES=		tar:bzip2
