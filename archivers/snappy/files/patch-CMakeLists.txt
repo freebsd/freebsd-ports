@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2023-03-08 23:44:00 UTC
+--- CMakeLists.txt.orig	2024-04-04 19:04:38 UTC
 +++ CMakeLists.txt
-@@ -78,8 +78,10 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+@@ -27,7 +27,7 @@ cmake_minimum_required(VERSION 3.1)
+ # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ cmake_minimum_required(VERSION 3.1)
+-project(Snappy VERSION 1.1.10 LANGUAGES C CXX)
++project(Snappy VERSION 1.2.0 LANGUAGES C CXX)
+ 
+ # C++ standard can be overridden when this is used as a sub-project.
+ if(NOT CMAKE_CXX_STANDARD)
+@@ -83,8 +83,10 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
  
    # Disable RTTI.
@@ -13,7 +22,7 @@
  endif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
  
  # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
-@@ -235,8 +237,7 @@ configure_file(
+@@ -248,8 +250,7 @@ configure_file(
    "snappy-stubs-public.h.in"
    "${PROJECT_BINARY_DIR}/snappy-stubs-public.h")
  
@@ -23,7 +32,7 @@
    PRIVATE
      "snappy-internal.h"
      "snappy-stubs-internal.h"
-@@ -257,20 +258,35 @@ target_sources(snappy
+@@ -270,20 +271,35 @@ target_sources(snappy
      $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/snappy-stubs-public.h>
      $<INSTALL_INTERFACE:include/snappy-stubs-public.h>
  )
@@ -63,7 +72,7 @@
  if(SNAPPY_BUILD_TESTS OR SNAPPY_BUILD_BENCHMARKS)
    add_library(snappy_test_support "")
    target_sources(snappy_test_support
-@@ -381,7 +397,7 @@ endif(SNAPPY_FUZZING_BUILD)
+@@ -399,7 +415,7 @@ if(SNAPPY_INSTALL)
  include(GNUInstallDirs)
  
  if(SNAPPY_INSTALL)
