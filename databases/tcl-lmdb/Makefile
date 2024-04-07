@@ -1,27 +1,24 @@
 PORTNAME=	tcl-lmdb
-PORTVERSION=	0.4.3
+DISTVERSION=	0.4.3
 PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Tcl interface to the Lightning Memory-Mapped Database
-WWW=		https://sites.google.com/site/ray2501/tcl-lmdb
+WWW=		https://github.com/ray2501/tcl-lmdb
 
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
-USES=		gmake tcl:tea
+USES=		gmake localbase:ldflags tcl:tea
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ray2501
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-system-lmdb
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-system-lmdb
 
 TEST_TARGET=	test
 
