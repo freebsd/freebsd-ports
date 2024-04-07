@@ -5,7 +5,7 @@ CATEGORIES=	audio gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	MPDCon-${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPD client for GNUstep
 WWW=		https://gap.nongnu.org/mpdcon/
 
