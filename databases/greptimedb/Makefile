@@ -1,6 +1,6 @@
 PORTNAME=	greptimedb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://greptime.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		error[E0635]: unknown feature `stdsimd`, see https://github.com/GreptimeTeam/greptimedb/issues/3656
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		protoc:devel/protobuf \
@@ -27,6 +29,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		addr2line-0.21.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
+		aes-0.8.4 \
 		ahash-0.7.7 \
 		ahash-0.8.6 \
 		aho-corasick-1.1.2 \
@@ -48,6 +51,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		approx-0.5.1 \
 		approx_eq-0.1.8 \
 		aquamarine-0.3.3 \
+		arbitrary-1.3.2 \
 		arc-swap-1.6.0 \
 		array-init-2.1.0 \
 		arrayref-0.3.7 \
@@ -70,7 +74,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ascii-1.1.0 \
 		ascii-canvas-3.0.0 \
 		async-channel-1.9.0 \
-		async-compat-0.2.3 \
 		async-compression-0.3.15 \
 		async-compression-0.4.5 \
 		async-lock-2.8.0 \
@@ -94,10 +97,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		backtrace-0.3.69 \
 		base64-0.13.1 \
 		base64-0.21.5 \
+		base64-0.22.0 \
 		base64ct-1.6.0 \
 		bcder-0.7.3 \
 		bigdecimal-0.4.2 \
-		bimap-0.6.3 \
 		bincode-1.3.3 \
 		bindgen-0.69.1 \
 		bit-set-0.5.3 \
@@ -108,6 +111,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		blake2-0.10.6 \
 		blake3-1.5.0 \
 		block-buffer-0.10.4 \
+		block-padding-0.3.3 \
 		borsh-1.3.0 \
 		borsh-derive-1.3.0 \
 		brotli-3.4.0 \
@@ -132,6 +136,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cargo_metadata-0.14.2 \
 		caseless-0.2.1 \
 		cast-0.3.0 \
+		cbc-0.1.2 \
 		cc-1.0.83 \
 		cc-traits-2.0.0 \
 		cesu8-1.1.0 \
@@ -141,14 +146,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cfg_aliases-0.1.1 \
 		cfgrammar-0.12.0 \
 		chrono-0.4.33 \
-		chrono-tz-0.6.3 \
 		chrono-tz-0.8.4 \
-		chrono-tz-build-0.0.3 \
 		chrono-tz-build-0.2.1 \
 		chunked_transfer-1.5.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
+		cipher-0.4.4 \
 		clang-sys-1.6.1 \
 		clap-2.34.0 \
 		clap-3.2.25 \
@@ -208,6 +212,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deranged-0.3.10 \
 		derive-new-0.5.9 \
 		derive-new-0.6.0 \
+		derive_arbitrary-1.3.2 \
 		derive_builder-0.11.2 \
 		derive_builder-0.12.0 \
 		derive_builder_core-0.11.2 \
@@ -293,7 +298,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		gimli-0.28.1 \
 		git2-0.18.1 \
 		glob-0.3.1 \
-		h2-0.3.24 \
+		h2-0.3.26 \
 		half-1.8.2 \
 		half-2.3.1 \
 		hashbrown-0.12.3 \
@@ -343,13 +348,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		inferno-0.11.19 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
+		inout-0.1.3 \
 		instant-0.1.12 \
 		integer-encoding-3.0.4 \
 		integer-encoding-4.0.0 \
 		inventory-0.3.14 \
 		io-lifetimes-1.0.11 \
 		ipnet-2.9.0 \
-		iri-string-0.4.1 \
+		iri-string-0.7.0 \
 		is-macro-0.2.2 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
@@ -377,7 +383,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.151 \
+		libc-0.2.153 \
+		libfuzzer-sys-0.4.7 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libloading-0.7.4 \
 		libm-0.2.8 \
@@ -464,7 +471,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		object_store-0.7.1 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		opendal-0.44.2 \
+		opendal-0.45.1 \
 		openmetrics-parser-0.4.4 \
 		opensrv-mysql-0.7.0 \
 		openssl-probe-0.1.5 \
@@ -495,17 +502,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		paste-1.0.14 \
 		path-slash-0.2.1 \
 		pathdiff-0.2.1 \
+		pbkdf2-0.12.2 \
 		peeking_take_while-0.1.2 \
 		pem-3.0.3 \
 		pem-rfc7468-0.3.1 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.1 \
+		permutation-0.4.1 \
 		pest-2.7.5 \
 		pest_derive-2.7.5 \
 		pest_generator-2.7.5 \
 		pest_meta-2.7.5 \
 		petgraph-0.6.4 \
-		pgwire-0.19.1 \
+		pgwire-0.20.0 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
@@ -517,6 +526,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-utils-0.1.0 \
 		pkcs1-0.3.3 \
 		pkcs1-0.7.5 \
+		pkcs5-0.7.1 \
 		pkcs8-0.8.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.28 \
@@ -571,7 +581,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pyo3-macros-backend-0.19.2 \
 		quanta-0.11.1 \
 		quick-xml-0.26.0 \
-		quick-xml-0.30.0 \
 		quick-xml-0.31.0 \
 		quote-1.0.33 \
 		radium-0.7.0 \
@@ -593,14 +602,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ref-cast-impl-1.0.21 \
 		regex-1.10.2 \
 		regex-automata-0.1.10 \
-		regex-automata-0.2.0 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.7.5 \
 		regex-syntax-0.8.2 \
 		regress-0.7.1 \
 		rend-0.4.1 \
-		reqsign-0.14.6 \
+		reqsign-0.14.9 \
 		reqwest-0.11.23 \
 		result-like-0.4.6 \
 		result-like-derive-0.4.6 \
@@ -652,12 +660,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		safe-regex-compiler-0.2.5 \
 		safe-regex-macro-0.2.5 \
 		safe_arch-0.7.1 \
+		salsa20-0.10.2 \
 		same-file-1.0.6 \
 		saturating-0.1.0 \
 		schannel-0.1.22 \
 		schemars-0.8.16 \
 		schemars_derive-0.8.16 \
 		scopeguard-1.2.0 \
+		scrypt-0.11.0 \
 		sct-0.7.1 \
 		seahash-4.1.0 \
 		sealed-0.5.0 \
@@ -798,14 +808,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tonic-build-0.10.2 \
 		tonic-reflection-0.10.2 \
 		tower-0.4.13 \
-		tower-http-0.3.5 \
+		tower-http-0.4.4 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-appender-0.2.3 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
-		tracing-futures-0.2.5 \
 		tracing-log-0.1.4 \
 		tracing-log-0.2.0 \
 		tracing-opentelemetry-0.22.0 \
@@ -830,7 +839,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ucd-0.1.1 \
 		ucd-trie-0.1.6 \
 		uname-0.1.1 \
-		uncased-0.9.9 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
@@ -873,6 +881,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		walkdir-2.4.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasite-0.1.0 \
 		wasm-bindgen-0.2.89 \
 		wasm-bindgen-backend-0.2.89 \
 		wasm-bindgen-futures-0.4.39 \
@@ -887,7 +896,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		webpki-roots-0.22.6 \
 		webpki-roots-0.25.3 \
 		which-4.4.2 \
-		whoami-1.4.1 \
+		whoami-1.5.1 \
 		wide-0.7.13 \
 		widestring-0.5.1 \
 		winapi-0.3.9 \
@@ -950,7 +959,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zstd-safe-6.0.6 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5 \
-		greptime-proto@git+https://github.com/GreptimeTeam/greptime-proto.git?rev=96f1f0404f421ee560a4310c73c5071e49168168\#96f1f0404f421ee560a4310c73c5071e49168168 \
 		meter-core,meter-macros@git+https://github.com/GreptimeTeam/greptime-meter.git?rev=80b72716dcde47ec4161478416a5c6c21343364d\#80b72716dcde47ec4161478416a5c6c21343364d \
 		sqlparser,sqlparser_derive@git+https://github.com/GreptimeTeam/sqlparser-rs.git?rev=6a93567ae38d42be5c8d08b13c8ff4dde26502ef\#6a93567ae38d42be5c8d08b13c8ff4dde26502ef \
 		datafusion,datafusion-common,datafusion-execution,datafusion-expr,datafusion-optimizer,datafusion-physical-expr,datafusion-physical-plan,datafusion-sql,datafusion-substrait@git+https://github.com/apache/arrow-datafusion.git?rev=26e43acac3a96cec8dd4c8365f22dfb1a84306e9\#26e43acac3a96cec8dd4c8365f22dfb1a84306e9 \
@@ -958,7 +966,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustpython-doc@git+https://github.com/RustPython/__doc__?branch=main\#8b62ce5d796d68a091969c9fa5406276cb483f79 \
 		rustpython-ast,rustpython-codegen,rustpython-common,rustpython-compiler,rustpython-compiler-core,rustpython-derive,rustpython-derive-impl,rustpython-parser,rustpython-pylib,rustpython-stdlib,rustpython-vm@git+https://github.com/discord9/RustPython?rev=9ed5137412\#9ed51374125b5f1a9e5cee5dd7e27023b8591f1e \
 		unicode_names2@git+https://github.com/youknowone/unicode_names2.git?rev=4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde\#4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde \
-		opentelemetry,opentelemetry-proto,opentelemetry_sdk@git+https://github.com/waynexia/opentelemetry-rust.git?rev=33841b38dda79b15f2024952be5f32533325ca02\#33841b38dda79b15f2024952be5f32533325ca02
+		opentelemetry,opentelemetry-proto,opentelemetry_sdk@git+https://github.com/waynexia/opentelemetry-rust.git?rev=33841b38dda79b15f2024952be5f32533325ca02\#33841b38dda79b15f2024952be5f32533325ca02 \
+		greptime-proto@git+https://github.com/GreptimeTeam/greptime-proto.git?rev=06f6297ff3cab578a1589741b504342fbad70453\#06f6297ff3cab578a1589741b504342fbad70453
 
 USER=		nobody
 GROUP=		nobody
