@@ -1,4 +1,4 @@
---- src/slic3r/GUI/Tab.cpp.orig	2024-02-29 13:03:32 UTC
+--- src/slic3r/GUI/Tab.cpp.orig	2024-04-05 09:25:31 UTC
 +++ src/slic3r/GUI/Tab.cpp
 @@ -279,7 +279,7 @@ void Tab::create_preset_tab()
          // Don't set the 2nd parameter to 1, making the sizer rubbery scalable in Y axis may lead 
@@ -27,7 +27,7 @@
          // Events queue is opposite On Linux. wxEVT_SET_FOCUS invokes after wxEVT_TREE_SEL_CHANGED,
          // and a result wxEVT_KILL_FOCUS doesn't invoke for the TextCtrls.
          // see https://github.com/prusa3d/PrusaSlicer/issues/5720
-@@ -3694,7 +3694,7 @@ void Tab::load_current_preset()
+@@ -3700,7 +3700,7 @@ void Tab::load_current_preset()
                          else
  #endif
                              wxGetApp().tab_panel()->InsertPage(wxGetApp().tab_panel()->FindPage(this), tab, tab->title());
@@ -36,7 +36,7 @@
                              int page_id = wxGetApp().tab_panel()->FindPage(tab);
                              wxGetApp().tab_panel()->GetPage(page_id)->Show(true);
                          #endif // __linux__
-@@ -4115,7 +4115,7 @@ bool Tab::tree_sel_change_delayed()
+@@ -4121,7 +4121,7 @@ bool Tab::tree_sel_change_delayed()
      // There is a bug related to Ubuntu overlay scrollbars, see https://github.com/prusa3d/PrusaSlicer/issues/898 and https://github.com/prusa3d/PrusaSlicer/issues/952.
      // The issue apparently manifests when Show()ing a window with overlay scrollbars while the UI is frozen. For this reason,
      // we will Thaw the UI prematurely on Linux. This means destroing the no_updates object prematurely.
@@ -45,7 +45,7 @@
      std::unique_ptr<wxWindowUpdateLocker> no_updates(new wxWindowUpdateLocker(this));
  #else
      /* On Windows we use DoubleBuffering during rendering,
-@@ -4161,7 +4161,7 @@ bool Tab::tree_sel_change_delayed()
+@@ -4167,7 +4167,7 @@ bool Tab::tree_sel_change_delayed()
          if (wxGetApp().mainframe!=nullptr && wxGetApp().mainframe->is_active_and_shown_tab(this))
              activate_selected_page(throw_if_canceled);
  

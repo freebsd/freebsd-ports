@@ -1,4 +1,4 @@
---- src/slic3r/GUI/GUI_App.cpp.orig	2024-02-29 13:03:32 UTC
+--- src/slic3r/GUI/GUI_App.cpp.orig	2024-04-05 09:25:31 UTC
 +++ src/slic3r/GUI/GUI_App.cpp
 @@ -403,7 +403,7 @@ class SplashScreen : public wxSplashScreen (private)
  };
@@ -108,7 +108,7 @@
          case ConfigMenuDesktopIntegration:
              show_desktop_integration_dialog();
              break;
-@@ -3155,7 +3157,7 @@ void GUI_App::show_desktop_integration_dialog()
+@@ -3149,7 +3151,7 @@ void GUI_App::show_desktop_integration_dialog()
  
  void GUI_App::show_desktop_integration_dialog()
  {
@@ -117,12 +117,12 @@
      //wxCHECK_MSG(mainframe != nullptr, false, "Internal error: Main frame not created / null");
      DesktopIntegrationDialog dialog(mainframe);
      dialog.ShowModal();
-@@ -3175,7 +3177,7 @@ void GUI_App::show_downloader_registration_dialog()
+@@ -3169,7 +3171,7 @@ void GUI_App::show_downloader_registration_dialog()
      if (msg.ShowModal() == wxID_YES) {
          auto downloader_worker = new DownloaderUtils::Worker(nullptr);
          downloader_worker->perform_register(app_config->get("url_downloader_dest"));
--#ifdef __linux__
-+#if defined(__linux__) || defined(__FreeBSD__)
+-#if defined(__linux__) && defined(SLIC3R_DESKTOP_INTEGRATION) 
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(SLIC3R_DESKTOP_INTEGRATION) 
          if (downloader_worker->get_perform_registration_linux())
              DesktopIntegrationDialog::perform_downloader_desktop_integration();
- #endif // __linux__
+ #endif //(__linux__) && defined(SLIC3R_DESKTOP_INTEGRATION)
