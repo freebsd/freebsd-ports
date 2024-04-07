@@ -30,6 +30,8 @@ MAKE_ARGS=	MPIFC=${MPIFC} \
 		MPI_HOME=${MPI_HOME} \
 		MPI_LIBS="${MPI_LIBS}"
 
+MAKE_JOBS_UNSAFE=	yes # parallel build fails, see https://github.com/times-software/OCEAN/issues/327
+
 BINARY_ALIAS=	make=${GMAKE}
 
 OPTIONS_SINGLE=		MPI
