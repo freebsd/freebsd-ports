@@ -19,6 +19,7 @@ include/libgig/RIFF.h
 include/libgig/SF.h
 include/libgig/Serialization.h
 include/libgig/gig.h
+include/libgig/sysdef.h
 lib/libgig/libakai.a
 lib/libgig/libakai.so
 lib/libgig/libakai.so.0
