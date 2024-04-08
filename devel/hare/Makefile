@@ -1,8 +1,8 @@
 PORTNAME=	hare
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
-#		https://git.sr.ht/~sircmpwn/hare/archive/0.24.0.tar.gz
 PKGNAMESUFFIX=	-lang
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	hare
@@ -24,11 +24,8 @@ RUN_DEPENDS=	harec:lang/harec
 
 MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/} \
 		DESTDIR=${STAGEDIR} \
+		HARECACHE=${WRKDIR}/.cache/hare \
 		PREFIX=${PREFIX}
-
-#		HARECACHE=${WRKDIR}/.cache/hare \
-#		HARECFLAGS="-a x86_64" \
-
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 
