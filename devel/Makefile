@@ -4821,6 +4821,7 @@
     SUBDIR += py-gtfslib
     SUBDIR += py-guppy3
     SUBDIR += py-gyp
+    SUBDIR += py-hacking
     SUBDIR += py-hammett
     SUBDIR += py-hash_ring
     SUBDIR += py-hatch
