@@ -119,6 +119,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_repomanage
 %%DATADIR%%/completions/_reptyr
 %%DATADIR%%/completions/_rfkill
+%%DATADIR%%/completions/_rg
 %%DATADIR%%/completions/_rtcwake
 %%DATADIR%%/completions/_ruff
 %%DATADIR%%/completions/_runuser
