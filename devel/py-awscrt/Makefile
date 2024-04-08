@@ -1,5 +1,6 @@
 PORTNAME=	awscrt
 PORTVERSION=	0.19.19
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +12,12 @@ WWW=		https://github.com/awslabs/aws-crt-python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python ssl
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 MAKE_ENV=	AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO=1
 
