@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20240408:
+AUTHOR: makc@FreeBSD.org
+
+  USES=cmake now supports `indirect' argument. This argument adds cmake binary
+  to the BUILD_DEPENDS and and exposes CMAKE_ARGS and some other helpers, but
+  does not run cmake in the configure step. cmake:indirect is intended
+  primarily for ports which use meson or pep517 for build.
+
 20240229:
 AUTHOR: tijl@FreeBSD.org
 

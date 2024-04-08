@@ -2,9 +2,12 @@
 #
 # Feature:		cmake
 # Usage:		USES=cmake or USES=cmake:ARGS
-# Valid ARGS:		insource, run, noninja, testing
+# Valid ARGS:		insource, indirect, noninja, run, testing
 # ARGS description:
 # insource		do not perform an out-of-source build
+# indirect		do not run cmake for configure step, only add build dependency.
+#			This should be set only for ports which use other build systems,
+#			e.g. pep517 or meson, but rely internally on cmake.
 # noninja		don't use ninja instead of make
 #			Setting this should be an exception, and hints to an issue
 #			inside the ports build system.
@@ -31,6 +34,7 @@
 # CMAKE_OFF		Appends -D<var>:bool=OFF to the CMAKE_ARGS.
 # CMAKE_ARGS		- Arguments passed to cmake
 #			Default: see below
+# Variables for ports which use cmake for configure
 # CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types).
 #			Projects may have their own build profiles.
 #			CMake supports the following types: Debug,
@@ -38,19 +42,28 @@
 #			Debug and Release profiles respect system
 #			CFLAGS, RelWithDebInfo and MinSizeRel will set
 #			CFLAGS to "-O2 -g" and "-Os -DNDEBUG".
-#			Default: Release, if WITH_DEBUG is not set,
-#			Debug otherwise
+#			Default: Release, if neither WITH_DEBUG nor WITH_DEBUGINFO is set,
+#			RelWithDebInfo, if WITH_DEBUGINFO is set,
+#			Debug, if WITH_DEBUG is set.
 # CMAKE_SOURCE_PATH	- Path to the source directory
 #			Default: ${WRKSRC}
+# Variables for ports which use cmake for testing
+# CMAKE_TESTING_ARGS	- Additional arguments passed to cmake on test target.
+# CMAKE_TESTING_ON	Appends -D<var>:bool=ON  to the CMAKE_TESTING_ARGS.
+#			Default: BUILD_TESTING
+# CMAKE_TESTING_OFF	Appends -D<var>:bool=OFF to the CMAKE_TESTING_ARGS.
+#			Default: empty
+# CMAKE_TESTING_TARGET	- Name of the test target. Default: test
 #
 # MAINTAINER: kde@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CMAKE_MK)
 _INCLUDE_USES_CMAKE_MK=	yes
 
-_valid_ARGS=		insource run noninja testing _internal
+_valid_ARGS=		insource indirect noninja run testing _internal
 
 _CMAKE_VERSION=		3.28.3
+CMAKE_BIN=		${LOCALBASE}/bin/cmake
 
 # Sanity check
 .  for arg in ${cmake_ARGS}
@@ -59,12 +72,14 @@ IGNORE=	Incorrect 'USES+= cmake:${cmake_ARGS}' usage: argument [${arg}] is not r
 .    endif
 .  endfor
 
-# Check whehter other flags than only '_internal' are passed (this should be equivalent to PORT = devel/cmake-core
-.  if ${cmake_ARGS} != _internal
-CMAKE_BIN=		${LOCALBASE}/bin/cmake
+.  if !empty(cmake_ARGS:M_internal)
+# _internal is intended only for devel/cmake-core
+MASTER_SITES?=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}/ \
+		https://www.cmake.org/files/v${DISTVERSION}/
+.  else
 BUILD_DEPENDS+=		${CMAKE_BIN}:devel/cmake-core
 
-.    if ${cmake_ARGS:Mrun}
+.    if !empty(cmake_ARGS:Mrun)
 RUN_DEPENDS+=		${CMAKE_BIN}:devel/cmake-core
 .    endif
 
@@ -75,12 +90,6 @@ CMAKE_BUILD_TYPE?=	RelWithDebInfo
 .    else
 CMAKE_BUILD_TYPE?=	Release
 .    endif #defined(WITH_DEBUG)
-
-PLIST_SUB+=		CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:tl}"
-
-.    if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG) && !defined(WITH_DEBUGINFO)
-INSTALL_TARGET?=	install/strip
-.    endif
 
 CMAKE_ARGS+=		-DCMAKE_C_COMPILER:STRING="${CC}" \
 			-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
@@ -116,6 +125,17 @@ CMAKE_NOCOLOR=		yes
 .    if defined(CMAKE_NOCOLOR)
 CMAKE_ARGS+=		-DCMAKE_COLOR_MAKEFILE:BOOL=OFF
 .    endif
+.  endif
+
+.  if empty(cmake_ARGS:Mindirect)
+.    if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG) && !defined(WITH_DEBUGINFO)
+INSTALL_TARGET?=	install/strip
+.    endif
+.  endif
+
+# Use cmake for configure stage and for testing
+.  if empty(cmake_ARGS:M_internal) && empty(cmake_ARGS:Mindirect)
+PLIST_SUB+=		CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:tl}"
 
 _CMAKE_MSG=		"===>  Performing in-source build"
 CMAKE_SOURCE_PATH?=	${WRKSRC}
@@ -174,12 +194,6 @@ do-test:
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${CMAKE_TESTING_TARGET}
 .    endif
-.  endif
-
-.  if !empty(cmake_ARGS:M_internal)
-MASTER_SITES?=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}/ \
-		https://www.cmake.org/files/v${DISTVERSION}/
-
 .  endif
 
 .endif #!defined(_INCLUDE_USES_CMAKE_MK)
