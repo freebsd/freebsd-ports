@@ -1,7 +1,6 @@
 PORTNAME=	kdisplay
-DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.27.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	6.0.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,21 +12,16 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL
 
-BROKEN=		fails to build with disman 0.600
-
 LIB_DEPENDS=	libdisman.so:x11/disman
-TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
-USES=		cmake:testing kde:5 qt:5
+USES=		cmake:testing gettext-tools kde:6 qt:6
 USE_GITHUB=	yes
 USE_KDE=	ecm:build config coreaddons dbusaddons globalaccel i18n \
-		kcmutils kdeclarative plasma-framework xmlgui
+		kcmutils layer-shell-qt libplasma windowsystem xmlgui
 USE_LDCONFIG=	yes
-USE_QT=		qmake:build buildtools:build core dbus declarative gui \
-		sensors widgets
+USE_QT=		base declarative sensors
 GH_ACCOUNT=	winft
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/@/-/}
 PLIST_SUB=	VERSION=${PORTVERSION}
-LDFLAGS+=	-Wl,--as-needed # Qt5*, KF5*
+LDFLAGS+=	-Wl,--as-needed # X11, GL, KF6*
 
 .include <bsd.port.mk>
