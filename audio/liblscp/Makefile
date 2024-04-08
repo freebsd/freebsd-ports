@@ -1,5 +1,5 @@
 PORTNAME=	liblscp
-DISTVERSION=	0.9.11
+DISTVERSION=	0.9.12
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/
