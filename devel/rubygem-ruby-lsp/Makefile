@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-language_server-protocol>=3.17.0<3.18:devel/rubygem-language_server-protocol \
-		rubygem-prism>=0.22.0<0.25:textproc/rubygem-prism \
+		rubygem-prism>=0.22.0<0.26:textproc/rubygem-prism \
 		rubygem-sorbet-runtime>=0.5.10782:devel/rubygem-sorbet-runtime
 
 USES=		gem

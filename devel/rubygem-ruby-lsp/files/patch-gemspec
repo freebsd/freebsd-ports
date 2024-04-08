@@ -1,0 +1,11 @@
+--- ruby-lsp.gemspec.orig	2024-04-06 18:29:06 UTC
++++ ruby-lsp.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<language_server-protocol>.freeze, ["~> 3.17.0".freeze])
+-  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.22.0".freeze, "< 0.25".freeze])
++  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.22.0".freeze, "< 0.26".freeze])
+   s.add_runtime_dependency(%q<sorbet-runtime>.freeze, [">= 0.5.10782".freeze])
+ end
+ 
