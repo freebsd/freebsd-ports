@@ -615,7 +615,6 @@
     SUBDIR += unclutter-xfixes
     SUBDIR += unicode-emoji
     SUBDIR += upclient
-    SUBDIR += urbit
     SUBDIR += urh
     SUBDIR += usbids
     SUBDIR += usbrh-libusb
