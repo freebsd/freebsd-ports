@@ -6,7 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	App and daemon for display managing
-WWW=		https://gitlab.com/kwinft/kdisplay
+WWW=		https://github.com/winft/kdisplay
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
@@ -17,13 +17,14 @@ LIB_DEPENDS=	libdisman.so:x11/disman
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
 USES=		cmake:testing kde:5 qt:5
-USE_GITLAB=	yes
+USE_GITHUB=	yes
 USE_KDE=	ecm:build config coreaddons dbusaddons globalaccel i18n \
 		kcmutils kdeclarative plasma-framework xmlgui
 USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		sensors widgets
-GL_ACCOUNT=	kwinft
+GH_ACCOUNT=	winft
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/@/-/}
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # Qt5*, KF5*
 
