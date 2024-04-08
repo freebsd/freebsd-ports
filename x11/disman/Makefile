@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
-USES=		cmake:testing kde:5 qt:5
+USES=		cmake:testing kde:5 pathfix qt:5
 USE_GITLAB=	yes
 USE_KDE=	ecm:build coreaddons
 USE_LDCONFIG=	yes
