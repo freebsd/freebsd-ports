@@ -5715,6 +5715,7 @@
     SUBDIR += py-stdlib-list
     SUBDIR += py-stdlibs
     SUBDIR += py-stdnum
+    SUBDIR += py-stestr
     SUBDIR += py-stevedore
     SUBDIR += py-stone
     SUBDIR += py-stopit
