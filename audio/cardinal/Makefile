@@ -1,5 +1,6 @@
 PORTNAME=	cardinal
 DISTVERSION=	23.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSION}/
 
@@ -19,7 +20,6 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus \
 		libfftw3f.so:math/fftw3-float \
 		libjansson.so:devel/jansson \
-		liblo.so:audio/liblo \
 		libpffft.so:math/pffft \
 		libpulse-simple.so:audio/pulseaudio \
 		libsamplerate.so:audio/libsamplerate \
@@ -43,12 +43,19 @@ MAKE_ARGS=	SYSDEPS=true
 BINARY_ALIAS=	gcc-ar=ar \
 		python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=	DOCS LTO
+OPTIONS_DEFINE=		DOCS LIBLO LTO
+OPTIONS_DEFAULT=	#LIBLO LTO
 
-PORTDOCS=	*
+PORTDOCS=		*
 
-LTO_MAKE_ARGS=	WITH_LTO=true
-LTO_BROKEN=	Fails to build with LTO because it is gcc-centered
+LIBLO_DESC=		Build with liblo
+LIBLO_MAKE_ARGS=	WITH_LTO=true
+LIBLO_MAKE_ARGS_OFF=	WITH_LTO=false
+LIBLO_LIB_DEPENDS=	liblo.so:audio/liblo
+LIBLO_BROKEN=		fails to build with liblo, see https://github.com/DISTRHO/Cardinal/issues/641
+
+LTO_MAKE_ARGS=		WITH_LTO=true
+LTO_BROKEN=		Fails to build with LTO because it is gcc-centered
 
 .include <bsd.port.options.mk>
 
