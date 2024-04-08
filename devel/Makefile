@@ -285,7 +285,6 @@
     SUBDIR += bats-core
     SUBDIR += bazel
     SUBDIR += bazel-buildtools
-    SUBDIR += bazel029
     SUBDIR += bazel5
     SUBDIR += bbparse
     SUBDIR += bcc

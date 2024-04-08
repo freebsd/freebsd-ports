@@ -3162,3 +3162,4 @@ devel/dmucs||2024-04-06|Has expired: Unmaintained, upstream last release was in 
 multimedia/mjpg-streamer||2024-04-06|Has expired: Unmaintained for a long time and does not work
 irc/tircproxy||2024-04-06|Has expired: Unmaintained, dead upstream, vaporized from the net
 devel/ds2||2024-04-06|Has expired: Upstream deprecated and archived
+deve/bazel029||2024-04-08|Removed
