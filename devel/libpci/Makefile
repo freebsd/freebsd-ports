@@ -1,8 +1,7 @@
 PORTNAME=	libpci
-PORTVERSION=	3.11.1
+PORTVERSION=	3.12.0
 CATEGORIES=	devel
-MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
-		LOCAL/sunpoet
+MASTER_SITES=	KERNEL_ORG/software/utils/pciutils
 DISTNAME=	pciutils-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
