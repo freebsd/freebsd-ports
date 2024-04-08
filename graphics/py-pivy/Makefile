@@ -10,12 +10,11 @@ WWW=		https://github.com/coin3d/pivy
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-		swig:devel/swig
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libCoin.so:graphics/Coin \
 		libSoQt.so:x11-toolkits/soqt
 
-USES=		compiler:c11 python qt:5
+USES=		cmake:indirect compiler:c11 python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d
 USE_PYTHON=	distutils

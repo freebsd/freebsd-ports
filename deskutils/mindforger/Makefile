@@ -26,7 +26,8 @@ OPTIONS_DEFINE=	CMARK
 OPTIONS_DEFAULT=	CMARK
 CMARK_DESC=	CommonMark support (Markdown -> HTML rendering)
 
-CMARK_BUILD_DEPENDS=	cmake:devel/cmake-core
+CMARK_USES=	cmake:indirect
+CMAKE_OFF=	CMARK_SHARED CMARK_TESTS
 CMARK_QMAKE_OFF=	CONFIG+="mfnomd2html"
 
 .include <bsd.port.options.mk>
@@ -39,9 +40,9 @@ USE_QT+=	webkit
 .endif
 
 pre-build-CMARK-on:
-	@cd ${WRKSRC_cm} && cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
-		-DCMARK_TESTS:BOOL=OFF -DCMARK_SHARED:BOOL=OFF \
-		-B build && cmake --build build
+	@cd ${WRKSRC_cm} && ${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} \
+		${CMAKE_BIN} ${CMAKE_ARGS} -B build && \
+		${CMAKE_BIN} --build build
 
 post-patch:
 	@${REINPLACE_CMD} -e '/_WIN32/s,_APPLE,_${OPSYS},' \
