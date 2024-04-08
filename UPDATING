@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240408:
+  AFFECTS: users of databases/p5-DBD-mysql
+  AUTHOR: flo@FreeBSD.org
+
+  Upstream removed support for MariaDB from the 5.0 branch. So if you use
+  MariaDB you need to use databases/p5-DBD-mysql4 from now on.
+
+  Portmaster users:
+        portmaster -o databases/p5-DBD-mysql4 databases/p5-DBD-mysql
+        portmaster -a
+
+  Portupgrade users:
+        portupgrade -o databases/p5-DBD-mysql4 -f databases/p5-DBD-mysql
+        portupgrade -a
+
 20240330:
   AFFECTS: users of mail/spamassassin
   AUTHOR: cy@FreeBSD.org
