@@ -1,5 +1,5 @@
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.11.1
+PORTVERSION=	1.12.0
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
