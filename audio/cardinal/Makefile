@@ -1,6 +1,6 @@
 PORTNAME=	cardinal
 DISTVERSION=	23.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSION}/
 
@@ -48,7 +48,7 @@ OPTIONS_DEFAULT=	#LIBLO LTO
 
 PORTDOCS=		*
 
-LIBLO_DESC=		Build with liblo
+LIBLO_DESC=		Support Open Sound Control protocol through liblo
 LIBLO_MAKE_ARGS=	WITH_LTO=true
 LIBLO_MAKE_ARGS_OFF=	WITH_LTO=false
 LIBLO_LIB_DEPENDS=	liblo.so:audio/liblo
