@@ -15,7 +15,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		either-1.10.0 \
 		encoding_rs-0.8.33 \
 		getopts-0.2.21 \
-		getrandom-0.2.12 \
+		getrandom-0.2.13 \
 		globset-0.4.14 \
 		heck-0.4.1 \
 		ignore-0.4.22 \
@@ -66,7 +66,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		siphasher-0.3.11 \
 		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
-		syn-2.0.57 \
+		syn-2.0.58 \
 		target-lexicon-0.12.14 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.6.0 \
