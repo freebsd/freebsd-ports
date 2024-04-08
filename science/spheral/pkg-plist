@@ -149,6 +149,9 @@ include/DataBase/StateDerivativesInline.hh
 include/DataBase/StateInline.hh
 include/DataBase/UpdatePolicyBase.hh
 include/DataBase/UpdatePolicyBaseInline.hh
+include/DataBase/applyPolicyToFieldList.hh
+include/DataBase/make_policy.hh
+include/DataBase/updateStateFields.hh
 include/DataOutput/Restart.hh
 include/DataOutput/RestartHandle.hh
 include/DataOutput/RestartInline.hh
