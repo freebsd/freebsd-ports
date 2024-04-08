@@ -158,6 +158,7 @@ cbsd/etc/defaults/geli.conf
 cbsd/etc/defaults/get-profiles.conf
 cbsd/etc/defaults/global.conf
 cbsd/etc/defaults/helpers.conf
+cbsd/etc/defaults/initenv.conf
 cbsd/etc/defaults/jail-freebsd-cbsdpuppet.conf
 cbsd/etc/defaults/jail-freebsd-debian_bookworm.conf
 cbsd/etc/defaults/jail-freebsd-debian_bullseye.conf
@@ -261,7 +262,7 @@ cbsd/etc/defaults/vm-linux-Devuan-x86-5.conf
 cbsd/etc/defaults/vm-linux-EuroLinux-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-16.conf
 cbsd/etc/defaults/vm-linux-Kali-2024-amd64.conf
-cbsd/etc/defaults/vm-linux-Manjaro-x86-2023.conf
+cbsd/etc/defaults/vm-linux-Manjaro-x86-2024.conf
 cbsd/etc/defaults/vm-linux-Mint-21.conf
 cbsd/etc/defaults/vm-linux-NixOS-23.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-7.conf
@@ -310,6 +311,7 @@ cbsd/etc/defaults/vm-linux-fedora-server-39-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-silverblue-39-x86_64.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-23.conf
+cbsd/etc/defaults/vm-linux-lubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-opensuse-leap-15-x86.conf
 cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-23.conf
@@ -318,9 +320,11 @@ cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-22.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-23.conf
 cbsd/etc/defaults/vm-linux-vyos-1.5.conf
 cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-9.conf
+cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-10.conf
 cbsd/etc/defaults/vm-netbsd-x86-9.conf
+cbsd/etc/defaults/vm-netbsd-x86-10.conf
 cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-7.conf
-cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-73.conf
+cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-74.conf
 cbsd/etc/defaults/vm-openbsd-x86-7.conf
 cbsd/etc/defaults/vm-other-FreeDOS.conf
 cbsd/etc/defaults/vm-other-Haiku-r1.conf
@@ -1162,6 +1166,7 @@ cbsd/tools/xen-dsk
 cbsd/tools/xen-dsk-list
 cbsd/tools/xen-exist
 cbsd/tools/zfs-migrator
+cbsd/upgrade/backup_db/pre-initenv-backup
 cbsd/upgrade/patch/BHYVE_UEFI_VARS.fd
 cbsd/upgrade/patch/bhyve-vesa-fb-13.0/patch-13x-usr.sbin-bhyve-pci_fbuf.c
 cbsd/upgrade/patch/efi.fd
