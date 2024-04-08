@@ -1,5 +1,5 @@
 PORTNAME=	red-arrow
-PORTVERSION=	15.0.1
+PORTVERSION=	15.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,8 @@ WWW=		https://arrow.apache.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-#BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
-#		arrow-glib>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow-glib
-BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION:R}.2_99:databases/arrow \
-		arrow-glib>=${PORTVERSION}<${PORTVERSION:R}.2_99:databases/arrow-glib
+BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
+		arrow-glib>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow-glib
 LIB_DEPENDS=	libarrow.so:databases/arrow \
 		libarrow-glib.so:databases/arrow-glib
 RUN_DEPENDS=	rubygem-bigdecimal>=3.1.0:math/rubygem-bigdecimal \
@@ -24,8 +22,6 @@ RUN_DEPENDS=	rubygem-bigdecimal>=3.1.0:math/rubygem-bigdecimal \
 		rubygem-native-package-installer>=0:devel/rubygem-native-package-installer \
 		rubygem-pkg-config>=0:devel/rubygem-pkg-config \
 
-USES=		gem localbase
-
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		gem
 
 .include <bsd.port.mk>
