@@ -1,5 +1,5 @@
 PORTNAME=	scrypt
-DISTVERSION=	0.8.23
+DISTVERSION=	0.8.24
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/scrypt/
 LICENSE=	BSD2CLAUSE
 
 USES=		python ssl
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_scrypt*.so
