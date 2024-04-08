@@ -55,12 +55,6 @@ OPTIONS_SUB=		yes
 CPACK_DESC=		Enable FreeBSD generator in CPack
 CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
 
-.include <bsd.port.pre.mk>
-
-.if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
-INSTALL_TARGET=	install/strip
-.endif
-
 # Before running configure, substitute in the values of options
 # for the build. CMake's configure doesn't accept --with-foo
 # or similar options: it expects them to be set in CMake-style
@@ -109,4 +103,4 @@ post-install:
 	# source directories, but gets accidentally installed.
 	@${FIND} ${STAGEDIR}${PREFIX} -name ".NoDartCoverage" -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
