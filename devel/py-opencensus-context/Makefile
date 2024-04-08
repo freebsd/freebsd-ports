@@ -1,5 +1,6 @@
 PORTNAME=	opencensus-context
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,14 +11,13 @@ WWW=		https://github.com/census-instrumentation/opencensus-python/tree/master/co
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		dos2unix python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-post-patch:
-	@${RM} ${WRKSRC}/opencensus/__init__.py
 
 .include <bsd.port.mk>
