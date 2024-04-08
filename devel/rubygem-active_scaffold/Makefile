@@ -1,5 +1,5 @@
 PORTNAME=	active_scaffold
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
