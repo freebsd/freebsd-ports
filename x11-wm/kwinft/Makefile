@@ -1,12 +1,13 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.27.0
+DISTVERSIONSUFFIX=	-0-g6d47e3aeb
 PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland compositor and X11 window manager
-WWW=		https://gitlab.com/kwinft/kwinft
+WWW=		https://github.com/winft/theseus-ship
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -29,7 +30,7 @@ TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 CONFLICTS_INSTALL=	plasma5-kwin # bin/kwin_wayland
 
 USES=		cmake:testing gl kde:5 pkgconfig python:run qt:5 shebangfix xorg
-USE_GITLAB=	yes
+USE_GITHUB=	yes
 USE_GL=		egl
 USE_KDE=	ecm:build auth config configwidgets \
 		coreaddons crash dbusaddons decoration globalaccel i18n \
@@ -40,6 +41,9 @@ USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		multimedia:run quickcontrols2:run widgets x11extras
 USE_XORG=	pixman x11 xcb xi
+GH_ACCOUNT=	winft
+GH_PROJECT=	theseus-ship
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/@/-/}
 SHEBANG_FILES=	effect/effects/*.py kconf_update/*.py kconf_update/*.pl
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, glib, intl, Qt5*, KF5*
