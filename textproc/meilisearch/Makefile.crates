@@ -189,7 +189,7 @@ CARGO_CRATES=	actix-codec-0.5.1 \
 		git2-0.18.2 \
 		glob-0.3.1 \
 		grenad-0.4.5 \
-		h2-0.3.24 \
+		h2-0.3.26 \
 		half-1.8.2 \
 		half-2.3.1 \
 		hash32-0.2.1 \
