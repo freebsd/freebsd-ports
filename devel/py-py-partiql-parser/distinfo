@@ -1,3 +1,3 @@
-TIMESTAMP = 1711466158
-SHA256 (py-partiql-parser-0.5.2.tar.gz) = bdec65fe17d6093c05e9bc1742a99a041ef810b50a71cc0d9e74a88218d938cf
-SIZE (py-partiql-parser-0.5.2.tar.gz) = 26776
+TIMESTAMP = 1712427942
+SHA256 (py_partiql_parser-0.5.4.tar.gz) = 72e043919538fa63edae72fb59afc7e3fd93adbde656718a7d2b4666f23dd114
+SIZE (py_partiql_parser-0.5.4.tar.gz) = 17057
