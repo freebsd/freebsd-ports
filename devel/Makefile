@@ -131,8 +131,8 @@
     SUBDIR += R-cran-sessioninfo
     SUBDIR += R-cran-sfsmisc
     SUBDIR += R-cran-sourcetools
-    SUBDIR += R-cran-systemfonts
     SUBDIR += R-cran-sys
+    SUBDIR += R-cran-systemfonts
     SUBDIR += R-cran-testit
     SUBDIR += R-cran-testthat
     SUBDIR += R-cran-tibble
