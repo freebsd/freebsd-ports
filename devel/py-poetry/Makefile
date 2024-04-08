@@ -34,12 +34,22 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=1.0.3<2:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.4<1.0.0:textproc/py-tomlkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2022.5.19:devel/py-trove-classifiers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.23.0<21:devel/py-virtualenv@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.2.0:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}deepdiff>=6.3<7:devel/py-deepdiff@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpretty>=1.1<2:www/py-httpretty@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.0<5:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.9<4:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.12<4:devel/py-pytest-randomly@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.1,1<4,1:devel/py-pytest-xdist@${PY_FLAVOR}
+# pytest-xdist[psutil]
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psutil>=3.0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 BINARY_ALIAS=	git=false
 NO_ARCH=	yes
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 OPTIONS_DEFINE=	FILECACHE
 OPTIONS_DEFAULT=FILECACHE
