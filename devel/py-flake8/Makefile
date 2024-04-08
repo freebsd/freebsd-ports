@@ -1,5 +1,5 @@
 PORTNAME=	flake8
-PORTVERSION=	6.1.0
+PORTVERSION=	7.0.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PyCQA
 USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
-PYTEST_BROKEN_TESTS=	test_all_pyflakes_messages_have_flake8_codes_assigned
 
 post-patch:
 	@${REINPLACE_CMD} -Ee '/(mccabe|pycodestyle|pyflakes)/s|>.*||' ${WRKSRC}/setup.cfg
