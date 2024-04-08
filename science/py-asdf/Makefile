@@ -1,6 +1,5 @@
 PORTNAME=	asdf
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=60:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asdf-standard>=1.0.1:science/py-asdf-standard@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asdf-standard>=1.1.0:science/py-asdf-standard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asdf-transform-schemas>=0.3:science/py-asdf-transform-schemas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=20.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.11.4:devel/py-importlib-metadata@${PY_FLAVOR} \
