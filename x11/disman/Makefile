@@ -5,7 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt/C++ display management library
-WWW=		https://gitlab.com/kwinft/disman
+WWW=		https://github.com/winft/disman
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -13,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
 USES=		cmake:testing kde:5 pathfix qt:5
-USE_GITLAB=	yes
+USE_GITHUB=	yes
 USE_KDE=	ecm:build coreaddons
 USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build core dbus gui
-GL_ACCOUNT=	kwinft
+GH_ACCOUNT=	winft
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/@/-/}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	WAYLAND X11

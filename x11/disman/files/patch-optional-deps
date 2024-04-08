@@ -1,5 +1,5 @@
-Revert https://gitlab.com/kwinft/disman/-/commit/78771e145b7f
-and    https://gitlab.com/kwinft/disman/-/commit/18d0a3aa7940
+Revert https://github.com/winft/disman/commit/78771e145b7f
+and    https://github.com/winft/disman/commit/18d0a3aa7940
 to support disabling build dependencies at configure (CMake) time.
 
 CMake Error at backends/wayland/plugins/kwayland/CMakeLists.txt:21 (target_link_libraries):
