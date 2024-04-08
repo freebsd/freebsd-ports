@@ -1,4 +1,4 @@
-TIMESTAMP = 1712204117
+TIMESTAMP = 1712534745
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -1263,5 +1263,5 @@ SHA256 (rust/crates/zstd-safe-7.0.0.crate) = 43747c7422e2924c11144d5229878b98180
 SIZE (rust/crates/zstd-safe-7.0.0.crate) = 20463
 SHA256 (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 9e16efa8a874a0481a574084d34cc26fdb3b99627480f785888deb6386506656
 SIZE (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 728791
-SHA256 (nushell-nushell-0.92.0_GH0.tar.gz) = 7daa8bb7555ebb6c8af7ecbd531e8195504e466a22845e4a7e85e97e18bd504c
-SIZE (nushell-nushell-0.92.0_GH0.tar.gz) = 2921244
+SHA256 (nushell-nushell-0.92.1_GH0.tar.gz) = bd4d0b90ff7ba53ac888df755372a794a907f93963e26ff8f441347aa0ff5a95
+SIZE (nushell-nushell-0.92.1_GH0.tar.gz) = 2926995
