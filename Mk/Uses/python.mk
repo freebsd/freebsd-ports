@@ -833,6 +833,10 @@ PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 .  endif
 
 # Common Python modules that can be needed but only for some versions of Python.
+.  if ${PYTHON_REL} < 31100
+PY_EXCEPTIONGROUP=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.1.1:devel/py-exceptiongroup@${PY_FLAVOR}
+.  endif
+
 .  if ${PYTHON_REL} >= 30000
 PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR}
 .  endif
