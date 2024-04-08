@@ -12,7 +12,7 @@ WWW=		https://github.com/jenisys/parse_type
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parse>=1.18.0:textproc/py-parse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.15:devel/py-six@${PY_FLAVOR}
