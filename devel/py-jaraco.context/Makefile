@@ -1,5 +1,5 @@
 PORTNAME=	jaraco.context
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,4 +25,10 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.tarfile>=0:devel/py-backports.tarfile@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
