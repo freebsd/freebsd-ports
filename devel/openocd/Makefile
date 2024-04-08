@@ -1,6 +1,6 @@
 PORTNAME=	openocd
 DISTVERSION=	0.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -19,6 +19,9 @@ BROKEN_aarch64=	fails to build: src/target/nds32_tlb.h:25:2: error: expected ide
 USES=		gmake libtool makeinfo pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+# Required to make OpenOCD's internal libjaylink work
+CONFIGURE_ENV+=	libusb_CFLAGS=" " libusb_LIBS="-lusb"
 
 CFLAGS+=	-Wno-error=strict-prototypes \
 		-Wno-error=unused-but-set-parameter \
