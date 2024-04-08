@@ -22,6 +22,4 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}gitdb2
-
 .include <bsd.port.mk>
