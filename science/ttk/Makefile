@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/functional/hash.hpp:devel/boost-libs \
 		websocketpp>0:devel/websocketpp \
 		${PY_DEPENDS}
 BUILD_DEPENDS+=	nlohmann-json>0:devel/nlohmann-json # is required by lib/cmake/paraview-5.11/vtk/VTK-vtk-module-find-packages.cmake:1167
+BUILD_DEPENDS+=	fast_float>0:math/fast_float # attempt to fix build failures triggered by find_package(fastfloat) from paraview's vtk cmake scripts
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libembree3.so:graphics/embree \
 		libfreetype.so:print/freetype2 \
