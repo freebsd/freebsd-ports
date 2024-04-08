@@ -1,6 +1,6 @@
-TIMESTAMP = 1698718840
-SHA256 (freswa-dovecot-xaps-daemon-g20231019-836a75b_GH0.tar.gz) = 806a6b32a7b872a140c68421719c93c65bc3205e6e86800dd36c2e5ade2954d0
-SIZE (freswa-dovecot-xaps-daemon-g20231019-836a75b_GH0.tar.gz) = 109537
+TIMESTAMP = 1712416748
+SHA256 (freswa-dovecot-xaps-daemon-g20240326-1e589be_GH0.tar.gz) = 1e6c019df01f9c54e4499537678fbebf83270a39570c24677b41b93ed2022e17
+SIZE (freswa-dovecot-xaps-daemon-g20240326-1e589be_GH0.tar.gz) = 110569
 SHA256 (freswa-go-plist-900e8a7d907d_GH0.tar.gz) = 2b4a06b8805bc1436ab8f34d6fd140645a0a01ccaf9f4b3a7dc3e0e35f5a2e88
 SIZE (freswa-go-plist-900e8a7d907d_GH0.tar.gz) = 47675
 SHA256 (fsnotify-fsnotify-v1.6.0_GH0.tar.gz) = 583b2b399709d04807c5c3185e7d4dc0543d532af91fdeb85eeaf803a0b7703b
