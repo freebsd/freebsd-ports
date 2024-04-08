@@ -208,6 +208,7 @@
     SUBDIR += geonkick-lv2
     SUBDIR += ggwave
     SUBDIR += giada
+    SUBDIR += gigedit
     SUBDIR += gmsynth-lv2
     SUBDIR += gmtp
     SUBDIR += gmusicbrowser
