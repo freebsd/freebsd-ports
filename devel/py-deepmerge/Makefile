@@ -10,7 +10,7 @@ WWW=		https://github.com/toumorokoshi/deepmerge
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=5:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
