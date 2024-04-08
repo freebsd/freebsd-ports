@@ -1,5 +1,5 @@
 PORTNAME=	solr
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	www
 
 MAINTAINER=	gaod@hychen.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 
-USES=		php:build,pecl
+USES=		php:build,pecl pkgconfig
 
 CONFIGURE_ARGS=	LIBXML_CFLAGS=-I${LOCALBASE}/include/libxml2 \
 		LIBXML_LIBS=-L${LOCALBASE}/include/libxml2
