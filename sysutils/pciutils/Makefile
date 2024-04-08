@@ -1,8 +1,7 @@
 PORTNAME=	pciutils
-PORTVERSION=	3.11.1
+PORTVERSION=	3.12.0
 CATEGORIES=	sysutils
-MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
-		LOCAL/sunpoet
+MASTER_SITES=	KERNEL_ORG/software/utils/pciutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration utilities
