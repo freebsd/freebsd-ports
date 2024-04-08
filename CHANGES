@@ -11,6 +11,15 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20240408:
+AUTHOR: flo@FreeBSD.org
+
+  A new variable DBD_MYSQL has been introduced and should be used to depend
+  on the correct version of p5-DBD-mysql. Versions >= 5.000 removed support
+  for MariaDB. DBD_MYSQL will check which MYSQL_FLAVOUR is used and set the
+  correct version as a dependancy. For this to work ports need to add mysql
+  to USES.
+
+20240408:
 AUTHOR: makc@FreeBSD.org
 
   USES=cmake now supports `indirect' argument. This argument adds cmake binary
