@@ -1,3 +1,3 @@
-TIMESTAMP = 1675191079
-SHA256 (eventlet-0.33.3.tar.gz) = 722803e7eadff295347539da363d68ae155b8b26ae6a634474d0a920be73cfda
-SIZE (eventlet-0.33.3.tar.gz) = 416190
+TIMESTAMP = 1712580514
+SHA256 (eventlet-0.36.1.tar.gz) = d227fe76a63d9e6a6cef53beb8ad0b2dc40a5e7737c801f4b474cfae1db07bc5
+SIZE (eventlet-0.36.1.tar.gz) = 552863
