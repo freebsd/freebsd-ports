@@ -10,6 +10,8 @@ WWW=		http://ceres-solver.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails, gcc-13 fails with the error: use of built-in trait '__remove_cvref(_Tp)' in function signature; use library traits instead, see https://pkg-status.freebsd.org/ampere3/data/140releng-armv7-default/26c5fe5d2fe6/logs/ceres-solver-2.2.0_8.log
+
 BUILD_DEPENDS=	glog>=0.5.0:devel/glog
 LIB_DEPENDS=	libglog.so:devel/glog
 RUN_DEPENDS:=	${BUILD_DEPENDS:Meigen*}
