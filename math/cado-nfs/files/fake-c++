@@ -1,2 +1,0 @@
-# workaround for external libfmt getting into the buid
-/usr/bin/c++ -I $WRKSRC/utils/embedded "$@"
