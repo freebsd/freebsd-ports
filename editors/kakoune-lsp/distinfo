@@ -1,4 +1,4 @@
-TIMESTAMP = 1712337329
+TIMESTAMP = 1712678075
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
@@ -385,5 +385,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.0.crate) = dff9641d1cd4be8d1a070daf
 SIZE (rust/crates/windows_x86_64_msvc-0.52.0.crate) = 821600
 SHA256 (rust/crates/winnow-0.5.30.crate) = 9b5c3db89721d50d0e2a673f5043fc4722f76dcc352d7b1ab8b8288bed4ed2c5
 SIZE (rust/crates/winnow-0.5.30.crate) = 152904
-SHA256 (kakoune-lsp-kakoune-lsp-v17.0.0_GH0.tar.gz) = c4f5377b5990538b0b7e37b2ab19f773659902cfd24a1a5a5c2705f77e649aa9
-SIZE (kakoune-lsp-kakoune-lsp-v17.0.0_GH0.tar.gz) = 157184
+SHA256 (kakoune-lsp-kakoune-lsp-v17.0.1_GH0.tar.gz) = c32172a7d13621d7f7fd8b32b819865fd58a38c0c431d3cedd6046fb6de42f44
+SIZE (kakoune-lsp-kakoune-lsp-v17.0.1_GH0.tar.gz) = 157457
