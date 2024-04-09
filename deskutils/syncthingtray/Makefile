@@ -1,10 +1,10 @@
 PORTNAME=	syncthingtray
-PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
-COMMENT=	Qt 5-based Syncthing tray application
+COMMENT=	Qt ${FLAVOR:S/qt//}-based Syncthing tray application
 WWW=		https://github.com/Martchus/syncthingtray
 
 LICENSE=	GPLv2
@@ -16,41 +16,60 @@ BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmak
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake:insource compiler:c++11-lang desktop-file-utils iconv \
-		kde:5 perl5 qt:5
+FLAVORS=	qt5 qt6
+FLAVOR?=	${FLAVORS:[1]}
+FLAVORS_SUB=	yes
 
-USE_GITHUB=	nodefault
-GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
-		Martchus:cpp-utilities:v5.24.7:cpputilities/../c++utilities \
-		Martchus:qtutilities:v6.13.5:qtutilities/../qtutilities \
-		Martchus:qtforkawesome:v0.2.0:qtforkawesome/../qtforkawesome \
-		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		Martchus:subdirs:0ad32a0:subdirs/../subdirs
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
+qt6_PKGNAMESUFFIX=	-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
-USE_KDE=	plasma-framework
-USE_PERL5=	build
-USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport qdbus quickcontrols2 svg webchannel widgets \
-		x11extras buildtools:build doc:build linguist:build \
-		qmake:build testlib:build
+USES=		cmake:insource iconv perl5 xorg
 
 CMAKE_ARGS=	-DFORK_AWESOME_FONT_FILE=${WRKDIR}/forkawesome/fonts/forkawesome-webfont.ttf \
 		-DFORK_AWESOME_ICON_DEFINITIONS=${WRKDIR}/forkawesome/src/icons/icons.yml
 CMAKE_OFF=	SYSTEMD_SUPPORT USE_STANDARD_FILESYSTEM
 CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 
+USE_GITHUB=	nodefault
+GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
+		Martchus:cpp-utilities:v5.24.7:cpputilities/../c++utilities \
+		Martchus:qtutilities:v6.14.0:qtutilities/../qtutilities \
+		Martchus:qtforkawesome:v0.2.0:qtforkawesome/../qtforkawesome \
+		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
+		Martchus:subdirs:0ad32a0:subdirs/../subdirs
+
+USE_QT=		declarative svg doc:build
+USE_XORG=	x11
+.if ${FLAVOR} == qt5
+USES+=		kde:5 qt:5
+USE_KDE=	plasma-framework:build
+USE_QT+=	concurrent core dbus gui location network qdbus \
+		quickcontrols2:build widgets x11extras:build buildtools:build \
+		linguist:build qmake:build testlib:build
+WEBENGINE_USE=	QT=printsupport,webchannel,webengine
+.else
+CMAKE_ARGS+=	-DQT_PACKAGE_PREFIX:STRING=Qt6 -DKF_PACKAGE_PREFIX:STRING=KF6
+USES+=		gl kde:6 qt:6
+USE_GL=		opengl
+USE_KDE=	libplasma:build
+USE_QT+=	base positioning
+WEBENGINE_USE=	QT=webchannel,webengine
+.endif
+
+OPTIONS_DEFINE=		WEBENGINE
+OPTIONS_DEFAULT=	WEBENGINE
+
+WEBENGINE_DESC=		Built-in web view (webengine dependency)
+WEBENGINE_CMAKE_ON=	-DWEBVIEW_PROVIDER:STRING=webengine
+WEBENGINE_CMAKE_OFF=	-DWEBVIEW_PROVIDER:STRING=none
+
+USE_PERL5=	build
+
 BUILD_WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKDIR}
 INSTALL_WRKSRC=		${WRKDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-USE_QT+=	webengine
-.else
-CMAKE_ARGS+=	-DWEBVIEW_PROVIDER=webkit
-USE_QT+=	webkit
-.endif
+PATCH_WRKSRC=		${WRKDIR}
 
 post-install:
 	${RM} -r \
@@ -91,4 +110,4 @@ post-install:
 		${STAGEDIR}${QT_PLUGINDIR} \
 		${STAGEDIR}${QT_LIBDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
