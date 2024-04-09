@@ -1,12 +1,9 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.15.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	015
 
-PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
-PATCHFILES+=	7c0e2a271a4c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
-PATCHFILES+=	55a8d225cf8c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCH_SITES+=	https://source.puri.sm/Librem5/${PORTNAME}/-/commit/:purism
 PATCHFILES+=	21bc0ec09200.patch:-p1:purism # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3475
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
