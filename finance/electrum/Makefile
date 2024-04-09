@@ -1,5 +1,6 @@
 PORTNAME=	electrum
-PORTVERSION=	4.5.4
+DISTVERSION=	4.5.4
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.3:net/py-aiohttp-socks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiorpcX>=0.22.0:devel/py-aiorpcX@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiorpcX-legacy<=0.22.0:devel/py-aiorpcX-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=20.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
