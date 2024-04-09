@@ -114,6 +114,8 @@ include/folly/base64.h
 include/folly/chrono/Clock.h
 include/folly/chrono/Conv.h
 include/folly/chrono/Hardware.h
+include/folly/cli/NestedCommandLineApp.h
+include/folly/cli/ProgramOptions.h
 include/folly/compression/Compression.h
 include/folly/compression/CompressionContextPool.h
 include/folly/compression/CompressionContextPoolSingletons.h
@@ -653,7 +655,6 @@ include/folly/lang/Assume.h
 include/folly/lang/Badge.h
 include/folly/lang/Bits.h
 include/folly/lang/Builtin.h
-include/folly/lang/Byte.h
 include/folly/lang/CArray.h
 include/folly/lang/CString.h
 include/folly/lang/Cast.h
