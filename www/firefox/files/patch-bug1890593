@@ -1,0 +1,28 @@
+commit 9ef1582be54a8ff301336b397130e4d313fa3371
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+Date:   Tue Apr 9 21:27:21 2024 +0200
+
+    bug 1890593 - GetSystemWPADSetting for libproxy-enabled builds
+    
+    In #621429 a call to nsUnixSystemProxySettings::GetSystemWPADSetting()
+    was added, but that function is not available for builds with
+    MOZ_ENABLE_LIBPROXY. The funtion is trivial enough to just
+    copy it across - else there'd more boilerplate than actual code.
+
+diff --git toolkit/system/unixproxy/nsLibProxySettings.cpp toolkit/system/unixproxy/nsLibProxySettings.cpp
+index 4f6f43fb76e9..f2c782455426 100644
+--- toolkit/system/unixproxy/nsLibProxySettings.cpp
++++ toolkit/system/unixproxy/nsLibProxySettings.cpp
+@@ -99,6 +99,12 @@ nsresult nsUnixSystemProxySettings::GetProxyForURI(const nsACString& aSpec,
+   return NS_OK;
+ }
+ 
++NS_IMETHODIMP
++nsUnixSystemProxySettings::GetSystemWPADSetting(bool* aSystemWPADSetting) {
++  *aSystemWPADSetting = false;
++  return NS_OK;
++}
++
+ NS_IMPL_COMPONENT_FACTORY(nsUnixSystemProxySettings) {
+   return do_AddRef(new nsUnixSystemProxySettings()).downcast<nsISupports>();
+ }
