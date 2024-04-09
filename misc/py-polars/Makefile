@@ -1,6 +1,6 @@
 PORTNAME=	polars
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	0.20.18
+DISTVERSION=	0.20.19
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -171,7 +171,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		git2-0.18.3 \
 		glob-0.3.1 \
 		group-0.12.1 \
-		h2-0.3.25 \
+		h2-0.3.26 \
 		half-2.4.0 \
 		halfbrown-0.2.5 \
 		hash_hasher-2.0.3 \
@@ -340,7 +340,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		sample-arrow2-0.17.2 \
-		sample-std-0.1.1 \
 		sample-std-0.2.1 \
 		sample-test-0.2.1 \
 		sample-test-macros-0.2.1 \
@@ -485,6 +484,8 @@ CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
 WRKSRC_SUBDIR=	py-polars
+
+PORTSCOUT=	limit:^py-
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/polars/polars.abi3.so
