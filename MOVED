@@ -3165,3 +3165,5 @@ devel/ds2||2024-04-06|Has expired: Upstream deprecated and archived
 devel/bazel029||2024-04-08|Removed
 math/lean4-std||2024-04-08|Removed: Lean4 doesn't yet support seperate library packages, although it should
 misc/urbit||2024-04-08|Deprecated: Can't be built with a reasonable effort
+lang/tcl85||2024-04-09|EOL
+x11-toolkits/tk85||2024-04-09|EOL

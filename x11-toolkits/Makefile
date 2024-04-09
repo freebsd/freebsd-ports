@@ -228,7 +228,6 @@
     SUBDIR += termit
     SUBDIR += tix
     SUBDIR += tk-wrapper
-    SUBDIR += tk85
     SUBDIR += tk86
     SUBDIR += tk87
     SUBDIR += tkdnd
