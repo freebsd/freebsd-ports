@@ -1,5 +1,5 @@
 PORTNAME=	paperless-ngx
-PORTVERSION=	2.6.3
+PORTVERSION=	2.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
@@ -73,12 +73,8 @@ RUN_DEPENDS+=	gpg2:security/gnupg \
 USES=		python shebangfix tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	paperless-ngx
-USE_RC_SUBR=	paperless-beat \
-		paperless-consumer \
-		paperless-flower \
-		paperless-migrate \
-		paperless-webui \
-		paperless-worker
+USE_RC_SUBR=	paperless-beat paperless-consumer paperless-flower \
+		paperless-migrate paperless-webui paperless-worker
 
 SHEBANG_FILES=	${WRKSRC}/src/manage.py
 
