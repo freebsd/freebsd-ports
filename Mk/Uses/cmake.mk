@@ -2,13 +2,13 @@
 #
 # Feature:		cmake
 # Usage:		USES=cmake or USES=cmake:ARGS
-# Valid ARGS:		insource, indirect, noninja, run, testing
+# Valid ARGS:		indirect, insource, noninja, run, testing
 # ARGS description:
-# insource		do not perform an out-of-source build
 # indirect		do not run cmake for configure step, only add build dependency.
 #			This should be set only for ports which use other build systems,
 #			e.g. pep517 or meson, but rely internally on cmake.
-# noninja		don't use ninja instead of make
+# insource		do not perform an out-of-source build
+# noninja		do not use ninja instead of make
 #			Setting this should be an exception, and hints to an issue
 #			inside the ports build system.
 #			A few corner cases never use ninja, and are handled, to reduce
@@ -60,7 +60,7 @@
 .if !defined(_INCLUDE_USES_CMAKE_MK)
 _INCLUDE_USES_CMAKE_MK=	yes
 
-_valid_ARGS=		insource indirect noninja run testing _internal
+_valid_ARGS=		indirect insource noninja run testing _internal
 
 _CMAKE_VERSION=		3.28.3
 CMAKE_BIN=		${LOCALBASE}/bin/cmake
