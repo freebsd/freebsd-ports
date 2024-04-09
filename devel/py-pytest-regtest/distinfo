@@ -1,3 +1,3 @@
-TIMESTAMP = 1692617143
-SHA256 (pytest-regtest-1.5.1.tar.gz) = 8deec797dcfd9313756e078bb82410c71a84c6571086bcf74f05d9064e659b57
-SIZE (pytest-regtest-1.5.1.tar.gz) = 10108
+TIMESTAMP = 1712671606
+SHA256 (pytest_regtest-2.1.1.tar.gz) = bd08a6161832378b59ecd4f5815fbe26af7cd091db4a1e710e30476d5f3b8832
+SIZE (pytest_regtest-2.1.1.tar.gz) = 9595
