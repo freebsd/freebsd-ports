@@ -1,6 +1,6 @@
-TIMESTAMP = 1707682652
-SHA256 (xbmc-xbmc-20.4-20.4-Nexus_GH0.tar.gz) = ccb2d3e382b5ae628a89db2325f5e778f1770a2a182f6eaa25645a22ccdffb18
-SIZE (xbmc-xbmc-20.4-20.4-Nexus_GH0.tar.gz) = 54574568
+TIMESTAMP = 1709571779
+SHA256 (xbmc-xbmc-20.5-20.5-Nexus_GH0.tar.gz) = 9bf3257ebf251d20f276b7f90681985a270779150af2fb395d4b593c04002deb
+SIZE (xbmc-xbmc-20.5-20.5-Nexus_GH0.tar.gz) = 54568445
 SHA256 (xbmc-libdvdcss-1.4.3-Next-Nexus-Alpha2-2_GH0.tar.gz) = f38c4a4e7a4f4da6d8e83b8852489aa3bb6588a915dc41f5ee89d9aad305a06e
 SIZE (xbmc-libdvdcss-1.4.3-Next-Nexus-Alpha2-2_GH0.tar.gz) = 102124
 SHA256 (xbmc-libdvdnav-6.1.1-Next-Nexus-Alpha2-2_GH0.tar.gz) = 584f62a3896794408d46368e2ecf2c6217ab9c676ce85921b2d68b8961f49dfc

@@ -1,6 +1,5 @@
 PORTNAME=	kodi
-DISTVERSION=	20.4
-PORTREVISION=	2
+DISTVERSION=	20.5
 CATEGORIES=	multimedia java
 # do not forget to fix devel/kodi-platform when updating kodi
 
@@ -40,6 +39,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libtag.so:audio/taglib \
 		libtinyxml.so:textproc/tinyxml \
 		libuuid.so:misc/e2fsprogs-libuuid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
 		desktop-file-utils gettext gmake gnome iconv jpeg libtool \
@@ -96,8 +96,8 @@ OPTIONS_GROUP_PLATFORM=	GBM WAYLAND X11
 OPTIONS_EXCLUDE_aarch64=FEATURE
 OPTIONS_EXCLUDE_armv7=	FEATURE
 OPTIONS_EXCLUDE_armv6=	FEATURE
-OPTIONS_EXCLUDE_powerpc64=     FEATURE
-OPTIONS_EXCLUDE_powerpc64le=   FEATURE
+OPTIONS_EXCLUDE_powerpc64=	FEATURE
+OPTIONS_EXCLUDE_powerpc64le=	FEATURE
 
 PLATFORM_DESC=	Kodi platform
 FEATURE_DESC=	X86 CPU feature
