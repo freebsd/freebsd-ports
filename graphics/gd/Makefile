@@ -1,6 +1,6 @@
 PORTNAME=	libgd
 PORTVERSION=	2.3.3
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
@@ -18,6 +18,7 @@ USES=		cpe tar:xz pkgconfig pathfix libtool:keepla autoreconf shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gd-formats
+CFLAGS+=	-ffp-contract=off # do not contract to FMA or thereabouts, PR 278105
 TMPDIR?=	/tmp
 MAKE_ENV=	TMPDIR=${TMPDIR}
 SUB_FILES=	gdlib-config
