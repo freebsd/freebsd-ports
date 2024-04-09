@@ -1,5 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, X Window Manager and Wayland Compositor
@@ -8,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		hwdata>0:misc/hwdata \
 		wayland-protocols>0:graphics/wayland-protocols \
-		xwayland-devel>0:x11-servers/xwayland-devel
+		Xwayland:x11-servers/xwayland
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libxcvt.so:x11/libxcvt \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hwdata>0:misc/hwdata \
-		xwayland-devel>0:x11-servers/xwayland-devel
+		Xwayland:x11-servers/xwayland
 
 USES=		cmake gettext gl kde:6 pkgconfig python qt:6 shebangfix tar:xz \
 		xorg
