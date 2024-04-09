@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240409:
+  AFFECTS: x11-servers/xwayland-devel
+  AUTHOR: jbeich@FreeBSD.org
+
+  xwayland-devel has dropped HiDPI patches thus currently incompatible
+  with stable/legacy versions of wlroots. Only affects builds when
+  /usr/local/bin/Xwayland is already installed. Doesn't affect
+  hyprland and sway-devel or non-wlroots compositors.
+
+  If you use portmaster:
+    # portmaster -o x11-servers/xwayland-devel x11-servers/xwayland
+  If you use portupgrade:
+    # portupgrade -o x11-servers/xwayland-devel x11-servers/xwayland
+
 20240408:
   AFFECTS: users of databases/p5-DBD-mysql
   AUTHOR: flo@FreeBSD.org
