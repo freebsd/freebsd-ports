@@ -1,16 +1,12 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-841
-DISTVERSIONSUFFIX=	-g052909ab9
-PORTREVISION=	3
+DISTVERSION=	21.0.99.1-923
+DISTVERSIONSUFFIX=	-gc7d56b0e2
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	96798fc19674.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
-PATCHFILES+=	3e77295f888c.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
-PATCHFILES+=	6c684d035c06.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
-PATCHFILES+=	bdca6c3d1f50.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1463
+PATCHFILES+=	cc43713d49ab.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1481
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)
@@ -38,6 +34,7 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
+GL_TUPLE=	xorg/proto:xorgproto:xorgproto-2024.1:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
@@ -76,5 +73,11 @@ CSD_MESON_TRUE=		libdecor
 EI_DESC=		Emulated input via libei
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_MESON_OFF=		-Dxwayland_ei=false
+
+.ifdef GL_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
 
 .include <bsd.port.mk>
