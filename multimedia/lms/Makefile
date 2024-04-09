@@ -10,6 +10,8 @@ WWW=		https://github.com/epoupon/lms
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	compilation fails: error: object of type 'const LiteralString' cannot be compared because its 'operator<=>' is implicitly deleted
+
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
