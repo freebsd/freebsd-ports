@@ -2,5 +2,5 @@ include/kodi/util/XMLUtils.h
 lib/kodiplatform/kodiplatform-config.cmake
 lib/libkodiplatform.so
 lib/libkodiplatform.so.20.0
-lib/libkodiplatform.so.20.4.0
+lib/libkodiplatform.so.20.5.0
 libdata/pkgconfig/kodiplatform.pc
