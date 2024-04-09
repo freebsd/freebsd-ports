@@ -20,6 +20,16 @@
 # paperless_webui_restart_delay(int):	Set to "5" by default.
 #					WebUI automatic restart delay in
 #					seconds.
+# paperless_webui_secret_key(str):	Set to
+#					"%%PREFIX%%/etc/paperless_secret_key"
+#					by default. Load PAPERLESS_SECRET_KEY
+#					from this file from start, in case it
+#					is not in the environment already.
+#					Will be created on start in case it
+#					does not exist.
+#					Content of PAPERLESS_SECRET_KEY can be
+#					overridden in
+#					%%PREFIX%%/etc/paperless.conf.
 
 . /etc/rc.subr
 
@@ -35,12 +45,15 @@ paperless_webui_log_tag=${paperless_webui_log_tag:-"paperless-webui"}
 paperless_webui_listen_address=${paperless_webui_listen_address:-"127.0.0.1"}
 paperless_webui_listen_port=${paperless_webui_listen_port:-"8000"}
 paperless_webui_restart_delay=${paperless_webui_restart_delay:-"5"}
+paperless_webui_secret_key=${\
+paperless_webui_secret_key:-"%%PREFIX%%/etc/paperless_secret_key"}
 
 paperless_webui_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin\
   PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless \
   PAPERLESS_BIND_ADDR=${paperless_webui_listen_address} \
   PAPERLESS_PORT=${paperless_webui_listen_port}"
 
+start_precmd="paperless_webui_prestart"
 pidfile="/var/run/paperless/webui.pid"
 command="/usr/sbin/daemon"
 command_args="-cS -u ${paperless_webui_daemon_user} \
@@ -53,6 +66,26 @@ command_args="-cS -u ${paperless_webui_daemon_user} \
 	%%PREFIX%%/bin/gunicorn \
 	-c %%PYTHONPREFIX_SITELIBDIR%%/paperless/gunicorn.conf.py \
 	paperless.asgi:application"
+
+paperless_webui_prestart()
+{
+	if [ -z "$PAPERLESS_SECRET_KEY" ]; then
+		if [ ! -s "$paperless_webui_secret_key" ]; then
+			echo "Creating $paperless_webui_secret_key"
+			(
+				set -eo pipefail; umask 077
+				uuidgen -crn 10 | xargs | tr ' ' 'x' \
+				>"$paperless_webui_secret_key"
+			) || return 1
+		fi
+		PAPERLESS_SECRET_KEY=$(cat "$paperless_webui_secret_key")
+		export PAPERLESS_SECRET_KEY
+	fi
+	if [ "${#PAPERLESS_SECRET_KEY}" -lt "128" ]; then
+		>&2 echo "PAPERLESS_SECRET_KEY is shorter than 128 chars"
+		return 1
+	fi
+}
 
 load_rc_config ${name}
 run_rc_command "$1"

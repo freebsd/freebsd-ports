@@ -1,6 +1,6 @@
---- paperless.conf.example.orig	2024-03-18 03:45:09 UTC
+--- paperless.conf.example.orig	2024-04-08 01:44:14 UTC
 +++ paperless.conf.example
-@@ -17,11 +17,16 @@
+@@ -17,17 +17,29 @@
  
  # Paths and folders
  
@@ -21,7 +21,20 @@
  #PAPERLESS_FILENAME_FORMAT=
  #PAPERLESS_FILENAME_FORMAT_REMOVE_NONE=
  
-@@ -40,6 +45,7 @@
+ # Security and hosting
+ 
++# The paperless-webui rc script automatically generates
++# PAPERLESS_SECRET_KEY and places it in the environment, so this
++# actually can stay commented out. If set, it overrides
++# what is set by the rc script. See
++# https://docs.paperless-ngx.com/configuration/#PAPERLESS_SECRET_KEY
++# for more information.
+ #PAPERLESS_SECRET_KEY=change-me
++
+ #PAPERLESS_URL=https://example.com
+ #PAPERLESS_CSRF_TRUSTED_ORIGINS=https://example.com # can be set using PAPERLESS_URL
+ #PAPERLESS_ALLOWED_HOSTS=example.com,www.example.com # can be set using PAPERLESS_URL
+@@ -40,6 +52,7 @@
  
  # OCR settings
  
@@ -29,7 +42,7 @@
  #PAPERLESS_OCR_LANGUAGE=eng
  #PAPERLESS_OCR_MODE=skip
  #PAPERLESS_OCR_SKIP_ARCHIVE_FILE=never
-@@ -56,6 +62,7 @@
+@@ -56,6 +69,7 @@
  
  # Software tweaks
  
@@ -37,7 +50,7 @@
  #PAPERLESS_TASK_WORKERS=1
  #PAPERLESS_THREADS_PER_WORKER=1
  #PAPERLESS_TIME_ZONE=UTC
-@@ -92,3 +99,9 @@
+@@ -92,3 +106,9 @@
  
  #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
  #PAPERLESS_GS_BINARY=/usr/bin/gs
