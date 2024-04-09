@@ -1,5 +1,6 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	016
 
@@ -61,8 +62,8 @@ X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
 			libxcb-render-util.so:x11/xcb-util-renderutil \
 			libxcb-icccm.so:x11/xcb-util-wm
 X11_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-			xwayland-devel>0:x11-servers/xwayland-devel
-X11_RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
+			Xwayland:x11-servers/xwayland
+X11_RUN_DEPENDS=	Xwayland:x11-servers/xwayland
 X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	xwayland
 X11_VARS=		BACKENDS+=x11

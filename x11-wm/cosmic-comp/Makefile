@@ -1,5 +1,6 @@
 PORTNAME=	cosmic-comp
 PORTVERSION=	s20240405
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri \
 		vulkan-loader>0:graphics/vulkan-loader \
-		xwayland-devel>0:x11-servers/xwayland-devel
+		Xwayland:x11-servers/xwayland
 
 USES=		cargo gl
 USE_GITHUB=	yes
