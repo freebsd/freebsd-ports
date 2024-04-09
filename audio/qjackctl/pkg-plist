@@ -5,6 +5,8 @@ share/icons/hicolor/scalable/apps/org.rncbc.qjackctl.svg
 share/man/fr/man1/qjackctl.1.gz
 share/man/man1/qjackctl.1.gz
 share/metainfo/org.rncbc.qjackctl.metainfo.xml
+%%DATADIR%%/palette/KXStudio.conf
+%%DATADIR%%/palette/Wonton Soup.conf
 %%DATADIR%%/translations/qjackctl_cs.qm
 %%DATADIR%%/translations/qjackctl_de.qm
 %%DATADIR%%/translations/qjackctl_es.qm
@@ -13,7 +15,7 @@ share/metainfo/org.rncbc.qjackctl.metainfo.xml
 %%DATADIR%%/translations/qjackctl_ja.qm
 %%DATADIR%%/translations/qjackctl_ko.qm
 %%DATADIR%%/translations/qjackctl_nl.qm
-%%DATADIR%%/translations/qjackctl_pt.qm
+%%DATADIR%%/translations/qjackctl_pt_BR.qm
 %%DATADIR%%/translations/qjackctl_ru.qm
 %%DATADIR%%/translations/qjackctl_sk.qm
 %%DATADIR%%/translations/qjackctl_tr.qm
