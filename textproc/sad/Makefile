@@ -1,6 +1,6 @@
 PORTNAME=	sad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.27
+DISTVERSION=	0.4.28
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,9 +29,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.5.0 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		clap-4.5.3 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_derive-4.5.3 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		difflib-0.4.0 \
@@ -58,12 +58,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mio-0.8.11 \
 		num_cpus-1.16.0 \
 		object-0.32.2 \
-		once_cell-1.19.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		proc-macro2-1.0.79 \
 		quote-1.0.35 \
-		regex-1.10.3 \
+		regex-1.10.4 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
 		rustc-demangle-0.1.23 \
@@ -75,12 +74,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.11.0 \
 		syn-2.0.53 \
 		terminal_size-0.3.0 \
-		tokio-1.36.0 \
+		tokio-1.37.0 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
 		uuid-1.8.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-6.0.0 \
+		which-6.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
@@ -101,7 +100,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4
+		windows_x86_64_msvc-0.52.4 \
+		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}
 
