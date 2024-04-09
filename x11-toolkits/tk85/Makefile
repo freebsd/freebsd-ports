@@ -17,14 +17,20 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DEPRECATED=	Tcl/Tk 8.5 is nearing EOL, please consider switching to Tcl/Tk 8.6
 
-USES+=		tcl:${SHORT_TK_VER},tea xorg
+LIB_DEPENDS=	libtcl${SHORT_TK_VER}.so:lang/tcl${SHORT_TK_VER}
+
+GNU_CONFIGURE=	yes
+USES+=		xorg display
 USE_XORG=	x11 xft xscrnsaver
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 TK_VER=		${PORTVERSION:R}
 SHORT_TK_VER=	${TK_VER:S/.//}
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--enable-xss \
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
+		--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
+		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \
+		--enable-xss \
 		--enable-xft \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tk${TK_VER}

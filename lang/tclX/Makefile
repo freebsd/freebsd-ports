@@ -33,12 +33,7 @@ TCLM4=		tcl.m4?name=2e84c8
 
 .include <bsd.port.pre.mk>
 
-.if ${TCL_VER} > 8.4
-EXTRA_PATCHES+=	${FILESDIR}/tcl85-test-patch
-.endif
-.if ${TCL_VER} > 8.5
 EXTRA_PATCHES+=	${FILESDIR}/tcl86-test-patch
-.endif
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${TCLM4} ${WRKSRC}/tclconfig/tcl.m4
