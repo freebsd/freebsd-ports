@@ -70,7 +70,7 @@ https://bugzilla.samba.org/show_bug.cgi?id=15376
  	/* Linux */
  	{ "/proc/self/fd/%d", "/proc/self/fd/0" },
 +	/* FreeBSD */
-+	{ "/compat/linux/dev/fd/%d", "/compat/linux/dev/fd/0" },
++	{ "/var/run/samba4/fd/%d", "/var/run/samba4/fd/0" },
  	{ NULL, NULL },
  };
  
