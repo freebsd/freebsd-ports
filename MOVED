@@ -1216,7 +1216,6 @@ lang/gcc10-devel||2022-04-17|Has expired: Not serving its purpose any longer due
 devel/py-installer03|devel/py-installer|2022-04-17|Remove obsoleted port. Use devel/py-installer instead
 games/cultivation||2022-04-18|Has expired: Abandonware with last release in 2010, non-portable build system
 devel/ros-rosinstall||2022-04-20|Has expired: Upstream has archived the project and is no longer being used in the ROS project
-devel/py-aiorpcX-legacy|devel/py-aiorpcX|2022-04-20|Has expired: Legacy port is no longer required, please use devel/py-aiorpcX instead
 net/kalarmcal|deskutils/kalarm|2022-04-21|Packages were merged
 math/py-gmpy2-devel|math/py-gmpy2|2022-04-22|No more need for the -devel port, py-gmpy2 is at latest
 net/google-cloud-sdk-app-engine-go||2022-04-27|Obsolete, not supported by the current GCP SDK
