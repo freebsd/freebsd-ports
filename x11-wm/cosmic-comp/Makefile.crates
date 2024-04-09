@@ -597,6 +597,6 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
 		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=cdc652e0\#cdc652e0d4823b16a5bd9badd288e38512789dc5 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-mime-types\#cc0101c1f9ccc937a413bd3af3c0f6217f27e935 \
-		smithay@git+https://github.com/smithay/smithay?rev=f133e418\#f133e418a25b1dfa4520000e08d3c6f548f4f58a \
+		smithay@git+https://github.com/smithay/smithay?rev=ba0121a\#ba0121aaed065c30ee4c42834126cce481cb0e57 \
 		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#ff5501d9a36e51c50d908413caf7632d8f7533b7 \
 		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#1cc4a1393d0f8be4d444666e260fdb811b400f49
