@@ -1,5 +1,5 @@
 PORTNAME=	pg8000
-PORTVERSION=	1.30.5
+PORTVERSION=	1.31.1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,9 @@ WWW=		https://github.com/tlocke/pg8000
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch>=0:devel/py-hatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}versioningit>=2.1.0:devel/py-versioningit@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}versioningit>=3.1.0:devel/py-versioningit@${PY_FLAVOR}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.2:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scramp>=1.4.4:security/py-scramp@${PY_FLAVOR} \
