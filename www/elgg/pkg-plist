@@ -15375,6 +15375,7 @@
 %%WWWDIR%%/vendor/sabberworm/php-css-parser/src/OutputFormat.php
 %%WWWDIR%%/vendor/sabberworm/php-css-parser/src/OutputFormatter.php
 %%WWWDIR%%/vendor/sabberworm/php-css-parser/src/Parser.php
+%%WWWDIR%%/vendor/sabberworm/php-css-parser/src/Parsing/Anchor.php
 %%WWWDIR%%/vendor/sabberworm/php-css-parser/src/Parsing/OutputException.php
 %%WWWDIR%%/vendor/sabberworm/php-css-parser/src/Parsing/ParserState.php
 %%WWWDIR%%/vendor/sabberworm/php-css-parser/src/Parsing/SourceException.php
