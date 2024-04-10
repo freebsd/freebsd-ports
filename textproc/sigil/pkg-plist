@@ -10,6 +10,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/hunspell_dictionaries/COPYING_GPLv3.txt
 %%DATADIR%%/hunspell_dictionaries/COPYING_LGPL_v2.0.txt
 %%DATADIR%%/hunspell_dictionaries/COPYING_LGPL_v2.1.txt
+%%DATADIR%%/hunspell_dictionaries/License_es.md
 %%DATADIR%%/hunspell_dictionaries/README.txt
 %%DATADIR%%/hunspell_dictionaries/README_de_DE_frami.txt
 %%DATADIR%%/hunspell_dictionaries/README_en_GB.txt
@@ -20,7 +21,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/hunspell_dictionaries/README_hyph_de.txt
 %%DATADIR%%/hunspell_dictionaries/README_hyph_en_GB.txt
 %%DATADIR%%/hunspell_dictionaries/README_hyph_en_US.txt
-%%DATADIR%%/hunspell_dictionaries/README_hyph_es_ANY.txt
+%%DATADIR%%/hunspell_dictionaries/README_hyph_es.txt
 %%DATADIR%%/hunspell_dictionaries/README_hyph_fr.txt
 %%DATADIR%%/hunspell_dictionaries/de_DE.aff
 %%DATADIR%%/hunspell_dictionaries/de_DE.dic
