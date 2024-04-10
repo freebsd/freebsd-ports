@@ -918,5 +918,5 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/helpers/make-extract-targets.awk
 %%DATADIR%%/helpers/perl
 %%DATADIR%%/helpers/python
-%%CMAKE_MODULES%%share/cmake/Modules/bash-completion/bash-completion-config-version.cmake
-%%CMAKE_MODULES%%share/cmake/Modules/bash-completion/bash-completion-config.cmake
+%%CMAKE_MODULES%%share/cmake/bash-completion/bash-completion-config-version.cmake
+%%CMAKE_MODULES%%share/cmake/bash-completion/bash-completion-config.cmake

@@ -1,8 +1,8 @@
-Note that line 12 (pkgconfigdir) has been changed by USES=pathfix.
+Note that the pkgconfigdir line has been changed by USES=pathfix.
 
 --- Makefile.am.orig	2020-07-25 08:25:49 UTC
 +++ Makefile.am
-@@ -6,13 +6,13 @@ pkgdata_DATA = bash_completion
+@@ -6,7 +6,7 @@ pkgdata_DATA = bash_completion
  compatdir = $(sysconfdir)/bash_completion.d
  compat_DATA =
  
@@ -11,10 +11,3 @@ Note that line 12 (pkgconfigdir) has been changed by USES=pathfix.
  profile_DATA = bash_completion.sh
  
  pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = bash-completion.pc
- 
--cmakeconfigdir = $(datadir)/cmake/$(PACKAGE)/
-+cmakeconfigdir = $(datadir)/cmake/Modules/$(PACKAGE)/
- cmakeconfig_DATA = bash-completion-config.cmake \
-                    bash-completion-config-version.cmake
- 
