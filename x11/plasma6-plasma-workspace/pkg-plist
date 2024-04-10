@@ -1260,6 +1260,7 @@ share/locale/bg/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_time.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/bg/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/bg/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -1439,6 +1440,7 @@ share/locale/ca/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ca/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/ca/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -1520,6 +1522,7 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -1793,6 +1796,7 @@ share/locale/de/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/de/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/de/LC_MESSAGES/plasma_engine_time.mo
 share/locale/de/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/de/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/de/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/de/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/de/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -2090,6 +2094,7 @@ share/locale/es/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/es/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/es/LC_MESSAGES/plasma_engine_time.mo
 share/locale/es/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/es/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/es/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/es/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/es/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -2243,6 +2248,7 @@ share/locale/eu/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_time.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/eu/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/eu/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -2429,6 +2435,7 @@ share/locale/fr/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/fr/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/fr/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -2956,6 +2963,7 @@ share/locale/hu/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_time.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/hu/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/hu/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -3042,6 +3050,7 @@ share/locale/ia/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ia/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/ia/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -3270,6 +3279,7 @@ share/locale/it/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/it/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/it/LC_MESSAGES/plasma_engine_time.mo
 share/locale/it/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/it/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/it/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/it/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/it/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -3432,6 +3442,7 @@ share/locale/ka/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ka/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/ka/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -4511,6 +4522,7 @@ share/locale/pl/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/pl/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/pl/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -4639,6 +4651,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
+share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.calendar.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.cameraindicator.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.clipboard.mo
@@ -4665,6 +4678,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/pt_BR/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -4684,6 +4698,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/pt_BR/LC_MESSAGES/plasmashell.mo
 share/locale/pt_BR/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/pt_BR/LC_MESSAGES/plasmawindowed.mo
+share/locale/pt_BR/LC_MESSAGES/session-shortcuts-kded.mo
 share/locale/pt_BR/LC_MESSAGES/soliduiserver.mo
 share/locale/ro/LC_MESSAGES/freespacenotifier.mo
 share/locale/ro/LC_MESSAGES/kcm_autostart.mo
@@ -5047,6 +5062,7 @@ share/locale/sl/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/sl/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/sl/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -5768,6 +5784,7 @@ share/locale/tr/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/tr/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/tr/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -6196,6 +6213,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_time.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_baloosearch.mo

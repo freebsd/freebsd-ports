@@ -1219,6 +1219,7 @@ share/locale/nl/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/nl/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/nn/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/nn/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/nn/LC_MESSAGES/plasma_addons_profiles_utility.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
