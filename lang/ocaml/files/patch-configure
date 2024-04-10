@@ -1,6 +1,15 @@
 --- configure.orig	2022-12-20 12:26:44 UTC
 +++ configure
-@@ -14169,10 +14169,14 @@ if test x"$supports_shared_libraries" = 'xtrue'; then 
+@@ -14161,6 +14161,8 @@ if test x"$supports_shared_libraries" = 'xtrue'; then 
+     natdynlink=true ;; #(
+   powerpc*-*-linux*) :
+     natdynlink=true ;; #(
++  powerpc*-*-freebsd*) :
++    natdynlink=true ;; #(
+   x86_64-*-solaris*) :
+     natdynlink=true ;; #(
+   i686-*-kfreebsd*) :
+@@ -14169,10 +14171,14 @@ if test x"$supports_shared_libraries" = 'xtrue'; then 
      natdynlink=true ;; #(
    x86_64-*-dragonfly*) :
      natdynlink=true ;; #(
@@ -17,7 +26,28 @@
    i[3456]86-*-openbsd*) :
      natdynlink=true ;; #(
    x86_64-*-openbsd*) :
-@@ -14338,6 +14342,8 @@ fi; system=elf ;; #(
+@@ -14313,12 +14319,20 @@ case $host in #(
+     arch=amd64; system=win64 ;; #(
+   powerpc64le*-*-linux*) :
+     arch=power; model=ppc64le; system=elf ;; #(
++  powerpc64le*-*-freebsd*) :
++    arch=power; model=ppc64le; system=bsd_elf ;; #(
+   powerpc*-*-linux*) :
+     arch=power; if $arch64; then :
+   model=ppc64
+ else
+   model=ppc
+ fi; system=elf ;; #(
++  powerpc*-*-freebsd*) :
++    arch=power; if $arch64; then :
++  model=ppc64
++else
++  model=ppc
++fi; system=bsd_elf ;; #(
+   s390x*-*-linux*) :
+     arch=s390x; model=z10; system=elf ;; #(
+   # expected to match "gnueabihf" as well as "musleabihf"
+@@ -14338,6 +14352,8 @@ fi; system=elf ;; #(
      arch=arm; model=armv6; system=linux_eabi ;; #(
    armv6*-*-freebsd*) :
      arch=arm; model=armv6; system=freebsd ;; #(
@@ -26,7 +56,7 @@
    earmv6*-*-netbsd*) :
      arch=arm; model=armv6; system=netbsd ;; #(
    earmv7*-*-netbsd*) :
-@@ -14362,7 +14368,7 @@ fi; system=elf ;; #(
+@@ -14362,7 +14378,7 @@ fi; system=elf ;; #(
      arch=amd64; system=dragonfly ;; #(
    x86_64-*-solaris*) :
      arch=amd64; system=solaris ;; #(
