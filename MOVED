@@ -3167,3 +3167,4 @@ misc/urbit||2024-04-08|Deprecated: Can't be built with a reasonable effort
 lang/tcl85||2024-04-09|EOL
 x11-toolkits/tk85||2024-04-09|EOL
 audio/fasttracker2|audio/ft2-clone|2024-04-10|Renamed to match upstream
+lang/ocaml-nox11|lang/ocaml|2024-04-10|X11 support removed upstream
