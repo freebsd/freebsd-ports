@@ -4,7 +4,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write FASTQ and FASTA
 WWW=		https://pypi.python.org/pypi/dnaio
 
