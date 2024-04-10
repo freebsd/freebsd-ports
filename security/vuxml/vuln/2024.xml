@@ -1,3 +1,39 @@
+  <vuln vid="ea4a2dfc-f761-11ee-af2c-589cfc0f81b0">
+    <topic>wordpress -- XSS</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>fr-wordpress-fr_FR</name>
+	<range><ge>6.5.0,1</ge><lt>6.5.1,1</lt></range>
+	<range><lt>6.4.4,1</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress-ru_RU</name>
+	<name>ja-wordpress-ja</name>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<name>de-wordpress-de_DE</name>
+	<range><ge>6.5.0</ge><lt>6.5.1</lt></range>
+	<range><lt>6.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Wordpress team reports:</p>
+	<blockquote cite="https://wordpress.org/documentation/wordpress-version/version-6-4-4/">
+	  <p>A cross-site scripting (XSS) vulnerability affecting the Avatar block type</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://wordpress.org/documentation/wordpress-version/version-6-4-4/</url>
+    </references>
+    <dates>
+      <discovery>2024-04-09</discovery>
+      <entry>2024-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e6f684b-f333-11ee-a573-84a93843eb75">
     <topic>Apache httpd -- multiple vulnerabilities</topic>
     <affects>
