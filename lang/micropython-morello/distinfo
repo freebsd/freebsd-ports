@@ -1,0 +1,11 @@
+TIMESTAMP = 1710260075
+SHA256 (glasgowPLI-micropython-v1.17-201951645afb7cd0990c95144e204e1f536761db_GH0.tar.gz) = 5b99c294c8df5fc84f6eeeb4c8933a2039d485fb218e4a8284b9483a319b039e
+SIZE (glasgowPLI-micropython-v1.17-201951645afb7cd0990c95144e204e1f536761db_GH0.tar.gz) = 7319785
+SHA256 (micropython-axtls-531cab9_GH0.tar.gz) = cd1b9bf60d34e86e62046dd595ddb34b3960d36f44bf7a31d67e253a5bc24fe1
+SIZE (micropython-axtls-531cab9_GH0.tar.gz) = 1325384
+SHA256 (Mbed-TLS-mbedtls-v2.28.3_GH0.tar.gz) = bdf7c5bbdc338da3edad89b2885d4f8668f9a6fffeba6ec17a60333e36dade6f
+SIZE (Mbed-TLS-mbedtls-v2.28.3_GH0.tar.gz) = 3952497
+SHA256 (pfalcon-berkeley-db-1.xx-35aaec4_GH0.tar.gz) = 9c696582ce47557556c7d6a14c96236ae5913124d15a63d3a78b384336d1a817
+SIZE (pfalcon-berkeley-db-1.xx-35aaec4_GH0.tar.gz) = 273515
+SHA256 (micropython-micropython-lib-v1.22.2_GH0.tar.gz) = f0cad8920df6d2463047de16ca746a5f923a2987d99d338573586fa58007fcd6
+SIZE (micropython-micropython-lib-v1.22.2_GH0.tar.gz) = 483079
