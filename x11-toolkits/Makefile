@@ -24,6 +24,7 @@
     SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-layer-shell
+    SUBDIR += gtk-session-lock
     SUBDIR += gtk-sharp-beans
     SUBDIR += gtk-sharp20
     SUBDIR += gtk-sharp30
