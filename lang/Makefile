@@ -306,7 +306,6 @@
     SUBDIR += python38
     SUBDIR += python39
     SUBDIR += qmasm
-    SUBDIR += qscheme
     SUBDIR += quickjs
     SUBDIR += quilc
     SUBDIR += racket
