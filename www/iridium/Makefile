@@ -1,5 +1,6 @@
 PORTNAME=	iridium
 PORTVERSION=	2024.01.120
+PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -35,7 +36,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libspeechd.so:accessibility/speech-dispatcher \
-		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
 		libspeex.so:audio/speex \
@@ -265,7 +265,7 @@ pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		dav1d flac fontconfig freetype harfbuzz-ng icu libdrm libevent libpng \
-		libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+		libwebp libxml libxslt openh264 opus || ${FALSE}
 	# Iridium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/third_party/ffmpeg && \
 		${PYTHON_CMD} chromium/scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
