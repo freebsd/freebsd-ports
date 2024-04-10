@@ -1,0 +1,1027 @@
+================================================================================
+= Fetch phase ==================================================================
+================================================================================
+===>  License APACHE20 accepted by the user
+===>   py39-multidict-6.0.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py39-multidict-6.0.4 for building
+=> SHA256 Checksum OK for multidict-6.0.4.tar.gz.
+=====
+Message from python39-3.9.18_2:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+=====
+Message from py39-pytest-runner-6.0.1:
+
+--
+===>   NOTICE:
+
+This port is deprecated; you may wish to reconsider installing it:
+
+pytest-runner depends on deprecated features of setuptools.
+
+It is scheduled to be removed on or after 2024-12-31.
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+================================================================================
+= Listing installed packages before build ======================================
+================================================================================
+ccache-3.7.12_6
+gettext-runtime-0.22.5
+indexinfo-0.3.1
+libedit-3.1.20230828_1,1
+libffi-3.4.4_1
+mpdecimal-4.0.0
+pkg-1.20.9_1
+py39-coverage-7.3.2
+py39-cython-0.29.37
+py39-exceptiongroup-1.2.0
+py39-iniconfig-1.1.1_1
+py39-packaging-23.2
+py39-pluggy-1.4.0
+py39-pytest-7.4.4,1
+py39-pytest-cov-4.1.0
+py39-pytest-runner-6.0.1
+py39-setuptools-63.1.0_1
+py39-sqlite3-3.9.18_7
+py39-tomli-2.0.1_2
+python39-3.9.18_2
+readline-8.2.10
+sqlite3-3.45.1,1
+================================================================================
+= Build package phase ==========================================================
+================================================================================
+===>  License APACHE20 accepted by the user
+===>   py39-multidict-6.0.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py39-multidict-6.0.4 for building
+===>  Extracting for py39-multidict-6.0.4
+=> SHA256 Checksum OK for multidict-6.0.4.tar.gz.
+===>  Patching for py39-multidict-6.0.4
+===>   py39-multidict-6.0.4 depends on executable: cython-3.9 - found
+===>   py39-multidict-6.0.4 depends on package: py39-setuptools>=63.1.0 - found
+===>   py39-multidict-6.0.4 depends on file: /usr/local/bin/python3.9 - found
+===>   py39-multidict-6.0.4 depends on file: /usr/local/bin/ccache - found
+===>  Configuring for py39-multidict-6.0.4
+*********************
+* Accelerated build *
+*********************
+running config
+===>  Building for py39-multidict-6.0.4
+*********************
+* Accelerated build *
+*********************
+running build
+running build_py
+creating build
+creating build/lib.freebsd-14.0-RELEASE-amd64-cpython-39
+creating build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+copying multidict/_abc.py -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+copying multidict/_compat.py -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+copying multidict/_multidict_py.py -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+copying multidict/_multidict_base.py -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+copying multidict/__init__.py -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+running egg_info
+writing multidict.egg-info/PKG-INFO
+writing dependency_links to multidict.egg-info/dependency_links.txt
+writing top-level names to multidict.egg-info/top_level.txt
+reading manifest file 'multidict.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '*.pyc' found anywhere in distribution
+warning: no previously-included files found matching 'multidict/_multidict.html'
+warning: no previously-included files found matching 'multidict/*.so'
+warning: no previously-included files found matching 'multidict/*.pyd'
+warning: no previously-included files found matching 'multidict/*.pyd'
+no previously-included directories found matching 'docs/_build'
+adding license file 'LICENSE'
+writing manifest file 'multidict.egg-info/SOURCES.txt'
+/usr/local/lib/python3.9/site-packages/setuptools/command/build_py.py:153: SetuptoolsDeprecationWarning:     Installing 'multidict._multilib' as data is deprecated, please list it in `packages`.
+    !!
+
+
+    ############################
+    # Package would be ignored #
+    ############################
+    Python recognizes 'multidict._multilib' as an importable package,
+    but it is not listed in the `packages` configuration of setuptools.
+
+    'multidict._multilib' has been automatically added to the distribution only
+    because it may contain data files, but this behavior is likely to change
+    in future versions of setuptools (and therefore is considered deprecated).
+
+    Please make sure that 'multidict._multilib' is included as a package by using
+    the `packages` configuration field or the proper discovery methods
+    (for example by using `find_namespace_packages(...)`/`find_namespace:`
+    instead of `find_packages(...)`/`find:`).
+
+    You can read more about "package discovery" and "data files" on setuptools
+    documentation page.
+
+
+!!
+
+  check.warn(importable)
+copying multidict/__init__.pyi -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+copying multidict/py.typed -> build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+running build_ext
+building 'multidict._multidict' extension
+creating build/temp.freebsd-14.0-RELEASE-amd64-cpython-39
+creating build/temp.freebsd-14.0-RELEASE-amd64-cpython-39/multidict
+cc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -fPIC -I/usr/local/include/python3.9 -c multidict/_multidict.c -o build/temp.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_multidict.o -O2 -std=c99 -Wall -Wsign-compare -Wconversion -fno-strict-aliasing -pedantic
+In file included from multidict/_multidict.c:9:
+multidict/_multilib/iter.h:225:20: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+multidict_iter_init()
+                   ^
+                    void
+In file included from multidict/_multidict.c:10:
+multidict/_multilib/views.h:388:21: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+multidict_views_init()
+                    ^
+                     void
+multidict/_multidict.c:1684:18: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+PyInit__multidict()
+                 ^
+                  void
+3 warnings generated.
+cc -shared -fstack-protector-strong -O2 -pipe -fstack-protector-strong -fno-strict-aliasing build/temp.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_multidict.o -L/usr/local/lib -o build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_multidict.cpython-39.so
+===>  Staging for py39-multidict-6.0.4
+===>   py39-multidict-6.0.4 depends on package: py39-setuptools>=63.1.0 - found
+===>   py39-multidict-6.0.4 depends on file: /usr/local/bin/python3.9 - found
+===>   Generating temporary packing list
+*********************
+* Accelerated build *
+*********************
+running install
+/usr/local/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running build
+running build_py
+running egg_info
+writing multidict.egg-info/PKG-INFO
+writing dependency_links to multidict.egg-info/dependency_links.txt
+writing top-level names to multidict.egg-info/top_level.txt
+reading manifest file 'multidict.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '*.pyc' found anywhere in distribution
+warning: no previously-included files found matching 'multidict/_multidict.html'
+warning: no previously-included files found matching 'multidict/*.so'
+warning: no previously-included files found matching 'multidict/*.pyd'
+warning: no previously-included files found matching 'multidict/*.pyd'
+no previously-included directories found matching 'docs/_build'
+adding license file 'LICENSE'
+writing manifest file 'multidict.egg-info/SOURCES.txt'
+/usr/local/lib/python3.9/site-packages/setuptools/command/build_py.py:153: SetuptoolsDeprecationWarning:     Installing 'multidict._multilib' as data is deprecated, please list it in `packages`.
+    !!
+
+
+    ############################
+    # Package would be ignored #
+    ############################
+    Python recognizes 'multidict._multilib' as an importable package,
+    but it is not listed in the `packages` configuration of setuptools.
+
+    'multidict._multilib' has been automatically added to the distribution only
+    because it may contain data files, but this behavior is likely to change
+    in future versions of setuptools (and therefore is considered deprecated).
+
+    Please make sure that 'multidict._multilib' is included as a package by using
+    the `packages` configuration field or the proper discovery methods
+    (for example by using `find_namespace_packages(...)`/`find_namespace:`
+    instead of `find_packages(...)`/`find:`).
+
+    You can read more about "package discovery" and "data files" on setuptools
+    documentation page.
+
+
+!!
+
+  check.warn(importable)
+running build_ext
+running install_lib
+creating /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9
+creating /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages
+creating /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/__init__.pyi -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/__init__.py -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_multidict_py.py -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_multidict.cpython-39.so -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_abc.py -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_compat.py -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/_multidict_base.py -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+copying build/lib.freebsd-14.0-RELEASE-amd64-cpython-39/multidict/py.typed -> /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict
+byte-compiling /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict/__init__.py to __init__.cpython-39.pyc
+byte-compiling /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict/_multidict_py.py to _multidict_py.cpython-39.pyc
+byte-compiling /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict/_abc.py to _abc.cpython-39.pyc
+byte-compiling /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict/_compat.py to _compat.cpython-39.pyc
+byte-compiling /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict/_multidict_base.py to _multidict_base.cpython-39.pyc
+writing byte-compilation script '/tmp/tmp1krfua2m.py'
+/usr/local/bin/python3.9 /tmp/tmp1krfua2m.py
+removing /tmp/tmp1krfua2m.py
+running install_egg_info
+Copying multidict.egg-info to /work/usr/ports/www/py-multidict/work-py39/stage/usr/local/lib/python3.9/site-packages/multidict-6.0.4-py3.9.egg-info
+running install_scripts
+writing list of installed files to '/work/usr/ports/www/py-multidict/work-py39/.PLIST.pymodtmp'
+====> Compressing man pages (compress-man)
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+===>  Building packages for py39-multidict-6.0.4
+===>   Building py39-multidict-6.0.4
+================================================================================
+= Install package phase ========================================================
+================================================================================
+[reprise-builder] Installing py39-multidict-6.0.4...
+[reprise-builder] Extracting py39-multidict-6.0.4: .......... done
+================================================================================
+= Listing used shared libraries ================================================
+================================================================================
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+================================================================================
+= Testing phase ================================================================
+================================================================================
+===>  Testing for py39-multidict-6.0.4
+===>   py39-multidict-6.0.4 depends on package: py39-pytest-runner>=0 - found
+===>   py39-multidict-6.0.4 depends on package: py39-pytest-cov>=0 - found
+===>   py39-multidict-6.0.4 depends on package: py39-pytest>=7,1 - found
+===>   py39-multidict-6.0.4 depends on file: /usr/local/bin/python3.9 - found
+cd /work/usr/ports/www/py-multidict/work-py39/multidict-6.0.4 && /usr/bin/env -i HOME=/work/usr/ports/www/py-multidict/work-py39  PWD="${PWD}"  __MAKE_CONF=/nonexistent OSVERSION=1400097 PATH=/usr/local/libexec/ccache:/work/usr/ports/www/py-multidict/work-py39/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin UNAME_m=amd64 UNAME_p=amd64 UNAME_r=14.0-RELEASE UNAME_v=FreeBSD\ 14.0-RELEASE XDG_DATA_HOME=/work/usr/ports/www/py-multidict/work-py39  XDG_CONFIG_HOME=/work/usr/ports/www/py-multidict/work-py39  XDG_CACHE_HOME=/work/usr/ports/www/py-multidict/work-py39/.cache  HOME=/work/usr/ports/www/py-multidict/work-py39 PATH=/usr/local/libexec/ccache:/work/usr/ports/www/py-multidict/work-py39/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin PKG_CONFIG_LIBDIR=/work/usr/ports/www/py-multidict/work-py39/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES LDSHARED="cc -shared" PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE= PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  " CCACHE_DIR="/ccache" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444" /usr/local/bin/python3.9 -m pytest -k '' -rs -v -o addopts= 
+============================= test session starts ==============================
+platform freebsd14 -- Python 3.9.18, pytest-7.4.4, pluggy-1.4.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /work/usr/ports/www/py-multidict/work-py39/multidict-6.0.4
+configfile: setup.cfg
+testpaths: tests
+plugins: cov-4.1.0
+collecting ... collected 730 items
+
+tests/test_abc.py::test_abc_inheritance PASSED                           [  0%]
+tests/test_abc.py::test_abc_getall PASSED                                [  0%]
+tests/test_abc.py::test_abc_getone PASSED                                [  0%]
+tests/test_abc.py::test_abc_add PASSED                                   [  0%]
+tests/test_abc.py::test_abc_extend PASSED                                [  0%]
+tests/test_abc.py::test_abc_popone PASSED                                [  0%]
+tests/test_abc.py::test_abc_popall PASSED                                [  0%]
+tests/test_abc.py::test_multidict_inheritance[PyMultiDict] PASSED        [  1%]
+tests/test_abc.py::test_multidict_inheritance[PyCIMultiDict] PASSED      [  1%]
+tests/test_abc.py::test_proxy_inheritance[PyMultiDictProxy] PASSED       [  1%]
+tests/test_abc.py::test_proxy_inheritance[PyCIMultiDictProxy] PASSED     [  1%]
+tests/test_abc.py::test_generic_type_in_runtime PASSED                   [  1%]
+tests/test_copy.py::test_copy[PyMultiDict] PASSED                        [  1%]
+tests/test_copy.py::test_copy[PyCIMultiDict] PASSED                      [  1%]
+tests/test_copy.py::test_copy_proxy[PyMultiDictProxy] PASSED             [  2%]
+tests/test_copy.py::test_copy_proxy[PyCIMultiDictProxy] PASSED           [  2%]
+tests/test_copy.py::test_copy_std_copy[PyMultiDict] PASSED               [  2%]
+tests/test_copy.py::test_copy_std_copy[PyCIMultiDict] PASSED             [  2%]
+tests/test_copy.py::test_ci_multidict_clone[PyMultiDict] PASSED          [  2%]
+tests/test_copy.py::test_ci_multidict_clone[PyCIMultiDict] PASSED        [  2%]
+tests/test_guard.py::test_guard_items[PyMultiDict] PASSED                [  2%]
+tests/test_guard.py::test_guard_keys[PyMultiDict] PASSED                 [  3%]
+tests/test_guard.py::test_guard_values[PyMultiDict] PASSED               [  3%]
+tests/test_istr.py::TestPyIStr::test_ctor PASSED                         [  3%]
+tests/test_istr.py::TestPyIStr::test_ctor_str PASSED                     [  3%]
+tests/test_istr.py::TestPyIStr::test_ctor_istr PASSED                    [  3%]
+tests/test_istr.py::TestPyIStr::test_ctor_buffer PASSED                  [  3%]
+tests/test_istr.py::TestPyIStr::test_ctor_repr PASSED                    [  3%]
+tests/test_istr.py::TestPyIStr::test_str PASSED                          [  3%]
+tests/test_istr.py::TestPyIStr::test_eq PASSED                           [  4%]
+tests/test_istr.py::TestPyIStr::test_leak PASSED                         [  4%]
+tests/test_multidict.py::test_exposed_names[multidict._multidict-MultiDict] SKIPPED [  4%]
+tests/test_multidict.py::test_exposed_names[multidict._multidict-CIMultiDict] SKIPPED [  4%]
+tests/test_multidict.py::test__iter__types[multidict._multidict-MultiDict-str] SKIPPED [  4%]
+tests/test_multidict.py::test__iter__types[multidict._multidict-cls1-str] SKIPPED [  4%]
+tests/test_multidict.py::test_proxy_copy[multidict._multidict-classes0] SKIPPED [  4%]
+tests/test_multidict.py::test_proxy_copy[multidict._multidict-classes1] SKIPPED [  5%]
+tests/test_multidict.py::test_subclassing[multidict._multidict-MultiDict] SKIPPED [  5%]
+tests/test_multidict.py::test_subclassing[multidict._multidict-CIMultiDict] SKIPPED [  5%]
+tests/test_multidict.py::test_subclassing[multidict._multidict-MultiDictProxy] SKIPPED [  5%]
+tests/test_multidict.py::test_subclassing[multidict._multidict-CIMultiDictProxy] SKIPPED [  5%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__empty[multidict._multidict-MultiDict] SKIPPED [  5%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__empty[multidict._multidict-cls1] SKIPPED [  5%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict-MultiDict-arg00] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict-MultiDict-arg01] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict-cls1-arg00] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict-cls1-arg01] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__with_kwargs[multidict._multidict-MultiDict] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__with_kwargs[multidict._multidict-cls1] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_generator[multidict._multidict-MultiDict] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_generator[multidict._multidict-cls1] SKIPPED [  6%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_lists[multidict._multidict-MultiDict] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_lists[multidict._multidict-cls1] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict-MultiDict] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict-cls1] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test_getone[multidict._multidict-MultiDict] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test_getone[multidict._multidict-cls1] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test__iter__[multidict._multidict-MultiDict] SKIPPED [  7%]
+tests/test_multidict.py::TestMultiDict::test__iter__[multidict._multidict-cls1] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_keys__contains[multidict._multidict-MultiDict] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_keys__contains[multidict._multidict-cls1] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_values__contains[multidict._multidict-MultiDict] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_values__contains[multidict._multidict-cls1] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_items__contains[multidict._multidict-MultiDict] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_items__contains[multidict._multidict-cls1] SKIPPED [  8%]
+tests/test_multidict.py::TestMultiDict::test_cannot_create_from_unaccepted[multidict._multidict-MultiDict] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_cannot_create_from_unaccepted[multidict._multidict-cls1] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less[multidict._multidict-MultiDict] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less[multidict._multidict-cls1] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less_equal[multidict._multidict-MultiDict] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less_equal[multidict._multidict-cls1] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_equal[multidict._multidict-MultiDict] SKIPPED [  9%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_equal[multidict._multidict-cls1] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater[multidict._multidict-MultiDict] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater[multidict._multidict-cls1] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater_equal[multidict._multidict-MultiDict] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater_equal[multidict._multidict-cls1] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_not_equal[multidict._multidict-MultiDict] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_not_equal[multidict._multidict-cls1] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_eq[multidict._multidict-MultiDict] SKIPPED [ 10%]
+tests/test_multidict.py::TestMultiDict::test_eq[multidict._multidict-cls1] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq2[multidict._multidict-MultiDict] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq2[multidict._multidict-cls1] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq3[multidict._multidict-MultiDict] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq3[multidict._multidict-cls1] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict-MultiDict] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict-cls1] SKIPPED [ 11%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_len[multidict._multidict-MultiDict] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_len[multidict._multidict-cls1] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_getitem[multidict._multidict-MultiDict] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_getitem[multidict._multidict-cls1] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_ne[multidict._multidict-MultiDict] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_ne[multidict._multidict-cls1] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_and[multidict._multidict-MultiDict] SKIPPED [ 12%]
+tests/test_multidict.py::TestMultiDict::test_and[multidict._multidict-cls1] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_and2[multidict._multidict-MultiDict] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_and2[multidict._multidict-cls1] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_or[multidict._multidict-MultiDict] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_or[multidict._multidict-cls1] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_or2[multidict._multidict-MultiDict] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_or2[multidict._multidict-cls1] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_sub[multidict._multidict-MultiDict] SKIPPED [ 13%]
+tests/test_multidict.py::TestMultiDict::test_sub[multidict._multidict-cls1] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_sub2[multidict._multidict-MultiDict] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_sub2[multidict._multidict-cls1] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_xor[multidict._multidict-MultiDict] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_xor[multidict._multidict-cls1] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_xor2[multidict._multidict-MultiDict] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_xor2[multidict._multidict-cls1] SKIPPED [ 14%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict-MultiDict-_set0-True] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict-MultiDict-_set1-False] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict-cls1-_set0-True] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict-cls1-_set1-False] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_repr_issue_410[multidict._multidict-MultiDict] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_repr_issue_410[multidict._multidict-cls1] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-MultiDict-other0-or_] SKIPPED [ 15%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-MultiDict-other0-and_] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-MultiDict-other0-sub] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-MultiDict-other0-xor] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-or_] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-and_] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-sub] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-xor] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_weakref[multidict._multidict-MultiDict] SKIPPED [ 16%]
+tests/test_multidict.py::TestMultiDict::test_weakref[multidict._multidict-cls1] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_keys[multidict._multidict-MultiDict] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_keys[multidict._multidict-cls1] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_items[multidict._multidict-MultiDict] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_items[multidict._multidict-cls1] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_values[multidict._multidict-MultiDict] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_values[multidict._multidict-cls1] SKIPPED [ 17%]
+tests/test_multidict.py::TestMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict-MultiDict] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict-cls1] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict-MultiDict] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict-cls1] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict-MultiDict] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict-cls1] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test__repr__[multidict._multidict-MultiDict] SKIPPED [ 18%]
+tests/test_multidict.py::TestMultiDict::test__repr__[multidict._multidict-cls1] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_getall[multidict._multidict-MultiDict] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_getall[multidict._multidict-cls1] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_preserve_stable_ordering[multidict._multidict-MultiDict] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_preserve_stable_ordering[multidict._multidict-cls1] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_get[multidict._multidict-MultiDict] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_get[multidict._multidict-cls1] SKIPPED [ 19%]
+tests/test_multidict.py::TestMultiDict::test_items__repr__[multidict._multidict-MultiDict] SKIPPED [ 20%]
+tests/test_multidict.py::TestMultiDict::test_items__repr__[multidict._multidict-cls1] SKIPPED [ 20%]
+tests/test_multidict.py::TestMultiDict::test_keys__repr__[multidict._multidict-MultiDict] SKIPPED [ 20%]
+tests/test_multidict.py::TestMultiDict::test_keys__repr__[multidict._multidict-cls1] SKIPPED [ 20%]
+tests/test_multidict.py::TestMultiDict::test_values__repr__[multidict._multidict-MultiDict] SKIPPED [ 20%]
+tests/test_multidict.py::TestMultiDict::test_values__repr__[multidict._multidict-cls1] SKIPPED [ 20%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__empty[multidict._multidict-CIMultiDict] SKIPPED [ 20%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__empty[multidict._multidict-cls1] SKIPPED [ 20%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict-CIMultiDict-arg00] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict-CIMultiDict-arg01] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict-cls1-arg00] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict-cls1-arg01] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__with_kwargs[multidict._multidict-CIMultiDict] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__with_kwargs[multidict._multidict-cls1] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_generator[multidict._multidict-CIMultiDict] SKIPPED [ 21%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_generator[multidict._multidict-cls1] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_lists[multidict._multidict-CIMultiDict] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_lists[multidict._multidict-cls1] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict-CIMultiDict] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict-cls1] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test_getone[multidict._multidict-CIMultiDict] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test_getone[multidict._multidict-cls1] SKIPPED [ 22%]
+tests/test_multidict.py::TestCIMultiDict::test__iter__[multidict._multidict-CIMultiDict] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test__iter__[multidict._multidict-cls1] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__contains[multidict._multidict-CIMultiDict] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__contains[multidict._multidict-cls1] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_values__contains[multidict._multidict-CIMultiDict] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_values__contains[multidict._multidict-cls1] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_items__contains[multidict._multidict-CIMultiDict] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_items__contains[multidict._multidict-cls1] SKIPPED [ 23%]
+tests/test_multidict.py::TestCIMultiDict::test_cannot_create_from_unaccepted[multidict._multidict-CIMultiDict] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_cannot_create_from_unaccepted[multidict._multidict-cls1] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less[multidict._multidict-CIMultiDict] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less[multidict._multidict-cls1] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less_equal[multidict._multidict-CIMultiDict] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less_equal[multidict._multidict-cls1] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_equal[multidict._multidict-CIMultiDict] SKIPPED [ 24%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_equal[multidict._multidict-cls1] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater[multidict._multidict-CIMultiDict] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater[multidict._multidict-cls1] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater_equal[multidict._multidict-CIMultiDict] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater_equal[multidict._multidict-cls1] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_not_equal[multidict._multidict-CIMultiDict] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_not_equal[multidict._multidict-cls1] SKIPPED [ 25%]
+tests/test_multidict.py::TestCIMultiDict::test_eq[multidict._multidict-CIMultiDict] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq[multidict._multidict-cls1] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq2[multidict._multidict-CIMultiDict] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq2[multidict._multidict-cls1] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq3[multidict._multidict-CIMultiDict] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq3[multidict._multidict-cls1] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict-CIMultiDict] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict-cls1] SKIPPED [ 26%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_len[multidict._multidict-CIMultiDict] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_len[multidict._multidict-cls1] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_getitem[multidict._multidict-CIMultiDict] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_getitem[multidict._multidict-cls1] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_ne[multidict._multidict-CIMultiDict] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_ne[multidict._multidict-cls1] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_and[multidict._multidict-CIMultiDict] SKIPPED [ 27%]
+tests/test_multidict.py::TestCIMultiDict::test_and[multidict._multidict-cls1] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_and2[multidict._multidict-CIMultiDict] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_and2[multidict._multidict-cls1] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_or[multidict._multidict-CIMultiDict] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_or[multidict._multidict-cls1] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_or2[multidict._multidict-CIMultiDict] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_or2[multidict._multidict-cls1] SKIPPED [ 28%]
+tests/test_multidict.py::TestCIMultiDict::test_sub[multidict._multidict-CIMultiDict] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_sub[multidict._multidict-cls1] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_sub2[multidict._multidict-CIMultiDict] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_sub2[multidict._multidict-cls1] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_xor[multidict._multidict-CIMultiDict] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_xor[multidict._multidict-cls1] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_xor2[multidict._multidict-CIMultiDict] SKIPPED [ 29%]
+tests/test_multidict.py::TestCIMultiDict::test_xor2[multidict._multidict-cls1] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict-CIMultiDict-_set0-True] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict-CIMultiDict-_set1-False] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict-cls1-_set0-True] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict-cls1-_set1-False] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_repr_issue_410[multidict._multidict-CIMultiDict] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_repr_issue_410[multidict._multidict-cls1] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-CIMultiDict-other0-or_] SKIPPED [ 30%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-CIMultiDict-other0-and_] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-CIMultiDict-other0-sub] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-CIMultiDict-other0-xor] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-or_] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-and_] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-sub] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict-cls1-other0-xor] SKIPPED [ 31%]
+tests/test_multidict.py::TestCIMultiDict::test_weakref[multidict._multidict-CIMultiDict] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_weakref[multidict._multidict-cls1] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_keys[multidict._multidict-CIMultiDict] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_keys[multidict._multidict-cls1] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_items[multidict._multidict-CIMultiDict] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_items[multidict._multidict-cls1] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_values[multidict._multidict-CIMultiDict] SKIPPED [ 32%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_values[multidict._multidict-cls1] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict-CIMultiDict] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict-cls1] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict-CIMultiDict] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict-cls1] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict-CIMultiDict] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict-cls1] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_basics[multidict._multidict-CIMultiDict] SKIPPED [ 33%]
+tests/test_multidict.py::TestCIMultiDict::test_basics[multidict._multidict-cls1] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test_getall[multidict._multidict-CIMultiDict] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test_getall[multidict._multidict-cls1] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test_get[multidict._multidict-CIMultiDict] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test_get[multidict._multidict-cls1] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test__repr__[multidict._multidict-CIMultiDict] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test__repr__[multidict._multidict-cls1] SKIPPED [ 34%]
+tests/test_multidict.py::TestCIMultiDict::test_items__repr__[multidict._multidict-CIMultiDict] SKIPPED [ 35%]
+tests/test_multidict.py::TestCIMultiDict::test_items__repr__[multidict._multidict-cls1] SKIPPED [ 35%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__repr__[multidict._multidict-CIMultiDict] SKIPPED [ 35%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__repr__[multidict._multidict-cls1] SKIPPED [ 35%]
+tests/test_multidict.py::TestCIMultiDict::test_values__repr__[multidict._multidict-CIMultiDict] SKIPPED [ 35%]
+tests/test_multidict.py::TestCIMultiDict::test_values__repr__[multidict._multidict-cls1] SKIPPED [ 35%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_copy[multidict._multidict] SKIPPED [ 35%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test__repr__[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_getall[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_add[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_extend[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_extend_from_proxy[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_clear[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_del[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_set_default[multidict._multidict] SKIPPED [ 36%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popitem[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popitem_empty_multidict[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop2[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop_default[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop_raises[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_replacement_order[multidict._multidict] SKIPPED [ 37%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_nonstr_key[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_istr_key[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_str_derived_key[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_istr_key_add[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_str_derived_key_add[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popall[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popall_default[multidict._multidict] SKIPPED [ 38%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popall_key_error[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_large_multidict_resizing[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_getall[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_ctor[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_setitem[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_delitem[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_copy[multidict._multidict] SKIPPED [ 39%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test__repr__[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_add[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_extend[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_extend_from_proxy[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_clear[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_del[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_set_default[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_popitem[multidict._multidict] SKIPPED [ 40%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_popitem_empty_multidict[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop_lowercase[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop_default[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop_raises[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_extend_with_istr[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_copy_istr[multidict._multidict] SKIPPED [ 41%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_eq[multidict._multidict] SKIPPED [ 42%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_sizeof[multidict._multidict] SKIPPED [ 42%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_min_sizeof[multidict._multidict] SKIPPED [ 42%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_issue_620_items[multidict._multidict] SKIPPED [ 42%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_issue_620_keys[multidict._multidict] SKIPPED [ 42%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_issue_620_values[multidict._multidict] SKIPPED [ 42%]
+tests/test_types.py::test_proxies[multidict._multidict] SKIPPED (No ...) [ 42%]
+tests/test_types.py::test_dicts[multidict._multidict] SKIPPED (No ex...) [ 43%]
+tests/test_types.py::test_proxy_not_inherited_from_dict[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_dict_not_inherited_from_proxy[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_multidict_proxy_copy_type[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_cimultidict_proxy_copy_type[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_create_multidict_proxy_from_nonmultidict[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_create_multidict_proxy_from_cimultidict[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_create_multidict_proxy_from_multidict_proxy_from_mdict[multidict._multidict] SKIPPED [ 43%]
+tests/test_types.py::test_create_cimultidict_proxy_from_cimultidict_proxy_from_ci[multidict._multidict] SKIPPED [ 44%]
+tests/test_types.py::test_create_cimultidict_proxy_from_nonmultidict[multidict._multidict] SKIPPED [ 44%]
+tests/test_types.py::test_create_ci_multidict_proxy_from_multidict[multidict._multidict] SKIPPED [ 44%]
+tests/test_types.py::test_generic_exists[multidict._multidict] SKIPPED   [ 44%]
+tests/test_types.py::test_generic_alias[multidict._multidict] SKIPPED    [ 44%]
+tests/test_update.py::test_update_md[multidict._multidict] SKIPPED (...) [ 44%]
+tests/test_update.py::test_update_istr_ci_md[multidict._multidict] SKIPPED [ 44%]
+tests/test_update.py::test_update_ci_md[multidict._multidict] SKIPPED    [ 45%]
+tests/test_multidict.py::test_exposed_names[multidict._multidict_py-MultiDict] PASSED [ 45%]
+tests/test_multidict.py::test_exposed_names[multidict._multidict_py-CIMultiDict] PASSED [ 45%]
+tests/test_multidict.py::test__iter__types[multidict._multidict_py-MultiDict-str] PASSED [ 45%]
+tests/test_multidict.py::test__iter__types[multidict._multidict_py-cls1-str] PASSED [ 45%]
+tests/test_multidict.py::test_proxy_copy[multidict._multidict_py-classes0] PASSED [ 45%]
+tests/test_multidict.py::test_proxy_copy[multidict._multidict_py-classes1] PASSED [ 45%]
+tests/test_multidict.py::test_subclassing[multidict._multidict_py-MultiDict] PASSED [ 46%]
+tests/test_multidict.py::test_subclassing[multidict._multidict_py-CIMultiDict] PASSED [ 46%]
+tests/test_multidict.py::test_subclassing[multidict._multidict_py-MultiDictProxy] PASSED [ 46%]
+tests/test_multidict.py::test_subclassing[multidict._multidict_py-CIMultiDictProxy] PASSED [ 46%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__empty[multidict._multidict_py-MultiDict] PASSED [ 46%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__empty[multidict._multidict_py-cls1] PASSED [ 46%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict_py-MultiDict-arg00] PASSED [ 46%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict_py-MultiDict-arg01] PASSED [ 46%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict_py-cls1-arg00] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_arg0[multidict._multidict_py-cls1-arg01] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__with_kwargs[multidict._multidict_py-MultiDict] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__with_kwargs[multidict._multidict_py-cls1] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_generator[multidict._multidict_py-MultiDict] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_generator[multidict._multidict_py-cls1] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_lists[multidict._multidict_py-MultiDict] PASSED [ 47%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_lists[multidict._multidict_py-cls1] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict_py-MultiDict] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict_py-cls1] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test_getone[multidict._multidict_py-MultiDict] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test_getone[multidict._multidict_py-cls1] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test__iter__[multidict._multidict_py-MultiDict] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test__iter__[multidict._multidict_py-cls1] PASSED [ 48%]
+tests/test_multidict.py::TestMultiDict::test_keys__contains[multidict._multidict_py-MultiDict] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_keys__contains[multidict._multidict_py-cls1] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_values__contains[multidict._multidict_py-MultiDict] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_values__contains[multidict._multidict_py-cls1] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_items__contains[multidict._multidict_py-MultiDict] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_items__contains[multidict._multidict_py-cls1] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_cannot_create_from_unaccepted[multidict._multidict_py-MultiDict] PASSED [ 49%]
+tests/test_multidict.py::TestMultiDict::test_cannot_create_from_unaccepted[multidict._multidict_py-cls1] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less[multidict._multidict_py-MultiDict] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less[multidict._multidict_py-cls1] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less_equal[multidict._multidict_py-MultiDict] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_less_equal[multidict._multidict_py-cls1] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_equal[multidict._multidict_py-MultiDict] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_equal[multidict._multidict_py-cls1] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater[multidict._multidict_py-MultiDict] PASSED [ 50%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater[multidict._multidict_py-cls1] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater_equal[multidict._multidict_py-MultiDict] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_greater_equal[multidict._multidict_py-cls1] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_not_equal[multidict._multidict_py-MultiDict] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_keys_is_set_not_equal[multidict._multidict_py-cls1] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_eq[multidict._multidict_py-MultiDict] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_eq[multidict._multidict_py-cls1] PASSED [ 51%]
+tests/test_multidict.py::TestMultiDict::test_eq2[multidict._multidict_py-MultiDict] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq2[multidict._multidict_py-cls1] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq3[multidict._multidict_py-MultiDict] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq3[multidict._multidict_py-cls1] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict_py-MultiDict] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict_py-cls1] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_len[multidict._multidict_py-MultiDict] PASSED [ 52%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_len[multidict._multidict_py-cls1] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_getitem[multidict._multidict_py-MultiDict] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_eq_bad_mapping_getitem[multidict._multidict_py-cls1] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_ne[multidict._multidict_py-MultiDict] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_ne[multidict._multidict_py-cls1] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_and[multidict._multidict_py-MultiDict] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_and[multidict._multidict_py-cls1] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_and2[multidict._multidict_py-MultiDict] PASSED [ 53%]
+tests/test_multidict.py::TestMultiDict::test_and2[multidict._multidict_py-cls1] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_or[multidict._multidict_py-MultiDict] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_or[multidict._multidict_py-cls1] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_or2[multidict._multidict_py-MultiDict] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_or2[multidict._multidict_py-cls1] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_sub[multidict._multidict_py-MultiDict] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_sub[multidict._multidict_py-cls1] PASSED [ 54%]
+tests/test_multidict.py::TestMultiDict::test_sub2[multidict._multidict_py-MultiDict] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_sub2[multidict._multidict_py-cls1] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_xor[multidict._multidict_py-MultiDict] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_xor[multidict._multidict_py-cls1] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_xor2[multidict._multidict_py-MultiDict] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_xor2[multidict._multidict_py-cls1] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict_py-MultiDict-_set0-True] PASSED [ 55%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict_py-MultiDict-_set1-False] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict_py-cls1-_set0-True] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_isdisjoint[multidict._multidict_py-cls1-_set1-False] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_repr_issue_410[multidict._multidict_py-MultiDict] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_repr_issue_410[multidict._multidict_py-cls1] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-MultiDict-other0-or_] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-MultiDict-other0-and_] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-MultiDict-other0-sub] PASSED [ 56%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-MultiDict-other0-xor] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-or_] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-and_] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-sub] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-xor] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_weakref[multidict._multidict_py-MultiDict] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_weakref[multidict._multidict_py-cls1] PASSED [ 57%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_keys[multidict._multidict_py-MultiDict] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_keys[multidict._multidict_py-cls1] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_items[multidict._multidict_py-MultiDict] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_items[multidict._multidict_py-cls1] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_values[multidict._multidict_py-MultiDict] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_iter_length_hint_values[multidict._multidict_py-cls1] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict_py-MultiDict] PASSED [ 58%]
+tests/test_multidict.py::TestMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict_py-cls1] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict_py-MultiDict] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict_py-cls1] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict_py-MultiDict] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict_py-cls1] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test__repr__[multidict._multidict_py-MultiDict] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test__repr__[multidict._multidict_py-cls1] PASSED [ 59%]
+tests/test_multidict.py::TestMultiDict::test_getall[multidict._multidict_py-MultiDict] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_getall[multidict._multidict_py-cls1] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_preserve_stable_ordering[multidict._multidict_py-MultiDict] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_preserve_stable_ordering[multidict._multidict_py-cls1] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_get[multidict._multidict_py-MultiDict] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_get[multidict._multidict_py-cls1] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_items__repr__[multidict._multidict_py-MultiDict] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_items__repr__[multidict._multidict_py-cls1] PASSED [ 60%]
+tests/test_multidict.py::TestMultiDict::test_keys__repr__[multidict._multidict_py-MultiDict] PASSED [ 61%]
+tests/test_multidict.py::TestMultiDict::test_keys__repr__[multidict._multidict_py-cls1] PASSED [ 61%]
+tests/test_multidict.py::TestMultiDict::test_values__repr__[multidict._multidict_py-MultiDict] PASSED [ 61%]
+tests/test_multidict.py::TestMultiDict::test_values__repr__[multidict._multidict_py-cls1] PASSED [ 61%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__empty[multidict._multidict_py-CIMultiDict] PASSED [ 61%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__empty[multidict._multidict_py-cls1] PASSED [ 61%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict_py-CIMultiDict-arg00] PASSED [ 61%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict_py-CIMultiDict-arg01] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict_py-cls1-arg00] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_arg0[multidict._multidict_py-cls1-arg01] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__with_kwargs[multidict._multidict_py-CIMultiDict] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__with_kwargs[multidict._multidict_py-cls1] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_generator[multidict._multidict_py-CIMultiDict] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_generator[multidict._multidict_py-cls1] PASSED [ 62%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_lists[multidict._multidict_py-CIMultiDict] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_lists[multidict._multidict_py-cls1] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict_py-CIMultiDict] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test_instantiate__from_list_of_custom_pairs[multidict._multidict_py-cls1] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test_getone[multidict._multidict_py-CIMultiDict] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test_getone[multidict._multidict_py-cls1] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test__iter__[multidict._multidict_py-CIMultiDict] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test__iter__[multidict._multidict_py-cls1] PASSED [ 63%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__contains[multidict._multidict_py-CIMultiDict] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__contains[multidict._multidict_py-cls1] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_values__contains[multidict._multidict_py-CIMultiDict] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_values__contains[multidict._multidict_py-cls1] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_items__contains[multidict._multidict_py-CIMultiDict] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_items__contains[multidict._multidict_py-cls1] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_cannot_create_from_unaccepted[multidict._multidict_py-CIMultiDict] PASSED [ 64%]
+tests/test_multidict.py::TestCIMultiDict::test_cannot_create_from_unaccepted[multidict._multidict_py-cls1] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less[multidict._multidict_py-CIMultiDict] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less[multidict._multidict_py-cls1] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less_equal[multidict._multidict_py-CIMultiDict] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_less_equal[multidict._multidict_py-cls1] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_equal[multidict._multidict_py-CIMultiDict] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_equal[multidict._multidict_py-cls1] PASSED [ 65%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater[multidict._multidict_py-CIMultiDict] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater[multidict._multidict_py-cls1] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater_equal[multidict._multidict_py-CIMultiDict] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_greater_equal[multidict._multidict_py-cls1] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_not_equal[multidict._multidict_py-CIMultiDict] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_keys_is_set_not_equal[multidict._multidict_py-cls1] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_eq[multidict._multidict_py-CIMultiDict] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_eq[multidict._multidict_py-cls1] PASSED [ 66%]
+tests/test_multidict.py::TestCIMultiDict::test_eq2[multidict._multidict_py-CIMultiDict] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq2[multidict._multidict_py-cls1] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq3[multidict._multidict_py-CIMultiDict] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq3[multidict._multidict_py-cls1] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict_py-CIMultiDict] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_other_mapping_contains_more_keys[multidict._multidict_py-cls1] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_len[multidict._multidict_py-CIMultiDict] PASSED [ 67%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_len[multidict._multidict_py-cls1] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_getitem[multidict._multidict_py-CIMultiDict] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_eq_bad_mapping_getitem[multidict._multidict_py-cls1] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_ne[multidict._multidict_py-CIMultiDict] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_ne[multidict._multidict_py-cls1] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_and[multidict._multidict_py-CIMultiDict] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_and[multidict._multidict_py-cls1] PASSED [ 68%]
+tests/test_multidict.py::TestCIMultiDict::test_and2[multidict._multidict_py-CIMultiDict] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_and2[multidict._multidict_py-cls1] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_or[multidict._multidict_py-CIMultiDict] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_or[multidict._multidict_py-cls1] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_or2[multidict._multidict_py-CIMultiDict] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_or2[multidict._multidict_py-cls1] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_sub[multidict._multidict_py-CIMultiDict] PASSED [ 69%]
+tests/test_multidict.py::TestCIMultiDict::test_sub[multidict._multidict_py-cls1] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_sub2[multidict._multidict_py-CIMultiDict] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_sub2[multidict._multidict_py-cls1] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_xor[multidict._multidict_py-CIMultiDict] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_xor[multidict._multidict_py-cls1] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_xor2[multidict._multidict_py-CIMultiDict] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_xor2[multidict._multidict_py-cls1] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict_py-CIMultiDict-_set0-True] PASSED [ 70%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict_py-CIMultiDict-_set1-False] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict_py-cls1-_set0-True] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_isdisjoint[multidict._multidict_py-cls1-_set1-False] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_repr_issue_410[multidict._multidict_py-CIMultiDict] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_repr_issue_410[multidict._multidict_py-cls1] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-CIMultiDict-other0-or_] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-CIMultiDict-other0-and_] PASSED [ 71%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-CIMultiDict-other0-sub] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-CIMultiDict-other0-xor] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-or_] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-and_] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-sub] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_op_issue_410[multidict._multidict_py-cls1-other0-xor] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_weakref[multidict._multidict_py-CIMultiDict] PASSED [ 72%]
+tests/test_multidict.py::TestCIMultiDict::test_weakref[multidict._multidict_py-cls1] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_keys[multidict._multidict_py-CIMultiDict] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_keys[multidict._multidict_py-cls1] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_items[multidict._multidict_py-CIMultiDict] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_items[multidict._multidict_py-cls1] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_values[multidict._multidict_py-CIMultiDict] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_iter_length_hint_values[multidict._multidict_py-cls1] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict_py-CIMultiDict] PASSED [ 73%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_list_arg_and_kwds[multidict._multidict_py-cls1] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict_py-CIMultiDict] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_tuple_arg_and_kwds[multidict._multidict_py-cls1] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict_py-CIMultiDict] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_ctor_deque_arg_and_kwds[multidict._multidict_py-cls1] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_basics[multidict._multidict_py-CIMultiDict] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_basics[multidict._multidict_py-cls1] PASSED [ 74%]
+tests/test_multidict.py::TestCIMultiDict::test_getall[multidict._multidict_py-CIMultiDict] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test_getall[multidict._multidict_py-cls1] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test_get[multidict._multidict_py-CIMultiDict] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test_get[multidict._multidict_py-cls1] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test__repr__[multidict._multidict_py-CIMultiDict] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test__repr__[multidict._multidict_py-cls1] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test_items__repr__[multidict._multidict_py-CIMultiDict] PASSED [ 75%]
+tests/test_multidict.py::TestCIMultiDict::test_items__repr__[multidict._multidict_py-cls1] PASSED [ 76%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__repr__[multidict._multidict_py-CIMultiDict] PASSED [ 76%]
+tests/test_multidict.py::TestCIMultiDict::test_keys__repr__[multidict._multidict_py-cls1] PASSED [ 76%]
+tests/test_multidict.py::TestCIMultiDict::test_values__repr__[multidict._multidict_py-CIMultiDict] PASSED [ 76%]
+tests/test_multidict.py::TestCIMultiDict::test_values__repr__[multidict._multidict_py-cls1] PASSED [ 76%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_copy[multidict._multidict_py] PASSED [ 76%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test__repr__[multidict._multidict_py] PASSED [ 76%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_getall[multidict._multidict_py] PASSED [ 76%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_add[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_extend[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_extend_from_proxy[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_clear[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_del[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_set_default[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popitem[multidict._multidict_py] PASSED [ 77%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popitem_empty_multidict[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop2[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop_default[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_pop_raises[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_replacement_order[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_nonstr_key[multidict._multidict_py] PASSED [ 78%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_istr_key[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_str_derived_key[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_istr_key_add[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_str_derived_key_add[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popall[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popall_default[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_popall_key_error[multidict._multidict_py] PASSED [ 79%]
+tests/test_mutable_multidict.py::TestMutableMultiDict::test_large_multidict_resizing[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_getall[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_ctor[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_setitem[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_delitem[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_copy[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test__repr__[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_add[multidict._multidict_py] PASSED [ 80%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_extend[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_extend_from_proxy[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_clear[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_del[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_set_default[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_popitem[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_popitem_empty_multidict[multidict._multidict_py] PASSED [ 81%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop_lowercase[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop_default[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_pop_raises[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_extend_with_istr[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_copy_istr[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_eq[multidict._multidict_py] PASSED [ 82%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_sizeof[multidict._multidict_py] PASSED [ 83%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_min_sizeof[multidict._multidict_py] PASSED [ 83%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_issue_620_items[multidict._multidict_py] PASSED [ 83%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_issue_620_keys[multidict._multidict_py] PASSED [ 83%]
+tests/test_mutable_multidict.py::TestCIMutableMultiDict::test_issue_620_values[multidict._multidict_py] PASSED [ 83%]
+tests/test_types.py::test_proxies[multidict._multidict_py] PASSED        [ 83%]
+tests/test_types.py::test_dicts[multidict._multidict_py] PASSED          [ 83%]
+tests/test_types.py::test_proxy_not_inherited_from_dict[multidict._multidict_py] PASSED [ 83%]
+tests/test_types.py::test_dict_not_inherited_from_proxy[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_multidict_proxy_copy_type[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_cimultidict_proxy_copy_type[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_create_multidict_proxy_from_nonmultidict[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_create_multidict_proxy_from_cimultidict[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_create_multidict_proxy_from_multidict_proxy_from_mdict[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_create_cimultidict_proxy_from_cimultidict_proxy_from_ci[multidict._multidict_py] PASSED [ 84%]
+tests/test_types.py::test_create_cimultidict_proxy_from_nonmultidict[multidict._multidict_py] PASSED [ 85%]
+tests/test_types.py::test_create_ci_multidict_proxy_from_multidict[multidict._multidict_py] PASSED [ 85%]
+tests/test_types.py::test_generic_exists[multidict._multidict_py] SKIPPED [ 85%]
+tests/test_types.py::test_generic_alias[multidict._multidict_py] PASSED  [ 85%]
+tests/test_update.py::test_update_md[multidict._multidict_py] PASSED     [ 85%]
+tests/test_update.py::test_update_istr_ci_md[multidict._multidict_py] PASSED [ 85%]
+tests/test_update.py::test_update_ci_md[multidict._multidict_py] PASSED  [ 85%]
+tests/test_mypy.py::test_classes_not_abstract PASSED                     [ 86%]
+tests/test_mypy.py::test_getitem PASSED                                  [ 86%]
+tests/test_mypy.py::test_get PASSED                                      [ 86%]
+tests/test_mypy.py::test_get_default PASSED                              [ 86%]
+tests/test_mypy.py::test_getone PASSED                                   [ 86%]
+tests/test_mypy.py::test_getone_default PASSED                           [ 86%]
+tests/test_mypy.py::test_getall PASSED                                   [ 86%]
+tests/test_mypy.py::test_getall_default PASSED                           [ 86%]
+tests/test_mypy.py::test_copy PASSED                                     [ 87%]
+tests/test_mypy.py::test_iter PASSED                                     [ 87%]
+tests/test_mypy.py::test_setitem PASSED                                  [ 87%]
+tests/test_mypy.py::test_delitem PASSED                                  [ 87%]
+tests/test_mypy.py::test_additem PASSED                                  [ 87%]
+tests/test_mypy.py::test_extend_mapping PASSED                           [ 87%]
+tests/test_mypy.py::test_update_mapping PASSED                           [ 87%]
+tests/test_mypy.py::test_popone PASSED                                   [ 88%]
+tests/test_mypy.py::test_popall PASSED                                   [ 88%]
+tests/test_pickle.py::test_pickle[PyMultiDict-0] PASSED                  [ 88%]
+tests/test_pickle.py::test_load_from_file[PyMultiDict-0] PASSED          [ 88%]
+tests/test_pickle.py::test_pickle[PyMultiDict-1] PASSED                  [ 88%]
+tests/test_pickle.py::test_load_from_file[PyMultiDict-1] PASSED          [ 88%]
+tests/test_pickle.py::test_pickle[PyMultiDict-2] PASSED                  [ 88%]
+tests/test_pickle.py::test_load_from_file[PyMultiDict-2] PASSED          [ 89%]
+tests/test_pickle.py::test_pickle[PyMultiDict-3] PASSED                  [ 89%]
+tests/test_pickle.py::test_load_from_file[PyMultiDict-3] PASSED          [ 89%]
+tests/test_pickle.py::test_pickle[PyMultiDict-4] PASSED                  [ 89%]
+tests/test_pickle.py::test_load_from_file[PyMultiDict-4] PASSED          [ 89%]
+tests/test_pickle.py::test_pickle[PyMultiDict-5] PASSED                  [ 89%]
+tests/test_pickle.py::test_load_from_file[PyMultiDict-5] PASSED          [ 89%]
+tests/test_pickle.py::test_pickle[PyCIMultiDict-0] PASSED                [ 90%]
+tests/test_pickle.py::test_load_from_file[PyCIMultiDict-0] PASSED        [ 90%]
+tests/test_pickle.py::test_pickle[PyCIMultiDict-1] PASSED                [ 90%]
+tests/test_pickle.py::test_load_from_file[PyCIMultiDict-1] PASSED        [ 90%]
+tests/test_pickle.py::test_pickle[PyCIMultiDict-2] PASSED                [ 90%]
+tests/test_pickle.py::test_load_from_file[PyCIMultiDict-2] PASSED        [ 90%]
+tests/test_pickle.py::test_pickle[PyCIMultiDict-3] PASSED                [ 90%]
+tests/test_pickle.py::test_load_from_file[PyCIMultiDict-3] PASSED        [ 90%]
+tests/test_pickle.py::test_pickle[PyCIMultiDict-4] PASSED                [ 91%]
+tests/test_pickle.py::test_load_from_file[PyCIMultiDict-4] PASSED        [ 91%]
+tests/test_pickle.py::test_pickle[PyCIMultiDict-5] PASSED                [ 91%]
+tests/test_pickle.py::test_load_from_file[PyCIMultiDict-5] PASSED        [ 91%]
+tests/test_pickle.py::test_pickle_proxy[PyMultiDictProxy] PASSED         [ 91%]
+tests/test_pickle.py::test_pickle_proxy[PyCIMultiDictProxy] PASSED       [ 91%]
+tests/test_update.py::test_update_replace[PyMultiDict] PASSED            [ 91%]
+tests/test_update.py::test_update_replace[PyCIMultiDict] PASSED          [ 92%]
+tests/test_update.py::test_update_append[PyMultiDict] PASSED             [ 92%]
+tests/test_update.py::test_update_append[PyCIMultiDict] PASSED           [ 92%]
+tests/test_update.py::test_update_remove[PyMultiDict] PASSED             [ 92%]
+tests/test_update.py::test_update_remove[PyCIMultiDict] PASSED           [ 92%]
+tests/test_update.py::test_update_replace_seq[PyMultiDict] PASSED        [ 92%]
+tests/test_update.py::test_update_replace_seq[PyCIMultiDict] PASSED      [ 92%]
+tests/test_update.py::test_update_replace_seq2[PyMultiDict] PASSED       [ 93%]
+tests/test_update.py::test_update_replace_seq2[PyCIMultiDict] PASSED     [ 93%]
+tests/test_update.py::test_update_append_seq[PyMultiDict] PASSED         [ 93%]
+tests/test_update.py::test_update_append_seq[PyCIMultiDict] PASSED       [ 93%]
+tests/test_update.py::test_update_remove_seq[PyMultiDict] PASSED         [ 93%]
+tests/test_update.py::test_update_remove_seq[PyCIMultiDict] PASSED       [ 93%]
+tests/test_update.py::test_update_list_arg_and_kwds[PyMultiDict] PASSED  [ 93%]
+tests/test_update.py::test_update_list_arg_and_kwds[PyCIMultiDict] PASSED [ 93%]
+tests/test_update.py::test_update_tuple_arg_and_kwds[PyMultiDict] PASSED [ 94%]
+tests/test_update.py::test_update_tuple_arg_and_kwds[PyCIMultiDict] PASSED [ 94%]
+tests/test_update.py::test_update_deque_arg_and_kwds[PyMultiDict] PASSED [ 94%]
+tests/test_update.py::test_update_deque_arg_and_kwds[PyCIMultiDict] PASSED [ 94%]
+tests/test_version.py::TestPyMultiDict::test_getversion_bad_param PASSED [ 94%]
+tests/test_version.py::TestPyMultiDict::test_ctor PASSED                 [ 94%]
+tests/test_version.py::TestPyMultiDict::test_add PASSED                  [ 94%]
+tests/test_version.py::TestPyMultiDict::test_delitem PASSED              [ 95%]
+tests/test_version.py::TestPyMultiDict::test_delitem_not_found PASSED    [ 95%]
+tests/test_version.py::TestPyMultiDict::test_setitem PASSED              [ 95%]
+tests/test_version.py::TestPyMultiDict::test_setitem_not_found PASSED    [ 95%]
+tests/test_version.py::TestPyMultiDict::test_clear PASSED                [ 95%]
+tests/test_version.py::TestPyMultiDict::test_setdefault PASSED           [ 95%]
+tests/test_version.py::TestPyMultiDict::test_popone PASSED               [ 95%]
+tests/test_version.py::TestPyMultiDict::test_popone_default PASSED       [ 96%]
+tests/test_version.py::TestPyMultiDict::test_popone_key_error PASSED     [ 96%]
+tests/test_version.py::TestPyMultiDict::test_pop PASSED                  [ 96%]
+tests/test_version.py::TestPyMultiDict::test_pop_default PASSED          [ 96%]
+tests/test_version.py::TestPyMultiDict::test_pop_key_error PASSED        [ 96%]
+tests/test_version.py::TestPyMultiDict::test_popall PASSED               [ 96%]
+tests/test_version.py::TestPyMultiDict::test_popall_default PASSED       [ 96%]
+tests/test_version.py::TestPyMultiDict::test_popall_key_error PASSED     [ 96%]
+tests/test_version.py::TestPyMultiDict::test_popitem PASSED              [ 97%]
+tests/test_version.py::TestPyMultiDict::test_popitem_key_error PASSED    [ 97%]
+tests/test_version.py::TestPyCIMultiDict::test_getversion_bad_param PASSED [ 97%]
+tests/test_version.py::TestPyCIMultiDict::test_ctor PASSED               [ 97%]
+tests/test_version.py::TestPyCIMultiDict::test_add PASSED                [ 97%]
+tests/test_version.py::TestPyCIMultiDict::test_delitem PASSED            [ 97%]
+tests/test_version.py::TestPyCIMultiDict::test_delitem_not_found PASSED  [ 97%]
+tests/test_version.py::TestPyCIMultiDict::test_setitem PASSED            [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_setitem_not_found PASSED  [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_clear PASSED              [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_setdefault PASSED         [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_popone PASSED             [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_popone_default PASSED     [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_popone_key_error PASSED   [ 98%]
+tests/test_version.py::TestPyCIMultiDict::test_pop PASSED                [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_pop_default PASSED        [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_pop_key_error PASSED      [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_popall PASSED             [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_popall_default PASSED     [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_popall_key_error PASSED   [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_popitem PASSED            [ 99%]
+tests/test_version.py::TestPyCIMultiDict::test_popitem_key_error PASSED  [100%]
+
+=========================== short test summary info ============================
+SKIPPED [2] tests/test_multidict.py:60: No extensions available
+SKIPPED [2] tests/test_multidict.py:72: No extensions available
+SKIPPED [2] tests/test_multidict.py:92: No extensions available
+SKIPPED [4] tests/test_multidict.py:107: No extensions available
+SKIPPED [188] tests/test_multidict.py: No extensions available
+SKIPPED [8] tests/test_multidict.py:131: No extensions available
+SKIPPED [8] tests/test_multidict.py:390: No extensions available
+SKIPPED [16] tests/test_multidict.py:409: No extensions available
+SKIPPED [49] tests/test_mutable_multidict.py: No extensions available
+SKIPPED [1] tests/test_mutable_multidict.py:466: No extensions available
+SKIPPED [1] tests/test_mutable_multidict.py:480: No extensions available
+SKIPPED [12] tests/test_types.py: No extensions available
+SKIPPED [2] tests/test_types.py:85: Python 3.9 uses GenericAlias which is different
+SKIPPED [1] tests/test_types.py:95: No extensions available
+SKIPPED [3] tests/test_update.py: No extensions available
+======================= 431 passed, 299 skipped in 0.83s =======================
