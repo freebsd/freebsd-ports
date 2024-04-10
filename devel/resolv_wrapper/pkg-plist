@@ -1,0 +1,7 @@
+lib/cmake/resolv_wrapper/resolv_wrapper-config-version.cmake
+lib/cmake/resolv_wrapper/resolv_wrapper-config.cmake
+lib/libresolv_wrapper.so
+lib/libresolv_wrapper.so.0
+lib/libresolv_wrapper.so.0.0.8
+libdata/pkgconfig/resolv_wrapper.pc
+share/man/man1/resolv_wrapper.1.gz
