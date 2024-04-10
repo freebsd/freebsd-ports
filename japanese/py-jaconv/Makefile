@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Japanese character interconverter for Hiragana, Katakana, Hankaku, Zenkaku and more
-WWW=		https://github.com/ikegami-yukino/jaconv
+WWW=		https://ikegami-yukino.github.io/jaconv/jaconv.html \
+		https://github.com/ikegami-yukino/jaconv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
