@@ -486,6 +486,7 @@ share/locale/pt/LC_MESSAGES/kstart.mo
 share/locale/pt/LC_MESSAGES/plasma-open-settings.mo
 share/locale/pt_BR/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_filetypes.mo
+share/locale/pt_BR/LC_MESSAGES/kde-inhibit.mo
 share/locale/pt_BR/LC_MESSAGES/kdesu.mo
 share/locale/pt_BR/LC_MESSAGES/kioclient.mo
 share/locale/pt_BR/LC_MESSAGES/kmimetypefinder.mo
