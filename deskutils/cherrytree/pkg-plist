@@ -336,6 +336,8 @@ share/applications/cherrytree.desktop
 %%DATADIR%%/styles/solarized-dark.xml
 %%DATADIR%%/styles/solarized-light.xml
 %%DATADIR%%/styles/tango.xml
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/cherrytree-main_window_text.png
 share/icons/hicolor/scalable/apps/cherrytree.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/cherrytree.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/cherrytree.mo
