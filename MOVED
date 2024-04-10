@@ -3166,3 +3166,4 @@ math/lean4-std||2024-04-08|Removed: Lean4 doesn't yet support seperate library p
 misc/urbit||2024-04-08|Deprecated: Can't be built with a reasonable effort
 lang/tcl85||2024-04-09|EOL
 x11-toolkits/tk85||2024-04-09|EOL
+audio/fasttracker2|audio/ft2-clone|2024-04-10|Renamed to match upstream

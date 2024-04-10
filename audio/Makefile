@@ -149,7 +149,6 @@
     SUBDIR += faad
     SUBDIR += fabla2-lv2
     SUBDIR += fapg
-    SUBDIR += fasttracker2
     SUBDIR += fatfrog-lv2
     SUBDIR += faudio
     SUBDIR += faust
@@ -200,6 +199,7 @@
     SUBDIR += freebsd-13-mixer
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
+    SUBDIR += ft2-clone
     SUBDIR += ft2play
     SUBDIR += funktrackergold
     SUBDIR += furnace
