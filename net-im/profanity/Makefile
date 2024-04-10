@@ -1,6 +1,6 @@
 PORTNAME=	profanity
 DISTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	https://profanity-im.github.io/tarballs/
 
