@@ -3170,3 +3170,4 @@ audio/fasttracker2|audio/ft2-clone|2024-04-10|Renamed to match upstream
 lang/ocaml-nox11|lang/ocaml|2024-04-10|X11 support removed upstream
 lang/qscheme||2024-04-10|Has expired: Unmaintained and there are more modern alternatives
 x11/nvidia-hybrid-graphics||2024-04-11|Has expired: Not maintained and obsoleted by glvnd and nvidia-drm-kmod
+lang/cython-devel|lang/cython3|2024-04-11|Has expired: use lang/cython3
