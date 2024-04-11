@@ -1,6 +1,7 @@
 PORTNAME=	snmp
 PORTVERSION=	5.9.4
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
 		ZI
@@ -18,7 +19,7 @@ NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	SSP is currently broken on MIPS
 
 OPTIONS_DEFINE=	MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
-		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
+		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS AX_DISABLE_TRAP \
 		TLS NEWSYSLOG NOLIBPKG SCTP
 OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX NEWSYSLOG
 OPTIONS_SUB=	yes
@@ -31,10 +32,12 @@ AX_SOCKONLY_DESC=	Disable UDP/TCP transports for agentx
 AX_DISABLE_TRAP_DESC=	Disable agentx subagent code in snmptrapd
 UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
 SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
-JAIL_DESC=		Options for running snmpd within a jail(8)
 NEWSYSLOG_DESC=		Automatically rotate snmpd.log via newsyslog
 NOLIBPKG_DESC=		Build without libpkg
 SCTP_DESC=		Build with SCTP MIB support
+
+USERS=		snmpd
+GROUPS=		snmpd
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -55,6 +58,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --without-libwrap --enable-ipv6 \
+		--without-kmem-usage \
 		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
 
@@ -152,12 +156,6 @@ NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
 .if ${PORT_OPTIONS:MMFD_REWRITES}
 CONFIGURE_ARGS+=--enable-mfd-rewrites
 NET_SNMP_WITH_MIB_MODULE_LIST+=	if-mib
-.endif
-
-.if ${PORT_OPTIONS:MJAIL}
-NET_SNMP_WITHOUT_MIB_MODULE_LIST+=	host
-NET_SNMP_WITHOUT_MIB_MODULE_LIST+=	ucd-snmp/memory
-CONFIGURE_ARGS+=			--without-kmem-usage
 .endif
 
 .if ${PORT_OPTIONS:MSMUX}

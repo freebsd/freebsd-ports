@@ -57,7 +57,7 @@ net_snmpd_precmd () {
 	if [ -n "${snmpd_conffile_set}" ]; then
 		rc_flags="-c ${snmpd_conffile_set#,} ${rc_flags}"
 	fi
-	rc_flags="-p ${pidfile} ${rc_flags}"
+	rc_flags="-u snmpd -g snmpd -p ${pidfile} ${rc_flags}"
 }
 
 run_rc_command "$1"
