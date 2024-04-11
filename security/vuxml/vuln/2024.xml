@@ -1,3 +1,37 @@
+  <vuln vid="dad6294c-f7c1-11ee-bb77-001b217b3468">
+    <topic>Gitlab -- Patch Release: 16.10.2, 16.9.4, 16.8.6</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.10.0</ge><lt>16.10.2</lt></range>
+	<range><ge>16.9.0</ge><lt>16.9.4</lt></range>
+	<range><lt>16.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/04/10/patch-release-gitlab-16-10-2-released/">
+	  <p>Stored XSS injected in diff viewer</p>
+	  <p>Stored XSS via autocomplete results</p>
+	  <p>Redos on Integrations Chat Messages</p>
+	  <p>Redos During Parse Junit Test Report</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3092</cvename>
+      <cvename>CVE-2024-2279</cvename>
+      <cvename>CVE-2023-6489</cvename>
+      <cvename>CVE-2023-6678</cvename>
+      <url>https://about.gitlab.com/releases/2024/04/10/patch-release-gitlab-16-10-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-04-10</discovery>
+      <entry>2024-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea4a2dfc-f761-11ee-af2c-589cfc0f81b0">
     <topic>wordpress -- XSS</topic>
     <affects>
