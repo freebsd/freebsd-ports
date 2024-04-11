@@ -1,5 +1,5 @@
 PORTNAME=	QtAwesome
-DISTVERSION=	1.2.3
+DISTVERSION=	1.3.1
 CATEGORIES=	x11-fonts graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,7 @@ WWW=		https://github.com/spyder-ide/qtawesome
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}QtPy>0:devel/py-QtPy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}QtPy>0:devel/py-QtPy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
