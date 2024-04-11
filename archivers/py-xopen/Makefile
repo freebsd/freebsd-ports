@@ -1,11 +1,10 @@
 PORTNAME=	xopen
-DISTVERSION=	1.9.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open compressed files transparently
 WWW=		https://pypi.org/project/xopen/
 
