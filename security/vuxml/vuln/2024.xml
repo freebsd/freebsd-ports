@@ -1,3 +1,32 @@
+  <vuln vid="02be46c1-f7cc-11ee-aa6b-b42e991fc52e">
+    <topic>jose -- DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>jose</name>
+	<range><lt>13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/P3ngu1nW/CVE_Request/blob/main/latch-jose.md">
+	<p>
+	  latchset jose through version 11 allows attackers to cause
+	  a denial of service (CPU consumption) via a large p2c (aka
+	  PBES2 Count) value.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-50967</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-50967</url>
+    </references>
+    <dates>
+      <discovery>2024-03-20</discovery>
+      <entry>2024-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dad6294c-f7c1-11ee-bb77-001b217b3468">
     <topic>Gitlab -- Patch Release: 16.10.2, 16.9.4, 16.8.6</topic>
     <affects>
