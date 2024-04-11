@@ -12,3 +12,5 @@ share/icons/hicolor/scalable/apps/org.rncbc.padthv1.svg
 share/icons/hicolor/scalable/mimetypes/org.rncbc.padthv1.application-x-padthv1-preset.svg
 share/metainfo/org.rncbc.padthv1.metainfo.xml
 share/mime/packages/org.rncbc.padthv1.xml
+%%DATADIR%%/palette/KXStudio.conf
+%%DATADIR%%/palette/Wonton Soup.conf
