@@ -38,7 +38,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/spamassassin
   AUTHOR: cy@FreeBSD.org
 
-  sa-update must be run following update and prior to restaring sa-spamd
+  sa-update must be run following update and prior to restarting sa-spamd
   else it will fail to start due to a syntax error.
 
 20240326:
@@ -83,7 +83,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/redmine50
   AUTHOR: bofh@FreeBSD.org
 
-  The default vesion of ruby has been switched from 3.1 to 3.2.
+  The default version of ruby has been switched from 3.1 to 3.2.
 
   However www/redmine50 does not support ruby 3.2. Users should add the
   following in their relevant make.conf file:
