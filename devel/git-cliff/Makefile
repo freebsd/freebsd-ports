@@ -1,6 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.81 \
+		anyhow-1.0.82 \
 		async-trait-0.1.79 \
 		autocfg-1.2.0 \
 		backtrace-0.3.71 \
@@ -43,17 +43,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
-		bumpalo-3.15.4 \
+		bumpalo-3.16.0 \
 		bytes-1.6.0 \
 		cacache-12.0.0 \
-		cc-1.0.90 \
+		cc-1.0.92 \
 		cfg-if-1.0.0 \
 		chrono-0.4.37 \
 		chrono-tz-0.8.6 \
 		chrono-tz-build-0.2.1 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_complete-4.5.1 \
+		clap_complete-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		clap_mangen-0.2.20 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		document-features-0.2.8 \
 		either-1.10.0 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.33 \
+		encoding_rs-0.8.34 \
 		env_logger-0.10.2 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
@@ -98,14 +98,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
-		getrandom-0.2.12 \
+		getrandom-0.2.14 \
 		gimli-0.28.1 \
 		git-conventional-0.12.6 \
 		git2-0.18.3 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.8.1 \
-		h2-0.3.25 \
+		h2-0.3.26 \
 		hashbrown-0.14.3 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -145,13 +145,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libflate_lz77-1.2.0 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libm-0.2.8 \
-		libredox-0.0.1 \
+		libredox-0.1.3 \
 		libz-sys-1.1.16 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		litrs-0.4.1 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		memmap2-0.5.10 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
@@ -172,15 +172,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		parse-zoneinfo-0.3.0 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
-		pest-2.7.8 \
-		pest_derive-2.7.8 \
-		pest_generator-2.7.8 \
-		pest_meta-2.7.8 \
+		pest-2.7.9 \
+		pest_derive-2.7.9 \
+		pest_generator-2.7.9 \
+		pest_meta-2.7.9 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
 		phf_shared-0.11.2 \
-		pin-project-lite-0.2.13 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
 		portable-atomic-1.6.0 \
@@ -189,12 +189,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-hack-0.5.20+deprecated \
 		proc-macro2-1.0.79 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.4.1 \
-		redox_users-0.4.4 \
+		redox_users-0.4.5 \
 		reflink-copy-0.1.15 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
@@ -236,10 +235,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		socket2-0.5.6 \
 		spin-0.9.8 \
 		ssri-9.2.0 \
-		strsim-0.11.0 \
+		strsim-0.11.1 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.55 \
+		syn-2.0.58 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -250,9 +249,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		terminal_size-0.3.0 \
 		thiserror-1.0.58 \
 		thiserror-impl-1.0.58 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.37.0 \
