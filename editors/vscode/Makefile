@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.87.2
-PORTREVISION=	2
+DISTVERSION=	1.88.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
 DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
@@ -68,7 +67,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	863d2581ecda6849923a2118d93a088b0745d9d6
+SOURCE_COMMIT_HASH=	5c3e652f63e798a5ac2f31ffd0d863669328dc4c
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -103,7 +102,7 @@ OPTIONS_DEFINE=	REH
 OPTIONS_DEFAULT=# none
 REH_DESC=	Build remote extension host
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron27
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron28
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}

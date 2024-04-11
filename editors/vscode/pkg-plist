@@ -200,7 +200,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git/resources/icons/light/status-untracked.svg
 %%DATADIR%%/resources/app/extensions/github-authentication/README.md
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js
-%%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/github-authentication/images/icon.png
 %%DATADIR%%/resources/app/extensions/github-authentication/media/auth.css
 %%DATADIR%%/resources/app/extensions/github-authentication/media/favicon.ico
@@ -517,6 +516,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.decorators.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.decorators.legacy.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.dom.asynciterable.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.dom.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.dom.iterable.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2015.collection.d.ts
@@ -532,6 +532,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2016.array.include.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2016.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2016.full.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2016.intl.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.date.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.full.d.ts
@@ -585,12 +586,16 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es5.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es6.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.collection.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.decorators.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.disposable.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.intl.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.object.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.promise.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.scripthost.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.webworker.asynciterable.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.webworker.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.webworker.importscripts.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.webworker.iterable.d.ts
@@ -791,7 +796,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/README.md
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js
-%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/typescript-language-features/media/icon.png
 %%DATADIR%%/resources/app/extensions/typescript-language-features/package.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/package.nls.json
@@ -895,6 +899,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/taskCompleted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/taskFailed.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/terminalBell.mp3
+%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/voiceRecordingStarted.mp3
+%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/voiceRecordingStopped.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/warning.mp3
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.js
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.nls.js
