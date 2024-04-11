@@ -1,5 +1,3 @@
-@dir man/man1
-@dir man/man4
 @dir etc/X11/app-defaults
 @dir etc/X11
 bin/emwm
