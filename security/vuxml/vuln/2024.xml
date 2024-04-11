@@ -1,3 +1,36 @@
+  <vuln vid="31617e47-7eec-4c60-9fdf-8aee61622bab">
+    <topic>electron{27,28} -- Out of bounds memory access in V8</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.10</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.10">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-3159.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3159</cvename>
+      <url>https://github.com/advisories/GHSA-mh2p-2x66-3hr4</url>
+    </references>
+    <dates>
+      <discovery>2024-04-10</discovery>
+      <entry>2024-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c217849-f7d7-11ee-a490-84a93843eb75">
     <topic>OpenSSL -- Unbounded memory growth with session handling in TLSv1.3</topic>
     <affects>
