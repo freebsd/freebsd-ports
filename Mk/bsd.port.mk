@@ -751,7 +751,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
 #				  Default: "--prefix=${GNU_CONFIGURE_PREFIX}
 #				  --infodir=${PREFIX}/${INFO_PATH} --localstatedir=/var
-#				  --mandir=${PREFIX}/man --build=${CONFIGURE_TARGET}" if
+#				  --mandir=${PREFIX}/share/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
 #				  INSTALLARCHLIB=${PREFIX}/lib" if USES=perl5 and
@@ -2730,7 +2730,7 @@ CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .      endif
 _EXPORTED_VARS+=	CONFIGURE_MAX_CMD_LEN
 GNU_CONFIGURE_PREFIX?=	${PREFIX}
-GNU_CONFIGURE_MANPREFIX?=	${PREFIX}
+GNU_CONFIGURE_MANPREFIX?=	${PREFIX}/share
 CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
 .      if defined(CROSS_TOOLCHAIN)
 CROSS_HOST=		${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
@@ -2775,8 +2775,6 @@ SCRIPTS_ENV+=	BATCH=yes
 .    endif
 
 MANDIRS+=	${PREFIX}/share/man
-
-MANDIRS+=	${PREFIX}/man
 INFO_PATH?=	share/info
 
 .    if defined(INFO)
