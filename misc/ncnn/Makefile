@@ -9,6 +9,8 @@ WWW=		https://github.com/Tencent/ncnn
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278305
+
 LIB_DEPENDS=	libabsl_flags_program_name.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
