@@ -1,17 +1,19 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.17.0-312
 DISTVERSIONSUFFIX=	-gb1b34cd665
-PORTREVISION=	4
 CATEGORIES=	x11-toolkits
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	-hyprland
 
+PATCH_SITES+=	https://github.com/hyprwm/wlroots-hyprland/raw/5c1d51c5a279/patches/:hyprland
+PATCHFILES+=	surface-nondivisible-by-scale.patch:-p1:hyprland
+PATCHFILES+=	nvidia-hardware-cursors.patch:-p1:hyprland
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	cc6a7a04418f.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
 PATCHFILES+=	4b4f76cc1357.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4614
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Modular Wayland compositor library (development snapshot)
-WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
+COMMENT=	Modular Wayland compositor library (Hyprland fork)
+WWW=		https://github.com/hyprwm/wlroots-hyprland
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,12 +30,13 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
-PLIST_SUB=	SUFFIX=-0.18
+PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 
 PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
+OPTIONS_EXCLUDE=VULKAN # not supported by Hyprland due to custom renderer
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support

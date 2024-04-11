@@ -1,7 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libwlroots-0.18.so:x11-toolkits/wlroots-devel \
+		libwlroots-${PORTNAME}.so:x11-toolkits/wlroots-${PORTNAME} \
 		libhyprcursor.so:x11/hyprcursor \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon

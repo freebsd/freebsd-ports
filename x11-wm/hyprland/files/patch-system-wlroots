@@ -8,7 +8,7 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
  
 -wlroots = subproject('wlroots-hyprland', default_options: ['examples=false', 'renderers=gles2'])
 -have_xwlr = wlroots.get_variable('features').get('xwayland')
-+wlroots = dependency('wlroots-0.18', default_options: ['examples=false', 'renderers=gles2'])
++wlroots = dependency('wlroots-hyprland', default_options: ['examples=false', 'renderers=gles2'])
 +have_xwlr = wlroots.get_variable(pkgconfig: 'have_xwayland', internal: 'have_xwayland') == 'true'
  xcb_dep = dependency('xcb', required: get_option('xwayland'))
  
