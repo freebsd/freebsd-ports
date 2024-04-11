@@ -1,9 +1,12 @@
 PORTNAME=	sway
 DISTVERSION=	1.9-103 # git rev-list --count 1.9..
 DISTVERSIONSUFFIX=	-g2e951163c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	-devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9e1465107788.patch:-p1 # wlroots 0.18
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor (development snapshot)
