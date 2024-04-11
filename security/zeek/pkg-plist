@@ -1221,7 +1221,7 @@ include/zeek/zeekygen/zeekygen.bif.h
 %%ZEEKCTL%%lib/broctl
 lib/cmake/Broker/BrokerConfig.cmake
 lib/cmake/Broker/BrokerConfigVersion.cmake
-lib/cmake/Broker/BrokerTargets-release.cmake
+lib/cmake/Broker/BrokerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Broker/BrokerTargets.cmake
 lib/libbinpac.so
 lib/libbinpac.so.0
