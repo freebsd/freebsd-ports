@@ -18,6 +18,7 @@ bin/yosys-witness
 %%DATADIR%%/anlogic/lutrams.txt
 %%DATADIR%%/anlogic/lutrams_map.v
 %%DATADIR%%/cells.lib
+%%DATADIR%%/choices/kogge-stone.v
 %%DATADIR%%/cmp2lcu.v
 %%DATADIR%%/cmp2lut.v
 %%DATADIR%%/cmp2softlogic.v
@@ -134,6 +135,7 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/timinginfo.h
 %%DATADIR%%/include/kernel/utils.h
 %%DATADIR%%/include/kernel/yosys.h
+%%DATADIR%%/include/kernel/yosys_common.h
 %%DATADIR%%/include/kernel/yw.h
 %%DATADIR%%/include/libs/ezsat/ezminisat.h
 %%DATADIR%%/include/libs/ezsat/ezsat.h
