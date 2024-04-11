@@ -19,6 +19,8 @@ include/aws/crt/auth/Signing.h
 include/aws/crt/auth/Sigv4Signing.h
 include/aws/crt/crypto/HMAC.h
 include/aws/crt/crypto/Hash.h
+include/aws/crt/crypto/SecureRandom.h
+include/aws/crt/crypto/SymmetricCipher.h
 include/aws/crt/endpoints/RuleEngine.h
 include/aws/crt/http/HttpConnection.h
 include/aws/crt/http/HttpConnectionManager.h
