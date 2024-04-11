@@ -1324,39 +1324,18 @@ LDCONFIG32_DIR=	libdata/ldconfig32
 TMPDIR?=	/tmp
 .    endif # defined(PACKAGE_BUILDING)
 
-# If user specified WITH_FEATURE=yes for a feature that is disabled by default
-# treat it as enabled by default
-.    for feature in ${_LIST_OF_WITH_FEATURES}
-.      if ${_DEFAULT_WITH_FEATURES:N${feature}}
-.        if defined(WITH_${feature:tu})
-_DEFAULT_WITH_FEATURES+=	${feature}
-.        endif
-.      endif
-.    endfor
-
-.    for feature in ${_LIST_OF_WITH_FEATURES}
-# Create _{WITH,WITHOUT}_FEATURE vars based on user-provided {WITH,WITHOUT}_FEATURE
-.      if defined(WITH_${feature:tu})
-_WITH_${feature:tu}=	${WITH_${feature:tu}}
-.      endif
-.      if defined(WITHOUT_${feature:tu})
-_WITHOUT_${feature:tu}=	${WITHOUT_${feature:tu}}
-.      endif
 # For each Feature we support, process the
 # WITH_FEATURE_PORTS and WITHOUT_FEATURE_PORTS variables
+.    for feature in ${_LIST_OF_WITH_FEATURES}
 .      if ${_DEFAULT_WITH_FEATURES:M${feature}}
-.        if defined(WITHOUT_${feature:tu}_PORTS)
-.          if ${WITHOUT_${feature:tu}_PORTS:M${PKGORIGIN}}
-_WITHOUT_${feature:tu}=	yes
-.undef _WITH_${feature:tu}
-.          endif
-.        endif
+_WITH_OR_WITHOUT=	WITHOUT
 .      else
-.        if defined(WITH_${feature:tu}_PORTS)
-.          if ${WITH_${feature:tu}_PORTS:M${PKGORIGIN}}
-_WITH_${feature:tu}=	yes
-.undef _WITHOUT_${feature:tu}
-.          endif
+_WITH_OR_WITHOUT=	WITH
+.      endif
+
+.      if defined(${_WITH_OR_WITHOUT}_${feature:tu}_PORTS)
+.        if ${${_WITH_OR_WITHOUT}_${feature:tu}_PORTS:M${PKGORIGIN}}
+${_WITH_OR_WITHOUT}_${feature:tu}=	yes
 .        endif
 .      endif
 .    endfor
@@ -1821,7 +1800,7 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .    endif
 
 .    for f in ${_LIST_OF_WITH_FEATURES}
-.      if defined(_WITH_${f:tu}) || ( ${_DEFAULT_WITH_FEATURES:M${f}} &&  !defined(_WITHOUT_${f:tu}) )
+.      if defined(WITH_${f:tu}) || ( ${_DEFAULT_WITH_FEATURES:M${f}} &&  !defined(WITHOUT_${f:tu}) )
 .include "${PORTSDIR}/Mk/Features/$f.mk"
 .      endif
 .    endfor
