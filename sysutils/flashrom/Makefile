@@ -12,7 +12,7 @@ WWW=		https://www.flashrom.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	aarch64 riscv64
+NOT_FOR_ARCHS=	riscv64
 NOT_FOR_ARCHS_REASON=	Unable to determine endianness.
 
 BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka
