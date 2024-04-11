@@ -1,6 +1,5 @@
 PORTNAME=	relayd
-DISTVERSION=	7.3.2023.05.09-p5
-PORTREVISION=	1
+DISTVERSION=	7.4.2024.01.15-p0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/KlaraSystems/freebsd-relayd/releases/download/${DISTVERSION}/
 
@@ -16,8 +15,6 @@ USES=		localbase:ldflags ssl uidfix
 USE_RC_SUBR=	relayd
 
 HAS_CONFIGURE=	yes
-
-LDFLAGS+=	-lpfctl
 
 USERS=		_relayd
 GROUPS=		_relayd
