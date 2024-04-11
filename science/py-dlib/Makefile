@@ -11,11 +11,10 @@ WWW=		http://dlib.net
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 
-BUILD_DEPENDS=		cmake:devel/cmake-core
 LIB_DEPENDS=		${PY_BOOST} \
 			libpng.so:graphics/png
 
-USES=			compiler:c++11-lang pkgconfig python shebangfix
+USES=			cmake:indirect compiler:c++11-lang pkgconfig python shebangfix
 USE_PYTHON=		autoplist distutils
 SHEBANG_FILES=		python_examples/*.py
 

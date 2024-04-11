@@ -11,11 +11,10 @@ WWW=		https://github.com/PixarAnimationStudios/OpenTimelineIO
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libImath-3_1.so:math/Imath
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python
+USES=		cmake:indirect compiler:c++14-lang python
 USE_PYTHON=	distutils concurrent # autoplist is broken, see https://github.com/PixarAnimationStudios/OpenTimelineIO/issues/1205
 
 USE_GITHUB=	yes

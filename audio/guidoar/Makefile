@@ -8,9 +8,8 @@ WWW=		https://github.com/grame-cncm/guidoar
 
 LICENSE=	MPL20
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 
-USES=		gmake
+USES=		cmake:indirect gmake
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

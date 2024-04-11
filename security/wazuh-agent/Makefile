@@ -15,10 +15,9 @@ WWW=		https://github.com/wazuh/wazuh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		cpe gmake perl5 readline shebangfix sqlite:3 uidfix
+USES=		cmake:indirect cpe gmake perl5 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
 GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh

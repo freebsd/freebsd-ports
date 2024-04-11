@@ -2,10 +2,9 @@ PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Qt5 modules of uim input method
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libuim.so:textproc/uim
 
-USES=		compiler:c++11-lang gl iconv kde:5 libtool qt:5
+USES=		cmake:indirect compiler:c++11-lang gl iconv kde:5 libtool qt:5
 USE_GL=		gl
 USE_KDE=	plasma-framework \
 		ecm:build

@@ -11,11 +11,10 @@ WWW=		https://www.mcs.anl.gov/petsc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libblis.so:math/blis \
 		libmpich.so:net/mpich
 
-USES=		blaslapack fortran gmake python shebangfix xorg
+USES=		blaslapack cmake:indirect fortran gmake python shebangfix xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \

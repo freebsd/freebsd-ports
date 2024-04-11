@@ -30,7 +30,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		fortran gettext-runtime gmake perl5 pkgconfig
+USES=		cmake:indirect fortran gettext-runtime gmake perl5 pkgconfig
 USE_PERL5=	build
 
 USE_GITHUB=	yes
@@ -78,7 +78,6 @@ OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_VARS=		CONFLICTS_BUILD=mpich
 
 LIBXC_DESC=		Use libxc
-LIBXC_BUILD_DEPENDS=	cmake:devel/cmake-core
 LIBXC_MAKE_ENV=		USE_LIBXC=Y
 
 PYTHON_DESC=		Enable Python syntax in input files

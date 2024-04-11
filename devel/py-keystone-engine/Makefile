@@ -11,9 +11,7 @@ WWW=		https://www.keystone-engine.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
-
-USES=		pkgconfig python
+USES=		cmake:indirect pkgconfig python
 USE_PYTHON=	distutils autoplist
 
 # setup.py loses track of its cwd when it switches over to the CMake build

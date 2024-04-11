@@ -11,10 +11,9 @@ WWW=		https://tinygo.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 TEST_DEPENDS=	qemu-system-arm:emulators/qemu
 
-USES=		gmake go:modules,run ninja:build python:build
+USES=		cmake:indirect gmake go:modules,run ninja:build python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tinygo-org

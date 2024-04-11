@@ -13,10 +13,9 @@ WWW=		https://fuchsia.googlesource.com/jiri
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules ninja:build
+USES=		cmake:indirect go:modules ninja:build
 
 GITHASH=	1eee1043d12d1baabae7f2466cc0b1646395e32c
 TIMESTAMP=	2020-08-28T00:00:00.000000
