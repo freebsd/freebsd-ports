@@ -1,6 +1,0 @@
-This port integrates the Nvidia graphics driver and supporting utilities with
-VirtualGL, enabling use of Nvidia acceleration on a system with hybrid graphics
-hardware configuration, aka "Optimus".
-
-Applications to be run with Nvidia acceleration should be started using
-`nvrun-vgl`.

@@ -1,4 +1,0 @@
-#!/bin/sh
-conf=%%PREFIX%%/etc/nvidia-headless.conf
-. %%PREFIX%%/libexec/nvidia-headless-utils/readconf
-exec nvrun-vgl %%LOCALBASE%%/libexec/nvidia-settings -c "$NVDISPLAY" "$@"

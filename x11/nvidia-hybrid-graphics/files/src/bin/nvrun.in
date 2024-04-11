@@ -1,7 +1,0 @@
-#!/bin/sh
-conf=%%PREFIX%%/etc/nvidia-headless.conf
-. %%PREFIX%%/libexec/nvidia-headless-utils/readconf
-if [ -z "$NVDISPLAY" ]; then printf %s\\n "NVDISPLAY required in environment or in $conf" >&2 ; exit 1; fi
-export DISPLAY="$NVDISPLAY"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:%%LOCALBASE%%/lib/libGL-NVIDIA"
-exec "$@"

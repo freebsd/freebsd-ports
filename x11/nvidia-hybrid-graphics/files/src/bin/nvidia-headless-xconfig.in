@@ -1,9 +1,0 @@
-#!/bin/sh
-exec %%LOCALBASE%%/bin/nvidia-xconfig \
-	--enable-all-gpus \
-	--preserve-busid \
-	--allow-empty-initial-configuration \
-	--connected-monitor=DFP \
-	--no-use-edid \
-	-c %%PREFIX%%/etc/X11/xorg-nvidia-headless-template.conf \
-	-o %%LOCALBASE%%/etc/X11/xorg-nvidia-headless.conf "$@"
