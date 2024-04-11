@@ -47,6 +47,7 @@ include/glaze/csv/write.hpp
 include/glaze/exceptions/binary_exceptions.hpp
 include/glaze/exceptions/csv_exceptions.hpp
 include/glaze/exceptions/json_exceptions.hpp
+include/glaze/ext/README.md
 include/glaze/ext/cli_menu.hpp
 include/glaze/ext/eigen.hpp
 include/glaze/ext/glaze_asio.hpp
@@ -80,6 +81,7 @@ include/glaze/reflection/reflect.hpp
 include/glaze/reflection/to_tuple.hpp
 include/glaze/rpc/repe.hpp
 include/glaze/thread/threadpool.hpp
+include/glaze/trace/trace.hpp
 include/glaze/tuplet/tuple.hpp
 include/glaze/util/any.hpp
 include/glaze/util/bit_array.hpp
@@ -89,6 +91,7 @@ include/glaze/util/dump.hpp
 include/glaze/util/expected.hpp
 include/glaze/util/for_each.hpp
 include/glaze/util/hash_map.hpp
+include/glaze/util/help.hpp
 include/glaze/util/inline.hpp
 include/glaze/util/itoa.hpp
 include/glaze/util/murmur.hpp
