@@ -90,13 +90,13 @@ GO_PKGNAME=	${PORTNAME}
 GO_TARGET?=	${GO_PKGNAME}
 GO_TESTTARGET?=	./...
 
-.  if !defined(PIE_UNSAFE) && defined(_WITH_PIE) && ${ARCH} == amd64
+.  if !defined(PIE_UNSAFE) && defined(WITH_PIE) && ${ARCH} == amd64
 GO_BUILDFLAGS+= -buildmode=pie
 .  else
 GO_BUILDFLAGS+= -buildmode=exe
 .  endif
 GO_BUILDFLAGS+= -v -trimpath
-.  if !defined(_WITH_DEBUG) && empty(GO_BUILDFLAGS:M-ldflags*)
+.  if !defined(WITH_DEBUG) && empty(GO_BUILDFLAGS:M-ldflags*)
 GO_BUILDFLAGS+=	-ldflags=-s
 .  endif
 GO_TESTFLAGS+=	-v

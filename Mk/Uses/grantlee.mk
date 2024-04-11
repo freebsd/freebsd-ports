@@ -65,7 +65,7 @@ PLIST_SUB+=	GRANTLEE_VERSION_FULL=${GRANTLEE_VERSION} \
 # GrantleeMacros.cmake provides grantlee_adjust_plugin_name() which appends a
 # letter 'd' to the library name in Debug mode. Provide a PLIST_SUB which can be
 # appended in the plist.
-.  if defined(_WITH_DEBUG)
+.  if defined(WITH_DEBUG)
 PLIST_SUB+=	GRANTLEE_DEBUG_SUFFIX=d
 .  else
 PLIST_SUB+=	GRANTLEE_DEBUG_SUFFIX=""

@@ -51,9 +51,9 @@ CONFIGURE_ARGS+=	-Db_colorout=never
 INSTALL_TARGET=		install
 
 # should we have strip separate from WITH_DEBUG?
-.  if defined(_WITH_DEBUG)
+.  if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--buildtype debug
-.  elif defined(_WITH_DEBUGINFO)
+.  elif defined(WITH_DEBUGINFO)
 CONFIGURE_ARGS+=	--buildtype debugoptimized
 .  else
 CONFIGURE_ARGS+=	--buildtype release \
