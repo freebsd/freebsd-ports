@@ -33,7 +33,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		cmake:indirect gettext-runtime gl gnome jpeg localbase:ldflags ninja pkgconfig \
+USES=		gettext-runtime gl gnome jpeg localbase:ldflags ninja pkgconfig \
 		sqlite xorg
 
 USE_GITHUB=	yes
@@ -73,7 +73,7 @@ TEST_VARS=	AWT_TEST=true FULL_TEST=true
 # Gradle calls CMake during the build
 WEBKIT_IMPLIES=	MEDIA
 WEBKIT_LIB_DEPENDS=	libicui18n.so:devel/icu
-WEBKIT_USES=	bison gmake gperf perl5 python:build ruby:build
+WEBKIT_USES=	bison cmake:indirect gmake gperf perl5 python:build ruby:build
 WEBKIT_USE=	GNOME=libxslt,libxml2 \
 		PERL5=build \
 		XORG=xcomposite,xdamage,xfixes,xrender,xt

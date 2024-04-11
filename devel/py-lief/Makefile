@@ -10,9 +10,6 @@ WWW=		https://github.com/lief-project/lief
 
 LICENSE=	APACHE20
 
-# Note: cmake is needed to build, but distutils is used directly.
-# If USES= cmake is set, the build will not work.
-
 USES=		cmake:indirect python zip
 USE_PYTHON=	concurrent distutils
 
