@@ -11,7 +11,7 @@ PKGNAME_X=		-${FLAVOR:S/default//}
 PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
 
 DEPRECATED=		Desupported by MIT following 1.21
-EXPIRATION_DATE=	2024-06-06
+EXPIRATION_DATE=	2024-04-15
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -31,6 +31,7 @@ USES=			autoreconf compiler:c++11-lang cpe gmake gettext-runtime \
 			perl5 pkgconfig ssl
 BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
+BROKEN_FreeBSD_13=	compile-time support without -DINET6... ./configure syntax error
 BROKEN_FreeBSD_14=	Incompatible with OpenSSL 3.0 in 14-STABLE
 BROKEN_FreeBSD_15=	Incompatible with OpenSSL 3.0 in 15-CURRENT
 USE_CSTD=		gnu99
