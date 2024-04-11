@@ -1,6 +1,6 @@
---- contrib/gnome-ssh-askpass2.c.orig	2020-02-14 00:40:54 UTC
+--- contrib/gnome-ssh-askpass2.c.orig	2024-03-11 05:20:49 UTC
 +++ contrib/gnome-ssh-askpass2.c
-@@ -90,13 +90,14 @@ passphrase_dialog(char *message, int prompt_type)
+@@ -151,7 +151,7 @@ passphrase_dialog(char *message, int prompt_type)
  {
  	const char *failed;
  	char *passphrase, *local;
@@ -9,14 +9,15 @@
  	int buttons, default_response;
  	GtkWidget *parent_window, *dialog, *entry;
  	GdkGrabStatus status;
+@@ -160,6 +160,7 @@ passphrase_dialog(char *message, int prompt_type)
  
  	grab_server = (getenv("GNOME_SSH_ASKPASS_GRAB_SERVER") != NULL);
  	grab_pointer = (getenv("GNOME_SSH_ASKPASS_GRAB_POINTER") != NULL);
 +	grab_keyboard = (getenv("GNOME_SSH_ASKPASS_GRAB_KEYBOARD") != NULL);
  	grab_tries = 0;
  
- 	/* Create an invisible parent window so that GtkDialog doesn't
-@@ -156,18 +157,20 @@ passphrase_dialog(char *message, int prompt_type)
+ 	fg_set = parse_env_hex_color("GNOME_SSH_ASKPASS_FG_COLOR", &fg);
+@@ -243,18 +244,20 @@ passphrase_dialog(char *message, int prompt_type)
  			}
  		}
  	}
@@ -49,7 +50,7 @@
  	if (grab_server) {
  		gdk_x11_grab_server();
  	}
-@@ -179,7 +182,8 @@ passphrase_dialog(char *message, int prompt_type)
+@@ -266,7 +269,8 @@ passphrase_dialog(char *message, int prompt_type)
  		XUngrabServer(gdk_x11_get_default_xdisplay());
  	if (grab_pointer)
  		gdk_pointer_ungrab(GDK_CURRENT_TIME);
