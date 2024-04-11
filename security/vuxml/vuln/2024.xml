@@ -1,3 +1,40 @@
+  <vuln vid="c092be0e-f7cc-11ee-aa6b-b42e991fc52e">
+    <topic>forgejo -- HTTP/2 CONTINUATION flood in net/http</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>1.21.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@golang.org reports:</p>
+	<blockquote cite="https://go.dev/cl/576155">
+	  <p>An attacker may cause an HTTP/2 endpoint to read arbitrary amounts
+	of header data by sending an excessive number of CONTINUATION frames.
+	Maintaining HPACK state requires parsing and processing all HEADERS
+	and CONTINUATION frames on a connection.  When a request&apos;s
+	headers exceed MaxHeaderBytes, no memory is allocated to store the
+	excess headers, but they are still parsed.  This permits an attacker
+	to cause an HTTP/2 endpoint to read arbitrary amounts of header
+	data, all associated with a request which is going to be rejected.
+	These headers can include Huffman-encoded data which is significantly
+	more expensive for the receiver to decode than for an attacker to
+	send.  The fix sets a limit on the amount of excess header frames
+	we will process before closing a connection.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45288</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-45288</url>
+    </references>
+    <dates>
+      <discovery>2024-04-04</discovery>
+      <entry>2024-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="02be46c1-f7cc-11ee-aa6b-b42e991fc52e">
     <topic>jose -- DoS vulnerability</topic>
     <affects>
