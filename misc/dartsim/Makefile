@@ -45,6 +45,7 @@ GH_PROJECT=	dart
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
 CMAKE_ON=	BUILD_SHARED_LIBS # DART_VERBOSE
+CMAKE_OFF=	DART_TREAT_WARNINGS_AS_ERRORS # workaround for https://github.com/dartsim/dart/issues/1799
 CMAKE_ARGS=	-DODE_DIR=${LOCALBASE} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_TESTING_TARGET=	tests # only builds test
