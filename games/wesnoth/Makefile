@@ -87,7 +87,4 @@ SERVER_DESC=	Server
 SERVER_CMAKE_OFF=-DENABLE_SERVER=off
 TEST_CMAKE_ON=	-DENABLE_TESTS=on
 
-post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
-
 .include <bsd.port.mk>
