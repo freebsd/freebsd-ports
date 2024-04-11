@@ -194,7 +194,7 @@ CARGO_INSTALL_ARGS+=	--features='${CARGO_FEATURES:N--no-default-features}'
 CARGO_TEST_ARGS+=	--features='${CARGO_FEATURES:N--no-default-features}'
 .  endif
 
-.  if !defined(WITH_DEBUG)
+.  if !defined(_WITH_DEBUG)
 CARGO_BUILD_ARGS+=	--release
 CARGO_TEST_ARGS+=	--release
 .  else

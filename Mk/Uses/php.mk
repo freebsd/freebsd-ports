@@ -208,7 +208,7 @@ PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
 .    endif
 
-.    if defined(WITH_DEBUG)
+.    if defined(_WITH_DEBUG)
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-debug
 .    endif
 PHP_SAPI?=	""

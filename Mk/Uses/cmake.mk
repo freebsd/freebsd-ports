@@ -83,13 +83,13 @@ BUILD_DEPENDS+=		${CMAKE_BIN}:devel/cmake-core
 RUN_DEPENDS+=		${CMAKE_BIN}:devel/cmake-core
 .    endif
 
-.    if defined(WITH_DEBUG)
+.    if defined(_WITH_DEBUG)
 CMAKE_BUILD_TYPE?=	Debug
-.    elif defined(WITH_DEBUGINFO)
+.    elif defined(_WITH_DEBUGINFO)
 CMAKE_BUILD_TYPE?=	RelWithDebInfo
 .    else
 CMAKE_BUILD_TYPE?=	Release
-.    endif #defined(WITH_DEBUG)
+.    endif #defined(_WITH_DEBUG)
 
 CMAKE_ARGS+=		-DCMAKE_C_COMPILER:STRING="${CC}" \
 			-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
@@ -128,7 +128,7 @@ CMAKE_ARGS+=		-DCMAKE_COLOR_MAKEFILE:BOOL=OFF
 .  endif
 
 .  if empty(cmake_ARGS:Mindirect)
-.    if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG) && !defined(WITH_DEBUGINFO)
+.    if defined(STRIP) && ${STRIP} != "" && !defined(_WITH_DEBUG) && !defined(_WITH_DEBUGINFO)
 INSTALL_TARGET?=	install/strip
 .    endif
 .  endif

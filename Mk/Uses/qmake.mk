@@ -16,7 +16,7 @@
 # norecursive		Don't pass -recursive argument to qmake binary
 # outsource		Perform an out-of-source build
 # no_env		Suppress modification of configure and make environment.
-# no_configure		Don't add the configure target -- this is implied by 
+# no_configure		Don't add the configure target -- this is implied by
 #			HAS_CONFIGURE=yes and GNU_CONFIGURE=yes
 #
 #
@@ -75,7 +75,7 @@ QMAKE_ARGS+=		-spec ${QMAKESPEC} \
 			QMAKE_CXXFLAGS_RELEASE="" \
 			PREFIX="${PREFIX}"
 
-.  if defined(WITH_DEBUG)
+.  if defined(_WITH_DEBUG)
 PLIST_SUB+=		DEBUG=""
 QMAKE_ARGS+=		CONFIG+="debug separate_debug_info" \
 			CONFIG-="release"
@@ -83,7 +83,7 @@ QMAKE_ARGS+=		CONFIG+="debug separate_debug_info" \
 PLIST_SUB+=		DEBUG="@comment "
 QMAKE_ARGS+=		CONFIG+="release" \
 			CONFIG-="debug separate_debug_info"
-.  endif # defined(WITH_DEBUG)
+.  endif # defined(_WITH_DEBUG)
 
 # We set -recursive by default to keep qmake from running in the build stage.
 .  if ! ${qmake_ARGS:Mnorecursive}

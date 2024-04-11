@@ -239,7 +239,7 @@ CONFIGURE_ARGS+=	-no-use-gold-linker
 CONFIGURE_ARGS+=	-recheck-all
 .  endif # ${_QT_VER:M5}
 
-.  if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
+.  if defined(WANT_QT_DEBUG) || defined(_WITH_DEBUG)
 WITH_DEBUG=		yes
 STRIP=			# It's done prior to bsd.qt.mk inclusion.
 CONFIGURE_ARGS+=	-debug -separate-debug-info
@@ -250,7 +250,7 @@ QMAKE_ARGS+=		QT_CONFIG+="debug separate_debug_info" \
 CONFIGURE_ARGS+=	-release -no-separate-debug-info
 QMAKE_ARGS+=		QT_CONFIG+="release" \
 			QT_CONFIG-="debug separate_debug_info"
-.  endif # defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
+.  endif # defined(WANT_QT_DEBUG) || defined(_WITH_DEBUG)
 
 .  if defined(WANT_QT_VERBOSE_CONFIGURE)
 CONFIGURE_ARGS+=	-verbose
@@ -302,7 +302,7 @@ QMAKE_ARGS+=		QT_CONFIG-="${QT_CONFIG:M-*:O:u:C/^-//}"
 
 PLIST_SUB+=		SHORTVER=${_QT_VERSION:R} \
 			FULLVER=${_QT_VERSION:C/-.*//}
-.  if defined(WITH_DEBUG)
+.  if defined(_WITH_DEBUG)
 PLIST_SUB+=		DEBUG="" \
 			NO_DEBUG="@comment "
 .  else
