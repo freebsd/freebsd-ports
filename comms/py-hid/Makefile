@@ -4,7 +4,7 @@ CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ctypes bindings to comms/hidapi
 WWW=		https://github.com/apmorton/pyhidapi
 
