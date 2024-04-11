@@ -9,7 +9,7 @@
 -STDLIB = $(SRCDIR)/hare/stdlib
 +#PREFIX =	%%LOCALBASE%%
 +BINDIR = 	$(PREFIX)/bin
-+MANDIR =	$(PREFIX)/man
++MANDIR =	$(PREFIX)/share/man
 +DATADIR =	$(PREFIX)/share/hare
 +SRCDIR =	$(DATADIR)/src
 +STDLIB =	$(DATADIR)/stdlib

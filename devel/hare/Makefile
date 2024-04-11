@@ -1,6 +1,6 @@
 PORTNAME=	hare
 PORTVERSION=	0.24.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
 PKGNAMESUFFIX=	-lang
