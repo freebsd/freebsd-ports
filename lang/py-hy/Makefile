@@ -4,7 +4,7 @@ CATEGORIES=	lang python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dave@dal.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dialect of Lisp that is embedded in Python
 WWW=		https://docs.hylang.org/en/stable/
 
