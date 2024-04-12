@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-geographiclib
-PORTVERSION=	2.0
-PORTREVISION=	4
+PORTVERSION=	2.2
 CATEGORIES=	math
 MASTER_SITES=	https://sourceforge.net/projects/geographiclib/files/distrib-Octave/
 DISTNAME=	${OCTAVE_PKGNAME}-octave-${DISTVERSIONFULL}
