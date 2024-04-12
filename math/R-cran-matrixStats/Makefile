@@ -1,7 +1,7 @@
 PORTNAME=	matrixStats
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	math
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Functions that Apply to Rows and Columns of Matrices
