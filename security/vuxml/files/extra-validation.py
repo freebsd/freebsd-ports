@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import datetime
-import xml.etree.ElementTree as ET
+from lxml import etree as ET
 import sys
 import re
 
@@ -15,7 +15,8 @@ re_invalid_package_name = re.compile('[@!#$%^&*()<>?/\|}{~:]')
 # warn if description has more than X characters
 DESCRIPTION_LENGTH = 5000
 
-tree = ET.parse(sys.argv[1])
+parser = ET.XMLParser(dtd_validation=True)
+tree = ET.parse(sys.argv[1], parser)
 root = tree.getroot()
 
 namespace = "{http://www.vuxml.org/apps/vuxml-1}"
@@ -42,13 +43,13 @@ for vuln in root:
     all_vids.add(vid)
 
     # Validate References
-    references = vuln.find(namespace+"references")
+    references = vuln.findall(namespace+"references")
     if references is None:
         print("Error: references is None : {0}".format(vid))
         ret = 1
     else:
         prev = references[0]
-        for reference in references:
+        for reference in references[1:]:
             if reference.tag < prev.tag:
                 #print("Warn: tags out of order ({1} and {2}): {0}".format(vid, prev.tag[len(namespace):], reference.tag[len(namespace):]))
                 pass
@@ -84,7 +85,7 @@ for vuln in root:
 
         # Check description lengths
         description = vuln.find(namespace + "description")
-        description_len = len(ET.tostring(description))
+        description_len = len(ET.tostring(description, encoding='unicode', method='text'))
         if description_len > DESCRIPTION_LENGTH:
             print("Warning: description too long ({0} chars, {1} is warning threshold): {2})" \
                   .format(description_len, DESCRIPTION_LENGTH, vid))
