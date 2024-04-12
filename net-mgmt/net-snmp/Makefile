@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
 
-.if !defined(WITHOUT_SSP)
+.if defined(WITH_SSP)
 CONFIGURE_ARGS+=--with-libs="-lssp_nonshared"
 .endif
 

@@ -1324,19 +1324,45 @@ LDCONFIG32_DIR=	libdata/ldconfig32
 TMPDIR?=	/tmp
 .    endif # defined(PACKAGE_BUILDING)
 
+# If user specified WITH_FEATURE=yes for a feature that is disabled by default
+# treat it as enabled by default
+.    for feature in ${_LIST_OF_WITH_FEATURES}
+.      if ${_DEFAULT_WITH_FEATURES:N${feature}} && defined(WITH_${feature:tu})
+_DEFAULT_WITH_FEATURES+=	${feature}
+.      endif
+.    endfor
+
+.    for feature in ${_LIST_OF_WITH_FEATURES}
+# Create _{WITH,WITHOUT}_FEATURE vars based on user-provided {WITH,WITHOUT}_FEATURE
+# Test WITHOUT_* first to make sure a port can disable the feature
+.      if defined(WITHOUT_${feature:tu})
+_WITHOUT_${feature:tu}=	${WITHOUT_${feature:tu}}
+.      elif defined(WITH_${feature:tu})
+_WITH_${feature:tu}=	${WITH_${feature:tu}}
+.      endif
 # For each Feature we support, process the
 # WITH_FEATURE_PORTS and WITHOUT_FEATURE_PORTS variables
-.    for feature in ${_LIST_OF_WITH_FEATURES}
 .      if ${_DEFAULT_WITH_FEATURES:M${feature}}
-_WITH_OR_WITHOUT=	WITHOUT
-.      else
-_WITH_OR_WITHOUT=	WITH
-.      endif
-
-.      if defined(${_WITH_OR_WITHOUT}_${feature:tu}_PORTS)
-.        if ${${_WITH_OR_WITHOUT}_${feature:tu}_PORTS:M${PKGORIGIN}}
-${_WITH_OR_WITHOUT}_${feature:tu}=	yes
+.        if defined(WITHOUT_${feature:tu}_PORTS) && ${WITHOUT_${feature:tu}_PORTS:M${PKGORIGIN}}
+_WITHOUT_${feature:tu}=	yes
+.undef _WITH_${feature:tu}
 .        endif
+.      else
+.        if defined(WITH_${feature:tu}_PORTS) && ${WITH_${feature:tu}_PORTS:M${PKGORIGIN}}
+_WITH_${feature:tu}=	yes
+.undef _WITHOUT_${feature:tu}
+.        endif
+.      endif
+.    endfor
+
+# Now we made sure the features are either on or off, let's put them back in
+# the WITH_* variable. From now on, we only need to test defined(WITH_*) or
+# !defined(WITH_*)
+.    for feature in ${_LIST_OF_WITH_FEATURES}
+.      if defined(_WITH_${feature:tu})
+WITH_${feature:tu}=	_WITH_${feature:tu}
+.      else
+.undef WITH_${feature:tu}
 .      endif
 .    endfor
 
@@ -1800,7 +1826,7 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .    endif
 
 .    for f in ${_LIST_OF_WITH_FEATURES}
-.      if defined(WITH_${f:tu}) || ( ${_DEFAULT_WITH_FEATURES:M${f}} &&  !defined(WITHOUT_${f:tu}) )
+.      if defined(WITH_${f:tu})
 .include "${PORTSDIR}/Mk/Features/$f.mk"
 .      endif
 .    endfor
