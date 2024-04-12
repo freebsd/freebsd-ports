@@ -1,7 +1,10 @@
-PORTNAME=	gitlab-ce
+PORTNAME=	gitlab-${FLAVOR:Uce}
 PORTVERSION=	16.10.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+.if ${FLAVOR:U} == ee
+DISTVERSIONSUFFIX=	-ee
+.endif
+
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -286,11 +289,19 @@ BUILD_DEPENDS=	gem:devel/ruby-gems \
 
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		go:modules nodejs:env ruby shebangfix
+FLAVORS=	ce ee
+FLAVOR?=	${FLAVORS:[1]}
+
+USES=		nodejs:env ruby shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
+.if ${FLAVOR:U} == ee
+GL_PROJECT=	gitlab
+.else # ce
 GL_PROJECT=	gitlab-foss
+.endif
+
 USE_RC_SUBR=	gitlab
 
 SHEBANG_FILES=	scripts/build_qa_image \
@@ -312,6 +323,8 @@ CONFLICTS_INSTALL=	gitolite \
 			gitea \
 			gitosis
 
+# We install the CE and EE flavor in the same directory
+WWWDIR=		${PREFIX}/www/gitlab
 NO_ARCH=	yes
 NO_BUILD=	yes
 
@@ -326,7 +339,7 @@ KERBEROS_RUN_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-k
 KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config/gitlab.yml.example \
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" -e "s|%%WWWDIR%%|${WWWDIR}|" ${WRKSRC}/config/gitlab.yml.example \
 		${WRKSRC}/config/puma.rb.example \
 		${WRKSRC}/lib/support/nginx/gitlab \
 		${WRKSRC}/lib/support/nginx/gitlab-ssl
@@ -338,40 +351,40 @@ do-install:
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 	(cd ${WRKSRC} && ${RM} Gemfile.lock && bundle install --local)
 	${RM} -R ${WRKSRC}/workhorse
-	# Has only a Gemfile.lock, so remove it, is maybe fixed by a newer version
-	${RM} -R ${WRKSRC}/vendor/gems/omniauth-google-oauth2
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete
 	${FIND} ${WRKSRC} -name '*.gitignore' -delete
 	${FIND} ${WRKSRC} -name "Gemfile.lock" -delete
 	${MV} ${WRKSRC}/config/initializers/relative_url.rb.sample ${WRKSRC}/config/initializers/relative_url.rb.example
-	# get files for workdir with: find . -name "*.example"
-	${MV} ${WRKSRC}/config/puma.rb.example ${WRKSRC}/config/puma.rb.sample
-	${MV} ${WRKSRC}/config/secrets.yml.example ${WRKSRC}/config/secrets.yml.sample
-	${MV} ${WRKSRC}/config/sidekiq.yml.example ${WRKSRC}/config/sidekiq.yml.sample
+	# get files for workdir with: find . -name "*.example" | sort
 	${MV} ${WRKSRC}/config/cable.yml.example ${WRKSRC}/config/cable.yml.sample
 	${MV} ${WRKSRC}/config/gitlab.yml.example ${WRKSRC}/config/gitlab.yml.sample
 	${MV} ${WRKSRC}/config/initializers/devise_password_length.rb.example ${WRKSRC}/config/initializers/devise_password_length.rb.sample
+	${MV} ${WRKSRC}/config/puma.rb.example ${WRKSRC}/config/puma.rb.sample
+	${MV} ${WRKSRC}/config/redis.yml.example ${WRKSRC}/config/redis.yml.sample
 	${MV} ${WRKSRC}/config/resque.yml.example ${WRKSRC}/config/resque.yml.sample
+	${MV} ${WRKSRC}/config/secrets.yml.example ${WRKSRC}/config/secrets.yml.sample
+	${MV} ${WRKSRC}/config/session_store.yml.example ${WRKSRC}/config/session_store.yml.sample
+	${MV} ${WRKSRC}/config/sidekiq.yml.example ${WRKSRC}/config/sidekiq.yml.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab ${WRKSRC}/lib/support/nginx/gitlab.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab-ssl ${WRKSRC}/lib/support/nginx/gitlab-ssl.sample
 	${MV} ${WRKSRC}/public/robots.txt ${WRKSRC}/public/robots.txt.sample
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/app/assets/builds
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/assets
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/uploads
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/cache
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/sessions
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/backups
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/sockets/private/internal
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/shared/tmp
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/shared/artifacts/tmp/work
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/vendor/assets/stylesheets
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/workhorse/changelogs/unreleased
+	${MKDIR} ${STAGEDIR}${WWWDIR}/app/assets/builds
+	${MKDIR} ${STAGEDIR}${WWWDIR}/public/assets
+	${MKDIR} ${STAGEDIR}${WWWDIR}/public/uploads
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/cache
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/sessions
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/backups
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/sockets/private/internal
+	${MKDIR} ${STAGEDIR}${WWWDIR}/shared/tmp
+	${MKDIR} ${STAGEDIR}${WWWDIR}/shared/artifacts/tmp/work
+	${MKDIR} ${STAGEDIR}${WWWDIR}/vendor/assets/stylesheets
+	${MKDIR} ${STAGEDIR}${WWWDIR}/workhorse/changelogs/unreleased
 	# Skip file having an executable bit
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/${PORTNAME} "-not ( -type f -perm -a=x )")
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "-not ( -type f -perm -a=x )")
 	# now copy all files having an execution bit and preserve to x bit (this fixes some issues we saw)
-	(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/www/${PORTNAME} "-type f -perm -a=x")
+	(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${WWWDIR} "-type f -perm -a=x")
 
 post-install:
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
@@ -459,5 +472,22 @@ post-install:
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/vendor/assets" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/vendor/assets/stylesheets" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/workhorse/changelogs/unreleased" >> ${TMPPLIST}
+.if ${FLAVOR:U} == ee
+	# Gitlab-ee version
+	@${ECHO_CMD} "@dir(,,744) ${WWWDIR_REL}/gems/gitlab-backup-cli/tmp" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,744) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/4_verify" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,744) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/5_package" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,744) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/6_release" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,744) ${WWWDIR_REL}/qa/qa/specs/features/ee/api/8_monitor" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,744) ${WWWDIR_REL}/qa/qa/specs/features/ee/browser_ui/7_configure" >> ${TMPPLIST}
+.endif
+
+.if !defined(_GITLAB_MAKESUM_GUARD)
+makesum:
+	${MAKE} -D_GITLAB_MAKESUM_GUARD makesum DISTINFO_FILE=${.CURDIR}/distinfo FLAVOR=ce
+	${MAKE} -D_GITLAB_MAKESUM_GUARD makesum DISTINFO_FILE=${.CURDIR}/distinfo.ee FLAVOR=ee
+	${CAT} ${.CURDIR}/distinfo.ee >> ${.CURDIR}/distinfo
+	${RM} ${.CURDIR}/distinfo.ee
+.endif
 
 .include <bsd.port.mk>

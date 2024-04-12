@@ -1,11 +1,11 @@
---- config.yml.example.orig	2024-01-19 10:36:34 UTC
+--- config.yml.example.orig	2024-04-14 08:08:44 UTC
 +++ config.yml.example
 @@ -13,7 +13,7 @@ user: git
  # only listen on a Unix domain socket. For Unix domain sockets use
  # "http+unix://<urlquoted-path-to-socket>", e.g.
  # "http+unix://%2Fpath%2Fto%2Fsocket"
 -gitlab_url: "http+unix://%2Fhome%2Fgit%2Fgitlab%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
-+gitlab_url: "http+unix://%2Fusr%2Flocal%2Fwww%2Fgitlab-ce%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
++gitlab_url: "http+unix://%2Fusr%2Flocal%2Fwww%2Fgitlab%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
  
  # When a http+unix:// is used in gitlab_url, this is the relative URL root to GitLab.
  # Not used if gitlab_url is http:// or https://.
@@ -14,15 +14,14 @@
  
  # File used as authorized_keys for gitlab user
 -auth_file: "/home/git/.ssh/authorized_keys"
-+auth_file: "/usr/local/git/.ssh/authorized_keys"
++auth_file: "%%PREFIX%%/git/.ssh/authorized_keys"
  
  # SSL certificate dir where custom certificates can be placed
  # https://golang.org/pkg/crypto/x509/
-@@ -45,7 +45,7 @@ auth_file: "/home/git/.ssh/authorized_keys"
- 
+@@ -46,6 +46,7 @@ auth_file: "/home/git/.ssh/authorized_keys"
  # Log file.
  # Default is gitlab-shell.log in the root directory.
--# log_file: "/home/git/gitlab-shell/gitlab-shell.log"
+ # log_file: "/home/git/gitlab-shell/gitlab-shell.log"
 +log_file: "/var/log/gitlab-shell/gitlab-shell.log"
  
  # Log level. INFO by default

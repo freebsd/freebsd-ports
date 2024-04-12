@@ -68,7 +68,7 @@ esac
 # Script variable names should be lower-case not to conflict with
 # internal /bin/sh variables such as PATH, EDITOR or SHELL.
 app_user="git"
-app_root="%%PREFIX%%/www/gitlab-ce"
+app_root="%%WWWDIR%%"
 pid_path="$app_root/tmp/pids"
 socket_path="$app_root/tmp/sockets"
 rails_socket="$socket_path/gitlab.socket"
