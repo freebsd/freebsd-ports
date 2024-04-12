@@ -1,3 +1,40 @@
+  <vuln vid="7314942b-0889-46f0-b02b-2c60aabe4a82">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>123.0.6312.122</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>123.0.6312.122</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[331237485] High CVE-2024-3157: Out of bounds write in Compositing. Reported by DarkNavy on 2024-03-26</li>
+	    <li>[328859176] High CVE-2024-3516: Heap buffer overflow in ANGLE. Reported by Bao (zx) Pham and Toan (suto) Pham of Qrious Secure on 2024-03-09</li>
+	    <li>[331123811] High CVE-2024-3515: Use after free in Dawn. Reported by wgslfuzz on 2024-03-25</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3157</cvename>
+      <cvename>CVE-2024-3516</cvename>
+      <cvename>CVE-2024-3515</cvename>
+      <url>https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-10</discovery>
+      <entry>2024-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31617e47-7eec-4c60-9fdf-8aee61622bab">
     <topic>electron{27,28} -- Out of bounds memory access in V8</topic>
     <affects>
