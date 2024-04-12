@@ -63,7 +63,6 @@ bin/plotproj.x
 bin/plotrho.x
 bin/pmw.x
 bin/postahc.x
-bin/postw90.x
 bin/pp.x
 bin/pp_disca.x
 bin/pp_spctrlfn.x
@@ -95,8 +94,6 @@ bin/turbo_magnon.x
 bin/turbo_spectrum.x
 bin/upfconv.x
 bin/virtual_v2.x
-bin/w90chk2chk.x
-bin/wannier90.x
 bin/wannier_ham.x
 bin/wannier_plot.x
 bin/wfck2r.x

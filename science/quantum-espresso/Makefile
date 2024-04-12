@@ -1,6 +1,7 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
 DISTVERSION=	7.3.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -69,6 +70,11 @@ post-extract:
 	@cd ${WRKSRC} && ${MKDIR} FoX && ${LN} -s ${LOCALBASE}/include FoX/finclude
 
 post-install:
+	# remove wannier90 binaries that come from the bundled wannier90 package (reported to the upstream vie e-mail on 2024-03-11)
+.for p in wannier90.x postw90.x w90chk2chk.x
+	${RM} ${STAGEDIR}${PREFIX}/bin/${p}
+.endfor
+	# strip binaries
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.x
 
 do-test:
