@@ -1,10 +1,10 @@
 PORTNAME=	numba
-DISTVERSION=	0.57.0
+DISTVERSION=	0.59.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dave@dal.ca
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Optimizing compiler for Python using LLVM
 WWW=		https://numba.pydata.org/
 
@@ -15,21 +15,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>1.11,1:math/py-numpy@${PY_FLAVOR} \
+# numpy version is checked at runtime
+# https://github.com/numba/numba/blob/main/numba/__init__.py#L13
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21,1<=1.26,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 LIB_DEPENDS=	libtbb.so:devel/onetbb
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llvmlite>=0.31.0:devel/py-llvmlite@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llvmlite>=0.31.0:devel/py-llvmlite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.21,1<=1.26,1:math/py-numpy@${PY_FLAVOR} \
 
 USES=		compiler:c++11-lang python fortran localbase
 USE_PYTHON=	distutils concurrent autoplist unittest
 
-MAKE_ENV=	NUMBA_DISABLE_TBB=1 # workaround for: not compatible with onetbb-2021.6.0, see https://github.com/numba/numba/issues/8487
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/numba/tests
-
-post-patch:
-	@${SED} -i.bak 's#1\.25#1\.27#g' ${WRKSRC}/setup.py
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
