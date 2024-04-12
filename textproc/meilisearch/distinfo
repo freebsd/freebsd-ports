@@ -1,4 +1,4 @@
-TIMESTAMP = 1712608542
+TIMESTAMP = 1712912278
 SHA256 (meilisearch-mini-dashboard-build-0.2.13.zip) = 541134a4f83e6311758245929ce97e38c39c9c2d95bb259db31496b0833b1183
 SIZE (meilisearch-mini-dashboard-build-0.2.13.zip) = 1213802
 SHA256 (mecab-ipadic-2.7.0-20070801.tar.gz) = b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523
@@ -413,8 +413,8 @@ SHA256 (rust/crates/git2-0.18.2.crate) = 1b3ba52851e73b46a4c3df1d89343741112003f
 SIZE (rust/crates/git2-0.18.2.crate) = 212536
 SHA256 (rust/crates/glob-0.3.1.crate) = d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
 SIZE (rust/crates/glob-0.3.1.crate) = 18880
-SHA256 (rust/crates/grenad-0.4.5.crate) = 6a007932af5475ebb5c63bef8812bb1c36f317983bb4ca663e9d6dd58d6a0f8c
-SIZE (rust/crates/grenad-0.4.5.crate) = 31173
+SHA256 (rust/crates/grenad-0.4.6.crate) = c297f45167e6d543eb728e12ff284283e4ba2182a25c6cdcec883fda3316c7e7
+SIZE (rust/crates/grenad-0.4.6.crate) = 982300
 SHA256 (rust/crates/h2-0.3.26.crate) = 81fe527a889e1532da5c525686d96d4c2e74cdd345badf8dfef9f6b39dd5f5e8
 SIZE (rust/crates/h2-0.3.26.crate) = 168315
 SHA256 (rust/crates/half-1.8.2.crate) = eabb4a44450da02c90444cf74558da904edde8fb4e9035a9a6a4e15445af0bd7
@@ -1163,5 +1163,5 @@ SHA256 (huggingface-candle-f4fcf6090045ac44122fd5f0a7e46db6e3e16528_GH0.tar.gz) 
 SIZE (huggingface-candle-f4fcf6090045ac44122fd5f0a7e46db6e3e16528_GH0.tar.gz) = 1910875
 SHA256 (huggingface-candle-5270224f407502b82fe90bc2622894ce3871b002_GH0.tar.gz) = ae732114bc3d02fd9cb0821db55832b5620acefb6f4460f55f74a18fbb3446a6
 SIZE (huggingface-candle-5270224f407502b82fe90bc2622894ce3871b002_GH0.tar.gz) = 2031529
-SHA256 (meilisearch-meilisearch-v1.7.5_GH0.tar.gz) = c92fa6c00a1cc57fdf19fc861f4a341e5a99953f2e8df11c4e6026c80351b7e2
-SIZE (meilisearch-meilisearch-v1.7.5_GH0.tar.gz) = 14895310
+SHA256 (meilisearch-meilisearch-v1.7.6_GH0.tar.gz) = 4e3b2ffe10ee4dfadedc61de877c5cc8ff388f87b98ee6d491dd7193011a7e74
+SIZE (meilisearch-meilisearch-v1.7.6_GH0.tar.gz) = 14895349
