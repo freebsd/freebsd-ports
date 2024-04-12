@@ -1,4 +1,3 @@
-@dir man/man1
 @dir etc/X11/app-defaults
 share/man/man1/xmtoolbox.1.gz
 share/man/man1/xmsm.1.gz
