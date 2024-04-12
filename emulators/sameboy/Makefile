@@ -1,6 +1,6 @@
 PORTNAME=	sameboy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.2
+DISTVERSION=	0.16.3
 CATEGORIES=	emulators games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rgbds>0:devel/rgbds
 
-USES=		compiler:c11 desktop-file-utils gl gmake pkgconfig sdl \
-		shared-mime-info
+USES=		desktop-file-utils gl gmake pkgconfig sdl shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	LIJI32
 GH_PROJECT=	SameBoy
