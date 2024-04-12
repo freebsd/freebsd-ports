@@ -48,5 +48,6 @@ TESTING_UNSAFE=	requires additional test input files
 post-extract:
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/blake3 ${WRKSRC}/subprojects
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/tree-sitter-c ${WRKSRC}/subprojects
+	${CP} ${WRKSRC}/librz/debug/p/native/linux/reg/linux-ppc64.h ${WRKSRC}/librz/debug/p/native/reg/kfbsd-ppc64.h
 
 .include <bsd.port.mk>
