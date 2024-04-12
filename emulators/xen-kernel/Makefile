@@ -1,11 +1,11 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
-DISTVERSION=	4.18.0.20240201
+DISTVERSION=	4.18.2.20240411
 CATEGORIES=	emulators
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	xen-project
-GL_TAGNAME=	b1fdd7d0e47e0831ac7a99d0417385fc10d3068c
+GL_TAGNAME=	2d38302c33b117aa9a417056db241aefc840c2f0
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -28,9 +28,6 @@ PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug \
 		lib/debug/boot/xen-debug.debug
 
-# Workaround clang code generation bug.
-EXTRA_PATCHES+=        ${PATCHDIR}/v2-0001-x86-altcall-use-an-union-as-register-type-for-fun.patch:-p1
-
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD
@@ -42,10 +39,12 @@ IGNORE=		only supported on FreeBSD
 #
 # Build both a production and a debug hypervisor.
 do-build:
-	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} build-xen ${MAKE_ARGS} debug=y
+	${ECHO} "CONFIG_DEBUG=y" > ${WRKSRC}/xen/.config
+	${MAKE_CMD} -C ${WRKSRC}/xen olddefconfig ${MAKE_ARGS}
+	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} build-xen ${MAKE_ARGS}
 	cp ${WRKSRC}/xen/xen ${WRKSRC}/xen/xen-debug
 	cp ${WRKSRC}/xen/xen-syms ${WRKSRC}/xen/xen-debug-syms
-	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} clean-xen ${MAKE_ARGS}
+	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} distclean-xen ${MAKE_ARGS}
 	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} build-xen ${MAKE_ARGS}
 
 do-install:
