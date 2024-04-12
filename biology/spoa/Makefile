@@ -9,6 +9,8 @@ WWW=		https://github.com/rvaser/spoa
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: _Float16 is not supported on this target
+
 BUILD_DEPENDS=	bioparser>0:biology/bioparser \
 		biosoup>0:biology/biosoup \
 		cereal>0:devel/cereal \
