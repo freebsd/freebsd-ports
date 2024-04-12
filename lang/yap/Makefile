@@ -52,6 +52,12 @@ CFLAGS+=	-Wno-incompatible-function-pointer-types
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 .endif
 
+.if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
+pre-configure:
+	${REINPLACE_CMD} 's/-export-dynamic/-Wl,--export-dynamic/' \
+		configure packages/cplint/slipcase/Makefile.in
+.endif
+
 .if ${ARCH:Mpowerpc*}
 USES+=		compiler:gcc-c++11-lib
 .endif
