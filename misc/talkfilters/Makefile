@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFLICTS=	chef filters
 
 SUB_FILES=	pkg-message

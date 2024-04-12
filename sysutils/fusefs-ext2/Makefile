@@ -21,7 +21,6 @@ GH_PROJECT=	fuse-ext2
 GH_TAGNAME=	ea7bacf
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include/e2fsprogs
 LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath \

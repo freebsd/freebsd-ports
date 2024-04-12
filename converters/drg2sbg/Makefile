@@ -14,7 +14,6 @@ USES=		autoreconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	manuel-arguelles
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/drg2sbg \
 		bin/drgbuilder \

@@ -15,7 +15,6 @@ LIB_DEPENDS=	libmikmod.so:audio/libmikmod
 
 USES=				gmake ncurses
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	%%DATADIR%%/mikmodrc \
 		bin/mikmod \

@@ -21,7 +21,6 @@ GH_ACCOUNT=	mikebrady
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-avahi \
 		--with-libdaemon \

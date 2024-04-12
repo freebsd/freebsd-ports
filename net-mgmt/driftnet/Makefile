@@ -26,7 +26,6 @@ USE_GNOME=	gtk20
 USE_XORG=	x11 xext xi
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-debug
 
 INSTALL_TARGET=	install-strip

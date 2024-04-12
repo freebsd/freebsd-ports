@@ -15,7 +15,6 @@ LIB_DEPENDS=	libxmp.so:audio/libxmp
 
 USES=		gmake localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 

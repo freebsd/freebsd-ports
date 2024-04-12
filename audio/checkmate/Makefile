@@ -12,7 +12,6 @@ WWW=		https://checkmate.gissen.nl/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/mpck \
 		share/man/man1/mpck.1.gz

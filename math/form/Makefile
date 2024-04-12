@@ -18,7 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vermaseren
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-native \
 			--enable-largefile \
 			--enable-scalar \

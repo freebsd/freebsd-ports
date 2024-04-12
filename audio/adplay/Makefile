@@ -22,7 +22,6 @@ GH_PROJECT=	${PORTNAME}-unix
 GH_TUPLE=	adplug:database:${DBVERSION}:database/database-${DBVERSION}
 
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=		--sharedstatedir=${DATADIR}
 
 PLIST_FILES=	${DATADIR}/adplug/adplug.db \

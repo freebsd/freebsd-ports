@@ -14,7 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dagwieers
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFLICTS_INSTALL=	security/1password-client
 
 post-configure:

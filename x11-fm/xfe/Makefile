@@ -22,7 +22,6 @@ USE_GNOME=	intltool
 USE_XORG=	x11 xcb xft xrandr xrender
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 LDFLAGS+=	-pthread
 

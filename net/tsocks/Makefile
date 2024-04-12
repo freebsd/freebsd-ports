@@ -17,7 +17,6 @@ USES=		gmake
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-conf=${PREFIX}/etc/tsocks.conf
 

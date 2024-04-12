@@ -15,7 +15,6 @@ USES=		cpe gmake jpeg localbase:ldflags
 CPE_VENDOR=	${PORTNAME}_project
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/jpegoptim \
 		share/man/man1/jpegoptim.1.gz

@@ -11,7 +11,6 @@ WWW=		https://savannah.nongnu.org/projects/bestfit/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/bestfit \
 		share/man/man1/bestfit.1.gz

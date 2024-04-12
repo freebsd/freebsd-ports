@@ -25,7 +25,6 @@ USE_SDL=	image2 sdl2
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-unused-but-set-variable||' \

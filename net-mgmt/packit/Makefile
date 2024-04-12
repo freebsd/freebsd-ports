@@ -17,7 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	eribertomota
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	share/man/man8/packit.8.gz \
 		sbin/packit

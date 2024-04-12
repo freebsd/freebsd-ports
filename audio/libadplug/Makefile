@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--enable-maintainer-mode
 
 INSTALL_TARGET=	install-strip

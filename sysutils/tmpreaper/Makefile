@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=				autoreconf cpe
 CPE_VENDOR=			debian
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

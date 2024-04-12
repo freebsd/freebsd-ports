@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mmitch
 
 HAS_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
 			--prefix=${PREFIX} \

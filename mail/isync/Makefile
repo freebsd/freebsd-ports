@@ -18,7 +18,6 @@ CPE_VENDOR=	isync_project
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--with-sasl=${LOCALBASE} \
 		--with-ssl=${OPENSSLLIB:H}

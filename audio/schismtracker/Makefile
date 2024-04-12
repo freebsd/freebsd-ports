@@ -16,7 +16,6 @@ USES=		compiler:c++11-lib desktop-file-utils localbase python sdl xorg
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

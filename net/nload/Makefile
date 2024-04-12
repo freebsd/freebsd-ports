@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 USES=				ncurses
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/nload \
 		share/man/man1/nload.1.gz

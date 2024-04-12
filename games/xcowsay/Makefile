@@ -19,7 +19,6 @@ USES=		gettext gmake gnome pkgconfig
 USE_CSTD=	c99
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	DBUS
 

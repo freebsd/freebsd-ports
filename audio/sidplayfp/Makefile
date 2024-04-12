@@ -14,7 +14,6 @@ LIB_DEPENDS=	libstilview.so:audio/libsidplayfp
 
 USES=				compiler:c++17-lang localbase:ldflags pkgconfig
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/sidplayfp \
 		bin/stilview \

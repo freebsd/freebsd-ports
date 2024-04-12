@@ -19,7 +19,6 @@ USE_PERL5=	run
 SHEBANG_FILES=	magicsort tools/*.pl tools/checkrecipe
 
 HAS_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}

@@ -12,7 +12,6 @@ LICENSE=	MIT
 
 USES=		localbase pkgconfig
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/fdupes \
 		share/man/man1/fdupes.1.gz
