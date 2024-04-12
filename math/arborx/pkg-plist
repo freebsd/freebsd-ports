@@ -7,6 +7,7 @@ include/ArborX/ArborX_HDBSCAN.hpp
 include/ArborX/ArborX_LinearBVH.hpp
 include/ArborX/ArborX_Version.hpp
 include/ArborX/details/ArborX_AccessTraits.hpp
+include/ArborX/details/ArborX_AttachIndices.hpp
 include/ArborX/details/ArborX_Callbacks.hpp
 include/ArborX/details/ArborX_Dendrogram.hpp
 include/ArborX/details/ArborX_DetailsBatchedQueries.hpp
@@ -25,6 +26,7 @@ include/ArborX/details/ArborX_DetailsLegacy.hpp
 include/ArborX/details/ArborX_DetailsMinimumSpanningTree.hpp
 include/ArborX/details/ArborX_DetailsMortonCode.hpp
 include/ArborX/details/ArborX_DetailsMutualReachabilityDistance.hpp
+include/ArborX/details/ArborX_DetailsNearestBufferProvider.hpp
 include/ArborX/details/ArborX_DetailsNode.hpp
 include/ArborX/details/ArborX_DetailsOperatorFunctionObjects.hpp
 include/ArborX/details/ArborX_DetailsPermutedData.hpp
@@ -43,6 +45,8 @@ include/ArborX/details/ArborX_IndexableGetter.hpp
 include/ArborX/details/ArborX_MinimumSpanningTree.hpp
 include/ArborX/details/ArborX_NeighborList.hpp
 include/ArborX/details/ArborX_PairIndexRank.hpp
+include/ArborX/details/ArborX_PairValueIndex.hpp
+include/ArborX/details/ArborX_PredicateHelpers.hpp
 include/ArborX/details/ArborX_Predicates.hpp
 include/ArborX/details/ArborX_SpaceFillingCurves.hpp
 include/ArborX/details/ArborX_TraversalPolicy.hpp
@@ -57,15 +61,17 @@ include/ArborX/geometry/ArborX_KDOP.hpp
 include/ArborX/geometry/ArborX_Point.hpp
 include/ArborX/geometry/ArborX_Ray.hpp
 include/ArborX/geometry/ArborX_Sphere.hpp
+include/ArborX/interpolation/ArborX_InterpMovingLeastSquares.hpp
 include/ArborX/interpolation/details/ArborX_InterpDetailsCompactRadialBasisFunction.hpp
+include/ArborX/interpolation/details/ArborX_InterpDetailsMovingLeastSquaresCoefficients.hpp
 include/ArborX/interpolation/details/ArborX_InterpDetailsPolynomialBasis.hpp
 include/ArborX/interpolation/details/ArborX_InterpDetailsSymmetricPseudoInverseSVD.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtAccessibilityTraits.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtArithmeticTraits.hpp
-include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtBitManipulation.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtMinMaxOperations.hpp
-include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtScopedProfileRegion.hpp
+include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtMinMaxReduce.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtSort.hpp
+include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtStdAlgorithms.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtSwap.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtVersion.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtViewHelpers.hpp
