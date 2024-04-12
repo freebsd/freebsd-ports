@@ -15,12 +15,15 @@ share/metainfo/org.rncbc.qtractor.metainfo.xml
 share/mime/packages/org.rncbc.qtractor.xml
 %%DATADIR%%/audio/metro_bar.wav
 %%DATADIR%%/audio/metro_beat.wav
+%%DATADIR%%/instruments/Standard1.ins
+%%DATADIR%%/palette/KXStudio.conf
+%%DATADIR%%/palette/Wonton Soup.conf
 %%DATADIR%%/translations/qtractor_cs.qm
 %%DATADIR%%/translations/qtractor_de.qm
 %%DATADIR%%/translations/qtractor_es.qm
 %%DATADIR%%/translations/qtractor_fr.qm
 %%DATADIR%%/translations/qtractor_it.qm
 %%DATADIR%%/translations/qtractor_ja.qm
-%%DATADIR%%/translations/qtractor_pt.qm
+%%DATADIR%%/translations/qtractor_pt_BR.qm
 %%DATADIR%%/translations/qtractor_ru.qm
 %%DATADIR%%/translations/qtractor_uk.qm
