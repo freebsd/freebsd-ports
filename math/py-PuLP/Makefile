@@ -1,6 +1,5 @@
 PORTNAME=	PuLP
-DISTVERSION=	2.7.0
-PORTREVISION=	1
+DISTVERSION=	2.8.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amply>=0.1.2:math/py-amply@${PY_FLAVOR} \
 
 USES=		cpe python
 CPE_VENDOR=	${PORTNAME:tl}project
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	distutils concurrent autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
@@ -26,7 +27,14 @@ post-patch:
 	@${CP} ${WRKSRC}/pulp/pulp.cfg.linux ${WRKSRC}/pulp/pulp.cfg.freebsd
 	@${REINPLACE_CMD} -E 's/^(CplexPath|PulpCbcPath) = .*/#&/' ${WRKSRC}/pulp/pulp.cfg.freebsd
 
-do-test: install # one test is known to fail: https://github.com/coin-or/pulp/issues/494
-	@cd ${TEST_WRKSRC} && py.test
+post-install: # workaround for https://github.com/coin-or/pulp/issues/740: replace cbc binaries for other systems with the FreeBSD binary
+	for cbc_exe in ${STAGEDIR}${PYTHON_SITELIBDIR}/pulp/solverdir/cbc/*/*/cbc ${WRKSRC}/pulp/solverdir/cbc/*/*/cbc; do \
+		${RM} $${cbc_exe} && \
+		${LN} -s ${LOCALBASE}/bin/cbc $${cbc_exe}; \
+	done
+
+do-test: # one test is known to fail: https://github.com/coin-or/pulp/issues/494
+	#@cd ${TEST_WRKSRC} && py.test
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c "import pulp; pulp.pulpTestAll()"
 
 .include <bsd.port.mk>
