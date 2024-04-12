@@ -9,6 +9,8 @@ WWW=		https://rye-up.com
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	link fails: ld: error: undefined symbol: __atomic_is_lock_free
+
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
