@@ -17,7 +17,6 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-architecture.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-dark-theme-logo.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-lambda-service.svg
-%%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-lambda-tutorial.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-overview-dark.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-overview-light.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-ui.png
@@ -38,7 +37,8 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/configuration/storage-config.md
 %%PORTDOCS%%%%DOCSDIR%%/deployment/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/deployment/deployment-modes.md
-%%PORTDOCS%%%%DOCSDIR%%/deployment/kubernetes.md
+%%PORTDOCS%%%%DOCSDIR%%/deployment/kubernetes/gke.md
+%%PORTDOCS%%%%DOCSDIR%%/deployment/kubernetes/helm.md
 %%PORTDOCS%%%%DOCSDIR%%/distributed-tracing/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/distributed-tracing/otel-service.md
 %%PORTDOCS%%%%DOCSDIR%%/distributed-tracing/overview.md
@@ -58,7 +58,6 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/guides/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/add-full-text-search-to-your-olap-db.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/aws-setup.md
-%%PORTDOCS%%%%DOCSDIR%%/guides/e2e-serverless-aws-lambda.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/schemaless.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/storage-setup/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/storage-setup/aws-s3.md
