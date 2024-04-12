@@ -1,0 +1,14 @@
+--- Mizuma.orig	2024-04-12 19:39:20 UTC
++++ Mizuma
+@@ -336,9 +336,9 @@ if [ $online -eq 0 ]; then
+ nc -z 1.1.1.1 80  >/dev/null 2>&1
+ online=$?
+ if [ $online -eq 0 ]; then
+-if [ ! -f "$HOME/.i386-wine-pkg/usr/local/libdata/ldconfig/wine" ]; then
++if [ ! -f "$HOME/.i386-wine-pkg/usr/local/libdata/ldconfig/wine8" ]; then
+ echo -e "\e[3;5;0;96mSetting up 32-Bit libraries ...\e[30;48;5;82m\e[0m"
+-/usr/local/share/wine/pkg32.sh install -y wine mesa-dri | zenity --auto-close --percentage=15 --progress --title="$NAME - 32-Bit maintenance" --text="Installing 32-Bit libraries"
++/usr/local/share/wine/pkg32.sh install -y wine8 mesa-dri | zenity --auto-close --percentage=15 --progress --title="$NAME - 32-Bit maintenance" --text="Installing 32-Bit libraries"
+ MesaDEV=$(pkg info mesa-devel)
+ if [[ $MesaDEV == *"Name           : mesa-devel"* ]]; then
+ MD=$(question "It looks like that you have installed mesa-devel, do you like to install mesa-devel for the Wine 32-Bit part too?")
