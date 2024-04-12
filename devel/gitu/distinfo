@@ -1,4 +1,4 @@
-TIMESTAMP = 1712477044
+TIMESTAMP = 1712894833
 SHA256 (rust/crates/ahash-0.8.11.crate) = e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011
 SIZE (rust/crates/ahash-0.8.11.crate) = 43607
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
@@ -381,5 +381,5 @@ SHA256 (rust/crates/zerocopy-0.7.32.crate) = 74d4d3961e53fa4c9a25a8637fc2bfaf259
 SIZE (rust/crates/zerocopy-0.7.32.crate) = 151096
 SHA256 (rust/crates/zerocopy-derive-0.7.32.crate) = 9ce1b18ccd8e73a9321186f97e46f9f04b778851177567b1975109d26a08d2a6
 SIZE (rust/crates/zerocopy-derive-0.7.32.crate) = 37623
-SHA256 (altsem-gitu-v0.14.0_GH0.tar.gz) = a6142c15904655768512df261be0673c89690af8e0b7e5e20ddfb356959957c4
-SIZE (altsem-gitu-v0.14.0_GH0.tar.gz) = 3949814
+SHA256 (altsem-gitu-v0.15.0_GH0.tar.gz) = 2f1055514eb010dd50aa8b724356d981bb31b7c30b12a771f6cba08e73137d2e
+SIZE (altsem-gitu-v0.15.0_GH0.tar.gz) = 3951447
