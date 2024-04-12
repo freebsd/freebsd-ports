@@ -1,7 +1,7 @@
 PORTNAME=	noise-suppression-for-voice
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -16,15 +16,17 @@ BROKEN_armv7=	link fails: ld: error: undefined symbol: __atomic_store and ld: er
 
 BUILD_DEPENDS=	juce>0:devel/juce \
 		lv2>0:audio/lv2
-LIB_DEPENDS=	libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng16.so:graphics/png
 
-USES=		cmake compiler:c11 pkgconfig
+USES=		cmake compiler:c11 localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	werman
 
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_OFF+=	BUILD_VST_PLUGIN # https://github.com/werman/noise-suppression-for-voice/issues/65
-CXXFLAGS+=	-DJUCE_CUSTOM_VST3_SDK=1
+CXXFLAGS+=	-DJUCE_CUSTOM_VST3_SDK=1 -DJUCE_INCLUDE_PNGLIB_CODE=0
+LDFLAGS+=	-lpng16
 
 PLIST_SUB=	XARCH=${ARCH:S/amd64/x86_64/}
 
