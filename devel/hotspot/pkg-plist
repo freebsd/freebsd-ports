@@ -1,10 +1,6 @@
 bin/hotspot
-lib/libexec/elevate_perf_privileges.sh
 lib/libexec/hotspot-perfparser
-lib/libexec/kauth/hotspot-auth-helper
 share/applications/com.kdab.hotspot.desktop
-share/dbus-1/system-services/com.kdab.hotspot.perf.service
-share/dbus-1/system.d/com.kdab.hotspot.perf.conf
 share/icons/hicolor/128x128/apps/hotspot.png
 share/icons/hicolor/16x16/apps/hotspot.png
 share/icons/hicolor/22x22/apps/hotspot.png
@@ -13,4 +9,3 @@ share/icons/hicolor/48x48/apps/hotspot.png
 share/icons/hicolor/64x64/apps/hotspot.png
 share/knotifications5/hotspot.notifyrc
 share/metainfo/com.kdab.Hotspot.appdata.xml
-share/polkit-1/actions/com.kdab.hotspot.perf.policy
