@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.4.1
+DISTVERSION=	2024.4.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,14 +39,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
-		built-0.7.1 \
-		bumpalo-3.15.4 \
+		built-0.7.2 \
+		bumpalo-3.16.0 \
 		bytecount-0.6.7 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.91 \
+		cc-1.0.92 \
 		cfg-if-1.0.0 \
 		chrono-0.4.37 \
 		ci_info-0.14.14 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ed25519-dalek-2.1.1 \
 		either-1.10.0 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.33 \
+		encoding_rs-0.8.34 \
 		envmnt-0.10.4 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
@@ -118,7 +118,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
-		getrandom-0.2.13 \
+		getrandom-0.2.14 \
 		gimli-0.28.1 \
 		git2-0.18.3 \
 		globset-0.4.14 \
@@ -154,7 +154,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ipnet-2.9.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
-		jobserver-0.1.28 \
+		jobserver-0.1.29 \
 		js-sys-0.3.69 \
 		kdl-4.6.0 \
 		lazy_static-1.4.0 \
@@ -213,7 +213,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.79 \
 		quick-xml-0.23.1 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -288,9 +288,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-1.0.58 \
 		thiserror-impl-1.0.58 \
 		thread_local-1.1.8 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.37.0 \
@@ -322,7 +322,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
 		urlencoding-2.1.3 \
-		usage-lib-0.1.17 \
+		usage-lib-0.1.18 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
@@ -366,7 +366,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.4 \
-		winnow-0.6.5 \
+		winnow-0.6.6 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
