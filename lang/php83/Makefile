@@ -1,5 +1,5 @@
 PORTNAME=	php83
-DISTVERSION=	8.3.4
+DISTVERSION=	8.3.6
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	\
 		--disable-all \
 		--program-prefix="" \
@@ -168,11 +167,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
 
-post-install-CLI-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
-
 post-install-CGI-on:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
+
+post-install-CLI-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
 
 post-install-EMBED-on:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
@@ -252,8 +251,8 @@ DB4_CONFIGURE_ON=	--with-db4=${LOCALBASE}
 DB4_USES=		bdb
 DB4_VARS=		WITH_BDB_HIGHEST=yes
 FLATFILE_CONFIGURE_ON=	--disable-flatfile
-GDBM_CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+GDBM_CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
 INIFILE_CONFIGURE_OFF=	--disable-inifile
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 LMDB_CONFIGURE_ARGS=	--with-lmdb=${LOCALBASE}
@@ -453,10 +452,10 @@ OPTIONS_DEFAULT=	MYSQLND
 
 MYSQLND_DESC=		Use MySQL Native Driver
 
+MYSQLND_CONFIGURE_ON=	--with-pdo-mysql=mysqlnd
 MYSQLND_CONFIGURE_OFF=	--with-pdo-mysql=${LOCALBASE} \
 			--with-zlib-dir=/usr
 MYSQLND_USES_OFF=	mysql
-MYSQLND_CONFIGURE_ON=	--with-pdo-mysql=mysqlnd
 
 USE_PHP=	pdo:build
 .endif
