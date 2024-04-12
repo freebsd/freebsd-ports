@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2024-02-14 14:42:02 UTC
+--- config/gitlab.yml.example.orig	2024-04-09 16:46:13 UTC
 +++ config/gitlab.yml.example
 @@ -463,7 +463,7 @@ production: &base
    ## GitLab Pages
@@ -27,7 +27,7 @@
      storages: # You must have at least a `default` storage path.
        default:
 -        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
-+        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
++        gitaly_address: unix:%%WWWDIR%%/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
@@ -50,7 +50,7 @@
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
 -    # secret_file: /home/git/gitlab/.gitlab_shell_secret
-+    # secret_file: %%PREFIX%%/www/gitlab-ce/.gitlab_shell_secret
++    # secret_file: %%WWWDIR%%/.gitlab_shell_secret
  
      # Git over HTTP
      upload_pack: true
@@ -59,14 +59,14 @@
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
 -    # secret_file: /home/git/gitlab/.gitlab_workhorse_secret
-+    # secret_file: %%PREFIX%%/www/gitlab-ce/.gitlab_workhorse_secret
++    # secret_file: %%WWWDIR%%/.gitlab_workhorse_secret
  
    gitlab_kas:
      # enabled: true
      # File that contains the secret key for verifying access for gitlab-kas.
      # Default is '.gitlab_kas_secret' relative to Rails.root (i.e. root of the GitLab app).
 -    # secret_file: /home/git/gitlab/.gitlab_kas_secret
-+    # secret_file: %%PREFIX%%/www/gitlab-ce/.gitlab_kas_secret
++    # secret_file: %%WWWDIR%%/.gitlab_kas_secret
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com

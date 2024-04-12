@@ -5,7 +5,7 @@
  
  # A path which Gitaly should open a Unix socket.
 -socket_path = "/home/git/gitlab/tmp/sockets/private/gitaly.socket"
-+socket_path = "%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket"
++socket_path = "%%PREFIX%%/www/gitlab/tmp/sockets/private/gitaly.socket"
  
  # Directory containing Gitaly executables.
 -bin_dir = "/home/git/gitaly/_build/bin"
@@ -44,7 +44,7 @@
 -dir = "/home/git/gitlab/log"
 +[logging]
 +# Directory where Gitaly stores extra log files.
-+dir = "%%PREFIX%%/www/gitlab-ce/log"
++dir = "%%PREFIX%%/www/gitlab/log"
  # # Log format. Either 'text' or 'json'.
  # format = "json"
  # # Optional. Set log level to only log entries with that severity or above.
@@ -59,7 +59,7 @@
  [gitlab]
  # # URL of the GitLab server.
 -url = "http+unix://%2Fhome%2Fgit%2Fgitlab%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
-+url = "http+unix://%2Fusr%2Flocal%2Fwww%2Fgitlab-ce%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
++url = "http+unix://%2Fusr%2Flocal%2Fwww%2Fgitlab%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
  # # 'relative_url_root' is only needed if a UNIX socket is used in 'url' and GitLab is configured to
  # # use a relative path. For example, '/gitlab'.
  # relative_url_root = '/'

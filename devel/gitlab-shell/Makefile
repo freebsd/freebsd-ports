@@ -50,6 +50,7 @@ VARLOGDIR=	/var/log/gitlab-shell
 PLIST_FILES+=	"@dir(git,,755) ${VARLOGDIR}"
 
 post-patch:
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.yml.example
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 	${CP} ${WRKSRC}/config.yml.sample ${WRKSRC}/config.yml
 	${REINPLACE_CMD} -e 's|VERSION_STRING :=.*|VERSION_STRING := v${PORTVERSION}|g' ${WRKSRC}/Makefile

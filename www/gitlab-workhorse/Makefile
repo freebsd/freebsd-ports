@@ -42,13 +42,9 @@ go-post-fetch:
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 # ---------------------------
 
-PLIST_DIRS=	${WWWDIR}
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \
 		bin/gitlab-zip-metadata
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
 
 .include <bsd.port.mk>
