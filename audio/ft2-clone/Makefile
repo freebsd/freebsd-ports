@@ -1,6 +1,6 @@
 PORTNAME=	ft2-clone
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.80
+DISTVERSION=	1.82
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -28,9 +28,6 @@ DESKTOP_ENTRIES=	"FastTracker II Clone" \
 			"" \
 			false
 
-# segfaults
-PORTSCOUT=	skipv:v1.81
-
 PLIST_FILES=	bin/ft2-clone \
 		share/pixmaps/ft2-clone.ico
 
@@ -52,10 +49,8 @@ PULSEAUDIO_LDFLAGS+=	-lpulse
 USE_CSTD=	c99
 .endif
 
-do-install:
+post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_PROGRAM} ${WRKSRC}/release/other/ft2-clone \
-		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/gfxdata/icon/ft2-clone.ico \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
