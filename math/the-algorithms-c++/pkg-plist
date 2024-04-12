@@ -1,3 +1,4 @@
+bin/backtracking/generate_parentheses
 bin/backtracking/graph_coloring
 bin/backtracking/knight_tour
 bin/backtracking/magic_sequence
@@ -15,7 +16,10 @@ bin/bit_manipulation/count_of_set_bits
 bin/bit_manipulation/count_of_trailing_ciphers_in_factorial_n
 bin/bit_manipulation/find_non_repeating_number
 bin/bit_manipulation/hamming_distance
+bin/bit_manipulation/next_higher_number_with_same_number_of_set_bits
+bin/bit_manipulation/power_of_2
 bin/bit_manipulation/set_kth_bit
+bin/bit_manipulation/travelling_salesman_using_bit_manipulation
 bin/ciphers/a1z26_cipher
 bin/ciphers/atbash_cipher
 bin/ciphers/base64_encoding
@@ -25,6 +29,7 @@ bin/ciphers/hill_cipher
 bin/ciphers/morse_code
 bin/ciphers/vigenere_cipher
 bin/ciphers/xor_cipher
+bin/cpu_scheduling_algorithms/fcfs_scheduling
 bin/data_structures/avltree
 bin/data_structures/binary_search_tree
 bin/data_structures/binary_search_tree2
@@ -47,6 +52,7 @@ bin/data_structures/queue_using_linkedlist
 bin/data_structures/queue_using_two_stacks
 bin/data_structures/rb_tree
 bin/data_structures/reverse_a_linked_list
+bin/data_structures/segment_tree
 bin/data_structures/skip_list
 bin/data_structures/sparse_table
 bin/data_structures/stack_using_array
@@ -55,12 +61,15 @@ bin/data_structures/stack_using_queue
 bin/data_structures/test_queue
 bin/data_structures/test_stack
 bin/data_structures/test_stack_students
+bin/data_structures/treap
 bin/data_structures/tree
 bin/data_structures/tree_234
 bin/data_structures/trie_modern
 bin/data_structures/trie_tree
 bin/data_structures/trie_using_hashmap
 bin/divide_and_conquer/karatsuba_algorithm_for_fast_multiplication
+bin/divide_and_conquer/strassen_matrix_multiplication
+bin/games/memory_game
 bin/geometry/graham_scan_algorithm
 bin/geometry/jarvis_algorithm
 bin/geometry/line_segment_intersection
@@ -92,12 +101,15 @@ bin/hash/linear_probing_hash_table
 bin/hash/md5
 bin/hash/quadratic_probing_hash_table
 bin/hash/sha1
+bin/hash/sha256
 bin/machine_learning/a_star_search
 bin/machine_learning/adaline_learning
+bin/machine_learning/k_nearest_neighbors
 bin/machine_learning/kohonen_som_topology
 bin/machine_learning/kohonen_som_trace
 bin/machine_learning/neural_network
 bin/machine_learning/ordinary_least_squares_regressor
+bin/math/aliquot_sum
 bin/math/approximate_pi
 bin/math/area
 bin/math/armstrong_number
@@ -108,6 +120,7 @@ bin/math/check_factorial
 bin/math/check_prime
 bin/math/complex_numbers
 bin/math/double_factorial
+bin/math/eratosthenes
 bin/math/eulers_totient_function
 bin/math/extended_euclid_algorithm
 bin/math/factorial
@@ -124,6 +137,7 @@ bin/math/gcd_recursive_euclidean
 bin/math/integral_approximation
 bin/math/integral_approximation2
 bin/math/inv_sqrt
+bin/math/iterative_factorial
 bin/math/large_factorial
 bin/math/largest_power
 bin/math/lcm_sum
@@ -145,6 +159,7 @@ bin/math/power_of_two
 bin/math/prime_factorization
 bin/math/prime_numbers
 bin/math/primes_up_to_billion
+bin/math/quadratic_equations_complex_numbers
 bin/math/realtime_stats
 bin/math/sieve_of_eratosthenes
 bin/math/sqrt_double
@@ -183,6 +198,7 @@ bin/others/fast_integer_input
 bin/others/happy_number
 bin/others/iterative_tree_traversals
 bin/others/kadanes3
+bin/others/kelvin_to_celsius
 bin/others/lru_cache
 bin/others/matrix_exponentiation
 bin/others/palindrome_of_number
@@ -197,6 +213,7 @@ bin/others/spiral_print
 bin/others/stairs_pattern
 bin/others/tower_of_hanoi
 bin/others/vector_important_functions
+bin/physics/ground_to_ground_projectile_motion
 bin/probability/addition_rule
 bin/probability/bayes_theorem
 bin/probability/binomial_dist
@@ -253,11 +270,13 @@ bin/sorting/selection_sort_recursive
 bin/sorting/shell_sort
 bin/sorting/shell_sort2
 bin/sorting/slow_sort
+bin/sorting/stooge_sort
 bin/sorting/strand_sort
 bin/sorting/swap_sort
 bin/sorting/tim_sort
 bin/sorting/wave_sort
 bin/sorting/wiggle_sort
+bin/strings/boyer_moore
 bin/strings/brute_force_string_searching
 bin/strings/horspool
 bin/strings/knuth_morris_pratt
