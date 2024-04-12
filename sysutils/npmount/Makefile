@@ -19,6 +19,4 @@ GH_ACCOUNT=	outpaddling
 
 MAKE_ENV=	MANDIR=${PREFIX}/share/man
 
-WITH_DEBUG=	yes
-
 .include <bsd.port.mk>

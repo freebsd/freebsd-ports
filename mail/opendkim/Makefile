@@ -103,10 +103,6 @@ MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
-.endif
-
 .if ${PORT_OPTIONS:MFILTER}
 SUB_FILES=		pkg-message
 WITHOUT_MILTER_CFLAGS=	yes

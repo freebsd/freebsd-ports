@@ -59,8 +59,6 @@ ALL_TARGET=	all translations
 
 OPTIONS_DEFINE=	DEBUG
 
-DEBUG_VARS=	WITH_DEBUG=yes
-
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MDEBUG}

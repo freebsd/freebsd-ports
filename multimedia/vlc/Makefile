@@ -381,7 +381,6 @@ WITH_DVD_DEVICE?=/dev/cd0
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=yes
 CONFIGURE_ARGS+=--enable-debug --disable-optimizations
 CFLAGS+=-g -O0
 CXXFLAGS+=-g -O0

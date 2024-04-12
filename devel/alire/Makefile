@@ -32,8 +32,6 @@ DOCS_DESC=	Install Design and Development documentation
 
 .if empty(PORT_OPTIONS:MDEBUG)
 _GPR_ARGS+=	-XALIRE_BUILD_MODE=release
-.else
-WITH_DEBUG=	yes
 .endif
 
 do-build:

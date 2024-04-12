@@ -25,8 +25,6 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
-WITH_DEBUG=	yes
-
 PLIST_FILES=	bin/qmediamanager share/man/man1/qmediamanager.1.gz
 
 do-install:
