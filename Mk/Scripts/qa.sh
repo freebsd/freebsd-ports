@@ -1035,12 +1035,9 @@ reinplace()
 }
 
 prefixman() {
-	local manlist
-
-	manlist=$(find ${STAGEDIR}${PREFIX}/man -type f)
-	if [ -n "${manlist}" ]; then
+	if [ -d "${STAGEDIR}${PREFIX}/man" ]; then
 		warn "Installing man files in ${PREFIX}/man is no longer supported. Consider installing these files in ${PREFIX}/share/man instead."
-		ls -liTd ${manlist}
+		ls -liTd ${STAGEDIR}${PREFIX}/man
 	fi
 	return 0
 }
