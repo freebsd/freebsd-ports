@@ -12,7 +12,7 @@
 #
 # and place a list of packages in firstboot_pkgs_list, e.g.,
 #
-# firstboot_pkgs_list="apache22 php5 mysql56-server"
+# firstboot_pkgs_list="apache24 php83 mysql80-server"
 
 . /etc/rc.subr
 
