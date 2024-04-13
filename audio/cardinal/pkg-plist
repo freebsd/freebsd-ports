@@ -570,6 +570,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/BaconPlugs/res/midi/goldberg/988-v30.mid
 %%DATADIR%%/BaconPlugs/res/sabrog-25-down.svg
 %%DATADIR%%/BaconPlugs/res/sabrog-25-up.svg
+%%DATADIR%%/Befaco/res/SpringReverbIR.f32
 %%DATADIR%%/Befaco/res/components/BananutBlack.svg
 %%DATADIR%%/Befaco/res/components/BananutRed.svg
 %%DATADIR%%/Befaco/res/components/BefacoButton_0.svg
@@ -597,6 +598,8 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Befaco/res/components/Davies1900hLargeLightGrey_bg.svg
 %%DATADIR%%/Befaco/res/components/Davies1900hLightGrey.svg
 %%DATADIR%%/Befaco/res/components/Davies1900hLightGrey_bg.svg
+%%DATADIR%%/Befaco/res/components/Davies1900hWhiteEndless.svg
+%%DATADIR%%/Befaco/res/components/Davies1900hWhiteEndless_bg.svg
 %%DATADIR%%/Befaco/res/components/Knurlie.svg
 %%DATADIR%%/Befaco/res/components/SwitchNarrowHoriz_0.svg
 %%DATADIR%%/Befaco/res/components/SwitchNarrowHoriz_1.svg
@@ -608,8 +611,10 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Befaco/res/components/SwitchWideHoriz_bg.svg
 %%DATADIR%%/Befaco/res/components/SwitchWideHoriz_fg.svg
 %%DATADIR%%/Befaco/res/fonts/Segment7Standard.otf
+%%DATADIR%%/Befaco/res/fonts/miso.otf
 %%DATADIR%%/Befaco/res/panels/ABC.svg
 %%DATADIR%%/Befaco/res/panels/ADSR.svg
+%%DATADIR%%/Befaco/res/panels/Burst.svg
 %%DATADIR%%/Befaco/res/panels/ChoppingKinky.svg
 %%DATADIR%%/Befaco/res/panels/DualAtenuverter.svg
 %%DATADIR%%/Befaco/res/panels/EvenVCO.svg
@@ -629,6 +634,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/Befaco/res/panels/SlewLimiter.svg
 %%DATADIR%%/Befaco/res/panels/SpringReverb.svg
 %%DATADIR%%/Befaco/res/panels/StereoStrip.svg
+%%DATADIR%%/Befaco/res/panels/Voltio.svg
 %%DATADIR%%/Bidoo/res/ACNE.svg
 %%DATADIR%%/Bidoo/res/ANTN.svg
 %%DATADIR%%/Bidoo/res/BAFIS.svg
@@ -1172,6 +1178,27 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/BogaudioModules/res/port.svg
 %%DATADIR%%/BogaudioModules/res/slider_switch_2_14px_0.svg
 %%DATADIR%%/BogaudioModules/res/slider_switch_2_14px_1.svg
+%%DATADIR%%/CVfunk/res/Collatz-dark.svg
+%%DATADIR%%/CVfunk/res/Collatz.svg
+%%DATADIR%%/CVfunk/res/EnvelopeArray-dark.svg
+%%DATADIR%%/CVfunk/res/EnvelopeArray.svg
+%%DATADIR%%/CVfunk/res/HexMod-dark.svg
+%%DATADIR%%/CVfunk/res/HexMod.svg
+%%DATADIR%%/CVfunk/res/ImpulseController-dark.svg
+%%DATADIR%%/CVfunk/res/ImpulseController.svg
+%%DATADIR%%/CVfunk/res/Magnets-dark.svg
+%%DATADIR%%/CVfunk/res/Magnets.svg
+%%DATADIR%%/CVfunk/res/PentaSequencer-dark.svg
+%%DATADIR%%/CVfunk/res/PentaSequencer.svg
+%%DATADIR%%/CVfunk/res/Ranges-dark.svg
+%%DATADIR%%/CVfunk/res/Ranges.svg
+%%DATADIR%%/CVfunk/res/Signals-dark.svg
+%%DATADIR%%/CVfunk/res/Signals.svg
+%%DATADIR%%/CVfunk/res/Steps-dark.svg
+%%DATADIR%%/CVfunk/res/Steps.svg
+%%DATADIR%%/CVfunk/res/Strings-dark.svg
+%%DATADIR%%/CVfunk/res/Strings.svg
+%%DATADIR%%/CVfunk/res/fonts/DejaVuSansMono.ttf
 %%DATADIR%%/Cardinal/res/AIDA-X.svg
 %%DATADIR%%/Cardinal/res/AudioFile.svg
 %%DATADIR%%/Cardinal/res/AudioToCVPitch.svg
@@ -1320,6 +1347,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/ComponentLibrary/NKK_1.svg
 %%DATADIR%%/ComponentLibrary/NKK_2.svg
 %%DATADIR%%/ComponentLibrary/PB61303.svg
+%%DATADIR%%/ComponentLibrary/PJ301M-dark.svg
 %%DATADIR%%/ComponentLibrary/PJ301M.svg
 %%DATADIR%%/ComponentLibrary/PJ3410.svg
 %%DATADIR%%/ComponentLibrary/Plug.svg
@@ -1417,6 +1445,308 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/ComponentLibrary/VCVSlider.svg
 %%DATADIR%%/ComponentLibrary/VCVSliderHandle.svg
 %%DATADIR%%/ComponentLibrary/VCVSliderLight.svg
+%%DATADIR%%/Computerscare/presets/computerscare-boly-puttons/All A.vcvm
+%%DATADIR%%/Computerscare/presets/computerscare-boly-puttons/All B.vcvm
+%%DATADIR%%/Computerscare/presets/computerscare-laundry-soup/6-Channel Random Trigger.vcvm
+%%DATADIR%%/Computerscare/presets/computerscare-laundry-soup/Integer Clock Divider.vcvm
+%%DATADIR%%/Computerscare/presets/computerscare-laundry-soup/Jingle Bells.vcvm
+%%DATADIR%%/Computerscare/presets/computerscare-roly-pouter/Reverse Channel Order.vcvm
+%%DATADIR%%/Computerscare/res/ComputerscareBolyPuttonsPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareColyProp.svg
+%%DATADIR%%/Computerscare/res/ComputerscareCustomBlankExpanderPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareCustomBlankPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareDebugPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareDrolyPawPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareFolyPacePanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareGolyPeneratorPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareHorseADoodleDooPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareILoveCookiesPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareIsoPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareKnolyPobsPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareLaundrySoupPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareMolyPatrixPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareOhPeasPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscarePatchSequencerPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareRolyPouterPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareSolyPequencerPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareStolyFickPigurePanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareTolyPoolsPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareTotallyEmptyPanel.svg
+%%DATADIR%%/Computerscare/res/ComputerscareUnknown.svg
+%%DATADIR%%/Computerscare/res/Oswald-Regular.ttf
+%%DATADIR%%/Computerscare/res/Segment7Standard.ttf
+%%DATADIR%%/Computerscare/res/blank-clock-mode-frame.svg
+%%DATADIR%%/Computerscare/res/blank-clock-mode-scan.svg
+%%DATADIR%%/Computerscare/res/blank-clock-mode-sync.svg
+%%DATADIR%%/Computerscare/res/computerscare-CLEAR-BUTTON-DOWN.svg
+%%DATADIR%%/Computerscare/res/computerscare-CLEAR-BUTTON-UP.svg
+%%DATADIR%%/Computerscare/res/computerscare-big-knob-effed.svg
+%%DATADIR%%/Computerscare/res/computerscare-channels-empty-knob-auto-mode.svg
+%%DATADIR%%/Computerscare/res/computerscare-channels-empty-knob.svg
+%%DATADIR%%/Computerscare/res/computerscare-clk-text-red.svg
+%%DATADIR%%/Computerscare/res/computerscare-clk-text.svg
+%%DATADIR%%/Computerscare/res/computerscare-invisible-button-frame2.svg
+%%DATADIR%%/Computerscare/res/computerscare-invisible-button.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-dn.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-down.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-small-down-grey.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-small-down.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-small-up-grey.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-small-up.svg
+%%DATADIR%%/Computerscare/res/computerscare-iso-button-up.svg
+%%DATADIR%%/Computerscare/res/computerscare-logo-normal.svg
+%%DATADIR%%/Computerscare/res/computerscare-logo-sad.svg
+%%DATADIR%%/Computerscare/res/computerscare-medium-knob-disabled.svg
+%%DATADIR%%/Computerscare/res/computerscare-medium-knob-dot-indicator-disabled.svg
+%%DATADIR%%/Computerscare/res/computerscare-medium-knob-dot-indicator.svg
+%%DATADIR%%/Computerscare/res/computerscare-medium-knob-effed.svg
+%%DATADIR%%/Computerscare/res/computerscare-medium-small-knob-disabled.svg
+%%DATADIR%%/Computerscare/res/computerscare-medium-small-knob.svg
+%%DATADIR%%/Computerscare/res/computerscare-next-button-down.svg
+%%DATADIR%%/Computerscare/res/computerscare-next-button.svg
+%%DATADIR%%/Computerscare/res/computerscare-pentagon-jack-1-outline-flipped.svg
+%%DATADIR%%/Computerscare/res/computerscare-pentagon-jack-1-outline.svg
+%%DATADIR%%/Computerscare/res/computerscare-pentagon-jack-pointing-up.svg
+%%DATADIR%%/Computerscare/res/computerscare-rst-text-red.svg
+%%DATADIR%%/Computerscare/res/computerscare-rst-text.svg
+%%DATADIR%%/Computerscare/res/computerscare-scramble-knob.svg
+%%DATADIR%%/Computerscare/res/computerscare-small-knob-effed-dark.svg
+%%DATADIR%%/Computerscare/res/computerscare-small-knob-effed-disabled.svg
+%%DATADIR%%/Computerscare/res/computerscare-small-knob-effed.svg
+%%DATADIR%%/Computerscare/res/debug-clock-selector-4way-template.svg
+%%DATADIR%%/Computerscare/res/iso-3way-1.svg
+%%DATADIR%%/Computerscare/res/iso-3way-2.svg
+%%DATADIR%%/Computerscare/res/iso-3way-3.svg
+%%DATADIR%%/Computerscare/res/iso-3way-template.svg
+%%DATADIR%%/Computerscare/res/tiny-jack.svg
+%%DATADIR%%/Computerscare/res/vertical-x-1.svg
+%%DATADIR%%/Computerscare/res/vertical-x-2.svg
+%%DATADIR%%/Computerscare/res/vertical-x-3.svg
+%%DATADIR%%/DHE-Modules/presets/CurveSequencer4/AD.vcvm
+%%DATADIR%%/DHE-Modules/presets/CurveSequencer4/ADHR.vcvm
+%%DATADIR%%/DHE-Modules/presets/CurveSequencer4/ADSR.vcvm
+%%DATADIR%%/DHE-Modules/presets/CurveSequencer4/AHR.vcvm
+%%DATADIR%%/DHE-Modules/presets/CurveSequencer4/ASR.vcvm
+%%DATADIR%%/DHE-Modules/presets/CurveSequencer4/Batman.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer16/Sample and Hold 100ms.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer16/Sample and Hold Gated.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer16/Steps 1s.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer16/Steps Gated.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/AD.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/ADBDSR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/ADHR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/ADSHR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/ADSR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/AHDSR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/AHR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/ASR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/DADSR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/DAHR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/DAR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/DASR.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/Sample and Hold 100ms.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/Sample and Hold Gated.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/Steps 1s.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer4/Steps Gated.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer8/Sample and Hold 100ms.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer8/Sample and Hold Gated.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer8/Steps 1s.vcvm
+%%DATADIR%%/DHE-Modules/presets/Sequencizer8/Steps Gated.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth2/D Flip-Flop.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth2/D Latch.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth2/SR Latch.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth2/T Flip-Flop.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth3/Gated SR Latch.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth3/JK Flip-Flop.vcvm
+%%DATADIR%%/DHE-Modules/presets/Truth4/D Flip-Flop with SR.vcvm
+%%DATADIR%%/DHE-Modules/svg/blossom.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/output-button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/output-button-released.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/port.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/thumb-switch-3-1.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/thumb-switch-3-2.svg
+%%DATADIR%%/DHE-Modules/svg/booster-stage/thumb-switch-3-3.svg
+%%DATADIR%%/DHE-Modules/svg/buttons.svg
+%%DATADIR%%/DHE-Modules/svg/buttons/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/buttons/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/buttons/port.svg
+%%DATADIR%%/DHE-Modules/svg/cubic.svg
+%%DATADIR%%/DHE-Modules/svg/cubic/knob-small.svg
+%%DATADIR%%/DHE-Modules/svg/cubic/port.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer-16.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer-4.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer-8.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/advance-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/advance-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/advance-mode-3.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/advance-mode-4.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/advance-mode-5.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/advance-mode-6.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/generate-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/generate-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/generate-mode-3.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/generate-mode-4.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/generate-mode-5.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/generate-mode-6.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/knob-small.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/marker-end.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/marker-start.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/port.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/thumb-switch-3-1.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/thumb-switch-3-2.svg
+%%DATADIR%%/DHE-Modules/svg/curve-sequencer/thumb-switch-3-3.svg
+%%DATADIR%%/DHE-Modules/svg/func-6.svg
+%%DATADIR%%/DHE-Modules/svg/func.svg
+%%DATADIR%%/DHE-Modules/svg/func/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-1.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-2.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-3.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-4.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-5.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-6.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-7.svg
+%%DATADIR%%/DHE-Modules/svg/func/multiplier-range-8.svg
+%%DATADIR%%/DHE-Modules/svg/func/offset-range-1.svg
+%%DATADIR%%/DHE-Modules/svg/func/offset-range-2.svg
+%%DATADIR%%/DHE-Modules/svg/func/offset-range-3.svg
+%%DATADIR%%/DHE-Modules/svg/func/offset-range-4.svg
+%%DATADIR%%/DHE-Modules/svg/func/port.svg
+%%DATADIR%%/DHE-Modules/svg/func/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/func/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic-h.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic-z.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic/port.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/fuzzy-logic/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/gator.svg
+%%DATADIR%%/DHE-Modules/svg/gator/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/gator/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/gator/port.svg
+%%DATADIR%%/DHE-Modules/svg/hostage.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/port.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/thumb-switch-3-1.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/thumb-switch-3-2.svg
+%%DATADIR%%/DHE-Modules/svg/hostage/thumb-switch-3-3.svg
+%%DATADIR%%/DHE-Modules/svg/ranger.svg
+%%DATADIR%%/DHE-Modules/svg/ranger/knob-medium.svg
+%%DATADIR%%/DHE-Modules/svg/ranger/knob-tiny.svg
+%%DATADIR%%/DHE-Modules/svg/ranger/port.svg
+%%DATADIR%%/DHE-Modules/svg/ranger/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/ranger/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal-16.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal-4.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal-8.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-source-1.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-source-2.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-source-3.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-source-4.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/anchor-source-5.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/knob-small.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/marker-end.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/marker-start.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/port.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/shape-1.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/shape-2.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/scannibal/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer-16.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer-4.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer-8.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-source-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-source-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-source-3.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-source-4.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/anchor-source-5.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/interrupt-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/interrupt-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/knob-small.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/marker-end.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/marker-start.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/port.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/shape-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/shape-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/sustain-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/sustain-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/thumb-switch-3-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/thumb-switch-3-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/thumb-switch-3-3.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/trigger-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/trigger-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/trigger-mode-3.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/trigger-mode-4.svg
+%%DATADIR%%/DHE-Modules/svg/sequencizer/trigger-mode-5.svg
+%%DATADIR%%/DHE-Modules/svg/stage.svg
+%%DATADIR%%/DHE-Modules/svg/stage/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/stage/port.svg
+%%DATADIR%%/DHE-Modules/svg/swave.svg
+%%DATADIR%%/DHE-Modules/svg/swave/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/swave/knob-tiny.svg
+%%DATADIR%%/DHE-Modules/svg/swave/port.svg
+%%DATADIR%%/DHE-Modules/svg/swave/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/swave/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/tapers.svg
+%%DATADIR%%/DHE-Modules/svg/tapers/knob-medium.svg
+%%DATADIR%%/DHE-Modules/svg/tapers/knob-tiny.svg
+%%DATADIR%%/DHE-Modules/svg/tapers/port.svg
+%%DATADIR%%/DHE-Modules/svg/tapers/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/tapers/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/truth-2.svg
+%%DATADIR%%/DHE-Modules/svg/truth-3.svg
+%%DATADIR%%/DHE-Modules/svg/truth-4.svg
+%%DATADIR%%/DHE-Modules/svg/truth/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/truth/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/truth/gate-mode-1.svg
+%%DATADIR%%/DHE-Modules/svg/truth/gate-mode-2.svg
+%%DATADIR%%/DHE-Modules/svg/truth/gate-mode-3.svg
+%%DATADIR%%/DHE-Modules/svg/truth/gate-mode-4.svg
+%%DATADIR%%/DHE-Modules/svg/truth/gate-mode-5.svg
+%%DATADIR%%/DHE-Modules/svg/truth/outcome-1.svg
+%%DATADIR%%/DHE-Modules/svg/truth/outcome-2.svg
+%%DATADIR%%/DHE-Modules/svg/truth/outcome-3.svg
+%%DATADIR%%/DHE-Modules/svg/truth/outcome-4.svg
+%%DATADIR%%/DHE-Modules/svg/truth/output-button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/truth/output-button-released.svg
+%%DATADIR%%/DHE-Modules/svg/truth/port.svg
+%%DATADIR%%/DHE-Modules/svg/upstage.svg
+%%DATADIR%%/DHE-Modules/svg/upstage/button-pressed.svg
+%%DATADIR%%/DHE-Modules/svg/upstage/button-released.svg
+%%DATADIR%%/DHE-Modules/svg/upstage/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/upstage/port.svg
+%%DATADIR%%/DHE-Modules/svg/upstage/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/upstage/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/xycloid.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/knob-large.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/knob-small.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/knob-tiny.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/port.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/thumb-switch-2-1.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/thumb-switch-2-2.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/thumb-switch-3-1.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/thumb-switch-3-2.svg
+%%DATADIR%%/DHE-Modules/svg/xylfo/thumb-switch-3-3.svg
 %%DATADIR%%/DrumKit/res/BD9.svg
 %%DATADIR%%/DrumKit/res/Baronial.svg
 %%DATADIR%%/DrumKit/res/CR78.svg
@@ -1799,50 +2129,75 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/GrandeModular/presets/Scale/14_Whole_Tone.vcvm
 %%DATADIR%%/GrandeModular/res/BlackButton0.svg
 %%DATADIR%%/GrandeModular/res/BlackButton1.svg
+%%DATADIR%%/GrandeModular/res/Clip-dark.svg
 %%DATADIR%%/GrandeModular/res/Clip.svg
+%%DATADIR%%/GrandeModular/res/Compare3-dark.svg
 %%DATADIR%%/GrandeModular/res/Compare3.svg
+%%DATADIR%%/GrandeModular/res/LFO3-dark.svg
 %%DATADIR%%/GrandeModular/res/LFO3.svg
+%%DATADIR%%/GrandeModular/res/LFO4-dark.svg
 %%DATADIR%%/GrandeModular/res/LFO4.svg
+%%DATADIR%%/GrandeModular/res/Logic-dark.svg
 %%DATADIR%%/GrandeModular/res/Logic.svg
 %%DATADIR%%/GrandeModular/res/MediumLightFlat.svg
+%%DATADIR%%/GrandeModular/res/Merge8-dark.svg
 %%DATADIR%%/GrandeModular/res/Merge8.svg
+%%DATADIR%%/GrandeModular/res/MergeSplit4-dark.svg
 %%DATADIR%%/GrandeModular/res/MergeSplit4.svg
+%%DATADIR%%/GrandeModular/res/MicrotonalChords-dark.svg
 %%DATADIR%%/GrandeModular/res/MicrotonalChords.svg
+%%DATADIR%%/GrandeModular/res/MicrotonalNotes-dark.svg
 %%DATADIR%%/GrandeModular/res/MicrotonalNotes.svg
+%%DATADIR%%/GrandeModular/res/NoteMT-dark.svg
 %%DATADIR%%/GrandeModular/res/NoteMT.svg
+%%DATADIR%%/GrandeModular/res/Peak-dark.svg
 %%DATADIR%%/GrandeModular/res/Peak.svg
 %%DATADIR%%/GrandeModular/res/PetiteLight.svg
 %%DATADIR%%/GrandeModular/res/PetiteLightBot.svg
 %%DATADIR%%/GrandeModular/res/PetiteLightFlat.svg
 %%DATADIR%%/GrandeModular/res/PetiteLightTop.svg
+%%DATADIR%%/GrandeModular/res/PolyMergeResplit-dark.svg
 %%DATADIR%%/GrandeModular/res/PolyMergeResplit.svg
+%%DATADIR%%/GrandeModular/res/PolySplit-dark.svg
 %%DATADIR%%/GrandeModular/res/PolySplit.svg
+%%DATADIR%%/GrandeModular/res/Push-dark.svg
 %%DATADIR%%/GrandeModular/res/Push.svg
+%%DATADIR%%/GrandeModular/res/Quant-dark.svg
 %%DATADIR%%/GrandeModular/res/Quant.svg
+%%DATADIR%%/GrandeModular/res/QuantIntervals-dark.svg
 %%DATADIR%%/GrandeModular/res/QuantIntervals.svg
+%%DATADIR%%/GrandeModular/res/QuantMT-dark.svg
 %%DATADIR%%/GrandeModular/res/QuantMT.svg
 %%DATADIR%%/GrandeModular/res/RectButton0.svg
 %%DATADIR%%/GrandeModular/res/RectButton1.svg
 %%DATADIR%%/GrandeModular/res/RectButton1dim.svg
+%%DATADIR%%/GrandeModular/res/SampleDelays-dark.svg
 %%DATADIR%%/GrandeModular/res/SampleDelays.svg
+%%DATADIR%%/GrandeModular/res/Scale-dark.svg
 %%DATADIR%%/GrandeModular/res/Scale.svg
 %%DATADIR%%/GrandeModular/res/SmallLEDButton0.svg
 %%DATADIR%%/GrandeModular/res/SmallLEDButton1.svg
 %%DATADIR%%/GrandeModular/res/SmallLightBot.svg
 %%DATADIR%%/GrandeModular/res/SmallLightFlat.svg
 %%DATADIR%%/GrandeModular/res/SmallLightTop.svg
+%%DATADIR%%/GrandeModular/res/Split8-dark.svg
 %%DATADIR%%/GrandeModular/res/Split8.svg
 %%DATADIR%%/GrandeModular/res/SquareButton0.svg
 %%DATADIR%%/GrandeModular/res/SquareButton1.svg
 %%DATADIR%%/GrandeModular/res/SquareButton1dim.svg
+%%DATADIR%%/GrandeModular/res/Tails-dark.svg
 %%DATADIR%%/GrandeModular/res/Tails.svg
+%%DATADIR%%/GrandeModular/res/Tails4-dark.svg
 %%DATADIR%%/GrandeModular/res/Tails4.svg
 %%DATADIR%%/GrandeModular/res/TinyLightFlat.svg
 %%DATADIR%%/GrandeModular/res/TriangleLEDButton0.svg
 %%DATADIR%%/GrandeModular/res/TriangleLEDButton1.svg
 %%DATADIR%%/GrandeModular/res/TriangleLightFlat.svg
+%%DATADIR%%/GrandeModular/res/VCA3-dark.svg
 %%DATADIR%%/GrandeModular/res/VCA3.svg
+%%DATADIR%%/GrandeModular/res/VCA4-dark.svg
 %%DATADIR%%/GrandeModular/res/VCA4.svg
+%%DATADIR%%/GrandeModular/res/VarSampleDelays-dark.svg
 %%DATADIR%%/GrandeModular/res/VarSampleDelays.svg
 %%DATADIR%%/GrandeModular/res/WhiteButton0.svg
 %%DATADIR%%/GrandeModular/res/WhiteButton1.svg
@@ -1852,12 +2207,9 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/HamptonHarmonics/res/davies_gray_medium.svg
 %%DATADIR%%/HamptonHarmonics/res/davies_maroon_large.svg
 %%DATADIR%%/HamptonHarmonics/res/davies_maroon_medium.svg
-%%DATADIR%%/HetrickCV/res/1OpChaos.svg
-%%DATADIR%%/HetrickCV/res/2OpChaos.svg
 %%DATADIR%%/HetrickCV/res/2To4.svg
-%%DATADIR%%/HetrickCV/res/3OpChaos.svg
 %%DATADIR%%/HetrickCV/res/ASR.svg
-%%DATADIR%%/HetrickCV/res/AToD.svg
+%%DATADIR%%/HetrickCV/res/AnalogToDigital.svg
 %%DATADIR%%/HetrickCV/res/BinaryGate.svg
 %%DATADIR%%/HetrickCV/res/BinaryNoise.svg
 %%DATADIR%%/HetrickCV/res/Bitshift.svg
@@ -1871,32 +2223,71 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/HetrickCV/res/Boolean3.svg
 %%DATADIR%%/HetrickCV/res/CKSS_rot_0.svg
 %%DATADIR%%/HetrickCV/res/CKSS_rot_1.svg
+%%DATADIR%%/HetrickCV/res/Chaos1Op.svg
+%%DATADIR%%/HetrickCV/res/Chaos2Op.svg
+%%DATADIR%%/HetrickCV/res/Chaos3Op.svg
 %%DATADIR%%/HetrickCV/res/ChaoticAttractors.svg
 %%DATADIR%%/HetrickCV/res/ClockedNoise.svg
 %%DATADIR%%/HetrickCV/res/Comparator.svg
 %%DATADIR%%/HetrickCV/res/Contrast.svg
 %%DATADIR%%/HetrickCV/res/Crackle.svg
-%%DATADIR%%/HetrickCV/res/DToA.svg
+%%DATADIR%%/HetrickCV/res/DToAOLD.svg
 %%DATADIR%%/HetrickCV/res/DataCompander.svg
 %%DATADIR%%/HetrickCV/res/Delta.svg
+%%DATADIR%%/HetrickCV/res/DigitalToAnalog.svg
 %%DATADIR%%/HetrickCV/res/Dust.svg
 %%DATADIR%%/HetrickCV/res/Exponent.svg
 %%DATADIR%%/HetrickCV/res/FBSineChaos.svg
 %%DATADIR%%/HetrickCV/res/FlipFlop.svg
 %%DATADIR%%/HetrickCV/res/FlipPan.svg
+%%DATADIR%%/HetrickCV/res/Fonts/Effra.ttf
+%%DATADIR%%/HetrickCV/res/GateDelay.svg
 %%DATADIR%%/HetrickCV/res/GateJunction.svg
+%%DATADIR%%/HetrickCV/res/GateJunctionExp.svg
 %%DATADIR%%/HetrickCV/res/Gingerbread.svg
-%%DATADIR%%/HetrickCV/res/LogicCombiner.svg
+%%DATADIR%%/HetrickCV/res/LogicCombine.svg
 %%DATADIR%%/HetrickCV/res/LogicInverter.svg
 %%DATADIR%%/HetrickCV/res/Logos/hetrickcvlogo.svg
 %%DATADIR%%/HetrickCV/res/MidSide.svg
 %%DATADIR%%/HetrickCV/res/MinMax.svg
+%%DATADIR%%/HetrickCV/res/PhaseDrivenSequencer.svg
+%%DATADIR%%/HetrickCV/res/PhaseDrivenSequencer32.svg
+%%DATADIR%%/HetrickCV/res/PhasorAnalyzer.svg
+%%DATADIR%%/HetrickCV/res/PhasorBurstGen.svg
+%%DATADIR%%/HetrickCV/res/PhasorDivMult.svg
+%%DATADIR%%/HetrickCV/res/PhasorEuclidean.svg
+%%DATADIR%%/HetrickCV/res/PhasorGates.svg
+%%DATADIR%%/HetrickCV/res/PhasorGates32.svg
+%%DATADIR%%/HetrickCV/res/PhasorGates64.svg
+%%DATADIR%%/HetrickCV/res/PhasorGatesBig.svg
+%%DATADIR%%/HetrickCV/res/PhasorGen.svg
+%%DATADIR%%/HetrickCV/res/PhasorGeometry.svg
+%%DATADIR%%/HetrickCV/res/PhasorHumanizer.svg
+%%DATADIR%%/HetrickCV/res/PhasorMixer.svg
+%%DATADIR%%/HetrickCV/res/PhasorOctature.svg
+%%DATADIR%%/HetrickCV/res/PhasorQuadrature.svg
+%%DATADIR%%/HetrickCV/res/PhasorRandom.svg
+%%DATADIR%%/HetrickCV/res/PhasorRanger.svg
+%%DATADIR%%/HetrickCV/res/PhasorReset.svg
+%%DATADIR%%/HetrickCV/res/PhasorRhythmGroup.svg
+%%DATADIR%%/HetrickCV/res/PhasorShape.svg
+%%DATADIR%%/HetrickCV/res/PhasorShift.svg
+%%DATADIR%%/HetrickCV/res/PhasorStutter.svg
+%%DATADIR%%/HetrickCV/res/PhasorSubstepShape.svg
+%%DATADIR%%/HetrickCV/res/PhasorSwing.svg
+%%DATADIR%%/HetrickCV/res/PhasorTimetable.svg
+%%DATADIR%%/HetrickCV/res/PhasorToClock.svg
+%%DATADIR%%/HetrickCV/res/PhasorToLFO.svg
+%%DATADIR%%/HetrickCV/res/PhasorToWaveforms.svg
+%%DATADIR%%/HetrickCV/res/Probability.svg
 %%DATADIR%%/HetrickCV/res/RandomGates.svg
 %%DATADIR%%/HetrickCV/res/Rotator.svg
 %%DATADIR%%/HetrickCV/res/Rungler.svg
 %%DATADIR%%/HetrickCV/res/Scanner.svg
+%%DATADIR%%/HetrickCV/res/SwitchAndHold.svg
 %%DATADIR%%/HetrickCV/res/TrigShaper.svg
-%%DATADIR%%/HetrickCV/res/Waveshape.svg
+%%DATADIR%%/HetrickCV/res/VectorMix.svg
+%%DATADIR%%/HetrickCV/res/Waveshaper.svg
 %%DATADIR%%/HetrickCV/res/XYToPolar.svg
 %%DATADIR%%/ImpromptuModular/res/AdvancedGateDetails.svg
 %%DATADIR%%/ImpromptuModular/res/FoundryBlockDiag.svg
@@ -3532,9 +3923,12 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/PluginManifests/Befaco.json
 %%DATADIR%%/PluginManifests/Bidoo.json
 %%DATADIR%%/PluginManifests/BogaudioModules.json
+%%DATADIR%%/PluginManifests/CVfunk.json
 %%DATADIR%%/PluginManifests/Cardinal.json
 %%DATADIR%%/PluginManifests/CatroModulo.json
 %%DATADIR%%/PluginManifests/ChowDSP.json
+%%DATADIR%%/PluginManifests/Computerscare.json
+%%DATADIR%%/PluginManifests/DHE-Modules.json
 %%DATADIR%%/PluginManifests/DrumKit.json
 %%DATADIR%%/PluginManifests/ESeries.json
 %%DATADIR%%/PluginManifests/EnigmaCurry.json
@@ -3567,6 +3961,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/PluginManifests/Prism.json
 %%DATADIR%%/PluginManifests/RebelTech.json
 %%DATADIR%%/PluginManifests/Sapphire.json
+%%DATADIR%%/PluginManifests/StarlingVia.json
 %%DATADIR%%/PluginManifests/ValleyAudio.json
 %%DATADIR%%/PluginManifests/WhatTheRack.json
 %%DATADIR%%/PluginManifests/ZZC.json
@@ -3644,13 +4039,40 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/RebelTech/res/panels/Tonic.svg
 %%DATADIR%%/RebelTech/res/panels/Tonic_drk.svg
 %%DATADIR%%/Sapphire/res/elastika.svg
+%%DATADIR%%/Sapphire/res/frolic.svg
+%%DATADIR%%/Sapphire/res/glee.svg
+%%DATADIR%%/Sapphire/res/hiss.svg
 %%DATADIR%%/Sapphire/res/moots.svg
+%%DATADIR%%/Sapphire/res/nucleus.svg
+%%DATADIR%%/Sapphire/res/nucleus_label_audio.svg
+%%DATADIR%%/Sapphire/res/nucleus_label_control.svg
+%%DATADIR%%/Sapphire/res/polynucleus.svg
+%%DATADIR%%/Sapphire/res/polynucleus_label_audio.svg
+%%DATADIR%%/Sapphire/res/polynucleus_label_control.svg
 %%DATADIR%%/Sapphire/res/port.svg
+%%DATADIR%%/Sapphire/res/tin.svg
+%%DATADIR%%/Sapphire/res/tout.svg
+%%DATADIR%%/Sapphire/res/tricorder.svg
 %%DATADIR%%/Sapphire/res/tubeunit.svg
 %%DATADIR%%/Sapphire/res/tubeunit_audio_path.svg
 %%DATADIR%%/Sapphire/res/tubeunit_labels.svg
 %%DATADIR%%/Sapphire/res/tubeunit_seal.svg
 %%DATADIR%%/Sapphire/res/tubeunit_vent.svg
+%%DATADIR%%/StarlingVia/res/atsr.svg
+%%DATADIR%%/StarlingVia/res/gateseq.svg
+%%DATADIR%%/StarlingVia/res/meta.svg
+%%DATADIR%%/StarlingVia/res/osc3.svg
+%%DATADIR%%/StarlingVia/res/scanner.svg
+%%DATADIR%%/StarlingVia/res/starling-rack-gfx/jack-nogradients.svg
+%%DATADIR%%/StarlingVia/res/starling-rack-gfx/knob-sifam-blkcap.svg
+%%DATADIR%%/StarlingVia/res/starling-rack-gfx/knob-sifam-grycap.svg
+%%DATADIR%%/StarlingVia/res/starling-rack-gfx/manual-trig-down.svg
+%%DATADIR%%/StarlingVia/res/starling-rack-gfx/manual-trig.svg
+%%DATADIR%%/StarlingVia/res/starling-rack-gfx/transparent-button.svg
+%%DATADIR%%/StarlingVia/res/sync.svg
+%%DATADIR%%/StarlingVia/res/sync3.svg
+%%DATADIR%%/StarlingVia/res/sync3xl.svg
+%%DATADIR%%/StarlingVia/res/sync3xllevels.svg
 %%DATADIR%%/ValleyAudio/res/AmalgamPanelDark.svg
 %%DATADIR%%/ValleyAudio/res/AmalgamPanelLight.svg
 %%DATADIR%%/ValleyAudio/res/DSEG14Classic-Italic.ttf
@@ -4556,6 +4978,14 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Hombre.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/MackEQ.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/Pafnuty.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/YBandpass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/YHighpass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/YLowpass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/YNotch.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/ZBandpass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/ZHighpass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/ZLowpass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Filter/ZNotch.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/Bit Glitter.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/Crunchy Groove Wear.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Lo-Fi/DeRez.srgfx
@@ -4589,6 +5019,12 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Tape/Chrome Oxide.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Tape/Iron Oxide.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Airwindows/Tape/To Tape.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Bonsai/Burnt.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Bonsai/Deep Bass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Bonsai/Excessive Bass.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Bonsai/Soft.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Bonsai/Subtle.srgfx
+%%DATADIR%%/surgext/build/surge-data/fx_presets/Bonsai/Subtler.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/CHOW/Anomaly.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Ambient.srgfx
 %%DATADIR%%/surgext/build/surge-data/fx_presets/Chorus/Analog Warmth.srgfx
@@ -4812,6 +5248,7 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Tri-Saw HQ.wav
 %%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Tri-Saw.wt
 %%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Triangle HQ.wav
+%%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Triangle NES.wav
 %%DATADIR%%/surgext/build/surge-data/wavetables/Basic/Triangle.wt
 %%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Circle.wt
 %%DATADIR%%/surgext/build/surge-data/wavetables/Generated/Cosine Inverse Power.wt
@@ -4991,41 +5428,6 @@ lib/vst/Cardinal.vst/CardinalSynth.so
 %%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/vs1.wt
 %%DATADIR%%/surgext/build/surge-data/wavetables/Waldorf/vs2.wt
 %%DATADIR%%/surgext/build/surge-data/windows.wt
-%%DATADIR%%/surgext/patches/Chorus Delay OSC LFO and ADSR.vcv
-%%DATADIR%%/surgext/patches/README.md
-%%DATADIR%%/surgext/patches/RotaryExample.vcv
-%%DATADIR%%/surgext/patches/SurgePulsingSquare.vcv
-%%DATADIR%%/surgext/presets/SurgeDelay/Chorus (using Delay).vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Init.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Ping-Pong 1-16.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Ping-Pong 1-4.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Ping-Pong 1-8.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Repeat.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Rhythmic 1.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Rhythmic 2.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Rhythmic 3.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Wide 1-4.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Wide 1-8.vcvm
-%%DATADIR%%/surgext/presets/SurgeDelay/Wide Chorus (using Delay).vcvm
-%%DATADIR%%/surgext/presets/SurgeEQ/Air.vcvm
-%%DATADIR%%/surgext/presets/SurgeEQ/Init.vcvm
-%%DATADIR%%/surgext/presets/SurgeEQ/Mid Cut.vcvm
-%%DATADIR%%/surgext/presets/SurgeEQ/Smiley Curve.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_Classic.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_FM2.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_FM3.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_Noise.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_Saw.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_Sine.vcvm
-%%DATADIR%%/surgext/presets/SurgeOSC/Init_Square.vcvm
-%%DATADIR%%/surgext/presets/SurgePhaser/Init.vcvm
-%%DATADIR%%/surgext/presets/SurgePhaser/Stereo Phaser.vcvm
-%%DATADIR%%/surgext/presets/SurgePhaser/Talky.vcvm
-%%DATADIR%%/surgext/presets/SurgeRotary/Distorted Doppler.vcvm
-%%DATADIR%%/surgext/presets/SurgeRotary/Subtle.vcvm
-%%DATADIR%%/surgext/presets/SurgeRotary/Thats Not What Leslie Wanted.vcvm
-%%DATADIR%%/surgext/presets/SurgeRotary/Warble.vcvm
-%%DATADIR%%/surgext/presets/SurgeRotary/Warm Rotation.vcvm
 %%DATADIR%%/surgext/res/SurgeLogoOnlyWhite.svg
 %%DATADIR%%/surgext/res/newSurgeLogo.svg
 %%DATADIR%%/surgext/res/xt/dark/components/fader_bg.svg
