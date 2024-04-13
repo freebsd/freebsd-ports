@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2023-08-05 00:47:19 UTC
+--- pyproject.toml.orig	2024-04-10 17:45:30 UTC
 +++ pyproject.toml
-@@ -3,13 +3,13 @@ requires = [
-     "wheel",
-     "setuptools >= 40.6.0",
-     "Cython >= 0.29.24",
--    "oldest-supported-numpy",
+@@ -9,13 +9,13 @@ requires = [
+     # Note that building against numpy 1.x works fine too - users and
+     # redistributors can do this by installing the numpy version they like and
+     # disabling build isolation.
+-    "numpy>=2.0.0rc1",
 +    "numpy",
      "setuptools_scm >= 7.0.0",
  ]
