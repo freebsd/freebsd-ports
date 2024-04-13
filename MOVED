@@ -3174,3 +3174,4 @@ lang/cython-devel|lang/cython3|2024-04-11|Has expired: use lang/cython3
 x11-wm/kwinft|x11-wm/theseus-ship|2024-04-13|Project renamed
 textproc/spiff||2024-04-13|Has expired: Active development of this port has been ceased
 www/p5-libservlet||2024-04-13|Has expired: Upstream unmaintained and last release was in 2001
+textproc/libparsifal||2024-04-13|Has expired: Upsrteam no longer available including WWW and distfile
