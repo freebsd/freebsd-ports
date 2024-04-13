@@ -1,6 +1,6 @@
 PORTNAME=	aichat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.16.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.81 \
+		anyhow-1.0.82 \
 		arboard-3.3.2 \
 		async-trait-0.1.79 \
 		autocfg-1.2.0 \
@@ -47,11 +47,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
-		bumpalo-3.15.4 \
+		bumpalo-3.16.0 \
 		bytemuck-1.15.0 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
-		cc-1.0.91 \
+		cc-1.0.92 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.37 \
@@ -108,7 +108,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
 		gethostname-0.4.3 \
-		getrandom-0.2.13 \
+		getrandom-0.2.14 \
 		gimli-0.28.1 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
@@ -177,7 +177,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		powerfmt-0.2.0 \
 		proc-macro2-1.0.79 \
 		quick-xml-0.31.0 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.5 \
 		reedline-0.31.0 \
@@ -233,9 +233,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-1.0.58 \
 		thiserror-impl-1.0.58 \
 		thread_local-1.1.8 \
-		time-0.3.34 \
+		time-0.3.35 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.37.0 \
