@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rspec_rails
-PORTVERSION=	2.28.2
+PORTVERSION=	2.28.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
