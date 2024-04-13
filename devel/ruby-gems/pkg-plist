@@ -29,6 +29,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/commands/push_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/query_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/rdoc_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/rebuild_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/search_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/server_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/setup_command.rb
@@ -70,6 +71,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities/webauthn_listener.rb
 %%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities/webauthn_listener/response.rb
 %%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities/webauthn_poller.rb
+%%RUBY_SITELIBDIR%%/rubygems/gemspec_helpers.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_default_message.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_message.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_update_options.rb
