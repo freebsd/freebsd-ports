@@ -1228,7 +1228,6 @@
     SUBDIR += samhain
     SUBDIR += samhain-client
     SUBDIR += samhain-server
-    SUBDIR += sancp
     SUBDIR += sasp
     SUBDIR += scanlogd
     SUBDIR += scrypt
