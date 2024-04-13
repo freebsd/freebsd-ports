@@ -1,5 +1,6 @@
 PORTNAME=	arrow
 DISTVERSION=	15.0.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -217,6 +218,13 @@ PLIST_FILES+=	lib/cmake/Arrow/Findutf8proc.cmake
 .else
     PLIST_SUB+=	TESTINGFLIGHT="@comment "
 .endif
+
+post-install:
+	# based on the user's report on 2024-04-12, the R extension expects only "ON" and "OFF" values in lib/cmake/Arrow/ArrowOptions.cmake
+	# other values confuse the R extension build, so we adjust these values to "ON" and "OFF" as a workaround
+	${REINPLACE_CMD} -i '' \
+		-e 's|"true"|"ON"|; s|"false"|"OFF"|' \
+		${STAGEDIR}${PREFIX}/lib/cmake/Arrow/ArrowOptions.cmake
 
 do-test: # tests fail to compile: https://issues.apache.org/jira/browse/ARROW-12625
 	@cd ${BUILD_WRKSRC} && \
