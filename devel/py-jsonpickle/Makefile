@@ -1,5 +1,5 @@
 PORTNAME=	jsonpickle
-DISTVERSION=	3.0.3
+DISTVERSION=	3.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${PY_FLAVOR} \
 		# ${PYTHON_PKGNAMEPREFIX}yajl>0:devel/py-yajl@${PY_FLAVOR} # is also needed for tests, but isnt't yet ported
 
 USES=		cpe python
-USE_PYTHON=	pep517 autoplist pytest # 1 fail, 1 error in tests, see https://github.com/jsonpickle/jsonpickle/issues/429
+USE_PYTHON=	pep517 autoplist pytest # 10 tests fail, see https://github.com/jsonpickle/jsonpickle/issues/492
 
 CPE_VENDOR=	${PORTNAME}_project
 
