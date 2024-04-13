@@ -211,7 +211,7 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 160
+.if ${COMPILER_VERSION} != 160
 LLVM_DEFAULT=		16
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
