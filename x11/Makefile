@@ -271,7 +271,6 @@
     SUBDIR += mlterm
     SUBDIR += mons
     SUBDIR += mrxvt
-    SUBDIR += multi-aterm
     SUBDIR += mxascii
     SUBDIR += mxico
     SUBDIR += nezd
