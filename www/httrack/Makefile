@@ -17,7 +17,6 @@ USES=		alias cpe gmake iconv libtool shebangfix ssl
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 

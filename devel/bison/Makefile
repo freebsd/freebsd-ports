@@ -21,7 +21,6 @@ USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-yacc --enable-relocatable
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LIBS+=		-lm
 TEST_ARGS+=	${_MAKE_JOBS}
 TEST_TARGET=	check

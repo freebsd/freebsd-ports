@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf ncurses pkgconfig
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-lncurses
 
 USE_GITHUB=	yes

@@ -20,7 +20,6 @@ USES=		cpe libtool ncurses pkgconfig ssl tar:bz2
 
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-all
 USE_RC_SUBR=	burp
 

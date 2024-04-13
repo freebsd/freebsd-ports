@@ -16,7 +16,6 @@ USES=		cpe iconv tar:xz
 
 CONFIGURE_ARGS=	--program-prefix=g
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gm4
 

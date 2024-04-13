@@ -16,7 +16,6 @@ USES=		cpe libtool localbase:ldflags pathfix
 
 CONFIGURE_ARGS=	--with-fastfloat --with-threaded
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes

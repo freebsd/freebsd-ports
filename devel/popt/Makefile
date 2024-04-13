@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe iconv libtool pathfix
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes

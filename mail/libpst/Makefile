@@ -19,7 +19,6 @@ USES=		gmake iconv libtool pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

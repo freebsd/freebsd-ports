@@ -18,7 +18,6 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 USES=		cpe gmake localbase pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPE_VENDOR=	curtis_galloway
 

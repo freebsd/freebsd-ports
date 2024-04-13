@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread ac_cv_path_CPP=${CPP}
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 INFO=		freeipmi-faq

@@ -18,7 +18,6 @@ USES=		autoreconf gmake pkgconfig shebangfix
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share/usbids --enable-zlib
 CONFIGURE_ENV=	LIBUSB_CFLAGS=-I/usr/include LIBUSB_LIBS="-L/usr/lib -lusb"
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

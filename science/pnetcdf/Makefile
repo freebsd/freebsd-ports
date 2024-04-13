@@ -18,7 +18,6 @@ CONFIGURE_ARGS=	--with-mpi=${MPI_HOME} ac_cv_fc_compiler_nag=no
 # Workaround for GCC 10+ for Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(8)/CHARACTER(*)).
 FCFLAGS+=	-fallow-argument-mismatch
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	hdf-4.*

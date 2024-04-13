@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--disable-werror \
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
 USE_LDCONFIG=	yes

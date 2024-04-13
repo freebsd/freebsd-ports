@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe iconv
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPE_VENDOR=	cabextract_project
 

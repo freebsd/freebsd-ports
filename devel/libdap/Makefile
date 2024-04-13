@@ -21,7 +21,6 @@ USE_GNOME=	libxml2
 CONFIGURE_ARGS=	ac_cv_lib_crypto_OpenSSL_add_all_algorithms=yes \
 		ac_cv_type_max_align_t=yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/libdap-${PORTVERSION:R}

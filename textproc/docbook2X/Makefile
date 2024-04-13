@@ -25,7 +25,6 @@ USE_GNOME=	libxslt
 
 CONFIGURE_ENV=	PERL=${PERL}
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INFO=		docbook2X docbook2man-xslt docbook2texi-xslt
 

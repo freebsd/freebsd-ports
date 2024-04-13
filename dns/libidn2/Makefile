@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--disable-nls \
 		--enable-ld-version-script \
 		ac_cv_prog_RONN=${TRUE}
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-Wl,--undefined-version
 TEST_TARGET=	check

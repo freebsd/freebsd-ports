@@ -15,7 +15,6 @@ USES=		libtool
 
 CONFIGURE_ARGS=	--enable-skip-subfiles=fusefs,smbfs
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

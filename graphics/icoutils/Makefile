@@ -16,7 +16,6 @@ USES=		cpe localbase shebangfix tar:bzip2
 
 CONFIGURE_ARGS=	--disable-nls
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPE_VENDOR=	icoutils_project
 

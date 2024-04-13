@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 INFO=		history readline rluserman

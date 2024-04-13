@@ -15,7 +15,6 @@ USES=		cpe libtool pathfix python:env,test shebangfix
 
 CONFIGURE_ENV=	ac_cv_func_getopt_long=yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lmd
 TEST_TARGET=	check

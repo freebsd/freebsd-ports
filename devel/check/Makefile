@@ -15,7 +15,6 @@ USES=		libtool pathfix pkgconfig
 
 CONFIGURE_ENV=	ac_cv_path_AWK_PATH=${AWK}
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

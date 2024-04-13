@@ -18,7 +18,6 @@ USES=		bison gmake libtool:build localbase
 
 ALL_TARGET=	dict
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install.dict
 
 CONFLICTS_INSTALL=	irstlm # bin/dict

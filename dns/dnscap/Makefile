@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 CONFIGURE_ENV=	libcrypto_CFLAGS=-I${OPENSSLINC}/include \
 		libcrypto_LIBS="-L${OPENSSLLIB}/lib -lcrypto"
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CDS DOCS THREADS

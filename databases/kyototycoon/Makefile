@@ -19,7 +19,6 @@ USES=		gmake pkgconfig
 CONFIGURE_ARGS=	--enable-uyield
 CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
 REINPLACE_ARGS=	-i ''

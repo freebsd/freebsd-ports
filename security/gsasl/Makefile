@@ -16,7 +16,6 @@ USES=		charsetfix libtool localbase pathfix pkgconfig readline
 CONFIGURE_ARGS=	--disable-rpath \
 		--without-gssapi-impl
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INFO=		gsasl
 

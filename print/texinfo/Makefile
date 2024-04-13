@@ -36,7 +36,6 @@ CONFIGURE_ARGS=	--with-external-libintl-perl \
 		--with-external-Unicode-EastAsianWidth
 CONFIGURE_ENV=	PERL_EXT_CC="${CC}"
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip install-tex
 MAKE_ARGS=	PERL=${PERL} TEXMF=${LOCALBASE}/${TEXMFDIR}
 PKGDEINSTALL=	${PKGINSTALL}
