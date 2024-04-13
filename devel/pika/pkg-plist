@@ -160,6 +160,7 @@ include/pika/functional/deferred_call.hpp
 include/pika/functional/detail/basic_function.hpp
 include/pika/functional/detail/empty_function.hpp
 include/pika/functional/detail/invoke.hpp
+include/pika/functional/detail/invoke_result_plain_function.hpp
 include/pika/functional/detail/reset_function.hpp
 include/pika/functional/detail/tag_fallback_invoke.hpp
 include/pika/functional/detail/tag_priority_invoke.hpp
@@ -550,4 +551,4 @@ lib/cmake/pika/tests/mm_prefetch.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.23.0
+lib/libpika.so.0.24.0
