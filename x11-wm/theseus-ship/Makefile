@@ -4,7 +4,7 @@ DISTVERSION=	6.0.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Wayland compositor and X11 window manager
+COMMENT=	Wayland and X11 compositor for KDE Plasma Desktop
 WWW=		https://github.com/winft/theseus-ship
 
 LICENSE=	GPLv2+
