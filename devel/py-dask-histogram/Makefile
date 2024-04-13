@@ -1,5 +1,5 @@
 PORTNAME=	dask-histogram
-PORTVERSION=	2023.6.0
+PORTVERSION=	2024.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	dask_histogram-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Histogramming with Dask
-WWW=		https://github.com/dask-contrib/dask-histogram
+WWW=		https://dask-histogram.readthedocs.io/en/stable/ \
+		https://github.com/dask-contrib/dask-histogram
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
