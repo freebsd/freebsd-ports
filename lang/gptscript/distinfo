@@ -1,7 +1,7 @@
-TIMESTAMP = 1712336718
-SHA256 (go/lang_gptscript/gptscript-ai-gptscript-v0.4.2_GH0/v0.4.2.mod) = a4019cf6b145fe55459683d0a3415e45d675f38ca83e659d0554e97b3bcbbf3f
-SIZE (go/lang_gptscript/gptscript-ai-gptscript-v0.4.2_GH0/v0.4.2.mod) = 3521
-SHA256 (go/lang_gptscript/gptscript-ai-gptscript-v0.4.2_GH0/v0.4.2.zip) = abb3053a8d6a7d9b49dc49381eedb56c3c4186515c875734d5f48452b9326886
-SIZE (go/lang_gptscript/gptscript-ai-gptscript-v0.4.2_GH0/v0.4.2.zip) = 1176585
-SHA256 (go/lang_gptscript/gptscript-ai-gptscript-v0.4.2_GH0/gptscript-ai-gptscript-v0.4.2_GH0.tar.gz) = db6dd34885a97b27967e61a5041846122d45fb333d9e565e4b326d4de8f4542a
-SIZE (go/lang_gptscript/gptscript-ai-gptscript-v0.4.2_GH0/gptscript-ai-gptscript-v0.4.2_GH0.tar.gz) = 1097593
+TIMESTAMP = 1712996187
+SHA256 (go/lang_gptscript/gptscript-ai-gptscript-v0.5.0_GH0/v0.5.0.mod) = b0e4bced94f490cdc7f78af90ff5bc6077abd5e7de67b23883b2f192a05991bf
+SIZE (go/lang_gptscript/gptscript-ai-gptscript-v0.5.0_GH0/v0.5.0.mod) = 3695
+SHA256 (go/lang_gptscript/gptscript-ai-gptscript-v0.5.0_GH0/v0.5.0.zip) = b53f48f084b852721462531a0cdddf913b5602fd31f41ae72151ccd1fb708653
+SIZE (go/lang_gptscript/gptscript-ai-gptscript-v0.5.0_GH0/v0.5.0.zip) = 1190952
+SHA256 (go/lang_gptscript/gptscript-ai-gptscript-v0.5.0_GH0/gptscript-ai-gptscript-v0.5.0_GH0.tar.gz) = 277638f7474769e2467f0bba6b779bff44830737bf828de535c3958ef2d2b2e3
+SIZE (go/lang_gptscript/gptscript-ai-gptscript-v0.5.0_GH0/gptscript-ai-gptscript-v0.5.0_GH0.tar.gz) = 1107145
