@@ -1,13 +1,12 @@
 PORTNAME=	pydantic-core
-PORTVERSION=	2.16.3
-PORTREVISION=	1
+PORTVERSION=	2.18.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	pydantic_core-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Core functionality for pydantic
+COMMENT=	Core functionality for Pydantic validation and serialization
 WWW=		https://github.com/pydantic/pydantic-core
 
 LICENSE=	MIT
