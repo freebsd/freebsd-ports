@@ -1332,7 +1332,6 @@
     SUBDIR += p5-chklinks
     SUBDIR += p5-jQuery-File-Upload
     SUBDIR += p5-libapreq2
-    SUBDIR += p5-libservlet
     SUBDIR += p5-libwww
     SUBDIR += p5-pQuery
     SUBDIR += p5-webservice-validator-css-w3c
