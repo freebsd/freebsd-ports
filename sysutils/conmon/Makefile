@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	OCI container runtime monitor
-WWW=		https://github.com/containers
+WWW=		https://github.com/containers/conmon
 
 LICENSE=	GPLv2
 
