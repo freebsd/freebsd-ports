@@ -18834,6 +18834,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/local.98.39.def
 %%DATADIR%%/definitions/grib2/local.98.41.def
 %%DATADIR%%/definitions/grib2/local.98.42.def
+%%DATADIR%%/definitions/grib2/local.98.43.def
 %%DATADIR%%/definitions/grib2/local.98.5.def
 %%DATADIR%%/definitions/grib2/local.98.500.def
 %%DATADIR%%/definitions/grib2/local.98.60.def
@@ -18856,6 +18857,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/local/ecmf/template.4.65533.def
 %%DATADIR%%/definitions/grib2/local/ecmf/template.4.65534.def
 %%DATADIR%%/definitions/grib2/local/kwbc/template.3.32769.def
+%%DATADIR%%/definitions/grib2/localConcepts/cerise/cfName.def
 %%DATADIR%%/definitions/grib2/localConcepts/cerise/cfVarName.def
 %%DATADIR%%/definitions/grib2/localConcepts/cerise/name.def
 %%DATADIR%%/definitions/grib2/localConcepts/cerise/paramId.def
@@ -18924,6 +18926,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/hydro/paramId.def
 %%DATADIR%%/definitions/grib2/localConcepts/hydro/shortName.def
 %%DATADIR%%/definitions/grib2/localConcepts/hydro/units.def
+%%DATADIR%%/definitions/grib2/localConcepts/kwbc/cfVarName.def
 %%DATADIR%%/definitions/grib2/localConcepts/kwbc/name.def
 %%DATADIR%%/definitions/grib2/localConcepts/kwbc/paramId.def
 %%DATADIR%%/definitions/grib2/localConcepts/kwbc/shortName.def
