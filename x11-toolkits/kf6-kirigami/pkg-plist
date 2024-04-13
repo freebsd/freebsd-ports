@@ -48,6 +48,7 @@ lib/libKirigamiPlatform.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami/CardsListView.qml
 %%QT_QMLDIR%%/org/kde/kirigami/Chip.qml
 %%QT_QMLDIR%%/org/kde/kirigami/ContextDrawer.qml
+%%QT_QMLDIR%%/org/kde/kirigami/ContextualHelpButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami/Dialog.qml
 %%QT_QMLDIR%%/org/kde/kirigami/FlexColumn.qml
 %%QT_QMLDIR%%/org/kde/kirigami/FormLayout.qml
@@ -165,6 +166,7 @@ share/locale/hi/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/hu/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ia/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/id/LC_MESSAGES/libkirigami6_qt.qm
+share/locale/is/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/it/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ja/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ka/LC_MESSAGES/libkirigami6_qt.qm

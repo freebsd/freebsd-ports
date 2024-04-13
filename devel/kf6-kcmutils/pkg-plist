@@ -60,6 +60,10 @@ lib/libexec/kf6/kcmdesktopfilegenerator
 %%QT_QMLDIR%%/org/kde/kcmutils/private/AboutPlugin.qml
 %%QT_QMLDIR%%/org/kde/kcmutils/private/GridDelegateMenu.qml
 %%QT_QMLDIR%%/org/kde/kcmutils/private/GridViewInternal.qml
+%%QT_QMLDIR%%/org/kde/kcmutils/private/kcmutilsprivateqmlplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/kcmutils/private/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kcmutils/private/libkcmutilsprivateqmlplugin.so
+%%QT_QMLDIR%%/org/kde/kcmutils/private/qmldir
 %%QT_QMLDIR%%/org/kde/kcmutils/qmldir
 share/locale/af/LC_MESSAGES/kcmutils6.mo
 share/locale/ar/LC_MESSAGES/kcmshell6.mo

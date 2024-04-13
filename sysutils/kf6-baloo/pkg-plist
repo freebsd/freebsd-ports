@@ -233,8 +233,10 @@ share/locale/gl/LC_MESSAGES/kio6_tags.mo
 share/locale/gl/LC_MESSAGES/kio6_timeline.mo
 share/locale/he/LC_MESSAGES/baloo_file6.mo
 share/locale/he/LC_MESSAGES/baloo_file_extractor6.mo
+share/locale/he/LC_MESSAGES/balooctl6.mo
 share/locale/he/LC_MESSAGES/baloodb6.mo
 share/locale/he/LC_MESSAGES/balooengine6.mo
+share/locale/he/LC_MESSAGES/baloosearch6.mo
 share/locale/he/LC_MESSAGES/balooshow6.mo
 share/locale/he/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/he/LC_MESSAGES/kio6_tags.mo
@@ -475,6 +477,8 @@ share/locale/sv/LC_MESSAGES/balooshow6.mo
 share/locale/sv/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sv/LC_MESSAGES/kio6_tags.mo
 share/locale/sv/LC_MESSAGES/kio6_timeline.mo
+share/locale/ta/LC_MESSAGES/baloo_file6.mo
+share/locale/ta/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/ta/LC_MESSAGES/balooctl6.mo
 share/locale/ta/LC_MESSAGES/baloodb6.mo
 share/locale/ta/LC_MESSAGES/balooengine6.mo

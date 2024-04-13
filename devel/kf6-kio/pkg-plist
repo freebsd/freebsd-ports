@@ -33,6 +33,7 @@ include/KF6/KIOCore/KIO/MimetypeJob
 include/KF6/KIOCore/KIO/MkdirJob
 include/KF6/KIOCore/KIO/MkpathJob
 include/KF6/KIOCore/KIO/NameFinderJob
+include/KF6/KIOCore/KIO/OpenWith
 include/KF6/KIOCore/KIO/RestoreJob
 include/KF6/KIOCore/KIO/SimpleJob
 include/KF6/KIOCore/KIO/SpecialJob
@@ -89,6 +90,7 @@ include/KF6/KIOCore/kio/mimetypejob.h
 include/KF6/KIOCore/kio/mkdirjob.h
 include/KF6/KIOCore/kio/mkpathjob.h
 include/KF6/KIOCore/kio/namefinderjob.h
+include/KF6/KIOCore/kio/openwith.h
 include/KF6/KIOCore/kio/restorejob.h
 include/KF6/KIOCore/kio/simplejob.h
 include/KF6/KIOCore/kio/specialjob.h
@@ -238,17 +240,17 @@ lib/cmake/KF6KIO/KF6KIOConfigVersion.cmake
 lib/cmake/KF6KIO/KF6KIOTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6KIO/KF6KIOTargets.cmake
 lib/libKF6KIOCore.so
-lib/libKF6KIOCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOCore.so.6
+lib/libKF6KIOCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOFileWidgets.so
-lib/libKF6KIOFileWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOFileWidgets.so.6
+lib/libKF6KIOFileWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOGui.so
-lib/libKF6KIOGui.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOGui.so.6
+lib/libKF6KIOGui.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOWidgets.so
-lib/libKF6KIOWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KIOWidgets.so.6
+lib/libKF6KIOWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kf6/kiod6
 lib/libexec/kf6/kioexec
 lib/libexec/kf6/kioworker

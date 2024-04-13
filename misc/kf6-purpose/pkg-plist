@@ -522,6 +522,8 @@ share/locale/ro/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ro/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ro/LC_MESSAGES/purpose6_nextcloud.mo
 share/locale/ro/LC_MESSAGES/purpose6_pastebin.mo
+share/locale/ro/LC_MESSAGES/purpose6_phabricator.mo
+share/locale/ro/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ro/LC_MESSAGES/purpose6_saveas.mo
 share/locale/ro/LC_MESSAGES/purpose6_youtube.mo
 share/locale/ru/LC_MESSAGES/libpurpose6_quick.mo

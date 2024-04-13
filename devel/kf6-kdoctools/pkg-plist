@@ -11,8 +11,8 @@ lib/cmake/KF6DocTools/KF6DocToolsTargets.cmake
 lib/cmake/KF6DocTools/KF6DocToolsToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6DocTools/KF6DocToolsToolsTargets.cmake
 lib/libKF6DocTools.so
-lib/libKF6DocTools.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6DocTools.so.6
+lib/libKF6DocTools.so.%%KDE_FRAMEWORKS_VERSION%%
 share/doc/HTML/af/kdoctools6-common/kde-localised.css
 share/doc/HTML/ca/kdoctools6-common/kde-localised.css
 share/doc/HTML/cs/kdoctools6-common/kde-localised.css
@@ -951,6 +951,7 @@ share/kf6/kdoctools/customization/xh/strings.entities
 share/kf6/kdoctools/customization/xh/user.entities
 share/kf6/kdoctools/customization/xsl/README
 share/kf6/kdoctools/customization/xsl/all-l10n.xml
+share/kf6/kdoctools/customization/xsl/bg.xml
 share/kf6/kdoctools/customization/xsl/ca.xml
 share/kf6/kdoctools/customization/xsl/ca_valencia.xml
 share/kf6/kdoctools/customization/xsl/cs.xml
