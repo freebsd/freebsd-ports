@@ -31,10 +31,10 @@ USE_QT=		buildtools:build concurrent core dbus gui l10n linguist:build network \
 		qmake:build sql sql-sqlite3:run svg widgets xml
 USE_XORG=	x11 xext xi
 
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 CMAKE_ON=	client oss overlay plugins translations xinput2
 CMAKE_OFF=	bundled-gsl bundled-json bundle-qt-translations bundled-speex \
 		crash-report g15 server tracy update
-CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 
 CONFIGURE_ENV=	MUMBLE_PYTHON=${PYTHON_CMD}
 CXXFLAGS+=	-Wno-deprecated-declarations
@@ -50,8 +50,8 @@ OPTIONS_RADIO_SPEECH=	QTSPEECH SPEECHD
 OVERLAY_32BIT_DESC=	Build and install 32bit overlay module
 QTSPEECH_DESC=		Use Qt's text-to-speech system
 RNNOISE_DESC=		Use RNNoise for machine learning noise reduction
-SPEECH_DESC=		Support text-to-speech
 SPEECHD_DESC=		Support for Speech Dispatcher
+SPEECH_DESC=		Support text-to-speech
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_BOOL=	alsa

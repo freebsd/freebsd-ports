@@ -1,7 +1,7 @@
 PORTNAME=	spirv-cross
+DISTVERSIONPREFIX=	vulkan-sdk-
 DISTVERSION=	1.3.280.0
 CATEGORIES=	graphics
-DISTVERSIONPREFIX=	vulkan-sdk-
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Tool for parsing and converting SPIR-V to other shader languages

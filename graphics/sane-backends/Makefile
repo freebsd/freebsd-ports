@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	saned
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-locking \
 		--enable-pthread \
 		--without-systemd

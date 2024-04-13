@@ -50,14 +50,13 @@ LIB_DEPENDS=		libdraco.so:archivers/draco \
 
 USES=		gl gnome
 USE_ANT=	yes
-USE_GL=		gl
-USE_GNOME=	glib20 gtk30
-USE_JAVA=	17+
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	LWJGL
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 GH_TAGNAME=	de8bd86
+USE_GL=		gl
+USE_GNOME=	glib20 gtk30
+USE_JAVA=	17+
 
 MAKE_ARGS=	-Dbuild.offline=true \
 		-Djavadoc.skip=true \
