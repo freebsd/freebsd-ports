@@ -1,7 +1,7 @@
 PORTNAME=	como
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-CATEGORIES=	x11-toolkits wayland
+CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	7586d3cd718e.patch:-p1 # https://github.com/winft/como/pull/16
