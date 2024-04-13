@@ -104,6 +104,11 @@ NLS_USES=	gettext
 IGNORE=	requires libc++ of LLVM 17 on the base system
 .endif
 
+# After LLVM 18 import into the base system
+.if (${OSVERSION} <= 1500018)
+CXXFLAGS+=	-fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
+.endif
+
 post-extract:
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
 	${CP} -R ${WRKSRC_libwolv}/* ${WRKSRC}/lib/external/libwolv
@@ -115,13 +120,15 @@ post-extract:
 	${CP} -R ${WRKSRC_edlib}/* ${WRKSRC}/lib/third_party/edlib
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/third_party/fmt
 	${CP} -R ${WRKSRC_hashlibplus}/* ${WRKSRC}/lib/third_party/HashLibPlus
-	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/third_party/nativefiledialog
 	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/third_party/yara/yara
 	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKDIR}/imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/bastion
 	${CP} -R ${WRKDIR}/imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/ffx
+.if (${OSVERSION} < 1500018)
+	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
+.endif
 
 post-patch:
 	${CP} -R ${WRKSRC}/lib/external/libwolv/* ${WRKSRC}/lib/external/pattern_language/external/libwolv
