@@ -1,5 +1,5 @@
 PORTNAME=	cdogs-sdl
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	games
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
 		protoc:devel/protobuf
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gl gnome localbase:ldflags pkgconfig \
-		python sdl
+USES=		cmake compiler:c++11-lang desktop-file-utils gl gnome \
+		localbase:ldflags pkgconfig python sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	cxong
 USE_GL=		gl

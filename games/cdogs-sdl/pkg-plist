@@ -2,6 +2,9 @@ bin/cdogs-sdl
 bin/cdogs-sdl-editor
 share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/README.md
+%%DATADIR%%/data/.wolf3d/N3D.cdogscpn/campaign.json
+%%DATADIR%%/data/.wolf3d/N3D.cdogscpn/characters.json
+%%DATADIR%%/data/.wolf3d/N3D.cdogscpn/missions.json
 %%DATADIR%%/data/.wolf3d/SD2.cdogscpn/campaign.json
 %%DATADIR%%/data/.wolf3d/SD2.cdogscpn/characters.json
 %%DATADIR%%/data/.wolf3d/SD2.cdogscpn/missions.json
@@ -806,7 +809,7 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/heads/README.md
 %%DATADIR%%/graphics/chars/heads/bugeye_10x10.png
 %%DATADIR%%/graphics/chars/heads/cyborg_10x10.png
-%%DATADIR%%/graphics/chars/heads/dog_12x10.png
+%%DATADIR%%/graphics/chars/heads/dog_12x11.png
 %%DATADIR%%/graphics/chars/heads/jones_10x10.png
 %%DATADIR%%/graphics/chars/heads/lady_14x12.png
 %%DATADIR%%/graphics/chars/heads/madbugeye_10x12.png
