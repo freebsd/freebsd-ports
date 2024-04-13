@@ -3171,4 +3171,5 @@ lang/ocaml-nox11|lang/ocaml|2024-04-10|X11 support removed upstream
 lang/qscheme||2024-04-10|Has expired: Unmaintained and there are more modern alternatives
 x11/nvidia-hybrid-graphics||2024-04-11|Has expired: Not maintained and obsoleted by glvnd and nvidia-drm-kmod
 lang/cython-devel|lang/cython3|2024-04-11|Has expired: use lang/cython3
-x11-wm/kwinft|x11-wm/theseus-ship|2024-03-13|Project renamed
+x11-wm/kwinft|x11-wm/theseus-ship|2024-04-13|Project renamed
+textproc/spiff||2024-04-13|Has expired: Active development of this port has been ceased

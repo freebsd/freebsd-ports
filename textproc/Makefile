@@ -1997,7 +1997,6 @@
     SUBDIR += sowing
     SUBDIR += spellutils
     SUBDIR += sphinxsearch
-    SUBDIR += spiff
     SUBDIR += splitpatch
     SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
