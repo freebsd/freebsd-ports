@@ -4607,7 +4607,6 @@
     SUBDIR += py-datasette
     SUBDIR += py-datatest
     SUBDIR += py-dateparser
-    SUBDIR += py-dateutil
     SUBDIR += py-dateutils
     SUBDIR += py-datrie
     SUBDIR += py-dbt-extractor
@@ -5510,6 +5509,7 @@
     SUBDIR += py-pytest4-flakes
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
+    SUBDIR += py-python-dateutil
     SUBDIR += py-python-dbusmock
     SUBDIR += py-python-decouple
     SUBDIR += py-python-distutils-extra

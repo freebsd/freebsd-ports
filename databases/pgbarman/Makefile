@@ -1,6 +1,7 @@
 PORTNAME=		barman
 DISTVERSIONPREFIX=	release/
 DISTVERSION=		3.10.0
+PORTREVISION=	1
 CATEGORIES=		databases
 PKGNAMEPREFIX=		pg
 PKGNAMESUFFIX=		${PYTHON_PKGNAMESUFFIX}
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	rsync:net/rsync									\
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.4.2:databases/py-psycopg2@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}		\
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${PY_FLAVOR}
 
 USES=		python
