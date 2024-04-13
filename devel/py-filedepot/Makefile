@@ -10,6 +10,7 @@ COMMENT=	Toolkit for storing files and attachments in web applications
 WWW=		https://github.com/amol-/depot
 
 LICENSE=	MIT
+LICENSE_FILE=	${WKRSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
