@@ -5855,6 +5855,7 @@
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-urwid-readline
+    SUBDIR += py-urwidgets
     SUBDIR += py-urwidtrees
     SUBDIR += py-us
     SUBDIR += py-user_agents
