@@ -6,5 +6,3 @@ changes the underlying concepts. Because Gitless is implemented on top of Git
 (could be considered what Git pros call a "porcelain" of Git), you can always
 fall back on Git. And of course your coworkers you share a repository with
 need never know that you're not a Git aficionado.
-
-See also: https://github.com/gitless-vcs/gitless
