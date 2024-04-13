@@ -19,7 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	adrienverge
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
 		OPENSSL_CFLAGS=${OPENSSLINC} \
 		OPENSSL_LIBS="-lssl -lcrypto"

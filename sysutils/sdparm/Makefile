@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 USE_LDCONFIG=	yes
 USES=		shebangfix tar:tgz
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SHEBANG_FILES=	scripts/sas_disk_blink
 

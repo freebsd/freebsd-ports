@@ -19,7 +19,6 @@ USES=		gmake libtool localbase:ldflags ncurses pathfix \
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GDBM GLIB20 PERL PYTHON SNMP SSL TCL TKINTER

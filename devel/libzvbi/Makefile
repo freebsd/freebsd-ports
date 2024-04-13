@@ -16,7 +16,6 @@ LIB_DEPENDS+=	libpng.so:graphics/png \
 
 USES=		iconv libtool localbase pathfix tar:bzip2
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--without-doxygen
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

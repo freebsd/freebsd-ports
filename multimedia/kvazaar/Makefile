@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ultravideo
 GH_TUPLE=	silentbicycle:greatest:v1.0.0:greatest/greatest
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
