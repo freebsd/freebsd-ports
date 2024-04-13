@@ -533,11 +533,14 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/cuda_errors%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/cuda_image_wrapper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/cuda_image_wrapper%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/info%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/info%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/nv_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/__pycache__/nv_util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/cuda_context.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/cuda_errors.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/cuda_image_wrapper.py
+%%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/info.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/nvidia/nv_util.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/openh264/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/openh264/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
