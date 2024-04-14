@@ -19,6 +19,8 @@ LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING.TINYGL
 
 BROKEN_armv6=	fails to link: ld: libgrim.a has EABI version 0, but target residualvm has EABI version 5
 BROKEN_armv7=	fails to link: ld: libgrim.a has EABI version 0, but target residualvm has EABI version 5
+DEPRECATED=	Obsolete, merged with ScummVM Oct 9, 2020
+EXPIRATION_DATE=2024-04-30
 
 LIB_DEPENDS=	libmad.so:audio/libmad \
 		libogg.so:audio/libogg \
