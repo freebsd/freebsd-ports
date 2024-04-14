@@ -1,6 +1,13 @@
---- src/Utils/Tagging/MP4/PopularimeterFrame.cpp.orig	2024-04-01 19:55:44 UTC
+--- src/Utils/Tagging/MP4/PopularimeterFrame.cpp.orig	2024-01-27 22:05:38 UTC
 +++ src/Utils/Tagging/MP4/PopularimeterFrame.cpp
-@@ -28,7 +28,7 @@ namespace
+@@ -22,13 +22,14 @@
+ #include <QString>
+ #include "Tagging/TaggingUtils.h"
+ 
++#include <array>
+ #include <optional>
+ 
+ namespace
  {
  	[[nodiscard]] int fourBytesToInteger(const int32_t fourBytes)
  	{
