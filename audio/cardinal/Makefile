@@ -23,7 +23,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsndfile.so:audio/libsndfile \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		compiler:c++11-lang gl gmake libarchive localbase:ldflags pkgconfig python sdl shebangfix tar:xz xorg
+USES=		compiler:c++17-lang gl gmake libarchive localbase:ldflags pkgconfig python sdl shebangfix tar:xz xorg
 USE_XORG=	x11 xcursor xext xrandr
 USE_GL=		gl
 USE_SDL=	sdl2
@@ -56,6 +56,7 @@ LTO_BROKEN=		Fails to build with LTO because it is gcc-centered
 
 .include <bsd.port.options.mk>
 
+# workaround for ld: error: undefined symbol: roundevenf
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 USES+=	llvm:max=15
 .endif
