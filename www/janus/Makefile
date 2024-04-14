@@ -40,7 +40,6 @@ INSTALL_TARGET=		install-strip
 CFLAGS+=		-I${OPENSSLINC} -I${LOCALBASE}/include/nice
 LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl -L${LOCALBASE} -lnice
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=		yes
 SUB_FILES=		pkg-message
 
