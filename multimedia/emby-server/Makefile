@@ -122,7 +122,7 @@ SUB_LIST=	GROUP=${GROUPS} \
 		RC_NAME=emby_server \
 		USER=${USERS}
 
-WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public
+WRKSRC=		${WRKDIR}/${FFMPEG_WRKSRC}
 
 USERS=		emby
 GROUPS=		emby
@@ -135,6 +135,7 @@ LAME_CONFIGURE_ENABLE=	libmp3lame
 
 FFDETECT_VERSION=	2023_06_25-x64_freebsd14
 FFMPEG_VERSION=		2023_06_25-u1
+FFMPEG_WRKSRC=		ffmpeg-2023_06_25_public
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/bin
