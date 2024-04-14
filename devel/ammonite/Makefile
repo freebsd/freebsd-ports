@@ -1,8 +1,8 @@
 PORTNAME=	ammonite
-DISTVERSION=	2.5.11
+DISTVERSION=	3.0.0-M1
 CATEGORIES=	devel java
-MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${PORTVERSION}/
-DISTNAME=	3.2-${PORTVERSION}
+MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${DISTVERSION}/
+DISTNAME=	3.3-${DISTVERSION}
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
