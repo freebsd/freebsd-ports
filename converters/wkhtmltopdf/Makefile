@@ -1,6 +1,6 @@
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Upstream abandoned the project
-EXPIRATION_DATE=	2024-06-30
+EXPIRATION_DATE=	2024-12-31
 BROKEN_armv6=		fails to build: error: Not supported ARM architecture
 BROKEN_mips64=		fails to link: undefined reference to __sync_add_and_fetch_4
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 
 USES=		gmake iconv jpeg perl5 pkgconfig ssl xorg
-USE_GCC=	yes
 USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes
