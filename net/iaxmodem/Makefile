@@ -4,9 +4,12 @@ PORTREVISION=	11
 CATEGORIES=	net comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stucchi@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software modem that connects to IAX channel
 WWW=		https://iaxmodem.sourceforge.net/
+
+DEPRECATED=	outdated and uses end-of-life version of GCC
+EXPIRATION_DATE=2024-05-28
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
