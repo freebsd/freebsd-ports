@@ -1,6 +1,10 @@
 bin/Hyprland
 bin/hyprctl
 bin/hyprpm
+share/bash-completions/hyprctl
+share/bash-completions/hyprpm
+share/fish/vendor_completions.d/hyprctl.fish
+share/fish/vendor_completions.d/hyprpm.fish
 %%DATADIR%%/hyprland.conf
 %%DATADIR%%/wall0.png
 %%DATADIR%%/wall1.png
@@ -10,3 +14,5 @@ share/man/man1/hyprctl.1.gz
 share/pkgconfig/hyprland.pc
 share/wayland-sessions/hyprland.desktop
 share/xdg-desktop-portal/hyprland-portals.conf
+share/zsh/site-functions/_hyprctl
+share/zsh/site-functions/_hyprpm
