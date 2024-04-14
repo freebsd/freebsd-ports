@@ -1,6 +1,5 @@
 PORTNAME=	alsa-lib
-PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTVERSION=	1.2.11
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/lib/
 
@@ -10,7 +9,7 @@ WWW=		https://www.alsa-project.org/
 
 LICENSE=	LGPL21+
 
-USES=		cpe libtool:keepla tar:bzip2
+USES=		cpe gmake libtool:keepla tar:bzip2
 CPE_VENDOR=	alsa-project
 CPE_PRODUCT=	alsa
 USE_LDCONFIG=	yes
