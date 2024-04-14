@@ -7,6 +7,7 @@ include/orc-0.4/orc-test/orctest.h
 include/orc-0.4/orc/orc-stdint.h
 include/orc-0.4/orc/orc.h
 include/orc-0.4/orc/orcarm.h
+include/orc-0.4/orc/orcavx.h
 include/orc-0.4/orc/orcbytecode.h
 include/orc-0.4/orc/orcbytecodes.h
 include/orc-0.4/orc/orccode.h
@@ -71,7 +72,7 @@ share/aclocal/orc.m4
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-misc.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-opcodes.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-program.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-runninging.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-running.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-tutorial.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-x86.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc.devhelp2
