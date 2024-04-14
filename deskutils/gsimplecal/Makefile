@@ -17,7 +17,6 @@ GH_ACCOUNT=	dmedvinsky
 USE_GNOME=	glib20 gtk30
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/gsimplecal \
 		share/man/man1/gsimplecal.1.gz

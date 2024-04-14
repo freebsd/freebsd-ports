@@ -17,7 +17,6 @@ GH_ACCOUNT=	astrand
 USE_XORG=	x11 xmu
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	ac_cv_header_X11_Intrinsic_h=yes \
 		ac_cv_header_X11_Xmu_Atoms_h=yes \
 		ac_cv_lib_Xmu_XmuClientWindow=yes

@@ -22,7 +22,6 @@ USES=		compiler:c++11-lang gettext gmake gnome pkgconfig tar:tgz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-emf=yes
 MAKE_ARGS+=	MAKE=${MAKE_CMD}
 CFLAGS+=	-fcommon

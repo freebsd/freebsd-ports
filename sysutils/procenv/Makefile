@@ -20,7 +20,6 @@ GH_ACCOUNT=	jamesodhunt
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/procenv \

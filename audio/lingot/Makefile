@@ -16,7 +16,6 @@ USES=				gettext-tools gmake gnome libtool pkgconfig
 USE_GNOME=			cairo gtk30 intltool
 GNU_CONFIGURE=			yes
 CONFIGURE_ENV=			DATADIRNAME="share"
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=			install-strip
 
 # fix: "ld: error: undefined reference due to --no-allow-shlib-undefined: environ"

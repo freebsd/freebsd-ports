@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	rrdcached
 SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl examples/stripes.py
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-tcl
 CONFIGURE_ENV=	RRDDOCDIR=${DOCSDIR:Q}
 INSTALL_TARGET=	install-strip

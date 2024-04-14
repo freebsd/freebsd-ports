@@ -22,7 +22,6 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xext
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static \
 		--enable-shared \
 		--with-icondir=${PREFIX}/share/pixmaps

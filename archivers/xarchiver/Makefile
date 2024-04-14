@@ -23,7 +23,6 @@ GH_ACCOUNT=	ib
 USE_GNOME=	cairo gdkpixbuf2 glib20 intltool
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTSCOUT=	limit:^\d\.\d\.\d\.\d+$ # avoid tags like identical_to_xfce_git_content
 

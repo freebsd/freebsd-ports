@@ -17,7 +17,6 @@ GLIB_SCHEMAS=	org.jwz.xdaliclock.gschema.xml
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFLICTS=	xdaliclock-classic
 WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 

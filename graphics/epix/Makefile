@@ -17,7 +17,6 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		gmake makeinfo tar:bzip2 tex
 USE_TEX=	dvipsk:build latex
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-runtime=${CXX}
 

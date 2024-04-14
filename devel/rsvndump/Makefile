@@ -23,7 +23,6 @@ LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
 USES=		bdb:18 gmake
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-svn=${LOCALBASE}
 
 PLIST_FILES=	bin/rsvndump

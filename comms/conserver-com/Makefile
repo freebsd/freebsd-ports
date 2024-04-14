@@ -16,7 +16,6 @@ USES=		autoreconf:2.69 ssl
 USE_RC_SUBR=	conserver
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-libwrap \
 		--with-master=${DEFAULTHOST} \
 		--with-openssl \

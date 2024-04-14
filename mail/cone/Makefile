@@ -29,7 +29,6 @@ USE_GNOME=	libxml2
 SHEBANG_FILES=	sysconftool
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-certdb=${PREFIX}/share/cone/rootcerts \

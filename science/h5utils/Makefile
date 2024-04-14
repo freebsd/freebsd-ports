@@ -20,7 +20,6 @@ LIB_DEPENDS=	libdf.so:science/hdf \
 
 USES=		autoreconf compiler:c++11-lang jpeg localbase
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CFLAGS+=	-pthread
 CXXFLAGS+=	-std=c++11

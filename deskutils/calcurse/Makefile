@@ -18,7 +18,6 @@ SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 		contrib/vdir/calcurse-vdir \
 		contrib/vdir/calcurse-vdir.py
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--without-asciidoc
 
 OPTIONS_DEFINE=		CALDAV DOCS NLS

@@ -16,7 +16,6 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ndilieto
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR:H} \
 		--disable-maintainer-mode \
 		--sysconfdir=${PREFIX}/etc

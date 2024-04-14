@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		jpeg localbase:ldflags ncurses tar:bzip2
 
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=			--disable-qt \
 				--without-ewf
 

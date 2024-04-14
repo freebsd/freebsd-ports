@@ -16,7 +16,6 @@ USES=		gmake ncurses tar:tgz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=		--with-ncurses
 
 ALL_TARGET=	default cdkshlib
