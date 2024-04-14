@@ -689,6 +689,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
 		zstd-sys-2.0.10+zstd.1.5.6
+RUSTFLAGS=	--cfg surrealdb_unstable # workaround for https://github.com/surrealdb/surrealdb/issues/3871
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
