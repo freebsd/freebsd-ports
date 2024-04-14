@@ -25,7 +25,6 @@ USES=		cpe libtool perl5 ssl
 USE_RC_SUBR=	imapd
 CYRUS_PREFIX=	${PREFIX}/cyrus
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${CYRUS_PREFIX} \
 		--with-cyrus-user=${CYRUS_USER} \

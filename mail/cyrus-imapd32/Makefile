@@ -25,7 +25,6 @@ USES=		compiler:c11 cpe gmake libtool perl5 pkgconfig ssl
 USE_RC_SUBR=	imapd
 CYRUS_PREFIX=	${PREFIX}/cyrus
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libexecdir=${CYRUS_PREFIX}/libexec \
 		--sbindir=${CYRUS_PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc \
