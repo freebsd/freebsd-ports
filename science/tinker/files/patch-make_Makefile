@@ -1,15 +1,15 @@
---- make/Makefile.orig	2023-03-09 06:01:09 UTC
+--- make/Makefile.orig	2024-04-08 01:19:41 UTC
 +++ make/Makefile
-@@ -87,7 +87,7 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
+@@ -86,7 +86,7 @@ F77FLAGS = -c
+ 
  F77 = gfortran
  F77FLAGS = -c
- #OPTFLAGS = -Ofast -march=native -fopenmp
--OPTFLAGS = -Ofast -mssse3 -fopenmp
+-OPTFLAGS = -Ofast -march=native -fopenmp
 +OPTFLAGS = -Ofast $(PORT_SIMD_FLAGS) -fopenmp
- #OPTFLAGS = -Og -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
+ #OPTFLAGS = -Ofast -fopenmp
+ #OPTFLAGS = -Og -g -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
  LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
- LIBS = 
-@@ -818,136 +818,136 @@ listing:
+@@ -829,138 +829,138 @@ rename_bin:
  	cat *.f *.c > tinker.txt
  
  rename_bin:
@@ -63,6 +63,7 @@
 -	mv  testpair.x   $(BINDIR)/testpair
 -	mv  testpol.x    $(BINDIR)/testpol
 -	mv  testrot.x    $(BINDIR)/testrot
+-	mv  testsurf.x   $(BINDIR)/testsurf
 -	mv  testvir.x    $(BINDIR)/testvir
 -	mv  timer.x      $(BINDIR)/timer
 -	mv  timerot.x    $(BINDIR)/timerot
@@ -127,6 +128,7 @@
 +	${BSD_INSTALL_PROGRAM}  testpair.x   $(BINDIR)/testpair
 +	${BSD_INSTALL_PROGRAM}  testpol.x    $(BINDIR)/testpol
 +	${BSD_INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot
++	${BSD_INSTALL_PROGRAM}  testsurf.x   $(BINDIR)/testsurf
 +	${BSD_INSTALL_PROGRAM}  testvir.x    $(BINDIR)/testvir
 +	${BSD_INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer
 +	${BSD_INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot
@@ -193,6 +195,7 @@
 -	mv  testpair.x   $(BINDIR)/testpair.exe
 -	mv  testpol.x    $(BINDIR)/testpol.exe
 -	mv  testrot.x    $(BINDIR)/testrot.exe
+-	mv  testsurf.x   $(BINDIR)/testsurf.exe
 -	mv  testvir.x    $(BINDIR)/testvir.exe
 -	mv  timer.x      $(BINDIR)/timer.exe
 -	mv  timerot.x    $(BINDIR)/timerot.exe
@@ -257,6 +260,7 @@
 +	${BSD_INSTALL_PROGRAM}  testpair.x   $(BINDIR)/testpair.exe
 +	${BSD_INSTALL_PROGRAM}  testpol.x    $(BINDIR)/testpol.exe
 +	${BSD_INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot.exe
++	${BSD_INSTALL_PROGRAM}  testsurf.x   $(BINDIR)/testsurf.exe
 +	${BSD_INSTALL_PROGRAM}  testvir.x    $(BINDIR)/testvir.exe
 +	${BSD_INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer.exe
 +	${BSD_INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot.exe
