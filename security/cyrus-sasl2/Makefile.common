@@ -12,7 +12,6 @@ USES+=		gmake
 USE_LDCONFIG=	yes
 USES+=		ssl
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
 		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
