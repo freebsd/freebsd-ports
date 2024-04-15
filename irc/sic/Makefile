@@ -1,6 +1,6 @@
 PORTNAME=	sic
 PORTVERSION=	0.23a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/irc/sic/
 
@@ -9,9 +9,13 @@ COMMENT=	Another 'Internet Relay Chat' Client
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Last upstream release was in 2001 and no upstream WWW
+EXPIRATION_DATE=	2024-05-15
+
 USES=		ncurses tar:tgz
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
