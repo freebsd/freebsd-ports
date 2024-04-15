@@ -1,5 +1,5 @@
 PORTNAME=	knot-resolver
-DISTVERSION=	5.7.1
+DISTVERSION=	5.7.2
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
