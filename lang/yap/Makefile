@@ -55,7 +55,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 .if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
 pre-configure:
 	${REINPLACE_CMD} 's/-export-dynamic/-Wl,--export-dynamic/' \
-		configure packages/cplint/slipcase/Makefile.in
+		${WRKSRC}/configure ${WRKSRC}/packages/cplint/slipcase/Makefile.in
 .endif
 
 .if ${ARCH:Mpowerpc*}
