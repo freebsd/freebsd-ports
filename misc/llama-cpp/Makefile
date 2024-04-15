@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	2646
+DISTVERSION=	2674
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,5 +32,7 @@ OPTIONS_SUB=		yes
 EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
 BINARY_ALIAS=	git=false
+
+# 1 test fails dur to a missing model file stories260K.gguf
 
 .include <bsd.port.mk>
