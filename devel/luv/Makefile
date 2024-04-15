@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
-USES=		cmake luajit
+USES=		cmake localbase luajit
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
