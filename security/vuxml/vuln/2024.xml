@@ -1,3 +1,43 @@
+  <vuln vid="cdb5e0e3-fafc-11ee-9c21-901b0e9408dc">
+    <topic>go -- http2: close connections when receiving too many headers</topic>
+    <affects>
+      <package>
+	<name>go122</name>
+	<range><lt>1.22.2</lt></range>
+      </package>
+      <package>
+	<name>go121</name>
+	<range><lt>1.21.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/65051">
+	  <p>http2: close connections when receiving too many headers</p>
+	  <p>Maintaining HPACK state requires that we parse and
+	  process all HEADERS and CONTINUATION frames on a
+	  connection. When a request's headers exceed MaxHeaderBytes,
+	  we don't allocate memory to store the excess headers but we
+	  do parse them. This permits an attacker to cause an HTTP/2
+	  endpoint to read arbitrary amounts of header data, all
+	  associated with a request which is going to be
+	  rejected. These headers can include Huffman-encoded data
+	  which is significantly more expensive for the receiver to
+	  decode than for an attacker to send.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45288</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M/m/khALNYGdAAAJ</url>
+    </references>
+    <dates>
+      <discovery>2024-04-03</discovery>
+      <entry>2024-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7314942b-0889-46f0-b02b-2c60aabe4a82">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
