@@ -2,7 +2,8 @@ PORTNAME=	sdl2
 DISTVERSION=	2.30.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://www.libsdl.org/release/
+MASTER_SITES=	https://github.com/libsdl-org/SDL/releases/download/release-${DISTVERSION}/ \
+		https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
