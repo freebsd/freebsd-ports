@@ -1,6 +1,7 @@
 PORTNAME=	trivy
 DISTVERSION=	0.50.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -29,6 +30,5 @@ post-install:
 		${SED} -E -e '/sample$$/ s#^#@sample #; \
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 	cat ${TMPPLIST}
-	
 
 .include <bsd.port.mk>
