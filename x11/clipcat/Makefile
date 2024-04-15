@@ -1,6 +1,6 @@
 PORTNAME=	clipcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.5
+DISTVERSION=	0.16.6
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,14 +34,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.81 \
+		anyhow-1.0.82 \
 		arbitrary-1.3.2 \
 		arboard-3.3.2 \
 		arg_enum_proc_macro-0.3.4 \
 		arrayvec-0.7.4 \
 		async-broadcast-0.7.0 \
 		async-channel-2.2.0 \
-		async-executor-1.9.1 \
+		async-executor-1.10.0 \
 		async-fs-2.1.1 \
 		async-io-2.3.2 \
 		async-lock-2.8.0 \
@@ -52,7 +52,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-stream-0.3.5 \
 		async-stream-impl-0.3.5 \
 		async-task-4.7.0 \
-		async-trait-0.1.79 \
+		async-trait-0.1.80 \
 		atomic-waker-1.1.2 \
 		atty-0.2.14 \
 		autocfg-1.2.0 \
@@ -73,20 +73,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
 		blocking-1.5.1 \
-		built-0.7.1 \
-		bumpalo-3.15.4 \
+		built-0.7.2 \
+		bumpalo-3.16.0 \
 		bytemuck-1.15.0 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
-		cc-1.0.90 \
-		cfg-expr-0.15.7 \
+		cc-1.0.94 \
+		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.37 \
 		clap-3.2.25 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_complete-4.5.1 \
+		clap_complete-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.2.4 \
 		clap_lex-0.7.0 \
@@ -135,8 +135,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dlib-0.5.2 \
 		dlv-list-0.2.3 \
 		doc-comment-0.3.3 \
-		downcast-rs-1.2.0 \
-		either-1.10.0 \
+		downcast-rs-1.2.1 \
+		either-1.11.0 \
 		endi-1.1.0 \
 		enumflags2-0.7.9 \
 		enumflags2_derive-0.7.9 \
@@ -178,12 +178,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		gethostname-0.4.3 \
-		getrandom-0.2.13 \
+		getrandom-0.2.14 \
 		gif-0.13.1 \
 		gimli-0.28.1 \
 		git2-0.18.3 \
 		h2-0.3.26 \
-		half-2.4.0 \
+		half-2.4.1 \
 		hashbrown-0.9.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
@@ -198,7 +198,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		http-body-0.4.6 \
 		http-body-1.0.0 \
 		http-body-util-0.1.1 \
-		http-serde-2.0.0 \
+		http-serde-2.1.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humansize-2.1.3 \
@@ -223,7 +223,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		is_debug-1.0.1 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
-		jobserver-0.1.28 \
+		jobserver-0.1.30 \
 		jpeg-decoder-0.3.1 \
 		js-sys-0.3.69 \
 		kqueue-1.0.8 \
@@ -315,7 +315,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quick-error-2.0.1 \
 		quick-xml-0.30.0 \
 		quick-xml-0.31.0 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -333,7 +333,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rust-ini-0.17.0 \
 		rustc-demangle-0.1.23 \
 		rustix-0.38.32 \
-		rustversion-1.0.14 \
+		rustversion-1.0.15 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.1 \
@@ -343,7 +343,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_derive-1.0.197 \
 		serde_json-1.0.115 \
 		serde_path_to_error-0.1.16 \
-		serde_repr-0.1.18 \
+		serde_repr-0.1.19 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		serde_with-3.7.0 \
@@ -373,7 +373,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-1.0.109 \
 		syn-2.0.58 \
 		sync_wrapper-0.1.2 \
-		sync_wrapper-1.0.0 \
+		sync_wrapper-1.0.1 \
 		system-deps-6.2.2 \
 		target-lexicon-0.12.14 \
 		tauri-winrt-notification-0.2.0 \
@@ -385,9 +385,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.58 \
 		thread_local-1.1.8 \
 		tiff-0.9.1 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		timer-0.2.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -456,28 +456,29 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-0.54.0 \
 		windows-core-0.52.0 \
 		windows-core-0.54.0 \
-		windows-result-0.1.0 \
+		windows-result-0.1.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
-		windows-version-0.1.0 \
+		windows-targets-0.52.5 \
+		windows-version-0.1.1 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
+		windows_x86_64_msvc-0.52.5 \
 		winnow-0.5.40 \
-		winnow-0.6.5 \
+		winnow-0.6.6 \
 		wl-clipboard-rs-0.8.1 \
 		x11rb-0.13.0 \
 		x11rb-protocol-0.13.0 \
