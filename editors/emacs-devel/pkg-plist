@@ -1785,6 +1785,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/tq.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/trace.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/trace.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/track-changes.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/track-changes.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/unsafep.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/unsafep.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/visual-wrap.el.gz
