@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-octproj
 PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/jgpallero/octproj/downloads/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
