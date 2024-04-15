@@ -1,6 +1,6 @@
 PORTNAME=	gtk-doc
 DISTVERSION=	1.33.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
@@ -15,13 +15,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAV
 		docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
 		itstool:textproc/itstool \
-		yelp-tools>=0:textproc/yelp-tools
+		yelp-tools>=0:textproc/yelp-tools \
+		xsltproc:textproc/libxslt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		docbook-xml>0:textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt
 
-USES=		gettext-tools gnome meson python pkgconfig tar:xz
-USE_GNOME=	libxml2 libxslt
+USES=		gettext-tools meson python pkgconfig tar:xz
 
 MESON_ARGS=	-Dtests=false
 
