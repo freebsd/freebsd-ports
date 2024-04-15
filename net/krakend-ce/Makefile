@@ -1,7 +1,6 @@
 PORTNAME=	krakend-ce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
-PORTREVISION=	3
+DISTVERSION=	2.6.1
 CATEGORIES=	net
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Build failure: math.MaxInt64 overflow
 
-USES=		go:modules
+USES=		go:1.22,modules
 GO_MODULE=	github.com/krakendio/krakend-ce/v2
 GO_TARGET=	./cmd/${PORTNAME}
 
