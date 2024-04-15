@@ -1,6 +1,7 @@
 PORTNAME=	git-credential-azure
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org

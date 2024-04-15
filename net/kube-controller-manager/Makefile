@@ -1,7 +1,7 @@
 PORTNAME=	kube-controller-manager
 PORTVERSION=	1.27.2
-PORTREVISION=	5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	6
 CATEGORIES=	net
 
 MAINTAINER=	loic.blot@unix-experience.fr
