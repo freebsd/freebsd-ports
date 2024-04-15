@@ -2,7 +2,7 @@
 
 PORTNAME?=	libv4l
 PORTVERSION=	1.23.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 DISTVERSIONPREFIX=	v4l-utils-
 CATEGORIES=	multimedia
 
@@ -26,8 +26,7 @@ WEBCAMDDIR=	${WRKDIR}/webcamd-5.17.1.0
 LINUXDIR=	${WRKDIR}/linux-*
 
 .if ${PORTNAME} == v4l-utils || ${PORTNAME} == libv4l
-LIB_DEPENDS+=	libargp.so:devel/argp-standalone \
-		libudev.so:devel/libudev-devd
+LIB_DEPENDS+=	libudev.so:devel/libudev-devd
 BUILD_DEPENDS+= gsed>0:textproc/gsed \
 		v4l_compat>=${PORTVERSION}:multimedia/v4l_compat
 
@@ -53,7 +52,8 @@ RUN_DEPENDS+=	evdev-proto>=5.3:devel/evdev-proto
 USES+=		perl5
 BUILD_DEPENDS+=	libv4l>=${PORTVERSION}:multimedia/libv4l
 LIB_DEPENDS+=	libepoll-shim-interpose.so:devel/libepoll-shim \
-		libv4l2.so:multimedia/libv4l
+		libv4l2.so:multimedia/libv4l \
+		libargp.so:devel/argp-standalone
 CPPFLAGS+=	`pkg-config --cflags epoll-shim-interpose`
 LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
 CONFIGURE_ARGS+= \
@@ -63,7 +63,9 @@ CONFIGURE_ARGS+= \
 
 .if ${PORTNAME} == libv4l
 CONFIGURE_ENV+= \
-	libudev_CFLAGS=" "
+	libudev_CFLAGS=" " \
+	ac_cv_header_argp_h=yes \
+	ac_cv_search_argp_parse="none required"
 CONFIGURE_ARGS+= \
 	--disable-v4l-utils \
 	--enable-dyn-libv4l \
