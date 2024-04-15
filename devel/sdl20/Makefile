@@ -1,5 +1,6 @@
 PORTNAME=	sdl2
 DISTVERSION=	2.30.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -188,9 +189,6 @@ CONFIGURE_ARGS+=	ac_cv_lib_iconv_iconv_open=yes ac_cv_func_iconv=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/configure
-# Clang does not provide _m_prefetch
-	@${REINPLACE_CMD} 's/_m_prefetch/__builtin_prefetch/' \
-		${WRKSRC}/configure ${WRKSRC}/src/video/SDL_blit_A.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL2.so
