@@ -1,7 +1,7 @@
 PORTNAME=	coreos-ct
 PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de

@@ -1,6 +1,7 @@
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.4.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
@@ -25,7 +26,6 @@ GH_TUPLE=	\
 		prometheus:common:v0.45.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.12.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.31.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
-
 
 USE_RC_SUBR=		unbound_exporter
 GO_MODULES=		github.com/letsencrypt/unbound_exporter

@@ -1,7 +1,7 @@
 PORTNAME?=	victoria-metrics
 PORTVERSION=	1.93.10		# don't forget to update BUILDINFO_TAG
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
