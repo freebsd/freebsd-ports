@@ -1,6 +1,7 @@
 PORTNAME=	gitlab-workhorse
 PORTVERSION=	16.10.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -22,7 +23,6 @@ MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse
 # found in work/gitlab-foss*/workhorse/go.mod
 #GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
-
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
