@@ -1,7 +1,7 @@
 PORTNAME=	yafc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,6 +11,9 @@ WWW=		https://github.com/sebastinas/yafc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, last release in 2016
+EXPIRATION_DATE=2024-05-17
+
 BUILD_DEPENDS=	glib>0:devel/glib20
 
 USES=		autoreconf gmake localbase pkgconfig ssl tar:xz
@@ -18,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sebastinas
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-krb5=no \
 		--with-openssl=${OPENSSLBASE} \
 		--with-socks5=no \
@@ -32,8 +34,8 @@ PORTEXAMPLES=	inputrc yafcrc
 OPTIONS_DEFINE=		BASH EXAMPLES INFO NLS READLINE SSH
 OPTIONS_DEFAULT=	BASH INFO SSH
 
-BASH_CONFIGURE_OFF=	--with-bash-completion=no
 BASH_CONFIGURE_ON=	--with-bash-completion=yes
+BASH_CONFIGURE_OFF=	--with-bash-completion=no
 BASH_PLIST_FILES=	etc/bash_completion.d/yafc
 INFO_USES=		makeinfo
 INFO_INFO=		yafc
@@ -49,17 +51,17 @@ READLINE_CONFIGURE_WITH=	readline
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_OFF=	--without-ssh
 
-pre-configure:
-	@(cd ${WRKSRC} && ${LOCALBASE}/bin/glib-gettextize -f -c)
-
 post-patch-INFO-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.am
 
-post-install-INFO-off:
-	${INSTALL_MAN} ${WRKSRC}/doc/yafc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+pre-configure:
+	@(cd ${WRKSRC} && ${LOCALBASE}/bin/glib-gettextize -f -c)
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-INFO-off:
+	${INSTALL_MAN} ${WRKSRC}/doc/yafc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
