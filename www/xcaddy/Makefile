@@ -1,7 +1,6 @@
 PORTNAME=	xcaddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.5
-PORTREVISION=	5
+DISTVERSION=	0.4.0
 CATEGORIES=	www
 DIST_SUBDIR=	xcaddy
 
@@ -16,7 +15,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	caddyserver
-GH_TUPLE=	Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
+GH_TUPLE=	Masterminds:semver:v3.2.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex
 
 GO_TARGET=	./cmd/xcaddy
