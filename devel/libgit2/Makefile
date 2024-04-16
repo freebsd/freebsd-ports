@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libhttp_parser.so:www/http-parser
 
-USES=		cmake:testing cpe pkgconfig python:build ssl
+USES=		cmake:testing cpe localbase pkgconfig python:build ssl
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
