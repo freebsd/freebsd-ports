@@ -1,5 +1,7 @@
 sbin/route6d
-share/licenses/freebsd-route6d-15.0/BSD3CLAUSE
-share/licenses/freebsd-route6d-15.0/LICENSE
-share/licenses/freebsd-route6d-15.0/catalog.mk
+sbin/rip6query
 share/man/man8/route6d.8.gz
+share/man/man8/rip6query.8.gz
+share/licenses/freebsd-route6d-15.0/catalog.mk
+share/licenses/freebsd-route6d-15.0/LICENSE
+share/licenses/freebsd-route6d-15.0/BSD3CLAUSE
