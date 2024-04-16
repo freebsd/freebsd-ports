@@ -1,8 +1,8 @@
 bin/Hyprland
 bin/hyprctl
 bin/hyprpm
-share/bash-completions/hyprctl
-share/bash-completions/hyprpm
+share/bash-completion/hyprctl
+share/bash-completion/hyprpm
 share/fish/vendor_completions.d/hyprctl.fish
 share/fish/vendor_completions.d/hyprpm.fish
 %%DATADIR%%/hyprland.conf
