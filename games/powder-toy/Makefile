@@ -1,6 +1,7 @@
 PORTNAME=	powder-toy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	98.2.365
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libpng.so:graphics/png \
 		libjsoncpp.so:devel/jsoncpp
 
-USES=		compiler:c++17-lang desktop-file-utils luajit:luajit-openresty \
+USES=		compiler:c++17-lang desktop-file-utils luajit \
 		meson pkgconfig python:build sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-Powder-Toy
