@@ -3184,3 +3184,4 @@ x11/multi-aterm||2024-04-13|Has expired: Unmaintained, last upstream release in 
 devel/py-dateutil|devel/py-python-dateutil|2024-04-13|Move devel/py-dateutil to devel/py-python-dateutil
 science/p5-Algorithm-SVMLight||2024-04-16|Has expired: Depends on DEPRECATED science/svmlight
 science/svmlight||2024-04-16|Has expired: Unmaintained, last upstream release in 2008 and there are more modern alternatives
+security/krb5-119||2024-04-16|Has expired: Desupported by MIT following 1.21
