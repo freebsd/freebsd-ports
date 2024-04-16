@@ -1,0 +1,5 @@
+sbin/route6d
+share/licenses/freebsd-route6d-15.0/BSD3CLAUSE
+share/licenses/freebsd-route6d-15.0/LICENSE
+share/licenses/freebsd-route6d-15.0/catalog.mk
+share/man/man8/route6d.8.gz
