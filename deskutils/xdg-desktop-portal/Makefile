@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal
 PORTVERSION=	1.18.3
-CATEGORIES=	deskutils wayland
+CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Portal frontend service for Flatpak
