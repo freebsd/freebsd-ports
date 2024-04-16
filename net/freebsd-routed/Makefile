@@ -11,7 +11,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
-GH_TAGNAME=	32fa35d
 GH_PROJECT=	freebsd-routed
 
 USES=		uidfix
