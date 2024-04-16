@@ -1,5 +1,5 @@
 PORTNAME=	enet
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.18
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
