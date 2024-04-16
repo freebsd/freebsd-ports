@@ -2,7 +2,7 @@ PORTNAME=	CNS11643-font
 PORTVERSION=	98.1
 PORTREVISION=	6
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	https://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/CNS11643-font/
+MASTER_SITES=	https://people.cs.nycu.edu.tw/~lwhsu/ports/distfiles/CNS11643-font/
 DISTFILES=	TW-Kai-98_1.ttf TW-Sung-98_1.ttf
 EXTRACT_ONLY=
 
