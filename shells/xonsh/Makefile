@@ -4,7 +4,7 @@ CATEGORIES=	shells python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	roberfern@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python-ish BASH-wards shell
 WWW=		https://xon.sh
 
