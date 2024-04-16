@@ -75,6 +75,69 @@
     </dates>
   </vuln>
 
+  <vuln vid="080936ba-fbb7-11ee-abc8-6960f2492b1d">
+    <topic>PuTTY and embedders (f.i., filezilla) -- biased RNG with NIST P521/ecdsa-sha2-nistp521 signatures permits recovering private key</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><ge>0.68</ge><lt>0.81</lt></range>
+      </package>
+      <package>
+	<name>putty-nogtk</name>
+	<range><ge>0.68</ge><lt>0.81</lt></range>
+      </package>
+      <package>
+	<name>filezilla</name>
+	<range><lt>3.67.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote cite="https://lists.tartarus.org/pipermail/putty-announce/2024/000038.html">
+	  <p>ECDSA signatures using 521-bit keys (the NIST P521 curve,
+	    otherwise known as ecdsa-sha2-nistp521) were generated with biased
+	    random numbers. This permits an attacker in possession of a few
+	    dozen signatures to RECOVER THE PRIVATE KEY.</p>
+	  <p>Any 521-bit ECDSA private key that PuTTY or Pageant has used to
+	    sign anything should be considered compromised.</p>
+	  <p>Additionally, if you have any 521-bit ECDSA private keys that
+	    you've used with PuTTY, you should consider them to be
+	    compromised: generate new keys, and remove the old public keys
+	    from any authorized_keys files.</p>
+	</blockquote>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2024-31497">
+	  <p>
+	    A second, independent scenario is that the adversary is an operator
+	    of an SSH server to which the victim authenticates (for remote login
+	    or file copy), [...] and the victim uses the same private key for
+	    SSH connections to other services operated by other entities. Here,
+	    the rogue server operator (who would otherwise have no way to
+	    determine the victim's private key) can derive the victim's private
+	    key, and then use it for unauthorized access to those other
+	    services. If the other services include Git services, then again it
+	    may be possible to conduct supply-chain attacks on software
+	    maintained in Git. This also affects, for example, FileZilla before
+	    3.67.0, WinSCP before 6.3.3, TortoiseGit before 2.15.0.1, and
+	    TortoiseSVN through 1.14.6.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31497</cvename>
+      <url>https://lists.tartarus.org/pipermail/putty-announce/2024/000038.html</url>
+      <url>https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-p521-bias.html</url>
+      <url>https://git.tartarus.org/?h=c193fe9848f50a88a4089aac647fecc31ae96d27&amp;p=simon/putty.git</url>
+      <url>https://filezilla-project.org/versions.php</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-31497</url>
+    </references>
+    <dates>
+      <discovery>2024-04-01</discovery> <!-- see git.tartarus.org link to commit c193fe9848f -->
+      <entry>2024-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31617e47-7eec-4c60-9fdf-8aee61622bab">
     <topic>electron{27,28} -- Out of bounds memory access in V8</topic>
     <affects>
