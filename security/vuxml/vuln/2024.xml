@@ -1,3 +1,48 @@
+  <vuln vid="6d82c5e9-fc24-11ee-a689-04421a1baf97">
+    <topic>php -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php81</name>
+	<range><lt>8.1.28</lt></range>
+      </package>
+      <package>
+	<name>php82</name>
+	<range><lt>8.2.18</lt></range>
+      </package>
+      <package>
+	<name>php83</name>
+	<range><lt>8.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>This update includes 3 security fixes:</p>
+    <blockquote cite="https://seclists.org/oss-sec/2024/q2/113/">
+	 <ul>
+	   <li>High CVE-2024-1874: Command injection via array-ish $command parameter of proc_open even if bypass_shell option enabled on Windows</li>
+	   <li>High CVE-2024-1874: Command injection via array-ish $command parameter of proc_open even if bypass_shell option enabled on Windows</li>
+       <li>Medium CVE-2024-2756: __Host-/__Secure- cookie bypass due to partial CVE-2022-31629 fix</li>
+       <li>High CVE-2024-2757: mb_encode_mimeheader runs endlessly for some inputs</li>
+	 </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1874</cvename>
+      <url>https://github.com/php/php-src/security/advisories/GHSA-pc52-254m-w9w7</url>
+      <cvename>CVE-2024-2756</cvename>
+      <url>https://github.com/php/php-src/security/advisories/GHSA-wpj3-hf5j-x4v4</url>
+      <cvename>CVE-2024-3096</cvename>
+      <url>https://github.com/php/php-src/security/advisories/GHSA-h746-cjrr-wfmr</url>
+      <cvename>CVE-2024-2757</cvename>
+      <url>https://github.com/php/php-src/security/advisories/GHSA-fjp9-9hwx-59fq</url>
+    </references>
+    <dates>
+      <discovery>2024-04-11</discovery>
+      <entry>2024-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cdb5e0e3-fafc-11ee-9c21-901b0e9408dc">
     <topic>go -- http2: close connections when receiving too many headers</topic>
     <affects>
