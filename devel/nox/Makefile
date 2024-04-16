@@ -18,13 +18,15 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
+py39_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli>=1:textproc/py-tomli@${PY_FLAVOR}
+py310_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli>=1:textproc/py-tomli@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # tests fail to run, see https://github.com/wntrblm/nox/issues/792
+USE_PYTHON=	pep517 autoplist pytest # 37 tests fail, see https://github.com/wntrblm/nox/issues/820
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wntrblm
-GH_TAGNAME=	2024.03.02
+GH_TAGNAME=	2024.04.15
 
 NO_ARCH=	yes
 
