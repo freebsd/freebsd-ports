@@ -13,9 +13,13 @@ lib/cmake/KF6Auth/KF6AuthConfigVersion.cmake
 lib/cmake/KF6Auth/KF6AuthMacros.cmake
 lib/cmake/KF6Auth/KF6AuthTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Auth/KF6AuthTargets.cmake
+lib/cmake/KF6Auth/KF6AuthToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF6Auth/KF6AuthToolsTargets.cmake
 lib/libKF6AuthCore.so
-lib/libKF6AuthCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6AuthCore.so.6
+lib/libKF6AuthCore.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libexec/kf6/kauth/kauth-policy-gen
+%%QT_PLUGINDIR%%/kf6/kauth/backend/kauth_backend_plugin.so
 %%QT_PLUGINDIR%%/kf6/kauth/helper/kauth_helper_plugin.so
 share/dbus-1/system.d/org.kde.kf6auth.conf
 share/kf6/kauth/dbus_policy.stub
