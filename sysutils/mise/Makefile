@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.4.4
+DISTVERSION=	2024.4.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,9 +46,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.92 \
+		cc-1.0.94 \
 		cfg-if-1.0.0 \
-		chrono-0.4.37 \
+		chrono-0.4.38 \
 		ci_info-0.14.14 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dunce-1.0.4 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
-		either-1.10.0 \
+		either-1.11.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
 		envmnt-0.10.4 \
@@ -154,7 +154,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ipnet-2.9.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
-		jobserver-0.1.29 \
+		jobserver-0.1.30 \
 		js-sys-0.3.69 \
 		kdl-4.6.0 \
 		lazy_static-1.4.0 \
@@ -211,7 +211,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.79 \
+		proc-macro2-1.0.80 \
 		quick-xml-0.23.1 \
 		quote-1.0.36 \
 		rand-0.8.5 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.58 \
+		syn-2.0.59 \
 		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
@@ -351,21 +351,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
+		windows_x86_64_msvc-0.52.5 \
 		winnow-0.6.6 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
