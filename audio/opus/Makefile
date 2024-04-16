@@ -1,5 +1,5 @@
 PORTNAME=	opus
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/opus/
 
