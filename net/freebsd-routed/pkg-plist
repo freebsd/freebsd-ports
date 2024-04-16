@@ -1,3 +1,4 @@
+etc/rc.d/routed
 sbin/routed
 sbin/rtquery
 share/licenses/freebsd-routed-15.0/catalog.mk

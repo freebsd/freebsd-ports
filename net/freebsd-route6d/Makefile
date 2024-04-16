@@ -1,7 +1,6 @@
 PORTNAME=	freebsd-route6d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	15.0
-PORTREVISION=	1
+DISTVERSION=	15.0p1
 CATEGORIES=	net
 
 MAINTAINER=	cy@FreeBSD.org
@@ -26,5 +25,8 @@ MAKE_ENV+=		MAKESYSPATH=/usr/src/share/mk \
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/libexec/rc/rc.d/route6d ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
