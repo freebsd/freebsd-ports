@@ -402,6 +402,8 @@ share/man/man3/xcb_dri3_fd_from_fence_reply.3.gz
 share/man/man3/xcb_dri3_fd_from_fence_unchecked.3.gz
 share/man/man3/xcb_dri3_fence_from_fd.3.gz
 share/man/man3/xcb_dri3_fence_from_fd_checked.3.gz
+share/man/man3/xcb_dri3_free_syncobj.3.gz
+share/man/man3/xcb_dri3_free_syncobj_checked.3.gz
 share/man/man3/xcb_dri3_get_supported_modifiers.3.gz
 share/man/man3/xcb_dri3_get_supported_modifiers_reply.3.gz
 share/man/man3/xcb_dri3_get_supported_modifiers_screen_modifiers.3.gz
@@ -411,6 +413,8 @@ share/man/man3/xcb_dri3_get_supported_modifiers_unchecked.3.gz
 share/man/man3/xcb_dri3_get_supported_modifiers_window_modifiers.3.gz
 share/man/man3/xcb_dri3_get_supported_modifiers_window_modifiers_end.3.gz
 share/man/man3/xcb_dri3_get_supported_modifiers_window_modifiers_length.3.gz
+share/man/man3/xcb_dri3_import_syncobj.3.gz
+share/man/man3/xcb_dri3_import_syncobj_checked.3.gz
 share/man/man3/xcb_dri3_open.3.gz
 share/man/man3/xcb_dri3_open_reply.3.gz
 share/man/man3/xcb_dri3_open_unchecked.3.gz
@@ -1288,6 +1292,8 @@ share/man/man3/xcb_present_notify_msc.3.gz
 share/man/man3/xcb_present_notify_msc_checked.3.gz
 share/man/man3/xcb_present_pixmap.3.gz
 share/man/man3/xcb_present_pixmap_checked.3.gz
+share/man/man3/xcb_present_pixmap_synced.3.gz
+share/man/man3/xcb_present_pixmap_synced_checked.3.gz
 share/man/man3/xcb_present_query_capabilities.3.gz
 share/man/man3/xcb_present_query_capabilities_reply.3.gz
 share/man/man3/xcb_present_query_capabilities_unchecked.3.gz

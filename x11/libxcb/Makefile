@@ -1,5 +1,5 @@
 PORTNAME=	libxcb
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17.0
 CATEGORIES=	x11
 MASTER_SITES=	https://xcb.freedesktop.org/dist/
 
@@ -10,7 +10,7 @@ WWW=		https://xcb.freedesktop.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
+BUILD_DEPENDS=	xcb-proto>=1.17:x11/xcb-proto
 
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-devel-docs --without-doxygen --enable-xinput --enable-xkb
