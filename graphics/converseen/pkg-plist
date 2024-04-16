@@ -7,7 +7,7 @@ share/icons/hicolor/32x32/apps/converseen.png
 share/icons/hicolor/48x48/apps/converseen.png
 share/icons/hicolor/512x512/apps/converseen.png
 share/icons/hicolor/64x64/apps/converseen.png
-share/kservices5/ServiceMenus/converseen_import.desktop
+share/kio/servicemenus/converseen_import.desktop
 share/metainfo/converseen.appdata.xml
 %%DATADIR%%/loc/converseen_cs_CZ.qm
 %%DATADIR%%/loc/converseen_da_DK.qm
