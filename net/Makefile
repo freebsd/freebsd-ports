@@ -156,6 +156,7 @@
     SUBDIR += foreman-proxy
     SUBDIR += fort
     SUBDIR += fping
+    SUBDIR += freebsd-routed
     SUBDIR += freebsd-route6d
     SUBDIR += freebsd-telnetd
     SUBDIR += freebsd-uucp
