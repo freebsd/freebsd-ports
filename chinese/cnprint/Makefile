@@ -2,7 +2,7 @@ PORTNAME=	cnprint
 PORTVERSION=	3.30b
 PORTREVISION=	1
 CATEGORIES=	chinese print
-MASTER_SITES=	https://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://people.cs.nycu.edu.tw/~lwhsu/ports/distfiles/${PORTNAME}-${PORTVERSION}/
 DISTFILES=	cnprint330b.c cnprint330b.readme ttfb330b.c cnprint330b.hlp \
 		cnprint33.cmd helvet.dat  mssong.ttf.gz mssong.htf \
 		mshei.ttf.gz mshei.htf cc48s.hbf cc48.sym.gz cc48s.1.gz \
