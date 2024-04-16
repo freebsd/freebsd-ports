@@ -1,5 +1,5 @@
 PORTNAME=	mumble
-DISTVERSION=	1.5.613
+DISTVERSION=	1.5.629
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -41,15 +41,16 @@ CXXFLAGS+=	-Wno-deprecated-declarations
 
 PLIST_SUB=	MUMBLE_VERSION="${DISTVERSION:R}"
 
-OPTIONS_DEFINE=		ALSA AVAHI JACK LTO PIPEWIRE PORTAUDIO PULSEAUDIO RNNOISE
+OPTIONS_DEFINE=		ALSA AVAHI JACK LTO PIPEWIRE PORTAUDIO PULSEAUDIO RENAMENOISE
 OPTIONS_DEFINE_amd64=	OVERLAY_32BIT
+OPTIONS_DEFAULT=	RENAMENOISE
 OPTIONS_DEFAULT_amd64=	OVERLAY_32BIT
 OPTIONS_RADIO=		SPEECH
 OPTIONS_RADIO_SPEECH=	QTSPEECH SPEECHD
 
 OVERLAY_32BIT_DESC=	Build and install 32bit overlay module
 QTSPEECH_DESC=		Use Qt's text-to-speech system
-RNNOISE_DESC=		Use RNNoise for machine learning noise reduction
+RENAMENOISE_DESC=	Use ReNameNoise for machine learning noise reduction
 SPEECHD_DESC=		Support for Speech Dispatcher
 SPEECH_DESC=		Support text-to-speech
 
@@ -80,9 +81,7 @@ PULSEAUDIO_CMAKE_BOOL=	pulseaudio
 QTSPEECH_USE=		QT=speech
 QTSPEECH_CMAKE_BOOL=	qtspeech
 
-RNNOISE_LIB_DEPENDS=	librnnoise.so:audio/rnnoise
-RNNOISE_CMAKE_BOOL=	rnnoise
-RNNOISE_CMAKE_ON=	-Dbundled-rnnoise:BOOL=off
+RENAMENOISE_CMAKE_BOOL=	bundled-renamenoise renamenoise
 
 SPEECHD_LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher
 SPEECHD_USES=		gettext-runtime gnome
