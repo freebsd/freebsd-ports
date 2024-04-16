@@ -1,6 +1,6 @@
 PORTNAME=		intel-backlight
 DISTVERSION=		20200418
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics
 
 MAINTAINER=		jmd@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/FreeBSDDesktop/intel_backlight_fbsd
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/COPYING
+
+DEPRECATED=		Use backlight(8)
+EXPIRATION_DATE=	20240701
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	this hardware is only found on Intel x86 systems
