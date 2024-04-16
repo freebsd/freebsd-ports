@@ -263,4 +263,5 @@ lib/libproxygen.so
 lib/libproxygencurl.so
 lib/libproxygendeviousbaton.so
 lib/libproxygenhqloggerhelper.so
+lib/libproxygenhqserver.so
 lib/libproxygenhttpserver.so
