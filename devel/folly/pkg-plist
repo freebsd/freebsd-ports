@@ -202,6 +202,7 @@ include/folly/detail/SplitStringSimdImpl.h
 include/folly/detail/Sse.h
 include/folly/detail/StaticSingletonManager.h
 include/folly/detail/ThreadLocalDetail.h
+include/folly/detail/TrapOnAvx512.h
 include/folly/detail/TurnSequencer.h
 include/folly/detail/TypeList.h
 include/folly/detail/UniqueInstance.h
@@ -336,9 +337,12 @@ include/folly/experimental/coro/AsyncGenerator.h
 include/folly/experimental/coro/AsyncPipe.h
 include/folly/experimental/coro/AsyncScope.h
 include/folly/experimental/coro/AsyncStack.h
+include/folly/experimental/coro/AutoCleanup-fwd.h
+include/folly/experimental/coro/AutoCleanup.h
 include/folly/experimental/coro/Baton.h
 include/folly/experimental/coro/BlockingWait.h
 include/folly/experimental/coro/BoundedQueue.h
+include/folly/experimental/coro/Cleanup.h
 include/folly/experimental/coro/Collect-inl.h
 include/folly/experimental/coro/Collect.h
 include/folly/experimental/coro/Concat-inl.h
@@ -709,7 +713,6 @@ include/folly/logging/StreamHandlerFactory.h
 include/folly/logging/xlog.h
 include/folly/memory/Arena-inl.h
 include/folly/memory/Arena.h
-include/folly/memory/EnableSharedFromThis.h
 include/folly/memory/MallctlHelper.h
 include/folly/memory/Malloc.h
 include/folly/memory/MemoryResource.h
