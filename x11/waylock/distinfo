@@ -1,6 +1,6 @@
-TIMESTAMP = 1707735486
-SHA256 (waylock-v0.6.5.tar.gz) = f3e25dd2d1bd3c1fa41449ac0c283133a26f06a192fa42505fbcba1e029fcc9d
-SIZE (waylock-v0.6.5.tar.gz) = 19571
+TIMESTAMP = 1713267102
+SHA256 (waylock-v1.0.0.tar.gz) = e6d6dc92580b8ba23735f05241a9a166111641804c5d34bf402bffe21dda087f
+SIZE (waylock-v1.0.0.tar.gz) = 19869
 SHA256 (zig-wayland-65475ba.tar.gz) = b9f4d8b481bbcbee53b27333d4474b0cda1d5746036f23e9eca84f00e984d552
 SIZE (zig-wayland-65475ba.tar.gz) = 56234
 SHA256 (zig-xkbcommon-7b188de.tar.gz) = ff71b52b8f9c106981ec92db265ef155dd4543aee4c4a0c60f37eab72aa6a208
