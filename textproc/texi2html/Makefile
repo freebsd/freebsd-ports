@@ -1,6 +1,6 @@
 PORTNAME=	texi2html
 PORTVERSION=	5.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH
@@ -14,7 +14,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
-USES=		gmake perl5 shebangfix tar:bzip2
+USES=		gettext-tools:build gmake perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	*.pl
 
 OPTIONS_DEFINE=	NLS DOCS
