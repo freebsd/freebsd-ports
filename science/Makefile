@@ -482,7 +482,6 @@
     SUBDIR += spglib
     SUBDIR += spheral
     SUBDIR += step
-    SUBDIR += svmlight
     SUBDIR += tblite
     SUBDIR += teem
     SUBDIR += tfel
