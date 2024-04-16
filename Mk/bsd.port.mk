@@ -1324,45 +1324,23 @@ LDCONFIG32_DIR=	libdata/ldconfig32
 TMPDIR?=	/tmp
 .    endif # defined(PACKAGE_BUILDING)
 
-# If user specified WITH_FEATURE=yes for a feature that is disabled by default
-# treat it as enabled by default
-.    for feature in ${_LIST_OF_WITH_FEATURES}
-.      if ${_DEFAULT_WITH_FEATURES:N${feature}} && defined(WITH_${feature:tu})
-_DEFAULT_WITH_FEATURES+=	${feature}
+# Enable default features unless they have been disabled by the user, and cleanup
+.    for feature in ${_DEFAULT_WITH_FEATURES}
+.      if !defined(WITHOUT_${feature:tu})
+WITH_${feature:tu}=		yes
+.undef WITHOUT_${feature:tu}
 .      endif
 .    endfor
 
-.    for feature in ${_LIST_OF_WITH_FEATURES}
-# Create _{WITH,WITHOUT}_FEATURE vars based on user-provided {WITH,WITHOUT}_FEATURE
-# Test WITHOUT_* first to make sure a port can disable the feature
-.      if defined(WITHOUT_${feature:tu})
-_WITHOUT_${feature:tu}=	${WITHOUT_${feature:tu}}
-.      elif defined(WITH_${feature:tu})
-_WITH_${feature:tu}=	${WITH_${feature:tu}}
-.      endif
 # For each Feature we support, process the
 # WITH_FEATURE_PORTS and WITHOUT_FEATURE_PORTS variables
-.      if ${_DEFAULT_WITH_FEATURES:M${feature}}
-.        if defined(WITHOUT_${feature:tu}_PORTS) && ${WITHOUT_${feature:tu}_PORTS:M${PKGORIGIN}}
-_WITHOUT_${feature:tu}=	yes
-.undef _WITH_${feature:tu}
-.        endif
-.      else
-.        if defined(WITH_${feature:tu}_PORTS) && ${WITH_${feature:tu}_PORTS:M${PKGORIGIN}}
-_WITH_${feature:tu}=	yes
-.undef _WITHOUT_${feature:tu}
-.        endif
-.      endif
-.    endfor
-
-# Now we made sure the features are either on or off, let's put them back in
-# the WITH_* variable. From now on, we only need to test defined(WITH_*) or
-# !defined(WITH_*)
 .    for feature in ${_LIST_OF_WITH_FEATURES}
-.      if defined(_WITH_${feature:tu})
-WITH_${feature:tu}=	_WITH_${feature:tu}
-.      else
+.      if defined(WITHOUT_${feature:tu}_PORTS) && ${WITHOUT_${feature:tu}_PORTS:M${PKGORIGIN}}
+# Feature disabled for this port, remove WITH_<feat>
 .undef WITH_${feature:tu}
+.      elif defined(WITH_${feature:tu}_PORTS) && ${WITH_${feature:tu}_PORTS:M${PKGORIGIN}}
+# Feature enabled for this port, set WITH_<feat>
+WITH_${feature:tu}=	yes
 .      endif
 .    endfor
 
