@@ -1,6 +1,6 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.2	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
+DISTVERSION=	0.26.1	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,9 @@ GH_ACCOUNT=	extrawurst
 
 RUSTFLAGS+=	--cap-lints=warn
 PLIST_FILES=	bin/${PORTNAME}
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} # xcb requires python3
 
