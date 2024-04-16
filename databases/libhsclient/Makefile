@@ -2,7 +2,7 @@ PORTNAME=	libhsclient
 DISTVERSION=	1.0.6-20110614
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.cs.nctu.edu.tw/~jnlin/distfiles/
+MASTER_SITES=	http://people.cs.nycu.edu.tw/~jnlin/distfiles/
 DISTNAME=	HandlerSocket-Plugin-for-MySQL-${DISTVERSION}
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
