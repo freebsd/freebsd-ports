@@ -3182,3 +3182,4 @@ sysutils/msyslog||2024-04-13|Has expired: Unmaintained and last upstream release
 x11/xdtm||2024-04-13|Has expired: Unmaintained, last upstream release was in 2000 or earlier
 x11/multi-aterm||2024-04-13|Has expired: Unmaintained, last upstream release in 2004
 devel/py-dateutil|devel/py-python-dateutil|2024-04-13|Move devel/py-dateutil to devel/py-python-dateutil
+science/p5-Algorithm-SVMLight||2024-04-16|Has expired: Depends on DEPRECATED science/svmlight
