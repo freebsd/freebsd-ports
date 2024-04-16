@@ -15,11 +15,11 @@ You need to check/edit the following files in %%ETCDIR%% as described in https:/
  - acquis.yaml, acquis.d: datasource configuration (this port does not include automatic discovery of the running services)
  - profiles.yaml: remediation policies (ban, duration, etc)
 
-Then you can enable the daemon via sysrc and run it.
+Then you can enable the service and run it.
 
 ----------
-# sysrc crowdsec_enable="YES"
-crowdsec_enable: NO -> YES
+# service crowdsec enable
+crowdsec enabled in /etc/rc.conf
 # service crowdsec start
 ----------
 

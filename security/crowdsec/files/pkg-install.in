@@ -1,11 +1,19 @@
 #!/bin/sh
 
+# shellcheck disable=SC2249
 case $2 in
         "POST-INSTALL")
-                cscli hub update -o human --error > /dev/null
+                echo "Updating crowdsec hub data"
+                if cscli hub update -o human --error; then
+                    cscli hub upgrade -o human --error
+                else
+                    echo "Failed to update crowdsec hub data."
+                    echo "You can run 'cscli hub update; cscli hub upgrade'"
+                    echo "to update manually, or let the cron job do it for you."
+                fi
                 if [ -e /var/run/crowdsec.running ]; then
-                        service crowdsec start
-                        rm -f /var/run/crowdsec.running
+                    service crowdsec onestart
+                    rm -f /var/run/crowdsec.running
                 fi
                 ;;
 esac
