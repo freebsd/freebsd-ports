@@ -10,7 +10,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Apache H264 streaming module
-WWW=		http://h264.code-shop.com/trac/wiki/Mod-H264-Streaming-Apache-Version2
+WWW=		https://github.com/code-shop-com/h264
 
 # Converted from RESTRICTED
 LICENSE=	h264
