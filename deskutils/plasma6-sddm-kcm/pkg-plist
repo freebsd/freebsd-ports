@@ -56,3 +56,4 @@ share/locale/tr/LC_MESSAGES/kcm_sddm.mo
 share/locale/uk/LC_MESSAGES/kcm_sddm.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_sddm.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_sddm.mo
+share/polkit-1/actions/org.kde.kcontrol.kcmsddm.policy

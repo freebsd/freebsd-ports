@@ -281,8 +281,12 @@ share/locale/wa/LC_MESSAGES/powerdevil.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/zh_CN/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/zh_CN/LC_MESSAGES/powerdevil.mo
+share/locale/zh_CN/LC_MESSAGES/powerdevil_osd.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/zh_TW/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/zh_TW/LC_MESSAGES/powerdevil.mo
 share/locale/zh_TW/LC_MESSAGES/powerdevil_osd.mo
+share/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
+share/polkit-1/actions/org.kde.powerdevil.chargethresholdhelper.policy
+share/polkit-1/actions/org.kde.powerdevil.discretegpuhelper.policy
 share/qlogging-categories6/powerdevil.categories

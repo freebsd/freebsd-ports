@@ -519,3 +519,4 @@ share/locale/zh_TW/LC_MESSAGES/kcmdevinfo.mo
 share/locale/zh_TW/LC_MESSAGES/kcmusb.mo
 share/locale/zh_TW/LC_MESSAGES/kinfocenter.mo
 share/metainfo/org.kde.kinfocenter.appdata.xml
+share/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
