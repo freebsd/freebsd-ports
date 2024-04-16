@@ -86,6 +86,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/art19.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/arte.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/asobichannel.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/asobistage.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/atresplayer.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/atscaleconf.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/atvat.py
@@ -287,6 +288,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/eyedotv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/facebook.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fancode.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fathom.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/faz.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fc2.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fczenit.py
@@ -465,6 +467,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/livestream.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/livestreamfails.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lnkgo.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/loom.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lovehomeporn.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lrt.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lsm.py
@@ -756,6 +759,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sexu.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/seznamzpravy.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/shahid.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sharepoint.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sharevideos.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/shemaroome.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/showroomlive.py
@@ -1030,12 +1034,14 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/jsinterp.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/minicurses.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/__init__.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/networking/_curlcffi.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/_helper.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/_requests.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/_urllib.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/_websockets.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/common.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/exceptions.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/networking/impersonate.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/networking/websocket.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/options.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/plugins.py
