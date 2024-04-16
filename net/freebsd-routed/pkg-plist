@@ -1,0 +1,7 @@
+sbin/routed
+sbin/rtquery
+share/licenses/freebsd-routed-15.0/catalog.mk
+share/licenses/freebsd-routed-15.0/LICENSE
+share/licenses/freebsd-routed-15.0/BSD3CLAUSE
+share/man/man8/routed.8.gz
+share/man/man8/rtquery.8.gz
