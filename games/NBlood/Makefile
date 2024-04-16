@@ -1,5 +1,5 @@
 PORTNAME=	NBlood
-DISTVERSION=	r14011
+DISTVERSION=	r14013
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GL=		glu
 USE_SDL=	sdl2
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	CC=${CC} CXX=${CXX} CLANG=1
+MAKE_ARGS=	CC=${CC} CXX=${CXX} CLANG=1 PRETTY_OUTPUT=0 USE_MIMALLOC=0
 PLIST_FILES=	bin/pcexhumed \
 		bin/nblood \
 		bin/rednukem
