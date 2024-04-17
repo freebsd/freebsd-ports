@@ -13,8 +13,7 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-		evdev-proto>0:devel/evdev-proto \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		nlohmann-json>0:devel/nlohmann-json \
 		wf-config>=0.8.0<0.9.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
@@ -30,7 +29,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	doctest>0:devel/doctest
 
-USES=		compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
+USES=		cmake:indirect compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
