@@ -1,5 +1,5 @@
 PORTNAME=	cvxpy
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.3
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/cvxpy/cvxpy/issues/2174
+USE_PYTHON=	distutils autoplist pytest # 45 tests fail, see https://github.com/cvxpy/cvxpy/issues/2416
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
