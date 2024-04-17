@@ -1,6 +1,6 @@
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.6
+DISTVERSION=	1.11.9
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		cmake:noninja,testing localbase # compiler:c++11-lang
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-release # there's also palisade-development
-GL_TAGNAME=	0860127401ab794591f931fa2c61426c7b56ee2d
+GL_TAGNAME=	3d1f9a3f9fd389df1f8f27f286511f4f5871258b
 GH_TUPLE=	\
 		JerryRyan:cereal:a384b101:cereal/third-party/cereal \
 		google:benchmark:e451e50e:benchmark/third-party/google-benchmark \
