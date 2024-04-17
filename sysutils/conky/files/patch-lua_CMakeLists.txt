@@ -1,6 +1,6 @@
---- lua/CMakeLists.txt.orig	2023-02-18 14:34:53 UTC
+--- lua/CMakeLists.txt.orig	2024-04-17 02:04:14 UTC
 +++ lua/CMakeLists.txt
-@@ -31,6 +31,8 @@ if(BUILD_X11)
+@@ -30,6 +30,8 @@ if(BUILD_X11)
      get_filename_component(X11_SM_LIB_PATH ${X11_SM_LIB} DIRECTORY)
      link_directories(${X11_SM_LIB_PATH})
  
