@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 USE_XORG=	xcursor
 GH_ACCOUNT=	eworm-de
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
