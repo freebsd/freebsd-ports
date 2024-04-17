@@ -1,5 +1,5 @@
 PORTNAME=	lme4
-DISTVERSION=	1.1-35.2
+DISTVERSION=	1.1-35.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,7 +17,8 @@ CRAN_DEPENDS=	R-cran-minqa>=1.1.15:math/R-cran-minqa \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
-		R-cran-optimx>0:misc/R-cran-optimx
+		R-cran-optimx>0:misc/R-cran-optimx \
+		R-cran-ggplot2>0:graphics/R-cran-ggplot2
 
 USES=		cran:auto-plist,compiles
 
