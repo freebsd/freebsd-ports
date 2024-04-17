@@ -1,6 +1,6 @@
 PORTNAME=	internetarchive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
+DISTVERSION=	4.0.1
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.6.0,<0.7.0:devel/py-docopt@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}six>=1.13.0,<2.0.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.0.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.0:net/py-urllib3@${PY_FLAVOR}
+py39_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6.0:devel/py-importlib-metadata@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}responses>=0.20.0:devel/py-responses@${PY_FLAVOR} \
 		ruff>=0.0.269:devel/ruff
 
