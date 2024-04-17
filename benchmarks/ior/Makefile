@@ -1,6 +1,5 @@
 PORTNAME=	ior
-DISTVERSION=	3.3.0-20230112
-PORTREVISION=	3
+DISTVERSION=	4.0.0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,6 @@ USES=		autoreconf gmake localbase:ldflags mpi:mpich pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hpc
-GH_TAGNAME=	24d5d41
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
