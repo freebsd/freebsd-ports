@@ -1,5 +1,5 @@
-TIMESTAMP = 1705742601
-SHA256 (go/textproc_ytt/ytt-v0.47.0/v0.47.0.mod) = 7e6d12ba01dea00e3d1dea89d8f5a9734f79ac58517fb5b35f1d0b54b85746a1
-SIZE (go/textproc_ytt/ytt-v0.47.0/v0.47.0.mod) = 918
-SHA256 (go/textproc_ytt/ytt-v0.47.0/v0.47.0.zip) = 57076539715972fe79d1f4b1c4d6ee299e6e1135455c6568291593134c43a49c
-SIZE (go/textproc_ytt/ytt-v0.47.0/v0.47.0.zip) = 1193366
+TIMESTAMP = 1713328862
+SHA256 (go/textproc_ytt/ytt-v0.49.0/v0.49.0.mod) = f53503a6b50af40a27d975b8ee436e30d17482a51630d51f88512d6d27471287
+SIZE (go/textproc_ytt/ytt-v0.49.0/v0.49.0.mod) = 898
+SHA256 (go/textproc_ytt/ytt-v0.49.0/v0.49.0.zip) = b26a2fb3482ba4abaeeb50a54ea0f626babf44c43674801ed8f4b7f377478920
+SIZE (go/textproc_ytt/ytt-v0.49.0/v0.49.0.zip) = 1194611
