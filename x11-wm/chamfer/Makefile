@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR} \
-		cmake:devel/cmake-core \
 		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
 		spirv-opt:graphics/spirv-tools \
 		vulkan-headers>0:graphics/vulkan-headers \
@@ -27,7 +26,8 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang meson localbase pkgconfig python xorg
+USES=		cmake:indirect compiler:c++17-lang meson localbase \
+		pkgconfig python xorg
 USE_GITHUB=	yes
 USE_XORG=	xcb
 GH_ACCOUNT=	jaelpark
