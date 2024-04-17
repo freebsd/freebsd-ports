@@ -1,12 +1,8 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.0
-PORTREVISION=	3
+DISTVERSION=	0.38.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f4cc236a641e.patch:-p1 # https://github.com/mpv-player/mpv/pull/12941
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -136,6 +132,7 @@ UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_MESON_ENABLED=		uchardet
 
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/dvb/dmx.h:multimedia/v4l_compat
+V4L_USES=			localbase
 V4L_MESON_ENABLED=		dvbin
 
 VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
