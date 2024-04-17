@@ -1,5 +1,5 @@
-TIMESTAMP = 1712172817
-SHA256 (bitcoin/bitcoin-26.1.tar.gz) = 9164ee5d717b4a20cb09f0496544d9d32f365734814fe399f5cdb4552a9b35ee
-SIZE (bitcoin/bitcoin-26.1.tar.gz) = 12819211
+TIMESTAMP = 1713371074
+SHA256 (bitcoin/bitcoin-27.0.tar.gz) = 9c1ee651d3b157baccc3388be28b8cf3bfcefcd2493b943725ad6040ca6b146b
+SIZE (bitcoin/bitcoin-27.0.tar.gz) = 13082621
 SHA256 (bitcoin/bitcoin128.png) = ad880c8459ecfdb96abe6a4689af06bdd27906e0edcd39d0915482f2da91e722
 SIZE (bitcoin/bitcoin128.png) = 10639
