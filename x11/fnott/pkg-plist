@@ -1,9 +1,11 @@
 bin/fnott
 bin/fnottctl
-share/man/man1/fnott.1.gz
-share/man/man1/fnottctl.1.gz
-share/man/man5/fnott.ini.5.gz
+%%PORTDOCS%%@sample etc/xdg/fnott/fnott.ini.sample
 share/applications/fnott.desktop
-%%DATADIR%%/fnott.ini
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%share/man/man1/fnott.1.gz
+%%PORTDOCS%%share/man/man1/fnottctl.1.gz
+%%PORTDOCS%%share/man/man5/fnott.ini.5.gz
 share/zsh/site-functions/_fnott
 share/zsh/site-functions/_fnottctl
