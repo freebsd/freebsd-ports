@@ -1,5 +1,5 @@
 PORTNAME=	abinit
-DISTVERSION=	9.10.5
+DISTVERSION=	10.0.3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +27,8 @@ LIB_DEPENDS=	libelpa.so:math/elpa		\
 		libwannier.so:science/wannier90	\
 		libnetcdff.so:science/netcdf-fortran
 RUN_DEPENDS=	atompaw:science/atompaw
-TEST_DEPENDS=	${PYNUMPY}	\
+TEST_DEPENDS=	bash:shells/bash \
+		${PYNUMPY} \
 		libyaml>0:textproc/libyaml
 
 USES=		autoreconf:build blaslapack:netlib fortran gmake gnome localbase:ldflags	\
@@ -35,7 +36,7 @@ USES=		autoreconf:build blaslapack:netlib fortran gmake gnome localbase:ldflags	
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 SHEBANG_FILES=	config/scripts/* doc/tutorial/paral_bandpw_assets/abinit.sub.*
-SHEBANG_GLOB=	*.py
+SHEBANG_GLOB=	*.py *.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	H5CC="${LOCALBASE}/bin/h5cc" \
 		HDF5_CFLAGS="-I${LOCALBASE}/include" \
@@ -51,6 +52,8 @@ FCFLAGS+=	-ffree-line-length-none
 TEST_TARGET=	tests_abirules tests_buildsys # Many tests print RuntimeError, https://github.com/abinit/abinit/issues/64
 TEST_WRKSRC=	${WRKSRC}/abichecks
 PORTDOCS=	*
+
+BINARY_ALIAS=	git=false
 
 OPTIONS_DEFINE=			DOCS OPENMP OPENMPI
 OPTIONS_DEFAULT=		OPENMP OPENMPI
