@@ -21,7 +21,6 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 USES=		pkgconfig
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-maintainer-mode
 
 .include <bsd.port.mk>

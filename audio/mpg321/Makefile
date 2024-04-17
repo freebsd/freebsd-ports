@@ -16,7 +16,6 @@ USES=		cpe
 
 CPE_VENDOR=	mpg321_project
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-mpg123-symlink
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

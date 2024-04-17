@@ -14,7 +14,6 @@ USES=		cpe libtool pathfix pkgconfig
 CPE_VENDOR=	xiph
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static \
 		--disable-alsa \
 		--disable-arts \

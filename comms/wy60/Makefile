@@ -16,7 +16,6 @@ GH_TAGNAME=	8e082bf
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_ARGS=	etc_DATA=wy60.rc.sample
 
 pre-build:

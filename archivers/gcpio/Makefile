@@ -18,7 +18,6 @@ USES=		cpe tar:bzip2
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g \
 		--with-rmt=/etc/rmt
 TEST_TARGET=	check
