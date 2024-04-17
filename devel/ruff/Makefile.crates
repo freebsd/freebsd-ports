@@ -1,7 +1,7 @@
 CARGO_CRATES=	Inflector-0.11.4 \
 		adler-1.0.2 \
 		ahash-0.8.10 \
-		aho-corasick-1.1.2 \
+		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
@@ -12,38 +12,38 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.80 \
+		anyhow-1.0.81 \
 		argfile-0.1.6 \
 		arrayvec-0.7.4 \
 		ascii-canvas-3.0.0 \
-		assert_cmd-2.0.14 \
 		autocfg-1.1.0 \
 		base64-0.21.7 \
 		bincode-1.3.3 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.15.3 \
 		cachedir-0.3.1 \
 		cast-0.3.0 \
 		cc-1.0.88 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
 		chic-1.2.2 \
-		chrono-0.4.35 \
+		chrono-0.4.37 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.2 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
 		clap_complete-4.5.1 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.5.0 \
 		clap_complete_nushell-0.1.11 \
-		clap_derive-4.5.0 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
-		clearscreen-2.0.1 \
+		clearscreen-3.0.0 \
 		codspeed-2.4.0 \
 		codspeed-criterion-compat-2.4.0 \
 		colorchoice-1.0.0 \
@@ -67,20 +67,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_core-0.20.8 \
 		darling_macro-0.20.8 \
 		diff-0.1.13 \
-		difflib-0.4.0 \
 		dirs-4.0.0 \
 		dirs-5.0.1 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
-		doc-comment-0.3.3 \
 		drop_bomb-0.1.5 \
 		dyn-clone-1.0.17 \
 		either-1.10.0 \
 		ena-0.14.2 \
 		encode_unicode-0.3.6 \
-		env_logger-0.10.2 \
+		env_filter-0.1.0 \
+		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		fastrand-2.0.1 \
@@ -100,6 +99,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hexf-parse-0.2.1 \
 		home-0.5.9 \
@@ -113,11 +113,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		imperative-1.0.5 \
 		indexmap-2.2.5 \
 		indicatif-0.17.8 \
-		indoc-2.0.4 \
+		indoc-2.0.5 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
-		insta-1.35.1 \
-		insta-cmd-0.4.0 \
+		insta-1.38.0 \
+		insta-cmd-0.5.0 \
 		instant-0.1.12 \
 		is-docker-0.2.0 \
 		is-macro-0.3.5 \
@@ -138,8 +138,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-parse-integer-0.8.6 \
 		lexical-util-0.8.5 \
 		libc-0.2.153 \
-		libcst-1.2.0 \
-		libcst_derive-1.2.0 \
+		libcst-1.3.1 \
+		libcst_derive-1.3.1 \
 		libmimalloc-sys-0.1.35 \
 		libredox-0.0.1 \
 		linked-hash-map-0.5.6 \
@@ -147,22 +147,23 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		lsp-server-0.7.6 \
-		lsp-types-0.95.0 \
+		lsp-types-0.95.1 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		mimalloc-0.1.39 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
 		natord-1.0.9 \
 		new_debug_unreachable-1.0.4 \
-		nextest-workspace-hack-0.1.0 \
-		nix-0.26.4 \
+		nix-0.28.0 \
 		nom-7.1.3 \
 		notify-6.1.1 \
 		nu-ansi-term-0.46.0 \
+		nu-ansi-term-0.49.0 \
 		num-traits-0.2.18 \
+		num_cpus-1.16.0 \
 		number_prefix-0.4.0 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
@@ -179,6 +180,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		peg-macros-0.8.2 \
 		peg-runtime-0.8.2 \
 		pep440_rs-0.4.0 \
+		pep440_rs-0.5.0 \
 		pep508_rs-0.3.0 \
 		percent-encoding-2.3.1 \
 		petgraph-0.6.4 \
@@ -192,23 +194,20 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		portable-atomic-1.6.0 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
-		predicates-3.1.0 \
-		predicates-core-1.0.6 \
-		predicates-tree-1.0.9 \
 		pretty_assertions-1.4.0 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.79 \
 		pyproject-toml-0.9.0 \
-		quick-junit-0.3.5 \
+		quick-junit-0.3.6 \
 		quick-xml-0.31.0 \
 		quote-1.0.35 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.9.0 \
+		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
-		regex-1.10.3 \
+		regex-1.10.4 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.5 \
 		regex-syntax-0.6.29 \
@@ -234,40 +233,38 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.197 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.114 \
+		serde_json-1.0.115 \
 		serde_repr-0.1.18 \
 		serde_spanned-0.6.5 \
 		serde_test-1.0.176 \
-		serde_with-3.6.1 \
-		serde_with_macros-3.6.1 \
+		serde_with-3.7.0 \
+		serde_with_macros-3.7.0 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.0 \
 		shlex-1.3.0 \
-		similar-2.4.0 \
+		similar-2.5.0 \
 		siphasher-0.3.11 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		spin-0.9.8 \
 		static_assertions-1.1.0 \
 		string_cache-0.8.7 \
 		strip-ansi-escapes-0.2.0 \
 		strsim-0.10.0 \
 		strsim-0.11.0 \
-		strum-0.25.0 \
-		strum_macros-0.25.3 \
+		strum-0.26.2 \
+		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.52 \
+		syn-2.0.58 \
 		tempfile-3.10.1 \
 		term-0.7.0 \
-		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
 		terminfo-0.8.0 \
-		termtree-0.4.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
 		thread_local-1.1.8 \
 		tikv-jemalloc-sys-0.5.4+5.3.0-patched \
 		tikv-jemallocator-0.5.4 \
@@ -275,17 +272,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.10 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.6 \
+		toml_edit-0.22.9 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-indicatif-0.3.6 \
-		tracing-log-0.1.4 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tracing-tree-0.2.5 \
+		tracing-tree-0.3.0 \
 		typed-arena-2.0.2 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -299,31 +295,31 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-xid-0.2.4 \
 		unicode_names2-1.2.2 \
 		unicode_names2_generator-1.2.2 \
+		unscanny-0.1.0 \
 		untrusted-0.9.0 \
 		ureq-2.9.6 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
-		uuid-1.7.0 \
-		uuid-macro-internal-1.7.0 \
+		uuid-1.8.0 \
+		uuid-macro-internal-1.8.0 \
 		valuable-0.1.0 \
 		version_check-0.9.4 \
 		vt100-0.15.2 \
 		vte-0.11.1 \
 		vte_generate_state_changes-0.1.1 \
-		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
 		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.41 \
+		wasm-bindgen-futures-0.4.42 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
-		wasm-bindgen-test-0.3.41 \
-		wasm-bindgen-test-macro-0.3.41 \
+		wasm-bindgen-test-0.3.42 \
+		wasm-bindgen-test-macro-0.3.42 \
 		web-sys-0.3.68 \
 		webpki-roots-0.26.1 \
-		which-4.4.2 \
+		which-6.0.1 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -349,7 +345,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.4 \
 		winnow-0.6.5 \
-		yaml-rust-0.4.5 \
+		winsafe-0.0.19 \
 		yansi-0.5.1 \
 		yansi-term-0.1.2 \
 		zerocopy-0.7.32 \
