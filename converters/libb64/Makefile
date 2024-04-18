@@ -1,7 +1,6 @@
 PORTNAME=	libb64
 DISTVERSION=	2.0.0-15
 CATEGORIES=	converters mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ismail.yenigul@surgate.com
 COMMENT=	Library for fast Base64 encoding and decoding
