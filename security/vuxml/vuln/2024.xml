@@ -1,3 +1,49 @@
+  <vuln vid="f90bf863-e43c-4db3-b5a8-d9603684657a">
+    <topic>electron{27,28,29} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron27</name>
+	<range><lt>27.3.11</lt></range>
+      </package>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.3.1</lt></range>
+      </package>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron develpers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v27.3.11">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-3515.</li>
+	    <li>Security: backported fix for CVE-2024-3516.</li>
+	    <li>Security: backported fix for CVE-2024-3157.</li>
+	    <li>Security: backported fix for CVE-2024-1580.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3515</cvename>
+      <url>https://github.com/advisories/GHSA-x6cj-gx36-vcxv</url>
+      <cvename>CVE-2024-3516</cvename>
+      <url>https://github.com/advisories/GHSA-jf9g-42gm-v87w</url>
+      <cvename>CVE-2024-3157</cvename>
+      <url>https://github.com/advisories/GHSA-4m4g-p795-cmq7</url>
+      <cvename>CVE-2024-1580</cvename>
+      <url>https://github.com/advisories/GHSA-3p7f-4r2q-wxmm</url>
+    </references>
+    <dates>
+      <discovery>2024-04-16</discovery>
+      <entry>2024-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d82c5e9-fc24-11ee-a689-04421a1baf97">
     <topic>php -- Multiple vulnerabilities</topic>
     <affects>
