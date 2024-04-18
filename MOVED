@@ -3187,3 +3187,4 @@ science/svmlight||2024-04-16|Has expired: Unmaintained, last upstream release in
 security/krb5-119||2024-04-16|Has expired: Desupported by MIT following 1.21
 audio/gnuitar||2024-04-18|Has expired: Unmaintained, last upstream release in 2005
 emulators/hugo||2024-04-18|Has expired: Unmaintained, last release in 2005 and uses deprecated gtk2 library
+net-p2p/gtorrentviewer||2024-04-18|Has expired: Unmaintained, last release in 2004 and uses deprecated gtk2

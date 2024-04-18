@@ -35,7 +35,6 @@
     SUBDIR += go-ethereum
     SUBDIR += go-prysm
     SUBDIR += gtk-gnutella
-    SUBDIR += gtorrentviewer
     SUBDIR += jackett
     SUBDIR += jigdo
     SUBDIR += ktorrent

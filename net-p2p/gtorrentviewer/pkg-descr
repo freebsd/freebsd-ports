@@ -1,3 +1,0 @@
-GTorrentViewer is a GTK2-based viewer and editor for BitTorrent meta files. It
-is able to retrieve information from trackers, check files, show detailed
-information, and modify .torrent files without having to start downloading.
