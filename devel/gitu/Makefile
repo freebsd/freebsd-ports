@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.17.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,10 +26,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
+		arboard-3.3.2 \
 		atomic-0.6.0 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
+		block-0.1.6 \
 		bstr-0.2.17 \
 		bumpalo-3.15.4 \
 		bytemuck-1.14.3 \
@@ -46,6 +48,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		clap_builder-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
+		clipboard-win-5.3.0 \
 		colorchoice-1.0.0 \
 		compact_str-0.7.1 \
 		console-0.15.8 \
@@ -66,8 +69,11 @@ CARGO_CRATES=	ahash-0.8.11 \
 		either-1.10.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		figment-0.10.15 \
+		errno-0.3.8 \
+		error-code-3.2.0 \
+		figment-0.10.16 \
 		form_urlencoded-1.2.1 \
+		gethostname-0.4.3 \
 		getrandom-0.2.12 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
@@ -95,14 +101,19 @@ CARGO_CRATES=	ahash-0.8.11 \
 		libredox-0.0.1 \
 		libz-sys-1.1.15 \
 		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		lru-0.12.3 \
+		malloc_buf-0.0.6 \
 		memchr-2.7.1 \
 		minimal-lexical-0.2.1 \
 		mio-0.8.11 \
 		nom-7.1.3 \
 		num-traits-0.2.18 \
+		objc-0.2.7 \
+		objc-foundation-0.1.1 \
+		objc_id-0.1.1 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		option-ext-0.2.0 \
@@ -128,6 +139,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
 		rustc_version-0.4.0 \
+		rustix-0.38.32 \
 		rustversion-1.0.14 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
@@ -203,6 +215,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.4 \
 		winnow-0.6.5 \
+		x11rb-0.13.0 \
+		x11rb-protocol-0.13.0 \
 		yansi-0.5.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32
