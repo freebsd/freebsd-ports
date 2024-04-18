@@ -36,7 +36,8 @@ CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 CT_IMPLIES=		HTTP_SSL
 CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
 CT_VARS=		DSO_EXTMODS+=ct
-CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
+CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL \
+			${PATCHDIR}/extra-patch-ngx_stream_ssl_ct_module.c
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:5a402aa:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
