@@ -1,5 +1,5 @@
 PORTNAME=	unicorn
-DISTVERSION=	1.0.2
+PORTVERSION=	2.0.1p1
 CATEGORIES=	emulators python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,10 +9,12 @@ WWW=		https://www.unicorn-engine.org/
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libunicorn.so:emulators/unicorn
+BUILD_DEPENDS=	${LOCALBASE}/lib/libunicorn.so:emulators/unicorn
+RUN_DEPENDS=	${LOCALBASE}/lib/libunicorn.so:emulators/unicorn
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	unicorn-engine
+GH_TAGNAME=	2.0.1.post1
 
 USES=		python
 USE_PYTHON=	distutils autoplist
