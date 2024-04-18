@@ -60,7 +60,7 @@ _INCLUDE_USES_GO_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-GO_VALID_VERSIONS=	1.19 1.20 1.21 1.22 1.23-devel
+GO_VALID_VERSIONS=	1.20 1.21 1.22 1.23-devel
 
 # Check arguments sanity
 .  if !empty(go_ARGS:N[1-9].[0-9][0-9]:N*-devel:Nmodules:Nno_targets:Nrun)
@@ -99,11 +99,8 @@ GO_BUILDFLAGS+= -v -trimpath
 .  if !defined(WITH_DEBUG) && empty(GO_BUILDFLAGS:M-ldflags*)
 GO_BUILDFLAGS+=	-ldflags=-s
 .  endif
-GO_TESTFLAGS+=	-v
-.  if ${GO_VERSION} != 1.17
 GO_BUILDFLAGS+=	-buildvcs=false
-GO_TESTFLAGS+=	-buildvcs=false
-.  endif
+GO_TESTFLAGS+=	-v -buildvcs=false
 
 CGO_ENABLED?=	1
 CGO_CFLAGS+=	-I${LOCALBASE}/include
