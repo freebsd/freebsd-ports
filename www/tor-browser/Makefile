@@ -1,17 +1,20 @@
 PORTNAME=	tor-browser
-DISTVERSION=	13.0.13
+DISTVERSION=	13.0.14
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		https://build-sources.tbb.torproject.org/:source1 \
 		LOCAL/jsm:source2
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}
-DISTNAME=	src-firefox-tor-browser-115.9.1esr-13.0-1-build1
+DISTNAME=	src-firefox-tor-browser-115.10.0esr-13.0-1-build1
 DISTFILES=	${DISTNAME}.tar.xz \
 		manual_112141.zip:source1 \
 		firefox-tor-browser-13.0.1-build2-firefox-1l0n-out.tar:source2
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Tor Browser for FreeBSD
 WWW=		https://www.torproject.org/
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.94:security/nss \
