@@ -1,2 +1,3 @@
-SHA256 (rubygem/storable-0.8.9.gem) = 6f582cc10c61e33bb8f6cc139347b86f71b3696501cf7fda14dc8f74817b014a
-SIZE (rubygem/storable-0.8.9.gem) = 16896
+TIMESTAMP = 1713033356
+SHA256 (rubygem/storable-0.10.0.gem) = 66cc6e8a4f9ae3386618103d6ce9df6aac2ef1af6c73512b28f1068a1d45686f
+SIZE (rubygem/storable-0.10.0.gem) = 13312
