@@ -1,6 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.3.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		curl:ftp/curl \
 		rubygem-bcrypt_pbkdf>=1.1:security/rubygem-bcrypt_pbkdf \
-		rubygem-childprocess>=4.1.0:devel/rubygem-childprocess \
+		rubygem-childprocess>=5.0:devel/rubygem-childprocess \
 		rubygem-ed25519>=1.3.0:security/rubygem-ed25519 \
 		rubygem-erubi>=0:www/rubygem-erubi \
 		rubygem-googleapis-common-protos-types>=1.3.0:devel/rubygem-googleapis-common-protos-types \
@@ -35,7 +36,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-rexml>=3.2:textproc/rubygem-rexml \
 		rubygem-rgl>=0.5.10:devel/rubygem-rgl \
 		rubygem-rubyzip>=2.3.2:archivers/rubygem-rubyzip \
-		rubygem-vagrant_cloud>=3.0.5:sysutils/rubygem-vagrant_cloud \
+		rubygem-vagrant_cloud>=3.1.1:sysutils/rubygem-vagrant_cloud \
 		rubygem-wdm>=0.1.1:devel/rubygem-wdm \
 		rubygem-winrm-elevated>=1.2.3<2:sysutils/rubygem-winrm-elevated \
 		rubygem-winrm-fs>=1.3.5<2:sysutils/rubygem-winrm-fs \
