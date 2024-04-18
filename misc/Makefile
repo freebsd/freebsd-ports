@@ -539,6 +539,7 @@
     SUBDIR += rsclock
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
+    SUBDIR += rubygem-dotenv-rails
     SUBDIR += rubygem-dotenv-rails-rails4
     SUBDIR += rubygem-dotenv-rails-rails5
     SUBDIR += rubygem-dotenv-rails-rails50
