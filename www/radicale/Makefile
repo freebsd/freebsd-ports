@@ -1,6 +1,5 @@
 PORTNAME=	radicale
-PORTVERSION=	3.1.8
-PORTREVISION=	2
+PORTVERSION=	3.1.9
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +19,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.3:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR}
 
-USES=		cpe python shebangfix
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
 USERS=		radicale
 GROUPS=		radicale
 USE_RC_SUBR=	radicale
 NO_ARCH=	yes
-SHEBANG_FILES=	radicale.wsgi
 
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}" PYTHON_CMD="${PYTHON_CMD}"
 
