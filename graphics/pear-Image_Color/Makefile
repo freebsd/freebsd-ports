@@ -1,12 +1,17 @@
 PORTNAME=	Image_Color
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	PEAR::Image_Color manages and handles color data and conversions
-WWW=		https://pear.php.net/package/Image_Color
+COMMENT=	Manage and handles color data and conversions
+WWW=		https://pear.php.net/package/Image_Color \
+		https://github.com/pear/Image_Color
 
+LICENSE=	PHP301
+
+USES=		pear
 USE_PHP=	gd
-USES=		pear php
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
