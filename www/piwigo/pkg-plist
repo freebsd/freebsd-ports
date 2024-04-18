@@ -3479,6 +3479,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/he_IL/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/he_IL/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/hu_HU/theme.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/hy_AM/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/hy_AM/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/is_IS/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/is_IS/theme.lang.php
@@ -3677,6 +3679,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/it_IT/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/it_IT/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/ja_JP/theme.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/km_KH/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/km_KH/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/ko_KR/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/lt_LT/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/lt_LT/theme.lang.php
