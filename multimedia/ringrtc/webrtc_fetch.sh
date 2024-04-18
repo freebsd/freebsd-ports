@@ -1,6 +1,7 @@
 #!/bin/sh
 
-WEBRTC_REV=6099a
+WEBRTC_REV=6261d
+OPUS_BRANCH=6261
 # XXX also change fetch opus
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
@@ -64,8 +65,8 @@ printf "NASM_REV=\t${nasm_hash}\n"
 printf "NASM_REV=\t${nasm_hash}\n" | portedit merge -i Makefile
 
 opus_hash=$(grep 'opus.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
-printf "OPUS_REV=\t${boringssl_hash}\n"
-printf "OPUS_REV=\t${boringssl_hash}\n" | portedit merge -i Makefile
+printf "OPUS_REV=\t${opus_hash}\n"
+printf "OPUS_REV=\t${opus_hash}\n" | portedit merge -i Makefile
 
 testing_hash=$(grep 'testing@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "TESTING_REV=\t${testing_hash}\n"
@@ -87,9 +88,11 @@ echo "fetch -o dist_tmp/libsrtp-${libsrtp_hash}.tar.gz ${libsrtp_url}${libsrtp_h
 echo "fetch -o dist_tmp/libvpx-${libvpx_hash}.tar.gz ${libvpx_url}${libvpx_hash}.tar.gz"
 echo "fetch -o dist_tmp/libyuv-${libyuv_hash}.tar.gz ${libyuv_url}${libyuv_hash}.tar.gz"
 echo "fetch -o dist_tmp/nasm-${nasm_hash}.tar.gz ${nasm_url}${nasm_hash}.tar.gz"
-echo "fetch -o dist_tmp/opus-${opus_hash}.tar.gz https://codeload.github.com/signalapp/opus/tar.gz/webrtc-6099?dummy=/"
+echo "fetch -o dist_tmp/opus-${opus_hash}.tar.gz https://codeload.github.com/signalapp/opus/tar.gz/webrtc-${OPUS_BRANCH}?dummy=/"
 echo "fetch -o dist_tmp/testing-${testing_hash}.tar.gz ${testing_url}${testing_hash}.tar.gz"
 echo "fetch -o dist_tmp/third_party-${third_party_hash}.tar.gz ${third_party_url}${third_party_hash}.tar.gz"
+
+exit
 
 mkdir -p base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm opus testing third_party
 tar xf dist_tmp/base-${base_hash}.tar.gz -C base
