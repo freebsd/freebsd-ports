@@ -1,8 +1,9 @@
 PORTNAME=	phpsysinfo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
+PKGNAMESUFFIX=  ${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	PHP script for displaying system information
