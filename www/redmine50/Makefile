@@ -1,5 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	5.0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	50
@@ -44,7 +45,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
 # to be removed if https://www.redmine.org/issues/37394 is fixed
 RUN_DEPENDS+=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet \
 		rubygem-html-pipeline>=2.13.2:textproc/rubygem-html-pipeline \
-		rubygem-commonmarker>=0.23.6:textproc/rubygem-commonmarker \
+		rubygem-commonmarker0>=0.23.6:textproc/rubygem-commonmarker0 \
 		rubygem-sanitize>=6.0:textproc/rubygem-sanitize \
 		rubygem-deckar01-task_list>=2.3.1:www/rubygem-deckar01-task_list
 
