@@ -170,7 +170,6 @@
     SUBDIR += toxext
     SUBDIR += toxic
     SUBDIR += toxins
-    SUBDIR += tut
     SUBDIR += twirssi
     SUBDIR += uTox
     SUBDIR += vqcc-gtk
