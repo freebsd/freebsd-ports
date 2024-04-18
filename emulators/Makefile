@@ -46,7 +46,6 @@
     SUBDIR += hatari
     SUBDIR += hercules
     SUBDIR += higan
-    SUBDIR += hugo
     SUBDIR += hv_kvp_cmd
     SUBDIR += javatari
     SUBDIR += joytran
