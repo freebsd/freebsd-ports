@@ -1,5 +1,5 @@
 PORTNAME=	ffi-libarchive
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.14
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
