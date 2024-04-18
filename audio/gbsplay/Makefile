@@ -1,5 +1,5 @@
 PORTNAME=	gbsplay
-DISTVERSION=	0.0.96
+DISTVERSION=	0.0.97
 PORTEPOCH=	1
 CATEGORIES=	audio
 
@@ -19,11 +19,12 @@ USE_CSTD=	gnu89
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmitch
 
-HAS_CONFIGURE=			yes
+HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
-			--prefix=${PREFIX} \
-			--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--disable-pipewire \
+		--mandir=${PREFIX}/share/man \
+		--prefix=${PREFIX} \
+		--sysconfdir=${PREFIX}/etc
 
 MAKE_ENV+=	EXAMPLESDIR="${STAGEDIR}${EXAMPLESDIR}"
 
