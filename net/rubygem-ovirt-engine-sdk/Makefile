@@ -1,6 +1,5 @@
 PORTNAME=	ovirt-engine-sdk
-PORTVERSION=	4.4.1
-PORTREVISION=	2
+PORTVERSION=	4.6.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +10,6 @@ WWW=		https://ovirt.org/ \
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN_RUBY32=	yes
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	rubygem-json>=1<3:devel/rubygem-json
