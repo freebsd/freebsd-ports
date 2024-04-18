@@ -1,5 +1,5 @@
 PORTNAME=	opennebula
-PORTVERSION=	6.6.3
+PORTVERSION=	6.8.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-ipaddress>=0:net/rubygem-ipaddress \
 		rubygem-json>=0:devel/rubygem-json \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
 		rubygem-parse-cron>=0:textproc/rubygem-parse-cron \
-		rubygem-rbvmomi>=0:net/rubygem-rbvmomi \
+		rubygem-rbvmomi2>=0:net/rubygem-rbvmomi2 \
 		rubygem-treetop>=0:devel/rubygem-treetop \
 		rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
