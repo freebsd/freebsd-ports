@@ -21,6 +21,9 @@ USE_GITHUB=	yes
 
 PORTSCOUT=	ignore:1
 
+SPONSORSHIP_PLATFORMS=			PATREON:upstream
+PATREON_UPSTREAM_SPONSOR_HANDLE=	db4s
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/src/PreferencesDialog.cpp ${WRKSRC}/src/Application.cpp
