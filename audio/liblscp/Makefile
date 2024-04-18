@@ -1,7 +1,7 @@
 PORTNAME=	liblscp
 DISTVERSION=	0.9.12
 CATEGORIES=	audio
-MASTER_SITES=	SF/qsampler/liblscp/${PORTVERSION} \
+MASTER_SITES=	SF/qsampler/${PORTNAME}/${DISTVERSION} \
 		http://download.linuxsampler.org/packages/
 
 MAINTAINER=	ports@FreeBSD.org
