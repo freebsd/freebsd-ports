@@ -1,8 +1,6 @@
 PORTNAME=	ipv6calc
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://www.bieringer.de/ftp/pub/linux/IPv6/ipv6calc/ \
-		https://www.deepspace6.net/ftp/pub/ds6/sources/ipv6calc/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert, change, and calculate with IPv6 addresses
@@ -17,6 +15,9 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		gmake perl5 shebangfix ssl
 
 GNU_CONFIGURE=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pbiering
 
 SHEBANG_FILES=	tools/*
 
