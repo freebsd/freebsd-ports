@@ -1,7 +1,6 @@
 PORTNAME=	hypridle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
-PORTREVISION=	1
+DISTVERSION=	0.1.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +19,8 @@ USES=		compiler:c++11-lib cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 LDFLAGS+=	-Wl,--as-needed # sdbus-cpp deps
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/systemd/user/${PORTNAME}.service
 
 # XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/include/c++/v1/__format/format_functions.h) && \
