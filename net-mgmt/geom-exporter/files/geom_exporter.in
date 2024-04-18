@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: geom_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# geom_exporter_enable (bool):            Set to NO by default.
+#               Set it to YES to enable geom-exporter.
+# geom_exporter_args (string):            Set extra arguments to pass to geom-exporter
+#               Default is "".
+# geom_exporter_user (string):            Set user that geom_exporter will run under
+#               Default is "%%USER%%".
+# geom_exporter_group (string):           Set group that geom_exporter will run under
+#               Default is "wheel".
+
+. /etc/rc.subr
+
+name=geom_exporter
+desc="GEOM prometheus exporter"
+rcvar=geom_exporter_enable
+
+load_rc_config $name
+
+: ${geom_exporter_enable:=NO}
+: ${geom_exporter_args:=""}
+: ${geom_exporter_user:=%%USER%%}
+: ${geom_exporter_group:=wheel}
+
+pidfile=/var/run/geom_exporter.pid
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/geom-exporter
+command_args="-f -p ${pidfile} /usr/bin/env ${procname} ${geom_exporter_args}"
+
+start_precmd=geom_exporter_startprecmd
+
+geom_exporter_startprecmd()
+{
+    if [ -e ${pidfile} ]; then
+        chown ${geom_exporter_user}:${geom_exporter_group} ${pidfile};
+    else
+        install -o ${geom_exporter_user} -g ${geom_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+run_rc_command "$1"
