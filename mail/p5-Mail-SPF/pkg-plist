@@ -1,3 +1,4 @@
+bin/spfd.pl
 bin/spfquery.pl
 %%SITE_PERL%%/Mail/SPF.pm
 %%SITE_PERL%%/Mail/SPF/Base.pm
@@ -24,6 +25,7 @@ bin/spfquery.pl
 %%SITE_PERL%%/Mail/SPF/Util.pm
 %%SITE_PERL%%/Mail/SPF/v1/Record.pm
 %%SITE_PERL%%/Mail/SPF/v2/Record.pm
+%%PERL5_MAN1%%/spfd.pl.1.gz
 %%PERL5_MAN1%%/spfquery.pl.1.gz
 %%PERL5_MAN3%%/Mail::SPF.3.gz
 %%PERL5_MAN3%%/Mail::SPF::Base.3.gz
@@ -49,4 +51,3 @@ bin/spfquery.pl
 %%PERL5_MAN3%%/Mail::SPF::Util.3.gz
 %%PERL5_MAN3%%/Mail::SPF::v1::Record.3.gz
 %%PERL5_MAN3%%/Mail::SPF::v2::Record.3.gz
-sbin/spfd.pl

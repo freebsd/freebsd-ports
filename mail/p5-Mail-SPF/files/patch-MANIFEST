@@ -1,0 +1,13 @@
+--- MANIFEST.orig	2024-02-06 02:12:51 UTC
++++ MANIFEST
+@@ -7,8 +7,8 @@ TODO
+ Makefile.PL
+ README
+ TODO
+-bin/spfd
+-bin/spfquery
++bin/spfd.pl
++bin/spfquery.pl
+ debian/changelog
+ debian/compat
+ debian/control
