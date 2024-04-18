@@ -1,5 +1,6 @@
 PORTNAME=	IO-Compress-Brotli
 PORTVERSION=	0.017000
+PORTREVISION=	1
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +18,9 @@ RUN_DEPENDS=	p5-File-Slurper>0:devel/p5-File-Slurper
 
 USES=		gmake localbase:ldflags perl5
 USE_PERL5=	configure
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/IO/Compress/Brotli/Brotli.so
