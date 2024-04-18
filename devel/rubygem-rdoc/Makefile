@@ -1,11 +1,12 @@
 PORTNAME=	rdoc
-PORTVERSION=	6.6.2
+PORTVERSION=	6.6.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
-WWW=		https://ruby.github.io/rdoc/
+WWW=		https://ruby.github.io/rdoc/ \
+		https://github.com/ruby/rdoc
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
@@ -17,12 +18,11 @@ USES=		cpe gem
 
 NO_ARCH=	yes
 
-CPE_VENDOR=	ruby-lang
-
 PLIST_FILES=	bin/rdoc bin/ri share/man/man1/ri.1.gz
 
+CPE_VENDOR=	ruby-lang
+
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/man/ri.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
