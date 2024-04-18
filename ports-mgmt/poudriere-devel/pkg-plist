@@ -5,7 +5,6 @@ bin/poudriere
 @sample(0,0,0) etc/poudriered.conf.sample
 etc/rc.d/poudriered
 @comment libexec/poudriere/cachec
-libexec/poudriere/cached
 libexec/poudriere/clock
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
@@ -46,6 +45,7 @@ share/man/man8/poudriere.8.gz
 %%DATADIR%%/awk/json_jail.awk
 %%DATADIR%%/awk/json_top.awk
 %%DATADIR%%/awk/parse_MOVED.awk
+%%DATADIR%%/awk/processonelog.awk
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
 %%DATADIR%%/awk/unique_pkgnames_from_flavored_origins.awk
@@ -87,6 +87,7 @@ share/man/man8/poudriere.8.gz
 %%DATADIR%%/image_usb.sh
 %%DATADIR%%/image_zfs.sh
 %%DATADIR%%/image_zsnapshot.sh
+%%DATADIR%%/include/asserts.sh
 %%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh
