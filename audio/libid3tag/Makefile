@@ -1,19 +1,24 @@
 PORTNAME=	libid3tag
-DISTVERSION=	0.16.2
+PORTVERSION=	0.16.3
 CATEGORIES=	audio
-MASTER_SITES=	https://codeberg.org/tenacityteam/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://codeberg.org/tenacityteam/libid3tag/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ID3 tags library (part of MAD project)
-WWW=		https://mad.sourceforge.net/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	ID3 tag manipulation library
+WWW=		https://www.underbit.com/products/mad/ \
+		https://codeberg.org/tenacityteam/libid3tag
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe pathfix
-CPE_VENDOR=	libid3tag_project
-USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+CMAKE_ON=	BUILD_SHARED_LIBS
+USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/libid3tag
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+CPE_VENDOR=	libid3tag_project
 
 .include <bsd.port.mk>
