@@ -1,6 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.0
+DISTVERSION=	1.17.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,12 +19,11 @@ GH_ACCOUNT=	sigoden
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-1.0.6 \
-		anyhow-1.0.81 \
+		anyhow-1.0.82 \
 		assert_cmd-2.0.14 \
 		assert_fs-1.1.1 \
 		autocfg-1.2.0 \
 		base64-0.22.0 \
-		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		cfg-if-1.0.0 \
@@ -37,7 +36,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
-		either-1.10.0 \
+		either-1.11.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
@@ -53,7 +52,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		futures-task-0.3.30 \
 		futures-timer-3.0.3 \
 		futures-util-0.3.30 \
-		getrandom-0.2.12 \
+		getrandom-0.2.14 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.9.1 \
@@ -62,15 +61,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		home-0.5.9 \
 		ignore-0.4.22 \
 		indexmap-2.2.6 \
-		insta-1.36.1 \
-		itoa-1.0.10 \
+		insta-1.38.0 \
+		itoa-1.0.11 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
-		libredox-0.0.1 \
+		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		minimal-lexical-0.2.1 \
 		natord-1.0.9 \
 		nom-7.1.3 \
@@ -78,22 +77,21 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		num-traits-0.2.18 \
 		num_cpus-1.16.0 \
 		option-ext-0.2.0 \
-		pin-project-lite-0.2.13 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.79 \
-		quote-1.0.35 \
-		redox_syscall-0.4.1 \
-		redox_users-0.4.4 \
+		proc-macro2-1.0.80 \
+		quote-1.0.36 \
+		redox_users-0.4.5 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.3 \
 		relative-path-1.9.2 \
 		roff-0.2.1 \
-		rstest-0.18.2 \
-		rstest_macros-0.18.2 \
+		rstest-0.19.0 \
+		rstest_macros-0.19.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.32 \
 		ryu-1.0.17 \
@@ -101,12 +99,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		semver-1.0.22 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde_json-1.0.116 \
 		shell-words-1.1.0 \
-		similar-2.4.0 \
+		similar-2.5.0 \
 		slab-0.4.9 \
 		smawk-0.3.2 \
-		syn-2.0.55 \
+		syn-2.0.59 \
 		tempfile-3.10.1 \
 		termtree-0.4.1 \
 		textwrap-0.16.1 \
@@ -128,23 +126,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
-		winsafe-0.0.19 \
-		yaml-rust-0.4.5
+		windows_x86_64_msvc-0.52.5 \
+		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}
 
