@@ -13,6 +13,11 @@ include/z3_rcf.h
 include/z3_spacer.h
 include/z3_v1.h
 include/z3_version.h
-%%STATIC%%lib/libz3.a
+lib/cmake/z3/Z3Config.cmake
+lib/cmake/z3/Z3ConfigVersion.cmake
+lib/cmake/z3/Z3Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/z3/Z3Targets.cmake
 lib/libz3.so
-lib/libz3.so.0
+lib/libz3.so.4.13
+lib/libz3.so.4.13.0.0
+libdata/pkgconfig/z3.pc
