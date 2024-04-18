@@ -3189,3 +3189,4 @@ audio/gnuitar||2024-04-18|Has expired: Unmaintained, last upstream release in 20
 emulators/hugo||2024-04-18|Has expired: Unmaintained, last release in 2005 and uses deprecated gtk2 library
 net-p2p/gtorrentviewer||2024-04-18|Has expired: Unmaintained, last release in 2004 and uses deprecated gtk2
 net-im/tut||2024-04-18|Has expired: Requires deprecated lang/go119
+net/gost||2024-04-18|Has expired: Requires deprecated lang/go119

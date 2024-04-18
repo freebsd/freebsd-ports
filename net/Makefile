@@ -207,7 +207,6 @@
     SUBDIR += gopher
     SUBDIR += goreplay
     SUBDIR += gorss
-    SUBDIR += gost
     SUBDIR += gotthard
     SUBDIR += graphpath
     SUBDIR += grilo
