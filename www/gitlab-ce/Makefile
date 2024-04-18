@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.10.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -137,7 +137,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
 	rubygem-deckar01-task_list>=2.3.4<2.4:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.9.0<1.10.0:textproc/rubygem-gitlab-markup \
-	rubygem-commonmarker>=0.23.10<0.24:textproc/rubygem-commonmarker \
+	rubygem-commonmarker0>=0.23.10<0.24:textproc/rubygem-commonmarker0 \
 	rubygem-kramdown23>=2.3.1<2.4:textproc/rubygem-kramdown23 \
 	rubygem-redcloth>=4.3.3<4.4.0:www/rubygem-redcloth \
 	rubygem-org-ruby>=0.9.12<0.10.0:textproc/rubygem-org-ruby \
