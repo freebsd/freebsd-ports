@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.48.1
-PORTREVISION=	7
+DISTVERSION=	7.5.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -21,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
-		yarn-node18>0:www/yarn-node18
+		yarn-node20>0:www/yarn-node20
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
@@ -29,8 +28,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		app-builder>0:devel/app-builder \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		jq:textproc/jq \
-		npm:www/npm-node18 \
-		yarn:www/yarn-node18
+		npm:www/npm-node20 \
+		yarn:www/yarn-node20
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
@@ -85,12 +84,12 @@ MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	28
+ELECTRON_VER_MAJOR=	29
 
 # sh get_deps.sh
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.39.1-15b41f15c516ae3eecf8a098a9c9c7aac00444d7-integrity
-NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.37.0-d8f98d839c8cd8737acacdec111fb3bf272af54c-integrity
-NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.6.0-0413f4d0626b99838cd64ad09c88720aa2bec6ed-integrity
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.42.0-259d87233f1e065ae93cf8fe758bcc2461e3e814-integrity
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.39.3-8809af30bd56b3ac2e6db3c27d64b6458984e292-integrity
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.7.1-0a09293aa833b836ec6b17f6ab0e790097f3fdeb-integrity
 NPM_ESBUILD_VERS=	0.18.20
 SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 
@@ -132,6 +131,7 @@ fetch-yarn:
 		${TAR} cJf ${DISTDIR}/signal-desktop-${DISTVERSION}-yarn-cache.tar.gz  \
 			@yarn-offline-cache.mtree; \
 		${RM} -r ${WRKDIR}; \
+		${CP} /tmp/signal-desktop/yarn.lock ${FILESDIR}; \
 	fi
 
 post-extract:
@@ -153,8 +153,8 @@ do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
 	${ECHO_CMD} 'nodedir "${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers"' >> ${WRKSRC}/.yarnrc
 
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron25/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron25 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron29/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron29 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
@@ -183,6 +183,8 @@ do-build:
 
 	${MKDIR} ${WRKDIR}/esbuild-freebsd-64
 	${TAR} -xf ${WRKDIR}/yarn-offline-cache/@esbuild-freebsd-${ESBUILD_ARCH}-${NPM_ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64
+
+	${CP} ${FILESDIR}/dns-fallback.json ${WRKSRC}/build
 
 	# For offline build
 	${ECHO_CMD} offline=true > ${WRKDIR}/.npmrc
