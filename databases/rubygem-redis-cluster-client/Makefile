@@ -1,5 +1,5 @@
 PORTNAME=	redis-cluster-client
-PORTVERSION=	0.7.11
+PORTVERSION=	0.8.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/redis-rb/redis-cluster-client
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-redis-client>=0.12<1:databases/rubygem-redis-client
+RUN_DEPENDS=	rubygem-redis-client>=0.22<1:databases/rubygem-redis-client
 
 USES=		gem
 
