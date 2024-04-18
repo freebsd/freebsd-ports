@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2024-04-18 22:33:21 UTC
++++ CMakeLists.txt
+@@ -9,7 +9,7 @@ set (PROJECT_DOMAIN    "linuxsampler.org")
+ set (PROJECT_COPYRIGHT "Copyright (C) 2004-2024, rncbc aka Rui Nuno Capela. All rights reserved.")
+ set (PROJECT_DOMAIN    "linuxsampler.org")
+ 
+-execute_process (
++#[[ execute_process (
+   COMMAND git describe --tags --dirty --abbrev=6
+   WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+   OUTPUT_VARIABLE GIT_DESCRIBE_OUTPUT
+@@ -32,7 +32,7 @@ if (GIT_DESCRIBE_RESULT EQUAL 0)
+     set (GIT_VERSION "${GIT_VERSION} [${GIT_REVPARSE_OUTPUT}]")
+   endif ()
+   set (PROJECT_VERSION "${GIT_VERSION}")
+-endif ()
++endif () ]]
+ 
+ 
+ set (CONFIG_PREFIX "${CMAKE_INSTALL_PREFIX}")

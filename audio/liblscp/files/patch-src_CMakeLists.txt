@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2024-04-18 22:33:51 UTC
++++ src/CMakeLists.txt
+@@ -62,6 +62,6 @@ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/lscp.pc
+   DESTINATION ${CONFIG_INCLUDEDIR}/lscp)
+ 
+ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/lscp.pc
+-  DESTINATION ${CONFIG_LIBDIR}/pkgconfig)
++  DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
+ 
+ 
