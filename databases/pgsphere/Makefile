@@ -10,6 +10,9 @@ WWW=		https://pgsphere.github.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.pg_sphere
 
+DEPRECATED=	The repository has been archived by the owner on 2023-08-09 and is inactive for almost 4.5 years
+EXPIRATION_DATE=2024-04-30
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		gmake pgsql
