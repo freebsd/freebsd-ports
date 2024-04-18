@@ -11,8 +11,6 @@ WWW=		https://github.com/jborean93/pykrb5
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.32<4.0.0:lang/cython@${PY_FLAVOR}
-
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
