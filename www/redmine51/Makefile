@@ -1,5 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	5.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	51
@@ -46,7 +47,7 @@ RUN_DEPENDS=	rubygem-actionpack-xml_parser-rails61>=0:textproc/rubygem-actionpac
 # to be removed if https://www.redmine.org/issues/37394 is fixed
 RUN_DEPENDS+=	rubygem-redcarpet>=3.6.0:textproc/rubygem-redcarpet \
 		rubygem-html-pipeline>=2.13.2:textproc/rubygem-html-pipeline \
-		rubygem-commonmarker>=0.23.8:textproc/rubygem-commonmarker \
+		rubygem-commonmarker0>=0.23.8:textproc/rubygem-commonmarker0 \
 		rubygem-sanitize>=6.0:textproc/rubygem-sanitize \
 		rubygem-deckar01-task_list>=2.3.2:www/rubygem-deckar01-task_list
 
