@@ -1,7 +1,6 @@
 PORTNAME=	qcs-sdk-python
 DISTVERSIONPREFIX=	python/v
-DISTVERSION=	0.16.3
-PORTREVISION=	2
+DISTVERSION=	0.17.7
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,42 +25,45 @@ GH_PROJECT=	qcs-sdk-rust
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		aho-corasick-1.1.2 \
+		aho-corasick-1.1.3 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.79 \
+		anyhow-1.0.82 \
 		approx-0.5.1 \
-		arc-swap-1.6.0 \
-		assert2-0.3.11 \
-		assert2-macros-0.3.11 \
+		arc-swap-1.7.1 \
+		assert2-0.3.14 \
+		assert2-macros-0.3.14 \
 		async-socks5-0.5.1 \
 		async-stream-0.3.5 \
 		async-stream-impl-0.3.5 \
-		async-trait-0.1.77 \
+		async-trait-0.1.80 \
 		atty-0.2.14 \
-		autocfg-1.1.0 \
+		autocfg-1.2.0 \
 		axum-0.6.20 \
 		axum-core-0.3.4 \
-		backtrace-0.3.69 \
+		backoff-0.4.0 \
+		backtrace-0.3.71 \
 		base64-0.13.1 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		bindgen-0.53.3 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		built-0.6.1 \
-		bumpalo-3.14.0 \
+		bumpalo-3.16.0 \
 		bytecount-0.6.7 \
 		byteorder-1.5.0 \
-		bytes-1.5.0 \
+		bytes-1.6.0 \
 		cached-0.44.0 \
 		cached_proc_macro-0.17.0 \
 		cached_proc_macro_types-0.1.1 \
 		cargo-lock-9.0.0 \
-		cc-1.0.83 \
+		cc-1.0.94 \
 		cexpr-0.4.0 \
-		cfg-expr-0.15.6 \
+		cfg-expr-0.15.8 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
+		chrono-0.4.38 \
 		clang-sys-0.29.3 \
 		clap-2.34.0 \
 		console-0.15.8 \
@@ -70,7 +72,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
 		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.11 \
+		crossbeam-channel-0.5.12 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
@@ -85,17 +87,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		derive_builder_core-0.12.0 \
 		derive_builder_macro-0.12.0 \
 		derive_more-0.99.17 \
+		diff-0.1.13 \
 		digest-0.10.7 \
-		dircpy-0.3.15 \
-		either-1.9.0 \
+		dircpy-0.3.16 \
+		either-1.11.0 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.33 \
+		encoding_rs-0.8.34 \
 		enum-as-inner-0.5.1 \
 		env_logger-0.7.1 \
 		equivalent-1.0.1 \
 		erased-serde-0.3.31 \
 		errno-0.3.8 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		fixedbitset-0.4.2 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
@@ -108,25 +111,27 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-macro-0.3.30 \
 		futures-sink-0.3.30 \
 		futures-task-0.3.30 \
-		futures-timer-3.0.2 \
+		futures-timer-3.0.3 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
-		getrandom-0.2.12 \
+		getrandom-0.2.14 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
-		h2-0.3.24 \
+		h2-0.3.26 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.3 \
 		headers-0.3.9 \
 		headers-core-0.2.0 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.4 \
+		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		home-0.5.9 \
-		http-0.2.11 \
+		http-0.2.12 \
 		http-body-0.4.6 \
+		http-range-header-0.3.1 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humantime-1.3.0 \
@@ -139,19 +144,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
 		indexmap-1.9.3 \
-		indexmap-2.1.0 \
-		indoc-2.0.4 \
-		insta-1.34.0 \
+		indexmap-2.2.6 \
+		indoc-2.0.5 \
+		insta-1.38.0 \
 		instant-0.1.12 \
-		inventory-0.3.14 \
+		inventory-0.3.15 \
 		ipnet-2.9.0 \
-		is-terminal-0.4.10 \
-		itertools-0.10.5 \
+		is-terminal-0.4.12 \
 		itertools-0.11.0 \
-		itoa-1.0.10 \
-		jobserver-0.1.27 \
-		js-sys-0.3.67 \
-		jsonwebtoken-8.3.0 \
+		itertools-0.12.1 \
+		itoa-1.0.11 \
+		jobserver-0.1.30 \
+		js-sys-0.3.69 \
+		jsonwebtoken-9.3.0 \
 		jwalk-0.8.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
@@ -162,37 +167,38 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.152 \
+		libc-0.2.153 \
 		libloading-0.5.2 \
-		libloading-0.8.1 \
+		libloading-0.8.3 \
 		libquil-sys-0.4.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
-		log-0.4.20 \
+		log-0.4.21 \
 		maplit-1.0.2 \
 		matchit-0.7.3 \
 		matrixmultiply-0.3.8 \
-		memchr-2.7.1 \
-		memoffset-0.9.0 \
+		memchr-2.7.2 \
+		memoffset-0.9.1 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.1 \
-		mio-0.8.10 \
-		multimap-0.8.3 \
+		miniz_oxide-0.7.2 \
+		mio-0.8.11 \
+		multimap-0.10.0 \
 		ndarray-0.15.6 \
 		nom-5.1.3 \
 		nom-7.1.3 \
 		nom_locate-4.2.0 \
 		nu-ansi-term-0.46.0 \
-		num-0.4.1 \
+		num-0.4.2 \
 		num-bigint-0.4.4 \
-		num-complex-0.4.4 \
-		num-integer-0.1.45 \
-		num-iter-0.1.43 \
+		num-complex-0.4.5 \
+		num-conv-0.1.0 \
+		num-integer-0.1.46 \
+		num-iter-0.1.44 \
 		num-rational-0.4.1 \
-		num-traits-0.2.17 \
+		num-traits-0.2.18 \
 		num_cpus-1.16.0 \
 		numpy-0.20.0 \
 		object-0.32.2 \
@@ -207,137 +213,149 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
 		paste-1.0.14 \
-		pbjson-0.5.1 \
-		pbjson-build-0.5.1 \
+		pbjson-0.6.0 \
+		pbjson-build-0.6.2 \
+		pbjson-types-0.6.0 \
 		peeking_take_while-0.1.2 \
-		pem-1.1.1 \
+		pem-3.0.4 \
 		percent-encoding-2.3.1 \
 		petgraph-0.6.4 \
-		pin-project-1.1.4 \
-		pin-project-internal-1.1.4 \
-		pin-project-lite-0.2.13 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.29 \
+		pkg-config-0.3.30 \
+		portable-atomic-1.6.0 \
+		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		prettyplease-0.1.25 \
-		proc-macro2-1.0.78 \
-		prost-0.11.9 \
-		prost-build-0.11.9 \
-		prost-derive-0.11.9 \
-		prost-types-0.11.9 \
-		pyo3-0.20.2 \
+		prettyplease-0.2.19 \
+		proc-macro2-1.0.81 \
+		prost-0.12.4 \
+		prost-build-0.12.4 \
+		prost-derive-0.12.4 \
+		prost-types-0.12.4 \
+		pyo3-0.20.3 \
 		pyo3-asyncio-0.20.0 \
-		pyo3-build-config-0.20.2 \
-		pyo3-ffi-0.20.2 \
+		pyo3-build-config-0.20.3 \
+		pyo3-ffi-0.20.3 \
 		pyo3-log-0.8.4 \
-		pyo3-macros-0.20.2 \
-		pyo3-macros-backend-0.20.2 \
+		pyo3-macros-0.20.3 \
+		pyo3-macros-backend-0.20.3 \
 		qcs-api-0.2.1 \
-		qcs-api-client-common-0.7.9 \
-		qcs-api-client-grpc-0.7.9 \
-		qcs-api-client-openapi-0.8.9 \
+		qcs-api-client-common-0.7.12 \
+		qcs-api-client-grpc-0.7.14 \
+		qcs-api-client-openapi-0.8.13 \
 		quick-error-1.2.3 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rawpointer-0.2.1 \
-		rayon-1.8.1 \
+		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.10.3 \
-		regex-automata-0.4.5 \
-		regex-syntax-0.8.2 \
-		reqwest-0.11.23 \
-		reqwest-middleware-0.2.4 \
-		reqwest-tracing-0.4.7 \
-		rigetti-pyo3-0.3.1 \
+		regex-1.10.4 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.8.3 \
+		reqwest-0.11.27 \
+		reqwest-middleware-0.2.5 \
+		reqwest-tracing-0.4.8 \
+		rigetti-pyo3-0.3.4 \
 		ring-0.16.20 \
-		ring-0.17.7 \
-		rmp-0.8.12 \
-		rmp-serde-1.1.2 \
+		ring-0.17.8 \
+		rmp-0.8.14 \
+		rmp-serde-1.2.0 \
 		rstest-0.17.0 \
 		rstest_macros-0.17.0 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.38.30 \
+		rustix-0.38.32 \
 		rustls-0.19.1 \
 		rustls-0.21.10 \
+		rustls-0.22.3 \
 		rustls-native-certs-0.5.0 \
 		rustls-native-certs-0.6.3 \
+		rustls-native-certs-0.7.0 \
 		rustls-pemfile-1.0.4 \
+		rustls-pemfile-2.1.2 \
+		rustls-pki-types-1.4.1 \
 		rustls-webpki-0.101.7 \
-		rustversion-1.0.14 \
-		ryu-1.0.16 \
+		rustls-webpki-0.102.2 \
+		rustversion-1.0.15 \
+		ryu-1.0.17 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		sct-0.6.1 \
 		sct-0.7.1 \
-		security-framework-2.9.2 \
-		security-framework-sys-2.9.1 \
-		semver-1.0.21 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		security-framework-2.10.0 \
+		security-framework-sys-2.10.0 \
+		semver-1.0.22 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
 		sharded-slab-0.1.7 \
 		shlex-0.1.1 \
-		similar-2.4.0 \
+		similar-2.5.0 \
 		simple_asn1-0.6.2 \
 		simple_logger-4.3.3 \
 		slab-0.4.9 \
-		smallvec-1.13.1 \
-		socket2-0.5.5 \
+		smallvec-1.13.2 \
+		socket2-0.5.6 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
 		strsim-0.10.0 \
-		strum-0.24.1 \
-		strum_macros-0.24.3 \
+		strum-0.26.2 \
+		strum_macros-0.26.2 \
+		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.48 \
+		syn-2.0.60 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
-		system-deps-6.2.0 \
-		target-lexicon-0.12.13 \
+		system-deps-6.2.2 \
+		target-lexicon-0.12.14 \
 		task-local-extensions-0.1.4 \
-		tempfile-3.9.0 \
+		tempfile-3.10.1 \
 		termcolor-1.4.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
 		textwrap-0.11.0 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
-		thread_local-1.1.7 \
-		time-0.3.28 \
-		time-core-0.1.1 \
-		time-macros-0.2.14 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
+		thread_local-1.1.8 \
+		time-0.3.36 \
+		time-core-0.1.2 \
+		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.35.1 \
+		tokio-1.37.0 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.22.0 \
 		tokio-rustls-0.24.1 \
+		tokio-rustls-0.25.0 \
 		tokio-socks-0.5.1 \
-		tokio-stream-0.1.14 \
+		tokio-stream-0.1.15 \
 		tokio-util-0.7.10 \
 		toml-0.7.8 \
-		toml-0.8.8 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.19.15 \
-		toml_edit-0.21.0 \
-		tonic-0.9.2 \
-		tonic-build-0.9.2 \
+		toml_edit-0.22.9 \
+		tonic-0.11.0 \
+		tonic-build-0.11.0 \
+		tonic-web-0.11.0 \
 		tower-0.4.13 \
+		tower-http-0.4.4 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
@@ -357,7 +375,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicase-2.7.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.22 \
+		unicode-normalization-0.1.23 \
 		unicode-width-0.1.11 \
 		unindent-0.2.3 \
 		untrusted-0.7.1 \
@@ -365,26 +383,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		url-2.5.0 \
 		urlencoding-2.1.3 \
 		urlpattern-0.2.0 \
-		uuid-1.7.0 \
+		uuid-1.8.0 \
 		valuable-0.1.0 \
 		vec_map-0.8.2 \
-		version-compare-0.1.1 \
+		version-compare-0.2.0 \
 		version_check-0.9.4 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
-		warp-0.3.6 \
+		warp-0.3.7 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.90 \
-		wasm-bindgen-backend-0.2.90 \
-		wasm-bindgen-futures-0.4.40 \
-		wasm-bindgen-macro-0.2.90 \
-		wasm-bindgen-macro-support-0.2.90 \
-		wasm-bindgen-shared-0.2.90 \
-		web-sys-0.3.67 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-futures-0.4.42 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		web-sys-0.3.69 \
 		webpki-0.21.4 \
-		webpki-roots-0.25.3 \
+		webpki-roots-0.25.4 \
 		which-3.1.1 \
-		which-4.4.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
@@ -392,29 +409,31 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.34 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.5.40 \
+		winnow-0.6.6 \
 		winreg-0.50.0 \
-		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
+		zeroize-1.7.0 \
 		zeromq-src-0.2.6+4.3.4 \
 		zmq-0.10.0 \
 		zmq-sys-0.12.0 \
-		quil-rs@git+https://github.com/rigetti/quil-rs?tag=quil-py/v0.6.5\#bfee2c882b402c7b14b921af2ca346b639378f4b
+		quil-rs@git+https://github.com/rigetti/quil-rs?tag=quil-py/v0.9.1\#4179fb03feff6b83edfb7a0448b0b3967ed28212
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -431,6 +450,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-patch:
 	${MKDIR} ${WRKDIR}/quil-rs-quil-py
-	${MV} ${WRKDIR}/quil-rs-quil-py-v0.6.5 ${WRKDIR}/quil-rs-quil-py/v0.6.5
+	${MV} ${WRKDIR}/quil-rs-quil-py-v0.9.1 ${WRKDIR}/quil-rs-quil-py/v0.9.1
 
 .include <bsd.port.mk>
