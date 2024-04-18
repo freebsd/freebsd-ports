@@ -1,13 +1,14 @@
 PORTNAME=	libmad
-PORTVERSION=	0.16.3
+PORTVERSION=	0.16.4
 CATEGORIES=	audio
-MASTER_SITES=	https://codeberg.org/tenacityteam/libmad/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://codeberg.org/tenacityteam/libmad/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Libmad library (part of MAD project)
-WWW=		https://www.underbit.com/products/mad/
+COMMENT=	MPEG audio decoder library
+WWW=		https://www.underbit.com/products/mad/ \
+		https://codeberg.org/tenacityteam/libmad
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe pathfix

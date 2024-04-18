@@ -1,7 +1,7 @@
-MAD is a high-quality MPEG audio decoder. It currently supports MPEG-1 and the
-MPEG-2 extension to lower sampling frequencies, as well as the de facto MPEG 2.5
-format. All three audio layers -- Layer I, Layer II, and Layer III (i.e. MP3) --
-are fully implemented.
+MAD (libmad) is a high-quality MPEG audio decoder. It currently supports MPEG-1
+and the MPEG-2 extension to Lower Sampling Frequencies, as well as the so-called
+MPEG 2.5 format. All three audio layers (Layer I, Layer II, and Layer III a.k.a.
+MP3) are fully implemented.
 
 MAD does not yet support MPEG-2 multichannel audio (although it should be
 backward compatible with such streams) nor does it currently support AAC.
@@ -10,7 +10,9 @@ MAD has the following special features:
 - 24-bit PCM output
 - 100% fixed-point (integer) computation
 - completely new implementation based on the ISO/IEC standards
-- available under the terms of the GNU General Public License (GPL)
+- distributed under the terms of the GNU General Public License (GPL)
 
-The software is distributed as a library (libmad) and command-line front-end
-(madplay). Also included is an ID3 tag manipulation library (libid3tag).
+Because MAD provides full 24-bit PCM output, applications using MAD are able to
+produce high quality audio. Even when the output device supports only 16-bit
+PCM, applications can use the extra resolution to increase the audible dynamic
+range through the use of dithering or noise shaping.
