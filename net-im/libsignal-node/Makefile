@@ -1,7 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.39.1
-PORTREVISION=	2
+DISTVERSION=	0.42.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-node
 DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz
@@ -15,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-FETCH_DEPENDS=	yarn-node18>0:www/yarn-node18
-EXTRACT_DEPENDS=yarn-node18>0:www/yarn-node18
+FETCH_DEPENDS=	yarn-node20>0:www/yarn-node20
+EXTRACT_DEPENDS=yarn-node20>0:www/yarn-node20
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		protoc:devel/protobuf \
 		yarn:www/yarn-node18
