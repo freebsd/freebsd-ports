@@ -1,12 +1,13 @@
 PORTNAME=	subversion-book
 DISTVERSION=	4515
+PORTREVISION=	1
 CATEGORIES=	devel misc
 MASTER_SITES=	LOCAL/lev
 DISTFILES=	# empty
 DIST_SUBDIR=	subversion18
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Subversion Documentation HTML/PDF
 WWW=		https://svnbook.red-bean.com/
 
