@@ -1,5 +1,5 @@
 PORTNAME=	cosmic-comp
-PORTVERSION=	s20240411
+PORTVERSION=	s20240419
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,11 +17,12 @@ RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri \
 		vulkan-loader>0:graphics/vulkan-loader \
 		Xwayland:x11-servers/xwayland
 
-USES=		cargo gl
+USES=		cargo gl xorg
 USE_GITHUB=	yes
 USE_GL=		gbm
+USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TAGNAME=	895ea6a
+GH_TAGNAME=	8cee91c
 GH_TUPLE=	pop-os:iced:0.4.2-1941-g1d9bb7fd:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
