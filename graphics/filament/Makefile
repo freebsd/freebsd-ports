@@ -1,7 +1,10 @@
 PORTNAME=	filament
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.51.3
+DISTVERSION=	1.51.4
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a5bba37dc5463b6e7c428437c8cd3c5792b72dab.patch:-p1 # https://github.com/google/filament/pull/7764
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Real-time physically based rendering engine
