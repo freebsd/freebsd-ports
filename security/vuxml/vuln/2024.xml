@@ -1,3 +1,40 @@
+  <vuln vid="ecafc4af-fe8a-11ee-890c-08002784c58d">
+    <topic>clamav -- Possible crash in the HTML file parser that could cause a denial-of-service (DoS) condition</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>1.3.0,1</ge><lt>1.3.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Błażej Pawłowski reports:</p>
+	<blockquote cite="https://blog.clamav.net/2024/04/clamav-131-123-106-patch-versions.html">
+	  <p>
+	    A vulnerability in the HTML parser of ClamAV could allow
+	    an unauthenticated, remote attacker to cause a denial of
+	    service (DoS) condition on an affected device. The
+	    vulnerability is due to an issue in the C to Rust foreign
+	    function interface. An attacker could exploit this
+	    vulnerability by submitting a crafted file containing HTML
+	    content to be scanned by ClamAV on an affected device. An
+	    exploit could allow the attacker to cause the ClamAV
+	    scanning process to terminate, resulting in a DoS
+	    condition on the affected software.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-20380</cvename>
+      <url>https://blog.clamav.net/2024/04/clamav-131-123-106-patch-versions.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-17</discovery>
+      <entry>2024-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ebdd56b-fe72-11ee-bc57-00e081b7aa2d">
     <topic>jenkins -- Terrapin SSH vulnerability in Jenkins CLI client</topic>
     <affects>
