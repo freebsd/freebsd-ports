@@ -1,7 +1,6 @@
 PORTNAME=	pcsx2
-PORTVERSION=	1.7.4970
+PORTVERSION=	1.7.5698
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -15,15 +14,20 @@ ONLY_FOR_ARCHS=	amd64
 
 # Notes on dependencies (see cmake/SearchForStuff.cmake):
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
-# - fmt, rapidyaml, soundtouch, zydis, zstd, libzip
+# - fmt, rapidyaml, soundtouch, zydis, libzip
 #   are always included from 3rdparty/
 LIB_DEPENDS=	libpng.so:graphics/png \
+		libzstd.so:archivers/zstd \
+		liblz4.so:archivers/liblz4 \
+		libwebp.so:graphics/webp \
+		libfreetype.so:print/freetype2 \
 		libdbus-1.so:devel/dbus \
 		libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
+		libshaderc_shared.so:graphics/shaderc \
 		libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
 		libjack.so:audio/jack \
@@ -34,7 +38,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
 USES=		cmake compiler:c++20-lang \
-		desktop-file-utils elfctl gl pkgconfig qt:6 sdl xorg
+		desktop-file-utils elfctl gl jpeg pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
@@ -42,7 +46,7 @@ GH_PROJECT=	pcsx2
 
 USE_GL=		egl
 USE_SDL=	sdl2
-USE_XORG=	ice x11 xcb xext xpm xrandr
+USE_XORG=	ice x11 xcb xext xpm xrandr xrender
 USE_QT=		base tools
 ELF_FEATURES=	+wxneeded:bin/pcsx2-qt
 
@@ -71,7 +75,8 @@ PORTDOCS=	Debugger.pdf GameIndex.pdf
 #   because only necessary resources are installed there (e.g. no dx11 stuff)
 do-install:
 	cd ${CONFIGURE_WRKSRC}/bin && \
-		${COPYTREE_SHARE} resources/ ${STAGEDIR}${DATADIR}/
+		${COPYTREE_SHARE} resources/ ${STAGEDIR}${DATADIR}/ && \
+		${RM} -rf ${STAGEDIR}${DATADIR}/resources/docs/
 	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/bin/pcsx2-qt \
 		${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/pcsx2-qt/resources/icons/AppIcon64.png \
@@ -81,7 +86,7 @@ do-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
-		${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/bin/docs/|} \
+		${INSTALL_DATA} ${PORTDOCS:S|^|${CONFIGURE_WRKSRC}/bin/resources/docs/|} \
 			${STAGEDIR}${DOCSDIR}
 
 # For maintainer (do not forget to clean up Makefile.tuples afterwards to

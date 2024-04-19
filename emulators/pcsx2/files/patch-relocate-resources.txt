@@ -1,23 +1,23 @@
 Allow relocation of resource files
 
---- cmake/BuildParameters.cmake.orig	2023-11-10 10:14:25 UTC
+--- cmake/BuildParameters.cmake.orig	2024-04-07 18:04:50 UTC
 +++ cmake/BuildParameters.cmake
-@@ -259,6 +259,10 @@ endif()
- 	list(APPEND PCSX2_DEFS DISABLE_BUILD_DATE)
- endif()
+@@ -228,6 +228,10 @@ if(USE_CLANG AND TIMETRACE)
  
-+if(DEFINED PCSX2_RESOURCES_PATH)
-+    add_compile_definitions(PCSX2_RESOURCES_PATH="${PCSX2_RESOURCES_PATH}")
+ if(USE_CLANG AND TIMETRACE)
+ 	add_compile_options(-ftime-trace)
 +endif()
 +
- #-------------------------------------------------------------------------------
- # MacOS-specific things
- #-------------------------------------------------------------------------------
---- pcsx2/Pcsx2Config.cpp.orig	2023-08-31 07:45:23 UTC
-+++ pcsx2/Pcsx2Config.cpp
-@@ -1676,6 +1676,10 @@ void EmuFolders::SetResourcesDirectory()
++if(DEFINED PCSX2_RESOURCES_PATH)
++	add_compile_definitions(PCSX2_RESOURCES_PATH="${PCSX2_RESOURCES_PATH}")
+ endif()
  
- void EmuFolders::SetResourcesDirectory()
+ set(PCSX2_WARNINGS ${DEFAULT_WARNINGS})
+--- pcsx2/Pcsx2Config.cpp.orig	2024-04-10 11:22:25 UTC
++++ pcsx2/Pcsx2Config.cpp
+@@ -1855,6 +1855,10 @@ bool EmuFolders::SetResourcesDirectory()
+ 
+ bool EmuFolders::SetResourcesDirectory()
  {
 +#ifdef PCSX2_RESOURCES_PATH
 +	// Resources' path specified at compile time
@@ -26,11 +26,11 @@ Allow relocation of resource files
  #ifndef __APPLE__
  	// On Windows/Linux, these are in the binary directory.
  	Resources = Path::Combine(AppRoot, "resources");
-@@ -1683,6 +1687,7 @@ void EmuFolders::SetResourcesDirectory()
+@@ -1862,6 +1866,7 @@ bool EmuFolders::SetResourcesDirectory()
  	// On macOS, this is in the bundle resources directory.
  	Resources = Path::Canonicalize(Path::Combine(AppRoot, "../Resources"));
  #endif
 +#endif // PCSX2_RESOURCES_PATH
- }
  
- bool EmuFolders::ShouldUsePortableMode()
+ 	Console.WriteLnFmt("Resources Directory: {}", Resources);
+ 
