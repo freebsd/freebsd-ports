@@ -1,14 +1,13 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.8.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
 WWW=		https://terraform.io/
 
-USES=		cpe go:1.21,modules
+USES=		cpe go:1.22,modules
 
 LICENSE_NAME=	Business Source License 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
