@@ -6782,6 +6782,7 @@
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-childprocess3
     SUBDIR += rubygem-childprocess40
+    SUBDIR += rubygem-childprocess41
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-chronic_duration
     SUBDIR += rubygem-claide
