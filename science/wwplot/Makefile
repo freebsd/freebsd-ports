@@ -1,7 +1,6 @@
 PORTNAME=	wwplot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.9
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,12 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS} \
-		qt5-core>0:devel/qt5-core \
-		qt5-declarative>0:x11-toolkits/qt5-declarative \
-		qt5-gui>0:x11-toolkits/qt5-gui
+		qt6-base>0:devel/qt6-base
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyside2>0:devel/pyside2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyside6>0:devel/pyside6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext meson python shebangfix
