@@ -1,10 +1,10 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	2690
+DISTVERSION=	2694
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Facebook's LLaMA model in C/C++
+COMMENT=	Facebook's LLaMA model in C/C++ # '
 WWW=		https://github.com/ggerganov/llama.cpp
 
 LICENSE=	MIT
@@ -33,6 +33,6 @@ EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
 BINARY_ALIAS=	git=false
 
-# 1 test fails dur to a missing model file stories260K.gguf
+# 1 test fails due to a missing model file (stories260K.gguf)
 
 .include <bsd.port.mk>
