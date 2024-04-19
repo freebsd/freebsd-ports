@@ -84,7 +84,6 @@ include/duckdb/common/common.hpp
 include/duckdb/common/compressed_file_system.hpp
 include/duckdb/common/constants.hpp
 include/duckdb/common/crypto/md5.hpp
-include/duckdb/common/cycle_counter.hpp
 include/duckdb/common/deque.hpp
 include/duckdb/common/dl.hpp
 include/duckdb/common/enum_class_hash.hpp
@@ -143,6 +142,7 @@ include/duckdb/common/extra_operator_info.hpp
 include/duckdb/common/extra_type_info.hpp
 include/duckdb/common/fast_mem.hpp
 include/duckdb/common/file_buffer.hpp
+include/duckdb/common/file_open_flags.hpp
 include/duckdb/common/file_opener.hpp
 include/duckdb/common/file_system.hpp
 include/duckdb/common/filename_pattern.hpp
@@ -537,6 +537,7 @@ include/duckdb/main/config.hpp
 include/duckdb/main/connection.hpp
 include/duckdb/main/connection_manager.hpp
 include/duckdb/main/database.hpp
+include/duckdb/main/database_file_opener.hpp
 include/duckdb/main/database_manager.hpp
 include/duckdb/main/database_path_and_type.hpp
 include/duckdb/main/db_instance_cache.hpp
@@ -587,7 +588,7 @@ include/duckdb/main/stream_query_result.hpp
 include/duckdb/main/table_description.hpp
 include/duckdb/main/valid_checker.hpp
 include/duckdb/optimizer/column_binding_replacer.hpp
-include/duckdb/optimizer/column_lifetime_optimizer.hpp
+include/duckdb/optimizer/column_lifetime_analyzer.hpp
 include/duckdb/optimizer/common_aggregate_optimizer.hpp
 include/duckdb/optimizer/compressed_materialization.hpp
 include/duckdb/optimizer/cse_optimizer.hpp
@@ -698,6 +699,7 @@ include/duckdb/parser/parsed_data/alter_table_info.hpp
 include/duckdb/parser/parsed_data/attach_info.hpp
 include/duckdb/parser/parsed_data/bound_pragma_info.hpp
 include/duckdb/parser/parsed_data/comment_on_column_info.hpp
+include/duckdb/parser/parsed_data/copy_database_info.hpp
 include/duckdb/parser/parsed_data/copy_info.hpp
 include/duckdb/parser/parsed_data/create_aggregate_function_info.hpp
 include/duckdb/parser/parsed_data/create_collation_info.hpp
@@ -807,6 +809,7 @@ include/duckdb/planner/expression/bound_comparison_expression.hpp
 include/duckdb/planner/expression/bound_conjunction_expression.hpp
 include/duckdb/planner/expression/bound_constant_expression.hpp
 include/duckdb/planner/expression/bound_default_expression.hpp
+include/duckdb/planner/expression/bound_expanded_expression.hpp
 include/duckdb/planner/expression/bound_function_expression.hpp
 include/duckdb/planner/expression/bound_lambda_expression.hpp
 include/duckdb/planner/expression/bound_lambdaref_expression.hpp
@@ -834,6 +837,7 @@ include/duckdb/planner/expression_binder/order_binder.hpp
 include/duckdb/planner/expression_binder/qualify_binder.hpp
 include/duckdb/planner/expression_binder/relation_binder.hpp
 include/duckdb/planner/expression_binder/returning_binder.hpp
+include/duckdb/planner/expression_binder/select_bind_state.hpp
 include/duckdb/planner/expression_binder/select_binder.hpp
 include/duckdb/planner/expression_binder/table_function_binder.hpp
 include/duckdb/planner/expression_binder/update_binder.hpp
@@ -894,6 +898,7 @@ include/duckdb/planner/operator/logical_top_n.hpp
 include/duckdb/planner/operator/logical_unconditional_join.hpp
 include/duckdb/planner/operator/logical_unnest.hpp
 include/duckdb/planner/operator/logical_update.hpp
+include/duckdb/planner/operator/logical_vacuum.hpp
 include/duckdb/planner/operator/logical_window.hpp
 include/duckdb/planner/operator_extension.hpp
 include/duckdb/planner/parsed_data/bound_create_function_info.hpp

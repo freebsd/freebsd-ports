@@ -1,10 +1,7 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	databases
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ca28b1954bbbb66d4d78221e3dd5f47e0b54dcca.patch:-p1 # check for IUTF8 flag defined before setting it: https://github.com/duckdb/duckdb/pull/11488
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-process SQL OLAP database management system
@@ -15,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
-GH_TUPLE=	duckdb:sqlite_scanner:c134346:sqlite/extension/sqlite_scanner
+GH_TUPLE=	duckdb:sqlite_scanner:091197e:sqlite/extension/sqlite_scanner
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_UNITTESTS
