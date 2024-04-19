@@ -1,3 +1,35 @@
+  <vuln vid="4ebdd56b-fe72-11ee-bc57-00e081b7aa2d">
+    <topic>jenkins -- Terrapin SSH vulnerability in Jenkins CLI client</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.452</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.440.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-04-17/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3386 / CVE-2023-48795</h5>
+	  <p>Terrapin SSH vulnerability in Jenkins CLI client</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-48795</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-04-17/</url>
+    </references>
+    <dates>
+      <discovery>2024-04-17</discovery>
+      <entry>2024-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f90bf863-e43c-4db3-b5a8-d9603684657a">
     <topic>electron{27,28,29} -- multiple vulnerabilities</topic>
     <affects>
