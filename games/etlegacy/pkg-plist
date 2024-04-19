@@ -4,12 +4,14 @@
 %%I386%%%%CLIENT%%bin/etl.i386
 %%POWERPC%%bin/etl.powerpc
 %%POWERPC64%%bin/etl.powerpc64
+%%POWERPC64LE%%bin/etl.powerpc64le
 %%AARCH64%%%%DEDICATED%%bin/etlded.aarch64
 %%AMD64%%%%DEDICATED%%bin/etlded.x86_64
 %%ARMV7%%%%DEDICATED%%bin/etlded.armv7
 %%I386%%%%DEDICATED%%bin/etlded.i386
 %%POWERPC%%bin/etlded.powerpc
 %%POWERPC64%%bin/etlded.powerpc64
+%%POWERPC64LE%%bin/etlded.powerpc64le
 lib/etlegacy/etmain/campaigncycle.cfg
 lib/etlegacy/etmain/etl_server.cfg
 lib/etlegacy/etmain/etl_server_comp.cfg
@@ -130,6 +132,7 @@ lib/etlegacy/legacy/luascripts/wolfadmin/util/util.lua
 %%I386%%lib/etlegacy/legacy/qagame.mp.fbsd.i386.so
 %%POWERPC%%lib/etlegacy/legacy/qagame.mp.fbsd.powerpc.so
 %%POWERPC64%%lib/etlegacy/legacy/qagame.mp.fbsd.powerpc64.so
+%%POWERPC64LE%%lib/etlegacy/legacy/qagame.mp.fbsd.powerpc64le.so
 lib/etlegacy/legacy/rules.toml
 lib/etlegacy/legacy/wolfadmin.toml
 %%AARCH64%%%%CLIENT%%lib/etlegacy/librenderer_opengl1_aarch64.so
@@ -138,12 +141,14 @@ lib/etlegacy/legacy/wolfadmin.toml
 %%I386%%%%CLIENT%%lib/etlegacy/librenderer_opengl1_i386.so
 %%POWERPC%%lib/etlegacy/librenderer_opengl1_powerpc.so
 %%POWERPC64%%lib/etlegacy/librenderer_opengl1_powerpc64.so
+%%POWERPC64LE%%lib/etlegacy/librenderer_opengl1_powerpc64le.so
 %%AARCH64%%share/applications/com.etlegacy.ETLegacy.aarch64.desktop
 %%AMD64%%share/applications/com.etlegacy.ETLegacy.x86_64.desktop
 %%ARMV7%%share/applications/com.etlegacy.ETLegacy.armv7.desktop
 %%I386%%share/applications/com.etlegacy.ETLegacy.i386.desktop
 %%POWERPC%%share/applications/com.etlegacy.ETLegacy.powerpc.desktop
 %%POWERPC64%%share/applications/com.etlegacy.ETLegacy.powerpc64.desktop
+%%POWERPC64LE%%share/applications/com.etlegacy.ETLegacy.powerpc64le.desktop
 %%DOCSDIR%%/INSTALL.txt
 share/icons/hicolor/scalable/apps/etl.svg
 share/man/man6/etl.6.gz
