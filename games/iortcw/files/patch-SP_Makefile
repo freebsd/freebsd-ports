@@ -1,5 +1,16 @@
 --- SP/Makefile.orig	2019-03-16 18:09:48 UTC
 +++ SP/Makefile
+@@ -5,8 +5,8 @@ COMPILE_PLATFORM=$(shell uname | sed -e 's/_.*//' | tr
+ #
+ 
+ COMPILE_PLATFORM=$(shell uname | sed -e 's/_.*//' | tr '[:upper:]' '[:lower:]' | sed -e 's/\//_/g')
+-COMPILE_ARCH=$(shell uname -m | sed -e 's/i.86/x86/' | sed -e 's/^arm.*/arm/')
+-ARM_VER_CHECK=$(shell uname -m)
++COMPILE_ARCH=$(shell uname -p | sed -e 's/i.86/x86/' | sed -e 's/^arm.*/arm/')
++ARM_VER_CHECK=$(shell uname -p)
+ 
+ ifeq ($(COMPILE_PLATFORM),sunos)
+   # Solaris uname and GNU uname differ
 @@ -98,14 +98,6 @@ export ARCH
  endif
  export ARCH
