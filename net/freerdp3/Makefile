@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	3
 
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 # move epoll detection to platform: https://github.com/FreeRDP/FreeRDP/pull/10097
-PATCHFILES+=	be19268d5d186118a751d275602be2fb5ffcc3d8.patch:-p1
+PATCHFILES+=	5583fec47bbca9b68cd811c12e1ae3d5cdbfaee3.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
