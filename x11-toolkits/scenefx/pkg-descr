@@ -1,0 +1,2 @@
+A drop-in replacement for the wlroots scene API that allows Wayland
+compositors to render surfaces with eye-candy effects.

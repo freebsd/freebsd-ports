@@ -218,6 +218,7 @@
     SUBDIR += rubygem-uh
     SUBDIR += rubygem-vte3
     SUBDIR += rubygem-vte4
+    SUBDIR += scenefx
     SUBDIR += scintilla
     SUBDIR += sdl_pango
     SUBDIR += shared-desktop-ontologies
