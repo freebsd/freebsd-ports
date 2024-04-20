@@ -1,6 +1,6 @@
 PORTNAME=	apron
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.13
+DISTVERSION=	0.9.14
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,12 +10,8 @@ WWW=		http://apron.cri.ensmp.fr/library/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	uses deprecated fpsetround(3) that isn't even defined on arm64, see https://github.com/antoinemine/apron/issues/47
-BROKEN_armv6=	uses deprecated fpsetround(3) that isn't even defined on armv6, see https://github.com/antoinemine/apron/issues/47
-BROKEN_armv7=	uses deprecated fpsetround(3) that isn't even defined on armv7, see https://github.com/antoinemine/apron/issues/47
-BROKEN_riscv64=	uses deprecated fpsetround(3) that isn't even defined on riscv64, see https://github.com/antoinemine/apron/issues/47
-
-LIB_DEPENDS=	libgmp.so:math/gmp \
+LIB_DEPENDS=	libglpk.so:math/glpk \
+		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libppl.so:devel/ppl
 
@@ -29,8 +25,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix ${STAGEDIR}${PREFIX} -no-ocaml -no-java
 
 post-stage:
-	  @${STRIP_CMD} \
-	  	${STAGEDIR}${LOCALBASE}/bin/* \
-	  	${STAGEDIR}${LOCALBASE}/lib/lib*.so
+	  @${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/lib*.so
 
 .include <bsd.port.mk>
