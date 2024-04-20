@@ -3,6 +3,7 @@ bin/zita-at1
 %%DATADIR%%/hmeter0.png
 %%DATADIR%%/hmeter1.png
 %%DATADIR%%/hscale.png
+%%DATADIR%%/llat.png
 %%DATADIR%%/midi.png
 %%DATADIR%%/note.png
 %%DATADIR%%/notesect.png
