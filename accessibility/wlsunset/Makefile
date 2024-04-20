@@ -1,6 +1,5 @@
 PORTNAME=	wlsunset
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	accessibility wayland
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
