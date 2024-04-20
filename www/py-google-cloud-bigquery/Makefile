@@ -1,6 +1,5 @@
 PORTNAME=	google-cloud-bigquery
-DISTVERSION=	3.20.1
-PORTREVISION=	1
+DISTVERSION=	3.21.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.34.1:www/py-google-api-co
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-testutils>0:www/py-google-cloud-testutils@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils pytest # tests fail to run, see https://github.com/googleapis/python-bigquery/issues/1758
+USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/googleapis/python-bigquery/issues/1758
 
 NO_ARCH=	yes
 
