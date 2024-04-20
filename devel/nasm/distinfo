@@ -1,5 +1,5 @@
-TIMESTAMP = 1712403488
-SHA256 (nasm-2.16.02.tar.xz) = 1e1b942ea88f22edae89659e15be26fa027eae0747f51413540f52d4eac4790d
-SIZE (nasm-2.16.02.tar.xz) = 1044824
-SHA256 (nasm-2.16.02-xdoc.tar.xz) = 45fe7c1abd55045e10a4e97319ff393710321288eec6ea4f9ecc77b95665a8c4
-SIZE (nasm-2.16.02-xdoc.tar.xz) = 871988
+TIMESTAMP = 1713605511
+SHA256 (nasm-2.16.03.tar.xz) = 1412a1c760bbd05db026b6c0d1657affd6631cd0a63cddb6f73cc6d4aa616148
+SIZE (nasm-2.16.03.tar.xz) = 1032388
+SHA256 (nasm-2.16.03-xdoc.tar.xz) = 8a0f379e2729cdcf6541f7b7735fce662062eebd49f5b5be3f68b8c3f7e868df
+SIZE (nasm-2.16.03-xdoc.tar.xz) = 873780
