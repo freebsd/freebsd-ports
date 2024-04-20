@@ -1,5 +1,5 @@
 PORTNAME=	logseq
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/logseq/logseq/releases/download/${PORTVERSION}/ \
 		LOCAL/arrowd/:node_modules
@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		desktop-file-utils electronfix:25 shared-mime-info zip
+USES=		desktop-file-utils electronfix:27 shared-mime-info zip
 
 ELECTRONFIX_MAIN_EXECUTABLE=	Logseq
 SUB_FILES=	Logseq
@@ -26,7 +26,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Logseq-linux-x64
 
 RSAPI_HASH=	d731cc44acb903a41c5e0b8dc7e576cc2d35ceb4
-BETTER_SQLITE_VERSION=	9.1.1
+BETTER_SQLITE_VERSION=	9.3.0
 
 post-patch:
 	${RM} ${WRKSRC}/resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json.orig
