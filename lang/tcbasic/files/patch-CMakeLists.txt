@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2020-11-17 19:28:20 UTC
++++ CMakeLists.txt
+@@ -38,8 +38,7 @@ install(TARGETS tcbasic DESTINATION bin)
+ add_executable(tcbasic ${SOURCES})
+ target_link_libraries(tcbasic m)
+ install(TARGETS tcbasic DESTINATION bin)
+-install(FILES ${PROJECT_BINARY_DIR}/man/tcbasic.1 DESTINATION man/man1)
+-install(DIRECTORY ${PROJECT_SOURCE_DIR}/examples DESTINATION share/${PROJECT_NAME})
++install(FILES ${PROJECT_BINARY_DIR}/man/tcbasic.1 DESTINATION share/man/man1)
+
+ include(CTest)
+ enable_testing()
