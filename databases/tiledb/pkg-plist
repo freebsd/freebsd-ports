@@ -87,6 +87,7 @@ include/tiledb/type.h
 include/tiledb/utils.h
 include/tiledb/version.h
 include/tiledb/vfs.h
+include/tiledb/vfs_experimental.h
 include/tiledb_export.h
 lib/cmake/TileDB/TileDBConfig.cmake
 lib/cmake/TileDB/TileDBConfigVersion.cmake
