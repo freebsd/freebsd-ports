@@ -1,5 +1,5 @@
 PORTNAME=	thinc
-PORTVERSION=	8.2.3
+PORTVERSION=	9.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blis>=0.7.8<0.8.0:math/py-blis@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}srsly>=2.4.0<3.0.0:devel/py-srsly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wasabi>=0.8.1<1.2.0:textproc/py-wasabi@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 post-install:
