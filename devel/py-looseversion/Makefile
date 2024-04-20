@@ -15,4 +15,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVO
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
