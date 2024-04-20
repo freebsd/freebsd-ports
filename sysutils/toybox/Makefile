@@ -1,5 +1,5 @@
 PORTNAME=	toybox
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://landley.net/toybox/downloads/
 
@@ -16,28 +16,13 @@ BUILD_DEPENDS=	bash:shells/bash gsed:textproc/gsed
 
 USES=		gmake shebangfix
 
-SHEBANG_FILES=	mkroot/record-commands scripts/bloatcheck \
+SHEBANG_FILES=	mkroot/record-commands scripts/probes/bloatcheck \
 		scripts/mcm-buildall.sh scripts/change.sh \
-		scripts/findglobals.sh 	scripts/genconfig.sh \
+		scripts/probes/findglobals scripts/genconfig.sh \
 		scripts/install.sh scripts/make.sh scripts/mkroot.sh \
-		scripts/portability.sh 	scripts/runtest.sh \
+		scripts/portability.sh scripts/runtest.sh \
 		scripts/single.sh scripts/test.sh configure \
 		tests/*
-
-BIN_LINKS=	[ cat chgrp chmod chown cksum cpio crc32 date dos2unix echo \
-		egrep false fgrep fsync grep help hostname kill ln ls mkdir \
-		mknod mktemp mountpoint nice pidof printenv pwd rm rmdir sed \
-		sleep sync touch true uname unix2dos usleep vmstat
-SBIN_LINKS=	killall5 lsmod mkswap modinfo sysctl
-USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal chrt chvt \
-		clear cmp comm count cut dirname du expand factor fallocate \
-		file find flock fmt groups head hexedit iconv id killall link \
-		logger logname lspci lsusb makedevs mkfifo mkpasswd nl nohup \
-		od paste patch pmap printf pwdx readlink realpath renice \
-		reset rev seq setsid shred shuf sort split strings tac tee \
-		test time timeout truncate tty uniq unlink uudecode uuencode \
-		uuidgen w watch wc which who whoami xargs xxd yes
-USRSBIN_LINKS=	chroot
 
 do-configure:
 	cd ${WRKSRC} && HOSTCC=${CC} ${GMAKE} bsd_defconfig
@@ -48,17 +33,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/sbin
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/usr/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/usr/sbin
-.for f in ${BIN_LINKS}
-	${LN} -s ../../bin/toybox ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/${f}
-.endfor
-.for f in ${SBIN_LINKS}
-	${LN} -s ../../bin/toybox ${STAGEDIR}${PREFIX}/${PORTNAME}/sbin/${f}
-.endfor
-.for f in ${USRBIN_LINKS}
-	${LN} -s ../../../bin/toybox ${STAGEDIR}${PREFIX}/${PORTNAME}/usr/bin/${f}
-.endfor
-.for f in ${USRSBIN_LINKS}
-	${LN} -s ../../../bin/toybox ${STAGEDIR}${PREFIX}/${PORTNAME}/usr/sbin/${f}
-.endfor
+	(cd ${WRKSRC} && PREFIX=${STAGEDIR}${PREFIX}/${PORTNAME} scripts/install.sh --symlink --long)
 
 .include <bsd.port.mk>
