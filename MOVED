@@ -2303,6 +2303,7 @@ games/naev-data||2023-07-15|Remove obsoleted port. Now games/naev installs data 
 graphics/pecl-imagick-im7|graphics/pecl-imagick|2023-07-19|Merged into master port
 x11-toolkits/fox14||2023-07-27|Has expired: Obsolete leaf port, use x11-toolkits/fox(16,17) instead
 x11-wm/cage-devel|x11-wm/cage|2023-07-27|Out of date: use x11-wm/cage for now
+misc/py-anndata|devel/py-anndata|2023-07-30|Removed duplicate
 games/cockatrice||2023-07-31|Has expired: Upstream releases haven't occured for multiple years and will require a new portbuild
 graphics/blender-lts29||2023-07-31|Has expired: Deprecated upstream
 x11-fm/wcmcommander||2023-07-31|Has expired: Abandoned upstream
