@@ -1,7 +1,8 @@
 PORTNAME=	tifffile
-PORTVERSION=	2024.2.12
+PORTVERSION=	2024.4.18
 CATEGORIES=	graphics python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/cgohlke/tifffile/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
