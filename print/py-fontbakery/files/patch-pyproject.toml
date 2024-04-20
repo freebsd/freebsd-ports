@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-04-12 12:50:32 UTC
+--- pyproject.toml.orig	2024-04-17 19:14:00 UTC
 +++ pyproject.toml
 @@ -29,7 +29,7 @@ dependencies = [
  
@@ -15,7 +15,7 @@
  	"uharfbuzz",
 -	"vharfbuzz >= 0.2.0, == 0.2.*",
 +	"vharfbuzz >= 0.2.0",
-   "typing_extensions ; python_version < '3.11'",
+     "typing_extensions ; python_version < '3.11'",
  ]
  
 @@ -110,7 +110,7 @@ googlefonts = [

@@ -1,5 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.2
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -50,7 +50,6 @@ NOTOFONTS_DESC=		Checks for Noto fonts
 NOTOFONTS_IMPLIES=	GOOGLEFONTS
 SHAPING_DESC=		Checks for shaping
 TYPENETWORK_DESC=	Checks for Type Network
-TYPENETWORK_IMPLIES=	FONTVAL
 UFO_DESC=		Checks for UFO sources
 
 FONTVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
@@ -60,7 +59,7 @@ GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.9<0.5:x11-fonts
 			${PYTHON_PKGNAMEPREFIX}fonttools>=0:print/py-fonttools@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.5.17<0.6:x11-fonts/py-gflanguages@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gfsubsets>=2024.2.5:x11-fonts/py-gfsubsets@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.6.17<0.7:print/py-glyphsets@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.6.19<0.7:print/py-glyphsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.0,1:devel/py-protobuf@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.5.0<0.6:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}unicodedata2>=0:devel/py-unicodedata2@${PY_FLAVOR}
