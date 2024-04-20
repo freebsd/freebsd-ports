@@ -1,5 +1,5 @@
 PORTNAME=	cppzmq
-PORTVERSION=	4.9.0
+PORTVERSION=	4.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
+TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake:testing pkgconfig
 
