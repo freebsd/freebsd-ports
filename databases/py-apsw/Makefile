@@ -1,5 +1,5 @@
 PORTNAME=	apsw
-PORTVERSION=	3.45.2.0
+PORTVERSION=	3.45.3.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 USES=		localbase python sqlite
 USE_PYTHON=	autoplist concurrent pep517 unittest
 
+TEST_ARGS=	discover -s ${WRKSRC}/apsw
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 post-patch:
