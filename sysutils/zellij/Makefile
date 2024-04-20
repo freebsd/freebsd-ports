@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.39.2
-PORTREVISION=	4
+DISTVERSION=	0.40.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -39,6 +38,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		arc-swap-1.5.0 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.2 \
+		async-attributes-1.1.2 \
 		async-channel-1.8.0 \
 		async-executor-1.4.1 \
 		async-global-executor-2.3.1 \
@@ -267,6 +267,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
 		openssl-probe-0.1.5 \
+		openssl-src-300.1.6+3.1.4 \
 		openssl-sys-0.9.93 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.0 \
@@ -444,7 +445,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unsafe-any-ors-1.0.0 \
 		url-2.2.2 \
 		utf8parse-0.2.0 \
-		uuid-1.4.1 \
+		uuid-1.7.0 \
 		value-bag-1.0.0-alpha.9 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
