@@ -1,6 +1,5 @@
 PORTNAME=	onnx
-DISTVERSION=	1.14.1
-PORTREVISION=	1
+DISTVERSION=	1.16.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,18 +15,25 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		protoc-gen-mypy:devel/py-mypy-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.2.1:devel/py-typing-extensions@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang python shebangfix
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	pep517 concurrent autoplist pytest
 
 CXXFLAGS+=	-Dstat64=stat
 
 SHEBANG_FILES=	tools/protoc-gen-mypy.sh.in
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/onnx/test
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
