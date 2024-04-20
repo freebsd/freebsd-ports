@@ -3,7 +3,7 @@ PORTVERSION=	4.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ bindings for 0MQ
 WWW=		https://github.com/zeromq/cppzmq
 
