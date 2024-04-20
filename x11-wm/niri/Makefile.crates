@@ -432,4 +432,4 @@ CARGO_CRATES=	adler-1.0.2 \
 		zvariant-3.15.2 \
 		zvariant_derive-3.15.2 \
 		zvariant_utils-1.0.1 \
-		smithay,smithay-drm-extras@git+https://github.com/Smithay/smithay.git\#e5f006818df7ebb92d206985f45e713ba1e9c1c9
+		smithay,smithay-drm-extras@git+https://github.com/Smithay/smithay.git\#c5e9a697e41f50dc56b918d9ef1e3d2e52c84ac0
