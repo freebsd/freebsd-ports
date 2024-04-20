@@ -1,11 +1,11 @@
 cabal-install ignores the --offline flag for custom package repositories, which
 makes the build fail under poudriere
 
---- cabal.project.orig	2022-11-05 10:41:42 UTC
+--- cabal.project.orig	2024-02-14 15:49:35 UTC
 +++ cabal.project
-@@ -1,13 +1,3 @@
+@@ -1,14 +1,3 @@
 -repository cardano-haskell-packages
--  url: https://input-output-hk.github.io/cardano-haskell-packages
+-  url: https://chap.intersectmbo.org/
 -  secure: True
 -  root-keys:
 -    3e0cce471cf09815f930210f7827266fd09045445d65923e6d0238a6cd15126f
@@ -14,6 +14,7 @@ makes the build fail under poudriere
 -    bcec67e8e99cabfa7764d75ad9b158d72bfacf70ca1d0ec8bc6b4406d1bf8413
 -    c00aae8461a256275598500ea0e187588c35a5d5d7454fb57eac18d9edb86a56
 -    d4a35cd3121aa00d18544bb0ac01c3e1691d618f462c46129271bccf39f7e8ee
-
+-
  index-state:
-   , hackage.haskell.org 2023-04-29T00:00:00Z
+   , hackage.haskell.org 2023-11-20T23:52:53Z
+   , cardano-haskell-packages 2023-12-06T19:40:56Z
