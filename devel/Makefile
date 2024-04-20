@@ -967,6 +967,7 @@
     SUBDIR += hwloc2
     SUBDIR += hyperscan
     SUBDIR += hyprlang
+    SUBDIR += hyprwayland-scanner
     SUBDIR += ice
     SUBDIR += ice37
     SUBDIR += icestorm
