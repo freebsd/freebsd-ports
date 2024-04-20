@@ -1,9 +1,9 @@
 bin/filezilla
 bin/fzputtygen
 bin/fzsftp
-lib/libfzclient-commonui-private-3.55.1.so
+lib/libfzclient-commonui-private-3.67.0.so
 lib/libfzclient-commonui-private.so
-lib/libfzclient-private-3.55.1.so
+lib/libfzclient-private-3.67.0.so
 lib/libfzclient-private.so
 share/man/man1/filezilla.1.gz
 share/man/man1/fzputtygen.1.gz
@@ -684,8 +684,6 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/tango/48x48/upload.png
 %%DATADIR%%/resources/tango/48x48/uploadadd.png
 %%DATADIR%%/resources/tango/theme.xml
-%%DATADIR%%/resources/xrc/dialogs.xrc
-%%DATADIR%%/resources/xrc/netconfwizard.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/480x480/apps/filezilla.png
@@ -703,6 +701,7 @@ share/icons/hicolor/scalable/apps/filezilla.svg
 %%NLS%%share/locale/da/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/de/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/el/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/en/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/es/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/et/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/filezilla.mo
