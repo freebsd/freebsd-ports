@@ -1,5 +1,5 @@
 PORTNAME=	mediainfo
-PORTVERSION=	24.03
+PORTVERSION=	24.04
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
