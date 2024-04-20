@@ -39,6 +39,7 @@ DOCS_MESON_ENABLED=	docs
 MESON_ARGS+=	-Dicu=disabled -Dcairo=disabled
 .elif ${HARFBUZZ_SLAVE} == icu
 MESON_ARGS+=	-Dicu=enabled -Dcairo=disabled -Ddocs=disabled
+MESON_ARGS+=	-Dcpp_std=c++17 # https://github.com/harfbuzz/harfbuzz/issues/4671
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu
 
