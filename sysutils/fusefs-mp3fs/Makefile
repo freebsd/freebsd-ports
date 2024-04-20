@@ -1,6 +1,6 @@
 PORTNAME=	mp3fs
 PORTVERSION=	0.91
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTVERSION}/

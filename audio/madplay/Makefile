@@ -1,6 +1,6 @@
 PORTNAME=	madplay
 PORTVERSION=	0.15.2b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
