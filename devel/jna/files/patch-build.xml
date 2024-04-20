@@ -1,19 +1,19 @@
---- build.xml.orig	2016-03-16 14:37:28 UTC
+--- build.xml.orig	2024-03-29 21:57:29 UTC
 +++ build.xml
-@@ -99,7 +99,7 @@
-   <condition property="test.compatibility" value="1.5" else="${compatibility}">
-     <equals arg1="${compatibility}" arg2="1.4"/>
-   </condition>
+@@ -54,7 +54,7 @@
+   <property name="javadoc" location="${doc}/javadoc"/>
+   <property name="stylesheet" location="${javadoc}/doc/css/javadoc.css"/>
+ 
 -  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java,**/WebStartTest.java">
 +  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java,**/WebStartTest.java,**/LibraryLoadTest.java">
      <equals arg1="${os.prefix}" arg2="w32ce-arm"/>
    </condition>
    <property name="dist-jar" value="${dist}/${jar}"/>
-@@ -1084,7 +1084,6 @@ osname=macosx;processor=x86;processor=x8
+@@ -1324,7 +1324,6 @@ cd ..
        <doctitle>JNA API Documentation</doctitle>
        <header>${header}</header>
        <bottom>${footer}</bottom>
--      <link href="http://download.oracle.com/javase/${compatibility}/docs/api/"/>
+-      <link href="http://download.oracle.com/javase/${javac.release}/docs/api/"/>
  
        <packageset dir="${src}" defaultexcludes="yes">
          <patternset>
