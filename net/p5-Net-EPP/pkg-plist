@@ -78,6 +78,7 @@
 %%PERL5_MAN3%%/Net::EPP::Frame::Hello.3.gz
 %%PERL5_MAN3%%/Net::EPP::Frame::ObjectSpec.3.gz
 %%PERL5_MAN3%%/Net::EPP::Frame::Response.3.gz
+%%PERL5_MAN3%%/Net::EPP::Parser.3.gz
 %%PERL5_MAN3%%/Net::EPP::Protocol.3.gz
 %%PERL5_MAN3%%/Net::EPP::ResponseCodes.3.gz
 %%PERL5_MAN3%%/Net::EPP::Simple.3.gz
