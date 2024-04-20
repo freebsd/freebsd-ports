@@ -1,5 +1,5 @@
 PORTNAME=	babelfont
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.4
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fontfeatures>=1.0.6<2:x11-fonts/py-fontfeatures@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fontfeatures>=1.8.0:x11-fonts/py-fontfeatures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fonttools>=4.40.0:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}glyphsLib>=5.3.2:x11-fonts/py-glyphsLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openstep-plist>=0.2.2:textproc/py-openstep-plist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}orjson>=3.5.1<4:devel/py-orjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}orjson>=3.5.1:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.11.1:print/py-ufolib2@${PY_FLAVOR}
 
 USES=		python
