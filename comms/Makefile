@@ -137,6 +137,7 @@
     SUBDIR += py-pymodbus
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
+    SUBDIR += py-streamdeck
     SUBDIR += py-xmodem
     SUBDIR += pyla
     SUBDIR += qico
