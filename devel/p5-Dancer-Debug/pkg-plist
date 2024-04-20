@@ -1,10 +1,12 @@
 %%SITE_PERL%%/Dancer/Debug.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Dancer/App.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Logger.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Routes.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Session.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Settings.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Version.pm
 %%PERL5_MAN3%%/Dancer::Debug.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::App.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::Logger.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::Routes.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::Session.3.gz
