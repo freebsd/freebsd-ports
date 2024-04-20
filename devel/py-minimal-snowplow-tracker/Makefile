@@ -16,4 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.2.1,<3.0:www/py-requests@${PY_FL
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
