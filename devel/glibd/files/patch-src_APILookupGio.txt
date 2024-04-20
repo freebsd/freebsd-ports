@@ -1,0 +1,9 @@
+--- src/APILookupGio.txt.orig	2024-02-13 22:43:28 UTC
++++ src/APILookupGio.txt
+@@ -572,3 +572,6 @@ version: end
+ 	version 2.58: move: unix_mount_get_options UnixMountEntry get_options
+ 	version 2.60: move: unix_mount_get_root_path UnixMountEntry get_root_path
+ version: end
++
++struct: Socket
++noCode: receive_bytes_from
