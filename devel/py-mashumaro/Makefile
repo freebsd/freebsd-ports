@@ -15,4 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-ext
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
