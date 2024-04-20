@@ -1,5 +1,5 @@
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.59
+PORTVERSION=	1.60
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,9 @@ RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-TableExtract>=0:www/p5-HTML-TableExtract \
-		p5-HTML-TokeParser-Simple>=0:www/p5-HTML-TokeParser-Simple \
 		p5-HTML-Tree>=0:www/p5-HTML-Tree \
 		p5-HTML-TreeBuilder-XPath>=0:www/p5-HTML-TreeBuilder-XPath \
-		p5-HTTP-CookieJar>=0:www/p5-HTTP-CookieJar \
+		p5-HTTP-CookieJar>=0.014:www/p5-HTTP-CookieJar \
 		p5-HTTP-Cookies>=0:www/p5-HTTP-Cookies \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-String>=0:devel/p5-IO-String \
