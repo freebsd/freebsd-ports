@@ -1,6 +1,6 @@
 PORTNAME=	filezilla
-PORTVERSION=	3.55.1
-PORTREVISION=	3
+PORTVERSION=	3.67.0
+PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	https://download.filezilla-project.org/client/
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -14,24 +14,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libfilezilla.so:ftp/libfilezilla \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libgcrypt.so:security/libgcrypt \
-		libgnutls.so:security/gnutls \
+		libharfbuzz.so:print/harfbuzz \
 		libidn.so:dns/libidn \
 		libnettle.so:security/nettle \
 		libpugixml.so:textproc/pugixml
+
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
+TEST_DEPENDS=	cppunit-config:devel/cppunit
+TEST_TARGET=	check
+
 USES=		compiler:c++17-lang gmake gnome iconv:wchar_t libtool localbase \
-		pkgconfig sqlite tar:bzip2
-USE_GNOME=	cairo gtk30
+		pkgconfig sqlite tar:xz
+USE_GNOME=	cairo gtk30 gdkpixbuf2
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-fast-install
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_WX=		3.0
+USE_WX=		3.2
 WX_CONF_ARGS=	relative
 
 OPTIONS_DEFINE=		DBUS NLS
@@ -48,9 +50,5 @@ NLS_CONFIGURE_OFF=	--disable-locales
 .if !defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--disable-manualupdatecheck
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
