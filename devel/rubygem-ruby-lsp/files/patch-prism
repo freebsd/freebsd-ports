@@ -1,0 +1,81 @@
+Obtained from:	https://github.com/Shopify/ruby-lsp/pull/1953
+
+--- lib/ruby_indexer/lib/ruby_indexer/collector.rb.orig	2024-04-20 14:51:21 UTC
++++ lib/ruby_indexer/lib/ruby_indexer/collector.rb
+@@ -7,7 +7,7 @@ module RubyIndexer
+ 
+     LEAVE_EVENT = T.let(Object.new.freeze, Object)
+ 
+-    sig { params(index: Index, parse_result: Prism::ParseResult, file_path: String).void }
++    sig { params(index: Index, parse_result: Prism::ParseResult[Prism::ProgramNode], file_path: String).void }
+     def initialize(index, parse_result, file_path)
+       @index = index
+       @file_path = file_path
+--- lib/ruby_lsp/document.rb.orig	2024-04-20 14:51:21 UTC
++++ lib/ruby_lsp/document.rb
+@@ -8,7 +8,7 @@ module RubyLsp
+ 
+     abstract!
+ 
+-    sig { returns(Prism::ParseResult) }
++    sig { returns(Prism::ParseResult[Prism::ProgramNode]) }
+     attr_reader :parse_result
+ 
+     sig { returns(String) }
+@@ -31,7 +31,7 @@ module RubyLsp
+       @version = T.let(version, Integer)
+       @uri = T.let(uri, URI::Generic)
+       @needs_parsing = T.let(true, T::Boolean)
+-      @parse_result = T.let(parse, Prism::ParseResult)
++      @parse_result = T.let(parse, Prism::ParseResult[Prism::ProgramNode])
+     end
+ 
+     sig { returns(Prism::ProgramNode) }
+@@ -93,7 +93,7 @@ module RubyLsp
+       @cache.clear
+     end
+ 
+-    sig { abstract.returns(Prism::ParseResult) }
++    sig { abstract.returns(Prism::ParseResult[Prism::ProgramNode]) }
+     def parse; end
+ 
+     sig { returns(T::Boolean) }
+--- lib/ruby_lsp/internal.rb.orig	2024-04-20 14:51:21 UTC
++++ lib/ruby_lsp/internal.rb
+@@ -19,6 +19,14 @@ require "language_server-protocol"
+ require "prism/visitor"
+ require "language_server-protocol"
+ 
++# Prism v0.26.0 introduced generics for ParseResult, but it causes some problems so the intention is to remove it.
++# Once that is done, we can remove this patch.
++module Prism
++  class ParseResult
++    extend T::Generic
++  end
++end
++
+ require "ruby-lsp"
+ require "ruby_lsp/base_server"
+ require "ruby_indexer/ruby_indexer"
+--- lib/ruby_lsp/listeners/document_link.rb.orig	2024-04-20 14:51:21 UTC
++++ lib/ruby_lsp/listeners/document_link.rb
+@@ -124,7 +124,7 @@ module RubyLsp
+         match = comment.location.slice.match(%r{source://.*#\d+$})
+         return unless match
+ 
+-        uri = T.cast(URI(T.must(match[0])), URI::Source)
++        uri = T.cast(URI(match[0]), URI::Source)
+         gem_version = resolve_version(uri)
+         return if gem_version.nil?
+ 
+--- lib/ruby_lsp/ruby_document.rb.orig	2024-04-20 14:51:21 UTC
++++ lib/ruby_lsp/ruby_document.rb
+@@ -3,7 +3,7 @@ module RubyLsp
+ 
+ module RubyLsp
+   class RubyDocument < Document
+-    sig { override.returns(Prism::ParseResult) }
++    sig { override.returns(Prism::ParseResult[Prism::ProgramNode]) }
+     def parse
+       return @parse_result unless @needs_parsing
+ 

@@ -5,7 +5,7 @@
  
    s.add_runtime_dependency(%q<language_server-protocol>.freeze, ["~> 3.17.0".freeze])
 -  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.22.0".freeze, "< 0.25".freeze])
-+  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.22.0".freeze, "< 0.26".freeze])
++  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.22.0".freeze, "< 0.27".freeze])
    s.add_runtime_dependency(%q<sorbet-runtime>.freeze, [">= 0.5.10782".freeze])
  end
  
