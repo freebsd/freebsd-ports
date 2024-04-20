@@ -1,7 +1,6 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.5
-PORTREVISION=	1
+DISTVERSION=	2.1.6
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -21,7 +20,7 @@ GH_ACCOUNT=	diesel-rs
 
 CARGO_BUILD_ARGS=	--package=diesel_cli
 CARGO_INSTALL_PATH=	diesel_cli
-CARGO_CRATES=	aho-corasick-1.1.2 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.13 \
@@ -31,22 +30,22 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		anstyle-wincon-3.0.2 \
 		argon2-0.5.3 \
 		assert_matches-1.5.0 \
-		autocfg-1.1.0 \
+		autocfg-1.2.0 \
 		base64ct-1.6.0 \
 		bigdecimal-0.4.3 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
-		bumpalo-3.15.4 \
+		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.0.90 \
+		cc-1.0.94 \
 		cfg-if-1.0.0 \
-		chrono-0.4.35 \
-		clap-4.5.3 \
+		chrono-0.4.38 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_complete-4.5.1 \
-		clap_derive-4.5.3 \
+		clap_complete-4.5.2 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.8 \
@@ -61,21 +60,21 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		env_logger-0.8.4 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
-		fastrand-2.0.1 \
+		fastrand-2.0.2 \
 		form_urlencoded-1.2.1 \
 		generic-array-0.14.7 \
-		getrandom-0.2.12 \
+		getrandom-0.2.14 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		indexmap-2.2.5 \
-		insta-1.36.1 \
+		indexmap-2.2.6 \
+		insta-1.38.0 \
 		ipnet-2.9.0 \
 		ipnetwork-0.20.0 \
-		itoa-1.0.10 \
+		itoa-1.0.11 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
@@ -85,7 +84,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		mysqlclient-sys-0.2.5 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.4 \
@@ -102,35 +101,35 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		pq-sys-0.4.8 \
-		proc-macro2-1.0.79 \
+		proc-macro2-1.0.81 \
 		quickcheck-1.0.3 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		r2d2-0.8.10 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.4.1 \
-		regex-1.10.3 \
+		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
-		rustix-0.38.31 \
+		regex-syntax-0.8.3 \
+		rustix-0.38.32 \
 		ryu-1.0.17 \
 		scheduled-thread-pool-0.2.7 \
 		scopeguard-1.2.0 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
 		serde_regex-1.1.0 \
 		serde_spanned-0.6.5 \
-		similar-2.4.0 \
-		smallvec-1.13.1 \
-		strsim-0.11.0 \
+		similar-2.5.0 \
+		smallvec-1.13.2 \
+		strsim-0.11.1 \
 		subtle-2.5.0 \
-		syn-2.0.52 \
+		syn-2.0.60 \
 		tempfile-3.10.1 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.7.8 \
@@ -142,7 +141,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		unicode-normalization-0.1.23 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
-		uuid-1.7.0 \
+		uuid-1.8.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -157,23 +156,23 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows-core-0.52.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
-		winnow-0.5.40 \
-		yaml-rust-0.4.5
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.5.40
 
 PLIST_FILES=	bin/${PORTNAME}
 
