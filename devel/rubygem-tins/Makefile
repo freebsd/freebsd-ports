@@ -1,5 +1,5 @@
 PORTNAME=	tins
-PORTVERSION=	1.32.1
+PORTVERSION=	1.33.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/flori/tins
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-sync>=0:devel/rubygem-sync
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-sync>=0:devel/rubygem-sync
 
 USES=		gem
 
