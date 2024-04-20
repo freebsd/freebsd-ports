@@ -5,3 +5,5 @@ include/libinjection_sqli_data.h
 include/libinjection_xss.h
 lib/libinjection.a
 lib/libinjection.so
+lib/libinjection.so.3
+lib/libinjection.so.%%PORTVERSION%%
