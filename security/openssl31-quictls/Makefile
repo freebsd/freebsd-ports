@@ -1,7 +1,7 @@
 PORTNAME=	openssl
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-quic1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	31-quictls
@@ -140,6 +140,16 @@ ZLIB_CONFIGURE_ON=	zlib-dynamic
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
 PORTSCOUT=		limit=^3\.1\.
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	BSD-ppc64
+.elif ${ARCH} == powerpc64le
+CONFIGURE_ARGS+=	BSD-ppc64le
+.elif ${ARCH} == riscv64
+CONFIGURE_ARGS+=	BSD-riscv64
+.endif
 
 .include <bsd.port.pre.mk>
 .if ${PREFIX} == /usr
