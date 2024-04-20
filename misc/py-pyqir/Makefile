@@ -1,7 +1,6 @@
 PORTNAME=	pyqir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	6
+DISTVERSION=	0.10.0
 CATEGORIES=	misc python # quantum-computing
 #MASTER_SITES=	PYPI # no tarballs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,18 +32,8 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		cfg-if-1.0.0 \
 		cmake-0.1.49 \
 		const-str-0.5.3 \
-		dashmap-5.4.0 \
 		error-chain-0.10.0 \
 		funty-2.0.0 \
-		futures-0.3.25 \
-		futures-channel-0.3.25 \
-		futures-core-0.3.25 \
-		futures-executor-0.3.25 \
-		futures-io-0.3.25 \
-		futures-sink-0.3.25 \
-		futures-task-0.3.25 \
-		futures-util-0.3.25 \
-		hashbrown-0.12.3 \
 		indoc-1.0.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.137 \
@@ -62,10 +51,6 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.4 \
 		pest-2.4.1 \
-		pin-project-lite-0.2.9 \
-		pin-utils-0.1.0 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.47 \
 		pyo3-0.17.3 \
 		pyo3-build-config-0.17.3 \
@@ -81,9 +66,6 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		semver-0.11.0 \
 		semver-1.0.14 \
 		semver-parser-0.10.2 \
-		serial_test-0.9.0 \
-		serial_test_derive-0.9.0 \
-		slab-0.4.7 \
 		smallvec-1.10.0 \
 		syn-1.0.103 \
 		tap-1.0.1 \
@@ -93,7 +75,6 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		ucd-trie-0.1.5 \
 		unicode-ident-1.0.5 \
 		unindent-0.1.10 \
-		version_check-0.9.4 \
 		windows-sys-0.42.0 \
 		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.42.0 \
