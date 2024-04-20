@@ -128,6 +128,12 @@ alter user 'librenms'@'localhost' identified with mysql_native_password by 'pass
 NOTE: Starting with the 22.2.1 port the %%WWWDIR%%/storage directory has
 been replaced with a symlink to /var/db/librenms/storage
 
+NOTE: Maintainer has noticed that upon reboot (at least in jails), the service
+does not properly start. Monitor /var/log/librenms/*.log and if you see
+'Unable to launch a new process', then restart the service via:
+
+ service librenms restart
+
 EOM
 }
 ]

@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	24.3.0
+PORTVERSION=	24.4.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -12,7 +12,8 @@ WWW=		https://www.librenms.org
 LICENSE=	GPLv3
 
 # perhaps we also need python-memcache python-mysqldb
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>0:www/py-python-dotenv@${PY_FLAVOR} \
 		bash:shells/bash \
 		dot:graphics/graphviz \
@@ -127,7 +128,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1711984724
+_RELEASE_TIMESTAMP=	1713577955
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
