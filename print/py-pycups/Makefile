@@ -1,7 +1,8 @@
 PORTNAME=	pycups
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	print python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/OpenPrinting/pycups/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
