@@ -31,6 +31,7 @@ TEST_DESC=	Run bundled self-tests after build
 
 BZIP2_CONFIGURE_WITH=	bzlib
 FPX_CONFIGURE_WITH=	fpx
+FPX_LDFLAGS=		-L${LOCALBASE}/lib -lfpx
 FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
 FREETYPE_CONFIGURE_WITH=ttf
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
