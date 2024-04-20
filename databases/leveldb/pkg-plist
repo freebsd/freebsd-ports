@@ -19,6 +19,6 @@ lib/cmake/leveldb/leveldbTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/leveldb/leveldbTargets.cmake
 lib/libleveldb.a
 lib/libleveldb.so
-lib/libleveldb.so.%%SHLIB_VER%%
+lib/libleveldb.so.1
 lib/libleveldb.so.%%PORTVERSION%%.0
 %%DATADIR%%/build_config.mk
