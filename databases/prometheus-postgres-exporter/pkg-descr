@@ -1,0 +1,3 @@
+postgres_exporter is a Prometheus exporter for the PostgreSQL database. It can
+connect to multiple PostgreSQL databases as configured in Prometheus, and
+reports system-level metrics.

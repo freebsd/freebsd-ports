@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# PROVIDE: postgres_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# postgres_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable postgres_exporter.
+# postgres_exporter_config_file (string):   Set the configuration file.
+#               Default is "%%PREFIX%%/etc/postgres_exporter.yml".
+# postgres_exporter_user (string):          Set user that postgres_exporter will run under
+#               Default is "nobody".
+# postgres_exporter_group (string):         Set group that postgres_exporter will run under
+#               Default is "nobody".
+# postgres_exporter_args (string):          Set extra arguments to pass to postgres_exporter
+#               Default is "".
+# postgres_exporter_listen_address (string):Set ip:port that postgres_exporter will listen on
+#               Default is "localhost:9187".
+# postgres_exporter_syslog_output_tag (str):      Set syslog tag.
+#               Default is "postgres_exporter". See daemon(8).
+# postgres_exporter_syslog_output_priority (str): Set syslog priority.
+#               Default is "notice". See daemon(8).
+# postgres_exporter_syslog_output_facility (str): Set syslog facility.
+#               Default is "daemon". See daemon(8).
+
+
+. /etc/rc.subr
+
+name=postgres_exporter
+rcvar=postgres_exporter_enable
+
+load_rc_config $name
+
+: ${postgres_exporter_enable:="NO"}
+: ${postgres_exporter_config_file:="%%PREFIX%%/etc/postgres_exporter.yml"}
+: ${postgres_exporter_user:="nobody"}
+: ${postgres_exporter_group:="nobody"}
+: ${postgres_exporter_args:=""}
+: ${postgres_exporter_listen_address:="localhost:9187"}
+: ${postgres_exporter_syslog_output_tag=${name}}
+: ${postgres_exporter_syslog_output_priority=notice}
+: ${postgres_exporter_syslog_output_facility=daemon}
+
+pidfile=/var/run/postgres_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/postgres_exporter"
+command_args="-f -p ${pidfile} -t ${name} \
+    -T ${postgres_exporter_syslog_output_tag} \
+    -s ${postgres_exporter_syslog_output_priority} \
+    -l ${postgres_exporter_syslog_output_facility} \
+    /usr/bin/env ${procname} \
+    --web.listen-address=${postgres_exporter_listen_address} \
+    --config.file=${postgres_exporter_config_file} \
+    ${postgres_exporter_args}"
+
+start_precmd=postgres_exporter_startprecmd
+
+postgres_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${postgres_exporter_user} \
+            -g ${postgres_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
+

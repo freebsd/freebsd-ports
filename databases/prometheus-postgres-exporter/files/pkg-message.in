@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+A sample configuration file has been installed in
+%%PREFIX%%/etc/postgres_exporter.yml.sample.
+
+To use postgres_exporter, copy this config file to "postgres_exporter.yml"
+and edit as needed, then enable and start the service:
+
+# service postgres_exporter enable
+# service postgres_exporter start
+
+For rc(8) options which can be used to configure the service, refer to
+%%PREFIX%%/etc/rc.d/postgres_exporter.
+
+For example, to log output to the 'local5' syslog facility instead of the
+default 'daemon':
+
+# sysrc postgres_exporter_syslog_output_facility=local5
+
+By default, the exporter runs as the 'nobody' user and listens on
+localhost:9187.  These defaults can be changed via rc(8).
+
+For documentation on the configuration file format and how to integrate the
+exporter into Prometheus, refer to the documentation at:
+https://github.com/prometheus-community/postgres_exporter
+EOM
+}
+]
