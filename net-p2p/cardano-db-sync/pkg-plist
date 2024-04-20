@@ -9,6 +9,8 @@ bin/cardano-db-sync-pgsql-setup
 %%DATADIR%%/schema/migration-1-0007-20210611.sql
 %%DATADIR%%/schema/migration-1-0008-20210727.sql
 %%DATADIR%%/schema/migration-1-0009-20210727.sql
+%%DATADIR%%/schema/migration-1-0010-20230612.sql
+%%DATADIR%%/schema/migration-1-0011-20230814.sql
 %%DATADIR%%/schema/migration-2-0001-20211003.sql
 %%DATADIR%%/schema/migration-2-0002-20211007.sql
 %%DATADIR%%/schema/migration-2-0003-20211013.sql
@@ -34,8 +36,17 @@ bin/cardano-db-sync-pgsql-setup
 %%DATADIR%%/schema/migration-2-0023-20221019.sql
 %%DATADIR%%/schema/migration-2-0024-20221020.sql
 %%DATADIR%%/schema/migration-2-0025-20221020.sql
+%%DATADIR%%/schema/migration-2-0026-20231017.sql
+%%DATADIR%%/schema/migration-2-0027-20230713.sql
+%%DATADIR%%/schema/migration-2-0028-20240117.sql
+%%DATADIR%%/schema/migration-2-0029-20240117.sql
+%%DATADIR%%/schema/migration-2-0030-20240108.sql
+%%DATADIR%%/schema/migration-2-0031-20240117.sql
+%%DATADIR%%/schema/migration-2-0032-20230815.sql
+%%DATADIR%%/schema/migration-2-0033-20231009.sql
 %%DATADIR%%/schema/migration-3-0001-20190816.sql
 %%DATADIR%%/schema/migration-3-0002-20200521.sql
+%%DATADIR%%/schema/migration-3-0003-20240121.sql
 %%DATADIR%%/schema/migration-3-9999-20200728.sql
 %%DATADIR%%/schema/migration-4-0001-20200702.sql
 %%DATADIR%%/schema/migration-4-0002-20200810.sql
