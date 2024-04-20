@@ -1,5 +1,5 @@
 PORTNAME=	flipper-active_record
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://www.flippercloud.io/ \
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activerecord71>=4.2<8:databases/rubygem-activerecord71 \
-		rubygem-flipper>=${PORTVERSION}<1.3:devel/rubygem-flipper
+		rubygem-flipper>=${PORTVERSION}<1.4:devel/rubygem-flipper
 
 USES=		gem
 
