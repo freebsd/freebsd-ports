@@ -25,6 +25,8 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
+PORTSCOUT=	skipv:0.0501,0.0502,0.0503,0.0601
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
 
