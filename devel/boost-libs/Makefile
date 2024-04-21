@@ -11,12 +11,34 @@ BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
 
 BUILD_DEPENDS+=	bjam:devel/boost-jam
 
-OPTIONS_DEFINE=		DEBUG OPTIMIZED_CFLAGS
+# Note about LLVM_FROM_PORTS option:
+# Build of this port fails with assertion failure of compiler due to
+# bug of LLVM/Clang in base system. The failure happens when all of
+# following conditions are satisfied.
+# * OSVERSION is included in either of following ranges.
+#   1. 1500000 <= OSVERSION < 1500017
+#   2. 1400000 <= OSVERSION < 1400509
+#   3. 1300000 <= OSVERSION < 1303502
+# * Base system is built with WITH_LLVM_ASSERTIONS variable set.
+# So if your base system fulfills them you need to use LLVM ports to
+# build this port.
+# By default WITH_LLVM_ASSERTIONS variable is set with -CURRENT but
+# not with -STABLE and -RELEASE. So whereas most -CURRENT users face
+# the build failure, few -STABLE and -RELEASE user faces it.
+# Therefore by default this port uses LLVM from ports only if base
+# system is -CURRENT and OSVERSION is included in above ranges. It
+# make it possible for most -STABLE and -RELEASE users to avoid to
+# build LLVM ports unnecessarily. But if someone uses -STABLE or
+# -RELEASE built with WITH_LLVM_ASSERTIONS set, then he can't build
+# this port successfully on such system. So provide LLVM_FROM_PORTS
+# option as a last resort for him.
+OPTIONS_DEFINE=		DEBUG LLVM_FROM_PORTS OPTIMIZED_CFLAGS
 OPTIONS_MULTI=		LOCALE
 OPTIONS_MULTI_LOCALE=	ICONV ICU
 OPTIONS_DEFAULT=	ICONV ICU
 ICONV_DESC=		Boost.Locale with iconv encoding support
 ICU_DESC=		Boost.Regex/Locale with ICU unicode support
+LLVM_FROM_PORTS_DESC=	Use LLVM from ports to build
 
 ICONV_USES=		iconv
 ICONV_MAKE_ARGS=	-sICONV_PATH=${ICONV_PREFIX}
