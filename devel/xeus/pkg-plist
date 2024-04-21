@@ -12,6 +12,7 @@ include/xeus/xkernel.hpp
 include/xeus/xkernel_configuration.hpp
 include/xeus/xlogger.hpp
 include/xeus/xmessage.hpp
+include/xeus/xrequest_context.hpp
 include/xeus/xserver.hpp
 include/xeus/xstring_utils.hpp
 include/xeus/xsystem.hpp
@@ -24,5 +25,5 @@ lib/cmake/xeus/xeusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus/xeusTargets.cmake
 lib/libxeus.a
 lib/libxeus.so
-lib/libxeus.so.9
-lib/libxeus.so.9.0.0
+lib/libxeus.so.10
+lib/libxeus.so.10.3.0
