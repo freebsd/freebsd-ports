@@ -125,6 +125,7 @@ CONFIGURE_ARGS+=--disable-pinentry-qt5
 
 .if ${PINENTRY_GUI} == "qt6"
 USES+=		compiler:c++17-lang kde:6 qt:6
+USE_CXXSTD=	c++17
 USE_KDE=	guiaddons windowsystem
 USE_QT=		base
 PLIST_FILES=	bin/pinentry-qt \
