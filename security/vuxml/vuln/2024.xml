@@ -1,3 +1,62 @@
+  <vuln vid="9bed230f-ffc8-11ee-8e76-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>124.0.6367.60</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>124.0.6367.60</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop_16.html">
+	 <p>This update includes 23 security fixes:</p>
+	 <ul>
+	    <li>[331358160] High CVE-2024-3832: Object corruption in V8. Reported by Man Yue Mo of GitHub Security Lab on 2024-03-27</li>
+	    <li>[331383939] High CVE-2024-3833: Object corruption in WebAssembly. Reported by Man Yue Mo of GitHub Security Lab on 2024-03-27</li>
+	    <li>[330759272] High CVE-2024-3914: Use after free in V8. Reported by Seunghyun Lee (@0x10n) of KAIST Hacking Lab, via Pwn2Own 2024 on 2024-03-21</li>
+	    <li>[326607008] High CVE-2024-3834: Use after free in Downloads. Reported by ChaobinZhang on 2024-02-24</li>
+	    <li>[41491379] Medium CVE-2024-3837: Use after free in QUIC. Reported by {rotiple, dch3ck} of CW Research Inc. on 2024-01-15</li>
+	    <li>[328278717] Medium CVE-2024-3838: Inappropriate implementation in Autofill. Reported by Ardyan Vicky Ramadhan on 2024-03-06</li>
+	    <li>[41491859] Medium CVE-2024-3839: Out of bounds read in Fonts. Reported by Ronald Crane (Zippenhop LLC) on 2024-01-16</li>
+	    <li>[41493458] Medium CVE-2024-3840: Insufficient policy enforcement in Site Isolation. Reported by Ahmed ElMasry on 2024-01-22</li>
+	    <li>[330376742] Medium CVE-2024-3841: Insufficient data validation in Browser Switcher. Reported by Oleg on 2024-03-19</li>
+	    <li>[41486690] Medium CVE-2024-3843: Insufficient data validation in Downloads. Reported by Azur on 2023-12-24</li>
+	    <li>[40058873] Low CVE-2024-3844: Inappropriate implementation in Extensions. Reported by Alesandro Ortiz on 2022-02-23</li>
+	    <li>[323583084] Low CVE-2024-3845: Inappropriate implementation in Network. Reported by Daniel Baulig on 2024-02-03</li>
+	    <li>[40064754] Low CVE-2024-3846: Inappropriate implementation in Prompts. Reported by Ahmed ElMasry on 2023-05-23</li>
+	    <li>[328690293] Low CVE-2024-3847: Insufficient policy enforcement in WebUI. Reported by Yan Zhu on 2024-03-08</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3832</cvename>
+      <cvename>CVE-2024-3833</cvename>
+      <cvename>CVE-2024-3914</cvename>
+      <cvename>CVE-2024-3834</cvename>
+      <cvename>CVE-2024-3837</cvename>
+      <cvename>CVE-2024-3838</cvename>
+      <cvename>CVE-2024-3839</cvename>
+      <cvename>CVE-2024-3840</cvename>
+      <cvename>CVE-2024-3841</cvename>
+      <cvename>CVE-2024-3843</cvename>
+      <cvename>CVE-2024-3844</cvename>
+      <cvename>CVE-2024-3845</cvename>
+      <cvename>CVE-2024-3846</cvename>
+      <cvename>CVE-2024-3847</cvename>
+      <url>https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-16</discovery>
+      <entry>2024-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecafc4af-fe8a-11ee-890c-08002784c58d">
     <topic>clamav -- Possible crash in the HTML file parser that could cause a denial-of-service (DoS) condition</topic>
     <affects>
