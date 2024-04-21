@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-04-21 04:21:03 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "novelWriter"
++name = "novelwriter"
+ authors = [
+     {name = "Veronica Berglyd Olsen", email = "code@vkbo.net"},
+ ]
