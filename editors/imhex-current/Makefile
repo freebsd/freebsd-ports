@@ -99,13 +99,17 @@ NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 1302510) \
-	|| (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400504)
+# Before LLVM 17 import into the base system
+.if (${OSVERSION} < 1302510 \
+    || (${OSREL:R} == 14 && ${OSVERSION} < 1400504) \
+    || (${OSREL:R} == 15 && ${OSVERSION} < 1500006))
 IGNORE=	requires libc++ of LLVM 17 on the base system
 .endif
 
 # After LLVM 18 import into the base system
-.if (${OSVERSION} <= 1500018)
+.if ((${OSREL:R} == 15 && ${OSVERSION} >= 1500018) \
+    || (${OSREL:R} == 14 && ${OSVERSION} >= 1400511) \
+    || (${OSREL:R} == 13 && ${OSVERSION} >= 1303503))
 CXXFLAGS+=	-fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
 .endif
 
@@ -126,7 +130,10 @@ post-extract:
 	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKDIR}/imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/bastion
 	${CP} -R ${WRKDIR}/imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/ffx
-.if (${OSVERSION} < 1500018)
+# Before LLVM 18 import into the base system
+.if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
+    || (${OSREL:R} == 14 && ${OSVERSION} < 1400511) \
+    || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
 	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
 .endif
 
