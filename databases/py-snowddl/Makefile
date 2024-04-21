@@ -1,5 +1,5 @@
 PORTNAME=	snowddl
-PORTVERSION=	0.20.0
+DISTVERSION=	0.25.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,8 @@ WWW=		https://docs.snowddl.com/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	wheel-${PYTHON_VER}:devel/py-wheel@${PY_FLAVOR} \
-		${PY_DEPENDS}
-
+BUILD_DEPENDS=	${PY_DEPENDS} \
+		wheel-${PYTHON_VER}:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
