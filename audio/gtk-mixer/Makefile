@@ -1,6 +1,5 @@
 PORTNAME=	gtk-mixer
-DISTVERSION=	1.0.3
-PORTREVISION=	2
+DISTVERSION=	1.0.4
 CATEGORIES=	audio
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -15,6 +14,7 @@ USES=		cmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	rozhuk-im
 USE_GNOME=	cairo gdkpixbuf2 gtk30
+CFLAGS+=	-DHAVE_REALLOCARRAY
 
 DESKTOP_ENTRIES=	"GTK-Mixer" \
 			"${COMMENT}" \
