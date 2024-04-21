@@ -1,8 +1,16 @@
 PORTNAME=	onnx
 DISTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil \
+		https://github.com/protocolbuffers/protobuf/releases/download/v22.3/:protobuf # use downloaded protobuf-22.3
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		20230125.3.tar.gz:abseil \
+		protobuf-22.3.tar.gz:protobuf # use downloaded protobuf-22.3
+DIST_SUBDIR=	onnx
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Neural Network eXchange
@@ -18,8 +26,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-LIB_DEPENDS=	libabsl_base.so:devel/abseil \
-		libprotobuf.so:devel/protobuf
+#LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libprotobuf.so:devel/protobuf # disable packaged protobuf
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.2.1:devel/py-typing-extensions@${PY_FLAVOR}
@@ -32,10 +40,20 @@ CXXFLAGS+=	-Dstat64=stat
 
 SHEBANG_FILES=	tools/protoc-gen-mypy.sh.in
 
+CONFLICTS_BUILD=	protobuf # use downloaded protobuf-22.3
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/onnx/test
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
+
+post-patch: # replace protobuf-24+ with protobuf-lite-22.3
+	@${REINPLACE_CMD} \
+		-e ' \
+			s|set(ProtobufURL https://github.com/protocolbuffers/protobuf/releases/download/v22.3/|set(ProtobufURL file://${DISTDIR}/${DIST_SUBDIR}/|; \
+			s|set(AbseilURL https://github.com/abseil/abseil-cpp/archive/refs/tags/|set(AbseilURL file://${DISTDIR}/${DIST_SUBDIR}/| \
+		' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnx/onnx_cpp2py_export*.so
