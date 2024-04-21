@@ -1,6 +1,6 @@
 PORTNAME=	clingo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.2
+DISTVERSION=	5.7.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,13 +17,14 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
-GH_TUPLE=	potassco:clasp:4c708a7:potassco_clasp/clasp \
-		catchorg:Catch2:97313f9:catch/third_party/catch \
+GH_TUPLE=	potassco:clasp:3f3db1e:potassco_clasp/clasp \
+		catchorg:Catch2:3f0283d:catch/third_party/catch \
+		ckormanyos:wide-integer:4c9711b:wide_integer/third_party/wide-integer \
 		mpark:variant:23cb94f:variant/third_party/variant \
-		TartanLlama:optional:c28fcf7:optional/third_party/optional \
-		Tessil:hopscotch-map:4442316:hopscotch_map/third_party/hopscotch-map \
-		Tessil:ordered-map:1619d52:ordered_map/third_party/ordered-map \
-		Tessil:sparse-map:89d3053:sparse_map/third_party/sparse-map
+		TartanLlama:optional:3a1209d:optional/third_party/optional \
+		Tessil:hopscotch-map:d35aa8c:hopscotch_map/third_party/hopscotch-map \
+		Tessil:ordered-map:0557eb5:ordered_map/third_party/ordered-map \
+		Tessil:sparse-map:7ab2fa0:sparse_map/third_party/sparse-map
 
 CMAKE_OFF=	CLINGO_BUILD_WITH_PYTHON # broken, see https://github.com/potassco/clingo/issues/178
 CMAKE_OFF+=	CLINGO_BUILD_WITH_LUA
