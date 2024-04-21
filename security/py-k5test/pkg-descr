@@ -1,0 +1,3 @@
+k5test is a library for setting up self-contained Kerberos 5 environments, and
+running Python unit tests inside those environments. It is based on the file of
+the same name found alongside the MIT Kerberos 5 unit tests.
