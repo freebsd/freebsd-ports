@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2024-04-09 16:46:13 UTC
+--- config/gitlab.yml.example.orig	2024-04-17 11:47:15 UTC
 +++ config/gitlab.yml.example
 @@ -463,7 +463,7 @@ production: &base
    ## GitLab Pages
@@ -112,7 +112,7 @@
  
      # Web exporter is a dedicated Prometheus metrics server optionally running alongside Puma.
      web_exporter:
-@@ -1563,13 +1563,13 @@ test:
+@@ -1565,13 +1565,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:

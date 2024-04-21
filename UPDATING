@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240421:
+  AFFECTS: www/gitlab-ce
+  AUTHOR: mfechner@FreeBSD.org
+
+  With the upgrade to version 16.11 the default path for gitlab-ce changed:
+  /usr/local/www/gitlab-ce -> /usr/local/www/gitlab
+  Make sure you follow the upgrade manual very carefully:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/update/16.10-16.11-freebsd.md
+
+  The gitlab port also got a new flavor gitlab@ee to make the Gitlab
+  Enterprise Edition available (you will need a license for it).
+  Please note, that the ee flavor is a draft, but any feedback is welcome.
+  See also the installation and upgrade manual for more details.
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/install/16.11-freebsd.md
+
 20240409:
   AFFECTS: x11-servers/xwayland-devel
   AUTHOR: jbeich@FreeBSD.org
