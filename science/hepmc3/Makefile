@@ -1,7 +1,7 @@
 PORTNAME=	hepmc3
-DISTVERSION=	3.2.6
+DISTVERSION=	3.2.7
 CATEGORIES=	science
-MASTER_SITES=	http://hepmc.web.cern.ch/hepmc/releases/
+MASTER_SITES=	https://hepmc.web.cern.ch/hepmc/releases/
 DISTNAME=	HepMC3-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
