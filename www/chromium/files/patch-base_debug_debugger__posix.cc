@@ -1,6 +1,6 @@
---- base/debug/debugger_posix.cc.orig	2022-04-21 18:48:31 UTC
+--- base/debug/debugger_posix.cc.orig	2024-04-19 13:02:56 UTC
 +++ base/debug/debugger_posix.cc
-@@ -35,6 +35,10 @@
+@@ -36,6 +36,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -27,7 +27,8 @@
    if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
      return -1;
  
-   mib[5] = (info_size / sizeof(struct kinfo_proc));
+-  mib[5] = (info_size / sizeof(struct kinfo_proc));
++  mib[5] = static_cast<int>((info_size / sizeof(struct kinfo_proc)));
 +  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL) {
 +    is_set = true;
 +    being_debugged = false;

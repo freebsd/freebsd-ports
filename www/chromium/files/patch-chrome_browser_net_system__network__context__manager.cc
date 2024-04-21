@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2024-03-22 08:19:40 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2024-04-19 13:02:56 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -94,7 +94,7 @@
  
@@ -163,7 +163,7 @@
    if (!enabled) {
      g_network_service_will_allow_gssapi_library_load = true;
    }
-@@ -1062,7 +1062,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
+@@ -1055,7 +1055,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

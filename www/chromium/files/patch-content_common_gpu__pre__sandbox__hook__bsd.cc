@@ -1,6 +1,6 @@
---- content/common/gpu_pre_sandbox_hook_bsd.cc.orig	2024-01-30 07:53:34 UTC
+--- content/common/gpu_pre_sandbox_hook_bsd.cc.orig	2024-04-19 13:02:56 UTC
 +++ content/common/gpu_pre_sandbox_hook_bsd.cc
-@@ -0,0 +1,69 @@
+@@ -0,0 +1,68 @@
 +// Copyright 2023 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -27,7 +27,6 @@
 +#include "build/build_config.h"
 +#include "build/buildflag.h"
 +#include "build/chromeos_buildflags.h"
-+#include "content/common/set_process_title.h"
 +#include "content/public/common/content_switches.h"
 +#include "media/gpu/buildflags.h"
 +

@@ -1,6 +1,6 @@
---- chrome/updater/util/posix_util.cc.orig	2024-01-30 07:53:34 UTC
+--- chrome/updater/util/posix_util.cc.orig	2024-04-19 13:02:56 UTC
 +++ chrome/updater/util/posix_util.cc
-@@ -18,7 +18,7 @@
+@@ -20,7 +20,7 @@
  #include "chrome/updater/updater_branding.h"
  #include "chrome/updater/util/util.h"
  

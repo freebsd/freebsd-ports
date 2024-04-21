@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2024-02-23 21:04:38 UTC
+--- content/common/BUILD.gn.orig	2024-04-19 13:02:56 UTC
 +++ content/common/BUILD.gn
-@@ -442,20 +442,29 @@ source_set("common") {
+@@ -444,19 +444,28 @@ source_set("common") {
    }
  
    if (is_linux || is_chromeos) {
@@ -22,7 +22,6 @@
      public_deps += [ "//sandbox/policy" ]
      deps += [
        ":sandbox_support_linux",
-       ":set_process_title_linux",
        "//media/gpu:buildflags",
        "//sandbox/linux:sandbox_services",
 -      "//sandbox/linux:seccomp_bpf",
@@ -35,13 +34,3 @@
      if (use_v4l2_codec) {
        deps += [ "//media/gpu/v4l2" ]
      }
-@@ -525,6 +534,9 @@ if (is_linux || is_chromeos) {
-     public = [ "set_process_title_linux.h" ]
-     sources = [ "set_process_title_linux.cc" ]
-     deps = [ "//base" ]
-+    if (is_bsd) {
-+      sources -= [ "set_process_title_linux.cc" ]
-+    }
-   }
- }
- 
