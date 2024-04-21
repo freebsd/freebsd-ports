@@ -3193,3 +3193,4 @@ net-im/tut||2024-04-18|Has expired: Requires deprecated lang/go119
 net/gost||2024-04-18|Has expired: Requires deprecated lang/go119
 lang/go119||2024-04-18|Has expired: Upsrteam EOL reached on 2023-09-06
 www/gitlab-ce|www/gitlab@ce|2024-04-21|Move www/gitlab-ce to www/gitlab and added flavor ce and ee
+multimedia/flvtool++||2024-04-21|Has expired: Abandonware, consider using multimedia/flvmeta

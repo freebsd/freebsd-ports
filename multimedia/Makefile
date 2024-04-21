@@ -62,7 +62,6 @@
     SUBDIR += ffsubsync
     SUBDIR += filebot
     SUBDIR += flvmeta
-    SUBDIR += flvtool++
     SUBDIR += fswebcam
     SUBDIR += gaupol
     SUBDIR += gavl
