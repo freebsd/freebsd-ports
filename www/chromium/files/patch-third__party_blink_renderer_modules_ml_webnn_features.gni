@@ -1,4 +1,4 @@
---- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2024-01-30 07:53:34 UTC
+--- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2024-04-19 13:02:56 UTC
 +++ third_party/blink/renderer/modules/ml/webnn/features.gni
 @@ -6,7 +6,7 @@ import("//build/config/chrome_build.gni")
  declare_args() {
@@ -8,4 +8,4 @@
 +  build_webnn_with_xnnpack = !is_bsd && (is_linux || is_win || is_mac) &&
                               (current_cpu == "x64" || current_cpu == "x86" ||
                                (current_cpu == "arm64" && !is_win))
- 
+ }

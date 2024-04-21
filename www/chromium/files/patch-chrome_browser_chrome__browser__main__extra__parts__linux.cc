@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_extra_parts_linux.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/chrome_browser_main_extra_parts_linux.cc.orig	2024-04-19 13:02:56 UTC
 +++ chrome/browser/chrome_browser_main_extra_parts_linux.cc
-@@ -117,7 +117,7 @@ ChromeBrowserMainExtraPartsLinux::ChromeBrowserMainExt
+@@ -169,7 +169,7 @@ ChromeBrowserMainExtraPartsLinux::ChromeBrowserMainExt
  ChromeBrowserMainExtraPartsLinux::~ChromeBrowserMainExtraPartsLinux() = default;
  
  void ChromeBrowserMainExtraPartsLinux::PreEarlyInitialization() {

@@ -1,4 +1,4 @@
---- services/audio/audio_sandbox_hook_linux.cc.orig	2024-01-30 07:53:34 UTC
+--- services/audio/audio_sandbox_hook_linux.cc.orig	2024-04-19 13:02:56 UTC
 +++ services/audio/audio_sandbox_hook_linux.cc
 @@ -144,6 +144,7 @@ void AddPulseAudioFilePermissions(
  }
@@ -21,7 +21,7 @@
    LoadAudioLibraries();
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
    instance->StartBrokerProcess(MakeBrokerCommandSet({
-@@ -195,6 +198,7 @@ bool AudioPreSandboxHook(sandbox::policy::SandboxLinux
+@@ -193,6 +196,7 @@ bool AudioPreSandboxHook(sandbox::policy::SandboxLinux
    // TODO(https://crbug.com/850878) enable namespace sandbox. Currently, if
    // enabled, connect() on pulse native socket fails with ENOENT (called from
    // pa_context_connect).
