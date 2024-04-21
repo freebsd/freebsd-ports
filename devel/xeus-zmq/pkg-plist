@@ -16,5 +16,5 @@ lib/cmake/xeus-zmq/xeus-zmqTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus-zmq/xeus-zmqTargets.cmake
 lib/libxeus-zmq.a
 lib/libxeus-zmq.so
-lib/libxeus-zmq.so.2
-lib/libxeus-zmq.so.2.0.0
+lib/libxeus-zmq.so.4
+lib/libxeus-zmq.so.4.1.0
