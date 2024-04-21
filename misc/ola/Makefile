@@ -20,6 +20,7 @@ TEST_DEPENDS=	cppunit>0:devel/cppunit
 USES=		bison gmake libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
+CXXFLAGS+=	-Wno-c2x-extensions # workaround for https://github.com/OpenLightingProject/ola/issues/1962
 LDFLAGS+=	-lprotobuf # workaround for https://github.com/OpenLightingProject/ola/issues/1871
 
 GNU_CONFIGURE=	yes
