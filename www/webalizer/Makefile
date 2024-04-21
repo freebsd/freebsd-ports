@@ -1,6 +1,6 @@
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
