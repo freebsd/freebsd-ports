@@ -1,5 +1,5 @@
 PORTNAME=	kokkos
-DISTVERSION=	4.1.00
+DISTVERSION=	4.3.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,9 +19,11 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	bin/nvcc_wrapper bin/kokkos_launch_compiler
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_TESTING_ON=	Kokkos_ENABLE_TESTS # 1 test fails, see https://github.com/kokkos/kokkos/issues/5400
+CMAKE_TESTING_ON=	Kokkos_ENABLE_TESTS # 2 tests fail, see https://github.com/kokkos/kokkos/issues/5400
 
 LDFLAGS+=	-lexecinfo
+
+TEST_ENV=	OMP_PROC_BIND=false
 
 OPTIONS_DEFINE=		OPENMP SERIAL
 OPTIONS_DEFAULT=	OPENMP SERIAL # both choices are assumed by science/nlcglib
