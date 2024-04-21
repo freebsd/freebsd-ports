@@ -1,5 +1,5 @@
 PORTNAME=	objfw
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.2
 CATEGORIES=	devel lang
 MASTER_SITES=	https://objfw.nil.im/downloads/
 
@@ -7,11 +7,7 @@ MAINTAINER=	js@nil.im
 COMMENT=	Portable, lightweight framework for the Objective-C language
 WWW=		https://objfw.nil.im/
 
-LICENSE=		QPL GPLv2 GPLv3
-LICENSE_COMB=		dual
-LICENSE_NAME_QPL=	Q Public License
-LICENSE_FILE_QPL=	${WRKSRC}/LICENSE.QPL
-LICENSE_PERMS_QPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	LGPL3
 
 BROKEN_armv6=	test suite fails
 BROKEN_armv7=	test suite fails
@@ -23,7 +19,7 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS NOSSL
+OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS MBEDTLS NOSSL
 OPTIONS_DEFAULT=	OPENSSL
 NOSSL_DESC=		no SSL/TLS support
 
@@ -39,6 +35,12 @@ GNUTLS_CONFIGURE_ON=	--with-tls=gnutls
 GNUTLS_PLIST_SUB=	TLS=""
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
+
+MBEDTLS_CONFIGURE_ON=	--with-tls=mbedtls
+MBEDTLS_PLIST_SUB=	TLS=""
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_CPPFLAGS=	-I${PREFIX}/include
+MBEDTLS_LDFLAGS=	-L${PREFIX}/lib
 
 NOSSL_CONFIGURE_ON=	--without-tls
 NOSSL_PLIST_SUB=	TLS="@comment "
