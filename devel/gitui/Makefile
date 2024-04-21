@@ -10,6 +10,8 @@ WWW=		https://github.com/extrawurst/gitui
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	link fails: ld: error: undefined symbol: __atomic_is_lock_fre
+
 BUILD_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
