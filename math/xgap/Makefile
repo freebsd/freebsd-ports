@@ -18,9 +18,10 @@ LIB_DEPENDS=	libXaw.so:x11-toolkits/libXaw
 RUN_DEPENDS=	gap:math/gap
 
 USES=		autoreconf gmake xorg
+USE_XORG=	ice sm x11 xext xmu xt
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gap-packages
-USE_XORG=	ice sm x11 xext xmu xt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gaproot=${LOCALBASE}/lib/gap
