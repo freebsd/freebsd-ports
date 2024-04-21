@@ -89,7 +89,9 @@ NLS_USES=	gettext
 .include <bsd.port.pre.mk>
 
 # Before LLVM 18 import into the base system
-.if (${OSVERSION} < 1500018)
+.if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
+    || (${OSREL:R} == 14 && ${OSVERSION} < 1400511) \
+    || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lib_external_libwolv_libs_io_include_wolv_io_file.hpp \
 		${PATCHDIR}/extra-patch-plugins_windows_include_views_view__tty__console.hpp \
 		${PATCHDIR}/extra-patch-lib_libimhex_include_hex_api_task.hpp \
@@ -110,7 +112,9 @@ post-extract:
 	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/external/yara/yara
 	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
-.if (${OSVERSION} < 1500018)
+.if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
+    || (${OSREL:R} == 14 && ${OSVERSION} < 1400511) \
+    || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
 	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/libimhex/include
 	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/external/libwolv/libs/io/include/wolv/io
 .endif
