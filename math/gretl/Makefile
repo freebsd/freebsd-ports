@@ -1,6 +1,5 @@
 PORTNAME=	gretl
-PORTVERSION=	2023c
-PORTREVISION=	2
+PORTVERSION=	2024a
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -19,9 +18,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmpfr.so:math/mpfr
 
 USES=		compiler:c11 fortran gmake gnome localbase libtool ncurses \
-		pathfix pkgconfig readline tar:xz
+		pathfix pkgconfig readline shebangfix tar:xz
 USE_WX=		3.0
 USE_LDCONFIG=	yes
+
+SHEBANG_GLOB=	*.sh
 
 GNU_CONFIGURE=	yes
 
