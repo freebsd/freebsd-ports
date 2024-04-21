@@ -1,5 +1,7 @@
-TIMESTAMP = 1699372786
-SHA256 (archspec-archspec-v0.2.2_GH0.tar.gz) = 47fd277895cf539d92ed653176a7633650ea51a1d7dbbcdebed2304bfff6c5a9
-SIZE (archspec-archspec-v0.2.2_GH0.tar.gz) = 28310
-SHA256 (archspec-archspec-json-d844bb3_GH0.tar.gz) = 266228375aac75830a322998ca676c1f99a8d3022fd610cd082964f639ad93e4
-SIZE (archspec-archspec-json-d844bb3_GH0.tar.gz) = 20180
+TIMESTAMP = 1713713368
+SHA256 (archspec-archspec-v0.2.3_GH0.tar.gz) = 03838384f77f47260083d8257d7c3cc252fbd8f2974eadcd5087b56ff2e7f0cb
+SIZE (archspec-archspec-v0.2.3_GH0.tar.gz) = 31141
+SHA256 (archspec-archspec-json-edd3de7_GH0.tar.gz) = c04aab971b50fcd6b3faa1fb7098f498a578860f51a17720103b2b91250f5e72
+SIZE (archspec-archspec-json-edd3de7_GH0.tar.gz) = 23032
+SHA256 (archspec-cpuid-5b381ed_GH0.tar.gz) = 37fddf9fb3cf9587ff96522b6d4a49b77ee6efdd1e716f5adeb25919f09de6b3
+SIZE (archspec-cpuid-5b381ed_GH0.tar.gz) = 4270
