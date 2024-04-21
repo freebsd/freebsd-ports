@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2024-04-21 18:41:40 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools >= 69.0.0",
++  "setuptools",
+   "wheel >= 0.40.0",
+   "pyTooling ~= 6.0"
+ ]
