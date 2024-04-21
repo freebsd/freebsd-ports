@@ -1,6 +1,6 @@
 PORTNAME=	feedbackd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
+DISTVERSION=	0.3.0
 CATEGORIES=	accessibility
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_TUPLE=	https://gitlab.gnome.org:World/Phosh:gmobile:v0.0.6:gmobile/subprojects/gmobile
+GL_TUPLE=	https://gitlab.gnome.org:World/Phosh:gmobile:v0.1.0:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
 MESON_ARGS=	-Dtests=false
 GLIB_SCHEMAS=	org.sigxcpu.feedbackd.gschema.xml

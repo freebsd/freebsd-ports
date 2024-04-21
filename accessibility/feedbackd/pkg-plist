@@ -86,10 +86,12 @@ share/dbus-1/interfaces/org.sigxcpu.Feedback.xml
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.get_end_reason.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.get_event.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.get_feedback_profile.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Event.get_important.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.get_state.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.get_timeout.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.set_app_id.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.set_feedback_profile.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Event.set_important.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.set_timeout.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.trigger_feedback.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Event.trigger_feedback_async.html
@@ -111,6 +113,7 @@ share/dbus-1/interfaces/org.sigxcpu.Feedback.xml
 %%PORTDOCS%%%%DOCSDIR%%/property.Event.end-reason.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Event.event.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Event.feedback-profile.html
+%%PORTDOCS%%%%DOCSDIR%%/property.Event.important.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Event.state.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Event.timeout.html
 %%PORTDOCS%%%%DOCSDIR%%/property.GdbusFeedback.profile.html
