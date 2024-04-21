@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-PORTVERSION=	3.1.12.3
+DISTVERSION=	3.1.13
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -7,6 +7,7 @@ COMMENT=	Conversion between markup formats
 WWW=		https://pandoc.org/
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 USES=		cabal
 
@@ -82,7 +83,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		haddock-library-1.11.0_3 \
 		half-0.3.1_1 \
 		happy-1.20.1.1 \
-		hashable-1.4.3.0_1 \
+		hashable-1.4.4.0_1 \
 		haskell-lexer-1.1.1 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.10_2 \
@@ -109,7 +110,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		indexed-traversable-0.1.3 \
 		indexed-traversable-instances-0.1.1.2_2 \
 		integer-conversion-0.1.0.1_1 \
-		integer-logarithms-1.0.3.1_5 \
+		integer-logarithms-1.0.3.1_6 \
 		iproute-1.7.12 \
 		ipynb-0.2_1 \
 		isocline-1.0.9 \
@@ -126,9 +127,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		ordered-containers-0.2.3 \
-		pandoc-3.1.12.3 \
-		pandoc-lua-engine-0.2.1.3 \
-		pandoc-lua-marshal-0.2.5 \
+		os-string-2.0.2 \
+		pandoc-3.1.13 \
+		pandoc-lua-engine-0.2.1.4 \
+		pandoc-lua-marshal-0.2.6 \
 		pandoc-types-1.23.1_1 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
@@ -151,14 +153,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		skylighting-format-latex-0.1 \
 		socks-0.6.1 \
 		split-0.2.5 \
-		splitmix-0.1.0.5 \
+		splitmix-0.1.0.5_1 \
 		streaming-commons-0.2.2.6_1 \
 		strict-0.5_1 \
 		syb-0.7.2.4 \
 		tagged-0.8.8_1 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
-		texmath-0.12.8.7 \
+		texmath-0.12.8.8 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1_1 \
 		text-short-0.1.5_3 \
@@ -168,12 +170,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-lift-instances-0.1.20 \
 		these-1.2_1 \
 		time-compat-1.9.6.1_6 \
-		tls-2.0.1_2 \
+		tls-2.0.2 \
 		toml-parser-2.0.0.0_1 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.11.1 \
-		typst-0.5.0.2 \
-		typst-symbols-0.1.5_1 \
+		typst-0.5.0.3 \
+		typst-symbols-0.1.6 \
 		unicode-collation-0.1.3.6 \
 		unicode-data-0.4.0.1_2 \
 		unicode-transforms-0.4.0.1_4 \
@@ -193,6 +195,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.1 \
 		zlib-0.6.3.0_4
+
 CABAL_FLAGS=	lua
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
