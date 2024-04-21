@@ -950,7 +950,6 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2roc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2scores.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn_vs_bn.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/classifier.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/cn2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/dynamicBN.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/explain.py
@@ -962,6 +961,7 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/mrf2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/notebook.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/proba_histogram.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/utils.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/pyAgrum.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/skbn/_MBCalcul.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/skbn/__init__.py
