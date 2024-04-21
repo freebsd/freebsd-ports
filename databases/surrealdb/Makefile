@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -450,8 +450,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rend-0.4.2 \
 		reqwest-0.11.27 \
 		retain_mut-0.1.9 \
-		revision-0.5.0 \
-		revision-derive-0.5.0 \
+		revision-0.7.0 \
+		revision-derive-0.7.0 \
 		rexie-0.4.2 \
 		rgb-0.8.37 \
 		ring-0.16.20 \
@@ -478,8 +478,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rustc_lexer-0.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.32 \
-		rustls-0.21.10 \
-		rustls-0.22.3 \
+		rustls-0.21.11 \
+		rustls-0.22.4 \
 		rustls-pemfile-1.0.4 \
 		rustls-pki-types-1.4.1 \
 		rustls-webpki-0.101.7 \
@@ -542,7 +542,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
 		subtle-2.5.0 \
-		surrealdb-core-1.4.0 \
+		surrealdb-core-1.4.2 \
 		surrealdb-derive-0.12.0 \
 		surrealdb-jsonwebtoken-8.3.0-surreal.1 \
 		surrealdb-tikv-client-0.2.0-surreal.2 \
