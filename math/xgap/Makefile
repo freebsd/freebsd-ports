@@ -1,14 +1,13 @@
 PORTNAME=	xgap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.31
-PORTREVISION=	1
+DISTVERSION=	4.32
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for GAP
 WWW=		https://gap-packages.github.io/xgap/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	cannot find sources (xgap.c) in ../../src.x11
@@ -19,10 +18,9 @@ LIB_DEPENDS=	libXaw.so:x11-toolkits/libXaw
 RUN_DEPENDS=	gap:math/gap
 
 USES=		autoreconf gmake xorg
-USE_XORG=	ice sm x11 xext xmu xt
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	gap-packages
+USE_XORG=	ice sm x11 xext xmu xt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gaproot=${LOCALBASE}/lib/gap
