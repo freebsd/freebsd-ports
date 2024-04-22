@@ -5,7 +5,9 @@ GH_TUPLE=	\
 		alessio:shellescape:v1.2.2:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		alicebob:gopher-json:a9ecdc9d1d3a:alicebob_gopher_json/vendor/github.com/alicebob/gopher-json \
 		alicebob:miniredis:v2.13.3:alicebob_miniredis/vendor/github.com/alicebob/miniredis/v2 \
-		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
+		andybalholm:brotli:v1.0.4:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
+		apache:arrow:9736dde84bb2:apache_arrow/vendor/github.com/apache/arrow/go/v12 \
+		apache:thrift:v0.16.0:apache_thrift/vendor/github.com/apache/thrift \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		bmizerany:assert:b7ed37b82869:bmizerany_assert/vendor/github.com/bmizerany/assert \
 		bmkessler:fastdiv:41d5178f2044:bmkessler_fastdiv/vendor/github.com/bmkessler/fastdiv \
@@ -25,6 +27,7 @@ GH_TUPLE=	\
 		go-task:slim-sprig:52ccab3ef572:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
+		goccy:go-json:v0.9.11:goccy_go_json/vendor/github.com/goccy/go-json \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
@@ -36,22 +39,28 @@ GH_TUPLE=	\
 		golang:net:v0.19.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.15.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:v0.5.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:v0.15.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.13.0:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:04be3eba64a2:golang_xerrors/vendor/golang.org/x/xerrors \
+		google:flatbuffers:v2.0.8:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:83a465c0220f:google_go_genproto_1/vendor/google.golang.org/genproto/googleapis/rpc \
 		google:go-genproto:bbf56f31fb17:google_go_genproto/vendor/google.golang.org/genproto \
+		google:gopacket:v1.1.19:google_gopacket/vendor/github.com/google/gopacket \
 		google:pprof:91b7bce49751:google_pprof/vendor/github.com/google/pprof \
 		google:s2a-go:v0.1.7:google_s2a_go/vendor/github.com/google/s2a-go \
 		google:uuid:v1.4.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:enterprise-certificate-proxy:v0.3.2:googleapis_enterprise_certificate_proxy/vendor/github.com/googleapis/enterprise-certificate-proxy \
 		googleapis:gax-go:v2.12.0:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.153.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:bigquery/v1.57.1:googleapis_google_cloud_go_bigquery \
 		googleapis:google-cloud-go:compute/v1.23.3:googleapis_google_cloud_go_compute \
+		googleapis:google-cloud-go:iam/v1.1.5:googleapis_google_cloud_go_iam \
 		googleapis:google-cloud-go:v0.110.10:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		googleapis:google-cloud-go:v0.4.0:googleapis_google_cloud_go_profiler/vendor/cloud.google.com/go/profiler \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
@@ -73,6 +82,8 @@ GH_TUPLE=	\
 		jtolio:crawlspace:3ec5cc6b36c5:jtolio_crawlspace/vendor/github.com/jtolio/crawlspace \
 		jtolio:mito:d78ef06bb77b:jtolio_mito/vendor/github.com/jtolio/mito \
 		jtolio:noiseconn:88105e6c8ac6:jtolio_noiseconn/vendor/github.com/jtolio/noiseconn \
+		klauspost:asmfmt:v1.3.2:klauspost_asmfmt/vendor/github.com/klauspost/asmfmt \
+		klauspost:compress:v1.17.0:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v2.0.12:klauspost_cpuid/vendor/github.com/klauspost/cpuid/v2 \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
@@ -82,12 +93,15 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.17:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v1.14.19:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		minio:asm2plan9s:cdd76441f9d8:minio_asm2plan9s/vendor/github.com/minio/asm2plan9s \
+		minio:c2goasm:36a3d3bbc4f3:minio_c2goasm/vendor/github.com/minio/c2goasm \
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		nsf:jsondiff:f29ed568f4ce:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		onsi:ginkgo:v2.9.5:onsi_ginkgo/vendor/github.com/onsi/ginkgo/v2 \
 		oschwald:maxminddb-golang:v1.12.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pelletier:go-toml:v2.1.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml/v2 \
+		pierrec:lz4:v4.1.15:pierrec_lz4/vendor/github.com/pierrec/lz4/v4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
@@ -111,13 +125,14 @@ GH_TUPLE=	\
 		spf13:cobra:v1.8.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.18.2:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:f439f4eb69a1:storj_common/vendor/storj.io/common \
+		storj:common:18bcefd218de:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
-		storj:eventkit:beae173bc798:storj_eventkit/vendor/storj.io/eventkit \
+		storj:eventkit:204fc04c7675:storj_eventkit_1/vendor/storj.io/eventkit/eventkitd-bigquery \
+		storj:eventkit:43b472f3f489:storj_eventkit/vendor/storj.io/eventkit \
 		storj:infectious:v0.0.2:storj_infectious/vendor/storj.io/infectious \
-		storj:monkit-jaeger:f15e6e8b7e8c:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
+		storj:monkit-jaeger:52b0792fa6cd:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:v0.0.3:storj_picobuf/vendor/storj.io/picobuf \
-		storj:uplink:fe904c4d39e0:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:7974a2e1a6c2:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v75.8.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v75 \
 		subosito:gotenv:v1.6.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -132,7 +147,7 @@ GH_TUPLE=	\
 		zeebo:blake3:v0.2.3:zeebo_blake3/vendor/github.com/zeebo/blake3 \
 		zeebo:clingy:906be850f10d:zeebo_clingy/vendor/github.com/zeebo/clingy \
 		zeebo:errs:v1.3.0:zeebo_errs/vendor/github.com/zeebo/errs \
-		zeebo:errs:v2.0.3:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
+		zeebo:errs:v2.0.5:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
 		zeebo:goof:e9457bc94477:zeebo_goof/vendor/github.com/zeebo/goof \
 		zeebo:incenc:0d92902eec54:zeebo_incenc/vendor/github.com/zeebo/incenc \
@@ -140,4 +155,10 @@ GH_TUPLE=	\
 		zeebo:mwc:v0.0.4:zeebo_mwc/vendor/github.com/zeebo/mwc \
 		zeebo:structs:f2db46069602:zeebo_structs/vendor/github.com/zeebo/structs \
 		zeebo:sudo:v1.0.2:zeebo_sudo/vendor/github.com/zeebo/sudo \
+		zeebo:xxh3:v1.0.2:zeebo_xxh3/vendor/github.com/zeebo/xxh3 \
 		zyedidia:generic:v1.2.1:zyedidia_generic/vendor/github.com/zyedidia/generic
+
+post-extract:
+.for d in arrow internal parquet
+	@${LN} -s go/${d} ${WRKSRC_apache_arrow}
+.endfor
