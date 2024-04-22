@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	7.3.0
+DISTVERSION=	7.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	mtools:emulators/mtools \
 
 USES=		gmake
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--enable-all
 MAKEFILE=	GNUmakefile
